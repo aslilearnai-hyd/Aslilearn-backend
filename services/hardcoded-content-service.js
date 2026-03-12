@@ -1979,8 +1979,8 @@ export async function getChaptersForSubject(classNumber, subject) {
       }
     }
     
-    // Fallback: derive chapters from CMH JSON filenames (for JSON-based Class 7–10 content)
-    // Looks for files like "1.Geometric Twins_cmh.json" inside "<Class>/<Subject>/CMH"
+    // Fallback 1: derive chapters from CMH JSON filenames (older JSON structure)
+    // (kept for backward compatibility with existing data layouts)
     try {
       const cmhPath = path.join(classBasePath, subjectFolder, 'CMH');
       await fs.access(cmhPath);
@@ -2020,6 +2020,63 @@ export async function getChaptersForSubject(classNumber, subject) {
         });
     } catch (err) {
       // CMH folder may not exist for all subjects/classes; ignore silently
+    }
+
+    // Fallback 2: Class 7–10 new JSON structure
+    // For these classes, chapters are represented as subfolders directly under the subject folder,
+    // e.g. "Class 7/English/1.Learning Together", "Class 7/English/2.Wit and humour", etc.
+    // We derive chapterNumber and chapterName from these folder names so that topics show up in tools.
+    if (classNum >= 7 && classNum <= 10) {
+      try {
+        const subjectPath = path.join(classBasePath, subjectFolder);
+        const entries = await fs.readdir(subjectPath, { withFileTypes: true });
+
+        entries
+          .filter(e => e.isDirectory())
+          .forEach((entry) => {
+            const rawName = entry.name.trim();
+
+            // Skip obvious non‑chapter folders if any (defensive)
+            if (rawName === 'CMH' || rawName.toLowerCase() === 'amenity') {
+              return;
+            }
+
+            let chapterNumber = null;
+            let chapterName = rawName;
+
+            // Pattern: "1.Learning Together", "2.Wit and humour", "3 Dreams and Discoveries"
+            const numberedMatch = rawName.match(/^(\d+)[\.\-\s]+(.+)$/);
+            if (numberedMatch) {
+              chapterNumber = parseInt(numberedMatch[1], 10);
+              const rest = numberedMatch[2].trim();
+              if (rest) {
+                chapterName = rest;
+              }
+            }
+
+            // If we couldn't parse an explicit number, assign the next available one
+            if (!chapterNumber || Number.isNaN(chapterNumber)) {
+              chapterNumber = chapters.length + 1;
+            }
+
+            const chapterCode = `C${chapterNumber}`;
+
+            if (!chapterMap.has(chapterCode)) {
+              const chapter = {
+                chapterNumber,
+                chapterCode,
+                chapterName,
+                duration: null,
+                subjectArea: null
+              };
+              chapters.push(chapter);
+              chapterMap.set(chapterCode, chapter);
+            }
+          });
+      } catch (err) {
+        // If this fallback fails (folder missing, etc.), we just skip it
+        console.log(`⚠️ Failed to derive chapters from folders for Class ${classNum}, Subject ${normalizedSubject}:`, err.message);
+      }
     }
     
     // Sort chapters by type (C first, then P) and then by number
