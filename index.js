@@ -1004,6 +1004,23 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
   try {
     console.log('Auth me requested by:', req.user.email, 'Role:', req.user.role);
     
+    // Handle super admin separately (no MongoDB lookup with fake ID)
+    if (req.user && req.user.role === 'super-admin') {
+      const userData = {
+        id: req.user.id || 'super-admin-001',
+        _id: req.user.id || 'super-admin-001',
+        email: req.user.email,
+        fullName: req.user.fullName || 'Super Admin',
+        role: 'super-admin',
+        classNumber: null,
+        assignedSubjects: [],
+        assignedClass: null
+      };
+
+      console.log('Returning super admin user data (no DB lookup):', userData);
+      return res.json({ user: userData });
+    }
+
     // Find user in database to get full details
     const user = await User.findById(req.user.userId);
     if (!user) {
