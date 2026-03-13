@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter: changes around physcial and chemical ",
+    "generated_at": "2026-03-06T18:48:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "What kind of change is the stretching of a rubber band?",
+            "answer": "Physical change",
+            "key_concepts": ["identifying physical changes"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Name the brown flaky substance formed on iron when left in moist air.",
+            "answer": "Rust",
+            "key_concepts": ["rusting of iron"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Is the burning of a candle a physical or a chemical change?",
+            "answer": "It is both (melting of wax is physical, burning of wick is chemical)",
+            "key_concepts": ["complex changes"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 4,
+            "question": "What is the process of depositing a layer of zinc on iron called?",
+            "answer": "Galvanization",
+            "key_concepts": ["prevention of rusting"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 5,
+            "question": "Give one example of a reversible physical change.",
+            "answer": "Melting of ice",
+            "key_concepts": ["reversible changes"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 6,
+            "question": "Which gas is evolved when baking soda reacts with vinegar?",
+            "answer": "Carbon dioxide",
+            "key_concepts": ["chemical reactions"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 7,
+            "question": "What happens to the chemical composition of a substance during a physical change?",
+            "answer": "It remains the same",
+            "key_concepts": ["properties of physical changes"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 8,
+            "question": "State the condition necessary for rusting to occur.",
+            "answer": "Presence of both oxygen and water (moisture)",
+            "key_concepts": ["conditions for rusting"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the color of Copper Sulphate solution?",
+            "answer": "Blue",
+            "key_concepts": ["observation of chemical changes"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 10,
+            "question": "What color change is seen when an iron nail is placed in copper sulphate solution?",
+            "answer": "The blue solution turns green",
+            "key_concepts": ["displacement reaction"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Define Crystallization.",
+            "answer": "The process of obtaining pure crystals of a substance from its saturated solution",
+            "key_concepts": ["crystallization"],
+            "marks": 2,
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 12,
+            "question": "Is the tearing of paper a chemical change?",
+            "answer": "No, it is a physical change",
+            "key_concepts": ["physical changes"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 13,
+            "question": "What is formed when magnesium ribbon is burnt in air?",
+            "answer": "Magnesium oxide (ash)",
+            "key_concepts": ["burning of magnesium"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Why is the cutting of wood considered a physical change?",
+            "answer": "Because no new substance is formed, only the size and shape change",
+            "key_concepts": ["physical properties"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 15,
+            "question": "What happens when Carbon dioxide is passed through lime water?",
+            "answer": "Lime water turns milky",
+            "key_concepts": ["test for carbon dioxide"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Name the two metals used to make Stainless Steel along with iron.",
+            "answer": "Chromium and Nickel",
+            "key_concepts": ["alloys"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Is digestion of food a physical or chemical change?",
+            "answer": "Chemical change",
+            "key_concepts": ["biological chemical changes"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 18,
+            "question": "What change in color is observed when magnesium oxide is dissolved in water and tested with red litmus?",
+            "answer": "Red litmus turns blue",
+            "key_concepts": ["nature of oxides"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Why is painting an iron gate helpful?",
+            "answer": "It prevents the iron from coming in contact with air and moisture, preventing rust",
+            "key_concepts": ["prevention of rusting"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Mention one characteristic of a chemical change.",
+            "answer": "A new substance is always formed",
+            "key_concepts": ["chemical change characteristics"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Is freezing of water a reversible change?",
+            "answer": "Yes",
+            "key_concepts": ["physical changes"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the chemical formula of Rust?",
+            "answer": "Iron Oxide ($Fe_2O_3$)",
+            "key_concepts": ["chemical composition"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Which type of change is usually permanent and irreversible?",
+            "answer": "Chemical change",
+            "key_concepts": ["properties of changes"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Does the mass of a substance change during a physical change?",
+            "answer": "No, the total mass remains the same",
+            "key_concepts": ["conservation of mass"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Which method is better for obtaining a pure solid: evaporation or crystallization?",
+            "answer": "Crystallization",
+            "key_concepts": ["purification techniques"],
+            "marks": 2,
+            "source_section": "Section 1.5"
+        }
+    ]
+}

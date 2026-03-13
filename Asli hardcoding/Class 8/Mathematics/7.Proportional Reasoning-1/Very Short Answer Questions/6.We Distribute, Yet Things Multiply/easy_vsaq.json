@@ -1,0 +1,183 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter 6: We Distribute, Yet Things Multiply",
+  "generated_at": "2026-03-05T02:25:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is an algebraic expression?",
+      "answer": "An algebraic expression is a combination of variables, constants and mathematical operations.",
+      "key_points": ["algebraic expression"],
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 2,
+      "question": "What is a variable?",
+      "answer": "A variable is a symbol that represents an unknown value.",
+      "key_points": ["variables"],
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 3,
+      "question": "What is a constant?",
+      "answer": "A constant is a fixed numerical value.",
+      "key_points": ["constants"],
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 4,
+      "question": "What is a term in an algebraic expression?",
+      "answer": "A term is a part of an expression separated by + or − signs.",
+      "key_points": ["terms"],
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 5,
+      "question": "What is the coefficient of x in 5x?",
+      "answer": "5.",
+      "key_points": ["coefficient"],
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 6,
+      "question": "What are like terms?",
+      "answer": "Terms that have the same variables with the same powers.",
+      "key_points": ["like terms"],
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 7,
+      "question": "What are unlike terms?",
+      "answer": "Terms with different variables or powers.",
+      "key_points": ["unlike terms"],
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 8,
+      "question": "Write the distributive property of multiplication over addition.",
+      "answer": "a(b + c) = ab + ac.",
+      "key_points": ["distributive property"],
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 9,
+      "question": "Write the distributive property of multiplication over subtraction.",
+      "answer": "a(b − c) = ab − ac.",
+      "key_points": ["distributive property"],
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 10,
+      "question": "How many terms are in the expression 3x + 4?",
+      "answer": "Two terms.",
+      "key_points": ["terms"],
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the coefficient of y in 7y?",
+      "answer": "7.",
+      "key_points": ["coefficient"],
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the constant term in 4x + 5?",
+      "answer": "5.",
+      "key_points": ["constant term"],
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 13,
+      "question": "Simplify: 2(x + 3).",
+      "answer": "2x + 6.",
+      "key_points": ["distributive law"],
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 14,
+      "question": "Simplify: 3(a + b).",
+      "answer": "3a + 3b.",
+      "key_points": ["distributive law"],
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 15,
+      "question": "Simplify: 4(x − 2).",
+      "answer": "4x − 8.",
+      "key_points": ["distributive law"],
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 16,
+      "question": "How many terms are in 5x + 3y + 2?",
+      "answer": "Three terms.",
+      "key_points": ["terms"],
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 17,
+      "question": "What is the coefficient of x in x?",
+      "answer": "1.",
+      "key_points": ["coefficient"],
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 18,
+      "question": "Give one example of like terms.",
+      "answer": "3x and 5x.",
+      "key_points": ["like terms"],
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 19,
+      "question": "Give one example of unlike terms.",
+      "answer": "3x and 3y.",
+      "key_points": ["unlike terms"],
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 20,
+      "question": "Simplify: 5(a + 2).",
+      "answer": "5a + 10.",
+      "key_points": ["distributive law"],
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 21,
+      "question": "Simplify: 2(x + y).",
+      "answer": "2x + 2y.",
+      "key_points": ["distributive law"],
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 22,
+      "question": "Simplify: 6(a − b).",
+      "answer": "6a − 6b.",
+      "key_points": ["distributive law"],
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 23,
+      "question": "What operation is used in distributive property?",
+      "answer": "Multiplication.",
+      "key_points": ["distributive property"],
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 24,
+      "question": "What is the constant term in 9x + 7?",
+      "answer": "7.",
+      "key_points": ["constant term"],
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 25,
+      "question": "Simplify: 3(x + 4).",
+      "answer": "3x + 12.",
+      "key_points": ["distributive law"],
+      "source_section": "Section 6.2"
+    }
+  ]
+}

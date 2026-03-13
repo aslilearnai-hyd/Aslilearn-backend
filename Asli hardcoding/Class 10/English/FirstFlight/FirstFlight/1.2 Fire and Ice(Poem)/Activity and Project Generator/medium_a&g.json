@@ -1,0 +1,162 @@
+{
+    "class": "Class 10",
+    "subject": "English",
+    "chapter": "Fire and Ice",
+    "author": "Robert Frost",
+    "difficulty": "Medium",
+    "source_pdf": "eng10_1.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Symbolism Analysis",
+            "objective": "Analyse the symbols used in the poem",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the poem carefully",
+                "Identify what fire and ice represent",
+                "Write 3–4 sentences explaining the symbolism"
+            ],
+            "learning_outcome": "Understands symbolic meaning in poetry",
+            "evaluation": "Accuracy of explanation (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Poet’s Belief Discussion",
+            "objective": "Understand the poet’s viewpoint",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the poem again",
+                "Identify which idea the poet seems to support",
+                "Write 4 sentences explaining the poet’s belief"
+            ],
+            "learning_outcome": "Interprets poet’s opinion",
+            "evaluation": "Clarity of interpretation (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Emotion Identification",
+            "objective": "Identify emotions represented in the poem",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "List emotions connected with fire",
+                "List emotions connected with ice",
+                "Write how these emotions can harm society"
+            ],
+            "learning_outcome": "Connects emotions with poetic ideas",
+            "evaluation": "Correct identification and explanation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Line Interpretation",
+            "objective": "Interpret important lines from the poem",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Select two lines from the poem",
+                "Explain their meaning in your own words"
+            ],
+            "learning_outcome": "Develops interpretation skills",
+            "evaluation": "Correct explanation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Compare Fire and Ice",
+            "objective": "Understand contrasting ideas in the poem",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write the characteristics of fire",
+                "Write the characteristics of ice",
+                "Compare both ideas in 3–4 sentences"
+            ],
+            "learning_outcome": "Understands contrast in poetry",
+            "evaluation": "Logical comparison (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Rhyme Scheme Study",
+            "objective": "Identify the rhyme pattern of the poem",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Underline rhyming words",
+                "Write the rhyme scheme",
+                "Explain how rhyme adds rhythm"
+            ],
+            "learning_outcome": "Recognizes poetic structure",
+            "evaluation": "Correct rhyme identification (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Poetic Devices",
+            "objective": "Identify poetic devices used in the poem",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Find one example of symbolism",
+                "Find one example of imagery",
+                "Explain their meaning"
+            ],
+            "learning_outcome": "Recognizes literary devices",
+            "evaluation": "Correct identification (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Real Life Connection",
+            "objective": "Relate the poem to real life",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about situations where anger causes problems",
+                "Write 4 sentences connecting it with the poem"
+            ],
+            "learning_outcome": "Relates poetry to real-life situations",
+            "evaluation": "Meaningful explanation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Poem Recitation",
+            "objective": "Improve speaking and expression skills",
+            "materials": [
+                "Textbook"
+            ],
+            "steps": [
+                "Memorize the poem",
+                "Recite it in class with correct pronunciation"
+            ],
+            "learning_outcome": "Improves pronunciation and confidence",
+            "evaluation": "Clarity and fluency (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Message Writing",
+            "objective": "Understand the deeper message of the poem",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about the lesson taught by the poem",
+                "Write 4–5 sentences explaining the message"
+            ],
+            "learning_outcome": "Understands moral message",
+            "evaluation": "Logical explanation (10 marks)"
+        }
+    ]
+}

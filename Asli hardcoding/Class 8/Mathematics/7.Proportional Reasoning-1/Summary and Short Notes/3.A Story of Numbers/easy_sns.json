@@ -1,0 +1,33 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "Chapter 3: A Story of Numbers",
+  "difficulty": "Easy",
+  "source_pdf": "ch-3_A_STORY_OF_NUMBERS.pdf",
+  "short_notes": {
+    "key_points": [
+      "Numbers are used to count, measure and label objects",
+      "Natural numbers start from 1 and continue infinitely",
+      "Whole numbers include all natural numbers and zero",
+      "Integers include positive numbers, negative numbers and zero",
+      "Rational numbers can be written in the form p/q where q is not zero"
+    ],
+    "examples": [
+      "Natural number: 7",
+      "Whole number: 0",
+      "Integer: -5",
+      "Rational number: 3/4"
+    ],
+    "formulas": [
+      "Rational number form → p/q where q ≠ 0",
+      "Successor of a number → n + 1",
+      "Predecessor of a number → n - 1"
+    ],
+    "exam_tips": [
+      "Remember that natural numbers start from 1",
+      "Zero is included in whole numbers but not in natural numbers",
+      "Negative numbers are part of integers",
+      "Always check that the denominator in a rational number is not zero"
+    ]
+  }
+}

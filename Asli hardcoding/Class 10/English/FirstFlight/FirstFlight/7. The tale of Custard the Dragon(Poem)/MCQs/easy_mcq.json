@@ -1,0 +1,359 @@
+{
+    "content_type": "MCQs",
+    "chapter": "ENG10_7 – The Tale of Custard the Dragon",
+    "title": "The Tale of Custard the Dragon – Easy MCQs",
+    "generated_at": "2026-03-13T00:05:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Who is the author of the poem 'The Tale of Custard the Dragon'?",
+            "options": {
+                "A": "Robert Frost",
+                "B": "Ogden Nash",
+                "C": "William Wordsworth",
+                "D": "Rabindranath Tagore"
+            },
+            "correct_answer": "B",
+            "explanation": "The poem was written by Ogden Nash.",
+            "difficulty": "easy",
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 2,
+            "question": "Who lived in the little white house?",
+            "options": {
+                "A": "Belinda",
+                "B": "Custard",
+                "C": "Mustard",
+                "D": "Ink"
+            },
+            "correct_answer": "A",
+            "explanation": "Belinda lived in the little white house with her pets.",
+            "difficulty": "easy",
+            "source_section": "Beginning"
+        },
+        {
+            "question_number": 3,
+            "question": "What kind of animal was Ink?",
+            "options": {
+                "A": "Dog",
+                "B": "Mouse",
+                "C": "Kitten",
+                "D": "Dragon"
+            },
+            "correct_answer": "C",
+            "explanation": "Ink was the little black kitten.",
+            "difficulty": "easy",
+            "source_section": "Beginning"
+        },
+        {
+            "question_number": 4,
+            "question": "Who was Blink?",
+            "options": {
+                "A": "A mouse",
+                "B": "A dog",
+                "C": "A dragon",
+                "D": "A bird"
+            },
+            "correct_answer": "A",
+            "explanation": "Blink was the little grey mouse.",
+            "difficulty": "easy",
+            "source_section": "Beginning"
+        },
+        {
+            "question_number": 5,
+            "question": "What type of animal was Mustard?",
+            "options": {
+                "A": "Cat",
+                "B": "Dog",
+                "C": "Mouse",
+                "D": "Horse"
+            },
+            "correct_answer": "B",
+            "explanation": "Mustard was the little yellow dog.",
+            "difficulty": "easy",
+            "source_section": "Beginning"
+        },
+        {
+            "question_number": 6,
+            "question": "Who was Custard?",
+            "options": {
+                "A": "A dog",
+                "B": "A dragon",
+                "C": "A bird",
+                "D": "A lion"
+            },
+            "correct_answer": "B",
+            "explanation": "Custard was Belinda’s pet dragon.",
+            "difficulty": "easy",
+            "source_section": "Beginning"
+        },
+        {
+            "question_number": 7,
+            "question": "Why was Custard called cowardly?",
+            "options": {
+                "A": "He cried for a safe cage",
+                "B": "He could not fly",
+                "C": "He slept all day",
+                "D": "He was lazy"
+            },
+            "correct_answer": "A",
+            "explanation": "Custard often cried for a nice safe cage.",
+            "difficulty": "easy",
+            "source_section": "Early stanza"
+        },
+        {
+            "question_number": 8,
+            "question": "What animal is Mustard compared to in bravery?",
+            "options": {
+                "A": "Tiger",
+                "B": "Lion",
+                "C": "Bear",
+                "D": "Wolf"
+            },
+            "correct_answer": "A",
+            "explanation": "Mustard was described as brave as a tiger in a rage.",
+            "difficulty": "easy",
+            "source_section": "Character description"
+        },
+        {
+            "question_number": 9,
+            "question": "What sudden sound did the characters hear?",
+            "options": {
+                "A": "A storm",
+                "B": "A pirate entering",
+                "C": "A dog barking",
+                "D": "A train whistle"
+            },
+            "correct_answer": "B",
+            "explanation": "They heard a sound when a pirate climbed through the window.",
+            "difficulty": "easy",
+            "source_section": "Pirate scene"
+        },
+        {
+            "question_number": 10,
+            "question": "Where did the pirate enter from?",
+            "options": {
+                "A": "Door",
+                "B": "Roof",
+                "C": "Window",
+                "D": "Garden"
+            },
+            "correct_answer": "C",
+            "explanation": "The pirate climbed in through the window.",
+            "difficulty": "easy",
+            "source_section": "Pirate scene"
+        },
+        {
+            "question_number": 11,
+            "question": "What weapon did the pirate hold in his teeth?",
+            "options": {
+                "A": "Sword",
+                "B": "Cutlass",
+                "C": "Knife",
+                "D": "Gun"
+            },
+            "correct_answer": "B",
+            "explanation": "The pirate held a cutlass in his teeth.",
+            "difficulty": "easy",
+            "source_section": "Pirate description"
+        },
+        {
+            "question_number": 12,
+            "question": "How did Belinda react when she saw the pirate?",
+            "options": {
+                "A": "She laughed",
+                "B": "She ran away",
+                "C": "She cried for help",
+                "D": "She attacked"
+            },
+            "correct_answer": "C",
+            "explanation": "Belinda cried 'Help! Help!' when she saw the pirate.",
+            "difficulty": "easy",
+            "source_section": "Pirate scene"
+        },
+        {
+            "question_number": 13,
+            "question": "What did Mustard do when the pirate appeared?",
+            "options": {
+                "A": "Fought the pirate",
+                "B": "Ran away",
+                "C": "Barked loudly",
+                "D": "Hid behind Belinda"
+            },
+            "correct_answer": "B",
+            "explanation": "Mustard fled with a terrified yelp.",
+            "difficulty": "easy",
+            "source_section": "Pirate scene"
+        },
+        {
+            "question_number": 14,
+            "question": "Where did Blink hide?",
+            "options": {
+                "A": "In a cage",
+                "B": "In a hole",
+                "C": "Under a table",
+                "D": "Behind the door"
+            },
+            "correct_answer": "B",
+            "explanation": "Blink hid inside a mousehole.",
+            "difficulty": "easy",
+            "source_section": "Pirate scene"
+        },
+        {
+            "question_number": 15,
+            "question": "Who finally fought the pirate?",
+            "options": {
+                "A": "Mustard",
+                "B": "Ink",
+                "C": "Blink",
+                "D": "Custard"
+            },
+            "correct_answer": "D",
+            "explanation": "Custard bravely attacked the pirate.",
+            "difficulty": "easy",
+            "source_section": "Climax"
+        },
+        {
+            "question_number": 16,
+            "question": "What happened to the pirate in the end?",
+            "options": {
+                "A": "He escaped",
+                "B": "He surrendered",
+                "C": "Custard gobbled him",
+                "D": "He ran away"
+            },
+            "correct_answer": "C",
+            "explanation": "Custard gobbled up the pirate.",
+            "difficulty": "easy",
+            "source_section": "Climax"
+        },
+        {
+            "question_number": 17,
+            "question": "What did Belinda do after the pirate was defeated?",
+            "options": {
+                "A": "Scolded Custard",
+                "B": "Embraced Custard",
+                "C": "Ignored Custard",
+                "D": "Left the house"
+            },
+            "correct_answer": "B",
+            "explanation": "Belinda hugged Custard happily.",
+            "difficulty": "easy",
+            "source_section": "Ending"
+        },
+        {
+            "question_number": 18,
+            "question": "What did Mustard do after the fight?",
+            "options": {
+                "A": "Barked",
+                "B": "Ran away again",
+                "C": "Licked Custard",
+                "D": "Slept"
+            },
+            "correct_answer": "C",
+            "explanation": "Mustard licked Custard after the victory.",
+            "difficulty": "easy",
+            "source_section": "Ending"
+        },
+        {
+            "question_number": 19,
+            "question": "What did Ink and Blink do after the victory?",
+            "options": {
+                "A": "Ran away",
+                "B": "Cried",
+                "C": "Danced around Custard",
+                "D": "Slept"
+            },
+            "correct_answer": "C",
+            "explanation": "Ink and Blink danced happily around Custard.",
+            "difficulty": "easy",
+            "source_section": "Ending"
+        },
+        {
+            "question_number": 20,
+            "question": "What did Mustard claim later?",
+            "options": {
+                "A": "He was afraid",
+                "B": "He would have been braver",
+                "C": "He saw nothing",
+                "D": "He fought the pirate"
+            },
+            "correct_answer": "B",
+            "explanation": "Mustard said he would have been braver if he had not been flustered.",
+            "difficulty": "easy",
+            "source_section": "Final stanza"
+        },
+        {
+            "question_number": 21,
+            "question": "What did Ink and Blink claim later?",
+            "options": {
+                "A": "They were brave",
+                "B": "They were afraid",
+                "C": "They would have been three times as brave",
+                "D": "They slept"
+            },
+            "correct_answer": "C",
+            "explanation": "They said they would have been three times as brave.",
+            "difficulty": "easy",
+            "source_section": "Final stanza"
+        },
+        {
+            "question_number": 22,
+            "question": "What did Custard say about himself?",
+            "options": {
+                "A": "He was brave",
+                "B": "He was strongest",
+                "C": "Everyone was braver than him",
+                "D": "He was angry"
+            },
+            "correct_answer": "C",
+            "explanation": "Custard humbly said everyone was braver than him.",
+            "difficulty": "easy",
+            "source_section": "Final stanza"
+        },
+        {
+            "question_number": 23,
+            "question": "What type of poem is 'The Tale of Custard the Dragon'?",
+            "options": {
+                "A": "Ballad",
+                "B": "Sonnet",
+                "C": "Elegy",
+                "D": "Ode"
+            },
+            "correct_answer": "A",
+            "explanation": "The poem is written in ballad style.",
+            "difficulty": "easy",
+            "source_section": "Introduction"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the main theme of the poem?",
+            "options": {
+                "A": "Love",
+                "B": "Friendship",
+                "C": "True courage",
+                "D": "Adventure"
+            },
+            "correct_answer": "C",
+            "explanation": "The poem highlights that true courage is shown through actions.",
+            "difficulty": "easy",
+            "source_section": "Theme"
+        },
+        {
+            "question_number": 25,
+            "question": "Who is the real hero of the poem?",
+            "options": {
+                "A": "Belinda",
+                "B": "Mustard",
+                "C": "Ink",
+                "D": "Custard"
+            },
+            "correct_answer": "D",
+            "explanation": "Custard proves to be the real hero by defeating the pirate.",
+            "difficulty": "easy",
+            "source_section": "Climax"
+        }
+    ]
+}

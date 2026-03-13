@@ -1,0 +1,167 @@
+{
+    "class": "Class 9",
+    "subject": "Social Science - Geography",
+    "chapter": "Physical Features of India",
+    "difficulty": "Easy",
+    "source_pdf": "con9_2.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Identify Major Physiographic Divisions",
+            "objective": "Understand the major physical divisions of India",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the section on major physiographic divisions",
+                "List the six physical divisions of India",
+                "Write one key feature for each division"
+            ],
+            "learning_outcome": "Students identify the main physical divisions of India",
+            "evaluation": "Correct listing and explanation (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Draw the Himalayan Ranges",
+            "objective": "Learn about the divisions of the Himalayas",
+            "materials": [
+                "Notebook",
+                "Pencil"
+            ],
+            "steps": [
+                "Draw three horizontal lines representing the Himalayan ranges",
+                "Label them as Himadri, Himachal, and Shiwaliks",
+                "Write one feature of each range"
+            ],
+            "learning_outcome": "Students understand the structure of the Himalayan mountain system",
+            "evaluation": "Correct labeling and neatness (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Map Identification Activity",
+            "objective": "Locate physical features on the map",
+            "materials": [
+                "Outline map of India",
+                "Pencil"
+            ],
+            "steps": [
+                "Mark the Himalayas on the northern border",
+                "Mark the Northern Plains and the Peninsular Plateau",
+                "Label them clearly"
+            ],
+            "learning_outcome": "Students learn to identify physical features on maps",
+            "evaluation": "Accuracy of map labeling (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Northern Plains Features List",
+            "objective": "Understand the characteristics of the Northern Plains",
+            "materials": [
+                "Notebook",
+                "Textbook"
+            ],
+            "steps": [
+                "Read the section about the Northern Plains",
+                "List three rivers that form the Northern Plains",
+                "Write two reasons why the plains are fertile"
+            ],
+            "learning_outcome": "Students understand the importance of the Northern Plains",
+            "evaluation": "Correct answers and explanation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Plateau Characteristics Activity",
+            "objective": "Learn about the Peninsular Plateau",
+            "materials": [
+                "Notebook",
+                "Textbook"
+            ],
+            "steps": [
+                "Write the two main divisions of the Peninsular Plateau",
+                "List two hill ranges found in the plateau",
+                "Mention one mineral found in this region"
+            ],
+            "learning_outcome": "Students understand the features of the Peninsular Plateau",
+            "evaluation": "Completeness and correctness (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Indian Desert Description",
+            "objective": "Understand the climate and features of the Indian Desert",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write the location of the Indian Desert",
+                "Mention two features of desert climate",
+                "Name one river flowing in the desert region"
+            ],
+            "learning_outcome": "Students learn about desert landforms and climate",
+            "evaluation": "Accuracy of information (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Coastal Plains Identification",
+            "objective": "Learn about the western and eastern coastal plains",
+            "materials": [
+                "Notebook",
+                "Atlas"
+            ],
+            "steps": [
+                "Write the names of the western coastal divisions",
+                "Write the names of the eastern coastal divisions",
+                "Mention one important lake found on the eastern coast"
+            ],
+            "learning_outcome": "Students understand coastal regions of India",
+            "evaluation": "Correct identification of regions (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Island Groups Chart",
+            "objective": "Understand the island groups of India",
+            "materials": [
+                "Chart paper",
+                "Markers"
+            ],
+            "steps": [
+                "Write the names of the two island groups of India",
+                "Draw small diagrams of each island group",
+                "Write one feature of each group"
+            ],
+            "learning_outcome": "Students identify and differentiate island groups of India",
+            "evaluation": "Creativity and correctness (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Important Peaks List",
+            "objective": "Learn about major Himalayan peaks",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List five important Himalayan peaks",
+                "Write their height or location if available",
+                "Underline the highest peak"
+            ],
+            "learning_outcome": "Students become familiar with major Himalayan peaks",
+            "evaluation": "Correct identification of peaks (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Short Paragraph on Physical Diversity",
+            "objective": "Understand the diversity of India's landforms",
+            "materials": [
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Think about different landforms in India",
+                "Write a short paragraph explaining their importance",
+                "Include mountains, plains, plateaus, deserts, coasts, and islands"
+            ],
+            "learning_outcome": "Students understand the diversity of India's physical features",
+            "evaluation": "Clarity and relevance of paragraph (10 marks)"
+        }
+    ]
+}

@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Changes around us : Physical and Chemical",
+  "generated_at": "2026-03-06T18:50:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which of the following is an example of an endothermic chemical change?",
+      "options": {
+        "A": "Burning of wood",
+        "B": "Photosynthesis",
+        "C": "Rusting of iron",
+        "D": "Neutralization reaction"
+      },
+      "correct_answer": "B",
+      "explanation": "Photosynthesis is a chemical change where plants absorb solar energy to convert $CO_2$ and water into glucose.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the chemical composition of the protective 'patina' layer formed on copper statues over time?",
+      "options": {
+        "A": "Copper oxide",
+        "B": "Copper sulphate",
+        "C": "Basic copper carbonate",
+        "D": "Copper chloride"
+      },
+      "correct_answer": "C",
+      "explanation": "Copper reacts with moist $CO_2$ and oxygen to form a green coating of $CuCO_3.Cu(OH)_2$.",
+      "difficulty": "hard",
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 3,
+      "question": "The displacement reaction between iron and copper sulphate ($Fe + CuSO_4 \\rightarrow FeSO_4 + Cu$) is a type of:",
+      "options": {
+        "A": "Physical change",
+        "B": "Redox reaction",
+        "C": "Reversible change",
+        "D": "Neutralization"
+      },
+      "correct_answer": "B",
+      "explanation": "This chemical change involves the transfer of electrons (oxidation and reduction) between iron and copper.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 4,
+      "question": "Why is the crystallization of sugar from its syrup considered a physical change despite the appearance of a 'new' solid form?",
+      "options": {
+        "A": "No new molecules are formed",
+        "B": "It is an irreversible process",
+        "C": "Heat is always produced",
+        "D": "The color of sugar changes"
+      },
+      "correct_answer": "A",
+      "explanation": "The chemical identity of sucrose remains the same; only the arrangement of molecules into a crystal lattice occurs.",
+      "difficulty": "hard",
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 5,
+      "question": "Which of the following conditions significantly retards the chemical process of rusting?",
+      "options": {
+        "A": "Presence of salt water",
+        "B": "Presence of distilled water",
+        "C": "Vacuum conditions",
+        "D": "High humidity"
+      },
+      "correct_answer": "C",
+      "explanation": "Rusting requires both oxygen and water. In a vacuum, the absence of oxygen prevents the chemical reaction.",
+      "difficulty": "hard",
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 6,
+      "question": "When magnesium is burnt, the resulting ash has a ____ mass compared to the original ribbon.",
+      "options": {
+        "A": "Lesser",
+        "B": "Higher",
+        "C": "Equal",
+        "D": "Zero"
+      },
+      "correct_answer": "B",
+      "explanation": "In this chemical change, magnesium combines with oxygen from the air, increasing the total mass of the solid product ($MgO$).",
+      "difficulty": "hard",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 7,
+      "question": "The conversion of Ozone ($O_3$) to Oxygen ($O_2$) in the stratosphere is a chemical change initiated by:",
+      "options": {
+        "A": "Infrared radiation",
+        "B": "Ultraviolet radiation",
+        "C": "Visible light",
+        "D": "Microwaves"
+      },
+      "correct_answer": "B",
+      "explanation": "UV radiation provides the energy to break the chemical bonds of ozone, protecting the Earth.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 8,
+      "question": "Which of these is a chemical change involving an enzyme as a catalyst?",
+      "options": {
+        "A": "Melting of butter",
+        "B": "Digestion of starch",
+        "C": "Evaporation of sweat",
+        "D": "Freezing of milk"
+      },
+      "correct_answer": "B",
+      "explanation": "Digestion is a complex chemical change where enzymes break down large molecules into simpler ones.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 9,
+      "question": "What happens chemically when excess $CO_2$ is passed through the milky suspension of lime water?",
+      "options": {
+        "A": "Calcium oxide is formed",
+        "B": "Soluble Calcium hydrogen carbonate is formed",
+        "C": "Calcium chloride is formed",
+        "D": "The solution becomes more basic"
+      },
+      "correct_answer": "B",
+      "explanation": "The reaction $CaCO_3 + H_2O + CO_2 \\rightarrow  Ca(HCO_3)_2$ produces a soluble salt, clearing the milkiness.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 10,
+      "question": "Stainless steel's resistance to the chemical change of rusting is primarily due to the presence of:",
+      "options": {
+        "A": "Carbon",
+        "B": "Zinc",
+        "C": "Chromium",
+        "D": "Aluminum"
+      },
+      "correct_answer": "C",
+      "explanation": "Chromium forms a thin, invisible 'passive' oxide layer on the surface that prevents further oxidation of iron.",
+      "difficulty": "hard",
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 11,
+      "question": "In the reaction between vinegar and baking soda, which of the following is a liquid product formed?",
+      "options": {
+        "A": "Sodium chloride",
+        "B": "Sodium acetate",
+        "C": "Calcium carbonate",
+        "D": "Magnesium oxide"
+      },
+      "correct_answer": "B",
+      "explanation": "Acetic acid (vinegar) reacts with sodium bicarbonate to form sodium acetate solution, water, and $CO_2$.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 12,
+      "question": "Which of the following is a physical change used in the petroleum industry to separate components of crude oil?",
+      "options": {
+        "A": "Cracking",
+        "B": "Fractional distillation",
+        "C": "Combustion",
+        "D": "Polymerization"
+      },
+      "correct_answer": "B",
+      "explanation": "Distillation relies on different boiling points (a physical property) and involves no chemical reaction.",
+      "difficulty": "hard",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 13,
+      "question": "Galvanization uses Zinc instead of Copper to protect iron because Zinc is:",
+      "options": {
+        "A": "More reactive than iron",
+        "B": "Less reactive than iron",
+        "C": "A non-metal",
+        "D": "Cheaper than iron"
+      },
+      "correct_answer": "A",
+      "explanation": "Zinc acts as a sacrificial anode; it oxidizes more readily than iron, protecting the iron underneath.",
+      "difficulty": "hard",
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 14,
+      "question": "Which of the following observations definitively proves a chemical change has occurred?",
+      "options": {
+        "A": "Substance changes from solid to liquid",
+        "B": "Substance dissolves in water",
+        "C": "Evolution of a gas with a distinct new odor",
+        "D": "The substance is crushed into powder"
+      },
+      "correct_answer": "C",
+      "explanation": "New odors indicate the formation of a new chemical substance, a hallmark of chemical changes.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 15,
+      "question": "In the process of making 'Vark' (silver foil), which physical property is being utilized?",
+      "options": {
+        "A": "Ductility",
+        "B": "Malleability",
+        "C": "Sonority",
+        "D": "Chemical reactivity"
+      },
+      "correct_answer": "B",
+      "explanation": "Malleability allows the metal to be beaten into extremely thin foils without breaking.",
+      "difficulty": "hard",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 16,
+      "question": "The burning of a magnesium ribbon produces a dazzling white light. This energy is released because:",
+      "options": {
+        "A": "The reaction is endothermic",
+        "B": "Chemical bonds in $MgO$ are more stable than the reactants",
+        "C": "Oxygen molecules are being created",
+        "D": "It is a reversible physical change"
+      },
+      "correct_answer": "B",
+      "explanation": "The formation of $MgO$ is highly exothermic, releasing stored chemical energy as light and heat.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 17,
+      "question": "Which of the following salts is obtained from sea water using both evaporation and crystallization?",
+      "options": {
+        "A": "Ammonium chloride",
+        "B": "Sodium chloride",
+        "C": "Potassium permanganate",
+        "D": "Iron sulphate"
+      },
+      "correct_answer": "B",
+      "explanation": "Common salt is harvested by evaporating sea water and then purifying the crystals through re-crystallization.",
+      "difficulty": "hard",
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 18,
+      "question": "Anaerobic bacteria digest animal waste to produce biogas (Change A), and then biogas is burnt as fuel (Change B). Which is true?",
+      "options": {
+        "A": "A is a chemical change, B is physical",
+        "B": "A is a physical change, B is chemical",
+        "C": "Both A and B are chemical changes",
+        "D": "Both A and B are physical changes"
+      },
+      "correct_answer": "C",
+      "explanation": "Digestion by bacteria and combustion are both processes that form entirely new chemical substances.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 19,
+      "question": "When iron filings and sulphur powder are heated strongly together, the resulting black mass is:",
+      "options": {
+        "A": "A mixture of iron and sulphur",
+        "B": "A compound called Iron sulphide",
+        "C": "An alloy of iron",
+        "D": "Pure iron"
+      },
+      "correct_answer": "B",
+      "explanation": "Heating causes a chemical reaction to form $FeS$, which cannot be separated by a magnet (unlike a mixture).",
+      "difficulty": "hard",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 20,
+      "question": "Which of the following acts as an 'autocatalyst' in some chemical changes?",
+      "options": {
+        "A": "Water",
+        "B": "One of the products of the reaction",
+        "C": "Light energy",
+        "D": "The container"
+      },
+      "correct_answer": "B",
+      "explanation": "In some chemical changes, a product formed during the reaction speeds up the further reaction rate.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 21,
+      "question": "The 'browning' of a cut potato is called:",
+      "options": {
+        "A": "Reduction",
+        "B": "Enzymatic browning",
+        "C": "Hydration",
+        "D": "Sublimation"
+      },
+      "correct_answer": "B",
+      "explanation": "This is a chemical change where enzymes (polyphenol oxidase) react with oxygen to produce melanin.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 22,
+      "question": "Which method is most effective for preventing rust on the 'hull' of a ship?",
+      "options": {
+        "A": "Greasing",
+        "B": "Painting with anti-fouling paint",
+        "C": "Crystallization",
+        "D": "Wrapping in plastic"
+      },
+      "correct_answer": "B",
+      "explanation": "Special paints protect the iron from the highly corrosive salt water and prevent biological growth.",
+      "difficulty": "hard",
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 23,
+      "question": "Souring of milk is a chemical change because of the production of:",
+      "options": {
+        "A": "Citric acid",
+        "B": "Lactic acid",
+        "C": "Acetic acid",
+        "D": "Hydrochloric acid"
+      },
+      "correct_answer": "B",
+      "explanation": "Bacteria convert lactose (sugar) into lactic acid, changing the chemical nature of the milk.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 24,
+      "question": "Crystallization is a better purification method than simple evaporation because it:",
+      "options": {
+        "A": "Always produces a new substance",
+        "B": "Removes dissolved impurities more effectively",
+        "C": "Is faster",
+        "D": "Uses more heat"
+      },
+      "correct_answer": "B",
+      "explanation": "Evaporation leaves all non-volatile impurities behind, while crystallization selectively grows pure crystals.",
+      "difficulty": "hard",
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 25,
+      "question": "Explosion of a bomb is an extremely rapid chemical change that produces:",
+      "options": {
+        "A": "Only heat and light",
+        "B": "Only sound",
+        "C": "Heat, light, sound, and huge volumes of gas",
+        "D": "Only smoke"
+      },
+      "correct_answer": "C",
+      "explanation": "The rapid expansion of gases produced during the chemical reaction creates the shockwave of the explosion.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2"
+    }
+  ]
+}

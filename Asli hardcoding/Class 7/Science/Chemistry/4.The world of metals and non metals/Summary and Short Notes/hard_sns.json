@@ -1,0 +1,33 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter": "The World of Metals and Non-metals",
+    "difficulty": "Hard",
+    "source_pdf": "jesc102.pdf",
+    "short_notes": {
+        "key_points": [
+            "The Reactivity Series is an arrangement of metals in decreasing order of their chemical reactivity.",
+            "More reactive metals (K, Na, Ca) react with cold water, while less reactive ones (Mg, Al, Zn, Fe) react only with steam.",
+            "Noble metals like Gold and Platinum are chemically inert and do not react with water, air, or acids, making them ideal for jewelry.",
+            "Corrosion of Copper results in a green coating called 'Basic Copper Carbonate', which is a mixture of $Cu(OH)_2$ and $CuCO_3$.",
+            "Anodizing and Alloying (mixing metals with other elements) are advanced methods to enhance the physical properties and corrosion resistance of materials."
+        ],
+        "examples": [
+            "Reaction with Steam: $2Al + 3H_2O(g) \rightarrow Al_2O_3 + 3H_2$",
+            "Metal Carbonate decomposition: $CaCO_3 \xrightarrow{Heat} CaO + CO_2$",
+            "Alloys: Brass (Copper + Zinc), Bronze (Copper + Tin), Stainless Steel (Iron + Carbon + Chromium + Nickel)",
+            "Non-metal properties: Carbon in the form of Diamond is the hardest natural substance known."
+        ],
+        "formulas": [
+            "Reactivity series displacement: $Zn(s) + CuSO_4(aq) \rightarrow ZnSO_4(aq) + Cu(s)$ (Zinc is more reactive than Copper)",
+            "Formation of Basic Copper Carbonate: $2Cu + H_2O + CO_2 + O_2 \rightarrow Cu(OH)_2 \cdot CuCO_3$",
+            "Hydrogen Gas Test: $2H_2 + O_2 \rightarrow 2H_2O + Energy$ (The 'Pop' sound explosion)"
+        ],
+        "exam_tips": [
+            "Notice the state symbols ($s, l, g, aq$) in equations to show if a metal is solid or a solution.",
+            "Distinguish between 'Rusting' (specific to Iron) and 'Corrosion' (general for all metals).",
+            "Explain why Copper cannot displace Iron from Iron Sulphate ($FeSO_4$)—refer to the Reactivity Series position.",
+            "Understand that while most non-metal oxides are acidic ($SO_2$), some like Carbon Monoxide ($CO$) and Water ($H_2O$) are neutral."
+        ]
+    }
+}

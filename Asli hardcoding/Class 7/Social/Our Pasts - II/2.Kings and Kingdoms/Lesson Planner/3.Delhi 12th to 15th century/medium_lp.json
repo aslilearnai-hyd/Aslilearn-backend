@@ -1,0 +1,188 @@
+{
+    "class": "Class 7",
+    "subject": "History",
+    "chapter_name": "Delhi: 12th to 15th Century",
+    "lesson_level": "Medium",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyze the transformation of Delhi from a regional commercial center to a powerful imperial capital",
+        "Evaluate 'Tawarikh' as a historical source while identifying its social and gender biases",
+        "Examine the challenges faced by Raziyya Sultan in a patriarchal political structure",
+        "Describe the military and administrative expansion from Garrison towns to the 'Hinterland'",
+        "Compare the internal and external frontier policies of the Delhi Sultanate",
+        "Contrast the administrative strategies of Alauddin Khalji and Muhammad Tughluq regarding Mongols",
+        "Understand the 'Iqta' system and the role of Muqtis in medieval governance"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Delhi: From Tomaras to the Sultanate",
+            "topics_covered": [
+                "Delhi under the Tomara and Chauhan Rajputs",
+                "The significance of 'Dehliwal' coins and commercial growth",
+                "Chronology of the five Sultanate dynasties"
+            ],
+            "teaching_strategy": [
+                "Map Analysis: Identifying the 'Seven Cities of Delhi'",
+                "Discussion: 'How did commerce lead to political importance?'",
+                "Visual presentation of the dynastic timeline"
+            ],
+            "student_activities": [
+                "Map marking: Locate Dehli-i-Kuhna, Siri, and Jahanpanah",
+                "Create a chronological table of the five dynasties and their key rulers"
+            ],
+            "assessment": [
+                "Short answer: 'Why was Delhi an important commercial center in the 12th century?'",
+                "Oral quiz on the sequence of dynasties"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "The Authors of Tawarikh",
+            "topics_covered": [
+                "Definition and characteristics of Tawarikh",
+                "Social background of authors and their proximity to the Sultan",
+                "The 'Circle of Justice' and the concept of 'Ideal Social Order'"
+            ],
+            "teaching_strategy": [
+                "Critical Thinking: Analyzing the biases (Gender/Birth right) in medieval writings",
+                "Diagrammatic explanation of the 'Circle of Justice'",
+                "Discussion: 'Why did Tawarikh authors ignore the lives of common people?'"
+            ],
+            "student_activities": [
+                "Interpret the 'Circle of Justice' and explain the link between military strength and peasant prosperity",
+                "Draft a short 'Tarikh' entry from the perspective of a court secretary"
+            ],
+            "assessment": [
+                "Defining 'Tawarikh' and its limitations as a source",
+                "Explaining the 'Ideal Social Order' based on birthright and gender"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Gender and capability: Raziyya Sultan",
+            "topics_covered": [
+                "Raziyya's accession (1236) and Minhaj-i-Siraj’s views",
+                "Capabilities vs. Gender expectations in the 13th century",
+                "Comparisons with Queen Rudramadevi and Queen Didda"
+            ],
+            "teaching_strategy": [
+                "Debate: 'Capabilities vs. Social Conventions' in the context of Raziyya",
+                "Comparative analysis of how different female rulers handled their gender identity",
+                "Reading primary source excerpts on Raziyya’s removal from power"
+            ],
+            "student_activities": [
+                "Write a comparative note on Raziyya Sultan and Rudramadevi of the Kakatiya dynasty",
+                "Discussion: 'Why was capablity not enough for Raziyya to stay in power?'"
+            ],
+            "assessment": [
+                "Short response: 'What was Minhaj-i-Siraj’s opinion about Raziyya?'",
+                "Identifying the differences in how Didda and Raziyya were perceived"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Expansion: Internal and External Frontiers",
+            "topics_covered": [
+                "Consolidation in the Hinterlands and Garrison Towns",
+                "Clearing of forests in the Ganga-Yamuna Doab",
+                "Military expeditions to Southern India under the Khaljis and Tughluqs"
+            ],
+            "teaching_strategy": [
+                "Visualizing a 'Garrison Town' vs. its 'Hinterland'",
+                "Mapping the military routes of Alauddin Khalji to the South",
+                "Discussion on the ecological impact of forest clearing for agriculture"
+            ],
+            "student_activities": [
+                "Differentiate between 'Internal' and 'External' frontiers in a table",
+                "Trace the southern military campaigns on a blank map of India"
+            ],
+            "assessment": [
+                "Defining 'Hinterland' and 'Garrison Town'",
+                "Explaining the purpose of the Doab campaigns"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "The Masjid: Religion and Political Legitimacy",
+            "topics_covered": [
+                "Architecture: Quwwat al-Islam and the Qutb Minar",
+                "The Mosque as a community center (Namaz, Khutba, Qibla)",
+                "Why Sultans claimed to be 'Protectors of Islam'"
+            ],
+            "teaching_strategy": [
+                "Visual analysis: Identifying structural elements (Iwan, Dome, Minaret)",
+                "Explaining the political utility of a congregational mosque",
+                "Discussion: 'How did building mosques help create a sense of community?'"
+            ],
+            "student_activities": [
+                "Label a diagram of a mosque with terms like Sahn, Liwan, and Qibla",
+                "Research the meaning of 'Khutba' during the Friday prayer"
+            ],
+            "assessment": [
+                "Explaining why the direction of Mecca (Qibla) was significant",
+                "Matching: Architectural term vs. Meaning"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Administration: Khaljis and Tughluqs",
+            "topics_covered": [
+                "The 'Iqta' system: Muqtis and their responsibilities",
+                "Bandagan: The role of elite military slaves",
+                "Comparing responses to Mongol invasions (Alauddin vs. Muhammad Tughluq)"
+            ],
+            "teaching_strategy": [
+                "Comparative Chart: Administrative measures of Alauddin vs. Muhammad Tughluq",
+                "Discussion: 'Why were slaves often more trusted than noblemen?'",
+                "Analyzing the failure of 'Token Currency'"
+            ],
+            "student_activities": [
+                "Fill a comparative table on 'Mongol Defense' strategies",
+                "Role-play: A Muqti explaining their duties to the Sultan's accountant"
+            ],
+            "assessment": [
+                "Differentiating between 'Iqta' and 'Kharaj'",
+                "Short note on the 'Bandagan' system"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "The Sultanate in the 15th-16th Centuries",
+            "topics_covered": [
+                "The Sayyid and Lodi dynasties",
+                "The emergence of regional states (Jaunpur, Malwa, Gujarat)",
+                "Sher Shah Sur: Administration and influence on the Mughals"
+            ],
+            "teaching_strategy": [
+                "Discussion on the decentralization of power after the Tughluqs",
+                "Evaluating Sher Shah Sur's administrative reforms",
+                "Review of the chapter through a comprehensive mind map"
+            ],
+            "student_activities": [
+                "Construct a mind map linking the five dynasties, administration, and expansion",
+                "Write two lines on why Sher Shah Sur is significant despite his short reign"
+            ],
+            "assessment": [
+                "Unit Test (25 marks)",
+                "Evaluation of the 'Khalji vs. Tughluq' comparative chart"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "NCERT History Textbook: Our Pasts - II",
+        "Political Maps of the Sultanate era",
+        "Images of Sultanate architecture (Mosques and Minars)",
+        "Diagram of the Iqta system hierarchy",
+        "Comparison Table: Alauddin Khalji vs. Muhammad Tughluq"
+    ],
+    "evaluation_methods": [
+        "Comparative essay on Sultanate rulers",
+        "Map work evaluation",
+        "Objective quiz on administrative terms",
+        "Analysis of primary source excerpts (Minhaj-i-Siraj)",
+        "Unit test performance"
+    ],
+    "teacher_tip": "When comparing Alauddin and Muhammad Tughluq, emphasize that while Alauddin’s measures were successful, Muhammad Tughluq’s measures were often visionary but poorly executed—this helps students understand the difference between planning and implementation."
+}

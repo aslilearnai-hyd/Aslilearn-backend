@@ -1,0 +1,32 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter": "Changes Around Us: Physical and Chemical",
+    "difficulty": "Easy",
+    "source_pdf": "jesc103.pdf",
+    "short_notes": {
+        "key_points": [
+            "A change in which a substance undergoes a change in its physical properties (shape, size, color, state) is a physical change.",
+            "Physical changes are generally reversible, and no new substance is formed.",
+            "A change in which one or more new substances are formed is called a chemical change.",
+            "Chemical changes are also known as chemical reactions and are usually irreversible.",
+            "Rusting, burning, and curdling of milk are common examples of chemical changes."
+        ],
+        "examples": [
+            "Physical Changes: Melting of ice, tearing paper, dissolving sugar in water, stretching a rubber band.",
+            "Chemical Changes: Burning of a candle, rusting of an iron nail, cooking food, photosynthesis.",
+            "Both Physical & Chemical: Burning of a candle (wax melts = physical; wax burns = chemical).",
+            "Rusting: Iron reacting with moisture and oxygen to form a brown flaky substance."
+        ],
+        "formulas": [
+            "Rusting: $Iron (Fe) + Oxygen (O_2) + Water (H_2O) \rightarrow Rust (Fe_2O_3)$ ",
+            "Magnesium Ribbon Burning: $Magnesium (Mg) + Oxygen (O_2) \rightarrow Magnesium \ Oxide (MgO)$"
+        ],
+        "exam_tips": [
+            "If you can get the original substance back easily, it’s likely a physical change.",
+            "Look for signs of chemical change: heat/light production, gas bubbles, or a permanent change in color.",
+            "Remember: Dissolving salt in water is physical because you can recover the salt by evaporation.",
+            "Always include 'moisture' and 'air' as requirements for rusting."
+        ]
+    }
+}

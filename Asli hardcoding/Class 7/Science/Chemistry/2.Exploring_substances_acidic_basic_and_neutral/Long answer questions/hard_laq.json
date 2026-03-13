@@ -1,0 +1,433 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 7: Exploring Substances: Acidic, Basic, and Neutral",
+    "generated_at": "2026-03-06T18:42:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the molecular difference between strong and weak acids. Why are mineral acids generally considered more dangerous than organic acids?",
+            "answer": "Strong acids dissociate completely in water to release a high concentration of hydrogen ions ($H^+$), whereas weak acids dissociate only partially. Mineral acids (like $H_2SO_4$) are prepared from inorganic minerals and are highly corrosive, causing severe chemical burns by dehydrating tissues. Organic acids, found in biological sources, are generally weak and less reactive, making them safe for consumption in many cases.",
+            "answer_outline": [
+                "Dissociation in water",
+                "Concentration of hydrogen ions",
+                "Corrosivity of mineral vs organic acids"
+            ],
+            "key_concepts": [
+                "dissociation",
+                "hydrogen ions",
+                "corrosiveness"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Detailed analysis: Why does a solution of Sodium Chloride not change the color of litmus, but a solution of Sodium Carbonate turns red litmus blue?",
+            "answer": "Sodium Chloride ($NaCl$) is a neutral salt formed from a strong acid ($HCl$) and a strong base ($NaOH$), resulting in a neutral solution ($pH \\approx 7$). Sodium Carbonate ($Na_2CO_3$), however, is a basic salt formed from a strong base ($NaOH$) and a weak acid ($H_2CO_3$). In water, it undergoes hydrolysis to produce excess hydroxide ions ($OH^-$), which gives it basic properties and turns red litmus blue.",
+            "answer_outline": [
+                "Composition of NaCl",
+                "Composition of Na2CO3",
+                "Concept of salt hydrolysis"
+            ],
+            "key_concepts": [
+                "neutral salt",
+                "basic salt",
+                "hydrolysis"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Describe the chemical mechanism behind 'Marble Cancer' caused by acid rain.",
+            "answer": "Marble is primarily composed of Calcium Carbonate ($CaCO_3$). Acid rain contains sulfuric acid ($H_2SO_4$) and nitric acid ($HNO_3$). When acid rain falls on marble, a chemical reaction occurs: $CaCO_3 + H_2SO_4 \\rightarrow CaSO_4 + H_2O + CO_2$. This dissolves the marble, creating a powdery soot and causing the stone to pit and turn yellow, a phenomenon known as Marble Cancer.",
+            "answer_outline": [
+                "Composition of marble",
+                "Acids in acid rain",
+                "Chemical equation and physical effects"
+            ],
+            "key_concepts": [
+                "calcium carbonate",
+                "corrosion",
+                "marble cancer"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 4,
+            "question": "Compare the sensitivity and range of natural indicators versus synthetic indicators in a laboratory setting.",
+            "answer": "Natural indicators like Litmus or China Rose provide a broad 'yes/no' indication of acidity or alkalinity but may have inconsistent color intensities. Synthetic indicators like Phenolphthalein or Methyl Orange are chemically pure and provide sharp, distinct color changes at specific $pH$ ranges. This makes synthetic indicators more reliable for precise titrations and quantitative analysis in scientific experiments.",
+            "answer_outline": [
+                "Consistency of natural indicators",
+                "Precision of synthetic indicators",
+                "Application in titration"
+            ],
+            "key_concepts": [
+                "sensitivity",
+                "titration",
+                "pH range"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 5,
+            "question": "How does the use of chemical fertilizers lead to soil acidification, and what are the long-term ecological consequences?",
+            "answer": "Excessive use of ammonium-based fertilizers results in the release of hydrogen ions during nitrification, increasing soil acidity. Highly acidic soil inhibits the activity of beneficial microbes and makes essential nutrients like phosphorus unavailable to plants. Long-term, this leads to reduced crop yields and can cause toxic metals like aluminum to leach into groundwater.",
+            "answer_outline": [
+                "Fertilizer chemistry",
+                "Microbial impact",
+                "Nutrient availability and leaching"
+            ],
+            "key_concepts": [
+                "acidification",
+                "nitrification",
+                "nutrient lockout"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain the role of Hydrochloric acid in human digestion and the physiological process of its neutralization by the pancreas.",
+            "answer": "The stomach secretes $HCl$ to kill bacteria and provide an acidic medium for the enzyme pepsin to digest proteins. To prevent this acid from damaging the small intestine, the pancreas secretes sodium bicarbonate ($NaHCO_3$), a base. This neutralizes the acidic 'chyme' as it enters the duodenum, ensuring a neutral $pH$ for intestinal enzymes to function.",
+            "answer_outline": [
+                "Function of HCl in stomach",
+                "Pancreatic response",
+                "Neutralization for enzyme activity"
+            ],
+            "key_concepts": [
+                "HCl",
+                "bicarbonate",
+                "physiological neutralization"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Predict the observation when dry HCl gas is passed over dry blue litmus paper. Justify your answer.",
+            "answer": "The dry blue litmus paper will not change color. This is because acids exhibit their acidic properties (like changing litmus color) only in the presence of water, which allows them to dissociate into $H^+$ ions. Without moisture, the $HCl$ molecules remain intact and cannot interact with the indicator dye to cause a color change.",
+            "answer_outline": [
+                "Observation",
+                "Requirement of water for ionization",
+                "Behavior of HCl molecules"
+            ],
+            "key_concepts": [
+                "dissociation",
+                "ionization",
+                "moisture"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Critically examine the statement: 'All alkalis are bases, but not all bases are alkalis.'",
+            "answer": "A base is any substance that can neutralize an acid. An alkali is specifically a base that is soluble in water (e.g., Sodium Hydroxide). Some bases, like Copper Oxide or Ferric Hydroxide, do not dissolve in water; therefore, they are bases but cannot be called alkalis. Thus, alkalis are a specific sub-category of bases.",
+            "answer_outline": [
+                "Definition of base",
+                "Definition of alkali",
+                "Examples and conclusion"
+            ],
+            "key_concepts": [
+                "alkali",
+                "solubility",
+                "classification"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Describe the thermal effect of neutralization. Why does the temperature of the reaction mixture rise?",
+            "answer": "Neutralization is an exothermic reaction, meaning it releases energy in the form of heat. When $H^+$ ions from the acid react with $OH^-$ ions from the base to form $H_2O$ bonds, energy is released. In a laboratory experiment, this energy causes a measurable increase in the temperature of the test tube or beaker containing the reactants.",
+            "answer_outline": [
+                "Exothermic nature",
+                "Bond formation energy",
+                "Practical observation"
+            ],
+            "key_concepts": [
+                "exothermic",
+                "bond energy",
+                "temperature rise"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the 'pH' value of a substance? How does it help in determining the strength of an acid or base compared to a standard indicator?",
+            "answer": "The $pH$ value is a logarithmic scale (0-14) representing the concentration of hydrogen ions. While a standard indicator like Litmus only shows if a substance is acidic or basic, the $pH$ value tells us 'how' strong it is. For example, an acid with $pH$ 1 is much stronger and more corrosive than an acid with $pH$ 5, allowing for more precise scientific classification.",
+            "answer_outline": [
+                "Definition of pH",
+                "Scale values",
+                "Advantage over simple indicators"
+            ],
+            "key_concepts": [
+                "logarithmic scale",
+                "strength",
+                "concentration"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the chemical safety precautions necessary when diluting a concentrated mineral acid.",
+            "answer": "Always add acid to water slowly, while stirring constantly. Never add water to concentrated acid. Adding water to acid generates a massive amount of heat instantly at the point of contact, which can cause the acid to splash out violently or the glass container to shatter due to thermal shock.",
+            "answer_outline": [
+                "Correct procedure",
+                "Incorrect procedure",
+                "Risk of acid splashing"
+            ],
+            "key_concepts": [
+                "dilution",
+                "safety",
+                "thermal shock"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Discuss the chemistry behind using Slaked Lime to treat acidic effluents in industries.",
+            "answer": "Industrial effluents often contain sulfuric or nitric acids. Slaked Lime [Calcium Hydroxide, $Ca(OH)_2$] is a cost-effective base. When added to the effluent, it reacts with the acids to form neutral salts (like Calcium Sulfate) and water. This prevents the acidification of local water bodies and precipitates heavy metals, making the waste safer for disposal.",
+            "answer_outline": [
+                "Effluent composition",
+                "Nature of slaked lime",
+                "Precipitation and neutralization"
+            ],
+            "key_concepts": [
+                "calcium hydroxide",
+                "effluent",
+                "precipitation"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Why is the sting of a wasp treated with vinegar, while an ant sting is treated with baking soda?",
+            "answer": "This is because the chemical nature of the venoms is different. An ant sting contains Formic Acid, so it requires a base (Baking Soda) to neutralize it. In contrast, a wasp sting is alkaline/basic in nature. Therefore, it requires a mild acid like Vinegar (Acetic Acid) to neutralize the effect and provide relief.",
+            "answer_outline": [
+                "Nature of ant venom",
+                "Nature of wasp venom",
+                "Specific neutralizers"
+            ],
+            "key_concepts": [
+                "wasp sting",
+                "alkaline venom",
+                "vinegar"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 14,
+            "question": "How does the concentration of Carbon Dioxide in the atmosphere contribute to the acidity of 'natural' rain?",
+            "answer": "Even without pollution, rain is slightly acidic ($pH \\approx 5.6$). This is because $CO_2$ in the atmosphere reacts with raindrops to form Carbonic Acid ($H_2CO_3$). While this is a weak acid, it is sufficient to slowly dissolve minerals in rocks over geological time, contributing to soil formation and the carbon cycle.",
+            "answer_outline": [
+                "Natural rain pH",
+                "Formation of carbonic acid",
+                "Geological impact"
+            ],
+            "key_concepts": [
+                "carbonic acid",
+                "atmospheric CO2",
+                "natural acidity"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 15,
+            "question": "Illustrate how you would distinguish between three colorless liquids (Acid, Base, and Neutral) using only Turmeric as an indicator.",
+            "answer": "1. Add turmeric to all three. The one that turns red is the Base. 2. Take the red mixture (Base + Turmeric) and add the remaining two liquids to it separately. 3. The liquid that turns the red mixture back to yellow is the Acid (due to neutralization). 4. The liquid that has no effect on the red mixture is the Neutral liquid.",
+            "answer_outline": [
+                "Identifying the base",
+                "Identifying the acid using the modified indicator",
+                "Identifying the neutral liquid"
+            ],
+            "key_concepts": [
+                "logical deduction",
+                "neutralization",
+                "color reversal"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 16,
+            "question": "What is the difference between a salt and a hydrated salt? Give an example.",
+            "answer": "A salt is the general product of an acid-base reaction. A hydrated salt contains a specific number of water molecules chemically bonded within its crystal structure (Water of Crystallization). Example: Anhydrous Copper Sulfate is white, but Hydrated Copper Sulfate ($CuSO_4 \\cdot 5H_2O$) is blue.",
+            "answer_outline": [
+                "Definition of salt",
+                "Water of crystallization",
+                "Visual example"
+            ],
+            "key_concepts": [
+                "hydrated salt",
+                "water of crystallization",
+                "copper sulfate"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain the use of 'Universal Indicator' and how it differs from Litmus paper.",
+            "answer": "A universal indicator is a mixture of several indicators that shows different colors at different $pH$ values across the entire 0-14 scale. Litmus only tells us if a substance is an acid (red) or base (blue). Universal indicator provides a specific color (green, yellow, orange, purple, etc.) to indicate the exact strength of the solution.",
+            "answer_outline": [
+                "Definition of universal indicator",
+                "Comparison with litmus",
+                "Color-strength correlation"
+            ],
+            "key_concepts": [
+                "universal indicator",
+                "pH matching",
+                "precision"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 18,
+            "question": "Why is it advised to brush teeth after meals in the context of acids and bases?",
+            "answer": "Bacteria in the mouth break down food particles (especially sugars) and produce acids as a byproduct. These acids corrode the calcium phosphate (enamel) of the teeth. Toothpaste is basic in nature; brushing neutralizes these acids, preventing tooth decay and plaque formation.",
+            "answer_outline": [
+                "Bacterial action",
+                "Enamel corrosion",
+                "Neutralization by toothpaste"
+            ],
+            "key_concepts": [
+                "enamel",
+                "tooth decay",
+                "basic toothpaste"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.4"
+        },
+        {
+            "question_number": 19,
+            "question": "Analyze the impact of acid rain on aquatic life in lakes and ponds.",
+            "answer": "As lakes become more acidic, the $pH$ level drops. Most fish eggs cannot hatch at low $pH$, and adult fish may die due to mucus buildup on their gills or aluminum toxicity leached from the soil into the water. This disrupts the entire food chain, leading to 'dead' lakes where only certain acid-tolerant algae survive.",
+            "answer_outline": [
+                "pH drop in water",
+                "Impact on reproduction",
+                "Food chain disruption"
+            ],
+            "key_concepts": [
+                "aquatic toxicity",
+                "reproduction failure",
+                "aluminum leaching"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.5"
+        },
+        {
+            "question_number": 20,
+            "question": "Describe the formation of a 'Basic Salt' with an example.",
+            "answer": "A basic salt is formed when a strong base reacts with a weak acid. The resulting salt has a $pH$ greater than 7 because the conjugate base of the weak acid reacts slightly with water to produce $OH^-$ ions. Example: Sodium Acetate ($CH_3COONa$) formed from Acetic Acid and Sodium Hydroxide.",
+            "answer_outline": [
+                "Reactant strengths",
+                "pH characteristics",
+                "Example"
+            ],
+            "key_concepts": [
+                "basic salt",
+                "conjugate base",
+                "sodium acetate"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Why is pure Nitric Acid stored in dark-colored bottles?",
+            "answer": "Nitric acid is unstable and decomposes when exposed to sunlight, forming nitrogen dioxide ($NO_2$), water, and oxygen. The $NO_2$ dissolves back into the acid, giving it a yellowish-brown tint. Dark-colored bottles block the light to prevent this decomposition and maintain the acid's purity.",
+            "answer_outline": [
+                "Photochemical decomposition",
+                "Formation of NO2",
+                "Purpose of dark bottles"
+            ],
+            "key_concepts": [
+                "decomposition",
+                "photochemical",
+                "nitric acid"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain how Olfactory Indicators work. Give an example.",
+            "answer": "Olfactory indicators are substances whose smell changes depending on whether they are in an acidic or basic medium. For example, the characteristic smell of onion or vanilla disappears when mixed with a strong base like Sodium Hydroxide, but remains unchanged in an acidic medium. These are useful for visually impaired students in labs.",
+            "answer_outline": [
+                "Mechanism of smell change",
+                "Acid vs Base behavior",
+                "Examples (Onion/Vanilla)"
+            ],
+            "key_concepts": [
+                "olfactory",
+                "smell",
+                "vanilla/onion"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Discuss the chemistry of using Tartaric acid in baking powder.",
+            "answer": "Baking powder is a mixture of baking soda (base) and a mild edible acid like tartaric acid. When heated or mixed with water, the acid reacts with the soda to release Carbon Dioxide gas. This gas gets trapped in the dough, making the cake or bread rise and become fluffy without leaving a bitter basic taste.",
+            "answer_outline": [
+                "Ingredients of baking powder",
+                "Reaction mechanism",
+                "Effect on texture"
+            ],
+            "key_concepts": [
+                "baking powder",
+                "tartaric acid",
+                "carbon dioxide"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.1"
+        },
+        {
+            "question_number": 24,
+            "question": "How can you test for the presence of carbonate salts in a given sample?",
+            "answer": "Add a few drops of dilute hydrochloric acid to the sample. If carbonates are present, vigorous effervescence occurs due to the release of Carbon Dioxide gas. Pass this gas through lime water; if the lime water turns milky, it confirms the presence of carbonate salts.",
+            "answer_outline": [
+                "Acid test",
+                "Gas observation",
+                "Confirmatory lime water test"
+            ],
+            "key_concepts": [
+                "effervescence",
+                "carbonate",
+                "lime water test"
+            ],
+            "marks": 5,
+            "source_section": "Section 7.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Why does a bee sting feel better when treated with a base, while a wasp sting does not?",
+            "answer": "Bee venom is acidic (containing melittin and formic acid), so a base like baking soda neutralizes the acid and reduces pain. A wasp sting, however, contains an alkaline (basic) liquid. Treating it with another base will not help and might worsen the irritation; it requires an acidic treatment like vinegar for neutralization.",
+            "answer_outline": [
+                "Bee venom acidity",
+                "Wasp venom alkalinity",
+                "Application of neutralization"
+            ],
+            "key_concepts": [
+                "bee sting",
+                "neutralization",
+                "venom chemistry"
+            ],
+            "marks": 4,
+            "source_section": "Section 7.4"
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "class": "Class 7",
+    "subject": "History (Our Pasts II)",
+    "chapter": "The Mughals: 16th to 17th Century",
+    "difficulty": "Hard",
+    "source_pdf": "hehb104.pdf",
+    "short_notes": {
+        "key_points": [
+            "The Mughal state was a 'Bureaucratic-Military' complex; the Mansabdari system integrated the military and civil administration into a single hierarchy defined by 'Zat' and 'Sawar'.",
+            "The 'Jagirdari Crisis' intensified during Aurangzeb's reign as the number of Mansabdars grew rapidly, creating a 'Be-jagiri' (landlessness) state where there was not enough land to pay all officers.",
+            "Akbar's 'Sulh-i-kul' was not just a religious policy but a sophisticated political tool to unify a diverse nobility (Iranis, Turanis, Rajputs, and Indian Muslims) under the sovereign's absolute authority.",
+            "The 'Ain-i-Akbari' (Volume III of Akbarnama) serves as an exhaustive statistical record, detailing everything from crop yields and prices to the wages of workers and the revenue of individual provinces (Subas).",
+            "The 17th-century transition saw the emergence of powerful regional 'successor states' as Mughal governors (Subadars) consolidated local power while maintaining nominal loyalty to a weakened central throne."
+        ],
+        "examples": [
+            "Zat Inflation: In Akbar's time, a 5,000 Zat noble was top-tier, but by Aurangzeb's time, so many held this rank that its prestige and the revenue to support it collapsed.",
+            "The Ibadat Khana: Originally for Muslims, it evolved into a platform for inter-faith dialogue between Brahmanas, Jesuit priests, Zoroastrians, and Jains, leading to the formulation of 'Sulh-i-kul'.",
+            "Zabt System Limitations: 'Zabt' was highly effective in provinces like Delhi, Agra, and Lahore, but it could not be implemented in provinces like Bengal or Gujarat due to local topographical and political challenges.",
+            "Shah Jahan’s Architecture: Represented the 'Golden Age' of Mughal aesthetics where the Taj Mahal and the Red Fort served as symbols of imperial stability and the 'Shadow of God' on Earth."
+        ],
+        "formulas": [
+            "Imperial Equilibrium = $\\text{Reliable Revenue (Zabt)} + \\text{Loyal Nobility (Mansabdari)} - \\text{Succession Wars}$",
+            "Jagirdari Crisis = $\\text{Rising Number of Mansabdars} > \\text{Available Surplus Land (Paibaqi)}$"
+        ],
+        "exam_tips": [
+            "Critically analyze the difference between 'Primogeniture' (European model) and 'Coparcenary Inheritance' (Mughal/Timurid model) and how the latter led to frequent civil wars.",
+            "Understand that 'Zamindars' were not just tax collectors but often local chieftains with their own armed contingents (Sawar), making them a potential threat to central Mughal authority.",
+            "Notice that the 'Ain-i-Akbari' provides evidence that even in the 16th century, the state was attempting to use 'Big Data' to govern scientifically.",
+            "Explain how the Deccan Wars of Aurangzeb drained the imperial treasury and broke the back of the Mughal military-administrative machine."
+        ]
+    }
+}

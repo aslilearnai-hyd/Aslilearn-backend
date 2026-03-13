@@ -1,0 +1,139 @@
+{
+  "class": "Class 10",
+  "subject": "Mathematics",
+  "chapter": "Power Play",
+  "difficulty": "Easy",
+  "source_pdf": "ch-2_POWER_PLAY.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Power Expansion Practice",
+      "objective": "Understand powers through repeated multiplication",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Write powers like 2^3, 3^2, 4^3",
+        "Expand them into repeated multiplication",
+        "Find the final value"
+      ],
+      "learning_outcome": "Understands meaning of powers",
+      "evaluation": "Correct expansion (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Square Number Chart",
+      "objective": "Identify square numbers",
+      "materials": ["Chart paper", "Colours"],
+      "steps": [
+        "Write numbers from 1 to 20",
+        "Find their squares",
+        "Highlight all square numbers"
+      ],
+      "learning_outcome": "Recognises perfect squares",
+      "evaluation": "Accuracy (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Cube Number List",
+      "objective": "Learn cube numbers",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Write numbers from 1 to 10",
+        "Find cubes of each number",
+        "List them clearly"
+      ],
+      "learning_outcome": "Understands cube numbers",
+      "evaluation": "Correct calculations (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Power Comparison",
+      "objective": "Compare values of numbers written in exponential form",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write pairs like 2^4 and 3^3",
+        "Find their values",
+        "Identify the greater number"
+      ],
+      "learning_outcome": "Improves understanding of powers",
+      "evaluation": "Correct comparison (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Exponent Matching",
+      "objective": "Match powers with their values",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write powers on one side",
+        "Write possible answers on the other side",
+        "Match each power with the correct value"
+      ],
+      "learning_outcome": "Strengthens power calculation",
+      "evaluation": "Correct matching (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Power of 10 Exploration",
+      "objective": "Observe patterns in powers of 10",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write powers from 10^1 to 10^6",
+        "Write the values",
+        "Observe the pattern in zeros"
+      ],
+      "learning_outcome": "Understands pattern in powers of 10",
+      "evaluation": "Correct observation (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Exponent Rule Practice",
+      "objective": "Apply rules of exponents",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write expressions like 2^3 × 2^2",
+        "Apply exponent rules",
+        "Simplify the result"
+      ],
+      "learning_outcome": "Understands multiplication rule of powers",
+      "evaluation": "Correct simplification (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Zero Power Investigation",
+      "objective": "Understand the rule of zero exponent",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write expressions like 5^0, 9^0, 12^0",
+        "Find their values",
+        "Write the common rule"
+      ],
+      "learning_outcome": "Learns zero exponent rule",
+      "evaluation": "Correct conclusion (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Exponent Puzzle",
+      "objective": "Solve simple exponent puzzles",
+      "materials": ["Notebook"],
+      "steps": [
+        "Create equations like 2^x = 16",
+        "Find the value of x",
+        "Verify your answer"
+      ],
+      "learning_outcome": "Applies exponent knowledge",
+      "evaluation": "Correct solution (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Real-Life Powers",
+      "objective": "Connect powers to real-life examples",
+      "materials": ["Notebook"],
+      "steps": [
+        "Find examples where powers are used (science or computing)",
+        "Write two examples",
+        "Explain how powers help represent large numbers"
+      ],
+      "learning_outcome": "Connects exponent concepts with real life",
+      "evaluation": "Clarity of explanation (10 marks)"
+    }
+  ]
+}

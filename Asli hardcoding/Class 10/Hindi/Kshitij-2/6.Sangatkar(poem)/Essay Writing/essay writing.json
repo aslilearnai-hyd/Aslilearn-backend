@@ -1,0 +1,737 @@
+{
+  "subject": "Hindi",
+  "book": "Kshitij-2",
+  "content": "Essay Writing",
+  "class": "10",
+  "total_questions": 100,
+  "questions": [
+    {
+      "id": 1,
+      "chapter": "पद (सूरदास)",
+      "source": "Kshitij-2 – Chapter 1",
+      "title": "भक्ति और प्रेम",
+      "question": "‘पद’ (सूरदास) के आधार पर भक्ति और प्रेम के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 2,
+      "chapter": "पद (सूरदास)",
+      "source": "Kshitij-2 – Chapter 1",
+      "title": "गोपियों का प्रेम",
+      "question": "गोपियों के कृष्ण के प्रति प्रेम का वर्णन करते हुए निबंध लिखिए।"
+    },
+    {
+      "id": 3,
+      "chapter": "पद (सूरदास)",
+      "source": "Kshitij-2 – Chapter 1",
+      "title": "भक्ति मार्ग",
+      "question": "भक्ति मार्ग की विशेषताओं पर निबंध लिखिए।"
+    },
+    {
+      "id": 4,
+      "chapter": "पद (सूरदास)",
+      "source": "Kshitij-2 – Chapter 1",
+      "title": "वात्सल्य और प्रेम",
+      "question": "सूरदास की कविताओं में प्रेम और भक्ति का महत्व विषय पर निबंध लिखिए।"
+    },
+
+    {
+      "id": 5,
+      "chapter": "राम-लक्ष्मण-परशुराम संवाद",
+      "source": "Kshitij-2 – Chapter 2",
+      "title": "विनम्रता और वीरता",
+      "question": "राम और लक्ष्मण के चरित्र में विनम्रता और वीरता पर निबंध लिखिए।"
+    },
+    {
+      "id": 6,
+      "chapter": "राम-लक्ष्मण-परशुराम संवाद",
+      "source": "Kshitij-2 – Chapter 2",
+      "title": "अहंकार और विनम्रता",
+      "question": "अहंकार और विनम्रता के संघर्ष पर निबंध लिखिए।"
+    },
+    {
+      "id": 7,
+      "chapter": "राम-लक्ष्मण-परशुराम संवाद",
+      "source": "Kshitij-2 – Chapter 2",
+      "title": "लक्ष्मण का स्वभाव",
+      "question": "लक्ष्मण के निर्भीक और साहसी स्वभाव पर निबंध लिखिए।"
+    },
+    {
+      "id": 8,
+      "chapter": "राम-लक्ष्मण-परशुराम संवाद",
+      "source": "Kshitij-2 – Chapter 2",
+      "title": "धैर्य और संयम",
+      "question": "राम के धैर्य और संयम पर आधारित निबंध लिखिए।"
+    },
+
+    {
+      "id": 9,
+      "chapter": "आत्मकथ्य",
+      "source": "Kshitij-2 – Chapter 3",
+      "title": "जीवन संघर्ष",
+      "question": "संघर्षमय जीवन के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 10,
+      "chapter": "आत्मकथ्य",
+      "source": "Kshitij-2 – Chapter 3",
+      "title": "आत्मसम्मान",
+      "question": "आत्मसम्मान का जीवन में महत्व विषय पर निबंध लिखिए।"
+    },
+    {
+      "id": 11,
+      "chapter": "आत्मकथ्य",
+      "source": "Kshitij-2 – Chapter 3",
+      "title": "कवि का संघर्ष",
+      "question": "कवि के संघर्षपूर्ण जीवन का वर्णन करते हुए निबंध लिखिए।"
+    },
+    {
+      "id": 12,
+      "chapter": "आत्मकथ्य",
+      "source": "Kshitij-2 – Chapter 3",
+      "title": "संकट और धैर्य",
+      "question": "कठिन परिस्थितियों में धैर्य रखने का महत्व विषय पर निबंध लिखिए।"
+    },
+
+    {
+      "id": 13,
+      "chapter": "उत्साह",
+      "source": "Kshitij-2 – Chapter 4",
+      "title": "उत्साह का महत्व",
+      "question": "जीवन में उत्साह और सकारात्मक सोच के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 14,
+      "chapter": "उत्साह",
+      "source": "Kshitij-2 – Chapter 4",
+      "title": "प्रकृति से प्रेरणा",
+      "question": "प्रकृति से मिलने वाली प्रेरणा पर निबंध लिखिए।"
+    },
+
+    {
+      "id": 15,
+      "chapter": "अट नहीं रही है",
+      "source": "Kshitij-2 – Chapter 4",
+      "title": "वसंत ऋतु का सौंदर्य",
+      "question": "वसंत ऋतु की सुंदरता का वर्णन करते हुए निबंध लिखिए।"
+    },
+    {
+      "id": 16,
+      "chapter": "अट नहीं रही है",
+      "source": "Kshitij-2 – Chapter 4",
+      "title": "प्रकृति का आनंद",
+      "question": "प्रकृति के सौंदर्य और उसके महत्व पर निबंध लिखिए।"
+    },
+
+    {
+      "id": 17,
+      "chapter": "यह दंतुरित मुस्कान",
+      "source": "Kshitij-2 – Chapter 5",
+      "title": "बचपन की मासूमियत",
+      "question": "बचपन की मासूमियत और उसकी सुंदरता पर निबंध लिखिए।"
+    },
+    {
+      "id": 18,
+      "chapter": "यह दंतुरित मुस्कान",
+      "source": "Kshitij-2 – Chapter 5",
+      "title": "बाल मनोविज्ञान",
+      "question": "बच्चों की मुस्कान और उनके सरल स्वभाव पर निबंध लिखिए।"
+    },
+
+    {
+      "id": 19,
+      "chapter": "फसल",
+      "source": "Kshitij-2 – Chapter 5",
+      "title": "किसान का जीवन",
+      "question": "किसान के जीवन और उसके परिश्रम पर निबंध लिखिए।"
+    },
+    {
+      "id": 20,
+      "chapter": "फसल",
+      "source": "Kshitij-2 – Chapter 5",
+      "title": "कृषि का महत्व",
+      "question": "कृषि और किसान के महत्व पर निबंध लिखिए।"
+    },
+
+    {
+      "id": 21,
+      "chapter": "संगतकार",
+      "source": "Kshitij-2 – Chapter 6",
+      "title": "सहयोग का महत्व",
+      "question": "सहयोग और टीमवर्क के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 22,
+      "chapter": "संगतकार",
+      "source": "Kshitij-2 – Chapter 6",
+      "title": "अनदेखे नायक",
+      "question": "सफलता के पीछे छिपे अनदेखे नायकों पर निबंध लिखिए।"
+    },
+
+    {
+      "id": 23,
+      "chapter": "नेताजी का चश्मा",
+      "source": "Kshitij-2 – Chapter 7",
+      "title": "देशभक्ति",
+      "question": "देशभक्ति और राष्ट्रीय मूल्यों पर निबंध लिखिए।"
+    },
+    {
+      "id": 24,
+      "chapter": "नेताजी का चश्मा",
+      "source": "Kshitij-2 – Chapter 7",
+      "title": "स्वतंत्रता सेनानी",
+      "question": "स्वतंत्रता सेनानियों के योगदान पर निबंध लिखिए।"
+    },
+
+    {
+      "id": 25,
+      "chapter": "बालगोबिन भगत",
+      "source": "Kshitij-2 – Chapter 8",
+      "title": "सादगीपूर्ण जीवन",
+      "question": "सादगी और सच्ची भक्ति के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 26,
+      "chapter": "बालगोबिन भगत",
+      "source": "Kshitij-2 – Chapter 8",
+      "title": "संतों का जीवन",
+      "question": "संतों के जीवन और उनके आदर्शों पर निबंध लिखिए।"
+    },
+
+    {
+      "id": 27,
+      "chapter": "लखनवी अंदाज",
+      "source": "Kshitij-2 – Chapter 9",
+      "title": "शिष्टाचार",
+      "question": "शिष्टाचार और विनम्रता के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 28,
+      "chapter": "लखनवी अंदाज",
+      "source": "Kshitij-2 – Chapter 9",
+      "title": "सभ्यता और संस्कृति",
+      "question": "भारतीय सभ्यता और संस्कृति के महत्व पर निबंध लिखिए।"
+    },
+
+    {
+      "id": 29,
+      "chapter": "एक कहानी यह भी",
+      "source": "Kshitij-2 – Chapter 10",
+      "title": "आत्मनिर्भरता",
+      "question": "आत्मनिर्भरता के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 30,
+      "chapter": "एक कहानी यह भी",
+      "source": "Kshitij-2 – Chapter 10",
+      "title": "संघर्ष और सफलता",
+      "question": "संघर्ष और सफलता के संबंध पर निबंध लिखिए।"
+    },
+
+    {
+      "id": 31,
+      "chapter": "नौबतखाने में इबादत",
+      "source": "Kshitij-2 – Chapter 11",
+      "title": "संगीत की शक्ति",
+      "question": "संगीत के महत्व और उसके प्रभाव पर निबंध लिखिए।"
+    },
+    {
+      "id": 32,
+      "chapter": "नौबतखाने में इबादत",
+      "source": "Kshitij-2 – Chapter 11",
+      "title": "भारतीय संगीत",
+      "question": "भारतीय शास्त्रीय संगीत की विशेषताओं पर निबंध लिखिए।"
+    },
+
+    {
+      "id": 33,
+      "chapter": "संस्कृति",
+      "source": "Kshitij-2 – Chapter 12",
+      "title": "भारतीय संस्कृति",
+      "question": "भारतीय संस्कृति के महत्व पर निबंध लिखिए।"
+    },
+    {
+      "id": 34,
+      "chapter": "संस्कृति",
+      "source": "Kshitij-2 – Chapter 12",
+      "title": "संस्कृति और आधुनिकता",
+      "question": "आधुनिकता और संस्कृति के संतुलन पर निबंध लिखिए।"
+    },
+
+    {
+      "id": 35,
+      "chapter": "General Reflection",
+      "source": "All Chapters – Kshitij-2",
+      "title": "शिक्षा का महत्व",
+      "question": "शिक्षा का जीवन में महत्व विषय पर निबंध लिखिए।"
+    },
+    {
+      "id": 36,
+      "chapter": "General Reflection",
+      "source": "All Chapters – Kshitij-2",
+      "title": "नैतिक मूल्य",
+      "question": "नैतिक मूल्यों का महत्व विषय पर निबंध लिखिए।"
+    },
+    {
+      "id": 37,
+      "chapter": "General Reflection",
+      "source": "All Chapters – Kshitij-2",
+      "title": "प्रकृति का महत्व",
+      "question": "प्रकृति और पर्यावरण संरक्षण पर निबंध लिखिए।"
+    },
+    {
+      "id": 38,
+      "chapter": "General Reflection",
+      "source": "All Chapters – Kshitij-2",
+      "title": "मानवता",
+      "question": "मानवता का समाज में महत्व विषय पर निबंध लिखिए।"
+    },
+    [
+      {
+        "id": 39,
+        "chapter": "General Reflection",
+        "source": "All Chapters – Kshitij-2",
+        "title": "ईमानदारी",
+        "question": "ईमानदारी का जीवन में क्या महत्व है? निबंध लिखिए।"
+      },
+      {
+        "id": 40,
+        "chapter": "General Reflection",
+        "source": "All Chapters – Kshitij-2",
+        "title": "सत्य का महत्व",
+        "question": "सत्य के महत्व पर निबंध लिखिए।"
+      },
+
+      {
+        "id": 41,
+        "chapter": "Value Based",
+        "source": "All Chapters – Kshitij-2",
+        "title": "दया और करुणा",
+        "question": "दया और करुणा के महत्व पर निबंध लिखिए।"
+      },
+      {
+        "id": 42,
+        "chapter": "Value Based",
+        "source": "All Chapters – Kshitij-2",
+        "title": "सहयोग",
+        "question": "सहयोग की भावना का समाज में महत्व विषय पर निबंध लिखिए।"
+      },
+      {
+        "id": 43,
+        "chapter": "Value Based",
+        "source": "All Chapters – Kshitij-2",
+        "title": "परिश्रम",
+        "question": "परिश्रम सफलता की कुंजी है – इस विषय पर निबंध लिखिए।"
+      },
+      {
+        "id": 44,
+        "chapter": "Value Based",
+        "source": "All Chapters – Kshitij-2",
+        "title": "समय का महत्व",
+        "question": "समय का महत्व विषय पर निबंध लिखिए।"
+      },
+      {
+        "id": 45,
+        "chapter": "Value Based",
+        "source": "All Chapters – Kshitij-2",
+        "title": "अनुशासन",
+        "question": "अनुशासन का जीवन में महत्व विषय पर निबंध लिखिए।"
+      },
+
+      {
+        "id": 46,
+        "chapter": "Student Perspective",
+        "source": "All Chapters – Kshitij-2",
+        "title": "छात्र जीवन",
+        "question": "छात्र जीवन का महत्व विषय पर निबंध लिखिए।"
+      },
+      {
+        "id": 47,
+        "chapter": "Student Perspective",
+        "source": "All Chapters – Kshitij-2",
+        "title": "अच्छा छात्र",
+        "question": "एक अच्छे छात्र के गुणों पर निबंध लिखिए।"
+      },
+      {
+        "id": 48,
+        "chapter": "Student Perspective",
+        "source": "All Chapters – Kshitij-2",
+        "title": "विद्यालय का महत्व",
+        "question": "विद्यालय का जीवन में महत्व विषय पर निबंध लिखिए।"
+      },
+      {
+        "id": 49,
+        "chapter": "Student Perspective",
+        "source": "All Chapters – Kshitij-2",
+        "title": "शिक्षक का महत्व",
+        "question": "शिक्षक का जीवन में महत्व विषय पर निबंध लिखिए।"
+      },
+      {
+        "id": 50,
+        "chapter": "Student Perspective",
+        "source": "All Chapters – Kshitij-2",
+        "title": "पढ़ाई और सफलता",
+        "question": "पढ़ाई और सफलता के संबंध पर निबंध लिखिए।"
+      },
+
+      {
+        "id": 51,
+        "chapter": "Creative",
+        "source": "All Chapters – Kshitij-2",
+        "title": "मेरा प्रिय पाठ",
+        "question": "क्षितिज-2 पुस्तक का आपका प्रिय पाठ कौन सा है और क्यों? निबंध लिखिए।"
+      },
+      {
+        "id": 52,
+        "chapter": "Creative",
+        "source": "All Chapters – Kshitij-2",
+        "title": "मेरा प्रिय कवि",
+        "question": "अपने प्रिय कवि पर निबंध लिखिए।"
+      },
+      {
+        "id": 53,
+        "chapter": "Creative",
+        "source": "All Chapters – Kshitij-2",
+        "title": "मेरा प्रिय स्थान",
+        "question": "अपने प्रिय स्थान का वर्णन करते हुए निबंध लिखिए।"
+      },
+      {
+        "id": 54,
+        "chapter": "Creative",
+        "source": "All Chapters – Kshitij-2",
+        "title": "प्रकृति की सुंदरता",
+        "question": "प्रकृति की सुंदरता का वर्णन करते हुए निबंध लिखिए।"
+      },
+      {
+        "id": 55,
+        "chapter": "Creative",
+        "source": "All Chapters – Kshitij-2",
+        "title": "मेरा सपना",
+        "question": "मेरे जीवन का सपना विषय पर निबंध लिखिए।"
+      },
+
+      {
+        "id": 56,
+        "chapter": "Life Skills",
+        "source": "All Chapters – Kshitij-2",
+        "title": "निर्णय क्षमता",
+        "question": "सही निर्णय लेने की क्षमता पर निबंध लिखिए।"
+      },
+      {
+        "id": 57,
+        "chapter": "Life Skills",
+        "source": "All Chapters – Kshitij-2",
+        "title": "गलतियों से सीखना",
+        "question": "गलतियों से सीखने का महत्व विषय पर निबंध लिखिए।"
+      },
+      {
+        "id": 58,
+        "chapter": "Life Skills",
+        "source": "All Chapters – Kshitij-2",
+        "title": "आत्मविश्वास",
+        "question": "आत्मविश्वास का महत्व विषय पर निबंध लिखिए।"
+      },
+      {
+        "id": 59,
+        "chapter": "Life Skills",
+        "source": "All Chapters – Kshitij-2",
+        "title": "धैर्य",
+        "question": "धैर्य का महत्व विषय पर निबंध लिखिए।"
+      },
+      {
+        "id": 60,
+        "chapter": "Life Skills",
+        "source": "All Chapters – Kshitij-2",
+        "title": "सकारात्मक सोच",
+        "question": "सकारात्मक सोच का जीवन में महत्व विषय पर निबंध लिखिए।"
+      },
+
+      {
+        "id": 61,
+        "chapter": "Comparative",
+        "source": "Multiple Chapters – Kshitij-2",
+        "title": "प्रकृति और मानव",
+        "question": "प्रकृति और मानव के संबंध की तुलना करते हुए निबंध लिखिए।"
+      },
+      {
+        "id": 62,
+        "chapter": "Comparative",
+        "source": "Multiple Chapters – Kshitij-2",
+        "title": "मानवता और स्वार्थ",
+        "question": "मानवता और स्वार्थ की तुलना करते हुए निबंध लिखिए।"
+      },
+      {
+        "id": 63,
+        "chapter": "Comparative",
+        "source": "Multiple Chapters – Kshitij-2",
+        "title": "शिक्षा और अज्ञान",
+        "question": "शिक्षा और अज्ञान की तुलना करते हुए निबंध लिखिए।"
+      },
+      {
+        "id": 64,
+        "chapter": "Comparative",
+        "source": "Multiple Chapters – Kshitij-2",
+        "title": "सत्य और असत्य",
+        "question": "सत्य और असत्य की तुलना करते हुए निबंध लिखिए।"
+      },
+      {
+        "id": 65,
+        "chapter": "Comparative",
+        "source": "Multiple Chapters – Kshitij-2",
+        "title": "मेहनत और आलस्य",
+        "question": "मेहनत और आलस्य की तुलना करते हुए निबंध लिखिए।"
+      },
+
+      {
+        "id": 66,
+        "chapter": "Advanced Reflection",
+        "source": "All Chapters – Kshitij-2",
+        "title": "मानव स्वभाव",
+        "question": "मानव स्वभाव के विभिन्न पहलुओं पर निबंध लिखिए।"
+      },
+      {
+        "id": 67,
+        "chapter": "Advanced Reflection",
+        "source": "All Chapters – Kshitij-2",
+        "title": "नैतिक जिम्मेदारी",
+        "question": "नैतिक जिम्मेदारी का महत्व विषय पर निबंध लिखिए।"
+      },
+      {
+        "id": 68,
+        "chapter": "Advanced Reflection",
+        "source": "All Chapters – Kshitij-2",
+        "title": "सामाजिक मूल्य",
+        "question": "सामाजिक मूल्यों का समाज में महत्व विषय पर निबंध लिखिए।"
+      },
+      {
+        "id": 69,
+        "chapter": "Advanced Reflection",
+        "source": "All Chapters – Kshitij-2",
+        "title": "समाज और व्यक्ति",
+        "question": "समाज और व्यक्ति के संबंध पर निबंध लिखिए।"
+      },
+      {
+        "id": 70,
+        "chapter": "Advanced Reflection",
+        "source": "All Chapters – Kshitij-2",
+        "title": "नैतिक निर्णय",
+        "question": "नैतिक निर्णय लेने की क्षमता पर निबंध लिखिए।"
+      },
+
+      {
+        "id": 71,
+        "chapter": "Final Reflection",
+        "source": "All Chapters – Kshitij-2",
+        "title": "साहित्य से सीख",
+        "question": "साहित्य से मिलने वाली जीवन की सीख पर निबंध लिखिए।"
+      },
+      {
+        "id": 72,
+        "chapter": "Final Reflection",
+        "source": "All Chapters – Kshitij-2",
+        "title": "युवाओं के मूल्य",
+        "question": "युवाओं के लिए नैतिक मूल्यों का महत्व विषय पर निबंध लिखिए।"
+      },
+      {
+        "id": 73,
+        "chapter": "Final Reflection",
+        "source": "All Chapters – Kshitij-2",
+        "title": "नैतिक मार्गदर्शन",
+        "question": "जीवन में नैतिक मार्गदर्शन का महत्व विषय पर निबंध लिखिए।"
+      },
+      {
+        "id": 74,
+        "chapter": "Final Reflection",
+        "source": "All Chapters – Kshitij-2",
+        "title": "दैनिक जीवन में नैतिकता",
+        "question": "दैनिक जीवन में नैतिकता के महत्व पर निबंध लिखिए।"
+      },
+      {
+        "id": 75,
+        "chapter": "Final Reflection",
+        "source": "All Chapters – Kshitij-2",
+        "title": "मूल्य बनाम धन",
+        "question": "मूल्य धन से अधिक महत्वपूर्ण हैं – इस विषय पर निबंध लिखिए।"
+      },
+
+      {
+        "id": 76,
+        "chapter": "Conclusion",
+        "source": "All Chapters – Kshitij-2",
+        "title": "जीवन की सीख",
+        "question": "क्षितिज-2 पुस्तक से मिलने वाली जीवन की सीख पर निबंध लिखिए।"
+      },
+      {
+        "id": 77,
+        "chapter": "Conclusion",
+        "source": "All Chapters – Kshitij-2",
+        "title": "व्यक्तिगत सुधार",
+        "question": "व्यक्तिगत सुधार के महत्व पर निबंध लिखिए।"
+      },
+      {
+        "id": 78,
+        "chapter": "Conclusion",
+        "source": "All Chapters – Kshitij-2",
+        "title": "जीवन में मूल्य",
+        "question": "जीवन में मूल्यों को अपनाने के महत्व पर निबंध लिखिए।"
+      },
+      {
+        "id": 79,
+        "chapter": "Conclusion",
+        "source": "All Chapters – Kshitij-2",
+        "title": "अच्छा इंसान",
+        "question": "एक अच्छा इंसान बनने के लिए क्या आवश्यक है? निबंध लिखिए।"
+      },
+      {
+        "id": 80,
+        "chapter": "Conclusion",
+        "source": "All Chapters – Kshitij-2",
+        "title": "मुख्य संदेश",
+        "question": "क्षितिज-2 पुस्तक के मुख्य संदेश पर निबंध लिखिए।"
+      },
+
+      {
+        "id": 81,
+        "chapter": "Extended Practice",
+        "source": "All Chapters – Kshitij-2",
+        "title": "चरित्र निर्माण",
+        "question": "चरित्र निर्माण में शिक्षा की भूमिका पर निबंध लिखिए।"
+      },
+      {
+        "id": 82,
+        "chapter": "Extended Practice",
+        "source": "All Chapters – Kshitij-2",
+        "title": "ज्ञान की शक्ति",
+        "question": "ज्ञान की शक्ति विषय पर निबंध लिखिए।"
+      },
+      {
+        "id": 83,
+        "chapter": "Extended Practice",
+        "source": "All Chapters – Kshitij-2",
+        "title": "मानव मूल्य",
+        "question": "मानव मूल्यों का महत्व विषय पर निबंध लिखिए।"
+      },
+      {
+        "id": 84,
+        "chapter": "Extended Practice",
+        "source": "All Chapters – Kshitij-2",
+        "title": "सामाजिक जिम्मेदारी",
+        "question": "समाज के प्रति व्यक्तिगत जिम्मेदारी पर निबंध लिखिए।"
+      },
+      {
+        "id": 85,
+        "chapter": "Extended Practice",
+        "source": "All Chapters – Kshitij-2",
+        "title": "नैतिक जीवन",
+        "question": "नैतिक जीवन जीने के महत्व पर निबंध लिखिए।"
+      },
+
+      {
+        "id": 86,
+        "chapter": "Advanced Reflection",
+        "source": "All Chapters – Kshitij-2",
+        "title": "मानव कमजोरियाँ",
+        "question": "मानव कमजोरियों का विश्लेषण करते हुए निबंध लिखिए।"
+      },
+      {
+        "id": 87,
+        "chapter": "Advanced Reflection",
+        "source": "All Chapters – Kshitij-2",
+        "title": "मन की शक्ति",
+        "question": "मानव मन की शक्ति पर निबंध लिखिए।"
+      },
+      {
+        "id": 88,
+        "chapter": "Advanced Reflection",
+        "source": "All Chapters – Kshitij-2",
+        "title": "सच्ची बुद्धिमत्ता",
+        "question": "सच्ची बुद्धिमत्ता किसे कहते हैं? इस विषय पर निबंध लिखिए।"
+      },
+      {
+        "id": 89,
+        "chapter": "Advanced Reflection",
+        "source": "All Chapters – Kshitij-2",
+        "title": "आत्म सुधार",
+        "question": "आत्म सुधार के महत्व पर निबंध लिखिए।"
+      },
+      {
+        "id": 90,
+        "chapter": "Advanced Reflection",
+        "source": "All Chapters – Kshitij-2",
+        "title": "जीवन के निर्णय",
+        "question": "जीवन में सही निर्णय लेने के महत्व पर निबंध लिखिए।"
+      },
+
+      {
+        "id": 91,
+        "chapter": "Final Practice",
+        "source": "All Chapters – Kshitij-2",
+        "title": "साहित्य से सीखना",
+        "question": "साहित्य से सीखने के महत्व पर निबंध लिखिए।"
+      },
+      {
+        "id": 92,
+        "chapter": "Final Practice",
+        "source": "All Chapters – Kshitij-2",
+        "title": "युवाओं के लिए शिक्षा",
+        "question": "युवाओं के लिए शिक्षा का महत्व विषय पर निबंध लिखिए।"
+      },
+      {
+        "id": 93,
+        "chapter": "Final Practice",
+        "source": "All Chapters – Kshitij-2",
+        "title": "कहानियों से नैतिक विकास",
+        "question": "कहानियों से नैतिक विकास पर निबंध लिखिए।"
+      },
+      {
+        "id": 94,
+        "chapter": "Final Practice",
+        "source": "All Chapters – Kshitij-2",
+        "title": "चरित्र निर्माण",
+        "question": "चरित्र निर्माण का महत्व विषय पर निबंध लिखिए।"
+      },
+      {
+        "id": 95,
+        "chapter": "Final Practice",
+        "source": "All Chapters – Kshitij-2",
+        "title": "आधुनिक जीवन में मूल्य",
+        "question": "आधुनिक जीवन में मूल्यों का महत्व विषय पर निबंध लिखिए।"
+      },
+
+      {
+        "id": 96,
+        "chapter": "Conclusion",
+        "source": "All Chapters – Kshitij-2",
+        "title": "बदला हुआ दृष्टिकोण",
+        "question": "साहित्य पढ़ने से आपका दृष्टिकोण कैसे बदल सकता है? निबंध लिखिए।"
+      },
+      {
+        "id": 97,
+        "chapter": "Conclusion",
+        "source": "All Chapters – Kshitij-2",
+        "title": "व्यक्तिगत विकास",
+        "question": "साहित्य से प्रेरित व्यक्तिगत विकास पर निबंध लिखिए।"
+      },
+      {
+        "id": 98,
+        "chapter": "Conclusion",
+        "source": "All Chapters – Kshitij-2",
+        "title": "सीखे गए मूल्य",
+        "question": "पुस्तक से सीखे गए मूल्यों को जीवन में कैसे अपनाएँ? निबंध लिखिए।"
+      },
+      {
+        "id": 99,
+        "chapter": "Conclusion",
+        "source": "All Chapters – Kshitij-2",
+        "title": "बेहतर इंसान बनना",
+        "question": "एक बेहतर इंसान बनने के लिए आवश्यक गुणों पर निबंध लिखिए।"
+      },
+      {
+        "id": 100,
+        "chapter": "Conclusion",
+        "source": "All Chapters – Kshitij-2",
+        "title": "मुख्य संदेश",
+        "question": "क्षितिज-2 पुस्तक के मुख्य संदेशों का सार प्रस्तुत करते हुए निबंध लिखिए।"
+      }
+    ]
+  ]
+}

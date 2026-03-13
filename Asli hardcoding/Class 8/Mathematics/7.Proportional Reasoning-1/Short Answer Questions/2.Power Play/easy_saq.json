@@ -1,0 +1,208 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 2: Power Play",
+  "generated_at": "2026-03-05T00:55:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is meant by an exponent?",
+      "answer": "An exponent shows how many times a number is multiplied by itself.",
+      "key_concepts": ["exponents"],
+      "marks": 2,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Write 2³ in expanded form.",
+      "answer": "2³ = 2 × 2 × 2.",
+      "key_concepts": ["powers"],
+      "marks": 1,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the value of 3²?",
+      "answer": "3² = 9.",
+      "key_concepts": ["square numbers"],
+      "marks": 1,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the value of 5²?",
+      "answer": "5² = 25.",
+      "key_concepts": ["square numbers"],
+      "marks": 1,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 5,
+      "question": "What is the value of 4³?",
+      "answer": "4³ = 64.",
+      "key_concepts": ["cube numbers"],
+      "marks": 1,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 6,
+      "question": "Define a square number.",
+      "answer": "A square number is a number obtained by multiplying a number by itself.",
+      "key_concepts": ["square numbers"],
+      "marks": 2,
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 7,
+      "question": "Define a cube number.",
+      "answer": "A cube number is a number obtained by multiplying a number by itself three times.",
+      "key_concepts": ["cube numbers"],
+      "marks": 2,
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 8,
+      "question": "Write the square of 10.",
+      "answer": "10² = 100.",
+      "key_concepts": ["square numbers"],
+      "marks": 1,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 9,
+      "question": "Write the cube of 3.",
+      "answer": "3³ = 27.",
+      "key_concepts": ["cube numbers"],
+      "marks": 1,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the square root of 49?",
+      "answer": "√49 = 7.",
+      "key_concepts": ["square roots"],
+      "marks": 1,
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the cube root of 27?",
+      "answer": "∛27 = 3.",
+      "key_concepts": ["cube roots"],
+      "marks": 1,
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 12,
+      "question": "Write the first three square numbers.",
+      "answer": "1, 4, 9.",
+      "key_concepts": ["square numbers"],
+      "marks": 2,
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 13,
+      "question": "Write the first three cube numbers.",
+      "answer": "1, 8, 27.",
+      "key_concepts": ["cube numbers"],
+      "marks": 2,
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 14,
+      "question": "What is the value of 2⁴?",
+      "answer": "2⁴ = 16.",
+      "key_concepts": ["powers"],
+      "marks": 1,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 15,
+      "question": "What is √36?",
+      "answer": "√36 = 6.",
+      "key_concepts": ["square roots"],
+      "marks": 1,
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 16,
+      "question": "What is ∛8?",
+      "answer": "∛8 = 2.",
+      "key_concepts": ["cube roots"],
+      "marks": 1,
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 17,
+      "question": "Write 6² in exponential form.",
+      "answer": "6².",
+      "key_concepts": ["exponents"],
+      "marks": 1,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 18,
+      "question": "What is the cube of 2?",
+      "answer": "2³ = 8.",
+      "key_concepts": ["cube numbers"],
+      "marks": 1,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 19,
+      "question": "Write the square of 7.",
+      "answer": "7² = 49.",
+      "key_concepts": ["square numbers"],
+      "marks": 1,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the cube of 4?",
+      "answer": "4³ = 64.",
+      "key_concepts": ["cube numbers"],
+      "marks": 1,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 21,
+      "question": "What is the square root of 81?",
+      "answer": "√81 = 9.",
+      "key_concepts": ["square roots"],
+      "marks": 1,
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 22,
+      "question": "What is the cube root of 125?",
+      "answer": "∛125 = 5.",
+      "key_concepts": ["cube roots"],
+      "marks": 1,
+      "source_section": "Section 2.3"
+    },
+    {
+      "question_number": 23,
+      "question": "Is 64 a square number or cube number?",
+      "answer": "64 is both a square number (8²) and a cube number (4³).",
+      "key_concepts": ["square numbers", "cube numbers"],
+      "marks": 2,
+      "source_section": "Section 2.2"
+    },
+    {
+      "question_number": 24,
+      "question": "Write the exponential form of 100.",
+      "answer": "100 = 10².",
+      "key_concepts": ["powers"],
+      "marks": 2,
+      "source_section": "Section 2.1"
+    },
+    {
+      "question_number": 25,
+      "question": "What is the value of 1³?",
+      "answer": "1³ = 1.",
+      "key_concepts": ["cube numbers"],
+      "marks": 1,
+      "source_section": "Section 2.1"
+    }
+  ]
+}

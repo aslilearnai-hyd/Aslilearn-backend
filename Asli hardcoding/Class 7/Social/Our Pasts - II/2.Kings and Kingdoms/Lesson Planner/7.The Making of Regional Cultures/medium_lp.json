@@ -1,0 +1,154 @@
+{
+    "class": "Class 7",
+    "subject": "Social Science",
+    "chapter_name": "The Making of Regional Cultures",
+    "lesson_level": "Medium",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand regional cultural differences in India",
+        "Learn about language, art, music, and festivals in regions",
+        "Recognize influence of environment and rulers",
+        "Observe how trade and migration affected culture",
+        "Encourage discussion and group activities"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Regional Cultures",
+            "topics_covered": [
+                "Definition of regional culture",
+                "Examples of cultural diversity"
+            ],
+            "teaching_strategy": [
+                "Show maps and pictures",
+                "Class discussion"
+            ],
+            "student_activities": [
+                "Locate regions on map",
+                "List languages and customs",
+                "Share examples they know"
+            ],
+            "assessment": [
+                "Participation",
+                "Oral answers"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Language and Literature",
+            "topics_covered": [
+                "Regional languages",
+                "Folk tales and songs"
+            ],
+            "teaching_strategy": [
+                "Read short folk stories",
+                "Discuss language differences"
+            ],
+            "student_activities": [
+                "Name languages spoken in different regions",
+                "Summarize a folk tale",
+                "Write a short story"
+            ],
+            "assessment": [
+                "Participation",
+                "Notebook evaluation"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Art, Music, and Architecture",
+            "topics_covered": [
+                "Regional art and crafts",
+                "Music and dance",
+                "Famous regional buildings"
+            ],
+            "teaching_strategy": [
+                "Show images or videos",
+                "Discuss differences"
+            ],
+            "student_activities": [
+                "Draw an art form",
+                "Identify local architecture",
+                "Share favorite music or dance"
+            ],
+            "assessment": [
+                "Participation",
+                "Creativity in drawing"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Festivals and Beliefs",
+            "topics_covered": [
+                "Regional festivals",
+                "Rituals and beliefs"
+            ],
+            "teaching_strategy": [
+                "Show festival pictures",
+                "Discussion"
+            ],
+            "student_activities": [
+                "List festivals in regions",
+                "Discuss festival customs"
+            ],
+            "assessment": [
+                "Participation",
+                "Notebook notes"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Trade and Cultural Exchange",
+            "topics_covered": [
+                "How trade spread ideas",
+                "Migration influence on culture"
+            ],
+            "teaching_strategy": [
+                "Simple map activity",
+                "Group discussion"
+            ],
+            "student_activities": [
+                "Identify goods traded",
+                "Discuss influence of migration",
+                "Draw simple trade map"
+            ],
+            "assessment": [
+                "Map accuracy",
+                "Participation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Revision and Quiz",
+            "topics_covered": [
+                "Recap of regional cultures",
+                "Simple questions connecting past to present"
+            ],
+            "teaching_strategy": [
+                "Short quiz",
+                "Discussion relating to today"
+            ],
+            "student_activities": [
+                "Answer quiz",
+                "Share one new learning"
+            ],
+            "assessment": [
+                "Quiz results",
+                "Participation"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Pictures and maps",
+        "Charts of languages and festivals",
+        "Videos of dance, music, and art"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Class discussion",
+        "Notebook checking",
+        "Quiz"
+    ],
+    "teacher_tip": "Keep the lesson visual and interactive. Focus on main differences and examples."
+}

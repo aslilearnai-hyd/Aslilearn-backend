@@ -1,0 +1,114 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Exploring Some Geometric Themes",
+    "generated_at": "2026-03-05T14:00:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What is a fractal?",
+                "correct_answer": "A geometric figure that shows self-similarity at different scales",
+                "explanation": "Fractals repeat similar patterns at smaller and larger scales.",
+                "source_section": "Section 4.1"
+            },
+            {
+                "question": "What does self-similarity mean in fractals?",
+                "correct_answer": "Small parts of the figure resemble the whole figure",
+                "explanation": "Fractals repeat the same structure at different sizes.",
+                "source_section": "Section 4.1"
+            },
+            {
+                "question": "What shape is used to start the Sierpinski Triangle?",
+                "correct_answer": "An equilateral triangle",
+                "explanation": "The fractal begins with a triangle which is repeatedly subdivided.",
+                "source_section": "Section 4.1"
+            },
+            {
+                "question": "How is the Sierpinski Carpet formed?",
+                "correct_answer": "By dividing a square into 9 smaller squares and removing the central square repeatedly",
+                "explanation": "This process is repeated recursively to create a fractal pattern.",
+                "source_section": "Section 4.1"
+            },
+            {
+                "question": "Which geometric figure is used to start the Koch Snowflake?",
+                "correct_answer": "An equilateral triangle",
+                "explanation": "Each side of the triangle is modified repeatedly to create the fractal boundary.",
+                "source_section": "Section 4.1"
+            },
+            {
+                "question": "What happens to the perimeter of the Koch Snowflake after each step?",
+                "correct_answer": "The perimeter increases indefinitely",
+                "explanation": "New segments are added at each iteration.",
+                "source_section": "Section 4.1"
+            },
+            {
+                "question": "What is a polyhedron?",
+                "correct_answer": "A three-dimensional solid with flat polygonal faces",
+                "explanation": "Examples include cubes, prisms, and pyramids.",
+                "source_section": "Section 4.2"
+            },
+            {
+                "question": "What are the three main elements of a polyhedron?",
+                "correct_answer": "Faces, edges, and vertices",
+                "explanation": "Faces are flat surfaces, edges connect faces, and vertices are intersection points.",
+                "source_section": "Section 4.2"
+            },
+            {
+                "question": "What is a net of a solid?",
+                "correct_answer": "A flat two-dimensional pattern that folds to form a three-dimensional solid",
+                "explanation": "Nets help visualize how faces of a solid are connected.",
+                "source_section": "Section 4.2"
+            },
+            {
+                "question": "What is projection in geometry?",
+                "correct_answer": "A representation of a three-dimensional object on a two-dimensional plane",
+                "explanation": "It shows how an object appears from a particular direction.",
+                "source_section": "Section 4.2"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Fractals",
+                "content": "Fractals are geometric patterns that repeat themselves at different scales and are often generated through recursive processes.",
+                "source_section": "Section 4.1"
+            },
+            {
+                "title": "Sierpinski Figures",
+                "content": "Sierpinski Triangle and Sierpinski Carpet are examples of fractals created by repeatedly removing parts of geometric shapes.",
+                "source_section": "Section 4.1"
+            },
+            {
+                "title": "Koch Snowflake",
+                "content": "A fractal curve formed by repeatedly modifying the sides of an equilateral triangle.",
+                "source_section": "Section 4.1"
+            },
+            {
+                "title": "Nets of Solids",
+                "content": "Nets are flat patterns that can be folded to create three-dimensional solids.",
+                "source_section": "Section 4.2"
+            },
+            {
+                "title": "Projections and Isometric Drawings",
+                "content": "These techniques help represent three-dimensional objects accurately on two-dimensional surfaces.",
+                "source_section": "Section 4.2"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "A cube has 6 faces, 12 edges and 8 vertices.",
+                "source_section": "Section 4.2"
+            },
+            {
+                "fact": "Fractals are used in computer graphics to generate realistic natural patterns.",
+                "source_section": "Section 4.1"
+            },
+            {
+                "fact": "A cube has 11 different possible nets.",
+                "source_section": "Section 4.2"
+            },
+            {
+                "fact": "The isometric projection of a cube appears as a hexagon outline.",
+                "source_section": "Section 4.2"
+            }
+        ]
+    }
+}

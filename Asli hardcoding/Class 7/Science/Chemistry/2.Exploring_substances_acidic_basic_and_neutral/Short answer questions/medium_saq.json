@@ -1,0 +1,209 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter: Exploring Substances: Acidic, Basic, and Neutral",
+    "difficulty": "Medium",
+    "generated_at": "2026-03-06T18:35:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Why does a turmeric stain on a white shirt turn red when washed with soap?",
+            "answer": "Soap solution is basic in nature, and turmeric turns reddish-brown when it reacts with a base.",
+            "key_concepts": ["indicators", "nature of soap"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Name the acid produced naturally in the human stomach. What is its function?",
+            "answer": "Hydrochloric acid (HCl). It helps in the digestion of food and kills bacteria that enter with food.",
+            "key_concepts": ["stomach acid", "digestion"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 3,
+            "question": "What is an antacid? Provide one example.",
+            "answer": "An antacid is a mild base used to neutralize excess acid in the stomach. Example: Milk of Magnesia.",
+            "key_concepts": ["antacids", "neutralization"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 4,
+            "question": "How can you treat soil that has become too acidic due to excessive use of fertilizers?",
+            "answer": "Acidic soil is treated with bases like quicklime (calcium oxide) or slaked lime (calcium hydroxide).",
+            "key_concepts": ["soil treatment", "neutralization"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 5,
+            "question": "What is the chemical name of the substance found in an ant's sting?",
+            "answer": "Formic acid.",
+            "key_concepts": ["organic acids"],
+            "marks": 1,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Why is factory waste neutralized before being disposed of into water bodies?",
+            "answer": "Factory wastes often contain acids that can kill fish and other aquatic organisms; neutralization makes the waste safe.",
+            "key_concepts": ["environmental safety", "neutralization"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 7,
+            "question": "Describe the change in color of China rose indicator when added to Lemon juice.",
+            "answer": "Lemon juice is acidic, so it will turn the light pink China rose indicator to dark pink (magenta).",
+            "key_concepts": ["natural indicators", "acids"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the difference between organic acids and mineral acids?",
+            "answer": "Organic acids occur naturally in plants and animals (e.g., Citric acid), while mineral acids are prepared from minerals (e.g., Sulphuric acid).",
+            "key_concepts": ["types of acids"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Which base is commonly used in the manufacture of soap?",
+            "answer": "Sodium hydroxide or Potassium hydroxide.",
+            "key_concepts": ["bases", "industrial uses"],
+            "marks": 1,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 10,
+            "question": "A solution does not change the color of either red or blue litmus paper. What is the nature of the solution?",
+            "answer": "The solution is neutral.",
+            "key_concepts": ["neutral substances", "litmus test"],
+            "marks": 1,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the chemical name of Baking Soda?",
+            "answer": "Sodium Hydrogen Carbonate.",
+            "key_concepts": ["chemical names", "bases"],
+            "marks": 1,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain why calamine solution is applied on the skin when an ant bites.",
+            "answer": "Calamine contains zinc carbonate (a base) which neutralizes the formic acid injected by the ant bite.",
+            "key_concepts": ["neutralization", "ant bite"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 13,
+            "question": "What is 'Acid Rain'?",
+            "answer": "Rainwater that becomes acidic due to the presence of pollutants like sulphur dioxide and nitrogen dioxide is called acid rain.",
+            "key_concepts": ["environment", "acid rain"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 14,
+            "question": "Name two synthetic indicators.",
+            "answer": "Phenolphthalein and Methyl orange.",
+            "key_concepts": ["synthetic indicators"],
+            "marks": 1,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 15,
+            "question": "What will be the effect of dilute hydrochloric acid on a drop of phenolphthalein?",
+            "answer": "The phenolphthalein will remain colorless.",
+            "key_concepts": ["indicators", "acids"],
+            "marks": 1,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 16,
+            "question": "How do you treat soil that is too basic?",
+            "answer": "Organic matter (compost) is added, which releases acids that neutralize the basic nature of the soil.",
+            "key_concepts": ["soil treatment", "neutralization"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the result of the reaction between Magnesium hydroxide and Hydrochloric acid?",
+            "answer": "Magnesium chloride (a salt) and water are produced.",
+            "key_concepts": ["neutralization reaction"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Distinguish between dilute and concentrated acids.",
+            "answer": "A dilute acid has a large amount of water and a small amount of acid, while a concentrated acid has a very small amount of water.",
+            "key_concepts": ["acid concentration"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Is distilled water acidic, basic, or neutral? How would you verify it?",
+            "answer": "Distilled water is neutral. It can be verified because it does not change the color of red or blue litmus paper.",
+            "key_concepts": ["neutral substances", "testing"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 20,
+            "question": "What happens when an acid and a base are mixed in equal amounts?",
+            "answer": "They neutralize each other, forming salt and water, and heat is evolved.",
+            "key_concepts": ["neutralization"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the use of litmus paper in a laboratory?",
+            "answer": "It is used as an indicator to quickly detect if a given solution is acidic or basic.",
+            "key_concepts": ["indicators"],
+            "marks": 1,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 22,
+            "question": "State one property of bases other than their taste.",
+            "answer": "Bases feel soapy or slippery when touched between fingers.",
+            "key_concepts": ["properties of bases"],
+            "marks": 1,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Which acid is found in spinach?",
+            "answer": "Oxalic acid.",
+            "key_concepts": ["natural acids"],
+            "marks": 1,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 24,
+            "question": "Why is it advised to wear gloves while handling concentrated acids?",
+            "answer": "Concentrated acids are highly corrosive and can cause severe burns to the skin.",
+            "key_concepts": ["safety"],
+            "marks": 1,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 25,
+            "question": "What is the common name of Ammonium hydroxide?",
+            "answer": "Ammonia solution (often used in window cleaners).",
+            "key_concepts": ["bases", "common names"],
+            "marks": 1,
+            "source_section": "Section 1.1"
+        }
+    ]
+}

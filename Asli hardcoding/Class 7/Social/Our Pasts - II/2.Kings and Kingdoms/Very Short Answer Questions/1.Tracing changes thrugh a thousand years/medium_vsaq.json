@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter: TRACING CHANGES THROUGH A THOUSAND YEARS",
+    "generated_at": "2026-03-08T22:03:55",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "How did the science of cartography differ between the 12th and 18th centuries?",
+            "answer": "In the 12th century (Al-Idrisi), maps were less detailed and oriented differently; by the 18th century (French cartographers), they became highly detailed and familiar to modern eyes.",
+            "key_concepts": ["cartography evolution"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Why must historians be sensitive to the 'historical context' of terms used in the past?",
+            "answer": "Because meanings of terms change over time; for example, 'Hindustan' in the 13th century did not include South India, unlike the modern definition.",
+            "key_concepts": ["historical context"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What was the geographical extent of 'Hindustan' according to Minhaj-i-Siraj?",
+            "answer": "It referred to the areas of Punjab, Haryana, and the lands between the Ganga and Yamuna, primarily the territories of the Delhi Sultanate.",
+            "key_concepts": ["Hindustan", "Minhaj-i-Siraj"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 4,
+            "question": "How did Babur's definition of 'Hindustan' differ from earlier 13th-century definitions?",
+            "answer": "Babur used the term to describe the geography, fauna, and culture of the inhabitants of the entire subcontinent rather than just political boundaries.",
+            "key_concepts": ["Babur", "geographical terminology"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the difficulty historians face due to the absence of the printing press in the medieval period.",
+            "answer": "Historians must read many manuscript versions of the same text because scribes introduced small changes that accumulated over centuries of hand-copying.",
+            "key_concepts": ["manuscripts", "scribes"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 6,
+            "question": "What led to the 'accumulation of variations' in medieval texts?",
+            "answer": "As scribes copied manuscripts, they occasionally introduced small changes in words or sentences, making later copies significantly different from the original.",
+            "key_concepts": ["textual variations"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Why is Ziyauddin Barani's chronicle a good example of the challenges in using medieval sources?",
+            "answer": "He wrote two versions of his chronicle, and historians only discovered the first version in the 1960s as it had been lost in large library collections.",
+            "key_concepts": ["Ziyauddin Barani", "chronicles"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Mention two major technological innovations that appeared in the Indian subcontinent between 700 and 1750.",
+            "answer": "The Persian wheel in irrigation, the spinning wheel in weaving, and firearms in combat.",
+            "key_concepts": ["technological changes"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 9,
+            "question": "How did the clearance of forests affect the lives of forest-dwellers?",
+            "answer": "Many forest-dwellers were forced to migrate, while others became peasants and were integrated into the new regional social and economic structures.",
+            "key_concepts": ["migration", "peasantry"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 10,
+            "question": "What factors determined the 'rank' of a person within a Jati?",
+            "answer": "Ranks were not fixed permanently; they varied based on the power, influence, and resources controlled by members of the Jati in different regions.",
+            "key_concepts": ["Jati ranking"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Describe the function of 'Jati rules' in medieval society.",
+            "answer": "Each Jati framed its own rules to manage the conduct of its members, which were enforced by an assembly of elders known as the Jati Panchayat.",
+            "key_concepts": ["social regulation"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 12,
+            "question": "What does the 'Sanskrit Prashasti' of Balban tell us about the geographical reach of his power?",
+            "answer": "It claims he ruled a vast empire from Bengal (Gauda) in the east to Afghanistan (Ghazni) in the west, including all of South India (Dravida).",
+            "key_concepts": ["Balban", "Prashasti"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the concept of 'Pan-Regional Empire' using examples.",
+            "answer": "It refers to empires like those of the Cholas, Tughluqs, or Mughals that controlled diverse regions beyond their immediate local territory.",
+            "key_concepts": ["pan-regionalism"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 14,
+            "question": "How did the decline of the Mughal Empire affect the regional states?",
+            "answer": "Its decline led to the re-emergence of regional states, though they carried the institutional and cultural legacy of years of imperial rule.",
+            "key_concepts": ["Mughal decline", "regionalism"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Name two significant changes in Hinduism during the medieval period.",
+            "answer": "The worship of new deities, the construction of temples by royalty, and the growing importance of Brahmanas as dominant social groups.",
+            "key_concepts": ["Hinduism evolution"],
+            "marks": 2,
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 16,
+            "question": "Why did Brahmanas earn great respect in society during this period?",
+            "answer": "Their knowledge of Sanskrit texts made them indispensable for rituals, leading to support from wealthy patrons and high social standing.",
+            "key_concepts": ["Brahmanas", "patronage"],
+            "marks": 2,
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 17,
+            "question": "What was the significance of the 'Bhakti' movement in medieval religion?",
+            "answer": "It introduced the idea of a loving, personal deity that devotees could reach without the aid of priests or elaborate sacrifices.",
+            "key_concepts": ["Bhakti"],
+            "marks": 2,
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 18,
+            "question": "Distinguish between the Shia and Sunni sects of Islam.",
+            "answer": "Shias believe Prophet Muhammad's son-in-law, Ali, was the legitimate leader, while Sunnis accept the authority of the early leaders (Khalifas).",
+            "key_concepts": ["Shia", "Sunni"],
+            "marks": 2,
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 19,
+            "question": "What are the 'Hanafi' and 'Shafi’i' traditions?",
+            "answer": "They are the two main schools of Islamic law (Madhhabs) that were influential in the Indian subcontinent.",
+            "key_concepts": ["Islamic law"],
+            "marks": 2,
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 20,
+            "question": "Criticize the 19th-century British periodisation of Indian history.",
+            "answer": "It ignored the rich social, economic, and cultural diversity of the subcontinent by focusing solely on the religion of the rulers.",
+            "key_concepts": ["periodisation", "British historians"],
+            "marks": 2,
+            "source_section": "Section 1.6"
+        },
+        {
+            "question_number": 21,
+            "question": "Why do modern historians use 'social and economic factors' to define historical periods?",
+            "answer": "To capture major transitions in how people lived, such as the spread of peasant societies or the rise of global trade, rather than just political changes.",
+            "key_concepts": ["modern periodisation"],
+            "marks": 2,
+            "source_section": "Section 1.6"
+        },
+        {
+            "question_number": 22,
+            "question": "How did the availability of paper change the nature of record-keeping?",
+            "answer": "As paper became cheaper and more available, people used it extensively for holy texts, chronicles, judicial records, and accounts, increasing the volume of archives.",
+            "key_concepts": ["paper", "archives"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 23,
+            "question": "What is the importance of the 'Kayasthas' in the medieval period?",
+            "answer": "They were a caste of scribes and secretaries who rose to prominence due to the increased demand for record-keeping and administration.",
+            "key_concepts": ["Kayasthas", "scribes"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 24,
+            "question": "What does the term 'subcontinent' signify in the context of medieval history?",
+            "answer": "It refers to the vast, diverse landmass of South Asia which shared common cultural and economic patterns despite political fragmentation.",
+            "key_concepts": ["geography"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Define 'theologians' and 'jurists' in the context of Islamic history in India.",
+            "answer": "Theologians (Ulama) studied religious beliefs, while jurists interpreted Islamic law (Sharia) to guide the legal systems of the Sultanates.",
+            "key_concepts": ["Ulama", "Sharia"],
+            "marks": 2,
+            "source_section": "Section 1.5"
+        }
+    ]
+}

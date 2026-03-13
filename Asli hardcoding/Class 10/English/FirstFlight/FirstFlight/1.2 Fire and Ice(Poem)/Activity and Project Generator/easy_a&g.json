@@ -1,0 +1,164 @@
+{
+    "class": "Class 10",
+    "subject": "English",
+    "chapter": "Fire and Ice",
+    "author": "Robert Frost",
+    "difficulty": "Easy",
+    "source_pdf": "eng10_1.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Theme Identification",
+            "objective": "Understand the main theme of the poem",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the poem carefully",
+                "Identify the two possible ways the world may end",
+                "Write two sentences explaining the theme"
+            ],
+            "learning_outcome": "Understands the central idea of the poem",
+            "evaluation": "Correct explanation of theme (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Meaning of Fire",
+            "objective": "Understand the symbolic meaning of fire",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the line mentioning fire",
+                "Find what emotion fire represents",
+                "Write 2–3 sentences explaining it"
+            ],
+            "learning_outcome": "Recognizes symbolism in poetry",
+            "evaluation": "Correct interpretation (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Meaning of Ice",
+            "objective": "Understand the symbolic meaning of ice",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the line mentioning ice",
+                "Identify the emotion connected with ice",
+                "Write 2–3 sentences explaining the idea"
+            ],
+            "learning_outcome": "Understands poetic symbolism",
+            "evaluation": "Correct explanation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Poet’s Opinion",
+            "objective": "Understand the poet’s viewpoint",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the poem again",
+                "Identify which idea the poet supports first",
+                "Write one or two lines explaining why"
+            ],
+            "learning_outcome": "Identifies the poet’s perspective",
+            "evaluation": "Relevant explanation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Rhyme Scheme Activity",
+            "objective": "Identify rhyme scheme in the poem",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the poem aloud",
+                "Underline rhyming words",
+                "Write the rhyme scheme of the poem"
+            ],
+            "learning_outcome": "Understands rhyme pattern",
+            "evaluation": "Correct rhyme scheme (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Vocabulary Builder",
+            "objective": "Improve vocabulary from the poem",
+            "materials": [
+                "Dictionary",
+                "Notebook"
+            ],
+            "steps": [
+                "Select three difficult words from the poem",
+                "Write their meanings",
+                "Use each word in a sentence"
+            ],
+            "learning_outcome": "Improves vocabulary skills",
+            "evaluation": "Correct meanings and usage (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Short Summary Writing",
+            "objective": "Understand the poem through summary",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Read the poem carefully",
+                "Write a 3–4 sentence summary of the poem"
+            ],
+            "learning_outcome": "Develops summarizing ability",
+            "evaluation": "Clarity and correctness (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Message of the Poem",
+            "objective": "Understand the moral message",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about the emotions mentioned in the poem",
+                "Write two sentences explaining the message of the poem"
+            ],
+            "learning_outcome": "Understands moral lesson in poetry",
+            "evaluation": "Logical explanation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Creative Drawing",
+            "objective": "Visualize the poem creatively",
+            "materials": [
+                "Drawing sheet",
+                "Pencil",
+                "Colours"
+            ],
+            "steps": [
+                "Draw two pictures representing fire and ice",
+                "Label each drawing with the emotion it represents"
+            ],
+            "learning_outcome": "Connects poetry with creativity",
+            "evaluation": "Creativity and correctness (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Personal Reflection",
+            "objective": "Relate the poem to real life",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about how anger or hatred affects people",
+                "Write 3 sentences on how emotions can cause harm"
+            ],
+            "learning_outcome": "Relates poem ideas to real life",
+            "evaluation": "Meaningful reflection (10 marks)"
+        }
+    ]
+}

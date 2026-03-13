@@ -1,0 +1,137 @@
+{
+    "content_type": "Concept Mastery Helper",
+    "section": "Chapter 2: Constitutional Design",
+    "generated_at": "2026-03-06T20:10:00",
+    "concepts": [
+        {
+            "concept_name": "Constitution",
+            "difficulty": "easy",
+            "lesson": "A constitution is a set of fundamental rules and principles according to which a country is governed. It defines the powers of the government and the rights of citizens.",
+            "real_example": "The Constitution of India lays down rules for how the government functions.",
+            "key_points": [
+                "Supreme law of the country",
+                "Defines powers of government",
+                "Protects rights of citizens",
+                "Provides basic rules for governance"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "concept_name": "Apartheid",
+            "difficulty": "easy",
+            "lesson": "Apartheid was a system of racial discrimination followed in South Africa where people were divided and treated unequally based on skin colour.",
+            "real_example": "Black people in South Africa were not allowed to vote during apartheid.",
+            "key_points": [
+                "Racial discrimination system",
+                "Practiced in South Africa",
+                "Non-white people were denied rights",
+                "Ended after democratic reforms in 1994"
+            ],
+            "source_section": "Section 2.1"
+        },
+        {
+            "concept_name": "Democratic Constitution",
+            "difficulty": "medium",
+            "lesson": "A democratic constitution ensures that the government works according to rules and respects the rights of citizens. It limits government power and establishes democratic values.",
+            "real_example": "The South African Constitution protects equality and human rights.",
+            "key_points": [
+                "Based on democratic principles",
+                "Protects citizens' rights",
+                "Limits government powers",
+                "Ensures equality and justice"
+            ],
+            "source_section": "Section 2.1"
+        },
+        {
+            "concept_name": "Need for a Constitution",
+            "difficulty": "easy",
+            "lesson": "A constitution is needed to generate trust among people, define the structure of government, limit powers of rulers and protect citizens' rights.",
+            "real_example": "The Indian Constitution explains how elections are conducted and who can make laws.",
+            "key_points": [
+                "Creates trust among citizens",
+                "Defines structure of government",
+                "Limits power of rulers",
+                "Protects rights of citizens"
+            ],
+            "source_section": "Section 2.2"
+        },
+        {
+            "concept_name": "Constituent Assembly",
+            "difficulty": "medium",
+            "lesson": "The Constituent Assembly was a body of elected representatives responsible for drafting the Constitution of India.",
+            "real_example": "Dr. B.R. Ambedkar was the Chairman of the Drafting Committee of the Constituent Assembly.",
+            "key_points": [
+                "Drafted the Indian Constitution",
+                "Formed in 1946",
+                "Included representatives from different regions",
+                "Debated and finalized constitutional provisions"
+            ],
+            "source_section": "Section 2.3"
+        },
+        {
+            "concept_name": "Preamble",
+            "difficulty": "easy",
+            "lesson": "The Preamble is the introductory statement of the Constitution that explains its guiding values and philosophy.",
+            "real_example": "The Indian Preamble begins with the words 'We, the People of India'.",
+            "key_points": [
+                "Introduction to the Constitution",
+                "Explains core values",
+                "Guides interpretation of laws",
+                "Reflects goals of the nation"
+            ],
+            "source_section": "Section 2.4"
+        },
+        {
+            "concept_name": "Sovereign State",
+            "difficulty": "medium",
+            "lesson": "A sovereign state has the power to make decisions independently without interference from other countries.",
+            "real_example": "India can decide its own foreign and domestic policies.",
+            "key_points": [
+                "Independent decision making",
+                "No external authority",
+                "Full control over internal affairs",
+                "Represents political independence"
+            ],
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "concept_name": "Democratic Republic",
+            "difficulty": "medium",
+            "lesson": "A democratic republic is a system where people elect their leaders and the head of the state is chosen by the people rather than by heredity.",
+            "real_example": "The President of India is elected, not a hereditary ruler.",
+            "key_points": [
+                "People elect representatives",
+                "Head of state is elected",
+                "Government accountable to citizens",
+                "Based on rule of law"
+            ],
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "concept_name": "Justice, Liberty and Equality",
+            "difficulty": "medium",
+            "lesson": "These are key democratic values that ensure fairness, freedom and equal opportunities for all citizens in a country.",
+            "real_example": "All citizens have equal rights before the law regardless of caste or religion.",
+            "key_points": [
+                "Justice ensures fairness",
+                "Liberty protects freedom of thought and expression",
+                "Equality ensures equal opportunities",
+                "Promotes democratic society"
+            ],
+            "source_section": "Preamble Concepts"
+        },
+        {
+            "concept_name": "Fraternity",
+            "difficulty": "medium",
+            "lesson": "Fraternity means a sense of brotherhood among citizens that promotes unity and integrity of the nation.",
+            "real_example": "People of different religions and languages living peacefully together in India reflect fraternity.",
+            "key_points": [
+                "Promotes unity among citizens",
+                "Encourages mutual respect",
+                "Strengthens national integrity",
+                "Supports democratic values"
+            ],
+            "source_section": "Preamble Concepts"
+        }
+    ]
+}

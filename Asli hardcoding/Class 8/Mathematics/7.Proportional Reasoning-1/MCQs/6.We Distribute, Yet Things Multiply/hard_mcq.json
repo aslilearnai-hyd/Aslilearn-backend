@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 6: We Distribute, Yet Things Multiply",
+  "generated_at": "2026-03-04T23:40:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Simplify 3(x + 4) + 2(x + 5).",
+      "options": {
+        "A": "5x + 22",
+        "B": "5x + 14",
+        "C": "6x + 9",
+        "D": "3x + 10"
+      },
+      "correct_answer": "A",
+      "explanation": "3x + 12 + 2x + 10 = 5x + 22.",
+      "difficulty": "hard",
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 2,
+      "question": "Factorise 12x + 18.",
+      "options": {
+        "A": "6(2x + 3)",
+        "B": "3(4x + 6)",
+        "C": "2(6x + 9)",
+        "D": "12(x + 18)"
+      },
+      "correct_answer": "A",
+      "explanation": "Common factor is 6 → 6(2x + 3).",
+      "difficulty": "hard",
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 3,
+      "question": "Expand and simplify 4(x + 3) + 5(x + 2).",
+      "options": {
+        "A": "9x + 22",
+        "B": "9x + 14",
+        "C": "20x + 6",
+        "D": "9x + 10"
+      },
+      "correct_answer": "A",
+      "explanation": "4x + 12 + 5x + 10 = 9x + 22.",
+      "difficulty": "hard",
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 4,
+      "question": "Simplify 6(x + 2) − 2(x + 4).",
+      "options": {
+        "A": "4x + 4",
+        "B": "4x + 8",
+        "C": "6x + 8",
+        "D": "4x − 4"
+      },
+      "correct_answer": "A",
+      "explanation": "6x + 12 − 2x − 8 = 4x + 4.",
+      "difficulty": "hard",
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Factorise 15x + 20.",
+      "options": {
+        "A": "5(3x + 4)",
+        "B": "10(3x + 2)",
+        "C": "15(x + 20)",
+        "D": "5(x + 15)"
+      },
+      "correct_answer": "A",
+      "explanation": "Common factor is 5.",
+      "difficulty": "hard",
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 6,
+      "question": "Expand 7(2x + 5) − 3(x + 4).",
+      "options": {
+        "A": "11x + 23",
+        "B": "14x + 35",
+        "C": "11x + 11",
+        "D": "17x + 23"
+      },
+      "correct_answer": "A",
+      "explanation": "14x + 35 − 3x − 12 = 11x + 23.",
+      "difficulty": "hard",
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 7,
+      "question": "Simplify 5(x + 6) + 4(x − 2).",
+      "options": {
+        "A": "9x + 22",
+        "B": "9x + 18",
+        "C": "9x + 26",
+        "D": "5x + 6"
+      },
+      "correct_answer": "A",
+      "explanation": "5x + 30 + 4x − 8 = 9x + 22.",
+      "difficulty": "hard",
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 8,
+      "question": "Factorise 21x + 14.",
+      "options": {
+        "A": "7(3x + 2)",
+        "B": "3(7x + 14)",
+        "C": "14(3x + 1)",
+        "D": "7(x + 14)"
+      },
+      "correct_answer": "A",
+      "explanation": "Common factor is 7.",
+      "difficulty": "hard",
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 9,
+      "question": "Simplify 8(x + 3) − 2(2x + 1).",
+      "options": {
+        "A": "4x + 22",
+        "B": "6x + 22",
+        "C": "4x + 24",
+        "D": "6x + 24"
+      },
+      "correct_answer": "A",
+      "explanation": "8x + 24 − 4x − 2 = 4x + 22.",
+      "difficulty": "hard",
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 10,
+      "question": "Factorise 18x + 12.",
+      "options": {
+        "A": "6(3x + 2)",
+        "B": "3(6x + 4)",
+        "C": "2(9x + 6)",
+        "D": "18(x + 12)"
+      },
+      "correct_answer": "A",
+      "explanation": "Common factor is 6.",
+      "difficulty": "hard",
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 11,
+      "question": "Expand 9(x + 4) − 3(x + 2).",
+      "options": {
+        "A": "6x + 30",
+        "B": "12x + 30",
+        "C": "6x + 36",
+        "D": "12x + 36"
+      },
+      "correct_answer": "A",
+      "explanation": "9x + 36 − 3x − 6 = 6x + 30.",
+      "difficulty": "hard",
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 12,
+      "question": "Simplify 4(x + 5) + 3(x + 7).",
+      "options": {
+        "A": "7x + 41",
+        "B": "7x + 12",
+        "C": "12x + 41",
+        "D": "7x + 35"
+      },
+      "correct_answer": "A",
+      "explanation": "4x + 20 + 3x + 21 = 7x + 41.",
+      "difficulty": "hard",
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 13,
+      "question": "Factorise 16x + 8.",
+      "options": {
+        "A": "8(2x + 1)",
+        "B": "4(4x + 2)",
+        "C": "2(8x + 4)",
+        "D": "16(x + 8)"
+      },
+      "correct_answer": "A",
+      "explanation": "Common factor is 8.",
+      "difficulty": "hard",
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 14,
+      "question": "Simplify 10(x + 3) − 4(x + 1).",
+      "options": {
+        "A": "6x + 26",
+        "B": "6x + 30",
+        "C": "14x + 26",
+        "D": "10x + 30"
+      },
+      "correct_answer": "A",
+      "explanation": "10x + 30 − 4x − 4 = 6x + 26.",
+      "difficulty": "hard",
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 15,
+      "question": "Expand 6(2x + 3) + 4(x + 5).",
+      "options": {
+        "A": "16x + 38",
+        "B": "12x + 18",
+        "C": "10x + 38",
+        "D": "16x + 28"
+      },
+      "correct_answer": "A",
+      "explanation": "12x + 18 + 4x + 20 = 16x + 38.",
+      "difficulty": "hard",
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 16,
+      "question": "Factorise 24x + 16.",
+      "options": {
+        "A": "8(3x + 2)",
+        "B": "4(6x + 4)",
+        "C": "2(12x + 8)",
+        "D": "16(x + 24)"
+      },
+      "correct_answer": "A",
+      "explanation": "Common factor is 8.",
+      "difficulty": "hard",
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 17,
+      "question": "Simplify 5(x + 8) − 2(x + 3).",
+      "options": {
+        "A": "3x + 34",
+        "B": "5x + 40",
+        "C": "3x + 10",
+        "D": "7x + 34"
+      },
+      "correct_answer": "A",
+      "explanation": "5x + 40 − 2x − 6 = 3x + 34.",
+      "difficulty": "hard",
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 18,
+      "question": "Factorise 27x + 9.",
+      "options": {
+        "A": "9(3x + 1)",
+        "B": "3(9x + 3)",
+        "C": "27(x + 9)",
+        "D": "9(x + 3)"
+      },
+      "correct_answer": "A",
+      "explanation": "Common factor is 9.",
+      "difficulty": "hard",
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 19,
+      "question": "Simplify 7(x + 6) + 3(x + 2).",
+      "options": {
+        "A": "10x + 48",
+        "B": "10x + 18",
+        "C": "21x + 18",
+        "D": "7x + 6"
+      },
+      "correct_answer": "A",
+      "explanation": "7x + 42 + 3x + 6 = 10x + 48.",
+      "difficulty": "hard",
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 20,
+      "question": "Expand 4(3x + 5) − 2(x + 7).",
+      "options": {
+        "A": "10x + 6",
+        "B": "12x + 20",
+        "C": "10x + 20",
+        "D": "12x + 6"
+      },
+      "correct_answer": "A",
+      "explanation": "12x + 20 − 2x − 14 = 10x + 6.",
+      "difficulty": "hard",
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 21,
+      "question": "Factorise 30x + 15.",
+      "options": {
+        "A": "15(2x + 1)",
+        "B": "5(6x + 3)",
+        "C": "3(10x + 5)",
+        "D": "15(x + 2)"
+      },
+      "correct_answer": "A",
+      "explanation": "Common factor is 15.",
+      "difficulty": "hard",
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 22,
+      "question": "Simplify 8(x + 4) + 2(x + 6).",
+      "options": {
+        "A": "10x + 44",
+        "B": "8x + 32",
+        "C": "10x + 20",
+        "D": "8x + 20"
+      },
+      "correct_answer": "A",
+      "explanation": "8x + 32 + 2x + 12 = 10x + 44.",
+      "difficulty": "hard",
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 23,
+      "question": "Factorise 14x + 28.",
+      "options": {
+        "A": "14(x + 2)",
+        "B": "7(2x + 4)",
+        "C": "2(7x + 14)",
+        "D": "28(x + 14)"
+      },
+      "correct_answer": "A",
+      "explanation": "Common factor is 14.",
+      "difficulty": "hard",
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 24,
+      "question": "Simplify 9(x + 3) − 5(x + 1).",
+      "options": {
+        "A": "4x + 22",
+        "B": "4x + 18",
+        "C": "9x + 27",
+        "D": "4x + 14"
+      },
+      "correct_answer": "A",
+      "explanation": "9x + 27 − 5x − 5 = 4x + 22.",
+      "difficulty": "hard",
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 25,
+      "question": "Expand 5(4x + 2) + 3(x + 6).",
+      "options": {
+        "A": "23x + 28",
+        "B": "20x + 10",
+        "C": "23x + 10",
+        "D": "20x + 28"
+      },
+      "correct_answer": "A",
+      "explanation": "20x + 10 + 3x + 18 = 23x + 28.",
+      "difficulty": "hard",
+      "source_section": "Section 6.2"
+    }
+  ]
+}

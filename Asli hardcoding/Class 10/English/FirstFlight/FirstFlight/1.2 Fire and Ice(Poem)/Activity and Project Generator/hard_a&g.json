@@ -1,0 +1,153 @@
+{
+    "class": "Class 10",
+    "subject": "English",
+    "chapter": "Fire and Ice",
+    "author": "Robert Frost",
+    "difficulty": "Hard",
+    "source_pdf": "eng10_1.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Critical Interpretation",
+            "objective": "Critically analyse the poem",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read the poem carefully",
+                "Explain how human emotions can destroy the world",
+                "Write 5–6 sentences analysing the idea"
+            ],
+            "learning_outcome": "Develops critical thinking",
+            "evaluation": "Depth of analysis (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Theme Exploration",
+            "objective": "Explore the central theme deeply",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify the main theme",
+                "Explain how the poet uses fire and ice to present it"
+            ],
+            "learning_outcome": "Understands deeper meaning of the poem",
+            "evaluation": "Clarity and explanation (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Literary Device Analysis",
+            "objective": "Analyse poetic devices in the poem",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Identify two literary devices",
+                "Explain their effect on the poem"
+            ],
+            "learning_outcome": "Recognizes advanced poetic techniques",
+            "evaluation": "Correct analysis (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Philosophical Meaning",
+            "objective": "Understand philosophical ideas in the poem",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Explain the philosophical meaning of destruction",
+                "Write 5 sentences explaining how emotions influence human behaviour"
+            ],
+            "learning_outcome": "Develops philosophical interpretation",
+            "evaluation": "Logical explanation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Creative Expansion",
+            "objective": "Extend the poem creatively",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Imagine another way the world could end",
+                "Write a short 4-line poem about it"
+            ],
+            "learning_outcome": "Encourages creative thinking",
+            "evaluation": "Creativity and relevance (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Contrast Study",
+            "objective": "Analyse contrast in the poem",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Explain how fire and ice contrast each other",
+                "Write 5 sentences describing the contrast"
+            ],
+            "learning_outcome": "Understands contrast in poetry",
+            "evaluation": "Logical explanation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Moral Debate",
+            "objective": "Discuss moral lessons from the poem",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write arguments about which emotion is more destructive",
+                "Support your answer with examples"
+            ],
+            "learning_outcome": "Develops reasoning skills",
+            "evaluation": "Strength of arguments (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Short Essay",
+            "objective": "Develop writing skills",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write a short essay of 6–7 sentences",
+                "Topic: Human emotions and destruction in Fire and Ice"
+            ],
+            "learning_outcome": "Improves analytical writing",
+            "evaluation": "Clarity and depth (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Modern Relevance",
+            "objective": "Understand relevance in modern society",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Think about conflicts in the modern world",
+                "Explain how they relate to fire and ice"
+            ],
+            "learning_outcome": "Connects literature with modern issues",
+            "evaluation": "Relevance and explanation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Critical Reflection",
+            "objective": "Evaluate the poem personally",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write your opinion about the poem",
+                "Explain why the poem is meaningful in 5–6 sentences"
+            ],
+            "learning_outcome": "Develops critical reflection",
+            "evaluation": "Depth of understanding (10 marks)"
+        }
+    ]
+}

@@ -1,0 +1,152 @@
+{
+    "class": "Class 7",
+    "subject": "Social Science",
+    "chapter_name": "Eighteenth-Century Political Formations",
+    "lesson_level": "Medium",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand major political changes in 18th-century India",
+        "Learn about the decline of the Mughal empire and rise of regional powers",
+        "Know about European trading companies and their influence",
+        "Identify important battles and alliances",
+        "Compare administration of regional states",
+        "Develop basic analytical thinking about historical events"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Decline of the Mughal Empire",
+            "topics_covered": [
+                "Reasons for Mughal decline",
+                "Emergence of regional powers"
+            ],
+            "teaching_strategy": [
+                "Class discussion with timeline",
+                "Storytelling of key events"
+            ],
+            "student_activities": [
+                "List factors for decline",
+                "Mark Mughal territories on a map"
+            ],
+            "assessment": [
+                "Participation in discussion",
+                "Notebook note"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Rise of Regional States",
+            "topics_covered": [
+                "Marathas, Sikhs, Nizams, Rajputs",
+                "Alliances and rivalries"
+            ],
+            "teaching_strategy": [
+                "Map exercises",
+                "Class talk and examples"
+            ],
+            "student_activities": [
+                "Prepare a short note on one regional state",
+                "Discuss alliances briefly"
+            ],
+            "assessment": [
+                "Participation",
+                "Notebook note"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "European Trading Companies",
+            "topics_covered": [
+                "British and French companies",
+                "Trading posts and influence on India"
+            ],
+            "teaching_strategy": [
+                "Lecture with maps",
+                "Discussion on trade vs political power"
+            ],
+            "student_activities": [
+                "List key trading posts",
+                "Discuss how companies affected politics"
+            ],
+            "assessment": [
+                "Accuracy in listing posts",
+                "Participation in discussion"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Important Battles and Alliances",
+            "topics_covered": [
+                "Battle of Plassey and Buxar",
+                "Alliances with European powers"
+            ],
+            "teaching_strategy": [
+                "Map marking exercise",
+                "Class discussion on causes and results"
+            ],
+            "student_activities": [
+                "Mark battles on a map",
+                "Explain results in short"
+            ],
+            "assessment": [
+                "Map marking accuracy",
+                "Participation"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Administration of Regional States",
+            "topics_covered": [
+                "Revenue systems",
+                "Comparison with Mughal administration"
+            ],
+            "teaching_strategy": [
+                "Simple charts",
+                "Class discussion"
+            ],
+            "student_activities": [
+                "Prepare a small table comparing systems",
+                "Discuss which system seems better and why"
+            ],
+            "assessment": [
+                "Notebook check",
+                "Participation in discussion"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Revision and Quiz",
+            "topics_covered": [
+                "Recap of major rulers, battles, and alliances",
+                "Short quiz on key points"
+            ],
+            "teaching_strategy": [
+                "Quiz with map and short questions",
+                "Class discussion on importance of events"
+            ],
+            "student_activities": [
+                "Take quiz",
+                "Share one interesting fact learned"
+            ],
+            "assessment": [
+                "Quiz results",
+                "Participation",
+                "Notebook check"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Maps of 18th-century India",
+        "Timeline charts",
+        "Whiteboard/Blackboard",
+        "Short case examples of battles and alliances"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Map exercises",
+        "Notebook checking",
+        "Short quiz"
+    ],
+    "teacher_tip": "Keep lessons clear and focused on main events and rulers. Use maps and timelines to help students visualize political changes."
+}

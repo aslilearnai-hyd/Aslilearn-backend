@@ -1,0 +1,171 @@
+{
+    "class": "Class 9",
+    "subject": "Social Science - Democratic Politics",
+    "chapter": "Working of Institutions",
+    "difficulty": "Medium",
+    "source_pdf": "dem9_4.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Case Study of Mandal Commission Decision",
+            "objective": "Understand how a major policy decision is made",
+            "materials": [
+                "Textbook",
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Read the section about the Mandal Commission decision",
+                "Identify the institutions involved in the decision",
+                "Write a short explanation of their roles"
+            ],
+            "learning_outcome": "Explains how government institutions participate in policy decisions",
+            "evaluation": "Accuracy of explanation (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Parliamentary Functions Analysis",
+            "objective": "Understand the functions of Parliament",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "List the major functions of Parliament",
+                "Give an example for each function",
+                "Discuss how Parliament controls the government"
+            ],
+            "learning_outcome": "Analyzes the role of Parliament in democracy",
+            "evaluation": "Completeness and correctness (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Mock Parliamentary Session",
+            "objective": "Experience the working of Parliament",
+            "materials": [
+                "Topic for discussion",
+                "Notebook"
+            ],
+            "steps": [
+                "Divide students into ruling party and opposition",
+                "Select a national issue",
+                "Conduct a mock parliamentary discussion"
+            ],
+            "learning_outcome": "Understands parliamentary debate and decision-making",
+            "evaluation": "Participation and reasoning (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Executive Decision Making Chart",
+            "objective": "Understand the working of the executive",
+            "materials": [
+                "Chart paper",
+                "Markers"
+            ],
+            "steps": [
+                "List the roles of the President, Prime Minister and Council of Ministers",
+                "Prepare a chart explaining their functions",
+                "Present the chart to the class"
+            ],
+            "learning_outcome": "Explains the roles within the executive branch",
+            "evaluation": "Clarity and presentation (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Role of Prime Minister Report",
+            "objective": "Study the powers of the Prime Minister",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Write a short report on the powers of the Prime Minister",
+                "Include examples of decision making",
+                "Explain why the Prime Minister is considered powerful"
+            ],
+            "learning_outcome": "Analyzes the importance of the Prime Minister in governance",
+            "evaluation": "Depth of explanation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Judicial Review Activity",
+            "objective": "Understand the concept of judicial review",
+            "materials": [
+                "Textbook",
+                "Notebook"
+            ],
+            "steps": [
+                "Read about judicial review in the chapter",
+                "Write its meaning",
+                "Give an example of how courts can declare a law invalid"
+            ],
+            "learning_outcome": "Explains the role of judiciary in protecting the Constitution",
+            "evaluation": "Correct explanation (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Hierarchy of Courts Presentation",
+            "objective": "Understand the structure of judiciary",
+            "materials": [
+                "Chart paper",
+                "Markers"
+            ],
+            "steps": [
+                "Prepare a diagram of the court hierarchy in India",
+                "Explain the role of each level of court",
+                "Present the diagram in class"
+            ],
+            "learning_outcome": "Describes the judicial structure of India",
+            "evaluation": "Clarity of presentation (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Newspaper Institutional Analysis",
+            "objective": "Relate institutions to real-world events",
+            "materials": [
+                "Newspaper",
+                "Notebook"
+            ],
+            "steps": [
+                "Collect three news articles about government actions",
+                "Identify whether they relate to legislature, executive or judiciary",
+                "Write explanations for each"
+            ],
+            "learning_outcome": "Connects textbook concepts with real-life examples",
+            "evaluation": "Accuracy of classification (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Debate on Parliamentary vs Presidential System",
+            "objective": "Understand different systems of government",
+            "materials": [
+                "Notebook",
+                "Reference material"
+            ],
+            "steps": [
+                "Divide the class into two groups",
+                "One group supports parliamentary system",
+                "The other supports presidential system",
+                "Conduct a debate"
+            ],
+            "learning_outcome": "Compares forms of democratic government",
+            "evaluation": "Quality of arguments (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Institution Responsibility Table",
+            "objective": "Identify responsibilities of institutions",
+            "materials": [
+                "Notebook",
+                "Textbook"
+            ],
+            "steps": [
+                "Prepare a table listing legislature, executive and judiciary",
+                "Write their main responsibilities",
+                "Provide one example for each"
+            ],
+            "learning_outcome": "Understands division of powers in democracy",
+            "evaluation": "Correct table preparation (10 marks)"
+        }
+    ]
+}

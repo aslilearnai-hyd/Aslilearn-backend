@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Answer Questions (VSAQs)",
+    "chapter": "Exploring Substances: Acidic, Basic, and Neutral",
+    "generated_at": "2026-03-06T18:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Name the acid present in an ant's sting.",
+            "answer": "Formic acid (also known as Methanoic acid).",
+            "key_concepts": ["natural acids"],
+            "marks": 1,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What is the nature of a solution that turns red litmus blue?",
+            "answer": "Basic (or Alkaline).",
+            "key_concepts": ["litmus indicator"],
+            "marks": 1,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Which substance is used to neutralize highly acidic soil?",
+            "answer": "Quick lime (Calcium oxide) or Slaked lime (Calcium hydroxide).",
+            "key_concepts": ["neutralization in agriculture"],
+            "marks": 1,
+            "source_section": "Section 1.6"
+        },
+        {
+            "question_number": 4,
+            "question": "Give one example of a neutral substance.",
+            "answer": "Common salt (Sodium chloride) or Sugar.",
+            "key_concepts": ["neutral substances"],
+            "marks": 1,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 5,
+            "question": "What is the color of phenolphthalein in distilled water?",
+            "answer": "Colorless.",
+            "key_concepts": ["synthetic indicators"],
+            "marks": 1,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 6,
+            "question": "Name the base found in Window Cleaners.",
+            "answer": "Ammonium hydroxide.",
+            "key_concepts": ["common bases"],
+            "marks": 1,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the range of the pH scale?",
+            "answer": "0 to 14.",
+            "key_concepts": ["pH scale"],
+            "marks": 1,
+            "source_section": "Section 1.7"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the chemical name of Milk of Magnesia?",
+            "answer": "Magnesium hydroxide.",
+            "key_concepts": ["bases"],
+            "marks": 1,
+            "source_section": "Section 1.6"
+        },
+        {
+            "question_number": 9,
+            "question": "Does a neutral solution change the color of turmeric indicator?",
+            "answer": "No, it remains yellow.",
+            "key_concepts": ["turmeric indicator"],
+            "marks": 1,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Which acid is found in tamarind?",
+            "answer": "Tartaric acid.",
+            "key_concepts": ["natural acids"],
+            "marks": 1,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the nature of a solution with pH 7?",
+            "answer": "Neutral.",
+            "key_concepts": ["pH scale"],
+            "marks": 1,
+            "source_section": "Section 1.7"
+        },
+        {
+            "question_number": 12,
+            "question": "Name the gas evolved when an acid reacts with a metal carbonate.",
+            "answer": "Carbon dioxide ($CO_2$).",
+            "key_concepts": ["chemical properties of acids"],
+            "marks": 1,
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 13,
+            "question": "Which indicator turns magenta in acidic solutions?",
+            "answer": "China rose indicator.",
+            "key_concepts": ["natural indicators"],
+            "marks": 1,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Define 'Alkali'.",
+            "answer": "A base that dissolves in water is called an alkali.",
+            "key_concepts": ["alkalis"],
+            "marks": 1,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 15,
+            "question": "What color does blue litmus turn in a solution of baking soda?",
+            "answer": "It remains blue (because baking soda is basic).",
+            "key_concepts": ["litmus test"],
+            "marks": 1,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 16,
+            "question": "Name a mineral acid used in laboratories.",
+            "answer": "Hydrochloric acid or Sulphuric acid.",
+            "key_concepts": ["mineral acids"],
+            "marks": 1,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 17,
+            "question": "What is the common name for Calcium Hydroxide?",
+            "answer": "Lime water.",
+            "key_concepts": ["common bases"],
+            "marks": 1,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 18,
+            "question": "State the effect of acid on China rose indicator.",
+            "answer": "It turns the indicator dark pink or magenta.",
+            "key_concepts": ["natural indicators"],
+            "marks": 1,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the primary cause of tooth decay?",
+            "answer": "Acids produced by bacteria in the mouth.",
+            "key_concepts": ["acids in daily life"],
+            "marks": 1,
+            "source_section": "Section 1.8"
+        },
+        {
+            "question_number": 20,
+            "question": "Is soap solution acidic or basic?",
+            "answer": "Basic.",
+            "key_concepts": ["identifying substances"],
+            "marks": 1,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 21,
+            "question": "What is the use of Calamine solution?",
+            "answer": "To treat ant bites by neutralizing the injected formic acid.",
+            "key_concepts": ["neutralization"],
+            "marks": 1,
+            "source_section": "Section 1.6"
+        },
+        {
+            "question_number": 22,
+            "question": "What is the result of a reaction between an acid and a base?",
+            "answer": "Salt and water are formed.",
+            "key_concepts": ["neutralization reaction"],
+            "marks": 1,
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 23,
+            "question": "Name the indicator that remains yellow in acid but turns red in base.",
+            "answer": "Turmeric.",
+            "key_concepts": ["natural indicators"],
+            "marks": 1,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Which acid is found in Vitamin C tablets?",
+            "answer": "Ascorbic acid.",
+            "key_concepts": ["natural acids"],
+            "marks": 1,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Name a natural indicator other than litmus or turmeric.",
+            "answer": "China rose (Hibiscus).",
+            "key_concepts": ["natural indicators"],
+            "marks": 1,
+            "source_section": "Section 1.2"
+        }
+    ]
+}

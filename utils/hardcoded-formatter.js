@@ -283,6 +283,24 @@ function formatLessonPlanner(data, metadata) {
   } else if (data.lesson_plans && Array.isArray(data.lesson_plans)) {
     // Social Science format uses lesson_plans
     lessons = data.lesson_plans;
+  } else if (data.lesson_plan && Array.isArray(data.lesson_plan)) {
+    // New JSON structure for Class 7–10 per‑chapter lesson planner:
+    // has root fields like class, subject, chapter_name, total_periods, period_duration_minutes
+    // and an array "lesson_plan" of period objects.
+    const baseTitle = data.chapter_name || metadata.topic || 'Lesson';
+    const durationMinutes =
+      typeof data.period_duration_minutes === 'string'
+        ? parseInt(String(data.period_duration_minutes).split('-')[0], 10) || 40
+        : data.period_duration_minutes || 40;
+
+    lessons = data.lesson_plan.map((period) => ({
+      lesson_name: period.title || `${baseTitle} - Period ${period.period || ''}`,
+      subject_area: data.subject || undefined,
+      duration: {
+        periods: 1,
+        minutes_per_period: durationMinutes
+      }
+    }));
   }
   
   // If topic is provided, try to filter lessons by matching topic name
@@ -633,9 +651,69 @@ export function formatHardcodedContent(data, toolType, metadata = {}) {
           return formatWorksheet(data, toolType, metadata);
         case 'Homework':
           return formatHomework(data, toolType, metadata);
+        case 'MCQs':
+          // Single MCQ JSON from Class 7-10 → wrap into worksheet format for display
+          if (data.questions && Array.isArray(data.questions)) {
+            const worksheetData = {
+              content_type: 'Worksheet',
+              sections: [{
+                type: 'Multiple Choice Questions',
+                questions: data.questions.map((q, i) => ({ ...q, question_number: i + 1, question_type: 'Multiple Choice Questions' })),
+                count: data.questions.length,
+              }],
+              total_questions: data.questions.length,
+            };
+            return formatWorksheet(worksheetData, toolType, metadata);
+          }
+          return formatGenericJSON(data, toolType, metadata);
         default:
           return formatGenericJSON(data, toolType, metadata);
       }
+    } else if (data.short_notes) {
+      // New Class 7-10 SNS format: { short_notes: { key_points: [], examples: [], ... } }
+      const adaptedData = {
+        notes: [{
+          concept_name: data.chapter || metadata.topic || 'Summary',
+          summary: (data.short_notes.key_points || []).join('\n\n'),
+          importance: (data.short_notes.exam_tips || []).join('\n\n'),
+          quick_facts: [
+            ...(data.short_notes.examples || []),
+            ...(data.short_notes.formulas || []),
+          ],
+        }],
+      };
+      return formatShortNotesSummaries(adaptedData);
+    } else if (data.concepts && Array.isArray(data.concepts)) {
+      // CMH JSON from Class 7-10 (no content_type field, just concepts array)
+      return formatConceptMasteryHelper(data);
+    } else if (data.flashcards) {
+      // Flashcard JSON from Class 7-10 (no content_type field)
+      return formatFlashcardGenerator(data);
+    } else if (data.notes && Array.isArray(data.notes)) {
+      // SNS JSON with notes array (no content_type field)
+      return formatShortNotesSummaries(data);
+    } else if (data.questions && Array.isArray(data.questions)) {
+      // Generic questions JSON (MCQs, SAQ, LAQ, VSAQ)
+      // Wrap into worksheet format for display
+      const questionType = toolType === 'short-answer' ? 'Short Answer Questions'
+        : toolType === 'long-answer' ? 'Long Answer Questions'
+        : toolType === 'very-short-answer' ? 'Very Short Answer Questions'
+        : toolType === 'fill-in-blanks' ? 'Fill in the Blanks'
+        : 'Multiple Choice Questions';
+      const worksheetData = {
+        content_type: 'Worksheet',
+        sections: [{
+          type: questionType,
+          questions: data.questions.map((q, i) => ({ ...q, question_number: i + 1, question_type: questionType })),
+          count: data.questions.length,
+        }],
+        total_questions: data.questions.length,
+      };
+      return formatWorksheet(worksheetData, toolType, metadata);
+    } else if ((data.activities && Array.isArray(data.activities)) || (data.activities_projects && Array.isArray(data.activities_projects))) {
+      // Activity & Project Generator JSON from Class 7-10
+      if (data.activities_projects) data.activities = data.activities_projects;
+      return formatActivitiesJSON(data, metadata);
     } else if (data.headers && data.data) {
       // CSV format
       if (toolType === 'activity-project-generator') {
@@ -1380,6 +1458,52 @@ function formatChapterSummary(data, metadata) {
     });
   }
   
+  return markdown;
+}
+
+/**
+ * Format Activities JSON (Class 7-10 Activity & Project Generator)
+ */
+function formatActivitiesJSON(data, metadata) {
+  let markdown = `## Activity & Project Generator\n\n`;
+  if (metadata.classNumber) markdown += `**Class:** ${metadata.classNumber}\n`;
+  if (metadata.subject) markdown += `**Subject:** ${metadata.subject}\n`;
+  if (metadata.topic) markdown += `**Topic:** ${metadata.topic}\n\n`;
+
+  if (data.activities && Array.isArray(data.activities)) {
+    data.activities.forEach((activity, index) => {
+      markdown += `### Activity ${index + 1}: ${activity.title || activity.name || 'Untitled'}\n\n`;
+      if (activity.description) markdown += `**Description:** ${activity.description}\n\n`;
+      if (activity.objective) markdown += `**Objective:** ${activity.objective}\n\n`;
+      if (activity.materials) {
+        if (Array.isArray(activity.materials)) {
+          markdown += `**Materials:** ${activity.materials.join(', ')}\n\n`;
+        } else {
+          markdown += `**Materials:** ${activity.materials}\n\n`;
+        }
+      }
+      if (activity.instructions) {
+        if (Array.isArray(activity.instructions)) {
+          markdown += `**Instructions:**\n`;
+          activity.instructions.forEach(inst => { markdown += `- ${inst}\n`; });
+          markdown += `\n`;
+        } else {
+          markdown += `**Instructions:** ${activity.instructions}\n\n`;
+        }
+      }
+      if (activity.expected_outcome) markdown += `**Expected Outcome:** ${activity.expected_outcome}\n\n`;
+      markdown += `---\n\n`;
+    });
+  } else {
+    // Fallback: treat the whole object as key-value pairs
+    Object.keys(data).forEach(key => {
+      if (key !== 'activities' && data[key]) {
+        const formattedKey = key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+        markdown += `**${formattedKey}:** ${typeof data[key] === 'object' ? JSON.stringify(data[key], null, 2) : data[key]}\n\n`;
+      }
+    });
+  }
+
   return markdown;
 }
 

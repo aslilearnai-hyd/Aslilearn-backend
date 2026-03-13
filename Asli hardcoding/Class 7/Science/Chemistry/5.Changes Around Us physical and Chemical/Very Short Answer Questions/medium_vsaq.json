@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter:changes around physcial and chemical",
+    "generated_at": "2026-03-06T18:50:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Why is the blowing of a balloon considered a physical change?",
+            "answer": "Because it only involves a change in the shape and size of the balloon without forming any new substance.",
+            "key_concepts": ["physical properties"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What happens chemically when magnesium ash is dissolved in water?",
+            "answer": "It reacts with water to form Magnesium Hydroxide, which is a basic substance.",
+            "key_concepts": ["chemical reactions"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Why is rusting faster in coastal areas than in deserts?",
+            "answer": "Coastal areas have high humidity (moisture), which is an essential condition for the chemical process of rusting.",
+            "key_concepts": ["factors affecting rusting"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain why burning of wood and cutting it into small pieces are considered different types of changes.",
+            "answer": "Cutting wood is a physical change (only size changes), while burning is a chemical change (new substances like ash and smoke are formed).",
+            "key_concepts": ["comparing changes"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Write the word equation for the reaction between Vinegar and Baking Soda.",
+            "answer": "Vinegar + Baking Soda → Carbon Dioxide + Other substances",
+            "key_concepts": ["chemical equations"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 6,
+            "question": "How can you show that the setting of curd is a chemical change?",
+            "answer": "It is a chemical change because a new substance is formed and it cannot be reversed back into milk.",
+            "key_concepts": ["irreversible changes"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the role of Chromium in making Stainless Steel?",
+            "answer": "Chromium prevents the iron from rusting by forming a protective oxide layer.",
+            "key_concepts": ["alloys and prevention"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Why does a slice of apple acquire a brown color if left in the open?",
+            "answer": "It is a chemical change where the iron present in the apple reacts with atmospheric oxygen to form new brown pigments.",
+            "key_concepts": ["oxidation"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Describe the chemical test used to identify Carbon Dioxide gas.",
+            "answer": "Pass the gas through lime water; if it turns milky due to the formation of calcium carbonate, the gas is $CO_2$.",
+            "key_concepts": ["testing gases"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Why is crystallization preferred over simple evaporation to get pure crystals?",
+            "answer": "Crystallization removes soluble impurities that would otherwise remain in the solid after simple evaporation.",
+            "key_concepts": ["purification"],
+            "marks": 2,
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 11,
+            "question": "What is the brown deposit found on an iron nail kept in Copper Sulphate solution?",
+            "answer": "The brown deposit is Copper metal that has been displaced from the solution.",
+            "key_concepts": ["displacement reaction"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Is the explosion of a firework a physical change? Why or why not?",
+            "answer": "No, it is a chemical change because it produces heat, light, sound, and unpleasant gases.",
+            "key_concepts": ["chemical changes"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Name the two substances required for the process of Galvanization.",
+            "answer": "Iron (or Steel) and Zinc.",
+            "key_concepts": ["galvanization"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 14,
+            "question": "What type of change occurs when steam condenses into water?",
+            "answer": "Physical change (change of state).",
+            "key_concepts": ["change of state"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 15,
+            "question": "Write the chemical name of the milky substance formed in lime water.",
+            "answer": "Calcium Carbonate ($CaCO_3$).",
+            "key_concepts": ["chemical products"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Why is the melting of wax considered a physical change but the burning of a wick chemical?",
+            "answer": "Melted wax can be solidified back (no new substance), but the burning wick produces new gases and cannot be recovered.",
+            "key_concepts": ["simultaneous changes"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 17,
+            "question": "What is an alloy?",
+            "answer": "A homogeneous mixture of two or more metals, or a metal and a non-metal.",
+            "key_concepts": ["alloys"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Is the dissolution of salt in water a physical or chemical change?",
+            "answer": "Physical change because salt can be recovered by evaporating the water.",
+            "key_concepts": ["reversible physical changes"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Why do we apply grease to the moving parts of a bicycle?",
+            "answer": "To prevent the iron parts from coming in contact with moisture and air, thereby preventing rust.",
+            "key_concepts": ["prevention of rusting"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 20,
+            "question": "What is observed when Magnesium ribbon is cleaned with sandpaper before burning?",
+            "answer": "The protective layer of magnesium oxide is removed, allowing it to burn more easily with a brilliant white light.",
+            "key_concepts": ["chemical observations"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 21,
+            "question": "Define the term 'Reversible Change' with an example from this chapter.",
+            "answer": "A change where the original substance can be recovered, such as the melting of ice or stretching a spring.",
+            "key_concepts": ["reversibility"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain why photosynthesis is a chemical change.",
+            "answer": "It is a chemical change because plants use water and $CO_2$ to produce entirely new substances like glucose and oxygen.",
+            "key_concepts": ["biological processes"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 23,
+            "question": "What change is observed in the pH nature of Magnesium oxide when it forms Magnesium hydroxide?",
+            "answer": "It remains basic, but it becomes more readily available for testing as an alkali in liquid form.",
+            "key_concepts": ["oxides and hydroxides"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 24,
+            "question": "State the difference between a physical property and a chemical property.",
+            "answer": "Physical properties include shape, size, and state; chemical properties involve how a substance reacts to form new substances.",
+            "key_concepts": ["properties of matter"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 25,
+            "question": "Why does copper sulphate solution turn green when an iron blade is left in it?",
+            "answer": "Because iron is more reactive than copper and forms Iron Sulphate, which is green in color.",
+            "key_concepts": ["displacement reaction"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        }
+    ]
+}

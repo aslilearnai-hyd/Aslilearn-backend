@@ -1,0 +1,160 @@
+{
+    "class": "Class 10",
+    "subject": "English",
+    "chapter_name": "The Tale of Custard the Dragon",
+    "title": "Lesson Planner – The Tale of Custard the Dragon",
+    "author": "Ogden Nash",
+    "lesson_level": "Medium",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the narrative structure of the poem",
+        "Analyse the characters and their contrasting traits",
+        "Identify humour and irony used in the poem",
+        "Recognise poetic devices like simile and imagery",
+        "Interpret the theme of courage and appearance vs reality",
+        "Develop analytical reading and comprehension skills"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Ballad and Poet",
+            "topics_covered": [
+                "Introduction to Ogden Nash",
+                "Understanding ballad poetry",
+                "Overview of the poem’s story"
+            ],
+            "teaching_strategy": [
+                "Teacher explanation",
+                "Poem recitation",
+                "Interactive questioning"
+            ],
+            "student_activities": [
+                "Listen to poem reading",
+                "Discuss what makes a story poem interesting"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Participation in discussion"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Character Analysis",
+            "topics_covered": [
+                "Belinda and her personality",
+                "Ink, Blink, and Mustard",
+                "Custard’s character and reputation"
+            ],
+            "teaching_strategy": [
+                "Group discussion",
+                "Character comparison"
+            ],
+            "student_activities": [
+                "Create a character chart",
+                "Compare bravery of characters"
+            ],
+            "assessment": [
+                "Notebook activity",
+                "Group presentation"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Humour and Irony",
+            "topics_covered": [
+                "Exaggerated bravery descriptions",
+                "Irony in characters’ behaviour",
+                "Humorous tone of the poem"
+            ],
+            "teaching_strategy": [
+                "Example-based explanation",
+                "Guided reading"
+            ],
+            "student_activities": [
+                "Identify humorous lines",
+                "Explain why Custard is mocked"
+            ],
+            "assessment": [
+                "Short written responses",
+                "Peer discussion"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Climax – The Pirate Scene",
+            "topics_covered": [
+                "Description of the pirate",
+                "Reaction of other characters",
+                "Custard’s bravery"
+            ],
+            "teaching_strategy": [
+                "Sequential storytelling",
+                "Text analysis"
+            ],
+            "student_activities": [
+                "Arrange events in order",
+                "Explain why Custard becomes the hero"
+            ],
+            "assessment": [
+                "Written explanation",
+                "Oral questioning"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Poetic Devices",
+            "topics_covered": [
+                "Simile in the poem",
+                "Imagery and descriptive language",
+                "Rhyme scheme and rhythm"
+            ],
+            "teaching_strategy": [
+                "Illustrative examples",
+                "Poetry analysis"
+            ],
+            "student_activities": [
+                "Find examples of similes",
+                "Identify rhyme scheme"
+            ],
+            "assessment": [
+                "Worksheet activity",
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Theme and Revision",
+            "topics_covered": [
+                "Theme of courage",
+                "Appearance vs reality",
+                "Complete revision"
+            ],
+            "teaching_strategy": [
+                "Discussion method",
+                "Question–answer session"
+            ],
+            "student_activities": [
+                "Write a short explanation of the poem’s message",
+                "Participate in revision quiz"
+            ],
+            "assessment": [
+                "Short test",
+                "Class discussion evaluation"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "English Textbook",
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Poetry worksheets"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Written exercises",
+        "Student participation"
+    ],
+    "teacher_tip": "Highlight the humorous irony that the dragon considered cowardly turns out to be the real hero."
+}

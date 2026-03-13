@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 1: India – Size and Location",
+    "generated_at": "2026-03-08T22:20:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "India is located in which continent?",
+            "options": {
+                "A": "Europe",
+                "B": "Asia",
+                "C": "Africa",
+                "D": "Australia"
+            },
+            "correct_answer": "B",
+            "explanation": "India is located in the continent of Asia.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 2,
+            "question": "India lies in which hemisphere?",
+            "options": {
+                "A": "Southern Hemisphere",
+                "B": "Northern Hemisphere",
+                "C": "Western Hemisphere",
+                "D": "Eastern Hemisphere only"
+            },
+            "correct_answer": "B",
+            "explanation": "India lies completely in the Northern Hemisphere.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 3,
+            "question": "The Tropic of Cancer passes through which country?",
+            "options": {
+                "A": "India",
+                "B": "Russia",
+                "C": "Japan",
+                "D": "Sri Lanka"
+            },
+            "correct_answer": "A",
+            "explanation": "The Tropic of Cancer passes almost through the middle of India.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 4,
+            "question": "What is the latitude of the Tropic of Cancer?",
+            "options": {
+                "A": "0°",
+                "B": "23°30'N",
+                "C": "66°30'N",
+                "D": "90°N"
+            },
+            "correct_answer": "B",
+            "explanation": "The Tropic of Cancer lies at 23°30'N latitude.",
+            "difficulty": "easy",
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 5,
+            "question": "India is the ______ largest country in the world by area.",
+            "options": {
+                "A": "Fifth",
+                "B": "Sixth",
+                "C": "Seventh",
+                "D": "Eighth"
+            },
+            "correct_answer": "C",
+            "explanation": "India is the seventh largest country in the world.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the approximate area of India?",
+            "options": {
+                "A": "3.28 million sq km",
+                "B": "2.5 million sq km",
+                "C": "5 million sq km",
+                "D": "1 million sq km"
+            },
+            "correct_answer": "A",
+            "explanation": "India's area is about 3.28 million square kilometres.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Which sea lies to the west of India?",
+            "options": {
+                "A": "Bay of Bengal",
+                "B": "Arabian Sea",
+                "C": "Red Sea",
+                "D": "Mediterranean Sea"
+            },
+            "correct_answer": "B",
+            "explanation": "The Arabian Sea lies to the west of India.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Which sea lies to the east of India?",
+            "options": {
+                "A": "Arabian Sea",
+                "B": "Bay of Bengal",
+                "C": "Black Sea",
+                "D": "Red Sea"
+            },
+            "correct_answer": "B",
+            "explanation": "The Bay of Bengal lies to the east of India.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Which ocean lies to the south of India?",
+            "options": {
+                "A": "Pacific Ocean",
+                "B": "Atlantic Ocean",
+                "C": "Indian Ocean",
+                "D": "Arctic Ocean"
+            },
+            "correct_answer": "C",
+            "explanation": "The Indian Ocean lies to the south of India.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 10,
+            "question": "What is the Standard Meridian of India?",
+            "options": {
+                "A": "0°",
+                "B": "66°30'E",
+                "C": "82°30'E",
+                "D": "90°E"
+            },
+            "correct_answer": "C",
+            "explanation": "82°30'E longitude is the Standard Meridian of India.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Indian Standard Time is based on which longitude?",
+            "options": {
+                "A": "90°E",
+                "B": "82°30'E",
+                "C": "75°E",
+                "D": "60°E"
+            },
+            "correct_answer": "B",
+            "explanation": "IST is calculated using 82°30'E longitude.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 12,
+            "question": "Which place lies near the Standard Meridian of India?",
+            "options": {
+                "A": "Delhi",
+                "B": "Mirzapur",
+                "C": "Mumbai",
+                "D": "Chennai"
+            },
+            "correct_answer": "B",
+            "explanation": "Mirzapur in Uttar Pradesh lies near the Standard Meridian.",
+            "difficulty": "easy",
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 13,
+            "question": "Which canal reduced the distance between India and Europe?",
+            "options": {
+                "A": "Panama Canal",
+                "B": "Suez Canal",
+                "C": "Kiel Canal",
+                "D": "Corinth Canal"
+            },
+            "correct_answer": "B",
+            "explanation": "The Suez Canal reduced the distance between India and Europe.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 14,
+            "question": "India's location helped it establish which contacts?",
+            "options": {
+                "A": "Trade contacts",
+                "B": "Cultural contacts",
+                "C": "Political contacts",
+                "D": "Both A and B"
+            },
+            "correct_answer": "D",
+            "explanation": "India's central location helped establish trade and cultural contacts.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Which mathematical system spread from India?",
+            "options": {
+                "A": "Roman numerals",
+                "B": "Decimal system",
+                "C": "Binary system",
+                "D": "Greek numerals"
+            },
+            "correct_answer": "B",
+            "explanation": "The decimal system spread from India to other parts of the world.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Which product was exported from India in ancient times?",
+            "options": {
+                "A": "Spices",
+                "B": "Oil",
+                "C": "Coal",
+                "D": "Iron"
+            },
+            "correct_answer": "A",
+            "explanation": "Spices were one of the important exports from India.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Which country lies to the northwest of India?",
+            "options": {
+                "A": "Nepal",
+                "B": "Pakistan",
+                "C": "Myanmar",
+                "D": "Bangladesh"
+            },
+            "correct_answer": "B",
+            "explanation": "Pakistan lies to the northwest of India.",
+            "difficulty": "easy",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Which country lies to the north of India?",
+            "options": {
+                "A": "China",
+                "B": "Sri Lanka",
+                "C": "Maldives",
+                "D": "Myanmar"
+            },
+            "correct_answer": "A",
+            "explanation": "China lies to the north of India.",
+            "difficulty": "easy",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 19,
+            "question": "Which country lies to the east of India?",
+            "options": {
+                "A": "Bangladesh",
+                "B": "Pakistan",
+                "C": "Afghanistan",
+                "D": "Nepal"
+            },
+            "correct_answer": "A",
+            "explanation": "Bangladesh lies to the east of India.",
+            "difficulty": "easy",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Which island group lies in the Arabian Sea?",
+            "options": {
+                "A": "Andaman and Nicobar Islands",
+                "B": "Lakshadweep Islands",
+                "C": "Maldives",
+                "D": "Sri Lanka"
+            },
+            "correct_answer": "B",
+            "explanation": "Lakshadweep Islands lie in the Arabian Sea.",
+            "difficulty": "easy",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Which island group lies in the Bay of Bengal?",
+            "options": {
+                "A": "Lakshadweep",
+                "B": "Andaman and Nicobar",
+                "C": "Maldives",
+                "D": "Sri Lanka"
+            },
+            "correct_answer": "B",
+            "explanation": "The Andaman and Nicobar Islands lie in the Bay of Bengal.",
+            "difficulty": "easy",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Which strait separates India and Sri Lanka?",
+            "options": {
+                "A": "Bering Strait",
+                "B": "Palk Strait",
+                "C": "Malacca Strait",
+                "D": "Hormuz Strait"
+            },
+            "correct_answer": "B",
+            "explanation": "The Palk Strait separates India and Sri Lanka.",
+            "difficulty": "easy",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Which island country lies south of India?",
+            "options": {
+                "A": "Nepal",
+                "B": "Sri Lanka",
+                "C": "Bhutan",
+                "D": "Bangladesh"
+            },
+            "correct_answer": "B",
+            "explanation": "Sri Lanka lies south of India.",
+            "difficulty": "easy",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 24,
+            "question": "Which island country lies southwest of Lakshadweep?",
+            "options": {
+                "A": "Sri Lanka",
+                "B": "Maldives",
+                "C": "Indonesia",
+                "D": "Myanmar"
+            },
+            "correct_answer": "B",
+            "explanation": "Maldives lies southwest of Lakshadweep Islands.",
+            "difficulty": "easy",
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 25,
+            "question": "India's location helped it develop contacts with:",
+            "options": {
+                "A": "Europe",
+                "B": "Africa",
+                "C": "Asia",
+                "D": "All of these"
+            },
+            "correct_answer": "D",
+            "explanation": "India's central location helped it connect with many continents.",
+            "difficulty": "easy",
+            "source_section": "Section 1.3"
+        }
+    ]
+}

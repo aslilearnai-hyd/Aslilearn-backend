@@ -1,0 +1,33 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "Chapter 3: A Story of Numbers",
+  "difficulty": "Medium",
+  "source_pdf": "ch-3_A_STORY_OF_NUMBERS.pdf",
+  "short_notes": {
+    "key_points": [
+      "Natural numbers are counting numbers starting from 1",
+      "Whole numbers include natural numbers along with zero",
+      "Integers include positive numbers, negative numbers and zero",
+      "Rational numbers can be written as a fraction p/q where q ≠ 0",
+      "Numbers can be represented and compared using a number line"
+    ],
+    "examples": [
+      "Natural number example: 9",
+      "Whole number example: 0",
+      "Integer example: -6",
+      "Rational number example: 5/8"
+    ],
+    "formulas": [
+      "Successor of a number → n + 1",
+      "Predecessor of a number → n − 1",
+      "Rational number form → p/q (q ≠ 0)"
+    ],
+    "exam_tips": [
+      "Remember that natural numbers start from 1 while whole numbers start from 0",
+      "Negative numbers are included only in integers",
+      "Use number lines to compare integers easily",
+      "Always check that the denominator is not zero in rational numbers"
+    ]
+  }
+}

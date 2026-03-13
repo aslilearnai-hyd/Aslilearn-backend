@@ -1,0 +1,139 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "A Square and a Cube",
+  "difficulty": "Hard",
+  "source_pdf": "Ch-1_A_SQUARE_AND_A_CUBE.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Square Pattern Investigation",
+      "objective": "Explore patterns in perfect squares",
+      "materials": ["Notebook", "Calculator"],
+      "steps": [
+        "Write perfect squares from 1² to 20²",
+        "Find the difference between consecutive squares",
+        "Identify and explain the pattern observed"
+      ],
+      "learning_outcome": "Recognises patterns in square numbers",
+      "evaluation": "Correct pattern explanation (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Prime Factor Square Root Method",
+      "objective": "Find square roots using prime factorisation",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Choose numbers such as 144, 196 and 256",
+        "Write their prime factorisation",
+        "Group factors into pairs to find square roots"
+      ],
+      "learning_outcome": "Applies prime factorisation for square roots",
+      "evaluation": "Correct factorisation and roots (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Cube Root Challenge",
+      "objective": "Determine cube roots using factorisation",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write cube numbers such as 512, 729 and 1728",
+        "Find their prime factorisation",
+        "Group the factors in sets of three to find cube roots"
+      ],
+      "learning_outcome": "Understands cube root calculation",
+      "evaluation": "Accuracy of cube roots (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Area and Square Relationship",
+      "objective": "Relate square numbers to area of squares",
+      "materials": ["Graph paper", "Pencil", "Ruler"],
+      "steps": [
+        "Draw squares with sides 3 cm, 5 cm and 7 cm",
+        "Calculate their areas",
+        "Explain how the areas represent square numbers"
+      ],
+      "learning_outcome": "Connects square numbers with geometry",
+      "evaluation": "Correct calculations and explanation (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Volume and Cube Investigation",
+      "objective": "Relate cube numbers to volume",
+      "materials": ["Small blocks", "Notebook"],
+      "steps": [
+        "Build a cube using 3×3×3 blocks",
+        "Count the number of blocks",
+        "Explain how this represents a cube number"
+      ],
+      "learning_outcome": "Understands cube numbers through volume",
+      "evaluation": "Correct reasoning (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Nearest Perfect Square Estimation",
+      "objective": "Estimate square roots of non-perfect squares",
+      "materials": ["Notebook"],
+      "steps": [
+        "Choose numbers like 50, 90 and 130",
+        "Identify the nearest perfect squares",
+        "Estimate their square roots"
+      ],
+      "learning_outcome": "Develops estimation skills",
+      "evaluation": "Accuracy of estimation (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Square vs Cube Growth Analysis",
+      "objective": "Compare growth of squares and cubes",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write numbers from 1 to 10",
+        "Find both squares and cubes",
+        "Analyse which grows faster and explain why"
+      ],
+      "learning_outcome": "Understands exponential growth patterns",
+      "evaluation": "Correct analysis (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Perfect Square Puzzle",
+      "objective": "Solve puzzles involving perfect squares",
+      "materials": ["Notebook"],
+      "steps": [
+        "Create puzzles where a number must be made a perfect square",
+        "Exchange puzzles with classmates",
+        "Solve and explain the reasoning"
+      ],
+      "learning_outcome": "Improves logical reasoning with squares",
+      "evaluation": "Correct solutions (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Cube Pattern Investigation",
+      "objective": "Observe patterns in cube numbers",
+      "materials": ["Notebook"],
+      "steps": [
+        "List cubes from 1³ to 10³",
+        "Find differences between consecutive cubes",
+        "Identify the pattern and explain"
+      ],
+      "learning_outcome": "Recognises patterns in cube numbers",
+      "evaluation": "Correct explanation (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Real-Life Cube Applications",
+      "objective": "Apply cube concept in daily life",
+      "materials": ["Notebook"],
+      "steps": [
+        "Identify objects shaped like cubes",
+        "Measure their sides",
+        "Calculate their volumes using cube formula"
+      ],
+      "learning_outcome": "Applies cube numbers to real-life contexts",
+      "evaluation": "Correct calculations and examples (10 marks)"
+    }
+  ]
+}

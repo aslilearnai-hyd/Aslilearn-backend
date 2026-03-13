@@ -1,0 +1,458 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter: The World of Metals and Non-Metals",
+    "generated_at": "2026-03-06T22:52:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the concept of 'Amphoteric Oxides' with examples of Aluminium and Zinc. Write the chemical reactions involved.",
+            "answer": "Amphoteric oxides are metal oxides that show both acidic and basic behavior, reacting with both acids and bases to produce salt and water. Aluminium oxide ($Al_2O_3$) reacts with $HCl$ (acting as a base) to form aluminium chloride, and with $NaOH$ (acting as an acid) to form sodium aluminate ($NaAlO_2$). Similarly, Zinc oxide ($ZnO$) reacts with both to form zinc salts and zincates.",
+            "answer_outline": [
+                "Definition of amphoteric",
+                "Reaction with HCl",
+                "Reaction with NaOH",
+                "Product identification"
+            ],
+            "key_concepts": [
+                "amphoteric",
+                "sodium aluminate",
+                "dual behavior"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.2.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Analyze the 'Reactivity Series' from an electronic perspective. Why are Potassium and Sodium more reactive than Iron or Copper?",
+            "answer": "Reactivity depends on the ease with which a metal atom loses its valence electrons to form positive ions. Potassium and Sodium have only one electron in their outermost shell and a larger atomic radius, making it very easy to lose that electron. Iron and Copper have more electrons in their valence shells and stronger nuclear attraction, making electron loss more difficult and thus reducing their chemical reactivity.",
+            "answer_outline": [
+                "Electronic configuration",
+                "Ionization energy concept",
+                "Nuclear charge vs atomic radius",
+                "Comparison of group 1 metals vs transition metals"
+            ],
+            "key_concepts": [
+                "valence electrons",
+                "ionization",
+                "electropositivity"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Describe the chemical mechanism of 'Corrosion of Silver' and 'Corrosion of Copper'. How do they differ from the Rusting of Iron?",
+            "answer": "Silver corrodes by reacting with $H_2S$ in the air to form black Silver Sulphide ($Ag_2S$). Copper reacts with moist $CO_2$ to form a green layer of Basic Copper Carbonate. Unlike iron rust, which is porous and flakes off to expose more metal (leading to total destruction), the corrosion layers on silver and copper are often non-porous and can protect the underlying metal from further rapid decay.",
+            "answer_outline": [
+                "Silver tarnish chemistry",
+                "Copper patina chemistry",
+                "Comparison with iron rust structure",
+                "Protective vs Destructive corrosion"
+            ],
+            "key_concepts": [
+                "silver sulphide",
+                "basic copper carbonate",
+                "porosity"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 4,
+            "question": "What is 'Anodizing' of Aluminium? Explain how this process enhances the natural properties of the metal.",
+            "answer": "Anodizing is an electrolytic process used to thicken the natural oxide layer on the surface of aluminium. The aluminium object is made the anode in an electrolytic cell. The resulting thick layer of Aluminium Oxide ($Al_2O_3$) is hard, resistant to further corrosion, and porous enough to absorb dyes for decorative coloring, making the metal both more durable and aesthetically versatile.",
+            "answer_outline": [
+                "Electrolysis setup",
+                "Anode reaction",
+                "Properties of thickened oxide layer",
+                "Industrial applications"
+            ],
+            "key_concepts": [
+                "anodizing",
+                "electrolysis",
+                "oxide layer"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Evaluate the reaction of Phosphorus with water and air. Why is it stored in water and not kerosene, unlike Sodium?",
+            "answer": "Phosphorus (specifically white phosphorus) has a very low ignition temperature (35°C) and reacts spontaneously with oxygen in the air to catch fire. However, it does not react with water and is denser than water, so it stays submerged and safe. Sodium cannot be stored in water because it reacts violently with it to produce hydrogen and heat; hence, sodium requires an organic liquid like kerosene.",
+            "answer_outline": [
+                "Ignition temperature",
+                "Reactivity with oxygen vs water",
+                "Comparison of storage methods",
+                "Chemical stability in different mediums"
+            ],
+            "key_concepts": [
+                "spontaneous combustion",
+                "non-reactivity with water",
+                "storage logic"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain the 'Aqua Regia' solution. Why is it capable of dissolving noble metals like Gold and Platinum?",
+            "answer": "Aqua Regia is a freshly prepared mixture of concentrated Hydrochloric acid ($HCl$) and concentrated Nitric acid ($HNO_3$) in a 3:1 ratio. While neither acid alone can dissolve gold, the mixture produces nascent chlorine and nitrosyl chloride, which are highly reactive. These agents react with gold to form soluble chloroauric acid, allowing the 'noble' metal to be dissolved.",
+            "answer_outline": [
+                "Composition and ratio",
+                "Nascent chlorine formation",
+                "Reaction with gold",
+                "Noble metal solubility"
+            ],
+            "key_concepts": [
+                "aqua regia",
+                "nitrosyl chloride",
+                "chloroauric acid"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Differentiate between the reaction of metals with 'Dilute Nitric Acid' versus other dilute acids like $HCl$ or $H_2SO_4$.",
+            "answer": "Usually, metals react with acids to produce Hydrogen gas. However, when metals (except $Mg$ and $Mn$) react with $HNO_3$, hydrogen gas is not evolved. This is because $HNO_3$ is a strong oxidizing agent; it oxidizes the $H_2$ produced into $H_2O$ and itself gets reduced to nitrogen oxides ($N_2O$, $NO$, or $NO_2$).",
+            "answer_outline": [
+                "Standard metal-acid reaction",
+                "Oxidizing nature of Nitric acid",
+                "Formation of water instead of H2",
+                "Reduction products of HNO3"
+            ],
+            "key_concepts": [
+                "oxidizing agent",
+                "nitrogen oxides",
+                "nitric acid"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.2.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Predict the outcome of adding Copper turnings to Zinc Sulphate and Zinc granules to Copper Sulphate. Justify using electrochemical principles.",
+            "answer": "Adding copper to zinc sulphate results in no reaction because copper is lower in the reactivity series (higher reduction potential) and cannot displace zinc. Adding zinc to copper sulphate results in a displacement reaction where zinc loses electrons (oxidation) and copper ions gain them (reduction), forming zinc sulphate and solid copper. This is a redox reaction driven by the difference in electrode potentials.",
+            "answer_outline": [
+                "Case 1: No reaction justification",
+                "Case 2: Displacement observation",
+                "Redox process explanation",
+                "Reactivity series application"
+            ],
+            "key_concepts": [
+                "redox",
+                "reduction potential",
+                "displacement"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.2.4"
+        },
+        {
+            "question_number": 9,
+            "question": "What are 'Metalloids'? Discuss their position in the periodic table and their significance in the electronics industry.",
+            "answer": "Metalloids are elements that exhibit properties of both metals and non-metals (e.g., Silicon, Germanium). They are located along the zig-zag 'staircase' line separating metals and non-metals. Their significance lies in their semi-conductive nature; their electrical conductivity can be controlled, making them the foundational material for transistors, microchips, and solar cells.",
+            "answer_outline": [
+                "Definition and examples",
+                "Periodic table position",
+                "Semi-conductivity property",
+                "Industrial application"
+            ],
+            "key_concepts": [
+                "metalloids",
+                "semi-conductors",
+                "silicon"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 10,
+            "question": "Why does the 'Dullness' of an aluminium object increase when exposed to air, but its 'Internal Strength' remains protected?",
+            "answer": "Aluminium reacts rapidly with atmospheric oxygen to form a thin, invisible, but extremely tough layer of Aluminium Oxide ($Al_2O_3$). This layer lacks the metallic lustre of pure aluminium, making it look dull. However, this oxide layer is non-porous and adheres strongly to the surface, acting as a permanent shield that prevents further oxygen from reaching the metal underneath.",
+            "answer_outline": [
+                "Oxide layer formation",
+                "Loss of lustre explanation",
+                "Self-protecting mechanism",
+                "Comparison with iron oxide"
+            ],
+            "key_concepts": [
+                "self-protection",
+                "aluminium oxide",
+                "non-porous"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain why 'Ionic Compounds' are formed when metals react with non-metals. Discuss their general properties.",
+            "answer": "Metals tend to lose electrons (electropositive) and non-metals tend to gain electrons (electronegative). This transfer results in the formation of cations and anions, which are held together by strong electrostatic forces called ionic bonds. Properties include high melting/boiling points, solubility in water, and electrical conductivity in molten or aqueous states.",
+            "answer_outline": [
+                "Electron transfer mechanism",
+                "Electrostatic forces",
+                "Physical state and strength",
+                "Conductivity conditions"
+            ],
+            "key_concepts": [
+                "ionic bond",
+                "electrostatic force",
+                "crystal lattice"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 12,
+            "question": "What is the 'Thermite Process'? Discuss its application in repairing railway tracks.",
+            "answer": "The thermite process is a highly exothermic displacement reaction between a metal oxide (usually Iron oxide) and Aluminium powder. When ignited, aluminium reduces the iron oxide to molten iron: $Fe_2O_3 + 2Al \\rightarrow Al_2O_3 + 2Fe + Heat$. The intense heat produced melts the iron, which is then used to fill and weld gaps in broken railway tracks or heavy machinery.",
+            "answer_outline": [
+                "Chemical reaction description",
+                "Exothermic nature",
+                "Word/chemical equation",
+                "Practical engineering use"
+            ],
+            "key_concepts": [
+                "thermite",
+                "molten iron",
+                "exothermic"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.2.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Critically analyze the statement: 'Hydrogen is a non-metal but is often placed with metals in the reactivity series.'",
+            "answer": "Hydrogen is a non-metal because it exists as a gas and forms covalent bonds. However, like metals, it can lose an electron to form a positive ion ($H^+$). In the reactivity series, it serves as a reference point; metals above hydrogen can displace it from dilute acids, while metals below it (copper, silver, gold) cannot. Its placement is based on its electropositive character in certain reactions.",
+            "answer_outline": [
+                "Non-metallic properties",
+                "Metallic-like behavior (H+ ion)",
+                "Role as a reference in reactivity",
+                "Displacement from acids"
+            ],
+            "key_concepts": [
+                "reference point",
+                "electropositivity",
+                "H+ ion"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.2.3"
+        },
+        {
+            "question_number": 14,
+            "question": "How does 'Galvanic Corrosion' occur when two different metals are in contact? How does this relate to the use of Zinc in galvanization?",
+            "answer": "Galvanic corrosion occurs when two different metals are in contact in the presence of an electrolyte; the more reactive metal acts as an anode and corrodes, while the less reactive metal acts as a cathode and is protected. In galvanization, Zinc is more reactive than Iron. Even if the zinc coating is scratched, the zinc continues to corrode preferentially (sacrificial protection), saving the iron from rusting.",
+            "answer_outline": [
+                "Two-metal contact principle",
+                "Anode and Cathode roles",
+                "Sacrificial protection",
+                "Zinc vs Iron reactivity"
+            ],
+            "key_concepts": [
+                "galvanic corrosion",
+                "sacrificial protection",
+                "anodic behavior"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain why Graphite is used as a lubricant and in nuclear reactors.",
+            "answer": "Graphite's carbon atoms are arranged in hexagonal layers held by weak Van der Waals forces, allowing them to slide over each other easily, making it an excellent dry lubricant. In nuclear reactors, it is used as a 'moderator' because it can slow down fast-moving neutrons without capturing them, facilitating a controlled nuclear chain reaction.",
+            "answer_outline": [
+                "Layered structure explanation",
+                "Lubrication mechanism",
+                "Nuclear moderator role",
+                "Thermal stability"
+            ],
+            "key_concepts": [
+                "van der waals",
+                "moderator",
+                "hexagonal layers"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.1.5"
+        },
+        {
+            "question_number": 16,
+            "question": "Describe the chemical changes that occur when Iron reacts with Steam. How is it different from reaction with liquid water?",
+            "answer": "Iron does not react with cold or hot liquid water. However, it reacts with red-hot steam to form magnetic iron oxide (ferroso-ferric oxide, $Fe_3O_4$) and Hydrogen gas. Reaction: $3Fe + 4H_2O (steam) \\rightarrow Fe_3O_4 + 4H_2$. This requires high activation energy compared to more reactive metals like Sodium or Calcium.",
+            "answer_outline": [
+                "Conditions (Red-hot iron and steam)",
+                "Product identification (Fe3O4)",
+                "Chemical equation",
+                "Reactivity comparison"
+            ],
+            "key_concepts": [
+                "ferroso-ferric oxide",
+                "steam reaction",
+                "activation energy"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.2.2"
+        },
+        {
+            "question_number": 17,
+            "question": "Why is 'Copper' used in hot water tanks rather than 'Steel' (Iron alloy)?",
+            "answer": "Copper is lower in the reactivity series and does not react with water or steam at any temperature, making it highly resistant to internal corrosion. Steel, although strong, contains iron which can eventually react with water and oxygen (rust) or steam, leading to the weakening and leaking of the tank over time.",
+            "answer_outline": [
+                "Reactivity of copper vs iron",
+                "Corrosion resistance in water",
+                "Durability and maintenance",
+                "Thermal conductivity bonus"
+            ],
+            "key_concepts": [
+                "corrosion resistance",
+                "water tank",
+                "reactivity"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 18,
+            "question": "What is the 'Allotropy' of Carbon? Briefly explain how Diamond and Graphite differ in their electrical conductivity.",
+            "answer": "Allotropy is the existence of an element in multiple physical forms with different properties. In Diamond, each carbon atom is bonded to four others in a rigid 3D tetrahedral structure with no free electrons, making it an insulator. In Graphite, each carbon is bonded to three others in layers, leaving one 'delocalized' electron per atom that can move, allowing it to conduct electricity.",
+            "answer_outline": [
+                "Definition of allotropy",
+                "Diamond bonding and structure",
+                "Graphite bonding and delocalized electrons",
+                "Conductivity conclusion"
+            ],
+            "key_concepts": [
+                "allotropy",
+                "delocalized electrons",
+                "tetrahedral"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.1.5"
+        },
+        {
+            "question_number": 19,
+            "question": "Analyze the role of 'Flux' and 'Slag' in the extraction of metals.",
+            "answer": "During smelting, 'Flux' is a chemical substance added to the furnace to remove infusible impurities (gangue). The flux reacts with the gangue to form a fusible mass called 'Slag'. For example, if the impurity is acidic $SiO_2$, a basic flux like $CaO$ is added to form Calcium Silicate slag, which floats on the molten metal and is easily removed.",
+            "answer_outline": [
+                "Definition of Flux",
+                "Reaction with Gangue",
+                "Formation of Slag",
+                "Separation of impurities"
+            ],
+            "key_concepts": [
+                "flux",
+                "slag",
+                "gangue"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain why metals are 'Malleable' and 'Ductile' using the 'Sea of Electrons' model.",
+            "answer": "In metals, atoms are arranged in layers surrounded by a 'sea' of delocalized valence electrons. When a force is applied (hammering or stretching), the layers of metal ions can slide over each other without breaking the metallic bond, as the delocalized electrons act as a flexible 'glue'. In non-metals, bonds are directional and rigid, so they shatter (brittle) instead of sliding.",
+            "answer_outline": [
+                "Metallic bonding model",
+                "Delocalized electrons",
+                "Sliding of atomic layers",
+                "Comparison with brittle non-metals"
+            ],
+            "key_concepts": [
+                "sea of electrons",
+                "delocalized",
+                "metallic bond"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.1.1"
+        },
+        {
+            "question_number": 21,
+            "question": "What is 'Froth Flotation' and for which types of ores is it used?",
+            "answer": "Froth flotation is a physical-chemical method used to concentrate sulphide ores. The crushed ore is mixed with water and pine oil. Air is blown in to create froth. The sulphide ore particles are 'wetted' by the oil and rise to the surface with the froth, while the rocky impurities (gangue) are wetted by water and sink to the bottom.",
+            "answer_outline": [
+                "Process description",
+                "Ore type (Sulphide)",
+                "Role of oil and air",
+                "Separation principle"
+            ],
+            "key_concepts": [
+                "froth flotation",
+                "sulphide ore",
+                "differential wetting"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Why is 'Tungsten' used exclusively for the filament of electric bulbs?",
+            "answer": "Tungsten is a metal with a very high melting point (approx 3422°C) and high electrical resistance. This allows it to be heated to incandescence (white hot) to emit light without melting. It also has low vapor pressure, preventing the filament from evaporating quickly at high temperatures.",
+            "answer_outline": [
+                "High melting point",
+                "Incandescence",
+                "Resistance and vapor pressure",
+                "Durability in bulbs"
+            ],
+            "key_concepts": [
+                "tungsten",
+                "melting point",
+                "incandescence"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Discuss the chemistry of 'Pickling' of metals before galvanization or plating.",
+            "answer": "Pickling is a surface treatment used to remove impurities, rust, and scale from the surface of a metal. The metal is immersed in a 'pickle liquor' (usually dilute $HCl$ or $H_2SO_4$). This chemical change ensures that the surface is perfectly clean, allowing the subsequent coating (zinc or chrome) to adhere strongly and evenly.",
+            "answer_outline": [
+                "Definition of pickling",
+                "Acids used",
+                "Removal of oxide scale",
+                "Importance for coating adhesion"
+            ],
+            "key_concepts": [
+                "pickling",
+                "oxide removal",
+                "surface treatment"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the significance of 'Magnesium' being used as a sacrificial anode in underground pipelines.",
+            "answer": "Underground steel pipelines are prone to corrosion from soil moisture. By connecting blocks of Magnesium (which is more reactive than Iron) to the pipe, a galvanic cell is created. The Magnesium oxidizes preferentially, providing electrons to the iron pipe and preventing it from corroding. The magnesium blocks are replaced periodically as they are 'sacrificed'.",
+            "answer_outline": [
+                "Corrosion environment",
+                "Reactivity of Mg vs Fe",
+                "Electron flow direction",
+                "Maintenance aspect"
+            ],
+            "key_concepts": [
+                "sacrificial anode",
+                "cathodic protection",
+                "pipeline"
+            ],
+            "marks": 5,
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 25,
+            "question": "How does 'Nitrogen' gas help in the storage of food, and why is it preferred over Oxygen?",
+            "answer": "Nitrogen is an inert, non-reactive non-metal. It is used to flush food packaging (like potato chips) to displace Oxygen. Unlike oxygen, nitrogen does not react with the fats and oils in the food. This prevents 'Rancidity' (oxidation), keeping the food fresh, crisp, and preventing the growth of aerobic bacteria.",
+            "answer_outline": [
+                "Inert nature of nitrogen",
+                "Displacement of oxygen",
+                "Prevention of rancidity",
+                "Shelf-life extension"
+            ],
+            "key_concepts": [
+                "inert gas",
+                "rancidity",
+                "food preservation"
+            ],
+            "marks": 4,
+            "source_section": "Section 4.3"
+        }
+    ]
+}

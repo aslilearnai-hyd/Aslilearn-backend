@@ -1,0 +1,162 @@
+{
+    "class": "Class 10",
+    "subject": "English",
+    "chapter_name": "The Tale of Custard the Dragon",
+    "title": "Lesson Planner – The Tale of Custard the Dragon",
+    "author": "Ogden Nash",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the storyline of the poem",
+        "Identify the characters and their traits",
+        "Recognise the theme of courage and humour",
+        "Understand the poetic style and rhyme scheme",
+        "Develop vocabulary and reading skills",
+        "Relate the poem’s message to real-life situations"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to the Poet and Poem",
+            "topics_covered": [
+                "Introduction to Ogden Nash",
+                "Background of the poem",
+                "Overview of the story"
+            ],
+            "teaching_strategy": [
+                "Teacher explanation",
+                "Poem narration",
+                "Interactive discussion"
+            ],
+            "student_activities": [
+                "Listen to the introduction",
+                "Share ideas about dragons and bravery"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Student participation"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Characters in the Poem",
+            "topics_covered": [
+                "Belinda and her pets",
+                "Ink the kitten",
+                "Blink the mouse",
+                "Mustard the dog",
+                "Custard the dragon"
+            ],
+            "teaching_strategy": [
+                "Reading aloud",
+                "Character explanation"
+            ],
+            "student_activities": [
+                "List the characters",
+                "Describe one character in a sentence"
+            ],
+            "assessment": [
+                "Notebook checking",
+                "Oral questions"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Description of Custard and Humour",
+            "topics_covered": [
+                "Appearance of Custard",
+                "Why Custard is called cowardly",
+                "Humour in the poem"
+            ],
+            "teaching_strategy": [
+                "Text explanation",
+                "Illustrative examples"
+            ],
+            "student_activities": [
+                "Identify funny lines in the poem",
+                "Discuss why others laugh at Custard"
+            ],
+            "assessment": [
+                "Short written answers",
+                "Class participation"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "The Pirate Scene",
+            "topics_covered": [
+                "Entry of the pirate",
+                "Reaction of Belinda and the pets",
+                "Custard’s brave action"
+            ],
+            "teaching_strategy": [
+                "Story explanation",
+                "Guided discussion"
+            ],
+            "student_activities": [
+                "Sequence the events of the pirate attack",
+                "Discuss Custard’s bravery"
+            ],
+            "assessment": [
+                "Event sequencing activity",
+                "Oral questions"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Theme and Message of the Poem",
+            "topics_covered": [
+                "Theme of courage",
+                "Difference between real bravery and boasting",
+                "Humorous tone of the poem"
+            ],
+            "teaching_strategy": [
+                "Value-based discussion",
+                "Question–answer method"
+            ],
+            "student_activities": [
+                "Explain the message in their own words",
+                "Write two lines about true courage"
+            ],
+            "assessment": [
+                "Short paragraph writing",
+                "Oral explanation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Poetic Devices, Revision, and Assessment",
+            "topics_covered": [
+                "Simile and imagery in the poem",
+                "Rhyme scheme",
+                "Summary and revision"
+            ],
+            "teaching_strategy": [
+                "Poetic device explanation",
+                "Recap discussion"
+            ],
+            "student_activities": [
+                "Identify poetic devices from the poem",
+                "Write a short summary"
+            ],
+            "assessment": [
+                "Short test (5–10 marks)",
+                "Doubt clarification session"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "English Textbook",
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Flashcards for vocabulary"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short written tests",
+        "Student participation"
+    ],
+    "teacher_tip": "Encourage students to understand that true bravery is shown through actions rather than words, using examples from daily life."
+}

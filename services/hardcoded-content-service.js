@@ -1,5 +1,5 @@
 // Hardcoded Content Service - Reads pre-generated content from Asli hardcoding folder
-// Supports multiple classes (Class 5, 6, 7, 8, 9, 10)
+// Supports Class 6 (CSV), Class 7-10 (JSON tree), AMENITY, AMENITY-2 (IIT-6)
 
 import fs from 'fs/promises';
 import path from 'path';
@@ -9,1370 +9,98 @@ import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Base path to hardcoded content folder
-// The "Asli hardcoding" folder is kept INSIDE the backend folder:
-// backend/Asli hardcoding
+// ─── Base paths ────────────────────────────────────────────────────────────────
 const HARDCODED_ROOT = path.join(__dirname, '../Asli hardcoding');
 
-// Special IIT class name and subjects for AMENITY-2 content
+// ─── Constants ─────────────────────────────────────────────────────────────────
 const IIT_CLASS_NAME = 'IIT-6';
 const IIT_SUBJECTS = ['Physics', 'Chemistry', 'Maths', 'Biology'];
 
-/**
- * Get the base path for a specific class
- */
-function getClassBasePath(classNumber) {
-  return path.join(HARDCODED_ROOT, `Class ${classNumber}`);
-}
-
-/**
- * Get AMENITY base path
- * AMENITY folder is at backend level: backend/Asli hardcoding/AMENITY/
- */
-function getAmenityBasePath() {
-  return path.join(HARDCODED_ROOT, 'AMENITY');
-}
-
-/**
- * Get AMENITY-2 base path (IIT-6 content)
- * Structure:
- * backend/Asli hardcoding/AMENITY-2/<Subject>/<TopicFolder>/*.json
- *
- * Example:
- * backend/Asli hardcoding/AMENITY-2/Chemistry/UNIT-1/ch-1_cmh.json
- */
-function getAmenity2BasePath() {
-  return path.join(HARDCODED_ROOT, 'AMENITY-2');
-}
-
-// Tool type mappings
-const TOOL_MAPPINGS = {
-  // AMENITY tools (JSON format)
-  'concept-mastery-helper': { folder: 'AMENITY', filePattern: 'cmh_', format: 'json' },
-  'flashcard-generator': { folder: 'AMENITY', filePattern: 'fcm_', format: 'json' },
-  'short-notes-summaries-maker': { folder: 'AMENITY', filePattern: 'sns_', format: 'json' },
-  
-  // Other tools (CSV/JSON format)
-  'lesson-planner': { folder: null, filePattern: 'planner.json', format: 'json' },
-  'daily-class-plan-maker': { folder: null, filePattern: 'planner.json', format: 'json' },
-  'activity-project-generator': { folder: null, filePattern: 'projects.csv', format: 'csv' },
-  'story-passage-creator': { folder: null, filePattern: 'passages.csv', format: 'csv' },
-  'worksheet-mcq-generator': { folder: 'mcq', filePattern: null, format: 'csv' },
-  'exam-question-paper-generator': { folder: 'mcq', filePattern: null, format: 'csv' },
-  'homework-creator': { folder: 'mcq', filePattern: null, format: 'csv' },
-  
-  // Student tools - using CSV/JSON files from Class folders
-  'smart-study-guide-generator': { folder: 'mcq', filePattern: null, format: 'csv', combineWith: ['short answers', 'long answer'] },
-  'concept-breakdown-explainer': { folder: 'mcq', filePattern: null, format: 'csv' },
-  'personalized-revision-planner': { folder: null, filePattern: 'planner.json', format: 'json' },
-  'smart-qa-practice-generator': { folder: 'mcq', filePattern: null, format: 'csv' },
-  'chapter-summary-creator': { folder: null, filePattern: 'planner.json', format: 'json' },
-  'key-points-formula-extractor': { folder: 'short answers', filePattern: null, format: 'csv' },
-  'quick-assignment-builder': { folder: 'mcq', filePattern: null, format: 'csv', combineWith: ['short answers', 'long answer'] },
-  
-  // Additional question types that can use MCQ folder or specific folders
-  'fill-in-blanks': { folder: 'Fill in the blanks', filePattern: null, format: 'csv' },
-  'short-answer': { folder: 'short answers', filePattern: null, format: 'csv' },
-  'long-answer': { folder: 'long answer', filePattern: null, format: 'csv' },
-  'match-following': { folder: 'match the following', filePattern: null, format: 'csv' },
-  'true-false': { folder: 'true or false', filePattern: null, format: 'csv' },
-};
-
-// Valid subjects (common across all classes)
+// Valid subjects exposed to the frontend (canonical names)
 export const VALID_SUBJECTS = ['English', 'Hindi', 'Maths', 'Science', 'Social Science'];
 
-/**
- * Get available subjects for a class by reading folder structure
- */
-export async function getSubjectsForClass(classNumber) {
-  try {
-    // For IIT-6, subjects come from AMENITY-2 folder (Physics, Chemistry, Maths, Biology)
-    if (classNumber === IIT_CLASS_NAME) {
-      const amenity2Path = getAmenity2BasePath();
-      try {
-        const entries = await fs.readdir(amenity2Path, { withFileTypes: true });
-        const subjects = entries
-          .filter(entry => entry.isDirectory())
-          .map(entry => entry.name)
-          .filter(name => IIT_SUBJECTS.includes(name))
-          .sort();
-        return subjects;
-      } catch {
-        return [];
-      }
-    }
-
-    const classPath = getClassBasePath(classNumber);
-    
-    // Check if class folder exists
-    try {
-      await fs.access(classPath);
-    } catch {
-      return []; // Class folder doesn't exist
-    }
-    
-    // Read all folders in the class directory
-    const entries = await fs.readdir(classPath, { withFileTypes: true });
-    const subjects = entries
-      .filter(entry => entry.isDirectory() && entry.name !== 'AMENITY')
-      .map(entry => entry.name)
-      .filter(name => VALID_SUBJECTS.includes(name) || VALID_SUBJECTS.some(s => s.toLowerCase() === name.toLowerCase()))
-      .sort();
-    
-    return subjects;
-  } catch (error) {
-    console.error(`Error getting subjects for Class ${classNumber}:`, error);
-    return [];
-  }
-}
-
-// Subject name mappings (for folder names)
-const SUBJECT_MAPPINGS = {
-  'English': 'English',
-  'Hindi': 'Hindi',
-  'Mathematics': 'Maths',
-  'Maths': 'Maths',
-  'Science': 'Science',
-  'Social Science': 'Social Science',
+// Folder name → canonical subject name  (used when listing subjects from disk)
+const FOLDER_TO_SUBJECT = {
+  'english': 'English',
+  'hindi': 'Hindi',
+  'maths': 'Maths',
+  'mathematics': 'Maths',
+  'science': 'Science',
+  'social': 'Social Science',
+  'social science': 'Social Science',
+  'evs': 'EVS',
 };
 
-// AMENITY folder subject mappings (AMENITY uses "Mathematics" not "Maths")
-const AMENITY_SUBJECT_MAPPINGS = {
-  'English': 'English',
-  'Hindi': 'Hindi',
-  'Mathematics': 'Mathematics',
-  'Maths': 'Mathematics', // Map Maths to Mathematics for AMENITY folder
-  'Science': 'Science',
-  'Social Science': 'Social Science',
+// Canonical subject → possible folder names on disk (tried in order)
+const SUBJECT_TO_FOLDERS = {
+  'English': ['English'],
+  'Hindi': ['Hindi'],
+  'Maths': ['Maths', 'Mathematics'],
+  'Science': ['Science'],
+  'Social Science': ['Social Science', 'Social'],
+  'EVS': ['EVS'],
 };
 
-// Unit/Topic mappings for AMENITY folder
-const UNIT_MAPPINGS = {
-  'Hindi': {
-    'Unit-1': 'Uniit-1', // Note: typo in folder name
-    'Unit-2': 'Unit-2',
-    'Unit-3': 'Unit-3',
-    'Unit-4': 'Unit-4',
-    'Unit-5': 'Unit-5',
-    'Unit-6': 'Unit-6',
-    'Unit-7': 'Unit-7',
-    'Unit-8': 'Unit-8',
-    'Unit-9': 'Unit-9',
-    'Unit-10': 'Unit-10',
-    'Unit-11': 'Unit-11',
-    'Unit-12': 'Unit-12',
-    'Unit-13': 'Unit-13',
-  },
-  'Mathematics': {
-    'Unit-1': 'Unit-1',
-    'Unit-2': 'Unit-2',
-    'Unit-3': 'Unit-3',
-    'Unit-4': 'Unit-4',
-    'Unit-5': 'Unit-5',
-    'Unit-6': 'Unit-6',
-    'Unit-7': 'Unit-7',
-    'Unit-8': 'Unit-8',
-    'Unit-9': 'Unit-9',
-    'Unit-10': 'Unit-10',
-  },
-  'Science': {
-    'Unit-1': 'Unit-1',
-    'Unit-2': 'Unit-2',
-    'Unit-3': 'Unit-3',
-    'Unit-4': 'Unit-4',
-    'Unit-5': 'Unit-5',
-    'Unit-6': 'Unit-6',
-    'Unit-7': 'Unit-7',
-    'Unit-8': 'Unit-8',
-    'Unit-9': 'Unit-9',
-    'Unit-10': 'Unit-10',
-    'Unit-11': 'Unit-11',
-    'Unit-12': 'Unit-12',
-  },
-  'Social Science': {
-    'Unit-1': 'Unit-1',
-    'Unit-2': 'Unit-2',
-    'Unit-3': 'Unit-3',
-    'Unit-4': 'Unit-4',
-    'Unit-5': 'Unit-5',
-    'Unit-6': 'Unit-6',
-    'Unit-7': 'Unit-7',
-    'Unit-8': 'Unit-8',
-    'Unit-9': 'Unit-9',
-    'Unit-10': 'Unit-10',
-    'Unit-11': 'Unit-11',
-    'Unit-12': 'Unit-12',
-    'Unit-13': 'Unit-13',
-    'Unit-14': 'Unit-14',
-  },
+// ─── Tool → content-type-folder mapping (for Class 7-10 JSON tree) ─────────
+// Each tool maps to one or more folder name fragments (case-insensitive match)
+const TOOL_FOLDER_PATTERNS = {
+  'worksheet-mcq-generator':        ['MCQs', 'MCQ'],
+  'exam-question-paper-generator':  null, // special: combine multiple
+  'homework-creator':               null, // special: combine multiple
+  'lesson-planner':                 ['Lesson Planner'],
+  'daily-class-plan-maker':         ['Lesson Planner'],
+  'concept-mastery-helper':         ['CMH'],
+  'flashcard-generator':            ['FlashCards', 'Flashcards', 'Flash Cards'],
+  'short-notes-summaries-maker':    ['Summary and Short Notes', 'Short Notes and Summaries', 'Summaries and Short notes', 'Summaries and Short Notes'],
+  'chapter-summary-creator':        ['Summary and Short Notes', 'Short Notes and Summaries', 'Summaries and Short notes', 'Summaries and Short Notes'],
+  'activity-project-generator':     ['Activity & Project Generator', 'Activity and Project Generator'],
+  'story-passage-creator':          ['Passage Related Questions'],
+  'short-answer':                   ['Short Answer Questions'],
+  'long-answer':                    ['Long Answer Questions'],
+  'fill-in-blanks':                 ['Fill in the Blanks', 'Fill in the blanks'],
+  'true-false':                     ['True or False'],
+  'match-following':                ['Match the Following', 'match the following'],
+  'smart-study-guide-generator':    ['MCQs'],
+  'concept-breakdown-explainer':    ['MCQs'],
+  'personalized-revision-planner':  ['Lesson Planner'],
+  'smart-qa-practice-generator':    ['MCQs'],
+  'key-points-formula-extractor':   ['Short Answer Questions'],
+  'quick-assignment-builder':       ['MCQs'],
+  'very-short-answer':              ['Very Short Answer Questions'],
 };
 
-/**
- * Normalize string for better matching (handles Unicode, removes diacritics, etc.)
- */
-function normalizeForMatching(str) {
-  if (!str) return '';
-  // Remove extra spaces and trim
-  let normalized = str.trim().replace(/\s+/g, ' ');
-  // For Unicode/Hindi characters, we keep them as-is but normalize spaces
-  // Don't use toLowerCase() for Hindi as it might break Unicode matching
-  return normalized;
+// File suffix for difficulty-based tools  (difficulty → filename prefix)
+// e.g.  easy → easy_mcq.json, medium_lp.json, hard_saq.json
+const TOOL_FILE_SUFFIX = {
+  'worksheet-mcq-generator':        'mcq',
+  'lesson-planner':                 null, // picks lp or sns
+  'daily-class-plan-maker':         null,
+  'concept-mastery-helper':         null, // single file (*_cmh.json)
+  'flashcard-generator':            null, // single file (*_fcm.json)
+  'short-notes-summaries-maker':    'sns',
+  'chapter-summary-creator':        'sns',
+  'activity-project-generator':     'a&g',
+  'story-passage-creator':          null, // single file
+  'short-answer':                   'saq',
+  'long-answer':                    'laq',
+  'fill-in-blanks':                 null,
+  'true-false':                     null,
+  'match-following':                null,
+  'smart-study-guide-generator':    'mcq',
+  'concept-breakdown-explainer':    'mcq',
+  'personalized-revision-planner':  null,
+  'smart-qa-practice-generator':    'mcq',
+  'key-points-formula-extractor':   'saq',
+  'quick-assignment-builder':       'mcq',
+  'very-short-answer':              'vsaq',
+};
+
+// ─── File system helpers ───────────────────────────────────────────────────────
+
+async function exists(p) {
+  try { await fs.access(p); return true; } catch { return false; }
 }
 
-/**
- * Check if two strings match (handles Unicode, partial matches, etc.)
- */
-function stringsMatch(str1, str2) {
-  if (!str1 || !str2) return false;
-  
-  const s1 = normalizeForMatching(str1);
-  const s2 = normalizeForMatching(str2);
-  
-  // Exact match
-  if (s1 === s2) return true;
-  
-  // Case-insensitive match (only for ASCII characters)
-  if (/^[\x00-\x7F]*$/.test(s1) && /^[\x00-\x7F]*$/.test(s2)) {
-    if (s1.toLowerCase() === s2.toLowerCase()) return true;
-  }
-  
-  // Contains match (either direction)
-  if (s1.includes(s2) || s2.includes(s1)) return true;
-  
-  // For Hindi/Unicode: try removing spaces and special chars for matching
-  const s1Clean = s1.replace(/[^\w\u0900-\u097F]/g, '');
-  const s2Clean = s2.replace(/[^\w\u0900-\u097F]/g, '');
-  if (s1Clean && s2Clean && (s1Clean.includes(s2Clean) || s2Clean.includes(s1Clean))) {
-    return true;
-  }
-  
-  return false;
-}
-
-/**
- * Get lesson number from topic name by reading planner.json
- * Handles both "lessons" and "lesson_plans" array structures
- * Improved matching for Hindi/Unicode characters
- */
-async function getLessonNumberFromTopic(classNumber, subject, topic) {
-  try {
-    const classBasePath = getClassBasePath(classNumber);
-    const subjectFolder = SUBJECT_MAPPINGS[subject] || subject;
-    const plannerPath = path.join(classBasePath, subjectFolder, 'planner.json');
-    
-    console.log(`🔍 Looking up topic "${topic}" in planner.json for Class ${classNumber}, Subject: ${subjectFolder}`);
-    
-    // Check if planner.json exists
-    try {
-      await fs.access(plannerPath);
-    } catch {
-      console.log(`❌ Planner.json not found at: ${plannerPath}`);
-      return null; // Planner doesn't exist for this subject
-    }
-    
-    const plannerData = await readJSONFile(plannerPath);
-    if (!plannerData) {
-      console.log(`❌ Failed to read planner.json from: ${plannerPath}`);
-      return null;
-    }
-    
-    // Handle both "lessons" and "lesson_plans" array structures
-    let lessonsArray = null;
-    if (plannerData.lessons && Array.isArray(plannerData.lessons)) {
-      lessonsArray = plannerData.lessons;
-    } else if (plannerData.lesson_plans && Array.isArray(plannerData.lesson_plans)) {
-      lessonsArray = plannerData.lesson_plans;
-    } else {
-      console.log(`❌ No lessons array found in planner.json`);
-      return null;
-    }
-    
-    console.log(`📚 Found ${lessonsArray.length} lessons in planner.json`);
-    
-    // Search for matching lesson name (improved Unicode matching)
-    for (let i = 0; i < lessonsArray.length; i++) {
-      const lesson = lessonsArray[i];
-      if (lesson.lesson_name) {
-        const lessonName = lesson.lesson_name;
-        // Use improved matching function
-        if (stringsMatch(topic, lessonName)) {
-          console.log(`✅ Matched topic "${topic}" to lesson ${i + 1}: "${lessonName}" (C${i + 1})`);
-          return i + 1; // Return 1-based lesson number
-        }
-      }
-    }
-    
-    // Log all available lessons for debugging
-    const availableLessons = lessonsArray.map((l, idx) => `${idx + 1}. "${l.lesson_name || 'N/A'}"`).join(', ');
-    console.log(`❌ No match found for topic "${topic}". Available lessons: ${availableLessons}`);
-    
-    return null; // No match found
-  } catch (error) {
-    console.error(`❌ Error getting lesson number for ${subject}/${topic}:`, error.message);
-    console.error(error.stack);
-    return null;
-  }
-}
-
-/**
- * Normalize topic/unit name to match folder structure
- */
-async function normalizeTopic(classNumber, topic, subject) {
-  if (!topic) {
-    console.log(`⚠️ Empty topic provided for Class ${classNumber}, Subject: ${subject}`);
-    return null;
-  }
-  
-  // Remove extra spaces and convert to proper case
-  let normalized = topic.trim();
-  
-  console.log(`🔄 Normalizing topic: "${normalized}" for Class ${classNumber}, Subject: ${subject}`);
-  
-  // Check if it's already in C/P format (C1, P1, etc.)
-  const existingMatch = normalized.match(/^([CP])(\d+)$/i);
-  if (existingMatch) {
-    const result = `${existingMatch[1].toUpperCase()}${existingMatch[2]}`;
-    console.log(`✅ Topic already in format: ${result}`);
-    return result;
-  }
-  
-  // Check if it's a unit format (Unit-1, Unit 1, etc.)
-  const unitMatch = normalized.match(/unit[\s-]?(\d+)/i);
-  if (unitMatch) {
-    const unitNum = unitMatch[1];
-    const result = `C${unitNum}`;
-    console.log(`✅ Matched unit format: ${result}`);
-    return result;
-  }
-  
-  // Try to get lesson number from planner.json (for all subjects with planner)
-  const lessonNum = await getLessonNumberFromTopic(classNumber, subject, normalized);
-  if (lessonNum) {
-    const result = `C${lessonNum}`;
-    console.log(`✅ Matched to lesson from planner.json: ${result}`);
-    return result;
-  }
-  
-  // Apply subject-specific mappings for AMENITY folder (only for Hindi Unit-1 typo)
-  if (SUBJECT_MAPPINGS[subject] === 'Hindi') {
-    // For Hindi, try to match unit format
-    const hindiUnitMatch = normalized.match(/unit[\s-]?(\d+)/i);
-    if (hindiUnitMatch) {
-      const unitNum = hindiUnitMatch[1];
-      const unitKey = `Unit-${unitNum}`;
-      if (UNIT_MAPPINGS['Hindi'] && UNIT_MAPPINGS['Hindi'][unitKey]) {
-        const result = UNIT_MAPPINGS['Hindi'][unitKey]; // Returns 'Uniit-1' for Unit-1
-        console.log(`✅ Matched Hindi unit mapping: ${result}`);
-        return result;
-      }
-      // If not in mapping, return as Unit-X format
-      console.log(`⚠️ Using unit format: ${unitKey}`);
-      return unitKey;
-    }
-  }
-  
-  console.log(`⚠️ Could not normalize topic "${normalized}", returning as-is`);
-  return normalized;
-}
-
-/**
- * Get file path for AMENITY tools (Concept Mastery, Flashcard, Short Notes)
- * 
- * AMENITY folder structure:
- * - Asli hardcoding/AMENITY/Subject/Unit-X/
- *   - cmh_*.json (Concept Mastery Helper)
- *   - fcm_*.json (Flashcard Generator)
- *   - sns_*.json (Short Notes Summary)
- * 
- * File naming patterns:
- * - Mathematics: cmh_mu2.json, fcm_mu2.json, sns_mu2.json
- * - Hindi: cmh_hu2.json, fcm_hu2.json, sns_hu2.json
- * - Science: cmh_su2.json, fcm_su2.json, sns_su2.json
- * - Social Science: cmh_ssu2.json, fcm_ssu2.json, sns_ssu2.json
- * - English: cmh_eu2-1.json (in topic subfolders)
- */
-async function getAmenityFilePath(classNumber, subject, topic, toolType) {
-  const mapping = TOOL_MAPPINGS[toolType];
-  if (!mapping || mapping.folder !== 'AMENITY') {
-    return null;
-  }
-
-  const subjectFolder = SUBJECT_MAPPINGS[subject] || subject;
-  const normalizedTopic = await normalizeTopic(classNumber, topic, subject);
-  
-  // Map subject names for AMENITY folder (AMENITY uses "Mathematics" not "Maths")
-  const amenitySubject = AMENITY_SUBJECT_MAPPINGS[subject] || subject;
-  
-  // Extract unit number from topic
-  const unitMatch = normalizedTopic.match(/unit[\s-]?(\d+)/i);
-  const unitNum = unitMatch ? unitMatch[1] : '1';
-  
-  // Build file pattern
-  let fileName;
-  let filePath;
-  
-  // AMENITY folder is at root level, not class-specific
-  const amenityBasePath = getAmenityBasePath();
-  
-  if (amenitySubject === 'English') {
-    // English has topic folders within units
-    // Structure: AMENITY/English/Unit-1/Topic Name/cmh_eu1-1.json
-    // First, convert topic to unit format (C8 -> Unit-8)
-    let unitFolderName = normalizedTopic;
-    let topicName = topic; // Keep original topic name for folder matching
-    
-    // If topic is in C/P format, convert to Unit format
-    const cFormatMatch = normalizedTopic.match(/^C(\d+)$/i);
-    if (cFormatMatch) {
-      unitFolderName = `Unit-${cFormatMatch[1]}`;
-    } else if (!normalizedTopic.startsWith('Unit-')) {
-      // If topic is a lesson name, try to get unit number from planner
-      const lessonNum = await getLessonNumberFromTopic(classNumber, subject, topic);
-      if (lessonNum) {
-        unitFolderName = `Unit-${lessonNum}`;
-      } else {
-        // Try to match topic name directly to a folder name
-        unitFolderName = normalizedTopic;
-      }
-    }
-    
-    const unitPath = path.join(
-      amenityBasePath,
-      amenitySubject,
-      unitFolderName
-    );
-    
-    try {
-      // Check if unit folder exists
-      await fs.access(unitPath);
-      
-      // List all topic folders in the unit
-      const topicFolders = await fs.readdir(unitPath, { withFileTypes: true });
-      
-      // Extract unit number for file pattern
-      const unitNumMatch = unitFolderName.match(/unit[\s-]?(\d+)/i);
-      const unitNum = unitNumMatch ? unitNumMatch[1] : '1';
-      
-      // Normalize topic name for matching (remove special chars, case insensitive)
-      const normalizeForMatch = (str) => {
-        return str.toLowerCase()
-          .replace(/[^a-z0-9]/g, '')
-          .replace(/\s+/g, '')
-          .trim();
-      };
-      const normalizedTopicName = normalizeForMatch(topicName);
-      
-      // First, try to find exact topic folder match
-      let matchedFolder = null;
-      for (const folder of topicFolders) {
-        if (folder.isDirectory()) {
-          const folderNameNormalized = normalizeForMatch(folder.name);
-          // Check if folder name matches topic (exact or contains)
-          if (folderNameNormalized === normalizedTopicName || 
-              folderNameNormalized.includes(normalizedTopicName) ||
-              normalizedTopicName.includes(folderNameNormalized)) {
-            matchedFolder = folder;
-            break;
-          }
-        }
-      }
-      
-      // If exact match found, search only in that folder
-      if (matchedFolder) {
-        const topicFolderPath = path.join(unitPath, matchedFolder.name);
-        const files = await fs.readdir(topicFolderPath);
-        
-        // Look for file matching pattern: {tool}_eu{unit}-{number}.json or {tool}_eu{unit}.json
-        const filePattern = mapping.filePattern.replace('_', ''); // cmh, fcm, or sns
-        const matchingFile = files.find(f => 
-          f.startsWith(filePattern) && 
-          (f.includes(`eu${unitNum}-`) || f.includes(`eu${unitNum}.`)) && 
-          f.endsWith('.json')
-        );
-        
-        if (matchingFile) {
-          return path.join(topicFolderPath, matchingFile);
-        }
-      }
-      
-      // If no exact match, search all topic folders (fallback)
-      for (const folder of topicFolders) {
-        if (folder.isDirectory()) {
-          const topicFolderPath = path.join(unitPath, folder.name);
-          const files = await fs.readdir(topicFolderPath);
-          
-          // Look for file matching pattern: {tool}_eu{unit}-{number}.json or {tool}_eu{unit}.json
-          const filePattern = mapping.filePattern.replace('_', ''); // cmh, fcm, or sns
-          const matchingFile = files.find(f => 
-            f.startsWith(filePattern) && 
-            (f.includes(`eu${unitNum}-`) || f.includes(`eu${unitNum}.`)) && 
-            f.endsWith('.json')
-          );
-          
-          if (matchingFile) {
-            return path.join(topicFolderPath, matchingFile);
-          }
-        }
-      }
-      
-      // If no match found in topic folders, return null
-      return null;
-    } catch (err) {
-      console.log(`Error reading English unit folder ${unitPath}:`, err.message);
-      return null;
-    }
-  } else {
-    // For Hindi, Mathematics, Science, Social Science - files are directly in Unit folders
-    // Convert topic to Unit format if needed
-    let unitFolderName = normalizedTopic;
-    
-    // If topic is in C/P format, convert to Unit format
-    const cFormatMatch = normalizedTopic.match(/^C(\d+)$/i);
-    if (cFormatMatch) {
-      unitFolderName = `Unit-${cFormatMatch[1]}`;
-    } else if (!normalizedTopic.startsWith('Unit-')) {
-      // If topic is a lesson name, try to get unit number from planner
-      const lessonNum = await getLessonNumberFromTopic(classNumber, subject, topic);
-      if (lessonNum) {
-        unitFolderName = `Unit-${lessonNum}`;
-      } else {
-        // Try to match unit format
-        const unitMatch = normalizedTopic.match(/unit[\s-]?(\d+)/i);
-        if (unitMatch) {
-          unitFolderName = `Unit-${unitMatch[1]}`;
-        }
-      }
-    }
-    
-    // Extract unit number for file naming
-    const unitNumMatch = unitFolderName.match(/unit[\s-]?(\d+)/i);
-    const finalUnitNum = unitNumMatch ? unitNumMatch[1] : unitNum;
-    
-    // Handle Hindi Unit-1 typo (Uniit-1)
-    if (amenitySubject === 'Hindi' && unitFolderName === 'Unit-1') {
-      unitFolderName = 'Uniit-1';
-    }
-    
-    // Build file name based on subject
-    if (amenitySubject === 'Hindi') {
-      fileName = `${mapping.filePattern}hu${finalUnitNum}.json`;
-    } else if (amenitySubject === 'Mathematics') {
-      fileName = `${mapping.filePattern}mu${finalUnitNum}.json`;
-    } else if (amenitySubject === 'Science') {
-      fileName = `${mapping.filePattern}su${finalUnitNum}.json`;
-    } else if (amenitySubject === 'Social Science') {
-      fileName = `${mapping.filePattern}ssu${finalUnitNum}.json`;
-    } else {
-      return null;
-    }
-    
-    filePath = path.join(
-      amenityBasePath,
-      amenitySubject,
-      unitFolderName,
-      fileName
-    );
-  }
-  
-  return filePath;
-}
-
-/**
- * IIT-6 helper: find JSON file inside AMENITY-2 for a given subject/topic/tool
- *
- * Folder structure:
- * - AMENITY-2/<Subject>/<TopicFolder>/ch-1_cmh.json
- * - AMENITY-2/<Subject>/<TopicFolder>/ch-1_fcm.json
- * - AMENITY-2/<Subject>/<TopicFolder>/ch-1_sns.json
- */
-async function getIIT6FileFromAmenity2(subject, topic, toolType) {
-  // Normalize subject name (handle case variations like "biology" vs "Biology")
-  const normalizedSubject = IIT_SUBJECTS.find(s => 
-    s.toLowerCase() === subject.toLowerCase()
-  );
-  
-  if (!normalizedSubject) {
-    console.log(`Invalid IIT-6 subject: ${subject}. Valid subjects: ${IIT_SUBJECTS.join(', ')}`);
-    return null;
-  }
-
-  if (!topic) {
-    console.log('Topic is required for IIT-6 tools');
-    return null;
-  }
-
-  const amenity2Base = getAmenity2BasePath();
-  const subjectPath = path.join(amenity2Base, normalizedSubject);
-  const topicPath = path.join(subjectPath, topic);
-
-  try {
-    await fs.access(topicPath);
-  } catch {
-    console.log(`IIT-6 topic folder not found: ${topicPath}`);
-    return null;
-  }
-
-  // Special handling for homework-creator: combine multiple question files
-  if (toolType === 'homework-creator') {
-    return await getIIT6HomeworkCombined(topicPath);
-  }
-
-  // Special handling for worksheet-mcq-generator: combine MCQs and Fill in the Blanks
-  if (toolType === 'worksheet-mcq-generator') {
-    return await getIIT6WorksheetCombined(topicPath);
-  }
-
-  // Special handling for exam-question-paper-generator: combine all question types
-  if (toolType === 'exam-question-paper-generator') {
-    return await getIIT6ExamCombined(topicPath);
-  }
-
-  // Map tool types to filename suffixes
-  const suffixMap = {
-    'concept-mastery-helper': '_cmh.json',
-    'flashcard-generator': '_fcm.json',
-    'short-notes-summaries-maker': '_sns.json',
-  };
-
-  const suffix = suffixMap[toolType];
-  if (!suffix) {
-    console.log(`Tool type not supported for IIT-6: ${toolType}`);
-    return null;
-  }
-
-  try {
-    const files = await fs.readdir(topicPath);
-    const lowerSuffix = suffix.toLowerCase();
-    const matchingFile = files.find(f => f.toLowerCase().endsWith(lowerSuffix));
-
-    if (!matchingFile) {
-      console.log(`No IIT-6 file found for tool ${toolType} in ${topicPath}`);
-      return null;
-    }
-
-    return path.join(topicPath, matchingFile);
-  } catch (err) {
-    console.log(`Error reading IIT-6 topic folder ${topicPath}:`, err.message);
-    return null;
-  }
-}
-
-/**
- * Combine all question types for exam-question-paper-generator
- * Includes: MCQs, Fill in the Blanks, VSAQs, SAQs, LAQs
- */
-async function getIIT6ExamCombined(topicPath) {
-  try {
-    const files = await fs.readdir(topicPath);
-    
-    // Question file patterns to look for (all types for exam paper)
-    const questionFilePatterns = [
-      { pattern: /_mcqs\.json$/i, type: 'Multiple Choice Questions', priority: 1, defaultMarks: 1, defaultTime: 1 },
-      { pattern: /_fill_in_the_blanks\.json$/i, type: 'Fill in the Blanks', priority: 2, defaultMarks: 1, defaultTime: 1 },
-      { pattern: /_vsaqs\.json$/i, type: 'Very Short Answer Questions', priority: 3, defaultMarks: 2, defaultTime: 2 },
-      { pattern: /_saqs\.json$/i, type: 'Short Answer Questions', priority: 4, defaultMarks: 3, defaultTime: 5 },
-      { pattern: /_laqs\.json$/i, type: 'Long Answer Questions', priority: 5, defaultMarks: 5, defaultTime: 10 },
-    ];
-
-    const combinedData = {
-      content_type: 'Exam Paper',
-      sections: [],
-      total_questions: 0,
-      total_marks: 0,
-      estimated_time: 0
-    };
-
-    let questionCounter = 1;
-
-    // Process each question type in priority order
-    for (const { pattern, type, priority, defaultMarks, defaultTime } of questionFilePatterns.sort((a, b) => a.priority - b.priority)) {
-      const matchingFile = files.find(f => pattern.test(f));
-      
-      if (matchingFile) {
-        const filePath = path.join(topicPath, matchingFile);
-        try {
-          const fileData = await readJSONFile(filePath);
-          
-          if (fileData && fileData.questions && Array.isArray(fileData.questions)) {
-            // Renumber questions and add section info with marks
-            const sectionQuestions = fileData.questions.map(q => {
-              const newQ = { ...q };
-              newQ.question_number = questionCounter++;
-              newQ.question_type = type;
-              // Use marks from question if available, otherwise use default
-              newQ.marks = q.marks || defaultMarks;
-              newQ.estimated_time = defaultTime; // minutes per question
-              return newQ;
-            });
-
-            const sectionMarks = sectionQuestions.reduce((sum, q) => sum + (q.marks || defaultMarks), 0);
-            const sectionTime = sectionQuestions.length * defaultTime;
-
-            combinedData.sections.push({
-              type: type,
-              questions: sectionQuestions,
-              count: sectionQuestions.length,
-              total_marks: sectionMarks,
-              estimated_time: sectionTime
-            });
-
-            combinedData.total_questions += sectionQuestions.length;
-            combinedData.total_marks += sectionMarks;
-            combinedData.estimated_time += sectionTime;
-          }
-        } catch (err) {
-          console.log(`Error reading ${matchingFile}:`, err.message);
-          // Continue with other files
-        }
-      }
-    }
-
-    // If no questions found, return null
-    if (combinedData.total_questions === 0) {
-      console.log(`No question files found for exam paper in ${topicPath}`);
-      return null;
-    }
-
-    // Return as a special marker object that getHardcodedContent will recognize
-    return {
-      __isCombinedExam: true,
-      data: combinedData
-    };
-  } catch (err) {
-    console.log(`Error combining exam files from ${topicPath}:`, err.message);
-    return null;
-  }
-}
-
-/**
- * Combine all question types for exam-question-paper-generator (normal classes)
- * Includes: MCQs, Fill in the Blanks, Short answer, Long answer, Match the Following, True or False
- */
-async function getNormalClassExamCombined(classNumber, subject, topic, difficulty = 'medium') {
-  try {
-    const classBasePath = getClassBasePath(classNumber);
-    const subjectFolder = SUBJECT_MAPPINGS[subject] || subject;
-    const topicCode = await normalizeTopic(classNumber, topic, subject);
-    
-    const combinedData = {
-      content_type: 'Exam Paper',
-      sections: [],
-      total_questions: 0,
-      total_marks: 0,
-      estimated_time: 0
-    };
-
-    let questionCounter = 1;
-
-    // Question types to combine for exam papers (all types)
-    const questionTypes = [
-      { 
-        folder: 'MCQ', 
-        type: 'Multiple Choice Questions', 
-        priority: 1,
-        defaultMarks: 1,
-        defaultTime: 1
-      },
-      { 
-        folder: 'Fill in the Blanks', 
-        type: 'Fill in the Blanks', 
-        priority: 2,
-        defaultMarks: 1,
-        defaultTime: 1
-      },
-      { 
-        folder: 'Short answer', 
-        type: 'Short Answer Questions', 
-        priority: 3,
-        defaultMarks: 3,
-        defaultTime: 5
-      },
-      { 
-        folder: 'Long answer', 
-        type: 'Long Answer Questions', 
-        priority: 4,
-        defaultMarks: 5,
-        defaultTime: 10
-      },
-      { 
-        folder: 'Match the following', 
-        type: 'Match the Following', 
-        priority: 5,
-        defaultMarks: 2,
-        defaultTime: 3
-      },
-      { 
-        folder: 'True or False', 
-        type: 'True or False', 
-        priority: 6,
-        defaultMarks: 1,
-        defaultTime: 1
-      },
-    ];
-
-    // Process each question type in priority order
-    for (const { folder, type, priority, defaultMarks, defaultTime } of questionTypes.sort((a, b) => a.priority - b.priority)) {
-      // Build file path
-      const difficultyLower = difficulty.toLowerCase();
-      const difficultyMap = {
-        'easy': 'easy',
-        'medium': 'medium',
-        'hard': 'hard'
-      };
-      const difficultyFormatted = difficultyMap[difficultyLower] || 'medium';
-      
-      // Try to find the actual folder name (case-insensitive)
-      let folderName = folder;
-      try {
-        const subjectPath = path.join(classBasePath, subjectFolder);
-        const folders = await fs.readdir(subjectPath, { withFileTypes: true });
-        const matchingFolder = folders.find(f => 
-          f.isDirectory() && f.name.toLowerCase() === folderName.toLowerCase()
-        );
-        if (matchingFolder) {
-          folderName = matchingFolder.name;
-        }
-      } catch (err) {
-        // If can't read, use original folder name
-      }
-      
-      const fileName = `${topicCode.toLowerCase()} ${difficultyFormatted}.csv`;
-      const filePath = path.join(classBasePath, subjectFolder, folderName, fileName);
-      
-      try {
-        await fs.access(filePath);
-        const csvData = await readCSVFile(filePath);
-        
-        if (csvData && csvData.data && Array.isArray(csvData.data)) {
-          let sectionQuestions = [];
-          
-          if (type === 'Match the Following') {
-            // Process match the following CSV format
-            const questions = csvData.data.filter(row => row.Type === 'Question');
-            const answers = csvData.data.filter(row => row.Type === 'Answer');
-            
-            const answerMap = new Map();
-            answers.forEach(ans => {
-              if (ans['Column A'] && ans['Column B / Correct Match']) {
-                answerMap.set(ans['Column A'], ans['Column B / Correct Match']);
-              }
-            });
-            
-            questions.forEach((row, index) => {
-              if (row['Column A'] && row['Column B / Correct Match']) {
-                const columnA = row['Column A'];
-                const columnB = row['Column B / Correct Match'];
-                const correctMatch = answerMap.get(columnA) || columnB;
-                
-                sectionQuestions.push({
-                  question_number: questionCounter++,
-                  question: `Match the following:`,
-                  column_a: columnA,
-                  column_b: columnB,
-                  correct_match: correctMatch,
-                  question_type: type,
-                  marks: defaultMarks,
-                  estimated_time: defaultTime
-                });
-              }
-            });
-          } else {
-            // Process other question types (standard CSV format)
-            sectionQuestions = csvData.data.map((row, index) => {
-              const question = {
-                question_number: questionCounter++,
-                question_type: type,
-                marks: defaultMarks,
-                estimated_time: defaultTime
-              };
-              
-              if (row.Question) {
-                question.question = row.Question;
-              }
-              
-              // For MCQs and True/False, extract options
-              if (row['Option A'] || row['Option B'] || row['Option C'] || row['Option D']) {
-                question.options = {};
-                if (row['Option A']) question.options.A = row['Option A'];
-                if (row['Option B']) question.options.B = row['Option B'];
-                if (row['Option C']) question.options.C = row['Option C'];
-                if (row['Option D']) question.options.D = row['Option D'];
-              }
-              
-              if (row['Correct Answer']) {
-                question.correct_answer = row['Correct Answer'];
-              } else if (row.Answer) {
-                question.correct_answer = row.Answer;
-              }
-              
-              if (row.Explanation) {
-                question.explanation = row.Explanation;
-              }
-              
-              return question;
-            });
-          }
-          
-          if (sectionQuestions.length > 0) {
-            const sectionMarks = sectionQuestions.reduce((sum, q) => sum + (q.marks || defaultMarks), 0);
-            const sectionTime = sectionQuestions.length * defaultTime;
-
-            combinedData.sections.push({
-              type: type,
-              questions: sectionQuestions,
-              count: sectionQuestions.length,
-              total_marks: sectionMarks,
-              estimated_time: sectionTime
-            });
-            
-            combinedData.total_questions += sectionQuestions.length;
-            combinedData.total_marks += sectionMarks;
-            combinedData.estimated_time += sectionTime;
-          }
-        }
-      } catch (err) {
-        // File doesn't exist or error reading - continue with other types
-        console.log(`File not found or error reading ${filePath}:`, err.message);
-        continue;
-      }
-    }
-
-    // If no questions found, return null
-    if (combinedData.total_questions === 0) {
-      console.log(`No question files found for exam paper: Class ${classNumber}, ${subject}, ${topic}`);
-      return null;
-    }
-
-    // Return as a special marker object that getHardcodedContent will recognize
-    return {
-      __isCombinedExam: true,
-      data: combinedData
-    };
-  } catch (err) {
-    console.log(`Error combining exam files:`, err.message);
-    return null;
-  }
-}
-
-/**
- * Combine MCQs, Fill in the Blanks, and Match the Following for worksheet-mcq-generator (normal classes)
- */
-async function getNormalClassWorksheetCombined(classNumber, subject, topic, difficulty = 'medium') {
-  try {
-    const classBasePath = getClassBasePath(classNumber);
-    const subjectFolder = SUBJECT_MAPPINGS[subject] || subject;
-    const topicCode = await normalizeTopic(classNumber, topic, subject);
-    
-    const combinedData = {
-      content_type: 'Worksheet',
-      sections: [],
-      total_questions: 0
-    };
-
-    let questionCounter = 1;
-
-    // Question types to combine for worksheets
-    const questionTypes = [
-      { 
-        toolType: 'worksheet-mcq-generator', 
-        folder: 'mcq', 
-        type: 'Multiple Choice Questions', 
-        priority: 1 
-      },
-      { 
-        toolType: 'fill-in-blanks', 
-        folder: 'Fill in the blanks', 
-        type: 'Fill in the Blanks', 
-        priority: 2 
-      },
-      { 
-        toolType: 'match-following', 
-        folder: 'match the following', 
-        type: 'Match the Following', 
-        priority: 3 
-      },
-    ];
-
-    // Process each question type in priority order
-    for (const { toolType, folder, type, priority } of questionTypes.sort((a, b) => a.priority - b.priority)) {
-      // Build file path
-      const difficultyLower = difficulty.toLowerCase();
-      const difficultyMap = {
-        'easy': 'Easy',
-        'medium': 'Medium',
-        'hard': 'Hard'
-      };
-      const difficultySuffix = difficultyMap[difficultyLower] || 'Medium';
-      
-      const fileName = `${topicCode} ${difficultySuffix}.csv`;
-      const filePath = path.join(classBasePath, subjectFolder, folder, fileName);
-      
-      try {
-        await fs.access(filePath);
-        const csvData = await readCSVFile(filePath);
-        
-        if (csvData && csvData.data && Array.isArray(csvData.data)) {
-          let sectionQuestions = [];
-          
-          if (type === 'Match the Following') {
-            // Process match the following CSV format
-            // CSV has: Type, Column A, Column B / Correct Match
-            // Questions have Type='Question', Answers have Type='Answer'
-            const questions = csvData.data.filter(row => row.Type === 'Question');
-            const answers = csvData.data.filter(row => row.Type === 'Answer');
-            
-            // Create a map of answers for quick lookup (Column A -> Column B)
-            const answerMap = new Map();
-            answers.forEach(ans => {
-              if (ans['Column A'] && ans['Column B / Correct Match']) {
-                answerMap.set(ans['Column A'], ans['Column B / Correct Match']);
-              }
-            });
-            
-            // Convert questions to worksheet format
-            // Each Question row represents one match pair
-            questions.forEach((row, index) => {
-              if (row['Column A'] && row['Column B / Correct Match']) {
-                const columnA = row['Column A'];
-                const columnB = row['Column B / Correct Match'];
-                // Use answer map if available, otherwise use the question's column B
-                const correctMatch = answerMap.get(columnA) || columnB;
-                
-                sectionQuestions.push({
-                  question_number: questionCounter++,
-                  question: `Match the following:`,
-                  column_a: columnA,
-                  column_b: columnB,
-                  correct_match: correctMatch,
-                  question_type: type
-                });
-              }
-            });
-          } else {
-            // Process MCQ and Fill in the Blanks (standard CSV format)
-            sectionQuestions = csvData.data.map((row, index) => {
-              const question = {
-                question_number: questionCounter++,
-                question_type: type
-              };
-              
-              if (row.Question) {
-                question.question = row.Question;
-              }
-              
-              // For MCQs, extract options
-              if (row['Option A'] || row['Option B'] || row['Option C'] || row['Option D']) {
-                question.options = {};
-                if (row['Option A']) question.options.A = row['Option A'];
-                if (row['Option B']) question.options.B = row['Option B'];
-                if (row['Option C']) question.options.C = row['Option C'];
-                if (row['Option D']) question.options.D = row['Option D'];
-              }
-              
-              if (row['Correct Answer']) {
-                question.correct_answer = row['Correct Answer'];
-              } else if (row.Answer) {
-                question.correct_answer = row.Answer;
-              }
-              
-              if (row.Explanation) {
-                question.explanation = row.Explanation;
-              }
-              
-              return question;
-            });
-          }
-          
-          if (sectionQuestions.length > 0) {
-            combinedData.sections.push({
-              type: type,
-              questions: sectionQuestions,
-              count: sectionQuestions.length
-            });
-            
-            combinedData.total_questions += sectionQuestions.length;
-          }
-        }
-      } catch (err) {
-        // File doesn't exist or error reading - continue with other types
-        console.log(`File not found or error reading ${filePath}:`, err.message);
-        continue;
-      }
-    }
-
-    // If no questions found, return null
-    if (combinedData.total_questions === 0) {
-      console.log(`No question files found for worksheet: Class ${classNumber}, ${subject}, ${topic}`);
-      return null;
-    }
-
-    // Return as a special marker object that getHardcodedContent will recognize
-    return {
-      __isCombinedWorksheet: true,
-      data: combinedData
-    };
-  } catch (err) {
-    console.log(`Error combining worksheet files:`, err.message);
-    return null;
-  }
-}
-
-/**
- * Combine MCQs and Fill in the Blanks for worksheet-mcq-generator (IIT-6)
- */
-async function getIIT6WorksheetCombined(topicPath) {
-  try {
-    const files = await fs.readdir(topicPath);
-    
-    // Question file patterns to look for (only MCQs and Fill in the Blanks)
-    const questionFilePatterns = [
-      { pattern: /_mcqs\.json$/i, type: 'Multiple Choice Questions', priority: 1 },
-      { pattern: /_fill_in_the_blanks\.json$/i, type: 'Fill in the Blanks', priority: 2 },
-    ];
-
-    const combinedData = {
-      content_type: 'Worksheet',
-      sections: [],
-      total_questions: 0
-    };
-
-    let questionCounter = 1;
-
-    // Process each question type in priority order
-    for (const { pattern, type, priority } of questionFilePatterns.sort((a, b) => a.priority - b.priority)) {
-      const matchingFile = files.find(f => pattern.test(f));
-      
-      if (matchingFile) {
-        const filePath = path.join(topicPath, matchingFile);
-        try {
-          const fileData = await readJSONFile(filePath);
-          
-          if (fileData && fileData.questions && Array.isArray(fileData.questions)) {
-            // Renumber questions and add section info
-            const sectionQuestions = fileData.questions.map(q => {
-              const newQ = { ...q };
-              newQ.question_number = questionCounter++;
-              newQ.question_type = type;
-              return newQ;
-            });
-
-            combinedData.sections.push({
-              type: type,
-              questions: sectionQuestions,
-              count: sectionQuestions.length
-            });
-
-            combinedData.total_questions += sectionQuestions.length;
-          }
-        } catch (err) {
-          console.log(`Error reading ${matchingFile}:`, err.message);
-          // Continue with other files
-        }
-      }
-    }
-
-    // If no questions found, return null
-    if (combinedData.total_questions === 0) {
-      console.log(`No question files found for worksheet in ${topicPath}`);
-      return null;
-    }
-
-    // Return as a special marker object that getHardcodedContent will recognize
-    return {
-      __isCombinedWorksheet: true,
-      data: combinedData
-    };
-  } catch (err) {
-    console.log(`Error combining worksheet files from ${topicPath}:`, err.message);
-    return null;
-  }
-}
-
-/**
- * Combine multiple question files for homework-creator
- * Reads: mcqs, fill_in_the_blanks, saqs, laqs, vsaqs
- */
-async function getIIT6HomeworkCombined(topicPath) {
-  try {
-    const files = await fs.readdir(topicPath);
-    
-    // Question file patterns to look for
-    const questionFilePatterns = [
-      { pattern: /_mcqs\.json$/i, type: 'MCQs', priority: 1 },
-      { pattern: /_fill_in_the_blanks\.json$/i, type: 'Fill in the Blanks', priority: 2 },
-      { pattern: /_vsaqs\.json$/i, type: 'Very Short Answer Questions', priority: 3 },
-      { pattern: /_saqs\.json$/i, type: 'Short Answer Questions', priority: 4 },
-      { pattern: /_laqs\.json$/i, type: 'Long Answer Questions', priority: 5 },
-    ];
-
-    const combinedData = {
-      content_type: 'Homework',
-      sections: [],
-      total_questions: 0
-    };
-
-    let questionCounter = 1;
-
-    // Process each question type in priority order
-    for (const { pattern, type, priority } of questionFilePatterns.sort((a, b) => a.priority - b.priority)) {
-      const matchingFile = files.find(f => pattern.test(f));
-      
-      if (matchingFile) {
-        const filePath = path.join(topicPath, matchingFile);
-        try {
-          const fileData = await readJSONFile(filePath);
-          
-          if (fileData && fileData.questions && Array.isArray(fileData.questions)) {
-            // Renumber questions and add section info
-            const sectionQuestions = fileData.questions.map(q => {
-              const newQ = { ...q };
-              newQ.question_number = questionCounter++;
-              newQ.question_type = type;
-              return newQ;
-            });
-
-            combinedData.sections.push({
-              type: type,
-              questions: sectionQuestions,
-              count: sectionQuestions.length
-            });
-
-            combinedData.total_questions += sectionQuestions.length;
-          }
-        } catch (err) {
-          console.log(`Error reading ${matchingFile}:`, err.message);
-          // Continue with other files
-        }
-      }
-    }
-
-    // If no questions found, return null
-    if (combinedData.total_questions === 0) {
-      console.log(`No question files found for homework in ${topicPath}`);
-      return null;
-    }
-
-    // Return as a special marker object that getHardcodedContent will recognize
-    return {
-      __isCombinedHomework: true,
-      data: combinedData
-    };
-  } catch (err) {
-    console.log(`Error combining homework files from ${topicPath}:`, err.message);
-    return null;
-  }
-}
-
-/**
- * Get file path for other tools (Lesson Planner, Projects, MCQ, etc.)
- */
-async function getOtherToolFilePath(classNumber, subject, topic, toolType, difficulty = 'medium') {
-  const mapping = TOOL_MAPPINGS[toolType];
-  if (!mapping || mapping.folder === 'AMENITY') {
-    return null;
-  }
-
-  const classBasePath = getClassBasePath(classNumber);
-  const subjectFolder = SUBJECT_MAPPINGS[subject] || subject;
-  
-  // For direct files (planner.json, projects.csv, passages.csv)
-  if (!mapping.folder) {
-    let fileName = mapping.filePattern;
-    
-    // Handle Hindi subject which has project.csv (singular) instead of projects.csv
-    if (toolType === 'activity-project-generator' && subjectFolder === 'Hindi') {
-      // Check if project.csv exists, otherwise use projects.csv
-      const projectCsvPath = path.join(classBasePath, subjectFolder, 'project.csv');
-      const projectsCsvPath = path.join(classBasePath, subjectFolder, 'projects.csv');
-      try {
-        await fs.access(projectCsvPath);
-        fileName = 'project.csv';
-      } catch {
-        // If project.csv doesn't exist, try projects.csv
-        try {
-          await fs.access(projectsCsvPath);
-          fileName = 'projects.csv';
-        } catch {
-          // Keep original filename if neither exists
-        }
-      }
-    }
-    
-    // For story-passage-creator, only allow English and Hindi
-    if (toolType === 'story-passage-creator' && subjectFolder !== 'English' && subjectFolder !== 'Hindi') {
-      console.log(`Story & Passage Creator is only available for English and Hindi. Subject: ${subjectFolder}`);
-      return null;
-    }
-    
-    const filePath = path.join(
-      classBasePath,
-      subjectFolder,
-      fileName
-    );
-    return filePath;
-  }
-  
-  // For folder-based tools (MCQ, Fill in blanks, etc.)
-  // Normalize topic to get lesson code (C1, C2, P1, P2, etc.)
-  const topicCode = await normalizeTopic(classNumber, topic, subject);
-  
-  if (!topicCode) {
-    console.log(`❌ Failed to normalize topic "${topic}" for Class ${classNumber}, Subject: ${subject}`);
-    return null;
-  }
-  
-  console.log(`📝 Normalized topic "${topic}" to code: ${topicCode}`);
-  
-  // Normalize difficulty
-  const difficultyLower = difficulty.toLowerCase();
-  const difficultyMap = {
-    'easy': 'easy',
-    'medium': 'medium',
-    'hard': 'hard',
-  };
-  const difficultyFormatted = difficultyMap[difficultyLower] || 'medium';
-  
-  // Build filename pattern - handle case sensitivity
-  // Some folders use "Fill in the blanks" (capital B), some use "Fill in the Blanks"
-  let folderName = mapping.folder;
-  
-  // Try to find the actual folder name (case-insensitive)
-  try {
-    const subjectPath = path.join(classBasePath, subjectFolder);
-    const folders = await fs.readdir(subjectPath, { withFileTypes: true });
-    const matchingFolder = folders.find(f => 
-      f.isDirectory() && f.name.toLowerCase() === folderName.toLowerCase()
-    );
-    if (matchingFolder) {
-      folderName = matchingFolder.name;
-      console.log(`📁 Found folder: ${folderName}`);
-    } else {
-      console.log(`⚠️ Folder "${folderName}" not found in ${subjectPath}. Available folders:`, folders.filter(f => f.isDirectory()).map(f => f.name).join(', '));
-    }
-  } catch (err) {
-    const subjectPath = path.join(classBasePath, subjectFolder);
-    console.log(`❌ Error reading subject folder ${subjectPath}:`, err.message);
-    // If can't read, use original folder name
-  }
-  
-  // File names are lowercase (c8 easy.csv, not C8 Easy.csv)
-  const fileName = `${topicCode.toLowerCase()} ${difficultyFormatted}.csv`;
-  
-  const filePath = path.join(
-    classBasePath,
-    subjectFolder,
-    folderName,
-    fileName
-  );
-  
-  console.log(`🔍 Looking for file: ${filePath}`);
-  
-  return filePath;
-}
-
-/**
- * Read and parse JSON file
- */
 async function readJSONFile(filePath) {
   try {
     const content = await fs.readFile(filePath, 'utf-8');
@@ -1383,29 +111,19 @@ async function readJSONFile(filePath) {
   }
 }
 
-/**
- * Read and parse CSV file
- */
 async function readCSVFile(filePath) {
   try {
     const content = await fs.readFile(filePath, 'utf-8');
     const lines = content.trim().split('\n');
     if (lines.length === 0) return [];
-    
-    // Parse header
     const headers = lines[0].split(',').map(h => h.trim());
     const data = [];
-    
-    // Parse rows
     for (let i = 1; i < lines.length; i++) {
       const values = lines[i].split(',').map(v => v.trim());
       const row = {};
-      headers.forEach((header, index) => {
-        row[header] = values[index] || '';
-      });
+      headers.forEach((header, index) => { row[header] = values[index] || ''; });
       data.push(row);
     }
-    
     return { headers, data };
   } catch (error) {
     console.error(`Error reading CSV file ${filePath}:`, error.message);
@@ -1413,140 +131,797 @@ async function readCSVFile(filePath) {
   }
 }
 
+/** Case-insensitive directory entry finder. Returns the actual name on disk or null. */
+async function findFolder(parentPath, targetNames) {
+  if (!Array.isArray(targetNames)) targetNames = [targetNames];
+  try {
+    const entries = await fs.readdir(parentPath, { withFileTypes: true });
+    for (const target of targetNames) {
+      const tLower = target.toLowerCase();
+      const match = entries.find(e => e.isDirectory() && e.name.toLowerCase() === tLower);
+      if (match) return match.name;
+    }
+    // Partial / contains match (handles "Summary and Short Notes" vs "Summaries and Short notes")
+    for (const target of targetNames) {
+      const tLower = target.toLowerCase();
+      const match = entries.find(e =>
+        e.isDirectory() && (e.name.toLowerCase().includes(tLower) || tLower.includes(e.name.toLowerCase()))
+      );
+      if (match) return match.name;
+    }
+  } catch { /* ignore */ }
+  return null;
+}
+
+/** Get all sub-directories of a path */
+async function getSubDirs(dirPath) {
+  try {
+    const entries = await fs.readdir(dirPath, { withFileTypes: true });
+    return entries.filter(e => e.isDirectory()).map(e => e.name);
+  } catch { return []; }
+}
+
+// ─── Path helpers ──────────────────────────────────────────────────────────────
+
+function classBasePath(classNumber) {
+  return path.join(HARDCODED_ROOT, `Class ${classNumber}`);
+}
+
+/** Resolve the actual subject folder path on disk for a canonical subject name */
+async function resolveSubjectPath(classNum, subject) {
+  const base = classBasePath(classNum);
+  const candidates = SUBJECT_TO_FOLDERS[subject] || [subject];
+  for (const candidate of candidates) {
+    const p = path.join(base, candidate);
+    if (await exists(p)) return p;
+  }
+  return null;
+}
+
+// ─── Normalize helpers ─────────────────────────────────────────────────────────
+
+function normStr(s) {
+  if (!s) return '';
+  return s.trim().toLowerCase()
+    .replace(/[^a-z0-9\u0900-\u097F]+/g, ' ')
+    .trim();
+}
+
+/** Check if a folder name looks like a numbered chapter: "1.Learning Together", "3 Dreams" */
+function isNumberedChapter(name) {
+  return /^\d+[\.\-\s]/.test(name.trim());
+}
+
+/** Extract chapter number and clean name from folder name like "1.Learning Together" */
+function parseChapterFolder(name) {
+  const m = name.trim().match(/^(\d+)[\.\-\s]+(.+)$/);
+  if (m) return { num: parseInt(m[1], 10), name: m[2].trim(), raw: name.trim() };
+  return { num: 0, name: name.trim(), raw: name.trim() };
+}
+
+// ─── Core: discover all chapters for a subject (Class 7-10) ────────────────
+// The folder tree may have:
+//   Subject/Chapter/...                            (simple)
+//   Subject/Book/Chapter/...                       (English → Beehive, Hindi → Kritika)
+//   Subject/SubSubject/Chapter/...                 (Science → Physics/Chemistry/Biology)
+//   Subject/(flat) mix of chapters + books         (Social in Class 8 has flat chapters)
+// We walk one or two levels deep and collect every numbered-chapter folder.
+
+async function discoverChapters(subjectPath) {
+  const chapters = []; // { num, name, raw, bookOrBranch, fullPath }
+  const topEntries = await getSubDirs(subjectPath);
+  
+  // Folders to skip — content-type folders, writing templates, and misc
+  const SKIP = new Set([
+    'amenity', 'junk', 'new folder',
+    // Content-type folders (should NOT be treated as books/sub-subjects)
+    'cmh', 'mcqs', 'mcq', 'flashcards', 'flash cards',
+    'lesson planner', 'lesson planners',
+    'summary and short notes', 'short notes and summaries', 'summaries and short notes', 'summaries and short notes',
+    'activity & project generator', 'activity and project generator',
+    'short answer questions', 'long answer questions', 'very short answer questions',
+    'passage related questions', 'passages',
+    'fill in the blanks', 'true or false', 'match the following',
+    // Writing template folders (present in English/Hindi)
+    'diary writing', 'essay writing', 'letter writing',
+    'diary writing(poem)', 'essay writing(poem)', 'letter writing(poem)',
+  ]);
+
+  for (const entry of topEntries) {
+    if (SKIP.has(entry.toLowerCase())) continue;
+
+    if (isNumberedChapter(entry)) {
+      // Direct chapter under subject
+      const parsed = parseChapterFolder(entry);
+      chapters.push({
+        ...parsed,
+        bookOrBranch: null,
+        fullPath: path.join(subjectPath, entry),
+      });
+    } else {
+      // Could be a book or sub-subject (Physics, Beehive, Our Pasts - II, etc.)
+      const subPath = path.join(subjectPath, entry);
+      const subEntries = await getSubDirs(subPath);
+
+      let foundChapters = false;
+      for (const sub of subEntries) {
+        if (SKIP.has(sub.toLowerCase())) continue;
+        if (isNumberedChapter(sub)) {
+          const parsed = parseChapterFolder(sub);
+          chapters.push({
+            ...parsed,
+            bookOrBranch: entry,
+            fullPath: path.join(subPath, sub),
+          });
+          foundChapters = true;
+        } else {
+          // Go one more level for double-nested (e.g. FirstFlight/FirstFlight/1.A letter)
+          const subSubPath = path.join(subPath, sub);
+          const subSubEntries = await getSubDirs(subSubPath);
+          for (const ssub of subSubEntries) {
+            if (SKIP.has(ssub.toLowerCase())) continue;
+            if (isNumberedChapter(ssub)) {
+              const parsed = parseChapterFolder(ssub);
+              chapters.push({
+                ...parsed,
+                bookOrBranch: entry + ' > ' + sub,
+                fullPath: path.join(subSubPath, ssub),
+              });
+              foundChapters = true;
+            }
+          }
+        }
+      }
+
+      // If no numbered chapters found inside, this might itself be a standalone topic
+      // (skip it – we only return numbered chapters)
+    }
+  }
+
+  // Sort by book/branch, then by chapter number
+  chapters.sort((a, b) => {
+    const ba = a.bookOrBranch || '';
+    const bb = b.bookOrBranch || '';
+    if (ba !== bb) return ba.localeCompare(bb);
+    return a.num - b.num;
+  });
+
+  return chapters;
+}
+
+// ─── Core: find a specific chapter folder by topic name ────────────────────
+// Returns the chapter object { fullPath, bookOrBranch, ... } or null
+
+async function findChapterByTopic(subjectPath, topic) {
+  if (!topic) return null;
+  const chapters = await discoverChapters(subjectPath);
+  if (chapters.length === 0) return null;
+
+  const topicNorm = normStr(topic);
+  
+  // 1. Exact match on chapter name
+  let match = chapters.find(c => normStr(c.name) === topicNorm);
+  if (match) return match;
+
+  // 2. Exact match on raw folder name
+  match = chapters.find(c => normStr(c.raw) === topicNorm);
+  if (match) return match;
+
+  // 3. Contains match (either direction)
+  match = chapters.find(c => {
+    const cn = normStr(c.name);
+    return cn.includes(topicNorm) || topicNorm.includes(cn);
+  });
+  if (match) return match;
+
+  // 4. Contains match on raw folder name
+  match = chapters.find(c => {
+    const rn = normStr(c.raw);
+    return rn.includes(topicNorm) || topicNorm.includes(rn);
+  });
+  if (match) return match;
+
+  return null;
+}
+
+// ─── Core: find content file inside a chapter folder ───────────────────────
+
+/** Given a chapter path, find the correct content JSON file for a tool + difficulty */
+async function findContentInChapter(chapterPath, toolType, difficulty = 'medium') {
+  const folderPatterns = TOOL_FOLDER_PATTERNS[toolType];
+  
+  // Special tools that combine multiple types
+  if (toolType === 'exam-question-paper-generator') {
+    return await buildCombinedExam(chapterPath, difficulty);
+  }
+  if (toolType === 'homework-creator') {
+    return await buildCombinedHomework(chapterPath, difficulty);
+  }
+
+  if (!folderPatterns) return null;
+
+  // Find the content-type folder (case-insensitive)
+  const actualFolder = await findFolder(chapterPath, folderPatterns);
+  if (!actualFolder) {
+    console.log(`❌ Content folder not found for ${toolType} in ${chapterPath}. Tried: ${folderPatterns.join(', ')}`);
+    return null;
+  }
+
+  const contentFolderPath = path.join(chapterPath, actualFolder);
+  const fileSuffix = TOOL_FILE_SUFFIX[toolType];
+
+  // For single-file tools (CMH, FlashCards, Passage)
+  if (!fileSuffix) {
+    const files = await getFilesInDir(contentFolderPath);
+    // Pick the first JSON file
+    const jsonFile = files.find(f => f.toLowerCase().endsWith('.json'));
+    if (jsonFile) return path.join(contentFolderPath, jsonFile);
+    return null;
+  }
+
+  // For difficulty-based tools: try {difficulty}_{suffix}.json
+  const diff = (difficulty || 'medium').toLowerCase();
+  const preferredName = `${diff}_${fileSuffix}.json`;
+  
+  const files = await getFilesInDir(contentFolderPath);
+  
+  // 1. Exact match
+  let found = files.find(f => f.toLowerCase() === preferredName);
+  if (found) return path.join(contentFolderPath, found);
+
+  // 2. Any file containing the suffix
+  found = files.find(f => f.toLowerCase().includes(`_${fileSuffix}.json`) || f.toLowerCase().includes(`_${fileSuffix}`));
+  if (found) return path.join(contentFolderPath, found);
+
+  // 3. Lesson planner fallback: try _lp.json then _sns.json
+  if (toolType === 'lesson-planner' || toolType === 'daily-class-plan-maker') {
+    found = files.find(f => f.toLowerCase().startsWith(diff) && f.toLowerCase().endsWith('.json'));
+    if (found) return path.join(contentFolderPath, found);
+    // Any json
+    found = files.find(f => f.toLowerCase().endsWith('.json'));
+    if (found) return path.join(contentFolderPath, found);
+  }
+
+  // 4. Fallback: any JSON file
+  found = files.find(f => f.toLowerCase().endsWith('.json'));
+  if (found) return path.join(contentFolderPath, found);
+
+  return null;
+}
+
+async function getFilesInDir(dirPath) {
+  try {
+    const entries = await fs.readdir(dirPath, { withFileTypes: true });
+    return entries.filter(e => e.isFile()).map(e => e.name);
+  } catch { return []; }
+}
+
+// ─── Combined content builders (exam, homework, worksheet) ─────────────────
+
+async function buildCombinedExam(chapterPath, difficulty = 'medium') {
+  const diff = (difficulty || 'medium').toLowerCase();
+  const sections = [];
+  let totalQuestions = 0, totalMarks = 0, estimatedTime = 0;
+  let qCounter = 1;
+
+  const types = [
+    { folders: ['MCQs', 'MCQ'], type: 'Multiple Choice Questions', marks: 1, time: 1 },
+    { folders: ['Very Short Answer Questions'], type: 'Very Short Answer Questions', marks: 2, time: 2 },
+    { folders: ['Short Answer Questions'], type: 'Short Answer Questions', marks: 3, time: 5 },
+    { folders: ['Long Answer Questions'], type: 'Long Answer Questions', marks: 5, time: 10 },
+  ];
+
+  for (const { folders, type, marks, time } of types) {
+    const actualFolder = await findFolder(chapterPath, folders);
+    if (!actualFolder) continue;
+    const folderPath = path.join(chapterPath, actualFolder);
+    const files = await getFilesInDir(folderPath);
+    
+    // Find the right difficulty file
+    let fileName = files.find(f => f.toLowerCase().startsWith(diff) && f.endsWith('.json'));
+    if (!fileName) fileName = files.find(f => f.endsWith('.json'));
+    if (!fileName) continue;
+
+    const data = await readJSONFile(path.join(folderPath, fileName));
+    if (!data || !Array.isArray(data.questions)) continue;
+
+    const sectionQuestions = data.questions.map(q => ({
+      ...q,
+      question_number: qCounter++,
+      question_type: type,
+      marks: q.marks || marks,
+      estimated_time: time,
+    }));
+
+    const sectionMarks = sectionQuestions.reduce((s, q) => s + (q.marks || marks), 0);
+    const sectionTime = sectionQuestions.length * time;
+
+    sections.push({ type, questions: sectionQuestions, count: sectionQuestions.length, total_marks: sectionMarks, estimated_time: sectionTime });
+    totalQuestions += sectionQuestions.length;
+    totalMarks += sectionMarks;
+    estimatedTime += sectionTime;
+  }
+
+  if (totalQuestions === 0) return null;
+  return { __isCombinedExam: true, data: { content_type: 'Exam Paper', sections, total_questions: totalQuestions, total_marks: totalMarks, estimated_time: estimatedTime } };
+}
+
+async function buildCombinedHomework(chapterPath, difficulty = 'medium') {
+  const diff = (difficulty || 'medium').toLowerCase();
+  const sections = [];
+  let totalQuestions = 0;
+  let qCounter = 1;
+
+  const types = [
+    { folders: ['MCQs', 'MCQ'], type: 'MCQs' },
+    { folders: ['Very Short Answer Questions'], type: 'Very Short Answer Questions' },
+    { folders: ['Short Answer Questions'], type: 'Short Answer Questions' },
+    { folders: ['Long Answer Questions'], type: 'Long Answer Questions' },
+  ];
+
+  for (const { folders, type } of types) {
+    const actualFolder = await findFolder(chapterPath, folders);
+    if (!actualFolder) continue;
+    const folderPath = path.join(chapterPath, actualFolder);
+    const files = await getFilesInDir(folderPath);
+
+    let fileName = files.find(f => f.toLowerCase().startsWith(diff) && f.endsWith('.json'));
+    if (!fileName) fileName = files.find(f => f.endsWith('.json'));
+    if (!fileName) continue;
+
+    const data = await readJSONFile(path.join(folderPath, fileName));
+    if (!data || !Array.isArray(data.questions)) continue;
+
+    const sectionQuestions = data.questions.map(q => ({
+      ...q,
+      question_number: qCounter++,
+      question_type: type,
+    }));
+
+    sections.push({ type, questions: sectionQuestions, count: sectionQuestions.length });
+    totalQuestions += sectionQuestions.length;
+  }
+
+  if (totalQuestions === 0) return null;
+  return { __isCombinedHomework: true, data: { content_type: 'Homework', sections, total_questions: totalQuestions } };
+}
+
+async function buildCombinedWorksheet(chapterPath, difficulty = 'medium') {
+  const diff = (difficulty || 'medium').toLowerCase();
+  const sections = [];
+  let totalQuestions = 0;
+  let qCounter = 1;
+
+  const types = [
+    { folders: ['MCQs', 'MCQ'], type: 'Multiple Choice Questions' },
+    { folders: ['Fill in the Blanks', 'Fill in the blanks'], type: 'Fill in the Blanks' },
+  ];
+
+  for (const { folders, type } of types) {
+    const actualFolder = await findFolder(chapterPath, folders);
+    if (!actualFolder) continue;
+    const folderPath = path.join(chapterPath, actualFolder);
+    const files = await getFilesInDir(folderPath);
+
+    let fileName = files.find(f => f.toLowerCase().startsWith(diff) && f.endsWith('.json'));
+    if (!fileName) fileName = files.find(f => f.endsWith('.json'));
+    if (!fileName) continue;
+
+    const data = await readJSONFile(path.join(folderPath, fileName));
+    if (!data || !Array.isArray(data.questions)) continue;
+
+    const sectionQuestions = data.questions.map(q => ({
+      ...q,
+      question_number: qCounter++,
+      question_type: type,
+    }));
+
+    sections.push({ type, questions: sectionQuestions, count: sectionQuestions.length });
+    totalQuestions += sectionQuestions.length;
+  }
+
+  if (totalQuestions === 0) return null;
+  return { __isCombinedWorksheet: true, data: { content_type: 'Worksheet', sections, total_questions: totalQuestions } };
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// AMENITY / AMENITY-2 (IIT-6) — kept mostly unchanged
+// ═══════════════════════════════════════════════════════════════════════════════
+
+function getAmenityBasePath() { return path.join(HARDCODED_ROOT, 'AMENITY'); }
+function getAmenity2BasePath() { return path.join(HARDCODED_ROOT, 'AMENITY-2'); }
+
+const AMENITY_SUBJECT_MAPPINGS = {
+  'English': 'English', 'Hindi': 'Hindi',
+  'Mathematics': 'Mathematics', 'Maths': 'Mathematics',
+  'Science': 'Science', 'Social Science': 'Social Science',
+};
+
+const AMENITY_TOOL_PREFIXES = {
+  'concept-mastery-helper': 'cmh',
+  'flashcard-generator': 'fcm',
+  'short-notes-summaries-maker': 'sns',
+};
+
+const AMENITY_SUBJECT_CODES = {
+  'Hindi': 'h', 'Mathematics': 'm', 'Science': 's', 'Social Science': 'ss', 'English': 'e',
+};
+
+async function getAmenityContent(subject, topic, toolType) {
+  const prefix = AMENITY_TOOL_PREFIXES[toolType];
+  if (!prefix) return null;
+
+  const amenitySubject = AMENITY_SUBJECT_MAPPINGS[subject] || subject;
+  const amenityBase = getAmenityBasePath();
+
+  // Derive unit number from topic
+  const unitMatch = (topic || '').match(/unit[\s-]?(\d+)/i);
+  let unitNum = unitMatch ? unitMatch[1] : null;
+
+  // If topic is a chapter name, try to map it to a unit number
+  if (!unitNum) {
+    // Try from planner matching or default to 1
+    unitNum = '1';
+  }
+
+  // Handle Hindi Unit-1 typo
+  let unitFolderName = `Unit-${unitNum}`;
+  if (amenitySubject === 'Hindi' && unitNum === '1') {
+    unitFolderName = 'Uniit-1';
+  }
+
+  if (amenitySubject === 'English') {
+    // English: AMENITY/English/Unit-X/TopicFolder/cmh_eu1-1.json
+    const unitPath = path.join(amenityBase, amenitySubject, unitFolderName);
+    if (!await exists(unitPath)) return null;
+    const topicFolders = await getSubDirs(unitPath);
+    for (const folder of topicFolders) {
+      const folderPath = path.join(unitPath, folder);
+      const files = await getFilesInDir(folderPath);
+      const matchingFile = files.find(f =>
+        f.startsWith(prefix) && f.includes(`eu${unitNum}`) && f.endsWith('.json')
+      );
+      if (matchingFile) return path.join(folderPath, matchingFile);
+    }
+    return null;
+  }
+
+  // Other subjects: files directly in Unit folder
+  const subjectCode = AMENITY_SUBJECT_CODES[amenitySubject] || amenitySubject[0].toLowerCase();
+  const fileName = `${prefix}_${subjectCode}u${unitNum}.json`;
+  const filePath = path.join(amenityBase, amenitySubject, unitFolderName, fileName);
+  if (await exists(filePath)) return filePath;
+  return null;
+}
+
+// IIT-6 (AMENITY-2) helpers
+async function getIIT6Content(subject, topic, toolType) {
+  const normalizedSubject = IIT_SUBJECTS.find(s => s.toLowerCase() === subject.toLowerCase());
+  if (!normalizedSubject || !topic) return null;
+
+  const topicPath = path.join(getAmenity2BasePath(), normalizedSubject, topic);
+  if (!await exists(topicPath)) return null;
+
+  // Special combined tools
+  if (toolType === 'homework-creator') return await buildCombinedHomework(topicPath);
+  if (toolType === 'worksheet-mcq-generator') return await buildCombinedWorksheet(topicPath);
+  if (toolType === 'exam-question-paper-generator') return await buildCombinedExam(topicPath);
+
+  const suffixMap = {
+    'concept-mastery-helper': '_cmh.json',
+    'flashcard-generator': '_fcm.json',
+    'short-notes-summaries-maker': '_sns.json',
+  };
+  const suffix = suffixMap[toolType];
+  if (!suffix) return null;
+
+  const files = await getFilesInDir(topicPath);
+  const matchingFile = files.find(f => f.toLowerCase().endsWith(suffix.toLowerCase()));
+  return matchingFile ? path.join(topicPath, matchingFile) : null;
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// Class 6 CSV logic (backward compat)
+// ═══════════════════════════════════════════════════════════════════════════════
+
+const CLASS6_TOOL_MAPPINGS = {
+  'lesson-planner': { folder: null, filePattern: 'planner.json', format: 'json' },
+  'daily-class-plan-maker': { folder: null, filePattern: 'planner.json', format: 'json' },
+  'activity-project-generator': { folder: null, filePattern: 'projects.csv', format: 'csv' },
+  'story-passage-creator': { folder: null, filePattern: 'passages.csv', format: 'csv' },
+  'worksheet-mcq-generator': { folder: 'mcq', filePattern: null, format: 'csv' },
+  'exam-question-paper-generator': { folder: 'mcq', filePattern: null, format: 'csv' },
+  'homework-creator': { folder: 'mcq', filePattern: null, format: 'csv' },
+  'fill-in-blanks': { folder: 'Fill in the blanks', filePattern: null, format: 'csv' },
+  'short-answer': { folder: 'short answers', filePattern: null, format: 'csv' },
+  'long-answer': { folder: 'long answer', filePattern: null, format: 'csv' },
+  'match-following': { folder: 'match the following', filePattern: null, format: 'csv' },
+  'true-false': { folder: 'true or false', filePattern: null, format: 'csv' },
+  'smart-study-guide-generator': { folder: 'mcq', filePattern: null, format: 'csv' },
+  'concept-breakdown-explainer': { folder: 'mcq', filePattern: null, format: 'csv' },
+  'personalized-revision-planner': { folder: null, filePattern: 'planner.json', format: 'json' },
+  'smart-qa-practice-generator': { folder: 'mcq', filePattern: null, format: 'csv' },
+  'chapter-summary-creator': { folder: null, filePattern: 'planner.json', format: 'json' },
+  'key-points-formula-extractor': { folder: 'short answers', filePattern: null, format: 'csv' },
+  'quick-assignment-builder': { folder: 'mcq', filePattern: null, format: 'csv' },
+};
+
+/** Resolve topic → CSV code (C1, C2, P1, etc.) via planner.json for Class 6 */
+async function getTopicCodeClass6(classNum, subject, topic) {
+  const subjectPath = await resolveSubjectPath(classNum, subject);
+  if (!subjectPath) return null;
+
+  // If topic already looks like C1, P2, etc.
+  if (/^[CP]\d+$/i.test(topic)) return topic.toUpperCase();
+
+  // Unit format
+  const unitMatch = topic.match(/unit[\s-]?(\d+)/i);
+  if (unitMatch) return `C${unitMatch[1]}`;
+
+  // Try to find in planner.json
+  const plannerPath = path.join(subjectPath, 'planner.json');
+  if (await exists(plannerPath)) {
+    const planner = await readJSONFile(plannerPath);
+    if (planner) {
+      const lessons = planner.lessons || planner.lesson_plans || [];
+      for (let i = 0; i < lessons.length; i++) {
+        const ln = normStr(lessons[i].lesson_name || '');
+        const tn = normStr(topic);
+        if (ln === tn || ln.includes(tn) || tn.includes(ln)) {
+          return `C${i + 1}`;
+        }
+      }
+    }
+  }
+  return null;
+}
+
+async function getClass6Content(classNum, subject, topic, toolType, params = {}) {
+  const mapping = CLASS6_TOOL_MAPPINGS[toolType];
+  if (!mapping) return null;
+
+  const subjectPath = await resolveSubjectPath(classNum, subject);
+  if (!subjectPath) return null;
+
+  // Direct-file tools (planner.json, projects.csv, passages.csv)
+  if (!mapping.folder) {
+    let fileName = mapping.filePattern;
+    // Hindi project.csv fallback
+    if (toolType === 'activity-project-generator' && subject === 'Hindi') {
+      if (await exists(path.join(subjectPath, 'project.csv'))) fileName = 'project.csv';
+    }
+    const filePath = path.join(subjectPath, fileName);
+    if (!await exists(filePath)) return null;
+    return mapping.format === 'json' ? await readJSONFile(filePath) : await readCSVFile(filePath);
+  }
+
+  // Folder-based tools (MCQ, Fill in blanks, etc.)
+  if (!topic) return null;
+  const topicCode = await getTopicCodeClass6(classNum, subject, topic);
+  if (!topicCode) return null;
+
+  const difficulty = (params.difficulty || params.questionDifficulty || 'medium').toLowerCase();
+  
+  // Find folder (case-insensitive)
+  const actualFolder = await findFolder(subjectPath, [mapping.folder]);
+  if (!actualFolder) return null;
+
+  const fileName = `${topicCode.toLowerCase()} ${difficulty}.csv`;
+  const filePath = path.join(subjectPath, actualFolder, fileName);
+  if (!await exists(filePath)) return null;
+  return await readCSVFile(filePath);
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// PUBLIC API
+// ═══════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Get available subjects for a class
+ */
+export async function getSubjectsForClass(classNumber) {
+  if (classNumber === IIT_CLASS_NAME) {
+    const base = getAmenity2BasePath();
+    const dirs = await getSubDirs(base);
+    const subjects = dirs.filter(d => IIT_SUBJECTS.map(s => s.toLowerCase()).includes(d.toLowerCase()));
+    return subjects.length > 0 ? subjects.sort() : IIT_SUBJECTS;
+  }
+
+  const classNum = parseInt(classNumber);
+  if (isNaN(classNum) || classNum < 5 || classNum > 10) return [];
+
+  const base = classBasePath(classNum);
+  if (!await exists(base)) return [];
+
+  const dirs = await getSubDirs(base);
+  const subjects = [];
+
+  for (const dir of dirs) {
+    const canonical = FOLDER_TO_SUBJECT[dir.toLowerCase()];
+    if (canonical && !subjects.includes(canonical)) {
+      subjects.push(canonical);
+    }
+  }
+
+  return subjects.sort();
+}
+
+/**
+ * Get chapters/topics for a subject
+ */
+export async function getChaptersForSubject(classNumber, subject) {
+  // IIT-6
+  if (classNumber === IIT_CLASS_NAME) {
+    const normalizedSubject = IIT_SUBJECTS.find(s => s.toLowerCase() === subject.toLowerCase());
+    if (!normalizedSubject) return [];
+    const subjectPath = path.join(getAmenity2BasePath(), normalizedSubject);
+    if (!await exists(subjectPath)) return [];
+    const dirs = await getSubDirs(subjectPath);
+    return dirs
+      .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+      .map((dir, i) => ({
+        chapterNumber: i + 1,
+        chapterCode: dir,
+        chapterName: dir,
+        duration: null,
+        subjectArea: null,
+      }));
+  }
+
+  const classNum = parseInt(classNumber);
+  if (isNaN(classNum) || classNum < 5 || classNum > 10) return [];
+
+  // Normalize subject
+  const normalizedSubject = VALID_SUBJECTS.find(s => s.toLowerCase() === subject.toLowerCase()) || subject;
+
+  // ─── Class 7-10: JSON tree structure ──────────────────────────────────
+  if (classNum >= 7) {
+    const subjectPath = await resolveSubjectPath(classNum, normalizedSubject);
+    if (!subjectPath) {
+      console.log(`❌ Subject folder not found for Class ${classNum}, ${normalizedSubject}`);
+      return [];
+    }
+
+    const chapters = await discoverChapters(subjectPath);
+    console.log(`✅ Found ${chapters.length} chapters for Class ${classNum} ${normalizedSubject}`);
+
+    return chapters.map((ch) => ({
+      chapterNumber: ch.num || 0,
+      chapterCode: ch.raw,
+      chapterName: ch.bookOrBranch ? `${ch.name} (${ch.bookOrBranch})` : ch.name,
+      duration: null,
+      subjectArea: ch.bookOrBranch || null,
+    }));
+  }
+
+  // ─── Class 5-6: CSV structure + planner.json ─────────────────────────
+  const subjectPath = await resolveSubjectPath(classNum, normalizedSubject);
+  if (!subjectPath) return [];
+
+  const chapters = [];
+  const chapterMap = new Map();
+
+  // 1. From planner.json
+  const plannerPath = path.join(subjectPath, 'planner.json');
+  if (await exists(plannerPath)) {
+    const planner = await readJSONFile(plannerPath);
+    if (planner) {
+      const lessons = planner.lessons || planner.lesson_plans || [];
+      lessons.forEach((lesson, index) => {
+        const code = `C${index + 1}`;
+        const ch = {
+          chapterNumber: index + 1,
+          chapterCode: code,
+          chapterName: lesson.lesson_name || `Chapter ${index + 1}`,
+          duration: lesson.duration || null,
+          subjectArea: lesson.subject_area || null,
+        };
+        chapters.push(ch);
+        chapterMap.set(code, ch);
+      });
+    }
+  }
+
+  // 2. From CSV folder filenames (c1 easy.csv, p1 medium.csv)
+  const dirs = await getSubDirs(subjectPath);
+  for (const dir of dirs) {
+    const folderPath = path.join(subjectPath, dir);
+    const files = await getFilesInDir(folderPath);
+    for (const file of files) {
+      const m = file.match(/^([cp])(\d+)(\s|\.|$)/i);
+      if (m) {
+        const type = m[1].toUpperCase();
+        const num = parseInt(m[2], 10);
+        const code = `${type}${num}`;
+        if (!chapterMap.has(code)) {
+          const ch = {
+            chapterNumber: num,
+            chapterCode: code,
+            chapterName: type === 'C' ? `Chapter ${num}` : `Poem ${num}`,
+            duration: null,
+            subjectArea: null,
+          };
+          chapters.push(ch);
+          chapterMap.set(code, ch);
+        }
+      }
+    }
+  }
+
+  // 3. From AMENITY folder units
+  const amenityBase = getAmenityBasePath();
+  const amenitySubject = AMENITY_SUBJECT_MAPPINGS[normalizedSubject] || normalizedSubject;
+  const amenitySubjectPath = path.join(amenityBase, amenitySubject);
+  if (await exists(amenitySubjectPath)) {
+    const unitDirs = await getSubDirs(amenitySubjectPath);
+    for (const ud of unitDirs) {
+      const unitMatch = ud.match(/unit[\s-]?(\d+)/i);
+      if (unitMatch) {
+        const num = parseInt(unitMatch[1], 10);
+        const code = `C${num}`;
+        if (!chapterMap.has(code)) {
+          const ch = {
+            chapterNumber: num,
+            chapterCode: code,
+            chapterName: `Unit ${num}`,
+            duration: null,
+            subjectArea: null,
+          };
+          chapters.push(ch);
+          chapterMap.set(code, ch);
+        }
+      }
+    }
+  }
+
+  // Sort
+  chapters.sort((a, b) => {
+    const at = a.chapterCode.charAt(0);
+    const bt = b.chapterCode.charAt(0);
+    if (at !== bt) return at.localeCompare(bt);
+    return a.chapterNumber - b.chapterNumber;
+  });
+
+  return chapters;
+}
+
 /**
  * Get hardcoded content for a specific tool
  */
 export async function getHardcodedContent(classNumber, subject, topic, toolType, params = {}) {
   try {
-    // Special handling for IIT-6 (AMENITY-2 based content, non-standard subjects)
+    // IIT-6
     if (classNumber === IIT_CLASS_NAME) {
-      const filePathOrData = await getIIT6FileFromAmenity2(subject, topic, toolType);
-      if (!filePathOrData) {
-        return null;
-      }
-      
-      // Check if it's combined homework data (special object)
-      if (filePathOrData.__isCombinedHomework) {
-        return filePathOrData.data;
-      }
-      
-      // Check if it's combined worksheet data (special object)
-      if (filePathOrData.__isCombinedWorksheet) {
-        return filePathOrData.data;
-      }
-      
-      // Check if it's combined exam data (special object)
-      if (filePathOrData.__isCombinedExam) {
-        return filePathOrData.data;
-      }
-      
-      // Otherwise, it's a file path
-      const mapping = TOOL_MAPPINGS[toolType];
-      // Default to JSON for IIT-6 tools
-      const format = mapping?.format || 'json';
-      if (format === 'json') {
-        return await readJSONFile(filePathOrData);
-      }
-      if (format === 'csv') {
-        return await readCSVFile(filePathOrData);
-      }
-      return null;
+      const result = await getIIT6Content(subject, topic, toolType);
+      if (!result) return null;
+      if (result.__isCombinedHomework || result.__isCombinedWorksheet || result.__isCombinedExam) return result.data;
+      // It's a file path string
+      if (typeof result === 'string') return await readJSONFile(result);
+      return result;
     }
 
     const classNum = parseInt(classNumber);
-    
-    // Support classes 5-10
-    if (isNaN(classNum) || classNum < 5 || classNum > 10) {
-      console.log(`Unsupported class: ${classNumber}. Supported classes: 5-10`);
-      return null;
+    if (isNaN(classNum) || classNum < 5 || classNum > 10) return null;
+
+    // Normalize subject
+    const normalizedSubject = VALID_SUBJECTS.find(s => s.toLowerCase() === subject.toLowerCase()) || subject;
+
+    // ─── Class 7-10: JSON tree ──────────────────────────────────────────
+    if (classNum >= 7) {
+      return await getClass7to10Content(classNum, normalizedSubject, topic, toolType, params);
     }
-    
-    // Validate subject - only allow the 5 valid subjects (for non-IIT classes)
-    // IIT-6 is handled separately above
-    if (!VALID_SUBJECTS.includes(subject)) {
-      console.log(`Invalid subject: ${subject}. Valid subjects are: ${VALID_SUBJECTS.join(', ')}`);
-      return null;
-    }
-    
-    // Check if tool type is supported
-    if (!TOOL_MAPPINGS[toolType]) {
-      return null;
-    }
-    
-    const mapping = TOOL_MAPPINGS[toolType];
-    let filePath = null;
-    
-    // Special handling for worksheet-mcq-generator: combine MCQs, Fill in Blanks, and Match the Following
-    if (toolType === 'worksheet-mcq-generator') {
-      const difficulty = params.difficulty || params.questionDifficulty || 'medium';
-      const combinedData = await getNormalClassWorksheetCombined(classNum, subject, topic, difficulty);
-      if (combinedData) {
-        return combinedData.data;
-      }
-      // If combined data not available, fall through to single file handling
-    }
-    
-    // Special handling for exam-question-paper-generator: combine all question types for regular classes
-    if (toolType === 'exam-question-paper-generator' && classNumber !== IIT_CLASS_NAME) {
-      const difficulty = params.difficulty || params.questionDifficulty || 'medium';
-      const combinedData = await getNormalClassExamCombined(classNum, subject, topic, difficulty);
-      if (combinedData) {
-        return combinedData.data;
-      }
-      // If combined data not available, fall through to single file handling
-    }
-    
-    // Get file path based on tool type
-    // Special case: chapter-summary-creator can use AMENITY short notes for English
-    if (mapping.folder === 'AMENITY' || (toolType === 'chapter-summary-creator' && subject === 'English')) {
-      // AMENITY tools require topic
-      if (!topic) {
-        console.log(`Topic is required for AMENITY tools`);
-        return null;
-      }
-      // For chapter-summary-creator with English, use short-notes-summaries-maker tool type to get sns files
-      const amenityToolType = toolType === 'chapter-summary-creator' ? 'short-notes-summaries-maker' : toolType;
-      filePath = await getAmenityFilePath(classNum, subject, topic, amenityToolType);
-    } else {
-      // For lesson-planner, daily-class-plan-maker, activity-project-generator, and story-passage-creator, topic is optional
-      // For other tools, topic is required
-      if (toolType === 'lesson-planner' || toolType === 'daily-class-plan-maker' || toolType === 'activity-project-generator' || toolType === 'story-passage-creator') {
-        // These tools use direct files (planner.json, projects.csv, passages.csv) which contain all content
-        // Topic is optional - if provided, it will be used to filter in the formatter
-        // Pass empty string to indicate we want the full file
-        filePath = await getOtherToolFilePath(classNum, subject, topic || '', toolType);
-      } else {
-        // Other tools require topic
-        if (!topic) {
-          console.log(`Topic is required for ${toolType}`);
-          return null;
-        }
-        const difficulty = params.difficulty || params.questionDifficulty || 'medium';
-        filePath = await getOtherToolFilePath(classNum, subject, topic, toolType, difficulty);
+
+    // ─── Class 5-6: CSV ─────────────────────────────────────────────────
+    // First check AMENITY tools
+    const amenityTools = ['concept-mastery-helper', 'flashcard-generator', 'short-notes-summaries-maker'];
+    if (amenityTools.includes(toolType)) {
+      const filePath = await getAmenityContent(normalizedSubject, topic, toolType);
+      if (filePath && await exists(filePath)) {
+        return await readJSONFile(filePath);
       }
     }
-    
-    if (!filePath) {
-      console.log(`No file path found for: ${subject}/${topic}/${toolType}`);
-      return null;
-    }
-    
-    // Check if file exists
-    try {
-      await fs.access(filePath);
-    } catch (error) {
-      console.log(`File not found: ${filePath}`);
-      return null;
-    }
-    
-    // Read and parse file based on format
-    if (mapping.format === 'json') {
-      return await readJSONFile(filePath);
-    } else if (mapping.format === 'csv') {
-      return await readCSVFile(filePath);
-    }
-    
-    return null;
+
+    return await getClass6Content(classNum, normalizedSubject, topic, toolType, params);
   } catch (error) {
     console.error('Error getting hardcoded content:', error);
     return null;
@@ -1554,7 +929,68 @@ export async function getHardcodedContent(classNumber, subject, topic, toolType,
 }
 
 /**
- * Check if hardcoded content exists for given parameters
+ * Class 7-10 content fetcher using the JSON tree structure
+ */
+async function getClass7to10Content(classNum, subject, topic, toolType, params = {}) {
+  const subjectPath = await resolveSubjectPath(classNum, subject);
+  if (!subjectPath) {
+    console.log(`❌ Subject folder not found for Class ${classNum}, ${subject}`);
+    return null;
+  }
+
+  const difficulty = params.difficulty || params.questionDifficulty || 'medium';
+
+  // For tools that don't need a topic (lesson-planner can work without one)
+  // But for Class 7-10 every tool needs a chapter
+  if (!topic) {
+    // If no topic provided for lesson-planner, grab the first chapter
+    const chapters = await discoverChapters(subjectPath);
+    if (chapters.length === 0) return null;
+    const firstChapter = chapters[0];
+    console.log(`ℹ️ No topic provided, using first chapter: ${firstChapter.raw}`);
+    return await getContentForChapterPath(firstChapter.fullPath, toolType, difficulty);
+  }
+
+  // Find the chapter folder matching the topic
+  const chapter = await findChapterByTopic(subjectPath, topic);
+  if (!chapter) {
+    console.log(`❌ Chapter not found for topic "${topic}" in ${subjectPath}`);
+    return null;
+  }
+
+  console.log(`✅ Matched topic "${topic}" to chapter folder: ${chapter.raw} at ${chapter.fullPath}`);
+  return await getContentForChapterPath(chapter.fullPath, toolType, difficulty);
+}
+
+/** Given a chapter folder path, get the content for a tool */
+async function getContentForChapterPath(chapterPath, toolType, difficulty = 'medium') {
+  // Special combined tools
+  if (toolType === 'worksheet-mcq-generator') {
+    const combined = await buildCombinedWorksheet(chapterPath, difficulty);
+    if (combined) return combined.data;
+  }
+  if (toolType === 'exam-question-paper-generator') {
+    const combined = await buildCombinedExam(chapterPath, difficulty);
+    if (combined) return combined.data;
+  }
+  if (toolType === 'homework-creator') {
+    const combined = await buildCombinedHomework(chapterPath, difficulty);
+    if (combined) return combined.data;
+  }
+
+  // Standard single-file tools
+  const filePath = await findContentInChapter(chapterPath, toolType, difficulty);
+  if (!filePath) {
+    console.log(`❌ No content file found for ${toolType} in ${chapterPath}`);
+    return null;
+  }
+
+  console.log(`✅ Found content file: ${filePath}`);
+  return await readJSONFile(filePath);
+}
+
+/**
+ * Check if hardcoded content exists
  */
 export async function hasHardcodedContent(classNumber, subject, topic, toolType) {
   const content = await getHardcodedContent(classNumber, subject, topic, toolType);
@@ -1562,536 +998,38 @@ export async function hasHardcodedContent(classNumber, subject, topic, toolType)
 }
 
 /**
- * Get all available content types for a given chapter/topic
+ * Get all available content types for a topic
  */
 export async function getAvailableContentForTopic(classNumber, subject, topic) {
   try {
-    // IIT-6: available content is determined from AMENITY-2 folder
-    if (classNumber === IIT_CLASS_NAME) {
+    const classNum = parseInt(classNumber);
+    if (classNumber === IIT_CLASS_NAME || (classNum >= 7 && classNum <= 10)) {
+      // For Class 7-10 and IIT-6, check which content-type folders exist inside the chapter
       const results = [];
-      const amenityTools = [
-        { toolType: 'concept-mastery-helper', name: 'Concept Mastery Helper', suffix: '_cmh.json' },
-        { toolType: 'flashcard-generator', name: 'Flashcards', suffix: '_fcm.json' },
-        { toolType: 'short-notes-summaries-maker', name: 'Short Notes & Summaries', suffix: '_sns.json' },
+      const toolsToCheck = [
+        { toolType: 'worksheet-mcq-generator', name: 'MCQ Questions' },
+        { toolType: 'lesson-planner', name: 'Lesson Planner' },
+        { toolType: 'concept-mastery-helper', name: 'Concept Mastery Helper' },
+        { toolType: 'flashcard-generator', name: 'Flashcards' },
+        { toolType: 'short-notes-summaries-maker', name: 'Short Notes & Summaries' },
+        { toolType: 'activity-project-generator', name: 'Projects & Activities' },
+        { toolType: 'short-answer', name: 'Short Answer Questions' },
+        { toolType: 'long-answer', name: 'Long Answer Questions' },
       ];
 
-      const amenity2Base = getAmenity2BasePath();
-      const subjectPath = path.join(amenity2Base, subject);
-      const topicPath = path.join(subjectPath, topic);
-
-      try {
-        await fs.access(topicPath);
-      } catch {
-        return [];
-      }
-
-      const files = await fs.readdir(topicPath);
-      const lowerFiles = files.map(f => f.toLowerCase());
-
-      for (const tool of amenityTools) {
-        const hasFile = lowerFiles.some(f => f.endsWith(tool.suffix));
-        if (hasFile) {
-          results.push({
-            toolType: tool.toolType,
-            name: tool.name,
-            available: true,
-          });
+      for (const tool of toolsToCheck) {
+        const hasContent = await hasHardcodedContent(classNumber, subject, topic, tool.toolType);
+        if (hasContent) {
+          results.push({ toolType: tool.toolType, name: tool.name, available: true });
         }
       }
-
       return results;
     }
 
-    const classNum = parseInt(classNumber);
-    
-    // Support classes 5-10 and IIT-6
-    // Handle IIT-6 specially
-    if (classNumber === IIT_CLASS_NAME) {
-      // For IIT-6, validate against IIT subjects
-      if (!IIT_SUBJECTS.includes(subject)) {
-        return [];
-      }
-      // IIT-6 topics come from AMENITY-2 folder structure
-      const amenity2Path = getAmenity2BasePath();
-      const subjectPath = path.join(amenity2Path, subject);
-      try {
-        await fs.access(subjectPath);
-        const entries = await fs.readdir(subjectPath, { withFileTypes: true });
-        const topics = entries
-          .filter(entry => entry.isDirectory())
-          .map(entry => entry.name)
-          .sort();
-        return topics.map(topicName => ({
-          chapterNumber: 1,
-          chapterCode: topicName,
-          chapterName: topicName,
-          duration: null,
-          subjectArea: null
-        }));
-      } catch {
-        return [];
-      }
-    }
-
-    if (isNaN(classNum) || classNum < 5 || classNum > 10) {
-      return [];
-    }
-
-    // Validate subject (for non-IIT classes)
-    if (!VALID_SUBJECTS.includes(subject)) {
-      return [];
-    }
-
-    const classBasePath = getClassBasePath(classNum);
-    const subjectFolder = SUBJECT_MAPPINGS[subject] || subject;
-    const topicCode = await normalizeTopic(classNum, topic, subject);
-    
-    // List of all content types to check
-    // Note: Folder names need to match actual folder names (case-sensitive)
-    const contentTypes = [
-      { toolType: 'worksheet-mcq-generator', folder: 'mcq', name: 'MCQ Questions' },
-      { toolType: 'fill-in-blanks', folder: 'Fill in the blanks', name: 'Fill in the Blanks' },
-      { toolType: 'short-answer', folder: 'short answers', name: 'Short Answer Questions' },
-      { toolType: 'long-answer', folder: 'long answer', name: 'Long Answer Questions' },
-      { toolType: 'match-following', folder: 'match the following', name: 'Match the Following' },
-      { toolType: 'true-false', folder: 'true or false', name: 'True or False' },
-      { toolType: 'lesson-planner', folder: null, filePattern: 'planner.json', name: 'Lesson Planner' },
-      { toolType: 'activity-project-generator', folder: null, filePattern: 'projects.csv', name: 'Projects & Activities' },
-      { toolType: 'story-passage-creator', folder: null, filePattern: 'passages.csv', name: 'Stories & Passages' },
-      // AMENITY tools
-      { toolType: 'concept-mastery-helper', folder: 'AMENITY', name: 'Concept Mastery Helper' },
-      { toolType: 'flashcard-generator', folder: 'AMENITY', name: 'Flashcards' },
-      { toolType: 'short-notes-summaries-maker', folder: 'AMENITY', name: 'Short Notes & Summaries' },
-    ];
-
-    const availableContent = [];
-
-    for (const contentType of contentTypes) {
-      let exists = false;
-
-      if (contentType.folder === 'AMENITY') {
-        // Check AMENITY folder
-        const filePath = await getAmenityFilePath(classNum, subject, topic, contentType.toolType);
-        if (filePath) {
-          try {
-            await fs.access(filePath);
-            exists = true;
-          } catch {
-            exists = false;
-          }
-        }
-      } else if (contentType.folder === null) {
-        // Check direct files (planner.json, projects.csv, etc.)
-        const filePath = path.join(
-          classBasePath,
-          subjectFolder,
-          contentType.filePattern
-        );
-        try {
-          await fs.access(filePath);
-          exists = true;
-        } catch {
-          exists = false;
-        }
-      } else {
-        // Check folder-based content (MCQ, Fill in blanks, etc.)
-        // First, find the actual folder name (case-insensitive)
-        let actualFolderName = contentType.folder;
-        try {
-          const subjectPath = path.join(getClassBasePath(classNumber), subjectFolder);
-          const folders = await fs.readdir(subjectPath, { withFileTypes: true });
-          const matchingFolder = folders.find(f => 
-            f.isDirectory() && f.name.toLowerCase() === contentType.folder.toLowerCase()
-          );
-          if (matchingFolder) {
-            actualFolderName = matchingFolder.name;
-          }
-        } catch (err) {
-          // If can't read, use original folder name
-        }
-        
-        // Check if at least one difficulty level exists
-        for (const difficulty of ['easy', 'medium', 'hard']) {
-          const filePath = path.join(
-            classBasePath,
-            subjectFolder,
-            actualFolderName,
-            `${topicCode.toLowerCase()} ${difficulty}.csv`
-          );
-          try {
-            await fs.access(filePath);
-            exists = true;
-            break; // Found at least one, no need to check others
-          } catch {
-            // Continue checking
-          }
-        }
-      }
-
-      if (exists) {
-        availableContent.push({
-          toolType: contentType.toolType,
-          name: contentType.name,
-          available: true
-        });
-      }
-    }
-
-    return availableContent;
+    // Class 5-6
+    return [];
   } catch (error) {
     console.error('Error getting available content:', error);
-    return [];
-  }
-}
-
-/**
- * Extract topic codes (C1, C2, P1, etc.) from folder structure
- */
-async function extractTopicCodesFromFolders(classNumber, subject) {
-  try {
-    const classBasePath = getClassBasePath(classNumber);
-    // Normalize subject name
-    const normalizedSubject = VALID_SUBJECTS.find(s => 
-      s.toLowerCase() === subject.toLowerCase()
-    ) || subject;
-    const subjectFolder = SUBJECT_MAPPINGS[normalizedSubject] || normalizedSubject;
-    const subjectPath = path.join(classBasePath, subjectFolder);
-    
-    console.log(`🔍 Extracting topic codes from: ${subjectPath}`);
-    
-    // Check if subject folder exists
-    try {
-      await fs.access(subjectPath);
-    } catch {
-      return new Set(); // Subject folder doesn't exist
-    }
-    
-    const topicCodes = new Set();
-    
-    // Read all folders in the subject directory
-    const entries = await fs.readdir(subjectPath, { withFileTypes: true });
-    
-    for (const entry of entries) {
-      if (entry.isDirectory()) {
-        // Check folders like "mcq", "Fill in the blanks", etc.
-        const folderPath = path.join(subjectPath, entry.name);
-        
-        try {
-          const files = await fs.readdir(folderPath);
-          
-          // Extract topic codes from filenames (c1 easy.csv, c2 medium.csv, p1 hard.csv, etc.)
-          for (const file of files) {
-            // Match patterns like: c1, c2, p1, C1, C2, P1 (case-insensitive)
-            // Pattern: starts with c or p, followed by digits, then space or end
-            const match = file.match(/^([cp])(\d+)(\s|\.|$)/i);
-            if (match) {
-              const type = match[1].toUpperCase();
-              const num = match[2];
-              const code = `${type}${num}`;
-              topicCodes.add(code);
-              console.log(`  Found topic code: ${code} from file: ${file}`);
-            }
-          }
-        } catch (err) {
-          // Skip folders we can't read
-          continue;
-        }
-      } else if (entry.isFile()) {
-        // Also check files in root (like planner.json, projects.csv might have topic info)
-        // But we'll focus on folder-based content
-      }
-    }
-    
-    return topicCodes;
-  } catch (error) {
-    console.error(`Error extracting topic codes from folders for ${subject}:`, error);
-    return new Set();
-  }
-}
-
-/**
- * Get all chapters/topics for a subject from planner.json and folder structure
- * Handles both "lessons" and "lesson_plans" array structures
- * Also reads topic codes (C1, C2, P1, etc.) from folder structure
- */
-export async function getChaptersForSubject(classNumber, subject) {
-  try {
-    // IIT-6 chapters = topic folders inside AMENITY-2/<Subject>/
-    if (classNumber === IIT_CLASS_NAME) {
-      if (!IIT_SUBJECTS.includes(subject)) {
-        console.log(`Invalid IIT-6 subject: ${subject}. Valid subjects: ${IIT_SUBJECTS.join(', ')}`);
-        return [];
-      }
-
-      const amenity2Base = getAmenity2BasePath();
-      const subjectPath = path.join(amenity2Base, subject);
-
-      try {
-        await fs.access(subjectPath);
-      } catch {
-        console.log(`IIT-6 subject folder not found: ${subjectPath}`);
-        return [];
-      }
-
-      const entries = await fs.readdir(subjectPath, { withFileTypes: true });
-      const topicFolders = entries.filter(e => e.isDirectory());
-
-      const chapters = topicFolders
-        .sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: 'base' }))
-        .map((folder, index) => ({
-          chapterNumber: index + 1,
-          chapterCode: folder.name,          // Use folder name directly (e.g., UNIT-1)
-          chapterName: folder.name,          // Display same as code for clarity
-          duration: null,
-          subjectArea: null,
-        }));
-
-      return chapters;
-    }
-
-    const classNum = parseInt(classNumber);
-    
-    // Support classes 5-10
-    if (isNaN(classNum) || classNum < 5 || classNum > 10) {
-      console.log(`Unsupported class: ${classNumber}`);
-      return [];
-    }
-
-    // Handle IIT-6 specially
-    if (classNumber === IIT_CLASS_NAME) {
-      // For IIT-6, validate against IIT subjects
-      const normalizedSubject = IIT_SUBJECTS.find(s => 
-        s.toLowerCase() === subject.toLowerCase()
-      ) || subject;
-      
-      if (!IIT_SUBJECTS.includes(normalizedSubject)) {
-        console.log(`Invalid subject for IIT-6: ${subject}. Valid subjects: ${IIT_SUBJECTS.join(', ')}`);
-        return [];
-      }
-      
-      // Get topics from AMENITY-2 folder structure
-      const amenity2Path = getAmenity2BasePath();
-      const subjectPath = path.join(amenity2Path, normalizedSubject);
-      try {
-        await fs.access(subjectPath);
-        const entries = await fs.readdir(subjectPath, { withFileTypes: true });
-        const topics = entries
-          .filter(entry => entry.isDirectory())
-          .map(entry => ({
-            chapterNumber: 1,
-            chapterCode: entry.name,
-            chapterName: entry.name,
-            duration: null,
-            subjectArea: null
-          }))
-          .sort((a, b) => a.chapterName.localeCompare(b.chapterName));
-        return topics;
-      } catch {
-        return [];
-      }
-    }
-
-    // Normalize subject name (handle case variations)
-    const normalizedSubject = VALID_SUBJECTS.find(s => 
-      s.toLowerCase() === subject.toLowerCase()
-    ) || subject;
-    
-    // Validate subject (for non-IIT classes)
-    if (!VALID_SUBJECTS.includes(normalizedSubject)) {
-      console.log(`Invalid subject: ${subject}. Valid subjects: ${VALID_SUBJECTS.join(', ')}`);
-      return [];
-    }
-
-    const classBasePath = getClassBasePath(classNum);
-    const subjectFolder = SUBJECT_MAPPINGS[normalizedSubject] || normalizedSubject;
-    const plannerPath = path.join(classBasePath, subjectFolder, 'planner.json');
-    
-    const chapters = [];
-    const chapterMap = new Map(); // Map chapterCode to chapter object
-    
-    // First, try to get chapters from planner.json
-    try {
-      await fs.access(plannerPath);
-      const plannerData = await readJSONFile(plannerPath);
-      
-      if (plannerData) {
-        // Handle both "lessons" and "lesson_plans" array structures
-        let lessonsArray = null;
-        if (plannerData.lessons && Array.isArray(plannerData.lessons)) {
-          lessonsArray = plannerData.lessons;
-        } else if (plannerData.lesson_plans && Array.isArray(plannerData.lesson_plans)) {
-          lessonsArray = plannerData.lesson_plans;
-        }
-        
-        if (lessonsArray) {
-          // Extract chapters/lessons from planner
-          lessonsArray.forEach((lesson, index) => {
-            const chapterCode = `C${index + 1}`;
-            const chapter = {
-              chapterNumber: index + 1,
-              chapterCode: chapterCode,
-              chapterName: lesson.lesson_name || `Chapter ${index + 1}`,
-              duration: lesson.duration || null,
-              subjectArea: lesson.subject_area || null // For Social Science
-            };
-            chapters.push(chapter);
-            chapterMap.set(chapterCode, chapter);
-          });
-        }
-      }
-    } catch (err) {
-      // Planner doesn't exist, continue to folder-based extraction
-    }
-    
-    // Also extract topic codes from folder structure
-    const folderTopicCodes = await extractTopicCodesFromFolders(classNum, normalizedSubject);
-    console.log(`📁 Found ${folderTopicCodes.size} topic codes from folders:`, Array.from(folderTopicCodes));
-    
-    // Add topics from folders that aren't in planner.json
-    for (const code of folderTopicCodes) {
-      if (!chapterMap.has(code)) {
-        // Parse code (C1, C2, P1, etc.)
-        const match = code.match(/^([CP])(\d+)$/i);
-        if (match) {
-          const type = match[1].toUpperCase();
-          const num = parseInt(match[2]);
-          
-          let chapterName;
-          if (type === 'C') {
-            chapterName = `Chapter ${num}`;
-          } else if (type === 'P') {
-            chapterName = `Poem ${num}`;
-          } else {
-            chapterName = `${type}${num}`;
-          }
-          
-          const chapter = {
-            chapterNumber: num,
-            chapterCode: code,
-            chapterName: chapterName,
-            duration: null,
-            subjectArea: null
-          };
-          
-          chapters.push(chapter);
-          chapterMap.set(code, chapter);
-        }
-      }
-    }
-    
-    // Fallback 1: derive chapters from CMH JSON filenames (older JSON structure)
-    // (kept for backward compatibility with existing data layouts)
-    try {
-      const cmhPath = path.join(classBasePath, subjectFolder, 'CMH');
-      await fs.access(cmhPath);
-      const cmhFiles = await fs.readdir(cmhPath);
-      
-      cmhFiles
-        .filter(name => name.toLowerCase().endsWith('_cmh.json'))
-        .forEach((file) => {
-          const baseName = file.replace(/_cmh\.json$/i, '');
-          
-          // Try to parse leading number before first dot as chapter number
-          const parts = baseName.split('.');
-          let chapterNumber = parseInt(parts[0], 10);
-          let chapterName;
-          
-          if (!isNaN(chapterNumber)) {
-            chapterName = parts.slice(1).join('.').trim() || `Chapter ${chapterNumber}`;
-          } else {
-            // If no leading number, fall back to next available number
-            chapterNumber = chapters.length + 1;
-            chapterName = baseName;
-          }
-          
-          const chapterCode = `C${chapterNumber}`;
-          
-          if (!chapterMap.has(chapterCode)) {
-            const chapter = {
-              chapterNumber,
-              chapterCode,
-              chapterName,
-              duration: null,
-              subjectArea: null
-            };
-            chapters.push(chapter);
-            chapterMap.set(chapterCode, chapter);
-          }
-        });
-    } catch (err) {
-      // CMH folder may not exist for all subjects/classes; ignore silently
-    }
-
-    // Fallback 2: Class 7–10 new JSON structure
-    // For these classes, chapters are represented as subfolders directly under the subject folder,
-    // e.g. "Class 7/English/1.Learning Together", "Class 7/English/2.Wit and humour", etc.
-    // We derive chapterNumber and chapterName from these folder names so that topics show up in tools.
-    if (classNum >= 7 && classNum <= 10) {
-      try {
-        const subjectPath = path.join(classBasePath, subjectFolder);
-        const entries = await fs.readdir(subjectPath, { withFileTypes: true });
-
-        entries
-          .filter(e => e.isDirectory())
-          .forEach((entry) => {
-            const rawName = entry.name.trim();
-
-            // Skip obvious non‑chapter folders if any (defensive)
-            if (rawName === 'CMH' || rawName.toLowerCase() === 'amenity') {
-              return;
-            }
-
-            let chapterNumber = null;
-            let chapterName = rawName;
-
-            // Pattern: "1.Learning Together", "2.Wit and humour", "3 Dreams and Discoveries"
-            const numberedMatch = rawName.match(/^(\d+)[\.\-\s]+(.+)$/);
-            if (numberedMatch) {
-              chapterNumber = parseInt(numberedMatch[1], 10);
-              const rest = numberedMatch[2].trim();
-              if (rest) {
-                chapterName = rest;
-              }
-            }
-
-            // If we couldn't parse an explicit number, assign the next available one
-            if (!chapterNumber || Number.isNaN(chapterNumber)) {
-              chapterNumber = chapters.length + 1;
-            }
-
-            const chapterCode = `C${chapterNumber}`;
-
-            if (!chapterMap.has(chapterCode)) {
-              const chapter = {
-                chapterNumber,
-                chapterCode,
-                chapterName,
-                duration: null,
-                subjectArea: null
-              };
-              chapters.push(chapter);
-              chapterMap.set(chapterCode, chapter);
-            }
-          });
-      } catch (err) {
-        // If this fallback fails (folder missing, etc.), we just skip it
-        console.log(`⚠️ Failed to derive chapters from folders for Class ${classNum}, Subject ${normalizedSubject}:`, err.message);
-      }
-    }
-    
-    // Sort chapters by type (C first, then P) and then by number
-    chapters.sort((a, b) => {
-      const aType = a.chapterCode.charAt(0);
-      const bType = b.chapterCode.charAt(0);
-      if (aType !== bType) {
-        return aType.localeCompare(bType);
-      }
-      return a.chapterNumber - b.chapterNumber;
-    });
-    
-    return chapters;
-  } catch (error) {
-    console.error('Error getting chapters:', error);
     return [];
   }
 }
@@ -2101,4 +1039,5 @@ export default {
   hasHardcodedContent,
   getAvailableContentForTopic,
   getChaptersForSubject,
+  getSubjectsForClass,
 };

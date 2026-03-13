@@ -118,10 +118,23 @@ export const createTeacherTool = async (req, res) => {
     };
     
     // Add raw data for Short Notes & Summaries to enable carousel parsing
-    if (toolType === 'short-notes-summaries-maker' && hardcodedData && hardcodedData.notes) {
-      responseData.data.rawData = {
-        notes: hardcodedData.notes
-      };
+    if (toolType === 'short-notes-summaries-maker' && hardcodedData) {
+      if (hardcodedData.notes) {
+        responseData.data.rawData = { notes: hardcodedData.notes };
+      } else if (hardcodedData.short_notes) {
+        // New Class 7-10 SNS format: convert to notes array
+        responseData.data.rawData = {
+          notes: [{
+            concept_name: hardcodedData.chapter || topic || 'Summary',
+            summary: (hardcodedData.short_notes.key_points || []).join('\n\n'),
+            importance: (hardcodedData.short_notes.exam_tips || []).join('\n\n'),
+            quick_facts: [
+              ...(hardcodedData.short_notes.examples || []),
+              ...(hardcodedData.short_notes.formulas || []),
+            ],
+          }],
+        };
+      }
     }
     
     // Add raw data for Concept Mastery Helper to enable carousel parsing
@@ -133,8 +146,40 @@ export const createTeacherTool = async (req, res) => {
     
     // Add raw data for Lesson Planner to enable viewer parsing
     if (toolType === 'lesson-planner' && hardcodedData) {
+      // Normalize different lesson-planner JSON shapes into a common Lesson interface
+      let lessonsSource = hardcodedData.lessons || hardcodedData.lesson_plans || hardcodedData.lesson_plan || [];
+      
+      // If we're dealing with the new per‑chapter structure that uses "lesson_plan",
+      // convert each period entry into a Lesson object so the viewer can render it.
+      if (hardcodedData.lesson_plan && Array.isArray(hardcodedData.lesson_plan)) {
+        const baseTitle = hardcodedData.chapter_name || '';
+        const durationMinutes =
+          typeof hardcodedData.period_duration_minutes === 'string'
+            ? parseInt(String(hardcodedData.period_duration_minutes).split('-')[0], 10) || 40
+            : hardcodedData.period_duration_minutes || 40;
+        const teachingAids = Array.isArray(hardcodedData.teaching_aids)
+          ? hardcodedData.teaching_aids
+          : [];
+
+        lessonsSource = hardcodedData.lesson_plan.map((period) => ({
+          lesson_name: period.title || `${baseTitle || 'Lesson'} - Period ${period.period || ''}`,
+          subject_area: hardcodedData.subject || undefined,
+          duration: {
+            periods: 1,
+            minutes_per_period: durationMinutes
+          },
+          // Map period fields into viewer-friendly sections
+          learning_objectives: period.topics_covered || [],
+          teaching_learning_materials: teachingAids,
+          activities: period.student_activities && Array.isArray(period.student_activities)
+            ? { class_activities: period.student_activities }
+            : undefined,
+          evaluation: period.assessment || []
+        }));
+      }
+
       responseData.data.rawData = {
-        lessons: hardcodedData.lessons || hardcodedData.lesson_plans || [],
+        lessons: lessonsSource,
         book: hardcodedData.book || '',
         class: hardcodedData.class || classNum.toString()
       };
@@ -244,12 +289,13 @@ export const getTopics = async (req, res) => {
     // Normalize subject name (handle case variations like "maths" vs "Maths")
     let normalizedSubject = subject.charAt(0).toUpperCase() + subject.slice(1).toLowerCase();
     
-    // Map "Mathematics" to "Maths" to match VALID_SUBJECTS
-    if (normalizedSubject === 'Mathematics') {
-      normalizedSubject = 'Maths';
-    }
+    // Map common variations to canonical names
+    if (normalizedSubject === 'Mathematics') normalizedSubject = 'Maths';
+    if (normalizedSubject === 'Social science') normalizedSubject = 'Social Science';
+    if (normalizedSubject === 'Social studies') normalizedSubject = 'Social Science';
+    if (normalizedSubject === 'Social') normalizedSubject = 'Social Science';
     
-    // Get chapters from planner.json and folder structure
+    // Get chapters from folder structure
     const chapters = await getChaptersForSubject(classNumber, normalizedSubject);
     
     console.log(`✅ Found ${chapters.length} chapters for ${subject} (normalized: ${normalizedSubject})`);

@@ -1,0 +1,114 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 7: Proportional Reasoning - 1",
+  "generated_at": "2026-03-04T20:15:00",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is a ratio?",
+        "correct_answer": "A comparison of two quantities using division",
+        "explanation": "Ratios compare quantities and are written in the form a:b or a/b.",
+        "source_section": "Section 7.1"
+      },
+      {
+        "question": "How is a ratio written?",
+        "correct_answer": "Using a colon (:) between two quantities",
+        "explanation": "For example, the ratio of 4 to 5 is written as 4:5.",
+        "source_section": "Section 7.1"
+      },
+      {
+        "question": "What are equivalent ratios?",
+        "correct_answer": "Different ratios that represent the same relationship between quantities",
+        "explanation": "They are obtained by multiplying or dividing both terms of a ratio by the same number.",
+        "source_section": "Section 7.2"
+      },
+      {
+        "question": "What is a proportion?",
+        "correct_answer": "An equation that states two ratios are equal",
+        "explanation": "For example, 2:3 = 4:6 is a proportion.",
+        "source_section": "Section 7.3"
+      },
+      {
+        "question": "What is cross multiplication in proportions?",
+        "correct_answer": "Multiplying the numerator of one ratio with the denominator of the other ratio",
+        "explanation": "It helps verify whether two ratios form a proportion.",
+        "source_section": "Section 7.3"
+      },
+      {
+        "question": "What is a unit rate?",
+        "correct_answer": "A rate expressed for one unit of a quantity",
+        "explanation": "For example, if 5 apples cost ₹50, the unit rate is ₹10 per apple.",
+        "source_section": "Section 7.4"
+      },
+      {
+        "question": "What is direct proportion?",
+        "correct_answer": "A relationship where two quantities increase or decrease together in the same ratio",
+        "explanation": "If one quantity doubles, the other also doubles.",
+        "source_section": "Section 7.4"
+      },
+      {
+        "question": "Give an example of proportional reasoning in daily life.",
+        "correct_answer": "Scaling a recipe for more people",
+        "explanation": "Ingredients are increased in the same ratio when serving more people.",
+        "source_section": "Section 7.4 Examples"
+      },
+      {
+        "question": "How can we simplify a ratio?",
+        "correct_answer": "By dividing both terms of the ratio by their HCF",
+        "explanation": "This converts the ratio into its simplest form.",
+        "source_section": "Section 7.2"
+      },
+      {
+        "question": "What is the ratio of 8 to 12 in simplest form?",
+        "correct_answer": "2:3",
+        "explanation": "Both numbers are divided by their HCF which is 4.",
+        "source_section": "Section 7.2 Examples"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Ratio",
+        "content": "A ratio compares two quantities and is written in the form a:b.",
+        "source_section": "Section 7.1"
+      },
+      {
+        "title": "Equivalent Ratios",
+        "content": "Equivalent ratios represent the same relationship and are obtained by multiplying or dividing both terms by the same number.",
+        "source_section": "Section 7.2"
+      },
+      {
+        "title": "Proportion",
+        "content": "A proportion states that two ratios are equal.",
+        "source_section": "Section 7.3"
+      },
+      {
+        "title": "Direct Proportion",
+        "content": "Two quantities are directly proportional if they increase or decrease in the same ratio.",
+        "source_section": "Section 7.4"
+      },
+      {
+        "title": "Unit Rate",
+        "content": "A unit rate shows the value of one quantity for a single unit of another quantity.",
+        "source_section": "Section 7.4"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "Ratios compare quantities of the same kind.",
+        "source_section": "Section 7.1"
+      },
+      {
+        "fact": "Equivalent ratios represent the same relationship between numbers.",
+        "source_section": "Section 7.2"
+      },
+      {
+        "fact": "In a proportion, cross products of the ratios are equal.",
+        "source_section": "Section 7.3"
+      },
+      {
+        "fact": "Direct proportion is commonly used in real-life situations such as speed, cost and recipes.",
+        "source_section": "Section 7.4"
+      }
+    ]
+  }
+}

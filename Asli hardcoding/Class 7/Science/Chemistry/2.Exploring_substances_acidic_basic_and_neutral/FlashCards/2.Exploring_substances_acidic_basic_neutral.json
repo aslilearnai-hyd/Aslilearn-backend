@@ -1,0 +1,110 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Exploring Substances: Acidic, Basic and Neutral (Mixed Difficulty)",
+    "generated_at": "2026-03-06T17:22:15",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "Which specific acid is found in an ant's sting?",
+                "difficulty": "Easy",
+                "correct_answer": "Formic acid",
+                "explanation": "When an ant bites, it injects formic acid into the skin, which causes the burning sensation.",
+                "source_section": "Section: Acids in Nature"
+            },
+            {
+                "question": "What is the chemical name of 'Milk of Magnesia' and what is it used for?",
+                "difficulty": "Medium",
+                "correct_answer": "Magnesium hydroxide; used as an antacid",
+                "explanation": "It is a base that neutralizes excess hydrochloric acid in the stomach to relieve indigestion.",
+                "source_section": "Section: Neutralization in Daily Life"
+            },
+            {
+                "question": "Describe the color changes of China Rose indicator in acidic, basic, and neutral solutions.",
+                "difficulty": "Hard",
+                "correct_answer": "Acidic: Magenta (Dark Pink); Basic: Green; Neutral: No change",
+                "explanation": "China rose is a natural indicator that shows distinct color transitions across different pH levels.",
+                "source_section": "Section: Natural Indicators"
+            },
+            {
+                "question": "Why is factory waste neutralized before being discharged into water bodies?",
+                "difficulty": "Medium",
+                "correct_answer": "To prevent the acids in the waste from killing fish and other aquatic organisms",
+                "explanation": "Most factory wastes are highly acidic; adding basic substances makes the water safe for aquatic life.",
+                "source_section": "Section: Neutralization in Daily Life"
+            },
+            {
+                "question": "What happens when a drop of dilute Hydrochloric acid is added to Blue Litmus paper?",
+                "difficulty": "Easy",
+                "correct_answer": "It turns red",
+                "explanation": "Acids have the property of turning blue litmus paper red.",
+                "source_section": "Section: Indicators"
+            },
+            {
+                "question": "How should a farmer treat soil that has become too basic (alkaline)?",
+                "difficulty": "Hard",
+                "correct_answer": "By adding organic matter (compost/manure)",
+                "explanation": "Organic matter releases acids which neutralize the basic nature of the soil, unlike quicklime which is used for acidic soil.",
+                "source_section": "Section: Soil Treatment"
+            },
+            {
+                "question": "What are the products of a neutralization reaction?",
+                "difficulty": "Medium",
+                "correct_answer": "Salt, Water, and Heat",
+                "explanation": "The reaction is exothermic (releases heat) and results in the formation of a salt and water.",
+                "source_section": "Section: Neutralization"
+            },
+            {
+                "question": "Name the acid found in Vinegar and the acid found in Tamarind.",
+                "difficulty": "Medium",
+                "correct_answer": "Vinegar: Acetic acid; Tamarind: Tartaric acid",
+                "explanation": "These are organic acids naturally found in different food items.",
+                "source_section": "Section: Acids in Nature"
+            },
+            {
+                "question": "Is a solution of common salt acidic, basic, or neutral?",
+                "difficulty": "Easy",
+                "correct_answer": "Neutral",
+                "explanation": "Common salt (Sodium Chloride) does not change the color of any indicator, meaning it is neutral.",
+                "source_section": "Section: Neutral Substances"
+            },
+            {
+                "question": "What is the effect of basic solutions on Turmeric indicator?",
+                "difficulty": "Medium",
+                "correct_answer": "It turns the yellow indicator reddish-brown",
+                "explanation": "Turmeric is a natural indicator that stays yellow in acids but changes color in bases (like soap).",
+                "source_section": "Section: Natural Indicators"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Litmus Source",
+                "content": "Litmus is a natural dye extracted from lichens and is the most commonly used indicator.",
+                "source_section": "Section: Natural Indicators"
+            },
+            {
+                "title": "Neutralization Equation",
+                "content": "Acid + Base → Salt + Water (Heat is evolved).",
+                "source_section": "Section: Neutralization"
+            },
+            {
+                "title": "Indigestion Remedy",
+                "content": "Indigestion is caused by too much HCl in the stomach; it is treated with bases like Magnesium Hydroxide or Baking Soda.",
+                "source_section": "Section: Neutralization in Daily Life"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "Acids are sour, while bases are bitter and soapy to touch.",
+                "source_section": "Section: Acids and Bases"
+            },
+            {
+                "fact": "Phenolphthalein is a synthetic indicator that is pink in base and colorless in acid.",
+                "source_section": "Section: Indicators"
+            },
+            {
+                "fact": "Calmamine solution (Zinc Carbonate) is used to treat ant bites.",
+                "source_section": "Section: Neutralization in Daily Life"
+            }
+        ]
+    }
+}

@@ -1,0 +1,139 @@
+{
+  "class": "Class 10",
+  "subject": "Mathematics",
+  "chapter": "Quadrilaterals",
+  "difficulty": "Medium",
+  "source_pdf": "ch-4_QUADRILATERALS.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Angle Reasoning Puzzle",
+      "objective": "Apply the angle sum property of quadrilaterals",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Draw a quadrilateral and label the angles A, B, C, and D",
+        "Assign values to three angles",
+        "Calculate the fourth angle using the 360° rule"
+      ],
+      "learning_outcome": "Applies angle sum reasoning",
+      "evaluation": "Correct deduction (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Parallelogram Proof Activity",
+      "objective": "Verify that opposite angles of a parallelogram are equal",
+      "materials": ["Notebook", "Ruler", "Protractor"],
+      "steps": [
+        "Draw a parallelogram",
+        "Measure each angle",
+        "Compare opposite angles and record results"
+      ],
+      "learning_outcome": "Understands angle relationships in parallelograms",
+      "evaluation": "Accuracy of reasoning (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Diagonal Bisector Verification",
+      "objective": "Investigate diagonal properties of parallelograms",
+      "materials": ["Notebook", "Ruler"],
+      "steps": [
+        "Draw a parallelogram",
+        "Draw both diagonals",
+        "Measure the four segments formed"
+      ],
+      "learning_outcome": "Understands that diagonals bisect each other",
+      "evaluation": "Correct observation (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Rectangle Diagonal Proof",
+      "objective": "Investigate equality of diagonals in rectangles",
+      "materials": ["Notebook", "Ruler"],
+      "steps": [
+        "Draw a rectangle",
+        "Draw both diagonals",
+        "Measure their lengths and compare"
+      ],
+      "learning_outcome": "Recognises diagonal equality property",
+      "evaluation": "Correct verification (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Square Diagonal Investigation",
+      "objective": "Study the intersection of diagonals in a square",
+      "materials": ["Notebook", "Ruler", "Protractor"],
+      "steps": [
+        "Draw a square",
+        "Draw its diagonals",
+        "Measure the angle formed where diagonals intersect"
+      ],
+      "learning_outcome": "Learns that square diagonals intersect at 90°",
+      "evaluation": "Correct measurement (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Quadrilateral Deduction Task",
+      "objective": "Determine the type of quadrilateral from given properties",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write properties such as equal opposite sides or right angles",
+        "Match them to the correct quadrilateral",
+        "Explain your reasoning"
+      ],
+      "learning_outcome": "Develops classification reasoning",
+      "evaluation": "Correct deduction (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Construct a Parallelogram",
+      "objective": "Construct a parallelogram using given side lengths",
+      "materials": ["Notebook", "Ruler", "Protractor"],
+      "steps": [
+        "Draw one side of given length",
+        "Create a given angle",
+        "Complete the parallelogram using parallel lines"
+      ],
+      "learning_outcome": "Improves geometric construction skills",
+      "evaluation": "Accuracy of construction (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Unknown Angle Challenge",
+      "objective": "Solve missing angles using parallelogram properties",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write a parallelogram with one angle given",
+        "Use angle relationships to find other angles",
+        "Verify the results"
+      ],
+      "learning_outcome": "Applies angle properties logically",
+      "evaluation": "Correct calculations (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Quadrilateral Hierarchy Map",
+      "objective": "Understand relationships between quadrilateral types",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "Write names of quadrilaterals",
+        "Draw arrows showing relationships",
+        "Explain how squares, rectangles, and parallelograms are connected"
+      ],
+      "learning_outcome": "Understands quadrilateral hierarchy",
+      "evaluation": "Logical structure (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Real-Life Quadrilateral Analysis",
+      "objective": "Analyse quadrilateral shapes in real-life structures",
+      "materials": ["Notebook"],
+      "steps": [
+        "Observe objects like doors, tiles, and windows",
+        "Identify the quadrilateral type",
+        "Explain the properties that match"
+      ],
+      "learning_outcome": "Connects geometry to real-life observation",
+      "evaluation": "Correct explanation (10 marks)"
+    }
+  ]
+}

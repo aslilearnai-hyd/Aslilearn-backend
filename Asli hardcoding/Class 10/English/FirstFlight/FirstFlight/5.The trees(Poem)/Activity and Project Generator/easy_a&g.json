@@ -1,0 +1,147 @@
+{
+    "class": "Class 10",
+    "subject": "English",
+    "chapter": "The Trees",
+    "author": "Adrienne Rich",
+    "difficulty": "Easy",
+    "source_pdf": "eng10_5.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Poem Reading",
+            "objective": "Understand the basic idea of the poem",
+            "materials": [
+                "Textbook"
+            ],
+            "steps": [
+                "Read the poem aloud",
+                "Identify what the trees are doing in the poem"
+            ],
+            "learning_outcome": "Understands the main idea of the poem",
+            "evaluation": "Correct identification (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Theme Identification",
+            "objective": "Recognize the theme of the poem",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Read the poem carefully",
+                "Write two sentences explaining the theme"
+            ],
+            "learning_outcome": "Identifies the theme",
+            "evaluation": "Correct explanation (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Forest Description",
+            "objective": "Understand the description of the forest",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write three sentences describing the forest in the poem"
+            ],
+            "learning_outcome": "Understands imagery",
+            "evaluation": "Clarity (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Vocabulary Builder",
+            "objective": "Improve vocabulary",
+            "materials": [
+                "Dictionary",
+                "Notebook"
+            ],
+            "steps": [
+                "Select three difficult words from the poem",
+                "Write their meanings"
+            ],
+            "learning_outcome": "Improves vocabulary",
+            "evaluation": "Correct meanings (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Summary Writing",
+            "objective": "Understand the poem through summary",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write a short summary of the poem in 3 sentences"
+            ],
+            "learning_outcome": "Develops summarizing skills",
+            "evaluation": "Accuracy (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Poem Recitation",
+            "objective": "Improve speaking skills",
+            "materials": [
+                "Textbook"
+            ],
+            "steps": [
+                "Memorize the poem",
+                "Recite it with proper expression"
+            ],
+            "learning_outcome": "Improves pronunciation and confidence",
+            "evaluation": "Fluency (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Nature Observation",
+            "objective": "Connect the poem with nature",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Observe trees around you",
+                "Write two sentences describing them"
+            ],
+            "learning_outcome": "Relates poetry to real life",
+            "evaluation": "Meaningful explanation (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Drawing Activity",
+            "objective": "Visualize the poem",
+            "materials": [
+                "Drawing sheet",
+                "Colours"
+            ],
+            "steps": [
+                "Draw trees moving from a house to a forest"
+            ],
+            "learning_outcome": "Encourages creativity",
+            "evaluation": "Creativity (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Message Identification",
+            "objective": "Understand the message of the poem",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write two sentences explaining the poem’s message"
+            ],
+            "learning_outcome": "Understands moral lesson",
+            "evaluation": "Logical explanation (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Personal Reflection",
+            "objective": "Relate poem to personal experience",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write about why trees are important for the environment"
+            ],
+            "learning_outcome": "Connects literature to environment awareness",
+            "evaluation": "Clarity (10 marks)"
+        }
+    ]
+}

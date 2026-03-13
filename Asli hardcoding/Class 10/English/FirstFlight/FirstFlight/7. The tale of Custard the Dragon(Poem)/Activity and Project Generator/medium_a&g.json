@@ -1,0 +1,140 @@
+{
+    "class": "Class 10",
+    "subject": "English",
+    "chapter": "The Tale of Custard the Dragon",
+    "author": "Ogden Nash",
+    "difficulty": "Medium",
+    "source_pdf": "eng10_7.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Theme Analysis",
+            "objective": "Understand the theme of bravery",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Explain the theme of bravery in the poem"
+            ],
+            "learning_outcome": "Recognizes the theme",
+            "evaluation": "Accuracy (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Character Comparison",
+            "objective": "Compare characters in the poem",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Compare Custard with Mustard and Ink"
+            ],
+            "learning_outcome": "Understands character traits",
+            "evaluation": "Logical comparison (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Line Interpretation",
+            "objective": "Interpret important lines",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Choose two lines and explain their meaning"
+            ],
+            "learning_outcome": "Improves interpretation",
+            "evaluation": "Clarity (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Poetic Device Identification",
+            "objective": "Identify poetic devices",
+            "materials": [
+                "Textbook"
+            ],
+            "steps": [
+                "Find one simile and explain it"
+            ],
+            "learning_outcome": "Recognizes literary devices",
+            "evaluation": "Correct identification (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Humour Analysis",
+            "objective": "Understand humor in the poem",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Explain why the poem is humorous"
+            ],
+            "learning_outcome": "Understands comic style",
+            "evaluation": "Explanation quality (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Event Discussion",
+            "objective": "Analyze the main event",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Describe what happens when the pirate arrives"
+            ],
+            "learning_outcome": "Improves comprehension",
+            "evaluation": "Accuracy (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Paragraph Writing",
+            "objective": "Improve writing skills",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write a paragraph about bravery"
+            ],
+            "learning_outcome": "Improves writing ability",
+            "evaluation": "Clarity (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Rhyme Study",
+            "objective": "Understand rhyme scheme",
+            "materials": [
+                "Textbook"
+            ],
+            "steps": [
+                "Identify rhyming words in one stanza"
+            ],
+            "learning_outcome": "Understands poetic rhythm",
+            "evaluation": "Correct identification (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Discussion Activity",
+            "objective": "Encourage discussion",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Discuss why Custard was called cowardly"
+            ],
+            "learning_outcome": "Develops reasoning",
+            "evaluation": "Quality of ideas (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Creative Writing",
+            "objective": "Encourage imagination",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write a short dialogue between Custard and Belinda"
+            ],
+            "learning_outcome": "Encourages creativity",
+            "evaluation": "Creativity (10 marks)"
+        }
+    ]
+}

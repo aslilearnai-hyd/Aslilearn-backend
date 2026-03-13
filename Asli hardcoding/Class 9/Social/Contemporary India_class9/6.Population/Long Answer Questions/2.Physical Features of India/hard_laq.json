@@ -1,0 +1,411 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 2: Physical Features of India",
+    "generated_at": "2026-03-08T21:30:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the geological formation of the Himalayan Mountains.",
+            "answer": "The Himalayas were formed by the collision of the Indian Plate with the Eurasian Plate which caused folding of the earth’s crust.",
+            "answer_outline": [
+                "Tectonic plate collision",
+                "Formation of fold mountains",
+                "Young mountain system"
+            ],
+            "key_concepts": [
+                "Himalayan formation"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain why the Himalayas are considered an unstable geological region.",
+            "answer": "The Himalayas are geologically young mountains formed by recent tectonic activity and are still undergoing changes.",
+            "answer_outline": [
+                "Young fold mountains",
+                "Active tectonic movements",
+                "Frequent landslides earthquakes"
+            ],
+            "key_concepts": [
+                "geological instability"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain how the Himalayan mountains influence the climate of India.",
+            "answer": "The Himalayas block cold winds from Central Asia and force monsoon winds to rise causing rainfall.",
+            "answer_outline": [
+                "Barrier to cold winds",
+                "Influence on monsoon",
+                "Rainfall distribution"
+            ],
+            "key_concepts": [
+                "climate influence"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain the regional divisions of the Himalayas from west to east.",
+            "answer": "The Himalayas are regionally divided into Punjab Himalayas, Kumaon Himalayas, Nepal Himalayas and Assam Himalayas.",
+            "answer_outline": [
+                "Punjab Himalayas",
+                "Kumaon Himalayas",
+                "Nepal Himalayas",
+                "Assam Himalayas"
+            ],
+            "key_concepts": [
+                "regional Himalayas"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain how river deposition led to the formation of the Northern Plains.",
+            "answer": "Rivers from the Himalayas carried sediments which were deposited over millions of years forming fertile plains.",
+            "answer_outline": [
+                "River erosion",
+                "Transport of sediments",
+                "Deposition forming plains"
+            ],
+            "key_concepts": [
+                "alluvial deposition"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain the economic importance of the Northern Plains.",
+            "answer": "The plains support agriculture, dense population and economic activities due to fertile soil and water supply.",
+            "answer_outline": [
+                "Agricultural production",
+                "Population settlement",
+                "Transport and trade"
+            ],
+            "key_concepts": [
+                "economic plains"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the role of rivers in shaping the relief of the Northern Plains.",
+            "answer": "Rivers create flood plains, deposit sediments and form landforms like Bhabar, Terai, Bhangar and Khadar.",
+            "answer_outline": [
+                "River erosion",
+                "Sediment deposition",
+                "Relief divisions"
+            ],
+            "key_concepts": [
+                "river processes"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the geological structure of the Peninsular Plateau.",
+            "answer": "The plateau consists of ancient igneous and metamorphic rocks forming one of the oldest landmasses.",
+            "answer_outline": [
+                "Ancient landmass",
+                "Igneous and metamorphic rocks",
+                "Stable geological structure"
+            ],
+            "key_concepts": [
+                "plateau geology"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the significance of the Deccan Trap region.",
+            "answer": "The Deccan Trap region consists of volcanic rocks that form fertile black soil suitable for cotton cultivation.",
+            "answer_outline": [
+                "Volcanic origin",
+                "Black soil formation",
+                "Agricultural importance"
+            ],
+            "key_concepts": [
+                "Deccan trap"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the importance of the Western Ghats in India's climate system.",
+            "answer": "Western Ghats intercept monsoon winds causing heavy rainfall on the windward side.",
+            "answer_outline": [
+                "Monsoon winds",
+                "Orographic rainfall",
+                "Climate influence"
+            ],
+            "key_concepts": [
+                "western ghats climate"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain why the Eastern Ghats are discontinuous.",
+            "answer": "Rivers like Mahanadi, Godavari, Krishna and Kaveri cut across them making them discontinuous.",
+            "answer_outline": [
+                "River erosion",
+                "Dissected ranges",
+                "Geographical gaps"
+            ],
+            "key_concepts": [
+                "Eastern Ghats"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain the climatic characteristics of the Indian Desert.",
+            "answer": "The desert experiences extreme temperatures, low rainfall and strong winds.",
+            "answer_outline": [
+                "Low rainfall",
+                "Extreme temperatures",
+                "Strong winds"
+            ],
+            "key_concepts": [
+                "desert climate"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the formation of sand dunes in the Thar Desert.",
+            "answer": "Strong winds transport sand and deposit it forming dunes like barchans.",
+            "answer_outline": [
+                "Wind action",
+                "Sand transport",
+                "Dune formation"
+            ],
+            "key_concepts": [
+                "sand dunes"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain why western coastal plains are narrow.",
+            "answer": "Because the Western Ghats lie very close to the Arabian Sea.",
+            "answer_outline": [
+                "Western ghats proximity",
+                "Limited land area",
+                "Steep slopes"
+            ],
+            "key_concepts": [
+                "western coast"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.6"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the formation of deltas on the eastern coast.",
+            "answer": "Rivers deposit sediments near their mouths forming large deltas.",
+            "answer_outline": [
+                "River deposition",
+                "Sediment accumulation",
+                "Delta formation"
+            ],
+            "key_concepts": [
+                "delta formation"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.6"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the economic importance of the coastal plains.",
+            "answer": "They support fishing, agriculture, ports and tourism industries.",
+            "answer_outline": [
+                "Fishing industry",
+                "Agriculture",
+                "Port development"
+            ],
+            "key_concepts": [
+                "coastal economy"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.6"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain the formation of coral islands.",
+            "answer": "Coral polyps secrete calcium carbonate forming reefs that develop into islands.",
+            "answer_outline": [
+                "Coral polyps",
+                "Calcium carbonate deposition",
+                "Reef formation"
+            ],
+            "key_concepts": [
+                "coral islands"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.7"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the biodiversity significance of island ecosystems.",
+            "answer": "Island ecosystems contain unique flora and fauna due to isolation and tropical climate.",
+            "answer_outline": [
+                "Unique ecosystems",
+                "Flora and fauna diversity",
+                "Environmental importance"
+            ],
+            "key_concepts": [
+                "biodiversity"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.7"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain why the Andaman and Nicobar Islands are important for India's security.",
+            "answer": "Their location near international sea routes makes them strategically important.",
+            "answer_outline": [
+                "Strategic location",
+                "Sea routes",
+                "Defense importance"
+            ],
+            "key_concepts": [
+                "strategic islands"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.7"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the relationship between physical features and economic development.",
+            "answer": "Different landforms support different economic activities such as agriculture, mining and trade.",
+            "answer_outline": [
+                "Mountains resources",
+                "Plains agriculture",
+                "Plateaus minerals",
+                "Coasts trade"
+            ],
+            "key_concepts": [
+                "economic geography"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.8"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain how mountains, plains and plateaus complement each other.",
+            "answer": "Mountains provide water, plains support farming and plateaus supply minerals.",
+            "answer_outline": [
+                "Water from mountains",
+                "Agriculture in plains",
+                "Minerals in plateau"
+            ],
+            "key_concepts": [
+                "regional complementarity"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.8"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the importance of rivers originating in the Himalayas.",
+            "answer": "They provide water for agriculture, irrigation and hydroelectric power.",
+            "answer_outline": [
+                "Water supply",
+                "Agriculture irrigation",
+                "Hydropower"
+            ],
+            "key_concepts": [
+                "river importance"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain how physical features influence settlement patterns in India.",
+            "answer": "Plains attract dense settlements while mountains and deserts have sparse population.",
+            "answer_outline": [
+                "Plains dense population",
+                "Mountains sparse population",
+                "Desert settlements"
+            ],
+            "key_concepts": [
+                "settlement patterns"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.8"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the environmental importance of forests in the Himalayan region.",
+            "answer": "Forests help maintain ecological balance and protect soil from erosion.",
+            "answer_outline": [
+                "Soil conservation",
+                "Ecological balance",
+                "Climate regulation"
+            ],
+            "key_concepts": [
+                "forest importance"
+            ],
+            "marks": 4,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain how India's diverse physical features contribute to its natural resources.",
+            "answer": "Mountains provide forests and water, plains produce crops, plateaus supply minerals and coasts support fisheries.",
+            "answer_outline": [
+                "Mountain resources",
+                "Agricultural plains",
+                "Mineral plateaus",
+                "Marine resources"
+            ],
+            "key_concepts": [
+                "natural resources"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 2.8"
+        }
+    ]
+}

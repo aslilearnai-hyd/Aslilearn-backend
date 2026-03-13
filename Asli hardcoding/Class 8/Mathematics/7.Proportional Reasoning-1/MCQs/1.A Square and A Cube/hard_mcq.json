@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 1: A Square and a Cube",
+  "generated_at": "2026-03-04T22:55:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which of the following numbers is both a perfect square and a perfect cube?",
+      "options": {
+        "A": "36",
+        "B": "64",
+        "C": "81",
+        "D": "100"
+      },
+      "correct_answer": "B",
+      "explanation": "64 = 8² and also 4³.",
+      "difficulty": "hard",
+      "source_section": "Section 1.1–1.2"
+    },
+    {
+      "question_number": 2,
+      "question": "Which of the following numbers has square root 17?",
+      "options": {
+        "A": "256",
+        "B": "289",
+        "C": "324",
+        "D": "361"
+      },
+      "correct_answer": "B",
+      "explanation": "17² = 289.",
+      "difficulty": "hard",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Which number is the cube root of 4913?",
+      "options": {
+        "A": "15",
+        "B": "16",
+        "C": "17",
+        "D": "18"
+      },
+      "correct_answer": "C",
+      "explanation": "17³ = 4913.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 4,
+      "question": "Which of the following numbers is NOT a perfect cube?",
+      "options": {
+        "A": "512",
+        "B": "729",
+        "C": "1000",
+        "D": "900"
+      },
+      "correct_answer": "D",
+      "explanation": "900 is not a perfect cube.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 5,
+      "question": "What is the square root of 1444?",
+      "options": {
+        "A": "36",
+        "B": "37",
+        "C": "38",
+        "D": "39"
+      },
+      "correct_answer": "C",
+      "explanation": "38² = 1444.",
+      "difficulty": "hard",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 6,
+      "question": "Which number has cube root 12?",
+      "options": {
+        "A": "144",
+        "B": "1728",
+        "C": "1331",
+        "D": "2197"
+      },
+      "correct_answer": "B",
+      "explanation": "12³ = 1728.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 7,
+      "question": "Which of the following numbers lies between 15² and 16²?",
+      "options": {
+        "A": "230",
+        "B": "240",
+        "C": "250",
+        "D": "260"
+      },
+      "correct_answer": "B",
+      "explanation": "15² = 225 and 16² = 256. 240 lies between them.",
+      "difficulty": "hard",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 8,
+      "question": "Which number is closest to √200?",
+      "options": {
+        "A": "12",
+        "B": "13",
+        "C": "14",
+        "D": "15"
+      },
+      "correct_answer": "C",
+      "explanation": "√200 ≈ 14.14.",
+      "difficulty": "hard",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 9,
+      "question": "What is the cube of 15?",
+      "options": {
+        "A": "3375",
+        "B": "3750",
+        "C": "3125",
+        "D": "3500"
+      },
+      "correct_answer": "A",
+      "explanation": "15³ = 3375.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 10,
+      "question": "Which number is the square root of 2025?",
+      "options": {
+        "A": "42",
+        "B": "43",
+        "C": "44",
+        "D": "45"
+      },
+      "correct_answer": "D",
+      "explanation": "45² = 2025.",
+      "difficulty": "hard",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 11,
+      "question": "Which of the following numbers is a perfect cube?",
+      "options": {
+        "A": "343",
+        "B": "350",
+        "C": "360",
+        "D": "370"
+      },
+      "correct_answer": "A",
+      "explanation": "343 = 7³.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the cube root of 2197?",
+      "options": {
+        "A": "11",
+        "B": "12",
+        "C": "13",
+        "D": "14"
+      },
+      "correct_answer": "C",
+      "explanation": "13³ = 2197.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 13,
+      "question": "Which number is the square root of 1089?",
+      "options": {
+        "A": "31",
+        "B": "32",
+        "C": "33",
+        "D": "34"
+      },
+      "correct_answer": "C",
+      "explanation": "33² = 1089.",
+      "difficulty": "hard",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 14,
+      "question": "Which of the following numbers is NOT a perfect square?",
+      "options": {
+        "A": "625",
+        "B": "676",
+        "C": "700",
+        "D": "729"
+      },
+      "correct_answer": "C",
+      "explanation": "700 is not a perfect square.",
+      "difficulty": "hard",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the square of 27?",
+      "options": {
+        "A": "729",
+        "B": "756",
+        "C": "768",
+        "D": "784"
+      },
+      "correct_answer": "A",
+      "explanation": "27² = 729.",
+      "difficulty": "hard",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 16,
+      "question": "Which of the following numbers has cube root 9?",
+      "options": {
+        "A": "729",
+        "B": "512",
+        "C": "343",
+        "D": "656"
+      },
+      "correct_answer": "A",
+      "explanation": "9³ = 729.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 17,
+      "question": "Which number lies between 12² and 13²?",
+      "options": {
+        "A": "150",
+        "B": "160",
+        "C": "170",
+        "D": "180"
+      },
+      "correct_answer": "B",
+      "explanation": "12² = 144 and 13² = 169.",
+      "difficulty": "hard",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 18,
+      "question": "Which of the following numbers is a perfect square?",
+      "options": {
+        "A": "1156",
+        "B": "1160",
+        "C": "1170",
+        "D": "1180"
+      },
+      "correct_answer": "A",
+      "explanation": "1156 = 34².",
+      "difficulty": "hard",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 19,
+      "question": "Which of the following numbers is a perfect cube?",
+      "options": {
+        "A": "1728",
+        "B": "1700",
+        "C": "1800",
+        "D": "1900"
+      },
+      "correct_answer": "A",
+      "explanation": "1728 = 12³.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 20,
+      "question": "Which number has square root 19?",
+      "options": {
+        "A": "361",
+        "B": "380",
+        "C": "400",
+        "D": "420"
+      },
+      "correct_answer": "A",
+      "explanation": "19² = 361.",
+      "difficulty": "hard",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 21,
+      "question": "Which number is the cube root of 4096?",
+      "options": {
+        "A": "14",
+        "B": "15",
+        "C": "16",
+        "D": "17"
+      },
+      "correct_answer": "C",
+      "explanation": "16³ = 4096.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 22,
+      "question": "What is the square root of 1521?",
+      "options": {
+        "A": "37",
+        "B": "38",
+        "C": "39",
+        "D": "40"
+      },
+      "correct_answer": "C",
+      "explanation": "39² = 1521.",
+      "difficulty": "hard",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 23,
+      "question": "Which number is the cube root of 2744?",
+      "options": {
+        "A": "12",
+        "B": "13",
+        "C": "14",
+        "D": "15"
+      },
+      "correct_answer": "C",
+      "explanation": "14³ = 2744.",
+      "difficulty": "hard",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 24,
+      "question": "Which of the following numbers is closest to √500?",
+      "options": {
+        "A": "20",
+        "B": "21",
+        "C": "22",
+        "D": "23"
+      },
+      "correct_answer": "C",
+      "explanation": "√500 ≈ 22.36.",
+      "difficulty": "hard",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 25,
+      "question": "Which number is the square root of 1936?",
+      "options": {
+        "A": "42",
+        "B": "43",
+        "C": "44",
+        "D": "45"
+      },
+      "correct_answer": "C",
+      "explanation": "44² = 1936.",
+      "difficulty": "hard",
+      "source_section": "Section 1.1"
+    }
+  ]
+}

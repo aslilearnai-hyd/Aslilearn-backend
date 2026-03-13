@@ -1,0 +1,168 @@
+{
+    "class": "Class 9",
+    "subject": "Social Science - Geography",
+    "chapter": "Natural Vegetation and Wildlife",
+    "difficulty": "Hard",
+    "source_pdf": "con9_5.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Vegetation and Climate Analysis Project",
+            "objective": "Analyze the relationship between climate and vegetation",
+            "materials": [
+                "Notebook",
+                "Climate data"
+            ],
+            "steps": [
+                "Select two regions in India with different climates",
+                "Identify the vegetation found in each region",
+                "Explain how rainfall and temperature influence vegetation"
+            ],
+            "learning_outcome": "Students analyze climatic influence on vegetation",
+            "evaluation": "Depth of analysis (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Case Study on Mangrove Forests",
+            "objective": "Understand the ecological importance of mangrove forests",
+            "materials": [
+                "Notebook",
+                "Reference materials"
+            ],
+            "steps": [
+                "Research mangrove forests in India",
+                "Describe their location and characteristics",
+                "Explain their importance in protecting coastal areas"
+            ],
+            "learning_outcome": "Students understand coastal ecosystem protection",
+            "evaluation": "Quality of case study (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Biodiversity Conservation Report",
+            "objective": "Evaluate the importance of biodiversity conservation",
+            "materials": [
+                "Notebook",
+                "Reference materials"
+            ],
+            "steps": [
+                "Write a short report on biodiversity in India",
+                "Explain threats to biodiversity",
+                "Suggest measures to conserve biodiversity"
+            ],
+            "learning_outcome": "Students evaluate environmental conservation strategies",
+            "evaluation": "Clarity and depth of report (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Endangered Species Research",
+            "objective": "Study endangered species in India",
+            "materials": [
+                "Notebook",
+                "Internet or books"
+            ],
+            "steps": [
+                "Select three endangered species",
+                "Describe their habitat and threats",
+                "Suggest conservation measures"
+            ],
+            "learning_outcome": "Students develop research skills about wildlife protection",
+            "evaluation": "Accuracy and completeness (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Forest Ecosystem Diagram",
+            "objective": "Understand the structure of forest ecosystems",
+            "materials": [
+                "Chart paper",
+                "Color pens"
+            ],
+            "steps": [
+                "Draw a diagram showing layers of a forest ecosystem",
+                "Label trees, shrubs and ground vegetation",
+                "Explain the role of each layer"
+            ],
+            "learning_outcome": "Students visualize forest ecosystem structure",
+            "evaluation": "Accuracy of diagram and explanation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "National Parks Study",
+            "objective": "Learn about wildlife conservation areas",
+            "materials": [
+                "Notebook",
+                "Map"
+            ],
+            "steps": [
+                "List five national parks in India",
+                "Write the major animals found in each park",
+                "Explain the role of national parks in conservation"
+            ],
+            "learning_outcome": "Students understand protected areas for wildlife",
+            "evaluation": "Correct information (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Human–Wildlife Conflict Study",
+            "objective": "Analyze conflicts between humans and wildlife",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Identify causes of human–wildlife conflict",
+                "Give two real examples",
+                "Suggest ways to reduce such conflicts"
+            ],
+            "learning_outcome": "Students analyze environmental challenges",
+            "evaluation": "Quality of analysis (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Forest Conservation Awareness Campaign",
+            "objective": "Promote conservation awareness",
+            "materials": [
+                "Chart paper",
+                "Markers"
+            ],
+            "steps": [
+                "Prepare awareness materials about forest conservation",
+                "Create slogans and messages",
+                "Present them to classmates"
+            ],
+            "learning_outcome": "Students develop awareness and communication skills",
+            "evaluation": "Effectiveness of message (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Migration of Birds Study",
+            "objective": "Understand the phenomenon of bird migration",
+            "materials": [
+                "Notebook",
+                "Reference book"
+            ],
+            "steps": [
+                "Research migratory birds visiting India",
+                "Explain why birds migrate",
+                "Identify two places in India where migratory birds arrive"
+            ],
+            "learning_outcome": "Students understand ecological migration patterns",
+            "evaluation": "Correct explanation and examples (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Environmental Protection Essay",
+            "objective": "Develop critical thinking about environmental protection",
+            "materials": [
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Write an essay on the importance of protecting forests and wildlife",
+                "Explain the role of humans in conservation",
+                "Suggest sustainable practices"
+            ],
+            "learning_outcome": "Students develop critical thinking about sustainability",
+            "evaluation": "Depth of ideas and clarity (10 marks)"
+        }
+    ]
+}

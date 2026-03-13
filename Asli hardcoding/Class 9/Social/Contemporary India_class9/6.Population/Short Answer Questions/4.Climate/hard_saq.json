@@ -1,0 +1,283 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 4: Climate",
+    "generated_at": "2026-03-08T20:12:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain how latitude influences climate.",
+            "answer": "Latitude determines the amount of solar radiation received at a place, affecting temperature patterns.",
+            "key_concepts": [
+                "latitude"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain how altitude affects climate.",
+            "answer": "Temperature decreases with increasing altitude, making mountainous regions cooler.",
+            "key_concepts": [
+                "altitude"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Describe the role of the Himalayas in influencing India's climate.",
+            "answer": "The Himalayas block cold winds from Central Asia and also cause rainfall by acting as a barrier to monsoon winds.",
+            "key_concepts": [
+                "Himalayas"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Why do coastal areas experience moderate climate?",
+            "answer": "The sea moderates temperature, preventing extreme heat and cold.",
+            "key_concepts": [
+                "moderating influence"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the mechanism of the southwest monsoon.",
+            "answer": "During summer, low pressure develops over India attracting moist winds from the Indian Ocean which bring rainfall.",
+            "key_concepts": [
+                "monsoon mechanism"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Why does India experience seasonal reversal of winds?",
+            "answer": "Because of pressure differences between land and sea during different seasons.",
+            "key_concepts": [
+                "pressure difference"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the characteristics of the hot weather season.",
+            "answer": "High temperatures, loo winds, dust storms and pre-monsoon showers characterize the hot weather season.",
+            "key_concepts": [
+                "summer features"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Why are western disturbances important?",
+            "answer": "They bring winter rainfall and snowfall which is important for rabi crops.",
+            "key_concepts": [
+                "western disturbances"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the characteristics of advancing monsoon.",
+            "answer": "The southwest monsoon winds bring heavy rainfall and spread across India within a month.",
+            "key_concepts": [
+                "advancing monsoon"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Why is the monsoon considered unpredictable?",
+            "answer": "Because its arrival, intensity and distribution vary each year.",
+            "key_concepts": [
+                "monsoon variability"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the concept of break in monsoon.",
+            "answer": "Break in monsoon refers to intervals when rainfall temporarily stops during the rainy season.",
+            "key_concepts": [
+                "monsoon break"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain retreating monsoon.",
+            "answer": "Retreating monsoon occurs when southwest monsoon winds withdraw from India during October–November.",
+            "key_concepts": [
+                "retreating monsoon"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Why does Tamil Nadu receive rainfall during retreating monsoon?",
+            "answer": "Because retreating monsoon winds blow from sea to land along the Tamil Nadu coast.",
+            "key_concepts": [
+                "retreating monsoon"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain why rainfall distribution is uneven in India.",
+            "answer": "Relief features, wind direction and distance from the sea cause uneven rainfall.",
+            "key_concepts": [
+                "rainfall distribution"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Why does Meghalaya receive heavy rainfall?",
+            "answer": "Moist monsoon winds strike the Khasi Hills causing heavy rainfall.",
+            "key_concepts": [
+                "orographic rainfall"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 16,
+            "question": "Why is Ladakh known as a cold desert?",
+            "answer": "Because it lies in the rain shadow region of the Himalayas.",
+            "key_concepts": [
+                "rain shadow"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain why Rajasthan receives low rainfall.",
+            "answer": "Rajasthan lies far from the sea and monsoon winds lose moisture before reaching it.",
+            "key_concepts": [
+                "low rainfall"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the impact of monsoon on agriculture.",
+            "answer": "Monsoon rainfall provides water necessary for crop cultivation and farming activities.",
+            "key_concepts": [
+                "agriculture"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 19,
+            "question": "Why are floods common in some regions?",
+            "answer": "Because heavy monsoon rainfall causes rivers to overflow.",
+            "key_concepts": [
+                "flood"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Why are some regions drought-prone?",
+            "answer": "Because they receive very little rainfall and experience high variability.",
+            "key_concepts": [
+                "drought"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain the importance of monsoon for India.",
+            "answer": "Monsoon provides water for agriculture, rivers and drinking water supply.",
+            "key_concepts": [
+                "monsoon importance"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 22,
+            "question": "How does monsoon influence the economy of India?",
+            "answer": "Agriculture and related activities depend heavily on monsoon rainfall.",
+            "key_concepts": [
+                "economy"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 23,
+            "question": "Why do farmers depend on monsoon rains?",
+            "answer": "Because many crops rely on rainfall for irrigation.",
+            "key_concepts": [
+                "rain-fed farming"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Why is the monsoon called a unifying bond?",
+            "answer": "Because it influences agriculture, economy and daily life across the country.",
+            "key_concepts": [
+                "unifying bond"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain how climate influences the lifestyle of people.",
+            "answer": "Climate affects food, clothing, housing and economic activities.",
+            "key_concepts": [
+                "climate influence"
+            ],
+            "marks": 3,
+            "difficulty_level": "hard",
+            "source_section": "Section 4.5"
+        }
+    ]
+}

@@ -1,0 +1,139 @@
+{
+  "class": "Class 10",
+  "subject": "Mathematics",
+  "chapter": "We Distribute, Yet Things Multiply",
+  "difficulty": "Medium",
+  "source_pdf": "ch-6_WE_DISTRIBUTE,_YET_THINGS_MULTIPLY.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Multi-Step Distribution Challenge",
+      "objective": "Apply distributive property to multi-step algebraic expressions",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Write expressions such as 3(2x + 5) + 4x",
+        "Expand the brackets using distributive property",
+        "Combine like terms to simplify"
+      ],
+      "learning_outcome": "Applies distributive law in complex expressions",
+      "evaluation": "Correct simplification (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Reverse Distribution (Factorisation)",
+      "objective": "Factor algebraic expressions using common factors",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write expressions like 8x + 16",
+        "Identify the greatest common factor",
+        "Rewrite the expression using brackets"
+      ],
+      "learning_outcome": "Understands factorisation as reverse distribution",
+      "evaluation": "Correct factorisation (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Distributive Law Verification",
+      "objective": "Verify distributive property through numerical examples",
+      "materials": ["Notebook"],
+      "steps": [
+        "Choose values for a, b, and c",
+        "Compute a(b + c)",
+        "Compute ab + ac and compare the results"
+      ],
+      "learning_outcome": "Understands distributive law conceptually",
+      "evaluation": "Correct verification (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Algebra Expansion Puzzle",
+      "objective": "Expand and simplify algebraic expressions",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write expressions such as 4(3x + 2)",
+        "Expand the brackets",
+        "Simplify the resulting expression"
+      ],
+      "learning_outcome": "Develops skill in algebraic manipulation",
+      "evaluation": "Accuracy of expansion (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Expression Simplification Race",
+      "objective": "Simplify complex algebraic expressions",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write expressions like 5(2x + 3) - 3x",
+        "Expand brackets",
+        "Combine like terms to simplify"
+      ],
+      "learning_outcome": "Improves algebraic simplification skills",
+      "evaluation": "Correct final expression (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Distribution Word Problem",
+      "objective": "Apply distributive property to solve real-life problems",
+      "materials": ["Notebook"],
+      "steps": [
+        "Create a word problem involving equal groups",
+        "Translate it into an algebraic expression",
+        "Solve using distributive property"
+      ],
+      "learning_outcome": "Applies algebraic reasoning in real-life situations",
+      "evaluation": "Logical reasoning and correct answer (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Common Factor Investigation",
+      "objective": "Identify common factors in algebraic expressions",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write expressions like 12x + 18",
+        "Find the common factor",
+        "Rewrite the expression using brackets"
+      ],
+      "learning_outcome": "Develops factorisation skills",
+      "evaluation": "Correct identification (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Missing Value Equation",
+      "objective": "Solve simple algebraic equations using distribution",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write an equation such as 3(x + 4) = 21",
+        "Expand the brackets",
+        "Solve for the variable"
+      ],
+      "learning_outcome": "Applies distributive property in equation solving",
+      "evaluation": "Correct solution (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Like Terms Simplification",
+      "objective": "Combine like terms after expansion",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write expressions like 2(x + 3) + 4x",
+        "Expand the brackets",
+        "Combine like terms"
+      ],
+      "learning_outcome": "Understands simplification of algebraic expressions",
+      "evaluation": "Correct simplification (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Distributive Property Poster",
+      "objective": "Explain distributive property visually",
+      "materials": ["Chart paper", "Colours", "Markers"],
+      "steps": [
+        "Write the distributive property rule",
+        "Show examples with algebraic expressions",
+        "Present the chart explaining the concept"
+      ],
+      "learning_outcome": "Strengthens conceptual understanding",
+      "evaluation": "Clarity and accuracy (10 marks)"
+    }
+  ]
+}

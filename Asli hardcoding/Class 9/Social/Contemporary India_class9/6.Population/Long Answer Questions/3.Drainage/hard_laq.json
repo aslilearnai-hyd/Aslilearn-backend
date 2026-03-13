@@ -1,0 +1,416 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 3: Drainage",
+    "generated_at": "2026-03-07T21:55:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the major differences between Himalayan rivers and Peninsular rivers.",
+            "answer": "Himalayan rivers originate from glaciers and are perennial, while Peninsular rivers originate from plateaus and depend mainly on rainfall. Himalayan rivers have long courses and carry large amounts of silt, whereas Peninsular rivers have shorter courses and smaller drainage basins.",
+            "answer_outline": [
+                "Origin of rivers",
+                "Nature of flow",
+                "Length and drainage basin",
+                "Sediment load"
+            ],
+            "key_concepts": [
+                "Himalayan rivers",
+                "Peninsular rivers"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the Indus river system and its tributaries.",
+            "answer": "The Indus originates near Lake Mansarowar in Tibet and flows through Ladakh before entering Pakistan. Major tributaries include the Jhelum, Chenab, Ravi, Beas and Satluj.",
+            "answer_outline": [
+                "Source of Indus",
+                "Course through India",
+                "Major tributaries",
+                "Drainage region"
+            ],
+            "key_concepts": [
+                "Indus river system"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 3,
+            "question": "Describe the Ganga river system and its major tributaries.",
+            "answer": "The Ganga originates from the Gangotri glacier and flows through northern India. Major tributaries include Yamuna, Ghaghara, Gandak and Kosi before forming the Sundarban delta.",
+            "answer_outline": [
+                "Source of Ganga",
+                "Major tributaries",
+                "Course through plains",
+                "Delta formation"
+            ],
+            "key_concepts": [
+                "Ganga river system"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain the course and features of the Brahmaputra river.",
+            "answer": "The Brahmaputra originates in Tibet as the Tsang Po, flows eastwards parallel to the Himalayas and enters India through Arunachal Pradesh. It forms braided channels and river islands in Assam.",
+            "answer_outline": [
+                "Origin in Tibet",
+                "Entry into India",
+                "Braided channels",
+                "Flood-prone river"
+            ],
+            "key_concepts": [
+                "Brahmaputra"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the characteristics of Peninsular rivers.",
+            "answer": "Peninsular rivers originate from the plateau and depend mainly on rainfall. They have shorter courses, smaller drainage basins and are mostly seasonal.",
+            "answer_outline": [
+                "Plateau origin",
+                "Seasonal flow",
+                "Short course",
+                "Small drainage basin"
+            ],
+            "key_concepts": [
+                "Peninsular rivers"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Describe the Godavari river basin.",
+            "answer": "The Godavari originates in the Western Ghats near Nasik and flows eastwards into the Bay of Bengal. It is the largest river basin of Peninsular India.",
+            "answer_outline": [
+                "Source",
+                "Course",
+                "Tributaries",
+                "Largest basin"
+            ],
+            "key_concepts": [
+                "Godavari basin"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain the Krishna river basin and its tributaries.",
+            "answer": "The Krishna originates near Mahabaleshwar and flows eastwards into the Bay of Bengal. Major tributaries include Tungabhadra, Bhima and Koyna.",
+            "answer_outline": [
+                "Source",
+                "Course",
+                "Major tributaries"
+            ],
+            "key_concepts": [
+                "Krishna river basin"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Describe the Kaveri river basin.",
+            "answer": "The Kaveri originates in the Western Ghats and flows through Karnataka and Tamil Nadu. It forms the Shivasamudram Falls and drains into the Bay of Bengal.",
+            "answer_outline": [
+                "Source",
+                "Course",
+                "Important features"
+            ],
+            "key_concepts": [
+                "Kaveri river basin"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the Narmada river basin and its unique features.",
+            "answer": "The Narmada originates in the Amarkantak hills and flows westwards through a rift valley before reaching the Arabian Sea.",
+            "answer_outline": [
+                "Source",
+                "Rift valley flow",
+                "Course to Arabian Sea"
+            ],
+            "key_concepts": [
+                "Narmada river"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the formation of river landforms such as meanders and oxbow lakes.",
+            "answer": "Rivers form meanders due to slow flow in plains. When a meander loop is cut off from the main channel, it forms an oxbow lake.",
+            "answer_outline": [
+                "Meander formation",
+                "River erosion and deposition",
+                "Oxbow lake formation"
+            ],
+            "key_concepts": [
+                "river landforms"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain how deltas are formed.",
+            "answer": "Deltas are formed when rivers deposit sediments at their mouths where they enter seas or oceans.",
+            "answer_outline": [
+                "Sediment deposition",
+                "River mouth",
+                "Delta formation"
+            ],
+            "key_concepts": [
+                "delta"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain the formation and importance of lagoons.",
+            "answer": "Lagoons form when sand bars separate a portion of sea water from the mainland. They support fishing and tourism.",
+            "answer_outline": [
+                "Formation",
+                "Sand bars",
+                "Economic importance"
+            ],
+            "key_concepts": [
+                "lagoon"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the types of lakes found in India.",
+            "answer": "Lakes in India include freshwater lakes, saltwater lakes and artificial lakes created by dams.",
+            "answer_outline": [
+                "Freshwater lakes",
+                "Saltwater lakes",
+                "Artificial lakes"
+            ],
+            "key_concepts": [
+                "lakes"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the importance of lakes for human life.",
+            "answer": "Lakes regulate river flow, support tourism, provide water supply and generate hydroelectric power.",
+            "answer_outline": [
+                "Water storage",
+                "Tourism",
+                "Hydropower"
+            ],
+            "key_concepts": [
+                "lake importance"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain the role of rivers in the economic development of India.",
+            "answer": "Rivers support agriculture, transportation, hydroelectric power generation and settlements.",
+            "answer_outline": [
+                "Agriculture",
+                "Hydropower",
+                "Transportation",
+                "Settlements"
+            ],
+            "key_concepts": [
+                "river economy"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain how rivers support agriculture and irrigation.",
+            "answer": "Rivers supply irrigation water and deposit fertile alluvial soil suitable for farming.",
+            "answer_outline": [
+                "Irrigation",
+                "Alluvial soil",
+                "Agriculture"
+            ],
+            "key_concepts": [
+                "irrigation"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain the importance of rivers for transportation.",
+            "answer": "Rivers act as natural waterways that help transport goods and people economically.",
+            "answer_outline": [
+                "Waterways",
+                "Transport goods",
+                "Economic benefits"
+            ],
+            "key_concepts": [
+                "water transport"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain the causes of river pollution in India.",
+            "answer": "River pollution is mainly caused by sewage discharge, industrial waste and agricultural chemicals.",
+            "answer_outline": [
+                "Sewage",
+                "Industrial waste",
+                "Agricultural chemicals"
+            ],
+            "key_concepts": [
+                "pollution"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the effects of river pollution.",
+            "answer": "River pollution contaminates drinking water, harms aquatic life and spreads diseases.",
+            "answer_outline": [
+                "Water contamination",
+                "Aquatic life damage",
+                "Health effects"
+            ],
+            "key_concepts": [
+                "pollution effects"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the need for river conservation.",
+            "answer": "River conservation is necessary to maintain water quality, protect ecosystems and ensure sustainable water resources.",
+            "answer_outline": [
+                "Water conservation",
+                "Ecosystem protection",
+                "Sustainable resources"
+            ],
+            "key_concepts": [
+                "conservation"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain the objectives of the Ganga Action Plan.",
+            "answer": "The Ganga Action Plan was launched to reduce pollution and improve water quality of the Ganga river.",
+            "answer_outline": [
+                "Pollution control",
+                "Water quality improvement",
+                "Government initiative"
+            ],
+            "key_concepts": [
+                "Ganga Action Plan"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the National River Conservation Plan.",
+            "answer": "The National River Conservation Plan aims to improve water quality of rivers by controlling pollution.",
+            "answer_outline": [
+                "Government programme",
+                "Pollution control",
+                "River conservation"
+            ],
+            "key_concepts": [
+                "NRCP"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.6"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain why rivers are important natural resources.",
+            "answer": "Rivers provide water supply, fertile soil, energy resources and support ecosystems.",
+            "answer_outline": [
+                "Water supply",
+                "Agriculture",
+                "Energy resources"
+            ],
+            "key_concepts": [
+                "natural resources"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the relationship between rivers and human settlements.",
+            "answer": "Human settlements develop near rivers because they provide water, fertile land and transportation routes.",
+            "answer_outline": [
+                "Water availability",
+                "Fertile soil",
+                "Transport routes"
+            ],
+            "key_concepts": [
+                "settlements"
+            ],
+            "marks": 5,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.5"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain why sustainable water management is important.",
+            "answer": "Sustainable water management ensures that freshwater resources are used efficiently and preserved for future generations.",
+            "answer_outline": [
+                "Water conservation",
+                "Sustainable use",
+                "Future resources"
+            ],
+            "key_concepts": [
+                "water management"
+            ],
+            "marks": 6,
+            "difficulty_level": "hard",
+            "source_section": "Section 3.6"
+        }
+    ]
+}

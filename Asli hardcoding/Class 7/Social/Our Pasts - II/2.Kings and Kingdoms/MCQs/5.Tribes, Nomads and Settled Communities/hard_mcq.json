@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 5: Tribes, Nomads and Settled Communities",
+    "generated_at": "2026-03-06T19:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Why did some tribes adopt a mixed economy of hunting, gathering, and agriculture?",
+            "options": {
+                "A": "To maximize trade with urban centers",
+                "B": "To adapt to seasonal and environmental changes",
+                "C": "To follow government policies",
+                "D": "To create surplus for industrial use"
+            },
+            "correct_answer": "B",
+            "explanation": "Tribes combined hunting, gathering, and agriculture to adapt to seasonal variations and ensure survival.",
+            "difficulty": "hard",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Which factor most influenced the social hierarchy in tribal communities?",
+            "options": {
+                "A": "Caste distinctions",
+                "B": "Age, wisdom, and experience",
+                "C": "Wealth from trade",
+                "D": "Urban education"
+            },
+            "correct_answer": "B",
+            "explanation": "Tribal hierarchy was based on respect for elders and experienced individuals rather than caste or wealth.",
+            "difficulty": "hard",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Why were nomadic movements often cyclical rather than random?",
+            "options": {
+                "A": "They followed government migration schedules",
+                "B": "They moved based on seasonal pastures and water sources",
+                "C": "They followed religious festivals",
+                "D": "They sought industrial jobs periodically"
+            },
+            "correct_answer": "B",
+            "explanation": "Nomads moved cyclically to access pastures and water as seasons changed.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 4,
+            "question": "How did the Gonds’ knowledge of forests affect their economy?",
+            "options": {
+                "A": "It allowed them to industrialize quickly",
+                "B": "It enabled sustainable use of forest produce for subsistence and trade",
+                "C": "It restricted them to hunting only",
+                "D": "It made them dependent solely on agriculture"
+            },
+            "correct_answer": "B",
+            "explanation": "Gonds’ knowledge helped them gather forest products efficiently for survival and local trade.",
+            "difficulty": "hard",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Which of the following explains why oral tradition was crucial in tribal communities?",
+            "options": {
+                "A": "Tribes had no written language and relied on stories to transmit culture and knowledge",
+                "B": "Tribes did not value storytelling",
+                "C": "It was used only for entertainment",
+                "D": "It replaced the need for trade"
+            },
+            "correct_answer": "A",
+            "explanation": "Oral tradition preserved knowledge, customs, and history across generations in the absence of writing.",
+            "difficulty": "hard",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 6,
+            "question": "What is the main difference between pastoral nomads and agricultural tribes?",
+            "options": {
+                "A": "Pastoral nomads move seasonally, agricultural tribes settle permanently and cultivate land",
+                "B": "Pastoral nomads practice industry, agricultural tribes hunt",
+                "C": "Agricultural tribes move frequently, nomads live permanently",
+                "D": "There is no difference"
+            },
+            "correct_answer": "A",
+            "explanation": "Pastoral nomads are mobile to feed livestock; agricultural tribes remain in one location to farm.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 7,
+            "question": "How did festivals strengthen tribal society?",
+            "options": {
+                "A": "By increasing trade profits",
+                "B": "By reinforcing social bonds, cultural identity, and agricultural cycles",
+                "C": "By encouraging industrialization",
+                "D": "By teaching literacy"
+            },
+            "correct_answer": "B",
+            "explanation": "Festivals maintained community cohesion and marked agricultural or seasonal events.",
+            "difficulty": "hard",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 8,
+            "question": "Why is community ownership of land considered an advantage in tribal societies?",
+            "options": {
+                "A": "It encouraged competition among individuals",
+                "B": "It ensured resources were shared for survival",
+                "C": "It allowed industrial exploitation",
+                "D": "It was mandated by cities"
+            },
+            "correct_answer": "B",
+            "explanation": "Communal land ownership allowed equitable use of land and resources for the benefit of all members.",
+            "difficulty": "hard",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 9,
+            "question": "Which of the following best explains the interaction between nomads and settled communities?",
+            "options": {
+                "A": "Nomads conquered settled communities",
+                "B": "Nomads traded livestock and forest products with settled communities",
+                "C": "Settled communities migrated with nomads",
+                "D": "They avoided each other completely"
+            },
+            "correct_answer": "B",
+            "explanation": "Trade and exchange of goods were the main forms of interaction between nomads and settled communities.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Why were forests crucial to the survival of many tribes?",
+            "options": {
+                "A": "They provided timber for skyscrapers",
+                "B": "They supplied food, fuel, medicinal plants, and raw materials for crafts",
+                "C": "They were sites for industrial factories",
+                "D": "They were avoided by tribes"
+            },
+            "correct_answer": "B",
+            "explanation": "Forests supplied multiple resources essential for tribal life and culture.",
+            "difficulty": "hard",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 11,
+            "question": "What role did women play in tribal economies?",
+            "options": {
+                "A": "They were excluded from all work",
+                "B": "They participated in agriculture, craft, food gathering, and cultural activities",
+                "C": "They worked only in factories",
+                "D": "They only managed trading posts"
+            },
+            "correct_answer": "B",
+            "explanation": "Women actively contributed to economic and cultural activities in tribal societies.",
+            "difficulty": "hard",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 12,
+            "question": "Why did some tribes practice shifting cultivation instead of permanent farming?",
+            "options": {
+                "A": "Because it allowed the soil to recover fertility after cultivation",
+                "B": "Because they preferred hunting only",
+                "C": "Because they were nomads",
+                "D": "Because they did not know farming"
+            },
+            "correct_answer": "A",
+            "explanation": "Shifting cultivation helped maintain soil fertility by rotating cultivated plots.",
+            "difficulty": "hard",
+            "source_section": "Section 5.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Which of the following statements reflects the influence of the environment on tribal lifestyle?",
+            "options": {
+                "A": "Tribes lived independently of environmental conditions",
+                "B": "Tribal occupation, migration, and settlement were shaped by local forests, rivers, and climate",
+                "C": "Environment had no effect on tribal crafts",
+                "D": "Tribes industrialized regardless of environment"
+            },
+            "correct_answer": "B",
+            "explanation": "Environmental factors influenced occupation, migration, and settlement patterns of tribes.",
+            "difficulty": "hard",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 14,
+            "question": "How did the Todas maintain their pastoral lifestyle in the Nilgiris?",
+            "options": {
+                "A": "By combining animal husbandry with community rituals and seasonal movement",
+                "B": "By settling permanently in villages only",
+                "C": "By relying entirely on trade with cities",
+                "D": "By practicing industrial work"
+            },
+            "correct_answer": "A",
+            "explanation": "Todas integrated livestock rearing with seasonal patterns and cultural practices.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Which of the following demonstrates sustainable practices in tribal societies?",
+            "options": {
+                "A": "Overhunting forests",
+                "B": "Using forest produce carefully and rotating cultivated land",
+                "C": "Building large factories in forests",
+                "D": "Urban-style permanent construction"
+            },
+            "correct_answer": "B",
+            "explanation": "Tribes managed resources sustainably to ensure long-term availability of food and materials.",
+            "difficulty": "hard",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 16,
+            "question": "How did the tribal economy adapt to the availability of local resources?",
+            "options": {
+                "A": "By producing goods suited to forest, pasture, and water availability",
+                "B": "By industrializing immediately",
+                "C": "By importing everything from cities",
+                "D": "By abandoning agriculture"
+            },
+            "correct_answer": "A",
+            "explanation": "Tribal economic activities depended on the natural resources around them.",
+            "difficulty": "hard",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 17,
+            "question": "Which of the following statements explains why oral storytelling is considered a complex cultural tool?",
+            "options": {
+                "A": "It records and conveys laws, history, moral values, and survival knowledge",
+                "B": "It is only for entertainment",
+                "C": "It has no connection to culture",
+                "D": "It was used for trading goods only"
+            },
+            "correct_answer": "A",
+            "explanation": "Oral traditions transmit social norms, survival skills, and historical knowledge across generations.",
+            "difficulty": "hard",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Which factor most contributed to the distinctive art forms of tribes, like Warli paintings?",
+            "options": {
+                "A": "Interaction with urban industrial society",
+                "B": "Close connection to nature and daily life",
+                "C": "Government-imposed art programs",
+                "D": "Trade regulations"
+            },
+            "correct_answer": "B",
+            "explanation": "Tribal art often reflected their natural surroundings, rituals, and daily activities.",
+            "difficulty": "hard",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 19,
+            "question": "How did pastoral nomads balance livestock rearing with environmental sustainability?",
+            "options": {
+                "A": "By overgrazing the land",
+                "B": "By moving seasonally to prevent depletion of pastures",
+                "C": "By abandoning livestock",
+                "D": "By settling permanently in one area"
+            },
+            "correct_answer": "B",
+            "explanation": "Seasonal movement prevented overgrazing and preserved pastures for future use.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Which of the following best explains why some tribes in central India specialized in iron smelting?",
+            "options": {
+                "A": "They had access to iron-rich forests and needed tools and weapons for hunting and defense",
+                "B": "They wanted industrial factories",
+                "C": "They imported all metal tools",
+                "D": "They did not use metals at all"
+            },
+            "correct_answer": "A",
+            "explanation": "Availability of raw materials and necessity for tools and weapons drove iron smelting skills.",
+            "difficulty": "hard",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 21,
+            "question": "Which of the following best reflects the cultural adaptation of tribes to their environment?",
+            "options": {
+                "A": "Use of natural materials for crafts, housing, and rituals",
+                "B": "Importing modern construction materials",
+                "C": "Avoiding forests entirely",
+                "D": "Moving to urban centers"
+            },
+            "correct_answer": "A",
+            "explanation": "Tribes adapted to their environment by using local natural resources in daily life and culture.",
+            "difficulty": "hard",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 22,
+            "question": "How did the division of labor function in tribal societies?",
+            "options": {
+                "A": "It was based on gender, age, and skill, ensuring survival and community well-being",
+                "B": "It was imposed by government laws",
+                "C": "Everyone did the same work",
+                "D": "Labor division was irrelevant"
+            },
+            "correct_answer": "A",
+            "explanation": "Roles were assigned according to abilities, ensuring efficient use of community resources.",
+            "difficulty": "hard",
+            "source_section": "Section 5.1"
+        },
+        {
+            "question_number": 23,
+            "question": "Why were some tribes referred to as semi-nomadic?",
+            "options": {
+                "A": "They moved seasonally but also had permanent settlements",
+                "B": "They never moved",
+                "C": "They were urban residents",
+                "D": "They relied entirely on trade"
+            },
+            "correct_answer": "A",
+            "explanation": "Semi-nomadic tribes combined seasonal movement with some permanent agricultural settlements.",
+            "difficulty": "hard",
+            "source_section": "Section 5.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Which of the following best explains the importance of forests in tribal religious practices?",
+            "options": {
+                "A": "Forests were seen as sacred and worshipped, reinforcing conservation practices",
+                "B": "Forests had no religious significance",
+                "C": "Tribes avoided forests for rituals",
+                "D": "Religious practices were urban-centered"
+            },
+            "correct_answer": "A",
+            "explanation": "Nature worship in forests reflected both spiritual beliefs and sustainable use of resources.",
+            "difficulty": "hard",
+            "source_section": "Section 5.4"
+        },
+        {
+            "question_number": 25,
+            "question": "Which statement best explains the survival strategy of tribal communities in challenging environments?",
+            "options": {
+                "A": "They relied solely on trade with cities",
+                "B": "They used local resources, social cooperation, seasonal movement, and cultural knowledge",
+                "C": "They abandoned forests entirely",
+                "D": "They industrialized rapidly"
+            },
+            "correct_answer": "B",
+            "explanation": "Tribal survival relied on knowledge of nature, cooperation, seasonal adaptation, and sustainable resource use.",
+            "difficulty": "hard",
+            "source_section": "Section 5.1"
+        }
+    ]
+}

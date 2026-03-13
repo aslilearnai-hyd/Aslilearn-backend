@@ -1,0 +1,139 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "Number Play",
+  "difficulty": "Hard",
+  "source_pdf": "ch-5_NUMBER_PLAY.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Even–Odd Pattern Investigation",
+      "objective": "Explore patterns when adding even and odd numbers",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Write five pairs of even numbers and add them",
+        "Write five pairs of odd numbers and add them",
+        "Write your observation about the results"
+      ],
+      "learning_outcome": "Understands patterns in even and odd number addition",
+      "evaluation": "Correct observations (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Multiples Comparison Chart",
+      "objective": "Compare multiples of two numbers",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "Choose two numbers such as 4 and 6",
+        "Write their first ten multiples",
+        "Highlight the common multiples"
+      ],
+      "learning_outcome": "Recognises common multiples",
+      "evaluation": "Accuracy of multiples (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Factor Investigation",
+      "objective": "Identify factors and common factors",
+      "materials": ["Notebook"],
+      "steps": [
+        "Choose numbers like 18 and 24",
+        "Write all their factors",
+        "Identify the common factors"
+      ],
+      "learning_outcome": "Understands factor relationships",
+      "evaluation": "Correct factor listing (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Number Expression Exploration",
+      "objective": "Create and evaluate number expressions",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write four consecutive numbers",
+        "Insert + or − signs between them",
+        "Calculate the result and compare patterns"
+      ],
+      "learning_outcome": "Recognises patterns in expressions",
+      "evaluation": "Correct calculations (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Parity Rule Activity",
+      "objective": "Understand parity rules in multiplication",
+      "materials": ["Notebook"],
+      "steps": [
+        "Multiply two even numbers",
+        "Multiply two odd numbers",
+        "Multiply one even and one odd number"
+      ],
+      "learning_outcome": "Understands parity rules in multiplication",
+      "evaluation": "Correct conclusions (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Always–Sometimes–Never Classification",
+      "objective": "Analyse mathematical statements",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write statements about numbers",
+        "Test the statements using different numbers",
+        "Classify them as always true, sometimes true or never true"
+      ],
+      "learning_outcome": "Develops logical reasoning",
+      "evaluation": "Correct classification (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Number Pattern Discovery",
+      "objective": "Identify patterns in sequences",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write a sequence such as 3, 6, 9, 12",
+        "Extend the pattern",
+        "Write the rule used"
+      ],
+      "learning_outcome": "Understands number patterns",
+      "evaluation": "Correct rule identification (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Common Factor Chart",
+      "objective": "Compare factors of different numbers",
+      "materials": ["Chart paper", "Markers"],
+      "steps": [
+        "Choose three numbers such as 12, 18 and 24",
+        "Write their factors",
+        "Highlight common factors"
+      ],
+      "learning_outcome": "Recognises factor relationships",
+      "evaluation": "Correct chart (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Number Puzzle Creation",
+      "objective": "Create puzzles based on number properties",
+      "materials": ["Notebook"],
+      "steps": [
+        "Create three puzzles involving even or odd numbers",
+        "Exchange puzzles with classmates",
+        "Solve them and explain the answers"
+      ],
+      "learning_outcome": "Improves reasoning with numbers",
+      "evaluation": "Correct puzzle solutions (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Real-Life Number Investigation",
+      "objective": "Apply number concepts to daily life",
+      "materials": ["Notebook"],
+      "steps": [
+        "Observe numbers used in daily life such as dates or house numbers",
+        "Identify patterns or multiples",
+        "Explain the mathematical rule behind them"
+      ],
+      "learning_outcome": "Connects number patterns with real-life situations",
+      "evaluation": "Clarity of explanation (10 marks)"
+    }
+  ]
+}

@@ -1,0 +1,244 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Class 10 Economics - Chapter 4: Globalisation and the Indian Economy",
+  "difficulty": "Medium to Hard",
+  "generated_at": "2026-02-28T06:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is globalisation? Explain its main features.",
+      "answer": "Globalisation refers to the integration of national economies through trade, investment and movement of people. Its main features include increased foreign trade, foreign investment, multinational companies (MNCs), and improved communication and transport technologies.",
+      "answer_outline": [
+        "Definition of globalisation",
+        "Integration of economies",
+        "Role of trade and investment",
+        "Technology and communication"
+      ],
+      "key_concepts": ["globalisation", "foreign trade", "MNCs"],
+      "marks": 8
+    },
+    {
+      "question_number": 2,
+      "question": "Explain the role of multinational companies (MNCs) in globalisation.",
+      "answer": "MNCs are companies that operate in more than one country. They set up production units globally, invest in local companies and bring advanced technology, thereby increasing production and employment.",
+      "answer_outline": [
+        "Definition of MNC",
+        "Investment in other countries",
+        "Technology transfer",
+        "Impact on employment"
+      ],
+      "key_concepts": ["MNCs", "foreign investment", "technology transfer"],
+      "marks": 8
+    },
+    {
+      "question_number": 3,
+      "question": "How do MNCs spread their production across countries?",
+      "answer": "MNCs spread production by setting up subsidiaries, partnering with local companies, buying local firms or placing orders for production.",
+      "answer_outline": ["Subsidiaries", "Joint ventures", "Local sourcing"],
+      "key_concepts": ["production network", "joint venture"],
+      "marks": 8
+    },
+    {
+      "question_number": 4,
+      "question": "Explain the importance of foreign trade in globalisation.",
+      "answer": "Foreign trade connects producers and markets of different countries. It increases choices for consumers and promotes competition, improving quality and reducing prices.",
+      "answer_outline": [
+        "Link between markets",
+        "Increased competition",
+        "Consumer benefits"
+      ],
+      "key_concepts": ["foreign trade", "competition", "consumer choice"],
+      "marks": 8
+    },
+    {
+      "question_number": 5,
+      "question": "Discuss the impact of globalisation on Indian producers.",
+      "answer": "Large producers have benefited due to access to global markets, while small producers face tough competition from foreign companies.",
+      "answer_outline": [
+        "Benefits to large companies",
+        "Challenges for small producers",
+        "Competition impact"
+      ],
+      "key_concepts": ["competition", "Indian producers"],
+      "marks": 8
+    },
+    {
+      "question_number": 6,
+      "question": "How has technology supported globalisation?",
+      "answer": "Advances in transport and communication reduce costs and time, enabling quick exchange of goods and information worldwide.",
+      "answer_outline": [
+        "Transport improvements",
+        "Communication technology",
+        "Reduced costs"
+      ],
+      "key_concepts": ["technology", "communication", "transport"],
+      "marks": 8
+    },
+    {
+      "question_number": 7,
+      "question": "Explain liberalisation and its role in globalisation.",
+      "answer": "Liberalisation refers to removal of trade barriers like tariffs and quotas. It encourages foreign investment and promotes global trade.",
+      "answer_outline": [
+        "Definition",
+        "Removal of barriers",
+        "Encouragement of trade"
+      ],
+      "key_concepts": ["liberalisation", "trade barriers"],
+      "marks": 8
+    },
+    {
+      "question_number": 8,
+      "question": "What is the World Trade Organization (WTO)? Explain its role.",
+      "answer": "WTO is an international organization that regulates global trade. It ensures free trade policies and resolves trade disputes among countries.",
+      "answer_outline": [
+        "Definition",
+        "Trade regulation",
+        "Dispute settlement"
+      ],
+      "key_concepts": ["WTO", "trade rules"],
+      "marks": 8
+    },
+    {
+      "question_number": 9,
+      "question": "Discuss the advantages of globalisation.",
+      "answer": "Globalisation increases product variety, lowers prices, improves quality and creates employment opportunities.",
+      "answer_outline": ["More choices", "Better quality", "Employment"],
+      "key_concepts": ["consumer benefits", "employment growth"],
+      "marks": 8
+    },
+    {
+      "question_number": 10,
+      "question": "Discuss the disadvantages of globalisation.",
+      "answer": "Small producers face competition, workers may lose jobs and income inequality can increase.",
+      "answer_outline": [
+        "Competition pressure",
+        "Job insecurity",
+        "Income inequality"
+      ],
+      "key_concepts": ["inequality", "job loss"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 11,
+      "question": "Explain how globalisation affects employment patterns.",
+      "answer": "It creates jobs in export sectors but reduces employment in sectors facing foreign competition.",
+      "answer_outline": ["Job creation", "Job loss"],
+      "key_concepts": ["employment shift", "export sector"],
+      "marks": 8
+    },
+    {
+      "question_number": 12,
+      "question": "How do MNCs benefit from cheap labour in developing countries?",
+      "answer": "MNCs reduce production costs by hiring cheap labour, increasing profits.",
+      "answer_outline": ["Lower wages", "Higher profits"],
+      "key_concepts": ["cheap labour", "cost reduction"],
+      "marks": 8
+    },
+    {
+      "question_number": 13,
+      "question": "Explain how globalisation has improved consumer markets in India.",
+      "answer": "Consumers now have access to international brands, better quality goods and competitive prices.",
+      "answer_outline": ["More brands", "Quality improvement"],
+      "key_concepts": ["consumer choice", "global brands"],
+      "marks": 8
+    },
+    {
+      "question_number": 14,
+      "question": "What is meant by trade barrier? Give examples.",
+      "answer": "Trade barriers are restrictions like tariffs and quotas imposed to control imports.",
+      "answer_outline": ["Definition", "Examples"],
+      "key_concepts": ["tariff", "quota"],
+      "marks": 8
+    },
+    {
+      "question_number": 15,
+      "question": "Why did India adopt liberalisation in 1991?",
+      "answer": "India adopted liberalisation to overcome economic crisis and attract foreign investment.",
+      "answer_outline": ["Economic crisis", "Policy reforms"],
+      "key_concepts": ["1991 reforms", "liberalisation"],
+      "marks": 8
+    },
+    {
+      "question_number": 16,
+      "question": "Explain how globalisation leads to greater competition.",
+      "answer": "Foreign companies enter domestic markets, forcing local firms to improve quality and reduce prices.",
+      "answer_outline": ["Foreign entry", "Quality improvement"],
+      "key_concepts": ["market competition"],
+      "marks": 8
+    },
+    {
+      "question_number": 17,
+      "question": "Discuss the impact of globalisation on small-scale industries.",
+      "answer": "Small industries face tough competition from imported goods and large MNCs.",
+      "answer_outline": ["Competition", "Market loss"],
+      "key_concepts": ["small industries", "market competition"],
+      "marks": 8
+    },
+    {
+      "question_number": 18,
+      "question": "How does globalisation affect income distribution?",
+      "answer": "It increases income for skilled workers but may reduce income for unskilled workers.",
+      "answer_outline": ["Skilled vs unskilled"],
+      "key_concepts": ["income inequality"],
+      "marks": 8
+    },
+    {
+      "question_number": 19,
+      "question": "Explain the concept of foreign investment.",
+      "answer": "Foreign investment is investment made by companies or individuals in business activities of another country.",
+      "answer_outline": ["Definition", "Purpose"],
+      "key_concepts": ["FDI"],
+      "marks": 8
+    },
+    {
+      "question_number": 20,
+      "question": "Why are developing countries attracted to MNCs?",
+      "answer": "They bring capital, technology and employment opportunities.",
+      "answer_outline": ["Capital", "Technology", "Jobs"],
+      "key_concepts": ["investment", "development"],
+      "marks": 8
+    },
+    {
+      "question_number": 21,
+      "question": "How can globalisation be made fair?",
+      "answer": "By protecting workers’ rights, supporting small producers and regulating trade policies.",
+      "answer_outline": ["Regulation", "Fair trade"],
+      "key_concepts": ["fair globalisation"],
+      "marks": 8
+    },
+    {
+      "question_number": 22,
+      "question": "Explain the relationship between globalisation and liberalisation.",
+      "answer": "Liberalisation removes trade barriers, which promotes globalisation.",
+      "answer_outline": ["Policy link"],
+      "key_concepts": ["trade policy"],
+      "marks": 8
+    },
+    {
+      "question_number": 23,
+      "question": "How has globalisation changed the lifestyle of people in India?",
+      "answer": "It has increased availability of foreign goods, improved communication and influenced consumer preferences.",
+      "answer_outline": ["Consumer change"],
+      "key_concepts": ["lifestyle change"],
+      "marks": 8
+    },
+    {
+      "question_number": 24,
+      "question": "Explain the importance of exports in economic growth.",
+      "answer": "Exports increase foreign exchange earnings and boost domestic production.",
+      "answer_outline": ["Foreign exchange", "Production growth"],
+      "key_concepts": ["exports"],
+      "marks": 8
+    },
+    {
+      "question_number": 25,
+      "question": "Discuss the overall impact of globalisation on Indian economy.",
+      "answer": "Globalisation has improved growth, consumer choice and technology access, but also increased competition and inequality.",
+      "answer_outline": ["Positive impact", "Negative impact"],
+      "key_concepts": ["economic growth", "inequality"],
+      "marks": 8
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+    "class": "Class 9",
+    "subject": "Social Science - Democratic Politics",
+    "chapter": "Electoral Politics",
+    "difficulty": "Medium",
+    "source_pdf": "dem9_3.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Survey on Voter Awareness",
+            "objective": "Understand awareness about elections",
+            "materials": [
+                "Questionnaire",
+                "Notebook",
+                "Pen"
+            ],
+            "steps": [
+                "Prepare 5 questions about voting and elections",
+                "Interview at least 5 adults",
+                "Record their responses",
+                "Present the results in class"
+            ],
+            "learning_outcome": "Students understand the importance of voter awareness",
+            "evaluation": "Quality of questions and analysis (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Election Commission Role Play",
+            "objective": "Understand the role of Election Commission",
+            "materials": [
+                "Role cards",
+                "Notebook"
+            ],
+            "steps": [
+                "Assign roles such as election commissioner, candidates and voters",
+                "Conduct a simulated election",
+                "Discuss violations and actions"
+            ],
+            "learning_outcome": "Students understand responsibilities of Election Commission",
+            "evaluation": "Participation and clarity (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Campaign Speech Activity",
+            "objective": "Understand election campaign methods",
+            "materials": [
+                "Paper",
+                "Pen"
+            ],
+            "steps": [
+                "Choose a public issue",
+                "Prepare a short campaign speech",
+                "Deliver it in class"
+            ],
+            "learning_outcome": "Students learn how candidates communicate policies",
+            "evaluation": "Clarity of message (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Constituency Map Study",
+            "objective": "Understand electoral constituencies",
+            "materials": [
+                "Atlas",
+                "Map of India",
+                "Notebook"
+            ],
+            "steps": [
+                "Identify Lok Sabha constituencies in your state",
+                "Mark them on a map",
+                "Write the number of constituencies"
+            ],
+            "learning_outcome": "Students understand how constituencies are formed",
+            "evaluation": "Accuracy of mapping (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Reserved Constituency Chart",
+            "objective": "Understand reservation system in elections",
+            "materials": [
+                "Chart paper",
+                "Markers"
+            ],
+            "steps": [
+                "List SC and ST reserved constituencies",
+                "Explain the need for reservation",
+                "Display the chart"
+            ],
+            "learning_outcome": "Students understand representation of weaker sections",
+            "evaluation": "Content accuracy (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Election Campaign News Analysis",
+            "objective": "Understand campaign strategies",
+            "materials": [
+                "Newspaper articles",
+                "Notebook"
+            ],
+            "steps": [
+                "Collect news about election campaigns",
+                "Identify promises made by candidates",
+                "Write a short analysis"
+            ],
+            "learning_outcome": "Students learn how campaigns influence voters",
+            "evaluation": "Quality of analysis (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "EVM Demonstration Model",
+            "objective": "Understand electronic voting machines",
+            "materials": [
+                "Chart paper",
+                "Markers"
+            ],
+            "steps": [
+                "Draw an EVM model on chart",
+                "Label candidate names and symbols",
+                "Demonstrate voting"
+            ],
+            "learning_outcome": "Students understand how EVM voting works",
+            "evaluation": "Accuracy of demonstration (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Model Code of Conduct Study",
+            "objective": "Understand election rules",
+            "materials": [
+                "Notebook",
+                "Reference material"
+            ],
+            "steps": [
+                "List rules from Model Code of Conduct",
+                "Give examples of violations",
+                "Discuss in class"
+            ],
+            "learning_outcome": "Students understand fair election practices",
+            "evaluation": "Correct explanation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Election Result Interpretation",
+            "objective": "Understand vote counting and results",
+            "materials": [
+                "Sample election data",
+                "Notebook"
+            ],
+            "steps": [
+                "Analyze vote counts of candidates",
+                "Calculate total votes",
+                "Identify the winner"
+            ],
+            "learning_outcome": "Students learn how winners are determined",
+            "evaluation": "Accuracy of calculations (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Discussion on Free and Fair Elections",
+            "objective": "Understand democratic election principles",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "List conditions for democratic elections",
+                "Discuss examples",
+                "Present conclusions"
+            ],
+            "learning_outcome": "Students understand democratic election standards",
+            "evaluation": "Clarity of explanation (10 marks)"
+        }
+    ]
+}

@@ -1,0 +1,139 @@
+{
+  "class": "Class 8",
+  "subject": "Mathematics",
+  "chapter": "Number Play",
+  "difficulty": "Easy",
+  "source_pdf": "ch-5_NUMBER_PLAY.pdf",
+  "activities_projects": [
+    {
+      "sl_no": 1,
+      "title": "Even–Odd Number Sort",
+      "objective": "Identify even and odd numbers",
+      "materials": ["Notebook", "Pencil"],
+      "steps": [
+        "Write numbers from 1 to 30",
+        "Circle all even numbers",
+        "Underline all odd numbers"
+      ],
+      "learning_outcome": "Understands classification of even and odd numbers",
+      "evaluation": "Correct identification (10 marks)"
+    },
+    {
+      "sl_no": 2,
+      "title": "Addition Pattern Activity",
+      "objective": "Observe patterns when adding numbers",
+      "materials": ["Notebook"],
+      "steps": [
+        "Add pairs of even numbers",
+        "Add pairs of odd numbers",
+        "Write what you observe about the results"
+      ],
+      "learning_outcome": "Recognises patterns in addition",
+      "evaluation": "Correct observations (10 marks)"
+    },
+    {
+      "sl_no": 3,
+      "title": "Multiples Finder",
+      "objective": "Identify multiples of numbers",
+      "materials": ["Notebook"],
+      "steps": [
+        "Choose numbers like 3, 4 and 5",
+        "Write their first ten multiples",
+        "Compare the patterns"
+      ],
+      "learning_outcome": "Understands multiples",
+      "evaluation": "Correct list of multiples (10 marks)"
+    },
+    {
+      "sl_no": 4,
+      "title": "Factor Listing",
+      "objective": "Identify factors of numbers",
+      "materials": ["Notebook"],
+      "steps": [
+        "Choose numbers like 12, 15 and 20",
+        "List all their factors",
+        "Check which factors are common"
+      ],
+      "learning_outcome": "Understands concept of factors",
+      "evaluation": "Correct factor lists (10 marks)"
+    },
+    {
+      "sl_no": 5,
+      "title": "Always–Sometimes–Never Activity",
+      "objective": "Understand mathematical statements",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write statements about numbers",
+        "Test them using different numbers",
+        "Classify them as always true, sometimes true or never true"
+      ],
+      "learning_outcome": "Develops logical reasoning",
+      "evaluation": "Correct classification (10 marks)"
+    },
+    {
+      "sl_no": 6,
+      "title": "Number Pattern Investigation",
+      "objective": "Explore number patterns",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write a sequence like 2, 4, 6, 8",
+        "Extend the pattern",
+        "Explain the rule used"
+      ],
+      "learning_outcome": "Recognises number patterns",
+      "evaluation": "Correct pattern explanation (10 marks)"
+    },
+    {
+      "sl_no": 7,
+      "title": "Even–Odd Multiplication Test",
+      "objective": "Understand multiplication patterns",
+      "materials": ["Notebook"],
+      "steps": [
+        "Multiply two even numbers",
+        "Multiply two odd numbers",
+        "Multiply an even and an odd number"
+      ],
+      "learning_outcome": "Understands parity in multiplication",
+      "evaluation": "Correct results and observations (10 marks)"
+    },
+    {
+      "sl_no": 8,
+      "title": "Number Expression Builder",
+      "objective": "Create expressions using numbers",
+      "materials": ["Notebook"],
+      "steps": [
+        "Choose four numbers",
+        "Insert + or − signs between them",
+        "Calculate the results"
+      ],
+      "learning_outcome": "Improves arithmetic skills",
+      "evaluation": "Correct calculations (10 marks)"
+    },
+    {
+      "sl_no": 9,
+      "title": "Real-Life Number Patterns",
+      "objective": "Observe number patterns in daily life",
+      "materials": ["Notebook"],
+      "steps": [
+        "Observe patterns like house numbers or calendar dates",
+        "Write the pattern observed",
+        "Explain the rule"
+      ],
+      "learning_outcome": "Connects mathematics to real life",
+      "evaluation": "Relevant examples (10 marks)"
+    },
+    {
+      "sl_no": 10,
+      "title": "Factor–Multiple Match",
+      "objective": "Match factors with multiples",
+      "materials": ["Notebook"],
+      "steps": [
+        "Write numbers in one column",
+        "Write possible factors in another column",
+        "Match them correctly"
+      ],
+      "learning_outcome": "Understands relationship between factors and multiples",
+      "evaluation": "Correct matching (10 marks)"
+    }
+  ]
+}

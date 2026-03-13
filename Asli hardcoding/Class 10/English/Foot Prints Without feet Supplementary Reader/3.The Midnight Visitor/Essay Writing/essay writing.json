@@ -1,0 +1,709 @@
+{
+    "subject": "English",
+    "book": "Footprints Without Feet",
+    "Content": "Essay Writing",
+    "class": "10",
+    "total_questions": 100,
+    "questions": [
+        {
+            "id": 1,
+            "chapter": "A Triumph of Surgery",
+            "source": "Footprints Without Feet – Chapter 1",
+            "title": "Overfeeding and Health",
+            "question": "Write an essay on how overfeeding and excessive care can harm health, with reference to Tricki."
+        },
+        {
+            "id": 2,
+            "chapter": "A Triumph of Surgery",
+            "source": "Footprints Without Feet – Chapter 1",
+            "title": "Role of a Veterinarian",
+            "question": "Write an essay describing Dr Herriot as a responsible and wise veterinarian."
+        },
+        {
+            "id": 3,
+            "chapter": "A Triumph of Surgery",
+            "source": "Footprints Without Feet – Chapter 1",
+            "title": "Love with Discipline",
+            "question": "Write an essay discussing whether Mrs Pumphrey’s love for Tricki was genuine but misguided."
+        },
+        {
+            "id": 4,
+            "chapter": "A Triumph of Surgery",
+            "source": "Footprints Without Feet – Chapter 1",
+            "title": "Importance of Routine",
+            "question": "Write an essay on the importance of discipline and routine for a healthy life."
+        },
+        {
+            "id": 5,
+            "chapter": "The Thief’s Story",
+            "source": "Footprints Without Feet – Chapter 2",
+            "title": "Transformation of Hari Singh",
+            "question": "Write an essay on the moral transformation of Hari Singh."
+        },
+        {
+            "id": 6,
+            "chapter": "The Thief’s Story",
+            "source": "Footprints Without Feet – Chapter 2",
+            "title": "Power of Trust",
+            "question": "Write an essay highlighting the value of trust as shown by Anil."
+        },
+        {
+            "id": 7,
+            "chapter": "The Thief’s Story",
+            "source": "Footprints Without Feet – Chapter 2",
+            "title": "Education as Reform",
+            "question": "Write an essay on how education can reform a criminal."
+        },
+        {
+            "id": 8,
+            "chapter": "The Thief’s Story",
+            "source": "Footprints Without Feet – Chapter 2",
+            "title": "Honesty vs Theft",
+            "question": "Write an essay comparing honest earning with earning through dishonest means."
+        },
+        {
+            "id": 9,
+            "chapter": "The Midnight Visitor",
+            "source": "Footprints Without Feet – Chapter 3",
+            "title": "Presence of Mind",
+            "question": "Write an essay on the importance of presence of mind in difficult situations."
+        },
+        {
+            "id": 10,
+            "chapter": "The Midnight Visitor",
+            "source": "Footprints Without Feet – Chapter 3",
+            "title": "Brains Over Brawn",
+            "question": "Write an essay justifying that intelligence is more powerful than physical strength."
+        },
+        {
+            "id": 11,
+            "chapter": "A Question of Trust",
+            "source": "Footprints Without Feet – Chapter 4",
+            "title": "Crime Does Not Pay",
+            "question": "Write an essay explaining the message ‘Crime does not pay’ with reference to Horace Danby."
+        },
+        {
+            "id": 12,
+            "chapter": "A Question of Trust",
+            "source": "Footprints Without Feet – Chapter 4",
+            "title": "Deceptive Appearances",
+            "question": "Write an essay on how appearances can be deceptive."
+        },
+        {
+            "id": 13,
+            "chapter": "Footprints Without Feet",
+            "source": "Footprints Without Feet – Chapter 5",
+            "title": "Science: Boon or Bane",
+            "question": "Write an essay on science as a boon or bane with reference to Griffin."
+        },
+        {
+            "id": 14,
+            "chapter": "Footprints Without Feet",
+            "source": "Footprints Without Feet – Chapter 5",
+            "title": "Misuse of Science",
+            "question": "Write an essay on the dangers of misusing scientific discoveries."
+        },
+        {
+            "id": 15,
+            "chapter": "The Making of a Scientist",
+            "source": "Footprints Without Feet – Chapter 6",
+            "title": "Curiosity and Success",
+            "question": "Write an essay on the role of curiosity in achieving success, with reference to Richard Ebright."
+        },
+        {
+            "id": 16,
+            "chapter": "The Making of a Scientist",
+            "source": "Footprints Without Feet – Chapter 6",
+            "title": "Role of Parents",
+            "question": "Write an essay on the role of parents in nurturing talent."
+        },
+        {
+            "id": 17,
+            "chapter": "The Necklace",
+            "source": "Footprints Without Feet – Chapter 7",
+            "title": "Greed and Vanity",
+            "question": "Write an essay on how greed and vanity ruined Matilda’s life."
+        },
+        {
+            "id": 18,
+            "chapter": "The Necklace",
+            "source": "Footprints Without Feet – Chapter 7",
+            "title": "Contentment in Life",
+            "question": "Write an essay on the importance of contentment."
+        },
+        {
+            "id": 19,
+            "chapter": "Bholi",
+            "source": "Footprints Without Feet – Chapter 8",
+            "title": "Power of Education",
+            "question": "Write an essay on how education transformed Bholi’s life."
+        },
+        {
+            "id": 20,
+            "chapter": "Bholi",
+            "source": "Footprints Without Feet – Chapter 8",
+            "title": "Women Empowerment",
+            "question": "Write an essay on women empowerment with reference to Bholi."
+        },
+        {
+            "id": 21,
+            "chapter": "The Book That Saved the Earth",
+            "source": "Footprints Without Feet – Chapter 9",
+            "title": "Importance of Books",
+            "question": "Write an essay on the importance of books in human civilisation."
+        },
+        {
+            "id": 22,
+            "chapter": "The Book That Saved the Earth",
+            "source": "Footprints Without Feet – Chapter 9",
+            "title": "Knowledge is Power",
+            "question": "Write an essay explaining how knowledge can save humanity."
+        },
+        {
+            "id": 23,
+            "chapter": "General Reflection",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Moral Values in Literature",
+            "question": "Write an essay on the moral values conveyed through Footprints Without Feet."
+        },
+        {
+            "id": 24,
+            "chapter": "General Reflection",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Importance of Teachers",
+            "question": "Write an essay on the role of teachers in shaping character."
+        },
+        {
+            "id": 25,
+            "chapter": "General Reflection",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Trust as a Human Value",
+            "question": "Write an essay discussing trust as an essential human value."
+        },
+        {
+            "id": 26,
+            "chapter": "General Reflection",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Failures as Lessons",
+            "question": "Write an essay on how failures teach valuable lessons."
+        },
+        {
+            "id": 27,
+            "chapter": "General Reflection",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Self-Respect",
+            "question": "Write an essay on the importance of self-respect in life."
+        },
+        {
+            "id": 28,
+            "chapter": "General Reflection",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Kindness Changes Lives",
+            "question": "Write an essay on how kindness can change lives."
+        },
+        {
+            "id": 29,
+            "chapter": "General Reflection",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Ethics in Life",
+            "question": "Write an essay on ethics and morality in modern society."
+        },
+        {
+            "id": 30,
+            "chapter": "General Reflection",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "True Success",
+            "question": "Write an essay on what true success means."
+        },
+        {
+            "id": 31,
+            "chapter": "Imaginative",
+            "source": "Inspired by The Thief’s Story – Chapter 2",
+            "title": "Life After Reform",
+            "question": "Write an essay imagining Hari Singh’s life after reform."
+        },
+        {
+            "id": 32,
+            "chapter": "Imaginative",
+            "source": "Inspired by Footprints Without Feet – Chapter 5",
+            "title": "Responsible Scientist",
+            "question": "Write an essay imagining how Griffin could have used his discovery responsibly."
+        },
+        {
+            "id": 33,
+            "chapter": "Imaginative",
+            "source": "Inspired by Bholi – Chapter 8",
+            "title": "Bholi’s Future",
+            "question": "Write an essay imagining Bholi’s future life."
+        },
+        {
+            "id": 34,
+            "chapter": "Imaginative",
+            "source": "Inspired by The Necklace – Chapter 7",
+            "title": "Alternate Life of Matilda",
+            "question": "Write an essay imagining Matilda’s life if she were content."
+        },
+        {
+            "id": 35,
+            "chapter": "Imaginative",
+            "source": "Inspired by The Book That Saved the Earth – Chapter 9",
+            "title": "Martians Learn a Lesson",
+            "question": "Write an essay imagining the Martians learning from their failure."
+        },
+        {
+            "id": 36,
+            "chapter": "Student Perspective",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Lessons for Students",
+            "question": "Write an essay on lessons students can learn from Footprints Without Feet."
+        },
+        {
+            "id": 37,
+            "chapter": "Student Perspective",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Importance of Reading",
+            "question": "Write an essay on the importance of reading storybooks."
+        },
+        {
+            "id": 38,
+            "chapter": "Student Perspective",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Character Building",
+            "question": "Write an essay on how literature helps in character building."
+        },
+        {
+            "id": 39,
+            "chapter": "Student Perspective",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Applying Moral Lessons",
+            "question": "Write an essay on applying moral lessons in real life."
+        },
+        {
+            "id": 40,
+            "chapter": "Student Perspective",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Role of Stories",
+            "question": "Write an essay on the role of stories in education."
+        },
+        {
+            "id": 41,
+            "chapter": "Comparative",
+            "source": "Multiple Chapters – Footprints Without Feet",
+            "title": "Trust vs Deceit",
+            "question": "Write an essay comparing trust and deceit as shown in different stories."
+        },
+        {
+            "id": 42,
+            "chapter": "Comparative",
+            "source": "Multiple Chapters – Footprints Without Feet",
+            "title": "Science and Responsibility",
+            "question": "Write an essay comparing responsible and irresponsible use of science."
+        },
+        {
+            "id": 43,
+            "chapter": "Comparative",
+            "source": "Multiple Chapters – Footprints Without Feet",
+            "title": "Education as Empowerment",
+            "question": "Write an essay comparing the impact of education on Bholi and Hari Singh."
+        },
+        {
+            "id": 44,
+            "chapter": "Comparative",
+            "source": "Multiple Chapters – Footprints Without Feet",
+            "title": "Greed vs Contentment",
+            "question": "Write an essay comparing Matilda’s greed with Anil’s simplicity."
+        },
+        {
+            "id": 45,
+            "chapter": "Comparative",
+            "source": "Multiple Chapters – Footprints Without Feet",
+            "title": "Wisdom vs Strength",
+            "question": "Write an essay comparing wisdom and physical strength."
+        },
+        {
+            "id": 46,
+            "chapter": "Value-Based",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Honesty",
+            "question": "Write an essay on honesty as the foundation of character."
+        },
+        {
+            "id": 47,
+            "chapter": "Value-Based",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Courage",
+            "question": "Write an essay on courage with examples from the book."
+        },
+        {
+            "id": 48,
+            "chapter": "Value-Based",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Kindness",
+            "question": "Write an essay on kindness as a life-changing value."
+        },
+        {
+            "id": 49,
+            "chapter": "Value-Based",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Responsibility",
+            "question": "Write an essay on personal responsibility."
+        },
+        {
+            "id": 50,
+            "chapter": "Value-Based",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Self-Discipline",
+            "question": "Write an essay on the importance of self-discipline."
+        },
+        {
+            "id": 51,
+            "chapter": "Life Skills",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Decision Making",
+            "question": "Write an essay on the importance of making the right decisions in life."
+        },
+        {
+            "id": 52,
+            "chapter": "Life Skills",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Handling Failure",
+            "question": "Write an essay on how to handle failure positively."
+        },
+        {
+            "id": 53,
+            "chapter": "Life Skills",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Learning from Mistakes",
+            "question": "Write an essay on learning from one’s mistakes."
+        },
+        {
+            "id": 54,
+            "chapter": "Life Skills",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Personal Growth",
+            "question": "Write an essay on personal growth through experiences."
+        },
+        {
+            "id": 55,
+            "chapter": "Life Skills",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Moral Strength",
+            "question": "Write an essay on moral strength in challenging situations."
+        },
+        {
+            "id": 56,
+            "chapter": "Creative",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "My Favourite Character",
+            "question": "Write an essay on your favourite character from Footprints Without Feet."
+        },
+        {
+            "id": 57,
+            "chapter": "Creative",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Most Inspiring Story",
+            "question": "Write an essay on the most inspiring story from the book."
+        },
+        {
+            "id": 58,
+            "chapter": "Creative",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Lessons for Life",
+            "question": "Write an essay on the life lessons taught by the book."
+        },
+        {
+            "id": 59,
+            "chapter": "Creative",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Books and Life",
+            "question": "Write an essay on how books influence our lives."
+        },
+        {
+            "id": 60,
+            "chapter": "Creative",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Change in Me",
+            "question": "Write an essay on how reading this book changed your thinking."
+        },
+        {
+            "id": 61,
+            "chapter": "Exam-Oriented",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Theme-Based Essay",
+            "question": "Write an essay on any one major theme of Footprints Without Feet."
+        },
+        {
+            "id": 62,
+            "chapter": "Exam-Oriented",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Character Sketch Essay",
+            "question": "Write an essay analysing any one character from the book."
+        },
+        {
+            "id": 63,
+            "chapter": "Exam-Oriented",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Message of the Book",
+            "question": "Write an essay on the central message of Footprints Without Feet."
+        },
+        {
+            "id": 64,
+            "chapter": "Exam-Oriented",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Literature and Values",
+            "question": "Write an essay on how literature promotes values."
+        },
+        {
+            "id": 65,
+            "chapter": "Exam-Oriented",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Learning Through Stories",
+            "question": "Write an essay on learning through stories."
+        },
+        {
+            "id": 66,
+            "chapter": "Advanced",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Human Nature",
+            "question": "Write an essay analysing different aspects of human nature shown in the book."
+        },
+        {
+            "id": 67,
+            "chapter": "Advanced",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Ethical Choices",
+            "question": "Write an essay on ethical choices made by characters."
+        },
+        {
+            "id": 68,
+            "chapter": "Advanced",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Role of Society",
+            "question": "Write an essay on the role of society in shaping individuals."
+        },
+        {
+            "id": 69,
+            "chapter": "Advanced",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Science and Ethics",
+            "question": "Write an essay on science and ethics."
+        },
+        {
+            "id": 70,
+            "chapter": "Advanced",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Moral Responsibility",
+            "question": "Write an essay on moral responsibility in life."
+        },
+        {
+            "id": 71,
+            "chapter": "Final Reflection",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Learning from Literature",
+            "question": "Write an essay on how literature helps in personal development."
+        },
+        {
+            "id": 72,
+            "chapter": "Final Reflection",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Youth and Values",
+            "question": "Write an essay on values youth can learn from the book."
+        },
+        {
+            "id": 73,
+            "chapter": "Final Reflection",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Moral Compass",
+            "question": "Write an essay on developing a moral compass."
+        },
+        {
+            "id": 74,
+            "chapter": "Final Reflection",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Ethics in Daily Life",
+            "question": "Write an essay on ethics in daily life."
+        },
+        {
+            "id": 75,
+            "chapter": "Final Reflection",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Values Over Wealth",
+            "question": "Write an essay on values being more important than wealth."
+        },
+        {
+            "id": 76,
+            "chapter": "Conclusion",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Changed Perspective",
+            "question": "Write an essay on how the book changed your perspective on life."
+        },
+        {
+            "id": 77,
+            "chapter": "Conclusion",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Personal Improvement",
+            "question": "Write an essay on personal improvement inspired by the book."
+        },
+        {
+            "id": 78,
+            "chapter": "Conclusion",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Applying Lessons",
+            "question": "Write an essay on applying the lessons from the book in real life."
+        },
+        {
+            "id": 79,
+            "chapter": "Conclusion",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Becoming a Better Human",
+            "question": "Write an essay on becoming a better human being."
+        },
+        {
+            "id": 80,
+            "chapter": "Conclusion",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Final Message",
+            "question": "Write an essay on the final message of Footprints Without Feet."
+        },
+        {
+            "id": 81,
+            "chapter": "Extended Practice",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Role of Education",
+            "question": "Write an essay on the role of education in character formation."
+        },
+        {
+            "id": 82,
+            "chapter": "Extended Practice",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Power of Knowledge",
+            "question": "Write an essay on the power of knowledge."
+        },
+        {
+            "id": 83,
+            "chapter": "Extended Practice",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Human Values",
+            "question": "Write an essay on the importance of human values."
+        },
+        {
+            "id": 84,
+            "chapter": "Extended Practice",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Responsibility Towards Society",
+            "question": "Write an essay on individual responsibility towards society."
+        },
+        {
+            "id": 85,
+            "chapter": "Extended Practice",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Ethical Living",
+            "question": "Write an essay on ethical living."
+        },
+        {
+            "id": 86,
+            "chapter": "Advanced Reflection",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Human Weaknesses",
+            "question": "Write an essay analysing human weaknesses portrayed in the stories."
+        },
+        {
+            "id": 87,
+            "chapter": "Advanced Reflection",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Strength of Mind",
+            "question": "Write an essay on the strength of the human mind."
+        },
+        {
+            "id": 88,
+            "chapter": "Advanced Reflection",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "True Intelligence",
+            "question": "Write an essay on true intelligence."
+        },
+        {
+            "id": 89,
+            "chapter": "Advanced Reflection",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Self-Improvement",
+            "question": "Write an essay on self-improvement."
+        },
+        {
+            "id": 90,
+            "chapter": "Advanced Reflection",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Life Choices",
+            "question": "Write an essay on making the right life choices."
+        },
+        {
+            "id": 91,
+            "chapter": "Final Practice",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Learning Through Literature",
+            "question": "Write an essay on learning through literature."
+        },
+        {
+            "id": 92,
+            "chapter": "Final Practice",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Lessons for Youth",
+            "question": "Write an essay on lessons for youth from the book."
+        },
+        {
+            "id": 93,
+            "chapter": "Final Practice",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Moral Development",
+            "question": "Write an essay on moral development through stories."
+        },
+        {
+            "id": 94,
+            "chapter": "Final Practice",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Ethics and Character",
+            "question": "Write an essay on ethics and character building."
+        },
+        {
+            "id": 95,
+            "chapter": "Final Practice",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Values in Modern Life",
+            "question": "Write an essay on values in modern life."
+        },
+        {
+            "id": 96,
+            "chapter": "Conclusion",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "A Changed Mindset",
+            "question": "Write an essay on how this book changed your mindset."
+        },
+        {
+            "id": 97,
+            "chapter": "Conclusion",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Personal Growth",
+            "question": "Write an essay on personal growth inspired by literature."
+        },
+        {
+            "id": 98,
+            "chapter": "Conclusion",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Applying Values",
+            "question": "Write an essay on applying values learnt from the book."
+        },
+        {
+            "id": 99,
+            "chapter": "Conclusion",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Becoming Better",
+            "question": "Write an essay on becoming a better human being."
+        },
+        {
+            "id": 100,
+            "chapter": "Conclusion",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Final Thoughts",
+            "question": "Write an essay summarising the key messages of Footprints Without Feet."
+        }
+    ]
+}

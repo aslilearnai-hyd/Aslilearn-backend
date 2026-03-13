@@ -1,0 +1,411 @@
+{
+    "content_type": "Long Questions",
+    "chapter": "Chapter 4: Climate",
+    "generated_at": "2026-03-08T20:40:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the meaning of climate.",
+            "answer": "Climate refers to the sum total of weather conditions and variations over a large area for a long period of time.",
+            "answer_outline": [
+                "Definition of climate",
+                "Long-term weather conditions",
+                "Includes temperature, rainfall and winds"
+            ],
+            "key_concepts": [
+                "climate"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Explain the difference between weather and climate.",
+            "answer": "Weather refers to the condition of the atmosphere at a particular place and time, while climate refers to the average weather conditions of a place over a long period.",
+            "answer_outline": [
+                "Definition of weather",
+                "Definition of climate",
+                "Short-term vs long-term conditions"
+            ],
+            "key_concepts": [
+                "weather",
+                "climate"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the elements of weather and climate.",
+            "answer": "The elements of weather and climate include temperature, atmospheric pressure, wind, humidity and precipitation.",
+            "answer_outline": [
+                "Temperature",
+                "Atmospheric pressure",
+                "Wind",
+                "Humidity",
+                "Precipitation"
+            ],
+            "key_concepts": [
+                "weather elements"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain why India has a monsoon type of climate.",
+            "answer": "India has a monsoon type of climate because seasonal winds known as monsoons bring rainfall to most parts of the country.",
+            "answer_outline": [
+                "Seasonal reversal of winds",
+                "Monsoon rainfall",
+                "Influence on Indian climate"
+            ],
+            "key_concepts": [
+                "monsoon climate"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the meaning of monsoon.",
+            "answer": "Monsoon refers to the seasonal reversal of wind direction during a year.",
+            "answer_outline": [
+                "Definition of monsoon",
+                "Seasonal wind reversal",
+                "Importance for rainfall"
+            ],
+            "key_concepts": [
+                "monsoon"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 6,
+            "question": "Explain the role of latitude in determining climate.",
+            "answer": "Latitude affects the amount of solar energy received at a place and influences its temperature.",
+            "answer_outline": [
+                "Latitude and solar radiation",
+                "Temperature differences",
+                "Effect on climate"
+            ],
+            "key_concepts": [
+                "latitude"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Explain how altitude influences climate.",
+            "answer": "As altitude increases, temperature decreases, making mountainous regions cooler.",
+            "answer_outline": [
+                "Altitude definition",
+                "Temperature decreases with height",
+                "Example of hill stations"
+            ],
+            "key_concepts": [
+                "altitude"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain how the Himalayas influence the climate of India.",
+            "answer": "The Himalayas act as a barrier preventing cold winds from Central Asia and also cause rainfall by blocking monsoon winds.",
+            "answer_outline": [
+                "Barrier to cold winds",
+                "Influence on rainfall",
+                "Protection of Indian climate"
+            ],
+            "key_concepts": [
+                "Himalayas"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the concept of continentality.",
+            "answer": "Continentality refers to extreme climate conditions experienced in places far from the sea.",
+            "answer_outline": [
+                "Distance from sea",
+                "Extreme temperature conditions",
+                "Example of inland areas"
+            ],
+            "key_concepts": [
+                "continentality"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 10,
+            "question": "Explain the cold weather season in India.",
+            "answer": "The cold weather season occurs from mid-November to February and is characterized by low temperatures and dry weather.",
+            "answer_outline": [
+                "Winter season months",
+                "Low temperatures",
+                "Snowfall in Himalayas"
+            ],
+            "key_concepts": [
+                "winter season"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the hot weather season in India.",
+            "answer": "The hot weather season lasts from March to May and is characterized by high temperatures and hot winds.",
+            "answer_outline": [
+                "Summer season months",
+                "High temperatures",
+                "Loo winds"
+            ],
+            "key_concepts": [
+                "summer season"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Explain the meaning of loo winds.",
+            "answer": "Loo are strong, hot and dry winds that blow over northern India during summer.",
+            "answer_outline": [
+                "Hot winds",
+                "Summer season",
+                "Effect on people"
+            ],
+            "key_concepts": [
+                "loo winds"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 13,
+            "question": "Explain the advancing monsoon season.",
+            "answer": "The advancing monsoon season begins in early June when southwest monsoon winds bring rainfall to most parts of India.",
+            "answer_outline": [
+                "Arrival of monsoon",
+                "Southwest winds",
+                "Rainfall across India"
+            ],
+            "key_concepts": [
+                "advancing monsoon"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 14,
+            "question": "Explain the retreating monsoon season.",
+            "answer": "Retreating monsoon occurs during October and November when monsoon winds withdraw from India.",
+            "answer_outline": [
+                "Withdrawal of monsoon",
+                "Clear skies",
+                "Cyclonic rainfall"
+            ],
+            "key_concepts": [
+                "retreating monsoon"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain why Tamil Nadu receives rainfall in winter.",
+            "answer": "Tamil Nadu receives rainfall during winter due to retreating monsoon winds and cyclonic storms from the Bay of Bengal.",
+            "answer_outline": [
+                "Retreating monsoon",
+                "Cyclonic storms",
+                "Tamil Nadu rainfall"
+            ],
+            "key_concepts": [
+                "Tamil Nadu rainfall"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain the distribution of rainfall in India.",
+            "answer": "Rainfall in India varies greatly from region to region due to monsoon winds and relief features.",
+            "answer_outline": [
+                "High rainfall regions",
+                "Low rainfall regions",
+                "Influence of relief"
+            ],
+            "key_concepts": [
+                "rainfall distribution"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 17,
+            "question": "Explain why northeastern India receives heavy rainfall.",
+            "answer": "Moist monsoon winds strike the Khasi Hills causing heavy rainfall.",
+            "answer_outline": [
+                "Monsoon winds",
+                "Khasi Hills",
+                "Heavy rainfall"
+            ],
+            "key_concepts": [
+                "orographic rainfall"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 18,
+            "question": "Explain why Rajasthan receives low rainfall.",
+            "answer": "Rajasthan receives low rainfall because it lies far from the sea and monsoon winds lose moisture before reaching it.",
+            "answer_outline": [
+                "Distance from sea",
+                "Loss of moisture",
+                "Desert climate"
+            ],
+            "key_concepts": [
+                "low rainfall"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 19,
+            "question": "Explain the meaning of break in monsoon.",
+            "answer": "Break in monsoon refers to short intervals during the rainy season when rainfall temporarily stops.",
+            "answer_outline": [
+                "Temporary pause in rainfall",
+                "Occurs during monsoon",
+                "Effect on rainfall pattern"
+            ],
+            "key_concepts": [
+                "monsoon break"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 20,
+            "question": "Explain the causes of floods in India.",
+            "answer": "Floods occur due to heavy monsoon rainfall and overflowing rivers.",
+            "answer_outline": [
+                "Heavy rainfall",
+                "River overflow",
+                "Flood damage"
+            ],
+            "key_concepts": [
+                "floods"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Explain the causes of droughts in India.",
+            "answer": "Droughts occur when regions receive very little rainfall for long periods.",
+            "answer_outline": [
+                "Low rainfall",
+                "Water shortage",
+                "Impact on agriculture"
+            ],
+            "key_concepts": [
+                "drought"
+            ],
+            "marks": 4,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Explain the importance of monsoon for agriculture.",
+            "answer": "Monsoon rainfall provides water necessary for crop cultivation.",
+            "answer_outline": [
+                "Rainfall for crops",
+                "Agricultural activities",
+                "Food production"
+            ],
+            "key_concepts": [
+                "agriculture"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain the importance of monsoon for India's economy.",
+            "answer": "The monsoon influences agriculture, water resources and economic activities in India.",
+            "answer_outline": [
+                "Agriculture",
+                "Water supply",
+                "Economic activities"
+            ],
+            "key_concepts": [
+                "economy"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain how climate affects the lifestyle of people.",
+            "answer": "Climate influences people's food, clothing, housing and occupations.",
+            "answer_outline": [
+                "Food habits",
+                "Clothing",
+                "Housing"
+            ],
+            "key_concepts": [
+                "climate influence"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain why monsoon is called a unifying bond.",
+            "answer": "Monsoon influences agriculture and life across India, connecting different regions through a common seasonal cycle.",
+            "answer_outline": [
+                "Seasonal cycle",
+                "Agriculture dependence",
+                "National importance"
+            ],
+            "key_concepts": [
+                "unifying bond"
+            ],
+            "marks": 5,
+            "difficulty_level": "easy",
+            "source_section": "Section 4.5"
+        }
+    ]
+}

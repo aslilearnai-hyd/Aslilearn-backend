@@ -1,0 +1,261 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 5: Number Play",
+  "generated_at": "2026-03-04T22:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the concept of even and odd numbers with examples.",
+      "answer": "Even numbers are integers divisible by 2 and can be written in the form 2n. Odd numbers are integers that leave a remainder of 1 when divided by 2 and can be written in the form 2n + 1.",
+      "answer_outline": [
+        "Definition of even numbers",
+        "Definition of odd numbers",
+        "Examples"
+      ],
+      "key_concepts": ["even numbers", "odd numbers"],
+      "marks": 5,
+      "source_section": "Section 5.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain why the sum of two even numbers is always even.",
+      "answer": "Let the two even numbers be 2a and 2b. Their sum is 2a + 2b = 2(a + b), which is divisible by 2, so the result is even.",
+      "answer_outline": [
+        "Representation of even numbers",
+        "Addition",
+        "Conclusion"
+      ],
+      "key_concepts": ["even numbers"],
+      "marks": 5,
+      "source_section": "Section 5.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain why the sum of two odd numbers is always even.",
+      "answer": "Let the odd numbers be 2a + 1 and 2b + 1. Their sum is 2a + 1 + 2b + 1 = 2(a + b + 1), which is divisible by 2 and hence even.",
+      "answer_outline": [
+        "Representation of odd numbers",
+        "Addition",
+        "Conclusion"
+      ],
+      "key_concepts": ["odd numbers"],
+      "marks": 5,
+      "source_section": "Section 5.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain why the product of two odd numbers is always odd.",
+      "answer": "Let the odd numbers be 2a + 1 and 2b + 1. Their product is (2a + 1)(2b + 1) = 4ab + 2a + 2b + 1, which is of the form 2n + 1 and hence odd.",
+      "answer_outline": [
+        "Representation of odd numbers",
+        "Multiplication",
+        "Conclusion"
+      ],
+      "key_concepts": ["odd numbers"],
+      "marks": 5,
+      "source_section": "Section 5.1"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain why the product of an even number and an odd number is always even.",
+      "answer": "Let the even number be 2a and the odd number be 2b + 1. Their product is 2a(2b + 1) = 2(2ab + a), which is divisible by 2 and hence even.",
+      "answer_outline": [
+        "Representation of numbers",
+        "Multiplication",
+        "Conclusion"
+      ],
+      "key_concepts": ["even numbers", "odd numbers"],
+      "marks": 5,
+      "source_section": "Section 5.1"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain the meaning of factors and multiples with examples.",
+      "answer": "A factor is a number that divides another number exactly, while a multiple is a number obtained by multiplying a number by an integer. For example, factors of 12 are 1, 2, 3, 4, 6 and 12.",
+      "answer_outline": [
+        "Definition of factors",
+        "Definition of multiples",
+        "Examples"
+      ],
+      "key_concepts": ["factors", "multiples"],
+      "marks": 4,
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain the difference between always true, sometimes true and never true statements.",
+      "answer": "An always true statement is true for all values, a sometimes true statement is true for some values, and a never true statement is false for all values.",
+      "answer_outline": [
+        "Definition of always true",
+        "Definition of sometimes true",
+        "Definition of never true"
+      ],
+      "key_concepts": ["logical statements"],
+      "marks": 4,
+      "source_section": "Section 5.3"
+    },
+    {
+      "question_number": 8,
+      "question": "Give examples of always true mathematical statements.",
+      "answer": "Examples include: The sum of two even numbers is even, and the square of any number is non-negative.",
+      "answer_outline": ["Example 1", "Example 2"],
+      "key_concepts": ["always true statements"],
+      "marks": 3,
+      "source_section": "Section 5.3"
+    },
+    {
+      "question_number": 9,
+      "question": "Give examples of sometimes true mathematical statements.",
+      "answer": "An example is: A number is divisible by 2. This is true for some numbers but not for all numbers.",
+      "answer_outline": ["Definition", "Example"],
+      "key_concepts": ["sometimes true statements"],
+      "marks": 3,
+      "source_section": "Section 5.3"
+    },
+    {
+      "question_number": 10,
+      "question": "Give examples of never true mathematical statements.",
+      "answer": "An example is: An odd number is divisible by 2. This statement is never true.",
+      "answer_outline": ["Example"],
+      "key_concepts": ["never true statements"],
+      "marks": 3,
+      "source_section": "Section 5.3"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain the importance of identifying patterns in numbers.",
+      "answer": "Recognizing patterns helps in predicting future numbers, solving problems quickly and understanding relationships between numbers.",
+      "answer_outline": ["Definition", "Importance"],
+      "key_concepts": ["number patterns"],
+      "marks": 4,
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 12,
+      "question": "Explain why the square of an even number is always even.",
+      "answer": "An even number can be written as 2n. Its square is (2n)² = 4n², which is divisible by 2 and therefore even.",
+      "answer_outline": ["Representation of even number", "Squaring"],
+      "key_concepts": ["even numbers", "square numbers"],
+      "marks": 4,
+      "source_section": "Section 5.1"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain why the square of an odd number is always odd.",
+      "answer": "An odd number can be written as 2n + 1. Squaring it results in a number of the form 2k + 1, which is odd.",
+      "answer_outline": ["Representation of odd number", "Squaring"],
+      "key_concepts": ["odd numbers", "square numbers"],
+      "marks": 4,
+      "source_section": "Section 5.1"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain the meaning of divisibility with examples.",
+      "answer": "A number is divisible by another number if it leaves no remainder when divided. For example, 12 is divisible by 3.",
+      "answer_outline": ["Definition", "Example"],
+      "key_concepts": ["divisibility"],
+      "marks": 3,
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain why zero is considered an even number.",
+      "answer": "Zero is divisible by 2 and can be written as 2 × 0, so it is an even number.",
+      "answer_outline": ["Definition of even number", "Explanation"],
+      "key_concepts": ["even numbers"],
+      "marks": 3,
+      "source_section": "Section 5.1"
+    },
+    {
+      "question_number": 16,
+      "question": "Explain how number properties help in solving mathematical problems.",
+      "answer": "Understanding properties such as parity, factors and multiples helps simplify calculations and identify patterns in numbers.",
+      "answer_outline": ["Use of properties", "Examples"],
+      "key_concepts": ["number properties"],
+      "marks": 4,
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 17,
+      "question": "Explain why the product of two even numbers is always even.",
+      "answer": "Let the numbers be 2a and 2b. Their product is 4ab, which is divisible by 2 and hence even.",
+      "answer_outline": ["Representation", "Multiplication"],
+      "key_concepts": ["even numbers"],
+      "marks": 4,
+      "source_section": "Section 5.1"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain the concept of parity in numbers.",
+      "answer": "Parity refers to whether a number is even or odd. It helps identify patterns and properties in arithmetic operations.",
+      "answer_outline": ["Definition", "Example"],
+      "key_concepts": ["parity"],
+      "marks": 4,
+      "source_section": "Section 5.1"
+    },
+    {
+      "question_number": 19,
+      "question": "Explain the importance of logical reasoning in mathematics.",
+      "answer": "Logical reasoning helps in understanding mathematical relationships, proving statements and solving complex problems.",
+      "answer_outline": ["Definition", "Importance"],
+      "key_concepts": ["logical reasoning"],
+      "marks": 4,
+      "source_section": "Section 5.3"
+    },
+    {
+      "question_number": 20,
+      "question": "Explain how number patterns help in predicting future terms.",
+      "answer": "By identifying the rule that generates the sequence, we can predict the next terms accurately.",
+      "answer_outline": ["Identify rule", "Apply rule"],
+      "key_concepts": ["number sequences"],
+      "marks": 3,
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 21,
+      "question": "Explain the importance of factors in mathematics.",
+      "answer": "Factors help in simplifying numbers, finding HCF and solving divisibility problems.",
+      "answer_outline": ["Definition", "Applications"],
+      "key_concepts": ["factors"],
+      "marks": 4,
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain the importance of multiples in mathematics.",
+      "answer": "Multiples are useful in solving problems related to LCM and identifying number patterns.",
+      "answer_outline": ["Definition", "Applications"],
+      "key_concepts": ["multiples"],
+      "marks": 4,
+      "source_section": "Section 5.2"
+    },
+    {
+      "question_number": 23,
+      "question": "Explain why the sum of an even and an odd number is always odd.",
+      "answer": "Let the numbers be 2a and 2b + 1. Their sum is 2(a + b) + 1, which is odd.",
+      "answer_outline": ["Representation", "Addition"],
+      "key_concepts": ["even numbers", "odd numbers"],
+      "marks": 4,
+      "source_section": "Section 5.1"
+    },
+    {
+      "question_number": 24,
+      "question": "Explain how mathematical statements can be tested for truth.",
+      "answer": "By substituting different numbers into the statement and checking whether it holds true or false.",
+      "answer_outline": ["Testing method", "Example"],
+      "key_concepts": ["logical statements"],
+      "marks": 4,
+      "source_section": "Section 5.3"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain how patterns in numbers make mathematics easier to understand.",
+      "answer": "Patterns help identify relationships between numbers, making calculations faster and improving problem-solving skills.",
+      "answer_outline": ["Pattern recognition", "Benefits"],
+      "key_concepts": ["number patterns"],
+      "marks": 4,
+      "source_section": "Section 5.2"
+    }
+  ]
+}

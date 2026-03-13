@@ -1,0 +1,209 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter: The World of Metals and Non-metals",
+    "difficulty": "Hard",
+    "generated_at": "2026-03-06T22:32:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "An element 'X' reacts with oxygen to form an oxide which is soluble in water. The solution turns red litmus paper blue. Is 'X' a metal or a non-metal? Justify.",
+            "answer": "Element 'X' is a metal. Metallic oxides are basic in nature, and when dissolved in water, they form bases that turn red litmus blue.",
+            "key_concepts": ["metallic oxides", "nature of elements"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 2,
+            "question": "Why is sodium stored in kerosene whereas phosphorus is stored in water, despite both being highly reactive?",
+            "answer": "Sodium reacts violently with both air and water, so it is kept in kerosene. Phosphorus reacts with air but does not react with water, so water is used to shield it from oxygen.",
+            "key_concepts": ["reactivity", "chemical storage"],
+            "marks": 3,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Can we store lemon pickle in an aluminium utensil? Explain the chemical reasoning.",
+            "answer": "No. Lemon contains citric acid which reacts with the aluminium metal to produce toxic salts and hydrogen gas, making the food unfit for consumption.",
+            "key_concepts": ["metal-acid reaction", "food safety"],
+            "marks": 2,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 4,
+            "question": "A solution of Copper Sulphate was kept in an iron pot. After a few days, the pot was found to have many holes. Explain why.",
+            "answer": "Iron is more reactive than copper. It displaced copper from the solution (forming iron sulphate), and in the process, the iron metal was consumed/dissolved, creating holes.",
+            "key_concepts": ["displacement reaction", "reactivity series"],
+            "marks": 3,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 5,
+            "question": "What is the 'Reactivity Series' of metals and how does it help predict the outcome of a displacement reaction?",
+            "answer": "It is an arrangement of metals in decreasing order of their reactivity. A metal higher in the series can displace any metal lower than it from its salt solution.",
+            "key_concepts": ["reactivity series"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Why do non-metals generally not produce hydrogen gas when reacted with dilute acids?",
+            "answer": "Non-metals are electron acceptors. To produce hydrogen gas, they would need to donate electrons to H+ ions, which they cannot do.",
+            "key_concepts": ["chemical properties", "electron transfer"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Compare the reaction of Sodium and Iron with water.",
+            "answer": "Sodium reacts vigorously with cold water producing heat and catching fire. Iron reacts very slowly and usually only with steam or long exposure to moist air (rusting).",
+            "key_concepts": ["reaction with water", "comparative reactivity"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Identify the gas 'G' which burns with a pop sound and is produced when Zinc reacts with Sodium Hydroxide.",
+            "answer": "The gas 'G' is Hydrogen. Some reactive metals like Zinc react with strong bases to release hydrogen gas.",
+            "key_concepts": ["metal-base reaction"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Graphite is a non-metal, yet it is used to make electrodes in batteries. Why?",
+            "answer": "Unlike most non-metals, graphite has free electrons in its structure, making it a very good conductor of electricity.",
+            "key_concepts": ["conductivity", "graphite"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 10,
+            "question": "What is 'anodizing' and how does it protect aluminium from further corrosion?",
+            "answer": "It is the process of forming a thick protective oxide layer on aluminium using electricity. This layer prevents further reaction with oxygen.",
+            "key_concepts": ["corrosion prevention", "aluminium"],
+            "marks": 2,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Explain the observation: A copper plate immersed in Silver Nitrate solution turns the solution blue and gets a silver coating.",
+            "answer": "Copper is more reactive than silver. It displaces silver (forming silver coating) and creates Copper Nitrate, which makes the solution blue.",
+            "key_concepts": ["displacement reaction"],
+            "marks": 3,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Why is tungsten used almost exclusively for filament of electric lamps?",
+            "answer": "Tungsten is a metal with a very high melting point and high resistance, allowing it to glow white-hot without melting.",
+            "key_concepts": ["physical properties", "uses of metals"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 13,
+            "question": "Differentiate between the nature of oxides formed by Magnesium and Sulphur.",
+            "answer": "Magnesium (metal) forms magnesium oxide, which is basic. Sulphur (non-metal) forms sulphur dioxide, which is acidic.",
+            "key_concepts": ["acidic vs basic oxides"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 14,
+            "question": "What happens when a copper vessel is exposed to moist air for a long time? Give the chemical equation.",
+            "answer": "It develops a green coating of basic copper carbonate. 2Cu + H2O + CO2 + O2 -> Cu(OH)2 + CuCO3.",
+            "key_concepts": ["corrosion of copper"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Which metal is the best conductor of heat and electricity? Why is it not used for household wiring?",
+            "answer": "Silver is the best conductor. It is not used for household wiring because it is very expensive.",
+            "key_concepts": ["conductivity", "economics of materials"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain why non-metals are generally poor conductors of heat.",
+            "answer": "Non-metals do not have free electrons or a closely packed crystalline structure that allows for the efficient transfer of thermal energy.",
+            "key_concepts": ["thermal conductivity"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 17,
+            "question": "How does the 'sonorous' property of metals differ from the 'brittle' nature of non-metals during a physical impact?",
+            "answer": "When struck, metals vibrate to produce sound (sonorous), whereas non-metals break into smaller pieces because their bonds cannot slide (brittle).",
+            "key_concepts": ["physical properties comparison"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 18,
+            "question": "A student finds a sample that is shiny but breaks into pieces when hit with a hammer. Is it a metal? Explain.",
+            "answer": "No, it is likely a non-metal (like Iodine or Graphite). While lustre is a metal property, brittleness is a hallmark of non-metals.",
+            "key_concepts": ["exceptions", "physical properties"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 19,
+            "question": "What is the role of non-metals in the growth of plants?",
+            "answer": "Non-metals like Nitrogen, Phosphorus, and Potassium (via salts) are the building blocks of proteins and DNA required for plant development.",
+            "key_concepts": ["biological importance"],
+            "marks": 2,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Why is iron galvanized with zinc and not copper to prevent rusting?",
+            "answer": "Zinc is more reactive than iron and protects it even if scratched (sacrificial). Copper is less reactive and would actually speed up rusting if the coating were scratched.",
+            "key_concepts": ["galvanization", "reactivity"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 21,
+            "question": "State the reaction between Iron and Steam.",
+            "answer": "3Fe + 4H2O (steam) -> Fe3O4 + 4H2. It forms magnetic iron oxide and hydrogen gas.",
+            "key_concepts": ["chemical reactions"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        },
+        {
+            "question_number": 22,
+            "question": "Why are non-metals used in liquid form in some cooling systems (e.g., Liquid Nitrogen)?",
+            "answer": "Because they have very low boiling points and can absorb vast amounts of heat, acting as effective cryogens.",
+            "key_concepts": ["physical properties", "uses"],
+            "marks": 2,
+            "source_section": "Section 3.4"
+        },
+        {
+            "question_number": 23,
+            "question": "What is 'Allotropy'? Name two non-metals that show this property.",
+            "answer": "The existence of an element in different physical forms with similar chemical properties. Examples: Carbon (Diamond/Graphite) and Phosphorus.",
+            "key_concepts": ["allotropes"],
+            "marks": 2,
+            "source_section": "Section 3.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain why metals are generally solid at room temperature using the concept of atomic bonding.",
+            "answer": "Metals have strong metallic bonds caused by the attraction between positive ions and a 'sea' of electrons, requiring high energy to break.",
+            "key_concepts": ["metallic bonding"],
+            "marks": 2,
+            "source_section": "Section 3.1"
+        },
+        {
+            "question_number": 25,
+            "question": "If you mix Sulphur powder and Iron filings, is it a chemical change? What happens if you heat the mixture?",
+            "answer": "Mixing is a physical change (can be separated by magnet). Heating it is a chemical change because they react to form Iron Sulphide (FeS).",
+            "key_concepts": ["physical vs chemical change"],
+            "marks": 2,
+            "source_section": "Section 3.3"
+        }
+    ]
+}

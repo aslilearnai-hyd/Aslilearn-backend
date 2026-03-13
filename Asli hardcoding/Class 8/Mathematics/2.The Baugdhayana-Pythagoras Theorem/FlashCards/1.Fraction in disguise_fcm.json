@@ -1,0 +1,114 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 1: Fractions in Disguise (Percentages)",
+  "generated_at": "2026-03-05T12:00:00",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What does percentage mean?",
+        "correct_answer": "Per hundred",
+        "explanation": "Percentage represents a fraction out of 100.",
+        "source_section": "Section 1.1"
+      },
+      {
+        "question": "How do you convert a fraction into a percentage?",
+        "correct_answer": "Multiply the fraction by 100",
+        "explanation": "Fraction × 100 gives the percentage form.",
+        "source_section": "Section 1.1"
+      },
+      {
+        "question": "How do you convert a decimal into a percentage?",
+        "correct_answer": "Multiply the decimal by 100",
+        "explanation": "The result is written with the percent symbol.",
+        "source_section": "Section 1.1"
+      },
+      {
+        "question": "How do you convert a percentage into a fraction?",
+        "correct_answer": "Write it over 100 and simplify",
+        "explanation": "Example: 25% = 25/100 = 1/4.",
+        "source_section": "Section 1.1"
+      },
+      {
+        "question": "What is meant by percentage increase?",
+        "correct_answer": "The increase in value expressed as a percentage of the original value",
+        "explanation": "It measures how much a quantity grows relative to the original amount.",
+        "source_section": "Section 1.3"
+      },
+      {
+        "question": "What is meant by percentage decrease?",
+        "correct_answer": "The decrease in value expressed as a percentage of the original value",
+        "explanation": "It shows how much a quantity reduces compared to the original value.",
+        "source_section": "Section 1.3"
+      },
+      {
+        "question": "What is profit?",
+        "correct_answer": "Profit occurs when the selling price is greater than the cost price",
+        "explanation": "Profit = Selling Price − Cost Price.",
+        "source_section": "Section 1.3"
+      },
+      {
+        "question": "What is loss?",
+        "correct_answer": "Loss occurs when the selling price is less than the cost price",
+        "explanation": "Loss = Cost Price − Selling Price.",
+        "source_section": "Section 1.3"
+      },
+      {
+        "question": "What is discount?",
+        "correct_answer": "A reduction given on the marked price",
+        "explanation": "Discount reduces the selling price of an item.",
+        "source_section": "Section 1.3"
+      },
+      {
+        "question": "What is marked price?",
+        "correct_answer": "The price printed on an item before discount",
+        "explanation": "Discount is usually applied on the marked price.",
+        "source_section": "Section 1.3"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Percentage",
+        "content": "Percentage means per hundred and is used to compare quantities easily.",
+        "source_section": "Section 1.1"
+      },
+      {
+        "title": "Conversion Between Forms",
+        "content": "Fractions, decimals, and percentages represent the same values in different forms.",
+        "source_section": "Section 1.1"
+      },
+      {
+        "title": "Percentage Increase",
+        "content": "Percentage increase = (Increase ÷ Original Value) × 100.",
+        "source_section": "Section 1.3"
+      },
+      {
+        "title": "Profit and Loss",
+        "content": "Profit occurs when SP > CP and loss occurs when SP < CP.",
+        "source_section": "Section 1.3"
+      },
+      {
+        "title": "Discount",
+        "content": "Selling price after discount = Marked Price − Discount.",
+        "source_section": "Section 1.3"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "Percentage always represents a value out of 100.",
+        "source_section": "Section 1.1"
+      },
+      {
+        "fact": "1% means one part out of one hundred.",
+        "source_section": "Section 1.1"
+      },
+      {
+        "fact": "Profit and loss percentages are always calculated on cost price.",
+        "source_section": "Section 1.3"
+      },
+      {
+        "fact": "Discount is calculated on the marked price of an item.",
+        "source_section": "Section 1.3"
+      }
+    ]
+  }
+}

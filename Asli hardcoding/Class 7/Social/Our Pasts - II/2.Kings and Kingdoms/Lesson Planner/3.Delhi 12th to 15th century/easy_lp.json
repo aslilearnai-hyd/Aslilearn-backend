@@ -1,0 +1,188 @@
+{
+    "class": "Class 7",
+    "subject": "History",
+    "chapter_name": "Delhi: 12th to 15th Century",
+    "lesson_level": "Easy",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Identify the major dynasties that ruled Delhi from the 12th to the 15th century",
+        "Understand how Delhi became an important capital city under the Tomaras and Chauhans",
+        "Learn about Tawarikh (histories) and who wrote them",
+        "Recognize the importance of Raziyya Sultan as a female ruler",
+        "Understand the expansion of the Delhi Sultanate from Garrison towns to Empires",
+        "Compare the administration of Alauddin Khalji and Muhammad Tughluq in simple terms",
+        "Identify the mosque as a center of social and religious life"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "The Birth of a Capital",
+            "topics_covered": [
+                "Delhi under the Tomara Rajputs",
+                "The Chauhan conquest and 'Dehliwal' coins",
+                "Introduction to the five dynasties of the Sultanate"
+            ],
+            "teaching_strategy": [
+                "Map work: Locating the 'Cities of Delhi' (Dehli-i-Kuhna, Siri, Jahanpanah)",
+                "Discussion: 'Why did kings choose Delhi as their capital?'",
+                "Showing pictures of old coins (Dehliwal)"
+            ],
+            "student_activities": [
+                "List the five dynasties of the Delhi Sultanate in the correct order",
+                "Color a map showing the location of early Delhi"
+            ],
+            "assessment": [
+                "Oral quiz: Who were the first rulers to make Delhi their capital?",
+                "Match the dynasty to its first famous ruler"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Learning from Tawarikh",
+            "topics_covered": [
+                "What is Tawarikh? (Plural of Tarikh)",
+                "Who were the authors? (Secretaries, Administrators, Poets)",
+                "The 'Circle of Justice' (King and Peasant relationship)"
+            ],
+            "teaching_strategy": [
+                "Storytelling: How history was written for the Sultan",
+                "Explaining the 'Circle of Justice' using a simple diagram",
+                "Discussion: 'Why did authors live in cities and not villages?'"
+            ],
+            "student_activities": [
+                "Draw the 'Circle of Justice' in your notebook",
+                "Write two lines about who wrote the histories of the Sultans"
+            ],
+            "assessment": [
+                "Short answer: What is 'Tawarikh'?",
+                "Who was the King dependent on for his survival according to the Circle of Justice?"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "The Story of Raziyya Sultan",
+            "topics_covered": [
+                "Raziyya's rise to the throne (1236)",
+                "Minhaj-i-Siraj’s views on a female ruler",
+                "Why she was removed from power"
+            ],
+            "teaching_strategy": [
+                "Discussion: 'If a princess is more capable than her brothers, should she rule?'",
+                "Reading the text: What the chronicler thought about 'God's creation'",
+                "Comparing Raziyya with other female rulers (Rudramadevi/Didda)"
+            ],
+            "student_activities": [
+                "Role-play: A debate between Minhaj-i-Siraj and a supporter of Raziyya",
+                "Write one sentence on why Raziyya was unique"
+            ],
+            "assessment": [
+                "In which year did Raziyya become Sultan?",
+                "True/False: Everyone in the 13th century was happy to have a woman ruler"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Garrison Towns and Expansion",
+            "topics_covered": [
+                "Internal Frontiers: Clearing forests in the Doab",
+                "External Frontiers: Military expeditions to South India",
+                "What is a 'Garrison Town'?"
+            ],
+            "teaching_strategy": [
+                "Visual aids: Showing a fortified town with soldiers (Garrison)",
+                "Map work: Arrows showing the expansion towards the South",
+                "Explaining the capture of elephants, horses, and slaves"
+            ],
+            "student_activities": [
+                "Define 'Garrison Town' and 'Hinterland' in simple words",
+                "Mark the areas cleared for agriculture on a map"
+            ],
+            "assessment": [
+                "Oral quiz: Where did the Sultanate collect its taxes from?",
+                "What was the main goal of 'External Frontiers'?"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "The Mosque and the Community",
+            "topics_covered": [
+                "Masjid and Quwwat al-Islam",
+                "Congregational prayers (Namaz) and the Imam",
+                "Meaning of Qibla (Direction of Mecca)"
+            ],
+            "teaching_strategy": [
+                "Showing pictures of the Qutb Minar and mosque arches",
+                "Explaining why Sultans built many mosques (to show they were protectors of Islam)",
+                "Discussion on the social gathering aspect of prayers"
+            ],
+            "student_activities": [
+                "Draw an arrow showing the direction of 'Qibla' from India (West)",
+                "Find out the meaning of the word 'Khutba'"
+            ],
+            "assessment": [
+                "Short answer: What is a 'Masjid'?",
+                "Why did the Sultans build mosques in different cities?"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Khaljis and Tughluqs: Administration",
+            "topics_covered": [
+                "The use of Bandagan (Slaves for military service)",
+                "The Iqtadars and Muqtis (Tax collectors)",
+                "Alauddin Khalji’s market control"
+            ],
+            "teaching_strategy": [
+                "Storytelling: Why Sultans trusted slaves more than noble families",
+                "Simple chart: Sultan $\rightarrow$ Iqtadar $\rightarrow$ Revenue",
+                "Discussion: 'How did the Sultan pay his soldiers?'"
+            ],
+            "student_activities": [
+                "Match the term: Iqta - Land; Muqti - Land holder",
+                "Write one difference between a King's son and a 'Bandagan'"
+            ],
+            "assessment": [
+                "Who were 'Bandagan'?",
+                "What was the duty of a 'Muqti'?"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "End of an Era and Review",
+            "topics_covered": [
+                "The Sayyid and Lodi dynasties",
+                "Sher Shah Sur: A small manager who became an Emperor",
+                "Chapter recap and exercises"
+            ],
+            "teaching_strategy": [
+                "Comparing the size of Sher Shah’s empire with the Mughals later",
+                "Fun Revision: 'Dynasty Snake and Ladders' game",
+                "Reviewing NCERT questions"
+            ],
+            "student_activities": [
+                "Complete the 'Sultanate Timeline' on a chart paper",
+                "Answer the 'Let's Recall' questions from the book"
+            ],
+            "assessment": [
+                "Short Unit Test (15 marks)",
+                "Oral quiz: Who was the last dynasty of the Delhi Sultanate?"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "NCERT History Textbook: Our Pasts - II",
+        "Map of the Cities of Delhi",
+        "Pictures of the Qutb Minar and Alai Darwaza",
+        "Flashcards of the 5 Dynasties",
+        "Chart of the 'Circle of Justice'"
+    ],
+    "evaluation_methods": [
+        "Timeline construction",
+        "Vocabulary matching (Iqta, Muqti, Garrison)",
+        "Map marking of South Indian expeditions",
+        "Short-answer definitions",
+        "Oral participation in the Raziyya debate"
+    ],
+    "teacher_tip": "For Period 2, focus on the 'Circle of Justice'. It’s a great way for kids to understand that even 800 years ago, rulers knew they couldn't survive without happy and prosperous farmers!"
+}

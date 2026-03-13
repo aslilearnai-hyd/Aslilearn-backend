@@ -1,0 +1,160 @@
+{
+    "class": "Class 9",
+    "subject": "Social Science - Geography",
+    "chapter_name": "Drainage",
+    "lesson_level": "Easy",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Understand the meaning of drainage and drainage basin",
+        "Identify the major river systems of India",
+        "Differentiate between Himalayan and Peninsular rivers",
+        "Understand the importance of lakes",
+        "Explain the role of rivers in the economy",
+        "Understand the causes and effects of river pollution"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Drainage",
+            "topics_covered": [
+                "Meaning of drainage",
+                "River systems",
+                "Drainage basin and water divide"
+            ],
+            "teaching_strategy": [
+                "Interactive questioning",
+                "Use of maps",
+                "Board explanation"
+            ],
+            "student_activities": [
+                "Identify rivers on the map",
+                "Write definitions of drainage and drainage basin"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Quick concept check"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Himalayan River Systems",
+            "topics_covered": [
+                "Indus river system",
+                "Ganga river system",
+                "Brahmaputra river system"
+            ],
+            "teaching_strategy": [
+                "Map-based explanation",
+                "Discussion of river sources and tributaries"
+            ],
+            "student_activities": [
+                "Locate Himalayan rivers on the atlas",
+                "List tributaries of the Ganga"
+            ],
+            "assessment": [
+                "Short answer questions",
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Peninsular Rivers",
+            "topics_covered": [
+                "Characteristics of Peninsular rivers",
+                "Major rivers: Godavari, Krishna, Mahanadi, Kaveri",
+                "West flowing rivers: Narmada and Tapi"
+            ],
+            "teaching_strategy": [
+                "Concept explanation",
+                "Map demonstration"
+            ],
+            "student_activities": [
+                "Locate peninsular rivers on map",
+                "Compare Himalayan and Peninsular rivers"
+            ],
+            "assessment": [
+                "Oral questions",
+                "Short written responses"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Lakes in India",
+            "topics_covered": [
+                "Types of lakes",
+                "Examples of important lakes in India",
+                "Importance of lakes"
+            ],
+            "teaching_strategy": [
+                "Example-based explanation",
+                "Class discussion"
+            ],
+            "student_activities": [
+                "List important lakes of India",
+                "Discuss uses of lakes"
+            ],
+            "assessment": [
+                "Concept-based questions",
+                "Notebook checking"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Role of Rivers in the Economy",
+            "topics_covered": [
+                "Importance of rivers for agriculture",
+                "Hydroelectric power generation",
+                "Transportation and settlements"
+            ],
+            "teaching_strategy": [
+                "Discussion method",
+                "Real-life examples"
+            ],
+            "student_activities": [
+                "Write uses of rivers",
+                "Discuss cities located on river banks"
+            ],
+            "assessment": [
+                "Short written responses",
+                "Class participation"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "River Pollution and Revision",
+            "topics_covered": [
+                "Causes of river pollution",
+                "Effects of polluted water",
+                "Revision of the chapter"
+            ],
+            "teaching_strategy": [
+                "Concept recap",
+                "Group discussion"
+            ],
+            "student_activities": [
+                "Suggest ways to reduce river pollution",
+                "Answer revision questions"
+            ],
+            "assessment": [
+                "Short test (10 marks)",
+                "Doubt clarification"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Blackboard or Whiteboard",
+        "Chalk or Markers",
+        "Geography textbook",
+        "Atlas or map of India",
+        "Charts showing river systems"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Notebook checking",
+        "Short quizzes",
+        "Class discussion",
+        "Participation in activities"
+    ],
+    "teacher_tip": "Use maps and real-life examples of rivers and lakes to help students visualize drainage systems and understand their importance."
+}

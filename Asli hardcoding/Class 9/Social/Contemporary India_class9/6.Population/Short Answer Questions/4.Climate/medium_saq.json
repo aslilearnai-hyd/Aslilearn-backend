@@ -1,0 +1,284 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter 4: Climate",
+    "generated_at": "2026-03-08T20:10:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Explain the meaning of climate.",
+            "answer": "Climate refers to the sum total of weather conditions and variations over a large area for a long period of time.",
+            "key_concepts": [
+                "climate"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Mention two differences between weather and climate.",
+            "answer": "Weather refers to short-term atmospheric conditions, while climate refers to long-term average weather conditions.",
+            "key_concepts": [
+                "weather",
+                "climate"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Name the main elements of weather.",
+            "answer": "Temperature, atmospheric pressure, wind, humidity and precipitation.",
+            "key_concepts": [
+                "weather elements"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Why does India have a monsoon type of climate?",
+            "answer": "India has a monsoon climate because seasonal winds bring rainfall to most parts of the country.",
+            "key_concepts": [
+                "monsoon"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 5,
+            "question": "Explain the role of latitude in determining climate.",
+            "answer": "Latitude affects the amount of solar energy received by a place, influencing its temperature.",
+            "key_concepts": [
+                "latitude"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 6,
+            "question": "How does altitude influence climate?",
+            "answer": "Temperature decreases with increase in altitude, making mountainous areas cooler.",
+            "key_concepts": [
+                "altitude"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is the influence of distance from the sea on climate?",
+            "answer": "Places near the sea have moderate climates while inland areas experience extreme temperatures.",
+            "key_concepts": [
+                "continentality"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain the term Coriolis force.",
+            "answer": "Coriolis force is the force caused by Earth's rotation that deflects winds to the right in the Northern Hemisphere.",
+            "key_concepts": [
+                "Coriolis force"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 9,
+            "question": "What is the cold weather season in India?",
+            "answer": "The cold weather season lasts from mid-November to February and is characterized by low temperatures.",
+            "key_concepts": [
+                "winter season"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 10,
+            "question": "What are western disturbances?",
+            "answer": "Western disturbances are cyclonic storms originating in the Mediterranean region that bring winter rainfall to northern India.",
+            "key_concepts": [
+                "western disturbances"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Describe the hot weather season in India.",
+            "answer": "The hot weather season occurs from March to May and is characterized by high temperatures and hot winds called loo.",
+            "key_concepts": [
+                "summer season"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 12,
+            "question": "What are loo winds?",
+            "answer": "Loo are strong, hot and dry winds that blow over northern India during summer.",
+            "key_concepts": [
+                "loo"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 13,
+            "question": "What are mango showers?",
+            "answer": "Mango showers are pre-monsoon rains that help in the early ripening of mangoes.",
+            "key_concepts": [
+                "pre-monsoon rain"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 14,
+            "question": "What happens during the advancing monsoon season?",
+            "answer": "Southwest monsoon winds bring widespread rainfall to most parts of India.",
+            "key_concepts": [
+                "advancing monsoon"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Name the two branches of the southwest monsoon.",
+            "answer": "Arabian Sea branch and Bay of Bengal branch.",
+            "key_concepts": [
+                "monsoon branches"
+            ],
+            "marks": 1,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 16,
+            "question": "What is meant by break in monsoon?",
+            "answer": "Break in monsoon refers to short periods when monsoon rainfall temporarily stops.",
+            "key_concepts": [
+                "break in monsoon"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 17,
+            "question": "What is retreating monsoon?",
+            "answer": "Retreating monsoon is the period when southwest monsoon winds withdraw from India.",
+            "key_concepts": [
+                "retreating monsoon"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Why does Tamil Nadu receive rainfall in winter?",
+            "answer": "Tamil Nadu receives rainfall during winter due to retreating monsoon winds and cyclonic storms.",
+            "key_concepts": [
+                "Tamil Nadu rainfall"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 19,
+            "question": "Where does India receive the highest rainfall?",
+            "answer": "Mawsynram in Meghalaya receives the highest rainfall in the world.",
+            "key_concepts": [
+                "Mawsynram"
+            ],
+            "marks": 1,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Which regions receive the least rainfall in India?",
+            "answer": "Western Rajasthan and Ladakh receive very little rainfall.",
+            "key_concepts": [
+                "low rainfall"
+            ],
+            "marks": 1,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 21,
+            "question": "Why does rainfall decrease from east to west in the northern plains?",
+            "answer": "Monsoon winds lose moisture as they move westward, resulting in decreasing rainfall.",
+            "key_concepts": [
+                "rainfall pattern"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 22,
+            "question": "What are cyclones?",
+            "answer": "Cyclones are powerful storms with strong winds and heavy rainfall.",
+            "key_concepts": [
+                "cyclones"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Why are some regions drought-prone?",
+            "answer": "Because they receive very low rainfall.",
+            "key_concepts": [
+                "drought"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 24,
+            "question": "Explain the importance of monsoon for agriculture.",
+            "answer": "Monsoon rainfall provides water necessary for crop cultivation.",
+            "key_concepts": [
+                "agriculture"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.5"
+        },
+        {
+            "question_number": 25,
+            "question": "Why is the monsoon called a unifying bond?",
+            "answer": "Because it influences agriculture, economy and life of people across the country.",
+            "key_concepts": [
+                "monsoon importance"
+            ],
+            "marks": 2,
+            "difficulty_level": "medium",
+            "source_section": "Section 4.5"
+        }
+    ]
+}

@@ -1,0 +1,188 @@
+{
+    "class": "Class 7",
+    "subject": "History",
+    "chapter_name": "Tracing Changes Through a Thousand Years",
+    "lesson_level": "Easy",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Identify the time frame of the medieval period in India (700 to 1750 CE)",
+        "Understand how maps of the same area can look different depending on the cartographer",
+        "Learn that the meaning of words like 'Hindustan' and 'Foreigner' has changed over time",
+        "Recognize the role of scribes in copying manuscripts before the printing press",
+        "Identify new technologies like the Persian wheel and new foods like potatoes",
+        "Understand that society was divided into groups called Jatis with their own rules",
+        "Recognize major changes in religion, including the arrival of Islam and the Bhakti movement"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Old and New Maps",
+            "topics_covered": [
+                "Map by Al-Idrisi (1154 CE) vs. French Cartographer (1720 CE)",
+                "Why Al-Idrisi's map looks 'upside down' to us",
+                "Meaning of Cartography"
+            ],
+            "teaching_strategy": [
+                "Visual comparison: Spot the difference between the two maps in the book",
+                "Simple explanation: How map-making changed over 600 years",
+                "Discussion: 'How would you feel if North was South on a map?'"
+            ],
+            "student_activities": [
+                "Find Sri Lanka on both maps and notice the difference in size/position",
+                "Define 'Cartographer' in your own words"
+            ],
+            "assessment": [
+                "Oral quiz: Who is a person who makes maps?",
+                "Which map looks more like the maps we use today?"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "The Mystery of Words",
+            "topics_covered": [
+                "The word 'Hindustan' then and now",
+                "The word 'Foreigner' (Pardesi/Ajnabi) then and now",
+                "How history depends on the context of words"
+            ],
+            "teaching_strategy": [
+                "Storytelling: A 'foreigner' in a medieval village vs. a modern country",
+                "Explaining that 'Hindustan' did not always mean 'India' as a country",
+                "Comparing meanings: Medieval vs. Modern"
+            ],
+            "student_activities": [
+                "List 2 words that mean something different now than in the past",
+                "Discuss: 'Could a person from the next village be a foreigner 1000 years ago?'"
+            ],
+            "assessment": [
+                "Short answer: What did 'foreigner' mean in the medieval period?",
+                "True/False: Words always mean the same thing throughout history"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Scribes and Manuscripts",
+            "topics_covered": [
+                "Life before the printing press",
+                "Scribes: People who copied books by hand",
+                "Why copies of the same book are often different"
+            ],
+            "teaching_strategy": [
+                "Activity: 'Copying Game' – Students copy a paragraph to see how errors happen",
+                "Showing pictures of old handwriting styles (Nasta’liq and Shikaste)",
+                "Definition of 'Archives' as places where records are kept"
+            ],
+            "student_activities": [
+                "Try to copy a few lines of a complex script from the book",
+                "Explain why copying by hand was a difficult job"
+            ],
+            "assessment": [
+                "Oral quiz: What is an archive?",
+                "Why do historians find it hard to read old manuscripts?"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "New Tech and Yummy Foods",
+            "topics_covered": [
+                "New machines: Persian wheel (water), spinning wheel (cloth), firearms (war)",
+                "New foods: Potatoes, Corn, Chilies, Tea, Coffee",
+                "How people brought new ideas along with them"
+            ],
+            "teaching_strategy": [
+                "Using pictures to show how a Persian wheel works",
+                "Discussion: 'Which of your favorite foods came from outside India?'",
+                "Linking travel to the spread of technology"
+            ],
+            "student_activities": [
+                "Draw a 'Food Plate' showing things that arrived in India 1000 years ago",
+                "Match the technology (Persian wheel) to its use (irrigation)"
+            ],
+            "assessment": [
+                "Name two new technologies used during this period",
+                "Name three foods that were not available in India before 700 CE"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Jatis and Social Groups",
+            "topics_covered": [
+                "The rise of the Rajputs (Sons of Rulers)",
+                "Formation of Jatis (Sub-castes)",
+                "Jati Panchayats and their rules"
+            ],
+            "teaching_strategy": [
+                "Analogy: How a school has rules, Jatis had their own rules",
+                "Explaining that Jatis were based on jobs and backgrounds",
+                "Discussion on how forest-dwellers became farmers"
+            ],
+            "student_activities": [
+                "Write 2 lines on who the Rajputs were",
+                "List one reason why people were grouped into Jatis"
+            ],
+            "assessment": [
+                "Short answer: Who made the rules for a Jati?",
+                "Oral quiz: Were Jatis always ranked the same in every area?"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Empires and Religions",
+            "topics_covered": [
+                "Big empires like Cholas, Tughluqs, and Mughals",
+                "Changes in Hinduism (Bhakti)",
+                "Introduction of Islam and the Quran"
+            ],
+            "teaching_strategy": [
+                "Map work: Showing the large areas covered by 'Pan-regional' empires",
+                "Simple explanation: What is a 'Patron' (someone who helps artists/priests)?",
+                "Identifying the Quran as the holy book of Islam"
+            ],
+            "student_activities": [
+                "Find the names of 3 big dynasties mentioned in the chapter",
+                "Discuss: 'What is a personal god in the Bhakti tradition?'"
+            ],
+            "assessment": [
+                "What is a 'Pan-regional' empire?",
+                "Name the holy book that Muslims follow"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Chapter Wrap-up",
+            "topics_covered": [
+                "Summary of the 1000-year journey",
+                "Review of important terms: Cartography, Manuscript, Jati",
+                "British division of history (Hindu, Muslim, British)"
+            ],
+            "teaching_strategy": [
+                "Fun Revision: 'History Bingo' using terms from the chapter",
+                "Reviewing NCERT back-exercises together",
+                "Final doubt-clearing session"
+            ],
+            "student_activities": [
+                "Complete the keyword matching worksheet",
+                "Answer: 'Why did the British divide our history into 3 parts?'"
+            ],
+            "assessment": [
+                "Short Unit Test (15 marks)",
+                "Evaluation of the 'Food Plate' drawing"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "NCERT History Textbook: Our Pasts - II",
+        "Visuals of Map 1 (Al-Idrisi) and Map 2 (French)",
+        "Pictures of a Persian Wheel and old scripts",
+        "Blank India maps for marking empires",
+        "Samples/Pictures of chili, potato, and corn"
+    ],
+    "evaluation_methods": [
+        "Classroom participation in the 'Copying Game'",
+        "Worksheets on mapping and definitions",
+        "Matching columns for technologies and foods",
+        "Short-answer Unit Test",
+        "Map identification exercise"
+    ],
+    "teacher_tip": "For Period 3, explain that scribes were like 'human photocopiers.' This helps students understand why history is sometimes like a game of 'Chinese Whispers' where things change slightly with every copy."
+}

@@ -1,0 +1,249 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 6: We Distribute, Yet Things Multiply",
+  "generated_at": "2026-03-04T21:00:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the distributive property of multiplication over addition with an example.",
+      "answer": "The distributive property states that a(b + c) = ab + ac. This means multiplication distributes over addition. Example: 3(4 + 5) = 3×4 + 3×5 = 12 + 15 = 27.",
+      "answer_outline": [
+        "State distributive property",
+        "Explain meaning",
+        "Provide example"
+      ],
+      "key_concepts": ["distributive property"],
+      "marks": 5,
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 2,
+      "question": "Verify the distributive property using numbers.",
+      "answer": "Let a = 4, b = 6, and c = 2. Then a(b + c) = 4(6 + 2) = 4×8 = 32. Also ab + ac = 4×6 + 4×2 = 24 + 8 = 32. Since both sides are equal, distributive property is verified.",
+      "answer_outline": [
+        "Choose values",
+        "Calculate both sides",
+        "Compare results"
+      ],
+      "key_concepts": ["distributive property verification"],
+      "marks": 5,
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Expand the expression 5(2x + 3).",
+      "answer": "Using distributive property: 5(2x + 3) = 5×2x + 5×3 = 10x + 15.",
+      "answer_outline": [
+        "Apply distributive property",
+        "Multiply each term",
+        "Simplify"
+      ],
+      "key_concepts": ["expansion"],
+      "marks": 4,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 4,
+      "question": "Simplify the expression 3(x + 4) + 5x.",
+      "answer": "First expand: 3(x + 4) = 3x + 12. Then add 5x: 3x + 12 + 5x = 8x + 12.",
+      "answer_outline": ["Expand bracket", "Combine like terms", "Simplify"],
+      "key_concepts": ["like terms", "simplification"],
+      "marks": 5,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Factorise the expression 6x + 12.",
+      "answer": "Take common factor 6: 6x + 12 = 6(x + 2).",
+      "answer_outline": ["Identify common factor", "Rewrite expression"],
+      "key_concepts": ["factorisation"],
+      "marks": 4,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain how factorisation is the reverse of expansion.",
+      "answer": "Expansion multiplies terms to remove brackets, while factorisation finds common factors and writes expressions in bracket form.",
+      "answer_outline": [
+        "Define expansion",
+        "Define factorisation",
+        "Explain reverse relationship"
+      ],
+      "key_concepts": ["expansion", "factorisation"],
+      "marks": 5,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 7,
+      "question": "Expand and simplify 4(3x + 2) − 5x.",
+      "answer": "Expand: 4(3x + 2) = 12x + 8. Then subtract 5x: 12x + 8 − 5x = 7x + 8.",
+      "answer_outline": ["Expand", "Combine like terms", "Simplify"],
+      "key_concepts": ["expansion", "simplification"],
+      "marks": 5,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 8,
+      "question": "Factorise 8x + 20.",
+      "answer": "Common factor is 4. So 8x + 20 = 4(2x + 5).",
+      "answer_outline": ["Find common factor", "Rewrite expression"],
+      "key_concepts": ["common factor"],
+      "marks": 4,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain what like terms are with examples.",
+      "answer": "Like terms are algebraic terms with the same variable and exponent. Example: 3x and 5x are like terms.",
+      "answer_outline": ["Definition", "Example"],
+      "key_concepts": ["like terms"],
+      "marks": 4,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 10,
+      "question": "Combine like terms in the expression 2x + 3x + 5.",
+      "answer": "2x + 3x = 5x. So the simplified expression is 5x + 5.",
+      "answer_outline": ["Identify like terms", "Add coefficients"],
+      "key_concepts": ["like terms"],
+      "marks": 3,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 11,
+      "question": "Simplify 2(3x + 4) + 3(2x + 1).",
+      "answer": "Expand: 2(3x + 4) = 6x + 8 and 3(2x + 1) = 6x + 3. Add them: 12x + 11.",
+      "answer_outline": ["Expand both brackets", "Combine terms"],
+      "key_concepts": ["expansion"],
+      "marks": 5,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 12,
+      "question": "Factorise 9x + 15.",
+      "answer": "Common factor is 3. So 9x + 15 = 3(3x + 5).",
+      "answer_outline": ["Find common factor", "Rewrite expression"],
+      "key_concepts": ["factorisation"],
+      "marks": 4,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain the importance of distributive property in algebra.",
+      "answer": "The distributive property helps simplify expressions, solve equations, and perform algebraic manipulations easily.",
+      "answer_outline": ["Explanation", "Importance"],
+      "key_concepts": ["distributive property"],
+      "marks": 4,
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 14,
+      "question": "Expand 7(x + 5).",
+      "answer": "7(x + 5) = 7x + 35.",
+      "answer_outline": ["Apply distributive property"],
+      "key_concepts": ["expansion"],
+      "marks": 3,
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 15,
+      "question": "Simplify 4x + 6x − 2x.",
+      "answer": "Combine like terms: (4 + 6 − 2)x = 8x.",
+      "answer_outline": ["Combine coefficients"],
+      "key_concepts": ["like terms"],
+      "marks": 3,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 16,
+      "question": "Factorise 10x + 5.",
+      "answer": "Common factor is 5. So 10x + 5 = 5(2x + 1).",
+      "answer_outline": ["Find common factor", "Rewrite"],
+      "key_concepts": ["factorisation"],
+      "marks": 3,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 17,
+      "question": "Simplify 3(2x + 1) + x.",
+      "answer": "Expand: 3(2x + 1) = 6x + 3. Add x: 7x + 3.",
+      "answer_outline": ["Expand", "Add like terms"],
+      "key_concepts": ["expansion"],
+      "marks": 4,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 18,
+      "question": "Explain why factorisation is useful in algebra.",
+      "answer": "Factorisation simplifies expressions and helps solve equations more easily.",
+      "answer_outline": ["Definition", "Use"],
+      "key_concepts": ["factorisation"],
+      "marks": 4,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 19,
+      "question": "Simplify 5(2x + 3) − 4x.",
+      "answer": "Expand: 10x + 15 − 4x = 6x + 15.",
+      "answer_outline": ["Expand", "Combine terms"],
+      "key_concepts": ["expansion"],
+      "marks": 4,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 20,
+      "question": "Factorise 12x + 18.",
+      "answer": "Common factor is 6. So 12x + 18 = 6(2x + 3).",
+      "answer_outline": ["Find common factor"],
+      "key_concepts": ["factorisation"],
+      "marks": 4,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 21,
+      "question": "Expand 6(x + 2).",
+      "answer": "6(x + 2) = 6x + 12.",
+      "answer_outline": ["Apply distributive property"],
+      "key_concepts": ["expansion"],
+      "marks": 3,
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 22,
+      "question": "Explain the role of brackets in algebraic expressions.",
+      "answer": "Brackets group terms together and indicate that operations apply to all terms inside them.",
+      "answer_outline": ["Definition", "Purpose"],
+      "key_concepts": ["algebraic expressions"],
+      "marks": 4,
+      "source_section": "Section 6.1"
+    },
+    {
+      "question_number": 23,
+      "question": "Simplify 2(4x + 3) + 3x.",
+      "answer": "Expand: 8x + 6 + 3x = 11x + 6.",
+      "answer_outline": ["Expand", "Combine terms"],
+      "key_concepts": ["expansion"],
+      "marks": 4,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 24,
+      "question": "Factorise 14x + 21.",
+      "answer": "Common factor is 7. So 14x + 21 = 7(2x + 3).",
+      "answer_outline": ["Common factor"],
+      "key_concepts": ["factorisation"],
+      "marks": 4,
+      "source_section": "Section 6.2"
+    },
+    {
+      "question_number": 25,
+      "question": "Explain the process of simplifying algebraic expressions.",
+      "answer": "Simplifying algebraic expressions involves expanding brackets, combining like terms, and rewriting the expression in its simplest form.",
+      "answer_outline": ["Expansion", "Combine like terms", "Simplify"],
+      "key_concepts": ["simplification"],
+      "marks": 5,
+      "source_section": "Section 6.2"
+    }
+  ]
+}

@@ -1,0 +1,709 @@
+{
+    "subject": "English",
+    "book": "Footprints Without Feet",
+    "Content": "Letter Writing",
+    "class": "10",
+    "total_questions": 100,
+    "questions": [
+        {
+            "id": 1,
+            "chapter": "A Triumph of Surgery",
+            "source": "Footprints Without Feet – Chapter 1",
+            "title": "Concern for a Pet",
+            "question": "Write a letter to a friend describing Tricki’s illness and recovery."
+        },
+        {
+            "id": 2,
+            "chapter": "A Triumph of Surgery",
+            "source": "Footprints Without Feet – Chapter 1",
+            "title": "Advice on Pet Care",
+            "question": "Write a letter to a neighbour advising proper care and feeding of pets."
+        },
+        {
+            "id": 3,
+            "chapter": "A Triumph of Surgery",
+            "source": "Footprints Without Feet – Chapter 1",
+            "title": "Thanking a Doctor",
+            "question": "Write a letter as Mrs Pumphrey thanking Dr Herriot for saving Tricki."
+        },
+        {
+            "id": 4,
+            "chapter": "A Triumph of Surgery",
+            "source": "Footprints Without Feet – Chapter 1",
+            "title": "Health Awareness",
+            "question": "Write a letter to the editor about the dangers of overfeeding pets."
+        },
+        {
+            "id": 5,
+            "chapter": "The Thief’s Story",
+            "source": "Footprints Without Feet – Chapter 2",
+            "title": "Confession Letter",
+            "question": "Write a letter as Hari Singh to Anil confessing his mistake."
+        },
+        {
+            "id": 6,
+            "chapter": "The Thief’s Story",
+            "source": "Footprints Without Feet – Chapter 2",
+            "title": "Letter of Gratitude",
+            "question": "Write a letter as Hari Singh thanking Anil for trusting and educating him."
+        },
+        {
+            "id": 7,
+            "chapter": "The Thief’s Story",
+            "source": "Footprints Without Feet – Chapter 2",
+            "title": "Advice to a Friend",
+            "question": "Write a letter to a friend explaining why honesty is better than easy money."
+        },
+        {
+            "id": 8,
+            "chapter": "The Thief’s Story",
+            "source": "Footprints Without Feet – Chapter 2",
+            "title": "Letter Seeking Forgiveness",
+            "question": "Write a letter seeking forgiveness for betraying someone’s trust."
+        },
+        {
+            "id": 9,
+            "chapter": "The Midnight Visitor",
+            "source": "Footprints Without Feet – Chapter 3",
+            "title": "A Thrilling Experience",
+            "question": "Write a letter to a friend describing Fowler’s thrilling experience with Ausable."
+        },
+        {
+            "id": 10,
+            "chapter": "The Midnight Visitor",
+            "source": "Footprints Without Feet – Chapter 3",
+            "title": "Lesson in Presence of Mind",
+            "question": "Write a letter to your younger brother explaining the importance of presence of mind."
+        },
+        {
+            "id": 11,
+            "chapter": "A Question of Trust",
+            "source": "Footprints Without Feet – Chapter 4",
+            "title": "Regret Letter",
+            "question": "Write a letter as Horace Danby expressing regret over his crime."
+        },
+        {
+            "id": 12,
+            "chapter": "A Question of Trust",
+            "source": "Footprints Without Feet – Chapter 4",
+            "title": "Warning a Friend",
+            "question": "Write a letter to a friend warning him that crime never pays."
+        },
+        {
+            "id": 13,
+            "chapter": "Footprints Without Feet",
+            "source": "Footprints Without Feet – Chapter 5",
+            "title": "Responsible Use of Science",
+            "question": "Write a letter to a science student advising responsible use of scientific discoveries."
+        },
+        {
+            "id": 14,
+            "chapter": "Footprints Without Feet",
+            "source": "Footprints Without Feet – Chapter 5",
+            "title": "Letter to a Scientist",
+            "question": "Write a letter advising Griffin to use his discovery for the good of society."
+        },
+        {
+            "id": 15,
+            "chapter": "The Making of a Scientist",
+            "source": "Footprints Without Feet – Chapter 6",
+            "title": "Letter of Appreciation",
+            "question": "Write a letter praising Richard Ebright’s achievements."
+        },
+        {
+            "id": 16,
+            "chapter": "The Making of a Scientist",
+            "source": "Footprints Without Feet – Chapter 6",
+            "title": "Motivating a Student",
+            "question": "Write a letter to a student encouraging curiosity and scientific thinking."
+        },
+        {
+            "id": 17,
+            "chapter": "The Necklace",
+            "source": "Footprints Without Feet – Chapter 7",
+            "title": "Letter of Regret",
+            "question": "Write a letter as Matilda to Mme Forestier expressing regret for losing the necklace."
+        },
+        {
+            "id": 18,
+            "chapter": "The Necklace",
+            "source": "Footprints Without Feet – Chapter 7",
+            "title": "Advice on Contentment",
+            "question": "Write a letter to a friend explaining the importance of contentment in life."
+        },
+        {
+            "id": 19,
+            "chapter": "Bholi",
+            "source": "Footprints Without Feet – Chapter 8",
+            "title": "Thanking a Teacher",
+            "question": "Write a letter as Bholi thanking her teacher for guidance and support."
+        },
+        {
+            "id": 20,
+            "chapter": "Bholi",
+            "source": "Footprints Without Feet – Chapter 8",
+            "title": "Letter on Women Empowerment",
+            "question": "Write a letter to your friend describing how education empowered Bholi."
+        },
+        {
+            "id": 21,
+            "chapter": "The Book That Saved the Earth",
+            "source": "Footprints Without Feet – Chapter 9",
+            "title": "Importance of Books",
+            "question": "Write a letter to your younger sibling explaining the importance of reading books."
+        },
+        {
+            "id": 22,
+            "chapter": "The Book That Saved the Earth",
+            "source": "Footprints Without Feet – Chapter 9",
+            "title": "Letter to the Editor",
+            "question": "Write a letter to the editor highlighting the role of books in shaping society."
+        },
+        {
+            "id": 23,
+            "chapter": "General",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Value of Honesty",
+            "question": "Write a letter to a friend about the value of honesty in life."
+        },
+        {
+            "id": 24,
+            "chapter": "General",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Role of Education",
+            "question": "Write a letter to your cousin explaining how education can change lives."
+        },
+        {
+            "id": 25,
+            "chapter": "General",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Importance of Kindness",
+            "question": "Write a letter describing how kindness can transform people."
+        },
+        {
+            "id": 26,
+            "chapter": "Formal Letter",
+            "source": "General Writing",
+            "title": "Application for Leave",
+            "question": "Write a letter to your school principal requesting leave for personal reasons."
+        },
+        {
+            "id": 27,
+            "chapter": "Formal Letter",
+            "source": "General Writing",
+            "title": "Complaint Letter",
+            "question": "Write a letter to the municipal corporation complaining about stray animals."
+        },
+        {
+            "id": 28,
+            "chapter": "Formal Letter",
+            "source": "General Writing",
+            "title": "Letter to Editor on Education",
+            "question": "Write a letter to the editor highlighting the importance of moral education."
+        },
+        {
+            "id": 29,
+            "chapter": "Formal Letter",
+            "source": "General Writing",
+            "title": "School Facilities",
+            "question": "Write a letter to the principal requesting improvement in library facilities."
+        },
+        {
+            "id": 30,
+            "chapter": "Formal Letter",
+            "source": "General Writing",
+            "title": "Environmental Awareness",
+            "question": "Write a letter to the editor about environmental conservation."
+        },
+        {
+            "id": 31,
+            "chapter": "Informal Letter",
+            "source": "General Writing",
+            "title": "Sharing an Experience",
+            "question": "Write a letter to your friend describing a lesson you learnt from a story."
+        },
+        {
+            "id": 32,
+            "chapter": "Informal Letter",
+            "source": "General Writing",
+            "title": "Advice Letter",
+            "question": "Write a letter to your younger sibling advising good study habits."
+        },
+        {
+            "id": 33,
+            "chapter": "Informal Letter",
+            "source": "General Writing",
+            "title": "Encouragement",
+            "question": "Write a letter encouraging a friend who has failed in an examination."
+        },
+        {
+            "id": 34,
+            "chapter": "Informal Letter",
+            "source": "General Writing",
+            "title": "Moral Advice",
+            "question": "Write a letter advising your friend to choose the right path in life."
+        },
+        {
+            "id": 35,
+            "chapter": "Informal Letter",
+            "source": "General Writing",
+            "title": "Thank You Letter",
+            "question": "Write a letter thanking someone who helped you during difficult times."
+        },
+        {
+            "id": 36,
+            "chapter": "Value-Based",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Trust",
+            "question": "Write a letter highlighting the importance of trust in relationships."
+        },
+        {
+            "id": 37,
+            "chapter": "Value-Based",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Self-Respect",
+            "question": "Write a letter explaining why self-respect is important in life."
+        },
+        {
+            "id": 38,
+            "chapter": "Value-Based",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Responsibility",
+            "question": "Write a letter on being responsible citizens."
+        },
+        {
+            "id": 39,
+            "chapter": "Value-Based",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Courage",
+            "question": "Write a letter describing the value of courage."
+        },
+        {
+            "id": 40,
+            "chapter": "Value-Based",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Hard Work",
+            "question": "Write a letter explaining the importance of hard work."
+        },
+        {
+            "id": 41,
+            "chapter": "Student Perspective",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Learning from Stories",
+            "question": "Write a letter to a friend explaining what you learnt from Footprints Without Feet."
+        },
+        {
+            "id": 42,
+            "chapter": "Student Perspective",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Favourite Character",
+            "question": "Write a letter describing your favourite character from the book."
+        },
+        {
+            "id": 43,
+            "chapter": "Student Perspective",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Most Inspiring Story",
+            "question": "Write a letter to a friend describing the most inspiring story."
+        },
+        {
+            "id": 44,
+            "chapter": "Student Perspective",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Exam Preparation",
+            "question": "Write a letter describing how you prepare for English exams."
+        },
+        {
+            "id": 45,
+            "chapter": "Student Perspective",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Importance of Reading",
+            "question": "Write a letter highlighting the importance of reading literature."
+        },
+        {
+            "id": 46,
+            "chapter": "Life Skills",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Facing Failure",
+            "question": "Write a letter advising a friend on how to face failure positively."
+        },
+        {
+            "id": 47,
+            "chapter": "Life Skills",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Decision Making",
+            "question": "Write a letter explaining the importance of making correct decisions."
+        },
+        {
+            "id": 48,
+            "chapter": "Life Skills",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Learning from Mistakes",
+            "question": "Write a letter advising a friend to learn from mistakes."
+        },
+        {
+            "id": 49,
+            "chapter": "Life Skills",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Personal Growth",
+            "question": "Write a letter describing ways to achieve personal growth."
+        },
+        {
+            "id": 50,
+            "chapter": "Life Skills",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Moral Strength",
+            "question": "Write a letter explaining the importance of moral strength."
+        },
+        {
+            "id": 51,
+            "chapter": "Creative",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Letter to Yourself",
+            "question": "Write a letter to yourself promising to follow good values."
+        },
+        {
+            "id": 52,
+            "chapter": "Creative",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Letter to Future Self",
+            "question": "Write a letter to your future self about your goals."
+        },
+        {
+            "id": 53,
+            "chapter": "Creative",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Message to Society",
+            "question": "Write a letter addressing society on the importance of ethical living."
+        },
+        {
+            "id": 54,
+            "chapter": "Creative",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Letter to Youth",
+            "question": "Write a letter to today’s youth about moral values."
+        },
+        {
+            "id": 55,
+            "chapter": "Creative",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Letter to Humanity",
+            "question": "Write a letter expressing concern for humanity’s future."
+        },
+        {
+            "id": 56,
+            "chapter": "Exam-Oriented",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Character-Based Letter",
+            "question": "Write a letter analysing the character of any one person from the book."
+        },
+        {
+            "id": 57,
+            "chapter": "Exam-Oriented",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Theme-Based Letter",
+            "question": "Write a letter discussing a major theme from the book."
+        },
+        {
+            "id": 58,
+            "chapter": "Exam-Oriented",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Message of the Book",
+            "question": "Write a letter explaining the central message of Footprints Without Feet."
+        },
+        {
+            "id": 59,
+            "chapter": "Exam-Oriented",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Literature and Values",
+            "question": "Write a letter describing how literature teaches values."
+        },
+        {
+            "id": 60,
+            "chapter": "Exam-Oriented",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Learning Through Stories",
+            "question": "Write a letter on learning through stories."
+        },
+        {
+            "id": 61,
+            "chapter": "Advanced",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Human Nature",
+            "question": "Write a letter discussing different aspects of human nature."
+        },
+        {
+            "id": 62,
+            "chapter": "Advanced",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Ethical Choices",
+            "question": "Write a letter on ethical choices in life."
+        },
+        {
+            "id": 63,
+            "chapter": "Advanced",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Science and Ethics",
+            "question": "Write a letter discussing science and ethics."
+        },
+        {
+            "id": 64,
+            "chapter": "Advanced",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Role of Society",
+            "question": "Write a letter explaining the role of society in shaping individuals."
+        },
+        {
+            "id": 65,
+            "chapter": "Advanced",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Moral Responsibility",
+            "question": "Write a letter on moral responsibility."
+        },
+        {
+            "id": 66,
+            "chapter": "Final Reflection",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Learning from Literature",
+            "question": "Write a letter explaining how literature contributes to personal development."
+        },
+        {
+            "id": 67,
+            "chapter": "Final Reflection",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Lessons for Youth",
+            "question": "Write a letter to youth highlighting lessons from the book."
+        },
+        {
+            "id": 68,
+            "chapter": "Final Reflection",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Moral Development",
+            "question": "Write a letter on moral development through stories."
+        },
+        {
+            "id": 69,
+            "chapter": "Final Reflection",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Ethics in Life",
+            "question": "Write a letter on ethics in daily life."
+        },
+        {
+            "id": 70,
+            "chapter": "Final Reflection",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Values Over Wealth",
+            "question": "Write a letter explaining why values are more important than wealth."
+        },
+        {
+            "id": 71,
+            "chapter": "Conclusion",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Changed Perspective",
+            "question": "Write a letter explaining how the book changed your perspective."
+        },
+        {
+            "id": 72,
+            "chapter": "Conclusion",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Personal Growth",
+            "question": "Write a letter describing personal growth inspired by the book."
+        },
+        {
+            "id": 73,
+            "chapter": "Conclusion",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Applying Lessons",
+            "question": "Write a letter explaining how lessons from the book can be applied in life."
+        },
+        {
+            "id": 74,
+            "chapter": "Conclusion",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Becoming Better",
+            "question": "Write a letter on becoming a better human being."
+        },
+        {
+            "id": 75,
+            "chapter": "Conclusion",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Final Message",
+            "question": "Write a letter explaining the final message of Footprints Without Feet."
+        },
+        {
+            "id": 76,
+            "chapter": "Extended Practice",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Role of Education",
+            "question": "Write a letter explaining the role of education in life."
+        },
+        {
+            "id": 77,
+            "chapter": "Extended Practice",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Power of Knowledge",
+            "question": "Write a letter describing the power of knowledge."
+        },
+        {
+            "id": 78,
+            "chapter": "Extended Practice",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Human Values",
+            "question": "Write a letter explaining the importance of human values."
+        },
+        {
+            "id": 79,
+            "chapter": "Extended Practice",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Responsibility to Society",
+            "question": "Write a letter describing responsibility towards society."
+        },
+        {
+            "id": 80,
+            "chapter": "Extended Practice",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Ethical Living",
+            "question": "Write a letter on ethical living."
+        },
+        {
+            "id": 81,
+            "chapter": "Advanced Reflection",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Human Weaknesses",
+            "question": "Write a letter discussing human weaknesses portrayed in the stories."
+        },
+        {
+            "id": 82,
+            "chapter": "Advanced Reflection",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Strength of Mind",
+            "question": "Write a letter on the strength of the human mind."
+        },
+        {
+            "id": 83,
+            "chapter": "Advanced Reflection",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "True Intelligence",
+            "question": "Write a letter explaining what true intelligence means."
+        },
+        {
+            "id": 84,
+            "chapter": "Advanced Reflection",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Self-Improvement",
+            "question": "Write a letter on self-improvement."
+        },
+        {
+            "id": 85,
+            "chapter": "Advanced Reflection",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Life Choices",
+            "question": "Write a letter explaining the importance of right life choices."
+        },
+        {
+            "id": 86,
+            "chapter": "Final Practice",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Learning Through Literature",
+            "question": "Write a letter on learning through literature."
+        },
+        {
+            "id": 87,
+            "chapter": "Final Practice",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Lessons for Youth",
+            "question": "Write a letter highlighting lessons for youth."
+        },
+        {
+            "id": 88,
+            "chapter": "Final Practice",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Moral Development",
+            "question": "Write a letter on moral development."
+        },
+        {
+            "id": 89,
+            "chapter": "Final Practice",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Ethics and Character",
+            "question": "Write a letter explaining ethics and character."
+        },
+        {
+            "id": 90,
+            "chapter": "Final Practice",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Values in Modern Life",
+            "question": "Write a letter on values in modern life."
+        },
+        {
+            "id": 91,
+            "chapter": "Conclusion",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "A Changed Mindset",
+            "question": "Write a letter explaining how the book changed your mindset."
+        },
+        {
+            "id": 92,
+            "chapter": "Conclusion",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Personal Growth",
+            "question": "Write a letter on personal growth."
+        },
+        {
+            "id": 93,
+            "chapter": "Conclusion",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Applying Values",
+            "question": "Write a letter on applying values learnt from the book."
+        },
+        {
+            "id": 94,
+            "chapter": "Conclusion",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Becoming Better",
+            "question": "Write a letter on becoming a better human being."
+        },
+        {
+            "id": 95,
+            "chapter": "Conclusion",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Final Thoughts",
+            "question": "Write a letter summarising the key messages of Footprints Without Feet."
+        },
+        {
+            "id": 96,
+            "chapter": "Extended Conclusion",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Role of Literature",
+            "question": "Write a letter explaining the role of literature in life."
+        },
+        {
+            "id": 97,
+            "chapter": "Extended Conclusion",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Message to Society",
+            "question": "Write a letter addressing society on moral values."
+        },
+        {
+            "id": 98,
+            "chapter": "Extended Conclusion",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Learning for Life",
+            "question": "Write a letter explaining how lessons from literature help in life."
+        },
+        {
+            "id": 99,
+            "chapter": "Extended Conclusion",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Human Values",
+            "question": "Write a letter on the importance of human values in society."
+        },
+        {
+            "id": 100,
+            "chapter": "Extended Conclusion",
+            "source": "All Chapters – Footprints Without Feet",
+            "title": "Final Message",
+            "question": "Write a letter explaining the overall message of Footprints Without Feet."
+        }
+    ]
+}

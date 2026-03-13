@@ -1,0 +1,114 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 1: A Square and a Cube",
+  "generated_at": "2026-03-04T19:30:00",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is a perfect square?",
+        "correct_answer": "A number that can be written as the product of a number with itself",
+        "explanation": "Examples include 1, 4, 9, 16 which are squares of 1, 2, 3 and 4.",
+        "source_section": "Section 1.1"
+      },
+      {
+        "question": "What is meant by the square root of a number?",
+        "correct_answer": "A number which when multiplied by itself gives the original number",
+        "explanation": "For example, √25 = 5 because 5 × 5 = 25.",
+        "source_section": "Section 1.1"
+      },
+      {
+        "question": "What is a perfect cube?",
+        "correct_answer": "A number obtained by multiplying a number by itself three times",
+        "explanation": "Examples include 8 = 2³, 27 = 3³ and 64 = 4³.",
+        "source_section": "Section 1.2"
+      },
+      {
+        "question": "What is the cube root of a number?",
+        "correct_answer": "A number which when multiplied by itself three times gives the original number",
+        "explanation": "For example, ∛27 = 3 because 3 × 3 × 3 = 27.",
+        "source_section": "Section 1.2"
+      },
+      {
+        "question": "What is the square of 12?",
+        "correct_answer": "144",
+        "explanation": "12² = 12 × 12 = 144.",
+        "source_section": "Section 1.1 Examples"
+      },
+      {
+        "question": "What is the cube of 5?",
+        "correct_answer": "125",
+        "explanation": "5³ = 5 × 5 × 5 = 125.",
+        "source_section": "Section 1.2 Examples"
+      },
+      {
+        "question": "How can square roots be found using prime factorisation?",
+        "correct_answer": "By grouping prime factors into pairs and taking one factor from each pair",
+        "explanation": "Each pair contributes one number to the square root.",
+        "source_section": "Section 1.1 Methods"
+      },
+      {
+        "question": "How can cube roots be found using prime factorisation?",
+        "correct_answer": "By grouping prime factors into sets of three",
+        "explanation": "Each group of three identical factors contributes one number to the cube root.",
+        "source_section": "Section 1.2 Methods"
+      },
+      {
+        "question": "Is 121 a perfect square?",
+        "correct_answer": "Yes, it is a perfect square",
+        "explanation": "121 = 11 × 11 = 11².",
+        "source_section": "Section 1.1"
+      },
+      {
+        "question": "Is 216 a perfect cube?",
+        "correct_answer": "Yes, it is a perfect cube",
+        "explanation": "216 = 6 × 6 × 6 = 6³.",
+        "source_section": "Section 1.2"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Perfect Squares",
+        "content": "Perfect squares are numbers obtained by multiplying an integer by itself.",
+        "source_section": "Section 1.1"
+      },
+      {
+        "title": "Square Roots",
+        "content": "The square root of a number is the number that produces the given number when multiplied by itself.",
+        "source_section": "Section 1.1"
+      },
+      {
+        "title": "Perfect Cubes",
+        "content": "Perfect cubes are numbers obtained by multiplying an integer three times.",
+        "source_section": "Section 1.2"
+      },
+      {
+        "title": "Cube Roots",
+        "content": "The cube root of a number is the value which when cubed gives the original number.",
+        "source_section": "Section 1.2"
+      },
+      {
+        "title": "Prime Factorisation Method",
+        "content": "Prime factorisation can be used to find square roots and cube roots by grouping factors.",
+        "source_section": "Section 1.1 & 1.2"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "1 is both a perfect square and a perfect cube.",
+        "source_section": "Section 1.1"
+      },
+      {
+        "fact": "The square of an even number is always even.",
+        "source_section": "Section 1.1"
+      },
+      {
+        "fact": "The cube of an odd number is always odd.",
+        "source_section": "Section 1.2"
+      },
+      {
+        "fact": "Perfect squares end with digits 0, 1, 4, 5, 6 or 9.",
+        "source_section": "Section 1.1"
+      }
+    ]
+  }
+}

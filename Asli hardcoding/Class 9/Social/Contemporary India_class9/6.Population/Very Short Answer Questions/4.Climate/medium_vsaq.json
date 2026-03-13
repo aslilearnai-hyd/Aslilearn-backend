@@ -1,0 +1,241 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter 4: Climate",
+    "generated_at": "2026-03-08T19:10:00",
+    "difficulty": "medium",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Define climate.",
+            "answer": "Climate refers to the sum total of weather conditions and variations over a large area for a long period of time.",
+            "key_points": [
+                "long period",
+                "weather conditions"
+            ],
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 2,
+            "question": "What are the elements of weather and climate?",
+            "answer": "Temperature, atmospheric pressure, wind, humidity and precipitation.",
+            "key_points": [
+                "temperature",
+                "pressure",
+                "wind",
+                "humidity",
+                "precipitation"
+            ],
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 3,
+            "question": "What is meant by monsoon?",
+            "answer": "Monsoon refers to the seasonal reversal of wind direction during a year.",
+            "key_points": [
+                "seasonal winds"
+            ],
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Why does India experience a monsoon type of climate?",
+            "answer": "Because seasonal winds bring rainfall to most parts of the country.",
+            "key_points": [
+                "seasonal winds",
+                "rainfall"
+            ],
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 5,
+            "question": "How does latitude affect climate?",
+            "answer": "Latitude determines the amount of solar energy received at a place.",
+            "key_points": [
+                "solar energy"
+            ],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 6,
+            "question": "What role does altitude play in climate?",
+            "answer": "Temperature decreases with increase in altitude.",
+            "key_points": [
+                "higher altitude",
+                "lower temperature"
+            ],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 7,
+            "question": "What is continentality?",
+            "answer": "It refers to extreme climate conditions experienced far from the sea.",
+            "key_points": [
+                "distance from sea"
+            ],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 8,
+            "question": "What is Coriolis force?",
+            "answer": "It is the force caused by the earth’s rotation that deflects winds.",
+            "key_points": [
+                "earth rotation"
+            ],
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 9,
+            "question": "Why do coastal areas have moderate climate?",
+            "answer": "Because the sea moderates temperature.",
+            "key_points": [
+                "sea influence"
+            ],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 10,
+            "question": "When does the advancing monsoon season begin?",
+            "answer": "It begins in early June.",
+            "key_points": [
+                "monsoon arrival"
+            ],
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 11,
+            "question": "Name two branches of the southwest monsoon.",
+            "answer": "Arabian Sea branch and Bay of Bengal branch.",
+            "key_points": [
+                "monsoon branches"
+            ],
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 12,
+            "question": "What are dust storms?",
+            "answer": "Strong winds carrying dust that occur during summer.",
+            "key_points": [
+                "summer winds"
+            ],
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 13,
+            "question": "What are mango showers?",
+            "answer": "Pre-monsoon rains that help ripen mangoes.",
+            "key_points": [
+                "pre-monsoon rain"
+            ],
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 14,
+            "question": "What are western disturbances?",
+            "answer": "Cyclonic storms originating in the Mediterranean region.",
+            "key_points": [
+                "cyclonic storms"
+            ],
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Which season is known as the rainy season in India?",
+            "answer": "Advancing monsoon season.",
+            "key_points": [
+                "monsoon"
+            ],
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 16,
+            "question": "What is retreating monsoon?",
+            "answer": "The period when monsoon winds withdraw from India.",
+            "key_points": [
+                "withdrawal"
+            ],
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 17,
+            "question": "Which coast receives rainfall from retreating monsoon?",
+            "answer": "Tamil Nadu coast.",
+            "key_points": [
+                "winter rainfall"
+            ],
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 18,
+            "question": "Why is rainfall heavy in northeastern India?",
+            "answer": "Because of monsoon winds and relief features.",
+            "key_points": [
+                "monsoon winds"
+            ],
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 19,
+            "question": "Which region receives the least rainfall in India?",
+            "answer": "Western Rajasthan and Ladakh.",
+            "key_points": [
+                "low rainfall"
+            ],
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 20,
+            "question": "Why are parts of Rajasthan drought-prone?",
+            "answer": "Because they receive very little rainfall.",
+            "key_points": [
+                "low rainfall"
+            ],
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 21,
+            "question": "What causes floods in the northern plains?",
+            "answer": "Heavy monsoon rainfall.",
+            "key_points": [
+                "heavy rainfall"
+            ],
+            "source_section": "Section 4.4"
+        },
+        {
+            "question_number": 22,
+            "question": "Why is the monsoon uncertain?",
+            "answer": "Because its arrival and rainfall distribution vary each year.",
+            "key_points": [
+                "variability"
+            ],
+            "source_section": "Section 4.3"
+        },
+        {
+            "question_number": 23,
+            "question": "Why is snowfall common in the Himalayas?",
+            "answer": "Because temperatures are very low at high altitudes.",
+            "key_points": [
+                "low temperature"
+            ],
+            "source_section": "Section 4.1"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the role of relief in climate?",
+            "answer": "Mountains act as barriers to winds and influence rainfall.",
+            "key_points": [
+                "mountain barrier"
+            ],
+            "source_section": "Section 4.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Why is monsoon important for India?",
+            "answer": "It supports agriculture and water supply.",
+            "key_points": [
+                "agriculture"
+            ],
+            "source_section": "Section 4.5"
+        }
+    ]
+}

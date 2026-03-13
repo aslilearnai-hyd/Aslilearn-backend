@@ -1,0 +1,209 @@
+{
+    "content_type": "Short Questions",
+    "chapter": "Chapter: Changes around us : Physical and Chemical ",
+    "difficulty": "Hard",
+    "generated_at": "2026-03-06T18:52:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "A substance 'A' on heating gives a gas 'B' which turns lime water milky. The residue 'C' is dissolved in water to form 'D', which turns red litmus blue. Identify A, B, C, and D.",
+            "answer": "A is Calcium Carbonate, B is Carbon Dioxide, C is Calcium Oxide, and D is Calcium Hydroxide.",
+            "key_concepts": ["decomposition", "chemical testing"],
+            "marks": 3,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 2,
+            "question": "Why is the rusting of an iron ship much faster in seawater than in freshwater?",
+            "answer": "Seawater contains many salts (electrolytes) which speed up the process of oxidation and chemical reaction between iron, oxygen, and moisture.",
+            "key_concepts": ["rusting", "electrolytes"],
+            "marks": 2,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 3,
+            "question": "Explain the chemical logic behind using magnesium blocks on the hulls of steel ships to prevent rusting.",
+            "answer": "Magnesium is more reactive than iron; it acts as a 'sacrificial metal' that corrodes instead of the iron, protecting the ship's hull.",
+            "key_concepts": ["sacrificial protection", "reactivity"],
+            "marks": 2,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 4,
+            "question": "When an iron nail is placed in copper sulphate solution, the blue color disappears and a green color appears. If we place a copper wire in iron sulphate solution, will a change occur? Why?",
+            "answer": "No change will occur because copper is less reactive than iron and cannot displace iron from its sulphate solution.",
+            "key_concepts": ["reactivity series", "displacement"],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Photosynthesis is a chemical change. Justify this statement with two chemical reasons.",
+            "answer": "1. New substances (glucose and oxygen) are formed from carbon dioxide and water. 2. It is an endothermic process that cannot be reversed by physical means.",
+            "key_concepts": ["chemical change", "photosynthesis"],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 6,
+            "question": "What happens chemically when we pass excess carbon dioxide through milky lime water for a long duration?",
+            "answer": "The milkiness disappears because the insoluble calcium carbonate reacts with excess CO2 and water to form soluble calcium bicarbonate.",
+            "key_concepts": ["chemical reactions", "solubility"],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 7,
+            "question": "Why is the explosion of a firework considered a chemical change involving multiple observations?",
+            "answer": "It involves the production of heat, light, sound, and unpleasant gases (new substances), all of which are indicators of a chemical change.",
+            "key_concepts": ["chemical change indicators"],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 8,
+            "question": "Explain why food items like oils and fats develop an unpleasant smell (rancidity) over time.",
+            "answer": "The oils undergo a chemical change called oxidation when exposed to air, forming new substances with foul odors.",
+            "key_concepts": ["oxidation", "chemical change"],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 9,
+            "question": "How can you chemically prove that the ash formed by burning magnesium is different from magnesium itself?",
+            "answer": "Dissolve the ash in water and test it with red litmus; it turns blue (basic), whereas pure magnesium metal does not show this property.",
+            "key_concepts": ["chemical testing", "nature of oxides"],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 10,
+            "question": "In the process of crystallization, why is it necessary to add a few drops of dilute sulphuric acid to the copper sulphate solution?",
+            "answer": "The acid prevents the hydrolysis of copper sulphate and helps in the formation of larger, better-defined crystals.",
+            "key_concepts": ["crystallization", "purification"],
+            "marks": 2,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Why is the stretching of a spring considered a physical change while the over-stretching (breaking) of it could involve chemical changes?",
+            "answer": "Stretching is a change in shape; however, breaking can cause heat generation and permanent rearrangement of internal metallic bonds.",
+            "key_concepts": ["physical vs chemical"],
+            "marks": 2,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 12,
+            "question": "A silver spoon turns black after long exposure to air. What is this process called and is it a physical or chemical change?",
+            "answer": "This is called tarnishing. It is a chemical change where silver reacts with sulphur compounds in the air to form silver sulphide.",
+            "key_concepts": ["tarnishing", "chemical change"],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 13,
+            "question": "How does the process of 'Enzymatic Browning' in cut fruits represent a chemical change?",
+            "answer": "Phenolic compounds in the fruit react with oxygen in the presence of enzymes to form new pigments called melanins.",
+            "key_concepts": ["oxidation", "biological chemical changes"],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 14,
+            "question": "Compare the energy changes in a typical physical change (like melting) versus a typical chemical change (like burning).",
+            "answer": "Physical changes involve small energy changes to overcome intermolecular forces, whereas chemical changes involve large energy changes to break and form atomic bonds.",
+            "key_concepts": ["energy in changes"],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 15,
+            "question": "Explain why galvanized iron does not rust even if the zinc coating is scratched.",
+            "answer": "Zinc is more reactive than iron and continues to provide cathodic protection, oxidizing itself to protect the underlying iron.",
+            "key_concepts": ["galvanization", "reactivity"],
+            "marks": 2,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 16,
+            "question": "Why is the digestion of food called a complex chemical change?",
+            "answer": "It involves multiple reactions where enzymes break down complex nutrients into entirely different, simpler chemical substances like glucose and amino acids.",
+            "key_concepts": ["digestion", "chemical change"],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 17,
+            "question": "What kind of change occurs when ozone absorbs ultraviolet radiation in the upper atmosphere?",
+            "answer": "It is a chemical change where ozone (O3) breaks down into oxygen (O2) and an oxygen atom, preventing harmful radiation from reaching Earth.",
+            "key_concepts": ["ozone layer", "chemical decomposition"],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 18,
+            "question": "Is the formation of a solution (like dissolving sugar in water) always a physical change? Explain the criteria.",
+            "answer": "It is physical if the chemical identity of sugar and water remains same and can be separated by evaporation; if the solute reacts with the solvent, it becomes chemical.",
+            "key_concepts": ["dissolution"],
+            "marks": 2,
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 19,
+            "question": "Why does the blue color of copper sulphate solution change to green when iron is added, but the green color of iron sulphate doesn't change when copper is added?",
+            "answer": "Iron is higher in the reactivity series and can displace copper; copper is lower and cannot displace iron.",
+            "key_concepts": ["displacement reaction", "reactivity"],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Describe an experiment to show that both air and water are necessary for rusting.",
+            "answer": "Place iron nails in three tubes: one with dry air (desiccant), one with boiled water (no air), and one with both. Only the nail in the third tube rusts.",
+            "key_concepts": ["rusting conditions"],
+            "marks": 3,
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 21,
+            "question": "How does the burning of magnesium ribbon differ from the rusting of iron in terms of reaction speed?",
+            "answer": "Burning of magnesium is a rapid chemical change (combustion), whereas rusting of iron is a very slow chemical change (oxidation).",
+            "key_concepts": ["reaction rate"],
+            "marks": 1,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Why is the process of making compost from organic waste considered a chemical change?",
+            "answer": "Microorganisms break down the waste to form new substances (humus and nutrients) that cannot be converted back to the original waste.",
+            "key_concepts": ["decomposition", "chemical change"],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 23,
+            "question": "Can crystallization be used to separate a mixture of two solids that are both highly soluble in water? Explain.",
+            "answer": "It is difficult; crystallization works best when the desired substance is less soluble or when we can use 'fractional crystallization' based on solubility differences.",
+            "key_concepts": ["crystallization", "separation"],
+            "marks": 2,
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 24,
+            "question": "What is the chemical name and formula of the green deposit often seen on old copper coins?",
+            "answer": "Basic copper carbonate [CuCO3.Cu(OH)2], formed by the reaction of copper with moist CO2 and oxygen.",
+            "key_concepts": ["corrosion of copper"],
+            "marks": 2,
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 25,
+            "question": "Explain why painting the gates of our houses prevents them from rusting.",
+            "answer": "The paint creates an impermeable barrier that prevents the iron from reacting with the oxygen and water vapor present in the atmosphere.",
+            "key_concepts": ["barrier protection", "rusting"],
+            "marks": 1,
+            "source_section": "Section 2.3"
+        }
+    ]
+}

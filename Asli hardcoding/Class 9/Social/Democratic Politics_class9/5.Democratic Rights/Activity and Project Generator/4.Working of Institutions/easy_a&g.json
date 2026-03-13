@@ -1,0 +1,172 @@
+{
+    "class": "Class 9",
+    "subject": "Social Science - Democratic Politics",
+    "chapter": "Working of Institutions",
+    "difficulty": "Easy",
+    "source_pdf": "dem9_4.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Identify Democratic Institutions",
+            "objective": "Understand key institutions in a democracy",
+            "materials": [
+                "Notebook",
+                "Textbook",
+                "Pen"
+            ],
+            "steps": [
+                "Read the section about institutions in the chapter",
+                "List the three major institutions of government",
+                "Write one function of each institution"
+            ],
+            "learning_outcome": "Identifies legislature, executive and judiciary",
+            "evaluation": "Correct identification and explanation (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Flow Chart of Policy Decision",
+            "objective": "Understand how major policy decisions are taken",
+            "materials": [
+                "Chart paper",
+                "Sketch pens",
+                "Textbook"
+            ],
+            "steps": [
+                "Read the Mandal Commission decision example",
+                "Identify the steps involved in the decision making",
+                "Draw a flow chart showing the process"
+            ],
+            "learning_outcome": "Understands the decision-making process in government",
+            "evaluation": "Clarity of flowchart (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Parliament Structure Diagram",
+            "objective": "Learn the structure of the Indian Parliament",
+            "materials": [
+                "Chart paper",
+                "Color pens"
+            ],
+            "steps": [
+                "Draw a diagram showing the structure of Parliament",
+                "Include Lok Sabha, Rajya Sabha and the President",
+                "Label their roles"
+            ],
+            "learning_outcome": "Understands the structure of Parliament",
+            "evaluation": "Correct diagram and labeling (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Role Play on Parliament Debate",
+            "objective": "Experience parliamentary discussion",
+            "materials": [
+                "Notebook",
+                "Topic for debate"
+            ],
+            "steps": [
+                "Divide students into government and opposition groups",
+                "Select a topic for discussion",
+                "Conduct a short mock debate"
+            ],
+            "learning_outcome": "Understands the importance of discussion and debate",
+            "evaluation": "Participation and clarity (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Compare Lok Sabha and Rajya Sabha",
+            "objective": "Differentiate the two houses of Parliament",
+            "materials": [
+                "Notebook",
+                "Textbook"
+            ],
+            "steps": [
+                "Draw a table with two columns",
+                "List features such as members, term and powers",
+                "Write at least five differences"
+            ],
+            "learning_outcome": "Differentiates between the two houses",
+            "evaluation": "Accuracy of comparison (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Executive Structure Chart",
+            "objective": "Understand the structure of the executive",
+            "materials": [
+                "Chart paper",
+                "Markers"
+            ],
+            "steps": [
+                "List the components of the executive",
+                "Include President, Prime Minister and Council of Ministers",
+                "Prepare a labeled chart"
+            ],
+            "learning_outcome": "Understands executive structure",
+            "evaluation": "Correct organization of chart (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Prime Minister Responsibilities List",
+            "objective": "Learn the powers of the Prime Minister",
+            "materials": [
+                "Notebook",
+                "Textbook"
+            ],
+            "steps": [
+                "Read the section on Prime Minister",
+                "Write at least five responsibilities",
+                "Explain any one responsibility briefly"
+            ],
+            "learning_outcome": "Understands the role of the Prime Minister",
+            "evaluation": "Correct explanation (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Judiciary Hierarchy Diagram",
+            "objective": "Understand the structure of the judiciary",
+            "materials": [
+                "Chart paper",
+                "Sketch pens"
+            ],
+            "steps": [
+                "Draw the hierarchy of courts in India",
+                "Include Supreme Court, High Courts and District Courts",
+                "Label each level"
+            ],
+            "learning_outcome": "Identifies the hierarchy of courts",
+            "evaluation": "Correct representation (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Newspaper Activity",
+            "objective": "Connect institutions with real-life events",
+            "materials": [
+                "Newspaper",
+                "Notebook",
+                "Glue"
+            ],
+            "steps": [
+                "Collect a news article related to government decisions",
+                "Identify whether it relates to legislature, executive or judiciary",
+                "Paste and write a short explanation"
+            ],
+            "learning_outcome": "Relates textbook concepts to current events",
+            "evaluation": "Correct classification (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Institution Matching Activity",
+            "objective": "Recall functions of different institutions",
+            "materials": [
+                "Flash cards",
+                "Notebook"
+            ],
+            "steps": [
+                "Write names of institutions on cards",
+                "Write their functions on separate cards",
+                "Match the institution with its function"
+            ],
+            "learning_outcome": "Improves understanding of institutional roles",
+            "evaluation": "Correct matching (10 marks)"
+        }
+    ]
+}

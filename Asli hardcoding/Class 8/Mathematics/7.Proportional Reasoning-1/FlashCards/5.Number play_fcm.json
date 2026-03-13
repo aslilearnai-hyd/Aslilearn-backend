@@ -1,0 +1,114 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 5: Number Play",
+  "generated_at": "2026-03-04T20:05:00",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What are even numbers?",
+        "correct_answer": "Numbers that are divisible by 2",
+        "explanation": "Even numbers leave a remainder of 0 when divided by 2.",
+        "source_section": "Section 5.1"
+      },
+      {
+        "question": "What are odd numbers?",
+        "correct_answer": "Numbers that are not divisible by 2",
+        "explanation": "Odd numbers leave a remainder of 1 when divided by 2.",
+        "source_section": "Section 5.1"
+      },
+      {
+        "question": "What happens when two even numbers are added?",
+        "correct_answer": "The result is always even",
+        "explanation": "Adding multiples of 2 always gives another multiple of 2.",
+        "source_section": "Section 5.1 Examples"
+      },
+      {
+        "question": "What happens when two odd numbers are added?",
+        "correct_answer": "The result is always even",
+        "explanation": "Odd numbers can be written as 2n + 1, and their sum becomes even.",
+        "source_section": "Section 5.1 Examples"
+      },
+      {
+        "question": "What happens when an even number is added to an odd number?",
+        "correct_answer": "The result is odd",
+        "explanation": "Adding an even number does not change the odd nature of the number.",
+        "source_section": "Section 5.1 Examples"
+      },
+      {
+        "question": "What is a multiple of a number?",
+        "correct_answer": "A number obtained by multiplying the given number by an integer",
+        "explanation": "For example, multiples of 3 are 3, 6, 9, 12 and so on.",
+        "source_section": "Section 5.2"
+      },
+      {
+        "question": "What is a factor of a number?",
+        "correct_answer": "A number that divides another number exactly",
+        "explanation": "For example, factors of 12 include 1, 2, 3, 4, 6 and 12.",
+        "source_section": "Section 5.2"
+      },
+      {
+        "question": "What does 'always true' mean in mathematics?",
+        "correct_answer": "A statement that is true for all possible values",
+        "explanation": "It holds true regardless of the numbers chosen.",
+        "source_section": "Section 5.3"
+      },
+      {
+        "question": "What does 'sometimes true' mean?",
+        "correct_answer": "A statement that is true for some values but not for all",
+        "explanation": "The truth of the statement depends on the numbers used.",
+        "source_section": "Section 5.3"
+      },
+      {
+        "question": "What does 'never true' mean?",
+        "correct_answer": "A statement that is false for all possible values",
+        "explanation": "No example exists that makes the statement true.",
+        "source_section": "Section 5.3"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Even Numbers",
+        "content": "Even numbers are integers that are divisible by 2 and can be written in the form 2n.",
+        "source_section": "Section 5.1"
+      },
+      {
+        "title": "Odd Numbers",
+        "content": "Odd numbers are integers that leave a remainder of 1 when divided by 2 and can be written as 2n + 1.",
+        "source_section": "Section 5.1"
+      },
+      {
+        "title": "Factors and Multiples",
+        "content": "Factors divide a number exactly, while multiples are obtained by multiplying a number with integers.",
+        "source_section": "Section 5.2"
+      },
+      {
+        "title": "Mathematical Statements",
+        "content": "Statements in mathematics can be classified as always true, sometimes true or never true.",
+        "source_section": "Section 5.3"
+      },
+      {
+        "title": "Parity",
+        "content": "Parity refers to whether a number is even or odd.",
+        "source_section": "Section 5.1"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "The sum of two even numbers is always even.",
+        "source_section": "Section 5.1"
+      },
+      {
+        "fact": "The sum of two odd numbers is always even.",
+        "source_section": "Section 5.1"
+      },
+      {
+        "fact": "The product of two odd numbers is always odd.",
+        "source_section": "Section 5.1"
+      },
+      {
+        "fact": "Zero is an even number because it is divisible by 2.",
+        "source_section": "Section 5.1"
+      }
+    ]
+  }
+}

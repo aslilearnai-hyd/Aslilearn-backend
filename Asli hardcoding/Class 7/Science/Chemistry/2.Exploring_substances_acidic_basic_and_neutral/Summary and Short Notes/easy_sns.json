@@ -1,0 +1,33 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter": "Exploring Substances: Acidic, Basic and Neutral",
+    "difficulty": "Easy",
+    "source_pdf": "jesc101.pdf",
+    "short_notes": {
+        "key_points": [
+            "Substances are classified as acidic, basic, or neutral based on their chemical nature",
+            "Acids are sour in taste, while bases are bitter and feel soapy to the touch",
+            "Indicators are special substances used to test whether a substance is acidic or basic",
+            "The reaction between an acid and a base is called neutralization",
+            "Neutralization results in the formation of salt and water, often releasing heat"
+        ],
+        "examples": [
+            "Acidic substances: Lemon juice (Citric acid), Vinegar (Acetic acid), Curd (Lactic acid)",
+            "Basic substances: Baking soda, Lime water, Soap solution, Milk of magnesia",
+            "Neutral substances: Pure water, Common salt solution, Sugar solution",
+            "Natural Indicators: Turmeric, Litmus (extracted from lichens), China rose petals"
+        ],
+        "formulas": [
+            "Neutralization Reaction: Acid + Base → Salt + Water + Heat",
+            "Litmus Test: Acid turns Blue Litmus Red; Base turns Red Litmus Blue",
+            "Phenolphthalein: Remains colorless in Acid; turns Pink in Base"
+        ],
+        "exam_tips": [
+            "Remember 'ABR'—Acid turns Blue litmus Red",
+            "Always use a clean dropper when testing substances to avoid cross-contamination",
+            "Note that not all sour things are safe to taste; always use indicators for unknown chemicals",
+            "In neutralization, the salt formed can be acidic, basic, or neutral in nature"
+        ]
+    }
+}

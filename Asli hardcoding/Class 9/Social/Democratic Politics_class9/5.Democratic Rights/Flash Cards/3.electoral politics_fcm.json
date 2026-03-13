@@ -1,0 +1,114 @@
+{
+    "content_type": "Flashcard Maker",
+    "section": "Chapter 3: Electoral Politics",
+    "generated_at": "2026-03-06T20:30:00",
+    "flashcards": {
+        "questions": [
+            {
+                "question": "What is an election?",
+                "correct_answer": "A process through which people choose their representatives in a democracy",
+                "explanation": "Elections allow citizens to select leaders who will represent them and run the government.",
+                "source_section": "Section 3.1"
+            },
+            {
+                "question": "Why are elections necessary in a democracy?",
+                "correct_answer": "They allow people to choose and change their representatives",
+                "explanation": "Elections ensure that leaders remain accountable to the people and can be replaced if necessary.",
+                "source_section": "Section 3.1"
+            },
+            {
+                "question": "What is political competition?",
+                "correct_answer": "Competition among political parties and candidates to win elections",
+                "explanation": "Political competition motivates leaders to work for the welfare of the people in order to gain votes.",
+                "source_section": "Section 3.1"
+            },
+            {
+                "question": "What is an electoral constituency?",
+                "correct_answer": "A geographical area represented by one elected representative",
+                "explanation": "Voters living in a constituency elect one representative to the legislative body.",
+                "source_section": "Section 3.2"
+            },
+            {
+                "question": "What is a voters list?",
+                "correct_answer": "An official list of all eligible voters in a constituency",
+                "explanation": "Only people whose names appear on the voters list can vote in an election.",
+                "source_section": "Section 3.2"
+            },
+            {
+                "question": "Who can vote in elections in India?",
+                "correct_answer": "All citizens aged 18 years and above",
+                "explanation": "This principle is called universal adult franchise.",
+                "source_section": "Section 3.2"
+            },
+            {
+                "question": "What is an election campaign?",
+                "correct_answer": "Activities by candidates and parties to persuade voters to support them",
+                "explanation": "Campaigns include rallies, speeches, advertisements, and discussions on public issues.",
+                "source_section": "Section 3.2"
+            },
+            {
+                "question": "What is the role of the Election Commission of India?",
+                "correct_answer": "To conduct free and fair elections in the country",
+                "explanation": "The Election Commission supervises elections, enforces rules, and ensures fairness.",
+                "source_section": "Section 3.3"
+            },
+            {
+                "question": "What are reserved constituencies?",
+                "correct_answer": "Constituencies reserved for candidates from Scheduled Castes or Scheduled Tribes",
+                "explanation": "Reservation ensures representation of weaker sections in legislative bodies.",
+                "source_section": "Section 3.2"
+            },
+            {
+                "question": "What is meant by free and fair elections?",
+                "correct_answer": "Elections where voters can choose their representatives without pressure or fraud",
+                "explanation": "Free and fair elections ensure equality, transparency, and democratic legitimacy.",
+                "source_section": "Section 3.3"
+            }
+        ],
+        "notes": [
+            {
+                "title": "Importance of Elections",
+                "content": "Elections allow citizens to choose their leaders and hold them accountable. They are a key feature of democratic governance.",
+                "source_section": "Section 3.1"
+            },
+            {
+                "title": "Conditions of Democratic Elections",
+                "content": "Democratic elections require universal adult franchise, political competition, regular elections, and free and fair voting.",
+                "source_section": "Section 3.1"
+            },
+            {
+                "title": "Electoral Constituencies",
+                "content": "The country is divided into constituencies so that each representative is responsible for a specific geographical area.",
+                "source_section": "Section 3.2"
+            },
+            {
+                "title": "Election Campaign",
+                "content": "Election campaigns allow candidates to communicate their policies and convince voters to support them.",
+                "source_section": "Section 3.2"
+            },
+            {
+                "title": "Election Commission",
+                "content": "The Election Commission of India is an independent body responsible for conducting elections and ensuring they are fair and transparent.",
+                "source_section": "Section 3.3"
+            }
+        ],
+        "facts": [
+            {
+                "fact": "India has one of the largest democratic electorates in the world.",
+                "source_section": "Section 3.1"
+            },
+            {
+                "fact": "Electronic Voting Machines (EVMs) are used in India to record votes.",
+                "source_section": "Section 3.2"
+            },
+            {
+                "fact": "Every vote has equal value in a democratic election.",
+                "source_section": "Section 3.1"
+            },
+            {
+                "fact": "The Election Commission can order repolling if unfair practices are found.",
+                "source_section": "Section 3.3"
+            }
+        ]
+    }
+}

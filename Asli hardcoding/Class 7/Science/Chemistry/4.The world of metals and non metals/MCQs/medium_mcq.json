@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: The World of Metals and Non-Metals",
+  "generated_at": "2026-03-06T18:35:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Which of the following is a property of metals?",
+      "options": {
+        "A": "Dull appearance",
+        "B": "Brittle nature",
+        "C": "Good conductors of heat",
+        "D": "Poor conductors of electricity"
+      },
+      "correct_answer": "C",
+      "explanation": "Metals are generally excellent conductors of both heat and electricity.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 2,
+      "question": "The property by which metals can be beaten into thin sheets is called:",
+      "options": {
+        "A": "Ductility",
+        "B": "Malleability",
+        "C": "Sonority",
+        "D": "Lustre"
+      },
+      "correct_answer": "B",
+      "explanation": "Malleability is the ability of a material to be flattened into sheets without breaking.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 3,
+      "question": "Which metal exists in a liquid state at room temperature?",
+      "options": {
+        "A": "Iron",
+        "B": "Gold",
+        "C": "Mercury",
+        "D": "Aluminum"
+      },
+      "correct_answer": "C",
+      "explanation": "Mercury is the only metal that is liquid at room temperature.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 4,
+      "question": "Non-metals are generally:",
+      "options": {
+        "A": "Shiny",
+        "B": "Ductile",
+        "C": "Brittle",
+        "D": "Sonorous"
+      },
+      "correct_answer": "C",
+      "explanation": "Solid non-metals break into pieces when hit, a property known as being brittle.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 5,
+      "question": "The property of metals to produce a ringing sound when struck is called:",
+      "options": {
+        "A": "Hardness",
+        "B": "Lustre",
+        "C": "Sonority",
+        "D": "Conductivity"
+      },
+      "correct_answer": "C",
+      "explanation": "Metals are sonorous, meaning they produce a ringing sound when hit.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 6,
+      "question": "Which of the following is a non-metal that is essential for life and is inhaled during breathing?",
+      "options": {
+        "A": "Nitrogen",
+        "B": "Oxygen",
+        "C": "Chlorine",
+        "D": "Carbon"
+      },
+      "correct_answer": "B",
+      "explanation": "Oxygen is a non-metal gas required by almost all living organisms for respiration.",
+      "difficulty": "medium",
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 7,
+      "question": "Which non-metal is used in purple-colored antiseptic solutions applied on wounds?",
+      "options": {
+        "A": "Sulfur",
+        "B": "Iodine",
+        "C": "Phosphorus",
+        "D": "Bromine"
+      },
+      "correct_answer": "B",
+      "explanation": "Iodine is a non-metal used to make Tincture of Iodine, an antiseptic.",
+      "difficulty": "medium",
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 8,
+      "question": "Which metal is so soft that it can be cut with a knife?",
+      "options": {
+        "A": "Sodium",
+        "B": "Copper",
+        "C": "Iron",
+        "D": "Silver"
+      },
+      "correct_answer": "A",
+      "explanation": "Sodium and Potassium are highly reactive metals that are soft enough to be cut with a knife.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 9,
+      "question": "The thin foil used for decorating sweets is made of:",
+      "options": {
+        "A": "Aluminum",
+        "B": "Silver",
+        "C": "Copper",
+        "D": "Zinc"
+      },
+      "correct_answer": "B",
+      "explanation": "Silver foils (Chandi ka Warq) are used for decorating sweets due to their high malleability.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 10,
+      "question": "Which non-metal is used in crackers/fireworks?",
+      "options": {
+        "A": "Sulfur",
+        "B": "Gold",
+        "C": "Calcium",
+        "D": "Magnesium"
+      },
+      "correct_answer": "A",
+      "explanation": "Sulfur and Phosphorus are non-metals commonly used in the manufacture of fireworks.",
+      "difficulty": "medium",
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 11,
+      "question": "Metals react with oxygen to form:",
+      "options": {
+        "A": "Acidic oxides",
+        "B": "Basic oxides",
+        "C": "Neutral oxides",
+        "D": "No reaction"
+      },
+      "correct_answer": "B",
+      "explanation": "Metallic oxides are generally basic in nature.",
+      "difficulty": "medium",
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 12,
+      "question": "Which gas is produced when metals react with dilute acids?",
+      "options": {
+        "A": "Oxygen",
+        "B": "Carbon dioxide",
+        "C": "Hydrogen",
+        "D": "Nitrogen"
+      },
+      "correct_answer": "C",
+      "explanation": "Metals react with acids to produce salt and hydrogen gas (which burns with a 'pop' sound).",
+      "difficulty": "medium",
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 13,
+      "question": "The property of drawing metals into thin wires is called:",
+      "options": {
+        "A": "Malleability",
+        "B": "Ductility",
+        "C": "Conductivity",
+        "D": "Lustre"
+      },
+      "correct_answer": "B",
+      "explanation": "Ductility is the property that allows metals to be drawn into wires.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 14,
+      "question": "Which non-metal is a good conductor of electricity?",
+      "options": {
+        "A": "Sulfur",
+        "B": "Graphite",
+        "C": "Phosphorus",
+        "D": "Iodine"
+      },
+      "correct_answer": "B",
+      "explanation": "Graphite (a form of carbon) is an exception among non-metals as it conducts electricity.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 15,
+      "question": "Which metal is used for galvanizing iron to prevent rusting?",
+      "options": {
+        "A": "Zinc",
+        "B": "Copper",
+        "C": "Aluminum",
+        "D": "Tin"
+      },
+      "correct_answer": "A",
+      "explanation": "Galvanization is the process of applying a protective zinc coating to iron or steel.",
+      "difficulty": "medium",
+      "source_section": "Section 1.5"
+    },
+    {
+      "question_number": 16,
+      "question": "Rusting of iron occurs in the presence of:",
+      "options": {
+        "A": "Only air",
+        "B": "Only water",
+        "C": "Both air and water",
+        "D": "Nitrogen gas"
+      },
+      "correct_answer": "C",
+      "explanation": "Iron reacts with both oxygen (air) and moisture (water) to form rust.",
+      "difficulty": "medium",
+      "source_section": "Section 1.5"
+    },
+    {
+      "question_number": 17,
+      "question": "Which of the following is a noble metal?",
+      "options": {
+        "A": "Iron",
+        "B": "Sodium",
+        "C": "Gold",
+        "D": "Magnesium"
+      },
+      "correct_answer": "C",
+      "explanation": "Gold and Platinum are noble metals because they are very unreactive.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 18,
+      "question": "Non-metallic oxides are generally ____ in nature.",
+      "options": {
+        "A": "Acidic",
+        "B": "Basic",
+        "C": "Neutral",
+        "D": "Salty"
+      },
+      "correct_answer": "A",
+      "explanation": "Non-metals react with oxygen to form oxides that turn blue litmus red (acidic).",
+      "difficulty": "medium",
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 19,
+      "question": "Which metal is stored in kerosene to prevent it from reacting with air and water?",
+      "options": {
+        "A": "Iron",
+        "B": "Sodium",
+        "C": "Copper",
+        "D": "Aluminum"
+      },
+      "correct_answer": "B",
+      "explanation": "Sodium is highly reactive and catches fire when exposed to air or water.",
+      "difficulty": "medium",
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 20,
+      "question": "Copper pans often develop a green coating due to:",
+      "options": {
+        "A": "Reaction with Nitrogen",
+        "B": "Corrosion",
+        "C": "Burning",
+        "D": "Painting"
+      },
+      "correct_answer": "B",
+      "explanation": "Copper reacts with moist air to form a green coating of copper carbonate and copper hydroxide.",
+      "difficulty": "medium",
+      "source_section": "Section 1.5"
+    },
+    {
+      "question_number": 21,
+      "question": "Which non-metal is used to disinfect drinking water?",
+      "options": {
+        "A": "Chlorine",
+        "B": "Oxygen",
+        "C": "Helium",
+        "D": "Hydrogen"
+      },
+      "correct_answer": "A",
+      "explanation": "Chlorine is a non-metal used for water purification to kill germs.",
+      "difficulty": "medium",
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 22,
+      "question": "Electric wires are covered with plastic because:",
+      "options": {
+        "A": "Plastic is a metal",
+        "B": "Plastic is an insulator",
+        "C": "Plastic is a conductor",
+        "D": "Plastic is shiny"
+      },
+      "correct_answer": "B",
+      "explanation": "Plastic does not conduct electricity, making it safe to handle wires.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 23,
+      "question": "Which of these is the hardest natural substance known?",
+      "options": {
+        "A": "Iron",
+        "B": "Diamond",
+        "C": "Gold",
+        "D": "Graphite"
+      },
+      "correct_answer": "B",
+      "explanation": "Diamond is a form of carbon (non-metal) and is the hardest natural substance.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 24,
+      "question": "Aluminum is used for making cooking utensils because it is a:",
+      "options": {
+        "A": "Bad conductor of heat",
+        "B": "Good conductor of heat",
+        "C": "Non-metal",
+        "D": "Liquid"
+      },
+      "correct_answer": "B",
+      "explanation": "Its high thermal conductivity allows food to cook efficiently.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 25,
+      "question": "Which of the following does NOT react with dilute acids?",
+      "options": {
+        "A": "Copper",
+        "B": "Iron",
+        "C": "Magnesium",
+        "D": "Aluminum"
+      },
+      "correct_answer": "A",
+      "explanation": "Copper is less reactive and generally does not react with dilute hydrochloric acid.",
+      "difficulty": "medium",
+      "source_section": "Section 1.4"
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+    "class": "Class 10",
+    "subject": "English",
+    "chapter": "The Tale of Custard the Dragon",
+    "author": "Ogden Nash",
+    "difficulty": "Hard",
+    "source_pdf": "eng10_7.pdf",
+    "activities_projects": [
+        {
+            "sl_no": 1,
+            "title": "Critical Analysis",
+            "objective": "Critically analyse the poem",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write 6 sentences explaining the poem’s deeper meaning"
+            ],
+            "learning_outcome": "Develops analytical thinking",
+            "evaluation": "Depth of analysis (10 marks)"
+        },
+        {
+            "sl_no": 2,
+            "title": "Irony Analysis",
+            "objective": "Understand irony in the poem",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Explain the irony in Custard being called cowardly"
+            ],
+            "learning_outcome": "Recognizes irony",
+            "evaluation": "Logical explanation (10 marks)"
+        },
+        {
+            "sl_no": 3,
+            "title": "Character Evaluation",
+            "objective": "Evaluate the characters",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Explain how the other characters behave during danger"
+            ],
+            "learning_outcome": "Understands character behaviour",
+            "evaluation": "Depth of explanation (10 marks)"
+        },
+        {
+            "sl_no": 4,
+            "title": "Literary Device Analysis",
+            "objective": "Analyse poetic devices",
+            "materials": [
+                "Textbook"
+            ],
+            "steps": [
+                "Identify two poetic devices and explain their effect"
+            ],
+            "learning_outcome": "Recognizes poetic techniques",
+            "evaluation": "Correct analysis (10 marks)"
+        },
+        {
+            "sl_no": 5,
+            "title": "Ballad Study",
+            "objective": "Understand ballad structure",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Explain how the poem follows the style of a ballad"
+            ],
+            "learning_outcome": "Understands poetic form",
+            "evaluation": "Logical explanation (10 marks)"
+        },
+        {
+            "sl_no": 6,
+            "title": "Theme Discussion",
+            "objective": "Discuss themes in the poem",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Explain the theme of true bravery"
+            ],
+            "learning_outcome": "Understands deeper themes",
+            "evaluation": "Clarity (10 marks)"
+        },
+        {
+            "sl_no": 7,
+            "title": "Contrast Analysis",
+            "objective": "Analyse contrast in the poem",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Explain the contrast between appearance and reality"
+            ],
+            "learning_outcome": "Recognizes thematic contrast",
+            "evaluation": "Logical explanation (10 marks)"
+        },
+        {
+            "sl_no": 8,
+            "title": "Modern Relevance",
+            "objective": "Relate poem to real life",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Explain how the message of the poem applies today"
+            ],
+            "learning_outcome": "Connects literature with real life",
+            "evaluation": "Relevance (10 marks)"
+        },
+        {
+            "sl_no": 9,
+            "title": "Creative Extension",
+            "objective": "Encourage creative thinking",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write an alternative ending to the poem"
+            ],
+            "learning_outcome": "Encourages creativity",
+            "evaluation": "Creativity (10 marks)"
+        },
+        {
+            "sl_no": 10,
+            "title": "Critical Reflection",
+            "objective": "Evaluate poem personally",
+            "materials": [
+                "Notebook"
+            ],
+            "steps": [
+                "Write your opinion about the poem"
+            ],
+            "learning_outcome": "Develops critical reflection",
+            "evaluation": "Depth of understanding (10 marks)"
+        }
+    ]
+}

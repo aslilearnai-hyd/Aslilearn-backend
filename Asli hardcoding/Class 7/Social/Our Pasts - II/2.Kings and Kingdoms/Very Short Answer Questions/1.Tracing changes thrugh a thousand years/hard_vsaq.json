@@ -1,0 +1,208 @@
+{
+    "content_type": "Very Short Questions",
+    "chapter": "Chapter: TRACING CHANGES THROUGH A THOUSAND YEARS",
+    "generated_at": "2026-03-08T22:05:15",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "Analyze the impact of 'textual variations' on the reliability of medieval history reconstruction.",
+            "answer": "Since scribes introduced incremental changes over centuries, modern historians must compare multiple manuscript versions to filter out distortions and deduce the original author's intent.",
+            "key_concepts": ["manuscript reliability", "textual criticism"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 2,
+            "question": "How did the 18th-century French map represent a shift in the 'Epistemology' of cartography compared to Al-Idrisi?",
+            "answer": "The French map utilized more advanced survey techniques, emphasizing coastline accuracy for maritime trade, reflecting a move toward scientific and utilitarian mapping.",
+            "key_concepts": ["cartographic epistemology"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 3,
+            "question": "Evaluate the linguistic evolution of the term 'Hindustan' from a political label to a geographical concept.",
+            "answer": "Minhaj-i-Siraj used it for the Delhi Sultanate's lands (political), whereas Babur later expanded it to include the subcontinent's fauna and culture (geographical/cultural).",
+            "key_concepts": ["linguistic shifts"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 4,
+            "question": "Explain how the 'Persian Wheel' and 'Firearms' acted as catalysts for social and political change.",
+            "answer": "The Persian Wheel revolutionized agricultural productivity, while firearms transformed warfare, allowing for the consolidation of larger, more centralized pan-regional empires.",
+            "key_concepts": ["technological determinism"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 5,
+            "question": "Analyze the 'Jati-Varna' relationship during the medieval period.",
+            "answer": "Jatis were sub-castes within the Varna framework; they were fluid rankings based on regional power and occupation rather than strictly rigid, universal hierarchies.",
+            "key_concepts": ["social stratification"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 6,
+            "question": "How did the clearing of 'Habitats' lead to the emergence of a complex peasant society?",
+            "answer": "Forest clearing forced forest-dwellers into agriculture, integrating them into a hierarchy where they owed taxes and services to local lords and religious institutions.",
+            "key_concepts": ["peasantization"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Critique the role of 'Patronage' in the rise of Brahmanas as a dominant social class.",
+            "answer": "New rulers, seeking legitimacy, acted as patrons to Brahmanas; this mutual relationship cemented the Brahmanas' social status and the rulers' religious authority.",
+            "key_concepts": ["patronage", "legitimacy"],
+            "marks": 2,
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 8,
+            "question": "What is the historiographical problem with James Mill’s 'Hindu-Muslim-British' periodisation?",
+            "answer": "It reduces a thousand years of complex social and economic evolution to the religion of the ruler, falsely suggesting that no other significant changes occurred.",
+            "key_concepts": ["historiography", "James Mill"],
+            "marks": 2,
+            "source_section": "Section 1.6"
+        },
+        {
+            "question_number": 9,
+            "question": "Explain the significance of the re-discovery of Ziyauddin Barani's first chronicle version in the 1960s.",
+            "answer": "It highlighted how much of our historical knowledge is dependent on the 'survival of records' and how archives can hide vital information for centuries.",
+            "key_concepts": ["archival discovery"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 10,
+            "question": "How did 'Pan-Regional' rule alter the character of regional states after the Mughal decline?",
+            "answer": "Regional states inherited the administrative, linguistic, and economic systems of the empire, creating a synthesis of local and imperial traditions.",
+            "key_concepts": ["cultural synthesis"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Assess the role of the 'Kayasthas' as a byproduct of the medieval 'paper revolution'.",
+            "answer": "As paper made record-keeping cheaper, the Kayasthas became essential as a specialized caste of scribes, gaining significant political and social influence.",
+            "key_concepts": ["bureaucratic castes"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 12,
+            "question": "Distinguish between the historical 'Foreigner' (Pardesi) and the modern 'Alien'.",
+            "answer": "In medieval times, a 'foreigner' was anyone from outside one's village or culture; today, it is restricted to those who are not citizens of a nation-state.",
+            "key_concepts": ["changing definitions"],
+            "marks": 2,
+            "source_section": "Section 1.1"
+        },
+        {
+            "question_number": 13,
+            "question": "How did the 'Bhakti' movement democratize religious access in the medieval period?",
+            "answer": "By emphasizing a personal bond with God, it bypassed the need for expensive rituals and Brahmana intermediaries, making religion accessible to all social groups.",
+            "key_concepts": ["religious democratization"],
+            "marks": 2,
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 14,
+            "question": "Analyze the 'interconnection' between the emergence of new crops and the arrival of new people.",
+            "answer": "Migration and trade brought not only new political ideas but also biological exchange, such as potatoes, corn, and chillies, which altered the subcontinent’s diet.",
+            "key_concepts": ["biological exchange"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 15,
+            "question": "Why is the term 'Medieval' problematic for modern historians when describing this era?",
+            "answer": "The term 'medieval' often implies a 'dark age' between ancient and modern, which fails to acknowledge the immense economic and social progress of this period.",
+            "key_concepts": ["periodisation problems"],
+            "marks": 2,
+            "source_section": "Section 1.6"
+        },
+        {
+            "question_number": 16,
+            "question": "Explain how 'Jati Panchayats' functioned as a form of local self-governance.",
+            "answer": "They operated as autonomous units that enforced social codes; however, they still had to acknowledge the broader authority of the village and the state.",
+            "key_concepts": ["local governance"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 17,
+            "question": "What does the 'Sanskrit Prashasti' of Sultan Balban reveal about the use of exaggeration in court history?",
+            "answer": "Rulers often used poets to claim vast, unrealistic conquests (like South India for Balban) to project an image of supreme, pan-regional power.",
+            "key_concepts": ["political propaganda"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 18,
+            "question": "How did the 'Ulama' influence the legal and political landscape of Muslim dynasties?",
+            "answer": "As theologians and jurists, they interpreted Sharia law, which rulers had to balance against the diverse, multi-religious reality of their subjects.",
+            "key_concepts": ["religious-political balance"],
+            "marks": 2,
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 19,
+            "question": "Evaluate the impact of the 'Cheaper Paper' transition on the 'oral tradition' of history.",
+            "answer": "Cheaper paper led to a 'written turn', where written records began to supersede oral traditions, although the high illiteracy rate meant oral history remained vital.",
+            "key_concepts": ["literacy and records"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 20,
+            "question": "Why did 'Rajputs' cultivate a 'Chivalric code' during this thousand-year period?",
+            "answer": "To justify their claim to Kshatriya status and warrior roles, they emphasized loyalty and extreme bravery, which was then recorded by their bards and poets.",
+            "key_concepts": ["identity construction"],
+            "marks": 2,
+            "source_section": "Section 1.3"
+        },
+        {
+            "question_number": 21,
+            "question": "How do 'archives' differ from 'libraries' in the context of historical research?",
+            "answer": "Libraries contain published books for reading, while archives store primary documents, manuscripts, and official records used for original historical evidence.",
+            "key_concepts": ["archival science"],
+            "marks": 2,
+            "source_section": "Section 1.2"
+        },
+        {
+            "question_number": 22,
+            "question": "Analyze why South India and Bengal were difficult for Delhi-based empires to control.",
+            "answer": "The geographical distance and diverse local power structures often led to these regions declaring independence as soon as the central authority weakened.",
+            "key_concepts": ["geographical challenges"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        },
+        {
+            "question_number": 23,
+            "question": "Explain the significance of 'Sectarian' differences in the history of Islam in India.",
+            "answer": "The presence of both Shia and Sunni sects, along with various schools of law (Hanafi, Shafi'i), led to a diverse and sometimes contentious religious atmosphere.",
+            "key_concepts": ["sectarianism"],
+            "marks": 2,
+            "source_section": "Section 1.5"
+        },
+        {
+            "question_number": 24,
+            "question": "How did the 18th century mark a 'modern' turn according to historians?",
+            "answer": "It saw the decline of traditional empires and the rise of European influence, though many social and economic structures remained 'medieval' in nature.",
+            "key_concepts": ["transition of eras"],
+            "marks": 2,
+            "source_section": "Section 1.6"
+        },
+        {
+            "question_number": 25,
+            "question": "Why is Amir Khusrau’s mention of 'Hindawi' important for understanding medieval linguistics?",
+            "answer": "It shows that a common language of the people was developing alongside Sanskrit and Persian, reflecting the cultural blending of the period.",
+            "key_concepts": ["linguistic synthesis"],
+            "marks": 2,
+            "source_section": "Section 1.4"
+        }
+    ]
+}

@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 4: Quadrilaterals",
+  "generated_at": "2026-03-05T00:20:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "If the angles of a quadrilateral are 90°, 80°, 70° and x°, find x.",
+      "options": {
+        "A": "110°",
+        "B": "120°",
+        "C": "130°",
+        "D": "140°"
+      },
+      "correct_answer": "B",
+      "explanation": "Sum of angles of quadrilateral = 360°. x = 360 − (90 + 80 + 70) = 120°.",
+      "difficulty": "medium",
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 2,
+      "question": "In a parallelogram, if one angle is 65°, what is the adjacent angle?",
+      "options": {
+        "A": "65°",
+        "B": "90°",
+        "C": "115°",
+        "D": "125°"
+      },
+      "correct_answer": "C",
+      "explanation": "Adjacent angles in a parallelogram are supplementary: 180 − 65 = 115°.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 3,
+      "question": "In a parallelogram, opposite angles are:",
+      "options": {
+        "A": "Equal",
+        "B": "Supplementary",
+        "C": "Complementary",
+        "D": "Unequal"
+      },
+      "correct_answer": "A",
+      "explanation": "Opposite angles of a parallelogram are equal.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 4,
+      "question": "If one angle of a rectangle is 90°, what are the other angles?",
+      "options": {
+        "A": "90°, 90°, 90°",
+        "B": "60°, 60°, 60°",
+        "C": "120°, 120°, 120°",
+        "D": "45°, 45°, 45°"
+      },
+      "correct_answer": "A",
+      "explanation": "All angles of a rectangle are 90°.",
+      "difficulty": "medium",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 5,
+      "question": "In a rhombus, the diagonals are:",
+      "options": {
+        "A": "Equal",
+        "B": "Perpendicular",
+        "C": "Parallel",
+        "D": "Unequal"
+      },
+      "correct_answer": "B",
+      "explanation": "Diagonals of a rhombus intersect at right angles.",
+      "difficulty": "medium",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 6,
+      "question": "Which quadrilateral has diagonals that bisect each other?",
+      "options": {
+        "A": "Parallelogram",
+        "B": "Trapezium",
+        "C": "Kite",
+        "D": "Triangle"
+      },
+      "correct_answer": "A",
+      "explanation": "Diagonals of a parallelogram bisect each other.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 7,
+      "question": "If one diagonal of a square is 10 cm, which statement is true?",
+      "options": {
+        "A": "Diagonals are equal",
+        "B": "Diagonals are perpendicular",
+        "C": "Diagonals bisect each other",
+        "D": "All of these"
+      },
+      "correct_answer": "D",
+      "explanation": "All these properties hold in a square.",
+      "difficulty": "medium",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 8,
+      "question": "In a parallelogram, if one side is 8 cm, the opposite side is:",
+      "options": {
+        "A": "4 cm",
+        "B": "8 cm",
+        "C": "16 cm",
+        "D": "10 cm"
+      },
+      "correct_answer": "B",
+      "explanation": "Opposite sides of a parallelogram are equal.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 9,
+      "question": "Which quadrilateral has diagonals that are equal?",
+      "options": {
+        "A": "Rectangle",
+        "B": "Rhombus",
+        "C": "Kite",
+        "D": "Trapezium"
+      },
+      "correct_answer": "A",
+      "explanation": "Diagonals of a rectangle are equal.",
+      "difficulty": "medium",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 10,
+      "question": "In a trapezium, the parallel sides are called:",
+      "options": {
+        "A": "Legs",
+        "B": "Bases",
+        "C": "Diagonals",
+        "D": "Angles"
+      },
+      "correct_answer": "B",
+      "explanation": "Parallel sides in a trapezium are called bases.",
+      "difficulty": "medium",
+      "source_section": "Section 4.4"
+    },
+    {
+      "question_number": 11,
+      "question": "If two adjacent sides of a quadrilateral are equal and the other two are also equal, the quadrilateral may be a:",
+      "options": {
+        "A": "Kite",
+        "B": "Rectangle",
+        "C": "Parallelogram",
+        "D": "Trapezium"
+      },
+      "correct_answer": "A",
+      "explanation": "A kite has two pairs of adjacent equal sides.",
+      "difficulty": "medium",
+      "source_section": "Section 4.4"
+    },
+    {
+      "question_number": 12,
+      "question": "Which quadrilateral has diagonals that bisect each other at right angles?",
+      "options": {
+        "A": "Rhombus",
+        "B": "Rectangle",
+        "C": "Trapezium",
+        "D": "Parallelogram"
+      },
+      "correct_answer": "A",
+      "explanation": "Diagonals of a rhombus are perpendicular bisectors.",
+      "difficulty": "medium",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 13,
+      "question": "In a parallelogram, consecutive angles are:",
+      "options": {
+        "A": "Equal",
+        "B": "Supplementary",
+        "C": "Complementary",
+        "D": "Right angles"
+      },
+      "correct_answer": "B",
+      "explanation": "Adjacent angles add up to 180°.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 14,
+      "question": "A square is a combination of:",
+      "options": {
+        "A": "Rectangle and rhombus",
+        "B": "Trapezium and kite",
+        "C": "Triangle and rectangle",
+        "D": "Rhombus and trapezium"
+      },
+      "correct_answer": "A",
+      "explanation": "A square has properties of both rectangle and rhombus.",
+      "difficulty": "medium",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 15,
+      "question": "How many pairs of opposite sides are parallel in a parallelogram?",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "correct_answer": "B",
+      "explanation": "Both pairs of opposite sides are parallel.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 16,
+      "question": "In a kite, diagonals intersect at:",
+      "options": {
+        "A": "Right angles",
+        "B": "Obtuse angles",
+        "C": "Acute angles",
+        "D": "Straight lines"
+      },
+      "correct_answer": "A",
+      "explanation": "Diagonals of a kite intersect at right angles.",
+      "difficulty": "medium",
+      "source_section": "Section 4.4"
+    },
+    {
+      "question_number": 17,
+      "question": "Which quadrilateral has only one pair of parallel sides?",
+      "options": {
+        "A": "Trapezium",
+        "B": "Square",
+        "C": "Rhombus",
+        "D": "Rectangle"
+      },
+      "correct_answer": "A",
+      "explanation": "A trapezium has one pair of parallel sides.",
+      "difficulty": "medium",
+      "source_section": "Section 4.4"
+    },
+    {
+      "question_number": 18,
+      "question": "In a rectangle, diagonals:",
+      "options": {
+        "A": "Are equal",
+        "B": "Bisect each other",
+        "C": "Are not perpendicular",
+        "D": "All of these"
+      },
+      "correct_answer": "D",
+      "explanation": "All these properties apply to rectangle diagonals.",
+      "difficulty": "medium",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 19,
+      "question": "If each angle of a quadrilateral is equal, each angle measures:",
+      "options": {
+        "A": "60°",
+        "B": "90°",
+        "C": "120°",
+        "D": "180°"
+      },
+      "correct_answer": "B",
+      "explanation": "360° ÷ 4 = 90°.",
+      "difficulty": "medium",
+      "source_section": "Section 4.1"
+    },
+    {
+      "question_number": 20,
+      "question": "Which quadrilateral has diagonals perpendicular but not necessarily equal?",
+      "options": {
+        "A": "Rhombus",
+        "B": "Rectangle",
+        "C": "Trapezium",
+        "D": "Parallelogram"
+      },
+      "correct_answer": "A",
+      "explanation": "Rhombus diagonals are perpendicular but usually unequal.",
+      "difficulty": "medium",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 21,
+      "question": "Which quadrilateral has diagonals equal and perpendicular?",
+      "options": {
+        "A": "Square",
+        "B": "Rhombus",
+        "C": "Rectangle",
+        "D": "Trapezium"
+      },
+      "correct_answer": "A",
+      "explanation": "Square diagonals are equal and perpendicular.",
+      "difficulty": "medium",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 22,
+      "question": "If one angle of a parallelogram is 110°, the opposite angle is:",
+      "options": {
+        "A": "70°",
+        "B": "110°",
+        "C": "90°",
+        "D": "120°"
+      },
+      "correct_answer": "B",
+      "explanation": "Opposite angles in a parallelogram are equal.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 23,
+      "question": "In a parallelogram, diagonals:",
+      "options": {
+        "A": "Bisect each other",
+        "B": "Are equal",
+        "C": "Are perpendicular",
+        "D": "Are parallel"
+      },
+      "correct_answer": "A",
+      "explanation": "Diagonals bisect each other.",
+      "difficulty": "medium",
+      "source_section": "Section 4.2"
+    },
+    {
+      "question_number": 24,
+      "question": "Which quadrilateral has all sides equal but angles not necessarily 90°?",
+      "options": {
+        "A": "Rhombus",
+        "B": "Rectangle",
+        "C": "Trapezium",
+        "D": "Kite"
+      },
+      "correct_answer": "A",
+      "explanation": "Rhombus sides are equal but angles may vary.",
+      "difficulty": "medium",
+      "source_section": "Section 4.3"
+    },
+    {
+      "question_number": 25,
+      "question": "Which quadrilateral has exactly one pair of opposite sides parallel and equal?",
+      "options": {
+        "A": "Isosceles trapezium",
+        "B": "Square",
+        "C": "Rectangle",
+        "D": "Rhombus"
+      },
+      "correct_answer": "A",
+      "explanation": "Isosceles trapezium has one pair of parallel sides and equal non-parallel sides.",
+      "difficulty": "medium",
+      "source_section": "Section 4.4"
+    }
+  ]
+}

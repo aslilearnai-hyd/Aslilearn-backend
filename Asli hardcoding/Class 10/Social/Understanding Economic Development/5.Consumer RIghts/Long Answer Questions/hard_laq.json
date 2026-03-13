@@ -1,0 +1,233 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Class 10 Economics - Chapter 5: Consumer Rights",
+  "difficulty": "Medium to Hard",
+  "generated_at": "2026-02-28T06:20:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Who is a consumer? Explain the need for consumer protection.",
+      "answer": "A consumer is a person who buys goods or services for personal use and not for resale. Consumer protection is needed because consumers are often exploited through overcharging, adulteration, misleading advertisements and sale of defective goods. Protection ensures fair trade practices and safeguards consumer interests.",
+      "answer_outline": [
+        "Definition of consumer",
+        "Forms of exploitation",
+        "Need for protection"
+      ],
+      "key_concepts": ["consumer", "consumer protection", "exploitation"],
+      "marks": 8
+    },
+    {
+      "question_number": 2,
+      "question": "Explain the various rights of consumers.",
+      "answer": "Consumers have the Right to Safety, Right to Information, Right to Choose, Right to be Heard, Right to Seek Redressal and Right to Consumer Education. These rights protect them from unfair trade practices and ensure fair treatment in the market.",
+      "answer_outline": [
+        "Right to Safety",
+        "Right to Information",
+        "Right to Choose",
+        "Right to be Heard",
+        "Right to Seek Redressal",
+        "Right to Consumer Education"
+      ],
+      "key_concepts": ["consumer rights", "legal protection"],
+      "marks": 8
+    },
+    {
+      "question_number": 3,
+      "question": "What is the Consumer Protection Act? Explain its significance.",
+      "answer": "The Consumer Protection Act was first enacted in 1986 to protect consumer interests. It provides a three-tier redressal system at district, state and national levels. It ensures quick and inexpensive justice for consumers.",
+      "answer_outline": [
+        "Year of enactment",
+        "Three-tier system",
+        "Significance"
+      ],
+      "key_concepts": ["Consumer Protection Act 1986", "consumer courts"],
+      "marks": 8
+    },
+    {
+      "question_number": 4,
+      "question": "Describe the three levels of consumer courts in India.",
+      "answer": "The three levels are District Commission at district level, State Commission at state level and National Commission at national level. They handle cases based on the value of claims.",
+      "answer_outline": ["District level", "State level", "National level"],
+      "key_concepts": [
+        "District Commission",
+        "State Commission",
+        "National Commission"
+      ],
+      "marks": 8
+    },
+    {
+      "question_number": 5,
+      "question": "Explain the importance of the Right to Information with examples.",
+      "answer": "The Right to Information ensures consumers receive complete details about products like price, expiry date and ingredients. For example, checking the MRP and manufacturing date helps avoid exploitation.",
+      "answer_outline": ["Meaning", "Examples", "Importance"],
+      "key_concepts": ["Right to Information", "product details"],
+      "marks": 8
+    },
+    {
+      "question_number": 6,
+      "question": "What are unfair trade practices? Give examples.",
+      "answer": "Unfair trade practices include overcharging, adulteration, hoarding and misleading advertisements. For example, selling goods above MRP or mixing inferior substances in food items.",
+      "answer_outline": ["Definition", "Examples"],
+      "key_concepts": ["unfair trade practices", "adulteration", "hoarding"],
+      "marks": 8
+    },
+    {
+      "question_number": 7,
+      "question": "Explain the role of NGOs in promoting consumer awareness.",
+      "answer": "NGOs spread awareness about consumer rights, help file complaints and conduct campaigns to protect consumers from exploitation.",
+      "answer_outline": [
+        "Awareness campaigns",
+        "Legal assistance",
+        "Consumer movement"
+      ],
+      "key_concepts": ["NGOs", "consumer movement"],
+      "marks": 8
+    },
+    {
+      "question_number": 8,
+      "question": "Why is consumer awareness important in modern markets?",
+      "answer": "Consumer awareness helps buyers make informed decisions, avoid exploitation and demand quality goods and services.",
+      "answer_outline": ["Informed decisions", "Protection from exploitation"],
+      "key_concepts": ["consumer awareness", "market protection"],
+      "marks": 8
+    },
+    {
+      "question_number": 9,
+      "question": "Explain the Right to Seek Redressal with an example.",
+      "answer": "The Right to Seek Redressal allows consumers to get compensation for defective goods or poor services. For example, a consumer can file a complaint if a product is faulty.",
+      "answer_outline": ["Meaning", "Example"],
+      "key_concepts": ["redressal", "compensation"],
+      "marks": 8
+    },
+    {
+      "question_number": 10,
+      "question": "Discuss the importance of standardisation marks like ISI, Agmark and Hallmark.",
+      "answer": "Standardisation marks ensure product quality and safety. ISI certifies industrial goods, Agmark certifies agricultural products and Hallmark certifies gold purity.",
+      "answer_outline": ["ISI mark", "Agmark", "Hallmark"],
+      "key_concepts": ["quality certification", "standardisation"],
+      "marks": 8
+    },
+
+    {
+      "question_number": 11,
+      "question": "How does advertising influence consumer behaviour?",
+      "answer": "Advertisements influence buying decisions by highlighting product features, sometimes misleading consumers.",
+      "answer_outline": ["Influence on decisions", "Misleading claims"],
+      "key_concepts": ["advertising", "consumer behaviour"],
+      "marks": 8
+    },
+    {
+      "question_number": 12,
+      "question": "Explain the Right to Safety with suitable examples.",
+      "answer": "The Right to Safety protects consumers from hazardous goods like defective electrical appliances.",
+      "answer_outline": ["Definition", "Example"],
+      "key_concepts": ["Right to Safety"],
+      "marks": 8
+    },
+    {
+      "question_number": 13,
+      "question": "Why should consumers demand bills and receipts?",
+      "answer": "Bills act as proof of purchase and are necessary for filing complaints in consumer courts.",
+      "answer_outline": ["Proof of purchase"],
+      "key_concepts": ["receipt", "legal proof"],
+      "marks": 8
+    },
+    {
+      "question_number": 14,
+      "question": "What is meant by consumer movement?",
+      "answer": "Consumer movement refers to organized efforts by consumers to protect their rights and prevent exploitation.",
+      "answer_outline": ["Definition", "Purpose"],
+      "key_concepts": ["consumer movement"],
+      "marks": 8
+    },
+    {
+      "question_number": 15,
+      "question": "Explain the responsibilities of consumers.",
+      "answer": "Consumers should check product details, demand bills, avoid misleading advertisements and be aware of their rights.",
+      "answer_outline": ["Check labels", "Demand bill"],
+      "key_concepts": ["consumer responsibility"],
+      "marks": 8
+    },
+    {
+      "question_number": 16,
+      "question": "Discuss how consumer courts provide justice.",
+      "answer": "Consumer courts resolve disputes quickly and award compensation for damages or defective goods.",
+      "answer_outline": ["Dispute resolution", "Compensation"],
+      "key_concepts": ["consumer courts"],
+      "marks": 8
+    },
+    {
+      "question_number": 17,
+      "question": "Explain black marketing and its impact on consumers.",
+      "answer": "Black marketing involves illegal sale of goods at high prices, causing exploitation.",
+      "answer_outline": ["Definition", "Impact"],
+      "key_concepts": ["black marketing"],
+      "marks": 8
+    },
+    {
+      "question_number": 18,
+      "question": "What is adulteration? How does it affect consumers?",
+      "answer": "Adulteration is mixing inferior substances in goods, which reduces quality and can harm health.",
+      "answer_outline": ["Definition", "Health risk"],
+      "key_concepts": ["adulteration"],
+      "marks": 8
+    },
+    {
+      "question_number": 19,
+      "question": "Explain the Right to Choose with example.",
+      "answer": "Right to Choose ensures availability of a variety of goods at fair prices, e.g., selecting among different brands.",
+      "answer_outline": ["Meaning", "Example"],
+      "key_concepts": ["Right to Choose"],
+      "marks": 8
+    },
+    {
+      "question_number": 20,
+      "question": "How has the Consumer Protection Act empowered consumers?",
+      "answer": "It provides legal support, quick redressal and compensation for unfair practices.",
+      "answer_outline": ["Legal support", "Redressal"],
+      "key_concepts": ["consumer empowerment"],
+      "marks": 8
+    },
+    {
+      "question_number": 21,
+      "question": "Explain how misleading advertisements harm consumers.",
+      "answer": "They create false impressions, leading to poor purchasing decisions.",
+      "answer_outline": ["False claims"],
+      "key_concepts": ["misleading advertisement"],
+      "marks": 8
+    },
+    {
+      "question_number": 22,
+      "question": "Discuss the need for consumer education.",
+      "answer": "Consumer education helps individuals understand their rights and responsibilities.",
+      "answer_outline": ["Awareness", "Protection"],
+      "key_concepts": ["consumer education"],
+      "marks": 8
+    },
+    {
+      "question_number": 23,
+      "question": "Explain how globalisation has increased the need for consumer protection.",
+      "answer": "With more products and brands in the market, consumers need protection from unfair practices and defective goods.",
+      "answer_outline": ["Increased choices", "Need for regulation"],
+      "key_concepts": ["globalisation impact"],
+      "marks": 8
+    },
+    {
+      "question_number": 24,
+      "question": "Why are consumer rights considered essential in a market economy?",
+      "answer": "They ensure fairness, transparency and protection from exploitation.",
+      "answer_outline": ["Fair trade", "Protection"],
+      "key_concepts": ["market economy"],
+      "marks": 8
+    },
+    {
+      "question_number": 25,
+      "question": "Discuss the overall importance of consumer protection in India.",
+      "answer": "Consumer protection promotes fair trade, ensures quality goods and services, and strengthens trust in the market system.",
+      "answer_outline": ["Fairness", "Quality assurance", "Trust building"],
+      "key_concepts": ["consumer welfare"],
+      "marks": 8
+    }
+  ]
+}

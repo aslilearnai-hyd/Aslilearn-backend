@@ -1,0 +1,358 @@
+{
+    "content_type": "MCQs",
+    "chapter": "Chapter 2: Physical Features of India",
+    "generated_at": "2026-03-08T22:00:00",
+    "total_questions": 25,
+    "questions": [
+        {
+            "question_number": 1,
+            "question": "How many major physiographic divisions does India have?",
+            "options": {
+                "A": "Four",
+                "B": "Five",
+                "C": "Six",
+                "D": "Seven"
+            },
+            "correct_answer": "C",
+            "explanation": "India has six major physiographic divisions.",
+            "difficulty": "easy",
+            "source_section": "Section 2.1"
+        },
+        {
+            "question_number": 2,
+            "question": "Which is the highest mountain range in India?",
+            "options": {
+                "A": "Aravali",
+                "B": "Himalayas",
+                "C": "Vindhya",
+                "D": "Satpura"
+            },
+            "correct_answer": "B",
+            "explanation": "The Himalayas are the highest mountain range in India.",
+            "difficulty": "easy",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 3,
+            "question": "The Himalayas are an example of which type of mountains?",
+            "options": {
+                "A": "Block mountains",
+                "B": "Volcanic mountains",
+                "C": "Fold mountains",
+                "D": "Residual mountains"
+            },
+            "correct_answer": "C",
+            "explanation": "The Himalayas were formed by folding of the earth’s crust.",
+            "difficulty": "easy",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 4,
+            "question": "Which is the northernmost range of the Himalayas?",
+            "options": {
+                "A": "Himachal",
+                "B": "Shiwaliks",
+                "C": "Himadri",
+                "D": "Aravali"
+            },
+            "correct_answer": "C",
+            "explanation": "Himadri or Great Himalayas is the northernmost range.",
+            "difficulty": "easy",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 5,
+            "question": "Which rivers form the Northern Plains?",
+            "options": {
+                "A": "Godavari Krishna Kaveri",
+                "B": "Indus Ganga Brahmaputra",
+                "C": "Narmada Tapi",
+                "D": "Luni Sabarmati"
+            },
+            "correct_answer": "B",
+            "explanation": "These three river systems formed the Northern Plains.",
+            "difficulty": "easy",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 6,
+            "question": "Which soil is mainly found in the Northern Plains?",
+            "options": {
+                "A": "Black soil",
+                "B": "Alluvial soil",
+                "C": "Laterite soil",
+                "D": "Red soil"
+            },
+            "correct_answer": "B",
+            "explanation": "The Northern Plains are composed of alluvial soil.",
+            "difficulty": "easy",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 7,
+            "question": "Which region is a narrow belt of pebbles along the foothills of the Himalayas?",
+            "options": {
+                "A": "Terai",
+                "B": "Bhangar",
+                "C": "Bhabar",
+                "D": "Khadar"
+            },
+            "correct_answer": "C",
+            "explanation": "Bhabar is a belt of pebbles deposited by rivers.",
+            "difficulty": "easy",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 8,
+            "question": "Which region is marshy and swampy south of Bhabar?",
+            "options": {
+                "A": "Terai",
+                "B": "Bhangar",
+                "C": "Khadar",
+                "D": "Doab"
+            },
+            "correct_answer": "A",
+            "explanation": "Terai is a marshy region south of Bhabar.",
+            "difficulty": "easy",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 9,
+            "question": "The Peninsular Plateau is mainly composed of:",
+            "options": {
+                "A": "Sedimentary rocks",
+                "B": "Alluvial soil",
+                "C": "Igneous and metamorphic rocks",
+                "D": "Sand dunes"
+            },
+            "correct_answer": "C",
+            "explanation": "The plateau is made of ancient igneous and metamorphic rocks.",
+            "difficulty": "easy",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 10,
+            "question": "Which river divides the Peninsular Plateau into two parts?",
+            "options": {
+                "A": "Ganga",
+                "B": "Narmada",
+                "C": "Godavari",
+                "D": "Krishna"
+            },
+            "correct_answer": "B",
+            "explanation": "The Narmada River divides the plateau into two parts.",
+            "difficulty": "easy",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 11,
+            "question": "Which Ghats are higher?",
+            "options": {
+                "A": "Eastern Ghats",
+                "B": "Western Ghats",
+                "C": "Both equal",
+                "D": "None"
+            },
+            "correct_answer": "B",
+            "explanation": "Western Ghats are higher and more continuous.",
+            "difficulty": "easy",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 12,
+            "question": "Which is the highest peak of the Western Ghats?",
+            "options": {
+                "A": "Anai Mudi",
+                "B": "Kanchenjunga",
+                "C": "Nanda Devi",
+                "D": "K2"
+            },
+            "correct_answer": "A",
+            "explanation": "Anai Mudi is the highest peak in the Western Ghats.",
+            "difficulty": "easy",
+            "source_section": "Section 2.4"
+        },
+        {
+            "question_number": 13,
+            "question": "Which desert lies in western India?",
+            "options": {
+                "A": "Thar Desert",
+                "B": "Sahara Desert",
+                "C": "Gobi Desert",
+                "D": "Kalahari Desert"
+            },
+            "correct_answer": "A",
+            "explanation": "The Indian Desert is also known as the Thar Desert.",
+            "difficulty": "easy",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 14,
+            "question": "Which is the main river of the Indian Desert?",
+            "options": {
+                "A": "Luni",
+                "B": "Ganga",
+                "C": "Godavari",
+                "D": "Kaveri"
+            },
+            "correct_answer": "A",
+            "explanation": "Luni is the main river flowing in the desert region.",
+            "difficulty": "easy",
+            "source_section": "Section 2.5"
+        },
+        {
+            "question_number": 15,
+            "question": "Which coastal plain lies between Mumbai and Goa?",
+            "options": {
+                "A": "Konkan Coast",
+                "B": "Malabar Coast",
+                "C": "Coromandel Coast",
+                "D": "Northern Circar"
+            },
+            "correct_answer": "A",
+            "explanation": "Konkan Coast lies between Mumbai and Goa.",
+            "difficulty": "easy",
+            "source_section": "Section 2.6"
+        },
+        {
+            "question_number": 16,
+            "question": "Which coast lies in Kerala?",
+            "options": {
+                "A": "Konkan Coast",
+                "B": "Malabar Coast",
+                "C": "Coromandel Coast",
+                "D": "Northern Circar"
+            },
+            "correct_answer": "B",
+            "explanation": "Malabar Coast lies in Kerala.",
+            "difficulty": "easy",
+            "source_section": "Section 2.6"
+        },
+        {
+            "question_number": 17,
+            "question": "Which coast lies along the Bay of Bengal?",
+            "options": {
+                "A": "Western coast",
+                "B": "Eastern coast",
+                "C": "Arabian coast",
+                "D": "Konkan coast"
+            },
+            "correct_answer": "B",
+            "explanation": "Eastern coastal plains lie along the Bay of Bengal.",
+            "difficulty": "easy",
+            "source_section": "Section 2.6"
+        },
+        {
+            "question_number": 18,
+            "question": "Which lake is the largest saltwater lake in India?",
+            "options": {
+                "A": "Dal Lake",
+                "B": "Wular Lake",
+                "C": "Chilika Lake",
+                "D": "Pulicat Lake"
+            },
+            "correct_answer": "C",
+            "explanation": "Chilika Lake is the largest saltwater lake in India.",
+            "difficulty": "easy",
+            "source_section": "Section 2.6"
+        },
+        {
+            "question_number": 19,
+            "question": "Lakshadweep islands are located in which sea?",
+            "options": {
+                "A": "Bay of Bengal",
+                "B": "Arabian Sea",
+                "C": "Red Sea",
+                "D": "Mediterranean Sea"
+            },
+            "correct_answer": "B",
+            "explanation": "Lakshadweep islands lie in the Arabian Sea.",
+            "difficulty": "easy",
+            "source_section": "Section 2.7"
+        },
+        {
+            "question_number": 20,
+            "question": "Andaman and Nicobar islands are located in:",
+            "options": {
+                "A": "Arabian Sea",
+                "B": "Bay of Bengal",
+                "C": "Indian Ocean",
+                "D": "Pacific Ocean"
+            },
+            "correct_answer": "B",
+            "explanation": "They are located in the Bay of Bengal.",
+            "difficulty": "easy",
+            "source_section": "Section 2.7"
+        },
+        {
+            "question_number": 21,
+            "question": "Lakshadweep islands are mainly:",
+            "options": {
+                "A": "Volcanic islands",
+                "B": "Coral islands",
+                "C": "Rock islands",
+                "D": "Mountain islands"
+            },
+            "correct_answer": "B",
+            "explanation": "Lakshadweep islands are coral islands.",
+            "difficulty": "easy",
+            "source_section": "Section 2.7"
+        },
+        {
+            "question_number": 22,
+            "question": "Which island has India's only active volcano?",
+            "options": {
+                "A": "Lakshadweep",
+                "B": "Barren Island",
+                "C": "Majuli",
+                "D": "Minicoy"
+            },
+            "correct_answer": "B",
+            "explanation": "Barren Island has India's only active volcano.",
+            "difficulty": "easy",
+            "source_section": "Section 2.7"
+        },
+        {
+            "question_number": 23,
+            "question": "Which is the highest peak in India?",
+            "options": {
+                "A": "Everest",
+                "B": "Kanchenjunga",
+                "C": "Nanda Devi",
+                "D": "Anai Mudi"
+            },
+            "correct_answer": "B",
+            "explanation": "Kanchenjunga is the highest peak in India.",
+            "difficulty": "easy",
+            "source_section": "Section 2.2"
+        },
+        {
+            "question_number": 24,
+            "question": "Which river forms the world's largest river island Majuli?",
+            "options": {
+                "A": "Ganga",
+                "B": "Yamuna",
+                "C": "Brahmaputra",
+                "D": "Godavari"
+            },
+            "correct_answer": "C",
+            "explanation": "Majuli island lies in the Brahmaputra river.",
+            "difficulty": "easy",
+            "source_section": "Section 2.3"
+        },
+        {
+            "question_number": 25,
+            "question": "Which physiographic division is richest in minerals?",
+            "options": {
+                "A": "Northern Plains",
+                "B": "Peninsular Plateau",
+                "C": "Himalayas",
+                "D": "Coastal Plains"
+            },
+            "correct_answer": "B",
+            "explanation": "The Peninsular Plateau is rich in mineral resources.",
+            "difficulty": "easy",
+            "source_section": "Section 2.4"
+        }
+    ]
+}

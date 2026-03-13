@@ -1,0 +1,159 @@
+{
+    "class": "Class 10",
+    "subject": "English",
+    "chapter_name": "The Tale of Custard the Dragon",
+    "title": "Lesson Planner – The Tale of Custard the Dragon",
+    "author": "Ogden Nash",
+    "lesson_level": "Hard",
+    "total_periods": 6,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Analyse the poem critically and interpret deeper meanings",
+        "Evaluate the use of humour, parody, and irony",
+        "Examine poetic devices and narrative techniques",
+        "Understand character behaviour and psychological traits",
+        "Interpret the theme of bravery and human nature",
+        "Develop critical thinking and analytical writing skills"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Context and Literary Background",
+            "topics_covered": [
+                "Introduction to Ogden Nash’s style",
+                "Understanding parody in literature",
+                "Structure of narrative poems"
+            ],
+            "teaching_strategy": [
+                "Lecture method",
+                "Contextual explanation"
+            ],
+            "student_activities": [
+                "Discuss examples of parody",
+                "Identify narrative elements in the poem"
+            ],
+            "assessment": [
+                "Oral questioning",
+                "Class interaction"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Detailed Character Study",
+            "topics_covered": [
+                "Psychology of Belinda and pets",
+                "Perception of cowardice vs bravery",
+                "Custard’s contrasting personality"
+            ],
+            "teaching_strategy": [
+                "Critical discussion",
+                "Textual analysis"
+            ],
+            "student_activities": [
+                "Write character traits",
+                "Debate who is truly brave"
+            ],
+            "assessment": [
+                "Short analytical writing",
+                "Group discussion evaluation"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Humour, Irony, and Satire",
+            "topics_covered": [
+                "Situational irony",
+                "Satirical tone",
+                "Humorous exaggeration"
+            ],
+            "teaching_strategy": [
+                "Close reading",
+                "Example-based explanation"
+            ],
+            "student_activities": [
+                "Identify ironic situations",
+                "Explain the comic effect"
+            ],
+            "assessment": [
+                "Critical response writing",
+                "Teacher observation"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Imagery and Poetic Techniques",
+            "topics_covered": [
+                "Similes and metaphors",
+                "Visual imagery",
+                "Sound patterns and rhythm"
+            ],
+            "teaching_strategy": [
+                "Poetry analysis",
+                "Guided interpretation"
+            ],
+            "student_activities": [
+                "Analyse descriptive lines",
+                "Explain imagery used in Custard’s description"
+            ],
+            "assessment": [
+                "Worksheet analysis",
+                "Notebook review"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Thematic Interpretation",
+            "topics_covered": [
+                "Theme of courage",
+                "Human tendency to boast",
+                "Reality vs appearance"
+            ],
+            "teaching_strategy": [
+                "Analytical discussion",
+                "Interpretive questioning"
+            ],
+            "student_activities": [
+                "Write thematic interpretation",
+                "Discuss relevance in modern life"
+            ],
+            "assessment": [
+                "Short essay writing",
+                "Class discussion"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Synthesis and Assessment",
+            "topics_covered": [
+                "Complete poem analysis",
+                "Student presentations",
+                "Final revision"
+            ],
+            "teaching_strategy": [
+                "Student-led discussion",
+                "Revision quiz"
+            ],
+            "student_activities": [
+                "Present poem analysis",
+                "Participate in revision activity"
+            ],
+            "assessment": [
+                "Analytical test",
+                "Presentation evaluation"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "English Textbook",
+        "Whiteboard or Blackboard",
+        "Poetry analysis worksheets",
+        "Presentation slides"
+    ],
+    "evaluation_methods": [
+        "Analytical writing",
+        "Class presentations",
+        "Written tests",
+        "Student participation"
+    ],
+    "teacher_tip": "Encourage students to analyse the irony that the supposedly cowardly dragon proves to be the bravest character."
+}

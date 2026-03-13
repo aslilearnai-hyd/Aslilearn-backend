@@ -1,0 +1,183 @@
+{
+    "class": "Class 7",
+    "subject": "Science",
+    "chapter_name": "The World of Metals and Non-Metals",
+    "lesson_level": "Easy",
+    "total_periods": 7,
+    "period_duration_minutes": "40-45",
+    "overall_learning_objectives": [
+        "Identify common metals and non-metals used in daily life",
+        "Understand basic physical properties like luster, hardness, and state",
+        "Differentiate between metals and non-metals based on appearance and feel",
+        "Recognize the importance of metals in making tools and utensils",
+        "Learn about the conductivity of heat and electricity in simple terms",
+        "Understand the concept of rusting as a change in metals",
+        "Identify non-metals essential for life (like Oxygen)"
+    ],
+    "lesson_plan": [
+        {
+            "period": 1,
+            "title": "Introduction to Materials",
+            "topics_covered": [
+                "Classification of objects around us",
+                "Appearance: Shiny vs. Dull",
+                "Hardness: Can it be compressed or scratched?"
+            ],
+            "teaching_strategy": [
+                "Object sorting activity",
+                "Observation-based discussion",
+                "Real-life examples (Jewelry, coal, utensils)"
+            ],
+            "student_activities": [
+                "Classify a list of 10 items as shiny or dull",
+                "Touch and feel different surfaces (Aluminium foil vs. Paper)"
+            ],
+            "assessment": [
+                "Oral identification",
+                "Table completion in notebooks"
+            ]
+        },
+        {
+            "period": 2,
+            "title": "Physical Properties: Luster and Hardness",
+            "topics_covered": [
+                "Definition of Metallic Luster",
+                "Strength of metals vs. brittleness of non-metals",
+                "Exceptions (like Sodium being soft - brief mention)"
+            ],
+            "teaching_strategy": [
+                "Sandpaper demonstration (polishing a dull metal)",
+                "Comparison chart on board"
+            ],
+            "student_activities": [
+                "Rub a rusted nail with sandpaper to see the shine",
+                "Try to break a piece of charcoal vs. a copper wire"
+            ],
+            "assessment": [
+                "Spot test: Identifying 'lustrous' objects",
+                "Short answer questions"
+            ]
+        },
+        {
+            "period": 3,
+            "title": "Malleability and Ductility",
+            "topics_covered": [
+                "Beating metals into sheets (Malleability)",
+                "Drawing metals into wires (Ductility)",
+                "Why non-metals break (Brittleness)"
+            ],
+            "teaching_strategy": [
+                "Hammering demonstration (Aluminium wire vs. Coal)",
+                "Visual aids showing wires and foils"
+            ],
+            "student_activities": [
+                "Observe the flattening of a small lead or aluminium piece",
+                "List uses of foils in food packaging"
+            ],
+            "assessment": [
+                "Definition matching worksheet",
+                "Notebook review"
+            ]
+        },
+        {
+            "period": 4,
+            "title": "Heat and Electrical Conductivity",
+            "topics_covered": [
+                "Why cooking pans have plastic handles",
+                "Metals as good conductors",
+                "Non-metals as insulators"
+            ],
+            "teaching_strategy": [
+                "Simple circuit demonstration (Bulb and battery)",
+                "Heat conduction story (Spoon in hot tea)"
+            ],
+            "student_activities": [
+                "Test different materials in a simple circuit to see if the bulb glows",
+                "Identify which parts of an electric plug are metal"
+            ],
+            "assessment": [
+                "Circuit testing checklist",
+                "Exit slip: 'Why is copper used in wires?'"
+            ]
+        },
+        {
+            "period": 5,
+            "title": "Sonority and States of Matter",
+            "topics_covered": [
+                "Ringing sound of metals (Sonorous)",
+                "Solid, Liquid, and Gaseous states",
+                "Mercury as a liquid metal (General awareness)"
+            ],
+            "teaching_strategy": [
+                "Sound test (Dropping a metal key vs. a wooden block)",
+                "Picture cards of different elements"
+            ],
+            "student_activities": [
+                "Listen to the sounds produced by different objects",
+                "Identify the 'Liquid in a Thermometer'"
+            ],
+            "assessment": [
+                "Rapid fire oral round",
+                "Classification based on state"
+            ]
+        },
+        {
+            "period": 6,
+            "title": "Common Uses and Rusting",
+            "topics_covered": [
+                "Uses of Iron, Gold, and Copper",
+                "Introduction to Rusting (Iron + Air + Water)",
+                "Uses of non-metals (Oxygen for breathing, Iodine as antiseptic)"
+            ],
+            "teaching_strategy": [
+                "Showing a rusted object vs. a new one",
+                "Discussion on daily utilities"
+            ],
+            "student_activities": [
+                "Identify rusted items in the school/home garden",
+                "Make a poster on 'Metals in my Kitchen'"
+            ],
+            "assessment": [
+                "Group discussion",
+                "Drawing and labeling activity"
+            ]
+        },
+        {
+            "period": 7,
+            "title": "Revision and Summary",
+            "topics_covered": [
+                "Recap of all physical properties",
+                "Metal vs. Non-metal summary table",
+                "Fun facts about elements"
+            ],
+            "teaching_strategy": [
+                "Interactive board game/quiz",
+                "Summary concept map"
+            ],
+            "student_activities": [
+                "Participate in a 'Metal or Non-Metal' mystery bag game",
+                "Complete a mixed practice worksheet"
+            ],
+            "assessment": [
+                "Short test (15 marks)",
+                "MCQs on properties and uses"
+            ]
+        }
+    ],
+    "teaching_aids": [
+        "Samples of Copper, Iron, Aluminium, Coal, and Sulphur",
+        "Hammer and sandpaper",
+        "Simple circuit (Battery, Bulb, Wires)",
+        "Rusted iron nail",
+        "NCERT Science Textbook"
+    ],
+    "evaluation_methods": [
+        "Oral questioning",
+        "Activity-based observation",
+        "Worksheet evaluation",
+        "MCQs",
+        "Identification tests",
+        "Poster making"
+    ],
+    "teacher_tip": "Keep the focus on observable physical properties. At this level, avoid complex chemical equations. Use the 'Kitchen Tour' approach—most metals and non-metals they need to know are right there in the cooking area!"
+}

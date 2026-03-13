@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: The Mughals (16th to 17th Century)",
+  "generated_at": "2026-03-08T22:35:40",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "The Mughals were descendants of which two great lineages of rulers?",
+      "options": {
+        "A": "Mauryas and Guptas",
+        "B": "Genghis Khan and Timur",
+        "C": "Cholas and Pandyas",
+        "D": "British and French"
+      },
+      "correct_answer": "B",
+      "explanation": "From their mother’s side they were descendants of Genghis Khan and from their father’s side they were successors of Timur.",
+      "difficulty": "easy",
+      "source_section": "Who were the Mughals?"
+    },
+    {
+      "question_number": 2,
+      "question": "Who was the first Mughal Emperor in India?",
+      "options": {
+        "A": "Akbar",
+        "B": "Humayun",
+        "C": "Babur",
+        "D": "Jahangir"
+      },
+      "correct_answer": "C",
+      "explanation": "Babur (1526-1530) was the first Mughal emperor who succeeded to the throne of Ferghana in 1494.",
+      "difficulty": "easy",
+      "source_section": "Mughal Military Campaigns"
+    },
+    {
+      "question_number": 3,
+      "question": "In which year did Babur defeat Ibrahim Lodi at Panipat?",
+      "options": {
+        "A": "1520",
+        "B": "1526",
+        "C": "1530",
+        "D": "1556"
+      },
+      "correct_answer": "B",
+      "explanation": "In 1526, Babur defeated the Sultan of Delhi, Ibrahim Lodi, at Panipat and captured Delhi and Agra.",
+      "difficulty": "easy",
+      "source_section": "Mughal Military Campaigns"
+    },
+    {
+      "question_number": 4,
+      "question": "Which Mughal Emperor was defeated by Sher Shah Suri and forced to flee to Iran?",
+      "options": {
+        "A": "Babur",
+        "B": "Humayun",
+        "C": "Akbar",
+        "D": "Shah Jahan"
+      },
+      "correct_answer": "B",
+      "explanation": "Sher Shah Suri defeated Humayun at Chausa (1539) and Kanauj (1540), forcing him to flee to Iran.",
+      "difficulty": "easy",
+      "source_section": "Mughal Emperors"
+    },
+    {
+      "question_number": 5,
+      "question": "At what age did Akbar become the Emperor?",
+      "options": {
+        "A": "13 years old",
+        "B": "18 years old",
+        "C": "21 years old",
+        "D": "25 years old"
+      },
+      "correct_answer": "A",
+      "explanation": "Akbar was only 13 years old when he became emperor in 1556.",
+      "difficulty": "easy",
+      "source_section": "Mughal Emperors"
+    },
+    {
+      "question_number": 6,
+      "question": "Who was Akbar’s regent during the early years of his reign?",
+      "options": {
+        "A": "Abul Fazl",
+        "B": "Bairam Khan",
+        "C": "Todar Mal",
+        "D": "Man Singh"
+      },
+      "correct_answer": "B",
+      "explanation": "Bairam Khan was the regent who helped Akbar rule during his youth from 1556 to 1560.",
+      "difficulty": "easy",
+      "source_section": "Mughal Emperors"
+    },
+    {
+      "question_number": 7,
+      "question": "Which Mughal Emperor built the Taj Mahal in memory of his wife?",
+      "options": {
+        "A": "Akbar",
+        "B": "Jahangir",
+        "C": "Shah Jahan",
+        "D": "Aurangzeb"
+      },
+      "correct_answer": "C",
+      "explanation": "Shah Jahan is famous for building the Taj Mahal at Agra.",
+      "difficulty": "easy",
+      "source_section": "Mughal Emperors"
+    },
+    {
+      "question_number": 8,
+      "question": "What was the term used for Mughal administrative officials who held a 'rank'?",
+      "options": {
+        "A": "Samanta",
+        "B": "Mansabdar",
+        "C": "Zabti",
+        "D": "Subadar"
+      },
+      "correct_answer": "B",
+      "explanation": "The term mansabdar refers to an individual who holds a mansab, meaning a position or rank.",
+      "difficulty": "easy",
+      "source_section": "Mansabdars and Jagirdars"
+    },
+    {
+      "question_number": 9,
+      "question": "In the Mansabdari system, 'Zat' determined the rank and ______ of the official.",
+      "options": {
+        "A": "Age",
+        "B": "Salary",
+        "C": "Religion",
+        "D": "Height"
+      },
+      "correct_answer": "B",
+      "explanation": "Rank and salary were determined by a numerical value called zat.",
+      "difficulty": "easy",
+      "source_section": "Mansabdars and Jagirdars"
+    },
+    {
+      "question_number": 10,
+      "question": "What was the land grant from which Mansabdars collected their salaries called?",
+      "options": {
+        "A": "Iqta",
+        "B": "Jagir",
+        "C": "Zabt",
+        "D": "Zat"
+      },
+      "correct_answer": "B",
+      "explanation": "Mansabdars received their salaries as revenue assignments called jagirs.",
+      "difficulty": "easy",
+      "source_section": "Mansabdars and Jagirdars"
+    },
+    {
+      "question_number": 11,
+      "question": "Who was Akbar’s revenue minister who carried out a 10-year survey of crop yields?",
+      "options": {
+        "A": "Birbal",
+        "B": "Raja Todar Mal",
+        "C": "Abul Fazl",
+        "D": "Tansen"
+      },
+      "correct_answer": "B",
+      "explanation": "Akbar’s revenue minister, Todar Mal, carried out a careful survey of crop yields, prices, and areas cultivated for a 10-year period.",
+      "difficulty": "easy",
+      "source_section": "Zabt and Zamindars"
+    },
+    {
+      "question_number": 12,
+      "question": "The revenue system based on the survey of crop yields and fixed prices was known as ______.",
+      "options": {
+        "A": "Jagirdari",
+        "B": "Zabt",
+        "C": "Iqtadari",
+        "D": "Mansabdari"
+      },
+      "correct_answer": "B",
+      "explanation": "Zabt was the revenue system where each crop had its own schedule of revenue rates.",
+      "difficulty": "easy",
+      "source_section": "Zabt and Zamindars"
+    },
+    {
+      "question_number": 13,
+      "question": "Who wrote the 'Akbar Nama', the history of Akbar’s reign?",
+      "options": {
+        "A": "Todar Mal",
+        "B": "Birbal",
+        "C": "Abul Fazl",
+        "D": "Amir Khusrau"
+      },
+      "correct_answer": "C",
+      "explanation": "Abul Fazl, a close friend and courtier of Akbar, wrote a three-volume history of Akbar's reign titled Akbar Nama.",
+      "difficulty": "easy",
+      "source_section": "Akbar’s Policies"
+    },
+    {
+      "question_number": 14,
+      "question": "The third volume of Akbar Nama, which deals with administration, is called ______.",
+      "options": {
+        "A": "Tarikh-i-Firoz Shahi",
+        "B": "Ain-i Akbari",
+        "C": "Tuzuk-i-Baburi",
+        "D": "Padshahnama"
+      },
+      "correct_answer": "B",
+      "explanation": "The third volume is the Ain-i Akbari. It deals with Akbar’s administration, household, army, the revenues, and the geography of his empire.",
+      "difficulty": "easy",
+      "source_section": "Akbar’s Policies"
+    },
+    {
+      "question_number": 15,
+      "question": "What was a province in the Mughal Empire called?",
+      "options": {
+        "A": "Sarkar",
+        "B": "Suba",
+        "C": "Pargana",
+        "D": "Gram"
+      },
+      "correct_answer": "B",
+      "explanation": "The empire was divided into provinces called subas.",
+      "difficulty": "easy",
+      "source_section": "Akbar’s Policies"
+    },
+    {
+      "question_number": 16,
+      "question": "The governor of a Mughal province was known as the ______.",
+      "options": {
+        "A": "Diwan",
+        "B": "Subadar",
+        "C": "Bakshi",
+        "D": "Kotwal"
+      },
+      "correct_answer": "B",
+      "explanation": "Each suba (province) was governed by a subadar who carried out both political and military functions.",
+      "difficulty": "easy",
+      "source_section": "Akbar’s Policies"
+    },
+    {
+      "question_number": 17,
+      "question": "In the Mughal administration, the financial officer of a province was the ______.",
+      "options": {
+        "A": "Subadar",
+        "B": "Diwan",
+        "C": "Bakshi",
+        "D": "Faujdar"
+      },
+      "correct_answer": "B",
+      "explanation": "For the maintenance of loyalty and order, each province also had a financial officer or diwan.",
+      "difficulty": "easy",
+      "source_section": "Akbar’s Policies"
+    },
+    {
+      "question_number": 18,
+      "question": "What was the hall where Akbar held religious discussions called?",
+      "options": {
+        "A": "Diwan-i-Aam",
+        "B": "Diwan-i-Khas",
+        "C": "Ibadat Khana",
+        "D": "Panch Mahal"
+      },
+      "correct_answer": "C",
+      "explanation": "Akbar started discussions with various religious scholars at the Ibadat Khana at Fatehpur Sikri.",
+      "difficulty": "easy",
+      "source_section": "Akbar’s Policies"
+    },
+    {
+      "question_number": 19,
+      "question": "The idea of 'Sulh-i kul' introduced by Akbar means:",
+      "options": {
+        "A": "Supreme power",
+        "B": "Universal peace",
+        "C": "Divine rule",
+        "D": "War for all"
+      },
+      "correct_answer": "B",
+      "explanation": "Sulh-i kul literally translates to 'universal peace'.",
+      "difficulty": "easy",
+      "source_section": "Akbar’s Policies"
+    },
+    {
+      "question_number": 20,
+      "question": "Who was the military paymaster in the Mughal administration?",
+      "options": {
+        "A": "Sadr",
+        "B": "Bakshi",
+        "C": "Kotwal",
+        "D": "Faujdar"
+      },
+      "correct_answer": "B",
+      "explanation": "The military paymaster was known as the 'bakshi'.",
+      "difficulty": "easy",
+      "source_section": "Akbar’s Policies"
+    },
+    {
+      "question_number": 21,
+      "question": "Which Mughal Emperor was the last of the powerful 'Great Mughals'?",
+      "options": {
+        "A": "Shah Jahan",
+        "B": "Aurangzeb",
+        "C": "Bahadur Shah Zafar",
+        "D": "Jahangir"
+      },
+      "correct_answer": "B",
+      "explanation": "Aurangzeb (1658-1707) is considered the last of the powerful Mughal emperors.",
+      "difficulty": "easy",
+      "source_section": "Mughal Emperors"
+    },
+    {
+      "question_number": 22,
+      "question": "Mehrunnisa was the wife of which Mughal Emperor and was given the title 'Nur Jahan'?",
+      "options": {
+        "A": "Akbar",
+        "B": "Jahangir",
+        "C": "Shah Jahan",
+        "D": "Aurangzeb"
+      },
+      "correct_answer": "B",
+      "explanation": "Mehrunnisa married the Emperor Jahangir in 1611 and received the title Nur Jahan.",
+      "difficulty": "easy",
+      "source_section": "Akbar’s Policies"
+    },
+    {
+      "question_number": 23,
+      "question": "The Rathore Rajputs were associated with which princely state?",
+      "options": {
+        "A": "Amber",
+        "B": "Marwar",
+        "C": "Mewar",
+        "D": "Bundelkhand"
+      },
+      "correct_answer": "B",
+      "explanation": "The Rathore Rajputs of Marwar were often involved in political relations with the Mughals.",
+      "difficulty": "easy",
+      "source_section": "Mughal Military Campaigns"
+    },
+    {
+      "question_number": 24,
+      "question": "What were the 'Zamindars' in the Mughal system?",
+      "options": {
+        "A": "Mughal princes",
+        "B": "Peasants",
+        "C": "Intermediaries who collected revenue from peasants",
+        "D": "Religious leaders"
+      },
+      "correct_answer": "C",
+      "explanation": "The Mughals used one term—zamindars—to describe all intermediaries, whether they were local headmen or powerful chieftains.",
+      "difficulty": "easy",
+      "source_section": "Zabt and Zamindars"
+    },
+    {
+      "question_number": 25,
+      "question": "Cannons and gunpowder were first used in India by ______ in the 16th century.",
+      "options": {
+        "A": "The Marathas",
+        "B": "The British",
+        "C": "Babur",
+        "D": "The Lodis"
+      },
+      "correct_answer": "C",
+      "explanation": "Babur used cannons effectively in the first battle of Panipat.",
+      "difficulty": "easy",
+      "source_section": "Mughal Military Campaigns"
+    }
+  ]
+}

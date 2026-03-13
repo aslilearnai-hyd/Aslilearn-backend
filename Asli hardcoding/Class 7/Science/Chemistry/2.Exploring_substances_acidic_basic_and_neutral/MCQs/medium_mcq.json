@@ -1,0 +1,358 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter: Exploring substances: Acids, Bases and Neutral",
+  "generated_at": "2026-03-06T18:37:00",
+  "total_questions": 25,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "A solution turns red litmus paper blue. Its pH is likely to be:",
+      "options": {
+        "A": "1",
+        "B": "4",
+        "C": "5",
+        "D": "10"
+      },
+      "correct_answer": "D",
+      "explanation": "Solutions that turn red litmus blue are basic. On the pH scale, bases have a value greater than 7.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 2,
+      "question": "When an acid reacts with a metal carbonate, which gas is evolved?",
+      "options": {
+        "A": "Hydrogen",
+        "B": "Oxygen",
+        "C": "Carbon dioxide",
+        "D": "Nitrogen"
+      },
+      "correct_answer": "C",
+      "explanation": "Acids react with carbonates to produce salt, water, and carbon dioxide gas.",
+      "difficulty": "medium",
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 3,
+      "question": "Which of the following is the strongest acid among the given options?",
+      "options": {
+        "A": "Acetic acid",
+        "B": "Hydrochloric acid",
+        "C": "Citric acid",
+        "D": "Tartaric acid"
+      },
+      "correct_answer": "B",
+      "explanation": "Hydrochloric acid is a mineral acid and is much stronger than organic acids like acetic or citric acid.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 4,
+      "question": "What color change occurs when phenolphthalein is added to an acidic solution?",
+      "options": {
+        "A": "Turns pink",
+        "B": "Turns blue",
+        "C": "Remains colorless",
+        "D": "Turns red"
+      },
+      "correct_answer": "C",
+      "explanation": "Phenolphthalein is a synthetic indicator that is pink in basic solutions but remains colorless in acidic or neutral solutions.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 5,
+      "question": "Calamine solution is applied to the skin after an ant bite. What is its chemical nature?",
+      "options": {
+        "A": "Acidic",
+        "B": "Basic",
+        "C": "Neutral",
+        "D": "Corrosive"
+      },
+      "correct_answer": "B",
+      "explanation": "Calamine contains zinc carbonate, which is basic and neutralizes the formic acid injected by the ant.",
+      "difficulty": "medium",
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 6,
+      "question": "Which of the following pairs forms a salt and water only?",
+      "options": {
+        "A": "Acid + Metal",
+        "B": "Acid + Carbonate",
+        "C": "Acid + Base",
+        "D": "Base + Metal"
+      },
+      "correct_answer": "C",
+      "explanation": "A neutralization reaction between an acid and a base results in the formation of salt and water only.",
+      "difficulty": "medium",
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 7,
+      "question": "Why does a turmeric stain on a white shirt turn red when washed with soap?",
+      "options": {
+        "A": "Soap is acidic",
+        "B": "Soap is basic",
+        "C": "Soap is neutral",
+        "D": "Turmeric reacts with water"
+      },
+      "correct_answer": "B",
+      "explanation": "Turmeric is a natural indicator that changes from yellow to red in the presence of a base (soap).",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 8,
+      "question": "Which of the following is an example of an organic acid?",
+      "options": {
+        "A": "Sulphuric acid",
+        "B": "Nitric acid",
+        "C": "Oxalic acid",
+        "D": "Phosphoric acid"
+      },
+      "correct_answer": "C",
+      "explanation": "Oxalic acid is found in plants (like spinach) and is an organic acid, unlike the others which are mineral acids.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 9,
+      "question": "What is the result of a reaction between Magnesium Hydroxide and Dilute Hydrochloric Acid?",
+      "options": {
+        "A": "Magnesium Chloride + Hydrogen",
+        "B": "Magnesium Chloride + Water",
+        "C": "Magnesium Oxide + Water",
+        "D": "No reaction"
+      },
+      "correct_answer": "B",
+      "explanation": "This is a neutralization reaction (Base + Acid) producing salt (Magnesium Chloride) and Water.",
+      "difficulty": "medium",
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 10,
+      "question": "Which substance is used to neutralize highly basic soil?",
+      "options": {
+        "A": "Quick lime",
+        "B": "Slaked lime",
+        "C": "Organic matter (compost)",
+        "D": "Baking soda"
+      },
+      "correct_answer": "C",
+      "explanation": "Organic matter releases acids as it decays, which helps neutralize the basic nature of the soil.",
+      "difficulty": "medium",
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 11,
+      "question": "In a neutralization reaction, the new substance formed is called:",
+      "options": {
+        "A": "Acid",
+        "B": "Base",
+        "C": "Salt",
+        "D": "Indicator"
+      },
+      "correct_answer": "C",
+      "explanation": "Salt is the chemical compound formed from the reaction of an acid with a base.",
+      "difficulty": "medium",
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 12,
+      "question": "Ascorbic acid is the chemical name for which Vitamin?",
+      "options": {
+        "A": "Vitamin A",
+        "B": "Vitamin B",
+        "C": "Vitamin C",
+        "D": "Vitamin D"
+      },
+      "correct_answer": "C",
+      "explanation": "Vitamin C is chemically known as ascorbic acid and is found in citrus fruits and amla.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 13,
+      "question": "A student tests a solution with China rose indicator and it turns dark pink. The solution is:",
+      "options": {
+        "A": "Acidic",
+        "B": "Basic",
+        "C": "Neutral",
+        "D": "Distilled water"
+      },
+      "correct_answer": "A",
+      "explanation": "China rose indicator turns dark pink (magenta) in acidic solutions and green in basic solutions.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 14,
+      "question": "Which of the following is NOT a property of bases?",
+      "options": {
+        "A": "Bitter taste",
+        "B": "Soapy feel",
+        "C": "Turn blue litmus red",
+        "D": "Turn red litmus blue"
+      },
+      "correct_answer": "C",
+      "explanation": "Bases turn red litmus blue; it is acids that turn blue litmus red.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 15,
+      "question": "Tamarind contains which of the following acids?",
+      "options": {
+        "A": "Lactic acid",
+        "B": "Tartaric acid",
+        "C": "Citric acid",
+        "D": "Acetic acid"
+      },
+      "correct_answer": "B",
+      "explanation": "Tartaric acid is the primary acid found in tamarind and grapes.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 16,
+      "question": "What happens during a neutralization reaction in terms of heat?",
+      "options": {
+        "A": "Heat is absorbed",
+        "B": "Heat is evolved",
+        "C": "Temperature remains constant",
+        "D": "Reaction becomes freezing cold"
+      },
+      "correct_answer": "B",
+      "explanation": "Neutralization is an exothermic reaction, meaning heat is always produced or evolved.",
+      "difficulty": "medium",
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 17,
+      "question": "Which of the following can be used as an olfactory indicator (detectable by smell)?",
+      "options": {
+        "A": "Litmus",
+        "B": "Onion juice",
+        "C": "Turmeric",
+        "D": "China rose"
+      },
+      "correct_answer": "B",
+      "explanation": "Olfactory indicators like onion or vanilla change their smell in acidic or basic media.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 18,
+      "question": "Excessive use of chemical fertilizers makes the soil:",
+      "options": {
+        "A": "Acidic",
+        "B": "Basic",
+        "C": "Neutral",
+        "D": "Fertile"
+      },
+      "correct_answer": "A",
+      "explanation": "Chemical fertilizers often leave acidic residues, making the soil too acidic for many plants to grow.",
+      "difficulty": "medium",
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 19,
+      "question": "The name of the salt formed by the reaction of Sodium Hydroxide and Sulphuric acid is:",
+      "options": {
+        "A": "Sodium chloride",
+        "B": "Sodium sulphate",
+        "C": "Sodium nitrate",
+        "D": "Sodium carbonate"
+      },
+      "correct_answer": "B",
+      "explanation": "Sulphuric acid reacts with sodium hydroxide to form Sodium sulphate salt.",
+      "difficulty": "medium",
+      "source_section": "Section 1.3"
+    },
+    {
+      "question_number": 20,
+      "question": "Which of the following is found in 'Stinging Nettle' plant leaves?",
+      "options": {
+        "A": "Methanoic acid",
+        "B": "Citric acid",
+        "C": "Acetic acid",
+        "D": "Tartaric acid"
+      },
+      "correct_answer": "A",
+      "explanation": "Stinging nettle leaves have hair that inject methanoic acid (formic acid), causing a painful sting.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 21,
+      "question": "Neutralization of factory waste is important to protect:",
+      "options": {
+        "A": "The factory buildings",
+        "B": "Aquatic life",
+        "C": "Atmospheric nitrogen",
+        "D": "Factory workers"
+      },
+      "correct_answer": "B",
+      "explanation": "Acidic wastes can kill fish and other aquatic organisms if dumped directly into water bodies.",
+      "difficulty": "medium",
+      "source_section": "Section 1.4"
+    },
+    {
+      "question_number": 22,
+      "question": "Which of these is a base that is soluble in water?",
+      "options": {
+        "A": "Alkali",
+        "B": "Acid",
+        "C": "Salt",
+        "D": "Oxide"
+      },
+      "correct_answer": "A",
+      "explanation": "Bases that are soluble in water are specifically called alkalis.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1"
+    },
+    {
+      "question_number": 23,
+      "question": "What is the pH value of a neutral solution like pure water?",
+      "options": {
+        "A": "0",
+        "B": "14",
+        "C": "7",
+        "D": "1"
+      },
+      "correct_answer": "C",
+      "explanation": "A pH of 7 represents a perfectly neutral solution.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 24,
+      "question": "If you have a solution of pH 2, it is:",
+      "options": {
+        "A": "Strongly acidic",
+        "B": "Weakly acidic",
+        "C": "Strongly basic",
+        "D": "Weakly basic"
+      },
+      "correct_answer": "A",
+      "explanation": "The further away from 7 toward 0, the more acidic a solution is.",
+      "difficulty": "medium",
+      "source_section": "Section 1.2"
+    },
+    {
+      "question_number": 25,
+      "question": "Which acid is used in the manufacturing of fertilizers and explosives?",
+      "options": {
+        "A": "Hydrochloric acid",
+        "B": "Nitric acid",
+        "C": "Acetic acid",
+        "D": "Lactic acid"
+      },
+      "correct_answer": "B",
+      "explanation": "Nitric acid is a vital industrial chemical used in the production of ammonium nitrate fertilizers.",
+      "difficulty": "medium",
+      "source_section": "Section 1.1"
+    }
+  ]
+}
