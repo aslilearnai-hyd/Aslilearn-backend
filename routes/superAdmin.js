@@ -63,6 +63,32 @@ import {
 
 const router = express.Router();
 
+// Ensure CORS headers are always present on super-admin routes (especially file uploads)
+router.use((req, res, next) => {
+  // Mirror global CORS config but be explicit here in case this router is mounted differently
+  const origin = req.headers.origin;
+  const allowedOrigins = [
+    process.env.FRONTEND_URL,
+    'https://aslilearn.ai',
+    'https://www.aslilearn.ai',
+    'https://asli-frontend.vercel.app',
+    'http://localhost:5173'
+  ].filter(Boolean);
+
+  if (!origin || allowedOrigins.includes(origin)) {
+    res.header('Access-Control-Allow-Origin', origin || allowedOrigins[0] || '*');
+  }
+  res.header('Access-Control-Allow-Credentials', 'true');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+  res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE,OPTIONS');
+
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(204);
+  }
+
+  next();
+});
+
 // Get directory name for ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
