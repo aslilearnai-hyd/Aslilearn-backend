@@ -1004,6 +1004,18 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
   try {
     console.log('Auth me requested by:', req.user.email, 'Role:', req.user.role);
     
+    // For super-admin, return data directly from token without DB lookup
+    if (req.user.role === 'super-admin') {
+      const superAdminData = {
+        id: req.user.id || req.user.userId || 'super-admin-001',
+        email: req.user.email,
+        fullName: req.user.fullName || 'Super Admin',
+        role: req.user.role
+      };
+      console.log('Returning super-admin data without DB lookup:', superAdminData);
+      return res.json({ user: superAdminData });
+    }
+    
     // Find user in database to get full details
     const user = await User.findById(req.user.userId);
     if (!user) {
