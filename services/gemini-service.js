@@ -538,20 +538,25 @@ Generate:
 Make it clear, fair, and comprehensive.`,
 
 
-    'story-passage-creator': `Generate engaging stories and reading passages for:
-Subject: ${params.subject || 'General'}
-Topic: ${params.topic || 'General Topic'}
-${params.subTopic ? `Sub Topic: ${params.subTopic}\n` : ''}Grade Level: ${params.gradeLevel || 'General'}
-Length: ${params.length || 'medium'}
+    'story-passage-creator': `Generate engaging stories and reading passages with the EXACT following requirements:
 
-Generate:
-1. Story/Passage Title
-2. The Story/Passage Content
+**Subject:** ${params.subject || 'General'}
+**Topic (use this exact topic/theme):** ${params.topic || 'General Topic'}
+${params.subTopic ? `**Sub Topic:** ${params.subTopic}\n` : ''}**Grade Level:** ${params.gradeLevel || 'General'}
+**Length:** ${params.length || 'medium'}
+
+**CRITICAL – Language:** You MUST write the entire passage, title, questions, vocabulary, and all content in the language of the subject. If the subject is "Hindi", write everything in Hindi (Devanagari script). If the subject is "English", write everything in English. Do not mix languages.
+
+**Content must be directly about the topic given above.** Do not use a generic or unrelated story.
+
+Generate in this order:
+1. Story/Passage Title (in the subject language)
+2. The Story/Passage Content (in the subject language, about the given topic)
 3. Reading Level Information
-4. Vocabulary Words
-5. Comprehension Questions
-6. Discussion Questions
-7. Extension Activities
+4. Vocabulary Words (in the subject language)
+5. Comprehension Questions (in the subject language)
+6. Discussion Questions (in the subject language)
+7. Extension Activities (in the subject language)
 
 Make it engaging, age-appropriate, and educational.`,
 

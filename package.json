@@ -12,8 +12,9 @@
     "postinstall": "echo 'Dependencies installed successfully'",
     "super-admin": "node start-super-admin.js",
     "test-super-admin": "node test-super-admin.js",
-    "server": "node server.js",
-    "dev-server": "nodemon server.js",
+    "server": "node index.js",
+    "dev-server": "nodemon index.js",
+    "server:minimal": "node server.js",
     "fix-user": "node fix-user-login.js"
   },
   "dependencies": {

@@ -5,6 +5,7 @@ import {
   VALID_SUBJECTS
 } from '../services/hardcoded-content-service.js';
 import { formatHardcodedContent } from '../utils/hardcoded-formatter.js';
+import { generateTeacherTool } from '../services/gemini-service.js';
 
 // Generic Teacher Tool Generator - Uses only hardcoded content
 export const createTeacherTool = async (req, res) => {
@@ -76,8 +77,52 @@ export const createTeacherTool = async (req, res) => {
     // For lesson-planner, daily-class-plan-maker, activity-project-generator, and story-passage-creator, pass empty string if topic not provided
     // For other tools, topic is required
     const topicForFetch = (toolType === 'lesson-planner' || toolType === 'daily-class-plan-maker' || toolType === 'activity-project-generator' || toolType === 'story-passage-creator') ? (topic || '') : topic;
-    const hardcodedData = await getHardcodedContent(classNumber, finalSubject, topicForFetch, toolType, params);
-    
+    let hardcodedData = await getHardcodedContent(classNumber, finalSubject, topicForFetch, toolType, params);
+
+    // Story & Passage Creator: fallback to AI when no pre-generated passages or when passages are empty
+    const useGeminiForPassages = toolType === 'story-passage-creator' && (
+      !hardcodedData ||
+      (hardcodedData.headers && Array.isArray(hardcodedData.data) && hardcodedData.data.length === 0)
+    );
+    if (useGeminiForPassages) {
+      try {
+        console.log(`📖 Generating Story & Passage content via Gemini for ${classDisplay}, ${finalSubject}, topic: ${topic || 'all'}`);
+        const geminiParams = {
+          subject: finalSubject,
+          topic: topic || 'General Topic',
+          gradeLevel: classDisplay,
+          length: params.length || 'medium',
+          subTopic: params.subTopic,
+          ...params
+        };
+        const generatedContent = await generateTeacherTool('story-passage-creator', geminiParams);
+        const passageTitle = `## Story & Passage Creator\n\n**Class:** ${isIIT6 ? 'IIT-6' : classNum}\n**Subject:** ${finalSubject}\n\n`;
+        return res.json({
+          success: true,
+          data: {
+            content: passageTitle + (generatedContent || ''),
+            toolType,
+            metadata: {
+              classNumber: isIIT6 ? 'IIT-6' : classNum,
+              subject: finalSubject,
+              topic,
+              ...params,
+              generatedAt: new Date(),
+              teacherId,
+              source: 'gemini',
+              sourceLabel: 'AI Generated'
+            }
+          }
+        });
+      } catch (err) {
+        console.error('Story & Passage Gemini fallback error:', err);
+        return res.status(500).json({
+          success: false,
+          message: err.message || 'Failed to generate passages. Please try again.'
+        });
+      }
+    }
+
     if (!hardcodedData) {
       const topicMsg = topic ? `Topic: ${topic}` : 'all lessons';
       console.log(`❌ No hardcoded content found for ${toolType} - ${classDisplay}, ${finalSubject}, ${topicMsg}`);
@@ -122,7 +167,7 @@ export const createTeacherTool = async (req, res) => {
       if (hardcodedData.notes) {
         responseData.data.rawData = { notes: hardcodedData.notes };
       } else if (hardcodedData.short_notes) {
-        // New Class 7-10 SNS format: convert to notes array
+        // Nested SNS format: { short_notes: { key_points, examples, ... } }
         responseData.data.rawData = {
           notes: [{
             concept_name: hardcodedData.chapter || topic || 'Summary',
@@ -131,6 +176,19 @@ export const createTeacherTool = async (req, res) => {
             quick_facts: [
               ...(hardcodedData.short_notes.examples || []),
               ...(hardcodedData.short_notes.formulas || []),
+            ],
+          }],
+        };
+      } else if (hardcodedData.key_points && Array.isArray(hardcodedData.key_points)) {
+        // Root-level SNS format (e.g. easy_sns.json): key_points, examples, formulas, exam_tips at root
+        responseData.data.rawData = {
+          notes: [{
+            concept_name: hardcodedData.chapter || hardcodedData.subject || topic || 'Summary',
+            summary: (hardcodedData.key_points || []).join('\n\n'),
+            importance: (hardcodedData.exam_tips || []).join('\n\n'),
+            quick_facts: [
+              ...(hardcodedData.examples || []),
+              ...(hardcodedData.formulas || []),
             ],
           }],
         };

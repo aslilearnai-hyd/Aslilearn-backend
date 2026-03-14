@@ -525,6 +525,104 @@ app.post('/api/auth/logout', (req, res) => {
   }
 });
 
+// JWT auth middleware (defined here so /api/auth/me can be registered before app.use('/api', ...))
+const requireAuth = (req, res, next) => {
+  const token = req.headers.authorization?.replace('Bearer ', '');
+  if (!token) return res.status(401).json({ message: 'Not authenticated' });
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key');
+    req.user = decoded;
+    req.isAuthenticated = () => true;
+    next();
+  } catch (error) {
+    res.status(401).json({ message: 'Not authenticated' });
+  }
+};
+const requireAdmin = (req, res, next) => {
+  if (req.isAuthenticated && req.isAuthenticated() && req.user && req.user.role === 'admin') return next();
+  res.status(403).json({ message: 'Admin access required' });
+};
+
+// GET /api/auth/me — must be registered BEFORE app.use('/api', ...) so it is not shadowed
+app.get('/api/auth/me', requireAuth, async (req, res) => {
+  try {
+    console.log('Auth me requested by:', req.user?.email, 'Role:', req.user?.role);
+    if (req.user && req.user.role === 'super-admin') {
+      return res.json({
+        user: {
+          id: req.user.id || 'super-admin-001',
+          _id: req.user.id || 'super-admin-001',
+          email: req.user.email,
+          fullName: req.user.fullName || 'Super Admin',
+          role: 'super-admin',
+          classNumber: null,
+          assignedSubjects: [],
+          assignedClass: null
+        }
+      });
+    }
+    const user = await User.findById(req.user.userId);
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    await user.populate('assignedSubjects', 'name');
+    await user.populate('assignedClass', 'classNumber section assignedSubjects');
+    const userData = {
+      id: user._id,
+      _id: user._id,
+      email: user.email,
+      fullName: user.fullName,
+      role: user.role,
+      classNumber: user.classNumber,
+      assignedSubjects: user.assignedSubjects || [],
+      assignedClass: user.assignedClass || null
+    };
+    if (req.user.role === 'admin') userData.schoolName = user.schoolName || '';
+    if (req.user.role === 'teacher') {
+      const teacher = await Teacher.findById(req.user.userId || req.user.id).populate('subjects');
+      if (teacher) userData.subjects = teacher.subjects || [];
+    }
+    res.json({ user: userData });
+  } catch (error) {
+    console.error('Failed to fetch user data:', error);
+    res.status(500).json({ message: 'Failed to fetch user data' });
+  }
+});
+
+// Update current user's profile
+app.patch('/api/users/:userId', requireAuth, async (req, res) => {
+  try {
+    // For security, always update the authenticated user, ignore path param
+    const userId = req.user.userId || req.user.id;
+    if (!userId) {
+      return res.status(401).json({ success: false, message: 'Not authenticated' });
+    }
+
+    const allowedFields = ['fullName', 'email', 'age', 'educationStream', 'targetExam'];
+    const updateData = {};
+    for (const key of allowedFields) {
+      if (key in req.body) {
+        updateData[key] = req.body[key];
+      }
+    }
+
+    const updatedUser = await User.findByIdAndUpdate(
+      userId,
+      { $set: updateData },
+      { new: true, runValidators: true }
+    ).select('-password');
+
+    if (!updatedUser) {
+      return res.status(404).json({ success: false, message: 'User not found' });
+    }
+
+    return res.json({ success: true, user: updatedUser });
+  } catch (error) {
+    console.error('Failed to update user profile:', error);
+    return res.status(500).json({ success: false, message: 'Failed to update profile', error: error.message });
+  }
+});
+
 // Mount routes
 app.use('/api/super-admin', superAdminRoutes);
 app.use('/api/admin', adminRoutes);
@@ -668,42 +766,7 @@ passport.deserializeUser(async (id, done) => {
   }
 });
 
-// JWT Middleware to check authentication
-const requireAuth = (req, res, next) => {
-  const token = req.headers.authorization?.replace('Bearer ', '');
-  
-  if (!token) {
-    console.log('No token provided');
-    return res.status(401).json({ message: 'Not authenticated' });
-  }
-
-  try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key');
-    req.user = decoded;
-    req.isAuthenticated = () => true; // Add this for compatibility
-    console.log('JWT Auth successful:', decoded);
-    next();
-  } catch (error) {
-    console.log('JWT verification failed:', error.message);
-    res.status(401).json({ message: 'Not authenticated' });
-  }
-};
-
-// Middleware to check admin role
-const requireAdmin = (req, res, next) => {
-  console.log('Admin check:', req.isAuthenticated(), req.user ? req.user.role : 'No user');
-  
-  // Check if user is authenticated and has admin role
-  if (req.isAuthenticated() && req.user && req.user.role === 'admin') {
-    console.log('Admin access granted');
-    return next();
-  }
-  
-  console.log('Admin access denied');
-  res.status(403).json({ message: 'Admin access required' });
-};
-
-// Routes
+// Routes (requireAuth/requireAdmin defined earlier, before mount)
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });
@@ -997,72 +1060,6 @@ app.post('/api/auth/login', async (req, res) => {
       error: error.message,
       stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
     });
-  }
-});
-
-app.get('/api/auth/me', requireAuth, async (req, res) => {
-  try {
-    console.log('Auth me requested by:', req.user.email, 'Role:', req.user.role);
-    
-    // Handle super admin separately (no MongoDB lookup with fake ID)
-    if (req.user && req.user.role === 'super-admin') {
-      const userData = {
-        id: req.user.id || 'super-admin-001',
-        _id: req.user.id || 'super-admin-001',
-        email: req.user.email,
-        fullName: req.user.fullName || 'Super Admin',
-        role: 'super-admin',
-        classNumber: null,
-        assignedSubjects: [],
-        assignedClass: null
-      };
-
-      console.log('Returning super admin user data (no DB lookup):', userData);
-      return res.json({ user: userData });
-    }
-
-    // Find user in database to get full details
-    const user = await User.findById(req.user.userId);
-    if (!user) {
-      return res.status(404).json({ message: 'User not found' });
-    }
-    
-    // Populate assigned subjects and class for students
-    await user.populate('assignedSubjects', 'name');
-    await user.populate('assignedClass', 'classNumber section assignedSubjects');
-    
-    let userData = { 
-      id: user._id, 
-      email: user.email, 
-      fullName: user.fullName, 
-      role: user.role,
-      classNumber: user.classNumber,
-      assignedSubjects: user.assignedSubjects || [],
-      assignedClass: user.assignedClass || null
-    };
-
-    // If user is an admin, include schoolName
-    if (req.user.role === 'admin') {
-      userData.schoolName = user.schoolName || '';
-    }
-
-    // If user is a teacher, fetch their subjects
-    if (req.user.role === 'teacher') {
-      console.log('Fetching teacher subjects for:', req.user.email);
-      const teacher = await Teacher.findById(req.user._id).populate('subjects');
-      if (teacher) {
-        console.log('Teacher found with subjects:', teacher.subjects?.length || 0);
-        userData.subjects = teacher.subjects || [];
-      } else {
-        console.log('Teacher not found in database');
-      }
-    }
-
-    console.log('Returning user data:', userData);
-    res.json({ user: userData });
-  } catch (error) {
-    console.error('Failed to fetch user data:', error);
-    res.status(500).json({ message: 'Failed to fetch user data' });
   }
 });
 

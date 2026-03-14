@@ -670,7 +670,7 @@ export function formatHardcodedContent(data, toolType, metadata = {}) {
           return formatGenericJSON(data, toolType, metadata);
       }
     } else if (data.short_notes) {
-      // New Class 7-10 SNS format: { short_notes: { key_points: [], examples: [], ... } }
+      // Nested SNS format: { short_notes: { key_points: [], examples: [], ... } }
       const adaptedData = {
         notes: [{
           concept_name: data.chapter || metadata.topic || 'Summary',
@@ -679,6 +679,20 @@ export function formatHardcodedContent(data, toolType, metadata = {}) {
           quick_facts: [
             ...(data.short_notes.examples || []),
             ...(data.short_notes.formulas || []),
+          ],
+        }],
+      };
+      return formatShortNotesSummaries(adaptedData);
+    } else if (data.key_points && Array.isArray(data.key_points)) {
+      // Root-level SNS format (e.g. easy_sns.json): key_points, examples, formulas, exam_tips at root
+      const adaptedData = {
+        notes: [{
+          concept_name: data.chapter || data.subject || metadata.topic || 'Summary',
+          summary: (data.key_points || []).join('\n\n'),
+          importance: (data.exam_tips || []).join('\n\n'),
+          quick_facts: [
+            ...(data.examples || []),
+            ...(data.formulas || []),
           ],
         }],
       };
