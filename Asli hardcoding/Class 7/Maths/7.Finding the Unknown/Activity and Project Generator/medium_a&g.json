@@ -14,10 +14,10 @@
                 "Notebook"
             ],
             "steps": [
-                "Write an equation like $3x + 4 = 19$ on a page",
-                "Move the '+4' sticky note to the RHS and change it to '-4'",
-                "Solve the remaining equation: $3x = 15$",
-                "Discuss why a positive term becomes negative when 'crossing the bridge' ($=$ sign)"
+                "Write an equation like 3x + 4 = 19 on a page",
+                "Move the “+4” sticky note to the RHS and change it to “−4”",
+                "Solve the remaining equation: 3x = 15",
+                "Discuss why a positive term becomes negative when 'crossing the bridge' (the = sign)"
             ],
             "learning_outcome": "Masters the technique of transposition for solving equations",
             "evaluation": "Correct sign change and calculation (10 marks)"
@@ -46,10 +46,10 @@
                 "Notebook"
             ],
             "steps": [
-                "Take an equation like $4(x + 2) = 20$",
-                "Method 1: Multiply 4 into the bracket ($4x + 8 = 20$)",
-                "Method 2: Divide the entire RHS by 4 first ($x + 2 = 5$)",
-                "Solve both and confirm the answer $x = 3$ is the same"
+                "Take an equation like 4(x + 2) = 20",
+                "Method 1: Multiply 4 into the bracket (4x + 8 = 20)",
+                "Method 2: Divide the entire RHS by 4 first (x + 2 = 5)",
+                "Solve both and confirm the answer x = 3 is the same"
             ],
             "learning_outcome": "Learns multiple ways to handle grouping symbols in equations",
             "evaluation": "Accuracy in both methods of solving (10 marks)"
@@ -79,9 +79,9 @@
                 "Notebook"
             ],
             "steps": [
-                "Draw a triangle where the angles are $x$, $2x$, and $3x$",
-                "Use the property that the sum of angles is $180^{\circ}$",
-                "Write the equation: $x + 2x + 3x = 180$",
+                "Draw a triangle where the angles are x, 2x, and 3x",
+                "Use the property that the sum of angles is 180°",
+                "Write the equation: x + 2x + 3x = 180",
                 "Solve for $x$ and determine all three angles"
             ],
             "learning_outcome": "Connects geometric properties with algebraic equations",
@@ -127,10 +127,10 @@
                 "Notebook"
             ],
             "steps": [
-                "Look at $\\frac{x}{3} + 5 = 8$",
-                "Subtract 5 first: $\\frac{x}{3} = 3$",
-                "Multiply by 3 to find $x$",
-                "Try a harder one: $\\frac{2x}{5} = 10$ and solve step-by-step"
+                "Look at x/3 + 5 = 8",
+                "Subtract 5 first: x/3 = 3",
+                "Multiply by 3 to find x",
+                "Try a harder one: 2x/5 = 10 and solve step-by-step"
             ],
             "learning_outcome": "Handles division and multiplication in a single equation",
             "evaluation": "Correct sequence of clearing fractions (10 marks)"

@@ -20,9 +20,9 @@
             "Excretion: Removal of toxic metabolic wastes like urea from the body."
         ],
         "formulas": [
-            "Photosynthesis Equation: $6CO_2 + 12H_2O \xrightarrow{\text{Chlorophyll/Sunlight}} C_6H_{12}O_6 + 6H_2O + 6O_2$",
-            "Energy Currency: $\text{ADP} + \text{Phosphate} \xrightarrow{\text{Energy}} \text{ATP}$",
-            "Aerobic Respiration: $\text{Glucose} \xrightarrow{\text{Cytoplasm}} \text{Pyruvate} \xrightarrow{\text{Mitochondria}} CO_2 + H_2O + \text{Energy}$"
+            "Photosynthesis Equation: 6CO₂ + 12H₂O → C₆H₁₂O₆ + 6H₂O + 6O₂ (in presence of chlorophyll and sunlight)",
+            "Energy Currency: ADP + Phosphate + Energy → ATP",
+            "Aerobic Respiration: Glucose → (in cytoplasm) Pyruvate → (in mitochondria) CO₂ + H₂O + Energy"
         ],
         "exam_tips": [
             "Remember that the site of photosynthesis in a cell is the chloroplast.",

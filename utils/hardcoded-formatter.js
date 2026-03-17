@@ -119,10 +119,43 @@ function formatConceptMasteryHelper(data) {
 function formatFlashcardGenerator(data) {
   let markdown = `# Flashcard Generator\n\n`;
   
-  if (data.flashcards) {
-    const questions = data.flashcards.questions || [];
-    const importantNotes = data.flashcards.important_notes || [];
-    const facts = data.flashcards.facts || [];
+  if (data.flashcards || data.concepts || data.questions) {
+    // Support two shapes:
+    // 1) { flashcards: { questions: [], important_notes: [], facts: [] } }
+    // 2) { flashcards: [ { question, correct_answer, ... } ], notes: [ ... ] }
+    let questions = [];
+    let importantNotes = [];
+    let facts = [];
+
+    if (Array.isArray(data.flashcards)) {
+      // Shape (2): flat array of flashcard question objects
+      questions = data.flashcards;
+    } else if (data.flashcards) {
+      // Shape (1): grouped by type
+      questions = data.flashcards.questions || [];
+      importantNotes = data.flashcards.important_notes || [];
+      facts = data.flashcards.facts || [];
+    }
+
+    // CMH-style JSON: turn each concept into a flashcard
+    if ((!questions || questions.length === 0) && Array.isArray(data.concepts)) {
+      questions = data.concepts.map(concept => ({
+        question: concept.concept_name || 'Concept',
+        correct_answer: concept.lesson || (concept.key_points || []).join('\n'),
+        explanation: concept.real_example || undefined,
+      }));
+    }
+
+    // Generic MCQ JSON used in some _fcm.json files (e.g. Class 10 Social):
+    // { content_type: 'MCQs', questions: [...] }
+    if ((!questions || questions.length === 0) && Array.isArray(data.questions)) {
+      questions = data.questions;
+    }
+
+    // Also treat top-level `notes` array (if present) as important notes
+    if (Array.isArray(data.notes) && data.notes.length > 0) {
+      importantNotes = importantNotes.concat(data.notes);
+    }
     
     // Format all questions as individual cards with type marker
     if (questions.length > 0) {
@@ -624,6 +657,13 @@ export function formatHardcodedContent(data, toolType, metadata = {}) {
       return formatRevisionPlanner(data, metadata);
     }
     
+    // Flashcard Generator should always try to produce flashcards, even if
+    // the underlying JSON was authored for Concept Mastery Helper (CMH).
+    // This allows us to reuse CMH content as Q&A cards.
+    if (toolType === 'flashcard-generator') {
+      return formatFlashcardGenerator(data);
+    }
+
     // Chapter summary creator can use AMENITY short notes or planner.json
     if (toolType === 'chapter-summary-creator') {
       if (data.content_type === 'Short Notes & Summaries') {
@@ -642,6 +682,7 @@ export function formatHardcodedContent(data, toolType, metadata = {}) {
         case 'Concept Mastery Helper':
           return formatConceptMasteryHelper(data);
         case 'Flashcard Maker':
+        case 'Flashcards':
           return formatFlashcardGenerator(data);
         case 'Short Notes & Summaries':
           return formatShortNotesSummaries(data);
@@ -651,6 +692,36 @@ export function formatHardcodedContent(data, toolType, metadata = {}) {
           return formatWorksheet(data, toolType, metadata);
         case 'Homework':
           return formatHomework(data, toolType, metadata);
+      case 'Story & Passage Creator':
+        // When hardcoded JSON already has passages array, wrap it into the
+        // structure expected by StoryPassageViewer (PassagesData) and return
+        // it as a JSON string so the frontend can render beautiful cards.
+        if (Array.isArray(data.passages) && data.passages.length > 0) {
+          const payload = {
+            subject: data.subject || metadata.subject,
+            book: data.book || data.textbook || undefined,
+            chapter: data.chapter || metadata.topic || undefined,
+            title: data.title || 'Reading Passages',
+            total_passages: data.total_passages || data.passages.length,
+            instructions:
+              data.instructions ||
+              data.note ||
+              'Read each passage carefully and answer the questions that follow.',
+            passages: data.passages.map((p, idx) => ({
+              passage_number: p.passage_number || p.id || idx + 1,
+              paragraph: p.paragraph || p.passage || p.text || '',
+              questions:
+                (Array.isArray(p.questions) && p.questions.length > 0)
+                  ? p.questions
+                  : p.question
+                  ? [p.question]
+                  : [],
+            })),
+          };
+          return JSON.stringify(payload);
+        }
+        // Fallback to generic JSON formatting when shape is unknown
+        return formatGenericJSON(data, toolType, metadata);
         case 'MCQs':
           // Single MCQ JSON from Class 7-10 → wrap into worksheet format for display
           if (data.questions && Array.isArray(data.questions)) {
@@ -703,6 +774,36 @@ export function formatHardcodedContent(data, toolType, metadata = {}) {
     } else if (data.flashcards) {
       // Flashcard JSON from Class 7-10 (no content_type field)
       return formatFlashcardGenerator(data);
+    } else if (
+      toolType === 'story-passage-creator' &&
+      Array.isArray(data.passages) &&
+      data.passages.length > 0
+    ) {
+      // Story & Passage JSON without explicit content_type – treat it like
+      // the exam/hardcoded format and emit a PassagesData JSON string for
+      // StoryPassageViewer.
+      const payload = {
+        subject: data.subject || metadata.subject,
+        book: data.book || data.textbook || undefined,
+        chapter: data.chapter || metadata.topic || undefined,
+        title: data.title || 'Reading Passages',
+        total_passages: data.total_passages || data.passages.length,
+        instructions:
+          data.instructions ||
+          data.note ||
+          'Read each passage carefully and answer the questions that follow.',
+        passages: data.passages.map((p, idx) => ({
+          passage_number: p.passage_number || p.id || idx + 1,
+          paragraph: p.paragraph || p.passage || p.text || '',
+          questions:
+            (Array.isArray(p.questions) && p.questions.length > 0)
+              ? p.questions
+              : p.question
+              ? [p.question]
+              : [],
+        })),
+      };
+      return JSON.stringify(payload);
     } else if (data.notes && Array.isArray(data.notes)) {
       // SNS JSON with notes array (no content_type field)
       return formatShortNotesSummaries(data);
@@ -724,9 +825,15 @@ export function formatHardcodedContent(data, toolType, metadata = {}) {
         total_questions: data.questions.length,
       };
       return formatWorksheet(worksheetData, toolType, metadata);
-    } else if ((data.activities && Array.isArray(data.activities)) || (data.activities_projects && Array.isArray(data.activities_projects))) {
+    } else if (
+      (data.activities && Array.isArray(data.activities)) ||
+      (data.activities_projects && Array.isArray(data.activities_projects)) ||
+      (data.activities_and_projects && Array.isArray(data.activities_and_projects))
+    ) {
       // Activity & Project Generator JSON from Class 7-10
+      // Normalize different field names into a single "activities" array
       if (data.activities_projects) data.activities = data.activities_projects;
+      if (data.activities_and_projects) data.activities = data.activities_and_projects;
       return formatActivitiesJSON(data, metadata);
     } else if (data.headers && data.data) {
       // CSV format

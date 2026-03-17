@@ -83,7 +83,7 @@
             },
             {
                 "title": "Vertex Angle Sum",
-                "content": "In any tiling, the sum of angles where the corners of tiles meet must be $360^{\circ}$.",
+                "content": "In any tiling, the sum of angles where the corners of tiles meet must be 360°.",
                 "source_section": "Section 14.4"
             },
             {
@@ -94,7 +94,7 @@
         ],
         "facts": [
             {
-                "fact": "A regular hexagon can tile a plane because its interior angle ($120^{\circ}$) goes into $360^{\circ}$ exactly three times.",
+                "fact": "A regular hexagon can tile a plane because its interior angle (120°) goes into 360° exactly three times.",
                 "source_section": "Section 14.4"
             },
             {

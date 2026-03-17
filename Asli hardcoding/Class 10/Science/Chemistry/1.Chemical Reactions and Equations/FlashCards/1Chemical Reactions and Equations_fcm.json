@@ -22,7 +22,7 @@
                 "question": "What is observed when a solution of potassium iodide is added to a solution of lead nitrate?",
                 "difficulty": "Medium",
                 "correct_answer": "A yellow precipitate of lead iodide is formed",
-                "explanation": "This is a double displacement reaction where $Pb(NO_3)_2 + 2KI \rightarrow PbI_2 \downarrow + 2KNO_3$. The $PbI_2$ is the yellow insoluble solid.",
+                "explanation": "This is a double displacement reaction where lead nitrate reacts with potassium iodide to form yellow lead iodide (PbI₂) and potassium nitrate.",
                 "source_section": "Double Displacement Reaction"
             },
             {
@@ -50,7 +50,7 @@
                 "question": "How does the decomposition of silver chloride occur in the presence of sunlight?",
                 "difficulty": "Medium",
                 "correct_answer": "It decomposes into silver metal and chlorine gas",
-                "explanation": "This is photolytic decomposition. The white silver chloride turns grey due to the formation of silver metal ($2AgCl \xrightarrow{\text{Sunlight}} 2Ag + Cl_2$).",
+                "explanation": "This is photolytic decomposition. The white silver chloride turns grey because light breaks it down to silver metal and chlorine gas (2AgCl —sunlight→ 2Ag + Cl₂).",
                 "source_section": "Decomposition Reaction"
             },
             {

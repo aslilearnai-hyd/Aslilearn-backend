@@ -15,13 +15,13 @@
                 "Ruler"
             ],
             "steps": [
-                "Draw a base line $BC = 6$ cm",
-                "At point $B$, construct an angle of $70^{\circ}$ using a protractor",
-                "Use a compass to mark a point $A$ on the $70^{\circ}$ ray such that $AB = 5$ cm",
+                "Draw a base line BC = 6 cm",
+                "At point B, construct an angle of 70° using a protractor",
+                "Use a compass to mark a point A on the 70° ray such that AB = 5 cm",
                 "Join $A$ to $C$ and measure the third side $AC$"
             ],
             "learning_outcome": "Accurately constructs a triangle when two sides and one included angle are known",
-            "evaluation": "Precision of the $70^{\circ}$ angle and side lengths (10 marks)"
+            "evaluation": "Precision of the 70° angle and side lengths (10 marks)"
         },
         {
             "sl_no": 2,
@@ -33,9 +33,9 @@
                 "Notebook"
             ],
             "steps": [
-                "Draw a base line $XY = 7$ cm",
-                "At point $X$, construct $\angle YXZ = 45^{\circ}$",
-                "At point $Y$, construct $\angle XYZ = 60^{\circ}$",
+                "Draw a base line XY = 7 cm",
+                "At point X, construct angle YXZ = 45°",
+                "At point Y, construct angle XYZ = 60°",
                 "Extend the rays until they intersect at point $Z$ to complete the triangle"
             ],
             "learning_outcome": "Masters the construction of triangles using base angles",
@@ -50,13 +50,13 @@
                 "Ruler"
             ],
             "steps": [
-                "Draw a line $L$ and mark a point $P$ on it",
-                "Construct a $60^{\circ}$ and a $120^{\circ}$ arc from point $P$",
-                "Bisect the angle between $60^{\circ}$ and $120^{\circ}$ to find the $90^{\circ}$ line",
+                "Draw a line L and mark a point P on it",
+                "Construct a 60° and a 120° arc from point P",
+                "Bisect the angle between 60° and 120° to find the 90° line",
                 "Verify the perpendicularity using the corner of a notebook"
             ],
             "learning_outcome": "Uses bisecting techniques to create right angles",
-            "evaluation": "Success in creating a perfect $90^{\circ}$ angle (10 marks)"
+            "evaluation": "Success in creating a perfect 90° angle (10 marks)"
         },
         {
             "sl_no": 4,
@@ -83,7 +83,7 @@
             ],
             "steps": [
                 "Draw a base of 4 cm",
-                "Construct a $90^{\circ}$ angle at one endpoint",
+                "Construct a 90° angle at one endpoint",
                 "Set the compass to 5 cm (hypotenuse) and draw an arc from the other endpoint to cut the perpendicular line",
                 "Complete the triangle and measure the third side"
             ],
@@ -135,7 +135,7 @@
             "steps": [
                 "Draw two parallel lines $l$ and $m$",
                 "Draw a transversal line $t$",
-                "If the angle at $l$ is $55^{\circ}$, use a compass to copy that exact angle onto line $m$ at the corresponding position",
+                "If the angle at line l is 55°, use a compass to copy that exact angle onto line m at the corresponding position",
                 "Verify using a protractor"
             ],
             "learning_outcome": "Connects angle copying skills with parallel line properties",
@@ -152,10 +152,10 @@
             "steps": [
                 "Cut out 4 identical irregular quadrilaterals",
                 "Rotate them so that all four different angles meet at one central point",
-                "Observe that the sum is $360^{\circ}$ and they fit perfectly",
+                "Observe that the sum is 360° and they fit perfectly",
                 "Repeat to extend the pattern"
             ],
-            "learning_outcome": "Demonstrates the $360^{\circ}$ vertex property of tilings",
+            "learning_outcome": "Demonstrates the 360° vertex property of tilings",
             "evaluation": "Correct orientation of shapes to eliminate gaps (10 marks)"
         },
         {
@@ -173,7 +173,7 @@
                 "Join $A$ to the intersection to create the perpendicular"
             ],
             "learning_outcome": "Mastery of altitude construction techniques",
-            "evaluation": "Accuracy of the $90^{\circ}$ intersection (10 marks)"
+            "evaluation": "Accuracy of the 90° intersection (10 marks)"
         }
     ]
 }

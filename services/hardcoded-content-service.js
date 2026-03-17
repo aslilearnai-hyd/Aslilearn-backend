@@ -54,7 +54,19 @@ const TOOL_FOLDER_PATTERNS = {
   'short-notes-summaries-maker':    ['Summary and Short Notes', 'Short Notes and Summaries', 'Summaries and Short notes', 'Summaries and Short Notes'],
   'chapter-summary-creator':        ['Summary and Short Notes', 'Short Notes and Summaries', 'Summaries and Short notes', 'Summaries and Short Notes'],
   'activity-project-generator':     ['Activity & Project Generator', 'Activity and Project Generator'],
-  'story-passage-creator':          ['Passage Related Questions'],
+  // Story & Passage Creator folders have slightly different names across
+  // subjects and classes (e.g. "Passage Related Questions", "Passages",
+  // "Passage Questions", or even Hindi names). Keep this list generous and
+  // rely on the case‑insensitive/contains matching in findFolder.
+  'story-passage-creator':          [
+    'Passage Related Questions',
+    'Passage related questions',
+    'Passages',
+    'Passage Questions',
+    'Passage',
+    'गद्यांश',
+    'गद्यांश आधारित प्रश्न'
+  ],
   'short-answer':                   ['Short Answer Questions'],
   'long-answer':                    ['Long Answer Questions'],
   'fill-in-blanks':                 ['Fill in the Blanks', 'Fill in the blanks'],
@@ -342,20 +354,62 @@ async function findContentInChapter(chapterPath, toolType, difficulty = 'medium'
 
   // Find the content-type folder (case-insensitive)
   const actualFolder = await findFolder(chapterPath, folderPatterns);
+  let contentFolderPath;
+
   if (!actualFolder) {
     console.log(`❌ Content folder not found for ${toolType} in ${chapterPath}. Tried: ${folderPatterns.join(', ')}`);
-    return null;
-  }
 
-  const contentFolderPath = path.join(chapterPath, actualFolder);
+    // Fallback for Activity & Project Generator:
+    // Some older Class 7‑10 folders may not have the exact
+    // "Activity and Project Generator" folder name, but still
+    // contain *a&g.json files directly under the chapter.
+    if (toolType === 'activity-project-generator') {
+      try {
+        const filesAtRoot = await getFilesInDir(chapterPath);
+        const aAndG = filesAtRoot.find(f =>
+          f.toLowerCase().includes('_a&g.json') || f.toLowerCase().endsWith('a&g.json')
+        );
+        if (aAndG) {
+          console.log(`✅ Fallback: using A&G file at chapter root: ${path.join(chapterPath, aAndG)}`);
+          return path.join(chapterPath, aAndG);
+        }
+      } catch {
+        // ignore and let standard null handling continue
+      }
+    }
+
+    return null;
+  } else {
+    contentFolderPath = path.join(chapterPath, actualFolder);
+  }
   const fileSuffix = TOOL_FILE_SUFFIX[toolType];
 
-  // For single-file tools (CMH, FlashCards, Passage)
+  // For single-file tools (CMH, FlashCards, Passage, Lesson Planner, etc.)
   if (!fileSuffix) {
-    const files = await getFilesInDir(contentFolderPath);
-    // Pick the first JSON file
-    const jsonFile = files.find(f => f.toLowerCase().endsWith('.json'));
+    let files = await getFilesInDir(contentFolderPath);
+
+    // Standard case: JSON directly inside the content folder
+    let jsonFile = files.find(f => f.toLowerCase().endsWith('.json'));
     if (jsonFile) return path.join(contentFolderPath, jsonFile);
+
+    // Some Class 7-10 subjects (e.g. English) store lesson-planner JSON
+    // in sub-folders per piece (e.g. "Lesson Planner/1_1.The day the river spoke/easy_lp.json").
+    // If there are no files directly in the content folder and this is a
+    // lesson-planner or daily-class-plan-maker request, look one level deeper
+    // and pick the first matching JSON we find.
+    if ((toolType === 'lesson-planner' || toolType === 'daily-class-plan-maker')) {
+      const subDirs = await getSubDirs(contentFolderPath);
+      for (const sub of subDirs) {
+        const subPath = path.join(contentFolderPath, sub);
+        const subFiles = await getFilesInDir(subPath);
+        const subJson = subFiles.find(f => f.toLowerCase().endsWith('.json'));
+        if (subJson) {
+          console.log(`✅ Fallback: using nested lesson-planner file: ${path.join(subPath, subJson)}`);
+          return path.join(subPath, subJson);
+        }
+      }
+    }
+
     return null;
   }
 
@@ -372,6 +426,28 @@ async function findContentInChapter(chapterPath, toolType, difficulty = 'medium'
   // 2. Any file containing the suffix
   found = files.find(f => f.toLowerCase().includes(`_${fileSuffix}.json`) || f.toLowerCase().includes(`_${fileSuffix}`));
   if (found) return path.join(contentFolderPath, found);
+
+  // 2b. For some subjects (e.g. Class 7 English), difficulty-based
+  // SNS/MCQ/SAQ/LAQ files are stored inside subtopic folders under the
+  // content folder. If no matching file is found at the root, look one
+  // level deeper and try again there.
+  if (!found) {
+    const subDirs = await getSubDirs(contentFolderPath);
+    for (const sub of subDirs) {
+      const subPath = path.join(contentFolderPath, sub);
+      const subFiles = await getFilesInDir(subPath);
+
+      // Exact difficulty file in subfolder
+      let subFound = subFiles.find(f => f.toLowerCase() === preferredName);
+      if (subFound) return path.join(subPath, subFound);
+
+      // Any *_suffix.json in subfolder
+      subFound = subFiles.find(f =>
+        f.toLowerCase().includes(`_${fileSuffix}.json`) || f.toLowerCase().includes(`_${fileSuffix}`),
+      );
+      if (subFound) return path.join(subPath, subFound);
+    }
+  }
 
   // 3. Lesson planner fallback: try _lp.json then _sns.json
   if (toolType === 'lesson-planner' || toolType === 'daily-class-plan-maker') {
@@ -415,28 +491,63 @@ async function buildCombinedExam(chapterPath, difficulty = 'medium') {
     const actualFolder = await findFolder(chapterPath, folders);
     if (!actualFolder) continue;
     const folderPath = path.join(chapterPath, actualFolder);
-    const files = await getFilesInDir(folderPath);
-    
-    // Find the right difficulty file
-    let fileName = files.find(f => f.toLowerCase().startsWith(diff) && f.endsWith('.json'));
-    if (!fileName) fileName = files.find(f => f.endsWith('.json'));
-    if (!fileName) continue;
 
-    const data = await readJSONFile(path.join(folderPath, fileName));
-    if (!data || !Array.isArray(data.questions)) continue;
+    // First, look for JSON files directly inside the folder
+    const rootFiles = await getFilesInDir(folderPath);
+    let jsonPaths = rootFiles
+      .filter(f => f.toLowerCase().endsWith('.json'))
+      .map(f => path.join(folderPath, f));
 
-    const sectionQuestions = data.questions.map(q => ({
-      ...q,
-      question_number: qCounter++,
-      question_type: type,
-      marks: q.marks || marks,
-      estimated_time: time,
-    }));
+    // If there are no JSON files at the root (common for Class 7 English where
+    // questions are stored in subtopic folders like "1_3.Three Days to see"),
+    // look one level deeper and collect JSON files from each subfolder.
+    if (jsonPaths.length === 0) {
+      const subDirs = await getSubDirs(folderPath);
+      for (const sub of subDirs) {
+        const subPath = path.join(folderPath, sub);
+        const subFiles = await getFilesInDir(subPath);
+        const subJsons = subFiles
+          .filter(f => f.toLowerCase().endsWith('.json'))
+          .map(f => path.join(subPath, f));
+        jsonPaths.push(...subJsons);
+      }
+    }
+
+    if (jsonPaths.length === 0) continue;
+
+    // Filter by difficulty where possible
+    let difficultyFiles = jsonPaths.filter(p =>
+      path.basename(p).toLowerCase().startsWith(diff)
+    );
+    if (difficultyFiles.length === 0) difficultyFiles = jsonPaths;
+
+    let sectionQuestions = [];
+    for (const filePath of difficultyFiles) {
+      const data = await readJSONFile(filePath);
+      if (!data || !Array.isArray(data.questions)) continue;
+
+      const qs = data.questions.map(q => ({
+        ...q,
+        question_number: qCounter++,
+        question_type: type,
+        marks: q.marks || marks,
+        estimated_time: time,
+      }));
+      sectionQuestions.push(...qs);
+    }
+
+    if (sectionQuestions.length === 0) continue;
 
     const sectionMarks = sectionQuestions.reduce((s, q) => s + (q.marks || marks), 0);
     const sectionTime = sectionQuestions.length * time;
 
-    sections.push({ type, questions: sectionQuestions, count: sectionQuestions.length, total_marks: sectionMarks, estimated_time: sectionTime });
+    sections.push({
+      type,
+      questions: sectionQuestions,
+      count: sectionQuestions.length,
+      total_marks: sectionMarks,
+      estimated_time: sectionTime,
+    });
     totalQuestions += sectionQuestions.length;
     totalMarks += sectionMarks;
     estimatedTime += sectionTime;
@@ -463,20 +574,50 @@ async function buildCombinedHomework(chapterPath, difficulty = 'medium') {
     const actualFolder = await findFolder(chapterPath, folders);
     if (!actualFolder) continue;
     const folderPath = path.join(chapterPath, actualFolder);
-    const files = await getFilesInDir(folderPath);
 
-    let fileName = files.find(f => f.toLowerCase().startsWith(diff) && f.endsWith('.json'));
-    if (!fileName) fileName = files.find(f => f.endsWith('.json'));
-    if (!fileName) continue;
+    // First look for JSON files directly inside the folder
+    const rootFiles = await getFilesInDir(folderPath);
+    let jsonPaths = rootFiles
+      .filter(f => f.toLowerCase().endsWith('.json'))
+      .map(f => path.join(folderPath, f));
 
-    const data = await readJSONFile(path.join(folderPath, fileName));
-    if (!data || !Array.isArray(data.questions)) continue;
+    // If none are found at the root (e.g. Class 7 English stores questions
+    // inside subtopic folders), look one level deeper and collect JSONs.
+    if (jsonPaths.length === 0) {
+      const subDirs = await getSubDirs(folderPath);
+      for (const sub of subDirs) {
+        const subPath = path.join(folderPath, sub);
+        const subFiles = await getFilesInDir(subPath);
+        const subJsons = subFiles
+          .filter(f => f.toLowerCase().endsWith('.json'))
+          .map(f => path.join(subPath, f));
+        jsonPaths.push(...subJsons);
+      }
+    }
 
-    const sectionQuestions = data.questions.map(q => ({
-      ...q,
-      question_number: qCounter++,
-      question_type: type,
-    }));
+    if (jsonPaths.length === 0) continue;
+
+    // Filter by difficulty where possible
+    let difficultyFiles = jsonPaths.filter(p =>
+      path.basename(p).toLowerCase().startsWith(diff)
+    );
+    if (difficultyFiles.length === 0) difficultyFiles = jsonPaths;
+
+    let sectionQuestions = [];
+    for (const filePath of difficultyFiles) {
+      const data = await readJSONFile(filePath);
+      if (!data || !Array.isArray(data.questions)) continue;
+
+      const qs = data.questions.map(q => ({
+        ...q,
+        question_number: qCounter++,
+        question_type: type,
+      }));
+
+      sectionQuestions.push(...qs);
+    }
+
+    if (sectionQuestions.length === 0) continue;
 
     sections.push({ type, questions: sectionQuestions, count: sectionQuestions.length });
     totalQuestions += sectionQuestions.length;
@@ -501,23 +642,45 @@ async function buildCombinedWorksheet(chapterPath, difficulty = 'medium') {
     const actualFolder = await findFolder(chapterPath, folders);
     if (!actualFolder) continue;
     const folderPath = path.join(chapterPath, actualFolder);
-    const files = await getFilesInDir(folderPath);
+    let files = await getFilesInDir(folderPath);
 
-    let fileName = files.find(f => f.toLowerCase().startsWith(diff) && f.endsWith('.json'));
-    if (!fileName) fileName = files.find(f => f.endsWith('.json'));
-    if (!fileName) continue;
+    // Class 7 English stores MCQs in sub‑folders per piece (e.g. "MCQs/1_1.The day the river spoke").
+    // If there are no files directly under the MCQs folder, look one level deeper
+    // and merge all *_mcq.json files for this chapter and difficulty.
+    const subDirs = files.length === 0 ? await getSubDirs(folderPath) : [];
 
-    const data = await readJSONFile(path.join(folderPath, fileName));
-    if (!data || !Array.isArray(data.questions)) continue;
+    // Helper to accumulate questions from a given directory path
+    const collectFromDir = async (dirPath) => {
+      const dirFiles = await getFilesInDir(dirPath);
+      let fileName = dirFiles.find(f => f.toLowerCase().startsWith(diff) && f.endsWith('.json'));
+      if (!fileName) fileName = dirFiles.find(f => f.endsWith('.json'));
+      if (!fileName) return;
 
-    const sectionQuestions = data.questions.map(q => ({
-      ...q,
-      question_number: qCounter++,
-      question_type: type,
-    }));
+      const data = await readJSONFile(path.join(dirPath, fileName));
+      if (!data || !Array.isArray(data.questions)) return;
 
-    sections.push({ type, questions: sectionQuestions, count: sectionQuestions.length });
-    totalQuestions += sectionQuestions.length;
+      const sectionQuestions = data.questions.map(q => ({
+        ...q,
+        question_number: qCounter++,
+        question_type: type,
+      }));
+
+      if (sectionQuestions.length > 0) {
+        sections.push({ type, questions: sectionQuestions, count: sectionQuestions.length });
+        totalQuestions += sectionQuestions.length;
+      }
+    };
+
+    if (files.length > 0) {
+      // Standard case: questions JSON directly inside the content folder
+      await collectFromDir(folderPath);
+    } else if (subDirs.length > 0) {
+      // Nested case: aggregate questions from each sub‑chapter folder
+      for (const sub of subDirs) {
+        const subPath = path.join(folderPath, sub);
+        await collectFromDir(subPath);
+      }
+    }
   }
 
   if (totalQuestions === 0) return null;
@@ -1015,6 +1178,10 @@ export async function getAvailableContentForTopic(classNumber, subject, topic) {
         { toolType: 'activity-project-generator', name: 'Projects & Activities' },
         { toolType: 'short-answer', name: 'Short Answer Questions' },
         { toolType: 'long-answer', name: 'Long Answer Questions' },
+        { toolType: 'story-passage-creator', name: 'Story & Passage Creator' },
+        // Combined tools that reuse question folders
+        { toolType: 'homework-creator', name: 'Homework Creator' },
+        { toolType: 'exam-question-paper-generator', name: 'Exam Question Paper Generator' },
       ];
 
       for (const tool of toolsToCheck) {

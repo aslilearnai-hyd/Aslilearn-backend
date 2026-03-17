@@ -49,8 +49,8 @@
             {
                 "question": "Why is 'Plaster of Paris' stored in moisture-proof containers?",
                 "difficulty": "Medium",
-                "correct_answer": "To prevent it from reacting with water and turning into hard Gypsum",
-                "explanation": "POP ($CaSO_4 \cdot \frac{1}{2}H_2O$) absorbs moisture and reverts to Gypsum ($CaSO_4 \cdot 2H_2O$), rendering it useless for casting.",
+                "correct_answer": "To prevent it from reacting with water and turning into hard gypsum",
+                "explanation": "Plaster of Paris (CaSO₄ · ½H₂O) absorbs moisture and reverts to gypsum (CaSO₄ · 2H₂O), which makes it hard and unusable for casting.",
                 "source_section": "Are the crystals of salts really dry?"
             },
             {
@@ -64,7 +64,7 @@
                 "question": "Define 'Water of Crystallisation'.",
                 "difficulty": "Hard",
                 "correct_answer": "Fixed number of water molecules chemically combined in one formula unit of a salt",
-                "explanation": "Example: In Copper Sulphate ($CuSO_4 \cdot 5H_2O$), there are 5 molecules of water which give the crystals their blue color.",
+                "explanation": "Example: In copper sulphate (CuSO₄ · 5H₂O), there are five water molecules in each formula unit, which give the crystals their blue colour.",
                 "source_section": "Are the crystals of salts really dry?"
             },
             {

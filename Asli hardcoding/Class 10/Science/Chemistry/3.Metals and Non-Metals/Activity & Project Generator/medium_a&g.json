@@ -173,12 +173,12 @@
                 "Battery and wires"
             ],
             "steps": [
-                "Set up the electrolytic cell with $CuSO_4$ as the electrolyte",
+                "Set up the electrolytic cell with CuSO₄ as the electrolyte",
                 "Connect the impure copper to the positive terminal and pure copper to the negative",
                 "Pass current for 15 minutes",
                 "Observe the deposition on the cathode and the 'anode mud' at the bottom"
             ],
-            "learning_outcome": "Explains how electrolysis is used to obtain $99.9\%$ pure metals in industry",
+            "learning_outcome": "Explains how electrolysis is used to obtain 99.9% pure metals in industry",
             "evaluation": "Labelled diagram of the electrolytic refining process and ionic equations (10 marks)"
         },
         {

@@ -20,9 +20,9 @@
             "pH in Daily Life: Tooth decay starts when mouth pH is lower than 5.5."
         ],
         "formulas": [
-            "Neutralization Formula: $\text{Acid} + \text{Base} \rightarrow \text{Salt} + \text{Water}$",
-            "Acid + Metal: $\text{Acid} + \text{Metal} \rightarrow \text{Salt} + \text{Hydrogen gas}$",
-            "pH Scale: $0 \leftarrow \text{Acidic} \dots 7 (\text{Neutral}) \dots \text{Basic} \rightarrow 14$"
+            "Neutralization Formula: Acid + Base → Salt + Water",
+            "Acid + Metal: Acid + Metal → Salt + Hydrogen gas",
+            "pH Scale: 0 (strongly acidic) … 7 (neutral) … 14 (strongly basic)"
         ],
         "exam_tips": [
             "Remember that 'Alkali' is a special name for bases that are soluble in water, like $NaOH$.",

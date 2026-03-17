@@ -16,7 +16,7 @@
             "steps": [
                 "Divide 1 by 7 using long division up to 8 decimal places",
                 "Identify the repeating block of digits in the quotient",
-                "Predict the decimal value of $2 \div 7$ by multiplying your first answer by 2",
+                "Predict the decimal value of 2 ÷ 7 by multiplying your first answer by 2",
                 "Verify your prediction with actual division"
             ],
             "learning_outcome": "Understands patterns in non-terminating recurring decimals",
@@ -32,8 +32,8 @@
             ],
             "steps": [
                 "Measure the thickness of a stack of 10 paper sheets in mm (e.g., 0.8 mm)",
-                "Calculate the thickness of a single sheet in mm ($0.8 \div 10$)",
-                "Convert this thickness into cm ($mm \div 10$) and then meters ($cm \div 100$)",
+                "Calculate the thickness of a single sheet in mm (0.8 ÷ 10)",
+                "Convert this thickness into cm (mm ÷ 10) and then meters (cm ÷ 100)",
                 "Express the final answer in scientific notation if possible"
             ],
             "learning_outcome": "Masters multi-step decimal division for unit conversions",
@@ -101,7 +101,7 @@
             "steps": [
                 "If a solution has 0.045 kg of salt in 1.5 liters of water, find the salt per liter",
                 "Calculate how much salt is needed for 0.25 liters of the same solution",
-                "Express the concentration as a percentage ($salt \div water \times 100$)"
+                "Express the concentration as a percentage (salt ÷ water × 100)"
             ],
             "learning_outcome": "Uses decimals to calculate ratios and concentrations",
             "evaluation": "Accuracy of the 'per liter' unit rate (10 marks)"
@@ -162,8 +162,8 @@
                 "Notebook"
             ],
             "steps": [
-                "Pick two decimals: $1.44$ and $1.2$. Divide $1.44 \div 1.2$",
-                "Now divide $1.2 \div 1.44$ up to 4 decimal places",
+                "Pick two decimals: 1.44 and 1.2. Divide 1.44 ÷ 1.2",
+                "Now divide 1.2 ÷ 1.44 up to 4 decimal places",
                 "Multiply the two results together",
                 "Explain why the product of $(a/b) \times (b/a)$ is always 1, even with decimals"
             ],

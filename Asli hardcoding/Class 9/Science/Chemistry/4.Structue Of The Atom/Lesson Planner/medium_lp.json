@@ -41,10 +41,7 @@
             "learning_outcome": "Understands J.J. Thomson’s postulate that an atom consists of a positively charged sphere with electrons embedded in it.",
             "evaluation": "Explain why Thomson's model failed to explain later scattering experiments (10 marks)."
         },
-        
 
-[Image of Thomson's model of an atom]
-,
         {
             "sl_no": 3,
             "title": "Rutherford’s Alpha-Particle Simulation",
@@ -62,10 +59,7 @@
             "learning_outcome": "Concludes that the nucleus is very small, dense, and positively charged compared to the rest of the atom.",
             "evaluation": "List three features of the nuclear model of an atom based on Rutherford's experiment (10 marks)."
         },
-        
 
-[Image of scattering of alpha-particles by a gold foil]
-,
         {
             "sl_no": 4,
             "title": "Bohr’s Discrete Orbits Chart",
@@ -83,7 +77,6 @@
             "learning_outcome": "Understands Neils Bohr's contribution to overcoming the limitations of Rutherford's model.",
             "evaluation": "Define 'discrete orbits' as described in Bohr’s postulates (10 marks)."
         },
-        ,
         {
             "sl_no": 5,
             "title": "The 2n² Electron Distribution Rule",
@@ -116,7 +109,6 @@
             "learning_outcome": "Ability to represent the electronic configuration of elements graphically.",
             "evaluation": "Draw the schematic atomic structure of a Chlorine atom (10 marks)."
         },
-        ,
         {
             "sl_no": 7,
             "title": "Calculating Valency from Octets",

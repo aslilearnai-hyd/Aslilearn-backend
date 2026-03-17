@@ -20,9 +20,9 @@
             "Growth Inhibitor: Abscisic acid causes wilting of leaves and inhibits growth."
         ],
         "formulas": [
-            "Brain Protection: $\text{Cranium (Bony Box)} + \text{Cerebrospinal Fluid (Shock Absorber)}$",
-            "Auxin Action: $\text{Light from one side} \rightarrow \text{Auxin diffuses to shady side} \rightarrow \text{Cells grow longer on shady side} \rightarrow \text{Stem bends to light}$",
-            "Nervous vs Hormonal: $\text{Nervous (Fast/Short-lived)} \leftrightarrow \text{Hormonal (Slow/Long-lived)}$"
+            "Brain Protection: Cranium (bony box) + Cerebrospinal fluid (shock absorber)",
+            "Auxin Action: Light from one side → Auxin diffuses to shady side → Cells grow longer on shady side → Stem bends toward light",
+            "Nervous vs Hormonal: Nervous control (fast, short‑lived) ↔ Hormonal control (slow, long‑lived)"
         ],
         "exam_tips": [
             "Don't confuse the Cerebrum (Forebrain - thinking/intelligence) with the Cerebellum (Hindbrain - balance/walking).",

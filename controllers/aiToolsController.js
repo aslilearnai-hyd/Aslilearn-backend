@@ -236,9 +236,37 @@ export const createTeacherTool = async (req, res) => {
         }));
       }
 
+      // Some existing "Lesson Planner" JSON files actually use an
+      // activity/project structure (activities_projects) instead of
+      // explicit lesson objects. When that happens, adapt them so the
+      // LessonPlannerViewer can still render meaningful cards.
+      if (
+        (!lessonsSource || lessonsSource.length === 0) &&
+        Array.isArray(hardcodedData.activities_projects)
+      ) {
+        lessonsSource = hardcodedData.activities_projects.map((activity) => ({
+          lesson_name: activity.title || `Activity ${activity.sl_no || ''}`.trim(),
+          subject_area: hardcodedData.chapter || hardcodedData.subject || undefined,
+          // No explicit duration information in this format
+          learning_objectives: [
+            activity.objective,
+            activity.learning_outcome,
+          ].filter(Boolean),
+          teaching_learning_materials: Array.isArray(activity.materials)
+            ? activity.materials
+            : activity.materials
+            ? [activity.materials]
+            : [],
+          activities: activity.steps && Array.isArray(activity.steps)
+            ? { class_activities: activity.steps }
+            : undefined,
+          evaluation: activity.evaluation ? [activity.evaluation] : [],
+        }));
+      }
+
       responseData.data.rawData = {
         lessons: lessonsSource,
-        book: hardcodedData.book || '',
+        book: hardcodedData.book || hardcodedData.chapter || '',
         class: hardcodedData.class || classNum.toString()
       };
     }

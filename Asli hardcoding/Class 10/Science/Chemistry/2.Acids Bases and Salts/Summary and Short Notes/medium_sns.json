@@ -16,13 +16,13 @@
             "Chlor-alkali Process: $2NaCl(aq) + 2H_2O(l) \rightarrow 2NaOH(aq) + Cl_2(g) + H_2(g)$ (Produces sodium hydroxide, chlorine, and hydrogen).",
             "Bleaching Powder: $Ca(OH)_2 + Cl_2 \rightarrow CaOCl_2 + H_2O$ (Used for disinfecting water and bleaching textiles).",
             "Baking Soda: $NaCl + H_2O + CO_2 + NH_3 \rightarrow NH_4Cl + NaHCO_3$ (Used in baking and as an antacid).",
-            "Plaster of Paris (POP): $CaSO_4 \cdot \frac{1}{2}H_2O$ (Forms Gypsum when mixed with water).",
+            "Plaster of Paris (POP): CaSO₄ · ½H₂O (forms gypsum again when mixed with water).",
             "Reaction with Metal Carbonates: $Na_2CO_3(s) + 2HCl(aq) \rightarrow 2NaCl(aq) + H_2O(l) + CO_2(g)$."
         ],
         "formulas": [
-            "Concentration of Hydronium: $H^+ + H_2O \rightarrow H_3O^+$",
-            "Washing Soda: $Na_2CO_3 \cdot 10H_2O$ (Sodium carbonate decahydrate)",
-            "Gypsum to POP: $CaSO_4 \cdot 2H_2O \xrightarrow{373K} CaSO_4 \cdot \frac{1}{2}H_2O + 1\frac{1}{2}H_2O$"
+            "Concentration of Hydronium: H⁺ + H₂O → H₃O⁺",
+            "Washing Soda: Na₂CO₃ · 10H₂O (sodium carbonate decahydrate)",
+            "Gypsum to POP: CaSO₄ · 2H₂O —(373 K)→ CaSO₄ · ½H₂O + 1½H₂O"
         ],
         "exam_tips": [
             "Remember that $H^+$ ions cannot exist alone; they always associate with water molecules to form $H_3O^+$.",

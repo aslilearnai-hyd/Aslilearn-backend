@@ -31,8 +31,8 @@
                 "Pen"
             ],
             "steps": [
-                "Write three multiplication facts involving negative integers (e.g., $-5 \times 4 = -20$)",
-                "For each fact, derive two corresponding division facts (e.g., $-20 \div 4 = -5$ and $-20 \div -5 = 4$)",
+                "Write three multiplication facts involving negative integers (e.g., -5 × 4 = -20)",
+                "For each fact, derive two corresponding division facts (e.g., -20 ÷ 4 = -5 and -20 ÷ -5 = 4)",
                 "Explain how the sign of the quotient is determined"
             ],
             "learning_outcome": "Relates multiplication and division rules for integers",
@@ -94,7 +94,7 @@
                 "Notebook"
             ],
             "steps": [
-                "Solve the expression: $-20 + [(-5) \times 2] \div (-2)$",
+                "Solve the expression: -20 + [(-5) × 2] ÷ (-2)",
                 "Break down the steps showing which operation was performed first",
                 "Create your own expression with at least three different operations and solve it"
             ],
@@ -156,9 +156,9 @@
                 "Notebook"
             ],
             "steps": [
-                "Try to divide $-10$ by 0 using the reverse multiplication method (i.e., $0 \times ? = -10$)",
+                "Try to divide -10 by 0 using the reverse multiplication method (i.e., 0 × ? = -10)",
                 "Explain why no integer can satisfy this equation",
-                "Compare this with $0 \div (-10)$ and explain the difference"
+                "Compare this with 0 ÷ (-10) and explain the difference"
             ],
             "learning_outcome": "Conceptualizes the meaning of undefined operations",
             "evaluation": "Quality of conceptual explanation (10 marks)"

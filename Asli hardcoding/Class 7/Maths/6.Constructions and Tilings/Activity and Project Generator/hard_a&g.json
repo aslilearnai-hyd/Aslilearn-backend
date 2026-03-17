@@ -33,9 +33,9 @@
                 "Eraser"
             ],
             "steps": [
-                "Construct a $90^{\circ}$ angle and a $60^{\circ}$ angle from the same vertex",
-                "Bisect the $30^{\circ}$ gap between them to find the $75^{\circ}$ line",
-                "Apply the same logic between $90^{\circ}$ and $120^{\circ}$ to find the $105^{\circ}$ angle",
+                "Construct a 90° angle and a 60° angle from the same vertex",
+                "Bisect the 30° gap between them to find the 75° line",
+                "Apply the same logic between 90° and 120° to find the 105° angle",
                 "Verify the accuracy with a protractor only after finishing"
             ],
             "learning_outcome": "Masters angle addition and bisection logic in construction",
@@ -51,7 +51,7 @@
                 "Protractor"
             ],
             "steps": [
-                "Draw a line segment $AB = 5$ cm and an angle of $30^{\circ}$ at A",
+                "Draw a line segment AB = 5 cm and an angle of 30° at A",
                 "Set the compass to $3$ cm and draw an arc from B",
                 "Observe the two different points where the arc intersects the $30^{\circ}$ ray",
                 "Construct both possible triangles and explain why the data was 'ambiguous'"
@@ -106,7 +106,7 @@
             "steps": [
                 "Calculate the interior angle of a regular pentagon using $(n-2) \times 180 / n$",
                 "Try to fit three or four pentagons around a single point",
-                "Calculate the sum of the angles at the vertex ($108^{\circ} \times 3$)",
+                "Calculate the sum of the angles at the vertex (108° × 3)",
                 "Explain why the gap ($360 - 324$) prevents tiling"
             ],
             "learning_outcome": "Connects interior angle formulas to the possibility of tessellation",
@@ -122,7 +122,7 @@
                 "Ruler"
             ],
             "steps": [
-                "Draw an obtuse triangle (e.g., $110^{\circ}$ angle)",
+                "Draw an obtuse triangle (e.g., 110° angle)",
                 "Construct the altitudes from each vertex to the opposite side",
                 "Notice that you must extend the sides outward to find the meeting point",
                 "Identify the Orthocenter outside the triangle"
@@ -139,9 +139,9 @@
                 "Colors"
             ],
             "steps": [
-                "Construct a regular octagon where each interior angle is $135^{\circ}$",
-                "Place squares ($90^{\circ}$) in the gaps between octagons",
-                "Calculate the total angle at each vertex ($135 + 135 + 90 = 360$)",
+                "Construct a regular octagon where each interior angle is 135°",
+                "Place squares (90°) in the gaps between octagons",
+                "Calculate the total angle at each vertex (135 + 135 + 90 = 360)",
                 "Create a colorful floor-pattern design using this rule"
             ],
             "learning_outcome": "Analyzes the geometry of dual-shape tilings",

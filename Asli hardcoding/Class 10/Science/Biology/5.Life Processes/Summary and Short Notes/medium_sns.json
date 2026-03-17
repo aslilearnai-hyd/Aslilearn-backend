@@ -20,9 +20,9 @@
             "Anaerobic Respiration in Muscle Cells: Produces Lactic Acid during vigorous exercise, causing cramps."
         ],
         "formulas": [
-            "Breakdown of Glucose (Pathway 1): $\text{Glucose} \xrightarrow{\text{Cytoplasm}} \text{Pyruvate} \xrightarrow{\text{Absence of } O_2} \text{Ethanol} + CO_2 + \text{Energy}$",
-            "Breakdown of Glucose (Pathway 2): $\text{Glucose} \xrightarrow{\text{Cytoplasm}} \text{Pyruvate} \xrightarrow{\text{Lack of } O_2} \text{Lactic Acid} + \text{Energy}$",
-            "Transpiration: $\text{Loss of water vapor} \rightarrow \text{Suction pull} \rightarrow \text{Ascent of Sap}$"
+            "Breakdown of Glucose (Pathway 1): Glucose → (in cytoplasm) Pyruvate → (in absence of O₂) Ethanol + CO₂ + Energy",
+            "Breakdown of Glucose (Pathway 2): Glucose → (in cytoplasm) Pyruvate → (in lack of O₂) Lactic Acid + Energy",
+            "Transpiration: Loss of water vapour → Suction pull → Ascent of sap"
         ],
         "exam_tips": [
             "Remember that the small intestine is the site of complete digestion of carbohydrates, proteins, and fats.",

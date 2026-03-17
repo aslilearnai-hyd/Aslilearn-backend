@@ -153,7 +153,7 @@
             ],
             "steps": [
                 "Assign A=1, B=2... Z=26. Create a message where each letter is hidden by an expression",
-                "Example: To get 'C' (3), the code could be $(-15 \div -5)$",
+                "Example: To get 'C' (3), the code could be (-15 ÷ -5)",
                 "Create a 5-letter word code using at least one multiplication and one division per letter",
                 "Challenge a friend to decode it"
             ],

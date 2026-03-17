@@ -54,13 +54,13 @@
                 "Color the squares in a 'Checkerboard' pattern",
                 "Explain why there are no gaps between the squares"
             ],
-            "learning_outcome": "Understand that shapes with $90^{\circ}$ angles tile a plane easily",
+            "learning_outcome": "Understand that shapes with 90° angles tile a plane easily",
             "evaluation": "Neat coloring with no gaps between shapes (10 marks)"
         },
         {
             "sl_no": 4,
             "title": "The 60-Degree Arc",
-            "objective": "Construct a $60^{\circ}$ angle without a protractor",
+            "objective": "Construct a 60° angle without a protractor",
             "materials": [
                 "Compass",
                 "Ruler"
@@ -72,7 +72,7 @@
                 "Join OC and measure the angle with a protractor to verify"
             ],
             "learning_outcome": "Learns basic angle construction using a compass",
-            "evaluation": "Angle measures exactly $60^{\circ}$ (10 marks)"
+            "evaluation": "Angle measures exactly 60° (10 marks)"
         },
         {
             "sl_no": 5,

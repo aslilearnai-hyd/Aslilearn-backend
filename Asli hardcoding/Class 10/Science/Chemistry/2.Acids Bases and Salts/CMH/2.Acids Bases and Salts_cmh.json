@@ -90,7 +90,7 @@
         {
             "concept_name": "Plaster of Paris (POP)",
             "difficulty": "hard",
-            "lesson": "On heating Gypsum ($CaSO_4 \cdot 2H_2O$) at 373 K, it loses water molecules and becomes Calcium Sulphate Hemihydrate ($CaSO_4 \cdot \frac{1}{2}H_2O$). When mixed with water, it sets into a hard solid mass again.",
+            "lesson": "On heating Gypsum (CaSO₄ · 2H₂O) at 373 K, it loses water molecules and becomes Calcium Sulphate Hemihydrate (CaSO₄ · ½H₂O). When mixed with water, it sets into a hard solid mass again.",
             "real_example": "Doctors using POP to support fractured bones in the right position.",
             "key_points": [
                 "POP must be stored in moisture-proof containers",

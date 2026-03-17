@@ -14,10 +14,10 @@
                 "Pen"
             ],
             "steps": [
-                "Take a problem like $1.25 \div 0.5$",
-                "Multiply both numbers by 10 to clear the decimal from the divisor ($12.5 \div 5$)",
+                "Take a problem like 1.25 ÷ 0.5",
+                "Multiply both numbers by 10 to clear the decimal from the divisor (12.5 ÷ 5)",
                 "Perform the division and record the quotient",
-                "Try another: $0.004 \div 0.02$ and explain which power of 10 you chose"
+                "Try another: 0.004 ÷ 0.02 and explain which power of 10 you chose"
             ],
             "learning_outcome": "Masters the technique of shifting decimals to simplify division",
             "evaluation": "Correct conversion and final quotient (10 marks)"
@@ -141,7 +141,7 @@
                 "Notebook"
             ],
             "steps": [
-                "Solve $5 \div 0.1$, $5 \div 0.01$, and $5 \div 0.001$",
+                "Solve 5 ÷ 0.1, 5 ÷ 0.01, and 5 ÷ 0.001",
                 "Compare these results with $5 \times 10$, $5 \times 100$, and $5 \times 1000$",
                 "Write a conclusion about what happens to a number when divided by a decimal less than 1"
             ],

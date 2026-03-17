@@ -15,10 +15,10 @@
                 "Two identical opaque pouches"
             ],
             "steps": [
-                "Place a pouch with an unknown number of marbles ($x$) on one side",
+                "Place a pouch with an unknown number of marbles (x) on one side",
                 "Place 5 marbles on the other side to balance it",
                 "Identify what $x$ must be for the scales to remain level",
-                "Write it as $x = 5$"
+                "Write it as x = 5"
             ],
             "learning_outcome": "Visualizes an equation as a balanced state",
             "evaluation": "Correct identification of the unknown value (10 marks)"
@@ -33,8 +33,8 @@
             ],
             "steps": [
                 "Take a phrase like 'Sum of a number and 7 is 12'",
-                "Identify the variable ($x$), the operation ($+$), and the result ($=12$)",
-                "Write the equation: $x + 7 = 12$",
+                "Identify the variable (x), the operation (+), and the result (= 12)",
+                "Write the equation: x + 7 = 12",
                 "Try five different phrases and write their matching equations"
             ],
             "learning_outcome": "Develops the skill of translating language into algebra",
@@ -48,10 +48,10 @@
                 "Notebook"
             ],
             "steps": [
-                "Write an equation: $x - 5 = 10$",
+                "Write an equation: x − 5 = 10",
                 "Identify the 'enemy' operation (subtraction)",
-                "Apply the 'hero' operation (addition) to both sides: $x - 5 + 5 = 10 + 5$",
-                "Solve for $x$"
+                "Apply the 'hero' operation (addition) to both sides: x − 5 + 5 = 10 + 5",
+                "Solve for x"
             ],
             "learning_outcome": "Masters the concept of inverse operations (Add/Sub)",
             "evaluation": "Correct application of inverse steps (10 marks)"
@@ -65,8 +65,8 @@
                 "Pencil"
             ],
             "steps": [
-                "For the equation $2x = 10$, create a table with columns 'Value of x' and 'Result'",
-                "Try $x=1, 2, 3, 4, 5$",
+                "For the equation 2x = 10, create a table with columns 'Value of x' and 'Result'",
+                "Try x = 1, 2, 3, 4, 5",
                 "Stop when the result matches 10",
                 "Identify 5 as the 'Solution'"
             ],
@@ -82,8 +82,8 @@
             ],
             "steps": [
                 "Tell your partner: 'Think of a number, add 3, and tell me the result'",
-                "If they say '10', quickly subtract 3 in your head to find their number",
-                "Explain the math: $x + 3 = 10 \\rightarrow x = 7$",
+                "If they say “10”, quickly subtract 3 in your head to find their number",
+                "Explain the math: x + 3 = 10 → x = 7",
                 "Repeat with subtraction"
             ],
             "learning_outcome": "Applies mental algebra to solve everyday puzzles",
@@ -99,8 +99,8 @@
             "steps": [
                 "Look at the equation $3x = 15$",
                 "Realize 3 is 'stuck' to $x$ by multiplication",
-                "Divide both sides by 3 to free the $x$",
-                "Verify: $3 \\times 5 = 15$"
+                "Divide both sides by 3 to free the x",
+                "Verify: 3 × 5 = 15"
             ],
             "learning_outcome": "Masters solving simple multiplication-based equations",
             "evaluation": "Correct division step and verification (10 marks)"
@@ -128,7 +128,7 @@
                 "Notebook"
             ],
             "steps": [
-                "Take $\\frac{x}{2} = 4$",
+                "Take x/2 = 4",
                 "To undo the division by 2, multiply both sides by 2",
                 "Find $x = 8$",
                 "Check: 'If I have 8 candies and share them with 2 people, do they get 4 each?'"

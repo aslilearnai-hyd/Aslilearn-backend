@@ -42,12 +42,12 @@
         {
             "concept_name": "Introduction to Tilings (Tessellations)",
             "difficulty": "easy",
-            "lesson": "Tiling, or tessellation, is the covering of a flat surface using geometric shapes without any gaps or overlaps. For a shape to tile a plane perfectly, the sum of the angles meeting at any vertex must be exactly $360^{\circ}$.",
+            "lesson": "Tiling, or tessellation, is the covering of a flat surface using geometric shapes without any gaps or overlaps. For a shape to tile a plane perfectly, the sum of the angles meeting at any vertex must be exactly 360°.",
             "real_example": " The square tiles on a bathroom floor or the hexagonal cells in a beehive.",
             "key_points": [
                 "No gaps, no overlaps",
                 "Regular tilings use one type of regular polygon",
-                "Vertex angles must sum to $360^{\circ}$"
+                "Vertex angles must sum to 360°"
             ],
             "source_section": "Section 14.4"
         }

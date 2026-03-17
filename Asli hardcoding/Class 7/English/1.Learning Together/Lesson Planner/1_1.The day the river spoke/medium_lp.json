@@ -1,4 +1,597 @@
 {
+  "class": "Class 7",
+  "subject": "English",
+  "chapter_name": "The Day the River Spoke",
+  "lesson_level": "Medium",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Analyze Janu’s internal conflict between tradition and her desire for education",
+    "Explore the symbolism of the river as a source of wisdom and courage",
+    "Examine gender roles and social barriers in rural settings",
+    "Identify and use figurative language (personification and metaphors)",
+    "Practice inferential reading and character mapping",
+    "Construct arguments for the importance of girl-child education"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Context and Symbolism",
+      "topics_covered": [
+        "Geographic and social setting of the story",
+        "Introduction to Janu’s character profile",
+        "The concept of personification in nature"
+      ],
+      "teaching_strategy": [
+        "Visual presentation of riverside village life",
+        "Deep-dive discussion on the title's metaphorical meaning",
+        "Predictive mapping: What could the river represent to Janu?"
+      ],
+      "student_activities": [
+        "Create a 'Character Web' for Janu including her dreams and fears",
+        "Identify personification examples in the opening paragraphs"
+      ],
+      "assessment": ["Mind-map review", "Class discussion participation"]
+    },
+    {
+      "period": 2,
+      "title": "Social Barriers and Dreams",
+      "topics_covered": [
+        "Janu’s longing for school vs. her household duties",
+        "The disparity between male and female opportunities",
+        "Key vocabulary: 'monotony', 'yearning', 'defiance'"
+      ],
+      "teaching_strategy": [
+        "Comparative reading of Janu’s day vs. her brothers' day",
+        "Socratic questioning about fairness and tradition",
+        "Textual evidence finding (finding quotes that show Janu's sadness)"
+      ],
+      "student_activities": [
+        "T-Chart: Chores vs. Education opportunities",
+        "Write a diary entry from Janu’s perspective expressing her frustration"
+      ],
+      "assessment": ["Diary entry evaluation", "Evidence-based oral answers"]
+    },
+    {
+      "period": 3,
+      "title": "The River’s Philosophy",
+      "topics_covered": [
+        "The river as a silent teacher",
+        "Interpreting the 'speech' of the river",
+        "Imagery and sensory details in the narrative"
+      ],
+      "teaching_strategy": [
+        "Guided analysis of the river’s movement as a metaphor for progress",
+        "Teacher-led exploration of the 'voices' Janu hears",
+        "Discussion on resilience (how water overcomes obstacles)"
+      ],
+      "student_activities": [
+        "Identify sensory words (sight, sound, touch) in the river descriptions",
+        "Pair-share: What advice is the river giving Janu?"
+      ],
+      "assessment": ["Descriptive writing task", "Imagery identification quiz"]
+    },
+    {
+      "period": 4,
+      "title": "Internal Conflict and Climax",
+      "topics_covered": [
+        "Janu’s decision to act",
+        "The influence of the Arabic teacher or community elders",
+        "Themes of self-reliance and grit"
+      ],
+      "teaching_strategy": [
+        "Debate: Should Janu follow tradition or her heart?",
+        "Analysis of the turning point in the story",
+        "Discussion on the importance of mentors"
+      ],
+      "student_activities": [
+        "Role-play: Janu presenting her case to her parents",
+        "Flowchart showing Janu’s emotional journey from sadness to hope"
+      ],
+      "assessment": ["Role-play performance", "Logic/reasoning in debate"]
+    },
+    {
+      "period": 5,
+      "title": "Resolution and Empowerment",
+      "topics_covered": [
+        "The ending: A new beginning for Janu",
+        "Connecting the story to real-world issues (Beti Bachao Beti Padhao)",
+        "Moral and social implications of the story"
+      ],
+      "teaching_strategy": [
+        "Final thematic wrap-up",
+        "Connection to modern-day examples of girls overcoming barriers",
+        "Reflective questioning on the value of literacy"
+      ],
+      "student_activities": [
+        "Write a letter to Janu 10 years in the future",
+        "Create a poster advocating for equal education"
+      ],
+      "assessment": ["Letter writing", "Poster creativity and message clarity"]
+    },
+    {
+      "period": 6,
+      "title": "Advanced Language Workshop",
+      "topics_covered": [
+        "Phrasal verbs in the context of the story",
+        "Complex sentence structures",
+        "Vocabulary revision through context clues"
+      ],
+      "teaching_strategy": [
+        "Grammar workshop focusing on descriptive adverbs",
+        "Interactive quiz on story details and literary devices",
+        "Correction of common errors in narrative writing"
+      ],
+      "student_activities": [
+        "Sentence transformation exercises",
+        "Vocabulary crossword based on 'The Day the River Spoke'"
+      ],
+      "assessment": ["Grammar worksheet", "Vocabulary quiz"]
+    }
+  ],
+  "teaching_aids": [
+    "Textbook",
+    "Audio of river sounds/nature",
+    "Excerpt from 'I Am Malala' (for thematic comparison)",
+    "Poster paper and markers",
+    "Graphic organizers for character analysis"
+  ],
+  "evaluation_methods": [
+    "Analytical essay/paragraph writing",
+    "Inference-based questioning",
+    "Peer evaluation of role-plays",
+    "Grammar and vocabulary mastery test",
+    "Participation in philosophical debates"
+  ],
+  "teacher_tip": "Push students to look beyond the literal text. Ask them 'Why' Janu feels the river speaks, moving them toward understanding the river as a projection of her own inner strength and wisdom."
+}
+{
+  "class": "Class 7",
+  "subject": "English",
+  "chapter_name": "The Day the River Spoke",
+  "lesson_level": "Medium",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Analyze Janu’s internal conflict between tradition and her desire for education",
+    "Explore the symbolism of the river as a source of wisdom and courage",
+    "Examine gender roles and social barriers in rural settings",
+    "Identify and use figurative language (personification and metaphors)",
+    "Practice inferential reading and character mapping",
+    "Construct arguments for the importance of girl-child education"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Context and Symbolism",
+      "topics_covered": [
+        "Geographic and social setting of the story",
+        "Introduction to Janu’s character profile",
+        "The concept of personification in nature"
+      ],
+      "teaching_strategy": [
+        "Visual presentation of riverside village life",
+        "Deep-dive discussion on the title's metaphorical meaning",
+        "Predictive mapping: What could the river represent to Janu?"
+      ],
+      "student_activities": [
+        "Create a 'Character Web' for Janu including her dreams and fears",
+        "Identify personification examples in the opening paragraphs"
+      ],
+      "assessment": ["Mind-map review", "Class discussion participation"]
+    },
+    {
+      "period": 2,
+      "title": "Social Barriers and Dreams",
+      "topics_covered": [
+        "Janu’s longing for school vs. her household duties",
+        "The disparity between male and female opportunities",
+        "Key vocabulary: 'monotony', 'yearning', 'defiance'"
+      ],
+      "teaching_strategy": [
+        "Comparative reading of Janu’s day vs. her brothers' day",
+        "Socratic questioning about fairness and tradition",
+        "Textual evidence finding (finding quotes that show Janu's sadness)"
+      ],
+      "student_activities": [
+        "T-Chart: Chores vs. Education opportunities",
+        "Write a diary entry from Janu’s perspective expressing her frustration"
+      ],
+      "assessment": ["Diary entry evaluation", "Evidence-based oral answers"]
+    },
+    {
+      "period": 3,
+      "title": "The River’s Philosophy",
+      "topics_covered": [
+        "The river as a silent teacher",
+        "Interpreting the 'speech' of the river",
+        "Imagery and sensory details in the narrative"
+      ],
+      "teaching_strategy": [
+        "Guided analysis of the river’s movement as a metaphor for progress",
+        "Teacher-led exploration of the 'voices' Janu hears",
+        "Discussion on resilience (how water overcomes obstacles)"
+      ],
+      "student_activities": [
+        "Identify sensory words (sight, sound, touch) in the river descriptions",
+        "Pair-share: What advice is the river giving Janu?"
+      ],
+      "assessment": ["Descriptive writing task", "Imagery identification quiz"]
+    },
+    {
+      "period": 4,
+      "title": "Internal Conflict and Climax",
+      "topics_covered": [
+        "Janu’s decision to act",
+        "The influence of the Arabic teacher or community elders",
+        "Themes of self-reliance and grit"
+      ],
+      "teaching_strategy": [
+        "Debate: Should Janu follow tradition or her heart?",
+        "Analysis of the turning point in the story",
+        "Discussion on the importance of mentors"
+      ],
+      "student_activities": [
+        "Role-play: Janu presenting her case to her parents",
+        "Flowchart showing Janu’s emotional journey from sadness to hope"
+      ],
+      "assessment": ["Role-play performance", "Logic/reasoning in debate"]
+    },
+    {
+      "period": 5,
+      "title": "Resolution and Empowerment",
+      "topics_covered": [
+        "The ending: A new beginning for Janu",
+        "Connecting the story to real-world issues (Beti Bachao Beti Padhao)",
+        "Moral and social implications of the story"
+      ],
+      "teaching_strategy": [
+        "Final thematic wrap-up",
+        "Connection to modern-day examples of girls overcoming barriers",
+        "Reflective questioning on the value of literacy"
+      ],
+      "student_activities": [
+        "Write a letter to Janu 10 years in the future",
+        "Create a poster advocating for equal education"
+      ],
+      "assessment": ["Letter writing", "Poster creativity and message clarity"]
+    },
+    {
+      "period": 6,
+      "title": "Advanced Language Workshop",
+      "topics_covered": [
+        "Phrasal verbs in the context of the story",
+        "Complex sentence structures",
+        "Vocabulary revision through context clues"
+      ],
+      "teaching_strategy": [
+        "Grammar workshop focusing on descriptive adverbs",
+        "Interactive quiz on story details and literary devices",
+        "Correction of common errors in narrative writing"
+      ],
+      "student_activities": [
+        "Sentence transformation exercises",
+        "Vocabulary crossword based on 'The Day the River Spoke'"
+      ],
+      "assessment": ["Grammar worksheet", "Vocabulary quiz"]
+    }
+  ],
+  "teaching_aids": [
+    "Textbook",
+    "Audio of river sounds/nature",
+    "Excerpt from 'I Am Malala' (for thematic comparison)",
+    "Poster paper and markers",
+    "Graphic organizers for character analysis"
+  ],
+  "evaluation_methods": [
+    "Analytical essay/paragraph writing",
+    "Inference-based questioning",
+    "Peer evaluation of role-plays",
+    "Grammar and vocabulary mastery test",
+    "Participation in philosophical debates"
+  ],
+  "teacher_tip": "Push students to look beyond the literal text. Ask them 'Why' Janu feels the river speaks, moving them toward understanding the river as a projection of her own inner strength and wisdom."
+}
+{
+  "class": "Class 7",
+  "subject": "English",
+  "chapter_name": "The Day the River Spoke"
+}
+{
+  "class": "Class 7",
+  "subject": "English",
+  "chapter_name": "The Day the River Spoke",
+  "lesson_level": "Medium",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Analyze Janu’s internal conflict between tradition and her desire for education",
+    "Explore the symbolism of the river as a source of wisdom and courage",
+    "Examine gender roles and social barriers in rural settings",
+    "Identify and use figurative language (personification and metaphors)",
+    "Practice inferential reading and character mapping",
+    "Construct arguments for the importance of girl-child education"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Context and Symbolism",
+      "topics_covered": [
+        "Geographic and social setting of the story",
+        "Introduction to Janu’s character profile",
+        "The concept of personification in nature"
+      ],
+      "teaching_strategy": [
+        "Visual presentation of riverside village life",
+        "Deep-dive discussion on the title's metaphorical meaning",
+        "Predictive mapping: What could the river represent to Janu?"
+      ],
+      "student_activities": [
+        "Create a 'Character Web' for Janu including her dreams and fears",
+        "Identify personification examples in the opening paragraphs"
+      ],
+      "assessment": ["Mind-map review", "Class discussion participation"]
+    },
+    {
+      "period": 2,
+      "title": "Social Barriers and Dreams",
+      "topics_covered": [
+        "Janu’s longing for school vs. her household duties",
+        "The disparity between male and female opportunities",
+        "Key vocabulary: 'monotony', 'yearning', 'defiance'"
+      ],
+      "teaching_strategy": [
+        "Comparative reading of Janu’s day vs. her brothers' day",
+        "Socratic questioning about fairness and tradition",
+        "Textual evidence finding (finding quotes that show Janu's sadness)"
+      ],
+      "student_activities": [
+        "T-Chart: Chores vs. Education opportunities",
+        "Write a diary entry from Janu’s perspective expressing her frustration"
+      ],
+      "assessment": ["Diary entry evaluation", "Evidence-based oral answers"]
+    },
+    {
+      "period": 3,
+      "title": "The River’s Philosophy",
+      "topics_covered": [
+        "The river as a silent teacher",
+        "Interpreting the 'speech' of the river",
+        "Imagery and sensory details in the narrative"
+      ],
+      "teaching_strategy": [
+        "Guided analysis of the river’s movement as a metaphor for progress",
+        "Teacher-led exploration of the 'voices' Janu hears",
+        "Discussion on resilience (how water overcomes obstacles)"
+      ],
+      "student_activities": [
+        "Identify sensory words (sight, sound, touch) in the river descriptions",
+        "Pair-share: What advice is the river giving Janu?"
+      ],
+      "assessment": ["Descriptive writing task", "Imagery identification quiz"]
+    },
+    {
+      "period": 4,
+      "title": "Internal Conflict and Climax",
+      "topics_covered": [
+        "Janu’s decision to act",
+        "The influence of the Arabic teacher or community elders",
+        "Themes of self-reliance and grit"
+      ],
+      "teaching_strategy": [
+        "Debate: Should Janu follow tradition or her heart?",
+        "Analysis of the turning point in the story",
+        "Discussion on the importance of mentors"
+      ],
+      "student_activities": [
+        "Role-play: Janu presenting her case to her parents",
+        "Flowchart showing Janu’s emotional journey from sadness to hope"
+      ],
+      "assessment": ["Role-play performance", "Logic/reasoning in debate"]
+    },
+    {
+      "period": 5,
+      "title": "Resolution and Empowerment",
+      "topics_covered": [
+        "The ending: A new beginning for Janu",
+        "Connecting the story to real-world issues (Beti Bachao Beti Padhao)",
+        "Moral and social implications of the story"
+      ],
+      "teaching_strategy": [
+        "Final thematic wrap-up",
+        "Connection to modern-day examples of girls overcoming barriers",
+        "Reflective questioning on the value of literacy"
+      ],
+      "student_activities": [
+        "Write a letter to Janu 10 years in the future",
+        "Create a poster advocating for equal education"
+      ],
+      "assessment": ["Letter writing", "Poster creativity and message clarity"]
+    },
+    {
+      "period": 6,
+      "title": "Advanced Language Workshop",
+      "topics_covered": [
+        "Phrasal verbs in the context of the story",
+        "Complex sentence structures",
+        "Vocabulary revision through context clues"
+      ],
+      "teaching_strategy": [
+        "Grammar workshop focusing on descriptive adverbs",
+        "Interactive quiz on story details and literary devices",
+        "Correction of common errors in narrative writing"
+      ],
+      "student_activities": [
+        "Sentence transformation exercises",
+        "Vocabulary crossword based on 'The Day the River Spoke'"
+      ],
+      "assessment": ["Grammar worksheet", "Vocabulary quiz"]
+    }
+  ],
+  "teaching_aids": [
+    "Textbook",
+    "Audio of river sounds/nature",
+    "Excerpt from 'I Am Malala' (for thematic comparison)",
+    "Poster paper and markers",
+    "Graphic organizers for character analysis"
+  ],
+  "evaluation_methods": [
+    "Analytical essay/paragraph writing",
+    "Inference-based questioning",
+    "Peer evaluation of role-plays",
+    "Grammar and vocabulary mastery test",
+    "Participation in philosophical debates"
+  ],
+  "teacher_tip": "Push students to look beyond the literal text. Ask them 'Why' Janu feels the river speaks, moving them toward understanding the river as a projection of her own inner strength and wisdom."
+}
+{
+  "class": "Class 7",
+  "subject": "English",
+  "chapter_name": "The Day the River Spoke",
+  "lesson_level": "Medium",
+  "total_periods": 6,
+  "period_duration_minutes": "40-45",
+  "overall_learning_objectives": [
+    "Analyze Janu’s internal conflict between tradition and her desire for education",
+    "Explore the symbolism of the river as a source of wisdom and courage",
+    "Examine gender roles and social barriers in rural settings",
+    "Identify and use figurative language (personification and metaphors)",
+    "Practice inferential reading and character mapping",
+    "Construct arguments for the importance of girl-child education"
+  ],
+  "lesson_plan": [
+    {
+      "period": 1,
+      "title": "Context and Symbolism",
+      "topics_covered": [
+        "Geographic and social setting of the story",
+        "Introduction to Janu’s character profile",
+        "The concept of personification in nature"
+      ],
+      "teaching_strategy": [
+        "Visual presentation of riverside village life",
+        "Deep-dive discussion on the title's metaphorical meaning",
+        "Predictive mapping: What could the river represent to Janu?"
+      ],
+      "student_activities": [
+        "Create a 'Character Web' for Janu including her dreams and fears",
+        "Identify personification examples in the opening paragraphs"
+      ],
+      "assessment": ["Mind-map review", "Class discussion participation"]
+    },
+    {
+      "period": 2,
+      "title": "Social Barriers and Dreams",
+      "topics_covered": [
+        "Janu’s longing for school vs. her household duties",
+        "The disparity between male and female opportunities",
+        "Key vocabulary: 'monotony', 'yearning', 'defiance'"
+      ],
+      "teaching_strategy": [
+        "Comparative reading of Janu’s day vs. her brothers' day",
+        "Socratic questioning about fairness and tradition",
+        "Textual evidence finding (finding quotes that show Janu's sadness)"
+      ],
+      "student_activities": [
+        "T-Chart: Chores vs. Education opportunities",
+        "Write a diary entry from Janu’s perspective expressing her frustration"
+      ],
+      "assessment": ["Diary entry evaluation", "Evidence-based oral answers"]
+    },
+    {
+      "period": 3,
+      "title": "The River’s Philosophy",
+      "topics_covered": [
+        "The river as a silent teacher",
+        "Interpreting the 'speech' of the river",
+        "Imagery and sensory details in the narrative"
+      ],
+      "teaching_strategy": [
+        "Guided analysis of the river’s movement as a metaphor for progress",
+        "Teacher-led exploration of the 'voices' Janu hears",
+        "Discussion on resilience (how water overcomes obstacles)"
+      ],
+      "student_activities": [
+        "Identify sensory words (sight, sound, touch) in the river descriptions",
+        "Pair-share: What advice is the river giving Janu?"
+      ],
+      "assessment": ["Descriptive writing task", "Imagery identification quiz"]
+    },
+    {
+      "period": 4,
+      "title": "Internal Conflict and Climax",
+      "topics_covered": [
+        "Janu’s decision to act",
+        "The influence of the Arabic teacher or community elders",
+        "Themes of self-reliance and grit"
+      ],
+      "teaching_strategy": [
+        "Debate: Should Janu follow tradition or her heart?",
+        "Analysis of the turning point in the story",
+        "Discussion on the importance of mentors"
+      ],
+      "student_activities": [
+        "Role-play: Janu presenting her case to her parents",
+        "Flowchart showing Janu’s emotional journey from sadness to hope"
+      ],
+      "assessment": ["Role-play performance", "Logic/reasoning in debate"]
+    },
+    {
+      "period": 5,
+      "title": "Resolution and Empowerment",
+      "topics_covered": [
+        "The ending: A new beginning for Janu",
+        "Connecting the story to real-world issues (Beti Bachao Beti Padhao)",
+        "Moral and social implications of the story"
+      ],
+      "teaching_strategy": [
+        "Final thematic wrap-up",
+        "Connection to modern-day examples of girls overcoming barriers",
+        "Reflective questioning on the value of literacy"
+      ],
+      "student_activities": [
+        "Write a letter to Janu 10 years in the future",
+        "Create a poster advocating for equal education"
+      ],
+      "assessment": ["Letter writing", "Poster creativity and message clarity"]
+    },
+    {
+      "period": 6,
+      "title": "Advanced Language Workshop",
+      "topics_covered": [
+        "Phrasal verbs in the context of the story",
+        "Complex sentence structures",
+        "Vocabulary revision through context clues"
+      ],
+      "teaching_strategy": [
+        "Grammar workshop focusing on descriptive adverbs",
+        "Interactive quiz on story details and literary devices",
+        "Correction of common errors in narrative writing"
+      ],
+      "student_activities": [
+        "Sentence transformation exercises",
+        "Vocabulary crossword based on 'The Day the River Spoke'"
+      ],
+      "assessment": ["Grammar worksheet", "Vocabulary quiz"]
+    }
+  ],
+  "teaching_aids": [
+    "Textbook",
+    "Audio of river sounds/nature",
+    "Excerpt from 'I Am Malala' (for thematic comparison)",
+    "Poster paper and markers",
+    "Graphic organizers for character analysis"
+  ],
+  "evaluation_methods": [
+    "Analytical essay/paragraph writing",
+    "Inference-based questioning",
+    "Peer evaluation of role-plays",
+    "Grammar and vocabulary mastery test",
+    "Participation in philosophical debates"
+  ],
+  "teacher_tip": "Push students to look beyond the literal text. Ask them 'Why' Janu feels the river speaks, moving them toward understanding the river as a projection of her own inner strength and wisdom."
+}
+{
   "class": "Class 7",
   "subject": "English",
   "chapter_name": "The Day the River Spoke",

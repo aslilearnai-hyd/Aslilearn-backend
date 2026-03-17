@@ -91,7 +91,7 @@
             "concept_name": "Real-life Applications",
             "difficulty": "medium",
             "lesson": "Integers are used to represent opposite situations like profit/loss, above/below sea level, and rise/fall in temperature. Calculating the net change in these scenarios requires mastery of integer operations.",
-            "real_example": "If the temperature was $-5^\circ C$ and it dropped by $10^\circ C$, the new temperature is $(-5) - 10 = -15^\circ C$.",
+            "real_example": "If the temperature was −5°C and it dropped by 10°C, the new temperature is −5 − 10 = −15°C.",
             "key_points": [
                 "Elevation and depth",
                 "Financial credits and debits",

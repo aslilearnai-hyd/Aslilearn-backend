@@ -162,10 +162,10 @@
       "question_number": 12,
       "question": "Which of the following is an example of a roasting process in metallurgy?",
       "options": {
-        "A": "$ZnCO_3 \rightarrow ZnO + CO_2$",
-        "B": "$2ZnS + 3O_2 \rightarrow 2ZnO + 2SO_2$",
-        "C": "$ZnO + C \rightarrow Zn + CO$",
-        "D": "$Al_2O_3 + 2NaOH \rightarrow 2NaAlO_2 + H_2O$"
+        "A": "ZnCO₃ → ZnO + CO₂",
+        "B": "2ZnS + 3O₂ → 2ZnO + 2SO₂",
+        "C": "ZnO + C → Zn + CO",
+        "D": "Al₂O₃ + 2NaOH → 2NaAlO₂ + H₂O"
       },
       "correct_answer": "B",
       "explanation": "Roasting is heating sulfide ores in the presence of excess air to convert them into oxides.",
@@ -294,7 +294,7 @@
         "D": "Copper Sulphate"
       },
       "correct_answer": "C",
-      "explanation": "The green coating is basic copper carbonate ($CuCO_3 \cdot Cu(OH)_2$).",
+      "explanation": "The green coating is basic copper carbonate (CuCO₃ · Cu(OH)₂).",
       "difficulty": "medium",
       "source_section": "Section 3.5"
     },

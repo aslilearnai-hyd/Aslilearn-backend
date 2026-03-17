@@ -7,10 +7,7 @@
             "concept_name": "Line Symmetry",
             "difficulty": "easy",
             "lesson": "A figure has line symmetry if there is a line about which the figure may be folded so that the two parts of the figure coincide exactly. This line is called the line of symmetry or the axis of symmetry. A figure can have one, many, or no lines of symmetry depending on its shape.",
-            "real_example": "
-
-[Image of lines of symmetry in regular polygons]
- A butterfly has one line of symmetry, while a circle has infinitely many.",
+            "real_example": "Regular polygons such as equilateral triangles, squares, and regular hexagons have multiple lines of symmetry. A butterfly has one line of symmetry, while a circle has infinitely many.",
             "key_points": [
                 "Mirror image effect",
                 "Folding test",
@@ -21,24 +18,24 @@
         {
             "concept_name": "Rotational Symmetry",
             "difficulty": "medium",
-            "lesson": "A figure has rotational symmetry if it looks exactly the same more than once during a full $360^{\circ}$ turn. The fixed point around which the rotation occurs is the 'Center of Rotation'. The number of times the figure fits onto itself in one full turn is called the 'Order of Rotational Symmetry'.",
+            "lesson": "A figure has rotational symmetry if it looks exactly the same more than once during a full 360° turn. The fixed point around which the rotation occurs is the 'Center of Rotation'. The number of times the figure fits onto itself in one full turn is called the 'Order of Rotational Symmetry'.",
             "real_example": " A ceiling fan with three blades has rotational symmetry of order 3.",
             "key_points": [
                 "Fixed center of rotation",
                 "Angle of rotation",
-                "Order of symmetry $\ge 1$"
+                "Order of symmetry at least 1"
             ],
             "source_section": "Section 12.2"
         },
         {
             "concept_name": "Angle of Rotation",
             "difficulty": "medium",
-            "lesson": "The minimum angle by which a figure must be rotated to look exactly like the original is the angle of rotation. For a regular polygon with $n$ sides, the angle of rotation is calculated as $360^{\circ} \div n$. For example, a square rotates by $90^{\circ}$ to reach its next symmetric position.",
-            "real_example": "For an equilateral triangle, the angle of rotation is $120^{\circ}$.",
+            "lesson": "The minimum angle by which a figure must be rotated to look exactly like the original is the angle of rotation. For a regular polygon with n sides, the angle of rotation is calculated as 360° ÷ n. For example, a square rotates by 90° to reach its next symmetric position.",
+            "real_example": "For an equilateral triangle, the angle of rotation is 120°.",
             "key_points": [
-                "Full turn is $360^{\circ}$",
-                "Half turn is $180^{\circ}$",
-                "Quarter turn is $90^{\circ}$"
+                "Full turn is 360°",
+                "Half turn is 180°",
+                "Quarter turn is 90°"
             ],
             "source_section": "Section 12.2"
         },
