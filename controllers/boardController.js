@@ -508,6 +508,20 @@ export const uploadContent = async (req, res) => {
     const finalFileUrls = hasFileUrls ? fileUrls : (hasFileUrl ? [fileUrl] : []);
     const primaryFileUrl = hasFileUrls ? fileUrls[0] : fileUrl;
 
+    // Enforce server-hosted files only (DigitalOcean uploads directory)
+    const isServerHostedUrl = (url) => {
+      if (!url || typeof url !== 'string') return false;
+      const trimmed = url.trim();
+      return trimmed.startsWith('/uploads/');
+    };
+
+    if (!finalFileUrls.every(isServerHostedUrl) || !isServerHostedUrl(primaryFileUrl)) {
+      return res.status(400).json({
+        success: false,
+        message: 'Only uploaded server files are allowed. Please upload files first and use /uploads/... URLs.'
+      });
+    }
+
     const contentData = {
       title: title.trim(),
       description: description?.trim() || undefined,
