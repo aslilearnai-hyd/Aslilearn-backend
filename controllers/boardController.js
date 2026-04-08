@@ -162,12 +162,7 @@ export const getBoardDashboard = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Invalid board code' });
     }
 
-    // Since everything is now ASLI_EXCLUSIVE_SCHOOLS, get all admins (regardless of board field)
-    const allAdmins = await User.find({ role: 'admin' }).select('_id');
-    const adminIds = allAdmins.map(admin => admin._id);
-
-    // Get all students (since all are now part of ASLI_EXCLUSIVE_SCHOOLS)
-    // Students can be assigned to admins or have board directly assigned
+    // Keep top-level metrics in one parallel batch.
     const [
       board,
       students,
@@ -179,75 +174,127 @@ export const getBoardDashboard = async (req, res) => {
       examResults
     ] = await Promise.all([
       Board.findOne({ code: boardCode }),
-      // Count all students (they're all part of ASLI_EXCLUSIVE_SCHOOLS now)
       User.countDocuments({ role: 'student' }),
-      // Get all teachers (they're all part of ASLI_EXCLUSIVE_SCHOOLS now)
       Teacher.countDocuments({}),
-      // Count all admins (they're all part of ASLI_EXCLUSIVE_SCHOOLS now)
       User.countDocuments({ role: 'admin' }),
-      // Get all subjects (they're all part of ASLI_EXCLUSIVE_SCHOOLS now)
       Subject.countDocuments({ isActive: true }),
-      // Get all content (they're all part of ASLI_EXCLUSIVE_SCHOOLS now)
       Content.countDocuments({ isActive: true }),
-      // Get all exams (they're all part of ASLI_EXCLUSIVE_SCHOOLS now)
       Exam.countDocuments({ isActive: true }),
-      // Get all exam results (they're all part of ASLI_EXCLUSIVE_SCHOOLS now)
       ExamResult.countDocuments({})
     ]);
 
-    // Get top 10 performers (all exam results are now part of ASLI_EXCLUSIVE_SCHOOLS)
-    const topPerformers = await ExamResult.find({})
-      .populate('userId', 'fullName email')
-      .sort({ percentage: -1 })
-      .limit(10)
-      .select('userId percentage obtainedMarks totalMarks examTitle completedAt');
+    // Replace full-collection reads + per-admin queries with grouped aggregations.
+    const [
+      topPerformers,
+      averageScoreAgg,
+      adminsList,
+      resultStatsByAdmin,
+      studentStatsByAdmin,
+      teacherStatsByAdmin,
+      studentsForList
+    ] = await Promise.all([
+      ExamResult.find({})
+        .populate('userId', 'fullName email')
+        .sort({ percentage: -1 })
+        .limit(10)
+        .select('userId percentage obtainedMarks totalMarks examTitle completedAt')
+        .lean(),
+      ExamResult.aggregate([
+        {
+          $group: {
+            _id: null,
+            averageScore: { $avg: '$percentage' }
+          }
+        }
+      ]),
+      User.find({ role: 'admin' })
+        .select('_id fullName email schoolName')
+        .sort({ schoolName: 1, fullName: 1 })
+        .lean(),
+      ExamResult.aggregate([
+        {
+          $group: {
+            _id: '$adminId',
+            examAttempts: { $sum: 1 },
+            averageScore: { $avg: '$percentage' }
+          }
+        }
+      ]),
+      User.aggregate([
+        { $match: { role: 'student', assignedAdmin: { $ne: null } } },
+        {
+          $group: {
+            _id: '$assignedAdmin',
+            students: { $sum: 1 }
+          }
+        }
+      ]),
+      Teacher.aggregate([
+        { $match: { adminId: { $ne: null } } },
+        {
+          $group: {
+            _id: '$adminId',
+            teachers: { $sum: 1 }
+          }
+        }
+      ]),
+      User.find({ role: 'student', assignedAdmin: { $ne: null } })
+        .select('fullName email classNumber assignedAdmin')
+        .sort({ fullName: 1 })
+        .lean()
+    ]);
 
-    // Calculate average score (all exam results are now part of ASLI_EXCLUSIVE_SCHOOLS)
-    const results = await ExamResult.find({});
-    const averageScore = results.length > 0
-      ? results.reduce((sum, r) => sum + r.percentage, 0) / results.length
-      : 0;
+    const averageScore = averageScoreAgg?.[0]?.averageScore || 0;
 
-    // Get detailed school information (all admins are now part of ASLI_EXCLUSIVE_SCHOOLS)
-    const adminsList = await User.find({ role: 'admin' }).sort({ schoolName: 1 });
-    const schoolParticipation = await Promise.all(
-      adminsList.map(async (admin) => {
-        // All exam results are now part of ASLI_EXCLUSIVE_SCHOOLS
-        const results = await ExamResult.countDocuments({ adminId: admin._id });
-        // Students assigned to this admin
-        const students = await User.countDocuments({ assignedAdmin: admin._id, role: 'student' });
-        // Teachers assigned to this admin
-        const teachers = await Teacher.countDocuments({ adminId: admin._id });
-        // Get student list
-        const studentList = await User.find({ assignedAdmin: admin._id, role: 'student' })
-          .select('fullName email classNumber')
-          .sort({ fullName: 1 })
-          .limit(50); // Limit to first 50 for display
-        
-        // Calculate average score for this school (all results are now part of ASLI_EXCLUSIVE_SCHOOLS)
-        const schoolResults = await ExamResult.find({ adminId: admin._id });
-        const avgScore = schoolResults.length > 0
-          ? (schoolResults.reduce((sum, r) => sum + r.percentage, 0) / schoolResults.length).toFixed(2)
-          : '0.00';
-
-        return {
-          schoolName: admin.schoolName || admin.fullName,
-          adminName: admin.fullName,
-          adminEmail: admin.email,
-          adminId: admin._id.toString(),
-          students: students,
-          teachers: teachers,
-          examAttempts: results,
-          participationRate: students > 0 ? ((results / students) * 100).toFixed(1) : '0.0',
-          averageScore: avgScore,
-          studentList: studentList.map(s => ({
-            name: s.fullName,
-            email: s.email,
-            classNumber: s.classNumber
-          }))
-        };
-      })
+    const resultStatsByAdminMap = new Map(
+      resultStatsByAdmin.map((item) => [item._id?.toString(), item])
     );
+    const studentStatsByAdminMap = new Map(
+      studentStatsByAdmin.map((item) => [item._id?.toString(), item.students || 0])
+    );
+    const teacherStatsByAdminMap = new Map(
+      teacherStatsByAdmin.map((item) => [item._id?.toString(), item.teachers || 0])
+    );
+
+    // Build student lists once, then cap to first 50 per admin.
+    const studentListByAdmin = new Map();
+    for (const s of studentsForList) {
+      const adminKey = s.assignedAdmin?.toString();
+      if (!adminKey) continue;
+      if (!studentListByAdmin.has(adminKey)) {
+        studentListByAdmin.set(adminKey, []);
+      }
+      const current = studentListByAdmin.get(adminKey);
+      if (current.length < 50) {
+        current.push({
+          name: s.fullName,
+          email: s.email,
+          classNumber: s.classNumber
+        });
+      }
+    }
+
+    const schoolParticipation = adminsList.map((admin) => {
+      const adminKey = admin._id.toString();
+      const resultStats = resultStatsByAdminMap.get(adminKey);
+      const adminStudents = studentStatsByAdminMap.get(adminKey) || 0;
+      const adminTeachers = teacherStatsByAdminMap.get(adminKey) || 0;
+      const examAttempts = resultStats?.examAttempts || 0;
+      const avgScore = resultStats?.averageScore || 0;
+
+      return {
+        schoolName: admin.schoolName || admin.fullName,
+        adminName: admin.fullName,
+        adminEmail: admin.email,
+        adminId: adminKey,
+        students: adminStudents,
+        teachers: adminTeachers,
+        examAttempts,
+        participationRate: adminStudents > 0 ? ((examAttempts / adminStudents) * 100).toFixed(1) : '0.0',
+        averageScore: Number(avgScore).toFixed(2),
+        studentList: studentListByAdmin.get(adminKey) || []
+      };
+    });
 
     console.log('📊 Board Dashboard Stats:', {
       boardCode,

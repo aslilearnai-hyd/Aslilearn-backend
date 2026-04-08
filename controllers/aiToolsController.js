@@ -133,6 +133,57 @@ export const createTeacherTool = async (req, res) => {
       });
     }
 
+    // Enforce requested questionCount for exam generator output
+    if (toolType === 'exam-question-paper-generator') {
+      const requestedCount = Number(
+        params.questionCount ?? params.numberOfQuestions ?? params.totalQuestions
+      );
+      if (
+        Number.isFinite(requestedCount) &&
+        requestedCount > 0 &&
+        hardcodedData &&
+        Array.isArray(hardcodedData.sections)
+      ) {
+        let remaining = Math.floor(requestedCount);
+        const trimmedSections = [];
+
+        for (const section of hardcodedData.sections) {
+          if (remaining <= 0) break;
+          const originalQs = Array.isArray(section.questions) ? section.questions : [];
+          const take = originalQs.slice(0, remaining);
+          if (take.length > 0) {
+            trimmedSections.push({
+              ...section,
+              questions: take,
+              count: take.length,
+            });
+            remaining -= take.length;
+          }
+        }
+
+        const totalQuestions = trimmedSections.reduce(
+          (sum, s) => sum + (Array.isArray(s.questions) ? s.questions.length : 0),
+          0
+        );
+        const totalMarks = trimmedSections.reduce(
+          (sum, s) =>
+            sum +
+            (Array.isArray(s.questions)
+              ? s.questions.reduce((qSum, q) => qSum + (parseInt(q.marks, 10) || 1), 0)
+              : 0),
+          0
+        );
+
+        hardcodedData = {
+          ...hardcodedData,
+          sections: trimmedSections,
+          total_questions: totalQuestions,
+          total_marks: totalMarks,
+          estimated_time: totalQuestions * 5,
+        };
+      }
+    }
+
     console.log(`✅ Found hardcoded content for ${toolType}`);
     
     // Format hardcoded content to Markdown
@@ -199,6 +250,20 @@ export const createTeacherTool = async (req, res) => {
     if (toolType === 'concept-mastery-helper' && hardcodedData && hardcodedData.concepts) {
       responseData.data.rawData = {
         concepts: hardcodedData.concepts
+      };
+    }
+
+    // Add raw data for Activity & Project Generator so the frontend can render
+    // steps/learning_outcome/evaluation reliably (avoids markdown mismatches)
+    if (toolType === 'activity-project-generator' && hardcodedData) {
+      const activities =
+        (Array.isArray(hardcodedData.activities_projects) && hardcodedData.activities_projects) ||
+        (Array.isArray(hardcodedData.activities_and_projects) && hardcodedData.activities_and_projects) ||
+        (Array.isArray(hardcodedData.activities) && hardcodedData.activities) ||
+        [];
+      responseData.data.rawData = {
+        activities,
+        chapter: hardcodedData.chapter || hardcodedData.chapter_name || '',
       };
     }
     

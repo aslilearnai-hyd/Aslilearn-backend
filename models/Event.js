@@ -10,6 +10,10 @@ const eventSchema = new mongoose.Schema({
     type: Date,
     required: true
   },
+  endDate: {
+    type: Date,
+    required: false
+  },
   photo: {
     type: String, // URL or path to the photo
     default: ''

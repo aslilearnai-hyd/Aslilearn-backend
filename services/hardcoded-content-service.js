@@ -1149,7 +1149,42 @@ async function getContentForChapterPath(chapterPath, toolType, difficulty = 'med
   }
 
   console.log(`✅ Found content file: ${filePath}`);
-  return await readJSONFile(filePath);
+  let data = await readJSONFile(filePath);
+
+  // Lesson planner files in some chapters have broken easy_lp.json (non-standard whitespace).
+  // If primary file fails, try other LP files in a stable preference order.
+  if (!data && (toolType === 'lesson-planner' || toolType === 'daily-class-plan-maker')) {
+    try {
+      const lpFolder = await findFolder(chapterPath, TOOL_FOLDER_PATTERNS['lesson-planner']);
+      if (lpFolder) {
+        const lpPath = path.join(chapterPath, lpFolder);
+        const files = (await getFilesInDir(lpPath)).filter((f) => f.toLowerCase().endsWith('.json'));
+        const preferred = [
+          'medium_lp.json',
+          'hard_lp.json',
+          'easy_lp.json',
+        ];
+        const ordered = [
+          ...preferred.filter((n) => files.some((f) => f.toLowerCase() === n)),
+          ...files.filter((f) => !preferred.includes(f.toLowerCase())).sort((a, b) => a.localeCompare(b)),
+        ];
+
+        for (const f of ordered) {
+          const p = path.join(lpPath, f);
+          const parsed = await readJSONFile(p);
+          if (parsed) {
+            console.log(`✅ Fallback lesson planner file used: ${p}`);
+            data = parsed;
+            break;
+          }
+        }
+      }
+    } catch (e) {
+      console.log(`⚠️ Lesson planner fallback failed in ${chapterPath}: ${e.message}`);
+    }
+  }
+
+  return data;
 }
 
 /**

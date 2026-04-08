@@ -33,8 +33,20 @@ import ExamResult from '../models/ExamResult.js';
 import Teacher from '../models/Teacher.js';
 import Content from '../models/Content.js';
 import StudentRemark from '../models/StudentRemark.js';
+import TeacherWorkDiary from '../models/TeacherWorkDiary.js';
 
 const router = express.Router();
+
+/** YYYY-MM-DD -> UTC midnight for that calendar day */
+function parseDateKeyToUtc(dateStr) {
+  if (!dateStr || typeof dateStr !== 'string') return null;
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateStr.trim());
+  if (!m) return null;
+  const y = Number(m[1]);
+  const mo = Number(m[2]) - 1;
+  const d = Number(m[3]);
+  return new Date(Date.UTC(y, mo, d));
+}
 
 // Test route without any middleware
 router.post('/test-video', async (req, res) => {
@@ -1804,6 +1816,109 @@ router.post('/quizzes/:quizId/assign', async (req, res) => {
   } catch (error) {
     console.error('Failed to assign quiz:', error);
     res.status(500).json({ success: false, message: 'Failed to assign quiz', error: error.message });
+  }
+});
+
+// --- Teacher work diary (daily log — visible to assigned students & school admin via other routes) ---
+router.get('/work-diary', async (req, res) => {
+  try {
+    const teacherId = req.teacherId;
+    const { from, to, limit = '60' } = req.query;
+    const q = { teacherId: new mongoose.Types.ObjectId(teacherId) };
+    if (from && to) {
+      const f = parseDateKeyToUtc(String(from));
+      const t = parseDateKeyToUtc(String(to));
+      if (f && t) q.forDate = { $gte: f, $lte: t };
+    }
+    const entries = await TeacherWorkDiary.find(q)
+      .sort({ forDate: -1 })
+      .limit(Math.min(Number(limit) || 60, 200))
+      .lean();
+    res.json({ success: true, data: entries });
+  } catch (error) {
+    console.error('Get work diary error:', error);
+    res.status(500).json({ success: false, message: 'Failed to fetch diary' });
+  }
+});
+
+router.post('/work-diary', async (req, res) => {
+  try {
+    const teacherId = req.teacherId;
+    const { date, content, title } = req.body;
+    if (!date || !content || String(content).trim().length === 0) {
+      return res.status(400).json({ success: false, message: 'date and content are required' });
+    }
+    const forDate = parseDateKeyToUtc(String(date));
+    if (!forDate) {
+      return res.status(400).json({ success: false, message: 'Invalid date (use YYYY-MM-DD)' });
+    }
+    const teacher = await Teacher.findById(teacherId);
+    if (!teacher) return res.status(404).json({ success: false, message: 'Teacher not found' });
+
+    const tid = new mongoose.Types.ObjectId(teacherId);
+    const existing = await TeacherWorkDiary.findOne({ teacherId: tid, forDate });
+    if (existing) {
+      existing.content = String(content).trim();
+      existing.title = title != null ? String(title).trim() : existing.title;
+      await existing.save();
+      return res.json({ success: true, data: existing, message: 'Diary updated for this date' });
+    }
+    const doc = new TeacherWorkDiary({
+      teacherId: tid,
+      adminId: teacher.adminId,
+      forDate,
+      title: title != null ? String(title).trim() : '',
+      content: String(content).trim(),
+    });
+    await doc.save();
+    res.status(201).json({ success: true, data: doc, message: 'Diary saved' });
+  } catch (error) {
+    console.error('Post work diary error:', error);
+    res.status(500).json({ success: false, message: 'Failed to save diary' });
+  }
+});
+
+router.put('/work-diary/:id', async (req, res) => {
+  try {
+    const teacherId = req.teacherId;
+    const { id } = req.params;
+    const { content, title, date } = req.body;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({ success: false, message: 'Invalid id' });
+    }
+    const tid = new mongoose.Types.ObjectId(teacherId);
+    const entry = await TeacherWorkDiary.findOne({ _id: id, teacherId: tid });
+    if (!entry) {
+      return res.status(404).json({ success: false, message: 'Entry not found' });
+    }
+    if (content != null) entry.content = String(content).trim();
+    if (title != null) entry.title = String(title).trim();
+    if (date) {
+      const nd = parseDateKeyToUtc(String(date));
+      if (nd) entry.forDate = nd;
+    }
+    await entry.save();
+    res.json({ success: true, data: entry });
+  } catch (error) {
+    console.error('Put work diary error:', error);
+    res.status(500).json({ success: false, message: 'Failed to update diary' });
+  }
+});
+
+router.delete('/work-diary/:id', async (req, res) => {
+  try {
+    const teacherId = req.teacherId;
+    const { id } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({ success: false, message: 'Invalid id' });
+    }
+    const tid = new mongoose.Types.ObjectId(teacherId);
+    const result = await TeacherWorkDiary.findOneAndDelete({ _id: id, teacherId: tid });
+    if (!result) return res.status(404).json({ success: false, message: 'Entry not found' });
+    res.json({ success: true, message: 'Deleted' });
+  } catch (error) {
+    console.error('Delete work diary error:', error);
+    res.status(500).json({ success: false, message: 'Failed to delete' });
   }
 });
 

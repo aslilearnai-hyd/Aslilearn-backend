@@ -9,6 +9,7 @@ import Teacher from '../models/Teacher.js';
 import Subject from '../models/Subject.js';
 import Content from '../models/Content.js';
 import StudentRemark from '../models/StudentRemark.js';
+import TeacherWorkDiary from '../models/TeacherWorkDiary.js';
 import RiskAnalysisReport from '../models/RiskAnalysisReport.js';
 import { verifyToken } from '../middleware/auth.js';
 import {
@@ -929,7 +930,7 @@ router.get('/exams/:examId', async (req, res) => {
 // Get Asli Prep Exclusive Content (filtered by board and class assigned subjects)
 router.get('/asli-prep-content', async (req, res) => {
   try {
-    const { subject, type, topic } = req.query;
+    const { subject, type, topic, class: classParam } = req.query;
     
     console.log('📚 Fetching Asli Prep content for student:', req.userId);
     console.log('Query params:', { subject, type, topic });
@@ -1032,11 +1033,42 @@ router.get('/asli-prep-content', async (req, res) => {
 
     console.log('📋 Content query:', JSON.stringify(query, null, 2));
 
-    const contents = await Content.find(query)
+    let contents = await Content.find(query)
       .populate('subject', 'name')
       .sort({ createdAt: -1 });
 
-    console.log(`✅ Found ${contents.length} contents for student's class subjects`);
+    const plainSubjectName = (name) => {
+      if (!name || typeof name !== 'string') return '';
+      const m = name.match(/^(.+?)_\d+$/);
+      return m ? m[1] : name;
+    };
+    const classLabelFromContent = (doc) => {
+      const cn = doc.classNumber;
+      if (cn != null && String(cn).trim() !== '') return String(cn).trim();
+      const n = doc.subject?.name || '';
+      const m = n.match(/_(\d+)$/);
+      return m ? m[1] : '';
+    };
+
+    if (classParam && classParam !== 'all' && String(classParam).trim() !== '') {
+      const want = String(classParam).trim();
+      contents = contents.filter((c) => classLabelFromContent(c) === want);
+    }
+
+    const subjectPlain = subject;
+    if (
+      subjectPlain &&
+      subjectPlain !== 'all' &&
+      String(subjectPlain).trim() !== '' &&
+      !mongoose.Types.ObjectId.isValid(subjectPlain)
+    ) {
+      const want = String(subjectPlain).trim().toLowerCase();
+      contents = contents.filter(
+        (c) => plainSubjectName(c.subject?.name || '').toLowerCase() === want
+      );
+    }
+
+    console.log(`✅ Found ${contents.length} contents for student's class subjects (after class/subject filters)`);
 
     res.json({
       success: true,
@@ -2422,6 +2454,42 @@ router.get('/risk-analysis-reports/:reportId/download', async (req, res) => {
       message: 'Failed to download report',
       error: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
+  }
+});
+
+// Teacher daily work diary — entries from teachers in this student's school (class match preferred)
+router.get('/teacher-work-diary', async (req, res) => {
+  try {
+    const student = await User.findById(req.userId);
+    if (!student || !student.assignedAdmin) {
+      return res.json({ success: true, data: [] });
+    }
+    const classNum =
+      student.classNumber && student.classNumber !== 'Unassigned'
+        ? String(student.classNumber).trim()
+        : null;
+
+    const base = { adminId: student.assignedAdmin, isActive: true };
+    let teachers = classNum
+      ? await Teacher.find({ ...base, assignedClassIds: classNum }).select('_id').lean()
+      : [];
+    if (!teachers.length) {
+      teachers = await Teacher.find(base).select('_id').lean();
+    }
+    const teacherIds = teachers.map((t) => t._id);
+    if (!teacherIds.length) {
+      return res.json({ success: true, data: [] });
+    }
+    const limit = Math.min(parseInt(String(req.query.limit || '40'), 10) || 40, 100);
+    const entries = await TeacherWorkDiary.find({ teacherId: { $in: teacherIds } })
+      .sort({ forDate: -1 })
+      .limit(limit)
+      .populate('teacherId', 'fullName email')
+      .lean();
+    res.json({ success: true, data: entries });
+  } catch (error) {
+    console.error('Student teacher-work-diary error:', error);
+    res.status(500).json({ success: false, message: 'Failed to load teacher diary' });
   }
 });
 

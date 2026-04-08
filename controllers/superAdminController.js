@@ -10,6 +10,11 @@ import Content from '../models/Content.js';
 import Subject from '../models/Subject.js';
 import Class from '../models/Class.js';
 import RiskAnalysisReport from '../models/RiskAnalysisReport.js';
+import {
+  isRazorpayConfigured,
+  fetchRazorpayPayments,
+  fetchRazorpaySubscriptions,
+} from '../services/razorpayService.js';
 
 // Super Admin Login
 export const superAdminLogin = async (req, res) => {
@@ -1585,25 +1590,57 @@ export const getAnalytics = async (req, res) => {
   }
 };
 
-// Get Subscriptions (Global view)
+// Get billing: Razorpay payments + subscriptions (requires RAZORPAY_KEY_ID / RAZORPAY_KEY_SECRET)
 export const getSubscriptions = async (req, res) => {
   try {
-    // Mock subscription data for now
-    const subscriptions = [
-      { id: 1, user: "Rahul Sharma", plan: "Premium", amount: 999, status: "Active", nextBilling: "2024-09-15", paymentMethod: "Credit Card" },
-      { id: 2, user: "Amit Kumar", plan: "Basic", amount: 499, status: "Active", nextBilling: "2024-09-20", paymentMethod: "UPI" },
-      { id: 3, user: "Kavya Reddy", plan: "Premium", amount: 999, status: "Cancelled", nextBilling: "-", paymentMethod: "Net Banking" },
-      { id: 4, user: "Arjun Patel", plan: "Pro", amount: 1499, status: "Active", nextBilling: "2024-09-18", paymentMethod: "Debit Card" },
-      { id: 5, user: "Sneha Jain", plan: "Basic", amount: 499, status: "Pending", nextBilling: "2024-09-12", paymentMethod: "UPI" }
-    ];
-    
+    const configured = isRazorpayConfigured();
+    let payments = [];
+    let subscriptions = [];
+    let razorpayError = null;
+
+    if (configured) {
+      try {
+        [payments, subscriptions] = await Promise.all([
+          fetchRazorpayPayments(50),
+          fetchRazorpaySubscriptions(50),
+        ]);
+      } catch (err) {
+        const msg =
+          err.response?.data?.error?.description ||
+          err.response?.data?.message ||
+          err.message ||
+          'Razorpay request failed';
+        console.error('Razorpay billing fetch:', msg, err.response?.data);
+        razorpayError = msg;
+      }
+    }
+
+    const capturedAmount = payments
+      .filter((p) => p.status === 'captured')
+      .reduce((sum, p) => sum + (Number(p.amount) || 0), 0);
+
+    const summary = {
+      paymentsListed: payments.length,
+      subscriptionsListed: subscriptions.length,
+      capturedAmountInr: Math.round(capturedAmount * 100) / 100,
+      activeSubscriptions: subscriptions.filter((s) =>
+        ['active', 'authenticated'].includes(String(s.status || '').toLowerCase())
+      ).length,
+    };
+
     res.json({
       success: true,
-      data: subscriptions
+      data: {
+        razorpayConfigured: configured,
+        razorpayError,
+        summary,
+        payments,
+        subscriptions,
+      },
     });
   } catch (error) {
-    console.error('Subscriptions error:', error);
-    res.status(500).json({ success: false, message: 'Failed to fetch subscriptions' });
+    console.error('Subscriptions / billing error:', error);
+    res.status(500).json({ success: false, message: 'Failed to fetch billing data' });
   }
 };
 

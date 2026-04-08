@@ -1596,23 +1596,59 @@ function formatActivitiesJSON(data, metadata) {
       markdown += `### Activity ${index + 1}: ${activity.title || activity.name || 'Untitled'}\n\n`;
       if (activity.description) markdown += `**Description:** ${activity.description}\n\n`;
       if (activity.objective) markdown += `**Objective:** ${activity.objective}\n\n`;
-      if (activity.materials) {
-        if (Array.isArray(activity.materials)) {
-          markdown += `**Materials:** ${activity.materials.join(', ')}\n\n`;
+
+      // Materials can come from `materials` (array/string) or `materials_required`
+      const materials =
+        activity.materials ??
+        activity.materials_required ??
+        null;
+      if (materials) {
+        if (Array.isArray(materials)) {
+          markdown += `**Materials:** ${materials.join(', ')}\n\n`;
         } else {
-          markdown += `**Materials:** ${activity.materials}\n\n`;
+          markdown += `**Materials:** ${materials}\n\n`;
         }
       }
-      if (activity.instructions) {
-        if (Array.isArray(activity.instructions)) {
-          markdown += `**Instructions:**\n`;
-          activity.instructions.forEach(inst => { markdown += `- ${inst}\n`; });
+
+      // Step-by-step procedure: support `instructions` or `steps`
+      const instructions =
+        activity.instructions && Array.isArray(activity.instructions)
+          ? activity.instructions
+          : activity.steps && Array.isArray(activity.steps)
+          ? activity.steps
+          : activity.instructions || activity.steps || null;
+
+      if (instructions) {
+        if (Array.isArray(instructions)) {
+          markdown += `**Steps / Procedure:**\n`;
+          instructions.forEach((inst) => {
+            markdown += `- ${inst}\n`;
+          });
           markdown += `\n`;
         } else {
-          markdown += `**Instructions:** ${activity.instructions}\n\n`;
+          markdown += `**Steps / Procedure:** ${instructions}\n\n`;
         }
       }
-      if (activity.expected_outcome) markdown += `**Expected Outcome:** ${activity.expected_outcome}\n\n`;
+
+      // Learning outcomes may be stored under different keys
+      const learningOutcome =
+        activity.expected_outcome ||
+        activity.learning_outcome ||
+        activity.learning_outcomes ||
+        null;
+      if (learningOutcome) {
+        markdown += `**Expected Outcome / Learning Outcome:** ${learningOutcome}\n\n`;
+      }
+
+      // Evaluation / assessment criteria
+      if (activity.evaluation || activity.assessment) {
+        markdown += `**Evaluation:** ${
+          Array.isArray(activity.evaluation || activity.assessment)
+            ? (activity.evaluation || activity.assessment).join('; ')
+            : activity.evaluation || activity.assessment
+        }\n\n`;
+      }
+
       markdown += `---\n\n`;
     });
   } else {

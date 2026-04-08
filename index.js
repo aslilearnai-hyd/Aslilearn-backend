@@ -37,7 +37,8 @@ import teacherRoutes from './routes/teacher.js';
 import studentRoutes from './routes/student.js';
 import aiRoutes from './routes/ai.js';
 import streamRoutes from './routes/streams.js';
-import { verifyToken } from './middleware/auth.js';
+import { verifyToken, verifySuperAdmin } from './middleware/auth.js';
+import { getCalendarEvents, createCalendarEvent } from './controllers/calendarController.js';
 
 // Load environment variables - explicitly specify path
 const envPath = join(__dirname, '.env');
@@ -643,6 +644,13 @@ app.patch('/api/users/:userId', requireAuth, async (req, res) => {
     return res.status(500).json({ success: false, message: 'Failed to update profile', error: error.message });
   }
 });
+
+// Calendar API — exams + holidays + custom (super-admin)
+app.get('/api/calendar/events', verifyToken, verifySuperAdmin, getCalendarEvents);
+app.post('/api/calendar/events', verifyToken, verifySuperAdmin, createCalendarEvent);
+// Same handlers under /api/super-admin (avoids 404 if sub-router order/load differs)
+app.get('/api/super-admin/calendar/events', verifyToken, verifySuperAdmin, getCalendarEvents);
+app.post('/api/super-admin/calendar/events', verifyToken, verifySuperAdmin, createCalendarEvent);
 
 // Mount routes
 app.use('/api/super-admin', superAdminRoutes);
@@ -5295,24 +5303,7 @@ app.get('/api/super-admin/analytics', async (req, res) => {
   }
 });
 
-// Get subscriptions data
-app.get('/api/super-admin/subscriptions', async (req, res) => {
-  try {
-    // Mock subscription data for now
-    const subscriptions = [
-      { id: 1, user: "Rahul Sharma", plan: "Premium", amount: 999, status: "Active", nextBilling: "2024-09-15", paymentMethod: "Credit Card" },
-      { id: 2, user: "Amit Kumar", plan: "Basic", amount: 499, status: "Active", nextBilling: "2024-09-20", paymentMethod: "UPI" },
-      { id: 3, user: "Kavya Reddy", plan: "Premium", amount: 999, status: "Cancelled", nextBilling: "-", paymentMethod: "Net Banking" },
-      { id: 4, user: "Arjun Patel", plan: "Pro", amount: 1499, status: "Active", nextBilling: "2024-09-18", paymentMethod: "Debit Card" },
-      { id: 5, user: "Sneha Jain", plan: "Basic", amount: 499, status: "Pending", nextBilling: "2024-09-12", paymentMethod: "UPI" }
-    ];
-    
-    res.json(subscriptions);
-  } catch (error) {
-    console.error('Subscriptions error:', error);
-    res.status(500).json({ success: false, message: 'Failed to fetch subscriptions' });
-  }
-});
+// Subscriptions / billing: handled by superAdmin routes (Razorpay-backed getSubscriptions)
 
 // Export data
 app.get('/api/super-admin/export', async (req, res) => {

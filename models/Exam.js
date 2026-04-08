@@ -15,6 +15,27 @@ const examSchema = new mongoose.Schema({
     enum: ['weekend', 'mains', 'advanced', 'practice'],
     default: 'weekend'
   },
+  classNumber: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  assignedClasses: [{
+    type: String,
+    trim: true
+  }],
+  subject: {
+    type: String,
+    required: true,
+    trim: true,
+    lowercase: true
+  },
+  maxAttempts: {
+    type: Number,
+    required: true,
+    min: 1,
+    default: 1
+  },
   duration: {
     type: Number, // in minutes
     required: true
@@ -69,6 +90,12 @@ const examSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Question'
   }],
+  // Primary school association (calendar, filtering); mirrors first target school when set
+  schoolId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: false
+  },
   // School-specific targeting
   targetSchools: [{
     type: mongoose.Schema.Types.ObjectId,
@@ -107,8 +134,11 @@ examSchema.index({ adminId: 1 }); // Multi-tenant index
 examSchema.index({ board: 1 }); // Board-based index
 examSchema.index({ createdByRole: 1 }); // Role-based index
 examSchema.index({ examType: 1 });
+examSchema.index({ assignedClasses: 1 });
 examSchema.index({ isActive: 1 });
 examSchema.index({ createdAt: -1 });
 examSchema.index({ board: 1, isActive: 1 }); // Compound index for board + active queries
+examSchema.index({ schoolId: 1 });
+examSchema.index({ startDate: 1, endDate: 1 });
 
 export default mongoose.model('Exam', examSchema);

@@ -29,20 +29,13 @@ export const getStudentExamRanking = async (req, res) => {
       });
     }
 
-    // Get student's board
+    // Get student profile for optional board-scoped ranking
     const student = await User.findById(userId);
-    if (!student || !student.board) {
-      return res.status(400).json({ 
-        success: false, 
-        message: 'Student board not assigned' 
-      });
-    }
+    const studentBoard = student?.board;
 
-    // Get all results for this exam from the same board
-    const allResults = await ExamResult.find({
-      examId,
-      board: student.board
-    }).sort({ percentage: -1 });
+    // Prefer board-scoped leaderboard when board exists, otherwise global by exam
+    const rankQuery = studentBoard ? { examId, board: studentBoard } : { examId };
+    const allResults = await ExamResult.find(rankQuery).sort({ percentage: -1 });
 
     // Calculate rank (1-indexed)
     const rank = allResults.findIndex(r => r.userId.toString() === userId.toString()) + 1;
@@ -82,29 +75,28 @@ export const getAllStudentRankings = async (req, res) => {
       return res.status(401).json({ success: false, message: 'User not authenticated' });
     }
 
-    // Get student's board
+    // Get student profile for optional board-scoped ranking
     const student = await User.findById(userId);
-    if (!student || !student.board) {
-      return res.status(400).json({ 
-        success: false, 
-        message: 'Student board not assigned' 
-      });
-    }
+    const studentBoard = student?.board;
 
-    // Get all student's exam results
-    const studentResults = await ExamResult.find({
-      userId,
-      board: student.board
-    }).sort({ completedAt: -1 });
+    // Always return student's attempted exams, even if board metadata is missing/mismatched.
+    // If board exists, prefer board-matched results and fallback to all user results.
+    let studentResults = [];
+    if (studentBoard) {
+      studentResults = await ExamResult.find({ userId, board: studentBoard }).sort({ completedAt: -1 });
+    }
+    if (!studentResults.length) {
+      studentResults = await ExamResult.find({ userId }).sort({ completedAt: -1 });
+    }
 
     // Calculate rankings for each exam
     const rankings = await Promise.all(
       studentResults.map(async (result) => {
-        // Get all results for this exam from the same board
-        const allResults = await ExamResult.find({
-          examId: result.examId,
-          board: student.board
-        }).sort({ percentage: -1 });
+        // Build rank list: board-scoped when available, else global by exam
+        const rankQuery = studentBoard
+          ? { examId: result.examId, board: studentBoard }
+          : { examId: result.examId };
+        const allResults = await ExamResult.find(rankQuery).sort({ percentage: -1 });
 
         const rank = allResults.findIndex(r => r.userId.toString() === userId.toString()) + 1;
         const totalStudents = allResults.length;

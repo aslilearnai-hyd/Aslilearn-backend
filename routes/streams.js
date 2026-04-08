@@ -42,6 +42,20 @@ router.get('/admin/streams', verifyToken, verifyAdmin, extractAdminId, async (re
   }
 });
 
+function plainSubjectNameStream(name) {
+  if (!name || typeof name !== 'string') return '';
+  const m = name.match(/^(.+?)_\d+$/);
+  return m ? m[1] : name;
+}
+
+function classLabelFromStream(s) {
+  const cn = s.classNumber;
+  if (cn != null && String(cn).trim() !== '') return String(cn).trim();
+  const n = s.subject?.name || '';
+  const m = n.match(/_(\d+)$/);
+  return m ? m[1] : '';
+}
+
 // Get live streams for students (filtered by board and class assigned subjects)
 router.get('/student/streams', verifyToken, async (req, res) => {
   try {
@@ -116,11 +130,28 @@ router.get('/student/streams', verifyToken, async (req, res) => {
       query.subject = { $in: classSubjectIds };
     }
 
-    const streams = await Stream.find(query)
+    let streams = await Stream.find(query)
       .populate('streamer', 'fullName email')
       .populate('streamerTeacher', 'fullName email')
       .populate('subject', 'name')
       .sort({ scheduledStartTime: -1 });
+
+    const { class: classQ, subject: subjectQ } = req.query;
+    if (classQ && classQ !== 'all' && String(classQ).trim() !== '') {
+      const want = String(classQ).trim();
+      streams = streams.filter((s) => classLabelFromStream(s) === want);
+    }
+    if (
+      subjectQ &&
+      subjectQ !== 'all' &&
+      String(subjectQ).trim() !== '' &&
+      !mongoose.Types.ObjectId.isValid(subjectQ)
+    ) {
+      const want = String(subjectQ).trim().toLowerCase();
+      streams = streams.filter(
+        (s) => plainSubjectNameStream(s.subject?.name || '').toLowerCase() === want
+      );
+    }
 
     res.json({
       success: true,

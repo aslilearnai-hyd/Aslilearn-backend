@@ -2,6 +2,55 @@ import mongoose from 'mongoose';
 import Exam from '../models/Exam.js';
 import Question from '../models/Question.js';
 
+/**
+ * Keeps classNumber and assignedClasses in sync for API clients.
+ * Handles legacy documents, string/array quirks, and numeric IDs from JSON.
+ */
+export function normalizeExamClassFields(exam) {
+  if (!exam) return exam;
+  const e =
+    typeof exam.toObject === 'function'
+      ? exam.toObject()
+      : typeof exam === 'object'
+        ? { ...exam }
+        : exam;
+
+  let classes = [];
+  const ac = e.assignedClasses;
+  if (typeof ac === 'string' && ac.trim()) {
+    const s = ac.trim();
+    if (s.includes('|')) {
+      classes = s.split('|').map((c) => c.trim()).filter(Boolean);
+    } else if (s.includes(',')) {
+      classes = s.split(',').map((c) => c.trim()).filter(Boolean);
+    } else {
+      classes = [s];
+    }
+  } else if (Array.isArray(ac) && ac.length > 0) {
+    classes = ac.map((c) => String(c).trim()).filter(Boolean);
+  } else if (ac != null && typeof ac === 'object' && !Array.isArray(ac)) {
+    classes = Object.values(ac)
+      .map((c) => String(c).trim())
+      .filter(Boolean);
+  }
+
+  let cn =
+    e.classNumber != null && String(e.classNumber).trim() !== ''
+      ? String(e.classNumber).trim()
+      : '';
+
+  if (classes.length === 0 && cn) {
+    classes = [cn];
+  }
+  if (classes.length > 0 && !cn) {
+    cn = classes[0];
+  }
+
+  e.assignedClasses = classes;
+  e.classNumber = cn;
+  return e;
+}
+
 // Create Exam (Super Admin only)
 export const createExam = async (req, res) => {
   try {
@@ -13,6 +62,10 @@ export const createExam = async (req, res) => {
       title, 
       description, 
       examType, 
+      classNumber,
+      assignedClasses,
+      subject,
+      maxAttempts,
       duration, 
       totalQuestions, 
       totalMarks, 
@@ -29,10 +82,14 @@ export const createExam = async (req, res) => {
     console.log('📝 Creating exam by Super Admin:', { title, examType, board });
 
     // Validation
-    if (!title || !examType || !duration || !totalQuestions || !totalMarks || !board) {
+    const normalizedAssignedClasses = Array.isArray(assignedClasses)
+      ? assignedClasses.map((c) => String(c).trim()).filter(Boolean)
+      : (classNumber ? [String(classNumber).trim()] : []);
+
+    if (!title || !examType || normalizedAssignedClasses.length === 0 || !subject || !maxAttempts || !duration || !totalQuestions || !totalMarks || !board) {
       return res.status(400).json({ 
         success: false, 
-        message: 'Missing required fields: title, examType, duration, totalQuestions, totalMarks, and board are required' 
+        message: 'Missing required fields: title, examType, assignedClasses, subject, maxAttempts, duration, totalQuestions, totalMarks, and board are required' 
       });
     }
 
@@ -47,6 +104,23 @@ export const createExam = async (req, res) => {
       return res.status(400).json({
         success: false,
         message: 'Invalid board. Must be ASLI_EXCLUSIVE_SCHOOLS' 
+      });
+    }
+
+    const normalizedSubject = String(subject).trim().toLowerCase();
+    const allowedSubjects = ['maths', 'physics', 'chemistry', 'biology'];
+    if (!allowedSubjects.includes(normalizedSubject)) {
+      return res.status(400).json({
+        success: false,
+        message: `Invalid subject. Must be one of: ${allowedSubjects.join(', ')}`
+      });
+    }
+
+    const parsedMaxAttempts = parseInt(maxAttempts, 10);
+    if (Number.isNaN(parsedMaxAttempts) || parsedMaxAttempts < 1) {
+      return res.status(400).json({
+        success: false,
+        message: 'maxAttempts must be a number greater than or equal to 1'
       });
     }
 
@@ -68,6 +142,10 @@ export const createExam = async (req, res) => {
       title: title.trim(),
       description: description?.trim() || '',
       examType,
+      classNumber: normalizedAssignedClasses[0],
+      assignedClasses: normalizedAssignedClasses,
+      subject: normalizedSubject,
+      maxAttempts: parsedMaxAttempts,
       duration: parseInt(duration),
       totalQuestions: parseInt(totalQuestions),
       totalMarks: parseInt(totalMarks),
@@ -92,6 +170,7 @@ export const createExam = async (req, res) => {
         }
         return id;
       });
+      examData.schoolId = examData.targetSchools[0];
     }
 
     const newExam = new Exam(examData);
@@ -100,10 +179,14 @@ export const createExam = async (req, res) => {
 
     console.log('✅ Exam created successfully:', newExam._id);
 
+    const persisted = await Exam.findById(newExam._id)
+      .populate('questions')
+      .populate('targetSchools', 'schoolName fullName email');
+
     res.status(201).json({
       success: true,
       message: 'Exam created successfully',
-      data: newExam
+      data: normalizeExamClassFields(persisted || newExam)
     });
   } catch (error) {
     console.error('❌ Create exam error:', error);
@@ -120,7 +203,7 @@ export const createExam = async (req, res) => {
 export const getAllExams = async (req, res) => {
   try {
     console.log('📋 getAllExams controller called');
-    const { board, schoolIds } = req.query;
+    const { board, schoolIds, classNumbers } = req.query;
     
     let query = { createdByRole: 'super-admin' };
     const conditions = [];
@@ -156,6 +239,22 @@ export const getAllExams = async (req, res) => {
         ]
       });
     }
+
+    // Filter by class numbers if provided (supports both new assignedClasses and legacy classNumber)
+    if (classNumbers) {
+      const classList = (Array.isArray(classNumbers) ? classNumbers : classNumbers.split(','))
+        .map((c) => String(c).trim())
+        .filter(Boolean);
+
+      if (classList.length > 0) {
+        conditions.push({
+          $or: [
+            { assignedClasses: { $in: classList } },
+            { classNumber: { $in: classList } }
+          ]
+        });
+      }
+    }
     
     // Combine all conditions with $and
     if (conditions.length > 0) {
@@ -169,16 +268,18 @@ export const getAllExams = async (req, res) => {
       .populate('targetSchools', 'schoolName fullName email')
       .sort({ createdAt: -1 });
 
-    console.log(`✅ Found ${exams.length} exams`);
+    const normalizedExams = exams.map((ex) => normalizeExamClassFields(ex));
+
+    console.log(`✅ Found ${normalizedExams.length} exams`);
     if (schoolIds) {
       console.log(`📚 Filtering by schools: ${schoolIds}`);
-      exams.forEach(exam => {
+      normalizedExams.forEach(exam => {
         console.log(`  - Exam: ${exam.title}, isSchoolSpecific: ${exam.isSchoolSpecific}, targetSchools: ${exam.targetSchools?.map(s => s._id || s).join(', ')}`);
       });
     }
     res.json({
       success: true,
-      data: exams
+      data: normalizedExams
     });
   } catch (error) {
     console.error('❌ Get all exams error:', error);
@@ -207,7 +308,7 @@ export const getExamsByBoard = async (req, res) => {
 
     res.json({
       success: true,
-      data: exams
+      data: exams.map((ex) => normalizeExamClassFields(ex))
     });
   } catch (error) {
     console.error('Get exams by board error:', error);
@@ -219,10 +320,17 @@ export const getExamsByBoard = async (req, res) => {
 export const updateExam = async (req, res) => {
   try {
     const { examId } = req.params;
+    console.log('📝 updateExam controller called');
+    console.log('Update examId:', examId);
+    console.log('Update request body:', JSON.stringify(req.body, null, 2));
     const { 
       title, 
       description, 
       examType, 
+      classNumber,
+      assignedClasses,
+      subject,
+      maxAttempts,
       duration, 
       totalQuestions, 
       totalMarks, 
@@ -239,10 +347,43 @@ export const updateExam = async (req, res) => {
       return res.status(404).json({ success: false, message: 'Exam not found' });
     }
 
+    const oldValues = {
+      classNumber: exam.classNumber,
+      assignedClasses: exam.assignedClasses,
+      subject: exam.subject
+    };
+
     // Update fields
     if (title) exam.title = title.trim();
     if (description !== undefined) exam.description = description?.trim() || '';
     if (examType) exam.examType = examType;
+    if (assignedClasses !== undefined) {
+      const normalizedAssignedClasses = (Array.isArray(assignedClasses) ? assignedClasses : [assignedClasses])
+        .map((c) => String(c).trim())
+        .filter(Boolean);
+
+      if (normalizedAssignedClasses.length === 0) {
+        return res.status(400).json({ success: false, message: 'assignedClasses must contain at least one class' });
+      }
+
+      exam.assignedClasses = normalizedAssignedClasses;
+      exam.classNumber = normalizedAssignedClasses[0];
+    } else if (classNumber !== undefined) {
+      const normalizedClass = String(classNumber).trim();
+      if (!normalizedClass) {
+        return res.status(400).json({ success: false, message: 'classNumber cannot be empty' });
+      }
+      exam.classNumber = normalizedClass;
+      exam.assignedClasses = [normalizedClass];
+    }
+    if (subject) exam.subject = String(subject).trim().toLowerCase();
+    if (maxAttempts !== undefined) {
+      const parsedMaxAttempts = parseInt(maxAttempts, 10);
+      if (Number.isNaN(parsedMaxAttempts) || parsedMaxAttempts < 1) {
+        return res.status(400).json({ success: false, message: 'maxAttempts must be a number greater than or equal to 1' });
+      }
+      exam.maxAttempts = parsedMaxAttempts;
+    }
     if (duration) exam.duration = parseInt(duration);
     if (totalQuestions) exam.totalQuestions = parseInt(totalQuestions);
     if (totalMarks) exam.totalMarks = parseInt(totalMarks);
@@ -252,12 +393,44 @@ export const updateExam = async (req, res) => {
     if (board) exam.board = board.toUpperCase();
     if (isActive !== undefined) exam.isActive = Boolean(isActive);
 
+    const { targetSchools: tsBody, isSchoolSpecific: issBody, isAllBoards: iabBody } = req.body;
+    if (tsBody !== undefined && Array.isArray(tsBody)) {
+      exam.targetSchools = tsBody
+        .filter((id) => id != null && id !== '')
+        .map((id) =>
+          mongoose.Types.ObjectId.isValid(id) ? new mongoose.Types.ObjectId(id) : id
+        );
+    }
+    if (issBody !== undefined) exam.isSchoolSpecific = Boolean(issBody);
+    if (iabBody !== undefined) exam.isAllBoards = Boolean(iabBody);
+    if (exam.targetSchools?.length) {
+      exam.schoolId = exam.targetSchools[0];
+    } else if (!exam.isSchoolSpecific) {
+      exam.schoolId = undefined;
+    }
+
+    // Backfill legacy exams so schema-required fields are always present.
+    if (!exam.classNumber) exam.classNumber = '10';
+    if (!Array.isArray(exam.assignedClasses) || exam.assignedClasses.length === 0) exam.assignedClasses = [exam.classNumber];
+    if (!exam.subject) exam.subject = 'maths';
+    if (!exam.maxAttempts || exam.maxAttempts < 1) exam.maxAttempts = 1;
+
     await exam.save();
+    const refreshedExam = await Exam.findById(examId).lean();
+
+    console.log('✅ Update exam class persistence check:', {
+      before: oldValues,
+      after: {
+        classNumber: refreshedExam?.classNumber,
+        assignedClasses: refreshedExam?.assignedClasses,
+        subject: refreshedExam?.subject
+      }
+    });
 
     res.json({
       success: true,
       message: 'Exam updated successfully',
-      data: exam
+      data: normalizeExamClassFields(refreshedExam || exam)
     });
   } catch (error) {
     console.error('Update exam error:', error);
@@ -506,7 +679,7 @@ export const bulkUploadExams = async (req, res) => {
     const headers = parseCSVLine(lines[0]).map(h => h.trim().toLowerCase().replace(/^"|"$/g, ''));
     
     // Validate required headers
-    const requiredHeaders = ['title', 'examtype', 'board', 'duration', 'totalquestions', 'totalmarks', 'startdate', 'enddate'];
+    const requiredHeaders = ['title', 'examtype', 'classnumber', 'subject', 'maxattempts', 'board', 'duration', 'totalquestions', 'totalmarks', 'startdate', 'enddate'];
     const missingHeaders = requiredHeaders.filter(h => !headers.includes(h));
     
     if (missingHeaders.length > 0) {
@@ -542,7 +715,7 @@ export const bulkUploadExams = async (req, res) => {
         });
 
         // Validate required fields
-        if (!examData.title || !examData.examtype || !examData.board || !examData.duration || 
+        if (!examData.title || !examData.examtype || !examData.classnumber || !examData.subject || !examData.maxattempts || !examData.board || !examData.duration || 
             !examData.totalquestions || !examData.totalmarks || !examData.startdate || !examData.enddate) {
           errors.push(`Row ${i + 1}: Missing required fields`);
           continue;
@@ -562,6 +735,18 @@ export const bulkUploadExams = async (req, res) => {
           continue;
         }
 
+        const normalizedSubject = examData.subject.toLowerCase();
+        if (!['maths', 'physics', 'chemistry', 'biology'].includes(normalizedSubject)) {
+          errors.push(`Row ${i + 1}: Invalid subject "${normalizedSubject}". Must be one of: maths, physics, chemistry, biology`);
+          continue;
+        }
+
+        const parsedMaxAttempts = parseInt(examData.maxattempts);
+        if (isNaN(parsedMaxAttempts) || parsedMaxAttempts < 1) {
+          errors.push(`Row ${i + 1}: Invalid maxAttempts. Must be >= 1`);
+          continue;
+        }
+
         // Parse filterType and targetSchools
         const filterType = (examData.filtertype || 'all-schools').toLowerCase();
         const isSchoolSpecific = filterType === 'specific-schools';
@@ -578,6 +763,10 @@ export const bulkUploadExams = async (req, res) => {
           title: examData.title,
           description: examData.description || '',
           examType,
+          classNumber: examData.classnumber.toString().trim(),
+          assignedClasses: examData.classnumber.split('|').map((c) => c.trim()).filter(Boolean),
+          subject: normalizedSubject,
+          maxAttempts: parsedMaxAttempts,
           duration: parseInt(examData.duration),
           totalQuestions: parseInt(examData.totalquestions),
           totalMarks: parseInt(examData.totalmarks),
@@ -601,6 +790,7 @@ export const bulkUploadExams = async (req, res) => {
             }
             return id;
           });
+          newExamData.schoolId = newExamData.targetSchools[0];
         }
 
         // Validate dates
