@@ -47,6 +47,20 @@ const iqRankQuizSchema = new mongoose.Schema({
     type: Boolean,
     default: true
   },
+  /** Super-admin UI activity type (maps to frontend IQ activity kinds) */
+  activityType: {
+    type: String,
+    enum: ['iq-test', 'rank-boost', 'challenge', 'quiz'],
+    default: 'quiz'
+  },
+  points: {
+    type: Number,
+    default: 100
+  },
+  durationMinutes: {
+    type: Number,
+    default: 30
+  },
   generatedBy: {
     type: String,
     enum: ['super-admin', 'admin'],

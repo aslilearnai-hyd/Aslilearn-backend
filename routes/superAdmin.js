@@ -597,6 +597,193 @@ router.get('/iq-rank-activities/questions', async (req, res) => {
   }
 });
 
+/** Map IQRankQuiz documents to the shape expected by super-admin IQ/Rank Boost Activities UI */
+function mapQuizToActivity(quiz) {
+  const q = quiz.toObject ? quiz.toObject() : { ...quiz };
+  const totalQ = q.totalQuestions != null ? q.totalQuestions : (Array.isArray(q.questions) ? q.questions.length : 0);
+  return {
+    _id: q._id,
+    title: q.title,
+    description: q.description || '',
+    type: q.activityType || 'quiz',
+    difficulty: q.difficulty,
+    points: q.points != null ? q.points : totalQ * 10,
+    duration: q.durationMinutes != null ? q.durationMinutes : 30,
+    subject: q.subject,
+    board: q.board,
+    classNumber: q.classNumber,
+    questions: totalQ,
+    isActive: q.isActive !== false,
+    createdAt: q.createdAt,
+    updatedAt: q.updatedAt,
+    participants: undefined,
+    averageScore: undefined,
+    completionRate: undefined
+  };
+}
+
+// IQ/Rank Boost Activities CRUD (backed by IQRankQuiz — same resource as AI-generated quizzes)
+router.get('/iq-rank-activities', async (req, res) => {
+  try {
+    const IQRankQuiz = (await import('../models/IQRankQuiz.js')).default;
+    const list = await IQRankQuiz.find({})
+      .populate('subject', 'name')
+      .sort({ createdAt: -1 });
+    const data = list.map(mapQuizToActivity);
+    res.json({ success: true, data });
+  } catch (error) {
+    console.error('Error listing IQ/Rank activities:', error);
+    res.status(500).json({
+      success: false,
+      message: error.message || 'Failed to list activities'
+    });
+  }
+});
+
+router.post('/iq-rank-activities', async (req, res) => {
+  try {
+    const mongoose = (await import('mongoose')).default;
+    const IQRankQuiz = (await import('../models/IQRankQuiz.js')).default;
+    const {
+      title,
+      description,
+      type: activityType,
+      difficulty,
+      points,
+      duration,
+      subject,
+      classNumber,
+      questions: questionCount,
+      isActive
+    } = req.body;
+
+    if (!title || !String(title).trim()) {
+      return res.status(400).json({ success: false, message: 'Title is required' });
+    }
+    if (!subject || !mongoose.Types.ObjectId.isValid(subject)) {
+      return res.status(400).json({ success: false, message: 'Valid subject is required' });
+    }
+    if (classNumber === undefined || classNumber === null || String(classNumber).trim() === '') {
+      return res.status(400).json({ success: false, message: 'Class number is required' });
+    }
+    if (!difficulty || !['easy', 'medium', 'hard', 'expert'].includes(difficulty)) {
+      return res.status(400).json({ success: false, message: 'Valid difficulty is required' });
+    }
+
+    const quiz = new IQRankQuiz({
+      title: String(title).trim(),
+      description: description != null ? String(description).trim() : '',
+      subject,
+      classNumber: String(classNumber).trim(),
+      board: 'ASLI_EXCLUSIVE_SCHOOLS',
+      difficulty,
+      questions: [],
+      totalQuestions: Math.max(0, parseInt(String(questionCount), 10) || 0),
+      isActive: isActive !== false,
+      activityType: activityType && ['iq-test', 'rank-boost', 'challenge', 'quiz'].includes(activityType)
+        ? activityType
+        : 'quiz',
+      points: points != null ? Number(points) : 100,
+      durationMinutes: duration != null ? Number(duration) : 30,
+      generatedBy: 'super-admin'
+    });
+    await quiz.save();
+    await quiz.populate('subject', 'name');
+    res.status(201).json({ success: true, data: mapQuizToActivity(quiz) });
+  } catch (error) {
+    console.error('Error creating IQ/Rank activity:', error);
+    res.status(500).json({
+      success: false,
+      message: error.message || 'Failed to create activity'
+    });
+  }
+});
+
+router.put('/iq-rank-activities/:id', async (req, res) => {
+  try {
+    const mongoose = (await import('mongoose')).default;
+    const IQRankQuiz = (await import('../models/IQRankQuiz.js')).default;
+    const { id } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({ success: false, message: 'Invalid activity id' });
+    }
+
+    const {
+      title,
+      description,
+      type: activityType,
+      difficulty,
+      points,
+      duration,
+      subject,
+      classNumber,
+      questions: questionCount,
+      isActive
+    } = req.body;
+
+    const update = {};
+    if (title != null) update.title = String(title).trim();
+    if (description != null) update.description = String(description).trim();
+    if (activityType && ['iq-test', 'rank-boost', 'challenge', 'quiz'].includes(activityType)) {
+      update.activityType = activityType;
+    }
+    if (difficulty && ['easy', 'medium', 'hard', 'expert'].includes(difficulty)) {
+      update.difficulty = difficulty;
+    }
+    if (points != null) update.points = Number(points);
+    if (duration != null) update.durationMinutes = Number(duration);
+    if (subject && mongoose.Types.ObjectId.isValid(subject)) update.subject = subject;
+    if (classNumber != null) update.classNumber = String(classNumber).trim();
+    if (questionCount != null) update.totalQuestions = Math.max(0, parseInt(String(questionCount), 10) || 0);
+    if (isActive != null) update.isActive = Boolean(isActive);
+
+    const quiz = await IQRankQuiz.findByIdAndUpdate(id, { $set: update }, { new: true })
+      .populate('subject', 'name');
+    if (!quiz) {
+      return res.status(404).json({ success: false, message: 'Activity not found' });
+    }
+    res.json({ success: true, data: mapQuizToActivity(quiz) });
+  } catch (error) {
+    console.error('Error updating IQ/Rank activity:', error);
+    res.status(500).json({
+      success: false,
+      message: error.message || 'Failed to update activity'
+    });
+  }
+});
+
+router.delete('/iq-rank-activities/:id', async (req, res) => {
+  try {
+    const mongoose = (await import('mongoose')).default;
+    const IQRankQuiz = (await import('../models/IQRankQuiz.js')).default;
+    const IQRankQuestion = (await import('../models/IQRankQuestion.js')).default;
+    const IQRankQuizResult = (await import('../models/IQRankQuizResult.js')).default;
+    const { id } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({ success: false, message: 'Invalid activity id' });
+    }
+
+    const quiz = await IQRankQuiz.findById(id);
+    if (!quiz) {
+      return res.status(404).json({ success: false, message: 'Activity not found' });
+    }
+
+    if (quiz.questions && quiz.questions.length > 0) {
+      await IQRankQuestion.deleteMany({ _id: { $in: quiz.questions } });
+    }
+    await IQRankQuizResult.deleteMany({ quizId: quiz._id });
+    await IQRankQuiz.findByIdAndDelete(id);
+
+    res.json({ success: true, message: 'Activity deleted' });
+  } catch (error) {
+    console.error('Error deleting IQ/Rank activity:', error);
+    res.status(500).json({
+      success: false,
+      message: error.message || 'Failed to delete activity'
+    });
+  }
+});
+
 // Exam Management (Super Admin only)
 // Note: Order matters - specific routes before parameterized ones
 router.post('/exams/bulk-upload', csvUpload.single('file'), bulkUploadExams);
