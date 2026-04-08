@@ -10,6 +10,7 @@ import connectDB from './config/database.js';
 import superAdminRoutes from './routes/superAdmin.js';
 import adminRoutes from './routes/admin.js';
 import { verifyToken, verifySuperAdmin } from './middleware/auth.js';
+import { getCalendarEvents, createCalendarEvent } from './controllers/calendarController.js';
 import User from './models/User.js';
 
 // Get current directory for ES modules
@@ -286,6 +287,13 @@ app.get('/api/auth/me', async (req, res) => {
     });
   }
 });
+
+// Calendar API — same aliases as index.js (frontend calls /api/calendar/events)
+// Without these, /api/calendar/events returns 404 when this file is the process entry (e.g. server:minimal).
+app.get('/api/calendar/events', verifyToken, verifySuperAdmin, getCalendarEvents);
+app.post('/api/calendar/events', verifyToken, verifySuperAdmin, createCalendarEvent);
+app.get('/api/super-admin/calendar/events', verifyToken, verifySuperAdmin, getCalendarEvents);
+app.post('/api/super-admin/calendar/events', verifyToken, verifySuperAdmin, createCalendarEvent);
 
 // Super Admin Routes
 app.use('/api/super-admin', superAdminRoutes);
