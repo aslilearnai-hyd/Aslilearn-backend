@@ -2022,8 +2022,14 @@ router.get('/learning-progress', async (req, res) => {
     // Build query
     const query = { userId: userId, contentId: { $exists: true, $ne: null } };
     
-    // If subjectId is provided, filter by subject
+    // If subjectId is provided, filter by subject (must be a valid ObjectId)
     if (subjectId) {
+      if (!mongoose.Types.ObjectId.isValid(subjectId)) {
+        return res.status(400).json({
+          success: false,
+          message: 'subjectId must be a valid MongoDB id',
+        });
+      }
       const contentIds = await Content.find({ subject: subjectId }).select('_id');
       query.contentId = { $in: contentIds.map(c => c._id) };
     }
