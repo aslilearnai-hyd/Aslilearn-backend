@@ -2209,7 +2209,11 @@ app.get('/api/admin/subjects', async (req, res) => {
     // Get admin's board from token (if admin) or return all (if super-admin)
     let adminBoard = null;
     if (req.user && req.user.role === 'admin') {
-      const admin = await User.findById(req.user.userId || req.user.id);
+      const adminId = req.user.userId || req.user._id || req.user.id;
+      const admin =
+        adminId && mongoose.Types.ObjectId.isValid(String(adminId))
+          ? await User.findById(adminId)
+          : null;
       if (admin && admin.board) {
         adminBoard = admin.board;
       }
@@ -2358,11 +2362,11 @@ app.delete('/api/admin/subjects/:id', async (req, res) => {
       });
     }
 
-    // Remove from teacher's subjects array
-    if (subject.teacher) {
-      await Teacher.findByIdAndUpdate(subject.teacher, { $pull: { subjects: id } });
-    }
-    
+    const { removeSubjectIdFromAllAssignments } = await import(
+      './utils/removeSubjectAssignments.js'
+    );
+    await removeSubjectIdFromAllAssignments(id);
+
     await Subject.findByIdAndDelete(id);
     res.json({ message: 'Subject deleted successfully' });
   } catch (error) {
@@ -4932,6 +4936,11 @@ app.delete('/api/subjects/:id', async (req, res) => {
     if (!subject) {
       return res.status(404).json({ success: false, message: 'Subject not found' });
     }
+
+    const { removeSubjectIdFromAllAssignments } = await import(
+      './utils/removeSubjectAssignments.js'
+    );
+    await removeSubjectIdFromAllAssignments(id);
     
     res.json({ success: true, message: 'Subject deactivated successfully' });
   } catch (error) {

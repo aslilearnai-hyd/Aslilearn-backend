@@ -34,6 +34,10 @@ import Teacher from '../models/Teacher.js';
 import Content from '../models/Content.js';
 import StudentRemark from '../models/StudentRemark.js';
 import TeacherWorkDiary from '../models/TeacherWorkDiary.js';
+import {
+  getExplicitTeacherSubjectObjectIds,
+  subjectIdAllowed,
+} from '../utils/teacherSubjectScope.js';
 
 const router = express.Router();
 
@@ -227,28 +231,25 @@ router.get('/subjects', async (req, res) => {
       return res.status(400).json({ success: false, message: 'Teacher ID not found' });
     }
     
-    // Get teacher with populated subjects
-    const teacher = await Teacher.findById(teacherId).populate('subjects');
+    // Get teacher with populated subjects (active only)
+    const teacher = await Teacher.findById(teacherId).populate({
+      path: 'subjects',
+      match: { isActive: true },
+      select: '_id name description code board',
+    });
     if (!teacher) {
       return res.status(404).json({ success: false, message: 'Teacher not found' });
     }
     
-    if (!teacher.subjects || teacher.subjects.length === 0) {
-      console.log('Teacher has no assigned subjects');
+    const subjectIds = getExplicitTeacherSubjectObjectIds(teacher);
+    if (subjectIds.length === 0) {
+      console.log('Teacher has no subjects on profile');
       return res.json({ success: true, data: [] });
     }
-    
+
     // Get Subject model to ensure we have full subject data
     const Subject = (await import('../models/Subject.js')).default;
-    
-    // Extract subject IDs (handle both ObjectId and string formats)
-    const subjectIds = teacher.subjects.map(subj => {
-      if (typeof subj === 'object' && subj._id) {
-        return subj._id;
-      }
-      return subj;
-    });
-    
+
     // Fetch subject details from database
     const subjects = await Subject.find({
       _id: { $in: subjectIds },
@@ -351,30 +352,46 @@ router.get('/classes/:classNumber/subjects', async (req, res) => {
         message: 'No classes found for this class number'
       });
     }
-    
-    // Return teacher's assigned subjects (not class subjects)
-    if (!teacher.subjects || teacher.subjects.length === 0) {
-      console.log('No subjects assigned to teacher');
+
+    // Subjects actually on these class rows (matches what students see / prep content)
+    const subjectIdSet = new Set();
+    for (const classDoc of classes) {
+      const full = await Class.findById(classDoc._id)
+        .select('assignedSubjects')
+        .populate('assignedSubjects', '_id');
+      for (const sub of full?.assignedSubjects || []) {
+        const raw = sub._id != null ? sub._id : sub;
+        const str = raw.toString();
+        if (mongoose.Types.ObjectId.isValid(str)) subjectIdSet.add(str);
+      }
+    }
+
+    let subjectIds = [...subjectIdSet].map((id) => new mongoose.Types.ObjectId(id));
+    const explicitIds = getExplicitTeacherSubjectObjectIds(teacher);
+    const explicitStr = new Set(explicitIds.map((id) => id.toString()));
+
+    // Only subjects both on the class and explicitly assigned on the teacher profile
+    if (subjectIds.length > 0) {
+      subjectIds = subjectIds.filter((id) => explicitStr.has(id.toString()));
+    } else {
+      // Class row has no subjects — fall back to teacher profile subjects only
+      subjectIds = explicitIds;
+    }
+
+    if (subjectIds.length === 0) {
+      console.log('No subjects for this class or teacher scope');
       return res.json({
         success: true,
         subjects: [],
-        message: 'No subjects assigned to you. Please contact your administrator.'
+        message: 'No subjects on this class yet. Please contact your administrator.',
       });
     }
-    
+
     // Get Subject model to fetch full details
     const Subject = (await import('../models/Subject.js')).default;
-    
-    // Extract subject IDs (handle both ObjectId and string formats)
-    const subjectIds = teacher.subjects.map(subj => {
-      if (typeof subj === 'object' && subj._id) {
-        return subj._id;
-      }
-      return subj;
-    });
-    
-    console.log('Subject IDs to fetch:', subjectIds);
-    
+
+    console.log('Subject IDs to fetch for class:', subjectIds);
+
     // Fetch subject details from database
     const subjects = await Subject.find({
       _id: { $in: subjectIds },
@@ -673,11 +690,10 @@ router.post('/homework', async (req, res) => {
       return res.status(404).json({ success: false, message: 'Teacher not found' });
     }
     
-    // Verify subject is assigned to teacher
-    const assignedSubjectIds = teacher.subjects?.map(s => s._id || s) || [];
+    const assignedSubjectIds = getExplicitTeacherSubjectObjectIds(teacher);
     const subjectId = new mongoose.Types.ObjectId(subject);
-    
-    if (!assignedSubjectIds.some(id => id.toString() === subjectId.toString())) {
+
+    if (!subjectIdAllowed(subjectId, assignedSubjectIds)) {
       return res.status(403).json({ 
         success: false, 
         message: 'You can only upload homework for your assigned subjects' 
@@ -1220,18 +1236,17 @@ router.get('/asli-prep-content', async (req, res) => {
       });
     }
     
-    // Get teacher's assigned subject IDs
-    const assignedSubjectIds = teacher.subjects?.map(s => s._id || s) || [];
+    const assignedSubjectIds = getExplicitTeacherSubjectObjectIds(teacher);
     
     if (assignedSubjectIds.length === 0) {
-      console.log('❌ Teacher has no assigned subjects');
+      console.log('❌ Teacher has no subjects on profile');
       return res.json({
         success: true,
         data: []
       });
     }
     
-    console.log(`📋 Teacher has ${assignedSubjectIds.length} assigned subjects`);
+    console.log(`📋 Teacher profile subject ids: ${assignedSubjectIds.length}`);
     
     // Build query - filter by teacher's assigned subjects
     const query = {
@@ -1240,14 +1255,14 @@ router.get('/asli-prep-content', async (req, res) => {
       isExclusive: true
     };
     
-    // If specific subject is requested, validate it's in teacher's assigned subjects
+    // If specific subject is requested, validate it's in teacher's subject scope
     if (subject && subject !== 'all') {
       if (mongoose.Types.ObjectId.isValid(subject)) {
         const subjectId = new mongoose.Types.ObjectId(subject);
-        if (assignedSubjectIds.some(id => id.toString() === subjectId.toString())) {
+        if (subjectIdAllowed(subjectId, assignedSubjectIds)) {
           query.subject = subjectId;
         } else {
-          console.log('⚠️ Requested subject not in teacher\'s assigned subjects');
+          console.log('⚠️ Requested subject not in teacher subject scope');
           return res.json({
             success: true,
             data: []
@@ -1411,8 +1426,7 @@ router.get('/homework-submissions', async (req, res) => {
       studentMap.get(studentId).submissions.push(sub);
     });
     
-    // Get all assigned homeworks (from teacher's subjects)
-    const assignedSubjectIds = teacher.subjects?.map(s => s._id || s) || [];
+    const assignedSubjectIds = getExplicitTeacherSubjectObjectIds(teacher);
     const allHomeworks = await Content.find({
       type: 'Homework',
       subject: { $in: assignedSubjectIds },

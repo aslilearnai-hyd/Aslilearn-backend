@@ -475,6 +475,11 @@ export const deleteSubject = async (req, res) => {
       return res.status(404).json({ success: false, message: 'Subject not found' });
     }
 
+    const { removeSubjectIdFromAllAssignments } = await import(
+      '../utils/removeSubjectAssignments.js'
+    );
+    await removeSubjectIdFromAllAssignments(subjectId);
+
     // Soft delete - set isActive to false instead of deleting
     subject.isActive = false;
     await subject.save();

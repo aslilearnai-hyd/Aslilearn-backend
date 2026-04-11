@@ -12,6 +12,7 @@ import Class from '../models/Class.js';
 import Subject from '../models/Subject.js';
 import Content from '../models/Content.js';
 import RiskAnalysisReport from '../models/RiskAnalysisReport.js';
+import { getExplicitTeacherSubjectObjectIds } from '../utils/teacherSubjectScope.js';
 
 // Admin Dashboard Stats
 export const getAdminDashboardStats = async (req, res) => {
@@ -305,7 +306,11 @@ export const getTeachers = async (req, res) => {
     const filter = adminId ? { adminId } : {};
     
     const teachers = await Teacher.find(filter)
-      .populate('subjects', 'name description')
+      .populate({
+        path: 'subjects',
+        match: { isActive: true },
+        select: 'name description isActive',
+      })
       .select('-password')
       .sort({ createdAt: -1 })
       .limit(500) // Reasonable limit
@@ -320,7 +325,9 @@ export const getTeachers = async (req, res) => {
       phone: teacher.phone,
       department: teacher.department,
       qualifications: teacher.qualifications,
-      subjects: teacher.subjects || [],
+      subjects: (teacher.subjects || []).filter(
+        (s) => s != null && s._id && s.isActive !== false
+      ),
       role: teacher.role,
       isActive: teacher.isActive,
       createdAt: teacher.createdAt,
@@ -1375,8 +1382,12 @@ export const getTeacherDashboardStats = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Teacher ID not found' });
     }
     
-    // Get teacher's assigned classes with details
-    const teacher = await Teacher.findById(teacherId).populate('subjects');
+    // Get teacher's assigned classes with details (only active subjects on profile)
+    const teacher = await Teacher.findById(teacherId).populate({
+      path: 'subjects',
+      match: { isActive: true },
+      select: '_id name description code board classNumber isActive',
+    });
     console.log('Teacher found:', teacher ? teacher.email : 'Not found');
     console.log('Teacher assignedClassIds:', teacher?.assignedClassIds);
     console.log('Teacher assignedClassIds length:', teacher?.assignedClassIds?.length);
@@ -1386,6 +1397,10 @@ export const getTeacherDashboardStats = async (req, res) => {
     if (!teacher) {
       return res.status(404).json({ success: false, message: 'Teacher not found' });
     }
+
+    const explicitSubjectIdStr = new Set(
+      getExplicitTeacherSubjectObjectIds(teacher).map((id) => id.toString())
+    );
 
     // Get class details for assigned classes
     let assignedClassesDetails = [];
@@ -1479,17 +1494,22 @@ export const getTeacherDashboardStats = async (req, res) => {
           // Build class name from classNumber and section (e.g., "10C")
           const className = `${classDoc.classNumber}${classDoc.section || ''}`;
           
-          // Format assignedSubjects for frontend
-          const assignedSubjects = classDoc.assignedSubjects 
-            ? classDoc.assignedSubjects.map(subj => ({
-                _id: subj._id ? subj._id.toString() : subj.toString(),
-                name: subj.name || 'Unknown Subject',
-                description: subj.description || '',
-                code: subj.code || '',
-                board: subj.board || ''
-              }))
+          // Subjects on the class row, limited to those on the teacher profile
+          const assignedSubjects = classDoc.assignedSubjects
+            ? classDoc.assignedSubjects
+                .filter((subj) => {
+                  const sid = (subj._id != null ? subj._id : subj).toString();
+                  return explicitSubjectIdStr.has(sid);
+                })
+                .map((subj) => ({
+                  _id: subj._id ? subj._id.toString() : subj.toString(),
+                  name: subj.name || 'Unknown Subject',
+                  description: subj.description || '',
+                  code: subj.code || '',
+                  board: subj.board || '',
+                }))
             : [];
-          
+
           return {
             id: classDoc._id.toString(),
             name: className,
@@ -1497,9 +1517,12 @@ export const getTeacherDashboardStats = async (req, res) => {
             section: classDoc.section,
             description: classDoc.description || '',
             assignedSubjects: assignedSubjects,
-            subject: classDoc.assignedSubjects && classDoc.assignedSubjects.length > 0 
-              ? classDoc.assignedSubjects[0].name 
-              : (teacher.subjects && teacher.subjects.length > 0 ? teacher.subjects[0].name : 'General'),
+            subject:
+              assignedSubjects.length > 0
+                ? assignedSubjects[0].name
+                : teacher.subjects && teacher.subjects.length > 0
+                  ? teacher.subjects[0].name
+                  : 'General',
             schedule: 'Mon, Wed, Fri',
             room: `Room ${className}`,
             studentCount: classIdToCount.get(String(classId)) || 0,
@@ -1569,6 +1592,11 @@ export const getTeacherDashboardStats = async (req, res) => {
     
     recentActivity.push(...recentVideos, ...recentAssessments, ...recentExams);
 
+    // Only subjects explicitly assigned on the teacher profile (not every class subject)
+    const teacherSubjectsExplicit = (teacher.subjects || []).filter(
+      (s) => s != null && s._id && s.isActive !== false
+    );
+
     res.json({
       success: true,
       data: {
@@ -1582,7 +1610,7 @@ export const getTeacherDashboardStats = async (req, res) => {
         },
         teacherId: teacher._id.toString(),
         teacherEmail: teacher.email,
-        teacherSubjects: teacher.subjects || [],
+        teacherSubjects: teacherSubjectsExplicit,
         assignedClasses: assignedClassesDetails,
         students: students.map(student => ({
           id: student._id,
@@ -1631,8 +1659,10 @@ export const getTeacherDashboardStats = async (req, res) => {
       }
     });
     
-    console.log('Sending teacher subjects in response:', teacher.subjects);
-    console.log('Response teacherSubjects:', teacher.subjects || []);
+    console.log(
+      'Sending teacher subjects in response (explicit profile assignments only):',
+      teacherSubjectsExplicit.length
+    );
   } catch (error) {
     console.error('Teacher dashboard stats error:', error);
     console.error('Error stack:', error.stack);
