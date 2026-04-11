@@ -57,19 +57,24 @@ IMPORTANT GUIDELINES:
       const conversationParts = [];
       let isFirstUserMessage = true;
       
+      const textOf = (m) =>
+        typeof m === 'string' ? m : m != null ? String(m) : '';
+
       if (chatHistory.length > 0) {
         chatHistory.slice(-5).forEach(msg => {
+          const body = textOf(msg.content);
           if (msg.role === 'user' && isFirstUserMessage) {
             // Include system instruction in the first user message
             conversationParts.push({
               role: 'user',
-              parts: [{ text: `${systemInstruction}\n\n${msg.content}` }]
+              parts: [{ text: `${systemInstruction}\n\n${body}` }]
             });
             isFirstUserMessage = false;
           } else {
+            const geminiRole = msg.role === 'user' ? 'user' : 'model';
             conversationParts.push({
-              role: msg.role === 'user' ? 'user' : 'model',
-              parts: [{ text: msg.content }]
+              role: geminiRole,
+              parts: [{ text: body }]
             });
           }
         });
@@ -79,17 +84,17 @@ IMPORTANT GUIDELINES:
       if (isFirstUserMessage) {
         conversationParts.push({
           role: 'user',
-          parts: [{ text: `${systemInstruction}\n\n${message}` }]
+          parts: [{ text: `${systemInstruction}\n\n${textOf(message)}` }]
         });
       } else {
         conversationParts.push({
           role: 'user',
-          parts: [{ text: message }]
+          parts: [{ text: textOf(message) }]
         });
       }
-      
-      // Generate content
-      const result = await model.generateContent(conversationParts);
+
+      // Must pass { contents: [...] }; a bare array is mis-parsed as Parts (breaks API).
+      const result = await model.generateContent({ contents: conversationParts });
 
       const response = await result.response;
       const responseText = response.text();
