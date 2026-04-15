@@ -51,7 +51,8 @@ export const getCalendarEvents = async (req, res) => {
     };
 
     const examDocs = await Exam.find(examQuery)
-      .populate('targetSchools', 'schoolName fullName email')
+      .populate('targetSchools', 'schoolName fullName name email')
+      .populate('schoolId', 'schoolName fullName name email')
       .sort({ startDate: 1 })
       .lean();
 
@@ -64,20 +65,53 @@ export const getCalendarEvents = async (req, res) => {
       examsFiltered = examDocs.filter((ex) => examVisibleToSchool(ex, schoolOid));
     }
 
-    const examEvents = examsFiltered.map((ex) => ({
-      id: ex._id.toString(),
-      title: ex.title,
-      startDate: ex.startDate,
-      endDate: ex.endDate,
-      type: 'exam',
-      examId: ex._id.toString(),
-      description: ex.description || '',
-      meta: {
-        examType: ex.examType,
-        subject: ex.subject,
-        duration: ex.duration,
-      },
-    }));
+    const examEvents = examsFiltered.map((ex) => {
+      const targetSchoolNames = Array.isArray(ex.targetSchools)
+        ? ex.targetSchools
+            .map((school) => school?.schoolName || school?.fullName || school?.name || school?.email)
+            .filter(Boolean)
+        : [];
+      const primarySchoolName =
+        ex.schoolId?.schoolName || ex.schoolId?.fullName || ex.schoolId?.name || ex.schoolId?.email || '';
+      const targetSchoolIds = Array.isArray(ex.targetSchools)
+        ? ex.targetSchools
+            .map((school) => (school?._id || school || '').toString())
+            .filter(Boolean)
+        : [];
+      const primarySchoolId = ex.schoolId?._id ? ex.schoolId._id.toString() : '';
+      const visibleSchoolIds =
+        targetSchoolIds.length > 0
+          ? targetSchoolIds
+          : primarySchoolId
+            ? [primarySchoolId]
+            : [];
+      const visibleToSchools =
+        targetSchoolNames.length > 0
+          ? targetSchoolNames
+          : primarySchoolName
+            ? [primarySchoolName]
+            : ex.isSchoolSpecific
+              ? []
+              : ['All Schools'];
+
+      return {
+        id: ex._id.toString(),
+        title: ex.title,
+        startDate: ex.startDate,
+        endDate: ex.endDate,
+        type: 'exam',
+        examId: ex._id.toString(),
+        description: ex.description || '',
+        meta: {
+          examType: ex.examType,
+          subject: ex.subject,
+          duration: ex.duration,
+          schoolNames: visibleToSchools,
+          schoolIds: visibleSchoolIds,
+          isSchoolSpecific: ex.isSchoolSpecific === true,
+        },
+      };
+    });
 
     const calQuery = {
       startDate: { $lte: monthEnd },
