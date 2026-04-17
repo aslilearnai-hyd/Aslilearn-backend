@@ -1823,7 +1823,11 @@ Be specific, actionable, and data-driven. Focus on identifying real issues and p
 
     // Call Gemini API
     const { GoogleGenerativeAI } = await import('@google/generative-ai');
-    const genAI = new GoogleGenerativeAI('AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8');
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+      throw new Error('GEMINI_API_KEY is not configured');
+    }
+    const genAI = new GoogleGenerativeAI(apiKey);
     
     // Include system instruction in the prompt since systemInstruction parameter is not supported
     const fullPrompt = `You are an expert educational analyst. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.

@@ -5,25 +5,42 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 
 class GeminiService {
   constructor() {
-    this.apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
-    this.genAI = new GoogleGenerativeAI(this.apiKey);
-    this.textModel = 'gemini-1.5-flash'; // Fast and efficient model for chat
-    this.visionModel = 'gemini-1.5-flash'; // Supports vision
+    this.apiKey = process.env.GEMINI_API_KEY;
+    this.genAI = this.apiKey ? new GoogleGenerativeAI(this.apiKey) : null;
+    this.textModels = ['gemini-2.5-flash', 'gemini-2.0-flash'];
+    this.visionModels = ['gemini-2.5-flash', 'gemini-2.0-flash'];
     
     if (!this.apiKey) {
       console.warn('⚠️  GEMINI_API_KEY not set in environment variables');
     } else {
       console.log('✅ Gemini service initialized');
-      console.log(`📍 Using model: ${this.textModel}`);
+      console.log(`📍 Using models: ${this.textModels.join(', ')}`);
     }
+  }
+
+  async generateWithFallback(modelNames, run) {
+    let lastError = null;
+
+    for (const modelName of modelNames) {
+      try {
+        const model = this.genAI.getGenerativeModel({ model: modelName });
+        return await run(model, modelName);
+      } catch (error) {
+        lastError = error;
+        console.error(`❌ Gemini model ${modelName} failed:`, error.message);
+      }
+    }
+
+    throw lastError || new Error('No Gemini model could generate a response');
   }
 
   async generateResponse(message, context = {}, chatHistory = []) {
     try {
       console.log('🤖 Using Gemini AI for response...');
-      
-      const model = this.genAI.getGenerativeModel({ model: this.textModel });
-      
+      if (!this.genAI) {
+        throw new Error('GEMINI_API_KEY is not configured');
+      }
+
       const studentName = context?.studentName || 'Student';
 
       // Build system instruction
@@ -94,7 +111,10 @@ IMPORTANT GUIDELINES:
       }
 
       // Must pass { contents: [...] }; a bare array is mis-parsed as Parts (breaks API).
-      const result = await model.generateContent({ contents: conversationParts });
+      const result = await this.generateWithFallback(this.textModels, async (model, modelName) => {
+        console.log(`🤖 Trying Gemini model: ${modelName}`);
+        return model.generateContent({ contents: conversationParts });
+      });
 
       const response = await result.response;
       const responseText = response.text();
@@ -252,9 +272,10 @@ IMPORTANT GUIDELINES:
   async analyzeImage(imageBase64, context = '') {
     try {
       console.log('👁️  Using Gemini Vision for image analysis...');
-      
-      const model = this.genAI.getGenerativeModel({ model: this.visionModel });
-      
+      if (!this.genAI) {
+        throw new Error('GEMINI_API_KEY is not configured');
+      }
+
       const prompt = `You are a Vidya AI. Analyze this image and provide educational assistance. 
       ${context ? `Context: ${context}` : ''}
       
@@ -272,7 +293,10 @@ IMPORTANT GUIDELINES:
         }
       };
 
-      const result = await model.generateContent([prompt, imagePart]);
+      const result = await this.generateWithFallback(this.visionModels, async (model, modelName) => {
+        console.log(`👁️ Trying Gemini vision model: ${modelName}`);
+        return model.generateContent([prompt, imagePart]);
+      });
       const response = await result.response;
       const text = response.text();
       
@@ -303,8 +327,10 @@ IMPORTANT GUIDELINES:
 
   async generateStructuredContent(prompt, format = 'text') {
     try {
-      const model = this.genAI.getGenerativeModel({ model: this.textModel });
-      
+      if (!this.genAI) {
+        throw new Error('GEMINI_API_KEY is not configured');
+      }
+
       // Include instruction in the prompt since systemInstruction is not supported in v1 API
       const instruction = format === 'json' 
         ? 'You are a helpful assistant. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.\n\n'
@@ -312,7 +338,10 @@ IMPORTANT GUIDELINES:
       
       const fullPrompt = instruction + prompt;
 
-      const result = await model.generateContent(fullPrompt);
+      const result = await this.generateWithFallback(this.textModels, async (model, modelName) => {
+        console.log(`🧠 Trying Gemini structured model: ${modelName}`);
+        return model.generateContent(fullPrompt);
+      });
 
       const response = await result.response;
       let resultText = response.text();
