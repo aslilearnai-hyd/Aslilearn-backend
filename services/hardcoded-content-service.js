@@ -1048,6 +1048,91 @@ export async function getChaptersForSubject(classNumber, subject) {
   return chapters;
 }
 
+/** Subfolders under a chapter that are treated as subtopics (exclude curriculum tooling dirs). */
+const SUBTOPIC_SKIP = new Set([
+  'amenity', 'junk', 'new folder',
+  'cmh', 'mcqs', 'mcq', 'flashcards', 'flash cards',
+  'lesson planner', 'lesson planners',
+  'summary and short notes', 'short notes and summaries', 'summaries and short notes',
+  'activity & project generator', 'activity and project generator',
+  'short answer questions', 'long answer questions', 'very short answer questions',
+  'passage related questions', 'passages', 'passage questions', 'passage',
+  'fill in the blanks', 'true or false', 'match the following',
+  'diary writing', 'essay writing', 'letter writing',
+  'diary writing(poem)', 'essay writing(poem)', 'letter writing(poem)',
+  'गद्यांश', 'गद्यांश आधारित प्रश्न',
+]);
+
+async function collectSubtopicFolderNames(chapterPath) {
+  const out = new Set();
+  const top = await getSubDirs(chapterPath);
+  for (const d of top) {
+    if (SUBTOPIC_SKIP.has(d.toLowerCase())) continue;
+    if (isNumberedChapter(d)) continue;
+    out.add(d);
+  }
+  for (const toolFolder of ['MCQs', 'MCQ', 'mcqs', 'mcq']) {
+    const p = path.join(chapterPath, toolFolder);
+    if (await exists(p)) {
+      const subs = await getSubDirs(p);
+      for (const s of subs) out.add(s);
+    }
+  }
+  return [...out].sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+}
+
+/**
+ * List subtopic folder names under a chapter (topic) for class + subject.
+ * Returns [] if the chapter folder is missing or has no sub-lesson folders.
+ */
+export async function getSubtopicsForChapter(classNumber, subject, topicDisplayName) {
+  if (!topicDisplayName || !subject) return [];
+
+  const normalizedSubject =
+    VALID_SUBJECTS.find((s) => s.toLowerCase() === subject.toLowerCase()) || subject;
+
+  if (classNumber === IIT_CLASS_NAME) {
+    const norm = IIT_SUBJECTS.find((s) => s.toLowerCase() === subject.toLowerCase());
+    if (!norm) return [];
+    const subjectPath = path.join(getAmenity2BasePath(), norm);
+    if (!(await exists(subjectPath))) return [];
+    const chapter = await findChapterByTopic(subjectPath, topicDisplayName);
+    if (!chapter?.fullPath) return [];
+    return collectSubtopicFolderNames(chapter.fullPath);
+  }
+
+  const classNum = parseInt(classNumber, 10);
+  if (isNaN(classNum) || classNum < 5 || classNum > 10) return [];
+
+  if (classNum >= 7) {
+    const subjectPath = await resolveSubjectPath(classNum, normalizedSubject);
+    if (!subjectPath) return [];
+    const chapter = await findChapterByTopic(subjectPath, topicDisplayName);
+    if (!chapter?.fullPath) return [];
+    return collectSubtopicFolderNames(chapter.fullPath);
+  }
+
+  // Class 5–6: planner/CSV tree — resolve folder when possible
+  const subjectPath = await resolveSubjectPath(classNum, normalizedSubject);
+  if (!subjectPath) return [];
+  const chapter = await findChapterByTopic(subjectPath, topicDisplayName);
+  if (chapter?.fullPath) {
+    return collectSubtopicFolderNames(chapter.fullPath);
+  }
+  const dirs = await getSubDirs(subjectPath);
+  const topicNorm = normStr(topicDisplayName);
+  for (const d of dirs) {
+    if (SUBTOPIC_SKIP.has(d.toLowerCase())) continue;
+    const dn = normStr(d);
+    if (dn.includes(topicNorm) || topicNorm.includes(dn)) {
+      const joined = path.join(subjectPath, d);
+      const stat = await exists(joined);
+      if (stat) return collectSubtopicFolderNames(joined);
+    }
+  }
+  return [];
+}
+
 /**
  * Get hardcoded content for a specific tool
  */
@@ -1242,4 +1327,5 @@ export default {
   getAvailableContentForTopic,
   getChaptersForSubject,
   getSubjectsForClass,
+  getSubtopicsForChapter,
 };

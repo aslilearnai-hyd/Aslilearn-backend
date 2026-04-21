@@ -1,7 +1,13 @@
 // Test script to check which Gemini models are available
+import dotenv from 'dotenv';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
-const API_KEY = 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
+dotenv.config();
+const API_KEY = process.env.GEMINI_API_KEY;
+if (!API_KEY) {
+  console.error('Set GEMINI_API_KEY in ASLI-STUD-BACK/.env');
+  process.exit(1);
+}
 const genAI = new GoogleGenerativeAI(API_KEY);
 
 const modelsToTest = [

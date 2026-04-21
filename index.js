@@ -37,8 +37,16 @@ import teacherRoutes from './routes/teacher.js';
 import studentRoutes from './routes/student.js';
 import aiRoutes from './routes/ai.js';
 import streamRoutes from './routes/streams.js';
+import curriculumRoutes from './routes/curriculum.js';
 import { verifyToken, verifySuperAdmin } from './middleware/auth.js';
 import { getCalendarEvents, createCalendarEvent } from './controllers/calendarController.js';
+import {
+  listAiToolChildren,
+  listAiToolRecords,
+  getAiToolGenerationById,
+  exportAiToolGenerationsBundle,
+  getAiToolGenerationsMeta,
+} from './controllers/aiToolGenerationsController.js';
 
 // Load environment variables - explicitly specify path
 const envPath = join(__dirname, '.env');
@@ -652,10 +660,18 @@ app.post('/api/calendar/events', verifyToken, verifySuperAdmin, createCalendarEv
 app.get('/api/super-admin/calendar/events', verifyToken, verifySuperAdmin, getCalendarEvents);
 app.post('/api/super-admin/calendar/events', verifyToken, verifySuperAdmin, createCalendarEvent);
 
+// AI tool generations — register on app before /api/super-admin router (avoids 404 if sub-router order/load differs)
+app.get('/api/super-admin/ai-tool-generations/meta', verifyToken, verifySuperAdmin, getAiToolGenerationsMeta);
+app.get('/api/super-admin/ai-tool-generations/children', verifyToken, verifySuperAdmin, listAiToolChildren);
+app.get('/api/super-admin/ai-tool-generations/records', verifyToken, verifySuperAdmin, listAiToolRecords);
+app.get('/api/super-admin/ai-tool-generations/export-bundle', verifyToken, verifySuperAdmin, exportAiToolGenerationsBundle);
+app.get('/api/super-admin/ai-tool-generations/document/:id', verifyToken, verifySuperAdmin, getAiToolGenerationById);
+
 // Mount routes
 app.use('/api/super-admin', superAdminRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/teacher', teacherRoutes);
+app.use('/api/curriculum', curriculumRoutes);
 app.use('/api', streamRoutes);
 app.use('/api/student', studentRoutes);
 app.use('/api/ai', aiRoutes);

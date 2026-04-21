@@ -35,6 +35,13 @@ import {
   downloadRiskAnalysisPDF
 } from '../controllers/superAdminController.js';
 import {
+  listAiToolChildren,
+  listAiToolRecords,
+  getAiToolGenerationById,
+  exportAiToolGenerationsBundle,
+  getAiToolGenerationsMeta,
+} from '../controllers/aiToolGenerationsController.js';
+import {
   getAllBoards,
   getBoardDashboard,
   createSubject,
@@ -212,6 +219,13 @@ router.post('/calendar/events', createCalendarEvent);
 router.get('/dashboard/stats', getDashboardStats);
 router.get('/analytics', getAnalytics);
 router.get('/analytics/realtime', getRealTimeAnalytics);
+
+// AI tool generations (teacher tools — persisted for hierarchy + PDF export)
+router.get('/ai-tool-generations/meta', getAiToolGenerationsMeta);
+router.get('/ai-tool-generations/children', listAiToolChildren);
+router.get('/ai-tool-generations/records', listAiToolRecords);
+router.get('/ai-tool-generations/export-bundle', exportAiToolGenerationsBundle);
+router.get('/ai-tool-generations/document/:id', getAiToolGenerationById);
 
 // Admin Management
 router.get('/admins', getAllAdmins);
@@ -415,7 +429,7 @@ router.post('/iq-rank-activities/generate-questions', async (req, res) => {
       });
     }
 
-    // Generate prompt for Gemini
+    // Generate prompt for LLM
     const prompt = `Generate exactly ${numberOfQuestions} multiple-choice questions (MCQ) for:
 - Class Level: Class ${classNumber}
 - Subject: ${subject.name}
@@ -448,10 +462,10 @@ Requirements:
 7. Include clear explanations for each correct answer
 8. Return ONLY the JSON object, no additional text before or after`;
 
-    console.log('🤖 Generating questions with Gemini API...');
+    console.log('🤖 Generating questions with local LLM...');
     const geminiResponse = await geminiService.generateStructuredContent(prompt, 'json');
 
-    // Parse the JSON response from Gemini
+    // Parse the JSON response from LLM
     let questionsData;
     try {
       // Try to extract JSON from the response (in case it's wrapped in markdown)
@@ -466,7 +480,7 @@ Requirements:
 
       questionsData = JSON.parse(jsonText);
     } catch (parseError) {
-      console.error('Error parsing Gemini response:', parseError);
+      console.error('Error parsing LLM response:', parseError);
       console.error('Raw response:', geminiResponse);
       return res.status(500).json({
         success: false,
@@ -813,7 +827,7 @@ router.get('/exams/:examId/questions', async (req, res) => {
   try {
     console.log('📋 Fetching questions for exam:', req.params.examId);
     const Question = (await import('../models/Question.js')).default;
-    const questions = await Question.find({ exam: req.params.examId }).sort({ createdAt: -1 });
+    const questions = await Question.find({ exam: req.params.examId }).sort({ createdAt: 1, _id: 1 });
     console.log(`✅ Found ${questions.length} questions`);
     res.json({ success: true, data: questions });
   } catch (error) {

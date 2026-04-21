@@ -29,8 +29,10 @@ FRONTEND_URL=http://localhost:5173
 SUPER_ADMIN_EMAIL=amenityforge@gmail.com
 SUPER_ADMIN_PASSWORD=Amenity
 
-# Gemini AI Configuration
-GEMINI_API_KEY=AIzaSyCubFWwtDGDpj9jYmjzvng2QA_QYq9n4O0
+# Local LLM (LM Studio) Configuration
+OPENAI_BASE_URL=http://127.0.0.1:1234/v1
+OPENAI_API_KEY=lm-studio
+OPENAI_MODEL=mistralai/mistral-7b-instruct-v0.3
 `;
 
 // Write as UTF-8 without BOM

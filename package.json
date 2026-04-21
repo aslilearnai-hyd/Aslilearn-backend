@@ -18,7 +18,7 @@
     "fix-user": "node fix-user-login.js"
   },
   "dependencies": {
-    "@google/generative-ai": "^0.2.1",
+    "@google/generative-ai": "^0.24.1",
     "axios": "^1.12.2",
     "bcryptjs": "^2.4.3",
     "cheerio": "^1.2.0",

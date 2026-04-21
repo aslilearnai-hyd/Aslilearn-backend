@@ -22,6 +22,8 @@ import {
   createClasswork,
   createSchedule,
   createTeacherTool,
+  generateContent,
+  getGeneratedContent,
   getSubjects,
   getTopics,
   getAvailableContent
@@ -136,6 +138,8 @@ router.get('/ai/subjects', allowTeacherOrStudent, getSubjects); // Returns valid
 router.get('/ai/topics', allowTeacherOrStudent, getTopics); // Returns chapters from planner.json
 router.get('/ai/available-content', allowTeacherOrStudent, getAvailableContent); // Returns all available content types for a chapter
 router.post('/ai/tool', allowTeacherOrStudent, createTeacherTool); // Uses hardcoded content only
+router.post('/ai/generate-content', allowTeacherOrStudent, generateContent); // Generate + persist
+router.get('/ai/generated-content', allowTeacherOrStudent, getGeneratedContent); // Fallback latest generated content
 
 // Apply teacher-only middleware for other routes
 router.use(verifyTeacher);
@@ -548,7 +552,7 @@ router.post('/grade-work', upload.single('file'), async (req, res) => {
       return res.status(400).json({ success: false, message: 'Student work or file is required' });
     }
 
-    // Import Gemini service
+    // Import shared LLM service (LM Studio / OpenAI-compatible)
     const { geminiService } = await import('../services/gemini-service.cjs');
     
     // Extract text from file if uploaded
@@ -561,10 +565,10 @@ router.post('/grade-work', upload.single('file'), async (req, res) => {
         // For PDFs, we'll need to extract text (simplified - in production use pdf-parse or similar)
         workText = '[PDF file uploaded - content extraction would be implemented here]';
       } else if (file.mimetype.startsWith('image/')) {
-        // For images, convert to base64 and use Gemini vision
+        // For images, convert to base64 and use model vision if available
         const imageBase64 = file.buffer.toString('base64');
         
-        // Use Gemini to extract text from image
+        // Use LLM service to extract text from image
         const context = 'Extract all text from this image. If this is student work (essay, assignment, answer), provide the complete text content.';
         
         try {
@@ -610,7 +614,7 @@ Please provide:
 
 Format your response clearly with sections and bullet points.`;
 
-    // Generate grading using Gemini
+    // Generate grading using LLM
         const gradingResult = await geminiService.generateResponse(gradingPrompt, {}, []);
     
     res.json({

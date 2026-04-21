@@ -1,1242 +1,405 @@
-// Gemini Service - Google Gemini AI integration (ES Module version)
-// Replaces Ollama service with Google Gemini API
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+import dotenv from 'dotenv';
 
-import { GoogleGenerativeAI } from '@google/generative-ai';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+dotenv.config({ path: join(__dirname, '..', '.env') });
+
+function getLlmConfig() {
+  const baseUrlRaw =
+    process.env.OPENAI_BASE_URL ||
+    process.env.LM_STUDIO_BASE_URL ||
+    'http://127.0.0.1:1234/v1';
+  const apiKey = process.env.OPENAI_API_KEY || 'lm-studio';
+  const model =
+    process.env.OPENAI_MODEL ||
+    process.env.LM_STUDIO_MODEL ||
+    'mistralai/mistral-7b-instruct-v0.3';
+
+  return {
+    baseUrl: String(baseUrlRaw).replace(/\/+$/, ''),
+    apiKey: String(apiKey),
+    model: String(model),
+  };
+}
+
+function cleanText(value) {
+  return value == null ? '' : String(value).trim();
+}
+
+function stripCodeFences(text) {
+  return String(text || '')
+    .replace(/^```json\s*/i, '')
+    .replace(/^```\s*/i, '')
+    .replace(/\s*```$/i, '')
+    .trim();
+}
+
+async function callChatCompletions({
+  messages,
+  temperature = 0.3,
+  maxTokens = 2000,
+  preferJson = false,
+}) {
+  const { baseUrl, apiKey, model } = getLlmConfig();
+  const endpoint = `${baseUrl}/chat/completions`;
+  // Some local model templates (LM Studio) only accept user/assistant roles.
+  const normalizeMessages = (inputMessages) => {
+    const list = Array.isArray(inputMessages) ? inputMessages : [];
+    if (!list.length) return [{ role: 'user', content: 'Hello' }];
+
+    const systemMessages = list
+      .filter((m) => m?.role === 'system' && m?.content != null)
+      .map((m) => String(m.content).trim())
+      .filter(Boolean);
+
+    const nonSystem = list
+      .filter((m) => m?.role !== 'system')
+      .map((m) => {
+        const role = m?.role === 'assistant' ? 'assistant' : 'user';
+        return { role, content: m?.content ?? '' };
+      });
+
+    if (!systemMessages.length) return nonSystem;
+
+    if (!nonSystem.length) {
+      return [{ role: 'user', content: systemMessages.join('\n\n') }];
+    }
+
+    const first = nonSystem[0];
+    if (first.role === 'user' && typeof first.content === 'string') {
+      return [
+        {
+          ...first,
+          content: `${systemMessages.join('\n\n')}\n\n${first.content}`,
+        },
+        ...nonSystem.slice(1),
+      ];
+    }
+
+    return [
+      { role: 'user', content: systemMessages.join('\n\n') },
+      ...nonSystem,
+    ];
+  };
+
+  const normalizedMessages = normalizeMessages(messages);
+
+  const basePayload = {
+    model,
+    messages: normalizedMessages,
+    temperature,
+    max_tokens: maxTokens,
+  };
+
+  const withJsonFormat = preferJson
+    ? { ...basePayload, response_format: { type: 'json_object' } }
+    : basePayload;
+
+  const attemptRequest = async (payload) => {
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`LLM request failed (${response.status}): ${errorText}`);
+    }
+
+    const data = await response.json();
+    const content = data?.choices?.[0]?.message?.content;
+    if (!cleanText(content)) {
+      throw new Error('LLM returned empty content');
+    }
+    return String(content);
+  };
+
+  try {
+    return await attemptRequest(withJsonFormat);
+  } catch (error) {
+    if (!preferJson) {
+      throw error;
+    }
+    return attemptRequest(basePayload);
+  }
+}
+
+function buildTeacherToolPrompt(toolType, params = {}) {
+  const common = `Subject: ${params.subject || 'General'}
+Topic: ${params.topic || 'General Topic'}
+${params.subTopic ? `Sub Topic: ${params.subTopic}\n` : ''}Grade/Class: ${params.gradeLevel || 'General'}
+
+Format response in Markdown with headings, bullets, and clear sections.`;
+
+  const templates = {
+    'activity-project-generator': `${common}
+
+Create an engaging classroom activity/project with:
+1) Objective
+2) Materials
+3) Procedure
+4) Assessment rubric
+5) Extension idea`,
+    'worksheet-mcq-generator': `${common}
+
+Create a worksheet with ${params.questionCount || 10} questions (${params.questionType || 'mixed'}), include answers and short explanations.`,
+    'concept-mastery-helper': `${common}
+
+Explain the concept in simple steps, common mistakes, examples, and a quick recap.`,
+    'lesson-planner': `${common}
+
+Create a complete lesson plan for ${params.duration || 90} minutes with objectives, prerequisite, teaching flow, examples, and homework.`,
+    'homework-creator': `${common}
+
+Create a meaningful homework set with instructions, questions, answer key, and grading criteria.`,
+    'rubrics-evaluation-generator': `${common}
+
+Create clear evaluation rubrics with criteria and performance levels (Excellent, Good, Satisfactory, Needs Improvement).`,
+    'story-passage-creator': `${common}
+
+Write a topic-relevant story/passage in the subject language, then add vocabulary, comprehension and discussion questions.`,
+    'short-notes-summaries-maker': `${common}
+
+Create concise revision notes with key ideas, definitions, formulas (if any), and quick reference points.`,
+    'flashcard-generator': `${common}
+
+Generate ${params.cardCount || 20} flashcards in Markdown with Front/Back format.`,
+    'daily-class-plan-maker': `${common}
+
+Create a practical day plan with time slots, activities, checkpoints, and notes.`,
+    'exam-question-paper-generator': `${common}
+
+Generate a full exam paper with exactly ${Math.min(
+      Math.max(Number(params.questionCount ?? params.numberOfQuestions ?? 17) || 17, 1),
+      100,
+    )} questions and a complete answer key.`,
+  };
+
+  return (
+    templates[toolType] ||
+    `${common}
+
+Generate high-quality educational content for toolType="${toolType}" using params: ${JSON.stringify(params)}`
+  );
+}
+
+function buildStudentToolPrompt(toolType, params = {}) {
+  const common = `Class: ${params.gradeLevel || 'General'}
+Subject: ${params.subject || 'General'}
+Topic: ${params.topic || params.chapter || params.concept || 'General Topic'}
+
+Format response in Markdown and keep it student-friendly.`;
+
+  const templates = {
+    'smart-study-guide-generator': `${common}
+
+Create a personalized study guide with key concepts, formulas, and a revision checklist.`,
+    'concept-breakdown-explainer': `${common}
+
+Break the concept into simple steps with examples and common misconceptions.`,
+    'personalized-revision-planner': `${common}
+
+Create a realistic day-wise revision planner based on exam date and available hours.`,
+    'smart-qa-practice-generator': `${common}
+
+Generate practice questions with step-by-step answers and quick tips.`,
+    'chapter-summary-creator': `${common}
+
+Provide a concise chapter summary with key takeaways and quick review points.`,
+    'key-points-formula-extractor': `${common}
+
+List the most important key points, definitions, and formulas.`,
+    'quick-assignment-builder': `${common}
+
+Build a structured assignment with instructions and marking criteria.`,
+    'exam-readiness-checker': `${common}
+
+Assess readiness, identify weak areas, and provide an actionable improvement plan.`,
+    'project-layout-designer': `${common}
+
+Design a complete project layout with sections, timeline, and resources.`,
+    'goal-motivation-planner': `${common}
+
+Create a SMART goals and motivation plan with milestones and tracking.`,
+  };
+
+  return (
+    templates[toolType] ||
+    `${common}
+
+Generate educational content for toolType="${toolType}" using params: ${JSON.stringify(params)}`
+  );
+}
 
 class GeminiService {
   constructor() {
-    this.apiKey = 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
-    this.genAI = new GoogleGenerativeAI(this.apiKey);
-    this.textModel = 'gemini-2.5-flash'; // ✅ Confirmed working - Latest Flash model
-    
-    console.log('✅ Gemini service initialized with API key');
+    const cfg = getLlmConfig();
+    this.model = cfg.model;
+    this.baseUrl = cfg.baseUrl;
+    console.log(`✅ LLM service ready: ${this.model} @ ${this.baseUrl}`);
+  }
+
+  async generateResponse(message, context = {}, chatHistory = []) {
+    const studentName = context?.studentName || 'Student';
+    let systemInstruction = `You are Vidya AI for AsliLearn.
+Give direct, accurate, educational answers.
+Use clear language and step-by-step explanations for problem solving.
+Keep responses focused and practical.`;
+
+    if (context.currentSubject) {
+      systemInstruction += `\nCurrent subject: ${context.currentSubject}`;
+      if (context.currentTopic) {
+        systemInstruction += `\nCurrent topic: ${context.currentTopic}`;
+      }
+    }
+
+    const normalizedHistory = (chatHistory || []).slice(-8).map((msg) => ({
+      role: msg?.role === 'assistant' ? 'assistant' : 'user',
+      content: cleanText(msg?.content),
+    }));
+
+    const messages = [
+      { role: 'system', content: systemInstruction },
+      ...normalizedHistory.filter((m) => m.content.length > 0),
+      { role: 'user', content: cleanText(message) || `Help ${studentName} with studies.` },
+    ];
+
+    return callChatCompletions({
+      messages,
+      temperature: 0.4,
+      maxTokens: 1400,
+    });
+  }
+
+  async analyzeImage(imageBase64, context = '') {
+    const prompt = `Analyze this educational image and help the student.
+${context ? `Context: ${context}` : ''}
+Provide: (1) what you see, (2) explanation/solution, (3) key takeaways.`;
+
+    const dataUri = `data:image/jpeg;base64,${imageBase64}`;
+    const visionMessages = [
+      { role: 'system', content: 'You are a helpful educational vision assistant.' },
+      {
+        role: 'user',
+        content: [
+          { type: 'text', text: prompt },
+          { type: 'image_url', image_url: { url: dataUri } },
+        ],
+      },
+    ];
+
+    try {
+      return await callChatCompletions({
+        messages: visionMessages,
+        temperature: 0.2,
+        maxTokens: 1400,
+      });
+    } catch (error) {
+      console.warn('Vision request failed, falling back to text-only analysis:', error.message);
+      return callChatCompletions({
+        messages: [
+          { role: 'system', content: 'You are a helpful educational assistant.' },
+          {
+            role: 'user',
+            content:
+              `${prompt}\n\nImage bytes were provided but vision is unavailable on current model. ` +
+              'Explain this limitation and provide what guidance can still be offered.',
+          },
+        ],
+        temperature: 0.2,
+        maxTokens: 600,
+      });
+    }
   }
 
   async generateStructuredContent(prompt, format = 'text') {
-    try {
-      const model = this.genAI.getGenerativeModel({ model: this.textModel });
-      
-      const systemInstruction = format === 'json' 
-        ? 'You are a helpful assistant. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.'
-        : 'You are a helpful assistant. Provide clear, structured responses.';
+    const wantsJson = String(format).toLowerCase() === 'json';
+    const messages = [
+      {
+        role: 'system',
+        content: wantsJson
+          ? 'Return only valid JSON. No markdown, no code fences, no extra text.'
+          : 'Return clear, structured educational content.',
+      },
+      { role: 'user', content: cleanText(prompt) },
+    ];
 
-      // Note: systemInstruction may not be supported in all API versions
-      // Include instruction in prompt instead
-      const fullPrompt = systemInstruction ? `${systemInstruction}\n\n${prompt}` : prompt;
-      
-      const result = await model.generateContent(fullPrompt);
+    const text = await callChatCompletions({
+      messages,
+      temperature: wantsJson ? 0.1 : 0.3,
+      maxTokens: 2200,
+      preferJson: wantsJson,
+    });
 
-      const response = await result.response;
-      let resultText = response.text();
-
-      // Clean JSON if format is json
-      if (format === 'json') {
-        resultText = resultText.replace(/^```json\s*/i, '').replace(/^```\s*/i, '').replace(/\s*```$/i, '').trim();
-      }
-
-      return resultText;
-    } catch (error) {
-      console.error('Gemini structured content error:', error);
-      throw new Error(`Failed to generate content: ${error.message}`);
-    }
+    return wantsJson ? stripCodeFences(text) : text;
   }
 }
-
-// Export functions for backward compatibility with existing code
-export const generateLessonPlan = async (subject, topic, gradeLevel, duration) => {
-    const apiKey = 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
-    const genAI = new GoogleGenerativeAI(apiKey);
-  
-  // Try multiple models in order of preference
-  const modelsToTry = [
-    'gemini-2.5-flash',            // ✅ Confirmed working - Latest Flash (June 2025)
-    'gemini-2.0-flash',            // Flash 2.0 (December 2024) - May have quota limits
-    'gemini-1.5-flash',            // Flash 1.5 fallback
-    'gemini-1.5-pro'               // Pro fallback
-  ];
-
-  const prompt = `Create a comprehensive, detailed lesson plan for IIT JEE Mains preparation:
-
-Subject: ${subject}
-Topic: ${topic}
-Grade Level: ${gradeLevel}
-Duration: ${duration} minutes
-
-This is for IIT JEE Mains coaching, so please provide a structured lesson plan with:
-
-1. **Learning Objectives** (3-5 JEE-specific goals)
-   - What students will be able to do after this lesson
-   - JEE Mains exam relevance
-
-2. **Prerequisites and Previous Knowledge Required**
-   - What students should know before this lesson
-   - Foundation concepts needed
-
-3. **Materials Needed**
-   - Textbooks and reference materials (mention specific JEE books)
-   - Teaching aids, demonstrations, or equipment
-   - Digital resources if applicable
-
-4. **Introduction/Warm-up (5-10 minutes)**
-   - Hook to engage students
-   - Connect to JEE pattern and previous topics
-   - Real-world applications
-
-5. **Main Content Delivery (with detailed time breakdown)**
-   - Theory explanation with key concepts
-   - Important formulas and derivations
-   - Problem-solving techniques and strategies
-   - JEE-level examples with step-by-step solutions
-   - Common patterns and shortcuts
-
-6. **Practice Problems (JEE Mains level)**
-   - 3-5 practice problems with varying difficulty
-   - Include solutions and explanations
-
-7. **Assessment/Evaluation (JEE-style questions)**
-   - Quick check questions
-   - JEE Mains pattern questions
-
-8. **Homework/Assignment**
-   - JEE practice problems
-   - Reference to specific problem sets
-   - Expected time for completion
-
-9. **Common Mistakes and Tips**
-   - What students typically get wrong
-   - Tips for avoiding errors
-   - Exam strategy
-
-10. **Next Class Preview**
-    - What will be covered next
-    - Preparation required
-
-Format the response in a clear, structured manner with proper headings and sections. Make it practical, engaging, and focused on JEE Mains preparation.`;
-
-  for (const modelName of modelsToTry) {
-    try {
-      console.log(`🔄 Trying model for lesson plan: ${modelName}`);
-      const model = genAI.getGenerativeModel({ model: modelName });
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-      const lessonPlan = response.text();
-      
-      console.log(`✅ Successfully generated lesson plan using ${modelName}`);
-      return lessonPlan;
-  } catch (error) {
-      console.log(`❌ Model ${modelName} failed: ${error.message}`);
-      // If this is the last model, throw the error
-      if (modelName === modelsToTry[modelsToTry.length - 1]) {
-    console.error('Error generating lesson plan:', error);
-        throw new Error(`Failed to generate lesson plan: ${error.message || 'Unknown error'}`);
-      }
-      // Otherwise, try the next model
-      continue;
-    }
-  }
-};
-
-export const generateTestQuestions = async (subject, topic, gradeLevel, questionCount, difficulty) => {
-    const apiKey = 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
-    const genAI = new GoogleGenerativeAI(apiKey);
-    
-    const prompt = `Generate exactly ${questionCount} multiple-choice test questions for:
-- Subject: ${subject}
-- Topic: ${topic}
-- Grade Level: ${gradeLevel}
-- Difficulty: ${difficulty}
-
-IMPORTANT: You MUST return ONLY valid JSON in the following exact format (no markdown, no code blocks, just pure JSON):
-{
-  "questions": [
-    {
-      "question": "Question text here",
-      "type": "multiple-choice",
-      "options": ["Option A", "Option B", "Option C", "Option D"],
-      "correctAnswer": "Option A",
-      "explanation": "Explanation of why the correct answer is right"
-    }
-  ]
-}
-
-Requirements:
-1. Generate exactly ${questionCount} questions
-2. All questions must be multiple-choice with exactly 4 options (A, B, C, D)
-3. Each question must have exactly ONE correct answer
-4. Questions should be appropriate for ${gradeLevel} level
-5. Difficulty should match: ${difficulty}
-6. Questions should cover the topic: ${topic} in ${subject}
-7. Include clear explanations for each correct answer
-8. Return ONLY the JSON object, no additional text before or after`;
-
-  // Include JSON instruction in the prompt since systemInstruction is not supported in v1 API
-  const fullPrompt = `You are a helpful educational assistant. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.
-
-${prompt}`;
-
-  // Try multiple models in order of preference
-  const modelsToTry = [
-    'gemini-2.5-flash',            // ✅ Confirmed working - Latest Flash (June 2025)
-    'gemini-2.0-flash',            // Flash 2.0 (December 2024) - May have quota limits
-    'gemini-1.5-flash',            // Flash 1.5 fallback
-    'gemini-1.5-pro'               // Pro fallback
-  ];
-
-  for (const modelName of modelsToTry) {
-    try {
-      console.log(`🔄 Trying model for quiz generation: ${modelName}`);
-      const model = genAI.getGenerativeModel({ model: modelName });
-      const result = await model.generateContent(fullPrompt);
-    const response = await result.response;
-    let text = response.text();
-    
-    // Clean up markdown code blocks if present
-    text = text.replace(/^```json\s*/i, '').replace(/^```\s*/i, '').replace(/\s*```$/i, '').trim();
-    
-      console.log(`✅ Successfully generated questions using ${modelName}`);
-    return text;
-  } catch (error) {
-      console.log(`❌ Model ${modelName} failed: ${error.message}`);
-      // If this is the last model, throw the error
-      if (modelName === modelsToTry[modelsToTry.length - 1]) {
-    console.error('Error generating test questions:', error);
-    throw new Error(`Failed to generate test questions: ${error.message || 'Unknown error'}`);
-      }
-      // Otherwise, try the next model
-      continue;
-    }
-  }
-};
-
-export const generateClasswork = async (subject, topic, gradeLevel, assignmentType) => {
-    const apiKey = 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
-    const genAI = new GoogleGenerativeAI(apiKey);
-    
-    const prompt = `
-    Create ${assignmentType} for:
-    - Subject: ${subject}
-    - Topic: ${topic}
-    - Grade Level: ${gradeLevel}
-    
-    Please provide:
-    1. Assignment Title
-    2. Instructions (clear and detailed)
-    3. Tasks/Questions
-    4. Rubric/Evaluation Criteria
-    5. Expected Time to Complete
-    6. Resources/References
-    
-    Make the assignment engaging and appropriate for the grade level.
-    Include both individual and group work elements if applicable.
-    `;
-
-  // Try multiple models in order of preference
-  const modelsToTry = [
-    'gemini-2.5-flash',            // ✅ Confirmed working - Latest Flash (June 2025)
-    'gemini-2.0-flash',            // Flash 2.0 (December 2024) - May have quota limits
-    'gemini-1.5-flash',            // Flash 1.5 fallback
-    'gemini-1.5-pro'               // Pro fallback
-  ];
-
-  for (const modelName of modelsToTry) {
-    try {
-      console.log(`🔄 Trying model for classwork: ${modelName}`);
-      const model = genAI.getGenerativeModel({ model: modelName });
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-      console.log(`✅ Successfully generated classwork using ${modelName}`);
-    return response.text();
-  } catch (error) {
-      console.log(`❌ Model ${modelName} failed: ${error.message}`);
-      if (modelName === modelsToTry[modelsToTry.length - 1]) {
-    console.error('Error generating classwork:', error);
-        throw new Error(`Failed to generate classwork: ${error.message || 'Unknown error'}`);
-      }
-      continue;
-    }
-  }
-};
-
-export const generateSchedule = async (subjects, gradeLevels, timeSlots, preferences) => {
-    const apiKey = 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
-    const genAI = new GoogleGenerativeAI(apiKey);
-    
-    const prompt = `
-    Create a teaching schedule for:
-    - Subjects: ${subjects.join(', ')}
-    - Grade Levels: ${gradeLevels.join(', ')}
-    - Available Time Slots: ${timeSlots.join(', ')}
-    - Preferences: ${preferences}
-    
-    Please provide:
-    1. Weekly Schedule (Monday to Friday)
-    2. Subject Distribution
-    3. Break Times
-    4. Preparation Time
-    5. Assessment Schedule
-    6. Professional Development Time
-    
-    Ensure the schedule is balanced and follows best practices for teaching.
-    `;
-
-  // Try multiple models in order of preference
-  const modelsToTry = [
-    'gemini-2.5-flash',            // ✅ Confirmed working - Latest Flash (June 2025)
-    'gemini-2.0-flash',            // Flash 2.0 (December 2024) - May have quota limits
-    'gemini-1.5-flash',            // Flash 1.5 fallback
-    'gemini-1.5-pro'               // Pro fallback
-  ];
-
-  for (const modelName of modelsToTry) {
-    try {
-      console.log(`🔄 Trying model for schedule: ${modelName}`);
-      const model = genAI.getGenerativeModel({ model: modelName });
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-      console.log(`✅ Successfully generated schedule using ${modelName}`);
-    return response.text();
-  } catch (error) {
-      console.log(`❌ Model ${modelName} failed: ${error.message}`);
-      if (modelName === modelsToTry[modelsToTry.length - 1]) {
-    console.error('Error generating schedule:', error);
-        throw new Error(`Failed to generate schedule: ${error.message || 'Unknown error'}`);
-      }
-      continue;
-    }
-  }
-};
-
-// Generic teacher tool generator
-export const generateTeacherTool = async (toolType, params) => {
-  const apiKey = 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
-  const genAI = new GoogleGenerativeAI(apiKey);
-  
-  // Define prompts for each tool type
-  const toolPrompts = {
-    'activity-project-generator': `Create engaging activities and projects.
-
-Subject: ${params.subject || 'General'}
-Topic: ${params.topic || 'General Topic'}
-${params.subTopic ? `Sub Topic: ${params.subTopic}\n` : ''}Grade Level: ${params.gradeLevel || 'General'}
-Class: ${params.className || ''}
-
-IMPORTANT: Format your response using Markdown with clear headings (##), subheadings (###), bullet points (-), numbered lists, and bold text (**text**).
-
-## Activity Title and Description
-Provide a catchy title and detailed description.
-
-## Learning Objectives
-List specific learning goals students will achieve.
-
-## Materials Needed
-- List all required materials
-- Equipment and resources
-- Digital tools (if applicable)
-
-## Step-by-Step Instructions
-Provide clear, numbered steps for implementation.
-
-## Expected Outcomes
-Describe what students will learn and produce.
-
-## Assessment Criteria
-- How to evaluate student work
-- Rubric or checklist
-
-## Extension Activities
-Optional activities for advanced students.
-
-## Safety Considerations
-Important safety notes (if applicable).
-
-Make it engaging, hands-on, and aligned with curriculum standards.`,
-
-    'worksheet-mcq-generator': `Design custom worksheets and MCQs with various question types.
-
-Subject: ${params.subject || 'General'}
-Topic: ${params.topic || 'General Topic'}
-${params.subTopic ? `Sub Topic: ${params.subTopic}\n` : ''}Grade Level: ${params.gradeLevel || 'General'}
-Question Type: ${params.questionType || 'All Types'}
-Number of Questions: ${params.questionCount || 10}
-Difficulty: ${params.difficulty || 'medium'}
-
-IMPORTANT: Format your response using Markdown with clear headings (##), subheadings (###), bullet points (-), numbered lists, and bold text (**text**).
-
-${params.questionType === 'Single Option' ? 'Generate ONLY single-option multiple-choice questions (one correct answer per question).' : ''}
-${params.questionType === 'Multiple Option' ? 'Generate ONLY multiple-option multiple-choice questions (multiple correct answers per question).' : ''}
-${params.questionType === 'Integer Type' ? 'Generate ONLY integer-type questions (numerical answer questions).' : ''}
-${params.questionType === 'All Types' ? 'Generate a mix of question types: single-option MCQs, multiple-option MCQs, integer-type questions, fill-in-the-blank, and short answer questions.' : ''}
-
-## Worksheet Title
-Provide a clear, descriptive title.
-
-## Instructions
-Clear instructions for students on how to complete the worksheet.
-
-## Exercises
-Include ${params.questionCount || 10} questions based on the selected question type.
-
-Format each question clearly with proper numbering.
-${params.questionType === 'Single Option' || params.questionType === 'Multiple Option' || params.questionType === 'All Types' ? '\nFor multiple-choice questions:\n- Provide 4 options (A, B, C, D)\n- Mark the correct answer(s) clearly\n- Include brief explanations' : ''}
-${params.questionType === 'Integer Type' || params.questionType === 'All Types' ? '\nFor integer-type questions:\n- Provide numerical answer questions\n- Include step-by-step solutions' : ''}
-
-## Answer Key
-Provide complete answers for all questions with explanations where needed.
-
-## Grading Rubric
-- Point distribution
-- Evaluation criteria
-- Partial credit guidelines
-
-Make it comprehensive and appropriate for the grade level.`,
-
-    'concept-mastery-helper': `Break down complex concepts into digestible lessons.
-
-Subject: ${params.subject || 'General'}
-Concept: ${params.concept || params.topic || 'General Concept'}
-${params.subTopic ? `Sub Topic: ${params.subTopic}\n` : ''}Grade Level: ${params.gradeLevel || 'General'}
-
-IMPORTANT: Format your response using Markdown with clear headings (##), subheadings (###), bullet points (-), numbered lists, and bold text (**text**).
-
-## Concept Overview
-Provide a clear introduction to the concept.
-
-## Key Components Breakdown
-Break down the concept into smaller, understandable parts:
-- Component 1
-- Component 2
-- Component 3
-
-## Step-by-Step Explanation
-Provide a detailed, step-by-step explanation of how the concept works.
-
-## Real-World Examples
-Include practical examples that students can relate to.
-
-## Common Misconceptions
-List common mistakes students make and how to avoid them.
-
-## Practice Exercises
-Provide exercises to reinforce understanding.
-
-## Summary and Key Takeaways
-Summarize the most important points students should remember.
-
-Make it clear, simple, and easy to understand.`,
-
-    'lesson-planner': `Create a comprehensive, detailed lesson plan for IIT JEE Mains preparation.
-
-Subject: ${params.subject || 'General'}
-Topic: ${params.topic || 'General Topic'}
-${params.subTopic ? `Sub Topic: ${params.subTopic}\n` : ''}Grade Level: ${params.gradeLevel || 'General'}
-Duration: ${params.duration || 90} minutes
-
-IMPORTANT: Format your response using Markdown with clear headings (##), subheadings (###), bullet points (-), numbered lists, and bold text (**text**). Make it professional and well-structured.
-
-Provide a structured lesson plan with the following sections:
-
-## Learning Objectives
-List 3-5 specific JEE Mains learning goals that students will achieve.
-
-## Prerequisites
-- What students should know before this lesson
-- Foundation concepts required
-
-## Materials Needed
-- Textbooks and reference materials
-- Teaching aids and equipment
-- Digital resources
-
-## Introduction/Warm-up (5-10 minutes)
-- Hook to engage students
-- Connection to JEE pattern
-- Real-world applications
-
-## Main Content Delivery
-Break down the main content with time allocation:
-- Theory explanation (XX minutes)
-- Key concepts and formulas
-- Problem-solving techniques
-- JEE-level examples with step-by-step solutions
-
-## Practice Problems
-Provide 3-5 JEE Mains level practice problems with:
-- Problem statement
-- Step-by-step solution
-- Key concepts tested
-
-## Assessment/Evaluation
-Include JEE-style questions for quick assessment.
-
-## Homework/Assignment
-- Specific practice problems
-- Reference materials
-- Expected completion time
-
-## Common Mistakes and Tips
-- Typical errors students make
-- Tips to avoid mistakes
-- Exam strategy
-
-## Next Class Preview
-- What will be covered next
-- Preparation required
-
-Make the content detailed, practical, and focused on JEE Mains preparation.`,
-
-    'homework-creator': `Generate meaningful homework assignments for:
-Subject: ${params.subject || 'General'}
-Topic: ${params.topic || 'General Topic'}
-${params.subTopic ? `Sub Topic: ${params.subTopic}\n` : ''}Grade Level: ${params.gradeLevel || 'General'}
-Duration: ${params.duration || '30 minutes'}
-
-Generate:
-1. Assignment Title
-2. Learning Objectives
-3. Instructions
-4. Questions/Problems
-5. Expected Time to Complete
-6. Answer Key (for teacher)
-7. Grading Criteria
-
-Make it meaningful, relevant, and appropriate for the grade level.`,
-
-    'rubrics-evaluation-generator': params.outputType === 'Report Card' 
-      ? `Generate comprehensive student progress reports with feedback for:
-Student Name: ${params.studentName || 'Student'}
-Subject: ${params.subject || 'General'}
-Grade Level: ${params.gradeLevel || 'General'}
-Term: ${params.term || 'Current Term'}
-${params.subTopic ? `Sub Topic: ${params.subTopic}\n` : ''}
-
-Generate:
-1. Student Information
-2. Academic Performance Summary
-3. Subject-wise Breakdown
-4. Strengths and Achievements
-5. Areas for Improvement
-6. Teacher Comments
-7. Recommendations
-8. Next Steps
-
-Make it constructive, encouraging, and detailed.`
-      : `Create clear assessment criteria and rubrics for:
-Subject: ${params.subject || 'General'}
-Assignment Type: ${params.assignmentType || 'General Assignment'}
-Grade Level: ${params.gradeLevel || 'General'}
-${params.subTopic ? `Sub Topic: ${params.subTopic}\n` : ''}
-
-Generate:
-1. Rubric Title
-2. Assessment Criteria (4-6 criteria)
-3. Performance Levels (Excellent, Good, Satisfactory, Needs Improvement)
-4. Point Distribution
-5. Detailed Descriptors for Each Level
-6. Total Points
-7. Grading Guidelines
-
-Make it clear, fair, and comprehensive.`,
-
-
-    'story-passage-creator': `Generate engaging stories and reading passages with the EXACT following requirements:
-
-**Subject:** ${params.subject || 'General'}
-**Topic (use this exact topic/theme):** ${params.topic || 'General Topic'}
-${params.subTopic ? `**Sub Topic:** ${params.subTopic}\n` : ''}**Grade Level:** ${params.gradeLevel || 'General'}
-**Length:** ${params.length || 'medium'}
-
-**CRITICAL – Language:** You MUST write the entire passage, title, questions, vocabulary, and all content in the language of the subject. If the subject is "Hindi", write everything in Hindi (Devanagari script). If the subject is "English", write everything in English. Do not mix languages.
-
-**Content must be directly about the topic given above.** Do not use a generic or unrelated story.
-
-Generate in this order:
-1. Story/Passage Title (in the subject language)
-2. The Story/Passage Content (in the subject language, about the given topic)
-3. Reading Level Information
-4. Vocabulary Words (in the subject language)
-5. Comprehension Questions (in the subject language)
-6. Discussion Questions (in the subject language)
-7. Extension Activities (in the subject language)
-
-Make it engaging, age-appropriate, and educational.`,
-
-    'short-notes-summaries-maker': `Condense complex topics into concise notes for:
-Subject: ${params.subject || 'General'}
-Topic: ${params.topic || 'General Topic'}
-${params.subTopic ? `Sub Topic: ${params.subTopic}\n` : ''}Grade Level: ${params.gradeLevel || 'General'}
-
-Generate:
-1. Topic Title
-2. Key Points Summary
-3. Important Definitions
-4. Formulas/Equations (if applicable)
-5. Quick Reference Guide
-6. Mnemonics (if helpful)
-7. Related Topics
-
-Make it concise, clear, and easy to review.`,
-
-    'flashcard-generator': `Build study flashcards for quick revision for:
-Subject: ${params.subject || 'General'}
-Topic: ${params.topic || 'General Topic'}
-${params.subTopic ? `Sub Topic: ${params.subTopic}\n` : ''}Grade Level: ${params.gradeLevel || 'General'}
-Number of Cards: ${params.cardCount || 20}
-
-Generate:
-1. Flashcard Set Title
-2. List of Flashcards (Front: Question/Concept, Back: Answer/Explanation)
-3. Study Tips
-4. Review Schedule Suggestions
-
-Format each card clearly with front and back content.`,
-
-
-
-    'daily-class-plan-maker': `Organize daily teaching schedule efficiently for:
-Date: ${params.date || 'Today'}
-Subjects: ${params.subjects || 'General'}
-Grade Level: ${params.gradeLevel || 'General'}
-Time Slots: ${params.timeSlots || 'Standard'}
-
-Generate:
-1. Daily Schedule Overview
-2. Time-Blocked Plan
-3. Activities for Each Period
-4. Materials Needed
-5. Assessment Checkpoints
-6. Notes and Reminders
-
-Make it organized, efficient, and practical.`,
-
-    'exam-question-paper-generator': `You are an expert exam paper generator. Create a COMPLETE, STRUCTURED exam question paper with EXACTLY the following format:
-
-Subject: ${params.subject || 'General'}
-Topic: ${params.topic || 'General Topic'}
-${params.subTopic ? `Sub Topic: ${params.subTopic}\n` : ''}Grade Level: ${params.gradeLevel || 'General'}
-Duration: ${params.duration || '90 minutes'}
-
-CRITICAL: Generate ONLY questions in the exam paper format below. DO NOT provide explanations, definitions, or theory content. ONLY generate questions and answers.
-
-EXAM PAPER STRUCTURE (MUST FOLLOW EXACTLY):
-
-## Exam Paper Header
-**Subject:** ${params.subject || 'General'}
-**Class:** ${params.gradeLevel || 'General'}
-**Topic:** ${params.topic || 'General Topic'}${params.subTopic ? `\n**Sub Topic:** ${params.subTopic}` : ''}
-**Duration:** ${params.duration || '90 minutes'}
-**Total Marks:** [Calculate: approximately 1 mark per minute, so ${params.duration || 90} marks]
-
----
-
-## General Instructions
-1. All questions are compulsory.
-2. Read all questions carefully before answering.
-3. Marks are indicated against each question.
-4. Write answers clearly and legibly.
-
----
-
-## Section A: Very Short Answer Questions
-**Marks: 1-2 each | Total Questions: 6**
-
-Number each question sequentially as: 1, 2, 3, 4, 5, 6
-
-Format for each question:
-**1.** [Question text here] **[2 Marks]**
-
-Continue with questions 2, 3, 4, 5, 6 in the same format.
-
----
-
-## Section B: Short Answer Questions  
-**Marks: 2-3 each | Total Questions: 5**
-
-Number each question sequentially as: 7, 8, 9, 10, 11
-
-Format for each question:
-**7.** [Question text here] **[3 Marks]**
-
-Continue with questions 8, 9, 10, 11 in the same format.
-
----
-
-## Section C: Long Answer Questions
-**Marks: 4-5 each | Total Questions: 4**
-
-Number each question sequentially as: 12, 13, 14, 15
-
-Format for each question:
-**12.** [Question text here] **[5 Marks]**
-
-Continue with questions 13, 14, 15 in the same format.
-
----
-
-## Section D: Very Long Answer Questions
-**Marks: 6-10 each | Total Questions: 2**
-
-Number each question sequentially as: 16, 17
-
-Format for each question:
-**16.** [Question text here] **[10 Marks]**
-
-Continue with question 17 in the same format.
-
----
-
-## Answer Key
-
-### Section A Answers
-**1.** [Complete answer here]
-**2.** [Complete answer here]
-**3.** [Complete answer here]
-**4.** [Complete answer here]
-**5.** [Complete answer here]
-**6.** [Complete answer here]
-
-### Section B Answers
-**7.** [Detailed answer with steps here]
-**8.** [Detailed answer with steps here]
-**9.** [Detailed answer with steps here]
-**10.** [Detailed answer with steps here]
-**11.** [Detailed answer with steps here]
-
-### Section C Answers
-**12.** [Comprehensive answer with detailed explanation here]
-**13.** [Comprehensive answer with detailed explanation here]
-**14.** [Comprehensive answer with detailed explanation here]
-**15.** [Comprehensive answer with detailed explanation here]
-
-### Section D Answers
-**16.** [Very detailed answer with step-by-step solution here]
-**17.** [Very detailed answer with step-by-step solution here]
-
----
-
-STRICT REQUIREMENTS:
-1. Generate EXACTLY 17 questions total (6 in Section A, 5 in Section B, 4 in Section C, 2 in Section D)
-2. Number questions sequentially: 1, 2, 3... up to 17 (NOT restarting numbering in each section)
-3. Each question must be UNIQUE - NO REPETITION
-4. Questions must be actual EXAM QUESTIONS, not explanations or definitions
-5. Base difficulty on: ${params.difficulty || 'mixed'} (if mixed: 30% easy, 50% medium, 20% hard)
-6. Questions must be appropriate for ${params.gradeLevel || 'General'} level
-7. Cover the topic: ${params.topic || 'General Topic'}${params.subTopic ? `, specifically ${params.subTopic}` : ''}
-8. Include variety: theoretical questions, numerical problems, application-based questions, analytical questions
-9. Each question must have a clear mark allocation shown
-10. Answer key must provide complete, detailed answers for ALL 17 questions
-
-DO NOT:
-- Provide theory or explanations outside of questions
-- Repeat the same question
-- Skip question numbers
-- Provide incomplete questions
-- Mix questions and answers together
-
-Format using Markdown with proper headings (##), bold text (**text**), and clear structure.`
-  };
-
-  let prompt = toolPrompts[toolType] || `Generate content for ${toolType} with the following parameters: ${JSON.stringify(params)}`;
-  
-  // Add markdown formatting instruction if not already present
-  if (!prompt.includes('IMPORTANT: Format your response using Markdown')) {
-    prompt = `IMPORTANT: Format your response using Markdown with clear headings (##), subheadings (###), bullet points (-), numbered lists, and bold text (**text**). Make it professional and well-structured.\n\n${prompt}`;
-  }
-
-  const modelsToTry = [
-    'gemini-2.5-flash',  // ✅ Confirmed working
-    'gemini-2.0-flash',  // May have quota limits
-    'gemini-1.5-flash',
-    'gemini-1.5-pro'
-  ];
-
-  for (const modelName of modelsToTry) {
-    try {
-      console.log(`🔄 Trying model for ${toolType}: ${modelName}`);
-      const model = genAI.getGenerativeModel({ model: modelName });
-      const result = await model.generateContent(prompt);
-      const response = await result.response;
-      console.log(`✅ Successfully generated ${toolType} using ${modelName}`);
-      return response.text();
-    } catch (error) {
-      console.log(`❌ Model ${modelName} failed: ${error.message}`);
-      if (modelName === modelsToTry[modelsToTry.length - 1]) {
-        console.error(`Error generating ${toolType}:`, error);
-        throw new Error(`Failed to generate ${toolType}: ${error.message || 'Unknown error'}`);
-      }
-      continue;
-    }
-  }
-};
 
 const geminiService = new GeminiService();
 
-// Student Tool Generator
-export const generateStudentTool = async (toolType, params) => {
-  const { GoogleGenerativeAI } = await import('@google/generative-ai');
-  const genAI = new GoogleGenerativeAI('AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8');
-
-  const toolPrompts = {
-    'smart-study-guide-generator': `Create a comprehensive, personalized study guide.
-
-Class: ${params.gradeLevel || 'General'}
-Subject: ${params.subject || 'General'}
-Topic: ${params.topic || 'General Topic'}
-Focus Areas: ${params.focusAreas || 'All areas'}
-
-IMPORTANT: Format your response using Markdown with clear headings (##), subheadings (###), bullet points (-), numbered lists, and bold text (**text**). For mathematical expressions, use LaTeX notation with $ for inline math and $$ for block/display math.
-
-Generate a detailed study guide with:
-
-## Study Guide: [Topic Name]
-
-### Overview
-Brief introduction to the topic and its importance.
-
-### Key Concepts
-List and explain the main concepts with examples.
-
-### Important Formulas & Theorems
-- Formula 1: [with explanation]
-- Formula 2: [with explanation]
-- Use LaTeX for math: $E = mc^2$, $\\int f(x)dx$
-
-### Study Tips
-- Practical tips for mastering this topic
-- Common mistakes to avoid
-- Memory techniques
-
-### Practice Recommendations
-- Suggested exercises
-- Practice problems with solutions
-- Additional resources
-
-### Revision Checklist
-- [ ] Concept 1
-- [ ] Concept 2
-- [ ] Practice problems
-
-Make it comprehensive, well-structured, and suitable for ${params.gradeLevel || 'General'} level.`,
-
-    'concept-breakdown-explainer': `Break down a complex concept into simple, easy-to-understand explanations.
-
-Class: ${params.gradeLevel || 'General'}
-Subject: ${params.subject || 'General'}
-Concept: ${params.concept || 'General Concept'}
-
-IMPORTANT: Format your response using Markdown. Use LaTeX for math expressions.
-
-Provide:
-
-## Concept Breakdown: [Concept Name]
-
-### What is [Concept]?
-Simple definition and explanation.
-
-### Why is it Important?
-Real-world applications and significance.
-
-### Step-by-Step Explanation
-Break down into digestible steps:
-1. Step 1: [Explanation]
-2. Step 2: [Explanation]
-3. Step 3: [Explanation]
-
-### Visual Analogy
-Use relatable analogies to explain the concept.
-
-### Examples
-- Example 1: [Detailed example]
-- Example 2: [Detailed example]
-
-### Common Misconceptions
-- Misconception 1: [Correct explanation]
-- Misconception 2: [Correct explanation]
-
-### Practice Questions
-A few questions to test understanding.
-
-Make it clear, simple, and appropriate for ${params.gradeLevel || 'General'} level.`,
-
-    'personalized-revision-planner': `Create a personalized revision schedule.
-
-Class: ${params.gradeLevel || 'General'}
-Subjects: ${params.subjects || 'All subjects'}
-Exam Date: ${params.examDate || 'Not specified'}
-Study Hours Per Day: ${params.studyHoursPerDay || 4} hours
-
-IMPORTANT: Format your response using Markdown.
-
-Generate:
-
-## Personalized Revision Plan
-
-### Overview
-Summary of the revision plan.
-
-### Daily Schedule
-Break down each day with:
-- Morning session (topics)
-- Afternoon session (topics)
-- Evening session (topics)
-
-### Weekly Breakdown
-- Week 1: [Subjects and topics]
-- Week 2: [Subjects and topics]
-- Continue for all weeks
-
-### Subject-wise Plan
-For each subject:
-- Topics to cover
-- Time allocation
-- Revision strategy
-
-### Tips for Success
-- Study techniques
-- Break schedules
-- Health and wellness tips
-
-### Progress Tracking
-Create a checklist for tracking progress.
-
-Make it realistic, achievable, and tailored to the student's needs.`,
-
-    'smart-qa-practice-generator': `Generate practice questions with detailed answers.
-
-Class: ${params.gradeLevel || 'General'}
-Subject: ${params.subject || 'General'}
-Topic: ${params.topic || 'General Topic'}
-Number of Questions: ${params.questionCount || 10}
-Difficulty: ${params.difficulty || 'medium'}
-
-IMPORTANT: Format using Markdown. Use LaTeX for math.
-
-Generate:
-
-## Practice Questions: [Topic]
-
-### Question Set
-
-For each question, provide:
-
-**Question [Number]**
-[Question text with LaTeX math if needed]
-
-**Answer:**
-[Detailed step-by-step answer]
-
-**Key Points:**
-- Important concepts covered
-- Tips for solving similar problems
-
-**Practice Tip:**
-[Additional guidance]
-
-Make questions appropriate for ${params.gradeLevel || 'General'} level and ${params.difficulty || 'medium'} difficulty.`,
-
-    'chapter-summary-creator': `Create a concise chapter summary.
-
-Class: ${params.gradeLevel || 'General'}
-Subject: ${params.subject || 'General'}
-Chapter/Topic: ${params.chapter || 'General Chapter'}
-
-IMPORTANT: Format using Markdown. Use LaTeX for math.
-
-Provide:
-
-## Chapter Summary: [Chapter Name]
-
-### Overview
-Brief introduction to the chapter.
-
-### Main Topics Covered
-1. Topic 1: [Summary]
-2. Topic 2: [Summary]
-3. Topic 3: [Summary]
-
-### Key Concepts
-- Concept 1: [Explanation]
-- Concept 2: [Explanation]
-
-### Important Formulas/Definitions
-- Formula 1: [with context]
-- Definition 1: [with context]
-
-### Summary Points
-- Point 1
-- Point 2
-- Point 3
-
-### Quick Review
-A condensed version for last-minute revision.
-
-Make it concise yet comprehensive for ${params.gradeLevel || 'General'} level.`,
-
-    'key-points-formula-extractor': `Extract key points and formulas from a topic.
-
-Class: ${params.gradeLevel || 'General'}
-Subject: ${params.subject || 'General'}
-Topic: ${params.topic || 'General Topic'}
-
-IMPORTANT: Format using Markdown. Use LaTeX for math formulas.
-
-Generate:
-
-## Key Points & Formulas: [Topic]
-
-### Essential Formulas
-- **Formula 1**: $[LaTeX formula]$ - [Explanation and when to use]
-- **Formula 2**: $[LaTeX formula]$ - [Explanation and when to use]
-
-### Key Definitions
-- **Term 1**: [Definition]
-- **Term 2**: [Definition]
-
-### Important Theorems/Principles
-- Theorem 1: [Statement and significance]
-- Principle 1: [Statement and application]
-
-### Critical Points to Remember
-- Point 1
-- Point 2
-- Point 3
-
-### Quick Reference
-A condensed cheat sheet format.
-
-Make it focused on the most important information for ${params.gradeLevel || 'General'} level.`,
-
-    'quick-assignment-builder': `Build a structured assignment.
-
-Class: ${params.gradeLevel || 'General'}
-Subject: ${params.subject || 'General'}
-Topic: ${params.topic || 'General Topic'}
-Assignment Type: ${params.assignmentType || 'General'}
-
-IMPORTANT: Format using Markdown.
-
-Create:
-
-## Assignment: [Topic]
-
-### Assignment Overview
-- Title: [Assignment Title]
-- Subject: [Subject]
-- Topic: [Topic]
-- Type: [Assignment Type]
-
-### Objectives
-- Objective 1
-- Objective 2
-- Objective 3
-
-### Instructions
-Step-by-step instructions for completing the assignment.
-
-### Requirements
-- Requirement 1
-- Requirement 2
-- Requirement 3
-
-### Evaluation Criteria
-- Criterion 1: [Points/Percentage]
-- Criterion 2: [Points/Percentage]
-
-### Submission Guidelines
-- Format requirements
-- Deadline information
-- Submission method
-
-Make it clear, structured, and appropriate for ${params.gradeLevel || 'General'} level.`,
-
-    'exam-readiness-checker': `Assess exam readiness and provide recommendations.
-
-Class: ${params.gradeLevel || 'General'}
-Subject: ${params.subject || 'General'}
-Exam Type: ${params.examType || 'General Exam'}
-Exam Date: ${params.examDate || 'Not specified'}
-
-IMPORTANT: Format using Markdown.
-
-Provide:
-
-## Exam Readiness Assessment
-
-### Current Status
-Assessment of current preparation level.
-
-### Strengths
-- Strength 1
-- Strength 2
-- Strength 3
-
-### Areas Needing Improvement
-- Area 1: [Specific improvement needed]
-- Area 2: [Specific improvement needed]
-
-### Readiness Score
-Overall readiness percentage with breakdown.
-
-### Recommended Action Plan
-- Immediate actions (next 24 hours)
-- Short-term plan (next week)
-- Long-term plan (until exam)
-
-### Study Priorities
-Ranked list of topics to focus on.
-
-### Practice Recommendations
-- Types of practice needed
-- Resources to use
-- Mock tests to take
-
-### Exam Strategy
-- Time management tips
-- Question-solving approach
-- Stress management
-
-Make it actionable and encouraging for ${params.gradeLevel || 'General'} level.`,
-
-    'project-layout-designer': `Design a structured project layout.
-
-Class: ${params.gradeLevel || 'General'}
-Subject: ${params.subject || 'General'}
-Project Topic: ${params.projectTopic || 'General Topic'}
-Project Type: ${params.projectType || 'General'}
-
-IMPORTANT: Format using Markdown.
-
-Create:
-
-## Project Layout: [Project Topic]
-
-### Project Overview
-- Title: [Project Title]
-- Type: [Project Type]
-- Subject: [Subject]
-- Duration: [Estimated time]
-
-### Project Structure
-1. **Introduction**
-   - Purpose
-   - Objectives
-   - Scope
-
-2. **Main Content Sections**
-   - Section 1: [Description]
-   - Section 2: [Description]
-   - Section 3: [Description]
-
-3. **Methodology/Approach**
-   - Step-by-step approach
-   - Tools and materials needed
-
-4. **Results/Findings**
-   - Expected outcomes
-   - How to present results
-
-5. **Conclusion**
-   - Summary
-   - Key takeaways
-
-### Timeline
-- Week 1: [Tasks]
-- Week 2: [Tasks]
-- Continue as needed
-
-### Resources Needed
-- Materials
-- References
-- Tools
-
-### Presentation Guidelines
-- Format requirements
-- Visual elements
-- Presentation tips
-
-Make it comprehensive and suitable for ${params.gradeLevel || 'General'} level.`,
-
-    'goal-motivation-planner': `Create a goal-setting and motivation plan.
-
-Class: ${params.gradeLevel || 'General'}
-Goal Type: ${params.goalType || 'Academic'}
-Timeframe: ${params.timeframe || '1 month'}
-Goal Description: ${params.description || 'General goals'}
-
-IMPORTANT: Format using Markdown.
-
-Generate:
-
-## Goal & Motivation Plan
-
-### Goal Statement
-Clear, specific goal statement.
-
-### Why This Goal Matters
-Personal significance and benefits.
-
-### SMART Goals Breakdown
-- **Specific**: [Specific goal]
-- **Measurable**: [How to measure]
-- **Achievable**: [Feasibility]
-- **Relevant**: [Relevance]
-- **Time-bound**: [Timeline]
-
-### Action Plan
-- Week 1: [Actions]
-- Week 2: [Actions]
-- Continue for the timeframe
-
-### Milestones
-- Milestone 1: [Date and achievement]
-- Milestone 2: [Date and achievement]
-
-### Motivation Strategies
-- Strategy 1: [How to stay motivated]
-- Strategy 2: [Reward system]
-- Strategy 3: [Accountability]
-
-### Obstacles & Solutions
-- Potential obstacle 1: [Solution]
-- Potential obstacle 2: [Solution]
-
-### Progress Tracking
-Methods to track and measure progress.
-
-### Daily Affirmations
-Positive statements to reinforce motivation.
-
-Make it inspiring, actionable, and tailored to the student's goals.`
-  };
-
-  let prompt = toolPrompts[toolType] || `Generate content for ${toolType} with the following parameters: ${JSON.stringify(params)}`;
-  
-  if (!prompt.includes('IMPORTANT: Format your response using Markdown')) {
-    prompt = `IMPORTANT: Format your response using Markdown with clear headings (##), subheadings (###), bullet points (-), numbered lists, and bold text (**text**). Make it professional and well-structured.\n\n${prompt}`;
-  }
-
-  const modelsToTry = [
-    'gemini-2.5-flash',  // ✅ Confirmed working
-    'gemini-2.0-flash',  // May have quota limits
-    'gemini-1.5-flash',
-    'gemini-1.5-pro'
-  ];
-
-  for (const modelName of modelsToTry) {
-    try {
-      console.log(`🔄 Trying model for student tool ${toolType}: ${modelName}`);
-      const model = genAI.getGenerativeModel({ model: modelName });
-      const result = await model.generateContent(prompt);
-      const response = await result.response;
-      console.log(`✅ Successfully generated student tool ${toolType} using ${modelName}`);
-      return response.text();
-    } catch (error) {
-      console.log(`❌ Model ${modelName} failed: ${error.message}`);
-      if (modelName === modelsToTry[modelsToTry.length - 1]) {
-        console.error(`Error generating student tool ${toolType}:`, error);
-        throw new Error(`Failed to generate content: ${error.message}`);
-      }
+export const generateLessonPlan = async (subject, topic, gradeLevel, duration) => {
+  const prompt = `Create a comprehensive lesson plan.
+Subject: ${subject}
+Topic: ${topic}
+Grade: ${gradeLevel}
+Duration: ${duration} minutes
+
+Include objectives, prerequisites, teaching flow, examples, assessment, homework, and common mistakes.`;
+  return geminiService.generateStructuredContent(prompt, 'text');
+};
+
+export const generateTestQuestions = async (subject, topic, gradeLevel, questionCount, difficulty) => {
+  const prompt = `Generate exactly ${questionCount} MCQs in JSON.
+Subject: ${subject}
+Topic: ${topic}
+Grade: ${gradeLevel}
+Difficulty: ${difficulty}
+
+JSON schema:
+{
+  "questions": [
+    {
+      "question": "string",
+      "type": "multiple-choice",
+      "options": ["A", "B", "C", "D"],
+      "correctAnswer": "string",
+      "explanation": "string"
     }
-  }
+  ]
+}`;
+  return geminiService.generateStructuredContent(prompt, 'json');
+};
+
+export const generateClasswork = async (subject, topic, gradeLevel, assignmentType) => {
+  const prompt = `Create ${assignmentType} classwork.
+Subject: ${subject}
+Topic: ${topic}
+Grade: ${gradeLevel}
+Include title, instructions, tasks, rubric, and expected duration.`;
+  return geminiService.generateStructuredContent(prompt, 'text');
+};
+
+export const generateSchedule = async (subjects, gradeLevels, timeSlots, preferences) => {
+  const prompt = `Create a weekly teaching schedule.
+Subjects: ${Array.isArray(subjects) ? subjects.join(', ') : subjects}
+Grades: ${Array.isArray(gradeLevels) ? gradeLevels.join(', ') : gradeLevels}
+Time slots: ${Array.isArray(timeSlots) ? timeSlots.join(', ') : timeSlots}
+Preferences: ${preferences}`;
+  return geminiService.generateStructuredContent(prompt, 'text');
+};
+
+export const generateTeacherTool = async (toolType, params) => {
+  return geminiService.generateStructuredContent(buildTeacherToolPrompt(toolType, params), 'text');
+};
+
+export const generateStudentTool = async (toolType, params) => {
+  return geminiService.generateStructuredContent(buildStudentToolPrompt(toolType, params), 'text');
 };
 
 export default geminiService;

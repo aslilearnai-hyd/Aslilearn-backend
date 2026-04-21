@@ -1780,7 +1780,7 @@ export const analyzeStudentRiskSuperAdmin = async (req, res) => {
       }
     };
 
-    // Generate AI analysis using Gemini API
+    // Generate AI analysis using configured LLM
     const analysisPrompt = `You are an expert educational analyst with deep knowledge of student performance patterns, learning psychology, and intervention strategies. Analyze this student's performance data and provide a comprehensive risk assessment.
 
 STUDENT DATA:
@@ -1821,60 +1821,8 @@ Provide a detailed analysis in the following JSON format (ONLY JSON, no markdown
 
 Be specific, actionable, and data-driven. Focus on identifying real issues and providing practical solutions. Use the actual data provided to make informed assessments.`;
 
-    // Call Gemini API
-    const { GoogleGenerativeAI } = await import('@google/generative-ai');
-    const apiKey = process.env.GEMINI_API_KEY;
-    if (!apiKey) {
-      throw new Error('GEMINI_API_KEY is not configured');
-    }
-    const genAI = new GoogleGenerativeAI(apiKey);
-    
-    // Include system instruction in the prompt since systemInstruction parameter is not supported
-    const fullPrompt = `You are an expert educational analyst. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.
-
-${analysisPrompt}`;
-    
-    // Try multiple models with fallback - prioritize 2.5 Flash (confirmed working)
-    const modelsToTry = [
-      'gemini-2.5-flash',  // ✅ Confirmed working
-      'gemini-2.0-flash',  // May have quota limits
-      'gemini-1.5-flash',
-      'gemini-1.5-pro'
-    ];
-    
-    let result;
-    let lastError;
-    
-    for (const modelName of modelsToTry) {
-      try {
-        console.log(`🔄 Trying model: ${modelName}`);
-        const model = genAI.getGenerativeModel({ model: modelName });
-        result = await model.generateContent(fullPrompt);
-        console.log(`✅ Successfully used model: ${modelName}`);
-        break;
-      } catch (error) {
-        console.log(`❌ Model ${modelName} failed: ${error.message}`);
-        lastError = error;
-        if (modelName === modelsToTry[modelsToTry.length - 1]) {
-          throw new Error(`All models failed. Last error: ${error.message}`);
-        }
-        continue;
-      }
-    }
-
-    const response = await result.response;
-    let aiResponse;
-    try {
-      // response.text() is a synchronous getter property, not an async method
-      aiResponse = response.text();
-    } catch (textError) {
-      console.error('Failed to get text from AI response:', textError);
-      return res.status(500).json({
-        success: false,
-        message: 'Failed to get AI response. Please try again.',
-        error: process.env.NODE_ENV === 'development' ? textError.message : undefined
-      });
-    }
+    const { default: geminiService } = await import('../services/gemini-service.js');
+    const aiResponse = await geminiService.generateStructuredContent(analysisPrompt, 'json');
 
     // Parse AI response
     let analysisResult;

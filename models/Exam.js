@@ -30,6 +30,12 @@ const examSchema = new mongoose.Schema({
     trim: true,
     lowercase: true
   },
+  subjects: [{
+    type: String,
+    enum: ['maths', 'physics', 'chemistry', 'biology'],
+    trim: true,
+    lowercase: true
+  }],
   maxAttempts: {
     type: Number,
     required: true,

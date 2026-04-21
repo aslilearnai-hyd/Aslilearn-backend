@@ -40,7 +40,7 @@ const questionSchema = new mongoose.Schema({
   },
   subject: {
     type: String,
-    enum: ['maths', 'physics', 'chemistry'],
+    enum: ['maths', 'physics', 'chemistry', 'biology'],
     required: true,
     default: 'maths'
   },

@@ -48,7 +48,51 @@ export function normalizeExamClassFields(exam) {
 
   e.assignedClasses = classes;
   e.classNumber = cn;
+
+  const normalizedSubjects = normalizeExamSubjects(e.subject, e.subjects)
+    .filter((s) => ALLOWED_EXAM_SUBJECTS.includes(s));
+  if (normalizedSubjects.length > 0) {
+    e.subjects = normalizedSubjects;
+    e.subject = normalizedSubjects[0];
+  } else {
+    const fallbackSubject = String(e.subject || 'maths').trim().toLowerCase();
+    e.subject = ALLOWED_EXAM_SUBJECTS.includes(fallbackSubject) ? fallbackSubject : 'maths';
+    e.subjects = [e.subject];
+  }
+
   return e;
+}
+
+const ALLOWED_EXAM_SUBJECTS = ['maths', 'physics', 'chemistry', 'biology'];
+
+function buildQuestionDedupKey({
+  examId,
+  subject,
+  questionType,
+  questionText,
+  questionImage,
+}) {
+  const textKey = String(questionText || '').trim().toLowerCase();
+  const imageKey = String(questionImage || '').trim();
+  const contentKey = textKey || imageKey;
+  return [String(examId), String(subject || '').trim().toLowerCase(), String(questionType || '').trim().toLowerCase(), contentKey].join('::');
+}
+
+function normalizeExamSubjects(subject, subjects) {
+  const listFromSubjects = Array.isArray(subjects)
+    ? subjects
+    : subjects !== undefined && subjects !== null
+      ? [subjects]
+      : [];
+  const merged = [...listFromSubjects, subject];
+  const normalized = Array.from(
+    new Set(
+      merged
+        .map((s) => String(s || '').trim().toLowerCase())
+        .filter(Boolean)
+    )
+  );
+  return normalized;
 }
 
 // Create Exam (Super Admin only)
@@ -65,6 +109,7 @@ export const createExam = async (req, res) => {
       classNumber,
       assignedClasses,
       subject,
+      subjects,
       maxAttempts,
       duration, 
       totalQuestions, 
@@ -86,10 +131,12 @@ export const createExam = async (req, res) => {
       ? assignedClasses.map((c) => String(c).trim()).filter(Boolean)
       : (classNumber ? [String(classNumber).trim()] : []);
 
-    if (!title || !examType || normalizedAssignedClasses.length === 0 || !subject || !maxAttempts || !duration || !totalQuestions || !totalMarks || !board) {
+    const normalizedSubjects = normalizeExamSubjects(subject, subjects);
+
+    if (!title || !examType || normalizedAssignedClasses.length === 0 || normalizedSubjects.length === 0 || !maxAttempts || !duration || !totalQuestions || !totalMarks || !board) {
       return res.status(400).json({ 
         success: false, 
-        message: 'Missing required fields: title, examType, assignedClasses, subject, maxAttempts, duration, totalQuestions, totalMarks, and board are required' 
+        message: 'Missing required fields: title, examType, assignedClasses, subject(s), maxAttempts, duration, totalQuestions, totalMarks, and board are required' 
       });
     }
 
@@ -107,12 +154,11 @@ export const createExam = async (req, res) => {
       });
     }
 
-    const normalizedSubject = String(subject).trim().toLowerCase();
-    const allowedSubjects = ['maths', 'physics', 'chemistry', 'biology'];
-    if (!allowedSubjects.includes(normalizedSubject)) {
+    const invalidSubjects = normalizedSubjects.filter((s) => !ALLOWED_EXAM_SUBJECTS.includes(s));
+    if (invalidSubjects.length > 0) {
       return res.status(400).json({
         success: false,
-        message: `Invalid subject. Must be one of: ${allowedSubjects.join(', ')}`
+        message: `Invalid subject(s): ${invalidSubjects.join(', ')}. Must be one of: ${ALLOWED_EXAM_SUBJECTS.join(', ')}`
       });
     }
 
@@ -144,7 +190,8 @@ export const createExam = async (req, res) => {
       examType,
       classNumber: normalizedAssignedClasses[0],
       assignedClasses: normalizedAssignedClasses,
-      subject: normalizedSubject,
+      subject: normalizedSubjects[0],
+      subjects: normalizedSubjects,
       maxAttempts: parsedMaxAttempts,
       duration: parseInt(duration),
       totalQuestions: parseInt(totalQuestions),
@@ -330,6 +377,7 @@ export const updateExam = async (req, res) => {
       classNumber,
       assignedClasses,
       subject,
+      subjects,
       maxAttempts,
       duration, 
       totalQuestions, 
@@ -376,7 +424,21 @@ export const updateExam = async (req, res) => {
       exam.classNumber = normalizedClass;
       exam.assignedClasses = [normalizedClass];
     }
-    if (subject) exam.subject = String(subject).trim().toLowerCase();
+    if (subject !== undefined || subjects !== undefined) {
+      const normalizedSubjects = normalizeExamSubjects(subject, subjects);
+      if (normalizedSubjects.length === 0) {
+        return res.status(400).json({ success: false, message: 'subject(s) cannot be empty' });
+      }
+      const invalidSubjects = normalizedSubjects.filter((s) => !ALLOWED_EXAM_SUBJECTS.includes(s));
+      if (invalidSubjects.length > 0) {
+        return res.status(400).json({
+          success: false,
+          message: `Invalid subject(s): ${invalidSubjects.join(', ')}. Must be one of: ${ALLOWED_EXAM_SUBJECTS.join(', ')}`
+        });
+      }
+      exam.subject = normalizedSubjects[0];
+      exam.subjects = normalizedSubjects;
+    }
     if (maxAttempts !== undefined) {
       const parsedMaxAttempts = parseInt(maxAttempts, 10);
       if (Number.isNaN(parsedMaxAttempts) || parsedMaxAttempts < 1) {
@@ -413,6 +475,7 @@ export const updateExam = async (req, res) => {
     if (!exam.classNumber) exam.classNumber = '10';
     if (!Array.isArray(exam.assignedClasses) || exam.assignedClasses.length === 0) exam.assignedClasses = [exam.classNumber];
     if (!exam.subject) exam.subject = 'maths';
+    if (!Array.isArray(exam.subjects) || exam.subjects.length === 0) exam.subjects = [exam.subject];
     if (!exam.maxAttempts || exam.maxAttempts < 1) exam.maxAttempts = 1;
 
     await exam.save();
@@ -583,6 +646,52 @@ export const addQuestion = async (req, res) => {
     // Format options - ensure empty array for integer type
     const finalOptions = questionType === 'integer' ? [] : (options || []);
 
+    const examSubjects = normalizeExamSubjects(exam.subject, exam.subjects)
+      .filter((s) => ALLOWED_EXAM_SUBJECTS.includes(s));
+    const normalizedQuestionSubject = String(subject || '').trim().toLowerCase() || examSubjects[0] || 'maths';
+
+    if (!ALLOWED_EXAM_SUBJECTS.includes(normalizedQuestionSubject)) {
+      return res.status(400).json({
+        success: false,
+        message: `Invalid subject "${normalizedQuestionSubject}". Must be one of: ${ALLOWED_EXAM_SUBJECTS.join(', ')}`
+      });
+    }
+
+    if (examSubjects.length > 0 && !examSubjects.includes(normalizedQuestionSubject)) {
+      return res.status(400).json({
+        success: false,
+        message: `Question subject "${normalizedQuestionSubject}" is not allowed for this exam. Allowed subjects: ${examSubjects.join(', ')}`
+      });
+    }
+
+    const duplicateKey = buildQuestionDedupKey({
+      examId,
+      subject: normalizedQuestionSubject,
+      questionType,
+      questionText: finalQuestionText,
+      questionImage: finalQuestionImage,
+    });
+    const existingQuestions = await Question.find(
+      { exam: examId, subject: normalizedQuestionSubject, questionType },
+      { questionText: 1, questionImage: 1 }
+    ).lean();
+    const isDuplicate = existingQuestions.some((q) => {
+      const key = buildQuestionDedupKey({
+        examId,
+        subject: normalizedQuestionSubject,
+        questionType,
+        questionText: q.questionText,
+        questionImage: q.questionImage,
+      });
+      return key === duplicateKey;
+    });
+    if (isDuplicate) {
+      return res.status(409).json({
+        success: false,
+        message: 'Duplicate question already exists for this exam and subject',
+      });
+    }
+
     const question = new Question({
       questionText: finalQuestionText || undefined,
       questionImage: finalQuestionImage || undefined,
@@ -592,7 +701,7 @@ export const addQuestion = async (req, res) => {
       marks: parseInt(marks) || 1,
       negativeMarks: parseFloat(negativeMarks) || 0,
       explanation: explanation?.trim() || undefined,
-      subject: subject || 'maths',
+      subject: normalizedQuestionSubject,
       exam: examId,
       board: (board || exam.board).toUpperCase(),
       createdBy: createdById
@@ -884,6 +993,8 @@ export const bulkUploadQuestions = async (req, res) => {
         message: 'Exam not found or not accessible' 
       });
     }
+    const examAllowedSubjects = normalizeExamSubjects(exam.subject, exam.subjects)
+      .filter((s) => ALLOWED_EXAM_SUBJECTS.includes(s));
 
     // Convert buffer to string
     const csvData = req.file.buffer.toString('utf8');
@@ -941,12 +1052,27 @@ export const bulkUploadQuestions = async (req, res) => {
 
     const createdQuestions = [];
     const errors = [];
+    const seenQuestionKeys = new Set();
     let createdById = req.userId;
     
     // If userId is not a valid ObjectId, create a new one
     if (!createdById || !mongoose.Types.ObjectId.isValid(createdById)) {
       createdById = new mongoose.Types.ObjectId();
     }
+
+    const existingQuestions = await Question.find(
+      { exam: examId },
+      { subject: 1, questionType: 1, questionText: 1, questionImage: 1 }
+    ).lean();
+    existingQuestions.forEach((q) => {
+      seenQuestionKeys.add(buildQuestionDedupKey({
+        examId,
+        subject: q.subject,
+        questionType: q.questionType,
+        questionText: q.questionText,
+        questionImage: q.questionImage,
+      }));
+    });
 
     // Process each data row
     for (let i = 1; i < lines.length; i++) {
@@ -978,9 +1104,13 @@ export const bulkUploadQuestions = async (req, res) => {
         }
 
         // Validate subject
-        const subject = (questionData.subject || 'maths').toLowerCase();
-        if (!['maths', 'physics', 'chemistry'].includes(subject)) {
-          errors.push(`Row ${i + 1}: Invalid subject "${subject}". Must be one of: maths, physics, chemistry`);
+        const subject = String(questionData.subject || '').trim().toLowerCase() || examAllowedSubjects[0] || 'maths';
+        if (!ALLOWED_EXAM_SUBJECTS.includes(subject)) {
+          errors.push(`Row ${i + 1}: Invalid subject "${subject}". Must be one of: ${ALLOWED_EXAM_SUBJECTS.join(', ')}`);
+          continue;
+        }
+        if (examAllowedSubjects.length > 0 && !examAllowedSubjects.includes(subject)) {
+          errors.push(`Row ${i + 1}: Subject "${subject}" is not allowed for this exam. Allowed subjects: ${examAllowedSubjects.join(', ')}`);
           continue;
         }
 
@@ -1077,9 +1207,22 @@ export const bulkUploadQuestions = async (req, res) => {
           createdBy: createdById
         };
 
+        const questionKey = buildQuestionDedupKey({
+          examId,
+          subject: newQuestionData.subject,
+          questionType: newQuestionData.questionType,
+          questionText: newQuestionData.questionText,
+          questionImage: newQuestionData.questionImage,
+        });
+        if (seenQuestionKeys.has(questionKey)) {
+          errors.push(`Row ${i + 1}: Duplicate question skipped for subject "${newQuestionData.subject}"`);
+          continue;
+        }
+
         // Create question
         const newQuestion = new Question(newQuestionData);
         await newQuestion.save();
+        seenQuestionKeys.add(questionKey);
 
         // Add question to exam
         await Exam.findByIdAndUpdate(examId, { $push: { questions: newQuestion._id } });

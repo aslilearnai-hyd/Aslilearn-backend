@@ -1,7 +1,10 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+import dotenv from 'dotenv';
+import geminiService from './gemini-service.js';
 
-const GEMINI_API_KEY = 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
-const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
+const __dirname = dirname(fileURLToPath(import.meta.url));
+dotenv.config({ path: join(__dirname, '..', '.env') });
 
 class AIService {
   async analyzeEducationalData(data) {
@@ -136,37 +139,10 @@ Provide comprehensive, actionable insights that can drive educational improvemen
 
   async callGeminiAPI(prompt) {
     try {
-      // Include instruction in the prompt since systemInstruction is not supported in v1 API
-      const instruction = 'You are an advanced AI educational analyst. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.\n\n';
-      // Try multiple models with fallback - prioritize 2.5 Flash (confirmed working)
-      const modelsToTry = [
-        'gemini-2.5-flash',  // ✅ Confirmed working
-        'gemini-2.0-flash',  // May have quota limits
-        'gemini-1.5-flash',
-        'gemini-1.5-pro'
-      ];
-      
-      let model;
-      for (const modelName of modelsToTry) {
-        try {
-          model = genAI.getGenerativeModel({ model: modelName });
-          // Test if model works by attempting to use it
-          break;
-        } catch (error) {
-          if (modelName === modelsToTry[modelsToTry.length - 1]) {
-            throw error;
-          }
-          continue;
-        }
-      }
-
-      const fullPrompt = instruction + prompt;
-      const result = await model.generateContent(fullPrompt);
-
-      const response = await result.response;
-      return response.text();
+      // Reuse shared LLM service (LM Studio / OpenAI-compatible endpoint).
+      return await geminiService.generateStructuredContent(prompt, 'json');
     } catch (error) {
-      console.error('Gemini API call failed:', error);
+      console.error('LLM API call failed:', error);
       throw error;
     }
   }

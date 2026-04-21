@@ -3,7 +3,7 @@ const fetch = globalThis.fetch || require('node-fetch');
 
 class RestGeminiService {
   constructor() {
-    this.apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
+    this.apiKey = process.env.GEMINI_API_KEY;
     this.baseUrl = 'https://generativelanguage.googleapis.com/v1beta';
     this.isAvailable = false;
     this.initializeGemini();

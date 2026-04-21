@@ -1,7 +1,7 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
 // Initialize Gemini AI
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8');
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 export interface ChatMessage {
   role: 'user' | 'assistant';
