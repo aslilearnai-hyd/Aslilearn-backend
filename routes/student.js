@@ -827,6 +827,41 @@ router.get('/assessments', async (req, res) => {
   }
 });
 
+async function hydrateExamQuestions(examDoc) {
+  const examId = examDoc?._id;
+  if (!examId) return examDoc;
+
+  // Source of truth is Question.exam; fallback to Exam.questions to preserve legacy behavior
+  let linkedQuestions = await Question.find({ exam: examId, isActive: { $ne: false } })
+    .sort({ createdAt: 1, _id: 1 })
+    .lean();
+
+  if (!linkedQuestions.length && Array.isArray(examDoc.questions) && examDoc.questions.length > 0) {
+    linkedQuestions = await Question.find({
+      _id: { $in: examDoc.questions.map((q) => q?._id || q).filter(Boolean) },
+      isActive: { $ne: false }
+    })
+      .sort({ createdAt: 1, _id: 1 })
+      .lean();
+  }
+
+  const normalizedQuestions = Array.isArray(linkedQuestions) ? linkedQuestions : [];
+  const normalizedTotalMarks = normalizedQuestions.reduce((sum, q) => sum + (Number(q?.marks) || 0), 0);
+
+  return {
+    ...examDoc,
+    questions: normalizedQuestions,
+    totalQuestions:
+      normalizedQuestions.length > 0
+        ? normalizedQuestions.length
+        : Number(examDoc.totalQuestions) || 0,
+    totalMarks:
+      normalizedQuestions.length > 0
+        ? normalizedTotalMarks
+        : Number(examDoc.totalMarks) || 0
+  };
+}
+
 // Get student's exams (all exams visible - board restrictions removed)
 router.get('/exams', async (req, res) => {
   try {
@@ -856,15 +891,17 @@ router.get('/exams', async (req, res) => {
     // Get all exams created by Super Admin - no board restrictions
     const exams = await Exam.find(query)
       .populate('createdBy', 'fullName email')
-      .populate('questions')
       .populate('targetSchools', 'schoolName fullName email')
-      .sort({ createdAt: -1 });
+      .sort({ createdAt: -1 })
+      .lean();
+
+    const hydratedExams = await Promise.all(exams.map((exam) => hydrateExamQuestions(exam)));
     
-    console.log(`✅ Found ${exams.length} exams for student (all boards visible)`);
+    console.log(`✅ Found ${hydratedExams.length} exams for student (all boards visible)`);
     
     res.json({
       success: true,
-      data: exams
+      data: hydratedExams
     });
   } catch (error) {
     console.error('Error fetching student exams:', error);
@@ -908,7 +945,7 @@ router.get('/exams/:examId', async (req, res) => {
       _id: examId,
       createdByRole: 'super-admin',
       isActive: true 
-    }).populate('questions');
+    }).lean();
     
     if (!exam) {
       return res.status(404).json({ 
@@ -916,10 +953,12 @@ router.get('/exams/:examId', async (req, res) => {
         message: 'Exam not found or access denied' 
       });
     }
+
+    const hydratedExam = await hydrateExamQuestions(exam);
     
     res.json({
       success: true,
-      data: exam
+      data: hydratedExam
     });
   } catch (error) {
     console.error('Error fetching exam:', error);
@@ -1508,20 +1547,23 @@ router.post('/exam-results', async (req, res) => {
     }
     
     // Get student's assigned admin and board
-    const student = await User.findById(req.userId);
+    const student = await User.findById(req.userId).populate('assignedAdmin', 'board');
     if (!student) {
       return res.status(400).json({ success: false, message: 'Student not found' });
     }
-    
-    if (!student.board) {
-      return res.status(400).json({ success: false, message: 'Student board not assigned' });
-    }
+
+    // Production data can have missing student.board; resolve from assigned admin and safe default.
+    const resolvedBoard = String(
+      student.board || student.assignedAdmin?.board || 'ASLI_EXCLUSIVE_SCHOOLS'
+    )
+      .trim()
+      .toUpperCase();
     
     const resultData = {
       examId,
       userId: req.userId, // Use req.userId from verifyToken middleware
       adminId: student.assignedAdmin || null,
-      board: student.board,
+      board: resolvedBoard === 'ASLI_EXCLUSIVE_SCHOOLS' ? resolvedBoard : 'ASLI_EXCLUSIVE_SCHOOLS',
       examTitle,
       totalQuestions,
       correctAnswers,

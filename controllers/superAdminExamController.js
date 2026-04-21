@@ -1241,6 +1241,9 @@ export const bulkUploadQuestions = async (req, res) => {
     }
 
     console.log(`✅ Bulk question upload completed: ${createdQuestions.length} created, ${errors.length} errors`);
+    if (errors.length > 0) {
+      console.log('⚠️ Bulk question upload row errors:', errors);
+    }
 
     res.json({
       success: true,
