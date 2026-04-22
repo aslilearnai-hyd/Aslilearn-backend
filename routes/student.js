@@ -1652,6 +1652,58 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       board: resolvedBoard,
     };
 
+    // Use stored answers from the result payload; if missing, fall back to the
+    // latest saved ExamResult for this student+exam to keep AI analysis accurate.
+    let answerMap = (result.answers && typeof result.answers === 'object') ? result.answers : {};
+    if (Object.keys(answerMap).length === 0 && safeResult.examId) {
+      const ExamResult = (await import('../models/ExamResult.js')).default;
+      const latestResult = await ExamResult.findOne({
+        userId: req.userId,
+        examId: safeResult.examId,
+      })
+        .sort({ completedAt: -1 })
+        .lean();
+      answerMap = (latestResult?.answers && typeof latestResult.answers === 'object')
+        ? latestResult.answers
+        : {};
+    }
+
+    const examQuestions = safeResult.examId
+      ? await Question.find({ exam: safeResult.examId, isActive: { $ne: false } })
+          .sort({ createdAt: 1, _id: 1 })
+          .lean()
+      : [];
+
+    const shorten = (value, max = 280) => {
+      const text = String(value || '').replace(/\s+/g, ' ').trim();
+      return text.length > max ? `${text.slice(0, max - 3)}...` : text;
+    };
+
+    const questionAttemptDetails = examQuestions.map((q, index) => {
+      const questionId = String(q._id);
+      const userAnswer = answerMap[questionId];
+      const normalizedCorrect = Array.isArray(q.correctAnswer)
+        ? q.correctAnswer.map((item) => extractAnswerText(item))
+        : extractAnswerText(q.correctAnswer);
+      const normalizedUser = Array.isArray(userAnswer)
+        ? userAnswer.map((item) => extractAnswerText(item))
+        : extractAnswerText(userAnswer);
+      return {
+        index: index + 1,
+        questionId,
+        subject: String(q.subject || 'general').toLowerCase(),
+        questionType: q.questionType,
+        questionText: shorten(q.questionText || ''),
+        hasImage: Boolean(q.questionImage),
+        marks: Number(q.marks || 0),
+        negativeMarks: Number(q.negativeMarks || 0),
+        userAnswer: normalizedUser,
+        correctAnswer: normalizedCorrect,
+        isCorrect: isAnswerCorrect(q, userAnswer),
+        explanation: shorten(q.explanation || '', 180),
+      };
+    });
+
     const prompt = `
 You are AsliLearn AI Performance Mentor.
 Analyze the student's exam performance and return ONLY valid JSON (no markdown).
@@ -1661,6 +1713,9 @@ ${JSON.stringify(safeResult, null, 2)}
 
 Available subject-wise videos for weak areas:
 ${JSON.stringify(videoRecommendations.slice(0, 8), null, 2)}
+
+Question-by-question stored attempt details (from DB questions + saved student answers):
+${JSON.stringify(questionAttemptDetails, null, 2)}
 
 Return strict JSON:
 {
@@ -1686,6 +1741,7 @@ Return strict JSON:
 Important:
 - Give practical, specific actions.
 - Focus especially on weak subjects.
+- Base recommendations on the provided question-by-question mistakes and answer patterns.
 - If no weak subject, provide an advanced improvement plan.
 - Keep language simple and student-friendly.
 `;
@@ -1693,7 +1749,18 @@ Important:
     let aiParsed;
     try {
       const aiText = await geminiService.generateStructuredContent(prompt, 'json');
-      aiParsed = JSON.parse(String(aiText || '{}'));
+      const raw = String(aiText || '').trim();
+      try {
+        aiParsed = JSON.parse(raw);
+      } catch (_jsonErr) {
+        const fenceCleaned = raw
+          .replace(/^```json\s*/i, '')
+          .replace(/^```\s*/i, '')
+          .replace(/\s*```$/i, '')
+          .trim();
+        const jsonMatch = fenceCleaned.match(/\{[\s\S]*\}/);
+        aiParsed = JSON.parse(jsonMatch ? jsonMatch[0] : '{}');
+      }
     } catch (error) {
       aiParsed = {
         summary: 'AI analysis is temporarily unavailable. Please use the suggested action plan below.',
@@ -1723,6 +1790,17 @@ Important:
         ],
         videoRecommendations,
         motivation: 'Small daily consistency will improve your next score strongly.',
+      };
+    }
+
+    if (!aiParsed || typeof aiParsed !== 'object') {
+      aiParsed = {};
+    }
+    if (!aiParsed.actionPlan || typeof aiParsed.actionPlan !== 'object') {
+      aiParsed.actionPlan = {
+        today: ['Review your top 3 mistakes and rewrite the correct method.'],
+        thisWeek: ['Practice weak-topic questions daily and revise key formulas.'],
+        beforeNextExam: ['Take one timed mock and analyze every incorrect question.'],
       };
     }
 

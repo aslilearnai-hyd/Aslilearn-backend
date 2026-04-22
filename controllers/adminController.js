@@ -14,6 +14,42 @@ import Content from '../models/Content.js';
 import RiskAnalysisReport from '../models/RiskAnalysisReport.js';
 import { getExplicitTeacherSubjectObjectIds } from '../utils/teacherSubjectScope.js';
 
+const buildSafeAppendQuestionPipeline = (questionId) => [
+  {
+    $set: {
+      questions: { $cond: [{ $isArray: '$questions' }, '$questions', []] },
+    },
+  },
+  {
+    $set: {
+      questions: { $concatArrays: ['$questions', [questionId]] },
+      totalQuestions: { $add: [{ $ifNull: ['$totalQuestions', 0] }, 1] },
+    },
+  },
+];
+
+const buildSafeRemoveQuestionPipeline = (questionId) => [
+  {
+    $set: {
+      questions: { $cond: [{ $isArray: '$questions' }, '$questions', []] },
+    },
+  },
+  {
+    $set: {
+      questions: {
+        $filter: {
+          input: '$questions',
+          as: 'existingQuestionId',
+          cond: { $ne: ['$$existingQuestionId', questionId] },
+        },
+      },
+      totalQuestions: {
+        $max: [0, { $subtract: [{ $ifNull: ['$totalQuestions', 0] }, 1] }]
+      },
+    },
+  },
+];
+
 // Admin Dashboard Stats
 export const getAdminDashboardStats = async (req, res) => {
   try {
@@ -1243,10 +1279,10 @@ export const createQuestion = async (req, res) => {
     await newQuestion.save();
     
     // Add question to exam and update totalQuestions count
-    await Exam.findByIdAndUpdate(examId, { 
-      $push: { questions: newQuestion._id },
-      $inc: { totalQuestions: 1 }
-    });
+    await Exam.updateOne(
+      { _id: examId },
+      buildSafeAppendQuestionPipeline(newQuestion._id)
+    );
     
     res.status(201).json({
       success: true,
@@ -1316,10 +1352,10 @@ export const deleteQuestion = async (req, res) => {
     }
     
     // Remove question from exam and decrement totalQuestions count
-    await Exam.findByIdAndUpdate(deletedQuestion.exam, { 
-      $pull: { questions: questionId },
-      $inc: { totalQuestions: -1 }
-    });
+    await Exam.updateOne(
+      { _id: deletedQuestion.exam },
+      buildSafeRemoveQuestionPipeline(deletedQuestion._id)
+    );
     
     res.json({
       success: true,

@@ -86,5 +86,32 @@ export function cleanCsvCell(value) {
     .replace(/\uFEFF/g, '')
     .replace(/\u00A0/g, ' ');
 
+  // Excel frequently auto-converts tokens like "05-6" into calendar text
+  // "05-Jun". For question/options cells we want the numeric form back.
+  const monthToNumber = {
+    jan: '1',
+    feb: '2',
+    mar: '3',
+    apr: '4',
+    may: '5',
+    jun: '6',
+    jul: '7',
+    aug: '8',
+    sep: '9',
+    oct: '10',
+    nov: '11',
+    dec: '12',
+  };
+  s = s.replace(
+    /^(\d{1,2})\s*-\s*(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)$/i,
+    (_, day, mon) => `${String(day)}-${monthToNumber[String(mon).toLowerCase()] || mon}`
+  );
+
+  // If a minus sign was lost and became "?" (or replacement char) before a
+  // number (e.g. "?5" instead of "-5"), restore it.
+  s = s
+    .replace(/(^|[\s,(=])\?(?=\d)/g, '$1-')
+    .replace(/(^|[\s,(=])\uFFFD(?=\d)/g, '$1-');
+
   return s.trim();
 }

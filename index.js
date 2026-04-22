@@ -50,6 +50,38 @@ import {
   getAiToolGenerationsMeta,
 } from './controllers/aiToolGenerationsController.js';
 
+const buildSafeAppendQuestionPipeline = (questionId) => [
+  {
+    $set: {
+      questions: { $cond: [{ $isArray: '$questions' }, '$questions', []] },
+    },
+  },
+  {
+    $set: {
+      questions: { $concatArrays: ['$questions', [questionId]] },
+    },
+  },
+];
+
+const buildSafeRemoveQuestionPipeline = (questionId) => [
+  {
+    $set: {
+      questions: { $cond: [{ $isArray: '$questions' }, '$questions', []] },
+    },
+  },
+  {
+    $set: {
+      questions: {
+        $filter: {
+          input: '$questions',
+          as: 'existingQuestionId',
+          cond: { $ne: ['$$existingQuestionId', questionId] },
+        },
+      },
+    },
+  },
+];
+
 // Load environment variables - explicitly specify path
 const envPath = join(__dirname, '.env');
 const envResult = dotenv.config({ path: envPath });
@@ -3512,7 +3544,10 @@ app.post('/api/admin/exams/:examId/questions', requireAuth, requireAdmin, async 
     console.log('Question saved successfully:', question._id);
 
     // Add question to exam
-    await Exam.findByIdAndUpdate(examId, { $push: { questions: question._id } });
+    await Exam.updateOne(
+      { _id: examId },
+      buildSafeAppendQuestionPipeline(question._id)
+    );
     console.log('Question added to exam:', examId);
 
     res.status(201).json(question);
@@ -3558,7 +3593,10 @@ app.delete('/api/admin/questions/:id', requireAuth, requireAdmin, async (req, re
     }
 
     // Remove question from exam
-    await Exam.findByIdAndUpdate(question.exam, { $pull: { questions: id } });
+    await Exam.updateOne(
+      { _id: question.exam },
+      buildSafeRemoveQuestionPipeline(question._id)
+    );
     
     await Question.findByIdAndDelete(id);
     res.json({ message: 'Question deleted successfully' });

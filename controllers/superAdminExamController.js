@@ -67,6 +67,53 @@ export function normalizeExamClassFields(exam) {
 
 const ALLOWED_EXAM_SUBJECTS = ['maths', 'physics', 'chemistry', 'biology'];
 
+const buildSafeAppendQuestionsPipeline = ({ questionIds = [], totalQuestionsDelta = 0, totalMarksDelta = 0 }) => {
+  const ids = Array.isArray(questionIds) ? questionIds.filter(Boolean) : [];
+  return [
+    {
+      $set: {
+        questions: {
+          $cond: [{ $isArray: '$questions' }, '$questions', []]
+        },
+      },
+    },
+    {
+      $set: {
+        questions: { $concatArrays: ['$questions', ids] },
+        totalQuestions: { $add: [{ $ifNull: ['$totalQuestions', 0] }, totalQuestionsDelta] },
+        totalMarks: { $add: [{ $ifNull: ['$totalMarks', 0] }, totalMarksDelta] },
+      },
+    },
+  ];
+};
+
+const buildSafeRemoveQuestionPipeline = ({ questionId, totalQuestionsDelta = 0, totalMarksDelta = 0 }) => [
+  {
+    $set: {
+      questions: {
+        $cond: [{ $isArray: '$questions' }, '$questions', []]
+      },
+    },
+  },
+  {
+    $set: {
+      questions: {
+        $filter: {
+          input: '$questions',
+          as: 'questionId',
+          cond: { $ne: ['$$questionId', questionId] },
+        },
+      },
+      totalQuestions: {
+        $max: [0, { $add: [{ $ifNull: ['$totalQuestions', 0] }, totalQuestionsDelta] }]
+      },
+      totalMarks: {
+        $max: [0, { $add: [{ $ifNull: ['$totalMarks', 0] }, totalMarksDelta] }]
+      },
+    },
+  },
+];
+
 function buildQuestionDedupKey({
   examId,
   subject,
@@ -720,7 +767,7 @@ export const addQuestion = async (req, res) => {
     });
     const existingQuestions = await Question.find(
       { exam: examId, subject: normalizedQuestionSubject, questionType },
-      { _id: 1, questionText: 1, questionImage: 1 }
+      { _id: 1, questionText: 1, questionImage: 1, marks: 1 }
     ).lean();
     const duplicateQuestion = existingQuestions.find((q) => {
       const key = buildQuestionDedupKey({
@@ -742,7 +789,15 @@ export const addQuestion = async (req, res) => {
 
     if (duplicateQuestion && replaceDuplicate) {
       await Question.findByIdAndDelete(duplicateQuestion._id);
-      await Exam.findByIdAndUpdate(examId, { $pull: { questions: duplicateQuestion._id } });
+      const duplicateMarks = Number(duplicateQuestion.marks) || 0;
+      await Exam.updateOne(
+        { _id: examId },
+        buildSafeRemoveQuestionPipeline({
+          questionId: duplicateQuestion._id,
+          totalQuestionsDelta: -1,
+          totalMarksDelta: -duplicateMarks,
+        })
+      );
       console.log('♻️ Replacing duplicate question:', duplicateQuestion._id);
     }
 
@@ -767,10 +822,14 @@ export const addQuestion = async (req, res) => {
     console.log('✅ Question saved:', question._id);
 
     // Add question to exam + keep totals consistent.
-    await Exam.findByIdAndUpdate(examId, {
-      $push: { questions: question._id },
-      $inc: { totalQuestions: 1, totalMarks: marksValue },
-    });
+    await Exam.updateOne(
+      { _id: examId },
+      buildSafeAppendQuestionsPipeline({
+        questionIds: [question._id],
+        totalQuestionsDelta: 1,
+        totalMarksDelta: marksValue,
+      })
+    );
     console.log('✅ Question added to exam');
 
     res.status(201).json({
@@ -1502,13 +1561,14 @@ export const bulkUploadQuestions = async (req, res) => {
           ).lean()).reduce((sum, q) => sum + (Number(q?.marks) || 0), 0)
         : 0;
 
-      await Exam.findByIdAndUpdate(examId, {
-        $push: { questions: { $each: newQuestionIdsToPush } },
-        $inc: {
-          totalQuestions: newQuestionIdsToPush.length,
-          totalMarks: addedMarks,
-        },
-      });
+      await Exam.updateOne(
+        { _id: examId },
+        buildSafeAppendQuestionsPipeline({
+          questionIds: newQuestionIdsToPush,
+          totalQuestionsDelta: newQuestionIdsToPush.length,
+          totalMarksDelta: addedMarks,
+        })
+      );
     }
 
     console.log(`✅ Bulk question upload completed: ${createdQuestions.length} created, ${errors.length} errors`);
