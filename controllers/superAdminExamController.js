@@ -1085,6 +1085,9 @@ export const bulkUploadQuestions = async (req, res) => {
   try {
     console.log('📝 bulkUploadQuestions controller called');
     const { examId } = req.params;
+    const allowDuplicates = ['true', '1', 'yes', 'on'].includes(
+      String(req.body?.allowDuplicates || '').trim().toLowerCase()
+    );
     
     if (!req.file) {
       return res.status(400).json({ 
@@ -1237,19 +1240,21 @@ export const bulkUploadQuestions = async (req, res) => {
       createdById = new mongoose.Types.ObjectId();
     }
 
-    const existingQuestions = await Question.find(
-      { exam: examId },
-      { subject: 1, questionType: 1, questionText: 1, questionImage: 1 }
-    ).lean();
-    existingQuestions.forEach((q) => {
-      seenQuestionKeys.add(buildQuestionDedupKey({
-        examId,
-        subject: q.subject,
-        questionType: q.questionType,
-        questionText: q.questionText,
-        questionImage: q.questionImage,
-      }));
-    });
+    if (!allowDuplicates) {
+      const existingQuestions = await Question.find(
+        { exam: examId },
+        { subject: 1, questionType: 1, questionText: 1, questionImage: 1 }
+      ).lean();
+      existingQuestions.forEach((q) => {
+        seenQuestionKeys.add(buildQuestionDedupKey({
+          examId,
+          subject: q.subject,
+          questionType: q.questionType,
+          questionText: q.questionText,
+          questionImage: q.questionImage,
+        }));
+      });
+    }
 
     // Collect new question IDs so we can push them into the exam in one update
     // at the end (instead of one $push per question).
@@ -1458,7 +1463,7 @@ export const bulkUploadQuestions = async (req, res) => {
           questionText: newQuestionData.questionText,
           questionImage: newQuestionData.questionImage,
         });
-        if (seenQuestionKeys.has(questionKey)) {
+        if (!allowDuplicates && seenQuestionKeys.has(questionKey)) {
           errors.push(`Row ${i + 1}: Duplicate question skipped for subject "${newQuestionData.subject}"`);
           continue;
         }
@@ -1466,7 +1471,9 @@ export const bulkUploadQuestions = async (req, res) => {
         // Create question
         const newQuestion = new Question(newQuestionData);
         await newQuestion.save();
-        seenQuestionKeys.add(questionKey);
+        if (!allowDuplicates) {
+          seenQuestionKeys.add(questionKey);
+        }
         newQuestionIdsToPush.push(newQuestion._id);
 
         createdQuestions.push({
@@ -1511,6 +1518,7 @@ export const bulkUploadQuestions = async (req, res) => {
       message: `Successfully created ${createdQuestions.length} question(s)${errors.length > 0 ? ` with ${errors.length} error(s)` : ''}`,
       created: createdQuestions.length,
       data: createdQuestions,
+      allowDuplicates,
       errors: errors.length > 0 ? errors : undefined
     });
   } catch (error) {
