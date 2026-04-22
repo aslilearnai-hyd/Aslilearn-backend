@@ -845,6 +845,30 @@ async function hydrateExamQuestions(examDoc, { hideAnswers = false } = {}) {
       .lean();
   }
 
+  // Legacy fallback: some exams may have embedded question objects stored
+  // directly in Exam.questions instead of Question documents.
+  if (!linkedQuestions.length && Array.isArray(examDoc.questions) && examDoc.questions.length > 0) {
+    const embeddedQuestions = examDoc.questions
+      .filter((q) => q && typeof q === 'object')
+      .filter((q) => q.questionText || q.questionImage || q.questionType || q.options)
+      .map((q, index) => ({
+        _id: q._id || `embedded-${examId}-${index}`,
+        questionText: q.questionText || '',
+        questionImage: q.questionImage || undefined,
+        questionType: q.questionType || 'mcq',
+        options: Array.isArray(q.options) ? q.options : [],
+        correctAnswer: q.correctAnswer,
+        marks: Number(q.marks) || 1,
+        negativeMarks: Number(q.negativeMarks) || 0,
+        explanation: q.explanation || undefined,
+        subject: String(q.subject || 'maths').toLowerCase(),
+        exam: examId,
+      }));
+    if (embeddedQuestions.length > 0) {
+      linkedQuestions = embeddedQuestions;
+    }
+  }
+
   let normalizedQuestions = Array.isArray(linkedQuestions) ? linkedQuestions : [];
   const normalizedTotalMarks = normalizedQuestions.reduce((sum, q) => sum + (Number(q?.marks) || 0), 0);
 
@@ -919,11 +943,19 @@ router.get('/exams', async (req, res) => {
       exams.map((exam) => hydrateExamQuestions(exam, { hideAnswers: true }))
     );
 
-    console.log(`✅ Found ${hydratedExams.length} exams for student (all boards visible)`);
+    // Only show exams that have uploaded questions.
+    // This prevents "No questions found in this exam" on student dashboard.
+    const publishedExams = hydratedExams.filter(
+      (exam) => Array.isArray(exam?.questions) && exam.questions.length > 0
+    );
+
+    console.log(
+      `✅ Found ${publishedExams.length} exams with questions for student (from ${hydratedExams.length} total)`
+    );
     
     res.json({
       success: true,
-      data: hydratedExams
+      data: publishedExams
     });
   } catch (error) {
     console.error('Error fetching student exams:', error);
@@ -977,6 +1009,13 @@ router.get('/exams/:examId', async (req, res) => {
     }
 
     const hydratedExam = await hydrateExamQuestions(exam, { hideAnswers: true });
+
+    if (!Array.isArray(hydratedExam?.questions) || hydratedExam.questions.length === 0) {
+      return res.status(404).json({
+        success: false,
+        message: 'Exam is not available yet. Questions have not been uploaded.'
+      });
+    }
 
     res.json({
       success: true,
@@ -1508,11 +1547,37 @@ router.get('/exam-results', async (req, res) => {
       .populate('examId', '_id title examType duration totalQuestions totalMarks')
       .sort({ completedAt: -1 });
     
+    // Keep only the latest result per exam to avoid cross-screen mismatches
+    // when legacy/duplicate rows exist for the same exam attempt.
+    const latestByExam = new Map();
+    for (const row of results) {
+      const examIdKey = row?.examId?._id?.toString?.() || row?.examId?.toString?.();
+      const fallbackTitleKey = row?.examTitle ? `title:${String(row.examTitle).trim().toLowerCase()}` : null;
+      const key = examIdKey || fallbackTitleKey || `result:${row?._id?.toString?.() || Math.random()}`;
+      if (!latestByExam.has(key)) {
+        latestByExam.set(key, row);
+      }
+    }
+    const dedupedResults = Array.from(latestByExam.values());
+    const normalizedResults = dedupedResults.map((row) => {
+      const attempted = Number(row?.correctAnswers || 0) + Number(row?.wrongAnswers || 0);
+      const derivedPercentage = attempted > 0
+        ? Math.round((Number(row?.correctAnswers || 0) / attempted) * 10000) / 100
+        : 0;
+
+      const plain = typeof row?.toObject === 'function' ? row.toObject() : row;
+      return {
+        ...plain,
+        percentage: derivedPercentage,
+      };
+    });
+    
     console.log(`✅ Found ${results.length} exam results for student ${req.userId}`);
+    console.log(`📋 Returning ${normalizedResults.length} deduplicated latest results`);
     console.log(`📋 Query filter used: { userId: ${userId} }`);
     
     // Verify all results belong to this user
-    const invalidResults = results.filter(r => {
+    const invalidResults = normalizedResults.filter(r => {
       const resultUserId = r.userId?.toString ? r.userId.toString() : String(r.userId);
       return resultUserId !== String(userId);
     });
@@ -1520,7 +1585,7 @@ router.get('/exam-results', async (req, res) => {
     if (invalidResults.length > 0) {
       console.error(`⚠️ WARNING: Found ${invalidResults.length} results that don't belong to user ${req.userId}`);
       // Filter out invalid results
-      const validResults = results.filter(r => {
+      const validResults = normalizedResults.filter(r => {
         const resultUserId = r.userId?.toString ? r.userId.toString() : String(r.userId);
         return resultUserId === String(userId);
       });
@@ -1533,17 +1598,18 @@ router.get('/exam-results', async (req, res) => {
     }
     
     // Log first result structure for debugging
-    if (results.length > 0) {
+    if (normalizedResults.length > 0) {
       console.log('📋 Sample result structure:', {
-        examId: results[0].examId?._id?.toString(),
-        userId: results[0].userId?.toString(),
-        examTitle: results[0].examTitle || results[0].examId?.title
+        examId: normalizedResults[0].examId?._id?.toString(),
+        userId: normalizedResults[0].userId?.toString(),
+        examTitle: normalizedResults[0].examTitle || normalizedResults[0].examId?.title,
+        percentage: normalizedResults[0].percentage,
       });
     }
     
     res.json({
       success: true,
-      data: results
+      data: normalizedResults
     });
   } catch (error) {
     console.error('❌ Error fetching exam results:', error);
@@ -1758,31 +1824,74 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       };
     });
 
-    const fallbackQuestionInsights = questionAttemptDetails.map((q) => {
+    const formatAnswer = (value) => {
+      if (Array.isArray(value)) {
+        const items = value.map((v) => String(v || '').trim()).filter(Boolean);
+        return items.length ? items.join(', ') : 'not answered';
+      }
+      const text = String(value || '').trim();
+      return text || 'not answered';
+    };
+
+    const shortConcept = (value) => {
+      const cleaned = String(value || '').replace(/\s+/g, ' ').trim();
+      if (!cleaned) return 'this concept';
+      const words = cleaned.split(' ').slice(0, 8).join(' ');
+      return words.length > 70 ? `${words.slice(0, 67)}...` : words;
+    };
+
+    const buildQuestionInsight = (q) => {
       const status = q.isCorrect ? 'correct' : q.userAnswer ? 'wrong' : 'unattempted';
+      const userAnswerText = formatAnswer(q.userAnswer);
+      const correctAnswerText = formatAnswer(q.correctAnswer);
+      const concept = shortConcept(q.questionText);
+      const explanationHint = String(q.explanation || '').trim();
+      const explanationLine = explanationHint
+        ? `Review explanation hint: "${explanationHint}".`
+        : 'Use the provided solution/explanation to build your correction notes.';
+
+      if (status === 'correct') {
+        return {
+          index: q.index,
+          questionId: q.questionId,
+          subject: q.subject || 'general',
+          questionType: q.questionType || 'mcq',
+          status,
+          conceptGap: `Correct on "${concept}". Keep the same reasoning pattern for similar ${q.questionType || 'exam'} questions.`,
+          fixStrategy: `Create 1-2 harder variations of this question type and solve without hints. ${explanationLine}`,
+          practiceTask: `Practice 2 similar ${q.subject || 'subject'} questions and explain each final step in your own words.`,
+          priority: 'low',
+        };
+      }
+
+      if (status === 'unattempted') {
+        return {
+          index: q.index,
+          questionId: q.questionId,
+          subject: q.subject || 'general',
+          questionType: q.questionType || 'mcq',
+          status,
+          conceptGap: `Skipped "${concept}", likely due to time pressure or low confidence on this concept.`,
+          fixStrategy: `Attempt this question in 90 seconds using elimination/step checkpoints first, then verify accuracy. ${explanationLine}`,
+          practiceTask: `Do 4 timed practice questions on this topic (${q.subject || 'subject'}) and force an attempt for each.`,
+          priority: 'medium',
+        };
+      }
+
       return {
         index: q.index,
         questionId: q.questionId,
         subject: q.subject || 'general',
         questionType: q.questionType || 'mcq',
         status,
-        conceptGap:
-          status === 'correct'
-            ? 'Solved correctly; preserve this approach.'
-            : status === 'wrong'
-            ? 'Concept application or option selection error.'
-            : 'Question skipped due to low confidence or time pressure.',
-        fixStrategy:
-          status === 'correct'
-            ? 'Reinforce with one variation from the same concept.'
-            : 'Re-solve step by step and note the concept trigger before selecting an answer.',
-        practiceTask:
-          status === 'correct'
-            ? 'Practice 2 similar questions.'
-            : 'Practice 5 targeted questions from this concept with a timer.',
-        priority: status === 'correct' ? 'low' : status === 'wrong' ? 'high' : 'medium',
+        conceptGap: `On "${concept}", selected "${userAnswerText}" but correct is "${correctAnswerText}".`,
+        fixStrategy: `Re-solve this question step by step and write a one-line rule to avoid this error pattern. ${explanationLine}`,
+        practiceTask: `Practice 5 targeted ${q.subject || 'subject'} questions of ${q.questionType || 'same'} type with a timer.`,
+        priority: 'high',
       };
-    });
+    };
+
+    const fallbackQuestionInsights = questionAttemptDetails.map(buildQuestionInsight);
 
     const prompt = `
 You are AsliLearn AI Performance Mentor.
@@ -1979,8 +2088,59 @@ Important:
         why: `Recommended to improve ${v.subject || 'this'} understanding.`,
       }));
     }
-    if (!Array.isArray(aiParsed.questionInsights) || aiParsed.questionInsights.length === 0) {
+    const genericPatterns = [
+      /concept application or option selection error/i,
+      /question skipped due to low confidence or time pressure/i,
+      /solved correctly; preserve this approach/i,
+      /re-solve step by step and note the concept trigger/i,
+      /practice 5 targeted questions from this concept/i,
+      /practice 2 similar questions/i,
+    ];
+    const isTooGeneric = (item = {}) => {
+      const combined = `${item.conceptGap || ''} ${item.fixStrategy || ''} ${item.practiceTask || ''}`.trim();
+      if (!combined) return true;
+      return genericPatterns.some((pattern) => pattern.test(combined));
+    };
+
+    const aiInsights = Array.isArray(aiParsed.questionInsights) ? aiParsed.questionInsights : [];
+    if (aiInsights.length === 0) {
       aiParsed.questionInsights = fallbackQuestionInsights;
+    } else {
+      const aiByKey = new Map();
+      aiInsights.forEach((item, idx) => {
+        const key = item?.questionId ? `id:${String(item.questionId)}` : `idx:${Number(item?.index || idx + 1)}`;
+        aiByKey.set(key, item || {});
+      });
+
+      aiParsed.questionInsights = questionAttemptDetails.map((q) => {
+        const fallback = buildQuestionInsight(q);
+        const aiItem =
+          aiByKey.get(`id:${q.questionId}`) ||
+          aiByKey.get(`idx:${q.index}`) ||
+          {};
+
+        if (isTooGeneric(aiItem)) {
+          return fallback;
+        }
+
+        return {
+          ...fallback,
+          ...aiItem,
+          index: q.index,
+          questionId: q.questionId,
+          subject: q.subject || aiItem.subject || 'general',
+          questionType: q.questionType || aiItem.questionType || 'mcq',
+          status: ['correct', 'wrong', 'unattempted'].includes(String(aiItem.status || '').toLowerCase())
+            ? String(aiItem.status).toLowerCase()
+            : fallback.status,
+          conceptGap: String(aiItem.conceptGap || fallback.conceptGap),
+          fixStrategy: String(aiItem.fixStrategy || fallback.fixStrategy),
+          practiceTask: String(aiItem.practiceTask || fallback.practiceTask),
+          priority: ['high', 'medium', 'low'].includes(String(aiItem.priority || '').toLowerCase())
+            ? String(aiItem.priority).toLowerCase()
+            : fallback.priority,
+        };
+      });
     }
 
     res.json({
@@ -2004,6 +2164,88 @@ Important:
   }
 });
 
+// Get full review payload for an attempted exam (includes correct answers).
+router.get('/exam-results/:examId/review', async (req, res) => {
+  try {
+    const { examId } = req.params;
+    if (!req.userId) {
+      return res.status(401).json({ success: false, message: 'User not authenticated' });
+    }
+    if (!examId) {
+      return res.status(400).json({ success: false, message: 'examId is required' });
+    }
+
+    const ExamResult = (await import('../models/ExamResult.js')).default;
+    const latestResult = await ExamResult.findOne({
+      userId: req.userId,
+      examId,
+    })
+      .sort({ completedAt: -1, updatedAt: -1, createdAt: -1 })
+      .lean();
+
+    if (!latestResult) {
+      return res.status(404).json({ success: false, message: 'No attempted result found for this exam' });
+    }
+
+    const examDoc = await Exam.findById(examId).lean();
+    let questions = await Question.find({ exam: examId, isActive: { $ne: false } })
+      .sort({ createdAt: 1, _id: 1 })
+      .lean();
+
+    if (!questions.length && Array.isArray(examDoc?.questions) && examDoc.questions.length > 0) {
+      questions = await Question.find({
+        _id: { $in: examDoc.questions.map((q) => q?._id || q).filter(Boolean) },
+        isActive: { $ne: false }
+      })
+        .sort({ createdAt: 1, _id: 1 })
+        .lean();
+    }
+
+    // Legacy fallback for embedded questions in Exam.questions.
+    if (!questions.length && Array.isArray(examDoc?.questions) && examDoc.questions.length > 0) {
+      questions = examDoc.questions
+        .filter((q) => q && typeof q === 'object')
+        .filter((q) => q.questionText || q.questionImage || q.questionType || q.options)
+        .map((q, index) => ({
+          _id: q._id || `embedded-${examId}-${index}`,
+          questionText: q.questionText || '',
+          questionImage: q.questionImage || undefined,
+          questionType: q.questionType || 'mcq',
+          options: Array.isArray(q.options) ? q.options : [],
+          correctAnswer: q.correctAnswer,
+          marks: Number(q.marks) || 1,
+          negativeMarks: Number(q.negativeMarks) || 0,
+          explanation: q.explanation || undefined,
+          subject: String(q.subject || 'maths').toLowerCase(),
+          exam: examId,
+        }));
+    }
+
+    return res.json({
+      success: true,
+      data: {
+        result: latestResult,
+        exam: examDoc
+          ? {
+              _id: examDoc._id,
+              title: examDoc.title,
+              totalQuestions: examDoc.totalQuestions,
+              totalMarks: examDoc.totalMarks,
+            }
+          : null,
+        questions,
+      },
+    });
+  } catch (error) {
+    console.error('❌ Error fetching exam review payload:', error);
+    return res.status(500).json({
+      success: false,
+      message: 'Failed to fetch exam review payload',
+      error: error.message,
+    });
+  }
+});
+
 // Extract the comparable text of a stored correctAnswer value, handling the
 // legacy shapes we've seen in the DB: plain string, number, option-object
 // `{ text }`, or `{ label }`.
@@ -2016,6 +2258,80 @@ function extractAnswerText(value) {
   return String(value);
 }
 
+function buildOptionMeta(question) {
+  const options = Array.isArray(question?.options) ? question.options : [];
+  return options.map((opt, index) => {
+    const text = extractAnswerText(opt).trim();
+    const textNorm = text.toLowerCase();
+    const id = String(opt?._id || '').trim();
+    return {
+      index,
+      letter: String.fromCharCode(65 + index),
+      text,
+      textNorm,
+      id,
+    };
+  });
+}
+
+function resolveAnswerToken(question, value) {
+  const raw = extractAnswerText(value).trim();
+  if (!raw) return '';
+  const rawNorm = raw.toLowerCase();
+
+  if (question?.questionType === 'integer') {
+    return rawNorm;
+  }
+
+  const optionMeta = buildOptionMeta(question);
+  if (!optionMeta.length) return rawNorm;
+
+  // Numeric answer token: support both 0-based and 1-based legacy formats.
+  if (/^-?\d+$/.test(rawNorm)) {
+    const n = parseInt(rawNorm, 10);
+    if (n >= 0 && n < optionMeta.length) return optionMeta[n].textNorm;
+    if (n >= 1 && n <= optionMeta.length) return optionMeta[n - 1].textNorm;
+  }
+
+  // Letter token: A/B/C/D.
+  if (/^[a-z]$/i.test(rawNorm)) {
+    const byLetter = optionMeta.find((o) => o.letter.toLowerCase() === rawNorm);
+    if (byLetter) return byLetter.textNorm;
+  }
+
+  // Option-A / option1 style token.
+  const optionMatch = rawNorm.match(/^option\s*([a-z0-9])$/);
+  if (optionMatch) {
+    const token = optionMatch[1];
+    if (/^\d$/.test(token)) {
+      const n = parseInt(token, 10);
+      if (n >= 1 && n <= optionMeta.length) return optionMeta[n - 1].textNorm;
+      if (n >= 0 && n < optionMeta.length) return optionMeta[n].textNorm;
+    }
+    if (/^[a-z]$/.test(token)) {
+      const byLetter = optionMeta.find((o) => o.letter.toLowerCase() === token);
+      if (byLetter) return byLetter.textNorm;
+    }
+  }
+
+  // Match by option id.
+  const byId = optionMeta.find((o) => o.id && o.id === raw);
+  if (byId) return byId.textNorm;
+
+  // Match by normalized option text.
+  const byText = optionMeta.find((o) => o.textNorm && o.textNorm === rawNorm);
+  if (byText) return byText.textNorm;
+
+  return rawNorm;
+}
+
+function resolveAnswerList(question, value) {
+  const list = Array.isArray(value) ? value : [value];
+  return list
+    .map((item) => resolveAnswerToken(question, item))
+    .filter(Boolean);
+}
+
 // Single source of truth for "is this user answer correct for this question".
 // Mirrors the client's previous checkAnswer so existing exams grade identically.
 function isAnswerCorrect(question, userAnswer) {
@@ -2024,29 +2340,25 @@ function isAnswerCorrect(question, userAnswer) {
   }
 
   if (question.questionType === 'integer') {
-    const userNum = Number(String(userAnswer).trim());
-    const correctNum = Number(String(extractAnswerText(question.correctAnswer)).trim());
+    const userResolved = resolveAnswerToken(question, userAnswer);
+    const correctResolved = resolveAnswerToken(question, question.correctAnswer);
+    const userNum = Number(userResolved);
+    const correctNum = Number(correctResolved);
     if (Number.isFinite(userNum) && Number.isFinite(correctNum)) {
       return userNum === correctNum;
     }
-    return String(userAnswer).trim() === String(question.correctAnswer).trim();
+    return userResolved === correctResolved;
   }
 
   if (question.questionType === 'mcq') {
-    const correctText = extractAnswerText(question.correctAnswer).trim().toLowerCase();
-    const userText = extractAnswerText(userAnswer).trim().toLowerCase();
+    const correctText = resolveAnswerToken(question, question.correctAnswer);
+    const userText = resolveAnswerToken(question, userAnswer);
     return !!correctText && userText === correctText;
   }
 
   if (question.questionType === 'multiple') {
-    const correctList = (Array.isArray(question.correctAnswer)
-      ? question.correctAnswer
-      : [question.correctAnswer])
-      .map((v) => extractAnswerText(v).trim().toLowerCase())
-      .filter(Boolean);
-    const userList = (Array.isArray(userAnswer) ? userAnswer : [userAnswer])
-      .map((v) => extractAnswerText(v).trim().toLowerCase())
-      .filter(Boolean);
+    const correctList = resolveAnswerList(question, question.correctAnswer);
+    const userList = resolveAnswerList(question, userAnswer);
     if (correctList.length !== userList.length) return false;
     const userSet = new Set(userList);
     return correctList.every((a) => userSet.has(a));
@@ -2090,6 +2402,35 @@ router.post('/exam-results', async (req, res) => {
     const questions = await Question.find({ exam: examId, isActive: { $ne: false } })
       .sort({ createdAt: 1, _id: 1 })
       .lean();
+    let effectiveQuestions = Array.isArray(questions) ? questions : [];
+
+    if (!effectiveQuestions.length && Array.isArray(examDoc?.questions) && examDoc.questions.length > 0) {
+      effectiveQuestions = await Question.find({
+        _id: { $in: examDoc.questions.map((q) => q?._id || q).filter(Boolean) },
+        isActive: { $ne: false }
+      })
+        .sort({ createdAt: 1, _id: 1 })
+        .lean();
+    }
+
+    if (!effectiveQuestions.length && Array.isArray(examDoc?.questions) && examDoc.questions.length > 0) {
+      effectiveQuestions = examDoc.questions
+        .filter((q) => q && typeof q === 'object')
+        .filter((q) => q.questionText || q.questionImage || q.questionType || q.options)
+        .map((q, index) => ({
+          _id: q._id || `embedded-${examId}-${index}`,
+          questionText: q.questionText || '',
+          questionImage: q.questionImage || undefined,
+          questionType: q.questionType || 'mcq',
+          options: Array.isArray(q.options) ? q.options : [],
+          correctAnswer: q.correctAnswer,
+          marks: Number(q.marks) || 1,
+          negativeMarks: Number(q.negativeMarks) || 0,
+          explanation: q.explanation || undefined,
+          subject: String(q.subject || 'maths').toLowerCase(),
+          exam: examId,
+        }));
+    }
 
     const answerMap = (answers && typeof answers === 'object') ? answers : {};
 
@@ -2104,7 +2445,7 @@ router.post('/exam-results', async (req, res) => {
       biology: { correct: 0, total: 0, marks: 0 },
     };
 
-    questions.forEach((q) => {
+    effectiveQuestions.forEach((q) => {
       const qId = String(q._id);
       const userAnswer = answerMap[qId];
       const marks = Number(q.marks) || 0;
@@ -2124,10 +2465,13 @@ router.post('/exam-results', async (req, res) => {
       }
     });
 
-    const totalQuestions = questions.length;
+    const totalQuestions = effectiveQuestions.length;
     const unattempted = Math.max(0, totalQuestions - correctAnswers - wrongAnswers);
-    const percentage = totalMarks > 0
-      ? Math.round((obtainedMarks / totalMarks) * 10000) / 100
+    // Student-facing percentage should align with visible "accuracy" metric:
+    // correct answers out of attempted questions.
+    const attemptedCount = correctAnswers + wrongAnswers;
+    const percentage = attemptedCount > 0
+      ? Math.round((correctAnswers / attemptedCount) * 10000) / 100
       : 0;
 
     const resultData = {
@@ -2150,8 +2494,16 @@ router.post('/exam-results', async (req, res) => {
     };
 
     const ExamResult = (await import('../models/ExamResult.js')).default;
-    const examResult = new ExamResult(resultData);
-    await examResult.save();
+    // Keep a single authoritative result per student+exam.
+    const examResult = await ExamResult.findOneAndUpdate(
+      { userId: req.userId, examId },
+      { $set: resultData },
+      {
+        new: true,
+        upsert: true,
+        setDefaultsOnInsert: true,
+      }
+    );
 
     console.log('✅ Exam result saved (server-graded)');
     console.log('📋 Scored:', {
@@ -2172,7 +2524,7 @@ router.post('/exam-results', async (req, res) => {
       message: 'Result saved successfully',
       data: {
         ...examResult.toObject(),
-        questions,
+        questions: effectiveQuestions,
       },
     });
   } catch (error) {
