@@ -547,7 +547,8 @@ export const addQuestion = async (req, res) => {
       negativeMarks,
       explanation,
       subject,
-      board
+      board,
+      replaceDuplicate = false
     } = req.body;
 
     // Validate ObjectId format
@@ -673,9 +674,9 @@ export const addQuestion = async (req, res) => {
     });
     const existingQuestions = await Question.find(
       { exam: examId, subject: normalizedQuestionSubject, questionType },
-      { questionText: 1, questionImage: 1 }
+      { _id: 1, questionText: 1, questionImage: 1 }
     ).lean();
-    const isDuplicate = existingQuestions.some((q) => {
+    const duplicateQuestion = existingQuestions.find((q) => {
       const key = buildQuestionDedupKey({
         examId,
         subject: normalizedQuestionSubject,
@@ -685,11 +686,18 @@ export const addQuestion = async (req, res) => {
       });
       return key === duplicateKey;
     });
-    if (isDuplicate) {
+    if (duplicateQuestion && !replaceDuplicate) {
       return res.status(409).json({
         success: false,
         message: 'Duplicate question already exists for this exam and subject',
+        duplicateQuestionId: duplicateQuestion._id,
       });
+    }
+
+    if (duplicateQuestion && replaceDuplicate) {
+      await Question.findByIdAndDelete(duplicateQuestion._id);
+      await Exam.findByIdAndUpdate(examId, { $pull: { questions: duplicateQuestion._id } });
+      console.log('♻️ Replacing duplicate question:', duplicateQuestion._id);
     }
 
     const question = new Question({
@@ -784,8 +792,54 @@ export const bulkUploadExams = async (req, res) => {
       return result;
     };
 
+    const toOptionIndex = (token, options) => {
+      const normalizedToken = String(token || '').trim().toLowerCase();
+      if (!normalizedToken || !Array.isArray(options) || options.length === 0) {
+        return -1;
+      }
+
+      if (/^\d+$/.test(normalizedToken)) {
+        const numeric = parseInt(normalizedToken, 10);
+        // Support both 0-based and 1-based index values in CSV.
+        if (numeric >= 0 && numeric < options.length) return numeric;
+        if (numeric >= 1 && numeric <= options.length) return numeric - 1;
+      }
+
+      if (/^[a-z]$/.test(normalizedToken)) {
+        const alphaIndex = normalizedToken.charCodeAt(0) - 97;
+        if (alphaIndex >= 0 && alphaIndex < options.length) return alphaIndex;
+      }
+
+      const optionMatch = normalizedToken.match(/^option\s*([a-z0-9])$/);
+      if (optionMatch) {
+        const optionToken = optionMatch[1];
+        if (/^\d$/.test(optionToken)) {
+          const n = parseInt(optionToken, 10);
+          if (n >= 1 && n <= options.length) return n - 1;
+          if (n >= 0 && n < options.length) return n;
+        }
+        if (/^[a-z]$/.test(optionToken)) {
+          const alphaIndex = optionToken.charCodeAt(0) - 97;
+          if (alphaIndex >= 0 && alphaIndex < options.length) return alphaIndex;
+        }
+      }
+
+      // Also support passing the exact option text as the answer.
+      const textIndex = options.findIndex(
+        (opt) => String(opt?.text || '').trim().toLowerCase() === normalizedToken
+      );
+      return textIndex;
+    };
+
+    const normalizeHeader = (header) =>
+      String(header || '')
+        .trim()
+        .toLowerCase()
+        .replace(/^"|"$/g, '')
+        .replace(/[^a-z0-9]/g, '');
+
     // Get header row
-    const headers = parseCSVLine(lines[0]).map(h => h.trim().toLowerCase().replace(/^"|"$/g, ''));
+    const headers = parseCSVLine(lines[0]).map((h) => normalizeHeader(h));
     
     // Validate required headers
     const requiredHeaders = ['title', 'examtype', 'classnumber', 'subject', 'maxattempts', 'board', 'duration', 'totalquestions', 'totalmarks', 'startdate', 'enddate'];
@@ -1036,8 +1090,52 @@ export const bulkUploadQuestions = async (req, res) => {
       return result;
     };
 
+    const normalizeHeader = (header) =>
+      String(header || '')
+        .trim()
+        .toLowerCase()
+        .replace(/^"|"$/g, '')
+        .replace(/[^a-z0-9]/g, '');
+
+    const toOptionIndex = (token, options) => {
+      const normalizedToken = String(token || '').trim().toLowerCase();
+      if (!normalizedToken || !Array.isArray(options) || options.length === 0) {
+        return -1;
+      }
+
+      if (/^\d+$/.test(normalizedToken)) {
+        const numeric = parseInt(normalizedToken, 10);
+        if (numeric >= 0 && numeric < options.length) return numeric; // 0-based
+        if (numeric >= 1 && numeric <= options.length) return numeric - 1; // 1-based
+      }
+
+      if (/^[a-z]$/.test(normalizedToken)) {
+        const alphaIndex = normalizedToken.charCodeAt(0) - 97;
+        if (alphaIndex >= 0 && alphaIndex < options.length) return alphaIndex;
+      }
+
+      const optionMatch = normalizedToken.match(/^option\s*([a-z0-9])$/);
+      if (optionMatch) {
+        const optionToken = optionMatch[1];
+        if (/^\d$/.test(optionToken)) {
+          const n = parseInt(optionToken, 10);
+          if (n >= 1 && n <= options.length) return n - 1;
+          if (n >= 0 && n < options.length) return n;
+        }
+        if (/^[a-z]$/.test(optionToken)) {
+          const idx = optionToken.charCodeAt(0) - 97;
+          if (idx >= 0 && idx < options.length) return idx;
+        }
+      }
+
+      const textIndex = options.findIndex(
+        (opt) => String(opt?.text || '').trim().toLowerCase() === normalizedToken
+      );
+      return textIndex;
+    };
+
     // Get header row
-    const headers = parseCSVLine(lines[0]).map(h => h.trim().toLowerCase().replace(/^"|"$/g, ''));
+    const headers = parseCSVLine(lines[0]).map((h) => normalizeHeader(h));
     
     // Validate required headers
     const requiredHeaders = ['questiontext', 'questiontype', 'subject', 'marks'];
@@ -1089,22 +1187,32 @@ export const bulkUploadQuestions = async (req, res) => {
         headers.forEach((header, index) => {
           questionData[header] = values[index]?.trim() || '';
         });
+        const getRowValue = (...keys) => {
+          for (const key of keys) {
+            const normalizedKey = normalizeHeader(key);
+            const val = questionData[normalizedKey];
+            if (val !== undefined && String(val).trim() !== '') {
+              return String(val).trim();
+            }
+          }
+          return '';
+        };
 
         // Validate required fields
-        if (!questionData.questiontext && !questionData.questionimage) {
+        if (!getRowValue('questiontext', 'question_text') && !getRowValue('questionimage', 'question_image')) {
           errors.push(`Row ${i + 1}: Either questionText or questionImage is required`);
           continue;
         }
 
         // Validate questionType
-        const questionType = (questionData.questiontype || 'mcq').toLowerCase();
+        const questionType = (getRowValue('questiontype', 'question_type', 'type') || 'mcq').toLowerCase();
         if (!['mcq', 'multiple', 'integer'].includes(questionType)) {
           errors.push(`Row ${i + 1}: Invalid questionType "${questionType}". Must be one of: mcq, multiple, integer`);
           continue;
         }
 
         // Validate subject
-        const subject = String(questionData.subject || '').trim().toLowerCase() || examAllowedSubjects[0] || 'maths';
+        const subject = String(getRowValue('subject') || '').trim().toLowerCase() || examAllowedSubjects[0] || 'maths';
         if (!ALLOWED_EXAM_SUBJECTS.includes(subject)) {
           errors.push(`Row ${i + 1}: Invalid subject "${subject}". Must be one of: ${ALLOWED_EXAM_SUBJECTS.join(', ')}`);
           continue;
@@ -1118,8 +1226,11 @@ export const bulkUploadQuestions = async (req, res) => {
         let options = [];
         if (questionType === 'mcq' || questionType === 'multiple') {
           for (let j = 1; j <= 4; j++) {
-            const optionKey = `option${j}`;
-            const optionValue = questionData[optionKey.toLowerCase()];
+            const optionValue = getRowValue(
+              `option${j}`,
+              `option_${j}`,
+              `option ${j}`,
+            );
             if (optionValue) {
               options.push({ text: optionValue, isCorrect: false });
             }
@@ -1133,7 +1244,7 @@ export const bulkUploadQuestions = async (req, res) => {
         // Parse correct answer based on question type
         let correctAnswer;
         if (questionType === 'integer') {
-          const integerAns = questionData.integeranswer || questionData.correctanswer;
+          const integerAns = getRowValue('integeranswer', 'integer_answer', 'correctanswer', 'correct_answer', 'answer');
           if (!integerAns) {
             errors.push(`Row ${i + 1}: integerAnswer is required for integer type questions`);
             continue;
@@ -1145,19 +1256,29 @@ export const bulkUploadQuestions = async (req, res) => {
           }
           correctAnswer = parsedInt;
         } else if (questionType === 'multiple') {
-          const correctAnswersStr = questionData.correctanswers || questionData.correctanswer;
+          const correctAnswersStr = getRowValue(
+            'correctanswers',
+            'correct_answers',
+            'correctanswer',
+            'correct_answer',
+            'answer'
+          );
           if (!correctAnswersStr) {
             errors.push(`Row ${i + 1}: correctAnswers is required for multiple choice questions`);
             continue;
           }
-          // Parse comma-separated indices
-          const indices = correctAnswersStr.split(',').map(idx => parseInt(idx.trim())).filter(idx => !isNaN(idx));
-          if (indices.length === 0) {
+          // Parse comma/semicolon separated values: accepts 0/1-based indices, letters (a-d), optionN, or option text.
+          const indices = correctAnswersStr
+            .split(/[;,]/)
+            .map((token) => toOptionIndex(token, options))
+            .filter((idx) => idx >= 0 && idx < options.length);
+          const uniqueIndices = [...new Set(indices)];
+          if (uniqueIndices.length === 0) {
             errors.push(`Row ${i + 1}: Invalid correctAnswers format`);
             continue;
           }
           // Convert indices to option texts
-          correctAnswer = indices.map(idx => {
+          correctAnswer = uniqueIndices.map(idx => {
             if (options[idx]) {
               return options[idx].text;
             }
@@ -1169,13 +1290,20 @@ export const bulkUploadQuestions = async (req, res) => {
           }
         } else {
           // MCQ - single answer
-          const correctAnswerStr = questionData.correctanswer;
+          const correctAnswerStr =
+            getRowValue(
+              'correctanswer',
+              'correct_answer',
+              'correctanswers',
+              'correct_answers',
+              'answer'
+            );
           if (!correctAnswerStr) {
             errors.push(`Row ${i + 1}: correctAnswer is required for MCQ questions`);
             continue;
           }
-          const answerIndex = parseInt(correctAnswerStr);
-          if (isNaN(answerIndex) || !options[answerIndex]) {
+          const answerIndex = toOptionIndex(correctAnswerStr, options);
+          if (answerIndex < 0 || !options[answerIndex]) {
             errors.push(`Row ${i + 1}: Invalid correctAnswer index`);
             continue;
           }
@@ -1183,24 +1311,24 @@ export const bulkUploadQuestions = async (req, res) => {
         }
 
         // Validate marks
-        const marks = parseInt(questionData.marks) || 1;
+        const marks = parseInt(getRowValue('marks')) || 1;
         if (isNaN(marks) || marks <= 0) {
           errors.push(`Row ${i + 1}: Invalid marks`);
           continue;
         }
 
-        const negativeMarks = parseFloat(questionData.negativemarks) || 0;
+        const negativeMarks = parseFloat(getRowValue('negativemarks', 'negative_marks', 'negativeMarks')) || 0;
 
         // Create question data object
         const newQuestionData = {
-          questionText: questionData.questiontext || undefined,
-          questionImage: questionData.questionimage || undefined,
+          questionText: getRowValue('questiontext', 'question_text') || undefined,
+          questionImage: getRowValue('questionimage', 'question_image') || undefined,
           questionType,
           options: questionType === 'integer' ? [] : options,
           correctAnswer,
           marks,
           negativeMarks,
-          explanation: questionData.explanation || undefined,
+          explanation: getRowValue('explanation') || undefined,
           subject,
           exam: examId,
           board: exam.board,
