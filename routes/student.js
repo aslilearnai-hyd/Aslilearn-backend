@@ -1560,9 +1560,12 @@ router.get('/exam-results', async (req, res) => {
     }
     const dedupedResults = Array.from(latestByExam.values());
     const normalizedResults = dedupedResults.map((row) => {
-      const attempted = Number(row?.correctAnswers || 0) + Number(row?.wrongAnswers || 0);
-      const derivedPercentage = attempted > 0
-        ? Math.round((Number(row?.correctAnswers || 0) / attempted) * 10000) / 100
+      const correct = Number(row?.correctAnswers || 0);
+      const wrong = Number(row?.wrongAnswers || 0);
+      const unattempted = Number(row?.unattempted || 0);
+      const total = Number(row?.totalQuestions || 0) || (correct + wrong + unattempted);
+      const derivedPercentage = total > 0
+        ? Math.round((correct / total) * 10000) / 100
         : 0;
 
       const plain = typeof row?.toObject === 'function' ? row.toObject() : row;
@@ -2467,11 +2470,10 @@ router.post('/exam-results', async (req, res) => {
 
     const totalQuestions = effectiveQuestions.length;
     const unattempted = Math.max(0, totalQuestions - correctAnswers - wrongAnswers);
-    // Student-facing percentage should align with visible "accuracy" metric:
-    // correct answers out of attempted questions.
-    const attemptedCount = correctAnswers + wrongAnswers;
-    const percentage = attemptedCount > 0
-      ? Math.round((correctAnswers / attemptedCount) * 10000) / 100
+    // Student-facing percentage should be based on all questions:
+    // correct answers out of total questions (including unattempted).
+    const percentage = totalQuestions > 0
+      ? Math.round((correctAnswers / totalQuestions) * 10000) / 100
       : 0;
 
     const resultData = {
@@ -2523,7 +2525,7 @@ router.post('/exam-results', async (req, res) => {
       success: true,
       message: 'Result saved successfully',
       data: {
-        ...examResult.toObject(),
+        ...examResult.toObject({ flattenMaps: true }),
         questions: effectiveQuestions,
       },
     });
