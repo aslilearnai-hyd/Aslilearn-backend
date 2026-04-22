@@ -1758,6 +1758,32 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       };
     });
 
+    const fallbackQuestionInsights = questionAttemptDetails.map((q) => {
+      const status = q.isCorrect ? 'correct' : q.userAnswer ? 'wrong' : 'unattempted';
+      return {
+        index: q.index,
+        questionId: q.questionId,
+        subject: q.subject || 'general',
+        questionType: q.questionType || 'mcq',
+        status,
+        conceptGap:
+          status === 'correct'
+            ? 'Solved correctly; preserve this approach.'
+            : status === 'wrong'
+            ? 'Concept application or option selection error.'
+            : 'Question skipped due to low confidence or time pressure.',
+        fixStrategy:
+          status === 'correct'
+            ? 'Reinforce with one variation from the same concept.'
+            : 'Re-solve step by step and note the concept trigger before selecting an answer.',
+        practiceTask:
+          status === 'correct'
+            ? 'Practice 2 similar questions.'
+            : 'Practice 5 targeted questions from this concept with a timer.',
+        priority: status === 'correct' ? 'low' : status === 'wrong' ? 'high' : 'medium',
+      };
+    });
+
     const prompt = `
 You are AsliLearn AI Performance Mentor.
 Analyze the student's exam performance and return ONLY valid JSON (no markdown).
@@ -1773,8 +1799,24 @@ ${JSON.stringify(questionAttemptDetails, null, 2)}
 
 Return strict JSON:
 {
+  "riskLevel": "high|medium|low",
+  "riskScore": 0.0-1.0,
   "summary": "2-4 lines simple summary",
   "strengths": ["..."],
+  "rootCauses": ["..."],
+  "predictions": {
+    "nextExamPrediction": 0-100,
+    "confidence": 0.0-1.0,
+    "trend": "declining|stable|improving"
+  },
+  "interventions": [
+    {
+      "priority": "high|medium|low",
+      "action": "...",
+      "reasoning": "...",
+      "expectedImpact": "..."
+    }
+  ],
   "focusAreas": [
     { "subject": "maths|physics|chemistry|biology|general", "issue": "...", "whatToDo": "...", "priority": "high|medium|low" }
   ],
@@ -1789,6 +1831,19 @@ Return strict JSON:
   "videoRecommendations": [
     { "title": "...", "subject": "...", "topic": "...", "url": "...", "why": "..." }
   ],
+  "questionInsights": [
+    {
+      "index": 1,
+      "questionId": "question _id",
+      "subject": "maths|physics|chemistry|biology|general",
+      "questionType": "mcq|multiple|integer",
+      "status": "correct|wrong|unattempted",
+      "conceptGap": "...",
+      "fixStrategy": "...",
+      "practiceTask": "...",
+      "priority": "high|medium|low"
+    }
+  ],
   "motivation": "short motivational note"
 }
 
@@ -1796,6 +1851,7 @@ Important:
 - Give practical, specific actions.
 - Focus especially on weak subjects.
 - Base recommendations on the provided question-by-question mistakes and answer patterns.
+- Include questionInsights for every question in the attempt details.
 - If no weak subject, provide an advanced improvement plan.
 - Keep language simple and student-friendly.
 `;
@@ -1817,8 +1873,34 @@ Important:
       }
     } catch (error) {
       aiParsed = {
+        riskLevel: weakSubjects.length >= 2 ? 'high' : weakSubjects.length === 1 ? 'medium' : 'low',
+        riskScore: weakSubjects.length >= 2 ? 0.72 : weakSubjects.length === 1 ? 0.5 : 0.28,
         summary: 'AI analysis is temporarily unavailable. Please use the suggested action plan below.',
         strengths: ['Completed the exam attempt and generated result data'],
+        rootCauses: [
+          'Inconsistent subject performance across the paper',
+          'Question-level concept errors in weak areas',
+          'Time pressure impacts on difficult questions',
+        ],
+        predictions: {
+          nextExamPrediction: Math.max(25, Math.min(95, Math.round(Number(safeResult.percentage || 0) + 8))),
+          confidence: 0.62,
+          trend: 'stable',
+        },
+        interventions: [
+          {
+            priority: 'high',
+            action: 'Daily weak-topic correction loop',
+            reasoning: 'Most score loss comes from repeated concept errors in weak subjects.',
+            expectedImpact: '8-15% score improvement in 2-3 weeks.',
+          },
+          {
+            priority: 'medium',
+            action: 'Timed mixed-question drill',
+            reasoning: 'Improves attempt rate and reduces panic on tougher questions.',
+            expectedImpact: 'More attempted questions with better accuracy.',
+          },
+        ],
         focusAreas: weakSubjects.map((subject) => ({
           subject,
           issue: 'Lower score in this subject',
@@ -1843,12 +1925,45 @@ Important:
           },
         ],
         videoRecommendations,
+        questionInsights: fallbackQuestionInsights,
         motivation: 'Small daily consistency will improve your next score strongly.',
       };
     }
 
     if (!aiParsed || typeof aiParsed !== 'object') {
       aiParsed = {};
+    }
+    if (!['high', 'medium', 'low'].includes(String(aiParsed.riskLevel || '').toLowerCase())) {
+      aiParsed.riskLevel = weakSubjects.length >= 2 ? 'high' : weakSubjects.length === 1 ? 'medium' : 'low';
+    }
+    if (!Number.isFinite(Number(aiParsed.riskScore))) {
+      aiParsed.riskScore = weakSubjects.length >= 2 ? 0.72 : weakSubjects.length === 1 ? 0.5 : 0.28;
+    } else {
+      aiParsed.riskScore = Math.max(0, Math.min(1, Number(aiParsed.riskScore)));
+    }
+    if (!aiParsed.predictions || typeof aiParsed.predictions !== 'object') {
+      aiParsed.predictions = {
+        nextExamPrediction: Math.max(25, Math.min(95, Math.round(Number(safeResult.percentage || 0) + 8))),
+        confidence: 0.62,
+        trend: 'stable',
+      };
+    }
+    if (!Array.isArray(aiParsed.rootCauses)) {
+      aiParsed.rootCauses = [
+        'Inconsistent subject performance across this exam',
+        'Concept-level mistakes in weak questions',
+        'Time/decision pressure on hard questions',
+      ];
+    }
+    if (!Array.isArray(aiParsed.interventions)) {
+      aiParsed.interventions = [
+        {
+          priority: 'high',
+          action: 'Daily weak-topic correction loop',
+          reasoning: 'Addresses repeated mistakes and improves consistency.',
+          expectedImpact: 'Improved exam score trajectory over upcoming attempts.',
+        },
+      ];
     }
     if (!aiParsed.actionPlan || typeof aiParsed.actionPlan !== 'object') {
       aiParsed.actionPlan = {
@@ -1863,6 +1978,9 @@ Important:
         ...v,
         why: `Recommended to improve ${v.subject || 'this'} understanding.`,
       }));
+    }
+    if (!Array.isArray(aiParsed.questionInsights) || aiParsed.questionInsights.length === 0) {
+      aiParsed.questionInsights = fallbackQuestionInsights;
     }
 
     res.json({
