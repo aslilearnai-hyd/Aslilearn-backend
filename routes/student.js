@@ -1598,41 +1598,95 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       biology: ['biology', 'bio'],
     };
 
-    const weakPatterns = weakSubjects.flatMap((subject) =>
+    const recommendationSubjects = weakSubjects.length > 0
+      ? weakSubjects
+      : subjectEntries.slice(0, 2).map((x) => x.subject);
+
+    const weakPatterns = recommendationSubjects.flatMap((subject) =>
       (subjectAliases[subject] || [subject]).map((alias) => ({ name: new RegExp(`^${alias}$`, 'i') }))
     );
 
     let videoRecommendations = [];
     if (weakPatterns.length > 0) {
       const subjectDocs = await Subject.find({
-        board: resolvedBoard,
         isActive: true,
-        $or: weakPatterns,
+        $and: [
+          { $or: weakPatterns },
+          { $or: [{ board: resolvedBoard }, { board: { $exists: false } }, { board: null }] },
+        ],
       }).select('_id name').lean();
 
-      const subjectIds = subjectDocs.map((s) => s._id);
+      const subjectIds = subjectDocs.map((s) => s._id).filter(Boolean);
+      const subjectNames = subjectDocs.map((s) => String(s.name || '').trim()).filter(Boolean);
+      const subjectNameRegex = subjectNames.length > 0
+        ? new RegExp(subjectNames.map((s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|'), 'i')
+        : null;
+      const studentAdminId = student?.assignedAdmin?._id || student?.assignedAdmin || null;
+
+      const contentConditions = [];
       if (subjectIds.length > 0) {
-        const contentQuery = {
-          board: resolvedBoard,
-          isActive: true,
-          type: 'Video',
-          subject: { $in: subjectIds },
-        };
+        contentConditions.push({ subject: { $in: subjectIds } });
+      }
+      if (subjectNameRegex) {
+        contentConditions.push({ title: { $regex: subjectNameRegex } });
+        contentConditions.push({ topic: { $regex: subjectNameRegex } });
+      }
 
-        const videos = await Content.find(contentQuery)
-          .populate('subject', 'name')
-          .sort({ createdAt: -1 })
-          .limit(12)
-          .lean();
+      const contentVideos = await Content.find({
+        isActive: true,
+        type: 'Video',
+        ...(contentConditions.length > 0 ? { $or: contentConditions } : {}),
+      })
+        .populate('subject', 'name')
+        .sort({ createdAt: -1 })
+        .limit(14)
+        .lean();
 
-        videoRecommendations = videos.map((v) => ({
+      const teacherVideoConditions = [];
+      if (subjectIds.length > 0) {
+        teacherVideoConditions.push({ subjectId: { $in: subjectIds.map((id) => String(id)) } });
+      }
+      if (subjectNames.length > 0) {
+        teacherVideoConditions.push({ subjectId: { $in: subjectNames } });
+      }
+      if (subjectNameRegex) {
+        teacherVideoConditions.push({ title: { $regex: subjectNameRegex } });
+        teacherVideoConditions.push({ topic: { $regex: subjectNameRegex } });
+      }
+
+      const teacherVideos = await Video.find({
+        isPublished: true,
+        isActive: true,
+        ...(studentAdminId ? { adminId: studentAdminId } : {}),
+        ...(teacherVideoConditions.length > 0 ? { $or: teacherVideoConditions } : {}),
+      })
+        .sort({ createdAt: -1 })
+        .limit(14)
+        .lean();
+
+      const merged = [
+        ...contentVideos.map((v) => ({
           title: v.title || 'Video',
           subject: String(v.subject?.name || ''),
           topic: String(v.topic || ''),
           url: v.fileUrl || (Array.isArray(v.fileUrls) ? v.fileUrls[0] : ''),
           type: 'video',
-        })).filter((v) => !!v.url);
-      }
+        })),
+        ...teacherVideos.map((v) => ({
+          title: v.title || 'Video',
+          subject: String(v.subjectId || ''),
+          topic: String(v.topic || ''),
+          url: v.youtubeUrl || v.videoUrl || '',
+          type: 'video',
+        })),
+      ].filter((v) => !!v.url);
+
+      const dedup = new Map();
+      merged.forEach((v) => {
+        const key = `${String(v.url).trim()}::${String(v.title).trim()}`;
+        if (!dedup.has(key)) dedup.set(key, v);
+      });
+      videoRecommendations = Array.from(dedup.values()).slice(0, 10);
     }
 
     const safeResult = {
