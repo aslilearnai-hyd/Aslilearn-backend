@@ -188,18 +188,29 @@ const thumbnailUpload = multer({
   }
 });
 
-// Configure multer for CSV file uploads (memory storage)
+// Configure multer for spreadsheet uploads (memory storage).
+// Accepts .csv, .xlsx, .xls — the controller auto-detects format from the
+// file's magic bytes. Uploading .xlsx is preferred because Excel's plain CSV
+// export drops non-Windows-1252 characters (θ, π, √, ≤, ≥, Δ).
 const csvUpload = multer({
   storage: multer.memoryStorage(),
   limits: {
-    fileSize: 5 * 1024 * 1024 // 5MB limit
+    fileSize: 10 * 1024 * 1024 // 10MB limit (xlsx tends to be bigger than csv)
   },
   fileFilter: (req, file, cb) => {
-    // Accept CSV files
-    if (file.mimetype === 'text/csv' || file.originalname.endsWith('.csv')) {
+    const name = String(file.originalname || '').toLowerCase();
+    const allowedExt = name.endsWith('.csv') || name.endsWith('.xlsx') || name.endsWith('.xls');
+    const allowedMime = [
+      'text/csv',
+      'application/vnd.ms-excel',
+      'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+      'application/octet-stream', // browsers sometimes send this for .xlsx
+    ].includes(file.mimetype);
+
+    if (allowedExt || allowedMime) {
       cb(null, true);
     } else {
-      cb(new Error('Only CSV files are allowed!'), false);
+      cb(new Error('Only CSV, XLSX, or XLS files are allowed'), false);
     }
   }
 });

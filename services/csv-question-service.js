@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { parse } from 'csv-parse/sync';
+import { decodeCsvBuffer } from '../utils/csv-encoding.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -73,8 +74,11 @@ function readQuestionsFromCSV(classNumber, subject, topic) {
     
     // Read and parse CSV
     // Note: Some CSV files have commas within fields (like "2, 4, 8, 16, 32" or formulas with commas)
-    // The CSV parser will split these, so we need to reconstruct them
-    const csvContent = fs.readFileSync(csvPath, 'utf-8');
+    // The CSV parser will split these, so we need to reconstruct them.
+    //
+    // Read as a raw buffer and decode with BOM + Windows-1252 fallback so that
+    // files saved from Excel on Windows (default ANSI) don't come through as �.
+    const csvContent = decodeCsvBuffer(fs.readFileSync(csvPath));
     
     // Parse WITHOUT columns:true first to handle variable column counts
     // Then manually map to column names

@@ -18,6 +18,8 @@ import {
   verifyDataOwnership,
   addAdminIdToBody
 } from '../middleware/auth.js';
+import { cleanCsvCell } from '../utils/csv-encoding.js';
+import { spreadsheetBufferToCsv } from '../utils/spreadsheet-to-csv.js';
 import {
   getAdminDashboardStats,
   getStudents,
@@ -139,16 +141,22 @@ router.post('/students/upload', upload.single('file'), async (req, res) => {
 
     console.log('Admin board:', admin.board, 'School:', admin.schoolName);
 
-    // Convert buffer to string
-    const csvData = req.file.buffer.toString('utf8');
+    // Accept .xlsx / .xls natively OR .csv (encoding auto-detected).
+    let csvData;
+    try {
+      ({ csv: csvData } = spreadsheetBufferToCsv(req.file.buffer, req.file.originalname));
+    } catch (err) {
+      return res.status(400).json({ message: `Failed to read uploaded file: ${err.message}` });
+    }
     
     // Parse CSV data - handle both \n and \r\n line endings
     const lines = csvData.split(/\r?\n/).filter(line => line.trim());
     if (lines.length < 2) {
-      return res.status(400).json({ message: 'CSV file must have at least a header and one data row' });
+      return res.status(400).json({ message: 'File must have at least a header row and one data row' });
     }
 
-    // Helper function to parse CSV line (handles quoted values)
+    // Helper function to parse CSV line (handles quoted values); cleanCsvCell
+    // also normalizes smart punctuation (−, –, —, ’, “, …) back to plain ASCII.
     const parseCSVLine = (line) => {
       const result = [];
       let current = '';
@@ -166,13 +174,13 @@ router.post('/students/upload', upload.single('file'), async (req, res) => {
             inQuotes = !inQuotes;
           }
         } else if (char === ',' && !inQuotes) {
-          result.push(current.trim());
+          result.push(cleanCsvCell(current));
           current = '';
         } else {
           current += char;
         }
       }
-      result.push(current.trim()); // Add last field
+      result.push(cleanCsvCell(current)); // Add last field
       return result;
     };
 

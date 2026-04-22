@@ -29,6 +29,7 @@
     "express-rate-limit": "^8.2.1",
     "express-session": "^1.17.3",
     "helmet": "^8.1.0",
+    "iconv-lite": "^0.4.24",
     "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.5.0",

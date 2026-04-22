@@ -827,7 +827,7 @@ router.get('/assessments', async (req, res) => {
   }
 });
 
-async function hydrateExamQuestions(examDoc) {
+async function hydrateExamQuestions(examDoc, { hideAnswers = false } = {}) {
   const examId = examDoc?._id;
   if (!examId) return examDoc;
 
@@ -845,8 +845,28 @@ async function hydrateExamQuestions(examDoc) {
       .lean();
   }
 
-  const normalizedQuestions = Array.isArray(linkedQuestions) ? linkedQuestions : [];
+  let normalizedQuestions = Array.isArray(linkedQuestions) ? linkedQuestions : [];
   const normalizedTotalMarks = normalizedQuestions.reduce((sum, q) => sum + (Number(q?.marks) || 0), 0);
+
+  // When a student is about to take the exam, never ship the answer key to the
+  // browser. The server re-grades submissions in POST /exam-results, so the
+  // correct answers / explanations / per-option isCorrect flags are stripped
+  // here. They are returned again after submission via the graded result.
+  if (hideAnswers) {
+    normalizedQuestions = normalizedQuestions.map((q) => {
+      const { correctAnswer, explanation, ...rest } = q || {};
+      const safeOptions = Array.isArray(rest.options)
+        ? rest.options.map((opt) => {
+            if (opt && typeof opt === 'object') {
+              const { isCorrect, ...optRest } = opt;
+              return optRest;
+            }
+            return opt;
+          })
+        : rest.options;
+      return { ...rest, options: safeOptions };
+    });
+  }
 
   return {
     ...examDoc,
@@ -895,8 +915,10 @@ router.get('/exams', async (req, res) => {
       .sort({ createdAt: -1 })
       .lean();
 
-    const hydratedExams = await Promise.all(exams.map((exam) => hydrateExamQuestions(exam)));
-    
+    const hydratedExams = await Promise.all(
+      exams.map((exam) => hydrateExamQuestions(exam, { hideAnswers: true }))
+    );
+
     console.log(`✅ Found ${hydratedExams.length} exams for student (all boards visible)`);
     
     res.json({
@@ -954,8 +976,8 @@ router.get('/exams/:examId', async (req, res) => {
       });
     }
 
-    const hydratedExam = await hydrateExamQuestions(exam);
-    
+    const hydratedExam = await hydrateExamQuestions(exam, { hideAnswers: true });
+
     res.json({
       success: true,
       data: hydratedExam
@@ -1534,18 +1556,72 @@ router.get('/exam-results', async (req, res) => {
   }
 });
 
-// Save exam results
+// Extract the comparable text of a stored correctAnswer value, handling the
+// legacy shapes we've seen in the DB: plain string, number, option-object
+// `{ text }`, or `{ label }`.
+function extractAnswerText(value) {
+  if (value === null || value === undefined) return '';
+  if (typeof value === 'string' || typeof value === 'number') return String(value);
+  if (typeof value === 'object') {
+    return String(value.text ?? value.label ?? value._id ?? '');
+  }
+  return String(value);
+}
+
+// Single source of truth for "is this user answer correct for this question".
+// Mirrors the client's previous checkAnswer so existing exams grade identically.
+function isAnswerCorrect(question, userAnswer) {
+  if (userAnswer === undefined || userAnswer === null || userAnswer === '') {
+    return false;
+  }
+
+  if (question.questionType === 'integer') {
+    const userNum = Number(String(userAnswer).trim());
+    const correctNum = Number(String(extractAnswerText(question.correctAnswer)).trim());
+    if (Number.isFinite(userNum) && Number.isFinite(correctNum)) {
+      return userNum === correctNum;
+    }
+    return String(userAnswer).trim() === String(question.correctAnswer).trim();
+  }
+
+  if (question.questionType === 'mcq') {
+    const correctText = extractAnswerText(question.correctAnswer).trim().toLowerCase();
+    const userText = extractAnswerText(userAnswer).trim().toLowerCase();
+    return !!correctText && userText === correctText;
+  }
+
+  if (question.questionType === 'multiple') {
+    const correctList = (Array.isArray(question.correctAnswer)
+      ? question.correctAnswer
+      : [question.correctAnswer])
+      .map((v) => extractAnswerText(v).trim().toLowerCase())
+      .filter(Boolean);
+    const userList = (Array.isArray(userAnswer) ? userAnswer : [userAnswer])
+      .map((v) => extractAnswerText(v).trim().toLowerCase())
+      .filter(Boolean);
+    if (correctList.length !== userList.length) return false;
+    const userSet = new Set(userList);
+    return correctList.every((a) => userSet.has(a));
+  }
+
+  return false;
+}
+
+// Save exam results (server-authoritative grading).
 router.post('/exam-results', async (req, res) => {
   try {
-    const { examId, examTitle, totalQuestions, correctAnswers, wrongAnswers, unattempted, totalMarks, obtainedMarks, percentage, timeTaken, subjectWiseScore, answers } = req.body;
-    
+    const { examId, examTitle, timeTaken, answers } = req.body || {};
+
     console.log('📋 Saving exam result for student:', req.userId);
     console.log('📋 Exam ID:', examId);
-    
+
     if (!req.userId) {
       return res.status(401).json({ success: false, message: 'User not authenticated' });
     }
-    
+    if (!examId) {
+      return res.status(400).json({ success: false, message: 'examId is required' });
+    }
+
     // Get student's assigned admin and board
     const student = await User.findById(req.userId).populate('assignedAdmin', 'board');
     if (!student) {
@@ -1558,13 +1634,60 @@ router.post('/exam-results', async (req, res) => {
     )
       .trim()
       .toUpperCase();
-    
+
+    // Load the real questions from the DB and grade against THEM — never trust
+    // client-supplied correctAnswers / obtainedMarks / percentage. The student
+    // could have crafted the request in DevTools.
+    const examDoc = await Exam.findById(examId).lean();
+    const questions = await Question.find({ exam: examId, isActive: { $ne: false } })
+      .sort({ createdAt: 1, _id: 1 })
+      .lean();
+
+    const answerMap = (answers && typeof answers === 'object') ? answers : {};
+
+    let correctAnswers = 0;
+    let wrongAnswers = 0;
+    let obtainedMarks = 0;
+    let totalMarks = 0;
+    const subjectWiseScore = {
+      maths: { correct: 0, total: 0, marks: 0 },
+      physics: { correct: 0, total: 0, marks: 0 },
+      chemistry: { correct: 0, total: 0, marks: 0 },
+      biology: { correct: 0, total: 0, marks: 0 },
+    };
+
+    questions.forEach((q) => {
+      const qId = String(q._id);
+      const userAnswer = answerMap[qId];
+      const marks = Number(q.marks) || 0;
+      const negativeMarks = Number(q.negativeMarks) || 0;
+      totalMarks += marks;
+      const subjectBucket = subjectWiseScore[q.subject] || (subjectWiseScore[q.subject] = { correct: 0, total: 0, marks: 0 });
+      subjectBucket.total += 1;
+
+      if (isAnswerCorrect(q, userAnswer)) {
+        correctAnswers += 1;
+        obtainedMarks += marks;
+        subjectBucket.correct += 1;
+        subjectBucket.marks += marks;
+      } else if (userAnswer !== undefined && userAnswer !== null && userAnswer !== '') {
+        wrongAnswers += 1;
+        obtainedMarks -= negativeMarks;
+      }
+    });
+
+    const totalQuestions = questions.length;
+    const unattempted = Math.max(0, totalQuestions - correctAnswers - wrongAnswers);
+    const percentage = totalMarks > 0
+      ? Math.round((obtainedMarks / totalMarks) * 10000) / 100
+      : 0;
+
     const resultData = {
       examId,
-      userId: req.userId, // Use req.userId from verifyToken middleware
+      userId: req.userId,
       adminId: student.assignedAdmin || null,
       board: resolvedBoard === 'ASLI_EXCLUSIVE_SCHOOLS' ? resolvedBoard : 'ASLI_EXCLUSIVE_SCHOOLS',
-      examTitle,
+      examTitle: examTitle || examDoc?.title || '',
       totalQuestions,
       correctAnswers,
       wrongAnswers,
@@ -1572,36 +1695,45 @@ router.post('/exam-results', async (req, res) => {
       totalMarks,
       obtainedMarks,
       percentage,
-      timeTaken,
+      timeTaken: Number(timeTaken) || 0,
       subjectWiseScore,
-      answers,
-      completedAt: new Date()
+      answers: answerMap,
+      completedAt: new Date(),
     };
-    
-    // Import ExamResult model
+
     const ExamResult = (await import('../models/ExamResult.js')).default;
-    
-    // Save to database
     const examResult = new ExamResult(resultData);
     await examResult.save();
-    
-    console.log('✅ Exam result saved successfully');
-    console.log('📋 ExamId:', examResult.examId?.toString());
-    console.log('📋 UserId:', examResult.userId?.toString());
-    console.log('📋 Board:', examResult.board);
-    
-    res.status(201).json({ 
+
+    console.log('✅ Exam result saved (server-graded)');
+    console.log('📋 Scored:', {
+      examId: examResult.examId?.toString(),
+      userId: examResult.userId?.toString(),
+      correct: correctAnswers,
+      wrong: wrongAnswers,
+      obtainedMarks,
+      totalMarks,
+      percentage,
+    });
+
+    // Return the full result AND the graded questions (with correctAnswer /
+    // explanation) so the client can render the post-submission review UI
+    // without needing a separate request.
+    res.status(201).json({
       success: true,
       message: 'Result saved successfully',
-      data: examResult
+      data: {
+        ...examResult.toObject(),
+        questions,
+      },
     });
   } catch (error) {
     console.error('❌ Failed to save exam result:', error);
     console.error('Error stack:', error.stack);
-    res.status(500).json({ 
-      success: false, 
+    res.status(500).json({
+      success: false,
       message: 'Failed to save result',
-      error: error.message 
+      error: error.message,
     });
   }
 });

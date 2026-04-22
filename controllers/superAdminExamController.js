@@ -1,6 +1,8 @@
 import mongoose from 'mongoose';
 import Exam from '../models/Exam.js';
 import Question from '../models/Question.js';
+import { cleanCsvCell } from '../utils/csv-encoding.js';
+import { spreadsheetBufferToCsv } from '../utils/spreadsheet-to-csv.js';
 
 /**
  * Keeps classNumber and assignedClasses in sync for API clients.
@@ -644,8 +646,52 @@ export const addQuestion = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Either question text or image is required' });
     }
 
-    // Format options - ensure empty array for integer type
-    const finalOptions = questionType === 'integer' ? [] : (options || []);
+    // Format options - ensure empty array for integer type. Each option is
+    // stored as `{ text, isCorrect }`; tag the isCorrect flag based on the
+    // formatted correctAnswer so consumers that read options[].isCorrect (e.g.
+    // preview / legacy content generators) stay in sync with correctAnswer.
+    const finalOptions = questionType === 'integer'
+      ? []
+      : (options || []).map((opt) => {
+          const text = typeof opt === 'string' ? opt : (opt?.text ?? '');
+          return { text: String(text), isCorrect: false };
+        });
+
+    if (questionType === 'mcq') {
+      const correctText = String(formattedCorrectAnswer || '').trim().toLowerCase();
+      const idx = finalOptions.findIndex(
+        (o) => String(o.text || '').trim().toLowerCase() === correctText
+      );
+      if (idx >= 0) finalOptions[idx].isCorrect = true;
+    } else if (questionType === 'multiple' && Array.isArray(formattedCorrectAnswer)) {
+      const correctSet = new Set(
+        formattedCorrectAnswer.map((t) => String(t).trim().toLowerCase())
+      );
+      finalOptions.forEach((o) => {
+        if (correctSet.has(String(o.text || '').trim().toLowerCase())) {
+          o.isCorrect = true;
+        }
+      });
+    }
+
+    // Validate marks / negativeMarks strictly instead of silently defaulting.
+    let marksValue = 1;
+    if (marks !== undefined && marks !== null && String(marks).trim() !== '') {
+      const parsed = Number(marks);
+      if (!Number.isFinite(parsed) || parsed <= 0) {
+        return res.status(400).json({ success: false, message: 'Invalid marks (must be a positive number)' });
+      }
+      marksValue = parsed;
+    }
+
+    let negativeMarksValue = 0;
+    if (negativeMarks !== undefined && negativeMarks !== null && String(negativeMarks).trim() !== '') {
+      const parsed = Number(negativeMarks);
+      if (!Number.isFinite(parsed) || parsed < 0) {
+        return res.status(400).json({ success: false, message: 'Invalid negativeMarks (must be a non-negative number)' });
+      }
+      negativeMarksValue = parsed;
+    }
 
     const examSubjects = normalizeExamSubjects(exam.subject, exam.subjects)
       .filter((s) => ALLOWED_EXAM_SUBJECTS.includes(s));
@@ -706,8 +752,8 @@ export const addQuestion = async (req, res) => {
       questionType,
       options: finalOptions,
       correctAnswer: formattedCorrectAnswer,
-      marks: parseInt(marks) || 1,
-      negativeMarks: parseFloat(negativeMarks) || 0,
+      marks: marksValue,
+      negativeMarks: negativeMarksValue,
       explanation: explanation?.trim() || undefined,
       subject: normalizedQuestionSubject,
       exam: examId,
@@ -720,8 +766,11 @@ export const addQuestion = async (req, res) => {
     await question.save();
     console.log('✅ Question saved:', question._id);
 
-    // Add question to exam
-    await Exam.findByIdAndUpdate(examId, { $push: { questions: question._id } });
+    // Add question to exam + keep totals consistent.
+    await Exam.findByIdAndUpdate(examId, {
+      $push: { questions: question._id },
+      $inc: { totalQuestions: 1, totalMarks: marksValue },
+    });
     console.log('✅ Question added to exam');
 
     res.status(201).json({
@@ -752,19 +801,31 @@ export const bulkUploadExams = async (req, res) => {
       });
     }
 
-    // Convert buffer to string
-    const csvData = req.file.buffer.toString('utf8');
+    // Accept .xlsx / .xls natively (full Unicode) OR .csv (encoding auto-detected).
+    // Uploading the real Excel file is strongly preferred: Excel's plain CSV
+    // export is Windows-1252 and silently drops characters like θ, π, √, ≤, ≥, Δ.
+    let csvData;
+    try {
+      ({ csv: csvData } = spreadsheetBufferToCsv(req.file.buffer, req.file.originalname));
+    } catch (err) {
+      return res.status(400).json({
+        success: false,
+        message: `Failed to read uploaded file: ${err.message}`
+      });
+    }
     
     // Parse CSV data - handle both \n and \r\n line endings
     const lines = csvData.split(/\r?\n/).filter(line => line.trim());
     if (lines.length < 2) {
       return res.status(400).json({ 
         success: false, 
-        message: 'CSV file must have at least a header and one data row' 
+        message: 'File must have at least a header row and one data row' 
       });
     }
 
-    // Helper function to parse CSV line (handles quoted values)
+    // Helper function to parse CSV line (handles quoted values); cleanCsvCell
+    // trims whitespace and normalizes smart punctuation (−, –, —, ’, “, …) to
+    // plain ASCII so downstream validation isn't thrown off by Excel quirks.
     const parseCSVLine = (line) => {
       const result = [];
       let current = '';
@@ -782,13 +843,13 @@ export const bulkUploadExams = async (req, res) => {
             inQuotes = !inQuotes;
           }
         } else if (char === ',' && !inQuotes) {
-          result.push(current.trim());
+          result.push(cleanCsvCell(current));
           current = '';
         } else {
           current += char;
         }
       }
-      result.push(current.trim()); // Add last field
+      result.push(cleanCsvCell(current)); // Add last field
       return result;
     };
 
@@ -1050,19 +1111,30 @@ export const bulkUploadQuestions = async (req, res) => {
     const examAllowedSubjects = normalizeExamSubjects(exam.subject, exam.subjects)
       .filter((s) => ALLOWED_EXAM_SUBJECTS.includes(s));
 
-    // Convert buffer to string
-    const csvData = req.file.buffer.toString('utf8');
+    // Accept .xlsx / .xls natively (full Unicode) OR .csv (encoding auto-detected).
+    // Uploading the real Excel file preserves x², x³, θ, π, √, Δ, ≤, ≥ — which
+    // a plain Excel CSV export (Windows-1252) silently replaces with `?`.
+    let csvData;
+    try {
+      ({ csv: csvData } = spreadsheetBufferToCsv(req.file.buffer, req.file.originalname));
+    } catch (err) {
+      return res.status(400).json({
+        success: false,
+        message: `Failed to read uploaded file: ${err.message}`
+      });
+    }
     
     // Parse CSV data - handle both \n and \r\n line endings
     const lines = csvData.split(/\r?\n/).filter(line => line.trim());
     if (lines.length < 2) {
       return res.status(400).json({ 
         success: false, 
-        message: 'CSV file must have at least a header and one data row' 
+        message: 'File must have at least a header row and one data row' 
       });
     }
 
-    // Helper function to parse CSV line (handles quoted values)
+    // Helper function to parse CSV line (handles quoted values); cleanCsvCell
+    // trims whitespace and normalizes smart punctuation (−, –, —, ’, “, …).
     const parseCSVLine = (line) => {
       const result = [];
       let current = '';
@@ -1080,13 +1152,13 @@ export const bulkUploadQuestions = async (req, res) => {
             inQuotes = !inQuotes;
           }
         } else if (char === ',' && !inQuotes) {
-          result.push(current.trim());
+          result.push(cleanCsvCell(current));
           current = '';
         } else {
           current += char;
         }
       }
-      result.push(current.trim()); // Add last field
+      result.push(cleanCsvCell(current)); // Add last field
       return result;
     };
 
@@ -1097,6 +1169,13 @@ export const bulkUploadQuestions = async (req, res) => {
         .replace(/^"|"$/g, '')
         .replace(/[^a-z0-9]/g, '');
 
+    // Resolve a single answer token to an option index.
+    //   "a"/"A" .. "d"/"D"        → 0..3
+    //   "1".."4"                  → 1-based (matches the downloadable template and
+    //                               the letter convention). Falls back to 0-based
+    //                               only when the token can't be 1-based (e.g. "0").
+    //   "option a", "option 2"    → same as above
+    //   Exact option text match   → that option's index
     const toOptionIndex = (token, options) => {
       const normalizedToken = String(token || '').trim().toLowerCase();
       if (!normalizedToken || !Array.isArray(options) || options.length === 0) {
@@ -1105,8 +1184,8 @@ export const bulkUploadQuestions = async (req, res) => {
 
       if (/^\d+$/.test(normalizedToken)) {
         const numeric = parseInt(normalizedToken, 10);
-        if (numeric >= 0 && numeric < options.length) return numeric; // 0-based
-        if (numeric >= 1 && numeric <= options.length) return numeric - 1; // 1-based
+        if (numeric >= 1 && numeric <= options.length) return numeric - 1; // prefer 1-based
+        if (numeric >= 0 && numeric < options.length) return numeric; // fallback 0-based
       }
 
       if (/^[a-z]$/.test(normalizedToken)) {
@@ -1172,15 +1251,24 @@ export const bulkUploadQuestions = async (req, res) => {
       }));
     });
 
+    // Collect new question IDs so we can push them into the exam in one update
+    // at the end (instead of one $push per question).
+    const newQuestionIdsToPush = [];
+
     // Process each data row
     for (let i = 1; i < lines.length; i++) {
       try {
-        const values = parseCSVLine(lines[i]);
-        
-        if (values.length !== headers.length) {
-          errors.push(`Row ${i + 1}: Column count mismatch (expected ${headers.length}, got ${values.length})`);
-          continue;
-        }
+        const rawValues = parseCSVLine(lines[i]);
+
+        // Be lenient about column count: pad short rows with empty cells and
+        // drop trailing extras. Most "column count mismatch" errors are caused
+        // by Excel trimming trailing empty columns or by a stray comma.
+        const values =
+          rawValues.length === headers.length
+            ? rawValues
+            : rawValues.length < headers.length
+              ? rawValues.concat(Array(headers.length - rawValues.length).fill(''))
+              : rawValues.slice(0, headers.length);
 
         // Create question object from CSV row
         const questionData = {};
@@ -1304,20 +1392,48 @@ export const bulkUploadQuestions = async (req, res) => {
           }
           const answerIndex = toOptionIndex(correctAnswerStr, options);
           if (answerIndex < 0 || !options[answerIndex]) {
-            errors.push(`Row ${i + 1}: Invalid correctAnswer index`);
+            errors.push(`Row ${i + 1}: Invalid correctAnswer "${correctAnswerStr}" (expected 1-4, a-d, or exact option text)`);
             continue;
           }
           correctAnswer = options[answerIndex].text;
+          options[answerIndex].isCorrect = true;
         }
 
-        // Validate marks
-        const marks = parseInt(getRowValue('marks')) || 1;
-        if (isNaN(marks) || marks <= 0) {
-          errors.push(`Row ${i + 1}: Invalid marks`);
-          continue;
+        // Mark the correct options for `multiple` so option.isCorrect stays in
+        // sync with correctAnswer. (MCQ is handled in its branch above.)
+        if (questionType === 'multiple' && Array.isArray(correctAnswer)) {
+          const correctSet = new Set(correctAnswer.map((t) => String(t).trim().toLowerCase()));
+          options.forEach((opt) => {
+            if (opt && correctSet.has(String(opt.text || '').trim().toLowerCase())) {
+              opt.isCorrect = true;
+            }
+          });
         }
 
-        const negativeMarks = parseFloat(getRowValue('negativemarks', 'negative_marks', 'negativeMarks')) || 0;
+        // Validate marks. Empty/missing defaults to 1; any other invalid value
+        // (negative, zero, non-numeric) is a hard error so silent corruption is
+        // caught at upload time rather than showing up as a weird score later.
+        const marksRaw = getRowValue('marks');
+        let marks = 1;
+        if (marksRaw !== '') {
+          const parsedMarks = Number(marksRaw);
+          if (!Number.isFinite(parsedMarks) || parsedMarks <= 0) {
+            errors.push(`Row ${i + 1}: Invalid marks "${marksRaw}" (must be a positive number)`);
+            continue;
+          }
+          marks = parsedMarks;
+        }
+
+        const negativeMarksRaw = getRowValue('negativemarks', 'negative_marks', 'negativeMarks');
+        let negativeMarks = 0;
+        if (negativeMarksRaw !== '') {
+          const parsedNeg = Number(negativeMarksRaw);
+          if (!Number.isFinite(parsedNeg) || parsedNeg < 0) {
+            errors.push(`Row ${i + 1}: Invalid negativeMarks "${negativeMarksRaw}" (must be a non-negative number)`);
+            continue;
+          }
+          negativeMarks = parsedNeg;
+        }
 
         // Create question data object
         const newQuestionData = {
@@ -1351,9 +1467,7 @@ export const bulkUploadQuestions = async (req, res) => {
         const newQuestion = new Question(newQuestionData);
         await newQuestion.save();
         seenQuestionKeys.add(questionKey);
-
-        // Add question to exam
-        await Exam.findByIdAndUpdate(examId, { $push: { questions: newQuestion._id } });
+        newQuestionIdsToPush.push(newQuestion._id);
 
         createdQuestions.push({
           id: newQuestion._id,
@@ -1366,6 +1480,25 @@ export const bulkUploadQuestions = async (req, res) => {
         console.error(`❌ Error processing row ${i + 1}:`, error);
         errors.push(`Row ${i + 1}: ${error.message || 'Unknown error'}`);
       }
+    }
+
+    // Attach all newly-created questions to the exam in a single update (and
+    // keep Exam.totalQuestions / Exam.totalMarks consistent).
+    if (newQuestionIdsToPush.length > 0) {
+      const addedMarks = createdQuestions.length
+        ? (await Question.find(
+            { _id: { $in: newQuestionIdsToPush } },
+            { marks: 1 }
+          ).lean()).reduce((sum, q) => sum + (Number(q?.marks) || 0), 0)
+        : 0;
+
+      await Exam.findByIdAndUpdate(examId, {
+        $push: { questions: { $each: newQuestionIdsToPush } },
+        $inc: {
+          totalQuestions: newQuestionIdsToPush.length,
+          totalMarks: addedMarks,
+        },
+      });
     }
 
     console.log(`✅ Bulk question upload completed: ${createdQuestions.length} created, ${errors.length} errors`);
