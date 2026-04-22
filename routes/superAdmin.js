@@ -215,6 +215,34 @@ const csvUpload = multer({
   }
 });
 
+// Configure multer for exam question image uploads.
+const questionImageStorage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    const uploadDir = path.join(__dirname, '../uploads/questions');
+    if (!fs.existsSync(uploadDir)) {
+      fs.mkdirSync(uploadDir, { recursive: true });
+    }
+    cb(null, uploadDir);
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
+    const ext = path.extname(file.originalname || '').toLowerCase();
+    cb(null, `question-${uniqueSuffix}${ext || '.png'}`);
+  }
+});
+
+const questionImageUpload = multer({
+  storage: questionImageStorage,
+  limits: { fileSize: 5 * 1024 * 1024 }, // 5MB limit
+  fileFilter: (req, file, cb) => {
+    if (String(file.mimetype || '').startsWith('image/')) {
+      cb(null, true);
+    } else {
+      cb(new Error('Only image files are allowed!'), false);
+    }
+  }
+});
+
 // Public routes
 router.post('/login', superAdminLogin);
 
@@ -412,6 +440,50 @@ router.get('/boards/:board/content', getContentByBoard);
 router.put('/content/:contentId', updateContent);
 router.delete('/content/:contentId', deleteContent);
 router.delete('/content', deleteAllContent); // Bulk delete all content
+
+// Question image upload endpoint for super-admin exam management.
+router.post('/upload-question-image', (req, res, next) => {
+  questionImageUpload.single('image')(req, res, (err) => {
+    if (err) {
+      if (err.code === 'LIMIT_FILE_SIZE') {
+        return res.status(400).json({
+          success: false,
+          message: 'File too large. Maximum size is 5MB.'
+        });
+      }
+      return res.status(400).json({
+        success: false,
+        message: err.message || 'File upload error'
+      });
+    }
+    next();
+  });
+}, (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({
+        success: false,
+        message: 'No image file provided'
+      });
+    }
+
+    const imageUrl = `${req.protocol}://${req.get('host')}/uploads/questions/${req.file.filename}`;
+    res.json({
+      success: true,
+      imageUrl,
+      filename: req.file.filename,
+      originalName: req.file.originalname,
+      size: req.file.size,
+      mimetype: req.file.mimetype
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: 'Failed to upload image',
+      error: error.message
+    });
+  }
+});
 
 // IQ/Rank Boost Activities Routes
 router.post('/iq-rank-activities/generate-questions', async (req, res) => {
