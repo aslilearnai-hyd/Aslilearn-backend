@@ -16,7 +16,7 @@ import {
   getStudentExamRanking,
   getAllStudentRankings
 } from '../controllers/studentRankingController.js';
-import { generateStudentTool } from '../services/gemini-service.js';
+import geminiService, { generateStudentTool } from '../services/gemini-service.js';
 
 const router = express.Router();
 
@@ -1552,6 +1552,204 @@ router.get('/exam-results', async (req, res) => {
       success: false, 
       message: 'Failed to fetch exam results',
       error: error.message 
+    });
+  }
+});
+
+// AI-powered detailed exam analysis for a student's result
+router.post('/exam-results/ai-analysis', async (req, res) => {
+  try {
+    const { result, examTitle } = req.body || {};
+    if (!req.userId) {
+      return res.status(401).json({ success: false, message: 'User not authenticated' });
+    }
+    if (!result || typeof result !== 'object') {
+      return res.status(400).json({ success: false, message: 'result payload is required' });
+    }
+
+    const student = await User.findById(req.userId).populate('assignedAdmin', 'board');
+    const resolvedBoard = String(student?.board || student?.assignedAdmin?.board || 'ASLI_EXCLUSIVE_SCHOOLS')
+      .trim()
+      .toUpperCase();
+    const classNumber = String(student?.classNumber || '').trim();
+
+    const subjectScore = result.subjectWiseScore && typeof result.subjectWiseScore === 'object'
+      ? result.subjectWiseScore
+      : {};
+    const subjectEntries = Object.entries(subjectScore)
+      .map(([subject, score]) => {
+        const total = Number(score?.total || 0);
+        const correct = Number(score?.correct || 0);
+        const marks = Number(score?.marks || 0);
+        const percentage = total > 0 ? Math.round((correct / total) * 10000) / 100 : 0;
+        return { subject: String(subject).toLowerCase(), total, correct, marks, percentage };
+      })
+      .filter((x) => x.total > 0);
+
+    const weakSubjects = subjectEntries
+      .filter((x) => x.percentage < 70)
+      .sort((a, b) => a.percentage - b.percentage)
+      .map((x) => x.subject);
+
+    const subjectAliases = {
+      maths: ['maths', 'math', 'mathematics'],
+      physics: ['physics'],
+      chemistry: ['chemistry'],
+      biology: ['biology', 'bio'],
+    };
+
+    const weakPatterns = weakSubjects.flatMap((subject) =>
+      (subjectAliases[subject] || [subject]).map((alias) => ({ name: new RegExp(`^${alias}$`, 'i') }))
+    );
+
+    let videoRecommendations = [];
+    if (weakPatterns.length > 0) {
+      const subjectDocs = await Subject.find({
+        board: resolvedBoard,
+        isActive: true,
+        $or: weakPatterns,
+      }).select('_id name').lean();
+
+      const subjectIds = subjectDocs.map((s) => s._id);
+      if (subjectIds.length > 0) {
+        const contentQuery = {
+          board: resolvedBoard,
+          isActive: true,
+          type: 'Video',
+          subject: { $in: subjectIds },
+        };
+
+        const videos = await Content.find(contentQuery)
+          .populate('subject', 'name')
+          .sort({ createdAt: -1 })
+          .limit(12)
+          .lean();
+
+        videoRecommendations = videos.map((v) => ({
+          title: v.title || 'Video',
+          subject: String(v.subject?.name || ''),
+          topic: String(v.topic || ''),
+          url: v.fileUrl || (Array.isArray(v.fileUrls) ? v.fileUrls[0] : ''),
+          type: 'video',
+        })).filter((v) => !!v.url);
+      }
+    }
+
+    const safeResult = {
+      examId: String(result.examId || ''),
+      examTitle: String(examTitle || result.examTitle || ''),
+      totalQuestions: Number(result.totalQuestions || 0),
+      correctAnswers: Number(result.correctAnswers || 0),
+      wrongAnswers: Number(result.wrongAnswers || 0),
+      unattempted: Number(result.unattempted || 0),
+      totalMarks: Number(result.totalMarks || 0),
+      obtainedMarks: Number(result.obtainedMarks || 0),
+      percentage: Number(result.percentage || 0),
+      timeTaken: Number(result.timeTaken || 0),
+      subjectScore: subjectEntries,
+      weakSubjects,
+      classNumber: classNumber || 'unknown',
+      board: resolvedBoard,
+    };
+
+    const prompt = `
+You are AsliLearn AI Performance Mentor.
+Analyze the student's exam performance and return ONLY valid JSON (no markdown).
+
+Student context:
+${JSON.stringify(safeResult, null, 2)}
+
+Available subject-wise videos for weak areas:
+${JSON.stringify(videoRecommendations.slice(0, 8), null, 2)}
+
+Return strict JSON:
+{
+  "summary": "2-4 lines simple summary",
+  "strengths": ["..."],
+  "focusAreas": [
+    { "subject": "maths|physics|chemistry|biology|general", "issue": "...", "whatToDo": "...", "priority": "high|medium|low" }
+  ],
+  "actionPlan": {
+    "today": ["..."],
+    "thisWeek": ["..."],
+    "beforeNextExam": ["..."]
+  },
+  "recommendedAiTools": [
+    { "toolType": "exam-readiness-checker|smart-qa-practice-generator|concept-breakdown-explainer|personalized-revision-planner|chapter-summary-creator|key-points-formula-extractor", "why": "...", "howToUse": "..." }
+  ],
+  "videoRecommendations": [
+    { "title": "...", "subject": "...", "topic": "...", "url": "...", "why": "..." }
+  ],
+  "motivation": "short motivational note"
+}
+
+Important:
+- Give practical, specific actions.
+- Focus especially on weak subjects.
+- If no weak subject, provide an advanced improvement plan.
+- Keep language simple and student-friendly.
+`;
+
+    let aiParsed;
+    try {
+      const aiText = await geminiService.generateStructuredContent(prompt, 'json');
+      aiParsed = JSON.parse(String(aiText || '{}'));
+    } catch (error) {
+      aiParsed = {
+        summary: 'AI analysis is temporarily unavailable. Please use the suggested action plan below.',
+        strengths: ['Completed the exam attempt and generated result data'],
+        focusAreas: weakSubjects.map((subject) => ({
+          subject,
+          issue: 'Lower score in this subject',
+          whatToDo: 'Revise core concepts and solve 20 focused questions daily.',
+          priority: 'high',
+        })),
+        actionPlan: {
+          today: ['Review mistakes and note top 3 concept gaps.'],
+          thisWeek: ['Practice weak-area questions daily and revise formula/concept sheets.'],
+          beforeNextExam: ['Take one timed mock and review all incorrect answers.'],
+        },
+        recommendedAiTools: [
+          {
+            toolType: 'exam-readiness-checker',
+            why: 'Checks preparation level before next test.',
+            howToUse: 'Run it per subject after revision.',
+          },
+          {
+            toolType: 'smart-qa-practice-generator',
+            why: 'Creates focused practice questions for weak topics.',
+            howToUse: 'Generate 15-20 questions per weak chapter.',
+          },
+        ],
+        videoRecommendations,
+        motivation: 'Small daily consistency will improve your next score strongly.',
+      };
+    }
+
+    if (!Array.isArray(aiParsed.videoRecommendations) || aiParsed.videoRecommendations.length === 0) {
+      aiParsed.videoRecommendations = videoRecommendations.slice(0, 8).map((v) => ({
+        ...v,
+        why: `Recommended to improve ${v.subject || 'this'} understanding.`,
+      }));
+    }
+
+    res.json({
+      success: true,
+      data: {
+        analysis: aiParsed,
+        meta: {
+          generatedAt: new Date().toISOString(),
+          weakSubjects,
+          classNumber,
+        },
+      },
+    });
+  } catch (error) {
+    console.error('AI exam analysis error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to generate AI exam analysis',
+      error: error.message,
     });
   }
 });

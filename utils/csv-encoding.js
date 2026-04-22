@@ -64,22 +64,16 @@ export function decodeCsvBuffer(buffer) {
 }
 
 /**
- * Post-process a CSV cell value:
- *  - Trims whitespace.
- *  - Normalizes "smart" punctuation Excel loves to insert back to plain ASCII
- *    so downstream math/validation isn't thrown off by Unicode look-alikes.
+ * Post-process a CSV cell value while preserving Unicode symbols.
  *
- *   −  (U+2212 minus)     → -
- *   –  (U+2013 en dash)   → -
- *   —  (U+2014 em dash)   → -
- *   ‐  (U+2010 hyphen)    → -
- *   ‘ ’ (curly single)    → '
- *   “ ” (curly double)    → "
- *   …  (ellipsis)         → ...
- *   &nbsp; (U+00A0)       → space
+ * Important: do NOT normalize math or smart punctuation characters to ASCII.
+ * We preserve symbols like `θ`, `π`, `√`, `°`, `²`, `³`, `⁻¹`, `−`, `≤`, `≥`
+ * exactly as uploaded so question text/options remain faithful.
  *
- * The degree sign (°), plus/minus (±), ×, ÷ and similar math glyphs are kept
- * intact because they carry meaning inside question text.
+ * Only safe cleanups are applied:
+ *  - strip UTF-8 BOM if it leaks into a cell
+ *  - convert NBSP to normal space
+ *  - trim outer whitespace
  *
  * @param {string} value
  * @returns {string}
@@ -89,13 +83,7 @@ export function cleanCsvCell(value) {
   let s = String(value);
 
   s = s
-    .replace(/\u2212/g, '-')
-    .replace(/\u2013/g, '-')
-    .replace(/\u2014/g, '-')
-    .replace(/\u2010/g, '-')
-    .replace(/[\u2018\u2019\u201B]/g, "'")
-    .replace(/[\u201C\u201D\u201F]/g, '"')
-    .replace(/\u2026/g, '...')
+    .replace(/\uFEFF/g, '')
     .replace(/\u00A0/g, ' ');
 
   return s.trim();

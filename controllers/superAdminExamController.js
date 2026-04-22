@@ -1085,9 +1085,12 @@ export const bulkUploadQuestions = async (req, res) => {
   try {
     console.log('📝 bulkUploadQuestions controller called');
     const { examId } = req.params;
-    const allowDuplicates = ['true', '1', 'yes', 'on'].includes(
-      String(req.body?.allowDuplicates || '').trim().toLowerCase()
-    );
+    // Default behavior: allow duplicates unless explicitly disabled.
+    const allowDuplicatesRaw = String(req.body?.allowDuplicates || '').trim().toLowerCase();
+    const allowDuplicates =
+      allowDuplicatesRaw === ''
+        ? true
+        : ['true', '1', 'yes', 'on'].includes(allowDuplicatesRaw);
     
     if (!req.file) {
       return res.status(400).json({ 
@@ -1464,7 +1467,7 @@ export const bulkUploadQuestions = async (req, res) => {
           questionImage: newQuestionData.questionImage,
         });
         if (!allowDuplicates && seenQuestionKeys.has(questionKey)) {
-          errors.push(`Row ${i + 1}: Duplicate question skipped for subject "${newQuestionData.subject}"`);
+          // Duplicate skips are intentional in strict mode; do not treat them as errors.
           continue;
         }
 
