@@ -114,6 +114,29 @@ const buildSafeRemoveQuestionPipeline = ({ questionId, totalQuestionsDelta = 0, 
   },
 ];
 
+const syncExamQuestionTotals = async (examId) => {
+  const [totals] = await Question.aggregate([
+    { $match: { exam: new mongoose.Types.ObjectId(examId) } },
+    {
+      $group: {
+        _id: '$exam',
+        totalQuestions: { $sum: 1 },
+        totalMarks: { $sum: { $ifNull: ['$marks', 0] } },
+      },
+    },
+  ]);
+
+  await Exam.updateOne(
+    { _id: examId },
+    {
+      $set: {
+        totalQuestions: Number(totals?.totalQuestions) || 0,
+        totalMarks: Number(totals?.totalMarks) || 0,
+      },
+    }
+  );
+};
+
 function buildQuestionDedupKey({
   examId,
   subject,
@@ -830,6 +853,7 @@ export const addQuestion = async (req, res) => {
         totalMarksDelta: marksValue,
       })
     );
+    await syncExamQuestionTotals(examId);
     console.log('✅ Question added to exam');
 
     res.status(201).json({
@@ -1569,6 +1593,7 @@ export const bulkUploadQuestions = async (req, res) => {
           totalMarksDelta: addedMarks,
         })
       );
+      await syncExamQuestionTotals(examId);
     }
 
     console.log(`✅ Bulk question upload completed: ${createdQuestions.length} created, ${errors.length} errors`);
