@@ -6,21 +6,63 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 dotenv.config({ path: join(__dirname, '..', '.env') });
 
+function isTruthy(value) {
+  if (value == null) return false;
+  const normalized = String(value).trim().toLowerCase();
+  return normalized === '1' || normalized === 'true' || normalized === 'yes' || normalized === 'on';
+}
+
+function resolveChatCompletionsEndpoint(baseUrlRaw) {
+  const sanitized = String(baseUrlRaw || '').trim().replace(/\/+$/, '');
+  if (!sanitized) {
+    return 'http://127.0.0.1:1234/v1/chat/completions';
+  }
+
+  if (/\/chat\/completions$/i.test(sanitized)) {
+    return sanitized;
+  }
+
+  if (/\/v1$/i.test(sanitized)) {
+    return `${sanitized}/chat/completions`;
+  }
+
+  return `${sanitized}/v1/chat/completions`;
+}
+
 function getLlmConfig() {
   const baseUrlRaw =
+    process.env.UPSTREAM_LLM_URL ||
+    process.env.LLM_BASE_URL ||
     process.env.OPENAI_BASE_URL ||
     process.env.LM_STUDIO_BASE_URL ||
     'http://127.0.0.1:1234/v1';
-  const apiKey = process.env.OPENAI_API_KEY || 'lm-studio';
+  const apiKey =
+    process.env.UPSTREAM_LLM_API_KEY ||
+    process.env.LLM_API_KEY ||
+    process.env.OPENAI_API_KEY ||
+    'lm-studio';
   const model =
+    process.env.LLM_MODEL_ID ||
+    process.env.UPSTREAM_LLM_MODEL_ID ||
     process.env.OPENAI_MODEL ||
     process.env.LM_STUDIO_MODEL ||
     'mistralai/mistral-7b-instruct-v0.3';
+  const disableAuth = isTruthy(process.env.DISABLE_LLM_AUTH);
+  const allowInsecureCert = isTruthy(process.env.ALLOW_INSECURE_LLM_CERT);
+  const endpoint = resolveChatCompletionsEndpoint(baseUrlRaw);
+
+  if (allowInsecureCert) {
+    process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+  }
 
   return {
-    baseUrl: String(baseUrlRaw).replace(/\/+$/, ''),
+    endpoint,
     apiKey: String(apiKey),
     model: String(model),
+    disableAuth,
+    allowInsecureCert,
+    contextTokens: Number(process.env.LLM_CONTEXT_TOKENS) || 0,
+    provider: String(process.env.LLM_PROVIDER || '').trim().toLowerCase(),
   };
 }
 
@@ -42,8 +84,7 @@ async function callChatCompletions({
   maxTokens = 2000,
   preferJson = false,
 }) {
-  const { baseUrl, apiKey, model } = getLlmConfig();
-  const endpoint = `${baseUrl}/chat/completions`;
+  const { endpoint, apiKey, model, disableAuth, contextTokens } = getLlmConfig();
   // Some local model templates (LM Studio) only accept user/assistant roles.
   const normalizeMessages = (inputMessages) => {
     const list = Array.isArray(inputMessages) ? inputMessages : [];
@@ -90,7 +131,7 @@ async function callChatCompletions({
     model,
     messages: normalizedMessages,
     temperature,
-    max_tokens: maxTokens,
+    max_tokens: contextTokens > 0 ? Math.min(maxTokens, contextTokens) : maxTokens,
   };
 
   const withJsonFormat = preferJson
@@ -98,12 +139,16 @@ async function callChatCompletions({
     : basePayload;
 
   const attemptRequest = async (payload) => {
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+    if (!disableAuth) {
+      headers.Authorization = `Bearer ${apiKey}`;
+    }
+
     const response = await fetch(endpoint, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${apiKey}`,
-      },
+      headers,
       body: JSON.stringify(payload),
     });
 
@@ -241,8 +286,10 @@ class GeminiService {
   constructor() {
     const cfg = getLlmConfig();
     this.model = cfg.model;
-    this.baseUrl = cfg.baseUrl;
-    console.log(`✅ LLM service ready: ${this.model} @ ${this.baseUrl}`);
+    this.endpoint = cfg.endpoint;
+    this.provider = cfg.provider || 'default';
+    this.disableAuth = cfg.disableAuth;
+    console.log(`✅ LLM service ready: ${this.model} @ ${this.endpoint} (provider=${this.provider}, auth=${this.disableAuth ? 'off' : 'on'})`);
   }
 
   async generateResponse(message, context = {}, chatHistory = []) {

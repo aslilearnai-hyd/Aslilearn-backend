@@ -29,10 +29,17 @@ FRONTEND_URL=http://localhost:5173
 SUPER_ADMIN_EMAIL=amenityforge@gmail.com
 SUPER_ADMIN_PASSWORD=Amenity
 
-# Local LLM (LM Studio) Configuration
-OPENAI_BASE_URL=http://127.0.0.1:1234/v1
-OPENAI_API_KEY=lm-studio
-OPENAI_MODEL=mistralai/mistral-7b-instruct-v0.3
+# Gemini AI Configuration
+GEMINI_API_KEY=AIzaSyCubFWwtDGDpj9jYmjzvng2QA_QYq9n4O0
+
+# Self-hosted production LLM configuration (AI tools only)
+LLM_PROVIDER=self-hosted
+LLM_MODEL_ID=Qwen/Qwen2.5-32B-Instruct-AWQ
+UPSTREAM_LLM_URL=http://122.183.61.67:40097/v1/chat/completions
+UPSTREAM_LLM_API_KEY=sk-rnxa-secure-key
+LLM_CONTEXT_TOKENS=4096
+ALLOW_INSECURE_LLM_CERT=1
+DISABLE_LLM_AUTH=0
 `;
 
 // Write as UTF-8 without BOM
