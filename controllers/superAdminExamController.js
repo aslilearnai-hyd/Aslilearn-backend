@@ -65,18 +65,6 @@ export function normalizeExamClassFields(exam) {
   return e;
 }
 
-export function applyQuestionDerivedTotals(exam) {
-  if (!exam || !Array.isArray(exam.questions) || exam.questions.length === 0) {
-    return exam;
-  }
-  const computedMarks = exam.questions.reduce((sum, q) => sum + (Number(q?.marks) || 0), 0);
-  return {
-    ...exam,
-    totalQuestions: exam.questions.length,
-    totalMarks: computedMarks,
-  };
-}
-
 const ALLOWED_EXAM_SUBJECTS = ['maths', 'physics', 'chemistry', 'biology'];
 
 const buildSafeAppendQuestionsPipeline = ({ questionIds = [], totalQuestionsDelta = 0, totalMarksDelta = 0 }) => {
@@ -98,31 +86,6 @@ const buildSafeAppendQuestionsPipeline = ({ questionIds = [], totalQuestionsDelt
     },
   ];
 };
-
-async function syncExamTotalsFromQuestions(examId) {
-  if (!mongoose.Types.ObjectId.isValid(examId)) return;
-  const examObjectId = new mongoose.Types.ObjectId(examId);
-  const totals = await Question.aggregate([
-    { $match: { exam: examObjectId } },
-    {
-      $group: {
-        _id: '$exam',
-        totalQuestions: { $sum: 1 },
-        totalMarks: { $sum: { $ifNull: ['$marks', 0] } },
-      },
-    },
-  ]);
-  const totalsRow = totals[0] || { totalQuestions: 0, totalMarks: 0 };
-  await Exam.updateOne(
-    { _id: examObjectId },
-    {
-      $set: {
-        totalQuestions: Number(totalsRow.totalQuestions) || 0,
-        totalMarks: Number(totalsRow.totalMarks) || 0,
-      },
-    }
-  );
-}
 
 const buildSafeRemoveQuestionPipeline = ({ questionId, totalQuestionsDelta = 0, totalMarksDelta = 0 }) => [
   {
@@ -319,7 +282,7 @@ export const createExam = async (req, res) => {
     res.status(201).json({
       success: true,
       message: 'Exam created successfully',
-      data: applyQuestionDerivedTotals(normalizeExamClassFields(persisted || newExam))
+      data: normalizeExamClassFields(persisted || newExam)
     });
   } catch (error) {
     console.error('❌ Create exam error:', error);
@@ -401,9 +364,7 @@ export const getAllExams = async (req, res) => {
       .populate('targetSchools', 'schoolName fullName email')
       .sort({ createdAt: -1 });
 
-    const normalizedExams = exams.map((ex) =>
-      applyQuestionDerivedTotals(normalizeExamClassFields(ex))
-    );
+    const normalizedExams = exams.map((ex) => normalizeExamClassFields(ex));
 
     console.log(`✅ Found ${normalizedExams.length} exams`);
     if (schoolIds) {
@@ -443,7 +404,7 @@ export const getExamsByBoard = async (req, res) => {
 
     res.json({
       success: true,
-      data: exams.map((ex) => applyQuestionDerivedTotals(normalizeExamClassFields(ex)))
+      data: exams.map((ex) => normalizeExamClassFields(ex))
     });
   } catch (error) {
     console.error('Get exams by board error:', error);
@@ -581,7 +542,7 @@ export const updateExam = async (req, res) => {
     res.json({
       success: true,
       message: 'Exam updated successfully',
-      data: applyQuestionDerivedTotals(normalizeExamClassFields(refreshedExam || exam))
+      data: normalizeExamClassFields(refreshedExam || exam)
     });
   } catch (error) {
     console.error('Update exam error:', error);
@@ -860,18 +821,15 @@ export const addQuestion = async (req, res) => {
     await question.save();
     console.log('✅ Question saved:', question._id);
 
-    // Add question to exam and then recompute totals from source of truth
-    // (Question collection). This avoids double-counting when exam totals were
-    // already manually set during exam creation/edit.
+    // Add question to exam + keep totals consistent.
     await Exam.updateOne(
       { _id: examId },
       buildSafeAppendQuestionsPipeline({
         questionIds: [question._id],
-        totalQuestionsDelta: 0,
-        totalMarksDelta: 0,
+        totalQuestionsDelta: 1,
+        totalMarksDelta: marksValue,
       })
     );
-    await syncExamTotalsFromQuestions(examId);
     console.log('✅ Question added to exam');
 
     res.status(201).json({
@@ -1593,17 +1551,24 @@ export const bulkUploadQuestions = async (req, res) => {
       }
     }
 
-    // Attach all newly-created questions to the exam in a single update.
+    // Attach all newly-created questions to the exam in a single update (and
+    // keep Exam.totalQuestions / Exam.totalMarks consistent).
     if (newQuestionIdsToPush.length > 0) {
+      const addedMarks = createdQuestions.length
+        ? (await Question.find(
+            { _id: { $in: newQuestionIdsToPush } },
+            { marks: 1 }
+          ).lean()).reduce((sum, q) => sum + (Number(q?.marks) || 0), 0)
+        : 0;
+
       await Exam.updateOne(
         { _id: examId },
         buildSafeAppendQuestionsPipeline({
           questionIds: newQuestionIdsToPush,
-          totalQuestionsDelta: 0,
-          totalMarksDelta: 0,
+          totalQuestionsDelta: newQuestionIdsToPush.length,
+          totalMarksDelta: addedMarks,
         })
       );
-      await syncExamTotalsFromQuestions(examId);
     }
 
     console.log(`✅ Bulk question upload completed: ${createdQuestions.length} created, ${errors.length} errors`);

@@ -66,8 +66,7 @@ import {
   addQuestion,
   bulkUploadExams,
   bulkUploadQuestions,
-  normalizeExamClassFields,
-  applyQuestionDerivedTotals
+  normalizeExamClassFields
 } from '../controllers/superAdminExamController.js';
 import { getCalendarEvents, createCalendarEvent } from '../controllers/calendarController.js';
 
@@ -898,7 +897,7 @@ router.get('/exams/:examId', async (req, res) => {
       return res.status(404).json({ success: false, message: 'Exam not found' });
     }
     console.log('✅ Exam found:', exam.title, 'Questions:', exam.questions?.length || 0);
-    res.json({ success: true, data: applyQuestionDerivedTotals(normalizeExamClassFields(exam)) });
+    res.json({ success: true, data: normalizeExamClassFields(exam) });
   } catch (error) {
     console.error('❌ Get exam error:', error);
     console.error('Error stack:', error.stack);
