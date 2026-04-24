@@ -40,6 +40,8 @@ import studentRoutes from './routes/student.js';
 import aiRoutes from './routes/ai.js';
 import streamRoutes from './routes/streams.js';
 import curriculumRoutes from './routes/curriculum.js';
+import pdfRagRoutes from './routes/pdf-rag.js';
+import { initPdfProcessingQueue } from './queues/pdfProcessingQueue.js';
 import { verifyToken, verifySuperAdmin } from './middleware/auth.js';
 import { getCalendarEvents, createCalendarEvent } from './controllers/calendarController.js';
 import {
@@ -111,6 +113,7 @@ if (envResult.error) {
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+initPdfProcessingQueue();
 
 // Configure multer for file uploads
 const upload = multer({ 
@@ -638,6 +641,13 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
       fullName: user.fullName,
       role: user.role,
       classNumber: user.classNumber,
+      phone: user.phone || '',
+      age: user.age ?? 18,
+      educationStream: user.educationStream || '',
+      targetExam: user.targetExam || '',
+      board: user.board || '',
+      schoolName: user.schoolName || '',
+      profilePhoto: user.profilePhoto || '',
       assignedSubjects: user.assignedSubjects || [],
       assignedClass: user.assignedClass || null
     };
@@ -662,7 +672,7 @@ app.patch('/api/users/:userId', requireAuth, async (req, res) => {
       return res.status(401).json({ success: false, message: 'Not authenticated' });
     }
 
-    const allowedFields = ['fullName', 'email', 'age', 'educationStream', 'targetExam'];
+    const allowedFields = ['fullName', 'email', 'age', 'educationStream', 'targetExam', 'phone', 'profilePhoto'];
     const updateData = {};
     for (const key of allowedFields) {
       if (key in req.body) {
@@ -709,6 +719,7 @@ app.use('/api/curriculum', curriculumRoutes);
 app.use('/api', streamRoutes);
 app.use('/api/student', studentRoutes);
 app.use('/api/ai', aiRoutes);
+app.use('/api', pdfRagRoutes);
 
 // Serve static files
 // Session configuration

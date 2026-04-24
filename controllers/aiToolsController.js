@@ -5,6 +5,7 @@ import {
 } from '../services/hardcoded-content-service.js';
 import { generateTeacherTool } from '../services/gemini-service.js';
 import AiToolGeneration from '../models/AiToolGeneration.js';
+import { runHybridRagQuery } from '../services/pdf-rag-service.js';
 
 function teacherToolDisplayName(toolType) {
   const map = {
@@ -284,11 +285,62 @@ export const createTeacherTool = async (req, res) => {
       `🤖 LLM teacher tool: ${toolType} — ${classDisplay}, ${finalSubject}, topic: ${topicForStore || '(optional)'}`,
     );
 
+    const { matchedDoc: cachedDoc } = await findStoredAiToolContent(
+      classDisplay,
+      finalSubject,
+      topicForStore,
+      subtopicForStore,
+      toolType,
+      { preferSuperAdmin: true },
+    );
+    if (cachedDoc) {
+      const cachedContent = String(cachedDoc.generatedContent || cachedDoc.content || '').trim();
+      if (cachedContent) {
+        return res.json({
+          success: true,
+          data: {
+            content: cachedContent,
+            toolType,
+            metadata: {
+              classNumber: isIIT6 ? 'IIT-6' : classNum,
+              subject: finalSubject,
+              topic: topicForStore,
+              ...params,
+              generatedAt: new Date(),
+              teacherId,
+              source: 'cache',
+              sourceLabel: 'Previously generated content',
+            },
+          },
+        });
+      }
+    }
+
     let generatedContent;
+    let ragMeta = null;
     let fromStoredFallback = false;
     let storedFallbackMatch = null;
     try {
-      generatedContent = await generateTeacherTool(toolType, llmParams);
+      const ragInput = `${teacherToolDisplayName(toolType)} for ${classDisplay}, ${finalSubject}, ${topicForStore || ''}. ${JSON.stringify(params)}`;
+      const ragResult = await runHybridRagQuery({
+        query: ragInput,
+        subject: finalSubject,
+        classLabel: classDisplay,
+        toolType,
+        role: 'teacher',
+        cacheKey: `${toolType}|${topicForStore}|${subtopicForStore}`,
+        metadata: { teacherId },
+      });
+
+      if (ragResult?.source === 'rag' && ragResult?.content) {
+        generatedContent = ragResult.content;
+        ragMeta = {
+          chunksUsed: ragResult.chunksUsed || 0,
+          citations: ragResult.citations || [],
+        };
+      } else {
+        generatedContent = await generateTeacherTool(toolType, llmParams);
+      }
       if (
         generatedContent == null ||
         (typeof generatedContent === 'string' && generatedContent.trim().length === 0)
@@ -384,6 +436,7 @@ export const createTeacherTool = async (req, res) => {
             : 'AI Generated',
           aiUnavailable: fromStoredFallback,
           fallbackMatch: storedFallbackMatch || undefined,
+          ...(ragMeta || {}),
         },
       },
     });

@@ -37,6 +37,26 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: ''
   },
+  age: {
+    type: Number,
+    min: 1,
+    max: 120,
+    default: 18
+  },
+  educationStream: {
+    type: String,
+    trim: true,
+    default: ''
+  },
+  targetExam: {
+    type: String,
+    trim: true,
+    default: ''
+  },
+  profilePhoto: {
+    type: String,
+    default: ''
+  },
   permissions: {
     type: [String],
     default: []

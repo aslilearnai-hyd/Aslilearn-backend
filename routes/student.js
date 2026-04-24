@@ -17,6 +17,7 @@ import {
   getAllStudentRankings
 } from '../controllers/studentRankingController.js';
 import geminiService, { generateStudentTool } from '../services/gemini-service.js';
+import { runHybridRagQuery } from '../services/pdf-rag-service.js';
 import {
   advancedAnalyticsMockData,
   buildPerQuestionAttemptAnalytics,
@@ -3513,10 +3514,33 @@ router.post('/ai/tool', async (req, res) => {
     if (!hardcodedData) {
       const topicMsg = topic ? `Topic: ${topic}` : 'all content';
       console.log(`❌ No hardcoded content found for ${toolType} - ${classDisplay}, ${finalSubject}, ${topicMsg}`);
-      return res.status(404).json({
-        success: false,
-        message: `No pre-generated content available for ${toolType} with ${classDisplay}, Subject: ${finalSubject}${topic ? `, ${topicMsg}` : ''}. Please check if the content exists in the hardcoded folder.`,
-        hint: topic ? 'Make sure the topic/unit name matches the folder structure.' : 'Make sure the required files exist for this subject.'
+      const ragResult = await runHybridRagQuery({
+        query: `${toolType} for ${classDisplay}, ${finalSubject}. ${topic || ''}`,
+        subject: finalSubject,
+        classLabel: classDisplay,
+        toolType,
+        role: 'student',
+        cacheKey: `${toolType}|${topic || ''}`,
+        metadata: { userId, sourceHint: 'student-tools' },
+      });
+      return res.json({
+        success: true,
+        data: {
+          content: ragResult.content,
+          toolType,
+          metadata: {
+            classNumber: isIIT6 ? 'IIT-6' : classNum,
+            subject: finalSubject,
+            topic,
+            ...params,
+            generatedAt: new Date(),
+            userId,
+            source: ragResult.source,
+            sourceLabel: ragResult.source === 'rag' ? 'RAG PDF Context' : 'LLM Fallback',
+            chunksUsed: ragResult.chunksUsed || 0,
+            citations: ragResult.citations || [],
+          },
+        },
       });
     }
 

@@ -18,9 +18,11 @@
     "fix-user": "node fix-user-login.js"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1036.0",
     "@google/generative-ai": "^0.24.1",
     "axios": "^1.12.2",
     "bcryptjs": "^2.4.3",
+    "bullmq": "^5.76.1",
     "cheerio": "^1.2.0",
     "cors": "^2.8.5",
     "csv-parse": "^6.1.0",
@@ -30,12 +32,14 @@
     "express-session": "^1.17.3",
     "helmet": "^8.1.0",
     "iconv-lite": "^0.4.24",
+    "ioredis": "^5.10.1",
     "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.5.0",
     "multer": "^1.4.5-lts.1",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
+    "pdf-parse": "^2.4.5",
     "pdfkit": "^0.17.2",
     "xlsx": "^0.18.5"
   },
