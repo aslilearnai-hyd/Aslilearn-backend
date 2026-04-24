@@ -73,6 +73,33 @@ const examResultSchema = new mongoose.Schema({
     of: mongoose.Schema.Types.Mixed,
     default: {}
   },
+  questionAnalytics: [{
+    questionId: {
+      type: String,
+      required: false,
+    },
+    index: Number,
+    subject: String,
+    chapter: String,
+    difficulty: String,
+    questionType: String,
+    conceptType: String,
+    timeTaken: {
+      type: Number,
+      default: 0,
+    },
+    idealTime: Number,
+    timeBucket: {
+      type: String,
+      enum: ['in_time', 'less_time', 'over_time'],
+    },
+    status: {
+      type: String,
+      enum: ['correct', 'wrong', 'not_answered'],
+    },
+    isCorrect: Boolean,
+    isAnswered: Boolean,
+  }],
   completedAt: {
     type: Date,
     default: Date.now

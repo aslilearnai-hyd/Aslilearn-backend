@@ -41,6 +41,10 @@ import {
   getAssessments,
   getAnalytics,
   getClasses,
+  getSubjects,
+  createSubject,
+  updateSubject,
+  deleteSubject,
   createClass,
   deleteClass,
   deleteAllClasses,
@@ -89,6 +93,10 @@ router.post('/students/:studentId/assign-class', assignClassToStudent);
 
 // Class Management Routes
 router.get('/classes', getClasses);
+router.get('/subjects', getSubjects);
+router.post('/subjects', createSubject);
+router.put('/subjects/:id', updateSubject);
+router.delete('/subjects/:id', deleteSubject);
 router.post('/classes', createClass);
 router.delete('/classes/delete-all', deleteAllClasses); // Must come before /classes/:id to avoid route conflict
 router.delete('/classes/:id', deleteClass);

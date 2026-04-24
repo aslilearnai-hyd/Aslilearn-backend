@@ -44,6 +44,25 @@ const questionSchema = new mongoose.Schema({
     required: true,
     default: 'maths'
   },
+  chapter: {
+    type: String,
+    trim: true,
+    default: 'General'
+  },
+  difficulty: {
+    type: String,
+    enum: ['easy', 'moderate', 'difficult', 'highly_difficult'],
+    default: 'moderate'
+  },
+  questionCategory: {
+    type: String,
+    trim: true
+  },
+  conceptType: {
+    type: String,
+    enum: ['Concept', 'Application'],
+    default: 'Concept'
+  },
   exam: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Exam',

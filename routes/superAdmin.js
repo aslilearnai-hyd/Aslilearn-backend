@@ -45,6 +45,7 @@ import {
   getAllBoards,
   getBoardDashboard,
   createSubject,
+  updateSubject,
   getSubjectsByBoard,
   deleteSubject,
   uploadContent,
@@ -243,6 +244,34 @@ const questionImageUpload = multer({
   }
 });
 
+// Configure multer for school logo uploads.
+const schoolLogoStorage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    const uploadDir = path.join(__dirname, '../uploads/schools/logos');
+    if (!fs.existsSync(uploadDir)) {
+      fs.mkdirSync(uploadDir, { recursive: true });
+    }
+    cb(null, uploadDir);
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
+    const ext = path.extname(file.originalname || '').toLowerCase();
+    cb(null, `school-logo-${uniqueSuffix}${ext || '.png'}`);
+  }
+});
+
+const schoolLogoUpload = multer({
+  storage: schoolLogoStorage,
+  limits: { fileSize: 3 * 1024 * 1024 }, // 3MB limit
+  fileFilter: (req, file, cb) => {
+    if (String(file.mimetype || '').startsWith('image/')) {
+      cb(null, true);
+    } else {
+      cb(new Error('Only image files are allowed!'), false);
+    }
+  }
+});
+
 // Public routes
 router.post('/login', superAdminLogin);
 
@@ -269,6 +298,48 @@ router.get('/ai-tool-generations/document/:id', getAiToolGenerationById);
 // Admin Management
 router.get('/admins', getAllAdmins);
 router.get('/admins/:adminId/analytics', getAdminAnalytics);
+router.post('/admins/upload-logo', (req, res, next) => {
+  schoolLogoUpload.single('logo')(req, res, (err) => {
+    if (err) {
+      if (err.code === 'LIMIT_FILE_SIZE') {
+        return res.status(400).json({
+          success: false,
+          message: 'File too large. Maximum size is 3MB.'
+        });
+      }
+      return res.status(400).json({
+        success: false,
+        message: err.message || 'Logo upload error'
+      });
+    }
+    next();
+  });
+}, (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({
+        success: false,
+        message: 'No logo file provided'
+      });
+    }
+
+    const logoUrl = `/uploads/schools/logos/${req.file.filename}`;
+    res.json({
+      success: true,
+      logoUrl,
+      filename: req.file.filename,
+      originalName: req.file.originalname,
+      size: req.file.size,
+      mimetype: req.file.mimetype
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: 'Failed to upload school logo',
+      error: error.message
+    });
+  }
+});
 router.post('/admins', createAdmin);
 router.put('/admins/:id', updateAdmin);
 router.delete('/admins/:id', deleteAdmin);
@@ -311,6 +382,7 @@ router.get('/boards/:boardCode/analytics', getBoardAnalytics);
 
 // Subject Management (Super Admin only)
 router.post('/subjects', createSubject);
+router.put('/subjects/:subjectId', updateSubject);
 router.get('/subjects', async (req, res) => {
   try {
     const Subject = (await import('../models/Subject.js')).default;

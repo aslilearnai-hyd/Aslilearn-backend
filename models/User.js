@@ -83,6 +83,12 @@ const userSchema = new mongoose.Schema({
     trim: true,
     default: ''
   },
+  // School logo URL for admins
+  schoolLogo: {
+    type: String,
+    trim: true,
+    default: ''
+  },
   // Contact person for admins
   contactPerson: {
     type: String,

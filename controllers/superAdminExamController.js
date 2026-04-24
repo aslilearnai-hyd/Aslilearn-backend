@@ -619,6 +619,10 @@ export const addQuestion = async (req, res) => {
       negativeMarks,
       explanation,
       subject,
+      chapter,
+      difficulty,
+      questionCategory,
+      conceptType,
       board,
       replaceDuplicate = false
     } = req.body;
@@ -834,6 +838,17 @@ export const addQuestion = async (req, res) => {
       negativeMarks: negativeMarksValue,
       explanation: explanation?.trim() || undefined,
       subject: normalizedQuestionSubject,
+      chapter: String(chapter || '').trim() || 'General',
+      difficulty: ['easy', 'moderate', 'difficult', 'highly_difficult'].includes(String(difficulty || '').toLowerCase())
+        ? String(difficulty).toLowerCase()
+        : undefined,
+      questionCategory: String(questionCategory || '').trim() || undefined,
+      conceptType: (() => {
+        const raw = String(conceptType || '').trim().toLowerCase();
+        if (raw.includes('application') || raw.includes('problem')) return 'Application';
+        if (raw.includes('concept') || raw.includes('theory')) return 'Concept';
+        return undefined;
+      })(),
       exam: examId,
       board: (board || exam.board).toUpperCase(),
       createdBy: createdById
@@ -1537,6 +1552,28 @@ export const bulkUploadQuestions = async (req, res) => {
           negativeMarks,
           explanation: getRowValue('explanation') || undefined,
           subject,
+          chapter: getRowValue('chapter', 'chaptername', 'chapter_name', 'topic', 'unit') || 'General',
+          difficulty: (() => {
+            const rawDifficulty = String(getRowValue('difficulty', 'difficultylevel', 'difficulty_level') || '').toLowerCase();
+            if (['easy', 'moderate', 'difficult', 'highly_difficult'].includes(rawDifficulty)) {
+              return rawDifficulty;
+            }
+            if (rawDifficulty === 'hard') return 'difficult';
+            if (rawDifficulty === 'medium') return 'moderate';
+            return 'moderate';
+          })(),
+          questionCategory: getRowValue(
+            'questioncategory',
+            'question_category',
+            'analytics_type',
+            'analytictype',
+            'type_tag'
+          ) || undefined,
+          conceptType: (() => {
+            const rawConcept = String(getRowValue('concepttype', 'concept_type', 'skilltype', 'skill_type') || '').toLowerCase();
+            if (rawConcept.includes('application') || rawConcept.includes('problem')) return 'Application';
+            return 'Concept';
+          })(),
           exam: examId,
           board: exam.board,
           createdBy: createdById

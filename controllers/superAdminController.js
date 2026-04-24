@@ -233,6 +233,7 @@ export const getAllAdmins = async (req, res) => {
           email: admin.email,
           board: admin.board,
           schoolName: admin.schoolName,
+          schoolLogo: admin.schoolLogo,
           contactPerson: admin.contactPerson,
           phone: admin.phone,
           place: admin.place,
@@ -427,7 +428,7 @@ export const getAdminAnalytics = async (req, res) => {
 // Create New Admin
 export const createAdmin = async (req, res) => {
   try {
-    const { name, email, permissions, board, schoolName, contactPerson, phone, place, pin } = req.body;
+    const { name, email, permissions, board, schoolName, schoolLogo, contactPerson, phone, place, pin } = req.body;
     
     // Validate required fields
     if (!name || !email) {
@@ -476,6 +477,7 @@ export const createAdmin = async (req, res) => {
       role: 'admin',
       board: board.toUpperCase(),
       schoolName: schoolName.trim(),
+      schoolLogo: schoolLogo?.trim() || '',
       contactPerson: contactPerson?.trim() || '',
       phone: phone?.trim() || '',
       place: place?.trim() || '',
@@ -504,6 +506,7 @@ export const createAdmin = async (req, res) => {
         email: newAdmin.email,
         board: newAdmin.board,
         schoolName: newAdmin.schoolName,
+        schoolLogo: newAdmin.schoolLogo,
         contactPerson: newAdmin.contactPerson,
         phone: newAdmin.phone,
         place: newAdmin.place,
@@ -540,7 +543,7 @@ export const createAdmin = async (req, res) => {
 // Update Admin
 export const updateAdmin = async (req, res) => {
   try {
-    const { name, email, permissions, isActive, board, schoolName, contactPerson, phone, place, pin } = req.body;
+    const { name, email, permissions, isActive, board, schoolName, schoolLogo, contactPerson, phone, place, pin } = req.body;
     const adminId = req.params.id;
     
     console.log('📝 Updating admin:', adminId, { name, email, board, schoolName, isActive });
@@ -580,6 +583,9 @@ export const updateAdmin = async (req, res) => {
     if (schoolName !== undefined && schoolName !== null) {
       updateData.schoolName = schoolName.trim();
     }
+    if (schoolLogo !== undefined && schoolLogo !== null) {
+      updateData.schoolLogo = schoolLogo.trim();
+    }
     if (contactPerson !== undefined && contactPerson !== null) {
       updateData.contactPerson = contactPerson.trim();
     }
@@ -616,6 +622,7 @@ export const updateAdmin = async (req, res) => {
         email: updatedAdmin.email,
         board: updatedAdmin.board,
         schoolName: updatedAdmin.schoolName,
+        schoolLogo: updatedAdmin.schoolLogo,
         permissions: updatedAdmin.permissions,
         status: updatedAdmin.isActive ? 'Active' : 'Inactive'
       }

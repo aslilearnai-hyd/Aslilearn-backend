@@ -17,6 +17,11 @@ import {
   getAllStudentRankings
 } from '../controllers/studentRankingController.js';
 import geminiService, { generateStudentTool } from '../services/gemini-service.js';
+import {
+  advancedAnalyticsMockData,
+  buildPerQuestionAttemptAnalytics,
+  generateAdvancedAnalytics,
+} from '../utils/advancedExamAnalytics.js';
 
 const router = express.Router();
 
@@ -1815,6 +1820,7 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
         index: index + 1,
         questionId,
         subject: String(q.subject || 'general').toLowerCase(),
+        chapter: String(q.chapter || q.topic || q.unit || '').trim() || '',
         questionType: q.questionType,
         questionText: shorten(q.questionText || ''),
         hasImage: Boolean(q.questionImage),
@@ -1843,6 +1849,137 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       return words.length > 70 ? `${words.slice(0, 67)}...` : words;
     };
 
+    const inferTopicFromQuestion = (q) => {
+      const chapterRaw = String(q?.chapter || '').trim();
+      const chapterLower = chapterRaw.toLowerCase();
+      const isMeaningfulChapter = chapterRaw &&
+        chapterLower !== 'general' &&
+        chapterLower !== 'unknown' &&
+        chapterLower !== 'chapter' &&
+        chapterLower !== 'unit';
+      if (isMeaningfulChapter) {
+        return chapterRaw;
+      }
+
+      const text = String(q?.questionText || '')
+        .replace(/[^a-zA-Z0-9\s]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .toLowerCase();
+      if (!text) return `${q.subject || 'subject'} fundamentals`;
+
+      const topicPatterns = [
+        { topic: 'Arithmetic Progression', regex: /\barithmetic progression\b|\ba\.?p\.?\b/ },
+        { topic: 'Quadrilateral Properties', regex: /\bquadrilateral\b|\bparallelogram\b|\brhombus\b|\btrapez/ },
+        { topic: 'Polygon Angles', regex: /\bpolygon\b|\binterior angles?\b|\bexterior angles?\b/ },
+        { topic: 'Ratio and Proportion', regex: /\bratio\b|\bproportion\b/ },
+        { topic: 'Linear Equations', regex: /\blinear equation\b|\bsolve for\b|\bequation\b/ },
+        { topic: 'Probability', regex: /\bprobability\b|\bchance\b|\boutcome\b/ },
+        { topic: 'Motion and Kinematics', regex: /\bmotion\b|\bvelocity\b|\bacceleration\b|\bdisplacement\b/ },
+        { topic: 'Electricity and Circuits', regex: /\bohm\b|\bcurrent\b|\bvoltage\b|\bresistance\b|\bcircuit\b/ },
+        { topic: 'Acids, Bases and Salts', regex: /\bacid\b|\bbase\b|\bsalt\b|\bph\b/ },
+        { topic: 'Carbon Compounds', regex: /\bcarbon\b|\bhydrocarbon\b|\borganic\b/ },
+      ];
+
+      const matched = topicPatterns.find((item) => item.regex.test(text));
+      if (matched) return matched.topic;
+
+      const stop = new Set([
+        'the', 'and', 'that', 'this', 'with', 'from', 'into', 'your', 'which', 'what', 'when', 'where', 'while',
+        'likely', 'consequence', 'value', 'find', 'calculate', 'question', 'term', 'first', 'second', 'third',
+        'fourth', 'fifth', 'will', 'then', 'than', 'have', 'has', 'for', 'are', 'is', 'was', 'were', 'been',
+      ]);
+      const keywords = text
+        .split(' ')
+        .map((x) => x.trim())
+        .filter((x) => x.length > 2 && !stop.has(x));
+      const compact = keywords.slice(0, 4).join(' ');
+      return compact ? compact.replace(/\b\w/g, (c) => c.toUpperCase()) : `${q.subject || 'subject'} fundamentals`;
+    };
+
+    const buildPersonalizedPracticeTask = (q, status) => {
+      const topic = inferTopicFromQuestion(q);
+      const subject = String(q.subject || 'subject').toLowerCase();
+      const type = String(q.questionType || 'mcq').toUpperCase();
+
+      if (status === 'correct') {
+        return `Solve 2 advanced ${subject} ${type} questions on "${topic}" and write a one-line shortcut/heuristic after each solution.`;
+      }
+      if (status === 'unattempted') {
+        return `Do 4 timed ${subject} ${type} questions on "${topic}" (75-90s each) and force one attempt per question before reviewing solutions.`;
+      }
+      return `Practice 5 targeted ${subject} ${type} questions on "${topic}" in two timed sets (3 + 2), then note the exact error pattern you made.`;
+    };
+
+    const buildGapLine = (q, status) => {
+      const topic = inferTopicFromQuestion(q);
+      const subject = String(q.subject || 'subject').toLowerCase();
+      const type = String(q.questionType || 'mcq').toLowerCase();
+      const chapterPrefix = q?.chapter ? `Chapter "${q.chapter}" - ` : '';
+
+      if (status === 'correct') {
+        return `${chapterPrefix}Strong hold on ${subject} "${topic}" (${type}). Keep this pattern as your reliability anchor.`;
+      }
+      if (status === 'unattempted') {
+        if (type === 'integer') {
+          return `${chapterPrefix}Skipped an integer-style ${subject} item in "${topic}" — likely a setup/calculation confidence gap.`;
+        }
+        if (type === 'multiple') {
+          return `${chapterPrefix}Skipped a multi-select ${subject} question in "${topic}" — likely uncertainty in option filtering.`;
+        }
+        return `${chapterPrefix}Skipped a ${subject} concept check in "${topic}" — likely time-pressure or hesitation before first attempt.`;
+      }
+      return `${chapterPrefix}In "${topic}" (${subject}), answer choice did not match the required ${type} reasoning path.`;
+    };
+
+    const buildFixStrategyLine = (q, status, explanationLine) => {
+      const topic = inferTopicFromQuestion(q);
+      const subject = String(q.subject || 'subject').toLowerCase();
+      const type = String(q.questionType || 'mcq').toLowerCase();
+      const chapterPrefix = q?.chapter ? `For chapter "${q.chapter}", ` : '';
+
+      if (status === 'correct') {
+        return `${chapterPrefix}create one harder "${topic}" variation and solve without hints to lock transfer skill. ${explanationLine}`;
+      }
+      if (status === 'unattempted') {
+        if (type === 'integer') {
+          return `${chapterPrefix}use a 3-step attempt rule for "${topic}": write known values, choose formula, compute once in 75-90s. ${explanationLine}`;
+        }
+        if (type === 'multiple') {
+          return `${chapterPrefix}run elimination for "${topic}" in two passes: reject clearly false options first, then verify remaining pair. ${explanationLine}`;
+        }
+        return `${chapterPrefix}for "${topic}", force first-pass attempt in 60-90s: identify keyword, pick method, commit one option. ${explanationLine}`;
+      }
+      return `${chapterPrefix}re-solve this "${topic}" ${subject} question with a written step flow, then add one mistake-prevention checkpoint. ${explanationLine}`;
+    };
+
+    const buildDerivedFocusAreas = (attempts) => {
+      const grouped = new Map();
+      attempts.forEach((q) => {
+        if (q.isCorrect) return;
+        const subject = String(q.subject || 'general').toLowerCase();
+        const topic = inferTopicFromQuestion(q);
+        const key = `${subject}::${topic}`;
+        if (!grouped.has(key)) {
+          grouped.set(key, { subject, topic, count: 0, unattempted: 0, wrong: 0 });
+        }
+        const row = grouped.get(key);
+        row.count += 1;
+        if (q.userAnswer) row.wrong += 1;
+        else row.unattempted += 1;
+      });
+
+      return Array.from(grouped.values())
+        .sort((a, b) => b.count - a.count)
+        .slice(0, 4)
+        .map((x) => ({
+          subject: x.subject,
+          issue: `Low accuracy/confidence in ${x.topic}${x.unattempted > 0 ? ' (skips detected)' : ''}.`,
+          whatToDo: `Run one focused ${x.subject} drill on "${x.topic}" daily and review every wrong/skipped attempt.`,
+          priority: x.count >= 2 ? 'high' : 'medium',
+        }));
+    };
+
     const buildQuestionInsight = (q) => {
       const status = q.isCorrect ? 'correct' : q.userAnswer ? 'wrong' : 'unattempted';
       const userAnswerText = formatAnswer(q.userAnswer);
@@ -1860,9 +1997,9 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
           subject: q.subject || 'general',
           questionType: q.questionType || 'mcq',
           status,
-          conceptGap: `Correct on "${concept}". Keep the same reasoning pattern for similar ${q.questionType || 'exam'} questions.`,
-          fixStrategy: `Create 1-2 harder variations of this question type and solve without hints. ${explanationLine}`,
-          practiceTask: `Practice 2 similar ${q.subject || 'subject'} questions and explain each final step in your own words.`,
+          conceptGap: buildGapLine(q, status),
+          fixStrategy: buildFixStrategyLine(q, status, explanationLine),
+          practiceTask: buildPersonalizedPracticeTask(q, status),
           priority: 'low',
         };
       }
@@ -1874,9 +2011,9 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
           subject: q.subject || 'general',
           questionType: q.questionType || 'mcq',
           status,
-          conceptGap: `Skipped "${concept}", likely due to time pressure or low confidence on this concept.`,
-          fixStrategy: `Attempt this question in 90 seconds using elimination/step checkpoints first, then verify accuracy. ${explanationLine}`,
-          practiceTask: `Do 4 timed practice questions on this topic (${q.subject || 'subject'}) and force an attempt for each.`,
+          conceptGap: buildGapLine(q, status),
+          fixStrategy: buildFixStrategyLine(q, status, explanationLine),
+          practiceTask: buildPersonalizedPracticeTask(q, status),
           priority: 'medium',
         };
       }
@@ -1887,9 +2024,9 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
         subject: q.subject || 'general',
         questionType: q.questionType || 'mcq',
         status,
-        conceptGap: `On "${concept}", selected "${userAnswerText}" but correct is "${correctAnswerText}".`,
-        fixStrategy: `Re-solve this question step by step and write a one-line rule to avoid this error pattern. ${explanationLine}`,
-        practiceTask: `Practice 5 targeted ${q.subject || 'subject'} questions of ${q.questionType || 'same'} type with a timer.`,
+        conceptGap: `${buildGapLine(q, status)} Selected "${userAnswerText}" but expected "${correctAnswerText}".`,
+        fixStrategy: buildFixStrategyLine(q, status, explanationLine),
+        practiceTask: buildPersonalizedPracticeTask(q, status),
         priority: 'high',
       };
     };
@@ -2083,6 +2220,31 @@ Important:
         thisWeek: ['Practice weak-topic questions daily and revise key formulas.'],
         beforeNextExam: ['Take one timed mock and analyze every incorrect question.'],
       };
+    }
+
+    const derivedFocusAreas = buildDerivedFocusAreas(questionAttemptDetails);
+    if (!Array.isArray(aiParsed.focusAreas) || aiParsed.focusAreas.length === 0) {
+      aiParsed.focusAreas = derivedFocusAreas;
+    } else {
+      const cleanedFocusAreas = aiParsed.focusAreas
+        .map((item) => ({
+          subject: String(item?.subject || '').toLowerCase() || 'general',
+          issue: String(item?.issue || '').trim(),
+          whatToDo: String(item?.whatToDo || '').trim(),
+          priority: ['high', 'medium', 'low'].includes(String(item?.priority || '').toLowerCase())
+            ? String(item.priority).toLowerCase()
+            : 'medium',
+        }))
+        .filter((item) => item.issue || item.whatToDo);
+
+      const mostlyGeneric =
+        cleanedFocusAreas.length === 0 ||
+        cleanedFocusAreas.every((item) => {
+          const blob = `${item.subject} ${item.issue} ${item.whatToDo}`.toLowerCase();
+          return item.subject === 'general' || blob.includes('general') || blob.includes('this topic');
+        });
+
+      aiParsed.focusAreas = mostlyGeneric ? derivedFocusAreas : cleanedFocusAreas;
     }
 
     if (!Array.isArray(aiParsed.videoRecommendations) || aiParsed.videoRecommendations.length === 0) {
@@ -2373,7 +2535,7 @@ function isAnswerCorrect(question, userAnswer) {
 // Save exam results (server-authoritative grading).
 router.post('/exam-results', async (req, res) => {
   try {
-    const { examId, examTitle, timeTaken, answers } = req.body || {};
+    const { examId, examTitle, timeTaken, answers, questionTimings } = req.body || {};
 
     console.log('📋 Saving exam result for student:', req.userId);
     console.log('📋 Exam ID:', examId);
@@ -2475,6 +2637,12 @@ router.post('/exam-results', async (req, res) => {
     const percentage = totalQuestions > 0
       ? Math.round((correctAnswers / totalQuestions) * 10000) / 100
       : 0;
+    const perQuestionAnalytics = buildPerQuestionAttemptAnalytics({
+      questions: effectiveQuestions,
+      answers: answerMap,
+      questionTimings,
+      isAnswerCorrect,
+    });
 
     const resultData = {
       examId,
@@ -2492,6 +2660,7 @@ router.post('/exam-results', async (req, res) => {
       timeTaken: Number(timeTaken) || 0,
       subjectWiseScore,
       answers: answerMap,
+      questionAnalytics: perQuestionAnalytics,
       completedAt: new Date(),
     };
 
@@ -2535,6 +2704,70 @@ router.post('/exam-results', async (req, res) => {
     res.status(500).json({
       success: false,
       message: 'Failed to save result',
+      error: error.message,
+    });
+  }
+});
+
+router.get('/exam/:examId/advanced-analytics', async (req, res) => {
+  try {
+    const { examId } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(examId)) {
+      return res.status(400).json({ success: false, message: 'Invalid exam id' });
+    }
+
+    const ExamResult = (await import('../models/ExamResult.js')).default;
+    const latestResult = await ExamResult.findOne({
+      userId: req.userId,
+      examId,
+    })
+      .sort({ completedAt: -1 })
+      .lean();
+
+    if (!latestResult) {
+      return res.status(404).json({
+        success: false,
+        message: 'No completed result found for this exam.',
+      });
+    }
+
+    const examQuestions = await Question.find({
+      exam: examId,
+      isActive: { $ne: false },
+    })
+      .sort({ createdAt: 1, _id: 1 })
+      .lean();
+
+    const questionAnalytics = Array.isArray(latestResult.questionAnalytics) && latestResult.questionAnalytics.length > 0
+      ? latestResult.questionAnalytics.map((item, index) => ({
+          ...item,
+          questionId: String(item.questionId || ''),
+          index: Number(item.index ?? index),
+          subject: String(item.subject || 'unknown').toLowerCase(),
+          chapter: String(item.chapter || 'General'),
+        }))
+      : buildPerQuestionAttemptAnalytics({
+          questions: examQuestions,
+          answers: latestResult.answers || {},
+          questionTimings: {},
+          isAnswerCorrect,
+        });
+
+    const advanced = generateAdvancedAnalytics({
+      examResult: latestResult,
+      questionAnalytics,
+    });
+
+    res.json({
+      success: true,
+      data: advanced,
+      sampleMockData: req.query.includeMock === 'true' ? advancedAnalyticsMockData : undefined,
+    });
+  } catch (error) {
+    console.error('Advanced analytics error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to generate advanced analytics',
       error: error.message,
     });
   }

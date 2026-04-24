@@ -2045,6 +2045,107 @@ export const getClasses = async (req, res) => {
   }
 };
 
+// Subject Management (Admin scoped by board)
+export const getSubjects = async (req, res) => {
+  try {
+    const admin = await User.findById(req.adminId).select('board').lean();
+    const board = admin?.board || 'ASLI_EXCLUSIVE_SCHOOLS';
+    const subjects = await Subject.find({ board }).sort({ name: 1 }).lean();
+    res.json({ success: true, data: subjects });
+  } catch (error) {
+    console.error('getSubjects error:', error);
+    res.status(500).json({ success: false, message: 'Failed to fetch subjects' });
+  }
+};
+
+export const createSubject = async (req, res) => {
+  try {
+    const admin = await User.findById(req.adminId).select('board').lean();
+    const board = admin?.board || 'ASLI_EXCLUSIVE_SCHOOLS';
+    const { name, code, description, grade, department } = req.body;
+
+    if (!name || !String(name).trim()) {
+      return res.status(400).json({ success: false, message: 'Subject name is required' });
+    }
+
+    const normalizedName = String(name).trim();
+    const normalizedCode = String(code || '').trim();
+    const existing = await Subject.findOne({
+      board,
+      isActive: true,
+      $or: [{ name: normalizedName }, ...(normalizedCode ? [{ code: normalizedCode }] : [])],
+    });
+    if (existing) {
+      return res.status(400).json({ success: false, message: 'Subject already exists' });
+    }
+
+    const subject = await Subject.create({
+      name: normalizedName,
+      ...(normalizedCode ? { code: normalizedCode } : {}),
+      description: String(description || '').trim(),
+      classNumber: String(grade || '').trim() || undefined,
+      board,
+      createdBy: 'super-admin',
+      isActive: true,
+      department: String(department || '').trim() || undefined,
+    });
+
+    res.status(201).json({ success: true, data: subject });
+  } catch (error) {
+    console.error('createSubject error:', error);
+    res.status(500).json({ success: false, message: 'Failed to create subject' });
+  }
+};
+
+export const updateSubject = async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({ success: false, message: 'Invalid subject id' });
+    }
+    const { name, code, description, grade, department, isActive } = req.body;
+
+    const subject = await Subject.findById(id);
+    if (!subject) {
+      return res.status(404).json({ success: false, message: 'Subject not found' });
+    }
+
+    if (name !== undefined) subject.name = String(name).trim();
+    if (code !== undefined) subject.code = String(code).trim() || undefined;
+    if (description !== undefined) subject.description = String(description).trim();
+    if (grade !== undefined) subject.classNumber = String(grade).trim() || undefined;
+    if (department !== undefined) subject.department = String(department).trim() || undefined;
+    if (isActive !== undefined) subject.isActive = Boolean(isActive);
+    await subject.save();
+
+    res.json({ success: true, data: subject });
+  } catch (error) {
+    console.error('updateSubject error:', error);
+    res.status(500).json({ success: false, message: 'Failed to update subject' });
+  }
+};
+
+export const deleteSubject = async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({ success: false, message: 'Invalid subject id' });
+    }
+    const subject = await Subject.findById(id);
+    if (!subject) {
+      return res.status(404).json({ success: false, message: 'Subject not found' });
+    }
+    subject.isActive = false;
+    subject.code = undefined;
+    subject.name = `${subject.name}__deleted__${Date.now()}`;
+    await subject.save();
+    res.json({ success: true, message: 'Subject deleted' });
+  } catch (error) {
+    console.error('deleteSubject error:', error);
+    res.status(500).json({ success: false, message: 'Failed to delete subject' });
+  }
+};
+
 // Assign class to student
 export const assignClassToStudent = async (req, res) => {
   try {

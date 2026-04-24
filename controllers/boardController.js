@@ -359,20 +359,53 @@ export const createSubject = async (req, res) => {
       return res.status(400).json({ success: false, message: `Invalid board code: ${board}. Must be ASLI_EXCLUSIVE_SCHOOLS` });
     }
 
-    // Check if subject already exists for this board
-    const existingSubject = await Subject.findOne({ 
-      name: name.trim(), 
-      board: boardUpper
+    // Active duplicate check only (soft-deleted subjects can be recreated/reused).
+    const normalizedName = name.trim();
+    const normalizedCode = code?.trim() || '';
+    const existingActiveByName = await Subject.findOne({
+      name: normalizedName,
+      board: boardUpper,
+      isActive: true,
     });
-    if (existingSubject) {
+    if (existingActiveByName) {
       return res.status(400).json({ success: false, message: 'Subject already exists for this board' });
+    }
+
+    // If a deleted subject exists with same name (or same code), revive it instead
+    // of creating a new document. This avoids unique-index conflicts and supports
+    // "delete by mistake then recreate" workflow.
+    const reviveQuery = normalizedCode
+      ? {
+          board: boardUpper,
+          isActive: false,
+          $or: [{ name: normalizedName }, { code: normalizedCode }],
+        }
+      : {
+          board: boardUpper,
+          isActive: false,
+          name: normalizedName,
+        };
+    const existingInactive = await Subject.findOne(reviveQuery);
+    if (existingInactive) {
+      existingInactive.name = normalizedName;
+      if (normalizedCode) existingInactive.code = normalizedCode;
+      if (description !== undefined) existingInactive.description = description?.trim() || '';
+      if (classNumber !== undefined) existingInactive.classNumber = classNumber?.trim() || undefined;
+      existingInactive.isActive = true;
+      await existingInactive.save();
+
+      return res.json({
+        success: true,
+        data: existingInactive,
+        message: 'Subject restored successfully',
+      });
     }
 
     // The createdBy field in Subject model is a String with enum 'super-admin'
     // So we must use 'super-admin' as the value
     // Handle empty strings - convert to undefined
     const subjectData = {
-      name: name.trim(),
+      name: normalizedName,
       board: boardUpper,
       createdBy: 'super-admin' // Required by schema enum
     };
@@ -380,8 +413,8 @@ export const createSubject = async (req, res) => {
     // Only add optional fields if they have values
     // IMPORTANT: Don't set code if it's empty to avoid unique index conflicts with null values
     // The code field should be completely omitted from the document if not provided
-    if (code && code.trim()) {
-      subjectData.code = code.trim();
+    if (normalizedCode) {
+      subjectData.code = normalizedCode;
     }
     // Don't include code at all if it's empty - this prevents MongoDB from setting it to null
     
@@ -480,14 +513,71 @@ export const deleteSubject = async (req, res) => {
     );
     await removeSubjectIdFromAllAssignments(subjectId);
 
-    // Soft delete - set isActive to false instead of deleting
+    // Soft delete - mark inactive and release unique keys (name/code) so users
+    // can recreate subjects with same name/code later.
     subject.isActive = false;
+    if (subject.code) {
+      subject.code = undefined;
+    }
+    subject.name = `${subject.name}__deleted__${Date.now()}`;
     await subject.save();
 
     res.json({ success: true, message: 'Subject deleted successfully' });
   } catch (error) {
     console.error('Delete subject error:', error);
     res.status(500).json({ success: false, message: 'Failed to delete subject' });
+  }
+};
+
+// Update Subject (Super Admin only)
+export const updateSubject = async (req, res) => {
+  try {
+    const { subjectId } = req.params;
+    const { name, description, classNumber } = req.body;
+
+    if (!subjectId || !mongoose.Types.ObjectId.isValid(subjectId)) {
+      return res.status(400).json({ success: false, message: 'Invalid subject ID' });
+    }
+
+    const subject = await Subject.findById(subjectId);
+    if (!subject || !subject.isActive) {
+      return res.status(404).json({ success: false, message: 'Subject not found' });
+    }
+
+    if (!name || !String(name).trim()) {
+      return res.status(400).json({ success: false, message: 'Subject name is required' });
+    }
+
+    const updatedName = String(name).trim();
+    const boardUpper = String(subject.board || '').toUpperCase();
+
+    const duplicate = await Subject.findOne({
+      _id: { $ne: subjectId },
+      name: updatedName,
+      board: boardUpper,
+      isActive: true,
+    });
+    if (duplicate) {
+      return res.status(400).json({ success: false, message: 'Another subject with this name already exists' });
+    }
+
+    subject.name = updatedName;
+    if (description !== undefined) {
+      subject.description = description?.trim() || '';
+    }
+    if (classNumber !== undefined) {
+      subject.classNumber = classNumber?.trim() || undefined;
+    }
+    await subject.save();
+
+    return res.json({
+      success: true,
+      message: 'Subject updated successfully',
+      data: subject,
+    });
+  } catch (error) {
+    console.error('Update subject error:', error);
+    return res.status(500).json({ success: false, message: 'Failed to update subject' });
   }
 };
 
