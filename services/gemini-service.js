@@ -66,6 +66,25 @@ function getLlmConfig() {
   };
 }
 
+function getGeminiFallbackConfig() {
+  const apiKey = String(
+    process.env.VIDYA_AI_GEMINI_API_KEY ||
+      process.env.GEMINI_API_KEY ||
+      ''
+  ).trim();
+  const model = String(
+    process.env.VIDYA_AI_GEMINI_MODEL ||
+      process.env.GEMINI_FALLBACK_MODEL ||
+      'gemini-2.0-flash'
+  ).trim();
+  const baseUrl = String(
+    process.env.GEMINI_API_BASE_URL || 'https://generativelanguage.googleapis.com/v1beta'
+  )
+    .trim()
+    .replace(/\/+$/, '');
+  return { apiKey, model, baseUrl };
+}
+
 function cleanText(value) {
   return value == null ? '' : String(value).trim();
 }
@@ -84,6 +103,54 @@ async function callChatCompletions({
   maxTokens = 2000,
   preferJson = false,
 }) {
+  const callGeminiFallback = async () => {
+    const { apiKey, model, baseUrl } = getGeminiFallbackConfig();
+    if (!apiKey) {
+      throw new Error('LLM request failed and Gemini fallback key is missing');
+    }
+
+    const prompt = normalizedMessages
+      .map((m) => `${m.role === 'assistant' ? 'Assistant' : 'User'}: ${String(m.content || '')}`)
+      .join('\n\n');
+
+    const payload = {
+      contents: [
+        {
+          role: 'user',
+          parts: [{ text: prompt || 'Help with educational content.' }],
+        },
+      ],
+      generationConfig: {
+        temperature,
+        maxOutputTokens: contextTokens > 0 ? Math.min(maxTokens, contextTokens) : maxTokens,
+      },
+    };
+
+    const response = await fetch(
+      `${baseUrl}/models/${model}:generateContent?key=${apiKey}`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      }
+    );
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`Gemini fallback failed (${response.status}): ${errorText}`);
+    }
+
+    const data = await response.json();
+    const text = (data?.candidates?.[0]?.content?.parts || [])
+      .map((p) => (typeof p?.text === 'string' ? p.text : ''))
+      .join('')
+      .trim();
+    if (!text) {
+      throw new Error('Gemini fallback returned empty content');
+    }
+    return text;
+  };
+
   const { endpoint, apiKey, model, disableAuth, contextTokens } = getLlmConfig();
   // Some local model templates (LM Studio) only accept user/assistant roles.
   const normalizeMessages = (inputMessages) => {
@@ -169,9 +236,23 @@ async function callChatCompletions({
     return await attemptRequest(withJsonFormat);
   } catch (error) {
     if (!preferJson) {
-      throw error;
+      try {
+        console.warn('Primary LLM failed, trying Gemini fallback:', error?.message || error);
+        return await callGeminiFallback();
+      } catch (fallbackError) {
+        throw fallbackError;
+      }
     }
-    return attemptRequest(basePayload);
+    try {
+      return await attemptRequest(basePayload);
+    } catch (error2) {
+      try {
+        console.warn('Primary LLM JSON mode failed, trying Gemini fallback:', error2?.message || error2);
+        return await callGeminiFallback();
+      } catch (fallbackError) {
+        throw fallbackError;
+      }
+    }
   }
 }
 

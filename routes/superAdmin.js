@@ -96,6 +96,7 @@ const contentStorage = multer.diskStorage({
 // File filter based on content type
 const contentFileFilter = (req, file, cb) => {
   const contentType = req.body.contentType || req.query.contentType;
+  const ext = path.extname(String(file.originalname || '')).toLowerCase();
   
   // Document types (TextBook, Workbook, Material)
   const documentMimes = [
@@ -108,8 +109,10 @@ const contentFileFilter = (req, file, cb) => {
     'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
     'application/vnd.oasis.opendocument.text',
     'application/vnd.oasis.opendocument.spreadsheet',
-    'application/vnd.oasis.opendocument.presentation'
+    'application/vnd.oasis.opendocument.presentation',
+    'application/octet-stream'
   ];
+  const documentExts = ['.pdf', '.doc', '.docx', '.ppt', '.pptx', '.xls', '.xlsx', '.odt', '.ods', '.odp'];
   
   // Video types
   const videoMimes = [
@@ -120,6 +123,7 @@ const contentFileFilter = (req, file, cb) => {
     'video/webm',
     'video/x-matroska'
   ];
+  const videoExts = ['.mp4', '.mpeg', '.mpg', '.mov', '.avi', '.webm', '.mkv'];
   
   // Audio types
   const audioMimes = [
@@ -131,21 +135,22 @@ const contentFileFilter = (req, file, cb) => {
     'audio/webm',
     'audio/x-m4a'
   ];
+  const audioExts = ['.mp3', '.wav', '.ogg', '.aac', '.m4a', '.flac', '.weba'];
   
   if (contentType === 'TextBook' || contentType === 'Workbook' || contentType === 'Material' || contentType === 'Homework') {
-    if (documentMimes.includes(file.mimetype)) {
+    if (documentMimes.includes(file.mimetype) || documentExts.includes(ext)) {
       cb(null, true);
     } else {
       cb(new Error('Only document files (PDF, DOC, DOCX, PPT, PPTX, XLS, XLSX) are allowed for this content type!'), false);
     }
   } else if (contentType === 'Video') {
-    if (videoMimes.includes(file.mimetype)) {
+    if (videoMimes.includes(file.mimetype) || videoExts.includes(ext)) {
       cb(null, true);
     } else {
       cb(new Error('Only video files (MP4, MPEG, MOV, AVI, WEBM, MKV) are allowed!'), false);
     }
   } else if (contentType === 'Audio') {
-    if (audioMimes.includes(file.mimetype)) {
+    if (audioMimes.includes(file.mimetype) || audioExts.includes(ext)) {
       cb(null, true);
     } else {
       cb(new Error('Only audio files (MP3, WAV, OGG, AAC, M4A) are allowed!'), false);

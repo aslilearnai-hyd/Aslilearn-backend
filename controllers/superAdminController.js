@@ -68,6 +68,7 @@ export const getDashboardStats = async (req, res) => {
     const totalUsers = await User.countDocuments();
     const totalTeachers = await Teacher.countDocuments();
     const totalVideos = await Video.countDocuments();
+    const totalContentItems = await Content.countDocuments();
     const totalAssessments = await Assessment.countDocuments();
     const totalExams = await Exam.countDocuments();
     const totalAdmins = await User.countDocuments({ role: 'admin' });
@@ -80,7 +81,7 @@ export const getDashboardStats = async (req, res) => {
     
     // Calculate engagement metrics
     const avgExamsPerStudent = totalStudents > 0 ? (totalExamResults / totalStudents).toFixed(1) : 0;
-    const contentEngagement = totalVideos + totalAssessments + totalExams;
+    const contentEngagement = totalContentItems + totalAssessments + totalExams;
     
     // Calculate pass rate from real exam results (assuming passing is >= 40%)
     const allExamResults = await ExamResult.find().select('percentage');
@@ -99,7 +100,9 @@ export const getDashboardStats = async (req, res) => {
         totalStudents,
         totalTeachers,
         totalAdmins,
-        courses: totalVideos,
+        courses: totalContentItems,
+        totalContent: totalContentItems,
+        totalVideos,
         assessments: totalAssessments,
         exams: totalExams,
         examResults: totalExamResults,

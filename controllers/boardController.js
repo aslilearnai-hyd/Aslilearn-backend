@@ -371,6 +371,22 @@ export const createSubject = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Subject already exists for this board' });
     }
 
+    // If code is provided, ensure it is not already used by an active subject.
+    // Deleted/inactive subjects are handled below via restore flow.
+    if (normalizedCode) {
+      const existingActiveByCode = await Subject.findOne({
+        board: boardUpper,
+        code: normalizedCode,
+        isActive: true,
+      });
+      if (existingActiveByCode) {
+        return res.status(400).json({
+          success: false,
+          message: 'Subject code already exists for this board',
+        });
+      }
+    }
+
     // If a deleted subject exists with same name (or same code), revive it instead
     // of creating a new document. This avoids unique-index conflicts and supports
     // "delete by mistake then recreate" workflow.
@@ -446,6 +462,12 @@ export const createSubject = async (req, res) => {
           return res.status(400).json({ 
             success: false, 
             message: 'Subject already exists for this board' 
+          });
+        }
+        if (saveError.keyPattern && saveError.keyPattern.code) {
+          return res.status(400).json({
+            success: false,
+            message: 'Subject code already exists for this board',
           });
         }
         return res.status(400).json({ 

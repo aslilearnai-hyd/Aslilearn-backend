@@ -947,25 +947,37 @@ export const getStudentAnalytics = async (req, res) => {
       return res.status(401).json({ success: false, message: 'Admin ID not found' });
     }
 
-    // Use aggregation for class distribution (much faster)
-    const classDistributionAgg = await User.aggregate([
-      { $match: { role: 'student', assignedAdmin: adminId } },
-      { $group: { 
-          _id: { $ifNull: ['$classNumber', 'Unassigned'] }, 
-          count: { $sum: 1 } 
-        } 
-      },
-      { $project: { className: '$_id', count: 1, _id: 0 } },
-      { $sort: { count: -1 } }
-    ]);
+    const studentFilter = { role: 'student', assignedAdmin: adminId };
+    const schoolStudents = await User.find(studentFilter).select('_id classNumber').lean();
+    const schoolStudentIds = schoolStudents.map((s) => s._id).filter(Boolean);
 
-    const classDistributionArray = classDistributionAgg.map(item => ({
-      className: item.className,
-      count: item.count
-    }));
+    const classDistributionMap = schoolStudents.reduce((acc, student) => {
+      const rawClass = String(student?.classNumber || '').trim();
+      const className = rawClass || 'Unassigned';
+      acc[className] = (acc[className] || 0) + 1;
+      return acc;
+    }, {});
+
+    const classDistributionArray = Object.entries(classDistributionMap)
+      .map(([className, count]) => ({ className, count }))
+      .sort((a, b) => b.count - a.count);
+
+    // Scope exam results by the admin's students. This is more reliable than
+    // depending only on ExamResult.adminId, which may be missing on old rows.
+    const adminObjectId = mongoose.Types.ObjectId.isValid(adminId)
+      ? new mongoose.Types.ObjectId(adminId)
+      : null;
+    const resultScope = schoolStudentIds.length > 0
+      ? {
+          userId: { $in: schoolStudentIds },
+          ...(adminObjectId
+            ? { $or: [{ adminId: adminObjectId }, { adminId: null }, { adminId: { $exists: false } }] }
+            : {}),
+        }
+      : { _id: null };
 
     // Get exam results with limit and lean for performance
-    const examResults = await ExamResult.find({ adminId })
+    const examResults = await ExamResult.find(resultScope)
       .populate('userId', 'fullName email classNumber')
       .populate('examId', 'title subject')
       .sort({ completedAt: -1 })
@@ -974,7 +986,7 @@ export const getStudentAnalytics = async (req, res) => {
 
     // Performance Metrics using aggregation
     const performanceMetricsAgg = await ExamResult.aggregate([
-      { $match: { adminId: adminId } },
+      { $match: resultScope },
       { $group: {
           _id: null,
           totalExams: { $sum: 1 },
@@ -991,7 +1003,7 @@ export const getStudentAnalytics = async (req, res) => {
 
     // Top Performers using aggregation
     const topPerformersAgg = await ExamResult.aggregate([
-      { $match: { adminId: adminId } },
+      { $match: resultScope },
       { $group: {
           _id: '$userId',
           totalExams: { $sum: 1 },
@@ -1033,7 +1045,7 @@ export const getStudentAnalytics = async (req, res) => {
 
     // Subject Performance using aggregation
     const subjectPerformanceAgg = await ExamResult.aggregate([
-      { $match: { adminId: adminId } },
+      { $match: resultScope },
       { $lookup: {
           from: 'exams',
           localField: 'examId',
