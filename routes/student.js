@@ -912,7 +912,33 @@ async function hydrateExamQuestions(examDoc, { hideAnswers = false } = {}) {
   };
 }
 
-// Get student's exams (all exams visible - board restrictions removed)
+const canStudentAccessExam = (exam, studentAdminId) => {
+  if (!exam) return false;
+  if (!studentAdminId) return !exam.isSchoolSpecific;
+
+  const toIdString = (value) => {
+    if (!value) return '';
+    if (typeof value === 'object' && value._id) return String(value._id);
+    return String(value);
+  };
+
+  const studentAdminIdStr = String(studentAdminId);
+  const examSchoolIdStr = toIdString(exam.schoolId);
+  const targetSchoolIds = Array.isArray(exam.targetSchools)
+    ? exam.targetSchools.map((id) => toIdString(id)).filter(Boolean)
+    : [];
+
+  // Non-school-specific exams are visible to everyone on the board.
+  if (!exam.isSchoolSpecific) return true;
+
+  // School-specific exam: allow only if student's assigned admin/school matches.
+  if (examSchoolIdStr && examSchoolIdStr === studentAdminIdStr) return true;
+  if (targetSchoolIds.includes(studentAdminIdStr)) return true;
+
+  return false;
+};
+
+// Get student's exams (respect school targeting)
 router.get('/exams', async (req, res) => {
   try {
     const student = await User.findById(req.userId)
@@ -927,16 +953,13 @@ router.get('/exams', async (req, res) => {
 
     const studentAdminId = student.assignedAdmin?._id || student.assignedAdmin;
 
-    // Build query for exams - ALL exams visible to ALL students
-    // Board restrictions removed - Date restrictions removed - School restrictions removed
-    // Show EVERYTHING that is created
+    // Keep exam discovery broad at DB level, then enforce school targeting in-memory.
     const query = {
       createdByRole: 'super-admin',
       isActive: true
-      // No filters - show ALL exams regardless of board, date, or school targeting
     };
 
-    console.log('📋 Student exams query (board restrictions removed):', JSON.stringify(query, null, 2));
+    console.log('📋 Student exams base query:', JSON.stringify(query, null, 2));
 
     // Get all exams created by Super Admin - no board restrictions
     const exams = await Exam.find(query)
@@ -949,14 +972,16 @@ router.get('/exams', async (req, res) => {
       exams.map((exam) => hydrateExamQuestions(exam, { hideAnswers: true }))
     );
 
-    // Only show exams that have uploaded questions.
-    // This prevents "No questions found in this exam" on student dashboard.
-    const publishedExams = hydratedExams.filter(
-      (exam) => Array.isArray(exam?.questions) && exam.questions.length > 0
-    );
+    // Only show exams that:
+    // 1) student is allowed to access by school targeting
+    // 2) have uploaded questions (avoid empty exam cards)
+    const publishedExams = hydratedExams.filter((exam) => {
+      if (!canStudentAccessExam(exam, studentAdminId)) return false;
+      return Array.isArray(exam?.questions) && exam.questions.length > 0;
+    });
 
     console.log(
-      `✅ Found ${publishedExams.length} exams with questions for student (from ${hydratedExams.length} total)`
+      `✅ Found ${publishedExams.length} accessible exams with questions for student (from ${hydratedExams.length} total)`
     );
     
     res.json({
@@ -987,7 +1012,7 @@ router.get('/teachers', getStudentAdminId, async (req, res) => {
   }
 });
 
-// Get specific exam with questions (all exams accessible - board restrictions removed)
+// Get specific exam with questions (respect school targeting)
 router.get('/exams/:examId', async (req, res) => {
   try {
     const { examId } = req.params;
@@ -1000,7 +1025,6 @@ router.get('/exams/:examId', async (req, res) => {
       });
     }
     
-    // All exams accessible - no board restrictions
     const exam = await Exam.findOne({ 
       _id: examId,
       createdByRole: 'super-admin',
@@ -1011,6 +1035,14 @@ router.get('/exams/:examId', async (req, res) => {
       return res.status(404).json({ 
         success: false, 
         message: 'Exam not found or access denied' 
+      });
+    }
+
+    const studentAdminId = student.assignedAdmin?._id || student.assignedAdmin;
+    if (!canStudentAccessExam(exam, studentAdminId)) {
+      return res.status(403).json({
+        success: false,
+        message: 'This exam is not assigned to your school.'
       });
     }
 
