@@ -113,5 +113,14 @@ export function cleanCsvCell(value) {
     .replace(/(^|[\s,(=])\?(?=\d)/g, '$1-')
     .replace(/(^|[\s,(=])\uFFFD(?=\d)/g, '$1-');
 
+  // Recovery heuristic for lossy Excel CSV exports:
+  // Some Unicode symbols (like theta) are saved as '?' in legacy ANSI CSV.
+  // Only convert standalone '?' to theta in trigonometry-specific contexts so
+  // normal sentence punctuation is not affected.
+  s = s
+    .replace(/\b(sin|cos|tan|cot|sec|cosec|csc)\s*\?/gi, '$1 θ')
+    .replace(/\?\s*(\^?\d+)/g, 'θ$1')
+    .replace(/\b\?\s+is\s+(acute|obtuse|right)\b/gi, 'θ is $1');
+
   return s.trim();
 }
