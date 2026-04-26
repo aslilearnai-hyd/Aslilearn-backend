@@ -1580,12 +1580,11 @@ router.get('/exam-results', async (req, res) => {
       : req.userId;
 
     const ExamResult = (await import('../models/ExamResult.js')).default;
-    
-    // Ensure we're filtering by the correct userId field
-    const results = await ExamResult.find({ userId: userId })
-      .populate('examId', '_id title examType duration totalQuestions totalMarks maxAttempts')
-      .sort({ completedAt: -1 });
-    
+
+    // Do NOT populate examId: if the Exam doc was removed, populate() sets examId to null
+    // and the client loses the id (breaks Attempted Exams / rankings). examTitle is on the row.
+    const results = await ExamResult.find({ userId: userId }).sort({ completedAt: -1 });
+
     const normalizedResults = results.map((row) => {
       const correct = Number(row?.correctAnswers || 0);
       const wrong = Number(row?.wrongAnswers || 0);
@@ -1595,9 +1594,21 @@ router.get('/exam-results', async (req, res) => {
         ? Math.round((correct / total) * 10000) / 100
         : 0;
 
-      const plain = typeof row?.toObject === 'function' ? row.toObject() : row;
+      const plain = typeof row?.toObject === 'function'
+        ? row.toObject({ flattenMaps: true })
+        : row;
+
+      const rawExamId = plain.examId;
+      const examIdStr =
+        rawExamId != null
+          ? typeof rawExamId === 'object' && rawExamId._id != null
+            ? String(rawExamId._id)
+            : String(rawExamId)
+          : null;
+
       return {
         ...plain,
+        examId: examIdStr,
         attemptNumber: Number(plain.attemptNumber) >= 1 ? Number(plain.attemptNumber) : 1,
         percentage: derivedPercentage,
       };
@@ -1631,9 +1642,9 @@ router.get('/exam-results', async (req, res) => {
     // Log first result structure for debugging
     if (normalizedResults.length > 0) {
       console.log('📋 Sample result structure:', {
-        examId: normalizedResults[0].examId?._id?.toString(),
-        userId: normalizedResults[0].userId?.toString(),
-        examTitle: normalizedResults[0].examTitle || normalizedResults[0].examId?.title,
+        examId: normalizedResults[0].examId,
+        userId: normalizedResults[0].userId?.toString?.() || String(normalizedResults[0].userId),
+        examTitle: normalizedResults[0].examTitle,
         percentage: normalizedResults[0].percentage,
       });
     }
