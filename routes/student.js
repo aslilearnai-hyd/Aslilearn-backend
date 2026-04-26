@@ -1138,11 +1138,12 @@ router.get('/asli-prep-content', async (req, res) => {
       });
     }
 
-    // Build query - filter only by class assigned subjects (no board restriction)
+    // Build query - filter by class assigned subjects.
+    // IMPORTANT: do not restrict to isExclusive=true, otherwise teacher homework
+    // (saved as isExclusive=false) never appears for students.
     const query = {
       subject: { $in: classSubjectIds },
-      isActive: true,
-      isExclusive: true
+      isActive: true
     };
 
     // If specific subject is requested, validate it's in class assigned subjects
