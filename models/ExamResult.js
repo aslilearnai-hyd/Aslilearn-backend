@@ -104,6 +104,12 @@ const examResultSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
+  /** 1-based attempt index for this student + exam (multiple rows allowed when maxAttempts > 1). */
+  attemptNumber: {
+    type: Number,
+    min: 1,
+    default: 1
+  },
   isActive: {
     type: Boolean,
     default: true
@@ -120,6 +126,7 @@ examResultSchema.index({ board: 1 });
 examResultSchema.index({ completedAt: -1 });
 examResultSchema.index({ adminId: 1, completedAt: -1 }); // For admin-specific analytics
 examResultSchema.index({ board: 1, completedAt: -1 }); // For board-specific analytics
+examResultSchema.index({ userId: 1, examId: 1, attemptNumber: 1 });
 
 const ExamResult = mongoose.model('ExamResult', examResultSchema);
 

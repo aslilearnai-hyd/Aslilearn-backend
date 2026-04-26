@@ -79,42 +79,38 @@ export const getAllStudentRankings = async (req, res) => {
     const student = await User.findById(userId);
     const studentBoard = student?.board;
 
-    // Always return student's attempted exams, even if board metadata is missing/mismatched.
-    // If board exists, prefer board-matched results and fallback to all user results.
-    let studentResults = [];
-    if (studentBoard) {
-      studentResults = await ExamResult.find({ userId, board: studentBoard }).sort({ completedAt: -1 });
-    }
-    if (!studentResults.length) {
-      studentResults = await ExamResult.find({ userId }).sort({ completedAt: -1 });
-    }
+    // Match /api/student/exam-results: include every attempt (board filter was hiding rows).
+    const studentResults = await ExamResult.find({ userId }).sort({ completedAt: -1 });
 
-    // Calculate rankings for each exam
     const rankings = await Promise.all(
       studentResults.map(async (result) => {
-        // Build rank list: board-scoped when available, else global by exam
         const rankQuery = studentBoard
           ? { examId: result.examId, board: studentBoard }
           : { examId: result.examId };
         const allResults = await ExamResult.find(rankQuery).sort({ percentage: -1 });
 
-        const rank = allResults.findIndex(r => r.userId.toString() === userId.toString()) + 1;
+        const rank = allResults.findIndex((r) => r.userId.toString() === userId.toString()) + 1;
         const totalStudents = allResults.length;
         const studentsAbove = rank - 1;
-        const percentile = totalStudents > 0 
-          ? Math.round(((totalStudents - studentsAbove) / totalStudents) * 100)
-          : 0;
+        const percentile =
+          totalStudents > 0
+            ? Math.round(((totalStudents - studentsAbove) / totalStudents) * 100)
+            : 0;
+
+        const attemptNumber = Number(result.attemptNumber) >= 1 ? Number(result.attemptNumber) : 1;
 
         return {
+          resultId: result._id,
           examId: result.examId,
           examTitle: result.examTitle,
+          attemptNumber,
           rank,
           totalStudents,
           percentile,
           percentage: result.percentage,
           obtainedMarks: result.obtainedMarks,
           totalMarks: result.totalMarks,
-          completedAt: result.completedAt
+          completedAt: result.completedAt,
         };
       })
     );

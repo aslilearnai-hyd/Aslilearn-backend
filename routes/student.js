@@ -1583,22 +1583,10 @@ router.get('/exam-results', async (req, res) => {
     
     // Ensure we're filtering by the correct userId field
     const results = await ExamResult.find({ userId: userId })
-      .populate('examId', '_id title examType duration totalQuestions totalMarks')
+      .populate('examId', '_id title examType duration totalQuestions totalMarks maxAttempts')
       .sort({ completedAt: -1 });
     
-    // Keep only the latest result per exam to avoid cross-screen mismatches
-    // when legacy/duplicate rows exist for the same exam attempt.
-    const latestByExam = new Map();
-    for (const row of results) {
-      const examIdKey = row?.examId?._id?.toString?.() || row?.examId?.toString?.();
-      const fallbackTitleKey = row?.examTitle ? `title:${String(row.examTitle).trim().toLowerCase()}` : null;
-      const key = examIdKey || fallbackTitleKey || `result:${row?._id?.toString?.() || Math.random()}`;
-      if (!latestByExam.has(key)) {
-        latestByExam.set(key, row);
-      }
-    }
-    const dedupedResults = Array.from(latestByExam.values());
-    const normalizedResults = dedupedResults.map((row) => {
+    const normalizedResults = results.map((row) => {
       const correct = Number(row?.correctAnswers || 0);
       const wrong = Number(row?.wrongAnswers || 0);
       const unattempted = Number(row?.unattempted || 0);
@@ -1610,12 +1598,13 @@ router.get('/exam-results', async (req, res) => {
       const plain = typeof row?.toObject === 'function' ? row.toObject() : row;
       return {
         ...plain,
+        attemptNumber: Number(plain.attemptNumber) >= 1 ? Number(plain.attemptNumber) : 1,
         percentage: derivedPercentage,
       };
     });
     
     console.log(`✅ Found ${results.length} exam results for student ${req.userId}`);
-    console.log(`📋 Returning ${normalizedResults.length} deduplicated latest results`);
+    console.log(`📋 Returning ${normalizedResults.length} result rows (all attempts)`);
     console.log(`📋 Query filter used: { userId: ${userId} }`);
     
     // Verify all results belong to this user
@@ -2367,6 +2356,7 @@ Important:
 router.get('/exam-results/:examId/review', async (req, res) => {
   try {
     const { examId } = req.params;
+    const resultId = req.query?.resultId ? String(req.query.resultId).trim() : '';
     if (!req.userId) {
       return res.status(401).json({ success: false, message: 'User not authenticated' });
     }
@@ -2374,13 +2364,25 @@ router.get('/exam-results/:examId/review', async (req, res) => {
       return res.status(400).json({ success: false, message: 'examId is required' });
     }
 
+    const mongooseLib = (await import('mongoose')).default;
     const ExamResult = (await import('../models/ExamResult.js')).default;
-    const latestResult = await ExamResult.findOne({
-      userId: req.userId,
-      examId,
-    })
-      .sort({ completedAt: -1, updatedAt: -1, createdAt: -1 })
-      .lean();
+    let latestResult = null;
+
+    if (resultId && mongooseLib.Types.ObjectId.isValid(resultId)) {
+      latestResult = await ExamResult.findOne({
+        _id: resultId,
+        userId: req.userId,
+        examId,
+      }).lean();
+    }
+    if (!latestResult) {
+      latestResult = await ExamResult.findOne({
+        userId: req.userId,
+        examId,
+      })
+        .sort({ completedAt: -1, updatedAt: -1, createdAt: -1 })
+        .lean();
+    }
 
     if (!latestResult) {
       return res.status(404).json({ success: false, message: 'No attempted result found for this exam' });
@@ -2678,6 +2680,20 @@ router.post('/exam-results', async (req, res) => {
       isAnswerCorrect,
     });
 
+    const ExamResult = (await import('../models/ExamResult.js')).default;
+    const maxAttempts = Math.max(1, Number(examDoc?.maxAttempts) || 1);
+    const priorCount = await ExamResult.countDocuments({
+      userId: req.userId,
+      examId,
+    });
+    if (priorCount >= maxAttempts) {
+      return res.status(403).json({
+        success: false,
+        message: `Maximum attempts (${maxAttempts}) reached for this exam.`,
+      });
+    }
+    const attemptNumber = priorCount + 1;
+
     const resultData = {
       examId,
       userId: req.userId,
@@ -2696,19 +2712,10 @@ router.post('/exam-results', async (req, res) => {
       answers: answerMap,
       questionAnalytics: perQuestionAnalytics,
       completedAt: new Date(),
+      attemptNumber,
     };
 
-    const ExamResult = (await import('../models/ExamResult.js')).default;
-    // Keep a single authoritative result per student+exam.
-    const examResult = await ExamResult.findOneAndUpdate(
-      { userId: req.userId, examId },
-      { $set: resultData },
-      {
-        new: true,
-        upsert: true,
-        setDefaultsOnInsert: true,
-      }
-    );
+    const examResult = await ExamResult.create(resultData);
 
     console.log('✅ Exam result saved (server-graded)');
     console.log('📋 Scored:', {
