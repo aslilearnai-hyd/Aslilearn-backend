@@ -3764,4 +3764,59 @@ router.get('/teacher-work-diary', async (req, res) => {
   }
 });
 
+// Proxy file download for student content URLs (avoids browser CORS issues)
+router.get('/content-download', async (req, res) => {
+  try {
+    const { url, filename } = req.query;
+    if (!url || typeof url !== 'string') {
+      return res.status(400).json({
+        success: false,
+        message: 'Missing required url query parameter'
+      });
+    }
+
+    let parsedUrl;
+    try {
+      parsedUrl = new URL(url);
+    } catch {
+      return res.status(400).json({
+        success: false,
+        message: 'Invalid download URL'
+      });
+    }
+
+    if (!['http:', 'https:'].includes(parsedUrl.protocol)) {
+      return res.status(400).json({
+        success: false,
+        message: 'Only HTTP/HTTPS download URLs are supported'
+      });
+    }
+
+    const upstream = await fetch(url);
+    if (!upstream.ok) {
+      return res.status(upstream.status).json({
+        success: false,
+        message: `Failed to fetch file: ${upstream.status}`
+      });
+    }
+
+    const arrayBuffer = await upstream.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+    const upstreamType = upstream.headers.get('content-type') || 'application/octet-stream';
+    const safeFilename = typeof filename === 'string' && filename.trim()
+      ? filename.trim()
+      : decodeURIComponent(parsedUrl.pathname.split('/').pop() || 'download');
+
+    res.setHeader('Content-Type', upstreamType);
+    res.setHeader('Content-Disposition', `attachment; filename="${safeFilename.replace(/"/g, '')}"`);
+    res.send(buffer);
+  } catch (error) {
+    console.error('Student content-download proxy error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to download file'
+    });
+  }
+});
+
 export default router;
