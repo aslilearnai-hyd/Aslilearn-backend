@@ -14,6 +14,7 @@ import {
   isRazorpayConfigured,
   fetchRazorpayPayments,
   fetchRazorpaySubscriptions,
+  fetchBillingForAdminEmail,
 } from '../services/razorpayService.js';
 import { VALID_SCHOOL_BOARDS, isValidSchoolBoard } from '../constants/boards.js';
 
@@ -431,6 +432,73 @@ export const getAdminAnalytics = async (req, res) => {
   } catch (error) {
     console.error('Get admin analytics error:', error);
     res.status(500).json({ success: false, message: 'Failed to fetch admin analytics' });
+  }
+};
+
+// Full school / admin profile + stats + Razorpay billing scoped to admin email
+export const getAdminSchoolDetail = async (req, res) => {
+  try {
+    const { adminId } = req.params;
+    if (!adminId) {
+      return res.status(400).json({ success: false, message: 'School id is required' });
+    }
+
+    const admin = await User.findById(adminId).select('-password');
+    if (!admin || admin.role !== 'admin') {
+      return res.status(404).json({ success: false, message: 'School not found' });
+    }
+
+    const [studentCount, teacherCount] = await Promise.all([
+      User.countDocuments({ role: 'student', assignedAdmin: adminId }),
+      Teacher.countDocuments({ adminId }),
+    ]);
+
+    const sd =
+      admin.schoolDetails && typeof admin.schoolDetails.toObject === 'function'
+        ? admin.schoolDetails.toObject()
+        : admin.schoolDetails || {};
+
+    const profile = {
+      id: admin._id,
+      name: admin.fullName,
+      email: admin.email,
+      board: admin.board,
+      schoolName: admin.schoolName,
+      schoolLogo: admin.schoolLogo,
+      contactPerson: admin.contactPerson,
+      phone: admin.phone,
+      place: admin.place,
+      pin: admin.pin,
+      state: sd.state || admin.place || '',
+      schoolDetails: sd,
+      permissions: admin.permissions || [],
+      status: admin.isActive ? 'Active' : 'Inactive',
+      joinDate: admin.createdAt,
+    };
+
+    let billing = {
+      razorpayConfigured: isRazorpayConfigured(),
+      razorpayError: null,
+      payments: [],
+      subscriptions: [],
+    };
+    try {
+      billing = await fetchBillingForAdminEmail(admin.email);
+    } catch (err) {
+      billing.razorpayError = err.message || 'Billing lookup failed';
+    }
+
+    res.json({
+      success: true,
+      data: {
+        profile,
+        stats: { students: studentCount, teachers: teacherCount },
+        billing,
+      },
+    });
+  } catch (error) {
+    console.error('Get admin school detail error:', error);
+    res.status(500).json({ success: false, message: 'Failed to load school details' });
   }
 };
 

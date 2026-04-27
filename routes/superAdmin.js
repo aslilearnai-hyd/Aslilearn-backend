@@ -13,6 +13,7 @@ import {
   getDashboardStats,
   getAllAdmins,
   getAdminAnalytics,
+  getAdminSchoolDetail,
   createAdmin,
   updateAdmin,
   deleteAdmin,
@@ -331,6 +332,7 @@ router.get('/ai-tool-generations/document/:id', getAiToolGenerationById);
 // Admin Management
 router.get('/admins', getAllAdmins);
 router.get('/admins/:adminId/analytics', getAdminAnalytics);
+router.get('/admins/:adminId/school-detail', getAdminSchoolDetail);
 router.post('/admins/upload-logo', (req, res, next) => {
   schoolLogoUpload.single('logo')(req, res, (err) => {
     if (err) {

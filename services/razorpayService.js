@@ -76,3 +76,102 @@ export async function fetchRazorpaySubscriptions(count = 50) {
     quantity: s.quantity,
   }));
 }
+
+/**
+ * @param {string} customerId
+ */
+export async function fetchRazorpayCustomer(customerId) {
+  if (!customerId || customerId === '—') {
+    return { id: '', email: '', name: '', contact: '' };
+  }
+  const { data } = await axios.get(`${RAZORPAY_API}/customers/${customerId}`, {
+    headers: getAuthHeader(),
+    timeout: 15000,
+  });
+  return {
+    id: data.id,
+    email: data.email || '',
+    name: data.name || '',
+    contact: data.contact || '',
+  };
+}
+
+/**
+ * Razorpay payments + subscriptions tied to a school admin email (payments by email; subs by customer email).
+ * @param {string} adminEmail
+ */
+export async function fetchBillingForAdminEmail(adminEmail) {
+  const normalized = String(adminEmail || '').toLowerCase().trim();
+  if (!normalized) {
+    return {
+      razorpayConfigured: isRazorpayConfigured(),
+      razorpayError: null,
+      payments: [],
+      subscriptions: [],
+    };
+  }
+
+  if (!isRazorpayConfigured()) {
+    return {
+      razorpayConfigured: false,
+      razorpayError: null,
+      payments: [],
+      subscriptions: [],
+    };
+  }
+
+  let payments = [];
+  let subscriptions = [];
+  try {
+    [payments, subscriptions] = await Promise.all([
+      fetchRazorpayPayments(100),
+      fetchRazorpaySubscriptions(100),
+    ]);
+  } catch (err) {
+    const msg =
+      err.response?.data?.error?.description ||
+      err.response?.data?.message ||
+      err.message ||
+      'Razorpay request failed';
+    return {
+      razorpayConfigured: true,
+      razorpayError: msg,
+      payments: [],
+      subscriptions: [],
+    };
+  }
+
+  const filteredPayments = payments.filter(
+    (p) => String(p.email || '').toLowerCase() === normalized
+  );
+
+  const uniqueCustomerIds = [
+    ...new Set(
+      subscriptions.map((s) => s.customerId).filter((id) => id && id !== '—')
+    ),
+  ];
+
+  const customerCache = new Map();
+  await Promise.all(
+    uniqueCustomerIds.map(async (cid) => {
+      try {
+        const c = await fetchRazorpayCustomer(cid);
+        customerCache.set(cid, c);
+      } catch {
+        customerCache.set(cid, { email: '' });
+      }
+    })
+  );
+
+  const filteredSubs = subscriptions.filter((s) => {
+    const c = customerCache.get(s.customerId);
+    return c && String(c.email || '').toLowerCase() === normalized;
+  });
+
+  return {
+    razorpayConfigured: true,
+    razorpayError: null,
+    payments: filteredPayments,
+    subscriptions: filteredSubs,
+  };
+}
