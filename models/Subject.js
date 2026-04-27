@@ -17,6 +17,12 @@ const subjectSchema = new mongoose.Schema({
     uppercase: true,
     default: 'ASLI_EXCLUSIVE_SCHOOLS'
   },
+  /** Indian state name when board is STATE; empty for CBSE / ASLI. */
+  stateName: {
+    type: String,
+    trim: true,
+    default: ''
+  },
   classNumber: {
     type: String,
     trim: true
@@ -38,8 +44,8 @@ const subjectSchema = new mongoose.Schema({
   timestamps: true
 });
 
-// Compound index to ensure unique subject name per board
-subjectSchema.index({ name: 1, board: 1 }, { unique: true });
+// Unique subject per board + state (STATE syllabus differentiates by stateName)
+subjectSchema.index({ name: 1, board: 1, stateName: 1 }, { unique: true });
 subjectSchema.index({ board: 1 });
 subjectSchema.index({ classNumber: 1 });
 subjectSchema.index({ board: 1, classNumber: 1 });

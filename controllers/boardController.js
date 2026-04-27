@@ -8,6 +8,27 @@ import User from '../models/User.js';
 import Teacher from '../models/Teacher.js';
 import { VALID_SCHOOL_BOARDS, isValidSchoolBoard } from '../constants/boards.js';
 
+function normalizedStateNameForBoard(boardUpper, rawStateName) {
+  if (boardUpper === 'STATE') {
+    return String(rawStateName || '').trim();
+  }
+  return '';
+}
+
+/** Active subject lookup: STATE rows match exact stateName; others match empty/missing stateName. */
+function findActiveSubjectByIdentity(name, boardUpper, stateForDb) {
+  const base = { name, board: boardUpper, isActive: true };
+  if (stateForDb) {
+    return Subject.findOne({ ...base, stateName: stateForDb });
+  }
+  return Subject.findOne({
+    $and: [
+      base,
+      { $or: [{ stateName: '' }, { stateName: { $exists: false } }] },
+    ],
+  });
+}
+
 // Initialize boards if they don't exist
 export const initializeBoards = async () => {
   try {
@@ -349,9 +370,9 @@ export const createSubject = async (req, res) => {
     console.log('Request body:', req.body);
     console.log('User:', req.user);
     
-    const { name, board, description, code, classNumber } = req.body;
+    const { name, board, description, code, classNumber, stateName: rawStateName } = req.body;
 
-    console.log('📚 Creating subject:', { name, board, description, code, classNumber });
+    console.log('📚 Creating subject:', { name, board, description, code, classNumber, stateName: rawStateName });
 
     if (!name || !board) {
       return res.status(400).json({ success: false, message: 'Name and board are required' });
@@ -365,16 +386,20 @@ export const createSubject = async (req, res) => {
       });
     }
 
+    const stateForDb = normalizedStateNameForBoard(boardUpper, rawStateName);
+    if (boardUpper === 'STATE' && !stateForDb) {
+      return res.status(400).json({
+        success: false,
+        message: 'State name is required for State syllabus subjects',
+      });
+    }
+
     // Active duplicate check only (soft-deleted subjects can be recreated/reused).
     const normalizedName = name.trim();
     const normalizedCode = code?.trim() || '';
-    const existingActiveByName = await Subject.findOne({
-      name: normalizedName,
-      board: boardUpper,
-      isActive: true,
-    });
+    const existingActiveByName = await findActiveSubjectByIdentity(normalizedName, boardUpper, stateForDb);
     if (existingActiveByName) {
-      return res.status(400).json({ success: false, message: 'Subject already exists for this board' });
+      return res.status(400).json({ success: false, message: 'Subject already exists for this board and state' });
     }
 
     // If code is provided, ensure it is not already used by an active subject.
@@ -396,23 +421,35 @@ export const createSubject = async (req, res) => {
     // If a deleted subject exists with same name (or same code), revive it instead
     // of creating a new document. This avoids unique-index conflicts and supports
     // "delete by mistake then recreate" workflow.
-    const reviveQuery = normalizedCode
-      ? {
-          board: boardUpper,
-          isActive: false,
-          $or: [{ name: normalizedName }, { code: normalizedCode }],
-        }
-      : {
-          board: boardUpper,
-          isActive: false,
-          name: normalizedName,
-        };
+    let reviveQuery;
+    if (normalizedCode) {
+      reviveQuery = {
+        board: boardUpper,
+        isActive: false,
+        $or: [{ name: normalizedName }, { code: normalizedCode }],
+      };
+    } else if (stateForDb) {
+      reviveQuery = {
+        board: boardUpper,
+        isActive: false,
+        name: normalizedName,
+        stateName: stateForDb,
+      };
+    } else {
+      reviveQuery = {
+        board: boardUpper,
+        isActive: false,
+        name: normalizedName,
+        $or: [{ stateName: '' }, { stateName: { $exists: false } }],
+      };
+    }
     const existingInactive = await Subject.findOne(reviveQuery);
     if (existingInactive) {
       existingInactive.name = normalizedName;
       if (normalizedCode) existingInactive.code = normalizedCode;
       if (description !== undefined) existingInactive.description = description?.trim() || '';
       if (classNumber !== undefined) existingInactive.classNumber = classNumber?.trim() || undefined;
+      existingInactive.stateName = stateForDb;
       existingInactive.isActive = true;
       await existingInactive.save();
 
@@ -429,6 +466,7 @@ export const createSubject = async (req, res) => {
     const subjectData = {
       name: normalizedName,
       board: boardUpper,
+      stateName: stateForDb,
       createdBy: 'super-admin' // Required by schema enum
     };
 
@@ -564,7 +602,7 @@ export const deleteSubject = async (req, res) => {
 export const updateSubject = async (req, res) => {
   try {
     const { subjectId } = req.params;
-    const { name, description, classNumber } = req.body;
+    const { name, description, classNumber, board: rawBoard, stateName: rawStateName } = req.body;
 
     if (!subjectId || !mongoose.Types.ObjectId.isValid(subjectId)) {
       return res.status(400).json({ success: false, message: 'Invalid subject ID' });
@@ -580,19 +618,37 @@ export const updateSubject = async (req, res) => {
     }
 
     const updatedName = String(name).trim();
-    const boardUpper = String(subject.board || '').toUpperCase();
+    let boardUpper = String(subject.board || '').toUpperCase();
+    if (rawBoard !== undefined && rawBoard !== null && String(rawBoard).trim() !== '') {
+      const nextBoard = String(rawBoard).toUpperCase().trim();
+      if (!isValidSchoolBoard(nextBoard)) {
+        return res.status(400).json({
+          success: false,
+          message: `Invalid board code: ${rawBoard}. Must be one of: ${VALID_SCHOOL_BOARDS.join(', ')}`,
+        });
+      }
+      boardUpper = nextBoard;
+      subject.board = nextBoard;
+    }
 
-    const duplicate = await Subject.findOne({
-      _id: { $ne: subjectId },
-      name: updatedName,
-      board: boardUpper,
-      isActive: true,
-    });
-    if (duplicate) {
-      return res.status(400).json({ success: false, message: 'Another subject with this name already exists' });
+    const stateForDb = normalizedStateNameForBoard(boardUpper, rawStateName !== undefined ? rawStateName : subject.stateName);
+    if (boardUpper === 'STATE' && !stateForDb) {
+      return res.status(400).json({
+        success: false,
+        message: 'State name is required for State syllabus subjects',
+      });
+    }
+
+    const dup = await findActiveSubjectByIdentity(updatedName, boardUpper, stateForDb);
+    if (dup && String(dup._id) !== String(subjectId)) {
+      return res.status(400).json({
+        success: false,
+        message: 'Another subject with this name already exists for this board and state',
+      });
     }
 
     subject.name = updatedName;
+    subject.stateName = stateForDb;
     if (description !== undefined) {
       subject.description = description?.trim() || '';
     }
@@ -643,9 +699,9 @@ export const getAllClasses = async (req, res) => {
 // Upload Content (Super Admin only - Asli Prep Exclusive)
 export const uploadContent = async (req, res) => {
   try {
-    const { title, description, type, board, subject, classNumber, topic, date, fileUrl, fileUrls, thumbnailUrl, duration, size, deadline } = req.body;
+    const { title, description, type, board, subject, classNumber, topic, date, fileUrl, fileUrls, thumbnailUrl, duration, size, deadline, stateName: rawContentState } = req.body;
 
-    console.log('📦 Uploading content:', { title, type, board, subject, classNumber, date, deadline });
+    console.log('📦 Uploading content:', { title, type, board, subject, classNumber, date, deadline, stateName: rawContentState });
 
     // Support both single fileUrl (backward compatibility) and multiple fileUrls
     const hasFileUrl = fileUrl && fileUrl.trim();
@@ -679,6 +735,23 @@ export const uploadContent = async (req, res) => {
     }
     if (subjectDoc.board !== boardNorm) {
       return res.status(400).json({ success: false, message: 'Subject does not belong to the selected board' });
+    }
+
+    const contentStateNorm = normalizedStateNameForBoard(boardNorm, rawContentState);
+    if (boardNorm === 'STATE') {
+      if (!contentStateNorm) {
+        return res.status(400).json({
+          success: false,
+          message: 'State name is required for State syllabus content',
+        });
+      }
+      const subjState = String(subjectDoc.stateName || '').trim();
+      if (subjState && subjState !== contentStateNorm) {
+        return res.status(400).json({
+          success: false,
+          message: 'State name must match the selected subject\'s state',
+        });
+      }
     }
 
     // Use fileUrls if provided, otherwise use fileUrl for backward compatibility
@@ -812,7 +885,7 @@ export const deleteContent = async (req, res) => {
 export const updateContent = async (req, res) => {
   try {
     const { contentId } = req.params;
-    const { title, description, fileUrl, fileUrls, topic, date, classNumber } = req.body;
+    const { title, description, fileUrl, fileUrls, topic, date, classNumber, board: rawBoard, stateName: rawStateName } = req.body;
 
     if (!contentId || !mongoose.Types.ObjectId.isValid(contentId)) {
       return res.status(400).json({ success: false, message: 'Invalid content ID' });
@@ -823,12 +896,60 @@ export const updateContent = async (req, res) => {
       return res.status(404).json({ success: false, message: 'Content not found' });
     }
 
+    const subjectDoc = await Subject.findById(content.subject);
+    if (!subjectDoc) {
+      return res.status(404).json({ success: false, message: 'Linked subject not found' });
+    }
+
     // Update fields if provided
     if (title !== undefined) content.title = title.trim();
     if (description !== undefined) content.description = description?.trim() || undefined;
     if (topic !== undefined) content.topic = topic?.trim() || undefined;
     if (date !== undefined) content.date = new Date(date);
     if (classNumber !== undefined) content.classNumber = classNumber?.trim() || undefined;
+
+    if (rawBoard !== undefined && rawBoard !== null && String(rawBoard).trim() !== '') {
+      const boardNorm = String(rawBoard).toUpperCase().trim();
+      if (!isValidSchoolBoard(boardNorm)) {
+        return res.status(400).json({
+          success: false,
+          message: `Invalid board code. Must be one of: ${VALID_SCHOOL_BOARDS.join(', ')}`,
+        });
+      }
+      if (subjectDoc.board !== boardNorm) {
+        return res.status(400).json({
+          success: false,
+          message: 'Content syllabus must match the linked subject\'s board',
+        });
+      }
+      content.board = boardNorm;
+      if (boardNorm !== 'STATE') {
+        content.stateName = '';
+      }
+    }
+
+    const boardForState = String(content.board || '').toUpperCase();
+    if (rawStateName !== undefined) {
+      const stateNorm = normalizedStateNameForBoard(boardForState, rawStateName);
+      if (boardForState === 'STATE') {
+        if (!stateNorm) {
+          return res.status(400).json({
+            success: false,
+            message: 'State name is required for State syllabus content',
+          });
+        }
+        const subjState = String(subjectDoc.stateName || '').trim();
+        if (subjState && subjState !== stateNorm) {
+          return res.status(400).json({
+            success: false,
+            message: 'State name must match the linked subject\'s state',
+          });
+        }
+      }
+      content.stateName = stateNorm;
+    } else if (boardForState !== 'STATE') {
+      content.stateName = '';
+    }
 
     // Update file URLs
     if (fileUrls !== undefined && Array.isArray(fileUrls) && fileUrls.length > 0) {

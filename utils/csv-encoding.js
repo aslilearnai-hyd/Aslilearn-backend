@@ -64,6 +64,25 @@ export function decodeCsvBuffer(buffer) {
 }
 
 /**
+ * Recover √ and θ from lossy Excel "CSV (Comma delimited)" / ANSI exports and
+ * common mis-encodings. Kept in sync with asli-frontend/src/lib/exam-text-normalize.ts.
+ * @param {string} s
+ * @returns {string}
+ */
+export function repairLossyMathSymbols(s) {
+  if (!s) return s;
+  let t = String(s);
+  t = t.replace(/\bv(\d+)\/(\d+)/g, '√$1/$2');
+  t = t.replace(/\bv\((\d+)\)/g, '√($1)');
+  // Use (?<![A-Za-z]) not \b: "4sin²?" has no \b before "sin" (digit is a word char).
+  t = t.replace(/(?<![A-Za-z])(sin|cos|tan|cot|sec|cosec|csc)([²³\u00B2\u00B3])\?/gi, '$1$2 θ');
+  t = t.replace(/\band\s+\?\s+is\s+(acute|obtuse|right)\b/gi, 'and θ is $1');
+  t = t.replace(/(?<![A-Za-z])(sin|cos|tan|cot|sec|cosec|csc)\s*\?/gi, '$1 θ');
+  t = t.replace(/\?\s*(\^?\d+)/g, 'θ$1');
+  return t;
+}
+
+/**
  * Post-process a CSV cell value while preserving Unicode symbols.
  *
  * Important: do NOT normalize math or smart punctuation characters to ASCII.
@@ -113,14 +132,7 @@ export function cleanCsvCell(value) {
     .replace(/(^|[\s,(=])\?(?=\d)/g, '$1-')
     .replace(/(^|[\s,(=])\uFFFD(?=\d)/g, '$1-');
 
-  // Recovery heuristic for lossy Excel CSV exports:
-  // Some Unicode symbols (like theta) are saved as '?' in legacy ANSI CSV.
-  // Only convert standalone '?' to theta in trigonometry-specific contexts so
-  // normal sentence punctuation is not affected.
-  s = s
-    .replace(/\b(sin|cos|tan|cot|sec|cosec|csc)\s*\?/gi, '$1 θ')
-    .replace(/\?\s*(\^?\d+)/g, 'θ$1')
-    .replace(/\b\?\s+is\s+(acute|obtuse|right)\b/gi, 'θ is $1');
+  s = repairLossyMathSymbols(s);
 
   return s.trim();
 }

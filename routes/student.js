@@ -24,6 +24,7 @@ import {
   generateAdvancedAnalytics,
 } from '../utils/advancedExamAnalytics.js';
 import { normalizeSchoolBoard } from '../constants/boards.js';
+import { dedupeExamResultRows } from '../utils/dedupe-exam-results.js';
 
 const router = express.Router();
 
@@ -1614,45 +1615,61 @@ router.get('/exam-results', async (req, res) => {
         percentage: derivedPercentage,
       };
     });
-    
-    console.log(`✅ Found ${results.length} exam results for student ${req.userId}`);
-    console.log(`📋 Returning ${normalizedResults.length} result rows (all attempts)`);
-    console.log(`📋 Query filter used: { userId: ${userId} }`);
-    
-    // Verify all results belong to this user
-    const invalidResults = normalizedResults.filter(r => {
-      const resultUserId = r.userId?.toString ? r.userId.toString() : String(r.userId);
-      return resultUserId !== String(userId);
-    });
-    
-    if (invalidResults.length > 0) {
-      console.error(`⚠️ WARNING: Found ${invalidResults.length} results that don't belong to user ${req.userId}`);
-      // Filter out invalid results
-      const validResults = normalizedResults.filter(r => {
-        const resultUserId = r.userId?.toString ? r.userId.toString() : String(r.userId);
-        return resultUserId === String(userId);
-      });
-      
-      return res.json({
-        success: true,
-        data: validResults,
-        warning: `Filtered out ${invalidResults.length} invalid results`
-      });
+
+    const normalizedResultsDeduped = dedupeExamResultRows(normalizedResults);
+    if (normalizedResultsDeduped.length !== normalizedResults.length) {
+      console.log(
+        `📋 Deduped exam results: ${normalizedResults.length} → ${normalizedResultsDeduped.length} rows for student ${req.userId}`
+      );
     }
-    
+
+    console.log(`✅ Found ${results.length} exam results for student ${req.userId}`);
+    console.log(`📋 Returning ${normalizedResultsDeduped.length} result rows (after dedupe)`);
+    console.log(`📋 Query filter used: { userId: ${userId} }`);
+
+    // Normalize userId on each row for logging only. Do NOT drop rows here: `find({ userId })`
+    // already scopes data; comparing with String(userId) vs populated refs produced false
+    // mismatches (e.g. "[object Object]") and returned an empty list to the client.
+    const expectedUserIdStr = String(userId);
+    const toResultUserIdStr = (r) => {
+      const v = r?.userId;
+      if (v == null || v === '') return '';
+      if (typeof v === 'string' || typeof v === 'number') return String(v);
+      if (typeof v === 'object') {
+        if (v._id != null) return String(v._id);
+        if (v.$oid != null) return String(v.$oid);
+        if (typeof v.toHexString === 'function') return v.toHexString();
+      }
+      try {
+        const s = v?.toString?.() ?? String(v);
+        return s === '[object Object]' ? '' : s;
+      } catch {
+        return '';
+      }
+    };
+    const mismatched = normalizedResultsDeduped.filter(
+      (r) => toResultUserIdStr(r) !== expectedUserIdStr
+    );
+    if (mismatched.length > 0) {
+      console.error(
+        `⚠️ WARNING: ${mismatched.length} exam result row(s) have unexpected userId shape vs query; still returning all rows from find({ userId }). Sample:`,
+        mismatched.slice(0, 2).map((r) => ({ stored: toResultUserIdStr(r), expected: expectedUserIdStr }))
+      );
+    }
+
     // Log first result structure for debugging
-    if (normalizedResults.length > 0) {
+    if (normalizedResultsDeduped.length > 0) {
       console.log('📋 Sample result structure:', {
-        examId: normalizedResults[0].examId,
-        userId: normalizedResults[0].userId?.toString?.() || String(normalizedResults[0].userId),
-        examTitle: normalizedResults[0].examTitle,
-        percentage: normalizedResults[0].percentage,
+        examId: normalizedResultsDeduped[0].examId,
+        userId: normalizedResultsDeduped[0].userId?.toString?.() || String(normalizedResultsDeduped[0].userId),
+        examTitle: normalizedResultsDeduped[0].examTitle,
+        percentage: normalizedResultsDeduped[0].percentage,
       });
     }
     
     res.json({
       success: true,
-      data: normalizedResults
+      data: normalizedResultsDeduped
     });
   } catch (error) {
     console.error('❌ Error fetching exam results:', error);

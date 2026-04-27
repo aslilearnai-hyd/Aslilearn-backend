@@ -22,6 +22,11 @@ const contentSchema = new mongoose.Schema({
     uppercase: true,
     default: 'ASLI_EXCLUSIVE_SCHOOLS'
   },
+  stateName: {
+    type: String,
+    trim: true,
+    default: ''
+  },
   subject: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Subject',
