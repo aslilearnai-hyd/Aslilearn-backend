@@ -15,6 +15,7 @@ import {
   fetchRazorpayPayments,
   fetchRazorpaySubscriptions,
 } from '../services/razorpayService.js';
+import { VALID_SCHOOL_BOARDS, isValidSchoolBoard } from '../constants/boards.js';
 
 // Super Admin Login
 export const superAdminLogin = async (req, res) => {
@@ -230,6 +231,9 @@ export const getAllAdmins = async (req, res) => {
           correctAnswers: data.correctAnswers
         }));
         
+        const sd = admin.schoolDetails && typeof admin.schoolDetails.toObject === 'function'
+          ? admin.schoolDetails.toObject()
+          : admin.schoolDetails || {};
         return {
           id: admin._id,
           name: admin.fullName,
@@ -241,6 +245,8 @@ export const getAllAdmins = async (req, res) => {
           phone: admin.phone,
           place: admin.place,
           pin: admin.pin,
+          state: sd.state || admin.place || '',
+          schoolDetails: sd,
           permissions: admin.permissions || [],
           status: admin.isActive ? 'Active' : 'Inactive',
           joinDate: admin.createdAt,
@@ -429,9 +435,44 @@ export const getAdminAnalytics = async (req, res) => {
 };
 
 // Create New Admin
+const normalizeSchoolDetails = (raw, fallbackState) => {
+  const src = raw && typeof raw === 'object' ? raw : {};
+  const stateVal =
+    (typeof src.state === 'string' && src.state.trim()) ||
+    (typeof fallbackState === 'string' && fallbackState.trim()) ||
+    '';
+  return {
+    doorNo: String(src.doorNo || '').trim(),
+    street: String(src.street || '').trim(),
+    area: String(src.area || '').trim(),
+    city: String(src.city || '').trim(),
+    district: String(src.district || '').trim(),
+    state: stateVal,
+    medium: String(src.medium || '').trim(),
+    classesFrom: String(src.classesFrom || '').trim(),
+    classesTo: String(src.classesTo || '').trim(),
+    totalStrength: String(src.totalStrength || '').trim(),
+    schoolType: String(src.schoolType || '').trim(),
+    photos: Array.isArray(src.photos) ? src.photos.map((p) => String(p).trim()).filter(Boolean) : []
+  };
+};
+
 export const createAdmin = async (req, res) => {
   try {
-    const { name, email, permissions, board, schoolName, schoolLogo, contactPerson, phone, place, pin } = req.body;
+    const {
+      name,
+      email,
+      permissions,
+      board,
+      schoolName,
+      schoolLogo,
+      contactPerson,
+      phone,
+      place,
+      pin,
+      state,
+      schoolDetails: rawSchoolDetails
+    } = req.body;
     
     // Validate required fields
     if (!name || !email) {
@@ -441,10 +482,11 @@ export const createAdmin = async (req, res) => {
       });
     }
     
-    if (!board || board !== 'ASLI_EXCLUSIVE_SCHOOLS') {
-      return res.status(400).json({ 
-        success: false, 
-        message: 'Valid board is required. Must be ASLI_EXCLUSIVE_SCHOOLS' 
+    const boardUpperCreate = (board || '').toUpperCase().trim();
+    if (!isValidSchoolBoard(boardUpperCreate)) {
+      return res.status(400).json({
+        success: false,
+        message: `Valid board is required. Must be one of: ${VALID_SCHOOL_BOARDS.join(', ')}`,
       });
     }
     
@@ -452,6 +494,14 @@ export const createAdmin = async (req, res) => {
       return res.status(400).json({ 
         success: false, 
         message: 'School name is required' 
+      });
+    }
+
+    const schoolDetails = normalizeSchoolDetails(rawSchoolDetails, state);
+    if (!schoolDetails.city || !schoolDetails.district || !schoolDetails.state) {
+      return res.status(400).json({
+        success: false,
+        message: 'City, district, and state are required for school information'
       });
     }
     
@@ -473,18 +523,23 @@ export const createAdmin = async (req, res) => {
     
     // Create new admin with all details
     const hashedPassword = await bcrypt.hash('admin123', 10); // Default password
+    const placeLine =
+      (place && String(place).trim()) ||
+      [schoolDetails.city, schoolDetails.district, schoolDetails.state].filter(Boolean).join(', ');
+
     const newAdmin = new User({
       fullName: name.trim(),
       email: email.toLowerCase().trim(),
       password: hashedPassword,
       role: 'admin',
-      board: board.toUpperCase(),
+      board: boardUpperCreate,
       schoolName: schoolName.trim(),
       schoolLogo: schoolLogo?.trim() || '',
       contactPerson: contactPerson?.trim() || '',
       phone: phone?.trim() || '',
-      place: place?.trim() || '',
+      place: placeLine,
       pin: pin?.trim() || '',
+      schoolDetails,
       permissions: permissions || [],
       isActive: true
     });
@@ -514,6 +569,8 @@ export const createAdmin = async (req, res) => {
         phone: newAdmin.phone,
         place: newAdmin.place,
         pin: newAdmin.pin,
+        state: newAdmin.schoolDetails?.state || '',
+        schoolDetails: newAdmin.schoolDetails,
         permissions: newAdmin.permissions,
         status: 'Active',
         joinDate: newAdmin.createdAt
@@ -546,7 +603,21 @@ export const createAdmin = async (req, res) => {
 // Update Admin
 export const updateAdmin = async (req, res) => {
   try {
-    const { name, email, permissions, isActive, board, schoolName, schoolLogo, contactPerson, phone, place, pin } = req.body;
+    const {
+      name,
+      email,
+      permissions,
+      isActive,
+      board,
+      schoolName,
+      schoolLogo,
+      contactPerson,
+      phone,
+      place,
+      pin,
+      state,
+      schoolDetails: rawSchoolDetails
+    } = req.body;
     const adminId = req.params.id;
     
     console.log('📝 Updating admin:', adminId, { name, email, board, schoolName, isActive });
@@ -577,9 +648,12 @@ export const updateAdmin = async (req, res) => {
     if (permissions !== undefined) updateData.permissions = permissions;
     if (isActive !== undefined) updateData.isActive = Boolean(isActive);
     if (board !== undefined && board !== null && board !== '') {
-      const boardUpper = board.toUpperCase();
-      if (boardUpper !== 'ASLI_EXCLUSIVE_SCHOOLS') {
-        return res.status(400).json({ success: false, message: `Invalid board code: ${board}. Must be ASLI_EXCLUSIVE_SCHOOLS` });
+      const boardUpper = board.toUpperCase().trim();
+      if (!isValidSchoolBoard(boardUpper)) {
+        return res.status(400).json({
+          success: false,
+          message: `Invalid board code: ${board}. Must be one of: ${VALID_SCHOOL_BOARDS.join(', ')}`,
+        });
       }
       updateData.board = boardUpper;
     }
@@ -602,6 +676,49 @@ export const updateAdmin = async (req, res) => {
       updateData.pin = pin.trim();
     }
 
+    const currentSd =
+      admin.schoolDetails && typeof admin.schoolDetails.toObject === 'function'
+        ? admin.schoolDetails.toObject()
+        : { ...(admin.schoolDetails || {}) };
+
+    if (rawSchoolDetails !== undefined && rawSchoolDetails !== null) {
+      const merged = {
+        ...currentSd,
+        ...(typeof rawSchoolDetails === 'object' ? rawSchoolDetails : {})
+      };
+      const normalized = normalizeSchoolDetails(merged, state ?? merged.state);
+      if (!normalized.city || !normalized.district || !normalized.state) {
+        return res.status(400).json({
+          success: false,
+          message: 'City, district, and state are required for school information'
+        });
+      }
+      updateData.schoolDetails = normalized;
+      const placeLine =
+        place !== undefined && place !== null && String(place).trim()
+          ? String(place).trim()
+          : [normalized.city, normalized.district, normalized.state].filter(Boolean).join(', ');
+      updateData.place = placeLine;
+    } else if (state !== undefined && state !== null && String(state).trim() !== '') {
+      const normalized = normalizeSchoolDetails(
+        { ...currentSd, state: String(state).trim() },
+        state
+      );
+      updateData.schoolDetails = normalized;
+      const noExplicitPlace =
+        place === undefined || place === null || String(place).trim() === '';
+      if (
+        noExplicitPlace &&
+        normalized.city &&
+        normalized.district &&
+        normalized.state
+      ) {
+        updateData.place = [normalized.city, normalized.district, normalized.state]
+          .filter(Boolean)
+          .join(', ');
+      }
+    }
+
     console.log('Update data:', updateData);
 
     const updatedAdmin = await User.findByIdAndUpdate(
@@ -616,6 +733,11 @@ export const updateAdmin = async (req, res) => {
 
     console.log('✅ Admin updated successfully:', updatedAdmin.email, updatedAdmin.board);
     
+    const sd =
+      updatedAdmin.schoolDetails && typeof updatedAdmin.schoolDetails.toObject === 'function'
+        ? updatedAdmin.schoolDetails.toObject()
+        : updatedAdmin.schoolDetails || {};
+
     res.json({
       success: true,
       message: 'Admin updated successfully',
@@ -626,6 +748,12 @@ export const updateAdmin = async (req, res) => {
         board: updatedAdmin.board,
         schoolName: updatedAdmin.schoolName,
         schoolLogo: updatedAdmin.schoolLogo,
+        contactPerson: updatedAdmin.contactPerson,
+        phone: updatedAdmin.phone,
+        place: updatedAdmin.place,
+        pin: updatedAdmin.pin,
+        state: sd.state || updatedAdmin.place || '',
+        schoolDetails: sd,
         permissions: updatedAdmin.permissions,
         status: updatedAdmin.isActive ? 'Active' : 'Inactive'
       }

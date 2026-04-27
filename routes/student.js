@@ -23,6 +23,7 @@ import {
   buildPerQuestionAttemptAnalytics,
   generateAdvancedAnalytics,
 } from '../utils/advancedExamAnalytics.js';
+import { normalizeSchoolBoard } from '../constants/boards.js';
 
 const router = express.Router();
 
@@ -2709,7 +2710,7 @@ router.post('/exam-results', async (req, res) => {
       examId,
       userId: req.userId,
       adminId: student.assignedAdmin || null,
-      board: resolvedBoard === 'ASLI_EXCLUSIVE_SCHOOLS' ? resolvedBoard : 'ASLI_EXCLUSIVE_SCHOOLS',
+      board: normalizeSchoolBoard(resolvedBoard),
       examTitle: examTitle || examDoc?.title || '',
       totalQuestions,
       correctAnswers,

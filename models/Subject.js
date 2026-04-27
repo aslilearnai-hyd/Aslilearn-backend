@@ -13,7 +13,7 @@ const subjectSchema = new mongoose.Schema({
   board: {
     type: String,
     required: true,
-    enum: ['ASLI_EXCLUSIVE_SCHOOLS'],
+    enum: ['ASLI_EXCLUSIVE_SCHOOLS', 'CBSE', 'STATE'],
     uppercase: true,
     default: 'ASLI_EXCLUSIVE_SCHOOLS'
   },

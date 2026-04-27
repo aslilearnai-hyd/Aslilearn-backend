@@ -31,7 +31,7 @@ const streamSchema = new mongoose.Schema({
   // Board filter
   board: {
     type: String,
-    enum: ['ASLI_EXCLUSIVE_SCHOOLS'],
+    enum: ['ASLI_EXCLUSIVE_SCHOOLS', 'CBSE', 'STATE'],
     uppercase: true,
     required: true,
     default: 'ASLI_EXCLUSIVE_SCHOOLS'

@@ -5,7 +5,7 @@ const boardSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true,
-    enum: ['ASLI_EXCLUSIVE_SCHOOLS'],
+    enum: ['ASLI_EXCLUSIVE_SCHOOLS', 'CBSE', 'STATE'],
     uppercase: true
   },
   name: {

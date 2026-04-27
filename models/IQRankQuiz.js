@@ -25,7 +25,7 @@ const iqRankQuizSchema = new mongoose.Schema({
   },
   board: {
     type: String,
-    enum: ['ASLI_EXCLUSIVE_SCHOOLS'],
+    enum: ['ASLI_EXCLUSIVE_SCHOOLS', 'CBSE', 'STATE'],
     uppercase: true,
     default: 'ASLI_EXCLUSIVE_SCHOOLS'
   },

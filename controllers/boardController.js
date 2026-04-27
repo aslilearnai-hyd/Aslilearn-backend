@@ -6,12 +6,15 @@ import Exam from '../models/Exam.js';
 import ExamResult from '../models/ExamResult.js';
 import User from '../models/User.js';
 import Teacher from '../models/Teacher.js';
+import { VALID_SCHOOL_BOARDS, isValidSchoolBoard } from '../constants/boards.js';
 
 // Initialize boards if they don't exist
 export const initializeBoards = async () => {
   try {
     const boards = [
-      { code: 'ASLI_EXCLUSIVE_SCHOOLS', name: 'ASLI EXCLUSIVE SCHOOLS', description: 'ASLI Exclusive Schools - All Boards Content' }
+      { code: 'ASLI_EXCLUSIVE_SCHOOLS', name: 'ASLI EXCLUSIVE SCHOOLS', description: 'ASLI Exclusive Schools - All Boards Content' },
+      { code: 'CBSE', name: 'CBSE', description: 'Central Board of Secondary Education' },
+      { code: 'STATE', name: 'State Board', description: 'State board curriculum' },
     ];
 
     for (const boardData of boards) {
@@ -158,7 +161,7 @@ export const getBoardDashboard = async (req, res) => {
     
     console.log('📊 Fetching board dashboard for:', boardCode);
     
-    if (boardCode !== 'ASLI_EXCLUSIVE_SCHOOLS') {
+    if (!isValidSchoolBoard(boardCode)) {
       return res.status(400).json({ success: false, message: 'Invalid board code' });
     }
 
@@ -354,9 +357,12 @@ export const createSubject = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Name and board are required' });
     }
 
-    const boardUpper = board.toUpperCase();
-    if (boardUpper !== 'ASLI_EXCLUSIVE_SCHOOLS') {
-      return res.status(400).json({ success: false, message: `Invalid board code: ${board}. Must be ASLI_EXCLUSIVE_SCHOOLS` });
+    const boardUpper = board.toUpperCase().trim();
+    if (!isValidSchoolBoard(boardUpper)) {
+      return res.status(400).json({
+        success: false,
+        message: `Invalid board code: ${board}. Must be one of: ${VALID_SCHOOL_BOARDS.join(', ')}`,
+      });
     }
 
     // Active duplicate check only (soft-deleted subjects can be recreated/reused).
@@ -503,9 +509,12 @@ export const getSubjectsByBoard = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Board parameter is required' });
     }
 
-    const boardUpper = board.toUpperCase();
-    if (boardUpper !== 'ASLI_EXCLUSIVE_SCHOOLS') {
-      return res.status(400).json({ success: false, message: `Invalid board code: ${board}. Must be ASLI_EXCLUSIVE_SCHOOLS` });
+    const boardUpper = board.toUpperCase().trim();
+    if (!isValidSchoolBoard(boardUpper)) {
+      return res.status(400).json({
+        success: false,
+        message: `Invalid board code: ${board}. Must be one of: ${VALID_SCHOOL_BOARDS.join(', ')}`,
+      });
     }
 
     const subjects = await Subject.find({ board: boardUpper, isActive: true }).sort({ name: 1 });
@@ -646,8 +655,12 @@ export const uploadContent = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Missing required fields: title, type, board, subject, date, and at least one fileUrl/fileUrls are required' });
     }
 
-    if (board !== 'ASLI_EXCLUSIVE_SCHOOLS') {
-      return res.status(400).json({ success: false, message: 'Invalid board code. Must be ASLI_EXCLUSIVE_SCHOOLS' });
+    const boardNorm = String(board || '').toUpperCase().trim();
+    if (!isValidSchoolBoard(boardNorm)) {
+      return res.status(400).json({
+        success: false,
+        message: `Invalid board code. Must be one of: ${VALID_SCHOOL_BOARDS.join(', ')}`,
+      });
     }
 
     // Super admin cannot upload Homework - only teachers can
@@ -664,7 +677,7 @@ export const uploadContent = async (req, res) => {
     if (!subjectDoc) {
       return res.status(404).json({ success: false, message: 'Subject not found' });
     }
-    if (subjectDoc.board !== board.toUpperCase()) {
+    if (subjectDoc.board !== boardNorm) {
       return res.status(400).json({ success: false, message: 'Subject does not belong to the selected board' });
     }
 
@@ -690,7 +703,7 @@ export const uploadContent = async (req, res) => {
       title: title.trim(),
       description: description?.trim() || undefined,
       type,
-      board: board.toUpperCase(),
+      board: boardNorm,
       subject,
       topic: topic?.trim() || undefined,
       date: new Date(date),
@@ -853,8 +866,11 @@ export const deleteAllContent = async (req, res) => {
     
     // Board filtering is optional since we're showing all content now
     // But keep it for backward compatibility if needed
-    if (board && board !== 'ALL_BOARDS' && board !== 'ASLI_EXCLUSIVE_SCHOOLS') {
-      filter.board = board;
+    if (board && board !== 'ALL_BOARDS') {
+      const bu = String(board).toUpperCase().trim();
+      if (isValidSchoolBoard(bu)) {
+        filter.board = bu;
+      }
     }
 
     console.log('🗑️ Deleting all content with filter:', JSON.stringify(filter, null, 2));
@@ -883,12 +899,9 @@ export const deleteAllContent = async (req, res) => {
 // Get Board Analytics (for comparison charts) - All boards comparison
 export const getBoardAnalytics = async (req, res) => {
   try {
-    const boards = ['ASLI_EXCLUSIVE_SCHOOLS'];
-
     const analytics = await Promise.all(
-      boards.map(async (boardCode) => {
-        // Since everything is now ASLI_EXCLUSIVE_SCHOOLS, get all data
-        const results = await ExamResult.find({});
+      VALID_SCHOOL_BOARDS.map(async (boardCode) => {
+        const results = await ExamResult.find({ board: boardCode });
         const students = await User.countDocuments({ role: 'student' });
         const exams = await Exam.countDocuments({ isActive: true });
 
@@ -900,9 +913,14 @@ export const getBoardAnalytics = async (req, res) => {
           ? ((results.length / (students * exams)) * 100).toFixed(1)
           : '0.0';
 
+        const boardNameLabels = {
+          ASLI_EXCLUSIVE_SCHOOLS: 'ASLI EXCLUSIVE SCHOOLS',
+          CBSE: 'CBSE',
+          STATE: 'State Board',
+        };
         return {
           board: boardCode,
-          boardName: 'ASLI EXCLUSIVE SCHOOLS',
+          boardName: boardNameLabels[boardCode] || boardCode,
           students,
           exams,
           totalAttempts: results.length,

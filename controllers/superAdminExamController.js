@@ -3,6 +3,7 @@ import Exam from '../models/Exam.js';
 import Question from '../models/Question.js';
 import { cleanCsvCell } from '../utils/csv-encoding.js';
 import { spreadsheetBufferToCsv } from '../utils/spreadsheet-to-csv.js';
+import { VALID_SCHOOL_BOARDS, isValidSchoolBoard } from '../constants/boards.js';
 
 /**
  * Keeps classNumber and assignedClasses in sync for API clients.
@@ -219,10 +220,11 @@ export const createExam = async (req, res) => {
       });
     }
 
-    if (board.toUpperCase() !== 'ASLI_EXCLUSIVE_SCHOOLS') {
+    const examBoardUpper = board.toUpperCase().trim();
+    if (!isValidSchoolBoard(examBoardUpper)) {
       return res.status(400).json({
         success: false,
-        message: 'Invalid board. Must be ASLI_EXCLUSIVE_SCHOOLS' 
+        message: `Invalid board. Must be one of: ${VALID_SCHOOL_BOARDS.join(', ')}`,
       });
     }
 
@@ -271,7 +273,7 @@ export const createExam = async (req, res) => {
       instructions: instructions?.trim() || '',
       startDate: new Date(startDate),
       endDate: new Date(endDate),
-      board: board.toUpperCase(),
+      board: examBoardUpper,
       createdByRole: 'super-admin',
       createdBy: createdById,
       isActive: true,
@@ -328,11 +330,12 @@ export const getAllExams = async (req, res) => {
     const conditions = [];
     
     // Filter by board if provided, but include all-boards exams too
-    if (board && board === 'ASLI_EXCLUSIVE_SCHOOLS') {
+    if (board && isValidSchoolBoard(board)) {
+      const bUpper = String(board).toUpperCase().trim();
       conditions.push({
         $or: [
           { isAllBoards: true }, // Include exams available to all boards
-          { board: board } // Include exams specific to the selected board
+          { board: bUpper } // Include exams specific to the selected board
         ]
       });
     }
@@ -413,13 +416,14 @@ export const getExamsByBoard = async (req, res) => {
     console.log('Board code from params:', req.params.boardCode);
     const { boardCode } = req.params;
 
-    if (boardCode !== 'ASLI_EXCLUSIVE_SCHOOLS') {
+    const bc = String(boardCode || '').toUpperCase().trim();
+    if (!isValidSchoolBoard(bc)) {
       console.log('❌ Invalid board code:', boardCode);
       return res.status(400).json({ success: false, message: 'Invalid board code' });
     }
 
     const exams = await Exam.find({ 
-      board: boardCode,
+      board: bc,
       createdByRole: 'super-admin' 
     })
       .populate('questions')
@@ -524,7 +528,16 @@ export const updateExam = async (req, res) => {
     if (instructions !== undefined) exam.instructions = instructions?.trim() || '';
     if (startDate) exam.startDate = new Date(startDate);
     if (endDate) exam.endDate = new Date(endDate);
-    if (board) exam.board = board.toUpperCase();
+    if (board !== undefined && board !== null && String(board).trim() !== '') {
+      const bu = String(board).toUpperCase().trim();
+      if (!isValidSchoolBoard(bu)) {
+        return res.status(400).json({
+          success: false,
+          message: `Invalid board. Must be one of: ${VALID_SCHOOL_BOARDS.join(', ')}`,
+        });
+      }
+      exam.board = bu;
+    }
     if (isActive !== undefined) exam.isActive = Boolean(isActive);
 
     const { targetSchools: tsBody, isSchoolSpecific: issBody, isAllBoards: iabBody } = req.body;
@@ -1051,9 +1064,11 @@ export const bulkUploadExams = async (req, res) => {
         }
 
         // Validate board
-        const board = examData.board.toUpperCase();
-        if (board !== 'ASLI_EXCLUSIVE_SCHOOLS') {
-          errors.push(`Row ${i + 1}: Invalid board "${board}". Must be ASLI_EXCLUSIVE_SCHOOLS`);
+        const board = examData.board.toUpperCase().trim();
+        if (!isValidSchoolBoard(board)) {
+          errors.push(
+            `Row ${i + 1}: Invalid board "${board}". Must be one of: ${VALID_SCHOOL_BOARDS.join(', ')}`
+          );
           continue;
         }
 

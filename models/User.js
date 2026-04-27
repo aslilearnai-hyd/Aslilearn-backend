@@ -90,7 +90,7 @@ const userSchema = new mongoose.Schema({
   board: {
     type: String,
     enum: {
-      values: ['ASLI_EXCLUSIVE_SCHOOLS'],
+      values: ['ASLI_EXCLUSIVE_SCHOOLS', 'CBSE', 'STATE'],
       message: '{VALUE} is not a valid board'
     },
     uppercase: true,
@@ -126,6 +126,24 @@ const userSchema = new mongoose.Schema({
     type: String,
     trim: true,
     default: ''
+  },
+  // Extended school profile (admin / school onboarding)
+  schoolDetails: {
+    type: {
+      doorNo: { type: String, trim: true, default: '' },
+      street: { type: String, trim: true, default: '' },
+      area: { type: String, trim: true, default: '' },
+      city: { type: String, trim: true, default: '' },
+      district: { type: String, trim: true, default: '' },
+      state: { type: String, trim: true, default: '' },
+      medium: { type: String, trim: true, default: '' },
+      classesFrom: { type: String, trim: true, default: '' },
+      classesTo: { type: String, trim: true, default: '' },
+      totalStrength: { type: String, trim: true, default: '' },
+      schoolType: { type: String, trim: true, default: '' },
+      photos: { type: [String], default: [] }
+    },
+    default: () => ({})
   },
   // Overall progress for students (calculated from exam and learning path progress)
   overallProgress: {

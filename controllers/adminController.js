@@ -13,6 +13,7 @@ import Subject from '../models/Subject.js';
 import Content from '../models/Content.js';
 import RiskAnalysisReport from '../models/RiskAnalysisReport.js';
 import { getExplicitTeacherSubjectObjectIds } from '../utils/teacherSubjectScope.js';
+import { isValidSchoolBoard } from '../constants/boards.js';
 
 const buildSafeAppendQuestionPipeline = (questionId) => [
   {
@@ -477,11 +478,9 @@ export const createTeacher = async (req, res) => {
       validAdminId = new mongoose.Types.ObjectId(adminId);
     }
     
-    // Handle board enum validation
-    let teacherBoard = null;
-    if (admin.board && admin.board === 'ASLI_EXCLUSIVE_SCHOOLS') {
-      teacherBoard = admin.board.toUpperCase();
-    }
+    const adminBoardUpper = admin.board ? String(admin.board).toUpperCase().trim() : '';
+    const teacherBoard =
+      adminBoardUpper && isValidSchoolBoard(adminBoardUpper) ? adminBoardUpper : 'ASLI_EXCLUSIVE_SCHOOLS';
     
     console.log('createTeacher - Creating teacher with:', {
       email,
