@@ -3,12 +3,13 @@ import multer from 'multer';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import mongoose from 'mongoose';
 import { verifyToken, authorizeRoles } from '../middleware/auth.js';
-import PdfKnowledgeSource from '../models/PdfKnowledgeSource.js';
-import PdfChunk from '../models/PdfChunk.js';
-import { processPdfSource, runHybridRagQuery } from '../services/pdf-rag-service.js';
+import AiContentEngineSource from '../models/AiContentEngineSource.js';
+import AiContentEngineChunk from '../models/AiContentEngineChunk.js';
+import { processPdfSourceWithModels, runHybridRagQuery } from '../services/pdf-rag-service.js';
 import { uploadPdfToConfiguredStorage, deleteFromConfiguredStorage } from '../services/cloud-storage.js';
-import { enqueuePdfProcessing, isPdfQueueEnabled } from '../queues/pdfProcessingQueue.js';
+import { isPdfQueueEnabled } from '../queues/pdfProcessingQueue.js';
 
 const router = express.Router();
 const __filename = fileURLToPath(import.meta.url);
@@ -46,6 +47,14 @@ const toClassLabel = (classValue) => {
   return raw;
 };
 
+const toUploadedByRole = (role) => {
+  const normalized = String(role || '').trim().toLowerCase().replace(/_/g, '-');
+  if (normalized === 'super-admin' || normalized === 'admin' || normalized === 'teacher') {
+    return normalized;
+  }
+  return 'admin';
+};
+
 // POST /api/pdf/upload
 router.post(
   '/pdf/upload',
@@ -62,12 +71,16 @@ router.post(
   },
   async (req, res) => {
     try {
-      const { subject, class: classInput, chapter } = req.body;
+      const { subject, class: classInput, chapter, topic, subTopic, toolType } = req.body;
+      const uploaderId = req.userId || req.user?.id || req.user?._id;
       if (!req.file) {
         return res.status(400).json({ success: false, message: 'PDF file is required' });
       }
       if (!subject || !classInput || !chapter) {
         return res.status(400).json({ success: false, message: 'subject, class and chapter are required' });
+      }
+      if (!uploaderId || !mongoose.Types.ObjectId.isValid(String(uploaderId))) {
+        return res.status(400).json({ success: false, message: 'Invalid authenticated user for upload.' });
       }
 
       const fileUrl = `/uploads/pdf-knowledge/${req.file.filename}`;
@@ -95,7 +108,7 @@ router.post(
           // ignore
         }
       }
-      const source = await PdfKnowledgeSource.create({
+      const source = await AiContentEngineSource.create({
         fileName: uploaded.fileName,
         originalName: req.file.originalname,
         fileUrl: uploaded.fileUrl,
@@ -106,8 +119,11 @@ router.post(
         subject: String(subject).trim(),
         classLabel: toClassLabel(classInput),
         chapter: String(chapter).trim(),
-        uploadedBy: req.userId,
-        uploadedByRole: req.user.role,
+        topic: String(topic || chapter || '').trim(),
+        subTopic: String(subTopic || '').trim(),
+        toolType: String(toolType || '').trim(),
+        uploadedBy: String(uploaderId),
+        uploadedByRole: toUploadedByRole(req.user?.role),
       });
 
       return res.status(201).json({
@@ -124,6 +140,7 @@ router.post(
         },
       });
     } catch (error) {
+      console.error('AI Content Engine upload error:', error);
       return res.status(500).json({ success: false, message: error.message || 'Upload failed' });
     }
   }
@@ -137,9 +154,13 @@ router.post('/pdf/process', verifyToken, authorizeRoles('teacher', 'admin', 'sup
       return res.status(400).json({ success: false, message: 'sourcePdfId is required' });
     }
     if (runAsync) {
-      const queued = await enqueuePdfProcessing(sourcePdfId);
+      // Keep AI Content Engine processing isolated from shared queue schema.
+      const queued = { enqueued: false, jobId: null };
       if (!queued.enqueued) {
-        processPdfSource(sourcePdfId).catch((err) => {
+        processPdfSourceWithModels(sourcePdfId, {
+          sourceModel: AiContentEngineSource,
+          chunkModel: AiContentEngineChunk,
+        }).catch((err) => {
           console.error('Async PDF process failed:', err.message);
         });
       }
@@ -153,7 +174,10 @@ router.post('/pdf/process', verifyToken, authorizeRoles('teacher', 'admin', 'sup
         },
       });
     }
-    const result = await processPdfSource(sourcePdfId);
+    const result = await processPdfSourceWithModels(sourcePdfId, {
+      sourceModel: AiContentEngineSource,
+      chunkModel: AiContentEngineChunk,
+    });
     return res.json({ success: true, data: result });
   } catch (error) {
     return res.status(500).json({ success: false, message: error.message || 'Processing failed' });
@@ -171,12 +195,12 @@ router.get('/pdf/list', verifyToken, authorizeRoles('teacher', 'admin', 'super-a
       ...(classInput ? { classLabel: toClassLabel(classInput) } : {}),
       ...(status ? { processingStatus: String(status).trim() } : {}),
     };
-    const total = await PdfKnowledgeSource.countDocuments(filter);
-    const docs = await PdfKnowledgeSource.find(filter)
+    const total = await AiContentEngineSource.countDocuments(filter);
+    const docs = await AiContentEngineSource.find(filter)
       .sort({ uploadDate: -1 })
       .skip((page - 1) * limit)
       .limit(limit)
-      .select('originalName fileUrl subject classLabel chapter uploadedBy uploadedByRole uploadDate processingStatus chunkCount')
+      .select('originalName fileUrl subject classLabel chapter topic subTopic toolType uploadedBy uploadedByRole uploadDate processingStatus chunkCount')
       .lean();
     return res.json({
       success: true,
@@ -196,17 +220,17 @@ router.get('/pdf/list', verifyToken, authorizeRoles('teacher', 'admin', 'super-a
 // DELETE /api/pdf/:id
 router.delete('/pdf/:id', verifyToken, authorizeRoles('teacher', 'admin', 'super-admin'), async (req, res) => {
   try {
-    const source = await PdfKnowledgeSource.findById(req.params.id);
+    const source = await AiContentEngineSource.findById(req.params.id);
     if (!source) {
       return res.status(404).json({ success: false, message: 'PDF source not found' });
     }
-    await PdfChunk.deleteMany({ sourcePdfId: source._id });
+    await AiContentEngineChunk.deleteMany({ sourcePdfId: source._id });
     await deleteFromConfiguredStorage({
       storageKey: source.storageKey,
       fileUrl: source.fileUrl,
       storageProvider: source.storageProvider,
     });
-    await PdfKnowledgeSource.findByIdAndDelete(source._id);
+    await AiContentEngineSource.findByIdAndDelete(source._id);
     return res.json({ success: true, message: 'PDF source and chunks deleted' });
   } catch (error) {
     return res.status(500).json({ success: false, message: error.message || 'Delete failed' });

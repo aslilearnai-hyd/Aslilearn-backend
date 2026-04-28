@@ -50,6 +50,8 @@ import {
   getAiToolGenerationById,
   exportAiToolGenerationsBundle,
   getAiToolGenerationsMeta,
+  updateAiToolGenerationById,
+  deleteAiToolGenerationById,
 } from './controllers/aiToolGenerationsController.js';
 
 const buildSafeAppendQuestionPipeline = (questionId) => [
@@ -710,6 +712,8 @@ app.get('/api/super-admin/ai-tool-generations/children', verifyToken, verifySupe
 app.get('/api/super-admin/ai-tool-generations/records', verifyToken, verifySuperAdmin, listAiToolRecords);
 app.get('/api/super-admin/ai-tool-generations/export-bundle', verifyToken, verifySuperAdmin, exportAiToolGenerationsBundle);
 app.get('/api/super-admin/ai-tool-generations/document/:id', verifyToken, verifySuperAdmin, getAiToolGenerationById);
+app.patch('/api/super-admin/ai-tool-generations/document/:id', verifyToken, verifySuperAdmin, updateAiToolGenerationById);
+app.delete('/api/super-admin/ai-tool-generations/document/:id', verifyToken, verifySuperAdmin, deleteAiToolGenerationById);
 
 // Mount routes
 app.use('/api/super-admin', superAdminRoutes);

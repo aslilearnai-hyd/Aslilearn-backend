@@ -189,6 +189,49 @@ export const getAiToolGenerationById = async (req, res) => {
   }
 };
 
+export const updateAiToolGenerationById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { content } = req.body || {};
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({ success: false, message: 'Invalid id' });
+    }
+    if (typeof content !== 'string' || !content.trim()) {
+      return res.status(400).json({ success: false, message: 'content is required' });
+    }
+
+    const update = {
+      content: content.trim(),
+      generatedContent: content.trim(),
+    };
+    const doc = await AiToolGeneration.findByIdAndUpdate(id, update, { new: true }).lean();
+    if (!doc) {
+      return res.status(404).json({ success: false, message: 'Not found' });
+    }
+    return res.json({ success: true, data: doc });
+  } catch (error) {
+    console.error('updateAiToolGenerationById error:', error);
+    return res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+export const deleteAiToolGenerationById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({ success: false, message: 'Invalid id' });
+    }
+    const doc = await AiToolGeneration.findByIdAndDelete(id).lean();
+    if (!doc) {
+      return res.status(404).json({ success: false, message: 'Not found' });
+    }
+    return res.json({ success: true, message: 'Record deleted' });
+  } catch (error) {
+    console.error('deleteAiToolGenerationById error:', error);
+    return res.status(500).json({ success: false, message: error.message });
+  }
+};
+
 /**
  * For PDF: returns nested sections with full content (may be large).
  * Query: optional toolName, classLabel, subject, topic, subtopic — narrow the export.

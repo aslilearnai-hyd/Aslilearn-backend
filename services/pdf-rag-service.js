@@ -131,7 +131,14 @@ export async function generateEmbedding(text) {
 }
 
 export async function processPdfSource(sourceId) {
-  const source = await PdfKnowledgeSource.findById(sourceId);
+  return processPdfSourceWithModels(sourceId, { sourceModel: PdfKnowledgeSource, chunkModel: PdfChunk });
+}
+
+export async function processPdfSourceWithModels(
+  sourceId,
+  { sourceModel = PdfKnowledgeSource, chunkModel = PdfChunk } = {}
+) {
+  const source = await sourceModel.findById(sourceId);
   if (!source) {
     throw new Error('PDF source not found');
   }
@@ -155,7 +162,7 @@ export async function processPdfSource(sourceId) {
     }
 
     const chunks = chunkTextByWordWindow(text);
-    await PdfChunk.deleteMany({ sourcePdfId: source._id });
+    await chunkModel.deleteMany({ sourcePdfId: source._id });
 
     const docs = [];
     for (const chunk of chunks) {
@@ -170,10 +177,13 @@ export async function processPdfSource(sourceId) {
         subject: source.subject,
         classLabel: source.classLabel,
         chapter: source.chapter,
+        topic: source.topic || source.chapter || '',
+        subTopic: source.subTopic || '',
+        toolType: source.toolType || '',
       });
     }
     if (docs.length > 0) {
-      await PdfChunk.insertMany(docs, { ordered: false });
+      await chunkModel.insertMany(docs, { ordered: false });
     }
 
     source.processingStatus = 'processed';

@@ -9,14 +9,16 @@ import {
 
 const router = express.Router();
 
-const allowTeacherOrStudent = (req, res, next) => {
+const allowCurriculumRoles = (req, res, next) => {
   const role = req.user?.role;
-  if (role === 'teacher' || role === 'student') return next();
-  return res.status(403).json({ success: false, message: 'Access denied. Teacher or Student required.' });
+  if (role === 'teacher' || role === 'student' || role === 'admin' || role === 'super-admin') {
+    return next();
+  }
+  return res.status(403).json({ success: false, message: 'Access denied for this role.' });
 };
 
 router.use(verifyToken);
-router.use(allowTeacherOrStudent);
+router.use(allowCurriculumRoles);
 
 router.get('/classes', listClasses);
 router.get('/subjects', listSubjects);

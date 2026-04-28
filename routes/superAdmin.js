@@ -41,6 +41,8 @@ import {
   getAiToolGenerationById,
   exportAiToolGenerationsBundle,
   getAiToolGenerationsMeta,
+  updateAiToolGenerationById,
+  deleteAiToolGenerationById,
 } from '../controllers/aiToolGenerationsController.js';
 import {
   getAllBoards,
@@ -328,6 +330,8 @@ router.get('/ai-tool-generations/children', listAiToolChildren);
 router.get('/ai-tool-generations/records', listAiToolRecords);
 router.get('/ai-tool-generations/export-bundle', exportAiToolGenerationsBundle);
 router.get('/ai-tool-generations/document/:id', getAiToolGenerationById);
+router.patch('/ai-tool-generations/document/:id', updateAiToolGenerationById);
+router.delete('/ai-tool-generations/document/:id', deleteAiToolGenerationById);
 
 // Admin Management
 router.get('/admins', getAllAdmins);
