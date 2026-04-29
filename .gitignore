@@ -13,3 +13,7 @@ node_modules/
 .env.backup
 .env*.backup
 !.env.example
+
+# Runtime uploads & local env backups (production server)
+uploads/
+.env.bak.*
