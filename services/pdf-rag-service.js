@@ -11,6 +11,27 @@ const DEFAULT_CHUNK_OVERLAP = Number(process.env.RAG_CHUNK_OVERLAP || 100);
 const MAX_RETRIEVAL_K = Number(process.env.RAG_TOP_K || 8);
 const LOCAL_EMBED_DIM = 256;
 
+async function syncAiPdfMasterProcessingFields(source) {
+  if (!source?._id) return;
+  await AiToolGeneration.updateMany(
+    {
+      sourceType: 'ai_pdf',
+      $or: [
+        { 'metadata.contentEngineSourceId': String(source._id) },
+        { 'metadata.aiPdfSourceId': String(source._id) },
+      ],
+    },
+    {
+      $set: {
+        status: source.processingStatus,
+        'metadata.processingStatus': source.processingStatus,
+        'metadata.chunkCount': source.chunkCount || 0,
+        'metadata.processingError': String(source.processingError || ''),
+      },
+    },
+  );
+}
+
 function normalizeSpaces(text) {
   return String(text || '').replace(/\s+/g, ' ').trim();
 }
@@ -146,6 +167,7 @@ export async function processPdfSourceWithModels(
   source.processingStatus = 'processing';
   source.processingError = '';
   await source.save();
+  await syncAiPdfMasterProcessingFields(source);
 
   try {
     const buffer = await getPdfBufferFromStorage({
@@ -191,12 +213,14 @@ export async function processPdfSourceWithModels(
     source.chunkCount = docs.length;
     source.lastProcessedAt = new Date();
     await source.save();
+    await syncAiPdfMasterProcessingFields(source);
 
     return { sourceId: source._id, chunkCount: docs.length, extractedTextLength: text.length };
   } catch (error) {
     source.processingStatus = 'failed';
     source.processingError = error.message || 'Unknown processing error';
     await source.save();
+    await syncAiPdfMasterProcessingFields(source);
     throw error;
   }
 }
@@ -290,7 +314,7 @@ export async function runHybridRagQuery({
     }
   }
 
-  // Layer 3: fallback LLM
+  // Layer 3: fallback AI
   const fallbackPrompt = `User query: ${query}\nSubject: ${subject || 'General'}\nClass: ${classLabel || 'General'}\nProvide best effort educational answer.`;
   const fallback = role === 'teacher'
     ? await generateTeacherTool(toolType || 'concept-mastery-helper', {
@@ -313,10 +337,10 @@ export async function runHybridRagQuery({
     content,
     generatedContent: content,
     metadata: {
-      source: 'llm-fallback',
+      source: 'ai-fallback',
       ...metadata,
     },
   });
-  return { content, source: 'llm-fallback', chunksUsed: 0, citations: [] };
+  return { content, source: 'ai-fallback', chunksUsed: 0, citations: [] };
 }
 

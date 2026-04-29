@@ -18,6 +18,7 @@ import {
 } from '../controllers/studentRankingController.js';
 import geminiService, { generateStudentTool } from '../services/gemini-service.js';
 import { runHybridRagQuery } from '../services/pdf-rag-service.js';
+import { fetchRotatingAiToolData } from '../services/ai-tool-rotation-service.js';
 import {
   advancedAnalyticsMockData,
   buildPerQuestionAttemptAnalytics,
@@ -3572,9 +3573,42 @@ router.post('/ai/tool', async (req, res) => {
     const finalSubject = normalizedSubject;
     const classNum = isIIT6 ? classNumber : parseInt(classNumber);
     const classDisplay = isIIT6 ? 'IIT-6' : `Class ${classNum}`;
+    const subTopicNormalized = String(params.subTopic || params.subtopic || '').trim().replace(/\s+/g, ' ');
     
     // For tools where topic is optional, pass empty string if not provided
     const topicForFetch = (toolType === 'personalized-revision-planner' || toolType === 'chapter-summary-creator') ? (topic || '') : topic;
+
+    // Priority 1: Super Admin AI Tool Data (exact class+subject+topic+subtopic) with rotation.
+    const { doc: adminDoc, matchType, totalCandidates, selectedIndex } = await fetchRotatingAiToolData({
+      classLabel: classDisplay,
+      subject: finalSubject,
+      topic: String(topicForFetch || '').trim().replace(/\s+/g, ' '),
+      subtopic: subTopicNormalized,
+      toolName: toolType,
+    });
+    if (adminDoc) {
+      return res.json({
+        success: true,
+        data: {
+          content: String(adminDoc.generatedContent || adminDoc.content || '').trim(),
+          toolType,
+          metadata: {
+            classNumber: isIIT6 ? 'IIT-6' : classNum,
+            subject: finalSubject,
+            topic: topicForFetch || '',
+            subTopic: subTopicNormalized,
+            ...params,
+            generatedAt: new Date(),
+            userId,
+            source: 'super-admin-ai-tool-data',
+            sourceLabel: 'Super Admin AI Tool Data',
+            matchType,
+            totalCandidates,
+            selectedIndex,
+          },
+        },
+      });
+    }
     
     console.log(`🔍 Fetching hardcoded content for student tool ${toolType} - ${classDisplay}, ${finalSubject}, ${topicForFetch || 'N/A'}`);
 
@@ -3605,7 +3639,7 @@ router.post('/ai/tool', async (req, res) => {
             generatedAt: new Date(),
             userId,
             source: ragResult.source,
-            sourceLabel: ragResult.source === 'rag' ? 'RAG PDF Context' : 'LLM Fallback',
+            sourceLabel: ragResult.source === 'rag' ? 'RAG PDF Context' : 'AI Fallback',
             chunksUsed: ragResult.chunksUsed || 0,
             citations: ragResult.citations || [],
           },

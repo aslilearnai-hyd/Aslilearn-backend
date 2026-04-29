@@ -2872,7 +2872,7 @@ export const assignSubjectsToClass = async (req, res) => {
   }
 };
 
-// AI Student Risk Analysis - Uses configured local LLM
+// AI Student Risk Analysis - Uses configured local AI service
 export const analyzeStudentRisk = async (req, res) => {
   try {
     const { studentId, analysisType = 'comprehensive', timeRange = '90days' } = req.body;
@@ -2994,7 +2994,7 @@ export const analyzeStudentRisk = async (req, res) => {
       }
     };
 
-    // Generate AI analysis using configured LLM
+    // Generate AI analysis using configured AI service
     const analysisPrompt = `You are an expert educational analyst with deep knowledge of student performance patterns, learning psychology, and intervention strategies. Analyze this student's performance data and provide a comprehensive risk assessment.
 
 STUDENT DATA:

@@ -73,8 +73,8 @@ function getGeminiFallbackConfig() {
       ''
   ).trim();
   const model = String(
-    process.env.VIDYA_AI_GEMINI_MODEL ||
-      process.env.GEMINI_FALLBACK_MODEL ||
+    process.env.GEMINI_FALLBACK_MODEL ||
+      process.env.VIDYA_AI_GEMINI_MODEL ||
       'gemini-2.0-flash'
   ).trim();
   const baseUrl = String(
@@ -101,12 +101,13 @@ async function callChatCompletions({
   messages,
   temperature = 0.3,
   maxTokens = 2000,
-  preferJson = false,
+  preferJson = false, // kept for compatibility with callers
 }) {
+  const contextTokens = Number(process.env.LLM_CONTEXT_TOKENS) || 0;
   const callGeminiFallback = async () => {
     const { apiKey, model, baseUrl } = getGeminiFallbackConfig();
     if (!apiKey) {
-      throw new Error('LLM request failed and Gemini fallback key is missing');
+      throw new Error('Gemini API key is missing');
     }
 
     const prompt = normalizedMessages
@@ -151,7 +152,6 @@ async function callChatCompletions({
     return text;
   };
 
-  const { endpoint, apiKey, model, disableAuth, contextTokens } = getLlmConfig();
   // Some local model templates (LM Studio) only accept user/assistant roles.
   const normalizeMessages = (inputMessages) => {
     const list = Array.isArray(inputMessages) ? inputMessages : [];
@@ -193,75 +193,46 @@ async function callChatCompletions({
   };
 
   const normalizedMessages = normalizeMessages(messages);
-
-  const basePayload = {
-    model,
-    messages: normalizedMessages,
-    temperature,
-    max_tokens: contextTokens > 0 ? Math.min(maxTokens, contextTokens) : maxTokens,
-  };
-
-  const withJsonFormat = preferJson
-    ? { ...basePayload, response_format: { type: 'json_object' } }
-    : basePayload;
-
-  const attemptRequest = async (payload) => {
-    const headers = {
-      'Content-Type': 'application/json',
-    };
-    if (!disableAuth) {
-      headers.Authorization = `Bearer ${apiKey}`;
-    }
-
-    const response = await fetch(endpoint, {
-      method: 'POST',
-      headers,
-      body: JSON.stringify(payload),
-    });
-
-    if (!response.ok) {
-      const errorText = await response.text();
-      throw new Error(`LLM request failed (${response.status}): ${errorText}`);
-    }
-
-    const data = await response.json();
-    const content = data?.choices?.[0]?.message?.content;
-    if (!cleanText(content)) {
-      throw new Error('LLM returned empty content');
-    }
-    return String(content);
-  };
-
-  try {
-    return await attemptRequest(withJsonFormat);
-  } catch (error) {
-    if (!preferJson) {
-      try {
-        console.warn('Primary LLM failed, trying Gemini fallback:', error?.message || error);
-        return await callGeminiFallback();
-      } catch (fallbackError) {
-        throw fallbackError;
-      }
-    }
-    try {
-      return await attemptRequest(basePayload);
-    } catch (error2) {
-      try {
-        console.warn('Primary LLM JSON mode failed, trying Gemini fallback:', error2?.message || error2);
-        return await callGeminiFallback();
-      } catch (fallbackError) {
-        throw fallbackError;
-      }
-    }
-  }
+  return callGeminiFallback(normalizedMessages, preferJson);
 }
 
 function buildTeacherToolPrompt(toolType, params = {}) {
-  const common = `Subject: ${params.subject || 'General'}
-Topic: ${params.topic || 'General Topic'}
-${params.subTopic ? `Sub Topic: ${params.subTopic}\n` : ''}Grade/Class: ${params.gradeLevel || 'General'}
+  const common = `You are a strict educational content generator.
 
-Format response in Markdown with headings, bullets, and clear sections.`;
+Return response ONLY in plain text.
+
+Do NOT use markdown.
+Do NOT use:
+#, ##, ###, *, **, ---, markdown bullets, decorative symbols.
+
+Do NOT repeat metadata inside CONTENT.
+Do NOT add explanation, notes, or summaries outside structure.
+Do NOT mix tools.
+
+Return ONLY this exact structure:
+
+NAME OF THE TOOL
+${params.toolDisplayName || toolType}
+
+CLASS
+${params.gradeLevel || 'General'}
+
+SUBJECT
+${params.subject || 'General'}
+
+TOPIC
+${params.topic || 'General Topic'}
+
+SUB TOPIC
+${params.subTopic || 'General'}
+
+CONTENT
+tool specific content only
+
+IMPORTANT:
+CONTENT must be plain text only.
+Use textbook content as primary source.
+If textbook content is missing, generate curriculum-relevant content for the same tool only.`;
 
   const templates = {
     'activity-project-generator': `${common}
@@ -295,7 +266,7 @@ Write a topic-relevant story/passage in the subject language, then add vocabular
 Create concise revision notes with key ideas, definitions, formulas (if any), and quick reference points.`,
     'flashcard-generator': `${common}
 
-Generate ${params.cardCount || 20} flashcards in Markdown with Front/Back format.`,
+Generate ${params.cardCount || 20} flashcards in plain text with "Front:" and "Back:" lines.`,
     'daily-class-plan-maker': `${common}
 
 Create a practical day plan with time slots, activities, checkpoints, and notes.`,
@@ -365,12 +336,12 @@ Generate educational content for toolType="${toolType}" using params: ${JSON.str
 
 class GeminiService {
   constructor() {
-    const cfg = getLlmConfig();
+    const cfg = getGeminiFallbackConfig();
     this.model = cfg.model;
-    this.endpoint = cfg.endpoint;
-    this.provider = cfg.provider || 'default';
-    this.disableAuth = cfg.disableAuth;
-    console.log(`✅ LLM service ready: ${this.model} @ ${this.endpoint} (provider=${this.provider}, auth=${this.disableAuth ? 'off' : 'on'})`);
+    this.endpoint = `${cfg.baseUrl}/models/${cfg.model}:generateContent`;
+    this.provider = 'gemini';
+    this.disableAuth = false;
+    console.log(`✅ Gemini service ready: ${this.model} @ ${this.endpoint}`);
   }
 
   async generateResponse(message, context = {}, chatHistory = []) {

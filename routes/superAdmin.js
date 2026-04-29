@@ -70,6 +70,9 @@ import {
   addQuestion,
   bulkUploadExams,
   bulkUploadQuestions,
+  convertPdfToQuestions,
+  deleteQuestion,
+  deleteAllQuestions,
   normalizeExamClassFields
 } from '../controllers/superAdminExamController.js';
 import { getCalendarEvents, createCalendarEvent } from '../controllers/calendarController.js';
@@ -223,6 +226,18 @@ const csvUpload = multer({
       cb(new Error('Only CSV, XLSX, or XLS files are allowed'), false);
     }
   }
+});
+
+const pdfUpload = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 20 * 1024 * 1024 },
+  fileFilter: (req, file, cb) => {
+    const name = String(file.originalname || '').toLowerCase();
+    const isPdfExt = name.endsWith('.pdf');
+    const isPdfMime = String(file.mimetype || '').toLowerCase().includes('pdf');
+    if (isPdfExt || isPdfMime) cb(null, true);
+    else cb(new Error('Only PDF files are allowed'), false);
+  },
 });
 
 // Configure multer for exam question image uploads.
@@ -1073,6 +1088,9 @@ router.get('/exams/:examId/questions', async (req, res) => {
 });
 router.post('/exams/:examId/questions', addQuestion);
 router.post('/exams/:examId/questions/bulk-upload', csvUpload.single('file'), bulkUploadQuestions);
+router.post('/exams/:examId/questions/pdf-convert', pdfUpload.single('file'), convertPdfToQuestions);
+router.delete('/exams/:examId/questions/:questionId', deleteQuestion);
+router.delete('/exams/:examId/questions', deleteAllQuestions);
 
 // Debug: Log when routes are registered
 console.log('✅ Super Admin exam routes registered:', {
@@ -1083,7 +1101,10 @@ console.log('✅ Super Admin exam routes registered:', {
   'PUT /exams/:examId': 'updateExam',
   'DELETE /exams/:examId': 'deleteExam',
   'POST /exams/:examId/questions': 'addQuestion',
-  'POST /exams/:examId/questions/bulk-upload': 'bulkUploadQuestions'
+  'POST /exams/:examId/questions/bulk-upload': 'bulkUploadQuestions',
+  'POST /exams/:examId/questions/pdf-convert': 'convertPdfToQuestions',
+  'DELETE /exams/:examId/questions/:questionId': 'deleteQuestion',
+  'DELETE /exams/:examId/questions': 'deleteAllQuestions'
 });
 
 export default router;

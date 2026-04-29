@@ -9,6 +9,7 @@ import { dirname, join } from 'path';
 import connectDB from './config/database.js';
 import superAdminRoutes from './routes/superAdmin.js';
 import adminRoutes from './routes/admin.js';
+import aiGeneratorRoutes from './routes/aiGeneratorRoutes.js';
 import { verifyToken, verifySuperAdmin } from './middleware/auth.js';
 import { getCalendarEvents, createCalendarEvent } from './controllers/calendarController.js';
 import User from './models/User.js';
@@ -294,6 +295,7 @@ app.get('/api/calendar/events', verifyToken, verifySuperAdmin, getCalendarEvents
 app.post('/api/calendar/events', verifyToken, verifySuperAdmin, createCalendarEvent);
 app.get('/api/super-admin/calendar/events', verifyToken, verifySuperAdmin, getCalendarEvents);
 app.post('/api/super-admin/calendar/events', verifyToken, verifySuperAdmin, createCalendarEvent);
+app.use('/api/ai-generator', aiGeneratorRoutes);
 
 // Super Admin Routes
 app.use('/api/super-admin', superAdminRoutes);

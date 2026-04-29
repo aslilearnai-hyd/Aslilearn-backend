@@ -1,10 +1,109 @@
 import mongoose from 'mongoose';
 import AiToolGeneration from '../models/AiToolGeneration.js';
+import AIGeneratorRecord from '../models/AIGeneratorRecord.js';
+import AiContentEngineSource from '../models/AiContentEngineSource.js';
+import AiContentEngineChunk from '../models/AiContentEngineChunk.js';
+import { deleteFromConfiguredStorage } from '../services/cloud-storage.js';
 
 function previewFromContent(text, n = 220) {
   if (!text || typeof text !== 'string') return '';
   const plain = text.replace(/[#*_`[\]()]/g, ' ').replace(/\s+/g, ' ').trim();
   return plain.length <= n ? plain : `${plain.slice(0, n)}…`;
+}
+
+function normalizeCombinedRecord(row) {
+  return {
+    _id: row._id,
+    sourceType: row.sourceType,
+    toolName: row.toolName ?? '',
+    toolDisplayName: row.toolDisplayName ?? '',
+    classLabel: row.classLabel ?? '',
+    subject: row.subject ?? '',
+    topic: row.topic ?? '',
+    subtopic: row.subtopic ?? '',
+    createdAt: row.createdAt || row.uploadDate || null,
+    preview: previewFromContent(row.content || row.generatedContent || row.previewText || ''),
+    content: row.content || row.generatedContent || row.previewText || '',
+    metadata: row.metadata && typeof row.metadata === 'object' ? row.metadata : undefined,
+  };
+}
+
+function mapLegacyAiGeneratorToCombined(doc) {
+  if (!doc) return null;
+  return normalizeCombinedRecord({
+    _id: doc._id,
+    sourceType: 'ai_generator',
+    toolName: doc.toolSlug || doc.toolName || '',
+    toolDisplayName: doc.toolName || doc.toolSlug || '',
+    classLabel: doc.className || '',
+    subject: doc.subjectName || '',
+    topic: doc.topicName || '',
+    subtopic: doc.subtopicName || '',
+    createdAt: doc.createdAt,
+    content: doc.generatedContent || '',
+    generatedContent: doc.generatedContent || '',
+    metadata: {
+      source: 'ai_generators_legacy_collection',
+      createdByRole: doc.createdByRole || 'super-admin',
+      createdByName: doc.createdByName || '',
+    },
+  });
+}
+
+/**
+ * Single source of truth: all AI Tool Data + Generator + PDF master rows live in aitoolgenerations.
+ */
+async function loadCombinedRecords(match = {}) {
+  const mongoFilter = {};
+  if (match.toolName) mongoFilter.toolName = match.toolName;
+  if ('classLabel' in match) mongoFilter.classLabel = match.classLabel ?? '';
+  if ('subject' in match) mongoFilter.subject = match.subject ?? '';
+  if ('topic' in match) mongoFilter.topic = match.topic ?? '';
+  if ('subtopic' in match) mongoFilter.subtopic = match.subtopic ?? '';
+
+  const [rows, legacyGeneratorRows] = await Promise.all([
+    AiToolGeneration.find(mongoFilter)
+      .select(
+        'toolName toolDisplayName sourceType classLabel subject topic subtopic content generatedContent createdAt metadata pdfFileUrl pdfFileName status',
+      )
+      .lean(),
+    AIGeneratorRecord.find({
+      ...(match.toolName ? { toolSlug: match.toolName } : {}),
+      ...('classLabel' in match ? { className: match.classLabel ?? '' } : {}),
+      ...('subject' in match ? { subjectName: match.subject ?? '' } : {}),
+      ...('topic' in match ? { topicName: match.topic ?? '' } : {}),
+      ...('subtopic' in match ? { subtopicName: match.subtopic ?? '' } : {}),
+    }).lean(),
+  ]);
+
+  const masterRows = rows.map((d) => {
+    const st = d.sourceType || 'legacy';
+    const pdfPreview =
+      st === 'ai_pdf'
+        ? typeof d.metadata?.renderContent === 'string'
+          ? d.metadata.renderContent
+          : JSON.stringify(d.metadata?.structuredContent || d.metadata?.renderContent || {}, null, 2)
+        : '';
+    return normalizeCombinedRecord({
+      _id: d._id,
+      sourceType: st,
+      toolName: d.toolName || '',
+      toolDisplayName: d.toolDisplayName || '',
+      classLabel: d.classLabel || '',
+      subject: d.subject || '',
+      topic: d.topic || '',
+      subtopic: d.subtopic || '',
+      createdAt: d.createdAt,
+      content: d.content || d.generatedContent || '',
+      generatedContent: d.generatedContent || d.content || '',
+      previewText: st === 'ai_pdf' ? pdfPreview : undefined,
+      metadata: d.metadata,
+    });
+  });
+
+  const legacyRowsNormalized = legacyGeneratorRows.map((r) => mapLegacyAiGeneratorToCombined(r));
+
+  return [...masterRows, ...legacyRowsNormalized];
 }
 
 /**
@@ -14,88 +113,73 @@ function previewFromContent(text, n = 220) {
 export const listAiToolChildren = async (req, res) => {
   try {
     const q = req.query;
+    const match = {};
+    if ('toolName' in q) match.toolName = q.toolName;
+    if ('classLabel' in q) match.classLabel = q.classLabel ?? '';
+    if ('subject' in q) match.subject = q.subject ?? '';
+    if ('topic' in q) match.topic = q.topic ?? '';
+    if ('subtopic' in q) match.subtopic = q.subtopic ?? '';
+    const rows = await loadCombinedRecords(match);
+    const countBy = (key) => {
+      const m = new Map();
+      for (const r of rows) {
+        const v = r[key] ?? '';
+        m.set(v, (m.get(v) || 0) + 1);
+      }
+      return Array.from(m.entries())
+        .sort((a, b) => String(a[0]).localeCompare(String(b[0])))
+        .map(([value, count]) => ({ value, count }));
+    };
 
     if (!('toolName' in q)) {
-      const agg = await AiToolGeneration.aggregate([
-        { $group: { _id: '$toolName', count: { $sum: 1 } } },
-        { $sort: { _id: 1 } },
-      ]);
       return res.json({
         success: true,
         data: {
           nextLevel: 'classLabel',
-          items: agg.map((a) => ({ value: a._id, count: a.count })),
+          items: countBy('toolName'),
         },
       });
     }
 
-    const { toolName } = q;
-    const match = { toolName };
-
     if (!('classLabel' in q)) {
-      const agg = await AiToolGeneration.aggregate([
-        { $match: match },
-        { $group: { _id: '$classLabel', count: { $sum: 1 } } },
-        { $sort: { _id: 1 } },
-      ]);
       return res.json({
         success: true,
         data: {
           nextLevel: 'subject',
-          items: agg.map((a) => ({ value: a._id ?? '', count: a.count })),
+          items: countBy('classLabel'),
         },
       });
     }
-    match.classLabel = q.classLabel ?? '';
 
     if (!('subject' in q)) {
-      const agg = await AiToolGeneration.aggregate([
-        { $match: match },
-        { $group: { _id: '$subject', count: { $sum: 1 } } },
-        { $sort: { _id: 1 } },
-      ]);
       return res.json({
         success: true,
         data: {
           nextLevel: 'topic',
-          items: agg.map((a) => ({ value: a._id ?? '', count: a.count })),
+          items: countBy('subject'),
         },
       });
     }
-    match.subject = q.subject ?? '';
 
     if (!('topic' in q)) {
-      const agg = await AiToolGeneration.aggregate([
-        { $match: match },
-        { $group: { _id: '$topic', count: { $sum: 1 } } },
-        { $sort: { _id: 1 } },
-      ]);
       return res.json({
         success: true,
         data: {
           nextLevel: 'subtopic',
-          items: agg.map((a) => ({ value: a._id ?? '', count: a.count })),
+          items: countBy('topic'),
         },
       });
     }
-    match.topic = q.topic ?? '';
 
     if (!('subtopic' in q)) {
-      const agg = await AiToolGeneration.aggregate([
-        { $match: match },
-        { $group: { _id: '$subtopic', count: { $sum: 1 } } },
-        { $sort: { _id: 1 } },
-      ]);
       return res.json({
         success: true,
         data: {
           nextLevel: 'subtopic',
-          items: agg.map((a) => ({ value: a._id ?? '', count: a.count })),
+          items: countBy('subtopic'),
         },
       });
     }
-
-    match.subtopic = q.subtopic ?? '';
 
     return res.json({
       success: true,
@@ -133,18 +217,12 @@ export const listAiToolRecords = async (req, res) => {
     const lim = Math.min(100, Math.max(1, parseInt(limit, 10) || 25));
     const skip = (p - 1) * lim;
 
-    const [total, docs] = await Promise.all([
-      AiToolGeneration.countDocuments(match),
-      AiToolGeneration.find(match)
-        .sort({ createdAt: -1 })
-        .skip(skip)
-        .limit(lim)
-        .select('toolName toolDisplayName classLabel subject topic subtopic createdAt teacherId metadata content')
-        .lean(),
-    ]);
-
-    const items = docs.map((d) => ({
+    const rows = await loadCombinedRecords(match);
+    rows.sort((a, b) => new Date(b.createdAt || 0).getTime() - new Date(a.createdAt || 0).getTime());
+    const total = rows.length;
+    const items = rows.slice(skip, skip + lim).map((d) => ({
       _id: d._id,
+      sourceType: d.sourceType,
       toolName: d.toolName,
       toolDisplayName: d.toolDisplayName,
       classLabel: d.classLabel,
@@ -152,8 +230,9 @@ export const listAiToolRecords = async (req, res) => {
       topic: d.topic,
       subtopic: d.subtopic,
       createdAt: d.createdAt,
-      teacherId: d.teacherId,
-      preview: previewFromContent(d.content || ''),
+      preview: d.preview,
+      content: d.content,
+      metadata: d.metadata,
     }));
 
     res.json({
@@ -178,11 +257,35 @@ export const getAiToolGenerationById = async (req, res) => {
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return res.status(400).json({ success: false, message: 'Invalid id' });
     }
-    const doc = await AiToolGeneration.findById(id).lean();
+    let doc = await AiToolGeneration.findById(id).lean();
     if (!doc) {
-      return res.status(404).json({ success: false, message: 'Not found' });
+      const legacy = await AIGeneratorRecord.findById(id).lean();
+      if (!legacy) return res.status(404).json({ success: false, message: 'Not found' });
+      const mapped = mapLegacyAiGeneratorToCombined(legacy);
+      return res.json({
+        success: true,
+        data: {
+          ...mapped,
+          content: mapped.content || '',
+        },
+      });
     }
-    res.json({ success: true, data: doc });
+    const content =
+      doc.content ||
+      doc.generatedContent ||
+      (doc.sourceType === 'ai_pdf'
+        ? typeof doc.metadata?.renderContent === 'string'
+          ? doc.metadata.renderContent
+          : JSON.stringify(doc.metadata?.structuredContent || doc.metadata?.renderContent || {}, null, 2)
+        : '');
+    return res.json({
+      success: true,
+      data: {
+        ...doc,
+        sourceType: doc.sourceType || 'legacy',
+        content,
+      },
+    });
   } catch (error) {
     console.error('getAiToolGenerationById error:', error);
     res.status(500).json({ success: false, message: error.message });
@@ -192,23 +295,67 @@ export const getAiToolGenerationById = async (req, res) => {
 export const updateAiToolGenerationById = async (req, res) => {
   try {
     const { id } = req.params;
-    const { content } = req.body || {};
+    const { content, structuredContent } = req.body || {};
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return res.status(400).json({ success: false, message: 'Invalid id' });
     }
-    if (typeof content !== 'string' || !content.trim()) {
-      return res.status(400).json({ success: false, message: 'content is required' });
+
+    const hasStructured =
+      structuredContent != null && typeof structuredContent === 'object' && !Array.isArray(structuredContent);
+    const hasContent = typeof content === 'string' && content.trim();
+
+    if (!hasStructured && !hasContent) {
+      return res.status(400).json({ success: false, message: 'content or structuredContent is required' });
     }
 
-    const update = {
-      content: content.trim(),
-      generatedContent: content.trim(),
-    };
-    const doc = await AiToolGeneration.findByIdAndUpdate(id, update, { new: true }).lean();
-    if (!doc) {
-      return res.status(404).json({ success: false, message: 'Not found' });
+    const setDoc = {};
+    if (hasContent) {
+      setDoc.content = content.trim();
+      setDoc.generatedContent = content.trim();
     }
-    return res.json({ success: true, data: doc });
+    if (hasStructured) {
+      setDoc['metadata.structuredContent'] = structuredContent;
+    }
+
+    let updated = await AiToolGeneration.findByIdAndUpdate(id, { $set: setDoc }, { new: true }).lean();
+    if (!updated) {
+      if (!hasContent) {
+        return res.status(404).json({ success: false, message: 'Not found' });
+      }
+      const legacyUpdated = await AIGeneratorRecord.findByIdAndUpdate(
+        id,
+        { $set: { generatedContent: content.trim() } },
+        { new: true },
+      ).lean();
+      if (!legacyUpdated) {
+        return res.status(404).json({ success: false, message: 'Not found' });
+      }
+      const mapped = mapLegacyAiGeneratorToCombined(legacyUpdated);
+      return res.json({ success: true, data: mapped });
+    }
+
+    if (updated.sourceType === 'ai_pdf' && updated.metadata?.contentEngineSourceId) {
+      try {
+        let structured = updated.metadata.structuredContent;
+        if (hasContent) {
+          try {
+            const parsed = JSON.parse(content.trim());
+            if (parsed && typeof parsed === 'object') structured = parsed;
+          } catch {
+            // keep existing structured content
+          }
+        }
+        await AiContentEngineSource.findByIdAndUpdate(updated.metadata.contentEngineSourceId, {
+          $set: {
+            structuredContent: structured || {},
+          },
+        });
+      } catch (e) {
+        console.warn('updateAiToolGenerationById: could not sync to content engine source:', e.message);
+      }
+    }
+
+    return res.json({ success: true, data: updated });
   } catch (error) {
     console.error('updateAiToolGenerationById error:', error);
     return res.status(500).json({ success: false, message: error.message });
@@ -221,10 +368,30 @@ export const deleteAiToolGenerationById = async (req, res) => {
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return res.status(400).json({ success: false, message: 'Invalid id' });
     }
-    const doc = await AiToolGeneration.findByIdAndDelete(id).lean();
+    const doc = await AiToolGeneration.findById(id).lean();
     if (!doc) {
-      return res.status(404).json({ success: false, message: 'Not found' });
+      const legacyDeleted = await AIGeneratorRecord.findByIdAndDelete(id).lean();
+      if (!legacyDeleted) {
+        return res.status(404).json({ success: false, message: 'Not found' });
+      }
+      return res.json({ success: true, message: 'Record deleted' });
     }
+
+    if (doc.sourceType === 'ai_pdf' && doc.metadata?.contentEngineSourceId) {
+      const sid = doc.metadata.contentEngineSourceId;
+      const source = await AiContentEngineSource.findById(sid);
+      if (source) {
+        await AiContentEngineChunk.deleteMany({ sourcePdfId: source._id });
+        await deleteFromConfiguredStorage({
+          storageKey: source.storageKey,
+          fileUrl: source.fileUrl,
+          storageProvider: source.storageProvider,
+        });
+        await AiContentEngineSource.findByIdAndDelete(source._id);
+      }
+    }
+
+    await AiToolGeneration.findByIdAndDelete(id);
     return res.json({ success: true, message: 'Record deleted' });
   } catch (error) {
     console.error('deleteAiToolGenerationById error:', error);
@@ -246,23 +413,30 @@ export const exportAiToolGenerationsBundle = async (req, res) => {
     if ('subtopic' in req.query) match.subtopic = req.query.subtopic ?? '';
 
     const max = Math.min(5000, Math.max(1, parseInt(req.query.maxDocs || '2000', 10) || 2000));
-    const docs = await AiToolGeneration.find(
-      Object.keys(match).length ? match : {},
-    )
-      .sort({ toolName: 1, classLabel: 1, subject: 1, topic: 1, subtopic: 1, createdAt: -1 })
-      .limit(max)
-      .lean();
+    const docs = await loadCombinedRecords(Object.keys(match).length ? match : {});
+    docs.sort((a, b) => {
+      if (a.toolName !== b.toolName) return String(a.toolName).localeCompare(String(b.toolName));
+      if (a.classLabel !== b.classLabel) return String(a.classLabel).localeCompare(String(b.classLabel));
+      if (a.subject !== b.subject) return String(a.subject).localeCompare(String(b.subject));
+      if (a.topic !== b.topic) return String(a.topic).localeCompare(String(b.topic));
+      if (a.subtopic !== b.subtopic) return String(a.subtopic).localeCompare(String(b.subtopic));
+      return new Date(b.createdAt || 0).getTime() - new Date(a.createdAt || 0).getTime();
+    });
+    const limited = docs.slice(0, max).map((d) => ({
+      ...d,
+      content: d.content || '',
+    }));
 
     if (docs.length >= max) {
       return res.json({
         success: true,
-        data: { truncated: true, maxDocs: max, records: docs, warning: `Export limited to ${max} documents.` },
+        data: { truncated: true, maxDocs: max, records: limited, warning: `Export limited to ${max} documents.` },
       });
     }
 
     res.json({
       success: true,
-      data: { truncated: false, records: docs },
+      data: { truncated: false, records: limited },
     });
   } catch (error) {
     console.error('exportAiToolGenerationsBundle error:', error);
@@ -272,20 +446,11 @@ export const exportAiToolGenerationsBundle = async (req, res) => {
 
 export const getAiToolGenerationsMeta = async (req, res) => {
   try {
-    const [total, distinctTopicsCount] = await Promise.all([
-      AiToolGeneration.countDocuments(),
-      AiToolGeneration.aggregate([
-        {
-          $match: {
-            topic: { $type: 'string', $ne: '' },
-          },
-        },
-        { $group: { _id: '$topic' } },
-        { $count: 'count' },
-      ]),
-    ]);
-
-    const topicsCount = distinctTopicsCount[0]?.count || 0;
+    const rows = await loadCombinedRecords({});
+    const total = rows.length;
+    const topicsCount = new Set(
+      rows.map((r) => String(r.topic || '').trim()).filter((x) => x.length > 0),
+    ).size;
     res.json({ success: true, data: { total, topicsCount } });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });

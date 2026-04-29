@@ -5,6 +5,466 @@ import { cleanCsvCell } from '../utils/csv-encoding.js';
 import { spreadsheetBufferToCsv } from '../utils/spreadsheet-to-csv.js';
 import { VALID_SCHOOL_BOARDS, isValidSchoolBoard } from '../constants/boards.js';
 
+const GEMINI_BASE_URL = String(
+  process.env.GEMINI_API_BASE_URL || 'https://generativelanguage.googleapis.com/v1beta',
+)
+  .trim()
+  .replace(/\/+$/, '');
+const DEFAULT_GEMINI_MODEL = 'gemini-2.0-flash';
+
+function getGeminiApiKey() {
+  return String(process.env.VIDYA_AI_GEMINI_API_KEY || process.env.GEMINI_API_KEY || '').trim();
+}
+
+function getGeminiModelCandidates() {
+  const preferred = String(process.env.VIDYA_AI_GEMINI_MODEL || '').trim();
+  const singleFallback = String(process.env.GEMINI_FALLBACK_MODEL || '').trim();
+  const listFallback = String(process.env.VIDYA_AI_GEMINI_FALLBACK_MODELS || '')
+    .split(',')
+    .map((m) => String(m || '').trim())
+    .filter(Boolean);
+  const defaults = ['gemini-2.5-flash-lite', 'gemini-2.5-flash', DEFAULT_GEMINI_MODEL];
+  return Array.from(new Set([preferred, singleFallback, ...listFallback, ...defaults].filter(Boolean)));
+}
+
+/** Max tokens for PDF question extraction (large papers need headroom). */
+function getPdfExtractionMaxOutputTokens() {
+  const n = Number(process.env.GEMINI_PDF_EXTRACTION_MAX_TOKENS);
+  if (Number.isFinite(n) && n >= 1024) return Math.min(n, 65536);
+  return 16384;
+}
+
+/**
+ * JSON schema for structured extraction (Gemini responseMimeType + responseSchema).
+ * Enums force MCQ | MSQ | integer only.
+ */
+/** Canonical subject slugs used across exams (PDF extraction normalizes into these or ""). */
+const CANONICAL_EXAM_SUBJECT_SLUGS = ['maths', 'physics', 'chemistry', 'biology'];
+
+/**
+ * Map model/PDF subject text to a canonical slug, or "" if unknown / not one of the four.
+ * Does not use exam defaults.
+ */
+function normalizePdfSubjectField(raw) {
+  let t = String(raw ?? '').trim().toLowerCase();
+  if (!t) return '';
+  const synonyms = {
+    maths: 'maths',
+    mathematics: 'maths',
+    math: 'maths',
+    physics: 'physics',
+    chemistry: 'chemistry',
+    biology: 'biology',
+    biological: 'biology',
+  };
+  const v = synonyms[t] || t;
+  return CANONICAL_EXAM_SUBJECT_SLUGS.includes(v) ? v : '';
+}
+
+const PDF_QUESTIONS_RESPONSE_SCHEMA = {
+  type: 'array',
+  items: {
+    type: 'object',
+    properties: {
+      questionText: { type: 'string', description: 'Full question stem only, no leading number.' },
+      questionType: { type: 'string', enum: ['MCQ', 'MSQ', 'integer'] },
+      subject: {
+        type: 'string',
+        description:
+          'From PDF only: maths|physics|chemistry|biology lowercase slug when clear from headers/context; otherwise empty string.',
+      },
+      marks: { type: 'number' },
+      option1: { type: 'string' },
+      option2: { type: 'string' },
+      option3: { type: 'string' },
+      option4: { type: 'string' },
+      correctAnswer: { type: 'string' },
+      explanation: { type: 'string' },
+    },
+    required: [
+      'questionText',
+      'questionType',
+      'subject',
+      'marks',
+      'option1',
+      'option2',
+      'option3',
+      'option4',
+      'correctAnswer',
+      'explanation',
+    ],
+  },
+};
+
+function normalizeMcqAnswerKey(s) {
+  let t = String(s || '')
+    .trim()
+    .toLowerCase()
+    .replace(/[\u2212\u2013\u2014]/g, '-') // unicode minus / en-dash / em-dash → hyphen
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (t.startsWith('(') && t.endsWith(')')) {
+    t = t.slice(1, -1).trim();
+  }
+  t = t.replace(/\s*,\s*/g, ',');
+  return t;
+}
+
+/**
+ * Map one answer token to an option index. `options` is `{ text }[]` (same shape as bulk upload).
+ */
+function mcqTokenToOptionIndex(token, options) {
+  const normalizedToken = String(token || '').trim().toLowerCase();
+  if (!normalizedToken || !Array.isArray(options) || options.length === 0) {
+    return -1;
+  }
+
+  if (/^\d+$/.test(normalizedToken)) {
+    const numeric = parseInt(normalizedToken, 10);
+    if (numeric >= 1 && numeric <= options.length) return numeric - 1;
+    if (numeric >= 0 && numeric < options.length) return numeric;
+  }
+
+  if (/^[a-z]$/.test(normalizedToken)) {
+    const alphaIndex = normalizedToken.charCodeAt(0) - 97;
+    if (alphaIndex >= 0 && alphaIndex < options.length) return alphaIndex;
+  }
+
+  const optionMatch = normalizedToken.match(/^option\s*([a-z0-9])$/);
+  if (optionMatch) {
+    const optionToken = optionMatch[1];
+    if (/^\d$/.test(optionToken)) {
+      const n = parseInt(optionToken, 10);
+      if (n >= 1 && n <= options.length) return n - 1;
+      if (n >= 0 && n < options.length) return n;
+    }
+    if (/^[a-z]$/.test(optionToken)) {
+      const idx = optionToken.charCodeAt(0) - 97;
+      if (idx >= 0 && idx < options.length) return idx;
+    }
+  }
+
+  const textIndex = options.findIndex(
+    (opt) => String(opt?.text || '').trim().toLowerCase() === normalizedToken,
+  );
+  if (textIndex >= 0) return textIndex;
+
+  const key = normalizeMcqAnswerKey(token);
+  if (!key) return -1;
+
+  const optionKeys = options.map((opt) => normalizeMcqAnswerKey(opt?.text || ''));
+  const exactKeyIdx = optionKeys.findIndex((k) => k === key);
+  if (exactKeyIdx >= 0) return exactKeyIdx;
+
+  const containsIdx = optionKeys.findIndex((k) => k && (k.includes(key) || key.includes(k)));
+  if (containsIdx >= 0) return containsIdx;
+
+  return -1;
+}
+
+function stripPdfQuestionLeadingIndex(text) {
+  return String(text || '')
+    .replace(/^\s*(?:q(?:uestion)?\s*)?\d+[\.)]\s*/i, '')
+    .trim();
+}
+
+/** Strip (A) / A. / a) style prefixes from option cells. */
+function stripPdfOptionPrefix(text) {
+  return String(text || '')
+    .replace(/^\s*\(?([a-dA-D])\)?[\.\)]\s*/, '')
+    .trim();
+}
+
+/**
+ * Normalize Gemini PDF rows: clean labels, canonicalize subject (or ""), align correctAnswer to option text.
+ * Never fills subject from exam or other defaults.
+ */
+function postProcessGeminiPdfQuestionRows(rawList) {
+  if (!Array.isArray(rawList)) return [];
+
+  return rawList
+    .map((r) => {
+      const questionText = stripPdfQuestionLeadingIndex(String(r?.questionText || '').trim());
+      if (!questionText) return null;
+
+      let qt = String(r?.questionType || '').trim().toUpperCase();
+      if (qt === 'MULTIPLE' || qt === 'MULTI') qt = 'MSQ';
+      if (!['MCQ', 'MSQ', 'INTEGER'].includes(qt)) qt = 'MCQ';
+
+      const subject = normalizePdfSubjectField(r?.subject);
+
+      let marks = Number(r?.marks);
+      if (!Number.isFinite(marks) || marks <= 0) marks = 1;
+
+      const o1 = stripPdfOptionPrefix(String(r?.option1 ?? '').trim());
+      const o2 = stripPdfOptionPrefix(String(r?.option2 ?? '').trim());
+      const o3 = stripPdfOptionPrefix(String(r?.option3 ?? '').trim());
+      const o4 = stripPdfOptionPrefix(String(r?.option4 ?? '').trim());
+      const explanation = String(r?.explanation ?? '').trim();
+
+      const slots = [o1, o2, o3, o4];
+      const nonEmpty = slots.map((s) => s.trim()).filter(Boolean);
+
+      if (qt === 'INTEGER') {
+        const ca = String(r?.correctAnswer ?? '').trim();
+        return {
+          questionText,
+          questionType: 'INTEGER',
+          subject,
+          marks,
+          option1: '',
+          option2: '',
+          option3: '',
+          option4: '',
+          correctAnswer: ca,
+          explanation,
+        };
+      }
+
+      if (nonEmpty.length < 2) {
+        const ca = String(r?.correctAnswer ?? '').trim();
+        if (qt === 'MCQ' && ca && /^-?\d+(\.\d+)?$/.test(ca.trim())) {
+          return {
+            questionText,
+            questionType: 'INTEGER',
+            subject,
+            marks,
+            option1: '',
+            option2: '',
+            option3: '',
+            option4: '',
+            correctAnswer: ca.trim(),
+            explanation,
+          };
+        }
+        return null;
+      }
+
+      const optionsAsObjects = nonEmpty.map((text) => ({ text }));
+      let correctAnswer = String(r?.correctAnswer ?? '').trim();
+
+      if (qt === 'MSQ') {
+        const parts = correctAnswer
+          .split(/[;,]/)
+          .map((p) => p.trim())
+          .filter(Boolean);
+        const resolved = [];
+        const seen = new Set();
+        for (const p of parts) {
+          const idx = mcqTokenToOptionIndex(p, optionsAsObjects);
+          const text = idx >= 0 ? nonEmpty[idx] : p;
+          const k = text.trim().toLowerCase();
+          if (!seen.has(k)) {
+            seen.add(k);
+            resolved.push(text);
+          }
+        }
+        correctAnswer = resolved.join(', ');
+      } else {
+        const idx = mcqTokenToOptionIndex(correctAnswer, optionsAsObjects);
+        if (idx >= 0) correctAnswer = nonEmpty[idx];
+      }
+
+      return {
+        questionText,
+        questionType: qt,
+        subject,
+        marks,
+        option1: slots[0] || '',
+        option2: slots[1] || '',
+        option3: slots[2] || '',
+        option4: slots[3] || '',
+        correctAnswer,
+        explanation,
+      };
+    })
+    .filter(Boolean);
+}
+
+async function safeGeminiErrorText(response) {
+  const raw = await response.text();
+  try {
+    const parsed = JSON.parse(raw);
+    return parsed?.error?.message || raw;
+  } catch {
+    return raw;
+  }
+}
+
+async function extractQuestionsFromPdfViaGemini({
+  buffer,
+  mimeType = 'application/pdf',
+}) {
+  const apiKey = getGeminiApiKey();
+  if (!apiKey) {
+    throw new Error('Gemini API key is missing');
+  }
+  const modelCandidates = getGeminiModelCandidates().slice(0, 3);
+  if (modelCandidates.length === 0) {
+    throw new Error('No Gemini model configured');
+  }
+
+  const prompt = `Extract all exam questions from this PDF and return ONLY a JSON array. Each object must have these exact keys:
+questionText, questionType (MCQ/MSQ/integer), subject, marks (number), option1, option2, option3, option4, correctAnswer, explanation.
+
+For subject: Read the actual subject name from the PDF content itself (e.g. from section headers, page titles, question labels, or context clues like "Physics - Section A"). Do NOT assume or default to any subject. If the subject cannot be determined from the PDF, set subject to empty string "".
+When the PDF clearly indicates one of the standard areas, use exactly one of these lowercase slugs for subject: maths, physics, chemistry, biology. If the PDF suggests a different label that maps obviously to one of these (e.g. "Mathematics" → maths), use that slug. Otherwise use "".
+
+For MCQ: correctAnswer is the text of the correct option (full option text, not a letter).
+For MSQ: correctAnswer is comma-separated correct option texts.
+For integer: correctAnswer is the numeric answer; options can be empty strings.
+
+Accuracy: Copy stems and options faithfully. Strip leading "Q1." / "1." from questionText only. Strip "A." / "(a)" prefixes from option bodies. Skip items that cannot be represented as MCQ/MSQ/integer with real choices.
+
+Return only valid JSON, no markdown, no explanation.`;
+
+  const maxOut = getPdfExtractionMaxOutputTokens();
+  const attemptErrors = [];
+  let sawQuotaError = false;
+  const requestTimeoutMs = Number(process.env.GEMINI_PDF_REQUEST_TIMEOUT_MS) || 90000;
+
+  const fetchWithTimeout = async (url, options) => {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), requestTimeoutMs);
+    try {
+      return await fetch(url, { ...options, signal: controller.signal });
+    } finally {
+      clearTimeout(timer);
+    }
+  };
+
+  const parseGeminiJsonArray = (data, modelLabel) => {
+    const finishReason = data?.candidates?.[0]?.finishReason;
+    if (finishReason === 'MAX_TOKENS') {
+      attemptErrors.push(`${modelLabel}: output truncated (MAX_TOKENS); increase GEMINI_PDF_EXTRACTION_MAX_TOKENS or split PDF`);
+    }
+    const raw = String(
+      (data?.candidates?.[0]?.content?.parts || [])
+        .map((p) => (typeof p?.text === 'string' ? p.text : ''))
+        .join('')
+        .trim(),
+    );
+    const cleaned = raw.replace(/^```json\s*/i, '').replace(/^```\s*/i, '').replace(/\s*```$/i, '').trim();
+    let parsed;
+    try {
+      parsed = JSON.parse(cleaned);
+    } catch {
+      attemptErrors.push(`${modelLabel}: returned invalid JSON`);
+      return null;
+    }
+    if (!Array.isArray(parsed)) {
+      attemptErrors.push(`${modelLabel}: did not return a JSON array`);
+      return null;
+    }
+    return parsed;
+  };
+
+  for (const model of modelCandidates) {
+    const tryModel = async (useStructured) => {
+      const generationConfig = {
+        temperature: 0,
+        topP: 0.95,
+        maxOutputTokens: maxOut,
+        ...(useStructured
+          ? {
+              responseMimeType: 'application/json',
+              responseSchema: PDF_QUESTIONS_RESPONSE_SCHEMA,
+            }
+          : {}),
+      };
+
+      const payload = {
+        contents: [
+          {
+            role: 'user',
+            parts: [
+              { text: prompt },
+              {
+                inlineData: {
+                  mimeType,
+                  data: buffer.toString('base64'),
+                },
+              },
+            ],
+          },
+        ],
+        generationConfig,
+      };
+
+      let response;
+      try {
+        response = await fetchWithTimeout(
+          `${GEMINI_BASE_URL}/models/${model}:generateContent?key=${apiKey}`,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          },
+        );
+      } catch (error) {
+        return {
+          ok: false,
+          status: 408,
+          errorText: error?.name === 'AbortError'
+            ? `Gemini request timed out after ${requestTimeoutMs}ms`
+            : String(error?.message || 'Gemini request failed'),
+        };
+      }
+
+      if (!response.ok) {
+        const errorText = await safeGeminiErrorText(response);
+        return { ok: false, status: response.status, errorText };
+      }
+
+      const data = await response.json();
+      const parsed = parseGeminiJsonArray(data, `${model}${useStructured ? '+schema' : ''}`);
+      if (!parsed) return { ok: false, status: 200, errorText: 'parse failed' };
+      return { ok: true, parsed };
+    };
+
+    let parsed = null;
+
+    const structured = await tryModel(true);
+    if (structured.ok && structured.parsed) {
+      parsed = structured.parsed;
+    } else if (structured.status === 400 && /schema|mime|response/i.test(String(structured.errorText || ''))) {
+      attemptErrors.push(`${model}: structured output rejected (${structured.errorText || structured.status})`);
+      const loose = await tryModel(false);
+      if (loose.ok && loose.parsed) parsed = loose.parsed;
+      else if (!loose.ok) {
+        const errorText = loose.errorText || '';
+        const isQuota = loose.status === 429 || /quota|resource_exhausted/i.test(errorText);
+        sawQuotaError = sawQuotaError || isQuota;
+        attemptErrors.push(`${model}: ${loose.status} ${errorText}`);
+      }
+    } else if (!structured.ok) {
+      const errorText = structured.errorText || '';
+      const isQuota = structured.status === 429 || /quota|resource_exhausted/i.test(errorText);
+      sawQuotaError = sawQuotaError || isQuota;
+      attemptErrors.push(`${model}: ${structured.status} ${errorText}`);
+      const loose = await tryModel(false);
+      if (loose.ok && loose.parsed) parsed = loose.parsed;
+      else if (!loose.ok) {
+        const err2 = loose.errorText || '';
+        const isQ2 = loose.status === 429 || /quota|resource_exhausted/i.test(err2);
+        sawQuotaError = sawQuotaError || isQ2;
+        attemptErrors.push(`${model} (no schema): ${loose.status} ${err2}`);
+      }
+    }
+
+    if (parsed && Array.isArray(parsed)) {
+      const refined = postProcessGeminiPdfQuestionRows(parsed);
+      if (refined.length > 0) return refined;
+      attemptErrors.push(`${model}: model returned rows but none passed validation after cleanup`);
+    }
+  }
+
+  if (sawQuotaError) {
+    throw new Error(`Gemini quota exceeded across models. Attempts: ${attemptErrors.join(' | ')}`);
+  }
+  throw new Error(`Gemini PDF extraction failed. Attempts: ${attemptErrors.join(' | ')}`);
+}
+
 /**
  * Keeps classNumber and assignedClasses in sync for API clients.
  * Handles legacy documents, string/array quirks, and numeric IDs from JSON.
@@ -1288,49 +1748,8 @@ export const bulkUploadQuestions = async (req, res) => {
         .replace(/^"|"$/g, '')
         .replace(/[^a-z0-9]/g, '');
 
-    // Resolve a single answer token to an option index.
-    //   "a"/"A" .. "d"/"D"        → 0..3
-    //   "1".."4"                  → 1-based (matches the downloadable template and
-    //                               the letter convention). Falls back to 0-based
-    //                               only when the token can't be 1-based (e.g. "0").
-    //   "option a", "option 2"    → same as above
-    //   Exact option text match   → that option's index
-    const toOptionIndex = (token, options) => {
-      const normalizedToken = String(token || '').trim().toLowerCase();
-      if (!normalizedToken || !Array.isArray(options) || options.length === 0) {
-        return -1;
-      }
-
-      if (/^\d+$/.test(normalizedToken)) {
-        const numeric = parseInt(normalizedToken, 10);
-        if (numeric >= 1 && numeric <= options.length) return numeric - 1; // prefer 1-based
-        if (numeric >= 0 && numeric < options.length) return numeric; // fallback 0-based
-      }
-
-      if (/^[a-z]$/.test(normalizedToken)) {
-        const alphaIndex = normalizedToken.charCodeAt(0) - 97;
-        if (alphaIndex >= 0 && alphaIndex < options.length) return alphaIndex;
-      }
-
-      const optionMatch = normalizedToken.match(/^option\s*([a-z0-9])$/);
-      if (optionMatch) {
-        const optionToken = optionMatch[1];
-        if (/^\d$/.test(optionToken)) {
-          const n = parseInt(optionToken, 10);
-          if (n >= 1 && n <= options.length) return n - 1;
-          if (n >= 0 && n < options.length) return n;
-        }
-        if (/^[a-z]$/.test(optionToken)) {
-          const idx = optionToken.charCodeAt(0) - 97;
-          if (idx >= 0 && idx < options.length) return idx;
-        }
-      }
-
-      const textIndex = options.findIndex(
-        (opt) => String(opt?.text || '').trim().toLowerCase() === normalizedToken
-      );
-      return textIndex;
-    };
+    // Resolve a single answer token to an option index (shared with PDF extraction).
+    const toOptionIndex = (token, options) => mcqTokenToOptionIndex(token, options);
 
     // Get header row
     const headers = parseCSVLine(lines[0]).map((h) => normalizeHeader(h));
@@ -1667,6 +2086,153 @@ export const bulkUploadQuestions = async (req, res) => {
       success: false, 
       message: 'Failed to process CSV file',
       error: error.message 
+    });
+  }
+};
+
+// Convert PDF questions to normalized row format for preview / CSV download.
+export const convertPdfToQuestions = async (req, res) => {
+  try {
+    const { examId } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(examId)) {
+      return res.status(400).json({ success: false, message: 'Invalid exam ID format' });
+    }
+    const exam = await Exam.findById(examId);
+    if (!exam || exam.createdByRole !== 'super-admin') {
+      return res.status(404).json({ success: false, message: 'Exam not found or not accessible' });
+    }
+    if (!req.file) {
+      return res.status(400).json({ success: false, message: 'PDF file is required' });
+    }
+
+    const mime = String(req.file.mimetype || '').toLowerCase();
+    if (!mime.includes('pdf')) {
+      return res.status(400).json({ success: false, message: 'Only PDF files are allowed' });
+    }
+
+    const rows = await extractQuestionsFromPdfViaGemini({
+      buffer: req.file.buffer,
+      mimeType: req.file.mimetype || 'application/pdf',
+    });
+
+    const normalized = rows.map((r, idx) => {
+      const questionTypeRaw = String(r?.questionType || '').trim().toUpperCase();
+      const mappedType = questionTypeRaw === 'MSQ' ? 'multiple' : questionTypeRaw === 'INTEGER' ? 'integer' : 'mcq';
+      const subject = String(r?.subject ?? '').trim().toLowerCase();
+      const marks = Number(r?.marks);
+      return {
+        row: idx + 1,
+        questionText: String(r?.questionText || '').trim(),
+        questionType: mappedType,
+        subject,
+        marks: Number.isFinite(marks) && marks > 0 ? marks : 1,
+        option1: String(r?.option1 || '').trim(),
+        option2: String(r?.option2 || '').trim(),
+        option3: String(r?.option3 || '').trim(),
+        option4: String(r?.option4 || '').trim(),
+        correctAnswer: String(r?.correctAnswer || '').trim(),
+        explanation: String(r?.explanation || '').trim(),
+      };
+    }).filter((r) => r.questionText);
+
+    return res.json({
+      success: true,
+      data: normalized,
+      message: `Extracted ${normalized.length} question(s) from PDF.`,
+    });
+  } catch (error) {
+    console.error('❌ convertPdfToQuestions error:', error);
+    const msg = String(error?.message || 'Failed to extract questions from PDF');
+    const status =
+      msg.includes('Gemini API key is missing') ? 500 :
+      /quota exceeded|resource_exhausted|429/i.test(msg) ? 429 :
+      msg.includes('Gemini PDF extraction failed') ? 502 :
+      msg.includes('invalid JSON') || msg.includes('did not return a JSON array') ? 422 :
+      500;
+    return res.status(status).json({
+      success: false,
+      message: msg,
+    });
+  }
+};
+
+// Delete a single question and keep exam counters consistent.
+export const deleteQuestion = async (req, res) => {
+  try {
+    const { examId, questionId } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(examId) || !mongoose.Types.ObjectId.isValid(questionId)) {
+      return res.status(400).json({ success: false, message: 'Invalid exam/question id format' });
+    }
+    const exam = await Exam.findById(examId);
+    if (!exam || exam.createdByRole !== 'super-admin') {
+      return res.status(404).json({ success: false, message: 'Exam not found or not accessible' });
+    }
+
+    const question = await Question.findOne({ _id: questionId, exam: examId }).lean();
+    if (!question) {
+      return res.status(404).json({ success: false, message: 'Question not found' });
+    }
+
+    await Question.deleteOne({ _id: questionId });
+    await Exam.updateOne(
+      { _id: examId },
+      buildSafeRemoveQuestionPipeline({
+        questionId: new mongoose.Types.ObjectId(questionId),
+        totalQuestionsDelta: -1,
+        totalMarksDelta: -(Number(question.marks) || 0),
+      }),
+    );
+    await syncExamQuestionTotals(examId);
+
+    return res.json({
+      success: true,
+      message: 'Question deleted successfully',
+    });
+  } catch (error) {
+    console.error('❌ deleteQuestion error:', error);
+    return res.status(500).json({
+      success: false,
+      message: error.message || 'Failed to delete question',
+    });
+  }
+};
+
+// Delete all questions for an exam and keep exam counters consistent.
+export const deleteAllQuestions = async (req, res) => {
+  try {
+    const { examId } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(examId)) {
+      return res.status(400).json({ success: false, message: 'Invalid exam id format' });
+    }
+
+    const exam = await Exam.findById(examId);
+    if (!exam || exam.createdByRole !== 'super-admin') {
+      return res.status(404).json({ success: false, message: 'Exam not found or not accessible' });
+    }
+
+    const deleteResult = await Question.deleteMany({ exam: examId });
+    await Exam.updateOne(
+      { _id: examId },
+      {
+        $set: {
+          questions: [],
+          totalQuestions: 0,
+          totalMarks: 0,
+        },
+      },
+    );
+    await syncExamQuestionTotals(examId);
+
+    return res.json({
+      success: true,
+      message: `Deleted ${Number(deleteResult?.deletedCount) || 0} question(s) successfully`,
+      deletedCount: Number(deleteResult?.deletedCount) || 0,
+    });
+  } catch (error) {
+    console.error('❌ deleteAllQuestions error:', error);
+    return res.status(500).json({
+      success: false,
+      message: error.message || 'Failed to delete all questions',
     });
   }
 };

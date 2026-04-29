@@ -6,6 +6,7 @@ import {
 import { generateTeacherTool } from '../services/gemini-service.js';
 import AiToolGeneration from '../models/AiToolGeneration.js';
 import { runHybridRagQuery } from '../services/pdf-rag-service.js';
+import { fetchRotatingAiToolData } from '../services/ai-tool-rotation-service.js';
 
 function teacherToolDisplayName(toolType) {
   const map = {
@@ -285,14 +286,13 @@ export const createTeacherTool = async (req, res) => {
       `🤖 LLM teacher tool: ${toolType} — ${classDisplay}, ${finalSubject}, topic: ${topicForStore || '(optional)'}`,
     );
 
-    const { matchedDoc: cachedDoc } = await findStoredAiToolContent(
-      classDisplay,
-      finalSubject,
-      topicForStore,
-      subtopicForStore,
-      toolType,
-      { preferSuperAdmin: true },
-    );
+    const { doc: cachedDoc, matchType, totalCandidates, selectedIndex } = await fetchRotatingAiToolData({
+      classLabel: classDisplay,
+      subject: finalSubject,
+      topic: topicForStore,
+      subtopic: subtopicForStore,
+      toolName: toolType,
+    });
     if (cachedDoc) {
       const cachedContent = String(cachedDoc.generatedContent || cachedDoc.content || '').trim();
       if (cachedContent) {
@@ -310,6 +310,9 @@ export const createTeacherTool = async (req, res) => {
               teacherId,
               source: 'cache',
               sourceLabel: 'Previously generated content',
+              matchType,
+              totalCandidates,
+              selectedIndex,
             },
           },
         });
@@ -487,17 +490,16 @@ export const getGeneratedContent = async (req, res) => {
       );
     }
 
-    const { matchedDoc, matchedBy } = await findStoredAiToolContent(
+    const { doc: matchedDoc, matchType, totalCandidates, selectedIndex } = await fetchRotatingAiToolData({
       classLabel,
       subject,
       topic,
-      subTopic,
-      toolType,
-      { preferSuperAdmin: true },
-    );
+      subtopic: subTopic,
+      toolName: toolType,
+    });
 
     if (matchedDoc) {
-      console.log('Fallback matched record id:', String(matchedDoc._id), 'by', matchedBy);
+      console.log('Fallback matched record id:', String(matchedDoc._id), 'by', matchType);
     }
 
     if (!matchedDoc) {
@@ -520,7 +522,9 @@ export const getGeneratedContent = async (req, res) => {
         section: matchedDoc.section || '',
         generatedContent: matchedDoc.generatedContent || matchedDoc.content || '',
         createdAt: matchedDoc.createdAt,
-        matchType: matchedBy,
+        matchType,
+        totalCandidates,
+        selectedIndex,
         source: 'fallback-db',
         sourceLabel: 'Previously generated content',
       },

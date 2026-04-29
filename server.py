@@ -19,10 +19,10 @@ app.add_middleware(
 MODEL_PATH = os.path.expanduser("~/models/deepseek-v3-Q4_K_M.gguf")
 
 print("🔄 Loading DeepSeek-V3 model...")
-llm = None
+ai_model = None
 try:
     if os.path.exists(MODEL_PATH):
-        llm = Llama(
+        ai_model = Llama(
             model_path=MODEL_PATH,
             n_ctx=4096,
             n_threads=2,
@@ -34,7 +34,7 @@ try:
         print(f"❌ Model file not found at: {MODEL_PATH}")
 except Exception as e:
     print(f"❌ Error loading model: {e}")
-    llm = None
+    ai_model = None
 
 class Message(BaseModel):
     role: str
@@ -49,14 +49,14 @@ class ChatRequest(BaseModel):
 @app.get("/health")
 async def health():
     return {
-        "status": "ok" if llm else "error",
+        "status": "ok" if ai_model else "error",
         "model": "deepseek-v3",
-        "model_loaded": llm is not None
+        "model_loaded": ai_model is not None
     }
 
 @app.post("/v1/chat/completions")
 async def chat_completions(request: ChatRequest):
-    if not llm:
+    if not ai_model:
         return {"error": {"message": "Model not loaded"}}, 500
     
     try:
@@ -71,7 +71,7 @@ async def chat_completions(request: ChatRequest):
         
         prompt += "Assistant: "
         
-        response = llm(
+        response = ai_model(
             prompt,
             max_tokens=request.max_tokens or 2000,
             temperature=request.temperature,

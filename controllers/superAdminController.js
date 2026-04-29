@@ -1986,7 +1986,7 @@ export const analyzeStudentRiskSuperAdmin = async (req, res) => {
       }
     };
 
-    // Generate AI analysis using configured LLM
+    // Generate AI analysis using configured AI service
     const analysisPrompt = `You are an expert educational analyst with deep knowledge of student performance patterns, learning psychology, and intervention strategies. Analyze this student's performance data and provide a comprehensive risk assessment.
 
 STUDENT DATA:

@@ -139,10 +139,10 @@ Provide comprehensive, actionable insights that can drive educational improvemen
 
   async callGeminiAPI(prompt) {
     try {
-      // Reuse shared LLM service (LM Studio / OpenAI-compatible endpoint).
+      // Reuse shared AI service (LM Studio / OpenAI-compatible endpoint).
       return await geminiService.generateStructuredContent(prompt, 'json');
     } catch (error) {
-      console.error('LLM API call failed:', error);
+      console.error('AI API call failed:', error);
       throw error;
     }
   }

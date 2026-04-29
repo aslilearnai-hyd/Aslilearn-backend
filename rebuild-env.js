@@ -32,7 +32,7 @@ SUPER_ADMIN_PASSWORD=Amenity
 # Gemini AI Configuration
 GEMINI_API_KEY=AIzaSyCubFWwtDGDpj9jYmjzvng2QA_QYq9n4O0
 
-# Self-hosted production LLM configuration (AI tools only)
+# Self-hosted production AI configuration (AI tools only)
 LLM_PROVIDER=self-hosted
 LLM_MODEL_ID=Qwen/Qwen2.5-32B-Instruct-AWQ
 UPSTREAM_LLM_URL=http://122.183.61.67:40097/v1/chat/completions
