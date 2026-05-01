@@ -16,7 +16,12 @@ import {
   fetchRazorpaySubscriptions,
   fetchBillingForAdminEmail,
 } from '../services/razorpayService.js';
-import { VALID_SCHOOL_BOARDS, isValidSchoolBoard } from '../constants/boards.js';
+import {
+  CURRICULUM_BOARDS,
+  isValidCurriculumBoard,
+  isStoredCurriculumBoard,
+  resolveAdminStoredBoard,
+} from '../constants/boards.js';
 
 // Super Admin Login
 export const superAdminLogin = async (req, res) => {
@@ -244,11 +249,18 @@ export const getAllAdmins = async (req, res) => {
           schoolLogo: admin.schoolLogo,
           contactPerson: admin.contactPerson,
           phone: admin.phone,
+          secondaryContactPerson: admin.secondaryContactPerson,
+          secondaryContactPhone: admin.secondaryContactPhone,
           place: admin.place,
           pin: admin.pin,
           state: sd.state || admin.place || '',
           schoolDetails: sd,
           permissions: admin.permissions || [],
+          curriculumBoard:
+            admin.curriculumBoard ||
+            (isStoredCurriculumBoard(admin.board) ? String(admin.board).toUpperCase().trim() : 'CBSE'),
+          isAsliPrepExclusive:
+            admin.isAsliPrepExclusive === true || admin.board === 'ASLI_EXCLUSIVE_SCHOOLS',
           status: admin.isActive ? 'Active' : 'Inactive',
           joinDate: admin.createdAt,
           stats: {
@@ -467,11 +479,18 @@ export const getAdminSchoolDetail = async (req, res) => {
       schoolLogo: admin.schoolLogo,
       contactPerson: admin.contactPerson,
       phone: admin.phone,
+      secondaryContactPerson: admin.secondaryContactPerson,
+      secondaryContactPhone: admin.secondaryContactPhone,
       place: admin.place,
       pin: admin.pin,
       state: sd.state || admin.place || '',
       schoolDetails: sd,
       permissions: admin.permissions || [],
+      curriculumBoard:
+        admin.curriculumBoard ||
+        (isStoredCurriculumBoard(admin.board) ? String(admin.board).toUpperCase().trim() : 'CBSE'),
+      isAsliPrepExclusive:
+        admin.isAsliPrepExclusive === true || admin.board === 'ASLI_EXCLUSIVE_SCHOOLS',
       status: admin.isActive ? 'Active' : 'Inactive',
       joinDate: admin.createdAt,
     };
@@ -532,10 +551,13 @@ export const createAdmin = async (req, res) => {
       email,
       permissions,
       board,
+      isAsliPrepExclusive: rawExclusive,
       schoolName,
       schoolLogo,
       contactPerson,
       phone,
+      secondaryContactPerson,
+      secondaryContactPhone,
       place,
       pin,
       state,
@@ -550,13 +572,16 @@ export const createAdmin = async (req, res) => {
       });
     }
     
-    const boardUpperCreate = (board || '').toUpperCase().trim();
-    if (!isValidSchoolBoard(boardUpperCreate)) {
+    const curriculumUpper = (board || '').toUpperCase().trim();
+    if (!isValidCurriculumBoard(curriculumUpper)) {
       return res.status(400).json({
         success: false,
-        message: `Valid board is required. Must be one of: ${VALID_SCHOOL_BOARDS.join(', ')}`,
+        message: `Board (curriculum) must be one of: ${CURRICULUM_BOARDS.join(', ')}`,
       });
     }
+    const exclusive =
+      rawExclusive === undefined || rawExclusive === null ? false : Boolean(rawExclusive);
+    const finalBoard = resolveAdminStoredBoard(exclusive, curriculumUpper);
     
     if (!schoolName || schoolName.trim() === '') {
       return res.status(400).json({ 
@@ -600,11 +625,15 @@ export const createAdmin = async (req, res) => {
       email: email.toLowerCase().trim(),
       password: hashedPassword,
       role: 'admin',
-      board: boardUpperCreate,
+      board: finalBoard,
+      curriculumBoard: curriculumUpper,
+      isAsliPrepExclusive: exclusive,
       schoolName: schoolName.trim(),
       schoolLogo: schoolLogo?.trim() || '',
       contactPerson: contactPerson?.trim() || '',
       phone: phone?.trim() || '',
+      secondaryContactPerson: secondaryContactPerson?.trim() || '',
+      secondaryContactPhone: secondaryContactPhone?.trim() || '',
       place: placeLine,
       pin: pin?.trim() || '',
       schoolDetails,
@@ -631,10 +660,14 @@ export const createAdmin = async (req, res) => {
         name: newAdmin.fullName,
         email: newAdmin.email,
         board: newAdmin.board,
+        curriculumBoard: newAdmin.curriculumBoard,
+        isAsliPrepExclusive: newAdmin.isAsliPrepExclusive,
         schoolName: newAdmin.schoolName,
         schoolLogo: newAdmin.schoolLogo,
         contactPerson: newAdmin.contactPerson,
         phone: newAdmin.phone,
+        secondaryContactPerson: newAdmin.secondaryContactPerson,
+        secondaryContactPhone: newAdmin.secondaryContactPhone,
         place: newAdmin.place,
         pin: newAdmin.pin,
         state: newAdmin.schoolDetails?.state || '',
@@ -677,10 +710,13 @@ export const updateAdmin = async (req, res) => {
       permissions,
       isActive,
       board,
+      isAsliPrepExclusive,
       schoolName,
       schoolLogo,
       contactPerson,
       phone,
+      secondaryContactPerson,
+      secondaryContactPhone,
       place,
       pin,
       state,
@@ -715,15 +751,37 @@ export const updateAdmin = async (req, res) => {
     }
     if (permissions !== undefined) updateData.permissions = permissions;
     if (isActive !== undefined) updateData.isActive = Boolean(isActive);
-    if (board !== undefined && board !== null && board !== '') {
-      const boardUpper = board.toUpperCase().trim();
-      if (!isValidSchoolBoard(boardUpper)) {
-        return res.status(400).json({
-          success: false,
-          message: `Invalid board code: ${board}. Must be one of: ${VALID_SCHOOL_BOARDS.join(', ')}`,
-        });
+
+    const touchedCurriculum =
+      board !== undefined && board !== null && String(board).trim() !== '';
+    const touchedExclusive = isAsliPrepExclusive !== undefined && isAsliPrepExclusive !== null;
+
+    if (touchedCurriculum || touchedExclusive) {
+      let curriculum =
+        admin.curriculumBoard ||
+        (isStoredCurriculumBoard(admin.board) ? String(admin.board).toUpperCase().trim() : '');
+      if (!isValidCurriculumBoard(curriculum)) curriculum = 'CBSE';
+
+      if (touchedCurriculum) {
+        const cu = String(board).toUpperCase().trim();
+        if (!isValidCurriculumBoard(cu)) {
+          return res.status(400).json({
+            success: false,
+            message: `Board (curriculum) must be one of: ${CURRICULUM_BOARDS.join(', ')}`,
+          });
+        }
+        curriculum = cu;
+        updateData.curriculumBoard = cu;
       }
-      updateData.board = boardUpper;
+
+      let exclusive =
+        admin.isAsliPrepExclusive === true || admin.board === 'ASLI_EXCLUSIVE_SCHOOLS';
+      if (touchedExclusive) {
+        exclusive = Boolean(isAsliPrepExclusive);
+        updateData.isAsliPrepExclusive = exclusive;
+      }
+
+      updateData.board = resolveAdminStoredBoard(exclusive, curriculum);
     }
     if (schoolName !== undefined && schoolName !== null) {
       updateData.schoolName = schoolName.trim();
@@ -736,6 +794,12 @@ export const updateAdmin = async (req, res) => {
     }
     if (phone !== undefined && phone !== null) {
       updateData.phone = phone.trim();
+    }
+    if (secondaryContactPerson !== undefined && secondaryContactPerson !== null) {
+      updateData.secondaryContactPerson = String(secondaryContactPerson).trim();
+    }
+    if (secondaryContactPhone !== undefined && secondaryContactPhone !== null) {
+      updateData.secondaryContactPhone = String(secondaryContactPhone).trim();
     }
     if (place !== undefined && place !== null) {
       updateData.place = place.trim();
@@ -814,10 +878,14 @@ export const updateAdmin = async (req, res) => {
         name: updatedAdmin.fullName,
         email: updatedAdmin.email,
         board: updatedAdmin.board,
+        curriculumBoard: updatedAdmin.curriculumBoard,
+        isAsliPrepExclusive: updatedAdmin.isAsliPrepExclusive,
         schoolName: updatedAdmin.schoolName,
         schoolLogo: updatedAdmin.schoolLogo,
         contactPerson: updatedAdmin.contactPerson,
         phone: updatedAdmin.phone,
+        secondaryContactPerson: updatedAdmin.secondaryContactPerson,
+        secondaryContactPhone: updatedAdmin.secondaryContactPhone,
         place: updatedAdmin.place,
         pin: updatedAdmin.pin,
         state: sd.state || updatedAdmin.place || '',

@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { VALID_SCHOOL_BOARDS } from '../constants/boards.js';
 
 const streamSchema = new mongoose.Schema({
   title: {
@@ -31,7 +32,7 @@ const streamSchema = new mongoose.Schema({
   // Board filter
   board: {
     type: String,
-    enum: ['ASLI_EXCLUSIVE_SCHOOLS', 'CBSE', 'STATE'],
+    enum: VALID_SCHOOL_BOARDS,
     uppercase: true,
     required: true,
     default: 'ASLI_EXCLUSIVE_SCHOOLS'

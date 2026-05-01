@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { VALID_SCHOOL_BOARDS } from '../constants/boards.js';
 
 const iqRankQuestionSchema = new mongoose.Schema({
   questionText: {
@@ -47,7 +48,7 @@ const iqRankQuestionSchema = new mongoose.Schema({
   },
   board: {
     type: String,
-    enum: ['ASLI_EXCLUSIVE_SCHOOLS', 'CBSE', 'STATE'],
+    enum: VALID_SCHOOL_BOARDS,
     uppercase: true,
     default: 'ASLI_EXCLUSIVE_SCHOOLS'
   },

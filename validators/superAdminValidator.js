@@ -106,16 +106,21 @@ export const validateSuperAdminCredentials = (email, password) => {
   return email === 'sealucknow2017@gmail.com' && password === 'Asli123';
 };
 
+export const ALLOWED_SCHOOL_PORTAL_PERMISSIONS = [
+  'User Management',
+  'Content Management',
+  'Analytics',
+  'Subscriptions',
+  'Settings',
+  'Exam Management',
+  'Learning Paths',
+  'School Calendar',
+  'Vidya AI',
+  'Edu OTT',
+];
+
 export const validatePermissions = (permissions) => {
-  const allowedPermissions = [
-    'User Management',
-    'Content Management',
-    'Analytics',
-    'Subscriptions',
-    'Settings'
-  ];
-  
-  return permissions.every(permission => allowedPermissions.includes(permission));
+  return permissions.every((permission) => ALLOWED_SCHOOL_PORTAL_PERMISSIONS.includes(permission));
 };
 
 export const validateRole = (role) => {

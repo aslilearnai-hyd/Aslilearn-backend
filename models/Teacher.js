@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { VALID_SCHOOL_BOARDS } from '../constants/boards.js';
 
 const teacherSchema = new mongoose.Schema({
   fullName: {
@@ -31,7 +32,7 @@ const teacherSchema = new mongoose.Schema({
   },
   board: {
     type: String,
-    enum: ['ASLI_EXCLUSIVE_SCHOOLS', 'CBSE', 'STATE'],
+    enum: VALID_SCHOOL_BOARDS,
     uppercase: true,
     default: 'ASLI_EXCLUSIVE_SCHOOLS'
   },

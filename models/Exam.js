@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { VALID_SCHOOL_BOARDS } from '../constants/boards.js';
 
 const examSchema = new mongoose.Schema({
   title: {
@@ -88,7 +89,7 @@ const examSchema = new mongoose.Schema({
   board: {
     type: String,
     required: true,
-    enum: ['ASLI_EXCLUSIVE_SCHOOLS', 'CBSE', 'STATE'],
+    enum: VALID_SCHOOL_BOARDS,
     uppercase: true,
     default: 'ASLI_EXCLUSIVE_SCHOOLS'
   },

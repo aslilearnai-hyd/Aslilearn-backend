@@ -1,11 +1,12 @@
 import mongoose from 'mongoose';
+import { VALID_SCHOOL_BOARDS } from '../constants/boards.js';
 
 const boardSchema = new mongoose.Schema({
   code: {
     type: String,
     required: true,
     unique: true,
-    enum: ['ASLI_EXCLUSIVE_SCHOOLS', 'CBSE', 'STATE'],
+    enum: VALID_SCHOOL_BOARDS,
     uppercase: true
   },
   name: {
