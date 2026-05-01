@@ -1,5 +1,4 @@
-# Nixpacks configuration for Railway
-# Railway auto-detects Node.js from package.json, so we don't need to specify it
+# Nixpacks build configuration (Node.js from package.json)
 
 [phases.setup]
 nixPkgs = ["curl", "wget"]
@@ -16,8 +15,6 @@ cmds = [
   "npm install"
 ]
 
-# Railway will use package.json "start" script by default
-# Or you can override with Railway dashboard settings
 [start]
 cmd = "node index.js"
 

@@ -351,7 +351,7 @@ app.listen(PORT, () => {
   console.log('🚀 Super Admin Backend Server Started!');
   console.log(`📡 Server running on port ${PORT}`);
   
-  // Use local environment variables first, not Railway
+  // Base URL from environment (see BASE_URL / API_BASE_URL)
   const baseUrl = process.env.BASE_URL || 
                   process.env.API_BASE_URL || 
                   `http://localhost:${PORT}`;

@@ -577,21 +577,23 @@ function generateStreamUrl(streamKey) {
   return `rtmp://localhost:1935/live/${streamKey}`;
 }
 
+function getStreamPublicBaseUrl() {
+  const base =
+    process.env.BASE_URL ||
+    process.env.API_BASE_URL ||
+    `http://localhost:${process.env.PORT || 5000}`;
+  return base.replace(/\/$/, '');
+}
+
 function generatePlaybackUrl(streamKey) {
   // This would integrate with your streaming service (e.g., HLS playback URL)
-  // Use Railway URL in production, localhost in development
-  const baseUrl = process.env.NODE_ENV === 'production' 
-    ? 'https://asli-stud-back-production.up.railway.app'
-    : 'https://localhost:8080';
+  const baseUrl = getStreamPublicBaseUrl();
   return `${baseUrl}/live/${streamKey}.m3u8`;
 }
 
 function generateRecordingUrl(streamKey) {
   // This would integrate with your streaming service to get the recording
-  // Use Railway URL in production, localhost in development
-  const baseUrl = process.env.NODE_ENV === 'production' 
-    ? 'https://asli-stud-back-production.up.railway.app'
-    : 'https://localhost:8080';
+  const baseUrl = getStreamPublicBaseUrl();
   return `${baseUrl}/recordings/${streamKey}.mp4`;
 }
 

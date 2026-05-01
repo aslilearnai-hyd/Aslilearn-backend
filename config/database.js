@@ -19,8 +19,7 @@ if (result.error) {
   console.log('✅ Loaded .env file from:', envPath);
 }
 
-// Use local .env file - prioritize local environment over Railway
-// This ensures local development uses local .env file
+// MONGO_URI from .env (loaded above)
 const MONGO_URI = process.env.MONGO_URI;
 
 if (!MONGO_URI) {

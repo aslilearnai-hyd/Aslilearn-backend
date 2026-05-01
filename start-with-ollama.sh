@@ -1,9 +1,9 @@
 #!/bin/bash
-# Railway startup script with Ollama
+# Startup script with optional Ollama
 
-echo "🚀 Starting Railway backend with Ollama..."
+echo "🚀 Starting backend with Ollama..."
 
-# Find Node.js - Railway should have it in PATH, but check common locations
+# Find Node.js in PATH or common locations
 NODE_CMD="node"
 if ! command -v node &> /dev/null; then
   # Try common Node.js locations

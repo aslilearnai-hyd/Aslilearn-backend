@@ -734,7 +734,7 @@ app.use(session({
   resave: true, // Set to true to ensure session is saved
   saveUninitialized: true, // Set to true to save new sessions
   cookie: {
-    secure: false, // Set to false for Railway deployment
+    secure: false, // set true when the app is served only over HTTPS
     httpOnly: false, // Set to false to allow JavaScript access
     maxAge: 24 * 60 * 60 * 1000, // 24 hours
     sameSite: 'lax', // Set to 'lax' for better compatibility
@@ -2801,7 +2801,7 @@ app.post('/api/debug/create-test-student', async (req, res) => {
   }
 });
 
-// Fix/Create user for login (for Railway debugging)
+// Fix/Create user for login (debug only)
 app.post('/api/debug/fix-user', async (req, res) => {
   try {
     const { email = 'ak@gmail.com', password = 'Password123', fullName = 'Akhilesh', role = 'admin' } = req.body;

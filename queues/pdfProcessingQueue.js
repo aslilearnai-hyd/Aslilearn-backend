@@ -4,13 +4,13 @@ import { processPdfSource } from '../services/pdf-rag-service.js';
 import PdfProcessingFailure from '../models/PdfProcessingFailure.js';
 
 const QUEUE_NAME = 'pdf-processing';
-const redisUrl = process.env.REDIS_URL || '';
 
 let queue = null;
 let worker = null;
 let queueEnabled = false;
 
 function buildConnection() {
+  const redisUrl = process.env.REDIS_URL || '';
   if (!redisUrl) return null;
   return new IORedis(redisUrl, { maxRetriesPerRequest: null, enableReadyCheck: false });
 }

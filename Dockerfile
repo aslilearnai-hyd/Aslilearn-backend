@@ -1,4 +1,4 @@
-# Dockerfile for Railway - with Node.js and optional Ollama
+# Node.js backend image (optional Ollama in sibling scripts)
 FROM node:18-alpine
 
 # Install system dependencies
@@ -19,7 +19,7 @@ RUN npm install --production
 # Copy application files
 COPY . .
 
-# Expose port (Railway sets PORT env var)
+# PORT is typically set by the host / orchestrator
 EXPOSE ${PORT:-5000}
 
 # Start command

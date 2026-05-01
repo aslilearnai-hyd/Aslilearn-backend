@@ -7,7 +7,7 @@ import { decodeCsvBuffer } from '../utils/csv-encoding.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Path to CSV files - check backend folder first (for Railway), then client folder (for local dev)
+// Path to CSV files - prefer backend folder, then client folder for local dev
 const BACKEND_CSV_PATH = path.join(__dirname, '../class-9'); // Check if CSV files are in backend
 const CLIENT_SRC_PATH = path.join(__dirname, '../../client/src'); // Fallback to client folder
 
