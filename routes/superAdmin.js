@@ -88,8 +88,18 @@ const __dirname = path.dirname(__filename);
 const contentStorage = multer.diskStorage({
   destination: function (req, file, cb) {
     const uploadDir = path.join(__dirname, '../uploads/content');
-    if (!fs.existsSync(uploadDir)) {
-      fs.mkdirSync(uploadDir, { recursive: true });
+    try {
+      if (!fs.existsSync(uploadDir)) {
+        fs.mkdirSync(uploadDir, { recursive: true });
+      }
+      fs.accessSync(uploadDir, fs.constants.W_OK);
+    } catch (e) {
+      console.error('[content upload] Cannot use uploads directory:', uploadDir, e?.code || e?.message);
+      return cb(
+        new Error(
+          'Upload directory is missing or not writable on the server. Ensure ASLI-STUD-BACK/uploads/content exists and the Node process can write to it (see deployment docs).'
+        )
+      );
     }
     cb(null, uploadDir);
   },
@@ -100,9 +110,28 @@ const contentStorage = multer.diskStorage({
   }
 });
 
+/** Multer may run fileFilter before req.body fields are parsed; always use query + infer fallback. */
+function inferContentTypeFromFile(file) {
+  const ext = path.extname(String(file.originalname || '')).toLowerCase();
+  const mime = String(file.mimetype || '').toLowerCase();
+  const documentExts = ['.pdf', '.doc', '.docx', '.ppt', '.pptx', '.xls', '.xlsx', '.odt', '.ods', '.odp'];
+  const videoExts = ['.mp4', '.mpeg', '.mpg', '.mov', '.avi', '.webm', '.mkv'];
+  const audioExts = ['.mp3', '.wav', '.ogg', '.aac', '.m4a', '.flac', '.weba'];
+  if (documentExts.includes(ext) || mime === 'application/pdf' || mime.includes('word') || mime.includes('sheet') || mime.includes('presentation')) {
+    return 'TextBook';
+  }
+  if (videoExts.includes(ext) || mime.startsWith('video/')) return 'Video';
+  if (audioExts.includes(ext) || mime.startsWith('audio/')) return 'Audio';
+  return '';
+}
+
 // File filter based on content type
 const contentFileFilter = (req, file, cb) => {
-  const contentType = req.body.contentType || req.query.contentType;
+  const raw =
+    req.query?.contentType ||
+    req.body?.contentType ||
+    inferContentTypeFromFile(file);
+  const contentType = String(raw || '').trim();
   const ext = path.extname(String(file.originalname || '')).toLowerCase();
   
   // Document types (TextBook, Workbook, Material)
@@ -163,7 +192,14 @@ const contentFileFilter = (req, file, cb) => {
       cb(new Error('Only audio files (MP3, WAV, OGG, AAC, M4A) are allowed!'), false);
     }
   } else {
-    cb(new Error('Invalid content type!'), false);
+    cb(
+      new Error(
+        contentType
+          ? `Invalid content type "${contentType}". Use Video, Audio, TextBook, Workbook, Material, or Homework.`
+          : 'Could not determine content type. Pass contentType in the URL (?contentType=TextBook) or choose a supported file type.'
+      ),
+      false
+    );
   }
 };
 
@@ -510,7 +546,7 @@ router.get('/classes', getAllClasses);
 router.post('/content/upload-file', (req, res, next) => {
   contentUpload.single('file')(req, res, (err) => {
     if (err) {
-      console.error('Multer error:', err);
+      console.error('Multer error:', err?.code || err?.message, err);
       if (err.code === 'LIMIT_FILE_SIZE') {
         return res.status(400).json({ 
           success: false,
@@ -519,7 +555,8 @@ router.post('/content/upload-file', (req, res, next) => {
       }
       return res.status(400).json({ 
         success: false,
-        message: err.message || 'File upload error'
+        message: err.message || 'File upload error',
+        code: err.code || undefined,
       });
     }
     next();

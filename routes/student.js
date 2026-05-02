@@ -11,6 +11,7 @@ import Content from '../models/Content.js';
 import StudentRemark from '../models/StudentRemark.js';
 import TeacherWorkDiary from '../models/TeacherWorkDiary.js';
 import RiskAnalysisReport from '../models/RiskAnalysisReport.js';
+import GeminiPerformanceReport from '../models/GeminiPerformanceReport.js';
 import { verifyToken } from '../middleware/auth.js';
 import {
   getStudentExamRanking,
@@ -915,6 +916,82 @@ async function hydrateExamQuestions(examDoc, { hideAnswers = false } = {}) {
   };
 }
 
+/**
+ * Resolve the full question bank for an exam (Question collection + legacy refs + embedded).
+ * Must match GET /exam-results/:examId/review so AI analysis and review stay aligned.
+ */
+async function loadExamQuestionBankForResults(examId) {
+  const id = examId ? String(examId) : '';
+  if (!id || !mongoose.Types.ObjectId.isValid(id)) {
+    return [];
+  }
+  const examDoc = await Exam.findById(id).lean();
+  let questions = await Question.find({ exam: id, isActive: { $ne: false } })
+    .sort({ createdAt: 1, _id: 1 })
+    .lean();
+
+  if (!questions.length) {
+    questions = await Question.find({ exam: id })
+      .sort({ createdAt: 1, _id: 1 })
+      .lean();
+  }
+
+  if (!questions.length && Array.isArray(examDoc?.questions) && examDoc.questions.length > 0) {
+    questions = await Question.find({
+      _id: { $in: examDoc.questions.map((q) => q?._id || q).filter(Boolean) },
+      isActive: { $ne: false },
+    })
+      .sort({ createdAt: 1, _id: 1 })
+      .lean();
+  }
+
+  if (!questions.length && Array.isArray(examDoc?.questions) && examDoc.questions.length > 0) {
+    questions = await Question.find({
+      _id: { $in: examDoc.questions.map((q) => q?._id || q).filter(Boolean) },
+    })
+      .sort({ createdAt: 1, _id: 1 })
+      .lean();
+  }
+
+  if (!questions.length && Array.isArray(examDoc?.questions) && examDoc.questions.length > 0) {
+    questions = examDoc.questions
+      .filter((q) => q && typeof q === 'object')
+      .filter((q) => q.questionText || q.questionImage || q.questionType || q.options)
+      .map((q, index) => ({
+        _id: q._id || `embedded-${id}-${index}`,
+        questionText: q.questionText || '',
+        questionImage: q.questionImage || undefined,
+        questionType: q.questionType || 'mcq',
+        options: Array.isArray(q.options) ? q.options : [],
+        correctAnswer: q.correctAnswer,
+        marks: Number(q.marks) || 1,
+        negativeMarks: Number(q.negativeMarks) || 0,
+        explanation: q.explanation || undefined,
+        subject: String(q.subject || 'maths').toLowerCase(),
+        exam: id,
+      }));
+  }
+
+  return questions;
+}
+
+/** Ensure exam result JSON includes plain-object answers (Mongoose Map / lean quirks). */
+function toPlainExamResultForApi(row) {
+  if (!row || typeof row !== 'object') return row;
+  const out = { ...row };
+  const a = out.answers;
+  if (a instanceof Map) {
+    out.answers = Object.fromEntries(a);
+  } else if (a && typeof a === 'object' && typeof a.get === 'function' && typeof a.set === 'function') {
+    try {
+      out.answers = Object.fromEntries(a);
+    } catch (_e) {
+      out.answers = { ...a };
+    }
+  }
+  return out;
+}
+
 const canStudentAccessExam = (exam, studentAdminId) => {
   if (!exam) return false;
   if (!studentAdminId) return !exam.isSchoolSpecific;
@@ -1694,6 +1771,42 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       return res.status(400).json({ success: false, message: 'result payload is required' });
     }
 
+    const examIdRaw = result.examId;
+    const examIdStr =
+      examIdRaw && typeof examIdRaw === 'object' && examIdRaw._id
+        ? String(examIdRaw._id)
+        : String(examIdRaw || '');
+    if (!examIdStr || !mongoose.Types.ObjectId.isValid(examIdStr)) {
+      return res.status(400).json({
+        success: false,
+        message: 'A valid result.examId is required for the Gemini Performance Report.',
+      });
+    }
+    const examObjectId = new mongoose.Types.ObjectId(examIdStr);
+
+    const cachedReport = await GeminiPerformanceReport.findOne({
+      studentId: req.userId,
+      examId: examObjectId,
+    }).lean();
+
+    if (cachedReport?.fullAnalysis && typeof cachedReport.fullAnalysis === 'object') {
+      const storedMeta =
+        cachedReport.meta && typeof cachedReport.meta === 'object' ? cachedReport.meta : {};
+      return res.json({
+        success: true,
+        data: {
+          analysis: cachedReport.fullAnalysis,
+          meta: {
+            weakSubjects: Array.isArray(storedMeta.weakSubjects) ? storedMeta.weakSubjects : [],
+            classNumber: String(storedMeta.classNumber || ''),
+            board: String(storedMeta.board || ''),
+            generatedAt: (cachedReport.createdAt || cachedReport.updatedAt || new Date()).toISOString(),
+            cached: true,
+          },
+        },
+      });
+    }
+
     const student = await User.findById(req.userId).populate('assignedAdmin', 'board');
     const resolvedBoard = String(student?.board || student?.assignedAdmin?.board || 'ASLI_EXCLUSIVE_SCHOOLS')
       .trim()
@@ -1817,7 +1930,7 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
     }
 
     const safeResult = {
-      examId: String(result.examId || ''),
+      examId: examIdStr,
       examTitle: String(examTitle || result.examTitle || ''),
       totalQuestions: Number(result.totalQuestions || 0),
       correctAnswers: Number(result.correctAnswers || 0),
@@ -1849,11 +1962,7 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
         : {};
     }
 
-    const examQuestions = safeResult.examId
-      ? await Question.find({ exam: safeResult.examId, isActive: { $ne: false } })
-          .sort({ createdAt: 1, _id: 1 })
-          .lean()
-      : [];
+    const examQuestions = safeResult.examId ? await loadExamQuestionBankForResults(safeResult.examId) : [];
 
     const shorten = (value, max = 280) => {
       const text = String(value || '').replace(/\s+/g, ' ').trim();
@@ -2086,9 +2195,261 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
 
     const fallbackQuestionInsights = questionAttemptDetails.map(buildQuestionInsight);
 
+    const formatExamClock = (seconds) => {
+      const s = Number(seconds) || 0;
+      const h = Math.floor(s / 3600);
+      const m = Math.floor((s % 3600) / 60);
+      const r = s % 60;
+      return h > 0 ? `${h}h ${m}m ${r}s` : `${m}m ${r}s`;
+    };
+
+    /** Rich analysis without LLM — uses scores, subject split, skips vs wrongs, time, topic clusters */
+    const buildDeepOfflineExamAnalysis = (reasonNote = '') => {
+      const attempted = (safeResult.correctAnswers || 0) + (safeResult.wrongAnswers || 0);
+      const totalQ =
+        Number(safeResult.totalQuestions) || attempted + (safeResult.unattempted || 0) || 1;
+      const pct = Number(safeResult.percentage || 0);
+      const skipRate = totalQ > 0 ? ((safeResult.unattempted || 0) / totalQ) * 100 : 0;
+      const wrongRate = totalQ > 0 ? ((safeResult.wrongAnswers || 0) / totalQ) * 100 : 0;
+      const completionPct = totalQ > 0 ? (attempted / totalQ) * 100 : 0;
+      const acc = attempted > 0 ? ((safeResult.correctAnswers || 0) / attempted) * 100 : 0;
+      const avgSecPerQ = totalQ > 0 ? Math.round((safeResult.timeTaken || 0) / totalQ) : 0;
+
+      const topicBuckets = new Map();
+      questionAttemptDetails.forEach((q) => {
+        if (q.isCorrect) return;
+        const topic = inferTopicFromQuestion(q);
+        const key = `${String(q.subject || 'general').toLowerCase()} — ${topic}`;
+        topicBuckets.set(key, (topicBuckets.get(key) || 0) + 1);
+      });
+      const topGaps = [...topicBuckets.entries()]
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 6);
+
+      const subjectBreakdown = subjectEntries.length
+        ? subjectEntries
+            .map((s) => {
+              const label = String(s.subject || '').charAt(0).toUpperCase() + String(s.subject || '').slice(1);
+              return `${label}: ${s.correct}/${s.total} correct (${s.percentage}%), ${s.marks} marks`;
+            })
+            .join(' · ')
+        : 'Subject split not available for this result payload.';
+
+      const pacingHint =
+        avgSecPerQ <= 0
+          ? ''
+          : avgSecPerQ < 40
+            ? 'Average time per item is quite low—check whether some questions were rushed; re-attempt similar items with a minimum thinking budget (e.g. 60–90s) before locking an option.'
+            : avgSecPerQ > 150
+              ? 'Average time per item is high—practice skipping and returning, and cap first-pass time so you attempt more items.'
+              : 'Pacing looks moderate—combine with fewer skips to lift overall score.';
+
+      const skipInsight =
+        skipRate >= 25
+          ? `Skipping ${skipRate.toFixed(1)}% of the paper is a major score cap. Treat every skip like a wrong answer: schedule a 20‑minute block to solve only skipped topics before the next mock.`
+          : skipRate >= 12
+            ? `Skip rate is ${skipRate.toFixed(1)}%—not extreme, but each skip is lost opportunity; aim to attempt first, then mark for review.`
+            : `Skip rate is ${skipRate.toFixed(1)}%—good attempt coverage; focus accuracy on wrong answers.`;
+
+      const wrongInsight =
+        wrongRate >= 35
+          ? `Wrong answers account for ${wrongRate.toFixed(1)}% of the paper—prioritize error log: for each wrong, write one line on the concept trap and one correct rule.`
+          : `Wrong answers: ${safeResult.wrongAnswers}—pair each with its explanation and redo without looking, then one variation question.`;
+
+      const gapLines =
+        topGaps.length > 0
+          ? `Concept pressure points (wrong or skipped, grouped): ${topGaps.map(([k, c]) => `${k} (${c})`).join('; ')}.`
+          : 'No per-question detail was available to cluster topics—use subject cards and the question list below.';
+
+      const introNote = reasonNote ? `${String(reasonNote).trim()}\n\n` : '';
+
+      const summary = [
+        `${introNote}You scored about ${pct.toFixed(1)}% on this attempt (${safeResult.obtainedMarks} / ${safeResult.totalMarks} marks).`,
+        `Attempt pattern: ${attempted} of ${totalQ} questions touched (${completionPct.toFixed(1)}% completion): ${safeResult.correctAnswers} correct, ${safeResult.wrongAnswers} wrong, ${safeResult.unattempted} skipped.`,
+        `When you did attempt a question, accuracy was ${acc.toFixed(1)}%. That means ${
+          acc < 50
+            ? 'most of your losses are conceptual or reading errors—slow down on stems and verify units/conditions.'
+            : acc < 75
+              ? 'you have a workable hit rate but inconsistent reasoning—drill mixed sets on weak chapters.'
+              : 'your reasoning is often sound—reduce skips and careless slips to convert attempts into marks.'
+        }`,
+        `Subject snapshot: ${subjectBreakdown}`,
+        skipInsight,
+        wrongInsight,
+        gapLines,
+        `Time: ${formatExamClock(safeResult.timeTaken || 0)} total (~${avgSecPerQ}s per question on average). ${pacingHint}`,
+        'Use the per-question cards below for gap/fix/practice lines. Repeat this exam blueprint weekly: revise → short drill → timed mixed set.',
+      ]
+        .filter(Boolean)
+        .join('\n\n');
+
+      const strongSubs = subjectEntries.filter((s) => s.percentage >= 72);
+      const strengths =
+        strongSubs.length > 0
+          ? strongSubs.map(
+              (s) =>
+                `${String(s.subject).charAt(0).toUpperCase() + String(s.subject).slice(1)} at ${s.percentage}% accuracy (${s.correct}/${s.total})—use as confidence anchor while fixing weaker areas.`,
+            )
+          : pct >= 55
+            ? ['Solid overall percentage—tighten weak topics and completion to move into the next band.']
+            : [
+                'You generated a full attempt record—treat this as a precise diagnostic: every number below is actionable.',
+                attempted > 0
+                  ? `You still converted ${safeResult.correctAnswers} items correctly—protect that habit while expanding coverage.`
+                  : null,
+              ].filter(Boolean);
+
+      const rootCauses = [
+        skipRate >= 18 &&
+          `High incomplete rate (${skipRate.toFixed(1)}% skipped)—often topic gaps, time boxing, or exam anxiety.`,
+        safeResult.wrongAnswers > 0 &&
+          `${safeResult.wrongAnswers} incorrect responses—review whether errors are conceptual, calculation, or option-reading.`,
+        weakSubjects.length > 0 &&
+          `Relative weakness in: ${weakSubjects.join(', ')}—needs targeted revision plus spaced repetition.`,
+        acc < 60 && attempted > 0 && `Low accuracy (${acc.toFixed(1)}%) on attempted items—quality of attempts needs focus over speed.`,
+        completionPct < 85 && `Completion at ${completionPct.toFixed(1)}%—leaving items blank caps score before accuracy can help.`,
+      ].filter(Boolean);
+
+      const riskScore = Math.min(
+        0.95,
+        Math.max(
+          0.12,
+          (weakSubjects.length >= 2 ? 0.32 : weakSubjects.length === 1 ? 0.2 : 0.1) +
+            (skipRate / 100) * 0.38 +
+            (wrongRate / 100) * 0.22 +
+            (pct < 35 ? 0.18 : pct < 50 ? 0.08 : 0),
+        ),
+      );
+      const riskLevel = riskScore >= 0.62 ? 'high' : riskScore >= 0.38 ? 'medium' : 'low';
+
+      const nextPred = Math.max(28, Math.min(92, Math.round(pct + (100 - completionPct) * 0.12 + (72 - acc) * 0.08)));
+
+      const derivedFocus = buildDerivedFocusAreas(questionAttemptDetails);
+
+      return {
+        riskLevel,
+        riskScore,
+        summary,
+        strengths,
+        rootCauses: rootCauses.length ? rootCauses : ['Mixed performance across the paper—use question-level insights to prioritize.'],
+        predictions: {
+          nextExamPrediction: nextPred,
+          confidence: 0.55,
+          trend: pct >= 60 ? 'stable' : 'improving',
+        },
+        interventions: [
+          {
+            priority: 'high',
+            action: 'Error log + redo loop',
+            reasoning: `You have ${safeResult.wrongAnswers} wrong and ${safeResult.unattempted} skipped—each needs a written fix and one redo.`,
+            expectedImpact: 'Typically 8–18% score lift over 2–3 weeks if done daily.',
+          },
+          {
+            priority: 'high',
+            action: 'Topic cluster drill',
+            reasoning:
+              topGaps.length > 0
+                ? `Focus first on: ${topGaps.slice(0, 2).map(([k]) => k).join('; ')}.`
+                : 'Use subject weak areas from the breakdown above.',
+            expectedImpact: 'Clears recurring wrong patterns before the next mock.',
+          },
+          {
+            priority: 'medium',
+            action: 'Timed mixed mini-mock',
+            reasoning: `Rebuild stamina at ${avgSecPerQ || 75}s per question with ${Math.min(15, totalQ)} items.`,
+            expectedImpact: 'Better completion without collapsing accuracy.',
+          },
+          {
+            priority: 'medium',
+            action: 'Video + practice pairing',
+            reasoning: 'Watch one short concept video, then solve 8–12 questions on the same idea the same day.',
+            expectedImpact: 'Faster concept transfer than passive revision.',
+          },
+        ],
+        focusAreas: derivedFocus.length ? derivedFocus : weakSubjects.map((subject) => ({
+          subject,
+          issue: 'Lower performance in this subject block',
+          whatToDo: 'Revise core theory, then 20 mixed questions with review of every mistake.',
+          priority: 'high',
+        })),
+        actionPlan: {
+          today: [
+            `List top ${Math.min(5, topGaps.length || 3)} gap topics from wrong/skipped questions and watch one refresher each.`,
+            `Redo ${Math.min(5, safeResult.wrongAnswers || 3)} wrong questions without notes, then check answers.`,
+            'Note time taken per question on redos to calibrate pacing.',
+          ],
+          thisWeek: [
+            `Three sessions × 30–40 min: mixed questions with ≥${Math.min(20, totalQ)} items focusing on weak subjects.`,
+            'One full timed section at exam pace; mark uncertain items and return only if time permits.',
+            'Maintain a one-page formula / concept sheet for weakest subject only.',
+          ],
+          beforeNextExam: [
+            'One full mock under exam rules; score and rebuild a 1-page “mistake themes” list.',
+            'Sleep and light review only on the last day—no new heavy topics.',
+            'Revisit only the top 10 error themes from this attempt.',
+          ],
+        },
+        recommendedAiTools: [
+          {
+            toolType: 'smart-qa-practice-generator',
+            why: 'Targets weak topics with fresh questions.',
+            howToUse: 'Pick your weakest subject and generate 15–20 items after each revision block.',
+          },
+          {
+            toolType: 'concept-breakdown-explainer',
+            why: 'Rebuild theory where wrong/skipped clusters appear.',
+            howToUse: 'Run it on each top gap topic from the list above.',
+          },
+          {
+            toolType: 'personalized-revision-planner',
+            why: 'Spreads revision across days instead of cramming.',
+            howToUse: 'Set plan for 7 days leading to next test.',
+          },
+        ],
+        videoRecommendations,
+        questionInsights: fallbackQuestionInsights,
+        motivation:
+          'Deep, consistent practice beats intensity spikes—small daily wins compound into a much stronger next attempt.',
+      };
+    };
+
+    const buildOfflineSummaryExtension = () => {
+      const attempted = (safeResult.correctAnswers || 0) + (safeResult.wrongAnswers || 0);
+      const totalQ =
+        Number(safeResult.totalQuestions) || attempted + (safeResult.unattempted || 0) || 1;
+      const pct = Number(safeResult.percentage || 0);
+      const skipRate = totalQ > 0 ? ((safeResult.unattempted || 0) / totalQ) * 100 : 0;
+      const acc = attempted > 0 ? ((safeResult.correctAnswers || 0) / attempted) * 100 : 0;
+      const topicBuckets = new Map();
+      questionAttemptDetails.forEach((q) => {
+        if (q.isCorrect) return;
+        const topic = inferTopicFromQuestion(q);
+        const key = `${String(q.subject || 'general').toLowerCase()} — ${topic}`;
+        topicBuckets.set(key, (topicBuckets.get(key) || 0) + 1);
+      });
+      const topGaps = [...topicBuckets.entries()]
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 4);
+      const subLine = subjectEntries.length
+        ? subjectEntries
+            .map((s) => `${s.subject}: ${s.correct}/${s.total} (${s.percentage}%)`)
+            .join('; ')
+        : '';
+      return [
+        '---',
+        'Data-backed addendum (from your attempt):',
+        `${pct.toFixed(1)}% overall; ${acc.toFixed(1)}% accuracy on attempted items; ${skipRate.toFixed(1)}% skipped.`,
+        subLine ? `Subjects: ${subLine}.` : '',
+        topGaps.length ? `Priority topics (wrong/skip clusters): ${topGaps.map(([k, c]) => `${k} (${c})`).join('; ')}.` : '',
+        `Total time ${formatExamClock(safeResult.timeTaken || 0)}.`,
+      ]
+        .filter(Boolean)
+        .join('\n');
+    };
+
     const prompt = `
 You are AsliLearn AI Performance Mentor.
-Analyze the student's exam performance and return ONLY valid JSON (no markdown).
+Analyze the student's exam performance deeply and return ONLY valid JSON (no markdown).
 
 Student context:
 ${JSON.stringify(safeResult, null, 2)}
@@ -2103,7 +2464,7 @@ Return strict JSON:
 {
   "riskLevel": "high|medium|low",
   "riskScore": 0.0-1.0,
-  "summary": "2-4 lines simple summary",
+  "summary": "REQUIRED: 6-10 short paragraphs (use \\\\n\\\\n between paragraphs). Cover: (1) headline score, (2) completion vs skips, (3) accuracy on attempts, (4) subject-by-subject interpretation, (5) time/pacing hypothesis, (6) top 3 mistake themes from the data, (7) what to do this week, (8) encouragement. Be specific with numbers from the payload.",
   "strengths": ["..."],
   "rootCauses": ["..."],
   "predictions": {
@@ -2150,18 +2511,61 @@ Return strict JSON:
 }
 
 Important:
-- Give practical, specific actions.
-- Focus especially on weak subjects.
-- Base recommendations on the provided question-by-question mistakes and answer patterns.
+- Write a genuinely deep summary; avoid generic filler.
+- Give practical, specific actions tied to wrong/skip counts and subjects.
+- Base recommendations on question-by-question mistakes and answer patterns.
 - Include questionInsights for every question in the attempt details.
-- If no weak subject, provide an advanced improvement plan.
-- Keep language simple and student-friendly.
+- If no weak subject, give an advanced improvement plan for accuracy and speed.
+- Keep language clear and student-friendly.
 `;
 
+    /** Student-facing line when Gemini fails; never paste raw API JSON into the summary. */
+    const humanizeOfflineGeminiFailure = (err) => {
+      const raw = String(err?.message || err || '').trim();
+      const low = raw.toLowerCase();
+      if (!raw) {
+        return 'Live AI did not run for this report. Everything below is based only on your attempt data.';
+      }
+      if (
+        low.includes('429') ||
+        low.includes('resource_exhausted') ||
+        low.includes('quota exceeded') ||
+        low.includes('free_tier') ||
+        low.includes('rate limit') ||
+        low.includes('rate-limit') ||
+        low.includes('too many requests')
+      ) {
+        return 'Live AI hit a temporary usage cap (API quota or rate limit). Your breakdown below is still complete—it uses your scores, timing, and each question only, with no external model.';
+      }
+      if (low.includes('api_key') || low.includes('api key') || low.includes('invalid key') || low.includes('permission denied')) {
+        return 'Live AI is not available (missing or invalid API key on the server). Everything below is based only on your attempt data.';
+      }
+      if (
+        low.includes('econnrefused') ||
+        low.includes('enotfound') ||
+        low.includes('etimedout') ||
+        low.includes('network') ||
+        low.includes('fetch failed') ||
+        low.includes('socket')
+      ) {
+        return 'Live AI could not be reached (network issue). Everything below is based only on your attempt data.';
+      }
+      const noJson = raw.replace(/\{[\s\S]*/u, '').replace(/\s+/g, ' ').trim();
+      const short = (noJson || raw).slice(0, 200);
+      const clipped = short.length >= 200 ? `${short.slice(0, 197)}…` : short;
+      return clipped
+        ? `Live AI could not finish (${clipped}). Everything below is based only on your attempt data.`
+        : 'Live AI could not finish. Everything below is based only on your attempt data.';
+    };
+
     let aiParsed;
+    let geminiRawResponse = '';
+    let usedGemini = false;
     try {
       const aiText = await geminiService.generateStructuredContent(prompt, 'json');
-      const raw = String(aiText || '').trim();
+      geminiRawResponse = String(aiText || '');
+      usedGemini = true;
+      const raw = geminiRawResponse.trim();
       try {
         aiParsed = JSON.parse(raw);
       } catch (_jsonErr) {
@@ -2174,62 +2578,18 @@ Important:
         aiParsed = JSON.parse(jsonMatch ? jsonMatch[0] : '{}');
       }
     } catch (error) {
-      aiParsed = {
-        riskLevel: weakSubjects.length >= 2 ? 'high' : weakSubjects.length === 1 ? 'medium' : 'low',
-        riskScore: weakSubjects.length >= 2 ? 0.72 : weakSubjects.length === 1 ? 0.5 : 0.28,
-        summary: 'AI analysis is temporarily unavailable. Please use the suggested action plan below.',
-        strengths: ['Completed the exam attempt and generated result data'],
-        rootCauses: [
-          'Inconsistent subject performance across the paper',
-          'Question-level concept errors in weak areas',
-          'Time pressure impacts on difficult questions',
-        ],
-        predictions: {
-          nextExamPrediction: Math.max(25, Math.min(95, Math.round(Number(safeResult.percentage || 0) + 8))),
-          confidence: 0.62,
-          trend: 'stable',
-        },
-        interventions: [
-          {
-            priority: 'high',
-            action: 'Daily weak-topic correction loop',
-            reasoning: 'Most score loss comes from repeated concept errors in weak subjects.',
-            expectedImpact: '8-15% score improvement in 2-3 weeks.',
-          },
-          {
-            priority: 'medium',
-            action: 'Timed mixed-question drill',
-            reasoning: 'Improves attempt rate and reduces panic on tougher questions.',
-            expectedImpact: 'More attempted questions with better accuracy.',
-          },
-        ],
-        focusAreas: weakSubjects.map((subject) => ({
-          subject,
-          issue: 'Lower score in this subject',
-          whatToDo: 'Revise core concepts and solve 20 focused questions daily.',
-          priority: 'high',
-        })),
-        actionPlan: {
-          today: ['Review mistakes and note top 3 concept gaps.'],
-          thisWeek: ['Practice weak-area questions daily and revise formula/concept sheets.'],
-          beforeNextExam: ['Take one timed mock and review all incorrect answers.'],
-        },
-        recommendedAiTools: [
-          {
-            toolType: 'exam-readiness-checker',
-            why: 'Checks preparation level before next test.',
-            howToUse: 'Run it per subject after revision.',
-          },
-          {
-            toolType: 'smart-qa-practice-generator',
-            why: 'Creates focused practice questions for weak topics.',
-            howToUse: 'Generate 15-20 questions per weak chapter.',
-          },
-        ],
-        videoRecommendations,
-        questionInsights: fallbackQuestionInsights,
-        motivation: 'Small daily consistency will improve your next score strongly.',
-      };
+      console.warn('[exam-results/ai-analysis] Gemini failed:', error?.message || error);
+      aiParsed = buildDeepOfflineExamAnalysis(humanizeOfflineGeminiFailure(error));
+    }
+
+    const summaryTrim = String(aiParsed?.summary || '').trim();
+    if (summaryTrim.length >= 40 && summaryTrim.length < 520) {
+      aiParsed.summary = `${summaryTrim}\n\n${buildOfflineSummaryExtension()}`;
+    }
+    if (!summaryTrim || summaryTrim.length < 40) {
+      aiParsed = buildDeepOfflineExamAnalysis(
+        'The live AI summary was empty or too short, so this report was rebuilt from your attempt data only.',
+      );
     }
 
     if (!aiParsed || typeof aiParsed !== 'object') {
@@ -2361,6 +2721,114 @@ Important:
       });
     }
 
+    const persistMeta = {
+      weakSubjects,
+      classNumber: classNumber || 'unknown',
+      board: resolvedBoard,
+    };
+    const attemptedQs = (safeResult.correctAnswers || 0) + (safeResult.wrongAnswers || 0);
+    const totalQForPace = Number(safeResult.totalQuestions) || 0;
+    const avgSecPerQ =
+      totalQForPace > 0 ? Math.round((safeResult.timeTaken || 0) / totalQForPace) : 0;
+    const paceNote =
+      avgSecPerQ <= 0
+        ? 'Pacing could not be inferred from timing data.'
+        : avgSecPerQ < 40
+          ? 'Very fast average pace—check for rushing versus intentional speed.'
+          : avgSecPerQ > 150
+            ? 'Slow average pace—practice time-boxing and attempt-more-first strategy.'
+            : 'Moderate average pace—balance with accuracy goals.';
+
+    const reportPayload = {
+      studentId: req.userId,
+      examId: examObjectId,
+      examName: String(examTitle || safeResult.examTitle || '').trim(),
+      totalQuestions: safeResult.totalQuestions,
+      attemptedQuestions: attemptedQs,
+      correctAnswers: safeResult.correctAnswers,
+      wrongAnswers: safeResult.wrongAnswers,
+      unattempted: safeResult.unattempted,
+      totalMarks: safeResult.totalMarks,
+      obtainedMarks: safeResult.obtainedMarks,
+      percentage: safeResult.percentage,
+      overallSummary: String(aiParsed.summary || ''),
+      subjectAnalysis: {
+        breakdown: safeResult.subjectScore,
+        videoRecommendations: aiParsed.videoRecommendations,
+      },
+      weakAreas: Array.isArray(aiParsed.focusAreas) ? aiParsed.focusAreas : [],
+      strongAreas: Array.isArray(aiParsed.strengths) ? aiParsed.strengths : [],
+      conceptualGaps: {
+        rootCauses: aiParsed.rootCauses,
+        focusAreas: aiParsed.focusAreas,
+      },
+      recommendations: Array.isArray(aiParsed.interventions) ? aiParsed.interventions : [],
+      timeManagementInsights: {
+        totalTimeSeconds: safeResult.timeTaken || 0,
+        avgSecondsPerQuestion: avgSecPerQ,
+        note: paceNote,
+      },
+      nextExamStrategy: {
+        predictions: aiParsed.predictions,
+        actionPlan: aiParsed.actionPlan,
+        recommendedAiTools: aiParsed.recommendedAiTools,
+      },
+      finalSummary: String(aiParsed.motivation || ''),
+      geminiRawResponse: geminiRawResponse.slice(0, 500000),
+      fullAnalysis: aiParsed,
+      meta: persistMeta,
+      generatedBy: usedGemini ? 'gemini' : 'offline',
+    };
+
+    const concurrent = await GeminiPerformanceReport.findOne({
+      studentId: req.userId,
+      examId: examObjectId,
+    }).lean();
+    if (concurrent?.fullAnalysis && typeof concurrent.fullAnalysis === 'object') {
+      const sm = concurrent.meta && typeof concurrent.meta === 'object' ? concurrent.meta : {};
+      return res.json({
+        success: true,
+        data: {
+          analysis: concurrent.fullAnalysis,
+          meta: {
+            weakSubjects: Array.isArray(sm.weakSubjects) ? sm.weakSubjects : [],
+            classNumber: String(sm.classNumber || ''),
+            board: String(sm.board || ''),
+            generatedAt: (concurrent.createdAt || concurrent.updatedAt || new Date()).toISOString(),
+            cached: true,
+          },
+        },
+      });
+    }
+
+    try {
+      await GeminiPerformanceReport.create(reportPayload);
+    } catch (persistErr) {
+      if (persistErr?.code === 11000) {
+        const winner = await GeminiPerformanceReport.findOne({
+          studentId: req.userId,
+          examId: examObjectId,
+        }).lean();
+        if (winner?.fullAnalysis) {
+          const wm = winner.meta && typeof winner.meta === 'object' ? winner.meta : {};
+          return res.json({
+            success: true,
+            data: {
+              analysis: winner.fullAnalysis,
+              meta: {
+                weakSubjects: Array.isArray(wm.weakSubjects) ? wm.weakSubjects : [],
+                classNumber: String(wm.classNumber || ''),
+                board: String(wm.board || ''),
+                generatedAt: (winner.createdAt || winner.updatedAt || new Date()).toISOString(),
+                cached: true,
+              },
+            },
+          });
+        }
+      }
+      console.error('[exam-results/ai-analysis] Failed to persist report:', persistErr);
+    }
+
     res.json({
       success: true,
       data: {
@@ -2369,6 +2837,8 @@ Important:
           generatedAt: new Date().toISOString(),
           weakSubjects,
           classNumber,
+          board: resolvedBoard,
+          cached: false,
         },
       },
     });
@@ -2419,43 +2889,12 @@ router.get('/exam-results/:examId/review', async (req, res) => {
     }
 
     const examDoc = await Exam.findById(examId).lean();
-    let questions = await Question.find({ exam: examId, isActive: { $ne: false } })
-      .sort({ createdAt: 1, _id: 1 })
-      .lean();
-
-    if (!questions.length && Array.isArray(examDoc?.questions) && examDoc.questions.length > 0) {
-      questions = await Question.find({
-        _id: { $in: examDoc.questions.map((q) => q?._id || q).filter(Boolean) },
-        isActive: { $ne: false }
-      })
-        .sort({ createdAt: 1, _id: 1 })
-        .lean();
-    }
-
-    // Legacy fallback for embedded questions in Exam.questions.
-    if (!questions.length && Array.isArray(examDoc?.questions) && examDoc.questions.length > 0) {
-      questions = examDoc.questions
-        .filter((q) => q && typeof q === 'object')
-        .filter((q) => q.questionText || q.questionImage || q.questionType || q.options)
-        .map((q, index) => ({
-          _id: q._id || `embedded-${examId}-${index}`,
-          questionText: q.questionText || '',
-          questionImage: q.questionImage || undefined,
-          questionType: q.questionType || 'mcq',
-          options: Array.isArray(q.options) ? q.options : [],
-          correctAnswer: q.correctAnswer,
-          marks: Number(q.marks) || 1,
-          negativeMarks: Number(q.negativeMarks) || 0,
-          explanation: q.explanation || undefined,
-          subject: String(q.subject || 'maths').toLowerCase(),
-          exam: examId,
-        }));
-    }
+    const questions = await loadExamQuestionBankForResults(examId);
 
     return res.json({
       success: true,
       data: {
-        result: latestResult,
+        result: toPlainExamResultForApi(latestResult),
         exam: examDoc
           ? {
               _id: examDoc._id,

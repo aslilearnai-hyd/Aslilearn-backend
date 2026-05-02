@@ -707,9 +707,16 @@ export const uploadContent = async (req, res) => {
     const hasFileUrl = fileUrl && fileUrl.trim();
     const hasFileUrls = fileUrls && Array.isArray(fileUrls) && fileUrls.length > 0;
     
-    if (!title || !type || !board || !subject || !date || (!hasFileUrl && !hasFileUrls)) {
-      return res.status(400).json({ success: false, message: 'Missing required fields: title, type, board, subject, date, and at least one fileUrl/fileUrls are required' });
+    if (!title || !type || !board || !subject || (!hasFileUrl && !hasFileUrls)) {
+      return res.status(400).json({
+        success: false,
+        message:
+          'Missing required fields: title, type, board, subject, and at least one fileUrl/fileUrls are required',
+      });
     }
+
+    const resolvedDate =
+      date && String(date).trim() ? String(date).trim() : new Date().toISOString().slice(0, 10);
 
     const boardNorm = String(board || '').toUpperCase().trim();
     if (!isValidSchoolBoard(boardNorm)) {
@@ -779,7 +786,7 @@ export const uploadContent = async (req, res) => {
       board: boardNorm,
       subject,
       topic: topic?.trim() || undefined,
-      date: new Date(date),
+      date: new Date(resolvedDate),
       fileUrl: primaryFileUrl, // Keep for backward compatibility
       fileUrls: finalFileUrls.length > 0 ? finalFileUrls : undefined, // Store multiple URLs
       thumbnailUrl: thumbnailUrl?.trim() || undefined,
@@ -905,7 +912,12 @@ export const updateContent = async (req, res) => {
     if (title !== undefined) content.title = title.trim();
     if (description !== undefined) content.description = description?.trim() || undefined;
     if (topic !== undefined) content.topic = topic?.trim() || undefined;
-    if (date !== undefined) content.date = new Date(date);
+    if (date !== undefined && String(date).trim() !== '') {
+      const nextDate = new Date(date);
+      if (!Number.isNaN(nextDate.getTime())) {
+        content.date = nextDate;
+      }
+    }
     if (classNumber !== undefined) content.classNumber = classNumber?.trim() || undefined;
 
     if (rawBoard !== undefined && rawBoard !== null && String(rawBoard).trim() !== '') {
