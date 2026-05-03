@@ -168,9 +168,10 @@ const allowedOrigins = [
   'http://localhost:5177',
   // New Vercel frontend URL
   'https://asli-frontend.vercel.app',
-  // Custom domain
+  // Custom domain (api subdomain included for tools / same-site checks)
   'https://aslilearn.ai',
   'https://www.aslilearn.ai',
+  'https://api.aslilearn.ai',
   // Old Vercel URLs (keeping for backward compatibility)
   'https://alsi-stud-frontend-mf3r-ampkob5el-akhilesh2006s-projects.vercel.app',
   'https://alsi-stud-frontend-mf3r-es6c3f5aq-akhilesh2006s-projects.vercel.app',
@@ -259,8 +260,9 @@ app.use(cors({
   optionsSuccessStatus: 204,
   maxAge: 86400
 }));
-app.use(express.json({ limit: '50mb' }));
-app.use(express.urlencoded({ extended: true, limit: '50mb' }));
+// Match nginx client_max_body_size / multer content uploads (100MB)
+app.use(express.json({ limit: '100mb' }));
+app.use(express.urlencoded({ extended: true, limit: '100mb' }));
 
 // Serve uploaded files directly from disk
 app.use('/uploads', express.static(join(__dirname, 'uploads')));
