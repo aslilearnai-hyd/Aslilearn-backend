@@ -10,6 +10,7 @@ import Exam from '../models/Exam.js';
 import Question from '../models/Question.js';
 import Content from '../models/Content.js';
 import TeacherWorkDiary from '../models/TeacherWorkDiary.js';
+import RiskAnalysisReport from '../models/RiskAnalysisReport.js';
 import {
   verifyToken,
   verifyAdmin,
@@ -78,6 +79,40 @@ router.use(extractAdminId);
 // Dashboard Routes
 router.get('/dashboard/stats', getAdminDashboardStats);
 router.get('/analytics', getAnalytics);
+router.get('/risk-summary', async (req, res) => {
+  try {
+    const adminId = req.adminId;
+    const filter = {
+      'analysisData.riskLevel': { $regex: /^high$/i },
+    };
+    if (adminId) {
+      filter.adminId = adminId;
+    }
+
+    const reports = await RiskAnalysisReport.find(filter)
+      .sort({ sentAt: -1 })
+      .limit(50)
+      .populate('studentId', 'fullName name email classNumber')
+      .lean();
+
+    const students = reports.slice(0, 10).map((r) => {
+      const scoreRaw = r.analysisData?.riskScore;
+      const riskScorePct =
+        scoreRaw != null && Number.isFinite(Number(scoreRaw))
+          ? Math.round(Number(scoreRaw) <= 1 ? Number(scoreRaw) * 100 : Number(scoreRaw))
+          : null;
+      return {
+        _id: r._id,
+        studentId: r.studentId,
+        riskScore: riskScorePct,
+      };
+    });
+
+    res.json({ success: true, students });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
 
 // Teacher Dashboard Routes
 router.get('/teacher/dashboard', getTeacherDashboardStats);

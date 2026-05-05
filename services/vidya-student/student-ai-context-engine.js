@@ -11,6 +11,7 @@ import RiskAnalysisReport from '../../models/RiskAnalysisReport.js';
 import ChatSession from '../../models/ChatSession.js';
 import VidyaStudentMemory from '../../models/VidyaStudentMemory.js';
 import Teacher from '../../models/Teacher.js';
+import { detectWeakAndStrongTopics } from './weak-topic-detection-engine.js';
 
 const safeOid = (id) => {
   try {
@@ -119,6 +120,10 @@ export async function buildStudentAiContext({
       HomeworkSubmission.find({ studentId: studentOid }).sort({ submittedAt: -1 }).limit(10).lean(),
     ]);
 
+  const weakTopics = detectWeakAndStrongTopics({
+    exams: { recentResults },
+  });
+
   return {
     ok: true,
     studentId: String(studentOid),
@@ -145,6 +150,7 @@ export async function buildStudentAiContext({
       sessions30d,
     },
     risk: risk?.analysisData || null,
+    weakTopics,
     chats: recentChats,
     memory: memory || null,
   };

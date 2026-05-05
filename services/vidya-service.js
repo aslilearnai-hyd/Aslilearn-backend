@@ -8,6 +8,7 @@ import {
   buildUserProfileSnapshot,
   buildPlatformSnapshotForVidya,
 } from './vidya-context.js';
+import { buildStudentAiContext } from './vidya-student/student-ai-context-engine.js';
 
 const ROLE_NORMALISE = (role) => {
   const r = String(role || '').toLowerCase().trim();
@@ -72,6 +73,41 @@ const buildContext = async ({ userId, role, providedContext }) => {
     recentActivity,
     platformSnapshot,
   };
+
+  if (ROLE_NORMALISE(role || profile?.role || 'student') === 'student') {
+    try {
+      const studentCtx = await buildStudentAiContext({
+        viewerRole: 'student',
+        viewerUserId: userId,
+        studentId: userId,
+      });
+      if (studentCtx.ok) {
+        // Extract weak topic names from questionAnalytics across recent exams
+        const allResults = studentCtx.exams?.recentResults || [];
+        const topicErrorMap = {};
+        for (const result of allResults.slice(0, 10)) {
+          const qa = Array.isArray(result.questionAnalytics) ? result.questionAnalytics : [];
+          for (const q of qa) {
+            if (!q.isCorrect && q.chapter) {
+              topicErrorMap[q.chapter] = (topicErrorMap[q.chapter] || 0) + 1;
+            }
+          }
+        }
+        const weakTopicNames = Object.entries(topicErrorMap)
+          .sort((a, b) => b[1] - a[1])
+          .slice(0, 5)
+          .map(([chapter]) => chapter);
+
+        ctx.studentExamSummary = {
+          recentResults: allResults.slice(0, 5),
+          weakTopics: weakTopicNames,
+          riskLevel: studentCtx.risk?.riskLevel || null, // correct key is "risk" not "riskReport"
+        };
+      }
+    } catch (_) {
+      // keep context best-effort to avoid blocking chat
+    }
+  }
   return ctx;
 };
 
@@ -116,6 +152,7 @@ const buildPromptAndContents = async ({
     retrievedChunks: retrieval.chunks,
     recentActivity: ctx.recentActivity,
     platformSnapshot: ctx.platformSnapshot,
+    studentExamSummary: ctx.studentExamSummary,
   });
 
   const contents = buildContentsFromHistory({

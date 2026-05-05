@@ -14,8 +14,9 @@ const RESPONSE_QUALITY_RULES = `Quality rules for every reply:
 - Keep numbers, units and notation correct (e.g. cm, kg, ₹).
 - Avoid the words "as an AI", "I am just an AI", "I cannot help with that because I am an AI".
 - If a question is outside school study (politics, gossip, adult content, etc.), kindly redirect to studies in one short line.
-- If the user's question is answered by an "AsliLearn database summary" block below, use ONLY those figures — never say you lack access to that data for those metrics.
-- If something is NOT in the curriculum context, activity block, OR database summary (when present), say "I don't have that detail in your AsliLearn data yet" — never invent names, scores, or row-level records.`;
+- If the user's question is answered by an "AsliLearn database summary" block OR a "STUDENT EXAM DATA" block, use ONLY those figures — never say you lack access to that data.
+- CRITICAL: If a "STUDENT EXAM DATA" block is present in this prompt, you DO have the student's personal exam records. Never say "I don't have access to your personal information" or "I cannot access your exam results." Answer directly from that data.
+- If something is NOT in any data block AND not in the curriculum context, say "I don't have that detail in your AsliLearn data yet" — never invent names, scores, or row-level records.`;
 
 const buildPlatformDataBlock = (snapshot) => {
   if (!snapshot || typeof snapshot !== 'object') return '';
@@ -85,6 +86,52 @@ const buildRecentActivityBlock = (activity) => {
 ${lines.join('\n')}`;
 };
 
+const buildStudentExamBlock = (studentExamSummary) => {
+  if (!studentExamSummary || typeof studentExamSummary !== 'object') return '';
+
+  const recent = Array.isArray(studentExamSummary.recentResults)
+    ? studentExamSummary.recentResults.slice(0, 5)
+    : [];
+
+  // No exam data at all — tell model explicitly so it doesn't say "I don't have access"
+  if (recent.length === 0) {
+    return `STUDENT DATA STATUS: This student has not completed any exams on AsliLearn yet.
+When asked about marks, results, scores, or exam history — tell them clearly:
+"You haven't completed any exams on AsliLearn yet. Head to the Exams section to get started!"
+Do NOT say "I don't have access to your personal information." You DO have access — there is simply no data yet.`;
+  }
+
+  const recentLines = recent
+    .map((r) => {
+      const title = r.examTitle || r.title || 'Exam';
+      const pct = r.percentage ?? r.scorePct ?? '?';
+      const obtained = r.obtainedMarks != null ? ` (${r.obtainedMarks}/${r.totalMarks} marks)` : '';
+      return `• ${title}: ${pct}%${obtained}`;
+    })
+    .join('\n');
+
+  const weak = Array.isArray(studentExamSummary.weakTopics)
+    ? studentExamSummary.weakTopics.filter(Boolean).slice(0, 5)
+    : [];
+
+  const weakLine = weak.length > 0 ? `\nWeak topics (from question analytics): ${weak.join(', ')}.` : '';
+  const riskLine = studentExamSummary.riskLevel ? `\nRisk level: ${studentExamSummary.riskLevel}.` : '';
+
+  return `=== STUDENT EXAM DATA (loaded from AsliLearn database — treat as authoritative) ===
+You HAVE this student's exam records. Do NOT say "I don't have access to your personal information."
+When asked about marks, results, scores, weak topics, or performance — answer using this data directly.
+
+Recent exam results:
+${recentLines}${weakLine}${riskLine}
+
+Rules:
+- Answer personal performance questions using ONLY the data above.
+- If asked "what is my last exam" → give the first item in the list above by name and score.
+- If asked "what are my weak topics" → give the weak topics list above.
+- Never say you lack access to exam data when this block is present.
+=== END STUDENT EXAM DATA ===`;
+};
+
 const STUDENT_VOICE = ({ studentName, classLevel, subject, topic }) => {
   const name = studentName || 'this student';
   const cls = classLevel ? ` (Class ${classLevel})` : '';
@@ -150,11 +197,13 @@ export const buildSystemPrompt = ({
   retrievedChunks = [],
   recentActivity = null,
   platformSnapshot = null,
+  studentExamSummary = null,
 } = {}) => {
   const voiceFn = ROLE_VOICES[role] || STUDENT_VOICE;
   const voice = voiceFn({ studentName, classLevel, subject, topic });
   const libraryBlock = buildLibraryBlock(retrievedChunks);
   const activityBlock = buildRecentActivityBlock(recentActivity);
+  const studentExamBlock = buildStudentExamBlock(studentExamSummary);
   const platformBlock =
     role === 'super-admin' || role === 'school-admin' ? buildPlatformDataBlock(platformSnapshot) : '';
 
@@ -165,6 +214,7 @@ export const buildSystemPrompt = ({
     platformBlock,
     libraryBlock || NO_LIBRARY_LINE,
     activityBlock,
+    studentExamBlock,
   ].filter(Boolean);
 
   return sections.join('\n\n');
