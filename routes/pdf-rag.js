@@ -8,7 +8,7 @@ import { verifyToken, authorizeRoles } from '../middleware/auth.js';
 import AiContentEngineSource from '../models/AiContentEngineSource.js';
 import AiContentEngineChunk from '../models/AiContentEngineChunk.js';
 import AiToolGeneration from '../models/AiToolGeneration.js';
-import { processPdfSourceWithModels, runHybridRagQuery } from '../services/pdf-rag-service.js';
+import { processPdfSourceWithModels, runHybridRagQuery, archiveSupersededSources } from '../services/pdf-rag-service.js';
 import { uploadPdfToConfiguredStorage, deleteFromConfiguredStorage } from '../services/cloud-storage.js';
 import { isPdfQueueEnabled } from '../queues/pdfProcessingQueue.js';
 import {
@@ -579,6 +579,20 @@ router.post('/pdf/process', verifyToken, authorizeRoles('teacher', 'admin', 'sup
               } catch (syncError) {
                 console.error('AI PDF async post-process master sync failed (non-fatal):', syncError);
               }
+              try {
+                const arch = await archiveSupersededSources({
+                  sourceModel: AiContentEngineSource,
+                  chunkModel: AiContentEngineChunk,
+                  newSource: refreshed,
+                });
+                if (arch.archivedCount > 0) {
+                  console.log(
+                    `Re-upload hygiene: archived ${arch.archivedCount} older source(s), deleted ${arch.deletedChunks} stale chunks for (${refreshed.subject} | ${refreshed.classLabel} | ${refreshed.chapter})`
+                  );
+                }
+              } catch (archErr) {
+                console.error('Re-upload hygiene async failed (non-fatal):', archErr.message);
+              }
             }
           })
           .catch((err) => {
@@ -600,14 +614,29 @@ router.post('/pdf/process', verifyToken, authorizeRoles('teacher', 'admin', 'sup
       chunkModel: AiContentEngineChunk,
     });
     const refreshed = await AiContentEngineSource.findById(resolvedSourceId);
+    let archiveResult = null;
     if (refreshed) {
       try {
         await syncPdfSourceToAiToolData(refreshed);
       } catch (syncError) {
         console.error('AI PDF post-process master sync failed (non-fatal):', syncError);
       }
+      try {
+        archiveResult = await archiveSupersededSources({
+          sourceModel: AiContentEngineSource,
+          chunkModel: AiContentEngineChunk,
+          newSource: refreshed,
+        });
+        if (archiveResult.archivedCount > 0) {
+          console.log(
+            `Re-upload hygiene: archived ${archiveResult.archivedCount} older source(s), deleted ${archiveResult.deletedChunks} stale chunks for (${refreshed.subject} | ${refreshed.classLabel} | ${refreshed.chapter})`
+          );
+        }
+      } catch (archErr) {
+        console.error('Re-upload hygiene failed (non-fatal):', archErr.message);
+      }
     }
-    return res.json({ success: true, data: result });
+    return res.json({ success: true, data: { ...result, archived: archiveResult } });
   } catch (error) {
     return res.status(500).json({ success: false, message: error.message || 'Processing failed' });
   }

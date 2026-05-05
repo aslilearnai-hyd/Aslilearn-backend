@@ -28,9 +28,9 @@ Guidelines:
 
       // Add context if available
       if (context?.currentSubject) {
-        systemPrompt += `\n\nCurrent Study Context: The student is currently studying ${context.currentSubject}`;
+        systemPrompt += `\n\nSession subject focus: ${context.currentSubject}. Stay within this subject for explanations and practice unless the student clearly switches topic.`;
         if (context.currentTopic) {
-          systemPrompt += `, specifically focusing on ${context.currentTopic}`;
+          systemPrompt += ` Focus area: ${context.currentTopic}.`;
         }
       }
 

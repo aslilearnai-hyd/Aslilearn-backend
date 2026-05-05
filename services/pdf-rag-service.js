@@ -2,6 +2,7 @@ import { PDFParse } from 'pdf-parse';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import PdfKnowledgeSource from '../models/PdfKnowledgeSource.js';
 import PdfChunk from '../models/PdfChunk.js';
+import AiContentEngineChunk from '../models/AiContentEngineChunk.js';
 import AiToolGeneration from '../models/AiToolGeneration.js';
 import geminiService, { generateStudentTool, generateTeacherTool } from './gemini-service.js';
 import { getPdfBufferFromStorage } from './cloud-storage.js';
@@ -155,6 +156,47 @@ export async function processPdfSource(sourceId) {
   return processPdfSourceWithModels(sourceId, { sourceModel: PdfKnowledgeSource, chunkModel: PdfChunk });
 }
 
+/**
+ * Phase 2.6 — re-upload hygiene.
+ * After a new source is successfully processed, mark any OTHER source
+ * with the same (subject, classLabel, chapter) as archived and delete
+ * its chunks so students never see stale content.
+ */
+export async function archiveSupersededSources({ sourceModel, chunkModel, newSource }) {
+  if (!newSource?._id) return { archivedCount: 0, deletedChunks: 0 };
+  const filter = {
+    _id: { $ne: newSource._id },
+    subject: newSource.subject,
+    classLabel: newSource.classLabel,
+    chapter: newSource.chapter,
+    archived: { $ne: true },
+  };
+  const olderSources = await sourceModel.find(filter).select('_id').lean().catch(() => []);
+  if (olderSources.length === 0) return { archivedCount: 0, deletedChunks: 0 };
+  const oldIds = olderSources.map((s) => s._id);
+  const chunkResult = await chunkModel
+    .deleteMany({ sourcePdfId: { $in: oldIds } })
+    .catch(() => ({ deletedCount: 0 }));
+  await sourceModel
+    .updateMany(
+      { _id: { $in: oldIds } },
+      {
+        $set: {
+          archived: true,
+          archivedAt: new Date(),
+          archivedReason: `Replaced by newer upload (${newSource._id})`,
+          supersededBy: newSource._id,
+          chunkCount: 0,
+        },
+      }
+    )
+    .catch(() => null);
+  return {
+    archivedCount: oldIds.length,
+    deletedChunks: chunkResult?.deletedCount || 0,
+  };
+}
+
 export async function processPdfSourceWithModels(
   sourceId,
   { sourceModel = PdfKnowledgeSource, chunkModel = PdfChunk } = {}
@@ -231,10 +273,12 @@ export async function retrieveRelevantChunks({ query, subject, classLabel, topK 
     ...(subject ? { subject } : {}),
     ...(classLabel ? { classLabel } : {}),
   };
-  const candidates = await PdfChunk.find(filter)
-    .select('chunkText embedding subject classLabel chapter sourcePdfId')
-    .limit(1500)
-    .lean();
+  const select = 'chunkText embedding subject classLabel chapter sourcePdfId topic subTopic';
+  const [primary, legacy] = await Promise.all([
+    AiContentEngineChunk.find(filter).select(select).limit(1500).lean().catch(() => []),
+    PdfChunk.find(filter).select(select).limit(500).lean().catch(() => []),
+  ]);
+  const candidates = [...primary, ...legacy];
 
   const scored = candidates
     .map((c) => ({ ...c, score: cosineSimilarity(queryEmbedding, c.embedding || []) }))

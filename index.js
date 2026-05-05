@@ -42,6 +42,9 @@ import streamRoutes from './routes/streams.js';
 import curriculumRoutes from './routes/curriculum.js';
 import pdfRagRoutes from './routes/pdf-rag.js';
 import aiGeneratorRoutes from './routes/aiGeneratorRoutes.js';
+import vidyaRoutes from './routes/vidya.js';
+import practiceProgressRoutes from './routes/practice-progress.js';
+import dashboardRoutes from './routes/dashboards.js';
 import { initPdfProcessingQueue } from './queues/pdfProcessingQueue.js';
 import { verifyToken, verifySuperAdmin } from './middleware/auth.js';
 import { getCalendarEvents, createCalendarEvent } from './controllers/calendarController.js';
@@ -728,6 +731,9 @@ app.use('/api', streamRoutes);
 app.use('/api/student', studentRoutes);
 app.use('/api/ai', aiRoutes);
 app.use('/api', pdfRagRoutes);
+app.use('/api', vidyaRoutes);
+app.use('/api', practiceProgressRoutes);
+app.use('/api', dashboardRoutes);
 
 // Serve static files
 // Session configuration
@@ -4807,274 +4813,9 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: 'Something went wrong!' });
 });
 
-// AI Chat endpoints (Vidya-AI dashboards use Gemini API only)
-const getVidyaGeminiConfig = () => {
-  const apiKey = process.env.VIDYA_AI_GEMINI_API_KEY || process.env.GEMINI_API_KEY || '';
-  const model = process.env.VIDYA_AI_GEMINI_MODEL || 'gemini-2.0-flash';
-  const fallbackModels = String(
-    process.env.VIDYA_AI_GEMINI_FALLBACK_MODELS || 'gemini-2.0-flash-lite,gemini-2.5-flash-lite,gemini-2.5-flash'
-  )
-    .split(',')
-    .map((item) => item.trim())
-    .filter(Boolean)
-    .filter((item) => item !== model);
-  const baseUrl = (process.env.GEMINI_API_BASE_URL || 'https://generativelanguage.googleapis.com/v1beta').replace(/\/+$/, '');
-  return { apiKey, model, fallbackModels, baseUrl };
-};
-
-const normalizeGeminiText = (value) => {
-  return value == null ? '' : String(value).trim();
-};
-
-const extractGeminiText = (payload) => {
-  const parts = payload?.candidates?.[0]?.content?.parts;
-  if (!Array.isArray(parts)) return '';
-  return parts
-    .map((part) => (typeof part?.text === 'string' ? part.text : ''))
-    .join('')
-    .trim();
-};
-
-const parseGeminiErrorText = (errorText) => {
-  try {
-    const payload = JSON.parse(errorText);
-    const message = payload?.error?.message;
-    return message ? String(message) : String(errorText || '');
-  } catch (_) {
-    return String(errorText || '');
-  }
-};
-
-const callGeminiWithModelFallback = async ({ payload, isVision = false }) => {
-  const { apiKey, model, fallbackModels, baseUrl } = getVidyaGeminiConfig();
-  if (!apiKey) {
-    throw new Error('Missing VIDYA_AI_GEMINI_API_KEY (or GEMINI_API_KEY) for Vidya-AI');
-  }
-
-  const models = [model, ...fallbackModels];
-  let lastError = null;
-
-  for (const modelName of models) {
-    const response = await fetch(`${baseUrl}/models/${modelName}:generateContent?key=${apiKey}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
-
-    if (response.ok) {
-      const data = await response.json();
-      const text = extractGeminiText(data);
-      if (!text) {
-        lastError = new Error(`Vidya-AI Gemini ${isVision ? 'vision ' : ''}returned empty response for model ${modelName}`);
-        continue;
-      }
-      return text;
-    }
-
-    const errorText = await response.text();
-    const parsedMessage = parseGeminiErrorText(errorText);
-    const error = new Error(
-      `Vidya-AI Gemini ${isVision ? 'vision ' : ''}request failed (${response.status}) on ${modelName}: ${parsedMessage}`
-    );
-    error.statusCode = response.status;
-    lastError = error;
-
-    // Retry with next Gemini model for quota/rate/availability errors.
-    if (response.status === 429 || response.status === 503 || response.status === 404) {
-      continue;
-    }
-    break;
-  }
-
-  throw lastError || new Error('Vidya-AI Gemini request failed');
-};
-
-const callVidyaGeminiText = async ({ message, context = {}, chatHistory = [] }) => {
-  const studentName = context?.studentName || 'Student';
-  let systemInstruction = `You are Vidya AI for AsliLearn.
-Give direct, accurate, educational answers.
-Use clear language and step-by-step explanations for problem solving.
-Keep responses focused and practical.`;
-
-  if (context?.currentSubject) {
-    systemInstruction += `\nCurrent subject: ${context.currentSubject}`;
-    if (context?.currentTopic) {
-      systemInstruction += `\nCurrent topic: ${context.currentTopic}`;
-    }
-  }
-
-  const historyContents = (Array.isArray(chatHistory) ? chatHistory : [])
-    .slice(-8)
-    .map((msg) => {
-      const text = normalizeGeminiText(msg?.content);
-      if (!text) return null;
-      return {
-        role: msg?.role === 'assistant' ? 'model' : 'user',
-        parts: [{ text }]
-      };
-    })
-    .filter(Boolean);
-
-  const payload = {
-    systemInstruction: { parts: [{ text: systemInstruction }] },
-    contents: [
-      ...historyContents,
-      {
-        role: 'user',
-        parts: [{ text: normalizeGeminiText(message) || `Help ${studentName} with studies.` }]
-      }
-    ],
-    generationConfig: {
-      temperature: 0.4,
-      maxOutputTokens: 1400
-    }
-  };
-
-  return callGeminiWithModelFallback({ payload, isVision: false });
-};
-
-const callVidyaGeminiVision = async ({ imageBase64, context = '' }) => {
-  const prompt = `Analyze this educational image and help the student.
-${context ? `Context: ${context}` : ''}
-Provide: (1) what you see, (2) explanation/solution, (3) key takeaways.`;
-
-  const payload = {
-    systemInstruction: {
-      parts: [{ text: 'You are a helpful educational vision assistant.' }]
-    },
-    contents: [
-      {
-        role: 'user',
-        parts: [
-          { text: prompt },
-          {
-            inline_data: {
-              mime_type: 'image/jpeg',
-              data: imageBase64
-            }
-          }
-        ]
-      }
-    ],
-    generationConfig: {
-      temperature: 0.2,
-      maxOutputTokens: 1400
-    }
-  };
-
-  return callGeminiWithModelFallback({ payload, isVision: true });
-};
-
-// Store chat sessions in memory (in production, use a database)
-const chatSessions = new Map();
-
-app.post('/api/ai-chat', async (req, res) => {
-  try {
-    const { userId, message, context } = req.body;
-
-    if (!userId || !message) {
-      return res.status(400).json({ message: 'User ID and message are required' });
-    }
-
-    // Get or create chat session
-    let session = chatSessions.get(userId);
-    if (!session) {
-      session = {
-        id: Date.now().toString(),
-        userId,
-        messages: [],
-        context: context || {},
-        createdAt: new Date(),
-        updatedAt: new Date()
-      };
-      chatSessions.set(userId, session);
-    }
-
-    // Add user message
-    const userMessage = {
-      role: 'user',
-      content: message,
-      timestamp: new Date()
-    };
-    session.messages.push(userMessage);
-
-    // Generate AI response (Gemini-only path for Vidya-AI)
-    const aiResponse = await callVidyaGeminiText({
-      message,
-      context: context || session.context,
-      chatHistory: session.messages.slice(-10)
-    });
-
-    // Add AI response
-    const aiMessage = {
-      role: 'assistant',
-      content: aiResponse,
-      timestamp: new Date()
-    };
-    session.messages.push(aiMessage);
-
-    // Update session
-    session.updatedAt = new Date();
-    session.context = { ...session.context, ...context };
-
-    res.json({
-      success: true,
-      message: aiResponse,
-      session: {
-        id: session.id,
-        messages: session.messages,
-        context: session.context
-      }
-    });
-  } catch (error) {
-    console.error('AI chat error:', error);
-    const status = Number(error?.statusCode) || 500;
-    res.status(status).json({ message: error?.message || 'Failed to process chat message' });
-  }
-});
-
-app.get('/api/users/:userId/chat-sessions', async (req, res) => {
-  try {
-    const { userId } = req.params;
-    const session = chatSessions.get(userId);
-    
-    if (!session) {
-      return res.json([]);
-    }
-
-    res.json([session]);
-  } catch (error) {
-    console.error('Failed to fetch chat sessions:', error);
-    res.status(500).json({ message: 'Failed to fetch chat sessions' });
-  }
-});
-
-app.post('/api/ai-chat/analyze-image', async (req, res) => {
-  try {
-    const { image, context } = req.body;
-
-    if (!image) {
-      return res.status(400).json({ message: 'Image is required' });
-    }
-
-    // Remove data URL prefix if present
-    const base64Data = image.replace(/^data:image\/[a-z]+;base64,/, '');
-    
-    const analysis = await callVidyaGeminiVision({
-      imageBase64: base64Data,
-      context
-    });
-
-    res.json({
-      success: true,
-      analysis
-    });
-  } catch (error) {
-    console.error('Image analysis error:', error);
-    const status = Number(error?.statusCode) || 500;
-    res.status(status).json({ message: error?.message || 'Failed to analyze image' });
-  }
-});
+// Vidya AI endpoints have moved to routes/vidya.js
+// (mounted via app.use('/api', vidyaRoutes) earlier in this file).
+// The old in-memory Map / unauthenticated handlers have been removed.
 
 // Subject Management endpoints
 app.get('/api/subjects', async (req, res) => {

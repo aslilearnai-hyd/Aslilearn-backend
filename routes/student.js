@@ -63,6 +63,97 @@ router.use((req, res, next) => {
   next();
 });
 
+function escapeRegexClassSuffix(classNum) {
+  return String(classNum).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/** Populated Class with assignedSubjects, or lookup by student.classNumber + admin. */
+async function resolveStudentClassDoc(student) {
+  const Class = (await import('../models/Class.js')).default;
+  if (student.assignedClass) {
+    if (typeof student.assignedClass === 'object' && student.assignedClass._id) {
+      if (student.assignedClass.assignedSubjects !== undefined) {
+        return student.assignedClass;
+      }
+      return await Class.findById(student.assignedClass._id).populate('assignedSubjects');
+    }
+    return await Class.findById(student.assignedClass).populate('assignedSubjects');
+  }
+  const aid = student.assignedAdmin?._id || student.assignedAdmin;
+  if (student.classNumber && student.classNumber !== 'Unassigned' && aid) {
+    return await Class.findOne({
+      classNumber: student.classNumber,
+      assignedAdmin: aid,
+      isActive: true,
+    }).populate('assignedSubjects');
+  }
+  return null;
+}
+
+/**
+ * Subject IDs for browse / Digital Library: union of Class.assignedSubjects and
+ * active subjects matching student's class on admin board OR ASLI_EXCLUSIVE_SCHOOLS
+ * (super-admin uploads). Fixes empty dashboards when admins never synced assignedSubjects.
+ */
+async function resolveStudentSubjectIdsForLibrary(student, adminBoardRaw, studentClassDoc) {
+  const adminBoardUpper = adminBoardRaw ? String(adminBoardRaw).toUpperCase().trim() : '';
+  const boardSet = new Set(['ASLI_EXCLUSIVE_SCHOOLS']);
+  if (adminBoardUpper) boardSet.add(adminBoardUpper);
+
+  const idStrToOid = new Map();
+  const addId = (id) => {
+    if (!id) return;
+    const oid =
+      id instanceof mongoose.Types.ObjectId ? id : new mongoose.Types.ObjectId(String(id));
+    idStrToOid.set(oid.toString(), oid);
+  };
+
+  if (studentClassDoc?.assignedSubjects?.length) {
+    for (const subj of studentClassDoc.assignedSubjects) {
+      addId(subj._id ? subj._id : subj);
+    }
+  }
+
+  let classNum = '';
+  if (
+    studentClassDoc?.classNumber != null &&
+    String(studentClassDoc.classNumber).trim() !== ''
+  ) {
+    classNum = String(studentClassDoc.classNumber).trim();
+  } else if (student.classNumber && student.classNumber !== 'Unassigned') {
+    classNum = String(student.classNumber).trim();
+  }
+
+  if (!classNum) {
+    return Array.from(idStrToOid.values());
+  }
+
+  const classNumVariants = new Set([classNum]);
+  if (/^\d+$/.test(classNum)) {
+    classNumVariants.add(String(parseInt(classNum, 10)));
+    if (classNum.length === 1) classNumVariants.add(classNum.padStart(2, '0'));
+  }
+
+  const suffixConditions = [];
+  for (const v of classNumVariants) {
+    suffixConditions.push({ name: new RegExp(`_${escapeRegexClassSuffix(v)}$`) });
+  }
+
+  const autoSubjects = await Subject.find({
+    isActive: true,
+    board: { $in: Array.from(boardSet) },
+    $or: [{ classNumber: { $in: Array.from(classNumVariants) } }, ...suffixConditions],
+  })
+    .select('_id')
+    .lean();
+
+  for (const row of autoSubjects) {
+    addId(row._id);
+  }
+
+  return Array.from(idStrToOid.values());
+}
+
 // Get student's assigned admin and filter content accordingly
 const getStudentAdminId = async (req, res, next) => {
   try {
@@ -1165,56 +1256,29 @@ router.get('/asli-prep-content', async (req, res) => {
       });
     }
     
-    // Board restrictions removed - all content visible to all students
-    // Content is filtered only by class assigned subjects, not by board
-    console.log('📚 Fetching all content for student (board restrictions removed)');
+    console.log('📚 Resolving subjects: class assignedSubjects ∪ board+class matches (incl. ASLI exclusive)');
 
-    // Get subjects assigned to student's class
-    const Subject = (await import('../models/Subject.js')).default;
-    const Class = (await import('../models/Class.js')).default;
-    let classSubjectIds = [];
-    
-    // Get subjects from assignedClass
-    if (student.assignedClass) {
-      let studentClass;
-      if (typeof student.assignedClass === 'object' && student.assignedClass._id) {
-        studentClass = student.assignedClass;
-      } else {
-        studentClass = await Class.findById(student.assignedClass)
-          .populate('assignedSubjects');
-      }
-      
-      if (studentClass && studentClass.assignedSubjects && studentClass.assignedSubjects.length > 0) {
-        classSubjectIds = studentClass.assignedSubjects.map(subj => 
-          subj._id ? subj._id : subj
-        );
-        console.log(`📚 Found ${classSubjectIds.length} subjects from assigned class`);
-      }
-    }
-    
-    // Fallback: If no assignedClass, try to find class by classNumber
-    if (classSubjectIds.length === 0 && student.classNumber && student.classNumber !== 'Unassigned') {
-      const studentClass = await Class.findOne({
-        classNumber: student.classNumber,
-        assignedAdmin: student.assignedAdmin,
-        isActive: true
-      })
-      .populate('assignedSubjects');
-      
-      if (studentClass && studentClass.assignedSubjects && studentClass.assignedSubjects.length > 0) {
-        classSubjectIds = studentClass.assignedSubjects.map(subj => 
-          subj._id ? subj._id : subj
-        );
-        console.log(`📚 Found ${classSubjectIds.length} subjects from class ${studentClass.classNumber}`);
-      }
-    }
-    
+    const studentClassDoc = await resolveStudentClassDoc(student);
+    const adminBoard =
+      student.assignedAdmin?.board ||
+      (await User.findById(student.assignedAdmin).select('board').lean())?.board ||
+      student.board;
+
+    const classSubjectIds = await resolveStudentSubjectIdsForLibrary(
+      student,
+      adminBoard,
+      studentClassDoc
+    );
+
+    console.log(`📚 Resolved ${classSubjectIds.length} subject ids for library`);
+
     if (classSubjectIds.length === 0) {
-      console.log('❌ Student has no subjects assigned to their class');
+      console.log('❌ No subjects resolved for student class');
       return res.json({
         success: true,
         data: [],
-        message: 'No subjects assigned to your class. Please contact your administrator.'
+        message:
+          'No subjects available for your class yet. Ask your administrator to assign subjects or confirm your class.',
       });
     }
 
@@ -1790,12 +1854,59 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
     }).lean();
 
     if (cachedReport?.fullAnalysis && typeof cachedReport.fullAnalysis === 'object') {
+      const cachedAnalysis = { ...cachedReport.fullAnalysis };
+      const cachedSummary = String(cachedAnalysis.summary || '');
+      let cacheLooksInvalid = false;
+      if (
+        /live ai could not finish \((expected|unexpected|json|syntaxerror)/i.test(cachedSummary) ||
+        /line \d+ column \d+/i.test(cachedSummary)
+      ) {
+        cachedAnalysis.summary = cachedSummary.replace(
+          /Live AI could not finish \([\s\S]*?\)\.\s*/i,
+          'Live AI returned an invalid response format, so this report was rebuilt from your attempt data only. '
+        );
+        cacheLooksInvalid = true;
+      }
+      const cachedInsights = Array.isArray(cachedAnalysis.questionInsights)
+        ? cachedAnalysis.questionInsights
+        : [];
+      if (cachedInsights.length > 0) {
+        const statusCounts = { correct: 0, wrong: 0, unattempted: 0 };
+        cachedInsights.forEach((q) => {
+          const st = String(q?.status || '').toLowerCase();
+          if (st === 'correct') statusCounts.correct += 1;
+          else if (st === 'wrong') statusCounts.wrong += 1;
+          else statusCounts.unattempted += 1;
+        });
+        const expectedCorrect = Number(result?.correctAnswers ?? NaN);
+        const expectedWrong = Number(result?.wrongAnswers ?? NaN);
+        const expectedUnattempted = Number(result?.unattempted ?? NaN);
+        if (
+          Number.isFinite(expectedCorrect) &&
+          Number.isFinite(expectedWrong) &&
+          Number.isFinite(expectedUnattempted) &&
+          (statusCounts.correct !== expectedCorrect ||
+            statusCounts.wrong !== expectedWrong ||
+            statusCounts.unattempted !== expectedUnattempted)
+        ) {
+          cacheLooksInvalid = true;
+        }
+      }
+      if (cacheLooksInvalid) {
+        console.warn('[exam-results/ai-analysis] Invalid cached analysis detected; regenerating.', {
+          studentId: String(req.userId),
+          examId: String(examObjectId),
+        });
+        await GeminiPerformanceReport.deleteOne({ _id: cachedReport._id }).catch((e) => {
+          console.warn('[exam-results/ai-analysis] Failed to remove invalid cache:', e?.message || e);
+        });
+      } else {
       const storedMeta =
         cachedReport.meta && typeof cachedReport.meta === 'object' ? cachedReport.meta : {};
       return res.json({
         success: true,
         data: {
-          analysis: cachedReport.fullAnalysis,
+          analysis: cachedAnalysis,
           meta: {
             weakSubjects: Array.isArray(storedMeta.weakSubjects) ? storedMeta.weakSubjects : [],
             classNumber: String(storedMeta.classNumber || ''),
@@ -1805,6 +1916,7 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
           },
         },
       });
+      }
     }
 
     const student = await User.findById(req.userId).populate('assignedAdmin', 'board');
@@ -1812,6 +1924,9 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       .trim()
       .toUpperCase();
     const classNumber = String(student?.classNumber || '').trim();
+    const studentDisplayNameRaw = String(student?.fullName || student?.name || '').trim().split(/\s+/)[0] || '';
+    const studentDisplayName =
+      studentDisplayNameRaw.length >= 2 && studentDisplayNameRaw.length <= 40 ? studentDisplayNameRaw : '';
 
     const subjectScore = result.subjectWiseScore && typeof result.subjectWiseScore === 'object'
       ? result.subjectWiseScore
@@ -1969,6 +2084,27 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       return text.length > max ? `${text.slice(0, max - 3)}...` : text;
     };
 
+    const meaningfulChapterLabel = (raw) => {
+      const s = String(raw || '').trim();
+      if (!s) return '';
+      const lower = s.toLowerCase();
+      const meaningless = new Set([
+        'general',
+        'unknown',
+        'n/a',
+        'na',
+        'misc',
+        'miscellaneous',
+        'chapter',
+        'unit',
+        'default',
+        'other',
+        'none',
+      ]);
+      if (meaningless.has(lower)) return '';
+      return s;
+    };
+
     const questionAttemptDetails = examQuestions.map((q, index) => {
       const questionId = String(q._id);
       const userAnswer = answerMap[questionId];
@@ -1982,7 +2118,7 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
         index: index + 1,
         questionId,
         subject: String(q.subject || 'general').toLowerCase(),
-        chapter: String(q.chapter || q.topic || q.unit || '').trim() || '',
+        chapter: meaningfulChapterLabel(String(q.chapter || q.topic || q.unit || '').trim()),
         questionType: q.questionType,
         questionText: shorten(q.questionText || ''),
         hasImage: Boolean(q.questionImage),
@@ -2012,16 +2148,8 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
     };
 
     const inferTopicFromQuestion = (q) => {
-      const chapterRaw = String(q?.chapter || '').trim();
-      const chapterLower = chapterRaw.toLowerCase();
-      const isMeaningfulChapter = chapterRaw &&
-        chapterLower !== 'general' &&
-        chapterLower !== 'unknown' &&
-        chapterLower !== 'chapter' &&
-        chapterLower !== 'unit';
-      if (isMeaningfulChapter) {
-        return chapterRaw;
-      }
+      const chapterOk = meaningfulChapterLabel(q?.chapter);
+      if (chapterOk) return chapterOk;
 
       const text = String(q?.questionText || '')
         .replace(/[^a-zA-Z0-9\s]/g, ' ')
@@ -2039,6 +2167,12 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
         { topic: 'Probability', regex: /\bprobability\b|\bchance\b|\boutcome\b/ },
         { topic: 'Motion and Kinematics', regex: /\bmotion\b|\bvelocity\b|\bacceleration\b|\bdisplacement\b/ },
         { topic: 'Electricity and Circuits', regex: /\bohm\b|\bcurrent\b|\bvoltage\b|\bresistance\b|\bcircuit\b/ },
+        { topic: 'Hybridization', regex: /\bhybridization\b|\bhybrid orbital\b|\bsp\s*3\b|\bsp\s*2\b|\bsp\s*hybrid\b|\bdsp\s*[23]\b/ },
+        { topic: 'Oxidation States', regex: /\boxidation state\b|\boxidation number\b/ },
+        {
+          topic: 'Molar Mass and Stoichiometry',
+          regex: /\bmolar mass\b|\bmolecular mass\b|\bmolarity\b|\bstoichiometry\b|\bmoles?\b|\bmol\b/,
+        },
         { topic: 'Acids, Bases and Salts', regex: /\bacid\b|\bbase\b|\bsalt\b|\bph\b/ },
         { topic: 'Carbon Compounds', regex: /\bcarbon\b|\bhydrocarbon\b|\borganic\b/ },
       ];
@@ -2059,60 +2193,74 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       return compact ? compact.replace(/\b\w/g, (c) => c.toUpperCase()) : `${q.subject || 'subject'} fundamentals`;
     };
 
+    const insightStemLead = (q) => {
+      const s = shorten(q?.questionText || '', 96);
+      return s ? `This item starts: “${s}”. ` : '';
+    };
+
+    const insightUnitLead = (q) => {
+      const ch = meaningfulChapterLabel(q?.chapter);
+      return ch ? `Syllabus unit “${ch}”: ` : '';
+    };
+
     const buildPersonalizedPracticeTask = (q, status) => {
       const topic = inferTopicFromQuestion(q);
       const subject = String(q.subject || 'subject').toLowerCase();
       const type = String(q.questionType || 'mcq').toUpperCase();
+      const greet = studentDisplayName ? `${studentDisplayName}, ` : '';
 
       if (status === 'correct') {
-        return `Solve 2 advanced ${subject} ${type} questions on "${topic}" and write a one-line shortcut/heuristic after each solution.`;
+        return `${greet}After this paper, take 2 harder ${subject} ${type}s on “${topic}” (not from memory of Q${q.index}) and write one “rule I used” line per solution.`;
       }
       if (status === 'unattempted') {
-        return `Do 4 timed ${subject} ${type} questions on "${topic}" (75-90s each) and force one attempt per question before reviewing solutions.`;
+        return `${greet}Timed set: four ${subject} ${type}s on “${topic}” (75–90s each), Q${q.index}-style stems first, then mixed; no solutions until all four are attempted.`;
       }
-      return `Practice 5 targeted ${subject} ${type} questions on "${topic}" in two timed sets (3 + 2), then note the exact error pattern you made.`;
+      return `${greet}Redo the reasoning for Q${q.index} on paper, then five ${subject} ${type}s on “${topic}” split 3+2 with a short note after each wrong turn on what fooled you.`;
     };
 
     const buildGapLine = (q, status) => {
       const topic = inferTopicFromQuestion(q);
       const subject = String(q.subject || 'subject').toLowerCase();
       const type = String(q.questionType || 'mcq').toLowerCase();
-      const chapterPrefix = q?.chapter ? `Chapter "${q.chapter}" - ` : '';
+      const greet = studentDisplayName ? `${studentDisplayName}, ` : '';
+      const stemFrag = insightStemLead(q);
+      const unitFrag = insightUnitLead(q);
 
       if (status === 'correct') {
-        return `${chapterPrefix}Strong hold on ${subject} "${topic}" (${type}). Keep this pattern as your reliability anchor.`;
+        return `${greet}${stemFrag}${unitFrag}You got Q${q.index} right—a clean ${subject} ${type} execution on “${topic}” under this exam’s conditions.`;
       }
       if (status === 'unattempted') {
         if (type === 'integer') {
-          return `${chapterPrefix}Skipped an integer-style ${subject} item in "${topic}" — likely a setup/calculation confidence gap.`;
+          return `${greet}${stemFrag}${unitFrag}Q${q.index} stayed blank: a numeric “${topic}” ${subject} item—often a formula or setup confidence gap before the first attempt.`;
         }
         if (type === 'multiple') {
-          return `${chapterPrefix}Skipped a multi-select ${subject} question in "${topic}" — likely uncertainty in option filtering.`;
+          return `${greet}${stemFrag}${unitFrag}Q${q.index} stayed blank on a multi-select “${topic}” ${subject} item—often option-filtering hesitation.`;
         }
-        return `${chapterPrefix}Skipped a ${subject} concept check in "${topic}" — likely time-pressure or hesitation before first attempt.`;
+        return `${greet}${stemFrag}${unitFrag}Q${q.index} stayed blank on “${topic}” (${subject} ${type})—likely time boxing or first-attempt avoidance.`;
       }
-      return `${chapterPrefix}In "${topic}" (${subject}), answer choice did not match the required ${type} reasoning path.`;
+      return `${greet}${stemFrag}${unitFrag}Q${q.index} (“${topic}”, ${subject} ${type})—your working did not match the keyed ${type} path for this stem.`;
     };
 
     const buildFixStrategyLine = (q, status, explanationLine) => {
       const topic = inferTopicFromQuestion(q);
       const subject = String(q.subject || 'subject').toLowerCase();
       const type = String(q.questionType || 'mcq').toLowerCase();
-      const chapterPrefix = q?.chapter ? `For chapter "${q.chapter}", ` : '';
+      const ch = meaningfulChapterLabel(q?.chapter);
+      const unitFrag = ch ? `Open notes for “${ch}” plus ` : '';
 
       if (status === 'correct') {
-        return `${chapterPrefix}create one harder "${topic}" variation and solve without hints to lock transfer skill. ${explanationLine}`;
+        return `${unitFrag}stretch with one unseen ${subject} ${type} on “${topic}”: solve cold, then compare your steps to the official method. ${explanationLine}`;
       }
       if (status === 'unattempted') {
         if (type === 'integer') {
-          return `${chapterPrefix}use a 3-step attempt rule for "${topic}": write known values, choose formula, compute once in 75-90s. ${explanationLine}`;
+          return `${unitFrag}for “${topic}”, use three lines only—given → formula → one calculation—in 75–90s before allowing yourself to skip. ${explanationLine}`;
         }
         if (type === 'multiple') {
-          return `${chapterPrefix}run elimination for "${topic}" in two passes: reject clearly false options first, then verify remaining pair. ${explanationLine}`;
+          return `${unitFrag}for “${topic}”, eliminate obviously wrong ${subject} options first, then verify the last two against the stem wording. ${explanationLine}`;
         }
-        return `${chapterPrefix}for "${topic}", force first-pass attempt in 60-90s: identify keyword, pick method, commit one option. ${explanationLine}`;
+        return `${unitFrag}for “${topic}”, force a first-pass commit on Q${q.index}-style stems in 60–90s (keyword → method → option), then review. ${explanationLine}`;
       }
-      return `${chapterPrefix}re-solve this "${topic}" ${subject} question with a written step flow, then add one mistake-prevention checkpoint. ${explanationLine}`;
+      return `${unitFrag}rewrite Q${q.index} as a numbered step flow (${subject}, ${type}), add one checkpoint where you usually mis-read the stem, then re-check units/signs. ${explanationLine}`;
     };
 
     const buildDerivedFocusAreas = (attempts) => {
@@ -2213,7 +2361,11 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       const wrongRate = totalQ > 0 ? ((safeResult.wrongAnswers || 0) / totalQ) * 100 : 0;
       const completionPct = totalQ > 0 ? (attempted / totalQ) * 100 : 0;
       const acc = attempted > 0 ? ((safeResult.correctAnswers || 0) / attempted) * 100 : 0;
-      const avgSecPerQ = totalQ > 0 ? Math.round((safeResult.timeTaken || 0) / totalQ) : 0;
+      const avgSecPerPaperQ = totalQ > 0 ? Math.round((safeResult.timeTaken || 0) / totalQ) : 0;
+      const avgSecPerAttempted =
+        attempted > 0 ? Math.round((safeResult.timeTaken || 0) / attempted) : 0;
+      const paceSec =
+        avgSecPerAttempted > 0 ? avgSecPerAttempted : avgSecPerPaperQ > 0 ? avgSecPerPaperQ : 0;
 
       const topicBuckets = new Map();
       questionAttemptDetails.forEach((q) => {
@@ -2236,13 +2388,13 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
         : 'Subject split not available for this result payload.';
 
       const pacingHint =
-        avgSecPerQ <= 0
+        paceSec <= 0
           ? ''
-          : avgSecPerQ < 40
-            ? 'Average time per item is quite low—check whether some questions were rushed; re-attempt similar items with a minimum thinking budget (e.g. 60–90s) before locking an option.'
-            : avgSecPerQ > 150
-              ? 'Average time per item is high—practice skipping and returning, and cap first-pass time so you attempt more items.'
-              : 'Pacing looks moderate—combine with fewer skips to lift overall score.';
+          : paceSec < 40
+            ? 'Time per question you actually attempted looks quite low—check for rushing; use a minimum thinking budget (about 60–90s) before locking an option on similar stems.'
+            : paceSec > 150
+              ? 'Time per attempted question looks high—practice marking rough items and returning, and cap first-pass time so you touch more items.'
+              : 'Pacing on attempted questions looks moderate—pair it with fewer skips to lift overall score.';
 
       const skipInsight =
         skipRate >= 25
@@ -2263,8 +2415,16 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
 
       const introNote = reasonNote ? `${String(reasonNote).trim()}\n\n` : '';
 
+      const greetLead = studentDisplayName ? `${studentDisplayName}, ` : '';
+      const scoreYou = studentDisplayName ? 'you' : 'You';
+      const timeLineExtra =
+        attempted < totalQ && paceSec > 0 && avgSecPerPaperQ > 0
+          ? ` (~${paceSec}s average on ${attempted} questions you attempted; ~${avgSecPerPaperQ}s if time is spread across all ${totalQ})`
+          : paceSec > 0
+            ? ` (~${paceSec}s per question on average)`
+            : '';
       const summary = [
-        `${introNote}You scored about ${pct.toFixed(1)}% on this attempt (${safeResult.obtainedMarks} / ${safeResult.totalMarks} marks).`,
+        `${introNote}${greetLead}${scoreYou} scored about ${pct.toFixed(1)}% on this attempt (${safeResult.obtainedMarks} / ${safeResult.totalMarks} marks).`,
         `Attempt pattern: ${attempted} of ${totalQ} questions touched (${completionPct.toFixed(1)}% completion): ${safeResult.correctAnswers} correct, ${safeResult.wrongAnswers} wrong, ${safeResult.unattempted} skipped.`,
         `When you did attempt a question, accuracy was ${acc.toFixed(1)}%. That means ${
           acc < 50
@@ -2277,7 +2437,7 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
         skipInsight,
         wrongInsight,
         gapLines,
-        `Time: ${formatExamClock(safeResult.timeTaken || 0)} total (~${avgSecPerQ}s per question on average). ${pacingHint}`,
+        `Time: ${formatExamClock(safeResult.timeTaken || 0)} total${timeLineExtra}. ${pacingHint}`,
         'Use the per-question cards below for gap/fix/practice lines. Repeat this exam blueprint weekly: revise → short drill → timed mixed set.',
       ]
         .filter(Boolean)
@@ -2329,12 +2489,16 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       return {
         riskLevel,
         riskScore,
+        riskScoreMethod: 'rule-based',
+        riskScoreMethodLabel: 'Calculated from your weak subjects, skip-rate and accuracy on this attempt — not a predicted future grade.',
         summary,
         strengths,
         rootCauses: rootCauses.length ? rootCauses : ['Mixed performance across the paper—use question-level insights to prioritize.'],
         predictions: {
           nextExamPrediction: nextPred,
           confidence: 0.55,
+          confidenceMethod: 'rule-based',
+          confidenceMethodLabel: 'A rule-based estimate from your last attempt, not a model-trained prediction.',
           trend: pct >= 60 ? 'stable' : 'improving',
         },
         interventions: [
@@ -2342,7 +2506,8 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
             priority: 'high',
             action: 'Error log + redo loop',
             reasoning: `You have ${safeResult.wrongAnswers} wrong and ${safeResult.unattempted} skipped—each needs a written fix and one redo.`,
-            expectedImpact: 'Typically 8–18% score lift over 2–3 weeks if done daily.',
+            expectedImpact: 'Students who run a daily error-log + redo loop on AsliLearn typically report 8–18% score lifts in 2–3 weeks. Your result will depend on consistency.',
+            impactSource: 'observed-trend',
           },
           {
             priority: 'high',
@@ -2351,21 +2516,26 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
               topGaps.length > 0
                 ? `Focus first on: ${topGaps.slice(0, 2).map(([k]) => k).join('; ')}.`
                 : 'Use subject weak areas from the breakdown above.',
-            expectedImpact: 'Clears recurring wrong patterns before the next mock.',
+            expectedImpact: 'Tends to clear recurring wrong patterns before the next mock when done over 2 weeks.',
+            impactSource: 'qualitative',
           },
           {
             priority: 'medium',
             action: 'Timed mixed mini-mock',
-            reasoning: `Rebuild stamina at ${avgSecPerQ || 75}s per question with ${Math.min(15, totalQ)} items.`,
-            expectedImpact: 'Better completion without collapsing accuracy.',
+            reasoning: `Rebuild stamina at ~${paceSec > 0 ? Math.min(120, Math.max(45, paceSec)) : 75}s per attempted question with ${Math.min(15, totalQ)} mixed items.`,
+            expectedImpact: 'Helps lift completion without collapsing accuracy.',
+            impactSource: 'qualitative',
           },
           {
             priority: 'medium',
             action: 'Video + practice pairing',
             reasoning: 'Watch one short concept video, then solve 8–12 questions on the same idea the same day.',
-            expectedImpact: 'Faster concept transfer than passive revision.',
+            expectedImpact: 'Pairing typically transfers concepts faster than passive revision.',
+            impactSource: 'qualitative',
           },
         ],
+        methodologyNote:
+          'Risk Score and Next Score are estimates from your last exam attempt only, using a rule-based formula. They are not predictions trained on millions of students. Use them as a guide, not a guarantee.',
         focusAreas: derivedFocus.length ? derivedFocus : weakSubjects.map((subject) => ({
           subject,
           issue: 'Lower performance in this subject block',
@@ -2517,9 +2687,11 @@ Important:
 - Include questionInsights for every question in the attempt details.
 - If no weak subject, give an advanced improvement plan for accuracy and speed.
 - Keep language clear and student-friendly.
+- In each questionInsights entry, quote a short phrase from questionText for "connect" to the stem; never use a fake syllabus label like Chapter "General"—omit unit/chapter if unknown.
+- Prefer "you/your" and concrete facts (wrong option vs keyed answer) over boilerplate templates.
 `;
 
-    /** Student-facing line when Gemini fails; never paste raw API JSON into the summary. */
+    /** Student-facing line when Gemini fails; never paste raw API/parse noise into the summary. */
     const humanizeOfflineGeminiFailure = (err) => {
       const raw = String(err?.message || err || '').trim();
       const low = raw.toLowerCase();
@@ -2549,6 +2721,15 @@ Important:
         low.includes('socket')
       ) {
         return 'Live AI could not be reached (network issue). Everything below is based only on your attempt data.';
+      }
+      if (
+        err instanceof SyntaxError ||
+        low.includes('unexpected token') ||
+        low.includes('expected') ||
+        low.includes('json') ||
+        low.includes('position ')
+      ) {
+        return 'Live AI returned an invalid response format, so this report was rebuilt from your attempt data only.';
       }
       const noJson = raw.replace(/\{[\s\S]*/u, '').replace(/\s+/g, ' ').trim();
       const short = (noJson || raw).slice(0, 200);
@@ -2607,8 +2788,21 @@ Important:
       aiParsed.predictions = {
         nextExamPrediction: Math.max(25, Math.min(95, Math.round(Number(safeResult.percentage || 0) + 8))),
         confidence: 0.62,
+        confidenceMethod: 'rule-based',
+        confidenceMethodLabel: 'A rule-based estimate from your last attempt, not a model-trained prediction.',
         trend: 'stable',
       };
+    } else if (!aiParsed.predictions.confidenceMethod) {
+      aiParsed.predictions.confidenceMethod = 'model-based';
+      aiParsed.predictions.confidenceMethodLabel = 'AI-generated estimate based on your performance patterns; not trained on a large student dataset.';
+    }
+    if (!aiParsed.riskScoreMethod) {
+      aiParsed.riskScoreMethod = 'model-based';
+      aiParsed.riskScoreMethodLabel = 'AI-generated estimate based on your performance patterns; intended as a guide, not a guarantee.';
+    }
+    if (!aiParsed.methodologyNote) {
+      aiParsed.methodologyNote =
+        'Risk Score, Next Score and impact figures are estimates from your last exam attempt and AI analysis. They are guides, not guarantees, and will improve as more attempts are recorded.';
     }
     if (!Array.isArray(aiParsed.rootCauses)) {
       aiParsed.rootCauses = [
@@ -2677,6 +2871,9 @@ Important:
     const isTooGeneric = (item = {}) => {
       const combined = `${item.conceptGap || ''} ${item.fixStrategy || ''} ${item.practiceTask || ''}`.trim();
       if (!combined) return true;
+      if (/chapter\s*['"]general['"]|for chapter\s*['"]general['"]|syllabus unit\s*['"]general['"]/i.test(combined)) {
+        return true;
+      }
       return genericPatterns.some((pattern) => pattern.test(combined));
     };
 
@@ -2708,9 +2905,8 @@ Important:
           questionId: q.questionId,
           subject: q.subject || aiItem.subject || 'general',
           questionType: q.questionType || aiItem.questionType || 'mcq',
-          status: ['correct', 'wrong', 'unattempted'].includes(String(aiItem.status || '').toLowerCase())
-            ? String(aiItem.status).toLowerCase()
-            : fallback.status,
+          // Keep factual status from saved result (avoid model status hallucinations).
+          status: fallback.status,
           conceptGap: String(aiItem.conceptGap || fallback.conceptGap),
           fixStrategy: String(aiItem.fixStrategy || fallback.fixStrategy),
           practiceTask: String(aiItem.practiceTask || fallback.practiceTask),
@@ -2728,16 +2924,26 @@ Important:
     };
     const attemptedQs = (safeResult.correctAnswers || 0) + (safeResult.wrongAnswers || 0);
     const totalQForPace = Number(safeResult.totalQuestions) || 0;
-    const avgSecPerQ =
+    const avgSecPerPaperQPersist =
       totalQForPace > 0 ? Math.round((safeResult.timeTaken || 0) / totalQForPace) : 0;
+    const avgSecPerAttemptedPersist =
+      attemptedQs > 0 ? Math.round((safeResult.timeTaken || 0) / attemptedQs) : 0;
+    const paceSecPersist =
+      avgSecPerAttemptedPersist > 0 ? avgSecPerAttemptedPersist : avgSecPerPaperQPersist;
     const paceNote =
-      avgSecPerQ <= 0
+      paceSecPersist <= 0
         ? 'Pacing could not be inferred from timing data.'
-        : avgSecPerQ < 40
-          ? 'Very fast average pace—check for rushing versus intentional speed.'
-          : avgSecPerQ > 150
-            ? 'Slow average pace—practice time-boxing and attempt-more-first strategy.'
-            : 'Moderate average pace—balance with accuracy goals.';
+        : attemptedQs > 0 && attemptedQs < totalQForPace && avgSecPerPaperQPersist > 0
+          ? paceSecPersist < 40
+            ? `Very fast pace on questions you attempted (~${paceSecPersist}s each); ~${avgSecPerPaperQPersist}s if clock time is averaged across all ${totalQForPace} items—watch for rushing on attempts.`
+            : paceSecPersist > 150
+              ? `Slow pace on attempted items (~${paceSecPersist}s each); paper-wide average ~${avgSecPerPaperQPersist}s—practice time-boxing and touching more items first.`
+              : `Moderate pace on attempts (~${paceSecPersist}s each); paper-wide ~${avgSecPerPaperQPersist}s—balance speed with fewer skips.`
+          : paceSecPersist < 40
+            ? 'Very fast average pace on attempts—check for rushing versus intentional speed.'
+            : paceSecPersist > 150
+              ? 'Slow average pace—practice time-boxing and attempt-more-first strategy.'
+              : 'Moderate average pace—balance with accuracy goals.';
 
     const reportPayload = {
       studentId: req.userId,
@@ -2765,7 +2971,7 @@ Important:
       recommendations: Array.isArray(aiParsed.interventions) ? aiParsed.interventions : [],
       timeManagementInsights: {
         totalTimeSeconds: safeResult.timeTaken || 0,
-        avgSecondsPerQuestion: avgSecPerQ,
+        avgSecondsPerQuestion: paceSecPersist,
         note: paceNote,
       },
       nextExamStrategy: {
@@ -3186,6 +3392,24 @@ router.post('/exam-results', async (req, res) => {
 
     const examResult = await ExamResult.create(resultData);
 
+    try {
+      const { createPostExamPrompt } = await import('../services/vidya-student/post-exam-trigger-service.js');
+      const weakTopics = perQuestionAnalytics
+        .filter((q) => q.status === 'wrong' || q.status === 'not_answered')
+        .map((q) => ({ chapter: q.chapter || 'General' }));
+      await createPostExamPrompt({
+        studentId: req.userId,
+        examId,
+        examResultId: examResult._id,
+        examTitle: examTitle || examDoc?.title || 'Exam',
+        obtainedMarks,
+        totalMarks,
+        weakTopics,
+      });
+    } catch (proactiveErr) {
+      console.warn('Post-exam Vidya proactive trigger failed (non-fatal):', proactiveErr.message);
+    }
+
     console.log('✅ Exam result saved (server-graded)');
     console.log('📋 Scored:', {
       examId: examResult.examId?.toString(),
@@ -3316,8 +3540,7 @@ router.get('/remarks', async (req, res) => {
   }
 });
 
-// Get student's subjects (from assigned class's subjects)
-// Students can ONLY see subjects that have been assigned to their class by the admin
+// Get student's subjects (assigned class ∪ subjects matching class + admin board / ASLI exclusive)
 router.get('/subjects', async (req, res) => {
   try {
     // Get student with assigned admin and assignedClass
@@ -3363,77 +3586,30 @@ router.get('/subjects', async (req, res) => {
       });
     }
     
-    const Subject = (await import('../models/Subject.js')).default;
-    let subjects = [];
-    
-    // Get subjects ONLY from the student's assigned class (assignedClass field)
-    // This ensures students only see subjects that have been explicitly assigned by the admin
-    const Class = (await import('../models/Class.js')).default;
-    
-    // First, try to get subjects from assignedClass (the Class document reference)
-    if (student.assignedClass) {
-      // Populate if it's not already populated
-      let studentClass;
-      if (typeof student.assignedClass === 'object' && student.assignedClass._id) {
-        // Already populated, use it
-        studentClass = student.assignedClass;
-      } else {
-        // Not populated, fetch it
-        studentClass = await Class.findById(student.assignedClass)
-          .populate('assignedSubjects');
-      }
-      
-      if (studentClass && studentClass.assignedSubjects && studentClass.assignedSubjects.length > 0) {
-        // Get subjects assigned to the class
-        const subjectIds = studentClass.assignedSubjects.map(subj => 
-          subj._id ? subj._id : subj
-        );
-        subjects = await Subject.find({ 
-          _id: { $in: subjectIds },
-          isActive: true 
-        })
-        .sort({ name: 1 });
-        
-        console.log(`📚 Found ${subjects.length} subjects from assigned class ${studentClass.classNumber}${studentClass.section || ''}`);
-      }
-    }
-    
-    // Fallback: If no assignedClass, try to find class by classNumber and assignedAdmin
-    // This handles cases where assignedClass might not be set but classNumber is
-    if (subjects.length === 0 && student.classNumber && student.classNumber !== 'Unassigned') {
-      console.log(`📚 No assignedClass found, trying to find class by classNumber ${student.classNumber}`);
-      const studentClass = await Class.findOne({
-        classNumber: student.classNumber,
-        assignedAdmin: student.assignedAdmin,
-        isActive: true
-      })
-      .populate('assignedSubjects');
-      
-      if (studentClass && studentClass.assignedSubjects && studentClass.assignedSubjects.length > 0) {
-        const subjectIds = studentClass.assignedSubjects.map(subj => 
-          subj._id ? subj._id : subj
-        );
-        subjects = await Subject.find({ 
-          _id: { $in: subjectIds },
-          isActive: true 
-        })
-        .sort({ name: 1 });
-        
-        console.log(`📚 Found ${subjects.length} subjects from class ${studentClass.classNumber}${studentClass.section || ''}`);
-      }
-    }
-    
-    // If no subjects found, return empty array (NO FALLBACK to all board subjects)
-    // Students should only see subjects explicitly assigned by admin
-    if (subjects.length === 0) {
-      console.log('📚 No subjects assigned to student\'s class. Student will see no subjects.');
+    const studentClassDoc = await resolveStudentClassDoc(student);
+    const subjectIdList = await resolveStudentSubjectIdsForLibrary(
+      student,
+      adminBoard,
+      studentClassDoc
+    );
+
+    if (subjectIdList.length === 0) {
+      console.log('📚 No subjects resolved for student class/browse.');
       return res.json({
         success: true,
         subjects: [],
         data: [],
-        message: 'No subjects have been assigned to your class yet. Please contact your administrator.'
+        message:
+          'No subjects available for your class yet. Ask your administrator to assign subjects or confirm your class.',
       });
     }
+
+    const subjects = await Subject.find({
+      _id: { $in: subjectIdList },
+      isActive: true,
+    }).sort({ name: 1 });
+
+    console.log(`📚 Returning ${subjects.length} subjects after class + board merge`);
     
     // Get teachers assigned to this admin who teach these subjects
     const Teacher = (await import('../models/Teacher.js')).default;

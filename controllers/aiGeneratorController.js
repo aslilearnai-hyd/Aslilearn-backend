@@ -196,6 +196,12 @@ export async function generateAndSaveContent(req, res) {
     const generatedBy = uid || 'unknown';
     const teacherId = mongoose.Types.ObjectId.isValid(uid) ? uid : undefined;
 
+    const explicitReviewStatus = String(req.body.reviewStatus || '').trim();
+    const allowedReviewStates = ['approved', 'draft', 'under_review'];
+    const reviewStatus = allowedReviewStates.includes(explicitReviewStatus)
+      ? explicitReviewStatus
+      : (process.env.AI_GENERATOR_DEFAULT_STATE === 'approved' ? 'approved' : 'draft');
+
     const record = await AiToolGeneration.create({
       toolName: toolSlug,
       toolDisplayName,
@@ -209,6 +215,7 @@ export async function generateAndSaveContent(req, res) {
       generatedContent,
       generatedBy,
       status: 'active',
+      reviewStatus,
       metadata: {
         createdByName: getRequestUserName(req),
         createdByRole: 'super-admin',
@@ -446,6 +453,75 @@ export async function deleteGeneratorRecord(req, res) {
       success: false,
       message: 'Failed to delete record.',
     });
+  }
+}
+
+export async function getReviewQueue(req, res) {
+  try {
+    if (!ensureSuperAdmin(req, res)) return;
+    const status = String(req.query.status || 'draft').trim();
+    const allowed = ['draft', 'under_review', 'rejected', 'archived'];
+    const filter = allowed.includes(status)
+      ? { reviewStatus: status }
+      : { reviewStatus: { $in: ['draft', 'under_review'] } };
+    const items = await AiToolGeneration.find(filter)
+      .sort({ updatedAt: -1 })
+      .limit(200)
+      .lean();
+    return res.json({ success: true, status, count: items.length, items });
+  } catch (error) {
+    console.error('getReviewQueue error:', error);
+    return res.status(500).json({ success: false, message: 'Failed to fetch review queue.' });
+  }
+}
+
+export async function reviewGeneratorRecord(req, res) {
+  try {
+    if (!ensureSuperAdmin(req, res)) return;
+    const { id } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({ success: false, message: 'Invalid record id.' });
+    }
+    const action = String(req.body.action || '').trim();
+    const allowedActions = ['approve', 'reject', 'archive', 'request-review', 'unapprove'];
+    if (!allowedActions.includes(action)) {
+      return res.status(400).json({
+        success: false,
+        message: `action must be one of ${allowedActions.join(', ')}`,
+      });
+    }
+    const stateMap = {
+      approve: 'approved',
+      reject: 'rejected',
+      archive: 'archived',
+      'request-review': 'under_review',
+      unapprove: 'draft',
+    };
+    const newStatus = stateMap[action];
+    const reviewerNotes = String(req.body.notes || '').trim();
+    const updated = await AiToolGeneration.findByIdAndUpdate(
+      id,
+      {
+        $set: {
+          reviewStatus: newStatus,
+          reviewedBy: req.userId || null,
+          reviewedAt: new Date(),
+          reviewerNotes,
+        },
+      },
+      { new: true }
+    ).lean();
+    if (!updated) {
+      return res.status(404).json({ success: false, message: 'Record not found.' });
+    }
+    return res.json({
+      success: true,
+      message: `Record ${action}d.`,
+      data: updated,
+    });
+  } catch (error) {
+    console.error('reviewGeneratorRecord error:', error);
+    return res.status(500).json({ success: false, message: 'Failed to update review state.' });
   }
 }
 

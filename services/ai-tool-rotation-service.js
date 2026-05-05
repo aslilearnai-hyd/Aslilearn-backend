@@ -14,6 +14,15 @@ function validContentFilter() {
   };
 }
 
+function approvedFilter() {
+  return {
+    $or: [
+      { reviewStatus: 'approved' },
+      { reviewStatus: { $exists: false } },
+    ],
+  };
+}
+
 function baseFilter({ classLabel, subject, topic, subtopic }) {
   return {
     sourceType: { $ne: 'ai_pdf' },
@@ -22,6 +31,7 @@ function baseFilter({ classLabel, subject, topic, subtopic }) {
     topic: normalize(topic),
     subtopic: normalize(subtopic),
     ...validContentFilter(),
+    ...approvedFilter(),
   };
 }
 

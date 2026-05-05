@@ -1,6 +1,7 @@
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import dotenv from 'dotenv';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -72,17 +73,24 @@ function getGeminiFallbackConfig() {
       process.env.GEMINI_API_KEY ||
       ''
   ).trim();
-  const model = String(
+  const primaryModel = String(
     process.env.GEMINI_FALLBACK_MODEL ||
       process.env.VIDYA_AI_GEMINI_MODEL ||
       'gemini-2.0-flash'
   ).trim();
+  const fallbackModels = String(
+    process.env.VIDYA_AI_GEMINI_FALLBACK_MODELS || 'gemini-2.5-flash,gemini-2.0-flash,gemini-1.5-flash'
+  )
+    .split(',')
+    .map((m) => m.trim())
+    .filter(Boolean)
+    .filter((m) => m !== primaryModel);
   const baseUrl = String(
     process.env.GEMINI_API_BASE_URL || 'https://generativelanguage.googleapis.com/v1beta'
   )
     .trim()
     .replace(/\/+$/, '');
-  return { apiKey, model, baseUrl };
+  return { apiKey, model: primaryModel, fallbackModels, baseUrl };
 }
 
 function cleanText(value) {
@@ -103,51 +111,91 @@ async function callChatCompletions({
   maxTokens = 2000,
   preferJson = false, // kept for compatibility with callers
 }) {
+  const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   const contextTokens = Number(process.env.LLM_CONTEXT_TOKENS) || 0;
-  const callGeminiFallback = async () => {
-    const { apiKey, model, baseUrl } = getGeminiFallbackConfig();
+  const callGeminiFallback = async (normalizedMessages) => {
+    const { apiKey, model, fallbackModels, baseUrl } = getGeminiFallbackConfig();
     if (!apiKey) {
       throw new Error('Gemini API key is missing');
     }
+    const genAI = new GoogleGenerativeAI(apiKey);
 
     const prompt = normalizedMessages
       .map((m) => `${m.role === 'assistant' ? 'Assistant' : 'User'}: ${String(m.content || '')}`)
       .join('\n\n');
 
-    const payload = {
-      contents: [
-        {
-          role: 'user',
-          parts: [{ text: prompt || 'Help with educational content.' }],
-        },
-      ],
-      generationConfig: {
-        temperature,
-        maxOutputTokens: contextTokens > 0 ? Math.min(maxTokens, contextTokens) : maxTokens,
-      },
-    };
-
-    const response = await fetch(
-      `${baseUrl}/models/${model}:generateContent?key=${apiKey}`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
+    const models = [model, ...fallbackModels];
+    let lastErr = null;
+    for (const modelName of models) {
+      const maxAttempts = modelName === model ? 3 : 1;
+      for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+        try {
+          const modelClient = genAI.getGenerativeModel({ model: modelName });
+          const result = await modelClient.generateContent({
+            contents: [
+              {
+                role: 'user',
+                parts: [{ text: prompt || 'Help with educational content.' }],
+              },
+            ],
+            generationConfig: {
+              temperature,
+              maxOutputTokens: contextTokens > 0 ? Math.min(maxTokens, contextTokens) : maxTokens,
+            },
+          });
+          const text = String(result?.response?.text?.() || '').trim();
+          if (!text) {
+            lastErr = new Error(`Gemini fallback returned empty content on ${modelName}`);
+            break;
+          }
+          return text;
+        } catch (error) {
+          const msg = String(error?.message || error);
+          lastErr = new Error(`Gemini fallback failed on ${modelName}: ${msg}`);
+          const retryable = /429|503|500|404|RESOURCE_EXHAUSTED|fetch failed/i.test(msg);
+          if (retryable && attempt < maxAttempts) {
+            await sleep(900 * attempt);
+            continue;
+          }
+          if (!retryable) throw lastErr;
+          break;
+        }
       }
-    );
+    }
+    throw lastErr || new Error('Gemini fallback failed on all models');
+  };
 
+  const callUpstreamFallback = async (normalizedMessages) => {
+    const cfg = getLlmConfig();
+    const payload = {
+      model: cfg.model,
+      messages: normalizedMessages,
+      temperature,
+      max_tokens: contextTokens > 0 ? Math.min(maxTokens, contextTokens) : maxTokens,
+    };
+    if (preferJson) {
+      payload.response_format = { type: 'json_object' };
+    }
+
+    const headers = { 'Content-Type': 'application/json' };
+    if (!cfg.disableAuth) {
+      headers.Authorization = `Bearer ${cfg.apiKey}`;
+    }
+
+    const response = await fetch(cfg.endpoint, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify(payload),
+    });
     if (!response.ok) {
-      const errorText = await response.text();
-      throw new Error(`Gemini fallback failed (${response.status}): ${errorText}`);
+      const errorText = await response.text().catch(() => '');
+      throw new Error(`Upstream fallback failed (${response.status}): ${errorText}`);
     }
 
     const data = await response.json();
-    const text = (data?.candidates?.[0]?.content?.parts || [])
-      .map((p) => (typeof p?.text === 'string' ? p.text : ''))
-      .join('')
-      .trim();
+    const text = String(data?.choices?.[0]?.message?.content || '').trim();
     if (!text) {
-      throw new Error('Gemini fallback returned empty content');
+      throw new Error('Upstream fallback returned empty content');
     }
     return text;
   };
@@ -193,7 +241,19 @@ async function callChatCompletions({
   };
 
   const normalizedMessages = normalizeMessages(messages);
-  return callGeminiFallback(normalizedMessages, preferJson);
+  try {
+    return await callGeminiFallback(normalizedMessages);
+  } catch (geminiError) {
+    try {
+      return await callUpstreamFallback(normalizedMessages);
+    } catch (upstreamError) {
+      throw new Error(
+        `Gemini and upstream fallback failed: ${String(geminiError?.message || geminiError)} | ${String(
+          upstreamError?.message || upstreamError
+        )}`
+      );
+    }
+  }
 }
 
 function buildTeacherToolPrompt(toolType, params = {}) {
@@ -352,7 +412,7 @@ Use clear language and step-by-step explanations for problem solving.
 Keep responses focused and practical.`;
 
     if (context.currentSubject) {
-      systemInstruction += `\nCurrent subject: ${context.currentSubject}`;
+      systemInstruction += `\nSession subject focus: ${context.currentSubject}. Keep explanations, examples, quizzes, and practice strictly inside this subject at school-level depth.`;
       if (context.currentTopic) {
         systemInstruction += `\nCurrent topic: ${context.currentTopic}`;
       }

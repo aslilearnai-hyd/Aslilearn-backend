@@ -58,6 +58,10 @@ const aiContentEngineSourceSchema = new mongoose.Schema(
     chunkCount: { type: Number, default: 0 },
     lastProcessedAt: { type: Date, default: null },
     processingError: { type: String, default: '' },
+    archived: { type: Boolean, default: false, index: true },
+    archivedAt: { type: Date, default: null },
+    archivedReason: { type: String, default: '' },
+    supersededBy: { type: mongoose.Schema.Types.ObjectId, ref: 'AiContentEngineSource', default: null },
   },
   { timestamps: true }
 );
