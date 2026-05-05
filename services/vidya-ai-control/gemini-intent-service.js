@@ -1,0 +1,264 @@
+import geminiService from '../gemini-service.js';
+import { MODULE_REGISTRY } from './module-registry.js';
+
+function safeJson(raw) {
+  let text = String(raw || '').trim();
+  text = text.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/i, '');
+  const s = text.indexOf('{');
+  const e = text.lastIndexOf('}');
+  if (s >= 0 && e > s) text = text.slice(s, e + 1);
+  try {
+    return JSON.parse(text);
+  } catch {
+    return null;
+  }
+}
+
+const OPS = ['count', 'list', 'aggregate', 'distinct'];
+const FILTER_OPS = ['eq', 'ne', 'gt', 'gte', 'lt', 'lte', 'in', 'regex', 'exists'];
+const AGG_OPS = ['sum', 'avg', 'min', 'max', 'count'];
+const aliasList = Object.entries(MODULE_REGISTRY)
+  .map(([k, v]) => `- ${k}: ${[k, ...(v.aliases || [])].join(', ')}`)
+  .join('\n');
+
+function buildHeuristicPlan(message, errMessage = '') {
+  const lower = String(message || '').toLowerCase();
+  const classMatch = String(message || '').match(/class\s*(\d+)/i);
+  const classNumber = classMatch ? classMatch[1] : '';
+  const isCount = /(how many|count|total|number of|are there|how much)/i.test(lower);
+  const isGeneralKnowledge = /^(what is|what are|who is|who are|explain|define|meaning of|tell me about|why|how does|how do)/i.test(
+    lower.trim()
+  );
+  const hasDbIntentWord = /(count|total|number of|list|show|display|records?|database|db|analytics|report|dashboard|highest|top|rank|breakdown|enrolled|active users?)/i.test(
+    lower
+  );
+  const operation = isCount ? 'count' : 'list';
+  /** @type {Array<{field:string,op:string,value:any}>} */
+  const filters = [];
+
+  let module = 'students';
+  if (/(school|schools)/i.test(lower)) {
+    module = 'users';
+    filters.push({ field: 'role', op: 'eq', value: 'admin' });
+  } else if (/(student|students|learner|learners|enrolled)/i.test(lower)) {
+    module = 'students';
+  } else if (/(teacher|teachers|faculty|staff)/i.test(lower)) {
+    module = 'teachers';
+  } else if (/(exam|exams|test)/i.test(lower)) {
+    module = 'exams';
+  } else if (/(result|results|score|performance)/i.test(lower)) {
+    module = 'results';
+  } else if (/(attendance|present|absent|session)/i.test(lower)) {
+    module = 'attendance';
+  } else if (/(subject|subjects)/i.test(lower)) {
+    module = 'subjects';
+  } else if (/(class|classes|section|sections)/i.test(lower)) {
+    module = 'classes';
+  } else if (/(ai|generation|generations|request|requests)/i.test(lower)) {
+    module = 'ai_tool_data';
+  } else if (/(notice|notices|announcement|event)/i.test(lower)) {
+    module = 'notices';
+  } else if (/(analytics|audit|logs)/i.test(lower)) {
+    module = 'analytics';
+  } else if (/(user|users|role|permission)/i.test(lower)) {
+    module = 'users';
+  }
+
+  const hasExplicitModuleKeyword = module !== 'students' || /(student|students|learner|learners|enrolled)/i.test(lower);
+
+  // If Gemini intent parsing is unavailable and this looks like a normal
+  // conceptual question, avoid accidental DB list fallbacks.
+  if (!hasExplicitModuleKeyword && isGeneralKnowledge && !hasDbIntentWord) {
+    return {
+      mode: 'knowledge',
+      module: '',
+      operation: 'list',
+      filters: [],
+      selectFields: [],
+      groupBy: [],
+      aggregates: [],
+      sort: [],
+      limit: 20,
+      timeframe: 'all',
+      clarification: '',
+      parseWarning: errMessage ? `gemini_unavailable:${errMessage}` : 'intent_json_parse_failed',
+    };
+  }
+
+  if (classNumber) filters.push({ field: 'classNumber', op: 'eq', value: classNumber });
+  if (/\bactive\b/i.test(lower)) filters.push({ field: 'isActive', op: 'eq', value: true });
+
+  // Dedicated deterministic exam-query behavior.
+  if (module === 'exams') {
+    if (/\b(active|upcoming|scheduled|running)\b/i.test(lower)) {
+      filters.push({ field: 'isActive', op: 'eq', value: true });
+    }
+    if (/\b(active now|currently active|running now|live now|now active)\b/i.test(lower)) {
+      filters.push({ field: 'startDate', op: 'lte', value: 'now' });
+      filters.push({ field: 'endDate', op: 'gte', value: 'now' });
+      filters.push({ field: 'isActive', op: 'eq', value: true });
+    }
+    if (/\b(active today|today active|today running)\b/i.test(lower)) {
+      filters.push({ field: 'startDate', op: 'lte', value: 'today_end' });
+      filters.push({ field: 'endDate', op: 'gte', value: 'today_start' });
+      filters.push({ field: 'isActive', op: 'eq', value: true });
+    }
+    const examTypeMatch = lower.match(/\b(weekend|mains|advanced|practice)\b/);
+    if (examTypeMatch) {
+      filters.push({ field: 'examType', op: 'eq', value: examTypeMatch[1] });
+    }
+    const subjMatch = lower.match(/\b(maths|math|physics|chemistry|biology)\b/);
+    if (subjMatch) {
+      const subject = subjMatch[1] === 'math' ? 'maths' : subjMatch[1];
+      filters.push({ field: 'subject', op: 'eq', value: subject });
+    }
+
+    if (/(which class|highest class|class has highest|class wise|class-wise|by class)/i.test(lower)) {
+      return {
+        mode: 'database',
+        module: 'exams',
+        operation: 'aggregate',
+        filters,
+        selectFields: [],
+        groupBy: ['classNumber'],
+        aggregates: [{ func: 'count', field: '*', as: 'examCount' }],
+        sort: [{ field: 'examCount', direction: 'desc' }],
+        limit: 10,
+        timeframe: /today/i.test(lower) ? 'today' : /this week|weekly/i.test(lower) ? 'this_week' : 'all',
+        clarification: '',
+        parseWarning: errMessage ? `gemini_unavailable:${errMessage}` : 'intent_json_parse_failed',
+      };
+    }
+
+    if (/(subject wise|subject-wise|by subject)/i.test(lower)) {
+      return {
+        mode: 'database',
+        module: 'exams',
+        operation: 'aggregate',
+        filters,
+        selectFields: [],
+        groupBy: ['subject'],
+        aggregates: [{ func: 'count', field: '*', as: 'examCount' }],
+        sort: [{ field: 'examCount', direction: 'desc' }],
+        limit: 10,
+        timeframe: /today/i.test(lower) ? 'today' : /this week|weekly/i.test(lower) ? 'this_week' : 'all',
+        clarification: '',
+        parseWarning: errMessage ? `gemini_unavailable:${errMessage}` : 'intent_json_parse_failed',
+      };
+    }
+
+    if (/(list|show|display|give|provide|get)/i.test(lower) && !isCount) {
+      return {
+        mode: 'database',
+        module: 'exams',
+        operation: 'list',
+        filters,
+        selectFields: ['title', 'classNumber', 'subject', 'examType', 'startDate', 'endDate', 'isActive'],
+        groupBy: [],
+        aggregates: [],
+        sort: [{ field: 'startDate', direction: 'asc' }],
+        limit: 20,
+        timeframe: /today/i.test(lower) ? 'today' : /this week|weekly/i.test(lower) ? 'this_week' : 'all',
+        clarification: '',
+        parseWarning: errMessage ? `gemini_unavailable:${errMessage}` : 'intent_json_parse_failed',
+      };
+    }
+  }
+
+  return {
+    mode: 'database',
+    module,
+    operation,
+    filters,
+    selectFields: [],
+    groupBy: [],
+    aggregates: operation === 'count' ? [{ func: 'count', field: '*', as: 'count' }] : [],
+    sort: [{ field: 'createdAt', direction: 'desc' }],
+    limit: 20,
+    timeframe: /today/i.test(lower) ? 'today' : /this week|weekly/i.test(lower) ? 'this_week' : 'all',
+    clarification: '',
+    parseWarning: errMessage ? `gemini_unavailable:${errMessage}` : 'intent_json_parse_failed',
+  };
+}
+
+export async function parseDynamicIntent({
+  userMessage,
+  history = [],
+}) {
+  const message = String(userMessage || '').trim();
+  const hist = (Array.isArray(history) ? history : []).slice(-8);
+  const historyBlock = hist
+    .map((m) => `${String(m.role || '').toUpperCase()}: ${String(m.content || '').slice(0, 700)}`)
+    .join('\n');
+
+  const prompt = `You map admin chat questions to a READ-ONLY database query plan.
+Return ONLY JSON with shape:
+{
+  "mode":"database"|"knowledge",
+  "module":"<one module key when mode=database>",
+  "operation":"count"|"list"|"aggregate"|"distinct",
+  "filters":[{"field":"", "op":"eq|ne|gt|gte|lt|lte|in|regex|exists", "value":""}],
+  "selectFields":["fieldA","fieldB"],
+  "groupBy":["fieldA"],
+  "aggregates":[{"func":"count|sum|avg|min|max","field":"<field-or-*>","as":"metric"}],
+  "sort":[{"field":"", "direction":"asc|desc"}],
+  "limit":20,
+  "timeframe":"today|this_week|this_month|all",
+  "clarification":""
+}
+
+Modules:
+${aliasList}
+
+Rules:
+- If user asks for application data/count/list/ranking/summary, choose mode="database".
+- For generic conceptual Qs not requiring DB, choose mode="knowledge".
+- Never produce write/update/delete/drop/alter operations.
+- operation must be one of: ${OPS.join(', ')}.
+- filter op must be one of: ${FILTER_OPS.join(', ')}.
+- aggregate func must be one of: ${AGG_OPS.join(', ')}.
+- Keep limit <= 100.
+- If class mention like "Class 7", add filter field classNumber op eq value "7" (or "Class 7" only when needed).
+
+Recent conversation:
+${historyBlock || '(none)'}
+
+User question:
+${message.slice(0, 4500)}
+`;
+
+  let raw = '';
+  let parsed = null;
+  try {
+    raw = await geminiService.generateStructuredContent(prompt, 'json');
+    parsed = safeJson(raw);
+  } catch (err) {
+    return buildHeuristicPlan(message, String(err?.message || 'unknown'));
+  }
+
+  if (!parsed || typeof parsed !== 'object') {
+    return buildHeuristicPlan(message, '');
+  }
+
+  const mode = String(parsed.mode || '').toLowerCase() === 'database' ? 'database' : 'knowledge';
+  const operation = OPS.includes(String(parsed.operation)) ? String(parsed.operation) : 'list';
+  const limit = Math.max(1, Math.min(100, Number(parsed.limit) || 20));
+  const timeframe = ['today', 'this_week', 'this_month', 'all'].includes(String(parsed.timeframe))
+    ? String(parsed.timeframe)
+    : 'all';
+
+  return {
+    mode,
+    module: String(parsed.module || '').trim(),
+    operation,
+    filters: Array.isArray(parsed.filters) ? parsed.filters : [],
+    selectFields: Array.isArray(parsed.selectFields) ? parsed.selectFields.map(String) : [],
+    groupBy: Array.isArray(parsed.groupBy) ? parsed.groupBy.map(String) : [],
+    aggregates: Array.isArray(parsed.aggregates) ? parsed.aggregates : [],
+    sort: Array.isArray(parsed.sort) ? parsed.sort : [],
+    limit,
+    timeframe,
+    clarification: String(parsed.clarification || '').slice(0, 220),
+    rawPreview: String(raw || '').slice(0, 600),
+  };
+}
