@@ -32,6 +32,23 @@ import { dedupeExamResultRows } from '../utils/dedupe-exam-results.js';
 
 const router = express.Router();
 
+// iframe / window.open GETs cannot send Authorization. Allow JWT via ?token= for proxy routes only.
+router.use((req, res, next) => {
+  if (req.method !== 'GET') return next();
+  const pathOnly = (req.originalUrl || req.url || '').split('?')[0].replace(/\/+$/, '') || '';
+  const isProxyRoute =
+    pathOnly.endsWith('/content-preview') || pathOnly.endsWith('/content-download');
+  if (!isProxyRoute) return next();
+  const hdr = req.headers.authorization || req.get('Authorization');
+  const raw = req.query.token;
+  const tokenFromQuery =
+    typeof raw === 'string' ? raw : Array.isArray(raw) && typeof raw[0] === 'string' ? raw[0] : '';
+  if (!hdr && tokenFromQuery) {
+    req.headers.authorization = `Bearer ${tokenFromQuery}`;
+  }
+  next();
+});
+
 // Apply authentication middleware to all routes
 router.use(verifyToken);
 
@@ -4745,6 +4762,7 @@ router.get('/content-download', async (req, res) => {
       url: typeof url === 'string' ? url : '',
       filename: typeof filename === 'string' ? filename : '',
       userId: req.userId || '',
+      hasTokenQuery: !!(req.query.token && typeof req.query.token === 'string'),
     });
     if (!url || typeof url !== 'string') {
       return res.status(400).json({
@@ -4807,6 +4825,7 @@ router.get('/content-preview', async (req, res) => {
       url: typeof url === 'string' ? url : '',
       filename: typeof filename === 'string' ? filename : '',
       userId: req.userId || '',
+      hasTokenQuery: !!(req.query.token && typeof req.query.token === 'string'),
     });
     if (!url || typeof url !== 'string') {
       return res.status(400).json({

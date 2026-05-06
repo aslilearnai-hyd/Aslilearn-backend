@@ -727,8 +727,9 @@ app.use('/api/admin', adminRoutes);
 app.use('/api/teacher', teacherRoutes);
 app.use('/api/curriculum', curriculumRoutes);
 app.use('/api/ai-generator', aiGeneratorRoutes);
-app.use('/api', streamRoutes);
+// Student routes before generic /api mount so other routers cannot shadow /api/student/*
 app.use('/api/student', studentRoutes);
+app.use('/api', streamRoutes);
 app.use('/api/ai', aiRoutes);
 app.use('/api', pdfRagRoutes);
 app.use('/api', vidyaRoutes);
