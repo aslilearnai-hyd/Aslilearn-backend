@@ -118,6 +118,16 @@ if (envResult.error) {
 }
 
 const app = express();
+
+// Nginx / load balancer sets X-Forwarded-* — required for express-rate-limit & req.ip accuracy
+const proxyHops = process.env.TRUST_PROXY_HOPS ?? process.env.TRUST_PROXY ?? '1';
+if (proxyHops === 'false' || proxyHops === '0') {
+  app.set('trust proxy', false);
+} else {
+  const n = Number(proxyHops);
+  app.set('trust proxy', Number.isFinite(n) && n >= 1 ? Math.min(n, 5) : 1);
+}
+
 const PORT = process.env.PORT || 5000;
 initPdfProcessingQueue();
 

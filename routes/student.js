@@ -4614,14 +4614,94 @@ const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 /** NCERT / many government PDF hosts block or slow datacenter egress; browser fetch often works. */
 function isBrowserDirectPdfHost(hostname) {
-  const h = String(hostname || '').toLowerCase();
+  const h = String(hostname || '')
+    .toLowerCase()
+    .replace(/\.$/, '');
   if (!h) return false;
   if (h === 'ncert.nic.in' || h.endsWith('.ncert.nic.in')) return true;
   const extra = String(process.env.PDF_PROXY_REDIRECT_HOSTS || '')
     .split(',')
-    .map((s) => s.trim().toLowerCase())
+    .map((s) => s.trim().toLowerCase().replace(/\.$/, ''))
     .filter(Boolean);
   return extra.some((e) => h === e || h.endsWith(`.${e}`));
+}
+
+/** When query `url=` is oddly encoded but still embeds NCERT, carve it out. */
+function carveNcertUrl(rawUrl) {
+  const variants = [];
+  variants.push(String(rawUrl || '').trim());
+  try {
+    variants.push(decodeURIComponent(variants[0]));
+  } catch {
+    /* noop */
+  }
+  try {
+    variants.push(decodeURIComponent(variants[1] || variants[0]));
+  } catch {
+    /* noop */
+  }
+  const re = /https?:\/\/[a-z0-9.-]*ncert\.nic\.in[^\s"'<>)]*/gi;
+  for (const v of variants) {
+    const m = v.match(re);
+    if (m?.[0]) return m[0];
+  }
+  return '';
+}
+
+/**
+ * Prefer browser-side fetch — datacenter egress often fails against NCERT.
+ * Handles bare NCERT URLs, google viewer wrappers, odd encoding.
+ */
+function getPdfBrowserBypassTarget(rawUrlInput, unwrapDepth = 0) {
+  if (unwrapDepth > 6) return '';
+  const rawTrim = typeof rawUrlInput === 'string' ? rawUrlInput.trim() : '';
+
+  /** @type {URL | null} */
+  let parsed = null;
+  try {
+    parsed = new URL(rawTrim);
+  } catch {
+    parsed = null;
+  }
+
+  if (parsed && ['http:', 'https:'].includes(parsed.protocol)) {
+    const h = parsed.hostname.replace(/\.$/, '').toLowerCase();
+    if (isBrowserDirectPdfHost(h)) {
+      return parsed.toString();
+    }
+    const unwrapViewer =
+      h === 'docs.google.com' ||
+      h.endsWith('.docs.google.com') ||
+      h === 'drive.google.com';
+    if (unwrapViewer) {
+      const eu =
+        parsed.searchParams.get('url') ||
+        parsed.searchParams.get('embeddedurl');
+      if (eu) {
+        const decodedEu = decodeURIComponent(eu.replace(/\+/g, '%20'));
+        const inner = getPdfBrowserBypassTarget(decodedEu, unwrapDepth + 1);
+        if (inner) return inner;
+      }
+    }
+  }
+
+  const carved = carveNcertUrl(rawTrim);
+  if (carved) {
+    try {
+      const innerParsed = new URL(carved);
+      const ih = innerParsed.hostname.replace(/\.$/, '').toLowerCase();
+      if (
+        ['http:', 'https:'].includes(innerParsed.protocol) &&
+        isBrowserDirectPdfHost(ih)
+      ) {
+        return innerParsed.toString();
+      }
+    } catch {
+      /* noop */
+    }
+  }
+
+  return '';
 }
 
 const PDF_FETCH_TIMEOUT_MS = Math.min(
@@ -4818,6 +4898,14 @@ router.get('/content-download', async (req, res) => {
       });
     }
 
+    const bypassDl = getPdfBrowserBypassTarget(url);
+    if (bypassDl) {
+      console.log('[PDF_PROXY] /content-download 302 → browser (allowlisted)', {
+        target: bypassDl.slice(0, 120),
+      });
+      return res.redirect(302, bypassDl);
+    }
+
     const { buffer, upstreamType } = await fetchRemoteFileWithRetry(url, 'download file');
     const looksLikePdf = buffer.length >= 4 && buffer.subarray(0, 4).toString('ascii') === '%PDF';
     const isPdf = looksLikePdf || upstreamType.toLowerCase().includes('application/pdf');
@@ -4895,12 +4983,13 @@ router.get('/content-preview', async (req, res) => {
       });
     }
 
-    // Let the browser load the PDF directly — avoids DO/datacenter blocks on sites like NCERT.
-    if (isBrowserDirectPdfHost(parsedUrl.hostname)) {
-      console.log('[PDF_PROXY] /content-preview 302 → browser (allowlisted host)', {
+    const bypass = getPdfBrowserBypassTarget(url);
+    if (bypass) {
+      console.log('[PDF_PROXY] /content-preview 302 → browser', {
         host: parsedUrl.hostname,
+        bypassPreview: bypass.slice(0, 120),
       });
-      return res.redirect(302, parsedUrl.toString());
+      return res.redirect(302, bypass);
     }
 
     const { buffer, upstreamType } = await fetchRemoteFileWithRetry(url, 'preview file');
