@@ -4573,6 +4573,62 @@ router.get('/teacher-work-diary', async (req, res) => {
 });
 
 // Proxy file download for student content URLs (avoids browser CORS issues)
+const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+async function fetchRemoteFileWithRetry(targetUrl, contextLabel) {
+  const maxAttempts = 3;
+  let lastError = null;
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 20000);
+
+    try {
+      const upstream = await fetch(targetUrl, {
+        signal: controller.signal,
+        headers: {
+          Accept: 'application/pdf,application/octet-stream,*/*',
+          'Accept-Language': 'en-US,en;q=0.9',
+          'Cache-Control': 'no-cache',
+          Pragma: 'no-cache',
+          'User-Agent': 'Mozilla/5.0 ASLI-PDF-Proxy/1.0'
+        }
+      });
+      clearTimeout(timeout);
+
+      if (!upstream.ok) {
+        const shouldRetry = upstream.status >= 500 || upstream.status === 429;
+        if (shouldRetry && attempt < maxAttempts) {
+          await wait(500 * attempt);
+          continue;
+        }
+        const message = `Failed to fetch ${contextLabel}: ${upstream.status}`;
+        const error = new Error(message);
+        error.status = upstream.status;
+        throw error;
+      }
+
+      const arrayBuffer = await upstream.arrayBuffer();
+      const buffer = Buffer.from(arrayBuffer);
+      const upstreamType = upstream.headers.get('content-type') || 'application/octet-stream';
+      return { buffer, upstreamType };
+    } catch (error) {
+      clearTimeout(timeout);
+      lastError = error;
+      const code = error?.cause?.code || error?.code;
+      const retryableNetworkError = ['ECONNRESET', 'ETIMEDOUT', 'UND_ERR_CONNECT_TIMEOUT', 'UND_ERR_SOCKET'].includes(code);
+      const retryableAbort = error?.name === 'AbortError';
+      if (attempt < maxAttempts && (retryableNetworkError || retryableAbort)) {
+        await wait(500 * attempt);
+        continue;
+      }
+      break;
+    }
+  }
+
+  throw lastError || new Error(`Failed to fetch ${contextLabel}`);
+}
+
 router.get('/content-download', async (req, res) => {
   try {
     const { url, filename } = req.query;
@@ -4600,29 +4656,24 @@ router.get('/content-download', async (req, res) => {
       });
     }
 
-    const upstream = await fetch(url);
-    if (!upstream.ok) {
-      return res.status(upstream.status).json({
-        success: false,
-        message: `Failed to fetch file: ${upstream.status}`
-      });
-    }
-
-    const arrayBuffer = await upstream.arrayBuffer();
-    const buffer = Buffer.from(arrayBuffer);
-    const upstreamType = upstream.headers.get('content-type') || 'application/octet-stream';
+    const { buffer, upstreamType } = await fetchRemoteFileWithRetry(url, 'download file');
+    const looksLikePdf = buffer.length >= 4 && buffer.subarray(0, 4).toString('ascii') === '%PDF';
+    const isPdf = looksLikePdf || upstreamType.toLowerCase().includes('application/pdf');
     const safeFilename = typeof filename === 'string' && filename.trim()
       ? filename.trim()
       : decodeURIComponent(parsedUrl.pathname.split('/').pop() || 'download');
 
-    res.setHeader('Content-Type', upstreamType);
-    res.setHeader('Content-Disposition', `attachment; filename="${safeFilename.replace(/"/g, '')}"`);
+    res.setHeader('Content-Type', isPdf ? 'application/pdf' : upstreamType);
+    res.setHeader('Content-Disposition', `${isPdf ? 'inline' : 'attachment'}; filename="${safeFilename.replace(/"/g, '')}"`);
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.removeHeader('X-Frame-Options');
     res.send(buffer);
   } catch (error) {
     console.error('Student content-download proxy error:', error);
-    res.status(500).json({
+    const statusCode = error?.status && Number.isInteger(error.status) ? error.status : 500;
+    res.status(statusCode).json({
       success: false,
-      message: 'Failed to download file'
+      message: statusCode === 500 ? 'Failed to download file' : `Failed to download file: ${statusCode}`
     });
   }
 });
@@ -4655,30 +4706,26 @@ router.get('/content-preview', async (req, res) => {
       });
     }
 
-    const upstream = await fetch(url);
-    if (!upstream.ok) {
-      return res.status(upstream.status).json({
-        success: false,
-        message: `Failed to fetch preview file: ${upstream.status}`
-      });
-    }
-
-    const arrayBuffer = await upstream.arrayBuffer();
-    const buffer = Buffer.from(arrayBuffer);
-    const upstreamType = upstream.headers.get('content-type') || 'application/octet-stream';
+    const { buffer, upstreamType } = await fetchRemoteFileWithRetry(url, 'preview file');
+    const looksLikePdf = buffer.length >= 4 && buffer.subarray(0, 4).toString('ascii') === '%PDF';
+    const isPdf = looksLikePdf || upstreamType.toLowerCase().includes('application/pdf');
     const safeFilename = typeof filename === 'string' && filename.trim()
       ? filename.trim()
       : decodeURIComponent(parsedUrl.pathname.split('/').pop() || 'preview');
 
-    res.setHeader('Content-Type', upstreamType);
+    res.setHeader('Content-Type', isPdf ? 'application/pdf' : upstreamType);
+    res.setHeader('X-Source-Content-Type', upstreamType);
+    res.setHeader('X-Pdf-Validated', isPdf ? '1' : '0');
     res.setHeader('Content-Disposition', `inline; filename="${safeFilename.replace(/"/g, '')}"`);
-    res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.removeHeader('X-Frame-Options');
     res.send(buffer);
   } catch (error) {
     console.error('Student content-preview proxy error:', error);
-    res.status(500).json({
+    const statusCode = error?.status && Number.isInteger(error.status) ? error.status : 500;
+    res.status(statusCode).json({
       success: false,
-      message: 'Failed to preview file'
+      message: statusCode === 500 ? 'Failed to preview file' : `Failed to preview file: ${statusCode}`
     });
   }
 });
