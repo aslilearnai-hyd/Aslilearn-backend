@@ -118,19 +118,6 @@ if (envResult.error) {
 }
 
 const app = express();
-// Align with startup log (`Environment: ${NODE_ENV || 'production'}`): PM2 often omits NODE_ENV.
-const effectiveNodeEnv = process.env.NODE_ENV || 'production';
-// Behind nginx / DO load balancer: X-Forwarded-For — required for express-rate-limit & req.ip
-if (process.env.TRUST_PROXY === 'false' || process.env.TRUST_PROXY === '0') {
-  console.log('[express] trust proxy: off (TRUST_PROXY=false)');
-} else if (
-  process.env.TRUST_PROXY === 'true' ||
-  process.env.TRUST_PROXY === '1' ||
-  effectiveNodeEnv === 'production'
-) {
-  app.set('trust proxy', 1);
-  console.log('[express] trust proxy: 1');
-}
 const PORT = process.env.PORT || 5000;
 initPdfProcessingQueue();
 
