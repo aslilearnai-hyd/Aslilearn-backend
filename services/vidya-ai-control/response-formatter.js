@@ -36,6 +36,9 @@ function extractNumberTokens(text) {
 function validateDbGroundedResponse({ text, facts, userPrompt }) {
   const t = String(text || '').trim();
   if (!t) return { ok: false, reason: 'empty_response' };
+  if (/^\s*\{[\s\S]*\}\s*$/.test(t)) {
+    return { ok: false, reason: 'json_like_response' };
+  }
   const lower = t.toLowerCase();
   if (BANNED_APPROX_WORDS.some((w) => lower.includes(w))) {
     return { ok: false, reason: 'contains_approximation_language' };
@@ -69,15 +72,22 @@ function localFallbackResponse({ userPrompt, facts }) {
     ai_tool_data: 'AI generations',
   };
   const label = moduleLabels[facts?.module] || facts?.module || 'records';
+  const asksForCount = /((how|who)\s*many|count|total|number of|are there|how much)/i.test(
+    String(userPrompt || '')
+  );
   if (facts?.available === false && facts?.reason) {
     return `${facts.reason} I could not find matching records in the database.`;
   }
   if (facts?.operation === 'count' && typeof facts.count === 'number') {
-    if (facts.count === 0) return `I could not find matching records in the database.`;
+    if (facts.count === 0) return `There are exactly 0 ${label}.`;
     return `There are exactly ${facts.count} ${label}.`;
   }
   if (facts?.operation === 'distinct') {
-    if (!facts.totalDistinct) return `I could not find matching records in the database.`;
+    if (!facts.totalDistinct) {
+      return asksForCount
+        ? `There are exactly 0 ${label}.`
+        : `I could not find matching records in the database.`;
+    }
     return `Found exactly ${facts.totalDistinct} distinct values in ${facts.field || 'field'} for ${label}.`;
   }
   if (facts?.operation === 'aggregate' && Array.isArray(facts.rows)) {
@@ -108,7 +118,11 @@ function localFallbackResponse({ userPrompt, facts }) {
     return `Computed exactly ${facts.rows.length} grouped results.`;
   }
   if (facts?.operation === 'list' && Array.isArray(facts.rows)) {
-    if (!facts.rows.length) return 'I could not find matching records in the database.';
+    if (!facts.rows.length) {
+      return asksForCount
+        ? `There are exactly 0 ${label}.`
+        : 'I could not find matching records in the database.';
+    }
     if (facts.module === 'exams') {
       const names = facts.rows
         .map((r) => String(r?.title || '').trim())

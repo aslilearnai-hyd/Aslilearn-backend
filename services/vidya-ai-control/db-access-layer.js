@@ -183,10 +183,33 @@ export async function executeDynamicDbPlan({
   const fields = moduleSchemaFields(model);
   const allowedFields = new Set(fields);
   const base = cfg.baseFilter || {};
-  const fromPlan = toMongoFilter(plan.filters, allowedFields);
+  const viewerOid = oid(viewerUserId);
+  const selfScopeOr = [];
+  const normalizedPlanFilters = asArray(plan.filters).flatMap((f) => {
+    if (f?.value !== '__viewer__') return [f];
+    const field = String(f?.field || '');
+    if (field === 'generatedBy') {
+      const values = [String(viewerUserId)];
+      if (viewerOid) values.push(viewerOid);
+      selfScopeOr.push({ generatedBy: { $in: values } });
+      return [];
+    }
+    if (field === 'teacherId') {
+      if (viewerOid) selfScopeOr.push({ teacherId: viewerOid });
+      return [];
+    }
+    return [];
+  });
+  const fromPlan = toMongoFilter(normalizedPlanFilters, allowedFields);
   const scoped = adminScopeFilter({ role, viewerUserId, moduleKey, allowedFields });
   if (scoped.__scopeError) return { ok: false, error: scoped.__scopeError };
-  const basicTimeFiltered = applyTimeframe({ ...base, ...fromPlan, ...scoped }, plan.timeframe, allowedFields);
+  let mergedBaseFilter = { ...base, ...fromPlan, ...scoped };
+  if (selfScopeOr.length === 1) {
+    mergedBaseFilter = { ...mergedBaseFilter, ...selfScopeOr[0] };
+  } else if (selfScopeOr.length > 1) {
+    mergedBaseFilter = { $and: [mergedBaseFilter, { $or: selfScopeOr }] };
+  }
+  const basicTimeFiltered = applyTimeframe(mergedBaseFilter, plan.timeframe, allowedFields);
   const merged = applyModuleSpecificTimeframe({
     moduleKey,
     mergedFilter: basicTimeFiltered,
