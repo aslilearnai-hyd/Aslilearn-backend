@@ -185,6 +185,13 @@ async function callChatCompletions({
       for (let attempt = 1; attempt <= maxAttemptsPerModel; attempt += 1) {
         try {
           const modelClient = genAI.getGenerativeModel({ model: modelName });
+          const generationConfig = {
+            temperature,
+            maxOutputTokens: contextTokens > 0 ? Math.min(maxTokens, contextTokens) : maxTokens,
+          };
+          if (preferJson) {
+            generationConfig.responseMimeType = 'application/json';
+          }
           const result = await modelClient.generateContent({
             contents: [
               {
@@ -192,10 +199,7 @@ async function callChatCompletions({
                 parts: [{ text: prompt || 'Help with educational content.' }],
               },
             ],
-            generationConfig: {
-              temperature,
-              maxOutputTokens: contextTokens > 0 ? Math.min(maxTokens, contextTokens) : maxTokens,
-            },
+            generationConfig,
           });
           const text = String(result?.response?.text?.() || '').trim();
           if (!text) {
@@ -559,10 +563,15 @@ Provide: (1) what you see, (2) explanation/solution, (3) key takeaways.`;
       { role: 'user', content: cleanText(prompt) },
     ];
 
+    /** Large exam-report JSON needs high headroom; 2200 was truncating mid-array (invalid JSON). */
+    const jsonMaxOut =
+      Number(process.env.GEMINI_JSON_MAX_OUTPUT) > 512
+        ? Math.min(Number(process.env.GEMINI_JSON_MAX_OUTPUT), 65536)
+        : 8192;
     const text = await callChatCompletions({
       messages,
       temperature: wantsJson ? 0.1 : 0.3,
-      maxTokens: 2200,
+      maxTokens: wantsJson ? jsonMaxOut : 2200,
       preferJson: wantsJson,
     });
 

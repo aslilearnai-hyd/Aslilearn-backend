@@ -2870,15 +2870,20 @@ Important:
       usedGemini = true;
       const raw = geminiRawResponse.trim();
       try {
-        aiParsed = JSON.parse(raw);
-      } catch (_jsonErr) {
-        const fenceCleaned = raw
-          .replace(/^```json\s*/i, '')
-          .replace(/^```\s*/i, '')
-          .replace(/\s*```$/i, '')
-          .trim();
-        const jsonMatch = fenceCleaned.match(/\{[\s\S]*\}/);
-        aiParsed = JSON.parse(jsonMatch ? jsonMatch[0] : '{}');
+        try {
+          aiParsed = JSON.parse(raw);
+        } catch (_jsonErr) {
+          const fenceCleaned = raw
+            .replace(/^```json\s*/i, '')
+            .replace(/^```\s*/i, '')
+            .replace(/\s*```$/i, '')
+            .trim();
+          const jsonMatch = fenceCleaned.match(/\{[\s\S]*\}/);
+          aiParsed = JSON.parse(jsonMatch ? jsonMatch[0] : '{}');
+        }
+      } catch (parseErr) {
+        console.warn('[exam-results/ai-analysis] Gemini JSON parse failed:', parseErr?.message || parseErr);
+        aiParsed = buildDeepOfflineExamAnalysis(humanizeOfflineGeminiFailure(parseErr));
       }
     } catch (error) {
       console.warn('[exam-results/ai-analysis] Gemini failed:', error?.message || error);
