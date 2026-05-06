@@ -1,4 +1,6 @@
 import express from 'express';
+import http from 'http';
+import https from 'https';
 import mongoose from 'mongoose';
 import User from '../models/User.js';
 import Video from '../models/Video.js';
@@ -4575,13 +4577,86 @@ router.get('/teacher-work-diary', async (req, res) => {
 // Proxy file download for student content URLs (avoids browser CORS issues)
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+function downloadWithNodeHttp(targetUrl, timeoutMs = 35000, redirectCount = 0) {
+  return new Promise((resolve, reject) => {
+    if (redirectCount > 5) {
+      reject(new Error('Too many redirects while fetching remote file'));
+      return;
+    }
+
+    let parsed;
+    try {
+      parsed = new URL(targetUrl);
+    } catch {
+      reject(new Error('Invalid remote URL'));
+      return;
+    }
+
+    const isHttps = parsed.protocol === 'https:';
+    const client = isHttps ? https : http;
+
+    const req = client.request(
+      targetUrl,
+      {
+        method: 'GET',
+        headers: {
+          Accept: 'application/pdf,application/octet-stream,*/*',
+          'Accept-Language': 'en-US,en;q=0.9',
+          'Cache-Control': 'no-cache',
+          Pragma: 'no-cache',
+          'User-Agent': 'Mozilla/5.0 ASLI-PDF-Proxy/1.0',
+        },
+        timeout: timeoutMs,
+        // Prefer IPv4 in production environments where IPv6 routes are flaky.
+        family: 4,
+      },
+      (res) => {
+        const statusCode = Number(res.statusCode || 0);
+        const location = res.headers.location;
+        if ([301, 302, 303, 307, 308].includes(statusCode) && location) {
+          const redirectUrl = new URL(location, targetUrl).toString();
+          res.resume();
+          downloadWithNodeHttp(redirectUrl, timeoutMs, redirectCount + 1).then(resolve).catch(reject);
+          return;
+        }
+
+        if (statusCode < 200 || statusCode >= 300) {
+          res.resume();
+          const e = new Error(`Failed to fetch remote file: ${statusCode}`);
+          e.status = statusCode;
+          reject(e);
+          return;
+        }
+
+        const chunks = [];
+        res.on('data', (chunk) => chunks.push(chunk));
+        res.on('end', () => {
+          const buffer = Buffer.concat(chunks);
+          resolve({
+            buffer,
+            upstreamType: String(res.headers['content-type'] || 'application/octet-stream'),
+          });
+        });
+      }
+    );
+
+    req.on('timeout', () => {
+      req.destroy(new Error('Remote fetch timeout'));
+    });
+    req.on('error', reject);
+    req.end();
+  });
+}
+
 async function fetchRemoteFileWithRetry(targetUrl, contextLabel) {
-  const maxAttempts = 3;
+  const maxAttempts = 4;
   let lastError = null;
+  console.log(`[PDF_PROXY] start ${contextLabel}`, { targetUrl, maxAttempts });
 
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 20000);
+    const timeout = setTimeout(() => controller.abort(), 30000);
+    console.log(`[PDF_PROXY] attempt ${attempt}/${maxAttempts}`, { targetUrl, contextLabel });
 
     try {
       const upstream = await fetch(targetUrl, {
@@ -4595,6 +4670,13 @@ async function fetchRemoteFileWithRetry(targetUrl, contextLabel) {
         }
       });
       clearTimeout(timeout);
+      console.log(`[PDF_PROXY] upstream response`, {
+        targetUrl,
+        status: upstream.status,
+        ok: upstream.ok,
+        contentType: upstream.headers.get('content-type') || '',
+        attempt,
+      });
 
       if (!upstream.ok) {
         const shouldRetry = upstream.status >= 500 || upstream.status === 429;
@@ -4611,13 +4693,40 @@ async function fetchRemoteFileWithRetry(targetUrl, contextLabel) {
       const arrayBuffer = await upstream.arrayBuffer();
       const buffer = Buffer.from(arrayBuffer);
       const upstreamType = upstream.headers.get('content-type') || 'application/octet-stream';
+      console.log(`[PDF_PROXY] success ${contextLabel}`, {
+        targetUrl,
+        bytes: buffer.length,
+        upstreamType,
+        attempt,
+      });
       return { buffer, upstreamType };
     } catch (error) {
       clearTimeout(timeout);
       lastError = error;
       const code = error?.cause?.code || error?.code;
+      console.error(`[PDF_PROXY] fetch failed`, {
+        targetUrl,
+        attempt,
+        code: code || '',
+        name: error?.name || '',
+        message: error?.message || String(error),
+      });
       const retryableNetworkError = ['ECONNRESET', 'ETIMEDOUT', 'UND_ERR_CONNECT_TIMEOUT', 'UND_ERR_SOCKET'].includes(code);
       const retryableAbort = error?.name === 'AbortError';
+      if (retryableNetworkError || retryableAbort) {
+        try {
+          // Fallback path for environments where undici has transient TLS/DNS failures.
+          console.log(`[PDF_PROXY] trying node http fallback`, { targetUrl, attempt });
+          return await downloadWithNodeHttp(targetUrl, 35000);
+        } catch (fallbackError) {
+          lastError = fallbackError;
+          console.error(`[PDF_PROXY] node http fallback failed`, {
+            targetUrl,
+            attempt,
+            message: fallbackError?.message || String(fallbackError),
+          });
+        }
+      }
       if (attempt < maxAttempts && (retryableNetworkError || retryableAbort)) {
         await wait(500 * attempt);
         continue;
@@ -4632,6 +4741,11 @@ async function fetchRemoteFileWithRetry(targetUrl, contextLabel) {
 router.get('/content-download', async (req, res) => {
   try {
     const { url, filename } = req.query;
+    console.log('[PDF_PROXY] /content-download request', {
+      url: typeof url === 'string' ? url : '',
+      filename: typeof filename === 'string' ? filename : '',
+      userId: req.userId || '',
+    });
     if (!url || typeof url !== 'string') {
       return res.status(400).json({
         success: false,
@@ -4667,6 +4781,13 @@ router.get('/content-download', async (req, res) => {
     res.setHeader('Content-Disposition', `${isPdf ? 'inline' : 'attachment'}; filename="${safeFilename.replace(/"/g, '')}"`);
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.removeHeader('X-Frame-Options');
+    console.log('[PDF_PROXY] /content-download response', {
+      status: 200,
+      isPdf,
+      upstreamType,
+      bytes: buffer.length,
+      filename: safeFilename,
+    });
     res.send(buffer);
   } catch (error) {
     console.error('Student content-download proxy error:', error);
@@ -4682,6 +4803,11 @@ router.get('/content-download', async (req, res) => {
 router.get('/content-preview', async (req, res) => {
   try {
     const { url, filename } = req.query;
+    console.log('[PDF_PROXY] /content-preview request', {
+      url: typeof url === 'string' ? url : '',
+      filename: typeof filename === 'string' ? filename : '',
+      userId: req.userId || '',
+    });
     if (!url || typeof url !== 'string') {
       return res.status(400).json({
         success: false,
@@ -4719,6 +4845,13 @@ router.get('/content-preview', async (req, res) => {
     res.setHeader('Content-Disposition', `inline; filename="${safeFilename.replace(/"/g, '')}"`);
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.removeHeader('X-Frame-Options');
+    console.log('[PDF_PROXY] /content-preview response', {
+      status: 200,
+      isPdf,
+      upstreamType,
+      bytes: buffer.length,
+      filename: safeFilename,
+    });
     res.send(buffer);
   } catch (error) {
     console.error('Student content-preview proxy error:', error);
