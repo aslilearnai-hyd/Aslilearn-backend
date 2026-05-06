@@ -67,6 +67,12 @@ function escapeRegexClassSuffix(classNum) {
   return String(classNum).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
+function plainSubjectName(name) {
+  if (!name || typeof name !== 'string') return '';
+  const m = name.match(/^(.+?)_\d+$/);
+  return m ? m[1] : name;
+}
+
 /** Populated Class with assignedSubjects, or lookup by student.classNumber + admin. */
 async function resolveStudentClassDoc(student) {
   const Class = (await import('../models/Class.js')).default;
@@ -1320,11 +1326,6 @@ router.get('/asli-prep-content', async (req, res) => {
       .populate('subject', 'name')
       .sort({ createdAt: -1 });
 
-    const plainSubjectName = (name) => {
-      if (!name || typeof name !== 'string') return '';
-      const m = name.match(/^(.+?)_\d+$/);
-      return m ? m[1] : name;
-    };
     const classLabelFromContent = (doc) => {
       const cn = doc.classNumber;
       if (cn != null && String(cn).trim() !== '') return String(cn).trim();
@@ -1361,6 +1362,127 @@ router.get('/asli-prep-content', async (req, res) => {
     console.error('❌ Error fetching Asli Prep content:', error);
     console.error('Error stack:', error.stack);
     res.status(500).json({ success: false, message: 'Failed to fetch content', error: error.message });
+  }
+});
+
+// Platform library content for subjects the student struggled with (exam report)
+router.get('/weak-subject-content', async (req, res) => {
+  try {
+    const subjectsRaw = req.query.subjects;
+    const weakQueryNames =
+      typeof subjectsRaw === 'string'
+        ? subjectsRaw
+            .split(',')
+            .map((s) => String(s).trim().toLowerCase())
+            .filter(Boolean)
+        : [];
+
+    const emptyPayload = () => ({
+      success: true,
+      data: {
+        Video: [],
+        TextBook: [],
+        Workbook: [],
+        Material: [],
+      },
+      weakSubjects: weakQueryNames.map((n) =>
+        n ? `${n.charAt(0).toUpperCase()}${n.slice(1)}` : ''
+      ),
+    });
+
+    if (weakQueryNames.length === 0) {
+      return res.json({
+        ...emptyPayload(),
+        weakSubjects: [],
+      });
+    }
+
+    const student = await User.findById(req.userId)
+      .populate('assignedAdmin', 'board')
+      .populate('assignedClass', 'classNumber section assignedSubjects');
+
+    if (!student) {
+      return res.status(404).json({ success: false, message: 'Student not found' });
+    }
+
+    const studentClassDoc = await resolveStudentClassDoc(student);
+    const adminBoard =
+      student.assignedAdmin?.board ||
+      (await User.findById(student.assignedAdmin).select('board').lean())?.board ||
+      student.board;
+
+    const classSubjectIds = await resolveStudentSubjectIdsForLibrary(
+      student,
+      adminBoard,
+      studentClassDoc
+    );
+
+    if (!classSubjectIds.length) {
+      return res.json(emptyPayload());
+    }
+
+    const CONTENT_TYPES = ['Video', 'TextBook', 'Workbook', 'Material'];
+
+    const contents = await Content.find({
+      subject: { $in: classSubjectIds },
+      isActive: true,
+      type: { $in: CONTENT_TYPES },
+    })
+      .populate('subject', 'name')
+      .sort({ createdAt: -1 })
+      .lean();
+
+    const matchesWeak = (doc) => {
+      const plain = plainSubjectName(doc.subject?.name || '').toLowerCase().trim();
+      if (!plain) return false;
+      return weakQueryNames.some((w) => {
+        if (!w) return false;
+        return plain.includes(w) || w.includes(plain);
+      });
+    };
+
+    const filtered = contents.filter(matchesWeak);
+
+    const mapRow = (c) => ({
+      _id: String(c._id),
+      title: c.title || '',
+      description: c.description || '',
+      fileUrl:
+        c.fileUrl || (Array.isArray(c.fileUrls) && c.fileUrls.length ? c.fileUrls[0] : '') || '',
+      thumbnailUrl: c.thumbnailUrl || '',
+      topic: c.topic || '',
+      subject: {
+        _id: String(c.subject?._id || ''),
+        name: c.subject?.name || '',
+      },
+    });
+
+    const data = {
+      Video: [],
+      TextBook: [],
+      Workbook: [],
+      Material: [],
+    };
+
+    for (const t of CONTENT_TYPES) {
+      const forType = filtered.filter((c) => c.type === t).slice(0, 3);
+      data[t] = forType.map(mapRow);
+    }
+
+    res.json({
+      success: true,
+      data,
+      weakSubjects: weakQueryNames.map((n) =>
+        n ? `${n.charAt(0).toUpperCase()}${n.slice(1)}` : ''
+      ),
+    });
+  } catch (error) {
+    console.error('❌ Error fetching weak-subject content:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to fetch weak-subject content',
+      error: error.message,
+    });
   }
 });
 
