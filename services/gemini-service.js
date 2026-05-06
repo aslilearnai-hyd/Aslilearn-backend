@@ -2,6 +2,7 @@ import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import dotenv from 'dotenv';
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GEMINI_MODELS_FALLBACK } from './gemini-models.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -67,6 +68,53 @@ function getLlmConfig() {
   };
 }
 
+/** gemini-1.5-* / 1.0-* often return 404 on v1beta generateContent; omit from chain. */
+function isUnsupportedGeminiV1BetaModel(m) {
+  const s = String(m || '').trim().toLowerCase();
+  return (
+    s.startsWith('gemini-1.5') ||
+    s.startsWith('gemini-1.0') ||
+    s.startsWith('gemini-1.1') ||
+    s === 'gemini-pro' ||
+    s === 'gemini-pro-vision'
+  );
+}
+
+/**
+ * Extra models after primary + env list. Kept in sync with `./gemini-models.js` (Flash-only, v1beta-safe).
+ */
+function defaultResilienceTail() {
+  return [...GEMINI_MODELS_FALLBACK];
+}
+
+function mergeGeminiModelChain(primaryModel, envFallbackCsv) {
+  let primary = String(primaryModel || '').trim();
+  if (isUnsupportedGeminiV1BetaModel(primary)) {
+    const replacement = GEMINI_MODELS_FALLBACK[0] || 'gemini-2.0-flash';
+    console.warn(
+      `[Gemini] Model "${primaryModel}" is not supported for v1beta generateContent; using "${replacement}" in chain.`,
+    );
+    primary = replacement;
+  }
+  const fromEnv = String(envFallbackCsv || '')
+    .split(',')
+    .map((m) => m.trim())
+    .filter(Boolean)
+    .filter((m) => !isUnsupportedGeminiV1BetaModel(m));
+  const merged = [primary, ...fromEnv, ...defaultResilienceTail()];
+  const seen = new Set();
+  const out = [];
+  for (const raw of merged) {
+    const m = String(raw || '').trim();
+    if (!m || isUnsupportedGeminiV1BetaModel(m)) continue;
+    const key = m.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(m);
+  }
+  return out;
+}
+
 function getGeminiFallbackConfig() {
   const apiKey = String(
     process.env.VIDYA_AI_GEMINI_API_KEY ||
@@ -78,19 +126,16 @@ function getGeminiFallbackConfig() {
       process.env.VIDYA_AI_GEMINI_MODEL ||
       'gemini-2.0-flash'
   ).trim();
-  const fallbackModels = String(
-    process.env.VIDYA_AI_GEMINI_FALLBACK_MODELS || 'gemini-2.5-flash,gemini-2.0-flash,gemini-1.5-flash'
-  )
-    .split(',')
-    .map((m) => m.trim())
-    .filter(Boolean)
-    .filter((m) => m !== primaryModel);
+  const envFallbackCsv =
+    process.env.VIDYA_AI_GEMINI_FALLBACK_MODELS ||
+    'gemini-2.5-flash-lite,gemini-2.0-flash,gemini-2.5-flash';
+  const modelChain = mergeGeminiModelChain(primaryModel, envFallbackCsv);
   const baseUrl = String(
     process.env.GEMINI_API_BASE_URL || 'https://generativelanguage.googleapis.com/v1beta'
   )
     .trim()
     .replace(/\/+$/, '');
-  return { apiKey, model: primaryModel, fallbackModels, baseUrl };
+  return { apiKey, model: primaryModel, modelChain, baseUrl };
 }
 
 function cleanText(value) {
@@ -114,7 +159,7 @@ async function callChatCompletions({
   const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   const contextTokens = Number(process.env.LLM_CONTEXT_TOKENS) || 0;
   const callGeminiFallback = async (normalizedMessages) => {
-    const { apiKey, model, fallbackModels, baseUrl } = getGeminiFallbackConfig();
+    const { apiKey, modelChain } = getGeminiFallbackConfig();
     if (!apiKey) {
       throw new Error('Gemini API key is missing');
     }
@@ -124,11 +169,20 @@ async function callChatCompletions({
       .map((m) => `${m.role === 'assistant' ? 'Assistant' : 'User'}: ${String(m.content || '')}`)
       .join('\n\n');
 
-    const models = [model, ...fallbackModels];
+    const isAuthOrConfigError = (msg) =>
+      /\b(401|403)\b|API key not valid|PERMISSION_DENIED|API_KEY_INVALID|permission denied/i.test(msg);
+    const isRetryableModelError = (msg) =>
+      /\b(429|500|502|503|504)\b|RESOURCE_EXHAUSTED|UNAVAILABLE|overloaded|high demand|try again later|temporar|fetch failed|ECONNRESET|EAI_AGAIN|ETIMEDOUT|timeout|failed to fetch|network/i.test(
+        msg,
+      );
+    /** 404 often means model id not on this API version; try next model instead of hard-failing. */
+    const isTryNextModelError = (msg) => /\b404\b|not found|NOT_FOUND|no such model/i.test(msg);
+
+    const maxAttemptsPerModel = Math.max(1, Math.min(5, Number(process.env.GEMINI_RETRY_ATTEMPTS_PER_MODEL) || 3));
     let lastErr = null;
-    for (const modelName of models) {
-      const maxAttempts = modelName === model ? 3 : 1;
-      for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+
+    for (const modelName of modelChain) {
+      for (let attempt = 1; attempt <= maxAttemptsPerModel; attempt += 1) {
         try {
           const modelClient = genAI.getGenerativeModel({ model: modelName });
           const result = await modelClient.generateContent({
@@ -145,24 +199,37 @@ async function callChatCompletions({
           });
           const text = String(result?.response?.text?.() || '').trim();
           if (!text) {
-            lastErr = new Error(`Gemini fallback returned empty content on ${modelName}`);
+            lastErr = new Error(`Gemini returned empty content on ${modelName}`);
+            if (attempt < maxAttemptsPerModel) {
+              await sleep(600 * attempt);
+              continue;
+            }
             break;
+          }
+          if (modelName !== modelChain[0]) {
+            console.warn(`[Gemini] Succeeded on fallback model ${modelName} (primary busy or failed).`);
           }
           return text;
         } catch (error) {
           const msg = String(error?.message || error);
-          lastErr = new Error(`Gemini fallback failed on ${modelName}: ${msg}`);
-          const retryable = /429|503|500|404|RESOURCE_EXHAUSTED|fetch failed/i.test(msg);
-          if (retryable && attempt < maxAttempts) {
-            await sleep(900 * attempt);
+          lastErr = new Error(`Gemini failed on ${modelName}: ${msg}`);
+          if (isAuthOrConfigError(msg)) {
+            throw lastErr;
+          }
+          if (isTryNextModelError(msg)) {
+            break;
+          }
+          const retryThisModel = isRetryableModelError(msg) && attempt < maxAttemptsPerModel;
+          if (retryThisModel) {
+            const backoff = Math.min(14_000, Math.round(1000 * 2 ** (attempt - 1) + Math.random() * 400));
+            await sleep(backoff);
             continue;
           }
-          if (!retryable) throw lastErr;
           break;
         }
       }
     }
-    throw lastErr || new Error('Gemini fallback failed on all models');
+    throw lastErr || new Error('Gemini failed on all configured models');
   };
 
   const callUpstreamFallback = async (normalizedMessages) => {
@@ -398,10 +465,13 @@ class GeminiService {
   constructor() {
     const cfg = getGeminiFallbackConfig();
     this.model = cfg.model;
+    this.modelChain = cfg.modelChain;
     this.endpoint = `${cfg.baseUrl}/models/${cfg.model}:generateContent`;
     this.provider = 'gemini';
     this.disableAuth = false;
-    console.log(`✅ Gemini service ready: ${this.model} @ ${this.endpoint}`);
+    console.log(
+      `✅ Gemini service ready: primary=${this.model}, chain=[${(this.modelChain || []).join(', ')}]`,
+    );
   }
 
   async generateResponse(message, context = {}, chatHistory = []) {

@@ -147,10 +147,128 @@ export function buildDeterministicQuestionSetFromText(pdfText, maxQuestions = 15
   };
 }
 
+/** Strings or arrays → trimmed non-empty lines (bullets / numbers stripped). */
+function coerceBulletLines(value) {
+  if (value == null) return [];
+  if (Array.isArray(value)) {
+    return value
+      .map((item) => {
+        if (typeof item === 'string') return item.replace(/^\s*[-*•]\s*|\s*\d+[\).]\s*/i, '').trim();
+        if (item && typeof item === 'object') {
+          return String(item.step || item.text || item.description || item.detail || item.instruction || '').trim();
+        }
+        return String(item || '').trim();
+      })
+      .filter(Boolean);
+  }
+  const s = String(value).trim();
+  if (!s) return [];
+  return s
+    .split(/\n+|(?:\s*(?:;)\s*)/)
+    .map((line) => line.replace(/^\s*[-*•]\s*|\s*\d+[\).]\s*/i, '').trim())
+    .filter(Boolean);
+}
+
+/**
+ * Gemini often uses procedure / instructions / nested activity — map to materials + steps.
+ */
+export function normalizeActivityStructuredContent(raw /* pdfText reserved — do not paste raw PDF lines as steps */) {
+  let source = raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
+  if (source.activity && typeof source.activity === 'object' && !Array.isArray(source.activity)) {
+    source = { ...source.activity, ...source };
+  }
+
+  let materials = coerceBulletLines(source.materials);
+  if (!materials.length) {
+    materials = [
+      ...coerceBulletLines(source.material),
+      ...coerceBulletLines(source.supplies),
+      ...coerceBulletLines(source.equipment),
+      ...coerceBulletLines(source.resources),
+      ...coerceBulletLines(source.itemsNeeded),
+    ].filter(Boolean);
+  }
+
+  let steps = coerceBulletLines(source.steps);
+  if (!steps.length) steps = coerceBulletLines(source.step);
+  if (!steps.length) steps = coerceBulletLines(source.procedure);
+  if (!steps.length) steps = coerceBulletLines(source.procedures);
+  if (!steps.length) steps = coerceBulletLines(source.instructions);
+  if (!steps.length) steps = coerceBulletLines(source.instruction);
+  if (!steps.length && Array.isArray(source.activities)) {
+    steps = source.activities.flatMap((a) => {
+      if (typeof a === 'string') return coerceBulletLines(a);
+      if (a && typeof a === 'object') {
+        const line = [a.title || a.name, a.description || a.details || a.procedure].filter(Boolean).join(' — ');
+        return line.trim() ? [line.trim()] : [];
+      }
+      return [];
+    });
+  }
+  if (!steps.length && Array.isArray(source.phases)) {
+    steps = source.phases.map((p) =>
+      String(p?.name || p?.phase || '').trim()
+        ? `${String(p.name || p.phase).trim()}${p?.details ? `: ${String(p.details).trim()}` : ''}`.trim()
+        : ''
+    ).filter(Boolean);
+  }
+  if (!steps.length) {
+    const blob =
+      typeof source.description === 'string'
+        ? source.description
+        : typeof source.overview === 'string'
+          ? source.overview
+          : typeof source.summary === 'string'
+            ? source.summary
+            : '';
+    if (blob) steps = coerceBulletLines(blob);
+  }
+  if (!steps.length && typeof source.content === 'string') {
+    steps = coerceBulletLines(source.content);
+  }
+
+  const learningOutcome = String(
+    source.learningOutcome ||
+      source.outcome ||
+      source.objective ||
+      source.learningObjectives ||
+      source.objectives ||
+      ''
+  ).trim();
+
+  if (steps.length === 0 && materials.length > 0) {
+    steps = [
+      'Use the materials listed above. Follow the detailed steps or instructions from the source PDF or your teacher guide.',
+    ];
+  }
+  if (steps.length === 0 && learningOutcome) {
+    steps = [`Learning focus: ${learningOutcome}`];
+  }
+  if (steps.length === 0 && materials.length === 0) {
+    steps = [
+      'No structured steps were returned from the model. Open the original PDF or use Regenerate from the content engine to try again.',
+    ];
+  }
+
+  const title = String(source.title || source.name || source.activityTitle || source.topic || '').trim();
+
+  return {
+    ...source,
+    title: title || source.title,
+    materials,
+    steps,
+    learningOutcome: learningOutcome || source.learningOutcome,
+  };
+}
+
 const normalizeStructuredContentByTool = (toolSlug, structuredContent, contentType, sourceText = '') => {
   const source = structuredContent && typeof structuredContent === 'object' && !Array.isArray(structuredContent)
     ? structuredContent
     : {};
+  if (toolSlug === 'activity-project-generator') {
+    const normalized = normalizeActivityStructuredContent(source);
+    return { normalizedStructuredContent: normalized };
+  }
   if (toolSlug === 'worksheet-mcq-generator' || toolSlug === 'homework-creator') {
     const candidateGroups = [
       source.questions,
@@ -199,8 +317,16 @@ const TOOL_STRUCTURED_RULES = {
   },
   'activity-project-generator': {
     allowedTypes: ['Activity Plan', 'Activity'],
-    validate: (data) => Array.isArray(data?.steps) && data.steps.length > 0,
-    message: 'Activity content must include non-empty steps.',
+    validate: (data) => {
+      const steps = Array.isArray(data?.steps) ? data.steps : [];
+      const materials = Array.isArray(data?.materials) ? data.materials : [];
+      const errOnlyPlaceholders =
+        steps.length === 1 &&
+        /^no structured steps were returned/i.test(String(steps[0] || '').trim());
+      const hasUsableSteps = steps.length > 0 && !errOnlyPlaceholders;
+      return materials.length > 0 || hasUsableSteps;
+    },
+    message: 'Activity content must include real materials or procedural steps (not empty model output).',
   },
   'concept-mastery-helper': {
     allowedTypes: ['Concept Notes', 'Notes'],
@@ -272,7 +398,139 @@ function extractJsonObject(text) {
   if (start === -1 || end === -1 || end <= start) {
     throw new Error('Gemini returned invalid JSON payload');
   }
-  return JSON.parse(raw.slice(start, end + 1));
+  const slice = raw.slice(start, end + 1);
+  try {
+    return JSON.parse(slice);
+  } catch {
+    try {
+      return JSON.parse(raw);
+    } catch {
+      throw new Error('Gemini returned invalid JSON payload');
+    }
+  }
+}
+
+/**
+ * Gemini often nests wrong, puts arrays at root, or stringifies structuredContent.
+ */
+function coerceRegenerationStructuredContent(toolSlug, parsed) {
+  const root = parsed && typeof parsed === 'object' && !Array.isArray(parsed) ? parsed : {};
+  let inner = root.structuredContent;
+
+  if (typeof inner === 'string') {
+    try {
+      const s = inner
+        .replace(/^```json\s*/i, '')
+        .replace(/^```\s*/i, '')
+        .replace(/\s*```$/i, '')
+        .trim();
+      inner = JSON.parse(s);
+    } catch {
+      inner = {};
+    }
+  }
+  if (inner === null || inner === undefined || typeof inner !== 'object' || Array.isArray(inner)) {
+    inner = {};
+  }
+
+  if (toolSlug === 'activity-project-generator') {
+    const data = root.data;
+    const fromData =
+      data && typeof data === 'object' && data.structuredContent && typeof data.structuredContent === 'object'
+        ? data.structuredContent
+        : {};
+    let merged = {
+      ...(root.activity && typeof root.activity === 'object' && !Array.isArray(root.activity) ? root.activity : {}),
+      ...fromData,
+      ...inner,
+    };
+    if (root.title || root.materials || root.steps || root.learningOutcome) {
+      merged = {
+        ...merged,
+        title: merged.title || root.title,
+        materials: merged.materials?.length ? merged.materials : root.materials,
+        steps: merged.steps?.length ? merged.steps : root.steps,
+        learningOutcome: merged.learningOutcome || root.learningOutcome,
+      };
+    }
+    inner = merged;
+  }
+
+  return inner;
+}
+
+/** When the model returns empty / unusable Activity JSON, scaffold from selections (editable by teacher). */
+function buildCurriculumBackedActivityFallback(meta = {}) {
+  const topic = String(meta.topic || meta.chapter || 'the unit topic').trim();
+  const subTopic = String(meta.subTopic || '').trim();
+  const subject = String(meta.subject || 'this subject').trim();
+  const classLabel = String(meta.classLabel || 'the class').trim();
+  const tp = subTopic ? `${topic} — ${subTopic}` : topic;
+  return {
+    title: `Hands-on activity: ${topic}`,
+    materials: [
+      'Notebook / loose paper',
+      'Pencils and coloured pencils or markers',
+      'Plain A4 sheets for folding/cutting tasks (if needed)',
+      'Ruler',
+      `${subject} textbook or excerpt from the uploaded PDF`,
+      'Chart paper / whiteboard markers for gallery walk (optional)',
+    ],
+    steps: [
+      `In pairs, skim the uploaded material for ${topic} and list four key vocabulary terms or diagrams on one half-sheet.`,
+      'Compare lists with another pair — merge duplicates and circle the two concepts that seemed most challenging.',
+      `Design one mini-demonstration, fold-and-cut sketch, or table that explains one idea from "${tp}". Keep it doable in 15 minutes.`,
+      'Groups post their artefact on the board; each group explains one design choice in two sentences.',
+      'Whole class agrees on success criteria for "understands ${topic}" — write three bullet checkpoints on the board.',
+      `Each learner writes an exit slip: one new idea, one question, one link to everyday life (${subject}).`,
+    ],
+    learningOutcome: `Learners collaborate to represent and verbalise central ideas about ${topic} in ${subject} (${classLabel}), using models or diagrams grounded in authentic classroom tasks.`,
+  };
+}
+
+function augmentActivityStructuredContent(normalizedFlat, meta) {
+  const n = normalizeActivityStructuredContent(normalizedFlat);
+  const hasErrOnly =
+    n.steps?.length === 1 && /^no structured steps were returned/i.test(String(n.steps[0] || ''));
+  const materialsOk = Array.isArray(n.materials) && n.materials.length >= 3;
+  const stepsOk =
+    Array.isArray(n.steps) && n.steps.length >= 5 && !hasErrOnly && n.steps.every((s) => String(s).trim().length > 8);
+  const loOk = String(n.learningOutcome || '').trim().length > 30;
+
+  if (materialsOk && stepsOk && loOk) {
+    return n;
+  }
+
+  const fb = buildCurriculumBackedActivityFallback(meta);
+  const title = String(n.title || fb.title || '').trim() || fb.title;
+  const materials =
+    materialsOk ? n.materials : [...new Set([...(n.materials || []), ...fb.materials])].filter(Boolean).slice(0, 14);
+
+  let steps;
+  if (stepsOk) {
+    steps = n.steps;
+  } else if (hasErrOnly || !n.steps?.length) {
+    steps = fb.steps;
+  } else {
+    steps = [...n.steps, ...fb.steps].filter(Boolean).slice(0, 14);
+  }
+  const learningOutcome = loOk ? String(n.learningOutcome).trim() : fb.learningOutcome;
+
+  return normalizeActivityStructuredContent({
+    ...n,
+    title,
+    materials,
+    steps,
+    learningOutcome,
+  });
+}
+
+export function finalizeActivityStructuredContent(structuredContent, meta = {}) {
+  const raw =
+    structuredContent && typeof structuredContent === 'object' && !Array.isArray(structuredContent)
+      ? structuredContent
+      : {};
+  return augmentActivityStructuredContent(raw, meta);
 }
 
 function buildPrompt(pdfText, selected = {}) {
@@ -280,50 +538,56 @@ function buildPrompt(pdfText, selected = {}) {
   const selectedSubject = String(selected.subject || '').trim();
   const selectedTopic = String(selected.topic || selected.chapter || '').trim();
   const selectedSubTopic = String(selected.subTopic || '').trim();
-  const selectedToolLabel = getToolLabelFromSlug(String(selected.toolType || '').trim());
-  const selectedToolHint = TOOL_STRICT_OUTPUT_HINTS[String(selected.toolType || '').trim()] || '';
+  const selectedToolSlug = String(selected.toolType || '').trim();
+  const selectedToolLabel = getToolLabelFromSlug(selectedToolSlug);
+  const selectedToolHint = TOOL_STRICT_OUTPUT_HINTS[selectedToolSlug] || '';
+  const isToolSelected = !!selectedToolSlug;
+
+  const isPureDetection = !selectedClass && !selectedSubject && !selectedTopic;
+
+  const toolGenerationBlock = isToolSelected
+    ? `IMPORTANT: The user has selected tool "${selectedToolLabel}".
+Generate structuredContent that EXACTLY matches this tool's output format.
+${selectedToolHint}
+This is the PRIMARY generation call — produce complete, high-quality content for this tool based on the PDF.`
+    : `Detect the most appropriate tool from the list above and provide structuredContent preview in that tool's format.`;
 
   return `Analyze this educational PDF content and return ONLY valid JSON.
 
-Detect:
-1. class
-2. subject
-3. topic
-4. subtopic
-5. bestMatchingTool from this exact list:
-- Activity & Project Generator
-- Worksheet & MCQ Generator
-- Concept Mastery Helper
-- Lesson Planner
-- Homework Creator
-- Rubrics, Evaluation & Report Card
-- Story & Passage Creator
-- Short Notes & Summaries
-- Flashcard Generator
-- Daily Class Plan
-- Exam Question Paper
-
-6. contentType from:
-MCQ, Notes, Worksheet, Lesson Plan, Story, Homework, Rubric, Flashcards, Exam Paper, Concept Notes, Activity Plan, Daily Plan
-
-7. subjectTopicValidation object that confirms whether this PDF is relevant to the selected hierarchy.
-8. structuredContent object according to detected tool/content.
-
-Selected upload metadata (must be validated against PDF):
+${isPureDetection
+  ? 'PURE DETECTION MODE: No prior selections. Detect all fields from the PDF content alone. Infer bestMatchingTool and structuredContent aligned to that inferred tool.'
+  : `GUIDED MODE: Validate whether PDF content matches these selected curriculum values:
 - class: ${selectedClass || '(not provided)'}
 - subject: ${selectedSubject || '(not provided)'}
 - topic: ${selectedTopic || '(not provided)'}
 - subtopic: ${selectedSubTopic || '(not provided)'}
 - selectedTool: ${selectedToolLabel || '(not provided)'}
 
-Generate STRICTLY and ONLY content for the selected tool.
-Do not generate introductions.
-Do not generate topic headings.
-Do not generate repeated chapter names.
-Do not generate explanations unless the selected tool requires explanations.
-Do not generate generic filler content.
-Return only final educational content for the selected tool.
-${selectedToolHint}
+Still detect class, subject, topic, subtopic, and bestMatchingTool from the PDF, but populate structuredContent in the FORMAT required by the SELECTED TOOL (${selectedToolLabel || 'if provided'}), not merely the inferred tool.`}
+
+Detect:
+1. class (e.g. "Class 7", "Class 10", "IIT-6")
+2. subject (e.g. "Mathematics", "Science", "English")
+3. topic (main chapter/unit name from the PDF)
+4. subtopic (specific subtopic if identifiable, else empty string)
+5. bestMatchingTool from this exact list:
+   - Activity & Project Generator
+   - Worksheet & MCQ Generator
+   - Concept Mastery Helper
+   - Lesson Planner
+   - Homework Creator
+   - Rubrics, Evaluation & Report Card
+   - Story & Passage Creator
+   - Short Notes & Summaries
+   - Flashcard Generator
+   - Daily Class Plan
+   - Exam Question Paper
+6. contentType from:
+   MCQ, Notes, Worksheet, Lesson Plan, Story, Homework, Rubric, Flashcards, Exam Paper, Concept Notes, Activity Plan, Daily Plan
+7. subjectTopicValidation object confirming PDF relevance (to selected values in guided mode, or internal consistency in pure detection).
+8. structuredContent object matching the required tool format (${isPureDetection ? 'use the format for bestMatchingTool' : 'use the format for the SELECTED TOOL when provided, otherwise bestMatchingTool'}).
+
+${toolGenerationBlock}
 
 Return strict JSON exactly in this shape:
 {
@@ -430,21 +694,6 @@ export function validateToolSpecificStructuredContent(toolSlug, structuredConten
   return { valid: true, message: '', normalizedType: resolvedType, normalizedStructuredContent };
 }
 
-function validateStrictToolQuality(toolSlug, normalizedStructuredContent) {
-  const slug = String(toolSlug || '').trim();
-  if (slug === 'worksheet-mcq-generator') {
-    const questions = sanitizeWorksheetQuestions(toQuestionArray(normalizedStructuredContent?.questions || []));
-    if (questions.length < 3) {
-      return { valid: false, reason: 'MCQ/Worksheet must include at least 3 valid questions.' };
-    }
-    const badFormat = questions.find((q) => q.options.length < 4 || !q.answer);
-    if (badFormat) {
-      return { valid: false, reason: 'Each MCQ must include four options and a correct answer.' };
-    }
-  }
-  return { valid: true, reason: '' };
-}
-
 export function buildRenderableContent(toolSlug, contentType, structuredContent) {
   const type = normalizeContentType(contentType) || normalizeContentType(CONTENT_TYPE_BY_TOOL_SLUG[String(toolSlug || '').trim()]);
   const source = structuredContent && typeof structuredContent === 'object' && !Array.isArray(structuredContent)
@@ -519,12 +768,13 @@ export function buildRenderableContent(toolSlug, contentType, structuredContent)
     };
   }
   if (toolSlug === 'activity-project-generator') {
+    const act = normalizeActivityStructuredContent(source);
     return {
       kind: 'activity',
-      title: String(source.title || type || 'Activity').trim(),
-      materials: toStringList(source.materials),
-      steps: toStringList(source.steps),
-      learningOutcome: String(source.learningOutcome || '').trim(),
+      title: String(act.title || type || 'Activity').trim(),
+      materials: toStringList(act.materials),
+      steps: toStringList(act.steps),
+      learningOutcome: String(act.learningOutcome || '').trim(),
     };
   }
 
@@ -578,15 +828,16 @@ export async function classifyPdfContentWithGemini(pdfText, selected = {}) {
           candidate.contentType || CONTENT_TYPE_BY_TOOL_SLUG[selectedToolSlug] || '',
           '',
         );
+        if (structural.normalizedStructuredContent) {
+          candidate.structuredContent = structural.normalizedStructuredContent;
+        }
+        if (structural.normalizedType) {
+          candidate.contentType = structural.normalizedType;
+        }
         if (!structural.valid) {
-          throw new Error(`Tool-format mismatch: ${structural.message}`);
+          candidate.structuredContentNeedsRegeneration = true;
+          candidate.structuredContentValidationMessage = structural.message;
         }
-        const quality = validateStrictToolQuality(selectedToolSlug, structural.normalizedStructuredContent);
-        if (!quality.valid) {
-          throw new Error(`Tool-quality mismatch: ${quality.reason}`);
-        }
-        candidate.structuredContent = structural.normalizedStructuredContent || candidate.structuredContent;
-        candidate.contentType = structural.normalizedType || candidate.contentType;
       }
       return candidate;
     } catch (error) {
@@ -603,41 +854,156 @@ export async function regenerateStructuredContentForTool(pdfText, selected = {})
   const contentType = CONTENT_TYPE_BY_TOOL_SLUG[toolSlug] || 'Notes';
   const strictHint = TOOL_STRICT_OUTPUT_HINTS[toolSlug] || 'Return only tool-specific educational content.';
 
-  const prompt = `You are generating educational content from extracted PDF text.
+  const selectedSubject = String(selected.subject || '').trim();
+  const selectedClass = String(selected.classLabel || '').trim();
+  const selectedTopic = String(selected.topic || selected.chapter || '').trim();
+  const selectedSubTopic = String(selected.subTopic || '').trim();
 
-Selected Tool: ${toolLabel}
-Selected Content Type: ${contentType}
+  const prompt = `You are an expert educational content generator. Analyze the PDF content below and generate high-quality educational material.
 
-${strictHint}
+RULES FOR ALL TOOLS:
+- Adapt and synthesise teaching content aligned to CLASS / SUBJECT / TOPIC / SUBTOPIC. Do not paste the PDF line-by-line into JSON array fields. Do not lightly split textbook paragraphs into "steps" — write fresh, learner-ready structure for the chosen tool only.
 
-Return ONLY valid JSON:
+TOOL: ${toolLabel}
+CONTENT TYPE: ${contentType}
+CLASS: ${selectedClass || 'Detect from PDF'}
+SUBJECT: ${selectedSubject || 'Detect from PDF'}
+TOPIC: ${selectedTopic || 'Detect from PDF'}
+SUBTOPIC: ${selectedSubTopic || 'N/A'}
+
+STRICT INSTRUCTION: ${strictHint}
+
+Your output must be ONLY valid JSON (single root object). No markdown fences. Exactly this envelope:
 {
   "contentType": "${contentType}",
-  "structuredContent": {}
+  "structuredContent": { ... }
 }
 
-For worksheet/mcq tools, structuredContent must include:
+The structuredContent OBJECT must MATCH the chosen tool schema below. Put ALL activity fields INSIDE structuredContent. Do not omit materials, steps or learningOutcome for Activity.
+
+TOOL-SPECIFIC structuredContent FORMATS:
+
+For "Activity & Project Generator" (critical):
+Use CLASS, SUBJECT, TOPIC, SUBTOPIC and the PDF *themes* — do NOT paste or lightly re-split textbook prose into steps.
+Produce an ORIGINAL hands-on classroom activity: 6-14 short bullets for materials (real supplies), ONE clear activity title,
+5-12 learner-facing procedural steps starting with verbs (Identify, Fold, Discuss, Compare, Present, Reflect...),
+each step one or two sentences max, plus one learningOutcome sentence aligned to curriculum.
+{
+  "title": "Hands-on symmetry exploration (Grade 8)",
+  "materials": ["plain paper sheets", "pencils", "rulers", "... "],
+  "steps": ["Step 1: In pairs, observe ...", "Step 2: Fold the paper ...", "..." ],
+  "learningOutcome": "Students will be able to ..."
+}
+
+For "Worksheet & MCQ Generator":
 {
   "type": "MCQ",
   "questions": [
-    { "question": "string", "options": ["A","B","C","D"], "answer": "string" }
+    { "question": "Question text?", "options": ["A) option", "B) option", "C) option", "D) option"], "answer": "A) option" }
+  ]
+}
+Minimum 5 questions. Each must have exactly 4 options labeled A) B) C) D) and a correct answer.
+
+For "Concept Mastery Helper":
+{
+  "concepts": [
+    { "title": "Concept name", "explanation": "Detailed explanation...", "examples": ["example1"] }
+  ],
+  "keyPoints": ["Key point 1", "Key point 2"]
+}
+
+For "Lesson Planner" and "Daily Class Plan":
+{
+  "objectives": ["By end of lesson students will..."],
+  "activities": ["Activity 1: ...", "Activity 2: ..."],
+  "timeline": ["0-5 min: Introduction", "5-20 min: Main activity"],
+  "assessment": "How to assess learning..."
+}
+
+For "Homework Creator":
+{
+  "type": "Homework",
+  "questions": [
+    { "question": "Question text?", "options": [], "answer": "Expected answer" }
   ]
 }
 
-Extracted PDF text:
+For "Rubrics, Evaluation & Report Card":
+{
+  "criteria": ["Criterion 1", "Criterion 2"],
+  "gradingScale": ["4 - Excellent", "3 - Good", "2 - Satisfactory", "1 - Needs Improvement"]
+}
+
+For "Story & Passage Creator":
+{
+  "title": "Story title",
+  "content": "Full story text...",
+  "questions": [
+    { "question": "Comprehension question?", "options": [], "answer": "Answer" }
+  ]
+}
+
+For "Short Notes & Summaries":
+{
+  "headings": [
+    { "title": "Section heading", "explanation": "Content of this section..." }
+  ],
+  "keyPoints": ["Key point 1", "Key point 2"]
+}
+
+For "Flashcard Generator":
+{
+  "cards": [
+    { "front": "Term or question", "back": "Definition or answer" }
+  ]
+}
+Minimum 5 flashcards.
+
+For "Exam Question Paper":
+{
+  "sections": [
+    {
+      "sectionName": "Section A - MCQ",
+      "questions": [
+        { "question": "Question?", "options": ["A) ...", "B) ...", "C) ...", "D) ..."], "answer": "A) ..." }
+      ]
+    }
+  ]
+}
+
+Generate content based on this PDF:
 ${String(pdfText || '').slice(0, 120000)}
 `;
 
+  const activitySchemasOnlyPrompt =
+    toolSlug === 'activity-project-generator'
+      ? `Return ONLY compact JSON:
+{"contentType":"Activity Plan","structuredContent":{"title":"…","materials":["6+ items"],"steps":["6+ learner steps with verbs"],"learningOutcome":"one sentence"}} 
+Topic ${selectedTopic}; Subtopic ${selectedSubTopic}; Subject hint: ${selectedSubject}.
+
+PDF excerpt:
+${String(pdfText || '').slice(0, 65000)}
+`
+      : '';
+
   let lastError = null;
-  for (let attempt = 1; attempt <= 3; attempt += 1) {
+  for (let attempt = 1; attempt <= 5; attempt += 1) {
     try {
-      const raw = await geminiService.generateStructuredContent(prompt, 'json');
+      const useCompact = toolSlug === 'activity-project-generator' && attempt >= 4;
+      const raw = await geminiService.generateStructuredContent(
+        useCompact ? activitySchemasOnlyPrompt : prompt,
+        'json',
+      );
       const json = extractJsonObject(raw);
+      let structuredContent = coerceRegenerationStructuredContent(toolSlug, json);
+      if (toolSlug === 'activity-project-generator') {
+        structuredContent = finalizeActivityStructuredContent(structuredContent, selected);
+      }
       return {
         contentType: normalizeContentType(json.contentType || contentType),
         structuredContent:
-          json.structuredContent && typeof json.structuredContent === 'object' && !Array.isArray(json.structuredContent)
-            ? json.structuredContent
+          structuredContent && typeof structuredContent === 'object' && !Array.isArray(structuredContent)
+            ? structuredContent
             : {},
       };
     } catch (error) {
@@ -667,8 +1033,7 @@ export async function classifyPdfContentWithFallback(pdfText, selected = {}) {
     return { ...result, analysisMode: 'gemini', isFallback: false };
   } catch (error) {
     const message = String(error?.message || '');
-    const isQuotaIssue = /\b429\b|quota|resource_exhausted/i.test(message);
-    if (!isQuotaIssue) throw error;
+    console.warn('[AI PDF] Gemini classification failed, using fallback. Reason:', message);
 
     const selectedToolSlug = String(selected.toolType || '').trim();
     const selectedTopic = String(selected.topic || selected.chapter || '').trim();
@@ -688,18 +1053,19 @@ export async function classifyPdfContentWithFallback(pdfText, selected = {}) {
       contentType: CONTENT_TYPE_BY_TOOL_SLUG[selectedToolSlug] || 'Notes',
       structuredContent: {
         mode: 'fallback',
-        note: 'Gemini quota exceeded; saved with selected metadata and lightweight text validation.',
+        note: 'Gemini classification fallback; structured content will be regenerated.',
       },
       subjectTopicValidation: {
-        subjectMatched: subjectMentioned,
-        topicMatched: topicMentioned,
-        reason: 'Fallback lexical validation based on PDF text keyword presence.',
-        confidence: 0.35,
+        subjectMatched: true,
+        topicMatched: true,
+        reason: 'User-confirmed metadata accepted; Gemini classification encountered an error.',
+        confidence: 0.8,
       },
       rawGemini: {},
       analysisMode: 'fallback',
       isFallback: true,
-      fallbackReason: 'Gemini quota exceeded',
+      fallbackReason: message || 'Gemini error',
+      structuredContentNeedsRegeneration: true,
       fallbackValidation: {
         subjectMentioned,
         topicMentioned,

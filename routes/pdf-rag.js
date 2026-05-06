@@ -19,8 +19,24 @@ import {
   validateToolSpecificStructuredContent,
   buildRenderableContent,
   regenerateStructuredContentForTool,
+  finalizeActivityStructuredContent,
   buildDeterministicQuestionSetFromText,
 } from '../services/ai-content-engine-service.js';
+
+/** After classify, always run template regeneration — classification output is unreliable for learner-facing layouts. */
+const ALWAYS_REGENERATE_STRUCTURED_TOOLS = new Set([
+  'activity-project-generator',
+  'worksheet-mcq-generator',
+  'concept-mastery-helper',
+  'lesson-planner',
+  'homework-creator',
+  'rubrics-evaluation-generator',
+  'story-passage-creator',
+  'short-notes-summaries-maker',
+  'flashcard-generator',
+  'daily-class-plan-maker',
+  'exam-question-paper-generator',
+]);
 
 const router = express.Router();
 const __filename = fileURLToPath(import.meta.url);
@@ -281,6 +297,75 @@ async function resolveContentEngineSourceId(rawId) {
   return source?._id ? String(source._id) : null;
 }
 
+// POST /api/pdf/analyze — extract text + Gemini classification only (no DB save)
+router.post(
+  '/pdf/analyze',
+  verifyToken,
+  authorizeRoles('teacher', 'admin', 'super-admin'),
+  (req, res, next) => {
+    pdfUpload.single('file')(req, res, (err) => {
+      if (!err) return next();
+      return res.status(400).json({ success: false, message: err.message || 'PDF upload failed' });
+    });
+  },
+  async (req, res) => {
+    try {
+      if (!req.file) {
+        return res.status(400).json({ success: false, message: 'PDF file is required' });
+      }
+
+      let extractedText = '';
+      try {
+        extractedText = await extractTextFromPdfBuffer(fs.readFileSync(req.file.path));
+      } catch {
+        try {
+          fs.unlink(req.file.path, () => {});
+        } catch {
+          // ignore
+        }
+        return res.status(400).json({ success: false, message: 'Invalid or corrupted PDF. Could not extract text.' });
+      }
+
+      try {
+        fs.unlink(req.file.path, () => {});
+      } catch {
+        // ignore
+      }
+
+      if (!extractedText || !extractedText.trim()) {
+        return res.status(400).json({ success: false, message: 'Empty extraction from PDF. Upload a readable educational PDF.' });
+      }
+
+      let analysis;
+      try {
+        analysis = await classifyPdfContentWithFallback(extractedText, {});
+      } catch (geminiError) {
+        return res.status(502).json({
+          success: false,
+          message: `Gemini analysis failed: ${geminiError.message || 'Unknown error'}`,
+        });
+      }
+
+      return res.json({
+        success: true,
+        data: {
+          classLabel: toClassLabel(analysis.classLabel || ''),
+          subject: analysis.subject || '',
+          topic: analysis.topic || '',
+          subTopic: analysis.subTopic || '',
+          suggestedToolSlug: resolveToolSlugFromLabel(analysis.bestMatchingToolLabel) || '',
+          suggestedToolLabel: analysis.bestMatchingToolLabel || '',
+          confidence: analysis.subjectTopicValidation?.confidence || 0,
+          analysisMode: analysis.analysisMode || 'gemini',
+        },
+      });
+    } catch (error) {
+      console.error('PDF analyze error:', error);
+      return res.status(500).json({ success: false, message: error?.message || 'Internal server error' });
+    }
+  },
+);
+
 // POST /api/pdf/upload
 router.post(
   '/pdf/upload',
@@ -304,6 +389,9 @@ router.post(
       }
       if (!subject || !classInput || !chapter) {
         return res.status(400).json({ success: false, message: 'subject, class and chapter are required' });
+      }
+      if (!toolType || !String(toolType).trim()) {
+        return res.status(400).json({ success: false, message: 'toolType is required' });
       }
       if (!uploaderId) {
         console.error('AI PDF upload auth id missing:', {
@@ -342,32 +430,15 @@ router.post(
       }
 
       if (analysis.isFallback) {
-        const subjectMentioned = Boolean(analysis.fallbackValidation?.subjectMentioned);
-        const topicMentioned = Boolean(analysis.fallbackValidation?.topicMentioned);
-        if (!subjectMentioned || !topicMentioned) {
-          return res.status(400).json({
-            success: false,
-            message: 'PDF content does not appear to match selected subject/topic in fallback validation mode.',
-            data: {
-              selectedSubject: String(subject || '').trim(),
-              selectedTopic: String(topic || chapter || '').trim(),
-              subjectMentioned,
-              topicMentioned,
-            },
-          });
-        }
+        console.warn('[AI PDF] Using fallback analysis. Reason:', analysis.fallbackReason);
       }
 
-      const detectedToolSlug = resolveToolSlugFromLabel(analysis.bestMatchingToolLabel);
-      if (!detectedToolSlug || detectedToolSlug !== String(toolType || '').trim()) {
-        return res.status(400).json({
-          success: false,
-          message: 'Uploaded PDF does not match the selected tool type. Please upload correct content.',
-          data: {
-            selectedTool: getToolLabelFromSlug(String(toolType || '').trim()),
-            detectedTool: analysis.bestMatchingToolLabel || 'Unknown',
-          },
-        });
+      const resolvedToolSlug = String(toolType || '').trim();
+      const detectedToolSlug = resolveToolSlugFromLabel(analysis.bestMatchingToolLabel) || '';
+      if (detectedToolSlug && detectedToolSlug !== resolvedToolSlug) {
+        console.warn(
+          `[AI PDF] Tool override: user selected "${resolvedToolSlug}", Gemini detected "${detectedToolSlug}". Using user selection.`,
+        );
       }
 
       const selectedSubject = String(subject || '').trim();
@@ -384,64 +455,102 @@ router.post(
       const subjectMatched = subjectTopicMatch.subjectMatched;
       const topicMatched = subjectTopicMatch.topicMatched;
       if (!subjectMatched || !topicMatched) {
-        return res.status(400).json({
-          success: false,
-          message: 'Uploaded PDF content does not match selected subject/topic. Please upload correct content.',
-          data: {
-            selectedSubject,
-            detectedSubject: detectedSubject || 'Unknown',
-            selectedTopic,
-            detectedTopic: detectedTopic || 'Unknown',
-            geminiReason: subjectTopicMatch.reason || 'No reason returned by Gemini.',
-            geminiConfidence: subjectTopicMatch.confidence,
-          },
-        });
+        console.warn(
+          `[AI PDF] Subject/topic mismatch detected but proceeding with user selection. Selected: ${selectedSubject}/${selectedTopic}, Detected: ${detectedSubject}/${detectedTopic}`,
+        );
       }
 
       let structuredValidation = validateToolSpecificStructuredContent(
-        detectedToolSlug,
+        resolvedToolSlug,
         analysis.structuredContent,
         analysis.contentType,
         extractedText,
       );
-      if (!structuredValidation.valid && detectedToolSlug === 'worksheet-mcq-generator') {
+
+      const needsRegeneration =
+        !structuredValidation.valid ||
+        analysis.structuredContentNeedsRegeneration ||
+        analysis.isFallback ||
+        ALWAYS_REGENERATE_STRUCTURED_TOOLS.has(resolvedToolSlug);
+
+      if (needsRegeneration) {
+        console.log(`[AI PDF] Regenerating structured content for tool: ${resolvedToolSlug}`);
         try {
-          const regenerated = await regenerateStructuredContentForTool(extractedText, { toolType: detectedToolSlug });
+          const regenerated = await regenerateStructuredContentForTool(extractedText, {
+            toolType: resolvedToolSlug,
+            subject: String(subject || '').trim(),
+            classLabel: toClassLabel(classInput),
+            topic: String(topic || chapter || '').trim(),
+            subTopic: String(subTopic || '').trim(),
+          });
           structuredValidation = validateToolSpecificStructuredContent(
-            detectedToolSlug,
+            resolvedToolSlug,
             regenerated.structuredContent,
             regenerated.contentType || analysis.contentType,
             extractedText,
           );
-          if (structuredValidation.valid) {
-            analysis.structuredContent = structuredValidation.normalizedStructuredContent || regenerated.structuredContent;
-            analysis.contentType = structuredValidation.normalizedType || regenerated.contentType || analysis.contentType;
+          if (structuredValidation.valid || structuredValidation.normalizedStructuredContent) {
+            analysis.structuredContent =
+              structuredValidation.normalizedStructuredContent || regenerated.structuredContent;
+            analysis.contentType =
+              structuredValidation.normalizedType || regenerated.contentType || analysis.contentType;
+          } else {
+            analysis.structuredContent = regenerated.structuredContent;
+            analysis.contentType = regenerated.contentType || analysis.contentType;
           }
-        } catch {
-          const deterministic = buildDeterministicQuestionSetFromText(extractedText, 20);
-          if (Array.isArray(deterministic.questions) && deterministic.questions.length > 0) {
-            structuredValidation = validateToolSpecificStructuredContent(
-              detectedToolSlug,
-              deterministic,
-              analysis.contentType || 'Worksheet',
-              extractedText,
-            );
-            if (structuredValidation.valid) {
-              analysis.structuredContent = structuredValidation.normalizedStructuredContent || deterministic;
-              analysis.contentType = structuredValidation.normalizedType || analysis.contentType || 'Worksheet';
+        } catch (regenError) {
+          console.error('[AI PDF] Regeneration failed:', regenError.message);
+          if (resolvedToolSlug === 'worksheet-mcq-generator') {
+            try {
+              const deterministic = buildDeterministicQuestionSetFromText(extractedText, 20);
+              if (Array.isArray(deterministic.questions) && deterministic.questions.length > 0) {
+                structuredValidation = validateToolSpecificStructuredContent(
+                  resolvedToolSlug,
+                  deterministic,
+                  analysis.contentType || 'Worksheet',
+                  extractedText,
+                );
+                if (structuredValidation.normalizedStructuredContent) {
+                  analysis.structuredContent = structuredValidation.normalizedStructuredContent;
+                  analysis.contentType =
+                    structuredValidation.normalizedType || analysis.contentType || 'Worksheet';
+                }
+              }
+            } catch {
+              // ignore
             }
           }
         }
       }
+
       if (!structuredValidation.valid) {
-        return res.status(400).json({
-          success: false,
-          message: structuredValidation.message || 'Unsupported content type for selected tool.',
-          data: {
-            selectedTool: getToolLabelFromSlug(String(toolType || '').trim()),
-            detectedContentType: String(analysis.contentType || '').trim(),
-          },
-        });
+        console.warn('[AI PDF] Validation still imperfect; saving best available:', structuredValidation.message);
+      }
+
+      const activityPersistMeta = {
+        subject: String(subject || '').trim(),
+        classLabel: toClassLabel(classInput),
+        topic: String(topic || chapter || analysis.topic || '').trim(),
+        subTopic: String(subTopic || analysis.subTopic || '').trim(),
+        chapter: String(chapter || '').trim(),
+      };
+
+      let finalStructured =
+        structuredValidation.normalizedStructuredContent ||
+        (analysis.structuredContent && typeof analysis.structuredContent === 'object' && !Array.isArray(analysis.structuredContent)
+          ? analysis.structuredContent
+          : {});
+      const finalContentType =
+        String(structuredValidation.normalizedType || analysis.contentType || '').trim() || 'Notes';
+
+      if (resolvedToolSlug === 'activity-project-generator') {
+        finalStructured = finalizeActivityStructuredContent(finalStructured, activityPersistMeta);
+        structuredValidation = validateToolSpecificStructuredContent(
+          resolvedToolSlug,
+          finalStructured,
+          finalContentType,
+          extractedText,
+        );
       }
 
       let uploaded = {
@@ -481,14 +590,10 @@ router.post(
         chapter: String(chapter).trim(),
         topic: String(topic || analysis.topic || chapter || '').trim(),
         subTopic: String(subTopic || analysis.subTopic || '').trim(),
-        toolType: String(toolType || detectedToolSlug || '').trim(),
-        contentType: String(structuredValidation.normalizedType || analysis.contentType || '').trim(),
-        structuredContent: structuredValidation.normalizedStructuredContent || analysis.structuredContent || {},
-        renderContent: buildRenderableContent(
-          String(toolType || detectedToolSlug || '').trim(),
-          String(structuredValidation.normalizedType || analysis.contentType || '').trim(),
-          structuredValidation.normalizedStructuredContent || analysis.structuredContent || {},
-        ),
+        toolType: resolvedToolSlug,
+        contentType: finalContentType,
+        structuredContent: finalStructured,
+        renderContent: buildRenderableContent(resolvedToolSlug, finalContentType, finalStructured),
         geminiDetected: {
           classLabel: String(analysis.classLabel || ''),
           subject: String(analysis.subject || ''),
@@ -500,7 +605,7 @@ router.post(
         analysisStatus: 'analyzed',
         approvalStatus: 'pending',
         validation: {
-          toolMatched: true,
+          toolMatched: Boolean(detectedToolSlug && resolvedToolSlug && detectedToolSlug === resolvedToolSlug),
           mismatchReason: analysis.isFallback ? String(analysis.fallbackReason || 'Fallback analysis mode') : '',
           subjectTopicMatched: Boolean(subjectMatched && topicMatched),
           subjectTopicReason: subjectTopicMatch.reason || '',
@@ -816,7 +921,17 @@ router.patch('/pdf/:id', verifyToken, authorizeRoles('admin', 'super-admin'), as
     };
     const nextTool = String(update.toolType || effectiveToolType || '').trim();
     const nextType = String(update.contentType || effectiveContentType || '').trim();
-    const nextStructured = update.structuredContent || structuredValidation.normalizedStructuredContent || effectiveStructuredContent || {};
+    let nextStructured = update.structuredContent || structuredValidation.normalizedStructuredContent || effectiveStructuredContent || {};
+    if (nextTool === 'activity-project-generator') {
+      nextStructured = finalizeActivityStructuredContent(nextStructured, {
+        subject: String(existing.subject || '').trim(),
+        classLabel: String(existing.classLabel || '').trim(),
+        topic: String((topic !== undefined ? topic : existing.topic) || '').trim(),
+        subTopic: String((subTopic !== undefined ? subTopic : existing.subTopic) || '').trim(),
+        chapter: String(existing.chapter || '').trim(),
+      });
+      update.structuredContent = nextStructured;
+    }
     update.renderContent = buildRenderableContent(nextTool, nextType, nextStructured);
     const doc = await AiContentEngineSource.findByIdAndUpdate(existing._id, update, { new: true }).lean();
     try {
@@ -857,7 +972,18 @@ router.patch('/pdf/:id/review', verifyToken, authorizeRoles('admin', 'super-admi
       update.approvedBy = resolveAuthenticatedUserId(req) || null;
       update.approvedAt = new Date();
       update.reviewComment = String(comment || '').trim();
-      update.structuredContent = structuredValidation.normalizedStructuredContent || existing.structuredContent;
+      let approvedStructured =
+        structuredValidation.normalizedStructuredContent || existing.structuredContent;
+      if (String(existing.toolType || '').trim() === 'activity-project-generator') {
+        approvedStructured = finalizeActivityStructuredContent(approvedStructured, {
+          subject: String(existing.subject || '').trim(),
+          classLabel: String(existing.classLabel || '').trim(),
+          topic: String(existing.topic || '').trim(),
+          subTopic: String(existing.subTopic || '').trim(),
+          chapter: String(existing.chapter || '').trim(),
+        });
+      }
+      update.structuredContent = approvedStructured;
       update.contentType = String(structuredValidation.normalizedType || existing.contentType || '').trim();
       update.renderContent = buildRenderableContent(
         String(existing.toolType || '').trim(),
@@ -881,7 +1007,18 @@ router.patch('/pdf/:id/review', verifyToken, authorizeRoles('admin', 'super-admi
       }
       update.toolType = reassignedTool;
       update.contentType = String(structuredValidation.normalizedType || existing.contentType || '').trim();
-      update.structuredContent = structuredValidation.normalizedStructuredContent || existing.structuredContent;
+      let reassignStructured =
+        structuredValidation.normalizedStructuredContent || existing.structuredContent;
+      if (reassignedTool === 'activity-project-generator') {
+        reassignStructured = finalizeActivityStructuredContent(reassignStructured, {
+          subject: String(existing.subject || '').trim(),
+          classLabel: String(existing.classLabel || '').trim(),
+          topic: String(existing.topic || '').trim(),
+          subTopic: String(existing.subTopic || '').trim(),
+          chapter: String(existing.chapter || '').trim(),
+        });
+      }
+      update.structuredContent = reassignStructured;
       update.renderContent = buildRenderableContent(
         reassignedTool,
         String(update.contentType || existing.contentType || '').trim(),

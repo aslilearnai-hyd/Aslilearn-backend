@@ -1,5 +1,6 @@
 const DEFAULT_GEMINI_MODEL = 'gemini-2.5-flash';
-const DEFAULT_FALLBACKS = 'gemini-1.5-flash,gemini-1.5-pro,gemini-2.5-flash-lite,gemini-2.0-flash';
+/** Skip gemini-1.5-* on v1beta (404 on generateContent). */
+const DEFAULT_FALLBACKS = 'gemini-2.5-flash-lite,gemini-2.0-flash,gemini-2.5-flash';
 
 export const getRouterConfig = () => {
   const apiKey = String(process.env.VIDYA_AI_GEMINI_API_KEY || process.env.GEMINI_API_KEY || '').trim();
