@@ -118,6 +118,16 @@ if (envResult.error) {
 }
 
 const app = express();
+// Behind nginx / DO load balancer Express sees X-Forwarded-For — required for express-rate-limit & req.ip
+if (process.env.TRUST_PROXY === 'false' || process.env.TRUST_PROXY === '0') {
+  // explicit opt-out for local bare-metal
+} else if (
+  process.env.TRUST_PROXY === 'true' ||
+  process.env.TRUST_PROXY === '1' ||
+  process.env.NODE_ENV === 'production'
+) {
+  app.set('trust proxy', 1);
+}
 const PORT = process.env.PORT || 5000;
 initPdfProcessingQueue();
 
