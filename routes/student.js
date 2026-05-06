@@ -4612,7 +4612,24 @@ router.get('/teacher-work-diary', async (req, res) => {
 // Proxy file download for student content URLs (avoids browser CORS issues)
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-function downloadWithNodeHttp(targetUrl, timeoutMs = 35000, redirectCount = 0) {
+/** NCERT / many government PDF hosts block or slow datacenter egress; browser fetch often works. */
+function isBrowserDirectPdfHost(hostname) {
+  const h = String(hostname || '').toLowerCase();
+  if (!h) return false;
+  if (h === 'ncert.nic.in' || h.endsWith('.ncert.nic.in')) return true;
+  const extra = String(process.env.PDF_PROXY_REDIRECT_HOSTS || '')
+    .split(',')
+    .map((s) => s.trim().toLowerCase())
+    .filter(Boolean);
+  return extra.some((e) => h === e || h.endsWith(`.${e}`));
+}
+
+const PDF_FETCH_TIMEOUT_MS = Math.min(
+  Math.max(Number(process.env.PDF_PROXY_FETCH_TIMEOUT_MS) || 55000, 15000),
+  120000
+);
+
+function downloadWithNodeHttp(targetUrl, timeoutMs = PDF_FETCH_TIMEOUT_MS, redirectCount = 0) {
   return new Promise((resolve, reject) => {
     if (redirectCount > 5) {
       reject(new Error('Too many redirects while fetching remote file'));
@@ -4686,12 +4703,12 @@ function downloadWithNodeHttp(targetUrl, timeoutMs = 35000, redirectCount = 0) {
 async function fetchRemoteFileWithRetry(targetUrl, contextLabel) {
   const maxAttempts = 4;
   let lastError = null;
-  console.log(`[PDF_PROXY] start ${contextLabel}`, { targetUrl, maxAttempts });
+  const timeoutMs = PDF_FETCH_TIMEOUT_MS;
+  console.log(`[PDF_PROXY] start ${contextLabel}`, { targetUrl, maxAttempts, timeoutMs });
 
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 30000);
-    console.log(`[PDF_PROXY] attempt ${attempt}/${maxAttempts}`, { targetUrl, contextLabel });
+    const timeout = setTimeout(() => controller.abort(), timeoutMs);
 
     try {
       const upstream = await fetch(targetUrl, {
@@ -4701,17 +4718,11 @@ async function fetchRemoteFileWithRetry(targetUrl, contextLabel) {
           'Accept-Language': 'en-US,en;q=0.9',
           'Cache-Control': 'no-cache',
           Pragma: 'no-cache',
-          'User-Agent': 'Mozilla/5.0 ASLI-PDF-Proxy/1.0'
-        }
+          'User-Agent':
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        },
       });
       clearTimeout(timeout);
-      console.log(`[PDF_PROXY] upstream response`, {
-        targetUrl,
-        status: upstream.status,
-        ok: upstream.ok,
-        contentType: upstream.headers.get('content-type') || '',
-        attempt,
-      });
 
       if (!upstream.ok) {
         const shouldRetry = upstream.status >= 500 || upstream.status === 429;
@@ -4739,27 +4750,22 @@ async function fetchRemoteFileWithRetry(targetUrl, contextLabel) {
       clearTimeout(timeout);
       lastError = error;
       const code = error?.cause?.code || error?.code;
-      console.error(`[PDF_PROXY] fetch failed`, {
-        targetUrl,
-        attempt,
-        code: code || '',
-        name: error?.name || '',
-        message: error?.message || String(error),
-      });
+      const msg = error?.message || String(error);
+      if (attempt === maxAttempts) {
+        console.warn(`[PDF_PROXY] fetch failed (final)`, {
+          targetUrl,
+          attempt,
+          code: code || '',
+          message: msg,
+        });
+      }
       const retryableNetworkError = ['ECONNRESET', 'ETIMEDOUT', 'UND_ERR_CONNECT_TIMEOUT', 'UND_ERR_SOCKET'].includes(code);
       const retryableAbort = error?.name === 'AbortError';
       if (retryableNetworkError || retryableAbort) {
         try {
-          // Fallback path for environments where undici has transient TLS/DNS failures.
-          console.log(`[PDF_PROXY] trying node http fallback`, { targetUrl, attempt });
-          return await downloadWithNodeHttp(targetUrl, 35000);
+          return await downloadWithNodeHttp(targetUrl, timeoutMs);
         } catch (fallbackError) {
           lastError = fallbackError;
-          console.error(`[PDF_PROXY] node http fallback failed`, {
-            targetUrl,
-            attempt,
-            message: fallbackError?.message || String(fallbackError),
-          });
         }
       }
       if (attempt < maxAttempts && (retryableNetworkError || retryableAbort)) {
@@ -4770,7 +4776,13 @@ async function fetchRemoteFileWithRetry(targetUrl, contextLabel) {
     }
   }
 
-  throw lastError || new Error(`Failed to fetch ${contextLabel}`);
+  const err = lastError || new Error(`Failed to fetch ${contextLabel}`);
+  const c = err?.cause?.code || err?.code;
+  const m = String(err?.message || '');
+  if (c === 'UND_ERR_CONNECT_TIMEOUT' || m.includes('timeout') || m.includes('Timeout') || err?.name === 'AbortError') {
+    err.isUpstreamTimeout = true;
+  }
+  throw err;
 }
 
 router.get('/content-download', async (req, res) => {
@@ -4826,11 +4838,25 @@ router.get('/content-download', async (req, res) => {
     });
     res.send(buffer);
   } catch (error) {
-    console.error('Student content-download proxy error:', error);
-    const statusCode = error?.status && Number.isInteger(error.status) ? error.status : 500;
+    const isTimeout = error?.isUpstreamTimeout || String(error?.message || '').toLowerCase().includes('timeout');
+    if (isTimeout) {
+      console.warn('Student content-download proxy: upstream timeout', { message: error?.message });
+    } else {
+      console.error('Student content-download proxy error:', error);
+    }
+    const statusCode = error?.status && Number.isInteger(error.status)
+      ? error.status
+      : isTimeout
+        ? 504
+        : 500;
     res.status(statusCode).json({
       success: false,
-      message: statusCode === 500 ? 'Failed to download file' : `Failed to download file: ${statusCode}`
+      code: isTimeout ? 'UPSTREAM_TIMEOUT' : undefined,
+      message: isTimeout
+        ? 'The document host took too long to respond. Try again later or open the file in a new tab.'
+        : statusCode === 500
+          ? 'Failed to download file'
+          : `Failed to download file: ${statusCode}`,
     });
   }
 });
@@ -4869,6 +4895,14 @@ router.get('/content-preview', async (req, res) => {
       });
     }
 
+    // Let the browser load the PDF directly — avoids DO/datacenter blocks on sites like NCERT.
+    if (isBrowserDirectPdfHost(parsedUrl.hostname)) {
+      console.log('[PDF_PROXY] /content-preview 302 → browser (allowlisted host)', {
+        host: parsedUrl.hostname,
+      });
+      return res.redirect(302, parsedUrl.toString());
+    }
+
     const { buffer, upstreamType } = await fetchRemoteFileWithRetry(url, 'preview file');
     const looksLikePdf = buffer.length >= 4 && buffer.subarray(0, 4).toString('ascii') === '%PDF';
     const isPdf = looksLikePdf || upstreamType.toLowerCase().includes('application/pdf');
@@ -4891,11 +4925,27 @@ router.get('/content-preview', async (req, res) => {
     });
     res.send(buffer);
   } catch (error) {
-    console.error('Student content-preview proxy error:', error);
-    const statusCode = error?.status && Number.isInteger(error.status) ? error.status : 500;
+    const isTimeout = error?.isUpstreamTimeout || String(error?.message || '').toLowerCase().includes('timeout');
+    if (isTimeout) {
+      console.warn('Student content-preview proxy: upstream timeout', {
+        message: error?.message,
+      });
+    } else {
+      console.error('Student content-preview proxy error:', error);
+    }
+    const statusCode = error?.status && Number.isInteger(error.status)
+      ? error.status
+      : isTimeout
+        ? 504
+        : 500;
     res.status(statusCode).json({
       success: false,
-      message: statusCode === 500 ? 'Failed to preview file' : `Failed to preview file: ${statusCode}`
+      code: isTimeout ? 'UPSTREAM_TIMEOUT' : undefined,
+      message: isTimeout
+        ? 'The document host took too long to respond. Try opening the original link, or use Download.'
+        : statusCode === 500
+          ? 'Failed to preview file'
+          : `Failed to preview file: ${statusCode}`,
     });
   }
 });
