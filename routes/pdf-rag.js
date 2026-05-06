@@ -42,6 +42,23 @@ const router = express.Router();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+/** Matches express.json/urlencoded limit in index.js; raise nginx `client_max_body_size` if you increase this. */
+const AI_PDF_MAX_FILE_BYTES = 100 * 1024 * 1024;
+const AI_PDF_MAX_MB = Math.round(AI_PDF_MAX_FILE_BYTES / (1024 * 1024));
+
+function respondPdfUploadError(err, res) {
+  if (err?.code === 'LIMIT_FILE_SIZE') {
+    return res.status(400).json({
+      success: false,
+      message: `PDF file too large. Maximum size is ${AI_PDF_MAX_MB} MB.`,
+    });
+  }
+  return res.status(400).json({
+    success: false,
+    message: err?.message || 'PDF upload failed',
+  });
+}
+
 const pdfStorage = multer.diskStorage({
   destination: function destination(req, file, cb) {
     const uploadDir = path.join(__dirname, '../uploads/pdf-knowledge');
@@ -59,7 +76,7 @@ const pdfStorage = multer.diskStorage({
 
 const pdfUpload = multer({
   storage: pdfStorage,
-  limits: { fileSize: 50 * 1024 * 1024 },
+  limits: { fileSize: AI_PDF_MAX_FILE_BYTES },
   fileFilter: (req, file, cb) => {
     if (String(file.mimetype || '').includes('pdf')) return cb(null, true);
     return cb(new Error('Only PDF files are allowed'));
@@ -305,7 +322,7 @@ router.post(
   (req, res, next) => {
     pdfUpload.single('file')(req, res, (err) => {
       if (!err) return next();
-      return res.status(400).json({ success: false, message: err.message || 'PDF upload failed' });
+      return respondPdfUploadError(err, res);
     });
   },
   async (req, res) => {
@@ -374,10 +391,7 @@ router.post(
   (req, res, next) => {
     pdfUpload.single('file')(req, res, (err) => {
       if (!err) return next();
-      return res.status(400).json({
-        success: false,
-        message: err.message || 'PDF upload failed',
-      });
+      return respondPdfUploadError(err, res);
     });
   },
   async (req, res) => {
