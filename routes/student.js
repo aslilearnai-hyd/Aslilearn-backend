@@ -4627,4 +4627,60 @@ router.get('/content-download', async (req, res) => {
   }
 });
 
+// Proxy file preview for student content URLs (inline rendering in iframe/object)
+router.get('/content-preview', async (req, res) => {
+  try {
+    const { url, filename } = req.query;
+    if (!url || typeof url !== 'string') {
+      return res.status(400).json({
+        success: false,
+        message: 'Missing required url query parameter'
+      });
+    }
+
+    let parsedUrl;
+    try {
+      parsedUrl = new URL(url);
+    } catch {
+      return res.status(400).json({
+        success: false,
+        message: 'Invalid preview URL'
+      });
+    }
+
+    if (!['http:', 'https:'].includes(parsedUrl.protocol)) {
+      return res.status(400).json({
+        success: false,
+        message: 'Only HTTP/HTTPS preview URLs are supported'
+      });
+    }
+
+    const upstream = await fetch(url);
+    if (!upstream.ok) {
+      return res.status(upstream.status).json({
+        success: false,
+        message: `Failed to fetch preview file: ${upstream.status}`
+      });
+    }
+
+    const arrayBuffer = await upstream.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+    const upstreamType = upstream.headers.get('content-type') || 'application/octet-stream';
+    const safeFilename = typeof filename === 'string' && filename.trim()
+      ? filename.trim()
+      : decodeURIComponent(parsedUrl.pathname.split('/').pop() || 'preview');
+
+    res.setHeader('Content-Type', upstreamType);
+    res.setHeader('Content-Disposition', `inline; filename="${safeFilename.replace(/"/g, '')}"`);
+    res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+    res.send(buffer);
+  } catch (error) {
+    console.error('Student content-preview proxy error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to preview file'
+    });
+  }
+});
+
 export default router;
