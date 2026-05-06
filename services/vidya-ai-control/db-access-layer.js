@@ -185,8 +185,10 @@ export async function executeDynamicDbPlan({
   const base = cfg.baseFilter || {};
   const viewerOid = oid(viewerUserId);
   const selfScopeOr = [];
+  let hasViewerScopedFilter = false;
   const normalizedPlanFilters = asArray(plan.filters).flatMap((f) => {
     if (f?.value !== '__viewer__') return [f];
+    hasViewerScopedFilter = true;
     const field = String(f?.field || '');
     if (field === 'generatedBy') {
       const values = [String(viewerUserId)];
@@ -200,6 +202,15 @@ export async function executeDynamicDbPlan({
     }
     return [];
   });
+  // Super-admin identities are sometimes symbolic and may not map to User ObjectId.
+  // In that case, include metadata role fallback for "my generated content" queries.
+  if (
+    role === 'super-admin' &&
+    moduleKey === 'ai_tool_data' &&
+    hasViewerScopedFilter
+  ) {
+    selfScopeOr.push({ 'metadata.createdByRole': 'super-admin' });
+  }
   const fromPlan = toMongoFilter(normalizedPlanFilters, allowedFields);
   const scoped = adminScopeFilter({ role, viewerUserId, moduleKey, allowedFields });
   if (scoped.__scopeError) return { ok: false, error: scoped.__scopeError };
