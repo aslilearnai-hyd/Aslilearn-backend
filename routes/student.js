@@ -1,6 +1,8 @@
 import express from 'express';
 import http from 'http';
 import https from 'https';
+import fs from 'fs/promises';
+import path from 'path';
 import mongoose from 'mongoose';
 import User from '../models/User.js';
 import Video from '../models/Video.js';
@@ -4576,6 +4578,31 @@ router.get('/teacher-work-diary', async (req, res) => {
 
 // Proxy file download for student content URLs (avoids browser CORS issues)
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const LOCAL_PDF_MIRROR_DIR = '/var/www/ASLI-STUD-BACK/uploads/pdfs';
+
+function extractPdfNameFromUrl(rawUrl) {
+  try {
+    const parsed = new URL(rawUrl);
+    const candidate = decodeURIComponent(parsed.pathname.split('/').pop() || '').trim();
+    return candidate.toLowerCase().endsWith('.pdf') ? path.basename(candidate) : '';
+  } catch {
+    return '';
+  }
+}
+
+async function tryReadMirroredPdf(rawUrl) {
+  const pdfName = extractPdfNameFromUrl(rawUrl);
+  if (!pdfName) return null;
+  const localPath = path.join(LOCAL_PDF_MIRROR_DIR, pdfName);
+  try {
+    const buffer = await fs.readFile(localPath);
+    if (!buffer || buffer.length === 0) return null;
+    console.log('[PDF_PROXY] using mirrored local pdf', { sourceUrl: rawUrl, localPath, bytes: buffer.length });
+    return { buffer, upstreamType: 'application/pdf' };
+  } catch {
+    return null;
+  }
+}
 
 function downloadWithNodeHttp(targetUrl, timeoutMs = 35000, redirectCount = 0) {
   return new Promise((resolve, reject) => {
@@ -4770,7 +4797,11 @@ router.get('/content-download', async (req, res) => {
       });
     }
 
-    const { buffer, upstreamType } = await fetchRemoteFileWithRetry(url, 'download file');
+    let fetched = await tryReadMirroredPdf(url);
+    if (!fetched) {
+      fetched = await fetchRemoteFileWithRetry(url, 'download file');
+    }
+    const { buffer, upstreamType } = fetched;
     const looksLikePdf = buffer.length >= 4 && buffer.subarray(0, 4).toString('ascii') === '%PDF';
     const isPdf = looksLikePdf || upstreamType.toLowerCase().includes('application/pdf');
     const safeFilename = typeof filename === 'string' && filename.trim()
@@ -4832,7 +4863,11 @@ router.get('/content-preview', async (req, res) => {
       });
     }
 
-    const { buffer, upstreamType } = await fetchRemoteFileWithRetry(url, 'preview file');
+    let fetched = await tryReadMirroredPdf(url);
+    if (!fetched) {
+      fetched = await fetchRemoteFileWithRetry(url, 'preview file');
+    }
+    const { buffer, upstreamType } = fetched;
     const looksLikePdf = buffer.length >= 4 && buffer.subarray(0, 4).toString('ascii') === '%PDF';
     const isPdf = looksLikePdf || upstreamType.toLowerCase().includes('application/pdf');
     const safeFilename = typeof filename === 'string' && filename.trim()
