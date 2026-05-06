@@ -29,6 +29,7 @@ import {
 } from '../utils/advancedExamAnalytics.js';
 import { normalizeSchoolBoard } from '../constants/boards.js';
 import { dedupeExamResultRows } from '../utils/dedupe-exam-results.js';
+import { buildAdaptiveLearningPayload } from '../services/student-adaptive-learning-service.js';
 
 const router = express.Router();
 
@@ -1381,6 +1382,23 @@ router.get('/asli-prep-content', async (req, res) => {
     console.error('❌ Error fetching Asli Prep content:', error);
     console.error('Error stack:', error.stack);
     res.status(500).json({ success: false, message: 'Failed to fetch content', error: error.message });
+  }
+});
+
+// AI-style adaptive learning: weak topics from performance + real DB content only
+router.get('/adaptive-learning', async (req, res) => {
+  try {
+    const data = await buildAdaptiveLearningPayload(req.userId);
+    return res.json({
+      success: true,
+      data,
+    });
+  } catch (error) {
+    console.error('❌ adaptive-learning error:', error);
+    return res.status(500).json({
+      success: false,
+      message: error?.message || 'Failed to build adaptive learning recommendations',
+    });
   }
 });
 
