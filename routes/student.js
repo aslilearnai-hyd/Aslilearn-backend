@@ -4667,49 +4667,15 @@ function downloadWithNodeHttp(targetUrl, timeoutMs = 35000, redirectCount = 0) {
 
 async function fetchRemoteFileWithRetry(targetUrl, contextLabel) {
   const maxAttempts = 4;
+  const httpTimeoutMs = Number(process.env.PDF_PROXY_HTTP_TIMEOUT_MS || 55000);
   let lastError = null;
-  console.log(`[PDF_PROXY] start ${contextLabel}`, { targetUrl, maxAttempts });
+  console.log(`[PDF_PROXY] start ${contextLabel}`, { targetUrl, maxAttempts, httpTimeoutMs });
 
+  // Prefer Node https (downloadWithNodeHttp): undici fetch() uses ~10s connect timeout and often fails sites like ncert.nic.in from cloud VPS.
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 30000);
-    console.log(`[PDF_PROXY] attempt ${attempt}/${maxAttempts}`, { targetUrl, contextLabel });
-
+    console.log(`[PDF_PROXY] attempt ${attempt}/${maxAttempts} node-https`, { targetUrl, contextLabel });
     try {
-      const upstream = await fetch(targetUrl, {
-        signal: controller.signal,
-        headers: {
-          Accept: 'application/pdf,application/octet-stream,*/*',
-          'Accept-Language': 'en-US,en;q=0.9',
-          'Cache-Control': 'no-cache',
-          Pragma: 'no-cache',
-          'User-Agent': 'Mozilla/5.0 ASLI-PDF-Proxy/1.0'
-        }
-      });
-      clearTimeout(timeout);
-      console.log(`[PDF_PROXY] upstream response`, {
-        targetUrl,
-        status: upstream.status,
-        ok: upstream.ok,
-        contentType: upstream.headers.get('content-type') || '',
-        attempt,
-      });
-
-      if (!upstream.ok) {
-        const shouldRetry = upstream.status >= 500 || upstream.status === 429;
-        if (shouldRetry && attempt < maxAttempts) {
-          await wait(500 * attempt);
-          continue;
-        }
-        const message = `Failed to fetch ${contextLabel}: ${upstream.status}`;
-        const error = new Error(message);
-        error.status = upstream.status;
-        throw error;
-      }
-
-      const arrayBuffer = await upstream.arrayBuffer();
-      const buffer = Buffer.from(arrayBuffer);
-      const upstreamType = upstream.headers.get('content-type') || 'application/octet-stream';
+      const { buffer, upstreamType } = await downloadWithNodeHttp(targetUrl, httpTimeoutMs);
       console.log(`[PDF_PROXY] success ${contextLabel}`, {
         targetUrl,
         bytes: buffer.length,
@@ -4718,41 +4684,56 @@ async function fetchRemoteFileWithRetry(targetUrl, contextLabel) {
       });
       return { buffer, upstreamType };
     } catch (error) {
-      clearTimeout(timeout);
       lastError = error;
       const code = error?.cause?.code || error?.code;
-      console.error(`[PDF_PROXY] fetch failed`, {
+      console.error(`[PDF_PROXY] node-https failed`, {
         targetUrl,
         attempt,
         code: code || '',
-        name: error?.name || '',
         message: error?.message || String(error),
       });
-      const retryableNetworkError = ['ECONNRESET', 'ETIMEDOUT', 'UND_ERR_CONNECT_TIMEOUT', 'UND_ERR_SOCKET'].includes(code);
-      const retryableAbort = error?.name === 'AbortError';
-      if (retryableNetworkError || retryableAbort) {
-        try {
-          // Fallback path for environments where undici has transient TLS/DNS failures.
-          console.log(`[PDF_PROXY] trying node http fallback`, { targetUrl, attempt });
-          return await downloadWithNodeHttp(targetUrl, 35000);
-        } catch (fallbackError) {
-          lastError = fallbackError;
-          console.error(`[PDF_PROXY] node http fallback failed`, {
-            targetUrl,
-            attempt,
-            message: fallbackError?.message || String(fallbackError),
-          });
-        }
-      }
-      if (attempt < maxAttempts && (retryableNetworkError || retryableAbort)) {
-        await wait(500 * attempt);
+      const retryable =
+        ['ECONNRESET', 'ETIMEDOUT', 'ENOTFOUND', 'ECONNREFUSED', 'UND_ERR_CONNECT_TIMEOUT'].includes(code) ||
+        String(error?.message || '').includes('timeout') ||
+        String(error?.message || '').includes('Remote fetch timeout');
+      if (attempt < maxAttempts && retryable) {
+        await wait(750 * attempt);
         continue;
       }
       break;
     }
   }
 
-  throw lastError || new Error(`Failed to fetch ${contextLabel}`);
+  // Fallback: fetch (undici) for edge cases HTTP client mishandles.
+  console.log(`[PDF_PROXY] last-resort fetch()`, { targetUrl, contextLabel });
+  const controller = new AbortController();
+  const abortMs = Math.min(Math.max(httpTimeoutMs, 15000), 60000);
+  const to = setTimeout(() => controller.abort(), abortMs);
+  try {
+    const upstream = await fetch(targetUrl, {
+      signal: controller.signal,
+      headers: {
+        Accept: 'application/pdf,application/octet-stream,*/*',
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Cache-Control': 'no-cache',
+        Pragma: 'no-cache',
+        'User-Agent': 'Mozilla/5.0 ASLI-PDF-Proxy/1.0',
+      },
+    });
+    clearTimeout(to);
+    if (!upstream.ok) {
+      const err = new Error(`Failed to fetch ${contextLabel}: ${upstream.status}`);
+      err.status = upstream.status;
+      throw err;
+    }
+    const arrayBuffer = await upstream.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+    const upstreamType = upstream.headers.get('content-type') || 'application/octet-stream';
+    return { buffer, upstreamType };
+  } catch (e) {
+    clearTimeout(to);
+    throw lastError || e;
+  }
 }
 
 router.get('/content-download', async (req, res) => {
