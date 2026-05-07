@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 import PDFDocument from 'pdfkit';
 import AiToolGeneration from '../models/AiToolGeneration.js';
 import AIGeneratorRecord from '../models/AIGeneratorRecord.js';
+import AiToolTopic from '../models/AiToolTopic.js';
 import { generateTeacherTool } from '../services/gemini-service.js';
 
 function normalizeText(value) {
@@ -582,5 +583,43 @@ export async function generatePDF(req, res) {
       success: false,
       message: 'Failed to generate PDF.',
     });
+  }
+}
+
+export async function getManagedTopicTaxonomy(req, res) {
+  try {
+    const role = req.user?.role;
+    if (!['super-admin', 'teacher', 'student', 'admin'].includes(role)) {
+      return res.status(403).json({ success: false, message: 'Access denied.' });
+    }
+
+    const board = normalizeText(req.query.board);
+    const classLabel = normalizeText(req.query.classLabel || req.query.classId);
+    const subject = normalizeText(req.query.subject || req.query.subjectId);
+    const topicName = normalizeText(req.query.topicName || req.query.topicId);
+
+    const filter = { isActive: true };
+    if (board) filter.board = board;
+    if (classLabel) filter.classLabel = classLabel;
+    if (subject) filter.subject = subject;
+    if (topicName) filter.topicName = topicName;
+
+    const rows = await AiToolTopic.find(filter)
+      .select('board classLabel subject label topicName subTopic')
+      .lean();
+
+    const unique = (arr) => [...new Set(arr.filter(Boolean))].sort((a, b) => a.localeCompare(b));
+
+    return res.json({
+      success: true,
+      data: {
+        topics: unique(rows.map((r) => r.topicName)),
+        subTopics: unique(rows.map((r) => r.subTopic)),
+        labels: unique(rows.map((r) => r.label)),
+      },
+    });
+  } catch (error) {
+    console.error('getManagedTopicTaxonomy error:', error);
+    return res.status(500).json({ success: false, message: 'Failed to fetch managed topics.' });
   }
 }

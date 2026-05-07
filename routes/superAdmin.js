@@ -45,6 +45,13 @@ import {
   deleteAiToolGenerationById,
 } from '../controllers/aiToolGenerationsController.js';
 import {
+  listAiToolTopics,
+  createAiToolTopic,
+  updateAiToolTopic,
+  deleteAiToolTopic,
+  listAiToolTopicOptions,
+} from '../controllers/aiToolTopicsController.js';
+import {
   getAllBoards,
   getBoardDashboard,
   createSubject,
@@ -383,6 +390,13 @@ router.get('/ai-tool-generations/export-bundle', exportAiToolGenerationsBundle);
 router.get('/ai-tool-generations/document/:id', getAiToolGenerationById);
 router.patch('/ai-tool-generations/document/:id', updateAiToolGenerationById);
 router.delete('/ai-tool-generations/document/:id', deleteAiToolGenerationById);
+
+// AI tool topics management (Super Admin taxonomy control)
+router.get('/ai-tool-topics/options', listAiToolTopicOptions);
+router.get('/ai-tool-topics', listAiToolTopics);
+router.post('/ai-tool-topics', createAiToolTopic);
+router.put('/ai-tool-topics/:id', updateAiToolTopic);
+router.delete('/ai-tool-topics/:id', deleteAiToolTopic);
 
 // Admin Management
 router.get('/admins', getAllAdmins);
