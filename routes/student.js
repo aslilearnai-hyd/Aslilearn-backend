@@ -20,7 +20,6 @@ import {
   getAllStudentRankings
 } from '../controllers/studentRankingController.js';
 import geminiService, { generateStudentTool } from '../services/gemini-service.js';
-import { runHybridRagQuery } from '../services/pdf-rag-service.js';
 import { fetchRotatingAiToolData } from '../services/ai-tool-rotation-service.js';
 import {
   advancedAnalyticsMockData,
@@ -4321,9 +4320,8 @@ router.post('/ai/tool', async (req, res) => {
       });
     }
 
-    // Import hardcoded content service
-    const { getHardcodedContent, VALID_SUBJECTS } = await import('../services/hardcoded-content-service.js');
-    const { formatHardcodedContent } = await import('../utils/hardcoded-formatter.js');
+    // Validate subjects against supported curriculum set.
+    const { VALID_SUBJECTS } = await import('../services/hardcoded-content-service.js');
 
     // For IIT-6, use IIT subjects (Physics, Chemistry, Maths, Biology)
     // For other classes, use standard VALID_SUBJECTS
@@ -4352,6 +4350,76 @@ router.post('/ai/tool', async (req, res) => {
     // For tools where topic is optional, pass empty string if not provided
     const topicForFetch = (toolType === 'personalized-revision-planner' || toolType === 'chapter-summary-creator') ? (topic || '') : topic;
 
+    const tryParseJsonPayload = (content) => {
+      const text = String(content || '').trim();
+      if (!text) return null;
+      try {
+        return JSON.parse(text);
+      } catch {
+        return null;
+      }
+    };
+
+    const parsePositiveInt = (value) => {
+      const num = Number.parseInt(String(value ?? ''), 10);
+      return Number.isFinite(num) && num > 0 ? num : null;
+    };
+
+    const trimTextQuestions = (content, maxQuestions) => {
+      if (!maxQuestions) return content;
+      const lines = String(content || '').split(/\r?\n/);
+      const questionStartRegex = /^\s*(?:Q(?:uestion)?\s*\d+[\).:\-]|(?:\d+)[\).]\s+)/i;
+      const starts = [];
+      for (let i = 0; i < lines.length; i += 1) {
+        if (questionStartRegex.test(lines[i] || '')) starts.push(i);
+      }
+      if (starts.length <= maxQuestions) return content;
+      const cutoffLine = starts[maxQuestions];
+      return lines.slice(0, cutoffLine).join('\n').trim();
+    };
+
+    const limitQuestionsInJson = (parsed, maxQuestions) => {
+      if (!maxQuestions || parsed == null) return parsed;
+      if (Array.isArray(parsed)) return parsed.slice(0, maxQuestions);
+      if (Array.isArray(parsed.questions)) return { ...parsed, questions: parsed.questions.slice(0, maxQuestions) };
+      if (Array.isArray(parsed.mcqs)) return { ...parsed, mcqs: parsed.mcqs.slice(0, maxQuestions) };
+      if (Array.isArray(parsed.items)) return { ...parsed, items: parsed.items.slice(0, maxQuestions) };
+      return parsed;
+    };
+
+    const applyQuestionLimitToContent = (activeToolType, content, requestedCount) => {
+      const limitedToolTypes = new Set([
+        'exam-question-paper-generator',
+        'worksheet-mcq-generator',
+      ]);
+      if (!limitedToolTypes.has(String(activeToolType || ''))) return String(content || '');
+      const maxQuestions = parsePositiveInt(requestedCount);
+      if (!maxQuestions) return String(content || '');
+      const text = String(content || '').trim();
+      if (!text) return text;
+      try {
+        const parsed = JSON.parse(text);
+        const trimmed = limitQuestionsInJson(parsed, maxQuestions);
+        return JSON.stringify(trimmed, null, 2);
+      } catch {
+        return trimTextQuestions(text, maxQuestions);
+      }
+    };
+
+    const buildRawDataForTool = (activeToolType, content) => {
+      const parsed = tryParseJsonPayload(content);
+      if (!parsed) return null;
+      if (activeToolType === 'activity-project-generator') {
+        if (Array.isArray(parsed)) return { activities: parsed };
+        if (Array.isArray(parsed?.activities)) return { activities: parsed.activities };
+        if (Array.isArray(parsed?.projects)) return { activities: parsed.projects };
+        if (Array.isArray(parsed?.data?.activities)) return { activities: parsed.data.activities };
+        if (Array.isArray(parsed?.data?.projects)) return { activities: parsed.data.projects };
+        return null;
+      }
+      return parsed;
+    };
+
     // Priority 1: Super Admin AI Tool Data (exact class+subject+topic+subtopic) with rotation.
     const { doc: adminDoc, matchType, totalCandidates, selectedIndex } = await fetchRotatingAiToolData({
       classLabel: classDisplay,
@@ -4361,10 +4429,18 @@ router.post('/ai/tool', async (req, res) => {
       toolName: toolType,
     });
     if (adminDoc) {
+      const originalContent = String(adminDoc.generatedContent || adminDoc.content || '').trim();
+      const content = applyQuestionLimitToContent(
+        toolType,
+        originalContent,
+        params.questionCount ?? req.body?.questionCount,
+      );
+      const rawData = buildRawDataForTool(toolType, content);
       return res.json({
         success: true,
         data: {
-          content: String(adminDoc.generatedContent || adminDoc.content || '').trim(),
+          content,
+          ...(rawData ? { rawData } : {}),
           toolType,
           metadata: {
             classNumber: isIIT6 ? 'IIT-6' : classNum,
@@ -4384,107 +4460,12 @@ router.post('/ai/tool', async (req, res) => {
       });
     }
     
-    console.log(`🔍 Fetching hardcoded content for student tool ${toolType} - ${classDisplay}, ${finalSubject}, ${topicForFetch || 'N/A'}`);
-
-    const hardcodedData = await getHardcodedContent(classNumber, finalSubject, topicForFetch, toolType, params);
-    
-    if (!hardcodedData) {
-      const topicMsg = topic ? `Topic: ${topic}` : 'all content';
-      console.log(`❌ No hardcoded content found for ${toolType} - ${classDisplay}, ${finalSubject}, ${topicMsg}`);
-      const ragResult = await runHybridRagQuery({
-        query: `${toolType} for ${classDisplay}, ${finalSubject}. ${topic || ''}`,
-        subject: finalSubject,
-        classLabel: classDisplay,
-        toolType,
-        role: 'student',
-        cacheKey: `${toolType}|${topic || ''}`,
-        metadata: { userId, sourceHint: 'student-tools' },
-      });
-      return res.json({
-        success: true,
-        data: {
-          content: ragResult.content,
-          toolType,
-          metadata: {
-            classNumber: isIIT6 ? 'IIT-6' : classNum,
-            subject: finalSubject,
-            topic,
-            ...params,
-            generatedAt: new Date(),
-            userId,
-            source: ragResult.source,
-            sourceLabel: ragResult.source === 'rag' ? 'RAG PDF Context' : 'AI Fallback',
-            chunksUsed: ragResult.chunksUsed || 0,
-            citations: ragResult.citations || [],
-          },
-        },
-      });
-    }
-
-    console.log(`✅ Found hardcoded content for student tool ${toolType}`);
-    
-    // Format hardcoded content to Markdown
-    const formattedContent = formatHardcodedContent(hardcodedData, toolType, {
-      subject: finalSubject,
-      topic,
-      classNumber: isIIT6 ? 'IIT-6' : classNum,
-      ...params
+    return res.status(404).json({
+      success: false,
+      code: 'AI_TOOL_DATA_NOT_FOUND',
+      message:
+        'No matching AI Tool Data found for the selected class, subject, topic, and sub topic. Please ask Super Admin to add this mapping in AI Tool Generations.',
     });
-
-    // Prepare response data
-    const responseData = {
-      success: true,
-      data: {
-        content: formattedContent,
-        toolType,
-        metadata: {
-          classNumber: isIIT6 ? 'IIT-6' : classNum,
-          subject: finalSubject,
-          topic,
-          ...params,
-          generatedAt: new Date(),
-          userId,
-          source: 'hardcoded',
-          sourceLabel: 'Pre-generated Content'
-        }
-      }
-    };
-    
-    // Add raw data for special viewers
-    if (toolType === 'short-notes-summaries-maker' && hardcodedData && hardcodedData.notes) {
-      responseData.data.rawData = {
-        notes: hardcodedData.notes
-      };
-    }
-    
-    if (toolType === 'concept-mastery-helper' && hardcodedData && hardcodedData.concepts) {
-      responseData.data.rawData = {
-        concepts: hardcodedData.concepts
-      };
-    }
-    
-    if (toolType === 'flashcard-generator' && hardcodedData && hardcodedData.flashcards) {
-      responseData.data.rawData = {
-        flashcards: hardcodedData.flashcards
-      };
-    }
-    
-    if (toolType === 'lesson-planner' && hardcodedData) {
-      responseData.data.rawData = {
-        lessons: hardcodedData.lessons || hardcodedData.lesson_plans || [],
-        book: hardcodedData.book || '',
-        class: hardcodedData.class || classNum.toString()
-      };
-    }
-    
-    if (toolType === 'exam-question-paper-generator' && hardcodedData && (hardcodedData.questions || hardcodedData.sections)) {
-      responseData.data.rawData = {
-        questions: hardcodedData.questions,
-        sections: hardcodedData.sections
-      };
-    }
-    
-    return res.json(responseData);
   } catch (error) {
     console.error(`Create student tool (${req.body.toolType}) error:`, error);
     res.status(500).json({

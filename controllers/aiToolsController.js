@@ -3,9 +3,7 @@ import {
   getAvailableContentForTopic,
   VALID_SUBJECTS
 } from '../services/hardcoded-content-service.js';
-import { generateTeacherTool } from '../services/gemini-service.js';
 import AiToolGeneration from '../models/AiToolGeneration.js';
-import { runHybridRagQuery } from '../services/pdf-rag-service.js';
 import { fetchRotatingAiToolData } from '../services/ai-tool-rotation-service.js';
 
 function teacherToolDisplayName(toolType) {
@@ -64,6 +62,94 @@ function normalizeTopicSub(val) {
   return String(val || '')
     .trim()
     .replace(/\s+/g, ' ');
+}
+
+function tryParseJsonPayload(content) {
+  const text = String(content || '').trim();
+  if (!text) return null;
+  try {
+    return JSON.parse(text);
+  } catch {
+    return null;
+  }
+}
+
+function buildRawDataForTool(toolType, content) {
+  const parsed = tryParseJsonPayload(content);
+  if (!parsed) return null;
+
+  if (toolType === 'activity-project-generator') {
+    if (Array.isArray(parsed)) return { activities: parsed };
+    if (Array.isArray(parsed?.activities)) return { activities: parsed.activities };
+    if (Array.isArray(parsed?.projects)) return { activities: parsed.projects };
+    if (Array.isArray(parsed?.data?.activities)) return { activities: parsed.data.activities };
+    if (Array.isArray(parsed?.data?.projects)) return { activities: parsed.data.projects };
+    return null;
+  }
+
+  return parsed;
+}
+
+function parsePositiveInt(value) {
+  const num = Number.parseInt(String(value ?? ''), 10);
+  return Number.isFinite(num) && num > 0 ? num : null;
+}
+
+function trimTextQuestions(content, maxQuestions) {
+  if (!maxQuestions) return content;
+  const lines = String(content || '').split(/\r?\n/);
+  const questionStartRegex = /^\s*(?:Q(?:uestion)?\s*\d+[\).:\-]|(?:\d+)[\).]\s+)/i;
+  const starts = [];
+  for (let i = 0; i < lines.length; i += 1) {
+    if (questionStartRegex.test(lines[i] || '')) starts.push(i);
+  }
+  if (starts.length <= maxQuestions) return content;
+  const cutoffLine = starts[maxQuestions];
+  return lines.slice(0, cutoffLine).join('\n').trim();
+}
+
+function limitQuestionsInJson(parsed, maxQuestions) {
+  if (!maxQuestions || parsed == null) return parsed;
+
+  if (Array.isArray(parsed)) {
+    return parsed.slice(0, maxQuestions);
+  }
+
+  if (Array.isArray(parsed.questions)) {
+    return { ...parsed, questions: parsed.questions.slice(0, maxQuestions) };
+  }
+
+  if (Array.isArray(parsed.mcqs)) {
+    return { ...parsed, mcqs: parsed.mcqs.slice(0, maxQuestions) };
+  }
+
+  if (Array.isArray(parsed.items)) {
+    return { ...parsed, items: parsed.items.slice(0, maxQuestions) };
+  }
+
+  return parsed;
+}
+
+function applyQuestionLimitToContent(toolType, content, requestedCount) {
+  const limitedToolTypes = new Set([
+    'exam-question-paper-generator',
+    'worksheet-mcq-generator',
+  ]);
+  if (!limitedToolTypes.has(String(toolType || ''))) return String(content || '');
+
+  const maxQuestions = parsePositiveInt(requestedCount);
+  if (!maxQuestions) return String(content || '');
+
+  const text = String(content || '').trim();
+  if (!text) return text;
+
+  try {
+    const parsed = JSON.parse(text);
+    const trimmed = limitQuestionsInJson(parsed, maxQuestions);
+    return JSON.stringify(trimmed, null, 2);
+  } catch {
+    return trimTextQuestions(text, maxQuestions);
+  }
 }
 
 const VALID_AI_TOOL_CONTENT_OR = [
@@ -263,27 +349,8 @@ export const createTeacherTool = async (req, res) => {
       params.subTopic != null && params.subTopic !== '' ? String(params.subTopic) : '',
     );
 
-    const llmParams = {
-      ...params,
-      subject: finalSubject,
-      topic: topicForStore || (params.topic ?? ''),
-      gradeLevel: classDisplay,
-    };
-
-    if (toolType === 'concept-mastery-helper') {
-      llmParams.concept = topicForStore || params.concept || llmParams.topic;
-    }
-
-    const n = (v) => {
-      const x = Number(v);
-      return Number.isFinite(x) ? x : undefined;
-    };
-    if (params.questionCount != null) llmParams.questionCount = n(params.questionCount) ?? params.questionCount;
-    if (params.duration != null) llmParams.duration = n(params.duration) ?? params.duration;
-    if (params.cardCount != null) llmParams.cardCount = n(params.cardCount) ?? params.cardCount;
-
     console.log(
-      `🤖 LLM teacher tool: ${toolType} — ${classDisplay}, ${finalSubject}, topic: ${topicForStore || '(optional)'}`,
+      `📦 AI Tool Data lookup: ${toolType} — ${classDisplay}, ${finalSubject}, topic: ${topicForStore || '(optional)'}`,
     );
 
     const { doc: cachedDoc, matchType, totalCandidates, selectedIndex } = await fetchRotatingAiToolData({
@@ -296,10 +363,17 @@ export const createTeacherTool = async (req, res) => {
     if (cachedDoc) {
       const cachedContent = String(cachedDoc.generatedContent || cachedDoc.content || '').trim();
       if (cachedContent) {
+        const limitedContent = applyQuestionLimitToContent(
+          toolType,
+          cachedContent,
+          params.questionCount ?? req.body?.questionCount,
+        );
+        const rawData = buildRawDataForTool(toolType, limitedContent);
         return res.json({
           success: true,
           data: {
-            content: cachedContent,
+            content: limitedContent,
+            ...(rawData ? { rawData } : {}),
             toolType,
             metadata: {
               classNumber: isIIT6 ? 'IIT-6' : classNum,
@@ -308,8 +382,8 @@ export const createTeacherTool = async (req, res) => {
               ...params,
               generatedAt: new Date(),
               teacherId,
-              source: 'cache',
-              sourceLabel: 'Previously generated content',
+              source: 'ai-tool-data',
+              sourceLabel: 'AI Tool Data',
               matchType,
               totalCandidates,
               selectedIndex,
@@ -318,130 +392,11 @@ export const createTeacherTool = async (req, res) => {
         });
       }
     }
-
-    let generatedContent;
-    let ragMeta = null;
-    let fromStoredFallback = false;
-    let storedFallbackMatch = null;
-    try {
-      const ragInput = `${teacherToolDisplayName(toolType)} for ${classDisplay}, ${finalSubject}, ${topicForStore || ''}. ${JSON.stringify(params)}`;
-      const ragResult = await runHybridRagQuery({
-        query: ragInput,
-        subject: finalSubject,
-        classLabel: classDisplay,
-        toolType,
-        role: 'teacher',
-        cacheKey: `${toolType}|${topicForStore}|${subtopicForStore}`,
-        metadata: { teacherId },
-      });
-
-      if (ragResult?.source === 'rag' && ragResult?.content) {
-        generatedContent = ragResult.content;
-        ragMeta = {
-          chunksUsed: ragResult.chunksUsed || 0,
-          citations: ragResult.citations || [],
-        };
-      } else {
-        generatedContent = await generateTeacherTool(toolType, llmParams);
-      }
-      if (
-        generatedContent == null ||
-        (typeof generatedContent === 'string' && generatedContent.trim().length === 0)
-      ) {
-        throw new Error('AI returned empty response');
-      }
-    } catch (err) {
-      console.error('LLM teacher tool error:', err);
-      const { matchedDoc, matchedBy } = await findStoredAiToolContent(
-        classDisplay,
-        finalSubject,
-        topicForStore,
-        subtopicForStore,
-        toolType,
-        { preferSuperAdmin: true },
-      );
-      if (matchedDoc) {
-        const raw =
-          (matchedDoc.generatedContent && String(matchedDoc.generatedContent).trim()) ||
-          (matchedDoc.content && String(matchedDoc.content).trim()) ||
-          '';
-        if (raw.length > 0) {
-          generatedContent = raw;
-          fromStoredFallback = true;
-          storedFallbackMatch = matchedBy;
-          console.log(
-            `📦 AI unavailable — serving stored content (${matchedBy}) id=${String(matchedDoc._id)}`,
-          );
-        }
-      }
-      if (!generatedContent) {
-        return res.status(503).json({
-          success: false,
-          code: 'AI_UNAVAILABLE_NO_FALLBACK',
-          fallbackAttempted: true,
-          message:
-            'AI service is unavailable and no previously generated content was found for this class, subject, and topic. Super Admin can add content in AI tool generations, or try again after fixing the API key / quota.',
-        });
-      }
-    }
-
-    const display = teacherToolDisplayName(toolType);
-    const header = `## ${display}\n\n**Class:** ${isIIT6 ? 'IIT-6' : classNum}\n**Subject:** ${finalSubject}${topicForStore ? `\n**Topic:** ${topicForStore}` : ''}\n\n---\n\n`;
-
-    const fullContent = fromStoredFallback
-      ? String(generatedContent || '')
-      : header + (generatedContent || '');
-    const sectionValue =
-      params.section != null && String(params.section).trim() !== ''
-        ? String(params.section).trim()
-        : params.className != null && String(params.className).trim() !== ''
-          ? String(params.className).trim()
-          : '';
-    if (!fromStoredFallback) {
-      try {
-        await AiToolGeneration.create({
-          toolName: toolType,
-          toolDisplayName: display,
-          classLabel: classDisplay,
-          subject: finalSubject,
-          topic: topicForStore,
-          subtopic: subtopicForStore,
-          section: sectionValue,
-          content: fullContent,
-          generatedContent: fullContent,
-          teacherId: teacherId || undefined,
-          metadata: {
-            source: 'llm',
-            classNumber: isIIT6 ? 'IIT-6' : classNum,
-            section: sectionValue,
-          },
-        });
-      } catch (persistErr) {
-        console.error('AiToolGeneration persist error (non-fatal):', persistErr);
-      }
-    }
-
-    return res.json({
-      success: true,
-      data: {
-        content: fullContent,
-        toolType,
-        metadata: {
-          classNumber: isIIT6 ? 'IIT-6' : classNum,
-          subject: finalSubject,
-          topic: topicForStore,
-          ...params,
-          generatedAt: new Date(),
-          teacherId,
-          source: fromStoredFallback ? 'fallback-db' : 'llm',
-          sourceLabel: fromStoredFallback
-            ? 'Previously generated content (AI unavailable)'
-            : 'AI Generated',
-          aiUnavailable: fromStoredFallback,
-          fallbackMatch: storedFallbackMatch || undefined,
-          ...(ragMeta || {}),
-        },
-      },
+    return res.status(404).json({
+      success: false,
+      code: 'AI_TOOL_DATA_NOT_FOUND',
+      message:
+        'No matching AI Tool Data found for the selected class, subject, topic, and sub topic. Please ask Super Admin to add this mapping in AI Tool Generations.',
     });
   } catch (error) {
     console.error('Create teacher tool error:', error);

@@ -5,11 +5,79 @@ function normalize(value) {
   return String(value || '').trim().replace(/\s+/g, ' ');
 }
 
+function escapeRegex(value) {
+  return String(value || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function exactCaseInsensitive(value) {
+  const normalized = normalize(value);
+  if (!normalized) return '';
+  return { $regex: `^${escapeRegex(normalized)}$`, $options: 'i' };
+}
+
+function looseNormalize(value) {
+  return String(value || '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/gi, ' ')
+    .trim()
+    .replace(/\s+/g, ' ');
+}
+
+function looseIncludesEitherWay(a, b) {
+  const x = looseNormalize(a);
+  const y = looseNormalize(b);
+  if (!x || !y) return false;
+  return x.includes(y) || y.includes(x);
+}
+
+function hasUsableContent(doc) {
+  const text = String(doc?.generatedContent || doc?.content || '').trim();
+  if (!text) return false;
+  if (/no activities\/projects found|no projects available|no data available/i.test(text)) {
+    return false;
+  }
+  return true;
+}
+
+function normalizeClassLabel(value) {
+  const v = normalize(value);
+  if (!v) return v;
+  if (v === 'IIT-6' || v === 'Class-6-IIT') return 'IIT-6';
+  const digits = v.match(/\d+/)?.[0];
+  if (digits) return `Class ${digits}`;
+  return v;
+}
+
+function subjectVariants(value) {
+  const v = normalize(value);
+  if (!v) return [];
+  const lower = v.toLowerCase();
+  if (lower === 'maths' || lower === 'mathematics' || lower === 'math') {
+    return ['Maths', 'Mathematics'];
+  }
+  if (lower === 'social science' || lower === 'social studies' || lower === 'sst') {
+    return ['Social Science', 'Social Studies'];
+  }
+  return [v];
+}
+
 function validContentFilter() {
   return {
     $or: [
-      { generatedContent: { $exists: true, $nin: ['', null] } },
-      { content: { $exists: true, $nin: ['', null] } },
+      {
+        generatedContent: {
+          $exists: true,
+          $nin: ['', null],
+          $not: /no activities\/projects found|no projects available|no data available/i,
+        },
+      },
+      {
+        content: {
+          $exists: true,
+          $nin: ['', null],
+          $not: /no activities\/projects found|no projects available|no data available/i,
+        },
+      },
     ],
   };
 }
@@ -18,18 +86,19 @@ function approvedFilter() {
   return {
     $or: [
       { reviewStatus: 'approved' },
+      { reviewStatus: 'draft' },
+      { reviewStatus: 'under_review' },
       { reviewStatus: { $exists: false } },
     ],
   };
 }
 
-function baseFilter({ classLabel, subject, topic, subtopic }) {
+function baseFilter({ classLabel, subject }) {
+  const subjectSet = subjectVariants(subject);
   return {
     sourceType: { $ne: 'ai_pdf' },
-    classLabel: normalize(classLabel),
-    subject: normalize(subject),
-    topic: normalize(topic),
-    subtopic: normalize(subtopic),
+    classLabel: normalizeClassLabel(classLabel),
+    ...(subjectSet.length > 1 ? { subject: { $in: subjectSet } } : { subject: subjectSet[0] || normalize(subject) }),
     ...validContentFilter(),
     ...approvedFilter(),
   };
@@ -74,25 +143,78 @@ export async function fetchRotatingAiToolData({
   subtopic,
   toolName = '',
 }) {
-  const bf = baseFilter({ classLabel, subject, topic, subtopic });
-  const exactToolFilter = normalize(toolName) ? { ...bf, toolName: normalize(toolName) } : bf;
+  const normalizedTopic = normalize(topic);
+  const normalizedSubtopic = normalize(subtopic);
+  const normalizedTool = normalize(toolName);
+  const bf = baseFilter({ classLabel, subject });
 
-  let docs = await AiToolGeneration.find(exactToolFilter).sort({ createdAt: 1 }).lean();
-  let matchType = normalize(toolName) ? 'exact-with-tool' : 'exact';
+  const topicFilter = normalizedTopic ? { topic: exactCaseInsensitive(normalizedTopic) } : { topic: '' };
+  const subtopicFilter = normalizedSubtopic ? { subtopic: exactCaseInsensitive(normalizedSubtopic) } : { subtopic: '' };
+  const exactFilter = { ...bf, ...topicFilter, ...subtopicFilter };
 
-  if (docs.length === 0 && normalize(toolName)) {
-    docs = await AiToolGeneration.find(bf).sort({ createdAt: 1 }).lean();
-    matchType = 'exact-without-tool';
+  const attempts = [];
+  if (normalizedTool) attempts.push({ matchType: 'exact-with-tool', filter: { ...exactFilter, toolName: normalizedTool } });
+  attempts.push({ matchType: 'exact-any-tool', filter: exactFilter });
+
+  if (!normalizedSubtopic && normalizedTopic) {
+    const topicOnlyFilter = { ...bf, topic: exactCaseInsensitive(normalizedTopic) };
+    if (normalizedTool) attempts.push({ matchType: 'topic-with-tool', filter: { ...topicOnlyFilter, toolName: normalizedTool } });
+    attempts.push({ matchType: 'topic-any-tool', filter: topicOnlyFilter });
   }
-  if (docs.length === 0) return { doc: null, matchType: null, totalCandidates: 0, selectedIndex: -1 };
 
-  const key = rotationKey({ classLabel, subject, topic, subtopic, toolName });
-  const idx = await nextCursorIndex(key, docs.length);
-  return {
-    doc: docs[idx] || docs[0],
-    matchType,
-    totalCandidates: docs.length,
-    selectedIndex: idx,
+  if (!normalizedSubtopic && !normalizedTopic) {
+    if (normalizedTool) attempts.push({ matchType: 'subject-with-tool', filter: { ...bf, toolName: normalizedTool } });
+    attempts.push({ matchType: 'subject-any-tool', filter: bf });
+  }
+
+  const selectByRotation = async (docs, matchType, keyToolName = normalizedTool) => {
+    const key = rotationKey({
+      classLabel,
+      subject,
+      topic: normalizedTopic,
+      subtopic: normalizedSubtopic,
+      toolName: keyToolName,
+    });
+    const idx = await nextCursorIndex(key, docs.length);
+    return {
+      doc: docs[idx] || docs[0],
+      matchType,
+      totalCandidates: docs.length,
+      selectedIndex: idx,
+    };
   };
+
+  for (const attempt of attempts) {
+    const docs = (await AiToolGeneration.find(attempt.filter).sort({ createdAt: 1 }).lean()).filter(hasUsableContent);
+    if (docs.length > 0) {
+      return selectByRotation(
+        docs,
+        attempt.matchType,
+        attempt.matchType.includes('any-tool') ? '' : normalizedTool,
+      );
+    }
+  }
+
+  // Final fallback: fuzzy match topic/subtopic text among same class+subject (+tool when available).
+  const fuzzyBases = [];
+  if (normalizedTool) fuzzyBases.push({ matchType: 'fuzzy-with-tool', filter: { ...bf, toolName: normalizedTool }, keyTool: normalizedTool });
+  fuzzyBases.push({ matchType: 'fuzzy-any-tool', filter: bf, keyTool: '' });
+
+  for (const base of fuzzyBases) {
+    const pool = (await AiToolGeneration.find(base.filter).sort({ createdAt: -1 }).limit(500).lean()).filter(hasUsableContent);
+    if (!pool.length) continue;
+
+    const fuzzyMatches = pool.filter((doc) => {
+      const topicOk = !normalizedTopic || looseIncludesEitherWay(doc.topic || '', normalizedTopic);
+      const subtopicOk = !normalizedSubtopic || looseIncludesEitherWay(doc.subtopic || '', normalizedSubtopic);
+      return topicOk && subtopicOk;
+    });
+
+    if (fuzzyMatches.length > 0) {
+      return selectByRotation(fuzzyMatches, base.matchType, base.keyTool);
+    }
+  }
+
+  return { doc: null, matchType: null, totalCandidates: 0, selectedIndex: -1 };
 }
 
