@@ -1,6 +1,8 @@
 import mongoose from 'mongoose';
 import AiToolTopic from '../models/AiToolTopic.js';
 
+const NATURAL_COLLATOR = new Intl.Collator('en', { numeric: true, sensitivity: 'base' });
+
 function normalizeText(value) {
   return String(value || '').trim().replace(/\s+/g, ' ');
 }
@@ -44,7 +46,12 @@ export async function listAiToolTopics(req, res) {
     }
 
     const [items, total] = await Promise.all([
-      AiToolTopic.find(filter).sort({ updatedAt: -1 }).skip(skip).limit(limit).lean(),
+      AiToolTopic.find(filter)
+        .sort({ board: 1, classLabel: 1, subject: 1, label: 1, topicName: 1, subTopic: 1, _id: 1 })
+        .collation({ locale: 'en', numericOrdering: true, strength: 2 })
+        .skip(skip)
+        .limit(limit)
+        .lean(),
       AiToolTopic.countDocuments(filter),
     ]);
 
@@ -187,7 +194,7 @@ export async function listAiToolTopicOptions(req, res) {
       .select('board classLabel subject label topicName subTopic')
       .lean();
 
-    const unique = (arr) => [...new Set(arr.filter(Boolean))].sort((a, b) => a.localeCompare(b));
+    const unique = (arr) => [...new Set(arr.filter(Boolean))].sort((a, b) => NATURAL_COLLATOR.compare(a, b));
 
     return res.json({
       success: true,

@@ -9,6 +9,34 @@ function normalizeText(value) {
   return String(value || '').trim().replace(/\s+/g, ' ');
 }
 
+function escapeRegex(value) {
+  return String(value || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function normalizeClassLabelForTopics(classLabel) {
+  const normalized = normalizeText(classLabel);
+  if (!normalized) return '';
+  if (normalized === 'IIT-6' || normalized === 'Class-6-IIT') return 'IIT-6';
+  const digits = normalized.match(/\d+/)?.[0];
+  if (digits) return `Class ${digits}`;
+  return normalized;
+}
+
+function buildClassLabelFilter(classLabel) {
+  const normalized = normalizeClassLabelForTopics(classLabel);
+  if (!normalized) return null;
+  if (normalized === 'IIT-6') return 'IIT-6';
+  const digits = normalized.match(/\d+/)?.[0];
+  if (!digits) return normalized;
+  return { $in: [`Class ${digits}`, digits, `-${digits}`] };
+}
+
+function buildCaseInsensitiveExactFilter(value) {
+  const normalized = normalizeText(value);
+  if (!normalized) return null;
+  return { $regex: `^${escapeRegex(normalized)}$`, $options: 'i' };
+}
+
 function getRequestUserName(req) {
   return (
     req.user?.fullName ||
@@ -599,10 +627,20 @@ export async function getManagedTopicTaxonomy(req, res) {
     const topicName = normalizeText(req.query.topicName || req.query.topicId);
 
     const filter = { isActive: true };
-    if (board) filter.board = board;
-    if (classLabel) filter.classLabel = classLabel;
-    if (subject) filter.subject = subject;
-    if (topicName) filter.topicName = topicName;
+    if (board) {
+      if (board.toUpperCase() === 'IIT') {
+        filter.board = 'IIT';
+      } else {
+        // Any non-IIT selection should use school-board topics from AiToolTopic.
+        filter.board = { $ne: 'IIT' };
+      }
+    }
+    const classFilter = buildClassLabelFilter(classLabel);
+    const subjectFilter = buildCaseInsensitiveExactFilter(subject);
+    const topicFilter = buildCaseInsensitiveExactFilter(topicName);
+    if (classLabel) filter.classLabel = classFilter || normalizeClassLabelForTopics(classLabel);
+    if (subject) filter.subject = subjectFilter || subject;
+    if (topicName) filter.topicName = topicFilter || topicName;
 
     const rows = await AiToolTopic.find(filter)
       .select('board classLabel subject label topicName subTopic')
