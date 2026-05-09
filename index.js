@@ -119,16 +119,20 @@ if (envResult.error) {
 
 const app = express();
 
+// Match server log default: NODE unset → behave as production (see app.listen log).
+const nodeEnvEffective = process.env.NODE_ENV || 'production';
+
 // Nginx sets X-Forwarded-* — required for express-rate-limit & req.ip.
-// Prefer values from .env file: PM2/shell may set TRUST_PROXY before Node starts, and dotenv
-// does not override existing process.env keys, so process.env alone can stay wrong.
+// 1) Prefer .env file (parsed): PM2 may inject TRUST_PROXY before Node; dotenv won't override it.
+// 2) In production, if .env has no TRUST_* keys, do not read process.env (ignore PM2 false).
+// 3) Unset NODE_ENV must not force trust off (previously NODE_ENV!==='production' → hop '0').
 const parsedEnv = !envResult.error && envResult.parsed ? envResult.parsed : {};
 let rawTrust = '';
 if (Object.hasOwn(parsedEnv, 'TRUST_PROXY_HOPS')) {
   rawTrust = String(parsedEnv.TRUST_PROXY_HOPS ?? '').trim();
 } else if (Object.hasOwn(parsedEnv, 'TRUST_PROXY')) {
   rawTrust = String(parsedEnv.TRUST_PROXY ?? '').trim();
-} else {
+} else if (nodeEnvEffective !== 'production') {
   rawTrust =
     process.env.TRUST_PROXY_HOPS?.trim() ||
     process.env.TRUST_PROXY?.trim() ||
@@ -136,7 +140,7 @@ if (Object.hasOwn(parsedEnv, 'TRUST_PROXY_HOPS')) {
 }
 let proxyHops = rawTrust;
 if (proxyHops === '') {
-  proxyHops = process.env.NODE_ENV === 'production' ? '1' : '0';
+  proxyHops = nodeEnvEffective === 'production' ? '1' : '0';
 }
 if (proxyHops === 'false' || proxyHops === '0') {
   app.set('trust proxy', false);
@@ -144,7 +148,7 @@ if (proxyHops === 'false' || proxyHops === '0') {
   const n = Number(proxyHops);
   app.set('trust proxy', Number.isFinite(n) && n >= 1 ? Math.min(n, 5) : 1);
 }
-if (process.env.NODE_ENV === 'production') {
+if (nodeEnvEffective === 'production') {
   console.log('🔒 trust proxy:', app.get('trust proxy'));
 }
 
@@ -5936,5 +5940,5 @@ app.post('/api/lesson-plan/generate', async (req, res) => {
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`Server accessible at http://0.0.0.0:${PORT}`);
-  console.log(`Environment: ${process.env.NODE_ENV || 'production'}`);
+  console.log(`Environment: ${nodeEnvEffective}`);
 });
