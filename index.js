@@ -119,13 +119,33 @@ if (envResult.error) {
 
 const app = express();
 
-// Nginx / load balancer sets X-Forwarded-* — required for express-rate-limit & req.ip accuracy
-const proxyHops = process.env.TRUST_PROXY_HOPS ?? process.env.TRUST_PROXY ?? '1';
+// Nginx sets X-Forwarded-* — required for express-rate-limit & req.ip.
+// Prefer values from .env file: PM2/shell may set TRUST_PROXY before Node starts, and dotenv
+// does not override existing process.env keys, so process.env alone can stay wrong.
+const parsedEnv = !envResult.error && envResult.parsed ? envResult.parsed : {};
+let rawTrust = '';
+if (Object.hasOwn(parsedEnv, 'TRUST_PROXY_HOPS')) {
+  rawTrust = String(parsedEnv.TRUST_PROXY_HOPS ?? '').trim();
+} else if (Object.hasOwn(parsedEnv, 'TRUST_PROXY')) {
+  rawTrust = String(parsedEnv.TRUST_PROXY ?? '').trim();
+} else {
+  rawTrust =
+    process.env.TRUST_PROXY_HOPS?.trim() ||
+    process.env.TRUST_PROXY?.trim() ||
+    '';
+}
+let proxyHops = rawTrust;
+if (proxyHops === '') {
+  proxyHops = process.env.NODE_ENV === 'production' ? '1' : '0';
+}
 if (proxyHops === 'false' || proxyHops === '0') {
   app.set('trust proxy', false);
 } else {
   const n = Number(proxyHops);
   app.set('trust proxy', Number.isFinite(n) && n >= 1 ? Math.min(n, 5) : 1);
+}
+if (process.env.NODE_ENV === 'production') {
+  console.log('🔒 trust proxy:', app.get('trust proxy'));
 }
 
 const PORT = process.env.PORT || 5000;
