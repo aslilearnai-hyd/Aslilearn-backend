@@ -49,12 +49,8 @@ function toOptionRows(values) {
 function applyBoardFilter(filter, board) {
   const normalizedBoard = normalizeText(board);
   if (!normalizedBoard) return;
-  if (normalizedBoard.toUpperCase() === 'IIT') {
-    filter.board = 'IIT';
-    return;
-  }
-  // Any non-IIT selection should resolve to school-board topics pool.
-  filter.board = { $ne: 'IIT' };
+  // Enforce strict board scoping so each UI shows only selected board data.
+  filter.board = normalizedBoard;
 }
 
 /** GET /api/curriculum/classes */

@@ -91,6 +91,8 @@ const toClassLabel = (classValue) => {
   return raw;
 };
 
+const normalizeBoard = (value) => String(value || '').trim().toUpperCase();
+
 const toUploadedByRole = (role) => {
   const normalized = String(role || '').trim().toLowerCase().replace(/_/g, '-');
   if (normalized === 'super-admin' || normalized === 'admin' || normalized === 'teacher') {
@@ -185,6 +187,7 @@ const syncPdfSourceToAiToolData = async (source) => {
     toolName: toolSlug,
     toolDisplayName: getToolLabelFromSlug(toolSlug) || toolSlug,
     sourceType: 'ai_pdf',
+    board: normalizeBoard(source.board || ''),
     classLabel: String(source.classLabel || '').trim(),
     subject: String(source.subject || '').trim(),
     topic: String(source.topic || source.chapter || '').trim(),
@@ -197,6 +200,7 @@ const syncPdfSourceToAiToolData = async (source) => {
     generatedBy: source.uploadedBy ?? null,
     status: String(source.processingStatus || 'pending'),
     metadata: {
+      board: normalizeBoard(source.board || ''),
       contentEngineSourceId: String(source._id),
       aiPdfSourceId: String(source._id),
       structuredContent: source.structuredContent,
@@ -234,6 +238,7 @@ function mapMasterPdfToListRow(doc) {
     _id: doc._id,
     originalName: doc.pdfFileName || m.originalName || '',
     fileUrl: doc.pdfFileUrl || '',
+    board: doc.board || m.board || '',
     subject: doc.subject,
     classLabel: doc.classLabel,
     chapter: doc.topic || '',
@@ -262,6 +267,7 @@ function mapSourcePdfToListRow(source) {
     _id: source._id,
     originalName: source.originalName || '',
     fileUrl: source.fileUrl || '',
+    board: normalizeBoard(source.board || ''),
     subject: source.subject,
     classLabel: source.classLabel,
     chapter: source.chapter || source.topic || '',
@@ -396,7 +402,7 @@ router.post(
   },
   async (req, res) => {
     try {
-      const { subject, class: classInput, chapter, topic, subTopic, toolType } = req.body;
+      const { board, subject, class: classInput, chapter, topic, subTopic, toolType } = req.body;
       const uploaderId = resolveAuthenticatedUserId(req);
       if (!req.file) {
         return res.status(400).json({ success: false, message: 'PDF file is required' });
@@ -599,6 +605,7 @@ router.post(
         storageKey: uploaded.storageKey,
         fileSize: req.file.size,
         mimeType: req.file.mimetype,
+        board: normalizeBoard(board),
         subject: String(subject).trim(),
         classLabel: toClassLabel(classInput),
         chapter: String(chapter).trim(),
@@ -764,10 +771,11 @@ router.post('/pdf/process', verifyToken, authorizeRoles('teacher', 'admin', 'sup
 // GET /api/pdf/list — masters in aitoolgenerations + legacy-only aicontentenginesources
 router.get('/pdf/list', verifyToken, authorizeRoles('teacher', 'admin', 'super-admin'), async (req, res) => {
   try {
-    const { subject, class: classInput, status } = req.query;
+    const { board, subject, class: classInput, status } = req.query;
     const page = Math.max(1, Number(req.query.page || 1));
     const limit = Math.max(1, Math.min(100, Number(req.query.limit || 20)));
     const filter = { sourceType: 'ai_pdf' };
+    if (board) filter.board = normalizeBoard(board);
     if (subject) filter.subject = String(subject).trim();
     if (classInput) filter.classLabel = toClassLabel(classInput);
     if (status) {
@@ -788,6 +796,7 @@ router.get('/pdf/list', verifyToken, authorizeRoles('teacher', 'admin', 'super-a
     ].map((id) => new mongoose.Types.ObjectId(id));
 
     const orphanFilter = {};
+    if (board) orphanFilter.board = normalizeBoard(board);
     if (subject) orphanFilter.subject = String(subject).trim();
     if (classInput) orphanFilter.classLabel = toClassLabel(classInput);
     if (status) orphanFilter.processingStatus = String(status).trim();

@@ -47,7 +47,16 @@ export async function listAiToolTopics(req, res) {
 
     const [items, total] = await Promise.all([
       AiToolTopic.find(filter)
-        .sort({ board: 1, classLabel: 1, subject: 1, label: 1, topicName: 1, subTopic: 1, _id: 1 })
+        .sort({
+          board: 1,
+          classLabel: 1,
+          subject: 1,
+          sortOrder: 1,
+          label: 1,
+          topicName: 1,
+          subTopic: 1,
+          _id: 1,
+        })
         .collation({ locale: 'en', numericOrdering: true, strength: 2 })
         .skip(skip)
         .limit(limit)
@@ -84,6 +93,10 @@ export async function createAiToolTopic(req, res) {
 
     const createdBy = req.userId || req.user?.id || null;
 
+    const sortOrderRaw = req.body.sortOrder;
+    const sortOrder =
+      sortOrderRaw != null && Number.isFinite(Number(sortOrderRaw)) ? Number(sortOrderRaw) : undefined;
+
     const item = await AiToolTopic.create({
       board,
       classLabel,
@@ -91,6 +104,7 @@ export async function createAiToolTopic(req, res) {
       label,
       topicName,
       subTopic,
+      sortOrder,
       createdBy,
       updatedBy: createdBy,
     });
@@ -178,6 +192,42 @@ export async function deleteAiToolTopic(req, res) {
   } catch (error) {
     console.error('deleteAiToolTopic error:', error);
     return res.status(500).json({ success: false, message: 'Failed to delete AI tool topic.' });
+  }
+}
+
+export async function bulkDeleteAiToolTopics(req, res) {
+  try {
+    const board = normalizeText(req.body.board);
+    const classLabel = normalizeText(req.body.classLabel);
+    const subject = normalizeText(req.body.subject);
+
+    if (!board) {
+      return res.status(400).json({ success: false, message: 'board is required.' });
+    }
+    if (!classLabel && !subject) {
+      return res.status(400).json({
+        success: false,
+        message: 'Provide classLabel and/or subject for bulk delete.',
+      });
+    }
+
+    const filter = { isActive: true, board };
+    if (classLabel) filter.classLabel = classLabel;
+    if (subject) filter.subject = subject;
+
+    const result = await AiToolTopic.updateMany(
+      filter,
+      { $set: { isActive: false, updatedBy: req.userId || req.user?.id || null } },
+    );
+
+    return res.json({
+      success: true,
+      message: 'AI tool topics deleted successfully.',
+      data: { matchedCount: result.matchedCount || 0, modifiedCount: result.modifiedCount || 0 },
+    });
+  } catch (error) {
+    console.error('bulkDeleteAiToolTopics error:', error);
+    return res.status(500).json({ success: false, message: 'Failed to bulk delete AI tool topics.' });
   }
 }
 

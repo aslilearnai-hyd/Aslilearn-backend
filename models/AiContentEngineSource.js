@@ -9,6 +9,7 @@ const aiContentEngineSourceSchema = new mongoose.Schema(
     storageKey: { type: String, default: '' },
     fileSize: { type: Number, default: 0 },
     mimeType: { type: String, default: 'application/pdf' },
+    board: { type: String, default: '', trim: true, index: true },
     subject: { type: String, required: true, trim: true },
     classLabel: { type: String, required: true, trim: true },
     chapter: { type: String, required: true, trim: true },

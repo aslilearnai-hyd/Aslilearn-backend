@@ -8,6 +8,8 @@ const aiToolTopicSchema = new mongoose.Schema(
     label: { type: String, default: '', trim: true, index: true },
     topicName: { type: String, required: true, trim: true, index: true },
     subTopic: { type: String, required: true, trim: true, index: true },
+    /** Seed / admin order for dropdowns (lower = earlier). Omit for legacy rows. */
+    sortOrder: { type: Number, index: true },
     isActive: { type: Boolean, default: true, index: true },
     createdBy: { type: mongoose.Schema.Types.Mixed, default: null },
     updatedBy: { type: mongoose.Schema.Types.Mixed, default: null },

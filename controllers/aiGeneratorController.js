@@ -65,6 +65,7 @@ function ensureSuperAdmin(req, res) {
  */
 function buildGeneratorMongoQuery({
   toolSlug,
+  board,
   className,
   subjectName,
   topicName,
@@ -93,6 +94,7 @@ function buildGeneratorMongoQuery({
     ],
   };
   if (toolSlug) query.toolName = toolSlug;
+  if (board) query.board = board;
   if (className) query.classLabel = className;
   if (subjectName) query.subject = subjectName;
   if (topicName !== undefined && topicName !== '') query.topic = topicName;
@@ -102,6 +104,7 @@ function buildGeneratorMongoQuery({
 
 function buildLegacyAiGeneratorsQuery({
   toolSlug,
+  board,
   className,
   subjectName,
   topicName,
@@ -109,6 +112,7 @@ function buildLegacyAiGeneratorsQuery({
 }) {
   const query = {};
   if (toolSlug) query.toolSlug = toolSlug;
+  if (board) query.board = board;
   if (className) query.className = className;
   if (subjectName) query.subjectName = subjectName;
   if (topicName !== undefined && topicName !== '') query.topicName = topicName;
@@ -124,6 +128,7 @@ function mapLegacyAiGeneratorDoc(r) {
     _id: r._id,
     toolName: slug,
     toolDisplayName: display,
+    board: r.board || r?.metadata?.board || '',
     classLabel: r.className,
     subject: r.subjectName,
     topic: r.topicName || '',
@@ -151,9 +156,12 @@ function groupAiGeneratorRecords(items) {
     }
     const toolNode = toolMap.get(toolKey);
 
-    let classNode = toolNode.classes.find((x) => x.className === record.classLabel);
+    const boardName = record.board || record?.metadata?.board || '';
+    let classNode = toolNode.classes.find(
+      (x) => x.className === record.classLabel && String(x.boardName || '') === boardName,
+    );
     if (!classNode) {
-      classNode = { className: record.classLabel, subjects: [] };
+      classNode = { className: record.classLabel, boardName, subjects: [] };
       toolNode.classes.push(classNode);
     }
 
@@ -180,6 +188,7 @@ function groupAiGeneratorRecords(items) {
       _id: record._id,
       toolName: display,
       toolSlug: slug,
+      boardName,
       className: record.classLabel,
       subjectName: record.subject,
       topicName: record.topic || '',
@@ -198,6 +207,7 @@ export async function generateAndSaveContent(req, res) {
     if (!ensureSuperAdmin(req, res)) return;
 
     const toolSlug = normalizeText(req.body.toolSlug || req.body.toolType);
+    const board = normalizeText(req.body.board || req.body.boardName);
     const toolDisplayName = normalizeText(req.body.toolName);
     const className = normalizeText(req.body.className || req.body.classNumber);
     const subjectName = normalizeText(req.body.subjectName || req.body.subject);
@@ -235,6 +245,7 @@ export async function generateAndSaveContent(req, res) {
       toolName: toolSlug,
       toolDisplayName,
       sourceType: 'ai_generator',
+      board,
       classLabel: className,
       subject: subjectName,
       topic: topicName,
@@ -246,6 +257,7 @@ export async function generateAndSaveContent(req, res) {
       status: 'active',
       reviewStatus,
       metadata: {
+        board,
         createdByName: getRequestUserName(req),
         createdByRole: 'super-admin',
         extraParams: req.body.extraParams || {},
@@ -258,6 +270,7 @@ export async function generateAndSaveContent(req, res) {
       success: true,
       data: {
         ...lean,
+        board: lean.board || '',
         className: lean.classLabel,
         subjectName: lean.subject,
         topicName: lean.topic,
@@ -286,6 +299,7 @@ export async function getAllGeneratorRecords(req, res) {
     }
 
     const toolSlug = normalizeText(req.query.toolSlug);
+    const board = normalizeText(req.query.board);
     const className = normalizeText(req.query.className);
     const subjectName = normalizeText(req.query.subjectName);
     const topicName = normalizeText(req.query.topicName);
@@ -293,6 +307,7 @@ export async function getAllGeneratorRecords(req, res) {
 
     const mongoQuery = buildGeneratorMongoQuery({
       toolSlug,
+      board,
       className,
       subjectName,
       topicName,
@@ -300,6 +315,7 @@ export async function getAllGeneratorRecords(req, res) {
     });
     const legacyQuery = buildLegacyAiGeneratorsQuery({
       toolSlug,
+      board,
       className,
       subjectName,
       topicName,
@@ -627,14 +643,7 @@ export async function getManagedTopicTaxonomy(req, res) {
     const topicName = normalizeText(req.query.topicName || req.query.topicId);
 
     const filter = { isActive: true };
-    if (board) {
-      if (board.toUpperCase() === 'IIT') {
-        filter.board = 'IIT';
-      } else {
-        // Any non-IIT selection should use school-board topics from AiToolTopic.
-        filter.board = { $ne: 'IIT' };
-      }
-    }
+    if (board) filter.board = board;
     const classFilter = buildClassLabelFilter(classLabel);
     const subjectFilter = buildCaseInsensitiveExactFilter(subject);
     const topicFilter = buildCaseInsensitiveExactFilter(topicName);

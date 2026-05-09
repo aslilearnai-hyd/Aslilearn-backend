@@ -11,6 +11,7 @@ const aiToolGenerationSchema = new mongoose.Schema(
       default: 'legacy',
       index: true,
     },
+    board: { type: String, default: '', index: true },
     classLabel: { type: String, required: true, index: true },
     subject: { type: String, required: true, index: true },
     topic: { type: String, default: '' },
@@ -47,6 +48,7 @@ const aiToolGenerationSchema = new mongoose.Schema(
 );
 
 aiToolGenerationSchema.index({
+  board: 1,
   toolName: 1,
   classLabel: 1,
   subject: 1,

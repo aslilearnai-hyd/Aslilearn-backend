@@ -49,6 +49,7 @@ import {
   createAiToolTopic,
   updateAiToolTopic,
   deleteAiToolTopic,
+  bulkDeleteAiToolTopics,
   listAiToolTopicOptions,
 } from '../controllers/aiToolTopicsController.js';
 import {
@@ -395,6 +396,7 @@ router.delete('/ai-tool-generations/document/:id', deleteAiToolGenerationById);
 router.get('/ai-tool-topics/options', listAiToolTopicOptions);
 router.get('/ai-tool-topics', listAiToolTopics);
 router.post('/ai-tool-topics', createAiToolTopic);
+router.post('/ai-tool-topics/bulk-delete', bulkDeleteAiToolTopics);
 router.put('/ai-tool-topics/:id', updateAiToolTopic);
 router.delete('/ai-tool-topics/:id', deleteAiToolTopic);
 

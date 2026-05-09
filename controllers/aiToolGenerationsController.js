@@ -12,11 +12,13 @@ function previewFromContent(text, n = 220) {
 }
 
 function normalizeCombinedRecord(row) {
+  const board = row.board || row?.metadata?.board || '';
   return {
     _id: row._id,
     sourceType: row.sourceType,
     toolName: row.toolName ?? '',
     toolDisplayName: row.toolDisplayName ?? '',
+    board,
     classLabel: row.classLabel ?? '',
     subject: row.subject ?? '',
     topic: row.topic ?? '',
@@ -56,6 +58,7 @@ function mapLegacyAiGeneratorToCombined(doc) {
 async function loadCombinedRecords(match = {}) {
   const mongoFilter = {};
   if (match.toolName) mongoFilter.toolName = match.toolName;
+  if ('board' in match) mongoFilter.board = match.board ?? '';
   if ('classLabel' in match) mongoFilter.classLabel = match.classLabel ?? '';
   if ('subject' in match) mongoFilter.subject = match.subject ?? '';
   if ('topic' in match) mongoFilter.topic = match.topic ?? '';
@@ -70,6 +73,7 @@ async function loadCombinedRecords(match = {}) {
     AIGeneratorRecord.find({
       ...(match.toolName ? { toolSlug: match.toolName } : {}),
       ...('classLabel' in match ? { className: match.classLabel ?? '' } : {}),
+      ...('board' in match ? { board: match.board ?? '' } : {}),
       ...('subject' in match ? { subjectName: match.subject ?? '' } : {}),
       ...('topic' in match ? { topicName: match.topic ?? '' } : {}),
       ...('subtopic' in match ? { subtopicName: match.subtopic ?? '' } : {}),
@@ -115,6 +119,7 @@ export const listAiToolChildren = async (req, res) => {
     const q = req.query;
     const match = {};
     if ('toolName' in q) match.toolName = q.toolName;
+    if ('board' in q) match.board = q.board ?? '';
     if ('classLabel' in q) match.classLabel = q.classLabel ?? '';
     if ('subject' in q) match.subject = q.subject ?? '';
     if ('topic' in q) match.topic = q.topic ?? '';
@@ -197,7 +202,7 @@ export const listAiToolChildren = async (req, res) => {
 
 export const listAiToolRecords = async (req, res) => {
   try {
-    const { toolName, classLabel, subject, topic, subtopic, page = '1', limit = '25' } = req.query;
+    const { toolName, board, classLabel, subject, topic, subtopic, page = '1', limit = '25' } = req.query;
     if (!toolName || !('classLabel' in req.query) || !('subject' in req.query) || !('topic' in req.query) || !('subtopic' in req.query)) {
       return res.status(400).json({
         success: false,
@@ -212,6 +217,7 @@ export const listAiToolRecords = async (req, res) => {
       topic: topic ?? '',
       subtopic: subtopic ?? '',
     };
+    if ('board' in req.query) match.board = board ?? '';
 
     const p = Math.max(1, parseInt(page, 10) || 1);
     const lim = Math.min(100, Math.max(1, parseInt(limit, 10) || 25));
@@ -226,6 +232,7 @@ export const listAiToolRecords = async (req, res) => {
       toolName: d.toolName,
       toolDisplayName: d.toolDisplayName,
       classLabel: d.classLabel,
+      board: d.board || '',
       subject: d.subject,
       topic: d.topic,
       subtopic: d.subtopic,
@@ -407,6 +414,7 @@ export const exportAiToolGenerationsBundle = async (req, res) => {
   try {
     const match = {};
     if (req.query.toolName) match.toolName = req.query.toolName;
+    if ('board' in req.query) match.board = req.query.board ?? '';
     if ('classLabel' in req.query) match.classLabel = req.query.classLabel ?? '';
     if ('subject' in req.query) match.subject = req.query.subject ?? '';
     if ('topic' in req.query) match.topic = req.query.topic ?? '';
@@ -446,7 +454,9 @@ export const exportAiToolGenerationsBundle = async (req, res) => {
 
 export const getAiToolGenerationsMeta = async (req, res) => {
   try {
-    const rows = await loadCombinedRecords({});
+    const match = {};
+    if ('board' in req.query) match.board = req.query.board ?? '';
+    const rows = await loadCombinedRecords(match);
     const total = rows.length;
     const topicsCount = new Set(
       rows.map((r) => String(r.topic || '').trim()).filter((x) => x.length > 0),
