@@ -4,6 +4,7 @@ import AiToolGeneration from '../models/AiToolGeneration.js';
 import AIGeneratorRecord from '../models/AIGeneratorRecord.js';
 import AiToolTopic from '../models/AiToolTopic.js';
 import { generateTeacherTool } from '../services/gemini-service.js';
+import { boardMongoMatch, canonicalBoardLabel } from '../utils/board-label.js';
 
 function normalizeText(value) {
   return String(value || '').trim().replace(/\s+/g, ' ');
@@ -94,7 +95,7 @@ function buildGeneratorMongoQuery({
     ],
   };
   if (toolSlug) query.toolName = toolSlug;
-  if (board) query.board = board;
+  if (board) query.board = boardMongoMatch(board);
   if (className) query.classLabel = className;
   if (subjectName) query.subject = subjectName;
   if (topicName !== undefined && topicName !== '') query.topic = topicName;
@@ -112,7 +113,7 @@ function buildLegacyAiGeneratorsQuery({
 }) {
   const query = {};
   if (toolSlug) query.toolSlug = toolSlug;
-  if (board) query.board = board;
+  if (board) query.board = boardMongoMatch(board);
   if (className) query.className = className;
   if (subjectName) query.subjectName = subjectName;
   if (topicName !== undefined && topicName !== '') query.topicName = topicName;
@@ -128,7 +129,7 @@ function mapLegacyAiGeneratorDoc(r) {
     _id: r._id,
     toolName: slug,
     toolDisplayName: display,
-    board: r.board || r?.metadata?.board || '',
+    board: canonicalBoardLabel(r.board || r?.metadata?.board || ''),
     classLabel: r.className,
     subject: r.subjectName,
     topic: r.topicName || '',
@@ -156,7 +157,7 @@ function groupAiGeneratorRecords(items) {
     }
     const toolNode = toolMap.get(toolKey);
 
-    const boardName = record.board || record?.metadata?.board || '';
+    const boardName = canonicalBoardLabel(record.board || record?.metadata?.board || '');
     let classNode = toolNode.classes.find(
       (x) => x.className === record.classLabel && String(x.boardName || '') === boardName,
     );
@@ -207,7 +208,7 @@ export async function generateAndSaveContent(req, res) {
     if (!ensureSuperAdmin(req, res)) return;
 
     const toolSlug = normalizeText(req.body.toolSlug || req.body.toolType);
-    const board = normalizeText(req.body.board || req.body.boardName);
+    const board = canonicalBoardLabel(normalizeText(req.body.board || req.body.boardName));
     const toolDisplayName = normalizeText(req.body.toolName);
     const className = normalizeText(req.body.className || req.body.classNumber);
     const subjectName = normalizeText(req.body.subjectName || req.body.subject);
@@ -643,7 +644,7 @@ export async function getManagedTopicTaxonomy(req, res) {
     const topicName = normalizeText(req.query.topicName || req.query.topicId);
 
     const filter = { isActive: true };
-    if (board) filter.board = board;
+    if (board) filter.board = boardMongoMatch(board);
     const classFilter = buildClassLabelFilter(classLabel);
     const subjectFilter = buildCaseInsensitiveExactFilter(subject);
     const topicFilter = buildCaseInsensitiveExactFilter(topicName);

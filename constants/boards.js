@@ -31,6 +31,7 @@ export function resolveAdminStoredBoard(isAsliPrepExclusive, curriculumBoard) {
 
 /** Uppercase board if valid, otherwise ASLI_EXCLUSIVE_SCHOOLS */
 export function normalizeSchoolBoard(code) {
-  const u = String(code ?? '').toUpperCase().trim();
+  let u = String(code ?? '').toUpperCase().trim();
+  if (u === 'CBSC') u = 'CBSE';
   return VALID_SCHOOL_BOARDS.includes(u) ? u : 'ASLI_EXCLUSIVE_SCHOOLS';
 }

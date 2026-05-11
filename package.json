@@ -16,9 +16,9 @@
     "dev-server": "nodemon index.js",
     "server:minimal": "node server.js",
     "fix-user": "node fix-user-login.js",
-    "seed:ai-topics:class10-cbsc": "node scripts/seed-ai-tool-topics-class10-cbsc.js",
+    "seed:ai-topics:class10-cbse": "node scripts/seed-ai-tool-topics-class10-cbse.js",
     "seed:hindi-ai-topics-ncert": "node scripts/seed-hindi-ai-tool-topics-ncert-data.js",
-    "migrate:ai-tool-board-cbsc": "node scripts/migrate-ai-tool-board-to-cbsc.js"
+    "migrate:ai-tool-board-cbse": "node scripts/migrate-ai-tool-board-to-cbse.js"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1036.0",

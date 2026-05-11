@@ -8,7 +8,7 @@ const aiGeneratorRecordSchema = new mongoose.Schema(
     subjectName: { type: String, required: true, trim: true, index: true },
     topicName: { type: String, default: '', trim: true, index: true },
     subtopicName: { type: String, required: true, trim: true, index: true },
-    /** Matches curriculum board (e.g. CBSC); legacy rows may have been created before this field existed. */
+    /** Matches curriculum board (e.g. CBSE); legacy rows may have been created before this field existed. */
     board: { type: String, default: '', trim: true, index: true },
     generatedContent: { type: String, required: true, trim: true },
     pdfUrl: { type: String, default: '', trim: true },

@@ -4,6 +4,7 @@ import AIGeneratorRecord from '../models/AIGeneratorRecord.js';
 import AiContentEngineSource from '../models/AiContentEngineSource.js';
 import AiContentEngineChunk from '../models/AiContentEngineChunk.js';
 import { deleteFromConfiguredStorage } from '../services/cloud-storage.js';
+import { boardMongoMatch, canonicalBoardLabel } from '../utils/board-label.js';
 
 function previewFromContent(text, n = 220) {
   if (!text || typeof text !== 'string') return '';
@@ -12,7 +13,7 @@ function previewFromContent(text, n = 220) {
 }
 
 function normalizeCombinedRecord(row) {
-  const board = row.board || row?.metadata?.board || '';
+  const board = canonicalBoardLabel(row.board || row?.metadata?.board || '');
   return {
     _id: row._id,
     sourceType: row.sourceType,
@@ -37,6 +38,7 @@ function mapLegacyAiGeneratorToCombined(doc) {
     sourceType: 'ai_generator',
     toolName: doc.toolSlug || doc.toolName || '',
     toolDisplayName: doc.toolName || doc.toolSlug || '',
+    board: doc.board || '',
     classLabel: doc.className || '',
     subject: doc.subjectName || '',
     topic: doc.topicName || '',
@@ -58,7 +60,7 @@ function mapLegacyAiGeneratorToCombined(doc) {
 async function loadCombinedRecords(match = {}) {
   const mongoFilter = {};
   if (match.toolName) mongoFilter.toolName = match.toolName;
-  if ('board' in match) mongoFilter.board = match.board ?? '';
+  if ('board' in match) mongoFilter.board = boardMongoMatch(match.board ?? '');
   if ('classLabel' in match) mongoFilter.classLabel = match.classLabel ?? '';
   if ('subject' in match) mongoFilter.subject = match.subject ?? '';
   if ('topic' in match) mongoFilter.topic = match.topic ?? '';
@@ -73,7 +75,7 @@ async function loadCombinedRecords(match = {}) {
     AIGeneratorRecord.find({
       ...(match.toolName ? { toolSlug: match.toolName } : {}),
       ...('classLabel' in match ? { className: match.classLabel ?? '' } : {}),
-      ...('board' in match ? { board: match.board ?? '' } : {}),
+      ...('board' in match ? { board: boardMongoMatch(match.board ?? '') } : {}),
       ...('subject' in match ? { subjectName: match.subject ?? '' } : {}),
       ...('topic' in match ? { topicName: match.topic ?? '' } : {}),
       ...('subtopic' in match ? { subtopicName: match.subtopic ?? '' } : {}),
@@ -93,6 +95,7 @@ async function loadCombinedRecords(match = {}) {
       sourceType: st,
       toolName: d.toolName || '',
       toolDisplayName: d.toolDisplayName || '',
+      board: d.board || '',
       classLabel: d.classLabel || '',
       subject: d.subject || '',
       topic: d.topic || '',

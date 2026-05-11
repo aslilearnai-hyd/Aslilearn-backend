@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import AiToolTopic from '../models/AiToolTopic.js';
+import { boardMongoMatch, canonicalBoardLabel } from '../utils/board-label.js';
 
 const NATURAL_COLLATOR = new Intl.Collator('en', { numeric: true, sensitivity: 'base' });
 
@@ -17,7 +18,7 @@ function buildDisplayTopicName(label, topicName) {
 
 function buildFilters(query) {
   const filter = { isActive: true };
-  if (query.board) filter.board = normalizeText(query.board);
+  if (query.board) filter.board = boardMongoMatch(normalizeText(query.board));
   if (query.classLabel) filter.classLabel = normalizeText(query.classLabel);
   if (query.subject) filter.subject = normalizeText(query.subject);
   if (query.topicName) filter.topicName = normalizeText(query.topicName);
@@ -76,7 +77,7 @@ export async function listAiToolTopics(req, res) {
 
 export async function createAiToolTopic(req, res) {
   try {
-    const board = normalizeText(req.body.board);
+    const board = canonicalBoardLabel(normalizeText(req.body.board));
     const classLabel = normalizeText(req.body.classLabel);
     const subject = normalizeText(req.body.subject);
     const label = normalizeText(req.body.label || '');
@@ -138,7 +139,8 @@ export async function updateAiToolTopic(req, res) {
     const editableKeys = ['board', 'classLabel', 'subject', 'label', 'topicName', 'subTopic'];
     for (const key of editableKeys) {
       if (req.body[key] !== undefined) {
-        update[key] = normalizeText(req.body[key]);
+        const raw = normalizeText(req.body[key]);
+        update[key] = key === 'board' ? canonicalBoardLabel(raw) : raw;
       }
     }
 
@@ -211,7 +213,7 @@ export async function bulkDeleteAiToolTopics(req, res) {
       });
     }
 
-    const filter = { isActive: true, board };
+    const filter = { isActive: true, board: boardMongoMatch(board) };
     if (classLabel) filter.classLabel = classLabel;
     if (subject) filter.subject = subject;
 
@@ -235,7 +237,7 @@ export async function listAiToolTopicOptions(req, res) {
   try {
     const { board, classLabel, subject, topicName } = req.query;
     const filter = { isActive: true };
-    if (board) filter.board = normalizeText(board);
+    if (board) filter.board = boardMongoMatch(normalizeText(board));
     if (classLabel) filter.classLabel = normalizeText(classLabel);
     if (subject) filter.subject = normalizeText(subject);
     if (topicName) filter.topicName = normalizeText(topicName);
@@ -249,7 +251,7 @@ export async function listAiToolTopicOptions(req, res) {
     return res.json({
       success: true,
       data: {
-        boards: unique(rows.map((r) => r.board)),
+        boards: unique(rows.map((r) => canonicalBoardLabel(r.board))),
         classes: unique(rows.map((r) => r.classLabel)),
         subjects: unique(rows.map((r) => r.subject)),
         labels: unique(rows.map((r) => r.label)),

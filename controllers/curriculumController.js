@@ -1,4 +1,5 @@
 import AiToolTopic from '../models/AiToolTopic.js';
+import { boardMongoMatch } from '../utils/board-label.js';
 
 function normalizeText(value) {
   return String(value || '').trim().replace(/\s+/g, ' ');
@@ -50,7 +51,7 @@ function applyBoardFilter(filter, board) {
   const normalizedBoard = normalizeText(board);
   if (!normalizedBoard) return;
   // Enforce strict board scoping so each UI shows only selected board data.
-  filter.board = normalizedBoard;
+  filter.board = boardMongoMatch(normalizedBoard);
 }
 
 /** GET /api/curriculum/classes */

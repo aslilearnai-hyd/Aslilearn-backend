@@ -22,6 +22,7 @@ import {
   finalizeActivityStructuredContent,
   buildDeterministicQuestionSetFromText,
 } from '../services/ai-content-engine-service.js';
+import { boardMongoMatch } from '../utils/board-label.js';
 
 /** After classify, always run template regeneration — classification output is unreliable for learner-facing layouts. */
 const ALWAYS_REGENERATE_STRUCTURED_TOOLS = new Set([
@@ -91,7 +92,11 @@ const toClassLabel = (classValue) => {
   return raw;
 };
 
-const normalizeBoard = (value) => String(value || '').trim().toUpperCase();
+const normalizeBoard = (value) => {
+  let t = String(value || '').trim().toUpperCase().replace(/\s+/g, ' ');
+  if (t === 'CBSC') t = 'CBSE';
+  return t;
+};
 
 const toUploadedByRole = (role) => {
   const normalized = String(role || '').trim().toLowerCase().replace(/_/g, '-');
@@ -775,7 +780,7 @@ router.get('/pdf/list', verifyToken, authorizeRoles('teacher', 'admin', 'super-a
     const page = Math.max(1, Number(req.query.page || 1));
     const limit = Math.max(1, Math.min(100, Number(req.query.limit || 20)));
     const filter = { sourceType: 'ai_pdf' };
-    if (board) filter.board = normalizeBoard(board);
+    if (board) filter.board = boardMongoMatch(normalizeBoard(board));
     if (subject) filter.subject = String(subject).trim();
     if (classInput) filter.classLabel = toClassLabel(classInput);
     if (status) {
@@ -796,7 +801,7 @@ router.get('/pdf/list', verifyToken, authorizeRoles('teacher', 'admin', 'super-a
     ].map((id) => new mongoose.Types.ObjectId(id));
 
     const orphanFilter = {};
-    if (board) orphanFilter.board = normalizeBoard(board);
+    if (board) orphanFilter.board = boardMongoMatch(normalizeBoard(board));
     if (subject) orphanFilter.subject = String(subject).trim();
     if (classInput) orphanFilter.classLabel = toClassLabel(classInput);
     if (status) orphanFilter.processingStatus = String(status).trim();
