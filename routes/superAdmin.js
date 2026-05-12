@@ -52,6 +52,7 @@ import {
   bulkDeleteAiToolTopics,
   listAiToolTopicOptions,
 } from '../controllers/aiToolTopicsController.js';
+import { uploadAndParsePdf } from '../controllers/aiToolsController.js';
 import {
   getAllBoards,
   getBoardDashboard,
@@ -399,6 +400,7 @@ router.post('/ai-tool-topics', createAiToolTopic);
 router.post('/ai-tool-topics/bulk-delete', bulkDeleteAiToolTopics);
 router.put('/ai-tool-topics/:id', updateAiToolTopic);
 router.delete('/ai-tool-topics/:id', deleteAiToolTopic);
+router.post('/ai-tools/upload-pdf', pdfUpload.single('pdf'), uploadAndParsePdf);
 
 // Admin Management
 router.get('/admins', getAllAdmins);

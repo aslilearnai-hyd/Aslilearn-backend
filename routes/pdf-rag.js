@@ -21,7 +21,10 @@ import {
   regenerateStructuredContentForTool,
   finalizeActivityStructuredContent,
   buildDeterministicQuestionSetFromText,
+  normalizeActivityStructuredContent,
 } from '../services/ai-content-engine-service.js';
+import { extractAndGenerateAllItems } from '../services/gemini-service.js';
+import { formatItemToContent } from '../controllers/aiToolsController.js';
 import { boardMongoMatch } from '../utils/board-label.js';
 
 /** After classify, always run template regeneration — classification output is unreliable for learner-facing layouts. */
@@ -38,6 +41,40 @@ const ALWAYS_REGENERATE_STRUCTURED_TOOLS = new Set([
   'daily-class-plan-maker',
   'exam-question-paper-generator',
 ]);
+
+/** One viewer-friendly render blob per bulk-saved item (matches `buildRenderableContent` shapes). */
+function buildBulkRenderContent(toolSlug, contentType, item) {
+  const ct = String(contentType || 'Generated Content').trim() || 'Generated Content';
+  const row = item && typeof item === 'object' ? { ...item } : {};
+  delete row._fromPdf;
+  if (toolSlug === 'worksheet-mcq-generator' || toolSlug === 'homework-creator') {
+    return buildRenderableContent(toolSlug, ct, { questions: [row] });
+  }
+  if (toolSlug === 'exam-question-paper-generator') {
+    return buildRenderableContent(toolSlug, ct, {
+      sections: [
+        {
+          sectionName: String(row.section || 'Questions').trim(),
+          questions: [row],
+        },
+      ],
+    });
+  }
+  if (toolSlug === 'flashcard-generator') {
+    return buildRenderableContent(toolSlug, ct, {
+      cards: [{ front: String(row.front || '').trim(), back: String(row.back || '').trim() }],
+    });
+  }
+  if (toolSlug === 'rubrics-evaluation-generator') {
+    const names = Array.isArray(row.criteria)
+      ? row.criteria
+          .map((c) => (c && typeof c === 'object' ? String(c.name || '').trim() : String(c || '').trim()))
+          .filter(Boolean)
+      : [];
+    return buildRenderableContent(toolSlug, ct, { criteria: names, gradingScale: names });
+  }
+  return buildRenderableContent(toolSlug, ct, row);
+}
 
 const router = express.Router();
 const __filename = fileURLToPath(import.meta.url);
@@ -485,6 +522,196 @@ router.post(
         );
       }
 
+      const bulkParseParams = {
+        classLabel: toClassLabel(classInput),
+        subject: selectedSubject,
+        topic: String(topic || chapter || '').trim(),
+        subtopic: String(subTopic || '').trim(),
+      };
+      let bulkItems = [];
+      try {
+        bulkItems = await extractAndGenerateAllItems(resolvedToolSlug, extractedText, bulkParseParams);
+      } catch (bulkErr) {
+        console.warn(
+          '[AI PDF] Bulk PDF item extraction failed, using legacy single-record path:',
+          bulkErr?.message || bulkErr,
+        );
+        bulkItems = [];
+      }
+
+      if (Array.isArray(bulkItems) && bulkItems.length > 0) {
+        const fileUrl = `/uploads/pdf-knowledge/${req.file.filename}`;
+        let uploaded = {
+          fileName: req.file.filename,
+          fileUrl,
+          storageProvider: 'local',
+          storageKey: '',
+          shouldDeleteLocal: false,
+        };
+        try {
+          uploaded = await uploadPdfToConfiguredStorage({
+            localPath: req.file.path,
+            originalName: req.file.originalname,
+            mimeType: req.file.mimetype,
+          });
+        } catch (storageError) {
+          console.error('Cloud upload failed, keeping local storage:', storageError.message);
+        }
+        if (uploaded.shouldDeleteLocal) {
+          try {
+            fs.unlinkSync(req.file.path);
+          } catch {
+            // ignore
+          }
+        }
+
+        const inferredContentType =
+          String(analysis.contentType || '').trim() || 'Generated Content';
+        const source = await AiContentEngineSource.create({
+          fileName: uploaded.fileName,
+          originalName: req.file.originalname,
+          fileUrl: uploaded.fileUrl,
+          storageProvider: uploaded.storageProvider,
+          storageKey: uploaded.storageKey,
+          fileSize: req.file.size,
+          mimeType: req.file.mimetype,
+          board: normalizeBoard(board),
+          subject: selectedSubject,
+          classLabel: toClassLabel(classInput),
+          chapter: String(chapter).trim(),
+          topic: String(topic || analysis.topic || chapter || '').trim(),
+          subTopic: String(subTopic || analysis.subTopic || '').trim(),
+          toolType: resolvedToolSlug,
+          contentType: inferredContentType,
+          structuredContent: {
+            bulkUpload: true,
+            itemCount: bulkItems.length,
+            items: bulkItems.map((it, idx) => ({
+              index: idx,
+              slNo: it.sl_no ?? it.question_number,
+              title:
+                it.title ||
+                it.name ||
+                it.concept_name ||
+                it.question ||
+                it.lesson_name ||
+                '',
+            })),
+          },
+          renderContent: buildBulkRenderContent(resolvedToolSlug, inferredContentType, bulkItems[0] || {}),
+          geminiDetected: {
+            classLabel: String(analysis.classLabel || ''),
+            subject: String(analysis.subject || ''),
+            topic: String(analysis.topic || ''),
+            subTopic: String(analysis.subTopic || ''),
+            bestMatchingToolLabel: String(analysis.bestMatchingToolLabel || ''),
+            contentType: String(analysis.contentType || ''),
+          },
+          analysisStatus: 'analyzed',
+          approvalStatus: 'pending',
+          validation: {
+            toolMatched: Boolean(detectedToolSlug && resolvedToolSlug && detectedToolSlug === resolvedToolSlug),
+            mismatchReason: analysis.isFallback ? String(analysis.fallbackReason || 'Fallback analysis mode') : '',
+            subjectTopicMatched: Boolean(subjectMatched && topicMatched),
+            subjectTopicReason: subjectTopicMatch.reason || '',
+            subjectTopicConfidence: subjectTopicMatch.confidence || 0,
+          },
+          uploadedBy: uploaderId,
+          uploadedByRole: toUploadedByRole(req.user?.role),
+        });
+
+        const extractedFromPdf = bulkItems.filter((it) => it._fromPdf === true).length;
+        const generatedByAiCount = bulkItems.filter((it) => it._fromPdf !== true).length;
+        const now = new Date();
+        const records = bulkItems.map((item, index) => {
+          const generatedByAiItem = item?._fromPdf !== true;
+          const metaClean = { ...item };
+          delete metaClean._fromPdf;
+          const structuredForRow =
+            resolvedToolSlug === 'activity-project-generator'
+              ? normalizeActivityStructuredContent(metaClean)
+              : metaClean;
+          const contentStr = formatItemToContent(resolvedToolSlug, structuredForRow, index);
+          return {
+            toolName: resolvedToolSlug,
+            toolDisplayName: getToolLabelFromSlug(resolvedToolSlug) || resolvedToolSlug,
+            sourceType: 'ai_pdf',
+            board: normalizeBoard(board),
+            classLabel: toClassLabel(classInput),
+            subject: selectedSubject,
+            topic: String(topic || analysis.topic || chapter || '').trim(),
+            subtopic: String(subTopic || analysis.subTopic || '').trim(),
+            content: contentStr,
+            generatedContent: contentStr,
+            pdfFileUrl: String(uploaded.fileUrl || '').trim(),
+            pdfFileName: String(req.file.originalname || '').trim(),
+            generatedBy: uploaderId,
+            status: 'active',
+            createdAt: now,
+            updatedAt: now,
+            metadata: {
+              board: normalizeBoard(board),
+              contentEngineSourceId: String(source._id),
+              aiPdfSourceId: String(source._id),
+              bulkItemIndex: index,
+              bulkItemCount: bulkItems.length,
+              structuredContent: structuredForRow,
+              renderContent: buildBulkRenderContent(resolvedToolSlug, inferredContentType, structuredForRow),
+              contentType: inferredContentType,
+              approvalStatus: 'pending',
+              processingStatus: 'processed',
+              uploadedByRole: toUploadedByRole(req.user?.role),
+              generatedByAI: generatedByAiItem,
+              sourceLabel: generatedByAiItem ? 'PDF Upload (AI Generated)' : 'PDF Upload (Extracted)',
+              geminiDetected: {
+                classLabel: String(analysis.classLabel || ''),
+                subject: String(analysis.subject || ''),
+                topic: String(analysis.topic || ''),
+                subTopic: String(analysis.subTopic || ''),
+                bestMatchingToolLabel: String(analysis.bestMatchingToolLabel || ''),
+                contentType: String(analysis.contentType || ''),
+              },
+              validation: {
+                toolMatched: Boolean(detectedToolSlug && resolvedToolSlug && detectedToolSlug === resolvedToolSlug),
+                mismatchReason: analysis.isFallback ? String(analysis.fallbackReason || 'Fallback analysis mode') : '',
+                subjectTopicMatched: Boolean(subjectMatched && topicMatched),
+                subjectTopicReason: subjectTopicMatch.reason || '',
+                subjectTopicConfidence: subjectTopicMatch.confidence || 0,
+              },
+            },
+          };
+        });
+
+        const inserted = await AiToolGeneration.insertMany(records, { ordered: false });
+        const firstId = inserted[0]?._id;
+        console.log(
+          `[AI PDF] Bulk save: ${bulkItems.length} AiToolGeneration rows (extracted ${extractedFromPdf}, generated ${generatedByAiCount})`,
+        );
+        return res.status(201).json({
+          success: true,
+          data: {
+            id: firstId,
+            sourcePdfId: source._id,
+            totalSaved: bulkItems.length,
+            extractedFromPdf,
+            generatedByAI: generatedByAiCount,
+            fileName: source.originalName,
+            subject: source.subject,
+            class: source.classLabel,
+            chapter: source.chapter,
+            topic: source.topic,
+            subTopic: source.subTopic,
+            toolType: source.toolType,
+            contentType: source.contentType,
+            approvalStatus: source.approvalStatus,
+            uploadedBy: source.uploadedBy,
+            uploadDate: source.uploadDate,
+            processingStatus: source.processingStatus,
+            analysisMode: analysis.analysisMode || 'gemini',
+          },
+        });
+      }
+
       let structuredValidation = validateToolSpecificStructuredContent(
         resolvedToolSlug,
         analysis.structuredContent,
@@ -841,28 +1068,41 @@ router.get('/pdf/list', verifyToken, authorizeRoles('teacher', 'admin', 'super-a
 router.delete('/pdf/:id', verifyToken, authorizeRoles('teacher', 'admin', 'super-admin'), async (req, res) => {
   try {
     const { master, source } = await resolvePdfMasterAndSource(req.params.id);
-    const src = source;
-    if (!src && !master) {
+    if (!source && !master) {
       return res.status(404).json({ success: false, message: 'PDF source not found' });
     }
-    if (src) {
-      await AiContentEngineChunk.deleteMany({ sourcePdfId: src._id });
-      await deleteFromConfiguredStorage({
-        storageKey: src.storageKey,
-        fileUrl: src.fileUrl,
-        storageProvider: src.storageProvider,
-      });
-      await AiContentEngineSource.findByIdAndDelete(src._id);
-    }
-    if (master) {
-      await AiToolGeneration.findByIdAndDelete(master._id);
-    } else if (src) {
+
+    const bindSourceIdStr =
+      source?._id != null
+        ? String(source._id)
+        : master?.metadata?.contentEngineSourceId || master?.metadata?.aiPdfSourceId
+          ? String(master.metadata.contentEngineSourceId || master.metadata.aiPdfSourceId)
+          : '';
+
+    if (bindSourceIdStr) {
       await AiToolGeneration.deleteMany({
         $or: [
-          { 'metadata.contentEngineSourceId': String(src._id) },
-          { 'metadata.aiPdfSourceId': String(src._id) },
+          { 'metadata.contentEngineSourceId': bindSourceIdStr },
+          { 'metadata.aiPdfSourceId': bindSourceIdStr },
         ],
       });
+    } else if (master?._id) {
+      await AiToolGeneration.findByIdAndDelete(master._id);
+    }
+
+    const srcDoc =
+      source ||
+      (bindSourceIdStr
+        ? await AiContentEngineSource.findById(bindSourceIdStr).lean()
+        : null);
+    if (srcDoc?._id) {
+      await AiContentEngineChunk.deleteMany({ sourcePdfId: srcDoc._id });
+      await deleteFromConfiguredStorage({
+        storageKey: srcDoc.storageKey,
+        fileUrl: srcDoc.fileUrl,
+        storageProvider: srcDoc.storageProvider,
+      });
+      await AiContentEngineSource.findByIdAndDelete(srcDoc._id);
     }
     return res.json({ success: true, message: 'PDF source and chunks deleted' });
   } catch (error) {

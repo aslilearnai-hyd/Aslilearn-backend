@@ -37,7 +37,8 @@ const CONTENT_TYPE_BY_TOOL_SLUG = {
 
 const TOOL_STRICT_OUTPUT_HINTS = {
   'worksheet-mcq-generator': 'Return ONLY question content. No introductions, no chapter heading repetition, no filler text.',
-  'activity-project-generator': 'Return ONLY activities/projects with materials, steps, and learning outcomes.',
+  'activity-project-generator':
+    'Each activity MUST use the template: (1) title, (2) learning_objectives[], (3) materials_required[], (4) step_by_step_procedure[], (5) teacher_instructions[], (7) expected_learning_outcomes, (8) assessment_criteria_rubric[], (9) real_life_application. Keep (4) and (5) separate.',
   'concept-mastery-helper': 'Return ONLY concept explanations and definitions.',
   'lesson-planner': 'Return ONLY lesson plan structure: objectives, activities, timeline, assessment.',
   'homework-creator': 'Return ONLY homework questions and instructions.',
@@ -161,12 +162,45 @@ function coerceBulletLines(value) {
       })
       .filter(Boolean);
   }
+  if (typeof value === 'object' && !Array.isArray(value)) {
+    return Object.values(value)
+      .flatMap((v) => coerceBulletLines(v))
+      .filter(Boolean);
+  }
   const s = String(value).trim();
   if (!s) return [];
   return s
     .split(/\n+|(?:\s*(?:;)\s*)/)
     .map((line) => line.replace(/^\s*[-*•]\s*|\s*\d+[\).]\s*/i, '').trim())
     .filter(Boolean);
+}
+
+/** PDF/Gemini sometimes puts a section heading in title — reject and fall back. */
+const ACTIVITY_SECTION_HEADING_TITLE_RE =
+  /^(?:\d+\.\s*)?(?:title\s*[—:-]\s*)?(materials required|learning objectives|step-by-step procedure|teacher instructions|expected learning outcomes|assessment criteria(?:\s*\(rubric\))?|rubric|real[-\s]?life application|title)\s*$/i;
+
+/**
+ * Clean activity title for storage and UI. Never return a bare template section name.
+ */
+export function sanitizeActivityTitle(rawTitle, rawName, slNo) {
+  let t = String(rawTitle || '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  t = t.replace(/^1\.\s*title\s*[—:-]\s*/i, '').trim();
+  const parts = t.split(/\s*[—–]\s/).map((p) => p.trim()).filter(Boolean);
+  if (parts.length >= 2 && ACTIVITY_SECTION_HEADING_TITLE_RE.test(parts[parts.length - 1])) {
+    t = parts.slice(0, -1).join(' — ');
+  }
+  if (/title\s*[—:-]\s*materials required/i.test(t)) {
+    t = t.replace(/\s*title\s*[—:-]\s*materials required\s*$/i, '').trim();
+  }
+  if (!t || ACTIVITY_SECTION_HEADING_TITLE_RE.test(t)) {
+    const n = String(rawName || '').trim();
+    if (n && !ACTIVITY_SECTION_HEADING_TITLE_RE.test(n)) return n;
+    const num = slNo != null && slNo !== '' ? Number(slNo) : NaN;
+    return Number.isFinite(num) ? `Activity ${num}` : 'Activity';
+  }
+  return t;
 }
 
 /**
@@ -178,9 +212,42 @@ export function normalizeActivityStructuredContent(raw /* pdfText reserved — d
     source = { ...source.activity, ...source };
   }
 
+  const pickAlias = (keys) => {
+    for (const k of keys) {
+      if (source[k] != null && source[k] !== '') return source[k];
+    }
+    return undefined;
+  };
+  if (source.materials == null || source.materials === '') {
+    const m = pickAlias([
+      'materials_required',
+      'MaterialsRequired',
+      'Materials',
+      'material_list',
+      'items_needed',
+    ]);
+    if (m != null) source.materials = m;
+  }
+  if (source.steps == null || source.steps === '') {
+    const st = pickAlias([
+      'step_by_step_procedure',
+      'StepByStepProcedure',
+      'Steps',
+      'procedure_steps',
+      'Procedure',
+      'method',
+      'how_to',
+    ]);
+    if (st != null) source.steps = st;
+  }
+  if (!String(source.title || '').trim() && String(source.Title || '').trim()) {
+    source.title = source.Title;
+  }
+
   let materials = coerceBulletLines(source.materials);
   if (!materials.length) {
     materials = [
+      ...coerceBulletLines(source.materials_required),
       ...coerceBulletLines(source.material),
       ...coerceBulletLines(source.supplies),
       ...coerceBulletLines(source.equipment),
@@ -189,12 +256,15 @@ export function normalizeActivityStructuredContent(raw /* pdfText reserved — d
     ].filter(Boolean);
   }
 
-  let steps = coerceBulletLines(source.steps);
+  /** (4) Student procedure only — do not fold teacher_instructions in here. */
+  let steps = coerceBulletLines(source.step_by_step_procedure);
+  if (!steps.length) steps = coerceBulletLines(source.steps);
   if (!steps.length) steps = coerceBulletLines(source.step);
   if (!steps.length) steps = coerceBulletLines(source.procedure);
   if (!steps.length) steps = coerceBulletLines(source.procedures);
   if (!steps.length) steps = coerceBulletLines(source.instructions);
   if (!steps.length) steps = coerceBulletLines(source.instruction);
+  if (!steps.length) steps = coerceBulletLines(source.student_instructions);
   if (!steps.length && Array.isArray(source.activities)) {
     steps = source.activities.flatMap((a) => {
       if (typeof a === 'string') return coerceBulletLines(a);
@@ -227,14 +297,47 @@ export function normalizeActivityStructuredContent(raw /* pdfText reserved — d
     steps = coerceBulletLines(source.content);
   }
 
-  const learningOutcome = String(
-    source.learningOutcome ||
+  /** (5) Teacher instructions — separate from procedure. */
+  let teacherInstructions = coerceBulletLines(source.teacher_instructions);
+  if (!teacherInstructions.length) {
+    teacherInstructions = coerceBulletLines(source.teacherInstructions);
+  }
+
+  /** (6) Student instructions (Curiosity workbook). */
+  let studentInstructions = coerceBulletLines(source.student_instructions);
+  if (!studentInstructions.length) studentInstructions = coerceBulletLines(source.studentInstructions);
+
+  /** (2) Learning objectives — separate from (7) expected outcomes. */
+  let learningObjectives = coerceBulletLines(source.learning_objectives);
+  if (!learningObjectives.length) learningObjectives = coerceBulletLines(source.learningObjectives);
+
+  const joinLines = (v) => {
+    if (v == null) return '';
+    if (Array.isArray(v)) return v.map((x) => String(x || '').trim()).filter(Boolean).join('; ');
+    return String(v).trim();
+  };
+
+  /** (7) Expected learning outcomes only — not the same as (2). */
+  let learningOutcome = String(
+    source.expected_learning_outcomes ||
+      source.expectedLearningOutcomes ||
+      source.learningOutcome ||
+      source.learning_outcome ||
       source.outcome ||
       source.objective ||
-      source.learningObjectives ||
-      source.objectives ||
       ''
   ).trim();
+  if (!learningOutcome) learningOutcome = joinLines(source.learning_outcomes);
+  if (!learningOutcome) learningOutcome = joinLines(source.objectives);
+
+  /** (8) Rubric / assessment lines. */
+  let assessmentRubric = coerceBulletLines(source.assessment_criteria_rubric);
+  if (!assessmentRubric.length) assessmentRubric = coerceBulletLines(source.assessmentRubric);
+  if (!assessmentRubric.length) assessmentRubric = coerceBulletLines(source.assessment);
+  if (!assessmentRubric.length) assessmentRubric = coerceBulletLines(source.evaluation);
+
+  /** (9) */
+  const realLifeApplication = String(source.real_life_application || source.realLifeApplication || '').trim();
 
   if (steps.length === 0 && materials.length > 0) {
     steps = [
@@ -244,20 +347,31 @@ export function normalizeActivityStructuredContent(raw /* pdfText reserved — d
   if (steps.length === 0 && learningOutcome) {
     steps = [`Learning focus: ${learningOutcome}`];
   }
-  if (steps.length === 0 && materials.length === 0) {
-    steps = [
-      'No structured steps were returned from the model. Open the original PDF or use Regenerate from the content engine to try again.',
-    ];
+
+  const isModelPlaceholderStep = (s) =>
+    /^no structured steps were returned from the model/i.test(String(s || '').trim());
+  if (steps.length === 1 && isModelPlaceholderStep(steps[0])) {
+    steps = [];
   }
 
-  const title = String(source.title || source.name || source.activityTitle || source.topic || '').trim();
+  const slNo = source.sl_no ?? source.question_number;
+  const title = sanitizeActivityTitle(
+    String(source.title || source.activityTitle || source.topic || '').trim(),
+    String(source.name || '').trim(),
+    slNo,
+  );
 
   return {
     ...source,
-    title: title || source.title,
+    title,
     materials,
     steps,
-    learningOutcome: learningOutcome || source.learningOutcome,
+    learningObjectives,
+    teacherInstructions,
+    studentInstructions,
+    learningOutcome: learningOutcome || source.learningOutcome || source.learning_outcome || '',
+    assessmentRubric,
+    realLifeApplication,
   };
 }
 
@@ -320,13 +434,33 @@ const TOOL_STRUCTURED_RULES = {
     validate: (data) => {
       const steps = Array.isArray(data?.steps) ? data.steps : [];
       const materials = Array.isArray(data?.materials) ? data.materials : [];
+      const lo = Array.isArray(data?.learningObjectives) ? data.learningObjectives : [];
+      const lo2 = Array.isArray(data?.learning_objectives) ? data.learning_objectives : [];
+      const ti = Array.isArray(data?.teacherInstructions) ? data.teacherInstructions : [];
+      const ti2 = Array.isArray(data?.teacher_instructions) ? data.teacher_instructions : [];
+      const ar = Array.isArray(data?.assessmentRubric) ? data.assessmentRubric : [];
+      const exp = String(data?.learningOutcome || '').trim();
+      const rla = String(data?.realLifeApplication || '').trim();
       const errOnlyPlaceholders =
         steps.length === 1 &&
         /^no structured steps were returned/i.test(String(steps[0] || '').trim());
       const hasUsableSteps = steps.length > 0 && !errOnlyPlaceholders;
-      return materials.length > 0 || hasUsableSteps;
+      return (
+        materials.length > 0 ||
+        hasUsableSteps ||
+        lo.length > 0 ||
+        lo2.length > 0 ||
+        ti.length > 0 ||
+    ti2.length > 0 ||
+    (Array.isArray(data?.studentInstructions) && data.studentInstructions.length > 0) ||
+    (Array.isArray(data?.student_instructions) && data.student_instructions.length > 0) ||
+    ar.length > 0 ||
+        exp.length > 8 ||
+        rla.length > 8
+      );
     },
-    message: 'Activity content must include real materials or procedural steps (not empty model output).',
+    message:
+      'Activity content must include at least one filled template section (materials, procedure, objectives, teacher notes, outcomes, rubric, or real-life application).',
   },
   'concept-mastery-helper': {
     allowedTypes: ['Concept Notes', 'Notes'],
@@ -495,7 +629,9 @@ function augmentActivityStructuredContent(normalizedFlat, meta) {
   const materialsOk = Array.isArray(n.materials) && n.materials.length >= 3;
   const stepsOk =
     Array.isArray(n.steps) && n.steps.length >= 5 && !hasErrOnly && n.steps.every((s) => String(s).trim().length > 8);
-  const loOk = String(n.learningOutcome || '').trim().length > 30;
+  const loFromObjectives = Array.isArray(n.learningObjectives) ? n.learningObjectives.join(' ').trim() : '';
+  const loOk =
+    String(n.learningOutcome || '').trim().length > 30 || loFromObjectives.length > 30;
 
   if (materialsOk && stepsOk && loOk) {
     return n;
@@ -772,9 +908,14 @@ export function buildRenderableContent(toolSlug, contentType, structuredContent)
     return {
       kind: 'activity',
       title: String(act.title || type || 'Activity').trim(),
+      learningObjectives: toStringList(act.learningObjectives || act.learning_objectives),
       materials: toStringList(act.materials),
       steps: toStringList(act.steps),
+      teacherInstructions: toStringList(act.teacherInstructions || act.teacher_instructions),
+      studentInstructions: toStringList(act.studentInstructions || act.student_instructions),
       learningOutcome: String(act.learningOutcome || '').trim(),
+      assessmentRubric: toStringList(act.assessmentRubric || act.assessment_criteria_rubric),
+      realLifeApplication: String(act.realLifeApplication || act.real_life_application || '').trim(),
     };
   }
 

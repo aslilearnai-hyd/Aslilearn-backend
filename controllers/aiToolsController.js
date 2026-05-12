@@ -5,6 +5,8 @@ import {
 } from '../services/hardcoded-content-service.js';
 import AiToolGeneration from '../models/AiToolGeneration.js';
 import { fetchRotatingAiToolData } from '../services/ai-tool-rotation-service.js';
+import { extractRawTextFromPDF } from '../services/pdf-extractor-service.js';
+import { extractAndGenerateAllItems } from '../services/gemini-service.js';
 
 function teacherToolDisplayName(toolType) {
   const map = {
@@ -62,6 +64,180 @@ function normalizeTopicSub(val) {
   return String(val || '')
     .trim()
     .replace(/\s+/g, ' ');
+}
+
+const TOOL_DISPLAY_NAMES = {
+  'activity-project-generator': 'Activity & Project Generator',
+  'worksheet-mcq-generator': 'Worksheet & MCQ Generator',
+  'concept-mastery-helper': 'Concept Mastery Helper',
+  'lesson-planner': 'Lesson Planner',
+  'homework-creator': 'Homework Creator',
+  'rubrics-evaluation-generator': 'Rubrics, Evaluation & Report Card',
+  'story-passage-creator': 'Story & Passage Creator',
+  'short-notes-summaries-maker': 'Short Notes & Summaries',
+  'flashcard-generator': 'Flashcard Generator',
+  'daily-class-plan-maker': 'Daily Class Plan',
+  'exam-question-paper-generator': 'Exam Question Paper',
+};
+
+export function formatItemToContent(toolType, item, index = 0) {
+  const i = item || {};
+  const n = i.sl_no || i.question_number || index + 1;
+  const lines = [];
+
+  switch (toolType) {
+    case 'activity-project-generator': {
+      lines.push(`## Activity ${n}: ${i.title || i.name || 'Untitled Activity'}`);
+      lines.push('');
+      if (i.objective) lines.push(`**Objective:** ${i.objective}`, '');
+      const learningObjs = i.learning_objectives || i.learningObjectives || [];
+      if (Array.isArray(learningObjs) && learningObjs.length) {
+        lines.push('### 2. Learning Objectives');
+        learningObjs.forEach((obj) => lines.push(`- ${obj}`));
+        lines.push('');
+      }
+      const materials = i.materials_required || i.materials || [];
+      if (Array.isArray(materials) && materials.length) {
+        lines.push('### 3. Materials Required');
+        materials.forEach((m) => lines.push(`- ${m}`));
+        lines.push('');
+      }
+      const proc = i.step_by_step_procedure || i.steps || i.instructions || [];
+      if (Array.isArray(proc) && proc.length) {
+        lines.push('### 4. Step-by-step Procedure');
+        proc.forEach((s, idx) => lines.push(`${idx + 1}. ${s}`));
+        lines.push('');
+      }
+      const teacher = i.teacher_instructions || i.teacherInstructions || [];
+      if (Array.isArray(teacher) && teacher.length) {
+        lines.push('### 5. Teacher Instructions');
+        teacher.forEach((t) => lines.push(`- ${t}`));
+        lines.push('');
+      }
+      const students = i.student_instructions || i.studentInstructions || [];
+      if (Array.isArray(students) && students.length) {
+        lines.push('### 6. Student Instructions');
+        students.forEach((t) => lines.push(`- ${t}`));
+        lines.push('');
+      }
+      const outcome =
+        i.expected_learning_outcomes ||
+        i.expectedLearningOutcomes ||
+        i.learning_outcome ||
+        i.learning_outcomes ||
+        '';
+      if (outcome) lines.push('### 7. Expected Learning Outcomes', String(outcome), '');
+      const assessment = i.assessment_criteria_rubric || i.assessment || i.evaluation || [];
+      if (Array.isArray(assessment) && assessment.length) {
+        lines.push('### 8. Assessment Criteria (Rubric)');
+        assessment.forEach((a) => lines.push(`- ${typeof a === 'string' ? a : JSON.stringify(a)}`));
+        lines.push('');
+      }
+      if (i.real_life_application || i.realLifeApplication) {
+        lines.push('### 9. Real-life Application', String(i.real_life_application || i.realLifeApplication), '');
+      }
+      break;
+    }
+    case 'worksheet-mcq-generator':
+    case 'exam-question-paper-generator': {
+      if (i.section) lines.push(`**${i.section}**`, '');
+      lines.push(`**Q${i.question_number || n}.** ${i.question || ''}`, '');
+      if (Array.isArray(i.options) && i.options.length) {
+        i.options.forEach((opt) => lines.push(String(opt)));
+        lines.push('');
+      }
+      if (i.answer) lines.push(`**Answer:** ${i.answer}`);
+      if (i.explanation) lines.push(`**Explanation:** ${i.explanation}`);
+      if (i.marks) lines.push(`**Marks:** ${i.marks}`);
+      break;
+    }
+    case 'concept-mastery-helper': {
+      lines.push(`## ${i.concept_name || `Concept ${n}`}`, '');
+      if (i.difficulty) lines.push(`**Difficulty:** ${i.difficulty}`, '');
+      if (i.lesson) lines.push('### Explanation', i.lesson, '');
+      if (i.real_example) lines.push('### Real-life Example', i.real_example, '');
+      if (Array.isArray(i.key_points) && i.key_points.length) {
+        lines.push('### Key Points');
+        i.key_points.forEach((kp) => lines.push(`- ${kp}`));
+      }
+      break;
+    }
+    case 'lesson-planner': {
+      lines.push(`## ${i.lesson_name || `Lesson ${n}`}`, '');
+      if (i.subject_area) lines.push(`**Subject:** ${i.subject_area}`);
+      if (i.duration?.periods && i.duration?.minutes_per_period) {
+        lines.push(`**Duration:** ${i.duration.periods} period(s) x ${i.duration.minutes_per_period} min`);
+      }
+      lines.push('');
+      if (Array.isArray(i.learning_objectives)) {
+        lines.push('### Learning Objectives');
+        i.learning_objectives.forEach((o) => lines.push(`- ${o}`));
+      }
+      break;
+    }
+    case 'homework-creator': {
+      lines.push(`## ${i.title || `Homework ${n}`}`, '');
+      if (i.instructions) lines.push('### Instructions', i.instructions, '');
+      if (Array.isArray(i.questions) && i.questions.length) {
+        lines.push('### Questions');
+        i.questions.forEach((q, idx) => {
+          if (typeof q === 'string') lines.push(`${idx + 1}. ${q}`);
+          else lines.push(`${q.number || idx + 1}. [${q.type || ''}] ${q.question || ''} (${q.marks || 1})`);
+        });
+      }
+      break;
+    }
+    case 'rubrics-evaluation-generator': {
+      lines.push(`## ${i.title || `Rubric ${n}`}`, '');
+      if (Array.isArray(i.criteria) && i.criteria.length) {
+        lines.push('| Criteria | Excellent | Good | Satisfactory | Needs Improvement |');
+        lines.push('|----------|-----------|------|--------------|-------------------|');
+        i.criteria.forEach((c) =>
+          lines.push(`| ${c.name || ''} | ${c.excellent || ''} | ${c.good || ''} | ${c.satisfactory || ''} | ${c.needs_improvement || ''} |`),
+        );
+      }
+      break;
+    }
+    case 'story-passage-creator': {
+      lines.push(`## ${i.title || `Story ${n}`}`, '');
+      if (i.passage) lines.push(i.passage);
+      if (i.moral) lines.push('', `**Moral:** ${i.moral}`);
+      break;
+    }
+    case 'short-notes-summaries-maker': {
+      lines.push(`## ${i.concept_name || `Notes ${n}`}`, '');
+      if (i.summary) lines.push(i.summary, '');
+      if (Array.isArray(i.quick_facts) && i.quick_facts.length) {
+        lines.push('### Quick Facts');
+        i.quick_facts.forEach((f) => lines.push(`- ${f}`));
+      }
+      break;
+    }
+    case 'flashcard-generator': {
+      return JSON.stringify({
+        formatted: `**Front:** ${i.front || ''}\n\n**Back:** ${i.back || ''}${i.hint ? `\n\n*Hint: ${i.hint}*` : ''}`,
+        raw: { flashcards: [{ front: i.front || '', back: i.back || '', type: i.type || 'fact', hint: i.hint || '', topic_tag: i.topic_tag || '' }] },
+      });
+    }
+    case 'daily-class-plan-maker': {
+      lines.push(`## ${i.title || `Day Plan ${n}`}`, '');
+      if (Array.isArray(i.objectives) && i.objectives.length) {
+        lines.push("### Today's Objectives");
+        i.objectives.forEach((o) => lines.push(`- ${o}`));
+      }
+      if (Array.isArray(i.time_slots) && i.time_slots.length) {
+        lines.push('', '| Time | Activity | Type |', '|------|----------|------|');
+        i.time_slots.forEach((slot) => lines.push(`| ${slot.time || ''} | ${slot.activity || ''} | ${slot.type || ''} |`));
+      }
+      break;
+    }
+    default: {
+      lines.push(`## Item ${n}: ${i.title || 'Untitled'}`, '', i.content || JSON.stringify(i, null, 2));
+      break;
+    }
+  }
+
+  return lines.join('\n').trim();
 }
 
 function tryParseJsonPayload(content) {
@@ -636,6 +812,113 @@ export const getAvailableContent = async (req, res) => {
       success: false, 
       message: 'Failed to get available content',
       error: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
+  }
+};
+
+export const uploadAndParsePdf = async (req, res) => {
+  try {
+    const { toolType, classNumber, subject, topic, subTopic, board = 'CBSE' } = req.body;
+    const pdfFile = req.file;
+    if (!pdfFile) {
+      return res.status(400).json({ success: false, message: 'No PDF file uploaded.' });
+    }
+    if (!toolType || !classNumber || !subject) {
+      return res.status(400).json({ success: false, message: 'toolType, classNumber, and subject are required.' });
+    }
+
+    const isIIT6 = String(classNumber) === 'IIT-6';
+    const classNum = isIIT6 ? 'IIT-6' : parseInt(classNumber, 10);
+    const classDisplay = isIIT6 ? 'IIT-6' : `Class ${classNum}`;
+    const finalSubject = normalizeTeacherSubjectForValidation(subject);
+    const topicForStore = normalizeTopicSub(topic || '');
+    const subtopicForStore = normalizeTopicSub(subTopic || '');
+
+    const rawText = await extractRawTextFromPDF(pdfFile.buffer);
+    if (!rawText || rawText.length < 50) {
+      return res.status(422).json({
+        success: false,
+        message: 'PDF appears to be empty or image-only (no extractable text).',
+      });
+    }
+
+    const allItems = await extractAndGenerateAllItems(toolType, rawText, {
+      classLabel: classDisplay,
+      subject: finalSubject,
+      topic: topicForStore,
+      subtopic: subtopicForStore,
+    });
+    if (!Array.isArray(allItems) || allItems.length === 0) {
+      return res.status(422).json({
+        success: false,
+        code: 'PDF_PARSE_FAILED',
+        message:
+          'Could not extract any items from this PDF. Check that the PDF has readable text and matches the selected tool type.',
+      });
+    }
+
+    const now = new Date();
+    const recordsToInsert = allItems.map((item, index) => {
+      const contentStr = formatItemToContent(toolType, item, index);
+      const generatedByAI = item?._fromPdf !== true;
+      return {
+        toolName: toolType,
+        toolDisplayName: TOOL_DISPLAY_NAMES[toolType] || toolType,
+        sourceType: 'ai_pdf',
+        classLabel: classDisplay,
+        subject: finalSubject,
+        topic: topicForStore,
+        subtopic: subtopicForStore,
+        board: String(board || 'CBSE').trim() || 'CBSE',
+        content: contentStr,
+        generatedContent: contentStr,
+        pdfFileName: pdfFile.originalname,
+        status: 'active',
+        metadata: {
+          source: 'pdf-upload',
+          sourceLabel: generatedByAI ? 'PDF Upload (AI Generated)' : 'PDF Upload (Extracted)',
+          uploadedPdfName: pdfFile.originalname,
+          itemIndex: index,
+          totalItems: allItems.length,
+          createdByRole: 'super-admin',
+          generatedByAI,
+          structuredContent: item,
+          renderContent: item,
+          contentType: 'Generated Content',
+          processingStatus: 'processed',
+          approvalStatus: 'approved',
+          board: String(board || 'CBSE').trim() || 'CBSE',
+        },
+        createdAt: now,
+        updatedAt: now,
+      };
+    });
+
+    await AiToolGeneration.insertMany(recordsToInsert, { ordered: false });
+    const extractedFromPdf = recordsToInsert.filter((r) => !r.metadata?.generatedByAI).length;
+    const generatedByAI = recordsToInsert.filter((r) => r.metadata?.generatedByAI).length;
+
+    return res.json({
+      success: true,
+      message: `Saved ${recordsToInsert.length} records (${extractedFromPdf} extracted from PDF + ${generatedByAI} AI generated to complete the set).`,
+      data: {
+        totalSaved: recordsToInsert.length,
+        extractedFromPdf,
+        generatedByAI,
+        toolType,
+        toolDisplayName: TOOL_DISPLAY_NAMES[toolType] || toolType,
+        classLabel: classDisplay,
+        subject: finalSubject,
+        topic: topicForStore,
+        subtopic: subtopicForStore,
+        pdfName: pdfFile.originalname,
+      },
+    });
+  } catch (error) {
+    console.error('PDF upload error:', error);
+    return res.status(500).json({
+      success: false,
+      message: `PDF processing failed: ${error.message}`,
     });
   }
 };

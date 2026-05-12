@@ -5,11 +5,23 @@ import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { parse } from 'csv-parse/sync';
+import * as pdfParseModule from 'pdf-parse';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const execAsync = promisify(exec);
+
+/**
+ * Extract raw text from a PDF buffer.
+ * @param {Buffer} pdfBuffer
+ * @returns {Promise<string>} Full raw text from all pages
+ */
+export async function extractRawTextFromPDF(pdfBuffer) {
+  const pdfParse = pdfParseModule?.default || pdfParseModule;
+  const data = await pdfParse(pdfBuffer);
+  return String(data?.text || '').trim();
+}
 
 /**
  * Extract content from PDF using Python script
