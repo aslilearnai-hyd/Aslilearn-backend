@@ -1,54 +1,20 @@
 import { PDFParse } from 'pdf-parse';
 import geminiService from './gemini-service.js';
+import {
+  AI_TOOL_ORDERED_SLUGS,
+  buildToolAliasToSlugMap,
+  buildStrictOutputHintsMap,
+  getToolDisplayTitle,
+  getContentTypeDefault,
+} from '../config/aiToolTemplates.js';
 
-const TOOL_LABEL_BY_SLUG = {
-  'activity-project-generator': 'Activity & Project Generator',
-  'worksheet-mcq-generator': 'Worksheet & MCQ Generator',
-  'concept-mastery-helper': 'Concept Mastery Helper',
-  'lesson-planner': 'Lesson Planner',
-  'homework-creator': 'Homework Creator',
-  'rubrics-evaluation-generator': 'Rubrics, Evaluation & Report Card',
-  'story-passage-creator': 'Story & Passage Creator',
-  'short-notes-summaries-maker': 'Short Notes & Summaries',
-  'flashcard-generator': 'Flashcard Generator',
-  'daily-class-plan-maker': 'Daily Class Plan',
-  'exam-question-paper-generator': 'Exam Question Paper',
-};
+const TOOL_ALIAS_TO_SLUG = buildToolAliasToSlugMap();
 
-const TOOL_ALIAS_TO_SLUG = Object.entries(TOOL_LABEL_BY_SLUG).reduce((acc, [slug, label]) => {
-  const key = String(label).toLowerCase().replace(/[^a-z0-9]+/g, '');
-  acc[key] = slug;
-  return acc;
-}, {});
+const CONTENT_TYPE_BY_TOOL_SLUG = Object.fromEntries(
+  AI_TOOL_ORDERED_SLUGS.map((slug) => [slug, getContentTypeDefault(slug)]),
+);
 
-const CONTENT_TYPE_BY_TOOL_SLUG = {
-  'activity-project-generator': 'Activity Plan',
-  'worksheet-mcq-generator': 'Worksheet',
-  'concept-mastery-helper': 'Concept Notes',
-  'lesson-planner': 'Lesson Plan',
-  'homework-creator': 'Homework',
-  'rubrics-evaluation-generator': 'Rubric',
-  'story-passage-creator': 'Story',
-  'short-notes-summaries-maker': 'Notes',
-  'flashcard-generator': 'Flashcards',
-  'daily-class-plan-maker': 'Daily Plan',
-  'exam-question-paper-generator': 'Exam Paper',
-};
-
-const TOOL_STRICT_OUTPUT_HINTS = {
-  'worksheet-mcq-generator': 'Return ONLY question content. No introductions, no chapter heading repetition, no filler text.',
-  'activity-project-generator':
-    'Each activity MUST use the template: (1) title, (2) learning_objectives[], (3) materials_required[], (4) step_by_step_procedure[], (5) teacher_instructions[], (7) expected_learning_outcomes, (8) assessment_criteria_rubric[], (9) real_life_application. Keep (4) and (5) separate.',
-  'concept-mastery-helper': 'Return ONLY concept explanations and definitions.',
-  'lesson-planner': 'Return ONLY lesson plan structure: objectives, activities, timeline, assessment.',
-  'homework-creator': 'Return ONLY homework questions and instructions.',
-  'rubrics-evaluation-generator': 'Return ONLY rubric criteria and grading scales.',
-  'story-passage-creator': 'Return ONLY title, passage, and comprehension questions.',
-  'short-notes-summaries-maker': 'Return ONLY concise notes, headings, and key points.',
-  'flashcard-generator': 'Return ONLY flashcards with front/back.',
-  'daily-class-plan-maker': 'Return ONLY daily plan timeline and activities.',
-  'exam-question-paper-generator': 'Return ONLY section-wise exam paper questions.',
-};
+const TOOL_STRICT_OUTPUT_HINTS = buildStrictOutputHintsMap();
 
 const toStringList = (value) =>
   (Array.isArray(value) ? value : [])
@@ -156,7 +122,25 @@ function coerceBulletLines(value) {
       .map((item) => {
         if (typeof item === 'string') return item.replace(/^\s*[-*•]\s*|\s*\d+[\).]\s*/i, '').trim();
         if (item && typeof item === 'object') {
-          return String(item.step || item.text || item.description || item.detail || item.instruction || '').trim();
+          const line = String(
+            item.step ||
+              item.text ||
+              item.description ||
+              item.detail ||
+              item.instruction ||
+              item.objective ||
+              item.outcome ||
+              item.goal ||
+              item.point ||
+              item.content ||
+              item.activity ||
+              '',
+          ).trim();
+          if (line) return line;
+          const t = String(item.title || item.heading || item.name || '').trim();
+          const d = String(item.description || item.details || item.body || '').trim();
+          if (t && d) return `${t} — ${d}`;
+          return t || d;
         }
         return String(item || '').trim();
       })
@@ -375,6 +359,127 @@ export function normalizeActivityStructuredContent(raw /* pdfText reserved — d
   };
 }
 
+function dedupeStringList(items) {
+  const out = [];
+  const seen = new Set();
+  for (const raw of items) {
+    const s = String(raw || '').trim();
+    if (!s) continue;
+    const k = s.toLowerCase();
+    if (seen.has(k)) continue;
+    seen.add(k);
+    out.push(s);
+  }
+  return out;
+}
+
+/**
+ * PDF / Gemini often returns lesson_name + learning_objectives only; the app UI expects
+ * objectives[], activities[], timeline[], assessment.
+ */
+export function normalizeLessonPlannerStructuredContent(raw, toolSlug = 'lesson-planner') {
+  const source = raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
+
+  const objectives = dedupeStringList([
+    ...coerceBulletLines(source.objectives),
+    ...coerceBulletLines(source.learning_objectives),
+    ...coerceBulletLines(source.learningObjectives),
+    ...coerceBulletLines(source.learning_outcomes),
+    ...coerceBulletLines(source.outcomes),
+    ...coerceBulletLines(source.goals),
+    ...coerceBulletLines(source.learning_goals),
+    ...coerceBulletLines(source.competencies),
+  ]);
+
+  const activities = dedupeStringList([
+    ...coerceBulletLines(source.activities),
+    ...coerceBulletLines(source.teaching_activities),
+    ...coerceBulletLines(source.lesson_activities),
+    ...coerceBulletLines(source.teaching_learning_process),
+    ...coerceBulletLines(source.teaching_learning_activities),
+    ...coerceBulletLines(source.classroom_activities),
+    ...coerceBulletLines(source.classroom_transaction),
+    ...coerceBulletLines(source.transaction_process),
+    ...coerceBulletLines(source.pedagogy),
+    ...coerceBulletLines(source.pedagogical_steps),
+    ...coerceBulletLines(source.procedure),
+    ...coerceBulletLines(source.methodology),
+    ...coerceBulletLines(source.lesson_procedure),
+    ...coerceBulletLines(source.instructional_procedure),
+    ...coerceBulletLines(source.lesson_flow),
+    ...coerceBulletLines(source.main_activity),
+    ...coerceBulletLines(source.steps),
+    ...(Array.isArray(source.phases)
+      ? source.phases.map((p) =>
+          [p?.name, p?.phase, p?.title, p?.details, p?.description]
+            .filter(Boolean)
+            .map((x) => String(x).trim())
+            .join(' — '),
+        )
+      : []),
+  ]);
+
+  let timeline = dedupeStringList([
+    ...coerceBulletLines(source.timeline),
+    ...coerceBulletLines(source.schedule),
+    ...coerceBulletLines(source.duration_plan),
+    ...coerceBulletLines(source.period_plan),
+  ]);
+
+  if (Array.isArray(source.time_slots) && source.time_slots.length) {
+    const fromSlots = source.time_slots
+      .map((ts) => {
+        const t = String(ts?.time || ts?.duration || ts?.slot || '').trim();
+        const a = String(ts?.activity || ts?.task || ts?.topic || ts?.description || '').trim();
+        if (t && a) return `${t}: ${a}`;
+        if (a) return a;
+        if (t) return t;
+        return '';
+      })
+      .filter(Boolean);
+    timeline = dedupeStringList([...timeline, ...fromSlots]);
+  }
+
+  if (!timeline.length && activities.length) {
+    if (toolSlug === 'daily-class-plan-maker') {
+      timeline = activities.slice();
+    } else if (toolSlug === 'lesson-planner') {
+      timeline = activities.map((a, i) => `${i + 1}. ${a}`).slice(0, 40);
+    }
+  }
+
+  let activitiesOut = activities;
+  if (!activitiesOut.length) {
+    activitiesOut = dedupeStringList(
+      coerceBulletLines(source.content || source.lesson_content || source.body || source.summary || ''),
+    );
+  }
+
+  const assessment = String(
+    source.assessment ||
+      source.evaluation ||
+      source.assessment_strategy ||
+      source.assessment_strategies ||
+      source.formative_assessment ||
+      source.summative_assessment ||
+      source.assessment_criteria ||
+      source.evaluation_criteria ||
+      '',
+  ).trim();
+
+  const lessonTitle = String(source.lesson_name || source.title || source.name || '').trim();
+
+  return {
+    ...source,
+    lesson_name: lessonTitle || source.lesson_name,
+    title: String(source.title || lessonTitle || '').trim() || source.title,
+    objectives,
+    activities: activitiesOut,
+    timeline,
+    assessment,
+  };
+}
+
 const normalizeStructuredContentByTool = (toolSlug, structuredContent, contentType, sourceText = '') => {
   const source = structuredContent && typeof structuredContent === 'object' && !Array.isArray(structuredContent)
     ? structuredContent
@@ -382,6 +487,9 @@ const normalizeStructuredContentByTool = (toolSlug, structuredContent, contentTy
   if (toolSlug === 'activity-project-generator') {
     const normalized = normalizeActivityStructuredContent(source);
     return { normalizedStructuredContent: normalized };
+  }
+  if (toolSlug === 'lesson-planner' || toolSlug === 'daily-class-plan-maker') {
+    return { normalizedStructuredContent: normalizeLessonPlannerStructuredContent(source, toolSlug) };
   }
   if (toolSlug === 'worksheet-mcq-generator' || toolSlug === 'homework-creator') {
     const candidateGroups = [
@@ -469,8 +577,15 @@ const TOOL_STRUCTURED_RULES = {
   },
   'lesson-planner': {
     allowedTypes: ['Lesson Plan'],
-    validate: (data) => Array.isArray(data?.objectives) && data.objectives.length > 0,
-    message: 'Lesson plan must include a non-empty objectives array.',
+    validate: (data) => {
+      const o = Array.isArray(data?.objectives) ? data.objectives.length : 0;
+      const a = Array.isArray(data?.activities) ? data.activities.length : 0;
+      const t = Array.isArray(data?.timeline) ? data.timeline.length : 0;
+      const s = String(data?.assessment || '').trim().length;
+      return o > 0 || a > 0 || t > 0 || s > 24;
+    },
+    message:
+      'Lesson plan must include at least one of: objectives, activities, timeline, or assessment (from the PDF).',
   },
   'homework-creator': {
     allowedTypes: ['Homework'],
@@ -588,6 +703,21 @@ function coerceRegenerationStructuredContent(toolSlug, parsed) {
       };
     }
     inner = merged;
+  }
+
+  if (toolSlug === 'lesson-planner' || toolSlug === 'daily-class-plan-maker') {
+    const rootPick = {
+      ...(root.objectives ? { objectives: root.objectives } : {}),
+      ...(root.learning_objectives ? { learning_objectives: root.learning_objectives } : {}),
+      ...(root.activities ? { activities: root.activities } : {}),
+      ...(root.timeline ? { timeline: root.timeline } : {}),
+      ...(root.time_slots ? { time_slots: root.time_slots } : {}),
+      ...(root.assessment ? { assessment: root.assessment } : {}),
+      ...(root.lesson_name ? { lesson_name: root.lesson_name } : {}),
+    };
+    if (Object.keys(rootPick).length) {
+      inner = { ...rootPick, ...inner };
+    }
   }
 
   return inner;
@@ -864,13 +994,14 @@ export function buildRenderableContent(toolSlug, contentType, structuredContent)
     };
   }
   if (toolSlug === 'lesson-planner' || toolSlug === 'daily-class-plan-maker') {
+    const lp = normalizeLessonPlannerStructuredContent(source, toolSlug);
     return {
       kind: 'lessonPlan',
-      title: type || 'Lesson Plan',
-      objectives: toStringList(source.objectives),
-      activities: toStringList(source.activities),
-      timeline: toStringList(source.timeline),
-      assessment: String(source.assessment || '').trim(),
+      title: String(lp.lesson_name || lp.title || type || 'Lesson Plan').trim(),
+      objectives: toStringList(lp.objectives),
+      activities: toStringList(lp.activities),
+      timeline: toStringList(lp.timeline),
+      assessment: String(lp.assessment || '').trim(),
     };
   }
   if (toolSlug === 'flashcard-generator') {
@@ -1127,16 +1258,43 @@ ${String(pdfText || '').slice(0, 65000)}
 `
       : '';
 
+  const lessonPlannerPdfCopyPrompt = `You extract a lesson plan from an Indian school PDF into JSON.
+
+Return ONLY valid JSON (single object, no markdown fences):
+{"contentType":"${contentType}","structuredContent":{
+  "objectives":["…","…"],
+  "activities":["…","…"],
+  "timeline":["…","…"],
+  "assessment":"…"
+}}
+
+RULES (critical):
+- COPY wording from the PDF into arrays: split each bullet or numbered line into its own string.
+- Map sections titled (or similar) Learning Objectives / Outcomes → objectives; Procedure / Teaching-Learning / Activities / Methodology → activities; Duration / Period / Time allocation → timeline; Assessment / Evaluation → assessment.
+- Do NOT invent content if the PDF lacks a section — omit empty arrays only if truly absent; otherwise include every substantive line you find.
+- If the PDF has multiple lesson variations, fill structuredContent for the FIRST complete variation only (still use arrays with all its lines).
+
+CLASS: ${selectedClass || '—'}  SUBJECT: ${selectedSubject || '—'}  TOPIC: ${selectedTopic || '—'}  SUBTOPIC: ${selectedSubTopic || '—'}
+
+PDF TEXT:
+${String(pdfText || '').slice(0, 120000)}
+`;
+
   let lastError = null;
   for (let attempt = 1; attempt <= 5; attempt += 1) {
     try {
       const useCompact = toolSlug === 'activity-project-generator' && attempt >= 4;
+      const useLessonCopy =
+        (toolSlug === 'lesson-planner' || toolSlug === 'daily-class-plan-maker') && attempt >= 3;
       const raw = await geminiService.generateStructuredContent(
-        useCompact ? activitySchemasOnlyPrompt : prompt,
+        useCompact ? activitySchemasOnlyPrompt : useLessonCopy ? lessonPlannerPdfCopyPrompt : prompt,
         'json',
       );
       const json = extractJsonObject(raw);
       let structuredContent = coerceRegenerationStructuredContent(toolSlug, json);
+      if (toolSlug === 'lesson-planner' || toolSlug === 'daily-class-plan-maker') {
+        structuredContent = normalizeLessonPlannerStructuredContent(structuredContent, toolSlug);
+      }
       if (toolSlug === 'activity-project-generator') {
         structuredContent = finalizeActivityStructuredContent(structuredContent, selected);
       }
@@ -1221,6 +1379,6 @@ export function resolveToolSlugFromLabel(label) {
 }
 
 export function getToolLabelFromSlug(slug) {
-  return TOOL_LABEL_BY_SLUG[slug] || slug;
+  return getToolDisplayTitle(slug);
 }
 

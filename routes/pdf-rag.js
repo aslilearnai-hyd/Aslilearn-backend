@@ -22,25 +22,15 @@ import {
   finalizeActivityStructuredContent,
   buildDeterministicQuestionSetFromText,
   normalizeActivityStructuredContent,
+  normalizeLessonPlannerStructuredContent,
 } from '../services/ai-content-engine-service.js';
 import { extractAndGenerateAllItems } from '../services/gemini-service.js';
 import { formatItemToContent } from '../controllers/aiToolsController.js';
 import { boardMongoMatch } from '../utils/board-label.js';
+import { AI_TOOL_ORDERED_SLUGS } from '../config/aiToolTemplates.js';
 
 /** After classify, always run template regeneration — classification output is unreliable for learner-facing layouts. */
-const ALWAYS_REGENERATE_STRUCTURED_TOOLS = new Set([
-  'activity-project-generator',
-  'worksheet-mcq-generator',
-  'concept-mastery-helper',
-  'lesson-planner',
-  'homework-creator',
-  'rubrics-evaluation-generator',
-  'story-passage-creator',
-  'short-notes-summaries-maker',
-  'flashcard-generator',
-  'daily-class-plan-maker',
-  'exam-question-paper-generator',
-]);
+const ALWAYS_REGENERATE_STRUCTURED_TOOLS = new Set(AI_TOOL_ORDERED_SLUGS);
 
 /** One viewer-friendly render blob per bulk-saved item (matches `buildRenderableContent` shapes). */
 function buildBulkRenderContent(toolSlug, contentType, item) {
@@ -274,9 +264,28 @@ const syncPdfSourceToAiToolData = async (source) => {
   );
 };
 
+/** Recompute viewer blobs from stored structured fields (fixes stale metadata.renderContent for lesson tools). */
+function enrichLessonPlanRowForApi(data) {
+  if (!data || typeof data !== 'object') return data;
+  const tool = String(data.toolType || data.toolName || '').trim();
+  if (tool !== 'lesson-planner' && tool !== 'daily-class-plan-maker') return data;
+  let structured =
+    data.structuredContent && typeof data.structuredContent === 'object' && !Array.isArray(data.structuredContent)
+      ? { ...data.structuredContent }
+      : {};
+  const normalized = normalizeLessonPlannerStructuredContent(structured, tool);
+  const ct =
+    String(data.contentType || '').trim() || (tool === 'daily-class-plan-maker' ? 'Daily Plan' : 'Lesson Plan');
+  return {
+    ...data,
+    structuredContent: { ...structured, ...normalized },
+    renderContent: buildRenderableContent(tool, ct, normalized),
+  };
+}
+
 function mapMasterPdfToListRow(doc) {
   const m = doc.metadata || {};
-  return {
+  const row = {
     _id: doc._id,
     originalName: doc.pdfFileName || m.originalName || '',
     fileUrl: doc.pdfFileUrl || '',
@@ -290,8 +299,14 @@ function mapMasterPdfToListRow(doc) {
     approvalStatus: m.approvalStatus || 'pending',
     toolType: doc.toolName,
     contentType: m.contentType || '',
-    structuredContent: m.structuredContent || {},
-    renderContent: m.renderContent || {},
+    structuredContent:
+      m.structuredContent && typeof m.structuredContent === 'object' && !Array.isArray(m.structuredContent)
+        ? { ...m.structuredContent }
+        : {},
+    renderContent:
+      m.renderContent && typeof m.renderContent === 'object' && !Array.isArray(m.renderContent)
+        ? { ...m.renderContent }
+        : {},
     chunkCount: m.chunkCount ?? 0,
     uploadDate: doc.createdAt,
     updatedAt: doc.updatedAt,
@@ -299,13 +314,15 @@ function mapMasterPdfToListRow(doc) {
     uploadedByRole: m.uploadedByRole || '',
     geminiDetected: m.geminiDetected,
     validation: m.validation,
+    generatedContent: String(doc.generatedContent || doc.content || '').trim(),
   };
+  return enrichLessonPlanRowForApi(row);
 }
 
 /** Legacy rows only in aicontentenginesources (no master in aitoolgenerations yet). */
 function mapSourcePdfToListRow(source) {
   if (!source) return null;
-  return {
+  const row = {
     _id: source._id,
     originalName: source.originalName || '',
     fileUrl: source.fileUrl || '',
@@ -319,8 +336,14 @@ function mapSourcePdfToListRow(source) {
     approvalStatus: source.approvalStatus || 'pending',
     toolType: source.toolType,
     contentType: source.contentType || '',
-    structuredContent: source.structuredContent || {},
-    renderContent: source.renderContent || {},
+    structuredContent:
+      source.structuredContent && typeof source.structuredContent === 'object' && !Array.isArray(source.structuredContent)
+        ? { ...source.structuredContent }
+        : {},
+    renderContent:
+      source.renderContent && typeof source.renderContent === 'object' && !Array.isArray(source.renderContent)
+        ? { ...source.renderContent }
+        : {},
     chunkCount: source.chunkCount ?? 0,
     uploadDate: source.uploadDate || source.createdAt,
     updatedAt: source.updatedAt,
@@ -329,6 +352,7 @@ function mapSourcePdfToListRow(source) {
     geminiDetected: source.geminiDetected,
     validation: source.validation,
   };
+  return enrichLessonPlanRowForApi(row);
 }
 
 async function resolvePdfMasterAndSource(id) {
@@ -630,7 +654,9 @@ router.post(
           const structuredForRow =
             resolvedToolSlug === 'activity-project-generator'
               ? normalizeActivityStructuredContent(metaClean)
-              : metaClean;
+              : resolvedToolSlug === 'lesson-planner' || resolvedToolSlug === 'daily-class-plan-maker'
+                ? normalizeLessonPlannerStructuredContent(metaClean, resolvedToolSlug)
+                : metaClean;
           const contentStr = formatItemToContent(resolvedToolSlug, structuredForRow, index);
           return {
             toolName: resolvedToolSlug,
@@ -1117,22 +1143,23 @@ router.get('/pdf/:id', verifyToken, authorizeRoles('teacher', 'admin', 'super-ad
     if (master && source) {
       return res.json({
         success: true,
-        data: {
+        data: enrichLessonPlanRowForApi({
           ...source,
           _id: master._id,
+          toolType: master.toolName || source.toolType,
           structuredContent: master.metadata?.structuredContent ?? source.structuredContent,
           renderContent: master.metadata?.renderContent ?? source.renderContent,
-        },
+        }),
       });
     }
     if (source) {
-      return res.json({ success: true, data: source });
+      return res.json({ success: true, data: enrichLessonPlanRowForApi(source) });
     }
     if (master) {
       const m = master.metadata || {};
       return res.json({
         success: true,
-        data: {
+        data: enrichLessonPlanRowForApi({
           _id: master._id,
           originalName: master.pdfFileName,
           fileUrl: master.pdfFileUrl,
@@ -1149,7 +1176,7 @@ router.get('/pdf/:id', verifyToken, authorizeRoles('teacher', 'admin', 'super-ad
           processingStatus: m.processingStatus,
           chunkCount: m.chunkCount,
           uploadDate: master.createdAt,
-        },
+        }),
       });
     }
     return res.status(404).json({ success: false, message: 'PDF source not found' });

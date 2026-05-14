@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { GEMINI_MODELS_FALLBACK } from './gemini-models.js';
 import { extractActivitiesFromCuriosityWorkbookPdf } from './curiosity-activity-pdf-parser.js';
+import { buildPdfToolConfigMap } from '../config/aiToolTemplates.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -422,68 +423,7 @@ Generate high-quality educational content for toolType="${toolType}" using param
   );
 }
 
-const PDF_TOOL_CONFIG = {
-  'activity-project-generator': {
-    requiredFields: [
-      'title',
-      'learning_objectives',
-      'materials_required',
-      'step_by_step_procedure',
-      'teacher_instructions',
-      'student_instructions',
-      'expected_learning_outcomes',
-      'assessment_criteria_rubric',
-      'real_life_application',
-    ],
-    /** Official Activity & Project layout (includes section 6 in Curiosity PDFs). */
-    schema: {
-      sl_no: 'number',
-      title: 'string — (1) Title',
-      learning_objectives: ['string — (2) Learning objectives, one per line'],
-      materials_required: ['string — (3) Materials required, one per item'],
-      step_by_step_procedure: ['string — (4) Step-by-step procedure for students, one step per string'],
-      teacher_instructions: ['string — (5) Teacher instructions, one bullet per string'],
-      student_instructions: ['string — (6) Student instructions, one bullet per string'],
-      expected_learning_outcomes: 'string — (7) Expected learning outcomes (paragraph or bullets as one string)',
-      assessment_criteria_rubric: ['string — (8) Assessment criteria / rubric, one criterion per string'],
-      real_life_application: 'string — (9) Real-life application',
-    },
-  },
-  'worksheet-mcq-generator': {
-    requiredFields: ['question', 'answer'],
-    schema: {
-      question_number: 'number',
-      type: 'string',
-      section: 'string',
-      question: 'string',
-      options: ['string'],
-      answer: 'string',
-      explanation: 'string',
-      marks: 'number',
-      blank_answer: 'string',
-    },
-  },
-  'concept-mastery-helper': {
-    requiredFields: ['concept_name', 'lesson'],
-    schema: {
-      concept_name: 'string',
-      difficulty: 'string',
-      lesson: 'string',
-      real_example: 'string',
-      key_points: ['string'],
-      common_mistakes: ['string'],
-      quick_recap: 'string',
-    },
-  },
-  'lesson-planner': { requiredFields: ['lesson_name', 'learning_objectives'], schema: { lesson_name: 'string' } },
-  'homework-creator': { requiredFields: ['title', 'questions'], schema: { title: 'string' } },
-  'rubrics-evaluation-generator': { requiredFields: ['title', 'criteria'], schema: { title: 'string' } },
-  'story-passage-creator': { requiredFields: ['title', 'passage'], schema: { title: 'string' } },
-  'short-notes-summaries-maker': { requiredFields: ['concept_name', 'summary'], schema: { concept_name: 'string' } },
-  'flashcard-generator': { requiredFields: ['front', 'back'], schema: { front: 'string', back: 'string', type: 'string', hint: 'string', topic_tag: 'string' } },
-  'daily-class-plan-maker': { requiredFields: ['title', 'time_slots'], schema: { title: 'string' } },
-  'exam-question-paper-generator': { requiredFields: ['question', 'answer'], schema: { question_number: 'number', question: 'string', answer: 'string' } },
-};
+const PDF_TOOL_CONFIG = buildPdfToolConfigMap();
 
 export function buildPdfParsePrompt(toolType, rawPdfText, params = {}) {
   return buildPdfExtractPrompt(toolType, rawPdfText, params);
@@ -513,6 +453,29 @@ Each JSON object is ONE activity from the PDF. Map sections by label/numbering i
 If the PDF has several activities, return one object per activity (same sl_no / order as in the document). Do not merge multiple activities into one object.
 `
       : '';
+  const lessonPlannerTemplateBlock =
+    toolType === 'lesson-planner'
+      ? `
+
+LESSON PLAN — TEMPLATE MAPPING (mandatory):
+Each JSON object is ONE full lesson plan variation from the PDF (often "Lesson 1", "Variation 1", "Plan 1", etc.).
+- lesson_name: the lesson / variation title exactly as in the PDF
+- learning_objectives: bullet list from "Learning Objectives", "Objectives", "Learning Outcomes" — one string per bullet
+- teaching_activities: numbered steps from "Procedure", "Teaching-Learning Process", "Classroom activities", "Methodology", "Lesson development" — one string per step (preserve PDF order)
+- materials_required: from "Materials", "Resources", "Teaching aids" if present
+- timeline: time- or period-based lines ("5 min: ...", "Period 1 — ...") OR leave [] and fill time_slots if the PDF uses a Time | Activity table
+- time_slots: only when the PDF has explicit time columns: [{ "time": "...", "activity": "..." }, ...]
+- assessment: text from "Assessment", "Evaluation", "Formative/Summative assessment" sections
+
+Return one object per distinct lesson variation. Each object must have lesson_name plus at least one non-empty field among learning_objectives, teaching_activities, timeline, time_slots, materials_required, or assessment (all text copied from the PDF). Do not return objects where every one of those fields is empty.
+`
+      : '';
+  const rule7 =
+    toolType === 'activity-project-generator'
+      ? '7. The "title" field must be ONLY the activity name (e.g. "Observing shadows"). Never use section labels (Materials Required, Learning Objectives, Title, Rubric) as title'
+      : toolType === 'lesson-planner'
+        ? '7. Use "lesson_name" for the lesson title (not generic words like "Objectives" alone). Fill learning_objectives and teaching_activities from the PDF whenever those sections exist.'
+        : '7. Use schema field names exactly; each item\'s title/name fields must be real content titles from the PDF, not section headings alone';
   return `You are a precise educational content extractor. Extract structured data from this PDF.
 
 CONTEXT:
@@ -528,22 +491,28 @@ ${rawPdfText}
 """
 
 YOUR TASK:
-Extract ONLY the items that have COMPLETE content in this PDF (items with all required fields: ${requiredFields}).
+${toolType === 'lesson-planner'
+  ? `Extract one JSON object per lesson plan variation in the PDF (numbered lessons, "Variation N", multiple period plans, etc.).
+Each object MUST have non-empty lesson_name and at least one substantive content field from the schema (bullets/lines copied from the PDF).
+Skip stubs that are only a title with no objectives, activities, timeline, materials, or assessment text.
+Do NOT invent steps or objectives that are not present in the PDF text.
+Do NOT treat standalone appendix or index pages as lesson plans.${activityTemplateBlock}${lessonPlannerTemplateBlock}`
+  : `Extract ONLY the items that have COMPLETE content in this PDF (items with all required fields: ${requiredFields}).
 Do NOT extract items that are only titles or brief mentions without full content.
 Do NOT generate or invent content that is not present in the PDF text above.
-Do NOT treat standalone workbook appendix headings as a separate activity unless they are a full numbered activity block.${activityTemplateBlock}
+Do NOT treat standalone workbook appendix headings as a separate activity unless they are a full numbered activity block.${activityTemplateBlock}${lessonPlannerTemplateBlock}`}
 
 Return a JSON array. Each element uses this schema:
 ${schemaStr}
 
 RULES:
 1. Return ONLY a raw JSON array [ ... ] — no markdown, no code fences, no explanation
-2. Extract ONLY items with complete content — skip title-only entries
+2. ${toolType === 'lesson-planner' ? 'Skip title-only rows with no substantive lesson body in any mapped field.' : 'Extract ONLY items with complete content — skip title-only entries'}
 3. Preserve the EXACT wording from the PDF — do not paraphrase
 4. For fields not present in PDF, use "" or []
-5. sl_no / question_number must match the activity number from the PDF when numbered
+5. sl_no / question_number must match the lesson or variation number from the PDF when numbered
 6. Add "_fromPdf": true to each extracted object
-7. The "title" field must be ONLY the activity name (e.g. "Observing shadows"). Never use section labels (Materials Required, Learning Objectives, Title, Rubric) as title`;
+${rule7}`;
 }
 
 export function buildSingleItemGenerationPrompt(toolType, itemNumber, itemTitle, templateExamples = [], params = {}) {
@@ -554,6 +523,36 @@ export function buildSingleItemGenerationPrompt(toolType, itemNumber, itemTitle,
     .slice(0, 2)
     .map((ex, i) => `Example ${i + 1}:\n${JSON.stringify(ex, null, 2)}`)
     .join('\n\n');
+
+  if (toolType === 'lesson-planner') {
+    return `You are an expert educational content creator for Indian school curriculum.
+
+CONTEXT:
+- Class: ${classLabel}
+- Subject: ${subject}
+- Topic: ${topic}
+- Subtopic: ${subtopic}
+- Tool Type: lesson-planner
+
+TASK:
+Generate ONE complete lesson plan JSON object for variation #${itemNumber} titled: "${itemTitle}".
+Base every field on the STYLE and DEPTH of the examples and on curriculum context — this fills a gap when the PDF extraction missed this variation.
+
+STYLE REFERENCE:
+${examplesStr}
+
+OUTPUT SCHEMA:
+${schemaStr}
+
+RULES:
+1. Return ONLY a single JSON object — no markdown, no code fences
+2. Set sl_no and question_number to ${itemNumber}
+3. lesson_name must be "${itemTitle}" or a concise lesson title derived from it (not a section heading like "Objectives" alone)
+4. learning_objectives: at least 3 strings; teaching_activities: at least 4 strings; timeline: at least 3 time-block strings; assessment: non-empty string
+5. Use the exact schema key names; arrays of strings where the schema shows arrays
+6. Do not copy unrelated PDF boilerplate; write coherent lesson content for this subtopic`;
+  }
+
   return `You are an expert educational content creator for Indian school curriculum.
 
 CONTEXT:
@@ -775,13 +774,15 @@ export async function extractAndGenerateAllItems(toolType, rawPdfText, params = 
   const extractPrompt = buildPdfExtractPrompt(toolType, text, params);
   let extractedItems = [];
   try {
+    const maxExtractTokens =
+      toolType === 'lesson-planner' || toolType === 'daily-class-plan-maker' ? 16384 : 8000;
     const extractRaw = await callChatCompletions({
       messages: [
         { role: 'system', content: 'You are a JSON extraction engine. Return ONLY a valid JSON array.' },
         { role: 'user', content: extractPrompt },
       ],
       temperature: 0.05,
-      maxTokens: 8000,
+      maxTokens: maxExtractTokens,
       preferJson: false,
     });
     const parsed = JSON.parse(stripCodeFences(extractRaw));
@@ -837,14 +838,21 @@ export async function extractAndGenerateAllItems(toolType, rawPdfText, params = 
           });
           const genItem = JSON.parse(stripCodeFences(genRaw));
           if (genItem && typeof genItem === 'object' && !Array.isArray(genItem)) {
-            generatedItems.push({
+            const row = {
               ...genItem,
               sl_no: genItem.sl_no || number,
               question_number: genItem.question_number || number,
-              title: genItem.title || title,
-              name: genItem.name || title,
               _fromPdf: false,
-            });
+            };
+            if (toolType === 'lesson-planner') {
+              row.lesson_name = String(genItem.lesson_name || genItem.title || title).trim();
+              row.title = genItem.title || title;
+              row.name = genItem.name || title;
+            } else {
+              row.title = genItem.title || title;
+              row.name = genItem.name || title;
+            }
+            generatedItems.push(row);
           }
         } catch (err) {
           console.error(`[PDF] Generation failed for ${number}:`, err?.message || err);
