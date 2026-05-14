@@ -165,54 +165,13 @@ export function formatItemToContent(toolType, item, index = 0) {
     case 'lesson-planner': {
       lines.push(`## ${i.lesson_name || `Lesson ${n}`}`, '');
       if (i.subject_area) lines.push(`**Subject:** ${i.subject_area}`);
-      if (i.class_label) lines.push(`**Class:** ${i.class_label}`);
-      if (i.chapter_topic) lines.push(`**Chapter / topic:** ${i.chapter_topic}`);
-      if (i.teaching_method) lines.push(`**Teaching method:** ${i.teaching_method}`);
-      if (i.duration_label) lines.push(`**Duration:** ${i.duration_label}`);
-      else if (i.duration?.periods && i.duration?.minutes_per_period) {
+      if (i.duration?.periods && i.duration?.minutes_per_period) {
         lines.push(`**Duration:** ${i.duration.periods} period(s) x ${i.duration.minutes_per_period} min`);
       }
       lines.push('');
-      if (Array.isArray(i.learning_objectives) && i.learning_objectives.length) {
-        lines.push('### Learning objectives');
+      if (Array.isArray(i.learning_objectives)) {
+        lines.push('### Learning Objectives');
         i.learning_objectives.forEach((o) => lines.push(`- ${o}`));
-        lines.push('');
-      }
-      const intro = i.introduction_warmup || i.introductionWarmup;
-      if (Array.isArray(intro) && intro.length) {
-        lines.push('### Introduction / warm-up');
-        intro.forEach((o) => lines.push(`- ${o}`));
-        lines.push('');
-      }
-      const strat = i.teaching_strategy || i.teachingStrategy;
-      if (Array.isArray(strat) && strat.length) {
-        lines.push('### Teaching strategy');
-        strat.forEach((o) => lines.push(`- ${o}`));
-        lines.push('');
-      }
-      const acts = i.classroom_activities || i.classroomActivities;
-      if (Array.isArray(acts) && acts.length) {
-        lines.push('### Classroom activities');
-        acts.forEach((o) => lines.push(`- ${o}`));
-        lines.push('');
-      }
-      const assess = i.assessment_questions || i.assessmentQuestions;
-      if (Array.isArray(assess) && assess.length) {
-        lines.push('### Assessment questions');
-        assess.forEach((o) => lines.push(`- ${o}`));
-        lines.push('');
-      }
-      const hw = i.homework_practice || i.homeworkPractice;
-      if (Array.isArray(hw) && hw.length) {
-        lines.push('### Homework / practice');
-        hw.forEach((o) => lines.push(`- ${o}`));
-        lines.push('');
-      }
-      const aids = i.teaching_aids || i.teachingAids;
-      if (Array.isArray(aids) && aids.length) {
-        lines.push('### Teaching aids required');
-        aids.forEach((o) => lines.push(`- ${o}`));
-        lines.push('');
       }
       break;
     }

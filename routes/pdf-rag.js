@@ -292,7 +292,6 @@ function mapMasterPdfToListRow(doc) {
     contentType: m.contentType || '',
     structuredContent: m.structuredContent || {},
     renderContent: m.renderContent || {},
-    generatedContent: doc.generatedContent || '',
     chunkCount: m.chunkCount ?? 0,
     uploadDate: doc.createdAt,
     updatedAt: doc.updatedAt,
@@ -322,7 +321,6 @@ function mapSourcePdfToListRow(source) {
     contentType: source.contentType || '',
     structuredContent: source.structuredContent || {},
     renderContent: source.renderContent || {},
-    generatedContent: source.generatedContent || '',
     chunkCount: source.chunkCount ?? 0,
     uploadDate: source.uploadDate || source.createdAt,
     updatedAt: source.updatedAt,
@@ -1124,7 +1122,6 @@ router.get('/pdf/:id', verifyToken, authorizeRoles('teacher', 'admin', 'super-ad
           _id: master._id,
           structuredContent: master.metadata?.structuredContent ?? source.structuredContent,
           renderContent: master.metadata?.renderContent ?? source.renderContent,
-          generatedContent: master.generatedContent || '',
         },
       });
     }
@@ -1148,7 +1145,6 @@ router.get('/pdf/:id', verifyToken, authorizeRoles('teacher', 'admin', 'super-ad
           contentType: m.contentType,
           structuredContent: m.structuredContent || {},
           renderContent: m.renderContent || {},
-          generatedContent: master.generatedContent || '',
           approvalStatus: m.approvalStatus,
           processingStatus: m.processingStatus,
           chunkCount: m.chunkCount,

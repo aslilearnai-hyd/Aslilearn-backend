@@ -4,7 +4,6 @@ import dotenv from 'dotenv';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { GEMINI_MODELS_FALLBACK } from './gemini-models.js';
 import { extractActivitiesFromCuriosityWorkbookPdf } from './curiosity-activity-pdf-parser.js';
-import { extractLessonPlansFromCuriosityVariationsPdf } from './curiosity-lesson-plan-pdf-parser.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -476,25 +475,7 @@ const PDF_TOOL_CONFIG = {
       quick_recap: 'string',
     },
   },
-  'lesson-planner': {
-    requiredFields: ['lesson_name', 'learning_objectives'],
-    schema: {
-      lesson_plan_number: 'number — when PDF uses "Lesson Plan N"',
-      lesson_name: 'string — include method/duration if given in the block',
-      subject_area: 'string',
-      teaching_method: 'string',
-      duration_label: 'string',
-      chapter_topic: 'string',
-      class_label: 'string',
-      learning_objectives: ['string'],
-      introduction_warmup: ['string'],
-      teaching_strategy: ['string'],
-      classroom_activities: ['string'],
-      assessment_questions: ['string'],
-      homework_practice: ['string'],
-      teaching_aids: ['string'],
-    },
-  },
+  'lesson-planner': { requiredFields: ['lesson_name', 'learning_objectives'], schema: { lesson_name: 'string' } },
   'homework-creator': { requiredFields: ['title', 'questions'], schema: { title: 'string' } },
   'rubrics-evaluation-generator': { requiredFields: ['title', 'criteria'], schema: { title: 'string' } },
   'story-passage-creator': { requiredFields: ['title', 'passage'], schema: { title: 'string' } },
@@ -532,17 +513,6 @@ Each JSON object is ONE activity from the PDF. Map sections by label/numbering i
 If the PDF has several activities, return one object per activity (same sl_no / order as in the document). Do not merge multiple activities into one object.
 `
       : '';
-  const lessonPlanTemplateBlock =
-    toolType === 'lesson-planner'
-      ? `
-
-CURiosity-STYLE MULTI LESSON PLAN PDF (when applicable):
-The PDF may contain blocks titled "Lesson Plan 1", "Lesson Plan 2", … each with metadata (Class, Subject, Chapter/Topic, Duration, Teaching Method) and numbered sections:
-1. Learning Objectives — 2. Introduction / Warm-up — 3. Teaching Strategy — 4. Classroom Activities —
-5. Assessment Questions — 6. Homework / Practice — 7. Teaching Aids Required.
-Return ONE JSON object per "Lesson Plan N". Preserve PDF wording in string arrays. lesson_plan_number must equal N.
-`
-      : '';
   return `You are a precise educational content extractor. Extract structured data from this PDF.
 
 CONTEXT:
@@ -561,7 +531,7 @@ YOUR TASK:
 Extract ONLY the items that have COMPLETE content in this PDF (items with all required fields: ${requiredFields}).
 Do NOT extract items that are only titles or brief mentions without full content.
 Do NOT generate or invent content that is not present in the PDF text above.
-Do NOT treat standalone workbook appendix headings as a separate activity unless they are a full numbered activity block.${activityTemplateBlock}${lessonPlanTemplateBlock}
+Do NOT treat standalone workbook appendix headings as a separate activity unless they are a full numbered activity block.${activityTemplateBlock}
 
 Return a JSON array. Each element uses this schema:
 ${schemaStr}
@@ -688,13 +658,6 @@ function detectAllTitlesInPdf(toolType, rawText) {
         if (!looksLikeRealActivityTitle(title)) continue;
         partial.push({ number, title });
       }
-    } else if (toolType === 'lesson-planner') {
-      const lpPattern = /\bLesson Plan\s+(\d+)\b/gi;
-      let m;
-      while ((m = lpPattern.exec(scan)) !== null) {
-        const number = Number.parseInt(m[1], 10);
-        if (Number.isFinite(number)) partial.push({ number, title: `Lesson Plan ${m[1]}` });
-      }
     } else {
       const genericPattern = /^(?:Q\.?\s*)?(\d+)[\.\)]\s+(.+)$/gm;
       let m;
@@ -806,18 +769,6 @@ export async function extractAndGenerateAllItems(toolType, rawPdfText, params = 
       return workbookActivities
         .map((row) => ({ ...row, _fromPdf: true }))
         .sort((a, b) => Number(a.sl_no || 0) - Number(b.sl_no || 0));
-    }
-  }
-
-  if (toolType === 'lesson-planner') {
-    const curiosityLessons = extractLessonPlansFromCuriosityVariationsPdf(text);
-    if (curiosityLessons && curiosityLessons.length > 0) {
-      return curiosityLessons.map((row) => ({
-        ...row,
-        _fromPdf: true,
-        sl_no: row.lesson_plan_number,
-        question_number: row.lesson_plan_number,
-      }));
     }
   }
 
