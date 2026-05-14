@@ -13,7 +13,7 @@ import Subject from '../models/Subject.js';
 import Content from '../models/Content.js';
 import RiskAnalysisReport from '../models/RiskAnalysisReport.js';
 import { getExplicitTeacherSubjectObjectIds } from '../utils/teacherSubjectScope.js';
-import { isValidSchoolBoard } from '../constants/boards.js';
+import { isValidSchoolBoard, normalizeSchoolBoard } from '../constants/boards.js';
 
 const buildSafeAppendQuestionPipeline = (questionId) => [
   {
@@ -2056,13 +2056,96 @@ export const getClasses = async (req, res) => {
   }
 };
 
+/** Boards whose Subject rows a school admin should see (stored board + curriculum board often differ). */
+function boardsForAdminSubjectScope(admin) {
+  const boards = new Set();
+  if (admin?.board) boards.add(normalizeSchoolBoard(admin.board));
+  if (admin?.curriculumBoard) boards.add(normalizeSchoolBoard(admin.curriculumBoard));
+  if (boards.size === 0) boards.add('ASLI_EXCLUSIVE_SCHOOLS');
+  return [...boards];
+}
+
 // Subject Management (Admin scoped by board)
 export const getSubjects = async (req, res) => {
   try {
-    const admin = await User.findById(req.adminId).select('board').lean();
-    const board = admin?.board || 'ASLI_EXCLUSIVE_SCHOOLS';
-    const subjects = await Subject.find({ board }).sort({ name: 1 }).lean();
-    res.json({ success: true, data: subjects });
+    if (req.user?.role === 'super-admin') {
+      const subjects = await Subject.find({}).sort({ name: 1 }).lean();
+      const teachers = await Teacher.find({ isActive: true })
+        .select('_id fullName email subjects')
+        .lean();
+      const subjectTeachersMap = new Map();
+      for (const teacher of teachers) {
+        if (!teacher.subjects || !Array.isArray(teacher.subjects)) continue;
+        for (const subjectId of teacher.subjects) {
+          const subjectIdStr = subjectId.toString();
+          if (!subjectTeachersMap.has(subjectIdStr)) {
+            subjectTeachersMap.set(subjectIdStr, []);
+          }
+          subjectTeachersMap.get(subjectIdStr).push({
+            id: teacher._id.toString(),
+            fullName: teacher.fullName,
+            email: teacher.email,
+          });
+        }
+      }
+      const formatted = subjects.map((subject) => {
+        const subjectIdStr = String(subject._id);
+        const assignedTeachers = subjectTeachersMap.get(subjectIdStr) || [];
+        return {
+          ...subject,
+          id: subjectIdStr,
+          teacher: assignedTeachers.length > 0 ? assignedTeachers[0] : null,
+          teachers: assignedTeachers,
+        };
+      });
+      return res.json({ success: true, data: formatted });
+    }
+
+    const adminId = req.adminId || req.userId;
+    if (!adminId || !mongoose.Types.ObjectId.isValid(String(adminId))) {
+      return res.status(400).json({ success: false, message: 'Admin context missing' });
+    }
+
+    const admin = await User.findById(adminId)
+      .select('board curriculumBoard isAsliPrepExclusive')
+      .lean();
+    const boardList = boardsForAdminSubjectScope(admin);
+
+    const subjects = await Subject.find({ board: { $in: boardList } })
+      .sort({ name: 1 })
+      .lean();
+
+    const teachers = await Teacher.find({ isActive: true })
+      .select('_id fullName email subjects')
+      .lean();
+    const subjectTeachersMap = new Map();
+    for (const teacher of teachers) {
+      if (!teacher.subjects || !Array.isArray(teacher.subjects)) continue;
+      for (const subjectId of teacher.subjects) {
+        const subjectIdStr = subjectId.toString();
+        if (!subjectTeachersMap.has(subjectIdStr)) {
+          subjectTeachersMap.set(subjectIdStr, []);
+        }
+        subjectTeachersMap.get(subjectIdStr).push({
+          id: teacher._id.toString(),
+          fullName: teacher.fullName,
+          email: teacher.email,
+        });
+      }
+    }
+
+    const formatted = subjects.map((subject) => {
+      const subjectIdStr = String(subject._id);
+      const assignedTeachers = subjectTeachersMap.get(subjectIdStr) || [];
+      return {
+        ...subject,
+        id: subjectIdStr,
+        teacher: assignedTeachers.length > 0 ? assignedTeachers[0] : null,
+        teachers: assignedTeachers,
+      };
+    });
+
+    res.json({ success: true, data: formatted });
   } catch (error) {
     console.error('getSubjects error:', error);
     res.status(500).json({ success: false, message: 'Failed to fetch subjects' });
@@ -2071,8 +2154,8 @@ export const getSubjects = async (req, res) => {
 
 export const createSubject = async (req, res) => {
   try {
-    const admin = await User.findById(req.adminId).select('board').lean();
-    const board = admin?.board || 'ASLI_EXCLUSIVE_SCHOOLS';
+    const admin = await User.findById(req.adminId || req.userId).select('board curriculumBoard').lean();
+    const board = normalizeSchoolBoard(admin?.board || admin?.curriculumBoard || 'ASLI_EXCLUSIVE_SCHOOLS');
     const { name, code, description, grade, department } = req.body;
 
     if (!name || !String(name).trim()) {

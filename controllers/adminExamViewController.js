@@ -61,35 +61,95 @@ export const getExamDetails = async (req, res) => {
   }
 };
 
+function queryClassNumber(raw) {
+  const s = raw != null ? String(raw).trim() : '';
+  return s || '';
+}
+
 // Get student exam results (filtered by admin's students)
 export const getStudentExamResults = async (req, res) => {
   try {
     const adminId = req.adminId;
     const { examId, classNumber, subject, startDate, endDate } = req.query;
+    const isSuperAdmin = req.user?.role === 'super-admin';
+    const classNum = queryClassNumber(classNumber);
 
-    // Get admin's board
-    const admin = await User.findById(adminId);
-    if (!admin || !admin.board) {
-      return res.status(400).json({ success: false, message: 'Admin board not assigned' });
+    if (isSuperAdmin) {
+      if (!examId || !mongoose.Types.ObjectId.isValid(examId)) {
+        return res.status(400).json({ success: false, message: 'examId is required for exam results' });
+      }
+      const resultQuery = {
+        examId: new mongoose.Types.ObjectId(examId)
+      };
+      if (startDate || endDate) {
+        resultQuery.completedAt = {};
+        if (startDate) resultQuery.completedAt.$gte = new Date(startDate);
+        if (endDate) resultQuery.completedAt.$lte = new Date(endDate);
+      }
+      let results = await ExamResult.find(resultQuery)
+        .populate('userId', 'fullName email classNumber')
+        .populate('examId', 'title examType')
+        .sort({ completedAt: -1 });
+
+      if (classNum) {
+        results = results.filter(
+          (r) => String(r.userId?.classNumber || '').trim() === classNum
+        );
+      }
+
+      let filteredResults = results;
+      if (subject) {
+        filteredResults = results.filter((result) => {
+          const subjectScores = result.subjectWiseScore;
+          if (subjectScores && typeof subjectScores.get === 'function') {
+            return subjectScores.has(subject);
+          }
+          return false;
+        });
+      }
+
+      return res.json({
+        success: true,
+        data: filteredResults,
+        count: filteredResults.length
+      });
     }
 
-    // Get all students assigned to this admin
-    const studentFilter = { assignedAdmin: adminId, role: 'student', board: admin.board };
-    if (classNumber) {
-      studentFilter.classNumber = classNumber;
+    if (!adminId || !mongoose.Types.ObjectId.isValid(String(adminId))) {
+      return res.status(400).json({ success: false, message: 'Admin context missing' });
+    }
+
+    const admin = await User.findById(adminId);
+    if (!admin) {
+      return res.status(400).json({ success: false, message: 'Admin not found' });
+    }
+
+    const studentFilter = { assignedAdmin: adminId, role: 'student' };
+    if (classNum) {
+      studentFilter.classNumber = classNum;
     }
 
     const students = await User.find(studentFilter).select('_id');
     const studentIds = students.map(s => s._id);
 
-    // Build query for exam results
+    if (studentIds.length === 0) {
+      return res.json({
+        success: true,
+        data: [],
+        count: 0
+      });
+    }
+
     const resultQuery = {
-      adminId: adminId,
-      board: admin.board,
       userId: { $in: studentIds }
     };
 
-    if (examId) resultQuery.examId = examId;
+    if (examId) {
+      if (!mongoose.Types.ObjectId.isValid(examId)) {
+        return res.status(400).json({ success: false, message: 'Invalid exam id' });
+      }
+      resultQuery.examId = new mongoose.Types.ObjectId(examId);
+    }
     if (startDate || endDate) {
       resultQuery.completedAt = {};
       if (startDate) resultQuery.completedAt.$gte = new Date(startDate);
@@ -101,7 +161,6 @@ export const getStudentExamResults = async (req, res) => {
       .populate('examId', 'title examType')
       .sort({ completedAt: -1 });
 
-    // Filter by subject if provided
     let filteredResults = results;
     if (subject) {
       filteredResults = results.filter(result => {
@@ -124,75 +183,129 @@ export const getStudentExamResults = async (req, res) => {
   }
 };
 
+function buildTopPerformersAndClassStats(results) {
+  const topPerformers = results.slice(0, 10).map((r, idx) => ({
+    rank: idx + 1,
+    studentName: r.userId?.fullName || 'Unknown',
+    studentEmail: r.userId?.email || '',
+    classNumber: r.userId?.classNumber || '',
+    percentage: r.percentage,
+    marks: `${r.obtainedMarks}/${r.totalMarks}`,
+    completedAt: r.completedAt
+  }));
+
+  const classPerformance = {};
+  results.forEach(result => {
+    const classNum = result.userId?.classNumber || 'Unknown';
+    if (!classPerformance[classNum]) {
+      classPerformance[classNum] = {
+        total: 0,
+        sum: 0,
+        students: []
+      };
+    }
+    classPerformance[classNum].total++;
+    classPerformance[classNum].sum += result.percentage;
+    classPerformance[classNum].students.push({
+      name: result.userId?.fullName,
+      percentage: result.percentage
+    });
+  });
+
+  const classStats = Object.entries(classPerformance).map(([classNum, data]) => ({
+    classNumber: classNum,
+    studentsAttempted: data.total,
+    averageScore: (data.sum / data.total).toFixed(2),
+    studentList: data.students
+  }));
+
+  return { topPerformers, classStats };
+}
+
 // Get exam performance analytics for admin's students
 export const getExamPerformanceAnalytics = async (req, res) => {
   try {
     const adminId = req.adminId;
     const { examId } = req.params;
+    const isSuperAdmin = req.user?.role === 'super-admin';
+    const classNum = queryClassNumber(req.query.classNumber);
 
-    // Get admin's board
-    const admin = await User.findById(adminId);
-    if (!admin || !admin.board) {
-      return res.status(400).json({ success: false, message: 'Admin board not assigned' });
+    if (!mongoose.Types.ObjectId.isValid(examId)) {
+      return res.status(400).json({ success: false, message: 'Invalid exam id' });
+    }
+    const examObjectId = new mongoose.Types.ObjectId(examId);
+
+    if (isSuperAdmin) {
+      let results = await ExamResult.find({ examId: examObjectId })
+        .populate('userId', 'fullName email classNumber')
+        .sort({ percentage: -1 });
+
+      if (classNum) {
+        results = results.filter(
+          (r) => String(r.userId?.classNumber || '').trim() === classNum
+        );
+      }
+
+      const studentCountQuery = { role: 'student' };
+      if (classNum) {
+        studentCountQuery.classNumber = classNum;
+      }
+      const totalStudents = await User.countDocuments(studentCountQuery);
+
+      const uniqueAttempters = new Set(
+        results.map((r) => String(r.userId?._id || r.userId || '')).filter(Boolean)
+      ).size;
+      const attemptedCount = uniqueAttempters;
+      const averageScore = results.length > 0
+        ? results.reduce((sum, r) => sum + (Number(r.percentage) || 0), 0) / results.length
+        : 0;
+
+      const { topPerformers, classStats } = buildTopPerformersAndClassStats(results);
+
+      return res.json({
+        success: true,
+        data: {
+          totalStudents,
+          attemptedCount,
+          notAttemptedCount: Math.max(0, totalStudents - attemptedCount),
+          averageScore: averageScore.toFixed(2),
+          topPerformers,
+          classPerformance: classStats
+        }
+      });
     }
 
-    // Get all students assigned to this admin
-    const students = await User.find({ assignedAdmin: adminId, role: 'student', board: admin.board }).select('_id');
+    if (!adminId || !mongoose.Types.ObjectId.isValid(String(adminId))) {
+      return res.status(400).json({ success: false, message: 'Admin context missing' });
+    }
+
+    const admin = await User.findById(adminId);
+    if (!admin) {
+      return res.status(400).json({ success: false, message: 'Admin not found' });
+    }
+
+    const studentFilter = { assignedAdmin: adminId, role: 'student' };
+    if (classNum) {
+      studentFilter.classNumber = classNum;
+    }
+
+    const students = await User.find(studentFilter).select('_id');
     const studentIds = students.map(s => s._id);
 
-    // Get results for this exam
     const results = await ExamResult.find({
-      examId,
-      adminId,
-      board: admin.board,
+      examId: examObjectId,
       userId: { $in: studentIds }
     })
     .populate('userId', 'fullName email classNumber')
     .sort({ percentage: -1 });
 
-    // Calculate statistics
     const totalStudents = studentIds.length;
     const attemptedCount = results.length;
     const averageScore = results.length > 0
-      ? results.reduce((sum, r) => sum + r.percentage, 0) / results.length
+      ? results.reduce((sum, r) => sum + (Number(r.percentage) || 0), 0) / results.length
       : 0;
 
-    // Get top performers
-    const topPerformers = results.slice(0, 10).map((r, idx) => ({
-      rank: idx + 1,
-      studentName: r.userId?.fullName || 'Unknown',
-      studentEmail: r.userId?.email || '',
-      classNumber: r.userId?.classNumber || '',
-      percentage: r.percentage,
-      marks: `${r.obtainedMarks}/${r.totalMarks}`,
-      completedAt: r.completedAt
-    }));
-
-    // Class-wise performance
-    const classPerformance = {};
-    results.forEach(result => {
-      const classNum = result.userId?.classNumber || 'Unknown';
-      if (!classPerformance[classNum]) {
-        classPerformance[classNum] = {
-          total: 0,
-          sum: 0,
-          students: []
-        };
-      }
-      classPerformance[classNum].total++;
-      classPerformance[classNum].sum += result.percentage;
-      classPerformance[classNum].students.push({
-        name: result.userId?.fullName,
-        percentage: result.percentage
-      });
-    });
-
-    const classStats = Object.entries(classPerformance).map(([classNum, data]) => ({
-      classNumber: classNum,
-      studentsAttempted: data.total,
-      averageScore: (data.sum / data.total).toFixed(2),
-      studentList: data.students
-    }));
+    const { topPerformers, classStats } = buildTopPerformersAndClassStats(results);
 
     res.json({
       success: true,
@@ -210,6 +323,4 @@ export const getExamPerformanceAnalytics = async (req, res) => {
     res.status(500).json({ success: false, message: 'Failed to fetch analytics' });
   }
 };
-
-
 
