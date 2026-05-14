@@ -28,12 +28,48 @@ function cleanActivityLine(line) {
 }
 
 /**
+ * Workbook PDFs often append an index or "activities 11–50" summary after the last
+ * "9. Real-life Application" with no further "Activity N" header, so line-based
+ * extraction would swallow the rest of the file. Stop at line-start markers and
+ * trim inline tail noise when the PDF merges lines.
+ * @param {string} joined
+ * @returns {string}
+ */
+function trimRealLifeApplicationTail(joined) {
+  const s = String(joined || '').trim();
+  if (!s) return s;
+  const inlineCut = s.search(
+    /\s(?:Included Activities\s*:|Activities\s+\d{1,3}\s*[-–]\s*\d{1,3}\s*\(|The remaining activities follow|Each activity is fully structured using)\b/i,
+  );
+  if (inlineCut > 0) return s.slice(0, inlineCut).trim();
+  return s;
+}
+
+/** Lines that start workbook back-matter / index blocks (not part of section 9). */
+const REAL_LIFE_LINE_STOP = new RegExp(
+  [
+    '^Included Activities\\s*:?',
+    '^Activities\\s+\\d{1,3}\\s*[-–]\\s*\\d{1,3}\\b',
+    '^The remaining activities\\b',
+    '^Each activity is fully structured\\b',
+    '^All activities are designed\\b',
+    '^Appendix\\b',
+    '^References\\b',
+    '^Annex\\b',
+    '^Index\\b',
+    '^Table of contents\\b',
+  ].join('|'),
+  'i',
+);
+
+/**
  * @param {string} chunk one activity block (may include header lines before "Activity N")
  * @param {RegExp} headerLine first line of section must match (e.g. /^2\.\s*Learning Objectives/)
- * @param {RegExp} [stopAt] next section header at line start
+ * @param {RegExp|null} [stopAt] next section header at line start
+ * @param {RegExp|null} [extraLineStop] optional extra stop (e.g. workbook index after last activity's section 9)
  * @returns {string[]}
  */
-function extractLinesAfterHeader(chunk, headerLine, stopAt) {
+function extractLinesAfterHeader(chunk, headerLine, stopAt, extraLineStop = null) {
   const lines = chunk.split(/\n/).map((l) => l.replace(/\r/g, ''));
   let i = 0;
   while (i < lines.length) {
@@ -48,6 +84,7 @@ function extractLinesAfterHeader(chunk, headerLine, stopAt) {
   while (i < lines.length) {
     const t = lines[i].trim();
     if (stopAt && stopAt.test(t)) break;
+    if (extraLineStop && extraLineStop.test(t)) break;
     if (/^Activity\s+\d+/i.test(t)) break;
     const c = cleanActivityLine(lines[i]);
     if (c) out.push(c);
@@ -120,8 +157,13 @@ export function extractActivitiesFromCuriosityWorkbookPdf(rawText) {
     );
 
     let real_life_application = '';
-    const rlLines = extractLinesAfterHeader(part, /^9\.\s*Real[-\s]?life Application/i, null);
-    if (rlLines.length) real_life_application = rlLines.join(' ');
+    const rlLines = extractLinesAfterHeader(
+      part,
+      /^9\.\s*Real[-\s]?life Application/i,
+      null,
+      REAL_LIFE_LINE_STOP,
+    );
+    if (rlLines.length) real_life_application = trimRealLifeApplicationTail(rlLines.join(' '));
 
     out.push({
       sl_no,
