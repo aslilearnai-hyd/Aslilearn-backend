@@ -33,7 +33,7 @@ function cleanActivityLine(line) {
  * @param {RegExp} [stopAt] next section header at line start
  * @returns {string[]}
  */
-function extractLinesAfterHeader(chunk, headerLine, stopAt) {
+export function extractLinesAfterHeader(chunk, headerLine, stopAt) {
   const lines = chunk.split(/\n/).map((l) => l.replace(/\r/g, ''));
   let i = 0;
   while (i < lines.length) {

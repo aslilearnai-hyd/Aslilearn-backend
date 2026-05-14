@@ -864,12 +864,28 @@ export function buildRenderableContent(toolSlug, contentType, structuredContent)
     };
   }
   if (toolSlug === 'lesson-planner' || toolSlug === 'daily-class-plan-maker') {
+    const lo = toStringList(
+      source.objectives || source.learning_objectives || source.learningObjectives || [],
+    );
+    const actParts = [
+      ...toStringList(source.introduction_warmup || source.introductionWarmup),
+      ...toStringList(source.teaching_strategy || source.teachingStrategy),
+      ...toStringList(source.classroom_activities || source.classroomActivities || source.activities),
+    ];
+    const activities = actParts.length ? actParts : toStringList(source.activities);
+    const timelineParts = [
+      ...toStringList(source.assessment_questions || source.assessmentQuestions),
+      ...toStringList(source.homework_practice || source.homeworkPractice),
+      ...toStringList(source.teaching_aids || source.teachingAids),
+    ];
+    const timeline = timelineParts.length ? timelineParts : toStringList(source.timeline);
     return {
       kind: 'lessonPlan',
       title: type || 'Lesson Plan',
-      objectives: toStringList(source.objectives),
-      activities: toStringList(source.activities),
-      timeline: toStringList(source.timeline),
+      lessonName: String(source.lesson_name || source.lessonName || '').trim(),
+      objectives: lo,
+      activities: activities,
+      timeline: timeline,
       assessment: String(source.assessment || '').trim(),
     };
   }
