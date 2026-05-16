@@ -6,7 +6,7 @@ import {
 import AiToolGeneration from '../models/AiToolGeneration.js';
 import { fetchRotatingAiToolData } from '../services/ai-tool-rotation-service.js';
 import { extractRawTextFromPDF } from '../services/pdf-extractor-service.js';
-import { extractAndGenerateAllItems } from '../services/gemini-service.js';
+import { buildPdfExtractEmptyMessage, extractAndGenerateAllItems } from '../services/gemini-service.js';
 
 import {
   formatItemToContentFromTemplate,
@@ -685,15 +685,13 @@ export const uploadAndParsePdf = async (req, res) => {
       return res.status(422).json({
         success: false,
         code: 'PDF_PARSE_FAILED',
-        message:
-          'Could not extract any items from this PDF. Check that the PDF has readable text and matches the selected tool type.',
+        message: buildPdfExtractEmptyMessage(toolType),
       });
     }
 
     const now = new Date();
     const recordsToInsert = allItems.map((item, index) => {
       const contentStr = formatItemToContent(toolType, item, index);
-      const generatedByAI = item?._fromPdf !== true;
       return {
         toolName: toolType,
         toolDisplayName: TOOL_DISPLAY_NAMES[toolType] || toolType,
@@ -709,12 +707,12 @@ export const uploadAndParsePdf = async (req, res) => {
         status: 'active',
         metadata: {
           source: 'pdf-upload',
-          sourceLabel: generatedByAI ? 'PDF Upload (AI Generated)' : 'PDF Upload (Extracted)',
+          sourceLabel: 'PDF Upload (Extracted)',
+          generatedByAI: false,
           uploadedPdfName: pdfFile.originalname,
           itemIndex: index,
           totalItems: allItems.length,
           createdByRole: 'super-admin',
-          generatedByAI,
           structuredContent: item,
           renderContent: item,
           contentType: 'Generated Content',
@@ -728,16 +726,13 @@ export const uploadAndParsePdf = async (req, res) => {
     });
 
     await AiToolGeneration.insertMany(recordsToInsert, { ordered: false });
-    const extractedFromPdf = recordsToInsert.filter((r) => !r.metadata?.generatedByAI).length;
-    const generatedByAI = recordsToInsert.filter((r) => r.metadata?.generatedByAI).length;
-
     return res.json({
       success: true,
-      message: `Saved ${recordsToInsert.length} records (${extractedFromPdf} extracted from PDF + ${generatedByAI} AI generated to complete the set).`,
+      message: `Saved ${recordsToInsert.length} record(s) extracted from the PDF (extract-only; nothing generated).`,
       data: {
         totalSaved: recordsToInsert.length,
-        extractedFromPdf,
-        generatedByAI,
+        extractedFromPdf: recordsToInsert.length,
+        generatedByAI: 0,
         toolType,
         toolDisplayName: TOOL_DISPLAY_NAMES[toolType] || toolType,
         classLabel: classDisplay,

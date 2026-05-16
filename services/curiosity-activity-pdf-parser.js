@@ -116,68 +116,99 @@ export function extractActivitiesFromCuriosityWorkbookPdf(rawText) {
     const title = titleMatch ? String(titleMatch[1] || '').trim() : '';
     if (!title) continue;
 
+    const subtopicLines = extractLinesAfterHeader(
+      part,
+      /Subtopic Link and Prior Knowledge/i,
+      /Learning Objectives|NCF Competency/i,
+    );
+    const subtopic_link_prior_knowledge = subtopicLines.length ? subtopicLines.join(' ') : '';
+
     const learning_objectives = extractLinesAfterHeader(
       part,
-      /^2\.\s*Learning Objectives/i,
-      /^3\.\s*Materials Required/i,
+      /Learning Objectives/i,
+      /NCF Competency|Materials Required/i,
     );
+
+    const ncfLines = extractLinesAfterHeader(
+      part,
+      /NCF Competency/i,
+      /Materials Required/i,
+    );
+    const ncf_competency_alignment = ncfLines.length ? ncfLines.join(' ') : '';
+
     const materials_required = extractLinesAfterHeader(
       part,
-      /^3\.\s*Materials Required/i,
-      /^4\.\s*Step-by-step Procedure/i,
+      /Materials Required/i,
+      /Step-by-step Procedure/i,
     );
     const step_by_step_procedure = extractLinesAfterHeader(
       part,
-      /^4\.\s*Step-by-step Procedure/i,
-      /^5\.\s*Teacher Instructions/i,
+      /Step-by-step Procedure/i,
+      /Teacher Instructions/i,
     );
     const teacher_instructions = extractLinesAfterHeader(
       part,
-      /^5\.\s*Teacher Instructions/i,
-      /^6\.\s*Student Instructions/i,
+      /Teacher Instructions/i,
+      /Student Instructions/i,
     );
     const student_instructions = extractLinesAfterHeader(
       part,
-      /^6\.\s*Student Instructions/i,
-      /^7\.\s*Expected Learning Outcomes/i,
+      /Student Instructions/i,
+      /Differentiation|Expected Learning Outcomes/i,
     );
 
-    let expected_learning_outcomes = '';
+    const diffLines = extractLinesAfterHeader(
+      part,
+      /Differentiation/i,
+      /Expected Learning Outcomes|Assessment Criteria/i,
+    );
+    const differentiation = diffLines.length ? diffLines.join(' ') : '';
+
     const elLines = extractLinesAfterHeader(
       part,
-      /^7\.\s*Expected Learning Outcomes/i,
-      /^8\.\s*Assessment Criteria/i,
+      /Expected Learning Outcomes/i,
+      /Assessment Criteria/i,
     );
-    if (elLines.length) expected_learning_outcomes = elLines.join(' ');
+    const expected_learning_outcomes = elLines.length ? elLines.join(' ') : '';
 
     const assessment_criteria_rubric = extractLinesAfterHeader(
       part,
-      /^8\.\s*Assessment Criteria/i,
-      /^9\.\s*Real[-\s]?life Application/i,
+      /Assessment Criteria/i,
+      /Real[-\s]?life Application/i,
     );
 
-    let real_life_application = '';
     const rlLines = extractLinesAfterHeader(
       part,
-      /^9\.\s*Real[-\s]?life Application/i,
-      null,
+      /Real[-\s]?life Application/i,
+      /Reflection|Exit Ticket/i,
       REAL_LIFE_LINE_STOP,
     );
-    if (rlLines.length) real_life_application = trimRealLifeApplicationTail(rlLines.join(' '));
+    const real_life_application = rlLines.length ? trimRealLifeApplicationTail(rlLines.join(' ')) : '';
+
+    const refLines = extractLinesAfterHeader(
+      part,
+      /Reflection|Exit Ticket/i,
+      /^Activity\s+\d+/i,
+    );
+    const reflection_exit_ticket = refLines.length ? refLines.join(' ') : '';
 
     out.push({
       sl_no,
       question_number: sl_no,
       title,
       name: title,
+      subtopic_link_prior_knowledge,
       learning_objectives,
+      ncf_competency_alignment,
       materials_required,
       step_by_step_procedure,
       teacher_instructions,
       student_instructions,
+      differentiation,
       expected_learning_outcomes,
       assessment_criteria_rubric,
       real_life_application,
+      reflection_exit_ticket,
     });
   }
 

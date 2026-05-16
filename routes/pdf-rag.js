@@ -18,50 +18,77 @@ import {
   getToolLabelFromSlug,
   validateToolSpecificStructuredContent,
   buildRenderableContent,
-  regenerateStructuredContentForTool,
+  buildConceptRenderableFromStructured,
+  buildHomeworkRenderableFromStructured,
+  buildLessonPlanRenderableFromStructured,
+  buildDailyClassPlanRenderableFromStructured,
+  buildRubricRenderableFromStructured,
+  buildExamPaperRenderableFromStructured,
+  buildWorksheetRenderableFromStructured,
   finalizeActivityStructuredContent,
-  buildDeterministicQuestionSetFromText,
-  normalizeActivityStructuredContent,
+  canonicalizeActivityExtractedItem,
+  canonicalizeConceptExtractedItem,
+  canonicalizeHomeworkExtractedItem,
+  canonicalizeRubricExtractedItem,
+  canonicalizeLessonPlannerExtractedItem,
+  canonicalizeDailyClassPlanExtractedItem,
+  canonicalizeExamPaperExtractedItem,
+  canonicalizeWorksheetExtractedItem,
+  canonicalizeStoryExtractedItem,
+  buildStoryRenderableFromStructured,
+  canonicalizeShortNotesExtractedItem,
+  buildShortNotesRenderableFromStructured,
+  canonicalizeFlashcardExtractedItem,
+  buildFlashcardRenderableFromStructured,
   normalizeLessonPlannerStructuredContent,
 } from '../services/ai-content-engine-service.js';
-import { extractAndGenerateAllItems } from '../services/gemini-service.js';
+import { buildPdfExtractEmptyMessage, extractAndGenerateAllItems } from '../services/gemini-service.js';
+import { consolidateWorksheetExtractItems } from '../services/pdf-worksheet-extract.js';
 import { formatItemToContent } from '../controllers/aiToolsController.js';
 import { boardMongoMatch } from '../utils/board-label.js';
-import { AI_TOOL_ORDERED_SLUGS } from '../config/aiToolTemplates.js';
+import { isDeprecatedAiToolIdentifier } from '../config/aiToolTemplates.js';
 
-/** After classify, always run template regeneration — classification output is unreliable for learner-facing layouts. */
-const ALWAYS_REGENERATE_STRUCTURED_TOOLS = new Set(AI_TOOL_ORDERED_SLUGS);
-
+function isDeprecatedPdfListRow(row) {
+  return (
+    isDeprecatedAiToolIdentifier(row?.toolType) ||
+    isDeprecatedAiToolIdentifier(row?.contentType) ||
+    isDeprecatedAiToolIdentifier(row?.originalName)
+  );
+}
 /** One viewer-friendly render blob per bulk-saved item (matches `buildRenderableContent` shapes). */
 function buildBulkRenderContent(toolSlug, contentType, item) {
   const ct = String(contentType || 'Generated Content').trim() || 'Generated Content';
   const row = item && typeof item === 'object' ? { ...item } : {};
   delete row._fromPdf;
-  if (toolSlug === 'worksheet-mcq-generator' || toolSlug === 'homework-creator') {
-    return buildRenderableContent(toolSlug, ct, { questions: [row] });
+  if (toolSlug === 'worksheet-mcq-generator') {
+    return buildWorksheetRenderableFromStructured(row);
+  }
+  if (toolSlug === 'homework-creator') {
+    return buildHomeworkRenderableFromStructured(row);
   }
   if (toolSlug === 'exam-question-paper-generator') {
-    return buildRenderableContent(toolSlug, ct, {
-      sections: [
-        {
-          sectionName: String(row.section || 'Questions').trim(),
-          questions: [row],
-        },
-      ],
-    });
+    return buildExamPaperRenderableFromStructured(row);
   }
   if (toolSlug === 'flashcard-generator') {
-    return buildRenderableContent(toolSlug, ct, {
-      cards: [{ front: String(row.front || '').trim(), back: String(row.back || '').trim() }],
-    });
+    return buildFlashcardRenderableFromStructured(row);
   }
   if (toolSlug === 'rubrics-evaluation-generator') {
-    const names = Array.isArray(row.criteria)
-      ? row.criteria
-          .map((c) => (c && typeof c === 'object' ? String(c.name || '').trim() : String(c || '').trim()))
-          .filter(Boolean)
-      : [];
-    return buildRenderableContent(toolSlug, ct, { criteria: names, gradingScale: names });
+    return buildRubricRenderableFromStructured(row);
+  }
+  if (toolSlug === 'concept-mastery-helper') {
+    return buildConceptRenderableFromStructured(row);
+  }
+  if (toolSlug === 'lesson-planner') {
+    return buildLessonPlanRenderableFromStructured(row, toolSlug);
+  }
+  if (toolSlug === 'daily-class-plan-maker') {
+    return buildDailyClassPlanRenderableFromStructured(row);
+  }
+  if (toolSlug === 'story-passage-creator') {
+    return buildStoryRenderableFromStructured(row);
+  }
+  if (toolSlug === 'short-notes-summaries-maker') {
+    return buildShortNotesRenderableFromStructured(row);
   }
   return buildRenderableContent(toolSlug, ct, row);
 }
@@ -265,21 +292,201 @@ const syncPdfSourceToAiToolData = async (source) => {
 };
 
 /** Recompute viewer blobs from stored structured fields (fixes stale metadata.renderContent for lesson tools). */
-function enrichLessonPlanRowForApi(data) {
+function enrichConceptRowForApi(data) {
   if (!data || typeof data !== 'object') return data;
   const tool = String(data.toolType || data.toolName || '').trim();
-  if (tool !== 'lesson-planner' && tool !== 'daily-class-plan-maker') return data;
+  if (tool !== 'concept-mastery-helper') return data;
   let structured =
     data.structuredContent && typeof data.structuredContent === 'object' && !Array.isArray(data.structuredContent)
       ? { ...data.structuredContent }
       : {};
-  const normalized = normalizeLessonPlannerStructuredContent(structured, tool);
-  const ct =
-    String(data.contentType || '').trim() || (tool === 'daily-class-plan-maker' ? 'Daily Plan' : 'Lesson Plan');
+  const normalized = canonicalizeConceptExtractedItem(structured);
+  const ct = String(data.contentType || '').trim() || 'Concept Notes';
   return {
     ...data,
-    structuredContent: { ...structured, ...normalized },
+    structuredContent: normalized,
+    renderContent: buildConceptRenderableFromStructured(normalized),
+    contentType: ct,
+  };
+}
+
+function enrichActivityRowForApi(data) {
+  if (!data || typeof data !== 'object') return data;
+  const tool = String(data.toolType || data.toolName || '').trim();
+  if (tool !== 'activity-project-generator') return data;
+  let structured =
+    data.structuredContent && typeof data.structuredContent === 'object' && !Array.isArray(data.structuredContent)
+      ? { ...data.structuredContent }
+      : {};
+  const normalized = canonicalizeActivityExtractedItem(structured);
+  const ct = String(data.contentType || '').trim() || 'Activity Plan';
+  return {
+    ...data,
+    structuredContent: normalized,
     renderContent: buildRenderableContent(tool, ct, normalized),
+    contentType: ct,
+  };
+}
+
+function enrichRubricRowForApi(data) {
+  if (!data || typeof data !== 'object') return data;
+  const tool = String(data.toolType || data.toolName || '').trim();
+  if (tool !== 'rubrics-evaluation-generator') return data;
+  let structured =
+    data.structuredContent && typeof data.structuredContent === 'object' && !Array.isArray(data.structuredContent)
+      ? { ...data.structuredContent }
+      : {};
+  const normalized = canonicalizeRubricExtractedItem(structured);
+  const ct = String(data.contentType || '').trim() || 'Rubric';
+  return {
+    ...data,
+    structuredContent: normalized,
+    renderContent: buildRubricRenderableFromStructured(normalized),
+    contentType: ct,
+  };
+}
+
+function enrichFlashcardRowForApi(data) {
+  if (!data || typeof data !== 'object') return data;
+  const tool = String(data.toolType || data.toolName || '').trim();
+  if (tool !== 'flashcard-generator') return data;
+  let structured =
+    data.structuredContent && typeof data.structuredContent === 'object' && !Array.isArray(data.structuredContent)
+      ? { ...data.structuredContent }
+      : {};
+  const normalized = canonicalizeFlashcardExtractedItem(structured);
+  const ct = String(data.contentType || '').trim() || 'Flashcards';
+  return {
+    ...data,
+    structuredContent: normalized,
+    renderContent: buildFlashcardRenderableFromStructured(normalized),
+    contentType: ct,
+  };
+}
+
+function enrichShortNotesRowForApi(data) {
+  if (!data || typeof data !== 'object') return data;
+  const tool = String(data.toolType || data.toolName || '').trim();
+  if (tool !== 'short-notes-summaries-maker') return data;
+  let structured =
+    data.structuredContent && typeof data.structuredContent === 'object' && !Array.isArray(data.structuredContent)
+      ? { ...data.structuredContent }
+      : {};
+  const normalized = canonicalizeShortNotesExtractedItem(structured);
+  const ct = String(data.contentType || '').trim() || 'Notes';
+  return {
+    ...data,
+    structuredContent: normalized,
+    renderContent: buildShortNotesRenderableFromStructured(normalized),
+    contentType: ct,
+  };
+}
+
+function enrichStoryRowForApi(data) {
+  if (!data || typeof data !== 'object') return data;
+  const tool = String(data.toolType || data.toolName || '').trim();
+  if (tool !== 'story-passage-creator') return data;
+  let structured =
+    data.structuredContent && typeof data.structuredContent === 'object' && !Array.isArray(data.structuredContent)
+      ? { ...data.structuredContent }
+      : {};
+  const normalized = canonicalizeStoryExtractedItem(structured);
+  const ct = String(data.contentType || '').trim() || 'Story';
+  return {
+    ...data,
+    structuredContent: normalized,
+    renderContent: buildStoryRenderableFromStructured(normalized),
+    contentType: ct,
+  };
+}
+
+function enrichWorksheetRowForApi(data) {
+  if (!data || typeof data !== 'object') return data;
+  const tool = String(data.toolType || data.toolName || '').trim();
+  if (tool !== 'worksheet-mcq-generator') return data;
+  let structured =
+    data.structuredContent && typeof data.structuredContent === 'object' && !Array.isArray(data.structuredContent)
+      ? { ...data.structuredContent }
+      : {};
+  const normalized = canonicalizeWorksheetExtractedItem(structured);
+  const ct = String(data.contentType || '').trim() || 'Worksheet';
+  return {
+    ...data,
+    structuredContent: normalized,
+    renderContent: buildWorksheetRenderableFromStructured(normalized),
+    contentType: ct,
+  };
+}
+
+function enrichHomeworkRowForApi(data) {
+  if (!data || typeof data !== 'object') return data;
+  const tool = String(data.toolType || data.toolName || '').trim();
+  if (tool !== 'homework-creator') return data;
+  let structured =
+    data.structuredContent && typeof data.structuredContent === 'object' && !Array.isArray(data.structuredContent)
+      ? { ...data.structuredContent }
+      : {};
+  const normalized = canonicalizeHomeworkExtractedItem(structured);
+  const ct = String(data.contentType || '').trim() || 'Homework';
+  return {
+    ...data,
+    structuredContent: normalized,
+    renderContent: buildHomeworkRenderableFromStructured(normalized),
+    contentType: ct,
+  };
+}
+
+function enrichExamPaperRowForApi(data) {
+  if (!data || typeof data !== 'object') return data;
+  const tool = String(data.toolType || data.toolName || '').trim();
+  if (tool !== 'exam-question-paper-generator') return data;
+  let structured =
+    data.structuredContent && typeof data.structuredContent === 'object' && !Array.isArray(data.structuredContent)
+      ? { ...data.structuredContent }
+      : {};
+  const normalized = canonicalizeExamPaperExtractedItem(structured);
+  const ct = String(data.contentType || '').trim() || 'Exam Paper';
+  return {
+    ...data,
+    structuredContent: normalized,
+    renderContent: buildExamPaperRenderableFromStructured(normalized),
+    contentType: ct,
+  };
+}
+
+function enrichDailyClassPlanRowForApi(data) {
+  if (!data || typeof data !== 'object') return data;
+  const tool = String(data.toolType || data.toolName || '').trim();
+  if (tool !== 'daily-class-plan-maker') return data;
+  let structured =
+    data.structuredContent && typeof data.structuredContent === 'object' && !Array.isArray(data.structuredContent)
+      ? { ...data.structuredContent }
+      : {};
+  const normalized = canonicalizeDailyClassPlanExtractedItem(structured);
+  const ct = String(data.contentType || '').trim() || 'Daily Plan';
+  return {
+    ...data,
+    structuredContent: normalized,
+    renderContent: buildDailyClassPlanRenderableFromStructured(normalized),
+    contentType: ct,
+  };
+}
+
+function enrichLessonPlanRowForApi(data) {
+  if (!data || typeof data !== 'object') return data;
+  const tool = String(data.toolType || data.toolName || '').trim();
+  if (tool !== 'lesson-planner') return data;
+  let structured =
+    data.structuredContent && typeof data.structuredContent === 'object' && !Array.isArray(data.structuredContent)
+      ? { ...data.structuredContent }
+      : {};
+  const normalized = canonicalizeLessonPlannerExtractedItem(structured, tool);
+  const ct = String(data.contentType || '').trim() || 'Lesson Plan';
+  return {
+    ...data,
+    structuredContent: normalized,
+    renderContent: buildLessonPlanRenderableFromStructured(normalized, tool),
+    contentType: ct,
   };
 }
 
@@ -316,7 +523,23 @@ function mapMasterPdfToListRow(doc) {
     validation: m.validation,
     generatedContent: String(doc.generatedContent || doc.content || '').trim(),
   };
-  return enrichLessonPlanRowForApi(row);
+  return enrichConceptRowForApi(
+    enrichRubricRowForApi(
+      enrichHomeworkRowForApi(
+        enrichActivityRowForApi(
+          enrichLessonPlanRowForApi(
+            enrichDailyClassPlanRowForApi(
+              enrichExamPaperRowForApi(
+                enrichWorksheetRowForApi(
+                  enrichStoryRowForApi(enrichShortNotesRowForApi(enrichFlashcardRowForApi(row))),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    ),
+  );
 }
 
 /** Legacy rows only in aicontentenginesources (no master in aitoolgenerations yet). */
@@ -352,7 +575,21 @@ function mapSourcePdfToListRow(source) {
     geminiDetected: source.geminiDetected,
     validation: source.validation,
   };
-  return enrichLessonPlanRowForApi(row);
+  return enrichConceptRowForApi(
+    enrichHomeworkRowForApi(
+      enrichActivityRowForApi(
+        enrichLessonPlanRowForApi(
+          enrichDailyClassPlanRowForApi(
+            enrichExamPaperRowForApi(
+              enrichWorksheetRowForApi(
+                enrichStoryRowForApi(enrichShortNotesRowForApi(enrichFlashcardRowForApi(row))),
+              ),
+            ),
+          ),
+        ),
+      ),
+    ),
+  );
 }
 
 async function resolvePdfMasterAndSource(id) {
@@ -479,6 +716,13 @@ router.post(
       if (!toolType || !String(toolType).trim()) {
         return res.status(400).json({ success: false, message: 'toolType is required' });
       }
+      if (isDeprecatedAiToolIdentifier(toolType)) {
+        return res.status(400).json({
+          success: false,
+          message:
+            'This tool format is no longer supported. Choose one of the 11 curriculum tools (e.g. Lesson Planner, Homework Creator).',
+        });
+      }
       if (!uploaderId) {
         console.error('AI PDF upload auth id missing:', {
           reqUserId: req.userId,
@@ -556,11 +800,19 @@ router.post(
       try {
         bulkItems = await extractAndGenerateAllItems(resolvedToolSlug, extractedText, bulkParseParams);
       } catch (bulkErr) {
-        console.warn(
-          '[AI PDF] Bulk PDF item extraction failed, using legacy single-record path:',
-          bulkErr?.message || bulkErr,
-        );
+        console.warn('[AI PDF] Bulk PDF item extraction failed:', bulkErr?.message || bulkErr);
         bulkItems = [];
+      }
+
+      if (
+        resolvedToolSlug === 'worksheet-mcq-generator' &&
+        Array.isArray(bulkItems) &&
+        bulkItems.length > 0
+      ) {
+        bulkItems = consolidateWorksheetExtractItems(bulkItems, {
+          ...bulkParseParams,
+          rawPdfText: extractedText,
+        });
       }
 
       if (Array.isArray(bulkItems) && bulkItems.length > 0) {
@@ -614,7 +866,9 @@ router.post(
               index: idx,
               slNo: it.sl_no ?? it.question_number,
               title:
-                it.title ||
+                (resolvedToolSlug === 'flashcard-generator'
+                  ? it.front || it.title
+                  : it.title) ||
                 it.name ||
                 it.concept_name ||
                 it.question ||
@@ -644,19 +898,35 @@ router.post(
           uploadedByRole: toUploadedByRole(req.user?.role),
         });
 
-        const extractedFromPdf = bulkItems.filter((it) => it._fromPdf === true).length;
-        const generatedByAiCount = bulkItems.filter((it) => it._fromPdf !== true).length;
+        const extractedFromPdf = bulkItems.length;
         const now = new Date();
         const records = bulkItems.map((item, index) => {
-          const generatedByAiItem = item?._fromPdf !== true;
           const metaClean = { ...item };
           delete metaClean._fromPdf;
           const structuredForRow =
             resolvedToolSlug === 'activity-project-generator'
-              ? normalizeActivityStructuredContent(metaClean)
-              : resolvedToolSlug === 'lesson-planner' || resolvedToolSlug === 'daily-class-plan-maker'
-                ? normalizeLessonPlannerStructuredContent(metaClean, resolvedToolSlug)
-                : metaClean;
+              ? canonicalizeActivityExtractedItem(metaClean)
+              : resolvedToolSlug === 'concept-mastery-helper'
+                ? canonicalizeConceptExtractedItem(metaClean)
+                : resolvedToolSlug === 'homework-creator'
+                  ? canonicalizeHomeworkExtractedItem(metaClean)
+                  : resolvedToolSlug === 'rubrics-evaluation-generator'
+                    ? canonicalizeRubricExtractedItem(metaClean)
+                    : resolvedToolSlug === 'lesson-planner'
+                      ? canonicalizeLessonPlannerExtractedItem(metaClean, resolvedToolSlug)
+                      : resolvedToolSlug === 'daily-class-plan-maker'
+                        ? canonicalizeDailyClassPlanExtractedItem(metaClean)
+                        : resolvedToolSlug === 'exam-question-paper-generator'
+                          ? canonicalizeExamPaperExtractedItem(metaClean)
+                          : resolvedToolSlug === 'worksheet-mcq-generator'
+                            ? canonicalizeWorksheetExtractedItem(metaClean)
+                            : resolvedToolSlug === 'story-passage-creator'
+                            ? canonicalizeStoryExtractedItem(metaClean)
+                            : resolvedToolSlug === 'short-notes-summaries-maker'
+                              ? canonicalizeShortNotesExtractedItem(metaClean)
+                              : resolvedToolSlug === 'flashcard-generator'
+                                ? canonicalizeFlashcardExtractedItem(metaClean)
+                                : metaClean;
           const contentStr = formatItemToContent(resolvedToolSlug, structuredForRow, index);
           return {
             toolName: resolvedToolSlug,
@@ -687,8 +957,8 @@ router.post(
               approvalStatus: 'pending',
               processingStatus: 'processed',
               uploadedByRole: toUploadedByRole(req.user?.role),
-              generatedByAI: generatedByAiItem,
-              sourceLabel: generatedByAiItem ? 'PDF Upload (AI Generated)' : 'PDF Upload (Extracted)',
+              generatedByAI: false,
+              sourceLabel: 'PDF Upload (Extracted)',
               geminiDetected: {
                 classLabel: String(analysis.classLabel || ''),
                 subject: String(analysis.subject || ''),
@@ -710,9 +980,7 @@ router.post(
 
         const inserted = await AiToolGeneration.insertMany(records, { ordered: false });
         const firstId = inserted[0]?._id;
-        console.log(
-          `[AI PDF] Bulk save: ${bulkItems.length} AiToolGeneration rows (extracted ${extractedFromPdf}, generated ${generatedByAiCount})`,
-        );
+        console.log(`[AI PDF] Bulk save: ${bulkItems.length} row(s), extract-only from PDF`);
         return res.status(201).json({
           success: true,
           data: {
@@ -720,7 +988,7 @@ router.post(
             sourcePdfId: source._id,
             totalSaved: bulkItems.length,
             extractedFromPdf,
-            generatedByAI: generatedByAiCount,
+            generatedByAI: 0,
             fileName: source.originalName,
             subject: source.subject,
             class: source.classLabel,
@@ -738,196 +1006,16 @@ router.post(
         });
       }
 
-      let structuredValidation = validateToolSpecificStructuredContent(
-        resolvedToolSlug,
-        analysis.structuredContent,
-        analysis.contentType,
-        extractedText,
-      );
-
-      const needsRegeneration =
-        !structuredValidation.valid ||
-        analysis.structuredContentNeedsRegeneration ||
-        analysis.isFallback ||
-        ALWAYS_REGENERATE_STRUCTURED_TOOLS.has(resolvedToolSlug);
-
-      if (needsRegeneration) {
-        console.log(`[AI PDF] Regenerating structured content for tool: ${resolvedToolSlug}`);
-        try {
-          const regenerated = await regenerateStructuredContentForTool(extractedText, {
-            toolType: resolvedToolSlug,
-            subject: String(subject || '').trim(),
-            classLabel: toClassLabel(classInput),
-            topic: String(topic || chapter || '').trim(),
-            subTopic: String(subTopic || '').trim(),
-          });
-          structuredValidation = validateToolSpecificStructuredContent(
-            resolvedToolSlug,
-            regenerated.structuredContent,
-            regenerated.contentType || analysis.contentType,
-            extractedText,
-          );
-          if (structuredValidation.valid || structuredValidation.normalizedStructuredContent) {
-            analysis.structuredContent =
-              structuredValidation.normalizedStructuredContent || regenerated.structuredContent;
-            analysis.contentType =
-              structuredValidation.normalizedType || regenerated.contentType || analysis.contentType;
-          } else {
-            analysis.structuredContent = regenerated.structuredContent;
-            analysis.contentType = regenerated.contentType || analysis.contentType;
-          }
-        } catch (regenError) {
-          console.error('[AI PDF] Regeneration failed:', regenError.message);
-          if (resolvedToolSlug === 'worksheet-mcq-generator') {
-            try {
-              const deterministic = buildDeterministicQuestionSetFromText(extractedText, 20);
-              if (Array.isArray(deterministic.questions) && deterministic.questions.length > 0) {
-                structuredValidation = validateToolSpecificStructuredContent(
-                  resolvedToolSlug,
-                  deterministic,
-                  analysis.contentType || 'Worksheet',
-                  extractedText,
-                );
-                if (structuredValidation.normalizedStructuredContent) {
-                  analysis.structuredContent = structuredValidation.normalizedStructuredContent;
-                  analysis.contentType =
-                    structuredValidation.normalizedType || analysis.contentType || 'Worksheet';
-                }
-              }
-            } catch {
-              // ignore
-            }
-          }
-        }
-      }
-
-      if (!structuredValidation.valid) {
-        console.warn('[AI PDF] Validation still imperfect; saving best available:', structuredValidation.message);
-      }
-
-      const activityPersistMeta = {
-        subject: String(subject || '').trim(),
-        classLabel: toClassLabel(classInput),
-        topic: String(topic || chapter || analysis.topic || '').trim(),
-        subTopic: String(subTopic || analysis.subTopic || '').trim(),
-        chapter: String(chapter || '').trim(),
-      };
-
-      let finalStructured =
-        structuredValidation.normalizedStructuredContent ||
-        (analysis.structuredContent && typeof analysis.structuredContent === 'object' && !Array.isArray(analysis.structuredContent)
-          ? analysis.structuredContent
-          : {});
-      const finalContentType =
-        String(structuredValidation.normalizedType || analysis.contentType || '').trim() || 'Notes';
-
-      if (resolvedToolSlug === 'activity-project-generator') {
-        finalStructured = finalizeActivityStructuredContent(finalStructured, activityPersistMeta);
-        structuredValidation = validateToolSpecificStructuredContent(
-          resolvedToolSlug,
-          finalStructured,
-          finalContentType,
-          extractedText,
-        );
-      }
-
-      let uploaded = {
-        fileName: req.file.filename,
-        fileUrl,
-        storageProvider: 'local',
-        storageKey: '',
-        shouldDeleteLocal: false,
-      };
       try {
-        uploaded = await uploadPdfToConfiguredStorage({
-          localPath: req.file.path,
-          originalName: req.file.originalname,
-          mimeType: req.file.mimetype,
-        });
-      } catch (storageError) {
-        console.error('Cloud upload failed, keeping local storage:', storageError.message);
+        fs.unlink(req.file.path, () => {});
+      } catch {
+        // ignore
       }
-
-      if (uploaded.shouldDeleteLocal) {
-        try {
-          fs.unlinkSync(req.file.path);
-        } catch {
-          // ignore
-        }
-      }
-      const source = await AiContentEngineSource.create({
-        fileName: uploaded.fileName,
-        originalName: req.file.originalname,
-        fileUrl: uploaded.fileUrl,
-        storageProvider: uploaded.storageProvider,
-        storageKey: uploaded.storageKey,
-        fileSize: req.file.size,
-        mimeType: req.file.mimetype,
-        board: normalizeBoard(board),
-        subject: String(subject).trim(),
-        classLabel: toClassLabel(classInput),
-        chapter: String(chapter).trim(),
-        topic: String(topic || analysis.topic || chapter || '').trim(),
-        subTopic: String(subTopic || analysis.subTopic || '').trim(),
+      return res.status(422).json({
+        success: false,
+        code: 'PDF_EXTRACT_EMPTY',
+        message: buildPdfExtractEmptyMessage(resolvedToolSlug),
         toolType: resolvedToolSlug,
-        contentType: finalContentType,
-        structuredContent: finalStructured,
-        renderContent: buildRenderableContent(resolvedToolSlug, finalContentType, finalStructured),
-        geminiDetected: {
-          classLabel: String(analysis.classLabel || ''),
-          subject: String(analysis.subject || ''),
-          topic: String(analysis.topic || ''),
-          subTopic: String(analysis.subTopic || ''),
-          bestMatchingToolLabel: String(analysis.bestMatchingToolLabel || ''),
-          contentType: String(analysis.contentType || ''),
-        },
-        analysisStatus: 'analyzed',
-        approvalStatus: 'pending',
-        validation: {
-          toolMatched: Boolean(detectedToolSlug && resolvedToolSlug && detectedToolSlug === resolvedToolSlug),
-          mismatchReason: analysis.isFallback ? String(analysis.fallbackReason || 'Fallback analysis mode') : '',
-          subjectTopicMatched: Boolean(subjectMatched && topicMatched),
-          subjectTopicReason: subjectTopicMatch.reason || '',
-          subjectTopicConfidence: subjectTopicMatch.confidence || 0,
-        },
-        uploadedBy: uploaderId,
-        uploadedByRole: toUploadedByRole(req.user?.role),
-      });
-
-      try {
-        await syncPdfSourceToAiToolData(source);
-      } catch (syncError) {
-        console.error('AI PDF -> AiToolGeneration sync failed (non-fatal):', syncError);
-      }
-
-      const master = await AiToolGeneration.findOne({
-        $or: [
-          { 'metadata.contentEngineSourceId': String(source._id) },
-          { 'metadata.aiPdfSourceId': String(source._id) },
-        ],
-      })
-        .select('_id')
-        .lean();
-
-      return res.status(201).json({
-        success: true,
-        data: {
-          id: master?._id || source._id,
-          sourcePdfId: source._id,
-          fileName: source.originalName,
-          subject: source.subject,
-          class: source.classLabel,
-          chapter: source.chapter,
-          topic: source.topic,
-          subTopic: source.subTopic,
-          toolType: source.toolType,
-          contentType: source.contentType,
-          approvalStatus: source.approvalStatus,
-          uploadedBy: source.uploadedBy,
-          uploadDate: source.uploadDate,
-          processingStatus: source.processingStatus,
-          analysisMode: analysis.analysisMode || 'gemini',
-        },
       });
     } catch (error) {
       console.error('AI PDF upload error:', error);
@@ -1031,7 +1119,7 @@ router.get('/pdf/list', verifyToken, authorizeRoles('teacher', 'admin', 'super-a
   try {
     const { board, subject, class: classInput, status } = req.query;
     const page = Math.max(1, Number(req.query.page || 1));
-    const limit = Math.max(1, Math.min(100, Number(req.query.limit || 20)));
+    const limit = Math.max(1, Math.min(500, Number(req.query.limit || 20)));
     const filter = { sourceType: 'ai_pdf' };
     if (board) filter.board = boardMongoMatch(normalizeBoard(board));
     if (subject) filter.subject = String(subject).trim();
@@ -1067,7 +1155,9 @@ router.get('/pdf/list', verifyToken, authorizeRoles('teacher', 'admin', 'super-a
     const combined = [
       ...masterDocs.map(mapMasterPdfToListRow),
       ...orphanDocs.map(mapSourcePdfToListRow).filter(Boolean),
-    ].sort((a, b) => {
+    ]
+      .filter((row) => !isDeprecatedPdfListRow(row))
+      .sort((a, b) => {
       const ta = new Date(a.uploadDate || a.updatedAt || 0).getTime();
       const tb = new Date(b.uploadDate || b.updatedAt || 0).getTime();
       return tb - ta;
@@ -1143,40 +1233,67 @@ router.get('/pdf/:id', verifyToken, authorizeRoles('teacher', 'admin', 'super-ad
     if (master && source) {
       return res.json({
         success: true,
-        data: enrichLessonPlanRowForApi({
-          ...source,
-          _id: master._id,
-          toolType: master.toolName || source.toolType,
-          structuredContent: master.metadata?.structuredContent ?? source.structuredContent,
-          renderContent: master.metadata?.renderContent ?? source.renderContent,
-        }),
+        data: enrichLessonPlanRowForApi(
+          enrichDailyClassPlanRowForApi(
+            enrichExamPaperRowForApi(
+              enrichStoryRowForApi(
+                enrichWorksheetRowForApi({
+                  ...source,
+                  _id: master._id,
+                  toolType: master.toolName || source.toolType,
+                  structuredContent: master.metadata?.structuredContent ?? source.structuredContent,
+                  renderContent: master.metadata?.renderContent ?? source.renderContent,
+                }),
+              ),
+            ),
+          ),
+        ),
       });
     }
     if (source) {
-      return res.json({ success: true, data: enrichLessonPlanRowForApi(source) });
+      return res.json({
+        success: true,
+        data: enrichLessonPlanRowForApi(
+          enrichDailyClassPlanRowForApi(
+            enrichExamPaperRowForApi(
+              enrichWorksheetRowForApi(
+                enrichStoryRowForApi(enrichShortNotesRowForApi(enrichFlashcardRowForApi(source))),
+              ),
+            ),
+          ),
+        ),
+      });
     }
     if (master) {
       const m = master.metadata || {};
       return res.json({
         success: true,
-        data: enrichLessonPlanRowForApi({
-          _id: master._id,
-          originalName: master.pdfFileName,
-          fileUrl: master.pdfFileUrl,
-          subject: master.subject,
-          classLabel: master.classLabel,
-          chapter: master.topic,
-          topic: master.topic,
-          subTopic: master.subtopic,
-          toolType: master.toolName,
-          contentType: m.contentType,
-          structuredContent: m.structuredContent || {},
-          renderContent: m.renderContent || {},
-          approvalStatus: m.approvalStatus,
-          processingStatus: m.processingStatus,
-          chunkCount: m.chunkCount,
-          uploadDate: master.createdAt,
-        }),
+        data: enrichLessonPlanRowForApi(
+          enrichDailyClassPlanRowForApi(
+            enrichExamPaperRowForApi(
+              enrichStoryRowForApi(
+                enrichWorksheetRowForApi({
+                  _id: master._id,
+                  originalName: master.pdfFileName,
+                  fileUrl: master.pdfFileUrl,
+                  subject: master.subject,
+                  classLabel: master.classLabel,
+                  chapter: master.topic,
+                  topic: master.topic,
+                  subTopic: master.subtopic,
+                  toolType: master.toolName,
+                  contentType: m.contentType,
+                  structuredContent: m.structuredContent || {},
+                  renderContent: m.renderContent || {},
+                  approvalStatus: m.approvalStatus,
+                  processingStatus: m.processingStatus,
+                  chunkCount: m.chunkCount,
+                  uploadDate: master.createdAt,
+                }),
+              ),
+            ),
+          ),
+        ),
       });
     }
     return res.status(404).json({ success: false, message: 'PDF source not found' });

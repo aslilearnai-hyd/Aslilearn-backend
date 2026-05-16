@@ -42,6 +42,34 @@ export const AI_TOOL_ORDERED_SLUGS = Object.freeze([
   'exam-question-paper-generator',
 ]);
 
+/** Normalize tool label/slug for comparison (lowercase alphanumeric only). */
+export function normalizeAiToolIdentifierKey(value) {
+  return String(value ?? '')
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '');
+}
+
+/** Retired formats — not part of the 11-tool curriculum system. */
+export const DEPRECATED_AI_TOOL_LABELS = Object.freeze([
+  'Enrichment / HOTS Task Generator',
+  'Remedial Support Plan Generator',
+]);
+
+const _deprecatedToolKeys = new Set(
+  DEPRECATED_AI_TOOL_LABELS.map((label) => normalizeAiToolIdentifierKey(label)),
+);
+
+/** @param {unknown} value Tool slug, display label, or legacy contentType string */
+export function isDeprecatedAiToolIdentifier(value) {
+  const key = normalizeAiToolIdentifierKey(value);
+  if (!key) return false;
+  if (_deprecatedToolKeys.has(key)) return true;
+  if (key.includes('enrichment') && (key.includes('hots') || key.includes('hotstask'))) return true;
+  if (key.includes('remedial') && key.includes('support')) return true;
+  return false;
+}
+
 const _slugSet = new Set(AI_TOOL_ORDERED_SLUGS);
 
 /** @param {string} slug */
@@ -150,12 +178,11 @@ const TEMPLATES = {
       { order: 5, id: 'section_b', label: 'Section B: Fill in the Blanks', universalBlock: 'output', storageKeys: ['section_b_fib', 'fill_in_blanks'] },
       { order: 6, id: 'section_c', label: 'Section C: Very Short Answer Questions', universalBlock: 'output', storageKeys: ['section_c_vsa'] },
       { order: 7, id: 'section_d', label: 'Section D: Short Answer Questions', universalBlock: 'output', storageKeys: ['section_d_sa'] },
-      { order: 8, id: 'section_e', label: 'Section E: Long Answer / Case-based Questions', universalBlock: 'output', storageKeys: ['section_e_la'] },
-      { order: 9, id: 'section_f', label: 'Section F: Competency / Real-life Application Questions', universalBlock: 'realLife', storageKeys: ['section_f_competency'] },
-      { order: 10, id: 'answer_key', label: 'Answer Key', universalBlock: 'assessment', storageKeys: ['answer_key', 'answers'] },
-      { order: 11, id: 'bloom_tag', label: "Bloom's Level and Difficulty Tag", universalBlock: 'assessment', storageKeys: ['bloom_level', 'difficulty_tag'] },
+      { order: 8, id: 'section_e', label: 'Section E: Competency / Real-life Application Questions', universalBlock: 'realLife', storageKeys: ['section_e_competency', 'section_f_competency'] },
+      { order: 9, id: 'answer_key', label: 'Answer Key', universalBlock: 'assessment', storageKeys: ['answer_key', 'answers'] },
+      { order: 10, id: 'bloom_tag', label: "Bloom's Level and Difficulty Tag", universalBlock: 'assessment', storageKeys: ['bloom_level', 'difficulty_tag'] },
     ],
-    requiredFieldsForPdfExtract: ['question', 'answer'],
+    requiredFieldsForPdfExtract: ['question'],
     pdfValidationRules: [
       { id: 'questions-nonempty', severity: 'error', description: 'questions[] must be non-empty after sanitize.' },
       { id: 'answer-key-alignment', severity: 'warn', description: 'MCQs with options should have a declared answer.' },
@@ -164,18 +191,38 @@ const TEMPLATES = {
     regenerationRules: { mergePolicy: 'replace', allowTemplateRegeneration: true },
     gemini: {
       strictOutputHint:
-        'Worksheet JSON: include worksheet_title, learning_objectives[], instructions, questions[] (typed MCQ/VSA/SA/LA/FIB/competency), answer_key, bloom_level, difficulty_tag. Each question: question_number, type, section, question, options[], answer, explanation, marks.',
+        'Prefer ONE JSON object per full worksheet: title, learning_objectives[], instructions, sections[{sectionName,questions[]}], answer_key, bloom_level, difficulty_tag. Flat rows: question_number, type, section, question, options[], answer, marks.',
       pdfExtractSchema: {
+        title: 'string',
+        worksheet_title: 'string',
+        learning_objectives: ['string'],
+        instructions: 'string',
+        sections: [
+          {
+            sectionName: 'string',
+            questions: [
+              {
+                question_number: 'number',
+                type: 'string',
+                question: 'string',
+                options: ['string'],
+                answer: 'string',
+                explanation: 'string',
+                marks: 'number',
+              },
+            ],
+          },
+        ],
+        answer_key: 'string',
+        bloom_level: 'string',
+        difficulty_tag: 'string',
         question_number: 'number',
-        type: 'string — MCQ|FIB|VSA|SA|LA|CASE|COMPETENCY',
-        section: 'string — A|B|C|D|E|F',
+        type: 'string',
+        section: 'string',
         question: 'string',
         options: ['string'],
         answer: 'string',
-        explanation: 'string',
         marks: 'number',
-        bloom_level: 'string',
-        difficulty: 'string',
       },
     },
     sectionFallbackRules: [{ ifEmpty: ['questions'], use: ['raw_items', 'items'], synthesize: 'extract_from_plain_text' }],
@@ -354,27 +401,97 @@ const TEMPLATES = {
     compulsoryContextFields: COMPULSORY_CONTEXT_FIELDS,
     canonicalHeadings: [
       { order: 1, id: 'passage_title', label: 'Passage / Story Title', universalBlock: 'input', storageKeys: ['title'] },
-      { order: 2, id: 'subtopic_link', label: 'Subtopic & Curriculum Link', universalBlock: 'input', storageKeys: ['subtopic_link', 'subtopic'] },
-      { order: 3, id: 'genre_purpose', label: 'Genre, Purpose & Reading Level', universalBlock: 'alignment', storageKeys: ['genre_purpose', 'reading_level'] },
-      { order: 4, id: 'passage', label: 'Passage / Story Text', universalBlock: 'output', storageKeys: ['passage', 'content'] },
-      { order: 5, id: 'vocabulary', label: 'Vocabulary Support', universalBlock: 'differentiation', storageKeys: ['vocabulary', 'vocabulary_support'] },
-      { order: 6, id: 'comprehension', label: 'Comprehension Questions', universalBlock: 'assessment', storageKeys: ['questions', 'comprehension_questions'] },
-      { order: 7, id: 'moral_values', label: 'Moral / Value-based Discussion', universalBlock: 'alignment', storageKeys: ['moral', 'values_discussion'] },
-      { order: 8, id: 'formative', label: 'Formative Check', universalBlock: 'assessment', storageKeys: ['formative_check'] },
-      { order: 9, id: 'differentiation', label: 'Differentiation & Scaffolding', universalBlock: 'differentiation', storageKeys: ['differentiation'] },
-      { order: 10, id: 'real_life', label: 'Real-life Link', universalBlock: 'realLife', storageKeys: ['real_life_link'] },
-      { order: 11, id: 'reflection', label: 'Reflection / Exit Prompt', universalBlock: 'reflection', storageKeys: ['reflection_prompt'] },
+      {
+        order: 2,
+        id: 'alignment',
+        label: 'Alignment Block (NEP/NCF, Skill Focus, UDL)',
+        universalBlock: 'alignment',
+        storageKeys: ['alignment_block', 'nep_ncf_focus', 'skill_focus', 'udl_support', 'udl'],
+      },
+      {
+        order: 3,
+        id: 'learning_objectives',
+        label: 'Learning Objectives',
+        universalBlock: 'alignment',
+        storageKeys: ['learning_objectives', 'objectives'],
+      },
+      { order: 4, id: 'passage', label: 'Passage', universalBlock: 'output', storageKeys: ['passage', 'content', 'story_text'] },
+      {
+        order: 5,
+        id: 'vocabulary',
+        label: 'Vocabulary Support',
+        universalBlock: 'differentiation',
+        storageKeys: ['vocabulary_support', 'vocabulary'],
+      },
+      {
+        order: 6,
+        id: 'comprehension',
+        label: 'Comprehension and Thinking Questions',
+        universalBlock: 'assessment',
+        storageKeys: ['questions', 'comprehension_questions'],
+      },
+      {
+        order: 7,
+        id: 'answer_hints',
+        label: 'Answer Hints',
+        universalBlock: 'assessment',
+        storageKeys: ['answer_hints', 'answer_key'],
+      },
+      {
+        order: 8,
+        id: 'differentiation',
+        label: 'Differentiation (Support / Extension)',
+        universalBlock: 'differentiation',
+        storageKeys: ['differentiation_support', 'differentiation_extension', 'differentiation'],
+      },
+      {
+        order: 9,
+        id: 'real_life',
+        label: 'Real-life Application',
+        universalBlock: 'realLife',
+        storageKeys: ['real_life_application', 'real_life_link'],
+      },
+      {
+        order: 10,
+        id: 'reflection',
+        label: 'Reflection / Exit Ticket',
+        universalBlock: 'reflection',
+        storageKeys: ['reflection_prompt', 'reflection_exit_ticket'],
+      },
     ],
     requiredFieldsForPdfExtract: ['title', 'passage'],
     pdfValidationRules: [{ id: 'passage-length', severity: 'warn', description: 'Passage should be substantive for reading practice.' }],
-    parserHints: ['Detect title then prose block; questions as numbered lines or array.'],
+    parserHints: [
+      'Metadata row: class, subject, subtopic, bloom_level, difficulty_level when present.',
+      'Map Alignment Block (NEP/NCF, Skill Focus, UDL), Learning Objectives, Passage, Vocabulary, Questions, Answer Hints, Differentiation Support/Extension, Real-life Application, Reflection.',
+    ],
     regenerationRules: { mergePolicy: 'merge', allowTemplateRegeneration: true },
     gemini: {
       strictOutputHint:
-        'Story JSON: title, passage, vocabulary_support[], questions[], moral/values, formative_check, differentiation, real_life_link, reflection_prompt; align comprehension + value-based learning.',
-      pdfExtractSchema: { title: 'string', passage: 'string', questions: ['object'], moral: 'string' },
+        'One JSON object per story/passage item: title, alignment_block (or nep_ncf_focus, skill_focus, udl_support), learning_objectives[], passage, vocabulary_support[], questions[], answer_hints[] (or string), differentiation_support, differentiation_extension, real_life_application, reflection_prompt; optional bloom_level, difficulty_level, class_label, subject, subtopic from PDF header.',
+      pdfExtractSchema: {
+        title: 'string',
+        alignment_block: 'string',
+        nep_ncf_focus: 'string',
+        skill_focus: 'string',
+        udl_support: 'string',
+        learning_objectives: ['string'],
+        passage: 'string',
+        vocabulary_support: ['string'],
+        questions: ['object'],
+        answer_hints: ['string'],
+        differentiation_support: 'string',
+        differentiation_extension: 'string',
+        real_life_application: 'string',
+        reflection_prompt: 'string',
+        bloom_level: 'string',
+        difficulty_level: 'string',
+      },
     },
-    sectionFallbackRules: [{ ifEmpty: ['passage'], use: ['content', 'story_text'] }],
+    sectionFallbackRules: [
+      { ifEmpty: ['passage'], use: ['content', 'story_text'] },
+      { ifEmpty: ['alignment_block'], use: ['genre_purpose', 'subtopic_link'] },
+    ],
   },
 
   'short-notes-summaries-maker': {
@@ -385,27 +502,110 @@ const TEMPLATES = {
     compulsoryContextFields: COMPULSORY_CONTEXT_FIELDS,
     canonicalHeadings: [
       { order: 1, id: 'note_title', label: 'Note / Summary Title', universalBlock: 'input', storageKeys: ['title', 'concept_name'] },
-      { order: 2, id: 'subtopic', label: 'Subtopic Focus', universalBlock: 'input', storageKeys: ['subtopic'] },
-      { order: 3, id: 'revision_scope', label: 'Revision Scope & Exam Weightage Hint', universalBlock: 'alignment', storageKeys: ['revision_scope'] },
-      { order: 4, id: 'key_ideas', label: 'Key Ideas (Compressed)', universalBlock: 'output', storageKeys: ['key_points', 'keyPoints', 'headings'] },
-      { order: 5, id: 'definitions', label: 'Definitions & Formulas', universalBlock: 'output', storageKeys: ['definitions', 'formulas'] },
-      { order: 6, id: 'exam_summary', label: 'Exam Summary / One-page view', universalBlock: 'output', storageKeys: ['exam_summary', 'summary'] },
-      { order: 7, id: 'concept_map', label: 'Concept Compression / Map', universalBlock: 'output', storageKeys: ['concept_compression', 'concepts'] },
-      { order: 8, id: 'quick_recap', label: 'Quick Recap', universalBlock: 'reflection', storageKeys: ['quick_recap'] },
-      { order: 9, id: 'misconceptions', label: 'Common Errors to Avoid', universalBlock: 'differentiation', storageKeys: ['common_errors'] },
-      { order: 10, id: 'hots', label: 'HOTS / Application Prompt', universalBlock: 'assessment', storageKeys: ['hots_prompt'] },
-      { order: 11, id: 'reflection', label: 'Self-check / Reflection', universalBlock: 'reflection', storageKeys: ['self_check'] },
+      {
+        order: 2,
+        id: 'alignment',
+        label: 'Alignment Block (NEP/NCF, UDL)',
+        universalBlock: 'alignment',
+        storageKeys: ['alignment_block', 'nep_ncf_focus', 'udl_support', 'udl'],
+      },
+      {
+        order: 3,
+        id: 'learning_objectives',
+        label: 'Learning Objectives',
+        universalBlock: 'alignment',
+        storageKeys: ['learning_objectives', 'objectives'],
+      },
+      {
+        order: 4,
+        id: 'short_note',
+        label: 'Short Note / Summary',
+        universalBlock: 'output',
+        storageKeys: ['short_note_summary', 'summary', 'exam_summary'],
+      },
+      {
+        order: 5,
+        id: 'key_points',
+        label: 'Key Points to Remember',
+        universalBlock: 'output',
+        storageKeys: ['key_points_to_remember', 'key_points', 'keyPoints'],
+      },
+      { order: 6, id: 'example', label: 'Example', universalBlock: 'realLife', storageKeys: ['example'] },
+      {
+        order: 7,
+        id: 'misconception',
+        label: 'Common Misconception and Correction',
+        universalBlock: 'differentiation',
+        storageKeys: ['common_misconception_correction', 'misconception', 'correction', 'common_mistakes'],
+      },
+      {
+        order: 8,
+        id: 'quick_check',
+        label: 'Quick Check Questions',
+        universalBlock: 'assessment',
+        storageKeys: ['quick_check_questions', 'self_check', 'questions'],
+      },
+      {
+        order: 9,
+        id: 'differentiation',
+        label: 'Differentiation (Support / Extension)',
+        universalBlock: 'differentiation',
+        storageKeys: ['differentiation_support', 'differentiation_extension', 'differentiation'],
+      },
+      {
+        order: 10,
+        id: 'real_life',
+        label: 'Real-life Application',
+        universalBlock: 'realLife',
+        storageKeys: ['real_life_application', 'real_life_link'],
+      },
+      {
+        order: 11,
+        id: 'reflection',
+        label: 'Reflection / Exit Ticket',
+        universalBlock: 'reflection',
+        storageKeys: ['reflection_exit_ticket', 'reflection_prompt'],
+      },
     ],
-    requiredFieldsForPdfExtract: ['concept_name', 'summary'],
-    pdfValidationRules: [{ id: 'has-body', severity: 'error', description: 'summary or keyPoints/headings required.' }],
-    parserHints: ['Map to concepts[] or { concept_name, summary, key_points[], headings[] }.'],
+    requiredFieldsForPdfExtract: ['title', 'short_note_summary'],
+    pdfValidationRules: [
+      {
+        id: 'has-body',
+        severity: 'error',
+        description: 'short_note_summary or summary with key_points required.',
+      },
+    ],
+    parserHints: [
+      'One object per Item N in PDF: alignment, objectives, short note, key points, example, misconception/correction, quick checks, differentiation, real-life, reflection.',
+      'Metadata: bloom_level, skill_focus, subtopic when in header row.',
+    ],
     regenerationRules: { mergePolicy: 'merge', allowTemplateRegeneration: true },
     gemini: {
       strictOutputHint:
-        'Notes JSON: concept_name, summary, key_points[], headings[] with exam-aligned compression, recap, HOTS, self-check.',
-      pdfExtractSchema: { concept_name: 'string', summary: 'string', key_points: ['string'], headings: ['object'] },
+        'Short Notes JSON per item: title, alignment_block (or nep_ncf_focus, udl_support), learning_objectives[], short_note_summary, key_points_to_remember[], example, common_misconception_correction, quick_check_questions[], differentiation_support, differentiation_extension, real_life_application, reflection_exit_ticket; optional bloom_level, skill_focus, subtopic.',
+      pdfExtractSchema: {
+        title: 'string',
+        concept_name: 'string',
+        alignment_block: 'string',
+        learning_objectives: ['string'],
+        short_note_summary: 'string',
+        key_points_to_remember: ['string'],
+        example: 'string',
+        common_misconception_correction: 'string',
+        quick_check_questions: ['string'],
+        differentiation_support: 'string',
+        differentiation_extension: 'string',
+        real_life_application: 'string',
+        reflection_exit_ticket: 'string',
+        bloom_level: 'string',
+        skill_focus: 'string',
+        subtopic: 'string',
+      },
     },
-    sectionFallbackRules: [],
+    sectionFallbackRules: [
+      { ifEmpty: ['short_note_summary'], use: ['summary', 'exam_summary', 'quick_recap'] },
+      { ifEmpty: ['key_points_to_remember'], use: ['key_points', 'keyPoints'] },
+    ],
   },
 
   'flashcard-generator': {
@@ -416,24 +616,42 @@ const TEMPLATES = {
     compulsoryContextFields: COMPULSORY_CONTEXT_FIELDS,
     canonicalHeadings: [
       { order: 1, id: 'deck_title', label: 'Deck / Topic Title', universalBlock: 'input', storageKeys: ['deck_title', 'title'] },
-      { order: 2, id: 'subtopic', label: 'Subtopic Tag', universalBlock: 'input', storageKeys: ['topic_tag', 'subtopic'] },
-      { order: 3, id: 'front', label: 'Front (Prompt / Cue)', universalBlock: 'output', storageKeys: ['front'] },
-      { order: 4, id: 'back', label: 'Back (Response / Definition)', universalBlock: 'output', storageKeys: ['back'] },
-      { order: 5, id: 'bloom', label: "Bloom's / Cognitive Level", universalBlock: 'alignment', storageKeys: ['bloom_level'] },
-      { order: 6, id: 'hint', label: 'Hint / Scaffolding', universalBlock: 'differentiation', storageKeys: ['hint'] },
-      { order: 7, id: 'real_life', label: 'Real-life Link (optional)', universalBlock: 'realLife', storageKeys: ['real_life_link'] },
-      { order: 8, id: 'self_check', label: 'Self-check Question', universalBlock: 'reflection', storageKeys: ['self_check'] },
+      { order: 2, id: 'front', label: 'Front', universalBlock: 'output', storageKeys: ['front'] },
+      { order: 3, id: 'back', label: 'Back', universalBlock: 'output', storageKeys: ['back'] },
+      { order: 4, id: 'memory_cue', label: 'Memory Cue', universalBlock: 'differentiation', storageKeys: ['memory_cue', 'hint'] },
+      { order: 5, id: 'skill_focus', label: 'Skill Focus', universalBlock: 'alignment', storageKeys: ['skill_focus', 'bloom_level'] },
+      { order: 6, id: 'example_use', label: 'Example Use', universalBlock: 'realLife', storageKeys: ['example_use', 'real_life_link'] },
+      { order: 7, id: 'peer_prompt', label: 'Peer Prompt', universalBlock: 'assessment', storageKeys: ['peer_prompt'] },
+      { order: 8, id: 'reflection', label: 'Reflection', universalBlock: 'reflection', storageKeys: ['reflection', 'reflection_prompt', 'self_check'] },
     ],
     requiredFieldsForPdfExtract: ['front', 'back'],
     pdfValidationRules: [{ id: 'front-back', severity: 'error', description: 'Each card needs non-empty front and back.' }],
-    parserHints: ['Lines "Front:" / "Back:" or JSON flashcards[].'],
+    parserHints: [
+      'One object per flashcard (Item N / Card N): front, back, memory_cue, skill_focus, example_use, peer_prompt, reflection.',
+      'Legacy PDFs may use hint → memory_cue, bloom_level → skill_focus, real_life_link → example_use, self_check → reflection.',
+    ],
     regenerationRules: { mergePolicy: 'merge', allowTemplateRegeneration: true },
     gemini: {
       strictOutputHint:
-        'Flashcard objects: front, back, type, hint, topic_tag, bloom_level, real_life_link, self_check — for recall, revision, exam prep.',
-      pdfExtractSchema: { front: 'string', back: 'string', type: 'string', hint: 'string', topic_tag: 'string', bloom_level: 'string' },
+        'Flashcard objects: front, back, memory_cue, skill_focus, example_use, peer_prompt, reflection; optional deck_title/title for the set.',
+      pdfExtractSchema: {
+        deck_title: 'string',
+        title: 'string',
+        front: 'string',
+        back: 'string',
+        memory_cue: 'string',
+        skill_focus: 'string',
+        example_use: 'string',
+        peer_prompt: 'string',
+        reflection: 'string',
+      },
     },
-    sectionFallbackRules: [],
+    sectionFallbackRules: [
+      { ifEmpty: ['memory_cue'], use: ['hint'] },
+      { ifEmpty: ['skill_focus'], use: ['bloom_level', 'topic_tag'] },
+      { ifEmpty: ['example_use'], use: ['real_life_link', 'example'] },
+      { ifEmpty: ['reflection'], use: ['reflection_prompt', 'self_check'] },
+    ],
   },
 
   'daily-class-plan-maker': {
@@ -459,8 +677,21 @@ const TEMPLATES = {
     regenerationRules: { mergePolicy: 'merge', allowTemplateRegeneration: true },
     gemini: {
       strictOutputHint:
-        'Daily plan JSON: title, objectives[], time_slots[{time,activity,type}], teaching_methods[], classroom_activity[], exit_ticket, differentiated_support, homework_followup, teaching_aids[], teacher_reflection_notes.',
-      pdfExtractSchema: { title: 'string', time_slots: [{ time: 'string', activity: 'string', type: 'string' }], objectives: ['string'] },
+        'Daily plan JSON: title, day_period_topic_breakup, objectives[], time_slots[{time,activity,type}], teaching_methods[], classroom_activity[], exit_ticket, differentiated_support, homework_followup, teaching_aids[], teacher_reflection_notes.',
+      pdfExtractSchema: {
+        title: 'string',
+        day_period_topic_breakup: 'string',
+        objectives: ['string'],
+        time_slots: [{ time: 'string', activity: 'string', type: 'string' }],
+        teaching_methods: ['string'],
+        classroom_activity: ['string'],
+        exit_ticket: 'string',
+        differentiated_support: 'string',
+        homework_followup: 'string',
+        teaching_aids: ['string'],
+        teacher_reflection_notes: 'string',
+        timeline: ['string'],
+      },
     },
     sectionFallbackRules: [{ ifEmpty: ['time_slots'], use: ['timeline', 'schedule_lines'] }],
   },
@@ -490,8 +721,31 @@ const TEMPLATES = {
     regenerationRules: { mergePolicy: 'merge', allowTemplateRegeneration: true },
     gemini: {
       strictOutputHint:
-        'Exam items as JSON rows: question_number, section, question, options[], answer, marks, internal_choice_group, blueprint_tag, marking_notes, rubric_hint.',
+        'Prefer ONE JSON object per full exam paper: paper_title, instructions, blueprint, sections[{sectionName,questions[{question_number,question,options[],answer,marks,internal_choice_group}]}], internal_choices, answer_key, marking_scheme, open_ended_rubric. If only a question list exists, use flat rows with section + question_number + question + options + answer + marks.',
       pdfExtractSchema: {
+        paper_title: 'string',
+        title: 'string',
+        instructions: 'string',
+        blueprint: 'string',
+        sections: [
+          {
+            sectionName: 'string',
+            questions: [
+              {
+                question_number: 'number',
+                question: 'string',
+                options: ['string'],
+                answer: 'string',
+                marks: 'number',
+                internal_choice_group: 'string',
+              },
+            ],
+          },
+        ],
+        internal_choices: 'string',
+        answer_key: 'string',
+        marking_scheme: 'string',
+        open_ended_rubric: 'string',
         question_number: 'number',
         section: 'string',
         question: 'string',
@@ -531,6 +785,172 @@ export function getToolDisplayTitle(slug) {
 /** Default content type string used in DB / renderers. */
 export function getContentTypeDefault(slug) {
   return TEMPLATES[String(slug || '').trim()]?.contentTypeDefault || 'Generated Content';
+}
+
+/**
+ * Gemini prompt for Super Admin AI Generator (curriculum context only — no PDF).
+ * Uses the same strictOutputHint + pdfExtractSchema as AI PDF / Content Engine.
+ * @param {string} toolSlug
+ * @param {Record<string, unknown>} params
+ */
+export function buildAiGeneratorStructuredPrompt(toolSlug, params = {}) {
+  const slug = String(toolSlug || '').trim();
+  const t = getAiToolTemplate(slug);
+  if (!t) throw new Error(`Unknown AI tool: ${toolSlug}`);
+
+  const schema = t.gemini?.pdfExtractSchema || {};
+  const strictHint = t.gemini?.strictOutputHint || '';
+  const headings = (t.canonicalHeadings || [])
+    .map((h) => `${h.order}. ${h.label}`)
+    .join('\n');
+  const extra = params.extraParams && typeof params.extraParams === 'object' ? params.extraParams : {};
+  const bloomLevel = String(params.bloomLevel || extra.bloomLevel || '').trim();
+  const questionCount = Number(extra.questionCount ?? extra.numberOfQuestions);
+  const cardCount = Number(extra.cardCount);
+  const duration = String(extra.duration || '').trim();
+
+  const contextLines = [
+    `TOOL: ${t.title}`,
+    `CONTENT TYPE: ${t.contentTypeDefault}`,
+    `BOARD: ${String(params.board || '').trim() || '—'}`,
+    `CLASS: ${String(params.classLabel || params.gradeLevel || '').trim() || '—'}`,
+    `SUBJECT: ${String(params.subject || '').trim() || '—'}`,
+    `TOPIC: ${String(params.topic || '').trim() || '—'}`,
+    `SUBTOPIC: ${String(params.subTopic || params.subtopic || '').trim() || '—'}`,
+  ];
+  if (bloomLevel) contextLines.push(`BLOOM / COGNITIVE TARGET: ${bloomLevel}`);
+  if (Number.isFinite(questionCount) && questionCount > 0) {
+    contextLines.push(`TARGET QUESTION COUNT: ${questionCount}`);
+  }
+  if (Number.isFinite(cardCount) && cardCount > 0) {
+    contextLines.push(`TARGET FLASHCARD COUNT: ${cardCount}`);
+  }
+  if (duration) contextLines.push(`LESSON DURATION (minutes): ${duration}`);
+
+  return `You are an expert Indian school curriculum content generator aligned to NEP 2020 and NCF-SE 2023.
+
+${contextLines.join('\n')}
+
+CANONICAL OUTPUT SECTIONS (populate structuredContent using these headings and field names):
+${headings}
+
+STRICT OUTPUT RULE:
+${strictHint}
+
+Generate original, classroom-ready content for the class, subject, topic, and subtopic above. Do not use markdown code fences inside JSON string values.
+
+Return ONLY valid JSON (single root object, no markdown fences):
+{
+  "contentType": "${t.contentTypeDefault}",
+  "structuredContent": { }
+}
+
+The structuredContent object MUST match this JSON schema (field names and types exactly):
+${JSON.stringify(schema, null, 2)}
+
+For tools that produce multiple worksheet questions, exam items, or flashcards, put them in the arrays defined by the schema (e.g. questions[], sections[].questions[], cards[]).
+For Activity & Project Generator, fill ALL 13 canonical fields in one structuredContent object.`;
+}
+
+/** @param {string} toolSlug @param {unknown} structured */
+export function expandStructuredToFormatItems(toolSlug, structured) {
+  if (Array.isArray(structured)) {
+    return structured.filter((x) => x && typeof x === 'object');
+  }
+  const s = structured && typeof structured === 'object' ? structured : {};
+
+  switch (toolSlug) {
+    case 'activity-project-generator':
+      return [s];
+    case 'worksheet-mcq-generator': {
+      if (Array.isArray(s.sections) && s.sections.length) return [s];
+      const qs = Array.isArray(s.questions) ? s.questions : [];
+      if (
+        qs.length &&
+        (String(s.title || s.worksheet_title || '').trim() ||
+          String(s.instructions || '').trim() ||
+          s.learning_objectives?.length)
+      ) {
+        return [{ ...s, questions: qs }];
+      }
+      if (qs.length) {
+        return qs.map((q, i) => {
+          if (q && typeof q === 'object') {
+            return { ...q, question_number: q.question_number ?? i + 1 };
+          }
+          return { question: String(q), question_number: i + 1 };
+        });
+      }
+      return [s];
+    }
+    case 'homework-creator': {
+      const qs = Array.isArray(s.questions) ? s.questions : [];
+      if (qs.length) {
+        return qs.map((q, i) => {
+          if (q && typeof q === 'object') {
+            return { ...q, question_number: q.question_number ?? i + 1 };
+          }
+          return { question: String(q), question_number: i + 1 };
+        });
+      }
+      return [s];
+    }
+    case 'rubrics-evaluation-generator':
+      return [s];
+    case 'daily-class-plan-maker':
+      return [s];
+    case 'exam-question-paper-generator': {
+      const items = [];
+      for (const sec of Array.isArray(s.sections) ? s.sections : []) {
+        const sectionName = String(sec?.sectionName || sec?.name || '').trim();
+        for (const q of Array.isArray(sec?.questions) ? sec.questions : []) {
+          items.push({
+            ...(q && typeof q === 'object' ? q : { question: String(q) }),
+            section: sectionName,
+            question_number: items.length + 1,
+          });
+        }
+      }
+      return items.length ? items : [s];
+    }
+    case 'flashcard-generator': {
+      const cards = Array.isArray(s.cards) ? s.cards : [];
+      return cards.map((c, i) => ({ ...(c && typeof c === 'object' ? c : {}), sl_no: i + 1 }));
+    }
+    case 'concept-mastery-helper': {
+      const concepts = Array.isArray(s.concepts) ? s.concepts : [];
+      if (concepts.length) {
+        return concepts.map((c, i) => {
+          const row = c && typeof c === 'object' ? c : {};
+          return {
+            ...row,
+            sl_no: i + 1,
+            concept_name: row.concept_name || row.title || row.name || `Concept ${i + 1}`,
+            simple_definition: row.simple_definition || row.explanation || '',
+            key_points: row.key_points || row.examples,
+          };
+        });
+      }
+      return [s];
+    }
+    default:
+      return [s];
+  }
+}
+
+/**
+ * Render structured Gemini output to markdown using canonical templates.
+ * @param {string} toolSlug
+ * @param {unknown} structured
+ */
+export function formatStructuredToolOutput(toolSlug, structured) {
+  const items = expandStructuredToFormatItems(toolSlug, structured);
+  if (!items.length) return '';
+  return items
+    .map((item, idx) => formatItemToContentFromTemplate(toolSlug, item, idx))
+    .filter(Boolean)
+    .join('\n\n')
+    .trim();
 }
 
 /** Map label text → slug (for classify / resolve). */
@@ -669,8 +1089,66 @@ export function formatItemLinesFromTemplate(toolSlug, item, index = 0) {
       if (ref) pushSection(lines, '13. Reflection / Exit Ticket', [ref]);
       break;
     }
-    case 'worksheet-mcq-generator':
+    case 'worksheet-mcq-generator': {
+      if (Array.isArray(i.sections) && i.sections.length) {
+        lines.push(`## ${str(i.worksheet_title || i.title) || `Worksheet ${n}`}`, '');
+        const lo = strArr(i.learning_objectives || i.objectives);
+        if (lo.length) pushSection(lines, '2. Learning Objectives', lo.map((x) => `- ${x}`));
+        if (str(i.instructions)) pushSection(lines, '3. Instructions to Students', [str(i.instructions)]);
+        for (const sec of i.sections) {
+          const secName = str(sec?.sectionName || sec?.name || 'Section');
+          lines.push(`### ${secName}`, '');
+          for (const q of Array.isArray(sec?.questions) ? sec.questions : []) {
+            lines.push(`**Q${q?.question_number || ''}.** ${str(q?.question)}`, '');
+            if (Array.isArray(q?.options) && q.options.length) {
+              q.options.forEach((opt) => lines.push(String(opt)));
+              lines.push('');
+            }
+            if (q?.answer) lines.push(`**Answer:** ${str(q.answer)}`);
+            if (q?.marks != null) lines.push(`**Marks:** ${str(q.marks)}`);
+          }
+        }
+        if (str(i.answer_key)) pushSection(lines, '9. Answer Key', [str(i.answer_key)]);
+        const bloom = [str(i.bloom_level), str(i.difficulty_tag || i.difficulty)].filter(Boolean).join(' — ');
+        if (bloom) pushSection(lines, "10. Bloom's Level and Difficulty Tag", [bloom]);
+        break;
+      }
+      if (i.section) lines.push(`**${str(i.section)}**`, '');
+      lines.push(`**Q${i.question_number || n}.** ${str(i.question)}`, '');
+      if (Array.isArray(i.options) && i.options.length) {
+        i.options.forEach((opt) => lines.push(String(opt)));
+        lines.push('');
+      }
+      if (i.answer) lines.push(`**Answer:** ${str(i.answer)}`);
+      if (i.explanation) lines.push(`**Explanation:** ${str(i.explanation)}`);
+      if (i.marks != null) lines.push(`**Marks:** ${str(i.marks)}`);
+      if (str(i.bloom_level)) lines.push(`**Bloom / difficulty:** ${str(i.bloom_level)}`);
+      break;
+    }
     case 'exam-question-paper-generator': {
+      if (Array.isArray(i.sections) && i.sections.length) {
+        lines.push(`## ${str(i.paper_title || i.title) || `Exam Paper ${n}`}`, '');
+        if (str(i.instructions)) pushSection(lines, '1. Paper Title and General Instructions', [str(i.instructions)]);
+        if (str(i.blueprint)) pushSection(lines, '2. Blueprint / Design Grid', [str(i.blueprint)]);
+        for (const sec of i.sections) {
+          const secName = str(sec?.sectionName || sec?.name || 'Section');
+          lines.push(`### ${secName}`, '');
+          for (const q of Array.isArray(sec?.questions) ? sec.questions : []) {
+            lines.push(`**Q${q?.question_number || ''}.** ${str(q?.question)}`, '');
+            if (Array.isArray(q?.options) && q.options.length) {
+              q.options.forEach((opt) => lines.push(String(opt)));
+              lines.push('');
+            }
+            if (q?.answer) lines.push(`**Answer:** ${str(q.answer)}`);
+            if (q?.marks != null) lines.push(`**Marks:** ${str(q.marks)}`);
+          }
+        }
+        if (str(i.internal_choices)) pushSection(lines, '8. Internal Choices', [str(i.internal_choices)]);
+        if (str(i.answer_key)) pushSection(lines, '9. Complete Answer Key', [str(i.answer_key)]);
+        if (str(i.marking_scheme)) pushSection(lines, '10. Detailed Marking Scheme', [str(i.marking_scheme)]);
+        if (str(i.open_ended_rubric)) pushSection(lines, '11. Rubric for Open-ended Questions', [str(i.open_ended_rubric)]);
+        break;
+      }
       if (i.section) lines.push(`**${str(i.section)}**`, '');
       lines.push(`**Q${i.question_number || n}.** ${str(i.question)}`, '');
       if (Array.isArray(i.options) && i.options.length) {
@@ -757,15 +1235,18 @@ export function formatItemLinesFromTemplate(toolSlug, item, index = 0) {
       if (str(i.assessment_purpose)) pushSection(lines, '1. Assessment Purpose', [str(i.assessment_purpose)]);
       if (str(i.competency_assessed)) pushSection(lines, '2. Competency / Learning Outcome Assessed', [str(i.competency_assessed)]);
       if (Array.isArray(i.criteria) && i.criteria.length) {
-        lines.push('### 3. Evaluation Rubric with 4 Performance Levels');
-        lines.push('| Criteria | Excellent | Good | Satisfactory | Needs Improvement |');
-        lines.push('|----------|-----------|------|--------------|-------------------|');
-        i.criteria.forEach((c) =>
-          lines.push(
-            `| ${str(c?.name)} | ${str(c?.excellent)} | ${str(c?.good)} | ${str(c?.satisfactory)} | ${str(c?.needs_improvement)} |`,
-          ),
-        );
-        lines.push('');
+        lines.push('### 3. Evaluation Rubric with 4 Performance Levels', '');
+        i.criteria.forEach((c) => {
+          const name = str(c?.name) || 'Criterion';
+          const parts = [];
+          if (str(c?.excellent)) parts.push(`- Excellent: ${str(c.excellent)}`);
+          if (str(c?.good)) parts.push(`- Good: ${str(c.good)}`);
+          if (str(c?.satisfactory)) parts.push(`- Satisfactory: ${str(c.satisfactory)}`);
+          if (str(c?.needs_improvement)) parts.push(`- Needs Improvement: ${str(c.needs_improvement)}`);
+          lines.push(`**${name}**`, '');
+          if (parts.length) parts.forEach((p) => lines.push(p));
+          lines.push('');
+        });
       }
       if (str(i.strengths_observed)) pushSection(lines, '5. Strengths Observed', [str(i.strengths_observed)]);
       if (str(i.areas_for_improvement)) pushSection(lines, '6. Areas for Improvement', [str(i.areas_for_improvement)]);
@@ -777,39 +1258,80 @@ export function formatItemLinesFromTemplate(toolSlug, item, index = 0) {
     }
     case 'story-passage-creator': {
       lines.push(`## ${str(i.title) || `Story ${n}`}`, '');
-      if (str(i.subtopic_link)) pushSection(lines, '2. Subtopic & Curriculum Link', [str(i.subtopic_link)]);
-      if (str(i.genre_purpose)) pushSection(lines, '3. Genre, Purpose & Reading Level', [str(i.genre_purpose)]);
-      if (str(i.passage || i.content)) pushSection(lines, '4. Passage / Story Text', [str(i.passage || i.content)]);
+      const align =
+        str(i.alignment_block) ||
+        [
+          i.nep_ncf_focus ? `NEP/NCF Focus: ${str(i.nep_ncf_focus)}` : '',
+          i.skill_focus ? `Skill Focus: ${str(i.skill_focus)}` : '',
+          i.udl_support || i.udl ? `UDL: ${str(i.udl_support || i.udl)}` : '',
+        ]
+          .filter(Boolean)
+          .join(' ');
+      if (align) pushSection(lines, '1. Alignment Block', [align]);
+      const lo = strArr(i.learning_objectives || i.objectives);
+      if (lo.length) pushSection(lines, '2. Learning Objectives', lo.map((x) => `- ${x}`));
+      if (str(i.passage || i.content)) pushSection(lines, '3. Passage', [str(i.passage || i.content)]);
       const voc = strArr(i.vocabulary_support || i.vocabulary);
-      if (voc.length) pushSection(lines, '5. Vocabulary Support', voc.map((x) => `- ${x}`));
+      if (voc.length) pushSection(lines, '4. Vocabulary Support', voc.map((x) => `- ${x}`));
       const qu = Array.isArray(i.questions) ? i.questions : [];
       if (qu.length) {
-        lines.push('### 6. Comprehension Questions');
+        lines.push('### 5. Comprehension and Thinking Questions');
         qu.forEach((q, idx) => lines.push(`${idx + 1}. ${str(q.question || q)}`));
         lines.push('');
       }
-      if (str(i.moral)) pushSection(lines, '7. Moral / Value-based Discussion', [str(i.moral)]);
-      if (str(i.formative_check)) pushSection(lines, '8. Formative Check', [str(i.formative_check)]);
-      if (str(i.differentiation)) pushSection(lines, '9. Differentiation & Scaffolding', [str(i.differentiation)]);
-      if (str(i.real_life_link)) pushSection(lines, '10. Real-life Link', [str(i.real_life_link)]);
-      if (str(i.reflection_prompt)) pushSection(lines, '11. Reflection / Exit Prompt', [str(i.reflection_prompt)]);
+      const hints = strArr(i.answer_hints);
+      if (hints.length) pushSection(lines, '6. Answer Hints', hints.map((x) => `- ${x}`));
+      const diffParts = [];
+      if (str(i.differentiation_support)) diffParts.push(`Support: ${str(i.differentiation_support)}`);
+      if (str(i.differentiation_extension)) diffParts.push(`Extension: ${str(i.differentiation_extension)}`);
+      if (!diffParts.length && str(i.differentiation)) diffParts.push(str(i.differentiation));
+      if (diffParts.length) pushSection(lines, '7. Differentiation', diffParts);
+      if (str(i.real_life_application || i.real_life_link)) {
+        pushSection(lines, '8. Real-life Application', [str(i.real_life_application || i.real_life_link)]);
+      }
+      if (str(i.reflection_prompt || i.reflection_exit_ticket)) {
+        pushSection(lines, '9. Reflection / Exit Ticket', [str(i.reflection_prompt || i.reflection_exit_ticket)]);
+      }
       break;
     }
     case 'short-notes-summaries-maker': {
       lines.push(`## ${str(i.concept_name || i.title) || `Notes ${n}`}`, '');
-      if (str(i.subtopic)) pushSection(lines, '2. Subtopic Focus', [str(i.subtopic)]);
-      if (str(i.revision_scope)) pushSection(lines, '3. Revision Scope & Exam Weightage Hint', [str(i.revision_scope)]);
-      const kp = strArr(i.key_points || i.keyPoints);
-      if (kp.length) pushSection(lines, '4. Key Ideas (Compressed)', kp.map((x) => `- ${x}`));
-      const def = strArr(i.definitions);
-      if (def.length) pushSection(lines, '5. Definitions & Formulas', def.map((x) => `- ${x}`));
-      if (str(i.exam_summary || i.summary)) pushSection(lines, '6. Exam Summary / One-page view', [str(i.exam_summary || i.summary)]);
-      if (str(i.concept_compression)) pushSection(lines, '7. Concept Compression / Map', [str(i.concept_compression)]);
-      if (str(i.quick_recap)) pushSection(lines, '8. Quick Recap', [str(i.quick_recap)]);
-      const err = strArr(i.common_errors);
-      if (err.length) pushSection(lines, '9. Common Errors to Avoid', err.map((x) => `- ${x}`));
-      if (str(i.hots_prompt)) pushSection(lines, '10. HOTS / Application Prompt', [str(i.hots_prompt)]);
-      if (str(i.self_check)) pushSection(lines, '11. Self-check / Reflection', [str(i.self_check)]);
+      const align =
+        str(i.alignment_block) ||
+        [
+          i.nep_ncf_focus ? `NEP/NCF Focus: ${str(i.nep_ncf_focus)}` : '',
+          i.udl_support || i.udl ? `UDL: ${str(i.udl_support || i.udl)}` : '',
+        ]
+          .filter(Boolean)
+          .join(' ');
+      if (align) pushSection(lines, '1. Alignment Block', [align]);
+      const lo = strArr(i.learning_objectives || i.objectives);
+      if (lo.length) pushSection(lines, '2. Learning Objectives', lo.map((x) => `- ${x}`));
+      if (str(i.short_note_summary || i.summary)) {
+        pushSection(lines, '3. Short Note / Summary', [str(i.short_note_summary || i.summary)]);
+      }
+      const kp = strArr(i.key_points_to_remember || i.key_points || i.keyPoints);
+      if (kp.length) pushSection(lines, '4. Key Points to Remember', kp.map((x) => `- ${x}`));
+      if (str(i.example)) pushSection(lines, '5. Example', [str(i.example)]);
+      if (str(i.common_misconception_correction)) {
+        pushSection(lines, '6. Common Misconception and Correction', [str(i.common_misconception_correction)]);
+      }
+      const qc = strArr(i.quick_check_questions);
+      if (qc.length) {
+        lines.push('### 7. Quick Check Questions');
+        qc.forEach((q, idx) => lines.push(`${idx + 1}. ${q}`));
+        lines.push('');
+      }
+      const diffParts = [];
+      if (str(i.differentiation_support)) diffParts.push(`Support: ${str(i.differentiation_support)}`);
+      if (str(i.differentiation_extension)) diffParts.push(`Extension: ${str(i.differentiation_extension)}`);
+      if (diffParts.length) pushSection(lines, '8. Differentiation', diffParts);
+      if (str(i.real_life_application || i.real_life_link)) {
+        pushSection(lines, '9. Real-life Application', [str(i.real_life_application || i.real_life_link)]);
+      }
+      if (str(i.reflection_exit_ticket || i.reflection_prompt)) {
+        pushSection(lines, '10. Reflection / Exit Ticket', [str(i.reflection_exit_ticket || i.reflection_prompt)]);
+      }
       break;
     }
     case 'flashcard-generator':
@@ -854,22 +1376,27 @@ export function formatItemLinesFromTemplate(toolSlug, item, index = 0) {
 export function formatItemToContentFromTemplate(toolSlug, item, index = 0) {
   const i = item || {};
   if (toolSlug === 'flashcard-generator') {
+    const card = {
+      front: str(i.front),
+      back: str(i.back),
+      memory_cue: str(i.memory_cue || i.hint),
+      skill_focus: str(i.skill_focus || i.bloom_level),
+      example_use: str(i.example_use || i.real_life_link),
+      peer_prompt: str(i.peer_prompt),
+      reflection: str(i.reflection || i.reflection_prompt || i.self_check),
+    };
+    const extra = [
+      card.memory_cue ? `**Memory Cue:** ${card.memory_cue}` : '',
+      card.skill_focus ? `**Skill Focus:** ${card.skill_focus}` : '',
+      card.example_use ? `**Example Use:** ${card.example_use}` : '',
+      card.peer_prompt ? `**Peer Prompt:** ${card.peer_prompt}` : '',
+      card.reflection ? `**Reflection:** ${card.reflection}` : '',
+    ]
+      .filter(Boolean)
+      .join('\n\n');
     const payload = {
-      formatted: `**Front:** ${str(i.front)}\n\n**Back:** ${str(i.back)}${i.hint ? `\n\n*Hint: ${str(i.hint)}*` : ''}`,
-      raw: {
-        flashcards: [
-          {
-            front: str(i.front),
-            back: str(i.back),
-            type: str(i.type) || 'fact',
-            hint: str(i.hint),
-            topic_tag: str(i.topic_tag),
-            bloom_level: str(i.bloom_level),
-            real_life_link: str(i.real_life_link),
-            self_check: str(i.self_check),
-          },
-        ],
-      },
+      formatted: `**Front:** ${card.front}\n\n**Back:** ${card.back}${extra ? `\n\n${extra}` : ''}`,
+      raw: { flashcards: [card] },
     };
     return JSON.stringify(payload);
   }
@@ -881,14 +1408,20 @@ export const AI_TOOL_TEMPLATES = TEMPLATES;
 
 export default {
   AI_TOOL_ORDERED_SLUGS,
+  DEPRECATED_AI_TOOL_LABELS,
   AI_TOOL_TEMPLATES,
   UNIVERSAL_PEDAGOGY_TAGS,
   UNIVERSAL_SECTION_ORDER,
   COMPULSORY_CONTEXT_FIELDS,
+  normalizeAiToolIdentifierKey,
+  isDeprecatedAiToolIdentifier,
   isValidAiToolSlug,
   getAiToolTemplate,
   getToolDisplayTitle,
   getContentTypeDefault,
+  buildAiGeneratorStructuredPrompt,
+  expandStructuredToFormatItems,
+  formatStructuredToolOutput,
   buildToolAliasToSlugMap,
   buildStrictOutputHintsMap,
   buildPdfToolConfigMap,

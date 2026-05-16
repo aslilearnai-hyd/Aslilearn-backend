@@ -5,6 +5,7 @@ import AiContentEngineSource from '../models/AiContentEngineSource.js';
 import AiContentEngineChunk from '../models/AiContentEngineChunk.js';
 import { deleteFromConfiguredStorage } from '../services/cloud-storage.js';
 import { boardMongoMatch, canonicalBoardLabel } from '../utils/board-label.js';
+import { isDeprecatedAiToolIdentifier } from '../config/aiToolTemplates.js';
 
 function previewFromContent(text, n = 220) {
   if (!text || typeof text !== 'string') return '';
@@ -110,7 +111,10 @@ async function loadCombinedRecords(match = {}) {
 
   const legacyRowsNormalized = legacyGeneratorRows.map((r) => mapLegacyAiGeneratorToCombined(r));
 
-  return [...masterRows, ...legacyRowsNormalized];
+  return [...masterRows, ...legacyRowsNormalized].filter(
+    (row) =>
+      !isDeprecatedAiToolIdentifier(row.toolName) && !isDeprecatedAiToolIdentifier(row.toolDisplayName),
+  );
 }
 
 /**
@@ -132,6 +136,7 @@ export const listAiToolChildren = async (req, res) => {
       const m = new Map();
       for (const r of rows) {
         const v = r[key] ?? '';
+        if (key === 'toolName' && isDeprecatedAiToolIdentifier(v)) continue;
         m.set(v, (m.get(v) || 0) + 1);
       }
       return Array.from(m.entries())

@@ -92,6 +92,66 @@ function plainSubjectName(name) {
   return m ? m[1] : name;
 }
 
+function normalizeTopicLabel(value) {
+  return String(value || '')
+    .toLowerCase()
+    .replace(/[“”"'`]/g, '')
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function subjectSlugMatches(docSubjectPlain, rowSubject) {
+  const plain = plainSubjectName(docSubjectPlain || '').toLowerCase().trim();
+  const row = String(rowSubject || '').toLowerCase().trim();
+  if (!row) return true;
+  if (!plain) return false;
+  const aliases = {
+    maths: ['maths', 'math', 'mathematics'],
+    physics: ['physics'],
+    chemistry: ['chemistry', 'chem'],
+    biology: ['biology', 'bio'],
+  };
+  const rowAliases = aliases[row] || [row];
+  return rowAliases.some((a) => plain.includes(a) || a.includes(plain));
+}
+
+function topicFuzzyMatch(haystack, needle) {
+  const h = normalizeTopicLabel(haystack);
+  const n = normalizeTopicLabel(needle);
+  if (!h || !n) return false;
+  if (h.includes(n) || n.includes(h)) return true;
+  const hTokens = h.split(' ').filter((t) => t.length > 2);
+  const nTokens = n.split(' ').filter((t) => t.length > 2);
+  if (nTokens.length === 0) return false;
+  let hits = 0;
+  for (const t of nTokens) {
+    if (hTokens.some((ht) => ht === t || ht.includes(t) || t.includes(ht))) hits += 1;
+  }
+  const need = nTokens.length >= 3 ? 2 : 1;
+  return hits >= need;
+}
+
+/** topicRows query: "maths|Probability,physics|Motion and Kinematics" */
+function parseWeakTopicRowsFromQuery(raw) {
+  if (!raw || typeof raw !== 'string') return [];
+  return raw
+    .split(',')
+    .map((part) => {
+      const piece = String(part || '').trim();
+      if (!piece) return null;
+      if (piece.includes('|')) {
+        const pipe = piece.indexOf('|');
+        return {
+          subject: String(piece.slice(0, pipe)).toLowerCase().trim(),
+          topic: String(piece.slice(pipe + 1)).trim(),
+        };
+      }
+      return { subject: '', topic: piece };
+    })
+    .filter((r) => r && r.topic);
+}
+
 /** Populated Class with assignedSubjects, or lookup by student.classNumber + admin. */
 async function resolveStudentClassDoc(student) {
   const Class = (await import('../models/Class.js')).default;
@@ -1413,6 +1473,23 @@ router.get('/weak-subject-content', async (req, res) => {
             .filter(Boolean)
         : [];
 
+    const topicsRaw = req.query.topics;
+    const weakQueryTopics =
+      typeof topicsRaw === 'string'
+        ? topicsRaw
+            .split(',')
+            .map((s) => String(s).trim().toLowerCase())
+            .filter(Boolean)
+        : [];
+
+    const topicRowsRaw = req.query.topicRows;
+    let weakTopicRows = parseWeakTopicRowsFromQuery(
+      typeof topicRowsRaw === 'string' ? topicRowsRaw : '',
+    );
+    if (weakTopicRows.length === 0 && weakQueryTopics.length > 0) {
+      weakTopicRows = weakQueryTopics.map((topic) => ({ subject: '', topic }));
+    }
+
     const emptyPayload = () => ({
       success: true,
       data: {
@@ -1468,7 +1545,7 @@ router.get('/weak-subject-content', async (req, res) => {
       .sort({ createdAt: -1 })
       .lean();
 
-    const matchesWeak = (doc) => {
+    const matchesWeakSubject = (doc) => {
       const plain = plainSubjectName(doc.subject?.name || '').toLowerCase().trim();
       if (!plain) return false;
       return weakQueryNames.some((w) => {
@@ -1477,7 +1554,32 @@ router.get('/weak-subject-content', async (req, res) => {
       });
     };
 
-    const filtered = contents.filter(matchesWeak);
+    const matchesWeakTopicForDoc = (doc) => {
+      const plain = plainSubjectName(doc.subject?.name || '').toLowerCase().trim();
+      const searchable = [doc.topic, doc.title, doc.description].filter(Boolean).join(' ');
+      return weakTopicRows.some((row) => {
+        if (row.subject && !subjectSlugMatches(plain, row.subject)) return false;
+        return topicFuzzyMatch(searchable, row.topic);
+      });
+    };
+
+    const strictTopicFilter = weakTopicRows.length > 0;
+    let filtered = contents.filter((doc) => {
+      if (!matchesWeakSubject(doc)) return false;
+      if (!strictTopicFilter) {
+        doc._topicMatch = false;
+        return true;
+      }
+      const topicOk = matchesWeakTopicForDoc(doc);
+      doc._topicMatch = topicOk;
+      return topicOk;
+    });
+
+    filtered.sort((a, b) => {
+      const aMatch = a._topicMatch ? 1 : 0;
+      const bMatch = b._topicMatch ? 1 : 0;
+      return bMatch - aMatch;
+    });
 
     const mapRow = (c) => ({
       _id: String(c._id),
@@ -2006,6 +2108,41 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
     }
     const examObjectId = new mongoose.Types.ObjectId(examIdStr);
 
+    const ExamResultModel = (await import('../models/ExamResult.js')).default;
+    let savedExamResult = null;
+    const resultDocId = result._id || result.resultId;
+    if (resultDocId && mongoose.Types.ObjectId.isValid(String(resultDocId))) {
+      savedExamResult = await ExamResultModel.findOne({
+        _id: resultDocId,
+        userId: req.userId,
+      }).lean();
+    }
+    if (!savedExamResult && examIdStr) {
+      const attemptNum = Number(result.attemptNumber);
+      const baseQuery = { userId: req.userId, examId: examIdStr };
+      if (Number.isFinite(attemptNum) && attemptNum >= 1) {
+        savedExamResult = await ExamResultModel.findOne({
+          ...baseQuery,
+          attemptNumber: attemptNum,
+        }).lean();
+      }
+      if (!savedExamResult) {
+        savedExamResult = await ExamResultModel.findOne(baseQuery)
+          .sort({ completedAt: -1 })
+          .lean();
+      }
+    }
+    const scoreSource = savedExamResult
+      ? {
+          correctAnswers: Number(savedExamResult.correctAnswers ?? 0),
+          wrongAnswers: Number(savedExamResult.wrongAnswers ?? 0),
+          unattempted: Number(savedExamResult.unattempted ?? 0),
+          obtainedMarks: Number(savedExamResult.obtainedMarks ?? 0),
+          percentage: Number(savedExamResult.percentage ?? 0),
+          totalQuestions: Number(savedExamResult.totalQuestions ?? 0),
+        }
+      : result;
+
     const cachedReport = await GeminiPerformanceReport.findOne({
       studentId: req.userId,
       examId: examObjectId,
@@ -2028,6 +2165,33 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       const cachedInsights = Array.isArray(cachedAnalysis.questionInsights)
         ? cachedAnalysis.questionInsights
         : [];
+      const storedMetaForCache =
+        cachedReport.meta && typeof cachedReport.meta === 'object' ? cachedReport.meta : {};
+      const cachedSnap = storedMetaForCache.scoreSnapshot;
+      const expectedCorrect = Number(scoreSource?.correctAnswers ?? NaN);
+      const expectedWrong = Number(scoreSource?.wrongAnswers ?? NaN);
+      const expectedUnattempted = Number(scoreSource?.unattempted ?? NaN);
+      const expectedMarks = Number(scoreSource?.obtainedMarks ?? NaN);
+      const expectedPct = Number(scoreSource?.percentage ?? NaN);
+
+      if (!cachedSnap || typeof cachedSnap !== 'object') {
+        cacheLooksInvalid = true;
+      } else if (
+        Number.isFinite(expectedCorrect) &&
+        Number.isFinite(expectedWrong) &&
+        Number.isFinite(expectedUnattempted) &&
+        (Number(cachedSnap.correctAnswers) !== expectedCorrect ||
+          Number(cachedSnap.wrongAnswers) !== expectedWrong ||
+          Number(cachedSnap.unattempted) !== expectedUnattempted ||
+          (Number.isFinite(expectedMarks) && Number(cachedSnap.obtainedMarks) !== expectedMarks) ||
+          (Number.isFinite(expectedPct) && Number(cachedSnap.percentage) !== expectedPct))
+      ) {
+        cacheLooksInvalid = true;
+      }
+      if (!Array.isArray(storedMetaForCache.weakTopics) || storedMetaForCache.weakTopics.length === 0) {
+        cacheLooksInvalid = true;
+      }
+
       if (cachedInsights.length > 0) {
         const statusCounts = { correct: 0, wrong: 0, unattempted: 0 };
         cachedInsights.forEach((q) => {
@@ -2036,9 +2200,6 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
           else if (st === 'wrong') statusCounts.wrong += 1;
           else statusCounts.unattempted += 1;
         });
-        const expectedCorrect = Number(result?.correctAnswers ?? NaN);
-        const expectedWrong = Number(result?.wrongAnswers ?? NaN);
-        const expectedUnattempted = Number(result?.unattempted ?? NaN);
         if (
           Number.isFinite(expectedCorrect) &&
           Number.isFinite(expectedWrong) &&
@@ -2049,6 +2210,8 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
         ) {
           cacheLooksInvalid = true;
         }
+      } else if (Number(scoreSource?.totalQuestions ?? result?.totalQuestions) > 0) {
+        cacheLooksInvalid = true;
       }
       if (cacheLooksInvalid) {
         console.warn('[exam-results/ai-analysis] Invalid cached analysis detected; regenerating.', {
@@ -2067,6 +2230,7 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
           analysis: cachedAnalysis,
           meta: {
             weakSubjects: Array.isArray(storedMeta.weakSubjects) ? storedMeta.weakSubjects : [],
+            weakTopics: Array.isArray(storedMeta.weakTopics) ? storedMeta.weakTopics : [],
             classNumber: String(storedMeta.classNumber || ''),
             board: String(storedMeta.board || ''),
             generatedAt: (cachedReport.createdAt || cachedReport.updatedAt || new Date()).toISOString(),
@@ -2089,7 +2253,7 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
     const subjectScore = result.subjectWiseScore && typeof result.subjectWiseScore === 'object'
       ? result.subjectWiseScore
       : {};
-    const subjectEntries = Object.entries(subjectScore)
+    let subjectEntries = Object.entries(subjectScore)
       .map(([subject, score]) => {
         const total = Number(score?.total || 0);
         const correct = Number(score?.correct || 0);
@@ -2099,7 +2263,7 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       })
       .filter((x) => x.total > 0);
 
-    const weakSubjects = subjectEntries
+    let weakSubjects = subjectEntries
       .filter((x) => x.percentage < 70)
       .sort((a, b) => a.percentage - b.percentage)
       .map((x) => x.subject);
@@ -2219,20 +2383,34 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       board: resolvedBoard,
     };
 
-    // Use stored answers from the result payload; if missing, fall back to the
-    // latest saved ExamResult for this student+exam to keep AI analysis accurate.
-    let answerMap = (result.answers && typeof result.answers === 'object') ? result.answers : {};
-    if (Object.keys(answerMap).length === 0 && safeResult.examId) {
-      const ExamResult = (await import('../models/ExamResult.js')).default;
-      const latestResult = await ExamResult.findOne({
-        userId: req.userId,
-        examId: safeResult.examId,
-      })
-        .sort({ completedAt: -1 })
-        .lean();
-      answerMap = (latestResult?.answers && typeof latestResult.answers === 'object')
-        ? latestResult.answers
-        : {};
+    // Prefer saved ExamResult (authoritative grading) over client payload.
+    let answerMap = normalizeAnswersMap(result.answers);
+    if (savedExamResult) {
+      const savedAnswers = normalizeAnswersMap(savedExamResult.answers);
+      if (Object.keys(savedAnswers).length > 0) {
+        answerMap = savedAnswers;
+      }
+      safeResult.correctAnswers = Number(savedExamResult.correctAnswers ?? safeResult.correctAnswers);
+      safeResult.wrongAnswers = Number(savedExamResult.wrongAnswers ?? safeResult.wrongAnswers);
+      safeResult.unattempted = Number(savedExamResult.unattempted ?? safeResult.unattempted);
+      safeResult.totalMarks = Number(savedExamResult.totalMarks ?? safeResult.totalMarks);
+      safeResult.obtainedMarks = Number(savedExamResult.obtainedMarks ?? safeResult.obtainedMarks);
+      safeResult.percentage = Number(savedExamResult.percentage ?? safeResult.percentage);
+      safeResult.totalQuestions = Number(savedExamResult.totalQuestions ?? safeResult.totalQuestions);
+      safeResult.timeTaken = Number(savedExamResult.timeTaken ?? safeResult.timeTaken);
+      const savedSubject =
+        savedExamResult.subjectWiseScore instanceof Map
+          ? Object.fromEntries(savedExamResult.subjectWiseScore)
+          : savedExamResult.subjectWiseScore;
+      if (savedSubject && typeof savedSubject === 'object') {
+        subjectEntries = subjectEntriesFromWiseScore(savedSubject);
+        weakSubjects = subjectEntries
+          .filter((x) => x.percentage < 70)
+          .sort((a, b) => a.percentage - b.percentage)
+          .map((x) => x.subject);
+        safeResult.subjectScore = subjectEntries;
+        safeResult.weakSubjects = weakSubjects;
+      }
     }
 
     const examQuestions = safeResult.examId ? await loadExamQuestionBankForResults(safeResult.examId) : [];
@@ -2263,20 +2441,42 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       return s;
     };
 
+    const analyticsByQuestionId = buildAnalyticsByQuestionId(savedExamResult);
+
     const questionAttemptDetails = examQuestions.map((q, index) => {
       const questionId = String(q._id);
-      const userAnswer = answerMap[questionId];
+      const userAnswer = lookupUserAnswerFromMap(answerMap, q, index);
+      const analyticsRow =
+        analyticsByQuestionId.get(questionId) ||
+        analyticsByQuestionId.get(`q-${index}`);
       const normalizedCorrect = Array.isArray(q.correctAnswer)
         ? q.correctAnswer.map((item) => extractAnswerText(item))
         : extractAnswerText(q.correctAnswer);
       const normalizedUser = Array.isArray(userAnswer)
         ? userAnswer.map((item) => extractAnswerText(item))
         : extractAnswerText(userAnswer);
+      const hasAnswer = !(
+        userAnswer === undefined ||
+        userAnswer === null ||
+        userAnswer === '' ||
+        (Array.isArray(userAnswer) && userAnswer.length === 0)
+      );
+      const isCorrect = analyticsRow
+        ? String(analyticsRow.status || '').toLowerCase() === 'correct'
+        : isAnswerCorrect(q, userAnswer);
       return {
         index: index + 1,
         questionId,
         subject: String(q.subject || 'general').toLowerCase(),
-        chapter: meaningfulChapterLabel(String(q.chapter || q.topic || q.unit || '').trim()),
+        chapter: meaningfulChapterLabel(
+          String(
+            analyticsRow?.chapter ||
+              q.chapter ||
+              q.topic ||
+              q.unit ||
+              ''
+          ).trim()
+        ),
         questionType: q.questionType,
         questionText: shorten(q.questionText || ''),
         hasImage: Boolean(q.questionImage),
@@ -2284,7 +2484,8 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
         negativeMarks: Number(q.negativeMarks || 0),
         userAnswer: normalizedUser,
         correctAnswer: normalizedCorrect,
-        isCorrect: isAnswerCorrect(q, userAnswer),
+        hasAnswer,
+        isCorrect,
         explanation: shorten(q.explanation || '', 180),
       };
     });
@@ -2433,7 +2634,7 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
         }
         const row = grouped.get(key);
         row.count += 1;
-        if (q.userAnswer) row.wrong += 1;
+        if (q.hasAnswer) row.wrong += 1;
         else row.unattempted += 1;
       });
 
@@ -2449,7 +2650,11 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
     };
 
     const buildQuestionInsight = (q) => {
-      const status = q.isCorrect ? 'correct' : q.userAnswer ? 'wrong' : 'unattempted';
+      const status = q.isCorrect
+        ? 'correct'
+        : q.hasAnswer
+          ? 'wrong'
+          : 'unattempted';
       const userAnswerText = formatAnswer(q.userAnswer);
       const correctAnswerText = formatAnswer(q.correctAnswer);
       const concept = shortConcept(q.questionText);
@@ -2500,6 +2705,47 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
     };
 
     const fallbackQuestionInsights = questionAttemptDetails.map(buildQuestionInsight);
+
+    // Only re-grade when there is no saved ExamResult — saved rows are authoritative.
+    if (examQuestions.length > 0 && !savedExamResult) {
+      const graded = gradeExamAttemptFromBank(examQuestions, answerMap);
+      safeResult.correctAnswers = graded.correctAnswers;
+      safeResult.wrongAnswers = graded.wrongAnswers;
+      safeResult.unattempted = graded.unattempted;
+      safeResult.totalMarks = graded.totalMarks;
+      safeResult.obtainedMarks = graded.obtainedMarks;
+      safeResult.totalQuestions = graded.totalQuestions;
+      safeResult.percentage = graded.percentage;
+      subjectEntries = subjectEntriesFromWiseScore(graded.subjectWiseScore);
+      weakSubjects = subjectEntries
+        .filter((x) => x.percentage < 70)
+        .sort((a, b) => a.percentage - b.percentage)
+        .map((x) => x.subject);
+      safeResult.subjectScore = subjectEntries;
+      safeResult.weakSubjects = weakSubjects;
+    }
+
+    const weakTopicsList = (() => {
+      const grouped = new Map();
+      questionAttemptDetails.forEach((q) => {
+        if (q.isCorrect) return;
+        const subject = String(q.subject || 'general').toLowerCase();
+        const topic =
+          meaningfulChapterLabel(String(q.chapter || '').trim()) ||
+          inferTopicFromQuestion(q);
+        const topicNorm = normalizeTopicLabel(topic);
+        if (!topicNorm) return;
+        const key = `${subject}::${topicNorm}`;
+        if (!grouped.has(key)) {
+          grouped.set(key, { subject, topic, count: 0 });
+        }
+        grouped.get(key).count += 1;
+      });
+      return Array.from(grouped.values())
+        .sort((a, b) => b.count - a.count)
+        .slice(0, 10)
+        .map(({ subject, topic }) => ({ subject, topic }));
+    })();
 
     const formatExamClock = (seconds) => {
       const s = Number(seconds) || 0;
@@ -2741,195 +2987,9 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       };
     };
 
-    const buildOfflineSummaryExtension = () => {
-      const attempted = (safeResult.correctAnswers || 0) + (safeResult.wrongAnswers || 0);
-      const totalQ =
-        Number(safeResult.totalQuestions) || attempted + (safeResult.unattempted || 0) || 1;
-      const pct = Number(safeResult.percentage || 0);
-      const skipRate = totalQ > 0 ? ((safeResult.unattempted || 0) / totalQ) * 100 : 0;
-      const acc = attempted > 0 ? ((safeResult.correctAnswers || 0) / attempted) * 100 : 0;
-      const topicBuckets = new Map();
-      questionAttemptDetails.forEach((q) => {
-        if (q.isCorrect) return;
-        const topic = inferTopicFromQuestion(q);
-        const key = `${String(q.subject || 'general').toLowerCase()} — ${topic}`;
-        topicBuckets.set(key, (topicBuckets.get(key) || 0) + 1);
-      });
-      const topGaps = [...topicBuckets.entries()]
-        .sort((a, b) => b[1] - a[1])
-        .slice(0, 4);
-      const subLine = subjectEntries.length
-        ? subjectEntries
-            .map((s) => `${s.subject}: ${s.correct}/${s.total} (${s.percentage}%)`)
-            .join('; ')
-        : '';
-      return [
-        '---',
-        'Data-backed addendum (from your attempt):',
-        `${pct.toFixed(1)}% overall; ${acc.toFixed(1)}% accuracy on attempted items; ${skipRate.toFixed(1)}% skipped.`,
-        subLine ? `Subjects: ${subLine}.` : '',
-        topGaps.length ? `Priority topics (wrong/skip clusters): ${topGaps.map(([k, c]) => `${k} (${c})`).join('; ')}.` : '',
-        `Total time ${formatExamClock(safeResult.timeTaken || 0)}.`,
-      ]
-        .filter(Boolean)
-        .join('\n');
-    };
-
-    const prompt = `
-You are AsliLearn AI Performance Mentor.
-Analyze the student's exam performance deeply and return ONLY valid JSON (no markdown).
-
-Student context:
-${JSON.stringify(safeResult, null, 2)}
-
-Available subject-wise videos for weak areas:
-${JSON.stringify(videoRecommendations.slice(0, 8), null, 2)}
-
-Question-by-question stored attempt details (from DB questions + saved student answers):
-${JSON.stringify(questionAttemptDetails, null, 2)}
-
-Return strict JSON:
-{
-  "riskLevel": "high|medium|low",
-  "riskScore": 0.0-1.0,
-  "summary": "REQUIRED: 6-10 short paragraphs (use \\\\n\\\\n between paragraphs). Cover: (1) headline score, (2) completion vs skips, (3) accuracy on attempts, (4) subject-by-subject interpretation, (5) time/pacing hypothesis, (6) top 3 mistake themes from the data, (7) what to do this week, (8) encouragement. Be specific with numbers from the payload.",
-  "strengths": ["..."],
-  "rootCauses": ["..."],
-  "predictions": {
-    "nextExamPrediction": 0-100,
-    "confidence": 0.0-1.0,
-    "trend": "declining|stable|improving"
-  },
-  "interventions": [
-    {
-      "priority": "high|medium|low",
-      "action": "...",
-      "reasoning": "...",
-      "expectedImpact": "..."
-    }
-  ],
-  "focusAreas": [
-    { "subject": "maths|physics|chemistry|biology|general", "issue": "...", "whatToDo": "...", "priority": "high|medium|low" }
-  ],
-  "actionPlan": {
-    "today": ["..."],
-    "thisWeek": ["..."],
-    "beforeNextExam": ["..."]
-  },
-  "recommendedAiTools": [
-    { "toolType": "exam-readiness-checker|smart-qa-practice-generator|concept-breakdown-explainer|personalized-revision-planner|chapter-summary-creator|key-points-formula-extractor", "why": "...", "howToUse": "..." }
-  ],
-  "videoRecommendations": [
-    { "title": "...", "subject": "...", "topic": "...", "url": "...", "why": "..." }
-  ],
-  "questionInsights": [
-    {
-      "index": 1,
-      "questionId": "question _id",
-      "subject": "maths|physics|chemistry|biology|general",
-      "questionType": "mcq|multiple|integer",
-      "status": "correct|wrong|unattempted",
-      "conceptGap": "...",
-      "fixStrategy": "...",
-      "practiceTask": "...",
-      "priority": "high|medium|low"
-    }
-  ],
-  "motivation": "short motivational note"
-}
-
-Important:
-- Write a genuinely deep summary; avoid generic filler.
-- Give practical, specific actions tied to wrong/skip counts and subjects.
-- Base recommendations on question-by-question mistakes and answer patterns.
-- Include questionInsights for every question in the attempt details.
-- If no weak subject, give an advanced improvement plan for accuracy and speed.
-- Keep language clear and student-friendly.
-- In each questionInsights entry, quote a short phrase from questionText for "connect" to the stem; never use a fake syllabus label like Chapter "General"—omit unit/chapter if unknown.
-- Prefer "you/your" and concrete facts (wrong option vs keyed answer) over boilerplate templates.
-`;
-
-    /** Student-facing line when Gemini fails; never paste raw API/parse noise into the summary. */
-    const humanizeOfflineGeminiFailure = (err) => {
-      const raw = String(err?.message || err || '').trim();
-      const low = raw.toLowerCase();
-      if (!raw) {
-        return 'Live AI did not run for this report. Everything below is based only on your attempt data.';
-      }
-      if (
-        low.includes('429') ||
-        low.includes('resource_exhausted') ||
-        low.includes('quota exceeded') ||
-        low.includes('free_tier') ||
-        low.includes('rate limit') ||
-        low.includes('rate-limit') ||
-        low.includes('too many requests')
-      ) {
-        return 'Live AI hit a temporary usage cap (API quota or rate limit). Your breakdown below is still complete—it uses your scores, timing, and each question only, with no external model.';
-      }
-      if (low.includes('api_key') || low.includes('api key') || low.includes('invalid key') || low.includes('permission denied')) {
-        return 'Live AI is not available (missing or invalid API key on the server). Everything below is based only on your attempt data.';
-      }
-      if (
-        low.includes('econnrefused') ||
-        low.includes('enotfound') ||
-        low.includes('etimedout') ||
-        low.includes('network') ||
-        low.includes('fetch failed') ||
-        low.includes('socket')
-      ) {
-        return 'Live AI could not be reached (network issue). Everything below is based only on your attempt data.';
-      }
-      if (
-        err instanceof SyntaxError ||
-        low.includes('unexpected token') ||
-        low.includes('expected') ||
-        low.includes('json') ||
-        low.includes('position ')
-      ) {
-        return 'Live AI returned an invalid response format, so this report was rebuilt from your attempt data only.';
-      }
-      const noJson = raw.replace(/\{[\s\S]*/u, '').replace(/\s+/g, ' ').trim();
-      const short = (noJson || raw).slice(0, 200);
-      const clipped = short.length >= 200 ? `${short.slice(0, 197)}…` : short;
-      return clipped
-        ? `Live AI could not finish (${clipped}). Everything below is based only on your attempt data.`
-        : 'Live AI could not finish. Everything below is based only on your attempt data.';
-    };
-
-    let aiParsed;
-    let geminiRawResponse = '';
-    let usedGemini = false;
-    try {
-      const aiText = await geminiService.generateStructuredContent(prompt, 'json');
-      geminiRawResponse = String(aiText || '');
-      usedGemini = true;
-      const raw = geminiRawResponse.trim();
-      try {
-        aiParsed = JSON.parse(raw);
-      } catch (_jsonErr) {
-        const fenceCleaned = raw
-          .replace(/^```json\s*/i, '')
-          .replace(/^```\s*/i, '')
-          .replace(/\s*```$/i, '')
-          .trim();
-        const jsonMatch = fenceCleaned.match(/\{[\s\S]*\}/);
-        aiParsed = JSON.parse(jsonMatch ? jsonMatch[0] : '{}');
-      }
-    } catch (error) {
-      console.warn('[exam-results/ai-analysis] Gemini failed:', error?.message || error);
-      aiParsed = buildDeepOfflineExamAnalysis(humanizeOfflineGeminiFailure(error));
-    }
-
-    const summaryTrim = String(aiParsed?.summary || '').trim();
-    if (summaryTrim.length >= 40 && summaryTrim.length < 520) {
-      aiParsed.summary = `${summaryTrim}\n\n${buildOfflineSummaryExtension()}`;
-    }
-    if (!summaryTrim || summaryTrim.length < 40) {
-      aiParsed = buildDeepOfflineExamAnalysis(
-        'The live AI summary was empty or too short, so this report was rebuilt from your attempt data only.',
-      );
-    }
+    // Always use offline analysis — no external AI call
+    let aiParsed = buildDeepOfflineExamAnalysis('');
+    const geminiRawResponse = '';
 
     if (!aiParsed || typeof aiParsed !== 'object') {
       aiParsed = {};
@@ -3077,8 +3137,16 @@ Important:
 
     const persistMeta = {
       weakSubjects,
+      weakTopics: weakTopicsList,
       classNumber: classNumber || 'unknown',
       board: resolvedBoard,
+      scoreSnapshot: {
+        correctAnswers: safeResult.correctAnswers,
+        wrongAnswers: safeResult.wrongAnswers,
+        unattempted: safeResult.unattempted,
+        obtainedMarks: safeResult.obtainedMarks,
+        percentage: safeResult.percentage,
+      },
     };
     const attemptedQs = (safeResult.correctAnswers || 0) + (safeResult.wrongAnswers || 0);
     const totalQForPace = Number(safeResult.totalQuestions) || 0;
@@ -3141,7 +3209,7 @@ Important:
       geminiRawResponse: geminiRawResponse.slice(0, 500000),
       fullAnalysis: aiParsed,
       meta: persistMeta,
-      generatedBy: usedGemini ? 'gemini' : 'offline',
+      generatedBy: 'offline',
     };
 
     const concurrent = await GeminiPerformanceReport.findOne({
@@ -3156,6 +3224,7 @@ Important:
           analysis: concurrent.fullAnalysis,
           meta: {
             weakSubjects: Array.isArray(sm.weakSubjects) ? sm.weakSubjects : [],
+            weakTopics: Array.isArray(sm.weakTopics) ? sm.weakTopics : [],
             classNumber: String(sm.classNumber || ''),
             board: String(sm.board || ''),
             generatedAt: (concurrent.createdAt || concurrent.updatedAt || new Date()).toISOString(),
@@ -3181,6 +3250,7 @@ Important:
               analysis: winner.fullAnalysis,
               meta: {
                 weakSubjects: Array.isArray(wm.weakSubjects) ? wm.weakSubjects : [],
+                weakTopics: Array.isArray(wm.weakTopics) ? wm.weakTopics : [],
                 classNumber: String(wm.classNumber || ''),
                 board: String(wm.board || ''),
                 generatedAt: (winner.createdAt || winner.updatedAt || new Date()).toISOString(),
@@ -3200,6 +3270,7 @@ Important:
         meta: {
           generatedAt: new Date().toISOString(),
           weakSubjects,
+          weakTopics: weakTopicsList,
           classNumber,
           board: resolvedBoard,
           cached: false,
@@ -3364,6 +3435,117 @@ function resolveAnswerList(question, value) {
   return list
     .map((item) => resolveAnswerToken(question, item))
     .filter(Boolean);
+}
+
+function normalizeAnswersMap(answers) {
+  if (!answers) return {};
+  if (answers instanceof Map) {
+    return Object.fromEntries(Array.from(answers.entries()).map(([k, v]) => [String(k), v]));
+  }
+  if (typeof answers === 'object' && !Array.isArray(answers)) {
+    return Object.fromEntries(Object.entries(answers).map(([k, v]) => [String(k), v]));
+  }
+  return {};
+}
+
+/** Resolve stored answer for a question (handles _id / index / legacy key shapes). */
+function lookupUserAnswerFromMap(answerMap, question, index) {
+  const map = answerMap && typeof answerMap === 'object' ? answerMap : {};
+  const id = String(question?._id ?? '').trim();
+  const candidates = [
+    id,
+    id ? id.toLowerCase() : '',
+    `q-${index}`,
+    String(index),
+    String(index + 1),
+    question?.id != null ? String(question.id) : '',
+  ].filter(Boolean);
+  for (const key of candidates) {
+    if (map[key] !== undefined && map[key] !== null && map[key] !== '') {
+      return map[key];
+    }
+  }
+  return undefined;
+}
+
+function buildAnalyticsByQuestionId(savedExamResult) {
+  const byId = new Map();
+  if (!savedExamResult || !Array.isArray(savedExamResult.questionAnalytics)) {
+    return byId;
+  }
+  savedExamResult.questionAnalytics.forEach((row, idx) => {
+    const qid = String(row?.questionId || `q-${idx}`).trim();
+    if (qid) byId.set(qid, row);
+    byId.set(`q-${idx}`, row);
+    if (Number.isFinite(Number(row?.index))) {
+      byId.set(`q-${Number(row.index)}`, row);
+    }
+  });
+  return byId;
+}
+
+function subjectEntriesFromWiseScore(subjectWiseScore) {
+  return Object.entries(subjectWiseScore || {})
+    .map(([subject, score]) => {
+      const total = Number(score?.total || 0);
+      const correct = Number(score?.correct || 0);
+      const marks = Number(score?.marks || 0);
+      const percentage = total > 0 ? Math.round((correct / total) * 10000) / 100 : 0;
+      return { subject: String(subject).toLowerCase(), total, correct, marks, percentage };
+    })
+    .filter((x) => x.total > 0);
+}
+
+/** Server-side grading for analysis — matches POST /exam-results logic. */
+function gradeExamAttemptFromBank(questions, answerMap) {
+  const subjectWiseScore = {
+    maths: { correct: 0, total: 0, marks: 0 },
+    physics: { correct: 0, total: 0, marks: 0 },
+    chemistry: { correct: 0, total: 0, marks: 0 },
+    biology: { correct: 0, total: 0, marks: 0 },
+  };
+  let correctAnswers = 0;
+  let wrongAnswers = 0;
+  let obtainedMarks = 0;
+  let totalMarks = 0;
+
+  (questions || []).forEach((q, index) => {
+    const userAnswer = lookupUserAnswerFromMap(answerMap, q, index);
+    const marks = Number(q.marks) || 0;
+    const negativeMarks = Number(q.negativeMarks) || 0;
+    totalMarks += marks;
+    const subjectKey = String(q.subject || 'maths').toLowerCase();
+    if (!subjectWiseScore[subjectKey]) {
+      subjectWiseScore[subjectKey] = { correct: 0, total: 0, marks: 0 };
+    }
+    subjectWiseScore[subjectKey].total += 1;
+
+    if (isAnswerCorrect(q, userAnswer)) {
+      correctAnswers += 1;
+      obtainedMarks += marks;
+      subjectWiseScore[subjectKey].correct += 1;
+      subjectWiseScore[subjectKey].marks += marks;
+    } else if (userAnswer !== undefined && userAnswer !== null && userAnswer !== '') {
+      wrongAnswers += 1;
+      obtainedMarks -= negativeMarks;
+    }
+  });
+
+  const totalQuestions = (questions || []).length;
+  const unattempted = Math.max(0, totalQuestions - correctAnswers - wrongAnswers);
+  const percentage =
+    totalQuestions > 0 ? Math.round((correctAnswers / totalQuestions) * 10000) / 100 : 0;
+
+  return {
+    correctAnswers,
+    wrongAnswers,
+    unattempted,
+    obtainedMarks,
+    totalMarks,
+    totalQuestions,
+    percentage,
+    subjectWiseScore,
+  };
 }
 
 // Single source of truth for "is this user answer correct for this question".

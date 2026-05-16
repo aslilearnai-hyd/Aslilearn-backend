@@ -132,26 +132,85 @@ export const getDashboardStats = async (req, res) => {
 // Get All Admins with comprehensive analytics
 export const getAllAdmins = async (req, res) => {
   try {
-    const admins = await User.find({ role: 'admin' }).select('-password');
-    
-    // Get comprehensive analytics for each admin
-    const adminsWithAnalytics = await Promise.all(
-      admins.map(async (admin) => {
-        const [
-          studentCount, 
-          teacherCount, 
-          videoCount, 
-          assessmentCount, 
-          examCount,
-          examResults
-        ] = await Promise.all([
-          User.countDocuments({ role: 'student', assignedAdmin: admin._id }).catch(() => 0),
-          Teacher.countDocuments({ adminId: admin._id }).catch(() => 0),
-          Video.countDocuments({ adminId: admin._id }).catch(() => 0),
-          Assessment.countDocuments({ adminId: admin._id }).catch(() => 0),
-          Exam.countDocuments({ adminId: admin._id }).catch(() => 0),
-          ExamResult.find({ adminId: admin._id }).populate('userId', 'fullName email').catch(() => [])
-        ]);
+    const admins = await User.find({ role: 'admin' }).select('-password').lean();
+
+    const adminIds = admins.map((a) => a._id);
+
+    const [
+      studentsByAdminAgg,
+      studentsViaExamAgg,
+      teachersByAdminAgg,
+      videosByAdminAgg,
+      assessmentsByAdminAgg,
+      examsByAdminAgg,
+      examResultsByAdminAgg,
+    ] = await Promise.all([
+      User.aggregate([
+        { $match: { role: 'student', assignedAdmin: { $in: adminIds } } },
+        { $group: { _id: '$assignedAdmin', userIds: { $addToSet: '$_id' } } },
+      ]),
+      ExamResult.aggregate([
+        { $match: { adminId: { $in: adminIds }, userId: { $ne: null } } },
+        { $group: { _id: { adminId: '$adminId', userId: '$userId' } } },
+        { $group: { _id: '$_id.adminId', userIds: { $addToSet: '$_id.userId' } } },
+      ]),
+      Teacher.aggregate([
+        { $match: { adminId: { $in: adminIds } } },
+        { $group: { _id: '$adminId', count: { $sum: 1 } } },
+      ]),
+      Video.aggregate([
+        { $match: { adminId: { $in: adminIds } } },
+        { $group: { _id: '$adminId', count: { $sum: 1 } } },
+      ]),
+      Assessment.aggregate([
+        { $match: { adminId: { $in: adminIds } } },
+        { $group: { _id: '$adminId', count: { $sum: 1 } } },
+      ]),
+      Exam.aggregate([
+        { $match: { adminId: { $in: adminIds } } },
+        { $group: { _id: '$adminId', count: { $sum: 1 } } },
+      ]),
+      ExamResult.find({ adminId: { $in: adminIds } })
+        .populate('userId', 'fullName email')
+        .lean()
+        .catch(() => []),
+    ]);
+
+    const mergeStudentCount = (adminIdStr) => {
+      const assigned =
+        studentsByAdminAgg.find((r) => r._id?.toString() === adminIdStr)?.userIds || [];
+      const fromExams =
+        studentsViaExamAgg.find((r) => r._id?.toString() === adminIdStr)?.userIds || [];
+      return new Set([
+        ...assigned.map((id) => id.toString()),
+        ...fromExams.map((id) => id.toString()),
+      ]).size;
+    };
+
+    const countMap = (aggRows) =>
+      new Map(aggRows.map((r) => [r._id?.toString(), r.count || 0]));
+
+    const teacherCountMap = countMap(teachersByAdminAgg);
+    const videoCountMap = countMap(videosByAdminAgg);
+    const assessmentCountMap = countMap(assessmentsByAdminAgg);
+    const examCountMap = countMap(examsByAdminAgg);
+
+    const examResultsByAdmin = examResultsByAdminAgg.reduce((acc, result) => {
+      const key = result.adminId?.toString();
+      if (!key) return acc;
+      if (!acc[key]) acc[key] = [];
+      acc[key].push(result);
+      return acc;
+    }, {});
+
+    const adminsWithAnalytics = admins.map((admin) => {
+        const adminKey = admin._id.toString();
+        const studentCount = mergeStudentCount(adminKey);
+        const teacherCount = teacherCountMap.get(adminKey) || 0;
+        const videoCount = videoCountMap.get(adminKey) || 0;
+        const assessmentCount = assessmentCountMap.get(adminKey) || 0;
+        const examCount = examCountMap.get(adminKey) || 0;
+        const examResults = examResultsByAdmin[adminKey] || [];
         
         // Calculate exam performance analytics
         const totalExamsTaken = examResults.length;
@@ -283,8 +342,7 @@ export const getAllAdmins = async (req, res) => {
             totalMarksPossible: totalMarksPossible
           }
         };
-      })
-    );
+    });
     
     res.json({
       success: true,
@@ -460,10 +518,15 @@ export const getAdminSchoolDetail = async (req, res) => {
       return res.status(404).json({ success: false, message: 'School not found' });
     }
 
-    const [studentCount, teacherCount] = await Promise.all([
-      User.countDocuments({ role: 'student', assignedAdmin: adminId }),
+    const [assignedStudents, examStudentIds, teacherCount] = await Promise.all([
+      User.find({ role: 'student', assignedAdmin: adminId }).select('_id').lean(),
+      ExamResult.distinct('userId', { adminId, userId: { $ne: null } }),
       Teacher.countDocuments({ adminId }),
     ]);
+    const studentCount = new Set([
+      ...assignedStudents.map((s) => s._id.toString()),
+      ...examStudentIds.map((id) => id.toString()),
+    ]).size;
 
     const sd =
       admin.schoolDetails && typeof admin.schoolDetails.toObject === 'function'

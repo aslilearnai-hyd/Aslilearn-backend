@@ -7,6 +7,18 @@ import ExamResult from '../models/ExamResult.js';
 import User from '../models/User.js';
 import Teacher from '../models/Teacher.js';
 import { VALID_SCHOOL_BOARDS, isValidSchoolBoard } from '../constants/boards.js';
+import {
+  BOARD_DISPLAY_NAMES,
+  buildAdminBoardQuery,
+  buildTeacherBoardQuery,
+  buildExamBoardQuery,
+  buildStudentCountsByBoard,
+  getAdminIdsForBoard,
+  computeBoardMetrics,
+  computeAllBoardsMetrics,
+  isUnifiedPlatformBoard,
+  buildPlatformAdminQuery,
+} from '../services/boardScope.js';
 
 function normalizedStateNameForBoard(boardUpper, rawStateName) {
   if (boardUpper === 'STATE') {
@@ -186,10 +198,26 @@ export const getBoardDashboard = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Invalid board code' });
     }
 
+    const boardUpper = String(boardCode).toUpperCase().trim();
+    const unifiedPlatform = isUnifiedPlatformBoard(boardUpper);
+
+    // Unified hub = all schools/students; curriculum boards = scoped slice only.
+    const adminIds = unifiedPlatform
+      ? (await User.find(buildPlatformAdminQuery()).select('_id').lean()).map((a) => a._id)
+      : await getAdminIdsForBoard(boardUpper);
+
+    const { counts: studentCountsByBoard } = await buildStudentCountsByBoard();
+    const students = unifiedPlatform
+      ? await User.countDocuments({ role: 'student' })
+      : (studentCountsByBoard[boardUpper] ?? 0);
+
+    const teacherQuery = unifiedPlatform ? {} : buildTeacherBoardQuery(boardUpper, adminIds);
+    const examQuery = buildExamBoardQuery(boardUpper);
+    const adminQuery = unifiedPlatform ? buildPlatformAdminQuery() : buildAdminBoardQuery(boardUpper);
+
     // Keep top-level metrics in one parallel batch.
     const [
       board,
-      students,
       teachers,
       admins,
       subjects,
@@ -197,15 +225,20 @@ export const getBoardDashboard = async (req, res) => {
       exams,
       examResults
     ] = await Promise.all([
-      Board.findOne({ code: boardCode }),
-      User.countDocuments({ role: 'student' }),
-      Teacher.countDocuments({}),
-      User.countDocuments({ role: 'admin' }),
-      Subject.countDocuments({ isActive: true }),
-      Content.countDocuments({ isActive: true }),
-      Exam.countDocuments({ isActive: true }),
-      ExamResult.countDocuments({})
+      Board.findOne({ code: boardUpper }),
+      Teacher.countDocuments(teacherQuery),
+      User.countDocuments(adminQuery),
+      Subject.countDocuments(
+        unifiedPlatform ? { isActive: true } : { isActive: true, board: boardUpper }
+      ),
+      Content.countDocuments(
+        unifiedPlatform ? { isActive: true } : { isActive: true, board: boardUpper }
+      ),
+      Exam.countDocuments(examQuery),
+      ExamResult.countDocuments(unifiedPlatform ? {} : { board: boardUpper }),
     ]);
+
+    const boardAdminIdSet = new Set(adminIds.map((id) => id.toString()));
 
     // Replace full-collection reads + per-admin queries with grouped aggregations.
     const [
@@ -217,13 +250,14 @@ export const getBoardDashboard = async (req, res) => {
       teacherStatsByAdmin,
       studentsForList
     ] = await Promise.all([
-      ExamResult.find({})
+      ExamResult.find(unifiedPlatform ? {} : { board: boardUpper })
         .populate('userId', 'fullName email')
         .sort({ percentage: -1 })
         .limit(10)
         .select('userId percentage obtainedMarks totalMarks examTitle completedAt')
         .lean(),
       ExamResult.aggregate([
+        ...(unifiedPlatform ? [] : [{ $match: { board: boardUpper } }]),
         {
           $group: {
             _id: null,
@@ -231,11 +265,16 @@ export const getBoardDashboard = async (req, res) => {
           }
         }
       ]),
-      User.find({ role: 'admin' })
+      User.find(adminQuery)
         .select('_id fullName email schoolName')
         .sort({ schoolName: 1, fullName: 1 })
         .lean(),
       ExamResult.aggregate([
+        {
+          $match: unifiedPlatform
+            ? { adminId: { $ne: null } }
+            : { board: boardUpper, adminId: { $ne: null } },
+        },
         {
           $group: {
             _id: '$adminId',
@@ -245,7 +284,11 @@ export const getBoardDashboard = async (req, res) => {
         }
       ]),
       User.aggregate([
-        { $match: { role: 'student', assignedAdmin: { $ne: null } } },
+        {
+          $match: unifiedPlatform
+            ? { role: 'student', assignedAdmin: { $ne: null } }
+            : { role: 'student', assignedAdmin: { $in: adminIds } },
+        },
         {
           $group: {
             _id: '$assignedAdmin',
@@ -254,7 +297,7 @@ export const getBoardDashboard = async (req, res) => {
         }
       ]),
       Teacher.aggregate([
-        { $match: { adminId: { $ne: null } } },
+        { $match: { ...teacherQuery, adminId: { $ne: null } } },
         {
           $group: {
             _id: '$adminId',
@@ -262,7 +305,11 @@ export const getBoardDashboard = async (req, res) => {
           }
         }
       ]),
-      User.find({ role: 'student', assignedAdmin: { $ne: null } })
+      User.find(
+        unifiedPlatform
+          ? { role: 'student', assignedAdmin: { $ne: null } }
+          : { role: 'student', assignedAdmin: { $in: adminIds } }
+      )
         .select('fullName email classNumber assignedAdmin')
         .sort({ fullName: 1 })
         .lean()
@@ -298,7 +345,9 @@ export const getBoardDashboard = async (req, res) => {
       }
     }
 
-    const schoolParticipation = adminsList.map((admin) => {
+    const schoolParticipation = adminsList
+      .filter((admin) => boardAdminIdSet.has(admin._id.toString()))
+      .map((admin) => {
       const adminKey = admin._id.toString();
       const resultStats = resultStatsByAdminMap.get(adminKey);
       const adminStudents = studentStatsByAdminMap.get(adminKey) || 0;
@@ -321,7 +370,7 @@ export const getBoardDashboard = async (req, res) => {
     });
 
     console.log('📊 Board Dashboard Stats:', {
-      boardCode,
+      boardCode: boardUpper,
       students,
       teachers,
       admins,
@@ -1032,36 +1081,35 @@ export const deleteAllContent = async (req, res) => {
 // Get Board Analytics (for comparison charts) - All boards comparison
 export const getBoardAnalytics = async (req, res) => {
   try {
-    const analytics = await Promise.all(
-      VALID_SCHOOL_BOARDS.map(async (boardCode) => {
-        const results = await ExamResult.find({ board: boardCode });
-        const students = await User.countDocuments({ role: 'student' });
-        const exams = await Exam.countDocuments({ isActive: true });
+    const { boardCode } = req.params;
+    const boardsToFetch = boardCode
+      ? [String(boardCode).toUpperCase().trim()].filter((c) => isValidSchoolBoard(c))
+      : VALID_SCHOOL_BOARDS;
 
-        const averageScore = results.length > 0
-          ? results.reduce((sum, r) => sum + r.percentage, 0) / results.length
-          : 0;
+    if (boardCode && boardsToFetch.length === 0) {
+      return res.status(400).json({ success: false, message: 'Invalid board code' });
+    }
 
-        const participationRate = students > 0 && exams > 0
-          ? ((results.length / (students * exams)) * 100).toFixed(1)
-          : '0.0';
-
-        const boardNameLabels = {
-          ASLI_EXCLUSIVE_SCHOOLS: 'ASLI EXCLUSIVE SCHOOLS',
-          CBSE: 'CBSE',
-          STATE: 'State Board',
-        };
-        return {
-          board: boardCode,
-          boardName: boardNameLabels[boardCode] || boardCode,
-          students,
-          exams,
-          totalAttempts: results.length,
-          averageScore: averageScore.toFixed(2),
-          participationRate
-        };
-      })
-    );
+    let analytics;
+    if (!boardCode && boardsToFetch.length === VALID_SCHOOL_BOARDS.length) {
+      analytics = await computeAllBoardsMetrics({ Teacher, Exam, ExamResult });
+    } else {
+      analytics = await Promise.all(
+        boardsToFetch.map(async (code) => {
+          const metrics = await computeBoardMetrics(code, { User, Teacher, Exam, ExamResult });
+          return {
+            board: metrics.board,
+            boardName: metrics.boardName || BOARD_DISPLAY_NAMES[code] || code,
+            students: metrics.students,
+            teachers: metrics.teachers,
+            exams: metrics.exams,
+            totalAttempts: metrics.totalAttempts,
+            averageScore: metrics.averageScore,
+            participationRate: metrics.participationRate,
+          };
+        })
+      );
+    }
 
     res.json({ success: true, data: analytics });
   } catch (error) {

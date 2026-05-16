@@ -321,6 +321,7 @@ Return only valid JSON, no markdown, no explanation.`;
   const maxOut = getPdfExtractionMaxOutputTokens();
   const attemptErrors = [];
   let sawQuotaError = false;
+  let sawDeniedError = false;
   const requestTimeoutMs = Number(process.env.GEMINI_PDF_REQUEST_TIMEOUT_MS) || 90000;
 
   const fetchWithTimeout = async (url, options) => {
@@ -434,20 +435,26 @@ Return only valid JSON, no markdown, no explanation.`;
       else if (!loose.ok) {
         const errorText = loose.errorText || '';
         const isQuota = loose.status === 429 || /quota|resource_exhausted/i.test(errorText);
+        const isDenied = loose.status === 403 || /denied access|permission denied/i.test(errorText);
         sawQuotaError = sawQuotaError || isQuota;
+        sawDeniedError = sawDeniedError || isDenied;
         attemptErrors.push(`${model}: ${loose.status} ${errorText}`);
       }
     } else if (!structured.ok) {
       const errorText = structured.errorText || '';
       const isQuota = structured.status === 429 || /quota|resource_exhausted/i.test(errorText);
+      const isDenied = structured.status === 403 || /denied access|permission denied/i.test(errorText);
       sawQuotaError = sawQuotaError || isQuota;
+      sawDeniedError = sawDeniedError || isDenied;
       attemptErrors.push(`${model}: ${structured.status} ${errorText}`);
       const loose = await tryModel(false);
       if (loose.ok && loose.parsed) parsed = loose.parsed;
       else if (!loose.ok) {
         const err2 = loose.errorText || '';
         const isQ2 = loose.status === 429 || /quota|resource_exhausted/i.test(err2);
+        const isDenied2 = loose.status === 403 || /denied access|permission denied/i.test(err2);
         sawQuotaError = sawQuotaError || isQ2;
+        sawDeniedError = sawDeniedError || isDenied2;
         attemptErrors.push(`${model} (no schema): ${loose.status} ${err2}`);
       }
     }
@@ -459,8 +466,20 @@ Return only valid JSON, no markdown, no explanation.`;
     }
   }
 
+  if (sawDeniedError) {
+    throw new Error(
+      'Gemini PDF upload blocked: your Google AI project was denied access for these models (403). ' +
+        'A working API key for short text does not guarantee PDF/multimodal access. ' +
+        'Create a new key in Google AI Studio, enable billing if required, or contact Google support. ' +
+        `Details: ${attemptErrors.join(' | ')}`,
+    );
+  }
   if (sawQuotaError) {
-    throw new Error(`Gemini quota exceeded across models. Attempts: ${attemptErrors.join(' | ')}`);
+    throw new Error(
+      'Gemini free-tier quota exhausted for PDF extraction (429). Wait ~1 minute and retry, ' +
+        'or enable billing / use a paid plan in Google AI Studio. ' +
+        `Details: ${attemptErrors.join(' | ')}`,
+    );
   }
   throw new Error(`Gemini PDF extraction failed. Attempts: ${attemptErrors.join(' | ')}`);
 }

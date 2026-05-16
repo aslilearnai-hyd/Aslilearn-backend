@@ -3,7 +3,8 @@ import PDFDocument from 'pdfkit';
 import AiToolGeneration from '../models/AiToolGeneration.js';
 import AIGeneratorRecord from '../models/AIGeneratorRecord.js';
 import AiToolTopic from '../models/AiToolTopic.js';
-import { generateTeacherTool } from '../services/gemini-service.js';
+import { isDeprecatedAiToolIdentifier, isValidAiToolSlug } from '../config/aiToolTemplates.js';
+import { generateStructuredContentForAiGenerator } from '../services/ai-content-engine-service.js';
 import { boardMongoMatch, canonicalBoardLabel } from '../utils/board-label.js';
 
 function normalizeText(value) {
@@ -141,10 +142,19 @@ function mapLegacyAiGeneratorDoc(r) {
   };
 }
 
+function isDeprecatedGeneratorRecord(record) {
+  return (
+    isDeprecatedAiToolIdentifier(record?.toolName) ||
+    isDeprecatedAiToolIdentifier(record?.toolDisplayName) ||
+    isDeprecatedAiToolIdentifier(record?.toolSlug)
+  );
+}
+
 function groupAiGeneratorRecords(items) {
   const toolMap = new Map();
 
   for (const record of items) {
+    if (isDeprecatedGeneratorRecord(record)) continue;
     const slug = record.toolName || '';
     const display = record.toolDisplayName || slug;
     const toolKey = `${slug}::${display}`;
@@ -222,15 +232,30 @@ export async function generateAndSaveContent(req, res) {
       });
     }
 
+    if (isDeprecatedAiToolIdentifier(toolSlug) || isDeprecatedAiToolIdentifier(toolDisplayName)) {
+      return res.status(400).json({
+        success: false,
+        message: 'This tool format is no longer supported. Use one of the 11 curriculum tools.',
+      });
+    }
+    if (!isValidAiToolSlug(toolSlug)) {
+      return res.status(400).json({
+        success: false,
+        message: `Invalid toolSlug. Must be one of the 11 AI curriculum tools.`,
+      });
+    }
+
     const extraParams = req.body.extraParams || {};
-    const generatedContent = await generateTeacherTool(toolSlug, {
-      toolDisplayName,
-      gradeLevel: className,
-      subject: subjectName,
-      topic: topicName || 'General',
-      subTopic: subtopicName,
-      ...extraParams,
-    });
+    const { generatedContent, structuredContent, contentType } =
+      await generateStructuredContentForAiGenerator(toolSlug, {
+        board,
+        classLabel: className,
+        gradeLevel: className,
+        subject: subjectName,
+        topic: topicName || 'General',
+        subTopic: subtopicName,
+        extraParams,
+      });
 
     const uid = req.userId;
     const generatedBy = uid || 'unknown';
@@ -262,6 +287,9 @@ export async function generateAndSaveContent(req, res) {
         createdByName: getRequestUserName(req),
         createdByRole: 'super-admin',
         extraParams: req.body.extraParams || {},
+        contentType,
+        structuredContent,
+        formatSource: 'aiToolTemplates',
       },
       ...(teacherId ? { teacherId } : {}),
     });
@@ -282,9 +310,27 @@ export async function generateAndSaveContent(req, res) {
     });
   } catch (error) {
     console.error('generateAndSaveContent error:', error);
-    return res.status(500).json({
+    const raw = String(error?.message || 'Failed to generate and save content.');
+    const isLlmFailure = /Gemini|upstream fallback|LLM|fetch failed|ECONNREFUSED|ECONNRESET|EAI_AGAIN|ETIMEDOUT|\b403\b|\b401\b|\b429\b|API key|empty content/i.test(
+      raw,
+    );
+    let message = raw;
+    if (/403[\s\S]*denied access|PERMISSION_DENIED|API_KEY_INVALID/i.test(raw)) {
+      message =
+        'Google Gemini refused this request (403: project or API key access denied, or billing disabled). Fix the key in Google AI Studio / Cloud Console, or set UPSTREAM_LLM_URL (+ LLM_MODEL_ID) to a running local/OpenAI-compatible server.';
+    } else if (/Gemini API key is missing/i.test(raw)) {
+      message =
+        'No Gemini API key configured. Set GEMINI_API_KEY or VIDYA_AI_GEMINI_API_KEY, or point UPSTREAM_LLM_URL at a local LLM.';
+    } else if (/Upstream fallback failed/i.test(raw) && /fetch failed|ECONNREFUSED/i.test(raw)) {
+      message =
+        'Gemini failed and the backup LLM endpoint is unreachable. Start LM Studio (or your UPSTREAM_LLM_URL server) or fix the URL in .env.';
+    } else if (/\b429\b|quota exceeded|Quota exceeded|rate limit|RESOURCE_EXHAUSTED/i.test(raw)) {
+      message =
+        'Google Gemini returned 429 (rate limit or quota exhausted, including free-tier limits). Wait a minute and try again, enable billing in Google AI / Cloud for higher limits, or configure UPSTREAM_LLM_URL and run a local model (LM Studio, Ollama).';
+    }
+    return res.status(isLlmFailure ? 502 : 500).json({
       success: false,
-      message: error.message || 'Failed to generate and save content.',
+      message,
     });
   }
 }
