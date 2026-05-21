@@ -15,6 +15,12 @@ import RiskAnalysisReport from '../models/RiskAnalysisReport.js';
 import { getExplicitTeacherSubjectObjectIds } from '../utils/teacherSubjectScope.js';
 import { isValidSchoolBoard, normalizeSchoolBoard } from '../constants/boards.js';
 import { processTeacherCsvUpload } from '../services/teacherCsvImport.js';
+import {
+  processStudentCsvUpload,
+  getOrCreateClassForAdmin,
+  parseClassAndSection,
+} from '../services/studentCsvImport.js';
+import { normalizePhoneTenDigits } from '../services/schoolService.js';
 
 const buildSafeAppendQuestionPipeline = (questionId) => [
   {
@@ -143,7 +149,7 @@ export const getStudents = async (req, res) => {
 
 export const createStudent = async (req, res) => {
   try {
-    const { email, password, fullName, classNumber, phone } = req.body;
+    const { email, password, fullName, classNumber, phone, section: rawSection } = req.body;
     
     // Get admin ID from request (set by extractAdminId middleware)
     // Try multiple sources: req.adminId, req.userId, req.user.id, req.user._id
@@ -164,11 +170,17 @@ export const createStudent = async (req, res) => {
       });
     }
     
-    // Validate required fields
+    const plainPassword = String(password || '').trim();
     if (!fullName || !email || !classNumber) {
-      return res.status(400).json({ 
-        success: false, 
-        message: 'Full name, email, and class number are required' 
+      return res.status(400).json({
+        success: false,
+        message: 'Full name, email, and class number are required',
+      });
+    }
+    if (!plainPassword || plainPassword.length < 6) {
+      return res.status(400).json({
+        success: false,
+        message: 'Password is required and must be at least 6 characters',
       });
     }
     
@@ -232,23 +244,40 @@ export const createStudent = async (req, res) => {
       });
     }
     
-    // Hash password
-    const hashedPassword = await bcrypt.hash(password || 'Password123', 12);
-    
-    // Create new student with admin's board and school
+    const hashedPassword = await bcrypt.hash(plainPassword, 12);
+
+    const { classNumber: parsedClass, section } = parseClassAndSection(
+      classNumber,
+      rawSection
+    );
+    const validAdminId = mongoose.Types.ObjectId.isValid(adminId)
+      ? new mongoose.Types.ObjectId(String(adminId))
+      : admin._id;
+
+    let assignedClass = null;
+    if (parsedClass && parsedClass !== 'Unassigned') {
+      assignedClass = await getOrCreateClassForAdmin(
+        admin,
+        validAdminId,
+        parsedClass,
+        section
+      );
+    }
+
     const newStudent = new User({
-      email,
+      email: email.toLowerCase().trim(),
       password: hashedPassword,
-      fullName,
-      classNumber: classNumber.trim(), // Required, no default
-      phone: phone || '',
+      fullName: String(fullName).trim(),
+      classNumber: parsedClass || String(classNumber).trim(),
+      phone: normalizePhoneTenDigits(phone),
       role: 'student',
-      board: admin.board, // Inherit board from admin
-      schoolName: admin.schoolName || '', // Inherit school from admin
+      board: admin.board,
+      schoolName: admin.schoolName || '',
       isActive: true,
-      assignedAdmin: adminId
+      assignedAdmin: validAdminId,
+      assignedClass: assignedClass?._id,
     });
-    
+
     await newStudent.save();
     
     res.status(201).json({
@@ -3277,6 +3306,44 @@ export const downloadRiskAnalysisPDF = async (req, res) => {
       success: false,
       message: 'Failed to download PDF',
       error: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
+  }
+};
+
+/** CSV/XLSX bulk upload: creates students with class, section, and per-row password */
+export const uploadStudentsCsv = async (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ success: false, message: 'No file uploaded' });
+    }
+
+    const adminId =
+      req.adminId || req.userId || req.user?.userId || req.user?.id || req.user?._id;
+    if (!adminId) {
+      return res.status(401).json({
+        success: false,
+        message: 'Admin ID not found. Please log in again as a school admin.',
+      });
+    }
+
+    const result = await processStudentCsvUpload(
+      req.file.buffer,
+      req.file.originalname,
+      adminId
+    );
+
+    res.json({
+      success: true,
+      ...result,
+    });
+  } catch (error) {
+    console.error('uploadStudentsCsv error:', error);
+    res.status(500).json({
+      success: false,
+      message: error.message || 'Failed to process CSV file',
+      hint: error.message?.includes('board')
+        ? 'Make sure your school profile has a board assigned'
+        : 'Required columns: name, email, classnumber, section, phone, password',
     });
   }
 };
