@@ -2068,8 +2068,11 @@ function boardsForAdminSubjectScope(admin) {
 // Subject Management (Admin scoped by board)
 export const getSubjects = async (req, res) => {
   try {
+    const includeInactive = req.query.includeInactive === 'true';
+
     if (req.user?.role === 'super-admin') {
-      const subjects = await Subject.find({}).sort({ name: 1 }).lean();
+      const query = includeInactive ? {} : { isActive: true };
+      const subjects = await Subject.find(query).sort({ name: 1 }).lean();
       const teachers = await Teacher.find({ isActive: true })
         .select('_id fullName email subjects')
         .lean();
@@ -2111,9 +2114,9 @@ export const getSubjects = async (req, res) => {
       .lean();
     const boardList = boardsForAdminSubjectScope(admin);
 
-    const subjects = await Subject.find({ board: { $in: boardList } })
-      .sort({ name: 1 })
-      .lean();
+    const subjectQuery = { board: { $in: boardList } };
+    if (!includeInactive) subjectQuery.isActive = true;
+    const subjects = await Subject.find(subjectQuery).sort({ name: 1 }).lean();
 
     const teachers = await Teacher.find({ isActive: true })
       .select('_id fullName email subjects')
@@ -2229,10 +2232,11 @@ export const deleteSubject = async (req, res) => {
     if (!subject) {
       return res.status(404).json({ success: false, message: 'Subject not found' });
     }
-    subject.isActive = false;
-    subject.code = undefined;
-    subject.name = `${subject.name}__deleted__${Date.now()}`;
-    await subject.save();
+    if (!subject.isActive) {
+      return res.json({ success: true, message: 'Subject already deleted' });
+    }
+    const { softDeleteSubject } = await import('../utils/subjectDelete.js');
+    await softDeleteSubject(subject);
     res.json({ success: true, message: 'Subject deleted' });
   } catch (error) {
     console.error('deleteSubject error:', error);

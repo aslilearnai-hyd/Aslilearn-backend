@@ -626,19 +626,11 @@ export const deleteSubject = async (req, res) => {
       return res.status(404).json({ success: false, message: 'Subject not found' });
     }
 
-    const { removeSubjectIdFromAllAssignments } = await import(
-      '../utils/removeSubjectAssignments.js'
-    );
-    await removeSubjectIdFromAllAssignments(subjectId);
-
-    // Soft delete - mark inactive and release unique keys (name/code) so users
-    // can recreate subjects with same name/code later.
-    subject.isActive = false;
-    if (subject.code) {
-      subject.code = undefined;
+    if (!subject.isActive) {
+      return res.json({ success: true, message: 'Subject already deleted' });
     }
-    subject.name = `${subject.name}__deleted__${Date.now()}`;
-    await subject.save();
+    const { softDeleteSubject } = await import('../utils/subjectDelete.js');
+    await softDeleteSubject(subject);
 
     res.json({ success: true, message: 'Subject deleted successfully' });
   } catch (error) {

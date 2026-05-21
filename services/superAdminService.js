@@ -38,17 +38,22 @@ export const getAllAdmins = async () => {
 
 export const createAdmin = async (adminData) => {
   try {
-    const { name, email, permissions } = adminData;
+    const { name, email, password, permissions } = adminData;
     
     // Check if admin already exists
     const existingAdmin = await User.findOne({ email });
     if (existingAdmin) {
       throw new Error('Admin already exists');
     }
+
+    const plainPassword = String(password || '').trim();
+    if (!plainPassword || plainPassword.length < 6) {
+      throw new Error('Password is required and must be at least 6 characters');
+    }
     
     // Create new admin
     const bcrypt = await import('bcryptjs');
-    const hashedPassword = await bcrypt.hash('admin123', 10);
+    const hashedPassword = await bcrypt.hash(plainPassword, 10);
     
     const newAdmin = new User({
       fullName: name,

@@ -9,7 +9,7 @@ const calendarEventSchema = new mongoose.Schema(
     },
     schoolId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
+      ref: 'School',
       required: true,
     },
     startDate: {

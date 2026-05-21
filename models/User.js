@@ -70,6 +70,12 @@ const userSchema = new mongoose.Schema({
     ref: 'User',
     default: null
   },
+  /** Link to schools collection (canonical school profile) */
+  schoolId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'School',
+    default: null,
+  },
   assignedTeacher: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Teacher',
@@ -203,6 +209,7 @@ userSchema.pre('save', function(next) {
 // Index for better performance
 userSchema.index({ role: 1 });
 userSchema.index({ assignedAdmin: 1 });
+userSchema.index({ schoolId: 1 });
 userSchema.index({ role: 1, assignedAdmin: 1 }); // Compound index for role + admin queries
 userSchema.index({ board: 1 });
 userSchema.index({ role: 1, board: 1 }); // Compound index for role + board queries

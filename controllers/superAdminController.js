@@ -22,6 +22,17 @@ import {
   isStoredCurriculumBoard,
   resolveAdminStoredBoard,
 } from '../constants/boards.js';
+import School from '../models/School.js';
+import {
+  normalizeSchoolDetails,
+  buildSchoolFieldsFromBody,
+  applySchoolToAdminUser,
+  formatSchoolListItem,
+  findSchoolByAdminId,
+  deleteSchoolById,
+  normalizePhoneTenDigits,
+  isValidOptionalPhoneTenDigits,
+} from '../services/schoolService.js';
 
 // Super Admin Login
 export const superAdminLogin = async (req, res) => {
@@ -78,7 +89,7 @@ export const getDashboardStats = async (req, res) => {
     const totalContentItems = await Content.countDocuments();
     const totalAssessments = await Assessment.countDocuments();
     const totalExams = await Exam.countDocuments();
-    const totalAdmins = await User.countDocuments({ role: 'admin' });
+    const totalAdmins = await School.countDocuments({});
     
     // Calculate meaningful metrics instead of mock revenue
     const totalStudents = await User.countDocuments({ role: 'student' });
@@ -129,12 +140,42 @@ export const getDashboardStats = async (req, res) => {
   }
 };
 
-// Get All Admins with comprehensive analytics
+// Get all schools from schools collection (canonical table)
+export const getAllSchools = async (req, res) => {
+  try {
+    const schools = await School.find().sort({ name: 1 }).lean();
+    res.json({
+      success: true,
+      data: schools.map((s) => ({
+        schoolId: s._id,
+        adminUserId: s.adminUserId,
+        name: s.name,
+        board: s.board,
+        curriculumBoard: s.curriculumBoard,
+        isAsliPrepExclusive: s.isAsliPrepExclusive,
+        isActive: s.isActive,
+        place: s.place,
+        schoolDetails: s.schoolDetails,
+        createdAt: s.createdAt,
+        updatedAt: s.updatedAt,
+      })),
+    });
+  } catch (error) {
+    console.error('Get all schools error:', error);
+    res.status(500).json({ success: false, message: 'Failed to fetch schools' });
+  }
+};
+
+// Get All Admins with comprehensive analytics (schools table + admin login)
 export const getAllAdmins = async (req, res) => {
   try {
-    const admins = await User.find({ role: 'admin' }).select('-password').lean();
+    const schools = await School.find().sort({ name: 1 }).lean();
+    const adminIds = schools.map((s) => s.adminUserId).filter(Boolean);
 
-    const adminIds = admins.map((a) => a._id);
+    const admins = adminIds.length
+      ? await User.find({ _id: { $in: adminIds } }).select('-password').lean()
+      : [];
+    const adminById = new Map(admins.map((a) => [a._id.toString(), a]));
 
     const [
       studentsByAdminAgg,
@@ -203,8 +244,30 @@ export const getAllAdmins = async (req, res) => {
       return acc;
     }, {});
 
-    const adminsWithAnalytics = admins.map((admin) => {
-        const adminKey = admin._id.toString();
+    const adminsWithAnalytics = schools.map((school) => {
+        const admin = adminById.get(school.adminUserId?.toString());
+        const adminKey = school.adminUserId?.toString() || '';
+        if (!adminKey) {
+          return formatSchoolListItem(school, null, {
+            students: 0,
+            teachers: 0,
+            videos: 0,
+            assessments: 0,
+            exams: 0,
+            totalExamsTaken: 0,
+            averageScore: 0,
+            averageAccuracy: 0,
+            analytics: {
+              topStudents: [],
+              recentResults: [],
+              subjectPerformance: [],
+              totalQuestionsAnswered: 0,
+              totalCorrectAnswers: 0,
+              totalMarksObtained: 0,
+              totalMarksPossible: 0,
+            },
+          });
+        }
         const studentCount = mergeStudentCount(adminKey);
         const teacherCount = teacherCountMap.get(adminKey) || 0;
         const videoCount = videoCountMap.get(adminKey) || 0;
@@ -296,52 +359,25 @@ export const getAllAdmins = async (req, res) => {
           correctAnswers: data.correctAnswers
         }));
         
-        const sd = admin.schoolDetails && typeof admin.schoolDetails.toObject === 'function'
-          ? admin.schoolDetails.toObject()
-          : admin.schoolDetails || {};
-        return {
-          id: admin._id,
-          name: admin.fullName,
-          email: admin.email,
-          board: admin.board,
-          schoolName: admin.schoolName,
-          schoolLogo: admin.schoolLogo,
-          contactPerson: admin.contactPerson,
-          phone: admin.phone,
-          secondaryContactPerson: admin.secondaryContactPerson,
-          secondaryContactPhone: admin.secondaryContactPhone,
-          place: admin.place,
-          pin: admin.pin,
-          state: sd.state || admin.place || '',
-          schoolDetails: sd,
-          permissions: admin.permissions || [],
-          curriculumBoard:
-            admin.curriculumBoard ||
-            (isStoredCurriculumBoard(admin.board) ? String(admin.board).toUpperCase().trim() : 'CBSE'),
-          isAsliPrepExclusive:
-            admin.isAsliPrepExclusive === true || admin.board === 'ASLI_EXCLUSIVE_SCHOOLS',
-          status: admin.isActive ? 'Active' : 'Inactive',
-          joinDate: admin.createdAt,
-          stats: {
-            students: studentCount,
-            teachers: teacherCount,
-            videos: videoCount,
-            assessments: assessmentCount,
-            exams: examCount,
-            totalExamsTaken: totalExamsTaken,
-            averageScore: averageScore,
-            averageAccuracy: averageAccuracy
-          },
+        return formatSchoolListItem(school, admin, {
+          students: studentCount,
+          teachers: teacherCount,
+          videos: videoCount,
+          assessments: assessmentCount,
+          exams: examCount,
+          totalExamsTaken,
+          averageScore,
+          averageAccuracy,
           analytics: {
-            topStudents: topStudents,
-            recentResults: recentResults,
+            topStudents,
+            recentResults,
             subjectPerformance: subjectAnalytics,
-            totalQuestionsAnswered: totalQuestionsAnswered,
-            totalCorrectAnswers: totalCorrectAnswers,
-            totalMarksObtained: totalMarksObtained,
-            totalMarksPossible: totalMarksPossible
-          }
-        };
+            totalQuestionsAnswered,
+            totalCorrectAnswers,
+            totalMarksObtained,
+            totalMarksPossible,
+          },
+        });
     });
     
     res.json({
@@ -584,34 +620,13 @@ export const getAdminSchoolDetail = async (req, res) => {
   }
 };
 
-// Create New Admin
-const normalizeSchoolDetails = (raw, fallbackState) => {
-  const src = raw && typeof raw === 'object' ? raw : {};
-  const stateVal =
-    (typeof src.state === 'string' && src.state.trim()) ||
-    (typeof fallbackState === 'string' && fallbackState.trim()) ||
-    '';
-  return {
-    doorNo: String(src.doorNo || '').trim(),
-    street: String(src.street || '').trim(),
-    area: String(src.area || '').trim(),
-    city: String(src.city || '').trim(),
-    district: String(src.district || '').trim(),
-    state: stateVal,
-    medium: String(src.medium || '').trim(),
-    classesFrom: String(src.classesFrom || '').trim(),
-    classesTo: String(src.classesTo || '').trim(),
-    totalStrength: String(src.totalStrength || '').trim(),
-    schoolType: String(src.schoolType || '').trim(),
-    photos: Array.isArray(src.photos) ? src.photos.map((p) => String(p).trim()).filter(Boolean) : []
-  };
-};
-
+// Create New Admin (creates schools row + admin login user)
 export const createAdmin = async (req, res) => {
   try {
     const {
       name,
       email,
+      password,
       permissions,
       board,
       isAsliPrepExclusive: rawExclusive,
@@ -634,6 +649,14 @@ export const createAdmin = async (req, res) => {
         message: 'Name and email are required' 
       });
     }
+
+    const plainPassword = String(password || '').trim();
+    if (!plainPassword || plainPassword.length < 6) {
+      return res.status(400).json({
+        success: false,
+        message: 'Password is required and must be at least 6 characters',
+      });
+    }
     
     const curriculumUpper = (board || '').toUpperCase().trim();
     if (!isValidCurriculumBoard(curriculumUpper)) {
@@ -653,14 +676,27 @@ export const createAdmin = async (req, res) => {
       });
     }
 
-    const schoolDetails = normalizeSchoolDetails(rawSchoolDetails, state);
-    if (!schoolDetails.city || !schoolDetails.district || !schoolDetails.state) {
+    const schoolFields = buildSchoolFieldsFromBody(req.body);
+    if (!schoolFields.name) {
+      return res.status(400).json({ success: false, message: 'School name is required' });
+    }
+    if (!schoolFields.schoolDetails.city || !schoolFields.schoolDetails.district || !schoolFields.schoolDetails.state) {
       return res.status(400).json({
         success: false,
         message: 'City, district, and state are required for school information'
       });
     }
-    
+
+    if (
+      !isValidOptionalPhoneTenDigits(schoolFields.phone) ||
+      !isValidOptionalPhoneTenDigits(schoolFields.secondaryContactPhone)
+    ) {
+      return res.status(400).json({
+        success: false,
+        message: 'Phone numbers must be exactly 10 digits, or left empty',
+      });
+    }
+
     // Check if admin already exists (including soft-deleted or inactive ones)
     const existingAdmin = await User.findOne({ email: email.toLowerCase().trim() });
     if (existingAdmin) {
@@ -677,68 +713,45 @@ export const createAdmin = async (req, res) => {
       }
     }
     
-    // Create new admin with all details
-    const hashedPassword = await bcrypt.hash('admin123', 10); // Default password
-    const placeLine =
-      (place && String(place).trim()) ||
-      [schoolDetails.city, schoolDetails.district, schoolDetails.state].filter(Boolean).join(', ');
+    const hashedPassword = await bcrypt.hash(plainPassword, 10);
+
+    const school = await School.create({
+      ...schoolFields,
+      contactPerson: schoolFields.contactPerson || name.trim(),
+      isActive: true,
+    });
 
     const newAdmin = new User({
       fullName: name.trim(),
       email: email.toLowerCase().trim(),
       password: hashedPassword,
       role: 'admin',
-      board: finalBoard,
-      curriculumBoard: curriculumUpper,
-      isAsliPrepExclusive: exclusive,
-      schoolName: schoolName.trim(),
-      schoolLogo: schoolLogo?.trim() || '',
-      contactPerson: contactPerson?.trim() || '',
-      phone: phone?.trim() || '',
-      secondaryContactPerson: secondaryContactPerson?.trim() || '',
-      secondaryContactPhone: secondaryContactPhone?.trim() || '',
-      place: placeLine,
-      pin: pin?.trim() || '',
-      schoolDetails,
       permissions: permissions || [],
-      isActive: true
+      isActive: true,
     });
-    
+    applySchoolToAdminUser(newAdmin, school);
     await newAdmin.save();
-    
-    console.log('Admin created successfully:', {
-      id: newAdmin._id,
-      name: newAdmin.fullName,
+
+    school.adminUserId = newAdmin._id;
+    await school.save();
+
+    console.log('School + admin created:', {
+      schoolId: school._id,
+      adminId: newAdmin._id,
       email: newAdmin.email,
-      board: newAdmin.board,
-      schoolName: newAdmin.schoolName,
-      permissions: newAdmin.permissions
+      schoolName: school.name,
     });
-    
+
     res.json({
       success: true,
-      message: 'Admin created successfully',
-      data: {
-        id: newAdmin._id,
-        name: newAdmin.fullName,
-        email: newAdmin.email,
-        board: newAdmin.board,
-        curriculumBoard: newAdmin.curriculumBoard,
-        isAsliPrepExclusive: newAdmin.isAsliPrepExclusive,
-        schoolName: newAdmin.schoolName,
-        schoolLogo: newAdmin.schoolLogo,
-        contactPerson: newAdmin.contactPerson,
-        phone: newAdmin.phone,
-        secondaryContactPerson: newAdmin.secondaryContactPerson,
-        secondaryContactPhone: newAdmin.secondaryContactPhone,
-        place: newAdmin.place,
-        pin: newAdmin.pin,
-        state: newAdmin.schoolDetails?.state || '',
-        schoolDetails: newAdmin.schoolDetails,
-        permissions: newAdmin.permissions,
-        status: 'Active',
-        joinDate: newAdmin.createdAt
-      }
+      message: 'School and admin created successfully',
+      data: formatSchoolListItem(school.toObject(), newAdmin.toObject(), {
+        students: 0,
+        teachers: 0,
+        videos: 0,
+        assessments: 0,
+        exams: 0,
+      }),
     });
   } catch (error) {
     console.error('Create admin error:', error);
@@ -770,6 +783,7 @@ export const updateAdmin = async (req, res) => {
     const {
       name,
       email,
+      password,
       permissions,
       isActive,
       board,
@@ -796,8 +810,13 @@ export const updateAdmin = async (req, res) => {
       return res.status(404).json({ success: false, message: 'Admin not found' });
     }
 
+    let school = admin.schoolId
+      ? await School.findById(admin.schoolId)
+      : await School.findOne({ adminUserId: adminId });
+
     // Prepare update object
     const updateData = {};
+    const schoolUpdate = {};
     if (name !== undefined && name !== null && name.trim() !== '') {
       updateData.fullName = name.trim();
     }
@@ -814,6 +833,17 @@ export const updateAdmin = async (req, res) => {
     }
     if (permissions !== undefined) updateData.permissions = permissions;
     if (isActive !== undefined) updateData.isActive = Boolean(isActive);
+
+    if (password !== undefined && password !== null && String(password).trim() !== '') {
+      const plainPassword = String(password).trim();
+      if (plainPassword.length < 6) {
+        return res.status(400).json({
+          success: false,
+          message: 'Password must be at least 6 characters',
+        });
+      }
+      updateData.password = await bcrypt.hash(plainPassword, 10);
+    }
 
     const touchedCurriculum =
       board !== undefined && board !== null && String(board).trim() !== '';
@@ -856,13 +886,27 @@ export const updateAdmin = async (req, res) => {
       updateData.contactPerson = contactPerson.trim();
     }
     if (phone !== undefined && phone !== null) {
-      updateData.phone = phone.trim();
+      const normalizedPhone = normalizePhoneTenDigits(phone);
+      if (!isValidOptionalPhoneTenDigits(normalizedPhone)) {
+        return res.status(400).json({
+          success: false,
+          message: 'Primary contact number must be exactly 10 digits, or left empty',
+        });
+      }
+      updateData.phone = normalizedPhone;
     }
     if (secondaryContactPerson !== undefined && secondaryContactPerson !== null) {
       updateData.secondaryContactPerson = String(secondaryContactPerson).trim();
     }
     if (secondaryContactPhone !== undefined && secondaryContactPhone !== null) {
-      updateData.secondaryContactPhone = String(secondaryContactPhone).trim();
+      const normalizedSecondary = normalizePhoneTenDigits(secondaryContactPhone);
+      if (!isValidOptionalPhoneTenDigits(normalizedSecondary)) {
+        return res.status(400).json({
+          success: false,
+          message: 'Secondary contact number must be exactly 10 digits, or left empty',
+        });
+      }
+      updateData.secondaryContactPhone = normalizedSecondary;
     }
     if (place !== undefined && place !== null) {
       updateData.place = place.trim();
@@ -1897,7 +1941,7 @@ export const getAnalytics = async (req, res) => {
     const totalUsers = await User.countDocuments();
     const totalTeachers = await Teacher.countDocuments();
     const totalVideos = await Video.countDocuments();
-    const totalAdmins = await User.countDocuments({ role: 'admin' });
+    const totalAdmins = await School.countDocuments({});
     
     // Calculate daily active users (mock data)
     const dailyActive = Math.floor(totalUsers * 0.1);
