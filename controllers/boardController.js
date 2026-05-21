@@ -880,6 +880,22 @@ export const uploadContent = async (req, res) => {
   }
 };
 
+/** When Subject was deleted, infer a label so super-admin UI can still group content. */
+function inferSubjectDisplayNameFromContent(row) {
+  const text = `${row.title || ''} ${row.description || ''} ${row.topic || ''}`.toLowerCase();
+  if (/ganita|mathematics|maths|\bmath\b/.test(text)) return 'Mathematics';
+  if (/science|curiosity|physics|chemistry|biology/.test(text)) return 'Science';
+  if (/english/.test(text)) return 'English';
+  if (/social|history|geography/.test(text)) return 'Social Studies';
+  if (/hindi/.test(text)) return 'Hindi';
+  if (/telugu/.test(text)) return 'Telugu';
+  const fromTitle = String(row.title || '')
+    .replace(/\s+(vol\s*\d+\s*)?class\s*\d+.*$/i, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  return fromTitle || 'General';
+}
+
 // Get Content by Board (or all boards - board filtering removed for visibility)
 export const getContentByBoard = async (req, res) => {
   try {
@@ -888,17 +904,48 @@ export const getContentByBoard = async (req, res) => {
 
     // Remove board restriction - show all content regardless of board
     // Board parameter is kept for backward compatibility but not used in filtering
-    const query = { isActive: true, isExclusive: true };
+    // Super admin sees all active curriculum content (teacher homework uses isExclusive: false)
+    const query = { isActive: true };
 
     if (subject) query.subject = subject;
     if (type) query.type = type;
     if (topic) query.topic = { $regex: topic, $options: 'i' };
 
-    const contents = await Content.find(query)
-      .populate('subject', 'name')
-      .sort({ createdAt: -1 });
+    const rows = await Content.find(query).sort({ createdAt: -1 }).lean();
+    const subjectIds = [
+      ...new Set(rows.map((r) => r.subject).filter(Boolean).map((id) => String(id))),
+    ];
+    const subjectDocs = subjectIds.length
+      ? await Subject.find({ _id: { $in: subjectIds } })
+          .select('name board classNumber stateName')
+          .lean()
+      : [];
+    const subjectById = new Map(subjectDocs.map((s) => [String(s._id), s]));
 
-    res.json({ success: true, data: contents });
+    const data = rows.map((row) => {
+      const subjectId = row.subject ? String(row.subject) : null;
+      const subjectDoc = subjectId ? subjectById.get(subjectId) : null;
+      const displayName = subjectDoc?.name || inferSubjectDisplayNameFromContent(row);
+      return {
+        ...row,
+        subject: subjectId
+          ? {
+              _id: subjectId,
+              name: displayName,
+              board: subjectDoc?.board,
+              classNumber: subjectDoc?.classNumber,
+              stateName: subjectDoc?.stateName,
+              missingFromCatalog: !subjectDoc,
+            }
+          : {
+              _id: `inferred-${displayName.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
+              name: displayName,
+              missingFromCatalog: true,
+            },
+      };
+    });
+
+    res.json({ success: true, data });
   } catch (error) {
     console.error('Get content by board error:', error);
     res.status(500).json({ success: false, message: 'Failed to fetch content' });

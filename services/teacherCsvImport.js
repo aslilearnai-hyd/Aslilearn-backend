@@ -11,6 +11,7 @@ import { normalizePhoneTenDigits } from './schoolService.js';
 const SCALAR_HEADER_KEYS = new Set([
   'name',
   'email',
+  'password',
   'phone',
   'department',
   'departmer',
@@ -171,7 +172,7 @@ export async function processTeacherCsvUpload(fileBuffer, originalName, adminId)
   }
 
   const headers = parseCSVLine(lines[0]).map((h) => normalizeCsvHeader(h));
-  const missingHeaders = ['name', 'email'].filter((h) => !headers.includes(h));
+  const missingHeaders = ['name', 'email', 'password'].filter((h) => !headers.includes(h));
   if (missingHeaders.length > 0) {
     throw new Error(`Missing required headers: ${missingHeaders.join(', ')}`);
   }
@@ -201,6 +202,12 @@ export async function processTeacherCsvUpload(fileBuffer, originalName, adminId)
 
       if (!name || !email) {
         errors.push(`Row ${i + 1}: name and email are required`);
+        continue;
+      }
+
+      const password = String(row.password || '').trim();
+      if (!password || password.length < 6) {
+        errors.push(`Row ${i + 1}: password is required (minimum 6 characters)`);
         continue;
       }
 
@@ -236,7 +243,7 @@ export async function processTeacherCsvUpload(fileBuffer, originalName, adminId)
         }
       }
 
-      const hashedPassword = await bcrypt.hash('Password123', 12);
+      const hashedPassword = await bcrypt.hash(password, 12);
 
       const newTeacher = new Teacher({
         fullName: name,

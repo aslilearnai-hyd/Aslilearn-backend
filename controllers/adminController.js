@@ -438,6 +438,14 @@ export const createTeacher = async (req, res) => {
         message: 'Name, email, department, and at least one subject are required' 
       });
     }
+
+    const passwordValue = String(password || '').trim();
+    if (!passwordValue || passwordValue.length < 6) {
+      return res.status(400).json({
+        success: false,
+        message: 'Password is required (minimum 6 characters)',
+      });
+    }
     
     // Check if teacher already exists
     const existingTeacher = await Teacher.findOne({ email });
@@ -495,8 +503,7 @@ export const createTeacher = async (req, res) => {
       });
     }
     
-    // Hash password
-    const hashedPassword = await bcrypt.hash(password || 'Password123', 12);
+    const hashedPassword = await bcrypt.hash(passwordValue, 12);
     
     // Ensure adminId is a valid ObjectId
     let validAdminId = adminId;
