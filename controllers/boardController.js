@@ -737,12 +737,52 @@ export const getAllClasses = async (req, res) => {
   }
 };
 
+const CONTENT_TYPES = ['TextBook', 'Workbook', 'Material', 'Video', 'Audio'];
+
+function normalizeContentType(raw) {
+  const t = String(raw || '').trim();
+  const match = CONTENT_TYPES.find((v) => v.toLowerCase() === t.toLowerCase());
+  return match || t;
+}
+
+function isStreamableContentType(contentType) {
+  return /^(video|audio)$/i.test(String(contentType || '').trim());
+}
+
+function isAllowedContentFileUrl(url, contentType) {
+  if (!url || typeof url !== 'string') return false;
+  const trimmed = url.trim();
+  if (!trimmed) return false;
+  if (trimmed.startsWith('/uploads/')) return true;
+  if (isStreamableContentType(contentType)) {
+    if (/^https?:\/\//i.test(trimmed)) return true;
+    try {
+      const parsed = new URL(trimmed);
+      return parsed.protocol === 'http:' || parsed.protocol === 'https:';
+    } catch {
+      return false;
+    }
+  }
+  return false;
+}
+
 // Upload Content (Super Admin only - Asli Prep Exclusive)
 export const uploadContent = async (req, res) => {
   try {
     const { title, description, type, board, subject, classNumber, topic, date, fileUrl, fileUrls, thumbnailUrl, duration, size, deadline, stateName: rawContentState } = req.body;
+    const normalizedType = normalizeContentType(type);
 
-    console.log('📦 Uploading content:', { title, type, board, subject, classNumber, date, deadline, stateName: rawContentState });
+    console.log('📦 Uploading content:', {
+      title,
+      type: normalizedType,
+      board,
+      subject,
+      classNumber,
+      date,
+      fileUrl: fileUrl ? String(fileUrl).slice(0, 80) : undefined,
+      deadline,
+      stateName: rawContentState,
+    });
 
     // Support both single fileUrl (backward compatibility) and multiple fileUrls
     const hasFileUrl = fileUrl && fileUrl.trim();
@@ -768,11 +808,11 @@ export const uploadContent = async (req, res) => {
     }
 
     // Super admin cannot upload Homework - only teachers can
-    if (type === 'Homework') {
+    if (normalizedType === 'Homework') {
       return res.status(403).json({ success: false, message: 'Homework can only be uploaded by teachers. Please use the teacher dashboard to upload homework.' });
     }
 
-    if (!['TextBook', 'Workbook', 'Material', 'Video', 'Audio'].includes(type)) {
+    if (!CONTENT_TYPES.includes(normalizedType)) {
       return res.status(400).json({ success: false, message: 'Invalid content type' });
     }
 
@@ -803,27 +843,32 @@ export const uploadContent = async (req, res) => {
     }
 
     // Use fileUrls if provided, otherwise use fileUrl for backward compatibility
-    const finalFileUrls = hasFileUrls ? fileUrls : (hasFileUrl ? [fileUrl] : []);
-    const primaryFileUrl = hasFileUrls ? fileUrls[0] : fileUrl;
+    const finalFileUrls = (hasFileUrls ? fileUrls : hasFileUrl ? [fileUrl] : []).map((u) =>
+      String(u).trim()
+    );
+    const primaryFileUrl = finalFileUrls[0] || '';
 
-    // Enforce server-hosted files only (DigitalOcean uploads directory)
-    const isServerHostedUrl = (url) => {
-      if (!url || typeof url !== 'string') return false;
-      const trimmed = url.trim();
-      return trimmed.startsWith('/uploads/');
-    };
-
-    if (!finalFileUrls.every(isServerHostedUrl) || !isServerHostedUrl(primaryFileUrl)) {
+    if (
+      finalFileUrls.length === 0 ||
+      !finalFileUrls.every((u) => isAllowedContentFileUrl(u, normalizedType)) ||
+      !isAllowedContentFileUrl(primaryFileUrl, normalizedType)
+    ) {
+      console.warn('Content file URL rejected:', {
+        type: normalizedType,
+        primaryFileUrl: primaryFileUrl.slice(0, 120),
+      });
       return res.status(400).json({
         success: false,
-        message: 'Only uploaded server files are allowed. Please upload files first and use /uploads/... URLs.'
+        message: isStreamableContentType(normalizedType)
+          ? 'Provide a valid https video/audio URL (YouTube, Vimeo, etc.) or an uploaded /uploads/... file.'
+          : 'Only uploaded server files are allowed. Please upload files first and use /uploads/... URLs.',
       });
     }
 
     const contentData = {
       title: title.trim(),
       description: description?.trim() || undefined,
-      type,
+      type: normalizedType,
       board: boardNorm,
       subject,
       topic: topic?.trim() || undefined,
