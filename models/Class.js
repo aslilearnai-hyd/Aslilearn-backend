@@ -9,8 +9,14 @@ const classSchema = new mongoose.Schema({
   },
   section: {
     type: String,
-    enum: ['A', 'B', 'C'],
-    required: true
+    required: true,
+    trim: true,
+    uppercase: true,
+    maxlength: 3,
+    validate: {
+      validator: (v) => typeof v === 'string' && /^[A-Z0-9]{1,3}$/.test(v),
+      message: 'Section must be 1–3 letters or numbers (e.g. A, D, E1)',
+    },
   },
   name: {
     type: String,

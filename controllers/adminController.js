@@ -2723,10 +2723,11 @@ export const createClass = async (req, res) => {
       });
     }
 
-    if (!['A', 'B', 'C'].includes(section)) {
+    const sectionKey = String(section).trim().toUpperCase();
+    if (!/^[A-Z0-9]{1,3}$/.test(sectionKey)) {
       return res.status(400).json({ 
         success: false, 
-        message: 'Section must be A, B, or C' 
+        message: 'Section must be 1–3 letters or numbers (e.g. A, D, E1)' 
       });
     }
     
@@ -2784,24 +2785,24 @@ export const createClass = async (req, res) => {
     // Check if class already exists (classNumber + section + admin)
     const existingClass = await Class.findOne({
       classNumber: classNumber.trim(),
-      section: section,
+      section: sectionKey,
       assignedAdmin: adminId
     });
 
     if (existingClass) {
       return res.status(400).json({ 
         success: false, 
-        message: `Class ${classNumber}${section} already exists. Cannot create duplicate classes.` 
+        message: `Class ${classNumber}${sectionKey} already exists. Cannot create duplicate classes.` 
       });
     }
 
     // Create full class name
-    const fullClassName = `Class ${classNumber}${section}`;
+    const fullClassName = `Class ${classNumber}${sectionKey}`;
     
     // Create new class
     const newClass = new Class({
       classNumber: classNumber.trim(),
-      section: section,
+      section: sectionKey,
       name: fullClassName,
       description: description?.trim() || '',
       board: admin.board,
