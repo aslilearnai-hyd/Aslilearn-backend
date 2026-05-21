@@ -1,3 +1,4 @@
+import mongoose from 'mongoose';
 import School from '../models/School.js';
 import User from '../models/User.js';
 import {
@@ -101,9 +102,10 @@ export function applySchoolToAdminUser(admin, school) {
 /** API shape for School Management UI (id = admin login id for backward compatibility) */
 export function formatSchoolListItem(school, admin, stats = {}) {
   const sd = school?.schoolDetails || {};
-  const adminId = admin?._id || school?.adminUserId;
+  const adminUserId = admin?._id || school?.adminUserId;
   return {
-    id: adminId?.toString(),
+    id: (adminUserId || school?._id)?.toString(),
+    adminUserId: adminUserId?.toString() || '',
     schoolId: school?._id?.toString(),
     name: admin?.fullName || school?.contactPerson || '',
     email: admin?.email || '',
@@ -148,4 +150,40 @@ export async function findSchoolByAdminId(adminId) {
 export async function deleteSchoolById(schoolId) {
   if (!schoolId) return null;
   return School.findByIdAndDelete(schoolId);
+}
+
+/**
+ * Resolve school + admin login from route param (admin user id or schools collection id).
+ */
+export async function resolveSchoolAndAdminByParamId(paramId) {
+  const id = String(paramId || '').trim();
+  if (!id || !mongoose.Types.ObjectId.isValid(id)) {
+    return { admin: null, school: null };
+  }
+
+  let admin = await User.findById(id);
+  if (admin?.role === 'admin') {
+    const school = admin.schoolId
+      ? await School.findById(admin.schoolId)
+      : await School.findOne({ adminUserId: admin._id });
+    return { admin, school };
+  }
+
+  let school = await School.findById(id);
+  if (!school) {
+    school = await School.findOne({ adminUserId: id });
+  }
+
+  if (!school) {
+    return { admin: null, school: null };
+  }
+
+  if (school.adminUserId) {
+    admin = await User.findById(school.adminUserId);
+    if (admin?.role !== 'admin') {
+      admin = null;
+    }
+  }
+
+  return { admin, school };
 }

@@ -14,6 +14,7 @@ import Content from '../models/Content.js';
 import RiskAnalysisReport from '../models/RiskAnalysisReport.js';
 import { getExplicitTeacherSubjectObjectIds } from '../utils/teacherSubjectScope.js';
 import { isValidSchoolBoard, normalizeSchoolBoard } from '../constants/boards.js';
+import { processTeacherCsvUpload } from '../services/teacherCsvImport.js';
 
 const buildSafeAppendQuestionPipeline = (questionId) => [
   {
@@ -3276,6 +3277,44 @@ export const downloadRiskAnalysisPDF = async (req, res) => {
       success: false,
       message: 'Failed to download PDF',
       error: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
+  }
+};
+
+/** CSV/XLSX bulk upload: creates teachers + auto-creates subjects in DB */
+export const uploadTeachersCsv = async (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ success: false, message: 'No file uploaded' });
+    }
+
+    const adminId =
+      req.adminId || req.userId || req.user?.userId || req.user?.id || req.user?._id;
+    if (!adminId) {
+      return res.status(401).json({
+        success: false,
+        message: 'Admin ID not found. Please log in again as a school admin.',
+      });
+    }
+
+    const result = await processTeacherCsvUpload(
+      req.file.buffer,
+      req.file.originalname,
+      adminId
+    );
+
+    res.json({
+      success: true,
+      ...result,
+    });
+  } catch (error) {
+    console.error('uploadTeachersCsv error:', error);
+    res.status(500).json({
+      success: false,
+      message: error.message || 'Failed to upload CSV',
+      hint: error.message?.includes('Admin')
+        ? 'Ensure you are logged in as a school admin'
+        : 'Check CSV format: required columns name, email; optional subjects',
     });
   }
 };

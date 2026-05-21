@@ -4164,16 +4164,9 @@ app.post('/api/admin/users/upload', upload.single('file'), async (req, res) => {
   }
 });
 
-// Teacher CSV Upload Endpoint
-app.options('/api/admin/teachers/upload', (req, res) => {
-  res.header('Access-Control-Allow-Origin', req.headers.origin || '*');
-  res.header('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  res.header('Access-Control-Allow-Credentials', 'true');
-  res.sendStatus(200);
-});
+// Teacher CSV upload: see routes/admin.js POST /teachers/upload → uploadTeachersCsv
 
-app.post('/api/admin/teachers/upload', requireAuth, requireAdmin, upload.single('file'), async (req, res) => {
+app.post('/api/admin/teachers/upload__legacy_removed', requireAuth, requireAdmin, upload.single('file'), async (req, res) => {
   try {
     console.log('Teacher CSV upload request received');
     console.log('File:', req.file ? `${req.file.originalname} (${req.file.size} bytes)` : 'No file');

@@ -30,6 +30,7 @@ import {
   formatSchoolListItem,
   findSchoolByAdminId,
   deleteSchoolById,
+  resolveSchoolAndAdminByParamId,
   normalizePhoneTenDigits,
   isValidOptionalPhoneTenDigits,
 } from '../services/schoolService.js';
@@ -799,20 +800,17 @@ export const updateAdmin = async (req, res) => {
       state,
       schoolDetails: rawSchoolDetails
     } = req.body;
-    const adminId = req.params.id;
-    
-    console.log('📝 Updating admin:', adminId, { name, email, board, schoolName, isActive });
-    
-    // Check if admin exists
-    const admin = await User.findById(adminId);
-    if (!admin || admin.role !== 'admin') {
-      console.error('Admin not found:', adminId);
-      return res.status(404).json({ success: false, message: 'Admin not found' });
+    const paramId = req.params.id;
+
+    console.log('📝 Updating admin:', paramId, { name, email, board, schoolName, isActive });
+
+    const { admin, school } = await resolveSchoolAndAdminByParamId(paramId);
+    if (!admin) {
+      console.error('Admin not found for param:', paramId);
+      return res.status(404).json({ success: false, message: 'School not found' });
     }
 
-    let school = admin.schoolId
-      ? await School.findById(admin.schoolId)
-      : await School.findOne({ adminUserId: adminId });
+    const adminId = admin._id.toString();
 
     // Prepare update object
     const updateData = {};
@@ -1011,16 +1009,29 @@ export const updateAdmin = async (req, res) => {
 // Delete Admin (School) - Cascading deletion
 export const deleteAdmin = async (req, res) => {
   try {
-    const adminId = req.params.id;
-    
-    // Check if admin exists
-    const admin = await User.findById(adminId);
-    if (!admin || admin.role !== 'admin') {
+    const paramId = req.params.id;
+    const { admin, school } = await resolveSchoolAndAdminByParamId(paramId);
+
+    if (!admin && !school) {
       return res.status(404).json({ success: false, message: 'School not found' });
     }
-    
-    const adminEmail = admin.email; // Store email for verification
-    console.log(`🗑️ Starting deletion of school: ${adminEmail} (ID: ${adminId})`);
+
+    const adminId = admin?._id?.toString() || school?.adminUserId?.toString();
+    const adminEmail = admin?.email || school?.name || 'unknown';
+    console.log(
+      `🗑️ Starting deletion of school: ${adminEmail} (param: ${paramId}, admin: ${adminId || 'none'}, school: ${school?._id || 'none'})`
+    );
+
+    if (!adminId) {
+      if (school?._id) {
+        await deleteSchoolById(school._id);
+      }
+      return res.json({
+        success: true,
+        message: 'School record deleted successfully',
+        deletedEmail: adminEmail,
+      });
+    }
     
     // Import all required models
     const Teacher = (await import('../models/Teacher.js')).default;
@@ -1058,8 +1069,12 @@ export const deleteAdmin = async (req, res) => {
       Class.deleteMany({ assignedAdmin: adminId }),
       // Delete all streams created by this admin
       Stream.deleteMany({ adminId }),
-      // Finally, delete the admin itself - use deleteOne to ensure complete removal
-      User.deleteOne({ _id: adminId })
+      // Finally, delete the admin login user
+      User.deleteOne({ _id: adminId }),
+      // Remove canonical school row from schools collection
+      school?._id
+        ? School.deleteOne({ _id: school._id })
+        : School.deleteOne({ adminUserId: adminId }),
     ]);
     
     // Verify the admin was actually deleted
