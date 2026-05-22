@@ -227,6 +227,7 @@ async function resolveStudentSubjectIdsForLibrary(student, adminBoardRaw, studen
 
   const autoSubjects = await Subject.find({
     isActive: true,
+    name: { $not: /__deleted__/ },
     board: { $in: Array.from(boardSet) },
     $or: [{ classNumber: { $in: Array.from(classNumVariants) } }, ...suffixConditions],
   })
@@ -237,11 +238,7 @@ async function resolveStudentSubjectIdsForLibrary(student, adminBoardRaw, studen
     addId(row._id);
   }
 
-  const candidateIds = Array.from(idStrToOid.values());
-  if (!candidateIds.length) return [];
-
-  const { filterToActiveSubjectObjectIds } = await import('../utils/activeCatalogFilters.js');
-  return filterToActiveSubjectObjectIds(candidateIds);
+  return Array.from(idStrToOid.values());
 }
 
 // Get student's assigned admin and filter content accordingly
@@ -1354,13 +1351,18 @@ router.get('/asli-prep-content', async (req, res) => {
       (await User.findById(student.assignedAdmin).select('board').lean())?.board ||
       student.board;
 
-    const classSubjectIds = await resolveStudentSubjectIdsForLibrary(
+    let classSubjectIds = await resolveStudentSubjectIdsForLibrary(
       student,
       adminBoard,
       studentClassDoc
     );
 
-    console.log(`📚 Resolved ${classSubjectIds.length} subject ids for library`);
+    const { filterToActiveCatalogSubjectIds, buildActiveSubjectIdSet, filterContentRowsForActiveCatalog } =
+      await import('../utils/activeCatalog.js');
+    classSubjectIds = await filterToActiveCatalogSubjectIds(classSubjectIds);
+    const activeIdSet = buildActiveSubjectIdSet(classSubjectIds);
+
+    console.log(`📚 Resolved ${classSubjectIds.length} active catalog subject ids for library`);
 
     if (classSubjectIds.length === 0) {
       console.log('❌ No subjects resolved for student class');
@@ -1407,8 +1409,11 @@ router.get('/asli-prep-content', async (req, res) => {
     console.log('📋 Content query:', JSON.stringify(query, null, 2));
 
     let contents = await Content.find(query)
-      .populate('subject', 'name')
-      .sort({ createdAt: -1 });
+      .populate('subject', 'name isActive')
+      .sort({ createdAt: -1 })
+      .lean();
+
+    contents = filterContentRowsForActiveCatalog(contents, activeIdSet);
 
     const classLabelFromContent = (doc) => {
       const cn = doc.classNumber;
@@ -3957,12 +3962,16 @@ router.get('/subjects', async (req, res) => {
       });
     }
 
+    const { filterToActiveCatalogSubjectIds } = await import('../utils/activeCatalog.js');
+    const activeSubjectIdList = await filterToActiveCatalogSubjectIds(subjectIdList);
+
     const subjects = await Subject.find({
-      _id: { $in: subjectIdList },
+      _id: { $in: activeSubjectIdList },
       isActive: true,
+      name: { $not: /__deleted__/ },
     }).sort({ name: 1 });
 
-    console.log(`📚 Returning ${subjects.length} subjects after class + board merge`);
+    console.log(`📚 Returning ${subjects.length} active catalog subjects after class + board merge`);
     
     // Get teachers assigned to this admin who teach these subjects
     const Teacher = (await import('../models/Teacher.js')).default;

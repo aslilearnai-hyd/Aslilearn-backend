@@ -7,6 +7,14 @@ import ExamResult from '../models/ExamResult.js';
 import User from '../models/User.js';
 import Teacher from '../models/Teacher.js';
 import { VALID_SCHOOL_BOARDS, isValidSchoolBoard } from '../constants/boards.js';
+import { subjectDisplayName } from '../utils/subjectDelete.js';
+import { isSoftDeletedSubjectName } from '../utils/activeCatalog.js';
+
+function classNumberFromSubjectName(name) {
+  const base = subjectDisplayName(name);
+  const match = base.match(/_(\d+)$/);
+  return match ? match[1] : null;
+}
 import {
   BOARD_DISPLAY_NAMES,
   buildAdminBoardQuery,
@@ -502,6 +510,11 @@ export const createSubject = async (req, res) => {
       existingInactive.isActive = true;
       await existingInactive.save();
 
+      await Content.updateMany(
+        { subject: existingInactive._id, isActive: false },
+        { $set: { isActive: true } }
+      );
+
       return res.json({
         success: true,
         data: existingInactive,
@@ -604,7 +617,11 @@ export const getSubjectsByBoard = async (req, res) => {
       });
     }
 
-    const subjects = await Subject.find({ board: boardUpper, isActive: true }).sort({ name: 1 });
+    const subjects = await Subject.find({
+      board: boardUpper,
+      isActive: true,
+      name: { $not: /__deleted__/ },
+    }).sort({ name: 1 });
 
     console.log(`✅ Found ${subjects.length} subjects for board ${boardUpper}`);
 
@@ -945,16 +962,13 @@ function inferSubjectDisplayNameFromContent(row) {
 export const getContentByBoard = async (req, res) => {
   try {
     const { board } = req.params;
-    const { subject, type, topic } = req.query;
+    const { subject, type, topic, includeInactive } = req.query;
+    const showInactive =
+      includeInactive === 'true' && req.user?.role === 'super-admin';
 
     // Remove board restriction - show all content regardless of board
     // Board parameter is kept for backward compatibility but not used in filtering
-    // Super admin sees all active curriculum content (teacher homework uses isExclusive: false)
-    const query = { isActive: true };
-    const { applyActiveSubjectFilterToContentQuery } = await import(
-      '../utils/activeCatalogFilters.js'
-    );
-    await applyActiveSubjectFilterToContentQuery(query);
+    const query = showInactive ? {} : { isActive: true };
 
     if (subject) query.subject = subject;
     if (type) query.type = type;
@@ -965,41 +979,54 @@ export const getContentByBoard = async (req, res) => {
       ...new Set(rows.map((r) => r.subject).filter(Boolean).map((id) => String(id))),
     ];
     const subjectDocs = subjectIds.length
-      ? await Subject.find({ _id: { $in: subjectIds }, isActive: true })
+      ? await Subject.find({ _id: { $in: subjectIds } })
           .select('name board classNumber stateName isActive')
           .lean()
       : [];
     const subjectById = new Map(subjectDocs.map((s) => [String(s._id), s]));
 
     const data = rows
-      .filter((row) => {
-        const subjectId = row.subject ? String(row.subject) : null;
-        if (!subjectId) return false;
-        const subjectDoc = subjectById.get(subjectId);
-        return Boolean(subjectDoc);
-      })
       .map((row) => {
       const subjectId = row.subject ? String(row.subject) : null;
       const subjectDoc = subjectId ? subjectById.get(subjectId) : null;
-      const displayName = subjectDoc?.name || inferSubjectDisplayNameFromContent(row);
+      const displayName = subjectDoc?.name
+        ? subjectDisplayName(subjectDoc.name)
+        : inferSubjectDisplayNameFromContent(row);
+      const resolvedClassNumber =
+        (row.classNumber != null && String(row.classNumber).trim() !== ''
+          ? String(row.classNumber).trim()
+          : null) ||
+        (subjectDoc?.classNumber != null && String(subjectDoc.classNumber).trim() !== ''
+          ? String(subjectDoc.classNumber).trim()
+          : null) ||
+        classNumberFromSubjectName(subjectDoc?.name || '') ||
+        null;
+      const catalogActive =
+        subjectDoc &&
+        subjectDoc.isActive !== false &&
+        !isSoftDeletedSubjectName(subjectDoc.name);
+
       return {
         ...row,
         subject: subjectId
           ? {
               _id: subjectId,
               name: displayName,
-              board: subjectDoc?.board,
-              classNumber: subjectDoc?.classNumber,
+              board: subjectDoc?.board || row.board,
+              classNumber: resolvedClassNumber || undefined,
               stateName: subjectDoc?.stateName,
-              missingFromCatalog: !subjectDoc,
+              missingFromCatalog: !catalogActive,
             }
           : {
               _id: `inferred-${displayName.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
               name: displayName,
+              classNumber: resolvedClassNumber || undefined,
+              board: row.board,
               missingFromCatalog: true,
             },
       };
-    });
+    })
+      .filter(Boolean);
 
     res.json({ success: true, data });
   } catch (error) {

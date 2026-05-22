@@ -2112,7 +2112,7 @@ export const getSubjects = async (req, res) => {
     const includeInactive = req.query.includeInactive === 'true';
 
     if (req.user?.role === 'super-admin') {
-      const query = includeInactive ? {} : { isActive: true };
+      const query = includeInactive ? {} : { isActive: true, name: { $not: /__deleted__/ } };
       const subjects = await Subject.find(query).sort({ name: 1 }).lean();
       const teachers = await Teacher.find({ isActive: true })
         .select('_id fullName email subjects')
@@ -2156,7 +2156,10 @@ export const getSubjects = async (req, res) => {
     const boardList = boardsForAdminSubjectScope(admin);
 
     const subjectQuery = { board: { $in: boardList } };
-    if (!includeInactive) subjectQuery.isActive = true;
+    if (!includeInactive) {
+      subjectQuery.isActive = true;
+      subjectQuery.name = { $not: /__deleted__/ };
+    }
     const subjects = await Subject.find(subjectQuery).sort({ name: 1 }).lean();
 
     const teachers = await Teacher.find({ isActive: true })

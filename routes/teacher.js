@@ -1343,24 +1343,25 @@ router.get('/asli-prep-content', async (req, res) => {
     }
     
     let assignedSubjectIds = getExplicitTeacherSubjectObjectIds(teacher);
-    const { filterToActiveSubjectObjectIds } = await import('../utils/activeCatalogFilters.js');
-    assignedSubjectIds = await filterToActiveSubjectObjectIds(assignedSubjectIds);
-    
+    const { filterToActiveCatalogSubjectIds, buildActiveSubjectIdSet, filterContentRowsForActiveCatalog } =
+      await import('../utils/activeCatalog.js');
+    assignedSubjectIds = await filterToActiveCatalogSubjectIds(assignedSubjectIds);
+
     if (assignedSubjectIds.length === 0) {
-      console.log('❌ Teacher has no active subjects on profile');
+      console.log('❌ Teacher has no active catalog subjects on profile');
       return res.json({
         success: true,
         data: []
       });
     }
-    
-    console.log(`📋 Teacher active subject ids: ${assignedSubjectIds.length}`);
-    
-    // Build query - filter by teacher's assigned subjects
+
+    const activeIdSet = buildActiveSubjectIdSet(assignedSubjectIds);
+
+    console.log(`📋 Teacher active catalog subject ids: ${assignedSubjectIds.length}`);
+
     const query = {
       subject: { $in: assignedSubjectIds },
       isActive: true,
-      isExclusive: true
     };
     
     // If specific subject is requested, validate it's in teacher's subject scope
@@ -1389,15 +1390,18 @@ router.get('/asli-prep-content', async (req, res) => {
     
     console.log('📋 Content query:', JSON.stringify(query, null, 2));
     
-    const contents = await Content.find(query)
-      .populate('subject', 'name')
-      .sort({ createdAt: -1 });
-    
-    console.log(`✅ Found ${contents.length} contents for teacher's subjects`);
-    
+    let contents = await Content.find(query)
+      .populate('subject', 'name isActive')
+      .sort({ createdAt: -1 })
+      .lean();
+
+    contents = filterContentRowsForActiveCatalog(contents, activeIdSet);
+
+    console.log(`✅ Found ${contents.length} active catalog contents for teacher`);
+
     res.json({
       success: true,
-      data: contents
+      data: contents,
     });
   } catch (error) {
     console.error('❌ Error fetching Asli Prep content for teacher:', error);

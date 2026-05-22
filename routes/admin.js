@@ -9,6 +9,11 @@ import Assessment from '../models/Assessment.js';
 import Exam from '../models/Exam.js';
 import Question from '../models/Question.js';
 import Content from '../models/Content.js';
+import {
+  buildActiveSubjectIdSet,
+  filterContentRowsForActiveCatalog,
+  getActiveCatalogSubjectIds,
+} from '../utils/activeCatalog.js';
 import TeacherWorkDiary from '../models/TeacherWorkDiary.js';
 import RiskAnalysisReport from '../models/RiskAnalysisReport.js';
 import {
@@ -181,44 +186,46 @@ router.get('/asli-prep-content', async (req, res) => {
     // Content is filtered only by class/subject, not by board
     console.log('📚 Fetching all content (board restrictions removed)');
     
-    // Build query - no board filtering, show all content
+    // Match Super Admin catalog: active content on active subjects only (no soft-deleted rows).
+    const activeSubjectIds = await getActiveCatalogSubjectIds();
+    const activeIdSet = buildActiveSubjectIdSet(activeSubjectIds);
+
     const query = {
       isActive: true,
-      isExclusive: true
+      subject: { $in: activeSubjectIds },
     };
 
-    const { applyActiveSubjectFilterToContentQuery } = await import(
-      '../utils/activeCatalogFilters.js'
-    );
-    await applyActiveSubjectFilterToContentQuery(query);
-    
-    // If specific subject is requested
-    if (subject && subject !== 'all') {
-      if (mongoose.Types.ObjectId.isValid(subject)) {
-        query.subject = subject;
-        await applyActiveSubjectFilterToContentQuery(query);
+    if (subject && subject !== 'all' && mongoose.Types.ObjectId.isValid(subject)) {
+      const sid = String(subject);
+      if (activeIdSet.has(sid)) {
+        query.subject = new mongoose.Types.ObjectId(sid);
+      } else {
+        return res.json({ success: true, data: [] });
       }
     }
-    
+
     if (type && type !== 'all') {
       query.type = type;
     }
-    
+
     if (topic && topic.trim()) {
       query.topic = { $regex: topic.trim(), $options: 'i' };
     }
-    
+
     console.log('📋 Content query:', JSON.stringify(query, null, 2));
-    
-    const contents = await Content.find(query)
-      .populate('subject', 'name')
-      .sort({ createdAt: -1 });
-    
-    console.log(`✅ Found ${contents.length} contents (all boards visible)`);
-    
+
+    let contents = await Content.find(query)
+      .populate('subject', 'name isActive classNumber board stateName')
+      .sort({ createdAt: -1 })
+      .lean();
+
+    contents = filterContentRowsForActiveCatalog(contents, activeIdSet);
+
+    console.log(`✅ Found ${contents.length} active catalog contents`);
+
     res.json({
       success: true,
-      data: contents
+      data: contents,
     });
   } catch (error) {
     console.error('❌ Error fetching Asli Prep content for admin:', error);
