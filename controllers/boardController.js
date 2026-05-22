@@ -968,7 +968,8 @@ export const getContentByBoard = async (req, res) => {
 
     // Remove board restriction - show all content regardless of board
     // Board parameter is kept for backward compatibility but not used in filtering
-    const query = showInactive ? {} : { isActive: true };
+    // Include legacy rows with no isActive field; exclude only explicit soft-deletes.
+    const query = showInactive ? {} : { isActive: { $ne: false } };
 
     if (subject) query.subject = subject;
     if (type) query.type = type;
@@ -1044,13 +1045,10 @@ export const deleteContent = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Invalid content ID' });
     }
 
-    const content = await Content.findById(contentId);
+    const content = await Content.findByIdAndDelete(contentId);
     if (!content) {
       return res.status(404).json({ success: false, message: 'Content not found' });
     }
-
-    content.isActive = false;
-    await content.save();
 
     res.json({ success: true, message: 'Content deleted successfully' });
   } catch (error) {
@@ -1063,7 +1061,19 @@ export const deleteContent = async (req, res) => {
 export const updateContent = async (req, res) => {
   try {
     const { contentId } = req.params;
-    const { title, description, fileUrl, fileUrls, topic, date, classNumber, board: rawBoard, stateName: rawStateName } = req.body;
+    const {
+      title,
+      description,
+      fileUrl,
+      fileUrls,
+      thumbnailUrl,
+      isActive,
+      topic,
+      date,
+      classNumber,
+      board: rawBoard,
+      stateName: rawStateName,
+    } = req.body;
 
     if (!contentId || !mongoose.Types.ObjectId.isValid(contentId)) {
       return res.status(400).json({ success: false, message: 'Invalid content ID' });
@@ -1141,6 +1151,14 @@ export const updateContent = async (req, res) => {
     } else if (fileUrl !== undefined) {
       content.fileUrl = fileUrl;
       content.fileUrls = [fileUrl];
+    }
+
+    if (thumbnailUrl !== undefined && String(thumbnailUrl).trim()) {
+      content.thumbnailUrl = String(thumbnailUrl).trim();
+    }
+
+    if (isActive !== undefined) {
+      content.isActive = isActive !== false && isActive !== 'false';
     }
 
     await content.save();
