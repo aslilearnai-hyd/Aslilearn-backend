@@ -781,7 +781,7 @@ export const createAdmin = async (req, res) => {
   }
 };
 
-// Update Admin
+// Update Admin (syncs schools collection + admin login user)
 export const updateAdmin = async (req, res) => {
   try {
     const {
@@ -793,15 +793,7 @@ export const updateAdmin = async (req, res) => {
       board,
       isAsliPrepExclusive,
       schoolName,
-      schoolLogo,
-      contactPerson,
-      phone,
-      secondaryContactPerson,
-      secondaryContactPhone,
-      place,
-      pin,
-      state,
-      schoolDetails: rawSchoolDetails
+      schoolDetails: rawSchoolDetails,
     } = req.body;
     const paramId = req.params.id;
 
@@ -814,26 +806,23 @@ export const updateAdmin = async (req, res) => {
     }
 
     const adminId = admin._id.toString();
+    const userUpdate = {};
 
-    // Prepare update object
-    const updateData = {};
-    const schoolUpdate = {};
     if (name !== undefined && name !== null && name.trim() !== '') {
-      updateData.fullName = name.trim();
+      userUpdate.fullName = name.trim();
     }
     if (email !== undefined && email !== null && email.trim() !== '') {
       const emailLower = email.toLowerCase().trim();
-      // Check if email is being changed and if it's already taken
       if (emailLower !== admin.email.toLowerCase()) {
         const existingUser = await User.findOne({ email: emailLower });
         if (existingUser && existingUser._id.toString() !== adminId) {
           return res.status(400).json({ success: false, message: 'Email already exists' });
         }
-        updateData.email = emailLower;
+        userUpdate.email = emailLower;
       }
     }
-    if (permissions !== undefined) updateData.permissions = permissions;
-    if (isActive !== undefined) updateData.isActive = Boolean(isActive);
+    if (permissions !== undefined) userUpdate.permissions = permissions;
+    if (isActive !== undefined) userUpdate.isActive = Boolean(isActive);
 
     if (password !== undefined && password !== null && String(password).trim() !== '') {
       const plainPassword = String(password).trim();
@@ -843,20 +832,26 @@ export const updateAdmin = async (req, res) => {
           message: 'Password must be at least 6 characters',
         });
       }
-      updateData.password = await bcrypt.hash(plainPassword, 10);
+      userUpdate.password = await bcrypt.hash(plainPassword, 10);
     }
 
-    const touchedCurriculum =
-      board !== undefined && board !== null && String(board).trim() !== '';
-    const touchedExclusive = isAsliPrepExclusive !== undefined && isAsliPrepExclusive !== null;
+    const schoolProfileTouched =
+      schoolName !== undefined ||
+      req.body.schoolLogo !== undefined ||
+      req.body.contactPerson !== undefined ||
+      req.body.phone !== undefined ||
+      req.body.secondaryContactPerson !== undefined ||
+      req.body.secondaryContactPhone !== undefined ||
+      req.body.pin !== undefined ||
+      rawSchoolDetails !== undefined ||
+      req.body.state !== undefined ||
+      board !== undefined ||
+      isAsliPrepExclusive !== undefined;
 
-    if (touchedCurriculum || touchedExclusive) {
-      let curriculum =
-        admin.curriculumBoard ||
-        (isStoredCurriculumBoard(admin.board) ? String(admin.board).toUpperCase().trim() : '');
-      if (!isValidCurriculumBoard(curriculum)) curriculum = 'CBSE';
+    let updatedSchool = school;
 
-      if (touchedCurriculum) {
+    if (schoolProfileTouched) {
+      if (board !== undefined && board !== null && String(board).trim() !== '') {
         const cu = String(board).toUpperCase().trim();
         if (!isValidCurriculumBoard(cu)) {
           return res.status(400).json({
@@ -864,122 +859,84 @@ export const updateAdmin = async (req, res) => {
             message: `Board (curriculum) must be one of: ${CURRICULUM_BOARDS.join(', ')}`,
           });
         }
-        curriculum = cu;
-        updateData.curriculumBoard = cu;
       }
 
-      let exclusive =
-        admin.isAsliPrepExclusive === true || admin.board === 'ASLI_EXCLUSIVE_SCHOOLS';
-      if (touchedExclusive) {
-        exclusive = Boolean(isAsliPrepExclusive);
-        updateData.isAsliPrepExclusive = exclusive;
+      const schoolFields = buildSchoolFieldsFromBody(req.body);
+      if (schoolName !== undefined && schoolName !== null && !schoolFields.name) {
+        return res.status(400).json({ success: false, message: 'School name is required' });
       }
-
-      updateData.board = resolveAdminStoredBoard(exclusive, curriculum);
-    }
-    if (schoolName !== undefined && schoolName !== null) {
-      updateData.schoolName = schoolName.trim();
-    }
-    if (schoolLogo !== undefined && schoolLogo !== null) {
-      updateData.schoolLogo = schoolLogo.trim();
-    }
-    if (contactPerson !== undefined && contactPerson !== null) {
-      updateData.contactPerson = contactPerson.trim();
-    }
-    if (phone !== undefined && phone !== null) {
-      const normalizedPhone = normalizePhoneTenDigits(phone);
-      if (!isValidOptionalPhoneTenDigits(normalizedPhone)) {
-        return res.status(400).json({
-          success: false,
-          message: 'Primary contact number must be exactly 10 digits, or left empty',
-        });
-      }
-      updateData.phone = normalizedPhone;
-    }
-    if (secondaryContactPerson !== undefined && secondaryContactPerson !== null) {
-      updateData.secondaryContactPerson = String(secondaryContactPerson).trim();
-    }
-    if (secondaryContactPhone !== undefined && secondaryContactPhone !== null) {
-      const normalizedSecondary = normalizePhoneTenDigits(secondaryContactPhone);
-      if (!isValidOptionalPhoneTenDigits(normalizedSecondary)) {
-        return res.status(400).json({
-          success: false,
-          message: 'Secondary contact number must be exactly 10 digits, or left empty',
-        });
-      }
-      updateData.secondaryContactPhone = normalizedSecondary;
-    }
-    if (place !== undefined && place !== null) {
-      updateData.place = place.trim();
-    }
-    if (pin !== undefined && pin !== null) {
-      updateData.pin = pin.trim();
-    }
-
-    const currentSd =
-      admin.schoolDetails && typeof admin.schoolDetails.toObject === 'function'
-        ? admin.schoolDetails.toObject()
-        : { ...(admin.schoolDetails || {}) };
-
-    if (rawSchoolDetails !== undefined && rawSchoolDetails !== null) {
-      const merged = {
-        ...currentSd,
-        ...(typeof rawSchoolDetails === 'object' ? rawSchoolDetails : {})
-      };
-      const normalized = normalizeSchoolDetails(merged, state ?? merged.state);
-      if (!normalized.city || !normalized.district || !normalized.state) {
-        return res.status(400).json({
-          success: false,
-          message: 'City, district, and state are required for school information'
-        });
-      }
-      updateData.schoolDetails = normalized;
-      const placeLine =
-        place !== undefined && place !== null && String(place).trim()
-          ? String(place).trim()
-          : [normalized.city, normalized.district, normalized.state].filter(Boolean).join(', ');
-      updateData.place = placeLine;
-    } else if (state !== undefined && state !== null && String(state).trim() !== '') {
-      const normalized = normalizeSchoolDetails(
-        { ...currentSd, state: String(state).trim() },
-        state
-      );
-      updateData.schoolDetails = normalized;
-      const noExplicitPlace =
-        place === undefined || place === null || String(place).trim() === '';
       if (
-        noExplicitPlace &&
-        normalized.city &&
-        normalized.district &&
-        normalized.state
+        !schoolFields.schoolDetails.city ||
+        !schoolFields.schoolDetails.district ||
+        !schoolFields.schoolDetails.state
       ) {
-        updateData.place = [normalized.city, normalized.district, normalized.state]
-          .filter(Boolean)
-          .join(', ');
+        return res.status(400).json({
+          success: false,
+          message: 'City, district, and state are required for school information',
+        });
       }
+      if (
+        !isValidOptionalPhoneTenDigits(schoolFields.phone) ||
+        !isValidOptionalPhoneTenDigits(schoolFields.secondaryContactPhone)
+      ) {
+        return res.status(400).json({
+          success: false,
+          message: 'Phone numbers must be exactly 10 digits, or left empty',
+        });
+      }
+      if (isActive !== undefined) {
+        schoolFields.isActive = Boolean(isActive);
+      }
+
+      if (school) {
+        updatedSchool = await School.findByIdAndUpdate(school._id, schoolFields, {
+          new: true,
+          runValidators: true,
+        });
+      } else {
+        updatedSchool = await School.create({
+          ...schoolFields,
+          adminUserId: admin._id,
+          contactPerson: schoolFields.contactPerson || admin.fullName || '',
+          isActive: isActive !== undefined ? Boolean(isActive) : admin.isActive !== false,
+        });
+        if (!admin.schoolId) {
+          userUpdate.schoolId = updatedSchool._id;
+        }
+      }
+
+      applySchoolToAdminUser(userUpdate, updatedSchool);
+    } else if (isActive !== undefined && school) {
+      updatedSchool = await School.findByIdAndUpdate(
+        school._id,
+        { isActive: Boolean(isActive) },
+        { new: true }
+      );
     }
 
-    console.log('Update data:', updateData);
+    console.log('Update data:', userUpdate);
 
-    const updatedAdmin = await User.findByIdAndUpdate(
-      adminId,
-      updateData,
-      { new: true, runValidators: false } // Using runValidators: false to avoid board enum issues
-    );
-    
+    const updatedAdmin = await User.findByIdAndUpdate(adminId, userUpdate, {
+      new: true,
+      runValidators: false,
+    });
+
     if (!updatedAdmin) {
       return res.status(500).json({ success: false, message: 'Failed to update admin' });
     }
 
     console.log('✅ Admin updated successfully:', updatedAdmin.email, updatedAdmin.board);
+    if (updatedSchool) {
+      console.log('✅ School record synced:', updatedSchool.name, updatedSchool._id);
+    }
 
     const boardSyncFields = {};
-    if (updateData.board !== undefined) boardSyncFields.board = updateData.board;
-    if (updateData.curriculumBoard !== undefined) {
-      boardSyncFields.curriculumBoard = updateData.curriculumBoard;
+    if (userUpdate.board !== undefined) boardSyncFields.board = userUpdate.board;
+    if (userUpdate.curriculumBoard !== undefined) {
+      boardSyncFields.curriculumBoard = userUpdate.curriculumBoard;
     }
-    if (updateData.isAsliPrepExclusive !== undefined) {
-      boardSyncFields.isAsliPrepExclusive = updateData.isAsliPrepExclusive;
+    if (userUpdate.isAsliPrepExclusive !== undefined) {
+      boardSyncFields.isAsliPrepExclusive = userUpdate.isAsliPrepExclusive;
     }
     if (Object.keys(boardSyncFields).length > 0) {
       const studentSync = await User.updateMany(
@@ -991,34 +948,13 @@ export const updateAdmin = async (req, res) => {
       );
     }
 
-    const sd =
-      updatedAdmin.schoolDetails && typeof updatedAdmin.schoolDetails.toObject === 'function'
-        ? updatedAdmin.schoolDetails.toObject()
-        : updatedAdmin.schoolDetails || {};
+    const schoolLean = updatedSchool?.toObject?.() || updatedSchool;
+    const adminLean = updatedAdmin.toObject();
 
     res.json({
       success: true,
       message: 'Admin updated successfully',
-      data: {
-        id: updatedAdmin._id,
-        name: updatedAdmin.fullName,
-        email: updatedAdmin.email,
-        board: updatedAdmin.board,
-        curriculumBoard: updatedAdmin.curriculumBoard,
-        isAsliPrepExclusive: updatedAdmin.isAsliPrepExclusive,
-        schoolName: updatedAdmin.schoolName,
-        schoolLogo: updatedAdmin.schoolLogo,
-        contactPerson: updatedAdmin.contactPerson,
-        phone: updatedAdmin.phone,
-        secondaryContactPerson: updatedAdmin.secondaryContactPerson,
-        secondaryContactPhone: updatedAdmin.secondaryContactPhone,
-        place: updatedAdmin.place,
-        pin: updatedAdmin.pin,
-        state: sd.state || updatedAdmin.place || '',
-        schoolDetails: sd,
-        permissions: updatedAdmin.permissions,
-        status: updatedAdmin.isActive ? 'Active' : 'Inactive'
-      }
+      data: formatSchoolListItem(schoolLean, adminLean),
     });
   } catch (error) {
     console.error('❌ Update admin error:', error);
