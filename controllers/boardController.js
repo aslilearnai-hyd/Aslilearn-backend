@@ -9,12 +9,6 @@ import Teacher from '../models/Teacher.js';
 import { VALID_SCHOOL_BOARDS, isValidSchoolBoard } from '../constants/boards.js';
 import { subjectDisplayName } from '../utils/subjectDelete.js';
 import { isSoftDeletedSubjectName } from '../utils/activeCatalog.js';
-
-function classNumberFromSubjectName(name) {
-  const base = subjectDisplayName(name);
-  const match = base.match(/_(\d+)$/);
-  return match ? match[1] : null;
-}
 import {
   BOARD_DISPLAY_NAMES,
   buildAdminBoardQuery,
@@ -27,6 +21,12 @@ import {
   isUnifiedPlatformBoard,
   buildPlatformAdminQuery,
 } from '../services/boardScope.js';
+
+function classNumberFromSubjectName(name) {
+  const base = subjectDisplayName(name);
+  const match = base.match(/_(\d+)$/);
+  return match ? match[1] : null;
+}
 
 function normalizedStateNameForBoard(boardUpper, rawStateName) {
   if (boardUpper === 'STATE') {
