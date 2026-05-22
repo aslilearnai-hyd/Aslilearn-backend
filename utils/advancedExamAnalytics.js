@@ -57,20 +57,51 @@ export const classifyTimeBucket = (timeTakenSec, difficulty) => {
   return 'in_time';
 };
 
+export const normalizeQuestionCategory = (raw) => {
+  const text = String(raw || '').trim().toLowerCase();
+  if (!text) return '';
+
+  const aliasMap = {
+    numerical: 'Numerical',
+    numeric: 'Numerical',
+    number: 'Numerical',
+    theory: 'Theory',
+    theoretical: 'Theory',
+    formula: 'Formula',
+    equation: 'Formula',
+    diagram: 'Diagram',
+    figure: 'Diagram',
+    graph: 'Graph',
+    plot: 'Graph',
+    'assertion/reason': 'Assertion/Reason',
+    assertion: 'Assertion/Reason',
+    reason: 'Assertion/Reason',
+    comprehension: 'Comprehension',
+    passage: 'Comprehension',
+    'match the following': 'Match the Following',
+    match: 'Match the Following',
+    matching: 'Match the Following',
+  };
+
+  if (aliasMap[text]) return aliasMap[text];
+  const exact = QUESTION_TYPE_ORDER.find((item) => item.toLowerCase() === text);
+  return exact || '';
+};
+
 const inferQuestionTypeCategory = (question = {}) => {
-  const explicit = String(
+  const explicitRaw =
     question.analyticsType ||
-      question.questionCategory ||
-      question.typeTag ||
-      question.questionSubtype ||
-      ''
-  )
-    .trim()
-    .toLowerCase();
+    question.questionCategory ||
+    question.typeTag ||
+    question.questionSubtype ||
+    '';
+  const normalizedExplicit = normalizeQuestionCategory(explicitRaw);
+  if (normalizedExplicit) return normalizedExplicit;
+
   const text = String(question.questionText || '').trim().toLowerCase();
   const questionType = String(question.questionType || '').trim().toLowerCase();
 
-  const source = `${explicit} ${text}`;
+  const source = `${String(explicitRaw).trim().toLowerCase()} ${text}`;
   if (source.includes('assertion') || source.includes('reason')) return 'Assertion/Reason';
   if (source.includes('comprehension') || source.includes('passage')) return 'Comprehension';
   if (source.includes('match the following') || source.includes('match')) return 'Match the Following';
@@ -105,6 +136,41 @@ const resolveChapter = (question = {}) => {
       'General'
   )
     .trim() || 'General';
+};
+
+/** Backfill difficulty / questionCategory on saved attempt rows using live exam questions. */
+export const enrichQuestionAnalyticsFromExamQuestions = (rows = [], examQuestions = []) => {
+  const byId = new Map(
+    (Array.isArray(examQuestions) ? examQuestions : []).map((q) => [String(q?._id || ''), q])
+  );
+
+  return (Array.isArray(rows) ? rows : []).map((row, index) => {
+    const question =
+      byId.get(String(row?.questionId || '')) ||
+      (Array.isArray(examQuestions) ? examQuestions[index] : null) ||
+      {};
+
+    const difficulty = DIFFICULTY_ORDER.includes(row?.difficulty)
+      ? row.difficulty
+      : normalizeDifficulty(question?.difficulty ?? row?.difficulty, question?.marks);
+
+    const explicitCategory = normalizeQuestionCategory(question?.questionCategory);
+    const questionType = QUESTION_TYPE_ORDER.includes(row?.questionType)
+      ? row.questionType
+      : explicitCategory || inferQuestionTypeCategory(question);
+
+    return {
+      ...row,
+      subject: normalizeSubject(row?.subject || question?.subject),
+      chapter: String(row?.chapter || question?.chapter || 'General').trim() || 'General',
+      difficulty,
+      questionType,
+      conceptType:
+        row?.conceptType === 'Application' || question?.conceptType === 'Application'
+          ? 'Application'
+          : 'Concept',
+    };
+  });
 };
 
 export const buildPerQuestionAttemptAnalytics = ({
@@ -154,24 +220,36 @@ export const buildPerQuestionAttemptAnalytics = ({
 
 const average = (sum, count) => (count > 0 ? sum / count : 0);
 
-const buildDifficultyTemplate = () => ({
-  correctAnswered: {
-    count: 0,
-    totalTime: 0,
-    avgTime: 0,
-    inTime: 0,
-    lessTime: 0,
-    overTime: 0,
-  },
-  wrongAnswered: {
-    count: 0,
-    totalTime: 0,
-    avgTime: 0,
-    inTime: 0,
-    lessTime: 0,
-    overTime: 0,
-  },
+const buildTimeBucketStats = () => ({
+  count: 0,
+  totalTime: 0,
+  avgTime: 0,
+  inTime: 0,
+  lessTime: 0,
+  overTime: 0,
+  inTimeTime: 0,
+  lessTimeTime: 0,
+  overTimeTime: 0,
 });
+
+const buildDifficultyTemplate = () => ({
+  correctAnswered: buildTimeBucketStats(),
+  wrongAnswered: buildTimeBucketStats(),
+});
+
+const bumpTimeBucket = (target, bucket, timeTaken) => {
+  const t = Math.max(0, toNumber(timeTaken, 0));
+  if (bucket === 'in_time') {
+    target.inTime += 1;
+    target.inTimeTime += t;
+  } else if (bucket === 'less_time') {
+    target.lessTime += 1;
+    target.lessTimeTime += t;
+  } else if (bucket === 'over_time') {
+    target.overTime += 1;
+    target.overTimeTime += t;
+  }
+};
 
 const buildStatusSubjectTemplate = () => ({
   physics: 0,
@@ -367,10 +445,18 @@ export const generateAdvancedAnalytics = ({
     }
   });
 
+  const finalizeBucketStats = (target) => {
+    target.avgTime = round2(average(target.totalTime, target.count));
+    target.inTimeAvg = round2(average(target.inTimeTime, target.inTime));
+    target.lessTimeAvg = round2(average(target.lessTimeTime, target.lessTime));
+    target.overTimeAvg = round2(average(target.overTimeTime, target.overTime));
+    return target;
+  };
+
   const difficultyTimeIntelligence = DIFFICULTY_ORDER.map((difficulty) => {
     const data = difficultyMap.get(difficulty) || buildDifficultyTemplate();
-    data.correctAnswered.avgTime = round2(average(data.correctAnswered.totalTime, data.correctAnswered.count));
-    data.wrongAnswered.avgTime = round2(average(data.wrongAnswered.totalTime, data.wrongAnswered.count));
+    finalizeBucketStats(data.correctAnswered);
+    finalizeBucketStats(data.wrongAnswered);
     return {
       difficulty,
       idealTimeSec: IDEAL_TIME_BY_DIFFICULTY[difficulty] || 60,

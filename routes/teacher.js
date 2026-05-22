@@ -1342,17 +1342,19 @@ router.get('/asli-prep-content', async (req, res) => {
       });
     }
     
-    const assignedSubjectIds = getExplicitTeacherSubjectObjectIds(teacher);
+    let assignedSubjectIds = getExplicitTeacherSubjectObjectIds(teacher);
+    const { filterToActiveSubjectObjectIds } = await import('../utils/activeCatalogFilters.js');
+    assignedSubjectIds = await filterToActiveSubjectObjectIds(assignedSubjectIds);
     
     if (assignedSubjectIds.length === 0) {
-      console.log('❌ Teacher has no subjects on profile');
+      console.log('❌ Teacher has no active subjects on profile');
       return res.json({
         success: true,
         data: []
       });
     }
     
-    console.log(`📋 Teacher profile subject ids: ${assignedSubjectIds.length}`);
+    console.log(`📋 Teacher active subject ids: ${assignedSubjectIds.length}`);
     
     // Build query - filter by teacher's assigned subjects
     const query = {

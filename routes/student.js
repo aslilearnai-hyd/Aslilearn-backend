@@ -24,6 +24,7 @@ import { fetchRotatingAiToolData } from '../services/ai-tool-rotation-service.js
 import {
   advancedAnalyticsMockData,
   buildPerQuestionAttemptAnalytics,
+  enrichQuestionAnalyticsFromExamQuestions,
   generateAdvancedAnalytics,
 } from '../utils/advancedExamAnalytics.js';
 import { normalizeSchoolBoard } from '../constants/boards.js';
@@ -236,7 +237,11 @@ async function resolveStudentSubjectIdsForLibrary(student, adminBoardRaw, studen
     addId(row._id);
   }
 
-  return Array.from(idStrToOid.values());
+  const candidateIds = Array.from(idStrToOid.values());
+  if (!candidateIds.length) return [];
+
+  const { filterToActiveSubjectObjectIds } = await import('../utils/activeCatalogFilters.js');
+  return filterToActiveSubjectObjectIds(candidateIds);
 }
 
 // Get student's assigned admin and filter content accordingly
@@ -2827,10 +2832,14 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
           : paceSec > 0
             ? ` (~${paceSec}s per question on average)`
             : '';
+      const marksPct =
+        (safeResult.totalMarks || 0) > 0
+          ? ((safeResult.obtainedMarks || 0) / (safeResult.totalMarks || 1)) * 100
+          : pct;
       const summary = [
-        `${introNote}${greetLead}${scoreYou} scored about ${pct.toFixed(1)}% on this attempt (${safeResult.obtainedMarks} / ${safeResult.totalMarks} marks).`,
+        `${introNote}${greetLead}${scoreYou} scored ${safeResult.obtainedMarks} / ${safeResult.totalMarks} marks on this attempt (${marksPct.toFixed(1)}% of total marks).`,
         `Attempt pattern: ${attempted} of ${totalQ} questions touched (${completionPct.toFixed(1)}% completion): ${safeResult.correctAnswers} correct, ${safeResult.wrongAnswers} wrong, ${safeResult.unattempted} skipped.`,
-        `When you did attempt a question, accuracy was ${acc.toFixed(1)}%. That means ${
+        `When you did attempt a question, accuracy was ${acc.toFixed(1)}% (${safeResult.correctAnswers} correct out of ${attempted} attempted). That means ${
           acc < 50
             ? 'most of your losses are conceptual or reading errors—slow down on stems and verify units/conditions.'
             : acc < 75
@@ -3812,20 +3821,24 @@ router.get('/exam/:examId/advanced-analytics', async (req, res) => {
       .sort({ createdAt: 1, _id: 1 })
       .lean();
 
-    const questionAnalytics = Array.isArray(latestResult.questionAnalytics) && latestResult.questionAnalytics.length > 0
-      ? latestResult.questionAnalytics.map((item, index) => ({
-          ...item,
-          questionId: String(item.questionId || ''),
-          index: Number(item.index ?? index),
-          subject: String(item.subject || 'unknown').toLowerCase(),
-          chapter: String(item.chapter || 'General'),
-        }))
-      : buildPerQuestionAttemptAnalytics({
-          questions: examQuestions,
-          answers: latestResult.answers || {},
-          questionTimings: {},
-          isAnswerCorrect,
-        });
+    const questionAnalytics =
+      Array.isArray(latestResult.questionAnalytics) && latestResult.questionAnalytics.length > 0
+        ? enrichQuestionAnalyticsFromExamQuestions(
+            latestResult.questionAnalytics.map((item, index) => ({
+              ...item,
+              questionId: String(item.questionId || ''),
+              index: Number(item.index ?? index),
+              subject: String(item.subject || 'unknown').toLowerCase(),
+              chapter: String(item.chapter || 'General'),
+            })),
+            examQuestions
+          )
+        : buildPerQuestionAttemptAnalytics({
+            questions: examQuestions,
+            answers: latestResult.answers || {},
+            questionTimings: latestResult.questionTimings || {},
+            isAnswerCorrect,
+          });
 
     const advanced = generateAdvancedAnalytics({
       examResult: latestResult,

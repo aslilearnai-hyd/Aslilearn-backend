@@ -3,8 +3,14 @@
  * and rename once so unique name/code indexes allow re-creation.
  */
 export async function softDeleteSubject(subject) {
+  const { default: Content } = await import('../models/Content.js');
   const { removeSubjectIdFromAllAssignments } = await import('./removeSubjectAssignments.js');
   await removeSubjectIdFromAllAssignments(subject._id);
+
+  await Content.updateMany(
+    { subject: subject._id, isActive: true },
+    { $set: { isActive: false } }
+  );
 
   const baseName = String(subject.name || 'subject').split('__deleted__')[0].trim() || 'subject';
   subject.isActive = false;

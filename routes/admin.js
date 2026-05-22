@@ -186,11 +186,17 @@ router.get('/asli-prep-content', async (req, res) => {
       isActive: true,
       isExclusive: true
     };
+
+    const { applyActiveSubjectFilterToContentQuery } = await import(
+      '../utils/activeCatalogFilters.js'
+    );
+    await applyActiveSubjectFilterToContentQuery(query);
     
     // If specific subject is requested
     if (subject && subject !== 'all') {
       if (mongoose.Types.ObjectId.isValid(subject)) {
         query.subject = subject;
+        await applyActiveSubjectFilterToContentQuery(query);
       }
     }
     

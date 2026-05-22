@@ -951,6 +951,10 @@ export const getContentByBoard = async (req, res) => {
     // Board parameter is kept for backward compatibility but not used in filtering
     // Super admin sees all active curriculum content (teacher homework uses isExclusive: false)
     const query = { isActive: true };
+    const { applyActiveSubjectFilterToContentQuery } = await import(
+      '../utils/activeCatalogFilters.js'
+    );
+    await applyActiveSubjectFilterToContentQuery(query);
 
     if (subject) query.subject = subject;
     if (type) query.type = type;
@@ -961,13 +965,20 @@ export const getContentByBoard = async (req, res) => {
       ...new Set(rows.map((r) => r.subject).filter(Boolean).map((id) => String(id))),
     ];
     const subjectDocs = subjectIds.length
-      ? await Subject.find({ _id: { $in: subjectIds } })
-          .select('name board classNumber stateName')
+      ? await Subject.find({ _id: { $in: subjectIds }, isActive: true })
+          .select('name board classNumber stateName isActive')
           .lean()
       : [];
     const subjectById = new Map(subjectDocs.map((s) => [String(s._id), s]));
 
-    const data = rows.map((row) => {
+    const data = rows
+      .filter((row) => {
+        const subjectId = row.subject ? String(row.subject) : null;
+        if (!subjectId) return false;
+        const subjectDoc = subjectById.get(subjectId);
+        return Boolean(subjectDoc);
+      })
+      .map((row) => {
       const subjectId = row.subject ? String(row.subject) : null;
       const subjectDoc = subjectId ? subjectById.get(subjectId) : null;
       const displayName = subjectDoc?.name || inferSubjectDisplayNameFromContent(row);

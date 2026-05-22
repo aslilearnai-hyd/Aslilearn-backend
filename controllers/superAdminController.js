@@ -21,6 +21,7 @@ import {
   isValidCurriculumBoard,
   isStoredCurriculumBoard,
   resolveAdminStoredBoard,
+  resolveUserDisplayBoard,
 } from '../constants/boards.js';
 import School from '../models/School.js';
 import {
@@ -570,11 +571,13 @@ export const getAdminSchoolDetail = async (req, res) => {
         ? admin.schoolDetails.toObject()
         : admin.schoolDetails || {};
 
+    const displayBoard = resolveUserDisplayBoard(admin, null);
+
     const profile = {
       id: admin._id,
       name: admin.fullName,
       email: admin.email,
-      board: admin.board,
+      board: displayBoard || admin.board,
       schoolName: admin.schoolName,
       schoolLogo: admin.schoolLogo,
       contactPerson: admin.contactPerson,
@@ -969,7 +972,25 @@ export const updateAdmin = async (req, res) => {
     }
 
     console.log('✅ Admin updated successfully:', updatedAdmin.email, updatedAdmin.board);
-    
+
+    const boardSyncFields = {};
+    if (updateData.board !== undefined) boardSyncFields.board = updateData.board;
+    if (updateData.curriculumBoard !== undefined) {
+      boardSyncFields.curriculumBoard = updateData.curriculumBoard;
+    }
+    if (updateData.isAsliPrepExclusive !== undefined) {
+      boardSyncFields.isAsliPrepExclusive = updateData.isAsliPrepExclusive;
+    }
+    if (Object.keys(boardSyncFields).length > 0) {
+      const studentSync = await User.updateMany(
+        { role: 'student', assignedAdmin: adminId },
+        { $set: boardSyncFields }
+      );
+      console.log(
+        `📋 Synced board fields to ${studentSync.modifiedCount} student(s) for admin ${adminId}`
+      );
+    }
+
     const sd =
       updatedAdmin.schoolDetails && typeof updatedAdmin.schoolDetails.toObject === 'function'
         ? updatedAdmin.schoolDetails.toObject()

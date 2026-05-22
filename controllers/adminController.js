@@ -395,6 +395,7 @@ export const getTeachers = async (req, res) => {
       subjects: (teacher.subjects || []).filter(
         (s) => s != null && s._id && s.isActive !== false
       ),
+      assignedClassIds: (teacher.assignedClassIds || []).map(String),
       role: teacher.role,
       isActive: teacher.isActive,
       createdAt: teacher.createdAt,
@@ -2065,7 +2066,10 @@ export const getClasses = async (req, res) => {
         classNumber: classDoc.classNumber,
         section: classDoc.section,
         assignedSubjects: assignedSubjects,
-        subject: 'General',
+        subject:
+          assignedSubjects.length > 0
+            ? assignedSubjects.map((s) => s.name).filter(Boolean).join(', ')
+            : 'General',
         grade: classDoc.classNumber,
         teacher: classTeachers.length > 0 ? classTeachers.map(t => t.name).join(', ') : 'TBD',
         teachers: classTeachers,

@@ -14,6 +14,7 @@ import fs from 'fs';
 import axios from 'axios';
 import { cleanCsvCell } from './utils/csv-encoding.js';
 import { spreadsheetBufferToCsv } from './utils/spreadsheet-to-csv.js';
+import { resolveUserDisplayBoard } from './constants/boards.js';
 
 // Get current directory for ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -676,6 +677,10 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
     }
     await user.populate('assignedSubjects', 'name');
     await user.populate('assignedClass', 'classNumber section assignedSubjects');
+    if (user.role === 'student' && user.assignedAdmin) {
+      await user.populate('assignedAdmin', 'board curriculumBoard isAsliPrepExclusive schoolName');
+    }
+    const displayBoard = resolveUserDisplayBoard(user, user.assignedAdmin);
     const userData = {
       id: user._id,
       _id: user._id,
@@ -691,8 +696,12 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
       age: user.age ?? 18,
       educationStream: user.educationStream || '',
       targetExam: user.targetExam || '',
-      board: user.board || '',
-      schoolName: user.schoolName || '',
+      board: displayBoard || user.board || '',
+      curriculumBoard:
+        user.curriculumBoard ||
+        user.assignedAdmin?.curriculumBoard ||
+        (displayBoard && displayBoard !== 'ASLI_EXCLUSIVE_SCHOOLS' ? displayBoard : ''),
+      schoolName: user.schoolName || user.assignedAdmin?.schoolName || '',
       profilePhoto: user.profilePhoto || '',
       assignedSubjects: user.assignedSubjects || [],
       assignedClass: user.assignedClass || null,

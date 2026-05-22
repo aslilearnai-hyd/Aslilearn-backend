@@ -4,6 +4,21 @@ import Question from '../models/Question.js';
 import { cleanCsvCell } from '../utils/csv-encoding.js';
 import { spreadsheetBufferToCsv } from '../utils/spreadsheet-to-csv.js';
 import { VALID_SCHOOL_BOARDS, isValidSchoolBoard } from '../constants/boards.js';
+import {
+  normalizeDifficulty,
+  normalizeQuestionCategory,
+} from '../utils/advancedExamAnalytics.js';
+
+const QUESTION_CATEGORY_CSV_VALUES = [
+  'Numerical',
+  'Theory',
+  'Formula',
+  'Diagram',
+  'Graph',
+  'Assertion/Reason',
+  'Comprehension',
+  'Match the Following',
+];
 
 const GEMINI_BASE_URL = String(
   process.env.GEMINI_API_BASE_URL || 'https://generativelanguage.googleapis.com/v1beta',
@@ -1994,6 +2009,33 @@ export const bulkUploadQuestions = async (req, res) => {
           negativeMarks = parsedNeg;
         }
 
+        const rawCategory = getRowValue(
+          'questioncategory',
+          'question_category',
+          'analytics_type',
+          'analytictype',
+          'analyticsType',
+          'type_tag',
+          'examquestiontype',
+          'exam_question_type',
+          'questionstyle',
+          'question_style'
+        );
+        let questionCategory;
+        if (rawCategory) {
+          const normalizedCategory = normalizeQuestionCategory(rawCategory);
+          if (!normalizedCategory) {
+            errors.push(
+              `Row ${i + 1}: Invalid questionCategory "${rawCategory}". Use one of: ${QUESTION_CATEGORY_CSV_VALUES.join(', ')}`
+            );
+            continue;
+          }
+          questionCategory = normalizedCategory;
+        }
+
+        const rawDifficulty = getRowValue('difficulty', 'difficultylevel', 'difficulty_level');
+        const difficulty = normalizeDifficulty(rawDifficulty, marks);
+
         // Create question data object
         const newQuestionData = {
           questionText: getRowValue('questiontext', 'question_text') || undefined,
@@ -2006,22 +2048,8 @@ export const bulkUploadQuestions = async (req, res) => {
           explanation: getRowValue('explanation') || undefined,
           subject,
           chapter: getRowValue('chapter', 'chaptername', 'chapter_name', 'topic', 'unit') || 'General',
-          difficulty: (() => {
-            const rawDifficulty = String(getRowValue('difficulty', 'difficultylevel', 'difficulty_level') || '').toLowerCase();
-            if (['easy', 'moderate', 'difficult', 'highly_difficult'].includes(rawDifficulty)) {
-              return rawDifficulty;
-            }
-            if (rawDifficulty === 'hard') return 'difficult';
-            if (rawDifficulty === 'medium') return 'moderate';
-            return 'moderate';
-          })(),
-          questionCategory: getRowValue(
-            'questioncategory',
-            'question_category',
-            'analytics_type',
-            'analytictype',
-            'type_tag'
-          ) || undefined,
+          difficulty,
+          questionCategory,
           conceptType: (() => {
             const rawConcept = String(getRowValue('concepttype', 'concept_type', 'skilltype', 'skill_type') || '').toLowerCase();
             if (rawConcept.includes('application') || rawConcept.includes('problem')) return 'Application';
