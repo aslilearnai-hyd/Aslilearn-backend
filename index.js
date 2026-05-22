@@ -683,6 +683,10 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
       fullName: user.fullName,
       role: user.role,
       classNumber: user.classNumber,
+      section:
+        user.assignedClass?.section != null && String(user.assignedClass.section).trim() !== ''
+          ? String(user.assignedClass.section).trim()
+          : '',
       phone: user.phone || '',
       age: user.age ?? 18,
       educationStream: user.educationStream || '',
@@ -691,7 +695,8 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
       schoolName: user.schoolName || '',
       profilePhoto: user.profilePhoto || '',
       assignedSubjects: user.assignedSubjects || [],
-      assignedClass: user.assignedClass || null
+      assignedClass: user.assignedClass || null,
+      studyStreak: user.studyStreak || { current: 0, longest: 0, lastActiveDate: '' },
     };
     if (req.user.role === 'admin') userData.schoolName = user.schoolName || '';
     if (req.user.role === 'teacher') {
