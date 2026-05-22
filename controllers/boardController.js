@@ -6,7 +6,7 @@ import Exam from '../models/Exam.js';
 import ExamResult from '../models/ExamResult.js';
 import User from '../models/User.js';
 import Teacher from '../models/Teacher.js';
-import { VALID_SCHOOL_BOARDS, isValidSchoolBoard } from '../constants/boards.js';
+import { VALID_SCHOOL_BOARDS, CURRICULUM_BOARDS, isValidSchoolBoard } from '../constants/boards.js';
 import { subjectDisplayName } from '../utils/subjectDelete.js';
 import { isSoftDeletedSubjectName } from '../utils/activeCatalog.js';
 import {
@@ -766,9 +766,17 @@ function isStreamableContentType(contentType) {
   return /^(video|audio)$/i.test(String(contentType || '').trim());
 }
 
+function normalizeContentFileUrl(url) {
+  const trimmed = String(url || '').trim();
+  if (!trimmed) return '';
+  if (trimmed.startsWith('/uploads/')) return trimmed;
+  if (trimmed.startsWith('uploads/')) return `/${trimmed}`;
+  return trimmed;
+}
+
 function isAllowedContentFileUrl(url, contentType) {
   if (!url || typeof url !== 'string') return false;
-  const trimmed = url.trim();
+  const trimmed = normalizeContentFileUrl(url);
   if (!trimmed) return false;
   if (trimmed.startsWith('/uploads/')) return true;
   if (isStreamableContentType(contentType)) {
@@ -861,7 +869,7 @@ export const uploadContent = async (req, res) => {
 
     // Use fileUrls if provided, otherwise use fileUrl for backward compatibility
     const finalFileUrls = (hasFileUrls ? fileUrls : hasFileUrl ? [fileUrl] : []).map((u) =>
-      String(u).trim()
+      normalizeContentFileUrl(u)
     );
     const primaryFileUrl = finalFileUrls[0] || '';
 
@@ -1224,14 +1232,14 @@ export const getBoardAnalytics = async (req, res) => {
     const { boardCode } = req.params;
     const boardsToFetch = boardCode
       ? [String(boardCode).toUpperCase().trim()].filter((c) => isValidSchoolBoard(c))
-      : VALID_SCHOOL_BOARDS;
+      : CURRICULUM_BOARDS;
 
     if (boardCode && boardsToFetch.length === 0) {
       return res.status(400).json({ success: false, message: 'Invalid board code' });
     }
 
     let analytics;
-    if (!boardCode && boardsToFetch.length === VALID_SCHOOL_BOARDS.length) {
+    if (!boardCode && boardsToFetch.length === CURRICULUM_BOARDS.length) {
       analytics = await computeAllBoardsMetrics({ Teacher, Exam, ExamResult });
     } else {
       analytics = await Promise.all(

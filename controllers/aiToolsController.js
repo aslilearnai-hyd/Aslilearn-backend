@@ -284,8 +284,19 @@ async function findStoredAiToolContent(classLabel, subjectNormalized, topic, sub
 // Teacher tools: local LLM generates content from class, subject, topic, and tool-specific params
 export const createTeacherTool = async (req, res) => {
   try {
-    const { toolType, classNumber, subject, topic, ...params } = req.body;
+    const { toolType, classNumber, subject, topic, board, ...params } = req.body;
     const teacherId = req.teacherId;
+
+    const { getTeacherSchoolProgramContext, validateAiToolBoardAccess } =
+      await import('../utils/schoolProgram.js');
+    const programCtx = await getTeacherSchoolProgramContext(teacherId);
+    const boardCheck = validateAiToolBoardAccess(programCtx.isAsliPrepExclusive, {
+      board,
+      classNumber,
+    });
+    if (!boardCheck.ok) {
+      return res.status(403).json({ success: false, message: boardCheck.message });
+    }
 
     if (!toolType) {
       return res.status(400).json({

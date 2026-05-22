@@ -1,10 +1,14 @@
 import User from '../models/User.js';
 import {
   VALID_SCHOOL_BOARDS,
+  CURRICULUM_BOARDS,
   isStoredCurriculumBoard,
   isValidCurriculumBoard,
   normalizeSchoolBoard,
 } from '../constants/boards.js';
+
+/** Boards shown in performance comparison (curriculum only — not Asli Exclusive hub). */
+export const COMPARISON_BOARDS = [...CURRICULUM_BOARDS];
 
 /** Human-readable labels for comparison UI */
 export const BOARD_DISPLAY_NAMES = {
@@ -18,14 +22,11 @@ export const BOARD_DISPLAY_NAMES = {
 };
 
 /**
- * Analytics board for a school admin (mutually exclusive buckets).
- * Matches resolveAdminStoredBoard: Asli Prep exclusive OR curriculum code.
+ * Analytics board for comparison charts: always the school's curriculum (CBSE, STATE, …).
+ * Asli Prep schools are bucketed by curriculumBoard, not the ASLI_EXCLUSIVE_SCHOOLS hub code.
  */
 export function resolveAdminEffectiveBoard(admin) {
-  if (!admin) return 'ASLI_EXCLUSIVE_SCHOOLS';
-  if (admin.isAsliPrepExclusive === true) {
-    return 'ASLI_EXCLUSIVE_SCHOOLS';
-  }
+  if (!admin) return 'CBSE';
   const curriculum =
     admin.curriculumBoard ||
     (isStoredCurriculumBoard(admin.board) ? String(admin.board).toUpperCase().trim() : '');
@@ -53,8 +54,10 @@ export function buildAdminBoardQuery(boardCode) {
   }
   return {
     role: 'admin',
-    isAsliPrepExclusive: { $ne: true },
-    $or: [{ board: code }, { curriculumBoard: code }],
+    $or: [
+      { curriculumBoard: code },
+      { board: code, isAsliPrepExclusive: { $ne: true } },
+    ],
   };
 }
 
@@ -100,14 +103,14 @@ export async function buildStudentCountsByBoard() {
   ]);
 
   const adminById = new Map(admins.map((a) => [a._id.toString(), a]));
-  const counts = Object.fromEntries(VALID_SCHOOL_BOARDS.map((b) => [b, 0]));
+  const counts = Object.fromEntries(COMPARISON_BOARDS.map((b) => [b, 0]));
 
   for (const student of students) {
     const board = resolveStudentEffectiveBoard(student, adminById);
     if (counts[board] !== undefined) {
       counts[board] += 1;
     } else {
-      counts.ASLI_EXCLUSIVE_SCHOOLS += 1;
+      counts.CBSE += 1;
     }
   }
 
@@ -162,7 +165,7 @@ export async function computeAllBoardsMetrics({ Teacher, Exam, ExamResult }) {
   const [{ counts }, adminIdsByBoard] = await Promise.all([
     buildStudentCountsByBoard(),
     Promise.all(
-      VALID_SCHOOL_BOARDS.map(async (code) => ({
+      COMPARISON_BOARDS.map(async (code) => ({
         code,
         adminIds: await getAdminIdsForBoard(code),
       }))
@@ -172,7 +175,7 @@ export async function computeAllBoardsMetrics({ Teacher, Exam, ExamResult }) {
   const adminIdMap = Object.fromEntries(adminIdsByBoard.map((r) => [r.code, r.adminIds]));
 
   return Promise.all(
-    VALID_SCHOOL_BOARDS.map(async (code) => {
+    COMPARISON_BOARDS.map(async (code) => {
       const adminIds = adminIdMap[code] || [];
       const students = counts[code] ?? 0;
       const examQuery = buildExamBoardQuery(code);

@@ -536,10 +536,17 @@ router.put('/subjects/:subjectId', updateSubject);
 router.get('/subjects', async (req, res) => {
   try {
     const Subject = (await import('../models/Subject.js')).default;
-    const subjects = await Subject.find({
+    const includeInactive =
+      req.query.includeInactive === 'true' && req.user?.role === 'super-admin';
+    const query = {
       board: { $in: VALID_SCHOOL_BOARDS },
-      isActive: true
-    })
+    };
+    // Super-admin catalog view needs soft-deleted rows to match orphaned content.
+    if (!includeInactive) {
+      query.name = { $not: /__deleted__/ };
+      query.isActive = true;
+    }
+    const subjects = await Subject.find(query)
       .sort({ name: 1 });
     res.json({
       success: true,
@@ -658,6 +665,10 @@ router.post('/content/upload-thumbnail', (req, res, next) => {
 });
 
 router.post('/content', uploadContent);
+router.get('/content', (req, res) => {
+  req.params = { ...req.params, board: 'ALL' };
+  return getContentByBoard(req, res);
+});
 router.get('/boards/:board/content', getContentByBoard);
 router.put('/content/:contentId', updateContent);
 router.delete('/content/:contentId', deleteContent);

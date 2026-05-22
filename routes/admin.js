@@ -185,6 +185,14 @@ router.get('/asli-prep-content', async (req, res) => {
     // Remove board restrictions - show all content to all admins
     // Content is filtered only by class/subject, not by board
     console.log('📚 Fetching all content (board restrictions removed)');
+
+    const { getAdminSchoolProgramContext, applySchoolProgramContentFilters, isAllowedContentType } =
+      await import('../utils/schoolProgram.js');
+    const programCtx = await getAdminSchoolProgramContext(adminId);
+
+    if (type && type !== 'all' && !isAllowedContentType(type, programCtx.isAsliPrepExclusive)) {
+      return res.json({ success: true, data: [] });
+    }
     
     // Match Super Admin catalog: active content on active subjects only (no soft-deleted rows).
     const activeSubjectIds = await getActiveCatalogSubjectIds();
@@ -220,6 +228,8 @@ router.get('/asli-prep-content', async (req, res) => {
       .lean();
 
     contents = filterContentRowsForActiveCatalog(contents, activeIdSet);
+
+    contents = applySchoolProgramContentFilters(contents, programCtx);
 
     console.log(`✅ Found ${contents.length} active catalog contents`);
 

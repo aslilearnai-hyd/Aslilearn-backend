@@ -1330,6 +1330,14 @@ router.get('/asli-prep-content', async (req, res) => {
     
     console.log('📚 Fetching Asli Prep content for teacher:', teacherId);
     console.log('Query params:', { subject, type, topic });
+
+    const { getTeacherSchoolProgramContext, applySchoolProgramContentFilters, isAllowedContentType } =
+      await import('../utils/schoolProgram.js');
+    const programCtx = await getTeacherSchoolProgramContext(teacherId);
+
+    if (type && type !== 'all' && !isAllowedContentType(type, programCtx.isAsliPrepExclusive)) {
+      return res.json({ success: true, data: [] });
+    }
     
     // Get teacher with assigned subjects
     const teacher = await Teacher.findById(teacherId).populate('subjects');
@@ -1391,11 +1399,13 @@ router.get('/asli-prep-content', async (req, res) => {
     console.log('📋 Content query:', JSON.stringify(query, null, 2));
     
     let contents = await Content.find(query)
-      .populate('subject', 'name isActive')
+      .populate('subject', 'name isActive board')
       .sort({ createdAt: -1 })
       .lean();
 
     contents = filterContentRowsForActiveCatalog(contents, activeIdSet);
+
+    contents = applySchoolProgramContentFilters(contents, programCtx);
 
     console.log(`✅ Found ${contents.length} active catalog contents for teacher`);
 

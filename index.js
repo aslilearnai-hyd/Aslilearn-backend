@@ -680,7 +680,21 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
     if (user.role === 'student' && user.assignedAdmin) {
       await user.populate('assignedAdmin', 'board curriculumBoard isAsliPrepExclusive schoolName');
     }
-    const displayBoard = resolveUserDisplayBoard(user, user.assignedAdmin);
+    let teacherAdmin = null;
+    if (user.role === 'teacher') {
+      const teacher = await Teacher.findById(user._id).select('adminId').lean();
+      if (teacher?.adminId) {
+        teacherAdmin = await User.findById(teacher.adminId)
+          .select('board curriculumBoard isAsliPrepExclusive schoolName')
+          .lean();
+      }
+    }
+    const displayBoard = resolveUserDisplayBoard(user, user.assignedAdmin || teacherAdmin);
+    const { resolveIsAsliPrepExclusive } = await import('./utils/schoolProgram.js');
+    const isAsliPrepExclusive = resolveIsAsliPrepExclusive(
+      user,
+      user.role === 'student' ? user.assignedAdmin : teacherAdmin,
+    );
     const userData = {
       id: user._id,
       _id: user._id,
@@ -706,6 +720,7 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
       assignedSubjects: user.assignedSubjects || [],
       assignedClass: user.assignedClass || null,
       studyStreak: user.studyStreak || { current: 0, longest: 0, lastActiveDate: '' },
+      isAsliPrepExclusive,
     };
     if (req.user.role === 'admin') userData.schoolName = user.schoolName || '';
     if (req.user.role === 'teacher') {

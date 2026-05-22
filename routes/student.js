@@ -1330,9 +1330,17 @@ router.get('/asli-prep-content', async (req, res) => {
     
     console.log('📚 Fetching Asli Prep content for student:', req.userId);
     console.log('Query params:', { subject, type, topic });
+
+    const { getStudentSchoolProgramContext, applySchoolProgramContentFilters, isAllowedContentType } =
+      await import('../utils/schoolProgram.js');
+    const programCtx = await getStudentSchoolProgramContext(req.userId);
+
+    if (type && type !== 'all' && !isAllowedContentType(type, programCtx.isAsliPrepExclusive)) {
+      return res.json({ success: true, data: [] });
+    }
     
     const student = await User.findById(req.userId)
-      .populate('assignedAdmin', 'board')
+      .populate('assignedAdmin', 'board curriculumBoard isAsliPrepExclusive')
       .populate('assignedClass', 'classNumber section assignedSubjects');
     
     if (!student) {
@@ -1409,11 +1417,13 @@ router.get('/asli-prep-content', async (req, res) => {
     console.log('📋 Content query:', JSON.stringify(query, null, 2));
 
     let contents = await Content.find(query)
-      .populate('subject', 'name isActive')
+      .populate('subject', 'name isActive board')
       .sort({ createdAt: -1 })
       .lean();
 
     contents = filterContentRowsForActiveCatalog(contents, activeIdSet);
+
+    contents = applySchoolProgramContentFilters(contents, programCtx);
 
     const classLabelFromContent = (doc) => {
       const cn = doc.classNumber;
@@ -4473,8 +4483,19 @@ router.get('/session-time', async (req, res) => {
 // Student AI Tools Route - Uses hardcoded content (same as teacher tools)
 router.post('/ai/tool', async (req, res) => {
   try {
-    const { toolType, gradeLevel, subject, topic, ...params } = req.body;
+    const { toolType, gradeLevel, subject, topic, board, ...params } = req.body;
     const userId = req.userId;
+
+    const { getStudentSchoolProgramContext, validateAiToolBoardAccess } =
+      await import('../utils/schoolProgram.js');
+    const programCtx = await getStudentSchoolProgramContext(userId);
+    const boardCheck = validateAiToolBoardAccess(programCtx.isAsliPrepExclusive, {
+      board,
+      gradeLevel,
+    });
+    if (!boardCheck.ok) {
+      return res.status(403).json({ success: false, message: boardCheck.message });
+    }
 
     if (!toolType) {
       return res.status(400).json({
@@ -4483,12 +4504,17 @@ router.post('/ai/tool', async (req, res) => {
       });
     }
 
-    // Convert gradeLevel to classNumber format
+    // Convert gradeLevel to classNumber format (Asli Prep → IIT track only)
+    let effectiveGradeLevel = gradeLevel;
+    if (programCtx.isAsliPrepExclusive) {
+      effectiveGradeLevel = 'IIT-6';
+    }
+
     let classNumber;
-    if (gradeLevel === 'IIT-6' || gradeLevel === 'Class-6-IIT') {
+    if (effectiveGradeLevel === 'IIT-6' || effectiveGradeLevel === 'Class-6-IIT') {
       classNumber = 'IIT-6';
     } else {
-      const classNum = parseInt(gradeLevel?.replace('Class ', '').trim());
+      const classNum = parseInt(effectiveGradeLevel?.replace('Class ', '').trim());
       if (!isNaN(classNum)) {
         classNumber = classNum;
       } else {
