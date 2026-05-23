@@ -5,19 +5,17 @@ import Content from '../models/Content.js';
 import Assessment from '../models/Assessment.js';
 import Exam from '../models/Exam.js';
 import ExamResult from '../models/ExamResult.js';
+import { filterToActiveCatalogSubjectIds } from '../utils/activeCatalog.js';
+import { subjectGroupKey } from '../utils/resolveSubjectContentIds.js';
 import {
-  resolveStudentClassNumber,
-  filterContentsForStudentClass,
-} from '../utils/studentClassContent.js';
+  loadStudentLibraryContents,
+  resolveStudentSubjectIdsForLibrary,
+} from '../utils/studentLibraryContents.js';
 
 /** @typedef {import('mongoose').Types.ObjectId} ObjectId */
 
 function escapeRegex(s) {
   return String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
-
-function escapeRegexClassSuffix(classNum) {
-  return String(classNum).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 function plainSubjectName(name) {
@@ -27,7 +25,7 @@ function plainSubjectName(name) {
 }
 
 function toSubjectKey(name) {
-  return plainSubjectName(String(name || '')).toLowerCase().trim();
+  return subjectGroupKey(name || '');
 }
 
 function meaningfulChapterLabel(raw) {
@@ -71,62 +69,6 @@ async function resolveStudentClassDoc(student) {
     }).populate('assignedSubjects');
   }
   return null;
-}
-
-async function resolveStudentSubjectIdsForLibrary(student, adminBoardRaw, studentClassDoc) {
-  const adminBoardUpper = adminBoardRaw ? String(adminBoardRaw).toUpperCase().trim() : '';
-  const boardSet = new Set(['ASLI_EXCLUSIVE_SCHOOLS']);
-  if (adminBoardUpper) boardSet.add(adminBoardUpper);
-
-  const idStrToOid = new Map();
-  const addId = (id) => {
-    if (!id) return;
-    const oid =
-      id instanceof mongoose.Types.ObjectId ? id : new mongoose.Types.ObjectId(String(id));
-    idStrToOid.set(oid.toString(), oid);
-  };
-
-  if (studentClassDoc?.assignedSubjects?.length) {
-    for (const subj of studentClassDoc.assignedSubjects) {
-      addId(subj._id ? subj._id : subj);
-    }
-  }
-
-  let classNum = '';
-  if (studentClassDoc?.classNumber != null && String(studentClassDoc.classNumber).trim() !== '') {
-    classNum = String(studentClassDoc.classNumber).trim();
-  } else if (student.classNumber && student.classNumber !== 'Unassigned') {
-    classNum = String(student.classNumber).trim();
-  }
-
-  if (!classNum) {
-    return Array.from(idStrToOid.values());
-  }
-
-  const classNumVariants = new Set([classNum]);
-  if (/^\d+$/.test(classNum)) {
-    classNumVariants.add(String(parseInt(classNum, 10)));
-    if (classNum.length === 1) classNumVariants.add(classNum.padStart(2, '0'));
-  }
-
-  const suffixConditions = [];
-  for (const v of classNumVariants) {
-    suffixConditions.push({ name: new RegExp(`_${escapeRegexClassSuffix(v)}$`) });
-  }
-
-  const autoSubjects = await Subject.find({
-    isActive: true,
-    board: { $in: Array.from(boardSet) },
-    $or: [{ classNumber: { $in: Array.from(classNumVariants) } }, ...suffixConditions],
-  })
-    .select('_id')
-    .lean();
-
-  for (const row of autoSubjects) {
-    addId(row._id);
-  }
-
-  return Array.from(idStrToOid.values());
 }
 
 function subjectWiseScoreToObject(sws) {
@@ -187,12 +129,20 @@ export async function buildAdaptiveLearningPayload(userId) {
     (await User.findById(student.assignedAdmin).select('board').lean())?.board ||
     student.board;
 
-  const classSubjectIds = await resolveStudentSubjectIdsForLibrary(student, adminBoard, studentClassDoc);
-  if (!classSubjectIds.length) {
+  let librarySubjectIds = await resolveStudentSubjectIdsForLibrary(student, studentClassDoc);
+  librarySubjectIds = await filterToActiveCatalogSubjectIds(librarySubjectIds);
+  if (!librarySubjectIds.length) {
     return { cards: [], meta: { reason: 'no_subjects' } };
   }
 
-  const subjectDocs = await Subject.find({ _id: { $in: classSubjectIds }, isActive: true })
+  const { contents: allContents, boardUpper, studentClassNum } = await loadStudentLibraryContents(
+    uid,
+    student,
+    studentClassDoc,
+    adminBoard
+  );
+
+  const subjectDocs = await Subject.find({ _id: { $in: librarySubjectIds }, isActive: true })
     .select('_id name')
     .lean();
 
@@ -301,11 +251,6 @@ export async function buildAdaptiveLearningPayload(userId) {
       .lean();
   }
 
-  const studentClassNum = resolveStudentClassNumber(student, studentClassDoc) || '';
-  const boardUpper = String(adminBoard || 'ASLI_EXCLUSIVE_SCHOOLS')
-    .trim()
-    .toUpperCase();
-
   const examsForClass = studentClassNum
     ? await Exam.find({
         isActive: true,
@@ -316,21 +261,6 @@ export async function buildAdaptiveLearningPayload(userId) {
       .limit(40)
       .lean()
     : [];
-
-  const allContentsRaw = await Content.find({
-    subject: { $in: classSubjectIds },
-    isActive: true,
-  })
-    .populate('subject', 'name')
-    .sort({ updatedAt: -1 })
-    .limit(600)
-    .lean();
-
-  const allContents = filterContentsForStudentClass(
-    allContentsRaw,
-    studentClassNum || null,
-    classSubjectIds
-  );
 
   const cards = [];
 
@@ -362,11 +292,11 @@ export async function buildAdaptiveLearningPayload(userId) {
     else if (distinctWeakTopics >= 4 || row.topicWeightSum >= 6) priority = 'High';
     else if (distinctWeakTopics >= 2) priority = 'Medium';
 
+    const targetGroup = toSubjectKey(subjectRow?.name || subKey);
     const contentsForSubject = allContents.filter((c) => {
       const cid = String(c.subject?._id || c.subject || '');
       if (subjectOidStr && cid === subjectOidStr) return true;
-      const cname = toSubjectKey(c.subject?.name || '');
-      return cname === subKey;
+      return toSubjectKey(c.subject?.name || '') === targetGroup;
     });
 
     const used = new Set();
@@ -393,6 +323,7 @@ export async function buildAdaptiveLearningPayload(userId) {
       if (!url && displayType !== 'Video') return;
       if (displayType === 'Video' && !isLikelyVideoUrl(url)) return;
       used.add(id);
+      const isPdf = displayType === 'PDF';
       recommended.push({
         kind: 'content',
         _id: id,
@@ -402,9 +333,11 @@ export async function buildAdaptiveLearningPayload(userId) {
         topicHint: topicHint || '',
         fileUrl: url,
         relevance: scoreBump,
-        openMode: displayType === 'Video' ? 'url' : 'url',
+        openMode: isPdf ? 'preview' : 'url',
       });
     };
+
+    const beforeWeakTopicMatch = recommended.length;
 
     for (const wt of weakTopicsForSub.slice(0, 12)) {
       if (recommended.length >= 18) break;
@@ -426,10 +359,13 @@ export async function buildAdaptiveLearningPayload(userId) {
       }
     }
 
+    /** No weak-topic matches → show class library content for this subject */
+    const libraryFallback = recommended.length === beforeWeakTopicMatch;
+    const maxLibraryItems = libraryFallback ? 12 : 22;
     for (const doc of contentsForSubject) {
-      if (recommended.length >= 22) break;
+      if (recommended.length >= maxLibraryItems) break;
       if (used.has(String(doc._id))) continue;
-      pushContent(doc, '', 0);
+      pushContent(doc, libraryFallback ? 'From your library' : '', libraryFallback ? 3 : 0);
     }
 
     const quizMatches = assessments.filter((q) => {
@@ -499,7 +435,7 @@ export async function buildAdaptiveLearningPayload(userId) {
     }
 
     const examMatches = examsForClass
-      .filter((ex) => toSubjectKey(ex.subject) === subKey)
+      .filter((ex) => toSubjectKey(ex.subject) === targetGroup)
       .sort((a, b) => {
         const pa =
           String(a.examType || '').toLowerCase() === 'practice' ||
@@ -544,11 +480,13 @@ export async function buildAdaptiveLearningPayload(userId) {
 
     cards.push({
       subjectId: subjectOidStr || subKey,
-      subjectName: subjectDisplayName,
+      subjectName: plainSubjectName(subjectDisplayName) || subjectDisplayName,
       progressPercent,
-      weakTopicCount: distinctWeakTopics || topicLabels.length,
+      examScorePercent: progressPercent,
+      weakTopicCount: distinctWeakTopics,
       priority,
       gapsWithoutContent,
+      usesLibraryFallback: libraryFallback && recommended.length > 0,
       recommendedContent: recommended.slice(0, 24),
     });
   }
@@ -558,6 +496,7 @@ export async function buildAdaptiveLearningPayload(userId) {
     meta: {
       generatedAt: new Date().toISOString(),
       examResultsAnalyzed: examResults.length,
+      libraryItemsLoaded: allContents.length,
     },
   };
 }
