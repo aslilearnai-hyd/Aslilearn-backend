@@ -27,7 +27,7 @@ import {
   enrichQuestionAnalyticsFromExamQuestions,
   generateAdvancedAnalytics,
 } from '../utils/advancedExamAnalytics.js';
-import { normalizeSchoolBoard } from '../constants/boards.js';
+import { normalizeSchoolBoard, resolveUserDisplayBoard } from '../constants/boards.js';
 import { dedupeExamResultRows } from '../utils/dedupe-exam-results.js';
 import { buildAdaptiveLearningPayload } from '../services/student-adaptive-learning-service.js';
 import {
@@ -220,6 +220,58 @@ async function resolveStudentSubjectIdsForLibrary(student, adminBoardRaw, studen
   return Array.from(idStrToOid.values());
 }
 
+/** Active catalog subjects assigned to the student's class (not whole board). */
+async function resolveStudentClassSubjects(student) {
+  const studentClassDoc = await resolveStudentClassDoc(student);
+  const adminBoard =
+    student.assignedAdmin?.board ||
+    (await User.findById(student.assignedAdmin).select('board').lean())?.board ||
+    student.board;
+
+  let librarySubjectIds = await resolveStudentSubjectIdsForLibrary(
+    student,
+    adminBoard,
+    studentClassDoc
+  );
+  const { filterToActiveCatalogSubjectIds } = await import('../utils/activeCatalog.js');
+  librarySubjectIds = await filterToActiveCatalogSubjectIds(librarySubjectIds);
+
+  const subjects =
+    librarySubjectIds.length === 0
+      ? []
+      : await Subject.find({
+          _id: { $in: librarySubjectIds },
+          isActive: true,
+          name: { $not: /__deleted__/ },
+        })
+          .sort({ name: 1 })
+          .lean();
+
+  const { resolveStudentClassNumber, filterContentsForStudentClass } = await import(
+    '../utils/studentClassContent.js'
+  );
+
+  return {
+    subjects,
+    librarySubjectIds,
+    studentClassDoc,
+    studentClassNumber: resolveStudentClassNumber(student, studentClassDoc),
+    adminBoard,
+    filterContentsForStudentClass,
+  };
+}
+
+/** Curriculum board for sibling subject/content lookup (not ASLI_EXCLUSIVE_SCHOOLS hub code). */
+function resolveStudentContentBoard(student, adminBoard) {
+  const display = resolveUserDisplayBoard(student, student?.assignedAdmin);
+  if (display && String(display).toUpperCase() !== 'ASLI_EXCLUSIVE_SCHOOLS') {
+    return String(display).toUpperCase();
+  }
+  const raw = adminBoard ? String(adminBoard).toUpperCase() : '';
+  if (raw && raw !== 'ASLI_EXCLUSIVE_SCHOOLS') return raw;
+  return 'CBSE';
+}
+
 // Get student's assigned admin and filter content accordingly
 const getStudentAdminId = async (req, res, next) => {
   try {
@@ -249,59 +301,72 @@ router.get('/videos', async (req, res) => {
     const { subject } = req.query;
     
     
-    // Get student to find their board (from assigned admin)
     const student = await User.findById(req.userId)
-      .populate('assignedAdmin', 'board');
-    
+      .populate('assignedAdmin', 'board')
+      .populate('assignedClass', 'classNumber section assignedSubjects');
+
     console.log('📚 Student videos request - Student:', {
       id: student?._id?.toString(),
       email: student?.email,
       role: student?.role,
       board: student?.board || (student?.assignedAdmin?.board),
-      requestedSubject: subject || 'none'
+      classNumber: student?.assignedClass?.classNumber || student?.classNumber,
+      requestedSubject: subject || 'none',
     });
-    
+
     if (!student) {
       console.log('Student not found');
       return res.json({
         success: true,
         data: [],
-        videos: []
+        videos: [],
       });
     }
-    
-    // Get student's board to find subjects
-    const studentBoard = student.board || (student.assignedAdmin?.board);
-    
+
+    const studentBoard = resolveStudentContentBoard(
+      student,
+      student.board || student.assignedAdmin?.board
+    );
+
     if (!studentBoard) {
       return res.json({
         success: true,
         data: [],
         videos: [],
-        message: 'No board assigned. Please contact your admin.'
+        message: 'No board assigned. Please contact your admin.',
       });
     }
-    
-    // Get all subjects for student's board (same subjects admin sees in Subject Management)
-    const Subject = (await import('../models/Subject.js')).default;
-    const boardSubjects = await Subject.find({ 
-      board: studentBoard, 
-      isActive: true 
-    }).sort({ name: 1 });
-    
-    if (boardSubjects.length === 0) {
-      console.log('No subjects found for board:', studentBoard);
+
+    const {
+      subjects: boardSubjects,
+      librarySubjectIds,
+      studentClassNumber,
+      filterContentsForStudentClass,
+    } = await resolveStudentClassSubjects(student);
+
+    if (!studentClassNumber) {
       return res.json({
         success: true,
         data: [],
         videos: [],
-        message: 'No subjects available for your board.'
+        message:
+          'No class assigned. Videos will appear once your administrator assigns you to a class.',
       });
     }
-    
-    const boardSubjectIds = boardSubjects.map(s => s._id?.toString() || s._id.toString());
-    
-    // Find teachers assigned to the same admin who teach any of these board subjects
+
+    if (boardSubjects.length === 0) {
+      console.log('No subjects found for student class');
+      return res.json({
+        success: true,
+        data: [],
+        videos: [],
+        message: 'No subjects available for your class yet. Ask your administrator to assign subjects.',
+      });
+    }
+
+    const boardSubjectIds = boardSubjects.map((s) => s._id?.toString() || s._id.toString());
+
+    // Find teachers assigned to the same admin who teach this class's subjects
     const teachers = await Teacher.find({
       adminId: student.assignedAdmin,
       subjects: { $in: boardSubjects.map(s => s._id) },
@@ -484,9 +549,17 @@ router.get('/videos', async (req, res) => {
           }
         }
         
-        const exclusiveContent = await Content.find(exclusiveQuery)
+        let exclusiveContent = await Content.find(exclusiveQuery)
         .populate('subject', '_id name')
         .lean();
+
+        if (studentClassNumber) {
+          exclusiveContent = filterContentsForStudentClass(
+            exclusiveContent,
+            studentClassNumber,
+            librarySubjectIds
+          );
+        }
 
         console.log(`Found ${exclusiveContent.length} exclusive videos for board ${student.board}${subject ? ` with subject ${subject}` : ''}`);
 
@@ -721,59 +794,57 @@ router.get('/assessments', async (req, res) => {
       });
     }
     
-    // Get student to find their board (from assigned admin)
     const student = await User.findById(req.userId)
-      .populate('assignedAdmin', 'board');
-    
+      .populate('assignedAdmin', 'board')
+      .populate('assignedClass', 'classNumber section assignedSubjects');
+
     console.log('Student assessments request - Student:', {
       id: student?._id,
       board: student?.board || (student?.assignedAdmin?.board),
+      classNumber: student?.assignedClass?.classNumber || student?.classNumber,
       email: student?.email,
-      role: student?.role
+      role: student?.role,
     });
-    
+
     if (!student) {
       console.log('Student not found');
       return res.json({
         success: true,
         data: [],
         assessments: [],
-        quizzes: []
+        quizzes: [],
       });
     }
-    
-    // Get student's board to find subjects
-    const studentBoard = student.board || (student.assignedAdmin?.board);
-    
+
+    const studentBoard = resolveStudentContentBoard(
+      student,
+      student.board || student.assignedAdmin?.board
+    );
+
     if (!studentBoard) {
       return res.json({
         success: true,
         data: [],
         assessments: [],
         quizzes: [],
-        message: 'No board assigned. Please contact your admin.'
+        message: 'No board assigned. Please contact your admin.',
       });
     }
-    
-    // Get all subjects for student's board (same subjects admin sees in Subject Management)
-    const Subject = (await import('../models/Subject.js')).default;
-    const boardSubjects = await Subject.find({ 
-      board: studentBoard, 
-      isActive: true 
-    }).sort({ name: 1 });
-    
+
+    const { subjects: boardSubjects } = await resolveStudentClassSubjects(student);
+
     if (boardSubjects.length === 0) {
-      console.log('No subjects found for board:', studentBoard);
+      console.log('No subjects found for student class');
       return res.json({
         success: true,
         data: [],
         assessments: [],
         quizzes: [],
-        message: 'No subjects available for your board.'
+        message: 'No subjects available for your class yet. Ask your administrator to assign subjects.',
       });
     }
-    
-    const boardSubjectIds = boardSubjects.map(s => s._id?.toString() || s._id.toString());
+
+    const boardSubjectIds = boardSubjects.map((s) => s._id?.toString() || s._id.toString());
     
     // Find teachers assigned to the same admin who teach any of these board subjects
     const teachers = await Teacher.find({
@@ -1359,14 +1430,14 @@ router.get('/asli-prep-content', async (req, res) => {
       });
     }
 
-    const boardUpper = adminBoard ? String(adminBoard).toUpperCase() : undefined;
+    const boardUpper = resolveStudentContentBoard(student, adminBoard);
     const contentSubjectIds = await resolveSubjectContentIdsMany(librarySubjectIds, {
       board: boardUpper,
     });
     const activeIdSet = buildActiveSubjectIdSet(contentSubjectIds);
 
     console.log(
-      `📚 Library subjects: ${librarySubjectIds.length}, content query ids (incl. siblings): ${contentSubjectIds.length}`
+      `📚 Library subjects: ${librarySubjectIds.length}, content query ids (incl. siblings): ${contentSubjectIds.length}, board: ${boardUpper}`
     );
 
     // Build query — include content on MATHS_6 when student has clean MATHS assigned.
@@ -1407,17 +1478,33 @@ router.get('/asli-prep-content', async (req, res) => {
 
     contents = applySchoolProgramContentFilters(contents, programCtx);
 
-    const classLabelFromContent = (doc) => {
-      const cn = doc.classNumber;
-      if (cn != null && String(cn).trim() !== '') return String(cn).trim();
-      const n = doc.subject?.name || '';
-      const m = n.match(/_(\d+)$/);
-      return m ? m[1] : '';
-    };
+    const {
+      normalizeClassNumberLabel,
+      resolveStudentClassNumber,
+      filterContentsForStudentClass,
+    } = await import('../utils/studentClassContent.js');
+    const studentClassNumber = resolveStudentClassNumber(student, studentClassDoc);
+
+    if (!studentClassNumber) {
+      return res.json({
+        success: true,
+        data: [],
+        message:
+          'No class assigned. Content will appear once your administrator assigns you to a class.',
+      });
+    }
+
+    contents = filterContentsForStudentClass(
+      contents,
+      studentClassNumber,
+      librarySubjectIds
+    );
 
     if (classParam && classParam !== 'all' && String(classParam).trim() !== '') {
-      const want = String(classParam).trim();
-      contents = contents.filter((c) => classLabelFromContent(c) === want);
+      const want = normalizeClassNumberLabel(classParam);
+      if (want && want !== studentClassNumber) {
+        contents = [];
+      }
     }
 
     const subjectPlain = subject;
@@ -1539,14 +1626,14 @@ router.get('/weak-subject-content', async (req, res) => {
       return res.json(emptyPayload());
     }
 
-    const boardUpper = adminBoard ? String(adminBoard).toUpperCase() : undefined;
+    const boardUpper = resolveStudentContentBoard(student, adminBoard);
     const contentSubjectIds = await resolveSubjectContentIdsMany(librarySubjectIds, {
       board: boardUpper,
     });
 
     const CONTENT_TYPES = ['Video', 'TextBook', 'Workbook', 'Material'];
 
-    const contents = await Content.find({
+    let contents = await Content.find({
       subject: { $in: contentSubjectIds },
       isActive: true,
       type: { $in: CONTENT_TYPES },
@@ -1584,6 +1671,16 @@ router.get('/weak-subject-content', async (req, res) => {
       doc._topicMatch = topicOk;
       return topicOk;
     });
+
+    const { resolveStudentClassNumber, filterContentsForStudentClass } = await import(
+      '../utils/studentClassContent.js'
+    );
+    const weakStudentClassNumber = resolveStudentClassNumber(student, studentClassDoc);
+    filtered = filterContentsForStudentClass(
+      filtered,
+      weakStudentClassNumber,
+      librarySubjectIds
+    );
 
     filtered.sort((a, b) => {
       const aMatch = a._topicMatch ? 1 : 0;
@@ -2251,11 +2348,18 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       }
     }
 
-    const student = await User.findById(req.userId).populate('assignedAdmin', 'board');
+    const student = await User.findById(req.userId)
+      .populate('assignedAdmin', 'board')
+      .populate('assignedClass', 'classNumber section');
+    const studentClassDoc = await resolveStudentClassDoc(student);
+    const { subjects: _recSubjects, librarySubjectIds: recLibrarySubjectIds, studentClassNumber: studentClassNumberForRecs, filterContentsForStudentClass } =
+      await resolveStudentClassSubjects(student);
     const resolvedBoard = String(student?.board || student?.assignedAdmin?.board || 'ASLI_EXCLUSIVE_SCHOOLS')
       .trim()
       .toUpperCase();
-    const classNumber = String(student?.classNumber || '').trim();
+    const classNumber = String(
+      studentClassNumberForRecs || student?.classNumber || student?.assignedClass?.classNumber || ''
+    ).trim();
     const studentDisplayNameRaw = String(student?.fullName || student?.name || '').trim().split(/\s+/)[0] || '';
     const studentDisplayName =
       studentDisplayNameRaw.length >= 2 && studentDisplayNameRaw.length <= 40 ? studentDisplayNameRaw : '';
@@ -2319,7 +2423,7 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
         contentConditions.push({ topic: { $regex: subjectNameRegex } });
       }
 
-      const contentVideos = await Content.find({
+      let contentVideos = await Content.find({
         isActive: true,
         type: 'Video',
         ...(contentConditions.length > 0 ? { $or: contentConditions } : {}),
@@ -2328,6 +2432,14 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
         .sort({ createdAt: -1 })
         .limit(14)
         .lean();
+
+      if (studentClassNumberForRecs) {
+        contentVideos = filterContentsForStudentClass(
+          contentVideos,
+          studentClassNumberForRecs,
+          recLibrarySubjectIds
+        );
+      }
 
       const teacherVideoConditions = [];
       if (subjectIds.length > 0) {
@@ -3973,7 +4085,7 @@ async function getStudentSubjectsHandler(req, res) {
       .sort({ name: 1 })
       .lean();
 
-    const boardUpper = adminBoard ? String(adminBoard).toUpperCase() : undefined;
+    const boardUpper = resolveStudentContentBoard(student, adminBoard);
 
     console.log(`📚 Returning ${subjects.length} active catalog subjects after class + board merge`);
     

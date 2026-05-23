@@ -42,6 +42,63 @@ export async function syncSubjectClassIds(subjectId, classIds, adminId) {
 }
 
 /**
+ * Rebuild Subject.classIds from every active class that lists this subject in assignedSubjects.
+ */
+export async function rebuildSubjectClassIdsFromAssignedClasses(subjectId, adminId) {
+  const subjectOid = new mongoose.Types.ObjectId(String(subjectId));
+  const classQuery = {
+    isActive: true,
+    assignedSubjects: subjectOid,
+  };
+  if (adminId) classQuery.assignedAdmin = adminId;
+
+  const classes = await Class.find(classQuery).select('_id').lean();
+  await Subject.findByIdAndUpdate(subjectOid, {
+    $set: { classIds: classes.map((c) => c._id) },
+  });
+  return classes.map((c) => c._id);
+}
+
+/**
+ * Set subjects for one class section and keep Subject.classIds in sync (section-scoped).
+ */
+export async function syncClassSectionSubjects(classId, subjectIds, adminId) {
+  const classOid = new mongoose.Types.ObjectId(String(classId));
+  const classFilter = { _id: classOid, isActive: true };
+  if (adminId) classFilter.assignedAdmin = adminId;
+
+  const classDoc = await Class.findOne(classFilter).select('_id assignedSubjects').lean();
+  if (!classDoc) return { ok: false, message: 'Class not found' };
+
+  const newSubjectOids = [...new Set((subjectIds || []).map(String).filter(Boolean))]
+    .filter((id) => mongoose.Types.ObjectId.isValid(id))
+    .map((id) => new mongoose.Types.ObjectId(id));
+
+  if (newSubjectOids.length > 0) {
+    const subjectFilter = { _id: { $in: newSubjectOids } };
+    const found = await Subject.find(subjectFilter).select('_id').lean();
+    if (found.length !== newSubjectOids.length) {
+      return { ok: false, message: 'One or more subject IDs are invalid' };
+    }
+  }
+
+  const previousIds = new Set((classDoc.assignedSubjects || []).map((id) => String(id)));
+  const newIds = new Set(newSubjectOids.map((id) => String(id)));
+  const touchedSubjectIds = new Set([...previousIds, ...newIds]);
+
+  await Class.updateOne(
+    { _id: classOid },
+    { $set: { assignedSubjects: newSubjectOids, updatedAt: new Date() } }
+  );
+
+  for (const subjectId of touchedSubjectIds) {
+    await rebuildSubjectClassIdsFromAssignedClasses(subjectId, adminId);
+  }
+
+  return { ok: true, classId: classOid, subjectCount: newSubjectOids.length };
+}
+
+/**
  * Assign primary teacher on subject + keep Teacher.subjects in sync.
  */
 export async function syncSubjectTeacher(subjectId, teacherId, adminId) {
@@ -230,7 +287,13 @@ export function dedupeAdminSubjectsByPlainName(formattedRows) {
       };
     }
 
-    primary.classes = Array.isArray(primary.classes) ? [...primary.classes] : [];
+    const classMap = new Map();
+    for (const row of rows) {
+      for (const c of row.classes || []) {
+        if (c?.id) classMap.set(String(c.id), c);
+      }
+    }
+    primary.classes = [...classMap.values()];
     primary.classIds = primary.classes.map((c) => c.id);
     primary.variantIds = variantIds;
     if (catalogRows.length > 0 && cleanRow) {

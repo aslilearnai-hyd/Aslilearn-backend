@@ -24,6 +24,7 @@ import { normalizePhoneTenDigits } from '../services/schoolService.js';
 import {
   formatAdminSubject,
   syncSubjectClassIds,
+  syncClassSectionSubjects,
   syncSubjectTeacher,
   isCatalogStyleSubjectName,
   filterCatalogSubjectsWithCleanSibling,
@@ -2209,7 +2210,7 @@ export const getSubjects = async (req, res) => {
     }
 
     const formatted = await Promise.all(
-      subjects.map((s) => formatAdminSubject(s, adminId, { adminListOnly: true }))
+      subjects.map((s) => formatAdminSubject(s, adminId, { adminListOnly: false }))
     );
 
     const data = includeCatalog ? formatted : dedupeAdminSubjectsByPlainName(formatted);
@@ -2945,147 +2946,198 @@ export const createClass = async (req, res) => {
   }
 };
 
+function normalizeAssignSubjectIds(subjectIds) {
+  if (!Array.isArray(subjectIds)) return { ok: false, message: 'subjectIds must be an array' };
+  const validSubjectIds = [
+    ...new Set(
+      subjectIds
+        .map((id) => String(id || '').trim())
+        .filter((id) => mongoose.Types.ObjectId.isValid(id))
+    ),
+  ];
+  if (validSubjectIds.length !== subjectIds.length) {
+    return { ok: false, message: 'One or more subject IDs are invalid format' };
+  }
+  return { ok: true, validSubjectIds };
+}
+
+async function respondAfterClassSubjectSync(res, classDoc, validSubjectIds, adminId) {
+  const syncResult = await syncClassSectionSubjects(classDoc._id, validSubjectIds, adminId);
+  if (!syncResult.ok) {
+    return res.status(400).json({
+      success: false,
+      message: syncResult.message || 'Failed to sync subjects for class',
+    });
+  }
+
+  const updated = await Class.findById(classDoc._id).populate(
+    'assignedSubjects',
+    '_id name description code board'
+  );
+
+  console.log(
+    `✅ Assigned ${validSubjectIds.length} subject(s) to class ${updated.classNumber}${updated.section || ''}`
+  );
+
+  return res.json({
+    success: true,
+    message: `Subjects assigned to Class ${updated.classNumber} Section ${updated.section} successfully`,
+    data: {
+      classId: String(updated._id),
+      classNumber: updated.classNumber,
+      section: updated.section,
+      assignedSubjects: updated.assignedSubjects,
+    },
+  });
+}
+
+/** Assign subjects using the class document id (preferred — used by Class dashboard). */
+export const assignSubjectsToClassById = async (req, res) => {
+  try {
+    const { classId } = req.params;
+    const { subjectIds = [] } = req.body;
+    const adminId = req.adminId;
+
+    console.log('Assign subjects by classId:', { classId, subjectCount: subjectIds?.length, adminId });
+
+    if (!adminId || !mongoose.Types.ObjectId.isValid(String(adminId))) {
+      return res.status(401).json({ success: false, message: 'Admin ID is required' });
+    }
+
+    if (!classId || !mongoose.Types.ObjectId.isValid(String(classId))) {
+      return res.status(400).json({ success: false, message: 'Valid class ID is required' });
+    }
+
+    const parsed = normalizeAssignSubjectIds(subjectIds);
+    if (!parsed.ok) {
+      return res.status(400).json({ success: false, message: parsed.message });
+    }
+
+    const { validSubjectIds } = parsed;
+
+    if (validSubjectIds.length > 0) {
+      const subjects = await Subject.find({ _id: { $in: validSubjectIds } }).select('_id').lean();
+      if (subjects.length !== validSubjectIds.length) {
+        return res.status(400).json({
+          success: false,
+          message: `One or more subject IDs are invalid. Found ${subjects.length} of ${validSubjectIds.length}.`,
+        });
+      }
+    }
+
+    const classDoc = await Class.findOne({
+      _id: classId,
+      assignedAdmin: adminId,
+      isActive: true,
+    });
+
+    if (!classDoc) {
+      return res.status(404).json({
+        success: false,
+        message: 'Class not found for your school. Refresh the page and try again.',
+      });
+    }
+
+    return respondAfterClassSubjectSync(res, classDoc, validSubjectIds, adminId);
+  } catch (error) {
+    console.error('Assign subjects by classId error:', error);
+    return res.status(500).json({
+      success: false,
+      message: error.message || 'Failed to assign subjects to class',
+    });
+  }
+};
+
 export const assignSubjectsToClass = async (req, res) => {
   try {
     let { classNumber } = req.params;
-    const { subjectIds } = req.body;
+    const { subjectIds = [], section, classId: classIdBody } = req.body;
     const adminId = req.adminId;
 
-    console.log('Assign subjects to class request:', { classNumber, subjectIds, adminId });
+    console.log('Assign subjects to class request:', { classNumber, section, classIdBody, adminId });
 
-    if (!classNumber || !subjectIds || !Array.isArray(subjectIds)) {
-      return res.status(400).json({
-        success: false,
-        message: 'Class number and subject IDs array are required'
-      });
+    if (!adminId || !mongoose.Types.ObjectId.isValid(String(adminId))) {
+      return res.status(401).json({ success: false, message: 'Admin ID is required' });
     }
 
-    if (!adminId) {
-      return res.status(401).json({
-        success: false,
-        message: 'Admin ID is required'
-      });
+    const parsed = normalizeAssignSubjectIds(subjectIds);
+    if (!parsed.ok) {
+      return res.status(400).json({ success: false, message: parsed.message });
+    }
+    const { validSubjectIds } = parsed;
+
+    if (validSubjectIds.length > 0) {
+      const subjects = await Subject.find({ _id: { $in: validSubjectIds } }).select('_id').lean();
+      if (subjects.length !== validSubjectIds.length) {
+        return res.status(400).json({
+          success: false,
+          message: `One or more subject IDs are invalid. Found ${subjects.length} of ${validSubjectIds.length}.`,
+        });
+      }
     }
 
-    // Normalize classNumber - handle formats like "Class-9" or "9"
-    // Remove "Class-" prefix if present
+    if (classIdBody && mongoose.Types.ObjectId.isValid(String(classIdBody))) {
+      const classDoc = await Class.findOne({
+        _id: classIdBody,
+        assignedAdmin: adminId,
+        isActive: true,
+      });
+      if (!classDoc) {
+        return res.status(404).json({ success: false, message: 'Class not found' });
+      }
+      return respondAfterClassSubjectSync(res, classDoc, validSubjectIds, adminId);
+    }
+
+    if (!classNumber) {
+      return res.status(400).json({ success: false, message: 'Class number is required' });
+    }
+
     if (classNumber.startsWith('Class-')) {
       classNumber = classNumber.replace('Class-', '');
     }
-    // Also handle URL encoding
     classNumber = decodeURIComponent(classNumber);
 
-    // Validate that classNumber is not an ObjectId (should be a string like "10", "11", etc.)
     if (mongoose.Types.ObjectId.isValid(classNumber) && classNumber.length === 24) {
       return res.status(400).json({
         success: false,
-        message: 'Invalid class number format. Please select a class number (e.g., "10", "11"), not a class ID.'
+        message: 'Invalid class number format. Use class number (e.g. "7"), not class ID.',
       });
     }
 
-    console.log('Normalized classNumber:', classNumber);
-
-    // Validate subject IDs format (should be MongoDB ObjectIds)
-    const validSubjectIds = subjectIds.filter(id => {
-      try {
-        return mongoose.Types.ObjectId.isValid(id);
-      } catch (e) {
-        return false;
-      }
-    });
-
-    if (validSubjectIds.length !== subjectIds.length) {
-      return res.status(400).json({
-        success: false,
-        message: 'One or more subject IDs are invalid format'
-      });
-    }
-
-    // Validate that all subject IDs exist
-    const subjects = await Subject.find({ _id: { $in: validSubjectIds } });
-    
-    if (subjects.length !== validSubjectIds.length) {
-      return res.status(400).json({
-        success: false,
-        message: `One or more subject IDs are invalid. Found ${subjects.length} out of ${validSubjectIds.length} subjects.`
-      });
-    }
-
-    // Validate adminId is a valid ObjectId
-    if (!mongoose.Types.ObjectId.isValid(adminId)) {
-      return res.status(400).json({
-        success: false,
-        message: 'Invalid admin ID format'
-      });
-    }
-
-    // Find all classes with this classNumber (all sections: A, B, C)
-    const classesWithThisNumber = await Class.find({ 
-      classNumber: classNumber,
+    const classQuery = {
+      classNumber,
       assignedAdmin: adminId,
-      isActive: true
-    });
+      isActive: true,
+    };
 
-    console.log(`Found ${classesWithThisNumber.length} classes with classNumber ${classNumber}`);
+    if (section != null && String(section).trim() !== '') {
+      classQuery.section = String(section).trim().toUpperCase();
+    }
+
+    const classesWithThisNumber = await Class.find(classQuery);
 
     if (classesWithThisNumber.length === 0) {
       return res.status(404).json({
         success: false,
-        message: `No classes found with class number ${classNumber}. Please create classes first.`
+        message: section
+          ? `No class found for Class ${classNumber} Section ${section}.`
+          : `No classes found with class number ${classNumber}.`,
       });
     }
 
-    // Update all classes (all sections) with the same subjects
-    const updatePromises = classesWithThisNumber.map(async (classDoc) => {
-      // Use updateOne to avoid validation issues with save()
-      await Class.updateOne(
-        { _id: classDoc._id },
-        { 
-          $set: { 
-            assignedSubjects: validSubjectIds,
-            updatedAt: new Date()
-          }
-        }
-      );
-      console.log(`Updated class ${classDoc.classNumber}${classDoc.section} with subjects`);
-      // Reload the document to get updated data
-      return await Class.findById(classDoc._id);
-    });
-
-    const updatedClasses = await Promise.all(updatePromises);
-
-    // Sync Subject.classIds for each subject
-    for (const subjectId of validSubjectIds) {
-      const linkedClassIds = updatedClasses.map((c) => c._id);
-      await syncSubjectClassIds(subjectId, linkedClassIds, adminId);
+    if (!section && classesWithThisNumber.length > 1) {
+      return res.status(400).json({
+        success: false,
+        message: 'Section is required when multiple sections exist for this class number.',
+      });
     }
 
-    // Populate subjects for response
-    await Promise.all(updatedClasses.map(c => c.populate('assignedSubjects')));
-
-    console.log(`Updated ${updatedClasses.length} classes with subjects:`, updatedClasses.map(c => `${c.classNumber}${c.section}`));
-
-    res.json({
-      success: true,
-      message: `Subjects assigned to all sections of Class ${classNumber} successfully`,
-      data: {
-        classNumber: classNumber,
-        sectionsUpdated: updatedClasses.length,
-        sections: updatedClasses.map(c => ({
-          section: c.section,
-          name: c.name,
-          assignedSubjects: c.assignedSubjects
-        }))
-      }
-    });
+    return respondAfterClassSubjectSync(res, classesWithThisNumber[0], validSubjectIds, adminId);
   } catch (error) {
     console.error('Assign subjects to class error:', error);
-    console.error('Error stack:', error.stack);
-    res.status(500).json({ 
-      success: false, 
-      message: 'Failed to assign subjects to class',
-      error: error.message,
-      ...(process.env.NODE_ENV === 'development' && { stack: error.stack })
+    return res.status(500).json({
+      success: false,
+      message: error.message || 'Failed to assign subjects to class',
     });
   }
 };

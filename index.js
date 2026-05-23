@@ -4405,19 +4405,43 @@ app.get('/api/admin/classes', async (req, res) => {
     const classDocuments = await Class.find({
       assignedAdmin: adminId,
       isActive: true
-    }).sort({ classNumber: 1, section: 1 });
+    })
+      .populate('assignedSubjects', '_id name description code board')
+      .sort({ classNumber: 1, section: 1 });
 
     // Get students assigned to this admin
     const students = await User.find({ 
       role: 'student',
       assignedAdmin: adminId 
-    }).select('fullName email classNumber phone isActive createdAt lastLogin');
+    }).select('fullName email classNumber phone isActive createdAt lastLogin assignedClass')
+      .populate('assignedClass', '_id classNumber section');
     
     if (!students || students.length === 0) {
-      return res.status(404).json({ 
-        success: false,
-        message: 'No students found in database',
-        data: []
+      return res.json({
+        success: true,
+        data: classDocuments.map((classDoc) => ({
+          id: classDoc._id.toString(),
+          name: classDoc.name || `Class ${classDoc.classNumber}${classDoc.section}`,
+          description: classDoc.description || '',
+          classNumber: classDoc.classNumber,
+          section: classDoc.section,
+          assignedSubjects: (classDoc.assignedSubjects || []).map((subj) => ({
+            _id: subj._id ? subj._id.toString() : String(subj),
+            id: subj._id ? subj._id.toString() : String(subj),
+            name: subj.name || 'Unknown Subject',
+            description: subj.description || '',
+            code: subj.code || '',
+            board: subj.board || '',
+          })),
+          subject: 'General',
+          grade: classDoc.classNumber,
+          teacher: 'TBD',
+          schedule: 'Mon-Fri 9:00 AM',
+          room: `Room ${classDoc.classNumber}${classDoc.section}`,
+          studentCount: 0,
+          students: [],
+          createdAt: classDoc.createdAt,
+        })),
       });
     }
     
@@ -4443,15 +4467,45 @@ app.get('/api/admin/classes', async (req, res) => {
     // Format classes with students
     const classes = classDocuments.map(classDoc => {
       const fullClassKey = `${classDoc.classNumber}${classDoc.section}`;
-      const classStudents = studentClassMap.get(fullClassKey) || [];
-      
+      const classStudents = students
+        .filter((student) => {
+          const assigned = student.assignedClass;
+          if (!assigned) return false;
+          const assignedId = assigned._id ? assigned._id.toString() : String(assigned);
+          return assignedId === classDoc._id.toString();
+        })
+        .map((student) => ({
+          id: student._id,
+          name: student.fullName,
+          email: student.email,
+          classNumber: student.classNumber,
+          phone: student.phone,
+          status: student.isActive ? 'active' : 'inactive',
+          createdAt: student.createdAt,
+          lastLogin: student.lastLogin,
+        }));
+      const assignedSubjects = Array.isArray(classDoc.assignedSubjects)
+        ? classDoc.assignedSubjects.map((subj) => ({
+            _id: subj._id ? subj._id.toString() : String(subj),
+            id: subj._id ? subj._id.toString() : String(subj),
+            name: subj.name || 'Unknown Subject',
+            description: subj.description || '',
+            code: subj.code || '',
+            board: subj.board || '',
+          }))
+        : [];
+
       return {
         id: classDoc._id.toString(),
         name: classDoc.name || `Class ${classDoc.classNumber}${classDoc.section}`,
         description: classDoc.description || '',
         classNumber: classDoc.classNumber,
         section: classDoc.section,
-        subject: 'General',
+        assignedSubjects,
+        subject:
+          assignedSubjects.length > 0
+            ? assignedSubjects.map((s) => s.name).filter(Boolean).join(', ')
+            : 'General',
         grade: classDoc.classNumber,
         teacher: 'TBD',
         schedule: 'Mon-Fri 9:00 AM',

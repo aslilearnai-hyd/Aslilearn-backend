@@ -42,6 +42,7 @@ import {
   assignSubjectsToStudent,
   assignClassToStudent,
   assignSubjectsToClass,
+  assignSubjectsToClassById,
   getTeacherDashboardStats,
   getVideos,
   getAssessments,
@@ -140,6 +141,7 @@ router.post('/subjects', createSubject);
 router.put('/subjects/:id', updateSubject);
 router.delete('/subjects/:id', deleteSubject);
 router.post('/classes', createClass);
+router.post('/classes/by-id/:classId/assign-subjects', assignSubjectsToClassById);
 router.delete('/classes/delete-all', deleteAllClasses); // Must come before /classes/:id to avoid route conflict
 router.delete('/classes/:id', deleteClass);
 router.post('/classes/promote', promoteClasses);

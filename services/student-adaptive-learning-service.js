@@ -5,6 +5,10 @@ import Content from '../models/Content.js';
 import Assessment from '../models/Assessment.js';
 import Exam from '../models/Exam.js';
 import ExamResult from '../models/ExamResult.js';
+import {
+  resolveStudentClassNumber,
+  filterContentsForStudentClass,
+} from '../utils/studentClassContent.js';
 
 /** @typedef {import('mongoose').Types.ObjectId} ObjectId */
 
@@ -297,9 +301,7 @@ export async function buildAdaptiveLearningPayload(userId) {
       .lean();
   }
 
-  const studentClassNum = String(
-    studentClassDoc?.classNumber || student.classNumber || ''
-  ).trim();
+  const studentClassNum = resolveStudentClassNumber(student, studentClassDoc) || '';
   const boardUpper = String(adminBoard || 'ASLI_EXCLUSIVE_SCHOOLS')
     .trim()
     .toUpperCase();
@@ -315,7 +317,7 @@ export async function buildAdaptiveLearningPayload(userId) {
       .lean()
     : [];
 
-  const allContents = await Content.find({
+  const allContentsRaw = await Content.find({
     subject: { $in: classSubjectIds },
     isActive: true,
   })
@@ -323,6 +325,12 @@ export async function buildAdaptiveLearningPayload(userId) {
     .sort({ updatedAt: -1 })
     .limit(600)
     .lean();
+
+  const allContents = filterContentsForStudentClass(
+    allContentsRaw,
+    studentClassNum || null,
+    classSubjectIds
+  );
 
   const cards = [];
 

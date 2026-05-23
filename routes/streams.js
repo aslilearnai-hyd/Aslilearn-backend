@@ -5,6 +5,12 @@ import User from '../models/User.js';
 import Teacher from '../models/Teacher.js';
 import Subject from '../models/Subject.js';
 import { verifyToken, verifyAdmin, extractAdminId, verifyTeacher } from '../middleware/auth.js';
+import {
+  resolveStudentClassNumber,
+  filterContentsForStudentClass,
+  classLabelFromContent,
+  normalizeClassNumberLabel,
+} from '../utils/studentClassContent.js';
 
 const router = express.Router();
 
@@ -136,10 +142,19 @@ router.get('/student/streams', verifyToken, async (req, res) => {
       .populate('subject', 'name')
       .sort({ scheduledStartTime: -1 });
 
+    const studentClassNum = resolveStudentClassNumber(student, student.assignedClass);
+    streams = filterContentsForStudentClass(streams, studentClassNum, classSubjectIds);
+
     const { class: classQ, subject: subjectQ } = req.query;
     if (classQ && classQ !== 'all' && String(classQ).trim() !== '') {
-      const want = String(classQ).trim();
-      streams = streams.filter((s) => classLabelFromStream(s) === want);
+      const want = normalizeClassNumberLabel(classQ);
+      if (studentClassNum && want && want !== studentClassNum) {
+        streams = [];
+      } else if (want) {
+        streams = streams.filter(
+          (s) => normalizeClassNumberLabel(classLabelFromContent(s)) === want
+        );
+      }
     }
     if (
       subjectQ &&
