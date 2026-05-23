@@ -2320,6 +2320,16 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       } else if (Number(scoreSource?.totalQuestions ?? result?.totalQuestions) > 0) {
         cacheLooksInvalid = true;
       }
+      const cachedSchemaVersion = Number(storedMetaForCache.analysisSchemaVersion) || 0;
+      if (cachedSchemaVersion < 2) {
+        cacheLooksInvalid = true;
+      }
+      if (
+        cachedInsights.length > 0 &&
+        cachedInsights.some((q) => !String(q?.geminiExplanation || '').trim())
+      ) {
+        cacheLooksInvalid = true;
+      }
       if (cacheLooksInvalid) {
         console.warn('[exam-results/ai-analysis] Invalid cached analysis detected; regenerating.', {
           studentId: String(req.userId),
@@ -2628,6 +2638,38 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       return words.length > 70 ? `${words.slice(0, 67)}...` : words;
     };
 
+    async function generateGeminiExplanation(q) {
+      const questionSnippet = String(q.questionText || '').slice(0, 300);
+      const rawExplanation = String(q.explanation || '').trim();
+      const subject = String(q.subject || 'general');
+      const status = q.isCorrect ? 'correct' : q.hasAnswer ? 'wrong' : 'unattempted';
+      const userAns = formatAnswer(q.userAnswer);
+      const correctAns = formatAnswer(q.correctAnswer);
+
+      const prompt = `You are a helpful exam tutor for a student preparing for JEE/NEET.
+
+Question: "${questionSnippet}"
+Subject: ${subject}
+Student answered: ${status === 'unattempted' ? 'Did not attempt' : `"${userAns}"`}
+Correct answer: "${correctAns}"
+${rawExplanation ? `Official hint: "${rawExplanation}"` : ''}
+
+Write a clear, student-friendly explanation in 3–5 sentences that:
+1. States the correct answer and the core concept behind it
+2. Explains WHY that is correct (the rule, formula, or logic)
+3. If the student got it wrong or skipped it, explains where the mistake likely happened
+4. Uses simple language a Class 11/12 student can understand
+
+Do NOT use markdown. Write plain text only.`;
+
+      try {
+        const result = await geminiService.generateStructuredContent(prompt, 'text');
+        return String(result || '').trim().slice(0, 600);
+      } catch {
+        return rawExplanation || '';
+      }
+    }
+
     const inferTopicFromQuestion = (q) => {
       const chapterOk = meaningfulChapterLabel(q?.chapter);
       if (chapterOk) return chapterOk;
@@ -2877,8 +2919,8 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       return h > 0 ? `${h}h ${m}m ${r}s` : `${m}m ${r}s`;
     };
 
-    /** Rich analysis without LLM — uses scores, subject split, skips vs wrongs, time, topic clusters */
-    const buildDeepOfflineExamAnalysis = (reasonNote = '') => {
+    /** Rich analysis — rule-based summary; per-question Gemini explanations attached separately */
+    const buildDeepOfflineExamAnalysis = async (reasonNote = '') => {
       const attempted = (safeResult.correctAnswers || 0) + (safeResult.wrongAnswers || 0);
       const totalQ =
         Number(safeResult.totalQuestions) || attempted + (safeResult.unattempted || 0) || 1;
@@ -3016,6 +3058,23 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
 
       const derivedFocus = buildDerivedFocusAreas(questionAttemptDetails);
 
+      const envExplanationCap = Number(process.env.GEMINI_EXAM_EXPLANATION_MAX_QUESTIONS);
+      const explanationLimit =
+        Number.isFinite(envExplanationCap) && envExplanationCap > 0
+          ? Math.floor(envExplanationCap)
+          : questionAttemptDetails.length;
+      const questionsToExplain = questionAttemptDetails.slice(0, explanationLimit);
+      const geminiExplanations = await Promise.allSettled(
+        questionsToExplain.map((q) => generateGeminiExplanation(q)),
+      );
+      fallbackQuestionInsights.forEach((insight, i) => {
+        const result = geminiExplanations[i];
+        insight.geminiExplanation =
+          i < questionsToExplain.length && result?.status === 'fulfilled' && result.value
+            ? result.value
+            : String(questionAttemptDetails[i]?.explanation || '');
+      });
+
       return {
         riskLevel,
         riskScore,
@@ -3113,8 +3172,7 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       };
     };
 
-    // Always use offline analysis — no external AI call
-    let aiParsed = buildDeepOfflineExamAnalysis('');
+    let aiParsed = await buildDeepOfflineExamAnalysis('');
     const geminiRawResponse = '';
 
     if (!aiParsed || typeof aiParsed !== 'object') {
@@ -3254,6 +3312,7 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
           conceptGap: String(aiItem.conceptGap || fallback.conceptGap),
           fixStrategy: String(aiItem.fixStrategy || fallback.fixStrategy),
           practiceTask: String(aiItem.practiceTask || fallback.practiceTask),
+          geminiExplanation: String(aiItem.geminiExplanation || fallback.geminiExplanation || ''),
           priority: ['high', 'medium', 'low'].includes(String(aiItem.priority || '').toLowerCase())
             ? String(aiItem.priority).toLowerCase()
             : fallback.priority,
@@ -3262,6 +3321,7 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
     }
 
     const persistMeta = {
+      analysisSchemaVersion: 2,
       weakSubjects,
       weakTopics: weakTopicsList,
       classNumber: classNumber || 'unknown',
@@ -3344,20 +3404,29 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
     }).lean();
     if (concurrent?.fullAnalysis && typeof concurrent.fullAnalysis === 'object') {
       const sm = concurrent.meta && typeof concurrent.meta === 'object' ? concurrent.meta : {};
-      return res.json({
-        success: true,
-        data: {
-          analysis: concurrent.fullAnalysis,
-          meta: {
-            weakSubjects: Array.isArray(sm.weakSubjects) ? sm.weakSubjects : [],
-            weakTopics: Array.isArray(sm.weakTopics) ? sm.weakTopics : [],
-            classNumber: String(sm.classNumber || ''),
-            board: String(sm.board || ''),
-            generatedAt: (concurrent.createdAt || concurrent.updatedAt || new Date()).toISOString(),
-            cached: true,
+      const concurrentInsights = Array.isArray(concurrent.fullAnalysis.questionInsights)
+        ? concurrent.fullAnalysis.questionInsights
+        : [];
+      const concurrentSchemaOk = Number(sm.analysisSchemaVersion) >= 2;
+      const concurrentExplanationsOk =
+        concurrentInsights.length === 0 ||
+        concurrentInsights.every((q) => String(q?.geminiExplanation || '').trim());
+      if (concurrentSchemaOk && concurrentExplanationsOk) {
+        return res.json({
+          success: true,
+          data: {
+            analysis: concurrent.fullAnalysis,
+            meta: {
+              weakSubjects: Array.isArray(sm.weakSubjects) ? sm.weakSubjects : [],
+              weakTopics: Array.isArray(sm.weakTopics) ? sm.weakTopics : [],
+              classNumber: String(sm.classNumber || ''),
+              board: String(sm.board || ''),
+              generatedAt: (concurrent.createdAt || concurrent.updatedAt || new Date()).toISOString(),
+              cached: true,
+            },
           },
-        },
-      });
+        });
+      }
     }
 
     try {
