@@ -21,6 +21,15 @@ import {
   parseClassAndSection,
 } from '../services/studentCsvImport.js';
 import { normalizePhoneTenDigits } from '../services/schoolService.js';
+import {
+  formatAdminSubject,
+  syncSubjectClassIds,
+  syncSubjectTeacher,
+  isCatalogStyleSubjectName,
+  filterCatalogSubjectsWithCleanSibling,
+  dedupeAdminSubjectsByPlainName,
+} from '../utils/subjectClassRelations.js';
+import { resolveSubjectContentIds } from '../utils/resolveSubjectContentIds.js';
 
 const buildSafeAppendQuestionPipeline = (questionId) => [
   {
@@ -1682,6 +1691,19 @@ export const getTeacherDashboardStats = async (req, res) => {
       (s) => s != null && s._id && s.isActive !== false
     );
 
+    const teacherBoardUpper = teacher.board ? String(teacher.board).toUpperCase() : undefined;
+    const teacherSubjectsWithCounts = await Promise.all(
+      teacherSubjectsExplicit.map(async (s) => {
+        const row = s.toObject ? s.toObject() : { ...s };
+        const contentIds = await resolveSubjectContentIds(row._id, { board: teacherBoardUpper });
+        const contentCount = await Content.countDocuments({
+          subject: { $in: contentIds },
+          isActive: true,
+        });
+        return { ...row, contentCount };
+      })
+    );
+
     res.json({
       success: true,
       data: {
@@ -1695,7 +1717,7 @@ export const getTeacherDashboardStats = async (req, res) => {
         },
         teacherId: teacher._id.toString(),
         teacherEmail: teacher.email,
-        teacherSubjects: teacherSubjectsExplicit,
+        teacherSubjects: teacherSubjectsWithCounts,
         assignedClasses: assignedClassesDetails,
         students: students.map(student => ({
           id: student._id,
@@ -1840,15 +1862,34 @@ export const assignSubjects = async (req, res) => {
       });
     }
 
-    // Update teacher with new subjects
-    const updatedTeacher = await Teacher.findByIdAndUpdate(
-      teacherId,
-      { 
-        subjects: subjectIds,
-        updatedAt: new Date()
-      },
-      { new: true }
-    ).populate('subjects');
+    const { assignments } = req.body;
+    const updatePayload = {
+      subjects: subjectIds,
+      updatedAt: new Date(),
+    };
+
+    if (assignments && Array.isArray(assignments)) {
+      updatePayload.assignments = assignments
+        .filter((a) => a.classId && a.subjectId)
+        .map((a) => ({
+          classId: new mongoose.Types.ObjectId(String(a.classId)),
+          subjectId: new mongoose.Types.ObjectId(String(a.subjectId)),
+        }));
+      const classIdsFromAssignments = [
+        ...new Set(updatePayload.assignments.map((a) => String(a.classId))),
+      ];
+      updatePayload.assignedClassIds = [
+        ...new Set([...(teacher.assignedClassIds || []).map(String), ...classIdsFromAssignments]),
+      ];
+    }
+
+    const updatedTeacher = await Teacher.findByIdAndUpdate(teacherId, updatePayload, {
+      new: true,
+    }).populate('subjects');
+
+    for (const subjectId of subjectIds) {
+      await syncSubjectTeacher(subjectId, teacherId, adminId);
+    }
 
     console.log('Updated teacher:', updatedTeacher);
 
@@ -2061,11 +2102,13 @@ export const getClasses = async (req, res) => {
 
       return {
         id: classDoc._id.toString(),
+        className: classDoc.name || `Class ${classDoc.classNumber}${classDoc.section}`,
         name: classDoc.name || `Class ${classDoc.classNumber}${classDoc.section}`,
         description: classDoc.description || '',
         classNumber: classDoc.classNumber,
         section: classDoc.section,
         assignedSubjects: assignedSubjects,
+        subjects: assignedSubjects,
         subject:
           assignedSubjects.length > 0
             ? assignedSubjects.map((s) => s.name).filter(Boolean).join(', ')
@@ -2106,46 +2149,22 @@ function boardsForAdminSubjectScope(admin) {
   return [...boards];
 }
 
-// Subject Management (Admin scoped by board)
+// Subject Management (Admin scoped by board + class links)
 export const getSubjects = async (req, res) => {
   try {
     const includeInactive = req.query.includeInactive === 'true';
+    const includeCatalog = req.query.includeCatalog === 'true';
+    const adminId = req.adminId || req.userId;
 
     if (req.user?.role === 'super-admin') {
       const query = includeInactive ? {} : { isActive: true, name: { $not: /__deleted__/ } };
       const subjects = await Subject.find(query).sort({ name: 1 }).lean();
-      const teachers = await Teacher.find({ isActive: true })
-        .select('_id fullName email subjects')
-        .lean();
-      const subjectTeachersMap = new Map();
-      for (const teacher of teachers) {
-        if (!teacher.subjects || !Array.isArray(teacher.subjects)) continue;
-        for (const subjectId of teacher.subjects) {
-          const subjectIdStr = subjectId.toString();
-          if (!subjectTeachersMap.has(subjectIdStr)) {
-            subjectTeachersMap.set(subjectIdStr, []);
-          }
-          subjectTeachersMap.get(subjectIdStr).push({
-            id: teacher._id.toString(),
-            fullName: teacher.fullName,
-            email: teacher.email,
-          });
-        }
-      }
-      const formatted = subjects.map((subject) => {
-        const subjectIdStr = String(subject._id);
-        const assignedTeachers = subjectTeachersMap.get(subjectIdStr) || [];
-        return {
-          ...subject,
-          id: subjectIdStr,
-          teacher: assignedTeachers.length > 0 ? assignedTeachers[0] : null,
-          teachers: assignedTeachers,
-        };
-      });
+      const formatted = await Promise.all(
+        subjects.map((s) => formatAdminSubject(s, null))
+      );
       return res.json({ success: true, data: formatted });
     }
 
-    const adminId = req.adminId || req.userId;
     if (!adminId || !mongoose.Types.ObjectId.isValid(String(adminId))) {
       return res.status(400).json({ success: false, message: 'Admin context missing' });
     }
@@ -2155,44 +2174,47 @@ export const getSubjects = async (req, res) => {
       .lean();
     const boardList = boardsForAdminSubjectScope(admin);
 
+    const adminClasses = await Class.find({
+      assignedAdmin: adminId,
+      isActive: true,
+    })
+      .select('_id assignedSubjects')
+      .lean();
+    const adminClassIds = adminClasses.map((c) => c._id);
+    const subjectIdsFromClasses = new Set();
+    adminClasses.forEach((c) => {
+      (c.assignedSubjects || []).forEach((sid) => subjectIdsFromClasses.add(String(sid)));
+    });
+
     const subjectQuery = { board: { $in: boardList } };
     if (!includeInactive) {
       subjectQuery.isActive = true;
       subjectQuery.name = { $not: /__deleted__/ };
     }
-    const subjects = await Subject.find(subjectQuery).sort({ name: 1 }).lean();
 
-    const teachers = await Teacher.find({ isActive: true })
-      .select('_id fullName email subjects')
-      .lean();
-    const subjectTeachersMap = new Map();
-    for (const teacher of teachers) {
-      if (!teacher.subjects || !Array.isArray(teacher.subjects)) continue;
-      for (const subjectId of teacher.subjects) {
-        const subjectIdStr = subjectId.toString();
-        if (!subjectTeachersMap.has(subjectIdStr)) {
-          subjectTeachersMap.set(subjectIdStr, []);
+    let subjects = await Subject.find(subjectQuery).sort({ name: 1 }).lean();
+
+    if (!includeCatalog) {
+      subjects = subjects.filter((s) => {
+        if (!isCatalogStyleSubjectName(s.name)) return true;
+        const sid = String(s._id);
+        const linkedClassIds = (s.classIds || []).map(String);
+        if (linkedClassIds.some((cid) => adminClassIds.some((aid) => String(aid) === cid))) {
+          return true;
         }
-        subjectTeachersMap.get(subjectIdStr).push({
-          id: teacher._id.toString(),
-          fullName: teacher.fullName,
-          email: teacher.email,
-        });
-      }
+        if (subjectIdsFromClasses.has(sid)) return true;
+        return false;
+      });
+      subjects = filterCatalogSubjectsWithCleanSibling(subjects);
     }
 
-    const formatted = subjects.map((subject) => {
-      const subjectIdStr = String(subject._id);
-      const assignedTeachers = subjectTeachersMap.get(subjectIdStr) || [];
-      return {
-        ...subject,
-        id: subjectIdStr,
-        teacher: assignedTeachers.length > 0 ? assignedTeachers[0] : null,
-        teachers: assignedTeachers,
-      };
-    });
+    const formatted = await Promise.all(
+      subjects.map((s) => formatAdminSubject(s, adminId))
+    );
 
-    res.json({ success: true, data: formatted });
+    const data = includeCatalog ? formatted : dedupeAdminSubjectsByPlainName(formatted);
+
+    res.json({ success: true, data });
   } catch (error) {
     console.error('getSubjects error:', error);
     res.status(500).json({ success: false, message: 'Failed to fetch subjects' });
@@ -2201,20 +2223,33 @@ export const getSubjects = async (req, res) => {
 
 export const createSubject = async (req, res) => {
   try {
-    const admin = await User.findById(req.adminId || req.userId).select('board curriculumBoard').lean();
+    const adminId = req.adminId || req.userId;
+    const admin = await User.findById(adminId).select('board curriculumBoard').lean();
     const board = normalizeSchoolBoard(admin?.board || admin?.curriculumBoard || 'ASLI_EXCLUSIVE_SCHOOLS');
-    const { name, code, description, grade, department } = req.body;
+    const {
+      name,
+      description,
+      teacherId,
+      teacher,
+      classIds,
+    } = req.body;
 
     if (!name || !String(name).trim()) {
       return res.status(400).json({ success: false, message: 'Subject name is required' });
     }
 
     const normalizedName = String(name).trim();
-    const normalizedCode = String(code || '').trim();
+    if (isCatalogStyleSubjectName(normalizedName)) {
+      return res.status(400).json({
+        success: false,
+        message: 'Do not include class numbers in the subject name (e.g. use MATHS, not MATHS_6)',
+      });
+    }
+
     const existing = await Subject.findOne({
       board,
       isActive: true,
-      $or: [{ name: normalizedName }, ...(normalizedCode ? [{ code: normalizedCode }] : [])],
+      name: normalizedName,
     });
     if (existing) {
       return res.status(400).json({ success: false, message: 'Subject already exists' });
@@ -2222,16 +2257,28 @@ export const createSubject = async (req, res) => {
 
     const subject = await Subject.create({
       name: normalizedName,
-      ...(normalizedCode ? { code: normalizedCode } : {}),
       description: String(description || '').trim(),
-      classNumber: String(grade || '').trim() || undefined,
       board,
       createdBy: 'super-admin',
       isActive: true,
-      department: String(department || '').trim() || undefined,
+      classIds: [],
     });
 
-    res.status(201).json({ success: true, data: subject });
+    const resolvedTeacherId = teacherId || teacher || null;
+    if (resolvedTeacherId) {
+      await syncSubjectTeacher(subject._id, resolvedTeacherId, adminId);
+    }
+
+    const ids = Array.isArray(classIds) ? classIds : [];
+    if (ids.length > 0) {
+      await syncSubjectClassIds(subject._id, ids, adminId);
+    }
+
+    const formatted = await formatAdminSubject(
+      await Subject.findById(subject._id).lean(),
+      adminId
+    );
+    res.status(201).json({ success: true, data: formatted });
   } catch (error) {
     console.error('createSubject error:', error);
     res.status(500).json({ success: false, message: 'Failed to create subject' });
@@ -2244,22 +2291,49 @@ export const updateSubject = async (req, res) => {
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return res.status(400).json({ success: false, message: 'Invalid subject id' });
     }
-    const { name, code, description, grade, department, isActive } = req.body;
+    const adminId = req.adminId || req.userId;
+    const {
+      name,
+      description,
+      teacherId,
+      teacher,
+      classIds,
+      isActive,
+    } = req.body;
 
     const subject = await Subject.findById(id);
     if (!subject) {
       return res.status(404).json({ success: false, message: 'Subject not found' });
     }
 
-    if (name !== undefined) subject.name = String(name).trim();
-    if (code !== undefined) subject.code = String(code).trim() || undefined;
+    if (name !== undefined) {
+      const normalizedName = String(name).trim();
+      if (isCatalogStyleSubjectName(normalizedName)) {
+        return res.status(400).json({
+          success: false,
+          message: 'Do not include class numbers in the subject name',
+        });
+      }
+      subject.name = normalizedName;
+    }
     if (description !== undefined) subject.description = String(description).trim();
-    if (grade !== undefined) subject.classNumber = String(grade).trim() || undefined;
-    if (department !== undefined) subject.department = String(department).trim() || undefined;
     if (isActive !== undefined) subject.isActive = Boolean(isActive);
     await subject.save();
 
-    res.json({ success: true, data: subject });
+    if (teacherId !== undefined || teacher !== undefined) {
+      const resolvedTeacherId = teacherId ?? teacher ?? null;
+      await syncSubjectTeacher(subject._id, resolvedTeacherId || null, adminId);
+    }
+
+    if (classIds !== undefined && Array.isArray(classIds)) {
+      await syncSubjectClassIds(subject._id, classIds, adminId);
+    }
+
+    const formatted = await formatAdminSubject(
+      await Subject.findById(id).lean(),
+      adminId
+    );
+    res.json({ success: true, data: formatted });
   } catch (error) {
     console.error('updateSubject error:', error);
     res.status(500).json({ success: false, message: 'Failed to update subject' });
@@ -2329,8 +2403,8 @@ export const assignClassToStudent = async (req, res) => {
     const classDoc = await Class.findOne({
       _id: classId,
       assignedAdmin: adminId,
-      isActive: true
-    });
+      isActive: true,
+    }).populate('assignedSubjects', '_id name');
 
     if (!classDoc) {
       return res.status(404).json({
@@ -2339,17 +2413,23 @@ export const assignClassToStudent = async (req, res) => {
       });
     }
 
-    // Update student with assigned class
+    const classSubjectIds = (classDoc.assignedSubjects || []).map((s) =>
+      s._id ? s._id : s
+    );
+
+    // Update student with assigned class + subjects from that class
     const updatedStudent = await User.findByIdAndUpdate(
       studentId,
       { 
         assignedClass: classId,
-        classNumber: classDoc.classNumber, // Also update classNumber for backward compatibility
+        classNumber: classDoc.classNumber,
+        assignedSubjects: classSubjectIds,
         updatedAt: new Date()
       },
       { new: true }
     )
-    .populate('assignedClass', 'name classNumber section description')
+    .populate('assignedClass', 'name classNumber section description assignedSubjects')
+    .populate('assignedSubjects', 'name description board')
     .select('-password');
 
     console.log('Updated student with class:', updatedStudent);
@@ -2973,6 +3053,12 @@ export const assignSubjectsToClass = async (req, res) => {
     });
 
     const updatedClasses = await Promise.all(updatePromises);
+
+    // Sync Subject.classIds for each subject
+    for (const subjectId of validSubjectIds) {
+      const linkedClassIds = updatedClasses.map((c) => c._id);
+      await syncSubjectClassIds(subjectId, linkedClassIds, adminId);
+    }
 
     // Populate subjects for response
     await Promise.all(updatedClasses.map(c => c.populate('assignedSubjects')));

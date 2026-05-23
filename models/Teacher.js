@@ -45,6 +45,11 @@ const teacherSchema = new mongoose.Schema({
     ref: 'Subject'
   }],
   assignedClassIds: [String],
+  /** Structured class + subject assignments for dashboards. */
+  assignments: [{
+    classId: { type: mongoose.Schema.Types.ObjectId, ref: 'Class' },
+    subjectId: { type: mongoose.Schema.Types.ObjectId, ref: 'Subject' },
+  }],
   role: {
     type: String,
     default: 'teacher'

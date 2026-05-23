@@ -44,6 +44,12 @@ import {
   getExplicitTeacherSubjectObjectIds,
   subjectIdAllowed,
 } from '../utils/teacherSubjectScope.js';
+import {
+  resolveSubjectContentIds,
+  resolveSubjectContentIdsMany,
+  subjectIdAllowedWithSiblings,
+} from '../utils/resolveSubjectContentIds.js';
+import Subject from '../models/Subject.js';
 
 const router = express.Router();
 
@@ -247,7 +253,7 @@ router.get('/calendar/events', async (req, res) => {
 });
 
 // Get teacher's assigned classes
-router.get('/classes', async (req, res) => {
+async function getTeacherClassesHandler(req, res) {
   try {
     const teacherId = req.teacherId;
     console.log('=== FETCHING TEACHER CLASSES ===');
@@ -272,15 +278,20 @@ router.get('/classes', async (req, res) => {
     const Class = (await import('../models/Class.js')).default;
     
     // Fetch actual Class documents from database
+    const classIdSet = new Set((teacher.assignedClassIds || []).map(String));
+    (teacher.assignments || []).forEach((a) => {
+      if (a.classId) classIdSet.add(String(a.classId));
+    });
+
     const classDocuments = await Class.find({
       $or: [
-        { _id: { $in: teacher.assignedClassIds } },
-        { classNumber: { $in: teacher.assignedClassIds } }
+        { _id: { $in: [...classIdSet].filter((id) => mongoose.Types.ObjectId.isValid(id)) } },
+        { classNumber: { $in: teacher.assignedClassIds || [] } },
       ],
-      isActive: true
+      isActive: true,
     })
     .populate('assignedSubjects', '_id name description code board')
-    .select('_id classNumber section description assignedSubjects');
+    .select('_id classNumber section description assignedSubjects name');
     
     // Get student counts for each class
     const classObjectIds = classDocuments.map(c => c._id);
@@ -298,14 +309,32 @@ router.get('/classes', async (req, res) => {
         s.assignedClass && s.assignedClass._id.toString() === classDoc._id.toString()
       );
       
+      const assignmentSubjects = (teacher.assignments || [])
+        .filter((a) => String(a.classId) === String(classDoc._id))
+        .map((a) => a.subjectId);
+
+      const subjectsFromClass = classDoc.assignedSubjects || [];
+      const subjectMap = new Map();
+      subjectsFromClass.forEach((s) => {
+        const id = String(s._id || s);
+        subjectMap.set(id, {
+          id,
+          name: s.name || 'Subject',
+          description: s.description || '',
+        });
+      });
+
       return {
         _id: classDoc._id,
         id: classDoc._id,
-        name: `Class ${classDoc.classNumber}${classDoc.section ? ` - ${classDoc.section}` : ''}`,
+        className: classDoc.name || `Class ${classDoc.classNumber}${classDoc.section || ''}`,
+        name: classDoc.name || `Class ${classDoc.classNumber}${classDoc.section ? ` - ${classDoc.section}` : ''}`,
         classNumber: classDoc.classNumber,
         section: classDoc.section,
         description: classDoc.description,
-        subject: classDoc.assignedSubjects?.map(s => s.name).join(', ') || 'N/A',
+        subjects: [...subjectMap.values()],
+        subject: [...subjectMap.values()].map((s) => s.name).join(', ') || 'N/A',
+        assignmentSubjectIds: assignmentSubjects.map(String),
         studentCount: classStudents.length,
         students: classStudents.map(s => ({
           id: s._id,
@@ -324,7 +353,10 @@ router.get('/classes', async (req, res) => {
     console.error('Error fetching teacher classes:', error);
     res.status(500).json({ success: false, message: 'Failed to fetch classes', error: error.message });
   }
-});
+}
+
+router.get('/classes', getTeacherClassesHandler);
+router.get('/my-classes', getTeacherClassesHandler);
 
 // Get teacher's assigned subjects
 router.get('/subjects', async (req, res) => {
@@ -796,18 +828,20 @@ router.post('/homework', async (req, res) => {
       return res.status(404).json({ success: false, message: 'Teacher not found' });
     }
     
-    const assignedSubjectIds = getExplicitTeacherSubjectObjectIds(teacher);
+    const librarySubjectIds = getExplicitTeacherSubjectObjectIds(teacher);
     const subjectId = new mongoose.Types.ObjectId(subject);
+    const teacherBoardUpper = teacher.board ? String(teacher.board).toUpperCase() : undefined;
 
-    if (!subjectIdAllowed(subjectId, assignedSubjectIds)) {
+    const allowed = await subjectIdAllowedWithSiblings(subjectId, librarySubjectIds, {
+      board: teacherBoardUpper,
+    });
+    if (!allowed) {
       return res.status(403).json({ 
         success: false, 
         message: 'You can only upload homework for your assigned subjects' 
       });
     }
     
-    // Get subject to get board
-    const Subject = (await import('../models/Subject.js')).default;
     const subjectDoc = await Subject.findById(subject);
     if (!subjectDoc) {
       return res.status(404).json({ success: false, message: 'Subject not found' });
@@ -1350,12 +1384,12 @@ router.get('/asli-prep-content', async (req, res) => {
       });
     }
     
-    let assignedSubjectIds = getExplicitTeacherSubjectObjectIds(teacher);
+    let librarySubjectIds = getExplicitTeacherSubjectObjectIds(teacher);
     const { filterToActiveCatalogSubjectIds, buildActiveSubjectIdSet, filterContentRowsForActiveCatalog } =
       await import('../utils/activeCatalog.js');
-    assignedSubjectIds = await filterToActiveCatalogSubjectIds(assignedSubjectIds);
+    librarySubjectIds = await filterToActiveCatalogSubjectIds(librarySubjectIds);
 
-    if (assignedSubjectIds.length === 0) {
+    if (librarySubjectIds.length === 0) {
       console.log('❌ Teacher has no active catalog subjects on profile');
       return res.json({
         success: true,
@@ -1363,28 +1397,31 @@ router.get('/asli-prep-content', async (req, res) => {
       });
     }
 
-    const activeIdSet = buildActiveSubjectIdSet(assignedSubjectIds);
+    const teacherBoard = teacher.board ? String(teacher.board).toUpperCase() : undefined;
+    const contentSubjectIds = await resolveSubjectContentIdsMany(librarySubjectIds, {
+      board: teacherBoard,
+    });
+    const activeIdSet = buildActiveSubjectIdSet(contentSubjectIds);
 
-    console.log(`📋 Teacher active catalog subject ids: ${assignedSubjectIds.length}`);
+    console.log(
+      `📋 Teacher library subjects: ${librarySubjectIds.length}, content ids (incl. siblings): ${contentSubjectIds.length}`
+    );
 
     const query = {
-      subject: { $in: assignedSubjectIds },
+      subject: { $in: contentSubjectIds },
       isActive: true,
     };
-    
-    // If specific subject is requested, validate it's in teacher's subject scope
-    if (subject && subject !== 'all') {
-      if (mongoose.Types.ObjectId.isValid(subject)) {
-        const subjectId = new mongoose.Types.ObjectId(subject);
-        if (subjectIdAllowed(subjectId, assignedSubjectIds)) {
-          query.subject = subjectId;
-        } else {
-          console.log('⚠️ Requested subject not in teacher subject scope');
-          return res.json({
-            success: true,
-            data: []
-          });
-        }
+
+    if (subject && subject !== 'all' && mongoose.Types.ObjectId.isValid(subject)) {
+      const allowed = await subjectIdAllowedWithSiblings(subject, librarySubjectIds, {
+        board: teacherBoard,
+      });
+      if (allowed) {
+        const resolved = await resolveSubjectContentIds(subject, { board: teacherBoard });
+        query.subject = { $in: resolved };
+      } else {
+        console.log('⚠️ Requested subject not in teacher subject scope');
+        return res.json({ success: true, data: [] });
       }
     }
     
@@ -1548,10 +1585,14 @@ router.get('/homework-submissions', async (req, res) => {
       studentMap.get(studentId).submissions.push(sub);
     });
     
-    const assignedSubjectIds = getExplicitTeacherSubjectObjectIds(teacher);
+    const librarySubjectIds = getExplicitTeacherSubjectObjectIds(teacher);
+    const teacherBoardUpper = teacher.board ? String(teacher.board).toUpperCase() : undefined;
+    const contentSubjectIds = await resolveSubjectContentIdsMany(librarySubjectIds, {
+      board: teacherBoardUpper,
+    });
     const allHomeworks = await Content.find({
       type: 'Homework',
-      subject: { $in: assignedSubjectIds },
+      subject: { $in: contentSubjectIds },
       isActive: true
     })
     .populate('subject', 'name')

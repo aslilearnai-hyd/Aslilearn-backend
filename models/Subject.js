@@ -28,6 +28,17 @@ const subjectSchema = new mongoose.Schema({
     type: String,
     trim: true
   },
+  /** School admin: classes this subject is taught in (many-to-many). */
+  classIds: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Class'
+  }],
+  /** Primary teacher for this subject (school admin). */
+  teacherId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Teacher',
+    default: null
+  },
   description: {
     type: String,
     trim: true
@@ -50,6 +61,8 @@ subjectSchema.index({ name: 1, board: 1, stateName: 1 }, { unique: true });
 subjectSchema.index({ board: 1 });
 subjectSchema.index({ classNumber: 1 });
 subjectSchema.index({ board: 1, classNumber: 1 });
+subjectSchema.index({ classIds: 1 });
+subjectSchema.index({ teacherId: 1 });
 subjectSchema.index({ isActive: 1 });
 // Sparse unique index on code - only unique for non-null values
 subjectSchema.index({ code: 1 }, { unique: true, sparse: true });
