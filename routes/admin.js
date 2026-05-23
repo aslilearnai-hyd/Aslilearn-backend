@@ -233,6 +233,9 @@ router.get('/asli-prep-content', async (req, res) => {
 
     console.log(`✅ Found ${contents.length} active catalog contents`);
 
+    const { enrichContentDurations } = await import('../utils/enrichContentDurations.js');
+    contents = await enrichContentDurations(contents);
+
     res.json({
       success: true,
       data: contents,
