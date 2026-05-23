@@ -73,12 +73,6 @@ export function isIitAiToolRequest({ board, gradeLevel, classNumber } = {}) {
 
 export function validateAiToolBoardAccess(isAsliPrepExclusive, params = {}) {
   const iit = isIitAiToolRequest(params);
-  if (isAsliPrepExclusive && !iit) {
-    return {
-      ok: false,
-      message: 'Asli Prep schools must use the IIT board for AI tools.',
-    };
-  }
   if (!isAsliPrepExclusive && iit) {
     return {
       ok: false,
@@ -86,6 +80,21 @@ export function validateAiToolBoardAccess(isAsliPrepExclusive, params = {}) {
     };
   }
   return { ok: true };
+}
+
+/** AI tool board dropdown: curriculum always; IIT when Asli Prep is on. */
+export function getAiToolBoardOptions(isAsliPrepExclusive, curriculumBoard) {
+  const curriculum = String(curriculumBoard || 'CBSE').trim() || 'CBSE';
+  const options = [curriculum];
+  if (isAsliPrepExclusive && !options.includes('IIT')) {
+    options.push('IIT');
+  }
+  return options;
+}
+
+/** Default AI tool board is always the school's curriculum board. */
+export function getDefaultAiToolBoard(_isAsliPrepExclusive, curriculumBoard) {
+  return String(curriculumBoard || 'CBSE').trim() || 'CBSE';
 }
 
 export async function getStudentSchoolProgramContext(userId) {
