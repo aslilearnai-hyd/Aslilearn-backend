@@ -78,16 +78,24 @@ export async function syncSubjectTeacher(subjectId, teacherId, adminId) {
   return teacher;
 }
 
-/** Classes linked to a subject (classIds + reverse assignedSubjects). */
-export async function getClassesForSubject(subjectId, adminId) {
+/**
+ * Classes linked to a subject.
+ * @param {object} [options]
+ * @param {boolean} [options.adminListOnly] — only Subject.classIds (explicit admin links), not legacy Class.assignedSubjects-only rows
+ */
+export async function getClassesForSubject(subjectId, adminId, options = {}) {
+  const { adminListOnly = false } = options;
   const subject = await Subject.findById(subjectId).select('classIds').lean();
   if (!subject) return [];
 
   const idSet = new Set((subject.classIds || []).map((id) => String(id)));
-  const reverseQuery = { assignedSubjects: subjectId, isActive: true };
-  if (adminId) reverseQuery.assignedAdmin = adminId;
-  const reverse = await Class.find(reverseQuery).select('_id').lean();
-  reverse.forEach((c) => idSet.add(String(c._id)));
+
+  if (!adminListOnly) {
+    const reverseQuery = { assignedSubjects: subjectId, isActive: true };
+    if (adminId) reverseQuery.assignedAdmin = adminId;
+    const reverse = await Class.find(reverseQuery).select('_id').lean();
+    reverse.forEach((c) => idSet.add(String(c._id)));
+  }
 
   if (idSet.size === 0) return [];
   const query = { _id: { $in: [...idSet] }, isActive: true };
@@ -107,7 +115,7 @@ export function formatClassLabel(classDoc) {
 }
 
 /** Build API shape for admin subject list. */
-export async function formatAdminSubject(subject, adminId) {
+export async function formatAdminSubject(subject, adminId, options = {}) {
   const subjectId = String(subject._id);
   let teacher = null;
   if (subject.teacherId) {
@@ -139,7 +147,9 @@ export async function formatAdminSubject(subject, adminId) {
     }
   }
 
-  const classDocs = await getClassesForSubject(subject._id, adminId);
+  const classDocs = await getClassesForSubject(subject._id, adminId, {
+    adminListOnly: options.adminListOnly === true,
+  });
   const classes = classDocs.map((c) => ({
     id: String(c._id),
     classNumber: c.classNumber,
@@ -177,15 +187,7 @@ export function filterCatalogSubjectsWithCleanSibling(subjectDocs) {
   });
 }
 
-function rowPriority(row) {
-  let score = 0;
-  if (!isCatalogStyleSubjectName(row.name)) score += 100;
-  if (row.teacher) score += 50;
-  if (row.classes?.length) score += 30;
-  return score;
-}
-
-/** One admin table row per subject (merges MATHS + MATHS_6 + MATHS_7). */
+/** One admin table row per subject (merges MATHS + MATHS_6 + MATHS_7 for display). */
 export function dedupeAdminSubjectsByPlainName(formattedRows) {
   const groups = new Map();
   for (const row of formattedRows) {
@@ -204,38 +206,36 @@ export function dedupeAdminSubjectsByPlainName(formattedRows) {
       continue;
     }
 
-    const sorted = [...rows].sort((a, b) => rowPriority(b) - rowPriority(a));
-    const primary = { ...sorted[0] };
-    const classMap = new Map();
-    const variantIds = new Set();
+    const variantIds = rows.map((r) => r.id);
+    const cleanRow = rows.find((r) => !isCatalogStyleSubjectName(r.name));
+    const catalogRows = rows.filter((r) => isCatalogStyleSubjectName(r.name));
 
-    for (const r of sorted) {
-      variantIds.add(r.id);
-      for (const c of r.classes || []) {
-        classMap.set(c.id, c);
-      }
-      if (!primary.teacher && r.teacher) primary.teacher = r.teacher;
-    }
-
-    const cleanRow = sorted.find((r) => !isCatalogStyleSubjectName(r.name));
+    // Use the clean subject row as the table row; never pull class links from legacy catalog rows.
+    let primary;
     if (cleanRow) {
-      primary.id = cleanRow.id;
-      primary._id = cleanRow._id;
-      primary.name = cleanRow.name;
-      if (!primary.description && cleanRow.description) {
-        primary.description = cleanRow.description;
+      primary = { ...cleanRow };
+      if (!primary.teacher) {
+        const withTeacher = rows.find((r) => r.teacher);
+        if (withTeacher) primary.teacher = withTeacher.teacher;
+      }
+      if (!primary.description) {
+        const withDesc = rows.find((r) => r.description);
+        if (withDesc) primary.description = withDesc.description;
       }
     } else {
-      primary.name = extractPlainSubjectNameForContent(primary.name);
+      const fallback = catalogRows[0] || rows[0];
+      primary = {
+        ...fallback,
+        name: extractPlainSubjectNameForContent(fallback.name),
+      };
     }
 
-    primary.classes = [...classMap.values()].sort((a, b) =>
-      String(a.classNumber || '').localeCompare(String(b.classNumber || ''), undefined, {
-        numeric: true,
-      })
-    );
+    primary.classes = Array.isArray(primary.classes) ? [...primary.classes] : [];
     primary.classIds = primary.classes.map((c) => c.id);
-    primary.variantIds = [...variantIds];
+    primary.variantIds = variantIds;
+    if (catalogRows.length > 0 && cleanRow) {
+      primary._legacyCatalogVariantIds = catalogRows.map((r) => r.id);
+    }
     merged.push(primary);
   }
 

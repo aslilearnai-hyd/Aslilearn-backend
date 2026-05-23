@@ -2209,7 +2209,7 @@ export const getSubjects = async (req, res) => {
     }
 
     const formatted = await Promise.all(
-      subjects.map((s) => formatAdminSubject(s, adminId))
+      subjects.map((s) => formatAdminSubject(s, adminId, { adminListOnly: true }))
     );
 
     const data = includeCatalog ? formatted : dedupeAdminSubjectsByPlainName(formatted);
