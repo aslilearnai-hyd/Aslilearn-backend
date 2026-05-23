@@ -4556,6 +4556,13 @@ router.post('/overall-progress', async (req, res) => {
   }
 });
 
+const MAX_SESSION_MINUTES_PER_DAY = 12 * 60;
+
+function capSessionMinutesPerDay(minutes) {
+  const n = Math.round(Number(minutes) || 0);
+  return Math.min(MAX_SESSION_MINUTES_PER_DAY, Math.max(0, n));
+}
+
 // Save login session time (logged-in time)
 router.post('/session-time', async (req, res) => {
   try {
@@ -4579,7 +4586,7 @@ router.post('/session-time', async (req, res) => {
     
     if (session) {
       // Update existing session - use maximum duration (in case of multiple updates)
-      const newDuration = Math.round(totalMinutes);
+      const newDuration = capSessionMinutesPerDay(totalMinutes);
       if (newDuration > session.duration) {
         session.duration = newDuration;
         session.endTime = new Date();
@@ -4595,7 +4602,7 @@ router.post('/session-time', async (req, res) => {
         date: dateKey,
         startTime: startOfDay,
         endTime: new Date(),
-        duration: Math.round(totalMinutes)
+        duration: capSessionMinutesPerDay(totalMinutes),
       });
       await session.save();
     }
@@ -4632,23 +4639,21 @@ router.get('/session-time', async (req, res) => {
       date: { $gte: sevenDaysAgo.toISOString().split('T')[0] }
     }).sort({ date: 1 });
     
-    // Calculate weekly total
-    const weeklyTotal = sessions.reduce((sum, session) => sum + (session.duration || 0), 0);
-    
-    // Get today's session
-    const todayKey = today.toISOString().split('T')[0];
-    const todaySession = sessions.find(s => s.date === todayKey);
-    const todayTotal = todaySession ? (todaySession.duration || 0) : 0;
-    
-    // Format weekly data by day
+    // Format weekly data by day (cap each day to avoid inflated totals)
     const weeklyData = {};
     for (let i = 0; i < 7; i++) {
       const date = new Date(today);
       date.setDate(date.getDate() - i);
       const dateKey = date.toISOString().split('T')[0];
       const session = sessions.find(s => s.date === dateKey);
-      weeklyData[dateKey] = session ? (session.duration || 0) : 0;
+      weeklyData[dateKey] = capSessionMinutesPerDay(session ? session.duration || 0 : 0);
     }
+
+    const weeklyTotal = Object.values(weeklyData).reduce((sum, mins) => sum + mins, 0);
+
+    // Get today's session
+    const todayKey = today.toISOString().split('T')[0];
+    const todayTotal = capSessionMinutesPerDay(weeklyData[todayKey] || 0);
     
     res.json({
       success: true,
