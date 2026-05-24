@@ -946,6 +946,62 @@ router.get('/students', async (req, res) => {
   }
 });
 
+// All remarks for students in teacher's classes (must be before /students/:studentId/*)
+router.get('/students/remarks', async (req, res) => {
+  try {
+    const teacherId = req.teacherId;
+    const teacher = await Teacher.findById(teacherId);
+    if (!teacher) {
+      return res.status(404).json({ success: false, message: 'Teacher not found' });
+    }
+
+    let studentIds = [];
+    if (teacher.assignedClassIds?.length) {
+      const Class = (await import('../models/Class.js')).default;
+      const classDocs = await Class.find({
+        $or: [
+          { _id: { $in: teacher.assignedClassIds } },
+          { classNumber: { $in: teacher.assignedClassIds } },
+        ],
+        isActive: true,
+      }).select('_id');
+      const classObjectIds = classDocs.map((c) => c._id);
+      const students = await User.find({
+        role: 'student',
+        assignedClass: { $in: classObjectIds },
+        assignedAdmin: teacher.adminId,
+      }).select('_id');
+      studentIds = students.map((s) => s._id);
+    }
+
+    const remarkQuery =
+      studentIds.length > 0
+        ? {
+            $or: [
+              { studentId: { $in: studentIds } },
+              { teacherId: teacher._id },
+            ],
+          }
+        : { teacherId: teacher._id };
+
+    const remarks = await StudentRemark.find(remarkQuery)
+      .populate('studentId', 'fullName email')
+      .populate('teacherId', 'fullName email')
+      .populate('subject', 'name')
+      .sort({ createdAt: -1 })
+      .limit(200);
+
+    res.json({ success: true, data: remarks });
+  } catch (error) {
+    console.error('Get class student remarks error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to fetch student remarks',
+      error: error.message,
+    });
+  }
+});
+
 // Get all students with their recent performance
 router.get('/students/performance', async (req, res) => {
   try {
@@ -1651,6 +1707,33 @@ router.get('/remarks', async (req, res) => {
   } catch (error) {
     console.error('Get teacher remarks error:', error);
     res.status(500).json({ success: false, message: 'Failed to fetch remarks', error: error.message });
+  }
+});
+
+// Data-driven areas-for-improvement (exams, usage, progress, homework, remarks — no Gemini)
+router.post('/students/progress-ai-insights', async (req, res) => {
+  try {
+    const { summary } = req.body || {};
+    if (!summary || typeof summary !== 'object') {
+      return res.status(400).json({
+        success: false,
+        message: 'summary object is required',
+      });
+    }
+
+    const { buildTeacherProgressInsights } = await import(
+      '../services/teacher-progress-insights-service.js'
+    );
+    const insights = buildTeacherProgressInsights(summary);
+
+    res.json({ success: true, data: { insights, source: 'analytics' } });
+  } catch (error) {
+    console.error('Progress insights route error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to generate progress insights',
+      error: error.message,
+    });
   }
 });
 
