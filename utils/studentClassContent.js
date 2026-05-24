@@ -69,3 +69,38 @@ export function filterContentsForStudentClass(contents, studentClassNumber, libr
     contentMatchesStudentClass(doc, studentClassNumber, librarySubjectIds)
   );
 }
+
+/** Class numbers targeted by an exam (assignedClasses + legacy classNumber). */
+export function getExamAssignedClassNumbers(exam) {
+  const classes = [];
+  const raw = exam?.assignedClasses;
+  if (typeof raw === 'string' && raw.trim()) {
+    const parts = raw.includes('|') ? raw.split('|') : raw.includes(',') ? raw.split(',') : [raw];
+    parts.forEach((part) => {
+      const n = normalizeClassNumberLabel(part);
+      if (n) classes.push(n);
+    });
+  } else if (Array.isArray(raw)) {
+    raw.forEach((c) => {
+      const n = normalizeClassNumberLabel(
+        typeof c === 'object' && c != null ? c.classNumber ?? c : c
+      );
+      if (n) classes.push(n);
+    });
+  }
+  const cn =
+    exam?.classNumber != null && String(exam.classNumber).trim() !== ''
+      ? normalizeClassNumberLabel(exam.classNumber)
+      : '';
+  if (cn) classes.push(cn);
+  return [...new Set(classes.filter(Boolean))];
+}
+
+/** Student may only take exams explicitly assigned to their class. */
+export function examMatchesStudentAssignedClass(exam, studentClassNumber) {
+  const want = studentClassNumber ? normalizeClassNumberLabel(studentClassNumber) : '';
+  if (!want) return true;
+  const examClasses = getExamAssignedClassNumbers(exam);
+  if (examClasses.length === 0) return false;
+  return examClasses.some((c) => classLabelsMatch(c, want));
+}

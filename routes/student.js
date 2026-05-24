@@ -29,6 +29,10 @@ import {
 } from '../utils/advancedExamAnalytics.js';
 import { normalizeSchoolBoard, resolveUserDisplayBoard } from '../constants/boards.js';
 import { dedupeExamResultRows } from '../utils/dedupe-exam-results.js';
+import {
+  examMatchesStudentAssignedClass,
+  resolveStudentClassNumber,
+} from '../utils/studentClassContent.js';
 import { buildAdaptiveLearningPayload } from '../services/student-adaptive-learning-service.js';
 import {
   resolveSubjectContentIds,
@@ -1281,8 +1285,9 @@ const canStudentAccessExam = (exam, studentAdminId) => {
 router.get('/exams', async (req, res) => {
   try {
     const student = await User.findById(req.userId)
-      .populate('assignedAdmin', 'board');
-    
+      .populate('assignedAdmin', 'board')
+      .populate('assignedClass', 'classNumber section');
+
     if (!student) {
       return res.json({
         success: true,
@@ -1290,6 +1295,7 @@ router.get('/exams', async (req, res) => {
       });
     }
 
+    const studentClassNumber = resolveStudentClassNumber(student, student.assignedClass);
     const studentAdminId = student.assignedAdmin?._id || student.assignedAdmin;
 
     // Keep exam discovery broad at DB level, then enforce school targeting in-memory.
@@ -1316,11 +1322,12 @@ router.get('/exams', async (req, res) => {
     // 2) have uploaded questions (avoid empty exam cards)
     const publishedExams = hydratedExams.filter((exam) => {
       if (!canStudentAccessExam(exam, studentAdminId)) return false;
+      if (!examMatchesStudentAssignedClass(exam, studentClassNumber)) return false;
       return Array.isArray(exam?.questions) && exam.questions.length > 0;
     });
 
     console.log(
-      `✅ Found ${publishedExams.length} accessible exams with questions for student (from ${hydratedExams.length} total)`
+      `✅ Found ${publishedExams.length} accessible exams for class ${studentClassNumber || 'unset'} (from ${hydratedExams.length} total)`
     );
     
     res.json({
@@ -1356,7 +1363,7 @@ router.get('/exams/:examId', async (req, res) => {
   try {
     const { examId } = req.params;
     
-    const student = await User.findById(req.userId);
+    const student = await User.findById(req.userId).populate('assignedClass', 'classNumber section');
     if (!student) {
       return res.status(404).json({ 
         success: false, 
@@ -1377,11 +1384,18 @@ router.get('/exams/:examId', async (req, res) => {
       });
     }
 
+    const studentClassNumber = resolveStudentClassNumber(student, student.assignedClass);
     const studentAdminId = student.assignedAdmin?._id || student.assignedAdmin;
     if (!canStudentAccessExam(exam, studentAdminId)) {
       return res.status(403).json({
         success: false,
         message: 'This exam is not assigned to your school.'
+      });
+    }
+    if (!examMatchesStudentAssignedClass(exam, studentClassNumber)) {
+      return res.status(403).json({
+        success: false,
+        message: 'This exam is not assigned to your class.'
       });
     }
 
@@ -4593,6 +4607,14 @@ function capSessionMinutesPerDay(minutes) {
   return Math.min(MAX_SESSION_MINUTES_PER_DAY, Math.max(0, n));
 }
 
+/** Calendar date YYYY-MM-DD (server local timezone). */
+function getCalendarDateKey(date = new Date()) {
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+}
+
 // Save login session time (logged-in time)
 router.post('/session-time', async (req, res) => {
   try {
@@ -4666,7 +4688,7 @@ router.get('/session-time', async (req, res) => {
     
     const sessions = await UserSession.find({
       userId: userId,
-      date: { $gte: sevenDaysAgo.toISOString().split('T')[0] }
+      date: { $gte: getCalendarDateKey(sevenDaysAgo) }
     }).sort({ date: 1 });
     
     // Format weekly data by day (cap each day to avoid inflated totals)
@@ -4674,7 +4696,7 @@ router.get('/session-time', async (req, res) => {
     for (let i = 0; i < 7; i++) {
       const date = new Date(today);
       date.setDate(date.getDate() - i);
-      const dateKey = date.toISOString().split('T')[0];
+      const dateKey = getCalendarDateKey(date);
       const session = sessions.find(s => s.date === dateKey);
       weeklyData[dateKey] = capSessionMinutesPerDay(session ? session.duration || 0 : 0);
     }
@@ -4682,7 +4704,7 @@ router.get('/session-time', async (req, res) => {
     const weeklyTotal = Object.values(weeklyData).reduce((sum, mins) => sum + mins, 0);
 
     // Get today's session
-    const todayKey = today.toISOString().split('T')[0];
+    const todayKey = getCalendarDateKey(today);
     const todayTotal = capSessionMinutesPerDay(weeklyData[todayKey] || 0);
     
     res.json({
