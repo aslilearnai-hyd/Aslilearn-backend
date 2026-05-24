@@ -5028,10 +5028,23 @@ router.get('/teacher-work-diary', async (req, res) => {
       return res.json({ success: true, data: [] });
     }
     const limit = Math.min(parseInt(String(req.query.limit || '40'), 10) || 40, 100);
-    const entries = await TeacherWorkDiary.find({ teacherId: { $in: teacherIds } })
+    const studentClassOid =
+      student.assignedClass && mongoose.Types.ObjectId.isValid(String(student.assignedClass))
+        ? new mongoose.Types.ObjectId(String(student.assignedClass))
+        : null;
+    const diaryFilter = { teacherId: { $in: teacherIds } };
+    if (studentClassOid) {
+      diaryFilter.$or = [
+        { classId: studentClassOid },
+        { classId: { $exists: false } },
+        { classId: null },
+      ];
+    }
+    const entries = await TeacherWorkDiary.find(diaryFilter)
       .sort({ forDate: -1 })
       .limit(limit)
       .populate('teacherId', 'fullName email')
+      .populate('classId', 'classNumber section name')
       .lean();
     res.json({ success: true, data: entries });
   } catch (error) {

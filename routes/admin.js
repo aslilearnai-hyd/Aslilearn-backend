@@ -274,6 +274,7 @@ router.get('/teacher-work-diary', async (req, res) => {
       .sort({ forDate: -1 })
       .limit(lim)
       .populate('teacherId', 'fullName email')
+      .populate('classId', 'classNumber section name')
       .lean();
     res.json({ success: true, data: entries });
   } catch (error) {

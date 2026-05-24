@@ -2096,6 +2096,7 @@ router.get('/work-diary', async (req, res) => {
     const entries = await TeacherWorkDiary.find(q)
       .sort({ forDate: -1 })
       .limit(Math.min(Number(limit) || 60, 200))
+      .populate('classId', 'classNumber section name')
       .lean();
     res.json({ success: true, data: entries });
   } catch (error) {
@@ -2107,9 +2108,12 @@ router.get('/work-diary', async (req, res) => {
 router.post('/work-diary', async (req, res) => {
   try {
     const teacherId = req.teacherId;
-    const { date, content, title } = req.body;
+    const { date, content, title, classId } = req.body;
     if (!date || !content || String(content).trim().length === 0) {
       return res.status(400).json({ success: false, message: 'date and content are required' });
+    }
+    if (!classId || !mongoose.Types.ObjectId.isValid(String(classId))) {
+      return res.status(400).json({ success: false, message: 'classId is required' });
     }
     const forDate = parseDateKeyToUtc(String(date));
     if (!forDate) {
@@ -2118,17 +2122,48 @@ router.post('/work-diary', async (req, res) => {
     const teacher = await Teacher.findById(teacherId);
     if (!teacher) return res.status(404).json({ success: false, message: 'Teacher not found' });
 
+    const classOid = new mongoose.Types.ObjectId(String(classId));
+    const Class = (await import('../models/Class.js')).default;
+    const classDoc = await Class.findOne({
+      _id: classOid,
+      isActive: true,
+    }).select('_id classNumber section name');
+    if (!classDoc) {
+      return res.status(400).json({ success: false, message: 'Invalid class' });
+    }
+    const classDisplay = (() => {
+      const section = classDoc.section?.trim();
+      if (classDoc.classNumber) {
+        return section ? `Class ${classDoc.classNumber} - ${section}` : `Class ${classDoc.classNumber}`;
+      }
+      return classDoc.name || 'Class';
+    })();
+    const assignedIds = new Set((teacher.assignedClassIds || []).map(String));
+    const assignedByAssignment = (teacher.assignments || []).some(
+      (a) => String(a.classId) === String(classOid)
+    );
+    const allowed =
+      assignedByAssignment ||
+      assignedIds.has(String(classOid)) ||
+      assignedIds.has(String(classDoc.classNumber));
+    if (!allowed) {
+      return res.status(403).json({ success: false, message: 'Class not assigned to you' });
+    }
+
     const tid = new mongoose.Types.ObjectId(teacherId);
-    const existing = await TeacherWorkDiary.findOne({ teacherId: tid, forDate });
+    const existing = await TeacherWorkDiary.findOne({ teacherId: tid, forDate, classId: classOid });
     if (existing) {
       existing.content = String(content).trim();
       existing.title = title != null ? String(title).trim() : existing.title;
+      existing.classDisplay = classDisplay;
       await existing.save();
       return res.json({ success: true, data: existing, message: 'Diary updated for this date' });
     }
     const doc = new TeacherWorkDiary({
       teacherId: tid,
       adminId: teacher.adminId,
+      classId: classOid,
+      classDisplay,
       forDate,
       title: title != null ? String(title).trim() : '',
       content: String(content).trim(),

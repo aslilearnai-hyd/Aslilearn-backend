@@ -15,6 +15,17 @@ const teacherWorkDiarySchema = new mongoose.Schema(
       required: true,
       index: true,
     },
+    classId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Class',
+      index: true,
+    },
+    /** Denormalized label for lists (e.g. "Class 7 - B") */
+    classDisplay: {
+      type: String,
+      trim: true,
+      default: '',
+    },
     /** Calendar day this entry describes (stored as UTC midnight for stable queries) */
     forDate: {
       type: Date,
@@ -37,6 +48,7 @@ const teacherWorkDiarySchema = new mongoose.Schema(
 
 teacherWorkDiarySchema.index({ teacherId: 1, forDate: -1 });
 teacherWorkDiarySchema.index({ adminId: 1, forDate: -1 });
+teacherWorkDiarySchema.index({ teacherId: 1, forDate: 1, classId: 1 });
 
 const TeacherWorkDiary = mongoose.model('TeacherWorkDiary', teacherWorkDiarySchema);
 
