@@ -79,7 +79,8 @@ export function countExpectedPdfItems(toolType, pdfText) {
   }
 
   if (tool === 'concept-mastery-helper') {
-    const concepts = text.match(/(?:^|\n)\s*(?:Concept|Topic)\s+\d+\b/gim) || [];
+    const concepts =
+      text.match(/(?:^|\n)\s*(?:Item|Concept|Topic)\s+\d+\b/gim) || [];
     return concepts.length;
   }
 
@@ -410,31 +411,37 @@ export function buildPdfExtractionPasses(toolType, rawText) {
 /** Split PDF at Item N / Card N markers for multi-item tools. */
 export function splitPdfByItemMarkers(toolType, text) {
   const tool = String(toolType || '').trim();
-  const patterns = {
-    'flashcard-generator': /(?=^(?:Card|Flashcard|Flash\s*Card|Item)\s+\d+\b)/gim,
-    'short-notes-summaries-maker': /(?=^Item\s+\d+\b)/gim,
-    'story-passage-creator': /(?=^(?:Item|Story|Passage)\s+\d+\b)/gim,
-    'concept-mastery-helper': /(?=^(?:Concept|Topic)\s+\d+\b)/gim,
+  const markerLinePatterns = {
+    'flashcard-generator': /^(?:Card|Flashcard|Flash\s*Card|Item)\s+\d+\b/i,
+    'short-notes-summaries-maker': /^Item\s+\d+\b/i,
+    'story-passage-creator': /^(?:Item|Story|Passage)\s+\d+\b/i,
+    'concept-mastery-helper': /^(?:Item|Concept|Topic)\s+\d+\b/i,
   };
-  const re = patterns[tool];
-  if (!re) return [];
+  const lineRe = markerLinePatterns[tool];
+  if (!lineRe) return [];
 
-  const indices = [];
-  let m;
-  while ((m = re.exec(text)) !== null) {
-    if (m.index > 0) indices.push(m.index);
-  }
-  if (indices.length < 1) return [];
-
+  const lines = String(text || '').replace(/\r/g, '\n').split('\n');
   const chunks = [];
-  const starts = [0, ...indices].filter((v, i, a) => i === 0 || v !== a[i - 1]);
-  for (let i = 0; i < starts.length; i += 1) {
-    const start = starts[i];
-    const end = i + 1 < starts.length ? starts[i + 1] : text.length;
-    const chunk = text.slice(start, end).trim();
+  let current = [];
+
+  for (const line of lines) {
+    if (lineRe.test(line.trim())) {
+      if (current.length) {
+        const chunk = current.join('\n').trim();
+        if (chunk.length > 80) chunks.push(chunk);
+      }
+      current = [line];
+    } else {
+      current.push(line);
+    }
+  }
+
+  if (current.length) {
+    const chunk = current.join('\n').trim();
     if (chunk.length > 80) chunks.push(chunk);
   }
-  return chunks;
+
+  return chunks.length > 1 ? chunks : [];
 }
 
 /** Normalize a single extracted item (options, numbering, whitespace). */
@@ -486,6 +493,30 @@ export function normalizeExtractedItem(toolType, item) {
   return out;
 }
 
+const PDF_EXTRACT_MAX_ITEMS = Math.max(
+  50,
+  Math.min(5000, Number(process.env.PDF_EXTRACT_MAX_ITEMS) || 500),
+);
+
+/** Safely append extract rows without spread-related RangeError on bad payloads. */
+export function appendPdfExtractItems(target, batch, maxItems = PDF_EXTRACT_MAX_ITEMS) {
+  if (!Array.isArray(target)) return target;
+  if (!batch) return target;
+  const list = Array.isArray(batch) ? batch : typeof batch === 'object' ? [batch] : [];
+  for (let i = 0; i < list.length && target.length < maxItems; i += 1) {
+    const row = list[i];
+    if (row && typeof row === 'object') target.push(row);
+  }
+  return target;
+}
+
+function capExtractArray(arr) {
+  if (!Array.isArray(arr)) return [];
+  if (arr.length <= PDF_EXTRACT_MAX_ITEMS) return arr;
+  console.warn(`[PDF] Truncating oversized extract array (${arr.length} → ${PDF_EXTRACT_MAX_ITEMS})`);
+  return arr.slice(0, PDF_EXTRACT_MAX_ITEMS);
+}
+
 /** Parse Gemini PDF response — array, wrapped object, or single object. */
 export function parsePdfExtractResponse(raw) {
   const cleaned = String(raw || '')
@@ -494,10 +525,15 @@ export function parsePdfExtractResponse(raw) {
     .replace(/\s*```$/i, '')
     .trim();
 
+  if (!cleaned) return [];
+
   let parsed;
   try {
     parsed = JSON.parse(cleaned);
   } catch (firstErr) {
+    if (String(firstErr?.message || '').includes('Invalid array length')) {
+      throw new Error('Gemini JSON response too large to parse — split the PDF or reduce item count.');
+    }
     const start = cleaned.indexOf('[');
     if (start === -1) throw firstErr;
     const body = cleaned.slice(start);
@@ -507,11 +543,18 @@ export function parsePdfExtractResponse(raw) {
       try {
         parsed = JSON.parse(repaired);
         console.warn('[PDF] Repaired truncated JSON array from Gemini extract');
-      } catch {
+      } catch (repairErr) {
+        if (String(repairErr?.message || '').includes('Invalid array length')) {
+          throw new Error('Gemini JSON response too large to parse — split the PDF or reduce item count.');
+        }
         const innerStart = body.indexOf('{');
         const innerEnd = body.lastIndexOf('}');
         if (innerStart !== -1 && innerEnd > innerStart) {
-          parsed = [JSON.parse(body.slice(innerStart, innerEnd + 1))];
+          try {
+            parsed = [JSON.parse(body.slice(innerStart, innerEnd + 1))];
+          } catch {
+            throw firstErr;
+          }
         } else {
           throw firstErr;
         }
@@ -521,7 +564,7 @@ export function parsePdfExtractResponse(raw) {
     }
   }
 
-  if (Array.isArray(parsed)) return parsed;
+  if (Array.isArray(parsed)) return capExtractArray(parsed);
 
   if (parsed && typeof parsed === 'object') {
     for (const key of [
@@ -537,7 +580,7 @@ export function parsePdfExtractResponse(raw) {
       'passages',
     ]) {
       if (Array.isArray(parsed[key]) && parsed[key].length) {
-        return parsed[key];
+        return capExtractArray(parsed[key]);
       }
     }
     if (

@@ -58,6 +58,36 @@ router.use((req, res, next) => {
 // Apply authentication middleware to all routes
 router.use(verifyToken);
 
+// Combined dashboard payload (one round trip — user, subjects, content, quizzes)
+router.get('/dashboard-bootstrap', async (req, res) => {
+  try {
+    const { buildStudentDashboardBootstrap } = await import(
+      '../services/student-dashboard-bootstrap.js'
+    );
+    const payload = await buildStudentDashboardBootstrap(req.userId);
+    if (!payload.ok) {
+      return res.status(payload.status || 500).json({
+        success: false,
+        message: payload.message || 'Failed to load dashboard',
+      });
+    }
+    return res.json({
+      success: true,
+      user: payload.user,
+      subjects: payload.subjects,
+      previewVideos: payload.previewVideos || [],
+      contents: payload.contents,
+      contentTypeCounts: payload.contentTypeCounts,
+      quizzes: payload.quizzes,
+      stats: payload.stats,
+      studyStreak: payload.studyStreak,
+    });
+  } catch (error) {
+    console.error('dashboard-bootstrap error:', error);
+    return res.status(500).json({ success: false, message: 'Failed to load dashboard data' });
+  }
+});
+
 // Middleware to validate userId is a valid ObjectId and user is a student
 router.use((req, res, next) => {
   if (!req.userId) {

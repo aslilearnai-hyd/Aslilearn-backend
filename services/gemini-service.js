@@ -7,12 +7,13 @@ import { extractActivitiesFromCuriosityWorkbookPdf } from './curiosity-activity-
 import { buildPdfToolConfigMap } from '../config/aiToolTemplates.js';
 import {
   consolidateWorksheetExtractItems,
-  extractWorksheetItemsFromPdfText,
   normalizeWorksheetQuestionKey,
 } from './pdf-worksheet-extract.js';
+import { extractToolItemsFromPdfText } from './pdf-tool-extract.js';
 import {
   PDF_EXTRACT_MAX_RETRIES,
   PDF_STRICT_JSON_RULES,
+  appendPdfExtractItems,
   buildPdfExtractionPasses,
   buildPdfExtractRetryPrompt,
   cleanPdfTextForExtraction,
@@ -962,6 +963,14 @@ function detectAllTitlesInPdf(toolType, rawText) {
         if (!looksLikeRealActivityTitle(title)) continue;
         partial.push({ number, title });
       }
+    } else if (toolType === 'concept-mastery-helper') {
+      const itemPattern = /^(?:Item|Concept|Topic)\s+(\d+)\b[:\s-]*(.*)$/gim;
+      let m;
+      while ((m = itemPattern.exec(scan)) !== null) {
+        const number = Number.parseInt(m[1], 10);
+        const title = String(m[2] || '').trim() || `Concept ${number}`;
+        if (Number.isFinite(number)) partial.push({ number, title });
+      }
     } else {
       const genericPattern = /^(?:Q\.?\s*)?(\d+)[\.\)]\s+(.+)$/gm;
       let m;
@@ -972,7 +981,7 @@ function detectAllTitlesInPdf(toolType, rawText) {
       }
     }
     if (partial.length) {
-      results.push(...partial);
+      appendPdfExtractItems(results, partial, 300);
       break;
     }
   }
@@ -1522,7 +1531,9 @@ function consolidateExamExtractItems(items, params = {}) {
 
 async function runGeminiPdfExtractPass(toolType, textSlice, params, passContext = {}) {
   const maxExtractTokens =
-    toolType === 'lesson-planner' ||
+    toolType === 'concept-mastery-helper'
+      ? 32768
+      : toolType === 'lesson-planner' ||
     toolType === 'daily-class-plan-maker' ||
     toolType === 'activity-project-generator' ||
     toolType === 'worksheet-mcq-generator' ||
@@ -1749,6 +1760,29 @@ function dedupeExtractedItems(items, toolType = '') {
   return out;
 }
 
+function mergePatternExtractWithGemini(toolType, extractedItems, fromText) {
+  if (!Array.isArray(fromText) || !fromText.length) return extractedItems;
+  const seen = new Set();
+  const merged = [];
+  for (const item of [...extractedItems, ...fromText]) {
+    if (!item || typeof item !== 'object') continue;
+    let key;
+    if (toolType === 'worksheet-mcq-generator' && String(item.question || '').trim()) {
+      key = normalizeWorksheetQuestionKey(item.question);
+    } else if (toolType === 'flashcard-generator') {
+      key = normalizeTitleKey(`${item.front || ''}:${item.back || ''}`);
+    } else {
+      key = normalizeTitleKey(
+        item.concept_name || item.title || item.name || item.lesson_name || item.front || item.question,
+      );
+    }
+    if (key && seen.has(key)) continue;
+    if (key) seen.add(key);
+    merged.push(item);
+  }
+  return merged.length ? merged : fromText;
+}
+
 /** Extract structured items from PDF text only — never generates missing items. */
 export async function extractAndGenerateAllItems(toolType, rawPdfText, params = {}) {
   const text = cleanPdfTextForExtraction(String(rawPdfText || '').trim());
@@ -1810,7 +1844,7 @@ export async function extractAndGenerateAllItems(toolType, rawPdfText, params = 
         validationPassed: Boolean(result.validation?.valid),
         errors: (result.validation?.errors || []).slice(0, 8),
       });
-      if (batch.length) extractedItems.push(...batch);
+      if (batch.length) appendPdfExtractItems(extractedItems, batch);
     } catch (err) {
       const msg = err?.message || String(err);
       console.error('[PDF] Gemini extract failed:', msg);
@@ -1829,43 +1863,15 @@ export async function extractAndGenerateAllItems(toolType, rawPdfText, params = 
   extractedItems = extractedItems.map((it) => normalizeExtractedItem(toolType, it));
   extractedItems = dedupeExtractedItems(extractedItems, toolType);
 
-  if (toolType === 'worksheet-mcq-generator') {
-    const fromText = extractWorksheetItemsFromPdfText(text);
-    if (fromText.length) {
-      console.log(`[PDF] Pattern extract: ${fromText.length} worksheet question(s) with sections`);
-      const seen = new Set();
-      const merged = [];
-      for (const item of [...extractedItems, ...fromText]) {
-        if (!item || typeof item !== 'object') continue;
-        if (String(item.question || '').trim()) {
-          const key = normalizeWorksheetQuestionKey(item.question);
-          if (key && seen.has(key)) continue;
-          if (key) seen.add(key);
-        }
-        merged.push(item);
-      }
-      extractedItems = merged.length ? merged : fromText;
-      lastPdfExtractFailure = '';
-    }
+  const patternItems = extractToolItemsFromPdfText(toolType, text);
+  if (patternItems.length) {
+    console.log(`[PDF] Pattern extract: ${patternItems.length} ${toolType} item(s)`);
+    extractedItems = mergePatternExtractWithGemini(toolType, extractedItems, patternItems);
+    lastPdfExtractFailure = '';
   }
 
   if (toolType === 'worksheet-mcq-generator' && extractedItems.length) {
     extractedItems = consolidateWorksheetExtractItems(extractedItems, { ...params, rawPdfText: text });
-  }
-  if (!extractedItems.length && toolType === 'homework-creator') {
-    const fromText = extractWorksheetItemsFromPdfText(text);
-    if (fromText.length) {
-      console.log(`[PDF] Pattern extract: ${fromText.length} homework practice question(s)`);
-      extractedItems = [
-        {
-          title: String(params.topic || params.subtopic || 'Homework').trim() || 'Homework',
-          instructions: '',
-          practice_questions: fromText,
-          _fromPdf: true,
-        },
-      ];
-      lastPdfExtractFailure = '';
-    }
   }
 
   if (toolType === 'homework-creator' && extractedItems.length) {
@@ -1882,14 +1888,6 @@ export async function extractAndGenerateAllItems(toolType, rawPdfText, params = 
 
   if (toolType === 'flashcard-generator' && extractedItems.length) {
     extractedItems = expandFlashcardExtractItems(extractedItems);
-  }
-  if (!extractedItems.length && toolType === 'exam-question-paper-generator') {
-    const fromText = extractWorksheetItemsFromPdfText(text);
-    if (fromText.length) {
-      console.log(`[PDF] Pattern extract: ${fromText.length} exam question(s)`);
-      extractedItems = consolidateExamExtractItems(fromText, params);
-      lastPdfExtractFailure = '';
-    }
   }
 
   if (toolType === 'activity-project-generator' && extractedItems.length) {

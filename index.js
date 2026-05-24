@@ -15,6 +15,7 @@ import axios from 'axios';
 import { cleanCsvCell } from './utils/csv-encoding.js';
 import { spreadsheetBufferToCsv } from './utils/spreadsheet-to-csv.js';
 import { resolveUserDisplayBoard } from './constants/boards.js';
+import { configureMongoDns } from './config/mongo-dns.js';
 
 // Get current directory for ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -178,6 +179,8 @@ const dbName = MONGO_URI.split('/').pop()?.split('?')[0] || 'Unknown';
 console.log('🔌 Connecting to MongoDB...');
 console.log('📍 URI:', uriForLogging);
 console.log('📦 Database:', dbName);
+
+configureMongoDns();
 
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,

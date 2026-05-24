@@ -1943,14 +1943,29 @@ function extractJsonObject(text) {
     .replace(/^```\s*/i, '')
     .replace(/\s*```$/i, '')
     .trim();
-  const start = raw.indexOf('{');
-  const end = raw.lastIndexOf('}');
-  if (start === -1 || end === -1 || end <= start) {
+  const startArr = raw.indexOf('[');
+  const startObj = raw.indexOf('{');
+  const start =
+    startArr !== -1 && (startObj === -1 || startArr < startObj) ? startArr : startObj;
+  if (start === -1) {
+    throw new Error('Gemini returned invalid JSON payload');
+  }
+  const endArr = raw.lastIndexOf(']');
+  const endObj = raw.lastIndexOf('}');
+  const end = start === startArr ? endArr : endObj;
+  if (end === -1 || end <= start) {
     throw new Error('Gemini returned invalid JSON payload');
   }
   const slice = raw.slice(start, end + 1);
   try {
-    return JSON.parse(slice);
+    const parsed = JSON.parse(slice);
+    if (Array.isArray(parsed)) {
+      if (parsed.length && typeof parsed[0] === 'object' && parsed[0] !== null) {
+        return parsed[0];
+      }
+      return {};
+    }
+    return parsed;
   } catch {
     try {
       return JSON.parse(raw);

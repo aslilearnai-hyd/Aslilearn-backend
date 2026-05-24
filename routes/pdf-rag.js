@@ -801,6 +801,7 @@ router.post(
         bulkItems = await extractAndGenerateAllItems(resolvedToolSlug, extractedText, bulkParseParams);
       } catch (bulkErr) {
         console.warn('[AI PDF] Bulk PDF item extraction failed:', bulkErr?.message || bulkErr);
+        if (bulkErr?.stack) console.warn(bulkErr.stack.split('\n').slice(0, 4).join('\n'));
         bulkItems = [];
       }
 
