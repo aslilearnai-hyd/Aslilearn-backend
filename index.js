@@ -47,6 +47,7 @@ import aiGeneratorRoutes from './routes/aiGeneratorRoutes.js';
 import vidyaRoutes from './routes/vidya.js';
 import practiceProgressRoutes from './routes/practice-progress.js';
 import dashboardRoutes from './routes/dashboards.js';
+import timetableRoutes from './routes/timetable.js';
 import { initPdfProcessingQueue } from './queues/pdfProcessingQueue.js';
 import { verifyToken, verifySuperAdmin } from './middleware/auth.js';
 import { getCalendarEvents, createCalendarEvent } from './controllers/calendarController.js';
@@ -801,6 +802,7 @@ app.use('/api', pdfRagRoutes);
 app.use('/api', vidyaRoutes);
 app.use('/api', practiceProgressRoutes);
 app.use('/api', dashboardRoutes);
+app.use('/api/timetable', timetableRoutes);
 
 // Serve static files
 // Session configuration
