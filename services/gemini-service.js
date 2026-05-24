@@ -10,6 +10,17 @@ import {
   extractWorksheetItemsFromPdfText,
   normalizeWorksheetQuestionKey,
 } from './pdf-worksheet-extract.js';
+import {
+  PDF_EXTRACT_MAX_RETRIES,
+  PDF_STRICT_JSON_RULES,
+  buildPdfExtractionPasses,
+  buildPdfExtractRetryPrompt,
+  cleanPdfTextForExtraction,
+  countExpectedPdfItems,
+  normalizeExtractedItem,
+  parsePdfExtractResponse,
+  validatePdfExtractItems,
+} from './pdf-extract-validation.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -159,38 +170,14 @@ function stripCodeFences(text) {
 
 /** Recover truncated / slightly invalid JSON arrays from Gemini PDF extract. */
 function parsePdfJsonArraySafely(raw) {
-  const cleaned = stripCodeFences(raw);
-  try {
-    return JSON.parse(cleaned);
-  } catch (firstErr) {
-    const start = cleaned.indexOf('[');
-    if (start === -1) throw firstErr;
-    const body = cleaned.slice(start);
-    const lastObjEnd = body.lastIndexOf('}');
-    if (lastObjEnd > 10) {
-      const repaired = `${body.slice(0, lastObjEnd + 1)}]`;
-      try {
-        const parsed = JSON.parse(repaired);
-        console.warn('[PDF] Repaired truncated JSON array from Gemini extract');
-        return parsed;
-      } catch {
-        // continue
-      }
-    }
-    const innerStart = body.indexOf('{');
-    if (innerStart !== -1) {
-      const innerEnd = body.lastIndexOf('}');
-      if (innerEnd > innerStart) {
-        try {
-          const one = JSON.parse(body.slice(innerStart, innerEnd + 1));
-          return [one];
-        } catch {
-          // continue
-        }
-      }
-    }
-    throw firstErr;
-  }
+  return parsePdfExtractResponse(raw);
+}
+
+/** @type {Record<string, unknown>} */
+let lastPdfExtractionMeta = {};
+
+export function getLastPdfExtractionMeta() {
+  return { ...lastPdfExtractionMeta };
 }
 
 let lastPdfExtractFailure = '';
@@ -238,7 +225,7 @@ async function callChatCompletions({
 }) {
   const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   const contextTokens = Number(process.env.LLM_CONTEXT_TOKENS) || 0;
-  const callGeminiFallback = async (normalizedMessages) => {
+  const callGeminiFallback = async (normalizedMessages, jsonMode = preferJson) => {
     const { apiKey, modelChain } = getGeminiFallbackConfig();
     if (!apiKey) {
       throw new Error('Gemini API key is missing');
@@ -282,6 +269,7 @@ async function callChatCompletions({
             generationConfig: {
               temperature,
               maxOutputTokens: contextTokens > 0 ? Math.min(maxTokens, contextTokens) : maxTokens,
+              ...(jsonMode ? { responseMimeType: 'application/json' } : {}),
             },
           });
           const text = String(result?.response?.text?.() || '').trim();
@@ -827,7 +815,9 @@ RULES:
 5. sl_no / question_number must match the lesson or variation number from the PDF when numbered
 6. Add "_fromPdf": true to each extracted object
 7. If an activity, question, or lesson is mentioned but body text is missing, OMIT that item entirely (do not fabricate it)
-8. ${rule7.replace(/^\d+\.\s*/, '')}`;
+8. ${rule7.replace(/^\d+\.\s*/, '')}
+
+${PDF_STRICT_JSON_RULES}`;
 }
 
 export function buildSingleItemGenerationPrompt(toolType, itemNumber, itemTitle, templateExamples = [], params = {}) {
@@ -1530,8 +1520,7 @@ function consolidateExamExtractItems(items, params = {}) {
   return [merged, ...fullSets.slice(1)];
 }
 
-async function runGeminiPdfExtractPass(toolType, textSlice, params) {
-  const extractPrompt = buildPdfExtractPrompt(toolType, textSlice, params);
+async function runGeminiPdfExtractPass(toolType, textSlice, params, passContext = {}) {
   const maxExtractTokens =
     toolType === 'lesson-planner' ||
     toolType === 'daily-class-plan-maker' ||
@@ -1541,24 +1530,105 @@ async function runGeminiPdfExtractPass(toolType, textSlice, params) {
     toolType === 'exam-question-paper-generator' ||
     toolType === 'concept-mastery-helper' ||
     toolType === 'rubrics-evaluation-generator' ||
-    toolType === 'flashcard-generator'
+    toolType === 'flashcard-generator' ||
+    toolType === 'story-passage-creator' ||
+    toolType === 'short-notes-summaries-maker'
       ? 16384
       : 8000;
-  const extractRaw = await callChatCompletions({
-    messages: [
-      {
-        role: 'system',
-        content:
-          'You are a JSON extraction engine. Return ONLY a valid JSON array. Keep strings short; escape quotes; never truncate mid-string.',
-      },
-      { role: 'user', content: extractPrompt },
-    ],
-    temperature: 0.05,
-    maxTokens: maxExtractTokens,
-    preferJson: false,
-  });
-  const parsed = parsePdfJsonArraySafely(extractRaw);
-  return flattenPdfExtractItems(toolType, parsed);
+
+  const basePrompt = buildPdfExtractPrompt(toolType, textSlice, params);
+  let lastValidation = { valid: false, errors: ['No attempt made'], stats: { itemCount: 0 } };
+  let lastRaw = '';
+  let totalRetries = 0;
+
+  for (let attempt = 1; attempt <= PDF_EXTRACT_MAX_RETRIES; attempt += 1) {
+    const userPrompt =
+      attempt === 1
+        ? basePrompt
+        : buildPdfExtractRetryPrompt(basePrompt, lastValidation, attempt);
+
+    try {
+      const extractRaw = await callChatCompletions({
+        messages: [
+          {
+            role: 'system',
+            content:
+              'You are a strict JSON extraction engine. Return ONLY a valid JSON array. No markdown. No explanations. No text outside JSON. Include ALL items and ALL array elements from the PDF. Do not truncate strings.',
+          },
+          { role: 'user', content: userPrompt },
+        ],
+        temperature: 0.02,
+        maxTokens: maxExtractTokens,
+        preferJson: true,
+      });
+
+      lastRaw = extractRaw;
+      if (process.env.PDF_EXTRACT_LOG_RAW === '1') {
+        console.log(
+          `[PDF] Raw Gemini response (${toolType}, pass ${passContext.label || 'full'}, attempt ${attempt}, ${extractRaw.length} chars):`,
+          extractRaw.slice(0, 1200),
+        );
+      }
+
+      const parsed = parsePdfExtractResponse(extractRaw);
+      const flattened = flattenPdfExtractItems(toolType, parsed).map((it) =>
+        normalizeExtractedItem(toolType, it),
+      );
+
+      lastValidation = validatePdfExtractItems(toolType, flattened, {
+        pdfText: textSlice,
+        expectedItemCount: passContext.expectedItemCount,
+        chunkIndex: passContext.chunkIndex,
+        chunkTotal: passContext.chunkTotal,
+        isPartialPass: Boolean(passContext.isPartialPass),
+      });
+
+      if (lastValidation.valid) {
+        return {
+          items: flattened,
+          validation: lastValidation,
+          attempt,
+          retryCount: totalRetries,
+          rawLength: extractRaw.length,
+        };
+      }
+
+      totalRetries += 1;
+      console.warn(
+        `[PDF] Validation failed (${toolType}, ${passContext.label || 'full'}, attempt ${attempt}/${PDF_EXTRACT_MAX_RETRIES}):`,
+        lastValidation.errors.slice(0, 6).join(' | '),
+      );
+
+      if (attempt === PDF_EXTRACT_MAX_RETRIES) {
+        console.warn(
+          `[PDF] Returning best-effort extract after ${PDF_EXTRACT_MAX_RETRIES} attempts; ${flattened.length} item(s)`,
+        );
+        return {
+          items: flattened,
+          validation: lastValidation,
+          attempt,
+          retryCount: totalRetries,
+          rawLength: extractRaw.length,
+        };
+      }
+    } catch (err) {
+      const msg = err?.message || String(err);
+      console.error(`[PDF] Gemini extract failed (attempt ${attempt}):`, msg);
+      lastPdfExtractFailure = msg.includes('JSON')
+        ? 'Gemini returned invalid or truncated JSON (PDF may be too large — try splitting the file).'
+        : msg;
+      if (attempt === PDF_EXTRACT_MAX_RETRIES) throw err;
+      totalRetries += 1;
+    }
+  }
+
+  return {
+    items: [],
+    validation: lastValidation,
+    attempt: PDF_EXTRACT_MAX_RETRIES,
+    retryCount: totalRetries,
+    rawLength: lastRaw.length,
+  };
 }
 
 /** Merge criterion-only PDF rows into one rubric when no full 10-section object exists. */
@@ -1681,16 +1751,34 @@ function dedupeExtractedItems(items, toolType = '') {
 
 /** Extract structured items from PDF text only — never generates missing items. */
 export async function extractAndGenerateAllItems(toolType, rawPdfText, params = {}) {
-  const text = String(rawPdfText || '').trim();
+  const text = cleanPdfTextForExtraction(String(rawPdfText || '').trim());
   lastPdfExtractFailure = '';
+  lastPdfExtractionMeta = {
+    extractionStatus: 'started',
+    validationPassed: false,
+    retryCount: 0,
+    extractedItemCount: 0,
+    expectedItemCount: countExpectedPdfItems(toolType, text),
+    chunkPasses: [],
+    validationErrors: [],
+  };
+
   if (!text) {
     lastPdfExtractFailure = 'No text could be read from the PDF.';
+    lastPdfExtractionMeta.extractionStatus = 'failed';
     return [];
   }
 
   if (toolType === 'activity-project-generator') {
     const workbookActivities = extractActivitiesFromCuriosityWorkbookPdf(text);
     if (workbookActivities && workbookActivities.length > 0) {
+      lastPdfExtractionMeta = {
+        ...lastPdfExtractionMeta,
+        extractionStatus: 'complete',
+        validationPassed: true,
+        extractedItemCount: workbookActivities.length,
+        parser: 'curiosity-workbook',
+      };
       return workbookActivities
         .map((row) => ({ ...row, _fromPdf: true }))
         .sort((a, b) => Number(a.sl_no || 0) - Number(b.sl_no || 0));
@@ -1698,20 +1786,30 @@ export async function extractAndGenerateAllItems(toolType, rawPdfText, params = 
   }
 
   let extractedItems = [];
-  const CHUNK_SIZE = 42_000;
-  const textPasses = [];
-  if (text.length > CHUNK_SIZE) {
-    for (let i = 0; i < text.length; i += CHUNK_SIZE) {
-      const slice = text.slice(i, i + CHUNK_SIZE).trim();
-      if (slice.length > 500) textPasses.push(slice);
-    }
-  } else {
-    textPasses.push(text);
-  }
+  const textPasses = buildPdfExtractionPasses(toolType, text);
+  const expectedTotal = countExpectedPdfItems(toolType, text);
 
-  for (const slice of textPasses) {
+  for (let passIndex = 0; passIndex < textPasses.length; passIndex += 1) {
+    const pass = textPasses[passIndex];
     try {
-      const batch = await runGeminiPdfExtractPass(toolType, slice, params);
+      const result = await runGeminiPdfExtractPass(toolType, pass.text, params, {
+        label: pass.label,
+        strategy: pass.strategy,
+        chunkIndex: passIndex,
+        chunkTotal: textPasses.length,
+        expectedItemCount: pass.strategy === 'item' ? 1 : expectedTotal,
+        isPartialPass: pass.strategy === 'section' || pass.strategy === 'size',
+      });
+      const batch = result.items || [];
+      lastPdfExtractionMeta.retryCount += Number(result.retryCount || 0);
+      lastPdfExtractionMeta.chunkPasses.push({
+        label: pass.label,
+        strategy: pass.strategy,
+        itemCount: batch.length,
+        attempt: result.attempt,
+        validationPassed: Boolean(result.validation?.valid),
+        errors: (result.validation?.errors || []).slice(0, 8),
+      });
       if (batch.length) extractedItems.push(...batch);
     } catch (err) {
       const msg = err?.message || String(err);
@@ -1719,8 +1817,16 @@ export async function extractAndGenerateAllItems(toolType, rawPdfText, params = 
       lastPdfExtractFailure = msg.includes('JSON')
         ? 'Gemini returned invalid or truncated JSON (PDF may be too large — try splitting the file).'
         : msg;
+      lastPdfExtractionMeta.chunkPasses.push({
+        label: pass.label,
+        strategy: pass.strategy,
+        itemCount: 0,
+        error: msg,
+      });
     }
   }
+
+  extractedItems = extractedItems.map((it) => normalizeExtractedItem(toolType, it));
   extractedItems = dedupeExtractedItems(extractedItems, toolType);
 
   if (toolType === 'worksheet-mcq-generator') {
@@ -1811,12 +1917,35 @@ export async function extractAndGenerateAllItems(toolType, rawPdfText, params = 
   const sorted = dedupeExtractedItems(extractedItems).sort(
     (a, b) => Number(a.sl_no || a.question_number || 0) - Number(b.sl_no || b.question_number || 0),
   );
+
+  const finalValidation = validatePdfExtractItems(toolType, sorted, {
+    pdfText: text,
+    expectedItemCount: expectedTotal,
+  });
+  lastPdfExtractionMeta = {
+    ...lastPdfExtractionMeta,
+    extractionStatus: sorted.length ? 'complete' : 'empty',
+    validationPassed: finalValidation.valid,
+    extractedItemCount: sorted.length,
+    expectedItemCount: expectedTotal,
+    validationErrors: finalValidation.errors,
+    validationWarnings: finalValidation.warnings,
+    questionCount: finalValidation.stats?.questionCount || 0,
+  };
+
   if (!sorted.length && !lastPdfExtractFailure) {
     lastPdfExtractFailure =
       toolType === 'worksheet-mcq-generator'
         ? 'No numbered questions found. This PDF may be an Activity/Lesson layout — pick the matching tool.'
         : 'No complete items matched the selected tool format in the PDF text.';
+    lastPdfExtractionMeta.extractionStatus = 'empty';
+  } else if (sorted.length && !finalValidation.valid) {
+    console.warn(
+      `[PDF] Final validation warnings for ${toolType}:`,
+      finalValidation.errors.slice(0, 8).join(' | '),
+    );
   }
+
   return sorted;
 }
 

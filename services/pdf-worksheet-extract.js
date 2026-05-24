@@ -538,3 +538,53 @@ export function consolidateWorksheetExtractItems(items, params = {}) {
 
   return groups.map((group) => mergeWorksheetGroupToOne(group, params));
 }
+
+/**
+ * Split PDF text at worksheet/exam section headers for chunk-wise LLM extraction.
+ * @param {string} pdfText
+ * @returns {Array<{ sectionName: string; text: string }>}
+ */
+export function splitPdfTextByWorksheetSections(pdfText) {
+  const text = String(pdfText || '').trim();
+  if (!text) return [];
+
+  const lines = text.split(/\r?\n/);
+  const chunks = [];
+  let currentSection = 'Preamble';
+  let buffer = [];
+
+  const flush = () => {
+    const body = buffer.join('\n').trim();
+    if (body.length > 120) {
+      chunks.push({ sectionName: currentSection, text: body });
+    }
+    buffer = [];
+  };
+
+  for (const rawLine of lines) {
+    const line = String(rawLine || '').trim();
+    if (!line) {
+      if (buffer.length) buffer.push('');
+      continue;
+    }
+    const header = detectSectionHeaderLine(line);
+    if (header) {
+      flush();
+      currentSection = header;
+      buffer.push(line);
+      continue;
+    }
+    if (/^answer\s*key\b/i.test(line) || /^marking\s*scheme\b/i.test(line)) {
+      buffer.push(line);
+      flush();
+      break;
+    }
+    buffer.push(line);
+  }
+  flush();
+
+  if (chunks.length <= 1) {
+    return [{ sectionName: 'Full document', text }];
+  }
+  return chunks;
+}

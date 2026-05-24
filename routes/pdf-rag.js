@@ -42,7 +42,7 @@ import {
   buildFlashcardRenderableFromStructured,
   normalizeLessonPlannerStructuredContent,
 } from '../services/ai-content-engine-service.js';
-import { buildPdfExtractEmptyMessage, extractAndGenerateAllItems } from '../services/gemini-service.js';
+import { buildPdfExtractEmptyMessage, extractAndGenerateAllItems, getLastPdfExtractionMeta } from '../services/gemini-service.js';
 import { consolidateWorksheetExtractItems } from '../services/pdf-worksheet-extract.js';
 import { formatItemToContent } from '../controllers/aiToolsController.js';
 import { boardMongoMatch } from '../utils/board-label.js';
@@ -816,6 +816,7 @@ router.post(
       }
 
       if (Array.isArray(bulkItems) && bulkItems.length > 0) {
+        const extractionMeta = getLastPdfExtractionMeta();
         const fileUrl = `/uploads/pdf-knowledge/${req.file.filename}`;
         let uploaded = {
           fileName: req.file.filename,
@@ -974,6 +975,12 @@ router.post(
                 subjectTopicReason: subjectTopicMatch.reason || '',
                 subjectTopicConfidence: subjectTopicMatch.confidence || 0,
               },
+              extractionStatus: extractionMeta.extractionStatus || 'complete',
+              validationPassed: Boolean(extractionMeta.validationPassed),
+              retryCount: Number(extractionMeta.retryCount || 0),
+              extractedItemCount: Number(extractionMeta.extractedItemCount || bulkItems.length),
+              expectedItemCount: Number(extractionMeta.expectedItemCount || 0),
+              validationErrors: extractionMeta.validationErrors || [],
             },
           };
         });
@@ -1002,6 +1009,14 @@ router.post(
             uploadDate: source.uploadDate,
             processingStatus: source.processingStatus,
             analysisMode: analysis.analysisMode || 'gemini',
+            extraction: {
+              extractionStatus: extractionMeta.extractionStatus || 'complete',
+              validationPassed: Boolean(extractionMeta.validationPassed),
+              retryCount: Number(extractionMeta.retryCount || 0),
+              extractedItemCount: Number(extractionMeta.extractedItemCount || bulkItems.length),
+              expectedItemCount: Number(extractionMeta.expectedItemCount || 0),
+              validationErrors: extractionMeta.validationErrors || [],
+            },
           },
         });
       }

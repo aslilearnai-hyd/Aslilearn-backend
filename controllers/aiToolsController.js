@@ -6,7 +6,7 @@ import {
 import AiToolGeneration from '../models/AiToolGeneration.js';
 import { fetchRotatingAiToolData } from '../services/ai-tool-rotation-service.js';
 import { extractRawTextFromPDF } from '../services/pdf-extractor-service.js';
-import { buildPdfExtractEmptyMessage, extractAndGenerateAllItems } from '../services/gemini-service.js';
+import { buildPdfExtractEmptyMessage, extractAndGenerateAllItems, getLastPdfExtractionMeta } from '../services/gemini-service.js';
 
 import {
   formatItemToContentFromTemplate,
@@ -700,6 +700,7 @@ export const uploadAndParsePdf = async (req, res) => {
       });
     }
 
+    const extractionMeta = getLastPdfExtractionMeta();
     const now = new Date();
     const recordsToInsert = allItems.map((item, index) => {
       const contentStr = formatItemToContent(toolType, item, index);
@@ -730,6 +731,10 @@ export const uploadAndParsePdf = async (req, res) => {
           processingStatus: 'processed',
           approvalStatus: 'approved',
           board: String(board || 'CBSE').trim() || 'CBSE',
+          extractionStatus: extractionMeta.extractionStatus || 'complete',
+          validationPassed: Boolean(extractionMeta.validationPassed),
+          retryCount: Number(extractionMeta.retryCount || 0),
+          extractedItemCount: Number(extractionMeta.extractedItemCount || allItems.length),
         },
         createdAt: now,
         updatedAt: now,
@@ -751,6 +756,14 @@ export const uploadAndParsePdf = async (req, res) => {
         topic: topicForStore,
         subtopic: subtopicForStore,
         pdfName: pdfFile.originalname,
+        extraction: {
+          extractionStatus: extractionMeta.extractionStatus || 'complete',
+          validationPassed: Boolean(extractionMeta.validationPassed),
+          retryCount: Number(extractionMeta.retryCount || 0),
+          extractedItemCount: Number(extractionMeta.extractedItemCount || recordsToInsert.length),
+          expectedItemCount: Number(extractionMeta.expectedItemCount || 0),
+          validationErrors: extractionMeta.validationErrors || [],
+        },
       },
     });
   } catch (error) {

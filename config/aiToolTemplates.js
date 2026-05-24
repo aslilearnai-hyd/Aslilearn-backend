@@ -987,10 +987,31 @@ export function buildPdfToolConfigMap() {
         {
           requiredFields: [...t.requiredFieldsForPdfExtract],
           schema: { ...t.gemini.pdfExtractSchema },
+          pdfValidationRules: [...(t.pdfValidationRules || [])],
+          multiItemExpected: [
+            'flashcard-generator',
+            'short-notes-summaries-maker',
+            'story-passage-creator',
+            'concept-mastery-helper',
+          ].includes(slug),
         },
       ];
     }),
   );
+}
+
+/** Policy hints for PDF extraction pipeline (chunking, retries, validation). */
+export function getPdfExtractPolicy(toolSlug) {
+  const t = getAiToolTemplate(toolSlug);
+  if (!t) return null;
+  return {
+    slug: toolSlug,
+    title: t.title,
+    requiredFieldsForPdfExtract: [...t.requiredFieldsForPdfExtract],
+    pdfValidationRules: [...(t.pdfValidationRules || [])],
+    parserHints: [...(t.parserHints || [])],
+    regenerationRules: t.regenerationRules ? { ...t.regenerationRules } : {},
+  };
 }
 
 /**
