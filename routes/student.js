@@ -41,6 +41,7 @@ import {
 } from '../utils/resolveSubjectContentIds.js';
 import {
   buildCachedAnalysisResponse,
+  cachedHasStaleAiExplanations,
   collectCachedExplanationsByQuestionId,
   getInFlight,
   inFlightKey,
@@ -2319,8 +2320,17 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
           'Live AI returned an invalid response format, so this report was rebuilt from your attempt data only. '
         );
       }
-      if (!shouldRegenerateCachedReport(cachedReport, scoreSource)) {
+      if (
+        !shouldRegenerateCachedReport(cachedReport, scoreSource) &&
+        !cachedHasStaleAiExplanations(cachedAnalysis)
+      ) {
         return res.json(buildCachedAnalysisResponse(cachedReport, cachedAnalysis));
+      }
+      if (cachedHasStaleAiExplanations(cachedAnalysis)) {
+        console.warn('[exam-results/ai-analysis] Dropping cache with legacy AI explanations; rebuilding offline.', {
+          studentId: String(req.userId),
+          examId: String(examObjectId),
+        });
       }
       console.warn('[exam-results/ai-analysis] Score or corrupt summary changed; regenerating once.', {
         studentId: String(req.userId),
@@ -2775,6 +2785,8 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
         ? `Review explanation hint: "${explanationHint}".`
         : 'Use the provided solution/explanation to build your correction notes.';
 
+      const bankSolution = explanationHint;
+
       if (status === 'correct') {
         return {
           index: q.index,
@@ -2785,6 +2797,7 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
           conceptGap: buildGapLine(q, status),
           fixStrategy: buildFixStrategyLine(q, status, explanationLine),
           practiceTask: buildPersonalizedPracticeTask(q, status),
+          geminiExplanation: bankSolution,
           priority: 'low',
         };
       }
@@ -2799,6 +2812,7 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
           conceptGap: buildGapLine(q, status),
           fixStrategy: buildFixStrategyLine(q, status, explanationLine),
           practiceTask: buildPersonalizedPracticeTask(q, status),
+          geminiExplanation: bankSolution,
           priority: 'medium',
         };
       }
@@ -2812,6 +2826,7 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
         conceptGap: `${buildGapLine(q, status)} Selected "${userAnswerText}" but expected "${correctAnswerText}".`,
         fixStrategy: buildFixStrategyLine(q, status, explanationLine),
         practiceTask: buildPersonalizedPracticeTask(q, status),
+        geminiExplanation: bankSolution,
         priority: 'high',
       };
     };
@@ -3249,7 +3264,7 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
           conceptGap: String(aiItem.conceptGap || fallback.conceptGap),
           fixStrategy: String(aiItem.fixStrategy || fallback.fixStrategy),
           practiceTask: String(aiItem.practiceTask || fallback.practiceTask),
-          geminiExplanation: String(aiItem.geminiExplanation || fallback.geminiExplanation || ''),
+          geminiExplanation: String(fallback.geminiExplanation || aiItem.geminiExplanation || ''),
           priority: ['high', 'medium', 'low'].includes(String(aiItem.priority || '').toLowerCase())
             ? String(aiItem.priority).toLowerCase()
             : fallback.priority,

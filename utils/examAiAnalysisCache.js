@@ -78,6 +78,12 @@ export function shouldRegenerateCachedReport(cachedReport, scoreSource) {
   );
 }
 
+/** Legacy rows stored long Gemini text that may not match the current question/answer. */
+export function cachedHasStaleAiExplanations(cachedAnalysis) {
+  const rows = Array.isArray(cachedAnalysis?.questionInsights) ? cachedAnalysis.questionInsights : [];
+  return rows.some((row) => String(row?.geminiExplanation || '').length > 120);
+}
+
 export function collectCachedExplanationsByQuestionId(cachedReport) {
   const insights = Array.isArray(cachedReport?.fullAnalysis?.questionInsights)
     ? cachedReport.fullAnalysis.questionInsights
