@@ -2618,38 +2618,6 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       return words.length > 70 ? `${words.slice(0, 67)}...` : words;
     };
 
-    async function generateGeminiExplanation(q) {
-      const questionSnippet = String(q.questionText || '').slice(0, 300);
-      const rawExplanation = String(q.explanation || '').trim();
-      const subject = String(q.subject || 'general');
-      const status = q.isCorrect ? 'correct' : q.hasAnswer ? 'wrong' : 'unattempted';
-      const userAns = formatAnswer(q.userAnswer);
-      const correctAns = formatAnswer(q.correctAnswer);
-
-      const prompt = `You are a helpful exam tutor for a student preparing for JEE/NEET.
-
-Question: "${questionSnippet}"
-Subject: ${subject}
-Student answered: ${status === 'unattempted' ? 'Did not attempt' : `"${userAns}"`}
-Correct answer: "${correctAns}"
-${rawExplanation ? `Official hint: "${rawExplanation}"` : ''}
-
-Write a clear, student-friendly explanation in 3–5 sentences that:
-1. States the correct answer and the core concept behind it
-2. Explains WHY that is correct (the rule, formula, or logic)
-3. If the student got it wrong or skipped it, explains where the mistake likely happened
-4. Uses simple language a Class 11/12 student can understand
-
-Do NOT use markdown. Write plain text only.`;
-
-      try {
-        const result = await geminiService.generateStructuredContent(prompt, 'text');
-        return String(result || '').trim().slice(0, 600);
-      } catch {
-        return rawExplanation || '';
-      }
-    }
-
     const inferTopicFromQuestion = (q) => {
       const chapterOk = meaningfulChapterLabel(q?.chapter);
       if (chapterOk) return chapterOk;
@@ -3038,51 +3006,11 @@ Do NOT use markdown. Write plain text only.`;
 
       const derivedFocus = buildDerivedFocusAreas(questionAttemptDetails);
 
-      // Vidya Performance Report is fully offline (rule-based). Gemini is opt-in only via
-      // GEMINI_EXAM_EXPLANATION_MAX_QUESTIONS>0 for richer per-question text (not used by default).
-      const envExplanationCap = Number(process.env.GEMINI_EXAM_EXPLANATION_MAX_QUESTIONS);
-      const defaultExplanationCap = 0;
-      const explanationLimit =
-        Number.isFinite(envExplanationCap) && envExplanationCap >= 0
-          ? Math.floor(envExplanationCap)
-          : defaultExplanationCap;
-      if (explanationLimit > 0) {
-        const prioritizedForGemini = [
-          ...questionAttemptDetails.filter((q) => !q.isCorrect),
-          ...questionAttemptDetails.filter((q) => q.isCorrect),
-        ];
-        const questionsToExplain = prioritizedForGemini.slice(0, explanationLimit);
-        const geminiConcurrency = Math.max(
-          1,
-          Math.min(6, Number(process.env.GEMINI_EXAM_EXPLANATION_CONCURRENCY) || 3),
-        );
-        const geminiExplanations = [];
-        for (let i = 0; i < questionsToExplain.length; i += geminiConcurrency) {
-          const batch = questionsToExplain.slice(i, i + geminiConcurrency);
-          const batchResults = await Promise.allSettled(
-            batch.map((q) => generateGeminiExplanation(q)),
-          );
-          geminiExplanations.push(...batchResults);
-        }
-        const explanationByQuestionId = new Map();
-        questionsToExplain.forEach((q, idx) => {
-          const settled = geminiExplanations[idx];
-          if (settled?.status === 'fulfilled' && settled.value) {
-            explanationByQuestionId.set(q.questionId, settled.value);
-          }
-        });
-        fallbackQuestionInsights.forEach((insight, i) => {
-          const qDetail = questionAttemptDetails[i];
-          insight.geminiExplanation =
-            explanationByQuestionId.get(qDetail?.questionId) ||
-            String(qDetail?.explanation || '');
-        });
-      } else {
-        fallbackQuestionInsights.forEach((insight, i) => {
-          const qDetail = questionAttemptDetails[i];
-          insight.geminiExplanation = String(qDetail?.explanation || '').trim();
-        });
-      }
+      // Vidya Performance Report + question analysis: offline only (exam bank explanations).
+      fallbackQuestionInsights.forEach((insight, i) => {
+        const qDetail = questionAttemptDetails[i];
+        insight.geminiExplanation = String(qDetail?.explanation || '').trim();
+      });
 
       return {
         riskLevel,
@@ -3418,7 +3346,7 @@ Do NOT use markdown. Write plain text only.`;
         : [];
       const concurrentSchemaOk = Number(sm.analysisSchemaVersion) >= 2;
       if (concurrentSchemaOk) {
-        return res.json({
+        return {
           success: true,
           data: {
             analysis: concurrent.fullAnalysis,
@@ -3431,7 +3359,7 @@ Do NOT use markdown. Write plain text only.`;
               cached: true,
             },
           },
-        });
+        };
       }
     }
 
@@ -3445,7 +3373,7 @@ Do NOT use markdown. Write plain text only.`;
         }).lean();
         if (winner?.fullAnalysis) {
           const wm = winner.meta && typeof winner.meta === 'object' ? winner.meta : {};
-          return res.json({
+          return {
             success: true,
             data: {
               analysis: winner.fullAnalysis,
@@ -3458,13 +3386,13 @@ Do NOT use markdown. Write plain text only.`;
                 cached: true,
               },
             },
-          });
+          };
         }
       }
       console.error('[exam-results/ai-analysis] Failed to persist report:', persistErr);
     }
 
-    res.json({
+    return {
       success: true,
       data: {
         analysis: aiParsed,
@@ -3477,7 +3405,11 @@ Do NOT use markdown. Write plain text only.`;
           cached: false,
         },
       },
-    });
+    };
+    })();
+
+    setInFlight(flightKey, generationWork);
+    return res.json(await generationWork);
   } catch (error) {
     console.error('AI exam analysis error:', error);
     res.status(500).json({
