@@ -39,6 +39,14 @@ import {
   resolveSubjectContentIdsMany,
   subjectIdAllowedWithSiblings,
 } from '../utils/resolveSubjectContentIds.js';
+import {
+  buildCachedAnalysisResponse,
+  collectCachedExplanationsByQuestionId,
+  getInFlight,
+  inFlightKey,
+  setInFlight,
+  shouldRegenerateCachedReport,
+} from '../utils/examAiAnalysisCache.js';
 
 const router = express.Router();
 
@@ -2302,7 +2310,6 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
     if (cachedReport?.fullAnalysis && typeof cachedReport.fullAnalysis === 'object') {
       const cachedAnalysis = { ...cachedReport.fullAnalysis };
       const cachedSummary = String(cachedAnalysis.summary || '');
-      let cacheLooksInvalid = false;
       if (
         /live ai could not finish \((expected|unexpected|json|syntaxerror)/i.test(cachedSummary) ||
         /line \d+ column \d+/i.test(cachedSummary)
@@ -2311,93 +2318,26 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
           /Live AI could not finish \([\s\S]*?\)\.\s*/i,
           'Live AI returned an invalid response format, so this report was rebuilt from your attempt data only. '
         );
-        cacheLooksInvalid = true;
       }
-      const cachedInsights = Array.isArray(cachedAnalysis.questionInsights)
-        ? cachedAnalysis.questionInsights
-        : [];
-      const storedMetaForCache =
-        cachedReport.meta && typeof cachedReport.meta === 'object' ? cachedReport.meta : {};
-      const cachedSnap = storedMetaForCache.scoreSnapshot;
-      const expectedCorrect = Number(scoreSource?.correctAnswers ?? NaN);
-      const expectedWrong = Number(scoreSource?.wrongAnswers ?? NaN);
-      const expectedUnattempted = Number(scoreSource?.unattempted ?? NaN);
-      const expectedMarks = Number(scoreSource?.obtainedMarks ?? NaN);
-      const expectedPct = Number(scoreSource?.percentage ?? NaN);
-
-      if (!cachedSnap || typeof cachedSnap !== 'object') {
-        cacheLooksInvalid = true;
-      } else if (
-        Number.isFinite(expectedCorrect) &&
-        Number.isFinite(expectedWrong) &&
-        Number.isFinite(expectedUnattempted) &&
-        (Number(cachedSnap.correctAnswers) !== expectedCorrect ||
-          Number(cachedSnap.wrongAnswers) !== expectedWrong ||
-          Number(cachedSnap.unattempted) !== expectedUnattempted ||
-          (Number.isFinite(expectedMarks) && Number(cachedSnap.obtainedMarks) !== expectedMarks) ||
-          (Number.isFinite(expectedPct) && Number(cachedSnap.percentage) !== expectedPct))
-      ) {
-        cacheLooksInvalid = true;
+      if (!shouldRegenerateCachedReport(cachedReport, scoreSource)) {
+        return res.json(buildCachedAnalysisResponse(cachedReport, cachedAnalysis));
       }
-      if (!Array.isArray(storedMetaForCache.weakTopics) || storedMetaForCache.weakTopics.length === 0) {
-        cacheLooksInvalid = true;
-      }
-
-      if (cachedInsights.length > 0) {
-        const statusCounts = { correct: 0, wrong: 0, unattempted: 0 };
-        cachedInsights.forEach((q) => {
-          const st = String(q?.status || '').toLowerCase();
-          if (st === 'correct') statusCounts.correct += 1;
-          else if (st === 'wrong') statusCounts.wrong += 1;
-          else statusCounts.unattempted += 1;
-        });
-        if (
-          Number.isFinite(expectedCorrect) &&
-          Number.isFinite(expectedWrong) &&
-          Number.isFinite(expectedUnattempted) &&
-          (statusCounts.correct !== expectedCorrect ||
-            statusCounts.wrong !== expectedWrong ||
-            statusCounts.unattempted !== expectedUnattempted)
-        ) {
-          cacheLooksInvalid = true;
-        }
-      } else if (Number(scoreSource?.totalQuestions ?? result?.totalQuestions) > 0) {
-        cacheLooksInvalid = true;
-      }
-      const cachedSchemaVersion = Number(storedMetaForCache.analysisSchemaVersion) || 0;
-      if (cachedSchemaVersion < 2) {
-        cacheLooksInvalid = true;
-      }
-      // Do not invalidate cache only because Gemini per-question text is empty — offline
-      // insights (conceptGap / fixStrategy) are still useful and regeneration hammers the API.
-      if (cacheLooksInvalid) {
-        console.warn('[exam-results/ai-analysis] Invalid cached analysis detected; regenerating.', {
-          studentId: String(req.userId),
-          examId: String(examObjectId),
-        });
-        await GeminiPerformanceReport.deleteOne({ _id: cachedReport._id }).catch((e) => {
-          console.warn('[exam-results/ai-analysis] Failed to remove invalid cache:', e?.message || e);
-        });
-      } else {
-      const storedMeta =
-        cachedReport.meta && typeof cachedReport.meta === 'object' ? cachedReport.meta : {};
-      return res.json({
-        success: true,
-        data: {
-          analysis: cachedAnalysis,
-          meta: {
-            weakSubjects: Array.isArray(storedMeta.weakSubjects) ? storedMeta.weakSubjects : [],
-            weakTopics: Array.isArray(storedMeta.weakTopics) ? storedMeta.weakTopics : [],
-            classNumber: String(storedMeta.classNumber || ''),
-            board: String(storedMeta.board || ''),
-            generatedAt: (cachedReport.createdAt || cachedReport.updatedAt || new Date()).toISOString(),
-            cached: true,
-          },
-        },
+      console.warn('[exam-results/ai-analysis] Score or corrupt summary changed; regenerating once.', {
+        studentId: String(req.userId),
+        examId: String(examObjectId),
       });
-      }
+      await GeminiPerformanceReport.deleteOne({ _id: cachedReport._id }).catch((e) => {
+        console.warn('[exam-results/ai-analysis] Failed to remove stale cache:', e?.message || e);
+      });
     }
 
+    const flightKey = inFlightKey(req.userId, examIdStr);
+    const inflightPayload = getInFlight(flightKey);
+    if (inflightPayload) {
+      return res.json(await inflightPayload);
+    }
+
+    const generationWork = (async () => {
     const student = await User.findById(req.userId)
       .populate('assignedAdmin', 'board')
       .populate('assignedClass', 'classNumber section');
@@ -3098,45 +3038,51 @@ Do NOT use markdown. Write plain text only.`;
 
       const derivedFocus = buildDerivedFocusAreas(questionAttemptDetails);
 
+      // Vidya Performance Report is fully offline (rule-based). Gemini is opt-in only via
+      // GEMINI_EXAM_EXPLANATION_MAX_QUESTIONS>0 for richer per-question text (not used by default).
       const envExplanationCap = Number(process.env.GEMINI_EXAM_EXPLANATION_MAX_QUESTIONS);
-      const defaultExplanationCap = 12;
+      const defaultExplanationCap = 0;
       const explanationLimit =
         Number.isFinite(envExplanationCap) && envExplanationCap >= 0
           ? Math.floor(envExplanationCap)
           : defaultExplanationCap;
-      const prioritizedForGemini = [
-        ...questionAttemptDetails.filter((q) => !q.isCorrect),
-        ...questionAttemptDetails.filter((q) => q.isCorrect),
-      ];
-      const questionsToExplain =
-        explanationLimit === 0
-          ? []
-          : prioritizedForGemini.slice(0, explanationLimit);
-      const geminiConcurrency = Math.max(
-        1,
-        Math.min(6, Number(process.env.GEMINI_EXAM_EXPLANATION_CONCURRENCY) || 3),
-      );
-      const geminiExplanations = [];
-      for (let i = 0; i < questionsToExplain.length; i += geminiConcurrency) {
-        const batch = questionsToExplain.slice(i, i + geminiConcurrency);
-        const batchResults = await Promise.allSettled(
-          batch.map((q) => generateGeminiExplanation(q)),
+      if (explanationLimit > 0) {
+        const prioritizedForGemini = [
+          ...questionAttemptDetails.filter((q) => !q.isCorrect),
+          ...questionAttemptDetails.filter((q) => q.isCorrect),
+        ];
+        const questionsToExplain = prioritizedForGemini.slice(0, explanationLimit);
+        const geminiConcurrency = Math.max(
+          1,
+          Math.min(6, Number(process.env.GEMINI_EXAM_EXPLANATION_CONCURRENCY) || 3),
         );
-        geminiExplanations.push(...batchResults);
-      }
-      const explanationByQuestionId = new Map();
-      questionsToExplain.forEach((q, idx) => {
-        const settled = geminiExplanations[idx];
-        if (settled?.status === 'fulfilled' && settled.value) {
-          explanationByQuestionId.set(q.questionId, settled.value);
+        const geminiExplanations = [];
+        for (let i = 0; i < questionsToExplain.length; i += geminiConcurrency) {
+          const batch = questionsToExplain.slice(i, i + geminiConcurrency);
+          const batchResults = await Promise.allSettled(
+            batch.map((q) => generateGeminiExplanation(q)),
+          );
+          geminiExplanations.push(...batchResults);
         }
-      });
-      fallbackQuestionInsights.forEach((insight, i) => {
-        const qDetail = questionAttemptDetails[i];
-        insight.geminiExplanation =
-          explanationByQuestionId.get(qDetail?.questionId) ||
-          String(qDetail?.explanation || '');
-      });
+        const explanationByQuestionId = new Map();
+        questionsToExplain.forEach((q, idx) => {
+          const settled = geminiExplanations[idx];
+          if (settled?.status === 'fulfilled' && settled.value) {
+            explanationByQuestionId.set(q.questionId, settled.value);
+          }
+        });
+        fallbackQuestionInsights.forEach((insight, i) => {
+          const qDetail = questionAttemptDetails[i];
+          insight.geminiExplanation =
+            explanationByQuestionId.get(qDetail?.questionId) ||
+            String(qDetail?.explanation || '');
+        });
+      } else {
+        fallbackQuestionInsights.forEach((insight, i) => {
+          const qDetail = questionAttemptDetails[i];
+          insight.geminiExplanation = String(qDetail?.explanation || '').trim();
+        });
+      }
 
       return {
         riskLevel,
