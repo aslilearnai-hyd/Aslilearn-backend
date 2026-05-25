@@ -938,6 +938,16 @@ function normalizeContentType(raw) {
   return match || t;
 }
 
+const VIDEO_NUMBER_PATTERN = /^[1-9]\d*$/;
+
+function normalizeVideoNumber(raw) {
+  return String(raw || '').replace(/\D/g, '');
+}
+
+function isValidVideoNumber(raw) {
+  return VIDEO_NUMBER_PATTERN.test(normalizeVideoNumber(raw));
+}
+
 function isStreamableContentType(contentType) {
   return /^(video|audio)$/i.test(String(contentType || '').trim());
 }
@@ -970,7 +980,25 @@ function isAllowedContentFileUrl(url, contentType) {
 // Upload Content (Super Admin only - Asli Prep Exclusive)
 export const uploadContent = async (req, res) => {
   try {
-    const { title, description, type, board, subject, classNumber, topic, date, fileUrl, fileUrls, thumbnailUrl, duration, size, deadline, stateName: rawContentState } = req.body;
+    const {
+      title,
+      description,
+      type,
+      board,
+      subject,
+      classNumber,
+      topic,
+      chapter,
+      date,
+      fileUrl,
+      fileUrls,
+      thumbnailUrl,
+      duration,
+      size,
+      deadline,
+      stateName: rawContentState,
+    } = req.body;
+    const moduleLabel = req.body.module ?? req.body.moduleName;
     const normalizedType = normalizeContentType(type);
 
     console.log('📦 Uploading content:', {
@@ -1015,6 +1043,15 @@ export const uploadContent = async (req, res) => {
 
     if (!CONTENT_TYPES.includes(normalizedType)) {
       return res.status(400).json({ success: false, message: 'Invalid content type' });
+    }
+
+    if (normalizedType === 'Video') {
+      if (!isValidVideoNumber(chapter) || !isValidVideoNumber(moduleLabel)) {
+        return res.status(400).json({
+          success: false,
+          message: 'Chapter and module must be numbers only (e.g. 1)',
+        });
+      }
     }
 
     // Verify subject exists and belongs to the board
@@ -1073,6 +1110,8 @@ export const uploadContent = async (req, res) => {
       board: boardNorm,
       subject,
       topic: topic?.trim() || undefined,
+      chapter: normalizedType === 'Video' ? normalizeVideoNumber(chapter) : undefined,
+      module: normalizedType === 'Video' ? normalizeVideoNumber(moduleLabel) : undefined,
       date: new Date(resolvedDate),
       fileUrl: primaryFileUrl, // Keep for backward compatibility
       fileUrls: finalFileUrls.length > 0 ? finalFileUrls : undefined, // Store multiple URLs
@@ -1253,11 +1292,13 @@ export const updateContent = async (req, res) => {
       thumbnailUrl,
       isActive,
       topic,
+      chapter,
       date,
       classNumber,
       board: rawBoard,
       stateName: rawStateName,
     } = req.body;
+    const moduleLabel = req.body.module ?? req.body.moduleName;
 
     if (!contentId || !mongoose.Types.ObjectId.isValid(contentId)) {
       return res.status(400).json({ success: false, message: 'Invalid content ID' });
@@ -1277,6 +1318,23 @@ export const updateContent = async (req, res) => {
     if (title !== undefined) content.title = title.trim();
     if (description !== undefined) content.description = description?.trim() || undefined;
     if (topic !== undefined) content.topic = topic?.trim() || undefined;
+    if (normalizeContentType(content.type) === 'Video') {
+      const nextChapter =
+        chapter !== undefined
+          ? normalizeVideoNumber(chapter)
+          : normalizeVideoNumber(content.chapter);
+      const nextModule =
+        moduleLabel !== undefined
+          ? normalizeVideoNumber(moduleLabel)
+          : normalizeVideoNumber(content.module);
+      if (!isValidVideoNumber(nextChapter) || !isValidVideoNumber(nextModule)) {
+        return res.status(400).json({
+          success: false,
+          message: 'Chapter and module must be numbers only (e.g. 1)',
+        });
+      }
+      content.set({ chapter: nextChapter, module: nextModule });
+    }
     if (date !== undefined && String(date).trim() !== '') {
       const nextDate = new Date(date);
       if (!Number.isNaN(nextDate.getTime())) {

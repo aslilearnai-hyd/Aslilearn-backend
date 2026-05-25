@@ -4362,6 +4362,66 @@ router.post('/quizzes/:quizId/submit', async (req, res) => {
   }
 });
 
+// Video chapter unlock dates (Today's Tasks — one chapter per day after all modules complete)
+router.get('/video-chapter-progress', async (req, res) => {
+  try {
+    const userId = req.userId;
+    const StudentVideoChapterProgress = (
+      await import('../models/StudentVideoChapterProgress.js')
+    ).default;
+    const rows = await StudentVideoChapterProgress.find({ userId }).lean();
+    const bySubject = {};
+    for (const row of rows) {
+      bySubject[String(row.subjectId)] = row.chapterCompletedAt || {};
+    }
+    res.json({ success: true, data: bySubject });
+  } catch (error) {
+    console.error('Get video chapter progress error:', error);
+    res.status(500).json({ success: false, message: 'Failed to fetch video chapter progress' });
+  }
+});
+
+router.post('/video-chapter-progress', async (req, res) => {
+  try {
+    const userId = req.userId;
+    const { subjectId, chapterCompletedAt } = req.body;
+    if (!subjectId || !mongoose.Types.ObjectId.isValid(subjectId)) {
+      return res.status(400).json({ success: false, message: 'Valid subjectId is required' });
+    }
+    if (!chapterCompletedAt || typeof chapterCompletedAt !== 'object') {
+      return res.status(400).json({ success: false, message: 'chapterCompletedAt object is required' });
+    }
+
+    const StudentVideoChapterProgress = (
+      await import('../models/StudentVideoChapterProgress.js')
+    ).default;
+    const incoming = {};
+    for (const [ch, dateVal] of Object.entries(chapterCompletedAt)) {
+      const key = String(ch).replace(/\D/g, '') || String(ch);
+      if (!key) continue;
+      incoming[key] = String(dateVal || '').trim();
+    }
+
+    const existing = await StudentVideoChapterProgress.findOne({ userId, subjectId }).lean();
+    const merged = { ...(existing?.chapterCompletedAt || {}), ...incoming };
+
+    const row = await StudentVideoChapterProgress.findOneAndUpdate(
+      { userId, subjectId },
+      { $set: { chapterCompletedAt: merged }, $setOnInsert: { userId, subjectId } },
+      { upsert: true, new: true, runValidators: true }
+    ).lean();
+
+    res.json({
+      success: true,
+      message: 'Video chapter progress saved',
+      data: { subjectId: String(row.subjectId), chapterCompletedAt: row.chapterCompletedAt },
+    });
+  } catch (error) {
+    console.error('Save video chapter progress error:', error);
+    res.status(500).json({ success: false, message: 'Failed to save video chapter progress' });
+  }
+});
+
 // Save or update learning progress for content
 router.post('/content-progress', async (req, res) => {
   try {

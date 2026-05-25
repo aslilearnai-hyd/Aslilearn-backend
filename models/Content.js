@@ -41,6 +41,14 @@ const contentSchema = new mongoose.Schema({
     type: String,
     trim: true
   },
+  chapter: {
+    type: String,
+    trim: true
+  },
+  module: {
+    type: String,
+    trim: true
+  },
   date: {
     type: Date,
     required: true
