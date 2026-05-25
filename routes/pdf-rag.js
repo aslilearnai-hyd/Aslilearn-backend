@@ -720,7 +720,7 @@ router.post(
         return res.status(400).json({
           success: false,
           message:
-            'This tool format is no longer supported. Choose one of the 11 curriculum tools (e.g. Lesson Planner, Homework Creator).',
+            'This tool format is no longer supported. Choose one of the 17 curriculum tools (e.g. Lesson Planner, Homework Creator).',
         });
       }
       if (!uploaderId) {

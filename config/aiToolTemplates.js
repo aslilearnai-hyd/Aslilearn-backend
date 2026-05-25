@@ -1,5 +1,5 @@
 /**
- * Single source of truth for all 11 AI curriculum tools (NEP / NCF / Bloom / CBE / UDL).
+ * Single source of truth for all 17 AI curriculum tools (NEP / NCF / Bloom / CBE / UDL).
  * Consumed by: Gemini PDF extract, validation, regeneration, formatItemToContent, parsers, UI contracts.
  *
  * @module config/aiToolTemplates
@@ -40,6 +40,12 @@ export const AI_TOOL_ORDERED_SLUGS = Object.freeze([
   'flashcard-generator',
   'daily-class-plan-maker',
   'exam-question-paper-generator',
+  'smart-study-guide-generator',
+  'concept-breakdown-explainer',
+  'smart-qa-practice-generator',
+  'chapter-summary-creator',
+  'key-points-formula-extractor',
+  'quick-assignment-builder',
 ]);
 
 /** Normalize tool label/slug for comparison (lowercase alphanumeric only). */
@@ -756,6 +762,201 @@ const TEMPLATES = {
     },
     sectionFallbackRules: [],
   },
+
+  'smart-study-guide-generator': {
+    slug: 'smart-study-guide-generator',
+    title: 'Smart Study Guide Generator',
+    contentTypeDefault: 'Study Guide',
+    pedagogyFrameworkTags: [...UNIVERSAL_PEDAGOGY_TAGS],
+    compulsoryContextFields: COMPULSORY_CONTEXT_FIELDS,
+    canonicalHeadings: [
+      { order: 1, id: 'title', label: 'Study Guide Title', universalBlock: 'input', storageKeys: ['title'] },
+      { order: 2, id: 'objectives', label: 'Learning Objectives', universalBlock: 'alignment', storageKeys: ['learning_objectives', 'objectives'] },
+      { order: 3, id: 'key_concepts', label: 'Key Concepts', universalBlock: 'output', storageKeys: ['key_concepts', 'concepts'] },
+      { order: 4, id: 'formulas', label: 'Formulas and Rules', universalBlock: 'output', storageKeys: ['formulas', 'rules'] },
+      { order: 5, id: 'revision_checklist', label: 'Revision Checklist', universalBlock: 'output', storageKeys: ['revision_checklist', 'checklist'] },
+      { order: 6, id: 'study_tips', label: 'Study Tips', universalBlock: 'differentiation', storageKeys: ['study_tips', 'tips'] },
+      { order: 7, id: 'quick_review', label: 'Quick Review Points', universalBlock: 'reflection', storageKeys: ['quick_review', 'review_points'] },
+    ],
+    requiredFieldsForPdfExtract: ['title'],
+    pdfValidationRules: [{ id: 'has-body', severity: 'error', description: 'key_concepts or revision_checklist required.' }],
+    parserHints: ['Personalized study guide: objectives, concepts, formulas, checklist, tips.'],
+    regenerationRules: { mergePolicy: 'merge', allowTemplateRegeneration: true },
+    gemini: {
+      strictOutputHint:
+        'Study guide JSON: title, learning_objectives[], key_concepts[] (name + explanation), formulas[] (name + formula + note), revision_checklist[], study_tips[], quick_review[].',
+      pdfExtractSchema: {
+        title: 'string',
+        learning_objectives: ['string'],
+        key_concepts: [{ name: 'string', explanation: 'string' }],
+        formulas: [{ name: 'string', formula: 'string', note: 'string' }],
+        revision_checklist: ['string'],
+        study_tips: ['string'],
+        quick_review: ['string'],
+      },
+    },
+    sectionFallbackRules: [{ ifEmpty: ['key_concepts'], use: ['concepts', 'summary'] }],
+  },
+
+  'concept-breakdown-explainer': {
+    slug: 'concept-breakdown-explainer',
+    title: 'Concept Breakdown Explainer',
+    contentTypeDefault: 'Concept Notes',
+    pedagogyFrameworkTags: [...UNIVERSAL_PEDAGOGY_TAGS],
+    compulsoryContextFields: COMPULSORY_CONTEXT_FIELDS,
+    canonicalHeadings: [
+      { order: 1, id: 'concept_name', label: 'Concept Name', universalBlock: 'input', storageKeys: ['concept_name', 'title'] },
+      { order: 2, id: 'simple_explanation', label: 'Simple Explanation', universalBlock: 'output', storageKeys: ['simple_explanation', 'explanation'] },
+      { order: 3, id: 'steps', label: 'Step-by-step Breakdown', universalBlock: 'output', storageKeys: ['steps', 'breakdown_steps'] },
+      { order: 4, id: 'examples', label: 'Examples', universalBlock: 'realLife', storageKeys: ['examples'] },
+      { order: 5, id: 'misconceptions', label: 'Common Misconceptions', universalBlock: 'differentiation', storageKeys: ['common_misconceptions', 'misconceptions'] },
+      { order: 6, id: 'quick_check', label: 'Quick Check', universalBlock: 'assessment', storageKeys: ['quick_check_questions', 'questions'] },
+    ],
+    requiredFieldsForPdfExtract: ['concept_name'],
+    pdfValidationRules: [{ id: 'has-body', severity: 'error', description: 'simple_explanation or steps required.' }],
+    parserHints: ['One concept per Item N: name, explanation, steps, examples, misconceptions, quick checks.'],
+    regenerationRules: { mergePolicy: 'merge', allowTemplateRegeneration: true },
+    gemini: {
+      strictOutputHint:
+        'Concept breakdown JSON: concepts[] with concept_name, simple_explanation, breakdown_steps[], examples[], common_misconceptions[], quick_check_questions[]. Or single object with same fields.',
+      pdfExtractSchema: {
+        concepts: [
+          {
+            concept_name: 'string',
+            simple_explanation: 'string',
+            breakdown_steps: ['string'],
+            examples: ['string'],
+            common_misconceptions: ['string'],
+            quick_check_questions: ['string'],
+          },
+        ],
+        concept_name: 'string',
+        simple_explanation: 'string',
+        breakdown_steps: ['string'],
+        examples: ['string'],
+        common_misconceptions: ['string'],
+        quick_check_questions: ['string'],
+      },
+    },
+    sectionFallbackRules: [],
+  },
+
+  'smart-qa-practice-generator': {
+    slug: 'smart-qa-practice-generator',
+    title: 'Smart Q&A Practice Generator',
+    contentTypeDefault: 'Practice Q&A',
+    pedagogyFrameworkTags: [...UNIVERSAL_PEDAGOGY_TAGS],
+    compulsoryContextFields: COMPULSORY_CONTEXT_FIELDS,
+    canonicalHeadings: [
+      { order: 1, id: 'title', label: 'Practice Set Title', universalBlock: 'input', storageKeys: ['title'] },
+      { order: 2, id: 'instructions', label: 'Instructions', universalBlock: 'input', storageKeys: ['instructions'] },
+      { order: 3, id: 'questions', label: 'Practice Questions with Answers', universalBlock: 'output', storageKeys: ['questions', 'practice_questions'] },
+      { order: 4, id: 'tips', label: 'Quick Tips', universalBlock: 'reflection', storageKeys: ['tips', 'study_tips'] },
+    ],
+    requiredFieldsForPdfExtract: ['questions'],
+    pdfValidationRules: [{ id: 'questions', severity: 'error', description: 'questions[] required.' }],
+    parserHints: ['Each question: question text, answer, optional step_by_step_answer and tip.'],
+    regenerationRules: { mergePolicy: 'merge', allowTemplateRegeneration: true },
+    gemini: {
+      strictOutputHint:
+        'Practice Q&A JSON: title, instructions, questions[] with question, answer, step_by_step_answer (optional), tip (optional).',
+      pdfExtractSchema: {
+        title: 'string',
+        instructions: 'string',
+        questions: [{ question: 'string', answer: 'string', step_by_step_answer: 'string', tip: 'string' }],
+      },
+    },
+    sectionFallbackRules: [],
+  },
+
+  'chapter-summary-creator': {
+    slug: 'chapter-summary-creator',
+    title: 'Chapter Summary Creator',
+    contentTypeDefault: 'Chapter Summary',
+    pedagogyFrameworkTags: [...UNIVERSAL_PEDAGOGY_TAGS],
+    compulsoryContextFields: COMPULSORY_CONTEXT_FIELDS,
+    canonicalHeadings: [
+      { order: 1, id: 'chapter_title', label: 'Chapter / Topic Title', universalBlock: 'input', storageKeys: ['chapter_title', 'title'] },
+      { order: 2, id: 'summary', label: 'Chapter Summary', universalBlock: 'output', storageKeys: ['summary', 'chapter_summary'] },
+      { order: 3, id: 'key_takeaways', label: 'Key Takeaways', universalBlock: 'output', storageKeys: ['key_takeaways', 'takeaways'] },
+      { order: 4, id: 'review_points', label: 'Quick Review Points', universalBlock: 'reflection', storageKeys: ['review_points', 'quick_review'] },
+    ],
+    requiredFieldsForPdfExtract: ['summary'],
+    pdfValidationRules: [{ id: 'has-body', severity: 'error', description: 'summary or key_takeaways required.' }],
+    parserHints: ['Concise chapter summary with takeaways and review bullets.'],
+    regenerationRules: { mergePolicy: 'merge', allowTemplateRegeneration: true },
+    gemini: {
+      strictOutputHint:
+        'Chapter summary JSON: chapter_title, summary, key_takeaways[], review_points[].',
+      pdfExtractSchema: {
+        chapter_title: 'string',
+        title: 'string',
+        summary: 'string',
+        chapter_summary: 'string',
+        key_takeaways: ['string'],
+        review_points: ['string'],
+      },
+    },
+    sectionFallbackRules: [{ ifEmpty: ['summary'], use: ['chapter_summary'] }],
+  },
+
+  'key-points-formula-extractor': {
+    slug: 'key-points-formula-extractor',
+    title: 'Key Points Extractor',
+    contentTypeDefault: 'Key Points',
+    pedagogyFrameworkTags: [...UNIVERSAL_PEDAGOGY_TAGS],
+    compulsoryContextFields: COMPULSORY_CONTEXT_FIELDS,
+    canonicalHeadings: [
+      { order: 1, id: 'title', label: 'Topic Title', universalBlock: 'input', storageKeys: ['title', 'topic_title'] },
+      { order: 2, id: 'key_points', label: 'Key Points', universalBlock: 'output', storageKeys: ['key_points', 'key_points_to_remember'] },
+      { order: 3, id: 'definitions', label: 'Definitions', universalBlock: 'output', storageKeys: ['definitions'] },
+      { order: 4, id: 'formulas', label: 'Formulas', universalBlock: 'output', storageKeys: ['formulas'] },
+    ],
+    requiredFieldsForPdfExtract: ['key_points'],
+    pdfValidationRules: [{ id: 'has-body', severity: 'error', description: 'key_points or formulas required.' }],
+    parserHints: ['Bullet key points, term definitions, and formula list.'],
+    regenerationRules: { mergePolicy: 'merge', allowTemplateRegeneration: true },
+    gemini: {
+      strictOutputHint:
+        'Key points JSON: title, key_points[] (strings or {point, detail}), definitions[] ({term, definition}), formulas[] ({name, formula, when_to_use}).',
+      pdfExtractSchema: {
+        title: 'string',
+        key_points: ['string'],
+        definitions: [{ term: 'string', definition: 'string' }],
+        formulas: [{ name: 'string', formula: 'string', when_to_use: 'string' }],
+      },
+    },
+    sectionFallbackRules: [{ ifEmpty: ['key_points'], use: ['key_points_to_remember'] }],
+  },
+
+  'quick-assignment-builder': {
+    slug: 'quick-assignment-builder',
+    title: 'Quick Assignment Builder',
+    contentTypeDefault: 'Assignment',
+    pedagogyFrameworkTags: [...UNIVERSAL_PEDAGOGY_TAGS],
+    compulsoryContextFields: COMPULSORY_CONTEXT_FIELDS,
+    canonicalHeadings: [
+      { order: 1, id: 'title', label: 'Assignment Title', universalBlock: 'input', storageKeys: ['title', 'assignment_title'] },
+      { order: 2, id: 'instructions', label: 'Student Instructions', universalBlock: 'output', storageKeys: ['instructions', 'student_instructions'] },
+      { order: 3, id: 'questions', label: 'Assignment Questions', universalBlock: 'output', storageKeys: ['questions', 'tasks'] },
+      { order: 4, id: 'marking', label: 'Marking Criteria', universalBlock: 'assessment', storageKeys: ['marking_criteria', 'marking_scheme'] },
+    ],
+    requiredFieldsForPdfExtract: ['title', 'questions'],
+    pdfValidationRules: [{ id: 'questions', severity: 'error', description: 'questions[] required.' }],
+    parserHints: ['Structured assignment with instructions, numbered questions, and marking criteria.'],
+    regenerationRules: { mergePolicy: 'merge', allowTemplateRegeneration: true },
+    gemini: {
+      strictOutputHint:
+        'Assignment JSON: title, instructions, questions[] (question, marks optional, answer optional), marking_criteria (string or criteria[]).',
+      pdfExtractSchema: {
+        title: 'string',
+        instructions: 'string',
+        questions: [{ question: 'string', marks: 'number', answer: 'string' }],
+        marking_criteria: 'string',
+      },
+    },
+    sectionFallbackRules: [],
+  },
 };
 
 Object.freeze(TEMPLATES);
@@ -917,7 +1118,8 @@ export function expandStructuredToFormatItems(toolSlug, structured) {
       const cards = Array.isArray(s.cards) ? s.cards : [];
       return cards.map((c, i) => ({ ...(c && typeof c === 'object' ? c : {}), sl_no: i + 1 }));
     }
-    case 'concept-mastery-helper': {
+    case 'concept-mastery-helper':
+    case 'concept-breakdown-explainer': {
       const concepts = Array.isArray(s.concepts) ? s.concepts : [];
       if (concepts.length) {
         return concepts.map((c, i) => {
@@ -926,9 +1128,22 @@ export function expandStructuredToFormatItems(toolSlug, structured) {
             ...row,
             sl_no: i + 1,
             concept_name: row.concept_name || row.title || row.name || `Concept ${i + 1}`,
-            simple_definition: row.simple_definition || row.explanation || '',
+            simple_definition: row.simple_definition || row.simple_explanation || row.explanation || '',
             key_points: row.key_points || row.examples,
           };
+        });
+      }
+      return [s];
+    }
+    case 'smart-qa-practice-generator':
+    case 'quick-assignment-builder': {
+      const qs = Array.isArray(s.questions) ? s.questions : [];
+      if (qs.length) {
+        return qs.map((q, i) => {
+          if (q && typeof q === 'object') {
+            return { ...q, question_number: q.question_number ?? i + 1 };
+          }
+          return { question: String(q), question_number: i + 1 };
         });
       }
       return [s];
@@ -993,6 +1208,9 @@ export function buildPdfToolConfigMap() {
             'short-notes-summaries-maker',
             'story-passage-creator',
             'concept-mastery-helper',
+            'concept-breakdown-explainer',
+            'smart-qa-practice-generator',
+            'quick-assignment-builder',
           ].includes(slug),
         },
       ];
@@ -1357,6 +1575,104 @@ export function formatItemLinesFromTemplate(toolSlug, item, index = 0) {
     }
     case 'flashcard-generator':
       return [];
+    case 'smart-study-guide-generator': {
+      lines.push(`## ${str(i.title) || `Study Guide ${n}`}`, '');
+      const lo = strArr(i.learning_objectives || i.objectives);
+      if (lo.length) pushSection(lines, '1. Learning Objectives', lo.map((x) => `- ${x}`));
+      const kc = Array.isArray(i.key_concepts) ? i.key_concepts : [];
+      if (kc.length) {
+        lines.push('### 2. Key Concepts');
+        kc.forEach((c, idx) => {
+          const row = c && typeof c === 'object' ? c : { name: String(c) };
+          lines.push(`${idx + 1}. **${str(row.name || row.concept)}** — ${str(row.explanation)}`);
+        });
+        lines.push('');
+      }
+      const fm = Array.isArray(i.formulas) ? i.formulas : [];
+      if (fm.length) {
+        lines.push('### 3. Formulas and Rules');
+        fm.forEach((f, idx) => {
+          const row = f && typeof f === 'object' ? f : { formula: String(f) };
+          lines.push(`${idx + 1}. ${str(row.name)}: ${str(row.formula)}${row.note ? ` (${str(row.note)})` : ''}`);
+        });
+        lines.push('');
+      }
+      const chk = strArr(i.revision_checklist || i.checklist);
+      if (chk.length) pushSection(lines, '4. Revision Checklist', chk.map((x) => `- ${x}`));
+      const tips = strArr(i.study_tips || i.tips);
+      if (tips.length) pushSection(lines, '5. Study Tips', tips.map((x) => `- ${x}`));
+      const rev = strArr(i.quick_review || i.review_points);
+      if (rev.length) pushSection(lines, '6. Quick Review', rev.map((x) => `- ${x}`));
+      break;
+    }
+    case 'concept-breakdown-explainer': {
+      lines.push(`## ${str(i.concept_name || i.title) || `Concept ${n}`}`, '');
+      if (str(i.simple_explanation || i.explanation)) {
+        pushSection(lines, '1. Simple Explanation', [str(i.simple_explanation || i.explanation)]);
+      }
+      const steps = strArr(i.breakdown_steps || i.steps);
+      if (steps.length) pushSection(lines, '2. Step-by-step Breakdown', steps.map((x, idx) => `${idx + 1}. ${x}`));
+      const ex = strArr(i.examples);
+      if (ex.length) pushSection(lines, '3. Examples', ex.map((x) => `- ${x}`));
+      const misc = strArr(i.common_misconceptions || i.misconceptions);
+      if (misc.length) pushSection(lines, '4. Common Misconceptions', misc.map((x) => `- ${x}`));
+      const qc = strArr(i.quick_check_questions);
+      if (qc.length) {
+        lines.push('### 5. Quick Check');
+        qc.forEach((q, idx) => lines.push(`${idx + 1}. ${q}`));
+        lines.push('');
+      }
+      break;
+    }
+    case 'smart-qa-practice-generator':
+    case 'quick-assignment-builder': {
+      const qText = str(i.question);
+      if (qText) {
+        lines.push(`### Q${n}. ${qText}`, '');
+        if (str(i.answer)) pushSection(lines, 'Answer', [str(i.answer)]);
+        if (str(i.step_by_step_answer)) pushSection(lines, 'Step-by-step', [str(i.step_by_step_answer)]);
+        if (str(i.tip)) pushSection(lines, 'Tip', [str(i.tip)]);
+        if (str(i.marks)) pushSection(lines, 'Marks', [String(i.marks)]);
+      } else {
+        lines.push(`## ${str(i.title || i.assignment_title) || `Item ${n}`}`, '');
+        if (str(i.instructions)) pushSection(lines, 'Instructions', [str(i.instructions)]);
+        if (str(i.marking_criteria)) pushSection(lines, 'Marking Criteria', [str(i.marking_criteria)]);
+      }
+      break;
+    }
+    case 'chapter-summary-creator': {
+      lines.push(`## ${str(i.chapter_title || i.title) || `Chapter ${n}`}`, '');
+      if (str(i.summary || i.chapter_summary)) pushSection(lines, '1. Summary', [str(i.summary || i.chapter_summary)]);
+      const kt = strArr(i.key_takeaways || i.takeaways);
+      if (kt.length) pushSection(lines, '2. Key Takeaways', kt.map((x) => `- ${x}`));
+      const rp = strArr(i.review_points || i.quick_review);
+      if (rp.length) pushSection(lines, '3. Quick Review Points', rp.map((x) => `- ${x}`));
+      break;
+    }
+    case 'key-points-formula-extractor': {
+      lines.push(`## ${str(i.title || i.topic_title) || `Key Points ${n}`}`, '');
+      const kp = strArr(i.key_points || i.key_points_to_remember);
+      if (kp.length) pushSection(lines, '1. Key Points', kp.map((x) => `- ${x}`));
+      const defs = Array.isArray(i.definitions) ? i.definitions : [];
+      if (defs.length) {
+        lines.push('### 2. Definitions');
+        defs.forEach((d, idx) => {
+          const row = d && typeof d === 'object' ? d : { definition: String(d) };
+          lines.push(`${idx + 1}. **${str(row.term)}** — ${str(row.definition)}`);
+        });
+        lines.push('');
+      }
+      const fm = Array.isArray(i.formulas) ? i.formulas : [];
+      if (fm.length) {
+        lines.push('### 3. Formulas');
+        fm.forEach((f, idx) => {
+          const row = f && typeof f === 'object' ? f : { formula: String(f) };
+          lines.push(`${idx + 1}. ${str(row.name)}: ${str(row.formula)}${row.when_to_use ? ` — ${str(row.when_to_use)}` : ''}`);
+        });
+        lines.push('');
+      }
+      break;
+    }
     case 'daily-class-plan-maker': {
       lines.push(`## ${str(i.title) || `Day Plan ${n}`}`, '');
       if (str(i.day_period_topic_breakup)) pushSection(lines, '1. Day / Period-wise Topic Break-up', [str(i.day_period_topic_breakup)]);

@@ -3746,18 +3746,21 @@ router.post('/exam-results', async (req, res) => {
       return res.status(400).json({ success: false, message: 'examId is required' });
     }
 
-    // Get student's assigned admin and board
-    const student = await User.findById(req.userId).populate('assignedAdmin', 'board');
+    // Get student's assigned admin and curriculum board for analytics bucketing.
+    const student = await User.findById(req.userId).populate(
+      'assignedAdmin',
+      'board curriculumBoard isAsliPrepExclusive'
+    );
     if (!student) {
       return res.status(400).json({ success: false, message: 'Student not found' });
     }
 
-    // Production data can have missing student.board; resolve from assigned admin and safe default.
-    const resolvedBoard = String(
-      student.board || student.assignedAdmin?.board || 'ASLI_EXCLUSIVE_SCHOOLS'
-    )
-      .trim()
-      .toUpperCase();
+    const displayBoard = resolveUserDisplayBoard(student, student.assignedAdmin);
+    const resolvedBoard = displayBoard
+      ? String(displayBoard).trim().toUpperCase()
+      : String(student.board || student.assignedAdmin?.board || 'ASLI_EXCLUSIVE_SCHOOLS')
+          .trim()
+          .toUpperCase();
 
     // Load the real questions from the DB and grade against THEM — never trust
     // client-supplied correctAnswers / obtainedMarks / percentage. The student

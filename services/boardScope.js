@@ -117,35 +117,98 @@ export async function buildStudentCountsByBoard() {
   return { counts, adminById };
 }
 
-/** Per-board metrics for comparison charts and dashboards */
-export async function computeBoardMetrics(boardCode, { User, Teacher, Exam, ExamResult }) {
-  const code = String(boardCode).toUpperCase().trim();
-  const adminIds = await getAdminIdsForBoard(boardCode);
-  const { counts } = await buildStudentCountsByBoard();
-  const students = counts[code] ?? 0;
+/** Resolve which comparison board an exam result belongs to (matches student bucketing). */
+export function resolveResultEffectiveBoard(result, studentBoardByUserId, adminById) {
+  const userId = result?.userId?._id?.toString?.() || result?.userId?.toString?.() || '';
+  if (userId && studentBoardByUserId?.has(userId)) {
+    return studentBoardByUserId.get(userId);
+  }
 
-  const teacherQuery = buildTeacherBoardQuery(code, adminIds);
-  const examQuery = buildExamBoardQuery(code);
+  const adminKey = result?.adminId?._id?.toString?.() || result?.adminId?.toString?.() || '';
+  if (adminKey && adminById?.has(adminKey)) {
+    return resolveAdminEffectiveBoard(adminById.get(adminKey));
+  }
 
-  const [teachers, exams, results] = await Promise.all([
-    Teacher.countDocuments(teacherQuery),
-    Exam.countDocuments(examQuery),
-    ExamResult.find({ board: code }).select('percentage userId').lean(),
-  ]);
+  const stored = String(result?.board || '').toUpperCase().trim();
+  if (isValidCurriculumBoard(stored)) {
+    return stored;
+  }
 
-  const uniqueAttempters = new Set(
-    results.map((r) => String(r.userId || '')).filter(Boolean)
-  ).size;
+  return null;
+}
 
+function formatParticipationRate(uniqueAttempters, students) {
+  return students > 0
+    ? ((uniqueAttempters / students) * 100).toFixed(1)
+    : '0.0';
+}
+
+function summarizeResultBucket(results, attempterIds, students) {
   const averageScore =
     results.length > 0
       ? results.reduce((sum, r) => sum + (Number(r.percentage) || 0), 0) / results.length
       : 0;
 
-  const participationRate =
-    students > 0 && exams > 0
-      ? ((uniqueAttempters / students) * 100).toFixed(1)
-      : '0.0';
+  return {
+    totalAttempts: results.length,
+    averageScore: averageScore.toFixed(2),
+    participationRate: formatParticipationRate(attempterIds.size, students),
+    uniqueAttempters: attempterIds.size,
+  };
+}
+
+/**
+ * Bucket every exam attempt by the student's curriculum board (same rules as student counts).
+ * Avoids mismatches when ExamResult.board is ASLI_EXCLUSIVE_SCHOOLS but the school is CBSE, etc.
+ */
+export async function bucketExamResultsByEffectiveBoard(ExamResult, adminById) {
+  const [allResults, students] = await Promise.all([
+    ExamResult.find({}).select('percentage userId adminId board').lean(),
+    User.find({ role: 'student' }).select('_id assignedAdmin board').lean(),
+  ]);
+
+  const studentBoardByUserId = new Map(
+    students.map((s) => [s._id.toString(), resolveStudentEffectiveBoard(s, adminById)])
+  );
+
+  const buckets = Object.fromEntries(
+    COMPARISON_BOARDS.map((code) => [code, { results: [], attempterIds: new Set() }])
+  );
+
+  for (const result of allResults) {
+    const board = resolveResultEffectiveBoard(result, studentBoardByUserId, adminById);
+    if (!board || buckets[board] === undefined) continue;
+
+    buckets[board].results.push(result);
+    const userId = result.userId?.toString();
+    if (userId) buckets[board].attempterIds.add(userId);
+  }
+
+  return buckets;
+}
+
+/** Per-board metrics for comparison charts and dashboards */
+export async function computeBoardMetrics(boardCode, { User, Teacher, Exam, ExamResult }) {
+  const code = String(boardCode).toUpperCase().trim();
+  const adminIds = await getAdminIdsForBoard(boardCode);
+  const { counts, adminById } = await buildStudentCountsByBoard();
+  const students = counts[code] ?? 0;
+
+  const teacherQuery = buildTeacherBoardQuery(code, adminIds);
+  const examQuery = buildExamBoardQuery(code);
+
+  const [teachers, exams, buckets] = await Promise.all([
+    Teacher.countDocuments(teacherQuery),
+    Exam.countDocuments(examQuery),
+    bucketExamResultsByEffectiveBoard(ExamResult, adminById),
+  ]);
+
+  const bucket = buckets[code] || { results: [], attempterIds: new Set() };
+  const { totalAttempts, averageScore, participationRate } = summarizeResultBucket(
+    bucket.results,
+    bucket.attempterIds,
+    students
+  );
 
   return {
     board: code,
@@ -153,8 +216,8 @@ export async function computeBoardMetrics(boardCode, { User, Teacher, Exam, Exam
     students,
     teachers,
     exams,
-    totalAttempts: results.length,
-    averageScore: averageScore.toFixed(2),
+    totalAttempts,
+    averageScore,
     participationRate,
     adminIds,
   };
@@ -162,14 +225,15 @@ export async function computeBoardMetrics(boardCode, { User, Teacher, Exam, Exam
 
 /** All boards in one pass — used by comparison endpoint */
 export async function computeAllBoardsMetrics({ Teacher, Exam, ExamResult }) {
-  const [{ counts }, adminIdsByBoard] = await Promise.all([
-    buildStudentCountsByBoard(),
+  const { counts, adminById } = await buildStudentCountsByBoard();
+  const [adminIdsByBoard, buckets] = await Promise.all([
     Promise.all(
       COMPARISON_BOARDS.map(async (code) => ({
         code,
         adminIds: await getAdminIdsForBoard(code),
       }))
     ),
+    bucketExamResultsByEffectiveBoard(ExamResult, adminById),
   ]);
 
   const adminIdMap = Object.fromEntries(adminIdsByBoard.map((r) => [r.code, r.adminIds]));
@@ -181,23 +245,17 @@ export async function computeAllBoardsMetrics({ Teacher, Exam, ExamResult }) {
       const examQuery = buildExamBoardQuery(code);
       const teacherQuery = buildTeacherBoardQuery(code, adminIds);
 
-      const [teachers, exams, results] = await Promise.all([
+      const [teachers, exams] = await Promise.all([
         Teacher.countDocuments(teacherQuery),
         Exam.countDocuments(examQuery),
-        ExamResult.find({ board: code }).select('percentage userId').lean(),
       ]);
 
-      const uniqueAttempters = new Set(
-        results.map((r) => String(r.userId || '')).filter(Boolean)
-      ).size;
-      const averageScore =
-        results.length > 0
-          ? results.reduce((sum, r) => sum + (Number(r.percentage) || 0), 0) / results.length
-          : 0;
-      const participationRate =
-        students > 0 && exams > 0
-          ? ((uniqueAttempters / students) * 100).toFixed(1)
-          : '0.0';
+      const bucket = buckets[code] || { results: [], attempterIds: new Set() };
+      const { totalAttempts, averageScore, participationRate } = summarizeResultBucket(
+        bucket.results,
+        bucket.attempterIds,
+        students
+      );
 
       return {
         board: code,
@@ -205,8 +263,8 @@ export async function computeAllBoardsMetrics({ Teacher, Exam, ExamResult }) {
         students,
         teachers,
         exams,
-        totalAttempts: results.length,
-        averageScore: averageScore.toFixed(2),
+        totalAttempts,
+        averageScore,
         participationRate,
       };
     })

@@ -23,6 +23,12 @@ export const MULTI_ITEM_PDF_TOOLS = new Set([
   'concept-mastery-helper',
   'worksheet-mcq-generator',
   'exam-question-paper-generator',
+  'concept-breakdown-explainer',
+  'smart-qa-practice-generator',
+  'quick-assignment-builder',
+  'smart-study-guide-generator',
+  'chapter-summary-creator',
+  'key-points-formula-extractor',
 ]);
 
 /** Tools that may legitimately return a single consolidated object. */

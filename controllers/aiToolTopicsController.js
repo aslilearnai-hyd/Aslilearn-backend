@@ -16,12 +16,54 @@ function buildDisplayTopicName(label, topicName) {
   return safeTopicName.startsWith(prefix) ? safeTopicName : `${prefix}${safeTopicName}`;
 }
 
+function buildTopicNameMatch(value) {
+  const tn = normalizeText(value);
+  if (!tn) return null;
+  return {
+    $or: [
+      { topicName: tn },
+      {
+        $expr: {
+          $eq: [
+            tn,
+            {
+              $let: {
+                vars: {
+                  label: { $trim: { input: { $ifNull: ['$label', ''] } } },
+                  topic: { $trim: { input: { $ifNull: ['$topicName', ''] } } },
+                },
+                in: {
+                  $cond: {
+                    if: { $eq: ['$$label', ''] },
+                    then: '$$topic',
+                    else: {
+                      $cond: {
+                        if: { $eq: [{ $indexOfCP: ['$$topic', { $concat: ['$$label', ' - '] }] }, 0] },
+                        then: '$$topic',
+                        else: { $concat: ['$$label', ' - ', '$$topic'] },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          ],
+        },
+      },
+    ],
+  };
+}
+
 function buildFilters(query) {
   const filter = { isActive: true };
   if (query.board) filter.board = boardMongoMatch(normalizeText(query.board));
   if (query.classLabel) filter.classLabel = normalizeText(query.classLabel);
   if (query.subject) filter.subject = normalizeText(query.subject);
-  if (query.topicName) filter.topicName = normalizeText(query.topicName);
+  const topicMatch = buildTopicNameMatch(query.topicName);
+  if (topicMatch) {
+    if (!filter.$and) filter.$and = [];
+    filter.$and.push(topicMatch);
+  }
   if (query.subTopic) filter.subTopic = normalizeText(query.subTopic);
   if (query.label) filter.label = normalizeText(query.label);
   return filter;
@@ -36,14 +78,18 @@ export async function listAiToolTopics(req, res) {
 
     const filter = buildFilters(req.query);
     if (search) {
-      filter.$or = [
-        { board: { $regex: search, $options: 'i' } },
-        { classLabel: { $regex: search, $options: 'i' } },
-        { subject: { $regex: search, $options: 'i' } },
-        { label: { $regex: search, $options: 'i' } },
-        { topicName: { $regex: search, $options: 'i' } },
-        { subTopic: { $regex: search, $options: 'i' } },
-      ];
+      const searchClause = {
+        $or: [
+          { board: { $regex: search, $options: 'i' } },
+          { classLabel: { $regex: search, $options: 'i' } },
+          { subject: { $regex: search, $options: 'i' } },
+          { label: { $regex: search, $options: 'i' } },
+          { topicName: { $regex: search, $options: 'i' } },
+          { subTopic: { $regex: search, $options: 'i' } },
+        ],
+      };
+      if (!filter.$and) filter.$and = [];
+      filter.$and.push(searchClause);
     }
 
     const [items, total] = await Promise.all([
@@ -240,7 +286,11 @@ export async function listAiToolTopicOptions(req, res) {
     if (board) filter.board = boardMongoMatch(normalizeText(board));
     if (classLabel) filter.classLabel = normalizeText(classLabel);
     if (subject) filter.subject = normalizeText(subject);
-    if (topicName) filter.topicName = normalizeText(topicName);
+    const topicMatch = buildTopicNameMatch(topicName);
+    if (topicMatch) {
+      if (!filter.$and) filter.$and = [];
+      filter.$and.push(topicMatch);
+    }
 
     const rows = await AiToolTopic.find(filter)
       .select('board classLabel subject label topicName subTopic')
@@ -255,7 +305,7 @@ export async function listAiToolTopicOptions(req, res) {
         classes: unique(rows.map((r) => r.classLabel)),
         subjects: unique(rows.map((r) => r.subject)),
         labels: unique(rows.map((r) => r.label)),
-        topics: unique(rows.map((r) => r.topicName)),
+        topics: unique(rows.map((r) => buildDisplayTopicName(r.label, r.topicName))),
         subTopics: unique(rows.map((r) => r.subTopic)),
       },
     });

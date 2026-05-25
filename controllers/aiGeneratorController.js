@@ -235,13 +235,13 @@ export async function generateAndSaveContent(req, res) {
     if (isDeprecatedAiToolIdentifier(toolSlug) || isDeprecatedAiToolIdentifier(toolDisplayName)) {
       return res.status(400).json({
         success: false,
-        message: 'This tool format is no longer supported. Use one of the 11 curriculum tools.',
+        message: 'This tool format is no longer supported. Use one of the 17 curriculum tools.',
       });
     }
     if (!isValidAiToolSlug(toolSlug)) {
       return res.status(400).json({
         success: false,
-        message: `Invalid toolSlug. Must be one of the 11 AI curriculum tools.`,
+        message: `Invalid toolSlug. Must be one of the 17 AI curriculum tools.`,
       });
     }
 

@@ -31,6 +31,7 @@ import {
   dedupeAdminSubjectsByPlainName,
 } from '../utils/subjectClassRelations.js';
 import { resolveSubjectContentIds } from '../utils/resolveSubjectContentIds.js';
+import { getClassScheduleAndRoomMap } from '../utils/teacherClassSchedule.js';
 
 const buildSafeAppendQuestionPipeline = (questionId) => [
   {
@@ -1478,11 +1479,16 @@ export const getTeacherDashboardStats = async (req, res) => {
     }
     
     // Get teacher's assigned classes with details (only active subjects on profile)
-    const teacher = await Teacher.findById(teacherId).populate({
-      path: 'subjects',
-      match: { isActive: true },
-      select: '_id name description code board classNumber isActive',
-    });
+    const teacher = await Teacher.findById(teacherId)
+      .populate({
+        path: 'subjects',
+        match: { isActive: true },
+        select: '_id name description code board classNumber isActive',
+      })
+      .populate({
+        path: 'assignments.subjectId',
+        select: '_id name description code board',
+      });
     console.log('Teacher found:', teacher ? teacher.email : 'Not found');
     console.log('Teacher assignedClassIds:', teacher?.assignedClassIds);
     console.log('Teacher assignedClassIds length:', teacher?.assignedClassIds?.length);
@@ -1501,139 +1507,124 @@ export const getTeacherDashboardStats = async (req, res) => {
     let assignedClassesDetails = [];
     let students = [];
     
-    if (teacher.assignedClassIds && teacher.assignedClassIds.length > 0) {
-      // Fetch actual Class documents from database (once)
+    const classIdSet = new Set();
+    (teacher.assignedClassIds || []).forEach((id) => classIdSet.add(String(id)));
+    (teacher.assignments || []).forEach((a) => {
+      if (a.classId) classIdSet.add(String(a.classId));
+    });
+
+    if (classIdSet.size > 0) {
+      const classIdList = [...classIdSet];
       const classDocuments = await Class.find({
         $or: [
-          { _id: { $in: teacher.assignedClassIds } },
-          { classNumber: { $in: teacher.assignedClassIds } }
+          { _id: { $in: classIdList.filter((id) => mongoose.Types.ObjectId.isValid(id)) } },
+          { classNumber: { $in: classIdList } },
         ],
-        isActive: true
+        isActive: true,
       })
-      .populate('assignedSubjects', '_id name description code board')
-      .select('_id classNumber section description assignedSubjects');
+        .populate('assignedSubjects', '_id name description code board')
+        .select('_id classNumber section description assignedSubjects');
 
-      const classObjectIds = classDocuments.map(c => c._id);
-      
-      // Get students assigned to these classes by assignedClass ObjectId
-      students = await User.find({ 
+      const uniqueClassDocs = [
+        ...new Map(classDocuments.map((doc) => [doc._id.toString(), doc])).values(),
+      ];
+      const classObjectIds = uniqueClassDocs.map((c) => c._id);
+
+      students = await User.find({
         role: 'student',
         assignedClass: { $in: classObjectIds },
-        assignedAdmin: teacher.adminId  // Filter by teacher's admin
+        assignedAdmin: teacher.adminId,
       })
-      .populate('assignedClass', '_id classNumber section')
-      .select('fullName email classNumber phone isActive createdAt lastLogin assignedClass');
-      
-      console.log('Teacher dashboard - Found students:', students.length);
-      console.log('Teacher adminId:', teacher.adminId);
-      console.log('Teacher assignedClassIds:', teacher.assignedClassIds);
-      console.log('Class ObjectIds:', classObjectIds);
-      console.log('Students data:', students.map(s => ({ 
-        name: s.fullName, 
-        class: s.classNumber, 
-        assignedClass: s.assignedClass?._id,
-        admin: s.assignedAdmin 
-      })));
+        .populate('assignedClass', '_id classNumber section')
+        .select('fullName email classNumber phone isActive createdAt lastLogin assignedClass');
 
-      // Build a map of classId (ObjectId or classNumber) -> Class document
-      const classMap = new Map();
-      classDocuments.forEach(classDoc => {
-        // Map by ObjectId
-        classMap.set(classDoc._id.toString(), classDoc);
-        // Map by classNumber for backward compatibility
-        classMap.set(classDoc.classNumber, classDoc);
-      });
-
-      // Build a map of classId -> studentCount
-      const classIdToCount = new Map();
-      teacher.assignedClassIds.forEach(classId => {
-        const classDoc = classMap.get(String(classId));
-        if (classDoc) {
-          classIdToCount.set(String(classId), 0);
-        }
-      });
-
-      // Count students assigned to each class
-      // Students are matched by assignedClass ObjectId
+      const studentCountByClassId = new Map();
       for (const student of students) {
-        if (student.assignedClass && student.assignedClass._id) {
-          const studentClassId = student.assignedClass._id.toString();
-          // Check if this student's class is in the teacher's assigned classes
-          for (const [classId, count] of classIdToCount.entries()) {
-            const classDoc = classMap.get(classId);
-            if (classDoc && (classDoc._id.toString() === studentClassId || 
-                classDoc.classNumber === String(classId))) {
-              classIdToCount.set(classId, count + 1);
-              break;
-            }
-          }
+        const cid = student.assignedClass?._id?.toString();
+        if (cid) {
+          studentCountByClassId.set(cid, (studentCountByClassId.get(cid) || 0) + 1);
         }
       }
 
-      // Create class cards with real class names and student details
-      assignedClassesDetails = teacher.assignedClassIds
-        .map((classId) => {
-          const classDoc = classMap.get(String(classId));
-          if (!classDoc) {
-            // If class not found, skip it
-            return null;
-          }
+      assignedClassesDetails = uniqueClassDocs.map((classDoc) => {
+        const classIdStr = classDoc._id.toString();
+        const classStudents = students.filter(
+          (s) => s.assignedClass?._id?.toString() === classIdStr
+        );
+        const className = `${classDoc.classNumber}${classDoc.section || ''}`;
 
-          // Get students for this specific class by assignedClass ObjectId
-          const classStudents = students.filter(s => 
-            s.assignedClass && 
-            s.assignedClass._id && 
-            s.assignedClass._id.toString() === classDoc._id.toString()
-          );
+        const assignmentRows = (teacher.assignments || []).filter(
+          (a) => String(a.classId) === classIdStr
+        );
+        const subjectFromAssignments = [
+          ...new Set(
+            assignmentRows
+              .map((a) => a.subjectId?.name)
+              .filter((name) => Boolean(name && String(name).trim()))
+          ),
+        ];
+        const assignmentSubjectIdStr = new Set(
+          assignmentRows.map((a) => String(a.subjectId?._id || a.subjectId || '')).filter(Boolean)
+        );
 
-          // Build class name from classNumber and section (e.g., "10C")
-          const className = `${classDoc.classNumber}${classDoc.section || ''}`;
-          
-          // Subjects on the class row, limited to those on the teacher profile
-          const assignedSubjects = classDoc.assignedSubjects
-            ? classDoc.assignedSubjects
-                .filter((subj) => {
-                  const sid = (subj._id != null ? subj._id : subj).toString();
-                  return explicitSubjectIdStr.has(sid);
-                })
-                .map((subj) => ({
-                  _id: subj._id ? subj._id.toString() : subj.toString(),
-                  name: subj.name || 'Unknown Subject',
-                  description: subj.description || '',
-                  code: subj.code || '',
-                  board: subj.board || '',
-                }))
-            : [];
+        const assignedSubjects = (classDoc.assignedSubjects || [])
+          .filter((subj) => {
+            const sid = (subj._id != null ? subj._id : subj).toString();
+            return explicitSubjectIdStr.has(sid) || assignmentSubjectIdStr.has(sid);
+          })
+          .map((subj) => ({
+            _id: subj._id ? subj._id.toString() : subj.toString(),
+            name: subj.name || 'Unknown Subject',
+            description: subj.description || '',
+            code: subj.code || '',
+            board: subj.board || '',
+          }));
 
+        const subject =
+          subjectFromAssignments.length > 0
+            ? subjectFromAssignments.join(', ')
+            : assignedSubjects.length > 0
+              ? assignedSubjects.map((s) => s.name).join(', ')
+              : 'General';
+
+        return {
+          id: classIdStr,
+          name: className,
+          classNumber: classDoc.classNumber,
+          section: classDoc.section,
+          description: classDoc.description || '',
+          assignedSubjects,
+          subject,
+          schedule: 'Not scheduled',
+          room: `Room ${className}`,
+          studentCount: studentCountByClassId.get(classIdStr) || 0,
+          students: classStudents.map((student) => ({
+            id: student._id,
+            name: student.fullName,
+            email: student.email,
+            classNumber: student.classNumber,
+            phone: student.phone,
+            status: student.isActive ? 'active' : 'inactive',
+            createdAt: student.createdAt,
+            lastLogin: student.lastLogin,
+          })),
+        };
+      });
+
+      if (assignedClassesDetails.length > 0) {
+        const scheduleMap = await getClassScheduleAndRoomMap(
+          teacherId,
+          assignedClassesDetails.map((c) => c.id)
+        );
+        assignedClassesDetails = assignedClassesDetails.map((c) => {
+          const fromTimetable = scheduleMap.get(String(c.id));
           return {
-            id: classDoc._id.toString(),
-            name: className,
-            classNumber: classDoc.classNumber,
-            section: classDoc.section,
-            description: classDoc.description || '',
-            assignedSubjects: assignedSubjects,
-            subject:
-              assignedSubjects.length > 0
-                ? assignedSubjects[0].name
-                : teacher.subjects && teacher.subjects.length > 0
-                  ? teacher.subjects[0].name
-                  : 'General',
-            schedule: 'Mon, Wed, Fri',
-            room: `Room ${className}`,
-            studentCount: classIdToCount.get(String(classId)) || 0,
-            students: classStudents.map(student => ({
-              id: student._id,
-              name: student.fullName,
-              email: student.email,
-              classNumber: student.classNumber,
-              phone: student.phone,
-              status: student.isActive ? 'active' : 'inactive',
-              createdAt: student.createdAt,
-              lastLogin: student.lastLogin
-            }))
+            ...c,
+            schedule: fromTimetable?.schedule || c.schedule,
+            room: fromTimetable?.room || c.room,
           };
-        })
-        .filter(classItem => classItem !== null); // Remove null entries
+        });
+      }
     }
 
     // Get teacher's videos and assessments
@@ -1710,7 +1701,7 @@ export const getTeacherDashboardStats = async (req, res) => {
       data: {
         stats: {
           totalStudents: students.length,
-          totalClasses: teacher.assignedClassIds?.length || 0,
+          totalClasses: assignedClassesDetails.length,
           totalVideos: videos.length,
           totalAssessments: assessments.length,
           totalExams: exams.length,

@@ -1,5 +1,5 @@
 /**
- * Central registry: extractToolItemsFromPdfText(slug, text) for all 11 AI tools.
+ * Central registry: extractToolItemsFromPdfText(slug, text) for all 17 AI tools.
  * @module services/pdf-tool-extract
  */
 
@@ -29,6 +29,12 @@ export const PDF_TOOL_EXTRACTORS = Object.freeze({
   'flashcard-generator': extractFlashcardItemsFromPdfText,
   'daily-class-plan-maker': extractDailyPlanItemsFromPdfText,
   'exam-question-paper-generator': extractExamPaperItemsFromPdfText,
+  'smart-study-guide-generator': extractShortNotesItemsFromPdfText,
+  'concept-breakdown-explainer': extractConceptMasteryItemsFromPdfText,
+  'smart-qa-practice-generator': extractHomeworkItemsFromPdfText,
+  'chapter-summary-creator': extractShortNotesItemsFromPdfText,
+  'key-points-formula-extractor': extractShortNotesItemsFromPdfText,
+  'quick-assignment-builder': extractHomeworkItemsFromPdfText,
 });
 
 /**

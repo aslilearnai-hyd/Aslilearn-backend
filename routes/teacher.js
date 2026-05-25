@@ -342,13 +342,30 @@ async function getTeacherClassesHandler(req, res) {
           email: s.email,
           status: 'active'
         })),
-        schedule: 'N/A',
-        room: 'N/A'
+        schedule: 'Not scheduled',
+        room: classDoc.name
+          ? `Room ${classDoc.classNumber}${classDoc.section || ''}`
+          : '—',
+      };
+    });
+
+    const { getClassScheduleAndRoomMap } = await import('../utils/teacherClassSchedule.js');
+    const scheduleMap = await getClassScheduleAndRoomMap(
+      teacherId,
+      classesWithStudents.map((c) => c._id)
+    );
+    const classesWithSchedule = classesWithStudents.map((c) => {
+      const fromTimetable = scheduleMap.get(String(c._id));
+      const fallbackRoom = `Room ${c.classNumber}${c.section || ''}`;
+      return {
+        ...c,
+        schedule: fromTimetable?.schedule || c.schedule,
+        room: fromTimetable?.room || fallbackRoom,
       };
     });
     
-    console.log(`Found ${classesWithStudents.length} classes for teacher`);
-    res.json({ success: true, data: classesWithStudents });
+    console.log(`Found ${classesWithSchedule.length} classes for teacher`);
+    res.json({ success: true, data: classesWithSchedule });
   } catch (error) {
     console.error('Error fetching teacher classes:', error);
     res.status(500).json({ success: false, message: 'Failed to fetch classes', error: error.message });

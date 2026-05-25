@@ -1928,6 +1928,47 @@ const TOOL_STRUCTURED_RULES = {
       Boolean(String(data?.question || data?.paper_title || '').trim()),
     message: 'Exam paper content must include sections with questions or at least one exam question.',
   },
+  'smart-study-guide-generator': {
+    allowedTypes: ['Study Guide', 'Notes'],
+    validate: (data) =>
+      (Array.isArray(data?.key_concepts) && data.key_concepts.length > 0) ||
+      (Array.isArray(data?.revision_checklist) && data.revision_checklist.length > 0) ||
+      String(data?.title || '').trim().length > 0,
+    message: 'Study guide must include key concepts, revision checklist, or a title with body content.',
+  },
+  'concept-breakdown-explainer': {
+    allowedTypes: ['Concept Notes', 'Notes'],
+    validate: (data) =>
+      (Array.isArray(data?.concepts) && data.concepts.length > 0) ||
+      String(data?.simple_explanation || data?.explanation || '').trim().length > 8,
+    message: 'Concept breakdown must include concepts[] or a simple explanation.',
+  },
+  'smart-qa-practice-generator': {
+    allowedTypes: ['Practice Q&A', 'Homework'],
+    validate: (data) => Array.isArray(data?.questions) && data.questions.length > 0,
+    message: 'Practice Q&A must include a non-empty questions array.',
+  },
+  'chapter-summary-creator': {
+    allowedTypes: ['Chapter Summary', 'Summary', 'Notes'],
+    validate: (data) =>
+      String(data?.summary || data?.chapter_summary || '').trim().length > 0 ||
+      (Array.isArray(data?.key_takeaways) && data.key_takeaways.length > 0),
+    message: 'Chapter summary must include a summary or key takeaways.',
+  },
+  'key-points-formula-extractor': {
+    allowedTypes: ['Key Points', 'Notes'],
+    validate: (data) =>
+      (Array.isArray(data?.key_points) && data.key_points.length > 0) ||
+      (Array.isArray(data?.formulas) && data.formulas.length > 0),
+    message: 'Key points extractor must include key_points or formulas.',
+  },
+  'quick-assignment-builder': {
+    allowedTypes: ['Assignment', 'Homework'],
+    validate: (data) =>
+      (Array.isArray(data?.questions) && data.questions.length > 0) ||
+      String(data?.instructions || '').trim().length > 8,
+    message: 'Assignment must include questions or clear instructions.',
+  },
 };
 
 function normalizeToolKey(value) {
