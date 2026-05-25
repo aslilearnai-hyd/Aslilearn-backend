@@ -2368,12 +2368,8 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       if (cachedSchemaVersion < 2) {
         cacheLooksInvalid = true;
       }
-      if (
-        cachedInsights.length > 0 &&
-        cachedInsights.some((q) => !String(q?.geminiExplanation || '').trim())
-      ) {
-        cacheLooksInvalid = true;
-      }
+      // Do not invalidate cache only because Gemini per-question text is empty — offline
+      // insights (conceptGap / fixStrategy) are still useful and regeneration hammers the API.
       if (cacheLooksInvalid) {
         console.warn('[exam-results/ai-analysis] Invalid cached analysis detected; regenerating.', {
           studentId: String(req.userId),
@@ -3103,20 +3099,43 @@ Do NOT use markdown. Write plain text only.`;
       const derivedFocus = buildDerivedFocusAreas(questionAttemptDetails);
 
       const envExplanationCap = Number(process.env.GEMINI_EXAM_EXPLANATION_MAX_QUESTIONS);
+      const defaultExplanationCap = 12;
       const explanationLimit =
-        Number.isFinite(envExplanationCap) && envExplanationCap > 0
+        Number.isFinite(envExplanationCap) && envExplanationCap >= 0
           ? Math.floor(envExplanationCap)
-          : questionAttemptDetails.length;
-      const questionsToExplain = questionAttemptDetails.slice(0, explanationLimit);
-      const geminiExplanations = await Promise.allSettled(
-        questionsToExplain.map((q) => generateGeminiExplanation(q)),
+          : defaultExplanationCap;
+      const prioritizedForGemini = [
+        ...questionAttemptDetails.filter((q) => !q.isCorrect),
+        ...questionAttemptDetails.filter((q) => q.isCorrect),
+      ];
+      const questionsToExplain =
+        explanationLimit === 0
+          ? []
+          : prioritizedForGemini.slice(0, explanationLimit);
+      const geminiConcurrency = Math.max(
+        1,
+        Math.min(6, Number(process.env.GEMINI_EXAM_EXPLANATION_CONCURRENCY) || 3),
       );
+      const geminiExplanations = [];
+      for (let i = 0; i < questionsToExplain.length; i += geminiConcurrency) {
+        const batch = questionsToExplain.slice(i, i + geminiConcurrency);
+        const batchResults = await Promise.allSettled(
+          batch.map((q) => generateGeminiExplanation(q)),
+        );
+        geminiExplanations.push(...batchResults);
+      }
+      const explanationByQuestionId = new Map();
+      questionsToExplain.forEach((q, idx) => {
+        const settled = geminiExplanations[idx];
+        if (settled?.status === 'fulfilled' && settled.value) {
+          explanationByQuestionId.set(q.questionId, settled.value);
+        }
+      });
       fallbackQuestionInsights.forEach((insight, i) => {
-        const result = geminiExplanations[i];
+        const qDetail = questionAttemptDetails[i];
         insight.geminiExplanation =
-          i < questionsToExplain.length && result?.status === 'fulfilled' && result.value
-            ? result.value
-            : String(questionAttemptDetails[i]?.explanation || '');
+          explanationByQuestionId.get(qDetail?.questionId) ||
+          String(qDetail?.explanation || '');
       });
 
       return {
@@ -3452,10 +3471,7 @@ Do NOT use markdown. Write plain text only.`;
         ? concurrent.fullAnalysis.questionInsights
         : [];
       const concurrentSchemaOk = Number(sm.analysisSchemaVersion) >= 2;
-      const concurrentExplanationsOk =
-        concurrentInsights.length === 0 ||
-        concurrentInsights.every((q) => String(q?.geminiExplanation || '').trim());
-      if (concurrentSchemaOk && concurrentExplanationsOk) {
+      if (concurrentSchemaOk) {
         return res.json({
           success: true,
           data: {

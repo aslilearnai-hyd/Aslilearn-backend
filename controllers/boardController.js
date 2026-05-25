@@ -7,7 +7,7 @@ import ExamResult from '../models/ExamResult.js';
 import User from '../models/User.js';
 import Teacher from '../models/Teacher.js';
 import { VALID_SCHOOL_BOARDS, CURRICULUM_BOARDS, isValidSchoolBoard } from '../constants/boards.js';
-import { subjectDisplayName } from '../utils/subjectDelete.js';
+import { subjectDisplayName, softDeleteSubject } from '../utils/subjectDelete.js';
 import { isSoftDeletedSubjectName } from '../utils/activeCatalog.js';
 import {
   BOARD_DISPLAY_NAMES,
@@ -47,6 +47,56 @@ function findActiveSubjectByIdentity(name, boardUpper, stateForDb) {
       { $or: [{ stateName: '' }, { stateName: { $exists: false } }] },
     ],
   });
+}
+
+/** Plain title + class from stored keys like Chemistry_10 or MATHS_6. */
+function parseSubjectNameParts(name, classNumberField) {
+  const base = subjectDisplayName(name);
+  const suffixMatch = base.match(/^(.+?)_(\d+)$/);
+  const plain = suffixMatch ? suffixMatch[1] : base;
+  const classNum =
+    (classNumberField && String(classNumberField).trim()) ||
+    (suffixMatch ? suffixMatch[2] : classNumberFromSubjectName(name)) ||
+    '';
+  return { plain, classNum: String(classNum).trim() };
+}
+
+/** Case-insensitive identity for duplicate detection (MATHS_6 vs Maths_6). */
+function subjectCatalogIdentityKey(name, boardUpper, stateForDb, classNumberField) {
+  const { plain, classNum } = parseSubjectNameParts(name, classNumberField);
+  const stateKey = stateForDb ? String(stateForDb).trim().toLowerCase() : '';
+  return `${plain.trim().toLowerCase()}|${classNum}|${boardUpper}|${stateKey}`;
+}
+
+async function findActiveSubjectsForBoardState(boardUpper, stateForDb) {
+  const base = {
+    board: boardUpper,
+    isActive: true,
+    name: { $not: /__deleted__/ },
+  };
+  if (stateForDb) {
+    return Subject.find({ ...base, stateName: stateForDb });
+  }
+  return Subject.find({
+    $and: [
+      base,
+      { $or: [{ stateName: '' }, { stateName: { $exists: false } }] },
+    ],
+  });
+}
+
+function findActiveSubjectByCatalogIdentity(peers, identityKey, excludeId) {
+  const exclude = excludeId ? String(excludeId) : '';
+  return peers.find(
+    (row) =>
+      String(row._id) !== exclude &&
+      subjectCatalogIdentityKey(
+        row.name,
+        String(row.board || '').toUpperCase(),
+        row.stateName,
+        row.classNumber
+      ) === identityKey
+  );
 }
 
 // Initialize boards if they don't exist
@@ -459,6 +509,25 @@ export const createSubject = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Subject already exists for this board and state' });
     }
 
+    const catalogPeers = await findActiveSubjectsForBoardState(boardUpper, stateForDb);
+    const newIdentity = subjectCatalogIdentityKey(
+      normalizedName,
+      boardUpper,
+      stateForDb,
+      classNumber
+    );
+    const existingByCatalogIdentity = findActiveSubjectByCatalogIdentity(
+      catalogPeers,
+      newIdentity,
+      null
+    );
+    if (existingByCatalogIdentity) {
+      return res.status(400).json({
+        success: false,
+        message: 'Subject already exists for this board and state (name may differ only by letter case)',
+      });
+    }
+
     // If code is provided, ensure it is not already used by an active subject.
     // Deleted/inactive subjects are handled below via restore flow.
     if (normalizedCode) {
@@ -475,28 +544,29 @@ export const createSubject = async (req, res) => {
       }
     }
 
-    // If a deleted subject exists with same name (or same code), revive it instead
-    // of creating a new document. This avoids unique-index conflicts and supports
-    // "delete by mistake then recreate" workflow.
+    // Reuse a soft-deleted subject row (name may be stored as Name__deleted__timestamp).
+    const reviveNamePattern = new RegExp(
+      `^${normalizedName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(__deleted__\\d+)?$`
+    );
     let reviveQuery;
     if (normalizedCode) {
       reviveQuery = {
         board: boardUpper,
         isActive: false,
-        $or: [{ name: normalizedName }, { code: normalizedCode }],
+        $or: [{ name: reviveNamePattern }, { code: normalizedCode }],
       };
     } else if (stateForDb) {
       reviveQuery = {
         board: boardUpper,
         isActive: false,
-        name: normalizedName,
+        name: reviveNamePattern,
         stateName: stateForDb,
       };
     } else {
       reviveQuery = {
         board: boardUpper,
         isActive: false,
-        name: normalizedName,
+        name: reviveNamePattern,
         $or: [{ stateName: '' }, { stateName: { $exists: false } }],
       };
     }
@@ -510,15 +580,10 @@ export const createSubject = async (req, res) => {
       existingInactive.isActive = true;
       await existingInactive.save();
 
-      await Content.updateMany(
-        { subject: existingInactive._id, isActive: false },
-        { $set: { isActive: true } }
-      );
-
       return res.json({
         success: true,
         data: existingInactive,
-        message: 'Subject restored successfully',
+        message: 'Subject created successfully',
       });
     }
 
@@ -643,13 +708,44 @@ export const deleteSubject = async (req, res) => {
       return res.status(404).json({ success: false, message: 'Subject not found' });
     }
 
-    if (!subject.isActive) {
+    const boardUpper = String(subject.board || '').toUpperCase();
+    const stateForDb = normalizedStateNameForBoard(boardUpper, subject.stateName);
+    const identityKey = subjectCatalogIdentityKey(
+      subject.name,
+      boardUpper,
+      stateForDb,
+      subject.classNumber
+    );
+
+    const peers = await findActiveSubjectsForBoardState(boardUpper, stateForDb);
+    const toDelete = peers.filter(
+      (row) =>
+        subjectCatalogIdentityKey(
+          row.name,
+          boardUpper,
+          stateForDb,
+          row.classNumber
+        ) === identityKey
+    );
+
+    if (toDelete.length === 0 && !subject.isActive) {
       return res.json({ success: true, message: 'Subject already deleted' });
     }
-    const { softDeleteSubject } = await import('../utils/subjectDelete.js');
-    await softDeleteSubject(subject);
 
-    res.json({ success: true, message: 'Subject deleted successfully' });
+    const targets = toDelete.length > 0 ? toDelete : [subject];
+    for (const row of targets) {
+      if (row.isActive) {
+        await softDeleteSubject(row);
+      }
+    }
+
+    res.json({
+      success: true,
+      message:
+        targets.length > 1
+          ? `Deleted ${targets.length} duplicate catalog entries for this subject`
+          : 'Subject deleted successfully',
+    });
   } catch (error) {
     console.error('Delete subject error:', error);
     res.status(500).json({ success: false, message: 'Failed to delete subject' });
@@ -697,11 +793,66 @@ export const updateSubject = async (req, res) => {
       });
     }
 
-    const dup = await findActiveSubjectByIdentity(updatedName, boardUpper, stateForDb);
-    if (dup && String(dup._id) !== String(subjectId)) {
-      return res.status(400).json({
-        success: false,
-        message: 'Another subject with this name already exists for this board and state',
+    const catalogPeers = await findActiveSubjectsForBoardState(boardUpper, stateForDb);
+    const targetIdentity = subjectCatalogIdentityKey(
+      updatedName,
+      boardUpper,
+      stateForDb,
+      classNumber !== undefined ? classNumber : subject.classNumber
+    );
+
+    const exactDup = await findActiveSubjectByIdentity(updatedName, boardUpper, stateForDb);
+    const catalogDup = findActiveSubjectByCatalogIdentity(
+      catalogPeers,
+      targetIdentity,
+      subjectId
+    );
+    const conflicting =
+      exactDup && String(exactDup._id) !== String(subjectId)
+        ? exactDup
+        : catalogDup || null;
+
+    if (conflicting) {
+      const sameCatalogIdentity =
+        subjectCatalogIdentityKey(
+          conflicting.name,
+          boardUpper,
+          stateForDb,
+          conflicting.classNumber
+        ) === targetIdentity;
+
+      if (!sameCatalogIdentity) {
+        return res.status(400).json({
+          success: false,
+          message: 'Another subject with this name already exists for this board and state',
+        });
+      }
+
+      // Merge duplicate rows (e.g. MATHS_6 + Maths_6) into the canonical record.
+      await Content.updateMany(
+        { subject: subject._id, isActive: true },
+        { $set: { subject: conflicting._id } }
+      );
+      await Content.updateMany(
+        { subject: subject._id, isActive: false },
+        { $set: { subject: conflicting._id } }
+      );
+      await softDeleteSubject(subject);
+
+      conflicting.name = updatedName;
+      conflicting.stateName = stateForDb;
+      if (description !== undefined) {
+        conflicting.description = description?.trim() || '';
+      }
+      if (classNumber !== undefined) {
+        conflicting.classNumber = classNumber?.trim() || undefined;
+      }
+      await conflicting.save();
+
+      return res.json({
+        success: true,
+        message: 'Subject updated successfully (merged duplicate catalog entry)',
+        data: conflicting,
       });
     }
 
