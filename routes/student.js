@@ -4779,6 +4779,24 @@ router.post('/ai/tool', async (req, res) => {
       });
     }
 
+    const subTopicNormalized = String(params.subTopic || params.subtopic || '').trim().replace(/\s+/g, ' ');
+
+    const toolsRequiringSubTopic = [
+      'smart-study-guide-generator',
+      'concept-breakdown-explainer',
+      'smart-qa-practice-generator',
+      'chapter-summary-creator',
+      'key-points-formula-extractor',
+      'quick-assignment-builder',
+    ];
+
+    if (toolsRequiringSubTopic.includes(toolType) && !subTopicNormalized) {
+      return res.status(400).json({
+        success: false,
+        message: 'Sub topic is required for this tool type.',
+      });
+    }
+
     // Validate subjects against supported curriculum set.
     const { VALID_SUBJECTS } = await import('../services/hardcoded-content-service.js');
 
@@ -4804,8 +4822,7 @@ router.post('/ai/tool', async (req, res) => {
     const finalSubject = normalizedSubject;
     const classNum = isIIT6 ? classNumber : parseInt(classNumber);
     const classDisplay = isIIT6 ? 'IIT-6' : `Class ${classNum}`;
-    const subTopicNormalized = String(params.subTopic || params.subtopic || '').trim().replace(/\s+/g, ' ');
-    
+
     // For tools where topic is optional, pass empty string if not provided
     const topicForFetch = (toolType === 'personalized-revision-planner' || toolType === 'chapter-summary-creator') ? (topic || '') : topic;
 

@@ -6,6 +6,7 @@
 import { AI_TOOL_ORDERED_SLUGS } from '../config/aiToolTemplates.js';
 import { extractActivityProjectItemsFromPdfText } from './pdf-activity-extract.js';
 import { extractConceptMasteryItemsFromPdfText } from './pdf-concept-extract.js';
+import { extractConceptBreakdownItemsFromPdfText } from './pdf-concept-breakdown-extract.js';
 import { extractDailyPlanItemsFromPdfText } from './pdf-dailyplan-extract.js';
 import { extractExamPaperItemsFromPdfText } from './pdf-exam-paper-extract.js';
 import { extractFlashcardItemsFromPdfText } from './pdf-flashcard-extract.js';
@@ -13,6 +14,10 @@ import { extractHomeworkItemsFromPdfText } from './pdf-homework-extract.js';
 import { extractLessonPlannerItemsFromPdfText } from './pdf-lesson-extract.js';
 import { extractRubricItemsFromPdfText } from './pdf-rubric-extract.js';
 import { extractShortNotesItemsFromPdfText } from './pdf-shortnotes-extract.js';
+import { extractStudyGuideItemsFromPdfText } from './pdf-study-guide-extract.js';
+import { extractChapterSummaryItemsFromPdfText } from './pdf-chapter-summary-extract.js';
+import { extractKeyPointsItemsFromPdfText } from './pdf-key-points-extract.js';
+import { extractQuickAssignmentItemsFromPdfText } from './pdf-quick-assignment-extract.js';
 import { extractStoryPassageItemsFromPdfText } from './pdf-story-extract.js';
 import { extractWorksheetItemsFromPdfText } from './pdf-worksheet-extract.js';
 
@@ -29,12 +34,12 @@ export const PDF_TOOL_EXTRACTORS = Object.freeze({
   'flashcard-generator': extractFlashcardItemsFromPdfText,
   'daily-class-plan-maker': extractDailyPlanItemsFromPdfText,
   'exam-question-paper-generator': extractExamPaperItemsFromPdfText,
-  'smart-study-guide-generator': extractShortNotesItemsFromPdfText,
-  'concept-breakdown-explainer': extractConceptMasteryItemsFromPdfText,
-  'smart-qa-practice-generator': extractHomeworkItemsFromPdfText,
-  'chapter-summary-creator': extractShortNotesItemsFromPdfText,
-  'key-points-formula-extractor': extractShortNotesItemsFromPdfText,
-  'quick-assignment-builder': extractHomeworkItemsFromPdfText,
+  'smart-study-guide-generator': extractStudyGuideItemsFromPdfText,
+  'concept-breakdown-explainer': extractConceptBreakdownItemsFromPdfText,
+  'smart-qa-practice-generator': extractWorksheetItemsFromPdfText,
+  'chapter-summary-creator': extractChapterSummaryItemsFromPdfText,
+  'key-points-formula-extractor': extractKeyPointsItemsFromPdfText,
+  'quick-assignment-builder': extractQuickAssignmentItemsFromPdfText,
 });
 
 /**

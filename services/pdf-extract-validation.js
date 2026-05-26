@@ -84,13 +84,41 @@ export function countExpectedPdfItems(toolType, pdfText) {
     return Math.max(items.length, stories.length, 0);
   }
 
-  if (tool === 'concept-mastery-helper') {
+  if (tool === 'smart-study-guide-generator') {
+    const guides =
+      text.match(/(?:^|\n)\s*(?:Item|Study\s*Guide|Guide)\s+\d+\b/gim) || [];
+    return guides.length;
+  }
+
+  if (tool === 'chapter-summary-creator') {
+    const chapters =
+      text.match(/(?:^|\n)\s*(?:Item|Chapter|Topic)\s+\d+\b/gim) || [];
+    return chapters.length;
+  }
+
+  if (tool === 'key-points-formula-extractor') {
+    const topics =
+      text.match(/(?:^|\n)\s*(?:Item|Topic|Key\s*Points)\s+\d+\b/gim) || [];
+    return topics.length;
+  }
+
+  if (tool === 'quick-assignment-builder') {
+    const assignments =
+      text.match(/(?:^|\n)\s*(?:Item|Assignment)\s+\d+\b/gim) || [];
+    return assignments.length;
+  }
+
+  if (tool === 'concept-breakdown-explainer' || tool === 'concept-mastery-helper') {
     const concepts =
       text.match(/(?:^|\n)\s*(?:Item|Concept|Topic)\s+\d+\b/gim) || [];
     return concepts.length;
   }
 
-  if (tool === 'worksheet-mcq-generator' || tool === 'exam-question-paper-generator') {
+  if (
+    tool === 'worksheet-mcq-generator' ||
+    tool === 'smart-qa-practice-generator' ||
+    tool === 'exam-question-paper-generator'
+  ) {
     return extractWorksheetItemsFromPdfText(text, 500).length;
   }
 
@@ -146,12 +174,91 @@ function validateShortNotesItem(item, index) {
   return errors;
 }
 
+function validateChapterSummaryItem(item, index) {
+  const errors = [];
+  const title = str(item?.chapter_summary_title || item?.chapter_title || item?.title);
+  const hasBody =
+    str(item?.chapter_overview || item?.summary || item?.chapter_summary).length > 15 ||
+    (Array.isArray(item?.important_concepts) && item.important_concepts.length > 0) ||
+    (Array.isArray(item?.quick_revision_notes) && item.quick_revision_notes.length > 0);
+  if (!title && !hasBody) {
+    errors.push(`Item ${index + 1}: chapter summary missing title and body sections`);
+  }
+  return errors;
+}
+
+function validateKeyPointsItem(item, index) {
+  const errors = [];
+  const title = str(item?.topic_title || item?.title);
+  const hasBody =
+    (Array.isArray(item?.important_concepts) && item.important_concepts.length > 0) ||
+    (Array.isArray(item?.must_remember_facts) && item.must_remember_facts.length > 0) ||
+    (Array.isArray(item?.key_points) && item.key_points.length > 0) ||
+    (Array.isArray(item?.formulae) && item.formulae.length > 0) ||
+    (Array.isArray(item?.formulas) && item.formulas.length > 0) ||
+    str(item?.one_minute_revision_summary || item?.summary).length > 8;
+  if (!title && !hasBody) {
+    errors.push(`Item ${index + 1}: key points missing title and body sections`);
+  }
+  return errors;
+}
+
+function validateQuickAssignmentItem(item, index) {
+  const errors = [];
+  const title = str(item?.assignment_title || item?.title);
+  const conceptQs = Array.isArray(item?.concept_based_questions)
+    ? item.concept_based_questions
+    : Array.isArray(item?.questions)
+      ? item.questions
+      : [];
+  const hasBody =
+    conceptQs.length > 0 ||
+    (Array.isArray(item?.learning_objectives) && item.learning_objectives.length > 0) ||
+    (Array.isArray(item?.application_oriented_tasks) && item.application_oriented_tasks.length > 0) ||
+    (Array.isArray(item?.application_tasks) && item.application_tasks.length > 0) ||
+    str(item?.instructions).length > 8 ||
+    str(item?.assessment_criteria_rubric || item?.marking_criteria).length > 8 ||
+    (Array.isArray(item?.expected_learning_outcomes) && item.expected_learning_outcomes.length > 0);
+  if (!title && !hasBody) {
+    errors.push(`Item ${index + 1}: quick assignment missing title and body sections`);
+  }
+  return errors;
+}
+
+function validateStudyGuideItem(item, index) {
+  const errors = [];
+  const title = str(item?.title);
+  const hasBody =
+    (Array.isArray(item?.key_concepts) && item.key_concepts.length > 0) ||
+    (Array.isArray(item?.quick_revision_notes) && item.quick_revision_notes.length > 0) ||
+    (Array.isArray(item?.revision_checklist) && item.revision_checklist.length > 0) ||
+    str(item?.chapter_subtopic_overview || item?.chapter_overview).length > 15 ||
+    (Array.isArray(item?.learning_objectives) && item.learning_objectives.length > 0);
+  if (!title && !hasBody) {
+    errors.push(`Item ${index + 1}: study guide missing title and body sections`);
+  }
+  return errors;
+}
+
 function validateConceptItem(item, index) {
   const errors = [];
   const name = str(item?.concept_name || item?.title || item?.name);
   const lesson = str(item?.lesson || item?.explanation || item?.simple_definition);
   if (!name) errors.push(`Item ${index + 1}: missing concept_name`);
   if (!lesson || lesson.length < 15) errors.push(`Item ${index + 1}: missing lesson/explanation body`);
+  return errors;
+}
+
+function validateConceptBreakdownItem(item, index) {
+  const errors = [];
+  const title = str(item?.concept_title || item?.concept_name || item?.title);
+  const hasBody =
+    str(item?.simple_definition || item?.simple_explanation || item?.explanation).length > 8 ||
+    (Array.isArray(item?.breakdown_steps) && item.breakdown_steps.length > 0) ||
+    str(item?.quick_revision_summary || item?.summary).length > 8;
+  if (!title && !hasBody) {
+    errors.push(`Item ${index + 1}: concept breakdown missing title and body sections`);
+  }
   return errors;
 }
 
@@ -266,13 +373,23 @@ export function validatePdfExtractItems(toolType, items, context = {}) {
     list.forEach((item, i) => errors.push(...validateStoryItem(item, i)));
   } else if (tool === 'short-notes-summaries-maker') {
     list.forEach((item, i) => errors.push(...validateShortNotesItem(item, i)));
+  } else if (tool === 'chapter-summary-creator') {
+    list.forEach((item, i) => errors.push(...validateChapterSummaryItem(item, i)));
+  } else if (tool === 'key-points-formula-extractor') {
+    list.forEach((item, i) => errors.push(...validateKeyPointsItem(item, i)));
+  } else if (tool === 'quick-assignment-builder') {
+    list.forEach((item, i) => errors.push(...validateQuickAssignmentItem(item, i)));
+  } else if (tool === 'smart-study-guide-generator') {
+    list.forEach((item, i) => errors.push(...validateStudyGuideItem(item, i)));
   } else if (tool === 'concept-mastery-helper') {
     list.forEach((item, i) => errors.push(...validateConceptItem(item, i)));
+  } else if (tool === 'concept-breakdown-explainer') {
+    list.forEach((item, i) => errors.push(...validateConceptBreakdownItem(item, i)));
   } else if (tool === 'daily-class-plan-maker') {
     list.forEach((item) => errors.push(...validateDailyPlanItem(item)));
   } else if (tool === 'rubrics-evaluation-generator') {
     list.forEach((item) => errors.push(...validateRubricItem(item)));
-  } else if (tool === 'worksheet-mcq-generator') {
+  } else if (tool === 'worksheet-mcq-generator' || tool === 'smart-qa-practice-generator') {
     const expectedQ = expectedFromPdf || countExpectedPdfItems(tool, pdfText);
     if (list.length === 1) {
       errors.push(...validateWorksheetItem(list[0], expectedQ, isPartialPass));

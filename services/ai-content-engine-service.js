@@ -408,6 +408,99 @@ export function canonicalizeConceptExtractedItem(raw) {
   return normalizeConceptStructuredContent(raw);
 }
 
+/** Concept Breakdown Explainer → 9-section template. */
+export function normalizeConceptBreakdownStructuredContent(raw) {
+  const source = raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
+  const conceptTitle = String(
+    source.concept_title || source.concept_name || source.title || source.name || '',
+  ).trim();
+  const simple_definition = String(
+    source.simple_definition || source.simple_explanation || source.explanation || '',
+  ).trim();
+  const breakdown_steps = dedupeStringList([
+    ...coerceBulletLines(source.breakdown_steps),
+    ...coerceBulletLines(source.steps),
+  ]);
+  const real_life_examples = dedupeStringList([
+    ...coerceBulletLines(source.real_life_examples),
+    ...coerceBulletLines(source.indian_context_examples),
+    ...coerceBulletLines(source.examples),
+  ]);
+  const important_terms = (Array.isArray(source.important_terms)
+    ? source.important_terms
+    : Array.isArray(source.keywords)
+      ? source.keywords
+      : Array.isArray(source.terms)
+        ? source.terms
+        : []
+  )
+    .map((t) => {
+      if (t && typeof t === 'object') {
+        return {
+          term: String(t.term || t.keyword || t.name || '').trim(),
+          definition: String(t.definition || '').trim(),
+        };
+      }
+      return { term: String(t ?? '').trim(), definition: '' };
+    })
+    .filter((t) => t.term);
+  const concept_check_questions = dedupeStringList([
+    ...coerceBulletLines(source.concept_check_questions),
+    ...coerceBulletLines(source.quick_check_questions),
+  ]);
+  const application_thinking_question = String(
+    source.application_thinking_question || source.application_question || '',
+  ).trim();
+  const higher_order_thinking_prompt = String(
+    source.higher_order_thinking_prompt ||
+      source.hots_prompt ||
+      source.hots_question ||
+      '',
+  ).trim();
+  const quick_revision_summary = String(
+    source.quick_revision_summary || source.revision_summary || source.summary || '',
+  ).trim();
+
+  return {
+    ...source,
+    concept_title: conceptTitle || 'Concept',
+    concept_name: conceptTitle || source.concept_name || 'Concept',
+    simple_definition,
+    breakdown_steps,
+    real_life_examples,
+    important_terms,
+    concept_check_questions,
+    application_thinking_question,
+    higher_order_thinking_prompt,
+    quick_revision_summary,
+  };
+}
+
+export function canonicalizeConceptBreakdownExtractedItem(raw) {
+  return normalizeConceptBreakdownStructuredContent(raw);
+}
+
+/** Viewer payload for Concept Breakdown Explainer (PDF extract or generator). */
+export function buildConceptBreakdownRenderableFromStructured(source) {
+  const s = normalizeConceptBreakdownStructuredContent(
+    source && typeof source === 'object' && !Array.isArray(source) ? source : {},
+  );
+  return {
+    kind: 'conceptBreakdown',
+    title: String(s.concept_title || s.concept_name || 'Concept').trim(),
+    concept_title: String(s.concept_title || s.concept_name || 'Concept').trim(),
+    concept_name: String(s.concept_name || s.concept_title || 'Concept').trim(),
+    simple_definition: String(s.simple_definition || '').trim(),
+    breakdown_steps: toStringList(s.breakdown_steps),
+    real_life_examples: toStringList(s.real_life_examples),
+    important_terms: Array.isArray(s.important_terms) ? s.important_terms : [],
+    concept_check_questions: toStringList(s.concept_check_questions),
+    application_thinking_question: String(s.application_thinking_question || '').trim(),
+    higher_order_thinking_prompt: String(s.higher_order_thinking_prompt || '').trim(),
+    quick_revision_summary: String(s.quick_revision_summary || '').trim(),
+  };
+}
+
 /** Homework PDF / generator rows → 10-section template fields. */
 export function normalizeHomeworkStructuredContent(raw) {
   const source = raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
@@ -704,6 +797,568 @@ export function normalizeShortNotesStructuredContent(raw) {
 
 export function canonicalizeShortNotesExtractedItem(raw) {
   return normalizeShortNotesStructuredContent(raw);
+}
+
+function normalizeStudyGuideKeyConcepts(raw) {
+  const arr = Array.isArray(raw) ? raw : [];
+  return arr
+    .map((c) => {
+      if (c && typeof c === 'object') {
+        return {
+          name: String(c.name || c.concept || '').trim(),
+          explanation: String(c.explanation || '').trim(),
+        };
+      }
+      return { name: String(c ?? '').trim(), explanation: '' };
+    })
+    .filter((c) => c.name);
+}
+
+function normalizeStudyGuidePracticeQuestions(raw) {
+  const arr = Array.isArray(raw) ? raw : [];
+  return arr
+    .map((q) => {
+      if (q && typeof q === 'object') {
+        const typeRaw = String(q.type || '').trim().toLowerCase();
+        const type =
+          typeRaw === 'objective' || typeRaw === 'mcq' ? 'objective' : 'subjective';
+        return {
+          question: String(q.question || '').trim(),
+          type,
+          answer: String(q.answer || '').trim(),
+          options: Array.isArray(q.options)
+            ? q.options.map((o) => String(o ?? '').trim()).filter(Boolean)
+            : [],
+        };
+      }
+      return {
+        question: String(q ?? '').trim(),
+        type: 'subjective',
+        answer: '',
+        options: [],
+      };
+    })
+    .filter((q) => q.question);
+}
+
+/** Smart Study Guide Generator → 11-section template. */
+export function normalizeStudyGuideStructuredContent(raw) {
+  const source = raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
+  const title = String(source.title || '').trim();
+  const chapter_subtopic_overview = String(
+    source.chapter_subtopic_overview || source.chapter_overview || source.overview || '',
+  ).trim();
+  const learning_objectives = dedupeStringList([
+    ...coerceBulletLines(source.learning_objectives),
+    ...coerceBulletLines(source.objectives),
+    ...coerceBulletLines(source.learningObjectives),
+  ]);
+  const prior_knowledge_required = dedupeStringList([
+    ...coerceBulletLines(source.prior_knowledge_required),
+    ...coerceBulletLines(source.prior_knowledge),
+  ]);
+  const key_concepts = normalizeStudyGuideKeyConcepts(
+    source.key_concepts || source.concepts,
+  );
+  const definitions = (Array.isArray(source.definitions) ? source.definitions : [])
+    .map((d) => {
+      if (d && typeof d === 'object') {
+        return {
+          term: String(d.term || d.name || '').trim(),
+          definition: String(d.definition || '').trim(),
+        };
+      }
+      return { term: String(d ?? '').trim(), definition: '' };
+    })
+    .filter((d) => d.term);
+  const formulae = (Array.isArray(source.formulae)
+    ? source.formulae
+    : Array.isArray(source.formulas)
+      ? source.formulas
+      : Array.isArray(source.rules)
+        ? source.rules
+        : []
+  )
+    .map((f) => {
+      if (f && typeof f === 'object') {
+        return {
+          name: String(f.name || '').trim(),
+          formula: String(f.formula || '').trim(),
+          note: String(f.note || '').trim(),
+        };
+      }
+      return { name: '', formula: String(f ?? '').trim(), note: '' };
+    })
+    .filter((f) => f.formula || f.name);
+  const concept_flow_mind_map = String(
+    source.concept_flow_mind_map || source.concept_flow || source.mind_map || '',
+  ).trim();
+  const real_life_examples = dedupeStringList([
+    ...coerceBulletLines(source.real_life_examples),
+    ...coerceBulletLines(source.real_life_applications),
+    ...coerceBulletLines(source.examples),
+  ]);
+  const quick_revision_notes = dedupeStringList([
+    ...coerceBulletLines(source.quick_revision_notes),
+    ...coerceBulletLines(source.revision_checklist),
+    ...coerceBulletLines(source.quick_review),
+    ...coerceBulletLines(source.review_points),
+  ]);
+  const practice_questions = normalizeStudyGuidePracticeQuestions(
+    source.practice_questions || source.questions,
+  );
+  const improvement_tips = dedupeStringList([
+    ...coerceBulletLines(source.improvement_tips),
+    ...coerceBulletLines(source.study_tips),
+    ...coerceBulletLines(source.tips),
+  ]);
+
+  return {
+    ...source,
+    title: title || 'Study Guide',
+    chapter_subtopic_overview,
+    learning_objectives,
+    learningObjectives: learning_objectives,
+    prior_knowledge_required,
+    key_concepts,
+    definitions,
+    formulae,
+    formulas: formulae,
+    concept_flow_mind_map,
+    real_life_examples,
+    quick_revision_notes,
+    practice_questions,
+    improvement_tips,
+  };
+}
+
+export function canonicalizeStudyGuideExtractedItem(raw) {
+  return normalizeStudyGuideStructuredContent(raw);
+}
+
+/** Viewer payload for Smart Study Guide Generator (PDF extract or generator). */
+export function buildStudyGuideRenderableFromStructured(source) {
+  const s = normalizeStudyGuideStructuredContent(
+    source && typeof source === 'object' && !Array.isArray(source) ? source : {},
+  );
+  return {
+    kind: 'studyGuide',
+    title: String(s.title || 'Study Guide').trim(),
+    chapter_subtopic_overview: String(s.chapter_subtopic_overview || '').trim(),
+    learning_objectives: toStringList(s.learning_objectives),
+    learningObjectives: toStringList(s.learning_objectives),
+    prior_knowledge_required: toStringList(s.prior_knowledge_required),
+    key_concepts: Array.isArray(s.key_concepts) ? s.key_concepts : [],
+    definitions: Array.isArray(s.definitions) ? s.definitions : [],
+    formulae: Array.isArray(s.formulae) ? s.formulae : [],
+    concept_flow_mind_map: String(s.concept_flow_mind_map || '').trim(),
+    real_life_examples: toStringList(s.real_life_examples),
+    quick_revision_notes: toStringList(s.quick_revision_notes),
+    practice_questions: Array.isArray(s.practice_questions) ? s.practice_questions : [],
+    improvement_tips: toStringList(s.improvement_tips),
+  };
+}
+
+/** Chapter Summary Creator → 11-section template. */
+export function normalizeChapterSummaryStructuredContent(raw) {
+  const source = raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
+  const chapter_summary_title = String(
+    source.chapter_summary_title || source.chapter_title || source.title || '',
+  ).trim();
+  const chapter_overview = String(
+    source.chapter_overview ||
+      source.overview ||
+      source.summary ||
+      source.chapter_summary ||
+      '',
+  ).trim();
+  const learning_objectives = dedupeStringList([
+    ...coerceBulletLines(source.learning_objectives),
+    ...coerceBulletLines(source.objectives),
+    ...coerceBulletLines(source.learningObjectives),
+  ]);
+  const important_concepts = (Array.isArray(source.important_concepts)
+    ? source.important_concepts
+    : Array.isArray(source.key_concepts)
+      ? source.key_concepts
+      : Array.isArray(source.concepts)
+        ? source.concepts
+        : []
+  )
+    .map((c) => {
+      if (c && typeof c === 'object') {
+        return {
+          name: String(c.name || c.concept || '').trim(),
+          explanation: String(c.explanation || '').trim(),
+        };
+      }
+      return { name: String(c ?? '').trim(), explanation: '' };
+    })
+    .filter((c) => c.name);
+  const definitions = (Array.isArray(source.definitions) ? source.definitions : [])
+    .map((d) => {
+      if (d && typeof d === 'object') {
+        return {
+          term: String(d.term || d.name || '').trim(),
+          definition: String(d.definition || '').trim(),
+        };
+      }
+      return { term: String(d ?? '').trim(), definition: '' };
+    })
+    .filter((d) => d.term);
+  const formulae = (Array.isArray(source.formulae)
+    ? source.formulae
+    : Array.isArray(source.formulas)
+      ? source.formulas
+      : Array.isArray(source.rules)
+        ? source.rules
+        : []
+  )
+    .map((f) => {
+      if (f && typeof f === 'object') {
+        return {
+          name: String(f.name || '').trim(),
+          formula: String(f.formula || f.rule || '').trim(),
+          note: String(f.note || '').trim(),
+        };
+      }
+      return { name: '', formula: String(f ?? '').trim(), note: '' };
+    })
+    .filter((f) => f.formula || f.name);
+  const concept_connections = String(source.concept_connections || source.connections || '').trim();
+  const real_life_applications = dedupeStringList([
+    ...coerceBulletLines(source.real_life_applications),
+    ...coerceBulletLines(source.applications),
+    ...coerceBulletLines(source.examples),
+  ]);
+  const important_exam_points = dedupeStringList([
+    ...coerceBulletLines(source.important_exam_points),
+    ...coerceBulletLines(source.exam_points),
+    ...coerceBulletLines(source.key_takeaways),
+    ...coerceBulletLines(source.takeaways),
+  ]);
+  const quick_revision_notes = dedupeStringList([
+    ...coerceBulletLines(source.quick_revision_notes),
+    ...coerceBulletLines(source.review_points),
+    ...coerceBulletLines(source.quick_review),
+  ]);
+  const practice_recall_questions = dedupeStringList([
+    ...coerceBulletLines(source.practice_recall_questions),
+    ...coerceBulletLines(source.recall_questions),
+    ...coerceBulletLines(source.quick_check_questions),
+  ]);
+
+  return {
+    ...source,
+    chapter_summary_title: chapter_summary_title || 'Chapter Summary',
+    chapter_title: chapter_summary_title || source.chapter_title || 'Chapter Summary',
+    title: chapter_summary_title || source.title || 'Chapter Summary',
+    chapter_overview,
+    summary: chapter_overview,
+    chapter_summary: chapter_overview,
+    learning_objectives,
+    learningObjectives: learning_objectives,
+    important_concepts,
+    definitions,
+    formulae,
+    formulas: formulae,
+    concept_connections,
+    real_life_applications,
+    important_exam_points,
+    quick_revision_notes,
+    practice_recall_questions,
+    key_takeaways: important_exam_points,
+    review_points: quick_revision_notes,
+  };
+}
+
+export function canonicalizeChapterSummaryExtractedItem(raw) {
+  return normalizeChapterSummaryStructuredContent(raw);
+}
+
+/** Viewer payload for Chapter Summary Creator (PDF extract or generator). */
+export function buildChapterSummaryRenderableFromStructured(source) {
+  const s = normalizeChapterSummaryStructuredContent(
+    source && typeof source === 'object' && !Array.isArray(source) ? source : {},
+  );
+  return {
+    kind: 'chapterSummary',
+    title: String(s.chapter_summary_title || s.chapter_title || 'Chapter Summary').trim(),
+    chapter_summary_title: String(s.chapter_summary_title || s.chapter_title || '').trim(),
+    chapter_overview: String(s.chapter_overview || '').trim(),
+    learning_objectives: toStringList(s.learning_objectives),
+    learningObjectives: toStringList(s.learning_objectives),
+    important_concepts: Array.isArray(s.important_concepts) ? s.important_concepts : [],
+    definitions: Array.isArray(s.definitions) ? s.definitions : [],
+    formulae: Array.isArray(s.formulae) ? s.formulae : [],
+    concept_connections: String(s.concept_connections || '').trim(),
+    real_life_applications: toStringList(s.real_life_applications),
+    important_exam_points: toStringList(s.important_exam_points),
+    quick_revision_notes: toStringList(s.quick_revision_notes),
+    practice_recall_questions: toStringList(s.practice_recall_questions),
+  };
+}
+
+/** Key Points Extractor → 10-section template. */
+export function normalizeKeyPointsStructuredContent(raw) {
+  const source = raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
+  const topic_title = String(source.topic_title || source.title || source.topic || '').trim();
+  const important_concepts = (Array.isArray(source.important_concepts)
+    ? source.important_concepts
+    : Array.isArray(source.key_concepts)
+      ? source.key_concepts
+      : []
+  )
+    .map((c) => {
+      if (c && typeof c === 'object') {
+        return {
+          name: String(c.name || c.concept || c.point || '').trim(),
+          explanation: String(c.explanation || c.detail || '').trim(),
+        };
+      }
+      return { name: String(c ?? '').trim(), explanation: '' };
+    })
+    .filter((c) => c.name);
+  const essential_definitions = (Array.isArray(source.essential_definitions)
+    ? source.essential_definitions
+    : Array.isArray(source.definitions)
+      ? source.definitions
+      : []
+  )
+    .map((d) => {
+      if (d && typeof d === 'object') {
+        return {
+          term: String(d.term || d.name || '').trim(),
+          definition: String(d.definition || '').trim(),
+        };
+      }
+      return { term: String(d ?? '').trim(), definition: '' };
+    })
+    .filter((d) => d.term);
+  const formulae = (Array.isArray(source.formulae)
+    ? source.formulae
+    : Array.isArray(source.formulas)
+      ? source.formulas
+      : []
+  )
+    .map((f) => {
+      if (f && typeof f === 'object') {
+        return {
+          name: String(f.name || '').trim(),
+          formula: String(f.formula || '').trim(),
+          note: String(f.note || f.when_to_use || '').trim(),
+        };
+      }
+      return { name: '', formula: String(f ?? '').trim(), note: '' };
+    })
+    .filter((f) => f.formula || f.name);
+  const keywords_terminologies = (Array.isArray(source.keywords_terminologies)
+    ? source.keywords_terminologies
+    : Array.isArray(source.keywords)
+      ? source.keywords
+      : []
+  )
+    .map((k) => {
+      if (k && typeof k === 'object') {
+        return {
+          term: String(k.term || k.keyword || k.name || '').trim(),
+          meaning: String(k.meaning || k.definition || '').trim(),
+        };
+      }
+      return { term: String(k ?? '').trim(), meaning: '' };
+    })
+    .filter((k) => k.term);
+  const must_remember_facts = dedupeStringList([
+    ...coerceBulletLines(source.must_remember_facts),
+    ...coerceBulletLines(source.key_points),
+    ...coerceBulletLines(source.key_points_to_remember),
+  ]);
+  const real_life_connections = dedupeStringList([
+    ...coerceBulletLines(source.real_life_connections),
+    ...coerceBulletLines(source.real_life_applications),
+  ]);
+  const frequently_asked_exam_points = dedupeStringList([
+    ...coerceBulletLines(source.frequently_asked_exam_points),
+    ...coerceBulletLines(source.exam_points),
+  ]);
+  const mnemonics_memory_tricks = dedupeStringList([
+    ...coerceBulletLines(source.mnemonics_memory_tricks),
+    ...coerceBulletLines(source.mnemonics),
+    ...coerceBulletLines(source.memory_tricks),
+  ]);
+  const one_minute_revision_summary = String(
+    source.one_minute_revision_summary ||
+      source.revision_summary ||
+      source.summary ||
+      source.short_note_summary ||
+      '',
+  ).trim();
+
+  return {
+    ...source,
+    topic_title: topic_title || 'Key Points',
+    title: topic_title || source.title || 'Key Points',
+    important_concepts,
+    essential_definitions,
+    definitions: essential_definitions,
+    formulae,
+    formulas: formulae,
+    keywords_terminologies,
+    must_remember_facts,
+    key_points: must_remember_facts,
+    real_life_connections,
+    frequently_asked_exam_points,
+    mnemonics_memory_tricks,
+    one_minute_revision_summary,
+  };
+}
+
+export function canonicalizeKeyPointsExtractedItem(raw) {
+  return normalizeKeyPointsStructuredContent(raw);
+}
+
+/** Viewer payload for Key Points Extractor (PDF extract or generator). */
+export function buildKeyPointsRenderableFromStructured(source) {
+  const k = normalizeKeyPointsStructuredContent(
+    source && typeof source === 'object' && !Array.isArray(source) ? source : {},
+  );
+  return {
+    kind: 'keyPoints',
+    title: String(k.topic_title || k.title || 'Key Points').trim(),
+    topic_title: String(k.topic_title || k.title || '').trim(),
+    important_concepts: Array.isArray(k.important_concepts) ? k.important_concepts : [],
+    essential_definitions: Array.isArray(k.essential_definitions) ? k.essential_definitions : [],
+    formulae: Array.isArray(k.formulae) ? k.formulae : [],
+    keywords_terminologies: Array.isArray(k.keywords_terminologies) ? k.keywords_terminologies : [],
+    must_remember_facts: toStringList(k.must_remember_facts),
+    real_life_connections: toStringList(k.real_life_connections),
+    frequently_asked_exam_points: toStringList(k.frequently_asked_exam_points),
+    mnemonics_memory_tricks: toStringList(k.mnemonics_memory_tricks),
+    one_minute_revision_summary: String(k.one_minute_revision_summary || '').trim(),
+  };
+}
+
+/** Quick Assignment Builder → 11-section template. */
+export function normalizeQuickAssignmentStructuredContent(raw) {
+  const source = raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
+  const assignment_title = String(
+    source.assignment_title || source.title || source.assignmentTitle || source.name || '',
+  ).trim();
+  const learning_objectives = dedupeStringList([
+    ...coerceBulletLines(source.learning_objectives),
+    ...coerceBulletLines(source.objectives),
+  ]);
+  const instructions = String(
+    source.instructions ||
+      source.instructions_to_students ||
+      source.student_instructions ||
+      '',
+  ).trim();
+
+  const conceptRaw = [
+    ...(Array.isArray(source.concept_based_questions) ? source.concept_based_questions : []),
+    ...(Array.isArray(source.questions) ? source.questions : []),
+    ...(Array.isArray(source.practice_questions) ? source.practice_questions : []),
+    ...(Array.isArray(source.practiceQuestions) ? source.practiceQuestions : []),
+  ];
+  if (String(source.question || '').trim()) {
+    conceptRaw.push({
+      question: source.question,
+      options: source.options,
+      answer: source.answer,
+      marks: source.marks,
+      question_number: source.question_number ?? source.sl_no,
+    });
+  }
+  const concept_based_questions = sanitizeWorksheetQuestions(toQuestionArray(conceptRaw));
+
+  const application_oriented_tasks = dedupeStringList([
+    ...coerceBulletLines(source.application_oriented_tasks),
+    ...coerceBulletLines(source.application_tasks),
+    ...coerceBulletLines(source.applicationTasks),
+  ]);
+
+  const realLifeRaw = source.real_life_competency_activity ?? source.real_life_activity;
+  const real_life_competency_activity = Array.isArray(realLifeRaw)
+    ? realLifeRaw.map((x) => String(x ?? '').trim()).filter(Boolean).join('\n')
+    : String(
+        realLifeRaw ||
+          source.real_life_observation_task ||
+          source.real_life_applications ||
+          '',
+      ).trim();
+
+  const creative_thinking_question = String(
+    source.creative_thinking_question || source.creative_question || '',
+  ).trim();
+  const collaborative_discussion_task = String(
+    source.collaborative_discussion_task ||
+      source.discussion_task ||
+      source.collaborative_task ||
+      '',
+  ).trim();
+  const challenge_question_advanced = String(
+    source.challenge_question_advanced ||
+      source.challenge_question ||
+      source.challenge ||
+      '',
+  ).trim();
+  const assessment_criteria_rubric = String(
+    source.assessment_criteria_rubric ||
+      source.marking_criteria ||
+      source.marking_scheme ||
+      source.rubric ||
+      '',
+  ).trim();
+  const expected_learning_outcomes = dedupeStringList([
+    ...coerceBulletLines(source.expected_learning_outcomes),
+    ...coerceBulletLines(source.learning_outcomes),
+  ]);
+
+  return {
+    ...source,
+    assignment_title: assignment_title || 'Assignment',
+    title: assignment_title || source.title || 'Assignment',
+    learning_objectives,
+    instructions,
+    concept_based_questions,
+    questions: concept_based_questions,
+    practice_questions: concept_based_questions,
+    application_oriented_tasks,
+    real_life_competency_activity,
+    creative_thinking_question,
+    collaborative_discussion_task,
+    challenge_question_advanced,
+    assessment_criteria_rubric,
+    marking_criteria: assessment_criteria_rubric,
+    expected_learning_outcomes,
+  };
+}
+
+export function canonicalizeQuickAssignmentExtractedItem(raw) {
+  return normalizeQuickAssignmentStructuredContent(raw);
+}
+
+/** Viewer payload for Quick Assignment Builder (PDF extract or generator). */
+export function buildQuickAssignmentRenderableFromStructured(source) {
+  const a = normalizeQuickAssignmentStructuredContent(
+    source && typeof source === 'object' && !Array.isArray(source) ? source : {},
+  );
+  return {
+    kind: 'quickAssignment',
+    title: String(a.assignment_title || a.title || 'Assignment').trim(),
+    assignment_title: String(a.assignment_title || a.title || '').trim(),
+    learning_objectives: toStringList(a.learning_objectives),
+    instructions: String(a.instructions || '').trim(),
+    concept_based_questions: Array.isArray(a.concept_based_questions) ? a.concept_based_questions : [],
+    application_oriented_tasks: toStringList(a.application_oriented_tasks),
+    real_life_competency_activity: String(a.real_life_competency_activity || '').trim(),
+    creative_thinking_question: String(a.creative_thinking_question || '').trim(),
+    collaborative_discussion_task: String(a.collaborative_discussion_task || '').trim(),
+    challenge_question_advanced: String(a.challenge_question_advanced || '').trim(),
+    assessment_criteria_rubric: String(a.assessment_criteria_rubric || '').trim(),
+    expected_learning_outcomes: toStringList(a.expected_learning_outcomes),
+  };
 }
 
 /** Normalize one flashcard to the 7-field template (with legacy fallbacks). */
@@ -1087,6 +1742,279 @@ export function buildWorksheetRenderableFromStructured(source) {
     answerKey: String(w.answer_key || '').trim(),
     bloomLevel: String(w.bloom_level || '').trim(),
     difficultyTag: String(w.difficulty_tag || '').trim(),
+  };
+}
+
+export const PRACTICE_QA_SECTION_LABELS = {
+  A: 'Section A: MCQs',
+  B: 'Section B: Fill in the Blanks',
+  C: 'Section C: Match the Following',
+  D: 'Section D: Very Short Answer Questions',
+  E: 'Section E: Short Answer Questions',
+  F: 'Section F: Application / Case-based Questions',
+  G: 'Section G: HOTS / Analytical Questions',
+};
+
+export const PRACTICE_QA_REAL_LIFE_SECTION = 'Real-life Problem-solving Questions';
+
+function inferPracticeQaSectionLabel(sectionRaw, question = {}) {
+  const s = String(sectionRaw || '').trim();
+  const t = String(question.type || '').trim().toUpperCase();
+  if (/^A\b|SECTION\s*A|MCQ|MULTIPLE\s*CHOICE/i.test(s) || t === 'MCQ') return PRACTICE_QA_SECTION_LABELS.A;
+  if (/^B\b|SECTION\s*B|FILL|FIB|BLANK/i.test(s) || t === 'FIB') return PRACTICE_QA_SECTION_LABELS.B;
+  if (/^C\b|SECTION\s*C|MATCH/i.test(s) || t === 'MATCH') return PRACTICE_QA_SECTION_LABELS.C;
+  if (/^D\b|SECTION\s*D|VERY\s*SHORT|VSA/i.test(s) || t === 'VSA') return PRACTICE_QA_SECTION_LABELS.D;
+  if (/^E\b|SECTION\s*E|SHORT\s*ANSWER/i.test(s) && !/very/i.test(s)) return PRACTICE_QA_SECTION_LABELS.E;
+  if (/^F\b|SECTION\s*F|APPLICATION|CASE[\s-]*BASED/i.test(s) || t === 'APPLICATION' || t === 'CASE') {
+    return PRACTICE_QA_SECTION_LABELS.F;
+  }
+  if (/^G\b|SECTION\s*G|HOTS|ANALYTICAL/i.test(s) || t === 'HOTS') return PRACTICE_QA_SECTION_LABELS.G;
+  if (/REAL[\s-]*LIFE|PROBLEM[\s-]*SOLVING/i.test(s)) return PRACTICE_QA_REAL_LIFE_SECTION;
+  if (s && s !== 'Questions') return s;
+  if (Array.isArray(question.options) && question.options.length >= 2) return PRACTICE_QA_SECTION_LABELS.A;
+  if (/_{2,}/.test(String(question.question || ''))) return PRACTICE_QA_SECTION_LABELS.B;
+  if (/match\s*(the\s*)?following/i.test(String(question.question || ''))) {
+    return PRACTICE_QA_SECTION_LABELS.C;
+  }
+  if (/application|case[\s-]*based|competency/i.test(String(question.question || ''))) {
+    return PRACTICE_QA_SECTION_LABELS.F;
+  }
+  if (/hots|analytical|higher[\s-]*order/i.test(String(question.question || ''))) {
+    return PRACTICE_QA_SECTION_LABELS.G;
+  }
+  const qText = String(question.question || '').trim();
+  const words = qText.split(/\s+/).filter(Boolean).length;
+  if (/\?/.test(qText) && words <= 22) return PRACTICE_QA_SECTION_LABELS.D;
+  if (/\?/.test(qText)) return PRACTICE_QA_SECTION_LABELS.E;
+  return PRACTICE_QA_SECTION_LABELS.D;
+}
+
+export function groupQuestionsIntoPracticeQaSections(questions = []) {
+  const cleaned = sanitizeWorksheetQuestions(toQuestionArray(questions));
+  const map = new Map();
+  for (const q of cleaned) {
+    const sectionName = inferPracticeQaSectionLabel(q.section, q);
+    if (!map.has(sectionName)) map.set(sectionName, []);
+    map.get(sectionName).push({
+      ...q,
+      question_number: q.question_number ?? q.sl_no,
+      type: String(q.type || '').trim() || (q.options?.length >= 2 ? 'MCQ' : ''),
+      bloom_level: String(q.bloom_level || q.bloomLevel || '').trim(),
+      difficulty_tag: String(q.difficulty_tag || q.difficulty || q.difficultyTag || '').trim(),
+      marks: q.marks != null && q.marks !== '' ? Number(q.marks) : undefined,
+    });
+  }
+  const order = Object.values(PRACTICE_QA_SECTION_LABELS);
+  const sections = [];
+  for (const label of order) {
+    if (map.has(label)) {
+      const qs = map.get(label);
+      qs.sort((a, b) => Number(a.question_number || 0) - Number(b.question_number || 0));
+      sections.push({ sectionName: label, questions: qs, count: qs.length });
+      map.delete(label);
+    }
+  }
+  for (const [sectionName, qs] of map.entries()) {
+    if (sectionName === PRACTICE_QA_REAL_LIFE_SECTION) continue;
+    qs.sort((a, b) => Number(a.question_number || 0) - Number(b.question_number || 0));
+    sections.push({ sectionName, questions: qs, count: qs.length });
+  }
+  return sections;
+}
+
+function mergePracticeQaSections(base = [], extra = []) {
+  const allQs = [];
+  for (const sec of [...(Array.isArray(base) ? base : []), ...(Array.isArray(extra) ? extra : [])]) {
+    const name = String(sec?.sectionName || sec?.name || '').trim();
+    const qs = toQuestionArray(sec?.questions || []).map((q) => ({ ...q, section: q.section || name }));
+    allQs.push(...qs);
+  }
+  return groupQuestionsIntoPracticeQaSections(allQs);
+}
+
+/** Smart Q&A Practice Generator → 14-section template (sections A–G + real-life). */
+export function normalizePracticeQaStructuredContent(raw, sourceText = '') {
+  const source = raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
+  const title = String(source.title || source.practice_set_title || source.name || source.topic || '').trim();
+  const instructions = String(
+    source.instructions || source.student_instructions || '',
+  ).trim();
+  const learning_objectives = dedupeStringList([
+    ...coerceBulletLines(source.learning_objectives),
+    ...coerceBulletLines(source.objectives),
+    ...coerceBulletLines(source.learningObjectives),
+  ]);
+  const answer_key_with_explanations = String(
+    source.answer_key_with_explanations ||
+      source.answer_key ||
+      source.answerKey ||
+      source.answers ||
+      '',
+  ).trim();
+
+  let sections = [];
+  if (Array.isArray(source.sections) && source.sections.length) {
+    sections = mergePracticeQaSections(source.sections, []);
+  }
+
+  const looseQuestions = [];
+  if (String(source.question || '').trim()) {
+    looseQuestions.push({
+      question: source.question,
+      options: source.options,
+      answer: source.answer,
+      question_number: source.question_number ?? source.sl_no,
+      section: source.section,
+      type: source.type,
+      marks: source.marks,
+      explanation: source.explanation,
+      bloom_level: source.bloom_level,
+      difficulty_tag: source.difficulty_tag,
+    });
+  }
+
+  const sectionKeys = [
+    ['section_a_mcqs', PRACTICE_QA_SECTION_LABELS.A],
+    ['section_a', PRACTICE_QA_SECTION_LABELS.A],
+    ['section_b_fill_in_blanks', PRACTICE_QA_SECTION_LABELS.B],
+    ['section_b_fib', PRACTICE_QA_SECTION_LABELS.B],
+    ['fill_in_blanks', PRACTICE_QA_SECTION_LABELS.B],
+    ['section_c_match_following', PRACTICE_QA_SECTION_LABELS.C],
+    ['section_c_match', PRACTICE_QA_SECTION_LABELS.C],
+    ['match_following', PRACTICE_QA_SECTION_LABELS.C],
+    ['section_d_vsa', PRACTICE_QA_SECTION_LABELS.D],
+    ['section_d', PRACTICE_QA_SECTION_LABELS.D],
+    ['section_e_short_answer', PRACTICE_QA_SECTION_LABELS.E],
+    ['section_e_sa', PRACTICE_QA_SECTION_LABELS.E],
+    ['section_d_sa', PRACTICE_QA_SECTION_LABELS.E],
+    ['section_f_application', PRACTICE_QA_SECTION_LABELS.F],
+    ['section_f_case_based', PRACTICE_QA_SECTION_LABELS.F],
+    ['section_g_hots', PRACTICE_QA_SECTION_LABELS.G],
+    ['section_g_analytical', PRACTICE_QA_SECTION_LABELS.G],
+  ];
+  for (const [key, label] of sectionKeys) {
+    const block = source[key];
+    if (!block || !Array.isArray(block)) continue;
+    looseQuestions.push(...toQuestionArray(block).map((q) => ({ ...q, section: q.section || label })));
+  }
+
+  const flatPools = [
+    source.questions,
+    source.practice_questions,
+    source.mcqs,
+    source.items,
+  ];
+  for (const pool of flatPools) {
+    looseQuestions.push(...toQuestionArray(pool));
+  }
+
+  if (looseQuestions.length) {
+    sections = mergePracticeQaSections(sections, groupQuestionsIntoPracticeQaSections(looseQuestions));
+  }
+
+  if (!sections.length && sourceText) {
+    const fromText = sanitizeWorksheetQuestions(extractQuestionsFromText(sourceText));
+    if (fromText.length) sections = groupQuestionsIntoPracticeQaSections(fromText);
+  }
+
+  const real_life_problem_solving_questions = sanitizeWorksheetQuestions(
+    toQuestionArray(source.real_life_problem_solving_questions || source.real_life_questions).map((q) => ({
+      ...q,
+      section: PRACTICE_QA_REAL_LIFE_SECTION,
+    })),
+  );
+
+  const questions = [
+    ...sections.flatMap((sec) =>
+      (sec.questions || []).map((q) => ({ ...q, section: q.section || sec.sectionName })),
+    ),
+    ...real_life_problem_solving_questions,
+  ];
+
+  let answerKeyOut = answer_key_with_explanations;
+  if (!answerKeyOut && questions.length) {
+    const lines = [];
+    for (const q of questions) {
+      if (String(q.answer || '').trim()) {
+        const n = q.question_number != null ? `Q${q.question_number}` : 'Q';
+        const expl = String(q.explanation || '').trim();
+        lines.push(`${n}: ${q.answer}${expl ? ` — ${expl}` : ''}`);
+      }
+    }
+    if (lines.length) answerKeyOut = lines.join('\n');
+  }
+
+  return {
+    ...source,
+    title: title || 'Practice Q&A',
+    instructions,
+    learning_objectives,
+    objectives: learning_objectives,
+    sections,
+    real_life_problem_solving_questions,
+    questions: sanitizeWorksheetQuestions(questions),
+    answer_key_with_explanations: answerKeyOut,
+    answer_key: answerKeyOut,
+  };
+}
+
+export function canonicalizePracticeQaExtractedItem(raw, sourceText = '') {
+  return normalizePracticeQaStructuredContent(raw, sourceText);
+}
+
+export function buildCanonicalPracticeQaSectionList(sections = []) {
+  const grouped = groupQuestionsIntoPracticeQaSections(
+    (Array.isArray(sections) ? sections : []).flatMap((sec) =>
+      (Array.isArray(sec?.questions) ? sec.questions : []).map((q) => ({
+        ...q,
+        section: q.section || sec.sectionName,
+      })),
+    ),
+  );
+  const byName = new Map(grouped.map((sec) => [sec.sectionName, sec]));
+  return Object.values(PRACTICE_QA_SECTION_LABELS).map((sectionName) => {
+    const hit = byName.get(sectionName);
+    return {
+      sectionName,
+      questions: hit?.questions || [],
+      count: hit?.questions?.length || 0,
+    };
+  });
+}
+
+/** Viewer payload for Smart Q&A Practice Generator (PDF extract or generator). */
+export function buildPracticeQaRenderableFromStructured(source) {
+  const p = normalizePracticeQaStructuredContent(
+    source && typeof source === 'object' && !Array.isArray(source) ? source : {},
+  );
+  const canonicalSections = buildCanonicalPracticeQaSectionList(p.sections);
+  const mapQuestion = (q) => ({
+    question: String(q.question || '').trim(),
+    options: Array.isArray(q.options) ? q.options.map((o) => String(o).trim()).filter(Boolean) : [],
+    answer: String(q.answer || '').trim(),
+    marks: q.marks != null && q.marks !== '' ? Number(q.marks) : undefined,
+    question_number: q.question_number ?? q.sl_no,
+    type: String(q.type || '').trim(),
+    explanation: String(q.explanation || q.step_by_step_answer || '').trim(),
+    bloom_level: String(q.bloom_level || q.bloomLevel || '').trim(),
+    difficulty_tag: String(q.difficulty_tag || q.difficulty || q.difficultyTag || '').trim(),
+  });
+  return {
+    kind: 'practiceQa',
+    title: String(p.title || 'Practice Q&A').trim(),
+    learningObjectives: toStringList(p.learning_objectives),
+    instructions: String(p.instructions || '').trim(),
+    sections: canonicalSections.map((section) => ({
+      sectionName: String(section?.sectionName || 'Section').trim(),
+      questions: toQuestionArray(section?.questions || []).map(mapQuestion),
+      count: section?.count ?? (Array.isArray(section?.questions) ? section.questions.length : 0),
+    })),
+    realLifeProblemSolvingQuestions: toQuestionArray(p.real_life_problem_solving_questions).map(
+      mapQuestion,
+    ),
+    questions: Array.isArray(p.questions) ? p.questions.map(mapQuestion) : [],
+    answerKeyWithExplanations: String(p.answer_key_with_explanations || '').trim(),
+    answerKey: String(p.answer_key_with_explanations || '').trim(),
   };
 }
 
@@ -1775,6 +2703,9 @@ const normalizeStructuredContentByTool = (toolSlug, structuredContent, contentTy
   if (toolSlug === 'concept-mastery-helper') {
     return { normalizedStructuredContent: normalizeConceptStructuredContent(source) };
   }
+  if (toolSlug === 'concept-breakdown-explainer') {
+    return { normalizedStructuredContent: normalizeConceptBreakdownStructuredContent(source) };
+  }
   if (toolSlug === 'homework-creator') {
     return { normalizedStructuredContent: normalizeHomeworkStructuredContent(source) };
   }
@@ -1783,6 +2714,18 @@ const normalizeStructuredContentByTool = (toolSlug, structuredContent, contentTy
   }
   if (toolSlug === 'short-notes-summaries-maker') {
     return { normalizedStructuredContent: normalizeShortNotesStructuredContent(source) };
+  }
+  if (toolSlug === 'smart-study-guide-generator') {
+    return { normalizedStructuredContent: normalizeStudyGuideStructuredContent(source) };
+  }
+  if (toolSlug === 'chapter-summary-creator') {
+    return { normalizedStructuredContent: normalizeChapterSummaryStructuredContent(source) };
+  }
+  if (toolSlug === 'key-points-formula-extractor') {
+    return { normalizedStructuredContent: normalizeKeyPointsStructuredContent(source) };
+  }
+  if (toolSlug === 'quick-assignment-builder') {
+    return { normalizedStructuredContent: normalizeQuickAssignmentStructuredContent(source) };
   }
   if (toolSlug === 'rubrics-evaluation-generator') {
     return { normalizedStructuredContent: normalizeRubricStructuredContent(source) };
@@ -1793,6 +2736,11 @@ const normalizeStructuredContentByTool = (toolSlug, structuredContent, contentTy
   if (toolSlug === 'worksheet-mcq-generator') {
     return {
       normalizedStructuredContent: normalizeWorksheetStructuredContent(source, sourceText),
+    };
+  }
+  if (toolSlug === 'smart-qa-practice-generator') {
+    return {
+      normalizedStructuredContent: normalizePracticeQaStructuredContent(source, sourceText),
     };
   }
   return { normalizedStructuredContent: source };
@@ -1932,42 +2880,72 @@ const TOOL_STRUCTURED_RULES = {
     allowedTypes: ['Study Guide', 'Notes'],
     validate: (data) =>
       (Array.isArray(data?.key_concepts) && data.key_concepts.length > 0) ||
+      (Array.isArray(data?.quick_revision_notes) && data.quick_revision_notes.length > 0) ||
       (Array.isArray(data?.revision_checklist) && data.revision_checklist.length > 0) ||
-      String(data?.title || '').trim().length > 0,
-    message: 'Study guide must include key concepts, revision checklist, or a title with body content.',
+      String(data?.chapter_subtopic_overview || data?.chapter_overview || '').trim().length > 8 ||
+      (String(data?.title || '').trim().length > 0 &&
+        (Array.isArray(data?.learning_objectives) && data.learning_objectives.length > 0)),
+    message:
+      'Study guide must include key concepts, quick revision notes, chapter overview, or a title with learning objectives.',
   },
   'concept-breakdown-explainer': {
     allowedTypes: ['Concept Notes', 'Notes'],
     validate: (data) =>
       (Array.isArray(data?.concepts) && data.concepts.length > 0) ||
-      String(data?.simple_explanation || data?.explanation || '').trim().length > 8,
-    message: 'Concept breakdown must include concepts[] or a simple explanation.',
+      String(data?.simple_definition || data?.simple_explanation || data?.explanation || '').trim()
+        .length > 8 ||
+      (Array.isArray(data?.breakdown_steps) && data.breakdown_steps.length > 0) ||
+      String(data?.quick_revision_summary || data?.summary || '').trim().length > 8,
+    message:
+      'Concept breakdown must include concepts[], simple definition, breakdown steps, or quick revision summary.',
   },
   'smart-qa-practice-generator': {
     allowedTypes: ['Practice Q&A', 'Homework'],
-    validate: (data) => Array.isArray(data?.questions) && data.questions.length > 0,
-    message: 'Practice Q&A must include a non-empty questions array.',
+    validate: (data) => {
+      const flat = Array.isArray(data?.questions) ? data.questions.length : 0;
+      const secQs = Array.isArray(data?.sections)
+        ? data.sections.reduce((n, s) => n + (Array.isArray(s?.questions) ? s.questions.length : 0), 0)
+        : 0;
+      const rl = Array.isArray(data?.real_life_problem_solving_questions)
+        ? data.real_life_problem_solving_questions.length
+        : 0;
+      return flat > 0 || secQs > 0 || rl > 0;
+    },
+    message: 'Practice Q&A must include questions in sections A–G, real-life questions, or a flat questions array.',
   },
   'chapter-summary-creator': {
     allowedTypes: ['Chapter Summary', 'Summary', 'Notes'],
     validate: (data) =>
-      String(data?.summary || data?.chapter_summary || '').trim().length > 0 ||
+      String(data?.chapter_overview || data?.summary || data?.chapter_summary || '').trim().length > 8 ||
+      (Array.isArray(data?.important_concepts) && data.important_concepts.length > 0) ||
+      (Array.isArray(data?.quick_revision_notes) && data.quick_revision_notes.length > 0) ||
       (Array.isArray(data?.key_takeaways) && data.key_takeaways.length > 0),
-    message: 'Chapter summary must include a summary or key takeaways.',
+    message:
+      'Chapter summary must include chapter overview, important concepts, quick revision notes, or legacy summary/takeaways.',
   },
   'key-points-formula-extractor': {
     allowedTypes: ['Key Points', 'Notes'],
     validate: (data) =>
+      (Array.isArray(data?.important_concepts) && data.important_concepts.length > 0) ||
+      (Array.isArray(data?.must_remember_facts) && data.must_remember_facts.length > 0) ||
       (Array.isArray(data?.key_points) && data.key_points.length > 0) ||
-      (Array.isArray(data?.formulas) && data.formulas.length > 0),
-    message: 'Key points extractor must include key_points or formulas.',
+      (Array.isArray(data?.formulae) && data.formulae.length > 0) ||
+      (Array.isArray(data?.formulas) && data.formulas.length > 0) ||
+      String(data?.one_minute_revision_summary || data?.summary || '').trim().length > 8,
+    message:
+      'Key points extractor must include important concepts, must-remember facts, formulae, or a revision summary.',
   },
   'quick-assignment-builder': {
     allowedTypes: ['Assignment', 'Homework'],
     validate: (data) =>
+      (Array.isArray(data?.concept_based_questions) && data.concept_based_questions.length > 0) ||
       (Array.isArray(data?.questions) && data.questions.length > 0) ||
-      String(data?.instructions || '').trim().length > 8,
-    message: 'Assignment must include questions or clear instructions.',
+      (Array.isArray(data?.learning_objectives) && data.learning_objectives.length > 0) ||
+      (Array.isArray(data?.application_oriented_tasks) && data.application_oriented_tasks.length > 0) ||
+      String(data?.instructions || '').trim().length > 8 ||
+      String(data?.assessment_criteria_rubric || data?.marking_criteria || '').trim().length > 8,
+    message:
+      'Quick assignment must include concept questions, learning objectives, application tasks, instructions, or assessment rubric.',
   },
 };
 
@@ -2375,11 +3353,29 @@ export function buildRenderableContent(toolSlug, contentType, structuredContent)
   if (toolSlug === 'worksheet-mcq-generator') {
     return buildWorksheetRenderableFromStructured(source);
   }
+  if (toolSlug === 'smart-qa-practice-generator') {
+    return buildPracticeQaRenderableFromStructured(source);
+  }
   if (toolSlug === 'concept-mastery-helper') {
     return buildConceptRenderableFromStructured(source);
   }
+  if (toolSlug === 'concept-breakdown-explainer') {
+    return buildConceptBreakdownRenderableFromStructured(source);
+  }
   if (toolSlug === 'short-notes-summaries-maker') {
     return buildShortNotesRenderableFromStructured(source);
+  }
+  if (toolSlug === 'smart-study-guide-generator') {
+    return buildStudyGuideRenderableFromStructured(source);
+  }
+  if (toolSlug === 'chapter-summary-creator') {
+    return buildChapterSummaryRenderableFromStructured(source);
+  }
+  if (toolSlug === 'key-points-formula-extractor') {
+    return buildKeyPointsRenderableFromStructured(source);
+  }
+  if (toolSlug === 'quick-assignment-builder') {
+    return buildQuickAssignmentRenderableFromStructured(source);
   }
   if (toolSlug === 'story-passage-creator') {
     return buildStoryRenderableFromStructured(source);

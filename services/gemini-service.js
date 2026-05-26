@@ -1952,34 +1952,37 @@ export async function parsePdfToStructuredItems(toolType, rawPdfText, params = {
 }
 
 function buildStudentToolPrompt(toolType, params = {}) {
+  const topicLine = params.subTopic
+    ? `Topic: ${params.topic || params.chapter || params.concept || 'General Topic'}\nSubtopic: ${params.subTopic}`
+    : `Topic: ${params.topic || params.chapter || params.concept || 'General Topic'}`;
   const common = `Class: ${params.gradeLevel || 'General'}
 Subject: ${params.subject || 'General'}
-Topic: ${params.topic || params.chapter || params.concept || 'General Topic'}
+${topicLine}
 
 Format response in Markdown and keep it student-friendly.`;
 
   const templates = {
     'smart-study-guide-generator': `${common}
 
-Create a personalized study guide with key concepts, formulas, and a revision checklist.`,
+Create a personalized 11-section study guide: (1) title, (2) chapter/subtopic overview, (3) learning objectives, (4) prior knowledge, (5) key concepts in simple language, (6) definitions and formulae, (7) concept flow/mind map, (8) real-life examples, (9) quick revision notes, (10) objective and subjective practice questions, (11) tips for further improvement.`,
     'concept-breakdown-explainer': `${common}
 
-Break the concept into simple steps with examples and common misconceptions.`,
+Break the concept into a 9-section breakdown: (1) concept title, (2) simple definition, (3) step-by-step breakdown, (4) real-life and Indian context examples, (5) important terms and keywords, (6) concept check questions, (7) application-based thinking question, (8) higher-order thinking prompt, (9) quick revision summary.`,
     'personalized-revision-planner': `${common}
 
 Create a realistic day-wise revision planner based on exam date and available hours.`,
     'smart-qa-practice-generator': `${common}
 
-Generate practice questions with step-by-step answers and quick tips.`,
+Generate a 14-section practice set: title, learning objectives, instructions, Section A (MCQs) through Section G (HOTS/analytical), real-life problem-solving questions, answer key with explanations; tag each question with bloom_level and difficulty_tag.`,
     'chapter-summary-creator': `${common}
 
-Provide a concise chapter summary with key takeaways and quick review points.`,
+Create an 11-section chapter summary: title, overview, learning objectives, important concepts, definitions, formulae/rules, concept connections, real-life applications, exam points, quick revision notes, and practice recall questions.`,
     'key-points-formula-extractor': `${common}
 
-List the most important key points, definitions, and formulas.`,
+Extract a 10-section key points sheet: topic title, important concepts, essential definitions, formulae/rules, keywords, must-remember facts, real-life connections, exam points, mnemonics, and a one-minute revision summary.`,
     'quick-assignment-builder': `${common}
 
-Build a structured assignment with instructions and marking criteria.`,
+Build an 11-section quick assignment: title, learning objectives, student instructions, concept-based questions, application tasks, real-life/competency activity, creative and collaborative questions, advanced challenge, assessment rubric, and expected learning outcomes.`,
     'exam-readiness-checker': `${common}
 
 Assess readiness, identify weak areas, and provide an actionable improvement plan.`,

@@ -771,31 +771,115 @@ const TEMPLATES = {
     compulsoryContextFields: COMPULSORY_CONTEXT_FIELDS,
     canonicalHeadings: [
       { order: 1, id: 'title', label: 'Study Guide Title', universalBlock: 'input', storageKeys: ['title'] },
-      { order: 2, id: 'objectives', label: 'Learning Objectives', universalBlock: 'alignment', storageKeys: ['learning_objectives', 'objectives'] },
-      { order: 3, id: 'key_concepts', label: 'Key Concepts', universalBlock: 'output', storageKeys: ['key_concepts', 'concepts'] },
-      { order: 4, id: 'formulas', label: 'Formulas and Rules', universalBlock: 'output', storageKeys: ['formulas', 'rules'] },
-      { order: 5, id: 'revision_checklist', label: 'Revision Checklist', universalBlock: 'output', storageKeys: ['revision_checklist', 'checklist'] },
-      { order: 6, id: 'study_tips', label: 'Study Tips', universalBlock: 'differentiation', storageKeys: ['study_tips', 'tips'] },
-      { order: 7, id: 'quick_review', label: 'Quick Review Points', universalBlock: 'reflection', storageKeys: ['quick_review', 'review_points'] },
+      {
+        order: 2,
+        id: 'chapter_subtopic_overview',
+        label: 'Chapter and Subtopic Overview',
+        universalBlock: 'alignment',
+        storageKeys: ['chapter_subtopic_overview', 'chapter_overview', 'overview'],
+      },
+      {
+        order: 3,
+        id: 'objectives',
+        label: 'Learning Objectives',
+        universalBlock: 'alignment',
+        storageKeys: ['learning_objectives', 'objectives'],
+      },
+      {
+        order: 4,
+        id: 'prior_knowledge',
+        label: 'Prior Knowledge Required',
+        universalBlock: 'alignment',
+        storageKeys: ['prior_knowledge_required', 'prior_knowledge'],
+      },
+      {
+        order: 5,
+        id: 'key_concepts',
+        label: 'Key Concepts Explained in Simple Language',
+        universalBlock: 'output',
+        storageKeys: ['key_concepts', 'concepts'],
+      },
+      {
+        order: 6,
+        id: 'definitions_formulae',
+        label: 'Important Definitions and Formulae',
+        universalBlock: 'output',
+        storageKeys: ['definitions', 'formulae', 'formulas', 'definitions_and_formulae'],
+      },
+      {
+        order: 7,
+        id: 'concept_flow',
+        label: 'Concept Flow / Mind Map Suggestion',
+        universalBlock: 'output',
+        storageKeys: ['concept_flow_mind_map', 'concept_flow', 'mind_map'],
+      },
+      {
+        order: 8,
+        id: 'real_life',
+        label: 'Real-life Examples and Applications',
+        universalBlock: 'realLife',
+        storageKeys: ['real_life_examples', 'real_life_applications', 'examples'],
+      },
+      {
+        order: 9,
+        id: 'quick_revision',
+        label: 'Quick Revision Notes',
+        universalBlock: 'output',
+        storageKeys: ['quick_revision_notes', 'revision_checklist', 'quick_review'],
+      },
+      {
+        order: 10,
+        id: 'practice_questions',
+        label: 'Practice Questions (Objective + Subjective)',
+        universalBlock: 'assessment',
+        storageKeys: ['practice_questions', 'questions'],
+      },
+      {
+        order: 11,
+        id: 'improvement_tips',
+        label: 'Tips for Further Improvement',
+        universalBlock: 'differentiation',
+        storageKeys: ['improvement_tips', 'study_tips', 'tips'],
+      },
     ],
     requiredFieldsForPdfExtract: ['title'],
-    pdfValidationRules: [{ id: 'has-body', severity: 'error', description: 'key_concepts or revision_checklist required.' }],
-    parserHints: ['Personalized study guide: objectives, concepts, formulas, checklist, tips.'],
+    pdfValidationRules: [
+      {
+        id: 'has-body',
+        severity: 'error',
+        description: 'key_concepts, quick_revision_notes, or chapter_subtopic_overview required.',
+      },
+    ],
+    parserHints: [
+      '11-section study guide: title, chapter overview, objectives, prior knowledge, key concepts, definitions/formulae, mind map, real-life examples, revision notes, practice Qs, improvement tips.',
+    ],
     regenerationRules: { mergePolicy: 'merge', allowTemplateRegeneration: true },
     gemini: {
       strictOutputHint:
-        'Study guide JSON: title, learning_objectives[], key_concepts[] (name + explanation), formulas[] (name + formula + note), revision_checklist[], study_tips[], quick_review[].',
+        'Study guide JSON: title, chapter_subtopic_overview, learning_objectives[], prior_knowledge_required[], key_concepts[] ({name, explanation}), definitions[] ({term, definition}), formulae[] ({name, formula, note}), concept_flow_mind_map, real_life_examples[], quick_revision_notes[], practice_questions[] ({question, type: objective|subjective, options[], answer}), improvement_tips[].',
       pdfExtractSchema: {
         title: 'string',
+        chapter_subtopic_overview: 'string',
         learning_objectives: ['string'],
+        prior_knowledge_required: ['string'],
         key_concepts: [{ name: 'string', explanation: 'string' }],
-        formulas: [{ name: 'string', formula: 'string', note: 'string' }],
-        revision_checklist: ['string'],
-        study_tips: ['string'],
-        quick_review: ['string'],
+        definitions: [{ term: 'string', definition: 'string' }],
+        formulae: [{ name: 'string', formula: 'string', note: 'string' }],
+        concept_flow_mind_map: 'string',
+        real_life_examples: ['string'],
+        quick_revision_notes: ['string'],
+        practice_questions: [
+          { question: 'string', type: 'objective|subjective', options: ['string'], answer: 'string' },
+        ],
+        improvement_tips: ['string'],
       },
     },
-    sectionFallbackRules: [{ ifEmpty: ['key_concepts'], use: ['concepts', 'summary'] }],
+    sectionFallbackRules: [
+      { ifEmpty: ['key_concepts'], use: ['concepts', 'summary'] },
+      { ifEmpty: ['quick_revision_notes'], use: ['revision_checklist', 'quick_review'] },
+      { ifEmpty: ['improvement_tips'], use: ['study_tips', 'tips'] },
+      { ifEmpty: ['formulae'], use: ['formulas', 'rules'] },
+    ],
   },
 
   'concept-breakdown-explainer': {
@@ -805,40 +889,117 @@ const TEMPLATES = {
     pedagogyFrameworkTags: [...UNIVERSAL_PEDAGOGY_TAGS],
     compulsoryContextFields: COMPULSORY_CONTEXT_FIELDS,
     canonicalHeadings: [
-      { order: 1, id: 'concept_name', label: 'Concept Name', universalBlock: 'input', storageKeys: ['concept_name', 'title'] },
-      { order: 2, id: 'simple_explanation', label: 'Simple Explanation', universalBlock: 'output', storageKeys: ['simple_explanation', 'explanation'] },
-      { order: 3, id: 'steps', label: 'Step-by-step Breakdown', universalBlock: 'output', storageKeys: ['steps', 'breakdown_steps'] },
-      { order: 4, id: 'examples', label: 'Examples', universalBlock: 'realLife', storageKeys: ['examples'] },
-      { order: 5, id: 'misconceptions', label: 'Common Misconceptions', universalBlock: 'differentiation', storageKeys: ['common_misconceptions', 'misconceptions'] },
-      { order: 6, id: 'quick_check', label: 'Quick Check', universalBlock: 'assessment', storageKeys: ['quick_check_questions', 'questions'] },
+      {
+        order: 1,
+        id: 'concept_title',
+        label: 'Concept Title',
+        universalBlock: 'input',
+        storageKeys: ['concept_title', 'concept_name', 'title'],
+      },
+      {
+        order: 2,
+        id: 'simple_definition',
+        label: 'Simple Definition',
+        universalBlock: 'output',
+        storageKeys: ['simple_definition', 'simple_explanation', 'explanation'],
+      },
+      {
+        order: 3,
+        id: 'breakdown_steps',
+        label: 'Step-by-step Concept Breakdown',
+        universalBlock: 'output',
+        storageKeys: ['breakdown_steps', 'steps'],
+      },
+      {
+        order: 4,
+        id: 'real_life_examples',
+        label: 'Real-life and Indian Context Examples',
+        universalBlock: 'realLife',
+        storageKeys: ['real_life_examples', 'examples', 'indian_context_examples'],
+      },
+      {
+        order: 5,
+        id: 'important_terms',
+        label: 'Important Terms and Keywords',
+        universalBlock: 'output',
+        storageKeys: ['important_terms', 'keywords', 'terms'],
+      },
+      {
+        order: 6,
+        id: 'concept_check',
+        label: 'Concept Check Questions',
+        universalBlock: 'assessment',
+        storageKeys: ['concept_check_questions', 'quick_check_questions'],
+      },
+      {
+        order: 7,
+        id: 'application_question',
+        label: 'Application-based Thinking Question',
+        universalBlock: 'assessment',
+        storageKeys: ['application_thinking_question', 'application_question'],
+      },
+      {
+        order: 8,
+        id: 'hots_prompt',
+        label: 'Higher-order Thinking Prompt',
+        universalBlock: 'reflection',
+        storageKeys: ['higher_order_thinking_prompt', 'hots_prompt', 'hots_question'],
+      },
+      {
+        order: 9,
+        id: 'quick_revision',
+        label: 'Quick Revision Summary',
+        universalBlock: 'reflection',
+        storageKeys: ['quick_revision_summary', 'revision_summary', 'summary'],
+      },
     ],
-    requiredFieldsForPdfExtract: ['concept_name'],
-    pdfValidationRules: [{ id: 'has-body', severity: 'error', description: 'simple_explanation or steps required.' }],
-    parserHints: ['One concept per Item N: name, explanation, steps, examples, misconceptions, quick checks.'],
+    requiredFieldsForPdfExtract: ['concept_title'],
+    pdfValidationRules: [
+      {
+        id: 'has-body',
+        severity: 'error',
+        description: 'simple_definition, breakdown_steps, or quick_revision_summary required.',
+      },
+    ],
+    parserHints: [
+      '9-section concept breakdown: title, definition, steps, Indian-context examples, terms, check questions, application & HOTS prompts, revision summary.',
+    ],
     regenerationRules: { mergePolicy: 'merge', allowTemplateRegeneration: true },
     gemini: {
       strictOutputHint:
-        'Concept breakdown JSON: concepts[] with concept_name, simple_explanation, breakdown_steps[], examples[], common_misconceptions[], quick_check_questions[]. Or single object with same fields.',
+        'Concept breakdown JSON: concept_title, simple_definition, breakdown_steps[], real_life_examples[], important_terms[] ({term, definition}), concept_check_questions[], application_thinking_question, higher_order_thinking_prompt, quick_revision_summary. Or concepts[] array of objects with the same fields.',
       pdfExtractSchema: {
         concepts: [
           {
-            concept_name: 'string',
-            simple_explanation: 'string',
+            concept_title: 'string',
+            simple_definition: 'string',
             breakdown_steps: ['string'],
-            examples: ['string'],
-            common_misconceptions: ['string'],
-            quick_check_questions: ['string'],
+            real_life_examples: ['string'],
+            important_terms: [{ term: 'string', definition: 'string' }],
+            concept_check_questions: ['string'],
+            application_thinking_question: 'string',
+            higher_order_thinking_prompt: 'string',
+            quick_revision_summary: 'string',
           },
         ],
-        concept_name: 'string',
-        simple_explanation: 'string',
+        concept_title: 'string',
+        simple_definition: 'string',
         breakdown_steps: ['string'],
-        examples: ['string'],
-        common_misconceptions: ['string'],
-        quick_check_questions: ['string'],
+        real_life_examples: ['string'],
+        important_terms: [{ term: 'string', definition: 'string' }],
+        concept_check_questions: ['string'],
+        application_thinking_question: 'string',
+        higher_order_thinking_prompt: 'string',
+        quick_revision_summary: 'string',
       },
     },
-    sectionFallbackRules: [],
+    sectionFallbackRules: [
+      { ifEmpty: ['concept_title'], use: ['concept_name', 'title'] },
+      { ifEmpty: ['simple_definition'], use: ['simple_explanation', 'explanation'] },
+      { ifEmpty: ['real_life_examples'], use: ['examples'] },
+      { ifEmpty: ['concept_check_questions'], use: ['quick_check_questions'] },
+      { ifEmpty: ['higher_order_thinking_prompt'], use: ['hots_question', 'hots_prompt'] },
+    ],
   },
 
   'smart-qa-practice-generator': {
@@ -848,25 +1009,155 @@ const TEMPLATES = {
     pedagogyFrameworkTags: [...UNIVERSAL_PEDAGOGY_TAGS],
     compulsoryContextFields: COMPULSORY_CONTEXT_FIELDS,
     canonicalHeadings: [
-      { order: 1, id: 'title', label: 'Practice Set Title', universalBlock: 'input', storageKeys: ['title'] },
-      { order: 2, id: 'instructions', label: 'Instructions', universalBlock: 'input', storageKeys: ['instructions'] },
-      { order: 3, id: 'questions', label: 'Practice Questions with Answers', universalBlock: 'output', storageKeys: ['questions', 'practice_questions'] },
-      { order: 4, id: 'tips', label: 'Quick Tips', universalBlock: 'reflection', storageKeys: ['tips', 'study_tips'] },
+      { order: 1, id: 'title', label: 'Practice Set Title', universalBlock: 'input', storageKeys: ['title', 'practice_set_title'] },
+      {
+        order: 2,
+        id: 'learning_objectives',
+        label: 'Learning Objectives',
+        universalBlock: 'alignment',
+        storageKeys: ['learning_objectives', 'objectives'],
+      },
+      {
+        order: 3,
+        id: 'instructions',
+        label: 'Instructions to Students',
+        universalBlock: 'input',
+        storageKeys: ['instructions', 'student_instructions'],
+      },
+      { order: 4, id: 'section_a', label: 'Section A: MCQs', universalBlock: 'output', storageKeys: ['section_a_mcqs', 'section_a'] },
+      {
+        order: 5,
+        id: 'section_b',
+        label: 'Section B: Fill in the Blanks',
+        universalBlock: 'output',
+        storageKeys: ['section_b_fill_in_blanks', 'section_b_fib', 'fill_in_blanks'],
+      },
+      {
+        order: 6,
+        id: 'section_c',
+        label: 'Section C: Match the Following',
+        universalBlock: 'output',
+        storageKeys: ['section_c_match_following', 'section_c_match', 'match_following'],
+      },
+      {
+        order: 7,
+        id: 'section_d',
+        label: 'Section D: Very Short Answer Questions',
+        universalBlock: 'output',
+        storageKeys: ['section_d_vsa', 'section_d'],
+      },
+      {
+        order: 8,
+        id: 'section_e',
+        label: 'Section E: Short Answer Questions',
+        universalBlock: 'output',
+        storageKeys: ['section_e_short_answer', 'section_e_sa', 'section_d_sa'],
+      },
+      {
+        order: 9,
+        id: 'section_f',
+        label: 'Section F: Application / Case-based Questions',
+        universalBlock: 'realLife',
+        storageKeys: ['section_f_application', 'section_f_case_based'],
+      },
+      {
+        order: 10,
+        id: 'section_g',
+        label: 'Section G: HOTS / Analytical Questions',
+        universalBlock: 'assessment',
+        storageKeys: ['section_g_hots', 'section_g_analytical'],
+      },
+      {
+        order: 11,
+        id: 'real_life',
+        label: 'Real-life Problem-solving Questions',
+        universalBlock: 'realLife',
+        storageKeys: ['real_life_problem_solving_questions', 'real_life_questions'],
+      },
+      {
+        order: 12,
+        id: 'answer_key',
+        label: 'Answer Key with Explanations',
+        universalBlock: 'assessment',
+        storageKeys: ['answer_key_with_explanations', 'answer_key', 'answerKey'],
+      },
+      {
+        order: 13,
+        id: 'bloom_tags',
+        label: "Bloom's Level Tag for Each Question",
+        universalBlock: 'assessment',
+        storageKeys: ['bloom_level', 'bloom_tags'],
+      },
+      {
+        order: 14,
+        id: 'difficulty_tags',
+        label: 'Difficulty Tag for Each Question',
+        universalBlock: 'assessment',
+        storageKeys: ['difficulty_tag', 'difficulty_tags', 'difficulty'],
+      },
     ],
-    requiredFieldsForPdfExtract: ['questions'],
-    pdfValidationRules: [{ id: 'questions', severity: 'error', description: 'questions[] required.' }],
-    parserHints: ['Each question: question text, answer, optional step_by_step_answer and tip.'],
-    regenerationRules: { mergePolicy: 'merge', allowTemplateRegeneration: true },
+    requiredFieldsForPdfExtract: ['question'],
+    pdfValidationRules: [
+      { id: 'questions-nonempty', severity: 'error', description: 'At least one question required across sections.' },
+      { id: 'answer-key-alignment', severity: 'warn', description: 'MCQs with options should have a declared answer.' },
+    ],
+    parserHints: [
+      '14-section practice set: title, objectives, instructions, sections A–G, real-life questions, answer key with explanations; each question includes bloom_level and difficulty_tag.',
+    ],
+    regenerationRules: { mergePolicy: 'replace', allowTemplateRegeneration: true },
     gemini: {
       strictOutputHint:
-        'Practice Q&A JSON: title, instructions, questions[] with question, answer, step_by_step_answer (optional), tip (optional).',
+        'Practice Q&A JSON: title, learning_objectives[], instructions, sections[{sectionName,questions[]}] with question_number, type, question, options[], answer, explanation, bloom_level, difficulty_tag, marks; real_life_problem_solving_questions[]; answer_key_with_explanations. Section names: Section A: MCQs through Section G: HOTS / Analytical Questions.',
       pdfExtractSchema: {
         title: 'string',
+        learning_objectives: ['string'],
         instructions: 'string',
-        questions: [{ question: 'string', answer: 'string', step_by_step_answer: 'string', tip: 'string' }],
+        sections: [
+          {
+            sectionName: 'string',
+            questions: [
+              {
+                question_number: 'number',
+                type: 'string',
+                question: 'string',
+                options: ['string'],
+                answer: 'string',
+                explanation: 'string',
+                bloom_level: 'string',
+                difficulty_tag: 'string',
+                marks: 'number',
+              },
+            ],
+          },
+        ],
+        real_life_problem_solving_questions: [
+          {
+            question_number: 'number',
+            question: 'string',
+            answer: 'string',
+            explanation: 'string',
+            bloom_level: 'string',
+            difficulty_tag: 'string',
+          },
+        ],
+        answer_key_with_explanations: 'string',
+        questions: [
+          {
+            question_number: 'number',
+            type: 'string',
+            section: 'string',
+            question: 'string',
+            options: ['string'],
+            answer: 'string',
+            explanation: 'string',
+            bloom_level: 'string',
+            difficulty_tag: 'string',
+            marks: 'number',
+          },
+        ],
       },
     },
-    sectionFallbackRules: [],
+    sectionFallbackRules: [{ ifEmpty: ['questions'], use: ['sections', 'practice_questions'], synthesize: 'extract_from_plain_text' }],
   },
 
   'chapter-summary-creator': {
@@ -876,28 +1167,120 @@ const TEMPLATES = {
     pedagogyFrameworkTags: [...UNIVERSAL_PEDAGOGY_TAGS],
     compulsoryContextFields: COMPULSORY_CONTEXT_FIELDS,
     canonicalHeadings: [
-      { order: 1, id: 'chapter_title', label: 'Chapter / Topic Title', universalBlock: 'input', storageKeys: ['chapter_title', 'title'] },
-      { order: 2, id: 'summary', label: 'Chapter Summary', universalBlock: 'output', storageKeys: ['summary', 'chapter_summary'] },
-      { order: 3, id: 'key_takeaways', label: 'Key Takeaways', universalBlock: 'output', storageKeys: ['key_takeaways', 'takeaways'] },
-      { order: 4, id: 'review_points', label: 'Quick Review Points', universalBlock: 'reflection', storageKeys: ['review_points', 'quick_review'] },
+      {
+        order: 1,
+        id: 'chapter_summary_title',
+        label: 'Chapter Summary Title',
+        universalBlock: 'input',
+        storageKeys: ['chapter_summary_title', 'chapter_title', 'title'],
+      },
+      {
+        order: 2,
+        id: 'chapter_overview',
+        label: 'Overview of the Chapter',
+        universalBlock: 'alignment',
+        storageKeys: ['chapter_overview', 'overview', 'summary', 'chapter_summary'],
+      },
+      {
+        order: 3,
+        id: 'learning_objectives',
+        label: 'Learning Objectives',
+        universalBlock: 'alignment',
+        storageKeys: ['learning_objectives', 'objectives'],
+      },
+      {
+        order: 4,
+        id: 'important_concepts',
+        label: 'Important Concepts and Explanations',
+        universalBlock: 'output',
+        storageKeys: ['important_concepts', 'key_concepts', 'concepts'],
+      },
+      {
+        order: 5,
+        id: 'definitions',
+        label: 'Key Definitions and Terms',
+        universalBlock: 'output',
+        storageKeys: ['definitions', 'key_definitions', 'terms'],
+      },
+      {
+        order: 6,
+        id: 'formulae',
+        label: 'Formulae / Rules / Important Facts',
+        universalBlock: 'output',
+        storageKeys: ['formulae', 'formulas', 'rules', 'important_facts'],
+      },
+      {
+        order: 7,
+        id: 'concept_connections',
+        label: 'Concept Connections',
+        universalBlock: 'output',
+        storageKeys: ['concept_connections', 'connections'],
+      },
+      {
+        order: 8,
+        id: 'real_life',
+        label: 'Real-life Applications',
+        universalBlock: 'realLife',
+        storageKeys: ['real_life_applications', 'applications', 'examples'],
+      },
+      {
+        order: 9,
+        id: 'exam_points',
+        label: 'Important Exam Points',
+        universalBlock: 'assessment',
+        storageKeys: ['important_exam_points', 'exam_points', 'key_takeaways'],
+      },
+      {
+        order: 10,
+        id: 'quick_revision',
+        label: 'Quick Revision Notes',
+        universalBlock: 'reflection',
+        storageKeys: ['quick_revision_notes', 'review_points', 'quick_review'],
+      },
+      {
+        order: 11,
+        id: 'recall_questions',
+        label: 'Practice Recall Questions',
+        universalBlock: 'assessment',
+        storageKeys: ['practice_recall_questions', 'recall_questions'],
+      },
     ],
-    requiredFieldsForPdfExtract: ['summary'],
-    pdfValidationRules: [{ id: 'has-body', severity: 'error', description: 'summary or key_takeaways required.' }],
-    parserHints: ['Concise chapter summary with takeaways and review bullets.'],
+    requiredFieldsForPdfExtract: ['chapter_summary_title'],
+    pdfValidationRules: [
+      {
+        id: 'has-body',
+        severity: 'error',
+        description: 'chapter_overview, important_concepts, or quick_revision_notes required.',
+      },
+    ],
+    parserHints: [
+      '11-section chapter summary: title, overview, objectives, concepts, definitions, formulae, connections, applications, exam points, revision notes, recall questions.',
+    ],
     regenerationRules: { mergePolicy: 'merge', allowTemplateRegeneration: true },
     gemini: {
       strictOutputHint:
-        'Chapter summary JSON: chapter_title, summary, key_takeaways[], review_points[].',
+        'Chapter summary JSON: chapter_summary_title, chapter_overview, learning_objectives[], important_concepts[] ({name, explanation}), definitions[] ({term, definition}), formulae[] ({name, formula, note}), concept_connections, real_life_applications[], important_exam_points[], quick_revision_notes[], practice_recall_questions[].',
       pdfExtractSchema: {
+        chapter_summary_title: 'string',
         chapter_title: 'string',
-        title: 'string',
-        summary: 'string',
-        chapter_summary: 'string',
-        key_takeaways: ['string'],
-        review_points: ['string'],
+        chapter_overview: 'string',
+        learning_objectives: ['string'],
+        important_concepts: [{ name: 'string', explanation: 'string' }],
+        definitions: [{ term: 'string', definition: 'string' }],
+        formulae: [{ name: 'string', formula: 'string', note: 'string' }],
+        concept_connections: 'string',
+        real_life_applications: ['string'],
+        important_exam_points: ['string'],
+        quick_revision_notes: ['string'],
+        practice_recall_questions: ['string'],
       },
     },
-    sectionFallbackRules: [{ ifEmpty: ['summary'], use: ['chapter_summary'] }],
+    sectionFallbackRules: [
+      { ifEmpty: ['chapter_overview'], use: ['summary', 'chapter_summary'] },
+      { ifEmpty: ['important_concepts'], use: ['key_concepts', 'concepts'] },
+      { ifEmpty: ['quick_revision_notes'], use: ['review_points', 'key_takeaways'] },
+      { ifEmpty: ['practice_recall_questions'], use: ['quick_check_questions'] },
+    ],
   },
 
   'key-points-formula-extractor': {
@@ -907,26 +1290,107 @@ const TEMPLATES = {
     pedagogyFrameworkTags: [...UNIVERSAL_PEDAGOGY_TAGS],
     compulsoryContextFields: COMPULSORY_CONTEXT_FIELDS,
     canonicalHeadings: [
-      { order: 1, id: 'title', label: 'Topic Title', universalBlock: 'input', storageKeys: ['title', 'topic_title'] },
-      { order: 2, id: 'key_points', label: 'Key Points', universalBlock: 'output', storageKeys: ['key_points', 'key_points_to_remember'] },
-      { order: 3, id: 'definitions', label: 'Definitions', universalBlock: 'output', storageKeys: ['definitions'] },
-      { order: 4, id: 'formulas', label: 'Formulas', universalBlock: 'output', storageKeys: ['formulas'] },
+      { order: 1, id: 'topic_title', label: 'Topic Title', universalBlock: 'input', storageKeys: ['topic_title', 'title'] },
+      {
+        order: 2,
+        id: 'important_concepts',
+        label: 'Most Important Concepts',
+        universalBlock: 'output',
+        storageKeys: ['important_concepts', 'key_concepts', 'concepts'],
+      },
+      {
+        order: 3,
+        id: 'essential_definitions',
+        label: 'Essential Definitions',
+        universalBlock: 'output',
+        storageKeys: ['essential_definitions', 'definitions'],
+      },
+      {
+        order: 4,
+        id: 'formulae',
+        label: 'Important Formulae / Rules',
+        universalBlock: 'output',
+        storageKeys: ['formulae', 'formulas', 'rules'],
+      },
+      {
+        order: 5,
+        id: 'keywords',
+        label: 'Keywords and Terminologies',
+        universalBlock: 'output',
+        storageKeys: ['keywords_terminologies', 'keywords', 'terminologies'],
+      },
+      {
+        order: 6,
+        id: 'must_remember',
+        label: 'Must-remember Facts',
+        universalBlock: 'output',
+        storageKeys: ['must_remember_facts', 'key_points', 'key_points_to_remember'],
+      },
+      {
+        order: 7,
+        id: 'real_life',
+        label: 'Real-life Connections',
+        universalBlock: 'realLife',
+        storageKeys: ['real_life_connections', 'real_life_applications'],
+      },
+      {
+        order: 8,
+        id: 'exam_points',
+        label: 'Frequently Asked Exam Points',
+        universalBlock: 'assessment',
+        storageKeys: ['frequently_asked_exam_points', 'exam_points'],
+      },
+      {
+        order: 9,
+        id: 'mnemonics',
+        label: 'Mnemonics / Memory Tricks',
+        universalBlock: 'differentiation',
+        storageKeys: ['mnemonics_memory_tricks', 'mnemonics', 'memory_tricks'],
+      },
+      {
+        order: 10,
+        id: 'revision_summary',
+        label: 'One-minute Revision Summary',
+        universalBlock: 'reflection',
+        storageKeys: ['one_minute_revision_summary', 'revision_summary', 'summary'],
+      },
     ],
-    requiredFieldsForPdfExtract: ['key_points'],
-    pdfValidationRules: [{ id: 'has-body', severity: 'error', description: 'key_points or formulas required.' }],
-    parserHints: ['Bullet key points, term definitions, and formula list.'],
+    requiredFieldsForPdfExtract: ['topic_title'],
+    pdfValidationRules: [
+      {
+        id: 'has-body',
+        severity: 'error',
+        description: 'important_concepts, must_remember_facts, or formulae required.',
+      },
+    ],
+    parserHints: [
+      '10-section key points: concepts, definitions, formulae, keywords, facts, real-life links, exam FAQs, mnemonics, one-minute summary.',
+    ],
     regenerationRules: { mergePolicy: 'merge', allowTemplateRegeneration: true },
     gemini: {
       strictOutputHint:
-        'Key points JSON: title, key_points[] (strings or {point, detail}), definitions[] ({term, definition}), formulas[] ({name, formula, when_to_use}).',
+        'Key points JSON: topic_title, important_concepts[] ({name, explanation}), essential_definitions[] ({term, definition}), formulae[] ({name, formula, note}), keywords_terminologies[] ({term, meaning}), must_remember_facts[], real_life_connections[], frequently_asked_exam_points[], mnemonics_memory_tricks[], one_minute_revision_summary.',
       pdfExtractSchema: {
+        topic_title: 'string',
         title: 'string',
-        key_points: ['string'],
-        definitions: [{ term: 'string', definition: 'string' }],
-        formulas: [{ name: 'string', formula: 'string', when_to_use: 'string' }],
+        important_concepts: [{ name: 'string', explanation: 'string' }],
+        essential_definitions: [{ term: 'string', definition: 'string' }],
+        formulae: [{ name: 'string', formula: 'string', note: 'string' }],
+        keywords_terminologies: [{ term: 'string', meaning: 'string' }],
+        must_remember_facts: ['string'],
+        real_life_connections: ['string'],
+        frequently_asked_exam_points: ['string'],
+        mnemonics_memory_tricks: ['string'],
+        one_minute_revision_summary: 'string',
       },
     },
-    sectionFallbackRules: [{ ifEmpty: ['key_points'], use: ['key_points_to_remember'] }],
+    sectionFallbackRules: [
+      { ifEmpty: ['important_concepts'], use: ['key_concepts', 'concepts'] },
+      { ifEmpty: ['essential_definitions'], use: ['definitions'] },
+      { ifEmpty: ['formulae'], use: ['formulas'] },
+      { ifEmpty: ['must_remember_facts'], use: ['key_points', 'key_points_to_remember'] },
+      { ifEmpty: ['one_minute_revision_summary'], use: ['summary', 'short_note_summary'] },
+    ],
   },
 
   'quick-assignment-builder': {
@@ -936,26 +1400,121 @@ const TEMPLATES = {
     pedagogyFrameworkTags: [...UNIVERSAL_PEDAGOGY_TAGS],
     compulsoryContextFields: COMPULSORY_CONTEXT_FIELDS,
     canonicalHeadings: [
-      { order: 1, id: 'title', label: 'Assignment Title', universalBlock: 'input', storageKeys: ['title', 'assignment_title'] },
-      { order: 2, id: 'instructions', label: 'Student Instructions', universalBlock: 'output', storageKeys: ['instructions', 'student_instructions'] },
-      { order: 3, id: 'questions', label: 'Assignment Questions', universalBlock: 'output', storageKeys: ['questions', 'tasks'] },
-      { order: 4, id: 'marking', label: 'Marking Criteria', universalBlock: 'assessment', storageKeys: ['marking_criteria', 'marking_scheme'] },
+      {
+        order: 1,
+        id: 'assignment_title',
+        label: 'Assignment Title',
+        universalBlock: 'input',
+        storageKeys: ['assignment_title', 'title', 'assignmentTitle'],
+      },
+      {
+        order: 2,
+        id: 'learning_objectives',
+        label: 'Learning Objectives',
+        universalBlock: 'alignment',
+        storageKeys: ['learning_objectives', 'objectives'],
+      },
+      {
+        order: 3,
+        id: 'instructions',
+        label: 'Instructions to Students',
+        universalBlock: 'output',
+        storageKeys: ['instructions', 'instructions_to_students', 'student_instructions'],
+      },
+      {
+        order: 4,
+        id: 'concept_questions',
+        label: 'Concept-based Questions',
+        universalBlock: 'output',
+        storageKeys: ['concept_based_questions', 'questions', 'practice_questions'],
+      },
+      {
+        order: 5,
+        id: 'application_tasks',
+        label: 'Application-oriented Tasks',
+        universalBlock: 'output',
+        storageKeys: ['application_oriented_tasks', 'application_tasks'],
+      },
+      {
+        order: 6,
+        id: 'real_life_activity',
+        label: 'Real-life / Competency-based Activity',
+        universalBlock: 'realLife',
+        storageKeys: ['real_life_competency_activity', 'real_life_activity', 'real_life_observation_task'],
+      },
+      {
+        order: 7,
+        id: 'creative_question',
+        label: 'Creative Thinking Question',
+        universalBlock: 'assessment',
+        storageKeys: ['creative_thinking_question', 'creative_question'],
+      },
+      {
+        order: 8,
+        id: 'collaborative_task',
+        label: 'Collaborative / Discussion Task (if suitable)',
+        universalBlock: 'differentiation',
+        storageKeys: ['collaborative_discussion_task', 'discussion_task', 'collaborative_task'],
+      },
+      {
+        order: 9,
+        id: 'challenge_question',
+        label: 'Challenge Question for Advanced Learners',
+        universalBlock: 'differentiation',
+        storageKeys: ['challenge_question_advanced', 'challenge_question'],
+      },
+      {
+        order: 11,
+        id: 'assessment_rubric',
+        label: 'Assessment Criteria / Rubric',
+        universalBlock: 'assessment',
+        storageKeys: ['assessment_criteria_rubric', 'marking_criteria', 'marking_scheme', 'rubric'],
+      },
+      {
+        order: 13,
+        id: 'expected_outcomes',
+        label: 'Expected Learning Outcomes',
+        universalBlock: 'reflection',
+        storageKeys: ['expected_learning_outcomes', 'learning_outcomes'],
+      },
     ],
-    requiredFieldsForPdfExtract: ['title', 'questions'],
-    pdfValidationRules: [{ id: 'questions', severity: 'error', description: 'questions[] required.' }],
-    parserHints: ['Structured assignment with instructions, numbered questions, and marking criteria.'],
+    requiredFieldsForPdfExtract: ['assignment_title', 'concept_based_questions'],
+    pdfValidationRules: [
+      {
+        id: 'has-body',
+        severity: 'error',
+        description: 'concept_based_questions, instructions, or learning objectives required.',
+      },
+    ],
+    parserHints: [
+      '11-section assignment: objectives, concept questions, application tasks, competency activity, creative/collaborative/challenge questions, rubric, outcomes.',
+    ],
     regenerationRules: { mergePolicy: 'merge', allowTemplateRegeneration: true },
     gemini: {
       strictOutputHint:
-        'Assignment JSON: title, instructions, questions[] (question, marks optional, answer optional), marking_criteria (string or criteria[]).',
+        'Quick assignment JSON: assignment_title, learning_objectives[], instructions, concept_based_questions[] ({question, marks, answer optional}), application_oriented_tasks[], real_life_competency_activity, creative_thinking_question, collaborative_discussion_task, challenge_question_advanced, assessment_criteria_rubric, expected_learning_outcomes[].',
       pdfExtractSchema: {
+        assignment_title: 'string',
         title: 'string',
+        learning_objectives: ['string'],
         instructions: 'string',
-        questions: [{ question: 'string', marks: 'number', answer: 'string' }],
-        marking_criteria: 'string',
+        concept_based_questions: [{ question: 'string', marks: 'number', answer: 'string' }],
+        application_oriented_tasks: ['string'],
+        real_life_competency_activity: 'string',
+        creative_thinking_question: 'string',
+        collaborative_discussion_task: 'string',
+        challenge_question_advanced: 'string',
+        assessment_criteria_rubric: 'string',
+        expected_learning_outcomes: ['string'],
       },
     },
-    sectionFallbackRules: [],
+    sectionFallbackRules: [
+      { ifEmpty: ['assignment_title'], use: ['title'] },
+      { ifEmpty: ['concept_based_questions'], use: ['questions', 'practice_questions'] },
+      { ifEmpty: ['application_oriented_tasks'], use: ['application_tasks'] },
+      { ifEmpty: ['assessment_criteria_rubric'], use: ['marking_criteria', 'marking_scheme'] },
+      { ifEmpty: ['expected_learning_outcomes'], use: ['learning_objectives'] },
+    ],
   },
 };
 
@@ -1118,8 +1677,24 @@ export function expandStructuredToFormatItems(toolSlug, structured) {
       const cards = Array.isArray(s.cards) ? s.cards : [];
       return cards.map((c, i) => ({ ...(c && typeof c === 'object' ? c : {}), sl_no: i + 1 }));
     }
-    case 'concept-mastery-helper':
     case 'concept-breakdown-explainer': {
+      const concepts = Array.isArray(s.concepts) ? s.concepts : [];
+      if (concepts.length) {
+        return concepts.map((c, i) => {
+          const row = c && typeof c === 'object' ? c : {};
+          const title =
+            row.concept_title || row.concept_name || row.title || row.name || `Concept ${i + 1}`;
+          return {
+            ...row,
+            sl_no: i + 1,
+            concept_title: title,
+            concept_name: title,
+          };
+        });
+      }
+      return [s];
+    }
+    case 'concept-mastery-helper': {
       const concepts = Array.isArray(s.concepts) ? s.concepts : [];
       if (concepts.length) {
         return concepts.map((c, i) => {
@@ -1135,9 +1710,17 @@ export function expandStructuredToFormatItems(toolSlug, structured) {
       }
       return [s];
     }
-    case 'smart-qa-practice-generator':
-    case 'quick-assignment-builder': {
+    case 'smart-qa-practice-generator': {
+      if (Array.isArray(s.sections) && s.sections.length) return [s];
       const qs = Array.isArray(s.questions) ? s.questions : [];
+      if (
+        qs.length &&
+        (String(s.title || '').trim() ||
+          String(s.instructions || '').trim() ||
+          (Array.isArray(s.learning_objectives) && s.learning_objectives.length))
+      ) {
+        return [{ ...s, questions: qs }];
+      }
       if (qs.length) {
         return qs.map((q, i) => {
           if (q && typeof q === 'object') {
@@ -1148,6 +1731,8 @@ export function expandStructuredToFormatItems(toolSlug, structured) {
       }
       return [s];
     }
+    case 'quick-assignment-builder':
+      return [s];
     default:
       return [s];
   }
@@ -1577,100 +2162,363 @@ export function formatItemLinesFromTemplate(toolSlug, item, index = 0) {
       return [];
     case 'smart-study-guide-generator': {
       lines.push(`## ${str(i.title) || `Study Guide ${n}`}`, '');
+      const overview = str(i.chapter_subtopic_overview || i.chapter_overview || i.overview);
+      if (overview) pushSection(lines, '2. Chapter and Subtopic Overview', [overview]);
       const lo = strArr(i.learning_objectives || i.objectives);
-      if (lo.length) pushSection(lines, '1. Learning Objectives', lo.map((x) => `- ${x}`));
-      const kc = Array.isArray(i.key_concepts) ? i.key_concepts : [];
+      if (lo.length) pushSection(lines, '3. Learning Objectives', lo.map((x) => `- ${x}`));
+      const pk = strArr(i.prior_knowledge_required || i.prior_knowledge);
+      if (pk.length) pushSection(lines, '4. Prior Knowledge Required', pk.map((x) => `- ${x}`));
+      const kc = Array.isArray(i.key_concepts) ? i.key_concepts : Array.isArray(i.concepts) ? i.concepts : [];
       if (kc.length) {
-        lines.push('### 2. Key Concepts');
+        lines.push('### 5. Key Concepts Explained in Simple Language');
         kc.forEach((c, idx) => {
           const row = c && typeof c === 'object' ? c : { name: String(c) };
           lines.push(`${idx + 1}. **${str(row.name || row.concept)}** — ${str(row.explanation)}`);
         });
         lines.push('');
       }
-      const fm = Array.isArray(i.formulas) ? i.formulas : [];
-      if (fm.length) {
-        lines.push('### 3. Formulas and Rules');
+      const defs = Array.isArray(i.definitions) ? i.definitions : [];
+      const fm = Array.isArray(i.formulae)
+        ? i.formulae
+        : Array.isArray(i.formulas)
+          ? i.formulas
+          : [];
+      if (defs.length || fm.length) {
+        lines.push('### 6. Important Definitions and Formulae');
+        defs.forEach((d, idx) => {
+          const row = d && typeof d === 'object' ? d : { term: String(d) };
+          lines.push(`${idx + 1}. **${str(row.term || row.name)}** — ${str(row.definition)}`);
+        });
         fm.forEach((f, idx) => {
           const row = f && typeof f === 'object' ? f : { formula: String(f) };
-          lines.push(`${idx + 1}. ${str(row.name)}: ${str(row.formula)}${row.note ? ` (${str(row.note)})` : ''}`);
+          lines.push(
+            `${defs.length + idx + 1}. ${str(row.name)}: ${str(row.formula)}${row.note ? ` (${str(row.note)})` : ''}`,
+          );
         });
         lines.push('');
       }
-      const chk = strArr(i.revision_checklist || i.checklist);
-      if (chk.length) pushSection(lines, '4. Revision Checklist', chk.map((x) => `- ${x}`));
-      const tips = strArr(i.study_tips || i.tips);
-      if (tips.length) pushSection(lines, '5. Study Tips', tips.map((x) => `- ${x}`));
-      const rev = strArr(i.quick_review || i.review_points);
-      if (rev.length) pushSection(lines, '6. Quick Review', rev.map((x) => `- ${x}`));
+      const flow = str(i.concept_flow_mind_map || i.concept_flow || i.mind_map);
+      if (flow) pushSection(lines, '7. Concept Flow / Mind Map Suggestion', [flow]);
+      const rl = strArr(i.real_life_examples || i.real_life_applications || i.examples);
+      if (rl.length) pushSection(lines, '8. Real-life Examples and Applications', rl.map((x) => `- ${x}`));
+      const rev = strArr(i.quick_revision_notes || i.revision_checklist || i.quick_review);
+      if (rev.length) pushSection(lines, '9. Quick Revision Notes', rev.map((x) => `- ${x}`));
+      const pqs = Array.isArray(i.practice_questions) ? i.practice_questions : [];
+      if (pqs.length) {
+        lines.push('### 10. Practice Questions (Objective + Subjective)');
+        pqs.forEach((q, idx) => {
+          const row = q && typeof q === 'object' ? q : { question: String(q) };
+          const qType = str(row.type) || 'subjective';
+          lines.push(`${idx + 1}. [${qType}] ${str(row.question)}`);
+          const opts = Array.isArray(row.options) ? row.options : [];
+          opts.forEach((opt, oi) => lines.push(`   ${String.fromCharCode(65 + oi)}) ${str(opt)}`));
+          if (str(row.answer)) lines.push(`   **Answer:** ${str(row.answer)}`);
+        });
+        lines.push('');
+      }
+      const tips = strArr(i.improvement_tips || i.study_tips || i.tips);
+      if (tips.length) pushSection(lines, '11. Tips for Further Improvement', tips.map((x) => `- ${x}`));
       break;
     }
     case 'concept-breakdown-explainer': {
-      lines.push(`## ${str(i.concept_name || i.title) || `Concept ${n}`}`, '');
-      if (str(i.simple_explanation || i.explanation)) {
-        pushSection(lines, '1. Simple Explanation', [str(i.simple_explanation || i.explanation)]);
+      const title = str(i.concept_title || i.concept_name || i.title) || `Concept ${n}`;
+      lines.push(`## ${title}`, '');
+      if (str(i.simple_definition || i.simple_explanation || i.explanation)) {
+        pushSection(lines, '2. Simple Definition', [
+          str(i.simple_definition || i.simple_explanation || i.explanation),
+        ]);
       }
       const steps = strArr(i.breakdown_steps || i.steps);
-      if (steps.length) pushSection(lines, '2. Step-by-step Breakdown', steps.map((x, idx) => `${idx + 1}. ${x}`));
-      const ex = strArr(i.examples);
-      if (ex.length) pushSection(lines, '3. Examples', ex.map((x) => `- ${x}`));
-      const misc = strArr(i.common_misconceptions || i.misconceptions);
-      if (misc.length) pushSection(lines, '4. Common Misconceptions', misc.map((x) => `- ${x}`));
-      const qc = strArr(i.quick_check_questions);
+      if (steps.length) {
+        pushSection(
+          lines,
+          '3. Step-by-step Concept Breakdown',
+          steps.map((x, idx) => `${idx + 1}. ${x}`),
+        );
+      }
+      const ex = strArr(i.real_life_examples || i.examples || i.indian_context_examples);
+      if (ex.length) {
+        pushSection(lines, '4. Real-life and Indian Context Examples', ex.map((x) => `- ${x}`));
+      }
+      const terms = Array.isArray(i.important_terms) ? i.important_terms : [];
+      if (terms.length) {
+        lines.push('### 5. Important Terms and Keywords');
+        terms.forEach((t, idx) => {
+          const row = t && typeof t === 'object' ? t : { term: String(t) };
+          lines.push(
+            `${idx + 1}. **${str(row.term || row.keyword)}**${row.definition ? ` — ${str(row.definition)}` : ''}`,
+          );
+        });
+        lines.push('');
+      }
+      const qc = strArr(i.concept_check_questions || i.quick_check_questions);
       if (qc.length) {
-        lines.push('### 5. Quick Check');
+        lines.push('### 6. Concept Check Questions');
         qc.forEach((q, idx) => lines.push(`${idx + 1}. ${q}`));
         lines.push('');
       }
+      if (str(i.application_thinking_question || i.application_question)) {
+        pushSection(lines, '7. Application-based Thinking Question', [
+          str(i.application_thinking_question || i.application_question),
+        ]);
+      }
+      if (str(i.higher_order_thinking_prompt || i.hots_prompt || i.hots_question)) {
+        pushSection(lines, '8. Higher-order Thinking Prompt', [
+          str(i.higher_order_thinking_prompt || i.hots_prompt || i.hots_question),
+        ]);
+      }
+      if (str(i.quick_revision_summary || i.revision_summary || i.summary)) {
+        pushSection(lines, '9. Quick Revision Summary', [
+          str(i.quick_revision_summary || i.revision_summary || i.summary),
+        ]);
+      }
       break;
     }
-    case 'smart-qa-practice-generator':
+    case 'smart-qa-practice-generator': {
+      if (Array.isArray(i.sections) && i.sections.length) {
+        lines.push(`## ${str(i.title || i.practice_set_title) || `Practice Set ${n}`}`, '');
+        const lo = strArr(i.learning_objectives || i.objectives);
+        if (lo.length) pushSection(lines, '2. Learning Objectives', lo.map((x) => `- ${x}`));
+        if (str(i.instructions)) pushSection(lines, '3. Instructions to Students', [str(i.instructions)]);
+        const sectionOrder = [
+          'Section A: MCQs',
+          'Section B: Fill in the Blanks',
+          'Section C: Match the Following',
+          'Section D: Very Short Answer Questions',
+          'Section E: Short Answer Questions',
+          'Section F: Application / Case-based Questions',
+          'Section G: HOTS / Analytical Questions',
+        ];
+        let secNum = 4;
+        for (const label of sectionOrder) {
+          const sec = i.sections.find(
+            (s) => str(s?.sectionName || s?.name).toLowerCase() === label.toLowerCase(),
+          );
+          const qs = sec ? (Array.isArray(sec.questions) ? sec.questions : []) : [];
+          if (!qs.length) continue;
+          lines.push(`### ${secNum}. ${label}`, '');
+          secNum += 1;
+          for (const q of qs) {
+            const bloom = str(q?.bloom_level);
+            const diff = str(q?.difficulty_tag || q?.difficulty);
+            lines.push(
+              `**Q${q?.question_number || ''}.** ${str(q?.question)}${bloom || diff ? ` _(Bloom: ${bloom || '—'}, Difficulty: ${diff || '—'})_` : ''}`,
+              '',
+            );
+            if (Array.isArray(q?.options) && q.options.length) {
+              q.options.forEach((opt) => lines.push(String(opt)));
+              lines.push('');
+            }
+            if (q?.answer) lines.push(`**Answer:** ${str(q.answer)}`);
+            if (q?.explanation) lines.push(`**Explanation:** ${str(q.explanation)}`);
+            if (q?.marks != null) lines.push(`**Marks:** ${str(q.marks)}`);
+          }
+        }
+        const rl = Array.isArray(i.real_life_problem_solving_questions)
+          ? i.real_life_problem_solving_questions
+          : [];
+        if (rl.length) {
+          lines.push('### 11. Real-life Problem-solving Questions', '');
+          rl.forEach((q, idx) => {
+            const row = q && typeof q === 'object' ? q : { question: String(q) };
+            lines.push(`**Q${idx + 1}.** ${str(row.question)}`);
+            if (str(row.answer)) lines.push(`**Answer:** ${str(row.answer)}`);
+            if (str(row.explanation)) lines.push(`**Explanation:** ${str(row.explanation)}`);
+          });
+          lines.push('');
+        }
+        const ak = str(i.answer_key_with_explanations || i.answer_key);
+        if (ak) pushSection(lines, '12. Answer Key with Explanations', [ak]);
+        break;
+      }
+      if (i.section) lines.push(`**${str(i.section)}**`, '');
+      lines.push(`**Q${i.question_number || n}.** ${str(i.question)}`, '');
+      if (Array.isArray(i.options) && i.options.length) {
+        i.options.forEach((opt) => lines.push(String(opt)));
+        lines.push('');
+      }
+      if (i.answer) lines.push(`**Answer:** ${str(i.answer)}`);
+      if (i.explanation) lines.push(`**Explanation:** ${str(i.explanation)}`);
+      if (i.marks != null) lines.push(`**Marks:** ${str(i.marks)}`);
+      if (str(i.bloom_level)) lines.push(`**Bloom:** ${str(i.bloom_level)}`);
+      if (str(i.difficulty_tag || i.difficulty)) {
+        lines.push(`**Difficulty:** ${str(i.difficulty_tag || i.difficulty)}`);
+      }
+      break;
+    }
     case 'quick-assignment-builder': {
-      const qText = str(i.question);
-      if (qText) {
-        lines.push(`### Q${n}. ${qText}`, '');
-        if (str(i.answer)) pushSection(lines, 'Answer', [str(i.answer)]);
-        if (str(i.step_by_step_answer)) pushSection(lines, 'Step-by-step', [str(i.step_by_step_answer)]);
-        if (str(i.tip)) pushSection(lines, 'Tip', [str(i.tip)]);
-        if (str(i.marks)) pushSection(lines, 'Marks', [String(i.marks)]);
-      } else {
-        lines.push(`## ${str(i.title || i.assignment_title) || `Item ${n}`}`, '');
-        if (str(i.instructions)) pushSection(lines, 'Instructions', [str(i.instructions)]);
-        if (str(i.marking_criteria)) pushSection(lines, 'Marking Criteria', [str(i.marking_criteria)]);
+      const qaTitle = str(i.assignment_title || i.title) || `Assignment ${n}`;
+      lines.push(`## ${qaTitle}`, '');
+      if (qaTitle) pushSection(lines, '1. Assignment Title', [qaTitle]);
+      const lo = strArr(i.learning_objectives || i.objectives);
+      if (lo.length) pushSection(lines, '2. Learning Objectives', lo.map((x) => `- ${x}`));
+      if (str(i.instructions || i.instructions_to_students)) {
+        pushSection(lines, '3. Instructions to Students', [str(i.instructions || i.instructions_to_students)]);
+      }
+      const conceptQs = Array.isArray(i.concept_based_questions)
+        ? i.concept_based_questions
+        : Array.isArray(i.questions)
+          ? i.questions
+          : Array.isArray(i.practice_questions)
+            ? i.practice_questions
+            : [];
+      if (conceptQs.length) {
+        lines.push('### 4. Concept-based Questions');
+        conceptQs.forEach((q, idx) => {
+          const row = q && typeof q === 'object' ? q : { question: String(q) };
+          const marks =
+            row.marks != null && row.marks !== '' ? ` (${String(row.marks)} marks)` : '';
+          lines.push(`${idx + 1}. ${str(row.question)}${marks}`);
+          if (str(row.answer)) lines.push(`   - Answer: ${str(row.answer)}`);
+        });
+        lines.push('');
+      }
+      const app = strArr(i.application_oriented_tasks || i.application_tasks);
+      if (app.length) pushSection(lines, '5. Application-oriented Tasks', app.map((x) => `- ${x}`));
+      const rl = str(i.real_life_competency_activity || i.real_life_activity || i.real_life_observation_task);
+      if (rl) pushSection(lines, '6. Real-life / Competency-based Activity', [rl]);
+      if (str(i.creative_thinking_question)) {
+        pushSection(lines, '7. Creative Thinking Question', [str(i.creative_thinking_question)]);
+      }
+      if (str(i.collaborative_discussion_task || i.discussion_task)) {
+        pushSection(lines, '8. Collaborative / Discussion Task (if suitable)', [
+          str(i.collaborative_discussion_task || i.discussion_task),
+        ]);
+      }
+      if (str(i.challenge_question_advanced || i.challenge_question)) {
+        pushSection(lines, '9. Challenge Question for Advanced Learners', [
+          str(i.challenge_question_advanced || i.challenge_question),
+        ]);
+      }
+      const rubric = str(i.assessment_criteria_rubric || i.marking_criteria || i.marking_scheme);
+      if (rubric) pushSection(lines, '11. Assessment Criteria / Rubric', [rubric]);
+      const outcomes = strArr(i.expected_learning_outcomes || i.learning_outcomes);
+      if (outcomes.length) {
+        pushSection(lines, '13. Expected Learning Outcomes', outcomes.map((x) => `- ${x}`));
       }
       break;
     }
     case 'chapter-summary-creator': {
-      lines.push(`## ${str(i.chapter_title || i.title) || `Chapter ${n}`}`, '');
-      if (str(i.summary || i.chapter_summary)) pushSection(lines, '1. Summary', [str(i.summary || i.chapter_summary)]);
-      const kt = strArr(i.key_takeaways || i.takeaways);
-      if (kt.length) pushSection(lines, '2. Key Takeaways', kt.map((x) => `- ${x}`));
-      const rp = strArr(i.review_points || i.quick_review);
-      if (rp.length) pushSection(lines, '3. Quick Review Points', rp.map((x) => `- ${x}`));
-      break;
-    }
-    case 'key-points-formula-extractor': {
-      lines.push(`## ${str(i.title || i.topic_title) || `Key Points ${n}`}`, '');
-      const kp = strArr(i.key_points || i.key_points_to_remember);
-      if (kp.length) pushSection(lines, '1. Key Points', kp.map((x) => `- ${x}`));
+      const csTitle = str(i.chapter_summary_title || i.chapter_title || i.title) || `Chapter ${n}`;
+      lines.push(`## ${csTitle}`, '');
+      const overview = str(i.chapter_overview || i.overview || i.summary || i.chapter_summary);
+      if (overview) pushSection(lines, '2. Overview of the Chapter', [overview]);
+      const lo = strArr(i.learning_objectives || i.objectives);
+      if (lo.length) pushSection(lines, '3. Learning Objectives', lo.map((x) => `- ${x}`));
+      const concepts = Array.isArray(i.important_concepts)
+        ? i.important_concepts
+        : Array.isArray(i.key_concepts)
+          ? i.key_concepts
+          : [];
+      if (concepts.length) {
+        lines.push('### 4. Important Concepts and Explanations');
+        concepts.forEach((c, idx) => {
+          const row = c && typeof c === 'object' ? c : { name: String(c) };
+          lines.push(`${idx + 1}. **${str(row.name || row.concept)}** — ${str(row.explanation)}`);
+        });
+        lines.push('');
+      }
       const defs = Array.isArray(i.definitions) ? i.definitions : [];
       if (defs.length) {
-        lines.push('### 2. Definitions');
+        lines.push('### 5. Key Definitions and Terms');
         defs.forEach((d, idx) => {
-          const row = d && typeof d === 'object' ? d : { definition: String(d) };
+          const row = d && typeof d === 'object' ? d : { term: String(d) };
           lines.push(`${idx + 1}. **${str(row.term)}** — ${str(row.definition)}`);
         });
         lines.push('');
       }
-      const fm = Array.isArray(i.formulas) ? i.formulas : [];
+      const fm = Array.isArray(i.formulae)
+        ? i.formulae
+        : Array.isArray(i.formulas)
+          ? i.formulas
+          : [];
       if (fm.length) {
-        lines.push('### 3. Formulas');
+        lines.push('### 6. Formulae / Rules / Important Facts');
         fm.forEach((f, idx) => {
           const row = f && typeof f === 'object' ? f : { formula: String(f) };
-          lines.push(`${idx + 1}. ${str(row.name)}: ${str(row.formula)}${row.when_to_use ? ` — ${str(row.when_to_use)}` : ''}`);
+          lines.push(
+            `${idx + 1}. ${str(row.name)}: ${str(row.formula)}${row.note ? ` (${str(row.note)})` : ''}`,
+          );
         });
         lines.push('');
       }
+      if (str(i.concept_connections || i.connections)) {
+        pushSection(lines, '7. Concept Connections', [str(i.concept_connections || i.connections)]);
+      }
+      const rl = strArr(i.real_life_applications || i.applications || i.examples);
+      if (rl.length) pushSection(lines, '8. Real-life Applications', rl.map((x) => `- ${x}`));
+      const exam = strArr(i.important_exam_points || i.exam_points || i.key_takeaways);
+      if (exam.length) pushSection(lines, '9. Important Exam Points', exam.map((x) => `- ${x}`));
+      const rev = strArr(i.quick_revision_notes || i.review_points || i.quick_review);
+      if (rev.length) pushSection(lines, '10. Quick Revision Notes', rev.map((x) => `- ${x}`));
+      const recall = strArr(i.practice_recall_questions || i.recall_questions);
+      if (recall.length) {
+        lines.push('### 11. Practice Recall Questions');
+        recall.forEach((q, idx) => lines.push(`${idx + 1}. ${q}`));
+        lines.push('');
+      }
+      break;
+    }
+    case 'key-points-formula-extractor': {
+      const kpTitle = str(i.topic_title || i.title) || `Key Points ${n}`;
+      lines.push(`## ${kpTitle}`, '');
+      if (kpTitle) pushSection(lines, '1. Topic Title', [kpTitle]);
+      const concepts = Array.isArray(i.important_concepts)
+        ? i.important_concepts
+        : Array.isArray(i.key_concepts)
+          ? i.key_concepts
+          : [];
+      if (concepts.length) {
+        lines.push('### 2. Most Important Concepts');
+        concepts.forEach((c, idx) => {
+          const row = c && typeof c === 'object' ? c : { name: String(c) };
+          lines.push(`${idx + 1}. **${str(row.name || row.concept)}** — ${str(row.explanation)}`);
+        });
+        lines.push('');
+      }
+      const defs = Array.isArray(i.essential_definitions)
+        ? i.essential_definitions
+        : Array.isArray(i.definitions)
+          ? i.definitions
+          : [];
+      if (defs.length) {
+        lines.push('### 3. Essential Definitions');
+        defs.forEach((d, idx) => {
+          const row = d && typeof d === 'object' ? d : { term: String(d) };
+          lines.push(`${idx + 1}. **${str(row.term)}** — ${str(row.definition)}`);
+        });
+        lines.push('');
+      }
+      const fm = Array.isArray(i.formulae) ? i.formulae : Array.isArray(i.formulas) ? i.formulas : [];
+      if (fm.length) {
+        lines.push('### 4. Important Formulae / Rules');
+        fm.forEach((f, idx) => {
+          const row = f && typeof f === 'object' ? f : { formula: String(f) };
+          lines.push(
+            `${idx + 1}. ${str(row.name)}: ${str(row.formula)}${row.note || row.when_to_use ? ` (${str(row.note || row.when_to_use)})` : ''}`,
+          );
+        });
+        lines.push('');
+      }
+      const kw = Array.isArray(i.keywords_terminologies) ? i.keywords_terminologies : [];
+      if (kw.length) {
+        lines.push('### 5. Keywords and Terminologies');
+        kw.forEach((k, idx) => {
+          const row = k && typeof k === 'object' ? k : { term: String(k) };
+          lines.push(`${idx + 1}. **${str(row.term)}** — ${str(row.meaning || row.definition)}`);
+        });
+        lines.push('');
+      }
+      const facts = strArr(i.must_remember_facts || i.key_points || i.key_points_to_remember);
+      if (facts.length) pushSection(lines, '6. Must-remember Facts', facts.map((x) => `- ${x}`));
+      const rl = strArr(i.real_life_connections || i.real_life_applications);
+      if (rl.length) pushSection(lines, '7. Real-life Connections', rl.map((x) => `- ${x}`));
+      const exam = strArr(i.frequently_asked_exam_points || i.exam_points);
+      if (exam.length) pushSection(lines, '8. Frequently Asked Exam Points', exam.map((x) => `- ${x}`));
+      const mn = strArr(i.mnemonics_memory_tricks || i.mnemonics || i.memory_tricks);
+      if (mn.length) pushSection(lines, '9. Mnemonics / Memory Tricks', mn.map((x) => `- ${x}`));
+      const rev = str(i.one_minute_revision_summary || i.revision_summary || i.summary);
+      if (rev) pushSection(lines, '10. One-minute Revision Summary', [rev]);
       break;
     }
     case 'daily-class-plan-maker': {
