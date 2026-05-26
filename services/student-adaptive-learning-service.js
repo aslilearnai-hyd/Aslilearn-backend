@@ -164,6 +164,8 @@ export async function buildAdaptiveLearningPayload(userId) {
   const subjectExamAgg = new Map();
   /** @type {Map<string, { weight: number, lastAt: Date, wrong: number, skip: number }>} */
   const topicWeak = new Map();
+  /** @type {Map<string, number>} subject-level weakness when chapter metadata is missing */
+  const subjectOnlyWeak = new Map();
 
   for (const row of examResults) {
     const completedAt = row.completedAt ? new Date(row.completedAt) : new Date(0);
@@ -190,17 +192,20 @@ export async function buildAdaptiveLearningPayload(userId) {
       const st = String(q.status || '');
       if (st !== 'wrong' && st !== 'not_answered') continue;
       const subj = toSubjectKey(q.subject || 'general');
-      const ch = meaningfulChapterLabel(q.chapter);
-      if (!ch) continue;
       const w = (st === 'wrong' ? 2 : 1) * recency;
-      const tk = `${subj}::${ch.toLowerCase()}`;
-      const prev = topicWeak.get(tk) || { weight: 0, lastAt: completedAt, wrong: 0, skip: 0 };
-      topicWeak.set(tk, {
-        weight: prev.weight + w,
-        lastAt: completedAt > prev.lastAt ? completedAt : prev.lastAt,
-        wrong: prev.wrong + (st === 'wrong' ? 1 : 0),
-        skip: prev.skip + (st === 'not_answered' ? 1 : 0),
-      });
+      const ch = meaningfulChapterLabel(q.chapter);
+      if (ch) {
+        const tk = `${subj}::${ch.toLowerCase()}`;
+        const prev = topicWeak.get(tk) || { weight: 0, lastAt: completedAt, wrong: 0, skip: 0 };
+        topicWeak.set(tk, {
+          weight: prev.weight + w,
+          lastAt: completedAt > prev.lastAt ? completedAt : prev.lastAt,
+          wrong: prev.wrong + (st === 'wrong' ? 1 : 0),
+          skip: prev.skip + (st === 'not_answered' ? 1 : 0),
+        });
+      } else {
+        subjectOnlyWeak.set(subj, (subjectOnlyWeak.get(subj) || 0) + w);
+      }
     }
   }
 
@@ -216,6 +221,9 @@ export async function buildAdaptiveLearningPayload(userId) {
   }
   for (const tk of topicWeak.keys()) {
     weakSubjectKeys.add(tk.split('::')[0]);
+  }
+  for (const [subj, weight] of subjectOnlyWeak) {
+    if (weight >= 2) weakSubjectKeys.add(subj);
   }
 
   if (weakSubjectKeys.size === 0) {
@@ -303,10 +311,13 @@ export async function buildAdaptiveLearningPayload(userId) {
     /** @type {Array<any>} */
     const recommended = [];
 
+    const contentSearchHaystack = (doc) =>
+      `${doc.topic || ''} ${doc.chapter || ''} ${doc.module || ''} ${doc.title || ''} ${doc.description || ''}`.toLowerCase();
+
     const scoreContentAgainstTopic = (doc, label) => {
       const L = label.toLowerCase();
       const parts = L.split(/\s+/).filter((p) => p.length > 2);
-      const hay = `${doc.topic || ''} ${doc.title || ''} ${doc.description || ''}`.toLowerCase();
+      const hay = contentSearchHaystack(doc);
       let s = 0;
       if (hay.includes(L)) s += 5;
       for (const p of parts) {
@@ -346,7 +357,7 @@ export async function buildAdaptiveLearningPayload(userId) {
       const scored = [];
       for (const doc of contentsForSubject) {
         if (used.has(String(doc._id))) continue;
-        const hay = `${doc.topic || ''} ${doc.title || ''}`;
+        const hay = contentSearchHaystack(doc);
         let m = rx.test(hay);
         let sc = m ? 10 + wt.weight : scoreContentAgainstTopic(doc, label);
         if (!m && sc < 3) continue;

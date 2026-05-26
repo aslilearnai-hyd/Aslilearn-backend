@@ -17,9 +17,37 @@ const SUBJECT_GROUP_ALIASES = {
   math: 'maths',
   mathematics: 'maths',
   english: 'english',
+  eng: 'english',
+  hindi: 'hindi',
+  sanskrit: 'sanskrit',
   chem: 'chemistry',
   chemistry: 'chemistry',
+  physics: 'physics',
+  phy: 'physics',
+  science: 'science',
+  sci: 'science',
+  evs: 'science',
+  sst: 'social',
+  social: 'social',
+  'social science': 'social',
+  history: 'social',
+  geography: 'social',
+  civics: 'social',
+  economics: 'social',
+  computer: 'computer',
+  computers: 'computer',
+  cs: 'computer',
+  it: 'computer',
 };
+
+/** Subject bucket for exam grading / adaptive learning (exam doc + question). */
+export function resolveExamQuestionSubjectKey(question = {}, examDoc = null) {
+  const fromQ = question?.subject;
+  const fromExam = examDoc?.subject;
+  const raw = fromQ && String(fromQ).trim() ? fromQ : fromExam;
+  const key = subjectGroupKey(raw || 'general');
+  return key || 'general';
+}
 
 export function subjectGroupKey(name) {
   const plain = extractPlainSubjectNameForContent(name).toLowerCase().trim();

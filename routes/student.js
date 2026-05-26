@@ -38,6 +38,7 @@ import {
   resolveSubjectContentIds,
   resolveSubjectContentIdsMany,
   subjectIdAllowedWithSiblings,
+  resolveExamQuestionSubjectKey,
 } from '../utils/resolveSubjectContentIds.js';
 import {
   buildCachedAnalysisResponse,
@@ -2536,6 +2537,9 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
     }
 
     const examQuestions = safeResult.examId ? await loadExamQuestionBankForResults(safeResult.examId) : [];
+    const examDocForGrading = examIdStr
+      ? await Exam.findById(examIdStr).select('subject title').lean()
+      : null;
 
     const shorten = (value, max = 280) => {
       const text = String(value || '').replace(/\s+/g, ' ').trim();
@@ -2835,7 +2839,7 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
 
     // Only re-grade when there is no saved ExamResult — saved rows are authoritative.
     if (examQuestions.length > 0 && !savedExamResult) {
-      const graded = gradeExamAttemptFromBank(examQuestions, answerMap);
+      const graded = gradeExamAttemptFromBank(examQuestions, answerMap, examDocForGrading);
       safeResult.correctAnswers = graded.correctAnswers;
       safeResult.wrongAnswers = graded.wrongAnswers;
       safeResult.unattempted = graded.unattempted;
@@ -3645,13 +3649,8 @@ function subjectEntriesFromWiseScore(subjectWiseScore) {
 }
 
 /** Server-side grading for analysis — matches POST /exam-results logic. */
-function gradeExamAttemptFromBank(questions, answerMap) {
-  const subjectWiseScore = {
-    maths: { correct: 0, total: 0, marks: 0 },
-    physics: { correct: 0, total: 0, marks: 0 },
-    chemistry: { correct: 0, total: 0, marks: 0 },
-    biology: { correct: 0, total: 0, marks: 0 },
-  };
+function gradeExamAttemptFromBank(questions, answerMap, examDoc = null) {
+  const subjectWiseScore = {};
   let correctAnswers = 0;
   let wrongAnswers = 0;
   let obtainedMarks = 0;
@@ -3662,7 +3661,7 @@ function gradeExamAttemptFromBank(questions, answerMap) {
     const marks = Number(q.marks) || 0;
     const negativeMarks = Number(q.negativeMarks) || 0;
     totalMarks += marks;
-    const subjectKey = String(q.subject || 'maths').toLowerCase();
+    const subjectKey = resolveExamQuestionSubjectKey(q, examDoc);
     if (!subjectWiseScore[subjectKey]) {
       subjectWiseScore[subjectKey] = { correct: 0, total: 0, marks: 0 };
     }
@@ -3794,7 +3793,8 @@ router.post('/exam-results', async (req, res) => {
           marks: Number(q.marks) || 1,
           negativeMarks: Number(q.negativeMarks) || 0,
           explanation: q.explanation || undefined,
-          subject: String(q.subject || 'maths').toLowerCase(),
+          subject: resolveExamQuestionSubjectKey(q, examDoc),
+          chapter: String(q.chapter || q.topic || q.chapterName || '').trim(),
           exam: examId,
         }));
     }
@@ -3805,12 +3805,7 @@ router.post('/exam-results', async (req, res) => {
     let wrongAnswers = 0;
     let obtainedMarks = 0;
     let totalMarks = 0;
-    const subjectWiseScore = {
-      maths: { correct: 0, total: 0, marks: 0 },
-      physics: { correct: 0, total: 0, marks: 0 },
-      chemistry: { correct: 0, total: 0, marks: 0 },
-      biology: { correct: 0, total: 0, marks: 0 },
-    };
+    const subjectWiseScore = {};
 
     effectiveQuestions.forEach((q) => {
       const qId = String(q._id);
@@ -3818,7 +3813,10 @@ router.post('/exam-results', async (req, res) => {
       const marks = Number(q.marks) || 0;
       const negativeMarks = Number(q.negativeMarks) || 0;
       totalMarks += marks;
-      const subjectBucket = subjectWiseScore[q.subject] || (subjectWiseScore[q.subject] = { correct: 0, total: 0, marks: 0 });
+      const subjectKey = resolveExamQuestionSubjectKey(q, examDoc);
+      const subjectBucket =
+        subjectWiseScore[subjectKey] ||
+        (subjectWiseScore[subjectKey] = { correct: 0, total: 0, marks: 0 });
       subjectBucket.total += 1;
 
       if (isAnswerCorrect(q, userAnswer)) {

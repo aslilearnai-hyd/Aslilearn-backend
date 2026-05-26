@@ -1,3 +1,5 @@
+import { subjectGroupKey } from './resolveSubjectContentIds.js';
+
 const DIFFICULTY_ORDER = ['easy', 'moderate', 'difficult', 'highly_difficult'];
 const QUESTION_TYPE_ORDER = [
   'Numerical',
@@ -26,12 +28,11 @@ const toNumber = (value, fallback = 0) => {
   return Number.isFinite(parsed) ? parsed : fallback;
 };
 
-const normalizeSubject = (subject) => {
-  const normalized = String(subject || '').trim().toLowerCase();
-  if (normalized === 'math' || normalized === 'mathematics') return 'maths';
-  if (normalized === 'phy') return 'physics';
-  if (normalized === 'chem') return 'chemistry';
-  return normalized || 'unknown';
+export const normalizeSubject = (subject) => {
+  const raw = String(subject || '').trim();
+  if (!raw) return 'unknown';
+  const key = subjectGroupKey(raw);
+  return key || 'unknown';
 };
 
 export const normalizeDifficulty = (rawDifficulty, fallbackMarks = 1) => {
