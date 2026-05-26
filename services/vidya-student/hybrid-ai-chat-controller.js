@@ -85,6 +85,29 @@ function appOnlyReply(question, facts) {
     return reply.trim() || 'Complete a few more exams and I will be able to show your strongest areas.';
   }
 
+  // ── ALL EXAM RESULTS ──────────────────────────────────────────────────────
+  if (
+    /all\s+(exam|test)|every\s+(exam|test)|all\s+my\s+(exam|test|result)|all\s+exam\s+result/i.test(q) &&
+    /result|exam|test|score|mark/i.test(q)
+  ) {
+    if (!examList.length) {
+      return "I don't have any exam results for you yet. Complete an exam and I'll show you your scores.";
+    }
+    let reply = `📝 **All your recent exam results:**\n`;
+    examList.forEach((e, i) => {
+      const pct = e.percentage != null ? `${e.percentage}%` : 'N/A';
+      const marks =
+        Number(e.obtainedMarks) >= 0 && Number(e.totalMarks) > 0
+          ? ` (${Math.max(0, Number(e.obtainedMarks))}/${e.totalMarks} marks)`
+          : '';
+      reply += `${i + 1}. ${e.examTitle || 'Exam'} — ${pct}${marks}\n`;
+    });
+    if (marks.averagePercentage != null) {
+      reply += `\n📊 **Average across these exams:** ${marks.averagePercentage}%`;
+    }
+    return reply.trim();
+  }
+
   // ── MARKS / SCORE / RESULT queries ────────────────────────────────────────
   if (/mark|score|result|percentage|how (much|many|did)/.test(q)) {
     const latest = examList[0];

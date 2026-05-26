@@ -57,7 +57,36 @@ function validateDbGroundedResponse({ text, facts, userPrompt }) {
   return { ok: true };
 }
 
+function formatOverviewFallback(facts) {
+  const o = facts?.overview && typeof facts.overview === 'object' ? facts.overview : {};
+  const label = String(facts?.schoolLabel || 'Your school').trim();
+  if (facts?.error && !Object.keys(o).length) {
+    return `${facts.error} I could not find matching records in the database.`;
+  }
+  const lines = [`Reports overview for ${label}:`];
+  if (typeof o.students === 'number') lines.push(`Students: ${o.students}.`);
+  if (typeof o.studentsActiveLast7Days === 'number') {
+    lines.push(`Students active in the last 7 days: ${o.studentsActiveLast7Days}.`);
+  }
+  if (typeof o.teachers === 'number') lines.push(`Active teachers: ${o.teachers}.`);
+  if (typeof o.schoolAdmins === 'number') lines.push(`School admins: ${o.schoolAdmins}.`);
+  if (typeof o.classes === 'number') lines.push(`Classes: ${o.classes}.`);
+  if (typeof o.activeExams === 'number') lines.push(`Active exams: ${o.activeExams}.`);
+  if (typeof o.examResultsLast30Days === 'number') {
+    lines.push(`Exam results (last 30 days): ${o.examResultsLast30Days}.`);
+  }
+  if (typeof o.teacherRemarks === 'number') lines.push(`Teacher remarks on file: ${o.teacherRemarks}.`);
+  if (typeof o.loginSessionsToday === 'number') {
+    lines.push(`Student login sessions today (attendance proxy): ${o.loginSessionsToday}.`);
+  }
+  if (lines.length <= 1) return 'I could not find matching records in the database.';
+  return lines.join(' ');
+}
+
 function localFallbackResponse({ userPrompt, facts }) {
+  if (facts?.operation === 'overview') {
+    return formatOverviewFallback(facts);
+  }
   const moduleLabels = {
     students: 'students',
     teachers: 'teachers',
@@ -143,6 +172,10 @@ export async function formatDynamicResponse({
   facts,
   notes = [],
 }) {
+  if (plan?.mode === 'overview' || facts?.operation === 'overview') {
+    return formatOverviewFallback(facts);
+  }
+
   if (plan?.mode === 'knowledge') {
     const prompt = `You are Vidya AI Control. The user asked a knowledge/general question.
 Provide a concise, helpful answer. If this requires live DB values, explicitly ask for the exact metric/module.

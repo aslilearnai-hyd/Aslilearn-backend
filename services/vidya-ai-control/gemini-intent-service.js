@@ -1,5 +1,6 @@
 import geminiService from '../gemini-service.js';
 import { MODULE_REGISTRY } from './module-registry.js';
+import { isReportsOverviewQuery } from './school-overview-facts.js';
 
 function safeJson(raw) {
   let text = String(raw || '').trim();
@@ -21,7 +22,28 @@ const aliasList = Object.entries(MODULE_REGISTRY)
   .map(([k, v]) => `- ${k}: ${[k, ...(v.aliases || [])].join(', ')}`)
   .join('\n');
 
+function buildOverviewPlan(errMessage = '') {
+  return {
+    mode: 'overview',
+    module: '',
+    operation: 'overview',
+    filters: [],
+    selectFields: [],
+    groupBy: [],
+    aggregates: [],
+    sort: [],
+    limit: 20,
+    timeframe: 'all',
+    clarification: '',
+    parseWarning: errMessage ? `gemini_unavailable:${errMessage}` : 'reports_overview_intent',
+  };
+}
+
 function buildHeuristicPlan(message, errMessage = '') {
+  if (isReportsOverviewQuery(message)) {
+    return buildOverviewPlan(errMessage);
+  }
+
   const lower = String(message || '').toLowerCase();
   const classMatch = String(message || '').match(/class\s*(\d+)/i);
   const classNumber = classMatch ? classMatch[1] : '';
@@ -65,16 +87,20 @@ function buildHeuristicPlan(message, errMessage = '') {
   } else if (/(content|generated content|generated|generation|created content)/i.test(lower)) {
     module = 'ai_tool_data';
   } else if (/(notice|notices|announcement|event)/i.test(lower)) {
-  if (module === 'ai_tool_data' && asksOwnGeneratedContent) {
-    filters.push({ field: 'generatedBy', op: 'eq', value: '__viewer__' });
-    filters.push({ field: 'teacherId', op: 'eq', value: '__viewer__' });
-  }
-
     module = 'notices';
+  } else if (/(performance report|analysis report)/i.test(lower)) {
+    module = 'performance_reports';
+  } else if (/(report|reports|remark|remarks)/i.test(lower)) {
+    module = 'reports';
   } else if (/(analytics|audit|logs)/i.test(lower)) {
     module = 'analytics';
   } else if (/(user|users|role|permission)/i.test(lower)) {
     module = 'users';
+  }
+
+  if (module === 'ai_tool_data' && asksOwnGeneratedContent) {
+    filters.push({ field: 'generatedBy', op: 'eq', value: '__viewer__' });
+    filters.push({ field: 'teacherId', op: 'eq', value: '__viewer__' });
   }
 
   const hasExplicitModuleKeyword = module !== 'students' || /(student|students|learner|learners|enrolled)/i.test(lower);
@@ -216,6 +242,9 @@ export async function parseDynamicIntent({
   history = [],
 }) {
   const message = String(userMessage || '').trim();
+  if (isReportsOverviewQuery(message)) {
+    return buildOverviewPlan();
+  }
   const hist = (Array.isArray(history) ? history : []).slice(-8);
   const historyBlock = hist
     .map((m) => `${String(m.role || '').toUpperCase()}: ${String(m.content || '').slice(0, 700)}`)
@@ -270,7 +299,17 @@ ${message.slice(0, 4500)}
     return buildHeuristicPlan(message, '');
   }
 
-  const mode = String(parsed.mode || '').toLowerCase() === 'database' ? 'database' : 'knowledge';
+  if (isReportsOverviewQuery(message)) {
+    return buildOverviewPlan();
+  }
+
+  const parsedMode = String(parsed.mode || '').toLowerCase();
+  const mode =
+    parsedMode === 'overview'
+      ? 'overview'
+      : parsedMode === 'database'
+        ? 'database'
+        : 'knowledge';
   const operation = OPS.includes(String(parsed.operation)) ? String(parsed.operation) : 'list';
   const limit = Math.max(1, Math.min(100, Number(parsed.limit) || 20));
   const timeframe = ['today', 'this_week', 'this_month', 'all'].includes(String(parsed.timeframe))

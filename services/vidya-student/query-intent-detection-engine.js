@@ -47,6 +47,10 @@ const APP_HINTS = [
   'how many exams',
   'exams did i take',
   'exams have i taken',
+  'all exam result',
+  'all exam results',
+  'my exam result',
+  'exam history',
 ];
 
 /**
@@ -74,6 +78,24 @@ const GENERAL_HINTS = [
  * SELF_REFERENCE_PATTERNS — regex patterns that detect "I" / "me" / "my" style
  * self-reference even when not caught by APP_HINTS strings above.
  */
+/**
+ * Student asking for their own exam records (not a textbook "what is exam result?" definition).
+ */
+const EXAM_DATA_PATTERNS = [
+  /\b(all\s+)?(my\s+)?exam\s*results?\b/,
+  /\ball\s+(my\s+)?(exams?|tests?|assessments?)\b/,
+  /\b(my\s+)?(exam|test)\s+(scores?|results?|marks?|performance)\b/,
+  /\b(show|tell|give|list|get)\s+(me\s+)?(all\s+)?(my\s+)?(exam|test)/,
+  /\bhow\s+(many|much)\s+.*\b(exams?|tests?)\b/,
+  /\bwhat\s+(are|is)\s+(all\s+)?(my\s+)?(exam|test)/,
+  /\bexam\s+history\b/,
+  /\bresults?\s+of\s+(all\s+)?(my\s+)?exams?\b/,
+];
+
+function isExamDataQuestion(q) {
+  return EXAM_DATA_PATTERNS.some((re) => re.test(q));
+}
+
 const SELF_REFERENCE_PATTERNS = [
   /\bmy\b/,
   /\bmine\b/,
@@ -99,9 +121,13 @@ export function detectQueryIntent(question) {
 
   const appHint = APP_HINTS.some((s) => q.includes(s));
   const selfRef = SELF_REFERENCE_PATTERNS.some((p) => p.test(q));
+  const examData = isExamDataQuestion(q);
   const generalHint = GENERAL_HINTS.some((s) => q.includes(s));
 
-  const isApp = appHint || selfRef;
+  const isApp = appHint || selfRef || examData;
+
+  // "What is all exam result" = student's scores, not a dictionary definition.
+  if (examData) return { type: 'application', confidence: 0.96 };
 
   // Both personal + conceptual → hybrid
   if (isApp && generalHint) return { type: 'hybrid', confidence: 0.85 };

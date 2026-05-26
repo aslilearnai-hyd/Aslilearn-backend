@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import User from '../../models/User.js';
 import { MODULE_REGISTRY, moduleSchemaFields, resolveModuleKey, scopeFieldsForModule } from './module-registry.js';
 import { istYmd, istWeekDateKeys, istStartOfDayInstant, istEndOfDayInstant } from './ist-time.js';
 
@@ -83,6 +84,21 @@ function toMongoFilter(filters, allowedFields) {
     }
   }
   return mongo;
+}
+
+async function schoolStudentIdsForAdmin(viewerUserId) {
+  const viewerOid = oid(viewerUserId);
+  if (!viewerOid) return [];
+  return User.find({ role: 'student', assignedAdmin: viewerOid }).distinct('_id').catch(() => []);
+}
+
+async function applyReportsAdminScope({ role, viewerUserId, mergedBaseFilter, moduleKey }) {
+  if (role !== 'admin' || moduleKey !== 'reports') return mergedBaseFilter;
+  const studentIds = await schoolStudentIdsForAdmin(viewerUserId);
+  if (!studentIds.length) {
+    return { ...mergedBaseFilter, studentId: { $in: [] } };
+  }
+  return { ...mergedBaseFilter, studentId: { $in: studentIds } };
 }
 
 function adminScopeFilter({ role, viewerUserId, moduleKey, allowedFields }) {
@@ -220,6 +236,12 @@ export async function executeDynamicDbPlan({
   } else if (selfScopeOr.length > 1) {
     mergedBaseFilter = { $and: [mergedBaseFilter, { $or: selfScopeOr }] };
   }
+  mergedBaseFilter = await applyReportsAdminScope({
+    role,
+    viewerUserId,
+    mergedBaseFilter,
+    moduleKey,
+  });
   const basicTimeFiltered = applyTimeframe(mergedBaseFilter, plan.timeframe, allowedFields);
   const merged = applyModuleSpecificTimeframe({
     moduleKey,

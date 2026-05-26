@@ -3885,7 +3885,20 @@ router.post('/exam-results', async (req, res) => {
       const { createPostExamPrompt } = await import('../services/vidya-student/post-exam-trigger-service.js');
       const weakTopics = perQuestionAnalytics
         .filter((q) => q.status === 'wrong' || q.status === 'not_answered')
-        .map((q) => ({ chapter: q.chapter || 'General' }));
+        .map((q) => ({
+          chapter: String(q.chapter || q.topic || '').trim(),
+          subject: String(q.subject || '').trim(),
+          topic: String(q.topic || '').trim(),
+        }));
+      const weakSubjectsFromScore = Object.entries(subjectWiseScore || {})
+        .map(([subject, bucket]) => {
+          const total = Number(bucket?.total) || 0;
+          const correct = Number(bucket?.correct) || 0;
+          if (total === 0) return null;
+          const pct = Math.round((correct / total) * 100);
+          return pct < 70 ? subject : null;
+        })
+        .filter(Boolean);
       await createPostExamPrompt({
         studentId: req.userId,
         examId,
@@ -3893,7 +3906,11 @@ router.post('/exam-results', async (req, res) => {
         examTitle: examTitle || examDoc?.title || 'Exam',
         obtainedMarks,
         totalMarks,
+        percentage,
+        correctAnswers,
+        totalQuestions,
         weakTopics,
+        weakSubjects: weakSubjectsFromScore,
       });
     } catch (proactiveErr) {
       console.warn('Post-exam Vidya proactive trigger failed (non-fatal):', proactiveErr.message);
