@@ -639,10 +639,21 @@ const TEMPLATES = {
     regenerationRules: { mergePolicy: 'merge', allowTemplateRegeneration: true },
     gemini: {
       strictOutputHint:
-        'Flashcard objects: front, back, memory_cue, skill_focus, example_use, peer_prompt, reflection; optional deck_title/title for the set.',
+        'structuredContent MUST include a cards array with at least 5 objects. Each card needs non-empty front and back, plus memory_cue, skill_focus, example_use, peer_prompt, reflection when possible. Optional deck_title at root.',
       pdfExtractSchema: {
         deck_title: 'string',
         title: 'string',
+        cards: [
+          {
+            front: 'string',
+            back: 'string',
+            memory_cue: 'string',
+            skill_focus: 'string',
+            example_use: 'string',
+            peer_prompt: 'string',
+            reflection: 'string',
+          },
+        ],
         front: 'string',
         back: 'string',
         memory_cue: 'string',
@@ -1743,9 +1754,50 @@ export function expandStructuredToFormatItems(toolSlug, structured) {
  * @param {string} toolSlug
  * @param {unknown} structured
  */
+function formatFlashcardDeckEnvelope(items) {
+  const cards = (Array.isArray(items) ? items : [])
+    .map((item) => {
+      const i = item && typeof item === 'object' ? item : {};
+      return {
+        front: str(i.front),
+        back: str(i.back),
+        memory_cue: str(i.memory_cue || i.hint),
+        skill_focus: str(i.skill_focus || i.bloom_level),
+        example_use: str(i.example_use || i.real_life_link),
+        peer_prompt: str(i.peer_prompt),
+        reflection: str(i.reflection || i.reflection_prompt || i.self_check),
+      };
+    })
+    .filter((c) => c.front && c.back);
+
+  if (!cards.length) return '';
+
+  const formattedBlocks = cards.map((card, idx) => {
+    const extra = [
+      card.memory_cue ? `**Memory Cue:** ${card.memory_cue}` : '',
+      card.skill_focus ? `**Skill Focus:** ${card.skill_focus}` : '',
+      card.example_use ? `**Example Use:** ${card.example_use}` : '',
+      card.peer_prompt ? `**Peer Prompt:** ${card.peer_prompt}` : '',
+      card.reflection ? `**Reflection:** ${card.reflection}` : '',
+    ]
+      .filter(Boolean)
+      .join('\n\n');
+    const header = cards.length > 1 ? `## Card ${idx + 1}\n\n` : '';
+    return `${header}**Front:** ${card.front}\n\n**Back:** ${card.back}${extra ? `\n\n${extra}` : ''}`;
+  });
+
+  return JSON.stringify({
+    formatted: formattedBlocks.join('\n\n---\n\n'),
+    raw: { cards, flashcards: cards },
+  });
+}
+
 export function formatStructuredToolOutput(toolSlug, structured) {
   const items = expandStructuredToFormatItems(toolSlug, structured);
   if (!items.length) return '';
+  if (toolSlug === 'flashcard-generator') {
+    return formatFlashcardDeckEnvelope(items);
+  }
   return items
     .map((item, idx) => formatItemToContentFromTemplate(toolSlug, item, idx))
     .filter(Boolean)

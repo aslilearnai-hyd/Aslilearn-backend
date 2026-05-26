@@ -716,6 +716,16 @@ router.post(
       if (!toolType || !String(toolType).trim()) {
         return res.status(400).json({ success: false, message: 'toolType is required' });
       }
+      const resolvedToolSlugEarly = String(toolType || '').trim();
+      if (resolvedToolSlugEarly === 'story-passage-creator') {
+        const { isStoryPassageAllowedSubject, STORY_PASSAGE_SUBJECT_ERROR } = await import(
+          '../utils/story-passage-subject.js'
+        );
+        const subjectCheck = String(req.body.subjectLabel || req.body.subject || '').trim();
+        if (!isStoryPassageAllowedSubject(subjectCheck)) {
+          return res.status(400).json({ success: false, message: STORY_PASSAGE_SUBJECT_ERROR });
+        }
+      }
       if (isDeprecatedAiToolIdentifier(toolType)) {
         return res.status(400).json({
           success: false,

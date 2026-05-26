@@ -351,11 +351,17 @@ export const createTeacherTool = async (req, res) => {
       });
     }
     
-    if (toolType === 'story-passage-creator' && normalizedSubject !== 'English' && normalizedSubject !== 'Hindi') {
-      return res.status(400).json({
-        success: false,
-        message: 'Story & Passage Creator is only available for English and Hindi subjects.'
-      });
+    if (toolType === 'story-passage-creator') {
+      const { canonicalStoryPassageSubject, STORY_PASSAGE_SUBJECT_ERROR } = await import(
+        '../utils/story-passage-subject.js'
+      );
+      const storySubject = canonicalStoryPassageSubject(normalizedSubject || subject);
+      if (!storySubject) {
+        return res.status(400).json({
+          success: false,
+          message: STORY_PASSAGE_SUBJECT_ERROR,
+        });
+      }
     }
     
     const finalSubject = normalizedSubject;

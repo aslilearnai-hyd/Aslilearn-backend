@@ -245,6 +245,18 @@ export async function generateAndSaveContent(req, res) {
       });
     }
 
+    if (toolSlug === 'story-passage-creator') {
+      const { canonicalStoryPassageSubject, STORY_PASSAGE_SUBJECT_ERROR } = await import(
+        '../utils/story-passage-subject.js'
+      );
+      if (!canonicalStoryPassageSubject(subjectName)) {
+        return res.status(400).json({
+          success: false,
+          message: STORY_PASSAGE_SUBJECT_ERROR,
+        });
+      }
+    }
+
     const extraParams = req.body.extraParams || {};
     const { generatedContent, structuredContent, contentType } =
       await generateStructuredContentForAiGenerator(toolSlug, {

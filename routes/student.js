@@ -4818,6 +4818,18 @@ router.post('/ai/tool', async (req, res) => {
       });
     }
     
+    if (toolType === 'story-passage-creator') {
+      const { canonicalStoryPassageSubject, STORY_PASSAGE_SUBJECT_ERROR } = await import(
+        '../utils/story-passage-subject.js'
+      );
+      if (!canonicalStoryPassageSubject(normalizedSubject || subject)) {
+        return res.status(400).json({
+          success: false,
+          message: STORY_PASSAGE_SUBJECT_ERROR,
+        });
+      }
+    }
+
     // Use normalized subject for processing
     const finalSubject = normalizedSubject;
     const classNum = isIIT6 ? classNumber : parseInt(classNumber);

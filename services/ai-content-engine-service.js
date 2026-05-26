@@ -1403,21 +1403,73 @@ export function canonicalizeFlashcardExtractedItem(raw) {
   return normalizeFlashcardCard(raw);
 }
 
+/** Deck shape for validation / AI Generator (cards[] with front + back on every card). */
+export function normalizeFlashcardDeckStructuredContent(raw) {
+  const source =
+    raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
+  const deck_title = String(source.deck_title || source.title || '').trim();
+
+  const fromList = (list) =>
+    (Array.isArray(list) ? list : [])
+      .map((c) => normalizeFlashcardCard(c))
+      .filter((c) => String(c.front || '').trim() && String(c.back || '').trim());
+
+  let cards = [];
+  if (Array.isArray(source.cards)) {
+    cards = fromList(source.cards);
+  } else if (Array.isArray(source.flashcards)) {
+    cards = fromList(source.flashcards);
+  } else if (Array.isArray(raw)) {
+    cards = fromList(raw);
+  } else {
+    const grouped = source.flashcards;
+    if (grouped && typeof grouped === 'object' && !Array.isArray(grouped)) {
+      const g = grouped;
+      for (const q of Array.isArray(g.questions) ? g.questions : []) {
+        const c = normalizeFlashcardCard(q);
+        if (c.front && c.back) cards.push(c);
+      }
+      for (const n of Array.isArray(g.important_notes) ? g.important_notes : []) {
+        if (n && typeof n === 'object') {
+          const title = String(n.title || '').trim();
+          const content = String(n.content || '').trim();
+          if (title && content) {
+            cards.push(
+              normalizeFlashcardCard({ front: title, back: content, type: 'note' }),
+            );
+          }
+        }
+      }
+      for (const f of Array.isArray(g.facts) ? g.facts : []) {
+        const fact = String((f && typeof f === 'object' ? f.fact : f) || '').trim();
+        if (fact) {
+          cards.push(
+            normalizeFlashcardCard({ front: 'Quick fact', back: fact, type: 'fact' }),
+          );
+        }
+      }
+    }
+    const single = normalizeFlashcardCard(source);
+    if (single.front && single.back) {
+      cards = [single];
+    }
+  }
+
+  return {
+    ...source,
+    deck_title: deck_title || undefined,
+    title: deck_title || String(source.title || '').trim() || undefined,
+    cards,
+  };
+}
+
 /** Viewer payload for Flashcard Generator (PDF extract or generator). */
 export function buildFlashcardRenderableFromStructured(source) {
-  const src = source && typeof source === 'object' && !Array.isArray(source) ? source : {};
-  const cardsFromArray = Array.isArray(src.cards)
-    ? src.cards.map((c) => normalizeFlashcardCard(c)).filter((c) => c.front && c.back)
-    : [];
-  const row = normalizeFlashcardCard(src);
-  const cards = cardsFromArray.length
-    ? cardsFromArray
-    : row.front && row.back
-      ? [row]
-      : [];
-  const deckTitle = String(
-    src.deck_title || row.deck_title || src.title || 'Flashcards',
-  ).trim();
+  const normalized = normalizeFlashcardDeckStructuredContent(
+    source && typeof source === 'object' && !Array.isArray(source) ? source : {},
+  );
+  const cards = normalized.cards || [];
+  const deckTitle = String(normalized.deck_title || normalized.title || 'Flashcards').trim();
   return {
     kind: 'flashcards',
     title: deckTitle,
@@ -2743,6 +2795,9 @@ const normalizeStructuredContentByTool = (toolSlug, structuredContent, contentTy
       normalizedStructuredContent: normalizePracticeQaStructuredContent(source, sourceText),
     };
   }
+  if (toolSlug === 'flashcard-generator') {
+    return { normalizedStructuredContent: normalizeFlashcardDeckStructuredContent(source) };
+  }
   return { normalizedStructuredContent: source };
 };
 
@@ -3797,6 +3852,8 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
         structuredContent = normalizeLessonPlannerStructuredContent(structuredContent, slug);
       } else if (slug === 'activity-project-generator') {
         structuredContent = finalizeActivityStructuredContent(structuredContent, meta);
+      } else if (slug === 'flashcard-generator') {
+        structuredContent = normalizeFlashcardDeckStructuredContent(structuredContent);
       }
 
       const contentType = normalizeContentType(json.contentType || defaultContentType);
