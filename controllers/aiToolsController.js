@@ -385,6 +385,7 @@ export const createTeacherTool = async (req, res) => {
       topic: topicForStore,
       subtopic: subtopicForStore,
       toolName: toolType,
+      preferLatest: true,
     });
     if (cachedDoc) {
       const cachedContent = String(cachedDoc.generatedContent || cachedDoc.content || '').trim();
@@ -477,6 +478,7 @@ export const getGeneratedContent = async (req, res) => {
       topic,
       subtopic: subTopic,
       toolName: toolType,
+      preferLatest: true,
     });
 
     if (matchedDoc) {

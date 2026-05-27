@@ -142,6 +142,7 @@ export async function fetchRotatingAiToolData({
   topic,
   subtopic,
   toolName = '',
+  preferLatest = false,
 }) {
   const normalizedTopic = normalize(topic);
   const normalizedSubtopic = normalize(subtopic);
@@ -168,6 +169,15 @@ export async function fetchRotatingAiToolData({
   }
 
   const selectByRotation = async (docs, matchType, keyToolName = normalizedTool) => {
+    if (preferLatest) {
+      const latestIdx = Math.max(0, docs.length - 1);
+      return {
+        doc: docs[latestIdx] || docs[0],
+        matchType: `${matchType}-latest`,
+        totalCandidates: docs.length,
+        selectedIndex: latestIdx,
+      };
+    }
     const key = rotationKey({
       classLabel,
       subject,
@@ -211,6 +221,14 @@ export async function fetchRotatingAiToolData({
     });
 
     if (fuzzyMatches.length > 0) {
+      if (preferLatest) {
+        return {
+          doc: fuzzyMatches[0],
+          matchType: `${base.matchType}-latest`,
+          totalCandidates: fuzzyMatches.length,
+          selectedIndex: 0,
+        };
+      }
       return selectByRotation(fuzzyMatches, base.matchType, base.keyTool);
     }
   }

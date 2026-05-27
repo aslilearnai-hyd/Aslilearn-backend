@@ -197,7 +197,7 @@ const TEMPLATES = {
     regenerationRules: { mergePolicy: 'replace', allowTemplateRegeneration: true },
     gemini: {
       strictOutputHint:
-        'Prefer ONE JSON object per full worksheet: title, learning_objectives[], instructions, sections[{sectionName,questions[]}], answer_key, bloom_level, difficulty_tag. Flat rows: question_number, type, section, question, options[], answer, marks.',
+        'Return ONE JSON object per worksheet using strict section-wise format only: title, learning_objectives[], instructions, sections[{sectionName,questions[]}], answer_key, bloom_level, difficulty_tag. Sections MUST be exactly Section A (MCQs), B (Fill in the Blanks), C (Very Short Answer), D (Short Answer), E (Competency/Real-life). Do not merge sections, do not skip headings, and keep each question under its correct section. Flat rows (fallback): question_number, type, section, question, options[], answer, marks.',
       pdfExtractSchema: {
         title: 'string',
         worksheet_title: 'string',
@@ -260,7 +260,7 @@ const TEMPLATES = {
     regenerationRules: { mergePolicy: 'merge', allowTemplateRegeneration: true },
     gemini: {
       strictOutputHint:
-        'Return concept objects with all 12 canonical sections mapped; use concept_name + lesson (explanation) at minimum; populate arrays where applicable.',
+        'Return structuredContent as { "concepts": [ { ...one or more concept objects with all 12 canonical sections } ] }. Use concept_name + lesson (step-by-step explanation) at minimum for each concept; populate list fields where applicable.',
       pdfExtractSchema: {
         concept_name: 'string',
         simple_definition: 'string',
@@ -276,6 +276,26 @@ const TEMPLATES = {
         hots_question: 'string',
         self_reflection_prompt: 'string',
         difficulty: 'string',
+      },
+      /** AI Generator prompt schema (topic + sub-topic only — no separate concept field). */
+      generatorStructuredSchema: {
+        concepts: [
+          {
+            concept_name: 'string — use the selected sub-topic (or topic if no sub-topic)',
+            simple_definition: 'string',
+            why_important: 'string',
+            prior_knowledge_needed: 'string',
+            lesson: 'string — step-by-step explanation for that sub-topic',
+            diagram_suggestion: 'string',
+            real_example: 'string',
+            common_mistakes: ['string'],
+            concept_check_questions: ['string'],
+            key_points: ['string'],
+            exam_tips: 'string',
+            hots_question: 'string',
+            self_reflection_prompt: 'string',
+          },
+        ],
       },
     },
     sectionFallbackRules: [{ ifEmpty: ['lesson'], use: ['summary', 'description'] }],
@@ -1569,7 +1589,7 @@ export function buildAiGeneratorStructuredPrompt(toolSlug, params = {}) {
   const t = getAiToolTemplate(slug);
   if (!t) throw new Error(`Unknown AI tool: ${toolSlug}`);
 
-  const schema = t.gemini?.pdfExtractSchema || {};
+  const schema = t.gemini?.generatorStructuredSchema || t.gemini?.pdfExtractSchema || {};
   const strictHint = t.gemini?.strictOutputHint || '';
   const headings = (t.canonicalHeadings || [])
     .map((h) => `${h.order}. ${h.label}`)
@@ -1620,6 +1640,7 @@ The structuredContent object MUST match this JSON schema (field names and types 
 ${JSON.stringify(schema, null, 2)}
 
 For tools that produce multiple worksheet questions, exam items, or flashcards, put them in the arrays defined by the schema (e.g. questions[], sections[].questions[], cards[]).
+For Concept Mastery Helper there is NO separate "concept" form field — use the SUBTOPIC (and TOPIC) from context as concept_name. structuredContent MUST be { "concepts": [ { ... } ] } with at least one filled concept object for that sub-topic.
 For Activity & Project Generator, fill ALL 13 canonical fields in one structuredContent object.`;
 }
 
@@ -1911,6 +1932,43 @@ export function getSectionFallbackRules(toolSlug) {
 
 const str = (v) => (v == null ? '' : String(v).trim());
 const strArr = (v) => (Array.isArray(v) ? v.map((x) => str(x)).filter(Boolean) : []);
+const WORKSHEET_SECTION_SEQUENCE = [
+  'Section A: MCQs',
+  'Section B: Fill in the Blanks',
+  'Section C: Very Short Answer Questions',
+  'Section D: Short Answer Questions',
+  'Section E: Competency / Real-life Application Questions',
+];
+
+function canonicalWorksheetSectionName(name) {
+  const n = String(name || '').trim();
+  if (/^section\s*a|mcq|multiple\s*choice/i.test(n)) return WORKSHEET_SECTION_SEQUENCE[0];
+  if (/^section\s*b|fill|blank|fib/i.test(n)) return WORKSHEET_SECTION_SEQUENCE[1];
+  if (/^section\s*c|very\s*short|vsa/i.test(n)) return WORKSHEET_SECTION_SEQUENCE[2];
+  if (/^section\s*d|short\s*answer/i.test(n) && !/very/i.test(n)) return WORKSHEET_SECTION_SEQUENCE[3];
+  if (/^section\s*[ef]|competency|real[\s-]*life|application/i.test(n)) {
+    return WORKSHEET_SECTION_SEQUENCE[4];
+  }
+  return n || 'Section';
+}
+
+function normalizeWorksheetAnswerKeyLines(answerKey) {
+  const raw = str(answerKey);
+  if (!raw) return [];
+  if (raw.includes('\n')) {
+    return raw
+      .split('\n')
+      .map((line) => line.trim())
+      .filter(Boolean);
+  }
+  const parts = raw
+    .replace(/\s+/g, ' ')
+    .split(/(?=\s*\d+\.\s+)/g)
+    .map((line) => line.trim())
+    .filter(Boolean);
+  if (parts.length >= 2) return parts;
+  return [raw];
+}
 
 function pushSection(lines, title, bodyLines) {
   lines.push(`### ${title}`, ...bodyLines, '');
@@ -1971,20 +2029,32 @@ export function formatItemLinesFromTemplate(toolSlug, item, index = 0) {
         const lo = strArr(i.learning_objectives || i.objectives);
         if (lo.length) pushSection(lines, '2. Learning Objectives', lo.map((x) => `- ${x}`));
         if (str(i.instructions)) pushSection(lines, '3. Instructions to Students', [str(i.instructions)]);
+        const byName = new Map();
         for (const sec of i.sections) {
-          const secName = str(sec?.sectionName || sec?.name || 'Section');
-          lines.push(`### ${secName}`, '');
-          for (const q of Array.isArray(sec?.questions) ? sec.questions : []) {
-            lines.push(`**Q${q?.question_number || ''}.** ${str(q?.question)}`, '');
+          const secName = canonicalWorksheetSectionName(sec?.sectionName || sec?.name || 'Section');
+          if (!byName.has(secName)) byName.set(secName, []);
+          const prev = byName.get(secName);
+          prev.push(...(Array.isArray(sec?.questions) ? sec.questions : []));
+          byName.set(secName, prev);
+        }
+        let runningQNumber = 1;
+        WORKSHEET_SECTION_SEQUENCE.forEach((secName, idx) => {
+          const sectionQuestions = byName.get(secName) || [];
+          lines.push(`### ${idx + 4}. ${secName}`, '');
+          for (const q of sectionQuestions) {
+            const qNum = Number(q?.question_number || 0) > 0 ? Number(q.question_number) : runningQNumber;
+            lines.push(`**Q${qNum}.** ${str(q?.question)}`, '');
             if (Array.isArray(q?.options) && q.options.length) {
               q.options.forEach((opt) => lines.push(String(opt)));
               lines.push('');
             }
             if (q?.answer) lines.push(`**Answer:** ${str(q.answer)}`);
             if (q?.marks != null) lines.push(`**Marks:** ${str(q.marks)}`);
+            runningQNumber += 1;
           }
-        }
-        if (str(i.answer_key)) pushSection(lines, '9. Answer Key', [str(i.answer_key)]);
+        });
+        const answerKeyLines = normalizeWorksheetAnswerKeyLines(i.answer_key);
+        if (answerKeyLines.length) pushSection(lines, '9. Answer Key', answerKeyLines);
         const bloom = [str(i.bloom_level), str(i.difficulty_tag || i.difficulty)].filter(Boolean).join(' — ');
         if (bloom) pushSection(lines, "10. Bloom's Level and Difficulty Tag", [bloom]);
         break;
@@ -2084,8 +2154,8 @@ export function formatItemLinesFromTemplate(toolSlug, item, index = 0) {
       const tl = strArr(i.timeline || i.schedule);
       if (closure || tl.length) {
         const body = closure
-          ? [closure, ...(tl.length ? ['', '**Period / time cues:**', ...tl.map((x) => `- ${x}`)] : [])]
-          : tl.map((x) => `- ${x}`);
+          ? [closure, ...(tl.length ? ['', 'Period / time cues:', ...tl] : [])]
+          : tl;
         pushSection(lines, '14. Closure / Exit Ticket', body);
       }
       break;

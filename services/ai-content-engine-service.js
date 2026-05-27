@@ -371,7 +371,11 @@ export function normalizeConceptStructuredContent(raw) {
       '',
   ).trim();
   const simpleDefinition = String(
-    source.simple_definition || source.definition || source.intro || '',
+    source.simple_definition ||
+      source.simple_explanation ||
+      source.definition ||
+      source.intro ||
+      '',
   ).trim();
   return {
     ...source,
@@ -406,6 +410,127 @@ export function normalizeConceptStructuredContent(raw) {
 
 export function canonicalizeConceptExtractedItem(raw) {
   return normalizeConceptStructuredContent(raw);
+}
+
+function conceptRowHasBody(row) {
+  if (!row || typeof row !== 'object') return false;
+  const name = String(row.concept_name || row.title || row.name || '').trim();
+  const lesson = String(
+    row.lesson ||
+      row.explanation ||
+      row.step_by_step_explanation ||
+      row.content ||
+      row.simple_explanation ||
+      '',
+  ).trim();
+  const definition = String(row.simple_definition || row.definition || row.intro || '').trim();
+  const keyPoints = toStringList(row.key_points || row.keyPoints || row.takeaways);
+  const checks = toStringList(row.concept_check_questions || row.check_questions);
+  return (
+    Boolean(name) ||
+    lesson.length > 12 ||
+    definition.length > 8 ||
+    keyPoints.length > 0 ||
+    checks.length > 0
+  );
+}
+
+/** Concept Mastery deck: always `{ concepts: [...] }` for validation, storage, and viewers. */
+export function normalizeConceptMasteryDeckStructuredContent(raw) {
+  const source = raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
+  let rows = [];
+
+  if (Array.isArray(source.concepts) && source.concepts.length) {
+    rows = source.concepts;
+  } else if (Array.isArray(source.items) && source.items.length) {
+    rows = source.items;
+  } else if (conceptRowHasBody(source)) {
+    rows = [source];
+  }
+
+  const rootKeyPoints = toStringList(source.key_points || source.keyPoints);
+  let concepts = rows
+    .filter((row) => row && typeof row === 'object')
+    .map((row) => normalizeConceptStructuredContent(row))
+    .filter(conceptRowHasBody);
+
+  if (!concepts.length && conceptRowHasBody(source)) {
+    concepts = [normalizeConceptStructuredContent(source)];
+  }
+
+  if (rootKeyPoints.length && concepts.length) {
+    concepts = [
+      {
+        ...concepts[0],
+        key_points: dedupeStringList([...toStringList(concepts[0].key_points), ...rootKeyPoints]),
+      },
+      ...concepts.slice(1),
+    ];
+  }
+
+  const { concepts: _drop, items: _items, key_points: _kp, keyPoints: _kP, ...rest } = source;
+  return { ...rest, concepts };
+}
+
+/** Scaffold one concept from topic + sub-topic when the model returns empty JSON. */
+function buildCurriculumBackedConceptFallback(meta = {}) {
+  const subTopic = String(meta.subTopic || meta.subtopic || '').trim();
+  const topic = String(meta.topic || meta.chapter || '').trim();
+  const subject = String(meta.subject || 'this subject').trim();
+  const classLabel = String(meta.classLabel || meta.gradeLevel || 'the class').trim();
+  const conceptName = subTopic || topic || `${subject} concept`;
+  const focus = subTopic && topic ? `${topic} — ${subTopic}` : subTopic || topic;
+  return {
+    concepts: [
+      normalizeConceptStructuredContent({
+        concept_name: conceptName,
+        simple_definition: `A clear introduction to ${conceptName} as part of ${focus} in ${subject}.`,
+        why_important: `Mastering ${conceptName} helps ${classLabel} learners understand ${focus} for class tests and applications.`,
+        prior_knowledge_needed: `Familiarity with the main ideas from ${topic || 'the previous unit'}.`,
+        lesson: `Explain ${conceptName} step by step: definition, one labelled diagram, a worked example, and a short class discussion tied to ${focus}. Align examples to the NCERT/CBSE treatment of ${subject} for ${classLabel}.`,
+        diagram_suggestion: `Labelled diagram or concept map for ${conceptName} (components, flow, or cause–effect as appropriate).`,
+        real_example: `One everyday or Indian-context example that illustrates ${conceptName}.`,
+        common_mistakes: [
+          `Mixing up terms related to ${conceptName}`,
+          'Skipping units, labels, or direction arrows in diagrams',
+        ],
+        concept_check_questions: [
+          `Define ${conceptName} in your own words.`,
+          `Give one example of ${conceptName} from daily life.`,
+        ],
+        key_points: [
+          `Sub-topic focus: ${conceptName}`,
+          focus ? `Chapter context: ${focus}` : '',
+        ].filter(Boolean),
+        exam_tips: `Use precise vocabulary for ${conceptName}; practice one 3-mark explanation outline.`,
+        hots_question: `How would you apply ${conceptName} to solve a new problem?`,
+        self_reflection_prompt: `What part of ${conceptName} do you still find confusing?`,
+      }),
+    ],
+  };
+}
+
+export function finalizeConceptMasteryStructuredContent(structuredContent, meta = {}) {
+  const raw =
+    structuredContent && typeof structuredContent === 'object' && !Array.isArray(structuredContent)
+      ? structuredContent
+      : {};
+  let deck = normalizeConceptMasteryDeckStructuredContent(raw);
+  if (!Array.isArray(deck.concepts) || !deck.concepts.length) {
+    const fallback = buildCurriculumBackedConceptFallback(meta);
+    deck = normalizeConceptMasteryDeckStructuredContent({ ...deck, ...fallback });
+  } else if (deck.concepts.length === 1 && meta.subTopic) {
+    const only = deck.concepts[0];
+    const name = String(only.concept_name || only.title || '').trim();
+    const sub = String(meta.subTopic || meta.subtopic || '').trim();
+    if (!name || /^concept$/i.test(name)) {
+      deck = normalizeConceptMasteryDeckStructuredContent({
+        ...deck,
+        concepts: [{ ...only, concept_name: sub || name || 'Concept' }],
+      });
+    }
+  }
+  return deck;
 }
 
 /** Concept Breakdown Explainer → 9-section template. */
@@ -1523,6 +1648,14 @@ const WORKSHEET_SECTION_LABELS = {
   E: 'Section E: Competency / Real-life Application Questions',
 };
 
+function isLikelyWorksheetCompetencyQuestion(text) {
+  const q = String(text || '').trim();
+  if (!q) return false;
+  return /(?:real[\s-]*life|application|competency|case[\s-]*based|scenario|daily\s+life|at\s+home|in\s+school|how\s+would\s+you|what\s+would\s+you\s+do|design|plan|investigate|experiment|observe|compare)/i.test(
+    q,
+  );
+}
+
 function inferWorksheetSectionLabel(sectionRaw, question = {}) {
   const s = String(sectionRaw || '').trim();
   const t = String(question.type || '').trim().toUpperCase();
@@ -1546,7 +1679,18 @@ function inferWorksheetSectionLabel(sectionRaw, question = {}) {
   if (s && s !== 'Questions') return remapLegacyWorksheetSectionName(s);
   if (Array.isArray(question.options) && question.options.length >= 2) return WORKSHEET_SECTION_LABELS.A;
   if (/_{2,}/.test(String(question.question || ''))) return WORKSHEET_SECTION_LABELS.B;
-  if (/competency|real[\s-]*life|application/i.test(String(question.question || ''))) {
+  if (
+    /competency|real[\s-]*life|application|case[\s-]*based|scenario/i.test(
+      String(question.question || ''),
+    )
+  ) {
+    return WORKSHEET_SECTION_LABELS.E;
+  }
+  if (
+    /(?:imagine|suppose|consider|how would you|what would you do|in your daily life|around you|at home|in school)\b/i.test(
+      String(question.question || ''),
+    )
+  ) {
     return WORKSHEET_SECTION_LABELS.E;
   }
   const qText = String(question.question || '').trim();
@@ -1569,6 +1713,25 @@ function remapLegacyWorksheetSectionName(sectionName) {
   if (n === 'Section E: Long Answer / Case-based Questions') return WORKSHEET_SECTION_LABELS.D;
   if (n === 'Section F: Competency / Real-life Application Questions') return WORKSHEET_SECTION_LABELS.E;
   return n;
+}
+
+function normalizeWorksheetAnswerKeyText(text) {
+  const raw = String(text || '').trim();
+  if (!raw) return '';
+  if (raw.includes('\n')) {
+    return raw
+      .split('\n')
+      .map((line) => line.trim())
+      .filter(Boolean)
+      .join('\n');
+  }
+  const compact = raw.replace(/\s+/g, ' ').trim();
+  const parts = compact
+    .split(/(?=\s*\d+\.\s+)/g)
+    .map((x) => String(x || '').trim())
+    .filter(Boolean);
+  if (parts.length >= 2) return parts.join('\n');
+  return compact;
 }
 
 /** Group flat worksheet rows by section label (A–E). */
@@ -1606,6 +1769,19 @@ export function groupQuestionsIntoWorksheetSections(questions = []) {
       questions: qs,
       count: qs.length,
     });
+  }
+  const sectionD = sections.find((s) => s.sectionName === WORKSHEET_SECTION_LABELS.D);
+  const sectionE = sections.find((s) => s.sectionName === WORKSHEET_SECTION_LABELS.E);
+  if (sectionD && sectionE && sectionE.questions.length === 0 && sectionD.questions.length > 0) {
+    const candidateIdx = sectionD.questions.findIndex((q) =>
+      isLikelyWorksheetCompetencyQuestion(q.question),
+    );
+    if (candidateIdx >= 0) {
+      const [moved] = sectionD.questions.splice(candidateIdx, 1);
+      sectionE.questions.push({ ...moved, section: WORKSHEET_SECTION_LABELS.E });
+      sectionD.count = sectionD.questions.length;
+      sectionE.count = sectionE.questions.length;
+    }
   }
   return sections;
 }
@@ -1679,8 +1855,20 @@ export function normalizeWorksheetStructuredContent(raw, sourceText = '') {
   for (const [key, label] of sectionKeys) {
     const block = source[key];
     if (!block) continue;
-    if (Array.isArray(block)) {
-      looseQuestions.push(...toQuestionArray(block).map((q) => ({ ...q, section: q.section || label })));
+    const blockQuestions = Array.isArray(block)
+      ? toQuestionArray(block)
+      : toQuestionArray(
+          (block && typeof block === 'object' && !Array.isArray(block)
+            ? block.questions || block.items || block.data
+            : block) || [],
+        );
+    if (blockQuestions.length) {
+      looseQuestions.push(
+        ...blockQuestions.map((q) => ({
+          ...q,
+          section: q.section || q.sectionName || label,
+        })),
+      );
     }
   }
 
@@ -1694,6 +1882,11 @@ export function normalizeWorksheetStructuredContent(raw, sourceText = '') {
     source.exerciseQuestions,
     source.exercises,
     source.items,
+    source.application_questions,
+    source.real_life_questions,
+    source.real_life_problem_solving_questions,
+    source.competency_questions,
+    source.case_based_questions,
   ];
   for (const pool of flatPools) {
     looseQuestions.push(...toQuestionArray(pool));
@@ -1712,7 +1905,7 @@ export function normalizeWorksheetStructuredContent(raw, sourceText = '') {
     (sec.questions || []).map((q) => ({ ...q, section: q.section || sec.sectionName })),
   );
 
-  let answerKeyOut = answer_key;
+  let answerKeyOut = normalizeWorksheetAnswerKeyText(answer_key);
   if (!answerKeyOut && questions.length) {
     const lines = [];
     for (const q of questions) {
@@ -1721,7 +1914,7 @@ export function normalizeWorksheetStructuredContent(raw, sourceText = '') {
         lines.push(`${n}: ${q.answer}`);
       }
     }
-    if (lines.length) answerKeyOut = lines.join('\n');
+    if (lines.length) answerKeyOut = normalizeWorksheetAnswerKeyText(lines.join('\n'));
   }
 
   return {
@@ -2753,7 +2946,7 @@ const normalizeStructuredContentByTool = (toolSlug, structuredContent, contentTy
     return { normalizedStructuredContent: normalizeDailyClassPlanStructuredContent(source) };
   }
   if (toolSlug === 'concept-mastery-helper') {
-    return { normalizedStructuredContent: normalizeConceptStructuredContent(source) };
+    return { normalizedStructuredContent: normalizeConceptMasteryDeckStructuredContent(source) };
   }
   if (toolSlug === 'concept-breakdown-explainer') {
     return { normalizedStructuredContent: normalizeConceptBreakdownStructuredContent(source) };
@@ -2844,8 +3037,12 @@ const TOOL_STRUCTURED_RULES = {
   },
   'concept-mastery-helper': {
     allowedTypes: ['Concept Notes', 'Notes'],
-    validate: (data) => Array.isArray(data?.concepts) && data.concepts.length > 0,
-    message: 'Concept content must include a non-empty concepts array.',
+    validate: (data) =>
+      Array.isArray(data?.concepts) &&
+      data.concepts.length > 0 &&
+      data.concepts.some((c) => conceptRowHasBody(c)),
+    message:
+      'Could not build Concept Mastery content for the selected topic and sub-topic. Try Generate again.',
   },
   'lesson-planner': {
     allowedTypes: ['Lesson Plan'],
@@ -3130,6 +3327,29 @@ function coerceRegenerationStructuredContent(toolSlug, parsed) {
     }
   }
 
+  if (toolSlug === 'concept-mastery-helper') {
+    const rootConcepts = Array.isArray(root.concepts) ? root.concepts : [];
+    const innerConcepts = Array.isArray(inner.concepts) ? inner.concepts : [];
+    const mergedConcepts = innerConcepts.length ? innerConcepts : rootConcepts;
+    const rootHasSingle = conceptRowHasBody(root);
+    const innerHasSingle = conceptRowHasBody(inner);
+    if (mergedConcepts.length) {
+      inner = { ...inner, concepts: mergedConcepts };
+    } else if (innerHasSingle) {
+      inner = { ...inner };
+    } else if (rootHasSingle) {
+      inner = { ...root, ...inner };
+    }
+    if (!Array.isArray(inner.concepts) || !inner.concepts.length) {
+      const lifted = { ...root, ...inner };
+      delete lifted.contentType;
+      delete lifted.structuredContent;
+      if (conceptRowHasBody(lifted)) {
+        inner = lifted;
+      }
+    }
+  }
+
   return inner;
 }
 
@@ -3392,7 +3612,13 @@ export function buildConceptRenderableFromStructured(source) {
     key_points: toStringList(s.key_points || s.keyPoints),
     exam_tips: String(s.exam_tips || '').trim(),
     hots_question: String(s.hots_question || '').trim(),
-    self_reflection_prompt: String(s.self_reflection_prompt || s.reflection || '').trim(),
+    self_reflection_prompt: String(
+      s.self_reflection_prompt ||
+        s.reflection_prompt ||
+        s.reflectionPrompt ||
+        s.reflection ||
+        '',
+    ).trim(),
   };
 }
 
@@ -3854,10 +4080,12 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
         structuredContent = finalizeActivityStructuredContent(structuredContent, meta);
       } else if (slug === 'flashcard-generator') {
         structuredContent = normalizeFlashcardDeckStructuredContent(structuredContent);
+      } else if (slug === 'concept-mastery-helper') {
+        structuredContent = finalizeConceptMasteryStructuredContent(structuredContent, meta);
       }
 
       const contentType = normalizeContentType(json.contentType || defaultContentType);
-      const validation = validateToolSpecificStructuredContent(
+      let validation = validateToolSpecificStructuredContent(
         slug,
         structuredContent,
         contentType,
@@ -3866,6 +4094,19 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
 
       if (validation.normalizedStructuredContent) {
         structuredContent = validation.normalizedStructuredContent;
+      }
+
+      if (!validation.valid && slug === 'concept-mastery-helper') {
+        structuredContent = finalizeConceptMasteryStructuredContent(structuredContent, meta);
+        validation = validateToolSpecificStructuredContent(
+          slug,
+          structuredContent,
+          contentType,
+          '',
+        );
+        if (validation.normalizedStructuredContent) {
+          structuredContent = validation.normalizedStructuredContent;
+        }
       }
 
       if (!validation.valid) {
