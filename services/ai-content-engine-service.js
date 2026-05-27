@@ -34,7 +34,16 @@ const toQuestionArray = (value = []) =>
       }
       if (entry && typeof entry === 'object') {
         const question =
-          String(entry.question || entry.prompt || entry.text || entry.statement || entry.title || '').trim();
+          String(
+            entry.question ||
+              entry.question_text ||
+              entry.questionText ||
+              entry.prompt ||
+              entry.text ||
+              entry.statement ||
+              entry.title ||
+              '',
+          ).trim();
         if (!question) return null;
         const options = Array.isArray(entry.options)
           ? entry.options.map((opt) => String(opt || '').trim()).filter(Boolean)
@@ -2400,7 +2409,7 @@ export function normalizeExamPaperStructuredContent(raw) {
             ? 'Section C: Short Answer Questions'
             : key === 'section_d'
               ? 'Section D: Long Answer Questions'
-              : 'Section E: Case-based / Competency-based Questions';
+              : 'Section E: Case-based / Competency Questions';
     if (Array.isArray(block)) {
       looseQuestions.push(...toQuestionArray(block).map((q) => ({ ...q, section: q.section || label })));
     } else if (typeof block === 'object' && Array.isArray(block.questions)) {
@@ -2420,6 +2429,30 @@ export function normalizeExamPaperStructuredContent(raw) {
       ...(Array.isArray(source.mcqs) ? source.mcqs : []),
     ]);
     if (fromLists.length) sections = groupQuestionsIntoExamSections(fromLists);
+  }
+
+  const sectionQuestionBuckets = {
+    section_a: [],
+    section_b: [],
+    section_c: [],
+    section_d: [],
+    section_e: [],
+  };
+  for (const sec of sections) {
+    const name = String(sec?.sectionName || sec?.name || '').trim().toLowerCase();
+    const questions = toQuestionArray(sec?.questions || []);
+    if (!questions.length) continue;
+    if (/^section\s*a|mcq|multiple\s*choice/.test(name)) {
+      sectionQuestionBuckets.section_a.push(...questions);
+    } else if (/^section\s*b|very\s*short|vsa/.test(name)) {
+      sectionQuestionBuckets.section_b.push(...questions);
+    } else if (/^section\s*c|short\s*answer/.test(name) && !/very\s*short|vsa/.test(name)) {
+      sectionQuestionBuckets.section_c.push(...questions);
+    } else if (/^section\s*d|long\s*answer|essay/.test(name)) {
+      sectionQuestionBuckets.section_d.push(...questions);
+    } else if (/^section\s*e|case|competency|competence/.test(name)) {
+      sectionQuestionBuckets.section_e.push(...questions);
+    }
   }
 
   let answerKeyOut = answerKey;
@@ -2443,6 +2476,11 @@ export function normalizeExamPaperStructuredContent(raw) {
     instructions,
     blueprint,
     sections,
+    section_a: sectionQuestionBuckets.section_a,
+    section_b: sectionQuestionBuckets.section_b,
+    section_c: sectionQuestionBuckets.section_c,
+    section_d: sectionQuestionBuckets.section_d,
+    section_e: sectionQuestionBuckets.section_e,
     internal_choices: internalChoices,
     answer_key: answerKeyOut,
     marking_scheme: markingScheme,
@@ -3135,10 +3173,53 @@ const TOOL_STRUCTURED_RULES = {
   },
   'exam-question-paper-generator': {
     allowedTypes: ['Exam Paper'],
-    validate: (data) =>
-      (Array.isArray(data?.sections) && data.sections.length > 0) ||
-      Boolean(String(data?.question || data?.paper_title || '').trim()),
-    message: 'Exam paper content must include sections with questions or at least one exam question.',
+    validate: (data) => {
+      const requiredFixedKeys = [
+        'paper_title',
+        'instructions',
+        'blueprint',
+        'section_a',
+        'section_b',
+        'section_c',
+        'section_d',
+        'section_e',
+        'internal_choices',
+        'answer_key',
+        'marking_scheme',
+        'open_ended_rubric',
+      ];
+      const hasAllFixedKeys = requiredFixedKeys.every((key) =>
+        Object.prototype.hasOwnProperty.call(data || {}, key),
+      );
+      const hasFixedSectionArrays = ['section_a', 'section_b', 'section_c', 'section_d', 'section_e'].every(
+        (key) => Array.isArray(data?.[key]),
+      );
+      const sectionQuestionCount = Array.isArray(data?.sections)
+        ? data.sections.reduce((n, s) => {
+            const questions = toQuestionArray(Array.isArray(s?.questions) ? s.questions : []);
+            return n + questions.length;
+          }, 0)
+        : 0;
+      const fixedSectionQuestionCount = ['section_a', 'section_b', 'section_c', 'section_d', 'section_e'].reduce(
+        (n, key) => {
+          const block = data?.[key];
+          if (Array.isArray(block)) return n + toQuestionArray(block).length;
+          if (block && typeof block === 'object' && Array.isArray(block.questions)) {
+            return n + toQuestionArray(block.questions).length;
+          }
+          return n;
+        },
+        0,
+      );
+      const singleQuestion = String(data?.question || '').trim();
+      return (
+        hasAllFixedKeys &&
+        hasFixedSectionArrays &&
+        (sectionQuestionCount > 0 || fixedSectionQuestionCount > 0 || Boolean(singleQuestion))
+      );
+    },
+    message:
+      'Exam paper content must use the fixed 11-key format (paper_title, instructions, blueprint, section_a..section_e, internal_choices, answer_key, marking_scheme, open_ended_rubric) and include sections with questions or at least one exam question.',
   },
   'smart-study-guide-generator': {
     allowedTypes: ['Study Guide', 'Notes'],
@@ -3226,36 +3307,79 @@ function extractJsonObject(text) {
     .replace(/^```\s*/i, '')
     .replace(/\s*```$/i, '')
     .trim();
-  const startArr = raw.indexOf('[');
-  const startObj = raw.indexOf('{');
-  const start =
-    startArr !== -1 && (startObj === -1 || startArr < startObj) ? startArr : startObj;
-  if (start === -1) {
-    throw new Error('Gemini returned invalid JSON payload');
-  }
-  const endArr = raw.lastIndexOf(']');
-  const endObj = raw.lastIndexOf('}');
-  const end = start === startArr ? endArr : endObj;
-  if (end === -1 || end <= start) {
-    throw new Error('Gemini returned invalid JSON payload');
-  }
-  const slice = raw.slice(start, end + 1);
-  try {
-    const parsed = JSON.parse(slice);
-    if (Array.isArray(parsed)) {
-      if (parsed.length && typeof parsed[0] === 'object' && parsed[0] !== null) {
-        return parsed[0];
-      }
-      return {};
-    }
-    return parsed;
-  } catch {
+
+  const normalizeLooseJson = (value) =>
+    String(value || '')
+      .replace(/[\u2018\u2019]/g, "'")
+      .replace(/[\u201C\u201D]/g, '"')
+      .replace(/\u00A0/g, ' ')
+      .replace(/,\s*([}\]])/g, '$1')
+      .trim();
+
+  const parseCandidate = (value) => {
+    const cleaned = normalizeLooseJson(value);
+    if (!cleaned) return null;
     try {
-      return JSON.parse(raw);
+      return JSON.parse(cleaned);
     } catch {
-      throw new Error('Gemini returned invalid JSON payload');
+      return null;
+    }
+  };
+
+  const pickObject = (parsed) => {
+    if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) return parsed;
+    if (Array.isArray(parsed)) {
+      const firstObject = parsed.find((row) => row && typeof row === 'object' && !Array.isArray(row));
+      return firstObject || {};
+    }
+    return null;
+  };
+
+  const direct = pickObject(parseCandidate(raw));
+  if (direct) return direct;
+
+  const startIndices = [];
+  for (let i = 0; i < raw.length; i += 1) {
+    const ch = raw[i];
+    if (ch === '{' || ch === '[') startIndices.push(i);
+  }
+
+  for (const start of startIndices) {
+    const open = raw[start];
+    const close = open === '{' ? '}' : ']';
+    let depth = 0;
+    let inString = false;
+    let escape = false;
+
+    for (let i = start; i < raw.length; i += 1) {
+      const ch = raw[i];
+      if (escape) {
+        escape = false;
+        continue;
+      }
+      if (ch === '\\') {
+        escape = true;
+        continue;
+      }
+      if (ch === '"') {
+        inString = !inString;
+        continue;
+      }
+      if (inString) continue;
+
+      if (ch === open) depth += 1;
+      else if (ch === close) depth -= 1;
+
+      if (depth === 0) {
+        const candidate = raw.slice(start, i + 1);
+        const parsed = pickObject(parseCandidate(candidate));
+        if (parsed) return parsed;
+        break;
+      }
     }
   }
+
+  throw new Error('Gemini returned invalid JSON payload');
 }
 
 /**
@@ -3320,6 +3444,33 @@ function coerceRegenerationStructuredContent(toolSlug, parsed) {
       ...(root.teacher_reflection_notes
         ? { teacher_reflection_notes: root.teacher_reflection_notes }
         : {}),
+    };
+    if (Object.keys(rootPick).length) {
+      inner = { ...rootPick, ...inner };
+    }
+  } else if (toolSlug === 'exam-question-paper-generator') {
+    const rootPick = {
+      ...(root.paper_title ? { paper_title: root.paper_title } : {}),
+      ...(root.title ? { title: root.title } : {}),
+      ...(root.instructions ? { instructions: root.instructions } : {}),
+      ...(root.blueprint ? { blueprint: root.blueprint } : {}),
+      ...(Array.isArray(root.sections) ? { sections: root.sections } : {}),
+      ...(Array.isArray(root.section_a) ? { section_a: root.section_a } : {}),
+      ...(Array.isArray(root.section_b) ? { section_b: root.section_b } : {}),
+      ...(Array.isArray(root.section_c) ? { section_c: root.section_c } : {}),
+      ...(Array.isArray(root.section_d) ? { section_d: root.section_d } : {}),
+      ...(Array.isArray(root.section_e) ? { section_e: root.section_e } : {}),
+      ...(root.internal_choices ? { internal_choices: root.internal_choices } : {}),
+      ...(root.answer_key ? { answer_key: root.answer_key } : {}),
+      ...(root.marking_scheme ? { marking_scheme: root.marking_scheme } : {}),
+      ...(root.open_ended_rubric ? { open_ended_rubric: root.open_ended_rubric } : {}),
+      ...(root.question ? { question: root.question } : {}),
+      ...(root.answer ? { answer: root.answer } : {}),
+      ...(root.options ? { options: root.options } : {}),
+      ...(root.marks != null ? { marks: root.marks } : {}),
+      ...(root.question_number != null ? { question_number: root.question_number } : {}),
+      ...(root.section ? { section: root.section } : {}),
+      ...(root.internal_choice_group ? { internal_choice_group: root.internal_choice_group } : {}),
     };
     if (Object.keys(rootPick).length) {
       inner = { ...rootPick, ...inner };

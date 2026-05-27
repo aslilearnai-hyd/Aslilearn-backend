@@ -746,7 +746,7 @@ const TEMPLATES = {
       { order: 4, id: 'section_b', label: 'Section B: Very Short Answer Questions', universalBlock: 'output', storageKeys: ['section_b'] },
       { order: 5, id: 'section_c', label: 'Section C: Short Answer Questions', universalBlock: 'output', storageKeys: ['section_c'] },
       { order: 6, id: 'section_d', label: 'Section D: Long Answer Questions', universalBlock: 'output', storageKeys: ['section_d'] },
-      { order: 7, id: 'section_e', label: 'Section E: Case-based / Competency-based Questions', universalBlock: 'output', storageKeys: ['section_e'] },
+      { order: 7, id: 'section_e', label: 'Section E: Case-based / Competency Questions', universalBlock: 'output', storageKeys: ['section_e'] },
       { order: 8, id: 'internal_choices', label: 'Internal Choices', universalBlock: 'output', storageKeys: ['internal_choices'] },
       { order: 9, id: 'answer_key', label: 'Complete Answer Key', universalBlock: 'assessment', storageKeys: ['answer_key'] },
       { order: 10, id: 'marking', label: 'Detailed Marking Scheme', universalBlock: 'assessment', storageKeys: ['marking_scheme'] },
@@ -758,12 +758,62 @@ const TEMPLATES = {
     regenerationRules: { mergePolicy: 'merge', allowTemplateRegeneration: true },
     gemini: {
       strictOutputHint:
-        'Prefer ONE JSON object per full exam paper: paper_title, instructions, blueprint, sections[{sectionName,questions[{question_number,question,options[],answer,marks,internal_choice_group}]}], internal_choices, answer_key, marking_scheme, open_ended_rubric. If only a question list exists, use flat rows with section + question_number + question + options + answer + marks.',
+        'Return ONE JSON object for a full exam paper in this fixed 11-heading format only: paper_title, instructions, blueprint, section_a[], section_b[], section_c[], section_d[], section_e[], internal_choices, answer_key, marking_scheme, open_ended_rubric. section_a must be MCQs, section_b very short answer questions, section_c short answer questions, section_d long answer questions, and section_e case-based / competency questions. Each question item should use: question_number, question, options[] (for MCQs when applicable), answer, marks, internal_choice_group.',
       pdfExtractSchema: {
         paper_title: 'string',
         title: 'string',
         instructions: 'string',
         blueprint: 'string',
+        section_a: [
+          {
+            question_number: 'number',
+            question: 'string',
+            options: ['string'],
+            answer: 'string',
+            marks: 'number',
+            internal_choice_group: 'string',
+          },
+        ],
+        section_b: [
+          {
+            question_number: 'number',
+            question: 'string',
+            options: ['string'],
+            answer: 'string',
+            marks: 'number',
+            internal_choice_group: 'string',
+          },
+        ],
+        section_c: [
+          {
+            question_number: 'number',
+            question: 'string',
+            options: ['string'],
+            answer: 'string',
+            marks: 'number',
+            internal_choice_group: 'string',
+          },
+        ],
+        section_d: [
+          {
+            question_number: 'number',
+            question: 'string',
+            options: ['string'],
+            answer: 'string',
+            marks: 'number',
+            internal_choice_group: 'string',
+          },
+        ],
+        section_e: [
+          {
+            question_number: 'number',
+            question: 'string',
+            options: ['string'],
+            answer: 'string',
+            marks: 'number',
+            internal_choice_group: 'string',
+          },
+        ],
         sections: [
           {
             sectionName: 'string',
@@ -1692,18 +1742,7 @@ export function expandStructuredToFormatItems(toolSlug, structured) {
     case 'daily-class-plan-maker':
       return [s];
     case 'exam-question-paper-generator': {
-      const items = [];
-      for (const sec of Array.isArray(s.sections) ? s.sections : []) {
-        const sectionName = String(sec?.sectionName || sec?.name || '').trim();
-        for (const q of Array.isArray(sec?.questions) ? sec.questions : []) {
-          items.push({
-            ...(q && typeof q === 'object' ? q : { question: String(q) }),
-            section: sectionName,
-            question_number: items.length + 1,
-          });
-        }
-      }
-      return items.length ? items : [s];
+      return [s];
     }
     case 'flashcard-generator': {
       const cards = Array.isArray(s.cards) ? s.cards : [];
@@ -2072,11 +2111,23 @@ export function formatItemLinesFromTemplate(toolSlug, item, index = 0) {
       break;
     }
     case 'exam-question-paper-generator': {
-      if (Array.isArray(i.sections) && i.sections.length) {
+      const fixedSections = [
+        ['Section A: MCQs', i.section_a],
+        ['Section B: Very Short Answer Questions', i.section_b],
+        ['Section C: Short Answer Questions', i.section_c],
+        ['Section D: Long Answer Questions', i.section_d],
+        ['Section E: Case-based / Competency Questions', i.section_e],
+      ]
+        .filter(([, qs]) => Array.isArray(qs) && qs.length)
+        .map(([sectionName, questions]) => ({ sectionName, questions }));
+      const effectiveSections =
+        Array.isArray(i.sections) && i.sections.length ? i.sections : fixedSections;
+
+      if (effectiveSections.length) {
         lines.push(`## ${str(i.paper_title || i.title) || `Exam Paper ${n}`}`, '');
         if (str(i.instructions)) pushSection(lines, '1. Paper Title and General Instructions', [str(i.instructions)]);
         if (str(i.blueprint)) pushSection(lines, '2. Blueprint / Design Grid', [str(i.blueprint)]);
-        for (const sec of i.sections) {
+        for (const sec of effectiveSections) {
           const secName = str(sec?.sectionName || sec?.name || 'Section');
           lines.push(`### ${secName}`, '');
           for (const q of Array.isArray(sec?.questions) ? sec.questions : []) {
