@@ -197,7 +197,7 @@ const TEMPLATES = {
     regenerationRules: { mergePolicy: 'replace', allowTemplateRegeneration: true },
     gemini: {
       strictOutputHint:
-        'Return ONE JSON object per worksheet using strict section-wise format only: title, learning_objectives[], instructions, sections[{sectionName,questions[]}], answer_key, bloom_level, difficulty_tag. Sections MUST be exactly Section A (MCQs), B (Fill in the Blanks), C (Very Short Answer), D (Short Answer), E (Competency/Real-life). Do not merge sections, do not skip headings, and keep each question under its correct section. Flat rows (fallback): question_number, type, section, question, options[], answer, marks.',
+        'Return ONE JSON object per worksheet using strict section-wise format only: title, learning_objectives[], instructions, sections[{sectionName,questions[]}], answer_key, bloom_level, difficulty_tag. Sections MUST be exactly Section A (MCQs), B (Fill in the Blanks), C (Very Short Answer), D (Short Answer), E (Competency/Real-life). Do not merge sections, do not skip headings, and keep each question under its correct section. Section D and Section E must each contain at least one complete question. Section E questions must be real-life/application/case/scenario style prompts (not answer-key fragments, keywords, or one-line term lists). Flat rows (fallback): question_number, type, section, question, options[], answer, marks.',
       pdfExtractSchema: {
         title: 'string',
         worksheet_title: 'string',

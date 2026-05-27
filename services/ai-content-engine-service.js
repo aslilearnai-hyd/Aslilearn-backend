@@ -1679,24 +1679,26 @@ function inferWorksheetSectionLabel(sectionRaw, question = {}) {
   if (s && s !== 'Questions') return remapLegacyWorksheetSectionName(s);
   if (Array.isArray(question.options) && question.options.length >= 2) return WORKSHEET_SECTION_LABELS.A;
   if (/_{2,}/.test(String(question.question || ''))) return WORKSHEET_SECTION_LABELS.B;
-  if (
-    /competency|real[\s-]*life|application|case[\s-]*based|scenario/i.test(
-      String(question.question || ''),
-    )
-  ) {
-    return WORKSHEET_SECTION_LABELS.E;
-  }
-  if (
-    /(?:imagine|suppose|consider|how would you|what would you do|in your daily life|around you|at home|in school)\b/i.test(
-      String(question.question || ''),
-    )
-  ) {
-    return WORKSHEET_SECTION_LABELS.E;
-  }
   const qText = String(question.question || '').trim();
+  const competencyCue =
+    /(?:real[\s-]*life|application|competency|case[\s-]*based|scenario|daily\s+life|at\s+home|in\s+school|how\s+would\s+you|what\s+would\s+you\s+do|design|plan|investigate|experiment|observe|compare)\b/i.test(
+      qText,
+    );
+  const looksPromptLike =
+    /\?/.test(qText) ||
+    /^(?:imagine|suppose|consider|how would you|what would you do|design|plan|investigate|observe|compare)\b/i.test(
+      qText,
+    );
+  if (competencyCue && looksPromptLike) {
+    return WORKSHEET_SECTION_LABELS.E;
+  }
+  if (looksPromptLike && /(?:in your daily life|around you|at home|in school)\b/i.test(qText)) {
+    return WORKSHEET_SECTION_LABELS.E;
+  }
   const words = qText.split(/\s+/).filter(Boolean).length;
-  if (/\?/.test(qText) && words <= 22) return WORKSHEET_SECTION_LABELS.C;
+  if (/\?/.test(qText) && words <= 14) return WORKSHEET_SECTION_LABELS.C;
   if (/\?/.test(qText)) return WORKSHEET_SECTION_LABELS.D;
+  if (words >= 10) return WORKSHEET_SECTION_LABELS.D;
   return WORKSHEET_SECTION_LABELS.C;
 }
 
@@ -1772,13 +1774,23 @@ export function groupQuestionsIntoWorksheetSections(questions = []) {
   }
   const sectionD = sections.find((s) => s.sectionName === WORKSHEET_SECTION_LABELS.D);
   const sectionE = sections.find((s) => s.sectionName === WORKSHEET_SECTION_LABELS.E);
-  if (sectionD && sectionE && sectionE.questions.length === 0 && sectionD.questions.length > 0) {
+  if (sectionD && sectionE && sectionE.questions.length === 0 && sectionD.questions.length > 1) {
     const candidateIdx = sectionD.questions.findIndex((q) =>
       isLikelyWorksheetCompetencyQuestion(q.question),
     );
     if (candidateIdx >= 0) {
       const [moved] = sectionD.questions.splice(candidateIdx, 1);
       sectionE.questions.push({ ...moved, section: WORKSHEET_SECTION_LABELS.E });
+      sectionD.count = sectionD.questions.length;
+      sectionE.count = sectionE.questions.length;
+    }
+  }
+  if (sectionD && sectionE && sectionD.questions.length === 0 && sectionE.questions.length > 1) {
+    const moveBackIdx = sectionE.questions.findIndex((q) => !isLikelyWorksheetCompetencyQuestion(q.question));
+    const idx = moveBackIdx >= 0 ? moveBackIdx : sectionE.questions.length - 1;
+    const [movedBack] = sectionE.questions.splice(idx, 1);
+    if (movedBack) {
+      sectionD.questions.push({ ...movedBack, section: WORKSHEET_SECTION_LABELS.D });
       sectionD.count = sectionD.questions.length;
       sectionE.count = sectionE.questions.length;
     }
