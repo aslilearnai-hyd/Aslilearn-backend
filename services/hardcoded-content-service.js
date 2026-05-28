@@ -45,19 +45,32 @@ const SUBJECT_TO_FOLDERS = {
 // Each tool maps to one or more folder name fragments (case-insensitive match)
 const TOOL_FOLDER_PATTERNS = {
   'worksheet-mcq-generator':        ['MCQs', 'MCQ'],
-  'exam-question-paper-generator':  null, // special: combine multiple
+  'mock-test-builder':                  null, // special: combine multiple
+  'exam-question-paper-generator':      null, // special: combine multiple
   'homework-creator':               null, // special: combine multiple
   'lesson-planner':                 ['Lesson Planner'],
+  'study-schedule-maker':           ['Study Schedule Maker', 'Lesson Planner'],
   'daily-class-plan-maker':         ['Lesson Planner'],
   'concept-mastery-helper':         ['CMH'],
+  'my-study-decks':                  ['FlashCards', 'Flashcards', 'Flash Cards'],
   'flashcard-generator':            ['FlashCards', 'Flashcards', 'Flash Cards'],
   'short-notes-summaries-maker':    ['Summary and Short Notes', 'Short Notes and Summaries', 'Summaries and Short notes', 'Summaries and Short Notes'],
   'chapter-summary-creator':        ['Summary and Short Notes', 'Short Notes and Summaries', 'Summaries and Short notes', 'Summaries and Short Notes'],
   'activity-project-generator':     ['Activity & Project Generator', 'Activity and Project Generator'],
+  'project-idea-lab':               ['Project Idea Lab', 'Activity & Project Generator', 'Activity and Project Generator'],
   // Story & Passage Creator folders have slightly different names across
   // subjects and classes (e.g. "Passage Related Questions", "Passages",
   // "Passage Questions", or even Hindi names). Keep this list generous and
   // rely on the case‑insensitive/contains matching in findFolder.
+  'reading-practice-room':          [
+    'Passage Related Questions',
+    'Passage related questions',
+    'Passages',
+    'Passage Questions',
+    'Passage',
+    'गद्यांश',
+    'गद्यांश आधारित प्रश्न'
+  ],
   'story-passage-creator':          [
     'Passage Related Questions',
     'Passage related questions',
@@ -86,12 +99,16 @@ const TOOL_FOLDER_PATTERNS = {
 const TOOL_FILE_SUFFIX = {
   'worksheet-mcq-generator':        'mcq',
   'lesson-planner':                 null, // picks lp or sns
+  'study-schedule-maker':           null,
   'daily-class-plan-maker':         null,
   'concept-mastery-helper':         null, // single file (*_cmh.json)
+  'my-study-decks':                  null, // single file (*_fcm.json)
   'flashcard-generator':            null, // single file (*_fcm.json)
   'short-notes-summaries-maker':    'sns',
   'chapter-summary-creator':        'sns',
   'activity-project-generator':     'a&g',
+  'project-idea-lab':               'a&g',
+  'reading-practice-room':          null, // single file
   'story-passage-creator':          null, // single file
   'short-answer':                   'saq',
   'long-answer':                    'laq',
@@ -343,7 +360,7 @@ async function findContentInChapter(chapterPath, toolType, difficulty = 'medium'
   const folderPatterns = TOOL_FOLDER_PATTERNS[toolType];
   
   // Special tools that combine multiple types
-  if (toolType === 'exam-question-paper-generator') {
+  if (toolType === 'mock-test-builder' || toolType === 'exam-question-paper-generator') {
     return await buildCombinedExam(chapterPath, difficulty);
   }
   if (toolType === 'homework-creator') {
@@ -702,6 +719,7 @@ const AMENITY_SUBJECT_MAPPINGS = {
 
 const AMENITY_TOOL_PREFIXES = {
   'concept-mastery-helper': 'cmh',
+  'my-study-decks': 'fcm',
   'flashcard-generator': 'fcm',
   'short-notes-summaries-maker': 'sns',
 };
@@ -768,10 +786,13 @@ async function getIIT6Content(subject, topic, toolType) {
   // Special combined tools
   if (toolType === 'homework-creator') return await buildCombinedHomework(topicPath);
   if (toolType === 'worksheet-mcq-generator') return await buildCombinedWorksheet(topicPath);
-  if (toolType === 'exam-question-paper-generator') return await buildCombinedExam(topicPath);
+  if (toolType === 'mock-test-builder' || toolType === 'exam-question-paper-generator') {
+    return await buildCombinedExam(topicPath);
+  }
 
   const suffixMap = {
     'concept-mastery-helper': '_cmh.json',
+    'my-study-decks': '_fcm.json',
     'flashcard-generator': '_fcm.json',
     'short-notes-summaries-maker': '_sns.json',
   };
@@ -791,8 +812,10 @@ const CLASS6_TOOL_MAPPINGS = {
   'lesson-planner': { folder: null, filePattern: 'planner.json', format: 'json' },
   'daily-class-plan-maker': { folder: null, filePattern: 'planner.json', format: 'json' },
   'activity-project-generator': { folder: null, filePattern: 'projects.csv', format: 'csv' },
+  'reading-practice-room': { folder: null, filePattern: 'passages.csv', format: 'csv' },
   'story-passage-creator': { folder: null, filePattern: 'passages.csv', format: 'csv' },
   'worksheet-mcq-generator': { folder: 'mcq', filePattern: null, format: 'csv' },
+  'mock-test-builder': { folder: 'mcq', filePattern: null, format: 'csv' },
   'exam-question-paper-generator': { folder: 'mcq', filePattern: null, format: 'csv' },
   'homework-creator': { folder: 'mcq', filePattern: null, format: 'csv' },
   'fill-in-blanks': { folder: 'Fill in the blanks', filePattern: null, format: 'csv' },
@@ -1161,7 +1184,7 @@ export async function getHardcodedContent(classNumber, subject, topic, toolType,
 
     // ─── Class 5-6: CSV ─────────────────────────────────────────────────
     // First check AMENITY tools
-    const amenityTools = ['concept-mastery-helper', 'flashcard-generator', 'short-notes-summaries-maker'];
+    const amenityTools = ['concept-mastery-helper', 'my-study-decks', 'flashcard-generator', 'short-notes-summaries-maker'];
     if (amenityTools.includes(toolType)) {
       const filePath = await getAmenityContent(normalizedSubject, topic, toolType);
       if (filePath && await exists(filePath)) {
@@ -1217,7 +1240,7 @@ async function getContentForChapterPath(chapterPath, toolType, difficulty = 'med
     const combined = await buildCombinedWorksheet(chapterPath, difficulty);
     if (combined) return combined.data;
   }
-  if (toolType === 'exam-question-paper-generator') {
+  if (toolType === 'mock-test-builder' || toolType === 'exam-question-paper-generator') {
     const combined = await buildCombinedExam(chapterPath, difficulty);
     if (combined) return combined.data;
   }

@@ -1,5 +1,5 @@
 /**
- * Regex-based Chapter Summary Creator extraction from PDF text (11-section template).
+ * Regex-based Chapter Summary Creator extraction from PDF text (10-section template).
  * @module services/pdf-chapter-summary-extract
  */
 
@@ -28,9 +28,8 @@ const SECTION_PATTERNS = [
   },
   { key: 'concept_connections', re: /^7\.?\s*Concept\s*Connections\s*[:\-—]?\s*$/i, type: 'text' },
   { key: 'real_life_applications', re: /^8\.?\s*Real[\s-]*life\s*Applications\s*[:\-—]?\s*$/i, type: 'list' },
-  { key: 'important_exam_points', re: /^9\.?\s*Important\s*Exam\s*Points\s*[:\-—]?\s*$/i, type: 'list' },
-  { key: 'quick_revision_notes', re: /^10\.?\s*Quick\s*Revision\s*Notes\s*[:\-—]?\s*$/i, type: 'list' },
-  { key: 'practice_recall_questions', re: /^11\.?\s*Practice\s*Recall\s*Questions\s*[:\-—]?\s*$/i, type: 'list' },
+  { key: 'quick_revision_notes', re: /^(?:9|10)\.?\s*Quick\s*Revision\s*Notes\s*[:\-—]?\s*$/i, type: 'list' },
+  { key: 'practice_recall_questions', re: /^(?:10|11)\.?\s*Practice\s*Recall\s*Questions\s*[:\-—]?\s*$/i, type: 'list' },
 ];
 
 function parseConceptLines(lines) {
@@ -92,7 +91,6 @@ function parseSummaryBlock(block, index) {
     formulae: [],
     concept_connections: '',
     real_life_applications: [],
-    important_exam_points: [],
     quick_revision_notes: [],
     practice_recall_questions: [],
     _fromPdf: true,

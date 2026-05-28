@@ -87,7 +87,7 @@ function buildRawDataForTool(toolType, content) {
   const parsed = tryParseJsonPayload(content);
   if (!parsed) return null;
 
-  if (toolType === 'activity-project-generator') {
+  if (toolType === 'activity-project-generator' || toolType === 'project-idea-lab') {
     if (Array.isArray(parsed)) return { activities: parsed };
     if (Array.isArray(parsed?.activities)) return { activities: parsed.activities };
     if (Array.isArray(parsed?.projects)) return { activities: parsed.projects };
@@ -141,6 +141,7 @@ function limitQuestionsInJson(parsed, maxQuestions) {
 
 function applyQuestionLimitToContent(toolType, content, requestedCount) {
   const limitedToolTypes = new Set([
+    'mock-test-builder',
     'exam-question-paper-generator',
     'worksheet-mcq-generator',
   ]);
@@ -315,8 +316,11 @@ export const createTeacherTool = async (req, res) => {
     // Rubrics uses assignmentType / report fields — no curriculum "topic" in the UI.
     const topicOptionalTools = new Set([
       'lesson-planner',
+      'study-schedule-maker',
       'daily-class-plan-maker',
       'activity-project-generator',
+      'project-idea-lab',
+      'reading-practice-room',
       'story-passage-creator',
       'rubrics-evaluation-generator',
     ]);
@@ -351,7 +355,7 @@ export const createTeacherTool = async (req, res) => {
       });
     }
     
-    if (toolType === 'story-passage-creator') {
+    if (toolType === 'story-passage-creator' || toolType === 'reading-practice-room') {
       const { canonicalStoryPassageSubject, STORY_PASSAGE_SUBJECT_ERROR } = await import(
         '../utils/story-passage-subject.js'
       );

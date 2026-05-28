@@ -291,9 +291,11 @@ export function transformQuestionsForTool(questions, toolType, params = {}) {
     case 'worksheet-mcq-generator':
       return generateWorksheet(filteredQuestions, params);
     
+    case 'mock-test-builder':
     case 'exam-question-paper-generator':
       return generateExamPaper(filteredQuestions, params);
     
+    case 'my-study-decks':
     case 'flashcard-generator':
       return generateFlashcards(filteredQuestions, params);
     
@@ -318,6 +320,7 @@ export function transformQuestionsForTool(questions, toolType, params = {}) {
     case 'rubrics-evaluation-report-card-generator':
       return generateRubrics(filteredQuestions, params);
     
+    case 'reading-practice-room':
     case 'story-passage-creator':
       return generateStoryPassage(filteredQuestions, params);
     

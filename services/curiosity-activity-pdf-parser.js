@@ -141,41 +141,59 @@ export function extractActivitiesFromCuriosityWorkbookPdf(rawText) {
       /Materials Required/i,
       /Step-by-step Procedure/i,
     );
-    const step_by_step_procedure = extractLinesAfterHeader(
+    const teacherLedProcedure = extractLinesAfterHeader(
       part,
-      /Step-by-step Procedure/i,
-      /Teacher Instructions/i,
-    );
-    const teacher_instructions = extractLinesAfterHeader(
-      part,
-      /Teacher Instructions/i,
-      /Student Instructions/i,
+      /Step-by-step(?:\s+Student)?\s+Procedure/i,
+      /Teacher Instructions|Safety|Student Instructions/i,
     );
     const student_instructions = extractLinesAfterHeader(
       part,
       /Student Instructions/i,
-      /Differentiation|Expected Learning Outcomes/i,
+      /Safety|Observation|Creative|Differentiation|Self-Assessment|Assessment|Expected/i,
     );
+    const step_by_step_procedure =
+      student_instructions.length > 0 ? student_instructions : teacherLedProcedure;
+
+    const safety_care_instructions = extractLinesAfterHeader(
+      part,
+      /Safety and Care Instructions/i,
+      /Observation|Creative|Differentiation|Student Instructions|Assessment|Expected|Real[-\s]?life|Reflection/i,
+    );
+
+    const observationLines = extractLinesAfterHeader(
+      part,
+      /Observation\s*\/\s*Data Recording Table/i,
+      /Creative|Differentiation|Assessment|Expected|Real[-\s]?life|Reflection/i,
+    );
+    const observation_data_recording_table = observationLines.length ? observationLines.join('\n') : '';
+
+    const creativeLines = extractLinesAfterHeader(
+      part,
+      /Creative Output\s*\/\s*Final Product/i,
+      /Differentiation|Assessment|Expected|Real[-\s]?life|Reflection/i,
+    );
+    const creative_output_final_product = creativeLines.length ? creativeLines.join(' ') : '';
 
     const diffLines = extractLinesAfterHeader(
       part,
-      /Differentiation/i,
-      /Expected Learning Outcomes|Assessment Criteria/i,
+      /Differentiation(?:\s*:\s*Support and Extension)?/i,
+      /Self-Assessment|Assessment|Expected Learning Outcomes|Real[-\s]?life|Reflection/i,
     );
-    const differentiation = diffLines.length ? diffLines.join(' ') : '';
+    const differentiation_support_extension = diffLines.length ? diffLines.join(' ') : '';
+
+    const rubricLines = extractLinesAfterHeader(
+      part,
+      /Self-Assessment Rubric|Assessment Criteria|Assessment Rubric/i,
+      /Expected Learning Outcomes|Real[-\s]?life|Reflection/i,
+    );
+    const self_assessment_rubric = rubricLines;
 
     const elLines = extractLinesAfterHeader(
       part,
       /Expected Learning Outcomes/i,
-      /Assessment Criteria/i,
+      /Real[-\s]?life Application|Reflection/i,
     );
     const expected_learning_outcomes = elLines.length ? elLines.join(' ') : '';
-
-    const assessment_criteria_rubric = extractLinesAfterHeader(
-      part,
-      /Assessment Criteria/i,
-      /Real[-\s]?life Application/i,
-    );
 
     const rlLines = extractLinesAfterHeader(
       part,
@@ -202,11 +220,12 @@ export function extractActivitiesFromCuriosityWorkbookPdf(rawText) {
       ncf_competency_alignment,
       materials_required,
       step_by_step_procedure,
-      teacher_instructions,
-      student_instructions,
-      differentiation,
+      safety_care_instructions,
+      observation_data_recording_table,
+      creative_output_final_product,
+      differentiation_support_extension,
+      self_assessment_rubric,
       expected_learning_outcomes,
-      assessment_criteria_rubric,
       real_life_application,
       reflection_exit_ticket,
     });

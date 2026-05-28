@@ -24,6 +24,7 @@ import {
   buildDailyClassPlanRenderableFromStructured,
   buildRubricRenderableFromStructured,
   buildExamPaperRenderableFromStructured,
+  buildMockTestRenderableFromStructured,
   buildWorksheetRenderableFromStructured,
   finalizeActivityStructuredContent,
   canonicalizeActivityExtractedItem,
@@ -66,11 +67,14 @@ function buildBulkRenderContent(toolSlug, contentType, item) {
   if (toolSlug === 'homework-creator') {
     return buildHomeworkRenderableFromStructured(row);
   }
+  if (toolSlug === 'mock-test-builder') {
+    return buildMockTestRenderableFromStructured(row);
+  }
   if (toolSlug === 'exam-question-paper-generator') {
     return buildExamPaperRenderableFromStructured(row);
   }
-  if (toolSlug === 'flashcard-generator') {
-    return buildFlashcardRenderableFromStructured(row);
+  if (toolSlug === 'my-study-decks' || toolSlug === 'flashcard-generator') {
+    return buildFlashcardRenderableFromStructured(row, toolSlug);
   }
   if (toolSlug === 'rubrics-evaluation-generator') {
     return buildRubricRenderableFromStructured(row);
@@ -78,14 +82,14 @@ function buildBulkRenderContent(toolSlug, contentType, item) {
   if (toolSlug === 'concept-mastery-helper') {
     return buildConceptRenderableFromStructured(row);
   }
-  if (toolSlug === 'lesson-planner') {
+  if (toolSlug === 'lesson-planner' || toolSlug === 'study-schedule-maker') {
     return buildLessonPlanRenderableFromStructured(row, toolSlug);
   }
   if (toolSlug === 'daily-class-plan-maker') {
     return buildDailyClassPlanRenderableFromStructured(row);
   }
-  if (toolSlug === 'story-passage-creator') {
-    return buildStoryRenderableFromStructured(row);
+  if (toolSlug === 'reading-practice-room' || toolSlug === 'story-passage-creator') {
+    return buildStoryRenderableFromStructured(row, toolSlug);
   }
   if (toolSlug === 'short-notes-summaries-maker') {
     return buildShortNotesRenderableFromStructured(row);
@@ -313,12 +317,12 @@ function enrichConceptRowForApi(data) {
 function enrichActivityRowForApi(data) {
   if (!data || typeof data !== 'object') return data;
   const tool = String(data.toolType || data.toolName || '').trim();
-  if (tool !== 'activity-project-generator') return data;
+  if (tool !== 'activity-project-generator' && tool !== 'project-idea-lab') return data;
   let structured =
     data.structuredContent && typeof data.structuredContent === 'object' && !Array.isArray(data.structuredContent)
       ? { ...data.structuredContent }
       : {};
-  const normalized = canonicalizeActivityExtractedItem(structured);
+  const normalized = canonicalizeActivityExtractedItem(structured, tool);
   const ct = String(data.contentType || '').trim() || 'Activity Plan';
   return {
     ...data,
@@ -349,17 +353,17 @@ function enrichRubricRowForApi(data) {
 function enrichFlashcardRowForApi(data) {
   if (!data || typeof data !== 'object') return data;
   const tool = String(data.toolType || data.toolName || '').trim();
-  if (tool !== 'flashcard-generator') return data;
+  if (tool !== 'my-study-decks' && tool !== 'flashcard-generator') return data;
   let structured =
     data.structuredContent && typeof data.structuredContent === 'object' && !Array.isArray(data.structuredContent)
       ? { ...data.structuredContent }
       : {};
-  const normalized = canonicalizeFlashcardExtractedItem(structured);
+  const normalized = canonicalizeFlashcardExtractedItem(structured, tool);
   const ct = String(data.contentType || '').trim() || 'Flashcards';
   return {
     ...data,
     structuredContent: normalized,
-    renderContent: buildFlashcardRenderableFromStructured(normalized),
+    renderContent: buildFlashcardRenderableFromStructured(normalized, tool),
     contentType: ct,
   };
 }
@@ -385,17 +389,19 @@ function enrichShortNotesRowForApi(data) {
 function enrichStoryRowForApi(data) {
   if (!data || typeof data !== 'object') return data;
   const tool = String(data.toolType || data.toolName || '').trim();
-  if (tool !== 'story-passage-creator') return data;
+  if (tool !== 'reading-practice-room' && tool !== 'story-passage-creator') return data;
   let structured =
     data.structuredContent && typeof data.structuredContent === 'object' && !Array.isArray(data.structuredContent)
       ? { ...data.structuredContent }
       : {};
-  const normalized = canonicalizeStoryExtractedItem(structured);
-  const ct = String(data.contentType || '').trim() || 'Story';
+  const normalized = canonicalizeStoryExtractedItem(structured, tool);
+  const ct =
+    String(data.contentType || '').trim() ||
+    (tool === 'reading-practice-room' ? 'Reading Practice' : 'Story');
   return {
     ...data,
     structuredContent: normalized,
-    renderContent: buildStoryRenderableFromStructured(normalized),
+    renderContent: buildStoryRenderableFromStructured(normalized, tool),
     contentType: ct,
   };
 }
@@ -439,17 +445,22 @@ function enrichHomeworkRowForApi(data) {
 function enrichExamPaperRowForApi(data) {
   if (!data || typeof data !== 'object') return data;
   const tool = String(data.toolType || data.toolName || '').trim();
-  if (tool !== 'exam-question-paper-generator') return data;
+  if (tool !== 'mock-test-builder' && tool !== 'exam-question-paper-generator') return data;
   let structured =
     data.structuredContent && typeof data.structuredContent === 'object' && !Array.isArray(data.structuredContent)
       ? { ...data.structuredContent }
       : {};
-  const normalized = canonicalizeExamPaperExtractedItem(structured);
-  const ct = String(data.contentType || '').trim() || 'Exam Paper';
+  const normalized = canonicalizeExamPaperExtractedItem(structured, tool);
+  const ct =
+    String(data.contentType || '').trim() ||
+    (tool === 'mock-test-builder' ? 'Mock Test' : 'Exam Paper');
   return {
     ...data,
     structuredContent: normalized,
-    renderContent: buildExamPaperRenderableFromStructured(normalized),
+    renderContent:
+      tool === 'mock-test-builder'
+        ? buildMockTestRenderableFromStructured(normalized)
+        : buildExamPaperRenderableFromStructured(normalized),
     contentType: ct,
   };
 }
@@ -475,13 +486,15 @@ function enrichDailyClassPlanRowForApi(data) {
 function enrichLessonPlanRowForApi(data) {
   if (!data || typeof data !== 'object') return data;
   const tool = String(data.toolType || data.toolName || '').trim();
-  if (tool !== 'lesson-planner') return data;
+  if (tool !== 'lesson-planner' && tool !== 'study-schedule-maker') return data;
   let structured =
     data.structuredContent && typeof data.structuredContent === 'object' && !Array.isArray(data.structuredContent)
       ? { ...data.structuredContent }
       : {};
   const normalized = canonicalizeLessonPlannerExtractedItem(structured, tool);
-  const ct = String(data.contentType || '').trim() || 'Lesson Plan';
+  const ct =
+    String(data.contentType || '').trim() ||
+    (tool === 'study-schedule-maker' ? 'Study Schedule' : 'Lesson Plan');
   return {
     ...data,
     structuredContent: normalized,
@@ -717,7 +730,10 @@ router.post(
         return res.status(400).json({ success: false, message: 'toolType is required' });
       }
       const resolvedToolSlugEarly = String(toolType || '').trim();
-      if (resolvedToolSlugEarly === 'story-passage-creator') {
+      if (
+        resolvedToolSlugEarly === 'story-passage-creator' ||
+        resolvedToolSlugEarly === 'reading-practice-room'
+      ) {
         const { isStoryPassageAllowedSubject, STORY_PASSAGE_SUBJECT_ERROR } = await import(
           '../utils/story-passage-subject.js'
         );
@@ -878,7 +894,7 @@ router.post(
               index: idx,
               slNo: it.sl_no ?? it.question_number,
               title:
-                (resolvedToolSlug === 'flashcard-generator'
+                (resolvedToolSlug === 'my-study-decks' || resolvedToolSlug === 'flashcard-generator'
                   ? it.front || it.title
                   : it.title) ||
                 it.name ||
@@ -916,28 +932,31 @@ router.post(
           const metaClean = { ...item };
           delete metaClean._fromPdf;
           const structuredForRow =
-            resolvedToolSlug === 'activity-project-generator'
-              ? canonicalizeActivityExtractedItem(metaClean)
+            resolvedToolSlug === 'activity-project-generator' || resolvedToolSlug === 'project-idea-lab'
+              ? canonicalizeActivityExtractedItem(metaClean, resolvedToolSlug)
               : resolvedToolSlug === 'concept-mastery-helper'
                 ? canonicalizeConceptExtractedItem(metaClean)
                 : resolvedToolSlug === 'homework-creator'
                   ? canonicalizeHomeworkExtractedItem(metaClean)
                   : resolvedToolSlug === 'rubrics-evaluation-generator'
                     ? canonicalizeRubricExtractedItem(metaClean)
-                    : resolvedToolSlug === 'lesson-planner'
+                    : resolvedToolSlug === 'lesson-planner' || resolvedToolSlug === 'study-schedule-maker'
                       ? canonicalizeLessonPlannerExtractedItem(metaClean, resolvedToolSlug)
                       : resolvedToolSlug === 'daily-class-plan-maker'
                         ? canonicalizeDailyClassPlanExtractedItem(metaClean)
-                        : resolvedToolSlug === 'exam-question-paper-generator'
-                          ? canonicalizeExamPaperExtractedItem(metaClean)
+                        : resolvedToolSlug === 'mock-test-builder' ||
+                            resolvedToolSlug === 'exam-question-paper-generator'
+                          ? canonicalizeExamPaperExtractedItem(metaClean, resolvedToolSlug)
                           : resolvedToolSlug === 'worksheet-mcq-generator'
                             ? canonicalizeWorksheetExtractedItem(metaClean)
-                            : resolvedToolSlug === 'story-passage-creator'
-                            ? canonicalizeStoryExtractedItem(metaClean)
+                            : resolvedToolSlug === 'reading-practice-room' ||
+                                resolvedToolSlug === 'story-passage-creator'
+                              ? canonicalizeStoryExtractedItem(metaClean, resolvedToolSlug)
                             : resolvedToolSlug === 'short-notes-summaries-maker'
                               ? canonicalizeShortNotesExtractedItem(metaClean)
-                              : resolvedToolSlug === 'flashcard-generator'
-                                ? canonicalizeFlashcardExtractedItem(metaClean)
+                              : resolvedToolSlug === 'my-study-decks' ||
+                                  resolvedToolSlug === 'flashcard-generator'
+                                ? canonicalizeFlashcardExtractedItem(metaClean, resolvedToolSlug)
                                 : metaClean;
           const contentStr = formatItemToContent(resolvedToolSlug, structuredForRow, index);
           return {
@@ -1360,14 +1379,14 @@ router.patch('/pdf/:id', verifyToken, authorizeRoles('admin', 'super-admin'), as
     const nextTool = String(update.toolType || effectiveToolType || '').trim();
     const nextType = String(update.contentType || effectiveContentType || '').trim();
     let nextStructured = update.structuredContent || structuredValidation.normalizedStructuredContent || effectiveStructuredContent || {};
-    if (nextTool === 'activity-project-generator') {
+    if (nextTool === 'activity-project-generator' || nextTool === 'project-idea-lab') {
       nextStructured = finalizeActivityStructuredContent(nextStructured, {
         subject: String(existing.subject || '').trim(),
         classLabel: String(existing.classLabel || '').trim(),
         topic: String((topic !== undefined ? topic : existing.topic) || '').trim(),
         subTopic: String((subTopic !== undefined ? subTopic : existing.subTopic) || '').trim(),
         chapter: String(existing.chapter || '').trim(),
-      });
+      }, nextTool);
       update.structuredContent = nextStructured;
     }
     update.renderContent = buildRenderableContent(nextTool, nextType, nextStructured);
@@ -1412,14 +1431,15 @@ router.patch('/pdf/:id/review', verifyToken, authorizeRoles('admin', 'super-admi
       update.reviewComment = String(comment || '').trim();
       let approvedStructured =
         structuredValidation.normalizedStructuredContent || existing.structuredContent;
-      if (String(existing.toolType || '').trim() === 'activity-project-generator') {
+      const approvedTool = String(existing.toolType || '').trim();
+      if (approvedTool === 'activity-project-generator' || approvedTool === 'project-idea-lab') {
         approvedStructured = finalizeActivityStructuredContent(approvedStructured, {
           subject: String(existing.subject || '').trim(),
           classLabel: String(existing.classLabel || '').trim(),
           topic: String(existing.topic || '').trim(),
           subTopic: String(existing.subTopic || '').trim(),
           chapter: String(existing.chapter || '').trim(),
-        });
+        }, approvedTool);
       }
       update.structuredContent = approvedStructured;
       update.contentType = String(structuredValidation.normalizedType || existing.contentType || '').trim();
@@ -1447,14 +1467,14 @@ router.patch('/pdf/:id/review', verifyToken, authorizeRoles('admin', 'super-admi
       update.contentType = String(structuredValidation.normalizedType || existing.contentType || '').trim();
       let reassignStructured =
         structuredValidation.normalizedStructuredContent || existing.structuredContent;
-      if (reassignedTool === 'activity-project-generator') {
+      if (reassignedTool === 'activity-project-generator' || reassignedTool === 'project-idea-lab') {
         reassignStructured = finalizeActivityStructuredContent(reassignStructured, {
           subject: String(existing.subject || '').trim(),
           classLabel: String(existing.classLabel || '').trim(),
           topic: String(existing.topic || '').trim(),
           subTopic: String(existing.subTopic || '').trim(),
           chapter: String(existing.chapter || '').trim(),
-        });
+        }, reassignedTool);
       }
       update.structuredContent = reassignStructured;
       update.renderContent = buildRenderableContent(

@@ -245,7 +245,7 @@ export async function generateAndSaveContent(req, res) {
       });
     }
 
-    if (toolSlug === 'story-passage-creator') {
+    if (toolSlug === 'story-passage-creator' || toolSlug === 'reading-practice-room') {
       const { canonicalStoryPassageSubject, STORY_PASSAGE_SUBJECT_ERROR } = await import(
         '../utils/story-passage-subject.js'
       );

@@ -608,12 +608,17 @@ function formatPassagesCSV(csvData, metadata) {
 function getToolTitle(toolType) {
   const titles = {
     'concept-mastery-helper': 'Concept Mastery Helper',
-    'flashcard-generator': 'Flashcard Generator',
+    'my-study-decks': 'My Study Decks',
+    'flashcard-generator': 'Flash Card Generator',
     'short-notes-summaries-maker': 'Short Notes & Summaries',
     'lesson-planner': 'Lesson Planner',
+    'study-schedule-maker': 'Study Schedule Maker',
     'worksheet-mcq-generator': 'Worksheet & MCQ Generator',
+    'mock-test-builder': 'Mock Test Builder',
     'exam-question-paper-generator': 'Exam Question Paper Generator',
-    'activity-project-generator': 'Activity & Project Generator',
+    'activity-project-generator': 'Activity / Project Generator',
+    'project-idea-lab': 'Project Idea Lab',
+    'reading-practice-room': 'Reading Practice Room',
     'story-passage-creator': 'Story & Passage Creator',
     'smart-study-guide-generator': 'Smart Study Guide Generator',
     'concept-breakdown-explainer': 'Concept Breakdown Explainer',
@@ -631,7 +636,7 @@ function getToolTitle(toolType) {
 export function formatHardcodedContent(data, toolType, metadata = {}) {
   try {
     // Special handling for exam-question-paper-generator
-    if (toolType === 'exam-question-paper-generator' && (data.content_type === 'Exam Paper' || (data.sections && Array.isArray(data.sections)))) {
+    if ((toolType === 'mock-test-builder' || toolType === 'exam-question-paper-generator') && (data.content_type === 'Exam Paper' || (data.sections && Array.isArray(data.sections)))) {
       return formatExamPaper(data, toolType, metadata);
     }
     
@@ -666,7 +671,7 @@ export function formatHardcodedContent(data, toolType, metadata = {}) {
     // Flashcard Generator should always try to produce flashcards, even if
     // the underlying JSON was authored for Concept Mastery Helper (CMH).
     // This allows us to reuse CMH content as Q&A cards.
-    if (toolType === 'flashcard-generator') {
+    if (toolType === 'my-study-decks' || toolType === 'flashcard-generator') {
       return formatFlashcardGenerator(data);
     }
 
@@ -781,7 +786,7 @@ export function formatHardcodedContent(data, toolType, metadata = {}) {
       // Flashcard JSON from Class 7-10 (no content_type field)
       return formatFlashcardGenerator(data);
     } else if (
-      toolType === 'story-passage-creator' &&
+      (toolType === 'story-passage-creator' || toolType === 'reading-practice-room') &&
       Array.isArray(data.passages) &&
       data.passages.length > 0
     ) {
@@ -845,7 +850,7 @@ export function formatHardcodedContent(data, toolType, metadata = {}) {
       // CSV format
       if (toolType === 'activity-project-generator') {
         return formatProjectsCSV(data, metadata);
-      } else if (toolType === 'story-passage-creator') {
+      } else if (toolType === 'story-passage-creator' || toolType === 'reading-practice-room') {
         return formatPassagesCSV(data, metadata);
       } else {
         return formatCSVContent(data, toolType, metadata);
@@ -1675,7 +1680,7 @@ function formatActivitiesJSON(data, metadata) {
  */
 function formatGenericJSON(data, toolType, metadata) {
   // Check if it's exam paper format
-  if (data.content_type === 'Exam Paper' || (toolType === 'exam-question-paper-generator' && data.sections && Array.isArray(data.sections))) {
+  if (data.content_type === 'Exam Paper' || ((toolType === 'mock-test-builder' || toolType === 'exam-question-paper-generator') && data.sections && Array.isArray(data.sections))) {
     return formatExamPaper(data, toolType, metadata);
   }
   

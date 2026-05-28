@@ -17,11 +17,14 @@ import {
 
 /** Tools that must return multiple top-level array items when PDF has multiple markers. */
 export const MULTI_ITEM_PDF_TOOLS = new Set([
+  'my-study-decks',
   'flashcard-generator',
   'short-notes-summaries-maker',
+  'reading-practice-room',
   'story-passage-creator',
   'concept-mastery-helper',
   'worksheet-mcq-generator',
+  'mock-test-builder',
   'exam-question-paper-generator',
   'concept-breakdown-explainer',
   'smart-qa-practice-generator',
@@ -37,7 +40,9 @@ export const SINGLE_OBJECT_PDF_TOOLS = new Set([
   'rubrics-evaluation-generator',
   'homework-creator',
   'lesson-planner',
+  'study-schedule-maker',
   'activity-project-generator',
+  'project-idea-lab',
 ]);
 
 export const PDF_EXTRACT_MAX_RETRIES = Math.max(
@@ -78,7 +83,7 @@ export function countExpectedPdfItems(toolType, pdfText) {
     return Math.max(cardMarkers.length, itemMarkers.length, frontBackPairs.length, 0);
   }
 
-  if (tool === 'short-notes-summaries-maker' || tool === 'story-passage-creator') {
+  if (tool === 'short-notes-summaries-maker' || tool === 'reading-practice-room' || tool === 'story-passage-creator') {
     const items = text.match(/(?:^|\n)\s*Item\s+\d+\b/gim) || [];
     const stories = text.match(/(?:^|\n)\s*(?:Story|Passage)\s+\d+\b/gim) || [];
     return Math.max(items.length, stories.length, 0);
@@ -117,6 +122,7 @@ export function countExpectedPdfItems(toolType, pdfText) {
   if (
     tool === 'worksheet-mcq-generator' ||
     tool === 'smart-qa-practice-generator' ||
+    tool === 'mock-test-builder' ||
     tool === 'exam-question-paper-generator'
   ) {
     return extractWorksheetItemsFromPdfText(text, 500).length;
@@ -365,11 +371,22 @@ export function validatePdfExtractItems(toolType, items, context = {}) {
   }
 
   if (tool === 'flashcard-generator') {
-    list.forEach((item, i) => errors.push(...validateFlashcardItem(item, i)));
+    list.forEach((item, i) => {
+      const nested = Array.isArray(item?.cards) ? item.cards : [];
+      if (nested.length) {
+        nested.forEach((c, j) => errors.push(...validateFlashcardItem(c, j)));
+      } else {
+        errors.push(...validateFlashcardItem(item, i));
+      }
+    });
     if (!isPartialPass && expectedFromPdf >= 2 && list.length === 1) {
-      errors.push('Only 1 flashcard extracted; PDF appears to contain multiple cards');
+      const only = list[0];
+      const cardCount = Array.isArray(only?.cards) ? only.cards.length : 0;
+      if (cardCount < 2) {
+        errors.push('Only 1 flashcard extracted; PDF appears to contain multiple cards');
+      }
     }
-  } else if (tool === 'story-passage-creator') {
+  } else if (tool === 'reading-practice-room' || tool === 'story-passage-creator') {
     list.forEach((item, i) => errors.push(...validateStoryItem(item, i)));
   } else if (tool === 'short-notes-summaries-maker') {
     list.forEach((item, i) => errors.push(...validateShortNotesItem(item, i)));
@@ -399,7 +416,7 @@ export function validatePdfExtractItems(toolType, items, context = {}) {
         errors.push(`Extracted ${flatQs} flat questions; PDF pattern found ~${expectedQ}`);
       }
     }
-  } else if (tool === 'exam-question-paper-generator') {
+  } else if (tool === 'mock-test-builder' || tool === 'exam-question-paper-generator') {
     const expectedQ = expectedFromPdf || countExpectedPdfItems(tool, pdfText);
     if (list.length === 1) {
       errors.push(...validateExamItem(list[0], expectedQ, isPartialPass));
@@ -489,7 +506,7 @@ export function buildPdfExtractionPasses(toolType, rawText) {
   const tool = String(toolType || '').trim();
   const passes = [];
 
-  if (tool === 'worksheet-mcq-generator' || tool === 'exam-question-paper-generator') {
+  if (tool === 'worksheet-mcq-generator' || tool === 'mock-test-builder' || tool === 'exam-question-paper-generator') {
     const sectionChunks = splitPdfTextByWorksheetSections(text);
     if (sectionChunks.length > 1) {
       for (const chunk of sectionChunks) {
@@ -535,8 +552,10 @@ export function buildPdfExtractionPasses(toolType, rawText) {
 export function splitPdfByItemMarkers(toolType, text) {
   const tool = String(toolType || '').trim();
   const markerLinePatterns = {
+    'my-study-decks': /^(?:Card|Flashcard|Flash\s*Card|Item)\s+\d+\b/i,
     'flashcard-generator': /^(?:Card|Flashcard|Flash\s*Card|Item)\s+\d+\b/i,
     'short-notes-summaries-maker': /^Item\s+\d+\b/i,
+    'reading-practice-room': /^(?:Item|Story|Passage|Reading\s*Practice)\s+\d+\b/i,
     'story-passage-creator': /^(?:Item|Story|Passage)\s+\d+\b/i,
     'concept-mastery-helper': /^(?:Item|Concept|Topic)\s+\d+\b/i,
   };
@@ -600,12 +619,12 @@ export function normalizeExtractedItem(toolType, item) {
     }));
   }
 
-  if (toolType === 'flashcard-generator') {
+  if (toolType === 'my-study-decks' || toolType === 'flashcard-generator') {
     out.front = str(out.front);
     out.back = str(out.back);
   }
 
-  if (toolType === 'story-passage-creator') {
+  if (toolType === 'reading-practice-room' || toolType === 'story-passage-creator') {
     out.passage = str(out.passage || out.content || out.story_text);
   }
 

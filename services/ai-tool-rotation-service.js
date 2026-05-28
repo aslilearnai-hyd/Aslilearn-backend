@@ -1,6 +1,15 @@
 import AiToolGeneration from '../models/AiToolGeneration.js';
 import AiToolRotationCursor from '../models/AiToolRotationCursor.js';
 
+/** Student slugs that may fall back to legacy stored toolName values. */
+const TOOL_ROTATION_ALIASES = Object.freeze({
+  'project-idea-lab': ['activity-project-generator'],
+  'study-schedule-maker': ['lesson-planner'],
+  'reading-practice-room': ['story-passage-creator'],
+  'my-study-decks': ['flashcard-generator'],
+  'mock-test-builder': ['exam-question-paper-generator'],
+});
+
 function normalize(value) {
   return String(value || '').trim().replace(/\s+/g, ' ');
 }
@@ -194,14 +203,35 @@ export async function fetchRotatingAiToolData({
     };
   };
 
-  for (const attempt of attempts) {
-    const docs = (await AiToolGeneration.find(attempt.filter).sort({ createdAt: 1 }).lean()).filter(hasUsableContent);
-    if (docs.length > 0) {
-      return selectByRotation(
-        docs,
-        attempt.matchType,
-        attempt.matchType.includes('any-tool') ? '' : normalizedTool,
+  const toolNamesToTry = normalizedTool
+    ? [normalizedTool, ...(TOOL_ROTATION_ALIASES[normalizedTool] || [])]
+    : [''];
+
+  for (const tryToolName of toolNamesToTry) {
+    const toolFilter = normalize(tryToolName);
+    const toolAttempts = [];
+    if (toolFilter) {
+      toolAttempts.push(
+        ...attempts.map((a) =>
+          a.matchType.includes('with-tool')
+            ? { matchType: `${a.matchType}-alias`, filter: { ...a.filter, toolName: toolFilter } }
+            : a,
+        ),
       );
+    } else {
+      toolAttempts.push(...attempts);
+    }
+    for (const attempt of toolAttempts) {
+      const docs = (await AiToolGeneration.find(attempt.filter).sort({ createdAt: 1 }).lean()).filter(
+        hasUsableContent,
+      );
+      if (docs.length > 0) {
+        return selectByRotation(
+          docs,
+          attempt.matchType,
+          attempt.matchType.includes('any-tool') ? '' : toolFilter || normalizedTool,
+        );
+      }
     }
   }
 

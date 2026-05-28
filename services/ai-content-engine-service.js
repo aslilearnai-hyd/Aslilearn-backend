@@ -5,6 +5,8 @@ import {
   buildToolAliasToSlugMap,
   buildStrictOutputHintsMap,
   buildAiGeneratorStructuredPrompt,
+  buildMockTestSolutionsFromSections,
+  formatMockTestAnswerKeyLinesFromSections,
   formatStructuredToolOutput,
   getToolDisplayTitle,
   getContentTypeDefault,
@@ -24,6 +26,40 @@ const toStringList = (value) =>
   (Array.isArray(value) ? value : [])
     .map((item) => String(item || '').trim())
     .filter(Boolean);
+
+const MCQ_OPTION_LABEL_RE = /^([A-Da-d])[\).:\-\s]+/;
+
+function labelMcqOptions(options = [], maxOptions = 4) {
+  const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
+  const texts = (Array.isArray(options) ? options : [])
+    .map((opt) => String(opt ?? '').trim())
+    .filter(Boolean)
+    .map((opt) => opt.replace(MCQ_OPTION_LABEL_RE, '').trim())
+    .filter(Boolean);
+  return texts.slice(0, maxOptions).map((text, i) => `${letters[i]}) ${text}`);
+}
+
+function collectOptionsFromEntry(entry) {
+  if (!entry || typeof entry !== 'object') return [];
+  let options = Array.isArray(entry.options)
+    ? entry.options.map((opt) => String(opt || '').trim()).filter(Boolean)
+    : [];
+  if (options.length < 2) {
+    const loose = [];
+    for (const letter of ['A', 'B', 'C', 'D', 'E', 'F']) {
+      const v =
+        entry[letter] ??
+        entry[letter.toLowerCase()] ??
+        entry[`option_${letter}`] ??
+        entry[`option_${letter.toLowerCase()}`] ??
+        entry[`option${letter}`];
+      if (v != null && String(v).trim()) loose.push(String(v).trim());
+    }
+    if (loose.length >= 2) options = loose;
+  }
+  if (options.length >= 2) return labelMcqOptions(options);
+  return options;
+}
 
 const toQuestionArray = (value = []) =>
   (Array.isArray(value) ? value : [])
@@ -45,9 +81,7 @@ const toQuestionArray = (value = []) =>
               '',
           ).trim();
         if (!question) return null;
-        const options = Array.isArray(entry.options)
-          ? entry.options.map((opt) => String(opt || '').trim()).filter(Boolean)
-          : [];
+        const options = collectOptionsFromEntry(entry);
         const answer = String(entry.answer || entry.correctAnswer || '').trim();
         return { question, options, answer };
       }
@@ -59,27 +93,20 @@ const isHeadingLikeLine = (text) =>
   /\b(chapter|topic|lesson|unit|syllabus|mcqs?)\b/i.test(text) && !/[?]/.test(text);
 
 const looksLikeQuestionPrompt = (text) =>
-  /[?]|_{3,}|^\s*(what|which|why|how|define|choose|fill|select|state|identify)\b/i.test(text);
+  /[?]|_{3,}|^\s*(what|which|why|how|define|choose|fill|select|state|identify|explain|describe|list|name|write|calculate|find|match|true|false)\b/i.test(
+    text,
+  );
 
 const sanitizeWorksheetQuestions = (questions = []) =>
   questions
     .map((row) => ({
       question: String(row?.question || '').replace(/\s+/g, ' ').trim(),
-      options: (Array.isArray(row?.options) ? row.options : [])
-        .map((opt) => String(opt || '').replace(/\s+/g, ' ').trim())
-        .filter(Boolean)
-        .reduce((acc, opt) => {
-          const labelMatch = opt.match(/^([A-D])\)\s*/i);
-          const key = labelMatch ? labelMatch[1].toUpperCase() : opt.toLowerCase();
-          if (!acc.some((existing) => {
-            const existingMatch = existing.match(/^([A-D])\)\s*/i);
-            return (existingMatch ? existingMatch[1].toUpperCase() : existing.toLowerCase()) === key;
-          })) {
-            acc.push(opt);
-          }
-          return acc;
-        }, [])
-        .slice(0, 4),
+      options: (() => {
+        const raw = (Array.isArray(row?.options) ? row.options : [])
+          .map((opt) => String(opt || '').replace(/\s+/g, ' ').trim())
+          .filter(Boolean);
+        return raw.length >= 2 ? labelMcqOptions(raw) : raw;
+      })(),
       answer: String(row?.answer || '').replace(/\s+/g, ' ').trim(),
     }))
     .filter((row) => row.question)
@@ -87,7 +114,13 @@ const sanitizeWorksheetQuestions = (questions = []) =>
     .filter((row) => looksLikeQuestionPrompt(row.question) || row.options.length >= 2)
     .filter((row, idx, arr) => arr.findIndex((q) => q.question.toLowerCase() === row.question.toLowerCase()) === idx);
 
-export { buildDeterministicQuestionSetFromText } from './pdf-worksheet-extract.js';
+import {
+  buildDeterministicQuestionSetFromText,
+  extractQuestionsFromText,
+  extractWorksheetItemsFromPdfText,
+} from './pdf-worksheet-extract.js';
+
+export { buildDeterministicQuestionSetFromText, extractWorksheetItemsFromPdfText };
 
 /** Strings or arrays → trimmed non-empty lines (bullets / numbers stripped). */
 function coerceBulletLines(value) {
@@ -97,6 +130,26 @@ function coerceBulletLines(value) {
       .map((item) => {
         if (typeof item === 'string') return item.replace(/^\s*[-*•]\s*|\s*\d+[\).]\s*/i, '').trim();
         if (item && typeof item === 'object') {
+          const time = String(item.time || item.duration || item.slot || '').trim();
+          const activity = String(
+            item.activity ||
+              item.task ||
+              item.topic ||
+              item.step ||
+              item.text ||
+              item.description ||
+              item.detail ||
+              item.instruction ||
+              item.objective ||
+              item.outcome ||
+              item.goal ||
+              item.point ||
+              item.content ||
+              '',
+          ).trim();
+          if (time && activity) return `${time}: ${activity}`;
+          if (activity) return activity;
+          if (time) return time;
           const line = String(
             item.step ||
               item.text ||
@@ -108,7 +161,6 @@ function coerceBulletLines(value) {
               item.goal ||
               item.point ||
               item.content ||
-              item.activity ||
               '',
           ).trim();
           if (line) return line;
@@ -165,12 +217,11 @@ export function sanitizeActivityTitle(rawTitle, rawName, slNo) {
 /**
  * Gemini often uses procedure / instructions / nested activity — map to materials + steps.
  */
-export function normalizeActivityStructuredContent(raw /* pdfText reserved — do not paste raw PDF lines as steps */) {
+function prepareActivitySource(raw) {
   let source = raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
   if (source.activity && typeof source.activity === 'object' && !Array.isArray(source.activity)) {
     source = { ...source.activity, ...source };
   }
-
   const pickAlias = (keys) => {
     for (const k of keys) {
       if (source[k] != null && source[k] !== '') return source[k];
@@ -202,6 +253,35 @@ export function normalizeActivityStructuredContent(raw /* pdfText reserved — d
   if (!String(source.title || '').trim() && String(source.Title || '').trim()) {
     source.title = source.Title;
   }
+  return source;
+}
+
+function joinActivityLines(v) {
+  if (v == null) return '';
+  if (Array.isArray(v)) return v.map((x) => String(x || '').trim()).filter(Boolean).join('; ');
+  return String(v).trim();
+}
+
+function finalizeActivitySteps(steps, materials, learningOutcome) {
+  if (steps.length === 0 && materials.length > 0) {
+    steps = [
+      'Use the materials listed above. Follow the detailed steps or instructions from the source PDF or your teacher guide.',
+    ];
+  }
+  if (steps.length === 0 && learningOutcome) {
+    steps = [`Learning focus: ${learningOutcome}`];
+  }
+  const isModelPlaceholderStep = (s) =>
+    /^no structured steps were returned from the model/i.test(String(s || '').trim());
+  if (steps.length === 1 && isModelPlaceholderStep(steps[0])) {
+    steps = [];
+  }
+  return steps;
+}
+
+/** Teacher Activity / Project Generator — 13-section workbook format. */
+export function normalizeActivityProjectStructuredContent(raw) {
+  const source = prepareActivitySource(raw);
 
   let materials = coerceBulletLines(source.materials);
   if (!materials.length) {
@@ -215,103 +295,39 @@ export function normalizeActivityStructuredContent(raw /* pdfText reserved — d
     ].filter(Boolean);
   }
 
-  /** (4) Student procedure only — do not fold teacher_instructions in here. */
   let steps = coerceBulletLines(source.step_by_step_procedure);
   if (!steps.length) steps = coerceBulletLines(source.steps);
-  if (!steps.length) steps = coerceBulletLines(source.step);
   if (!steps.length) steps = coerceBulletLines(source.procedure);
   if (!steps.length) steps = coerceBulletLines(source.procedures);
-  if (!steps.length) steps = coerceBulletLines(source.instructions);
-  if (!steps.length) steps = coerceBulletLines(source.instruction);
-  if (!steps.length) steps = coerceBulletLines(source.student_instructions);
-  if (!steps.length && Array.isArray(source.activities)) {
-    steps = source.activities.flatMap((a) => {
-      if (typeof a === 'string') return coerceBulletLines(a);
-      if (a && typeof a === 'object') {
-        const line = [a.title || a.name, a.description || a.details || a.procedure].filter(Boolean).join(' — ');
-        return line.trim() ? [line.trim()] : [];
-      }
-      return [];
-    });
-  }
-  if (!steps.length && Array.isArray(source.phases)) {
-    steps = source.phases.map((p) =>
-      String(p?.name || p?.phase || '').trim()
-        ? `${String(p.name || p.phase).trim()}${p?.details ? `: ${String(p.details).trim()}` : ''}`.trim()
-        : ''
-    ).filter(Boolean);
-  }
-  if (!steps.length) {
-    const blob =
-      typeof source.description === 'string'
-        ? source.description
-        : typeof source.overview === 'string'
-          ? source.overview
-          : typeof source.summary === 'string'
-            ? source.summary
-            : '';
-    if (blob) steps = coerceBulletLines(blob);
-  }
-  if (!steps.length && typeof source.content === 'string') {
-    steps = coerceBulletLines(source.content);
-  }
 
-  /** (5) Teacher instructions — separate from procedure. */
-  let teacherInstructions = coerceBulletLines(source.teacher_instructions);
-  if (!teacherInstructions.length) {
-    teacherInstructions = coerceBulletLines(source.teacherInstructions);
-  }
-
-  /** (6) Student instructions (Curiosity workbook). */
-  let studentInstructions = coerceBulletLines(source.student_instructions);
-  if (!studentInstructions.length) studentInstructions = coerceBulletLines(source.studentInstructions);
-
-  /** (2) Learning objectives — separate from (7) expected outcomes. */
   let learningObjectives = coerceBulletLines(source.learning_objectives);
   if (!learningObjectives.length) learningObjectives = coerceBulletLines(source.learningObjectives);
 
-  const joinLines = (v) => {
-    if (v == null) return '';
-    if (Array.isArray(v)) return v.map((x) => String(x || '').trim()).filter(Boolean).join('; ');
-    return String(v).trim();
-  };
-
-  /** (7) Expected learning outcomes only — not the same as (2). */
   let learningOutcome = String(
     source.expected_learning_outcomes ||
       source.expectedLearningOutcomes ||
       source.learningOutcome ||
       source.learning_outcome ||
-      source.outcome ||
-      source.objective ||
       ''
   ).trim();
-  if (!learningOutcome) learningOutcome = joinLines(source.learning_outcomes);
-  if (!learningOutcome) learningOutcome = joinLines(source.objectives);
+  if (!learningOutcome) learningOutcome = joinActivityLines(source.learning_outcomes);
 
-  /** (8) Rubric / assessment lines. */
-  let rubricLines = coerceBulletLines(source.assessment_criteria_rubric);
-  if (!rubricLines.length) rubricLines = coerceBulletLines(source.assessmentRubric);
-  if (!rubricLines.length) rubricLines = coerceBulletLines(source.assessment);
-  if (!rubricLines.length) rubricLines = coerceBulletLines(source.evaluation);
+  const teacherInstructions = dedupeStringList([
+    ...coerceBulletLines(source.teacher_instructions),
+    ...coerceBulletLines(source.teacherInstructions),
+  ]);
+  const studentInstructions = dedupeStringList([
+    ...coerceBulletLines(source.student_instructions),
+    ...coerceBulletLines(source.studentInstructions),
+  ]);
+  const rubricLines = dedupeStringList([
+    ...coerceBulletLines(source.assessment_criteria_rubric),
+    ...coerceBulletLines(source.assessmentRubric),
+    ...coerceBulletLines(source.assessment),
+    ...coerceBulletLines(source.evaluation),
+  ]);
 
-  /** (9) */
-  const realLifeApplication = String(source.real_life_application || source.realLifeApplication || '').trim();
-
-  if (steps.length === 0 && materials.length > 0) {
-    steps = [
-      'Use the materials listed above. Follow the detailed steps or instructions from the source PDF or your teacher guide.',
-    ];
-  }
-  if (steps.length === 0 && learningOutcome) {
-    steps = [`Learning focus: ${learningOutcome}`];
-  }
-
-  const isModelPlaceholderStep = (s) =>
-    /^no structured steps were returned from the model/i.test(String(s || '').trim());
-  if (steps.length === 1 && isModelPlaceholderStep(steps[0])) {
-    steps = [];
-  }
+  steps = finalizeActivitySteps(steps, materials, learningOutcome);
 
   const slNo = source.sl_no ?? source.question_number;
   const title = sanitizeActivityTitle(
@@ -319,22 +335,22 @@ export function normalizeActivityStructuredContent(raw /* pdfText reserved — d
     String(source.name || '').trim(),
     slNo,
   );
-
   const subtopicLink = String(
     source.subtopic_link_prior_knowledge || source.prior_knowledge || source.subtopic_context || '',
   ).trim();
   const ncfAlignment = source.ncf_competency_alignment ?? source.competencies ?? source.learning_outcomes_ncf ?? '';
   const differentiation =
     source.differentiation != null && source.differentiation !== ''
-      ? joinLines(source.differentiation) || String(source.differentiation).trim()
-      : joinLines(source.differentiation_plan || source.udl_support);
+      ? joinActivityLines(source.differentiation) || String(source.differentiation).trim()
+      : joinActivityLines(source.differentiation_plan || source.udl_support);
   const reflectionTicket = String(
     source.reflection_exit_ticket || source.exit_ticket || source.reflection || '',
   ).trim();
+  const realLifeApplication = String(source.real_life_application || source.realLifeApplication || '').trim();
 
   return {
     ...source,
-    sl_no: source.sl_no ?? source.question_number,
+    sl_no: slNo,
     title,
     subtopic_link_prior_knowledge: subtopicLink,
     learning_objectives: learningObjectives.length ? learningObjectives : coerceBulletLines(source.learning_objectives),
@@ -360,9 +376,117 @@ export function normalizeActivityStructuredContent(raw /* pdfText reserved — d
   };
 }
 
-/** Activity PDF rows: all 13 template fields for storage + formatItemToContent. */
-export function canonicalizeActivityExtractedItem(raw) {
-  return normalizeActivityStructuredContent(raw);
+/** Student Project Idea Lab — 14-section format (no separate teacher/student instruction blocks). */
+export function normalizeProjectIdeaLabStructuredContent(raw) {
+  const source = prepareActivitySource(raw);
+
+  let materials = coerceBulletLines(source.materials);
+  if (!materials.length) {
+    materials = [
+      ...coerceBulletLines(source.materials_required),
+      ...coerceBulletLines(source.material),
+      ...coerceBulletLines(source.supplies),
+      ...coerceBulletLines(source.equipment),
+      ...coerceBulletLines(source.resources),
+      ...coerceBulletLines(source.itemsNeeded),
+    ].filter(Boolean);
+  }
+
+  let steps = coerceBulletLines(source.step_by_step_procedure);
+  if (!steps.length) steps = coerceBulletLines(source.student_procedure);
+  if (!steps.length) steps = coerceBulletLines(source.steps);
+  if (!steps.length) steps = coerceBulletLines(source.procedure);
+  const studentOnlySteps = coerceBulletLines(source.student_instructions || source.studentInstructions);
+  if (studentOnlySteps.length) steps = studentOnlySteps;
+
+  let learningObjectives = coerceBulletLines(source.learning_objectives);
+  if (!learningObjectives.length) learningObjectives = coerceBulletLines(source.learningObjectives);
+
+  let learningOutcome = String(
+    source.expected_learning_outcomes ||
+      source.expectedLearningOutcomes ||
+      source.learningOutcome ||
+      source.learning_outcome ||
+      ''
+  ).trim();
+  if (!learningOutcome) learningOutcome = joinActivityLines(source.learning_outcomes);
+
+  const safetyCareInstructions = dedupeStringList([
+    ...coerceBulletLines(source.safety_care_instructions),
+    ...coerceBulletLines(source.safety_instructions),
+    ...coerceBulletLines(source.care_instructions),
+  ]);
+  const observationTable = String(
+    source.observation_data_recording_table || source.observation_table || source.data_recording_table || '',
+  ).trim();
+  const creativeOutput = String(
+    source.creative_output_final_product || source.creative_output || source.final_product || '',
+  ).trim();
+  const selfAssessmentRubric = dedupeStringList([
+    ...coerceBulletLines(source.self_assessment_rubric),
+    ...coerceBulletLines(source.assessment_criteria_rubric),
+    ...coerceBulletLines(source.assessmentRubric),
+  ]);
+
+  steps = finalizeActivitySteps(steps, materials, learningOutcome);
+
+  const slNo = source.sl_no ?? source.question_number;
+  const title = sanitizeActivityTitle(
+    String(source.title || source.activityTitle || source.topic || '').trim(),
+    String(source.name || '').trim(),
+    slNo,
+  );
+  const subtopicLink = String(
+    source.subtopic_link_prior_knowledge || source.prior_knowledge || source.subtopic_context || '',
+  ).trim();
+  const ncfAlignment = source.ncf_competency_alignment ?? source.competencies ?? source.learning_outcomes_ncf ?? '';
+  const differentiation =
+    source.differentiation_support_extension != null && source.differentiation_support_extension !== ''
+      ? joinActivityLines(source.differentiation_support_extension) ||
+        String(source.differentiation_support_extension).trim()
+      : joinActivityLines(source.differentiation || source.differentiation_plan || source.udl_support);
+  const reflectionTicket = String(
+    source.reflection_exit_ticket || source.exit_ticket || source.reflection || '',
+  ).trim();
+  const realLifeApplication = String(source.real_life_application || source.realLifeApplication || '').trim();
+
+  return {
+    ...source,
+    sl_no: slNo,
+    title,
+    subtopic_link_prior_knowledge: subtopicLink,
+    learning_objectives: learningObjectives.length ? learningObjectives : coerceBulletLines(source.learning_objectives),
+    learningObjectives,
+    ncf_competency_alignment: ncfAlignment,
+    materials_required: materials,
+    materials,
+    step_by_step_procedure: steps,
+    steps,
+    safety_care_instructions: safetyCareInstructions,
+    observation_data_recording_table: observationTable,
+    creative_output_final_product: creativeOutput,
+    differentiation_support_extension: differentiation,
+    differentiation,
+    self_assessment_rubric: selfAssessmentRubric,
+    expected_learning_outcomes:
+      learningOutcome || String(source.expected_learning_outcomes || '').trim(),
+    learningOutcome: learningOutcome || source.learningOutcome || source.learning_outcome || '',
+    real_life_application: realLifeApplication,
+    realLifeApplication,
+    reflection_exit_ticket: reflectionTicket,
+  };
+}
+
+export function normalizeActivityStructuredContent(raw, toolSlug = 'activity-project-generator') {
+  if (String(toolSlug || '').trim() === 'project-idea-lab') {
+    return normalizeProjectIdeaLabStructuredContent(raw);
+  }
+  return normalizeActivityProjectStructuredContent(raw);
+}
+
+/** Activity PDF rows: template fields for storage + formatItemToContent. */
+export function canonicalizeActivityExtractedItem(raw, toolSlug = 'activity-project-generator') {
+  return normalizeActivityStructuredContent(raw, toolSlug);
 }
 
 /** Concept PDF rows: map Gemini aliases → 12-section template fields. */
@@ -707,25 +831,23 @@ function parseStoryDifferentiationFields(source = {}) {
   return { differentiation_support: support, differentiation_extension: extension };
 }
 
-/** Story & Passage PDF / generator → 10-section template. */
-export function normalizeStoryStructuredContent(raw) {
+/** Reading Practice Room (student) PDF / generator → 13-section template. */
+export function normalizeReadingPracticeStructuredContent(raw) {
   const source = raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
-  const title = String(source.title || source.passage_title || source.story_title || '').trim();
+  const reading_practice_title = String(
+    source.reading_practice_title || source.title || source.passage_title || source.story_title || '',
+  ).trim();
 
-  const nep = String(source.nep_ncf_focus || source.nep_ncf || '').trim();
-  const skill = String(source.skill_focus || '').trim();
-  const udl = String(source.udl_support || source.udl || '').trim();
-  let alignment_block = String(source.alignment_block || source.alignment || '').trim();
-  if (!alignment_block) {
-    const parts = [];
-    if (nep) parts.push(`NEP/NCF Focus: ${nep}`);
-    if (skill) parts.push(`Skill Focus: ${skill}`);
-    if (udl) parts.push(`UDL: ${udl}`);
-    const legacyGenre = String(source.genre_purpose || source.reading_level || '').trim();
-    const legacySubtopic = String(source.subtopic_link || '').trim();
-    if (legacySubtopic) parts.push(legacySubtopic);
-    if (legacyGenre) parts.push(legacyGenre);
-    alignment_block = parts.join(' ');
+  let subtopic_link_prior_knowledge = String(
+    source.subtopic_link_prior_knowledge || source.subtopic_link_prior || '',
+  ).trim();
+  if (!subtopic_link_prior_knowledge) {
+    const parts = [
+      String(source.subtopic_link || source.subtopic || '').trim(),
+      String(source.prior_knowledge || source.prior_knowledge_required || '').trim(),
+      String(source.topic_subtopic_connection || '').trim(),
+    ].filter(Boolean);
+    subtopic_link_prior_knowledge = parts.join('\n');
   }
 
   const learning_objectives = dedupeStringList([
@@ -734,55 +856,91 @@ export function normalizeStoryStructuredContent(raw) {
     ...coerceBulletLines(source.learningObjectives),
   ]);
 
-  const passage = String(source.passage || source.content || source.story_text || '').trim();
+  let ncf_competency_alignment = String(source.ncf_competency_alignment || '').trim();
+  if (!ncf_competency_alignment) {
+    const legacy = String(source.alignment_block || source.alignment || '').trim();
+    const nep = String(source.nep_ncf_focus || source.nep_ncf || '').trim();
+    if (legacy) ncf_competency_alignment = legacy;
+    else if (nep) ncf_competency_alignment = nep;
+  }
 
-  const vocabulary_support = dedupeStringList([
+  const vocabulary_warmup = dedupeStringList([
+    ...coerceBulletLines(source.vocabulary_warmup),
     ...coerceBulletLines(source.vocabulary_support),
     ...coerceBulletLines(source.vocabulary),
   ]);
 
-  const questions = toQuestionArray([
-    ...(Array.isArray(source.questions) ? source.questions : []),
+  const passage = String(source.passage || source.content || source.story_text || '').trim();
+
+  const read_and_recall_questions = toQuestionArray([
+    ...(Array.isArray(source.read_and_recall_questions) ? source.read_and_recall_questions : []),
+    ...(Array.isArray(source.recall_questions) ? source.recall_questions : []),
+    ...(Array.isArray(source.questions) && !source.think_and_infer_questions && !source.apply_and_connect_questions
+      ? source.questions
+      : []),
     ...(Array.isArray(source.comprehension_questions) ? source.comprehension_questions : []),
   ]);
 
-  const answer_hints = dedupeStringList([
+  const think_and_infer_questions = toQuestionArray(
+    Array.isArray(source.think_and_infer_questions) ? source.think_and_infer_questions : source.infer_questions,
+  );
+
+  const apply_and_connect_questions = toQuestionArray(
+    Array.isArray(source.apply_and_connect_questions)
+      ? source.apply_and_connect_questions
+      : source.connect_questions,
+  );
+
+  const vocabulary_practice = dedupeStringList([...coerceBulletLines(source.vocabulary_practice)]);
+
+  const answer_key_suggested_responses = dedupeStringList([
+    ...coerceBulletLines(source.answer_key_suggested_responses),
     ...coerceBulletLines(source.answer_hints),
     ...(String(source.answer_hints || '').trim() && !Array.isArray(source.answer_hints)
       ? [String(source.answer_hints)]
       : []),
     ...coerceBulletLines(source.answer_key),
-    ...coerceBulletLines(source.moral),
-    ...coerceBulletLines(source.formative_check),
   ]);
 
-  const { differentiation_support, differentiation_extension } = parseStoryDifferentiationFields(source);
+  const expected_learning_outcomes = dedupeStringList([
+    ...coerceBulletLines(source.expected_learning_outcomes),
+    ...(String(source.expected_learning_outcomes || '').trim() &&
+    !Array.isArray(source.expected_learning_outcomes)
+      ? [String(source.expected_learning_outcomes)]
+      : []),
+  ]);
 
-  const real_life_application = String(
-    source.real_life_application || source.real_life_link || source.real_life || '',
+  const reflection_exit_ticket = String(
+    source.reflection_exit_ticket || source.reflection_prompt || source.reflection || '',
   ).trim();
 
-  const reflection_prompt = String(
-    source.reflection_prompt || source.reflection_exit_ticket || source.reflection || '',
-  ).trim();
+  const questions = [
+    ...read_and_recall_questions,
+    ...think_and_infer_questions,
+    ...apply_and_connect_questions,
+  ];
 
   return {
     ...source,
-    title: title || 'Story',
-    alignment_block,
-    nep_ncf_focus: nep,
-    skill_focus: skill,
-    udl_support: udl,
+    reading_practice_title: reading_practice_title || 'Reading Practice',
+    title: reading_practice_title || 'Reading Practice',
+    subtopic_link_prior_knowledge,
     learning_objectives,
+    ncf_competency_alignment,
+    vocabulary_warmup,
     passage,
     content: passage,
-    vocabulary_support,
+    read_and_recall_questions,
+    think_and_infer_questions,
+    apply_and_connect_questions,
+    vocabulary_practice,
+    answer_key_suggested_responses,
+    expected_learning_outcomes,
+    reflection_exit_ticket,
+    vocabulary_support: vocabulary_warmup,
     questions,
-    answer_hints,
-    differentiation_support,
-    differentiation_extension,
-    real_life_application,
-    reflection_prompt,
+    answer_hints: answer_key_suggested_responses,
+    reflection_prompt: reflection_exit_ticket,
     bloom_level: String(source.bloom_level || source.bloomLevel || '').trim(),
     difficulty_level: String(
       source.difficulty_level || source.difficulty_tag || source.difficulty || '',
@@ -793,31 +951,222 @@ export function normalizeStoryStructuredContent(raw) {
   };
 }
 
-export function canonicalizeStoryExtractedItem(raw) {
-  return normalizeStoryStructuredContent(raw);
+/** Story and Passage Creator (teacher) PDF / generator → 19-section template. */
+export function normalizeStoryPassageStructuredContent(raw) {
+  const source = raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
+  const title = String(source.title || source.passage_title || source.story_title || '').trim();
+
+  const topic_subtopic_connection = String(
+    source.topic_subtopic_connection ||
+      source.topic_and_subtopic_connection ||
+      source.topicSubtopicConnection ||
+      source.subtopic_link ||
+      '',
+  ).trim();
+
+  const prior_knowledge_required = String(
+    source.prior_knowledge_required || source.prior_knowledge || source.priorKnowledgeRequired || '',
+  ).trim();
+
+  const learning_objectives = dedupeStringList([
+    ...coerceBulletLines(source.learning_objectives),
+    ...coerceBulletLines(source.objectives),
+    ...coerceBulletLines(source.learningObjectives),
+  ]);
+
+  let ncf_competency_alignment = String(source.ncf_competency_alignment || '').trim();
+  if (!ncf_competency_alignment) {
+    const legacy = String(source.alignment_block || source.alignment || '').trim();
+    const nep = String(source.nep_ncf_focus || source.nep_ncf || '').trim();
+    if (legacy) ncf_competency_alignment = legacy;
+    else if (nep) ncf_competency_alignment = nep;
+  }
+
+  const vocabulary_warmup = dedupeStringList([
+    ...coerceBulletLines(source.vocabulary_warmup),
+    ...coerceBulletLines(source.vocabulary_support),
+    ...coerceBulletLines(source.vocabulary),
+  ]);
+
+  const pre_reading_thinking_prompt = String(
+    source.pre_reading_thinking_prompt || source.pre_reading_prompt || source.preReadingPrompt || '',
+  ).trim();
+
+  const passage = String(
+    source.passage || source.content || source.story_text || source.story_passage_content || '',
+  ).trim();
+
+  const read_and_recall_questions = toQuestionArray([
+    ...(Array.isArray(source.read_and_recall_questions) ? source.read_and_recall_questions : []),
+    ...(Array.isArray(source.recall_questions) ? source.recall_questions : []),
+    ...(Array.isArray(source.questions) &&
+    !source.think_and_infer_questions &&
+    !source.apply_and_connect_questions &&
+    !source.comprehension_questions
+      ? source.questions
+      : []),
+    ...(Array.isArray(source.comprehension_questions) ? source.comprehension_questions : []),
+  ]);
+
+  const think_and_infer_questions = toQuestionArray(
+    Array.isArray(source.think_and_infer_questions)
+      ? source.think_and_infer_questions
+      : source.infer_questions,
+  );
+
+  const apply_and_connect_questions = toQuestionArray(
+    Array.isArray(source.apply_and_connect_questions)
+      ? source.apply_and_connect_questions
+      : source.connect_questions,
+  );
+
+  const vocabulary_grammar_practice = String(
+    source.vocabulary_grammar_practice ||
+      (Array.isArray(source.vocabulary_practice)
+        ? source.vocabulary_practice.map((x) => String(x || '').trim()).filter(Boolean).join('\n')
+        : '') ||
+      '',
+  ).trim();
+
+  const creative_response_activity = String(source.creative_response_activity || '').trim();
+
+  const answer_key_suggested_responses = dedupeStringList([
+    ...coerceBulletLines(source.answer_key_suggested_responses),
+    ...coerceBulletLines(source.answer_hints),
+    ...coerceBulletLines(source.answer_key),
+    ...(String(source.answer_hints || '').trim() && !Array.isArray(source.answer_hints)
+      ? [String(source.answer_hints)]
+      : []),
+  ]);
+
+  const common_mistakes_to_avoid = String(source.common_mistakes_to_avoid || '').trim();
+
+  const differentiation_support = String(source.differentiation_support || '').trim();
+
+  const expected_learning_outcomes = dedupeStringList([
+    ...coerceBulletLines(source.expected_learning_outcomes),
+    ...(String(source.expected_learning_outcomes || '').trim() &&
+    !Array.isArray(source.expected_learning_outcomes)
+      ? [String(source.expected_learning_outcomes)]
+      : []),
+  ]);
+
+  const real_life_application = String(
+    source.real_life_application || source.real_life_link || source.realLifeApplication || '',
+  ).trim();
+
+  const reflection_exit_ticket = String(
+    source.reflection_exit_ticket || source.reflection_prompt || source.reflection || '',
+  ).trim();
+
+  const questions = [
+    ...read_and_recall_questions,
+    ...think_and_infer_questions,
+    ...apply_and_connect_questions,
+  ];
+
+  return {
+    ...source,
+    title: title || 'Story',
+    topic_subtopic_connection,
+    prior_knowledge_required,
+    learning_objectives,
+    ncf_competency_alignment,
+    vocabulary_warmup,
+    pre_reading_thinking_prompt,
+    passage,
+    content: passage,
+    story_passage_content: passage,
+    read_and_recall_questions,
+    think_and_infer_questions,
+    apply_and_connect_questions,
+    vocabulary_grammar_practice,
+    creative_response_activity,
+    answer_key_suggested_responses,
+    common_mistakes_to_avoid,
+    differentiation_support,
+    expected_learning_outcomes,
+    real_life_application,
+    reflection_exit_ticket,
+    reflection_prompt: reflection_exit_ticket,
+    vocabulary_support: vocabulary_warmup,
+    questions,
+    bloom_level: String(source.bloom_level || source.bloomLevel || '').trim(),
+    difficulty_level: String(
+      source.difficulty_level || source.difficulty_tag || source.difficulty || '',
+    ).trim(),
+    class_label: String(source.class_label || source.classLabel || '').trim(),
+    subject: String(source.subject || '').trim(),
+    subtopic: String(source.subtopic || source.subtopic_link || '').trim(),
+  };
 }
 
-/** Viewer payload for Story & Passage Creator (PDF extract or generator). */
-export function buildStoryRenderableFromStructured(source) {
-  const s = normalizeStoryStructuredContent(
-    source && typeof source === 'object' && !Array.isArray(source) ? source : {},
-  );
+/** @deprecated Use normalizeReadingPracticeStructuredContent or normalizeStoryPassageStructuredContent */
+export function normalizeStoryStructuredContent(raw) {
+  return normalizeReadingPracticeStructuredContent(raw);
+}
+
+export function canonicalizeStoryExtractedItem(raw, toolSlug = 'reading-practice-room') {
+  const slug = String(toolSlug || '').trim();
+  if (slug === 'story-passage-creator') return normalizeStoryPassageStructuredContent(raw);
+  return normalizeReadingPracticeStructuredContent(raw);
+}
+
+/** Viewer payload for Reading Practice Room or Story and Passage Creator. */
+export function buildStoryRenderableFromStructured(source, toolSlug = 'reading-practice-room') {
+  const slug = String(toolSlug || '').trim();
+  const normalize =
+    slug === 'story-passage-creator'
+      ? normalizeStoryPassageStructuredContent
+      : normalizeReadingPracticeStructuredContent;
+  const s = normalize(source && typeof source === 'object' && !Array.isArray(source) ? source : {});
+  if (slug === 'story-passage-creator') {
+    return {
+      kind: 'story',
+      variant: 'teacher',
+      title: String(s.title || 'Story').trim(),
+      topicSubtopicConnection: String(s.topic_subtopic_connection || '').trim(),
+      priorKnowledgeRequired: String(s.prior_knowledge_required || '').trim(),
+      learningObjectives: toStringList(s.learning_objectives),
+      ncfCompetencyAlignment: String(s.ncf_competency_alignment || '').trim(),
+      vocabularyWarmup: toStringList(s.vocabulary_warmup),
+      preReadingThinkingPrompt: String(s.pre_reading_thinking_prompt || '').trim(),
+      passage: String(s.passage || '').trim(),
+      readAndRecallQuestions: toQuestionArray(s.read_and_recall_questions),
+      thinkAndInferQuestions: toQuestionArray(s.think_and_infer_questions),
+      applyAndConnectQuestions: toQuestionArray(s.apply_and_connect_questions),
+      vocabularyGrammarPractice: String(s.vocabulary_grammar_practice || '').trim(),
+      creativeResponseActivity: String(s.creative_response_activity || '').trim(),
+      answerKeySuggestedResponses: toStringList(s.answer_key_suggested_responses),
+      commonMistakesToAvoid: String(s.common_mistakes_to_avoid || '').trim(),
+      differentiationSupport: String(s.differentiation_support || '').trim(),
+      expectedLearningOutcomes: toStringList(s.expected_learning_outcomes),
+      realLifeApplication: String(s.real_life_application || '').trim(),
+      reflectionExitTicket: String(s.reflection_exit_ticket || '').trim(),
+      reflectionPrompt: String(s.reflection_exit_ticket || '').trim(),
+      questions: toQuestionArray(s.questions),
+    };
+  }
   return {
     kind: 'story',
-    title: String(s.title || 'Story').trim(),
-    alignmentBlock: String(s.alignment_block || '').trim(),
-    nepNcfFocus: String(s.nep_ncf_focus || '').trim(),
-    skillFocus: String(s.skill_focus || '').trim(),
-    udlSupport: String(s.udl_support || '').trim(),
+    title: String(s.reading_practice_title || s.title || 'Reading Practice').trim(),
+    readingPracticeTitle: String(s.reading_practice_title || s.title || 'Reading Practice').trim(),
+    subtopicLinkPriorKnowledge: String(s.subtopic_link_prior_knowledge || '').trim(),
     learningObjectives: toStringList(s.learning_objectives),
+    ncfCompetencyAlignment: String(s.ncf_competency_alignment || '').trim(),
     passage: String(s.passage || '').trim(),
-    vocabularySupport: toStringList(s.vocabulary_support),
+    vocabularyWarmup: toStringList(s.vocabulary_warmup),
+    readAndRecallQuestions: toQuestionArray(s.read_and_recall_questions),
+    thinkAndInferQuestions: toQuestionArray(s.think_and_infer_questions),
+    applyAndConnectQuestions: toQuestionArray(s.apply_and_connect_questions),
+    vocabularyPractice: toStringList(s.vocabulary_practice),
+    answerKeySuggestedResponses: toStringList(s.answer_key_suggested_responses),
+    expectedLearningOutcomes: toStringList(s.expected_learning_outcomes),
+    reflectionExitTicket: String(s.reflection_exit_ticket || '').trim(),
+    vocabularySupport: toStringList(s.vocabulary_warmup),
     questions: toQuestionArray(s.questions),
-    answerHints: toStringList(s.answer_hints),
-    differentiationSupport: String(s.differentiation_support || '').trim(),
-    differentiationExtension: String(s.differentiation_extension || '').trim(),
-    realLifeApplication: String(s.real_life_application || '').trim(),
-    reflectionPrompt: String(s.reflection_prompt || '').trim(),
+    answerHints: toStringList(s.answer_key_suggested_responses),
+    reflectionPrompt: String(s.reflection_exit_ticket || '').trim(),
     bloomLevel: String(s.bloom_level || '').trim(),
     difficultyLevel: String(s.difficulty_level || '').trim(),
     classLabel: String(s.class_label || '').trim(),
@@ -956,13 +1305,14 @@ function normalizeStudyGuidePracticeQuestions(raw) {
         const typeRaw = String(q.type || '').trim().toLowerCase();
         const type =
           typeRaw === 'objective' || typeRaw === 'mcq' ? 'objective' : 'subjective';
+        const rawOpts = Array.isArray(q.options)
+          ? q.options.map((o) => String(o ?? '').trim()).filter(Boolean)
+          : [];
         return {
           question: String(q.question || '').trim(),
           type,
           answer: String(q.answer || '').trim(),
-          options: Array.isArray(q.options)
-            ? q.options.map((o) => String(o ?? '').trim()).filter(Boolean)
-            : [],
+          options: rawOpts.length >= 2 ? labelMcqOptions(rawOpts) : rawOpts,
         };
       }
       return {
@@ -1093,17 +1443,74 @@ export function buildStudyGuideRenderableFromStructured(source) {
   };
 }
 
-/** Chapter Summary Creator → 11-section template. */
+function normalizeChapterSummaryFormulaeList(source) {
+  const s = source && typeof source === 'object' && !Array.isArray(source) ? source : {};
+  const rows = [];
+  const seen = new Set();
+  const pushRow = (name, formula, note = '') => {
+    const n = String(name || '').trim();
+    const f = String(formula || '').trim();
+    const nt = String(note || '').trim();
+    const text = f || n;
+    if (!text) return;
+    const key = `${n}|${text}`.toLowerCase();
+    if (seen.has(key)) return;
+    seen.add(key);
+    rows.push({ name: n, formula: f || n, note: nt });
+  };
+
+  for (const key of ['formulae', 'formulas']) {
+    const arr = Array.isArray(s[key]) ? s[key] : [];
+    for (const f of arr) {
+      if (f && typeof f === 'object') {
+        pushRow(f.name, f.formula || f.rule, f.note);
+      } else {
+        pushRow('', String(f ?? ''), '');
+      }
+    }
+  }
+
+  if (Array.isArray(s.rules)) {
+    for (const r of s.rules) {
+      if (r && typeof r === 'object') {
+        pushRow(r.name, r.formula || r.rule, r.note);
+      } else if (typeof r === 'string') {
+        pushRow('Rule', r, '');
+      }
+    }
+  }
+
+  for (const text of dedupeStringList([
+    ...coerceBulletLines(s.important_facts),
+    ...coerceBulletLines(s.must_remember_facts),
+    ...coerceBulletLines(s.facts),
+    ...coerceBulletLines(s.important_exam_points),
+    ...coerceBulletLines(s.exam_points),
+    ...coerceBulletLines(s.key_takeaways),
+  ])) {
+    pushRow('Important Fact', text, '');
+  }
+
+  return rows;
+}
+
+/** Chapter Summary Creator → 10-section template. */
 export function normalizeChapterSummaryStructuredContent(raw) {
   const source = raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
   const chapter_summary_title = String(
-    source.chapter_summary_title || source.chapter_title || source.title || '',
+    source.chapter_summary_title ||
+      source.chapter_title ||
+      source.title ||
+      source.study_guide_title ||
+      '',
   ).trim();
   const chapter_overview = String(
     source.chapter_overview ||
       source.overview ||
       source.summary ||
       source.chapter_summary ||
+      source.chapter_subtopic_overview ||
+      source.chapter_overview_text ||
       '',
   ).trim();
   const learning_objectives = dedupeStringList([
@@ -1111,24 +1518,12 @@ export function normalizeChapterSummaryStructuredContent(raw) {
     ...coerceBulletLines(source.objectives),
     ...coerceBulletLines(source.learningObjectives),
   ]);
-  const important_concepts = (Array.isArray(source.important_concepts)
-    ? source.important_concepts
-    : Array.isArray(source.key_concepts)
-      ? source.key_concepts
-      : Array.isArray(source.concepts)
-        ? source.concepts
-        : []
-  )
-    .map((c) => {
-      if (c && typeof c === 'object') {
-        return {
-          name: String(c.name || c.concept || '').trim(),
-          explanation: String(c.explanation || '').trim(),
-        };
-      }
-      return { name: String(c ?? '').trim(), explanation: '' };
-    })
-    .filter((c) => c.name);
+  const important_concepts = normalizeStudyGuideKeyConcepts(
+    source.important_concepts ||
+      source.key_concepts ||
+      source.key_concepts_explained ||
+      source.concepts,
+  );
   const definitions = (Array.isArray(source.definitions) ? source.definitions : [])
     .map((d) => {
       if (d && typeof d === 'object') {
@@ -1140,28 +1535,18 @@ export function normalizeChapterSummaryStructuredContent(raw) {
       return { term: String(d ?? '').trim(), definition: '' };
     })
     .filter((d) => d.term);
-  const formulae = (Array.isArray(source.formulae)
-    ? source.formulae
-    : Array.isArray(source.formulas)
-      ? source.formulas
-      : Array.isArray(source.rules)
-        ? source.rules
-        : []
-  )
-    .map((f) => {
-      if (f && typeof f === 'object') {
-        return {
-          name: String(f.name || '').trim(),
-          formula: String(f.formula || f.rule || '').trim(),
-          note: String(f.note || '').trim(),
-        };
-      }
-      return { name: '', formula: String(f ?? '').trim(), note: '' };
-    })
-    .filter((f) => f.formula || f.name);
-  const concept_connections = String(source.concept_connections || source.connections || '').trim();
+  const formulae = normalizeChapterSummaryFormulaeList(source);
+  const concept_connections = String(
+    source.concept_connections ||
+      source.connections ||
+      source.concept_flow ||
+      source.concept_flow_mind_map ||
+      source.mind_map ||
+      '',
+  ).trim();
   const real_life_applications = dedupeStringList([
     ...coerceBulletLines(source.real_life_applications),
+    ...coerceBulletLines(source.real_life_examples),
     ...coerceBulletLines(source.applications),
     ...coerceBulletLines(source.examples),
   ]);
@@ -1180,6 +1565,8 @@ export function normalizeChapterSummaryStructuredContent(raw) {
     ...coerceBulletLines(source.practice_recall_questions),
     ...coerceBulletLines(source.recall_questions),
     ...coerceBulletLines(source.quick_check_questions),
+    ...normalizeStudyGuidePracticeQuestions(source.practice_questions).map((q) => q.question),
+    ...normalizeStudyGuidePracticeQuestions(source.questions).map((q) => q.question),
   ]);
 
   return {
@@ -1233,6 +1620,53 @@ export function buildChapterSummaryRenderableFromStructured(source) {
   };
 }
 
+function normalizeKeyPointsFormulaeList(source) {
+  const s = source && typeof source === 'object' && !Array.isArray(source) ? source : {};
+  const rows = [];
+  const seen = new Set();
+  const pushRow = (name, formula, note = '') => {
+    const n = String(name || '').trim();
+    const f = String(formula || '').trim();
+    const nt = String(note || '').trim();
+    const text = f || n;
+    if (!text) return;
+    const key = `${n}|${text}`.toLowerCase();
+    if (seen.has(key)) return;
+    seen.add(key);
+    rows.push({ name: n, formula: f || n, note: nt });
+  };
+
+  for (const key of ['formulae', 'formulas']) {
+    const arr = Array.isArray(s[key]) ? s[key] : [];
+    for (const f of arr) {
+      if (f && typeof f === 'object') {
+        pushRow(f.name, f.formula || f.rule, f.note || f.when_to_use);
+      } else {
+        pushRow('', String(f ?? ''), '');
+      }
+    }
+  }
+
+  if (Array.isArray(s.rules)) {
+    for (const r of s.rules) {
+      if (r && typeof r === 'object') {
+        pushRow(r.name, r.formula || r.rule, r.note);
+      } else if (typeof r === 'string') {
+        pushRow('Rule', r, '');
+      }
+    }
+  }
+
+  for (const text of dedupeStringList([
+    ...coerceBulletLines(s.important_facts),
+    ...coerceBulletLines(s.facts),
+  ])) {
+    pushRow('Important rule', text, '');
+  }
+
+  return rows;
+}
+
 /** Key Points Extractor → 10-section template. */
 export function normalizeKeyPointsStructuredContent(raw) {
   const source = raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
@@ -1269,23 +1703,7 @@ export function normalizeKeyPointsStructuredContent(raw) {
       return { term: String(d ?? '').trim(), definition: '' };
     })
     .filter((d) => d.term);
-  const formulae = (Array.isArray(source.formulae)
-    ? source.formulae
-    : Array.isArray(source.formulas)
-      ? source.formulas
-      : []
-  )
-    .map((f) => {
-      if (f && typeof f === 'object') {
-        return {
-          name: String(f.name || '').trim(),
-          formula: String(f.formula || '').trim(),
-          note: String(f.note || f.when_to_use || '').trim(),
-        };
-      }
-      return { name: '', formula: String(f ?? '').trim(), note: '' };
-    })
-    .filter((f) => f.formula || f.name);
+  const formulae = normalizeKeyPointsFormulaeList(source);
   const keywords_terminologies = (Array.isArray(source.keywords_terminologies)
     ? source.keywords_terminologies
     : Array.isArray(source.keywords)
@@ -1349,6 +1767,60 @@ export function normalizeKeyPointsStructuredContent(raw) {
 
 export function canonicalizeKeyPointsExtractedItem(raw) {
   return normalizeKeyPointsStructuredContent(raw);
+}
+
+export function keyPointsHasMinimumBody(data) {
+  const s = normalizeKeyPointsStructuredContent(
+    data && typeof data === 'object' && !Array.isArray(data) ? data : {},
+  );
+  const hasConcepts = Array.isArray(s.important_concepts) && s.important_concepts.length > 0;
+  const hasFormulae = Array.isArray(s.formulae) && s.formulae.length >= 3;
+  const hasFacts = Array.isArray(s.must_remember_facts) && s.must_remember_facts.length > 0;
+  const hasSummary = String(s.one_minute_revision_summary || '').trim().length > 8;
+  return hasConcepts && hasFormulae && (hasFacts || hasSummary);
+}
+
+/** Ensure formulae/rules are populated before validation and display. */
+export function finalizeKeyPointsStructuredContent(raw, meta = {}) {
+  let out = normalizeKeyPointsStructuredContent(raw);
+  const title = String(out.topic_title || out.title || '').trim();
+  const isGeneric = !title || /^key\s*points$/i.test(title);
+  if (isGeneric) {
+    const label = [meta.topic, meta.subTopic].filter(Boolean).join(' — ').trim() || 'Topic';
+    const nextTitle = `Key Points: ${label}`;
+    out = { ...out, topic_title: nextTitle, title: nextTitle };
+  }
+  if (!Array.isArray(out.formulae) || out.formulae.length < 3) {
+    let derived = normalizeKeyPointsFormulaeList(out);
+    if (derived.length < 3 && Array.isArray(out.must_remember_facts)) {
+      const extras = [];
+      for (const text of out.must_remember_facts) {
+        if (derived.length + extras.length >= 3) break;
+        const line = String(text || '').trim();
+        if (!line || derived.some((d) => d.formula === line) || extras.some((d) => d.formula === line)) {
+          continue;
+        }
+        extras.push({ name: 'Rule', formula: line, note: '' });
+      }
+      derived = [...derived, ...extras];
+    }
+    if (derived.length < 3 && Array.isArray(out.frequently_asked_exam_points)) {
+      const extras = [];
+      for (const text of out.frequently_asked_exam_points) {
+        if (derived.length + extras.length >= 3) break;
+        const line = String(text || '').trim();
+        if (!line || derived.some((d) => d.formula === line) || extras.some((d) => d.formula === line)) {
+          continue;
+        }
+        extras.push({ name: 'Exam point', formula: line, note: '' });
+      }
+      derived = [...derived, ...extras];
+    }
+    if (derived.length) {
+      out = { ...out, formulae: derived, formulas: derived };
+    }
+  }
+  return out;
 }
 
 /** Viewer payload for Key Points Extractor (PDF extract or generator). */
@@ -1495,7 +1967,7 @@ export function buildQuickAssignmentRenderableFromStructured(source) {
   };
 }
 
-/** Normalize one flashcard to the 7-field template (with legacy fallbacks). */
+/** Normalize one flashcard card with legacy fallbacks. */
 export function normalizeFlashcardCard(raw) {
   const source = raw && typeof raw === 'object' && !Array.isArray(raw) ? raw : {};
   const front = String(source.front || source.question || '').trim();
@@ -1505,6 +1977,20 @@ export function normalizeFlashcardCard(raw) {
   const memory_cue = String(
     source.memory_cue || source.memoryCue || source.hint || '',
   ).trim();
+  const memory_hook_quick_tip = String(
+    source.memory_hook_quick_tip || source.memory_cue || source.memoryCue || source.hint || '',
+  ).trim();
+  const difficulty_tag_for_each_card = String(
+    source.difficulty_tag_for_each_card ||
+      source.difficulty_tag ||
+      source.difficultyLevel ||
+      source.difficulty_level ||
+      source.skill_focus ||
+      source.skillFocus ||
+      source.bloom_level ||
+      source.topic_tag ||
+      '',
+  ).trim();
   const skill_focus = String(
     source.skill_focus || source.skillFocus || source.bloom_level || source.topic_tag || '',
   ).trim();
@@ -1512,6 +1998,9 @@ export function normalizeFlashcardCard(raw) {
     source.example_use || source.exampleUse || source.real_life_link || source.example || '',
   ).trim();
   const peer_prompt = String(source.peer_prompt || source.peerPrompt || '').trim();
+  const self_check_round = String(
+    source.self_check_round || source.selfCheckRound || source.peer_prompt || source.self_check || '',
+  ).trim();
   const reflection = String(
     source.reflection || source.reflection_prompt || source.self_check || '',
   ).trim();
@@ -1521,36 +2010,64 @@ export function normalizeFlashcardCard(raw) {
     front,
     back,
     memory_cue,
+    memory_hook_quick_tip,
+    difficulty_tag_for_each_card,
     skill_focus,
     example_use,
     peer_prompt,
+    self_check_round,
     reflection,
     deck_title,
     hint: memory_cue,
     bloom_level: skill_focus,
+    difficulty_tag: difficulty_tag_for_each_card || skill_focus,
     real_life_link: example_use,
     self_check: reflection,
   };
 }
 
-export function canonicalizeFlashcardExtractedItem(raw) {
-  return normalizeFlashcardCard(raw);
-}
 
-/** Deck shape for validation / AI Generator (cards[] with front + back on every card). */
-export function normalizeFlashcardDeckStructuredContent(raw) {
+/** My Study Decks (student) deck shape — 12-section template. */
+export function normalizeMyStudyDecksStructuredContent(raw) {
   const source =
     raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
   const deck_title = String(source.deck_title || source.title || '').trim();
+  const subtopic_link_prior_knowledge_required = String(
+    source.subtopic_link_prior_knowledge_required || source.prior_knowledge_required || source.subtopic_link || '',
+  ).trim();
+  const ncf_competency_alignment = String(
+    source.ncf_competency_alignment || source.learning_outcome_alignment || '',
+  ).trim();
+  const real_life_application = String(
+    source.real_life_application || source.example_use || source.real_life_link || '',
+  ).trim();
+  const reflection_exit_ticket = String(
+    source.reflection_exit_ticket || source.reflection || source.reflection_prompt || '',
+  ).trim();
+  const toList = (value) =>
+    Array.isArray(value)
+      ? value.map((v) => String(v || '').trim()).filter(Boolean)
+      : String(value || '')
+          .split(/\n|;/)
+          .map((v) => v.trim())
+          .filter(Boolean);
+  const learning_objectives = toList(source.learning_objectives || source.objectives);
+  const common_mistakes_to_avoid = toList(
+    source.common_mistakes_to_avoid || source.common_mistakes,
+  );
+  const expected_learning_outcomes = toList(source.expected_learning_outcomes);
 
   const fromList = (list) =>
     (Array.isArray(list) ? list : [])
       .map((c) => normalizeFlashcardCard(c))
       .filter((c) => String(c.front || '').trim() && String(c.back || '').trim());
 
+  const bloomLevels = ['Remember', 'Understand', 'Apply', 'Analyze', 'Evaluate', 'Create'];
   let cards = [];
   if (Array.isArray(source.cards)) {
     cards = fromList(source.cards);
+  } else if (Array.isArray(source.flashcard_set)) {
+    cards = fromList(source.flashcard_set);
   } else if (Array.isArray(source.flashcards)) {
     cards = fromList(source.flashcards);
   } else if (Array.isArray(raw)) {
@@ -1589,33 +2106,250 @@ export function normalizeFlashcardDeckStructuredContent(raw) {
     }
   }
 
+  cards = cards.map((card, i) => {
+    const difficulty =
+      String(card.difficulty_tag_for_each_card || card.difficulty_tag || '').trim() ||
+      bloomLevels[i % bloomLevels.length];
+    const memory_hook_quick_tip = String(
+      card.memory_hook_quick_tip || card.memory_cue || card.hint || '',
+    ).trim();
+    const self_check_round = String(
+      card.self_check_round || card.peer_prompt || '',
+    ).trim();
+    return {
+      ...card,
+      difficulty_tag_for_each_card: difficulty,
+      difficulty_tag: difficulty,
+      memory_hook_quick_tip:
+        memory_hook_quick_tip ||
+        (card.back ? `Remember: ${String(card.back).split(/[.!?]/)[0]?.trim().slice(0, 120)}` : ''),
+      memory_cue: memory_hook_quick_tip || card.memory_cue,
+      self_check_round:
+        self_check_round ||
+        (card.front ? `Without looking, explain: ${card.front}` : ''),
+    };
+  });
+
   return {
     ...source,
     deck_title: deck_title || undefined,
     title: deck_title || String(source.title || '').trim() || undefined,
+    subtopic_link_prior_knowledge_required: subtopic_link_prior_knowledge_required || undefined,
+    learning_objectives,
+    ncf_competency_alignment: ncf_competency_alignment || undefined,
+    common_mistakes_to_avoid,
+    expected_learning_outcomes,
+    real_life_application: real_life_application || undefined,
+    reflection_exit_ticket: reflection_exit_ticket || undefined,
     cards,
   };
 }
 
-/** Viewer payload for Flashcard Generator (PDF extract or generator). */
-export function buildFlashcardRenderableFromStructured(source) {
-  const normalized = normalizeFlashcardDeckStructuredContent(
+/** Flash Card Generator (teacher) — 18-section deck with typed card groups. */
+export function normalizeFlashcardDeckStructuredContent(raw) {
+  const source =
+    raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
+  const toList = (value) =>
+    Array.isArray(value)
+      ? value.map((v) => String(v || '').trim()).filter(Boolean)
+      : String(value || '')
+          .split(/\n|;/)
+          .map((v) => v.trim())
+          .filter(Boolean);
+
+  const deck_title = String(
+    source.flashcard_deck_title || source.deck_title || source.title || '',
+  ).trim();
+  const topic_and_subtopic_link = String(
+    source.topic_and_subtopic_link || source.subtopic_link || '',
+  ).trim();
+  const prior_knowledge_required = String(
+    source.prior_knowledge_required || source.prior_knowledge || '',
+  ).trim();
+  const ncf_competency_alignment = String(
+    source.ncf_competency_alignment || source.learning_outcome_alignment || '',
+  ).trim();
+  const self_check_rapid_recall_round = String(
+    source.self_check_rapid_recall_round ||
+      source.self_check_round ||
+      source.peer_prompt ||
+      '',
+  ).trim();
+  const differentiation_support = String(
+    source.differentiation_support || source.differentiation || '',
+  ).trim();
+  const real_life_connection = String(
+    source.real_life_connection ||
+      source.real_life_application ||
+      source.example_use ||
+      '',
+  ).trim();
+  const reflection_exit_ticket = String(
+    source.reflection_exit_ticket || source.reflection || source.reflection_prompt || '',
+  ).trim();
+  const learning_objectives = toList(source.learning_objectives || source.objectives);
+  const common_mistakes_to_avoid = toList(
+    source.common_mistakes_to_avoid || source.common_mistakes,
+  );
+  const expected_learning_outcomes = toList(source.expected_learning_outcomes);
+
+  const fromList = (list, category) =>
+    (Array.isArray(list) ? list : [])
+      .map((c) => {
+        const card = normalizeFlashcardCard(c);
+        if (!String(card.front || '').trim() || !String(card.back || '').trim()) return null;
+        return {
+          ...card,
+          card_category: String(card.card_category || category || '').trim() || category,
+        };
+      })
+      .filter(Boolean);
+
+  const concept_and_definition_cards = fromList(
+    source.concept_and_definition_cards,
+    'concept',
+  );
+  const formula_rule_cards = fromList(
+    source.formula_rule_cards || source.formula_cards,
+    'formula',
+  );
+  const application_hots_cards = fromList(
+    source.application_hots_cards || source.application_cards,
+    'application',
+  );
+  const visual_diagram_suggestion_cards = fromList(
+    source.visual_diagram_suggestion_cards || source.visual_cards,
+    'visual',
+  );
+
+  let cards = [];
+  if (Array.isArray(source.cards)) cards = fromList(source.cards, '');
+  else if (Array.isArray(source.flashcard_set)) cards = fromList(source.flashcard_set, '');
+  else if (Array.isArray(source.flashcards)) cards = fromList(source.flashcards, '');
+  else if (Array.isArray(raw)) cards = fromList(raw, '');
+  else {
+    const single = normalizeFlashcardCard(source);
+    if (single.front && single.back) cards = [{ ...single, card_category: 'concept' }];
+  }
+
+  if (!cards.length) {
+    cards = [
+      ...concept_and_definition_cards,
+      ...formula_rule_cards,
+      ...application_hots_cards,
+      ...visual_diagram_suggestion_cards,
+    ];
+  }
+
+  return {
+    ...source,
+    flashcard_deck_title: deck_title || undefined,
+    deck_title: deck_title || undefined,
+    title: deck_title || String(source.title || '').trim() || undefined,
+    topic_and_subtopic_link: topic_and_subtopic_link || undefined,
+    prior_knowledge_required: prior_knowledge_required || undefined,
+    learning_objectives,
+    ncf_competency_alignment: ncf_competency_alignment || undefined,
+    concept_and_definition_cards,
+    formula_rule_cards,
+    application_hots_cards,
+    visual_diagram_suggestion_cards,
+    self_check_rapid_recall_round: self_check_rapid_recall_round || undefined,
+    common_mistakes_to_avoid,
+    differentiation_support: differentiation_support || undefined,
+    expected_learning_outcomes,
+    real_life_connection: real_life_connection || undefined,
+    reflection_exit_ticket: reflection_exit_ticket || undefined,
+    cards,
+  };
+}
+
+export function canonicalizeFlashcardExtractedItem(raw, toolSlug = 'my-study-decks') {
+  const slug = String(toolSlug || '').trim();
+  if (slug === 'flashcard-generator') return normalizeFlashcardDeckStructuredContent(raw);
+  return normalizeMyStudyDecksStructuredContent(raw);
+}
+
+/** Viewer payload for My Study Decks or Flash Card Generator. */
+export function buildFlashcardRenderableFromStructured(source, toolSlug = 'my-study-decks') {
+  const slug = String(toolSlug || '').trim();
+  const normalize =
+    slug === 'flashcard-generator'
+      ? normalizeFlashcardDeckStructuredContent
+      : normalizeMyStudyDecksStructuredContent;
+  const normalized = normalize(
     source && typeof source === 'object' && !Array.isArray(source) ? source : {},
   );
   const cards = normalized.cards || [];
   const deckTitle = String(normalized.deck_title || normalized.title || 'Flashcards').trim();
+  if (slug === 'flashcard-generator') {
+    return {
+      kind: 'flashcards',
+      variant: 'teacher',
+      title: deckTitle,
+      flashcardDeckTitle: deckTitle,
+      topicAndSubtopicLink: String(normalized.topic_and_subtopic_link || '').trim(),
+      priorKnowledgeRequired: String(normalized.prior_knowledge_required || '').trim(),
+      learningObjectives: toStringList(normalized.learning_objectives),
+      ncfCompetencyAlignment: String(normalized.ncf_competency_alignment || '').trim(),
+      selfCheckRapidRecallRound: String(normalized.self_check_rapid_recall_round || '').trim(),
+      commonMistakesToAvoid: toStringList(normalized.common_mistakes_to_avoid),
+      differentiationSupport: String(normalized.differentiation_support || '').trim(),
+      expectedLearningOutcomes: toStringList(normalized.expected_learning_outcomes),
+      realLifeConnection: String(normalized.real_life_connection || '').trim(),
+      reflectionExitTicket: String(normalized.reflection_exit_ticket || '').trim(),
+      conceptAndDefinitionCards: (normalized.concept_and_definition_cards || []).length,
+      formulaRuleCards: (normalized.formula_rule_cards || []).length,
+      applicationHotsCards: (normalized.application_hots_cards || []).length,
+      visualDiagramCards: (normalized.visual_diagram_suggestion_cards || []).length,
+      cards: cards.map((c) => ({
+        front: c.front,
+        back: c.back,
+        cardCategory: c.card_category,
+        difficultyTagForEachCard:
+          c.difficulty_tag_for_each_card || c.difficulty_tag || c.skill_focus,
+        memoryCue: c.memory_hook_quick_tip || c.memory_cue,
+        memoryHookQuickTip: c.memory_hook_quick_tip || c.memory_cue,
+        skillFocus: c.skill_focus,
+        exampleUse: c.example_use,
+        peerPrompt: c.peer_prompt,
+        reflection: c.reflection,
+      })),
+    };
+  }
+  const deckSelfCheck = String(
+    normalized.self_check_round ||
+      normalized.peer_prompt ||
+      cards.map((c) => c.self_check_round).find(Boolean) ||
+      '',
+  ).trim();
   return {
     kind: 'flashcards',
+    variant: 'student',
     title: deckTitle,
+    deck_title: deckTitle,
     cards: cards.map((c) => ({
       front: c.front,
       back: c.back,
-      memoryCue: c.memory_cue,
+      difficultyTagForEachCard: c.difficulty_tag_for_each_card || c.difficulty_tag || c.skill_focus,
+      memoryCue: c.memory_hook_quick_tip || c.memory_cue,
+      memoryHookQuickTip: c.memory_hook_quick_tip || c.memory_cue,
       skillFocus: c.skill_focus,
       exampleUse: c.example_use,
       peerPrompt: c.peer_prompt,
+      selfCheckRound: c.self_check_round || c.peer_prompt,
       reflection: c.reflection,
     })),
+    subtopicLinkPriorKnowledgeRequired: String(
+      normalized.subtopic_link_prior_knowledge_required || '',
+    ).trim(),
+    learningObjectives: toStringList(normalized.learning_objectives),
+    ncfCompetencyAlignment: String(normalized.ncf_competency_alignment || '').trim(),
+    selfCheckRound: deckSelfCheck,
+    commonMistakesToAvoid: toStringList(normalized.common_mistakes_to_avoid),
+    expectedLearningOutcomes: toStringList(normalized.expected_learning_outcomes),
+    realLifeApplication: String(normalized.real_life_application || '').trim(),
+    reflectionExitTicket: String(normalized.reflection_exit_ticket || '').trim(),
   };
 }
 
@@ -1918,7 +2652,7 @@ export function normalizeWorksheetStructuredContent(raw, sourceText = '') {
   }
 
   if (!sections.length && sourceText) {
-    const fromText = sanitizeWorksheetQuestions(extractQuestionsFromText(sourceText));
+    const fromText = sanitizeWorksheetQuestions(extractWorksheetItemsFromPdfText(sourceText, 80));
     if (fromText.length) sections = groupQuestionsIntoWorksheetSections(fromText);
   }
 
@@ -2023,12 +2757,305 @@ export const PRACTICE_QA_SECTION_LABELS = {
 
 export const PRACTICE_QA_REAL_LIFE_SECTION = 'Real-life Problem-solving Questions';
 
+const PRACTICE_QA_SECTION_KEY_PAIRS = [
+  ['section_a_mcqs', PRACTICE_QA_SECTION_LABELS.A],
+  ['section_a', PRACTICE_QA_SECTION_LABELS.A],
+  ['section_b_fill_in_blanks', PRACTICE_QA_SECTION_LABELS.B],
+  ['section_b_fib', PRACTICE_QA_SECTION_LABELS.B],
+  ['fill_in_blanks', PRACTICE_QA_SECTION_LABELS.B],
+  ['section_c_match_following', PRACTICE_QA_SECTION_LABELS.C],
+  ['section_c_match', PRACTICE_QA_SECTION_LABELS.C],
+  ['match_following', PRACTICE_QA_SECTION_LABELS.C],
+  ['section_d_vsa', PRACTICE_QA_SECTION_LABELS.D],
+  ['section_d', PRACTICE_QA_SECTION_LABELS.D],
+  ['section_e_short_answer', PRACTICE_QA_SECTION_LABELS.E],
+  ['section_e_sa', PRACTICE_QA_SECTION_LABELS.E],
+  ['section_d_sa', PRACTICE_QA_SECTION_LABELS.E],
+  ['section_f_application', PRACTICE_QA_SECTION_LABELS.F],
+  ['section_f_case_based', PRACTICE_QA_SECTION_LABELS.F],
+  ['section_g_hots', PRACTICE_QA_SECTION_LABELS.G],
+  ['section_g_analytical', PRACTICE_QA_SECTION_LABELS.G],
+];
+
+function normalizePracticeQaQuestionRow(entry, sectionHint = '') {
+  if (typeof entry === 'string') {
+    const text = entry.trim();
+    return text ? { question: text, options: [], answer: '', section: sectionHint } : null;
+  }
+  if (!entry || typeof entry !== 'object') return null;
+  const question = String(
+    entry.question ||
+      entry.question_text ||
+      entry.questionText ||
+      entry.prompt ||
+      entry.text ||
+      entry.statement ||
+      entry.stem ||
+      entry.title ||
+      '',
+  ).trim();
+  if (!question) return null;
+  const options = collectOptionsFromEntry(entry);
+  return {
+    question,
+    options,
+    answer: String(entry.answer || entry.correctAnswer || entry.correct_answer || '').trim(),
+    question_number: entry.question_number ?? entry.sl_no ?? entry.number,
+    section: String(entry.section || sectionHint || '').trim(),
+    type: String(entry.type || entry.question_type || '').trim(),
+    marks: entry.marks != null && entry.marks !== '' ? Number(entry.marks) : undefined,
+    explanation: String(entry.explanation || entry.rationale || '').trim(),
+    bloom_level: String(entry.bloom_level || entry.bloomLevel || '').trim(),
+    difficulty_tag: String(entry.difficulty_tag || entry.difficulty || entry.difficultyTag || '').trim(),
+  };
+}
+
+function toPracticeQaQuestionArray(value = [], sectionHint = '') {
+  return (Array.isArray(value) ? value : [])
+    .map((entry) => normalizePracticeQaQuestionRow(entry, sectionHint))
+    .filter(Boolean);
+}
+
+function looksLikePracticeQaQuestion(text) {
+  const t = String(text || '').trim();
+  if (!t || t.length < 8) return false;
+  if (isHeadingLikeLine(t)) return false;
+  return looksLikeQuestionPrompt(t) || /_{2,}/.test(t) || t.length >= 12;
+}
+
+function sanitizePracticeQaQuestions(questions = []) {
+  return questions
+    .map((row) => ({
+      ...row,
+      question: String(row?.question || '').replace(/\s+/g, ' ').trim(),
+      options: (() => {
+        const raw = (Array.isArray(row?.options) ? row.options : [])
+          .map((opt) => String(opt || '').replace(/\s+/g, ' ').trim())
+          .filter(Boolean);
+        return raw.length >= 2 ? labelMcqOptions(raw) : raw;
+      })(),
+      answer: String(row?.answer || '').replace(/\s+/g, ' ').trim(),
+    }))
+    .filter((row) => looksLikePracticeQaQuestion(row.question) || row.options.length >= 2)
+    .filter(
+      (row, idx, arr) =>
+        arr.findIndex((q) => q.question.toLowerCase() === row.question.toLowerCase()) === idx,
+    );
+}
+
+function extractPracticeQaQuestionsFromBlock(block, sectionHint = '') {
+  if (Array.isArray(block)) return toPracticeQaQuestionArray(block, sectionHint);
+  if (block && typeof block === 'object') {
+    const hint = sectionHint || String(block.sectionName || block.name || block.section || '').trim();
+    const nested = block.questions || block.items || block.mcqs;
+    if (Array.isArray(nested)) return toPracticeQaQuestionArray(nested, hint);
+  }
+  return [];
+}
+
+export function countPracticeQaQuestions(data) {
+  if (!data || typeof data !== 'object' || Array.isArray(data)) return 0;
+  if (String(data.question || '').trim()) return 1;
+  let n = 0;
+  if (Array.isArray(data.sections)) {
+    n += data.sections.reduce(
+      (acc, s) => acc + extractPracticeQaQuestionsFromBlock(s?.questions || s).length,
+      0,
+    );
+  }
+  for (const [key] of PRACTICE_QA_SECTION_KEY_PAIRS) {
+    n += extractPracticeQaQuestionsFromBlock(data[key]).length;
+  }
+  if (Array.isArray(data.questions)) n += toPracticeQaQuestionArray(data.questions).length;
+  if (Array.isArray(data.practice_questions)) n += toPracticeQaQuestionArray(data.practice_questions).length;
+  if (Array.isArray(data.real_life_problem_solving_questions)) {
+    n += toPracticeQaQuestionArray(data.real_life_problem_solving_questions).length;
+  }
+  return n;
+}
+
+/** Sections A–G that have zero questions after normalization. */
+export function getPracticeQaMissingSections(data) {
+  const normalized = normalizePracticeQaStructuredContent(
+    data && typeof data === 'object' && !Array.isArray(data) ? data : {},
+  );
+  const canonical = buildCanonicalPracticeQaSectionList(normalized.sections);
+  return canonical.filter((sec) => !(Array.isArray(sec?.questions) && sec.questions.length)).map((sec) => sec.sectionName);
+}
+
+export function practiceQaHasAllRequiredSections(data) {
+  if (countPracticeQaQuestions(data) === 0) return false;
+  return getPracticeQaMissingSections(data).length === 0;
+}
+
+export function practiceQaValidationMessage(data) {
+  if (countPracticeQaQuestions(data) === 0) {
+    return 'Practice Q&A must include questions in sections A–G, real-life questions, or a flat questions array.';
+  }
+  const missing = getPracticeQaMissingSections(data);
+  if (!missing.length) return '';
+  return `Practice Q&A must include at least one question in each section A–G. Missing: ${missing.join('; ')}.`;
+}
+
+function collectPracticeQaParseableText(value, depth = 0) {
+  if (depth > 5 || value == null) return '';
+  const parts = [];
+  if (typeof value === 'string') {
+    const t = value.trim();
+    if (t.length > 15) parts.push(t);
+    return parts.join('\n');
+  }
+  if (Array.isArray(value)) {
+    for (const item of value) {
+      const chunk = collectPracticeQaParseableText(item, depth + 1);
+      if (chunk) parts.push(chunk);
+    }
+    return parts.join('\n\n');
+  }
+  if (typeof value === 'object') {
+    for (const [k, v] of Object.entries(value)) {
+      const chunk = collectPracticeQaParseableText(v, depth + 1);
+      if (chunk) parts.push(chunk);
+    }
+  }
+  return parts.join('\n\n');
+}
+
+/** Parse questions from prose / loose JSON when section arrays are missing. */
+export function repairPracticeQaStructuredContent(raw, meta = {}) {
+  const source = raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
+  const textBlob = collectPracticeQaParseableText(source);
+  let out = normalizePracticeQaStructuredContent(source, textBlob);
+
+  if (countPracticeQaQuestions(out) === 0 && textBlob) {
+    const normalized = textBlob
+      .replace(/\*\*Q\s*(\d+)\.\*\*/gi, '\nQ$1. ')
+      .replace(/\*\*([^*]+)\*\*/g, '$1');
+    let parsed = sanitizePracticeQaQuestions(extractWorksheetItemsFromPdfText(normalized, 40));
+    if (!parsed.length) {
+      parsed = sanitizePracticeQaQuestions(extractQuestionsFromText(normalized));
+    }
+    if (parsed.length) {
+      out = normalizePracticeQaStructuredContent(
+        {
+          ...source,
+          questions: parsed.map((q, i) => ({
+            question_number: i + 1,
+            question: q.question,
+            options: q.options || [],
+            answer: q.answer || '',
+            section: q.section || PRACTICE_QA_SECTION_LABELS.A,
+            type: q.options?.length >= 2 ? 'MCQ' : '',
+          })),
+        },
+        textBlob,
+      );
+    }
+  }
+
+  if (countPracticeQaQuestions(out) === 0) {
+    const lifted = [];
+    for (const [key, label] of PRACTICE_QA_SECTION_KEY_PAIRS) {
+      lifted.push(...extractPracticeQaQuestionsFromBlock(source[key], label));
+    }
+    if (Array.isArray(source.questions)) {
+      lifted.push(...toPracticeQaQuestionArray(source.questions));
+    }
+    if (lifted.length) {
+      out = normalizePracticeQaStructuredContent({ ...source, questions: lifted }, textBlob);
+    }
+  }
+
+  return out;
+}
+
+export function chapterSummaryHasMinimumBody(data) {
+  const s = normalizeChapterSummaryStructuredContent(
+    data && typeof data === 'object' && !Array.isArray(data) ? data : {},
+  );
+  const hasOverview = String(s.chapter_overview || '').trim().length > 8;
+  const hasConcepts = Array.isArray(s.important_concepts) && s.important_concepts.length > 0;
+  const hasRevision = Array.isArray(s.quick_revision_notes) && s.quick_revision_notes.length > 0;
+  const hasRecall =
+    Array.isArray(s.practice_recall_questions) && s.practice_recall_questions.length > 0;
+  const hasFormulae = Array.isArray(s.formulae) && s.formulae.length >= 3;
+  return hasOverview && (hasConcepts || hasRevision) && hasRecall && hasFormulae;
+}
+
+/** Repair title and lift study-guide mislabels into chapter summary fields. */
+export function finalizeChapterSummaryStructuredContent(raw, meta = {}) {
+  let out = normalizeChapterSummaryStructuredContent(raw);
+  const title = String(out.chapter_summary_title || out.title || '').trim();
+  const isGeneric = !title || /^chapter\s*summary$/i.test(title);
+  if (isGeneric) {
+    const label = [meta.topic, meta.subTopic].filter(Boolean).join(' — ').trim() || 'Chapter';
+    const nextTitle = `Chapter Summary: ${label}`;
+    out = { ...out, chapter_summary_title: nextTitle, chapter_title: nextTitle, title: nextTitle };
+  }
+  if (!Array.isArray(out.formulae) || out.formulae.length < 3) {
+    let derived = normalizeChapterSummaryFormulaeList(out);
+    if (derived.length < 3 && Array.isArray(out.quick_revision_notes)) {
+      const extras = [];
+      for (const text of out.quick_revision_notes) {
+        if (derived.length + extras.length >= 3) break;
+        const line = String(text || '').trim();
+        if (!line || derived.some((d) => d.formula === line) || extras.some((d) => d.formula === line)) {
+          continue;
+        }
+        extras.push({ name: 'Key rule', formula: line, note: '' });
+      }
+      derived = [...derived, ...extras];
+    }
+    if (derived.length) {
+      out = { ...out, formulae: derived, formulas: derived };
+    }
+  }
+  return out;
+}
+
+/** Ensure practice Q&A has a title and parsed questions before validation. */
+export function finalizePracticeQaStructuredContent(raw, meta = {}) {
+  let out = repairPracticeQaStructuredContent(raw, meta);
+
+  const allRows = [
+    ...(Array.isArray(out.sections) ? out.sections : []).flatMap((sec) =>
+      (Array.isArray(sec?.questions) ? sec.questions : []).map((q) => ({
+        ...q,
+        section:
+          q.section ||
+          sec.sectionName ||
+          inferPracticeQaSectionLabel(sec?.sectionName, q),
+      })),
+    ),
+    ...(Array.isArray(out.questions) ? out.questions : []),
+  ];
+  if (allRows.length) {
+    const regrouped = groupQuestionsIntoPracticeQaSections(allRows);
+    out = {
+      ...out,
+      sections: buildCanonicalPracticeQaSectionList(regrouped),
+    };
+  } else if (Array.isArray(out.sections)) {
+    out = { ...out, sections: buildCanonicalPracticeQaSectionList(out.sections) };
+  }
+
+  const title = String(out.title || out.practice_set_title || '').trim();
+  const isGeneric = !title || /^practice\s*q\s*&?\s*a$/i.test(title);
+  if (isGeneric) {
+    const label = [meta.topic, meta.subTopic].filter(Boolean).join(' — ').trim() || 'Practice Set';
+    const nextTitle = `Practice Q&A: ${label}`;
+    out = { ...out, title: nextTitle, practice_set_title: nextTitle };
+  }
+  return out;
+}
+
 function inferPracticeQaSectionLabel(sectionRaw, question = {}) {
   const s = String(sectionRaw || '').trim();
   const t = String(question.type || '').trim().toUpperCase();
   if (/^A\b|SECTION\s*A|MCQ|MULTIPLE\s*CHOICE/i.test(s) || t === 'MCQ') return PRACTICE_QA_SECTION_LABELS.A;
   if (/^B\b|SECTION\s*B|FILL|FIB|BLANK/i.test(s) || t === 'FIB') return PRACTICE_QA_SECTION_LABELS.B;
   if (/^C\b|SECTION\s*C|MATCH/i.test(s) || t === 'MATCH') return PRACTICE_QA_SECTION_LABELS.C;
+  if (/^6\b|section\s*6/i.test(s) && /match/i.test(s)) return PRACTICE_QA_SECTION_LABELS.C;
   if (/^D\b|SECTION\s*D|VERY\s*SHORT|VSA/i.test(s) || t === 'VSA') return PRACTICE_QA_SECTION_LABELS.D;
   if (/^E\b|SECTION\s*E|SHORT\s*ANSWER/i.test(s) && !/very/i.test(s)) return PRACTICE_QA_SECTION_LABELS.E;
   if (/^F\b|SECTION\s*F|APPLICATION|CASE[\s-]*BASED/i.test(s) || t === 'APPLICATION' || t === 'CASE') {
@@ -2056,7 +3083,11 @@ function inferPracticeQaSectionLabel(sectionRaw, question = {}) {
 }
 
 export function groupQuestionsIntoPracticeQaSections(questions = []) {
-  const cleaned = sanitizeWorksheetQuestions(toQuestionArray(questions));
+  const cleaned = sanitizePracticeQaQuestions(
+    Array.isArray(questions) && questions.length && questions[0]?.question != null
+      ? questions.map((q) => normalizePracticeQaQuestionRow(q, q?.section || '')).filter(Boolean)
+      : toPracticeQaQuestionArray(questions),
+  );
   const map = new Map();
   for (const q of cleaned) {
     const sectionName = inferPracticeQaSectionLabel(q.section, q);
@@ -2092,7 +3123,10 @@ function mergePracticeQaSections(base = [], extra = []) {
   const allQs = [];
   for (const sec of [...(Array.isArray(base) ? base : []), ...(Array.isArray(extra) ? extra : [])]) {
     const name = String(sec?.sectionName || sec?.name || '').trim();
-    const qs = toQuestionArray(sec?.questions || []).map((q) => ({ ...q, section: q.section || name }));
+    const qs = extractPracticeQaQuestionsFromBlock(sec?.questions || sec, name).map((q) => ({
+      ...q,
+      section: q.section || name,
+    }));
     allQs.push(...qs);
   }
   return groupQuestionsIntoPracticeQaSections(allQs);
@@ -2139,29 +3173,8 @@ export function normalizePracticeQaStructuredContent(raw, sourceText = '') {
     });
   }
 
-  const sectionKeys = [
-    ['section_a_mcqs', PRACTICE_QA_SECTION_LABELS.A],
-    ['section_a', PRACTICE_QA_SECTION_LABELS.A],
-    ['section_b_fill_in_blanks', PRACTICE_QA_SECTION_LABELS.B],
-    ['section_b_fib', PRACTICE_QA_SECTION_LABELS.B],
-    ['fill_in_blanks', PRACTICE_QA_SECTION_LABELS.B],
-    ['section_c_match_following', PRACTICE_QA_SECTION_LABELS.C],
-    ['section_c_match', PRACTICE_QA_SECTION_LABELS.C],
-    ['match_following', PRACTICE_QA_SECTION_LABELS.C],
-    ['section_d_vsa', PRACTICE_QA_SECTION_LABELS.D],
-    ['section_d', PRACTICE_QA_SECTION_LABELS.D],
-    ['section_e_short_answer', PRACTICE_QA_SECTION_LABELS.E],
-    ['section_e_sa', PRACTICE_QA_SECTION_LABELS.E],
-    ['section_d_sa', PRACTICE_QA_SECTION_LABELS.E],
-    ['section_f_application', PRACTICE_QA_SECTION_LABELS.F],
-    ['section_f_case_based', PRACTICE_QA_SECTION_LABELS.F],
-    ['section_g_hots', PRACTICE_QA_SECTION_LABELS.G],
-    ['section_g_analytical', PRACTICE_QA_SECTION_LABELS.G],
-  ];
-  for (const [key, label] of sectionKeys) {
-    const block = source[key];
-    if (!block || !Array.isArray(block)) continue;
-    looseQuestions.push(...toQuestionArray(block).map((q) => ({ ...q, section: q.section || label })));
+  for (const [key, label] of PRACTICE_QA_SECTION_KEY_PAIRS) {
+    looseQuestions.push(...extractPracticeQaQuestionsFromBlock(source[key], label));
   }
 
   const flatPools = [
@@ -2171,7 +3184,7 @@ export function normalizePracticeQaStructuredContent(raw, sourceText = '') {
     source.items,
   ];
   for (const pool of flatPools) {
-    looseQuestions.push(...toQuestionArray(pool));
+    looseQuestions.push(...toPracticeQaQuestionArray(pool));
   }
 
   if (looseQuestions.length) {
@@ -2179,23 +3192,26 @@ export function normalizePracticeQaStructuredContent(raw, sourceText = '') {
   }
 
   if (!sections.length && sourceText) {
-    const fromText = sanitizeWorksheetQuestions(extractQuestionsFromText(sourceText));
+    const fromText = sanitizePracticeQaQuestions(extractWorksheetItemsFromPdfText(sourceText, 80));
     if (fromText.length) sections = groupQuestionsIntoPracticeQaSections(fromText);
   }
 
-  const real_life_problem_solving_questions = sanitizeWorksheetQuestions(
-    toQuestionArray(source.real_life_problem_solving_questions || source.real_life_questions).map((q) => ({
-      ...q,
-      section: PRACTICE_QA_REAL_LIFE_SECTION,
-    })),
+  const real_life_problem_solving_questions = sanitizePracticeQaQuestions(
+    toPracticeQaQuestionArray(source.real_life_problem_solving_questions || source.real_life_questions).map(
+      (q) => ({
+        ...q,
+        section: PRACTICE_QA_REAL_LIFE_SECTION,
+      }),
+    ),
   );
 
-  const questions = [
-    ...sections.flatMap((sec) =>
-      (sec.questions || []).map((q) => ({ ...q, section: q.section || sec.sectionName })),
-    ),
+  const sectionQuestionRows = sections.flatMap((sec) =>
+    (sec.questions || []).map((q) => ({ ...q, section: q.section || sec.sectionName })),
+  );
+  const questions = sanitizePracticeQaQuestions([
+    ...sectionQuestionRows,
     ...real_life_problem_solving_questions,
-  ];
+  ]);
 
   let answerKeyOut = answer_key_with_explanations;
   if (!answerKeyOut && questions.length) {
@@ -2216,9 +3232,9 @@ export function normalizePracticeQaStructuredContent(raw, sourceText = '') {
     instructions,
     learning_objectives,
     objectives: learning_objectives,
-    sections,
+    sections: buildCanonicalPracticeQaSectionList(sections),
     real_life_problem_solving_questions,
-    questions: sanitizeWorksheetQuestions(questions),
+    questions,
     answer_key_with_explanations: answerKeyOut,
     answer_key: answerKeyOut,
   };
@@ -2357,7 +3373,7 @@ export function mergeExamPaperSections(base = [], extra = []) {
 }
 
 /** Exam paper PDF / generator → 11-section template + sections A–E. */
-export function normalizeExamPaperStructuredContent(raw) {
+export function normalizeExamPaperStructuredContent(raw, sourceText = '') {
   const source = raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
 
   const paperTitle = String(
@@ -2383,6 +3399,13 @@ export function normalizeExamPaperStructuredContent(raw) {
   let sections = [];
   if (Array.isArray(source.sections) && source.sections.length) {
     sections = mergeExamPaperSections(source.sections, []);
+  }
+
+  if (Array.isArray(source.question_paper) && source.question_paper.length) {
+    sections = mergeExamPaperSections(
+      sections,
+      groupQuestionsIntoExamSections(toQuestionArray(source.question_paper)),
+    );
   }
 
   const looseQuestions = [];
@@ -2429,6 +3452,59 @@ export function normalizeExamPaperStructuredContent(raw) {
       ...(Array.isArray(source.mcqs) ? source.mcqs : []),
     ]);
     if (fromLists.length) sections = groupQuestionsIntoExamSections(fromLists);
+  }
+
+  const questionPaperRaw = source.question_paper ?? source.questionPaper;
+  if (!sections.length && questionPaperRaw != null) {
+    if (Array.isArray(questionPaperRaw)) {
+      const fromArray = toQuestionArray(questionPaperRaw);
+      if (fromArray.length) {
+        sections = mergeExamPaperSections(sections, groupQuestionsIntoExamSections(fromArray));
+      }
+    } else if (typeof questionPaperRaw === 'object') {
+      const qp = questionPaperRaw;
+      if (Array.isArray(qp.sections) && qp.sections.length) {
+        sections = mergeExamPaperSections(sections, qp.sections);
+      }
+      const qpQuestions = toQuestionArray(qp.questions || []);
+      if (qpQuestions.length) {
+        sections = mergeExamPaperSections(sections, groupQuestionsIntoExamSections(qpQuestions));
+      }
+      for (const key of ['section_a', 'section_b', 'section_c', 'section_d', 'section_e']) {
+        if (Array.isArray(qp[key]) && qp[key].length) {
+          sections = mergeExamPaperSections(
+            sections,
+            groupQuestionsIntoExamSections(toQuestionArray(qp[key])),
+          );
+        }
+      }
+    } else {
+      const questionPaperText = String(questionPaperRaw).trim();
+      if (questionPaperText && questionPaperText !== '[object Object]') {
+        const normalizedPaperText = questionPaperText
+          .replace(/\*\*Q\s*(\d+)\.\*\*/gi, '\nQ$1. ')
+          .replace(/\*\*([^*]+)\*\*/g, '$1');
+        let parsed = sanitizeWorksheetQuestions(
+          extractWorksheetItemsFromPdfText(normalizedPaperText, 40),
+        );
+        if (!parsed.length) {
+          parsed = sanitizeWorksheetQuestions(extractQuestionsFromText(normalizedPaperText));
+        }
+        if (parsed.length) {
+          sections = mergeExamPaperSections(sections, groupQuestionsIntoExamSections(parsed));
+        }
+      }
+    }
+  }
+
+  if (!sections.length && sourceText) {
+    const normalizedSource = String(sourceText)
+      .replace(/\*\*Q\s*(\d+)\.\*\*/gi, '\nQ$1. ')
+      .replace(/\*\*([^*]+)\*\*/g, '$1');
+    const parsed = sanitizeWorksheetQuestions(extractWorksheetItemsFromPdfText(normalizedSource, 40));
+    if (parsed.length) {
+      sections = mergeExamPaperSections(sections, groupQuestionsIntoExamSections(parsed));
+    }
   }
 
   const sectionQuestionBuckets = {
@@ -2490,8 +3566,248 @@ export function normalizeExamPaperStructuredContent(raw) {
   };
 }
 
-export function canonicalizeExamPaperExtractedItem(raw) {
+function countMockTestQuestions(data) {
+  if (!data || typeof data !== 'object' || Array.isArray(data)) return 0;
+  if (String(data.question || '').trim()) return 1;
+  let n = 0;
+  if (Array.isArray(data.sections)) {
+    n += data.sections.reduce((acc, s) => acc + toQuestionArray(s?.questions || []).length, 0);
+  }
+  for (const key of ['section_a', 'section_b', 'section_c', 'section_d', 'section_e']) {
+    if (Array.isArray(data[key])) n += toQuestionArray(data[key]).length;
+  }
+  if (Array.isArray(data.questions)) n += toQuestionArray(data.questions).length;
+  return n;
+}
+
+/** Prefer populated mock-test fields when Gemini splits data across root and structuredContent. */
+function mergeMockTestStructuredLayers(coerced = {}, fromStructured = {}) {
+  const out = { ...fromStructured, ...coerced };
+  const arrayKeys = [
+    'sections',
+    'section_a',
+    'section_b',
+    'section_c',
+    'section_d',
+    'section_e',
+    'questions',
+    'learning_objectives',
+    'remedial_revision_suggestions',
+    'expected_learning_outcomes',
+  ];
+  for (const key of arrayKeys) {
+    const a = Array.isArray(coerced[key]) ? coerced[key] : [];
+    const b = Array.isArray(fromStructured[key]) ? fromStructured[key] : [];
+    if (a.length && !b.length) out[key] = a;
+    else if (b.length && !a.length) out[key] = b;
+    else if (a.length && b.length) out[key] = a.length >= b.length ? a : b;
+  }
+  for (const key of [
+    'mock_test_title',
+    'paper_title',
+    'title',
+    'question_paper',
+    'instructions',
+    'answer_key',
+    'step_by_step_solutions_explanations',
+  ]) {
+    const a = String(coerced[key] ?? '').trim();
+    const b = String(fromStructured[key] ?? '').trim();
+    if (a && !b) out[key] = coerced[key];
+    else if (b && !a) out[key] = fromStructured[key];
+    else if (b.length > a.length) out[key] = fromStructured[key];
+    else if (a) out[key] = coerced[key];
+  }
+  return out;
+}
+
+function collectMockTestParseableText(value, depth = 0) {
+  if (depth > 5 || value == null) return '';
+  const parts = [];
+  if (typeof value === 'string') {
+    const t = value.trim();
+    if (t.length > 15) parts.push(t);
+    return parts.join('\n');
+  }
+  if (Array.isArray(value)) {
+    for (const item of value) {
+      const chunk = collectMockTestParseableText(item, depth + 1);
+      if (chunk) parts.push(chunk);
+    }
+    return parts.join('\n\n');
+  }
+  if (typeof value === 'object') {
+    for (const [k, v] of Object.entries(value)) {
+      if (k === 'performance_self_analysis_table' || k === 'self_analysis_table') continue;
+      const chunk = collectMockTestParseableText(v, depth + 1);
+      if (chunk) parts.push(chunk);
+    }
+  }
+  return parts.join('\n\n');
+}
+
+/** Parse questions from prose / loose JSON when section arrays are missing. */
+export function repairMockTestStructuredContent(raw, meta = {}) {
+  const source = raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
+  const textBlob = collectMockTestParseableText(source);
+  let out = normalizeMockTestStructuredContent(source, textBlob);
+
+  if (countMockTestQuestions(out) === 0 && textBlob) {
+    const normalized = textBlob
+      .replace(/\*\*Q\s*(\d+)\.\*\*/gi, '\nQ$1. ')
+      .replace(/\*\*([^*]+)\*\*/g, '$1');
+    let parsed = sanitizeWorksheetQuestions(extractWorksheetItemsFromPdfText(normalized, 35));
+    if (!parsed.length) {
+      parsed = sanitizeWorksheetQuestions(extractQuestionsFromText(normalized));
+    }
+    if (parsed.length) {
+      out = normalizeMockTestStructuredContent(
+        {
+          ...source,
+          section_a: parsed.map((q, i) => ({
+            question_number: i + 1,
+            question: q.question,
+            options: q.options || [],
+            answer: q.answer || '',
+            marks: 1,
+            section: q.section || 'Section A: MCQs',
+          })),
+        },
+        textBlob,
+      );
+    }
+  }
+
+  if (countMockTestQuestions(out) === 0 && Array.isArray(source.questions)) {
+    const rows = toQuestionArray(source.questions);
+    if (rows.length) {
+      out = normalizeMockTestStructuredContent(
+        {
+          ...source,
+          section_a: rows.map((q, i) => ({
+            question_number: q.question_number ?? i + 1,
+            question: q.question,
+            options: q.options || [],
+            answer: q.answer || '',
+            marks: q.marks ?? 1,
+          })),
+        },
+        textBlob,
+      );
+    }
+  }
+
+  return out;
+}
+
+/** Ensure mock test has a title and parsed questions before validation. */
+export function finalizeMockTestStructuredContent(raw, meta = {}) {
+  let out = repairMockTestStructuredContent(raw, meta);
+  let mockTitle = String(out.mock_test_title || out.paper_title || out.title || '').trim();
+  const paperTitle = String(out.paper_title || out.title || '').trim();
+  const isGenericPlaceholder = !paperTitle || /^exam paper$/i.test(paperTitle);
+  if (!mockTitle && (!paperTitle || isGenericPlaceholder)) {
+    const label = [meta.topic, meta.subTopic].filter(Boolean).join(' — ').trim() || 'Mock Test';
+    mockTitle = `Mock Test: ${label}`;
+    out = { ...out, mock_test_title: mockTitle, paper_title: mockTitle, title: mockTitle };
+  } else if (!mockTitle && paperTitle) {
+    out = { ...out, mock_test_title: paperTitle, title: paperTitle };
+  }
+  return out;
+}
+
+/** Mock Test Builder (student) — 12-section format with remedial guidance and reflection. */
+export function normalizeMockTestStructuredContent(raw, sourceText = '') {
+  const base = normalizeExamPaperStructuredContent(raw, sourceText);
+  const source = raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
+  const toList = (value) =>
+    Array.isArray(value)
+      ? value.map((v) => String(v || '').trim()).filter(Boolean)
+      : String(value || '')
+          .split(/\n|;/)
+          .map((v) => v.trim())
+          .filter(Boolean);
+
+  const mock_test_title = String(
+    source.mock_test_title || source.paper_title || base.paper_title || base.title || '',
+  ).trim();
+  const sections = Array.isArray(base.sections) ? base.sections : [];
+  const questionCount = sections.reduce(
+    (n, sec) => n + (Array.isArray(sec?.questions) ? sec.questions.length : 0),
+    0,
+  );
+
+  let answer_key = String(base.answer_key || source.answer_key || '').trim();
+  if (!answer_key && questionCount > 0) {
+    const keyLines = formatMockTestAnswerKeyLinesFromSections(sections);
+    if (keyLines.length) answer_key = keyLines.join('\n');
+  }
+
+  let step_by_step_solutions_explanations = String(
+    source.step_by_step_solutions_explanations ||
+      source.solutions ||
+      source.explanations ||
+      '',
+  ).trim();
+  if (!step_by_step_solutions_explanations && questionCount > 0) {
+    step_by_step_solutions_explanations = buildMockTestSolutionsFromSections(sections);
+  }
+
+  return {
+    ...base,
+    answer_key: answer_key || base.answer_key,
+    mock_test_title: mock_test_title || undefined,
+    title: mock_test_title || base.title,
+    paper_title: mock_test_title || base.paper_title,
+    test_purpose_subtopic_link: String(
+      source.test_purpose_subtopic_link || source.test_purpose || source.subtopic_link || '',
+    ).trim() || undefined,
+    learning_objectives: toList(source.learning_objectives || source.objectives),
+    ncf_competency_alignment: String(
+      source.ncf_competency_alignment || source.learning_outcome_alignment || '',
+    ).trim() || undefined,
+    step_by_step_solutions_explanations: step_by_step_solutions_explanations || undefined,
+    remedial_revision_suggestions: toList(
+      source.remedial_revision_suggestions ||
+        source.revision_suggestions ||
+        source.remedial_suggestions,
+    ),
+    expected_learning_outcomes: toList(source.expected_learning_outcomes),
+    real_life_application: String(
+      source.real_life_application || source.real_life_connections || '',
+    ).trim() || undefined,
+    reflection_exit_ticket: String(
+      source.reflection_exit_ticket || source.reflection || source.exit_ticket || '',
+    ).trim() || undefined,
+  };
+}
+
+export function canonicalizeExamPaperExtractedItem(raw, toolSlug = 'exam-question-paper-generator') {
+  const slug = String(toolSlug || '').trim();
+  if (slug === 'mock-test-builder') return normalizeMockTestStructuredContent(raw);
   return normalizeExamPaperStructuredContent(raw);
+}
+
+/** Viewer payload for Mock Test Builder (student). */
+export function buildMockTestRenderableFromStructured(source) {
+  const mt = normalizeMockTestStructuredContent(
+    source && typeof source === 'object' && !Array.isArray(source) ? source : {},
+  );
+  const base = buildExamPaperRenderableFromStructured(mt);
+  return {
+    ...base,
+    kind: 'mockTest',
+    variant: 'student',
+    mockTestTitle: String(mt.mock_test_title || mt.paper_title || '').trim(),
+    testPurposeSubtopicLink: String(mt.test_purpose_subtopic_link || '').trim(),
+    learningObjectives: toStringList(mt.learning_objectives),
+    ncfCompetencyAlignment: String(mt.ncf_competency_alignment || '').trim(),
+    stepByStepSolutionsExplanations: String(mt.step_by_step_solutions_explanations || '').trim(),
+    remedialRevisionSuggestions: toStringList(mt.remedial_revision_suggestions),
+    expectedLearningOutcomes: toStringList(mt.expected_learning_outcomes),
+    realLifeApplication: String(mt.real_life_application || '').trim(),
+    reflectionExitTicket: String(mt.reflection_exit_ticket || '').trim(),
+  };
 }
 
 /** Viewer payload for one Exam Question Paper row (PDF extract or generator). */
@@ -2501,6 +3817,7 @@ export function buildExamPaperRenderableFromStructured(source) {
   );
   return {
     kind: 'examPaper',
+    variant: 'teacher',
     title: String(ex.paper_title || ex.title || 'Exam Paper').trim(),
     paperTitle: String(ex.paper_title || ex.title || '').trim(),
     instructions: String(ex.instructions || '').trim(),
@@ -2698,6 +4015,12 @@ export function normalizeLessonPlannerStructuredContent(raw, toolSlug = 'lesson-
     ...coerceBulletLines(source.schedule),
     ...coerceBulletLines(source.duration_plan),
     ...coerceBulletLines(source.period_plan),
+    ...(toolSlug === 'study-schedule-maker'
+      ? [
+          ...coerceBulletLines(source.study_plan_table),
+          ...coerceBulletLines(source.studyPlanTable),
+        ]
+      : []),
   ]);
 
   if (Array.isArray(source.time_slots) && source.time_slots.length) {
@@ -2717,7 +4040,7 @@ export function normalizeLessonPlannerStructuredContent(raw, toolSlug = 'lesson-
   if (!timeline.length && activities.length) {
     if (toolSlug === 'daily-class-plan-maker') {
       timeline = activities.slice();
-    } else if (toolSlug === 'lesson-planner') {
+    } else if (toolSlug === 'study-schedule-maker') {
       timeline = activities.map((a, i) => `${i + 1}. ${a}`).slice(0, 40);
     }
   }
@@ -2773,11 +4096,49 @@ export function normalizeLessonPlannerStructuredContent(raw, toolSlug = 'lesson-
     ? dedupeStringList(ncfRaw)
     : String(ncfRaw || '').trim();
 
-  const lessonTitle = String(source.lesson_name || source.title || source.name || '').trim();
+  const lessonTitle = String(
+    source.study_schedule_title || source.lesson_name || source.title || source.name || '',
+  ).trim();
 
-  return {
+  const priorKnowledgeDiagnostic = String(
+    source.prior_knowledge_readiness_check ||
+      source.prior_knowledge_diagnostic ||
+      source.diagnostic_question ||
+      source.prior_knowledge ||
+      '',
+  ).trim();
+
+  const introductionWarmup = String(
+    source.introduction_warmup || source.warmup || source.warm_up || '',
+  ).trim();
+
+  const teachingStrategy = String(
+    source.teaching_strategy || source.pedagogy || source.methodology_summary || '',
+  ).trim();
+
+  const differentiationPlan = String(
+    source.support_extension_plan ||
+      source.differentiation_plan ||
+      source.differentiation ||
+      source.udl_support ||
+      '',
+  ).trim();
+
+  const homeworkPractice = String(
+    source.homework_practice || source.homework || source.practice || '',
+  ).trim();
+
+  const closureExitTicket = String(
+    source.reflection_exit_ticket ||
+      source.closure_exit_ticket ||
+      source.exit_ticket ||
+      '',
+  ).trim();
+
+  const base = {
     ...source,
     lesson_name: lessonTitle || source.lesson_name,
+    study_schedule_title: lessonTitle || source.study_schedule_title,
     title: String(source.title || lessonTitle || '').trim() || source.title,
     learning_objectives: objectives.length ? objectives : coerceBulletLines(source.learning_objectives),
     objectives,
@@ -2787,29 +4148,100 @@ export function normalizeLessonPlannerStructuredContent(raw, toolSlug = 'lesson-
     materials_required: materialsRequired,
     teaching_aids_required: teachingAidsRequired,
     ncf_competency_alignment: ncfCompetencyAlignment,
-    prior_knowledge_diagnostic: String(
-      source.prior_knowledge_diagnostic || source.diagnostic_question || source.prior_knowledge || '',
-    ).trim(),
-    introduction_warmup: String(
-      source.introduction_warmup || source.warmup || source.warm_up || '',
-    ).trim(),
-    teaching_strategy: String(
-      source.teaching_strategy || source.pedagogy || source.methodology_summary || '',
-    ).trim(),
+    prior_knowledge_diagnostic: priorKnowledgeDiagnostic,
+    prior_knowledge_readiness_check: priorKnowledgeDiagnostic,
+    introduction_warmup: introductionWarmup,
+    teaching_strategy: teachingStrategy,
     teacher_talk_points: teacherTalkPoints,
     student_tasks: studentTasks,
     formative_assessment_questions: formativeAssessmentQuestions,
-    differentiation_plan: String(
-      source.differentiation_plan || source.differentiation || source.udl_support || '',
-    ).trim(),
-    homework_practice: String(
-      source.homework_practice || source.homework || source.practice || '',
-    ).trim(),
-    closure_exit_ticket: String(
-      source.closure_exit_ticket || source.reflection_exit_ticket || source.exit_ticket || '',
-    ).trim(),
+    differentiation_plan: differentiationPlan,
+    homework_practice: homeworkPractice,
+    closure_exit_ticket: closureExitTicket,
     assessment,
   };
+
+  if (toolSlug !== 'study-schedule-maker') {
+    return base;
+  }
+
+  const study_goal_subtopic_link = String(
+    source.study_goal_subtopic_link || source.subtopic_link || source.subtopic || source.topic || '',
+  ).trim();
+
+  let study_plan_table = dedupeStringList([
+    ...coerceBulletLines(source.study_plan_table),
+    ...coerceBulletLines(source.studyPlanTable),
+    ...timeline,
+  ]);
+  if (!study_plan_table.length && activitiesOut.length) {
+    study_plan_table = activitiesOut.map((a, i) => `${i + 1}. ${a}`).slice(0, 40);
+  }
+
+  const concept_learning_slot = String(
+    source.concept_learning_slot ||
+      source.conceptLearningSlot ||
+      [introductionWarmup, teachingStrategy, ...activitiesOut.slice(0, 12)].filter(Boolean).join('\n\n'),
+  ).trim();
+
+  const practice_slot = String(
+    source.practice_slot ||
+      source.practiceSlot ||
+      [homeworkPractice, ...studentTasks].filter(Boolean).join('\n\n'),
+  ).trim();
+
+  const breaks_focus_tips = String(
+    source.breaks_focus_tips || source.breaksFocusTips || introductionWarmup || '',
+  ).trim();
+
+  const self_assessment_checkpoint = String(
+    source.self_assessment_checkpoint ||
+      source.selfAssessmentCheckpoint ||
+      formativeAssessmentQuestions.join('\n') ||
+      assessment ||
+      '',
+  ).trim();
+
+  if (!study_plan_table.length) {
+    const synthesized = [];
+    const goalLine = String(
+      source.study_goal_subtopic_link || source.studyGoalSubtopicLink || '',
+    ).trim();
+    if (goalLine) synthesized.push(`Focus: ${goalLine}`);
+    if (concept_learning_slot) synthesized.push(`Concept learning: ${concept_learning_slot}`);
+    if (practice_slot) synthesized.push(`Practice: ${practice_slot}`);
+    if (breaks_focus_tips) synthesized.push(`Breaks & focus: ${breaks_focus_tips}`);
+    if (self_assessment_checkpoint) synthesized.push(`Self-assessment: ${self_assessment_checkpoint}`);
+    if (synthesized.length) study_plan_table = synthesized;
+  }
+
+  const support_extension_plan = differentiationPlan;
+
+  const expected_learning_outcomes = dedupeStringList([
+    ...coerceBulletLines(source.expected_learning_outcomes),
+    ...coerceBulletLines(source.learning_outcomes),
+  ]);
+
+  const reflection_exit_ticket = closureExitTicket;
+
+  return {
+    ...base,
+    study_schedule_title: lessonTitle || 'Study Schedule',
+    study_goal_subtopic_link,
+    prior_knowledge_readiness_check: priorKnowledgeDiagnostic,
+    study_plan_table,
+    concept_learning_slot,
+    practice_slot,
+    breaks_focus_tips,
+    self_assessment_checkpoint,
+    support_extension_plan,
+    expected_learning_outcomes,
+    reflection_exit_ticket,
+  };
+}
+
+export function normalizeStudyScheduleStructuredContent(raw) {
+  return normalizeLessonPlannerStructuredContent(raw, 'study-schedule-maker');
 }
 
 export function canonicalizeLessonPlannerExtractedItem(raw, toolSlug = 'lesson-planner') {
@@ -2951,13 +4383,35 @@ export function buildDailyClassPlanRenderableFromStructured(source) {
   };
 }
 
-/** Viewer payload for one Lesson Planner row (PDF extract or generator). */
+/** Viewer payload for Study Schedule Maker / Lesson Planner row (PDF extract or generator). */
 export function buildLessonPlanRenderableFromStructured(source, toolSlug = 'lesson-planner') {
   const lp = normalizeLessonPlannerStructuredContent(
     source && typeof source === 'object' && !Array.isArray(source) ? source : {},
     toolSlug,
   );
   const ncf = lp.ncf_competency_alignment;
+  const title = String(lp.study_schedule_title || lp.lesson_name || lp.title || 'Study Schedule').trim();
+  if (toolSlug === 'study-schedule-maker') {
+    return {
+      kind: 'lessonPlan',
+      title,
+      studyScheduleTitle: title,
+      studyGoalSubtopicLink: String(lp.study_goal_subtopic_link || '').trim(),
+      priorKnowledgeReadinessCheck: String(lp.prior_knowledge_readiness_check || '').trim(),
+      objectives: toStringList(lp.objectives),
+      ncfAlignment: Array.isArray(ncf) ? toStringList(ncf) : String(ncf || '').trim(),
+      studyPlanTable: toStringList(lp.study_plan_table),
+      conceptLearningSlot: String(lp.concept_learning_slot || '').trim(),
+      practiceSlot: String(lp.practice_slot || '').trim(),
+      breaksFocusTips: String(lp.breaks_focus_tips || '').trim(),
+      selfAssessmentCheckpoint: String(lp.self_assessment_checkpoint || '').trim(),
+      supportExtensionPlan: String(lp.support_extension_plan || '').trim(),
+      expectedLearningOutcomes: toStringList(lp.expected_learning_outcomes),
+      reflectionExitTicket: String(lp.reflection_exit_ticket || '').trim(),
+      lesson_name: title,
+      timeline: toStringList(lp.study_plan_table || lp.timeline),
+    };
+  }
   return {
     kind: 'lessonPlan',
     title: String(lp.lesson_name || lp.title || 'Lesson Plan').trim(),
@@ -2985,11 +4439,11 @@ const normalizeStructuredContentByTool = (toolSlug, structuredContent, contentTy
   const source = structuredContent && typeof structuredContent === 'object' && !Array.isArray(structuredContent)
     ? structuredContent
     : {};
-  if (toolSlug === 'activity-project-generator') {
-    const normalized = normalizeActivityStructuredContent(source);
+  if (toolSlug === 'activity-project-generator' || toolSlug === 'project-idea-lab') {
+    const normalized = normalizeActivityStructuredContent(source, toolSlug);
     return { normalizedStructuredContent: normalized };
   }
-  if (toolSlug === 'lesson-planner') {
+  if (toolSlug === 'lesson-planner' || toolSlug === 'study-schedule-maker') {
     return { normalizedStructuredContent: normalizeLessonPlannerStructuredContent(source, toolSlug) };
   }
   if (toolSlug === 'daily-class-plan-maker') {
@@ -3004,8 +4458,11 @@ const normalizeStructuredContentByTool = (toolSlug, structuredContent, contentTy
   if (toolSlug === 'homework-creator') {
     return { normalizedStructuredContent: normalizeHomeworkStructuredContent(source) };
   }
+  if (toolSlug === 'reading-practice-room') {
+    return { normalizedStructuredContent: normalizeReadingPracticeStructuredContent(source) };
+  }
   if (toolSlug === 'story-passage-creator') {
-    return { normalizedStructuredContent: normalizeStoryStructuredContent(source) };
+    return { normalizedStructuredContent: normalizeStoryPassageStructuredContent(source) };
   }
   if (toolSlug === 'short-notes-summaries-maker') {
     return { normalizedStructuredContent: normalizeShortNotesStructuredContent(source) };
@@ -3025,8 +4482,11 @@ const normalizeStructuredContentByTool = (toolSlug, structuredContent, contentTy
   if (toolSlug === 'rubrics-evaluation-generator') {
     return { normalizedStructuredContent: normalizeRubricStructuredContent(source) };
   }
+  if (toolSlug === 'mock-test-builder') {
+    return { normalizedStructuredContent: normalizeMockTestStructuredContent(source, sourceText) };
+  }
   if (toolSlug === 'exam-question-paper-generator') {
-    return { normalizedStructuredContent: normalizeExamPaperStructuredContent(source) };
+    return { normalizedStructuredContent: normalizeExamPaperStructuredContent(source, sourceText) };
   }
   if (toolSlug === 'worksheet-mcq-generator') {
     return {
@@ -3037,6 +4497,9 @@ const normalizeStructuredContentByTool = (toolSlug, structuredContent, contentTy
     return {
       normalizedStructuredContent: normalizePracticeQaStructuredContent(source, sourceText),
     };
+  }
+  if (toolSlug === 'my-study-decks') {
+    return { normalizedStructuredContent: normalizeMyStudyDecksStructuredContent(source) };
   }
   if (toolSlug === 'flashcard-generator') {
     return { normalizedStructuredContent: normalizeFlashcardDeckStructuredContent(source) };
@@ -3061,7 +4524,10 @@ const TOOL_STRUCTURED_RULES = {
       const lo2 = Array.isArray(data?.learning_objectives) ? data.learning_objectives : [];
       const ti = Array.isArray(data?.teacherInstructions) ? data.teacherInstructions : [];
       const ti2 = Array.isArray(data?.teacher_instructions) ? data.teacher_instructions : [];
+      const si = Array.isArray(data?.studentInstructions) ? data.studentInstructions : [];
+      const si2 = Array.isArray(data?.student_instructions) ? data.student_instructions : [];
       const ar = Array.isArray(data?.assessmentRubric) ? data.assessmentRubric : [];
+      const ar2 = Array.isArray(data?.assessment_criteria_rubric) ? data.assessment_criteria_rubric : [];
       const exp = String(data?.learningOutcome || '').trim();
       const rla = String(data?.realLifeApplication || '').trim();
       const errOnlyPlaceholders =
@@ -3074,16 +4540,44 @@ const TOOL_STRUCTURED_RULES = {
         lo.length > 0 ||
         lo2.length > 0 ||
         ti.length > 0 ||
-    ti2.length > 0 ||
-    (Array.isArray(data?.studentInstructions) && data.studentInstructions.length > 0) ||
-    (Array.isArray(data?.student_instructions) && data.student_instructions.length > 0) ||
-    ar.length > 0 ||
+        ti2.length > 0 ||
+        si.length > 0 ||
+        si2.length > 0 ||
+        ar.length > 0 ||
+        ar2.length > 0 ||
         exp.length > 8 ||
         rla.length > 8
       );
     },
     message:
       'Activity content must include at least one filled template section (materials, procedure, objectives, teacher notes, outcomes, rubric, or real-life application).',
+  },
+  'project-idea-lab': {
+    allowedTypes: ['Activity Plan', 'Activity'],
+    validate: (data) => {
+      const steps = Array.isArray(data?.steps) ? data.steps : [];
+      const materials = Array.isArray(data?.materials) ? data.materials : [];
+      const lo = Array.isArray(data?.learningObjectives) ? data.learningObjectives : [];
+      const lo2 = Array.isArray(data?.learning_objectives) ? data.learning_objectives : [];
+      const safety = Array.isArray(data?.safety_care_instructions) ? data.safety_care_instructions : [];
+      const rub = Array.isArray(data?.self_assessment_rubric) ? data.self_assessment_rubric : [];
+      const exp = String(data?.learningOutcome || data?.expected_learning_outcomes || '').trim();
+      const errOnlyPlaceholders =
+        steps.length === 1 &&
+        /^no structured steps were returned/i.test(String(steps[0] || '').trim());
+      const hasUsableSteps = steps.length > 0 && !errOnlyPlaceholders;
+      return (
+        materials.length > 0 ||
+        hasUsableSteps ||
+        lo.length > 0 ||
+        lo2.length > 0 ||
+        safety.length > 0 ||
+        rub.length > 0 ||
+        exp.length > 8
+      );
+    },
+    message:
+      'Project Idea Lab content must include materials, student procedure, objectives, safety notes, rubric, or outcomes.',
   },
   'concept-mastery-helper': {
     allowedTypes: ['Concept Notes', 'Notes'],
@@ -3100,11 +4594,25 @@ const TOOL_STRUCTURED_RULES = {
       const o = Array.isArray(data?.objectives) ? data.objectives.length : 0;
       const a = Array.isArray(data?.activities) ? data.activities.length : 0;
       const t = Array.isArray(data?.timeline) ? data.timeline.length : 0;
+      const talk = Array.isArray(data?.teacher_talk_points) ? data.teacher_talk_points.length : 0;
       const s = String(data?.assessment || '').trim().length;
-      return o > 0 || a > 0 || t > 0 || s > 24;
+      return o > 0 || a > 0 || t > 0 || talk > 0 || s > 24;
     },
     message:
-      'Lesson plan must include at least one of: objectives, activities, timeline, or assessment (from the PDF).',
+      'Lesson plan must include at least one of: objectives, activities, timeline, teacher talk points, or assessment (from the PDF).',
+  },
+  'study-schedule-maker': {
+    allowedTypes: ['Study Schedule', 'Lesson Plan'],
+    validate: (data) => {
+      const plan = Array.isArray(data?.study_plan_table) ? data.study_plan_table.length : 0;
+      const t = Array.isArray(data?.timeline) ? data.timeline.length : 0;
+      const o = Array.isArray(data?.objectives) ? data.objectives.length : 0;
+      const concept = String(data?.concept_learning_slot || '').trim().length;
+      const practice = String(data?.practice_slot || '').trim().length;
+      return plan > 0 || t > 0 || o > 0 || concept > 12 || practice > 12;
+    },
+    message:
+      'Study schedule must include a study plan table, objectives, concept slot, or practice slot.',
   },
   'homework-creator': {
     allowedTypes: ['Homework'],
@@ -3138,8 +4646,15 @@ const TOOL_STRUCTURED_RULES = {
     message:
       'Rubric must include criteria[] and/or narrative evaluation sections (purpose, strengths, remarks).',
   },
+  'reading-practice-room': {
+    allowedTypes: ['Reading Practice', 'Story'],
+    validate: (data) =>
+      String(data?.passage || data?.content || '').trim().length > 0 ||
+      String(data?.reading_practice_title || data?.title || '').trim().length > 0,
+    message: 'Reading practice must include a non-empty passage or title.',
+  },
   'story-passage-creator': {
-    allowedTypes: ['Story'],
+    allowedTypes: ['Story', 'Reading Practice'],
     validate: (data) =>
       String(data?.passage || data?.content || '').trim().length > 0 ||
       String(data?.title || '').trim().length > 0,
@@ -3153,6 +4668,14 @@ const TOOL_STRUCTURED_RULES = {
       (Array.isArray(data?.key_points) && data.key_points.length > 0) ||
       (Array.isArray(data?.keyPoints) && data.keyPoints.length > 0),
     message: 'Short notes must include a summary or key points to remember.',
+  },
+  'my-study-decks': {
+    allowedTypes: ['Flashcards'],
+    validate: (data) =>
+      Array.isArray(data?.cards) &&
+      data.cards.length > 0 &&
+      data.cards.every((card) => String(card?.front || '').trim() && String(card?.back || '').trim()),
+    message: 'My Study Decks must include cards with front and back values.',
   },
   'flashcard-generator': {
     allowedTypes: ['Flashcards'],
@@ -3170,6 +4693,13 @@ const TOOL_STRUCTURED_RULES = {
       (Array.isArray(data?.objectives) && data.objectives.length > 0) ||
       Boolean(String(data?.day_period_topic_breakup || data?.exit_ticket || '').trim()),
     message: 'Daily plan content must include timeline, time slots, objectives, or other daily-plan sections.',
+  },
+  'mock-test-builder': {
+    allowedTypes: ['Mock Test', 'Exam Paper'],
+    validate: (data) =>
+      Boolean(String(data?.mock_test_title || data?.paper_title || data?.title || '').trim()) &&
+      countMockTestQuestions(data) > 0,
+    message: 'Mock Test Builder must include a title and at least one question.',
   },
   'exam-question-paper-generator': {
     allowedTypes: ['Exam Paper'],
@@ -3245,40 +4775,22 @@ const TOOL_STRUCTURED_RULES = {
       'Concept breakdown must include concepts[], simple definition, breakdown steps, or quick revision summary.',
   },
   'smart-qa-practice-generator': {
-    allowedTypes: ['Practice Q&A', 'Homework'],
-    validate: (data) => {
-      const flat = Array.isArray(data?.questions) ? data.questions.length : 0;
-      const secQs = Array.isArray(data?.sections)
-        ? data.sections.reduce((n, s) => n + (Array.isArray(s?.questions) ? s.questions.length : 0), 0)
-        : 0;
-      const rl = Array.isArray(data?.real_life_problem_solving_questions)
-        ? data.real_life_problem_solving_questions.length
-        : 0;
-      return flat > 0 || secQs > 0 || rl > 0;
-    },
-    message: 'Practice Q&A must include questions in sections A–G, real-life questions, or a flat questions array.',
+    allowedTypes: ['Practice Q&A', 'Homework', 'MCQ', 'Worksheet'],
+    validate: (data) => practiceQaHasAllRequiredSections(data),
+    message:
+      'Practice Q&A must include at least one question in every section A–G (including Match the Following in Section C).',
   },
   'chapter-summary-creator': {
-    allowedTypes: ['Chapter Summary', 'Summary', 'Notes'],
-    validate: (data) =>
-      String(data?.chapter_overview || data?.summary || data?.chapter_summary || '').trim().length > 8 ||
-      (Array.isArray(data?.important_concepts) && data.important_concepts.length > 0) ||
-      (Array.isArray(data?.quick_revision_notes) && data.quick_revision_notes.length > 0) ||
-      (Array.isArray(data?.key_takeaways) && data.key_takeaways.length > 0),
+    allowedTypes: ['Chapter Summary', 'Summary', 'Notes', 'Study Guide'],
+    validate: (data) => chapterSummaryHasMinimumBody(data),
     message:
-      'Chapter summary must include chapter overview, important concepts, quick revision notes, or legacy summary/takeaways.',
+      'Chapter summary must use the 10-section Chapter Summary format (overview, important concepts, at least 3 formulae/rules/facts, quick revision notes, and practice recall questions). Do not use Smart Study Guide section names.',
   },
   'key-points-formula-extractor': {
     allowedTypes: ['Key Points', 'Notes'],
-    validate: (data) =>
-      (Array.isArray(data?.important_concepts) && data.important_concepts.length > 0) ||
-      (Array.isArray(data?.must_remember_facts) && data.must_remember_facts.length > 0) ||
-      (Array.isArray(data?.key_points) && data.key_points.length > 0) ||
-      (Array.isArray(data?.formulae) && data.formulae.length > 0) ||
-      (Array.isArray(data?.formulas) && data.formulas.length > 0) ||
-      String(data?.one_minute_revision_summary || data?.summary || '').trim().length > 8,
+    validate: (data) => keyPointsHasMinimumBody(data),
     message:
-      'Key points extractor must include important concepts, must-remember facts, formulae, or a revision summary.',
+      'Key points must include important concepts, at least 3 formulae/rules/facts (section 4), and must-remember facts or a one-minute summary.',
   },
   'quick-assignment-builder': {
     allowedTypes: ['Assignment', 'Homework'],
@@ -3405,7 +4917,7 @@ function coerceRegenerationStructuredContent(toolSlug, parsed) {
     inner = {};
   }
 
-  if (toolSlug === 'activity-project-generator') {
+  if (toolSlug === 'activity-project-generator' || toolSlug === 'project-idea-lab') {
     const data = root.data;
     const fromData =
       data && typeof data === 'object' && data.structuredContent && typeof data.structuredContent === 'object'
@@ -3448,6 +4960,72 @@ function coerceRegenerationStructuredContent(toolSlug, parsed) {
     if (Object.keys(rootPick).length) {
       inner = { ...rootPick, ...inner };
     }
+  } else if (toolSlug === 'mock-test-builder') {
+    const rootPick = {
+      ...(root.mock_test_title ? { mock_test_title: root.mock_test_title } : {}),
+      ...(root.test_purpose_subtopic_link ? { test_purpose_subtopic_link: root.test_purpose_subtopic_link } : {}),
+      ...(Array.isArray(root.learning_objectives) ? { learning_objectives: root.learning_objectives } : {}),
+      ...(root.ncf_competency_alignment ? { ncf_competency_alignment: root.ncf_competency_alignment } : {}),
+      ...(root.step_by_step_solutions_explanations
+        ? { step_by_step_solutions_explanations: root.step_by_step_solutions_explanations }
+        : {}),
+      ...(Array.isArray(root.remedial_revision_suggestions)
+        ? { remedial_revision_suggestions: root.remedial_revision_suggestions }
+        : {}),
+      ...(Array.isArray(root.expected_learning_outcomes)
+        ? { expected_learning_outcomes: root.expected_learning_outcomes }
+        : {}),
+      ...(root.real_life_application ? { real_life_application: root.real_life_application } : {}),
+      ...(root.reflection_exit_ticket ? { reflection_exit_ticket: root.reflection_exit_ticket } : {}),
+      ...(root.paper_title ? { paper_title: root.paper_title } : {}),
+      ...(root.title ? { title: root.title } : {}),
+      ...(root.instructions ? { instructions: root.instructions } : {}),
+      ...(root.question_paper ? { question_paper: root.question_paper } : {}),
+      ...(root.questionPaper ? { question_paper: root.questionPaper } : {}),
+      ...(Array.isArray(root.questions) ? { questions: root.questions } : {}),
+      ...(root.question ? { question: root.question } : {}),
+      ...(Array.isArray(root.sections) ? { sections: root.sections } : {}),
+      ...(Array.isArray(root.section_a) ? { section_a: root.section_a } : {}),
+      ...(Array.isArray(root.section_b) ? { section_b: root.section_b } : {}),
+      ...(Array.isArray(root.section_c) ? { section_c: root.section_c } : {}),
+      ...(Array.isArray(root.section_d) ? { section_d: root.section_d } : {}),
+      ...(Array.isArray(root.section_e) ? { section_e: root.section_e } : {}),
+      ...(root.answer_key ? { answer_key: root.answer_key } : {}),
+    };
+    if (Object.keys(rootPick).length) {
+      inner = { ...rootPick, ...inner };
+    }
+    if (Object.keys(inner).length === 0) {
+      const { contentType: _ct, structuredContent: _sc, ...rest } = root;
+      if (Object.keys(rest).length) inner = { ...rest };
+    }
+  } else if (toolSlug === 'smart-qa-practice-generator') {
+    const rootPick = {
+      ...(root.title ? { title: root.title } : {}),
+      ...(root.practice_set_title ? { practice_set_title: root.practice_set_title } : {}),
+      ...(Array.isArray(root.learning_objectives) ? { learning_objectives: root.learning_objectives } : {}),
+      ...(root.instructions ? { instructions: root.instructions } : {}),
+      ...(Array.isArray(root.sections) ? { sections: root.sections } : {}),
+      ...(Array.isArray(root.questions) ? { questions: root.questions } : {}),
+      ...(Array.isArray(root.practice_questions) ? { practice_questions: root.practice_questions } : {}),
+      ...(root.answer_key ? { answer_key: root.answer_key } : {}),
+      ...(root.answer_key_with_explanations
+        ? { answer_key_with_explanations: root.answer_key_with_explanations }
+        : {}),
+      ...(root.question ? { question: root.question } : {}),
+      ...(root.options ? { options: root.options } : {}),
+      ...(root.answer ? { answer: root.answer } : {}),
+    };
+    for (const [key] of PRACTICE_QA_SECTION_KEY_PAIRS) {
+      if (root[key] != null) rootPick[key] = root[key];
+    }
+    if (Object.keys(rootPick).length) {
+      inner = { ...rootPick, ...inner };
+    }
+    if (Object.keys(inner).length === 0) {
+      const { contentType: _ct, structuredContent: _sc, ...rest } = root;
+      if (Object.keys(rest).length) inner = { ...rest };
+    }
   } else if (toolSlug === 'exam-question-paper-generator') {
     const rootPick = {
       ...(root.paper_title ? { paper_title: root.paper_title } : {}),
@@ -3475,13 +5053,19 @@ function coerceRegenerationStructuredContent(toolSlug, parsed) {
     if (Object.keys(rootPick).length) {
       inner = { ...rootPick, ...inner };
     }
-  } else if (toolSlug === 'lesson-planner') {
+  } else if (toolSlug === 'lesson-planner' || toolSlug === 'study-schedule-maker') {
     const rootPick = {
       ...(root.objectives ? { objectives: root.objectives } : {}),
       ...(root.learning_objectives ? { learning_objectives: root.learning_objectives } : {}),
       ...(root.activities ? { activities: root.activities } : {}),
       ...(root.timeline ? { timeline: root.timeline } : {}),
       ...(root.time_slots ? { time_slots: root.time_slots } : {}),
+      ...(root.study_schedule_title ? { study_schedule_title: root.study_schedule_title } : {}),
+      ...(root.study_plan_table ? { study_plan_table: root.study_plan_table } : {}),
+      ...(root.studyPlanTable ? { study_plan_table: root.studyPlanTable } : {}),
+      ...(root.concept_learning_slot ? { concept_learning_slot: root.concept_learning_slot } : {}),
+      ...(root.conceptLearningSlot ? { concept_learning_slot: root.conceptLearningSlot } : {}),
+      ...(root.practice_slot ? { practice_slot: root.practice_slot } : {}),
       ...(root.assessment ? { assessment: root.assessment } : {}),
       ...(root.lesson_name ? { lesson_name: root.lesson_name } : {}),
     };
@@ -3545,8 +5129,8 @@ function buildCurriculumBackedActivityFallback(meta = {}) {
   };
 }
 
-function augmentActivityStructuredContent(normalizedFlat, meta) {
-  const n = normalizeActivityStructuredContent(normalizedFlat);
+function augmentActivityStructuredContent(normalizedFlat, meta, toolSlug = 'activity-project-generator') {
+  const n = normalizeActivityStructuredContent(normalizedFlat, toolSlug);
   const hasErrOnly =
     n.steps?.length === 1 && /^no structured steps were returned/i.test(String(n.steps[0] || ''));
   const materialsOk = Array.isArray(n.materials) && n.materials.length >= 3;
@@ -3575,21 +5159,24 @@ function augmentActivityStructuredContent(normalizedFlat, meta) {
   }
   const learningOutcome = loOk ? String(n.learningOutcome).trim() : fb.learningOutcome;
 
-  return normalizeActivityStructuredContent({
-    ...n,
-    title,
-    materials,
-    steps,
-    learningOutcome,
-  });
+  return normalizeActivityStructuredContent(
+    {
+      ...n,
+      title,
+      materials,
+      steps,
+      learningOutcome,
+    },
+    toolSlug,
+  );
 }
 
-export function finalizeActivityStructuredContent(structuredContent, meta = {}) {
+export function finalizeActivityStructuredContent(structuredContent, meta = {}, toolSlug = 'activity-project-generator') {
   const raw =
     structuredContent && typeof structuredContent === 'object' && !Array.isArray(structuredContent)
       ? structuredContent
       : {};
-  return augmentActivityStructuredContent(raw, meta);
+  return augmentActivityStructuredContent(raw, meta, toolSlug);
 }
 
 function buildPrompt(pdfText, selected = {}) {
@@ -3700,6 +5287,7 @@ function normalizeContentType(value) {
   if (key.includes('work')) return 'Worksheet';
   if (key.includes('mcq')) return 'MCQ';
   if (key.includes('homework')) return 'Homework';
+  if (key.includes('practice') && key.includes('q')) return 'Practice Q&A';
   if (key.includes('rubric')) return 'Rubric';
   if (key.includes('story') || key.includes('passage')) return 'Story';
   if (key.includes('summary')) return 'Summary';
@@ -3744,9 +5332,13 @@ export function validateToolSpecificStructuredContent(toolSlug, structuredConten
     };
   }
   if (!rule.validate(normalizedStructuredContent)) {
+    const customMessage =
+      normalizedTool === 'smart-qa-practice-generator'
+        ? practiceQaValidationMessage(normalizedStructuredContent) || rule.message
+        : rule.message;
     return {
       valid: false,
-      message: rule.message,
+      message: customMessage,
       normalizedType: resolvedType,
       normalizedStructuredContent,
     };
@@ -3821,29 +5413,55 @@ export function buildRenderableContent(toolSlug, contentType, structuredContent)
   if (toolSlug === 'quick-assignment-builder') {
     return buildQuickAssignmentRenderableFromStructured(source);
   }
-  if (toolSlug === 'story-passage-creator') {
-    return buildStoryRenderableFromStructured(source);
+  if (toolSlug === 'reading-practice-room' || toolSlug === 'story-passage-creator') {
+    return buildStoryRenderableFromStructured(source, toolSlug);
   }
-  if (toolSlug === 'lesson-planner') {
+  if (toolSlug === 'lesson-planner' || toolSlug === 'study-schedule-maker') {
     return buildLessonPlanRenderableFromStructured(source, toolSlug);
   }
   if (toolSlug === 'daily-class-plan-maker') {
     return buildDailyClassPlanRenderableFromStructured(source);
   }
-  if (toolSlug === 'flashcard-generator') {
-    return buildFlashcardRenderableFromStructured(source);
+  if (toolSlug === 'my-study-decks' || toolSlug === 'flashcard-generator') {
+    return buildFlashcardRenderableFromStructured(source, toolSlug);
   }
   if (toolSlug === 'rubrics-evaluation-generator') {
     return buildRubricRenderableFromStructured(source);
   }
+  if (toolSlug === 'mock-test-builder') {
+    return buildMockTestRenderableFromStructured(source);
+  }
   if (toolSlug === 'exam-question-paper-generator') {
     return buildExamPaperRenderableFromStructured(source);
   }
-  if (toolSlug === 'activity-project-generator') {
-    const act = canonicalizeActivityExtractedItem(source);
+  if (toolSlug === 'project-idea-lab') {
+    const act = canonicalizeActivityExtractedItem(source, toolSlug);
     const ncf = act.ncf_competency_alignment;
     return {
       kind: 'activity',
+      variant: 'student',
+      title: String(act.title || type || 'Activity').trim(),
+      subtopicLink: String(act.subtopic_link_prior_knowledge || '').trim(),
+      learningObjectives: toStringList(act.learning_objectives || act.learningObjectives),
+      ncfAlignment: Array.isArray(ncf) ? toStringList(ncf) : String(ncf || '').trim(),
+      materials: toStringList(act.materials_required || act.materials),
+      steps: toStringList(act.step_by_step_procedure || act.steps),
+      safetyCareInstructions: toStringList(act.safety_care_instructions),
+      observationDataRecordingTable: String(act.observation_data_recording_table || '').trim(),
+      creativeOutputFinalProduct: String(act.creative_output_final_product || '').trim(),
+      differentiationSupportExtension: String(act.differentiation_support_extension || act.differentiation || '').trim(),
+      selfAssessmentRubric: toStringList(act.self_assessment_rubric || act.assessment_criteria_rubric),
+      learningOutcome: String(act.expected_learning_outcomes || act.learningOutcome || '').trim(),
+      realLifeApplication: String(act.real_life_application || act.realLifeApplication || '').trim(),
+      reflectionExitTicket: String(act.reflection_exit_ticket || '').trim(),
+    };
+  }
+  if (toolSlug === 'activity-project-generator') {
+    const act = canonicalizeActivityExtractedItem(source, toolSlug);
+    const ncf = act.ncf_competency_alignment;
+    return {
+      kind: 'activity',
+      variant: 'teacher',
       title: String(act.title || type || 'Activity').trim(),
       subtopicLink: String(act.subtopic_link_prior_knowledge || '').trim(),
       learningObjectives: toStringList(act.learning_objectives || act.learningObjectives),
@@ -3853,8 +5471,8 @@ export function buildRenderableContent(toolSlug, contentType, structuredContent)
       teacherInstructions: toStringList(act.teacher_instructions || act.teacherInstructions),
       studentInstructions: toStringList(act.student_instructions || act.studentInstructions),
       differentiation: String(act.differentiation || '').trim(),
-      learningOutcome: String(act.expected_learning_outcomes || act.learningOutcome || '').trim(),
       assessmentRubric: toStringList(act.assessment_criteria_rubric || act.assessmentRubric),
+      learningOutcome: String(act.expected_learning_outcomes || act.learningOutcome || '').trim(),
       realLifeApplication: String(act.real_life_application || act.realLifeApplication || '').trim(),
       reflectionExitTicket: String(act.reflection_exit_ticket || '').trim(),
     };
@@ -4021,11 +5639,25 @@ For "Rubrics, Evaluation & Report Card":
 
 For "Story & Passage Creator":
 {
-  "title": "Story title",
-  "content": "Full story text...",
-  "questions": [
-    { "question": "Comprehension question?", "options": [], "answer": "Answer" }
-  ]
+  "title": "Story / Passage Title",
+  "topic_subtopic_connection": "Topic and subtopic link",
+  "prior_knowledge_required": "Prior knowledge required",
+  "learning_objectives": ["Objective 1", "Objective 2"],
+  "ncf_competency_alignment": "NCF alignment text",
+  "vocabulary_warmup": ["word – meaning"],
+  "pre_reading_thinking_prompt": "Before you read, think about...",
+  "passage": "Full story / passage text...",
+  "read_and_recall_questions": ["Question 1"],
+  "think_and_infer_questions": ["Question 1"],
+  "apply_and_connect_questions": ["Question 1"],
+  "vocabulary_grammar_practice": "Practice tasks...",
+  "creative_response_activity": "Creative task...",
+  "answer_key_suggested_responses": ["Answer 1"],
+  "common_mistakes_to_avoid": "Mistake and correction",
+  "differentiation_support": "Support for struggling learners",
+  "expected_learning_outcomes": ["Outcome 1"],
+  "real_life_application": "Real-life prompt",
+  "reflection_exit_ticket": "Reflection prompt"
 }
 
 For "Short Notes & Summaries":
@@ -4113,14 +5745,14 @@ ${String(pdfText || '').slice(0, 120000)}
       );
       const json = extractJsonObject(raw);
       let structuredContent = coerceRegenerationStructuredContent(toolSlug, json);
-      if (toolSlug === 'lesson-planner') {
+      if (toolSlug === 'lesson-planner' || toolSlug === 'study-schedule-maker') {
         structuredContent = normalizeLessonPlannerStructuredContent(structuredContent, toolSlug);
       }
       if (toolSlug === 'daily-class-plan-maker') {
         structuredContent = normalizeDailyClassPlanStructuredContent(structuredContent);
       }
-      if (toolSlug === 'activity-project-generator') {
-        structuredContent = finalizeActivityStructuredContent(structuredContent, selected);
+      if (toolSlug === 'activity-project-generator' || toolSlug === 'project-idea-lab') {
+        structuredContent = finalizeActivityStructuredContent(structuredContent, selected, toolSlug);
       }
       return {
         contentType: normalizeContentType(json.contentType || contentType),
@@ -4220,39 +5852,66 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
 
   const defaultContentType = CONTENT_TYPE_BY_TOOL_SLUG[slug] || getContentTypeDefault(slug);
   const prompt = buildAiGeneratorStructuredPrompt(slug, params);
+  const extra = params.extraParams && typeof params.extraParams === 'object' ? params.extraParams : {};
   const meta = {
     classLabel: params.classLabel || params.gradeLevel,
     subject: params.subject,
     topic: params.topic,
     subTopic: params.subTopic || params.subtopic,
     board: params.board,
+    questionCount: Number(extra.questionCount ?? extra.numberOfQuestions ?? params.questionCount),
   };
 
   let lastError = null;
   let lastValidationMessage = '';
 
+  let activePrompt = prompt;
+
   for (let attempt = 1; attempt <= 4; attempt += 1) {
     try {
-      const raw = await geminiService.generateStructuredContent(prompt, 'json');
+      const raw = await geminiService.generateStructuredContent(activePrompt, 'json');
       const json = extractJsonObject(raw);
       let structuredContent = coerceRegenerationStructuredContent(slug, json);
+      if (slug === 'mock-test-builder' && json && typeof json === 'object') {
+        const fromStructured =
+          json.structuredContent && typeof json.structuredContent === 'object' && !Array.isArray(json.structuredContent)
+            ? json.structuredContent
+            : {};
+        structuredContent = mergeMockTestStructuredLayers(structuredContent, fromStructured);
+      }
 
-      if (slug === 'lesson-planner' || slug === 'daily-class-plan-maker') {
+      if (slug === 'lesson-planner' || slug === 'study-schedule-maker' || slug === 'daily-class-plan-maker') {
         structuredContent = normalizeLessonPlannerStructuredContent(structuredContent, slug);
-      } else if (slug === 'activity-project-generator') {
-        structuredContent = finalizeActivityStructuredContent(structuredContent, meta);
+      } else if (slug === 'activity-project-generator' || slug === 'project-idea-lab') {
+        structuredContent = finalizeActivityStructuredContent(structuredContent, meta, slug);
+      } else if (slug === 'my-study-decks') {
+        structuredContent = normalizeMyStudyDecksStructuredContent(structuredContent);
       } else if (slug === 'flashcard-generator') {
         structuredContent = normalizeFlashcardDeckStructuredContent(structuredContent);
       } else if (slug === 'concept-mastery-helper') {
         structuredContent = finalizeConceptMasteryStructuredContent(structuredContent, meta);
+      } else if (slug === 'mock-test-builder') {
+        structuredContent = finalizeMockTestStructuredContent(structuredContent, meta);
+      } else if (slug === 'smart-qa-practice-generator') {
+        structuredContent = finalizePracticeQaStructuredContent(structuredContent, meta);
+      } else if (slug === 'chapter-summary-creator') {
+        structuredContent = finalizeChapterSummaryStructuredContent(structuredContent, meta);
+      } else if (slug === 'key-points-formula-extractor') {
+        structuredContent = finalizeKeyPointsStructuredContent(structuredContent, meta);
+      } else if (slug === 'exam-question-paper-generator') {
+        structuredContent = normalizeExamPaperStructuredContent(structuredContent);
       }
 
       const contentType = normalizeContentType(json.contentType || defaultContentType);
+      const validationSourceText =
+        slug === 'smart-qa-practice-generator'
+          ? collectPracticeQaParseableText(structuredContent)
+          : collectMockTestParseableText(structuredContent);
       let validation = validateToolSpecificStructuredContent(
         slug,
         structuredContent,
         contentType,
-        '',
+        validationSourceText,
       );
 
       if (validation.normalizedStructuredContent) {
@@ -4265,7 +5924,59 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
           slug,
           structuredContent,
           contentType,
-          '',
+          validationSourceText,
+        );
+        if (validation.normalizedStructuredContent) {
+          structuredContent = validation.normalizedStructuredContent;
+        }
+      }
+
+      if (!validation.valid && slug === 'mock-test-builder') {
+        structuredContent = finalizeMockTestStructuredContent(structuredContent, meta);
+        validation = validateToolSpecificStructuredContent(
+          slug,
+          structuredContent,
+          contentType,
+          validationSourceText,
+        );
+        if (validation.normalizedStructuredContent) {
+          structuredContent = validation.normalizedStructuredContent;
+        }
+      }
+
+      if (!validation.valid && slug === 'smart-qa-practice-generator') {
+        structuredContent = finalizePracticeQaStructuredContent(structuredContent, meta);
+        validation = validateToolSpecificStructuredContent(
+          slug,
+          structuredContent,
+          contentType,
+          validationSourceText,
+        );
+        if (validation.normalizedStructuredContent) {
+          structuredContent = validation.normalizedStructuredContent;
+        }
+      }
+
+      if (!validation.valid && slug === 'chapter-summary-creator') {
+        structuredContent = finalizeChapterSummaryStructuredContent(structuredContent, meta);
+        validation = validateToolSpecificStructuredContent(
+          slug,
+          structuredContent,
+          contentType,
+          validationSourceText,
+        );
+        if (validation.normalizedStructuredContent) {
+          structuredContent = validation.normalizedStructuredContent;
+        }
+      }
+
+      if (!validation.valid && slug === 'key-points-formula-extractor') {
+        structuredContent = finalizeKeyPointsStructuredContent(structuredContent, meta);
+        validation = validateToolSpecificStructuredContent(
+          slug,
+          structuredContent,
+          contentType,
+          validationSourceText,
         );
         if (validation.normalizedStructuredContent) {
           structuredContent = validation.normalizedStructuredContent;
@@ -4274,7 +5985,23 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
 
       if (!validation.valid) {
         lastValidationMessage = validation.message || 'Structured content failed validation.';
-        if (attempt < 4) continue;
+        if (attempt < 4) {
+          if (slug === 'mock-test-builder') {
+            activePrompt = `${prompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. You MUST return structuredContent with mock_test_title and at least 8 questions in section_a..section_e (each with "question" text). Do not return only metadata without question arrays.`;
+          } else if (slug === 'smart-qa-practice-generator') {
+            const target = Number(meta?.questionCount) > 0 ? Number(meta.questionCount) : 12;
+            const missing = getPracticeQaMissingSections(structuredContent);
+            const missingHint = missing.length
+              ? ` You MUST add questions to: ${missing.join('; ')}.`
+              : '';
+            activePrompt = `${prompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return structuredContent with title and sections[] — all seven section names exactly (Section A: MCQs … Section G: HOTS / Analytical Questions), each with at least one question. Section C MUST be type "MATCH" with a match-the-following prompt and options as Column A / Column B pairs (e.g. "1. Observation | A. Step before hypothesis"). Include short answers in Section E and application/case-based in Section F. Do NOT duplicate questions in sections[] and questions[]. Total at least ${target} questions.`;
+          } else if (slug === 'chapter-summary-creator') {
+            activePrompt = `${prompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. Return Chapter Summary Creator JSON only — use chapter_summary_title, chapter_overview, important_concepts[] (min 3), formulae[] (min 3: name + formula where formula is an equation OR a must-know rule/fact sentence), quick_revision_notes[] (min 3), practice_recall_questions[] (min 3). Do NOT use Smart Study Guide fields (study_guide_title, prior_knowledge, key_concepts_explained, practice_questions with MCQ options).`;
+          } else if (slug === 'key-points-formula-extractor') {
+            activePrompt = `${prompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. Return Key Points JSON with topic_title, important_concepts[] (min 3), essential_definitions[], formulae[] (min 3 — name + formula; formula may be an equation OR a must-know rule), keywords_terminologies[], must_remember_facts[], real_life_connections[], frequently_asked_exam_points[], mnemonics_memory_tricks[], one_minute_revision_summary. Never leave formulae[] empty.`;
+          }
+          continue;
+        }
         throw new Error(lastValidationMessage);
       }
 

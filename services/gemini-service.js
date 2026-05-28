@@ -201,7 +201,7 @@ export function buildPdfExtractEmptyMessage(toolType) {
   if (tool === 'rubrics-evaluation-generator') {
     return `${base} Use a rubric or report-card PDF with a criteria table (Excellent / Good / Satisfactory / Needs improvement) and evaluation narrative sections.${detail}`;
   }
-  if (tool === 'activity-project-generator') {
+  if (tool === 'activity-project-generator' || tool === 'project-idea-lab') {
     return `${base} For activity workbooks, ensure the PDF has selectable text and numbered activities. Large PDFs may need to be split if Gemini output was cut off.${detail}`;
   }
   return `${base}${detail}`;
@@ -458,12 +458,14 @@ If textbook content is missing, generate curriculum-relevant content for the sam
   const templates = {
     'activity-project-generator': `${common}
 
-Create an engaging classroom activity/project with:
-1) Objective
-2) Materials
-3) Procedure
-4) Assessment rubric
-5) Extension idea`,
+Create an engaging teacher-facing activity/project using ONLY the 13-point Activity / Project Generator JSON format:
+1 Title of Activity / Project, 2 Subtopic Link and Prior Knowledge Required, 3 Learning Objectives, 4 NCF Competency / Learning Outcome Alignment, 5 Materials Required, 6 Step-by-step Procedure (facilitation/teaching steps), 7 Teacher Instructions, 8 Student Instructions, 9 Differentiation, 10 Assessment Rubric, 11 Expected Learning Outcomes, 12 Real-life Application, 13 Reflection / Exit Ticket.
+Keep teacher_instructions and student_instructions as separate arrays.`,
+    'project-idea-lab': `${common}
+
+Create an engaging student project/activity using ONLY the 14-point Project Idea Lab JSON format:
+1 Project / Activity Title, 2 Subtopic Link and Prior Knowledge Required, 3 Learning Objectives - Bloom's Taxonomy Aligned, 4 NCF Competency / Learning Outcome Alignment, 5 Materials Required, 6 Step-by-step Student Procedure (student-facing steps only), 7 Safety and Care Instructions, 8 Observation / Data Recording Table, 9 Creative Output / Final Product, 10 Differentiation: Support and Extension, 11 Self-Assessment Rubric, 12 Expected Learning Outcomes, 13 Real-life Application, 14 Reflection / Exit Ticket.
+Do NOT output separate teacher_instructions or student_instructions sections.`,
     'worksheet-mcq-generator': `${common}
 
 Create a worksheet with ${params.questionCount || 10} questions (${params.questionType || 'mixed'}), include answers and short explanations.`,
@@ -472,32 +474,53 @@ Create a worksheet with ${params.questionCount || 10} questions (${params.questi
 Explain the concept in simple steps, common mistakes, examples, and a quick recap.`,
     'lesson-planner': `${common}
 
-Create a complete lesson plan for ${params.duration || 90} minutes with objectives, prerequisite, teaching flow, examples, and homework.`,
+Create a teacher lesson plan for ${params.duration || 90} minutes using this 14-point format:
+1 Lesson Title, 2 Learning Objectives, 3 NCF Competency / Learning Outcome Alignment, 4 Prior Knowledge / Diagnostic Question, 5 Introduction / Warm-up, 6 Teaching Strategy, 7 Classroom Activities, 8 Teacher Talk Points, 9 Student Tasks, 10 Formative Assessment Questions, 11 Differentiation Plan, 12 Homework / Practice, 13 Teaching Aids Required, 14 Closure / Exit Ticket.`,
+    'study-schedule-maker': `${common}
+
+Create a Study Schedule Maker plan for ${params.duration || 90} minutes using this 13-point format:
+1 Study Schedule Title, 2 Study Goal and Subtopic Link, 3 Prior Knowledge and Readiness Check, 4 Learning Objectives - Bloom's Taxonomy Aligned, 5 NCF Competency / Learning Outcome Alignment, 6 Study Plan Table, 7 Concept Learning Slot, 8 Practice Slot, 9 Breaks and Focus Tips, 10 Self-Assessment Checkpoint, 11 Support and Extension Plan, 12 Expected Learning Outcomes, 13 Reflection / Exit Ticket.`,
     'homework-creator': `${common}
 
 Create a meaningful homework set with instructions, questions, answer key, and grading criteria.`,
     'rubrics-evaluation-generator': `${common}
 
 Create clear evaluation rubrics with criteria and performance levels (Excellent, Good, Satisfactory, Needs Improvement).`,
+    'reading-practice-room': `${common}
+
+Create a Reading Practice Room set in the subject language using this 13-point format:
+1 Reading Practice Title, 2 Subtopic Link and Prior Knowledge Required, 3 Learning Objectives - Bloom's Taxonomy Aligned, 4 NCF Competency / Learning Outcome Alignment, 5 Vocabulary Warm-up, 6 Passage / Story, 7 Read and Recall Questions, 8 Think and Infer Questions, 9 Apply and Connect Questions, 10 Vocabulary Practice, 11 Answer Key / Suggested Responses, 12 Expected Learning Outcomes, 13 Reflection / Exit Ticket.`,
     'story-passage-creator': `${common}
 
-Write a topic-relevant story/passage in the subject language, then add vocabulary, comprehension and discussion questions.`,
+Create a Story and Passage Creator set in the subject language using this 19-point format:
+1 Story / Passage Title, 2 Topic and Subtopic Connection, 3 Prior Knowledge Required, 4 Learning Objectives – Bloom's Taxonomy Aligned, 5 NCF Competency / Learning Outcome Alignment, 6 Vocabulary Warm-up, 7 Pre-reading Thinking Prompt, 8 Story / Passage Content, 9 Read and Recall Questions, 10 Think and Infer Questions, 11 Apply and Connect Questions, 12 Vocabulary and Grammar Practice, 13 Creative Response Activity, 14 Answer Key / Suggested Responses, 15 Common Mistakes to Avoid, 16 Differentiation Support, 17 Expected Learning Outcomes, 18 Real-life Application, 19 Reflection / Exit Ticket.`,
     'short-notes-summaries-maker': `${common}
 
 Create concise revision notes with key ideas, definitions, formulas (if any), and quick reference points.`,
+    'my-study-decks': `${common}
+
+Generate ${params.cardCount || 20} flashcards using the My Study Decks 12-point format:
+Deck Title, Subtopic Link and Prior Knowledge Required, Learning Objectives - Bloom's Taxonomy Aligned, NCF Competency / Learning Outcome Alignment, Flashcard Set, Difficulty Tag for Each Card, Memory Hook / Quick Tip, Self-Check Round, Common Mistakes to Avoid, Expected Learning Outcomes, Real-life Application, Reflection / Exit Ticket.`,
     'flashcard-generator': `${common}
 
-Generate ${params.cardCount || 20} flashcards. Each card MUST use these seven fields (copy labels exactly):
-Front, Back, Memory Cue, Skill Focus, Example Use, Peer Prompt, Reflection.`,
+Generate a teacher flashcard deck using the 18-point Flash Card Generator format:
+1 Flashcard Deck Title, 2 Topic and Subtopic Link, 3 Prior Knowledge Required, 4 Learning Objectives – Bloom's Taxonomy Aligned, 5 NCF Competency / Learning Outcome Alignment, 6 Flashcard Set, 7 Concept and Definition Cards, 8 Formula / Rule Cards, 9 Application and HOTS Cards, 10 Visual / Diagram Suggestion Cards, 11 Difficulty Tag for Each Card, 12 Memory Hook / Quick Tip, 13 Self-Check Rapid Recall Round, 14 Common Mistakes to Avoid, 15 Differentiation Support, 16 Expected Learning Outcomes, 17 Real-life Connection, 18 Reflection / Exit Ticket.
+Target ~${params.cardCount || 20} cards across sections 6–10; every card needs non-empty front and back.`,
     'daily-class-plan-maker': `${common}
 
 Create a practical day plan with time slots, activities, checkpoints, and notes.`,
-    'exam-question-paper-generator': `${common}
+    'mock-test-builder': `${common}
 
-Generate a full exam paper with exactly ${Math.min(
+Generate a mock test with exactly ${Math.min(
       Math.max(Number(params.questionCount ?? params.numberOfQuestions ?? 17) || 17, 1),
       100,
-    )} questions and a complete answer key.`,
+    )} questions in the 12-section Mock Test Builder format, including question paper, answer key, solutions/explanations, remedial suggestions, outcomes, real-life application, and reflection/exit ticket.`,
+    'exam-question-paper-generator': `${common}
+
+Generate a full exam question paper with exactly ${Math.min(
+      Math.max(Number(params.questionCount ?? params.numberOfQuestions ?? 17) || 17, 1),
+      100,
+    )} questions in the 11-point Exam Question Paper Generator format: paper title/instructions, blueprint, sections A–E, internal choices, answer key, marking scheme, and open-ended rubric.`,
   };
 
   return (
@@ -520,24 +543,51 @@ export function buildPdfExtractPrompt(toolType, rawPdfText, params = {}) {
   const schemaStr = config ? JSON.stringify(config.schema, null, 2) : '{ "title": "string", "content": "string" }';
   const requiredFields = config?.requiredFields?.join(', ') || 'title, content';
   const activityTemplateBlock =
-    toolType === 'activity-project-generator'
+    toolType === 'project-idea-lab'
       ? `
 
-ACTIVITY & PROJECT — TEMPLATE MAPPING (mandatory):
+PROJECT IDEA LAB — TEMPLATE MAPPING (mandatory, 14 sections):
 Each JSON object is ONE activity from the PDF. Map sections by label/numbering in the PDF text:
-(1) title — activity title only
-(2) learning_objectives — from "Learning Objectives" / section 2
-(3) materials_required — from "Materials Required" / section 3
-(4) step_by_step_procedure — from "Step-by-step Procedure" / student steps ONLY (section 4)
-(5) teacher_instructions — from "Teacher Instructions" (section 5) — keep separate from (4)
-(6) student_instructions — from "Student Instructions" (section 6) when present
-(7) expected_learning_outcomes — from "Expected Learning Outcomes" (section 7)
-(8) assessment_criteria_rubric — from "Assessment Criteria (Rubric)" (section 8)
-(9) real_life_application — from "Real-life Application" (section 9)
+(1) title — Project / Activity Title only
+(2) subtopic_link_prior_knowledge — Subtopic Link and Prior Knowledge Required
+(3) learning_objectives[] — Learning Objectives - Bloom's Taxonomy Aligned
+(4) ncf_competency_alignment — NCF Competency / Learning Outcome Alignment
+(5) materials_required[] — Materials Required
+(6) step_by_step_procedure[] — Step-by-step Student Procedure (student-facing; NOT teacher talk)
+(7) safety_care_instructions[] — Safety and Care Instructions
+(8) observation_data_recording_table — Observation / Data Recording Table
+(9) creative_output_final_product — Creative Output / Final Product
+(10) differentiation_support_extension — Differentiation: Support and Extension
+(11) self_assessment_rubric[] — Self-Assessment Rubric
+(12) expected_learning_outcomes — Expected Learning Outcomes
+(13) real_life_application — Real-life Application
+(14) reflection_exit_ticket — Reflection / Exit Ticket
 
-If the PDF has several activities, return one object per activity (same sl_no / order as in the document). Do not merge multiple activities into one object.
+Legacy PDF labels: map "Student Instructions" → step_by_step_procedure[]; map "Assessment Rubric" → self_assessment_rubric[]; omit standalone teacher_instructions from output.
+If the PDF has several activities, return one object per activity. Do not merge multiple activities into one object.
 `
-      : '';
+      : toolType === 'activity-project-generator'
+        ? `
+
+ACTIVITY / PROJECT GENERATOR — TEMPLATE MAPPING (mandatory, 13 sections):
+Each JSON object is ONE activity from the PDF. Map sections by label/numbering in the PDF text:
+(1) title — Title of Activity / Project only
+(2) subtopic_link_prior_knowledge — Subtopic Link and Prior Knowledge Required
+(3) learning_objectives[] — Learning Objectives
+(4) ncf_competency_alignment — NCF Competency / Learning Outcome Alignment
+(5) materials_required[] — Materials Required
+(6) step_by_step_procedure[] — Step-by-step Procedure (teaching/facilitation steps)
+(7) teacher_instructions[] — Teacher Instructions (keep separate from procedure)
+(8) student_instructions[] — Student Instructions
+(9) differentiation — Differentiation
+(10) assessment_criteria_rubric[] — Assessment Rubric
+(11) expected_learning_outcomes — Expected Learning Outcomes
+(12) real_life_application — Real-life Application
+(13) reflection_exit_ticket — Reflection / Exit Ticket
+
+If the PDF has several activities, return one object per activity. Do not merge multiple activities into one object.
+`
+        : '';
   const conceptTemplateBlock =
     toolType === 'concept-mastery-helper'
       ? `
@@ -590,25 +640,57 @@ Map PDF headings to fields (copy exact wording):
 If the PDF is only a numbered question list with no section headings, return ONE object with title from the document heading and all items in practice_questions[].
 `
       : '';
-  const storyTemplateBlock =
+  const readingPracticeTemplateBlock =
+    toolType === 'reading-practice-room'
+      ? `
+
+READING PRACTICE ROOM — TEMPLATE MAPPING (mandatory, one object per reading practice item):
+Map PDF headings to fields (copy exact wording from the document):
+1 reading_practice_title (or title) — reading practice title
+2 subtopic_link_prior_knowledge — subtopic link and prior knowledge required
+3 learning_objectives[] — Bloom-aligned learning objectives (strings)
+4 ncf_competency_alignment — NCF competency / learning outcome alignment (string or bullets)
+5 vocabulary_warmup[] — vocabulary warm-up (strings with brief definitions)
+6 passage — full passage / story text (required)
+7 read_and_recall_questions[] — read and recall questions (strings or { question })
+8 think_and_infer_questions[] — think and infer questions
+9 apply_and_connect_questions[] — apply and connect questions
+10 vocabulary_practice[] — vocabulary practice tasks
+11 answer_key_suggested_responses[] — answer key / suggested responses
+12 expected_learning_outcomes[] — expected learning outcomes (strings)
+13 reflection_exit_ticket — reflection / exit ticket prompt
+Optional header metadata when shown in PDF: bloom_level, difficulty_level, class_label, subject, subtopic
+
+Return ONE JSON object per distinct reading practice block in the PDF (Item 1, Item 2, …). Do NOT merge separate items into one object.
+`
+      : '';
+  const storyPassageTemplateBlock =
     toolType === 'story-passage-creator'
       ? `
 
-STORY & PASSAGE CREATOR — TEMPLATE MAPPING (mandatory, one object per story/passage item):
+STORY AND PASSAGE CREATOR — TEMPLATE MAPPING (mandatory, one object per story/passage item):
 Map PDF headings to fields (copy exact wording from the document):
-1 title — passage / story title (e.g. "A Question from the Night Sky")
-2 alignment_block — OR separate nep_ncf_focus, skill_focus, udl_support (Alignment Block: NEP/NCF, Skill Focus, UDL)
-3 learning_objectives[] — learning objectives (strings)
-4 passage — full passage / story text (required)
-5 vocabulary_support[] — vocabulary with brief definitions (strings, e.g. "curiosity - wish to know more")
-6 questions[] — comprehension and thinking questions (strings or { question })
-7 answer_hints[] — answer hints aligned to questions (strings)
-8 differentiation_support and differentiation_extension — Support and Extension strategies
-9 real_life_application — real-life application paragraph
-10 reflection_prompt — reflection / exit ticket prompt
-Optional header metadata when shown in PDF: bloom_level, difficulty_level, class_label, subject, subtopic
+1 title — story / passage title
+2 topic_subtopic_connection — topic and subtopic connection
+3 prior_knowledge_required — prior knowledge required
+4 learning_objectives[] — Bloom-aligned learning objectives (strings)
+5 ncf_competency_alignment — NCF competency / learning outcome alignment
+6 vocabulary_warmup[] — vocabulary warm-up (strings)
+7 pre_reading_thinking_prompt — pre-reading thinking prompt
+8 passage (or story_passage_content) — full story / passage text (required)
+9 read_and_recall_questions[] — read and recall questions
+10 think_and_infer_questions[] — think and infer questions
+11 apply_and_connect_questions[] — apply and connect questions
+12 vocabulary_grammar_practice — vocabulary and grammar practice
+13 creative_response_activity — creative response activity
+14 answer_key_suggested_responses[] — answer key / suggested responses
+15 common_mistakes_to_avoid — common mistakes to avoid
+16 differentiation_support — differentiation support
+17 expected_learning_outcomes[] — expected learning outcomes
+18 real_life_application — real-life application
+19 reflection_exit_ticket — reflection / exit ticket
 
-Return ONE JSON object per distinct story/passage block in the PDF (Item 1, Item 2, …). Do NOT merge separate stories into one object.
+Return ONE JSON object per distinct story/passage block in the PDF. Do NOT merge separate items into one object.
 `
       : '';
   const shortNotesTemplateBlock =
@@ -633,22 +715,38 @@ Optional header metadata: bloom_level, skill_focus, subtopic, class_label, subje
 Return ONE JSON object per distinct short-note item (Item 1, Item 2, …). Do NOT merge separate items into one object.
 `
       : '';
+  const myStudyDecksTemplateBlock =
+    toolType === 'my-study-decks'
+      ? `
+
+MY STUDY DECKS — TEMPLATE MAPPING (mandatory, one deck object):
+Map PDF headings to fields (copy exact wording):
+1 deck_title — Deck Title
+2 subtopic_link_prior_knowledge_required — Subtopic Link and Prior Knowledge Required
+3 learning_objectives[] — Learning Objectives - Bloom's Taxonomy Aligned
+4 ncf_competency_alignment — NCF Competency / Learning Outcome Alignment
+5 cards[] / flashcard_set[] — Flashcard Set (each card needs front, back)
+6 difficulty_tag_for_each_card — Difficulty Tag for Each Card (per card)
+7 memory_hook_quick_tip — Memory Hook / Quick Tip (per card)
+8 self_check_round — Self-Check Round (per card or deck-level round prompt)
+9 common_mistakes_to_avoid[] — Common Mistakes to Avoid
+10 expected_learning_outcomes[] — Expected Learning Outcomes
+11 real_life_application — Real-life Application
+12 reflection_exit_ticket — Reflection / Exit Ticket
+
+Return ONE JSON object per distinct deck in the PDF. Keep all cards inside cards[] (or flashcard_set[]).
+`
+      : '';
   const flashcardTemplateBlock =
     toolType === 'flashcard-generator'
       ? `
 
-FLASHCARD GENERATOR — TEMPLATE MAPPING (mandatory, one object per card / Item N):
-Map PDF headings to fields (copy exact wording):
-1 front — Front (prompt / cue) — required
-2 back — Back (response / definition) — required
-3 memory_cue — Memory Cue (legacy PDFs may label "Hint")
-4 skill_focus — Skill Focus (legacy: bloom_level, skill)
-5 example_use — Example Use (legacy: real_life_link, example)
-6 peer_prompt — Peer Prompt
-7 reflection — Reflection (legacy: reflection_prompt, self_check)
-Optional deck_title or title when the PDF names the whole set.
+FLASH CARD GENERATOR — TEMPLATE MAPPING (mandatory, one deck object, 18 sections):
+1 flashcard_deck_title, 2 topic_and_subtopic_link, 3 prior_knowledge_required, 4 learning_objectives[], 5 ncf_competency_alignment, 6 flashcard_set/cards[], 7 concept_and_definition_cards[], 8 formula_rule_cards[], 9 application_hots_cards[], 10 visual_diagram_suggestion_cards[], 11 difficulty_tag_for_each_card (per card), 12 memory_hook_quick_tip (per card), 13 self_check_rapid_recall_round, 14 common_mistakes_to_avoid[], 15 differentiation_support, 16 expected_learning_outcomes[], 17 real_life_connection, 18 reflection_exit_ticket.
 
-Return ONE JSON object per distinct flashcard in the PDF (Card 1, Item 1, …). Do NOT merge separate cards into one object.
+Legacy: deck_title/title -> flashcard_deck_title; memory_cue/hint -> memory_hook_quick_tip; skill_focus/bloom_level -> difficulty_tag_for_each_card.
+
+Return ONE JSON object per distinct deck in the PDF.
 `
       : '';
   const rubricTemplateBlock =
@@ -695,66 +793,125 @@ Use title for the plan name. Do NOT use lesson-planner-only fields (lesson_name,
 `
       : '';
   const lessonPlannerTemplateBlock =
-    toolType === 'lesson-planner'
+    toolType === 'study-schedule-maker'
       ? `
 
-LESSON PLAN — TEMPLATE MAPPING (mandatory, 14 sections):
-Each JSON object is ONE full lesson plan variation from the PDF ("Lesson 1", "Variation 1", "Plan 1", etc.).
+STUDY SCHEDULE MAKER — TEMPLATE MAPPING (mandatory, 13 sections):
+Each JSON object is ONE full study schedule from the PDF ("Schedule 1", "Variation 1", "Plan 1", etc.).
 Map PDF headings to these fields (copy exact wording; one bullet/line per array item):
-1 lesson_name — title only (not "Objectives" alone)
-2 learning_objectives[] — "Learning Objectives", "Outcomes"
-3 ncf_competency_alignment — NCF / competency / learning outcome alignment
-4 prior_knowledge_diagnostic — prior knowledge or diagnostic question
-5 introduction_warmup — introduction / warm-up
-6 teaching_strategy — teaching strategy / pedagogy
-7 teaching_activities[] — procedure, teaching-learning process, classroom activities, methodology steps
-8 teacher_talk_points[] — teacher talk / teacher instructions
-9 student_tasks[] — student tasks / student instructions
-10 formative_assessment_questions[] — formative assessment questions (bullets)
-11 differentiation_plan — differentiation / UDL
-12 homework_practice — homework / practice
-13 materials_required[] and/or teaching_aids_required[] — materials, resources, teaching aids
-14 closure_exit_ticket — closure / exit ticket; timeline[] or time_slots[] for period/time cues
+1 study_schedule_title (or lesson_name) — schedule title only (not "Objectives" alone)
+2 study_goal_subtopic_link — study goal and subtopic link
+3 prior_knowledge_readiness_check — prior knowledge and readiness check
+4 learning_objectives[] — Bloom-aligned learning objectives
+5 ncf_competency_alignment — NCF / competency / learning outcome alignment
+6 study_plan_table[] — REQUIRED: at least 2 timed rows (e.g. "9:00–9:30: Read …"); never leave empty if sections 7–10 exist — use timeline[] / time_slots[] or derive rows from concept/practice/breaks slots
+7 concept_learning_slot — concept learning slot (reading, notes, concept focus)
+8 practice_slot — practice slot (exercises, questions, application)
+9 breaks_focus_tips — breaks and focus tips
+10 self_assessment_checkpoint — self-assessment checkpoint
+11 support_extension_plan — support and extension plan
+12 expected_learning_outcomes[] — expected learning outcomes
+13 reflection_exit_ticket — reflection / exit ticket
 
-Return one object per distinct lesson variation with lesson_name plus at least one substantive body field from sections 2–14. Do not return worksheet question rows.
+Return one object per distinct schedule with study_schedule_title plus at least one substantive body field from sections 2–13.
+`
+      : toolType === 'lesson-planner'
+        ? `
+
+LESSON PLANNER — TEMPLATE MAPPING (mandatory, 14 sections):
+Each JSON object is ONE full lesson plan from the PDF ("Lesson 1", "Variation 1", "Period plan", etc.).
+Map PDF headings to these fields (copy exact wording; one bullet/line per array item):
+1 lesson_name — lesson title only
+2 learning_objectives[]
+3 ncf_competency_alignment
+4 prior_knowledge_diagnostic
+5 introduction_warmup
+6 teaching_strategy
+7 teaching_activities[] — classroom activities / teaching-learning process
+8 teacher_talk_points[]
+9 student_tasks[]
+10 formative_assessment_questions[]
+11 differentiation_plan
+12 homework_practice
+13 teaching_aids_required[]
+14 closure_exit_ticket
+
+Keep teacher_talk_points separate from student_tasks. Return one object per distinct lesson with lesson_name plus substantive body fields.
+`
+        : '';
+  const mockTestTemplateBlock =
+    toolType === 'mock-test-builder'
+      ? `
+
+MOCK TEST BUILDER — TEMPLATE MAPPING (mandatory, 12 sections):
+Prefer ONE JSON object per full examination paper in the PDF (not one array item per question unless the PDF is only a flat numbered list).
+Map PDF headings to fields (copy exact wording):
+1 mock_test_title — Mock Test Title
+2 test_purpose_subtopic_link — Test Purpose and Subtopic Link
+3 learning_objectives[] — Learning Objectives - Bloom's Taxonomy Aligned
+4 ncf_competency_alignment — NCF Competency / Learning Outcome Alignment
+5 instructions — Instructions for Students
+6 question_paper (or sections[] / section_a..section_e) — Question Paper with sections and questions
+7 answer_key — Answer Key
+8 step_by_step_solutions_explanations — Step-by-step Solutions / Explanations
+9 remedial_revision_suggestions[] — Remedial Revision Suggestions
+10 expected_learning_outcomes[] — Expected Learning Outcomes
+11 real_life_application — Real-life Application
+12 reflection_exit_ticket — Reflection / Exit Ticket
+
+If the PDF is only numbered questions, return flat rows with section label + question_number + question + options + answer + marks — they will be merged into sections A–E by section name.
+Preserve "OR", "attempt any", and internal-choice markers in internal_choice_group or question text.
 `
       : '';
   const examTemplateBlock =
     toolType === 'exam-question-paper-generator'
       ? `
 
-EXAM QUESTION PAPER — TEMPLATE MAPPING (mandatory, 11 sections):
-Prefer ONE JSON object per full examination paper in the PDF (not one array item per question unless the PDF is only a flat numbered list).
+EXAM QUESTION PAPER GENERATOR — TEMPLATE MAPPING (mandatory, 11 sections):
+Prefer ONE JSON object per full examination paper in the PDF.
 Map PDF headings to fields (copy exact wording):
-1 paper_title / title — paper title and general instructions block (instructions string)
-2 blueprint — blueprint / design grid / marks distribution table
-3–7 sections[] — Section A (MCQs), B (VSA), C (short answer), D (long answer), E (case/competency): each { sectionName, questions[{ question_number, question, options[], answer, marks, internal_choice_group }] }
-8 internal_choices — internal choice / OR instructions (string)
-9 answer_key — complete answer key (string or built from per-question answers)
-10 marking_scheme — detailed marking scheme (string)
-11 open_ended_rubric — rubric for open-ended questions (string)
+1 paper_title — Paper Title and General Instructions (include instructions text)
+2 blueprint — Blueprint / Design Grid
+3 section_a — Section A: MCQs
+4 section_b — Section B: Very Short Answer Questions
+5 section_c — Section C: Short Answer Questions
+6 section_d — Section D: Long Answer Questions
+7 section_e — Section E: Case-based / Competency Questions
+8 internal_choices — Internal Choices
+9 answer_key — Complete Answer Key
+10 marking_scheme — Detailed Marking Scheme
+11 open_ended_rubric — Rubric for Open-ended Questions
 
-If the PDF is only numbered questions, return flat rows with section label + question_number + question + options + answer + marks — they will be merged into sections A–E by section name.
-Preserve "OR", "attempt any", and internal-choice markers in internal_choice_group or question text.
+Use sections[] with sectionName when the PDF groups questions by section label.
+Preserve OR/internal-choice markers in internal_choice_group or question text.
 `
       : '';
   const rule7 =
-    toolType === 'activity-project-generator'
+    toolType === 'activity-project-generator' ||
+    toolType === 'project-idea-lab'
       ? '7. The "title" field must be ONLY the activity name (e.g. "Observing shadows"). Never use section labels (Materials Required, Learning Objectives, Title, Rubric) as title'
-      : toolType === 'lesson-planner'
-        ? '7. Use "lesson_name" for the lesson title (not generic words like "Objectives" alone). Fill learning_objectives and teaching_activities from the PDF whenever those sections exist.'
+      : toolType === 'study-schedule-maker'
+        ? '7. Use study_schedule_title (or lesson_name) for the schedule title. Map all 13 Study Schedule Maker fields from PDF section headings.'
+        : toolType === 'lesson-planner'
+          ? '7. Use lesson_name for the lesson title. Map all 14 Lesson Planner teacher fields from PDF section headings.'
         : toolType === 'daily-class-plan-maker'
           ? '7. Use "title" and day_period_topic_breakup for the plan heading. Fill objectives, teaching_methods, classroom_activity, and time_slots from the PDF — not lesson_name / NCF fields unless the PDF uses those labels.'
-          : toolType === 'exam-question-paper-generator'
-            ? '7. Use paper_title/title for the exam name. Put questions in sections[] with sectionName from the PDF (Section A, Section B, MCQs, etc.). Copy answers and marks exactly.'
-            : toolType === 'worksheet-mcq-generator'
+          : toolType === 'mock-test-builder'
+            ? '7. Use mock_test_title for the test name. Put questions in question_paper (or sections[]) with sectionName from the PDF, and include answer_key, solutions/explanations, remedial suggestions, outcomes, real-life application, and reflection when present.'
+            : toolType === 'exam-question-paper-generator'
+              ? '7. Use paper_title for the exam name. Put questions in sections[] or section_a..section_e with section labels from the PDF, and include internal_choices, answer_key, marking_scheme, and open_ended_rubric when present.'
+              : toolType === 'worksheet-mcq-generator'
               ? '7. Use title/worksheet_title for the worksheet name. Group questions in sections[] by Section A–E (no separate long-answer section) or copy section labels into each row\'s section field.'
-              : toolType === 'story-passage-creator'
-                ? '7. Use title for the story/passage name. Put prose in passage; map all story template fields from PDF section headings.'
+              : toolType === 'reading-practice-room'
+                ? '7. Use reading_practice_title (or title) for the item name. Put prose in passage; map all 13 Reading Practice Room fields from PDF section headings.'
+                : toolType === 'story-passage-creator'
+                  ? '7. Use title for the item name. Put prose in passage; map all 19 Story and Passage Creator fields from PDF section headings.'
                 : toolType === 'short-notes-summaries-maker'
                   ? '7. Use title/concept_name for the note name. Map all 10 short-note template fields from PDF section headings.'
-                  : toolType === 'flashcard-generator'
-                    ? '7. Map all seven flashcard fields (front, back, memory_cue, skill_focus, example_use, peer_prompt, reflection) from PDF section headings.'
+                  : toolType === 'my-study-decks'
+                    ? '7. Map the 12 My Study Decks fields, including cards with front/back plus difficulty_tag_for_each_card and memory_hook_quick_tip, from PDF section headings.'
+                    : toolType === 'flashcard-generator'
+                      ? '7. Map deck_title and cards[] with front, back, memory_cue, skill_focus, example_use, peer_prompt, and reflection per card.'
                     : '7. Use schema field names exactly; each item\'s title/name fields must be real content titles from the PDF, not section headings alone';
   return `You are a precise educational content extractor. EXTRACT-ONLY: copy text from the PDF — never invent, paraphrase, summarize, or fill missing sections.
 
@@ -771,46 +928,63 @@ ${rawPdfText}
 """
 
 YOUR TASK:
-${toolType === 'lesson-planner'
-  ? `Extract one JSON object per lesson plan variation in the PDF (numbered lessons, "Variation N", multiple period plans, etc.).
-Each object MUST have non-empty lesson_name and at least one substantive content field from the schema (bullets/lines copied from the PDF).
-Skip stubs that are only a title with no objectives, activities, timeline, materials, or assessment text.
-Do NOT invent steps or objectives that are not present in the PDF text.
-Do NOT treat standalone appendix or index pages as lesson plans.${activityTemplateBlock}${lessonPlannerTemplateBlock}`
+${toolType === 'study-schedule-maker'
+  ? `Extract one JSON object per study schedule variation in the PDF (numbered schedules, "Variation N", multiple day plans, etc.).
+Each object MUST have non-empty study_schedule_title (or lesson_name) and at least one substantive field from the 13-section schema.
+Skip title-only stubs. Copy study_plan_table, concept slot, practice slot, and reflection from the PDF when present.
+Do NOT treat standalone appendix or index pages as schedules.${activityTemplateBlock}${lessonPlannerTemplateBlock}`
+  : toolType === 'lesson-planner'
+    ? `Extract one JSON object per lesson plan variation in the PDF (numbered lessons, "Variation N", period plans, etc.).
+Each object MUST have non-empty lesson_name and at least one substantive field from the 14-section teacher schema.
+Skip title-only stubs. Copy objectives, teaching_activities, teacher_talk_points, student_tasks, and closure from the PDF when present.${activityTemplateBlock}${lessonPlannerTemplateBlock}`
   : toolType === 'daily-class-plan-maker'
     ? `Extract one JSON object per full daily class plan in the PDF.
 Each object MUST have a non-empty title or day_period_topic_breakup and at least one substantive daily-plan field (objectives, teaching_methods, classroom_activity, time_slots, exit_ticket, etc.) copied from the PDF.
 Skip title-only stubs. Do NOT map daily plans into lesson-planner field names unless the PDF uses those exact labels.${activityTemplateBlock}${dailyClassPlanTemplateBlock}`
-  : toolType === 'exam-question-paper-generator'
-    ? `Extract one JSON object per full examination paper when the PDF has a complete paper structure; otherwise extract one flat row per question with section + question_number + question + options + answer + marks.
-Each full-paper object MUST include sections[] (or flat questions that will be grouped) and paper_title or title when present in the PDF.
-Copy answer keys and marking schemes when in a separate section of the PDF.${activityTemplateBlock}${examTemplateBlock}`
+  : toolType === 'mock-test-builder'
+    ? `Extract one JSON object per full mock test when the PDF has a complete structure; otherwise extract one flat row per question with section + question_number + question + options + answer + marks.
+Each full-test object MUST include question_paper (or sections[]) and mock_test_title/title when present in the PDF.
+Copy answer keys and solutions/explanations when in separate sections of the PDF.${activityTemplateBlock}${mockTestTemplateBlock}`
+    : toolType === 'exam-question-paper-generator'
+      ? `Extract one JSON object per full exam paper when the PDF has a complete structure; otherwise extract one flat row per question with section + question_number + question + options + answer + marks.
+Each full-test object MUST include sections[] or section_a..section_e and paper_title/title when present in the PDF.
+Copy answer_key, marking_scheme, and open_ended_rubric when in separate sections.${activityTemplateBlock}${examTemplateBlock}`
   : toolType === 'worksheet-mcq-generator'
     ? `Extract one JSON object per full worksheet when the PDF has title, instructions, and section blocks; otherwise one flat row per question with section (A–E), question_number, question, options[], answer, type, marks.
 Do NOT skip questions because the answer key is on a later page.${activityTemplateBlock}${worksheetTemplateBlock}`
-    : toolType === 'story-passage-creator'
-      ? `Extract one JSON object per complete story/passage item in the PDF (numbered items, separate titles, or distinct passage blocks).
-Each object MUST include non-empty passage (or content) and title when present. Copy alignment, objectives, vocabulary, questions, answer hints, differentiation, real-life application, and reflection from the PDF.
-Skip title-only stubs.${activityTemplateBlock}${storyTemplateBlock}`
+    : toolType === 'reading-practice-room'
+      ? `Extract one JSON object per complete reading practice item in the PDF (numbered items, separate titles, or distinct passage blocks).
+Each object MUST include non-empty passage (or content) and reading_practice_title/title when present. Copy all 13 Reading Practice Room sections from the PDF.
+Skip title-only stubs.${activityTemplateBlock}${readingPracticeTemplateBlock}`
+      : toolType === 'story-passage-creator'
+        ? `Extract one JSON object per complete story/passage item in the PDF (numbered items, separate titles, or distinct passage blocks).
+Each object MUST include non-empty passage (or content) and title when present. Copy all 19 Story and Passage Creator sections from the PDF.
+Skip title-only stubs.${activityTemplateBlock}${storyPassageTemplateBlock}`
       : toolType === 'short-notes-summaries-maker'
         ? `Extract one JSON object per complete short-note item in the PDF (Item 1, Item 2, numbered notes).
 Each object MUST include non-empty short_note_summary (or summary) and title/concept_name when present. Copy all 10 template sections from the PDF.
 Skip title-only stubs.${activityTemplateBlock}${shortNotesTemplateBlock}`
-        : toolType === 'flashcard-generator'
-          ? `Extract one JSON object per flashcard in the PDF (Card 1, Item 1, numbered cards).
-Each object MUST include non-empty front and back. Copy memory_cue, skill_focus, example_use, peer_prompt, and reflection when present in the PDF.
+        : toolType === 'my-study-decks'
+          ? `Extract one JSON object per deck in the PDF.
+Each deck object MUST include cards[] (or flashcard_set[]) with non-empty front and back for each card.
+Populate the full 12-point My Study Decks format fields when present in the PDF.
+Skip title-only stubs.${activityTemplateBlock}${myStudyDecksTemplateBlock}`
+          : toolType === 'flashcard-generator'
+            ? `Extract one JSON object per deck in the PDF.
+Each deck object MUST follow the 18-point Flash Card Generator format with cards[] (or typed card groups 7–10) where every card has non-empty front and back.
+Populate difficulty_tag_for_each_card and memory_hook_quick_tip per card when present.
 Skip title-only stubs.${activityTemplateBlock}${flashcardTemplateBlock}`
-          : `Extract ONLY the items that have COMPLETE content in this PDF (items with all required fields: ${requiredFields}).
+            : `Extract ONLY the items that have COMPLETE content in this PDF (items with all required fields: ${requiredFields}).
 Do NOT extract items that are only titles or brief mentions without full content.
 Do NOT generate or invent content that is not present in the PDF text above.
-Do NOT treat standalone workbook appendix headings as a separate activity unless they are a full numbered activity block.${activityTemplateBlock}${conceptTemplateBlock}${worksheetTemplateBlock}${homeworkTemplateBlock}${storyTemplateBlock}${shortNotesTemplateBlock}${flashcardTemplateBlock}${rubricTemplateBlock}${lessonPlannerTemplateBlock}${dailyClassPlanTemplateBlock}${examTemplateBlock}`}
+Do NOT treat standalone workbook appendix headings as a separate activity unless they are a full numbered activity block.${activityTemplateBlock}${conceptTemplateBlock}${worksheetTemplateBlock}${homeworkTemplateBlock}${storyTemplateBlock}${shortNotesTemplateBlock}${myStudyDecksTemplateBlock}${flashcardTemplateBlock}${rubricTemplateBlock}${lessonPlannerTemplateBlock}${dailyClassPlanTemplateBlock}${examTemplateBlock}`}
 
 Return a JSON array. Each element uses this schema:
 ${schemaStr}
 
 RULES:
 1. Return ONLY a raw JSON array [ ... ] — no markdown, no code fences, no explanation
-2. ${toolType === 'lesson-planner' || toolType === 'daily-class-plan-maker' || toolType === 'exam-question-paper-generator' || toolType === 'worksheet-mcq-generator' ? 'Skip title-only rows with no substantive body in any mapped field.' : 'Extract ONLY items with complete content — skip title-only entries'}
+2. ${toolType === 'lesson-planner' || toolType === 'study-schedule-maker' || toolType === 'daily-class-plan-maker' || toolType === 'mock-test-builder' || toolType === 'exam-question-paper-generator' || toolType === 'worksheet-mcq-generator' ? 'Skip title-only rows with no substantive body in any mapped field.' : 'Extract ONLY items with complete content — skip title-only entries'}
 3. Preserve the EXACT wording from the PDF — do not paraphrase, rewrite, or add curriculum content that is not in the PDF
 4. For fields not present in PDF, use "" or [] — NEVER guess or generate placeholder teaching content
 5. sl_no / question_number must match the lesson or variation number from the PDF when numbered
@@ -885,7 +1059,7 @@ RULES:
 3. title and name must be ONLY the activity name (same as: "${itemTitle}") — never a template section heading
 4. Match style/depth of examples
 5. Return curriculum-appropriate content
-6. Fill the Activity & Project template fields: learning_objectives, materials_required, step_by_step_procedure (student steps only), teacher_instructions (separate from procedure), expected_learning_outcomes, assessment_criteria_rubric, real_life_application — use the schema key names exactly; arrays must have at least one string each where the PDF implies content
+6. Fill the Project Idea Lab template fields: learning_objectives, materials_required, step_by_step_procedure (student steps only), safety_care_instructions, observation_data_recording_table, creative_output_final_product, differentiation_support_extension, self_assessment_rubric, expected_learning_outcomes, real_life_application, reflection_exit_ticket — use schema key names exactly
 7. Never put section labels in "title"; title = short activity name only`;
 }
 
@@ -949,11 +1123,13 @@ function sliceTextForActivityTitleScan(rawText) {
 function detectAllTitlesInPdf(toolType, rawText) {
   const full = String(rawText || '').trim();
   const scanTexts =
-    toolType === 'activity-project-generator' ? [sliceTextForActivityTitleScan(full), full] : [full];
+    toolType === 'activity-project-generator' || toolType === 'project-idea-lab'
+      ? [sliceTextForActivityTitleScan(full), full]
+      : [full];
   const results = [];
   for (const scan of scanTexts) {
     const partial = [];
-    if (toolType === 'activity-project-generator') {
+    if (toolType === 'activity-project-generator' || toolType === 'project-idea-lab') {
       const titlePattern = /^\s*(\d+)\.\s+(.+)$/gm;
       let m;
       while ((m = titlePattern.exec(scan)) !== null) {
@@ -998,7 +1174,12 @@ function detectAllTitlesInPdf(toolType, rawText) {
 
 /** One Gemini call for all title-only gaps — avoids N×429 failures and empty placeholder rows. */
 async function generateMissingActivitiesInOneCall(toolType, missingItems, templateExamples, params) {
-  if (toolType !== 'activity-project-generator' || !missingItems.length) return null;
+  if (
+    (toolType !== 'activity-project-generator' && toolType !== 'project-idea-lab') ||
+    !missingItems.length
+  ) {
+    return null;
+  }
   const config = PDF_TOOL_CONFIG[toolType];
   if (!config) return null;
   const schemaStr = JSON.stringify(config.schema, null, 2);
@@ -1032,7 +1213,7 @@ RULES:
 1. Return ONLY a raw JSON array [ ... ] — no markdown, no code fences, no commentary
 2. For each item k, sl_no or question_number must equal the number on line k
 3. title / name must be ONLY the real activity name for that line — never a section heading (Materials Required, Learning Objectives, etc.)
-4. Every object MUST follow the Activity & Project template keys: learning_objectives, materials_required, step_by_step_procedure, teacher_instructions, expected_learning_outcomes, assessment_criteria_rubric, real_life_application — populate each from curriculum context; keep step_by_step_procedure (students) and teacher_instructions separate
+4. Every object MUST follow the template keys from the schema exactly — populate each from curriculum context
 5. Use realistic classroom activities appropriate to the class and subject`;
 
   try {
@@ -1077,6 +1258,7 @@ function flattenPdfExtractItems(toolType, parsed) {
   const isQuestionTool =
     toolType === 'worksheet-mcq-generator' ||
     toolType === 'homework-creator' ||
+    toolType === 'mock-test-builder' ||
     toolType === 'exam-question-paper-generator';
   if (Array.isArray(parsed)) {
     const out = [];
@@ -1147,22 +1329,28 @@ function flattenPdfExtractItems(toolType, parsed) {
         }
         continue;
       }
-      if (toolType === 'exam-question-paper-generator') {
+      if (toolType === 'mock-test-builder' || toolType === 'exam-question-paper-generator') {
         const hasSections = Array.isArray(item.sections) && item.sections.length > 0;
         const hasExamMeta = Boolean(
-          String(item.paper_title || item.title || '').trim() ||
+          String(item.mock_test_title || item.paper_title || item.title || '').trim() ||
             String(item.instructions || '').trim() ||
             String(item.blueprint || '').trim() ||
+            String(item.test_purpose_subtopic_link || '').trim() ||
             String(item.answer_key || '').trim() ||
             String(item.marking_scheme || '').trim() ||
-            String(item.internal_choices || '').trim(),
+            String(item.internal_choices || '').trim() ||
+            String(item.step_by_step_solutions_explanations || '').trim(),
         );
         if (hasSections || (hasExamMeta && !String(item.question || '').trim())) {
+          const title = String(
+            item.mock_test_title || item.paper_title || item.title || 'Exam Paper',
+          ).trim();
           out.push(
             mark({
               ...item,
-              paper_title: String(item.paper_title || item.title || 'Exam Paper').trim(),
-              title: String(item.title || item.paper_title || 'Exam Paper').trim(),
+              mock_test_title: toolType === 'mock-test-builder' ? title : item.mock_test_title,
+              paper_title: String(item.paper_title || item.title || title).trim(),
+              title,
             }),
           );
           continue;
@@ -1173,22 +1361,41 @@ function flattenPdfExtractItems(toolType, parsed) {
         }
         continue;
       }
-      if (toolType === 'story-passage-creator') {
+      if (toolType === 'reading-practice-room' || toolType === 'story-passage-creator') {
         const passage = String(item.passage || item.content || item.story_text || '').trim();
+        const isTeacherStory = toolType === 'story-passage-creator';
         const hasStoryBody = Boolean(
           passage ||
             (Array.isArray(item.learning_objectives) && item.learning_objectives.length) ||
+            (Array.isArray(item.vocabulary_warmup) && item.vocabulary_warmup.length) ||
             (Array.isArray(item.vocabulary_support) && item.vocabulary_support.length) ||
+            (Array.isArray(item.read_and_recall_questions) && item.read_and_recall_questions.length) ||
+            (Array.isArray(item.think_and_infer_questions) && item.think_and_infer_questions.length) ||
+            (Array.isArray(item.apply_and_connect_questions) && item.apply_and_connect_questions.length) ||
+            (Array.isArray(item.comprehension_questions) && item.comprehension_questions.length) ||
             (Array.isArray(item.questions) && item.questions.length) ||
-            String(item.alignment_block || item.alignment || '').trim() ||
-            String(item.reflection_prompt || '').trim(),
+            String(item.topic_subtopic_connection || item.prior_knowledge_required || '').trim() ||
+            String(item.pre_reading_thinking_prompt || '').trim() ||
+            String(item.vocabulary_grammar_practice || item.creative_response_activity || '').trim() ||
+            String(item.ncf_competency_alignment || item.alignment_block || item.alignment || '').trim() ||
+            String(item.common_mistakes_to_avoid || '').trim() ||
+            String(item.reflection_exit_ticket || item.reflection_prompt || '').trim(),
         );
         if (hasStoryBody) {
+          const defaultTitle = isTeacherStory ? 'Story' : 'Reading Practice';
+          const title = String(
+            item.reading_practice_title || item.title || item.passage_title || defaultTitle,
+          ).trim();
           out.push(
             mark({
               ...item,
-              title: String(item.title || item.passage_title || 'Story').trim(),
-              passage: passage || item.passage,
+              title,
+              ...(isTeacherStory
+                ? { passage: passage || item.passage || item.story_passage_content }
+                : {
+                    reading_practice_title: title,
+                    passage: passage || item.passage,
+                  }),
             }),
           );
           continue;
@@ -1307,26 +1514,33 @@ function flattenPdfExtractItems(toolType, parsed) {
       }
       if (toolType === 'lesson-planner') {
         const questionText = String(item.question || '').trim();
-        if (questionText && !item.lesson_name && !item.teaching_activities?.length) continue;
-        const lessonName = String(item.lesson_name || item.title || item.name || '').trim();
-        const hasLessonBody = Boolean(
+        if (questionText && !item.study_schedule_title && !item.lesson_name && !item.study_plan_table?.length)
+          continue;
+        const scheduleTitle = String(
+          item.study_schedule_title || item.lesson_name || item.title || item.name || '',
+        ).trim();
+        const hasScheduleBody = Boolean(
           item.learning_objectives?.length ||
             item.objectives?.length ||
+            item.study_plan_table?.length ||
+            item.timeline?.length ||
+            item.concept_learning_slot ||
+            item.practice_slot ||
+            item.self_assessment_checkpoint ||
+            item.reflection_exit_ticket ||
             item.teaching_activities?.length ||
             item.activities?.length ||
-            item.timeline?.length ||
-            item.materials_required?.length ||
             item.introduction_warmup ||
             item.teaching_strategy ||
-            item.assessment ||
             item.closure_exit_ticket,
         );
-        if (lessonName || hasLessonBody) {
+        if (scheduleTitle || hasScheduleBody) {
           out.push(
             mark({
               ...item,
-              lesson_name: lessonName || item.lesson_name || 'Lesson',
-              title: lessonName || item.title,
+              study_schedule_title: scheduleTitle || item.study_schedule_title || 'Study Schedule',
+              lesson_name: scheduleTitle || item.lesson_name || 'Study Schedule',
+              title: scheduleTitle || item.title,
             }),
           );
         }
@@ -1349,6 +1563,18 @@ function flattenPdfExtractItems(toolType, parsed) {
         continue;
       }
       if (toolType === 'flashcard-generator') {
+        const hasDeckBody =
+          (Array.isArray(item.cards) && item.cards.length) ||
+          (Array.isArray(item.concept_and_definition_cards) && item.concept_and_definition_cards.length) ||
+          (Array.isArray(item.formula_rule_cards) && item.formula_rule_cards.length) ||
+          (Array.isArray(item.application_hots_cards) && item.application_hots_cards.length) ||
+          (Array.isArray(item.visual_diagram_suggestion_cards) && item.visual_diagram_suggestion_cards.length);
+        if (hasDeckBody || String(item.flashcard_deck_title || item.deck_title || item.title || '').trim()) {
+          out.push(mark(item));
+          continue;
+        }
+      }
+      if (toolType === 'my-study-decks') {
         const nested = [
           ...(Array.isArray(item.cards) ? item.cards : []),
           ...(Array.isArray(item.flashcards) ? item.flashcards : []),
@@ -1415,7 +1641,9 @@ function flattenPdfExtractItems(toolType, parsed) {
   if (
     parsed &&
     typeof parsed === 'object' &&
-    (toolType === 'exam-question-paper-generator' || toolType === 'worksheet-mcq-generator') &&
+    (toolType === 'mock-test-builder' ||
+      toolType === 'exam-question-paper-generator' ||
+      toolType === 'worksheet-mcq-generator') &&
     Array.isArray(parsed.sections) &&
     parsed.sections.length
   ) {
@@ -1424,10 +1652,23 @@ function flattenPdfExtractItems(toolType, parsed) {
   if (
     parsed &&
     typeof parsed === 'object' &&
-    toolType === 'flashcard-generator' &&
-    (Array.isArray(parsed.cards) || Array.isArray(parsed.flashcards))
+    toolType === 'mock-test-builder' &&
+    (Array.isArray(parsed.section_a) ||
+      Array.isArray(parsed.section_b) ||
+      String(parsed.mock_test_title || parsed.paper_title || '').trim())
   ) {
-    return flattenPdfExtractItems(toolType, [parsed]);
+    return [mark(parsed)];
+  }
+  if (
+    parsed &&
+    typeof parsed === 'object' &&
+    toolType === 'flashcard-generator' &&
+    (Array.isArray(parsed.cards) ||
+      Array.isArray(parsed.flashcards) ||
+      Array.isArray(parsed.concept_and_definition_cards) ||
+      String(parsed.flashcard_deck_title || parsed.deck_title || '').trim())
+  ) {
+    return [mark(parsed)];
   }
   return [];
 }
@@ -1534,14 +1775,18 @@ async function runGeminiPdfExtractPass(toolType, textSlice, params, passContext 
     toolType === 'concept-mastery-helper'
       ? 32768
       : toolType === 'lesson-planner' ||
+    toolType === 'study-schedule-maker' ||
     toolType === 'daily-class-plan-maker' ||
     toolType === 'activity-project-generator' ||
+    toolType === 'project-idea-lab' ||
     toolType === 'worksheet-mcq-generator' ||
     toolType === 'homework-creator' ||
     toolType === 'exam-question-paper-generator' ||
     toolType === 'concept-mastery-helper' ||
     toolType === 'rubrics-evaluation-generator' ||
+    toolType === 'my-study-decks' ||
     toolType === 'flashcard-generator' ||
+    toolType === 'reading-practice-room' ||
     toolType === 'story-passage-creator' ||
     toolType === 'short-notes-summaries-maker'
       ? 16384
@@ -1882,15 +2127,21 @@ export async function extractAndGenerateAllItems(toolType, rawPdfText, params = 
     extractedItems = consolidateRubricExtractItems(extractedItems, params);
   }
 
-  if (toolType === 'exam-question-paper-generator' && extractedItems.length) {
+  if (
+    (toolType === 'mock-test-builder' || toolType === 'exam-question-paper-generator') &&
+    extractedItems.length
+  ) {
     extractedItems = consolidateExamExtractItems(extractedItems, params);
   }
 
-  if (toolType === 'flashcard-generator' && extractedItems.length) {
+  if (toolType === 'my-study-decks' && extractedItems.length) {
     extractedItems = expandFlashcardExtractItems(extractedItems);
   }
 
-  if (toolType === 'activity-project-generator' && extractedItems.length) {
+  if (
+    (toolType === 'activity-project-generator' || toolType === 'project-idea-lab') &&
+    extractedItems.length
+  ) {
     extractedItems = extractedItems.filter((it) => {
       const title = String(it?.title || it?.name || '').trim();
       if (!title) return false;
@@ -1973,10 +2224,10 @@ Break the concept into a 9-section breakdown: (1) concept title, (2) simple defi
 Create a realistic day-wise revision planner based on exam date and available hours.`,
     'smart-qa-practice-generator': `${common}
 
-Generate a 14-section practice set: title, learning objectives, instructions, Section A (MCQs) through Section G (HOTS/analytical), real-life problem-solving questions, answer key with explanations; tag each question with bloom_level and difficulty_tag.`,
+Generate an 11-section practice set: title, learning objectives, instructions, Section A (MCQs) through Section G (HOTS/analytical), and answer key with explanations; tag each question with bloom_level and difficulty_tag.`,
     'chapter-summary-creator': `${common}
 
-Create an 11-section chapter summary: title, overview, learning objectives, important concepts, definitions, formulae/rules, concept connections, real-life applications, exam points, quick revision notes, and practice recall questions.`,
+Create a 10-section chapter summary: title, overview, learning objectives, important concepts, definitions, formulae/rules, concept connections, real-life applications, quick revision notes, and practice recall questions.`,
     'key-points-formula-extractor': `${common}
 
 Extract a 10-section key points sheet: topic title, important concepts, essential definitions, formulae/rules, keywords, must-remember facts, real-life connections, exam points, mnemonics, and a one-minute revision summary.`,

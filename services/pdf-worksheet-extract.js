@@ -117,7 +117,7 @@ function parseQuestionBlock(chunk, currentSection) {
   };
 }
 
-function extractQuestionsFromText(value, defaultSection = '') {
+export function extractQuestionsFromText(value, defaultSection = '') {
   const text = String(value || '').trim();
   if (!text) return [];
 
@@ -133,7 +133,7 @@ function extractQuestionsFromText(value, defaultSection = '') {
 }
 
 /** Walk PDF lines; switch section on headings; parse numbered questions per block. */
-function extractQuestionsBySectionHeaders(pdfText) {
+export function extractQuestionsBySectionHeaders(pdfText) {
   const lines = String(pdfText || '').split(/\r?\n/);
   let currentSection = '';
   let chunk = '';

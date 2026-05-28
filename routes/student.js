@@ -4818,7 +4818,7 @@ router.post('/ai/tool', async (req, res) => {
       });
     }
     
-    if (toolType === 'story-passage-creator') {
+    if (toolType === 'story-passage-creator' || toolType === 'reading-practice-room') {
       const { canonicalStoryPassageSubject, STORY_PASSAGE_SUBJECT_ERROR } = await import(
         '../utils/story-passage-subject.js'
       );
@@ -4877,7 +4877,7 @@ router.post('/ai/tool', async (req, res) => {
 
     const applyQuestionLimitToContent = (activeToolType, content, requestedCount) => {
       const limitedToolTypes = new Set([
-        'exam-question-paper-generator',
+        'mock-test-builder',
         'worksheet-mcq-generator',
       ]);
       if (!limitedToolTypes.has(String(activeToolType || ''))) return String(content || '');
@@ -4897,7 +4897,7 @@ router.post('/ai/tool', async (req, res) => {
     const buildRawDataForTool = (activeToolType, content) => {
       const parsed = tryParseJsonPayload(content);
       if (!parsed) return null;
-      if (activeToolType === 'activity-project-generator') {
+      if (activeToolType === 'activity-project-generator' || activeToolType === 'project-idea-lab') {
         if (Array.isArray(parsed)) return { activities: parsed };
         if (Array.isArray(parsed?.activities)) return { activities: parsed.activities };
         if (Array.isArray(parsed?.projects)) return { activities: parsed.projects };
