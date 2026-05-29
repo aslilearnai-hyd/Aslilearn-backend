@@ -1126,6 +1126,133 @@ export function normalizeStoryPassageStructuredContent(raw) {
   };
 }
 
+function storyPassageTextFilled(value) {
+  const t = String(value ?? '').trim();
+  return t.length > 8 && !/^(story|passage|title|n\/?a|tbd)$/i.test(t);
+}
+
+function storyPassageQuestionCount(rows) {
+  return (Array.isArray(rows) ? rows : []).filter((q) => {
+    if (typeof q === 'string') return storyPassageTextFilled(q);
+    if (q && typeof q === 'object') {
+      return storyPassageTextFilled(q.question || q.text || q.prompt);
+    }
+    return false;
+  }).length;
+}
+
+/** @returns {string[]} Missing Story and Passage Creator section labels. */
+export function getStoryPassageMissingSections(data) {
+  const s = normalizeStoryPassageStructuredContent(data && typeof data === 'object' ? data : {});
+  const missing = [];
+  const scalarChecks = [
+    ['title', '1. Story / Passage Title'],
+    ['topic_subtopic_connection', '2. Topic and Subtopic Connection'],
+    ['prior_knowledge_required', '3. Prior Knowledge Required'],
+    ['ncf_competency_alignment', '5. NCF Competency / Learning Outcome Alignment'],
+    ['pre_reading_thinking_prompt', '7. Pre-reading Thinking Prompt'],
+    ['vocabulary_grammar_practice', '12. Vocabulary and Grammar Practice'],
+    ['creative_response_activity', '13. Creative Response Activity'],
+    ['common_mistakes_to_avoid', '15. Common Mistakes to Avoid'],
+    ['differentiation_support', '16. Differentiation Support'],
+    ['real_life_application', '18. Real-life Application'],
+    ['reflection_exit_ticket', '19. Reflection / Exit Ticket'],
+  ];
+  for (const [key, label] of scalarChecks) {
+    if (!storyPassageTextFilled(s[key])) missing.push(label);
+  }
+  if (!Array.isArray(s.learning_objectives) || s.learning_objectives.length < 2) {
+    missing.push("4. Learning Objectives – Bloom's Taxonomy Aligned (min 2)");
+  }
+  if (!Array.isArray(s.vocabulary_warmup) || s.vocabulary_warmup.length < 3) {
+    missing.push('6. Vocabulary Warm-up (min 3 words)');
+  }
+  const passage = String(s.passage || s.content || s.story_passage_content || '').trim();
+  if (passage.length < 80) {
+    missing.push('8. Story / Passage Content (full story required, not title only)');
+  }
+  if (storyPassageQuestionCount(s.read_and_recall_questions) < 2) {
+    missing.push('9. Read and Recall Questions (min 2)');
+  }
+  if (storyPassageQuestionCount(s.think_and_infer_questions) < 2) {
+    missing.push('10. Think and Infer Questions (min 2)');
+  }
+  if (storyPassageQuestionCount(s.apply_and_connect_questions) < 2) {
+    missing.push('11. Apply and Connect Questions (min 2)');
+  }
+  const answers = Array.isArray(s.answer_key_suggested_responses) ? s.answer_key_suggested_responses : [];
+  if (answers.length < 2) {
+    missing.push('14. Answer Key / Suggested Responses (min 2)');
+  }
+  const outcomes = Array.isArray(s.expected_learning_outcomes) ? s.expected_learning_outcomes : [];
+  if (outcomes.length < 2) {
+    missing.push('17. Expected Learning Outcomes (min 2)');
+  }
+  return missing;
+}
+
+export function storyPassageStructuredContentIsComplete(data) {
+  return getStoryPassageMissingSections(data).length === 0;
+}
+
+/** Fill derivable narrative fields from topic context; does not invent full passage. */
+export function finalizeStoryPassageStructuredContent(structuredContent, meta = {}) {
+  const s = normalizeStoryPassageStructuredContent(
+    structuredContent && typeof structuredContent === 'object' ? structuredContent : {},
+  );
+  const topic = String(meta.subTopic || meta.subtopic || meta.topic || 'the selected subtopic').trim();
+  const subject = String(meta.subject || 'the subject').trim();
+
+  if (!storyPassageTextFilled(s.topic_subtopic_connection)) {
+    s.topic_subtopic_connection = `This story connects to ${topic} within ${subject}, building on the class topic sequence.`;
+  }
+  if (!storyPassageTextFilled(s.prior_knowledge_required)) {
+    s.prior_knowledge_required = `Students should recall basic ideas related to ${topic} before reading.`;
+  }
+  if (!Array.isArray(s.learning_objectives) || s.learning_objectives.length < 2) {
+    s.learning_objectives = [
+      `Understand key ideas about ${topic} through guided reading.`,
+      `Answer comprehension and inference questions about the passage.`,
+      `Apply the concept of ${topic} to a short real-life example.`,
+    ];
+  }
+  if (!storyPassageTextFilled(s.ncf_competency_alignment)) {
+    s.ncf_competency_alignment = `Aligned to NCF-SE 2023 competencies for ${subject}: reading comprehension, critical thinking, and communication related to ${topic}.`;
+  }
+  if (!Array.isArray(s.vocabulary_warmup) || s.vocabulary_warmup.length < 3) {
+    s.vocabulary_warmup = ['observe', 'evidence', 'conclusion', 'inference'];
+  }
+  if (!storyPassageTextFilled(s.pre_reading_thinking_prompt)) {
+    s.pre_reading_thinking_prompt = `Before you read, predict what you already know about ${topic}. What questions do you have?`;
+  }
+  if (!storyPassageTextFilled(s.vocabulary_grammar_practice)) {
+    s.vocabulary_grammar_practice = `Use vocabulary from the warm-up list in two original sentences about ${topic}.`;
+  }
+  if (!storyPassageTextFilled(s.creative_response_activity)) {
+    s.creative_response_activity = `Create a short comic strip or diary entry showing how ${topic} appears in daily life.`;
+  }
+  if (!storyPassageTextFilled(s.common_mistakes_to_avoid)) {
+    s.common_mistakes_to_avoid = `Avoid copying lines from the passage without explanation; support every answer with evidence from the text.`;
+  }
+  if (!storyPassageTextFilled(s.differentiation_support)) {
+    s.differentiation_support = `Support: sentence starters and vocabulary glossary. Extension: compare two characters or examples linked to ${topic}.`;
+  }
+  if (!Array.isArray(s.expected_learning_outcomes) || s.expected_learning_outcomes.length < 2) {
+    s.expected_learning_outcomes = [
+      `Students can explain the main idea of ${topic} in their own words.`,
+      `Students can answer recall and inference questions using text evidence.`,
+    ];
+  }
+  if (!storyPassageTextFilled(s.real_life_application)) {
+    s.real_life_application = `Discuss where students see ideas related to ${topic} at home, in the news, or in their community.`;
+  }
+  if (!storyPassageTextFilled(s.reflection_exit_ticket)) {
+    s.reflection_exit_ticket = `What is one new idea you learned about ${topic}? What question do you still have?`;
+  }
+
+  return s;
+}
+
 /** @deprecated Use normalizeReadingPracticeStructuredContent or normalizeStoryPassageStructuredContent */
 export function normalizeStoryStructuredContent(raw) {
   return normalizeReadingPracticeStructuredContent(raw);
@@ -2006,10 +2133,36 @@ export function buildQuickAssignmentRenderableFromStructured(source) {
 
 /** Normalize one flashcard card with legacy fallbacks. */
 export function normalizeFlashcardCard(raw) {
+  if (typeof raw === 'string') {
+    const line = String(raw || '').trim();
+    if (!line) return { front: '', back: '' };
+    const colon = line.match(/^(.+?)\s*[:–—-]\s*(.+)$/);
+    if (colon) {
+      return normalizeFlashcardCard({ front: colon[1], back: colon[2] });
+    }
+    return normalizeFlashcardCard({ front: line, back: line });
+  }
   const source = raw && typeof raw === 'object' && !Array.isArray(raw) ? raw : {};
-  const front = String(source.front || source.question || '').trim();
+  const front = String(
+    source.front ||
+      source.question ||
+      source.term ||
+      source.prompt ||
+      source.cue ||
+      source.name ||
+      source.title ||
+      '',
+  ).trim();
   const back = String(
-    source.back || source.correct_answer || source.answer || source.content || '',
+    source.back ||
+      source.correct_answer ||
+      source.answer ||
+      source.definition ||
+      source.meaning ||
+      source.response ||
+      source.description ||
+      source.content ||
+      '',
   ).trim();
   const memory_cue = String(
     source.memory_cue || source.memoryCue || source.hint || '',
@@ -2182,7 +2335,7 @@ export function normalizeMyStudyDecksStructuredContent(raw) {
   };
 }
 
-/** Flash Card Generator (teacher) — 18-section deck with typed card groups. */
+/** Flash Card Generator (teacher) — 5-block deck (Context, Foundations, HOTS cards, Study Aids, Wrap-Up). */
 export function normalizeFlashcardDeckStructuredContent(raw) {
   const source =
     raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
@@ -2197,8 +2350,28 @@ export function normalizeFlashcardDeckStructuredContent(raw) {
   const deck_title = String(
     source.flashcard_deck_title || source.deck_title || source.title || '',
   ).trim();
+  let topic = String(source.topic || '').trim();
+  let subtopic = String(source.subtopic || source.sub_topic || source.subTopic || '').trim();
   const topic_and_subtopic_link = String(
     source.topic_and_subtopic_link || source.subtopic_link || '',
+  ).trim();
+  if (!topic && topic_and_subtopic_link) {
+    const parts = topic_and_subtopic_link.split(/\s*[—–\-:]\s*/);
+    topic = String(parts[0] || '').trim();
+    if (!subtopic && parts.length > 1) subtopic = String(parts.slice(1).join(' — ') || '').trim();
+  }
+  const class_level = String(
+    source.class_level || source.classLabel || source.class || '',
+  ).trim();
+  const difficulty_level = String(
+    source.difficulty_level || source.difficulty || '',
+  ).trim();
+  const bloom_level = String(source.bloom_level || source.bloom || '').trim();
+  const deck_memory_hook = String(
+    source.deck_memory_hook ||
+      source.memory_hook_quick_tip ||
+      source.memory_cue ||
+      '',
   ).trim();
   const prior_knowledge_required = String(
     source.prior_knowledge_required || source.prior_knowledge || '',
@@ -2260,36 +2433,50 @@ export function normalizeFlashcardDeckStructuredContent(raw) {
   );
 
   let cards = [];
-  if (Array.isArray(source.cards)) cards = fromList(source.cards, '');
-  else if (Array.isArray(source.flashcard_set)) cards = fromList(source.flashcard_set, '');
-  else if (Array.isArray(source.flashcards)) cards = fromList(source.flashcards, '');
-  else if (Array.isArray(raw)) cards = fromList(raw, '');
-  else {
+  if (application_hots_cards.length) cards = [...application_hots_cards];
+  if (!cards.length && Array.isArray(source.cards)) cards = fromList(source.cards, 'application');
+  else if (!cards.length && Array.isArray(source.flashcard_set))
+    cards = fromList(source.flashcard_set, 'application');
+  else if (!cards.length && Array.isArray(source.flashcards))
+    cards = fromList(source.flashcards, 'application');
+  else if (!cards.length && Array.isArray(raw)) cards = fromList(raw, 'application');
+  else if (!cards.length) {
     const single = normalizeFlashcardCard(source);
-    if (single.front && single.back) cards = [{ ...single, card_category: 'concept' }];
+    if (single.front && single.back) cards = [{ ...single, card_category: 'application' }];
   }
 
   if (!cards.length) {
     cards = [
+      ...application_hots_cards,
       ...concept_and_definition_cards,
       ...formula_rule_cards,
-      ...application_hots_cards,
       ...visual_diagram_suggestion_cards,
     ];
   }
+
+  const mergedApplication =
+    application_hots_cards.length >= cards.length ? application_hots_cards : cards;
 
   return {
     ...source,
     flashcard_deck_title: deck_title || undefined,
     deck_title: deck_title || undefined,
     title: deck_title || String(source.title || '').trim() || undefined,
-    topic_and_subtopic_link: topic_and_subtopic_link || undefined,
+    topic: topic || undefined,
+    subtopic: subtopic || undefined,
+    topic_and_subtopic_link:
+      topic_and_subtopic_link ||
+      (topic && subtopic ? `${topic} — ${subtopic}` : topic || subtopic || undefined),
+    class_level: class_level || undefined,
+    difficulty_level: difficulty_level || undefined,
+    bloom_level: bloom_level || undefined,
+    deck_memory_hook: deck_memory_hook || undefined,
     prior_knowledge_required: prior_knowledge_required || undefined,
     learning_objectives,
     ncf_competency_alignment: ncf_competency_alignment || undefined,
     concept_and_definition_cards,
     formula_rule_cards,
-    application_hots_cards,
+    application_hots_cards: mergedApplication,
     visual_diagram_suggestion_cards,
     self_check_rapid_recall_round: self_check_rapid_recall_round || undefined,
     common_mistakes_to_avoid,
@@ -2297,8 +2484,213 @@ export function normalizeFlashcardDeckStructuredContent(raw) {
     expected_learning_outcomes,
     real_life_connection: real_life_connection || undefined,
     reflection_exit_ticket: reflection_exit_ticket || undefined,
-    cards,
+    cards: mergedApplication,
   };
+}
+
+function countValidFlashcardRows(cards = []) {
+  return (Array.isArray(cards) ? cards : []).filter(
+    (c) => String(c?.front || '').trim().length > 0 && String(c?.back || '').trim().length > 0,
+  ).length;
+}
+
+/** @returns {string[]} Missing flashcard deck requirements for validation / retries. */
+export function getFlashcardDeckMissingSections(data, toolSlug = 'flashcard-generator') {
+  const slug = String(toolSlug || '').trim();
+  const n =
+    slug === 'flashcard-generator'
+      ? normalizeFlashcardDeckStructuredContent(data)
+      : normalizeMyStudyDecksStructuredContent(data);
+  const missing = [];
+  const minCards = 5;
+  if (countValidFlashcardRows(n.cards) < minCards) {
+    missing.push(`The Card Set: Application & HOTS (min ${minCards} cards with Task and Solution)`);
+  }
+  if (slug === 'flashcard-generator') {
+    if (!String(n.flashcard_deck_title || n.deck_title || n.title || '').trim()) {
+      missing.push('Context & Alignment: Deck Title');
+    }
+    if (
+      !String(n.topic || '').trim() &&
+      !String(n.subtopic || '').trim() &&
+      !String(n.topic_and_subtopic_link || '').trim()
+    ) {
+      missing.push('Context & Alignment: Topic / Subtopic');
+    }
+    if (!String(n.prior_knowledge_required || '').trim()) {
+      missing.push('Foundations: Prior Knowledge Required');
+    }
+    if (!Array.isArray(n.learning_objectives) || n.learning_objectives.length < 2) {
+      missing.push('Foundations: Learning Objectives (min 2)');
+    }
+    if (!String(n.ncf_competency_alignment || '').trim()) {
+      missing.push('Foundations: NCF Competency / Learning Outcome Alignment');
+    }
+    if (!String(n.deck_memory_hook || '').trim()) {
+      missing.push('Study Aids: Memory Hook');
+    }
+    if (!Array.isArray(n.common_mistakes_to_avoid) || n.common_mistakes_to_avoid.length < 1) {
+      missing.push('Study Aids: Common Mistakes to Avoid');
+    }
+    if (!String(n.self_check_rapid_recall_round || '').trim()) {
+      missing.push('Study Aids: Rapid Recall');
+    }
+    if (!String(n.real_life_connection || '').trim()) {
+      missing.push('Wrap-Up: Real-life Connection');
+    }
+    if (!String(n.differentiation_support || '').trim()) {
+      missing.push('Wrap-Up: Differentiation');
+    }
+    if (!String(n.reflection_exit_ticket || '').trim()) {
+      missing.push('Wrap-Up: Exit Ticket');
+    }
+  } else {
+    if (!String(n.deck_title || n.title || '').trim()) missing.push('1. Deck Title');
+    if (!String(n.subtopic_link_prior_knowledge_required || '').trim()) {
+      missing.push('2. Subtopic Link and Prior Knowledge Required');
+    }
+  }
+  return missing;
+}
+
+export function flashcardDeckStructuredContentIsComplete(data, toolSlug = 'flashcard-generator') {
+  return getFlashcardDeckMissingSections(data, toolSlug).length === 0;
+}
+
+/** Merge typed card groups and pad deck narrative fields; build cards from objectives when needed. */
+export function finalizeFlashcardDeckStructuredContent(structuredContent, meta = {}, toolSlug = 'flashcard-generator') {
+  const slug = String(toolSlug || '').trim();
+  const base =
+    slug === 'flashcard-generator'
+      ? normalizeFlashcardDeckStructuredContent(structuredContent)
+      : normalizeMyStudyDecksStructuredContent(structuredContent);
+
+  const topic = String(meta.subTopic || meta.subtopic || meta.topic || 'this subtopic').trim();
+  const subject = String(meta.subject || 'Science').trim();
+  const bloomLevels = ['Remember', 'Understand', 'Apply', 'Analyze', 'Evaluate', 'Create'];
+
+  if (!String(base.flashcard_deck_title || base.deck_title || base.title || '').trim()) {
+    base.deck_title = `${topic} — Flashcards`;
+    base.title = base.deck_title;
+    if (slug === 'flashcard-generator') base.flashcard_deck_title = base.deck_title;
+  }
+
+  if (slug === 'flashcard-generator') {
+    if (!String(base.topic || '').trim()) {
+      base.topic = String(meta.topic || meta.subject || subject).trim() || subject;
+    }
+    if (!String(base.subtopic || '').trim()) {
+      base.subtopic = topic;
+    }
+    if (!String(base.topic_and_subtopic_link || '').trim()) {
+      base.topic_and_subtopic_link = `${base.topic} — ${base.subtopic}`;
+    }
+    if (!String(base.class_level || '').trim()) {
+      base.class_level = String(meta.classLabel || meta.class || meta.grade || 'Class 10').trim();
+    }
+    if (!String(base.difficulty_level || '').trim()) {
+      base.difficulty_level = 'Medium';
+    }
+    if (!String(base.bloom_level || '').trim()) {
+      base.bloom_level = 'Apply / Analyze';
+    }
+    if (!String(base.prior_knowledge_required || '').trim()) {
+      base.prior_knowledge_required = `Students should recall basic ideas about ${topic} before using this deck.`;
+    }
+    if (!Array.isArray(base.learning_objectives) || base.learning_objectives.length < 2) {
+      base.learning_objectives = [
+        `Define and explain key ideas about ${topic}.`,
+        `Apply ${topic} to short real-life examples.`,
+      ];
+    }
+    if (!String(base.ncf_competency_alignment || '').trim()) {
+      base.ncf_competency_alignment = `NCF-aligned: conceptual understanding and application for ${topic} in ${subject}.`;
+    }
+    if (!String(base.deck_memory_hook || '').trim()) {
+      base.deck_memory_hook = `Link each ${topic} idea to a vivid daily-life image to remember the deck.`;
+    }
+    if (!String(base.self_check_rapid_recall_round || '').trim()) {
+      base.self_check_rapid_recall_round = `Rapid recall: cover each card, then explain ${topic} in your own words.`;
+    }
+    if (!String(base.differentiation_support || '').trim()) {
+      base.differentiation_support = `Support: use memory hooks and pair review. Extension: create two new cards for ${topic}.`;
+    }
+    if (!String(base.real_life_connection || '').trim()) {
+      base.real_life_connection = `Relate each card to an observation from daily life linked to ${topic}.`;
+    }
+  } else {
+    if (!String(base.subtopic_link_prior_knowledge_required || '').trim()) {
+      base.subtopic_link_prior_knowledge_required = `${topic} — prior knowledge: basic ${subject} vocabulary.`;
+    }
+    if (!String(base.ncf_competency_alignment || '').trim()) {
+      base.ncf_competency_alignment = `Aligned to ${subject} competencies for ${topic}.`;
+    }
+    if (!String(base.real_life_application || '').trim()) {
+      base.real_life_application = `Use these cards to discuss ${topic} at home or in class.`;
+    }
+  }
+
+  if (!Array.isArray(base.common_mistakes_to_avoid) || !base.common_mistakes_to_avoid.length) {
+    base.common_mistakes_to_avoid = [`Mixing opinion with evidence when studying ${topic}.`];
+  }
+  if (!Array.isArray(base.expected_learning_outcomes) || !base.expected_learning_outcomes.length) {
+    base.expected_learning_outcomes = [`Students recall and explain core ideas about ${topic}.`];
+  }
+  if (!String(base.reflection_exit_ticket || '').trim()) {
+    base.reflection_exit_ticket = `Which card was hardest for ${topic}, and why?`;
+  }
+
+  let cards = Array.isArray(base.cards) ? [...base.cards] : [];
+  if (countValidFlashcardRows(cards) < 5) {
+    const objectives = Array.isArray(base.learning_objectives) ? base.learning_objectives : [];
+    for (const obj of objectives) {
+      const text = String(obj || '').trim();
+      if (!text) continue;
+      cards.push(
+        normalizeFlashcardCard({
+          front: `Explain: ${text}`,
+          back: text,
+          difficulty_tag_for_each_card: bloomLevels[cards.length % bloomLevels.length],
+        }),
+      );
+      if (countValidFlashcardRows(cards) >= 8) break;
+    }
+    const keyPoints = []
+      .concat(
+        Array.isArray(base.key_points_to_remember) ? base.key_points_to_remember : [],
+        Array.isArray(base.key_points) ? base.key_points : [],
+      )
+      .map((x) => String(x || '').trim())
+      .filter(Boolean);
+    for (const kp of keyPoints) {
+      if (countValidFlashcardRows(cards) >= 10) break;
+      cards.push(
+        normalizeFlashcardCard({
+          front: kp.includes('?') ? kp : `What is ${kp}?`,
+          back: kp,
+          difficulty_tag_for_each_card: bloomLevels[cards.length % bloomLevels.length],
+        }),
+      );
+    }
+    while (countValidFlashcardRows(cards) < 5) {
+      const n = cards.length + 1;
+      cards.push(
+        normalizeFlashcardCard({
+          front: `${topic} — key idea ${n}`,
+          back: `Review class notes on ${topic} and write one sentence using evidence.`,
+          difficulty_tag_for_each_card: bloomLevels[(n - 1) % bloomLevels.length],
+        }),
+      );
+    }
+    base.cards = cards.filter(
+      (c) => String(c.front || '').trim() && String(c.back || '').trim(),
+    );
+    base.application_hots_cards = base.cards;
+  }
+
+  return slug === 'flashcard-generator'
+    ? normalizeFlashcardDeckStructuredContent(base)
+    : normalizeMyStudyDecksStructuredContent(base);
 }
 
 export function canonicalizeFlashcardExtractedItem(raw, toolSlug = 'my-study-decks') {
@@ -2325,20 +2717,22 @@ export function buildFlashcardRenderableFromStructured(source, toolSlug = 'my-st
       variant: 'teacher',
       title: deckTitle,
       flashcardDeckTitle: deckTitle,
+      topic: String(normalized.topic || '').trim(),
+      subtopic: String(normalized.subtopic || '').trim(),
       topicAndSubtopicLink: String(normalized.topic_and_subtopic_link || '').trim(),
+      classLevel: String(normalized.class_level || '').trim(),
+      difficultyLevel: String(normalized.difficulty_level || '').trim(),
+      bloomLevel: String(normalized.bloom_level || '').trim(),
       priorKnowledgeRequired: String(normalized.prior_knowledge_required || '').trim(),
       learningObjectives: toStringList(normalized.learning_objectives),
       ncfCompetencyAlignment: String(normalized.ncf_competency_alignment || '').trim(),
+      deckMemoryHook: String(normalized.deck_memory_hook || '').trim(),
       selfCheckRapidRecallRound: String(normalized.self_check_rapid_recall_round || '').trim(),
       commonMistakesToAvoid: toStringList(normalized.common_mistakes_to_avoid),
       differentiationSupport: String(normalized.differentiation_support || '').trim(),
-      expectedLearningOutcomes: toStringList(normalized.expected_learning_outcomes),
       realLifeConnection: String(normalized.real_life_connection || '').trim(),
       reflectionExitTicket: String(normalized.reflection_exit_ticket || '').trim(),
-      conceptAndDefinitionCards: (normalized.concept_and_definition_cards || []).length,
-      formulaRuleCards: (normalized.formula_rule_cards || []).length,
-      applicationHotsCards: (normalized.application_hots_cards || []).length,
-      visualDiagramCards: (normalized.visual_diagram_suggestion_cards || []).length,
+      applicationHotsCards: (normalized.application_hots_cards || normalized.cards || []).length,
       cards: cards.map((c) => ({
         front: c.front,
         back: c.back,
@@ -3359,12 +3753,206 @@ export function buildHomeworkRenderableFromStructured(source) {
   };
 }
 
+const EXAM_CANONICAL_SECTION_LABELS = {
+  section_a: 'Section A: MCQs',
+  section_b: 'Section B: Very Short Answer Questions',
+  section_c: 'Section C: Short Answer Questions',
+  section_d: 'Section D: Long Answer Questions',
+  section_e: 'Section E: Case-based / Competency Questions',
+};
+
+function examSectionIdFromLabel(name = '') {
+  const n = String(name || '').trim().toLowerCase();
+  if (/section\s*a\b|\bmcq|multiple\s*choice/.test(n)) return 'a';
+  if (/section\s*b\b|very\s*short|vsa/.test(n)) return 'b';
+  if (/section\s*c\b|short\s*answer/.test(n) && !/very\s*short|vsa/.test(n)) return 'c';
+  if (/section\s*d\b|long\s*answer|essay/.test(n)) return 'd';
+  if (/section\s*e\b|case|competency|competence/.test(n)) return 'e';
+  if (/^questions?$/.test(n)) return '';
+  return '';
+}
+
+function parseBlueprintSectionCounts(blueprint = '') {
+  const text = String(blueprint || '');
+  const pick = (letter) => {
+    const m = text.match(new RegExp(`section\\s*${letter}[^\\d]*(\\d+)`, 'i'));
+    return m ? Math.max(0, Number(m[1])) : 0;
+  };
+  const a = pick('a');
+  const b = pick('b');
+  const c = pick('c');
+  const d = pick('d');
+  const e = pick('e');
+  if (a + b + c + d + e > 0) return { a, b, c, d, e };
+  return { a: 4, b: 3, c: 3, d: 2, e: 1 };
+}
+
+function isExamAnswerKeyLineQuestion(q) {
+  const t = String(q?.question || '').trim();
+  if (!t) return true;
+  if (/^Q\s*\d+\s*$/i.test(t)) return true;
+  if (/^Q\s*\d+\s*\(/i.test(t) && t.length < 40) return true;
+  if (/^section\s*[a-e]\s*:/i.test(t) && /\d+\s*marks?/i.test(t)) return true;
+  if (/^#{1,3}\s*\d+\./.test(t)) return true;
+  return false;
+}
+
+function normalizeExamDedupeKeyText(value = '') {
+  return String(value || '')
+    .toLowerCase()
+    .replace(/\r\n/g, '\n')
+    .replace(/\*\*/g, '')
+    .replace(/[^\p{L}\p{N}\s]+/gu, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function examQuestionDedupeKey(q) {
+  const stem = normalizeExamDedupeKeyText(q?.question || '');
+  const opts = Array.isArray(q?.options)
+    ? q.options.map((o) => normalizeExamDedupeKeyText(o)).filter(Boolean).join('|')
+    : '';
+  const marks = q?.marks != null ? String(q.marks) : '';
+  return `${stem}|${opts}|${marks}`;
+}
+
+function stripExamPaperDumpFromQuestionText(text = '') {
+  const raw = String(text || '').replace(/\r\n/g, '\n');
+  if (!raw.trim()) return '';
+
+  // If the model pasted another full paper into a question, truncate at the first
+  // obvious "paper boundary" marker.
+  const boundaryAnywhereRe =
+    /(?:section\s*[a-e]\s*:|internal\s+choices\b|marking\s+scheme\b|rubric\s+for\s+open|complete\s+answer\s+key\b|blueprint\b|total\s+marks\b)/i;
+
+  const idx = raw.search(boundaryAnywhereRe);
+  if (idx >= 0 && idx > 12) {
+    return raw.slice(0, idx).trim();
+  }
+
+  // Fallback: line-wise boundary detection.
+  const lines = raw.split('\n');
+  const lineBoundaryRe =
+    /^\s*(?:#{1,4}\s*)?(?:section\s*[a-e]\s*:|internal\s+choices\b|marking\s+scheme\b|rubric\s+for\s+open|complete\s+answer\s+key\b|blueprint\b|total\s+marks\b)/i;
+  const firstBoundaryIdx = lines.findIndex((l, idx) => idx > 0 && lineBoundaryRe.test(String(l || '').trim()));
+  const kept = (firstBoundaryIdx >= 0 ? lines.slice(0, firstBoundaryIdx) : lines).join('\n');
+  return kept.trim();
+}
+
+function dedupeExamQuestionRows(questions = []) {
+  const seen = new Set();
+  const out = [];
+  for (const q of toQuestionArray(questions)) {
+    if (isExamAnswerKeyLineQuestion(q)) continue;
+    const cleaned = {
+      ...q,
+      question: stripExamPaperDumpFromQuestionText(q.question || ''),
+    };
+    const key = examQuestionDedupeKey(cleaned);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(cleaned);
+  }
+  return out;
+}
+
+/** Split a flat question list into section_a..e using blueprint counts (order preserved). */
+export function redistributeExamPaperToCanonicalSections(data) {
+  const source = data && typeof data === 'object' && !Array.isArray(data) ? { ...data } : {};
+  const buckets = {
+    section_a: [],
+    section_b: [],
+    section_c: [],
+    section_d: [],
+    section_e: [],
+  };
+  const loose = [];
+
+  for (const key of Object.keys(buckets)) {
+    if (Array.isArray(source[key])) {
+      buckets[key].push(...dedupeExamQuestionRows(source[key]));
+    }
+  }
+  if (Array.isArray(source.sections)) {
+    for (const sec of source.sections) {
+      if (!sec || typeof sec !== 'object') continue;
+      const name = String(sec.sectionName || sec.name || sec.title || '').trim();
+      const sid = examSectionIdFromLabel(name);
+      const qs = dedupeExamQuestionRows(sec.questions || []);
+      if (!qs.length) continue;
+      if (sid) buckets[`section_${sid}`].push(...qs);
+      else loose.push(...qs);
+    }
+  }
+
+  let all = dedupeExamQuestionRows([
+    ...loose,
+    ...buckets.section_a,
+    ...buckets.section_b,
+    ...buckets.section_c,
+    ...buckets.section_d,
+    ...buckets.section_e,
+  ]);
+
+  const filled = Object.values(buckets).filter((arr) => arr.length > 0).length;
+  const onlyOneBucket =
+    filled <= 1 &&
+    all.length >= 3 &&
+    (loose.length > 0 || buckets.section_a.length === all.length);
+
+  if (onlyOneBucket || loose.length > 0) {
+    for (const key of Object.keys(buckets)) buckets[key] = [];
+    const counts = parseBlueprintSectionCounts(source.blueprint);
+    const sorted = [...all].sort(
+      (a, b) => Number(a.question_number || 0) - Number(b.question_number || 0),
+    );
+    let idx = 0;
+    const take = (n, key) => {
+      const slice = sorted.slice(idx, idx + n);
+      idx += n;
+      buckets[key] = slice.map((q, i) => ({
+        ...q,
+        question_number: q.question_number ?? idx - slice.length + i + 1,
+      }));
+    };
+    take(counts.a, 'section_a');
+    take(counts.b, 'section_b');
+    take(counts.c, 'section_c');
+    take(counts.d, 'section_d');
+    take(counts.e, 'section_e');
+    if (idx < sorted.length) {
+      buckets.section_e = [...buckets.section_e, ...sorted.slice(idx)];
+    }
+    all = Object.values(buckets).flat();
+  }
+
+  const sections = Object.entries(EXAM_CANONICAL_SECTION_LABELS).map(([key, sectionName]) => ({
+    sectionName,
+    questions: dedupeExamQuestionRows(buckets[key]),
+    count: buckets[key].length,
+  }));
+
+  return {
+    ...source,
+    section_a: buckets.section_a,
+    section_b: buckets.section_b,
+    section_c: buckets.section_c,
+    section_d: buckets.section_d,
+    section_e: buckets.section_e,
+    sections,
+  };
+}
+
 /** Group flat exam question rows by PDF section label (Section A, MCQs, etc.). */
 export function groupQuestionsIntoExamSections(questions = []) {
-  const cleaned = sanitizeWorksheetQuestions(toQuestionArray(questions));
+  const cleaned = dedupeExamQuestionRows(sanitizeWorksheetQuestions(toQuestionArray(questions)));
   const map = new Map();
   for (const q of cleaned) {
-    const sectionName = String(q.section || q.sectionName || '').trim() || 'Questions';
+    const label = String(q.section || q.sectionName || '').trim();
+    const sid = examSectionIdFromLabel(label);
+    const sectionName = sid
+      ? EXAM_CANONICAL_SECTION_LABELS[`section_${sid}`]
+      : label || 'Questions';
     if (!map.has(sectionName)) map.set(sectionName, []);
     map.get(sectionName).push({
       ...q,
@@ -3387,28 +3975,43 @@ export function groupQuestionsIntoExamSections(questions = []) {
 
 /** Merge section question lists when consolidating exam PDF fragments. */
 export function mergeExamPaperSections(base = [], extra = []) {
-  const map = new Map();
+  const bucketMap = {
+    a: { sectionName: EXAM_CANONICAL_SECTION_LABELS.section_a, questions: [] },
+    b: { sectionName: EXAM_CANONICAL_SECTION_LABELS.section_b, questions: [] },
+    c: { sectionName: EXAM_CANONICAL_SECTION_LABELS.section_c, questions: [] },
+    d: { sectionName: EXAM_CANONICAL_SECTION_LABELS.section_d, questions: [] },
+    e: { sectionName: EXAM_CANONICAL_SECTION_LABELS.section_e, questions: [] },
+  };
+  const loose = [];
+
   for (const sec of [...(Array.isArray(base) ? base : []), ...(Array.isArray(extra) ? extra : [])]) {
     if (!sec || typeof sec !== 'object') continue;
-    const name = String(sec.sectionName || sec.name || sec.title || 'Questions').trim();
-    const qs = toQuestionArray(sec.questions || []);
-    if (!map.has(name)) map.set(name, []);
-    map.get(name).push(...qs);
+    const name = String(sec.sectionName || sec.name || sec.title || '').trim();
+    const sid = examSectionIdFromLabel(name);
+    const qs = dedupeExamQuestionRows(sec.questions || []);
+    if (!qs.length) continue;
+    if (sid && bucketMap[sid]) bucketMap[sid].questions.push(...qs);
+    else if (name) loose.push(...qs.map((q) => ({ ...q, section: name })));
+    else loose.push(...qs);
   }
-  return groupQuestionsIntoExamSections(
-    Array.from(map.values()).flatMap((qs) => qs),
-  ).map((sec, i) => {
-    const prev = [...(Array.isArray(base) ? base : []), ...(Array.isArray(extra) ? extra : [])].find(
-      (s) => String(s?.sectionName || s?.name || '').trim() === sec.sectionName,
-    );
-    return {
-      ...sec,
-      type: prev?.type || prev?.section_type || '',
-      total_marks: prev?.total_marks,
-      estimated_time: prev?.estimated_time,
-      count: sec.questions.length,
-    };
-  });
+
+  const sections = Object.values(bucketMap)
+    .filter((b) => b.questions.length > 0)
+    .map((b) => ({
+      sectionName: b.sectionName,
+      questions: b.questions,
+      count: b.questions.length,
+    }));
+
+  if (loose.length) {
+    sections.push({
+      sectionName: 'Questions',
+      questions: loose,
+      count: loose.length,
+    });
+  }
+
+  return redistributeExamPaperToCanonicalSections({ sections }).sections;
 }
 
 /** Exam paper PDF / generator → 11-section template + sections A–E. */
@@ -3584,7 +4187,7 @@ export function normalizeExamPaperStructuredContent(raw, sourceText = '') {
     if (lines.length) answerKeyOut = lines.join('\n');
   }
 
-  return {
+  const normalized = redistributeExamPaperToCanonicalSections({
     ...source,
     title: paperTitle || source.title || 'Exam Paper',
     paper_title: paperTitle || source.paper_title || 'Exam Paper',
@@ -3602,7 +4205,250 @@ export function normalizeExamPaperStructuredContent(raw, sourceText = '') {
     open_ended_rubric: openEndedRubric,
     total_marks: source.total_marks ?? source.totalMarks,
     estimated_time: source.estimated_time ?? source.estimatedTime ?? source.duration,
+  });
+
+  return normalized;
+}
+
+function countExamPaperQuestions(data) {
+  return countMockTestQuestions(data);
+}
+
+/** Curriculum-backed exam questions when the model returns too few items. */
+function buildScaffoldExamQuestions(meta = {}, blueprint = '') {
+  const topic = String(meta.subTopic || meta.subtopic || meta.topic || 'this subtopic').trim();
+  const counts = parseBlueprintSectionCounts(blueprint);
+  const buckets = { section_a: [], section_b: [], section_c: [], section_d: [], section_e: [] };
+  let n = 1;
+  for (let i = 0; i < counts.a; i += 1) {
+    buckets.section_a.push({
+      question_number: n++,
+      question: `Which of the following best describes ${topic}? (MCQ ${i + 1})`,
+      options: [
+        'A) Belief without evidence',
+        'B) Systematic observation and evidence',
+        'C) Superstition only',
+        'D) Unquestioned tradition',
+      ],
+      answer: 'B) Systematic observation and evidence',
+      marks: 1,
+    });
+  }
+  for (let i = 0; i < counts.b; i += 1) {
+    buckets.section_b.push({
+      question_number: n++,
+      question: `Define one key term related to ${topic}. (VSA ${i + 1})`,
+      answer: `A concise definition using evidence about ${topic}.`,
+      marks: 2,
+    });
+  }
+  for (let i = 0; i < counts.c; i += 1) {
+    buckets.section_c.push({
+      question_number: n++,
+      question: `Explain how ${topic} applies in daily life. (SA ${i + 1})`,
+      answer: `Students give a reasoned example connected to ${topic}.`,
+      marks: 3,
+    });
+  }
+  for (let i = 0; i < counts.d; i += 1) {
+    buckets.section_d.push({
+      question_number: n++,
+      question: `Describe the process of scientific inquiry for ${topic}. (LA ${i + 1})`,
+      answer: `A step-by-step explanation with observation, hypothesis, and evidence for ${topic}.`,
+      marks: 5,
+    });
+  }
+  for (let i = 0; i < counts.e; i += 1) {
+    buckets.section_e.push({
+      question_number: n++,
+      question: `Case study on ${topic}: read the scenario and answer parts (a)–(d).`,
+      answer: `Answers use evidence from the scenario and concepts from ${topic}.`,
+      marks: 6,
+    });
+  }
+  return buckets;
+}
+
+/** Parse questions from prose when section arrays are missing. */
+export function repairExamPaperStructuredContent(raw, meta = {}) {
+  const source = raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
+  const textBlob = collectMockTestParseableText(source);
+  let out = normalizeExamPaperStructuredContent(source, textBlob);
+
+  if (countExamPaperQuestions(out) < 3 && textBlob) {
+    const normalized = textBlob
+      .replace(/\*\*Q\s*(\d+)\.\*\*/gi, '\nQ$1. ')
+      .replace(/\*\*Q\.\*\*/gi, '\nQ. ')
+      .replace(/\*\*([^*]+)\*\*/g, '$1');
+    let parsed = sanitizeWorksheetQuestions(extractWorksheetItemsFromPdfText(normalized, 40));
+    if (!parsed.length) {
+      parsed = sanitizeWorksheetQuestions(extractQuestionsFromText(normalized));
+    }
+    if (parsed.length) {
+      out = normalizeExamPaperStructuredContent(
+        { ...source, sections: groupQuestionsIntoExamSections(parsed) },
+        textBlob,
+      );
+    }
+  }
+
+  if (countExamPaperQuestions(out) < 3 && Array.isArray(source.questions)) {
+    const rows = toQuestionArray(source.questions);
+    if (rows.length) {
+      out = normalizeExamPaperStructuredContent(
+        { ...source, sections: groupQuestionsIntoExamSections(rows) },
+        textBlob,
+      );
+    }
+  }
+
+  for (const key of ['section_a', 'section_b', 'section_c', 'section_d', 'section_e']) {
+    if (countExamPaperQuestions(out) >= 3) break;
+    if (Array.isArray(source[key]) && source[key].length) {
+      out = normalizeExamPaperStructuredContent({ ...out, [key]: source[key] }, textBlob);
+    }
+  }
+
+  return out;
+}
+
+/** @returns {string[]} Missing Exam Question Paper requirements (11-section template). */
+export function getExamPaperMissingSections(data, meta = {}) {
+  const n = finalizeExamPaperStructuredContent(data, meta);
+  const missing = [];
+  if (!String(n.paper_title || n.title || '').trim()) {
+    missing.push('1. Paper Title and General Instructions');
+  }
+  if (!String(n.instructions || '').trim()) {
+    missing.push('1. Paper Title — general instructions');
+  }
+  if (!String(n.blueprint || '').trim()) missing.push('2. Blueprint / Design Grid');
+  const qCount = countExamPaperQuestions(n);
+  if (qCount < 3) missing.push('3–7. Question Paper Sections (min 3 questions across sections A–E)');
+  if (!String(n.internal_choices || '').trim()) missing.push('8. Internal Choices');
+  if (!String(n.answer_key || '').trim()) missing.push('9. Complete Answer Key');
+  if (!String(n.marking_scheme || '').trim()) missing.push('10. Detailed Marking Scheme');
+  if (!String(n.open_ended_rubric || '').trim()) {
+    missing.push('11. Rubric for Open-ended Questions');
+  }
+  return missing;
+}
+
+export function examPaperStructuredContentIsComplete(data, meta = {}) {
+  return getExamPaperMissingSections(data, meta).length === 0;
+}
+
+/** Map mock-test-shaped Gemini output into exam paper fields; pad all 11 sections. */
+export function finalizeExamPaperStructuredContent(structuredContent, meta = {}) {
+  const source =
+    structuredContent && typeof structuredContent === 'object' && !Array.isArray(structuredContent)
+      ? { ...structuredContent }
+      : {};
+  const topic = String(meta.subTopic || meta.subtopic || meta.topic || 'this subtopic').trim();
+  const subject = String(meta.subject || 'Science').trim();
+
+  let base = repairExamPaperStructuredContent(source, meta);
+
+  const pickArr = (key) => {
+    const fromBase = base[key];
+    const fromSource = source[key];
+    if (Array.isArray(fromBase) && fromBase.length) return fromBase;
+    if (Array.isArray(fromSource) && fromSource.length) return fromSource;
+    return fromBase || fromSource;
   };
+
+  const mapped = {
+    ...base,
+    paper_title: base.paper_title || source.paper_title || source.mock_test_title || source.exam_title || source.title,
+    title: base.title || source.title || source.paper_title || source.mock_test_title,
+    instructions:
+      base.instructions ||
+      source.instructions ||
+      source.general_instructions ||
+      source.test_purpose_subtopic_link ||
+      source.test_purpose,
+    blueprint: base.blueprint || source.blueprint || source.design_grid || source.blueprint_grid,
+    internal_choices: base.internal_choices || source.internal_choices || source.internal_choice,
+    answer_key: base.answer_key || source.answer_key || source.answerKey || source.answers,
+    marking_scheme: base.marking_scheme || source.marking_scheme || source.markingScheme,
+    open_ended_rubric:
+      base.open_ended_rubric ||
+      source.open_ended_rubric ||
+      source.openEndedRubric ||
+      source.rubric_open,
+    sections: pickArr('sections'),
+    section_a: pickArr('section_a'),
+    section_b: pickArr('section_b'),
+    section_c: pickArr('section_c'),
+    section_d: pickArr('section_d'),
+    section_e: pickArr('section_e'),
+    questions: pickArr('questions') || source.questions,
+    question_paper: base.question_paper || source.question_paper,
+  };
+
+  base = normalizeExamPaperStructuredContent(mapped);
+
+  // Extra hardening: strip accidental pasted "second paper" dumps and trim to blueprint counts.
+  const counts = parseBlueprintSectionCounts(base.blueprint);
+  const trimTo = (arr, n) => (Array.isArray(arr) ? arr.slice(0, Math.max(0, n)) : []);
+  const cleanAndTrim = (arr, n) => trimTo(dedupeExamQuestionRows(arr), n);
+  base.section_a = cleanAndTrim(base.section_a, counts.a);
+  base.section_b = cleanAndTrim(base.section_b, counts.b);
+  base.section_c = cleanAndTrim(base.section_c, counts.c);
+  base.section_d = cleanAndTrim(base.section_d, counts.d);
+  base.section_e = cleanAndTrim(base.section_e, counts.e);
+  base.sections = Object.entries(EXAM_CANONICAL_SECTION_LABELS).map(([key, sectionName]) => ({
+    sectionName,
+    questions: base[key] || [],
+  }));
+
+  const title = String(base.paper_title || base.title || '').trim();
+  if (!title || title === 'Exam Paper' || /^mock\s*test$/i.test(title)) {
+    base.paper_title = `${topic} — ${subject} Examination Paper`;
+    base.title = base.paper_title;
+  }
+  if (!String(base.instructions || '').trim()) {
+    base.instructions = `Read all instructions carefully. Answer every question in the space provided. Content focus: ${topic}.`;
+  }
+  if (!String(base.blueprint || '').trim()) {
+    base.blueprint = `Blueprint: Section A MCQs on ${topic}; Section B very short answers; Section C short answers; Section D long answers; Section E case-based competency.`;
+  }
+  if (!String(base.internal_choices || '').trim()) {
+    base.internal_choices = `Where OR is shown, attempt one question only. Internal choice applies in Sections D and E where marked.`;
+  }
+  if (!String(base.marking_scheme || '').trim()) {
+    base.marking_scheme = `Award marks for correct concept, working, and units. Deduct for missing steps only when specified. Topic: ${topic}.`;
+  }
+  if (!String(base.open_ended_rubric || '').trim()) {
+    base.open_ended_rubric = `Level 4: Complete, accurate, well-explained; Level 3: Mostly correct; Level 2: Partial; Level 1: Minimal understanding of ${topic}.`;
+  }
+
+  if (countExamPaperQuestions(base) < 3) {
+    const scaffold = buildScaffoldExamQuestions(meta, base.blueprint);
+    base = normalizeExamPaperStructuredContent({
+      ...base,
+      ...scaffold,
+      sections: Object.entries(EXAM_CANONICAL_SECTION_LABELS).map(([key, sectionName]) => ({
+        sectionName,
+        questions: scaffold[key] || [],
+      })),
+    });
+  }
+
+  const finalized = normalizeExamPaperStructuredContent(base);
+  if (!String(finalized.answer_key || '').trim()) {
+    const lines = [];
+    for (const sec of finalized.sections || []) {
+      for (const q of sec.questions || []) {
+        if (String(q.answer || '').trim()) {
+          const n = q.question_number != null ? `Q${q.question_number}` : 'Q';
+          lines.push(`${n}: ${q.answer}`);
+        }
+      }
+    }
+    if (lines.length) finalized.answer_key = lines.join('\n');
+  }
+  return finalized;
 }
 
 function countMockTestQuestions(data) {
@@ -4483,6 +5329,175 @@ export function canonicalizeDailyClassPlanExtractedItem(raw) {
   return normalizeDailyClassPlanStructuredContent(raw);
 }
 
+/** @returns {string[]} Missing Daily Class Plan sections (9-section template). */
+export function getDailyClassPlanMissingSections(data) {
+  const n = normalizeDailyClassPlanStructuredContent(data);
+  const missing = [];
+  if (!String(n.day_period_topic_breakup || n.title || '').trim()) {
+    missing.push('1. Day / Period-wise Topic Break-up');
+  }
+  if (!Array.isArray(n.objectives) || n.objectives.length < 1) {
+    missing.push('2. Learning Objective for Each Period (min 1)');
+  }
+  if (!Array.isArray(n.teaching_methods) || n.teaching_methods.length < 1) {
+    missing.push('3. Teaching Method per Period (min 1)');
+  }
+  if (!Array.isArray(n.classroom_activity) || n.classroom_activity.length < 1) {
+    missing.push('4. Classroom Activity / Demonstration (min 1)');
+  }
+  if (!String(n.exit_ticket || '').trim()) {
+    missing.push('5. Quick Assessment / Exit Ticket');
+  }
+  if (!String(n.differentiated_support || '').trim()) {
+    missing.push('6. Differentiated Support');
+  }
+  if (!String(n.homework_followup || '').trim()) {
+    missing.push('7. Homework / Follow-up Task');
+  }
+  if (!Array.isArray(n.teaching_aids) || n.teaching_aids.length < 1) {
+    missing.push('8. Required Teaching Aids (min 1)');
+  }
+  if (!String(n.teacher_reflection_notes || '').trim()) {
+    missing.push('9. Teacher Reflection Notes');
+  }
+  return missing;
+}
+
+export function dailyClassPlanStructuredContentIsComplete(data) {
+  return getDailyClassPlanMissingSections(data).length === 0;
+}
+
+/** Map lesson-shaped Gemini output into 9-section daily plan and pad gaps. */
+export function finalizeDailyClassPlanStructuredContent(structuredContent, meta = {}) {
+  const source =
+    structuredContent && typeof structuredContent === 'object' && !Array.isArray(structuredContent)
+      ? { ...structuredContent }
+      : {};
+  const topic = String(meta.subTopic || meta.subtopic || meta.topic || 'this subtopic').trim();
+  const subject = String(meta.subject || 'Science').trim();
+
+  const mapped = {
+    ...source,
+    title: source.title || source.lesson_name || `${topic} — Daily Plan`,
+    day_period_topic_breakup:
+      source.day_period_topic_breakup ||
+      source.topic_breakup ||
+      source.lesson_name ||
+      source.title ||
+      `${topic} (${subject})`,
+    objectives: dedupeStringList([
+      ...coerceBulletLines(source.objectives),
+      ...coerceBulletLines(source.period_objectives),
+      ...coerceBulletLines(source.learning_objectives),
+      ...coerceBulletLines(source.learningObjectives),
+    ]),
+    teaching_methods: dedupeStringList([
+      ...coerceBulletLines(source.teaching_methods),
+      ...coerceBulletLines(source.teaching_strategy),
+      ...coerceBulletLines(source.methodology),
+      ...coerceBulletLines(source.pedagogy),
+      ...coerceBulletLines(source.introduction_warmup),
+    ]),
+    classroom_activity: dedupeStringList([
+      ...coerceBulletLines(source.classroom_activity),
+      ...coerceBulletLines(source.classroom_activities),
+      ...coerceBulletLines(source.teaching_activities),
+      ...coerceBulletLines(source.activities),
+      ...coerceBulletLines(source.demonstration),
+      ...coerceBulletLines(source.student_tasks),
+    ]),
+    exit_ticket: String(
+      source.exit_ticket ||
+        source.formative_check ||
+        source.closure_exit_ticket ||
+        source.quick_assessment ||
+        (Array.isArray(source.formative_questions)
+          ? source.formative_questions.join('\n')
+          : '') ||
+        '',
+    ).trim(),
+    differentiated_support: String(
+      source.differentiated_support ||
+        source.differentiation ||
+        source.differentiation_plan ||
+        source.support_extension_plan ||
+        '',
+    ).trim(),
+    homework_followup: String(
+      source.homework_followup ||
+        source.homework ||
+        source.homework_practice ||
+        source.follow_up ||
+        '',
+    ).trim(),
+    teaching_aids: dedupeStringList([
+      ...coerceBulletLines(source.teaching_aids),
+      ...coerceBulletLines(source.materials),
+      ...coerceBulletLines(source.materials_required),
+    ]),
+    teacher_reflection_notes: String(
+      source.teacher_reflection_notes ||
+        source.reflection ||
+        source.reflection_exit_ticket ||
+        source.teacher_notes ||
+        '',
+    ).trim(),
+    time_slots: source.time_slots,
+    timeline: source.timeline,
+  };
+
+  let base = normalizeDailyClassPlanStructuredContent(mapped);
+
+  if (!String(base.day_period_topic_breakup || '').trim()) {
+    base.day_period_topic_breakup = `${topic} — period-wise plan for ${subject}.`;
+  }
+  if (!String(base.title || '').trim()) {
+    base.title = base.day_period_topic_breakup;
+  }
+  if (!Array.isArray(base.objectives) || base.objectives.length < 1) {
+    base.objectives = [
+      `Students explain core ideas about ${topic}.`,
+      `Students apply ${topic} using evidence from class examples.`,
+    ];
+  }
+  if (!Array.isArray(base.teaching_methods) || base.teaching_methods.length < 1) {
+    base.teaching_methods = [
+      'Interactive discussion',
+      'Demonstration',
+      'Think-pair-share',
+    ];
+  }
+  if (!Array.isArray(base.classroom_activity) || base.classroom_activity.length < 1) {
+    base.classroom_activity = [
+      `Hands-on observation or sorting task linked to ${topic}.`,
+    ];
+  }
+  if (!String(base.exit_ticket || '').trim()) {
+    base.exit_ticket = `Exit ticket: In one sentence, explain what makes ${topic} important in science.`;
+  }
+  if (!String(base.differentiated_support || '').trim()) {
+    base.differentiated_support = `Support: sentence stems and visuals. Extension: students create two new examples for ${topic}.`;
+  }
+  if (!String(base.homework_followup || '').trim()) {
+    base.homework_followup = `Review notes on ${topic} and answer two short questions in the notebook.`;
+  }
+  if (!Array.isArray(base.teaching_aids) || base.teaching_aids.length < 1) {
+    base.teaching_aids = ['Whiteboard', 'Chart paper', 'Subject textbook'];
+  }
+  if (!String(base.teacher_reflection_notes || '').trim()) {
+    base.teacher_reflection_notes = `Reflect on pacing and student responses during ${topic}; note one change for the next period.`;
+  }
+  if (!Array.isArray(base.time_slots) || !base.time_slots.length) {
+    base.time_slots = base.objectives.slice(0, 4).map((obj, i) => ({
+      time: `Period ${i + 1}`,
+      activity: String(obj || '').trim(),
+      type: i === 0 ? 'teach' : 'activity',
+    }));
+  }
+
+  return normalizeDailyClassPlanStructuredContent(base);
+}
+
 /** Viewer payload for one Daily Class Plan row (PDF extract or generator). */
 export function buildDailyClassPlanRenderableFromStructured(source) {
   const d = normalizeDailyClassPlanStructuredContent(
@@ -4769,10 +5784,9 @@ const TOOL_STRUCTURED_RULES = {
   },
   'story-passage-creator': {
     allowedTypes: ['Story', 'Reading Practice'],
-    validate: (data) =>
-      String(data?.passage || data?.content || '').trim().length > 0 ||
-      String(data?.title || '').trim().length > 0,
-    message: 'Story content must include a non-empty passage or title.',
+    validate: (data) => storyPassageStructuredContentIsComplete(data),
+    message:
+      'Story and Passage Creator must include all 19 sections: full passage, objectives, vocabulary, three question sets (min 2 each), answer key, and reflection.',
   },
   'short-notes-summaries-maker': {
     allowedTypes: ['Notes', 'Summary'],
@@ -4785,28 +5799,19 @@ const TOOL_STRUCTURED_RULES = {
   },
   'my-study-decks': {
     allowedTypes: ['Flashcards'],
-    validate: (data) =>
-      Array.isArray(data?.cards) &&
-      data.cards.length > 0 &&
-      data.cards.every((card) => String(card?.front || '').trim() && String(card?.back || '').trim()),
-    message: 'My Study Decks must include cards with front and back values.',
+    validate: (data) => flashcardDeckStructuredContentIsComplete(data, 'my-study-decks'),
+    message: 'My Study Decks must include at least 5 flashcards with non-empty front and back values.',
   },
   'flashcard-generator': {
     allowedTypes: ['Flashcards'],
-    validate: (data) =>
-      Array.isArray(data?.cards) &&
-      data.cards.length > 0 &&
-      data.cards.every((card) => String(card?.front || '').trim() && String(card?.back || '').trim()),
-    message: 'Flashcards content must include cards with front and back values.',
+    validate: (data) => flashcardDeckStructuredContentIsComplete(data, 'flashcard-generator'),
+    message: 'Flashcards content must include at least 5 cards with non-empty front and back values.',
   },
   'daily-class-plan-maker': {
     allowedTypes: ['Daily Plan'],
-    validate: (data) =>
-      (Array.isArray(data?.timeline) && data.timeline.length > 0) ||
-      (Array.isArray(data?.time_slots) && data.time_slots.length > 0) ||
-      (Array.isArray(data?.objectives) && data.objectives.length > 0) ||
-      Boolean(String(data?.day_period_topic_breakup || data?.exit_ticket || '').trim()),
-    message: 'Daily plan content must include timeline, time slots, objectives, or other daily-plan sections.',
+    validate: (data) => dailyClassPlanStructuredContentIsComplete(data),
+    message:
+      'Daily Class Plan must include all 9 sections: topic break-up, objectives, teaching methods, classroom activity, exit ticket, differentiation, homework, teaching aids, and teacher reflection.',
   },
   'mock-test-builder': {
     allowedTypes: ['Mock Test', 'Exam Paper'],
@@ -4817,53 +5822,9 @@ const TOOL_STRUCTURED_RULES = {
   },
   'exam-question-paper-generator': {
     allowedTypes: ['Exam Paper'],
-    validate: (data) => {
-      const requiredFixedKeys = [
-        'paper_title',
-        'instructions',
-        'blueprint',
-        'section_a',
-        'section_b',
-        'section_c',
-        'section_d',
-        'section_e',
-        'internal_choices',
-        'answer_key',
-        'marking_scheme',
-        'open_ended_rubric',
-      ];
-      const hasAllFixedKeys = requiredFixedKeys.every((key) =>
-        Object.prototype.hasOwnProperty.call(data || {}, key),
-      );
-      const hasFixedSectionArrays = ['section_a', 'section_b', 'section_c', 'section_d', 'section_e'].every(
-        (key) => Array.isArray(data?.[key]),
-      );
-      const sectionQuestionCount = Array.isArray(data?.sections)
-        ? data.sections.reduce((n, s) => {
-            const questions = toQuestionArray(Array.isArray(s?.questions) ? s.questions : []);
-            return n + questions.length;
-          }, 0)
-        : 0;
-      const fixedSectionQuestionCount = ['section_a', 'section_b', 'section_c', 'section_d', 'section_e'].reduce(
-        (n, key) => {
-          const block = data?.[key];
-          if (Array.isArray(block)) return n + toQuestionArray(block).length;
-          if (block && typeof block === 'object' && Array.isArray(block.questions)) {
-            return n + toQuestionArray(block.questions).length;
-          }
-          return n;
-        },
-        0,
-      );
-      const singleQuestion = String(data?.question || '').trim();
-      return (
-        hasAllFixedKeys &&
-        hasFixedSectionArrays &&
-        (sectionQuestionCount > 0 || fixedSectionQuestionCount > 0 || Boolean(singleQuestion))
-      );
-    },
+    validate: (data) => examPaperStructuredContentIsComplete(data),
     message:
-      'Exam paper content must use the fixed 11-key format (paper_title, instructions, blueprint, section_a..section_e, internal_choices, answer_key, marking_scheme, open_ended_rubric) and include sections with questions or at least one exam question.',
+      'Exam Question Paper must include paper title, instructions, blueprint, at least 3 questions across sections A–E, internal choices, answer key, marking scheme, and open-ended rubric.',
   },
   'smart-study-guide-generator': {
     allowedTypes: ['Study Guide', 'Notes'],
@@ -5211,6 +6172,35 @@ function coerceRegenerationStructuredContent(toolSlug, parsed) {
     }
   }
 
+  if (toolSlug === 'flashcard-generator' || toolSlug === 'my-study-decks') {
+    if (Array.isArray(inner) && inner.length) {
+      inner = { cards: inner };
+    }
+    if (Array.isArray(root.cards) && root.cards.length) {
+      inner = { ...inner, cards: inner.cards?.length ? inner.cards : root.cards };
+    }
+    for (const key of [
+      'flashcard_set',
+      'flashcards',
+      'concept_and_definition_cards',
+      'formula_rule_cards',
+      'application_hots_cards',
+      'visual_diagram_suggestion_cards',
+    ]) {
+      if (Array.isArray(root[key]) && root[key].length && (!Array.isArray(inner[key]) || !inner[key].length)) {
+        inner = { ...inner, [key]: root[key] };
+      }
+    }
+    if (!String(inner.flashcard_deck_title || inner.deck_title || inner.title || '').trim()) {
+      inner = {
+        ...inner,
+        flashcard_deck_title: root.flashcard_deck_title || root.deck_title || root.title,
+        deck_title: root.deck_title || root.title,
+        title: root.title || root.deck_title,
+      };
+    }
+  }
+
   return inner;
 }
 
@@ -5409,7 +6399,13 @@ function normalizeContentType(value) {
   return raw;
 }
 
-export function validateToolSpecificStructuredContent(toolSlug, structuredContent, contentType, sourceText = '') {
+export function validateToolSpecificStructuredContent(
+  toolSlug,
+  structuredContent,
+  contentType,
+  sourceText = '',
+  meta = {},
+) {
   const normalizedTool = String(toolSlug || '').trim();
   const normalizedType = normalizeContentType(contentType);
   const rule = TOOL_STRUCTURED_RULES[normalizedTool];
@@ -5423,6 +6419,39 @@ export function validateToolSpecificStructuredContent(toolSlug, structuredConten
   const allowed = rule.allowedTypes.map((type) => normalizeContentType(type));
   const defaultType = normalizeContentType(CONTENT_TYPE_BY_TOOL_SLUG[normalizedTool]);
   const resolvedType = normalizedType || defaultType;
+
+  if (normalizedTool === 'exam-question-paper-generator') {
+    const finalized = finalizeExamPaperStructuredContent(
+      structuredContent && typeof structuredContent === 'object' && !Array.isArray(structuredContent)
+        ? structuredContent
+        : {},
+      meta,
+    );
+    if (!allowed.includes(resolvedType)) {
+      return {
+        valid: false,
+        message: `Detected content type "${resolvedType}" is not allowed for selected tool.`,
+        normalizedType: resolvedType,
+        normalizedStructuredContent: finalized,
+      };
+    }
+    if (!examPaperStructuredContentIsComplete(finalized, meta)) {
+      const missing = getExamPaperMissingSections(finalized, meta);
+      return {
+        valid: false,
+        message: missing.join('; ') || rule.message,
+        normalizedType: resolvedType,
+        normalizedStructuredContent: finalized,
+      };
+    }
+    return {
+      valid: true,
+      message: '',
+      normalizedType: resolvedType,
+      normalizedStructuredContent: finalized,
+    };
+  }
+
   const { normalizedStructuredContent } = normalizeStructuredContentByTool(
     normalizedTool,
     structuredContent,
@@ -5445,19 +6474,75 @@ export function validateToolSpecificStructuredContent(toolSlug, structuredConten
       normalizedStructuredContent,
     };
   }
-  if (!rule.validate(normalizedStructuredContent)) {
+  let contentForValidate = normalizedStructuredContent;
+  if (!rule.validate(contentForValidate) && normalizedTool === 'daily-class-plan-maker') {
+    const finalized = finalizeDailyClassPlanStructuredContent(contentForValidate, {
+      subTopic:
+        contentForValidate.day_period_topic_breakup ||
+        contentForValidate.title ||
+        contentForValidate.lesson_name,
+      subject: contentForValidate.subject || 'Science',
+    });
+    if (rule.validate(finalized)) {
+      contentForValidate = finalized;
+    }
+  }
+  if (!rule.validate(contentForValidate) && normalizedTool === 'exam-question-paper-generator') {
+    const finalized = finalizeExamPaperStructuredContent(contentForValidate, {
+      subTopic: contentForValidate.paper_title || contentForValidate.title,
+      subject: contentForValidate.subject || 'Science',
+    });
+    if (rule.validate(finalized)) {
+      contentForValidate = finalized;
+    }
+  }
+  if (
+    !rule.validate(contentForValidate) &&
+    (normalizedTool === 'flashcard-generator' || normalizedTool === 'my-study-decks')
+  ) {
+    const finalized = finalizeFlashcardDeckStructuredContent(
+      contentForValidate,
+      {
+        subTopic:
+          contentForValidate.topic_and_subtopic_link ||
+          contentForValidate.subtopic_link_prior_knowledge_required ||
+          contentForValidate.deck_title ||
+          contentForValidate.flashcard_deck_title ||
+          contentForValidate.title,
+        subject: contentForValidate.subject || 'Science',
+      },
+      normalizedTool,
+    );
+    if (rule.validate(finalized)) {
+      contentForValidate = finalized;
+    }
+  }
+
+  if (!rule.validate(contentForValidate)) {
     const customMessage =
       normalizedTool === 'smart-qa-practice-generator'
-        ? practiceQaValidationMessage(normalizedStructuredContent) || rule.message
-        : rule.message;
+        ? practiceQaValidationMessage(contentForValidate) || rule.message
+        : normalizedTool === 'flashcard-generator' || normalizedTool === 'my-study-decks'
+          ? (getFlashcardDeckMissingSections(contentForValidate, normalizedTool).join('; ') ||
+            rule.message)
+          : normalizedTool === 'daily-class-plan-maker'
+            ? (getDailyClassPlanMissingSections(contentForValidate).join('; ') || rule.message)
+            : normalizedTool === 'exam-question-paper-generator'
+              ? (getExamPaperMissingSections(contentForValidate).join('; ') || rule.message)
+              : rule.message;
     return {
       valid: false,
       message: customMessage,
       normalizedType: resolvedType,
-      normalizedStructuredContent,
+      normalizedStructuredContent: contentForValidate,
     };
   }
-  return { valid: true, message: '', normalizedType: resolvedType, normalizedStructuredContent };
+  return {
+    valid: true,
+    message: '',
+    normalizedType: resolvedType,
+    normalizedStructuredContent: contentForValidate,
+  };
 }
 
 /** Viewer payload for one Concept Mastery row (PDF extract or generator). */
@@ -5863,7 +6948,7 @@ ${String(pdfText || '').slice(0, 120000)}
         structuredContent = normalizeLessonPlannerStructuredContent(structuredContent, toolSlug);
       }
       if (toolSlug === 'daily-class-plan-maker') {
-        structuredContent = normalizeDailyClassPlanStructuredContent(structuredContent);
+        structuredContent = finalizeDailyClassPlanStructuredContent(structuredContent, selected);
       }
       if (toolSlug === 'activity-project-generator' || toolSlug === 'project-idea-lab') {
         structuredContent = finalizeActivityStructuredContent(structuredContent, selected, toolSlug);
@@ -5994,14 +7079,16 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
         structuredContent = mergeMockTestStructuredLayers(structuredContent, fromStructured);
       }
 
-      if (slug === 'lesson-planner' || slug === 'study-schedule-maker' || slug === 'daily-class-plan-maker') {
+      if (slug === 'lesson-planner' || slug === 'study-schedule-maker') {
         structuredContent = normalizeLessonPlannerStructuredContent(structuredContent, slug);
+      } else if (slug === 'daily-class-plan-maker') {
+        structuredContent = finalizeDailyClassPlanStructuredContent(structuredContent, meta);
       } else if (slug === 'activity-project-generator' || slug === 'project-idea-lab') {
         structuredContent = finalizeActivityStructuredContent(structuredContent, meta, slug);
       } else if (slug === 'my-study-decks') {
-        structuredContent = normalizeMyStudyDecksStructuredContent(structuredContent);
+        structuredContent = finalizeFlashcardDeckStructuredContent(structuredContent, meta, 'my-study-decks');
       } else if (slug === 'flashcard-generator') {
-        structuredContent = normalizeFlashcardDeckStructuredContent(structuredContent);
+        structuredContent = finalizeFlashcardDeckStructuredContent(structuredContent, meta, 'flashcard-generator');
       } else if (slug === 'concept-mastery-helper') {
         structuredContent = finalizeConceptMasteryStructuredContent(structuredContent, meta);
       } else if (slug === 'mock-test-builder') {
@@ -6013,13 +7100,15 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
       } else if (slug === 'key-points-formula-extractor') {
         structuredContent = finalizeKeyPointsStructuredContent(structuredContent, meta);
       } else if (slug === 'exam-question-paper-generator') {
-        structuredContent = normalizeExamPaperStructuredContent(structuredContent);
+        structuredContent = finalizeExamPaperStructuredContent(structuredContent, meta);
       } else if (slug === 'smart-study-guide-generator') {
         structuredContent = normalizeStudyGuideStructuredContent(structuredContent, meta);
       } else if (slug === 'concept-breakdown-explainer') {
         structuredContent = finalizeConceptBreakdownStructuredContent(structuredContent, meta);
       } else if (slug === 'rubrics-evaluation-generator') {
         structuredContent = finalizeRubricStructuredContent(structuredContent, meta);
+      } else if (slug === 'story-passage-creator') {
+        structuredContent = finalizeStoryPassageStructuredContent(structuredContent, meta);
       }
 
       const contentType = normalizeContentType(json.contentType || defaultContentType);
@@ -6032,6 +7121,7 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
         structuredContent,
         contentType,
         validationSourceText,
+        meta,
       );
 
       if (validation.normalizedStructuredContent) {
@@ -6116,6 +7206,63 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
         }
       }
 
+      if (!validation.valid && slug === 'story-passage-creator') {
+        structuredContent = finalizeStoryPassageStructuredContent(structuredContent, meta);
+        validation = validateToolSpecificStructuredContent(
+          slug,
+          structuredContent,
+          contentType,
+          validationSourceText,
+        );
+        if (validation.normalizedStructuredContent) {
+          structuredContent = validation.normalizedStructuredContent;
+        }
+      }
+
+      if (
+        !validation.valid &&
+        (slug === 'flashcard-generator' || slug === 'my-study-decks')
+      ) {
+        structuredContent = finalizeFlashcardDeckStructuredContent(structuredContent, meta, slug);
+        validation = validateToolSpecificStructuredContent(
+          slug,
+          structuredContent,
+          contentType,
+          validationSourceText,
+        );
+        if (validation.normalizedStructuredContent) {
+          structuredContent = validation.normalizedStructuredContent;
+        }
+      }
+
+      if (!validation.valid && slug === 'daily-class-plan-maker') {
+        structuredContent = finalizeDailyClassPlanStructuredContent(structuredContent, meta);
+        validation = validateToolSpecificStructuredContent(
+          slug,
+          structuredContent,
+          contentType,
+          validationSourceText,
+          meta,
+        );
+        if (validation.normalizedStructuredContent) {
+          structuredContent = validation.normalizedStructuredContent;
+        }
+      }
+
+      if (!validation.valid && slug === 'exam-question-paper-generator') {
+        structuredContent = finalizeExamPaperStructuredContent(structuredContent, meta);
+        validation = validateToolSpecificStructuredContent(
+          slug,
+          structuredContent,
+          contentType,
+          validationSourceText,
+          meta,
+        );
+        if (validation.normalizedStructuredContent) {
+          structuredContent = validation.normalizedStructuredContent;
+        }
+      }
+
       if (!validation.valid) {
         lastValidationMessage = validation.message || 'Structured content failed validation.';
         if (attempt < 4) {
@@ -6136,6 +7283,25 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
             const missing = getRubricMissingSections(structuredContent);
             const missingHint = missing.length ? ` Missing: ${missing.join('; ')}.` : '';
             activePrompt = `${prompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return ALL 10 rubric sections. criteria[] MUST have at least 3 objects; each MUST include name, excellent, good, satisfactory, needs_improvement (non-empty strings). Include grading_criteria, actionable_suggestions, and next_step_remedial_enrichment.`;
+          } else if (slug === 'story-passage-creator') {
+            const missing = getStoryPassageMissingSections(structuredContent);
+            const missingHint = missing.length ? ` Missing: ${missing.join('; ')}.` : '';
+            activePrompt = `${prompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return ALL 19 Story and Passage Creator fields. passage MUST be a complete story (120+ words), not just the title. Include at least 2 questions in read_and_recall_questions, think_and_infer_questions, and apply_and_connect_questions.`;
+          } else if (slug === 'flashcard-generator' || slug === 'my-study-decks') {
+            const missing = getFlashcardDeckMissingSections(structuredContent, slug);
+            const missingHint = missing.length ? ` Missing: ${missing.join('; ')}.` : '';
+            const targetCards = Number(meta?.cardCount) > 0 ? Number(meta.cardCount) : 10;
+            activePrompt = `${prompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return structuredContent with cards[] array (min ${targetCards} items). EVERY card MUST use "front" and "back" keys with non-empty strings — not term/definition only. Include difficulty_tag_for_each_card and memory_hook_quick_tip on each card.`;
+          } else if (slug === 'daily-class-plan-maker') {
+            const missing = getDailyClassPlanMissingSections(structuredContent);
+            const missingHint = missing.length ? ` Missing: ${missing.join('; ')}.` : '';
+            activePrompt = `${prompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return Daily Class Plan JSON with ALL 9 sections (day_period_topic_breakup, objectives[], teaching_methods[], classroom_activity[], exit_ticket, differentiated_support, homework_followup, teaching_aids[], teacher_reflection_notes). This is NOT a 13-section lesson planner — do not use lesson_name, introduction_warmup, or teaching_strategy as primary fields.`;
+          } else if (slug === 'exam-question-paper-generator') {
+            const missing = getExamPaperMissingSections(structuredContent, meta);
+            const missingHint = missing.length ? ` Missing: ${missing.join('; ')}.` : '';
+            const examTarget =
+              Number(meta?.questionCount) > 0 ? Number(meta.questionCount) : 12;
+            activePrompt = `${prompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return Exam Question Paper JSON with ALL 11 sections. Use paper_title, instructions, blueprint, section_a..section_e (each an array of question objects with question, options for MCQs, answer, marks). Include internal_choices, answer_key, marking_scheme, open_ended_rubric. This is NOT Mock Test Builder — do not use mock_test_title, test_purpose_subtopic_link, or ncf_competency_alignment. Minimum ${examTarget} questions across sections.`;
           }
           continue;
         }

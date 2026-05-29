@@ -159,7 +159,6 @@ function approvedFilter() {
 function baseFilter({ classLabel, subject }) {
   const subjectSet = subjectVariants(subject);
   return {
-    sourceType: { $ne: 'ai_pdf' },
     classLabel: normalizeClassLabel(classLabel),
     ...(subjectSet.length > 1 ? { subject: { $in: subjectSet } } : { subject: subjectSet[0] || normalize(subject) }),
     ...validContentFilter(),
@@ -167,9 +166,10 @@ function baseFilter({ classLabel, subject }) {
   };
 }
 
-function rotationKey({ classLabel, subject, topic, subtopic, toolName }) {
+function rotationKey({ classLabel, subject, topic, subtopic, toolName, scope }) {
   return [
     'ai-tool-data-rotation',
+    normalize(scope) || '*',
     normalize(classLabel),
     normalize(subject),
     normalize(topic),
@@ -208,6 +208,8 @@ export async function fetchRotatingAiToolData({
   preferLatest = false,
   /** When true (student/teacher dashboards), never return rows from a different tool. */
   strictToolMatch = false,
+  /** Optional cursor scope (e.g. userId) so rotation is per-user. */
+  cursorScope = '',
 }) {
   const normalizedTopic = normalize(topic);
   const normalizedSubtopic = normalize(subtopic);
@@ -270,6 +272,7 @@ export async function fetchRotatingAiToolData({
       topic: normalizedTopic,
       subtopic: normalizedSubtopic,
       toolName: keyToolName,
+      scope: cursorScope,
     });
     const idx = await nextCursorIndex(key, docs.length);
     return {

@@ -22,6 +22,7 @@ import {
   normalizeChapterSummaryStructuredContent,
   normalizeKeyPointsStructuredContent,
   normalizeMyStudyDecksStructuredContent,
+  normalizeFlashcardDeckStructuredContent,
   normalizePracticeQaStructuredContent,
   finalizeChapterSummaryStructuredContent,
   normalizeWorksheetStructuredContent,
@@ -947,8 +948,11 @@ export function validateDashboardAiToolContent(toolSlug, rawContent, options = {
   let normalized =
     validateToolSpecificStructuredContent(slug, structured, contentType, content)
       .normalizedStructuredContent || structured;
-  if (slug === 'my-study-decks' || slug === 'flashcard-generator') {
+  if (slug === 'my-study-decks') {
     normalized = normalizeMyStudyDecksStructuredContent(normalized);
+  }
+  if (slug === 'flashcard-generator') {
+    normalized = normalizeFlashcardDeckStructuredContent(normalized);
   }
   if (slug === 'concept-breakdown-explainer') {
     normalized = normalizeConceptBreakdownStructuredContent(normalized);

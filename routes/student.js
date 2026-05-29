@@ -4887,8 +4887,9 @@ router.post('/ai/tool', async (req, res) => {
       topic: String(topicForFetch || '').trim().replace(/\s+/g, ' '),
       subtopic: subTopicNormalized,
       toolName: toolType,
-      preferLatest: true,
+      preferLatest: false,
       strictToolMatch: true,
+      cursorScope: String(userId || ''),
     });
     if (adminDoc) {
       const {

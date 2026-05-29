@@ -1,13 +1,16 @@
 import {
   normalizeActivityStructuredContent,
   normalizeConceptBreakdownStructuredContent,
-  normalizeMyStudyDecksStructuredContent,
   normalizePracticeQaStructuredContent,
   finalizeChapterSummaryStructuredContent,
   normalizeStudyGuideStructuredContent,
   normalizeWorksheetStructuredContent,
   normalizeRubricStructuredContent,
   finalizeRubricStructuredContent,
+  finalizeStoryPassageStructuredContent,
+  finalizeFlashcardDeckStructuredContent,
+  finalizeDailyClassPlanStructuredContent,
+  finalizeExamPaperStructuredContent,
 } from '../services/ai-content-engine-service.js';
 import { extractStructuredFromStoredContent } from '../services/ai-tool-dashboard-validation.js';
 
@@ -204,13 +207,46 @@ export function buildRawDataForTool(toolType, content, metadata = {}) {
     return null;
   }
 
+  if (slug === 'story-passage-creator') {
+    const structured = extractStructuredFromStoredContent(content, metadata);
+    if (structured && typeof structured === 'object' && Object.keys(structured).length) {
+      return finalizeStoryPassageStructuredContent(structured, metadata);
+    }
+    if (parsed && typeof parsed === 'object') {
+      return finalizeStoryPassageStructuredContent(parsed, metadata);
+    }
+    return null;
+  }
+
   if (slug === 'my-study-decks' || slug === 'flashcard-generator') {
     const structured = extractStructuredFromStoredContent(content, metadata);
     if (structured && typeof structured === 'object' && Object.keys(structured).length) {
-      return normalizeMyStudyDecksStructuredContent(structured);
+      return finalizeFlashcardDeckStructuredContent(structured, metadata, slug);
     }
     if (parsed && typeof parsed === 'object') {
-      return normalizeMyStudyDecksStructuredContent(parsed);
+      return finalizeFlashcardDeckStructuredContent(parsed, metadata, slug);
+    }
+    return null;
+  }
+
+  if (slug === 'daily-class-plan-maker') {
+    const structured = extractStructuredFromStoredContent(content, metadata);
+    if (structured && typeof structured === 'object' && Object.keys(structured).length) {
+      return finalizeDailyClassPlanStructuredContent(structured, metadata);
+    }
+    if (parsed && typeof parsed === 'object') {
+      return finalizeDailyClassPlanStructuredContent(parsed, metadata);
+    }
+    return null;
+  }
+
+  if (slug === 'exam-question-paper-generator') {
+    const structured = extractStructuredFromStoredContent(content, metadata);
+    if (structured && typeof structured === 'object' && Object.keys(structured).length) {
+      return finalizeExamPaperStructuredContent(structured, metadata);
+    }
+    if (parsed && typeof parsed === 'object') {
+      return finalizeExamPaperStructuredContent(parsed, metadata);
     }
     return null;
   }

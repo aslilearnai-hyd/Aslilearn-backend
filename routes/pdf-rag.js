@@ -619,6 +619,280 @@ function mapSourcePdfToListRow(source) {
   );
 }
 
+/** Shallow title fields for list previews without shipping full structured blobs. */
+function pickTitleFieldsForListPreview(obj) {
+  if (!obj || typeof obj !== 'object' || Array.isArray(obj)) return {};
+  const out = {};
+  for (const key of ['title', 'name', 'concept_name', 'lesson_name', 'deckTitle', 'front']) {
+    if (obj[key] != null && String(obj[key]).trim()) out[key] = obj[key];
+  }
+  if (Array.isArray(obj.cards) && obj.cards[0] && typeof obj.cards[0] === 'object') {
+    const c = obj.cards[0];
+    out.cards = [{ front: c.front, title: c.title }];
+  }
+  return out;
+}
+
+function mapMasterPdfToSummaryRow(doc) {
+  const m = doc.metadata || {};
+  const sc =
+    m.structuredContent && typeof m.structuredContent === 'object' && !Array.isArray(m.structuredContent)
+      ? m.structuredContent
+      : {};
+  const rc =
+    m.renderContent && typeof m.renderContent === 'object' && !Array.isArray(m.renderContent)
+      ? m.renderContent
+      : {};
+  const tool = String(doc.toolName || '').trim();
+  const row = {
+    _id: doc._id,
+    originalName: doc.pdfFileName || m.originalName || '',
+    fileUrl: doc.pdfFileUrl || '',
+    board: doc.board || m.board || '',
+    subject: doc.subject,
+    classLabel: doc.classLabel,
+    chapter: doc.topic || '',
+    topic: doc.topic || '',
+    subTopic: doc.subtopic || '',
+    processingStatus: m.processingStatus || doc.status || 'pending',
+    approvalStatus: m.approvalStatus || 'pending',
+    toolType: doc.toolName,
+    contentType: m.contentType || '',
+    structuredContent: pickTitleFieldsForListPreview(sc),
+    renderContent: pickTitleFieldsForListPreview(rc),
+    chunkCount: m.chunkCount ?? 0,
+    uploadDate: doc.createdAt,
+    updatedAt: doc.updatedAt,
+    uploadedBy: doc.generatedBy,
+    uploadedByRole: m.uploadedByRole || '',
+    metadata: {
+      bulkItemIndex: m.bulkItemIndex,
+      itemIndex: m.itemIndex,
+    },
+  };
+  if (tool === 'activity-project-generator' || tool === 'project-idea-lab') {
+    row.displayTitle = resolveActivityDisplayTitle(sc, '', m);
+  }
+  return row;
+}
+
+function mapSourcePdfToSummaryRow(source) {
+  if (!source) return null;
+  const sc =
+    source.structuredContent && typeof source.structuredContent === 'object' && !Array.isArray(source.structuredContent)
+      ? source.structuredContent
+      : {};
+  const rc =
+    source.renderContent && typeof source.renderContent === 'object' && !Array.isArray(source.renderContent)
+      ? source.renderContent
+      : {};
+  const tool = String(source.toolType || '').trim();
+  const row = {
+    _id: source._id,
+    originalName: source.originalName || '',
+    fileUrl: source.fileUrl || '',
+    board: normalizeBoard(source.board || ''),
+    subject: source.subject,
+    classLabel: source.classLabel,
+    chapter: source.chapter || source.topic || '',
+    topic: source.topic || '',
+    subTopic: source.subTopic || '',
+    processingStatus: source.processingStatus || 'pending',
+    approvalStatus: source.approvalStatus || 'pending',
+    toolType: source.toolType,
+    contentType: source.contentType || '',
+    structuredContent: pickTitleFieldsForListPreview(sc),
+    renderContent: pickTitleFieldsForListPreview(rc),
+    chunkCount: source.chunkCount ?? 0,
+    uploadDate: source.uploadDate || source.createdAt,
+    updatedAt: source.updatedAt,
+    uploadedBy: source.uploadedBy,
+    uploadedByRole: source.uploadedByRole || '',
+  };
+  if (tool === 'activity-project-generator' || tool === 'project-idea-lab') {
+    row.displayTitle = resolveActivityDisplayTitle(sc, '', source);
+  }
+  return row;
+}
+
+function buildPdfListMasterMatch(query) {
+  const { board, subject, class: classInput, status } = query;
+  const filter = { sourceType: 'ai_pdf' };
+  if (board) filter.board = boardMongoMatch(normalizeBoard(board));
+  if (subject) filter.subject = String(subject).trim();
+  if (classInput) filter.classLabel = toClassLabel(classInput);
+  if (status) {
+    filter.$or = [
+      { status: String(status).trim() },
+      { 'metadata.processingStatus': String(status).trim() },
+    ];
+  }
+  return filter;
+}
+
+function buildPdfListOrphanMatch(query, linkedObjectIds) {
+  const { board, subject, class: classInput, status } = query;
+  const orphanFilter = {};
+  if (board) orphanFilter.board = boardMongoMatch(normalizeBoard(board));
+  if (subject) orphanFilter.subject = String(subject).trim();
+  if (classInput) orphanFilter.classLabel = toClassLabel(classInput);
+  if (status) orphanFilter.processingStatus = String(status).trim();
+  if (linkedObjectIds.length > 0) {
+    orphanFilter._id = { $nin: linkedObjectIds };
+  }
+  return orphanFilter;
+}
+
+async function collectLinkedSourceObjectIds(masterMatch) {
+  const grouped = await AiToolGeneration.aggregate([
+    { $match: masterMatch },
+    {
+      $project: {
+        ids: ['$metadata.contentEngineSourceId', '$metadata.aiPdfSourceId'],
+      },
+    },
+    { $unwind: '$ids' },
+    {
+      $match: {
+        ids: { $exists: true, $nin: [null, ''] },
+      },
+    },
+    { $group: { _id: '$ids' } },
+  ]);
+  return grouped
+    .map((row) => String(row._id || '').trim())
+    .filter((id) => mongoose.Types.ObjectId.isValid(id))
+    .map((id) => new mongoose.Types.ObjectId(id));
+}
+
+const PDF_LIST_SUMMARY_MASTER_SELECT = [
+  'board',
+  'subject',
+  'classLabel',
+  'topic',
+  'subtopic',
+  'toolName',
+  'pdfFileName',
+  'pdfFileUrl',
+  'createdAt',
+  'updatedAt',
+  'status',
+  'metadata.contentType',
+  'metadata.processingStatus',
+  'metadata.approvalStatus',
+  'metadata.chunkCount',
+  'metadata.originalName',
+  'metadata.displayTitle',
+  'metadata.bulkItemIndex',
+  'metadata.itemIndex',
+  'metadata.uploadedByRole',
+  'metadata.structuredContent.title',
+  'metadata.structuredContent.name',
+  'metadata.structuredContent.concept_name',
+  'metadata.structuredContent.lesson_name',
+  'metadata.structuredContent.deckTitle',
+  'metadata.renderContent.title',
+  'metadata.renderContent.concept_name',
+].join(' ');
+
+const PDF_LIST_SUMMARY_SOURCE_SELECT = [
+  'board',
+  'subject',
+  'classLabel',
+  'chapter',
+  'topic',
+  'subTopic',
+  'toolType',
+  'contentType',
+  'originalName',
+  'fileUrl',
+  'uploadDate',
+  'createdAt',
+  'updatedAt',
+  'processingStatus',
+  'approvalStatus',
+  'chunkCount',
+  'uploadedBy',
+  'uploadedByRole',
+  'structuredContent.title',
+  'structuredContent.name',
+  'structuredContent.concept_name',
+  'structuredContent.deckTitle',
+  'renderContent.title',
+].join(' ');
+
+async function fetchPaginatedPdfList({ query, page, limit, summary }) {
+  const masterMatch = buildPdfListMasterMatch(query);
+  const skip = (page - 1) * limit;
+  const orphanBaseMatch = buildPdfListOrphanMatch(query, []);
+
+  const masterQuery = AiToolGeneration.find(masterMatch)
+    .sort({ createdAt: -1 })
+    .skip(skip)
+    .limit(limit)
+    .lean();
+  if (summary) {
+    masterQuery.select(PDF_LIST_SUMMARY_MASTER_SELECT);
+  }
+
+  const [masterCount, masterDocs] = await Promise.all([
+    AiToolGeneration.countDocuments(masterMatch),
+    masterQuery,
+  ]);
+
+  let orphanDocs = [];
+
+  if (masterDocs.length < limit) {
+    const linkedObjectIds = await collectLinkedSourceObjectIds(masterMatch);
+    const linkedIdSet = new Set(linkedObjectIds.map((id) => String(id)));
+    const need = limit - masterDocs.length;
+    const orphanQuery = AiContentEngineSource.find(orphanBaseMatch)
+      .sort({ uploadDate: -1 })
+      .limit(Math.min(need + linkedIdSet.size, 200))
+      .lean();
+    if (summary) {
+      orphanQuery.select(PDF_LIST_SUMMARY_SOURCE_SELECT);
+    }
+    const orphanDocsRaw = await orphanQuery;
+    orphanDocs = orphanDocsRaw.filter((doc) => !linkedIdSet.has(String(doc._id))).slice(0, need);
+  }
+
+  const mapRow = (payload, kind) => {
+    if (!payload) return null;
+    if (kind === 'master') {
+      return summary ? mapMasterPdfToSummaryRow(payload) : mapMasterPdfToListRow(payload);
+    }
+    return summary ? mapSourcePdfToSummaryRow(payload) : mapSourcePdfToListRow(payload);
+  };
+
+  const merged = [
+    ...masterDocs.map((payload) => ({
+      sortDate: payload.createdAt,
+      kind: 'master',
+      row: mapRow(payload, 'master'),
+    })),
+    ...orphanDocs.map((payload) => ({
+      sortDate: payload.uploadDate || payload.createdAt,
+      kind: 'orphan',
+      row: mapRow(payload, 'orphan'),
+    })),
+  ]
+    .sort((a, b) => new Date(b.sortDate || 0).getTime() - new Date(a.sortDate || 0).getTime());
+
+  const data = merged.map((entry) => entry.row).filter((row) => row && !isDeprecatedPdfListRow(row));
+  const total = masterCount;
+
+  return {
+    data,
+    pagination: {
+      page,
+      limit,
+      total,
+      totalPages: Math.max(1, Math.ceil(total / limit)),
+    },
+  };
+}
+
 async function resolvePdfMasterAndSource(id) {
   if (!mongoose.Types.ObjectId.isValid(id)) return { master: null, source: null };
   const master = await AiToolGeneration.findOne({ _id: id, sourceType: 'ai_pdf' }).lean();
@@ -1185,65 +1459,26 @@ router.post('/pdf/process', verifyToken, authorizeRoles('teacher', 'admin', 'sup
 });
 
 // GET /api/pdf/list — masters in aitoolgenerations + legacy-only aicontentenginesources
+// Query: summary=1 (default) returns lightweight rows; paginated at DB level (not in-memory).
 router.get('/pdf/list', verifyToken, authorizeRoles('teacher', 'admin', 'super-admin'), async (req, res) => {
   try {
-    const { board, subject, class: classInput, status } = req.query;
     const page = Math.max(1, Number(req.query.page || 1));
-    const limit = Math.max(1, Math.min(500, Number(req.query.limit || 20)));
-    const filter = { sourceType: 'ai_pdf' };
-    if (board) filter.board = boardMongoMatch(normalizeBoard(board));
-    if (subject) filter.subject = String(subject).trim();
-    if (classInput) filter.classLabel = toClassLabel(classInput);
-    if (status) {
-      filter.$or = [
-        { status: String(status).trim() },
-        { 'metadata.processingStatus': String(status).trim() },
-      ];
-    }
-
-    const masterDocs = await AiToolGeneration.find(filter).sort({ createdAt: -1 }).lean();
-    const linkedIds = [
-      ...new Set(
-        masterDocs
-          .flatMap((m) => [m.metadata?.contentEngineSourceId, m.metadata?.aiPdfSourceId].filter(Boolean))
-          .map(String)
-          .filter((id) => mongoose.Types.ObjectId.isValid(id)),
-      ),
-    ].map((id) => new mongoose.Types.ObjectId(id));
-
-    const orphanFilter = {};
-    if (board) orphanFilter.board = boardMongoMatch(normalizeBoard(board));
-    if (subject) orphanFilter.subject = String(subject).trim();
-    if (classInput) orphanFilter.classLabel = toClassLabel(classInput);
-    if (status) orphanFilter.processingStatus = String(status).trim();
-    if (linkedIds.length > 0) {
-      orphanFilter._id = { $nin: linkedIds };
-    }
-
-    const orphanDocs = await AiContentEngineSource.find(orphanFilter).sort({ uploadDate: -1 }).lean();
-
-    const combined = [
-      ...masterDocs.map(mapMasterPdfToListRow),
-      ...orphanDocs.map(mapSourcePdfToListRow).filter(Boolean),
-    ]
-      .filter((row) => !isDeprecatedPdfListRow(row))
-      .sort((a, b) => {
-      const ta = new Date(a.uploadDate || a.updatedAt || 0).getTime();
-      const tb = new Date(b.uploadDate || b.updatedAt || 0).getTime();
-      return tb - ta;
+    const limit = Math.max(1, Math.min(500, Number(req.query.limit || 100)));
+    const summary =
+      req.query.summary === undefined ||
+      req.query.summary === '' ||
+      req.query.summary === '1' ||
+      req.query.summary === 'true';
+    const { data, pagination } = await fetchPaginatedPdfList({
+      query: req.query,
+      page,
+      limit,
+      summary,
     });
-
-    const total = combined.length;
-    const data = combined.slice((page - 1) * limit, page * limit);
     return res.json({
       success: true,
       data,
-      pagination: {
-        page,
-        limit,
-        total,
-        totalPages: Math.max(1, Math.ceil(total / limit)),
-      },
+      pagination,
     });
   } catch (error) {
     return res.status(500).json({ success: false, message: error.message || 'Failed to fetch list' });
@@ -1313,6 +1548,7 @@ router.get('/pdf/:id', verifyToken, authorizeRoles('teacher', 'admin', 'super-ad
                   toolType: master.toolName || source.toolType,
                   structuredContent: master.metadata?.structuredContent ?? source.structuredContent,
                   renderContent: master.metadata?.renderContent ?? source.renderContent,
+                  generatedContent: String(master.generatedContent || master.content || '').trim(),
                 }),
               ),
             ),
@@ -1355,6 +1591,7 @@ router.get('/pdf/:id', verifyToken, authorizeRoles('teacher', 'admin', 'super-ad
                   contentType: m.contentType,
                   structuredContent: m.structuredContent || {},
                   renderContent: m.renderContent || {},
+                  generatedContent: String(master.generatedContent || master.content || '').trim(),
                   approvalStatus: m.approvalStatus,
                   processingStatus: m.processingStatus,
                   chunkCount: m.chunkCount,

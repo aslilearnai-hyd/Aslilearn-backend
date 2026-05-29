@@ -115,16 +115,21 @@ export async function getTeacherSchoolProgramContext(teacherId) {
   let admin = null;
   if (teacher?.adminId) {
     admin = await User.findById(teacher.adminId)
-      .select('board curriculumBoard isAsliPrepExclusive')
+      .select('board curriculumBoard isAsliPrepExclusive schoolName')
       .lean();
   }
-  const isAsliPrepExclusive = resolveIsAsliPrepExclusive(admin, admin);
+  const teacherCtx = teacher ? { board: teacher.board, isAsliPrepExclusive: false } : null;
+  const isAsliPrepExclusive = resolveIsAsliPrepExclusive(teacherCtx, admin);
   const curriculumBoard =
     admin?.curriculumBoard ||
     (admin?.board && admin.board !== 'ASLI_EXCLUSIVE_SCHOOLS' ? admin.board : '') ||
-    teacher?.board ||
+    (teacher?.board && teacher.board !== 'ASLI_EXCLUSIVE_SCHOOLS' ? teacher.board : '') ||
     'CBSE';
-  const displayBoard = resolveUserDisplayBoard(admin, null) || curriculumBoard || 'CBSE';
+  const displayBoard =
+    resolveUserDisplayBoard(teacherCtx, admin) ||
+    resolveUserDisplayBoard(admin, null) ||
+    curriculumBoard ||
+    'CBSE';
   return {
     isAsliPrepExclusive,
     curriculumBoard: displayBoard,

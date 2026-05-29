@@ -675,7 +675,63 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
         }
       });
     }
-    const user = await User.findById(req.user.userId);
+    const authId = req.user.userId || req.user.id;
+    const { resolveIsAsliPrepExclusive } = await import('./utils/schoolProgram.js');
+
+    // Teachers authenticate against the Teacher collection (JWT id = Teacher._id), not User.
+    if (req.user.role === 'teacher') {
+      const teacher = await Teacher.findById(authId).populate('subjects', 'name');
+      if (teacher) {
+        let teacherAdmin = null;
+        if (teacher.adminId) {
+          teacherAdmin = await User.findById(teacher.adminId)
+            .select('board curriculumBoard isAsliPrepExclusive schoolName')
+            .lean();
+        }
+        const teacherCtx = { board: teacher.board, isAsliPrepExclusive: false };
+        const isAsliPrepExclusive = resolveIsAsliPrepExclusive(teacherCtx, teacherAdmin);
+        const displayBoard = resolveUserDisplayBoard(teacherCtx, teacherAdmin);
+        const curriculumBoard =
+          teacherAdmin?.curriculumBoard ||
+          (teacherAdmin?.board && teacherAdmin.board !== 'ASLI_EXCLUSIVE_SCHOOLS'
+            ? teacherAdmin.board
+            : '') ||
+          (teacher.board && teacher.board !== 'ASLI_EXCLUSIVE_SCHOOLS' ? teacher.board : '') ||
+          (displayBoard && displayBoard !== 'ASLI_EXCLUSIVE_SCHOOLS' ? displayBoard : '') ||
+          'CBSE';
+
+        const teacherUserData = {
+          id: teacher._id,
+          _id: teacher._id,
+          email: teacher.email,
+          fullName: teacher.fullName,
+          role: 'teacher',
+          classNumber: null,
+          section: '',
+          phone: teacher.phone || '',
+          board: displayBoard || teacher.board || '',
+          curriculumBoard,
+          schoolName: teacherAdmin?.schoolName || teacher.school || '',
+          profilePhoto: '',
+          assignedSubjects: [],
+          assignedClass: null,
+          studyStreak: { current: 0, longest: 0, lastActiveDate: '' },
+          isAsliPrepExclusive,
+          subjects: teacher.subjects || [],
+        };
+        if (teacherAdmin) {
+          teacherUserData.assignedAdmin = {
+            board: teacherAdmin.board,
+            curriculumBoard: teacherAdmin.curriculumBoard,
+            isAsliPrepExclusive: teacherAdmin.isAsliPrepExclusive === true,
+            schoolName: teacherAdmin.schoolName || '',
+          };
+        }
+        return res.json({ user: teacherUserData });
+      }
+    }
+
+    const user = await User.findById(authId);
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
@@ -694,7 +750,6 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
       }
     }
     const displayBoard = resolveUserDisplayBoard(user, user.assignedAdmin || teacherAdmin);
-    const { resolveIsAsliPrepExclusive } = await import('./utils/schoolProgram.js');
     const isAsliPrepExclusive = resolveIsAsliPrepExclusive(
       user,
       user.role === 'student' ? user.assignedAdmin : teacherAdmin,
@@ -718,8 +773,14 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
       curriculumBoard:
         user.curriculumBoard ||
         user.assignedAdmin?.curriculumBoard ||
-        (displayBoard && displayBoard !== 'ASLI_EXCLUSIVE_SCHOOLS' ? displayBoard : ''),
-      schoolName: user.schoolName || user.assignedAdmin?.schoolName || '',
+        (user.role === 'teacher' ? teacherAdmin?.curriculumBoard : null) ||
+        (displayBoard && displayBoard !== 'ASLI_EXCLUSIVE_SCHOOLS' ? displayBoard : '') ||
+        'CBSE',
+      schoolName:
+        user.schoolName ||
+        user.assignedAdmin?.schoolName ||
+        (user.role === 'teacher' ? teacherAdmin?.schoolName : '') ||
+        '',
       profilePhoto: user.profilePhoto || '',
       assignedSubjects: user.assignedSubjects || [],
       assignedClass: user.assignedClass || null,
@@ -728,8 +789,16 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
     };
     if (req.user.role === 'admin') userData.schoolName = user.schoolName || '';
     if (req.user.role === 'teacher') {
-      const teacher = await Teacher.findById(req.user.userId || req.user.id).populate('subjects');
+      const teacher = await Teacher.findById(authId).populate('subjects');
       if (teacher) userData.subjects = teacher.subjects || [];
+      if (teacherAdmin) {
+        userData.assignedAdmin = {
+          board: teacherAdmin.board,
+          curriculumBoard: teacherAdmin.curriculumBoard,
+          isAsliPrepExclusive: teacherAdmin.isAsliPrepExclusive === true,
+          schoolName: teacherAdmin.schoolName || '',
+        };
+      }
     }
     res.json({ user: userData });
   } catch (error) {

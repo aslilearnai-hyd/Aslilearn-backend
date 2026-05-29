@@ -512,9 +512,9 @@ Generate ${params.cardCount || 20} flashcards using the My Study Decks 12-point 
 Deck Title, Subtopic Link and Prior Knowledge Required, Learning Objectives - Bloom's Taxonomy Aligned, NCF Competency / Learning Outcome Alignment, Flashcard Set, Difficulty Tag for Each Card, Memory Hook / Quick Tip, Self-Check Round, Common Mistakes to Avoid, Expected Learning Outcomes, Real-life Application, Reflection / Exit Ticket.`,
     'flashcard-generator': `${common}
 
-Generate a teacher flashcard deck using the 18-point Flash Card Generator format:
-1 Flashcard Deck Title, 2 Topic and Subtopic Link, 3 Prior Knowledge Required, 4 Learning Objectives – Bloom's Taxonomy Aligned, 5 NCF Competency / Learning Outcome Alignment, 6 Flashcard Set, 7 Concept and Definition Cards, 8 Formula / Rule Cards, 9 Application and HOTS Cards, 10 Visual / Diagram Suggestion Cards, 11 Difficulty Tag for Each Card, 12 Memory Hook / Quick Tip, 13 Self-Check Rapid Recall Round, 14 Common Mistakes to Avoid, 15 Differentiation Support, 16 Expected Learning Outcomes, 17 Real-life Connection, 18 Reflection / Exit Ticket.
-Target ~${params.cardCount || 20} cards across sections 6–10; every card needs non-empty front and back.`,
+Generate a teacher flashcard deck using the 5-block Flash Card Generator format:
+1 Context & Alignment (deck title, topic, subtopic, class, difficulty, Bloom's level), 2 Foundations (prior knowledge, learning objectives, NCF competency), 3 The Card Set: Application & HOTS (cards with Task front and Solution back), 4 Study Aids (deck memory hook, common mistakes, rapid recall), 5 Wrap-Up (real-life connection, differentiation, exit ticket).
+Target at least ${Math.max(5, Number(params.cardCount) || 5)} HOTS/application cards; every card needs non-empty front (Task) and back (Solution).`,
     'daily-class-plan-maker': `${common}
 
 Create a practical day plan with time slots, activities, checkpoints, and notes.`,
@@ -750,10 +750,14 @@ Return ONE JSON object per distinct deck in the PDF. Keep all cards inside cards
     toolType === 'flashcard-generator'
       ? `
 
-FLASH CARD GENERATOR — TEMPLATE MAPPING (mandatory, one deck object, 18 sections):
-1 flashcard_deck_title, 2 topic_and_subtopic_link, 3 prior_knowledge_required, 4 learning_objectives[], 5 ncf_competency_alignment, 6 flashcard_set/cards[], 7 concept_and_definition_cards[], 8 formula_rule_cards[], 9 application_hots_cards[], 10 visual_diagram_suggestion_cards[], 11 difficulty_tag_for_each_card (per card), 12 memory_hook_quick_tip (per card), 13 self_check_rapid_recall_round, 14 common_mistakes_to_avoid[], 15 differentiation_support, 16 expected_learning_outcomes[], 17 real_life_connection, 18 reflection_exit_ticket.
+FLASH CARD GENERATOR — TEMPLATE MAPPING (mandatory, one deck object, 5 blocks):
+Block 1 Context & Alignment: flashcard_deck_title, topic, subtopic, class_level, difficulty_level, bloom_level (topic_and_subtopic_link optional).
+Block 2 Foundations: prior_knowledge_required, learning_objectives[], ncf_competency_alignment.
+Block 3 The Card Set: application_hots_cards[] AND cards[] (min 5) — front=Task, back=Solution; per-card difficulty_tag_for_each_card and memory_hook_quick_tip.
+Block 4 Study Aids: deck_memory_hook, common_mistakes_to_avoid[], self_check_rapid_recall_round.
+Block 5 Wrap-Up: real_life_connection, differentiation_support, reflection_exit_ticket.
 
-Legacy: deck_title/title -> flashcard_deck_title; memory_cue/hint -> memory_hook_quick_tip; skill_focus/bloom_level -> difficulty_tag_for_each_card.
+Legacy: deck_title/title -> flashcard_deck_title; memory_cue/hint -> deck_memory_hook or memory_hook_quick_tip; skill_focus/bloom_level -> difficulty_tag_for_each_card or bloom_level.
 
 Return ONE JSON object per distinct deck in the PDF.
 `
