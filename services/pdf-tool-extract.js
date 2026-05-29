@@ -59,6 +59,9 @@ export function extractToolItemsFromPdfText(toolSlug, text, options = {}) {
   const fn = PDF_TOOL_EXTRACTORS[slug];
   if (!fn) return [];
   const limit = options.limit ?? 200;
+  if (slug === 'activity-project-generator' || slug === 'project-idea-lab') {
+    return fn(String(text || ''), limit, slug);
+  }
   return fn(String(text || ''), limit);
 }
 

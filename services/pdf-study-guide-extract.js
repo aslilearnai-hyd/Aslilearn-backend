@@ -24,7 +24,7 @@ const SECTION_PATTERNS = [
 function parseConceptLines(lines) {
   const out = [];
   for (const line of lines) {
-    const m = line.match(/^(?:\d+[\).]\s*)?(?:\*\*)?([^*—–-]+?)(?:\*\*)?\s*[—–-]\s*(.+)$/);
+    const m = line.match(/^(?:\d+[\).]\s*)?(?:\*\*)?([^*\-—–]+?)(?:\*\*)?\s*[-—–]\s*(.+)$/);
     if (m) {
       out.push({ name: m[1].trim(), explanation: m[2].trim() });
       continue;

@@ -1,14 +1,68 @@
 import AiToolGeneration from '../models/AiToolGeneration.js';
 import AiToolRotationCursor from '../models/AiToolRotationCursor.js';
+import { getToolDisplayTitle } from '../config/aiToolTemplates.js';
 
-/** Student slugs that may fall back to legacy stored toolName values. */
-const TOOL_ROTATION_ALIASES = Object.freeze({
+/** Student slugs that may fall back to legacy stored toolName values (same tool family only). */
+export const TOOL_ROTATION_ALIASES = Object.freeze({
   'project-idea-lab': ['activity-project-generator'],
+  'activity-project-generator': ['project-idea-lab'],
   'study-schedule-maker': ['lesson-planner'],
+  'lesson-planner': ['study-schedule-maker'],
   'reading-practice-room': ['story-passage-creator'],
+  'story-passage-creator': ['reading-practice-room'],
   'my-study-decks': ['flashcard-generator'],
+  'flashcard-generator': ['my-study-decks'],
   'mock-test-builder': ['exam-question-paper-generator'],
+  'exam-question-paper-generator': ['mock-test-builder'],
 });
+
+/** Canonical slugs accepted for a dashboard tool request (includes legacy alias names). */
+export function resolveToolSlugCandidates(toolSlug) {
+  const normalized = normalize(toolSlug);
+  if (!normalized) return [];
+  const lower = normalized.toLowerCase();
+  const aliases = TOOL_ROTATION_ALIASES[normalized] || TOOL_ROTATION_ALIASES[lower] || [];
+  return [...new Set([normalized, lower, ...aliases.map((a) => normalize(a).toLowerCase())])].filter(Boolean);
+}
+
+function normalizeToolKey(value) {
+  return String(value || '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '');
+}
+
+/** DB values that may appear in toolName for a slug (slug + legacy aliases + display title). */
+export function toolNameFilterValues(toolSlug) {
+  const candidates = resolveToolSlugCandidates(toolSlug);
+  const titles = candidates.map((c) => getToolDisplayTitle(c)).filter(Boolean);
+  return [...new Set([...candidates, ...titles].map((v) => normalize(v)).filter(Boolean))];
+}
+
+function toolNameMatchFilter(toolSlug) {
+  const values = toolNameFilterValues(toolSlug);
+  if (!values.length) return {};
+  return {
+    toolName: {
+      $in: values.map((v) => new RegExp(`^${escapeRegex(v)}$`, 'i')),
+    },
+  };
+}
+
+/** True when DB row toolName matches the tool the user opened (no cross-tool mixing). */
+export function toolSlugMatches(storedToolName, requestedToolSlug) {
+  const storedKey = normalizeToolKey(storedToolName);
+  const requestedKey = normalizeToolKey(requestedToolSlug);
+  if (!requestedKey) return false;
+  if (!storedKey) return true;
+  if (storedKey === requestedKey) return true;
+  const allowed = new Set(
+    resolveToolSlugCandidates(requestedToolSlug).flatMap((slug) => {
+      const title = getToolDisplayTitle(slug);
+      return [normalizeToolKey(slug), title ? normalizeToolKey(title) : ''].filter(Boolean);
+    }),
+  );
+  return allowed.has(storedKey);
+}
 
 function normalize(value) {
   return String(value || '').trim().replace(/\s+/g, ' ');
@@ -152,6 +206,8 @@ export async function fetchRotatingAiToolData({
   subtopic,
   toolName = '',
   preferLatest = false,
+  /** When true (student/teacher dashboards), never return rows from a different tool. */
+  strictToolMatch = false,
 }) {
   const normalizedTopic = normalize(topic);
   const normalizedSubtopic = normalize(subtopic);
@@ -163,18 +219,39 @@ export async function fetchRotatingAiToolData({
   const exactFilter = { ...bf, ...topicFilter, ...subtopicFilter };
 
   const attempts = [];
-  if (normalizedTool) attempts.push({ matchType: 'exact-with-tool', filter: { ...exactFilter, toolName: normalizedTool } });
-  attempts.push({ matchType: 'exact-any-tool', filter: exactFilter });
-
-  if (!normalizedSubtopic && normalizedTopic) {
-    const topicOnlyFilter = { ...bf, topic: exactCaseInsensitive(normalizedTopic) };
-    if (normalizedTool) attempts.push({ matchType: 'topic-with-tool', filter: { ...topicOnlyFilter, toolName: normalizedTool } });
-    attempts.push({ matchType: 'topic-any-tool', filter: topicOnlyFilter });
+  if (normalizedTool) {
+    attempts.push({ matchType: 'exact-with-tool', filter: { ...exactFilter, ...toolNameMatchFilter(normalizedTool) } });
   }
+  if (!strictToolMatch) {
+    attempts.push({ matchType: 'exact-any-tool', filter: exactFilter });
 
-  if (!normalizedSubtopic && !normalizedTopic) {
-    if (normalizedTool) attempts.push({ matchType: 'subject-with-tool', filter: { ...bf, toolName: normalizedTool } });
-    attempts.push({ matchType: 'subject-any-tool', filter: bf });
+    if (!normalizedSubtopic && normalizedTopic) {
+      const topicOnlyFilter = { ...bf, topic: exactCaseInsensitive(normalizedTopic) };
+      if (normalizedTool) {
+        attempts.push({
+          matchType: 'topic-with-tool',
+          filter: { ...topicOnlyFilter, ...toolNameMatchFilter(normalizedTool) },
+        });
+      }
+      attempts.push({ matchType: 'topic-any-tool', filter: topicOnlyFilter });
+    }
+
+    if (!normalizedSubtopic && !normalizedTopic) {
+      if (normalizedTool) {
+        attempts.push({ matchType: 'subject-with-tool', filter: { ...bf, ...toolNameMatchFilter(normalizedTool) } });
+      }
+      attempts.push({ matchType: 'subject-any-tool', filter: bf });
+    }
+  } else if (!normalizedSubtopic && normalizedTopic) {
+    const topicOnlyFilter = { ...bf, topic: exactCaseInsensitive(normalizedTopic) };
+    if (normalizedTool) {
+      attempts.push({
+        matchType: 'topic-with-tool',
+        filter: { ...topicOnlyFilter, ...toolNameMatchFilter(normalizedTool) },
+      });
+    }
+  } else if (!normalizedSubtopic && !normalizedTopic && normalizedTool) {
+    attempts.push({ matchType: 'subject-with-tool', filter: { ...bf, ...toolNameMatchFilter(normalizedTool) } });
   }
 
   const selectByRotation = async (docs, matchType, keyToolName = normalizedTool) => {
@@ -212,18 +289,20 @@ export async function fetchRotatingAiToolData({
     const toolAttempts = [];
     if (toolFilter) {
       toolAttempts.push(
-        ...attempts.map((a) =>
-          a.matchType.includes('with-tool')
-            ? { matchType: `${a.matchType}-alias`, filter: { ...a.filter, toolName: toolFilter } }
-            : a,
-        ),
+        ...attempts
+          .filter((a) => !strictToolMatch || a.matchType.includes('with-tool'))
+          .map((a) => ({
+            matchType: `${a.matchType}-alias`,
+            filter: { ...a.filter, ...toolNameMatchFilter(toolFilter) },
+          })),
       );
-    } else {
+    } else if (!strictToolMatch) {
       toolAttempts.push(...attempts);
     }
     for (const attempt of toolAttempts) {
+      if (strictToolMatch && !attempt.filter?.toolName) continue;
       const docs = (await AiToolGeneration.find(attempt.filter).sort({ createdAt: 1 }).lean()).filter(
-        hasUsableContent,
+        (doc) => hasUsableContent(doc) && toolSlugMatches(doc.toolName, tryToolName || normalizedTool),
       );
       if (docs.length > 0) {
         return selectByRotation(
@@ -237,17 +316,31 @@ export async function fetchRotatingAiToolData({
 
   // Final fallback: fuzzy match topic/subtopic text among same class+subject (+tool when available).
   const fuzzyBases = [];
-  if (normalizedTool) fuzzyBases.push({ matchType: 'fuzzy-with-tool', filter: { ...bf, toolName: normalizedTool }, keyTool: normalizedTool });
-  fuzzyBases.push({ matchType: 'fuzzy-any-tool', filter: bf, keyTool: '' });
+  if (normalizedTool) {
+    fuzzyBases.push({
+      matchType: 'fuzzy-with-tool',
+      filter: { ...bf, ...toolNameMatchFilter(normalizedTool) },
+      keyTool: normalizedTool,
+    });
+  }
+  if (!strictToolMatch) {
+    fuzzyBases.push({ matchType: 'fuzzy-any-tool', filter: bf, keyTool: '' });
+  }
 
   for (const base of fuzzyBases) {
-    const pool = (await AiToolGeneration.find(base.filter).sort({ createdAt: -1 }).limit(500).lean()).filter(hasUsableContent);
+    const pool = (await AiToolGeneration.find(base.filter).sort({ createdAt: -1 }).limit(500).lean()).filter(
+      (doc) =>
+        hasUsableContent(doc) &&
+        (!strictToolMatch || toolSlugMatches(doc.toolName, base.keyTool || normalizedTool)),
+    );
     if (!pool.length) continue;
 
     const fuzzyMatches = pool.filter((doc) => {
       const topicOk = !normalizedTopic || looseIncludesEitherWay(doc.topic || '', normalizedTopic);
       const subtopicOk = !normalizedSubtopic || looseIncludesEitherWay(doc.subtopic || '', normalizedSubtopic);
-      return topicOk && subtopicOk;
+      const toolOk =
+        !strictToolMatch || toolSlugMatches(doc.toolName, base.keyTool || normalizedTool);
+      return topicOk && subtopicOk && toolOk;
     });
 
     if (fuzzyMatches.length > 0) {

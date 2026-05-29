@@ -13,6 +13,11 @@ import {
   isDeprecatedAiToolIdentifier,
   isValidAiToolSlug,
 } from '../config/aiToolTemplates.js';
+import { cleanActivityTitleForStorage } from './activity-title-utils.js';
+import {
+  resolveStudyGuideDisplayTitle,
+  sanitizeStudyGuideTitle,
+} from './study-guide-title-utils.js';
 
 const TOOL_ALIAS_TO_SLUG = buildToolAliasToSlugMap();
 
@@ -186,32 +191,11 @@ function coerceBulletLines(value) {
     .filter(Boolean);
 }
 
-/** PDF/Gemini sometimes puts a section heading in title — reject and fall back. */
-const ACTIVITY_SECTION_HEADING_TITLE_RE =
-  /^(?:\d+\.\s*)?(?:title\s*[—:-]\s*)?(materials required|learning objectives|step-by-step procedure|teacher instructions|expected learning outcomes|assessment criteria(?:\s*\(rubric\))?|rubric|real[-\s]?life application|title)\s*$/i;
-
 /**
  * Clean activity title for storage and UI. Never return a bare template section name.
  */
 export function sanitizeActivityTitle(rawTitle, rawName, slNo) {
-  let t = String(rawTitle || '')
-    .replace(/\s+/g, ' ')
-    .trim();
-  t = t.replace(/^1\.\s*title\s*[—:-]\s*/i, '').trim();
-  const parts = t.split(/\s*[—–]\s/).map((p) => p.trim()).filter(Boolean);
-  if (parts.length >= 2 && ACTIVITY_SECTION_HEADING_TITLE_RE.test(parts[parts.length - 1])) {
-    t = parts.slice(0, -1).join(' — ');
-  }
-  if (/title\s*[—:-]\s*materials required/i.test(t)) {
-    t = t.replace(/\s*title\s*[—:-]\s*materials required\s*$/i, '').trim();
-  }
-  if (!t || ACTIVITY_SECTION_HEADING_TITLE_RE.test(t)) {
-    const n = String(rawName || '').trim();
-    if (n && !ACTIVITY_SECTION_HEADING_TITLE_RE.test(n)) return n;
-    const num = slNo != null && slNo !== '' ? Number(slNo) : NaN;
-    return Number.isFinite(num) ? `Activity ${num}` : 'Activity';
-  }
-  return t;
+  return cleanActivityTitleForStorage(rawTitle, rawName, slNo);
 }
 
 /**
@@ -330,11 +314,18 @@ export function normalizeActivityProjectStructuredContent(raw) {
   steps = finalizeActivitySteps(steps, materials, learningOutcome);
 
   const slNo = source.sl_no ?? source.question_number;
-  const title = sanitizeActivityTitle(
+  let title = sanitizeActivityTitle(
     String(source.title || source.activityTitle || source.topic || '').trim(),
     String(source.name || '').trim(),
     slNo,
   );
+  if (!title) {
+    title = String(source.activity_name || source.activityName || '').trim();
+  }
+  if (!title) {
+    const num = slNo != null && slNo !== '' ? Number(slNo) : NaN;
+    title = Number.isFinite(num) ? `Untitled Activity ${num}` : 'Untitled Activity';
+  }
   const subtopicLink = String(
     source.subtopic_link_prior_knowledge || source.prior_knowledge || source.subtopic_context || '',
   ).trim();
@@ -431,11 +422,18 @@ export function normalizeProjectIdeaLabStructuredContent(raw) {
   steps = finalizeActivitySteps(steps, materials, learningOutcome);
 
   const slNo = source.sl_no ?? source.question_number;
-  const title = sanitizeActivityTitle(
+  let title = sanitizeActivityTitle(
     String(source.title || source.activityTitle || source.topic || '').trim(),
     String(source.name || '').trim(),
     slNo,
   );
+  if (!title) {
+    title = String(source.activity_name || source.activityName || '').trim();
+  }
+  if (!title) {
+    const num = slNo != null && slNo !== '' ? Number(slNo) : NaN;
+    title = Number.isFinite(num) ? `Untitled Activity ${num}` : 'Untitled Activity';
+  }
   const subtopicLink = String(
     source.subtopic_link_prior_knowledge || source.prior_knowledge || source.subtopic_context || '',
   ).trim();
@@ -669,27 +667,37 @@ export function finalizeConceptMasteryStructuredContent(structuredContent, meta 
 /** Concept Breakdown Explainer → 9-section template. */
 export function normalizeConceptBreakdownStructuredContent(raw) {
   const source = raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
+  /** Gemini often returns { concepts: [{ ...all 9 sections }] } — flatten for validation & markdown. */
+  let merged = { ...source };
+  if (Array.isArray(source.concepts) && source.concepts.length) {
+    const row =
+      source.concepts.find((c) => c && typeof c === 'object' && Object.keys(c).length > 2) ||
+      source.concepts[0];
+    if (row && typeof row === 'object') {
+      merged = { ...merged, ...row };
+    }
+  }
   const conceptTitle = String(
-    source.concept_title || source.concept_name || source.title || source.name || '',
+    merged.concept_title || merged.concept_name || merged.title || merged.name || '',
   ).trim();
   const simple_definition = String(
-    source.simple_definition || source.simple_explanation || source.explanation || '',
+    merged.simple_definition || merged.simple_explanation || merged.explanation || '',
   ).trim();
   const breakdown_steps = dedupeStringList([
-    ...coerceBulletLines(source.breakdown_steps),
-    ...coerceBulletLines(source.steps),
+    ...coerceBulletLines(merged.breakdown_steps),
+    ...coerceBulletLines(merged.steps),
   ]);
   const real_life_examples = dedupeStringList([
-    ...coerceBulletLines(source.real_life_examples),
-    ...coerceBulletLines(source.indian_context_examples),
-    ...coerceBulletLines(source.examples),
+    ...coerceBulletLines(merged.real_life_examples),
+    ...coerceBulletLines(merged.indian_context_examples),
+    ...coerceBulletLines(merged.examples),
   ]);
-  const important_terms = (Array.isArray(source.important_terms)
-    ? source.important_terms
-    : Array.isArray(source.keywords)
-      ? source.keywords
-      : Array.isArray(source.terms)
-        ? source.terms
+  const important_terms = (Array.isArray(merged.important_terms)
+    ? merged.important_terms
+    : Array.isArray(merged.keywords)
+      ? merged.keywords
+      : Array.isArray(merged.terms)
+        ? merged.terms
         : []
   )
     .map((t) => {
@@ -703,26 +711,26 @@ export function normalizeConceptBreakdownStructuredContent(raw) {
     })
     .filter((t) => t.term);
   const concept_check_questions = dedupeStringList([
-    ...coerceBulletLines(source.concept_check_questions),
-    ...coerceBulletLines(source.quick_check_questions),
+    ...coerceBulletLines(merged.concept_check_questions),
+    ...coerceBulletLines(merged.quick_check_questions),
   ]);
   const application_thinking_question = String(
-    source.application_thinking_question || source.application_question || '',
+    merged.application_thinking_question || merged.application_question || '',
   ).trim();
   const higher_order_thinking_prompt = String(
-    source.higher_order_thinking_prompt ||
-      source.hots_prompt ||
-      source.hots_question ||
+    merged.higher_order_thinking_prompt ||
+      merged.hots_prompt ||
+      merged.hots_question ||
       '',
   ).trim();
   const quick_revision_summary = String(
-    source.quick_revision_summary || source.revision_summary || source.summary || '',
+    merged.quick_revision_summary || merged.revision_summary || merged.summary || '',
   ).trim();
 
   return {
-    ...source,
+    ...merged,
     concept_title: conceptTitle || 'Concept',
-    concept_name: conceptTitle || source.concept_name || 'Concept',
+    concept_name: conceptTitle || merged.concept_name || 'Concept',
     simple_definition,
     breakdown_steps,
     real_life_examples,
@@ -736,6 +744,23 @@ export function normalizeConceptBreakdownStructuredContent(raw) {
 
 export function canonicalizeConceptBreakdownExtractedItem(raw) {
   return normalizeConceptBreakdownStructuredContent(raw);
+}
+
+/** AI Generator: flatten concepts[] and default title from subtopic when missing. */
+export function finalizeConceptBreakdownStructuredContent(structuredContent, meta = {}) {
+  const s = normalizeConceptBreakdownStructuredContent(structuredContent);
+  let concept_title = String(s.concept_title || s.concept_name || '').trim();
+  if (!concept_title || concept_title === 'Concept') {
+    const fromMeta = String(meta.subTopic || meta.subtopic || meta.topic || '').trim();
+    if (fromMeta) concept_title = fromMeta;
+  }
+  if (!concept_title) concept_title = 'Concept';
+  return {
+    ...s,
+    concept_title,
+    concept_name: concept_title,
+    title: concept_title,
+  };
 }
 
 /** Viewer payload for Concept Breakdown Explainer (PDF extract or generator). */
@@ -1326,9 +1351,13 @@ function normalizeStudyGuidePracticeQuestions(raw) {
 }
 
 /** Smart Study Guide Generator → 11-section template. */
-export function normalizeStudyGuideStructuredContent(raw) {
+export function normalizeStudyGuideStructuredContent(raw, meta = {}) {
   const source = raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
-  const title = String(source.title || '').trim();
+  const title = resolveStudyGuideDisplayTitle(
+    String(source.title || source.study_guide_title || '').trim(),
+    meta,
+    source,
+  );
   const chapter_subtopic_overview = String(
     source.chapter_subtopic_overview || source.chapter_overview || source.overview || '',
   ).trim();
@@ -1497,34 +1526,42 @@ function normalizeChapterSummaryFormulaeList(source) {
 /** Chapter Summary Creator → 10-section template. */
 export function normalizeChapterSummaryStructuredContent(raw) {
   const source = raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
+  /** Gemini may return { chapters: [{ ...all fields }] } — flatten for validation & viewers. */
+  let merged = { ...source };
+  if (Array.isArray(source.chapters) && source.chapters.length) {
+    const row =
+      source.chapters.find((c) => c && typeof c === 'object' && Object.keys(c).length > 2) ||
+      source.chapters[0];
+    if (row && typeof row === 'object') merged = { ...merged, ...row };
+  }
   const chapter_summary_title = String(
-    source.chapter_summary_title ||
-      source.chapter_title ||
-      source.title ||
-      source.study_guide_title ||
+    merged.chapter_summary_title ||
+      merged.chapter_title ||
+      merged.title ||
+      merged.study_guide_title ||
       '',
   ).trim();
   const chapter_overview = String(
-    source.chapter_overview ||
-      source.overview ||
-      source.summary ||
-      source.chapter_summary ||
-      source.chapter_subtopic_overview ||
-      source.chapter_overview_text ||
+    merged.chapter_overview ||
+      merged.overview ||
+      merged.summary ||
+      merged.chapter_summary ||
+      merged.chapter_subtopic_overview ||
+      merged.chapter_overview_text ||
       '',
   ).trim();
   const learning_objectives = dedupeStringList([
-    ...coerceBulletLines(source.learning_objectives),
-    ...coerceBulletLines(source.objectives),
-    ...coerceBulletLines(source.learningObjectives),
+    ...coerceBulletLines(merged.learning_objectives),
+    ...coerceBulletLines(merged.objectives),
+    ...coerceBulletLines(merged.learningObjectives),
   ]);
   const important_concepts = normalizeStudyGuideKeyConcepts(
-    source.important_concepts ||
-      source.key_concepts ||
-      source.key_concepts_explained ||
-      source.concepts,
+    merged.important_concepts ||
+      merged.key_concepts ||
+      merged.key_concepts_explained ||
+      merged.concepts,
   );
-  const definitions = (Array.isArray(source.definitions) ? source.definitions : [])
+  const definitions = (Array.isArray(merged.definitions) ? merged.definitions : [])
     .map((d) => {
       if (d && typeof d === 'object') {
         return {
@@ -1535,45 +1572,45 @@ export function normalizeChapterSummaryStructuredContent(raw) {
       return { term: String(d ?? '').trim(), definition: '' };
     })
     .filter((d) => d.term);
-  const formulae = normalizeChapterSummaryFormulaeList(source);
+  const formulae = normalizeChapterSummaryFormulaeList(merged);
   const concept_connections = String(
-    source.concept_connections ||
-      source.connections ||
-      source.concept_flow ||
-      source.concept_flow_mind_map ||
-      source.mind_map ||
+    merged.concept_connections ||
+      merged.connections ||
+      merged.concept_flow ||
+      merged.concept_flow_mind_map ||
+      merged.mind_map ||
       '',
   ).trim();
   const real_life_applications = dedupeStringList([
-    ...coerceBulletLines(source.real_life_applications),
-    ...coerceBulletLines(source.real_life_examples),
-    ...coerceBulletLines(source.applications),
-    ...coerceBulletLines(source.examples),
+    ...coerceBulletLines(merged.real_life_applications),
+    ...coerceBulletLines(merged.real_life_examples),
+    ...coerceBulletLines(merged.applications),
+    ...coerceBulletLines(merged.examples),
   ]);
   const important_exam_points = dedupeStringList([
-    ...coerceBulletLines(source.important_exam_points),
-    ...coerceBulletLines(source.exam_points),
-    ...coerceBulletLines(source.key_takeaways),
-    ...coerceBulletLines(source.takeaways),
+    ...coerceBulletLines(merged.important_exam_points),
+    ...coerceBulletLines(merged.exam_points),
+    ...coerceBulletLines(merged.key_takeaways),
+    ...coerceBulletLines(merged.takeaways),
   ]);
   const quick_revision_notes = dedupeStringList([
-    ...coerceBulletLines(source.quick_revision_notes),
-    ...coerceBulletLines(source.review_points),
-    ...coerceBulletLines(source.quick_review),
+    ...coerceBulletLines(merged.quick_revision_notes),
+    ...coerceBulletLines(merged.review_points),
+    ...coerceBulletLines(merged.quick_review),
   ]);
   const practice_recall_questions = dedupeStringList([
-    ...coerceBulletLines(source.practice_recall_questions),
-    ...coerceBulletLines(source.recall_questions),
-    ...coerceBulletLines(source.quick_check_questions),
-    ...normalizeStudyGuidePracticeQuestions(source.practice_questions).map((q) => q.question),
-    ...normalizeStudyGuidePracticeQuestions(source.questions).map((q) => q.question),
+    ...coerceBulletLines(merged.practice_recall_questions),
+    ...coerceBulletLines(merged.recall_questions),
+    ...coerceBulletLines(merged.quick_check_questions),
+    ...normalizeStudyGuidePracticeQuestions(merged.practice_questions).map((q) => q.question),
+    ...normalizeStudyGuidePracticeQuestions(merged.questions).map((q) => q.question),
   ]);
 
   return {
-    ...source,
+    ...merged,
     chapter_summary_title: chapter_summary_title || 'Chapter Summary',
-    chapter_title: chapter_summary_title || source.chapter_title || 'Chapter Summary',
-    title: chapter_summary_title || source.title || 'Chapter Summary',
+    chapter_title: chapter_summary_title || merged.chapter_title || 'Chapter Summary',
+    title: chapter_summary_title || merged.title || 'Chapter Summary',
     chapter_overview,
     summary: chapter_overview,
     chapter_summary: chapter_overview,
@@ -2383,7 +2420,7 @@ export function buildShortNotesRenderableFromStructured(source) {
   };
 }
 
-const WORKSHEET_SECTION_LABELS = {
+export const WORKSHEET_SECTION_LABELS = {
   A: 'Section A: MCQs',
   B: 'Section B: Fill in the Blanks',
   C: 'Section C: Very Short Answer Questions',
@@ -2545,7 +2582,7 @@ export function mergeWorksheetSections(base = [], extra = []) {
   const allQs = [];
   for (const sec of [...(Array.isArray(base) ? base : []), ...(Array.isArray(extra) ? extra : [])]) {
     const name = String(sec?.sectionName || sec?.name || '').trim();
-    const qs = toQuestionArray(sec?.questions || []).map((q) => ({
+    const qs = toQuestionArray(sec?.questions || sec?.items || []).map((q) => ({
       ...q,
       section: q.section || name,
     }));
@@ -2651,9 +2688,11 @@ export function normalizeWorksheetStructuredContent(raw, sourceText = '') {
     sections = mergeWorksheetSections(sections, groupQuestionsIntoWorksheetSections(looseQuestions));
   }
 
-  if (!sections.length && sourceText) {
+  if (sourceText) {
     const fromText = sanitizeWorksheetQuestions(extractWorksheetItemsFromPdfText(sourceText, 80));
-    if (fromText.length) sections = groupQuestionsIntoWorksheetSections(fromText);
+    if (fromText.length) {
+      sections = mergeWorksheetSections(sections, groupQuestionsIntoWorksheetSections(fromText));
+    }
   }
 
   const questions = sections.flatMap((sec) =>
@@ -3871,10 +3910,30 @@ function normalizeRubricCriterionRow(raw) {
   };
 }
 
+function rubricTextFilled(value) {
+  const t = String(value ?? '').trim();
+  return t.length > 2 && !/^(n\/?a|tbd|todo|pending|none|null|—+|\.\.\.)$/i.test(t);
+}
+
+function rubricCriterionRowIsComplete(row) {
+  if (!row || typeof row !== 'object') return false;
+  return (
+    rubricTextFilled(row.name) &&
+    rubricTextFilled(row.excellent) &&
+    rubricTextFilled(row.good) &&
+    rubricTextFilled(row.satisfactory) &&
+    rubricTextFilled(row.needs_improvement)
+  );
+}
+
 /** Rubrics / report card PDF rows → 10-section template + criteria grid. */
 export function normalizeRubricStructuredContent(raw) {
   const source = raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
-  const criteriaRaw = [...(Array.isArray(source.criteria) ? source.criteria : [])];
+  const criteriaRaw = [
+    ...(Array.isArray(source.criteria) ? source.criteria : []),
+    ...(Array.isArray(source.rubric_criteria) ? source.rubric_criteria : []),
+    ...(Array.isArray(source.evaluation_rubric) ? source.evaluation_rubric : []),
+  ];
   const rowLooksLikeCriterion =
     !String(source.title || source.assessment_purpose || '').trim() &&
     (source.excellent || source.good || source.satisfactory || source.needs_improvement);
@@ -3920,9 +3979,72 @@ export function normalizeRubricStructuredContent(raw) {
       source.parent_friendly_feedback || source.parent_feedback || source.parent_note || '',
     ).trim(),
     next_step_remedial_enrichment: String(
-      source.next_step_remedial_enrichment || source.next_steps || source.remedial_enrichment || '',
+      source.next_step_remedial_enrichment ||
+        source.next_steps ||
+        source.remedial_enrichment ||
+        source.enrichment_activity ||
+        '',
     ).trim(),
   };
+}
+
+/** @returns {string[]} Human-readable missing section labels for rubric validation / retries. */
+export function getRubricMissingSections(data) {
+  const r = normalizeRubricStructuredContent(data && typeof data === 'object' ? data : {});
+  const missing = [];
+  const scalarChecks = [
+    ['assessment_purpose', '1. Assessment Purpose'],
+    ['competency_assessed', '2. Competency / Learning Outcome Assessed'],
+    ['grading_criteria', '4. Grading Criteria'],
+    ['strengths_observed', '5. Strengths Observed'],
+    ['areas_for_improvement', '6. Areas for Improvement'],
+    ['teacher_remarks', '7. Teacher Remarks'],
+    ['actionable_suggestions', '8. Actionable Improvement Suggestions'],
+    ['parent_friendly_feedback', '9. Parent-friendly Feedback'],
+    ['next_step_remedial_enrichment', '10. Next-step Remedial / Enrichment Activity'],
+  ];
+  for (const [key, label] of scalarChecks) {
+    if (!rubricTextFilled(r[key])) missing.push(label);
+  }
+  const completeCriteria = (Array.isArray(r.criteria) ? r.criteria : []).filter(rubricCriterionRowIsComplete);
+  if (completeCriteria.length < 3) {
+    missing.push(
+      '3. Evaluation Rubric with 4 Performance Levels (min 3 criteria; each needs Excellent, Good, Satisfactory, Needs Improvement)',
+    );
+  }
+  return missing;
+}
+
+export function rubricStructuredContentIsComplete(data) {
+  return getRubricMissingSections(data).length === 0;
+}
+
+/** Pad derivable rubric narrative fields; does not invent full criteria grid. */
+export function finalizeRubricStructuredContent(structuredContent, meta = {}) {
+  const s = normalizeRubricStructuredContent(
+    structuredContent && typeof structuredContent === 'object' ? structuredContent : {},
+  );
+  const topic = String(meta.subTopic || meta.subtopic || meta.topic || 'this subtopic').trim();
+  const completeCriteria = (Array.isArray(s.criteria) ? s.criteria : []).filter(rubricCriterionRowIsComplete);
+
+  if (!rubricTextFilled(s.grading_criteria) && completeCriteria.length) {
+    s.grading_criteria =
+      'Each criterion is scored on a 4-level scale: Excellent, Good, Satisfactory, and Needs Improvement. Overall performance reflects mastery of the competency assessed across all criteria.';
+  }
+
+  if (!rubricTextFilled(s.actionable_suggestions) && rubricTextFilled(s.areas_for_improvement)) {
+    s.actionable_suggestions = `Focus on the identified improvement areas: ${s.areas_for_improvement} Use short guided practice, peer discussion, and a brief self-check quiz on ${topic} before the next assessment.`;
+  }
+
+  if (!rubricTextFilled(s.next_step_remedial_enrichment)) {
+    if (rubricTextFilled(s.areas_for_improvement)) {
+      s.next_step_remedial_enrichment = `Remedial: Targeted worksheet on ${topic} addressing weak areas noted above. Enrichment: Open-ended project connecting ${topic} to a real-life observation or interview task for advanced learners.`;
+    } else {
+      s.next_step_remedial_enrichment = `Enrichment: Extension investigation on ${topic} with a real-life application prompt for students who demonstrate Excellent on all rubric criteria.`;
+    }
+  }
+
+  return s;
 }
 
 export function canonicalizeRubricExtractedItem(raw) {
@@ -4634,17 +4756,9 @@ const TOOL_STRUCTURED_RULES = {
   },
   'rubrics-evaluation-generator': {
     allowedTypes: ['Rubric'],
-    validate: (data) => {
-      const c = Array.isArray(data?.criteria) ? data.criteria.length : 0;
-      return (
-        c > 0 ||
-        String(data?.assessment_purpose || '').trim().length > 8 ||
-        String(data?.strengths_observed || '').trim().length > 8 ||
-        String(data?.teacher_remarks || '').trim().length > 8
-      );
-    },
+    validate: (data) => rubricStructuredContentIsComplete(data),
     message:
-      'Rubric must include criteria[] and/or narrative evaluation sections (purpose, strengths, remarks).',
+      'Rubric must include all 10 sections: purpose, competency, min 3 criteria with four performance levels each, grading criteria, strengths, improvements, remarks, actionable suggestions, parent feedback, and next-step activity.',
   },
   'reading-practice-room': {
     allowedTypes: ['Reading Practice', 'Story'],
@@ -5900,6 +6014,12 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
         structuredContent = finalizeKeyPointsStructuredContent(structuredContent, meta);
       } else if (slug === 'exam-question-paper-generator') {
         structuredContent = normalizeExamPaperStructuredContent(structuredContent);
+      } else if (slug === 'smart-study-guide-generator') {
+        structuredContent = normalizeStudyGuideStructuredContent(structuredContent, meta);
+      } else if (slug === 'concept-breakdown-explainer') {
+        structuredContent = finalizeConceptBreakdownStructuredContent(structuredContent, meta);
+      } else if (slug === 'rubrics-evaluation-generator') {
+        structuredContent = finalizeRubricStructuredContent(structuredContent, meta);
       }
 
       const contentType = normalizeContentType(json.contentType || defaultContentType);
@@ -5983,6 +6103,19 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
         }
       }
 
+      if (!validation.valid && slug === 'rubrics-evaluation-generator') {
+        structuredContent = finalizeRubricStructuredContent(structuredContent, meta);
+        validation = validateToolSpecificStructuredContent(
+          slug,
+          structuredContent,
+          contentType,
+          validationSourceText,
+        );
+        if (validation.normalizedStructuredContent) {
+          structuredContent = validation.normalizedStructuredContent;
+        }
+      }
+
       if (!validation.valid) {
         lastValidationMessage = validation.message || 'Structured content failed validation.';
         if (attempt < 4) {
@@ -5999,6 +6132,10 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
             activePrompt = `${prompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. Return Chapter Summary Creator JSON only — use chapter_summary_title, chapter_overview, important_concepts[] (min 3), formulae[] (min 3: name + formula where formula is an equation OR a must-know rule/fact sentence), quick_revision_notes[] (min 3), practice_recall_questions[] (min 3). Do NOT use Smart Study Guide fields (study_guide_title, prior_knowledge, key_concepts_explained, practice_questions with MCQ options).`;
           } else if (slug === 'key-points-formula-extractor') {
             activePrompt = `${prompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. Return Key Points JSON with topic_title, important_concepts[] (min 3), essential_definitions[], formulae[] (min 3 — name + formula; formula may be an equation OR a must-know rule), keywords_terminologies[], must_remember_facts[], real_life_connections[], frequently_asked_exam_points[], mnemonics_memory_tricks[], one_minute_revision_summary. Never leave formulae[] empty.`;
+          } else if (slug === 'rubrics-evaluation-generator') {
+            const missing = getRubricMissingSections(structuredContent);
+            const missingHint = missing.length ? ` Missing: ${missing.join('; ')}.` : '';
+            activePrompt = `${prompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return ALL 10 rubric sections. criteria[] MUST have at least 3 objects; each MUST include name, excellent, good, satisfactory, needs_improvement (non-empty strings). Include grading_criteria, actionable_suggestions, and next_step_remedial_enrichment.`;
           }
           continue;
         }

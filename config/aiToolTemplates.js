@@ -5,6 +5,8 @@
  * @module config/aiToolTemplates
  */
 
+import { sanitizeStudyGuideTitle } from '../services/study-guide-title-utils.js';
+
 /** Pedagogy tags applied across tools (subset per tool in `pedagogyFrameworkTags`). */
 export const UNIVERSAL_PEDAGOGY_TAGS = Object.freeze([
   'NEP 2020',
@@ -678,8 +680,50 @@ const TEMPLATES = {
     parserHints: ['criteria[]: { name, excellent, good, satisfactory, needs_improvement }.'],
     regenerationRules: { mergePolicy: 'merge', allowTemplateRegeneration: true },
     gemini: {
-      strictOutputHint: 'Rubric JSON: title, assessment_purpose, competency_assessed, criteria[], grading_criteria, narrative fields for strengths, improvements, remarks, parent-facing text, next steps.',
-      pdfExtractSchema: { title: 'string', criteria: ['object'] },
+      strictOutputHint:
+        'Rubric JSON MUST populate ALL 10 canonical sections as non-empty strings. criteria[] MUST have at least 3 criteria; EACH criterion MUST include name, excellent, good, satisfactory, and needs_improvement (four performance levels). Also require grading_criteria, strengths_observed, areas_for_improvement, teacher_remarks, actionable_suggestions, parent_friendly_feedback, and next_step_remedial_enrichment. Do not omit Section 3 rubric grid, Section 4 grading, Section 8 actionable suggestions, or Section 10 next-step activity.',
+      pdfExtractSchema: {
+        title: 'string',
+        assessment_purpose: 'string',
+        competency_assessed: 'string',
+        criteria: [
+          {
+            name: 'string',
+            excellent: 'string',
+            good: 'string',
+            satisfactory: 'string',
+            needs_improvement: 'string',
+          },
+        ],
+        grading_criteria: 'string',
+        strengths_observed: 'string',
+        areas_for_improvement: 'string',
+        teacher_remarks: 'string',
+        actionable_suggestions: 'string',
+        parent_friendly_feedback: 'string',
+        next_step_remedial_enrichment: 'string',
+      },
+      generatorStructuredSchema: {
+        title: 'string',
+        assessment_purpose: 'string',
+        competency_assessed: 'string',
+        criteria: [
+          {
+            name: 'string',
+            excellent: 'string',
+            good: 'string',
+            satisfactory: 'string',
+            needs_improvement: 'string',
+          },
+        ],
+        grading_criteria: 'string',
+        strengths_observed: 'string',
+        areas_for_improvement: 'string',
+        teacher_remarks: 'string',
+        actionable_suggestions: 'string',
+        parent_friendly_feedback: 'string',
+        next_step_remedial_enrichment: 'string',
+      },
     },
     sectionFallbackRules: [],
   },
@@ -1608,7 +1652,7 @@ const TEMPLATES = {
     regenerationRules: { mergePolicy: 'merge', allowTemplateRegeneration: true },
     gemini: {
       strictOutputHint:
-        'Study guide JSON: title, chapter_subtopic_overview, learning_objectives[], prior_knowledge_required[], key_concepts[] ({name, explanation}), definitions[] ({term, definition}), formulae[] ({name, formula, note}), concept_flow_mind_map, real_life_examples[], quick_revision_notes[], practice_questions[] ({question, type: objective|subjective, options[] as A) B) C) D) for MCQs, answer}), improvement_tips[].',
+        'Study guide JSON: title MUST be a short study guide name only (e.g. "Nature of Science — Study Guide") using TOPIC/SUBTOPIC from context — NEVER paste MCQ options, A) B) C) D) lines, or **Answer:** keys into title. Put all practice MCQs only in practice_questions[]. Other fields: chapter_subtopic_overview, learning_objectives[], prior_knowledge_required[], key_concepts[] ({name, explanation}), definitions[] ({term, definition}), formulae[] ({name, formula, note}), concept_flow_mind_map, real_life_examples[], quick_revision_notes[], practice_questions[] ({question, type: objective|subjective, options[] as A) B) C) D) for MCQs, answer}), improvement_tips[].',
       pdfExtractSchema: {
         title: 'string',
         chapter_subtopic_overview: 'string',
@@ -2328,6 +2372,16 @@ export function buildAiGeneratorStructuredPrompt(toolSlug, params = {}) {
       'OUTPUT TOOL: Key Points Extractor — formulae[] REQUIRED (min 3): each {name, formula, note}; formula may be an equation OR a must-know rule/fact sentence.',
     );
   }
+  if (slug === 'smart-study-guide-generator') {
+    contextLines.push(
+      'TITLE RULE: structuredContent.title = short guide name from SUBTOPIC/TOPIC only (max ~12 words). Never put MCQ option lines or answers in title — use practice_questions[] for all objective items.',
+    );
+  }
+  if (slug === 'rubrics-evaluation-generator') {
+    contextLines.push(
+      'RUBRIC RULE: structuredContent MUST include ALL 10 sections. criteria[] needs min 3 rows; each row needs excellent, good, satisfactory, needs_improvement text. grading_criteria, actionable_suggestions, and next_step_remedial_enrichment must be non-empty paragraphs.',
+    );
+  }
 
   return `You are an expert Indian school curriculum content generator aligned to NEP 2020 and NCF-SE 2023.
 
@@ -2354,7 +2408,8 @@ For tools that produce multiple worksheet questions, exam items, or flashcards, 
 For Smart Q&A Practice Generator, structuredContent.sections MUST list all seven entries (Section A through Section G) and each MUST contain at least one question object. Section C must be a Match-the-Following item (type "MATCH").
 For Chapter Summary Creator use chapter_summary_title and chapter_overview — never study_guide_title or chapter_subtopic_overview field names.
 For Concept Mastery Helper there is NO separate "concept" form field — use the SUBTOPIC (and TOPIC) from context as concept_name. structuredContent MUST be { "concepts": [ { ... } ] } with at least one filled concept object for that sub-topic.
-For Activity & Project Generator, fill ALL 13 canonical fields in one structuredContent object.`;
+For Activity & Project Generator, fill ALL 13 canonical fields in one structuredContent object.
+For Rubrics, Evaluation & Report Card, fill ALL 10 canonical fields; criteria[] must have at least 3 complete rubric rows with four performance levels each.`;
 }
 
 /** @param {string} toolSlug @param {unknown} structured */
@@ -3462,6 +3517,7 @@ export function formatItemLinesFromTemplate(toolSlug, item, index = 0) {
           lines.push('');
         });
       }
+      if (str(i.grading_criteria)) pushSection(lines, '4. Grading Criteria', [str(i.grading_criteria)]);
       if (str(i.strengths_observed)) pushSection(lines, '5. Strengths Observed', [str(i.strengths_observed)]);
       if (str(i.areas_for_improvement)) pushSection(lines, '6. Areas for Improvement', [str(i.areas_for_improvement)]);
       if (str(i.teacher_remarks)) pushSection(lines, '7. Teacher Remarks', [str(i.teacher_remarks)]);
@@ -3619,6 +3675,27 @@ export function formatItemLinesFromTemplate(toolSlug, item, index = 0) {
             lines.push(`**Card ${idx + 1}**`, `Front: ${front}`, `Back: ${back}`, '');
           }
         });
+        lines.push('');
+      }
+      const appendPerCardDeckSection = (sectionNum, label, pickValue) => {
+        const block = [];
+        cards.forEach((card, idx) => {
+          const c = card && typeof card === 'object' ? card : {};
+          const value = str(pickValue(c));
+          if (value) block.push(`Card ${idx + 1}`, value, '');
+        });
+        if (block.length) pushSection(lines, `${sectionNum}. ${label}`, block);
+      };
+      if (cards.length) {
+        appendPerCardDeckSection(6, 'Difficulty Tag for Each Card', (c) =>
+          c.difficulty_tag_for_each_card || c.difficulty_tag || c.difficulty_level || c.skill_focus,
+        );
+        appendPerCardDeckSection(7, 'Memory Hook / Quick Tip', (c) =>
+          c.memory_hook_quick_tip || c.memory_cue || c.hint,
+        );
+        appendPerCardDeckSection(8, 'Self-Check Round', (c) =>
+          c.self_check_round || c.peer_prompt || c.self_check,
+        );
       }
       const mistakes = strArr(i.common_mistakes_to_avoid);
       if (mistakes.length) pushSection(lines, '9. Common Mistakes to Avoid', mistakes.map((x) => `- ${x}`));
@@ -3683,7 +3760,16 @@ export function formatItemLinesFromTemplate(toolSlug, item, index = 0) {
       break;
     }
     case 'smart-study-guide-generator': {
-      lines.push(`## ${str(i.title) || `Study Guide ${n}`}`, '');
+      const guideTitle =
+        sanitizeStudyGuideTitle(str(i.title), '') || `Study Guide ${n}`;
+      lines.push(
+        `# ${guideTitle}`,
+        '',
+        `> **Smart Study Guide** · 11-section template.`,
+        '---',
+        '',
+      );
+      pushMockTestSection(lines, 1, 'Study Guide Title', [guideTitle]);
       const overview = str(i.chapter_subtopic_overview || i.chapter_overview || i.overview);
       if (overview) pushSection(lines, '2. Chapter and Subtopic Overview', [overview]);
       const lo = strArr(i.learning_objectives || i.objectives);

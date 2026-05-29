@@ -43,6 +43,11 @@ import {
   buildFlashcardRenderableFromStructured,
   normalizeLessonPlannerStructuredContent,
 } from '../services/ai-content-engine-service.js';
+import {
+  extractActivityTitleFromMarkdown,
+  isCurriculumBreadcrumbTitle,
+  resolveActivityDisplayTitle,
+} from '../services/activity-title-utils.js';
 import { buildPdfExtractEmptyMessage, extractAndGenerateAllItems, getLastPdfExtractionMeta } from '../services/gemini-service.js';
 import { consolidateWorksheetExtractItems } from '../services/pdf-worksheet-extract.js';
 import { formatItemToContent } from '../controllers/aiToolsController.js';
@@ -536,7 +541,7 @@ function mapMasterPdfToListRow(doc) {
     validation: m.validation,
     generatedContent: String(doc.generatedContent || doc.content || '').trim(),
   };
-  return enrichConceptRowForApi(
+  const enriched = enrichConceptRowForApi(
     enrichRubricRowForApi(
       enrichHomeworkRowForApi(
         enrichActivityRowForApi(
@@ -553,6 +558,15 @@ function mapMasterPdfToListRow(doc) {
       ),
     ),
   );
+  const tool = String(enriched.toolType || doc.toolName || '').trim();
+  if (tool === 'activity-project-generator' || tool === 'project-idea-lab') {
+    enriched.displayTitle = resolveActivityDisplayTitle(
+      enriched.structuredContent,
+      enriched.generatedContent,
+      m,
+    );
+  }
+  return enriched;
 }
 
 /** Legacy rows only in aicontentenginesources (no master in aitoolgenerations yet). */
@@ -958,7 +972,18 @@ router.post(
                                   resolvedToolSlug === 'flashcard-generator'
                                 ? canonicalizeFlashcardExtractedItem(metaClean, resolvedToolSlug)
                                 : metaClean;
-          const contentStr = formatItemToContent(resolvedToolSlug, structuredForRow, index);
+          let contentStr = formatItemToContent(resolvedToolSlug, structuredForRow, index);
+          if (resolvedToolSlug === 'activity-project-generator' || resolvedToolSlug === 'project-idea-lab') {
+            const fromMd = extractActivityTitleFromMarkdown(contentStr);
+            const titleBad =
+              !structuredForRow?.title ||
+              isCurriculumBreadcrumbTitle(structuredForRow.title) ||
+              /^Untitled Activity\b/i.test(String(structuredForRow.title || ''));
+            if (fromMd && titleBad) {
+              structuredForRow = { ...structuredForRow, title: fromMd, name: fromMd };
+              contentStr = formatItemToContent(resolvedToolSlug, structuredForRow, index);
+            }
+          }
           return {
             toolName: resolvedToolSlug,
             toolDisplayName: getToolLabelFromSlug(resolvedToolSlug) || resolvedToolSlug,

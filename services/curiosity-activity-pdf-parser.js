@@ -1,3 +1,9 @@
+import {
+  extractActivityTitleFromBlock,
+  isGenericActivityNumberTitle,
+  looksLikeValidActivityTitle,
+} from './activity-title-utils.js';
+
 /**
  * Deterministic parse for "Curiosity" / workbook-style activity PDFs where each block is:
  *   Activity N
@@ -100,7 +106,12 @@ function extractLinesAfterHeader(chunk, headerLine, stopAt, extraLineStop = null
 export function extractActivitiesFromCuriosityWorkbookPdf(rawText) {
   const text = String(rawText || '').replace(/\r/g, '\n');
   if (!/\bActivity\s+\d+\b/i.test(text)) return null;
-  if (!/\b1\.\s*Title\b/i.test(text)) return null;
+  if (
+    !/\b1\.\s*Title\s+of\s+(?:the\s+)?Activity\s*\/\s*Project\b/i.test(text) &&
+    !/\b1\.\s*(?:Title|Project\s*\/\s*Activity\s*Title)\b/i.test(text)
+  ) {
+    return null;
+  }
 
   const parts = text.split(/\n(?=Activity\s+\d+\b)/gi).filter((p) => /\bActivity\s+\d+\b/i.test(p));
   if (parts.length === 0) return null;
@@ -112,9 +123,8 @@ export function extractActivitiesFromCuriosityWorkbookPdf(rawText) {
     const sl_no = Number.parseInt(numMatch[1], 10);
     if (!Number.isFinite(sl_no)) continue;
 
-    const titleMatch = part.match(/\b1\.\s*Title\s*\n+\s*([^\n\r]+)/i);
-    const title = titleMatch ? String(titleMatch[1] || '').trim() : '';
-    if (!title) continue;
+    const title = extractActivityTitleFromBlock(part);
+    if (!title || !looksLikeValidActivityTitle(title) || isGenericActivityNumberTitle(title)) continue;
 
     const subtopicLines = extractLinesAfterHeader(
       part,
@@ -146,13 +156,26 @@ export function extractActivitiesFromCuriosityWorkbookPdf(rawText) {
       /Step-by-step(?:\s+Student)?\s+Procedure/i,
       /Teacher Instructions|Safety|Student Instructions/i,
     );
+    const teacher_instructions = extractLinesAfterHeader(
+      part,
+      /Teacher Instructions/i,
+      /Student Instructions|Safety|Observation|Creative|Differentiation|Self-Assessment|Assessment|Expected|Real[-\s]?life|Reflection/i,
+    );
     const student_instructions = extractLinesAfterHeader(
       part,
       /Student Instructions/i,
-      /Safety|Observation|Creative|Differentiation|Self-Assessment|Assessment|Expected/i,
+      /Safety|Observation|Creative|Differentiation|Self-Assessment|Assessment|Expected|Real[-\s]?life|Reflection/i,
     );
-    const step_by_step_procedure =
-      student_instructions.length > 0 ? student_instructions : teacherLedProcedure;
+    const isTeacherTemplate =
+      teacher_instructions.length > 0 ||
+      (/Teacher Instructions/i.test(part) && !/Safety and Care Instructions/i.test(part));
+    const step_by_step_procedure = isTeacherTemplate
+      ? teacherLedProcedure.length
+        ? teacherLedProcedure
+        : student_instructions
+      : student_instructions.length > 0
+        ? student_instructions
+        : teacherLedProcedure;
 
     const safety_care_instructions = extractLinesAfterHeader(
       part,
@@ -220,6 +243,8 @@ export function extractActivitiesFromCuriosityWorkbookPdf(rawText) {
       ncf_competency_alignment,
       materials_required,
       step_by_step_procedure,
+      teacher_instructions,
+      student_instructions,
       safety_care_instructions,
       observation_data_recording_table,
       creative_output_final_product,

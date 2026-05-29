@@ -4,6 +4,15 @@ import dotenv from 'dotenv';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { GEMINI_MODELS_FALLBACK } from './gemini-models.js';
 import { extractActivitiesFromCuriosityWorkbookPdf } from './curiosity-activity-pdf-parser.js';
+import {
+  ACTIVITY_TITLE_FRAGMENT_RE,
+  extractActivityTitleFromBlock,
+  isActivityTemplateTitleLabel,
+  isGenericActivityNumberTitle,
+  looksLikeValidActivityTitle,
+  repairActivityItemTitlesFromPdf,
+} from './activity-title-utils.js';
+import { mapActivityRowForToolSlug } from './pdf-activity-extract.js';
 import { buildPdfToolConfigMap } from '../config/aiToolTemplates.js';
 import {
   consolidateWorksheetExtractItems,
@@ -485,7 +494,7 @@ Create a Study Schedule Maker plan for ${params.duration || 90} minutes using th
 Create a meaningful homework set with instructions, questions, answer key, and grading criteria.`,
     'rubrics-evaluation-generator': `${common}
 
-Create clear evaluation rubrics with criteria and performance levels (Excellent, Good, Satisfactory, Needs Improvement).`,
+Create a complete Rubrics, Evaluation & Report Card using ALL 10 sections: (1) Assessment Purpose, (2) Competency Assessed, (3) Evaluation Rubric with min 3 criteria and four performance levels each (Excellent, Good, Satisfactory, Needs Improvement), (4) Grading Criteria, (5) Strengths Observed, (6) Areas for Improvement, (7) Teacher Remarks, (8) Actionable Improvement Suggestions, (9) Parent-friendly Feedback, (10) Next-step Remedial / Enrichment Activity.`,
     'reading-practice-room': `${common}
 
 Create a Reading Practice Room set in the subject language using this 13-point format:
@@ -1075,14 +1084,37 @@ const ACTIVITY_TITLE_LINE_BLOCKLIST =
 const SECTION_HEADING_ONLY_AS_ACTIVITY_TITLE =
   /^(?:\d+\.\s*)?(?:title\s*[—:-]\s*)?(materials required|learning objectives|step-by-step procedure|teacher instructions|expected learning outcomes|assessment criteria(?:\s*\(rubric\))?|rubric|real[-\s]?life application|title)\s*$/i;
 
+/** Re-parse each Activity N block so title is the real name, not "Activity 39". */
+function enrichWorkbookActivityTitles(activities, rawText) {
+  if (!Array.isArray(activities) || !activities.length) return activities;
+  const text = String(rawText || '');
+  const titleBySl = new Map();
+  const parts = text.split(/\n(?=Activity\s+\d+\b)/gi);
+  for (const part of parts) {
+    const m = part.match(/\bActivity\s+(\d+)\b/i);
+    if (!m) continue;
+    const sl = Number.parseInt(m[1], 10);
+    if (!Number.isFinite(sl)) continue;
+    const name = extractActivityTitleFromBlock(part);
+    if (name && looksLikeRealActivityTitle(name) && looksLikeValidActivityTitle(name)) titleBySl.set(sl, name);
+  }
+  return activities.map((row) => {
+    const sl = Number(row?.sl_no ?? row?.question_number);
+    const better = titleBySl.get(sl);
+    const current = String(row?.title || row?.name || '').trim();
+    if (better && (!current || isGenericActivityNumberTitle(current) || !looksLikeRealActivityTitle(current))) {
+      return { ...row, title: better, name: better };
+    }
+    return row;
+  });
+}
+
 function looksLikeRealActivityTitle(title) {
+  if (!looksLikeValidActivityTitle(title)) return false;
   const t = String(title || '')
     .replace(/\s+/g, ' ')
     .trim();
-  if (!t) return false;
-  if (SECTION_HEADING_ONLY_AS_ACTIVITY_TITLE.test(t)) return false;
-  if (/title\s*[—:-]\s*materials required/i.test(t)) return false;
-  if (t.length < 8) return false;
+  if (t.length < 4) return false;
   if (!/[a-zA-Z]/.test(t)) return false;
   const lower = t.toLowerCase();
   if (ACTIVITY_TITLE_LINE_BLOCKLIST.test(lower)) return false;
@@ -2048,19 +2080,29 @@ export async function extractAndGenerateAllItems(toolType, rawPdfText, params = 
     return [];
   }
 
-  if (toolType === 'activity-project-generator') {
-    const workbookActivities = extractActivitiesFromCuriosityWorkbookPdf(text);
+  if (toolType === 'activity-project-generator' || toolType === 'project-idea-lab') {
+    const workbookActivities = enrichWorkbookActivityTitles(
+      extractActivitiesFromCuriosityWorkbookPdf(text),
+      text,
+    );
     if (workbookActivities && workbookActivities.length > 0) {
+      const { canonicalizeActivityExtractedItem } = await import('./ai-content-engine-service.js');
+      const normalized = workbookActivities
+        .map((row) =>
+          canonicalizeActivityExtractedItem(
+            mapActivityRowForToolSlug({ ...row, _fromPdf: true }, toolType),
+            toolType,
+          ),
+        )
+        .sort((a, b) => Number(a.sl_no || 0) - Number(b.sl_no || 0));
       lastPdfExtractionMeta = {
         ...lastPdfExtractionMeta,
         extractionStatus: 'complete',
         validationPassed: true,
-        extractedItemCount: workbookActivities.length,
+        extractedItemCount: normalized.length,
         parser: 'curiosity-workbook',
       };
-      return workbookActivities
-        .map((row) => ({ ...row, _fromPdf: true }))
-        .sort((a, b) => Number(a.sl_no || 0) - Number(b.sl_no || 0));
+      return normalized;
     }
   }
 
@@ -2108,6 +2150,10 @@ export async function extractAndGenerateAllItems(toolType, rawPdfText, params = 
   extractedItems = extractedItems.map((it) => normalizeExtractedItem(toolType, it));
   extractedItems = dedupeExtractedItems(extractedItems, toolType);
 
+  if (toolType === 'activity-project-generator' || toolType === 'project-idea-lab') {
+    extractedItems = repairActivityItemTitlesFromPdf(extractedItems, text);
+  }
+
   const patternItems = extractToolItemsFromPdfText(toolType, text);
   if (patternItems.length) {
     console.log(`[PDF] Pattern extract: ${patternItems.length} ${toolType} item(s)`);
@@ -2147,6 +2193,10 @@ export async function extractAndGenerateAllItems(toolType, rawPdfText, params = 
       if (!title) return false;
       return looksLikeRealActivityTitle(title);
     });
+    const { canonicalizeActivityExtractedItem } = await import('./ai-content-engine-service.js');
+    extractedItems = extractedItems.map((it) =>
+      canonicalizeActivityExtractedItem(mapActivityRowForToolSlug(it, toolType), toolType),
+    );
   }
 
   const allTitlesInPdf = detectAllTitlesInPdf(toolType, text);
@@ -2215,7 +2265,7 @@ Format response in Markdown and keep it student-friendly.`;
   const templates = {
     'smart-study-guide-generator': `${common}
 
-Create a personalized 11-section study guide: (1) title, (2) chapter/subtopic overview, (3) learning objectives, (4) prior knowledge, (5) key concepts in simple language, (6) definitions and formulae, (7) concept flow/mind map, (8) real-life examples, (9) quick revision notes, (10) objective and subjective practice questions, (11) tips for further improvement.`,
+Create a personalized 11-section study guide: (1) short title (topic name only — never MCQ options or answers), (2) chapter/subtopic overview, (3) learning objectives, (4) prior knowledge, (5) key concepts in simple language, (6) definitions and formulae, (7) concept flow/mind map, (8) real-life examples, (9) quick revision notes, (10) objective and subjective practice questions in section 10 only, (11) tips for further improvement.`,
     'concept-breakdown-explainer': `${common}
 
 Break the concept into a 9-section breakdown: (1) concept title, (2) simple definition, (3) step-by-step breakdown, (4) real-life and Indian context examples, (5) important terms and keywords, (6) concept check questions, (7) application-based thinking question, (8) higher-order thinking prompt, (9) quick revision summary.`,

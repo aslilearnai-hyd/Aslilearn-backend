@@ -21,6 +21,7 @@ import {
 } from '../controllers/studentRankingController.js';
 import geminiService, { generateStudentTool } from '../services/gemini-service.js';
 import { fetchRotatingAiToolData } from '../services/ai-tool-rotation-service.js';
+import { buildRawDataForTool } from '../utils/build-ai-tool-raw-data.js';
 import {
   advancedAnalyticsMockData,
   buildPerQuestionAttemptAnalytics,
@@ -4715,7 +4716,7 @@ router.post('/ai/tool', async (req, res) => {
     const { toolType, gradeLevel, subject, topic, board, ...params } = req.body;
     const userId = req.userId;
 
-    const { getStudentSchoolProgramContext, validateAiToolBoardAccess } =
+    const { getStudentSchoolProgramContext, validateAiToolBoardAccess, isIitAiToolRequest } =
       await import('../utils/schoolProgram.js');
     const programCtx = await getStudentSchoolProgramContext(userId);
     const boardCheck = validateAiToolBoardAccess(programCtx.isAsliPrepExclusive, {
@@ -4733,17 +4734,12 @@ router.post('/ai/tool', async (req, res) => {
       });
     }
 
-    // Convert gradeLevel to classNumber format (Asli Prep → IIT track only)
-    let effectiveGradeLevel = gradeLevel;
-    if (programCtx.isAsliPrepExclusive) {
-      effectiveGradeLevel = 'IIT-6';
-    }
-
+    // IIT track only when the user explicitly picks IIT board (Asli Prep schools).
     let classNumber;
-    if (effectiveGradeLevel === 'IIT-6' || effectiveGradeLevel === 'Class-6-IIT') {
+    if (isIitAiToolRequest({ board, gradeLevel })) {
       classNumber = 'IIT-6';
     } else {
-      const classNum = parseInt(effectiveGradeLevel?.replace('Class ', '').trim());
+      const classNum = parseInt(String(gradeLevel || '').replace('Class ', '').trim(), 10);
       if (!isNaN(classNum)) {
         classNumber = classNum;
       } else {
@@ -4838,16 +4834,6 @@ router.post('/ai/tool', async (req, res) => {
     // For tools where topic is optional, pass empty string if not provided
     const topicForFetch = (toolType === 'personalized-revision-planner' || toolType === 'chapter-summary-creator') ? (topic || '') : topic;
 
-    const tryParseJsonPayload = (content) => {
-      const text = String(content || '').trim();
-      if (!text) return null;
-      try {
-        return JSON.parse(text);
-      } catch {
-        return null;
-      }
-    };
-
     const parsePositiveInt = (value) => {
       const num = Number.parseInt(String(value ?? ''), 10);
       return Number.isFinite(num) && num > 0 ? num : null;
@@ -4894,20 +4880,6 @@ router.post('/ai/tool', async (req, res) => {
       }
     };
 
-    const buildRawDataForTool = (activeToolType, content) => {
-      const parsed = tryParseJsonPayload(content);
-      if (!parsed) return null;
-      if (activeToolType === 'activity-project-generator' || activeToolType === 'project-idea-lab') {
-        if (Array.isArray(parsed)) return { activities: parsed };
-        if (Array.isArray(parsed?.activities)) return { activities: parsed.activities };
-        if (Array.isArray(parsed?.projects)) return { activities: parsed.projects };
-        if (Array.isArray(parsed?.data?.activities)) return { activities: parsed.data.activities };
-        if (Array.isArray(parsed?.data?.projects)) return { activities: parsed.data.projects };
-        return null;
-      }
-      return parsed;
-    };
-
     // Priority 1: Super Admin AI Tool Data (exact class+subject+topic+subtopic) with rotation.
     const { doc: adminDoc, matchType, totalCandidates, selectedIndex } = await fetchRotatingAiToolData({
       classLabel: classDisplay,
@@ -4915,15 +4887,37 @@ router.post('/ai/tool', async (req, res) => {
       topic: String(topicForFetch || '').trim().replace(/\s+/g, ' '),
       subtopic: subTopicNormalized,
       toolName: toolType,
+      preferLatest: true,
+      strictToolMatch: true,
     });
     if (adminDoc) {
+      const {
+        validateDashboardAiToolDoc,
+        DASHBOARD_INCOMPLETE_CODE,
+        DASHBOARD_INCOMPLETE_USER_MESSAGE,
+        DASHBOARD_WRONG_TOOL_CODE,
+        DASHBOARD_WRONG_TOOL_USER_MESSAGE,
+      } = await import('../services/ai-tool-dashboard-validation.js');
+      const contentGate = validateDashboardAiToolDoc(toolType, adminDoc);
+      if (!contentGate.valid) {
+        const isWrongTool = contentGate.code === DASHBOARD_WRONG_TOOL_CODE;
+        return res.status(404).json({
+          success: false,
+          code: contentGate.code || DASHBOARD_INCOMPLETE_CODE,
+          message:
+            contentGate.message ||
+            (isWrongTool ? DASHBOARD_WRONG_TOOL_USER_MESSAGE : DASHBOARD_INCOMPLETE_USER_MESSAGE),
+          missingSections: contentGate.missingSections || [],
+        });
+      }
+
       const originalContent = String(adminDoc.generatedContent || adminDoc.content || '').trim();
       const content = applyQuestionLimitToContent(
         toolType,
         originalContent,
         params.questionCount ?? req.body?.questionCount,
       );
-      const rawData = buildRawDataForTool(toolType, content);
+      const rawData = buildRawDataForTool(toolType, content, adminDoc.metadata || {});
       return res.json({
         success: true,
         data: {

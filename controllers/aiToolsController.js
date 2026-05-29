@@ -14,6 +14,12 @@ import {
   getToolRegistryMeta,
   isValidAiToolSlug,
 } from '../config/aiToolTemplates.js';
+import { buildRawDataForTool } from '../utils/build-ai-tool-raw-data.js';
+import {
+  extractActivityTitleFromMarkdown,
+  isCurriculumBreadcrumbTitle,
+} from '../services/activity-title-utils.js';
+import { canonicalizeActivityExtractedItem } from '../services/ai-content-engine-service.js';
 
 function teacherToolDisplayName(toolType) {
   return getToolDisplayTitle(toolType) || String(toolType || '').replace(/-/g, ' ');
@@ -71,32 +77,6 @@ export function formatItemToContent(toolType, item, index = 0) {
   const i = item || {};
   const n = i.sl_no || i.question_number || index + 1;
   return `## Item ${n}: ${i.title || 'Untitled'}\n\n${i.content || JSON.stringify(i, null, 2)}`.trim();
-}
-
-function tryParseJsonPayload(content) {
-  const text = String(content || '').trim();
-  if (!text) return null;
-  try {
-    return JSON.parse(text);
-  } catch {
-    return null;
-  }
-}
-
-function buildRawDataForTool(toolType, content) {
-  const parsed = tryParseJsonPayload(content);
-  if (!parsed) return null;
-
-  if (toolType === 'activity-project-generator' || toolType === 'project-idea-lab') {
-    if (Array.isArray(parsed)) return { activities: parsed };
-    if (Array.isArray(parsed?.activities)) return { activities: parsed.activities };
-    if (Array.isArray(parsed?.projects)) return { activities: parsed.projects };
-    if (Array.isArray(parsed?.data?.activities)) return { activities: parsed.data.activities };
-    if (Array.isArray(parsed?.data?.projects)) return { activities: parsed.data.projects };
-    return null;
-  }
-
-  return parsed;
 }
 
 function parsePositiveInt(value) {
@@ -390,16 +370,37 @@ export const createTeacherTool = async (req, res) => {
       subtopic: subtopicForStore,
       toolName: toolType,
       preferLatest: true,
+      strictToolMatch: true,
     });
     if (cachedDoc) {
       const cachedContent = String(cachedDoc.generatedContent || cachedDoc.content || '').trim();
       if (cachedContent) {
+        const {
+          validateDashboardAiToolDoc,
+          DASHBOARD_INCOMPLETE_CODE,
+          DASHBOARD_INCOMPLETE_USER_MESSAGE,
+          DASHBOARD_WRONG_TOOL_CODE,
+          DASHBOARD_WRONG_TOOL_USER_MESSAGE,
+        } = await import('../services/ai-tool-dashboard-validation.js');
+        const contentGate = validateDashboardAiToolDoc(toolType, cachedDoc);
+        if (!contentGate.valid) {
+          const isWrongTool = contentGate.code === DASHBOARD_WRONG_TOOL_CODE;
+          return res.status(404).json({
+            success: false,
+            code: contentGate.code || DASHBOARD_INCOMPLETE_CODE,
+            message:
+              contentGate.message ||
+              (isWrongTool ? DASHBOARD_WRONG_TOOL_USER_MESSAGE : DASHBOARD_INCOMPLETE_USER_MESSAGE),
+            missingSections: contentGate.missingSections || [],
+          });
+        }
+
         const limitedContent = applyQuestionLimitToContent(
           toolType,
           cachedContent,
           params.questionCount ?? req.body?.questionCount,
         );
-        const rawData = buildRawDataForTool(toolType, limitedContent);
+        const rawData = buildRawDataForTool(toolType, limitedContent, cachedDoc.metadata || {});
         return res.json({
           success: true,
           data: {
@@ -483,6 +484,7 @@ export const getGeneratedContent = async (req, res) => {
       subtopic: subTopic,
       toolName: toolType,
       preferLatest: true,
+      strictToolMatch: true,
     });
 
     if (matchedDoc) {
@@ -495,6 +497,28 @@ export const getGeneratedContent = async (req, res) => {
         success: true,
         data: null,
         message: 'No previously generated content available.',
+      });
+    }
+
+    const {
+      validateDashboardAiToolDoc,
+      DASHBOARD_INCOMPLETE_CODE,
+      DASHBOARD_INCOMPLETE_USER_MESSAGE,
+      DASHBOARD_WRONG_TOOL_CODE,
+      DASHBOARD_WRONG_TOOL_USER_MESSAGE,
+    } = await import('../services/ai-tool-dashboard-validation.js');
+    const contentGate = validateDashboardAiToolDoc(toolType, matchedDoc);
+    if (!contentGate.valid) {
+      return res.json({
+        success: true,
+        data: null,
+        message:
+          contentGate.message ||
+          (contentGate.code === DASHBOARD_WRONG_TOOL_CODE
+            ? DASHBOARD_WRONG_TOOL_USER_MESSAGE
+            : DASHBOARD_INCOMPLETE_USER_MESSAGE),
+        code: contentGate.code || DASHBOARD_INCOMPLETE_CODE,
+        missingSections: contentGate.missingSections || [],
       });
     }
 
@@ -715,7 +739,22 @@ export const uploadAndParsePdf = async (req, res) => {
     const extractionMeta = getLastPdfExtractionMeta();
     const now = new Date();
     const recordsToInsert = allItems.map((item, index) => {
-      const contentStr = formatItemToContent(toolType, item, index);
+      let structured =
+        toolType === 'activity-project-generator' || toolType === 'project-idea-lab'
+          ? canonicalizeActivityExtractedItem(item, toolType)
+          : item;
+      let contentStr = formatItemToContent(toolType, structured, index);
+      if (toolType === 'activity-project-generator' || toolType === 'project-idea-lab') {
+        const fromMd = extractActivityTitleFromMarkdown(contentStr);
+        const titleBad =
+          !structured?.title ||
+          isCurriculumBreadcrumbTitle(structured.title) ||
+          /^Untitled Activity\b/i.test(String(structured.title || ''));
+        if (fromMd && titleBad) {
+          structured = { ...structured, title: fromMd, name: fromMd };
+          contentStr = formatItemToContent(toolType, structured, index);
+        }
+      }
       return {
         toolName: toolType,
         toolDisplayName: TOOL_DISPLAY_NAMES[toolType] || toolType,
@@ -737,8 +776,8 @@ export const uploadAndParsePdf = async (req, res) => {
           itemIndex: index,
           totalItems: allItems.length,
           createdByRole: 'super-admin',
-          structuredContent: item,
-          renderContent: item,
+          structuredContent: structured,
+          renderContent: structured,
           contentType: 'Generated Content',
           processingStatus: 'processed',
           approvalStatus: 'approved',
