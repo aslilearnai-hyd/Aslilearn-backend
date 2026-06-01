@@ -3147,9 +3147,10 @@ export function buildCanonicalWorksheetSectionList(sections = []) {
 }
 
 /** Viewer payload for one Worksheet & MCQ row (PDF extract or generator). */
-export function buildWorksheetRenderableFromStructured(source) {
+export function buildWorksheetRenderableFromStructured(source, sourceText = '') {
   const w = normalizeWorksheetStructuredContent(
     source && typeof source === 'object' && !Array.isArray(source) ? source : {},
+    sourceText,
   );
   const canonicalSections = buildCanonicalWorksheetSectionList(w.sections);
   return {

@@ -10,6 +10,7 @@ import {
   getContentTypeDefault,
   getToolDisplayTitle,
   isValidAiToolSlug,
+  getSectionFallbackRules,
 } from '../config/aiToolTemplates.js';
 import { toolSlugMatches } from './ai-tool-rotation-service.js';
 import {
@@ -26,6 +27,8 @@ import {
   normalizePracticeQaStructuredContent,
   finalizeChapterSummaryStructuredContent,
   normalizeWorksheetStructuredContent,
+  normalizeActivityStructuredContent,
+  finalizeActivityStructuredContent,
   PRACTICE_QA_SECTION_LABELS,
   WORKSHEET_SECTION_LABELS,
 } from './ai-content-engine-service.js';
@@ -497,6 +500,9 @@ function headingFilledInStructured(toolSlug, data, heading, markdown = '') {
   if (toolSlug === 'worksheet-mcq-generator') {
     if (worksheetHeadingFilledInStructured(data, heading, markdown)) return true;
   }
+  if (toolSlug === 'activity-project-generator' || toolSlug === 'project-idea-lab') {
+    if (activityHeadingFilledInStructured(toolSlug, data, heading, markdown)) return true;
+  }
   if (toolSlug === 'my-study-decks' || toolSlug === 'flashcard-generator') {
     if (studyDeckPerCardHeadingFilled(data, heading)) return true;
   }
@@ -514,7 +520,7 @@ function splitMarkdownSections(markdown) {
   const sections = [];
   let current = null;
   for (const line of lines) {
-    const m = line.match(/^(#{1,3})\s+(.+)$/);
+    const m = line.match(/^(#{1,4})\s+(.+)$/);
     if (m) {
       if (current) sections.push(current);
       current = { heading: m[2].trim(), body: [] };
@@ -524,6 +530,159 @@ function splitMarkdownSections(markdown) {
   }
   if (current) sections.push(current);
   return sections;
+}
+
+/** Hash, numbered (1. Title), and bold (**Section**) headings — PDF uploads often use numbers only. */
+function collectMarkdownSections(markdown) {
+  /** @type {{ heading: string; body: string }[]} */
+  const out = [];
+  const seen = new Set();
+
+  const push = (heading, body) => {
+    const h = String(heading || '').trim();
+    if (!h) return;
+    const key = `${h.toLowerCase()}::${String(body || '').slice(0, 40)}`;
+    if (seen.has(key)) return;
+    seen.add(key);
+    out.push({ heading: h, body: String(body || '').trim() });
+  };
+
+  for (const sec of splitMarkdownSections(markdown)) {
+    push(sec.heading, sec.body.join('\n'));
+  }
+
+  const lines = String(markdown || '').split(/\r?\n/);
+  let current = null;
+  for (const line of lines) {
+    const numMatch = line.match(/^\s*(\d+)\.\s+(.+)$/);
+    const hashMatch = !numMatch && line.match(/^#{1,4}\s+(.+)$/);
+    const boldMatch = !numMatch && !hashMatch && line.match(/^\s*\*\*(.+?)\*\*\s*$/);
+    const headingText = numMatch ? numMatch[2].trim() : hashMatch ? hashMatch[1].trim() : boldMatch ? boldMatch[1].trim() : null;
+    if (headingText) {
+      if (current) push(current.heading, current.body);
+      current = { heading: headingText, body: '' };
+      continue;
+    }
+    if (current) {
+      current.body += (current.body ? '\n' : '') + line;
+    }
+  }
+  if (current) push(current.heading, current.body);
+
+  return out;
+}
+
+function isCanonicalHeadingLine(toolSlug, line) {
+  const raw = String(line || '').trim();
+  if (!raw) return { headingId: null };
+  const stripped = raw.replace(/^#{1,4}\s+/, '').replace(/^\s*\d+\.\s+/, '').trim();
+  const match = matchCanonicalHeadingLine(toolSlug, raw);
+  if (match.headingId) return match;
+  if (stripped !== raw) return matchCanonicalHeadingLine(toolSlug, stripped);
+  return match;
+}
+
+function markdownSectionBodyForHeading(toolSlug, markdown, heading) {
+  const lines = String(markdown || '').split(/\r?\n/);
+  for (let i = 0; i < lines.length; i++) {
+    const match = isCanonicalHeadingLine(toolSlug, lines[i]);
+    if (match.headingId !== heading.id) continue;
+    const bodyLines = [];
+    for (let j = i + 1; j < lines.length; j++) {
+      const next = isCanonicalHeadingLine(toolSlug, lines[j]);
+      if (next.headingId) break;
+      bodyLines.push(lines[j]);
+    }
+    if (isMeaningfulContent(bodyLines.join('\n'))) return true;
+  }
+  return false;
+}
+
+function copyMeaningfulField(target, targetKey, source, sourceKeys) {
+  if (isMeaningfulContent(target[targetKey])) return;
+  for (const srcKey of sourceKeys) {
+    const val = source[srcKey];
+    if (!isMeaningfulContent(val)) continue;
+    target[targetKey] = Array.isArray(val) ? [...val] : val;
+    return;
+  }
+}
+
+/** Apply template sectionFallbackRules (e.g. teacher_instructions ← differentiation). */
+function applySectionFallbacks(toolSlug, data) {
+  const rules = getSectionFallbackRules(toolSlug);
+  const out = data && typeof data === 'object' && !Array.isArray(data) ? { ...data } : {};
+  if (!rules.length) return out;
+
+  const aliasTargets = {
+    teacher_instructions: ['teacherInstructions'],
+    student_instructions: ['studentInstructions'],
+    step_by_step_procedure: ['steps', 'procedure'],
+    assessment_criteria_rubric: ['assessmentRubric'],
+    expected_learning_outcomes: ['expectedLearningOutcomes', 'learningOutcome'],
+    learning_objectives: ['learningObjectives'],
+  };
+
+  for (const rule of rules) {
+    const targets = Array.isArray(rule.ifEmpty) ? rule.ifEmpty : [];
+    const sources = Array.isArray(rule.use) ? rule.use : [];
+    for (const target of targets) {
+      copyMeaningfulField(out, target, out, sources);
+      for (const alias of aliasTargets[target] || []) {
+        copyMeaningfulField(out, alias, out, [target, ...sources]);
+      }
+      if (rule.synthesize === 'split_into_bullets' && !isMeaningfulContent(out[target])) {
+        const srcVal = sources.map((k) => out[k]).find((v) => isMeaningfulContent(v));
+        if (typeof srcVal === 'string' && srcVal.trim()) {
+          out[target] = srcVal
+            .split(/[;\n•]+/)
+            .map((s) => s.replace(/^[-*]\s*/, '').trim())
+            .filter((s) => isMeaningfulScalar(s));
+        }
+      }
+    }
+  }
+  return out;
+}
+
+function activityProcedureLines(data) {
+  const ctx = data && typeof data === 'object' ? data : {};
+  return [
+    ...(Array.isArray(ctx.step_by_step_procedure) ? ctx.step_by_step_procedure : []),
+    ...(Array.isArray(ctx.steps) ? ctx.steps : []),
+    ...(Array.isArray(ctx.procedure) ? ctx.procedure : []),
+  ]
+    .map((s) => String(s || '').trim())
+    .filter(Boolean);
+}
+
+function activityHeadingFilledInStructured(toolSlug, data, heading, markdown = '') {
+  const normalized = applySectionFallbacks(
+    toolSlug,
+    normalizeActivityStructuredContent(
+      data && typeof data === 'object' && !Array.isArray(data) ? data : {},
+      toolSlug,
+    ),
+  );
+  const id = heading.id;
+  const keys = keysForHeading(toolSlug, heading);
+  for (const key of keys) {
+    if (isMeaningfulContent(normalized[key])) return true;
+  }
+
+  if (id === 'teacher_instructions') {
+    const procText = activityProcedureLines(normalized).join('\n');
+    if (/facilitat|teacher\s+note|for\s+the\s+teacher|teacher\s+role|whole[\s-]class/i.test(procText)) {
+      return true;
+    }
+    return markdownSectionBodyForHeading(toolSlug, markdown, heading);
+  }
+  if (id === 'student_instructions') {
+    if (activityProcedureLines(normalized).length > 0) return true;
+    return markdownSectionBodyForHeading(toolSlug, markdown, heading);
+  }
+
+  return false;
 }
 
 function headingFilledInMarkdown(toolSlug, markdown, heading) {
@@ -536,12 +695,14 @@ function headingFilledInMarkdown(toolSlug, markdown, heading) {
   if (toolSlug === 'worksheet-mcq-generator') {
     if (worksheetHeadingFilledInMarkdown(markdown, heading)) return true;
   }
-  const sections = splitMarkdownSections(markdown);
+  if (toolSlug === 'activity-project-generator' || toolSlug === 'project-idea-lab') {
+    if (markdownSectionBodyForHeading(toolSlug, markdown, heading)) return true;
+  }
+  const sections = collectMarkdownSections(markdown);
   for (const sec of sections) {
     const match = matchCanonicalHeadingLine(toolSlug, sec.heading);
     if (match.headingId === heading.id) {
-      const body = sec.body.join('\n').trim();
-      return isMeaningfulContent(body);
+      return isMeaningfulContent(sec.body);
     }
   }
   if (toolSlug === 'my-study-decks' || toolSlug === 'flashcard-generator') {
@@ -977,6 +1138,21 @@ export function validateDashboardAiToolContent(toolSlug, rawContent, options = {
         ? { ...structured, ...normalized }
         : normalized;
     normalized = normalizeWorksheetStructuredContent(merged, content);
+  }
+  if (slug === 'activity-project-generator' || slug === 'project-idea-lab') {
+    const merged =
+      structured && typeof structured === 'object' && !Array.isArray(structured)
+        ? { ...structured, ...normalized }
+        : normalized;
+    const meta =
+      options.metadata && typeof options.metadata === 'object'
+        ? /** @type {Record<string, unknown>} */ (options.metadata)
+        : {};
+    normalized = finalizeActivityStructuredContent(
+      applySectionFallbacks(slug, normalizeActivityStructuredContent(merged, slug)),
+      meta,
+      slug,
+    );
   }
 
   /** Worksheet section regrouping may move rows between C/D — keep raw sections[] for heading checks. */

@@ -12,34 +12,65 @@ export const WORKSHEET_CANONICAL_SECTIONS = [
 ];
 
 const SECTION_HEADER_DETECTORS = [
-  { label: WORKSHEET_CANONICAL_SECTIONS[0], re: /^section\s*a\b|^a[\).:\s-]+.*(mcq|multiple\s*choice)/i },
+  { label: WORKSHEET_CANONICAL_SECTIONS[0], re: /^section\s*a\b|^a[\).:\s-]+.*(mcq|multiple\s*choice|objective)/i },
   { label: WORKSHEET_CANONICAL_SECTIONS[0], re: /^multiple\s*choice\s*questions?/i },
+  { label: WORKSHEET_CANONICAL_SECTIONS[0], re: /^objective\s*type\s*questions?/i },
+  { label: WORKSHEET_CANONICAL_SECTIONS[0], re: /^part\s*[-\s]*a\b.*(mcq|choice|objective)/i },
   { label: WORKSHEET_CANONICAL_SECTIONS[1], re: /^section\s*b\b|^b[\).:\s-]+.*(fill|blank|fib)/i },
   { label: WORKSHEET_CANONICAL_SECTIONS[1], re: /^fill\s*in\s*the\s*blanks?/i },
+  { label: WORKSHEET_CANONICAL_SECTIONS[1], re: /^part\s*[-\s]*b\b.*(fill|blank)/i },
   { label: WORKSHEET_CANONICAL_SECTIONS[2], re: /^section\s*c\b|^c[\).:\s-]+.*(very\s*short|vsa)/i },
   { label: WORKSHEET_CANONICAL_SECTIONS[2], re: /^very\s*short\s*answer/i },
+  { label: WORKSHEET_CANONICAL_SECTIONS[2], re: /^part\s*[-\s]*c\b.*(very\s*short|vsa)/i },
   { label: WORKSHEET_CANONICAL_SECTIONS[3], re: /^section\s*d\b|^d[\).:\s-]+.*short\s*answer/i },
   { label: WORKSHEET_CANONICAL_SECTIONS[3], re: /^short\s*answer\s*questions?/i },
+  { label: WORKSHEET_CANONICAL_SECTIONS[3], re: /^part\s*[-\s]*d\b.*short\s*answer/i },
   {
     label: WORKSHEET_CANONICAL_SECTIONS[4],
     re: /^section\s*[ef]\b|^[ef][\).:\s-]+.*(competency|application|real)/i,
   },
   { label: WORKSHEET_CANONICAL_SECTIONS[4], re: /competency|real[\s-]*life\s*application/i },
+  { label: WORKSHEET_CANONICAL_SECTIONS[4], re: /^part\s*[-\s]*[ef]\b.*(competency|application|real)/i },
 ];
+
+/** Strip markdown/numbering prefixes so "4. Section A: MCQs" matches section detectors. */
+function stripWorksheetLineDecorations(line) {
+  let t = String(line || '').trim();
+  if (!t) return '';
+  t = t.replace(/^#{1,4}\s+/, '');
+  t = t.replace(/^\*\*(.+)\*\*$/, '$1').trim();
+  t = t.replace(/^\d{1,2}[\.\):\-]\s+/, '');
+  return t.trim();
+}
+
+const QUESTION_START_RE =
+  /^(?:q(?:uestion)?\.?\s*)?(\d{1,3})[\).:\-]\s+|^\((\d{1,3})\)\s+|^\d{1,3}[\).:\-]\s+/i;
+
+const OPTION_LINE_RE = /^(?:\([a-d]\)|[a-d][\).])\s+/i;
 
 const isHeadingLikeLine = (text) =>
   /\b(chapter|topic|lesson|unit|syllabus)\b/i.test(text) &&
   !/[?]/.test(text) &&
   !/_{2,}/.test(text);
 
-const looksLikeQuestionPrompt = (text) =>
-  /[?]|_{3,}|^\s*(what|which|why|how|define|choose|fill|select|state|identify|explain|describe|list)\b/i.test(
-    text,
-  );
+const looksLikeQuestionPrompt = (text) => {
+  const t = String(text || '').trim();
+  if (!t || isHeadingLikeLine(t)) return false;
+  if (/[?]|_{3,}/.test(t)) return true;
+  if (
+    /^\s*(what|which|why|how|define|choose|fill|select|state|identify|explain|describe|list|write|convert|find|calculate|solve|express|match|arrange|compare|name|complete|circle|tick|read|show|represent|form|make|give|add|subtract|multiply|divide|place|round|estimate|expand|simplify)\b/i.test(
+      t,
+    )
+  ) {
+    return true;
+  }
+  const words = t.split(/\s+/).filter(Boolean).length;
+  return words >= 5 && words <= 80 && !/^(section|answer\s*key|bloom|instructions|learning\s+objectives)\b/i.test(t);
+};
 
 function detectSectionHeaderLine(line) {
-  const t = String(line || '').trim();
-  if (!t || t.length > 120) return '';
+  const t = stripWorksheetLineDecorations(line);
+  if (!t || t.length > 140) return '';
   for (const { label, re } of SECTION_HEADER_DETECTORS) {
     if (re.test(t)) return label;
   }
@@ -96,13 +127,23 @@ function sanitizeWorksheetQuestions(questions = []) {
 function parseQuestionBlock(chunk, currentSection) {
   const normalized = String(chunk || '').replace(/\s+/g, ' ').trim();
   if (!normalized) return null;
-  const body = normalized.replace(/^(?:q(?:uestion)?\s*)?\d+[\).:-]\s*/i, '').trim();
+  const body = normalized
+    .replace(/^(?:q(?:uestion)?\.?\s*)?\d+[\).:\-]\s*/i, '')
+    .replace(/^\(\d{1,3}\)\s+/, '')
+    .trim();
   const optionMatches = Array.from(
-    body.matchAll(/([A-D])\)\s*([^]+?)(?=(?:\s+[A-D]\)\s*)|(?:\s+(?:answer|correct\s*answer)\s*[:\-])|$)/gi),
+    body.matchAll(
+      /(?:\(([a-d])\)|(?:^|\s)([A-D])\))\s*([^]+?)(?=(?:\s*\([a-d]\)\s*)|(?:\s+[A-D]\)\s*)|(?:\s+(?:answer|correct\s*answer)\s*[:\-])|$)/gi,
+    ),
   );
   const answerMatch = body.match(/(?:answer|correct\s*answer)\s*[:\-]\s*([^]+)$/i);
   const questionText = optionMatches.length > 0 ? body.slice(0, optionMatches[0].index).trim() : body;
-  const options = optionMatches.map((m) => `${m[1].toUpperCase()}) ${String(m[2] || '').trim()}`).filter(Boolean);
+  const options = optionMatches
+    .map((m) => {
+      const letter = String(m[1] || m[2] || 'A').toUpperCase();
+      return `${letter}) ${String(m[3] || '').trim()}`;
+    })
+    .filter(Boolean);
   const answer = answerMatch ? String(answerMatch[1] || '').trim() : '';
   const question = questionText.replace(/\s*(?:answer|correct\s*answer)\s*[:\-]\s*[^]+$/i, '').trim();
   if (!question || isHeadingLikeLine(question)) return null;
@@ -122,10 +163,10 @@ export function extractQuestionsFromText(value, defaultSection = '') {
   if (!text) return [];
 
   const blocks = text
-    .split(/(?=(?:^|\n|\s)(?:q(?:uestion)?\s*)?\d+[\).:-]\s*)/gi)
+    .split(/(?=(?:^|\n)(?:(?:q(?:uestion)?\.?\s*)?\d{1,3}[\).:\-]\s+|\(\d{1,3}\)\s+))/gi)
     .map((chunk) => chunk.trim())
     .filter(Boolean)
-    .filter((chunk) => /^(?:q(?:uestion)?\s*)?\d+[\).:-]\s*/i.test(chunk));
+    .filter((chunk) => QUESTION_START_RE.test(chunk));
 
   return blocks
     .map((chunk) => parseQuestionBlock(chunk, defaultSection))
@@ -153,18 +194,18 @@ export function extractQuestionsBySectionHeaders(pdfText) {
       flush();
       break;
     }
-    const header = detectSectionHeaderLine(line);
+    const header = detectSectionHeaderLine(stripWorksheetLineDecorations(line));
     if (header) {
       flush();
       currentSection = header;
       continue;
     }
-    if (/^(?:q(?:uestion)?\s*)?\d+[\).:-]\s*/i.test(line)) {
+    if (QUESTION_START_RE.test(line)) {
       flush();
       chunk = line;
       continue;
     }
-    if (/^[A-D]\)\s+/i.test(line) && chunk) {
+    if (OPTION_LINE_RE.test(line) && chunk) {
       chunk += ` ${line}`;
       continue;
     }
@@ -179,9 +220,23 @@ export function extractQuestionsBySectionHeaders(pdfText) {
  * @param {number} [maxQuestions]
  * @returns {Array<Record<string, unknown>>}
  */
+/** Flatten stored markdown (### sections, **Q1.**) into plain text for regex extractors. */
+export function worksheetTextForPatternExtract(sourceText) {
+  let t = String(sourceText || '');
+  if (!t.trim()) return '';
+  t = t.replace(/\r\n/g, '\n');
+  t = t.replace(/^\s*#{1,4}\s+/gm, '');
+  t = t.replace(/^\s*\d{1,2}\.\s+(Section\s+[A-F][^\n]*)/gim, '\n$1\n');
+  t = t.replace(/\*\*Q(\d+)\.\*\*/gi, '\n$1. ');
+  t = t.replace(/\*\*Answer:\*\*/gi, '\nAnswer: ');
+  t = t.replace(/\*\*([^*\n]+)\*\*/g, '$1');
+  return t;
+}
+
 export function extractWorksheetItemsFromPdfText(pdfText, maxQuestions = 80) {
-  const bySection = extractQuestionsBySectionHeaders(pdfText);
-  const flat = extractQuestionsFromText(pdfText);
+  const plain = worksheetTextForPatternExtract(pdfText);
+  const bySection = extractQuestionsBySectionHeaders(plain);
+  const flat = extractQuestionsFromText(plain);
   const merged = [...bySection];
   const seen = new Set(merged.map((q) => String(q.question || '').toLowerCase()));
   for (const q of flat) {
@@ -499,6 +554,21 @@ function mergeWorksheetGroupToOne(group, params = {}) {
     _fromPdf: true,
   };
 
+  const pdfText = String(params.rawPdfText || params.pdfText || '').trim();
+  if (pdfText) {
+    const fromPdf = sanitizeWorksheetQuestions(extractWorksheetItemsFromPdfText(pdfText, 120));
+    if (fromPdf.length) {
+      out.sections = mergeWorksheetSectionLists(out.sections || [], groupQuestionsIntoSections(fromPdf));
+      const flat = out.sections.flatMap((s) => s.questions || []);
+      if (flat.length && !String(out.answer_key || '').trim()) {
+        const lines = flat
+          .filter((q) => String(q.answer || '').trim())
+          .map((q) => `Q${q.question_number ?? ''}: ${q.answer}`.replace(/^Q:\s*/, 'Q: '));
+        if (lines.length) out.answer_key = lines.join('\n');
+      }
+    }
+  }
+
   if (
     group.length === 1 &&
     String(group[0]?.question || '').trim() &&
@@ -567,17 +637,17 @@ export function splitPdfTextByWorksheetSections(pdfText) {
       if (buffer.length) buffer.push('');
       continue;
     }
-    const header = detectSectionHeaderLine(line);
+    if (/^answer\s*key\b/i.test(line) || /^marking\s*scheme\b/i.test(line)) {
+      buffer.push(line);
+      flush();
+      break;
+    }
+    const header = detectSectionHeaderLine(stripWorksheetLineDecorations(line));
     if (header) {
       flush();
       currentSection = header;
       buffer.push(line);
       continue;
-    }
-    if (/^answer\s*key\b/i.test(line) || /^marking\s*scheme\b/i.test(line)) {
-      buffer.push(line);
-      flush();
-      break;
     }
     buffer.push(line);
   }

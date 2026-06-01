@@ -43,6 +43,48 @@ function uniqueSorted(values) {
   return [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b));
 }
 
+function classNumberFromLabel(value) {
+  const digits = String(value || '').replace(/\D/g, '');
+  const n = parseInt(digits, 10);
+  return Number.isNaN(n) ? Number.MAX_SAFE_INTEGER : n;
+}
+
+/** Class 6, 7, 8, 10 — not Class 10 before Class 6 (plain localeCompare). */
+function uniqueSortedClassLabels(values) {
+  return [...new Set(values.filter(Boolean))].sort((a, b) => {
+    const diff = classNumberFromLabel(a) - classNumberFromLabel(b);
+    if (diff !== 0) return diff;
+    return a.localeCompare(b, 'en', { numeric: true, sensitivity: 'base' });
+  });
+}
+
+function chapterNumberFromTopicLabel(value) {
+  const s = String(value || '').trim();
+  if (!s) return null;
+  const chapterMatch = s.match(/\b(?:chapter|ch\.?|unit)\s*[#:]?\s*(\d+)\b/i);
+  if (chapterMatch) {
+    const n = parseInt(chapterMatch[1], 10);
+    return Number.isNaN(n) ? null : n;
+  }
+  const leading = s.match(/^(\d+)\s*[.\):\-–]/);
+  if (leading) {
+    const n = parseInt(leading[1], 10);
+    return Number.isNaN(n) ? null : n;
+  }
+  return null;
+}
+
+function uniqueSortedChapterTopics(values) {
+  return [...new Set(values.filter(Boolean))].sort((a, b) => {
+    const aCh = chapterNumberFromTopicLabel(a);
+    const bCh = chapterNumberFromTopicLabel(b);
+    if (aCh != null && bCh != null && aCh !== bCh) return aCh - bCh;
+    if (aCh != null && bCh == null) return -1;
+    if (aCh == null && bCh != null) return 1;
+    return a.localeCompare(b, 'en', { numeric: true, sensitivity: 'base' });
+  });
+}
+
 function toOptionRows(values) {
   return values.map((value) => ({ id: value, name: value, label: value }));
 }
@@ -62,7 +104,7 @@ export const listClasses = async (req, res) => {
     applyBoardFilter(filter, board);
 
     const rows = await AiToolTopic.find(filter).select('classLabel').lean();
-    const classes = uniqueSorted(rows.map((row) => normalizeText(row.classLabel)));
+    const classes = uniqueSortedClassLabels(rows.map((row) => normalizeText(row.classLabel)));
     return res.json({
       success: true,
       data: toOptionRows(classes),
@@ -123,7 +165,7 @@ export const listTopics = async (req, res) => {
     applyBoardFilter(filter, board);
 
     const rows = await AiToolTopic.find(filter).select('topicName').lean();
-    const topics = uniqueSorted(rows.map((row) => normalizeText(row.topicName)));
+    const topics = uniqueSortedChapterTopics(rows.map((row) => normalizeText(row.topicName)));
     return res.json({
       success: true,
       data: toOptionRows(topics),
@@ -161,7 +203,7 @@ export const listSubtopics = async (req, res) => {
     applyBoardFilter(filter, board);
 
     const rows = await AiToolTopic.find(filter).select('subTopic').lean();
-    const subTopics = uniqueSorted(rows.map((row) => normalizeText(row.subTopic)));
+    const subTopics = uniqueSortedChapterTopics(rows.map((row) => normalizeText(row.subTopic)));
     return res.json({
       success: true,
       data: toOptionRows(subTopics),

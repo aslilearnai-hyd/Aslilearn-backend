@@ -419,12 +419,15 @@ function enrichWorksheetRowForApi(data) {
     data.structuredContent && typeof data.structuredContent === 'object' && !Array.isArray(data.structuredContent)
       ? { ...data.structuredContent }
       : {};
-  const normalized = canonicalizeWorksheetExtractedItem(structured);
+  const sourceText = String(
+    data.generatedContent || data.content || data.markdown || '',
+  ).trim();
+  const normalized = canonicalizeWorksheetExtractedItem(structured, sourceText);
   const ct = String(data.contentType || '').trim() || 'Worksheet';
   return {
     ...data,
     structuredContent: normalized,
-    renderContent: buildWorksheetRenderableFromStructured(normalized),
+    renderContent: buildWorksheetRenderableFromStructured(normalized, sourceText),
     contentType: ct,
   };
 }
@@ -893,6 +896,30 @@ async function fetchPaginatedPdfList({ query, page, limit, summary }) {
   };
 }
 
+async function purgePdfSourceDocument(sourceId) {
+  const sid = String(sourceId || '').trim();
+  if (!mongoose.Types.ObjectId.isValid(sid)) return;
+  const srcDoc = await AiContentEngineSource.findById(sid).lean();
+  if (!srcDoc?._id) return;
+  await AiContentEngineChunk.deleteMany({ sourcePdfId: srcDoc._id });
+  await deleteFromConfiguredStorage({
+    storageKey: srcDoc.storageKey,
+    fileUrl: srcDoc.fileUrl,
+    storageProvider: srcDoc.storageProvider,
+  });
+  await AiContentEngineSource.findByIdAndDelete(srcDoc._id);
+}
+
+async function countMastersForPdfSource(sourceIdStr) {
+  if (!sourceIdStr) return 0;
+  return AiToolGeneration.countDocuments({
+    $or: [
+      { 'metadata.contentEngineSourceId': sourceIdStr },
+      { 'metadata.aiPdfSourceId': sourceIdStr },
+    ],
+  });
+}
+
 async function resolvePdfMasterAndSource(id) {
   if (!mongoose.Types.ObjectId.isValid(id)) return { master: null, source: null };
   const master = await AiToolGeneration.findOne({ _id: id, sourceType: 'ai_pdf' }).lean();
@@ -1236,7 +1263,7 @@ router.post(
                             resolvedToolSlug === 'exam-question-paper-generator'
                           ? canonicalizeExamPaperExtractedItem(metaClean, resolvedToolSlug)
                           : resolvedToolSlug === 'worksheet-mcq-generator'
-                            ? canonicalizeWorksheetExtractedItem(metaClean)
+                            ? canonicalizeWorksheetExtractedItem(metaClean, extractedText)
                             : resolvedToolSlug === 'reading-practice-room' ||
                                 resolvedToolSlug === 'story-passage-creator'
                               ? canonicalizeStoryExtractedItem(metaClean, resolvedToolSlug)
@@ -1485,47 +1512,101 @@ router.get('/pdf/list', verifyToken, authorizeRoles('teacher', 'admin', 'super-a
   }
 });
 
-// DELETE /api/pdf/:id — accepts master (aitoolgenerations) id or legacy content-engine source id
+async function deletePdfRecordById(requestedId) {
+  const id = String(requestedId || '').trim();
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return { ok: false, status: 400, message: 'Invalid id' };
+  }
+
+  const { master, source } = await resolvePdfMasterAndSource(id);
+  if (!source && !master) {
+    return { ok: false, status: 404, message: 'PDF source not found' };
+  }
+
+  const bindSourceIdStr =
+    source?._id != null
+      ? String(source._id)
+      : master?.metadata?.contentEngineSourceId || master?.metadata?.aiPdfSourceId
+        ? String(master.metadata.contentEngineSourceId || master.metadata.aiPdfSourceId)
+        : '';
+
+  if (master && String(master._id) === id) {
+    await AiToolGeneration.findByIdAndDelete(master._id);
+    let message = 'Record deleted';
+    if (bindSourceIdStr) {
+      const remaining = await countMastersForPdfSource(bindSourceIdStr);
+      if (remaining === 0) {
+        await purgePdfSourceDocument(bindSourceIdStr);
+        message = 'Record and PDF source deleted';
+      }
+    }
+    return { ok: true, message };
+  }
+
+  if (source && String(source._id) === id) {
+    await AiToolGeneration.deleteMany({
+      $or: [
+        { 'metadata.contentEngineSourceId': String(source._id) },
+        { 'metadata.aiPdfSourceId': String(source._id) },
+      ],
+    });
+    await purgePdfSourceDocument(String(source._id));
+    return { ok: true, message: 'PDF source and all linked records deleted' };
+  }
+
+  if (master?._id) {
+    await AiToolGeneration.findByIdAndDelete(master._id);
+    if (bindSourceIdStr && (await countMastersForPdfSource(bindSourceIdStr)) === 0) {
+      await purgePdfSourceDocument(bindSourceIdStr);
+    }
+    return { ok: true, message: 'Record deleted' };
+  }
+
+  return { ok: false, status: 404, message: 'PDF source not found' };
+}
+
+// POST /api/pdf/bulk-delete — delete many master rows (one per list card), not whole PDF source
+router.post('/pdf/bulk-delete', verifyToken, authorizeRoles('teacher', 'admin', 'super-admin'), async (req, res) => {
+  try {
+    const rawIds = Array.isArray(req.body?.ids) ? req.body.ids : [];
+    const ids = [...new Set(rawIds.map((x) => String(x || '').trim()).filter(Boolean))].filter((id) =>
+      mongoose.Types.ObjectId.isValid(id),
+    );
+    if (ids.length === 0) {
+      return res.status(400).json({ success: false, message: 'No valid record ids provided' });
+    }
+
+    let deletedCount = 0;
+    const errors = [];
+    for (const id of ids) {
+      const result = await deletePdfRecordById(id);
+      if (result.ok) {
+        deletedCount += 1;
+      } else {
+        errors.push({ id, message: result.message || 'Delete failed' });
+      }
+    }
+
+    return res.json({
+      success: deletedCount > 0,
+      deletedCount,
+      failedCount: errors.length,
+      errors: errors.length > 0 ? errors.slice(0, 20) : undefined,
+      message: `Deleted ${deletedCount} of ${ids.length} record(s)`,
+    });
+  } catch (error) {
+    return res.status(500).json({ success: false, message: error.message || 'Bulk delete failed' });
+  }
+});
+
+// DELETE /api/pdf/:id — master id deletes one generation; source id deletes all linked rows + PDF file
 router.delete('/pdf/:id', verifyToken, authorizeRoles('teacher', 'admin', 'super-admin'), async (req, res) => {
   try {
-    const { master, source } = await resolvePdfMasterAndSource(req.params.id);
-    if (!source && !master) {
-      return res.status(404).json({ success: false, message: 'PDF source not found' });
+    const result = await deletePdfRecordById(req.params.id);
+    if (!result.ok) {
+      return res.status(result.status || 500).json({ success: false, message: result.message || 'Delete failed' });
     }
-
-    const bindSourceIdStr =
-      source?._id != null
-        ? String(source._id)
-        : master?.metadata?.contentEngineSourceId || master?.metadata?.aiPdfSourceId
-          ? String(master.metadata.contentEngineSourceId || master.metadata.aiPdfSourceId)
-          : '';
-
-    if (bindSourceIdStr) {
-      await AiToolGeneration.deleteMany({
-        $or: [
-          { 'metadata.contentEngineSourceId': bindSourceIdStr },
-          { 'metadata.aiPdfSourceId': bindSourceIdStr },
-        ],
-      });
-    } else if (master?._id) {
-      await AiToolGeneration.findByIdAndDelete(master._id);
-    }
-
-    const srcDoc =
-      source ||
-      (bindSourceIdStr
-        ? await AiContentEngineSource.findById(bindSourceIdStr).lean()
-        : null);
-    if (srcDoc?._id) {
-      await AiContentEngineChunk.deleteMany({ sourcePdfId: srcDoc._id });
-      await deleteFromConfiguredStorage({
-        storageKey: srcDoc.storageKey,
-        fileUrl: srcDoc.fileUrl,
-        storageProvider: srcDoc.storageProvider,
-      });
-      await AiContentEngineSource.findByIdAndDelete(srcDoc._id);
-    }
-    return res.json({ success: true, message: 'PDF source and chunks deleted' });
+    return res.json({ success: true, message: result.message });
   } catch (error) {
     return res.status(500).json({ success: false, message: error.message || 'Delete failed' });
   }

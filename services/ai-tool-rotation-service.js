@@ -340,7 +340,11 @@ export async function fetchRotatingAiToolData({
 
     const fuzzyMatches = pool.filter((doc) => {
       const topicOk = !normalizedTopic || looseIncludesEitherWay(doc.topic || '', normalizedTopic);
-      const subtopicOk = !normalizedSubtopic || looseIncludesEitherWay(doc.subtopic || '', normalizedSubtopic);
+      const docSub = String(doc.subtopic || '').trim();
+      const subtopicOk =
+        !normalizedSubtopic ||
+        !docSub ||
+        looseIncludesEitherWay(docSub, normalizedSubtopic);
       const toolOk =
         !strictToolMatch || toolSlugMatches(doc.toolName, base.keyTool || normalizedTool);
       return topicOk && subtopicOk && toolOk;

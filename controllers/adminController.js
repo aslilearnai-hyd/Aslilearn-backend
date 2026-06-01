@@ -666,6 +666,33 @@ export const deleteTeacher = async (req, res) => {
   }
 };
 
+export const bulkDeleteTeachers = async (req, res) => {
+  try {
+    const rawIds = Array.isArray(req.body?.ids) ? req.body.ids : [];
+    const ids = [...new Set(rawIds.map((id) => String(id || '').trim()).filter(Boolean))].filter((id) =>
+      mongoose.Types.ObjectId.isValid(id),
+    );
+    if (ids.length === 0) {
+      return res.status(400).json({ success: false, message: 'No valid teacher ids provided' });
+    }
+
+    const filter = { _id: { $in: ids } };
+    if (req.adminId) {
+      filter.adminId = req.adminId;
+    }
+
+    const result = await Teacher.deleteMany(filter);
+    return res.json({
+      success: true,
+      deletedCount: result.deletedCount ?? 0,
+      message: `Deleted ${result.deletedCount ?? 0} teacher(s) successfully`,
+    });
+  } catch (error) {
+    console.error('Bulk delete teachers error:', error);
+    return res.status(500).json({ success: false, message: 'Failed to delete teachers' });
+  }
+};
+
 // Video/Course Management
 export const getVideos = async (req, res) => {
   try {

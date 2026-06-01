@@ -392,21 +392,32 @@ export const deleteAiToolGenerationById = async (req, res) => {
       return res.json({ success: true, message: 'Record deleted' });
     }
 
-    if (doc.sourceType === 'ai_pdf' && doc.metadata?.contentEngineSourceId) {
-      const sid = doc.metadata.contentEngineSourceId;
-      const source = await AiContentEngineSource.findById(sid);
-      if (source) {
-        await AiContentEngineChunk.deleteMany({ sourcePdfId: source._id });
-        await deleteFromConfiguredStorage({
-          storageKey: source.storageKey,
-          fileUrl: source.fileUrl,
-          storageProvider: source.storageProvider,
+    await AiToolGeneration.findByIdAndDelete(id);
+
+    if (doc.sourceType === 'ai_pdf') {
+      const sid = String(doc.metadata?.contentEngineSourceId || doc.metadata?.aiPdfSourceId || '').trim();
+      if (sid && mongoose.Types.ObjectId.isValid(sid)) {
+        const remaining = await AiToolGeneration.countDocuments({
+          $or: [
+            { 'metadata.contentEngineSourceId': sid },
+            { 'metadata.aiPdfSourceId': sid },
+          ],
         });
-        await AiContentEngineSource.findByIdAndDelete(source._id);
+        if (remaining === 0) {
+          const source = await AiContentEngineSource.findById(sid);
+          if (source) {
+            await AiContentEngineChunk.deleteMany({ sourcePdfId: source._id });
+            await deleteFromConfiguredStorage({
+              storageKey: source.storageKey,
+              fileUrl: source.fileUrl,
+              storageProvider: source.storageProvider,
+            });
+            await AiContentEngineSource.findByIdAndDelete(source._id);
+          }
+        }
       }
     }
 
-    await AiToolGeneration.findByIdAndDelete(id);
     return res.json({ success: true, message: 'Record deleted' });
   } catch (error) {
     console.error('deleteAiToolGenerationById error:', error);

@@ -2167,6 +2167,8 @@ export async function extractAndGenerateAllItems(toolType, rawPdfText, params = 
 
   if (toolType === 'worksheet-mcq-generator' && extractedItems.length) {
     extractedItems = consolidateWorksheetExtractItems(extractedItems, { ...params, rawPdfText: text });
+    const { canonicalizeWorksheetExtractedItem } = await import('./ai-content-engine-service.js');
+    extractedItems = extractedItems.map((it) => canonicalizeWorksheetExtractedItem(it, text));
   }
 
   if (toolType === 'homework-creator' && extractedItems.length) {

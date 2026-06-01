@@ -36,6 +36,7 @@ import {
   createTeacher,
   updateTeacher,
   deleteTeacher,
+  bulkDeleteTeachers,
   assignSubjects,
   assignClasses,
   getStudentAnalytics,
@@ -150,6 +151,7 @@ router.post('/classes/:classNumber/assign-subjects', assignSubjectsToClass);
 // Teacher Management Routes
 router.get('/teachers', getTeachers);
 router.post('/teachers', addAdminIdToBody, createTeacher);
+router.post('/teachers/bulk-delete', bulkDeleteTeachers);
 router.post('/teachers/upload', upload.single('file'), uploadTeachersCsv);
 router.put('/teachers/:id', verifyDataOwnership(Teacher), updateTeacher);
 router.delete('/teachers/:id', verifyDataOwnership(Teacher), deleteTeacher);
