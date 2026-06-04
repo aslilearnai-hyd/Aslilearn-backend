@@ -13,6 +13,7 @@ import {
   isDeprecatedAiToolIdentifier,
   isValidAiToolSlug,
 } from '../config/aiToolTemplates.js';
+import { splitMergedActivityTailSections } from './activity-section-headers.js';
 import { cleanActivityTitleForStorage } from './activity-title-utils.js';
 import {
   resolveStudyGuideDisplayTitle,
@@ -265,7 +266,7 @@ function finalizeActivitySteps(steps, materials, learningOutcome) {
 
 /** Teacher Activity / Project Generator — 13-section workbook format. */
 export function normalizeActivityProjectStructuredContent(raw) {
-  const source = prepareActivitySource(raw);
+  const source = prepareActivitySource(splitMergedActivityTailSections(raw && typeof raw === 'object' ? raw : {}));
 
   let materials = coerceBulletLines(source.materials);
   if (!materials.length) {

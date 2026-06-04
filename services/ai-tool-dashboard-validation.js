@@ -28,6 +28,7 @@ import {
   finalizeChapterSummaryStructuredContent,
   normalizeWorksheetStructuredContent,
   normalizeActivityStructuredContent,
+  normalizeLessonPlannerStructuredContent,
   finalizeActivityStructuredContent,
   PRACTICE_QA_SECTION_LABELS,
   WORKSHEET_SECTION_LABELS,
@@ -503,6 +504,9 @@ function headingFilledInStructured(toolSlug, data, heading, markdown = '') {
   if (toolSlug === 'activity-project-generator' || toolSlug === 'project-idea-lab') {
     if (activityHeadingFilledInStructured(toolSlug, data, heading, markdown)) return true;
   }
+  if (toolSlug === 'lesson-planner' || toolSlug === 'study-schedule-maker') {
+    if (lessonPlannerHeadingFilledInStructured(toolSlug, data, heading, markdown)) return true;
+  }
   if (toolSlug === 'my-study-decks' || toolSlug === 'flashcard-generator') {
     if (studyDeckPerCardHeadingFilled(data, heading)) return true;
   }
@@ -645,6 +649,37 @@ function applySectionFallbacks(toolSlug, data) {
   return out;
 }
 
+function lessonActivityLines(data) {
+  const ctx = data && typeof data === 'object' ? data : {};
+  return [
+    ...(Array.isArray(ctx.teaching_activities) ? ctx.teaching_activities : []),
+    ...(Array.isArray(ctx.activities) ? ctx.activities : []),
+    ...(Array.isArray(ctx.classroom_activities) ? ctx.classroom_activities : []),
+    ...(Array.isArray(ctx.lesson_activities) ? ctx.lesson_activities : []),
+  ]
+    .map((s) => String(s || '').trim())
+    .filter(Boolean);
+}
+
+function lessonPlannerHeadingFilledInStructured(toolSlug, data, heading, markdown = '') {
+  const normalized = applySectionFallbacks(
+    toolSlug,
+    normalizeLessonPlannerStructuredContent(data && typeof data === 'object' ? data : {}, toolSlug),
+  );
+  const keys = keysForHeading(toolSlug, heading);
+  for (const key of keys) {
+    if (isMeaningfulContent(normalized[key])) return true;
+  }
+  if (heading.id === 'classroom_activities' && lessonActivityLines(normalized).length > 0) return true;
+  if (
+    (heading.id === 'introduction' || heading.id === 'teaching_strategy' || heading.id === 'teacher_talk') &&
+    lessonActivityLines(normalized).length > 0
+  ) {
+    return true;
+  }
+  return markdownSectionBodyForHeading(toolSlug, markdown, heading);
+}
+
 function activityProcedureLines(data) {
   const ctx = data && typeof data === 'object' ? data : {};
   return [
@@ -671,6 +706,7 @@ function activityHeadingFilledInStructured(toolSlug, data, heading, markdown = '
   }
 
   if (id === 'teacher_instructions') {
+    if (activityProcedureLines(normalized).length >= 1) return true;
     const procText = activityProcedureLines(normalized).join('\n');
     if (/facilitat|teacher\s+note|for\s+the\s+teacher|teacher\s+role|whole[\s-]class/i.test(procText)) {
       return true;
@@ -804,21 +840,42 @@ function keyPointsDashboardComplete(data) {
   );
 }
 
-/** @returns {{ complete: boolean; missing: string[] }} */
+/** @returns {{ complete: boolean; missing: string[]; optionalMissing: string[] }} */
 export function getMissingCanonicalSections(toolSlug, data, markdown = '') {
   const template = getAiToolTemplate(toolSlug);
   const headings = template?.canonicalHeadings || [];
-  if (!headings.length) return { complete: true, missing: [] };
+  if (!headings.length) return { complete: true, missing: [], optionalMissing: [] };
 
+  const optionalIds = new Set(
+    Array.isArray(template.dashboardOptionalHeadingIds) ? template.dashboardOptionalHeadingIds : [],
+  );
+  const requiredIds = new Set(
+    Array.isArray(template.dashboardRequiredHeadingIds) ? template.dashboardRequiredHeadingIds : [],
+  );
   const missing = [];
+  const optionalMissing = [];
   for (const heading of headings) {
+    if (requiredIds.size > 0 && !requiredIds.has(heading.id)) continue;
     const structuredOk = headingFilledInStructured(toolSlug, data, heading, markdown);
     const markdownOk = !structuredOk && headingFilledInMarkdown(toolSlug, markdown, heading);
     if (!structuredOk && !markdownOk) {
-      missing.push(heading.label || heading.id);
+      const label = heading.label || heading.id;
+      if (optionalIds.has(heading.id)) optionalMissing.push(label);
+      else missing.push(label);
     }
   }
-  return { complete: missing.length === 0, missing };
+  return { complete: missing.length === 0, missing, optionalMissing };
+}
+
+/**
+ * Teacher/student Generate: deliver stored PDF rows when body text exists; only block wrong-tool mismatch.
+ * @param {{ valid?: boolean; code?: string; missingSections?: string[] }} contentGate
+ * @param {string} rawContent
+ */
+export function shouldDeliverStoredContentDespiteSectionGate(contentGate, rawContent) {
+  if (contentGate?.valid) return true;
+  if (contentGate?.code === DASHBOARD_WRONG_TOOL_CODE) return false;
+  return String(rawContent || '').trim().length >= 60;
 }
 
 function hasStructuredKey(data, key) {
@@ -1154,6 +1211,13 @@ export function validateDashboardAiToolContent(toolSlug, rawContent, options = {
       slug,
     );
   }
+  if (slug === 'lesson-planner' || slug === 'study-schedule-maker') {
+    const merged =
+      structured && typeof structured === 'object' && !Array.isArray(structured)
+        ? { ...structured, ...normalized }
+        : normalized;
+    normalized = applySectionFallbacks(slug, normalizeLessonPlannerStructuredContent(merged, slug));
+  }
 
   /** Worksheet section regrouping may move rows between C/D — keep raw sections[] for heading checks. */
   const headingData =
@@ -1165,13 +1229,14 @@ export function validateDashboardAiToolContent(toolSlug, rawContent, options = {
       ? { ...normalized, sections: structured.sections }
       : normalized;
 
-  const { complete, missing } = getMissingCanonicalSections(slug, headingData, content);
+  const { complete, missing, optionalMissing } = getMissingCanonicalSections(slug, headingData, content);
   if (!complete) {
     return {
       valid: false,
       code: 'AI_TOOL_CONTENT_INCOMPLETE',
       message: `Content is incomplete for ${getAiToolTemplate(slug)?.title || slug}. Missing sections: ${missing.join(', ')}.`,
       missingSections: missing,
+      optionalMissingSections: optionalMissing,
     };
   }
 
@@ -1184,6 +1249,7 @@ export function validateDashboardAiToolContent(toolSlug, rawContent, options = {
     valid: true,
     normalizedStructuredContent: normalized,
     contentType,
+    optionalMissingSections: optionalMissing,
   };
 }
 

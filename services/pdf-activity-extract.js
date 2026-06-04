@@ -7,10 +7,12 @@ import { extractActivitiesFromCuriosityWorkbookPdf } from './curiosity-activity-
 import { extractActivityItemsByCanonicalHeadings } from './pdf-activity-canonical-parse.js';
 import {
   extractActivityTitleFromBlock,
+  looksLikeTruncatedActivityField,
   looksLikeValidActivityTitle,
   repairActivityItemTitlesFromPdf,
   splitActivityBlocksByTitleSection,
 } from './activity-title-utils.js';
+import { splitMergedActivityTailSections } from './activity-section-headers.js';
 import { splitPdfTextByMarkerLines, str } from './pdf-extract-utils.js';
 
 const ACTIVITY_MARKER = /^Activity\s+\d+\b/i;
@@ -18,9 +20,8 @@ const ACTIVITY_MARKER = /^Activity\s+\d+\b/i;
 /** Map PIL-shaped workbook rows to teacher tool fields when needed. */
 export function mapActivityRowForToolSlug(row, toolSlug = 'project-idea-lab') {
   if (!row || typeof row !== 'object') return row;
-  if (toolSlug !== 'activity-project-generator') return row;
-
-  const out = { ...row };
+  const out = splitMergedActivityTailSections({ ...row });
+  if (toolSlug !== 'activity-project-generator') return out;
   if (!out.assessment_criteria_rubric?.length && Array.isArray(out.self_assessment_rubric)) {
     out.assessment_criteria_rubric = [...out.self_assessment_rubric];
   }
@@ -165,4 +166,32 @@ export function extractActivityProjectItemsFromPdfText(text, limit = 100, toolSl
   }
 
   return repairActivityItemTitlesFromPdf(out.slice(0, limit), raw);
+}
+
+/** Higher score = more complete PDF row (used to prefer regex over partial AI extract). */
+export function scoreActivityExtractRow(row) {
+  if (!row || typeof row !== 'object') return 0;
+  let score = 0;
+  const lo = Array.isArray(row.learning_objectives) ? row.learning_objectives : [];
+  const materials = Array.isArray(row.materials_required) ? row.materials_required : [];
+  const steps = Array.isArray(row.step_by_step_procedure) ? row.step_by_step_procedure : [];
+  const subtopic = str(row.subtopic_link_prior_knowledge);
+  const ncf = str(row.ncf_competency_alignment);
+
+  if (lo.length) score += 3 + Math.min(lo.length, 3);
+  if (materials.length) score += 2 + Math.min(materials.length, 2);
+  if (steps.length) score += 2 + Math.min(steps.length, 2);
+  if (subtopic.length > 40 && !looksLikeTruncatedActivityField(subtopic)) score += 3;
+  if (ncf.length > 40 && !looksLikeTruncatedActivityField(ncf)) score += 2;
+  if (Array.isArray(row.teacher_instructions) && row.teacher_instructions.length) score += 1;
+  return score;
+}
+
+/** True when regex/canonical extract captured enough sections to trust without Gemini. */
+export function activityPatternExtractIsComplete(rows, expectedCount = 0) {
+  if (!Array.isArray(rows) || !rows.length) return false;
+  const rich = rows.filter((r) => scoreActivityExtractRow(r) >= 6);
+  if (!rich.length) return false;
+  if (expectedCount > 0) return rich.length >= Math.max(1, Math.floor(expectedCount * 0.85));
+  return rich.length === rows.length;
 }

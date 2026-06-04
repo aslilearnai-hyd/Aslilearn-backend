@@ -8,6 +8,7 @@ import {
   extractActivityTitleFromBlock,
   isActivityTemplateTitleLabel,
   isGenericActivityNumberTitle,
+  isLikelyActivitySectionHeadingLine,
   looksLikeValidActivityTitle,
   parseActivityNameFromTitleLine,
   splitActivityBlocksByTitleSection,
@@ -168,7 +169,9 @@ export function parseActivityBlockByCanonicalHeadings(block, toolSlug = 'project
     }
     if (/^Activity\s+\d+/i.test(trimmed)) continue;
 
-    const heading = matchCanonicalHeadingLine(toolSlug, trimmed);
+    const heading = isLikelyActivitySectionHeadingLine(trimmed)
+      ? matchCanonicalHeadingLine(toolSlug, trimmed)
+      : { headingId: null };
     if (heading.headingId && fieldByHeading[heading.headingId]) {
       flush();
       currentHeadingId = heading.headingId;

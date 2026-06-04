@@ -9,10 +9,15 @@ import {
   extractActivityTitleFromBlock,
   isActivityTemplateTitleLabel,
   isGenericActivityNumberTitle,
+  looksLikeTruncatedActivityField,
   looksLikeValidActivityTitle,
   repairActivityItemTitlesFromPdf,
 } from './activity-title-utils.js';
-import { mapActivityRowForToolSlug } from './pdf-activity-extract.js';
+import {
+  activityPatternExtractIsComplete,
+  mapActivityRowForToolSlug,
+  scoreActivityExtractRow,
+} from './pdf-activity-extract.js';
 import { buildPdfToolConfigMap } from '../config/aiToolTemplates.js';
 import {
   consolidateWorksheetExtractItems,
@@ -2041,11 +2046,96 @@ function dedupeExtractedItems(items, toolType = '') {
   return out;
 }
 
+function coerceActivityStringList(value) {
+  if (Array.isArray(value)) return value.map((x) => String(x ?? '').trim()).filter(Boolean);
+  const s = String(value ?? '').trim();
+  return s ? [s] : [];
+}
+
+function mergeSingleActivityExtractRow(rowA, rowB) {
+  const primary = scoreActivityExtractRow(rowA) >= scoreActivityExtractRow(rowB) ? rowA : rowB;
+  const secondary = primary === rowA ? rowB : rowA;
+  const out = { ...secondary, ...primary };
+  const stringFields = [
+    'subtopic_link_prior_knowledge',
+    'ncf_competency_alignment',
+    'differentiation',
+    'differentiation_support_extension',
+    'expected_learning_outcomes',
+    'real_life_application',
+    'reflection_exit_ticket',
+  ];
+  const arrayFields = [
+    'learning_objectives',
+    'materials_required',
+    'step_by_step_procedure',
+    'teacher_instructions',
+    'student_instructions',
+    'assessment_criteria_rubric',
+    'self_assessment_rubric',
+  ];
+  for (const field of stringFields) {
+    const p = String(primary[field] ?? '').trim();
+    const s = String(secondary[field] ?? '').trim();
+    if ((!p || looksLikeTruncatedActivityField(p)) && s && !looksLikeTruncatedActivityField(s)) {
+      out[field] = secondary[field];
+    } else if (p && s && p.length < s.length && looksLikeTruncatedActivityField(p)) {
+      out[field] = secondary[field];
+    }
+  }
+  for (const field of arrayFields) {
+    const p = coerceActivityStringList(primary[field]);
+    const s = coerceActivityStringList(secondary[field]);
+    const pOk = p.length && !p.some((line) => looksLikeTruncatedActivityField(line));
+    const sOk = s.length && !s.some((line) => looksLikeTruncatedActivityField(line));
+    if (!pOk && sOk) out[field] = secondary[field];
+    else if (pOk) out[field] = primary[field];
+    else if (s.length) out[field] = secondary[field];
+  }
+  out._fromPdf = Boolean(primary._fromPdf || secondary._fromPdf);
+  return out;
+}
+
+function mergeActivityPatternWithGemini(extractedItems, fromText) {
+  if (!Array.isArray(fromText) || !fromText.length) return extractedItems;
+  const patternByKey = new Map();
+  for (const row of fromText) {
+    if (!row || typeof row !== 'object') continue;
+    const key = normalizeTitleKey(row.title || row.name);
+    if (!key) continue;
+    const prev = patternByKey.get(key);
+    if (!prev || scoreActivityExtractRow(row) > scoreActivityExtractRow(prev)) {
+      patternByKey.set(key, row);
+    }
+  }
+  const merged = [];
+  const seen = new Set();
+  for (const row of extractedItems) {
+    if (!row || typeof row !== 'object') continue;
+    const key = normalizeTitleKey(row.title || row.name);
+    const pattern = key ? patternByKey.get(key) : null;
+    if (pattern) {
+      merged.push(mergeSingleActivityExtractRow(pattern, row));
+      seen.add(key);
+    } else {
+      merged.push(row);
+      if (key) seen.add(key);
+    }
+  }
+  for (const [key, row] of patternByKey) {
+    if (!seen.has(key)) merged.push(row);
+  }
+  return merged.length ? merged : fromText;
+}
+
 function mergePatternExtractWithGemini(toolType, extractedItems, fromText) {
   if (!Array.isArray(fromText) || !fromText.length) return extractedItems;
+  if (toolType === 'activity-project-generator' || toolType === 'project-idea-lab') {
+    return mergeActivityPatternWithGemini(extractedItems, fromText);
+  }
   const seen = new Set();
   const merged = [];
-  for (const item of [...extractedItems, ...fromText]) {
+  for (const item of [...fromText, ...extractedItems]) {
     if (!item || typeof item !== 'object') continue;
     let key;
     if (toolType === 'worksheet-mcq-generator' && String(item.question || '').trim()) {
@@ -2099,12 +2189,38 @@ export async function extractAndGenerateAllItems(toolType, rawPdfText, params = 
           ),
         )
         .sort((a, b) => Number(a.sl_no || 0) - Number(b.sl_no || 0));
+      console.log(`[PDF] Curiosity workbook extract: ${normalized.length} activity item(s)`);
       lastPdfExtractionMeta = {
         ...lastPdfExtractionMeta,
         extractionStatus: 'complete',
         validationPassed: true,
         extractedItemCount: normalized.length,
         parser: 'curiosity-workbook',
+      };
+      return normalized;
+    }
+
+    const patternEarly = extractToolItemsFromPdfText(toolType, text);
+    const expectedTotalEarly = countExpectedPdfItems(toolType, text);
+    if (activityPatternExtractIsComplete(patternEarly, expectedTotalEarly)) {
+      const { canonicalizeActivityExtractedItem } = await import('./ai-content-engine-service.js');
+      const normalized = repairActivityItemTitlesFromPdf(
+        patternEarly
+          .map((row, i) =>
+            canonicalizeActivityExtractedItem(
+              mapActivityRowForToolSlug({ ...row, sl_no: row.sl_no ?? i + 1, _fromPdf: true }, toolType),
+              toolType,
+            ),
+          )
+          .sort((a, b) => Number(a.sl_no || 0) - Number(b.sl_no || 0)),
+        text,
+      );
+      lastPdfExtractionMeta = {
+        ...lastPdfExtractionMeta,
+        extractionStatus: 'complete',
+        validationPassed: true,
+        extractedItemCount: normalized.length,
+        parser: 'pattern-regex',
       };
       return normalized;
     }

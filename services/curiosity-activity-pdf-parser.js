@@ -1,4 +1,10 @@
 import {
+  ACTIVITY_SECTION_HEADERS,
+  isActivitySectionHeaderLine,
+  isActivitySectionStopLine,
+  splitMergedActivityTailSections,
+} from './activity-section-headers.js';
+import {
   extractActivityTitleFromBlock,
   isGenericActivityNumberTitle,
   looksLikeValidActivityTitle,
@@ -69,29 +75,41 @@ const REAL_LIFE_LINE_STOP = new RegExp(
 );
 
 /**
- * @param {string} chunk one activity block (may include header lines before "Activity N")
- * @param {RegExp} headerLine first line of section must match (e.g. /^2\.\s*Learning Objectives/)
- * @param {RegExp|null} [stopAt] next section header at line start
- * @param {RegExp|null} [extraLineStop] optional extra stop (e.g. workbook index after last activity's section 9)
+ * @param {string} chunk one activity block
+ * @param {RegExp|RegExp[]} headerLine section header at line start only
+ * @param {RegExp[]} [stopHeaders] next section headers (line start only)
+ * @param {RegExp|null} [extraLineStop] optional extra stop (e.g. workbook index)
  * @returns {string[]}
  */
-function extractLinesAfterHeader(chunk, headerLine, stopAt, extraLineStop = null) {
+function extractLinesAfterHeader(chunk, headerLine, stopHeaders = [], extraLineStop = null) {
   const lines = chunk.split(/\n/).map((l) => l.replace(/\r/g, ''));
+  const stops = Array.isArray(stopHeaders) ? stopHeaders : stopHeaders ? [stopHeaders] : [];
   let i = 0;
+  let headerInline = '';
   while (i < lines.length) {
     const t = lines[i].trim();
-    if (headerLine.test(t)) {
+    if (isActivitySectionHeaderLine(t, headerLine)) {
+      const colon = t.indexOf(':');
+      if (colon > 0) {
+        const after = t.slice(colon + 1).trim();
+        if (after.length > 4 && !isActivitySectionHeaderLine(after, headerLine)) {
+          headerInline = after;
+        }
+      }
       i += 1;
       break;
     }
     i += 1;
   }
   const out = [];
+  if (headerInline) {
+    const c = cleanActivityLine(headerInline);
+    if (c) out.push(c);
+  }
   while (i < lines.length) {
     const t = lines[i].trim();
-    if (stopAt && stopAt.test(t)) break;
+    if (isActivitySectionStopLine(t, stops)) break;
     if (extraLineStop && extraLineStop.test(t)) break;
-    if (/^Activity\s+\d+/i.test(t)) break;
     const c = cleanActivityLine(lines[i]);
     if (c) out.push(c);
     i += 1;
@@ -126,46 +144,49 @@ export function extractActivitiesFromCuriosityWorkbookPdf(rawText) {
     const title = extractActivityTitleFromBlock(part);
     if (!title || !looksLikeValidActivityTitle(title) || isGenericActivityNumberTitle(title)) continue;
 
-    const subtopicLines = extractLinesAfterHeader(
-      part,
-      /Subtopic Link and Prior Knowledge/i,
-      /Learning Objectives|NCF Competency/i,
-    );
+    const H = ACTIVITY_SECTION_HEADERS;
+
+    const subtopicLines = extractLinesAfterHeader(part, H.subtopic, [
+      H.learningObjectives,
+      H.ncf,
+    ]);
     const subtopic_link_prior_knowledge = subtopicLines.length ? subtopicLines.join(' ') : '';
 
-    const learning_objectives = extractLinesAfterHeader(
-      part,
-      /Learning Objectives/i,
-      /NCF Competency|Materials Required/i,
-    );
+    const learning_objectives = extractLinesAfterHeader(part, H.learningObjectives, [
+      H.ncf,
+      H.materials,
+    ]);
 
-    const ncfLines = extractLinesAfterHeader(
-      part,
-      /NCF Competency/i,
-      /Materials Required/i,
-    );
+    const ncfLines = extractLinesAfterHeader(part, H.ncf, [H.materials]);
     const ncf_competency_alignment = ncfLines.length ? ncfLines.join(' ') : '';
 
-    const materials_required = extractLinesAfterHeader(
-      part,
-      /Materials Required/i,
-      /Step-by-step Procedure/i,
-    );
-    const teacherLedProcedure = extractLinesAfterHeader(
-      part,
-      /Step-by-step(?:\s+Student)?\s+Procedure/i,
-      /Teacher Instructions|Safety|Student Instructions/i,
-    );
-    const teacher_instructions = extractLinesAfterHeader(
-      part,
-      /Teacher Instructions/i,
-      /Student Instructions|Safety|Observation|Creative|Differentiation|Self-Assessment|Assessment|Expected|Real[-\s]?life|Reflection/i,
-    );
-    const student_instructions = extractLinesAfterHeader(
-      part,
-      /Student Instructions/i,
-      /Safety|Observation|Creative|Differentiation|Self-Assessment|Assessment|Expected|Real[-\s]?life|Reflection/i,
-    );
+    const materials_required = extractLinesAfterHeader(part, H.materials, [H.procedure]);
+    const teacherLedProcedure = extractLinesAfterHeader(part, H.procedure, [
+      H.teacherInstructions,
+      H.studentInstructions,
+      H.safety,
+    ]);
+    const teacher_instructions = extractLinesAfterHeader(part, H.teacherInstructions, [
+      H.studentInstructions,
+      H.safety,
+      H.observation,
+      H.creative,
+      H.differentiation,
+      H.assessmentRubric,
+      H.expectedOutcomes,
+      H.realLife,
+      H.reflection,
+    ]);
+    const student_instructions = extractLinesAfterHeader(part, H.studentInstructions, [
+      H.safety,
+      H.observation,
+      H.creative,
+      H.differentiation,
+      H.assessmentRubric,
+      H.expectedOutcomes,
+      H.realLife,
+      H.reflection,
+    ]);
     const isTeacherTemplate =
       teacher_instructions.length > 0 ||
       (/Teacher Instructions/i.test(part) && !/Safety and Care Instructions/i.test(part));
@@ -177,63 +198,61 @@ export function extractActivitiesFromCuriosityWorkbookPdf(rawText) {
         ? student_instructions
         : teacherLedProcedure;
 
-    const safety_care_instructions = extractLinesAfterHeader(
-      part,
-      /Safety and Care Instructions/i,
-      /Observation|Creative|Differentiation|Student Instructions|Assessment|Expected|Real[-\s]?life|Reflection/i,
-    );
+    const safety_care_instructions = extractLinesAfterHeader(part, H.safety, [
+      H.observation,
+      H.creative,
+      H.differentiation,
+      H.assessmentRubric,
+      H.expectedOutcomes,
+      H.realLife,
+      H.reflection,
+    ]);
 
-    const observationLines = extractLinesAfterHeader(
-      part,
-      /Observation\s*\/\s*Data Recording Table/i,
-      /Creative|Differentiation|Assessment|Expected|Real[-\s]?life|Reflection/i,
-    );
+    const observationLines = extractLinesAfterHeader(part, H.observation, [
+      H.creative,
+      H.differentiation,
+      H.assessmentRubric,
+      H.expectedOutcomes,
+      H.realLife,
+      H.reflection,
+    ]);
     const observation_data_recording_table = observationLines.length ? observationLines.join('\n') : '';
 
-    const creativeLines = extractLinesAfterHeader(
-      part,
-      /Creative Output\s*\/\s*Final Product/i,
-      /Differentiation|Assessment|Expected|Real[-\s]?life|Reflection/i,
-    );
+    const creativeLines = extractLinesAfterHeader(part, H.creative, [
+      H.differentiation,
+      H.assessmentRubric,
+      H.expectedOutcomes,
+      H.realLife,
+      H.reflection,
+    ]);
     const creative_output_final_product = creativeLines.length ? creativeLines.join(' ') : '';
 
-    const diffLines = extractLinesAfterHeader(
-      part,
-      /Differentiation(?:\s*:\s*Support and Extension)?/i,
-      /Self-Assessment|Assessment|Expected Learning Outcomes|Real[-\s]?life|Reflection/i,
-    );
+    const diffLines = extractLinesAfterHeader(part, H.differentiation, [
+      H.assessmentRubric,
+      H.expectedOutcomes,
+      H.realLife,
+      H.reflection,
+    ]);
     const differentiation_support_extension = diffLines.length ? diffLines.join(' ') : '';
 
-    const rubricLines = extractLinesAfterHeader(
-      part,
-      /Self-Assessment Rubric|Assessment Criteria|Assessment Rubric/i,
-      /Expected Learning Outcomes|Real[-\s]?life|Reflection/i,
-    );
+    const rubricLines = extractLinesAfterHeader(part, H.assessmentRubric, [
+      H.expectedOutcomes,
+      H.realLife,
+      H.reflection,
+    ]);
     const self_assessment_rubric = rubricLines;
 
-    const elLines = extractLinesAfterHeader(
-      part,
-      /Expected Learning Outcomes/i,
-      /Real[-\s]?life Application|Reflection/i,
-    );
+    const elLines = extractLinesAfterHeader(part, H.expectedOutcomes, [H.realLife, H.reflection]);
     const expected_learning_outcomes = elLines.length ? elLines.join(' ') : '';
 
-    const rlLines = extractLinesAfterHeader(
-      part,
-      /Real[-\s]?life Application/i,
-      /Reflection|Exit Ticket/i,
-      REAL_LIFE_LINE_STOP,
-    );
+    const rlLines = extractLinesAfterHeader(part, H.realLife, [H.reflection], REAL_LIFE_LINE_STOP);
     const real_life_application = rlLines.length ? trimRealLifeApplicationTail(rlLines.join(' ')) : '';
 
-    const refLines = extractLinesAfterHeader(
-      part,
-      /Reflection|Exit Ticket/i,
-      /^Activity\s+\d+/i,
-    );
+    const refLines = extractLinesAfterHeader(part, H.reflection, []);
     const reflection_exit_ticket = refLines.length ? refLines.join(' ') : '';
 
-    out.push({
+    out.push(
+      splitMergedActivityTailSections({
       sl_no,
       question_number: sl_no,
       title,
@@ -253,7 +272,8 @@ export function extractActivitiesFromCuriosityWorkbookPdf(rawText) {
       expected_learning_outcomes,
       real_life_application,
       reflection_exit_ticket,
-    });
+      }),
+    );
   }
 
   return out.length ? out : null;

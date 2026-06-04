@@ -24,6 +24,35 @@ const ACTIVITY_TITLE_JUNK_LINE_RE =
 const ACTIVITY_SECTION_HEADING_RE =
   /^(?:\d+[\.)]\s*)?(?:subtopic|learning\s+objectives?|ncf|materials|step-by-step|teacher\s+instructions?|student\s+instructions?|safety|observation|differentiation|assessment|expected\s+learning|real[-\s]?life|reflection)/i;
 
+/** Mid-sentence tail wrongly stored as a section body (bad heading split). */
+const TRUNCATED_SECTION_FRAGMENT_RE = /^(?:and|or|but|also|as well as)\s+/i;
+
+/**
+ * True when a PDF line is a section header, not body text mentioning "prior knowledge" etc.
+ * @param {string} line
+ */
+export function isLikelyActivitySectionHeadingLine(line) {
+  const t = String(line || '').replace(/\s+/g, ' ').trim();
+  if (!t || t.length > 140) return false;
+  if (ACTIVITY_SECTION_HEADING_RE.test(t)) return true;
+  if (/^\d+[\.)]\s*(?:Subtopic|Learning|NCF|Materials|Step|Teacher|Student|Differentiation|Assessment|Expected|Real|Reflection)/i.test(t)) {
+    return true;
+  }
+  if (/^(?:Subtopic Link|Learning Objectives|NCF Competency|Materials Required|Step-by-step|Teacher Instructions|Student Instructions|Expected Learning|Real[-\s]?life Application|Reflection\s*\/\s*Exit)/i.test(t)) {
+    return true;
+  }
+  return false;
+}
+
+/**
+ * @param {unknown} value
+ */
+export function looksLikeTruncatedActivityField(value) {
+  const t = Array.isArray(value) ? value.map((x) => String(x ?? '').trim()).join(' ') : String(value || '').trim();
+  if (!t || t.length > 120) return false;
+  return TRUNCATED_SECTION_FRAGMENT_RE.test(t) && !/\.\s+[A-Z]/.test(t);
+}
+
 export function isGenericActivityNumberTitle(text) {
   return GENERIC_ACTIVITY_NUMBER_TITLE_RE.test(String(text || '').replace(/\s+/g, ' ').trim());
 }
