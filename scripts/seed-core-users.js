@@ -4,6 +4,12 @@ import User from '../models/User.js';
 
 const usersToEnsure = [
   {
+    email: 'sealucknow2017@gmail.com',
+    password: 'Asli123',
+    fullName: 'Super Admin',
+    role: 'super-admin',
+  },
+  {
     email: 'amenityforge@gmail.com',
     password: 'Amenity',
     fullName: 'Super Admin',

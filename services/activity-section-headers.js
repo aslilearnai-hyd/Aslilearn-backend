@@ -45,7 +45,7 @@ export function isActivitySectionHeaderLine(line, headerPattern) {
 export function isActivitySectionStopLine(line, stopPatterns) {
   const t = String(line || '').trim();
   if (!t) return false;
-  if (/^Activity\s+\d+\b/i.test(t)) return true;
+  if (/^Activity\s*(?:\/\s*Project)?\s+\d+\b/i.test(t)) return true;
   return stopPatterns.some((re) => re.test(t));
 }
 

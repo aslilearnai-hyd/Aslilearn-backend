@@ -30,7 +30,7 @@ function cleanActivityLine(line) {
     .trim();
   if (!s) return '';
   if (/^--\s*\d+\s+of\s+\d+\s*--$/i.test(s)) return '';
-  if (/^Activity\s+\d+/i.test(s)) return '';
+  if (/^Activity\s*(?:\/\s*Project)?\s+\d+/i.test(s)) return '';
   if (/^\d+\.\s*$/.test(s)) return '';
   if (/^[•\u2022]\s*$/.test(line.trim())) return '';
   if (/^\d{1,2}$/.test(s)) return '';
@@ -123,7 +123,7 @@ function extractLinesAfterHeader(chunk, headerLine, stopHeaders = [], extraLineS
  */
 export function extractActivitiesFromCuriosityWorkbookPdf(rawText) {
   const text = String(rawText || '').replace(/\r/g, '\n');
-  if (!/\bActivity\s+\d+\b/i.test(text)) return null;
+  if (!/\bActivity\s*(?:\/\s*Project)?\s+\d+\b/i.test(text)) return null;
   if (
     !/\b1\.\s*Title\s+of\s+(?:the\s+)?Activity\s*\/\s*Project\b/i.test(text) &&
     !/\b1\.\s*(?:Title|Project\s*\/\s*Activity\s*Title)\b/i.test(text)
@@ -131,12 +131,14 @@ export function extractActivitiesFromCuriosityWorkbookPdf(rawText) {
     return null;
   }
 
-  const parts = text.split(/\n(?=Activity\s+\d+\b)/gi).filter((p) => /\bActivity\s+\d+\b/i.test(p));
+  const parts = text
+    .split(/\n(?=Activity\s*(?:\/\s*Project)?\s+\d+\b)/gi)
+    .filter((p) => /\bActivity\s*(?:\/\s*Project)?\s+\d+\b/i.test(p));
   if (parts.length === 0) return null;
 
   const out = [];
   for (const part of parts) {
-    const numMatch = part.match(/\bActivity\s+(\d+)\b/i);
+    const numMatch = part.match(/\bActivity\s*(?:\/\s*Project)?\s+(\d+)\b/i);
     if (!numMatch) continue;
     const sl_no = Number.parseInt(numMatch[1], 10);
     if (!Number.isFinite(sl_no)) continue;

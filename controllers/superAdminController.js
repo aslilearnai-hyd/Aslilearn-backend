@@ -29,6 +29,7 @@ import {
   buildSchoolFieldsFromBody,
   applySchoolToAdminUser,
   formatSchoolListItem,
+  schoolShapeFromAdminUser,
   findSchoolByAdminId,
   deleteSchoolById,
   resolveSchoolAndAdminByParamId,
@@ -171,7 +172,21 @@ export const getAllSchools = async (req, res) => {
 // Get All Admins with comprehensive analytics (schools table + admin login)
 export const getAllAdmins = async (req, res) => {
   try {
-    const schools = await School.find().sort({ name: 1 }).lean();
+    const schoolRows = await School.find().sort({ name: 1 }).lean();
+    const linkedAdminIds = new Set(
+      schoolRows.map((s) => s.adminUserId?.toString()).filter(Boolean),
+    );
+
+    // Show admin logins even when schools collection row was deleted (partial DB recovery)
+    const orphanAdmins = await User.find({ role: 'admin' })
+      .select('-password')
+      .lean();
+    const syntheticSchools = orphanAdmins
+      .filter((a) => !linkedAdminIds.has(a._id.toString()))
+      .map((a) => schoolShapeFromAdminUser(a))
+      .filter(Boolean);
+
+    const schools = [...schoolRows, ...syntheticSchools];
     const adminIds = schools.map((s) => s.adminUserId).filter(Boolean);
 
     const admins = adminIds.length

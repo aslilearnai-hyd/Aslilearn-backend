@@ -85,7 +85,7 @@ function parseTitleFromBlock(lines) {
   for (let i = 0; i < Math.min(lines.length, 28); i += 1) {
     const line = lines[i].trim();
     if (!line) continue;
-    if (/^Activity\s+\d+/i.test(line)) continue;
+    if (/^Activity\s*(?:\/\s*Project)?\s+\d+/i.test(line)) continue;
 
     const onSameLine = parseActivityNameFromTitleLine(line);
     if (onSameLine) return str(onSameLine);
@@ -167,7 +167,7 @@ export function parseActivityBlockByCanonicalHeadings(block, toolSlug = 'project
       if (currentHeadingId) bodyLines.push('');
       continue;
     }
-    if (/^Activity\s+\d+/i.test(trimmed)) continue;
+    if (/^Activity\s*(?:\/\s*Project)?\s+\d+/i.test(trimmed)) continue;
 
     const heading = isLikelyActivitySectionHeadingLine(trimmed)
       ? matchCanonicalHeadingLine(toolSlug, trimmed)
@@ -224,7 +224,7 @@ export function extractActivityItemsByCanonicalHeadings(text, toolSlug = 'projec
   const out = [];
   for (const block of blocks) {
     if (out.length >= limit) break;
-    const numMatch = block.match(/\bActivity\s+(\d+)\b/i);
+    const numMatch = block.match(/\bActivity\s*(?:\/\s*Project)?\s+(\d+)\b/i);
     const parsed = parseActivityBlockByCanonicalHeadings(block, toolSlug);
     if (!parsed) continue;
     if (numMatch) {

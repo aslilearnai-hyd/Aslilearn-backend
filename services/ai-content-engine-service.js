@@ -14,6 +14,7 @@ import {
   isValidAiToolSlug,
 } from '../config/aiToolTemplates.js';
 import { splitMergedActivityTailSections } from './activity-section-headers.js';
+import { buildPdfRagContextFromText } from './pdf-rag-service.js';
 import { cleanActivityTitleForStorage } from './activity-title-utils.js';
 import {
   resolveStudyGuideDisplayTitle,
@@ -89,41 +90,73 @@ const toQuestionArray = (value = []) =>
         if (!question) return null;
         const options = collectOptionsFromEntry(entry);
         const answer = String(entry.answer || entry.correctAnswer || '').trim();
-        return { question, options, answer };
+        return {
+          question,
+          options,
+          answer,
+          section: String(entry.section || entry.sectionName || '').trim(),
+          question_number: entry.question_number ?? entry.sl_no ?? entry.number,
+          type: String(entry.type || entry.question_type || '').trim(),
+          marks: entry.marks != null && entry.marks !== '' ? Number(entry.marks) : undefined,
+          explanation: String(entry.explanation || '').trim(),
+          bloom_level: String(entry.bloom_level || entry.bloomLevel || '').trim(),
+        };
       }
       return null;
     })
     .filter(Boolean);
 
-const isHeadingLikeLine = (text) =>
-  /\b(chapter|topic|lesson|unit|syllabus|mcqs?)\b/i.test(text) && !/[?]/.test(text);
 
-const looksLikeQuestionPrompt = (text) =>
-  /[?]|_{3,}|^\s*(what|which|why|how|define|choose|fill|select|state|identify|explain|describe|list|name|write|calculate|find|match|true|false)\b/i.test(
-    text,
-  );
+function cleanWorksheetMcqOptions(options = []) {
+  const raw = (Array.isArray(options) ? options : [])
+    .map((opt) => String(opt || '').replace(/\s+/g, ' ').trim())
+    .filter(Boolean)
+    .filter((opt) => opt.length <= 220)
+    .filter((opt) => !isAnswerKeyLikeQuestion(opt))
+    .filter((opt) => !/^(?:answer|correct\s*answer)\s*[:\-]/i.test(opt))
+    .slice(0, 6);
+  return raw.length >= 2 ? labelMcqOptions(raw) : raw;
+}
 
-const sanitizeWorksheetQuestions = (questions = []) =>
-  questions
+const sanitizeWorksheetQuestions = (questions = []) => {
+  const seenFull = new Set();
+  return questions
     .map((row) => ({
-      question: String(row?.question || '').replace(/\s+/g, ' ').trim(),
-      options: (() => {
-        const raw = (Array.isArray(row?.options) ? row.options : [])
-          .map((opt) => String(opt || '').replace(/\s+/g, ' ').trim())
-          .filter(Boolean);
-        return raw.length >= 2 ? labelMcqOptions(raw) : raw;
-      })(),
+      question: cleanWorksheetQuestionText(row?.question),
+      options: cleanWorksheetMcqOptions(row?.options),
       answer: String(row?.answer || '').replace(/\s+/g, ' ').trim(),
+      section: String(row?.section || '').trim(),
+      type: String(row?.type || '').trim(),
+      marks: row?.marks,
+      explanation: String(row?.explanation || '').trim(),
+      bloom_level: String(row?.bloom_level || '').trim(),
+      question_number: row?.question_number ?? row?.sl_no,
     }))
     .filter((row) => row.question)
     .filter((row) => !isHeadingLikeLine(row.question))
-    .filter((row) => looksLikeQuestionPrompt(row.question) || row.options.length >= 2)
-    .filter((row, idx, arr) => arr.findIndex((q) => q.question.toLowerCase() === row.question.toLowerCase()) === idx);
+    .filter((row) => !isWorksheetPdfChrome(row.question))
+    .filter((row) => !isAnswerKeyLikeQuestion(row.question))
+    .filter((row) => looksLikeQuestionPrompt(row.question) || row.options.length >= 2 || /_{2,}/.test(row.question))
+    .filter((row) => {
+      const fullKey = worksheetQuestionDedupeKey(row);
+      if (!fullKey) return false;
+      if (seenFull.has(fullKey)) return false;
+      seenFull.add(fullKey);
+      return true;
+    });
+};
 
 import {
   buildDeterministicQuestionSetFromText,
+  cleanWorksheetQuestionText,
   extractQuestionsFromText,
   extractWorksheetItemsFromPdfText,
+  isAnswerKeyLikeQuestion,
+  isHeadingLikeLine,
+  isWorksheetPdfChrome,
+  looksLikeQuestionPrompt,
+  normalizeWorksheetQuestionKey,
+  worksheetQuestionDedupeKey,
 } from './pdf-worksheet-extract.js';
 
 export { buildDeterministicQuestionSetFromText, extractWorksheetItemsFromPdfText };
@@ -2911,6 +2944,49 @@ function normalizeWorksheetAnswerKeyText(text) {
   return compact;
 }
 
+/** Section 9 — all answers grouped under A, B, C, D, E. */
+export function buildWorksheetAnswerKeyFromSections(sections = []) {
+  const letters = ['A', 'B', 'C', 'D', 'E'];
+  const canonical = buildCanonicalWorksheetSectionList(sections);
+  const blocks = [];
+
+  canonical.forEach((sec, idx) => {
+    const qs = (Array.isArray(sec?.questions) ? sec.questions : []).filter((q) =>
+      String(q?.answer || '').trim(),
+    );
+    if (!qs.length) return;
+    blocks.push(`${letters[idx]}. ${sec.sectionName}`);
+    qs.forEach((q, qIdx) => {
+      const num = q.question_number ?? q.sl_no ?? qIdx + 1;
+      blocks.push(`  Q${num}. ${String(q.answer).trim()}`);
+    });
+    blocks.push('');
+  });
+
+  return blocks.join('\n').trim();
+}
+
+export function buildWorksheetAnswerKeySections(sections = []) {
+  const letters = ['A', 'B', 'C', 'D', 'E'];
+  const canonical = buildCanonicalWorksheetSectionList(sections);
+  return canonical
+    .map((sec, idx) => {
+      const entries = (Array.isArray(sec?.questions) ? sec.questions : [])
+        .map((q, qIdx) => ({
+          question_number: q.question_number ?? q.sl_no ?? qIdx + 1,
+          answer: String(q.answer || '').trim(),
+        }))
+        .filter((row) => row.answer);
+      if (!entries.length) return null;
+      return {
+        letter: letters[idx],
+        sectionName: sec.sectionName,
+        entries,
+      };
+    })
+    .filter(Boolean);
+}
+
 /** Group flat worksheet rows by section label (A–E). */
 export function groupQuestionsIntoWorksheetSections(questions = []) {
   const cleaned = sanitizeWorksheetQuestions(toQuestionArray(questions));
@@ -2984,6 +3060,55 @@ export function mergeWorksheetSections(base = [], extra = []) {
     allQs.push(...qs);
   }
   return groupQuestionsIntoWorksheetSections(allQs);
+}
+
+/** Final pass: dedupe, renumber 1..n per section, clean MCQ options, drop answer-key junk. */
+function polishWorksheetStructuredContent(source = {}) {
+  const canonical = buildCanonicalWorksheetSectionList(source.sections || []);
+  const globalSeenFull = new Set();
+  const sections = canonical.map((sec) => {
+    const cleaned = sanitizeWorksheetQuestions(
+      (sec.questions || []).map((q) => ({
+        ...q,
+        section: sec.sectionName,
+      })),
+    ).filter((q) => {
+      const fullKey = worksheetQuestionDedupeKey(q);
+      if (!fullKey) return false;
+      if (globalSeenFull.has(fullKey)) return false;
+      globalSeenFull.add(fullKey);
+      return true;
+    });
+    const questions = cleaned.map((q, idx) => ({
+      ...q,
+      question_number: idx + 1,
+      section: sec.sectionName,
+      options: cleanWorksheetMcqOptions(q.options),
+    }));
+    return {
+      sectionName: sec.sectionName,
+      questions,
+      count: questions.length,
+    };
+  });
+
+  const flatQuestions = sections.flatMap((sec) =>
+    (sec.questions || []).map((q) => ({ ...q, section: sec.sectionName })),
+  );
+
+  const sectionedKey = buildWorksheetAnswerKeyFromSections(sections);
+  const pdfAnswerKey = normalizeWorksheetAnswerKeyText(source.answer_key || '');
+  let answerKeyOut = sectionedKey || pdfAnswerKey;
+  if (sectionedKey && pdfAnswerKey && pdfAnswerKey !== sectionedKey) {
+    answerKeyOut = `${sectionedKey}\n\n--- PDF Answer Key ---\n${pdfAnswerKey}`;
+  }
+
+  return {
+    ...source,
+    sections,
+    questions: flatQuestions,
+    answer_key: answerKeyOut,
+  };
 }
 
 /** Worksheet / MCQ PDF rows → 10-section template + sections A–E. */
@@ -3083,30 +3208,37 @@ export function normalizeWorksheetStructuredContent(raw, sourceText = '') {
     sections = mergeWorksheetSections(sections, groupQuestionsIntoWorksheetSections(looseQuestions));
   }
 
-  if (sourceText) {
-    const fromText = sanitizeWorksheetQuestions(extractWorksheetItemsFromPdfText(sourceText, 80));
-    if (fromText.length) {
-      sections = mergeWorksheetSections(sections, groupQuestionsIntoWorksheetSections(fromText));
-    }
-  }
-
-  const questions = sections.flatMap((sec) =>
-    (sec.questions || []).map((q) => ({ ...q, section: q.section || sec.sectionName })),
+  const questionsBeforeText = sections.reduce(
+    (n, sec) => n + (Array.isArray(sec?.questions) ? sec.questions.length : 0),
+    0,
   );
-
-  let answerKeyOut = normalizeWorksheetAnswerKeyText(answer_key);
-  if (!answerKeyOut && questions.length) {
-    const lines = [];
-    for (const q of questions) {
-      if (String(q.answer || '').trim()) {
-        const n = q.question_number != null ? `Q${q.question_number}` : 'Q';
-        lines.push(`${n}: ${q.answer}`);
-      }
+  const sourceLooksLikeRawPdf =
+    String(sourceText || '').length > 1500 &&
+    (/\bsection\s+[a-f]\s*:/i.test(sourceText) || (sourceText.match(/\?\s*$/gm) || []).length >= 8);
+  const sourceLooksLikeStoredMarkdown =
+    /^\s*#{1,4}\s+/m.test(sourceText) || /\*\*Q\d+\./i.test(sourceText);
+  const sourceLooksLikeWorksheetText =
+    (/\bsection\s+[a-f]\s*:/i.test(sourceText) && /\bQ?\d+[\.\):\-]\s+/i.test(sourceText)) ||
+    (/\bQ\d+\./i.test(sourceText) && (sourceText.match(/\?/g) || []).length >= 3);
+  const questionMarksInSource = (String(sourceText || '').match(/\?/g) || []).length;
+  const numberedInSource = (String(sourceText || '').match(/(?:^|\n)\s*(?:Q\.?\s*)?\d{1,3}[\.\):\-]\s+/gim) || [])
+    .length;
+  const expectedFromSource = Math.max(questionMarksInSource, numberedInSource);
+  const sourceLooksUnderExtracted =
+    expectedFromSource > 12 &&
+    questionsBeforeText < Math.max(10, Math.floor(expectedFromSource * 0.45));
+  if (
+    sourceText &&
+    (questionsBeforeText < 2 || sourceLooksUnderExtracted) &&
+    (sourceLooksLikeRawPdf || sourceLooksLikeStoredMarkdown || sourceLooksLikeWorksheetText)
+  ) {
+    const fromText = sanitizeWorksheetQuestions(extractWorksheetItemsFromPdfText(sourceText, 500));
+    if (fromText.length > questionsBeforeText) {
+      sections = groupQuestionsIntoWorksheetSections(fromText);
     }
-    if (lines.length) answerKeyOut = normalizeWorksheetAnswerKeyText(lines.join('\n'));
   }
 
-  return {
+  const draft = {
     ...source,
     title: title || 'Worksheet',
     worksheet_title: title || source.worksheet_title || 'Worksheet',
@@ -3114,12 +3246,13 @@ export function normalizeWorksheetStructuredContent(raw, sourceText = '') {
     learning_objectives,
     objectives: learning_objectives,
     sections,
-    questions: sanitizeWorksheetQuestions(questions.length ? questions : toQuestionArray(source.questions)),
-    answer_key: answerKeyOut,
+    answer_key,
     bloom_level,
     difficulty_tag,
     type: String(source.type || 'Worksheet').trim() || 'Worksheet',
   };
+
+  return polishWorksheetStructuredContent(draft);
 }
 
 export function canonicalizeWorksheetExtractedItem(raw, sourceText = '') {
@@ -3175,6 +3308,7 @@ export function buildWorksheetRenderableFromStructured(source, sourceText = '') 
     })),
     questions: Array.isArray(w.questions) ? w.questions : [],
     answerKey: String(w.answer_key || '').trim(),
+    answerKeySections: buildWorksheetAnswerKeySections(canonicalSections),
     bloomLevel: String(w.bloom_level || '').trim(),
     difficultyTag: String(w.difficulty_tag || '').trim(),
   };
@@ -6983,6 +7117,33 @@ function containsKeyword(normalizedText, value) {
   return normalizedText.includes(needle);
 }
 
+/** No Gemini call — use when user already chose tool/metadata and content is parsed locally (regex worksheets). */
+export function buildLocalPdfAnalysisFromSelection(selected = {}) {
+  const selectedToolSlug = String(selected.toolType || '').trim();
+  const selectedClass = String(selected.classLabel || '').trim();
+  const selectedSubject = String(selected.subject || '').trim();
+  const selectedTopic = String(selected.topic || selected.chapter || '').trim();
+  const selectedSubTopic = String(selected.subTopic || '').trim();
+  return {
+    classLabel: selectedClass,
+    subject: selectedSubject,
+    topic: selectedTopic,
+    subTopic: selectedSubTopic,
+    bestMatchingToolLabel: getToolLabelFromSlug(selectedToolSlug),
+    contentType: CONTENT_TYPE_BY_TOOL_SLUG[selectedToolSlug] || 'Worksheet',
+    structuredContent: {},
+    subjectTopicValidation: {
+      subjectMatched: true,
+      topicMatched: true,
+      reason: 'User-provided metadata; PDF parsed locally without LLM.',
+      confidence: 1,
+    },
+    rawGemini: {},
+    analysisMode: 'local',
+    isFallback: false,
+  };
+}
+
 export async function classifyPdfContentWithFallback(pdfText, selected = {}) {
   try {
     const result = await classifyPdfContentWithGemini(pdfText, selected);
@@ -7041,7 +7202,35 @@ export function getToolLabelFromSlug(slug) {
 }
 
 /**
- * Super Admin AI Generator — structured JSON via aiToolTemplates.js (no PDF).
+ * AI PDF — RAG context from uploaded PDF + same structured pipeline as AI Generator.
+ * @param {string} toolSlug
+ * @param {string} pdfText
+ * @param {Record<string, unknown>} params
+ */
+export async function generateStructuredContentFromPdf(toolSlug, pdfText, params = {}) {
+  const ragContext = buildPdfRagContextFromText(String(pdfText || ''), {
+    subject: String(params.subject || '').trim(),
+    topic: String(params.topic || params.chapter || '').trim(),
+    subTopic: String(params.subTopic || params.subtopic || '').trim(),
+  });
+  const ragChunkCount = (ragContext.match(/\[Chunk \d+\]/g) || []).length;
+  const extra = params.extraParams && typeof params.extraParams === 'object' ? params.extraParams : {};
+  const questionCount = Number(params.questionCount ?? extra.questionCount ?? extra.numberOfQuestions);
+  const result = await generateStructuredContentForAiGenerator(toolSlug, {
+    ...params,
+    pdfContext: ragContext,
+    extraParams: {
+      ...extra,
+      ...(Number.isFinite(questionCount) && questionCount > 0
+        ? { questionCount, numberOfQuestions: questionCount }
+        : {}),
+    },
+  });
+  return { ...result, ragChunkCount, generationMode: 'rag' };
+}
+
+/**
+ * Super Admin AI Generator — structured JSON via aiToolTemplates.js (optional PDF RAG context).
  * @param {string} toolSlug
  * @param {Record<string, unknown>} params
  */
@@ -7053,6 +7242,15 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
 
   const defaultContentType = CONTENT_TYPE_BY_TOOL_SLUG[slug] || getContentTypeDefault(slug);
   const prompt = buildAiGeneratorStructuredPrompt(slug, params);
+  const pdfContext = String(params.pdfContext || '').trim();
+  const basePrompt = pdfContext
+    ? `${prompt}
+
+REFERENCE PDF CONTEXT (RAG — primary factual source for this generation):
+Use the passages below to ground facts, terminology, and curriculum alignment.
+Synthesize into the tool schema above — do not paste PDF blocks verbatim or mirror textbook layout.
+${pdfContext}`
+    : prompt;
   const extra = params.extraParams && typeof params.extraParams === 'object' ? params.extraParams : {};
   const meta = {
     classLabel: params.classLabel || params.gradeLevel,
@@ -7066,7 +7264,7 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
   let lastError = null;
   let lastValidationMessage = '';
 
-  let activePrompt = prompt;
+  let activePrompt = basePrompt;
 
   for (let attempt = 1; attempt <= 4; attempt += 1) {
     try {
@@ -7269,41 +7467,41 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
         lastValidationMessage = validation.message || 'Structured content failed validation.';
         if (attempt < 4) {
           if (slug === 'mock-test-builder') {
-            activePrompt = `${prompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. You MUST return structuredContent with mock_test_title and at least 8 questions in section_a..section_e (each with "question" text). Do not return only metadata without question arrays.`;
+            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. You MUST return structuredContent with mock_test_title and at least 8 questions in section_a..section_e (each with "question" text). Do not return only metadata without question arrays.`;
           } else if (slug === 'smart-qa-practice-generator') {
             const target = Number(meta?.questionCount) > 0 ? Number(meta.questionCount) : 12;
             const missing = getPracticeQaMissingSections(structuredContent);
             const missingHint = missing.length
               ? ` You MUST add questions to: ${missing.join('; ')}.`
               : '';
-            activePrompt = `${prompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return structuredContent with title and sections[] — all seven section names exactly (Section A: MCQs … Section G: HOTS / Analytical Questions), each with at least one question. Section C MUST be type "MATCH" with a match-the-following prompt and options as Column A / Column B pairs (e.g. "1. Observation | A. Step before hypothesis"). Include short answers in Section E and application/case-based in Section F. Do NOT duplicate questions in sections[] and questions[]. Total at least ${target} questions.`;
+            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return structuredContent with title and sections[] — all seven section names exactly (Section A: MCQs … Section G: HOTS / Analytical Questions), each with at least one question. Section C MUST be type "MATCH" with a match-the-following prompt and options as Column A / Column B pairs (e.g. "1. Observation | A. Step before hypothesis"). Include short answers in Section E and application/case-based in Section F. Do NOT duplicate questions in sections[] and questions[]. Total at least ${target} questions.`;
           } else if (slug === 'chapter-summary-creator') {
-            activePrompt = `${prompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. Return Chapter Summary Creator JSON only — use chapter_summary_title, chapter_overview, important_concepts[] (min 3), formulae[] (min 3: name + formula where formula is an equation OR a must-know rule/fact sentence), quick_revision_notes[] (min 3), practice_recall_questions[] (min 3). Do NOT use Smart Study Guide fields (study_guide_title, prior_knowledge, key_concepts_explained, practice_questions with MCQ options).`;
+            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. Return Chapter Summary Creator JSON only — use chapter_summary_title, chapter_overview, important_concepts[] (min 3), formulae[] (min 3: name + formula where formula is an equation OR a must-know rule/fact sentence), quick_revision_notes[] (min 3), practice_recall_questions[] (min 3). Do NOT use Smart Study Guide fields (study_guide_title, prior_knowledge, key_concepts_explained, practice_questions with MCQ options).`;
           } else if (slug === 'key-points-formula-extractor') {
-            activePrompt = `${prompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. Return Key Points JSON with topic_title, important_concepts[] (min 3), essential_definitions[], formulae[] (min 3 — name + formula; formula may be an equation OR a must-know rule), keywords_terminologies[], must_remember_facts[], real_life_connections[], frequently_asked_exam_points[], mnemonics_memory_tricks[], one_minute_revision_summary. Never leave formulae[] empty.`;
+            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. Return Key Points JSON with topic_title, important_concepts[] (min 3), essential_definitions[], formulae[] (min 3 — name + formula; formula may be an equation OR a must-know rule), keywords_terminologies[], must_remember_facts[], real_life_connections[], frequently_asked_exam_points[], mnemonics_memory_tricks[], one_minute_revision_summary. Never leave formulae[] empty.`;
           } else if (slug === 'rubrics-evaluation-generator') {
             const missing = getRubricMissingSections(structuredContent);
             const missingHint = missing.length ? ` Missing: ${missing.join('; ')}.` : '';
-            activePrompt = `${prompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return ALL 10 rubric sections. criteria[] MUST have at least 3 objects; each MUST include name, excellent, good, satisfactory, needs_improvement (non-empty strings). Include grading_criteria, actionable_suggestions, and next_step_remedial_enrichment.`;
+            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return ALL 10 rubric sections. criteria[] MUST have at least 3 objects; each MUST include name, excellent, good, satisfactory, needs_improvement (non-empty strings). Include grading_criteria, actionable_suggestions, and next_step_remedial_enrichment.`;
           } else if (slug === 'story-passage-creator') {
             const missing = getStoryPassageMissingSections(structuredContent);
             const missingHint = missing.length ? ` Missing: ${missing.join('; ')}.` : '';
-            activePrompt = `${prompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return ALL 19 Story and Passage Creator fields. passage MUST be a complete story (120+ words), not just the title. Include at least 2 questions in read_and_recall_questions, think_and_infer_questions, and apply_and_connect_questions.`;
+            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return ALL 19 Story and Passage Creator fields. passage MUST be a complete story (120+ words), not just the title. Include at least 2 questions in read_and_recall_questions, think_and_infer_questions, and apply_and_connect_questions.`;
           } else if (slug === 'flashcard-generator' || slug === 'my-study-decks') {
             const missing = getFlashcardDeckMissingSections(structuredContent, slug);
             const missingHint = missing.length ? ` Missing: ${missing.join('; ')}.` : '';
             const targetCards = Number(meta?.cardCount) > 0 ? Number(meta.cardCount) : 10;
-            activePrompt = `${prompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return structuredContent with cards[] array (min ${targetCards} items). EVERY card MUST use "front" and "back" keys with non-empty strings — not term/definition only. Include difficulty_tag_for_each_card and memory_hook_quick_tip on each card.`;
+            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return structuredContent with cards[] array (min ${targetCards} items). EVERY card MUST use "front" and "back" keys with non-empty strings — not term/definition only. Include difficulty_tag_for_each_card and memory_hook_quick_tip on each card.`;
           } else if (slug === 'daily-class-plan-maker') {
             const missing = getDailyClassPlanMissingSections(structuredContent);
             const missingHint = missing.length ? ` Missing: ${missing.join('; ')}.` : '';
-            activePrompt = `${prompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return Daily Class Plan JSON with ALL 9 sections (day_period_topic_breakup, objectives[], teaching_methods[], classroom_activity[], exit_ticket, differentiated_support, homework_followup, teaching_aids[], teacher_reflection_notes). This is NOT a 13-section lesson planner — do not use lesson_name, introduction_warmup, or teaching_strategy as primary fields.`;
+            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return Daily Class Plan JSON with ALL 9 sections (day_period_topic_breakup, objectives[], teaching_methods[], classroom_activity[], exit_ticket, differentiated_support, homework_followup, teaching_aids[], teacher_reflection_notes). This is NOT a 13-section lesson planner — do not use lesson_name, introduction_warmup, or teaching_strategy as primary fields.`;
           } else if (slug === 'exam-question-paper-generator') {
             const missing = getExamPaperMissingSections(structuredContent, meta);
             const missingHint = missing.length ? ` Missing: ${missing.join('; ')}.` : '';
             const examTarget =
               Number(meta?.questionCount) > 0 ? Number(meta.questionCount) : 12;
-            activePrompt = `${prompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return Exam Question Paper JSON with ALL 11 sections. Use paper_title, instructions, blueprint, section_a..section_e (each an array of question objects with question, options for MCQs, answer, marks). Include internal_choices, answer_key, marking_scheme, open_ended_rubric. This is NOT Mock Test Builder — do not use mock_test_title, test_purpose_subtopic_link, or ncf_competency_alignment. Minimum ${examTarget} questions across sections.`;
+            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return Exam Question Paper JSON with ALL 11 sections. Use paper_title, instructions, blueprint, section_a..section_e (each an array of question objects with question, options for MCQs, answer, marks). Include internal_choices, answer_key, marking_scheme, open_ended_rubric. This is NOT Mock Test Builder — do not use mock_test_title, test_purpose_subtopic_link, or ncf_competency_alignment. Minimum ${examTarget} questions across sections.`;
           }
           continue;
         }

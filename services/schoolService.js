@@ -99,6 +99,30 @@ export function applySchoolToAdminUser(admin, school) {
   admin.isAsliPrepExclusive = school.isAsliPrepExclusive;
 }
 
+/** Build a school-shaped object from an admin user when schools collection row is missing */
+export function schoolShapeFromAdminUser(admin) {
+  if (!admin) return null;
+  return {
+    _id: admin.schoolId || undefined,
+    adminUserId: admin._id,
+    name: String(admin.schoolName || admin.fullName || admin.email || 'School').trim(),
+    board: admin.board || 'ASLI_EXCLUSIVE_SCHOOLS',
+    curriculumBoard: admin.curriculumBoard || 'CBSE',
+    isAsliPrepExclusive: Boolean(admin.isAsliPrepExclusive),
+    schoolLogo: admin.schoolLogo || '',
+    contactPerson: admin.contactPerson || admin.fullName || '',
+    phone: admin.phone || '',
+    secondaryContactPerson: admin.secondaryContactPerson || '',
+    secondaryContactPhone: admin.secondaryContactPhone || '',
+    place: admin.place || '',
+    pin: admin.pin || '',
+    schoolDetails: normalizeSchoolDetails(admin.schoolDetails),
+    isActive: admin.isActive !== false,
+    createdAt: admin.createdAt,
+    updatedAt: admin.updatedAt,
+  };
+}
+
 /** API shape for School Management UI (id = admin login id for backward compatibility) */
 export function formatSchoolListItem(school, admin, stats = {}) {
   const sd = school?.schoolDetails || {};

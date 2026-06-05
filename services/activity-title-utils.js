@@ -15,7 +15,22 @@ export const ACTIVITY_TITLE_FRAGMENT_RE =
   /^of\s+(?:the\s+)?activity\s*\/\s*project\s*$/i;
 
 /** PDF workbook index label — not a human-readable activity name */
-export const GENERIC_ACTIVITY_NUMBER_TITLE_RE = /^Activity\s+\d+\s*$/i;
+export const GENERIC_ACTIVITY_NUMBER_TITLE_RE = /^Activity\s*(?:\/\s*Project)?\s+\d+\s*$/i;
+
+/** Block opener: "Activity 1" or "Activity / Project 1" */
+export const ACTIVITY_BLOCK_HEADING_RE = /\bActivity\s*(?:\/\s*Project)?\s+(\d+)\b/i;
+
+export const ACTIVITY_BLOCK_SPLIT_RE = /\n(?=Activity\s*(?:\/\s*Project)?\s+\d+\b)/gi;
+
+export function pdfHasActivityBlockMarkers(text) {
+  return ACTIVITY_BLOCK_HEADING_RE.test(String(text || ''));
+}
+
+export function splitPdfTextByActivityBlocks(text) {
+  const raw = String(text || '').replace(/\r/g, '\n');
+  if (!pdfHasActivityBlockMarkers(raw)) return [];
+  return raw.split(ACTIVITY_BLOCK_SPLIT_RE).filter((p) => ACTIVITY_BLOCK_HEADING_RE.test(p));
+}
 
 /** Table / rubric column headers often mistaken for titles */
 const ACTIVITY_TITLE_JUNK_LINE_RE =
@@ -174,8 +189,8 @@ export function splitActivityBlocksByTitleSection(text) {
   const raw = String(text || '').replace(/\r/g, '\n');
   if (!raw.trim()) return [];
 
-  if (/\bActivity\s+\d+\b/i.test(raw)) {
-    return raw.split(/\n(?=Activity\s+\d+\b)/gi).filter((p) => /\bActivity\s+\d+\b/i.test(p));
+  if (pdfHasActivityBlockMarkers(raw)) {
+    return splitPdfTextByActivityBlocks(raw);
   }
 
   const byTitleHeader = raw.split(
@@ -198,7 +213,7 @@ export function repairActivityItemTitlesFromPdf(items, rawText) {
   const blocks = splitActivityBlocksByTitleSection(rawText);
   const titleBySl = new Map();
   for (const block of blocks) {
-    const numMatch = block.match(/\bActivity\s+(\d+)\b/i);
+    const numMatch = block.match(ACTIVITY_BLOCK_HEADING_RE);
     const title = extractActivityTitleFromBlock(block);
     if (!title) continue;
     if (numMatch) titleBySl.set(Number.parseInt(numMatch[1], 10), title);

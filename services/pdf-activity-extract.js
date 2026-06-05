@@ -15,7 +15,7 @@ import {
 import { splitMergedActivityTailSections } from './activity-section-headers.js';
 import { splitPdfTextByMarkerLines, str } from './pdf-extract-utils.js';
 
-const ACTIVITY_MARKER = /^Activity\s+\d+\b/i;
+const ACTIVITY_MARKER = /^Activity\s*(?:\/\s*Project)?\s+\d+\b/i;
 
 /** Map PIL-shaped workbook rows to teacher tool fields when needed. */
 export function mapActivityRowForToolSlug(row, toolSlug = 'project-idea-lab') {

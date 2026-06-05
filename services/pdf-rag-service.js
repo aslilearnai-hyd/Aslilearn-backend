@@ -295,6 +295,44 @@ function buildRagPrompt(query, chunks) {
   return `You are an educational AI assistant for ASLI Learn.\nUse ONLY the provided context if possible.\nIf context is insufficient, clearly mention assumptions.\n\nQuestion:\n${query}\n\nContext:\n${context}\n\nReturn concise, structured answer for student/teacher usage.`;
 }
 
+/**
+ * Build retrieval context from raw PDF text for AI PDF generation (upload-time RAG).
+ * Chunks the document, scores chunks against subject/topic query, returns top passages.
+ */
+export function buildPdfRagContextFromText(
+  pdfText,
+  { subject = '', topic = '', subTopic = '', topK = MAX_RETRIEVAL_K, maxChars = 120000 } = {},
+) {
+  const clean = normalizeSpaces(pdfText);
+  if (!clean) return '';
+
+  const chunks = chunkTextByWordWindow(clean);
+  if (chunks.length <= 1) {
+    return clean.slice(0, maxChars);
+  }
+
+  const query = [subject, topic, subTopic].filter(Boolean).join(' ').trim() || 'educational curriculum content';
+  const queryVec = localHashEmbedding(query);
+  const ranked = chunks
+    .map((chunk) => ({
+      ...chunk,
+      score: cosineSimilarity(queryVec, localHashEmbedding(chunk.chunkText)),
+    }))
+    .sort((a, b) => b.score - a.score)
+    .slice(0, Math.max(1, Math.min(20, topK)));
+
+  const selected = [];
+  let used = 0;
+  for (const chunk of ranked) {
+    const block = `[Chunk ${chunk.chunkIndex + 1}]\n${chunk.chunkText}`;
+    if (used + block.length > maxChars) break;
+    selected.push(block);
+    used += block.length;
+  }
+
+  return selected.length ? selected.join('\n\n') : clean.slice(0, maxChars);
+}
+
 export async function runHybridRagQuery({
   query,
   subject,

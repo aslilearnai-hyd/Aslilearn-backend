@@ -297,7 +297,9 @@ function validateRubricItem(item) {
 function validateWorksheetItem(item, expectedQuestionCount = 0, isPartialPass = false) {
   const errors = [];
   const qCount = countQuestionsInWorksheetItem(item);
-  if (qCount === 0) errors.push('Worksheet has no questions in sections[] or flat rows');
+  if (qCount === 0 && !isPartialPass) {
+    errors.push('Worksheet has no questions in sections[] or flat rows');
+  }
   if (
     !isPartialPass &&
     expectedQuestionCount > 2 &&

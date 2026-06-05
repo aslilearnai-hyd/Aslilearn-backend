@@ -12,6 +12,7 @@ import { processPdfSourceWithModels, runHybridRagQuery, archiveSupersededSources
 import { uploadPdfToConfiguredStorage, deleteFromConfiguredStorage } from '../services/cloud-storage.js';
 import { isPdfQueueEnabled } from '../queues/pdfProcessingQueue.js';
 import {
+  buildLocalPdfAnalysisFromSelection,
   classifyPdfContentWithFallback,
   extractTextFromPdfBuffer,
   resolveToolSlugFromLabel,
@@ -35,6 +36,12 @@ import {
   canonicalizeDailyClassPlanExtractedItem,
   canonicalizeExamPaperExtractedItem,
   canonicalizeWorksheetExtractedItem,
+  canonicalizePracticeQaExtractedItem,
+  canonicalizeStudyGuideExtractedItem,
+  canonicalizeChapterSummaryExtractedItem,
+  canonicalizeKeyPointsExtractedItem,
+  canonicalizeQuickAssignmentExtractedItem,
+  canonicalizeConceptBreakdownExtractedItem,
   canonicalizeStoryExtractedItem,
   buildStoryRenderableFromStructured,
   canonicalizeShortNotesExtractedItem,
@@ -42,17 +49,39 @@ import {
   canonicalizeFlashcardExtractedItem,
   buildFlashcardRenderableFromStructured,
   normalizeLessonPlannerStructuredContent,
+  generateStructuredContentFromPdf,
 } from '../services/ai-content-engine-service.js';
 import {
   extractActivityTitleFromMarkdown,
   isCurriculumBreadcrumbTitle,
   resolveActivityDisplayTitle,
 } from '../services/activity-title-utils.js';
-import { buildPdfExtractEmptyMessage, extractAndGenerateAllItems, getLastPdfExtractionMeta } from '../services/gemini-service.js';
-import { consolidateWorksheetExtractItems } from '../services/pdf-worksheet-extract.js';
 import { formatItemToContent } from '../controllers/aiToolsController.js';
 import { boardMongoMatch } from '../utils/board-label.js';
-import { isDeprecatedAiToolIdentifier } from '../config/aiToolTemplates.js';
+import { expandStructuredToFormatItems, isDeprecatedAiToolIdentifier } from '../config/aiToolTemplates.js';
+import {
+  beginTokenUsageSession,
+  endTokenUsageSession,
+  extractAndGenerateAllItems,
+  getLastPdfExtractionMeta,
+} from '../services/gemini-service.js';
+import {
+  activityPatternExtractIsComplete,
+  scoreActivityExtractRow,
+} from '../services/pdf-activity-extract.js';
+import {
+  consolidateWorksheetExtractItems,
+  extractWorksheetItemsFromPdfText,
+} from '../services/pdf-worksheet-extract.js';
+import { countExpectedPdfItems } from '../services/pdf-extract-validation.js';
+import {
+  canonicalPdfHasExtractableContent,
+  extractCanonicalPdfDocument,
+} from '../services/pdf-canonical-extract.js';
+import {
+  mapCanonicalPdfToToolBulkItems,
+  postProcessCanonicalBulkItems,
+} from '../services/pdf-canonical-mapper.js';
 
 function isDeprecatedPdfListRow(row) {
   return (
@@ -109,6 +138,334 @@ const __dirname = path.dirname(__filename);
 /** Matches express.json/urlencoded limit in index.js; raise nginx `client_max_body_size` if you increase this. */
 const AI_PDF_MAX_FILE_BYTES = 100 * 1024 * 1024;
 const AI_PDF_MAX_MB = Math.round(AI_PDF_MAX_FILE_BYTES / (1024 * 1024));
+
+/** Tools where PDF questions should all land in one document (not 1 DB row per question). */
+const PDF_QUESTION_DOCUMENT_TOOLS = new Set([
+  'worksheet-mcq-generator',
+  'homework-creator',
+  'mock-test-builder',
+  'exam-question-paper-generator',
+  'smart-qa-practice-generator',
+]);
+
+const PDF_EXTRACT_GENERATION_MODES = new Set(['extract', 'regex-extract', 'canonical-json']);
+
+const ZERO_LLM_TOKEN_USAGE = {
+  sessionLabel: 'ai-pdf-upload-zero-llm',
+  totals: { promptTokens: 0, completionTokens: 0, totalTokens: 0, callCount: 0 },
+  calls: [],
+};
+
+function shouldSkipPdfRagIndexing(toolSlug, generationMeta) {
+  if (generationMeta?.generationMode === 'regex-extract' || generationMeta?.generationMode === 'canonical-json') {
+    return true;
+  }
+  if (
+    PDF_QUESTION_DOCUMENT_TOOLS.has(toolSlug) &&
+    generationMeta?.generationMode &&
+    generationMeta.generationMode !== 'rag-fallback'
+  ) {
+    return true;
+  }
+  return false;
+}
+
+const ACTIVITY_TOOL_SLUGS = new Set(['activity-project-generator', 'project-idea-lab']);
+
+function canonicalMappedItemsAreUsable(toolSlug, items = []) {
+  if (!Array.isArray(items) || !items.length) return false;
+  if (ACTIVITY_TOOL_SLUGS.has(toolSlug)) {
+    const rich = items.filter((row) => scoreActivityExtractRow(row) >= 6);
+    return activityPatternExtractIsComplete(rich, items.length);
+  }
+  if (
+    PDF_QUESTION_DOCUMENT_TOOLS.has(toolSlug) ||
+    toolSlug === 'my-study-decks' ||
+    toolSlug === 'flashcard-generator' ||
+    toolSlug === 'quick-assignment-builder'
+  ) {
+    return countQuestionsInBulkItems(items) > 0 || items.length > 0;
+  }
+  return items.length > 0;
+}
+
+/** Worksheet PDFs: regex/canonical only — never Gemini classify or extract (cost). */
+function canUseZeroLlmCanonicalPath(toolSlug, extractedText) {
+  if (toolSlug === 'worksheet-mcq-generator') {
+    return Boolean(String(extractedText || '').trim());
+  }
+  const canonical = extractCanonicalPdfDocument(extractedText, { toolSlug });
+  const mapped = mapCanonicalPdfToToolBulkItems(toolSlug, canonical, extractedText, {});
+  return canonicalMappedItemsAreUsable(toolSlug, mapped.items);
+}
+
+function buildWorksheetRegexOnlyBulkItems(extractedText, params = {}) {
+  const title = String(params.topic || params.subtopic || 'Worksheet').trim() || 'Worksheet';
+  const consolidated = consolidateWorksheetExtractItems(
+    [{ title, worksheet_title: title }],
+    { ...params, rawPdfText: extractedText, forceSingleDocument: true },
+  );
+  return consolidated
+    .slice(0, 1)
+    .map((item) => canonicalizeWorksheetExtractedItem(item, extractedText))
+    .filter(Boolean);
+}
+
+function canonicalizeBulkItemForTool(toolSlug, item, extractedText = '') {
+  const metaClean = item && typeof item === 'object' ? { ...item } : {};
+  delete metaClean._fromPdf;
+  delete metaClean._fromAiGeneration;
+  switch (toolSlug) {
+    case 'activity-project-generator':
+    case 'project-idea-lab':
+      return canonicalizeActivityExtractedItem(metaClean, toolSlug);
+    case 'concept-mastery-helper':
+      return canonicalizeConceptExtractedItem(metaClean);
+    case 'concept-breakdown-explainer':
+      return canonicalizeConceptBreakdownExtractedItem(metaClean);
+    case 'homework-creator':
+      return canonicalizeHomeworkExtractedItem(metaClean);
+    case 'rubrics-evaluation-generator':
+      return canonicalizeRubricExtractedItem(metaClean);
+    case 'lesson-planner':
+    case 'study-schedule-maker':
+      return canonicalizeLessonPlannerExtractedItem(metaClean, toolSlug);
+    case 'daily-class-plan-maker':
+      return canonicalizeDailyClassPlanExtractedItem(metaClean);
+    case 'mock-test-builder':
+    case 'exam-question-paper-generator':
+      return canonicalizeExamPaperExtractedItem(metaClean, toolSlug);
+    case 'worksheet-mcq-generator':
+      return canonicalizeWorksheetExtractedItem(metaClean, extractedText);
+    case 'smart-qa-practice-generator':
+      return canonicalizePracticeQaExtractedItem(metaClean, extractedText);
+    case 'reading-practice-room':
+    case 'story-passage-creator':
+      return canonicalizeStoryExtractedItem(metaClean, toolSlug);
+    case 'short-notes-summaries-maker':
+      return canonicalizeShortNotesExtractedItem(metaClean);
+    case 'smart-study-guide-generator':
+      return canonicalizeStudyGuideExtractedItem(metaClean);
+    case 'chapter-summary-creator':
+      return canonicalizeChapterSummaryExtractedItem(metaClean);
+    case 'key-points-formula-extractor':
+      return canonicalizeKeyPointsExtractedItem(metaClean);
+    case 'quick-assignment-builder':
+      return canonicalizeQuickAssignmentExtractedItem(metaClean);
+    case 'my-study-decks':
+    case 'flashcard-generator':
+      return canonicalizeFlashcardExtractedItem(metaClean, toolSlug);
+    default:
+      return metaClean;
+  }
+}
+
+function countQuestionsInBulkItem(item) {
+  if (!item || typeof item !== 'object') return 0;
+  if (Array.isArray(item.sections)) {
+    return item.sections.reduce(
+      (n, sec) => n + (Array.isArray(sec?.questions) ? sec.questions.length : 0),
+      0,
+    );
+  }
+  if (Array.isArray(item.questions)) return item.questions.length;
+  if (Array.isArray(item.practice_questions)) return item.practice_questions.length;
+  return String(item.question || '').trim() ? 1 : 0;
+}
+
+function countQuestionsInBulkItems(items = []) {
+  return items.reduce((n, it) => n + countQuestionsInBulkItem(it), 0);
+}
+
+/**
+ * PDF → canonical JSON → tool format. Falls back to Gemini extract / RAG only when needed.
+ */
+async function resolvePdfUploadBulkItems(toolSlug, extractedText, params = {}) {
+  const expectedQuestionCount = countExpectedPdfItems(toolSlug, extractedText);
+  const canonical = extractCanonicalPdfDocument(extractedText, { toolSlug });
+  const mapped = mapCanonicalPdfToToolBulkItems(toolSlug, canonical, extractedText, params);
+
+  if (mapped.items.length > 0 && canonicalMappedItemsAreUsable(toolSlug, mapped.items)) {
+    let bulkItems = postProcessCanonicalBulkItems(toolSlug, mapped.items, extractedText, params);
+    bulkItems = bulkItems.map((item) => canonicalizeBulkItemForTool(toolSlug, item, extractedText));
+    const extractedQuestionCount = countQuestionsInBulkItems(bulkItems);
+    const questionMarks = (extractedText.match(/\?/g) || []).length;
+    if (toolSlug === 'worksheet-mcq-generator') {
+      console.log(
+        `[AI PDF] Worksheet zero-LLM: ${extractedQuestionCount} questions from ${extractedText.length} chars (~${questionMarks} ? in text, 0 tokens)`,
+      );
+    }
+    return {
+      bulkItems,
+      pdfCanonical: canonical,
+      generatedResult: null,
+      generationMeta: {
+        extractionStatus: 'complete',
+        validationPassed: true,
+        retryCount: 0,
+        extractedItemCount: extractedQuestionCount || mapped.items.length,
+        expectedItemCount: expectedQuestionCount || extractedQuestionCount || mapped.items.length,
+        validationErrors: [],
+        generationMode: 'canonical-json',
+        parser: mapped.parser,
+        ragChunkCount: 0,
+        formatSource: 'pdf-canonical-json',
+        pdfCanonical: canonical,
+      },
+    };
+  }
+
+  if (ACTIVITY_TOOL_SLUGS.has(toolSlug)) {
+    let bulkItems = [];
+    let extractionMeta = getLastPdfExtractionMeta();
+    try {
+      bulkItems = await extractAndGenerateAllItems(toolSlug, extractedText, params);
+    } catch (extractErr) {
+      console.warn('[AI PDF] Activity extract failed:', extractErr?.message || extractErr);
+      bulkItems = [];
+    }
+    extractionMeta = getLastPdfExtractionMeta();
+    if (bulkItems.length) {
+      bulkItems = bulkItems.map((item) => canonicalizeBulkItemForTool(toolSlug, item, extractedText));
+      return {
+        bulkItems,
+        pdfCanonical: canonical,
+        generatedResult: null,
+        generationMeta: {
+          extractionStatus: extractionMeta.extractionStatus || 'complete',
+          validationPassed: Boolean(extractionMeta.validationPassed),
+          retryCount: Number(extractionMeta.retryCount || 0),
+          extractedItemCount: bulkItems.length,
+          expectedItemCount: bulkItems.length,
+          validationErrors: extractionMeta.validationErrors || [],
+          generationMode: 'extract',
+          ragChunkCount: 0,
+          formatSource: 'aiToolTemplates',
+          pdfCanonical: canonical,
+        },
+      };
+    }
+  }
+
+  if (PDF_QUESTION_DOCUMENT_TOOLS.has(toolSlug)) {
+    if (toolSlug === 'worksheet-mcq-generator') {
+      const bulkItems = buildWorksheetRegexOnlyBulkItems(extractedText, params);
+      const extractedQuestionCount = countQuestionsInBulkItems(bulkItems);
+      const questionMarks = (extractedText.match(/\?/g) || []).length;
+      console.log(
+        `[AI PDF] Worksheet zero-LLM fallback: ${extractedQuestionCount} questions (~${questionMarks} ? in text, 0 tokens)`,
+      );
+      return {
+        bulkItems,
+        pdfCanonical: canonical,
+        generatedResult: null,
+        generationMeta: {
+          extractionStatus: extractedQuestionCount > 0 ? 'complete' : 'partial',
+          validationPassed: extractedQuestionCount > 0,
+          retryCount: 0,
+          extractedItemCount: extractedQuestionCount,
+          expectedItemCount: expectedQuestionCount || extractedQuestionCount,
+          validationErrors: extractedQuestionCount > 0 ? [] : ['No worksheet questions matched regex extractors'],
+          generationMode: 'regex-extract',
+          parser: 'pdf-worksheet-regex',
+          ragChunkCount: 0,
+          formatSource: 'pdf-worksheet-extract',
+          pdfCanonical: canonical,
+        },
+      };
+    }
+
+    let bulkItems = [];
+    let extractionMeta = getLastPdfExtractionMeta();
+    try {
+      bulkItems = await extractAndGenerateAllItems(toolSlug, extractedText, params);
+    } catch (extractErr) {
+      console.warn('[AI PDF] Full PDF extract failed:', extractErr?.message || extractErr);
+      bulkItems = [];
+    }
+    extractionMeta = getLastPdfExtractionMeta();
+
+    if (
+      (toolSlug === 'homework-creator' ||
+        toolSlug === 'mock-test-builder' ||
+        toolSlug === 'exam-question-paper-generator' ||
+        toolSlug === 'smart-qa-practice-generator') &&
+      bulkItems.length > 1
+    ) {
+      bulkItems = bulkItems.slice(0, 1);
+    }
+
+    const extractedQuestionCount = countQuestionsInBulkItems(bulkItems);
+    if (bulkItems.length) {
+      return {
+        bulkItems,
+        pdfCanonical: canonical,
+        generatedResult: null,
+        generationMeta: {
+          extractionStatus: extractionMeta.extractionStatus || 'complete',
+          validationPassed: Boolean(extractionMeta.validationPassed),
+          retryCount: Number(extractionMeta.retryCount || 0),
+          extractedItemCount: extractedQuestionCount,
+          expectedItemCount: expectedQuestionCount || extractedQuestionCount,
+          validationErrors: extractionMeta.validationErrors || [],
+          generationMode: 'extract',
+          ragChunkCount: 0,
+          formatSource: 'aiToolTemplates',
+          pdfCanonical: canonical,
+        },
+      };
+    }
+
+    const generatedResult = await generateStructuredContentFromPdf(toolSlug, extractedText, {
+      ...params,
+      questionCount: expectedQuestionCount > 0 ? expectedQuestionCount : undefined,
+    });
+    return {
+      bulkItems: [generatedResult.structuredContent || {}],
+      pdfCanonical: canonical,
+      generatedResult,
+      generationMeta: {
+        extractionStatus: 'complete',
+        validationPassed: true,
+        retryCount: 0,
+        extractedItemCount: 0,
+        expectedItemCount: expectedQuestionCount,
+        validationErrors: [],
+        generationMode: 'rag-fallback',
+        ragChunkCount: Number(generatedResult?.ragChunkCount || 0),
+        formatSource: 'aiToolTemplates',
+        pdfCanonical: canonical,
+      },
+    };
+  }
+
+  const generatedResult = await generateStructuredContentFromPdf(toolSlug, extractedText, params);
+  let bulkItems = expandStructuredToFormatItems(
+    toolSlug,
+    generatedResult?.structuredContent || {},
+  );
+  if (!Array.isArray(bulkItems) || bulkItems.length === 0) {
+    bulkItems = [generatedResult?.structuredContent || {}];
+  }
+
+  return {
+    bulkItems,
+    pdfCanonical: canonical,
+    generatedResult,
+    generationMeta: {
+      extractionStatus: 'complete',
+      validationPassed: true,
+      retryCount: 0,
+      extractedItemCount: 0,
+      expectedItemCount: bulkItems.length,
+      validationErrors: [],
+      generationMode: generatedResult?.generationMode || 'rag',
+      ragChunkCount: Number(generatedResult?.ragChunkCount || 0),
+      formatSource: 'aiToolTemplates',
+      pdfCanonical: canonical,
+    },
+  };
+}
 
 function respondPdfUploadError(err, res) {
   if (err?.code === 'LIMIT_FILE_SIZE') {
@@ -419,9 +776,27 @@ function enrichWorksheetRowForApi(data) {
     data.structuredContent && typeof data.structuredContent === 'object' && !Array.isArray(data.structuredContent)
       ? { ...data.structuredContent }
       : {};
-  const sourceText = String(
-    data.generatedContent || data.content || data.markdown || '',
+  const storedQuestionCount = Object.values(structured.sections || {}).length
+    ? (structured.sections || []).reduce(
+        (n, sec) => n + (Array.isArray(sec?.questions) ? sec.questions.length : 0),
+        0,
+      )
+    : Array.isArray(structured.questions)
+      ? structured.questions.length
+      : 0;
+  const pdfText = String(
+    data.metadata?.extractedPdfText || data.structuredContent?.extractedPdfText || '',
   ).trim();
+  const questionMarks = (pdfText.match(/\?/g) || []).length;
+  const needsPdfReparse =
+    pdfText.length > 400 &&
+    (storedQuestionCount < 2 ||
+      (questionMarks > 12 && storedQuestionCount < Math.max(10, Math.floor(questionMarks * 0.45))));
+  const sourceText = needsPdfReparse
+    ? pdfText
+    : storedQuestionCount >= 2
+      ? ''
+      : pdfText;
   const normalized = canonicalizeWorksheetExtractedItem(structured, sourceText);
   const ct = String(data.contentType || '').trim() || 'Worksheet';
   return {
@@ -824,6 +1199,36 @@ const PDF_LIST_SUMMARY_SOURCE_SELECT = [
   'renderContent.title',
 ].join(' ');
 
+async function aggregateAiPdfTokenUsage(masterMatch = {}) {
+  const rows = await AiToolGeneration.aggregate([
+    {
+      $match: {
+        sourceType: 'ai_pdf',
+        'metadata.tokenUsage.totals.totalTokens': { $gt: 0 },
+        ...masterMatch,
+      },
+    },
+    {
+      $group: {
+        _id: null,
+        totalTokens: { $sum: '$metadata.tokenUsage.totals.totalTokens' },
+        promptTokens: { $sum: '$metadata.tokenUsage.totals.promptTokens' },
+        completionTokens: { $sum: '$metadata.tokenUsage.totals.completionTokens' },
+        totalCalls: { $sum: '$metadata.tokenUsage.totals.callCount' },
+        generationCount: { $sum: 1 },
+      },
+    },
+  ]).catch(() => []);
+  const hit = rows[0] || {};
+  return {
+    totalTokens: Number(hit.totalTokens || 0),
+    promptTokens: Number(hit.promptTokens || 0),
+    completionTokens: Number(hit.completionTokens || 0),
+    totalCalls: Number(hit.totalCalls || 0),
+    generationCount: Number(hit.generationCount || 0),
+  };
+}
+
 async function fetchPaginatedPdfList({ query, page, limit, summary }) {
   const masterMatch = buildPdfListMasterMatch(query);
   const skip = (page - 1) * limit;
@@ -885,6 +1290,8 @@ async function fetchPaginatedPdfList({ query, page, limit, summary }) {
   const data = merged.map((entry) => entry.row).filter((row) => row && !isDeprecatedPdfListRow(row));
   const total = masterCount;
 
+  const tokenUsageSummary = await aggregateAiPdfTokenUsage(masterMatch);
+
   return {
     data,
     pagination: {
@@ -893,6 +1300,7 @@ async function fetchPaginatedPdfList({ query, page, limit, summary }) {
       total,
       totalPages: Math.max(1, Math.ceil(total / limit)),
     },
+    tokenUsageSummary,
   };
 }
 
@@ -1083,28 +1491,46 @@ router.post(
         return res.status(400).json({ success: false, message: 'Empty extraction from PDF. Upload a readable educational PDF.' });
       }
 
+      const resolvedToolSlug = String(toolType || '').trim();
+      const useZeroLlmCanonicalPath = canUseZeroLlmCanonicalPath(resolvedToolSlug, extractedText);
+      let tokenUsage = useZeroLlmCanonicalPath ? ZERO_LLM_TOKEN_USAGE : null;
+
       let analysis;
-      try {
-        analysis = await classifyPdfContentWithFallback(extractedText, {
+      if (useZeroLlmCanonicalPath) {
+        analysis = buildLocalPdfAnalysisFromSelection({
           subject: String(subject || '').trim(),
           classLabel: toClassLabel(classInput),
           chapter: String(chapter || '').trim(),
           topic: String(topic || '').trim(),
           subTopic: String(subTopic || '').trim(),
-          toolType: String(toolType || '').trim(),
+          toolType: resolvedToolSlug,
         });
-      } catch (geminiError) {
-        return res.status(502).json({
-          success: false,
-          message: `Gemini analysis failed: ${geminiError.message || 'Unknown error'}`,
-        });
+        console.log('[AI PDF] Zero-LLM canonical path: PDF→JSON→tool format (no Gemini classify, no RAG)');
+      } else {
+        beginTokenUsageSession('ai-pdf-upload');
+        try {
+          analysis = await classifyPdfContentWithFallback(extractedText, {
+            subject: String(subject || '').trim(),
+            classLabel: toClassLabel(classInput),
+            chapter: String(chapter || '').trim(),
+            topic: String(topic || '').trim(),
+            subTopic: String(subTopic || '').trim(),
+            toolType: resolvedToolSlug,
+          });
+        } catch (geminiError) {
+          tokenUsage = endTokenUsageSession();
+          return res.status(502).json({
+            success: false,
+            message: `Gemini analysis failed: ${geminiError.message || 'Unknown error'}`,
+            tokenUsage,
+          });
+        }
       }
 
       if (analysis.isFallback) {
         console.warn('[AI PDF] Using fallback analysis. Reason:', analysis.fallbackReason);
       }
 
-      const resolvedToolSlug = String(toolType || '').trim();
       const detectedToolSlug = resolveToolSlugFromLabel(analysis.bestMatchingToolLabel) || '';
       if (detectedToolSlug && detectedToolSlug !== resolvedToolSlug) {
         console.warn(
@@ -1132,33 +1558,45 @@ router.post(
       }
 
       const bulkParseParams = {
+        board: normalizeBoard(board),
         classLabel: toClassLabel(classInput),
         subject: selectedSubject,
         topic: String(topic || chapter || '').trim(),
         subtopic: String(subTopic || '').trim(),
       };
+
+      let generatedResult;
+      let generationMeta;
       let bulkItems = [];
       try {
-        bulkItems = await extractAndGenerateAllItems(resolvedToolSlug, extractedText, bulkParseParams);
-      } catch (bulkErr) {
-        console.warn('[AI PDF] Bulk PDF item extraction failed:', bulkErr?.message || bulkErr);
-        if (bulkErr?.stack) console.warn(bulkErr.stack.split('\n').slice(0, 4).join('\n'));
-        bulkItems = [];
-      }
-
-      if (
-        resolvedToolSlug === 'worksheet-mcq-generator' &&
-        Array.isArray(bulkItems) &&
-        bulkItems.length > 0
-      ) {
-        bulkItems = consolidateWorksheetExtractItems(bulkItems, {
-          ...bulkParseParams,
-          rawPdfText: extractedText,
+        const resolved = await resolvePdfUploadBulkItems(
+          resolvedToolSlug,
+          extractedText,
+          bulkParseParams,
+        );
+        bulkItems = resolved.bulkItems;
+        generatedResult = resolved.generatedResult;
+        generationMeta = resolved.generationMeta;
+      } catch (genErr) {
+        if (!useZeroLlmCanonicalPath) tokenUsage = endTokenUsageSession();
+        console.warn('[AI PDF] PDF processing failed:', genErr?.message || genErr);
+        try {
+          fs.unlink(req.file.path, () => {});
+        } catch {
+          // ignore
+        }
+        return res.status(502).json({
+          success: false,
+          code: 'PDF_GENERATION_FAILED',
+          message: genErr?.message || 'Failed to process PDF content.',
+          toolType: resolvedToolSlug,
+          tokenUsage,
         });
       }
 
+      if (!useZeroLlmCanonicalPath) tokenUsage = endTokenUsageSession();
+
       if (Array.isArray(bulkItems) && bulkItems.length > 0) {
-        const extractionMeta = getLastPdfExtractionMeta();
         const fileUrl = `/uploads/pdf-knowledge/${req.file.filename}`;
         let uploaded = {
           fileName: req.file.filename,
@@ -1185,7 +1623,8 @@ router.post(
         }
 
         const inferredContentType =
-          String(analysis.contentType || '').trim() || 'Generated Content';
+          String(generatedResult?.contentType || analysis.contentType || '').trim() || 'Generated Content';
+        const skipRagIndexing = shouldSkipPdfRagIndexing(resolvedToolSlug, generationMeta);
         const source = await AiContentEngineSource.create({
           fileName: uploaded.fileName,
           originalName: req.file.originalname,
@@ -1202,8 +1641,20 @@ router.post(
           subTopic: String(subTopic || analysis.subTopic || '').trim(),
           toolType: resolvedToolSlug,
           contentType: inferredContentType,
+          ...(skipRagIndexing
+            ? {
+                processingStatus: 'processed',
+                extractedTextLength: extractedText.length,
+                chunkCount: 0,
+                lastProcessedAt: new Date(),
+              }
+            : {}),
           structuredContent: {
             bulkUpload: true,
+            generationMode: generationMeta?.generationMode || 'rag',
+            pdfCanonical: generationMeta?.pdfCanonical || null,
+            extractedPdfText: String(extractedText || '').slice(0, 200000),
+            tokenUsage,
             itemCount: bulkItems.length,
             items: bulkItems.map((it, idx) => ({
               index: idx,
@@ -1241,39 +1692,26 @@ router.post(
           uploadedByRole: toUploadedByRole(req.user?.role),
         });
 
-        const extractedFromPdf = bulkItems.length;
+        const generatedByAI = PDF_EXTRACT_GENERATION_MODES.has(generationMeta?.generationMode)
+          ? 0
+          : bulkItems.length;
+        const extractedFromPdf = PDF_EXTRACT_GENERATION_MODES.has(generationMeta?.generationMode)
+          ? countQuestionsInBulkItems(bulkItems) || bulkItems.length
+          : 0;
         const now = new Date();
         const records = bulkItems.map((item, index) => {
           const metaClean = { ...item };
           delete metaClean._fromPdf;
-          const structuredForRow =
-            resolvedToolSlug === 'activity-project-generator' || resolvedToolSlug === 'project-idea-lab'
-              ? canonicalizeActivityExtractedItem(metaClean, resolvedToolSlug)
-              : resolvedToolSlug === 'concept-mastery-helper'
-                ? canonicalizeConceptExtractedItem(metaClean)
-                : resolvedToolSlug === 'homework-creator'
-                  ? canonicalizeHomeworkExtractedItem(metaClean)
-                  : resolvedToolSlug === 'rubrics-evaluation-generator'
-                    ? canonicalizeRubricExtractedItem(metaClean)
-                    : resolvedToolSlug === 'lesson-planner' || resolvedToolSlug === 'study-schedule-maker'
-                      ? canonicalizeLessonPlannerExtractedItem(metaClean, resolvedToolSlug)
-                      : resolvedToolSlug === 'daily-class-plan-maker'
-                        ? canonicalizeDailyClassPlanExtractedItem(metaClean)
-                        : resolvedToolSlug === 'mock-test-builder' ||
-                            resolvedToolSlug === 'exam-question-paper-generator'
-                          ? canonicalizeExamPaperExtractedItem(metaClean, resolvedToolSlug)
-                          : resolvedToolSlug === 'worksheet-mcq-generator'
-                            ? canonicalizeWorksheetExtractedItem(metaClean, extractedText)
-                            : resolvedToolSlug === 'reading-practice-room' ||
-                                resolvedToolSlug === 'story-passage-creator'
-                              ? canonicalizeStoryExtractedItem(metaClean, resolvedToolSlug)
-                            : resolvedToolSlug === 'short-notes-summaries-maker'
-                              ? canonicalizeShortNotesExtractedItem(metaClean)
-                              : resolvedToolSlug === 'my-study-decks' ||
-                                  resolvedToolSlug === 'flashcard-generator'
-                                ? canonicalizeFlashcardExtractedItem(metaClean, resolvedToolSlug)
-                                : metaClean;
-          let contentStr = formatItemToContent(resolvedToolSlug, structuredForRow, index);
+          delete metaClean._fromAiGeneration;
+          const structuredForRow = canonicalizeBulkItemForTool(
+            resolvedToolSlug,
+            metaClean,
+            extractedText,
+          );
+          let contentStr =
+            bulkItems.length === 1 && generatedResult?.generatedContent
+              ? String(generatedResult.generatedContent)
+              : formatItemToContent(resolvedToolSlug, structuredForRow, index);
           if (resolvedToolSlug === 'activity-project-generator' || resolvedToolSlug === 'project-idea-lab') {
             const fromMd = extractActivityTitleFromMarkdown(contentStr);
             const titleBad =
@@ -1314,8 +1752,21 @@ router.post(
               approvalStatus: 'pending',
               processingStatus: 'processed',
               uploadedByRole: toUploadedByRole(req.user?.role),
-              generatedByAI: false,
-              sourceLabel: 'PDF Upload (Extracted)',
+              generatedByAI: !PDF_EXTRACT_GENERATION_MODES.has(generationMeta?.generationMode),
+              sourceLabel:
+                generationMeta?.generationMode === 'canonical-json'
+                  ? 'PDF Upload (Canonical JSON)'
+                  : PDF_EXTRACT_GENERATION_MODES.has(generationMeta?.generationMode)
+                    ? 'PDF Upload (Full Extract)'
+                    : 'PDF Upload (AI Generated)',
+              formatSource: generationMeta?.formatSource || 'aiToolTemplates',
+              pdfCanonical: generationMeta?.pdfCanonical || null,
+              extractedPdfText:
+                resolvedToolSlug === 'worksheet-mcq-generator'
+                  ? String(extractedText || '').slice(0, 200000)
+                  : '',
+              generationMode: generationMeta.generationMode,
+              ragChunkCount: generationMeta.ragChunkCount,
               geminiDetected: {
                 classLabel: String(analysis.classLabel || ''),
                 subject: String(analysis.subject || ''),
@@ -1331,19 +1782,32 @@ router.post(
                 subjectTopicReason: subjectTopicMatch.reason || '',
                 subjectTopicConfidence: subjectTopicMatch.confidence || 0,
               },
-              extractionStatus: extractionMeta.extractionStatus || 'complete',
-              validationPassed: Boolean(extractionMeta.validationPassed),
-              retryCount: Number(extractionMeta.retryCount || 0),
-              extractedItemCount: Number(extractionMeta.extractedItemCount || bulkItems.length),
-              expectedItemCount: Number(extractionMeta.expectedItemCount || 0),
-              validationErrors: extractionMeta.validationErrors || [],
+              extractionStatus: generationMeta.extractionStatus,
+              validationPassed: Boolean(generationMeta.validationPassed),
+              retryCount: Number(generationMeta.retryCount || 0),
+              extractedItemCount: Number(generationMeta.extractedItemCount || 0),
+              expectedItemCount: Number(generationMeta.expectedItemCount || bulkItems.length),
+              validationErrors: generationMeta.validationErrors || [],
+              ...(index === 0 ? { tokenUsage } : {}),
             },
           };
         });
 
         const inserted = await AiToolGeneration.insertMany(records, { ordered: false });
         const firstId = inserted[0]?._id;
-        console.log(`[AI PDF] Bulk save: ${bulkItems.length} row(s), extract-only from PDF`);
+        console.log(
+          `[AI PDF] Bulk save: ${bulkItems.length} row(s), mode=${generationMeta?.generationMode || 'unknown'}, questions=${countQuestionsInBulkItems(bulkItems)}, tokens=${tokenUsage?.totals?.totalTokens || 0} (${tokenUsage?.totals?.callCount || 0} LLM calls)`,
+        );
+
+        if (!skipRagIndexing) {
+          processPdfSourceWithModels(source._id, {
+            sourceModel: AiContentEngineSource,
+            chunkModel: AiContentEngineChunk,
+          }).catch((processErr) => {
+            console.warn('[AI PDF] Background chunk/embed failed (non-fatal):', processErr?.message || processErr);
+          });
+        }
+
         return res.status(201).json({
           success: true,
           data: {
@@ -1351,7 +1815,7 @@ router.post(
             sourcePdfId: source._id,
             totalSaved: bulkItems.length,
             extractedFromPdf,
-            generatedByAI: 0,
+            generatedByAI,
             fileName: source.originalName,
             subject: source.subject,
             class: source.classLabel,
@@ -1366,17 +1830,23 @@ router.post(
             processingStatus: source.processingStatus,
             analysisMode: analysis.analysisMode || 'gemini',
             extraction: {
-              extractionStatus: extractionMeta.extractionStatus || 'complete',
-              validationPassed: Boolean(extractionMeta.validationPassed),
-              retryCount: Number(extractionMeta.retryCount || 0),
-              extractedItemCount: Number(extractionMeta.extractedItemCount || bulkItems.length),
-              expectedItemCount: Number(extractionMeta.expectedItemCount || 0),
-              validationErrors: extractionMeta.validationErrors || [],
+              extractionStatus: generationMeta.extractionStatus,
+              validationPassed: Boolean(generationMeta.validationPassed),
+              retryCount: Number(generationMeta.retryCount || 0),
+              extractedItemCount: Number(generationMeta.extractedItemCount || 0),
+              expectedItemCount: Number(generationMeta.expectedItemCount || bulkItems.length),
+              validationErrors: generationMeta.validationErrors || [],
+              generationMode: generationMeta.generationMode,
+              parser: generationMeta.parser || '',
+              ragChunkCount: generationMeta.ragChunkCount,
+              pdfCanonical: generationMeta.pdfCanonical || null,
             },
+            tokenUsage,
           },
         });
       }
 
+      if (!useZeroLlmCanonicalPath) endTokenUsageSession();
       try {
         fs.unlink(req.file.path, () => {});
       } catch {
@@ -1384,8 +1854,8 @@ router.post(
       }
       return res.status(422).json({
         success: false,
-        code: 'PDF_EXTRACT_EMPTY',
-        message: buildPdfExtractEmptyMessage(resolvedToolSlug),
+        code: 'PDF_GENERATION_EMPTY',
+        message: 'No content could be generated from this PDF for the selected tool.',
         toolType: resolvedToolSlug,
       });
     } catch (error) {
@@ -1496,7 +1966,7 @@ router.get('/pdf/list', verifyToken, authorizeRoles('teacher', 'admin', 'super-a
       req.query.summary === '' ||
       req.query.summary === '1' ||
       req.query.summary === 'true';
-    const { data, pagination } = await fetchPaginatedPdfList({
+    const { data, pagination, tokenUsageSummary } = await fetchPaginatedPdfList({
       query: req.query,
       page,
       limit,
@@ -1506,6 +1976,7 @@ router.get('/pdf/list', verifyToken, authorizeRoles('teacher', 'admin', 'super-a
       success: true,
       data,
       pagination,
+      tokenUsageSummary,
     });
   } catch (error) {
     return res.status(500).json({ success: false, message: error.message || 'Failed to fetch list' });

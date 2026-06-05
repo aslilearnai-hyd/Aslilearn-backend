@@ -19,7 +19,11 @@
     "seed:ai-topics:class10-cbse": "node scripts/seed-ai-tool-topics-class10-cbse.js",
     "seed:hindi-ai-topics-ncert": "node scripts/seed-hindi-ai-tool-topics-ncert-data.js",
     "migrate:ai-tool-board-cbse": "node scripts/migrate-ai-tool-board-to-cbse.js",
-    "test:pdf-extraction": "node tests/pdf-extraction/run-all.js"
+    "test:pdf-extraction": "node tests/pdf-extraction/run-all.js",
+    "db:diagnose": "node scripts/diagnose-database.js",
+    "db:rebuild-schools": "node scripts/rebuild-schools-from-admins.js",
+    "db:restore-users": "node scripts/restore-core-users.js",
+    "db:recover-orphans": "node scripts/recover-schools-from-orphans.js"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1036.0",

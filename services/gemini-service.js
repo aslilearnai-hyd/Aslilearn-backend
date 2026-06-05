@@ -232,11 +232,82 @@ function parseGeminiSuggestedRetryMs(msg) {
   return null;
 }
 
+function estimateTokensFromText(text) {
+  const words = String(text || '')
+    .split(/\s+/)
+    .filter(Boolean).length;
+  return Math.max(1, Math.ceil(words * 1.3));
+}
+
+let activeTokenUsageSession = null;
+
+/** Start accumulating LLM token usage for one AI PDF / generation run. */
+export function beginTokenUsageSession(label = 'generation') {
+  activeTokenUsageSession = {
+    label: String(label || 'generation'),
+    startedAt: new Date().toISOString(),
+    calls: [],
+    totals: {
+      promptTokens: 0,
+      completionTokens: 0,
+      totalTokens: 0,
+      callCount: 0,
+    },
+  };
+  return activeTokenUsageSession;
+}
+
+export function getTokenUsageSession() {
+  return activeTokenUsageSession;
+}
+
+/** End session and return usage snapshot (totals + per-call breakdown). */
+export function endTokenUsageSession() {
+  const session = activeTokenUsageSession;
+  activeTokenUsageSession = null;
+  if (!session) {
+    return {
+      label: 'generation',
+      calls: [],
+      totals: { promptTokens: 0, completionTokens: 0, totalTokens: 0, callCount: 0 },
+    };
+  }
+  return {
+    label: session.label,
+    startedAt: session.startedAt,
+    endedAt: new Date().toISOString(),
+    calls: session.calls,
+    totals: { ...session.totals },
+  };
+}
+
+function recordTokenUsage(entry = {}) {
+  if (!activeTokenUsageSession) return;
+  const promptTokens = Number(entry.promptTokens || 0);
+  const completionTokens = Number(entry.completionTokens || 0);
+  const totalTokens = Number(entry.totalTokens || promptTokens + completionTokens);
+  const row = {
+    label: String(entry.label || 'llm').trim() || 'llm',
+    provider: String(entry.provider || 'unknown').trim() || 'unknown',
+    model: String(entry.model || '').trim(),
+    promptTokens,
+    completionTokens,
+    totalTokens,
+    at: new Date().toISOString(),
+  };
+  activeTokenUsageSession.calls.push(row);
+  activeTokenUsageSession.totals.promptTokens += promptTokens;
+  activeTokenUsageSession.totals.completionTokens += completionTokens;
+  activeTokenUsageSession.totals.totalTokens += totalTokens;
+  activeTokenUsageSession.totals.callCount += 1;
+}
+
 async function callChatCompletions({
   messages,
   temperature = 0.3,
   maxTokens = 2000,
   preferJson = false, // kept for compatibility with callers
+  usageLabel = 'llm',
 }) {
   const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   const contextTokens = Number(process.env.LLM_CONTEXT_TOKENS) || 0;
@@ -296,6 +367,21 @@ async function callChatCompletions({
             }
             break;
           }
+          const usageMeta = result?.response?.usageMetadata;
+          const promptTokens =
+            Number(usageMeta?.promptTokenCount) ||
+            estimateTokensFromText(
+              normalizedMessages.map((m) => String(m.content || '')).join('\n'),
+            );
+          const completionTokens = Number(usageMeta?.candidatesTokenCount) || estimateTokensFromText(text);
+          recordTokenUsage({
+            label: usageLabel,
+            provider: 'gemini',
+            model: modelName,
+            promptTokens,
+            completionTokens,
+            totalTokens: Number(usageMeta?.totalTokenCount) || promptTokens + completionTokens,
+          });
           if (modelName !== modelChain[0]) {
             console.warn(`[Gemini] Succeeded on fallback model ${modelName} (primary busy or failed).`);
           }
@@ -372,6 +458,19 @@ async function callChatCompletions({
     if (!text) {
       throw new Error('Upstream fallback returned empty content');
     }
+    const usage = data?.usage || {};
+    const promptTokens =
+      Number(usage.prompt_tokens) ||
+      estimateTokensFromText(normalizedMessages.map((m) => String(m.content || '')).join('\n'));
+    const completionTokens = Number(usage.completion_tokens) || estimateTokensFromText(text);
+    recordTokenUsage({
+      label: usageLabel,
+      provider: 'upstream',
+      model: cfg.model,
+      promptTokens,
+      completionTokens,
+      totalTokens: Number(usage.total_tokens) || promptTokens + completionTokens,
+    });
     return text;
   };
 
@@ -1857,6 +1956,7 @@ async function runGeminiPdfExtractPass(toolType, textSlice, params, passContext 
         temperature: 0.02,
         maxTokens: maxExtractTokens,
         preferJson: true,
+        usageLabel: `pdf-extract:${toolType}:${passContext.label || 'full'}`,
       });
 
       lastRaw = extractRaw;
@@ -2528,6 +2628,7 @@ Provide: (1) what you see, (2) explanation/solution, (3) key takeaways.`;
       temperature: wantsJson ? 0.1 : 0.3,
       maxTokens: 2200,
       preferJson: wantsJson,
+      usageLabel: wantsJson ? 'structured-json' : 'structured-text',
     });
 
     return wantsJson ? stripCodeFences(text) : text;
