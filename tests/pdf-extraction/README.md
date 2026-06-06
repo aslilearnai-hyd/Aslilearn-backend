@@ -2,6 +2,8 @@
 
 Regex-based extractors for all **11 AI tools**, plus Gemini merge tests.
 
+**Worksheet PDF upload (production):** zero-LLM only — see `ai-tools/AI-PDF-UPLOAD.md` for full pipeline, fixes, and operator checklist.
+
 ## Run all tests
 
 ```bash
@@ -13,6 +15,10 @@ npm run test:pdf-extraction
 
 ```bash
 node tests/pdf-extraction/test-worksheet.js
+node tests/pdf-extraction/test-worksheet-multipage-mcq.js
+node tests/pdf-extraction/test-worksheet-locating-places-dense.js
+node tests/pdf-extraction/test-worksheet-answer-key-sections.js
+node tests/pdf-extraction/test-worksheet-user-sample.js
 node tests/pdf-extraction/test-concept-mastery.js
 node tests/pdf-extraction/test-flashcards.js
 # … etc.

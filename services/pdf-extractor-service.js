@@ -5,7 +5,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { parse } from 'csv-parse/sync';
-import * as pdfParseModule from 'pdf-parse';
+import { PDFParse } from 'pdf-parse';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -18,9 +18,13 @@ const execAsync = promisify(exec);
  * @returns {Promise<string>} Full raw text from all pages
  */
 export async function extractRawTextFromPDF(pdfBuffer) {
-  const pdfParse = pdfParseModule?.default || pdfParseModule;
-  const data = await pdfParse(pdfBuffer);
-  return String(data?.text || '').trim();
+  const parser = new PDFParse({ data: pdfBuffer });
+  try {
+    const parsed = await parser.getText();
+    return String(parsed?.text || '').trim();
+  } finally {
+    await parser.destroy().catch(() => {});
+  }
 }
 
 /**

@@ -9,6 +9,14 @@ import { extractToolItemsFromPdfText, listPdfExtractTools } from '../../services
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const TEST_FILES = [
+  'test-quick-assignment-square-numbers.js',
+  'test-pdf-generation-splitter.js',
+  'test-knowledge-base-pipeline.js',
+  'test-quick-assignment-generation-boundary.js',
+  'test-tool-formatters.js',
+  'test-pdf-content-engine.js',
+  'test-pdf-content-classifier.js',
+  'test-canonical-pdf-json.js',
   'test-activity.js',
   'test-worksheet.js',
   'test-concept-mastery.js',

@@ -3215,11 +3215,19 @@ export function normalizeWorksheetStructuredContent(raw, sourceText = '') {
   const sourceLooksLikeRawPdf =
     String(sourceText || '').length > 1500 &&
     (/\bsection\s+[a-f]\s*:/i.test(sourceText) || (sourceText.match(/\?\s*$/gm) || []).length >= 8);
+  const sourceLooksLikeNumberedTemplate =
+    /\bsection\s+\d{1,2}\b/i.test(sourceText) &&
+    (/\bsection\s+[4-8]\b/i.test(sourceText) || (sourceText.match(/\?/g) || []).length >= 2);
+  const sourceLooksLikeSmallGenerationChunk =
+    String(sourceText || '').length >= 80 &&
+    String(sourceText || '').length < 2500 &&
+    sourceLooksLikeNumberedTemplate;
   const sourceLooksLikeStoredMarkdown =
     /^\s*#{1,4}\s+/m.test(sourceText) || /\*\*Q\d+\./i.test(sourceText);
   const sourceLooksLikeWorksheetText =
     (/\bsection\s+[a-f]\s*:/i.test(sourceText) && /\bQ?\d+[\.\):\-]\s+/i.test(sourceText)) ||
-    (/\bQ\d+\./i.test(sourceText) && (sourceText.match(/\?/g) || []).length >= 3);
+    (/\bQ\d+\./i.test(sourceText) && (sourceText.match(/\?/g) || []).length >= 3) ||
+    sourceLooksLikeNumberedTemplate;
   const questionMarksInSource = (String(sourceText || '').match(/\?/g) || []).length;
   const numberedInSource = (String(sourceText || '').match(/(?:^|\n)\s*(?:Q\.?\s*)?\d{1,3}[\.\):\-]\s+/gim) || [])
     .length;
@@ -3229,8 +3237,8 @@ export function normalizeWorksheetStructuredContent(raw, sourceText = '') {
     questionsBeforeText < Math.max(10, Math.floor(expectedFromSource * 0.45));
   if (
     sourceText &&
-    (questionsBeforeText < 2 || sourceLooksUnderExtracted) &&
-    (sourceLooksLikeRawPdf || sourceLooksLikeStoredMarkdown || sourceLooksLikeWorksheetText)
+    (questionsBeforeText < 2 || sourceLooksUnderExtracted || sourceLooksLikeSmallGenerationChunk) &&
+    (sourceLooksLikeRawPdf || sourceLooksLikeStoredMarkdown || sourceLooksLikeWorksheetText || sourceLooksLikeNumberedTemplate)
   ) {
     const fromText = sanitizeWorksheetQuestions(extractWorksheetItemsFromPdfText(sourceText, 500));
     if (fromText.length > questionsBeforeText) {
@@ -6497,21 +6505,58 @@ PDF Content:
 ${pdfText.slice(0, 120000)}`;
 }
 
-export async function extractTextFromPdfBuffer(buffer) {
-  const parser = new PDFParse({ data: buffer });
+function normalizeExtractedPdfText(raw) {
+  return String(raw || '')
+    .replace(/\r/g, '\n')
+    .split('\n')
+    .map((line) => line.replace(/[ \t]+/g, ' ').trim())
+    .filter(Boolean)
+    .join('\n')
+    .trim();
+}
+
+/**
+ * Extract full PDF text + page count (page count is metadata only — never used to create records).
+ * @param {Buffer} buffer
+ * @returns {Promise<{ text: string, pageCount: number }>}
+ */
+export async function extractPdfTextWithMeta(buffer) {
+  let text = '';
+  let pageCount = 0;
+
+  const textParser = new PDFParse({ data: buffer });
   try {
-    const parsed = await parser.getText();
-    const raw = String(parsed?.text || '');
-    return raw
-      .replace(/\r/g, '\n')
-      .split('\n')
-      .map((line) => line.replace(/[ \t]+/g, ' ').trim())
-      .filter(Boolean)
-      .join('\n')
-      .trim();
+    const parsed = await textParser.getText();
+    text = normalizeExtractedPdfText(parsed?.text || '');
+    pageCount = Number(parsed?.total ?? 0) || 0;
   } finally {
-    await parser.destroy().catch(() => {});
+    await textParser.destroy().catch(() => {});
   }
+
+  if (!pageCount) {
+    const footerMatch = String(text).match(/--\s*\d+\s+of\s+(\d+)\s*--/i);
+    if (footerMatch) pageCount = Number(footerMatch[1]) || 0;
+  }
+
+  if (!pageCount) {
+    const infoParser = new PDFParse({ data: buffer });
+    try {
+      const info = await infoParser.getInfo();
+      pageCount = Number(info?.total ?? info?.pages ?? 0) || 0;
+    } catch (infoErr) {
+      console.warn('[PDF] getInfo failed (non-fatal):', infoErr?.message || infoErr);
+    } finally {
+      await infoParser.destroy().catch(() => {});
+    }
+  }
+
+  console.log('[PDF] Extracted text length:', text.length, '| pages:', pageCount);
+  return { text, pageCount };
+}
+
+export async function extractTextFromPdfBuffer(buffer) {
+  const { text } = await extractPdfTextWithMeta(buffer);
+  return text;
 }
 
 function normalizeContentType(value) {

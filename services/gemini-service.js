@@ -2696,4 +2696,20 @@ export const generateStudentTool = async (toolType, params) => {
   return geminiService.generateStructuredContent(buildStudentToolPrompt(toolType, params), 'text');
 };
 
+/**
+ * Single JSON-mode LLM call (used by universal PDF knowledge extraction).
+ * @param {string} prompt
+ * @param {{ maxTokens?: number, temperature?: number, usageLabel?: string }} [options]
+ */
+export async function callLlmJson(prompt, options = {}) {
+  const text = await callChatCompletions({
+    messages: [{ role: 'user', content: String(prompt || '') }],
+    temperature: options.temperature ?? 0.2,
+    maxTokens: options.maxTokens ?? 12000,
+    preferJson: true,
+    usageLabel: options.usageLabel || 'llm-json',
+  });
+  return String(text || '').trim();
+}
+
 export default geminiService;

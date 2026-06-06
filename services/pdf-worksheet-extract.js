@@ -11,6 +11,15 @@ export const WORKSHEET_CANONICAL_SECTIONS = [
   'Section E: Competency / Real-life Application Questions',
 ];
 
+/** Worksheet & MCQ 10-section template: PDF "Section 4" = Section A, etc. */
+export const WORKSHEET_TEMPLATE_SECTION_NUM_TO_CANONICAL = {
+  4: WORKSHEET_CANONICAL_SECTIONS[0],
+  5: WORKSHEET_CANONICAL_SECTIONS[1],
+  6: WORKSHEET_CANONICAL_SECTIONS[2],
+  7: WORKSHEET_CANONICAL_SECTIONS[3],
+  8: WORKSHEET_CANONICAL_SECTIONS[4],
+};
+
 const SECTION_HEADER_DETECTORS = [
   { label: WORKSHEET_CANONICAL_SECTIONS[0], re: /^section\s*a\b|^a[\).:\s-]+.*(mcq|multiple\s*choice|objective)/i },
   { label: WORKSHEET_CANONICAL_SECTIONS[0], re: /^multiple\s*choice\s*questions?/i },
@@ -51,14 +60,44 @@ const OPTION_LINE_RE = /^(?:\([a-d]\)|[a-d][\).])\s+/i;
 
 const INLINE_OPTION_RE = /\([a-d]\)\s*[^()]+/gi;
 
+const PROMPT_START_RE =
+  /^(?:q(?:uestion)?\.?\s*)?\d{1,3}[\).:\-]\s+|(?:what|which|why|how|is|are|was|were|name|write|explain|define|list|give|find|calculate|solve|describe|state|complete|fill|identify|choose|select|draw|design|create|prepare|compare|arrange|convert|express|show|represent|read|tick|circle|match)\b/i;
+
+/** Unnumbered question line (common in Section 4–8 of numbered worksheet PDFs). */
+function looksLikeStandalonePromptLine(line) {
+  const t = String(line || '').trim();
+  if (!t || t.length < 6) return false;
+  if (OPTION_LINE_RE.test(t)) return false;
+  if (isNumberedTemplateSectionLine(t)) return false;
+  if (detectSectionHeaderLine(stripWorksheetLineDecorations(t))) return false;
+  if (/^answer\s*key\b/i.test(t) || /^bloom/i.test(t)) return false;
+  if (/^generation\s+\d+/i.test(t)) return false;
+  if (/^worksheet\s*&\s*mcq/i.test(t)) return false;
+  if (QUESTION_START_RE.test(t)) return true;
+  if (/\?/.test(t)) return true;
+  if (/_{2,}/.test(t)) return true;
+  if (PROMPT_START_RE.test(t)) return true;
+  if (/^(?:give|identify|name|list|state|define|explain|write|describe)\b.+\.\s*$/i.test(t)) return true;
+  if (/^(?:identify|name|give)\b.+:\s*.+\.\s*$/i.test(t)) return true;
+  return false;
+}
+
+function isNumberedTemplateSectionLine(line) {
+  const t = stripWorksheetLineDecorations(line);
+  return /^section\s+\d{1,2}\b/i.test(t) || /^\d{1,2}[\.\):\-]\s+section\s+\d{1,2}\b/i.test(t);
+}
+
 function isWorksheetBreakLine(line) {
   const t = String(line || '').trim();
   if (!t) return true;
   if (/^answer\s*key\b/i.test(t) || /^bloom/i.test(t)) return true;
   if (/^--\s*\d+\s+of\s+\d+\s*--$/i.test(t)) return true;
   if (/^\d{1,2}[\.\):\-]\s+section\s+[a-f]\s*:/i.test(t)) return true;
+  if (/^\d{1,2}[\.\):\-]\s+section\s+\d{1,2}\b/i.test(t)) return true;
+  if (isNumberedTemplateSectionLine(t)) return true;
   if (detectSectionHeaderLine(stripWorksheetLineDecorations(t))) return true;
   if (/\bsection\s+[a-f]\s*:/i.test(t) && !/\?/.test(t) && !/_{2,}/.test(t)) return true;
+  if (/\bsection\s+\d{1,2}\b/i.test(t) && !/\?/.test(t) && !/_{2,}/.test(t)) return true;
   return false;
 }
 
@@ -72,6 +111,7 @@ function collectQuestionChunk(lines, startIdx) {
       continue;
     }
     if (isWorksheetBreakLine(next)) break;
+    if (looksLikeStandalonePromptLine(next) && chunk.trim().length >= 8) break;
     if (QUESTION_START_RE.test(next) && !OPTION_LINE_RE.test(next) && chunk.includes('?')) break;
     if (QUESTION_START_RE.test(next) && !OPTION_LINE_RE.test(next) && /_{2,}/.test(chunk)) break;
     if (QUESTION_START_RE.test(next) && !OPTION_LINE_RE.test(next) && (chunk.match(INLINE_OPTION_RE) || []).length >= 2) {
@@ -105,7 +145,15 @@ export function extractQuestionsByLineScan(pdfText) {
       i += 1;
       continue;
     }
-    if (/^\d{1,2}[\.\):\-]\s+section\s+[a-f]\s*:/i.test(line)) {
+    if (/^\d{1,2}[\.\):\-]\s+section\s+[a-f]\s*:/i.test(line) || /^\d{1,2}[\.\):\-]\s+section\s+\d{1,2}\b/i.test(line)) {
+      const forced = detectSectionHeaderLine(stripWorksheetLineDecorations(line));
+      if (forced) {
+        currentSection = forced;
+        i += 1;
+        continue;
+      }
+    }
+    if (isNumberedTemplateSectionLine(line)) {
       const forced = detectSectionHeaderLine(stripWorksheetLineDecorations(line));
       if (forced) {
         currentSection = forced;
@@ -177,6 +225,8 @@ export function cleanWorksheetQuestionText(text) {
   q = q.replace(/^(?:q(?:uestion)?\.?\s*)?\d{1,3}[\).:\-]\s+/i, '').trim();
   q = q.replace(/\s+section\s+[a-f]\s*:\s*.+$/i, '').trim();
   q = q.replace(/\s+\d{1,2}[\.\):\-]\s+section\s+[a-f]\s*:\s*.+$/i, '').trim();
+  q = q.replace(/(?:\s+\*{0,2}Section\s+\d{1,2}\*{0,2})+.*$/i, '').trim();
+  q = q.replace(/(?:\s+Section\s+\d{1,2}\b)+.*$/i, '').trim();
   if (/\.\s+\d{1,2}[\.\):\-]\s+/i.test(q)) {
     q = q.replace(/\.\s+\d{1,2}[\.\):\-]\s+.+$/i, '.').trim();
   }
@@ -210,9 +260,190 @@ export const looksLikeQuestionPrompt = (text) => {
   );
 };
 
+function detectNumberedTemplateSectionLine(line) {
+  const t = stripWorksheetLineDecorations(line);
+  if (!t) return '';
+  const m =
+    t.match(/^section\s+(\d{1,2})\s*(?:[:\-—]\s*(.*))?$/i) ||
+    t.match(/^\d{1,2}[\.\):\-]\s+section\s+(\d{1,2})\s*(?:[:\-—]\s*(.*))?$/i);
+  if (!m) return '';
+  const num = Number(m[1]);
+  const rest = String(m[2] || '').toLowerCase();
+  if (WORKSHEET_TEMPLATE_SECTION_NUM_TO_CANONICAL[num]) {
+    return WORKSHEET_TEMPLATE_SECTION_NUM_TO_CANONICAL[num];
+  }
+  if (num === 4 || /mcq|multiple\s*choice|objective/i.test(rest)) return WORKSHEET_CANONICAL_SECTIONS[0];
+  if (num === 5 || /fill|blank|fib/i.test(rest)) return WORKSHEET_CANONICAL_SECTIONS[1];
+  if (num === 6 || /very\s*short|vsa/i.test(rest)) return WORKSHEET_CANONICAL_SECTIONS[2];
+  if (num === 7 || (/short\s*answer/i.test(rest) && !/very/i.test(rest))) return WORKSHEET_CANONICAL_SECTIONS[3];
+  if (num === 8 || /competency|real[\s-]*life|application/i.test(rest)) return WORKSHEET_CANONICAL_SECTIONS[4];
+  return '';
+}
+
+/**
+ * Parse worksheet shell fields from numbered template sections 1–3.
+ * @param {string} pdfText
+ */
+/**
+ * Body text under numbered template sections 5–8 (shown when no question prompts exist).
+ * @param {string} pdfText
+ */
+export function extractNumberedTemplateSectionBodies(pdfText) {
+  const lines = String(pdfText || '').split(/\r?\n/);
+  const out = new Map();
+  let sectionNum = 0;
+  let buffer = [];
+
+  const flush = () => {
+    const text = buffer
+      .map((l) => String(l || '').trim())
+      .filter(Boolean)
+      .join('\n')
+      .trim();
+    buffer = [];
+    if (!text || sectionNum < 5 || sectionNum > 8) return;
+    const canonical = WORKSHEET_TEMPLATE_SECTION_NUM_TO_CANONICAL[sectionNum];
+    if (canonical) out.set(canonical, text);
+  };
+
+  for (const rawLine of lines) {
+    const line = String(rawLine || '').trim();
+    if (!line) continue;
+    const m = stripWorksheetLineDecorations(line).match(/^section\s+(\d{1,2})\b/i);
+    if (m) {
+      flush();
+      sectionNum = Number(m[1]);
+      continue;
+    }
+    if (sectionNum >= 5 && sectionNum <= 8) buffer.push(line);
+  }
+  flush();
+  return out;
+}
+
+/**
+ * Answer lines from numbered template Section 9.
+ * @param {string} pdfText
+ */
+export function extractNumberedSection9Answers(pdfText) {
+  const lines = String(pdfText || '').split(/\r?\n/);
+  const answers = [];
+  let inSection9 = false;
+
+  for (const rawLine of lines) {
+    const line = String(rawLine || '').trim();
+    if (!line) continue;
+    const m = stripWorksheetLineDecorations(line).match(/^section\s+(\d{1,2})\b/i);
+    if (m) {
+      const num = Number(m[1]);
+      if (num === 9) {
+        inSection9 = true;
+        continue;
+      }
+      if (inSection9) break;
+      inSection9 = false;
+      continue;
+    }
+    if (inSection9 && !/^answer\s*key\b/i.test(line)) {
+      answers.push(line.replace(/^[-•*]\s*/, '').trim());
+    }
+  }
+  return answers.filter(Boolean);
+}
+
+function attachNumberedSection9Answers(questions, pdfText) {
+  const answers = extractNumberedSection9Answers(pdfText);
+  if (!answers.length) return questions;
+  const questionSections = new Set([
+    WORKSHEET_CANONICAL_SECTIONS[0],
+    WORKSHEET_CANONICAL_SECTIONS[1],
+    WORKSHEET_CANONICAL_SECTIONS[2],
+    WORKSHEET_CANONICAL_SECTIONS[3],
+    WORKSHEET_CANONICAL_SECTIONS[4],
+  ]);
+  const rows = questions.map((q) => ({ ...q }));
+  const targets = rows.filter((q) => questionSections.has(q.section) && !q._sectionBody);
+  for (let i = 0; i < Math.min(answers.length, targets.length); i += 1) {
+    const idx = rows.indexOf(targets[i]);
+    if (idx >= 0 && !String(rows[idx].answer || '').trim()) {
+      rows[idx].answer = answers[i];
+    }
+  }
+  return rows;
+}
+
+function sectionBodyToQuestionRow(sectionName, body) {
+  const text = String(body || '').trim();
+  if (!text || text.length < 8) return null;
+  return {
+    question: text,
+    options: [],
+    answer: '',
+    section: sectionName,
+    type: 'SECTION_CONTENT',
+    _sectionBody: true,
+    _fromPdf: true,
+  };
+}
+
+export function extractWorksheetShellFromNumberedPdfText(pdfText) {
+  const lines = String(pdfText || '')
+    .split(/\r?\n/)
+    .map((l) => String(l || '').trim())
+    .filter(Boolean);
+  const out = { title: '', learning_objectives: [], instructions: '' };
+  let metaSection = 0;
+  let buffer = [];
+
+  const flushMeta = () => {
+    const text = buffer.join('\n').trim();
+    buffer = [];
+    if (!text || metaSection < 1 || metaSection > 3) return;
+    if (metaSection === 1) {
+      const first = text.split('\n').map((l) => l.trim()).filter(Boolean)[0] || text;
+      out.title = first.replace(/^worksheet\s*(?:title)?\s*[:\-—]?\s*/i, '').trim() || first;
+    } else if (metaSection === 2) {
+      out.learning_objectives = text
+        .split(/\n|(?<=[.!?])\s+/)
+        .map((l) => l.replace(/^[-•*]\s*/, '').trim())
+        .filter((l) => l.length >= 4 && !/^learning\s+objectives?/i.test(l));
+    } else if (metaSection === 3) {
+      out.instructions = text.replace(/^instructions?\s*(?:to\s+students?)?\s*[:\-—]?\s*/i, '').trim();
+    }
+  };
+
+  for (const line of lines) {
+    if (/^generation\s+\d+/i.test(line)) {
+      flushMeta();
+      metaSection = 0;
+      const genTitle = line.replace(/^generation\s+\d+\s*[-–:]\s*/i, '').trim();
+      if (genTitle && !out.title) out.title = genTitle;
+      continue;
+    }
+    const numbered = stripWorksheetLineDecorations(line).match(/^section\s+(\d{1,2})\b/i);
+    if (numbered) {
+      const num = Number(numbered[1]);
+      if (num >= 1 && num <= 3) {
+        flushMeta();
+        metaSection = num;
+        continue;
+      }
+      flushMeta();
+      metaSection = 0;
+      if (num >= 4) break;
+      continue;
+    }
+    if (metaSection >= 1 && metaSection <= 3) buffer.push(line);
+  }
+  flushMeta();
+  return out;
+}
+
 function detectSectionHeaderLine(line) {
   const t = stripWorksheetLineDecorations(line);
   if (!t || t.length > 140) return '';
+  const numbered = detectNumberedTemplateSectionLine(t);
+  if (numbered) return numbered;
   for (const { label, re } of SECTION_HEADER_DETECTORS) {
     if (re.test(t)) return label;
   }
@@ -265,6 +496,7 @@ function sanitizeWorksheetQuestionOptions(options = []) {
       String(opt || '')
         .replace(/\s+section\s+[a-f]\s*:.+$/i, '')
         .replace(/\s+\d{1,2}[\.\):\-]\s+section\s+[a-f]\s*:.+$/i, '')
+        .replace(/(?:\s+Section\s+\d{1,2}\b)+.*$/i, '')
         .replace(/\s+/g, ' ')
         .trim(),
     )
@@ -299,7 +531,13 @@ function sanitizeWorksheetQuestions(questions = []) {
     .filter((row) => !isHeadingLikeLine(row.question))
     .filter((row) => !isWorksheetPdfChrome(row.question))
     .filter((row) => !isAnswerKeyLikeQuestion(row.question))
-    .filter((row) => looksLikeQuestionPrompt(row.question) || row.options.length >= 2 || /_{2,}/.test(row.question))
+    .filter(
+      (row) =>
+        row._sectionBody ||
+        looksLikeQuestionPrompt(row.question) ||
+        row.options.length >= 2 ||
+        /_{2,}/.test(row.question),
+    )
     .filter((row) => {
       const fullKey = worksheetQuestionDedupeKey(row);
       if (!fullKey) return false;
@@ -368,6 +606,7 @@ export function extractQuestionsFromText(value, defaultSection = '') {
 export function extractQuestionsBySectionHeaders(pdfText) {
   const lines = String(pdfText || '').split(/\r?\n/);
   let currentSection = '';
+  let metaSectionNum = 0;
   let chunk = '';
   const out = [];
 
@@ -385,21 +624,54 @@ export function extractQuestionsBySectionHeaders(pdfText) {
       flush();
       break;
     }
-    const header = detectSectionHeaderLine(stripWorksheetLineDecorations(line));
+    const stripped = stripWorksheetLineDecorations(line);
+    const numberedMeta = stripped.match(/^section\s+(\d{1,2})\b/i);
+    if (numberedMeta) {
+      const num = Number(numberedMeta[1]);
+      if (num >= 1 && num <= 3) {
+        flush();
+        metaSectionNum = num;
+        currentSection = '';
+        continue;
+      }
+      metaSectionNum = 0;
+    }
+    const header = detectSectionHeaderLine(stripped);
     if (header) {
       flush();
       currentSection = header;
+      metaSectionNum = 0;
       continue;
     }
-    if (/^\d{1,2}[\.\):\-]\s+section\s+[a-f]\s*:/i.test(line)) {
-      const forced = detectSectionHeaderLine(stripWorksheetLineDecorations(line));
+    if (/^\d{1,2}[\.\):\-]\s+section\s+[a-f]\s*:/i.test(line) || /^\d{1,2}[\.\):\-]\s+section\s+\d{1,2}\b/i.test(line)) {
+      const forced = detectSectionHeaderLine(stripped);
       if (forced) {
         flush();
         currentSection = forced;
+        metaSectionNum = 0;
         continue;
       }
     }
-    if (QUESTION_START_RE.test(line) && !detectSectionHeaderLine(stripWorksheetLineDecorations(line))) {
+    if (isNumberedTemplateSectionLine(line)) {
+      const forced = detectSectionHeaderLine(stripped);
+      if (forced) {
+        flush();
+        currentSection = forced;
+        metaSectionNum = 0;
+        continue;
+      }
+      if (numberedMeta && Number(numberedMeta[1]) <= 3) {
+        flush();
+        metaSectionNum = Number(numberedMeta[1]);
+        currentSection = '';
+        continue;
+      }
+    }
+    if (metaSectionNum >= 1 && metaSectionNum <= 3) continue;
+    if (
+      (QUESTION_START_RE.test(line) || looksLikeStandalonePromptLine(line)) &&
+      !detectSectionHeaderLine(stripWorksheetLineDecorations(line))
+    ) {
       flush();
       chunk = line;
       continue;
@@ -408,7 +680,15 @@ export function extractQuestionsBySectionHeaders(pdfText) {
       chunk += ` ${line}`;
       continue;
     }
-    if (chunk) chunk += ` ${line}`;
+    if (chunk) {
+      if (looksLikeStandalonePromptLine(line)) {
+        flush();
+        chunk = line;
+      } else {
+        chunk += ` ${line}`;
+      }
+      continue;
+    }
   }
   flush();
   return out;
@@ -423,9 +703,25 @@ export function extractQuestionsBySectionHeaders(pdfText) {
 function insertWorksheetLineBreaks(text) {
   let t = String(text || '');
   if (!t.trim()) return t;
+  const sectionTokens = new Map();
+  let tokenIdx = 0;
+  t = t.replace(/\bSection\s+\d{1,2}\b/gi, (match) => {
+    const key = `__WSSEC${tokenIdx++}__`;
+    sectionTokens.set(key, match);
+    return key;
+  });
   t = t.replace(/\s+(Section\s+[A-F]\s*:)/gi, '\n$1');
+  t = t.replace(/\s+(Section\s+\d{1,2}\b)/gi, '\n$1');
   t = t.replace(/\s+(Part\s*[-\s]*[A-F]\b[^.?!]{0,40})/gi, '\n$1');
   t = t.replace(/\s+(Multiple\s*Choice\s*Questions?|Fill\s*in\s*the\s*Blanks?|Very\s*Short\s*Answer)/gi, '\n$1');
+  t = t.replace(
+    /(\?\s*)(?=(?:Is|Are|Was|Were|What|Which|Why|How|Write|Explain|Name|Give|Define|List|Find|Calculate|Describe|State|Complete|Fill|Identify|Choose|Select)\b)/gi,
+    '$1\n',
+  );
+  t = t.replace(
+    /(\.\s+)(?=(?:Is|Are|Was|Were|What|Which|Why|How|Write|Explain|Name|Give|Define|List|Find|Calculate|Describe|State|Complete|Fill|Identify|Choose|Select)\b)/gi,
+    '$1\n',
+  );
   t = t.replace(/(\?\s*)(?=\d{1,3}[\).:\-]\s+[A-Za-z"(])/g, '$1\n');
   t = t.replace(/(Answer:\s*\([a-d]\)[);.]?\s*)(?=\d{1,3}[\).:\-]\s+)/gi, '$1\n');
   t = t.replace(/(_{2,}\s*)(?=\d{1,3}[\).:\-]\s+[A-Za-z"(])/g, '$1\n');
@@ -435,7 +731,13 @@ function insertWorksheetLineBreaks(text) {
     new RegExp(`(\\s)(?=(?:Q\\.?\\s*)?\\d{1,3}[\\).:\\-]\\s+${promptWord}\\b)`, 'gi'),
     '\n',
   );
-  t = t.replace(new RegExp(`(\\s)(?=\\d{1,3}\\s+${promptWord}\\b)`, 'gi'), '\n');
+  t = t.replace(
+    new RegExp(`(?<!Section)(\\s)(?=\\d{1,3}\\s+${promptWord}\\b)`, 'gi'),
+    '\n',
+  );
+  for (const [key, val] of sectionTokens) {
+    t = t.split(key).join(val);
+  }
   return t;
 }
 
@@ -453,11 +755,18 @@ function splitInlineWorksheetMarkers(text) {
   let t = String(text || '');
   t = t.replace(/([.?!]|_{2,})\s+(\d{1,2}[\.\):\-]\s+Section\s+[A-F]\s*:)/gi, '$1\n$2');
   t = t.replace(/([.?!]|_{2,})\s+(Section\s+[A-F]\s*:)/gi, '$1\n$2');
+  t = t.replace(/([.?!]|_{2,})\s+(Section\s+\d{1,2}\b)/gi, '$1\n$2');
+  t = t.replace(/([.?!]|_{2,})\s+(\d{1,2}[\.\):\-]\s+Section\s+\d{1,2}\b)/gi, '$1\n$2');
   t = t.replace(/([A-D]\)\s*[^\n(]{0,120}?)\s+(Section\s+[A-F]\s*:)/gi, '$1\n$2');
+  t = t.replace(/([A-D]\)\s*[^\n(]{0,120}?)\s+(Section\s+\d{1,2}\b)/gi, '$1\n$2');
   t = t.replace(/([A-D]\)\s*[^\n(]{0,120}?)\s+(\d{1,2}[\.\):\-]\s+Section\s+[A-F]\s*:)/gi, '$1\n$2');
+  t = t.replace(/([A-D]\)\s*[^\n(]{0,120}?)\s+(\d{1,2}[\.\):\-]\s+Section\s+\d{1,2}\b)/gi, '$1\n$2');
   t = t.replace(/(Section\s+[A-F]\s*:[^\n]{0,80})\s+(Q\d+\.)/gi, '$1\n$2');
+  t = t.replace(/(Section\s+\d{1,2}\b[^\n]{0,80})\s+(Q\d+\.)/gi, '$1\n$2');
   t = t.replace(/(Section\s+[A-F]\s*:[^\n]{0,80})\s+(\d{1,3}[\.\):\-]\s+)/gi, '$1\n$2');
+  t = t.replace(/(Section\s+\d{1,2}\b[^\n]{0,80})\s+(\d{1,3}[\.\):\-]\s+)/gi, '$1\n$2');
   t = t.replace(/^\s*\.\s+(Section\s+[A-F]\s*:)/gim, '\n$1');
+  t = t.replace(/^\s*\.\s+(Section\s+\d{1,2}\b)/gim, '\n$1');
   return t;
 }
 
@@ -468,13 +777,14 @@ export function worksheetTextForPatternExtract(sourceText) {
   t = t.replace(/\r\n/g, '\n');
   t = t.replace(/^\s*#{1,4}\s+/gm, '');
   t = t.replace(/^\s*\d{1,2}\.\s+(Section\s+[A-F][^\n]*)/gim, '\n$1\n');
+  t = t.replace(/^\s*\d{1,2}\.\s+(Section\s+\d{1,2}[^\n]*)/gim, '\n$1\n');
   t = t.replace(/\*\*Q(\d+)\.\*\*/gi, '\n$1. ');
   t = t.replace(/(?:^|\n)\s*Q(\d+)\.\s*/gi, '\n$1. ');
   t = t.replace(/\*\*Answer:\*\*/gi, '\nAnswer: ');
   t = t.replace(/\*\*([^*\n]+)\*\*/g, '$1');
   t = t.replace(/^\s*--\s*\d+\s+of\s+\d+\s*--\s*$/gim, '\n');
   t = splitInlineWorksheetMarkers(t);
-  if (pdfTextLooksDense(t)) {
+  if (pdfTextLooksDense(t) || (/\bsection\s+\d{1,2}\b/i.test(t) && t.length >= 120)) {
     t = insertWorksheetLineBreaks(t);
   }
   return t;
@@ -483,6 +793,28 @@ export function worksheetTextForPatternExtract(sourceText) {
 export function extractWorksheetItemsFromPdfText(pdfText, maxQuestions = 500) {
   const plain = worksheetTextForPatternExtract(pdfText);
   const bySection = extractQuestionsBySectionHeaders(plain);
+  const hasNumberedTemplate = /\bsection\s+[4-8]\b/i.test(plain);
+  if (hasNumberedTemplate) {
+    let rows = [...bySection];
+    const bodies = extractNumberedTemplateSectionBodies(plain);
+    for (const [sectionName, body] of bodies) {
+      const hasQuestion = rows.some(
+        (q) => q.section === sectionName && !q._sectionBody && String(q.question || '').trim(),
+      );
+      if (!hasQuestion) {
+        const bodyRow = sectionBodyToQuestionRow(sectionName, body);
+        if (bodyRow) rows.push(bodyRow);
+      }
+    }
+    rows = attachNumberedSection9Answers(rows, plain);
+    return sanitizeWorksheetQuestions(rows)
+      .slice(0, maxQuestions)
+      .map((q, i) => ({
+        ...q,
+        question_number: q.question_number ?? i + 1,
+        _fromPdf: true,
+      }));
+  }
   const flat = extractQuestionsFromText(plain);
   const byLine = extractQuestionsByLineScan(plain);
   const merged = [...bySection];
@@ -737,8 +1069,17 @@ function groupWorksheetExtractItems(items, pdfText = '', options = {}) {
 
 /** Merge one group of extract rows into a single worksheet object (sections A–E). */
 function mergeWorksheetGroupToOne(group, params = {}) {
-  const defaultTitle = String(params.topic || params.subtopic || 'Worksheet').trim() || 'Worksheet';
-  const meta = { title: defaultTitle, worksheet_title: defaultTitle };
+  const pdfTextEarly = String(params.rawPdfText || params.pdfText || '').trim();
+  const shell = pdfTextEarly ? extractWorksheetShellFromNumberedPdfText(pdfTextEarly) : {};
+  const defaultTitle =
+    String(params.generationTitle || shell.title || params.topic || params.subtopic || 'Worksheet').trim() ||
+    'Worksheet';
+  const meta = {
+    title: defaultTitle,
+    worksheet_title: defaultTitle,
+    learning_objectives: shell.learning_objectives || [],
+    instructions: shell.instructions || '',
+  };
   const looseQuestions = [];
   let sectionBlocks = [];
 
@@ -853,22 +1194,14 @@ function mergeWorksheetGroupToOne(group, params = {}) {
   if (
     group.length === 1 &&
     String(group[0]?.question || '').trim() &&
-    !String(out.instructions || '').trim() &&
     sectionBlocks.reduce((n, s) => n + (s.questions?.length || 0), 0) <= 1
   ) {
-    const q = group[0];
-    const num = q.question_number ?? q.sl_no;
-    const shortQ = String(q.question || '')
-      .replace(/\s+/g, ' ')
-      .trim()
-      .slice(0, 72);
-    const label = String(q.title || q.worksheet_title || '').trim();
+    const label = String(
+      params.generationTitle || shell.title || group[0]?.title || group[0]?.worksheet_title || '',
+    ).trim();
     if (label && !isGenericWorksheetGroupKey(normalizeWorksheetGroupKey(label))) {
       out.title = label;
       out.worksheet_title = label;
-    } else {
-      out.title = num != null ? `Question ${num}` : shortQ ? shortQ : out.title;
-      out.worksheet_title = out.title;
     }
   }
 

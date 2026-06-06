@@ -1,16 +1,18 @@
 /**
- * Universal PDF → canonical JSON (all questions, sections, metadata).
- * Tool-specific formatters consume this via pdf-canonical-mapper.js.
+ * Universal PDF → canonical JSON v2 (all content types, one parse).
+ * Tool formatters consume this via tool-formatters/ or pdf-canonical-mapper.js.
  * @module services/pdf-canonical-extract
  */
 
 import { bulletsFromLines, splitLines, str } from './pdf-extract-utils.js';
+import { splitNormalizedPdfLines } from './pdf-canonical-normalize.js';
 import {
   extractWorksheetItemsFromPdfText,
   isWorksheetPdfChrome,
   worksheetTextForPatternExtract,
 } from './pdf-worksheet-extract.js';
 import { extractToolItemsFromPdfText } from './pdf-tool-extract.js';
+import { AI_TOOL_ORDERED_SLUGS } from '../config/aiToolTemplates.js';
 
 function groupQuestionsIntoCanonicalSections(questions = []) {
   const map = new Map();
@@ -34,6 +36,26 @@ function groupQuestionsIntoCanonicalSections(questions = []) {
     questions: qs,
     count: qs.length,
   }));
+}
+
+function extractHeadings(lines = []) {
+  const headings = [];
+  for (const line of lines) {
+    const t = str(line);
+    if (!t) continue;
+    if (/^#{1,4}\s+/.test(t)) {
+      headings.push({ level: (t.match(/^#+/) || ['#'])[0].length, text: t.replace(/^#+\s+/, '') });
+      continue;
+    }
+    if (/^section\s+[a-g]\b/i.test(t) || /^[A-Z][A-Za-z\s/&-]{2,50}:$/.test(t)) {
+      headings.push({ level: 2, text: t });
+      continue;
+    }
+    if (/^(?:learning\s*objectives?|instructions?|answer\s*key|activity|project)\b/i.test(t) && t.length < 80) {
+      headings.push({ level: 3, text: t });
+    }
+  }
+  return headings;
 }
 
 function extractPdfMetadata(lines = []) {
@@ -148,48 +170,162 @@ function extractContentBlocks(text) {
   return blocks.filter((b) => b.text.length >= 20);
 }
 
+function extractParagraphs(lines = []) {
+  return lines
+    .filter((l) => {
+      const t = str(l);
+      return t.length >= 40 && !/^\d+[\.)]/.test(t) && !/^section\s+/i.test(t);
+    })
+    .map((text) => ({ text: str(text) }));
+}
+
+function extractAnswersFromQuestions(questions = []) {
+  return questions
+    .filter((q) => str(q.answer))
+    .map((q) => ({
+      question_number: q.question_number ?? q.sl_no,
+      section: str(q.section),
+      answer: str(q.answer),
+    }));
+}
+
+function bucketToolExtract(toolSlug, items = []) {
+  const list = Array.isArray(items) ? items : [];
+  if (!list.length) return {};
+
+  switch (toolSlug) {
+    case 'activity-project-generator':
+    case 'project-idea-lab':
+      return { activities: list };
+    case 'my-study-decks':
+    case 'flashcard-generator':
+      return { flashcards: list };
+    case 'reading-practice-room':
+    case 'story-passage-creator':
+      return { stories: list };
+    case 'concept-mastery-helper':
+    case 'concept-breakdown-explainer':
+    case 'smart-study-guide-generator':
+    case 'chapter-summary-creator':
+    case 'key-points-formula-extractor':
+      return { concepts: list };
+    case 'lesson-planner':
+    case 'study-schedule-maker':
+    case 'daily-class-plan-maker':
+      return { timelines: list };
+    default:
+      return {};
+  }
+}
+
+function aggregateAllToolPreviews(text) {
+  const previews = {};
+  for (const slug of AI_TOOL_ORDERED_SLUGS) {
+    const items = extractToolItemsFromPdfText(slug, text, { limit: 50 });
+    if (items.length) previews[slug] = items.length;
+  }
+  return previews;
+}
+
+/** Run all 22 tool regex extractors once and merge into canonical buckets. */
+function aggregateAllToolBuckets(text) {
+  const merged = {
+    activities: [],
+    flashcards: [],
+    stories: [],
+    concepts: [],
+    timelines: [],
+  };
+  for (const slug of AI_TOOL_ORDERED_SLUGS) {
+    const items = extractToolItemsFromPdfText(slug, text, { limit: 50 });
+    const buckets = bucketToolExtract(slug, items);
+    for (const key of Object.keys(merged)) {
+      if (Array.isArray(buckets[key]) && buckets[key].length) {
+        merged[key].push(...buckets[key]);
+      }
+    }
+  }
+  return merged;
+}
+
 /**
  * @param {string} pdfText
  * @param {{ toolSlug?: string }} [options]
  * @returns {Record<string, unknown>}
  */
 export function extractCanonicalPdfDocument(pdfText, options = {}) {
-  const text = String(pdfText || '').trim();
+  const { lines, lineCount, charCount } = splitNormalizedPdfLines(pdfText);
+  const text = lines.join('\n');
   const toolSlug = str(options.toolSlug);
+
   const questions = extractWorksheetItemsFromPdfText(text, 500);
   const sections = groupQuestionsIntoCanonicalSections(questions);
-  const meta = extractPdfMetadata(splitLines(text));
+  const meta = extractPdfMetadata(lines);
   const contentBlocks = extractContentBlocks(text);
+  const headings = extractHeadings(lines);
+  const paragraphs = extractParagraphs(lines);
+  const answers = extractAnswersFromQuestions(questions);
 
-  const toolExtractPreview = toolSlug
-    ? extractToolItemsFromPdfText(toolSlug, text, { limit: 200 })
-    : [];
+  const toolItems = toolSlug ? extractToolItemsFromPdfText(toolSlug, text, { limit: 200 }) : [];
+  const toolBuckets = bucketToolExtract(toolSlug, toolItems);
+  const allBuckets = aggregateAllToolBuckets(text);
+  const toolPreviews = aggregateAllToolPreviews(text);
 
-  return {
-    version: 1,
+  const v2 = {
+    version: 2,
+    extractionEngine: 'canonical',
     title: meta.title,
-    instructions: meta.instructions,
-    learningObjectives: meta.learningObjectives,
-    answerKey: meta.answerKey,
+    headings,
     sections,
+    paragraphs,
     questions,
+    answers,
+    tables: [],
+    objectives: meta.learningObjectives,
+    instructions: meta.instructions,
+    timelines: [...(toolBuckets.timelines || []), ...(allBuckets.timelines || [])],
+    activities: [...(toolBuckets.activities || []), ...(allBuckets.activities || [])],
+    concepts: [...(toolBuckets.concepts || []), ...(allBuckets.concepts || [])],
+    flashcards: [...(toolBuckets.flashcards || []), ...(allBuckets.flashcards || [])],
+    stories: [...(toolBuckets.stories || []), ...(allBuckets.stories || [])],
     contentBlocks,
+    metadata: {
+      textLength: charCount,
+      lineCount,
+      questionCount: questions.length,
+      toolSlug: toolSlug || null,
+      toolPreviews,
+      normalizedAt: new Date().toISOString(),
+    },
     stats: {
       questionCount: questions.length,
       sectionCount: sections.length,
       contentBlockCount: contentBlocks.length,
-      textLength: text.length,
-      toolExtractItemCount: Array.isArray(toolExtractPreview) ? toolExtractPreview.length : 0,
+      textLength: charCount,
+      toolExtractItemCount: toolItems.length,
+      headingCount: headings.length,
+      paragraphCount: paragraphs.length,
     },
+    // v1 compatibility aliases
+    learningObjectives: meta.learningObjectives,
+    answerKey: meta.answerKey,
   };
+
+  return v2;
 }
 
 export function canonicalPdfHasExtractableContent(canonical) {
   if (!canonical || typeof canonical !== 'object') return false;
   const stats = canonical.stats || {};
+  const meta = canonical.metadata || {};
   return (
     Number(stats.questionCount || 0) > 0 ||
     Number(stats.toolExtractItemCount || 0) > 0 ||
-    Number(stats.contentBlockCount || 0) > 0
+    Number(stats.contentBlockCount || 0) > 0 ||
+    (Array.isArray(canonical.activities) && canonical.activities.length > 0) ||
+    (Array.isArray(canonical.flashcards) && canonical.flashcards.length > 0) ||
+    (Array.isArray(canonical.stories) && canonical.stories.length > 0) ||
+    (Array.isArray(canonical.concepts) && canonical.concepts.length > 0) ||
+    Object.keys(meta.toolPreviews || {}).length > 0
   );
 }

@@ -19,6 +19,20 @@ const aiContentEngineSourceSchema = new mongoose.Schema(
     contentType: { type: String, default: '', trim: true },
     structuredContent: { type: mongoose.Schema.Types.Mixed, default: {} },
     renderContent: { type: mongoose.Schema.Types.Mixed, default: {} },
+    /** Universal educational knowledge base — one Gemini call per PDF; all tools project from this. */
+    knowledgeBase: { type: mongoose.Schema.Types.Mixed, default: null },
+    knowledgeBaseVersion: { type: Number, default: 0 },
+    extractionEngine: {
+      type: String,
+      enum: ['', 'knowledge-base-v1', 'legacy-canonical', 'legacy-extract'],
+      default: '',
+    },
+    geminiCallCount: { type: Number, default: 0 },
+    /** Human-readable PDF batch id e.g. PDF_20260603_A1B2 */
+    pdfCode: { type: String, default: '', trim: true, index: true },
+    totalGenerations: { type: Number, default: 0 },
+    generationMarkerType: { type: String, default: '', trim: true },
+    generationMarkerLabel: { type: String, default: '', trim: true },
     geminiDetected: {
       classLabel: { type: String, default: '', trim: true },
       subject: { type: String, default: '', trim: true },

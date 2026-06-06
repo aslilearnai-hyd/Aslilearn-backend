@@ -192,21 +192,23 @@ export function mapCanonicalPdfToToolBulkItems(toolSlug, canonical, sourceText, 
   const slug = str(toolSlug);
   const text = String(sourceText || '').trim();
 
-  const toolItems = extractToolItemsFromPdfText(slug, text, { limit: 200 });
-  const activityFiltered = filterActivityToolItems(slug, toolItems);
-  const usableToolItems = ACTIVITY_TOOL_SLUGS.has(slug) ? activityFiltered : toolItems;
-  if (Array.isArray(usableToolItems) && usableToolItems.length > 0) {
+  if (!params.skipToolRegex) {
+    const toolItems = extractToolItemsFromPdfText(slug, text, { limit: 200, ...params });
+    const activityFiltered = filterActivityToolItems(slug, toolItems);
+    const usableToolItems = ACTIVITY_TOOL_SLUGS.has(slug) ? activityFiltered : toolItems;
+    if (Array.isArray(usableToolItems) && usableToolItems.length > 0) {
     if (
       ACTIVITY_TOOL_SLUGS.has(slug) &&
       !activityPatternExtractIsComplete(usableToolItems, usableToolItems.length)
     ) {
       return { items: [], parser: 'none', canonical };
     }
-    return {
-      items: usableToolItems.map((item) => ({ ...item, _fromPdf: true })),
-      parser: 'tool-regex',
-      canonical,
-    };
+      return {
+        items: usableToolItems.map((item) => ({ ...item, _fromPdf: true })),
+        parser: 'tool-regex',
+        canonical,
+      };
+    }
   }
 
   const fromQuestions = mapCanonicalQuestionsToTool(slug, canonical, params);
@@ -246,7 +248,8 @@ export function postProcessCanonicalBulkItems(toolSlug, items, sourceText, param
     slug === 'mock-test-builder' ||
     slug === 'exam-question-paper-generator' ||
     slug === 'smart-qa-practice-generator' ||
-    slug === 'homework-creator'
+    slug === 'homework-creator' ||
+    slug === 'quick-assignment-builder'
   ) {
     return list.slice(0, 1);
   }

@@ -3,147 +3,142 @@
  * @module services/pdf-quick-assignment-extract
  */
 
-import { bulletsFromLines, splitPdfTextByMarkerLines, str, strArr } from './pdf-extract-utils.js';
+import { splitPdfTextByMarkerLines, str } from './pdf-extract-utils.js';
+import {
+  cleanPdfEducationalContent,
+  contextualizeAssignmentPlaceholders,
+  filterChecklistBullets,
+  sanitizeAssignmentTextField,
+} from './pdf-content-cleaner.js';
+import {
+  detectAssignmentSectionNum,
+  parseAssignmentSections,
+  parseBulletListBlock,
+  parseConceptQuestionBlock,
+} from './pdf-assignment-section-parser.js';
+import {
+  GENERATION_START_RE,
+  isAssignmentBankNoiseLine,
+  isGenerationBoundaryLine,
+  isolateGenerationBlock,
+  selectGenerationBlock,
+  splitByGenerationMarkers,
+  splitByRepeatedSectionOne,
+} from './pdf-assignment-boundaries.js';
 
 const ASSIGNMENT_MARKER = /^(?:Item|Assignment)\s+\d+\b/i;
+const MY_ASSIGNMENT_TITLE_RE = /^my\s+assignment\s*:/i;
 
-const SECTION_PATTERNS = [
-  { key: 'assignment_title', re: /^1\.?\s*Assignment\s*Title\s*[:\-—]?\s*$/i, type: 'text' },
-  { key: 'learning_objectives', re: /^2\.?\s*Learning\s*Objectives\s*[:\-—]?\s*$/i, type: 'list' },
-  {
-    key: 'instructions',
-    re: /^3\.?\s*Instructions\s*to\s*Students\s*[:\-—]?\s*$/i,
-    type: 'text',
-  },
-  {
-    key: 'concept_based_questions',
-    re: /^4\.?\s*Concept[\s-]*based\s*Questions\s*[:\-—]?\s*$/i,
-    type: 'questions',
-  },
-  {
-    key: 'application_oriented_tasks',
-    re: /^5\.?\s*Application[\s-]*oriented\s*Tasks\s*[:\-—]?\s*$/i,
-    type: 'list',
-  },
-  {
-    key: 'real_life_competency_activity',
-    re: /^6\.?\s*Real[\s-]*life\s*(?:\/|\s*or\s*)\s*Competency[\s-]*based\s*Activity\s*[:\-—]?\s*$/i,
-    type: 'text',
-  },
-  {
-    key: 'creative_thinking_question',
-    re: /^7\.?\s*Creative\s*Thinking\s*Question\s*[:\-—]?\s*$/i,
-    type: 'text',
-  },
-  {
-    key: 'collaborative_discussion_task',
-    re: /^8\.?\s*Collaborative\s*(?:\/|\s*or\s*)\s*Discussion\s*Task\s*(?:\(if\s*suitable\))?\s*[:\-—]?\s*$/i,
-    type: 'text',
-  },
-  {
-    key: 'challenge_question_advanced',
-    re: /^9\.?\s*Challenge\s*Question\s*for\s*Advanced\s*Learners\s*[:\-—]?\s*$/i,
-    type: 'text',
-  },
-  {
-    key: 'assessment_criteria_rubric',
-    re: /^11\.?\s*Assessment\s*Criteria\s*(?:\/|\s*or\s*)\s*Rubric\s*[:\-—]?\s*$/i,
-    type: 'text',
-  },
-  {
-    key: 'expected_learning_outcomes',
-    re: /^13\.?\s*Expected\s*Learning\s*Outcomes\s*[:\-—]?\s*$/i,
-    type: 'list',
-  },
-];
+/**
+ * @param {string} text
+ * @returns {string}
+ */
+function isolateSingleAssignmentText(text) {
+  const cleaned = cleanPdfEducationalContent(text);
 
-function parseQuestionLines(lines) {
-  const out = [];
-  for (const line of lines) {
-    const cleaned = line.replace(/^\s*[-*•]\s*/, '').trim();
-    const numbered = cleaned.match(/^(?:\d+[\).]\s*)(.+)$/);
-    const text = (numbered ? numbered[1] : cleaned).trim();
-    if (text.length > 2) out.push({ question: text, options: [], answer: '' });
+  const generations = splitByGenerationMarkers(cleaned);
+  if (generations.length > 0) {
+    return generations[0].text;
   }
-  return out;
+
+  const assignmentChunks = splitPdfTextByMarkerLines(cleaned, ASSIGNMENT_MARKER, 80);
+  if (assignmentChunks.length > 1) {
+    return isolateGenerationBlock(assignmentChunks[0], 1);
+  }
+
+  const sectionBlocks = splitByRepeatedSectionOne(cleaned);
+  if (sectionBlocks.length > 1) {
+    return sectionBlocks[0];
+  }
+
+  return isolateGenerationBlock(cleaned, 1);
 }
 
-function parseAssignmentBlock(block, index) {
-  const lines = String(block || '')
-    .replace(/\r/g, '\n')
-    .split('\n')
-    .map((l) => l.trim())
-    .filter(Boolean);
+/**
+ * Pick one assignment from bulk PDF using topic / generation match.
+ * @param {string} text
+ * @param {Record<string, unknown>} [params]
+ */
+function selectAssignmentText(text, params = {}) {
+  const cleaned = cleanPdfEducationalContent(text);
+  const generations = splitByGenerationMarkers(cleaned);
+
+  if (generations.length > 1) {
+    return selectGenerationBlock(generations, params);
+  }
+  if (generations.length === 1) {
+    return generations[0].text;
+  }
+
+  const assignmentChunks = splitPdfTextByMarkerLines(cleaned, ASSIGNMENT_MARKER, 80);
+  if (assignmentChunks.length > 1) {
+    const topic = str(params.subtopic || params.topic || '').toLowerCase();
+    if (topic) {
+      const hit = assignmentChunks.find((c) => c.toLowerCase().includes(topic));
+      if (hit) return isolateGenerationBlock(hit, 1);
+    }
+    return isolateGenerationBlock(assignmentChunks[0], 1);
+  }
+
+  const sectionBlocks = splitByRepeatedSectionOne(cleaned);
+  if (sectionBlocks.length > 1) {
+    const topic = str(params.subtopic || params.topic || '').toLowerCase();
+    if (topic) {
+      const hit = sectionBlocks.find((b) => b.toLowerCase().includes(topic));
+      if (hit) return isolateGenerationBlock(hit, 1);
+    }
+    return sectionBlocks[0];
+  }
+
+  return isolateGenerationBlock(cleaned, 1);
+}
+
+/**
+ * @param {string} block
+ * @param {number} index
+ * @param {Record<string, unknown>} [params]
+ */
+function parseAssignmentBlock(block, index, params = {}) {
+  const isolated = isolateGenerationBlock(
+    contextualizeAssignmentPlaceholders(cleanPdfEducationalContent(block), params),
+    Number(params.generation || params.generationNumber || 1),
+  );
+  const sections = parseAssignmentSections(isolated);
+
+  const titleRaw =
+    sections.get(1) ||
+    isolated
+      .split('\n')
+      .map((l) => str(l))
+      .find((l) => MY_ASSIGNMENT_TITLE_RE.test(l) || (l.length >= 8 && l.length <= 200)) ||
+    '';
+
+  let assignment_title = str(titleRaw.split('\n')[0]);
+  if (MY_ASSIGNMENT_TITLE_RE.test(assignment_title)) {
+    assignment_title = str(assignment_title.replace(MY_ASSIGNMENT_TITLE_RE, ''));
+  }
+  const sub = str(params.subtopic || params.topic);
+  if (sub && /final\s+mastery|mastery\s+assignment/i.test(assignment_title)) {
+    assignment_title = `${sub} Assignment`;
+  }
+  if (!assignment_title) assignment_title = `Assignment ${index + 1}`;
 
   const row = {
     sl_no: index + 1,
-    assignment_title: '',
-    title: '',
-    learning_objectives: [],
-    instructions: '',
-    concept_based_questions: [],
-    application_oriented_tasks: [],
-    real_life_competency_activity: '',
-    creative_thinking_question: '',
-    collaborative_discussion_task: '',
-    challenge_question_advanced: '',
-    assessment_criteria_rubric: '',
-    expected_learning_outcomes: [],
+    assignment_title,
+    title: assignment_title,
+    learning_objectives: filterChecklistBullets(parseBulletListBlock(sections.get(2) || '')),
+    instructions: sanitizeAssignmentTextField(sections.get(3) || ''),
+    concept_based_questions: parseConceptQuestionBlock(sections.get(4) || ''),
+    application_oriented_tasks: filterChecklistBullets(parseBulletListBlock(sections.get(5) || '')),
+    real_life_competency_activity: sanitizeAssignmentTextField(sections.get(6) || ''),
+    creative_thinking_question: sanitizeAssignmentTextField(sections.get(7) || ''),
+    collaborative_discussion_task: sanitizeAssignmentTextField(sections.get(8) || ''),
+    challenge_question_advanced: sanitizeAssignmentTextField(sections.get(9) || ''),
+    assessment_criteria_rubric: sanitizeAssignmentTextField(sections.get(10) || ''),
+    expected_learning_outcomes: filterChecklistBullets(parseBulletListBlock(sections.get(11) || '')),
     _fromPdf: true,
   };
-
-  let currentKey = null;
-  let currentType = 'text';
-  const buffer = [];
-
-  const flush = () => {
-    if (!currentKey) return;
-    const text = buffer.join('\n').trim();
-    const bulletLines = bulletsFromLines(buffer.length ? buffer : text.split('\n'));
-
-    switch (currentType) {
-      case 'list':
-        row[currentKey] = bulletLines.length ? bulletLines : strArr(text);
-        break;
-      case 'questions':
-        row.concept_based_questions = parseQuestionLines(bulletLines.length ? bulletLines : [text]);
-        break;
-      default:
-        if (currentKey === 'assignment_title') {
-          row.assignment_title = text.split('\n')[0]?.trim() || text;
-          row.title = row.assignment_title;
-        } else {
-          row[currentKey] = text;
-        }
-    }
-    buffer.length = 0;
-  };
-
-  for (const line of lines) {
-    if (ASSIGNMENT_MARKER.test(line)) continue;
-
-    const section = SECTION_PATTERNS.find((s) => s.re.test(line));
-    if (section) {
-      flush();
-      currentKey = section.key;
-      currentType = section.type;
-      const inline = line.replace(section.re, '').trim();
-      if (inline) buffer.push(inline);
-      continue;
-    }
-
-    if (!currentKey && !row.assignment_title && line.length >= 3 && line.length <= 200) {
-      row.assignment_title = line;
-      row.title = line;
-      continue;
-    }
-
-    if (currentKey) buffer.push(line);
-  }
-  flush();
-
-  if (!row.title) row.title = `Assignment ${index + 1}`;
-  if (!row.assignment_title) row.assignment_title = row.title;
 
   const hasBody =
     row.learning_objectives.length > 0 ||
@@ -152,6 +147,8 @@ function parseAssignmentBlock(block, index) {
     row.application_oriented_tasks.length > 0 ||
     str(row.real_life_competency_activity).length > 8 ||
     str(row.creative_thinking_question).length > 8 ||
+    str(row.collaborative_discussion_task).length > 8 ||
+    str(row.challenge_question_advanced).length > 8 ||
     str(row.assessment_criteria_rubric).length > 8 ||
     row.expected_learning_outcomes.length > 0;
 
@@ -161,22 +158,55 @@ function parseAssignmentBlock(block, index) {
 
 /**
  * @param {string} text
- * @param {number} [limit=50]
+ * @param {Record<string, unknown>} [params]
+ * @returns {{ text: string, generation: number }}
  */
-export function extractQuickAssignmentItemsFromPdfText(text, limit = 50) {
-  const blocks = splitPdfTextByMarkerLines(str(text), ASSIGNMENT_MARKER, 40);
-  const out = [];
+function resolveSelectedAssignment(text, params = {}) {
+  const cleaned = cleanPdfEducationalContent(str(text));
+  const generations = splitByGenerationMarkers(cleaned);
 
-  for (const block of blocks) {
-    if (out.length >= limit) break;
-    const parsed = parseAssignmentBlock(block, out.length);
-    if (parsed) out.push(parsed);
+  if (generations.length > 1) {
+    const topic = str(params.subtopic || params.topic || '').toLowerCase();
+    const titleNeedle = str(params.assignmentTitle || '').toLowerCase();
+    const needles = [titleNeedle, topic].filter((n) => n.length >= 3);
+
+    let picked = generations[0];
+    if (needles.length) {
+      const scored = generations.map((g) => {
+        const head = `${g.title}\n${g.text.slice(0, 2500)}`.toLowerCase();
+        const score = needles.reduce((n, needle) => n + (head.includes(needle) ? 20 : 0), 0);
+        return { g, score };
+      });
+      scored.sort((a, b) => b.score - a.score);
+      if (scored[0].score > 0) picked = scored[0].g;
+    }
+
+    return { text: picked.text, generation: picked.generation };
   }
 
-  if (!out.length) {
-    const single = parseAssignmentBlock(str(text), 0);
-    if (single) out.push(single);
+  if (generations.length === 1) {
+    return { text: generations[0].text, generation: generations[0].generation };
   }
 
-  return out.slice(0, limit);
+  return { text: selectAssignmentText(text, params), generation: 1 };
 }
+
+/**
+ * @param {string} text
+ * @param {number} [limit=50]
+ * @param {Record<string, unknown>} [params]
+ */
+export function extractQuickAssignmentItemsFromPdfText(text, limit = 50, params = {}) {
+  const { text: selected, generation } = resolveSelectedAssignment(text, params);
+  const parsed = parseAssignmentBlock(selected, 0, { ...params, generation, generationNumber: generation });
+  if (!parsed) return [];
+
+  return [parsed].slice(0, limit);
+}
+
+export {
+  GENERATION_START_RE,
+  isGenerationBoundaryLine,
+  isolateGenerationBlock,
+  splitByGenerationMarkers,
+};

@@ -62,6 +62,9 @@ export function extractToolItemsFromPdfText(toolSlug, text, options = {}) {
   if (slug === 'activity-project-generator' || slug === 'project-idea-lab') {
     return fn(String(text || ''), limit, slug);
   }
+  if (slug === 'quick-assignment-builder') {
+    return fn(String(text || ''), limit, options);
+  }
   return fn(String(text || ''), limit);
 }
 

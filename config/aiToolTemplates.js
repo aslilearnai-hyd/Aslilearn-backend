@@ -287,7 +287,12 @@ const TEMPLATES = {
       { id: 'questions-nonempty', severity: 'error', description: 'questions[] must be non-empty after sanitize.' },
       { id: 'answer-key-alignment', severity: 'warn', description: 'MCQs with options should have a declared answer.' },
     ],
-    parserHints: ['Detect Q1., Q2., or 1), 2) patterns; preserve section labels A/B/C when present.'],
+    parserHints: [
+      'PDF upload uses zero-LLM regex path only (pdf-worksheet-extract.js → pdf-canonical-extract.js). No Gemini classify/extract on upload.',
+      'Detect Q1., Q2., 1., 1), 1 Which (no dot), section headers Section A–E; dense single-line PDFs auto-split.',
+      'Strip page footers (-- N of M --), NEP-NCF chrome, merged section tails; dedupe by section+text+answer+options.',
+      'Answer Key section 9: auto-built A–E grouped from per-question answers; see ai-tools/AI-PDF-UPLOAD.md.',
+    ],
     regenerationRules: { mergePolicy: 'replace', allowTemplateRegeneration: true },
     gemini: {
       strictOutputHint:
