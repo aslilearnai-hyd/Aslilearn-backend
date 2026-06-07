@@ -5397,7 +5397,7 @@ router.get('/content-download', async (req, res) => {
 
     res.setHeader('Content-Type', isPdf ? 'application/pdf' : upstreamType);
     res.setHeader('Content-Disposition', `${isPdf ? 'inline' : 'attachment'}; filename="${safeFilename.replace(/"/g, '')}"`);
-    res.setHeader('Access-Control-Allow-Origin', '*');
+    setPdfProxyCorsHeaders(req, res);
     res.removeHeader('X-Frame-Options');
     console.log('[PDF_PROXY] /content-download response', {
       status: 200,
@@ -5430,6 +5430,17 @@ router.get('/content-download', async (req, res) => {
     });
   }
 });
+
+function setPdfProxyCorsHeaders(req, res) {
+  const origin = typeof req.headers.origin === 'string' ? req.headers.origin : '';
+  if (origin) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Vary', 'Origin');
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+  } else {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+  }
+}
 
 // Proxy file preview for student content URLs (inline rendering in iframe/object)
 router.get('/content-preview', async (req, res) => {
@@ -5489,7 +5500,7 @@ router.get('/content-preview', async (req, res) => {
     res.setHeader('X-Source-Content-Type', upstreamType);
     res.setHeader('X-Pdf-Validated', isPdf ? '1' : '0');
     res.setHeader('Content-Disposition', `inline; filename="${safeFilename.replace(/"/g, '')}"`);
-    res.setHeader('Access-Control-Allow-Origin', '*');
+    setPdfProxyCorsHeaders(req, res);
     res.removeHeader('X-Frame-Options');
     console.log('[PDF_PROXY] /content-preview response', {
       status: 200,
