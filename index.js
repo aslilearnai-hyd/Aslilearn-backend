@@ -49,7 +49,13 @@ import practiceProgressRoutes from './routes/practice-progress.js';
 import dashboardRoutes from './routes/dashboards.js';
 import timetableRoutes from './routes/timetable.js';
 import { initPdfProcessingQueue } from './queues/pdfProcessingQueue.js';
-import { verifyToken, verifySuperAdmin } from './middleware/auth.js';
+import { verifyToken, verifySuperAdmin, verifyAdmin, extractAdminId } from './middleware/auth.js';
+import {
+  getAssessments,
+  getVideos,
+  getQuizzes,
+  getAnalytics,
+} from './controllers/adminController.js';
 import { getCalendarEvents, createCalendarEvent } from './controllers/calendarController.js';
 import {
   listAiToolChildren,
@@ -856,6 +862,12 @@ app.get('/api/super-admin/ai-tool-generations/export-bundle', verifyToken, verif
 app.get('/api/super-admin/ai-tool-generations/document/:id', verifyToken, verifySuperAdmin, getAiToolGenerationById);
 app.patch('/api/super-admin/ai-tool-generations/document/:id', verifyToken, verifySuperAdmin, updateAiToolGenerationById);
 app.delete('/api/super-admin/ai-tool-generations/document/:id', verifyToken, verifySuperAdmin, deleteAiToolGenerationById);
+
+// Admin content GET APIs — register before /api/admin router (avoids 404 on older deployments)
+app.get('/api/admin/assessments', verifyToken, verifyAdmin, extractAdminId, getAssessments);
+app.get('/api/admin/videos', verifyToken, verifyAdmin, extractAdminId, getVideos);
+app.get('/api/admin/quizzes', verifyToken, verifyAdmin, extractAdminId, getQuizzes);
+app.get('/api/admin/analytics', verifyToken, verifyAdmin, extractAdminId, getAnalytics);
 
 // Mount routes
 app.use('/api/super-admin', superAdminRoutes);
