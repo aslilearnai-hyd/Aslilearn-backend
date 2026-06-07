@@ -833,19 +833,42 @@ export const getAssessments = async (req, res) => {
   }
 };
 
+function buildPlaceholderQuestions(count) {
+  const total = Math.max(1, Math.min(Number(count) || 5, 100));
+  return Array.from({ length: total }, (_, index) => ({
+    question: `Question ${index + 1}`,
+    options: ['Option A', 'Option B', 'Option C', 'Option D'],
+    correctAnswer: 0,
+    points: 1,
+  }));
+}
+
 export const createAssessment = async (req, res) => {
   try {
-    const { title, description, questions, subjectIds, difficulty, duration, driveLink } = req.body;
+    const { title, description, questions, subjectIds, difficulty, duration, driveLink, subject } = req.body;
     const adminId = req.adminId;
-    
+
+    let questionList = Array.isArray(questions) ? questions : [];
+    if (questionList.length === 0) {
+      const count = req.body.totalQuestions ?? req.body.questions ?? 5;
+      questionList = buildPlaceholderQuestions(count);
+    }
+
+    const resolvedSubjectIds =
+      Array.isArray(subjectIds) && subjectIds.length > 0
+        ? subjectIds
+        : subject
+          ? [subject]
+          : [];
+
     // Calculate total points
-    const totalPoints = questions.reduce((sum, q) => sum + (q.points || 1), 0);
+    const totalPoints = questionList.reduce((sum, q) => sum + (q.points || 1), 0);
     
     const newAssessment = new Assessment({
       title,
       description,
-      questions,
-      subjectIds,
+      questions: questionList,
+      subjectIds: resolvedSubjectIds,
       difficulty: difficulty || 'beginner',
       duration,
       totalPoints,
@@ -3554,5 +3577,191 @@ export const uploadTeachersCsv = async (req, res) => {
         ? 'Ensure you are logged in as a school admin'
         : 'Check CSV format: required columns name, email; optional subjects',
     });
+  }
+};
+
+function mapAssessmentToQuiz(assessment) {
+  const subjectId = Array.isArray(assessment.subjectIds) ? assessment.subjectIds[0] : assessment.subjectIds;
+  return {
+    _id: assessment._id,
+    title: assessment.title,
+    description: assessment.description,
+    subject: subjectId,
+    classNumber: assessment.classNumber || '',
+    difficulty: assessment.difficulty || 'medium',
+    totalQuestions: Array.isArray(assessment.questions) ? assessment.questions.length : 0,
+    isActive: assessment.isPublished !== false,
+    createdAt: assessment.createdAt,
+  };
+}
+
+export const getQuizzes = async (req, res) => {
+  try {
+    const adminId = req.adminId;
+    const filter = adminId ? { adminId } : {};
+    const assessments = await Assessment.find(filter)
+      .sort({ createdAt: -1 })
+      .limit(500)
+      .lean();
+    res.json({
+      success: true,
+      data: assessments.map(mapAssessmentToQuiz),
+    });
+  } catch (error) {
+    console.error('Get quizzes error:', error);
+    res.status(500).json({ success: false, message: 'Failed to fetch quizzes' });
+  }
+};
+
+export const createQuiz = async (req, res) => {
+  req.body.totalQuestions = req.body.totalQuestions || 20;
+  return createAssessment(req, res);
+};
+
+export const getSchoolSettings = async (req, res) => {
+  try {
+    const adminId = req.adminId;
+    if (!adminId) {
+      return res.status(401).json({ success: false, message: 'Admin ID not found' });
+    }
+    const admin = await User.findById(adminId)
+      .select('schoolName board curriculumBoard schoolDetails')
+      .lean();
+    if (!admin) {
+      return res.status(404).json({ success: false, message: 'Admin not found' });
+    }
+    res.json({
+      success: true,
+      settings: {
+        schoolName: admin.schoolName || '',
+        board: admin.curriculumBoard || admin.board || '',
+        workingHours: admin.schoolDetails?.workingHours || '',
+      },
+    });
+  } catch (error) {
+    console.error('Get school settings error:', error);
+    res.status(500).json({ success: false, message: 'Failed to load school settings' });
+  }
+};
+
+export const updateSchoolSettings = async (req, res) => {
+  try {
+    const adminId = req.adminId;
+    if (!adminId) {
+      return res.status(401).json({ success: false, message: 'Admin ID not found' });
+    }
+    const { schoolName, board, workingHours } = req.body || {};
+    const update = {};
+    if (schoolName != null) update.schoolName = String(schoolName).trim();
+    if (board != null) {
+      update.curriculumBoard = String(board).trim().toUpperCase();
+    }
+    if (workingHours != null) {
+      update['schoolDetails.workingHours'] = String(workingHours).trim();
+    }
+    const admin = await User.findByIdAndUpdate(adminId, { $set: update }, { new: true })
+      .select('schoolName board curriculumBoard schoolDetails')
+      .lean();
+    res.json({
+      success: true,
+      settings: {
+        schoolName: admin?.schoolName || '',
+        board: admin?.curriculumBoard || admin?.board || '',
+        workingHours: admin?.schoolDetails?.workingHours || '',
+      },
+    });
+  } catch (error) {
+    console.error('Update school settings error:', error);
+    res.status(500).json({ success: false, message: 'Failed to save school settings' });
+  }
+};
+
+function csvEscape(value) {
+  const text = value == null ? '' : String(value);
+  if (/[",\n]/.test(text)) {
+    return `"${text.replace(/"/g, '""')}"`;
+  }
+  return text;
+}
+
+function rowsToCsv(rows, headers) {
+  const lines = [headers.join(',')];
+  rows.forEach((row) => {
+    lines.push(headers.map((key) => csvEscape(row[key])).join(','));
+  });
+  return lines.join('\n');
+}
+
+export const getAdminReports = async (req, res) => {
+  try {
+    const adminId = req.adminId;
+    const type = String(req.query.type || 'performance').trim().toLowerCase();
+    const format = String(req.query.format || 'csv').trim().toLowerCase();
+    const userFilter = adminId ? { role: 'student', assignedAdmin: adminId } : { role: 'student' };
+
+    let rows = [];
+    let headers = [];
+    let filename = `report-${type}`;
+
+    if (type === 'attendance') {
+      headers = ['studentName', 'email', 'classNumber', 'section', 'status'];
+      const students = await User.find(userFilter)
+        .select('fullName email classNumber section isActive')
+        .sort({ classNumber: 1, fullName: 1 })
+        .lean();
+      rows = students.map((student) => ({
+        studentName: student.fullName || '',
+        email: student.email || '',
+        classNumber: student.classNumber || '',
+        section: student.section || '',
+        status: student.isActive === false ? 'inactive' : 'active',
+      }));
+    } else if (type === 'exams' || type === 'performance') {
+      headers = ['studentName', 'email', 'classNumber', 'examTitle', 'obtainedMarks', 'totalMarks', 'percentage', 'completedAt'];
+      const students = await User.find(userFilter).select('_id fullName email classNumber').lean();
+      const studentIds = students.map((s) => s._id).filter(Boolean);
+      const studentMap = new Map(students.map((s) => [String(s._id), s]));
+      const results = studentIds.length
+        ? await ExamResult.find({ userId: { $in: studentIds } })
+            .populate('examId', 'title')
+            .sort({ completedAt: -1 })
+            .limit(2000)
+            .lean()
+        : [];
+      rows = results.map((result) => {
+        const student = studentMap.get(String(result.userId)) || {};
+        return {
+          studentName: student.fullName || '',
+          email: student.email || '',
+          classNumber: student.classNumber || '',
+          examTitle: result.examId?.title || result.examTitle || '',
+          obtainedMarks: result.obtainedMarks ?? '',
+          totalMarks: result.totalMarks ?? '',
+          percentage: result.percentage ?? '',
+          completedAt: result.completedAt ? new Date(result.completedAt).toISOString() : '',
+        };
+      });
+      filename = type === 'exams' ? 'exam-results' : 'performance';
+    } else {
+      return res.status(400).json({ success: false, message: 'Invalid report type' });
+    }
+
+    if (format === 'pdf') {
+      return res.json({
+        success: true,
+        message: 'PDF export is not available on mobile yet. Download CSV instead.',
+        type,
+        rowCount: rows.length,
+        rows: rows.slice(0, 100),
+      });
+    }
+
+    const csv = rowsToCsv(rows, headers);
+    res.setHeader('Content-Type', 'text/csv; charset=utf-8');
+    res.setHeader('Content-Disposition', `attachment; filename="${filename}.csv"`);
+    return res.send(csv);
+  } catch (error) {
+    console.error('Admin report export error:', error);
+    res.status(500).json({ success: false, message: 'Failed to generate report' });
   }
 };

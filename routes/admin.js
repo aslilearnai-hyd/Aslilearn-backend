@@ -48,6 +48,17 @@ import {
   getVideos,
   getAssessments,
   getAnalytics,
+  getQuizzes,
+  createQuiz,
+  getSchoolSettings,
+  updateSchoolSettings,
+  getAdminReports,
+  createVideo,
+  updateVideo,
+  deleteVideo,
+  createAssessment,
+  updateAssessment,
+  deleteAssessment,
   getClasses,
   getSubjects,
   createSubject,
@@ -88,6 +99,9 @@ router.use(extractAdminId);
 // Dashboard Routes
 router.get('/dashboard/stats', getAdminDashboardStats);
 router.get('/analytics', getAnalytics);
+router.get('/reports', getAdminReports);
+router.get('/school-settings', getSchoolSettings);
+router.put('/school-settings', updateSchoolSettings);
 router.get('/risk-summary', async (req, res) => {
   try {
     const adminId = req.adminId;
@@ -158,15 +172,21 @@ router.delete('/teachers/:id', verifyDataOwnership(Teacher), deleteTeacher);
 router.post('/teachers/:teacherId/assign-subjects', assignSubjects);
 router.post('/teachers/:teacherId/assign-classes', assignClasses);
 
-// Video/Course Management Routes - REMOVED (Admins cannot create content)
-// router.post('/videos', addAdminIdToBody, createVideo);
-// router.put('/videos/:id', verifyDataOwnership(Video), updateVideo);
-// router.delete('/videos/:id', verifyDataOwnership(Video), deleteVideo);
+// Video/Course Management Routes (read + legacy mobile CRUD)
+router.get('/videos', getVideos);
+router.post('/videos', addAdminIdToBody, createVideo);
+router.put('/videos/:id', verifyDataOwnership(Video), updateVideo);
+router.delete('/videos/:id', verifyDataOwnership(Video), deleteVideo);
 
-// Assessment Management Routes - REMOVED (Admins cannot create assessments)
-// router.post('/assessments', addAdminIdToBody, createAssessment);
-// router.put('/assessments/:id', verifyDataOwnership(Assessment), updateAssessment);
-// router.delete('/assessments/:id', verifyDataOwnership(Assessment), deleteAssessment);
+// Assessment / Quiz Management Routes
+router.get('/assessments', getAssessments);
+router.post('/assessments', addAdminIdToBody, createAssessment);
+router.put('/assessments/:id', verifyDataOwnership(Assessment), updateAssessment);
+router.delete('/assessments/:id', verifyDataOwnership(Assessment), deleteAssessment);
+router.get('/quizzes', getQuizzes);
+router.post('/quizzes', addAdminIdToBody, createQuiz);
+
+// Legacy commented routes kept above as active endpoints for mobile parity.
 
 // CSV Upload for Students (class, section, per-row password)
 router.post('/students/upload', upload.single('file'), uploadStudentsCsv);

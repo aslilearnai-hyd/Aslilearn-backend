@@ -172,6 +172,7 @@ const userSchema = new mongoose.Schema({
       classesTo: { type: String, trim: true, default: '' },
       totalStrength: { type: String, trim: true, default: '' },
       schoolType: { type: String, trim: true, default: '' },
+      workingHours: { type: String, trim: true, default: '' },
       photos: { type: [String], default: [] }
     },
     default: () => ({})
