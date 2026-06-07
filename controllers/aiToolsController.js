@@ -4,6 +4,7 @@ import {
   VALID_SUBJECTS
 } from '../services/hardcoded-content-service.js';
 import AiToolGeneration from '../models/AiToolGeneration.js';
+import TeacherToolUsage from '../models/TeacherToolUsage.js';
 import { fetchRotatingAiToolData } from '../services/ai-tool-rotation-service.js';
 import { extractRawTextFromPDF } from '../services/pdf-extractor-service.js';
 import { buildPdfExtractEmptyMessage, extractAndGenerateAllItems, getLastPdfExtractionMeta } from '../services/gemini-service.js';
@@ -69,6 +70,39 @@ function normalizeTopicSub(val) {
 const TOOL_DISPLAY_NAMES = Object.fromEntries(
   Object.entries(getToolRegistryMeta()).map(([slug, meta]) => [slug, meta.title]),
 );
+
+/** Tools exposed on the teacher Vidya AI dashboard (must stay in sync with UI tool lists). */
+export const TEACHER_DASHBOARD_TOOL_IDS = Object.freeze([
+  'activity-project-generator',
+  'worksheet-mcq-generator',
+  'concept-mastery-helper',
+  'lesson-planner',
+  'exam-question-paper-generator',
+  'daily-class-plan-maker',
+  'homework-creator',
+  'rubrics-evaluation-generator',
+  'learning-outcomes-generator',
+  'story-passage-creator',
+  'short-notes-summaries-maker',
+  'flashcard-generator',
+  'report-card-generator',
+  'student-skill-tracker',
+]);
+
+const MINUTES_SAVED_PER_RESOURCE = 20;
+const WEEKLY_PREP_MINUTES = 600;
+
+function logTeacherToolUsage({ teacherId, toolType, classDisplay, finalSubject, topicForStore, subtopicForStore }) {
+  if (!teacherId || !toolType) return;
+  TeacherToolUsage.create({
+    teacherId,
+    toolType,
+    classLabel: classDisplay || '',
+    subject: finalSubject || '',
+    topic: topicForStore || '',
+    subtopic: subtopicForStore || '',
+  }).catch((err) => console.warn('[TeacherToolUsage] log failed:', err.message));
+}
 
 export function formatItemToContent(toolType, item, index = 0) {
   if (isValidAiToolSlug(toolType)) {
@@ -417,6 +451,14 @@ export const createTeacherTool = async (req, res) => {
           params.questionCount ?? req.body?.questionCount,
         );
         const rawData = buildRawDataForTool(toolType, limitedContent, cachedDoc.metadata || {});
+        logTeacherToolUsage({
+          teacherId,
+          toolType,
+          classDisplay,
+          finalSubject,
+          topicForStore,
+          subtopicForStore,
+        });
         return res.json({
           success: true,
           data: {
@@ -850,6 +892,63 @@ export const uploadAndParsePdf = async (req, res) => {
     return res.status(500).json({
       success: false,
       message: `PDF processing failed: ${error.message}`,
+    });
+  }
+};
+
+export const getTeacherToolStats = async (req, res) => {
+  try {
+    const teacherId = req.teacherId;
+    if (!teacherId) {
+      return res.status(400).json({ success: false, message: 'Teacher ID not found' });
+    }
+
+    const now = new Date();
+    const monthStart = new Date(now.getFullYear(), now.getMonth(), 1, 0, 0, 0, 0);
+    const weekStart = new Date(now);
+    weekStart.setDate(now.getDate() - 7);
+    weekStart.setHours(0, 0, 0, 0);
+
+    const teacherOid = teacherId;
+
+    const [resourcesCreatedThisMonth, weeklyUsageCount, distinctToolsUsed] = await Promise.all([
+      TeacherToolUsage.countDocuments({
+        teacherId: teacherOid,
+        createdAt: { $gte: monthStart },
+      }),
+      TeacherToolUsage.countDocuments({
+        teacherId: teacherOid,
+        createdAt: { $gte: weekStart },
+      }),
+      TeacherToolUsage.distinct('toolType', {
+        teacherId: teacherOid,
+        createdAt: { $gte: monthStart },
+      }),
+    ]);
+
+    const timeSavedPercent = weeklyUsageCount
+      ? Math.min(
+          100,
+          Math.round((weeklyUsageCount * MINUTES_SAVED_PER_RESOURCE * 100) / WEEKLY_PREP_MINUTES),
+        )
+      : 0;
+
+    return res.json({
+      success: true,
+      data: {
+        totalTools: TEACHER_DASHBOARD_TOOL_IDS.length,
+        timeSavedPercent,
+        resourcesCreatedThisMonth,
+        toolsUsedThisMonth: distinctToolsUsed.length,
+        weeklyGenerations: weeklyUsageCount,
+      },
+    });
+  } catch (error) {
+    console.error('getTeacherToolStats error:', error);
+    return res.status(500).json({
+      success: false,
+      message: 'Failed to fetch teacher tool stats',
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined,
     });
   }
 };

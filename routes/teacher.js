@@ -24,6 +24,7 @@ import {
   createTeacherTool,
   generateContent,
   getGeneratedContent,
+  getTeacherToolStats,
   getSubjects,
   getTopics,
   getAvailableContent
@@ -146,6 +147,7 @@ router.get('/ai/available-content', allowTeacherOrStudent, getAvailableContent);
 router.post('/ai/tool', allowTeacherOrStudent, createTeacherTool); // Uses hardcoded content only
 router.post('/ai/generate-content', allowTeacherOrStudent, generateContent); // Generate + persist
 router.get('/ai/generated-content', allowTeacherOrStudent, getGeneratedContent); // Fallback latest generated content
+router.get('/ai/tool-stats', allowTeacherOrStudent, getTeacherToolStats);
 
 // Apply teacher-only middleware for other routes
 router.use(verifyTeacher);
