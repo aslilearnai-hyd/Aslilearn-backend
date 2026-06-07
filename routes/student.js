@@ -5465,7 +5465,11 @@ router.get('/content-preview', async (req, res) => {
       });
     }
 
-    const bypass = getPdfBrowserBypassTarget(url);
+    const forceProxy =
+      req.query.forceProxy === '1' ||
+      req.query.forceProxy === 'true' ||
+      req.query.serve === '1';
+    const bypass = forceProxy ? '' : getPdfBrowserBypassTarget(url);
     if (bypass) {
       console.log('[PDF_PROXY] /content-preview 302 → browser', {
         host: parsedUrl.hostname,

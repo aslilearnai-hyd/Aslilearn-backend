@@ -28,6 +28,59 @@ function toSubjectKey(name) {
   return subjectGroupKey(name || '');
 }
 
+function adaptiveItemTypeKey(item) {
+  const kind = String(item.kind || '').toLowerCase();
+  if (kind === 'quiz' || kind === 'exam') return kind;
+  const display = String(item.displayType || '').toLowerCase();
+  if (display === 'video') return 'video';
+  if (display === 'pdf') return 'pdf';
+  if (display === 'practice') return 'practice';
+  if (display === 'assignment') return 'assignment';
+  if (display === 'audio') return 'audio';
+  if (display.includes('previous') || display.includes('paper')) return 'exam-paper';
+  return display || 'other';
+}
+
+const ADAPTIVE_TYPE_PICK_ORDER = [
+  'quiz',
+  'exam',
+  'video',
+  'pdf',
+  'practice',
+  'assignment',
+  'audio',
+  'exam-paper',
+  'other',
+];
+
+/** One or two recommendations per subject — relevance first, second prefers a different type. */
+function capAdaptiveRecommendationsPerSubject(items, maxPerSubject = 2) {
+  if (!items?.length) return [];
+  if (items.length <= maxPerSubject) return items;
+
+  const picked = [items[0]];
+  if (maxPerSubject <= 1) return picked;
+
+  const firstType = adaptiveItemTypeKey(items[0]);
+  const usedIds = new Set([String(items[0]._id)]);
+
+  for (const typeKey of ADAPTIVE_TYPE_PICK_ORDER) {
+    if (typeKey === firstType) continue;
+    const match = items.find(
+      (item) => !usedIds.has(String(item._id)) && adaptiveItemTypeKey(item) === typeKey
+    );
+    if (match) {
+      picked.push(match);
+      return picked;
+    }
+  }
+
+  const fallback = items.find((item) => !usedIds.has(String(item._id)));
+  if (fallback) picked.push(fallback);
+
+  return picked;
+}
+
 function meaningfulChapterLabel(raw) {
   const s = String(raw || '').trim();
   if (!s) return '';
@@ -498,7 +551,7 @@ export async function buildAdaptiveLearningPayload(userId) {
       priority,
       gapsWithoutContent,
       usesLibraryFallback: libraryFallback && recommended.length > 0,
-      recommendedContent: recommended.slice(0, 24),
+      recommendedContent: capAdaptiveRecommendationsPerSubject(recommended),
     });
   }
 
