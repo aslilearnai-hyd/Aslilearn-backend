@@ -419,30 +419,15 @@ export const createTeacherTool = async (req, res) => {
         } = await import('../services/ai-tool-dashboard-validation.js');
         const contentGate = validateDashboardAiToolDoc(toolType, cachedDoc);
         const isWrongTool = contentGate.code === DASHBOARD_WRONG_TOOL_CODE;
-        const { shouldDeliverStoredContentDespiteSectionGate } = await import(
-          '../services/ai-tool-dashboard-validation.js'
-        );
         if (!contentGate.valid) {
-          if (isWrongTool) {
-            return res.status(404).json({
-              success: false,
-              code: contentGate.code || DASHBOARD_WRONG_TOOL_CODE,
-              message: contentGate.message || DASHBOARD_WRONG_TOOL_USER_MESSAGE,
-              missingSections: contentGate.missingSections || [],
-            });
-          }
-          if (!shouldDeliverStoredContentDespiteSectionGate(contentGate, cachedContent)) {
-            return res.status(404).json({
-              success: false,
-              code: contentGate.code || DASHBOARD_INCOMPLETE_CODE,
-              message: contentGate.message || DASHBOARD_INCOMPLETE_USER_MESSAGE,
-              missingSections: contentGate.missingSections || [],
-            });
-          }
-          console.warn(
-            `[AI Tool] Delivering ${toolType} content despite section gate:`,
-            (contentGate.missingSections || []).slice(0, 6).join(', '),
-          );
+          return res.status(404).json({
+            success: false,
+            code: contentGate.code || (isWrongTool ? DASHBOARD_WRONG_TOOL_CODE : DASHBOARD_INCOMPLETE_CODE),
+            message:
+              contentGate.message ||
+              (isWrongTool ? DASHBOARD_WRONG_TOOL_USER_MESSAGE : DASHBOARD_INCOMPLETE_USER_MESSAGE),
+            missingSections: contentGate.missingSections || [],
+          });
         }
 
         const limitedContent = applyQuestionLimitToContent(
@@ -477,12 +462,6 @@ export const createTeacherTool = async (req, res) => {
               matchType,
               totalCandidates,
               selectedIndex,
-              ...(contentGate.valid
-                ? {}
-                : {
-                    contentSectionWarnings: contentGate.missingSections || [],
-                    optionalMissingSections: contentGate.optionalMissingSections || [],
-                  }),
             },
           },
         });
@@ -573,23 +552,17 @@ export const getGeneratedContent = async (req, res) => {
       DASHBOARD_WRONG_TOOL_USER_MESSAGE,
     } = await import('../services/ai-tool-dashboard-validation.js');
     const contentGate = validateDashboardAiToolDoc(toolType, matchedDoc);
-    const cachedBody = String(matchedDoc.generatedContent || matchedDoc.content || '').trim();
-    const { shouldDeliverStoredContentDespiteSectionGate } = await import(
-      '../services/ai-tool-dashboard-validation.js'
-    );
     if (!contentGate.valid) {
       const isWrongTool = contentGate.code === DASHBOARD_WRONG_TOOL_CODE;
-      if (isWrongTool || !shouldDeliverStoredContentDespiteSectionGate(contentGate, cachedBody)) {
-        return res.json({
-          success: true,
-          data: null,
-          message:
-            contentGate.message ||
-            (isWrongTool ? DASHBOARD_WRONG_TOOL_USER_MESSAGE : DASHBOARD_INCOMPLETE_USER_MESSAGE),
-          code: contentGate.code || DASHBOARD_INCOMPLETE_CODE,
-          missingSections: contentGate.missingSections || [],
-        });
-      }
+      return res.json({
+        success: true,
+        data: null,
+        message:
+          contentGate.message ||
+          (isWrongTool ? DASHBOARD_WRONG_TOOL_USER_MESSAGE : DASHBOARD_INCOMPLETE_USER_MESSAGE),
+        code: contentGate.code || DASHBOARD_INCOMPLETE_CODE,
+        missingSections: contentGate.missingSections || [],
+      });
     }
 
     return res.json({

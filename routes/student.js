@@ -4901,21 +4901,16 @@ router.post('/ai/tool', async (req, res) => {
       } = await import('../services/ai-tool-dashboard-validation.js');
       const contentGate = validateDashboardAiToolDoc(toolType, adminDoc);
       const originalContent = String(adminDoc.generatedContent || adminDoc.content || '').trim();
-      const { shouldDeliverStoredContentDespiteSectionGate } = await import(
-        '../services/ai-tool-dashboard-validation.js'
-      );
       if (!contentGate.valid) {
         const isWrongTool = contentGate.code === DASHBOARD_WRONG_TOOL_CODE;
-        if (isWrongTool || !shouldDeliverStoredContentDespiteSectionGate(contentGate, originalContent)) {
-          return res.status(404).json({
-            success: false,
-            code: contentGate.code || DASHBOARD_INCOMPLETE_CODE,
-            message:
-              contentGate.message ||
-              (isWrongTool ? DASHBOARD_WRONG_TOOL_USER_MESSAGE : DASHBOARD_INCOMPLETE_USER_MESSAGE),
-            missingSections: contentGate.missingSections || [],
-          });
-        }
+        return res.status(404).json({
+          success: false,
+          code: contentGate.code || DASHBOARD_INCOMPLETE_CODE,
+          message:
+            contentGate.message ||
+            (isWrongTool ? DASHBOARD_WRONG_TOOL_USER_MESSAGE : DASHBOARD_INCOMPLETE_USER_MESSAGE),
+          missingSections: contentGate.missingSections || [],
+        });
       }
 
       const content = applyQuestionLimitToContent(

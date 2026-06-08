@@ -3,30 +3,31 @@ import {
   validateDashboardAiToolDoc,
 } from '../services/ai-tool-dashboard-validation.js';
 
-const markdown = `1. Lesson Title
-Patterns in Mathematics
-
-2. Learning Objectives
-- Identify patterns in numbers
-
-3. NCF Competency / Learning Outcome Alignment
-Reasoning skills
-`;
-
-const gate = validateDashboardAiToolDoc('lesson-planner', {
-  toolName: 'lesson-planner',
-  generatedContent: markdown,
+const gate = validateDashboardAiToolDoc('mock-test-builder', {
+  toolName: 'mock-test-builder',
+  generatedContent: '# Science Exam\n\n## Section A\n1. What is science?',
   metadata: {
     structuredContent: {
-      lesson_name: 'Patterns in Mathematics',
-      learning_objectives: ['Identify patterns in numbers'],
+      mock_test_title: 'Science Exam',
+      section_a: [
+        {
+          question: 'What is science?',
+          options: ['A) x', 'B) y', 'C) z', 'D) w'],
+          answer: 'A',
+        },
+      ],
     },
   },
 });
 
-if (!shouldDeliverStoredContentDespiteSectionGate(gate, markdown)) {
-  console.error('FAIL: should deliver lesson with partial sections', gate);
+if (gate.valid) {
+  console.error('FAIL: partial mock test should not pass full section validation');
   process.exit(1);
 }
 
-console.log('PASS: lesson planner delivers without blocking on missing sections');
+if (shouldDeliverStoredContentDespiteSectionGate(gate)) {
+  console.error('FAIL: incomplete content must not be delivered for any tool', gate);
+  process.exit(1);
+}
+
+console.log('PASS: incomplete mock test is blocked from delivery');

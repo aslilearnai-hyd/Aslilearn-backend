@@ -868,14 +868,11 @@ export function getMissingCanonicalSections(toolSlug, data, markdown = '') {
 }
 
 /**
- * Teacher/student Generate: deliver stored PDF rows when body text exists; only block wrong-tool mismatch.
+ * Teacher/student Generate: only deliver when every required section passes validation.
  * @param {{ valid?: boolean; code?: string; missingSections?: string[] }} contentGate
- * @param {string} rawContent
  */
-export function shouldDeliverStoredContentDespiteSectionGate(contentGate, rawContent) {
-  if (contentGate?.valid) return true;
-  if (contentGate?.code === DASHBOARD_WRONG_TOOL_CODE) return false;
-  return String(rawContent || '').trim().length >= 60;
+export function shouldDeliverStoredContentDespiteSectionGate(contentGate) {
+  return contentGate?.valid === true;
 }
 
 function hasStructuredKey(data, key) {
