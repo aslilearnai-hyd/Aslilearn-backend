@@ -46,6 +46,82 @@ function rawWorksheetSectionHasQuestions(sections, label) {
   return rawPracticeQaSectionHasQuestions(sections, label);
 }
 
+/** Pull section body text after a worksheet heading line (### 2. Learning Objectives, etc.). */
+function extractWorksheetMarkdownSectionBody(markdown, headingRe) {
+  const lines = String(markdown || '').split(/\r?\n/);
+  for (let i = 0; i < lines.length; i++) {
+    const raw = lines[i].trim();
+    const plain = raw
+      .replace(/^#{1,4}\s+/, '')
+      .replace(/^\d+\.\s+/, '')
+      .replace(/^\*\*|\*\*$/g, '')
+      .trim();
+    if (!headingRe.test(plain) && !headingRe.test(raw)) continue;
+    const bodyLines = [];
+    for (let j = i + 1; j < lines.length; j++) {
+      const next = lines[j].trim();
+      if (!next) {
+        if (bodyLines.length) bodyLines.push('');
+        continue;
+      }
+      const nextPlain = next.replace(/^#{1,4}\s+/, '').replace(/^\d+\.\s+/, '');
+      if (/^#{1,3}\s+\d+\./.test(next) || /^###\s+/.test(next)) break;
+      if (
+        /^(learning objectives|instructions|answer key|bloom|section\s+[a-e])/i.test(nextPlain)
+      ) {
+        break;
+      }
+      bodyLines.push(lines[j]);
+    }
+    const body = bodyLines.join('\n').trim();
+    if (isMeaningfulContent(body)) return body;
+  }
+  return '';
+}
+
+/** Merge worksheet meta fields from markdown when structured JSON omitted them. */
+function enrichWorksheetHeadingDataFromMarkdown(data, markdown) {
+  const out = data && typeof data === 'object' && !Array.isArray(data) ? { ...data } : {};
+  const md = String(markdown || '');
+
+  if (!isMeaningfulArray(out.learning_objectives)) {
+    const block = extractWorksheetMarkdownSectionBody(md, /learning\s+objectives/i);
+    if (block) {
+      out.learning_objectives = block
+        .split(/\n/)
+        .map((line) => line.replace(/^\s*[-*•]\s*/, '').trim())
+        .filter(Boolean);
+    }
+  }
+
+  if (!isMeaningfulScalar(out.instructions)) {
+    const block =
+      extractWorksheetMarkdownSectionBody(md, /instructions?\s+(?:to\s+)?students?/i) ||
+      extractWorksheetMarkdownSectionBody(md, /^instructions?$/i);
+    if (block) out.instructions = block.replace(/\s+/g, ' ').trim();
+  }
+
+  if (!isMeaningfulScalar(out.answer_key)) {
+    const block = extractWorksheetMarkdownSectionBody(md, /answer\s+key/i);
+    if (block) out.answer_key = block;
+  }
+
+  if (!isMeaningfulScalar(out.bloom_level) && !isMeaningfulScalar(out.difficulty_tag)) {
+    const block = extractWorksheetMarkdownSectionBody(md, /bloom|difficulty\s+tag/i);
+    if (block) {
+      const parts = block.split(/\s*[—–-]\s*/).map((s) => s.trim()).filter(Boolean);
+      if (parts.length >= 2) {
+        out.bloom_level = parts[0];
+        out.difficulty_tag = parts.slice(1).join(' — ');
+      } else {
+        out.bloom_level = block;
+      }
+    }
+  }
+
+  return out;
+}
+
 function worksheetHeadingFilledInStructured(data, heading, markdown = '') {
   const src = data && typeof data === 'object' && !Array.isArray(data) ? data : {};
   const normalized = normalizeWorksheetStructuredContent(src, markdown);
@@ -55,24 +131,36 @@ function worksheetHeadingFilledInStructured(data, heading, markdown = '') {
     return isMeaningfulScalar(normalized.title || normalized.worksheet_title);
   }
   if (id === 'learning_objectives') {
-    return isMeaningfulArray(normalized.learning_objectives || src.learning_objectives);
+    if (isMeaningfulArray(normalized.learning_objectives || src.learning_objectives)) return true;
+    return worksheetHeadingFilledInMarkdown(markdown, heading);
   }
   if (id === 'instructions') {
-    return isMeaningfulScalar(normalized.instructions || src.instructions);
+    if (isMeaningfulScalar(normalized.instructions || src.instructions)) return true;
+    return worksheetHeadingFilledInMarkdown(markdown, heading);
   }
   if (id === 'answer_key') {
-    return (
-      isMeaningfulScalar(normalized.answer_key) ||
-      (Array.isArray(normalized.questions) &&
-        normalized.questions.some((q) => isMeaningfulScalar(q?.answer)))
-    );
+    if (isMeaningfulScalar(normalized.answer_key)) return true;
+    if (
+      Array.isArray(normalized.questions) &&
+      normalized.questions.some((q) => isMeaningfulScalar(q?.answer))
+    ) {
+      return true;
+    }
+    return worksheetHeadingFilledInMarkdown(markdown, heading);
   }
   if (id === 'bloom_tag') {
     if (isMeaningfulScalar(normalized.bloom_level || normalized.difficulty_tag)) return true;
     const qs = Array.isArray(normalized.questions) ? normalized.questions : [];
-    return qs.some(
-      (q) => isMeaningfulScalar(q?.bloom_level) || isMeaningfulScalar(q?.difficulty_tag || q?.difficulty),
-    );
+    if (
+      qs.some(
+        (q) =>
+          isMeaningfulScalar(q?.bloom_level) ||
+          isMeaningfulScalar(q?.difficulty_tag || q?.difficulty),
+      )
+    ) {
+      return true;
+    }
+    return worksheetHeadingFilledInMarkdown(markdown, heading);
   }
 
   const label = WORKSHEET_HEADING_SECTION[id];
@@ -98,13 +186,24 @@ function worksheetHeadingFilledInMarkdown(markdown, heading) {
   const id = heading.id;
 
   if (id === 'worksheet_title') {
-    return /worksheet\s*title|^#\s+/i.test(body);
+    return /worksheet\s*title|^#\s+/im.test(body);
   }
-  if (id === 'learning_objectives') return /learning\s+objectives/i.test(body);
-  if (id === 'instructions') return /instructions\s+to\s+students/i.test(body);
-  if (id === 'answer_key') return /answer\s+key/i.test(body);
+  if (id === 'learning_objectives') {
+    return Boolean(extractWorksheetMarkdownSectionBody(body, /learning\s+objectives/i));
+  }
+  if (id === 'instructions') {
+    return (
+      Boolean(extractWorksheetMarkdownSectionBody(body, /instructions?\s+(?:to\s+)?students?/i)) ||
+      Boolean(extractWorksheetMarkdownSectionBody(body, /^instructions?$/i))
+    );
+  }
+  if (id === 'answer_key') {
+    if (extractWorksheetMarkdownSectionBody(body, /answer\s+key/i)) return true;
+    const inlineAnswers = (body.match(/\*\*Answer:\*\*/gi) || []).length;
+    return inlineAnswers >= 2;
+  }
   if (id === 'bloom_tag') {
-    return /bloom|difficulty\s+tag/i.test(body);
+    return Boolean(extractWorksheetMarkdownSectionBody(body, /bloom|difficulty\s+tag/i));
   }
 
   const label = WORKSHEET_HEADING_SECTION[id];
@@ -1204,6 +1303,11 @@ export function validateDashboardAiToolContent(toolSlug, rawContent, options = {
         ? { ...structured, ...(normalized && typeof normalized === 'object' ? normalized : {}) }
         : normalized;
     headingData = normalizeLessonPlannerStructuredContent(merged, slug);
+  }
+
+  if (slug === 'worksheet-mcq-generator') {
+    headingData = enrichWorksheetHeadingDataFromMarkdown(headingData, content);
+    headingData = normalizeWorksheetStructuredContent(headingData, content);
   }
 
   const { complete, missing, optionalMissing } = getMissingCanonicalSections(slug, headingData, content);
