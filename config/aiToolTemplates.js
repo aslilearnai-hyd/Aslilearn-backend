@@ -169,12 +169,6 @@ const TEMPLATES = {
         reflection_exit_ticket: 'string — (13)',
       },
     },
-    /** Teacher dashboard: do not block Generate when PDF omits these sections. */
-    dashboardOptionalHeadingIds: [
-      'teacher_instructions',
-      'student_instructions',
-      'assessment_rubric',
-    ],
     sectionFallbackRules: [
       {
         ifEmpty: ['teacher_instructions'],
@@ -496,8 +490,6 @@ const TEMPLATES = {
         assessment: 'string — optional summary assessment',
       },
     },
-    /** Generate shows content when lesson title is present; other sections may be empty in UI. */
-    dashboardRequiredHeadingIds: ['lesson_title'],
     sectionFallbackRules: [
       { ifEmpty: ['teaching_activities'], use: ['activities', 'procedure', 'lesson_procedure', 'classroom_activities'] },
       { ifEmpty: ['introduction_warmup'], use: ['warmup', 'warm_up', 'teaching_strategy', 'teaching_activities'] },

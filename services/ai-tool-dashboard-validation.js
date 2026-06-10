@@ -662,63 +662,28 @@ function lessonActivityLines(data) {
 }
 
 function lessonPlannerHeadingFilledInStructured(toolSlug, data, heading, markdown = '') {
-  const normalized = applySectionFallbacks(
+  const normalized = normalizeLessonPlannerStructuredContent(
+    data && typeof data === 'object' ? data : {},
     toolSlug,
-    normalizeLessonPlannerStructuredContent(data && typeof data === 'object' ? data : {}, toolSlug),
   );
   const keys = keysForHeading(toolSlug, heading);
   for (const key of keys) {
     if (isMeaningfulContent(normalized[key])) return true;
   }
   if (heading.id === 'classroom_activities' && lessonActivityLines(normalized).length > 0) return true;
-  if (
-    (heading.id === 'introduction' || heading.id === 'teaching_strategy' || heading.id === 'teacher_talk') &&
-    lessonActivityLines(normalized).length > 0
-  ) {
-    return true;
-  }
   return markdownSectionBodyForHeading(toolSlug, markdown, heading);
 }
 
-function activityProcedureLines(data) {
-  const ctx = data && typeof data === 'object' ? data : {};
-  return [
-    ...(Array.isArray(ctx.step_by_step_procedure) ? ctx.step_by_step_procedure : []),
-    ...(Array.isArray(ctx.steps) ? ctx.steps : []),
-    ...(Array.isArray(ctx.procedure) ? ctx.procedure : []),
-  ]
-    .map((s) => String(s || '').trim())
-    .filter(Boolean);
-}
-
 function activityHeadingFilledInStructured(toolSlug, data, heading, markdown = '') {
-  const normalized = applySectionFallbacks(
+  const normalized = normalizeActivityStructuredContent(
+    data && typeof data === 'object' && !Array.isArray(data) ? data : {},
     toolSlug,
-    normalizeActivityStructuredContent(
-      data && typeof data === 'object' && !Array.isArray(data) ? data : {},
-      toolSlug,
-    ),
   );
-  const id = heading.id;
   const keys = keysForHeading(toolSlug, heading);
   for (const key of keys) {
     if (isMeaningfulContent(normalized[key])) return true;
   }
-
-  if (id === 'teacher_instructions') {
-    if (activityProcedureLines(normalized).length >= 1) return true;
-    const procText = activityProcedureLines(normalized).join('\n');
-    if (/facilitat|teacher\s+note|for\s+the\s+teacher|teacher\s+role|whole[\s-]class/i.test(procText)) {
-      return true;
-    }
-    return markdownSectionBodyForHeading(toolSlug, markdown, heading);
-  }
-  if (id === 'student_instructions') {
-    if (activityProcedureLines(normalized).length > 0) return true;
-    return markdownSectionBodyForHeading(toolSlug, markdown, heading);
-  }
-
-  return false;
+  return markdownSectionBodyForHeading(toolSlug, markdown, heading);
 }
 
 function headingFilledInMarkdown(toolSlug, markdown, heading) {
@@ -1217,7 +1182,7 @@ export function validateDashboardAiToolContent(toolSlug, rawContent, options = {
   }
 
   /** Worksheet section regrouping may move rows between C/D — keep raw sections[] for heading checks. */
-  const headingData =
+  let headingData =
     slug === 'worksheet-mcq-generator' &&
     structured &&
     typeof structured === 'object' &&
@@ -1225,6 +1190,21 @@ export function validateDashboardAiToolContent(toolSlug, rawContent, options = {
     structured.sections.length
       ? { ...normalized, sections: structured.sections }
       : normalized;
+
+  // Section gate: every canonical heading must have its own content (no cross-section fallbacks).
+  if (slug === 'activity-project-generator' || slug === 'project-idea-lab') {
+    const merged =
+      structured && typeof structured === 'object' && !Array.isArray(structured)
+        ? { ...structured, ...(normalized && typeof normalized === 'object' ? normalized : {}) }
+        : normalized;
+    headingData = normalizeActivityStructuredContent(merged, slug);
+  } else if (slug === 'lesson-planner' || slug === 'study-schedule-maker') {
+    const merged =
+      structured && typeof structured === 'object' && !Array.isArray(structured)
+        ? { ...structured, ...(normalized && typeof normalized === 'object' ? normalized : {}) }
+        : normalized;
+    headingData = normalizeLessonPlannerStructuredContent(merged, slug);
+  }
 
   const { complete, missing, optionalMissing } = getMissingCanonicalSections(slug, headingData, content);
   if (!complete) {

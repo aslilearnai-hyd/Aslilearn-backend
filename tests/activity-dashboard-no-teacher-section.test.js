@@ -1,6 +1,6 @@
 import { validateDashboardAiToolDoc } from '../services/ai-tool-dashboard-validation.js';
 
-/** PDF-shaped activity: procedure + materials but no section 7/8/10 in source. */
+/** PDF-shaped activity: procedure + materials but no teacher/student/rubric sections. */
 const markdown = `1. Title of Activity / Project
 Discovering Mathematics Activity 4
 
@@ -52,8 +52,9 @@ const gate = validateDashboardAiToolDoc('activity-project-generator', {
   metadata: { structuredContent: structured },
 });
 
-if (!gate.valid) {
-  console.error('FAIL: expected valid without teacher instructions', gate.message, gate.missingSections);
+if (gate.valid) {
+  console.error('FAIL: activity must require all template sections including teacher/student/rubric', gate);
   process.exit(1);
 }
-console.log('PASS: activity dashboard allows missing teacher/student/rubric sections');
+
+console.log('PASS: activity dashboard blocks content when required sections are missing');
