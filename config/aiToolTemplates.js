@@ -3084,7 +3084,16 @@ export function getSectionFallbackRules(toolSlug) {
   return getAiToolTemplate(toolSlug)?.sectionFallbackRules || [];
 }
 
-const str = (v) => (v == null ? '' : String(v).trim());
+const str = (v) => {
+  if (v == null) return '';
+  if (typeof v === 'object') {
+    const o = v;
+    return String(
+      o.question || o.text || o.prompt || o.statement || o.content || o.label || o.value || '',
+    ).trim();
+  }
+  return String(v).trim();
+};
 const strArr = (v) => (Array.isArray(v) ? v.map((x) => str(x)).filter(Boolean) : []);
 const WORKSHEET_SECTION_SEQUENCE = [
   'Section A: MCQs',
