@@ -3488,9 +3488,12 @@ export function formatItemLinesFromTemplate(toolSlug, item, index = 0) {
         if (answerKeyLines.length) {
           pushMockTestSection(lines, 7, 'Answer Key', answerKeyLines);
         }
-        if (str(i.step_by_step_solutions_explanations || i.solutions || i.explanations)) {
-          const sol = str(i.step_by_step_solutions_explanations || i.solutions || i.explanations);
-          pushMockTestSection(lines, 8, 'Step-by-step Solutions / Explanations', sol.split(/\n/).filter(Boolean));
+        const solFromField = str(i.step_by_step_solutions_explanations || i.solutions || i.explanations);
+        const solLines = solFromField
+          ? solFromField.split(/\n/).filter(Boolean)
+          : buildMockTestSolutionsFromSections(effectiveSections).split(/\n/).filter(Boolean);
+        if (solLines.length) {
+          pushMockTestSection(lines, 8, 'Step-by-step Solutions / Explanations', solLines);
         }
         const remedial = strArr(i.remedial_revision_suggestions || i.revision_suggestions || i.remedial_suggestions);
         if (remedial.length) {

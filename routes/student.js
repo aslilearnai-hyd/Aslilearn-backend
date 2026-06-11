@@ -3958,12 +3958,25 @@ router.get('/exam/:examId/advanced-analytics', async (req, res) => {
     }
 
     const ExamResult = (await import('../models/ExamResult.js')).default;
-    const latestResult = await ExamResult.findOne({
-      userId: req.userId,
-      examId,
-    })
-      .sort({ completedAt: -1 })
-      .lean();
+    const { resultId } = req.query;
+    let latestResult = null;
+
+    if (resultId && mongoose.Types.ObjectId.isValid(String(resultId))) {
+      latestResult = await ExamResult.findOne({
+        _id: resultId,
+        userId: req.userId,
+        examId,
+      }).lean();
+    }
+
+    if (!latestResult) {
+      latestResult = await ExamResult.findOne({
+        userId: req.userId,
+        examId,
+      })
+        .sort({ completedAt: -1 })
+        .lean();
+    }
 
     if (!latestResult) {
       return res.status(404).json({
@@ -4793,20 +4806,11 @@ router.post('/ai/tool', async (req, res) => {
       });
     }
 
-    // Validate subjects against supported curriculum set.
-    const { VALID_SUBJECTS } = await import('../services/hardcoded-content-service.js');
+    const { resolveValidCurriculumSubject } = await import('../utils/curriculum-subject-validation.js');
+    const { normalizedSubject, validSubjectsList } = resolveValidCurriculumSubject(subject, {
+      classNumber,
+    });
 
-    // For IIT-6, use IIT subjects (Physics, Chemistry, Maths, Biology)
-    // For other classes, use standard VALID_SUBJECTS
-    const isIIT6 = classNumber === 'IIT-6';
-    const validSubjectsList = isIIT6 ? ['Physics', 'Chemistry', 'Maths', 'Biology'] : VALID_SUBJECTS;
-    
-    // Normalize subject name (handle case variations like "english" vs "English")
-    const normalizedSubject = validSubjectsList.find(s => 
-      s.toLowerCase() === subject.toLowerCase()
-    );
-    
-    // Validate subject - only allow valid subjects
     if (!normalizedSubject) {
       return res.status(400).json({
         success: false,

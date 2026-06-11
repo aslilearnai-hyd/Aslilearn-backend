@@ -21,6 +21,11 @@ import {
   isCurriculumBreadcrumbTitle,
 } from '../services/activity-title-utils.js';
 import { canonicalizeActivityExtractedItem } from '../services/ai-content-engine-service.js';
+import {
+  normalizeCurriculumSubjectForValidation,
+  resolveValidCurriculumSubject,
+  subjectFilterForDb,
+} from '../utils/curriculum-subject-validation.js';
 
 function teacherToolDisplayName(toolType) {
   return getToolDisplayTitle(toolType) || String(toolType || '').replace(/-/g, ' ');
@@ -34,32 +39,7 @@ function normalizeClassLabelFromInput(classInput) {
   return raw;
 }
 
-/** Curriculum dropdowns use names like "Mathematics"; VALID_SUBJECTS uses "Maths". */
-function normalizeTeacherSubjectForValidation(subject) {
-  const s = String(subject || '').trim();
-  if (!s) return s;
-  const key = s.toLowerCase().replace(/\s+/g, ' ');
-  const aliases = {
-    mathematics: 'Maths',
-    math: 'Maths',
-    maths: 'Maths',
-    'social studies': 'Social Science',
-    sst: 'Social Science',
-  };
-  return aliases[key] ?? s;
-}
-
-/** Match older DB rows that stored "Mathematics" instead of "Maths". */
-function subjectFilterForDb(subjectNormalized) {
-  const s = String(subjectNormalized || '').trim();
-  if (s === 'Maths') {
-    return { $in: ['Maths', 'Mathematics'] };
-  }
-  if (s === 'Social Science') {
-    return { $in: ['Social Science', 'Social Studies'] };
-  }
-  return s;
-}
+const normalizeTeacherSubjectForValidation = normalizeCurriculumSubjectForValidation;
 
 function normalizeTopicSub(val) {
   return String(val || '')
@@ -354,14 +334,10 @@ export const createTeacherTool = async (req, res) => {
       });
     }
 
-    const isIIT6 = classNumber === 'IIT-6';
-    const validSubjectsList = isIIT6 ? ['Physics', 'Chemistry', 'Maths', 'Biology'] : VALID_SUBJECTS;
+    const { normalizedSubject, validSubjectsList } = resolveValidCurriculumSubject(subject, {
+      classNumber,
+    });
 
-    const subjectForLookup = normalizeTeacherSubjectForValidation(subject);
-    const normalizedSubject = validSubjectsList.find(
-      (s) => s.toLowerCase() === subjectForLookup.toLowerCase(),
-    );
-    
     if (!normalizedSubject) {
       return res.status(400).json({
         success: false,
