@@ -29,8 +29,26 @@ export function subjectFilterForDb(subjectNormalized) {
   return s;
 }
 
+export function isIIT6Class(classNumber) {
+  const c = String(classNumber ?? '').trim();
+  return c === 'IIT-6' || c === 'Class-6-IIT';
+}
+
+/** @deprecated alias — use isIIT6Class */
+export function isIit6ClassNumber(classNumber) {
+  return isIIT6Class(classNumber);
+}
+
+/** Normalized class label for AI tool lookups and API metadata. */
+export function resolveClassDisplay(classNumber) {
+  const isIIT6 = isIIT6Class(classNumber);
+  const classNum = isIIT6 ? 'IIT-6' : parseInt(String(classNumber), 10);
+  const classDisplay = isIIT6 ? 'IIT-6' : `Class ${classNum}`;
+  return { isIIT6, classNum, classDisplay };
+}
+
 export function resolveValidCurriculumSubject(subject, { classNumber } = {}) {
-  const isIIT6 = classNumber === 'IIT-6' || classNumber === 'Class-6-IIT';
+  const isIIT6 = isIIT6Class(classNumber);
   const validSubjectsList = isIIT6 ? IIT6_SUBJECTS : VALID_SUBJECTS;
   const subjectForLookup = normalizeCurriculumSubjectForValidation(subject);
   const normalizedSubject = validSubjectsList.find(

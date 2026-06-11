@@ -23,6 +23,7 @@ import {
 import { canonicalizeActivityExtractedItem } from '../services/ai-content-engine-service.js';
 import {
   normalizeCurriculumSubjectForValidation,
+  resolveClassDisplay,
   resolveValidCurriculumSubject,
   subjectFilterForDb,
 } from '../utils/curriculum-subject-validation.js';
@@ -359,8 +360,7 @@ export const createTeacherTool = async (req, res) => {
     }
     
     const finalSubject = normalizedSubject;
-    const classNum = isIIT6 ? classNumber : parseInt(classNumber, 10);
-    const classDisplay = isIIT6 ? 'IIT-6' : `Class ${classNum}`;
+    const { isIIT6, classNum, classDisplay } = resolveClassDisplay(classNumber);
 
     const topicForStore = normalizeTopicSub(
       topic !== undefined && topic !== null ? String(topic) : '',
@@ -726,9 +726,7 @@ export const uploadAndParsePdf = async (req, res) => {
       return res.status(400).json({ success: false, message: 'toolType, classNumber, and subject are required.' });
     }
 
-    const isIIT6 = String(classNumber) === 'IIT-6';
-    const classNum = isIIT6 ? 'IIT-6' : parseInt(classNumber, 10);
-    const classDisplay = isIIT6 ? 'IIT-6' : `Class ${classNum}`;
+    const { isIIT6, classNum, classDisplay } = resolveClassDisplay(classNumber);
     const finalSubject = normalizeTeacherSubjectForValidation(subject);
     const topicForStore = normalizeTopicSub(topic || '');
     const subtopicForStore = normalizeTopicSub(subTopic || '');

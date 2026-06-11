@@ -4817,7 +4817,9 @@ router.post('/ai/tool', async (req, res) => {
       });
     }
 
-    const { resolveValidCurriculumSubject } = await import('../utils/curriculum-subject-validation.js');
+    const { resolveValidCurriculumSubject, resolveClassDisplay } = await import(
+      '../utils/curriculum-subject-validation.js'
+    );
     const { normalizedSubject, validSubjectsList } = resolveValidCurriculumSubject(subject, {
       classNumber,
     });
@@ -4843,8 +4845,7 @@ router.post('/ai/tool', async (req, res) => {
 
     // Use normalized subject for processing
     const finalSubject = normalizedSubject;
-    const classNum = isIIT6 ? classNumber : parseInt(classNumber);
-    const classDisplay = isIIT6 ? 'IIT-6' : `Class ${classNum}`;
+    const { isIIT6, classNum, classDisplay } = resolveClassDisplay(classNumber);
 
     // For tools where topic is optional, pass empty string if not provided
     const topicForFetch = (toolType === 'personalized-revision-planner' || toolType === 'chapter-summary-creator') ? (topic || '') : topic;
