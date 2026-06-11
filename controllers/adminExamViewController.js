@@ -66,6 +66,32 @@ function queryClassNumber(raw) {
   return s || '';
 }
 
+function mapLikeToObject(value) {
+  if (value == null) return value;
+  if (value instanceof Map) return Object.fromEntries(value);
+  if (typeof value === 'object' && typeof value.get === 'function') {
+    try {
+      return Object.fromEntries(value);
+    } catch (_e) {
+      return { ...value };
+    }
+  }
+  return value;
+}
+
+function serializeExamResultRow(row) {
+  const plain =
+    row && typeof row.toObject === 'function'
+      ? row.toObject({ flattenMaps: true })
+      : { ...row };
+  return {
+    ...plain,
+    attemptNumber: Number(plain.attemptNumber) >= 1 ? Number(plain.attemptNumber) : 1,
+    subjectWiseScore: mapLikeToObject(plain.subjectWiseScore) || {},
+    answers: mapLikeToObject(plain.answers) || {},
+  };
+}
+
 // Get student exam results (filtered by admin's students)
 export const getStudentExamResults = async (req, res) => {
   try {
@@ -110,7 +136,7 @@ export const getStudentExamResults = async (req, res) => {
 
       return res.json({
         success: true,
-        data: filteredResults,
+        data: filteredResults.map(serializeExamResultRow),
         count: filteredResults.length
       });
     }
@@ -174,7 +200,7 @@ export const getStudentExamResults = async (req, res) => {
 
     res.json({
       success: true,
-      data: filteredResults,
+      data: filteredResults.map(serializeExamResultRow),
       count: filteredResults.length
     });
   } catch (error) {

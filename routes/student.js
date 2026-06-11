@@ -1249,20 +1249,26 @@ async function loadExamQuestionBankForResults(examId) {
   return questions;
 }
 
-/** Ensure exam result JSON includes plain-object answers (Mongoose Map / lean quirks). */
+function mapLikeToPlainObject(value) {
+  if (value == null) return value;
+  if (value instanceof Map) return Object.fromEntries(value);
+  if (typeof value === 'object' && typeof value.get === 'function' && typeof value.set === 'function') {
+    try {
+      return Object.fromEntries(value);
+    } catch (_e) {
+      return { ...value };
+    }
+  }
+  return value;
+}
+
+/** Ensure exam result JSON includes plain-object Map fields (Mongoose Map / lean quirks). */
 function toPlainExamResultForApi(row) {
   if (!row || typeof row !== 'object') return row;
   const out = { ...row };
-  const a = out.answers;
-  if (a instanceof Map) {
-    out.answers = Object.fromEntries(a);
-  } else if (a && typeof a === 'object' && typeof a.get === 'function' && typeof a.set === 'function') {
-    try {
-      out.answers = Object.fromEntries(a);
-    } catch (_e) {
-      out.answers = { ...a };
-    }
-  }
+  out.answers = mapLikeToPlainObject(out.answers);
+  out.subjectWiseScore = mapLikeToPlainObject(out.subjectWiseScore);
+  out.questionTimings = mapLikeToPlainObject(out.questionTimings);
   return out;
 }
 
@@ -3456,20 +3462,25 @@ router.get('/exam-results/:examId/review', async (req, res) => {
     const ExamResult = (await import('../models/ExamResult.js')).default;
     let latestResult = null;
 
+    const examIdFilter = mongooseLib.Types.ObjectId.isValid(examId)
+      ? new mongooseLib.Types.ObjectId(examId)
+      : examId;
+    const leanOpts = { flattenMaps: true };
+
     if (resultId && mongooseLib.Types.ObjectId.isValid(resultId)) {
       latestResult = await ExamResult.findOne({
         _id: resultId,
         userId: req.userId,
-        examId,
-      }).lean();
+        examId: examIdFilter,
+      }).lean(leanOpts);
     }
     if (!latestResult) {
       latestResult = await ExamResult.findOne({
         userId: req.userId,
-        examId,
+        examId: examIdFilter,
       })
         .sort({ completedAt: -1, updatedAt: -1, createdAt: -1 })
-        .lean();
+        .lean(leanOpts);
     }
 
     if (!latestResult) {
