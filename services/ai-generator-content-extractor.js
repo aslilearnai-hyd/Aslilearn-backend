@@ -21,6 +21,7 @@ function extractQuestionsFromStructured(toolSlug, data, units, prefix = '') {
   const pools = [
     data.questions,
     data.practice_questions,
+    data.concept_based_questions,
     data.formative_assessment_questions,
   ];
   for (const pool of pools) {

@@ -3434,8 +3434,8 @@ export function formatItemLinesFromTemplate(toolSlug, item, index = 0) {
             ? sectionQuestions
             : [
                 {
-                  question: `Review class notes and answer one question for ${secName}.`,
-                  answer: 'See class notes.',
+                  question: `Apply ideas from ${secName} to a worked example.`,
+                  answer: 'Show steps and label your reasoning.',
                 },
               ];
         for (const q of qs) {

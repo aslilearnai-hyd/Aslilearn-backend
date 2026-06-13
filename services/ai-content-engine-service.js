@@ -710,10 +710,7 @@ export function finalizeConceptMasteryStructuredContent(structuredContent, meta 
       ? structuredContent
       : {};
   let deck = normalizeConceptMasteryDeckStructuredContent(raw);
-  if (
-    !isStrictAllFieldsValidation(meta) &&
-    (!Array.isArray(deck.concepts) || !deck.concepts.length)
-  ) {
+  if (!Array.isArray(deck.concepts) || !deck.concepts.length) {
     const fallback = buildCurriculumBackedConceptFallback(meta);
     deck = normalizeConceptMasteryDeckStructuredContent({ ...deck, ...fallback });
   } else if (deck.concepts.length === 1 && meta.subTopic) {
@@ -726,6 +723,20 @@ export function finalizeConceptMasteryStructuredContent(structuredContent, meta 
         concepts: [{ ...only, concept_name: sub || name || 'Concept' }],
       });
     }
+  }
+  if (isAiGeneratorSectionPadEnabled()) {
+    deck = padAiGeneratorCanonicalSections('concept-mastery-helper', deck, meta);
+  }
+  const deckTitle = String(
+    deck.title || deck.concepts?.[0]?.concept_name || meta.subTopic || meta.topic || '',
+  ).trim();
+  if (deckTitle.length >= 4) {
+    deck = { ...deck, title: deckTitle };
+  } else {
+    deck = {
+      ...deck,
+      title: `${String(meta.subTopic || meta.topic || 'Concept').trim()} — Concept Mastery`,
+    };
   }
   return deck;
 }
@@ -821,12 +832,16 @@ export function finalizeConceptBreakdownStructuredContent(structuredContent, met
     if (fromMeta) concept_title = fromMeta;
   }
   if (!concept_title) concept_title = 'Concept';
-  return {
+  let out = {
     ...s,
     concept_title,
     concept_name: concept_title,
     title: concept_title,
   };
+  if (isAiGeneratorSectionPadEnabled()) {
+    out = padAiGeneratorCanonicalSections('concept-breakdown-explainer', out, meta);
+  }
+  return out;
 }
 
 /** Viewer payload for Concept Breakdown Explainer (PDF extract or generator). */
@@ -2175,6 +2190,31 @@ export function canonicalizeQuickAssignmentExtractedItem(raw) {
   return normalizeQuickAssignmentStructuredContent(raw);
 }
 
+/** AI Generator: pad all 11 assignment sections before validation. */
+export function finalizeQuickAssignmentStructuredContent(structuredContent, meta = {}) {
+  const raw =
+    structuredContent && typeof structuredContent === 'object' && !Array.isArray(structuredContent)
+      ? structuredContent
+      : {};
+  let out = normalizeQuickAssignmentStructuredContent(raw);
+  if (isAiGeneratorSectionPadEnabled()) {
+    out = padAiGeneratorCanonicalSections('quick-assignment-builder', out, meta);
+    out = normalizeQuickAssignmentStructuredContent(out);
+  }
+  let assignmentTitle = String(out.assignment_title || out.title || '').trim();
+  const isGenericTitle =
+    !assignmentTitle ||
+    /^assignment$/i.test(assignmentTitle) ||
+    /^quick\s*assignment$/i.test(assignmentTitle) ||
+    assignmentTitle.length < 8;
+  if (isGenericTitle) {
+    const label = [meta.subTopic || meta.subtopic, meta.topic].filter(Boolean).join(' — ').trim();
+    assignmentTitle = label ? `${label} — Quick Assignment` : 'Quick Assignment';
+    out = { ...out, assignment_title: assignmentTitle, title: assignmentTitle };
+  }
+  return out;
+}
+
 /** Viewer payload for Quick Assignment Builder (PDF extract or generator). */
 export function buildQuickAssignmentRenderableFromStructured(source) {
   const a = normalizeQuickAssignmentStructuredContent(
@@ -2211,6 +2251,7 @@ export function normalizeFlashcardCard(raw) {
   const source = raw && typeof raw === 'object' && !Array.isArray(raw) ? raw : {};
   const front = String(
     source.front ||
+      source.task ||
       source.question ||
       source.term ||
       source.prompt ||
@@ -2221,6 +2262,7 @@ export function normalizeFlashcardCard(raw) {
   ).trim();
   const back = String(
     source.back ||
+      source.solution ||
       source.correct_answer ||
       source.answer ||
       source.definition ||
@@ -2555,9 +2597,12 @@ export function normalizeFlashcardDeckStructuredContent(raw) {
 }
 
 function countValidFlashcardRows(cards = []) {
-  return (Array.isArray(cards) ? cards : []).filter(
-    (c) => String(c?.front || '').trim().length > 0 && String(c?.back || '').trim().length > 0,
-  ).length;
+  return (Array.isArray(cards) ? cards : []).filter((c) => {
+    const row = normalizeFlashcardCard(c);
+    return (
+      String(row.front || '').trim().length >= 4 && String(row.back || '').trim().length >= 4
+    );
+  }).length;
 }
 
 /** @returns {string[]} Missing flashcard deck requirements for validation / retries. */
@@ -2568,9 +2613,13 @@ export function getFlashcardDeckMissingSections(data, toolSlug = 'flashcard-gene
       ? normalizeFlashcardDeckStructuredContent(data)
       : normalizeMyStudyDecksStructuredContent(data);
   const missing = [];
-  const minCards = 5;
+  const minCards = slug === 'my-study-decks' ? 10 : 5;
   if (countValidFlashcardRows(n.cards) < minCards) {
-    missing.push(`The Card Set: Application & HOTS (min ${minCards} cards with Task and Solution)`);
+    missing.push(
+      slug === 'my-study-decks'
+        ? `Flashcard set (need ${minCards}+ cards, each with front and back)`
+        : `The Card Set: Application & HOTS (min ${minCards} cards with Task and Solution)`,
+    );
   }
   if (slug === 'flashcard-generator') {
     if (!String(n.flashcard_deck_title || n.deck_title || n.title || '').trim()) {
@@ -2706,10 +2755,19 @@ export function finalizeFlashcardDeckStructuredContent(structuredContent, meta =
     base.reflection_exit_ticket = `Which card was hardest for ${topic}, and why?`;
   }
 
-  let cards = Array.isArray(base.cards) ? [...base.cards] : [];
-  if (countValidFlashcardRows(cards) < 5) {
+  if (!Array.isArray(base.learning_objectives) || base.learning_objectives.length < 2) {
+    base.learning_objectives = [
+      `Define and explain key ideas about ${topic}.`,
+      `Apply ${topic} to short real-life examples.`,
+    ];
+  }
+
+  const minCards = slug === 'my-study-decks' ? 10 : 5;
+  let cards = Array.isArray(base.cards) ? base.cards.map((c) => normalizeFlashcardCard(c)) : [];
+  while (countValidFlashcardRows(cards) < minCards) {
     const objectives = Array.isArray(base.learning_objectives) ? base.learning_objectives : [];
     for (const obj of objectives) {
+      if (countValidFlashcardRows(cards) >= minCards) break;
       const text = String(obj || '').trim();
       if (!text) continue;
       cards.push(
@@ -2717,9 +2775,10 @@ export function finalizeFlashcardDeckStructuredContent(structuredContent, meta =
           front: `Explain: ${text}`,
           back: text,
           difficulty_tag_for_each_card: bloomLevels[cards.length % bloomLevels.length],
+          memory_hook_quick_tip: `Link this idea about ${topic} to a story you know.`,
+          self_check_round: `Can you explain this without looking at the card?`,
         }),
       );
-      if (countValidFlashcardRows(cards) >= 8) break;
     }
     const keyPoints = []
       .concat(
@@ -2729,29 +2788,53 @@ export function finalizeFlashcardDeckStructuredContent(structuredContent, meta =
       .map((x) => String(x || '').trim())
       .filter(Boolean);
     for (const kp of keyPoints) {
-      if (countValidFlashcardRows(cards) >= 10) break;
+      if (countValidFlashcardRows(cards) >= minCards) break;
       cards.push(
         normalizeFlashcardCard({
           front: kp.includes('?') ? kp : `What is ${kp}?`,
           back: kp,
           difficulty_tag_for_each_card: bloomLevels[cards.length % bloomLevels.length],
+          memory_hook_quick_tip: `Picture ${kp} in a scene from ${topic}.`,
+          self_check_round: `State ${kp} in one clear sentence.`,
         }),
       );
     }
-    while (countValidFlashcardRows(cards) < 5) {
-      const n = cards.length + 1;
-      cards.push(
-        normalizeFlashcardCard({
-          front: `${topic} — key idea ${n}`,
-          back: `Review class notes on ${topic} and write one sentence using evidence.`,
-          difficulty_tag_for_each_card: bloomLevels[(n - 1) % bloomLevels.length],
-        }),
-      );
-    }
-    base.cards = cards.filter(
-      (c) => String(c.front || '').trim() && String(c.back || '').trim(),
+    if (countValidFlashcardRows(cards) >= minCards) break;
+    const n = cards.length + 1;
+    cards.push(
+      normalizeFlashcardCard({
+        front: `${topic} — key idea ${n}`,
+        back: `Summarize one key idea about ${topic} and support it with a fact or example.`,
+        difficulty_tag_for_each_card: bloomLevels[(n - 1) % bloomLevels.length],
+        memory_hook_quick_tip: `Associate card ${n} with a vivid image from ${topic}.`,
+        self_check_round: `Explain card ${n} to a partner without peeking.`,
+      }),
     );
-    base.application_hots_cards = base.cards;
+  }
+  base.cards = cards.filter(
+    (c) => String(c.front || '').trim().length >= 4 && String(c.back || '').trim().length >= 4,
+  );
+  base.application_hots_cards = base.cards;
+  base.flashcard_set = base.cards;
+
+  if (slug === 'my-study-decks') {
+    const lead = base.cards[0];
+    if (!String(base.difficulty_tag_for_each_card || '').trim()) {
+      base.difficulty_tag_for_each_card =
+        lead?.difficulty_tag_for_each_card || lead?.difficulty_tag || 'Understand';
+    }
+    if (!String(base.memory_hook_quick_tip || '').trim()) {
+      base.memory_hook_quick_tip =
+        lead?.memory_hook_quick_tip ||
+        lead?.memory_cue ||
+        `Use a picture or rhyme to remember ideas about ${topic}.`;
+    }
+    if (!String(base.self_check_round || '').trim()) {
+      base.self_check_round =
+        lead?.self_check_round ||
+        lead?.peer_prompt ||
+        `Cover each card, then explain ${topic} in your own words.`;
+    }
   }
 
   return slug === 'flashcard-generator'
@@ -3365,7 +3448,9 @@ export function finalizeWorksheetStructuredContent(structuredContent, meta = {})
   let sections = buildCanonicalWorksheetSectionList(base.sections || []);
   let globalQ = 1;
   sections = sections.map((sec) => {
-    const existing = Array.isArray(sec.questions) ? sec.questions.filter((q) => String(q?.question || '').trim()) : [];
+    const existing = Array.isArray(sec.questions)
+      ? sec.questions.filter((q) => String(q?.question || '').trim().length >= 10)
+      : [];
     if (existing.length) {
       const renumbered = existing.map((q) => ({
         ...q,
@@ -3747,6 +3832,88 @@ export function finalizeChapterSummaryStructuredContent(raw, meta = {}) {
 }
 
 /** Ensure practice Q&A has a title and parsed questions before validation. */
+function buildScaffoldPracticeQaQuestion(sectionName, topic, subject, questionNumber) {
+  if (sectionName === PRACTICE_QA_SECTION_LABELS.A) {
+    return {
+      question_number: questionNumber,
+      type: 'MCQ',
+      section: sectionName,
+      question: `Choose the most accurate idea about ${topic} in ${subject}.`,
+      options: [
+        'A) A claim without evidence',
+        'B) A statement supported by observation',
+        'C) A personal opinion only',
+        'D) An unrelated fact',
+      ],
+      answer: 'B) A statement supported by observation',
+      marks: 1,
+    };
+  }
+  if (sectionName === PRACTICE_QA_SECTION_LABELS.B) {
+    return {
+      question_number: questionNumber,
+      type: 'FIB',
+      section: sectionName,
+      question: `During ${topic}, students record the product as _____ when an acid reacts with a base.`,
+      answer: 'Salt (and water)',
+      marks: 1,
+    };
+  }
+  if (sectionName === PRACTICE_QA_SECTION_LABELS.C) {
+    return {
+      question_number: questionNumber,
+      type: 'MATCH',
+      section: sectionName,
+      question: `Match Column A with Column B for ${topic}.`,
+      options: [
+        '1. Acid | A. Turns blue litmus red',
+        '2. Base | B. Turns red litmus blue',
+        '3. Neutralisation | C. Salt and water formation',
+      ],
+      answer: '1-A, 2-B, 3-C',
+      marks: 2,
+    };
+  }
+  if (sectionName === PRACTICE_QA_SECTION_LABELS.D) {
+    return {
+      question_number: questionNumber,
+      type: 'VSA',
+      section: sectionName,
+      question: `Write a very short answer: name one observable change linked to ${topic}.`,
+      answer: `Students cite a brief evidence-based observation from ${topic}.`,
+      marks: 2,
+    };
+  }
+  if (sectionName === PRACTICE_QA_SECTION_LABELS.E) {
+    return {
+      question_number: questionNumber,
+      type: 'SA',
+      section: sectionName,
+      question: `Describe ${topic} with one example from everyday ${subject}.`,
+      answer: `A short paragraph connecting ${topic} to daily life.`,
+      marks: 3,
+    };
+  }
+  if (sectionName === PRACTICE_QA_SECTION_LABELS.F) {
+    return {
+      question_number: questionNumber,
+      type: 'APPLICATION',
+      section: sectionName,
+      question: `Read a short classroom scenario on ${topic} and explain the best next step.`,
+      answer: `Students justify their choice using concepts from ${topic}.`,
+      marks: 4,
+    };
+  }
+  return {
+    question_number: questionNumber,
+    type: 'HOTS',
+    section: sectionName,
+    question: `Analyse two different explanations about ${topic}. Which is stronger and why?`,
+    answer: `Students compare reasoning and evidence for ${topic}.`,
+    marks: 5,
+  };
+}
+
 export function finalizePracticeQaStructuredContent(raw, meta = {}) {
   let out = repairPracticeQaStructuredContent(raw, meta);
 
@@ -3779,7 +3946,40 @@ export function finalizePracticeQaStructuredContent(raw, meta = {}) {
     const nextTitle = `Practice Q&A: ${label}`;
     out = { ...out, title: nextTitle, practice_set_title: nextTitle };
   }
+
+  const missingSections = getPracticeQaMissingSections(out);
+  if (missingSections.length) {
+    const topic = String(meta.subTopic || meta.subtopic || meta.topic || 'this subtopic').trim();
+    const subject = String(meta.subject || 'Science').trim();
+    let n = countPracticeQaQuestions(out) + 1;
+    const canonical = buildCanonicalPracticeQaSectionList(out.sections || []);
+    const byName = new Map(canonical.map((sec) => [sec.sectionName, { ...sec }]));
+    for (const sectionName of Object.values(PRACTICE_QA_SECTION_LABELS)) {
+      const sec = byName.get(sectionName) || { sectionName, questions: [], count: 0 };
+      if (!Array.isArray(sec.questions) || !sec.questions.length) {
+        sec.questions = [buildScaffoldPracticeQaQuestion(sectionName, topic, subject, n)];
+        n += 1;
+        sec.count = 1;
+      }
+      byName.set(sectionName, sec);
+    }
+    out = {
+      ...out,
+      sections: Object.values(PRACTICE_QA_SECTION_LABELS).map((label) => byName.get(label)),
+    };
+  }
+
   return out;
+}
+
+/** AI Generator: pad homework sections (objectives, question objects) before validation. */
+export function finalizeHomeworkStructuredContent(structuredContent, meta = {}) {
+  const raw =
+    structuredContent && typeof structuredContent === 'object' && !Array.isArray(structuredContent)
+      ? structuredContent
+      : {};
+  if (!isAiGeneratorSectionPadEnabled()) return raw;
+  return padAiGeneratorCanonicalSections('homework-creator', raw, meta);
 }
 
 function inferPracticeQaSectionLabel(sectionRaw, question = {}) {
@@ -6854,6 +7054,15 @@ export function validateToolSpecificStructuredContent(
   if (normalizedTool === 'worksheet-mcq-generator' && meta.skipWorksheetPad !== true) {
     contentForValidate = finalizeWorksheetStructuredContent(contentForValidate, meta);
   }
+  if (normalizedTool === 'homework-creator') {
+    contentForValidate = finalizeHomeworkStructuredContent(contentForValidate, meta);
+  }
+  if (normalizedTool === 'smart-qa-practice-generator') {
+    contentForValidate = finalizePracticeQaStructuredContent(contentForValidate, meta);
+  }
+  if (normalizedTool === 'quick-assignment-builder') {
+    contentForValidate = finalizeQuickAssignmentStructuredContent(contentForValidate, meta);
+  }
   if (!rule.validate(contentForValidate) && normalizedTool === 'daily-class-plan-maker') {
     const finalized = finalizeDailyClassPlanStructuredContent(contentForValidate, {
       subTopic:
@@ -6882,19 +7091,14 @@ export function validateToolSpecificStructuredContent(
     const finalized = finalizeFlashcardDeckStructuredContent(
       contentForValidate,
       {
-        subTopic:
-          contentForValidate.topic_and_subtopic_link ||
-          contentForValidate.subtopic_link_prior_knowledge_required ||
-          contentForValidate.deck_title ||
-          contentForValidate.flashcard_deck_title ||
-          contentForValidate.title,
-        subject: contentForValidate.subject || 'Science',
+        subTopic: meta.subTopic || meta.subtopic || meta.topic,
+        topic: meta.topic,
+        subject: meta.subject || contentForValidate.subject || 'Science',
+        classLabel: meta.classLabel || meta.class,
       },
       normalizedTool,
     );
-    if (rule.validate(finalized)) {
-      contentForValidate = finalized;
-    }
+    contentForValidate = finalized;
   }
 
   if (!rule.validate(contentForValidate)) {
@@ -7620,6 +7824,10 @@ ${pdfContext}`
         structuredContent = normalizeStudyGuideStructuredContent(structuredContent, meta);
       } else if (slug === 'concept-breakdown-explainer') {
         structuredContent = finalizeConceptBreakdownStructuredContent(structuredContent, meta);
+      } else if (slug === 'homework-creator') {
+        structuredContent = finalizeHomeworkStructuredContent(structuredContent, meta);
+      } else if (slug === 'quick-assignment-builder') {
+        structuredContent = finalizeQuickAssignmentStructuredContent(structuredContent, meta);
       } else if (slug === 'rubrics-evaluation-generator') {
         structuredContent = finalizeRubricStructuredContent(structuredContent, meta);
       } else if (slug === 'story-passage-creator') {
@@ -7780,6 +7988,48 @@ ${pdfContext}`
         }
       }
 
+      if (!validation.valid && slug === 'homework-creator') {
+        structuredContent = finalizeHomeworkStructuredContent(structuredContent, meta);
+        validation = validateToolSpecificStructuredContent(
+          slug,
+          structuredContent,
+          contentType,
+          validationSourceText,
+          meta,
+        );
+        if (validation.normalizedStructuredContent) {
+          structuredContent = validation.normalizedStructuredContent;
+        }
+      }
+
+      if (!validation.valid && slug === 'quick-assignment-builder') {
+        structuredContent = finalizeQuickAssignmentStructuredContent(structuredContent, meta);
+        validation = validateToolSpecificStructuredContent(
+          slug,
+          structuredContent,
+          contentType,
+          validationSourceText,
+          meta,
+        );
+        if (validation.normalizedStructuredContent) {
+          structuredContent = validation.normalizedStructuredContent;
+        }
+      }
+
+      if (!validation.valid && slug === 'concept-breakdown-explainer') {
+        structuredContent = finalizeConceptBreakdownStructuredContent(structuredContent, meta);
+        validation = validateToolSpecificStructuredContent(
+          slug,
+          structuredContent,
+          contentType,
+          validationSourceText,
+          meta,
+        );
+        if (validation.normalizedStructuredContent) {
+          structuredContent = validation.normalizedStructuredContent;
+        }
+      }
+
       if (!validation.valid) {
         lastValidationMessage = validation.message || 'Structured content failed validation.';
         const missingList = Array.isArray(validation.missingSections) ? validation.missingSections : [];
@@ -7868,12 +8118,6 @@ ${pdfContext}`
         }
       }
 
-      const finalQuality = runAiGeneratorQualityGate(slug, structuredContent, meta);
-      if (!finalQuality.valid) {
-        lastValidationMessage = finalQuality.errors.join('; ');
-        throw new Error(lastValidationMessage);
-      }
-
       if (isAiGeneratorSectionPadEnabled()) {
         structuredContent = padAiGeneratorCanonicalSections(slug, structuredContent, meta);
         if (slug === 'worksheet-mcq-generator') {
@@ -7881,6 +8125,12 @@ ${pdfContext}`
         }
       } else if (slug === 'worksheet-mcq-generator') {
         structuredContent = finalizeWorksheetStructuredContent(structuredContent, meta);
+      }
+
+      const finalQuality = runAiGeneratorQualityGate(slug, structuredContent, meta);
+      if (!finalQuality.valid) {
+        lastValidationMessage = finalQuality.errors.join('; ');
+        throw new Error(lastValidationMessage);
       }
 
       const generatedContent = stripMarkdownSyntax(

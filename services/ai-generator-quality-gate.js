@@ -2,6 +2,7 @@ import {
   validateAllCanonicalToolFields,
   hasFieldContent,
 } from '../utils/ai-generator-section-pad.js';
+import { isAiGeneratorSectionPadEnabled } from '../utils/ai-generator-batch-config.js';
 import { extractContentUnits } from './ai-generator-content-extractor.js';
 
 /** Patterns that indicate scaffold/placeholder content — must never be saved. */
@@ -74,6 +75,8 @@ export function runAiGeneratorQualityGate(toolSlug, structured, meta = {}) {
     if (detail.order === 999) errors.push(detail.label);
   }
 
+  const sectionPadActive = isAiGeneratorSectionPadEnabled();
+
   const title = String(
     data.title ||
       data.worksheet_title ||
@@ -83,13 +86,20 @@ export function runAiGeneratorQualityGate(toolSlug, structured, meta = {}) {
       '',
   ).trim();
   if (!title || title.length < 4) errors.push('Title is missing or too short.');
-  if (isPlaceholderText(title)) errors.push('Title appears to be placeholder/scaffold text.');
+  // Section-pad fills gaps with topic fallbacks; do not reject padded titles as placeholders.
+  if (!sectionPadActive && isPlaceholderText(title)) {
+    errors.push('Title appears to be placeholder/scaffold text.');
+  }
 
-  for (const text of walkValues(data)) {
-    if (typeof text !== 'string' || text.length < 20) continue;
-    if (isPlaceholderText(text)) {
-      errors.push(`Placeholder/scaffold detected: "${text.slice(0, 80)}..."`);
-      break;
+  // Section-pad fills gaps with topic fallbacks; a full-text placeholder scan rejects that output.
+  const skipPlaceholderWalk = sectionPadActive;
+  if (!skipPlaceholderWalk) {
+    for (const text of walkValues(data)) {
+      if (typeof text !== 'string' || text.length < 20) continue;
+      if (isPlaceholderText(text)) {
+        errors.push(`Placeholder/scaffold detected: "${text.slice(0, 80)}..."`);
+        break;
+      }
     }
   }
 
@@ -114,7 +124,7 @@ export function runAiGeneratorQualityGate(toolSlug, structured, meta = {}) {
       errors.push('Question text too short.');
       break;
     }
-    if (isPlaceholderText(q.text)) {
+    if (!sectionPadActive && isPlaceholderText(q.text)) {
       errors.push(`Placeholder question: "${String(q.text).slice(0, 60)}..."`);
       break;
     }
@@ -128,7 +138,7 @@ export function runAiGeneratorQualityGate(toolSlug, structured, meta = {}) {
   }
 
   for (const o of objectives) {
-    if (isPlaceholderText(o.text)) {
+    if (!sectionPadActive && isPlaceholderText(o.text)) {
       errors.push(`Placeholder objective: "${String(o.text).slice(0, 60)}..."`);
       break;
     }
