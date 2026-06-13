@@ -1213,8 +1213,13 @@ export function validateDashboardAiToolContent(toolSlug, rawContent, options = {
     };
   }
 
+  const validationMeta = {
+    ...(options.meta && typeof options.meta === 'object' ? options.meta : {}),
+    skipWorksheetPad: true,
+  };
+
   if (isValidAiToolSlug(slug)) {
-    const structural = validateToolSpecificStructuredContent(slug, structured, contentType, content);
+    const structural = validateToolSpecificStructuredContent(slug, structured, contentType, content, validationMeta);
     if (!structural.valid) {
       return {
         valid: false,
@@ -1225,7 +1230,7 @@ export function validateDashboardAiToolContent(toolSlug, rawContent, options = {
   }
 
   let normalized =
-    validateToolSpecificStructuredContent(slug, structured, contentType, content)
+    validateToolSpecificStructuredContent(slug, structured, contentType, content, validationMeta)
       .normalizedStructuredContent || structured;
   if (slug === 'my-study-decks') {
     normalized = normalizeMyStudyDecksStructuredContent(normalized);

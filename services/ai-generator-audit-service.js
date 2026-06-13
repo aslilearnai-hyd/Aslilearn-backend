@@ -8,6 +8,7 @@ import {
   classifySaturationLevel,
   getSaturationThresholds,
 } from './ai-generator-topic-saturation.js';
+import { getUsdToInrRate } from '../utils/gemini-token-cost.js';
 
 /**
  * Duplicate audit metrics for admin dashboard.
@@ -172,6 +173,7 @@ export async function getGenerationAnalytics(scope = {}) {
     totalFingerprints,
     recentSampleSize: recent.length,
     estimatedCostUsd: Math.round(totalCostUsd * 10000) / 10000,
+    estimatedCostInr: Math.round(totalCostUsd * getUsdToInrRate() * 100) / 100,
     totalTokensLast500: totalTokens,
     recordsWithFingerprints: withFingerprints,
     fingerprintCoveragePct,

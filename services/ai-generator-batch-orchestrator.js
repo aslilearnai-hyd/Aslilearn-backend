@@ -48,6 +48,8 @@ import {
 
 } from './ai-generator-content-strategy.js';
 
+import { isAiGeneratorCostSaverEnabled, isAiGeneratorUltraEconomyEnabled } from '../utils/ai-generator-batch-config.js';
+
 import AiToolGeneration from '../models/AiToolGeneration.js';
 
 import mongoose from 'mongoose';
@@ -71,6 +73,8 @@ function getBatchSize(override) {
 
 
 function getMaxAttemptsPerSlot() {
+
+  if (isAiGeneratorUltraEconomyEnabled()) return 1;
 
   const n = Number(process.env.AI_GENERATOR_BATCH_SLOT_MAX_ATTEMPTS);
 
@@ -368,7 +372,10 @@ export async function generateBatchAndSave(params, opts = {}) {
 
               historicalPromptBlock: historical.promptBlock,
 
-              upgradeToFlash: attempt > 2 || strategy.mode === 'strict_generate',
+              upgradeToFlash:
+                !isAiGeneratorCostSaverEnabled() &&
+                !isAiGeneratorUltraEconomyEnabled() &&
+                (attempt > 2 || strategy.mode === 'strict_generate'),
 
               recoveryPass: attempt > 1,
 
@@ -396,9 +403,13 @@ export async function generateBatchAndSave(params, opts = {}) {
 
               duplicatePreventionCount += 1;
 
-              if (strategy.strictUniqueness && attempt < maxAttempts) continue;
+              if (isAiGeneratorUltraEconomyEnabled()) {
 
-              if (strategy.strictUniqueness) continue;
+                /* one shot — accept first valid structure even if similar */
+
+              } else if (strategy.strictUniqueness && attempt < maxAttempts) continue;
+
+              else if (strategy.strictUniqueness) continue;
 
             }
 
@@ -568,6 +579,55 @@ export async function generateBatchAndSave(params, opts = {}) {
 
       cost = computeGeminiCostFromTokenUsage(tokenUsage);
 
+    }
+
+    if (savedRecords.length > 0 && cost && tokenUsage) {
+      const shareCount = savedRecords.length;
+      const costShare = {
+        usd: Number((Number(cost.usd || 0) / shareCount).toFixed(6)),
+        inr: Number((Number(cost.inr || 0) / shareCount).toFixed(4)),
+        exchangeRateInr: cost.exchangeRateInr,
+        model: cost.model,
+        pricingNote: cost.pricingNote,
+        batchTotalUsd: cost.usd,
+        batchTotalInr: cost.inr,
+        batchSize: shareCount,
+      };
+      const totals = tokenUsage.totals || {};
+      const tokenShare = {
+        totals: {
+          promptTokens: Math.round(Number(totals.promptTokens || 0) / shareCount),
+          completionTokens: Math.round(Number(totals.completionTokens || 0) / shareCount),
+          totalTokens: Math.round(Number(totals.totalTokens || 0) / shareCount),
+          callCount: Math.max(1, Math.round(Number(totals.callCount || 0) / shareCount)),
+        },
+        batchTotals: totals,
+        batchCallCount: totals.callCount || 0,
+      };
+      const batchId = new mongoose.Types.ObjectId().toString();
+      const ids = savedRecords.map((r) => r._id).filter(Boolean);
+      if (ids.length) {
+        await AiToolGeneration.updateMany(
+          { _id: { $in: ids } },
+          {
+            $set: {
+              'metadata.cost': costShare,
+              'metadata.tokenUsage': tokenShare,
+              'metadata.batchId': batchId,
+              'metadata.batchOrchestrator': true,
+            },
+          },
+        );
+        for (const record of savedRecords) {
+          record.metadata = {
+            ...(record.metadata || {}),
+            cost: costShare,
+            tokenUsage: tokenShare,
+            batchId,
+            batchOrchestrator: true,
+          };
+        }
+      }
     }
 
 

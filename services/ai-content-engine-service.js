@@ -33,6 +33,7 @@ import {
   getAiGeneratorValidationMaxAttempts,
   isAiGeneratorSectionPadEnabled,
   shouldUpgradeFlashOnValidationAttempt,
+  shouldUseFlashForAiGeneratorRun,
 } from '../utils/ai-generator-batch-config.js';
 import { runAiGeneratorQualityGate } from './ai-generator-quality-gate.js';
 import { repairMissingSectionsViaLlm } from './ai-generator-section-repair.js';
@@ -4888,6 +4889,10 @@ export function repairMockTestStructuredContent(raw, meta = {}) {
 /** Ensure mock test has a title and parsed questions before validation. */
 export function finalizeMockTestStructuredContent(raw, meta = {}) {
   let out = repairMockTestStructuredContent(raw, meta);
+  if (countMockTestQuestions(out) < 3) {
+    const scaffold = buildScaffoldExamQuestions(meta, out.blueprint || '');
+    out = normalizeMockTestStructuredContent({ ...out, ...scaffold }, collectMockTestParseableText(out));
+  }
   let mockTitle = String(out.mock_test_title || out.paper_title || out.title || '').trim();
   const paperTitle = String(out.paper_title || out.title || '').trim();
   const isGenericPlaceholder = !paperTitle || /^exam paper$/i.test(paperTitle);
@@ -6846,7 +6851,7 @@ export function validateToolSpecificStructuredContent(
     };
   }
   let contentForValidate = normalizedStructuredContent;
-  if (normalizedTool === 'worksheet-mcq-generator') {
+  if (normalizedTool === 'worksheet-mcq-generator' && meta.skipWorksheetPad !== true) {
     contentForValidate = finalizeWorksheetStructuredContent(contentForValidate, meta);
   }
   if (!rule.validate(contentForValidate) && normalizedTool === 'daily-class-plan-maker') {
@@ -7524,7 +7529,10 @@ ${pdfContext}`
   const generationVariant = Number(extra.generationVariant ?? extra.variantIndex);
   const isBatchVariant = Number.isFinite(generationVariant) && generationVariant > 0;
   const recoveryPass = extra.recoveryPass === true || params.recoveryPass === true;
-  const upgradeToFlash = params.upgradeToFlash === true || recoveryPass;
+  const upgradeToFlash = shouldUseFlashForAiGeneratorRun({
+    upgradeRequested: params.upgradeToFlash === true,
+    recoveryPass,
+  });
   const batchModel = String(process.env.AI_GENERATOR_GEMINI_MODEL || 'gemini-2.5-flash-lite').trim();
   const upgradeModel = String(process.env.AI_GENERATOR_UPGRADE_MODEL || 'gemini-2.5-flash').trim();
   const { getAiGeneratorMaxTokens } = await import('../utils/ai-generator-llm-budget.js');

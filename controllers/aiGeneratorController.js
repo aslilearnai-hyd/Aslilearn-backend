@@ -17,6 +17,7 @@ import {
 import {
   isAiGeneratorCostSaverEnabled,
   isRecoveryPass,
+  shouldUseFlashForAiGeneratorRun,
 } from '../utils/ai-generator-batch-config.js';
 import { computeGeminiCostFromTokenUsage } from '../utils/gemini-token-cost.js';
 import { buildHistoricalGenerationContext } from '../services/ai-generator-historical-index.js';
@@ -366,8 +367,10 @@ export async function generateAndSaveContent(req, res) {
                 ...(uniqAttempt > 1 ? { recoveryPass: true } : {}),
               },
               historicalPromptBlock: historical.promptBlock,
-              upgradeToFlash:
-                (recoveryPass && !isAiGeneratorCostSaverEnabled()) || uniqAttempt > 1,
+              upgradeToFlash: shouldUseFlashForAiGeneratorRun({
+                upgradeRequested: uniqAttempt > 1,
+                recoveryPass: recoveryPass || uniqAttempt > 1,
+              }),
               recoveryPass: recoveryPass || uniqAttempt > 1,
             }));
         } catch (genErr) {
@@ -712,6 +715,36 @@ export async function deleteGeneratorRecord(req, res) {
     return res.status(500).json({
       success: false,
       message: 'Failed to delete record.',
+    });
+  }
+}
+
+export async function deleteAllGeneratorRecords(req, res) {
+  try {
+    if (!ensureSuperAdmin(req, res)) return;
+
+    const board = normalizeText(req.query.board);
+    const mongoQuery = buildGeneratorMongoQuery({ board });
+    const legacyQuery = buildLegacyAiGeneratorsQuery({ board });
+
+    const [masterResult, legacyResult] = await Promise.all([
+      AiToolGeneration.deleteMany(mongoQuery),
+      AIGeneratorRecord.deleteMany(legacyQuery),
+    ]);
+
+    const deletedCount =
+      Number(masterResult?.deletedCount || 0) + Number(legacyResult?.deletedCount || 0);
+
+    return res.json({
+      success: true,
+      data: { deletedCount },
+      message: `Deleted ${deletedCount} record${deletedCount === 1 ? '' : 's'}.`,
+    });
+  } catch (error) {
+    console.error('deleteAllGeneratorRecords error:', error);
+    return res.status(500).json({
+      success: false,
+      message: 'Failed to delete all records.',
     });
   }
 }

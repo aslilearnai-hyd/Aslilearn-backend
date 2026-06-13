@@ -8,6 +8,7 @@ import {
   updateGeneratorRecord,
   deleteGeneratorRecord,
   bulkDeleteGeneratorRecords,
+  deleteAllGeneratorRecords,
   generatePDF,
   getManagedTopicTaxonomy,
   getDuplicateAudit,
@@ -29,6 +30,7 @@ router.get('/topic-taxonomy', getManagedTopicTaxonomy);
 router.get('/records/:id', getSingleGeneratorRecord);
 router.put('/records/:id', updateGeneratorRecord);
 router.post('/records/bulk-delete', bulkDeleteGeneratorRecords);
+router.delete('/records/all', deleteAllGeneratorRecords);
 router.delete('/records/:id', deleteGeneratorRecord);
 router.get('/pdf/:id', generatePDF);
 

@@ -8,6 +8,26 @@ export function isAiGeneratorCostSaverEnabled() {
 
 }
 
+/** Ultra economy: 1 LLM call per variant, no Flash, minimal prompt history, lowest token caps. */
+
+export function isAiGeneratorUltraEconomyEnabled() {
+
+  const raw = String(process.env.AI_GENERATOR_ULTRA_ECONOMY ?? 'false').trim().toLowerCase();
+
+  return raw === 'true' || raw === '1' || raw === 'on';
+
+}
+
+/** Never upgrade batch/recovery runs to Flash when cost saver or ultra economy is on. */
+
+export function shouldUseFlashForAiGeneratorRun({ upgradeRequested = false, recoveryPass = false } = {}) {
+
+  if (isAiGeneratorCostSaverEnabled() || isAiGeneratorUltraEconomyEnabled()) return false;
+
+  return Boolean(upgradeRequested || recoveryPass);
+
+}
+
 
 
 /** Local section padding fills gaps — skip expensive Flash retries (default on). */
@@ -65,6 +85,8 @@ export function isRecoveryPass(extraParams = {}, body = {}) {
  */
 
 export function shouldRunDedupForBatchVariant(generationVariant = 0) {
+
+  if (isAiGeneratorUltraEconomyEnabled()) return false;
 
   if (!isAiGeneratorCostSaverEnabled()) return true;
 
@@ -126,6 +148,10 @@ export function getAiGeneratorValidationMaxAttempts(isBatchVariant = false, reco
 
   const envRaw = process.env.AI_GENERATOR_VALIDATION_MAX_ATTEMPTS;
 
+  if (isAiGeneratorUltraEconomyEnabled() && !recovery) {
+    return 1;
+  }
+
   if (!recovery && isBatchVariant && isAiGeneratorSectionPadEnabled()) {
     const padDefault = '1';
     const parsed = Number.parseInt(String(envRaw ?? padDefault), 10);
@@ -172,6 +198,8 @@ export function shouldUpgradeFlashOnDedupRetry(isBatchVariant = false, dedupTry 
 
 /** Use Flash from validation attempt 2+ when all sections are required (better completeness). */
 export function shouldUpgradeFlashOnValidationAttempt(isBatchVariant = false, attempt = 1, recovery = false) {
+
+  if (isAiGeneratorCostSaverEnabled() || isAiGeneratorUltraEconomyEnabled()) return false;
 
   if (recovery) return true;
 
