@@ -20,6 +20,22 @@ import {
   resolveStudyGuideDisplayTitle,
   sanitizeStudyGuideTitle,
 } from './study-guide-title-utils.js';
+import {
+  buildAllFieldsRequiredMessage,
+  buildCanonicalFieldsRetryHint,
+  isStrictAllFieldsValidation,
+  padAiGeneratorCanonicalSections,
+  validateAllCanonicalToolFields,
+  validateCanonicalFieldsForSave,
+} from '../utils/ai-generator-section-pad.js';
+import { stripMarkdownSyntax, deepStripMarkdownValues } from '../utils/strip-markdown-syntax.js';
+import {
+  getAiGeneratorValidationMaxAttempts,
+  isAiGeneratorSectionPadEnabled,
+  shouldUpgradeFlashOnValidationAttempt,
+} from '../utils/ai-generator-batch-config.js';
+import { runAiGeneratorQualityGate } from './ai-generator-quality-gate.js';
+import { repairMissingSectionsViaLlm } from './ai-generator-section-repair.js';
 
 const TOOL_ALIAS_TO_SLUG = buildToolAliasToSlugMap();
 
@@ -643,18 +659,30 @@ function buildCurriculumBackedConceptFallback(meta = {}) {
   const topic = String(meta.topic || meta.chapter || '').trim();
   const subject = String(meta.subject || 'this subject').trim();
   const classLabel = String(meta.classLabel || meta.gradeLevel || 'the class').trim();
+  const variantN = Number(meta.generationVariant) || 0;
+  const angle = String(meta.variantAngle || '').trim();
+  const scenario = String(meta.variantScenario || '').trim();
   const conceptName = subTopic || topic || `${subject} concept`;
   const focus = subTopic && topic ? `${topic} — ${subTopic}` : subTopic || topic;
+  const angleLead = angle
+    ? `Frame the lesson using this angle: ${angle}. `
+    : variantN > 0
+      ? `Use variant ${variantN} with a fresh example set. `
+      : '';
   return {
     concepts: [
       normalizeConceptStructuredContent({
-        concept_name: conceptName,
-        simple_definition: `A clear introduction to ${conceptName} as part of ${focus} in ${subject}.`,
+        concept_name: angle ? `${conceptName} — ${angle.split('(')[0].trim().slice(0, 48)}` : conceptName,
+        simple_definition: `${angleLead}A clear introduction to ${conceptName} as part of ${focus} in ${subject}.`,
         why_important: `Mastering ${conceptName} helps ${classLabel} learners understand ${focus} for class tests and applications.`,
         prior_knowledge_needed: `Familiarity with the main ideas from ${topic || 'the previous unit'}.`,
-        lesson: `Explain ${conceptName} step by step: definition, one labelled diagram, a worked example, and a short class discussion tied to ${focus}. Align examples to the NCERT/CBSE treatment of ${subject} for ${classLabel}.`,
+        lesson: `${angleLead}Explain ${conceptName} step by step: definition, one labelled diagram, a worked example, and a short class discussion tied to ${focus}. Align examples to the NCERT/CBSE treatment of ${subject} for ${classLabel}.`,
         diagram_suggestion: `Labelled diagram or concept map for ${conceptName} (components, flow, or cause–effect as appropriate).`,
-        real_example: `One everyday or Indian-context example that illustrates ${conceptName}.`,
+        real_example: scenario
+          ? `Example while exploring ${scenario}: how ${conceptName} appears in real life.`
+          : angle
+            ? `Indian-context example for ${conceptName} via: ${angle}.`
+            : `Everyday example ${variantN > 0 ? `(set ${variantN}) ` : ''}that illustrates ${conceptName}.`,
         common_mistakes: [
           `Mixing up terms related to ${conceptName}`,
           'Skipping units, labels, or direction arrows in diagrams',
@@ -681,7 +709,10 @@ export function finalizeConceptMasteryStructuredContent(structuredContent, meta 
       ? structuredContent
       : {};
   let deck = normalizeConceptMasteryDeckStructuredContent(raw);
-  if (!Array.isArray(deck.concepts) || !deck.concepts.length) {
+  if (
+    !isStrictAllFieldsValidation(meta) &&
+    (!Array.isArray(deck.concepts) || !deck.concepts.length)
+  ) {
     const fallback = buildCurriculumBackedConceptFallback(meta);
     deck = normalizeConceptMasteryDeckStructuredContent({ ...deck, ...fallback });
   } else if (deck.concepts.length === 1 && meta.subTopic) {
@@ -3263,6 +3294,130 @@ export function normalizeWorksheetStructuredContent(raw, sourceText = '') {
   return polishWorksheetStructuredContent(draft);
 }
 
+/** Ensure worksheet has sections A–E each with at least one question (AI Generator completeness). */
+export function finalizeWorksheetStructuredContent(structuredContent, meta = {}) {
+  const topic = String(meta.subTopic || meta.subtopic || meta.topic || 'this subtopic').trim();
+  const subject = String(meta.subject || 'Science').trim();
+  const base = normalizeWorksheetStructuredContent(
+    structuredContent && typeof structuredContent === 'object' && !Array.isArray(structuredContent)
+      ? structuredContent
+      : {},
+  );
+
+  const scaffoldForSection = (sectionName, qNum) => {
+    if (sectionName === WORKSHEET_SECTION_LABELS.A) {
+      return {
+        question_number: qNum,
+        type: 'MCQ',
+        section: sectionName,
+        question: `Which statement about ${topic} is most accurate?`,
+        options: [
+          'A) A guess without evidence',
+          'B) A claim supported by observation and reasoning',
+          'C) A tradition that cannot be tested',
+          'D) An opinion with no examples',
+        ],
+        answer: 'B) A claim supported by observation and reasoning',
+        marks: 1,
+      };
+    }
+    if (sectionName === WORKSHEET_SECTION_LABELS.B) {
+      return {
+        question_number: qNum,
+        type: 'FIB',
+        section: sectionName,
+        question: `Complete: A key idea in ${topic} is _____.`,
+        answer: `A core concept from ${topic} explained in class.`,
+        marks: 1,
+      };
+    }
+    if (sectionName === WORKSHEET_SECTION_LABELS.C) {
+      return {
+        question_number: qNum,
+        type: 'VSA',
+        section: sectionName,
+        question: `Define one important term related to ${topic}.`,
+        answer: `A brief definition using evidence about ${topic}.`,
+        marks: 2,
+      };
+    }
+    if (sectionName === WORKSHEET_SECTION_LABELS.D) {
+      return {
+        question_number: qNum,
+        type: 'SA',
+        section: sectionName,
+        question: `Explain how ${topic} applies in daily life. Give one example.`,
+        answer: `Students describe a real example connecting ${topic} to everyday ${subject}.`,
+        marks: 3,
+      };
+    }
+    return {
+      question_number: qNum,
+      type: 'COMPETENCY',
+      section: sectionName,
+      question: `How would you use ideas from ${topic} to solve a problem at home or school?`,
+      answer: `A reasoned plan using concepts from ${topic} with steps and evidence.`,
+      marks: 4,
+    };
+  };
+
+  let sections = buildCanonicalWorksheetSectionList(base.sections || []);
+  let globalQ = 1;
+  sections = sections.map((sec) => {
+    const existing = Array.isArray(sec.questions) ? sec.questions.filter((q) => String(q?.question || '').trim()) : [];
+    if (existing.length) {
+      const renumbered = existing.map((q) => ({
+        ...q,
+        question_number: globalQ++,
+        section: sec.sectionName,
+      }));
+      return { ...sec, questions: renumbered, count: renumbered.length };
+    }
+    if (!isAiGeneratorSectionPadEnabled()) {
+      return { ...sec, questions: [], count: 0 };
+    }
+    const scaffold = scaffoldForSection(sec.sectionName, globalQ++);
+    return { ...sec, questions: [scaffold], count: 1 };
+  });
+
+  const learning_objectives =
+    Array.isArray(base.learning_objectives) && base.learning_objectives.length
+      ? base.learning_objectives
+      : isAiGeneratorSectionPadEnabled()
+        ? [
+            `Students recall key facts about ${topic}.`,
+            `Students apply ${topic} to short ${subject} problems.`,
+          ]
+        : [];
+
+  const instructions =
+    String(base.instructions || '').trim() ||
+    (isAiGeneratorSectionPadEnabled()
+      ? `Read each section carefully. Answer all questions on ${topic} in your notebook.`
+      : '');
+
+  const draft = {
+    ...base,
+    title: String(base.title || base.worksheet_title || `${topic} — Worksheet`).trim(),
+    worksheet_title: String(base.worksheet_title || base.title || `${topic} — Worksheet`).trim(),
+    learning_objectives,
+    objectives: learning_objectives,
+    instructions,
+    sections,
+    section_a_mcqs: sections[0]?.questions || [],
+    section_b_fib: sections[1]?.questions || [],
+    section_c_vsa: sections[2]?.questions || [],
+    section_d_sa: sections[3]?.questions || [],
+    section_e_competency: sections[4]?.questions || [],
+    questions: sections.flatMap((s) => s.questions || []),
+    answer_key: String(base.answer_key || '').trim() || buildWorksheetAnswerKeyFromSections(sections),
+    bloom_level: String(base.bloom_level || 'Apply / Analyze').trim(),
+    difficulty_tag: String(base.difficulty_tag || base.difficulty || 'Medium').trim(),
+  };
+
+  return polishWorksheetStructuredContent(draft);
+}
+
 export function canonicalizeWorksheetExtractedItem(raw, sourceText = '') {
   return normalizeWorksheetStructuredContent(raw, sourceText);
 }
@@ -3882,18 +4037,19 @@ export function buildHomeworkRenderableFromStructured(source) {
   const h = normalizeHomeworkStructuredContent(
     source && typeof source === 'object' && !Array.isArray(source) ? source : {},
   );
+  const plain = (v) => stripMarkdownSyntax(String(v ?? '').trim());
   return {
     kind: 'homework',
-    title: String(h.title || 'Homework').trim(),
-    instructions: String(h.instructions || '').trim(),
+    title: plain(h.title || 'Homework') || 'Homework',
+    instructions: plain(h.instructions),
     practiceQuestions: Array.isArray(h.practice_questions) ? h.practice_questions : [],
-    applicationTasks: toStringList(h.application_tasks),
-    creativeThinkingQuestion: String(h.creative_thinking_question || '').trim(),
-    realLifeObservationTask: String(h.real_life_observation_task || '').trim(),
-    challengeQuestion: String(h.challenge_question || '').trim(),
-    supportHint: String(h.support_hint || '').trim(),
-    answerHints: String(h.answer_hints || '').trim(),
-    parentNote: String(h.parent_note || '').trim(),
+    applicationTasks: toStringList(h.application_tasks).map((x) => stripMarkdownSyntax(x)),
+    creativeThinkingQuestion: plain(h.creative_thinking_question),
+    realLifeObservationTask: plain(h.real_life_observation_task),
+    challengeQuestion: plain(h.challenge_question),
+    supportHint: plain(h.support_hint),
+    answerHints: plain(h.answer_hints),
+    parentNote: plain(h.parent_note),
   };
 }
 
@@ -6354,9 +6510,17 @@ function buildCurriculumBackedActivityFallback(meta = {}) {
   const subTopic = String(meta.subTopic || '').trim();
   const subject = String(meta.subject || 'this subject').trim();
   const classLabel = String(meta.classLabel || 'the class').trim();
+  const variantN = Number(meta.generationVariant) || 0;
+  const angle = String(meta.variantAngle || '').trim();
+  const scenario = String(meta.variantScenario || '').trim();
   const tp = subTopic ? `${topic} — ${subTopic}` : topic;
+  const angleShort = angle ? angle.split('(')[0].trim().slice(0, 42) : '';
   return {
-    title: `Hands-on activity: ${topic}`,
+    title: angleShort
+      ? `${angleShort}: ${topic}`
+      : variantN > 0
+        ? `Activity variant ${variantN}: ${topic}`
+        : `Hands-on activity: ${topic}`,
     materials: [
       'Notebook / loose paper',
       'Pencils and coloured pencils or markers',
@@ -6366,14 +6530,28 @@ function buildCurriculumBackedActivityFallback(meta = {}) {
       'Chart paper / whiteboard markers for gallery walk (optional)',
     ],
     steps: [
-      `In pairs, skim the uploaded material for ${topic} and list four key vocabulary terms or diagrams on one half-sheet.`,
-      'Compare lists with another pair — merge duplicates and circle the two concepts that seemed most challenging.',
-      `Design one mini-demonstration, fold-and-cut sketch, or table that explains one idea from "${tp}". Keep it doable in 15 minutes.`,
-      'Groups post their artefact on the board; each group explains one design choice in two sentences.',
-      'Whole class agrees on success criteria for "understands ${topic}" — write three bullet checkpoints on the board.',
-      `Each learner writes an exit slip: one new idea, one question, one link to everyday life (${subject}).`,
+      scenario
+        ? `Set the scene: ${scenario}. In pairs, list four key ideas or vocabulary for ${topic} linked to this setting.`
+        : angle
+          ? `Start with the angle "${angle}". In pairs, list four vocabulary terms or diagrams for ${topic} on one half-sheet.`
+          : `In pairs, skim the material for ${topic} and list four key vocabulary terms or diagrams on one half-sheet.`,
+      variantN > 0
+        ? `Variant ${variantN}: compare lists with another pair — each pair must add one unique example not used in other variants.`
+        : 'Compare lists with another pair — merge duplicates and circle the two concepts that seemed most challenging.',
+      angle
+        ? `Build a mini task for "${tp}" using the angle (${angleShort || angle})${scenario ? ` in the setting: ${scenario}` : ''}. Keep it doable in 15 minutes.`
+        : `Design one mini-demonstration or table that explains one idea from "${tp}"${scenario ? ` during ${scenario}` : ''}. Keep it doable in 15 minutes.`,
+      scenario
+        ? `Groups present findings from ${scenario}; each group explains one design choice in two sentences.`
+        : 'Groups post their artefact on the board; each group explains one design choice in two sentences.',
+      `Whole class agrees on three success checkpoints for understanding ${topic} (variant ${variantN || 1} focus).`,
+      `Exit slip: one new idea about ${subTopic || topic}, one question, one link to ${scenario || 'everyday life'} (${subject}).`,
     ],
-    learningOutcome: `Learners collaborate to represent and verbalise central ideas about ${topic} in ${subject} (${classLabel}), using models or diagrams grounded in authentic classroom tasks.`,
+    learningOutcome: angle
+      ? `Through "${angleShort || angle}", learners demonstrate understanding of ${tp} in ${subject} (${classLabel}).`
+      : variantN > 0
+        ? `Variant ${variantN}: learners apply ${tp} in ${subject} using a distinct classroom task (${classLabel}).`
+        : `Learners collaborate to represent and verbalise central ideas about ${topic} in ${subject} (${classLabel}), using models or diagrams grounded in authentic classroom tasks.`,
   };
 }
 
@@ -6390,6 +6568,16 @@ function augmentActivityStructuredContent(normalizedFlat, meta, toolSlug = 'acti
 
   if (materialsOk && stepsOk && loOk) {
     return n;
+  }
+
+  if (isStrictAllFieldsValidation(meta)) {
+    return n;
+  }
+
+  if (meta?.generationVariant) {
+    console.warn(
+      `[AI Generator] Activity scaffold fallback for variant ${meta.generationVariant} — model output was incomplete; consider Flash model or higher token limit.`,
+    );
   }
 
   const fb = buildCurriculumBackedActivityFallback(meta);
@@ -6623,13 +6811,15 @@ export function validateToolSpecificStructuredContent(
         message: missing.join('; ') || rule.message,
         normalizedType: resolvedType,
         normalizedStructuredContent: finalized,
+        missingSections: missing,
       };
     }
+    const paddedExam = padAiGeneratorCanonicalSections(normalizedTool, finalized, meta);
     return {
       valid: true,
       message: '',
       normalizedType: resolvedType,
-      normalizedStructuredContent: finalized,
+      normalizedStructuredContent: paddedExam,
     };
   }
 
@@ -6656,6 +6846,9 @@ export function validateToolSpecificStructuredContent(
     };
   }
   let contentForValidate = normalizedStructuredContent;
+  if (normalizedTool === 'worksheet-mcq-generator') {
+    contentForValidate = finalizeWorksheetStructuredContent(contentForValidate, meta);
+  }
   if (!rule.validate(contentForValidate) && normalizedTool === 'daily-class-plan-maker') {
     const finalized = finalizeDailyClassPlanStructuredContent(contentForValidate, {
       subTopic:
@@ -6718,6 +6911,36 @@ export function validateToolSpecificStructuredContent(
       normalizedStructuredContent: contentForValidate,
     };
   }
+
+  const requireAllFields = isStrictAllFieldsValidation(meta);
+  if (isAiGeneratorSectionPadEnabled()) {
+    contentForValidate = padAiGeneratorCanonicalSections(normalizedTool, contentForValidate, meta);
+  }
+
+  if (requireAllFields) {
+    const allFields = validateAllCanonicalToolFields(normalizedTool, contentForValidate);
+    if (!allFields.valid) {
+      return {
+        valid: false,
+        message: buildAllFieldsRequiredMessage(allFields.missingSections),
+        normalizedType: resolvedType,
+        normalizedStructuredContent: contentForValidate,
+        missingSections: allFields.missingSections,
+      };
+    }
+  } else {
+    const fieldGate = validateCanonicalFieldsForSave(normalizedTool, contentForValidate, meta);
+    if (!fieldGate.valid) {
+      return {
+        valid: false,
+        message: fieldGate.message || buildAllFieldsRequiredMessage(fieldGate.missingSections),
+        normalizedType: resolvedType,
+        normalizedStructuredContent: contentForValidate,
+        missingSections: fieldGate.missingSections,
+      };
+    }
+  }
+
   return {
     valid: true,
     message: '',
@@ -7288,15 +7511,48 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
   const defaultContentType = CONTENT_TYPE_BY_TOOL_SLUG[slug] || getContentTypeDefault(slug);
   const prompt = buildAiGeneratorStructuredPrompt(slug, params);
   const pdfContext = String(params.pdfContext || '').trim();
+  const historicalBlock = String(params.historicalPromptBlock || '').trim();
   const basePrompt = pdfContext
-    ? `${prompt}
+    ? `${prompt}${historicalBlock ? `\n\n${historicalBlock}` : ''}
 
 REFERENCE PDF CONTEXT (RAG — primary factual source for this generation):
 Use the passages below to ground facts, terminology, and curriculum alignment.
 Synthesize into the tool schema above — do not paste PDF blocks verbatim or mirror textbook layout.
 ${pdfContext}`
-    : prompt;
+    : `${prompt}${historicalBlock ? `\n\n${historicalBlock}` : ''}`;
   const extra = params.extraParams && typeof params.extraParams === 'object' ? params.extraParams : {};
+  const generationVariant = Number(extra.generationVariant ?? extra.variantIndex);
+  const isBatchVariant = Number.isFinite(generationVariant) && generationVariant > 0;
+  const recoveryPass = extra.recoveryPass === true || params.recoveryPass === true;
+  const upgradeToFlash = params.upgradeToFlash === true || recoveryPass;
+  const batchModel = String(process.env.AI_GENERATOR_GEMINI_MODEL || 'gemini-2.5-flash-lite').trim();
+  const upgradeModel = String(process.env.AI_GENERATOR_UPGRADE_MODEL || 'gemini-2.5-flash').trim();
+  const { getAiGeneratorMaxTokens } = await import('../utils/ai-generator-llm-budget.js');
+  const maxTokens = getAiGeneratorMaxTokens(slug);
+
+  const buildLlmOptions = (attempt) => {
+    const useFlash =
+      upgradeToFlash ||
+      shouldUpgradeFlashOnValidationAttempt(isBatchVariant, attempt, recoveryPass);
+    if (useFlash) {
+      return {
+        isBatchVariant,
+        temperature: 0.55,
+        primaryModel: upgradeModel,
+        maxTokens,
+      };
+    }
+    if (isBatchVariant) {
+      return {
+        isBatchVariant: true,
+        temperature: 0.88,
+        primaryModel: batchModel,
+        maxTokens,
+      };
+    }
+    return { maxTokens };
+  };
+
   const meta = {
     classLabel: params.classLabel || params.gradeLevel,
     subject: params.subject,
@@ -7304,16 +7560,22 @@ ${pdfContext}`
     subTopic: params.subTopic || params.subtopic,
     board: params.board,
     questionCount: Number(extra.questionCount ?? extra.numberOfQuestions ?? params.questionCount),
+    generationVariant: isBatchVariant ? generationVariant : undefined,
+    variantAngle: isBatchVariant ? String(extra.variantAngle || '').trim() : undefined,
+    variantScenario: isBatchVariant ? String(extra.variantScenario || '').trim() : undefined,
+    requireAllCanonicalFields: true,
   };
 
   let lastError = null;
   let lastValidationMessage = '';
 
   let activePrompt = basePrompt;
+  const maxValidationAttempts = getAiGeneratorValidationMaxAttempts(isBatchVariant, recoveryPass);
 
-  for (let attempt = 1; attempt <= 4; attempt += 1) {
+  for (let attempt = 1; attempt <= maxValidationAttempts; attempt += 1) {
+    const llmOptions = buildLlmOptions(attempt);
     try {
-      const raw = await geminiService.generateStructuredContent(activePrompt, 'json');
+      const raw = await geminiService.generateStructuredContent(activePrompt, 'json', llmOptions);
       const json = extractJsonObject(raw);
       let structuredContent = coerceRegenerationStructuredContent(slug, json);
       if (slug === 'mock-test-builder' && json && typeof json === 'object') {
@@ -7354,6 +7616,8 @@ ${pdfContext}`
         structuredContent = finalizeRubricStructuredContent(structuredContent, meta);
       } else if (slug === 'story-passage-creator') {
         structuredContent = finalizeStoryPassageStructuredContent(structuredContent, meta);
+      } else if (slug === 'worksheet-mcq-generator') {
+        structuredContent = finalizeWorksheetStructuredContent(structuredContent, meta);
       }
 
       const contentType = normalizeContentType(json.contentType || defaultContentType);
@@ -7510,7 +7774,13 @@ ${pdfContext}`
 
       if (!validation.valid) {
         lastValidationMessage = validation.message || 'Structured content failed validation.';
-        if (attempt < 4) {
+        const missingList = Array.isArray(validation.missingSections) ? validation.missingSections : [];
+        const allFieldsHint =
+          missingList.length > 0
+            ? buildCanonicalFieldsRetryHint(slug, missingList)
+            : lastValidationMessage;
+        if (attempt < maxValidationAttempts) {
+          activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): ${allFieldsHint} Return structuredContent with EVERY canonical field filled — no empty strings, no empty arrays.`;
           if (slug === 'mock-test-builder') {
             activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. You MUST return structuredContent with mock_test_title and at least 8 questions in section_a..section_e (each with "question" text). Do not return only metadata without question arrays.`;
           } else if (slug === 'smart-qa-practice-generator') {
@@ -7553,7 +7823,62 @@ ${pdfContext}`
         throw new Error(lastValidationMessage);
       }
 
-      const generatedContent = formatStructuredToolOutput(slug, structuredContent);
+      let sectionRepairCount = 0;
+      for (let repairRound = 0; repairRound < 2; repairRound += 1) {
+        const quality = runAiGeneratorQualityGate(slug, structuredContent, meta);
+        if (quality.valid) break;
+
+        if (!isAiGeneratorSectionPadEnabled() && quality.missingSections?.length) {
+          structuredContent = await repairMissingSectionsViaLlm(
+            slug,
+            structuredContent,
+            quality.missingSections,
+            meta,
+            historicalBlock,
+          );
+          sectionRepairCount += 1;
+          validation = validateToolSpecificStructuredContent(
+            slug,
+            structuredContent,
+            contentType,
+            validationSourceText,
+            meta,
+          );
+          if (validation.normalizedStructuredContent) {
+            structuredContent = validation.normalizedStructuredContent;
+          }
+          if (!validation.valid) {
+            lastValidationMessage = validation.message || quality.errors.join('; ');
+            throw new Error(lastValidationMessage);
+          }
+          continue;
+        }
+
+        if (quality.errors.length) {
+          lastValidationMessage = quality.errors.join('; ');
+          throw new Error(lastValidationMessage);
+        }
+      }
+
+      const finalQuality = runAiGeneratorQualityGate(slug, structuredContent, meta);
+      if (!finalQuality.valid) {
+        lastValidationMessage = finalQuality.errors.join('; ');
+        throw new Error(lastValidationMessage);
+      }
+
+      if (isAiGeneratorSectionPadEnabled()) {
+        structuredContent = padAiGeneratorCanonicalSections(slug, structuredContent, meta);
+        if (slug === 'worksheet-mcq-generator') {
+          structuredContent = finalizeWorksheetStructuredContent(structuredContent, meta);
+        }
+      } else if (slug === 'worksheet-mcq-generator') {
+        structuredContent = finalizeWorksheetStructuredContent(structuredContent, meta);
+      }
+
+      const generatedContent = stripMarkdownSyntax(
+        formatStructuredToolOutput(slug, deepStripMarkdownValues(structuredContent)),
+      );
+      structuredContent = deepStripMarkdownValues(structuredContent);
       if (!generatedContent.trim()) {
         throw new Error('Model returned empty formatted content.');
       }
@@ -7562,10 +7887,30 @@ ${pdfContext}`
         contentType: validation.normalizedType || contentType,
         structuredContent,
         generatedContent,
+        sectionRepairCount,
       };
     } catch (error) {
       lastError = error;
     }
+  }
+
+  const requireAllFieldsEnv =
+    String(process.env.AI_GENERATOR_REQUIRE_ALL_FIELDS ?? 'true').trim().toLowerCase() !== 'false' &&
+    String(process.env.AI_GENERATOR_REQUIRE_ALL_FIELDS ?? 'true').trim().toLowerCase() !== '0' &&
+    String(process.env.AI_GENERATOR_REQUIRE_ALL_FIELDS ?? 'true').trim().toLowerCase() !== 'off';
+  const upgradeOnFail =
+    requireAllFieldsEnv &&
+    !isAiGeneratorSectionPadEnabled() &&
+    String(process.env.AI_GENERATOR_UPGRADE_ON_VALIDATION_FAIL ?? 'true').toLowerCase() !== 'false';
+  const shouldUpgrade =
+    isBatchVariant && upgradeOnFail && !upgradeToFlash && params._upgradeAttempted !== true;
+
+  if (shouldUpgrade) {
+    return generateStructuredContentForAiGenerator(toolSlug, {
+      ...params,
+      upgradeToFlash: true,
+      _upgradeAttempted: true,
+    });
   }
 
   throw new Error(lastError?.message || lastValidationMessage || 'AI Generator structured content failed');

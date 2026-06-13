@@ -373,6 +373,14 @@ export const createTeacherTool = async (req, res) => {
       `📦 AI Tool Data lookup: ${toolType} — ${classDisplay}, ${finalSubject}, topic: ${topicForStore || '(optional)'}`,
     );
 
+    const {
+      validateDashboardAiToolDoc,
+      DASHBOARD_INCOMPLETE_CODE,
+      DASHBOARD_INCOMPLETE_USER_MESSAGE,
+      DASHBOARD_WRONG_TOOL_CODE,
+      DASHBOARD_WRONG_TOOL_USER_MESSAGE,
+    } = await import('../services/ai-tool-dashboard-validation.js');
+
     const { doc: cachedDoc, matchType, totalCandidates, selectedIndex } = await fetchRotatingAiToolData({
       classLabel: classDisplay,
       subject: finalSubject,
@@ -382,17 +390,11 @@ export const createTeacherTool = async (req, res) => {
       preferLatest: false,
       strictToolMatch: true,
       cursorScope: String(teacherId || ''),
+      validator: async (doc) => validateDashboardAiToolDoc(toolType, doc).valid,
     });
     if (cachedDoc) {
       const cachedContent = String(cachedDoc.generatedContent || cachedDoc.content || '').trim();
       if (cachedContent) {
-        const {
-          validateDashboardAiToolDoc,
-          DASHBOARD_INCOMPLETE_CODE,
-          DASHBOARD_INCOMPLETE_USER_MESSAGE,
-          DASHBOARD_WRONG_TOOL_CODE,
-          DASHBOARD_WRONG_TOOL_USER_MESSAGE,
-        } = await import('../services/ai-tool-dashboard-validation.js');
         const contentGate = validateDashboardAiToolDoc(toolType, cachedDoc);
         const isWrongTool = contentGate.code === DASHBOARD_WRONG_TOOL_CODE;
         if (!contentGate.valid) {
@@ -496,6 +498,14 @@ export const getGeneratedContent = async (req, res) => {
       );
     }
 
+    const {
+      validateDashboardAiToolDoc,
+      DASHBOARD_INCOMPLETE_CODE,
+      DASHBOARD_INCOMPLETE_USER_MESSAGE,
+      DASHBOARD_WRONG_TOOL_CODE,
+      DASHBOARD_WRONG_TOOL_USER_MESSAGE,
+    } = await import('../services/ai-tool-dashboard-validation.js');
+
     const { doc: matchedDoc, matchType, totalCandidates, selectedIndex } = await fetchRotatingAiToolData({
       classLabel,
       subject,
@@ -505,6 +515,9 @@ export const getGeneratedContent = async (req, res) => {
       preferLatest: false,
       strictToolMatch: true,
       cursorScope: String(req.userId || req.teacherId || ''),
+      validator: toolType
+        ? async (doc) => validateDashboardAiToolDoc(toolType, doc).valid
+        : null,
     });
 
     if (matchedDoc) {
@@ -520,25 +533,20 @@ export const getGeneratedContent = async (req, res) => {
       });
     }
 
-    const {
-      validateDashboardAiToolDoc,
-      DASHBOARD_INCOMPLETE_CODE,
-      DASHBOARD_INCOMPLETE_USER_MESSAGE,
-      DASHBOARD_WRONG_TOOL_CODE,
-      DASHBOARD_WRONG_TOOL_USER_MESSAGE,
-    } = await import('../services/ai-tool-dashboard-validation.js');
-    const contentGate = validateDashboardAiToolDoc(toolType, matchedDoc);
-    if (!contentGate.valid) {
-      const isWrongTool = contentGate.code === DASHBOARD_WRONG_TOOL_CODE;
-      return res.json({
-        success: true,
-        data: null,
-        message:
-          contentGate.message ||
-          (isWrongTool ? DASHBOARD_WRONG_TOOL_USER_MESSAGE : DASHBOARD_INCOMPLETE_USER_MESSAGE),
-        code: contentGate.code || DASHBOARD_INCOMPLETE_CODE,
-        missingSections: contentGate.missingSections || [],
-      });
+    if (toolType) {
+      const contentGate = validateDashboardAiToolDoc(toolType, matchedDoc);
+      if (!contentGate.valid) {
+        const isWrongTool = contentGate.code === DASHBOARD_WRONG_TOOL_CODE;
+        return res.json({
+          success: true,
+          data: null,
+          message:
+            contentGate.message ||
+            (isWrongTool ? DASHBOARD_WRONG_TOOL_USER_MESSAGE : DASHBOARD_INCOMPLETE_USER_MESSAGE),
+          code: contentGate.code || DASHBOARD_INCOMPLETE_CODE,
+          missingSections: contentGate.missingSections || [],
+        });
+      }
     }
 
     return res.json({

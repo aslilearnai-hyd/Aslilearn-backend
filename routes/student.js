@@ -1586,6 +1586,9 @@ router.get('/asli-prep-content', async (req, res) => {
     const { enrichContentDurations } = await import('../utils/enrichContentDurations.js');
     contents = await enrichContentDurations(contents);
 
+    const { dedupeLibraryContents } = await import('../utils/dedupeLibraryContents.js');
+    contents = dedupeLibraryContents(contents);
+
     res.json({
       success: true,
       data: contents
@@ -4896,6 +4899,14 @@ router.post('/ai/tool', async (req, res) => {
       }
     };
 
+    const {
+      validateDashboardAiToolDoc,
+      DASHBOARD_INCOMPLETE_CODE,
+      DASHBOARD_INCOMPLETE_USER_MESSAGE,
+      DASHBOARD_WRONG_TOOL_CODE,
+      DASHBOARD_WRONG_TOOL_USER_MESSAGE,
+    } = await import('../services/ai-tool-dashboard-validation.js');
+
     // Priority 1: Super Admin AI Tool Data (exact class+subject+topic+subtopic) with rotation.
     const { doc: adminDoc, matchType, totalCandidates, selectedIndex } = await fetchRotatingAiToolData({
       classLabel: classDisplay,
@@ -4906,15 +4917,9 @@ router.post('/ai/tool', async (req, res) => {
       preferLatest: false,
       strictToolMatch: true,
       cursorScope: String(userId || ''),
+      validator: async (doc) => validateDashboardAiToolDoc(toolType, doc).valid,
     });
     if (adminDoc) {
-      const {
-        validateDashboardAiToolDoc,
-        DASHBOARD_INCOMPLETE_CODE,
-        DASHBOARD_INCOMPLETE_USER_MESSAGE,
-        DASHBOARD_WRONG_TOOL_CODE,
-        DASHBOARD_WRONG_TOOL_USER_MESSAGE,
-      } = await import('../services/ai-tool-dashboard-validation.js');
       const contentGate = validateDashboardAiToolDoc(toolType, adminDoc);
       const originalContent = String(adminDoc.generatedContent || adminDoc.content || '').trim();
       if (!contentGate.valid) {

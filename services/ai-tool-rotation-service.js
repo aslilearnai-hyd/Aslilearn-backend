@@ -193,6 +193,14 @@ async function nextCursorIndex(key, total) {
   return next;
 }
 
+async function setCursorIndex(key, idx) {
+  await AiToolRotationCursor.updateOne(
+    { key },
+    { $set: { cursor: idx, lastServedAt: new Date() } },
+    { upsert: true },
+  );
+}
+
 /**
  * Priority source for Teacher/Student tool pages.
  * 1) exact class+subject+topic+subtopic (+tool when available)
@@ -210,6 +218,8 @@ export async function fetchRotatingAiToolData({
   strictToolMatch = false,
   /** Optional cursor scope (e.g. userId) so rotation is per-user. */
   cursorScope = '',
+  /** When set, skip candidates that fail this check (tries all rows in the pool before giving up). */
+  validator = null,
 }) {
   const normalizedTopic = normalize(topic);
   const normalizedSubtopic = normalize(subtopic);
@@ -257,15 +267,6 @@ export async function fetchRotatingAiToolData({
   }
 
   const selectByRotation = async (docs, matchType, keyToolName = normalizedTool) => {
-    if (preferLatest) {
-      const latestIdx = Math.max(0, docs.length - 1);
-      return {
-        doc: docs[latestIdx] || docs[0],
-        matchType: `${matchType}-latest`,
-        totalCandidates: docs.length,
-        selectedIndex: latestIdx,
-      };
-    }
     const key = rotationKey({
       classLabel,
       subject,
@@ -274,13 +275,52 @@ export async function fetchRotatingAiToolData({
       toolName: keyToolName,
       scope: cursorScope,
     });
-    const idx = await nextCursorIndex(key, docs.length);
-    return {
-      doc: docs[idx] || docs[0],
-      matchType,
-      totalCandidates: docs.length,
-      selectedIndex: idx,
+
+    const pickFromOrder = async (order) => {
+      if (!validator) {
+        const idx = order[0];
+        return {
+          doc: docs[idx] || docs[0],
+          matchType: preferLatest ? `${matchType}-latest` : matchType,
+          totalCandidates: docs.length,
+          selectedIndex: idx,
+        };
+      }
+      for (const idx of order) {
+        const candidate = docs[idx];
+        if (!candidate) continue;
+        try {
+          const ok = await validator(candidate);
+          if (ok) {
+            await setCursorIndex(key, idx);
+            return {
+              doc: candidate,
+              matchType: preferLatest ? `${matchType}-latest` : matchType,
+              totalCandidates: docs.length,
+              selectedIndex: idx,
+            };
+          }
+        } catch {
+          /* try next candidate */
+        }
+      }
+      return {
+        doc: null,
+        matchType,
+        totalCandidates: docs.length,
+        selectedIndex: -1,
+      };
     };
+
+    if (preferLatest) {
+      const latestIdx = Math.max(0, docs.length - 1);
+      const order = Array.from({ length: docs.length }, (_, i) => (latestIdx - i + docs.length) % docs.length);
+      return pickFromOrder(order);
+    }
+
+    const startIdx = await nextCursorIndex(key, docs.length);
+    const order = Array.from({ length: docs.length }, (_, i) => (startIdx + i) % docs.length);
+    return pickFromOrder(order);
   };
 
   const toolNamesToTry = normalizedTool

@@ -5,7 +5,35 @@ import AIGeneratorRecord from '../models/AIGeneratorRecord.js';
 import AiToolTopic from '../models/AiToolTopic.js';
 import { isDeprecatedAiToolIdentifier, isValidAiToolSlug } from '../config/aiToolTemplates.js';
 import { generateStructuredContentForAiGenerator } from '../services/ai-content-engine-service.js';
+import {
+  beginTokenUsageSession,
+  endTokenUsageSession,
+} from '../services/gemini-service.js';
 import { boardMongoMatch, canonicalBoardLabel } from '../utils/board-label.js';
+import {
+  getAiGeneratorVariantAngle,
+  getAiGeneratorVariantScenario,
+} from '../constants/ai-generator-variant-angles.js';
+import {
+  isAiGeneratorCostSaverEnabled,
+  isRecoveryPass,
+} from '../utils/ai-generator-batch-config.js';
+import { computeGeminiCostFromTokenUsage } from '../utils/gemini-token-cost.js';
+import { buildHistoricalGenerationContext } from '../services/ai-generator-historical-index.js';
+import { persistGenerationFingerprints } from '../services/ai-generator-fingerprint-service.js';
+import {
+  validateRecordUniqueness,
+  collectQuestionTextsFromStructured,
+} from '../services/ai-generator-uniqueness-engine.js';
+import { extractTitleFromStructured } from '../services/ai-generator-content-extractor.js';
+import { generateBatchAndSave } from '../services/ai-generator-batch-orchestrator.js';
+import { acquireGenerationLock, releaseGenerationLock } from '../services/ai-generator-lock-service.js';
+import {
+  getDuplicateAuditSummary,
+  getGenerationAnalytics,
+  getTopicSaturationReport,
+} from '../services/ai-generator-audit-service.js';
+import { AI_TOOL_ORDERED_SLUGS } from '../config/aiToolTemplates.js';
 
 function normalizeText(value) {
   return String(value || '').trim().replace(/\s+/g, ' ');
@@ -207,6 +235,12 @@ function groupAiGeneratorRecords(items) {
       generatedContent: record.generatedContent || record.content || '',
       createdAt: record.createdAt,
       updatedAt: record.updatedAt,
+      metadata: record.metadata || {},
+      generationVariant:
+        record.metadata?.generationVariant ||
+        record.metadata?.extraParams?.generationVariant ||
+        null,
+      variantAngle: record.metadata?.extraParams?.variantAngle || '',
     });
   }
 
@@ -214,6 +248,8 @@ function groupAiGeneratorRecords(items) {
 }
 
 export async function generateAndSaveContent(req, res) {
+  let tokenUsage = null;
+  let cost = null;
   try {
     if (!ensureSuperAdmin(req, res)) return;
 
@@ -235,13 +271,13 @@ export async function generateAndSaveContent(req, res) {
     if (isDeprecatedAiToolIdentifier(toolSlug) || isDeprecatedAiToolIdentifier(toolDisplayName)) {
       return res.status(400).json({
         success: false,
-        message: 'This tool format is no longer supported. Use one of the 17 curriculum tools.',
+        message: `This tool format is no longer supported. Use one of the ${AI_TOOL_ORDERED_SLUGS.length} curriculum tools.`,
       });
     }
     if (!isValidAiToolSlug(toolSlug)) {
       return res.status(400).json({
         success: false,
-        message: `Invalid toolSlug. Must be one of the 17 AI curriculum tools.`,
+        message: `Invalid toolSlug. Must be one of the ${AI_TOOL_ORDERED_SLUGS.length} AI curriculum tools.`,
       });
     }
 
@@ -257,17 +293,101 @@ export async function generateAndSaveContent(req, res) {
       }
     }
 
-    const extraParams = req.body.extraParams || {};
-    const { generatedContent, structuredContent, contentType } =
-      await generateStructuredContentForAiGenerator(toolSlug, {
-        board,
-        classLabel: className,
-        gradeLevel: className,
-        subject: subjectName,
-        topic: topicName || 'General',
-        subTopic: subtopicName,
-        extraParams,
-      });
+    const generationVariant = Number.parseInt(String(req.body.generationVariant ?? ''), 10);
+    const batchSize = Number.parseInt(String(req.body.batchSize ?? ''), 10);
+    const extraParams = {
+      ...(req.body.extraParams && typeof req.body.extraParams === 'object' ? req.body.extraParams : {}),
+      ...(Number.isFinite(generationVariant) && generationVariant > 0
+        ? {
+            generationVariant,
+            variantIndex: generationVariant,
+            variantAngle: getAiGeneratorVariantAngle(generationVariant),
+            variantScenario: getAiGeneratorVariantScenario(generationVariant),
+            uniqueSeed: `${Date.now()}-v${generationVariant}-${Math.random().toString(36).slice(2, 12)}-${Math.random().toString(36).slice(2, 8)}`,
+          }
+        : {}),
+      ...(Number.isFinite(batchSize) && batchSize > 0 ? { batchSize } : {}),
+      ...(req.body.recoveryPass === true ? { recoveryPass: true } : {}),
+    };
+
+    const isBatchVariant = Number.isFinite(generationVariant) && generationVariant > 0;
+    const recoveryPass = isRecoveryPass(extraParams, req.body);
+
+    const scope = {
+      toolSlug,
+      board,
+      className,
+      subject: subjectName,
+      topic: topicName,
+      subtopic: subtopicName,
+    };
+    const historical = await buildHistoricalGenerationContext(scope);
+    const uniquenessCtx = {
+      batchTitles: [],
+      batchTexts: [],
+      historicalTexts: [
+        ...historical.questionSnippets,
+        ...(historical.fingerprints?.question || []).map((r) => r.originalText).filter(Boolean),
+      ],
+      historicalTitles: historical.titles,
+    };
+
+    if (req.body.batchTitles && Array.isArray(req.body.batchTitles)) {
+      uniquenessCtx.batchTitles = req.body.batchTitles.map((t) => String(t || '').trim()).filter(Boolean);
+    }
+    if (req.body.batchQuestionTexts && Array.isArray(req.body.batchQuestionTexts)) {
+      uniquenessCtx.batchTexts = req.body.batchQuestionTexts.map((t) => String(t || '').trim()).filter(Boolean);
+    }
+
+    beginTokenUsageSession(
+      isBatchVariant ? `ai-generator-variant-${generationVariant}` : 'ai-generator',
+    );
+    let generatedContent;
+    let structuredContent;
+    let contentType;
+    let sectionRepairCount = 0;
+    let duplicatePreventionCount = 0;
+    const maxUniquenessAttempts = Number(process.env.AI_GENERATOR_UNIQUENESS_MAX_ATTEMPTS) || 3;
+
+    try {
+      let lastUniquenessError = '';
+      for (let uniqAttempt = 1; uniqAttempt <= maxUniquenessAttempts; uniqAttempt += 1) {
+        try {
+          ({ generatedContent, structuredContent, contentType, sectionRepairCount } =
+            await generateStructuredContentForAiGenerator(toolSlug, {
+              board,
+              classLabel: className,
+              gradeLevel: className,
+              subject: subjectName,
+              topic: topicName || 'General',
+              subTopic: subtopicName,
+              extraParams: {
+                ...extraParams,
+                ...(uniqAttempt > 1 ? { recoveryPass: true } : {}),
+              },
+              historicalPromptBlock: historical.promptBlock,
+              upgradeToFlash:
+                (recoveryPass && !isAiGeneratorCostSaverEnabled()) || uniqAttempt > 1,
+              recoveryPass: recoveryPass || uniqAttempt > 1,
+            }));
+        } catch (genErr) {
+          if (uniqAttempt >= maxUniquenessAttempts) throw genErr;
+          duplicatePreventionCount += 1;
+          continue;
+        }
+
+        const uniqueness = validateRecordUniqueness(toolSlug, structuredContent, uniquenessCtx);
+        if (uniqueness.valid) break;
+        lastUniquenessError = uniqueness.errors.join('; ');
+        duplicatePreventionCount += 1;
+        if (uniqAttempt >= maxUniquenessAttempts) {
+          throw new Error(lastUniquenessError || 'Generated content failed uniqueness checks.');
+        }
+      }
+    } finally {
+      tokenUsage = endTokenUsageSession();
+      cost = computeGeminiCostFromTokenUsage(tokenUsage);
+    }
 
     const uid = req.userId;
     const generatedBy = uid || 'unknown';
@@ -277,7 +397,7 @@ export async function generateAndSaveContent(req, res) {
     const allowedReviewStates = ['approved', 'draft', 'under_review'];
     const reviewStatus = allowedReviewStates.includes(explicitReviewStatus)
       ? explicitReviewStatus
-      : (process.env.AI_GENERATOR_DEFAULT_STATE === 'approved' ? 'approved' : 'draft');
+      : 'approved';
 
     const record = await AiToolGeneration.create({
       toolName: toolSlug,
@@ -298,15 +418,41 @@ export async function generateAndSaveContent(req, res) {
         board,
         createdByName: getRequestUserName(req),
         createdByRole: 'super-admin',
-        extraParams: req.body.extraParams || {},
+        extraParams,
         contentType,
         structuredContent,
         formatSource: 'aiToolTemplates',
+        generationVariant: Number.isFinite(generationVariant) && generationVariant > 0 ? generationVariant : undefined,
+        batchSize: Number.isFinite(batchSize) && batchSize > 0 ? batchSize : undefined,
+        existingCountAtGeneration: historical.existingCount,
+        sectionRepairCount,
+        duplicatePreventionCount,
+        tokenUsage,
+        cost,
       },
       ...(teacherId ? { teacherId } : {}),
     });
 
+    const fingerprintMeta = await persistGenerationFingerprints(
+      toolSlug,
+      structuredContent,
+      scope,
+      record._id,
+    );
+    await AiToolGeneration.updateOne(
+      { _id: record._id },
+      {
+        $set: {
+          'metadata.contentFingerprint': fingerprintMeta.contentFingerprint,
+          'metadata.questionFingerprints': fingerprintMeta.questionFingerprints,
+          'metadata.objectiveFingerprints': fingerprintMeta.objectiveFingerprints,
+          'metadata.activityFingerprints': fingerprintMeta.activityFingerprints,
+        },
+      },
+    );
+
     const lean = record.toObject();
+    lean.metadata = { ...lean.metadata, ...fingerprintMeta };
     return res.status(201).json({
       success: true,
       data: {
@@ -317,6 +463,8 @@ export async function generateAndSaveContent(req, res) {
         topicName: lean.topic,
         subtopicName: lean.subtopic,
         toolSlug: lean.toolName,
+        tokenUsage,
+        cost,
       },
       message: 'Content generated and saved successfully.',
     });
@@ -343,6 +491,14 @@ export async function generateAndSaveContent(req, res) {
     return res.status(isLlmFailure ? 502 : 500).json({
       success: false,
       message,
+      ...(tokenUsage
+        ? {
+            data: {
+              tokenUsage,
+              cost,
+            },
+          }
+        : {}),
     });
   }
 }
@@ -560,6 +716,50 @@ export async function deleteGeneratorRecord(req, res) {
   }
 }
 
+export async function bulkDeleteGeneratorRecords(req, res) {
+  try {
+    if (!ensureSuperAdmin(req, res)) return;
+
+    const rawIds = Array.isArray(req.body?.ids) ? req.body.ids : [];
+    const ids = [...new Set(rawIds.map((x) => String(x || '').trim()).filter(Boolean))].filter((id) =>
+      mongoose.Types.ObjectId.isValid(id),
+    );
+    if (ids.length === 0) {
+      return res.status(400).json({ success: false, message: 'No valid record ids provided.' });
+    }
+
+    let deletedCount = 0;
+    const errors = [];
+    for (const id of ids) {
+      let deleted = await AiToolGeneration.findOneAndDelete({
+        _id: id,
+        ...buildGeneratorMongoQuery({}),
+      }).lean();
+      if (!deleted) {
+        deleted = await AIGeneratorRecord.findByIdAndDelete(id).lean();
+      }
+      if (deleted) {
+        deletedCount += 1;
+      } else {
+        errors.push({ id, message: 'Record not found.' });
+      }
+    }
+
+    return res.json({
+      success: deletedCount > 0,
+      data: { deletedCount, failedCount: errors.length },
+      errors: errors.length > 0 ? errors.slice(0, 20) : undefined,
+      message: `Deleted ${deletedCount} of ${ids.length} record(s).`,
+    });
+  } catch (error) {
+    console.error('bulkDeleteGeneratorRecords error:', error);
+    return res.status(500).json({
+      success: false,
+      message: 'Failed to bulk delete records.',
+    });
+  }
+}
+
 export async function getReviewQueue(req, res) {
   try {
     if (!ensureSuperAdmin(req, res)) return;
@@ -727,5 +927,149 @@ export async function getManagedTopicTaxonomy(req, res) {
   } catch (error) {
     console.error('getManagedTopicTaxonomy error:', error);
     return res.status(500).json({ success: false, message: 'Failed to fetch managed topics.' });
+  }
+}
+
+export async function generateBatchContent(req, res) {
+  try {
+    if (!ensureSuperAdmin(req, res)) return;
+
+    const toolSlug = normalizeText(req.body.toolSlug || req.body.toolType);
+    const board = canonicalBoardLabel(normalizeText(req.body.board || req.body.boardName));
+    const toolDisplayName = normalizeText(req.body.toolName);
+    const className = normalizeText(req.body.className || req.body.classNumber);
+    const subjectName = normalizeText(req.body.subjectName || req.body.subject);
+    const topicName = normalizeText(req.body.topicName || req.body.topic);
+    const subtopicName = normalizeText(req.body.subtopicName || req.body.subTopic || req.body.subtopic);
+    const batchSize = Number.parseInt(String(req.body.batchSize ?? '25'), 10);
+    const forceGenerate =
+      req.body.forceGenerate === true ||
+      req.body.forceGenerateNew === true ||
+      req.body.extraParams?.forceGenerate === true;
+
+    if (!toolSlug || !toolDisplayName || !className || !subjectName || !subtopicName) {
+      return res.status(400).json({
+        success: false,
+        message: 'toolSlug, toolName, className, subjectName, and subtopicName are required.',
+      });
+    }
+    if (!isValidAiToolSlug(toolSlug)) {
+      return res.status(400).json({
+        success: false,
+        message: `Invalid toolSlug. Must be one of the ${AI_TOOL_ORDERED_SLUGS.length} AI curriculum tools.`,
+      });
+    }
+
+    const result = await generateBatchAndSave(
+      {
+        toolSlug,
+        toolName: toolDisplayName,
+        board,
+        className,
+        subjectName,
+        topicName,
+        subtopicName,
+        extraParams: req.body.extraParams,
+        reviewStatus: req.body.reviewStatus,
+        forceGenerate,
+        forceGenerateNew: forceGenerate,
+      },
+      {
+        batchSize: Number.isFinite(batchSize) && batchSize > 0 ? batchSize : 25,
+        reqUser: {
+          userId: req.userId,
+          name: getRequestUserName(req),
+        },
+      },
+    );
+
+    if (result.locked) {
+      return res.status(409).json({
+        success: false,
+        message: result.message || 'Generation already in progress.',
+        data: { locked: true },
+      });
+    }
+
+    return res.status(result.success ? 201 : 207).json({
+      success: result.success,
+      data: {
+        savedCount: result.savedCount,
+        failedCount: result.failedCount,
+        batchSize: result.batchSize,
+        existingCountBefore: result.existingCountBefore,
+        records: result.records,
+        failures: result.failures,
+        tokenUsage: result.tokenUsage,
+        cost: result.cost,
+        mode: result.mode,
+        saturation: result.saturation,
+        strategy: result.strategy,
+        geminiGenerationsAvoided: result.geminiGenerationsAvoided || 0,
+        tokenSavingsEstimate: result.tokenSavingsEstimate || 0,
+        duplicatePreventionCount: result.duplicatePreventionCount || 0,
+      },
+      message:
+        result.message ||
+        (result.success
+          ? `${result.savedCount} unique records saved.`
+          : `${result.savedCount}/${result.batchSize} records saved; ${result.failedCount} failed.`),
+    });
+  } catch (error) {
+    console.error('generateBatchContent error:', error);
+    return res.status(500).json({
+      success: false,
+      message: error?.message || 'Batch generation failed.',
+    });
+  }
+}
+
+export async function getDuplicateAudit(req, res) {
+  try {
+    if (!ensureSuperAdmin(req, res)) return;
+    const summary = await getDuplicateAuditSummary({
+      toolSlug: normalizeText(req.query.toolSlug),
+      board: normalizeText(req.query.board),
+      className: normalizeText(req.query.className),
+      subject: normalizeText(req.query.subjectName || req.query.subject),
+      topic: normalizeText(req.query.topicName || req.query.topic),
+      subtopic: normalizeText(req.query.subtopicName || req.query.subtopic),
+    });
+    return res.json({ success: true, data: summary });
+  } catch (error) {
+    console.error('getDuplicateAudit error:', error);
+    return res.status(500).json({ success: false, message: 'Failed to load duplicate audit.' });
+  }
+}
+
+export async function getAiGeneratorAnalytics(req, res) {
+  try {
+    if (!ensureSuperAdmin(req, res)) return;
+    const analytics = await getGenerationAnalytics({
+      toolSlug: normalizeText(req.query.toolSlug),
+      board: normalizeText(req.query.board),
+    });
+    return res.json({ success: true, data: analytics });
+  } catch (error) {
+    console.error('getAiGeneratorAnalytics error:', error);
+    return res.status(500).json({ success: false, message: 'Failed to load analytics.' });
+  }
+}
+
+export async function getTopicSaturation(req, res) {
+  try {
+    if (!ensureSuperAdmin(req, res)) return;
+    const report = await getTopicSaturationReport({
+      toolSlug: normalizeText(req.query.toolSlug),
+      board: normalizeText(req.query.board),
+      className: normalizeText(req.query.className),
+      subject: normalizeText(req.query.subjectName || req.query.subject),
+      topic: normalizeText(req.query.topicName || req.query.topic),
+      subtopic: normalizeText(req.query.subtopicName || req.query.subtopic),
+    });
+    return res.json({ success: true, data: report });
+  } catch (error) {
+    console.error('getTopicSaturation error:', error);
+    return res.status(500).json({ success: false, message: 'Failed to load topic saturation.' });
   }
 }

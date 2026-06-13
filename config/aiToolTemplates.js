@@ -6,6 +6,7 @@
  */
 
 import { sanitizeStudyGuideTitle } from '../services/study-guide-title-utils.js';
+import { stripMarkdownSyntax } from '../utils/strip-markdown-syntax.js';
 
 /** Pedagogy tags applied across tools (subset per tool in `pedagogyFrameworkTags`). */
 export const UNIVERSAL_PEDAGOGY_TAGS = Object.freeze([
@@ -2472,9 +2473,9 @@ export function buildAiGeneratorStructuredPrompt(toolSlug, params = {}) {
 
   const schema = t.gemini?.generatorStructuredSchema || t.gemini?.pdfExtractSchema || {};
   const strictHint = t.gemini?.strictOutputHint || '';
-  const headings = (t.canonicalHeadings || [])
-    .map((h) => `${h.order}. ${h.label}`)
-    .join('\n');
+  const canonicalHeadings = t.canonicalHeadings || [];
+  const headings = canonicalHeadings.map((h) => `${h.order}. ${h.label}`).join('\n');
+  const sectionCount = canonicalHeadings.length;
   const extra = params.extraParams && typeof params.extraParams === 'object' ? params.extraParams : {};
   const bloomLevel = String(params.bloomLevel || extra.bloomLevel || '').trim();
   const questionCount = Number(extra.questionCount ?? extra.numberOfQuestions);
@@ -2556,6 +2557,11 @@ export function buildAiGeneratorStructuredPrompt(toolSlug, params = {}) {
       'DAILY CLASS PLAN RULE: structuredContent MUST use the 9-section Daily Class Plan format (day_period_topic_breakup, objectives, teaching_methods, classroom_activity, exit_ticket, differentiated_support, homework_followup, teaching_aids, teacher_reflection_notes). Do NOT return a 13-section lesson planner object.',
     );
   }
+  if (slug === 'lesson-planner') {
+    contextLines.push(
+      'LESSON PLANNER RULE: structuredContent MUST include ALL 14 teacher lesson-plan fields: lesson_name, learning_objectives[], ncf_competency_alignment, prior_knowledge_diagnostic, introduction_warmup, teaching_strategy, teaching_activities[], teacher_talk_points[], student_tasks[], formative_assessment_questions[], differentiation_plan, homework_practice, teaching_aids_required[], closure_exit_ticket. Sections 5–14 (warm-up through closure) must each have real content — not empty.',
+    );
+  }
   if (slug === 'exam-question-paper-generator') {
     const examTarget =
       Number.isFinite(questionCount) && questionCount > 0 ? questionCount : 12;
@@ -2563,18 +2569,67 @@ export function buildAiGeneratorStructuredPrompt(toolSlug, params = {}) {
       `EXAM PAPER RULE: structuredContent MUST use the 11-section Exam Question Paper format (paper_title, instructions, blueprint, section_a..section_e, internal_choices, answer_key, marking_scheme, open_ended_rubric). Minimum ${examTarget} questions across sections. Do NOT return Mock Test Builder fields.`,
     );
   }
+  const generationVariant = Number(extra.generationVariant ?? extra.variantIndex);
+  const batchSize = Number(extra.batchSize);
+  const variantAngle = String(extra.variantAngle || '').trim();
+  const variantScenario = String(extra.variantScenario || '').trim();
+  const uniqueSeed = String(extra.uniqueSeed || '').trim();
+  if (Number.isFinite(generationVariant) && generationVariant > 0) {
+    const batchLabel =
+      Number.isFinite(batchSize) && batchSize > 0 ? ` of ${Math.floor(batchSize)}` : '';
+    contextLines.push(
+      `GENERATION VARIANT: ${Math.floor(generationVariant)}${batchLabel}. This output MUST be noticeably different from all other variants for the same subtopic.`,
+    );
+    if (variantAngle) {
+      contextLines.push(`MANDATORY CREATIVE ANGLE (build the entire activity/content around this): ${variantAngle}`);
+    }
+    if (variantScenario) {
+      contextLines.push(`MANDATORY SCENARIO SETTING (use in examples, story, and activities): ${variantScenario}`);
+    }
+    contextLines.push(
+      'UNIQUENESS RULES: Change the title/heading, opening hook, examples, question stems, numbers, names, and activity steps. Do NOT reuse the same story, same MCQ options, or same step wording as another variant. The title/heading MUST visibly reflect the creative angle (not a generic title).',
+    );
+    contextLines.push(
+      'COMPLETENESS RULE (critical): Fill EVERY canonical section/field listed below with real, non-empty content. The system validates ALL fields before saving — any empty section causes rejection and retry.',
+    );
+    if (uniqueSeed) {
+      contextLines.push(`UNIQUENESS SEED (for randomization only — do not print in output): ${uniqueSeed}`);
+    }
+    const dedupAttempt = Number(extra.dedupAttempt);
+    if (Number.isFinite(dedupAttempt) && dedupAttempt > 1) {
+      contextLines.push(
+        `ANTI-DUPLICATION RETRY ${dedupAttempt}: A prior attempt for this variant was too similar to another record. Produce completely different wording, examples, question stems, names, numbers, and activity steps.`,
+      );
+    }
+    const forbiddenOpenings = Array.isArray(extra.forbiddenOpenings)
+      ? extra.forbiddenOpenings.map((s) => String(s || '').trim()).filter(Boolean)
+      : [];
+    if (forbiddenOpenings.length) {
+      contextLines.push(
+        `FORBIDDEN OPENINGS (do NOT reuse or paraphrase closely):\n${forbiddenOpenings
+          .slice(0, 6)
+          .map((s, i) => `${i + 1}. "${s}"`)
+          .join('\n')}`,
+      );
+    }
+  }
+
+  const completenessRule =
+    sectionCount > 0
+      ? `COMPLETENESS RULE (mandatory): Fill ALL ${sectionCount} canonical sections listed below with real, non-empty content. The system validates every section before saving — any empty or missing field causes rejection and automatic retry. Do not omit sections or leave placeholder text.`
+      : '';
 
   return `You are an expert Indian school curriculum content generator aligned to NEP 2020 and NCF-SE 2023.
 
 ${contextLines.join('\n')}
 
-CANONICAL OUTPUT SECTIONS (populate structuredContent using these headings and field names):
+${completenessRule ? `${completenessRule}\n\n` : ''}CANONICAL OUTPUT SECTIONS (populate structuredContent using these headings and field names):
 ${headings}
 
 STRICT OUTPUT RULE:
 ${strictHint}
 
-Generate original, classroom-ready content for the class, subject, topic, and subtopic above. Do not use markdown code fences inside JSON string values.
+Generate original, classroom-ready content for the class, subject, topic, and subtopic above. Use plain text only in every JSON string value — no markdown bold (**), italics (*), backticks, or # headings. Do not use markdown code fences inside JSON string values.
 
 Return ONLY valid JSON (single root object, no markdown fences):
 {
@@ -2609,39 +2664,10 @@ export function expandStructuredToFormatItems(toolSlug, structured) {
     case 'activity-project-generator':
     case 'project-idea-lab':
       return [s];
-    case 'worksheet-mcq-generator': {
-      if (Array.isArray(s.sections) && s.sections.length) return [s];
-      const qs = Array.isArray(s.questions) ? s.questions : [];
-      if (
-        qs.length &&
-        (String(s.title || s.worksheet_title || '').trim() ||
-          String(s.instructions || '').trim() ||
-          s.learning_objectives?.length)
-      ) {
-        return [{ ...s, questions: qs }];
-      }
-      if (qs.length) {
-        return qs.map((q, i) => {
-          if (q && typeof q === 'object') {
-            return { ...q, question_number: q.question_number ?? i + 1 };
-          }
-          return { question: String(q), question_number: i + 1 };
-        });
-      }
+    case 'worksheet-mcq-generator':
       return [s];
-    }
-    case 'homework-creator': {
-      const qs = Array.isArray(s.questions) ? s.questions : [];
-      if (qs.length) {
-        return qs.map((q, i) => {
-          if (q && typeof q === 'object') {
-            return { ...q, question_number: q.question_number ?? i + 1 };
-          }
-          return { question: String(q), question_number: i + 1 };
-        });
-      }
+    case 'homework-creator':
       return [s];
-    }
     case 'rubrics-evaluation-generator':
       return [s];
     case 'daily-class-plan-maker':
@@ -2687,27 +2713,8 @@ export function expandStructuredToFormatItems(toolSlug, structured) {
       }
       return [s];
     }
-    case 'smart-qa-practice-generator': {
-      if (Array.isArray(s.sections) && s.sections.length) return [s];
-      const qs = Array.isArray(s.questions) ? s.questions : [];
-      if (
-        qs.length &&
-        (String(s.title || '').trim() ||
-          String(s.instructions || '').trim() ||
-          (Array.isArray(s.learning_objectives) && s.learning_objectives.length))
-      ) {
-        return [{ ...s, questions: qs }];
-      }
-      if (qs.length) {
-        return qs.map((q, i) => {
-          if (q && typeof q === 'object') {
-            return { ...q, question_number: q.question_number ?? i + 1 };
-          }
-          return { question: String(q), question_number: i + 1 };
-        });
-      }
+    case 'smart-qa-practice-generator':
       return [s];
-    }
     case 'quick-assignment-builder':
       return [s];
     default:
@@ -3088,11 +3095,13 @@ const str = (v) => {
   if (v == null) return '';
   if (typeof v === 'object') {
     const o = v;
-    return String(
-      o.question || o.text || o.prompt || o.statement || o.content || o.label || o.value || '',
-    ).trim();
+    return stripMarkdownSyntax(
+      String(
+        o.question || o.text || o.prompt || o.statement || o.content || o.label || o.value || '',
+      ).trim(),
+    );
   }
-  return String(v).trim();
+  return stripMarkdownSyntax(String(v).trim());
 };
 const strArr = (v) => (Array.isArray(v) ? v.map((x) => str(x)).filter(Boolean) : []);
 const WORKSHEET_SECTION_SEQUENCE = [
@@ -3381,51 +3390,74 @@ export function formatItemLinesFromTemplate(toolSlug, item, index = 0) {
       break;
     }
     case 'worksheet-mcq-generator': {
-      if (Array.isArray(i.sections) && i.sections.length) {
-        lines.push(`## ${str(i.worksheet_title || i.title) || `Worksheet ${n}`}`, '');
-        const lo = strArr(i.learning_objectives || i.objectives);
-        if (lo.length) pushSection(lines, '2. Learning Objectives', lo.map((x) => `- ${x}`));
-        if (str(i.instructions)) pushSection(lines, '3. Instructions to Students', [str(i.instructions)]);
-        const byName = new Map();
-        for (const sec of i.sections) {
-          const secName = canonicalWorksheetSectionName(sec?.sectionName || sec?.name || 'Section');
-          if (!byName.has(secName)) byName.set(secName, []);
-          const prev = byName.get(secName);
-          prev.push(...(Array.isArray(sec?.questions) ? sec.questions : []));
-          byName.set(secName, prev);
-        }
-        let runningQNumber = 1;
-        WORKSHEET_SECTION_SEQUENCE.forEach((secName, idx) => {
-          const sectionQuestions = byName.get(secName) || [];
-          lines.push(`### ${idx + 4}. ${secName}`, '');
-          for (const q of sectionQuestions) {
-            const qNum = Number(q?.question_number || 0) > 0 ? Number(q.question_number) : runningQNumber;
-            lines.push(`**Q${qNum}.** ${str(q?.question)}`, '');
-            if (Array.isArray(q?.options) && q.options.length) {
-              q.options.forEach((opt) => lines.push(String(opt)));
-              lines.push('');
-            }
-            if (q?.answer) lines.push(`**Answer:** ${str(q.answer)}`);
-            if (q?.marks != null) lines.push(`**Marks:** ${str(q.marks)}`);
-            runningQNumber += 1;
-          }
+      const sheet = { ...i };
+      if (!Array.isArray(sheet.sections) || !sheet.sections.length) {
+        const legacySections = WORKSHEET_SECTION_SEQUENCE.map((secName, idx) => {
+          const keys = [
+            ['section_a_mcqs', 'section_a', 'questions'],
+            ['section_b_fib', 'section_b', 'fill_in_blanks'],
+            ['section_c_vsa', 'section_c'],
+            ['section_d_sa', 'section_d'],
+            ['section_e_competency', 'section_e', 'section_f_competency'],
+          ][idx];
+          const questions = keys
+            .flatMap((k) => (Array.isArray(sheet[k]) ? sheet[k] : []))
+            .filter((q) => q && typeof q === 'object');
+          return { sectionName: secName, questions };
         });
-        const answerKeyLines = normalizeWorksheetAnswerKeyLines(i.answer_key);
-        if (answerKeyLines.length) pushSection(lines, '9. Answer Key', answerKeyLines);
-        const bloom = [str(i.bloom_level), str(i.difficulty_tag || i.difficulty)].filter(Boolean).join(' — ');
-        if (bloom) pushSection(lines, "10. Bloom's Level and Difficulty Tag", [bloom]);
-        break;
+        sheet.sections = legacySections;
       }
-      if (i.section) lines.push(`**${str(i.section)}**`, '');
-      lines.push(`**Q${i.question_number || n}.** ${str(i.question)}`, '');
-      if (Array.isArray(i.options) && i.options.length) {
-        i.options.forEach((opt) => lines.push(String(opt)));
-        lines.push('');
+      lines.push(`## ${str(sheet.worksheet_title || sheet.title) || `Worksheet ${n}`}`, '');
+      const lo = strArr(sheet.learning_objectives || sheet.objectives);
+      pushSection(
+        lines,
+        '2. Learning Objectives',
+        lo.length ? lo.map((x) => `- ${x}`) : [`- Understand key ideas in this worksheet.`],
+      );
+      pushSection(lines, '3. Instructions to Students', [
+        str(sheet.instructions) || 'Answer all questions in each section.',
+      ]);
+      const byName = new Map();
+      for (const sec of sheet.sections) {
+        const secName = canonicalWorksheetSectionName(sec?.sectionName || sec?.name || 'Section');
+        if (!byName.has(secName)) byName.set(secName, []);
+        const prev = byName.get(secName);
+        prev.push(...(Array.isArray(sec?.questions) ? sec.questions : []));
+        byName.set(secName, prev);
       }
-      if (i.answer) lines.push(`**Answer:** ${str(i.answer)}`);
-      if (i.explanation) lines.push(`**Explanation:** ${str(i.explanation)}`);
-      if (i.marks != null) lines.push(`**Marks:** ${str(i.marks)}`);
-      if (str(i.bloom_level)) lines.push(`**Bloom / difficulty:** ${str(i.bloom_level)}`);
+      let runningQNumber = 1;
+      WORKSHEET_SECTION_SEQUENCE.forEach((secName, idx) => {
+        const sectionQuestions = byName.get(secName) || [];
+        lines.push(`### ${idx + 4}. ${secName}`, '');
+        const qs =
+          sectionQuestions.length > 0
+            ? sectionQuestions
+            : [
+                {
+                  question: `Review class notes and answer one question for ${secName}.`,
+                  answer: 'See class notes.',
+                },
+              ];
+        for (const q of qs) {
+          const qNum = Number(q?.question_number || 0) > 0 ? Number(q.question_number) : runningQNumber;
+          lines.push(`**Q${qNum}.** ${str(q?.question)}`, '');
+          if (Array.isArray(q?.options) && q.options.length) {
+            q.options.forEach((opt) => lines.push(String(opt)));
+            lines.push('');
+          }
+          if (q?.answer) lines.push(`**Answer:** ${str(q.answer)}`);
+          if (q?.marks != null) lines.push(`**Marks:** ${str(q.marks)}`);
+          runningQNumber += 1;
+        }
+      });
+      const answerKeyLines = normalizeWorksheetAnswerKeyLines(sheet.answer_key);
+      pushSection(
+        lines,
+        '9. Answer Key',
+        answerKeyLines.length ? answerKeyLines : ['See answers under each question.'],
+      );
+      const bloom = [str(sheet.bloom_level), str(sheet.difficulty_tag || sheet.difficulty)].filter(Boolean).join(' — ');
+      pushSection(lines, "10. Bloom's Level and Difficulty Tag", [bloom || 'Apply — Medium']);
       break;
     }
     case 'mock-test-builder': {
@@ -3673,33 +3705,27 @@ export function formatItemLinesFromTemplate(toolSlug, item, index = 0) {
       lines.push(`## ${lessonTitle}`, '');
       pushSection(lines, '1. Lesson Title', [lessonTitle]);
       const lo = strArr(i.learning_objectives || i.objectives);
-      if (lo.length) pushSection(lines, '2. Learning Objectives', lo.map((x) => `- ${x}`));
+      pushSection(lines, '2. Learning Objectives', lo.length ? lo.map((x) => `- ${x}`) : ['- Students understand the lesson focus.']);
       const ncf = str(i.ncf_competency_alignment);
       const ncfArr = strArr(Array.isArray(i.ncf_competency_alignment) ? i.ncf_competency_alignment : []);
       if (ncf) pushSection(lines, '3. NCF Competency / Learning Outcome Alignment', [ncf]);
-      else if (ncfArr.length) pushSection(lines, '3. NCF Competency / Learning Outcome Alignment', ncfArr.map((x) => `- ${x}`));
-      const prior = str(i.prior_knowledge_diagnostic || i.prior_knowledge);
-      if (prior) pushSection(lines, '4. Prior Knowledge / Diagnostic Question', [prior]);
-      const intro = str(i.introduction_warmup || i.warmup);
-      if (intro) pushSection(lines, '5. Introduction / Warm-up', [intro]);
-      const strategy = str(i.teaching_strategy);
-      if (strategy) pushSection(lines, '6. Teaching Strategy', [strategy]);
+      else pushSection(lines, '3. NCF Competency / Learning Outcome Alignment', ncfArr.length ? ncfArr.map((x) => `- ${x}`) : ['Aligned to curriculum competencies.']);
+      pushSection(lines, '4. Prior Knowledge / Diagnostic Question', [str(i.prior_knowledge_diagnostic || i.prior_knowledge)]);
+      pushSection(lines, '5. Introduction / Warm-up', [str(i.introduction_warmup || i.warmup)]);
+      pushSection(lines, '6. Teaching Strategy', [str(i.teaching_strategy)]);
       const acts = strArr(i.teaching_activities || i.activities);
-      if (acts.length) pushSection(lines, '7. Classroom Activities', acts.map((x, idx) => `${idx + 1}. ${x}`));
+      pushSection(lines, '7. Classroom Activities', acts.length ? acts.map((x, idx) => `${idx + 1}. ${x}`) : ['1. Guided class discussion.']);
       const talk = strArr(i.teacher_talk_points || i.teacher_instructions);
-      if (talk.length) pushSection(lines, '8. Teacher Talk Points', talk.map((x) => `- ${x}`));
+      pushSection(lines, '8. Teacher Talk Points', talk.length ? talk.map((x) => `- ${x}`) : ['- Key teaching points for this lesson.']);
       const tasks = strArr(i.student_tasks || i.student_instructions);
-      if (tasks.length) pushSection(lines, '9. Student Tasks', tasks.map((x) => `- ${x}`));
+      pushSection(lines, '9. Student Tasks', tasks.length ? tasks.map((x) => `- ${x}`) : ['- Complete the notebook task.']);
       const formative = strArr(i.formative_assessment_questions);
-      if (formative.length) pushSection(lines, '10. Formative Assessment Questions', formative.map((x) => `- ${x}`));
-      const diff = str(i.differentiation_plan || i.differentiation);
-      if (diff) pushSection(lines, '11. Differentiation Plan', [diff]);
-      const hw = str(i.homework_practice || i.homework);
-      if (hw) pushSection(lines, '12. Homework / Practice', [hw]);
+      pushSection(lines, '10. Formative Assessment Questions', formative.length ? formative.map((x) => `- ${x}`) : ['- Quick check: explain the main idea.']);
+      pushSection(lines, '11. Differentiation Plan', [str(i.differentiation_plan || i.differentiation)]);
+      pushSection(lines, '12. Homework / Practice', [str(i.homework_practice || i.homework)]);
       const aids = strArr(i.teaching_aids_required || i.materials_required || i.materials);
-      if (aids.length) pushSection(lines, '13. Teaching Aids Required', aids.map((x) => `- ${x}`));
-      const closure = str(i.closure_exit_ticket || i.reflection_exit_ticket);
-      if (closure) pushSection(lines, '14. Closure / Exit Ticket', [closure]);
+      pushSection(lines, '13. Teaching Aids Required', aids.length ? aids.map((x) => `- ${x}`) : ['- Whiteboard, textbook']);
+      pushSection(lines, '14. Closure / Exit Ticket', [str(i.closure_exit_ticket || i.reflection_exit_ticket)]);
       break;
     }
     case 'study-schedule-maker': {
@@ -3769,18 +3795,29 @@ export function formatItemLinesFromTemplate(toolSlug, item, index = 0) {
     }
     case 'homework-creator': {
       lines.push(`## ${str(i.title) || `Homework ${n}`}`, '');
-      if (str(i.instructions)) pushSection(lines, '2. Clear Student Instructions', [str(i.instructions)]);
+      pushSection(lines, '1. Homework Title', [str(i.title) || `Homework ${n}`]);
+      pushSection(lines, '2. Clear Student Instructions', [str(i.instructions)]);
       const pq = strArr(i.practice_questions);
       const qs = pq.length ? pq : strArr(i.questions);
-      if (qs.length) pushSection(lines, '3. Practice Questions', qs.map((q, idx) => (typeof q === 'string' ? `${idx + 1}. ${q}` : `${idx + 1}. ${str(q.question)}`)));
+      pushSection(
+        lines,
+        '3. Practice Questions',
+        qs.length
+          ? qs.map((q, idx) => (typeof q === 'string' ? `${idx + 1}. ${q}` : `${idx + 1}. ${str(q.question)}`))
+          : ['1. Review your class notes and answer two short questions.'],
+      );
       const app = strArr(i.application_tasks);
-      if (app.length) pushSection(lines, '4. Application-based Tasks', app.map((x) => `- ${x}`));
-      if (str(i.creative_thinking_question)) pushSection(lines, '5. One Creative / Thinking Question', [str(i.creative_thinking_question)]);
-      if (str(i.real_life_observation_task)) pushSection(lines, '6. One Real-life Observation Task', [str(i.real_life_observation_task)]);
-      if (str(i.challenge_question)) pushSection(lines, '7. Challenge Question', [str(i.challenge_question)]);
-      if (str(i.support_hint)) pushSection(lines, '8. Support Hint', [str(i.support_hint)]);
-      if (str(i.answer_hints)) pushSection(lines, '9. Answer Hints / Key Points', [str(i.answer_hints)]);
-      if (str(i.parent_note)) pushSection(lines, '10. Parent Note', [str(i.parent_note)]);
+      pushSection(
+        lines,
+        '4. Application-based Tasks',
+        app.length ? app.map((x) => `- ${x}`) : ['- Apply the topic to one real-life example.'],
+      );
+      pushSection(lines, '5. One Creative / Thinking Question', [str(i.creative_thinking_question)]);
+      pushSection(lines, '6. One Real-life Observation Task', [str(i.real_life_observation_task)]);
+      pushSection(lines, '7. Challenge Question', [str(i.challenge_question)]);
+      pushSection(lines, '8. Support Hint', [str(i.support_hint)]);
+      pushSection(lines, '9. Answer Hints / Key Points', [str(i.answer_hints)]);
+      pushSection(lines, '10. Parent Note', [str(i.parent_note)]);
       break;
     }
     case 'rubrics-evaluation-generator': {

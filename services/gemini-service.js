@@ -308,11 +308,15 @@ async function callChatCompletions({
   maxTokens = 2000,
   preferJson = false, // kept for compatibility with callers
   usageLabel = 'llm',
+  primaryModel = '',
 }) {
   const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   const contextTokens = Number(process.env.LLM_CONTEXT_TOKENS) || 0;
   const callGeminiFallback = async (normalizedMessages, jsonMode = preferJson) => {
-    const { apiKey, modelChain } = getGeminiFallbackConfig();
+    const { apiKey, modelChain: defaultChain } = getGeminiFallbackConfig();
+    const modelChain = String(primaryModel || '').trim()
+      ? mergeGeminiModelChain(primaryModel, defaultChain.join(','))
+      : defaultChain;
     if (!apiKey) {
       throw new Error('Gemini API key is missing');
     }
@@ -2611,7 +2615,7 @@ Provide: (1) what you see, (2) explanation/solution, (3) key takeaways.`;
     }
   }
 
-  async generateStructuredContent(prompt, format = 'text') {
+  async generateStructuredContent(prompt, format = 'text', options = {}) {
     const wantsJson = String(format).toLowerCase() === 'json';
     const messages = [
       {
@@ -2623,12 +2627,22 @@ Provide: (1) what you see, (2) explanation/solution, (3) key takeaways.`;
       { role: 'user', content: cleanText(prompt) },
     ];
 
+    const defaultJsonTemp = options.isBatchVariant ? 0.72 : 0.1;
     const text = await callChatCompletions({
       messages,
-      temperature: wantsJson ? 0.1 : 0.3,
-      maxTokens: 2200,
+      temperature:
+        typeof options.temperature === 'number' && Number.isFinite(options.temperature)
+          ? options.temperature
+          : wantsJson
+            ? defaultJsonTemp
+            : 0.3,
+      maxTokens:
+        typeof options.maxTokens === 'number' && Number.isFinite(options.maxTokens)
+          ? options.maxTokens
+          : 2200,
       preferJson: wantsJson,
       usageLabel: wantsJson ? 'structured-json' : 'structured-text',
+      primaryModel: String(options.primaryModel || '').trim(),
     });
 
     return wantsJson ? stripCodeFences(text) : text;

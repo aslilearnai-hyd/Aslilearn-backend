@@ -1524,6 +1524,9 @@ router.get('/asli-prep-content', async (req, res) => {
     const { enrichContentDurations } = await import('../utils/enrichContentDurations.js');
     contents = await enrichContentDurations(contents);
 
+    const { dedupeLibraryContents } = await import('../utils/dedupeLibraryContents.js');
+    contents = dedupeLibraryContents(contents);
+
     res.json({
       success: true,
       data: contents,
