@@ -2,7 +2,13 @@ import mongoose from 'mongoose';
 import Book from '../models/Book.js';
 import AiToolGeneration from '../models/AiToolGeneration.js';
 import { beginTokenUsageSession, endTokenUsageSession } from './gemini-service.js';
-import { generateStructuredContentForAiGenerator } from './ai-content-engine-service.js';
+import {
+  generateStructuredContentForAiGenerator,
+  finalizeExamPaperStructuredContent,
+  finalizeMockTestStructuredContent,
+  finalizeHomeworkStructuredContent,
+  finalizeWorksheetStructuredContent,
+} from './ai-content-engine-service.js';
 import { buildBookHistoricalGenerationContext } from './book-generator-historical.js';
 import {
   validateRecordUniqueness,
@@ -29,6 +35,23 @@ import {
 import { canonicalBoardLabel, lockBoardKey, normalizeClassLabelForLock } from '../utils/board-label.js';
 
 const DEFAULT_CONCURRENCY = Number(process.env.BOOK_GENERATOR_CONCURRENCY || process.env.AI_GENERATOR_BATCH_CONCURRENCY || 3);
+
+function finalizeBookStructuredContent(toolSlug, structured, meta) {
+  const slug = String(toolSlug || '').trim();
+  const source = structured && typeof structured === 'object' ? structured : {};
+  switch (slug) {
+    case 'exam-question-paper-generator':
+      return finalizeExamPaperStructuredContent(source, meta);
+    case 'mock-test-builder':
+      return finalizeMockTestStructuredContent(source, meta);
+    case 'homework-creator':
+      return finalizeHomeworkStructuredContent(source, meta);
+    case 'worksheet-mcq-generator':
+      return finalizeWorksheetStructuredContent(source, meta);
+    default:
+      return source;
+  }
+}
 
 function getBatchSize(override) {
   const n = Number(override ?? process.env.BOOK_GENERATOR_BATCH_SIZE ?? BOOK_GENERATOR_DEFAULT_BATCH_SIZE);
@@ -179,21 +202,36 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               recoveryPass: attempt > 1,
             });
 
-            const uniqueness = validateRecordUniqueness(toolSlug, generated.structuredContent, {
+            const finalizeMeta = {
+              subject: subjectName,
+              topic: topicName,
+              subTopic: subtopicName,
+              subtopic: subtopicName,
+              board,
+              className,
+            };
+            const structuredContent = finalizeBookStructuredContent(
+              toolSlug,
+              generated.structuredContent,
+              finalizeMeta,
+            );
+
+            const uniqueness = validateRecordUniqueness(toolSlug, structuredContent, {
               batchTitles,
               batchTexts: batchQuestionTexts,
-              historicalTexts: [],
+              historicalTexts: historical.questionSnippets || [],
               historicalTitles: historical.titles,
             });
 
-            if (!uniqueness.valid && attempt < maxAttempts) {
+            if (!uniqueness.valid) {
               lastError = uniqueness.errors.join('; ');
-              continue;
+              if (attempt < maxAttempts) continue;
+              return { ok: false, variantIndex, error: lastError };
             }
 
-            const title = extractTitleFromStructured(generated.structuredContent);
+            const title = extractTitleFromStructured(structuredContent);
             if (title) batchTitles.push(title);
-            batchQuestionTexts.push(...collectQuestionTextsFromStructured(generated.structuredContent));
+            batchQuestionTexts.push(...collectQuestionTextsFromStructured(structuredContent));
 
             const uid = opts.reqUser?.userId || opts.reqUser?._id || 'unknown';
             const teacherId = mongoose.Types.ObjectId.isValid(uid) ? uid : undefined;
@@ -223,7 +261,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                 createdByRole: 'super-admin',
                 extraParams,
                 contentType: generated.contentType,
-                structuredContent: generated.structuredContent,
+                structuredContent,
                 formatSource: 'bookRag',
                 generationVariant: variantIndex,
                 batchSize,
@@ -234,7 +272,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               ...(teacherId ? { teacherId } : {}),
             });
 
-            await persistGenerationFingerprints(toolSlug, generated.structuredContent, scope, record._id);
+            await persistGenerationFingerprints(toolSlug, structuredContent, scope, record._id);
 
             await Book.updateOne(
               { _id: book._id },

@@ -1,5 +1,6 @@
 import AiToolGeneration from '../models/AiToolGeneration.js';
 import { extractTitleFromStructured } from './ai-generator-content-extractor.js';
+import { collectQuestionTextsFromStructured } from './ai-generator-uniqueness-engine.js';
 import { computeTopicSaturation } from './ai-generator-topic-saturation.js';
 import { BOOK_GENERATOR_UNIQUENESS_TARGET } from '../config/bookBasedTools.js';
 
@@ -55,6 +56,15 @@ export async function buildBookHistoricalGenerationContext(scope) {
     return `Record ${i + 1}: ${title ? `Title: ${title}. ` : ''}${snippet}`;
   });
 
+  const titles = [];
+  const questionSnippets = [];
+  for (const rec of recentRecords) {
+    const structured = rec.metadata?.structuredContent || rec;
+    const title = extractTitleFromStructured(structured) || rec.title || '';
+    if (title) titles.push(title);
+    questionSnippets.push(...collectQuestionTextsFromStructured(structured));
+  }
+
   const avoidBlock =
     summaries.length > 0
       ? `${ORIGINALITY_PREAMBLE}\n\nAvoid generating content similar to:\n${summaries.join('\n\n')}`
@@ -67,8 +77,8 @@ export async function buildBookHistoricalGenerationContext(scope) {
     existingCount,
     saturation,
     promptBlock,
-    titles: recentRecords.map((r) => extractTitleFromStructured(r.metadata?.structuredContent || r)).filter(Boolean),
-    questionSnippets: [],
+    titles,
+    questionSnippets: [...new Set(questionSnippets.map((t) => String(t || '').trim()).filter(Boolean))].slice(0, 120),
     uniquenessTarget,
   };
 }
