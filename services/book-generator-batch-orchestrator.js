@@ -2,7 +2,10 @@ import mongoose from 'mongoose';
 import Book from '../models/Book.js';
 import AiToolGeneration from '../models/AiToolGeneration.js';
 import { beginTokenUsageSession, endTokenUsageSession } from './gemini-service.js';
-import { generateStructuredContentForAiGenerator } from './ai-content-engine-service.js';
+import { generateStructuredContentForAiGenerator, finalizeMockTestStructuredContent } from './ai-content-engine-service.js';
+import { runAiGeneratorQualityGate } from './ai-generator-quality-gate.js';
+import { formatStructuredToolOutput } from '../config/aiToolTemplates.js';
+import { deepStripMarkdownValues, stripMarkdownSyntax } from '../utils/strip-markdown-syntax.js';
 import { buildBookHistoricalGenerationContext } from './book-generator-historical.js';
 import {
   validateRecordUniqueness,
@@ -160,7 +163,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               ...(attempt > 1 ? { recoveryPass: true } : {}),
             };
 
-            const generated = await generateStructuredContentForAiGenerator(toolSlug, {
+            let generated = await generateStructuredContentForAiGenerator(toolSlug, {
               board,
               classLabel: className,
               gradeLevel: className,
@@ -168,7 +171,11 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               topic: topicName || book.title,
               subTopic: subtopicName,
               extraParams,
-              pdfContext: ragBase.contextText,
+              pdfContext:
+                ragBase.contextText +
+                (toolSlug === 'mock-test-builder'
+                  ? '\n\nMOCK TEST RULES (mandatory): Use the textbook as the only factual source. Every question must be unique — do not repeat the same stem or scenario. Number questions globally as question_number 1, 2, 3… across section_a through section_e (no duplicate numbers). Section A MCQs must each have exactly four labeled options A)–D) and one correct answer.'
+                  : ''),
               historicalPromptBlock: historical.promptBlock,
               upgradeToFlash:
                 !isAiGeneratorCostSaverEnabled() &&
@@ -177,6 +184,28 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               recoveryPass: attempt > 1,
             });
 
+            const genMeta = {
+              topic: topicName || book.title,
+              subTopic: subtopicName,
+              subject: subjectName,
+            };
+
+            if (toolSlug === 'mock-test-builder') {
+              const polished = finalizeMockTestStructuredContent(generated.structuredContent, genMeta);
+              const quality = runAiGeneratorQualityGate(toolSlug, polished, genMeta);
+              if (!quality.valid) {
+                lastError = quality.errors.join('; ');
+                continue;
+              }
+              generated = {
+                ...generated,
+                structuredContent: polished,
+                generatedContent: stripMarkdownSyntax(
+                  formatStructuredToolOutput(toolSlug, deepStripMarkdownValues(polished)),
+                ),
+              };
+            }
+
             const uniqueness = validateRecordUniqueness(toolSlug, generated.structuredContent, {
               batchTitles,
               batchTexts: batchQuestionTexts,
@@ -184,7 +213,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               historicalTitles: historical.titles,
             });
 
-            if (!uniqueness.valid && attempt < maxAttempts) {
+            if (!uniqueness.valid) {
               lastError = uniqueness.errors.join('; ');
               continue;
             }
