@@ -1,7 +1,8 @@
 import mongoose from 'mongoose';
 import AiToolGeneration from '../models/AiToolGeneration.js';
 import Book from '../models/Book.js';
-import { generateBookBatchAndSave } from '../services/book-generator-batch-orchestrator.js';
+import { generateBookBatchAndSave, buildBookGeneratorLockScope } from '../services/book-generator-batch-orchestrator.js';
+import { releaseGenerationLock } from '../services/ai-generator-lock-service.js';
 import { BOOK_BASED_TOOL_SLUGS, isBookBasedToolSlug } from '../config/bookBasedTools.js';
 import { boardMongoMatch } from '../utils/board-label.js';
 import { groupAiGeneratorRecords } from './aiGeneratorController.js';
@@ -48,6 +49,8 @@ export async function generateBookBatch(req, res) {
       batchSize,
       useBookKnowledge,
       extraParams,
+      forceSteal,
+      clearLock,
     } = req.body || {};
 
     const slug = String(toolSlug || toolName || '').trim();
@@ -67,6 +70,8 @@ export async function generateBookBatch(req, res) {
         batchSize,
         useBookKnowledge: useBookKnowledge !== false,
         extraParams,
+        forceSteal: forceSteal === true || clearLock === true,
+        clearLock: clearLock === true,
       },
       { reqUser: req.user },
     );
@@ -156,6 +161,44 @@ export async function deleteAllBookGeneratorRecords(req, res) {
     });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message || 'Failed to delete all records.' });
+  }
+}
+
+export async function releaseBookGeneratorLock(req, res) {
+  if (!ensureSuperAdmin(req, res)) return;
+  try {
+    const {
+      toolSlug,
+      toolName,
+      bookId,
+      board,
+      className,
+      subjectName,
+      topicName,
+      subtopicName,
+    } = req.body || {};
+
+    const slug = String(toolSlug || toolName || '').trim();
+    if (!slug || !bookId) {
+      return res.status(400).json({
+        success: false,
+        message: 'toolSlug and bookId are required to clear a generation lock.',
+      });
+    }
+
+    const lockScope = buildBookGeneratorLockScope({
+      toolSlug: slug,
+      bookId,
+      board,
+      className,
+      subjectName,
+      topicName,
+      subtopicName,
+    });
+    await releaseGenerationLock(lockScope);
+    res.json({ success: true, message: 'Generation lock cleared. You can start a new batch.' });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message || 'Failed to clear generation lock.' });
   }
 }
 

@@ -9,6 +9,7 @@ import {
   deleteBookGeneratorRecord,
   deleteAllBookGeneratorRecords,
   bulkDeleteBookGeneratorRecords,
+  releaseBookGeneratorLock,
 } from '../controllers/bookGeneratorController.js';
 
 const router = express.Router();
@@ -24,6 +25,7 @@ router.use(verifyToken);
 router.get('/tools', listBookBasedTools);
 router.get('/books', listBooksForGenerator);
 router.post('/generate-batch', longRunningRequest, generateBookBatch);
+router.post('/release-lock', releaseBookGeneratorLock);
 router.get('/records', listBookGeneratorRecords);
 router.delete('/records/all', deleteAllBookGeneratorRecords);
 router.post('/records/bulk-delete', bulkDeleteBookGeneratorRecords);
