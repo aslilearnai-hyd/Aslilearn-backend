@@ -24,6 +24,8 @@ import { persistGenerationFingerprints } from './ai-generator-fingerprint-servic
 
 import { computeGeminiCostFromTokenUsage } from '../utils/gemini-token-cost.js';
 
+import { resolveStoredClassLabel } from '../utils/curriculum-subject-validation.js';
+
 import {
 
   getAiGeneratorVariantAngle,
@@ -181,6 +183,8 @@ export async function generateBatchAndSave(params, opts = {}) {
   const board = String(params.board || '').trim();
 
   const className = String(params.className || params.classLabel || '').trim();
+
+  const storedClassLabel = resolveStoredClassLabel(className, board);
 
   const subjectName = String(params.subjectName || params.subject || '').trim();
 
@@ -439,7 +443,7 @@ export async function generateBatchAndSave(params, opts = {}) {
 
               board,
 
-              classLabel: className,
+              classLabel: storedClassLabel,
 
               subject: subjectName,
 

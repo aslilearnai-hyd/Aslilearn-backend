@@ -30,6 +30,7 @@ import {
   BOOK_GENERATOR_DEFAULT_BATCH_SIZE,
 } from '../config/bookBasedTools.js';
 import { canonicalBoardLabel } from '../utils/board-label.js';
+import { resolveStoredClassLabel } from '../utils/curriculum-subject-validation.js';
 
 const DEFAULT_CONCURRENCY = Number(process.env.BOOK_GENERATOR_CONCURRENCY || process.env.AI_GENERATOR_BATCH_CONCURRENCY || 3);
 
@@ -91,6 +92,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
 
   const board = canonicalBoardLabel(String(params.board || book.board || 'CBSE').trim());
   const className = String(params.className || book.class || '').trim();
+  const storedClassLabel = resolveStoredClassLabel(className, board);
   const subjectName = String(params.subjectName || book.subject || '').trim();
   const topicName = String(params.topicName || '').trim();
   const subtopicName = String(params.subtopicName || '').trim();
@@ -254,7 +256,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               toolDisplayName,
               sourceType: 'book_rag',
               board,
-              classLabel: className,
+              classLabel: storedClassLabel,
               subject: subjectName,
               topic: topicName,
               subtopic: subtopicName,

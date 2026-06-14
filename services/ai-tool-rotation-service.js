@@ -1,6 +1,10 @@
 import AiToolGeneration from '../models/AiToolGeneration.js';
 import AiToolRotationCursor from '../models/AiToolRotationCursor.js';
 import { getToolDisplayTitle } from '../config/aiToolTemplates.js';
+import {
+  classLabelFilterForDb,
+  subjectFilterForDb,
+} from '../utils/curriculum-subject-validation.js';
 
 /** Student slugs that may fall back to legacy stored toolName values (same tool family only). */
 export const TOOL_ROTATION_ALIASES = Object.freeze({
@@ -157,10 +161,12 @@ function approvedFilter() {
 }
 
 function baseFilter({ classLabel, subject }) {
-  const subjectSet = subjectVariants(subject);
+  const subjectNorm = subjectVariants(subject);
+  const primarySubject = subjectNorm[0] || normalize(subject);
+  const subjectDb = subjectNorm.length > 1 ? { $in: subjectNorm } : subjectFilterForDb(primarySubject);
   return {
-    classLabel: normalizeClassLabel(classLabel),
-    ...(subjectSet.length > 1 ? { subject: { $in: subjectSet } } : { subject: subjectSet[0] || normalize(subject) }),
+    ...classLabelFilterForDb(normalizeClassLabel(classLabel)),
+    subject: subjectDb,
     ...validContentFilter(),
     ...approvedFilter(),
   };
