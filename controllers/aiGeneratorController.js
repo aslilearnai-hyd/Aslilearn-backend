@@ -9,7 +9,7 @@ import {
   beginTokenUsageSession,
   endTokenUsageSession,
 } from '../services/gemini-service.js';
-import { boardMongoMatch, canonicalBoardLabel } from '../utils/board-label.js';
+import { boardMongoMatch, canonicalBoardLabel, normalizeBoardLabelForGrouping, normalizeClassLabelForLock } from '../utils/board-label.js';
 import { orderedUniqueSubTopics } from '../utils/ai-tool-topic-order.js';
 import {
   getAiGeneratorVariantAngle,
@@ -197,12 +197,13 @@ export function groupAiGeneratorRecords(items) {
     }
     const toolNode = toolMap.get(toolKey);
 
-    const boardName = canonicalBoardLabel(record.board || record?.metadata?.board || '');
+    const boardName = normalizeBoardLabelForGrouping(record.board || record?.metadata?.board || '');
+    const className = normalizeClassLabelForLock(record.classLabel || '');
     let classNode = toolNode.classes.find(
-      (x) => x.className === record.classLabel && String(x.boardName || '') === boardName,
+      (x) => x.className === className && String(x.boardName || '') === boardName,
     );
     if (!classNode) {
-      classNode = { className: record.classLabel, boardName, subjects: [] };
+      classNode = { className, boardName, subjects: [] };
       toolNode.classes.push(classNode);
     }
 

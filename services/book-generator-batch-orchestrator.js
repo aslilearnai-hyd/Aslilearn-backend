@@ -246,7 +246,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             const record = await AiToolGeneration.create({
               toolName: toolSlug,
               toolDisplayName,
-              sourceType: 'book_rag',
+              sourceType: 'ai_generator',
               board,
               classLabel: className,
               subject: subjectName,

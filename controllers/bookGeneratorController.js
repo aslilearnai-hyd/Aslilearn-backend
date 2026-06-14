@@ -11,6 +11,7 @@ import {
 } from '../services/book-generator-job-service.js';
 import { BOOK_BASED_TOOL_SLUGS, isBookBasedToolSlug } from '../config/bookBasedTools.js';
 import { boardMongoMatch } from '../utils/board-label.js';
+import { bookGroundedMongoFilter, isBookGroundedRecord } from '../utils/book-grounded-record.js';
 import { groupAiGeneratorRecords } from './aiGeneratorController.js';
 
 function ensureSuperAdmin(req, res) {
@@ -194,14 +195,16 @@ export async function listBookGeneratorRecords(req, res) {
   if (!ensureSuperAdmin(req, res)) return;
   try {
     const { toolSlug, bookId, board, className, subjectName, topicName, subtopicName } = req.query;
-    const query = { sourceType: 'book_rag' };
-    if (toolSlug) query.toolName = toolSlug;
-    if (bookId) query['metadata.bookId'] = String(bookId);
-    if (board) query.board = boardMongoMatch(board) || board;
-    if (className) query.classLabel = className;
-    if (subjectName) query.subject = subjectName;
-    if (topicName) query.topic = topicName;
-    if (subtopicName) query.subtopic = subtopicName;
+    const extra = {};
+    if (toolSlug) extra.toolName = toolSlug;
+    if (bookId) extra['metadata.bookId'] = String(bookId);
+    if (board) extra.board = boardMongoMatch(board) || board;
+    if (className) extra.classLabel = className;
+    if (subjectName) extra.subject = subjectName;
+    if (topicName) extra.topic = topicName;
+    if (subtopicName) extra.subtopic = subtopicName;
+
+    const query = bookGroundedMongoFilter(extra);
 
     const records = await AiToolGeneration.find(query).sort({ createdAt: -1 }).limit(2000).lean();
     const grouped = groupAiGeneratorRecords(records);
@@ -240,7 +243,11 @@ export async function listBooksForGenerator(req, res) {
 export async function deleteBookGeneratorRecord(req, res) {
   if (!ensureSuperAdmin(req, res)) return;
   try {
-    await AiToolGeneration.findOneAndDelete({ _id: req.params.id, sourceType: 'book_rag' });
+    const doc = await AiToolGeneration.findById(req.params.id).lean();
+    if (!doc || !isBookGroundedRecord(doc)) {
+      return res.status(404).json({ success: false, message: 'Record not found.' });
+    }
+    await AiToolGeneration.findByIdAndDelete(req.params.id);
     res.json({ success: true, message: 'Record deleted.' });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message || 'Delete failed.' });

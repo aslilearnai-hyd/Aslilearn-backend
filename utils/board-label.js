@@ -20,7 +20,6 @@ export function canonicalBoardLabel(raw) {
   return s;
 }
 
-/** Stable board key for generation locks (IIT / NEET variants → one slot). */
 export function lockBoardKey(raw) {
   const s = trimBoard(raw);
   if (!s) return '';
@@ -29,6 +28,11 @@ export function lockBoardKey(raw) {
     return 'IIT/NEET';
   }
   return canonicalBoardLabel(s);
+}
+
+/** Alias for tree grouping (same normalization as lockBoardKey). */
+export function normalizeBoardLabelForGrouping(raw) {
+  return lockBoardKey(raw);
 }
 
 /** Normalize class labels for lock identity (6 → Class 6). */
