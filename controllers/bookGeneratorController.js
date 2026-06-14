@@ -2,6 +2,13 @@ import mongoose from 'mongoose';
 import AiToolGeneration from '../models/AiToolGeneration.js';
 import Book from '../models/Book.js';
 import { generateBookBatchAndSave, buildBookGeneratorLockScope } from '../services/book-generator-batch-orchestrator.js';
+import {
+  createBookBatchJob,
+  updateBookBatchJob,
+  getBookBatchJob,
+  completeBookBatchJob,
+  failBookBatchJob,
+} from '../services/book-generator-batch-job-service.js';
 import { releaseGenerationLock } from '../services/ai-generator-lock-service.js';
 import { BOOK_BASED_TOOL_SLUGS, isBookBasedToolSlug } from '../config/bookBasedTools.js';
 import { boardMongoMatch } from '../utils/board-label.js';
@@ -34,8 +41,6 @@ export async function listBookBasedTools(req, res) {
 
 export async function generateBookBatch(req, res) {
   if (!ensureSuperAdmin(req, res)) return;
-  if (req.socket) req.socket.setTimeout(900000);
-  if (typeof res.setTimeout === 'function') res.setTimeout(900000);
   try {
     const {
       toolSlug,
@@ -58,29 +63,73 @@ export async function generateBookBatch(req, res) {
       return res.status(400).json({ success: false, message: `Unsupported book-based tool: ${slug}` });
     }
 
-    const result = await generateBookBatchAndSave(
-      {
-        toolSlug: slug,
-        bookId,
-        board,
-        className,
-        subjectName,
-        topicName,
-        subtopicName,
-        batchSize,
-        useBookKnowledge: useBookKnowledge !== false,
-        extraParams,
-        forceSteal: forceSteal === true || clearLock === true,
-        clearLock: clearLock === true,
-      },
-      { reqUser: req.user },
-    );
+    const batchParams = {
+      toolSlug: slug,
+      bookId,
+      board,
+      className,
+      subjectName,
+      topicName,
+      subtopicName,
+      batchSize,
+      useBookKnowledge: useBookKnowledge !== false,
+      extraParams,
+      forceSteal: forceSteal === true || clearLock === true,
+      clearLock: clearLock === true,
+    };
 
-    const status = result.locked ? 409 : result.success ? 200 : 502;
-    res.status(status).json({ success: result.success, data: result, message: result.message });
+    const jobId = createBookBatchJob({
+      toolSlug: slug,
+      bookId,
+      batchSize: batchSize || 25,
+      subtopicName,
+    });
+
+    updateBookBatchJob(jobId, { status: 'running', message: 'Retrieving textbook context and generating…' });
+
+    // Respond immediately so nginx/browser do not time out on long batches.
+    res.status(202).json({
+      success: true,
+      data: { jobId, status: 'running', message: 'Batch started. Poll batch-jobs for progress.' },
+    });
+
+    void (async () => {
+      try {
+        const result = await generateBookBatchAndSave(batchParams, { reqUser: req.user });
+        completeBookBatchJob(jobId, result);
+      } catch (err) {
+        failBookBatchJob(jobId, err?.message || 'Book generation failed.');
+      }
+    })();
   } catch (err) {
     res.status(502).json({ success: false, message: err.message || 'Book generation failed.' });
   }
+}
+
+export async function getBookBatchJobStatus(req, res) {
+  if (!ensureSuperAdmin(req, res)) return;
+  const jobId = String(req.params.jobId || '').trim();
+  const job = getBookBatchJob(jobId);
+  if (!job) {
+    return res.status(404).json({ success: false, message: 'Batch job not found or expired.' });
+  }
+
+  const result = job.result || {};
+  const httpStatus =
+    job.status === 'locked' ? 409 : job.status === 'completed' ? 200 : job.status === 'failed' ? 502 : 202;
+
+  return res.status(httpStatus).json({
+    success: job.status === 'completed' && result.success === true,
+    data: {
+      jobId: job.jobId,
+      status: job.status,
+      message: job.message,
+      progress: job.progress,
+      result: job.result,
+      error: job.error,
+    },
+    message: job.message,
+  });
 }
 
 export async function listBookGeneratorRecords(req, res) {
