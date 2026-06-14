@@ -4908,12 +4908,16 @@ router.post('/ai/tool', async (req, res) => {
     } = await import('../services/ai-tool-dashboard-validation.js');
 
     // Priority 1: Super Admin AI Tool Data (exact class+subject+topic+subtopic) with rotation.
+    const lookupBoard =
+      String(req.body.board || '').trim() || (isIIT6 ? 'IIT' : programCtx.curriculumBoard || 'CBSE');
+
     const { doc: adminDoc, matchType, totalCandidates, selectedIndex } = await fetchRotatingAiToolData({
       classLabel: classDisplay,
       subject: finalSubject,
       topic: String(topicForFetch || '').trim().replace(/\s+/g, ' '),
       subtopic: subTopicNormalized,
       toolName: toolType,
+      board: lookupBoard,
       preferLatest: false,
       strictToolMatch: true,
       cursorScope: String(userId || ''),

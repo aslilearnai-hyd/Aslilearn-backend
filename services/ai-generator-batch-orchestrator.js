@@ -23,6 +23,7 @@ import { extractTitleFromStructured } from './ai-generator-content-extractor.js'
 import { persistGenerationFingerprints } from './ai-generator-fingerprint-service.js';
 
 import { computeGeminiCostFromTokenUsage } from '../utils/gemini-token-cost.js';
+import { lockBoardKey, resolveClassLabelForAiToolStorage } from '../utils/board-label.js';
 
 import {
 
@@ -178,9 +179,12 @@ export async function generateBatchAndSave(params, opts = {}) {
 
   const toolSlug = String(params.toolSlug || '').trim();
 
-  const board = String(params.board || '').trim();
+  const board = lockBoardKey(String(params.board || '').trim());
 
-  const className = String(params.className || params.classLabel || '').trim();
+  const className = resolveClassLabelForAiToolStorage(
+    String(params.className || params.classLabel || '').trim(),
+    board,
+  );
 
   const subjectName = String(params.subjectName || params.subject || '').trim();
 

@@ -387,6 +387,9 @@ export const createTeacherTool = async (req, res) => {
       topic: topicForStore,
       subtopic: subtopicForStore,
       toolName: toolType,
+      board:
+        String(req.body.board || '').trim() ||
+        (isIIT6 ? 'IIT' : programCtx.curriculumBoard || programCtx.displayBoard || 'CBSE'),
       preferLatest: false,
       strictToolMatch: true,
       cursorScope: String(teacherId || ''),
@@ -512,6 +515,7 @@ export const getGeneratedContent = async (req, res) => {
       topic,
       subtopic: subTopic,
       toolName: toolType,
+      board: String(req.query.board || '').trim() || (classLabel === 'IIT-6' ? 'IIT' : ''),
       preferLatest: false,
       strictToolMatch: true,
       cursorScope: String(req.userId || req.teacherId || ''),

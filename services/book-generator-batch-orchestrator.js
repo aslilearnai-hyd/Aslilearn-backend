@@ -38,7 +38,7 @@ import {
   BOOK_GENERATOR_DEFAULT_BATCH_SIZE,
   BOOK_GENERATOR_MAX_INR,
 } from '../config/bookBasedTools.js';
-import { canonicalBoardLabel, lockBoardKey, normalizeClassLabelForLock } from '../utils/board-label.js';
+import { canonicalBoardLabel, lockBoardKey, normalizeClassLabelForLock, resolveClassLabelForAiToolStorage } from '../utils/board-label.js';
 
 const DEFAULT_CONCURRENCY = Number(process.env.BOOK_GENERATOR_CONCURRENCY || process.env.AI_GENERATOR_BATCH_CONCURRENCY || 3);
 
@@ -134,7 +134,9 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
   }
 
   const board = lockBoardKey(String(params.board || book.board || 'CBSE').trim());
-  const className = normalizeClassLabelForLock(String(params.className || book.class || '').trim());
+  const classInput = String(params.className || book.class || '').trim();
+  const className = resolveClassLabelForAiToolStorage(classInput, board);
+  const classNameForRag = normalizeClassLabelForLock(classInput);
   const subjectName = String(params.subjectName || book.subject || '').trim();
   const topicName = String(params.topicName || '').trim();
   const subtopicName = String(params.subtopicName || '').trim();
@@ -193,7 +195,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
         ? await retrieveBookContextForGeneration({
             bookId,
             board,
-            className,
+            className: classNameForRag,
             subjectName,
             topicName,
             subtopicName,

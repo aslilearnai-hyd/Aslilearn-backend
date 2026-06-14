@@ -45,6 +45,21 @@ export function normalizeClassLabelForLock(raw) {
 }
 
 /**
+ * Canonical classLabel for AiToolGeneration rows (student/teacher rotation keys).
+ * IIT/NEET Class 6 → IIT-6; CBSE Class 6 → Class 6.
+ */
+export function resolveClassLabelForAiToolStorage(className, board) {
+  const s = trimBoard(className);
+  if (!s) return '';
+  if (s === 'IIT-6' || s === 'Class-6-IIT') return 'IIT-6';
+  const boardKey = lockBoardKey(board);
+  const digits = s.match(/\d+/)?.[0];
+  if (boardKey === 'IIT/NEET' && digits === '6') return 'IIT-6';
+  if (digits) return `Class ${digits}`;
+  return s;
+}
+
+/**
  * MongoDB filter for `board` when reading. Empty string matches only empty board.
  * CBSE/CBSC (any case) match either spelling in the database.
  */

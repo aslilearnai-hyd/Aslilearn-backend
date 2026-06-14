@@ -9,7 +9,8 @@ import {
   beginTokenUsageSession,
   endTokenUsageSession,
 } from '../services/gemini-service.js';
-import { boardMongoMatch, canonicalBoardLabel, normalizeBoardLabelForGrouping, normalizeClassLabelForLock } from '../utils/board-label.js';
+import { boardMongoMatch, canonicalBoardLabel, lockBoardKey, normalizeBoardLabelForGrouping, normalizeClassLabelForLock, resolveClassLabelForAiToolStorage } from '../utils/board-label.js';
+import { buildCaseInsensitiveExactFilter, buildClassLabelMongoFilter } from '../utils/ai-tool-data-match.js';
 import { orderedUniqueSubTopics } from '../utils/ai-tool-topic-order.js';
 import {
   getAiGeneratorVariantAngle,
@@ -54,19 +55,11 @@ function normalizeClassLabelForTopics(classLabel) {
   return normalized;
 }
 
-function buildClassLabelFilter(classLabel) {
-  const normalized = normalizeClassLabelForTopics(classLabel);
-  if (!normalized) return null;
-  if (normalized === 'IIT-6') return 'IIT-6';
-  const digits = normalized.match(/\d+/)?.[0];
-  if (!digits) return normalized;
-  return { $in: [`Class ${digits}`, digits, `-${digits}`] };
-}
-
-function buildCaseInsensitiveExactFilter(value) {
-  const normalized = normalizeText(value);
-  if (!normalized) return null;
-  return { $regex: `^${escapeRegex(normalized)}$`, $options: 'i' };
+function buildClassLabelFilter(classLabel, board = '') {
+  const filter = buildClassLabelMongoFilter(classLabel, board);
+  if (filter.classLabel) return filter.classLabel;
+  if (filter.$or) return filter;
+  return normalizeClassLabelForTopics(classLabel) || null;
 }
 
 function getRequestUserName(req) {
@@ -257,9 +250,12 @@ export async function generateAndSaveContent(req, res) {
     if (!ensureSuperAdmin(req, res)) return;
 
     const toolSlug = normalizeText(req.body.toolSlug || req.body.toolType);
-    const board = canonicalBoardLabel(normalizeText(req.body.board || req.body.boardName));
+    const board = lockBoardKey(canonicalBoardLabel(normalizeText(req.body.board || req.body.boardName)));
     const toolDisplayName = normalizeText(req.body.toolName);
-    const className = normalizeText(req.body.className || req.body.classNumber);
+    const className = resolveClassLabelForAiToolStorage(
+      normalizeText(req.body.className || req.body.classNumber),
+      board,
+    );
     const subjectName = normalizeText(req.body.subjectName || req.body.subject);
     const topicName = normalizeText(req.body.topicName || req.body.topic);
     const subtopicName = normalizeText(req.body.subtopicName || req.body.subTopic || req.body.subtopic);
@@ -938,7 +934,7 @@ export async function getManagedTopicTaxonomy(req, res) {
 
     const filter = { isActive: true };
     if (board) filter.board = boardMongoMatch(board);
-    const classFilter = buildClassLabelFilter(classLabel);
+    const classFilter = buildClassLabelFilter(classLabel, board);
     const subjectFilter = buildCaseInsensitiveExactFilter(subject);
     const topicFilter = buildCaseInsensitiveExactFilter(topicName);
     if (classLabel) filter.classLabel = classFilter || normalizeClassLabelForTopics(classLabel);
@@ -970,9 +966,12 @@ export async function generateBatchContent(req, res) {
     if (!ensureSuperAdmin(req, res)) return;
 
     const toolSlug = normalizeText(req.body.toolSlug || req.body.toolType);
-    const board = canonicalBoardLabel(normalizeText(req.body.board || req.body.boardName));
+    const board = lockBoardKey(canonicalBoardLabel(normalizeText(req.body.board || req.body.boardName)));
     const toolDisplayName = normalizeText(req.body.toolName);
-    const className = normalizeText(req.body.className || req.body.classNumber);
+    const className = resolveClassLabelForAiToolStorage(
+      normalizeText(req.body.className || req.body.classNumber),
+      board,
+    );
     const subjectName = normalizeText(req.body.subjectName || req.body.subject);
     const topicName = normalizeText(req.body.topicName || req.body.topic);
     const subtopicName = normalizeText(req.body.subtopicName || req.body.subTopic || req.body.subtopic);

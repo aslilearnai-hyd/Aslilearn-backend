@@ -1,9 +1,14 @@
 import AiToolTopic from '../models/AiToolTopic.js';
 import { boardMongoMatch } from '../utils/board-label.js';
+import {
+  buildCaseInsensitiveExactFilter,
+  buildClassLabelMongoFilter,
+  normalizeMatchText,
+} from '../utils/ai-tool-data-match.js';
 import { orderedUniqueSubTopics } from '../utils/ai-tool-topic-order.js';
 
 function normalizeText(value) {
-  return String(value || '').trim().replace(/\s+/g, ' ');
+  return normalizeMatchText(value);
 }
 
 function normalizeClassId(classId) {
@@ -20,24 +25,11 @@ function escapeRegex(value) {
   return String(value || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-function buildClassLabelFilter(classLabel) {
-  const normalized = normalizeClassId(classLabel);
-  if (!normalized) return null;
-  if (normalized === 'IIT-6') return 'IIT-6';
-  const digits = normalized.match(/\d+/)?.[0];
-  if (!digits) return normalized;
-  return {
-    $in: [`Class ${digits}`, digits, `-${digits}`],
-  };
-}
-
-function buildCaseInsensitiveExactFilter(value) {
-  const normalized = normalizeText(value);
-  if (!normalized) return null;
-  return {
-    $regex: `^${escapeRegex(normalized)}$`,
-    $options: 'i',
-  };
+function buildClassLabelFilter(classLabel, board = '') {
+  const filter = buildClassLabelMongoFilter(classLabel, board);
+  if (filter.classLabel) return filter.classLabel;
+  if (filter.$or) return filter;
+  return null;
 }
 
 function uniqueSorted(values) {
@@ -126,7 +118,7 @@ export const listSubjects = async (req, res) => {
       return res.status(400).json({ success: false, message: 'classId is required' });
     }
 
-    const classFilter = buildClassLabelFilter(classLabel);
+    const classFilter = buildClassLabelFilter(classLabel, board);
     const filter = { isActive: true, classLabel: classFilter || classLabel };
     applyBoardFilter(filter, board);
 
@@ -156,7 +148,7 @@ export const listTopics = async (req, res) => {
       });
     }
 
-    const classFilter = buildClassLabelFilter(classLabel);
+    const classFilter = buildClassLabelFilter(classLabel, board);
     const subjectFilter = buildCaseInsensitiveExactFilter(subject);
     const filter = {
       isActive: true,
@@ -192,7 +184,7 @@ export const listSubtopics = async (req, res) => {
       });
     }
 
-    const classFilter = buildClassLabelFilter(classLabel);
+    const classFilter = buildClassLabelFilter(classLabel, board);
     const subjectFilter = buildCaseInsensitiveExactFilter(subject);
     const topicFilter = buildCaseInsensitiveExactFilter(topicName);
     const filter = {

@@ -1,6 +1,15 @@
 import AiToolGeneration from '../models/AiToolGeneration.js';
 import AiToolRotationCursor from '../models/AiToolRotationCursor.js';
 import { getToolDisplayTitle } from '../config/aiToolTemplates.js';
+import {
+  buildAiToolDataScopeFilter,
+  buildSubtopicFieldMongoFilter,
+  buildTopicFieldMongoFilter,
+  mergeMongoFilters,
+  normalizeMatchText,
+  resolveLookupBoard,
+  topicTextMatches,
+} from '../utils/ai-tool-data-match.js';
 
 /** Student slugs that may fall back to legacy stored toolName values (same tool family only). */
 export const TOOL_ROTATION_ALIASES = Object.freeze({
@@ -65,17 +74,11 @@ export function toolSlugMatches(storedToolName, requestedToolSlug) {
 }
 
 function normalize(value) {
-  return String(value || '').trim().replace(/\s+/g, ' ');
+  return normalizeMatchText(value);
 }
 
 function escapeRegex(value) {
   return String(value || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
-
-function exactCaseInsensitive(value) {
-  const normalized = normalize(value);
-  if (!normalized) return '';
-  return { $regex: `^${escapeRegex(normalized)}$`, $options: 'i' };
 }
 
 function looseNormalize(value) {
@@ -100,28 +103,6 @@ function hasUsableContent(doc) {
     return false;
   }
   return true;
-}
-
-function normalizeClassLabel(value) {
-  const v = normalize(value);
-  if (!v) return v;
-  if (v === 'IIT-6' || v === 'Class-6-IIT') return 'IIT-6';
-  const digits = v.match(/\d+/)?.[0];
-  if (digits) return `Class ${digits}`;
-  return v;
-}
-
-function subjectVariants(value) {
-  const v = normalize(value);
-  if (!v) return [];
-  const lower = v.toLowerCase();
-  if (lower === 'maths' || lower === 'mathematics' || lower === 'math') {
-    return ['Maths', 'Mathematics'];
-  }
-  if (lower === 'social science' || lower === 'social studies' || lower === 'sst') {
-    return ['Social Science', 'Social Studies'];
-  }
-  return [v];
 }
 
 function validContentFilter() {
@@ -156,20 +137,20 @@ function approvedFilter() {
   };
 }
 
-function baseFilter({ classLabel, subject }) {
-  const subjectSet = subjectVariants(subject);
-  return {
-    classLabel: normalizeClassLabel(classLabel),
-    ...(subjectSet.length > 1 ? { subject: { $in: subjectSet } } : { subject: subjectSet[0] || normalize(subject) }),
-    ...validContentFilter(),
-    ...approvedFilter(),
-  };
+function scopeFilter({ classLabel, subject, board, strictBoard = true }) {
+  const scope = buildAiToolDataScopeFilter({
+    classLabel,
+    subject,
+    board: strictBoard ? board : '',
+  });
+  return mergeMongoFilters(scope, validContentFilter(), approvedFilter());
 }
 
-function rotationKey({ classLabel, subject, topic, subtopic, toolName, scope }) {
+function rotationKey({ classLabel, subject, topic, subtopic, toolName, scope, board }) {
   return [
     'ai-tool-data-rotation',
     normalize(scope) || '*',
+    normalize(board) || '*',
     normalize(classLabel),
     normalize(subject),
     normalize(topic),
@@ -201,48 +182,72 @@ async function setCursorIndex(key, idx) {
   );
 }
 
-/**
- * Priority source for Teacher/Student tool pages.
- * 1) exact class+subject+topic+subtopic (+tool when available)
- * 2) if no exact tool hit, retry exact path without toolName
- * 3) if multiple rows, rotate sequentially (1,2,3,...,1)
- */
-export async function fetchRotatingAiToolData({
+function filterHasToolName(filter) {
+  if (!filter) return false;
+  if (filter.toolName) return true;
+  if (Array.isArray(filter.$and)) {
+    return filter.$and.some((clause) => clause?.toolName);
+  }
+  return false;
+}
+
+function buildAttemptFilters({ classLabel, subject, topic, subtopic, board, strictBoard }) {
+  const bf = scopeFilter({ classLabel, subject, board, strictBoard });
+  const normalizedTopic = normalize(topic);
+  const normalizedSubtopic = normalize(subtopic);
+
+  const exactFilter = mergeMongoFilters(
+    bf,
+    normalizedTopic ? buildTopicFieldMongoFilter(normalizedTopic) : { topic: '' },
+    normalizedSubtopic ? buildSubtopicFieldMongoFilter(normalizedSubtopic) : { subtopic: '' },
+  );
+
+  const topicOnlyFilter = mergeMongoFilters(
+    bf,
+    normalizedTopic ? buildTopicFieldMongoFilter(normalizedTopic) : {},
+  );
+
+  return { bf, exactFilter, topicOnlyFilter, normalizedTopic, normalizedSubtopic };
+}
+
+async function executeRotationSearch({
   classLabel,
   subject,
   topic,
   subtopic,
-  toolName = '',
-  preferLatest = false,
-  /** When true (student/teacher dashboards), never return rows from a different tool. */
-  strictToolMatch = false,
-  /** Optional cursor scope (e.g. userId) so rotation is per-user. */
-  cursorScope = '',
-  /** When set, skip candidates that fail this check (tries all rows in the pool before giving up). */
-  validator = null,
+  toolName,
+  board,
+  preferLatest,
+  strictToolMatch,
+  cursorScope,
+  validator,
+  strictBoard,
 }) {
-  const normalizedTopic = normalize(topic);
-  const normalizedSubtopic = normalize(subtopic);
   const normalizedTool = normalize(toolName);
-  const bf = baseFilter({ classLabel, subject });
-
-  const topicFilter = normalizedTopic ? { topic: exactCaseInsensitive(normalizedTopic) } : { topic: '' };
-  const subtopicFilter = normalizedSubtopic ? { subtopic: exactCaseInsensitive(normalizedSubtopic) } : { subtopic: '' };
-  const exactFilter = { ...bf, ...topicFilter, ...subtopicFilter };
+  const { bf, exactFilter, topicOnlyFilter, normalizedTopic, normalizedSubtopic } = buildAttemptFilters({
+    classLabel,
+    subject,
+    topic,
+    subtopic,
+    board,
+    strictBoard,
+  });
 
   const attempts = [];
   if (normalizedTool) {
-    attempts.push({ matchType: 'exact-with-tool', filter: { ...exactFilter, ...toolNameMatchFilter(normalizedTool) } });
+    attempts.push({
+      matchType: 'exact-with-tool',
+      filter: mergeMongoFilters(exactFilter, toolNameMatchFilter(normalizedTool)),
+    });
   }
   if (!strictToolMatch) {
     attempts.push({ matchType: 'exact-any-tool', filter: exactFilter });
 
     if (!normalizedSubtopic && normalizedTopic) {
-      const topicOnlyFilter = { ...bf, topic: exactCaseInsensitive(normalizedTopic) };
       if (normalizedTool) {
         attempts.push({
           matchType: 'topic-with-tool',
-          filter: { ...topicOnlyFilter, ...toolNameMatchFilter(normalizedTool) },
+          filter: mergeMongoFilters(topicOnlyFilter, toolNameMatchFilter(normalizedTool)),
         });
       }
       attempts.push({ matchType: 'topic-any-tool', filter: topicOnlyFilter });
@@ -250,20 +255,25 @@ export async function fetchRotatingAiToolData({
 
     if (!normalizedSubtopic && !normalizedTopic) {
       if (normalizedTool) {
-        attempts.push({ matchType: 'subject-with-tool', filter: { ...bf, ...toolNameMatchFilter(normalizedTool) } });
+        attempts.push({
+          matchType: 'subject-with-tool',
+          filter: mergeMongoFilters(bf, toolNameMatchFilter(normalizedTool)),
+        });
       }
       attempts.push({ matchType: 'subject-any-tool', filter: bf });
     }
   } else if (!normalizedSubtopic && normalizedTopic) {
-    const topicOnlyFilter = { ...bf, topic: exactCaseInsensitive(normalizedTopic) };
     if (normalizedTool) {
       attempts.push({
         matchType: 'topic-with-tool',
-        filter: { ...topicOnlyFilter, ...toolNameMatchFilter(normalizedTool) },
+        filter: mergeMongoFilters(topicOnlyFilter, toolNameMatchFilter(normalizedTool)),
       });
     }
   } else if (!normalizedSubtopic && !normalizedTopic && normalizedTool) {
-    attempts.push({ matchType: 'subject-with-tool', filter: { ...bf, ...toolNameMatchFilter(normalizedTool) } });
+    attempts.push({
+      matchType: 'subject-with-tool',
+      filter: mergeMongoFilters(bf, toolNameMatchFilter(normalizedTool)),
+    });
   }
 
   const selectByRotation = async (docs, matchType, keyToolName = normalizedTool) => {
@@ -274,6 +284,7 @@ export async function fetchRotatingAiToolData({
       subtopic: normalizedSubtopic,
       toolName: keyToolName,
       scope: cursorScope,
+      board: strictBoard ? board : '',
     });
 
     const pickFromOrder = async (order) => {
@@ -336,33 +347,33 @@ export async function fetchRotatingAiToolData({
           .filter((a) => !strictToolMatch || a.matchType.includes('with-tool'))
           .map((a) => ({
             matchType: `${a.matchType}-alias`,
-            filter: { ...a.filter, ...toolNameMatchFilter(toolFilter) },
+            filter: mergeMongoFilters(a.filter, toolNameMatchFilter(toolFilter)),
           })),
       );
     } else if (!strictToolMatch) {
       toolAttempts.push(...attempts);
     }
     for (const attempt of toolAttempts) {
-      if (strictToolMatch && !attempt.filter?.toolName) continue;
+      if (strictToolMatch && !filterHasToolName(attempt.filter)) continue;
       const docs = (await AiToolGeneration.find(attempt.filter).sort({ createdAt: 1 }).lean()).filter(
         (doc) => hasUsableContent(doc) && toolSlugMatches(doc.toolName, tryToolName || normalizedTool),
       );
       if (docs.length > 0) {
-        return selectByRotation(
+        const picked = await selectByRotation(
           docs,
           attempt.matchType,
           attempt.matchType.includes('any-tool') ? '' : toolFilter || normalizedTool,
         );
+        if (picked.doc) return picked;
       }
     }
   }
 
-  // Final fallback: fuzzy match topic/subtopic text among same class+subject (+tool when available).
   const fuzzyBases = [];
   if (normalizedTool) {
     fuzzyBases.push({
       matchType: 'fuzzy-with-tool',
-      filter: { ...bf, ...toolNameMatchFilter(normalizedTool) },
+      filter: mergeMongoFilters(bf, toolNameMatchFilter(normalizedTool)),
       keyTool: normalizedTool,
     });
   }
@@ -379,7 +390,7 @@ export async function fetchRotatingAiToolData({
     if (!pool.length) continue;
 
     const fuzzyMatches = pool.filter((doc) => {
-      const topicOk = !normalizedTopic || looseIncludesEitherWay(doc.topic || '', normalizedTopic);
+      const topicOk = !normalizedTopic || topicTextMatches(doc.topic || '', normalizedTopic);
       const docSub = String(doc.subtopic || '').trim();
       const subtopicOk =
         !normalizedSubtopic ||
@@ -399,10 +410,60 @@ export async function fetchRotatingAiToolData({
           selectedIndex: 0,
         };
       }
-      return selectByRotation(fuzzyMatches, base.matchType, base.keyTool);
+      const picked = await selectByRotation(fuzzyMatches, base.matchType, base.keyTool);
+      if (picked.doc) return picked;
     }
   }
 
   return { doc: null, matchType: null, totalCandidates: 0, selectedIndex: -1 };
 }
 
+/**
+ * Priority source for Teacher/Student tool pages.
+ * Matches AI Tool Topics scope: board + class + subject + topic + subtopic (+tool).
+ */
+export async function fetchRotatingAiToolData({
+  classLabel,
+  subject,
+  topic,
+  subtopic,
+  toolName = '',
+  board = '',
+  preferLatest = false,
+  strictToolMatch = false,
+  cursorScope = '',
+  validator = null,
+}) {
+  const lookupBoard = resolveLookupBoard(board, classLabel);
+
+  const withBoard = await executeRotationSearch({
+    classLabel,
+    subject,
+    topic,
+    subtopic,
+    toolName,
+    board: lookupBoard,
+    preferLatest,
+    strictToolMatch,
+    cursorScope,
+    validator,
+    strictBoard: Boolean(lookupBoard),
+  });
+  if (withBoard.doc) return withBoard;
+
+  if (!lookupBoard) return withBoard;
+
+  return executeRotationSearch({
+    classLabel,
+    subject,
+    topic,
+    subtopic,
+    toolName,
+    board: lookupBoard,
+    preferLatest,
+    strictToolMatch,
+    cursorScope,
+    validator,
+    strictBoard: false,
+  });
+}
