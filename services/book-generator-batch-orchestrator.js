@@ -15,7 +15,7 @@ import {
   getAiGeneratorVariantAngle,
   getAiGeneratorVariantScenario,
 } from '../constants/ai-generator-variant-angles.js';
-import { acquireGenerationLock, releaseGenerationLock } from './ai-generator-lock-service.js';
+import { acquireGenerationLock, forceReleaseGenerationLock, releaseGenerationLock } from './ai-generator-lock-service.js';
 import {
   isAiGeneratorCostSaverEnabled,
   isAiGeneratorUltraEconomyEnabled,
@@ -99,7 +99,9 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
   };
 
   const lockedBy = opts.reqUser?.userId || opts.reqUser?._id || 'unknown';
-  const lock = await acquireGenerationLock(lockScope, lockedBy);
+  const lock = await acquireGenerationLock(lockScope, lockedBy, {
+    forceUnlock: params.forceUnlock === true,
+  });
   if (!lock.acquired) {
     return {
       success: false,
@@ -107,7 +109,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
       message: lock.message || 'Generation already in progress.',
       batchSize,
       savedCount: 0,
-      failedCount: batchSize,
+      failedCount: 0,
       records: [],
       failures: [lock.message || 'Generation already in progress.'],
     };
@@ -276,6 +278,11 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
       message: `Book-grounded batch: ${savedRecords.length}/${batchSize} saved from "${book.title}".`,
     };
   } finally {
-    await releaseGenerationLock(lockScope, lock.lockToken);
+    try {
+      await releaseGenerationLock(lockScope, lock.lockToken);
+    } catch (releaseErr) {
+      console.error('book-generator: releaseGenerationLock failed, forcing scope release', releaseErr);
+      await forceReleaseGenerationLock(lockScope);
+    }
   }
 }

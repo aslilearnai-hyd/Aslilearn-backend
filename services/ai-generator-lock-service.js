@@ -25,11 +25,35 @@ export async function cleanupExpiredGenerationLocks() {
 }
 
 /**
+ * Release all active locks for a curriculum slot (super-admin recovery).
+ */
+export async function forceReleaseGenerationLock(scope) {
+  const s = normalizeScope(scope);
+  const now = new Date();
+  const result = await AiGenerationLock.updateMany(
+    {
+      toolSlug: s.toolSlug,
+      board: s.board,
+      className: s.className,
+      subject: s.subject,
+      topic: s.topic,
+      subtopic: s.subtopic,
+      status: 'active',
+    },
+    { $set: { status: 'released', releasedAt: now } },
+  );
+  return result.modifiedCount || 0;
+}
+
+/**
  * Acquire exclusive generation lock for a curriculum slot.
  * @returns {{ acquired: boolean, lockToken?: string, message?: string, existingLock?: object }}
  */
-export async function acquireGenerationLock(scope, lockedBy = 'unknown') {
+export async function acquireGenerationLock(scope, lockedBy = 'unknown', opts = {}) {
   await cleanupExpiredGenerationLocks();
+  if (opts.forceUnlock) {
+    await forceReleaseGenerationLock(scope);
+  }
   const s = normalizeScope(scope);
   const now = new Date();
   const expiresAt = new Date(now.getTime() + getLockTtlMs());

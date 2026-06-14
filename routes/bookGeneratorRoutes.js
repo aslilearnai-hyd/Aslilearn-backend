@@ -3,6 +3,7 @@ import { verifyToken } from '../middleware/auth.js';
 import {
   listBookBasedTools,
   generateBookBatch,
+  releaseBookGeneratorLock,
   listBookGeneratorRecords,
   listBooksForGenerator,
   deleteBookGeneratorRecord,
@@ -14,6 +15,7 @@ router.use(verifyToken);
 router.get('/tools', listBookBasedTools);
 router.get('/books', listBooksForGenerator);
 router.post('/generate-batch', generateBookBatch);
+router.post('/release-lock', releaseBookGeneratorLock);
 router.get('/records', listBookGeneratorRecords);
 router.delete('/records/:id', deleteBookGeneratorRecord);
 

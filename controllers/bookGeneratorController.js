@@ -1,9 +1,29 @@
 import AiToolGeneration from '../models/AiToolGeneration.js';
 import Book from '../models/Book.js';
 import { generateBookBatchAndSave } from '../services/book-generator-batch-orchestrator.js';
+import { forceReleaseGenerationLock } from '../services/ai-generator-lock-service.js';
 import { BOOK_BASED_TOOL_SLUGS, isBookBasedToolSlug } from '../config/bookBasedTools.js';
-import { boardMongoMatch } from '../utils/board-label.js';
+import { boardMongoMatch, canonicalBoardLabel } from '../utils/board-label.js';
 import { groupAiGeneratorRecords } from './aiGeneratorController.js';
+
+function buildBookGeneratorLockScope({
+  toolSlug,
+  bookId,
+  board,
+  className,
+  subjectName,
+  topicName,
+  subtopicName,
+}) {
+  return {
+    toolSlug: String(toolSlug || '').trim(),
+    board: canonicalBoardLabel(String(board || 'CBSE').trim()),
+    className: String(className || '').trim(),
+    subject: String(subjectName || '').trim(),
+    topic: String(topicName || '').trim(),
+    subtopic: `${String(subtopicName || '').trim()}::book:${String(bookId || '').trim()}`,
+  };
+}
 
 function ensureSuperAdmin(req, res) {
   if (req.user?.role !== 'super-admin') {
@@ -33,6 +53,7 @@ export async function generateBookBatch(req, res) {
       batchSize,
       useBookKnowledge,
       extraParams,
+      forceUnlock,
     } = req.body || {};
 
     const slug = String(toolSlug || toolName || '').trim();
@@ -52,14 +73,68 @@ export async function generateBookBatch(req, res) {
         batchSize,
         useBookKnowledge: useBookKnowledge !== false,
         extraParams,
+        forceUnlock: forceUnlock === true,
       },
       { reqUser: req.user },
     );
 
-    const status = result.locked ? 409 : result.success ? 200 : 502;
+    if (result.locked) {
+      return res.status(409).json({
+        success: false,
+        locked: true,
+        message: result.message || 'Generation already in progress.',
+        data: { locked: true },
+      });
+    }
+
+    const status = result.success ? 200 : 502;
     res.status(status).json({ success: result.success, data: result, message: result.message });
   } catch (err) {
     res.status(502).json({ success: false, message: err.message || 'Book generation failed.' });
+  }
+}
+
+export async function releaseBookGeneratorLock(req, res) {
+  if (!ensureSuperAdmin(req, res)) return;
+  try {
+    const {
+      toolSlug,
+      toolName,
+      bookId,
+      board,
+      className,
+      subjectName,
+      topicName,
+      subtopicName,
+    } = req.body || {};
+
+    const slug = String(toolSlug || toolName || '').trim();
+    if (!slug || !bookId || !className || !subjectName || !subtopicName) {
+      return res.status(400).json({
+        success: false,
+        message: 'toolSlug, bookId, className, subjectName, and subtopicName are required.',
+      });
+    }
+
+    const released = await forceReleaseGenerationLock(
+      buildBookGeneratorLockScope({
+        toolSlug: slug,
+        bookId,
+        board,
+        className,
+        subjectName,
+        topicName,
+        subtopicName,
+      }),
+    );
+
+    return res.json({
+      success: true,
+      message: released > 0 ? 'Stuck generation lock cleared.' : 'No active lock found for this slot.',
+      data: { released },
+    });
+  } catch (err) {
+    return res.status(500).json({ success: false, message: err.message || 'Failed to release lock.' });
   }
 }
 
