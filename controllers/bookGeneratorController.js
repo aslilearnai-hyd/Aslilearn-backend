@@ -1,3 +1,4 @@
+import mongoose from 'mongoose';
 import AiToolGeneration from '../models/AiToolGeneration.js';
 import Book from '../models/Book.js';
 import { generateBookBatchAndSave } from '../services/book-generator-batch-orchestrator.js';
@@ -13,6 +14,18 @@ function ensureSuperAdmin(req, res) {
   return true;
 }
 
+function buildBookGeneratorMongoQuery(query = {}) {
+  const mongoQuery = { sourceType: 'book_rag' };
+  if (query.toolSlug) mongoQuery.toolName = query.toolSlug;
+  if (query.bookId) mongoQuery['metadata.bookId'] = String(query.bookId);
+  if (query.board) mongoQuery.board = boardMongoMatch(query.board) || query.board;
+  if (query.className) mongoQuery.classLabel = query.className;
+  if (query.subjectName) mongoQuery.subject = query.subjectName;
+  if (query.topicName) mongoQuery.topic = query.topicName;
+  if (query.subtopicName) mongoQuery.subtopic = query.subtopicName;
+  return mongoQuery;
+}
+
 export async function listBookBasedTools(req, res) {
   if (!ensureSuperAdmin(req, res)) return;
   res.json({ success: true, data: BOOK_BASED_TOOL_SLUGS });
@@ -20,6 +33,8 @@ export async function listBookBasedTools(req, res) {
 
 export async function generateBookBatch(req, res) {
   if (!ensureSuperAdmin(req, res)) return;
+  if (req.socket) req.socket.setTimeout(900000);
+  if (typeof res.setTimeout === 'function') res.setTimeout(900000);
   try {
     const {
       toolSlug,
@@ -67,14 +82,15 @@ export async function listBookGeneratorRecords(req, res) {
   if (!ensureSuperAdmin(req, res)) return;
   try {
     const { toolSlug, bookId, board, className, subjectName, topicName, subtopicName } = req.query;
-    const query = { sourceType: 'book_rag' };
-    if (toolSlug) query.toolName = toolSlug;
-    if (bookId) query['metadata.bookId'] = String(bookId);
-    if (board) query.board = boardMongoMatch(board) || board;
-    if (className) query.classLabel = className;
-    if (subjectName) query.subject = subjectName;
-    if (topicName) query.topic = topicName;
-    if (subtopicName) query.subtopic = subtopicName;
+    const query = buildBookGeneratorMongoQuery({
+      toolSlug,
+      bookId,
+      board,
+      className,
+      subjectName,
+      topicName,
+      subtopicName,
+    });
 
     const records = await AiToolGeneration.find(query).sort({ createdAt: -1 }).limit(2000).lean();
     const grouped = groupAiGeneratorRecords(records);
@@ -113,9 +129,59 @@ export async function listBooksForGenerator(req, res) {
 export async function deleteBookGeneratorRecord(req, res) {
   if (!ensureSuperAdmin(req, res)) return;
   try {
-    await AiToolGeneration.findOneAndDelete({ _id: req.params.id, sourceType: 'book_rag' });
+    const deleted = await AiToolGeneration.findOneAndDelete({
+      _id: req.params.id,
+      sourceType: 'book_rag',
+    }).lean();
+    if (!deleted) {
+      return res.status(404).json({ success: false, message: 'Record not found.' });
+    }
     res.json({ success: true, message: 'Record deleted.' });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message || 'Delete failed.' });
+  }
+}
+
+export async function deleteAllBookGeneratorRecords(req, res) {
+  if (!ensureSuperAdmin(req, res)) return;
+  try {
+    const { board, toolSlug, bookId } = req.query;
+    const mongoQuery = buildBookGeneratorMongoQuery({ board, toolSlug, bookId });
+    const result = await AiToolGeneration.deleteMany(mongoQuery);
+    const deletedCount = Number(result?.deletedCount || 0);
+    res.json({
+      success: true,
+      data: { deletedCount },
+      message: `Deleted ${deletedCount} book-grounded record${deletedCount === 1 ? '' : 's'}.`,
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message || 'Failed to delete all records.' });
+  }
+}
+
+export async function bulkDeleteBookGeneratorRecords(req, res) {
+  if (!ensureSuperAdmin(req, res)) return;
+  try {
+    const rawIds = Array.isArray(req.body?.ids) ? req.body.ids : [];
+    const ids = [...new Set(rawIds.map((x) => String(x || '').trim()).filter(Boolean))].filter((id) =>
+      mongoose.Types.ObjectId.isValid(id),
+    );
+    if (ids.length === 0) {
+      return res.status(400).json({ success: false, message: 'No valid record ids provided.' });
+    }
+
+    const result = await AiToolGeneration.deleteMany({
+      _id: { $in: ids },
+      sourceType: 'book_rag',
+    });
+    const deletedCount = Number(result?.deletedCount || 0);
+
+    res.json({
+      success: deletedCount > 0,
+      data: { deletedCount, failedCount: ids.length - deletedCount },
+      message: `Deleted ${deletedCount} of ${ids.length} record(s).`,
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message || 'Failed to bulk delete records.' });
   }
 }
