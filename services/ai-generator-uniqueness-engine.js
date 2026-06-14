@@ -56,6 +56,54 @@ function filterQuestionRows(rows, seen) {
   return kept;
 }
 
+export function renumberIntraRecordQuestions(toolSlug, structured) {
+  const slug = String(toolSlug || '').trim();
+  if (!QUESTION_TOOLS.has(slug) || !structured || typeof structured !== 'object' || Array.isArray(structured)) {
+    return structured;
+  }
+  const out = { ...structured };
+
+  function renumberRows(rows) {
+    if (!Array.isArray(rows)) return rows;
+    return rows.map((row, idx) => {
+      if (!row || typeof row !== 'object') return row;
+      const n = idx + 1;
+      return { ...row, question_number: n, questionNumber: n, sl_no: n };
+    });
+  }
+
+  for (const key of STRUCTURED_QUESTION_ARRAY_KEYS) {
+    if (Array.isArray(out[key])) {
+      out[key] = renumberRows(out[key]);
+    }
+  }
+
+  if (Array.isArray(out.sections)) {
+    out.sections = out.sections.map((sec) => {
+      if (!sec || typeof sec !== 'object') return sec;
+      const questions = renumberRows(sec.questions);
+      return { ...sec, questions, count: questions.length };
+    });
+    const flat = out.sections.flatMap((sec) => (Array.isArray(sec.questions) ? sec.questions : []));
+    if (flat.length) out.questions = flat;
+  }
+
+  if (Array.isArray(out.concepts)) {
+    out.concepts = out.concepts.map((concept) => {
+      if (!concept || typeof concept !== 'object') return concept;
+      const next = { ...concept };
+      for (const key of STRUCTURED_QUESTION_ARRAY_KEYS) {
+        if (Array.isArray(next[key])) {
+          next[key] = renumberRows(next[key]);
+        }
+      }
+      return next;
+    });
+  }
+
+  return out;
+}
+
 /** Remove duplicate MCQs/questions inside one structured record (keeps first occurrence). */
 export function dedupeIntraRecordQuestions(toolSlug, structured) {
   const slug = String(toolSlug || '').trim();

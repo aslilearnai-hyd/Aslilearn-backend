@@ -16,6 +16,7 @@ import {
   validateRecordUniqueness,
   collectQuestionTextsFromStructured,
   dedupeIntraRecordQuestions,
+  renumberIntraRecordQuestions,
   summarizeUniquenessErrors,
 } from './ai-generator-uniqueness-engine.js';
 import { extractTitleFromStructured } from './ai-generator-content-extractor.js';
@@ -284,6 +285,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               finalizeMeta,
             );
             structuredContent = dedupeIntraRecordQuestions(toolSlug, structuredContent);
+            structuredContent = renumberIntraRecordQuestions(toolSlug, structuredContent);
 
             let uniqueness = validateRecordUniqueness(toolSlug, structuredContent, {
               batchTitles,
@@ -298,6 +300,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               );
               if (intraOnly) {
                 structuredContent = dedupeIntraRecordQuestions(toolSlug, structuredContent);
+                structuredContent = renumberIntraRecordQuestions(toolSlug, structuredContent);
                 uniqueness = validateRecordUniqueness(toolSlug, structuredContent, {
                   batchTitles,
                   batchTexts: batchQuestionTexts,
