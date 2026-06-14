@@ -1,6 +1,7 @@
 import crypto from 'crypto';
 import AiGenerationLock from '../models/AiGenerationLock.js';
 import { normalizeScope } from './ai-generator-fingerprint-service.js';
+import { lockBoardKey, normalizeClassLabelForLock } from '../utils/board-label.js';
 
 function getLockTtlMs() {
   const minutes = Number(process.env.AI_GENERATOR_LOCK_TTL_MINUTES);
@@ -8,8 +9,23 @@ function getLockTtlMs() {
   return 30 * 60 * 1000;
 }
 
+function escapeRegex(value) {
+  return String(value || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function normalizeLockScope(scope) {
+  const base = normalizeScope(scope);
+  return {
+    ...base,
+    board: lockBoardKey(base.board),
+    className: normalizeClassLabelForLock(base.className),
+    topic: String(base.topic || '').trim().replace(/\s+/g, ' '),
+    subtopic: String(base.subtopic || '').trim().replace(/\s+/g, ' '),
+  };
+}
+
 function scopeKey(scope) {
-  const s = normalizeScope(scope);
+  const s = normalizeLockScope(scope);
   return [s.toolSlug, s.board, s.className, s.subject, s.topic, s.subtopic].join('|');
 }
 
@@ -28,7 +44,7 @@ export async function cleanupExpiredGenerationLocks() {
  * Release all active locks for a curriculum slot (super-admin recovery).
  */
 export async function forceReleaseGenerationLock(scope) {
-  const s = normalizeScope(scope);
+  const s = normalizeLockScope(scope);
   const now = new Date();
   const result = await AiGenerationLock.updateMany(
     {
@@ -46,6 +62,31 @@ export async function forceReleaseGenerationLock(scope) {
 }
 
 /**
+ * Release book-generator locks by tool + book (+ optional sub-topic), ignoring board/class typos.
+ */
+export async function forceReleaseBookGeneratorLocks({ toolSlug, bookId, subtopicName }) {
+  await cleanupExpiredGenerationLocks();
+  const slug = String(toolSlug || '').trim();
+  const id = String(bookId || '').trim();
+  if (!slug || !id) return 0;
+
+  const now = new Date();
+  const subtopicPrefix = String(subtopicName || '').trim().replace(/\s+/g, ' ');
+  const filter = {
+    toolSlug: slug,
+    status: 'active',
+    subtopic: subtopicPrefix
+      ? { $regex: new RegExp(`^${escapeRegex(subtopicPrefix)}::book:${escapeRegex(id)}$`, 'i') }
+      : { $regex: new RegExp(`::book:${escapeRegex(id)}$`, 'i') },
+  };
+
+  const result = await AiGenerationLock.updateMany(filter, {
+    $set: { status: 'released', releasedAt: now },
+  });
+  return result.modifiedCount || 0;
+}
+
+/**
  * Acquire exclusive generation lock for a curriculum slot.
  * @returns {{ acquired: boolean, lockToken?: string, message?: string, existingLock?: object }}
  */
@@ -54,7 +95,7 @@ export async function acquireGenerationLock(scope, lockedBy = 'unknown', opts = 
   if (opts.forceUnlock) {
     await forceReleaseGenerationLock(scope);
   }
-  const s = normalizeScope(scope);
+  const s = normalizeLockScope(scope);
   const now = new Date();
   const expiresAt = new Date(now.getTime() + getLockTtlMs());
   const lockToken = crypto.randomBytes(16).toString('hex');
@@ -109,7 +150,7 @@ export async function acquireGenerationLock(scope, lockedBy = 'unknown', opts = 
  * Release lock after success or failure.
  */
 export async function releaseGenerationLock(scope, lockToken) {
-  const s = normalizeScope(scope);
+  const s = normalizeLockScope(scope);
   const now = new Date();
   const filter = {
     toolSlug: s.toolSlug,
@@ -122,9 +163,13 @@ export async function releaseGenerationLock(scope, lockToken) {
   };
   if (lockToken) filter.lockToken = lockToken;
 
-  await AiGenerationLock.updateMany(filter, {
+  const result = await AiGenerationLock.updateMany(filter, {
     $set: { status: 'released', releasedAt: now },
   });
+
+  if ((result.modifiedCount || 0) === 0) {
+    await forceReleaseGenerationLock(scope);
+  }
 }
 
-export { scopeKey, getLockTtlMs };
+export { scopeKey, getLockTtlMs, normalizeLockScope };

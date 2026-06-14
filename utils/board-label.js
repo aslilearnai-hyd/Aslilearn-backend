@@ -20,6 +20,26 @@ export function canonicalBoardLabel(raw) {
   return s;
 }
 
+/** Stable board key for generation locks (IIT / NEET variants → one slot). */
+export function lockBoardKey(raw) {
+  const s = trimBoard(raw);
+  if (!s) return '';
+  const compact = s.toUpperCase().replace(/[\s/\\-]+/g, '');
+  if (compact.includes('IIT') || compact.includes('NEET') || compact.includes('JEE')) {
+    return 'IIT/NEET';
+  }
+  return canonicalBoardLabel(s);
+}
+
+/** Normalize class labels for lock identity (6 → Class 6). */
+export function normalizeClassLabelForLock(raw) {
+  const s = trimBoard(raw);
+  if (!s) return '';
+  const digits = s.match(/\d+/)?.[0];
+  if (digits) return `Class ${digits}`;
+  return s;
+}
+
 /**
  * MongoDB filter for `board` when reading. Empty string matches only empty board.
  * CBSE/CBSC (any case) match either spelling in the database.

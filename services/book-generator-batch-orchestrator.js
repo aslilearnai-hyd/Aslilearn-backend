@@ -26,7 +26,7 @@ import {
   getBookBasedToolDisplayName,
   BOOK_GENERATOR_DEFAULT_BATCH_SIZE,
 } from '../config/bookBasedTools.js';
-import { canonicalBoardLabel } from '../utils/board-label.js';
+import { canonicalBoardLabel, lockBoardKey, normalizeClassLabelForLock } from '../utils/board-label.js';
 
 const DEFAULT_CONCURRENCY = Number(process.env.BOOK_GENERATOR_CONCURRENCY || process.env.AI_GENERATOR_BATCH_CONCURRENCY || 3);
 
@@ -73,8 +73,8 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
     throw new Error('Book is not indexed yet. Upload and reindex the book first.');
   }
 
-  const board = canonicalBoardLabel(String(params.board || book.board || 'CBSE').trim());
-  const className = String(params.className || book.class || '').trim();
+  const board = lockBoardKey(String(params.board || book.board || 'CBSE').trim());
+  const className = normalizeClassLabelForLock(String(params.className || book.class || '').trim());
   const subjectName = String(params.subjectName || book.subject || '').trim();
   const topicName = String(params.topicName || '').trim();
   const subtopicName = String(params.subtopicName || '').trim();

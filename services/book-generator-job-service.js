@@ -1,13 +1,57 @@
 import crypto from 'crypto';
 
 const jobs = new Map();
+const activeJobsByKey = new Map();
 const JOB_TTL_MS = Number(process.env.BOOK_GENERATOR_JOB_TTL_MS) || 2 * 60 * 60 * 1000;
+
+function jobScopeKey(meta = {}) {
+  return [
+    String(meta.toolSlug || '').trim(),
+    String(meta.bookId || '').trim(),
+    String(meta.topicName || '').trim(),
+    String(meta.subtopicName || '').trim(),
+  ].join('|');
+}
 
 function pruneExpiredJobs() {
   const now = Date.now();
   for (const [id, job] of jobs.entries()) {
-    if (now - job.updatedAt > JOB_TTL_MS) jobs.delete(id);
+    if (now - job.updatedAt > JOB_TTL_MS) {
+      jobs.delete(id);
+      for (const [key, jobId] of activeJobsByKey.entries()) {
+        if (jobId === id) activeJobsByKey.delete(key);
+      }
+    }
   }
+}
+
+export function findActiveBookGeneratorJob(meta = {}) {
+  pruneExpiredJobs();
+  const key = jobScopeKey(meta);
+  const jobId = activeJobsByKey.get(key);
+  if (!jobId) return null;
+  const job = jobs.get(jobId);
+  if (!job || ['completed', 'failed', 'locked', 'cancelled'].includes(job.status)) {
+    activeJobsByKey.delete(key);
+    return null;
+  }
+  return job;
+}
+
+export function cancelBookGeneratorJobsForScope(meta = {}) {
+  const key = jobScopeKey(meta);
+  const jobId = activeJobsByKey.get(key);
+  if (!jobId) return 0;
+  const job = jobs.get(jobId);
+  if (job && !['completed', 'failed', 'locked', 'cancelled'].includes(job.status)) {
+    updateBookGeneratorJob(jobId, {
+      status: 'cancelled',
+      progress: 'Cancelled by admin.',
+      error: 'Cancelled to clear stuck generation.',
+    });
+  }
+  activeJobsByKey.delete(key);
+  return job ? 1 : 0;
 }
 
 export function createBookGeneratorJob(meta = {}) {
@@ -25,6 +69,7 @@ export function createBookGeneratorJob(meta = {}) {
     error: null,
   };
   jobs.set(id, job);
+  activeJobsByKey.set(jobScopeKey(meta), id);
   return job;
 }
 
@@ -37,6 +82,9 @@ export function updateBookGeneratorJob(jobId, patch = {}) {
   const job = jobs.get(String(jobId || ''));
   if (!job) return null;
   Object.assign(job, patch, { updatedAt: Date.now() });
+  if (['completed', 'failed', 'locked', 'cancelled'].includes(job.status)) {
+    activeJobsByKey.delete(jobScopeKey(job.meta));
+  }
   return job;
 }
 

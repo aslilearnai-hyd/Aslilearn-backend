@@ -1,34 +1,17 @@
 import AiToolGeneration from '../models/AiToolGeneration.js';
 import Book from '../models/Book.js';
 import { generateBookBatchAndSave } from '../services/book-generator-batch-orchestrator.js';
-import { forceReleaseGenerationLock } from '../services/ai-generator-lock-service.js';
+import { forceReleaseBookGeneratorLocks } from '../services/ai-generator-lock-service.js';
 import {
+  cancelBookGeneratorJobsForScope,
   createBookGeneratorJob,
+  findActiveBookGeneratorJob,
   getBookGeneratorJob,
   runBookGeneratorJob,
 } from '../services/book-generator-job-service.js';
 import { BOOK_BASED_TOOL_SLUGS, isBookBasedToolSlug } from '../config/bookBasedTools.js';
-import { boardMongoMatch, canonicalBoardLabel } from '../utils/board-label.js';
+import { boardMongoMatch } from '../utils/board-label.js';
 import { groupAiGeneratorRecords } from './aiGeneratorController.js';
-
-function buildBookGeneratorLockScope({
-  toolSlug,
-  bookId,
-  board,
-  className,
-  subjectName,
-  topicName,
-  subtopicName,
-}) {
-  return {
-    toolSlug: String(toolSlug || '').trim(),
-    board: canonicalBoardLabel(String(board || 'CBSE').trim()),
-    className: String(className || '').trim(),
-    subject: String(subjectName || '').trim(),
-    topic: String(topicName || '').trim(),
-    subtopic: `${String(subtopicName || '').trim()}::book:${String(bookId || '').trim()}`,
-  };
-}
 
 function ensureSuperAdmin(req, res) {
   if (req.user?.role !== 'super-admin') {
@@ -83,12 +66,29 @@ export async function generateBookBatch(req, res) {
 
     const useAsync = asyncMode !== false;
     if (useAsync) {
-      const job = createBookGeneratorJob({
+      const jobMeta = {
         toolSlug: slug,
         bookId,
         topicName,
         subtopicName,
-      });
+      };
+
+      if (forceUnlock === true) {
+        await forceReleaseBookGeneratorLocks(jobMeta);
+        cancelBookGeneratorJobsForScope(jobMeta);
+      } else {
+        const activeJob = findActiveBookGeneratorJob(jobMeta);
+        if (activeJob) {
+          return res.status(409).json({
+            success: false,
+            locked: true,
+            message: 'Generation already in progress for this book and sub-topic.',
+            data: { locked: true, jobId: activeJob.id, status: activeJob.status },
+          });
+        }
+      }
+
+      const job = createBookGeneratorJob(jobMeta);
       void runBookGeneratorJob(job.id, async (onProgress) => {
         onProgress('Retrieving textbook chunks…');
         return generateBookBatchAndSave(params, { reqUser: req.user });
@@ -158,28 +158,32 @@ export async function releaseBookGeneratorLock(req, res) {
     } = req.body || {};
 
     const slug = String(toolSlug || toolName || '').trim();
-    if (!slug || !bookId || !className || !subjectName || !subtopicName) {
+    if (!slug || !bookId) {
       return res.status(400).json({
         success: false,
-        message: 'toolSlug, bookId, className, subjectName, and subtopicName are required.',
+        message: 'toolSlug and bookId are required.',
       });
     }
 
-    const released = await forceReleaseGenerationLock(
-      buildBookGeneratorLockScope({
-        toolSlug: slug,
-        bookId,
-        board,
-        className,
-        subjectName,
-        topicName,
-        subtopicName,
-      }),
-    );
+    cancelBookGeneratorJobsForScope({
+      toolSlug: slug,
+      bookId,
+      topicName,
+      subtopicName,
+    });
+
+    const released = await forceReleaseBookGeneratorLocks({
+      toolSlug: slug,
+      bookId,
+      subtopicName,
+    });
 
     return res.json({
       success: true,
-      message: released > 0 ? 'Stuck generation lock cleared.' : 'No active lock found for this slot.',
+      message:
+        released > 0
+          ? `Cleared ${released} stuck lock${released === 1 ? '' : 's'}. You can generate again.`
+          : 'No active lock found. You can try generating again.',
       data: { released },
     });
   } catch (err) {
