@@ -135,4 +135,4 @@ export async function releaseGenerationLock(scope, lockToken) {
   });
 }
 
-export { scopeKey, getLockTtlMs, getBookLockTtlMs };
+export { scopeKey, getLockTtlMs };
