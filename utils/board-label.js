@@ -28,9 +28,13 @@ export function boardMongoMatch(rawBoard) {
   const s = trimBoard(rawBoard);
   if (!s) return '';
 
-  const u = s.toUpperCase();
-  if (u === 'CBSE' || u === 'CBSC') {
+  const compact = s.toUpperCase().replace(/[\s/\\-]+/g, '');
+  if (compact === 'CBSE' || compact === 'CBSC') {
     return { $regex: /^(cbse|cbsc)$/i };
   }
-  return s;
+  if (compact.includes('IIT') || compact.includes('NEET') || compact.includes('JEE')) {
+    return { $regex: /iit|neet|jee/i };
+  }
+  const escaped = s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\s+/g, '\\s*');
+  return { $regex: new RegExp(`^${escaped}$`, 'i') };
 }

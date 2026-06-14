@@ -7,7 +7,7 @@ const aiToolGenerationSchema = new mongoose.Schema(
     /** Single source of truth: how this row was created */
     sourceType: {
       type: String,
-      enum: ['ai_generator', 'ai_pdf', 'legacy'],
+      enum: ['ai_generator', 'ai_pdf', 'book_rag', 'legacy'],
       default: 'legacy',
       index: true,
     },

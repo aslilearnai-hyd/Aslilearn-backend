@@ -44,6 +44,8 @@ import streamRoutes from './routes/streams.js';
 import curriculumRoutes from './routes/curriculum.js';
 import pdfRagRoutes from './routes/pdf-rag.js';
 import aiGeneratorRoutes from './routes/aiGeneratorRoutes.js';
+import bookKnowledgeRoutes from './routes/bookKnowledgeRoutes.js';
+import bookGeneratorRoutes from './routes/bookGeneratorRoutes.js';
 import vidyaRoutes from './routes/vidya.js';
 import practiceProgressRoutes from './routes/practice-progress.js';
 import dashboardRoutes from './routes/dashboards.js';
@@ -875,6 +877,8 @@ app.use('/api/admin', adminRoutes);
 app.use('/api/teacher', teacherRoutes);
 app.use('/api/curriculum', curriculumRoutes);
 app.use('/api/ai-generator', aiGeneratorRoutes);
+app.use('/api/book-knowledge', bookKnowledgeRoutes);
+app.use('/api/book-generator', bookGeneratorRoutes);
 // Student routes before generic /api mount so other routers cannot shadow /api/student/*
 app.use('/api/student', studentRoutes);
 app.use('/api', streamRoutes);

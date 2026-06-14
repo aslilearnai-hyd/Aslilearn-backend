@@ -29,6 +29,7 @@
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1036.0",
     "@google/generative-ai": "^0.24.1",
+    "adm-zip": "^0.5.17",
     "axios": "^1.12.2",
     "bcryptjs": "^2.4.3",
     "bullmq": "^5.76.1",

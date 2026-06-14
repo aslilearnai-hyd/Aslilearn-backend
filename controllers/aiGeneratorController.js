@@ -179,7 +179,7 @@ function isDeprecatedGeneratorRecord(record) {
   );
 }
 
-function groupAiGeneratorRecords(items) {
+export function groupAiGeneratorRecords(items) {
   const toolMap = new Map();
 
   for (const record of items) {

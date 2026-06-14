@@ -7724,9 +7724,11 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
   const basePrompt = pdfContext
     ? `${prompt}${historicalBlock ? `\n\n${historicalBlock}` : ''}
 
-REFERENCE PDF CONTEXT (RAG — primary factual source for this generation):
-Use the passages below to ground facts, terminology, and curriculum alignment.
-Synthesize into the tool schema above — do not paste PDF blocks verbatim or mirror textbook layout.
+REFERENCE TEXTBOOK CONTENT (RAG — PRIMARY factual source for this generation):
+Use the passages below as the PRIMARY source. Follow textbook terminology, definitions, examples, formulae, and explanations.
+Do not invent facts that contradict the book. Only use general knowledge when the book is silent.
+Priority: (1) Uploaded Book  (2) Uploaded Notes  (3) Gemini knowledge.
+Synthesize into the tool schema above — do not paste blocks verbatim.
 ${pdfContext}`
     : `${prompt}${historicalBlock ? `\n\n${historicalBlock}` : ''}`;
   const extra = params.extraParams && typeof params.extraParams === 'object' ? params.extraParams : {};
