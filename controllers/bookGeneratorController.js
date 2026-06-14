@@ -90,8 +90,7 @@ export async function generateBookBatch(req, res) {
 
       const job = createBookGeneratorJob(jobMeta);
       void runBookGeneratorJob(job.id, async (onProgress) => {
-        onProgress('Retrieving textbook chunks…');
-        return generateBookBatchAndSave(params, { reqUser: req.user });
+        return generateBookBatchAndSave(params, { reqUser: req.user, onProgress });
       });
 
       return res.status(202).json({

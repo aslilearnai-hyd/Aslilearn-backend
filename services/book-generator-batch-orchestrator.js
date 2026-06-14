@@ -139,6 +139,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
   }
 
   try {
+    opts.onProgress?.('Preparing batch…');
     const historical = await buildBookHistoricalGenerationContext(scope);
     const batchTitles = [];
     const batchQuestionTexts = [];
@@ -150,6 +151,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
     beginTokenUsageSession('book-generator-batch');
 
     try {
+      opts.onProgress?.('Retrieving textbook chunks for your topic…');
       const ragBase = useBookKnowledge
         ? await retrieveBookContextForGeneration({
             bookId,
@@ -164,10 +166,15 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
         : { contextText: '', chunkCount: 0, chunks: [] };
 
       const slots = Array.from({ length: batchSize }, (_, i) => historical.existingCount + i + 1);
+      let completedSlots = 0;
 
       const slotResults = await runPool(slots, DEFAULT_CONCURRENCY, async (variantIndex) => {
         const maxAttempts = getMaxAttemptsPerSlot();
         let lastError = 'Unknown error';
+
+        opts.onProgress?.(
+          `Generating with Gemini… ${completedSlots}/${batchSize} done (working on record ${variantIndex})`,
+        );
 
         for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
           try {
@@ -194,7 +201,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               subTopic: subtopicName,
               extraParams,
               pdfContext: ragBase.contextText,
-              historicalPromptBlock: historical.promptBlock,
+              historicalPromptBlock: '',
               upgradeToFlash:
                 !isAiGeneratorCostSaverEnabled() &&
                 !isAiGeneratorUltraEconomyEnabled() &&
@@ -219,8 +226,8 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             const uniqueness = validateRecordUniqueness(toolSlug, structuredContent, {
               batchTitles,
               batchTexts: batchQuestionTexts,
-              historicalTexts: historical.questionSnippets || [],
-              historicalTitles: historical.titles,
+              historicalTexts: [],
+              historicalTitles: [],
             });
 
             if (!uniqueness.valid) {
@@ -281,6 +288,9 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                 $set: { 'generationStats.lastGeneratedAt': new Date() },
               },
             );
+
+            completedSlots += 1;
+            opts.onProgress?.(`Saved ${completedSlots}/${batchSize} unique records…`);
 
             return { ok: true, variantIndex, record: record.toObject() };
           } catch (err) {
