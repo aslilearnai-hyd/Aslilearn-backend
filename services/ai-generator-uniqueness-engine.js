@@ -14,6 +14,99 @@ const QUESTION_TOOLS = new Set([
   'quick-assignment-builder',
 ]);
 
+const STRUCTURED_QUESTION_ARRAY_KEYS = [
+  'questions',
+  'practice_questions',
+  'concept_based_questions',
+  'formative_assessment_questions',
+  'section_a',
+  'section_a_mcqs',
+  'section_b',
+  'section_b_fib',
+  'section_c',
+  'section_c_vsa',
+  'section_d',
+  'section_d_sa',
+  'section_e',
+  'section_e_competency',
+  'cards',
+  'application_hots_cards',
+];
+
+function questionTextFromRow(row) {
+  if (typeof row === 'string') return row.trim();
+  if (!row || typeof row !== 'object') return '';
+  return String(row.question || row.prompt || row.text || row.front || '').trim();
+}
+
+function filterQuestionRows(rows, seen) {
+  if (!Array.isArray(rows)) return rows;
+  const kept = [];
+  for (const row of rows) {
+    const text = questionTextFromRow(row);
+    if (!text) {
+      kept.push(row);
+      continue;
+    }
+    const fp = contentFingerprint(text);
+    if (seen.has(fp)) continue;
+    seen.add(fp);
+    kept.push(row);
+  }
+  return kept;
+}
+
+/** Remove duplicate MCQs/questions inside one structured record (keeps first occurrence). */
+export function dedupeIntraRecordQuestions(toolSlug, structured) {
+  const slug = String(toolSlug || '').trim();
+  if (!QUESTION_TOOLS.has(slug) || !structured || typeof structured !== 'object' || Array.isArray(structured)) {
+    return structured;
+  }
+  const out = { ...structured };
+  const seen = new Set();
+
+  for (const key of STRUCTURED_QUESTION_ARRAY_KEYS) {
+    if (Array.isArray(out[key])) {
+      out[key] = filterQuestionRows(out[key], seen);
+    }
+  }
+
+  if (Array.isArray(out.sections)) {
+    out.sections = out.sections.map((sec) => {
+      if (!sec || typeof sec !== 'object') return sec;
+      return {
+        ...sec,
+        questions: filterQuestionRows(sec.questions, seen),
+      };
+    });
+  }
+
+  if (Array.isArray(out.concepts)) {
+    out.concepts = out.concepts.map((concept) => {
+      if (!concept || typeof concept !== 'object') return concept;
+      const next = { ...concept };
+      for (const key of STRUCTURED_QUESTION_ARRAY_KEYS) {
+        if (Array.isArray(next[key])) {
+          next[key] = filterQuestionRows(next[key], seen);
+        }
+      }
+      return next;
+    });
+  }
+
+  return out;
+}
+
+export function summarizeUniquenessErrors(errors = []) {
+  const list = Array.isArray(errors) ? errors : [];
+  if (!list.length) return '';
+  const intra = list.filter((e) => String(e).includes('Duplicate question within record'));
+  if (intra.length === list.length) {
+    return `Duplicate questions in record (${intra.length}) — removed duplicates before save`;
+  }
+  return list.slice(0, 2).join('; ') + (list.length > 2 ? ` (+${list.length - 2} more)` : '');
+}
+
 export function getQuestionSimilarityThreshold() {
   const n = Number(process.env.AI_GENERATOR_QUESTION_SIMILARITY_THRESHOLD);
   if (Number.isFinite(n) && n > 0 && n < 1) return n;

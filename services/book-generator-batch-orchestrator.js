@@ -8,11 +8,15 @@ import {
   finalizeMockTestStructuredContent,
   finalizeHomeworkStructuredContent,
   finalizeWorksheetStructuredContent,
+  finalizePracticeQaStructuredContent,
+  finalizeQuickAssignmentStructuredContent,
 } from './ai-content-engine-service.js';
 import { buildBookHistoricalGenerationContext } from './book-generator-historical.js';
 import {
   validateRecordUniqueness,
   collectQuestionTextsFromStructured,
+  dedupeIntraRecordQuestions,
+  summarizeUniquenessErrors,
 } from './ai-generator-uniqueness-engine.js';
 import { extractTitleFromStructured } from './ai-generator-content-extractor.js';
 import { persistGenerationFingerprints } from './ai-generator-fingerprint-service.js';
@@ -49,6 +53,10 @@ function finalizeBookStructuredContent(toolSlug, structured, meta) {
       return finalizeHomeworkStructuredContent(source, meta);
     case 'worksheet-mcq-generator':
       return finalizeWorksheetStructuredContent(source, meta);
+    case 'smart-qa-practice-generator':
+      return finalizePracticeQaStructuredContent(source, meta);
+    case 'quick-assignment-builder':
+      return finalizeQuickAssignmentStructuredContent(source, meta);
     default:
       return source;
   }
@@ -270,13 +278,14 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               board,
               className,
             };
-            const structuredContent = finalizeBookStructuredContent(
+            let structuredContent = finalizeBookStructuredContent(
               toolSlug,
               generated.structuredContent,
               finalizeMeta,
             );
+            structuredContent = dedupeIntraRecordQuestions(toolSlug, structuredContent);
 
-            const uniqueness = validateRecordUniqueness(toolSlug, structuredContent, {
+            let uniqueness = validateRecordUniqueness(toolSlug, structuredContent, {
               batchTitles,
               batchTexts: batchQuestionTexts,
               historicalTexts: [],
@@ -284,9 +293,27 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             });
 
             if (!uniqueness.valid) {
-              lastError = uniqueness.errors.join('; ');
-              if (isAiGeneratorUltraEconomyEnabled()) {
-                /* one shot — accept first valid structure even if similar */
+              const intraOnly = uniqueness.errors.every((e) =>
+                String(e).includes('Duplicate question within record'),
+              );
+              if (intraOnly) {
+                structuredContent = dedupeIntraRecordQuestions(toolSlug, structuredContent);
+                uniqueness = validateRecordUniqueness(toolSlug, structuredContent, {
+                  batchTitles,
+                  batchTexts: batchQuestionTexts,
+                  historicalTexts: [],
+                  historicalTitles: [],
+                });
+              }
+            }
+
+            if (!uniqueness.valid) {
+              lastError = summarizeUniquenessErrors(uniqueness.errors) || uniqueness.errors.join('; ');
+              const intraOnly = uniqueness.errors.every((e) =>
+                String(e).includes('Duplicate question within record'),
+              );
+              if (intraOnly || isAiGeneratorUltraEconomyEnabled()) {
+                /* save after dedupe — do not burn more Gemini retries */
               } else if (attempt < maxAttempts) continue;
               else return { ok: false, variantIndex, batchIndex, error: lastError };
             }
@@ -365,7 +392,11 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
 
       for (const result of slotResults.sort((a, b) => a.batchIndex - b.batchIndex)) {
         if (result.ok) savedRecords.push(result.record);
-        else failures.push(`Slot ${result.batchIndex}: ${result.error}`);
+        else {
+          const err = String(result.error || 'Unknown error');
+          const short = err.length > 140 ? `${err.slice(0, 140)}…` : err;
+          failures.push(`Slot ${result.batchIndex}: ${short}`);
+        }
       }
     } finally {
       tokenUsage = endTokenUsageSession();
