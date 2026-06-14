@@ -129,22 +129,26 @@ export async function createAiToolTopic(req, res) {
     const label = normalizeText(req.body.label || '');
     const topicInput = normalizeText(req.body.topicName);
     const topicName = buildDisplayTopicName(label, topicInput);
-    const subTopic = normalizeText(req.body.subTopic);
 
-    if (!board || !classLabel || !subject || !topicName || !subTopic) {
+    const subTopics = Array.isArray(req.body.subTopics)
+      ? req.body.subTopics.map((s) => normalizeText(s)).filter(Boolean)
+      : normalizeText(req.body.subTopic)
+        ? [normalizeText(req.body.subTopic)]
+        : [];
+
+    if (!board || !classLabel || !subject || !topicName || subTopics.length === 0) {
       return res.status(400).json({
         success: false,
-        message: 'board, classLabel, subject, topicName and subTopic are required.',
+        message: 'board, classLabel, subject, topicName and at least one subTopic are required.',
       });
     }
 
     const createdBy = req.userId || req.user?.id || null;
-
     const sortOrderRaw = req.body.sortOrder;
     const sortOrder =
       sortOrderRaw != null && Number.isFinite(Number(sortOrderRaw)) ? Number(sortOrderRaw) : undefined;
 
-    const item = await AiToolTopic.create({
+    const docs = subTopics.map((subTopic) => ({
       board,
       classLabel,
       subject,
@@ -154,9 +158,44 @@ export async function createAiToolTopic(req, res) {
       sortOrder,
       createdBy,
       updatedBy: createdBy,
-    });
+    }));
 
-    return res.status(201).json({ success: true, data: item });
+    if (docs.length === 1) {
+      const item = await AiToolTopic.create(docs[0]);
+      return res.status(201).json({ success: true, data: item, createdCount: 1 });
+    }
+
+    const created = [];
+    const skipped = [];
+    for (const doc of docs) {
+      try {
+        const item = await AiToolTopic.create(doc);
+        created.push(item);
+      } catch (err) {
+        if (err?.code === 11000) {
+          skipped.push(doc.subTopic);
+        } else {
+          throw err;
+        }
+      }
+    }
+
+    if (created.length === 0) {
+      return res.status(409).json({
+        success: false,
+        message: 'All sub-topics already exist for this topic mapping.',
+        skipped,
+      });
+    }
+
+    return res.status(201).json({
+      success: true,
+      data: created,
+      createdCount: created.length,
+      skippedCount: skipped.length,
+      skipped,
+      message: `Created ${created.length} sub-topic${created.length === 1 ? '' : 's'}.`,
+    });
   } catch (error) {
     console.error('createAiToolTopic error:', error);
     if (error?.code === 11000) {
