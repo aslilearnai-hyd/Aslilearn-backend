@@ -1,5 +1,6 @@
 import AiToolTopic from '../models/AiToolTopic.js';
 import { boardMongoMatch } from '../utils/board-label.js';
+import { orderedUniqueSubTopics } from '../utils/ai-tool-topic-order.js';
 
 function normalizeText(value) {
   return String(value || '').trim().replace(/\s+/g, ' ');
@@ -202,8 +203,8 @@ export const listSubtopics = async (req, res) => {
     };
     applyBoardFilter(filter, board);
 
-    const rows = await AiToolTopic.find(filter).select('subTopic').lean();
-    const subTopics = uniqueSortedChapterTopics(rows.map((row) => normalizeText(row.subTopic)));
+    const rows = await AiToolTopic.find(filter).select('subTopic sortOrder createdAt').lean();
+    const subTopics = orderedUniqueSubTopics(rows);
     return res.json({
       success: true,
       data: toOptionRows(subTopics),

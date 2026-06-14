@@ -10,6 +10,7 @@ import {
   endTokenUsageSession,
 } from '../services/gemini-service.js';
 import { boardMongoMatch, canonicalBoardLabel } from '../utils/board-label.js';
+import { orderedUniqueSubTopics } from '../utils/ai-tool-topic-order.js';
 import {
   getAiGeneratorVariantAngle,
   getAiGeneratorVariantScenario,
@@ -944,7 +945,7 @@ export async function getManagedTopicTaxonomy(req, res) {
     if (topicName) filter.topicName = topicFilter || topicName;
 
     const rows = await AiToolTopic.find(filter)
-      .select('board classLabel subject label topicName subTopic')
+      .select('board classLabel subject label topicName subTopic sortOrder createdAt')
       .lean();
 
     const unique = (arr) => [...new Set(arr.filter(Boolean))].sort((a, b) => a.localeCompare(b));
@@ -953,7 +954,7 @@ export async function getManagedTopicTaxonomy(req, res) {
       success: true,
       data: {
         topics: unique(rows.map((r) => r.topicName)),
-        subTopics: unique(rows.map((r) => r.subTopic)),
+        subTopics: orderedUniqueSubTopics(rows),
         labels: unique(rows.map((r) => r.label)),
       },
     });

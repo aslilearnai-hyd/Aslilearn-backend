@@ -1,6 +1,10 @@
 import mongoose from 'mongoose';
 import AiToolTopic from '../models/AiToolTopic.js';
 import { boardMongoMatch, canonicalBoardLabel } from '../utils/board-label.js';
+import {
+  orderedUniqueSubTopics,
+  resolveSortOrderStart,
+} from '../utils/ai-tool-topic-order.js';
 
 const NATURAL_COLLATOR = new Intl.Collator('en', { numeric: true, sensitivity: 'base' });
 
@@ -99,9 +103,7 @@ export async function listAiToolTopics(req, res) {
           classLabel: 1,
           subject: 1,
           sortOrder: 1,
-          label: 1,
-          topicName: 1,
-          subTopic: 1,
+          createdAt: 1,
           _id: 1,
         })
         .collation({ locale: 'en', numericOrdering: true, strength: 2 })
@@ -145,17 +147,17 @@ export async function createAiToolTopic(req, res) {
 
     const createdBy = req.userId || req.user?.id || null;
     const sortOrderRaw = req.body.sortOrder;
-    const sortOrder =
-      sortOrderRaw != null && Number.isFinite(Number(sortOrderRaw)) ? Number(sortOrderRaw) : undefined;
+    const topicFilter = { board, classLabel, subject, topicName, isActive: true };
+    const baseSortOrder = await resolveSortOrderStart(AiToolTopic, topicFilter, sortOrderRaw);
 
-    const docs = subTopics.map((subTopic) => ({
+    const docs = subTopics.map((subTopic, index) => ({
       board,
       classLabel,
       subject,
       label,
       topicName,
       subTopic,
-      sortOrder,
+      sortOrder: baseSortOrder + index,
       createdBy,
       updatedBy: createdBy,
     }));
@@ -332,7 +334,7 @@ export async function listAiToolTopicOptions(req, res) {
     }
 
     const rows = await AiToolTopic.find(filter)
-      .select('board classLabel subject label topicName subTopic')
+      .select('board classLabel subject label topicName subTopic sortOrder createdAt')
       .lean();
 
     const unique = (arr) => [...new Set(arr.filter(Boolean))].sort((a, b) => NATURAL_COLLATOR.compare(a, b));
@@ -345,7 +347,7 @@ export async function listAiToolTopicOptions(req, res) {
         subjects: unique(rows.map((r) => r.subject)),
         labels: unique(rows.map((r) => r.label)),
         topics: unique(rows.map((r) => buildDisplayTopicName(r.label, r.topicName))),
-        subTopics: unique(rows.map((r) => r.subTopic)),
+        subTopics: orderedUniqueSubTopics(rows),
       },
     });
   } catch (error) {
