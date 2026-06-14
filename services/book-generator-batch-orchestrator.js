@@ -18,7 +18,7 @@ import {
   getAiGeneratorVariantAngle,
   getAiGeneratorVariantScenario,
 } from '../constants/ai-generator-variant-angles.js';
-import { acquireGenerationLock, releaseGenerationLock, getBookLockTtlMs } from './ai-generator-lock-service.js';
+import { acquireGenerationLock, releaseGenerationLock } from './ai-generator-lock-service.js';
 import {
   isAiGeneratorCostSaverEnabled,
   isAiGeneratorUltraEconomyEnabled,
@@ -30,22 +30,8 @@ import {
   BOOK_GENERATOR_DEFAULT_BATCH_SIZE,
 } from '../config/bookBasedTools.js';
 import { canonicalBoardLabel } from '../utils/board-label.js';
-import { resolveStoredClassLabel } from '../utils/curriculum-subject-validation.js';
 
 const DEFAULT_CONCURRENCY = Number(process.env.BOOK_GENERATOR_CONCURRENCY || process.env.AI_GENERATOR_BATCH_CONCURRENCY || 3);
-
-export function buildBookGeneratorLockScope(params = {}) {
-  const subtopicName = String(params.subtopicName || '').trim();
-  const bookId = String(params.bookId || '').trim();
-  return {
-    toolSlug: String(params.toolSlug || params.toolName || '').trim(),
-    board: canonicalBoardLabel(String(params.board || 'CBSE').trim()),
-    className: String(params.className || '').trim(),
-    subject: String(params.subjectName || params.subject || '').trim(),
-    topic: String(params.topicName || params.topic || '').trim(),
-    subtopic: bookId && subtopicName ? `${subtopicName}::book:${bookId}` : subtopicName,
-  };
-}
 
 function getBatchSize(override) {
   const n = Number(override ?? process.env.BOOK_GENERATOR_BATCH_SIZE ?? BOOK_GENERATOR_DEFAULT_BATCH_SIZE);
@@ -92,7 +78,6 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
 
   const board = canonicalBoardLabel(String(params.board || book.board || 'CBSE').trim());
   const className = String(params.className || book.class || '').trim();
-  const storedClassLabel = resolveStoredClassLabel(className, board);
   const subjectName = String(params.subjectName || book.subject || '').trim();
   const topicName = String(params.topicName || '').trim();
   const subtopicName = String(params.subtopicName || '').trim();
@@ -111,24 +96,13 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
     bookTitle: book.title,
   };
 
-  const lockScope = buildBookGeneratorLockScope({
-    toolSlug,
-    board,
-    className,
-    subjectName,
-    topicName,
-    subtopicName,
-    bookId,
-  });
+  const lockScope = {
+    ...scope,
+    subtopic: `${subtopicName}::book:${bookId}`,
+  };
 
   const lockedBy = opts.reqUser?.userId || opts.reqUser?._id || 'unknown';
-  const bookLockTtl = getBookLockTtlMs();
-  const lock = await acquireGenerationLock(lockScope, lockedBy, {
-    ttlMs: bookLockTtl,
-    staleAfterMs: Math.max(bookLockTtl - 3 * 60 * 1000, 5 * 60 * 1000),
-    sameUserStealMs: 90 * 1000,
-    forceSteal: params.forceSteal === true || params.clearLock === true,
-  });
+  const lock = await acquireGenerationLock(lockScope, lockedBy);
   if (!lock.acquired) {
     return {
       success: false,
@@ -256,7 +230,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               toolDisplayName,
               sourceType: 'book_rag',
               board,
-              classLabel: storedClassLabel,
+              classLabel: className,
               subject: subjectName,
               topic: topicName,
               subtopic: subtopicName,

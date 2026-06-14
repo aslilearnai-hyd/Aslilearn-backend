@@ -46,7 +46,6 @@ import pdfRagRoutes from './routes/pdf-rag.js';
 import aiGeneratorRoutes from './routes/aiGeneratorRoutes.js';
 import bookKnowledgeRoutes from './routes/bookKnowledgeRoutes.js';
 import bookGeneratorRoutes from './routes/bookGeneratorRoutes.js';
-import { applyCorsHeaders } from './middleware/cors-headers.js';
 import vidyaRoutes from './routes/vidya.js';
 import practiceProgressRoutes from './routes/practice-progress.js';
 import dashboardRoutes from './routes/dashboards.js';
@@ -5012,11 +5011,8 @@ app.patch('/api/assessments/:id/toggle', async (req, res) => {
 
 // Error handling middleware
 app.use((err, req, res, next) => {
-  applyCorsHeaders(req, res);
   console.error(err.stack);
-  if (!res.headersSent) {
-    res.status(500).json({ success: false, message: 'Something went wrong!' });
-  }
+  res.status(500).json({ message: 'Something went wrong!' });
 });
 
 // Vidya AI endpoints have moved to routes/vidya.js
@@ -6108,13 +6104,8 @@ app.post('/api/lesson-plan/generate', async (req, res) => {
   }
 });
 
-const server = app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`Server accessible at http://0.0.0.0:${PORT}`);
   console.log(`Environment: ${nodeEnvEffective}`);
 });
-
-// Book/AI batch generation can exceed default ~2–5 min socket limits
-server.setTimeout(900000);
-server.headersTimeout = 910000;
-server.keepAliveTimeout = 910000;

@@ -8,18 +8,6 @@ function getLockTtlMs() {
   return 30 * 60 * 1000;
 }
 
-export function getBookLockTtlMs() {
-  const minutes = Number(process.env.BOOK_GENERATOR_LOCK_TTL_MINUTES);
-  if (Number.isFinite(minutes) && minutes > 0) return minutes * 60 * 1000;
-  return 25 * 60 * 1000;
-}
-
-function lockAgeMs(lock) {
-  const t = lock?.updatedAt || lock?.createdAt;
-  if (!t) return 0;
-  return Date.now() - new Date(t).getTime();
-}
-
 function scopeKey(scope) {
   const s = normalizeScope(scope);
   return [s.toolSlug, s.board, s.className, s.subject, s.topic, s.subtopic].join('|');
@@ -38,21 +26,13 @@ export async function cleanupExpiredGenerationLocks() {
 
 /**
  * Acquire exclusive generation lock for a curriculum slot.
- * @param {object} scope
- * @param {string} lockedBy
- * @param {{ ttlMs?: number, staleAfterMs?: number, forceSteal?: boolean, sameUserStealMs?: number }} [options]
  * @returns {{ acquired: boolean, lockToken?: string, message?: string, existingLock?: object }}
  */
-export async function acquireGenerationLock(scope, lockedBy = 'unknown', options = {}) {
+export async function acquireGenerationLock(scope, lockedBy = 'unknown') {
   await cleanupExpiredGenerationLocks();
   const s = normalizeScope(scope);
   const now = new Date();
-  const ttlMs = Number(options.ttlMs) > 0 ? Number(options.ttlMs) : getLockTtlMs();
-  const staleAfterMs =
-    Number(options.staleAfterMs) > 0 ? Number(options.staleAfterMs) : Math.max(ttlMs - 2 * 60 * 1000, 5 * 60 * 1000);
-  const sameUserStealMs =
-    Number(options.sameUserStealMs) > 0 ? Number(options.sameUserStealMs) : 3 * 60 * 1000;
-  const expiresAt = new Date(now.getTime() + ttlMs);
+  const expiresAt = new Date(now.getTime() + getLockTtlMs());
   const lockToken = crypto.randomBytes(16).toString('hex');
 
   const existing = await AiGenerationLock.findOne({
@@ -67,24 +47,12 @@ export async function acquireGenerationLock(scope, lockedBy = 'unknown', options
   }).lean();
 
   if (existing) {
-    const age = lockAgeMs(existing);
-    const sameUser = String(existing.lockedBy || '') === String(lockedBy || '');
-    const canSteal =
-      options.forceSteal === true ||
-      age >= staleAfterMs ||
-      (sameUser && age >= sameUserStealMs);
-
-    if (canSteal) {
-      await releaseGenerationLock(scope);
-    } else {
-      const minutesLeft = Math.max(1, Math.ceil((new Date(existing.expiresAt).getTime() - now.getTime()) / 60000));
-      return {
-        acquired: false,
-        message: `Generation already in progress. Wait about ${minutesLeft} min or clear the lock if the previous batch failed.`,
-        existingLock: existing,
-        scopeKey: scopeKey(s),
-      };
-    }
+    return {
+      acquired: false,
+      message: 'Generation already in progress.',
+      existingLock: existing,
+      scopeKey: scopeKey(s),
+    };
   }
 
   try {
