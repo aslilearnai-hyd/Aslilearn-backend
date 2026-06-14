@@ -4357,70 +4357,6 @@ function dedupeExamQuestionRows(questions = []) {
   return out;
 }
 
-/** Drop duplicate questions and assign global Q1..Qn across sections A–E (mock tests). */
-export function polishMockTestStructuredContent(source = {}) {
-  const normalized = redistributeExamPaperToCanonicalSections(
-    source && typeof source === 'object' && !Array.isArray(source) ? { ...source } : {},
-  );
-  const sectionKeys = ['section_a', 'section_b', 'section_c', 'section_d', 'section_e'];
-  const globalSeen = new Set();
-  let globalNum = 1;
-  const buckets = {};
-
-  for (const key of sectionKeys) {
-    const cleaned = dedupeExamQuestionRows(normalized[key] || []).filter((q) => {
-      const dedupeKey = examQuestionDedupeKey(q);
-      if (!dedupeKey || globalSeen.has(dedupeKey)) return false;
-      globalSeen.add(dedupeKey);
-      return true;
-    });
-    buckets[key] = cleaned.map((q) => {
-      const row = {
-        ...q,
-        question_number: globalNum,
-        options: cleanWorksheetMcqOptions(q.options),
-        marks: q.marks != null && q.marks !== '' ? q.marks : 1,
-      };
-      globalNum += 1;
-      return row;
-    });
-  }
-
-  const sections = Object.entries(EXAM_CANONICAL_SECTION_LABELS).map(([key, sectionName]) => ({
-    sectionName,
-    questions: buckets[key] || [],
-    count: (buckets[key] || []).length,
-  }));
-  const flatQuestions = sectionKeys.flatMap((key) => buckets[key] || []);
-
-  let answer_key = String(source.answer_key || normalized.answer_key || '').trim();
-  if (flatQuestions.length > 0) {
-    const keyLines = formatMockTestAnswerKeyLinesFromSections(sections);
-    if (keyLines.length) answer_key = keyLines.join('\n');
-  }
-
-  let step_by_step_solutions_explanations = String(
-    source.step_by_step_solutions_explanations ||
-      source.solutions ||
-      source.explanations ||
-      normalized.step_by_step_solutions_explanations ||
-      '',
-  ).trim();
-  if (!step_by_step_solutions_explanations && flatQuestions.length > 0) {
-    step_by_step_solutions_explanations = buildMockTestSolutionsFromSections(sections);
-  }
-
-  return {
-    ...normalized,
-    ...buckets,
-    sections,
-    questions: flatQuestions,
-    answer_key: answer_key || normalized.answer_key,
-    step_by_step_solutions_explanations:
-      step_by_step_solutions_explanations || normalized.step_by_step_solutions_explanations,
-  };
-}
-
 /** Split a flat question list into section_a..e using blueprint counts (order preserved). */
 export function redistributeExamPaperToCanonicalSections(data) {
   const source = data && typeof data === 'object' && !Array.isArray(data) ? { ...data } : {};
@@ -5167,7 +5103,7 @@ export function finalizeMockTestStructuredContent(raw, meta = {}) {
   } else if (!mockTitle && paperTitle) {
     out = { ...out, mock_test_title: paperTitle, title: paperTitle };
   }
-  return polishMockTestStructuredContent(out);
+  return out;
 }
 
 /** Mock Test Builder (student) — 12-section format with remedial guidance and reflection. */
@@ -5207,7 +5143,7 @@ export function normalizeMockTestStructuredContent(raw, sourceText = '') {
     step_by_step_solutions_explanations = buildMockTestSolutionsFromSections(sections);
   }
 
-  return polishMockTestStructuredContent({
+  return {
     ...base,
     answer_key: answer_key || base.answer_key,
     mock_test_title: mock_test_title || undefined,
@@ -5233,7 +5169,7 @@ export function normalizeMockTestStructuredContent(raw, sourceText = '') {
     reflection_exit_ticket: String(
       source.reflection_exit_ticket || source.reflection || source.exit_ticket || '',
     ).trim() || undefined,
-  });
+  };
 }
 
 export function canonicalizeExamPaperExtractedItem(raw, toolSlug = 'exam-question-paper-generator') {
