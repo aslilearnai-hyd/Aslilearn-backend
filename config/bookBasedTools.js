@@ -42,4 +42,8 @@ export function getBookBasedToolDisplayName(slug) {
 /** Target unique records per subtopic per book (diversity engine). */
 export const BOOK_GENERATOR_UNIQUENESS_TARGET = Number(process.env.BOOK_GENERATOR_UNIQUENESS_TARGET) || 50;
 
+/** Records per batch run. */
 export const BOOK_GENERATOR_DEFAULT_BATCH_SIZE = Number(process.env.BOOK_GENERATOR_BATCH_SIZE) || 25;
+
+/** Optional hard cap on Gemini spend per batch (INR). Set 0 to disable. */
+export const BOOK_GENERATOR_MAX_INR = Number(process.env.BOOK_GENERATOR_MAX_INR) || 0;

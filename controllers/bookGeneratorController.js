@@ -1,3 +1,4 @@
+import mongoose from 'mongoose';
 import AiToolGeneration from '../models/AiToolGeneration.js';
 import Book from '../models/Book.js';
 import { generateBookBatchAndSave } from '../services/book-generator-batch-orchestrator.js';
@@ -9,7 +10,13 @@ import {
   getBookGeneratorJob,
   runBookGeneratorJob,
 } from '../services/book-generator-job-service.js';
-import { BOOK_BASED_TOOL_SLUGS, isBookBasedToolSlug } from '../config/bookBasedTools.js';
+import {
+  BOOK_BASED_TOOL_SLUGS,
+  isBookBasedToolSlug,
+  BOOK_GENERATOR_DEFAULT_BATCH_SIZE,
+  BOOK_GENERATOR_MAX_INR,
+  BOOK_GENERATOR_UNIQUENESS_TARGET,
+} from '../config/bookBasedTools.js';
 import { boardMongoMatch } from '../utils/board-label.js';
 import { bookGroundedMongoFilter, isBookGroundedRecord } from '../utils/book-grounded-record.js';
 import { groupAiGeneratorRecords } from './aiGeneratorController.js';
@@ -24,7 +31,15 @@ function ensureSuperAdmin(req, res) {
 
 export async function listBookBasedTools(req, res) {
   if (!ensureSuperAdmin(req, res)) return;
-  res.json({ success: true, data: BOOK_BASED_TOOL_SLUGS });
+  res.json({
+    success: true,
+    data: BOOK_BASED_TOOL_SLUGS,
+    batchConfig: {
+      batchSize: BOOK_GENERATOR_DEFAULT_BATCH_SIZE,
+      maxInr: BOOK_GENERATOR_MAX_INR,
+      uniquenessTarget: BOOK_GENERATOR_UNIQUENESS_TARGET,
+    },
+  });
 }
 
 export async function generateBookBatch(req, res) {
@@ -191,20 +206,126 @@ export async function releaseBookGeneratorLock(req, res) {
   }
 }
 
+function mapBookGeneratorRecord(item) {
+  if (!item) return null;
+  return {
+    ...item,
+    className: item.classLabel,
+    subjectName: item.subject,
+    topicName: item.topic,
+    subtopicName: item.subtopic,
+    toolSlug: item.toolName,
+    generatedContent: item.generatedContent || item.content || '',
+  };
+}
+
+function buildBookRecordsListQuery(req) {
+  const { toolSlug, bookId, board, className, subjectName, topicName, subtopicName } = req.query;
+  const extra = {};
+  if (toolSlug) extra.toolName = toolSlug;
+  if (bookId) extra['metadata.bookId'] = String(bookId);
+  if (board) extra.board = boardMongoMatch(board) || board;
+  if (className) extra.classLabel = className;
+  if (subjectName) extra.subject = subjectName;
+  if (topicName) extra.topic = topicName;
+  if (subtopicName) extra.subtopic = subtopicName;
+  return bookGroundedMongoFilter(extra);
+}
+
+export async function getBookGeneratorRecord(req, res) {
+  if (!ensureSuperAdmin(req, res)) return;
+  try {
+    const { id } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({ success: false, message: 'Invalid record id.' });
+    }
+    const doc = await AiToolGeneration.findOne({ _id: id, ...bookGroundedMongoFilter({}) }).lean();
+    if (!doc) return res.status(404).json({ success: false, message: 'Record not found.' });
+    return res.json({ success: true, data: mapBookGeneratorRecord(doc) });
+  } catch (err) {
+    return res.status(500).json({ success: false, message: err.message || 'Failed to fetch record.' });
+  }
+}
+
+export async function updateBookGeneratorRecord(req, res) {
+  if (!ensureSuperAdmin(req, res)) return;
+  try {
+    const { id } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({ success: false, message: 'Invalid record id.' });
+    }
+    const generatedContent = String(req.body.generatedContent || '').trim();
+    if (!generatedContent) {
+      return res.status(400).json({ success: false, message: 'generatedContent is required.' });
+    }
+    const update = { generatedContent, content: generatedContent };
+    const doc = await AiToolGeneration.findOneAndUpdate(
+      { _id: id, ...bookGroundedMongoFilter({}) },
+      { $set: update },
+      { new: true },
+    ).lean();
+    if (!doc) return res.status(404).json({ success: false, message: 'Record not found.' });
+    return res.json({
+      success: true,
+      data: mapBookGeneratorRecord(doc),
+      message: 'Record updated successfully.',
+    });
+  } catch (err) {
+    return res.status(500).json({ success: false, message: err.message || 'Failed to update record.' });
+  }
+}
+
+export async function bulkDeleteBookGeneratorRecords(req, res) {
+  if (!ensureSuperAdmin(req, res)) return;
+  try {
+    const ids = Array.isArray(req.body?.ids) ? req.body.ids.map(String).filter(Boolean) : [];
+    if (!ids.length) {
+      return res.status(400).json({ success: false, message: 'ids array is required.' });
+    }
+    const validIds = ids.filter((id) => mongoose.Types.ObjectId.isValid(id));
+    const docs = await AiToolGeneration.find({
+      _id: { $in: validIds },
+      ...bookGroundedMongoFilter({}),
+    })
+      .select('_id')
+      .lean();
+    const deletable = docs.map((d) => d._id);
+    if (!deletable.length) {
+      return res.status(404).json({ success: false, message: 'No matching book-grounded records found.' });
+    }
+    const result = await AiToolGeneration.deleteMany({ _id: { $in: deletable } });
+    return res.json({
+      success: true,
+      data: {
+        deletedCount: result.deletedCount || 0,
+        failedCount: Math.max(0, validIds.length - (result.deletedCount || 0)),
+      },
+      message: `Deleted ${result.deletedCount || 0} record(s).`,
+    });
+  } catch (err) {
+    return res.status(500).json({ success: false, message: err.message || 'Bulk delete failed.' });
+  }
+}
+
+export async function deleteAllBookGeneratorRecords(req, res) {
+  if (!ensureSuperAdmin(req, res)) return;
+  try {
+    const query = buildBookRecordsListQuery(req);
+    const result = await AiToolGeneration.deleteMany(query);
+    return res.json({
+      success: true,
+      data: { deletedCount: result.deletedCount || 0 },
+      message: `Deleted ${result.deletedCount || 0} book-grounded record(s).`,
+    });
+  } catch (err) {
+    return res.status(500).json({ success: false, message: err.message || 'Delete all failed.' });
+  }
+}
+
 export async function listBookGeneratorRecords(req, res) {
   if (!ensureSuperAdmin(req, res)) return;
   try {
-    const { toolSlug, bookId, board, className, subjectName, topicName, subtopicName } = req.query;
-    const extra = {};
-    if (toolSlug) extra.toolName = toolSlug;
-    if (bookId) extra['metadata.bookId'] = String(bookId);
-    if (board) extra.board = boardMongoMatch(board) || board;
-    if (className) extra.classLabel = className;
-    if (subjectName) extra.subject = subjectName;
-    if (topicName) extra.topic = topicName;
-    if (subtopicName) extra.subtopic = subtopicName;
-
-    const query = bookGroundedMongoFilter(extra);
+    const query = buildBookRecordsListQuery(req);
 
     const records = await AiToolGeneration.find(query).sort({ createdAt: -1 }).limit(2000).lean();
     const grouped = groupAiGeneratorRecords(records);

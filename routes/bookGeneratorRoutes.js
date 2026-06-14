@@ -6,6 +6,10 @@ import {
   getBookGeneratorJobStatus,
   releaseBookGeneratorLock,
   listBookGeneratorRecords,
+  getBookGeneratorRecord,
+  updateBookGeneratorRecord,
+  bulkDeleteBookGeneratorRecords,
+  deleteAllBookGeneratorRecords,
   listBooksForGenerator,
   deleteBookGeneratorRecord,
 } from '../controllers/bookGeneratorController.js';
@@ -19,6 +23,10 @@ router.post('/generate-batch', generateBookBatch);
 router.get('/jobs/:jobId', getBookGeneratorJobStatus);
 router.post('/release-lock', releaseBookGeneratorLock);
 router.get('/records', listBookGeneratorRecords);
+router.get('/records/:id', getBookGeneratorRecord);
+router.put('/records/:id', updateBookGeneratorRecord);
+router.post('/records/bulk-delete', bulkDeleteBookGeneratorRecords);
+router.delete('/records/all', deleteAllBookGeneratorRecords);
 router.delete('/records/:id', deleteBookGeneratorRecord);
 
 export default router;
