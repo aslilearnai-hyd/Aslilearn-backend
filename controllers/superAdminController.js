@@ -604,6 +604,8 @@ export const getAdminSchoolDetail = async (req, res) => {
       state: sd.state || admin.place || '',
       schoolDetails: sd,
       permissions: admin.permissions || [],
+      vidyaEnabledForTeachers: admin.vidyaEnabledForTeachers !== false,
+      vidyaEnabledForStudents: admin.vidyaEnabledForStudents !== false,
       curriculumBoard:
         admin.curriculumBoard ||
         (isStoredCurriculumBoard(admin.board) ? String(admin.board).toUpperCase().trim() : 'CBSE'),
@@ -647,6 +649,8 @@ export const createAdmin = async (req, res) => {
       email,
       password,
       permissions,
+      vidyaEnabledForTeachers,
+      vidyaEnabledForStudents,
       board,
       isAsliPrepExclusive: rawExclusive,
       schoolName,
@@ -746,6 +750,8 @@ export const createAdmin = async (req, res) => {
       password: hashedPassword,
       role: 'admin',
       permissions: permissions || [],
+      vidyaEnabledForTeachers: vidyaEnabledForTeachers !== false,
+      vidyaEnabledForStudents: vidyaEnabledForStudents !== false,
       isActive: true,
     });
     applySchoolToAdminUser(newAdmin, school);
@@ -804,6 +810,8 @@ export const updateAdmin = async (req, res) => {
       email,
       password,
       permissions,
+      vidyaEnabledForTeachers,
+      vidyaEnabledForStudents,
       isActive,
       board,
       isAsliPrepExclusive,
@@ -837,6 +845,12 @@ export const updateAdmin = async (req, res) => {
       }
     }
     if (permissions !== undefined) userUpdate.permissions = permissions;
+    if (vidyaEnabledForTeachers !== undefined) {
+      userUpdate.vidyaEnabledForTeachers = Boolean(vidyaEnabledForTeachers);
+    }
+    if (vidyaEnabledForStudents !== undefined) {
+      userUpdate.vidyaEnabledForStudents = Boolean(vidyaEnabledForStudents);
+    }
     if (isActive !== undefined) userUpdate.isActive = Boolean(isActive);
 
     if (password !== undefined && password !== null && String(password).trim() !== '') {

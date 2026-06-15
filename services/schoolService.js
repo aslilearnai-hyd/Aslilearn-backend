@@ -145,6 +145,8 @@ export function formatSchoolListItem(school, admin, stats = {}) {
     state: sd.state || school?.place || '',
     schoolDetails: sd,
     permissions: admin?.permissions || [],
+    vidyaEnabledForTeachers: admin?.vidyaEnabledForTeachers !== false,
+    vidyaEnabledForStudents: admin?.vidyaEnabledForStudents !== false,
     curriculumBoard:
       school?.curriculumBoard ||
       (isStoredCurriculumBoard(school?.board) ? String(school.board).toUpperCase().trim() : 'CBSE'),

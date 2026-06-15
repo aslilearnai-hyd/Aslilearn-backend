@@ -61,6 +61,16 @@ const userSchema = new mongoose.Schema({
     type: [String],
     default: []
   },
+  /** Super admin: Vidya AI chatbot for teachers at this school (default on). */
+  vidyaEnabledForTeachers: {
+    type: Boolean,
+    default: true,
+  },
+  /** Super admin: Vidya AI chatbot for students at this school (default on). */
+  vidyaEnabledForStudents: {
+    type: Boolean,
+    default: true,
+  },
   details: {
     type: String,
     default: ''

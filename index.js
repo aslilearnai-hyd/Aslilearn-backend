@@ -15,6 +15,10 @@ import axios from 'axios';
 import { cleanCsvCell } from './utils/csv-encoding.js';
 import { spreadsheetBufferToCsv } from './utils/spreadsheet-to-csv.js';
 import { resolveUserDisplayBoard } from './constants/boards.js';
+import {
+  isVidyaEnabledForStudents,
+  isVidyaEnabledForTeachers,
+} from './utils/vidyaSchoolAccess.js';
 import { configureMongoDns } from './config/mongo-dns.js';
 
 // Get current directory for ES modules
@@ -693,7 +697,7 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
         let teacherAdmin = null;
         if (teacher.adminId) {
           teacherAdmin = await User.findById(teacher.adminId)
-            .select('board curriculumBoard isAsliPrepExclusive schoolName')
+            .select('board curriculumBoard isAsliPrepExclusive schoolName vidyaEnabledForTeachers vidyaEnabledForStudents')
             .lean();
         }
         const teacherCtx = { board: teacher.board, isAsliPrepExclusive: false };
@@ -726,6 +730,7 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
           studyStreak: { current: 0, longest: 0, lastActiveDate: '' },
           isAsliPrepExclusive,
           subjects: teacher.subjects || [],
+          vidyaEnabled: isVidyaEnabledForTeachers(teacherAdmin),
         };
         if (teacherAdmin) {
           teacherUserData.assignedAdmin = {
@@ -746,14 +751,17 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
     await user.populate('assignedSubjects', 'name');
     await user.populate('assignedClass', 'classNumber section assignedSubjects');
     if (user.role === 'student' && user.assignedAdmin) {
-      await user.populate('assignedAdmin', 'board curriculumBoard isAsliPrepExclusive schoolName');
+      await user.populate(
+        'assignedAdmin',
+        'board curriculumBoard isAsliPrepExclusive schoolName vidyaEnabledForTeachers vidyaEnabledForStudents'
+      );
     }
     let teacherAdmin = null;
     if (user.role === 'teacher') {
       const teacher = await Teacher.findById(user._id).select('adminId').lean();
       if (teacher?.adminId) {
         teacherAdmin = await User.findById(teacher.adminId)
-          .select('board curriculumBoard isAsliPrepExclusive schoolName')
+          .select('board curriculumBoard isAsliPrepExclusive schoolName vidyaEnabledForTeachers vidyaEnabledForStudents')
           .lean();
       }
     }
@@ -795,6 +803,9 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
       studyStreak: user.studyStreak || { current: 0, longest: 0, lastActiveDate: '' },
       isAsliPrepExclusive,
     };
+    if (user.role === 'student') {
+      userData.vidyaEnabled = isVidyaEnabledForStudents(user.assignedAdmin);
+    }
     if (req.user.role === 'admin') userData.schoolName = user.schoolName || '';
     if (req.user.role === 'teacher') {
       const teacher = await Teacher.findById(authId).populate('subjects');
@@ -807,6 +818,7 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
           schoolName: teacherAdmin.schoolName || '',
         };
       }
+      userData.vidyaEnabled = isVidyaEnabledForTeachers(teacherAdmin);
     }
     res.json({ user: userData });
   } catch (error) {

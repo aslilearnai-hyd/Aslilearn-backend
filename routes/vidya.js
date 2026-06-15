@@ -11,10 +11,13 @@ import VidyaCallLog from '../models/VidyaCallLog.js';
 import ChatSession from '../models/ChatSession.js';
 import * as vidyaAiControl from '../controllers/vidyaAiControlController.js';
 import * as vidyaStudent from '../controllers/vidyaStudentController.js';
+import { requireVidyaSchoolAccess } from '../middleware/vidya-school-access.js';
 
 const router = express.Router();
 
 router.use(aiChatGlobalLimiter);
+
+const studentTeacherVidya = [verifyToken, requireVidyaSchoolAccess];
 
 const requestMeta = (req) => ({
   requestIp: req.ip || req.headers['x-forwarded-for'] || '',
@@ -42,26 +45,26 @@ router.delete(
 
 router.post(
   '/vidya/student/chat',
-  verifyToken,
+  ...studentTeacherVidya,
   aiChatPerUserLimiter,
   async (req, res) => vidyaStudent.postStudentMentorChat(req, res),
 );
 
 router.get(
   '/vidya/student/focus-card',
-  verifyToken,
+  ...studentTeacherVidya,
   async (req, res) => vidyaStudent.getStudentFocusCard(req, res),
 );
 
 router.post(
   '/vidya/student/proactive/delivered',
-  verifyToken,
+  ...studentTeacherVidya,
   async (req, res) => vidyaStudent.markProactiveDelivered(req, res),
 );
 
 router.post(
   '/ai-chat',
-  verifyToken,
+  ...studentTeacherVidya,
   aiChatPerUserLimiter,
   async (req, res) => {
     try {
@@ -88,7 +91,7 @@ router.post(
 
 router.post(
   '/ai-chat/stream',
-  verifyToken,
+  ...studentTeacherVidya,
   aiChatPerUserLimiter,
   async (req, res) => {
     const { message, context, sessionId } = req.body || {};
@@ -119,7 +122,7 @@ router.post(
 
 router.post(
   '/ai-chat/analyze-image',
-  verifyToken,
+  ...studentTeacherVidya,
   aiHeavyLimiter,
   async (req, res) => {
     try {
