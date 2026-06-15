@@ -15,6 +15,7 @@ import TeacherWorkDiary from '../models/TeacherWorkDiary.js';
 import RiskAnalysisReport from '../models/RiskAnalysisReport.js';
 import GeminiPerformanceReport from '../models/GeminiPerformanceReport.js';
 import { verifyToken } from '../middleware/auth.js';
+import { getSchoolAdminCalendarEvents, monthBounds } from '../controllers/calendarController.js';
 import {
   getStudentExamRanking,
   getAllStudentRankings
@@ -5553,6 +5554,35 @@ router.get('/content-preview', async (req, res) => {
           ? 'Failed to preview file'
           : `Failed to preview file: ${statusCode}`,
     });
+  }
+});
+
+/** GET /api/student/calendar/events?month=yyyy-mm */
+router.get('/calendar/events', async (req, res) => {
+  try {
+    const { month } = req.query;
+    if (!month || !/^\d{4}-\d{2}$/.test(String(month))) {
+      return res.status(400).json({
+        success: false,
+        message: 'Query param month is required (format yyyy-mm)',
+      });
+    }
+
+    const student = await User.findById(req.userId).select('assignedAdmin');
+    if (!student) {
+      return res.status(404).json({ success: false, message: 'Student not found' });
+    }
+
+    const schoolAdminId = student.assignedAdmin?._id || student.assignedAdmin;
+    if (!schoolAdminId) {
+      return res.json({ success: true, data: [] });
+    }
+
+    const data = await getSchoolAdminCalendarEvents(schoolAdminId, String(month));
+    res.json({ success: true, data });
+  } catch (error) {
+    console.error('Student calendar events error:', error);
+    res.status(500).json({ success: false, message: 'Failed to load calendar events' });
   }
 });
 

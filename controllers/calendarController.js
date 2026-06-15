@@ -3,12 +3,68 @@ import Exam from '../models/Exam.js';
 import CalendarEvent from '../models/CalendarEvent.js';
 import Event from '../models/Event.js';
 
-function monthBounds(monthStr) {
+export function monthBounds(monthStr) {
   const [y, m] = monthStr.split('-').map((v) => parseInt(v, 10));
   if (!y || !m || m < 1 || m > 12) return null;
   const monthStart = new Date(y, m - 1, 1, 0, 0, 0, 0);
   const monthEnd = new Date(y, m, 0, 23, 59, 59, 999);
   return { monthStart, monthEnd };
+}
+
+function eventOverlapsMonth(eventDate, eventEndDate, monthStart, monthEnd) {
+  const start = new Date(eventDate);
+  const end = eventEndDate ? new Date(eventEndDate) : new Date(eventDate);
+  if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime())) return false;
+  return start <= monthEnd && end >= monthStart;
+}
+
+/** Admin-created school events (legacy Event + CalendarEvent) for a school admin user id. */
+export async function getSchoolAdminCalendarEvents(schoolAdminId, month) {
+  const bounds = monthBounds(month);
+  if (!bounds || !mongoose.Types.ObjectId.isValid(schoolAdminId)) return [];
+  const { monthStart, monthEnd } = bounds;
+  const schoolOid = new mongoose.Types.ObjectId(schoolAdminId);
+
+  const legacyEvents = await Event.find({
+    createdBy: schoolOid,
+    date: { $lte: monthEnd },
+  })
+    .sort({ date: 1 })
+    .lean();
+
+  const adminLegacyEvents = legacyEvents
+    .filter((ev) => eventOverlapsMonth(ev.date, ev.endDate, monthStart, monthEnd))
+    .map((ev) => ({
+      id: `admin-event-${ev._id.toString()}`,
+      title: ev.name,
+      startDate: ev.date,
+      endDate: ev.endDate || ev.date,
+      eventType: 'admin_event',
+      description: ev.description || '',
+      room: '',
+    }));
+
+  const calendarEvents = await CalendarEvent.find({
+    schoolId: schoolOid,
+    startDate: { $lte: monthEnd },
+    endDate: { $gte: monthStart },
+  })
+    .sort({ startDate: 1 })
+    .lean();
+
+  const adminCalendarEvents = calendarEvents.map((ev) => ({
+    id: `calendar-event-${ev._id.toString()}`,
+    title: ev.title,
+    startDate: ev.startDate,
+    endDate: ev.endDate,
+    eventType: 'admin_event',
+    description: ev.description || '',
+    room: '',
+  }));
+
+  return [...adminLegacyEvents, ...adminCalendarEvents].sort(
+    (a, b) => new Date(a.startDate) - new Date(b.startDate)
+  );
 }
 
 /** Whether an exam should appear on the calendar for the selected school admin. */

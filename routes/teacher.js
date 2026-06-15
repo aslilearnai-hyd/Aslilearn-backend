@@ -32,15 +32,13 @@ import {
 import Video from '../models/Video.js';
 import Assessment from '../models/Assessment.js';
 import Exam from '../models/Exam.js';
-import CalendarEvent from '../models/CalendarEvent.js';
-import Event from '../models/Event.js';
 import User from '../models/User.js';
 import ExamResult from '../models/ExamResult.js';
 import Teacher from '../models/Teacher.js';
 import Content from '../models/Content.js';
 import StudentRemark from '../models/StudentRemark.js';
 import TeacherWorkDiary from '../models/TeacherWorkDiary.js';
-import { examVisibleToSchool } from '../controllers/calendarController.js';
+import { examVisibleToSchool, getSchoolAdminCalendarEvents, monthBounds } from '../controllers/calendarController.js';
 import {
   getExplicitTeacherSubjectObjectIds,
   subjectIdAllowed,
@@ -175,9 +173,11 @@ router.get('/calendar/events', async (req, res) => {
       return res.json({ success: true, data: [] });
     }
 
-    const [y, m] = String(month).split('-').map((v) => parseInt(v, 10));
-    const monthStart = new Date(y, m - 1, 1, 0, 0, 0, 0);
-    const monthEnd = new Date(y, m, 0, 23, 59, 59, 999);
+    const bounds = monthBounds(String(month));
+    if (!bounds) {
+      return res.status(400).json({ success: false, message: 'Invalid month' });
+    }
+    const { monthStart, monthEnd } = bounds;
     const schoolOid = new mongoose.Types.ObjectId(teacher.adminId);
 
     const examDocs = await Exam.find({
@@ -208,42 +208,9 @@ router.get('/calendar/events', async (req, res) => {
         description: ex.description || '',
       }));
 
-    const legacyEvents = await Event.find({
-      createdBy: schoolOid,
-      date: { $gte: monthStart, $lte: monthEnd },
-    })
-      .sort({ date: 1 })
-      .lean();
+    const adminSchoolEvents = await getSchoolAdminCalendarEvents(schoolOid, String(month));
 
-    const adminLegacyEvents = legacyEvents.map((ev) => ({
-      id: `admin-event-${ev._id.toString()}`,
-      title: ev.name,
-      startDate: ev.date,
-      endDate: ev.endDate || ev.date,
-      eventType: 'admin_event',
-      description: ev.description || '',
-      room: '',
-    }));
-
-    const calendarEvents = await CalendarEvent.find({
-      schoolId: schoolOid,
-      startDate: { $lte: monthEnd },
-      endDate: { $gte: monthStart },
-    })
-      .sort({ startDate: 1 })
-      .lean();
-
-    const adminCalendarEvents = calendarEvents.map((ev) => ({
-      id: `calendar-event-${ev._id.toString()}`,
-      title: ev.title,
-      startDate: ev.startDate,
-      endDate: ev.endDate,
-      eventType: 'admin_event',
-      description: ev.description || '',
-      room: '',
-    }));
-
-    const data = [...examEvents, ...adminLegacyEvents, ...adminCalendarEvents].sort(
+    const data = [...examEvents, ...adminSchoolEvents].sort(
       (a, b) => new Date(a.startDate) - new Date(b.startDate)
     );
 
