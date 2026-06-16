@@ -697,7 +697,7 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
         let teacherAdmin = null;
         if (teacher.adminId) {
           teacherAdmin = await User.findById(teacher.adminId)
-            .select('board curriculumBoard isAsliPrepExclusive schoolName vidyaEnabledForTeachers vidyaEnabledForStudents')
+            .select('board curriculumBoard isAsliPrepExclusive schoolName schoolLogo vidyaEnabledForTeachers vidyaEnabledForStudents')
             .lean();
         }
         const teacherCtx = { board: teacher.board, isAsliPrepExclusive: false };
@@ -724,6 +724,7 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
           board: displayBoard || teacher.board || '',
           curriculumBoard,
           schoolName: teacherAdmin?.schoolName || teacher.school || '',
+          schoolLogo: teacherAdmin?.schoolLogo || '',
           profilePhoto: '',
           assignedSubjects: [],
           assignedClass: null,
@@ -738,6 +739,7 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
             curriculumBoard: teacherAdmin.curriculumBoard,
             isAsliPrepExclusive: teacherAdmin.isAsliPrepExclusive === true,
             schoolName: teacherAdmin.schoolName || '',
+            schoolLogo: teacherAdmin.schoolLogo || '',
           };
         }
         return res.json({ user: teacherUserData });
@@ -753,7 +755,7 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
     if (user.role === 'student' && user.assignedAdmin) {
       await user.populate(
         'assignedAdmin',
-        'board curriculumBoard isAsliPrepExclusive schoolName vidyaEnabledForTeachers vidyaEnabledForStudents'
+        'board curriculumBoard isAsliPrepExclusive schoolName schoolLogo vidyaEnabledForTeachers vidyaEnabledForStudents'
       );
     }
     let teacherAdmin = null;
@@ -761,7 +763,7 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
       const teacher = await Teacher.findById(user._id).select('adminId').lean();
       if (teacher?.adminId) {
         teacherAdmin = await User.findById(teacher.adminId)
-          .select('board curriculumBoard isAsliPrepExclusive schoolName vidyaEnabledForTeachers vidyaEnabledForStudents')
+          .select('board curriculumBoard isAsliPrepExclusive schoolName schoolLogo vidyaEnabledForTeachers vidyaEnabledForStudents')
           .lean();
       }
     }
@@ -797,6 +799,11 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
         user.assignedAdmin?.schoolName ||
         (user.role === 'teacher' ? teacherAdmin?.schoolName : '') ||
         '',
+      schoolLogo:
+        user.schoolLogo ||
+        user.assignedAdmin?.schoolLogo ||
+        (user.role === 'teacher' ? teacherAdmin?.schoolLogo : '') ||
+        '',
       profilePhoto: user.profilePhoto || '',
       assignedSubjects: user.assignedSubjects || [],
       assignedClass: user.assignedClass || null,
@@ -806,7 +813,10 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
     if (user.role === 'student') {
       userData.vidyaEnabled = isVidyaEnabledForStudents(user.assignedAdmin);
     }
-    if (req.user.role === 'admin') userData.schoolName = user.schoolName || '';
+    if (req.user.role === 'admin') {
+      userData.schoolName = user.schoolName || '';
+      userData.schoolLogo = user.schoolLogo || '';
+    }
     if (req.user.role === 'teacher') {
       const teacher = await Teacher.findById(authId).populate('subjects');
       if (teacher) userData.subjects = teacher.subjects || [];
@@ -816,6 +826,7 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
           curriculumBoard: teacherAdmin.curriculumBoard,
           isAsliPrepExclusive: teacherAdmin.isAsliPrepExclusive === true,
           schoolName: teacherAdmin.schoolName || '',
+          schoolLogo: teacherAdmin.schoolLogo || '',
         };
       }
       userData.vidyaEnabled = isVidyaEnabledForTeachers(teacherAdmin);

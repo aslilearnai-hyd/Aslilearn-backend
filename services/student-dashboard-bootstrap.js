@@ -64,11 +64,14 @@ function serializeStudentUser(user, displayBoard, isAsliPrepExclusive) {
     overallProgress: user.overallProgress ?? null,
     studyStreak: user.studyStreak || { current: 0, longest: 0, lastActiveDate: '' },
     isAsliPrepExclusive,
+    schoolName: user.assignedAdmin?.schoolName || user.schoolName || '',
+    schoolLogo: user.assignedAdmin?.schoolLogo || user.schoolLogo || '',
     assignedAdmin: user.assignedAdmin
       ? {
           _id: user.assignedAdmin._id,
           board: user.assignedAdmin.board,
           schoolName: user.assignedAdmin.schoolName,
+          schoolLogo: user.assignedAdmin.schoolLogo || '',
           isAsliPrepExclusive: user.assignedAdmin.isAsliPrepExclusive,
         }
       : null,
@@ -205,7 +208,7 @@ async function loadStudentQuizzes(userId, student) {
  */
 export async function buildStudentDashboardBootstrap(userId) {
   const student = await User.findById(userId)
-    .populate('assignedAdmin', 'board curriculumBoard isAsliPrepExclusive schoolName')
+    .populate('assignedAdmin', 'board curriculumBoard isAsliPrepExclusive schoolName schoolLogo')
     .populate('assignedClass', 'classNumber section assignedSubjects')
     .select('-password')
     .lean();
