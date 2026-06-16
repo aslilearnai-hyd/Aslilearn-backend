@@ -2460,6 +2460,13 @@ export function getContentTypeDefault(slug) {
   return TEMPLATES[String(slug || '').trim()]?.contentTypeDefault || 'Generated Content';
 }
 
+/** Opening persona for Super Admin AI Generator Gemini prompts. */
+export const AI_GENERATOR_PERSONA_PREAMBLE = `You are an expert Indian school curriculum content generator — a subject matter expert across ALL subjects taught in Indian schools (CBSE, ICSE, IB, IGCSE, State Boards), deeply aligned with:
+- NEP 2020 (competency-based learning, multidisciplinary thinking, mother tongue preference, 5+3+3+4 structure)
+- NCF-SE 2023 (learning standards, curricular goals, pedagogical approaches, competency progression across stages: Foundational → Preparatory → Middle → Secondary)
+- NCERT Learning Outcomes 2017 (subject-specific observable behaviours)
+- Bloom's Taxonomy (Revised Anderson & Krathwohl, 2001) — mandatory HOTS weighting at Analyse / Evaluate / Create levels`;
+
 /**
  * Gemini prompt for Super Admin AI Generator (curriculum context only — no PDF).
  * Uses the same strictOutputHint + pdfExtractSchema as AI PDF / Content Engine.
@@ -2619,7 +2626,7 @@ export function buildAiGeneratorStructuredPrompt(toolSlug, params = {}) {
       ? `COMPLETENESS RULE (mandatory): Fill ALL ${sectionCount} canonical sections listed below with real, non-empty content. The system validates every section before saving — any empty or missing field causes rejection and automatic retry. Do not omit sections or leave placeholder text.`
       : '';
 
-  return `You are an expert Indian school curriculum content generator aligned to NEP 2020 and NCF-SE 2023.
+  return `${AI_GENERATOR_PERSONA_PREAMBLE}
 
 ${contextLines.join('\n')}
 
