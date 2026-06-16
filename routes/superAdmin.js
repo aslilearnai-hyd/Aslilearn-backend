@@ -85,6 +85,20 @@ import {
   normalizeExamClassFields
 } from '../controllers/superAdminExamController.js';
 import { getCalendarEvents, createCalendarEvent } from '../controllers/calendarController.js';
+import {
+  createSchoolOrder,
+  listSchoolOrders,
+  getSchoolOrderById,
+  updateSchoolOrder,
+  deleteSchoolOrder,
+  uploadSchoolOrderDocument,
+} from '../controllers/schoolOrderController.js';
+import {
+  listOrderCatalog,
+  createOrderCatalogProduct,
+  updateOrderCatalogProduct,
+  deleteOrderCatalogProduct,
+} from '../controllers/orderCatalogController.js';
 import { VALID_SCHOOL_BOARDS } from '../constants/boards.js';
 
 const router = express.Router();
@@ -244,6 +258,35 @@ const thumbnailUpload = multer({
       cb(new Error('Only image files are allowed!'), false);
     }
   }
+});
+
+// School order document uploads
+const orderDocumentStorage = multer.diskStorage({
+  destination(req, file, cb) {
+    const uploadDir = path.join(__dirname, '../uploads/orders/documents');
+    if (!fs.existsSync(uploadDir)) {
+      fs.mkdirSync(uploadDir, { recursive: true });
+    }
+    cb(null, uploadDir);
+  },
+  filename(req, file, cb) {
+    const uniqueSuffix = `${Date.now()}-${Math.round(Math.random() * 1e9)}`;
+    const ext = path.extname(file.originalname) || '';
+    cb(null, `order-doc-${uniqueSuffix}${ext}`);
+  },
+});
+
+const orderDocumentUpload = multer({
+  storage: orderDocumentStorage,
+  limits: { fileSize: 15 * 1024 * 1024 },
+  fileFilter(req, file, cb) {
+    const allowed = ['image/jpeg', 'image/png', 'image/webp', 'application/pdf'];
+    if (allowed.includes(file.mimetype)) {
+      cb(null, true);
+    } else {
+      cb(new Error('Only PDF and image files are allowed'), false);
+    }
+  },
 });
 
 // Configure multer for spreadsheet uploads (memory storage).
@@ -521,6 +564,24 @@ router.post('/courses', createCourse);
 
 // Analytics & Reports
 router.get('/subscriptions', getSubscriptions);
+router.get('/order-catalog', listOrderCatalog);
+router.post('/order-catalog', createOrderCatalogProduct);
+router.put('/order-catalog/:id', updateOrderCatalogProduct);
+router.delete('/order-catalog/:id', deleteOrderCatalogProduct);
+router.get('/orders', listSchoolOrders);
+router.get('/orders/:id', getSchoolOrderById);
+router.post('/orders/draft', createSchoolOrder);
+router.post('/orders', createSchoolOrder);
+router.put('/orders/:id', updateSchoolOrder);
+router.delete('/orders/:id', deleteSchoolOrder);
+router.post('/orders/documents', (req, res, next) => {
+  orderDocumentUpload.single('document')(req, res, (err) => {
+    if (err) {
+      return res.status(400).json({ success: false, message: err.message || 'Upload failed' });
+    }
+    next();
+  });
+}, uploadSchoolOrderDocument);
 router.get('/export', exportData);
 
 // Board Management Routes

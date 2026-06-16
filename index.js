@@ -72,6 +72,19 @@ import {
   updateAiToolGenerationById,
   deleteAiToolGenerationById,
 } from './controllers/aiToolGenerationsController.js';
+import {
+  listSchoolOrders,
+  getSchoolOrderById,
+  createSchoolOrder,
+  updateSchoolOrder,
+  deleteSchoolOrder,
+} from './controllers/schoolOrderController.js';
+import {
+  listOrderCatalog,
+  createOrderCatalogProduct,
+  updateOrderCatalogProduct,
+  deleteOrderCatalogProduct,
+} from './controllers/orderCatalogController.js';
 
 const buildSafeAppendQuestionPipeline = (questionId) => [
   {
@@ -897,6 +910,19 @@ app.get('/api/super-admin/ai-tool-generations/export-bundle', verifyToken, verif
 app.get('/api/super-admin/ai-tool-generations/document/:id', verifyToken, verifySuperAdmin, getAiToolGenerationById);
 app.patch('/api/super-admin/ai-tool-generations/document/:id', verifyToken, verifySuperAdmin, updateAiToolGenerationById);
 app.delete('/api/super-admin/ai-tool-generations/document/:id', verifyToken, verifySuperAdmin, deleteAiToolGenerationById);
+
+// School orders — register on app before /api/super-admin router (avoids 404 on PUT/DELETE)
+app.get('/api/super-admin/orders', verifyToken, verifySuperAdmin, listSchoolOrders);
+app.get('/api/super-admin/orders/:id', verifyToken, verifySuperAdmin, getSchoolOrderById);
+app.post('/api/super-admin/orders/draft', verifyToken, verifySuperAdmin, createSchoolOrder);
+app.post('/api/super-admin/orders', verifyToken, verifySuperAdmin, createSchoolOrder);
+app.put('/api/super-admin/orders/:id', verifyToken, verifySuperAdmin, updateSchoolOrder);
+app.delete('/api/super-admin/orders/:id', verifyToken, verifySuperAdmin, deleteSchoolOrder);
+
+app.get('/api/super-admin/order-catalog', verifyToken, verifySuperAdmin, listOrderCatalog);
+app.post('/api/super-admin/order-catalog', verifyToken, verifySuperAdmin, createOrderCatalogProduct);
+app.put('/api/super-admin/order-catalog/:id', verifyToken, verifySuperAdmin, updateOrderCatalogProduct);
+app.delete('/api/super-admin/order-catalog/:id', verifyToken, verifySuperAdmin, deleteOrderCatalogProduct);
 
 // Admin content GET APIs — register before /api/admin router (avoids 404 on older deployments)
 app.get('/api/admin/assessments', verifyToken, verifyAdmin, extractAdminId, getAssessments);
