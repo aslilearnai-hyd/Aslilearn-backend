@@ -812,6 +812,16 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
     };
     if (user.role === 'student') {
       userData.vidyaEnabled = isVidyaEnabledForStudents(user.assignedAdmin);
+      if (user.assignedAdmin) {
+        userData.assignedAdmin = {
+          _id: user.assignedAdmin._id,
+          board: user.assignedAdmin.board,
+          curriculumBoard: user.assignedAdmin.curriculumBoard,
+          isAsliPrepExclusive: user.assignedAdmin.isAsliPrepExclusive === true,
+          schoolName: user.assignedAdmin.schoolName || '',
+          schoolLogo: user.assignedAdmin.schoolLogo || '',
+        };
+      }
     }
     if (req.user.role === 'admin') {
       userData.schoolName = user.schoolName || '';
