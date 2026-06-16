@@ -13,11 +13,9 @@ import {
 } from './ai-content-engine-service.js';
 import { buildBookHistoricalGenerationContext } from './book-generator-historical.js';
 import {
-  validateRecordUniqueness,
   collectQuestionTextsFromStructured,
   dedupeIntraRecordQuestions,
   renumberIntraRecordQuestions,
-  summarizeUniquenessErrors,
 } from './ai-generator-uniqueness-engine.js';
 import { extractTitleFromStructured } from './ai-generator-content-extractor.js';
 import { persistGenerationFingerprints } from './ai-generator-fingerprint-service.js';
@@ -30,6 +28,7 @@ import { acquireGenerationLock, forceReleaseGenerationLock, releaseGenerationLoc
 import {
   isAiGeneratorCostSaverEnabled,
   isAiGeneratorUltraEconomyEnabled,
+  getBatchSlotMaxAttempts,
 } from '../utils/ai-generator-batch-config.js';
 import { retrieveBookContextForGeneration } from './book-rag-service.js';
 import {
@@ -83,10 +82,7 @@ function getBatchSize(override) {
 }
 
 function getMaxAttemptsPerSlot() {
-  if (isAiGeneratorUltraEconomyEnabled()) return 1;
-  const n = Number(process.env.BOOK_GENERATOR_SLOT_MAX_ATTEMPTS || process.env.AI_GENERATOR_BATCH_SLOT_MAX_ATTEMPTS);
-  if (Number.isFinite(n) && n > 0) return n;
-  return 1;
+  return getBatchSlotMaxAttempts();
 }
 
 function formatBookBatchProgress({ saved, batchSize, batchIndex, callCount, costInr }) {
@@ -252,7 +248,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               bookId,
               useBookKnowledge,
               uniqueSeed: `${Date.now()}-book-v${variantIndex}-a${attempt}`,
-              strictUniqueness: true,
+              strictUniqueness: false,
               ...(attempt > 1 ? { recoveryPass: true } : {}),
             };
 
@@ -288,40 +284,6 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             );
             structuredContent = dedupeIntraRecordQuestions(toolSlug, structuredContent);
             structuredContent = renumberIntraRecordQuestions(toolSlug, structuredContent);
-
-            let uniqueness = validateRecordUniqueness(toolSlug, structuredContent, {
-              batchTitles,
-              batchTexts: batchQuestionTexts,
-              historicalTexts: [],
-              historicalTitles: [],
-            });
-
-            if (!uniqueness.valid) {
-              const intraOnly = uniqueness.errors.every((e) =>
-                String(e).includes('Duplicate question within record'),
-              );
-              if (intraOnly) {
-                structuredContent = dedupeIntraRecordQuestions(toolSlug, structuredContent);
-                structuredContent = renumberIntraRecordQuestions(toolSlug, structuredContent);
-                uniqueness = validateRecordUniqueness(toolSlug, structuredContent, {
-                  batchTitles,
-                  batchTexts: batchQuestionTexts,
-                  historicalTexts: [],
-                  historicalTitles: [],
-                });
-              }
-            }
-
-            if (!uniqueness.valid) {
-              lastError = summarizeUniquenessErrors(uniqueness.errors) || uniqueness.errors.join('; ');
-              const intraOnly = uniqueness.errors.every((e) =>
-                String(e).includes('Duplicate question within record'),
-              );
-              if (intraOnly || isAiGeneratorUltraEconomyEnabled()) {
-                /* save after dedupe — do not burn more Gemini retries */
-              } else if (attempt < maxAttempts) continue;
-              else return { ok: false, variantIndex, batchIndex, error: lastError };
-            }
 
             const title = extractTitleFromStructured(structuredContent);
             if (title) batchTitles.push(title);

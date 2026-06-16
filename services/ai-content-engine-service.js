@@ -31,7 +31,9 @@ import {
 import { stripMarkdownSyntax, deepStripMarkdownValues } from '../utils/strip-markdown-syntax.js';
 import {
   getAiGeneratorValidationMaxAttempts,
+  isAiGeneratorCostSaverEnabled,
   isAiGeneratorSectionPadEnabled,
+  isAiGeneratorUltraEconomyEnabled,
   shouldUpgradeFlashOnValidationAttempt,
   shouldUseFlashForAiGeneratorRun,
 } from '../utils/ai-generator-batch-config.js';
@@ -7777,7 +7779,8 @@ ${pdfContext}`
     generationVariant: isBatchVariant ? generationVariant : undefined,
     variantAngle: isBatchVariant ? String(extra.variantAngle || '').trim() : undefined,
     variantScenario: isBatchVariant ? String(extra.variantScenario || '').trim() : undefined,
-    requireAllCanonicalFields: true,
+    requireAllCanonicalFields:
+      !isBatchVariant || (!isAiGeneratorCostSaverEnabled() && !isAiGeneratorUltraEconomyEnabled()),
   };
 
   let lastError = null;
@@ -8033,6 +8036,29 @@ ${pdfContext}`
       }
 
       if (!validation.valid) {
+        if (isBatchVariant && isAiGeneratorSectionPadEnabled()) {
+          structuredContent = padAiGeneratorCanonicalSections(slug, structuredContent, meta);
+          if (slug === 'worksheet-mcq-generator') {
+            structuredContent = finalizeWorksheetStructuredContent(structuredContent, meta);
+          }
+          validation = validateToolSpecificStructuredContent(
+            slug,
+            structuredContent,
+            contentType,
+            validationSourceText,
+            meta,
+          );
+          if (validation.normalizedStructuredContent) {
+            structuredContent = validation.normalizedStructuredContent;
+          }
+          if (!validation.valid && isAiGeneratorCostSaverEnabled()) {
+            validation = {
+              valid: true,
+              normalizedStructuredContent: structuredContent,
+              normalizedType: contentType,
+            };
+          }
+        }
         lastValidationMessage = validation.message || 'Structured content failed validation.';
         const missingList = Array.isArray(validation.missingSections) ? validation.missingSections : [];
         const allFieldsHint =
@@ -8131,8 +8157,12 @@ ${pdfContext}`
 
       const finalQuality = runAiGeneratorQualityGate(slug, structuredContent, meta);
       if (!finalQuality.valid) {
-        lastValidationMessage = finalQuality.errors.join('; ');
-        throw new Error(lastValidationMessage);
+        if (isBatchVariant && isAiGeneratorCostSaverEnabled()) {
+          /* section pad already applied — save usable batch output without another LLM call */
+        } else {
+          lastValidationMessage = finalQuality.errors.join('; ');
+          throw new Error(lastValidationMessage);
+        }
       }
 
       const generatedContent = stripMarkdownSyntax(
@@ -8161,6 +8191,7 @@ ${pdfContext}`
   const upgradeOnFail =
     requireAllFieldsEnv &&
     !isAiGeneratorSectionPadEnabled() &&
+    !isAiGeneratorCostSaverEnabled() &&
     String(process.env.AI_GENERATOR_UPGRADE_ON_VALIDATION_FAIL ?? 'true').toLowerCase() !== 'false';
   const shouldUpgrade =
     isBatchVariant && upgradeOnFail && !upgradeToFlash && params._upgradeAttempted !== true;

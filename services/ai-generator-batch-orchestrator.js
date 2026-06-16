@@ -11,11 +11,10 @@ import { generateStructuredContentForAiGenerator } from './ai-content-engine-ser
 import { buildHistoricalGenerationContext } from './ai-generator-historical-index.js';
 
 import {
-
   validateRecordUniqueness,
-
   collectQuestionTextsFromStructured,
-
+  dedupeIntraRecordQuestions,
+  renumberIntraRecordQuestions,
 } from './ai-generator-uniqueness-engine.js';
 
 import { extractTitleFromStructured } from './ai-generator-content-extractor.js';
@@ -49,7 +48,7 @@ import {
 
 } from './ai-generator-content-strategy.js';
 
-import { isAiGeneratorCostSaverEnabled, isAiGeneratorUltraEconomyEnabled } from '../utils/ai-generator-batch-config.js';
+import { isAiGeneratorCostSaverEnabled, isAiGeneratorUltraEconomyEnabled, getBatchSlotMaxAttempts, shouldEnforceBatchUniquenessRetries } from '../utils/ai-generator-batch-config.js';
 
 import AiToolGeneration from '../models/AiToolGeneration.js';
 
@@ -74,13 +73,7 @@ function getBatchSize(override) {
 
 
 function getMaxAttemptsPerSlot() {
-
-  if (isAiGeneratorUltraEconomyEnabled()) return 1;
-
-  const n = Number(process.env.AI_GENERATOR_BATCH_SLOT_MAX_ATTEMPTS);
-
-  return Number.isFinite(n) && n > 0 ? n : 5;
-
+  return getBatchSlotMaxAttempts();
 }
 
 
@@ -350,7 +343,7 @@ export async function generateBatchAndSave(params, opts = {}) {
 
               uniqueSeed: `${Date.now()}-v${variantIndex}-a${attempt}-${Math.random().toString(36).slice(2, 10)}`,
 
-              strictUniqueness: strategy.strictUniqueness,
+              strictUniqueness: shouldEnforceBatchUniquenessRetries() && strategy.strictUniqueness,
 
               ...(attempt > 1 ? { recoveryPass: true } : {}),
 
@@ -387,34 +380,26 @@ export async function generateBatchAndSave(params, opts = {}) {
 
 
 
-            const uniqueness = validateRecordUniqueness(toolSlug, generated.structuredContent, {
+            let structuredContent = generated.structuredContent;
+            if (structuredContent && typeof structuredContent === 'object') {
+              structuredContent = dedupeIntraRecordQuestions(toolSlug, structuredContent);
+              structuredContent = renumberIntraRecordQuestions(toolSlug, structuredContent);
+              generated.structuredContent = structuredContent;
+            }
 
-              batchTitles,
+            if (shouldEnforceBatchUniquenessRetries()) {
+              const uniqueness = validateRecordUniqueness(toolSlug, structuredContent, {
+                batchTitles,
+                batchTexts: batchQuestionTexts,
+                historicalTexts: historicalQuestionTexts,
+                historicalTitles,
+              });
 
-              batchTexts: batchQuestionTexts,
-
-              historicalTexts: historicalQuestionTexts,
-
-              historicalTitles,
-
-            });
-
-
-
-            if (!uniqueness.valid) {
-
-              lastError = uniqueness.errors.join('; ');
-
-              duplicatePreventionCount += 1;
-
-              if (isAiGeneratorUltraEconomyEnabled()) {
-
-                /* one shot — accept first valid structure even if similar */
-
-              } else if (strategy.strictUniqueness && attempt < maxAttempts) continue;
-
-              else if (strategy.strictUniqueness) continue;
-
+              if (!uniqueness.valid) {
+                lastError = uniqueness.errors.join('; ');
+                duplicatePreventionCount += 1;
+                if (attempt < maxAttempts) continue;
+              }
             }
 
 

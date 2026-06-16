@@ -152,7 +152,7 @@ export function getAiGeneratorValidationMaxAttempts(isBatchVariant = false, reco
     return 1;
   }
 
-  if (!recovery && isBatchVariant && isAiGeneratorSectionPadEnabled()) {
+  if (!recovery && isBatchVariant && (isAiGeneratorCostSaverEnabled() || isAiGeneratorSectionPadEnabled())) {
     const padDefault = '1';
     const parsed = Number.parseInt(String(envRaw ?? padDefault), 10);
     return Math.min(3, Math.max(1, Number.isFinite(parsed) ? parsed : Number(padDefault)));
@@ -241,4 +241,29 @@ export function getBatchDedupThresholds() {
 
 }
 
+/** When true (default with cost saver), batch slots never re-call Gemini for uniqueness/similarity. */
+export function shouldEnforceBatchUniquenessRetries() {
+  if (isAiGeneratorCostSaverEnabled() || isAiGeneratorUltraEconomyEnabled()) return false;
+  const raw = String(process.env.AI_GENERATOR_ENFORCE_BATCH_UNIQUENESS ?? 'false').trim().toLowerCase();
+  return raw === 'true' || raw === '1' || raw === 'on';
+}
+
+/** Max outer retries per batch slot (uniqueness / slot recovery). Default 1 = one Gemini call per record. */
+export function getBatchSlotMaxAttempts() {
+  if (isAiGeneratorUltraEconomyEnabled()) return 1;
+  const envRaw =
+    process.env.BOOK_GENERATOR_SLOT_MAX_ATTEMPTS ||
+    process.env.AI_GENERATOR_BATCH_SLOT_MAX_ATTEMPTS;
+  const parsed = Number.parseInt(String(envRaw ?? '1'), 10);
+  if (Number.isFinite(parsed) && parsed > 0) return Math.min(5, parsed);
+  return shouldEnforceBatchUniquenessRetries() ? 3 : 1;
+}
+
+/** Max Gemini re-generations for single-record uniqueness (AI Generator API). Default 1 with cost saver. */
+export function getUniquenessMaxAttempts() {
+  const envRaw = process.env.AI_GENERATOR_UNIQUENESS_MAX_ATTEMPTS;
+  const parsed = Number.parseInt(String(envRaw ?? ''), 10);
+  if (Number.isFinite(parsed) && parsed > 0) return Math.min(5, parsed);
+  return shouldEnforceBatchUniquenessRetries() ? 3 : 1;
+}
 

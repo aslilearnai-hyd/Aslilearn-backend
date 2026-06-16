@@ -32,18 +32,22 @@ export function getAiGeneratorMaxTokens(toolSlug) {
   const ultra =
     String(process.env.AI_GENERATOR_ULTRA_ECONOMY ?? 'false').trim().toLowerCase() === 'true' ||
     String(process.env.AI_GENERATOR_ULTRA_ECONOMY ?? 'false').trim() === '1';
+  const costSaver =
+    String(process.env.AI_GENERATOR_COST_SAVER ?? 'true').trim().toLowerCase() !== 'false' &&
+    String(process.env.AI_GENERATOR_COST_SAVER ?? 'true').trim().toLowerCase() !== '0' &&
+    String(process.env.AI_GENERATOR_COST_SAVER ?? 'true').trim().toLowerCase() !== 'off';
   const padEnabled =
     String(process.env.AI_GENERATOR_SECTION_PAD ?? 'true').trim().toLowerCase() !== 'false' &&
     String(process.env.AI_GENERATOR_SECTION_PAD ?? 'true').trim().toLowerCase() !== '0' &&
     String(process.env.AI_GENERATOR_SECTION_PAD ?? 'true').trim().toLowerCase() !== 'off';
   if (HEAVY_TOOLS.has(slug)) {
-    const base = ultra ? 4200 : padEnabled ? 7000 : 10000;
+    const base = ultra ? 4200 : costSaver ? 4800 : padEnabled ? 7000 : 10000;
     return Math.min(16000, Math.max(3000, Number(process.env.AI_GENERATOR_MAX_TOKENS_HEAVY) || base));
   }
   if (MEDIUM_TOOLS.has(slug)) {
-    const base = ultra ? 2600 : padEnabled ? 5000 : 7000;
+    const base = ultra ? 2600 : costSaver ? 3400 : padEnabled ? 5000 : 7000;
     return Math.min(12000, Math.max(2000, Number(process.env.AI_GENERATOR_MAX_TOKENS_MEDIUM) || base));
   }
-  const base = ultra ? 2200 : padEnabled ? 3500 : 5000;
+  const base = ultra ? 2200 : costSaver ? 2800 : padEnabled ? 3500 : 5000;
   return Math.min(8000, Math.max(1800, Number(process.env.AI_GENERATOR_MAX_TOKENS_DEFAULT) || base));
 }

@@ -27,7 +27,10 @@ import { persistGenerationFingerprints } from '../services/ai-generator-fingerpr
 import {
   validateRecordUniqueness,
   collectQuestionTextsFromStructured,
+  dedupeIntraRecordQuestions,
+  renumberIntraRecordQuestions,
 } from '../services/ai-generator-uniqueness-engine.js';
+import { getUniquenessMaxAttempts } from '../utils/ai-generator-batch-config.js';
 import { extractTitleFromStructured } from '../services/ai-generator-content-extractor.js';
 import { generateBatchAndSave } from '../services/ai-generator-batch-orchestrator.js';
 import { acquireGenerationLock, releaseGenerationLock } from '../services/ai-generator-lock-service.js';
@@ -346,7 +349,7 @@ export async function generateAndSaveContent(req, res) {
     let contentType;
     let sectionRepairCount = 0;
     let duplicatePreventionCount = 0;
-    const maxUniquenessAttempts = Number(process.env.AI_GENERATOR_UNIQUENESS_MAX_ATTEMPTS) || 3;
+    const maxUniquenessAttempts = getUniquenessMaxAttempts();
 
     try {
       let lastUniquenessError = '';
@@ -377,12 +380,16 @@ export async function generateAndSaveContent(req, res) {
           continue;
         }
 
+        structuredContent = dedupeIntraRecordQuestions(toolSlug, structuredContent);
+        structuredContent = renumberIntraRecordQuestions(toolSlug, structuredContent);
+
         const uniqueness = validateRecordUniqueness(toolSlug, structuredContent, uniquenessCtx);
         if (uniqueness.valid) break;
         lastUniquenessError = uniqueness.errors.join('; ');
         duplicatePreventionCount += 1;
         if (uniqAttempt >= maxUniquenessAttempts) {
-          throw new Error(lastUniquenessError || 'Generated content failed uniqueness checks.');
+          /* cost-saver default: save deduped output even if similar to prior records */
+          break;
         }
       }
     } finally {

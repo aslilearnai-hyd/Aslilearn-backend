@@ -20,7 +20,7 @@ export async function resolveContentStrategy(scope, opts = {}) {
       action: 'generate',
       mode: 'force_generate',
       saturation,
-      strictUniqueness: true,
+      strictUniqueness: false,
       batchSize,
     };
   }
@@ -40,7 +40,7 @@ export async function resolveContentStrategy(scope, opts = {}) {
       action: 'generate',
       mode: 'strict_generate',
       saturation,
-      strictUniqueness: true,
+      strictUniqueness: false,
       batchSize,
     };
   }
@@ -50,7 +50,7 @@ export async function resolveContentStrategy(scope, opts = {}) {
       action: 'generate',
       mode: 'strong_uniqueness',
       saturation,
-      strictUniqueness: true,
+      strictUniqueness: false,
       batchSize,
     };
   }

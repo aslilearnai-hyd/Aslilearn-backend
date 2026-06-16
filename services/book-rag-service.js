@@ -2,7 +2,14 @@ import BookChunk from '../models/BookChunk.js';
 import { generateEmbedding } from './pdf-rag-service.js';
 
 const DEFAULT_TOP_K = Number(process.env.BOOK_RAG_TOP_K || process.env.RAG_TOP_K || 4);
-const MAX_CONTEXT_CHARS = Number(process.env.BOOK_RAG_MAX_CONTEXT_CHARS || 18000);
+function getBookRagMaxContextChars() {
+  const env = Number(process.env.BOOK_RAG_MAX_CONTEXT_CHARS);
+  if (Number.isFinite(env) && env > 0) return env;
+  const costSaver =
+    String(process.env.AI_GENERATOR_COST_SAVER ?? 'true').trim().toLowerCase() !== 'false' &&
+    String(process.env.AI_GENERATOR_COST_SAVER ?? 'true').trim().toLowerCase() !== '0';
+  return costSaver ? 10000 : 18000;
+}
 
 function normalizeSpaces(text) {
   return String(text || '').replace(/\s+/g, ' ').trim();
@@ -103,7 +110,7 @@ export function formatBookContextForPrompt(chunks = [], meta = {}) {
     const c = chunks[i];
     const label = [c.chapter, c.topic, c.subtopic].filter(Boolean).join(' › ') || `Passage ${i + 1}`;
     const block = `[${i + 1}] (${label})\n${normalizeSpaces(c.content || c.chunkText || '')}`;
-    if (used + block.length > MAX_CONTEXT_CHARS) break;
+    if (used + block.length > getBookRagMaxContextChars()) break;
     blocks.push(block);
     used += block.length;
   }
