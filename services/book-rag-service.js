@@ -1,8 +1,8 @@
 import BookChunk from '../models/BookChunk.js';
 import { generateEmbedding } from './pdf-rag-service.js';
 
-const DEFAULT_TOP_K = Number(process.env.BOOK_RAG_TOP_K || process.env.RAG_TOP_K || 8);
-const MAX_CONTEXT_CHARS = Number(process.env.BOOK_RAG_MAX_CONTEXT_CHARS || 48000);
+const DEFAULT_TOP_K = Number(process.env.BOOK_RAG_TOP_K || process.env.RAG_TOP_K || 4);
+const MAX_CONTEXT_CHARS = Number(process.env.BOOK_RAG_MAX_CONTEXT_CHARS || 18000);
 
 function normalizeSpaces(text) {
   return String(text || '').replace(/\s+/g, ' ').trim();
@@ -137,17 +137,46 @@ function buildCurriculumTargetBlock(scope = {}) {
 
 export async function retrieveBookContextForGeneration(scope = {}) {
   const query = buildBookRetrievalQuery(scope);
-  const chunks = await searchRelevantChunks({
-    query,
-    bookId: scope.bookId,
-    board: scope.board,
-    class: scope.className || scope.classLabel || scope.class,
-    subject: scope.subjectName || scope.subject,
-    chapter: scope.topicName || scope.topic,
-    topic: scope.topicName || scope.topic,
-    subtopic: scope.subtopicName || scope.subtopic,
-    topK: Number(scope.topK) || DEFAULT_TOP_K,
-  });
+  const classRaw = String(scope.className || scope.classLabel || scope.class || '').trim();
+  const classDigits = classRaw.match(/\d+/)?.[0] || '';
+  const classCandidates = [...new Set([classRaw, classDigits, classDigits ? `Class ${classDigits}` : ''].filter(Boolean))];
+
+  // Prefer strict curriculum filters; if they return nothing, progressively relax.
+  let chunks = [];
+  for (const classCandidate of classCandidates.length ? classCandidates : ['']) {
+    chunks = await searchRelevantChunks({
+      query,
+      bookId: scope.bookId,
+      board: scope.board,
+      class: classCandidate || undefined,
+      subject: scope.subjectName || scope.subject,
+      chapter: scope.topicName || scope.topic,
+      topic: scope.topicName || scope.topic,
+      subtopic: scope.subtopicName || scope.subtopic,
+      topK: Number(scope.topK) || DEFAULT_TOP_K,
+    });
+    if (chunks.length > 0) break;
+  }
+
+  if (!chunks.length) {
+    chunks = await searchRelevantChunks({
+      query,
+      bookId: scope.bookId,
+      subject: scope.subjectName || scope.subject,
+      topic: scope.topicName || scope.topic,
+      subtopic: scope.subtopicName || scope.subtopic,
+      topK: Number(scope.topK) || DEFAULT_TOP_K,
+    });
+  }
+
+  if (!chunks.length) {
+    chunks = await searchRelevantChunks({
+      query,
+      bookId: scope.bookId,
+      topK: Number(scope.topK) || DEFAULT_TOP_K,
+    });
+  }
+
   const bookContext = formatBookContextForPrompt(chunks, {
     bookTitle: scope.bookTitle,
     subject: scope.subjectName || scope.subject,

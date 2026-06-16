@@ -86,7 +86,7 @@ function getMaxAttemptsPerSlot() {
   if (isAiGeneratorUltraEconomyEnabled()) return 1;
   const n = Number(process.env.BOOK_GENERATOR_SLOT_MAX_ATTEMPTS || process.env.AI_GENERATOR_BATCH_SLOT_MAX_ATTEMPTS);
   if (Number.isFinite(n) && n > 0) return n;
-  return isAiGeneratorCostSaverEnabled() ? 2 : 3;
+  return 1;
 }
 
 function formatBookBatchProgress({ saved, batchSize, batchIndex, callCount, costInr }) {
