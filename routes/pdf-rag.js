@@ -25,7 +25,6 @@ import {
   buildHomeworkRenderableFromStructured,
   buildLessonPlanRenderableFromStructured,
   buildDailyClassPlanRenderableFromStructured,
-  buildRubricRenderableFromStructured,
   buildExamPaperRenderableFromStructured,
   buildMockTestRenderableFromStructured,
   buildWorksheetRenderableFromStructured,
@@ -33,7 +32,6 @@ import {
   canonicalizeActivityExtractedItem,
   canonicalizeConceptExtractedItem,
   canonicalizeHomeworkExtractedItem,
-  canonicalizeRubricExtractedItem,
   canonicalizeLessonPlannerExtractedItem,
   canonicalizeDailyClassPlanExtractedItem,
   canonicalizeExamPaperExtractedItem,
@@ -516,24 +514,6 @@ function enrichActivityRowForApi(data) {
   };
 }
 
-function enrichRubricRowForApi(data) {
-  if (!data || typeof data !== 'object') return data;
-  const tool = String(data.toolType || data.toolName || '').trim();
-  if (tool !== 'rubrics-evaluation-generator') return data;
-  let structured =
-    data.structuredContent && typeof data.structuredContent === 'object' && !Array.isArray(data.structuredContent)
-      ? { ...data.structuredContent }
-      : {};
-  const normalized = canonicalizeRubricExtractedItem(structured);
-  const ct = String(data.contentType || '').trim() || 'Rubric';
-  return {
-    ...data,
-    structuredContent: normalized,
-    renderContent: buildRubricRenderableFromStructured(normalized),
-    contentType: ct,
-  };
-}
-
 function enrichFlashcardRowForApi(data) {
   if (!data || typeof data !== 'object') return data;
   const tool = String(data.toolType || data.toolName || '').trim();
@@ -750,15 +730,13 @@ function mapMasterPdfToListRow(doc) {
     generatedContent: String(doc.generatedContent || doc.content || '').trim(),
   };
   const enriched = enrichConceptRowForApi(
-    enrichRubricRowForApi(
-      enrichHomeworkRowForApi(
-        enrichActivityRowForApi(
-          enrichLessonPlanRowForApi(
-            enrichDailyClassPlanRowForApi(
-              enrichExamPaperRowForApi(
-                enrichWorksheetRowForApi(
-                  enrichStoryRowForApi(enrichShortNotesRowForApi(enrichFlashcardRowForApi(row))),
-                ),
+    enrichHomeworkRowForApi(
+      enrichActivityRowForApi(
+        enrichLessonPlanRowForApi(
+          enrichDailyClassPlanRowForApi(
+            enrichExamPaperRowForApi(
+              enrichWorksheetRowForApi(
+                enrichStoryRowForApi(enrichShortNotesRowForApi(enrichFlashcardRowForApi(row))),
               ),
             ),
           ),

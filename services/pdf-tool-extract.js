@@ -12,7 +12,6 @@ import { extractExamPaperItemsFromPdfText } from './pdf-exam-paper-extract.js';
 import { extractFlashcardItemsFromPdfText } from './pdf-flashcard-extract.js';
 import { extractHomeworkItemsFromPdfText } from './pdf-homework-extract.js';
 import { extractLessonPlannerItemsFromPdfText } from './pdf-lesson-extract.js';
-import { extractRubricItemsFromPdfText } from './pdf-rubric-extract.js';
 import { extractShortNotesItemsFromPdfText } from './pdf-shortnotes-extract.js';
 import { extractStudyGuideItemsFromPdfText } from './pdf-study-guide-extract.js';
 import { extractChapterSummaryItemsFromPdfText } from './pdf-chapter-summary-extract.js';
@@ -30,7 +29,6 @@ export const PDF_TOOL_EXTRACTORS = Object.freeze({
   'lesson-planner': extractLessonPlannerItemsFromPdfText,
   'study-schedule-maker': extractLessonPlannerItemsFromPdfText,
   'homework-creator': extractHomeworkItemsFromPdfText,
-  'rubrics-evaluation-generator': extractRubricItemsFromPdfText,
   'reading-practice-room': extractStoryPassageItemsFromPdfText,
   'story-passage-creator': extractStoryPassageItemsFromPdfText,
   'short-notes-summaries-maker': extractShortNotesItemsFromPdfText,

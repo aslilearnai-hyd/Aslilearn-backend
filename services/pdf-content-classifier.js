@@ -41,7 +41,6 @@ export const FAMILY_TOOL_SLUGS = Object.freeze({
   FLASHCARD_BASED: ['flashcard-generator', 'my-study-decks'],
   STORY_BASED: ['story-passage-creator', 'reading-practice-room'],
   ACTIVITY_BASED: ['activity-project-generator', 'project-idea-lab'],
-  ASSESSMENT_BASED: ['rubrics-evaluation-generator'],
   NOTES_BASED: ['short-notes-summaries-maker'],
 });
 

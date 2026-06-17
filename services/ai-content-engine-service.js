@@ -6123,7 +6123,7 @@ const normalizeStructuredContentByTool = (toolSlug, structuredContent, contentTy
   if (toolSlug === 'quick-assignment-builder') {
     return { normalizedStructuredContent: normalizeQuickAssignmentStructuredContent(source) };
   }
-  if (toolSlug === 'rubrics-evaluation-generator') {
+  if (toolSlug === '__removed-rubrics-tool__') {
     return { normalizedStructuredContent: normalizeRubricStructuredContent(source) };
   }
   if (toolSlug === 'mock-test-builder') {
@@ -6276,7 +6276,7 @@ const TOOL_STRUCTURED_RULES = {
     message:
       'Homework must include practice questions, instructions, application tasks, or another filled template section.',
   },
-  'rubrics-evaluation-generator': {
+  '__removed-rubrics-tool__': {
     allowedTypes: ['Rubric'],
     validate: (data) => rubricStructuredContentIsComplete(data),
     message:
@@ -7239,7 +7239,7 @@ export function buildRenderableContent(toolSlug, contentType, structuredContent)
   if (toolSlug === 'my-study-decks' || toolSlug === 'flashcard-generator') {
     return buildFlashcardRenderableFromStructured(source, toolSlug);
   }
-  if (toolSlug === 'rubrics-evaluation-generator') {
+  if (toolSlug === '__removed-rubrics-tool__') {
     return buildRubricRenderableFromStructured(source);
   }
   if (toolSlug === 'mock-test-builder') {
@@ -7833,7 +7833,7 @@ ${pdfContext}`
         structuredContent = finalizeHomeworkStructuredContent(structuredContent, meta);
       } else if (slug === 'quick-assignment-builder') {
         structuredContent = finalizeQuickAssignmentStructuredContent(structuredContent, meta);
-      } else if (slug === 'rubrics-evaluation-generator') {
+      } else if (slug === '__removed-rubrics-tool__') {
         structuredContent = finalizeRubricStructuredContent(structuredContent, meta);
       } else if (slug === 'story-passage-creator') {
         structuredContent = finalizeStoryPassageStructuredContent(structuredContent, meta);
@@ -7923,7 +7923,7 @@ ${pdfContext}`
         }
       }
 
-      if (!validation.valid && slug === 'rubrics-evaluation-generator') {
+      if (!validation.valid && slug === '__removed-rubrics-tool__') {
         structuredContent = finalizeRubricStructuredContent(structuredContent, meta);
         validation = validateToolSpecificStructuredContent(
           slug,
@@ -8080,7 +8080,7 @@ ${pdfContext}`
             activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. Return Chapter Summary Creator JSON only — use chapter_summary_title, chapter_overview, important_concepts[] (min 3), formulae[] (min 3: name + formula where formula is an equation OR a must-know rule/fact sentence), quick_revision_notes[] (min 3), practice_recall_questions[] (min 3). Do NOT use Smart Study Guide fields (study_guide_title, prior_knowledge, key_concepts_explained, practice_questions with MCQ options).`;
           } else if (slug === 'key-points-formula-extractor') {
             activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. Return Key Points JSON with topic_title, important_concepts[] (min 3), essential_definitions[], formulae[] (min 3 — name + formula; formula may be an equation OR a must-know rule), keywords_terminologies[], must_remember_facts[], real_life_connections[], frequently_asked_exam_points[], mnemonics_memory_tricks[], one_minute_revision_summary. Never leave formulae[] empty.`;
-          } else if (slug === 'rubrics-evaluation-generator') {
+          } else if (slug === '__removed-rubrics-tool__') {
             const missing = getRubricMissingSections(structuredContent);
             const missingHint = missing.length ? ` Missing: ${missing.join('; ')}.` : '';
             activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return ALL 10 rubric sections. criteria[] MUST have at least 3 objects; each MUST include name, excellent, good, satisfactory, needs_improvement (non-empty strings). Include grading_criteria, actionable_suggestions, and next_step_remedial_enrichment.`;

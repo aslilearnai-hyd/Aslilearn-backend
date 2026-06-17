@@ -61,7 +61,6 @@ export const TEACHER_DASHBOARD_TOOL_IDS = Object.freeze([
   'exam-question-paper-generator',
   'daily-class-plan-maker',
   'homework-creator',
-  'rubrics-evaluation-generator',
   'learning-outcomes-generator',
   'story-passage-creator',
   'short-notes-summaries-maker',
@@ -308,7 +307,7 @@ export const createTeacherTool = async (req, res) => {
       });
     }
     
-    // Rubrics uses assignmentType / report fields — no curriculum "topic" in the UI.
+    // Some tools can generate without explicit curriculum topic in the UI.
     const topicOptionalTools = new Set([
       'lesson-planner',
       'study-schedule-maker',
@@ -317,7 +316,6 @@ export const createTeacherTool = async (req, res) => {
       'project-idea-lab',
       'reading-practice-room',
       'story-passage-creator',
-      'rubrics-evaluation-generator',
     ]);
     if (!topicOptionalTools.has(toolType) && !topic) {
       return res.status(400).json({

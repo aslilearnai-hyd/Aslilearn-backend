@@ -37,7 +37,6 @@ export const MULTI_ITEM_PDF_TOOLS = new Set([
 /** Tools that may legitimately return a single consolidated object. */
 export const SINGLE_OBJECT_PDF_TOOLS = new Set([
   'daily-class-plan-maker',
-  'rubrics-evaluation-generator',
   'homework-creator',
   'lesson-planner',
   'study-schedule-maker',
@@ -406,8 +405,6 @@ export function validatePdfExtractItems(toolType, items, context = {}) {
     list.forEach((item, i) => errors.push(...validateConceptBreakdownItem(item, i)));
   } else if (tool === 'daily-class-plan-maker') {
     list.forEach((item) => errors.push(...validateDailyPlanItem(item)));
-  } else if (tool === 'rubrics-evaluation-generator') {
-    list.forEach((item) => errors.push(...validateRubricItem(item)));
   } else if (tool === 'worksheet-mcq-generator' || tool === 'smart-qa-practice-generator') {
     const expectedQ = expectedFromPdf || countExpectedPdfItems(tool, pdfText);
     if (list.length === 1) {

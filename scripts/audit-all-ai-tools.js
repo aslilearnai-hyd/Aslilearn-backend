@@ -14,7 +14,6 @@ const TOOLS = [
   'lesson-planner',
   'study-schedule-maker',
   'homework-creator',
-  'rubrics-evaluation-generator',
   'reading-practice-room',
   'story-passage-creator',
   'short-notes-summaries-maker',

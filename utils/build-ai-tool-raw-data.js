@@ -5,8 +5,6 @@ import {
   finalizeChapterSummaryStructuredContent,
   normalizeStudyGuideStructuredContent,
   normalizeWorksheetStructuredContent,
-  normalizeRubricStructuredContent,
-  finalizeRubricStructuredContent,
   finalizeStoryPassageStructuredContent,
   finalizeFlashcardDeckStructuredContent,
   finalizeDailyClassPlanStructuredContent,
@@ -192,17 +190,6 @@ export function buildRawDataForTool(toolType, content, metadata = {}) {
     }
     if (parsed && typeof parsed === 'object') {
       return normalizeWorksheetStructuredContent(parsed, content);
-    }
-    return null;
-  }
-
-  if (slug === 'rubrics-evaluation-generator') {
-    const structured = extractStructuredFromStoredContent(content, metadata);
-    if (structured && typeof structured === 'object' && Object.keys(structured).length) {
-      return finalizeRubricStructuredContent(structured, metadata);
-    }
-    if (parsed && typeof parsed === 'object') {
-      return finalizeRubricStructuredContent(parsed, metadata);
     }
     return null;
   }

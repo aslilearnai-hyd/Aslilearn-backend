@@ -9,7 +9,6 @@ const HEAVY_TOOLS = new Set([
   'study-schedule-maker',
   'activity-project-generator',
   'project-idea-lab',
-  'rubrics-evaluation-generator',
 ]);
 
 const MEDIUM_TOOLS = new Set([

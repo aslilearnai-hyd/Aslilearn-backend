@@ -16,7 +16,6 @@ import {
   canonicalizeLessonPlannerExtractedItem,
   canonicalizePracticeQaExtractedItem,
   canonicalizeQuickAssignmentExtractedItem,
-  canonicalizeRubricExtractedItem,
   canonicalizeShortNotesExtractedItem,
   canonicalizeStudyGuideExtractedItem,
   canonicalizeStoryExtractedItem,
@@ -33,7 +32,6 @@ import {
   buildMockTestRenderableFromStructured,
   buildPracticeQaRenderableFromStructured,
   buildQuickAssignmentRenderableFromStructured,
-  buildRubricRenderableFromStructured,
   buildShortNotesRenderableFromStructured,
   buildStoryRenderableFromStructured,
   buildStudyGuideRenderableFromStructured,
@@ -73,10 +71,6 @@ export const TOOL_FORMATTER_REGISTRY = {
   'homework-creator': {
     canonicalize: (item) => canonicalizeHomeworkExtractedItem(item),
     render: (item) => buildHomeworkRenderableFromStructured(item),
-  },
-  'rubrics-evaluation-generator': {
-    canonicalize: (item) => canonicalizeRubricExtractedItem(item),
-    render: (item) => buildRubricRenderableFromStructured(item),
   },
   'reading-practice-room': {
     canonicalize: (item, slug) => canonicalizeStoryExtractedItem(item, slug || 'reading-practice-room'),

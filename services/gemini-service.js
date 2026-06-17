@@ -212,7 +212,7 @@ export function buildPdfExtractEmptyMessage(toolType) {
   if (tool === 'homework-creator') {
     return `${base} Use a homework PDF with instructions and practice questions, or a numbered question list (grouped into one homework set). If this is a class worksheet only, choose Worksheet & MCQ instead.${detail}`;
   }
-  if (tool === 'rubrics-evaluation-generator') {
+  if (tool === '__removed-rubrics-tool__') {
     return `${base} Use a rubric or report-card PDF with a criteria table (Excellent / Good / Satisfactory / Needs improvement) and evaluation narrative sections.${detail}`;
   }
   if (tool === 'activity-project-generator' || tool === 'project-idea-lab') {
@@ -600,7 +600,7 @@ Create a Study Schedule Maker plan for ${params.duration || 90} minutes using th
     'homework-creator': `${common}
 
 Create a meaningful homework set with instructions, questions, answer key, and grading criteria.`,
-    'rubrics-evaluation-generator': `${common}
+    '__removed-rubrics-tool__': `${common}
 
 Create a complete Rubrics, Evaluation & Report Card using ALL 10 sections: (1) Assessment Purpose, (2) Competency Assessed, (3) Evaluation Rubric with min 3 criteria and four performance levels each (Excellent, Good, Satisfactory, Needs Improvement), (4) Grading Criteria, (5) Strengths Observed, (6) Areas for Improvement, (7) Teacher Remarks, (8) Actionable Improvement Suggestions, (9) Parent-friendly Feedback, (10) Next-step Remedial / Enrichment Activity.`,
     'reading-practice-room': `${common}
@@ -871,7 +871,7 @@ Return ONE JSON object per distinct deck in the PDF.
 `
       : '';
   const rubricTemplateBlock =
-    toolType === 'rubrics-evaluation-generator'
+    toolType === '__removed-rubrics-tool__'
       ? `
 
 RUBRICS, EVALUATION & REPORT CARD — TEMPLATE MAPPING (mandatory, 10 sections):
@@ -1597,7 +1597,7 @@ function flattenPdfExtractItems(toolType, parsed) {
         }
         continue;
       }
-      if (toolType === 'rubrics-evaluation-generator') {
+      if (toolType === '__removed-rubrics-tool__') {
         const criteria = Array.isArray(item.criteria) ? item.criteria : [];
         const isCriterionRow =
           (item.name || item.criterion || item.excellent || item.good) &&
@@ -1927,7 +1927,7 @@ async function runGeminiPdfExtractPass(toolType, textSlice, params, passContext 
     toolType === 'homework-creator' ||
     toolType === 'exam-question-paper-generator' ||
     toolType === 'concept-mastery-helper' ||
-    toolType === 'rubrics-evaluation-generator' ||
+    toolType === '__removed-rubrics-tool__' ||
     toolType === 'my-study-decks' ||
     toolType === 'flashcard-generator' ||
     toolType === 'reading-practice-room' ||
@@ -2395,7 +2395,7 @@ export async function extractAndGenerateAllItems(toolType, rawPdfText, params = 
     extractedItems = consolidateHomeworkExtractItems(extractedItems, params);
   }
 
-  if (toolType === 'rubrics-evaluation-generator' && extractedItems.length) {
+  if (toolType === '__removed-rubrics-tool__' && extractedItems.length) {
     extractedItems = consolidateRubricExtractItems(extractedItems, params);
   }
 

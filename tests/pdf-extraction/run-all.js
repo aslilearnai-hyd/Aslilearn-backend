@@ -22,7 +22,6 @@ const TEST_FILES = [
   'test-concept-mastery.js',
   'test-lesson-planner.js',
   'test-homework.js',
-  'test-rubric.js',
   'test-story.js',
   'test-shortnotes.js',
   'test-flashcards.js',

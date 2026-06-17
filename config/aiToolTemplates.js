@@ -39,7 +39,6 @@ export const AI_TOOL_ORDERED_SLUGS = Object.freeze([
   'lesson-planner',
   'study-schedule-maker',
   'homework-creator',
-  'rubrics-evaluation-generator',
   'reading-practice-room',
   'story-passage-creator',
   'short-notes-summaries-maker',
@@ -668,77 +667,6 @@ const TEMPLATES = {
       strictOutputHint:
         'Homework JSON: title, instructions, questions[], application_tasks[], creative_thinking_question, real_life_observation_task, challenge_question, support_hint, answer_hints, parent_note.',
       pdfExtractSchema: { title: 'string', instructions: 'string', questions: ['object|string'] },
-    },
-    sectionFallbackRules: [],
-  },
-
-  'rubrics-evaluation-generator': {
-    slug: 'rubrics-evaluation-generator',
-    title: 'Rubrics, Evaluation & Report Card',
-    contentTypeDefault: 'Rubric',
-    pedagogyFrameworkTags: [...UNIVERSAL_PEDAGOGY_TAGS],
-    compulsoryContextFields: COMPULSORY_CONTEXT_FIELDS,
-    canonicalHeadings: [
-      { order: 1, id: 'purpose', label: 'Assessment Purpose', universalBlock: 'input', storageKeys: ['assessment_purpose', 'purpose'] },
-      { order: 2, id: 'competency', label: 'Competency / Learning Outcome Assessed', universalBlock: 'alignment', storageKeys: ['competency_assessed', 'learning_outcome_assessed'] },
-      { order: 3, id: 'rubric_grid', label: 'Evaluation Rubric with 4 Performance Levels', universalBlock: 'assessment', storageKeys: ['criteria'] },
-      { order: 4, id: 'grading', label: 'Grading Criteria', universalBlock: 'assessment', storageKeys: ['grading_criteria', 'gradingScale'] },
-      { order: 5, id: 'strengths', label: 'Strengths Observed', universalBlock: 'assessment', storageKeys: ['strengths_observed'] },
-      { order: 6, id: 'improve', label: 'Areas for Improvement', universalBlock: 'assessment', storageKeys: ['areas_for_improvement'] },
-      { order: 7, id: 'teacher_remarks', label: 'Teacher Remarks', universalBlock: 'output', storageKeys: ['teacher_remarks', 'remarks'] },
-      { order: 8, id: 'actionable', label: 'Actionable Improvement Suggestions', universalBlock: 'output', storageKeys: ['actionable_suggestions'] },
-      { order: 9, id: 'parent_feedback', label: 'Parent-friendly Feedback', universalBlock: 'reflection', storageKeys: ['parent_friendly_feedback'] },
-      { order: 10, id: 'next_step', label: 'Next-step Remedial / Enrichment Activity', universalBlock: 'reflection', storageKeys: ['next_step_remedial_enrichment'] },
-    ],
-    requiredFieldsForPdfExtract: ['title', 'criteria'],
-    pdfValidationRules: [{ id: 'criteria-four-level', severity: 'warn', description: 'Prefer four performance levels per criterion.' }],
-    parserHints: ['criteria[]: { name, excellent, good, satisfactory, needs_improvement }.'],
-    regenerationRules: { mergePolicy: 'merge', allowTemplateRegeneration: true },
-    gemini: {
-      strictOutputHint:
-        'Rubric JSON MUST populate ALL 10 canonical sections as non-empty strings. criteria[] MUST have at least 3 criteria; EACH criterion MUST include name, excellent, good, satisfactory, and needs_improvement (four performance levels). Also require grading_criteria, strengths_observed, areas_for_improvement, teacher_remarks, actionable_suggestions, parent_friendly_feedback, and next_step_remedial_enrichment. Do not omit Section 3 rubric grid, Section 4 grading, Section 8 actionable suggestions, or Section 10 next-step activity.',
-      pdfExtractSchema: {
-        title: 'string',
-        assessment_purpose: 'string',
-        competency_assessed: 'string',
-        criteria: [
-          {
-            name: 'string',
-            excellent: 'string',
-            good: 'string',
-            satisfactory: 'string',
-            needs_improvement: 'string',
-          },
-        ],
-        grading_criteria: 'string',
-        strengths_observed: 'string',
-        areas_for_improvement: 'string',
-        teacher_remarks: 'string',
-        actionable_suggestions: 'string',
-        parent_friendly_feedback: 'string',
-        next_step_remedial_enrichment: 'string',
-      },
-      generatorStructuredSchema: {
-        title: 'string',
-        assessment_purpose: 'string',
-        competency_assessed: 'string',
-        criteria: [
-          {
-            name: 'string',
-            excellent: 'string',
-            good: 'string',
-            satisfactory: 'string',
-            needs_improvement: 'string',
-          },
-        ],
-        grading_criteria: 'string',
-        strengths_observed: 'string',
-        areas_for_improvement: 'string',
-        teacher_remarks: 'string',
-        actionable_suggestions: 'string',
-        parent_friendly_feedback: 'string',
-        next_step_remedial_enrichment: 'string',
-      },
     },
     sectionFallbackRules: [],
   },
@@ -2528,11 +2456,6 @@ export function buildAiGeneratorStructuredPrompt(toolSlug, params = {}) {
       'TITLE RULE: structuredContent.title = short guide name from SUBTOPIC/TOPIC only (max ~12 words). Never put MCQ option lines or answers in title — use practice_questions[] for all objective items.',
     );
   }
-  if (slug === 'rubrics-evaluation-generator') {
-    contextLines.push(
-      'RUBRIC RULE: structuredContent MUST include ALL 10 sections. criteria[] needs min 3 rows; each row needs excellent, good, satisfactory, needs_improvement text. grading_criteria, actionable_suggestions, and next_step_remedial_enrichment must be non-empty paragraphs.',
-    );
-  }
   if (slug === 'story-passage-creator') {
     contextLines.push(
       'STORY RULE: structuredContent MUST include ALL 19 Story and Passage Creator sections. passage must be a complete story (not just the title word). Each question array (read_and_recall, think_and_infer, apply_and_connect) needs at least 2 questions.',
@@ -2667,8 +2590,6 @@ export function expandStructuredToFormatItems(toolSlug, structured) {
     case 'worksheet-mcq-generator':
       return [s];
     case 'homework-creator':
-      return [s];
-    case 'rubrics-evaluation-generator':
       return [s];
     case 'daily-class-plan-maker':
     case 'lesson-planner':
@@ -3818,33 +3739,6 @@ export function formatItemLinesFromTemplate(toolSlug, item, index = 0) {
       pushSection(lines, '8. Support Hint', [str(i.support_hint)]);
       pushSection(lines, '9. Answer Hints / Key Points', [str(i.answer_hints)]);
       pushSection(lines, '10. Parent Note', [str(i.parent_note)]);
-      break;
-    }
-    case 'rubrics-evaluation-generator': {
-      lines.push(`## ${str(i.title) || `Rubric ${n}`}`, '');
-      if (str(i.assessment_purpose)) pushSection(lines, '1. Assessment Purpose', [str(i.assessment_purpose)]);
-      if (str(i.competency_assessed)) pushSection(lines, '2. Competency / Learning Outcome Assessed', [str(i.competency_assessed)]);
-      if (Array.isArray(i.criteria) && i.criteria.length) {
-        lines.push('### 3. Evaluation Rubric with 4 Performance Levels', '');
-        i.criteria.forEach((c) => {
-          const name = str(c?.name) || 'Criterion';
-          const parts = [];
-          if (str(c?.excellent)) parts.push(`- Excellent: ${str(c.excellent)}`);
-          if (str(c?.good)) parts.push(`- Good: ${str(c.good)}`);
-          if (str(c?.satisfactory)) parts.push(`- Satisfactory: ${str(c.satisfactory)}`);
-          if (str(c?.needs_improvement)) parts.push(`- Needs Improvement: ${str(c.needs_improvement)}`);
-          lines.push(`**${name}**`, '');
-          if (parts.length) parts.forEach((p) => lines.push(p));
-          lines.push('');
-        });
-      }
-      if (str(i.grading_criteria)) pushSection(lines, '4. Grading Criteria', [str(i.grading_criteria)]);
-      if (str(i.strengths_observed)) pushSection(lines, '5. Strengths Observed', [str(i.strengths_observed)]);
-      if (str(i.areas_for_improvement)) pushSection(lines, '6. Areas for Improvement', [str(i.areas_for_improvement)]);
-      if (str(i.teacher_remarks)) pushSection(lines, '7. Teacher Remarks', [str(i.teacher_remarks)]);
-      if (str(i.actionable_suggestions)) pushSection(lines, '8. Actionable Improvement Suggestions', [str(i.actionable_suggestions)]);
-      if (str(i.parent_friendly_feedback)) pushSection(lines, '9. Parent-friendly Feedback', [str(i.parent_friendly_feedback)]);
-      if (str(i.next_step_remedial_enrichment)) pushSection(lines, '10. Next-step Remedial / Enrichment Activity', [str(i.next_step_remedial_enrichment)]);
       break;
     }
     case 'reading-practice-room': {
