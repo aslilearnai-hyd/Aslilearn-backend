@@ -11,6 +11,9 @@ import {
   getBookExtractedText,
   getBookGenerationStats,
   listBookChunks,
+  listImportableContent,
+  importBookFromContent,
+  importBooksFromContentBulk,
 } from '../controllers/bookKnowledgeController.js';
 
 const router = express.Router();
@@ -22,6 +25,9 @@ const upload = multer({
 router.use(verifyToken);
 
 router.get('/books', listBooks);
+router.get('/importable-content', listImportableContent);
+router.post('/books/import-from-content', importBookFromContent);
+router.post('/books/import-from-content/bulk', importBooksFromContentBulk);
 router.get('/books/:id', getBook);
 router.post('/books/upload', upload.single('file'), uploadBook);
 router.post('/books/:id/reindex', reindexBook);

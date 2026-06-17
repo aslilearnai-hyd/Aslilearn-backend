@@ -44,6 +44,12 @@ const bookSchema = new mongoose.Schema(
     processingError: { type: String, default: '' },
     requiresOcr: { type: Boolean, default: false },
     lastIndexedAt: { type: Date, default: null },
+    /** Linked learning-path Content row when imported (no duplicate upload). */
+    contentId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Content',
+      default: null,
+    },
     /** JWTs may use symbolic ids (e.g. super-admin-001) — store as string. */
     uploadedBy: { type: String, default: '', trim: true },
     uploadedByRole: { type: String, default: 'super-admin' },
@@ -59,5 +65,6 @@ const bookSchema = new mongoose.Schema(
 bookSchema.index({ board: 1, class: 1, subject: 1 });
 bookSchema.index({ processingStatus: 1, updatedAt: -1 });
 bookSchema.index({ title: 'text', subject: 'text' });
+bookSchema.index({ contentId: 1 }, { unique: true, sparse: true });
 
 export default mongoose.model('Book', bookSchema);

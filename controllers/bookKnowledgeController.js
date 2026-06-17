@@ -2,6 +2,8 @@ import Book from '../models/Book.js';
 import BookChunk from '../models/BookChunk.js';
 import {
   createBookFromUpload,
+  createBookFromContent,
+  listImportableLearningContent,
   indexBook,
   deleteBook,
   getBookStats,
@@ -169,5 +171,87 @@ export async function listBookChunks(req, res) {
     });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message || 'Failed to list chunks.' });
+  }
+}
+
+export async function listImportableContent(req, res) {
+  if (!ensureSuperAdmin(req, res)) return;
+  try {
+    const { board, type, imported } = req.query;
+    const data = await listImportableLearningContent({ board, type, imported });
+    res.json({ success: true, data });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message || 'Failed to list importable content.' });
+  }
+}
+
+export async function importBookFromContent(req, res) {
+  if (!ensureSuperAdmin(req, res)) return;
+  try {
+    const contentId = req.body?.contentId || req.params.contentId;
+    if (!contentId) {
+      return res.status(400).json({ success: false, message: 'contentId is required.' });
+    }
+
+    const result = await createBookFromContent({
+      contentId,
+      uploadedBy: resolveAuthenticatedUserId(req),
+      uploadedByRole: req.user?.role || 'super-admin',
+    });
+
+    res.status(result.alreadyImported ? 200 : 201).json({
+      success: true,
+      data: result.book,
+      alreadyImported: result.alreadyImported,
+      message: result.alreadyImported
+        ? 'This learning-path item is already linked to the book knowledge base.'
+        : 'Imported from learning path and indexing started.',
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message || 'Import failed.' });
+  }
+}
+
+export async function importBooksFromContentBulk(req, res) {
+  if (!ensureSuperAdmin(req, res)) return;
+  try {
+    const contentIds = Array.isArray(req.body?.contentIds) ? req.body.contentIds : [];
+    if (!contentIds.length) {
+      return res.status(400).json({ success: false, message: 'contentIds array is required.' });
+    }
+
+    const results = [];
+    for (const contentId of contentIds) {
+      try {
+        const result = await createBookFromContent({
+          contentId,
+          uploadedBy: resolveAuthenticatedUserId(req),
+          uploadedByRole: req.user?.role || 'super-admin',
+        });
+        results.push({
+          contentId,
+          success: true,
+          alreadyImported: result.alreadyImported,
+          bookId: result.book?._id,
+          title: result.book?.title,
+          processingStatus: result.book?.processingStatus,
+        });
+      } catch (err) {
+        results.push({ contentId, success: false, message: err.message || 'Import failed.' });
+      }
+    }
+
+    const imported = results.filter((r) => r.success && !r.alreadyImported).length;
+    const skipped = results.filter((r) => r.success && r.alreadyImported).length;
+    const failed = results.filter((r) => !r.success).length;
+
+    res.json({
+      success: true,
+      data: results,
+      summary: { imported, skipped, failed, total: results.length },
+      message: `Imported ${imported}, skipped ${skipped} already linked, ${failed} failed.`,
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message || 'Bulk import failed.' });
   }
 }
