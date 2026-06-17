@@ -33,7 +33,11 @@ import {
 import { getUniquenessMaxAttempts } from '../utils/ai-generator-batch-config.js';
 import { extractTitleFromStructured } from '../services/ai-generator-content-extractor.js';
 import { generateBatchAndSave } from '../services/ai-generator-batch-orchestrator.js';
-import { acquireGenerationLock, releaseGenerationLock } from '../services/ai-generator-lock-service.js';
+import {
+  acquireGenerationLock,
+  forceReleaseGenerationLock,
+  releaseGenerationLock,
+} from '../services/ai-generator-lock-service.js';
 import {
   getDuplicateAuditSummary,
   getGenerationAnalytics,
@@ -1014,6 +1018,7 @@ export async function generateBatchContent(req, res) {
         reviewStatus: req.body.reviewStatus,
         forceGenerate,
         forceGenerateNew: forceGenerate,
+        forceUnlock: req.body.forceUnlock === true,
       },
       {
         batchSize: Number.isFinite(batchSize) && batchSize > 0 ? batchSize : 25,
@@ -1061,6 +1066,53 @@ export async function generateBatchContent(req, res) {
     return res.status(500).json({
       success: false,
       message: error?.message || 'Batch generation failed.',
+    });
+  }
+}
+
+export async function releaseAiGeneratorLock(req, res) {
+  try {
+    if (!ensureSuperAdmin(req, res)) return;
+
+    const toolSlug = normalizeText(req.body.toolSlug || req.body.toolType);
+    const board = lockBoardKey(canonicalBoardLabel(normalizeText(req.body.board || req.body.boardName)));
+    const className = resolveClassLabelForAiToolStorage(
+      normalizeText(req.body.className || req.body.classNumber),
+      board,
+    );
+    const subjectName = normalizeText(req.body.subjectName || req.body.subject);
+    const topicName = normalizeText(req.body.topicName || req.body.topic);
+    const subtopicName = normalizeText(req.body.subtopicName || req.body.subTopic || req.body.subtopic);
+
+    if (!toolSlug || !className || !subjectName || !subtopicName) {
+      return res.status(400).json({
+        success: false,
+        message: 'toolSlug, className, subjectName, and subtopicName are required.',
+      });
+    }
+
+    const released = await forceReleaseGenerationLock({
+      toolSlug,
+      board,
+      className,
+      subject: subjectName,
+      topic: topicName,
+      subtopic: subtopicName,
+    });
+
+    return res.json({
+      success: true,
+      message:
+        released > 0
+          ? `Cleared ${released} stuck lock${released === 1 ? '' : 's'}. You can generate again.`
+          : 'No active lock found. You can try generating again.',
+      data: { released },
+    });
+  } catch (error) {
+    console.error('releaseAiGeneratorLock error:', error);
+    return res.status(500).json({
+      success: false,
+      message: error?.message || 'Failed to release lock.',
     });
   }
 }

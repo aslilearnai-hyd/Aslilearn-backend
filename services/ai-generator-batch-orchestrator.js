@@ -217,7 +217,9 @@ export async function generateBatchAndSave(params, opts = {}) {
 
   const lockedBy = opts.reqUser?.userId || opts.reqUser?._id || 'unknown';
 
-  const lock = await acquireGenerationLock(scope, lockedBy);
+  const lock = await acquireGenerationLock(scope, lockedBy, {
+    forceUnlock: params.forceUnlock === true,
+  });
 
   if (!lock.acquired) {
 

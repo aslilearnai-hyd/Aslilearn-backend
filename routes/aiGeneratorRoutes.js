@@ -3,6 +3,7 @@ import { verifyToken } from '../middleware/auth.js';
 import {
   generateAndSaveContent,
   generateBatchContent,
+  releaseAiGeneratorLock,
   getAllGeneratorRecords,
   getSingleGeneratorRecord,
   updateGeneratorRecord,
@@ -22,6 +23,7 @@ router.use(verifyToken);
 
 router.post('/generate', generateAndSaveContent);
 router.post('/generate-batch', generateBatchContent);
+router.post('/release-lock', releaseAiGeneratorLock);
 router.get('/audit/duplicates', getDuplicateAudit);
 router.get('/audit/analytics', getAiGeneratorAnalytics);
 router.get('/audit/saturation', getTopicSaturation);
