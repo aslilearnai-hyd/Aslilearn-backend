@@ -149,6 +149,10 @@ export function getAiGeneratorValidationMaxAttempts(isBatchVariant = false, reco
   const envRaw = process.env.AI_GENERATOR_VALIDATION_MAX_ATTEMPTS;
 
   if (isAiGeneratorUltraEconomyEnabled() && !recovery) {
+    if (isBatchVariant) {
+      const parsed = Number.parseInt(String(envRaw ?? '2'), 10);
+      return Math.min(3, Math.max(2, Number.isFinite(parsed) ? parsed : 2));
+    }
     return 1;
   }
 
@@ -248,14 +252,17 @@ export function shouldEnforceBatchUniquenessRetries() {
   return raw === 'true' || raw === '1' || raw === 'on';
 }
 
-/** Max outer retries per batch slot (uniqueness / slot recovery). Default 1 = one Gemini call per record. */
+/** Max outer retries per batch slot (uniqueness / slot recovery). */
 export function getBatchSlotMaxAttempts() {
-  if (isAiGeneratorUltraEconomyEnabled()) return 1;
   const envRaw =
     process.env.BOOK_GENERATOR_SLOT_MAX_ATTEMPTS ||
     process.env.AI_GENERATOR_BATCH_SLOT_MAX_ATTEMPTS;
-  const parsed = Number.parseInt(String(envRaw ?? '1'), 10);
-  if (Number.isFinite(parsed) && parsed > 0) return Math.min(5, parsed);
+  const parsed = Number.parseInt(String(envRaw ?? ''), 10);
+  const fromEnv = Number.isFinite(parsed) && parsed > 0 ? Math.min(5, parsed) : null;
+  if (isAiGeneratorUltraEconomyEnabled()) {
+    return fromEnv ?? 3;
+  }
+  if (fromEnv) return fromEnv;
   return shouldEnforceBatchUniquenessRetries() ? 3 : 1;
 }
 

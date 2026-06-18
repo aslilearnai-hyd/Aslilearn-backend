@@ -130,6 +130,29 @@ export function runAiGeneratorQualityGate(toolSlug, structured, meta = {}) {
     }
   }
 
+  if (slug === 'worksheet-mcq-generator' && !sectionPadActive) {
+    const target = Number(meta.questionCount ?? meta.numberOfQuestions);
+    const sectionRows = Array.isArray(data.sections) ? data.sections : [];
+    const stems = new Set();
+    let duplicateStems = 0;
+    let actualCount = 0;
+    for (const sec of sectionRows) {
+      for (const row of Array.isArray(sec?.questions) ? sec.questions : []) {
+        const stem = String(row?.question || row?.prompt || row?.text || '')
+          .toLowerCase()
+          .replace(/\s+/g, ' ')
+          .trim();
+        if (!stem) continue;
+        actualCount += 1;
+        if (stems.has(stem)) duplicateStems += 1;
+        else stems.add(stem);
+      }
+    }
+    if (duplicateStems > 0) {
+      errors.push(`Duplicate question stems in worksheet (${duplicateStems} duplicate(s)).`);
+    }
+  }
+
   const objectives = units.filter((u) => u.contentType === 'objective');
   if (objectives.length === 0 && hasFieldContent(data.learning_objectives || data.objectives) === false) {
     if (['lesson-planner', 'worksheet-mcq-generator', 'homework-creator'].includes(slug)) {

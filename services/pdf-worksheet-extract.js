@@ -850,22 +850,14 @@ export function normalizeWorksheetQuestionKey(question) {
     .slice(0, 200);
 }
 
-/** Dedupe key: section + text + answer + options (page footers stripped in cleanWorksheetQuestionText). */
+/** Dedupe key: section + question stem (options/answer glitches must not block dedupe). */
 export function worksheetQuestionDedupeKey(row) {
   const q = normalizeWorksheetQuestionKey(cleanWorksheetQuestionText(row?.question));
   if (!q) return '';
   const section = String(row?.section || '')
     .toLowerCase()
     .trim();
-  const answer = String(row?.answer || '')
-    .toLowerCase()
-    .replace(/\s+/g, ' ')
-    .trim();
-  const opts = (Array.isArray(row?.options) ? row.options : [])
-    .map((o) => String(o).toLowerCase().replace(/\s+/g, ' ').trim())
-    .filter(Boolean)
-    .join('|');
-  return [section, q, answer, opts].join('::');
+  return `${section}::${q}`;
 }
 
 function toQuestionRows(value = []) {

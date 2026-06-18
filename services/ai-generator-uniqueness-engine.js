@@ -88,6 +88,28 @@ export function renumberIntraRecordQuestions(toolSlug, structured) {
     if (flat.length) out.questions = flat;
   }
 
+  if (
+    slug === 'worksheet-mcq-generator' &&
+    Array.isArray(out.sections) &&
+    out.sections.some((sec) => Array.isArray(sec?.questions) && sec.questions.length)
+  ) {
+    const legacyKeys = [
+      'section_a_mcqs',
+      'section_b_fib',
+      'section_c_vsa',
+      'section_d_sa',
+      'section_e_competency',
+    ];
+    out.sections.forEach((sec, idx) => {
+      const key = legacyKeys[idx];
+      if (!key) return;
+      out[key] = Array.isArray(sec?.questions) ? [...sec.questions] : [];
+    });
+    out.questions = out.sections.flatMap((sec) =>
+      Array.isArray(sec?.questions) ? sec.questions : [],
+    );
+  }
+
   if (Array.isArray(out.concepts)) {
     out.concepts = out.concepts.map((concept) => {
       if (!concept || typeof concept !== 'object') return concept;
@@ -112,6 +134,34 @@ export function dedupeIntraRecordQuestions(toolSlug, structured) {
   }
   const out = { ...structured };
   const seen = new Set();
+
+  if (
+    slug === 'worksheet-mcq-generator' &&
+    Array.isArray(out.sections) &&
+    out.sections.some((sec) => Array.isArray(sec?.questions) && sec.questions.length)
+  ) {
+    out.sections = out.sections.map((sec) => {
+      if (!sec || typeof sec !== 'object') return sec;
+      const questions = filterQuestionRows(sec.questions, seen);
+      return { ...sec, questions, count: questions.length };
+    });
+    const legacyKeys = [
+      'section_a_mcqs',
+      'section_b_fib',
+      'section_c_vsa',
+      'section_d_sa',
+      'section_e_competency',
+    ];
+    out.sections.forEach((sec, idx) => {
+      const key = legacyKeys[idx];
+      if (!key) return;
+      out[key] = Array.isArray(sec?.questions) ? [...sec.questions] : [];
+    });
+    out.questions = out.sections.flatMap((sec) =>
+      Array.isArray(sec?.questions) ? sec.questions : [],
+    );
+    return out;
+  }
 
   for (const key of STRUCTURED_QUESTION_ARRAY_KEYS) {
     if (Array.isArray(out[key])) {

@@ -39,6 +39,10 @@ import {
 } from '../utils/ai-generator-batch-config.js';
 import { runAiGeneratorQualityGate } from './ai-generator-quality-gate.js';
 import { repairMissingSectionsViaLlm } from './ai-generator-section-repair.js';
+import {
+  dedupeIntraRecordQuestions,
+  renumberIntraRecordQuestions,
+} from './ai-generator-uniqueness-engine.js';
 
 const TOOL_ALIAS_TO_SLUG = buildToolAliasToSlugMap();
 
@@ -3321,7 +3325,10 @@ export function normalizeWorksheetStructuredContent(raw, sourceText = '') {
     looseQuestions.push(...toQuestionArray(pool));
   }
 
-  if (looseQuestions.length) {
+  const sectionsHaveQuestions = sections.some(
+    (sec) => Array.isArray(sec?.questions) && sec.questions.length > 0,
+  );
+  if (looseQuestions.length && !sectionsHaveQuestions) {
     sections = mergeWorksheetSections(sections, groupQuestionsIntoWorksheetSections(looseQuestions));
   }
 
@@ -7779,6 +7786,7 @@ ${pdfContext}`
     generationVariant: isBatchVariant ? generationVariant : undefined,
     variantAngle: isBatchVariant ? String(extra.variantAngle || '').trim() : undefined,
     variantScenario: isBatchVariant ? String(extra.variantScenario || '').trim() : undefined,
+    batchOrchestrator: isBatchVariant,
     requireAllCanonicalFields:
       !isBatchVariant || (!isAiGeneratorCostSaverEnabled() && !isAiGeneratorUltraEconomyEnabled()),
   };
@@ -8076,6 +8084,9 @@ ${pdfContext}`
               ? ` You MUST add questions to: ${missing.join('; ')}.`
               : '';
             activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return structuredContent with title and sections[] — all seven section names exactly (Section A: MCQs … Section G: HOTS / Analytical Questions), each with at least one question. Section C MUST be type "MATCH" with a match-the-following prompt and options as Column A / Column B pairs (e.g. "1. Observation | A. Step before hypothesis"). Include short answers in Section E and application/case-based in Section F. Do NOT duplicate questions in sections[] and questions[]. Total at least ${target} questions.`;
+          } else if (slug === 'worksheet-mcq-generator') {
+            const wsTarget = Number(meta?.questionCount) > 0 ? Number(meta.questionCount) : 10;
+            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. Return structuredContent with title, learning_objectives[], instructions, sections[] (Section A: MCQs through Section E: Competency / Real-life Application Questions). Include at least ${wsTarget} unique questions total across sections A–E — no duplicate question stems. Put questions ONLY in sections[].questions (not also in top-level questions[] or section_a_mcqs). Each MCQ needs four labeled options A)–D) and an answer.`;
           } else if (slug === 'chapter-summary-creator') {
             activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. Return Chapter Summary Creator JSON only — use chapter_summary_title, chapter_overview, important_concepts[] (min 3), formulae[] (min 3: name + formula where formula is an equation OR a must-know rule/fact sentence), quick_revision_notes[] (min 3), practice_recall_questions[] (min 3). Do NOT use Smart Study Guide fields (study_guide_title, prior_knowledge, key_concepts_explained, practice_questions with MCQ options).`;
           } else if (slug === 'key-points-formula-extractor') {
@@ -8142,6 +8153,9 @@ ${pdfContext}`
 
         if (quality.errors.length) {
           lastValidationMessage = quality.errors.join('; ');
+          if (isAiGeneratorSectionPadEnabled()) {
+            break;
+          }
           throw new Error(lastValidationMessage);
         }
       }
@@ -8155,10 +8169,13 @@ ${pdfContext}`
         structuredContent = finalizeWorksheetStructuredContent(structuredContent, meta);
       }
 
+      structuredContent = dedupeIntraRecordQuestions(slug, structuredContent);
+      structuredContent = renumberIntraRecordQuestions(slug, structuredContent);
+
       const finalQuality = runAiGeneratorQualityGate(slug, structuredContent, meta);
       if (!finalQuality.valid) {
-        if (isBatchVariant && isAiGeneratorCostSaverEnabled()) {
-          /* section pad already applied — save usable batch output without another LLM call */
+        if (isBatchVariant && (isAiGeneratorCostSaverEnabled() || isAiGeneratorSectionPadEnabled())) {
+          /* section pad / batch economy — save usable output without another LLM call */
         } else {
           lastValidationMessage = finalQuality.errors.join('; ');
           throw new Error(lastValidationMessage);

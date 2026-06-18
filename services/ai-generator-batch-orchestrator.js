@@ -558,6 +558,8 @@ export async function generateBatchAndSave(params, opts = {}) {
 
         } else {
 
+          console.warn(`[AI Generator batch] Variant ${result.variantIndex} failed: ${result.error}`);
+
           failures.push(`Variant ${result.variantIndex}: ${result.error}`);
 
         }

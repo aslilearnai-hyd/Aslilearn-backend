@@ -2441,6 +2441,13 @@ export function buildAiGeneratorStructuredPrompt(toolSlug, params = {}) {
       `TARGET PRACTICE QUESTIONS: ${practiceTarget} total, distributed across ALL sections A–G (each section must have at least 1 question; Section C = match, Section E = short answer, Section F = application/case-based)`,
     );
   }
+  if (slug === 'worksheet-mcq-generator') {
+    const worksheetTarget =
+      Number.isFinite(questionCount) && questionCount > 0 ? questionCount : 10;
+    contextLines.push(
+      `WORKSHEET RULE: Generate exactly ${worksheetTarget} unique questions total across sections A–E (Section A MCQs, B fill blanks, C VSA, D short answer, E competency/real-life). Every question stem must be distinct — no repeats. Put questions ONLY in sections[].questions — do NOT duplicate the same items in top-level questions[] or section_a_mcqs.`,
+    );
+  }
   if (slug === 'chapter-summary-creator') {
     contextLines.push(
       'OUTPUT TOOL: Chapter Summary Creator (10 sections) — NOT Smart Study Guide. Use chapter_summary_title and chapter_overview field names.',
