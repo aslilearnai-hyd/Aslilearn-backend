@@ -133,6 +133,53 @@ function limitQuestionsInJson(parsed, maxQuestions) {
   return parsed;
 }
 
+function limitWorksheetStructuredContent(structured, maxQuestions) {
+  if (!maxQuestions || !structured || typeof structured !== 'object' || Array.isArray(structured)) {
+    return structured;
+  }
+  const out = { ...structured };
+  let remaining = maxQuestions;
+
+  if (Array.isArray(structured.sections)) {
+    out.sections = structured.sections.map((sec) => {
+      if (!sec || typeof sec !== 'object') return sec;
+      const qs = Array.isArray(sec.questions) ? sec.questions : [];
+      if (remaining <= 0) return { ...sec, questions: [] };
+      const take = qs.slice(0, remaining);
+      remaining -= take.length;
+      return { ...sec, questions: take };
+    });
+  }
+
+  if (Array.isArray(structured.questions)) {
+    out.questions = structured.questions.slice(0, maxQuestions);
+  }
+
+  for (const key of [
+    'section_a_mcqs',
+    'section_a',
+    'section_b_fib',
+    'section_b',
+    'section_c_vsa',
+    'section_c',
+    'section_d_sa',
+    'section_d',
+    'section_e_competency',
+    'section_e',
+  ]) {
+    if (!Array.isArray(structured[key])) continue;
+    if (remaining <= 0) {
+      out[key] = [];
+      continue;
+    }
+    const take = structured[key].slice(0, remaining);
+    remaining -= take.length;
+    out[key] = take;
+  }
+
+  return out;
+}
+
 function applyQuestionLimitToContent(toolType, content, requestedCount) {
   const limitedToolTypes = new Set([
     'mock-test-builder',
@@ -409,12 +456,25 @@ export const createTeacherTool = async (req, res) => {
           });
         }
 
+        const maxQuestions = parsePositiveInt(params.questionCount ?? req.body?.questionCount);
         const limitedContent = applyQuestionLimitToContent(
           toolType,
           cachedContent,
-          params.questionCount ?? req.body?.questionCount,
+          maxQuestions,
         );
-        const rawData = buildRawDataForTool(toolType, limitedContent, cachedDoc.metadata || {});
+        const metadataForRaw = { ...(cachedDoc.metadata || {}) };
+        if (
+          maxQuestions &&
+          toolType === 'worksheet-mcq-generator' &&
+          metadataForRaw.structuredContent &&
+          typeof metadataForRaw.structuredContent === 'object'
+        ) {
+          metadataForRaw.structuredContent = limitWorksheetStructuredContent(
+            metadataForRaw.structuredContent,
+            maxQuestions,
+          );
+        }
+        const rawData = buildRawDataForTool(toolType, limitedContent, metadataForRaw);
         logTeacherToolUsage({
           teacherId,
           toolType,
