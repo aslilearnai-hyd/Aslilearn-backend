@@ -651,6 +651,17 @@ function extraArrayRules(toolSlug, structured) {
     }
   }
 
+  if (toolSlug === 'exam-question-paper-generator') {
+    const sectionKeys = ['section_a', 'section_b', 'section_c', 'section_d', 'section_e'];
+    const filled = sectionKeys.filter((k) => {
+      const rows = Array.isArray(structured[k]) ? structured[k] : [];
+      return rows.some((q) => String(q?.question || q?.prompt || '').trim().length >= 10);
+    }).length;
+    if (filled > 0 && filled < 5) {
+      missing.push('Exam question sections (need questions in all sections A–E)');
+    }
+  }
+
   return missing;
 }
 

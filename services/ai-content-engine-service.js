@@ -4282,19 +4282,32 @@ function examSectionIdFromLabel(name = '') {
   return '';
 }
 
+const EXAM_BLUEPRINT_SECTION_DEFAULTS = { a: 4, b: 3, c: 3, d: 2, e: 1 };
+
 function parseBlueprintSectionCounts(blueprint = '') {
   const text = String(blueprint || '');
   const pick = (letter) => {
     const m = text.match(new RegExp(`section\\s*${letter}[^\\d]*(\\d+)`, 'i'));
     return m ? Math.max(0, Number(m[1])) : 0;
   };
-  const a = pick('a');
-  const b = pick('b');
-  const c = pick('c');
-  const d = pick('d');
-  const e = pick('e');
-  if (a + b + c + d + e > 0) return { a, b, c, d, e };
-  return { a: 4, b: 3, c: 3, d: 2, e: 1 };
+  const parsed = {
+    a: pick('a'),
+    b: pick('b'),
+    c: pick('c'),
+    d: pick('d'),
+    e: pick('e'),
+  };
+  if (parsed.a + parsed.b + parsed.c + parsed.d + parsed.e === 0) {
+    return { ...EXAM_BLUEPRINT_SECTION_DEFAULTS };
+  }
+  // Blueprint often lists A–C only; missing D/E must not trim those sections to zero.
+  return {
+    a: parsed.a || EXAM_BLUEPRINT_SECTION_DEFAULTS.a,
+    b: parsed.b || EXAM_BLUEPRINT_SECTION_DEFAULTS.b,
+    c: parsed.c || EXAM_BLUEPRINT_SECTION_DEFAULTS.c,
+    d: parsed.d || EXAM_BLUEPRINT_SECTION_DEFAULTS.d,
+    e: parsed.e || EXAM_BLUEPRINT_SECTION_DEFAULTS.e,
+  };
 }
 
 function isExamAnswerKeyLineQuestion(q) {
@@ -4835,6 +4848,14 @@ export function getExamPaperMissingSections(data, meta = {}) {
   if (!String(n.blueprint || '').trim()) missing.push('2. Blueprint / Design Grid');
   const qCount = countExamPaperQuestions(n);
   if (qCount < 3) missing.push('3–7. Question Paper Sections (min 3 questions across sections A–E)');
+  const sectionKeys = ['section_a', 'section_b', 'section_c', 'section_d', 'section_e'];
+  const emptySections = sectionKeys.filter((k) => {
+    const rows = Array.isArray(n[k]) ? n[k] : [];
+    return !rows.some((q) => String(q?.question || q?.prompt || '').trim().length >= 10);
+  });
+  if (emptySections.length && emptySections.length < sectionKeys.length && qCount >= 3) {
+    missing.push(`3–7. Question Paper Sections (missing: ${emptySections.join(', ')})`);
+  }
   if (!String(n.internal_choices || '').trim()) missing.push('8. Internal Choices');
   if (!String(n.answer_key || '').trim()) missing.push('9. Complete Answer Key');
   if (!String(n.marking_scheme || '').trim()) missing.push('10. Detailed Marking Scheme');
@@ -4900,13 +4921,41 @@ export function finalizeExamPaperStructuredContent(structuredContent, meta = {})
 
   // Extra hardening: strip accidental pasted "second paper" dumps and trim to blueprint counts.
   const counts = parseBlueprintSectionCounts(base.blueprint);
-  const trimTo = (arr, n) => (Array.isArray(arr) ? arr.slice(0, Math.max(0, n)) : []);
-  const cleanAndTrim = (arr, n) => trimTo(dedupeExamQuestionRows(arr), n);
-  base.section_a = cleanAndTrim(base.section_a, counts.a);
-  base.section_b = cleanAndTrim(base.section_b, counts.b);
-  base.section_c = cleanAndTrim(base.section_c, counts.c);
-  base.section_d = cleanAndTrim(base.section_d, counts.d);
-  base.section_e = cleanAndTrim(base.section_e, counts.e);
+  const cleanAndTrim = (arr, n) => {
+    const cleaned = dedupeExamQuestionRows(arr);
+    if (!n || n <= 0) return cleaned;
+    return cleaned.slice(0, n);
+  };
+  const examSectionKeys = ['section_a', 'section_b', 'section_c', 'section_d', 'section_e'];
+  const countKeys = ['a', 'b', 'c', 'd', 'e'];
+  for (let i = 0; i < examSectionKeys.length; i += 1) {
+    base[examSectionKeys[i]] = cleanAndTrim(base[examSectionKeys[i]], counts[countKeys[i]]);
+  }
+
+  if (isAiGeneratorSectionPadEnabled()) {
+    const scaffold = buildScaffoldExamQuestions(meta, base.blueprint);
+    let qNum = 1;
+    for (let i = 0; i < examSectionKeys.length; i += 1) {
+      const key = examSectionKeys[i];
+      const minCount = Math.max(1, counts[countKeys[i]] || 1);
+      let rows = Array.isArray(base[key])
+        ? base[key].filter((q) => String(q?.question || '').trim().length >= 10)
+        : [];
+      const scaffoldRows = Array.isArray(scaffold[key]) ? scaffold[key] : [];
+      if (rows.length < minCount && scaffoldRows.length) {
+        for (let j = rows.length; j < minCount; j += 1) {
+          const pick = scaffoldRows[j] || scaffoldRows[scaffoldRows.length - 1];
+          rows.push({ ...pick, question_number: qNum + j });
+        }
+      }
+      base[key] = rows.map((q) => {
+        const row = { ...q, question_number: qNum };
+        qNum += 1;
+        return row;
+      });
+    }
+  }
+
   base.sections = Object.entries(EXAM_CANONICAL_SECTION_LABELS).map(([key, sectionName]) => ({
     sectionName,
     questions: base[key] || [],
@@ -8164,6 +8213,8 @@ ${pdfContext}`
         structuredContent = padAiGeneratorCanonicalSections(slug, structuredContent, meta);
         if (slug === 'worksheet-mcq-generator') {
           structuredContent = finalizeWorksheetStructuredContent(structuredContent, meta);
+        } else if (slug === 'exam-question-paper-generator') {
+          structuredContent = finalizeExamPaperStructuredContent(structuredContent, meta);
         }
       } else if (slug === 'worksheet-mcq-generator') {
         structuredContent = finalizeWorksheetStructuredContent(structuredContent, meta);

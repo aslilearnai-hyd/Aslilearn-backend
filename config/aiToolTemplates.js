@@ -2496,7 +2496,7 @@ export function buildAiGeneratorStructuredPrompt(toolSlug, params = {}) {
     const examTarget =
       Number.isFinite(questionCount) && questionCount > 0 ? questionCount : 12;
     contextLines.push(
-      `EXAM PAPER RULE: structuredContent MUST use the 11-section Exam Question Paper format (paper_title, instructions, blueprint, section_a..section_e, internal_choices, answer_key, marking_scheme, open_ended_rubric). Minimum ${examTarget} questions across sections. Do NOT return Mock Test Builder fields.`,
+      `EXAM PAPER RULE: structuredContent MUST use the 11-section Exam Question Paper format (paper_title, instructions, blueprint, section_a..section_e, internal_choices, answer_key, marking_scheme, open_ended_rubric). Minimum ${examTarget} questions across sections. Populate EVERY section array (section_a, section_b, section_c, section_d, section_e) with real questions — never leave Section D (long answer) or Section E (case-based) empty. Do NOT return Mock Test Builder fields.`,
     );
   }
   const generationVariant = Number(extra.generationVariant ?? extra.variantIndex);
@@ -3489,18 +3489,21 @@ export function formatItemLinesFromTemplate(toolSlug, item, index = 0) {
     }
     case 'exam-question-paper-generator': {
       const parseExamBlueprintCounts = (blueprintText) => {
+        const defaults = { a: 4, b: 3, c: 3, d: 2, e: 1 };
         const text = str(blueprintText);
         const pick = (letter) => {
           const m = text.match(new RegExp(`section\\s*${letter}[^\\d]*(\\d+)`, 'i'));
           return m ? Math.max(0, Number(m[1])) : 0;
         };
-        const a = pick('a');
-        const b = pick('b');
-        const c = pick('c');
-        const d = pick('d');
-        const e = pick('e');
-        if (a + b + c + d + e > 0) return { a, b, c, d, e };
-        return { a: 4, b: 3, c: 3, d: 2, e: 1 };
+        const parsed = { a: pick('a'), b: pick('b'), c: pick('c'), d: pick('d'), e: pick('e') };
+        if (parsed.a + parsed.b + parsed.c + parsed.d + parsed.e === 0) return defaults;
+        return {
+          a: parsed.a || defaults.a,
+          b: parsed.b || defaults.b,
+          c: parsed.c || defaults.c,
+          d: parsed.d || defaults.d,
+          e: parsed.e || defaults.e,
+        };
       };
       const examBoundaryRe =
         /(section\s*[a-e]\s*:|internal\s+choices\b|complete\s+answer\s+key\b|detailed\s+marking\s+scheme\b|rubric\s+for\s+open[-\s]?ended\b|total\s+marks\b)/i;
