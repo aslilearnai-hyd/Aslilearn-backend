@@ -3204,9 +3204,11 @@ export const analyzeStudentRisk = async (req, res) => {
     }
 
     // Calculate date range
-    const daysAgo = timeRange === 'all' ? 365 * 5 : parseInt(timeRange);
+    const { parseRiskAnalysisTimeRange, buildRuleBasedStudentRiskAnalysis } = await import(
+      '../services/student-risk-analysis-service.js'
+    );
     const startDate = new Date();
-    startDate.setDate(startDate.getDate() - daysAgo);
+    startDate.setDate(startDate.getDate() - parseRiskAnalysisTimeRange(timeRange));
 
     // Fetch all exam results for this student
     const examResults = await ExamResult.find({
@@ -3221,161 +3223,13 @@ export const analyzeStudentRisk = async (req, res) => {
       });
     }
 
-    // Helper function to get best subject
-    const getBestSubject = (results) => {
-      const subjectScores = {};
-      results.forEach(result => {
-        if (result.subjectWiseScore) {
-          Object.entries(result.subjectWiseScore).forEach(([subject, data]) => {
-            if (!subjectScores[subject]) {
-              subjectScores[subject] = { total: 0, count: 0 };
-            }
-            const percentage = data.total > 0 ? (data.correct / data.total) * 100 : 0;
-            subjectScores[subject].total += percentage;
-            subjectScores[subject].count += 1;
-          });
-        }
-      });
-
-      let bestSubject = null;
-      let bestAvg = 0;
-      Object.entries(subjectScores).forEach(([subject, data]) => {
-        const avg = data.total / data.count;
-        if (avg > bestAvg) {
-          bestAvg = avg;
-          bestSubject = subject;
-        }
-      });
-      return bestSubject;
-    };
-
-    // Helper function to get worst subject
-    const getWorstSubject = (results) => {
-      const subjectScores = {};
-      results.forEach(result => {
-        if (result.subjectWiseScore) {
-          Object.entries(result.subjectWiseScore).forEach(([subject, data]) => {
-            if (!subjectScores[subject]) {
-              subjectScores[subject] = { total: 0, count: 0 };
-            }
-            const percentage = data.total > 0 ? (data.correct / data.total) * 100 : 0;
-            subjectScores[subject].total += percentage;
-            subjectScores[subject].count += 1;
-          });
-        }
-      });
-
-      let worstSubject = null;
-      let worstAvg = 100;
-      Object.entries(subjectScores).forEach(([subject, data]) => {
-        const avg = data.total / data.count;
-        if (avg < worstAvg) {
-          worstAvg = avg;
-          worstSubject = subject;
-        }
-      });
-      return worstSubject;
-    };
-
-    // Prepare data for AI analysis
-    const performanceData = {
-      studentInfo: {
-        name: student.fullName,
-        email: student.email,
-        classNumber: student.classNumber,
-        totalExams: examResults.length
-      },
-      examHistory: examResults.map(result => ({
-        examTitle: result.examTitle,
-        date: result.completedAt,
-        percentage: result.percentage,
-        timeTaken: result.timeTaken,
-        correctAnswers: result.correctAnswers,
-        totalQuestions: result.totalQuestions,
-        subjectScores: Object.fromEntries(result.subjectWiseScore || [])
-      })),
-      statistics: {
-        averageScore: examResults.reduce((sum, r) => sum + r.percentage, 0) / examResults.length,
-        latestScore: examResults[examResults.length - 1].percentage,
-        trend: examResults.length >= 2 
-          ? (examResults[examResults.length - 1].percentage - examResults[0].percentage)
-          : 0,
-        bestSubject: getBestSubject(examResults),
-        worstSubject: getWorstSubject(examResults)
-      }
-    };
-
-    // Generate AI analysis using configured AI service
-    const analysisPrompt = `You are an expert educational analyst with deep knowledge of student performance patterns, learning psychology, and intervention strategies. Analyze this student's performance data and provide a comprehensive risk assessment.
-
-STUDENT DATA:
-${JSON.stringify(performanceData, null, 2)}
-
-Provide a detailed analysis in the following JSON format (ONLY JSON, no markdown, no code blocks):
-{
-  "riskLevel": "high" | "medium" | "low",
-  "riskScore": 0.0-1.0,
-  "analysis": {
-    "summary": "Brief summary of overall performance (2-3 sentences)",
-    "trends": "Describe performance trends over time with specific details",
-    "strengths": ["List 2-3 key strengths"],
-    "weaknesses": ["List 2-3 key weaknesses"],
-    "rootCauses": ["List 2-3 root causes of performance issues"]
-  },
-  "predictions": {
-    "nextExamPrediction": 0-100,
-    "confidence": 0.0-1.0,
-    "trend": "declining" | "stable" | "improving"
-  },
-  "interventions": [
-    {
-      "priority": "high" | "medium" | "low",
-      "action": "Specific actionable intervention",
-      "reasoning": "Why this intervention is needed based on data",
-      "expectedImpact": "Expected improvement with timeframe"
-    }
-  ],
-  "subjectBreakdown": {
-    "SubjectName": {
-      "performance": "strong" | "average" | "weak",
-      "trend": "improving" | "stable" | "declining",
-      "recommendation": "Specific recommendation for this subject"
-    }
-  }
-}
-
-Be specific, actionable, and data-driven. Focus on identifying real issues and providing practical solutions. Use the actual data provided to make informed assessments.`;
-
-    const { default: geminiService } = await import('../services/gemini-service.js');
-    const aiResponse = await geminiService.generateStructuredContent(analysisPrompt, 'json');
-
-    // Parse AI response
-    let analysisResult;
-    try {
-      // Clean JSON response
-      const cleanedResponse = aiResponse
-        .replace(/^```json\s*/i, '')
-        .replace(/^```\s*/i, '')
-        .replace(/\s*```$/i, '')
-        .trim();
-      
-      analysisResult = JSON.parse(cleanedResponse);
-    } catch (parseError) {
-      console.error('Failed to parse AI response:', parseError);
-      console.error('Raw AI response:', aiResponse);
-      return res.status(500).json({
-        success: false,
-        message: 'Failed to parse AI analysis. Please try again.',
-        error: process.env.NODE_ENV === 'development' ? parseError.message : undefined
-      });
-    }
-
-    // Add metadata
-    analysisResult.generatedAt = new Date();
-    analysisResult.studentId = studentId;
-    analysisResult.dataPoints = examResults.length;
-    analysisResult.analysisType = analysisType;
-    analysisResult.timeRange = timeRange;
+    const analysisResult = buildRuleBasedStudentRiskAnalysis({
+      student,
+      examResults,
+      studentId,
+      analysisType,
+      timeRange,
+    });
 
     res.json({
       success: true,

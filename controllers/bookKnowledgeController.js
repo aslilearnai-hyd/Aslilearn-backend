@@ -3,6 +3,7 @@ import BookChunk from '../models/BookChunk.js';
 import {
   createBookFromUpload,
   createBookFromContent,
+  enrichBookCurriculumFields,
   listImportableLearningContent,
   indexBook,
   deleteBook,
@@ -28,7 +29,7 @@ export async function listBooks(req, res) {
     if (status) filter.processingStatus = status;
 
     const books = await Book.find(filter).sort({ updatedAt: -1 }).limit(200).lean();
-    res.json({ success: true, data: books });
+    res.json({ success: true, data: books.map((book) => enrichBookCurriculumFields(book)) });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message || 'Failed to list books.' });
   }

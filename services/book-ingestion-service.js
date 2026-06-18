@@ -10,6 +10,11 @@ import { generateEmbedding } from './pdf-rag-service.js';
 import { uploadPdfToConfiguredStorage } from './cloud-storage.js';
 import geminiService from './gemini-service.js';
 import { subjectDisplayName } from '../utils/subjectDelete.js';
+import {
+  canonicalBoardLabel,
+  lockBoardKey,
+  resolveClassLabelForAiToolStorage,
+} from '../utils/board-label.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const BOOK_UPLOAD_DIR = path.join(__dirname, '..', 'uploads', 'book-knowledge');
@@ -392,6 +397,81 @@ function classNumberFromSubjectName(name) {
   return match ? match[1] : '';
 }
 
+function inferClassDigitsFromTitle(title = '') {
+  const raw = String(title || '');
+  const ordinal = raw.match(/\b(\d{1,2})\s*(?:st|nd|rd|th)\b/i);
+  if (ordinal?.[1]) return ordinal[1];
+  const classWord = raw.match(/\bclass\s*[-:]?\s*(\d{1,2})\b/i);
+  if (classWord?.[1]) return classWord[1];
+  return '';
+}
+
+function inferSubjectFromTitle(title = '') {
+  const t = String(title || '').toLowerCase();
+  if (/\bmaths?\b|\bmathematics\b/.test(t)) return 'Mathematics';
+  if (/\bphysics\b/.test(t)) return 'Physics';
+  if (/\bchemistry\b/.test(t)) return 'Chemistry';
+  if (/\bbiology\b/.test(t)) return 'Biology';
+  if (/\bscience\b/.test(t)) return 'Science';
+  if (/\benglish\b/.test(t)) return 'English';
+  if (/\bhindi\b/.test(t)) return 'Hindi';
+  if (/\bsst\b|\bsocial\s*science|\bsocial\s*studies/.test(t)) return 'Social Science';
+  return '';
+}
+
+function normalizeImportedSubjectName(name, title = '') {
+  const raw = subjectDisplayName(name);
+  if (raw && !/^general$/i.test(raw)) {
+    const compact = raw.toLowerCase().replace(/[^a-z0-9]/g, '');
+    if (compact.includes('math')) return 'Mathematics';
+    if (compact.includes('phys')) return 'Physics';
+    if (compact.includes('chem')) return 'Chemistry';
+    if (compact.includes('bio')) return 'Biology';
+    if (compact.includes('sci')) return 'Science';
+    if (compact.includes('eng')) return 'English';
+    if (compact.includes('hin')) return 'Hindi';
+    if (compact.includes('sst') || compact.includes('social')) return 'Social Science';
+    return raw;
+  }
+  return inferSubjectFromTitle(title) || raw || 'General';
+}
+
+function resolveImportedClassLabel({ content, subjectDoc, title = '' }) {
+  const board = content.board || subjectDoc?.board || 'CBSE';
+  const rawClass =
+    (content.classNumber && String(content.classNumber).trim()) ||
+    (subjectDoc?.classNumber && String(subjectDoc.classNumber).trim()) ||
+    classNumberFromSubjectName(subjectDoc?.name || '') ||
+    inferClassDigitsFromTitle(title) ||
+    '';
+  return resolveClassLabelForAiToolStorage(rawClass, board) || rawClass || 'General';
+}
+
+/** Normalize book row for API consumers (fixes content-import class/subject shapes). */
+export function enrichBookCurriculumFields(book = {}) {
+  const boardRaw = canonicalBoardLabel(book.board || 'CBSE') || 'CBSE';
+  const boardGrouped = lockBoardKey(boardRaw);
+  const board =
+    boardGrouped === 'IIT/NEET'
+      ? String(book.board || '').trim() || 'IIT / NEET'
+      : boardRaw;
+  const title = String(book.title || '').trim();
+  let classLabel = resolveClassLabelForAiToolStorage(book.class, boardRaw);
+  if (!classLabel || /^general$/i.test(classLabel)) {
+    classLabel = resolveClassLabelForAiToolStorage(inferClassDigitsFromTitle(title), boardRaw) || classLabel;
+  }
+  let subject = normalizeImportedSubjectName(book.subject, title);
+  if (!subject || /^general$/i.test(subject)) {
+    subject = inferSubjectFromTitle(title) || subject;
+  }
+  return {
+    ...book,
+    board,
+    class: classLabel || book.class || '',
+    subject: subject || book.subject || '',
+  };
+}
+
 function resolveContentPrimaryFileUrl(content) {
   const urls = Array.isArray(content.fileUrls) ? content.fileUrls : [];
   const candidates = [
@@ -439,12 +519,8 @@ export async function listImportableLearningContent({ board, type, imported } = 
       if (!fileUrl) return null;
 
       const subjectDoc = row.subject ? subjectById.get(String(row.subject)) : null;
-      const subjectName = subjectDoc?.name ? subjectDisplayName(subjectDoc.name) : 'General';
-      const classLabel =
-        (row.classNumber && String(row.classNumber).trim()) ||
-        (subjectDoc?.classNumber && String(subjectDoc.classNumber).trim()) ||
-        classNumberFromSubjectName(subjectDoc?.name || '') ||
-        '';
+      const subjectName = normalizeImportedSubjectName(subjectDoc?.name, row.title);
+      const classLabel = resolveImportedClassLabel({ content: row, subjectDoc, title: row.title });
 
       const linked = bookByContentId.get(String(row._id));
       return {
@@ -488,12 +564,9 @@ export async function createBookFromContent({ contentId, uploadedBy, uploadedByR
   }
 
   const subjectDoc = content.subject ? await Subject.findById(content.subject).lean() : null;
-  const subjectName = subjectDoc?.name ? subjectDisplayName(subjectDoc.name) : 'General';
-  const classLabel =
-    (content.classNumber && String(content.classNumber).trim()) ||
-    (subjectDoc?.classNumber && String(subjectDoc.classNumber).trim()) ||
-    classNumberFromSubjectName(subjectDoc?.name || '') ||
-    'General';
+  const subjectName = normalizeImportedSubjectName(subjectDoc?.name, content.title);
+  const classLabel = resolveImportedClassLabel({ content, subjectDoc, title: content.title });
+  const boardLabel = canonicalBoardLabel(content.board || subjectDoc?.board || 'CBSE') || 'CBSE';
 
   const buffer = await readContentFileBuffer(fileUrl);
   const mimeType = mimeFromFileUrl(fileUrl);
@@ -503,7 +576,7 @@ export async function createBookFromContent({ contentId, uploadedBy, uploadedByR
 
   const book = await Book.create({
     title: String(content.title || 'Untitled').trim(),
-    board: content.board || subjectDoc?.board || 'CBSE',
+    board: boardLabel,
     class: classLabel,
     subject: subjectName,
     topic: String(content.topic || content.chapter || '').trim(),
