@@ -132,12 +132,33 @@ export async function getGenerationAnalytics(scope = {}) {
   let geminiGenerationsAvoided = 0;
   let tokenSavingsEstimate = 0;
 
+  const countedBatchIds = new Set();
   for (const rec of recent) {
     const md = rec.metadata || {};
-    const cost = md.cost?.usd ?? md.cost?.totalUsd;
-    if (Number.isFinite(Number(cost))) totalCostUsd += Number(cost);
-    const tokens = md.tokenUsage?.totals?.totalTokens;
-    if (Number.isFinite(Number(tokens))) totalTokens += Number(tokens);
+    const batchId = String(md.batchId || '').trim();
+    const skipBatchDuplicate = batchId && countedBatchIds.has(batchId);
+
+    if (!skipBatchDuplicate) {
+      let costUsd = 0;
+      if (Number.isFinite(Number(md.cost?.batchTotalUsd)) && Number(md.cost.batchTotalUsd) > 0) {
+        costUsd = Number(md.cost.batchTotalUsd);
+      } else if (Number.isFinite(Number(md.cost?.usd))) {
+        costUsd = Number(md.cost.usd);
+      } else if (Number.isFinite(Number(md.cost?.totalUsd))) {
+        costUsd = Number(md.cost.totalUsd);
+      }
+      if (costUsd > 0) totalCostUsd += costUsd;
+
+      let tokenCount = 0;
+      if (Number.isFinite(Number(md.tokenUsage?.batchTotals?.totalTokens))) {
+        tokenCount = Number(md.tokenUsage.batchTotals.totalTokens);
+      } else if (Number.isFinite(Number(md.tokenUsage?.totals?.totalTokens))) {
+        tokenCount = Number(md.tokenUsage.totals.totalTokens);
+      }
+      if (tokenCount > 0) totalTokens += tokenCount;
+
+      if (batchId) countedBatchIds.add(batchId);
+    }
     if (Number(md.duplicatePreventionCount) > 0) {
       duplicatePreventionCount += Number(md.duplicatePreventionCount);
     }

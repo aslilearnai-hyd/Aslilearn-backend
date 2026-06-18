@@ -571,6 +571,17 @@ export async function generateBatchAndSave(params, opts = {}) {
       tokenUsage = endTokenUsageSession();
 
       cost = computeGeminiCostFromTokenUsage(tokenUsage);
+      if (cost && savedRecords.length > 0) {
+        const shareCount = savedRecords.length;
+        cost = {
+          ...cost,
+          batchTotalUsd: cost.usd,
+          batchTotalInr: cost.inr,
+          perRecordUsd: Number((Number(cost.usd || 0) / shareCount).toFixed(6)),
+          perRecordInr: Number((Number(cost.inr || 0) / shareCount).toFixed(4)),
+          savedCount: shareCount,
+        };
+      }
 
     }
 
