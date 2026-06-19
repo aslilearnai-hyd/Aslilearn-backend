@@ -33,7 +33,12 @@ export function buildClassLabelMongoFilter(classLabel, board = '') {
   const normalized = normalizeClassId(classLabel);
   if (!normalized) return {};
 
-  if (normalized === 'IIT-6') {
+  const boardKey = lockBoardKey(board);
+  const isIitClass6 =
+    normalized === 'IIT-6' ||
+    (boardKey === 'IIT/NEET' && normalized === 'Class 6');
+
+  if (isIitClass6) {
     const iitBoardMatch = boardMongoMatch(board || 'IIT');
     return {
       $or: [
@@ -114,6 +119,17 @@ export function mergeMongoFilters(...parts) {
   if (!clauses.length) return {};
   if (clauses.length === 1) return clauses[0];
   return { $and: clauses };
+}
+
+/** Merge classLabel constraints onto a base Mongo filter (handles IIT-6 $or safely). */
+export function applyClassLabelMongoFilter(baseFilter, classLabel, board = '') {
+  const classClause = buildClassLabelMongoFilter(classLabel, board);
+  if (!classClause || !Object.keys(classClause).length) {
+    const normalized = normalizeClassId(classLabel);
+    if (normalized) baseFilter.classLabel = normalized;
+    return baseFilter;
+  }
+  return mergeMongoFilters(baseFilter, classClause);
 }
 
 /** Scope filter: board + class + subject (no topic/subtopic/tool). */

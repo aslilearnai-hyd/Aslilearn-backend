@@ -1,8 +1,8 @@
 import AiToolTopic from '../models/AiToolTopic.js';
 import { boardMongoMatch } from '../utils/board-label.js';
 import {
+  applyClassLabelMongoFilter,
   buildCaseInsensitiveExactFilter,
-  buildClassLabelMongoFilter,
   normalizeMatchText,
 } from '../utils/ai-tool-data-match.js';
 import { orderedUniqueSubTopics } from '../utils/ai-tool-topic-order.js';
@@ -14,11 +14,16 @@ function normalizeText(value) {
 function normalizeClassId(classId) {
   if (classId == null || classId === '') return '';
   const s = normalizeText(classId);
-  if (s === 'Class-6-IIT') return 'IIT-6';
-  if (s === 'IIT-6') return 'IIT-6';
+  if (s === 'Class-6-IIT' || s === 'IIT-6') return 'Class 6';
   const match = s.match(/(\d+)/);
   if (match) return `Class ${match[1]}`;
   return s;
+}
+
+function canonicalClassLabelForBoard(label, board) {
+  const s = normalizeText(label);
+  if (isIitNeetBoard(board) && (s === 'IIT-6' || s === 'Class-6-IIT')) return 'Class 6';
+  return normalizeClassId(s) || s;
 }
 
 function escapeRegex(value) {
@@ -26,10 +31,7 @@ function escapeRegex(value) {
 }
 
 function buildClassLabelFilter(classLabel, board = '') {
-  const filter = buildClassLabelMongoFilter(classLabel, board);
-  if (filter.classLabel) return filter.classLabel;
-  if (filter.$or) return filter;
-  return null;
+  return applyClassLabelMongoFilter({ isActive: true }, classLabel, board);
 }
 
 function uniqueSorted(values) {
@@ -89,6 +91,15 @@ function applyBoardFilter(filter, board) {
   filter.board = boardMongoMatch(normalizedBoard);
 }
 
+function isIitNeetBoard(board) {
+  const compact = normalizeText(board).toUpperCase().replace(/[\s/\\-]+/g, '');
+  return compact.includes('IIT') || compact.includes('NEET') || compact.includes('JEE');
+}
+
+function isIitClassLabel(classLabel, board = '') {
+  return isIitNeetBoard(board) && normalizeClassId(classLabel) === 'Class 6';
+}
+
 /** GET /api/curriculum/classes */
 export const listClasses = async (req, res) => {
   try {
@@ -97,7 +108,15 @@ export const listClasses = async (req, res) => {
     applyBoardFilter(filter, board);
 
     const rows = await AiToolTopic.find(filter).select('classLabel').lean();
-    const classes = uniqueSortedClassLabels(rows.map((row) => normalizeText(row.classLabel)));
+    let classes = uniqueSortedClassLabels(
+      rows.map((row) => canonicalClassLabelForBoard(row.classLabel, board)),
+    );
+    if (isIitNeetBoard(board)) {
+      classes = classes.filter((c) => c !== 'IIT-6' && c !== 'Class-6-IIT');
+      if (!classes.includes('Class 6')) {
+        classes = uniqueSortedClassLabels([...classes, 'Class 6']);
+      }
+    }
     return res.json({
       success: true,
       data: toOptionRows(classes),
@@ -118,12 +137,15 @@ export const listSubjects = async (req, res) => {
       return res.status(400).json({ success: false, message: 'classId is required' });
     }
 
-    const classFilter = buildClassLabelFilter(classLabel, board);
-    const filter = { isActive: true, classLabel: classFilter || classLabel };
+    const filter = buildClassLabelFilter(classLabel, board);
     applyBoardFilter(filter, board);
 
     const rows = await AiToolTopic.find(filter).select('subject').lean();
-    const subjects = uniqueSorted(rows.map((row) => normalizeText(row.subject)));
+    let subjects = uniqueSorted(rows.map((row) => normalizeText(row.subject)));
+    if (isIitClassLabel(classLabel, board) && subjects.length === 0) {
+      const { getSubjectsForClass } = await import('../services/hardcoded-content-service.js');
+      subjects = uniqueSorted(await getSubjectsForClass('IIT-6'));
+    }
     return res.json({
       success: true,
       data: toOptionRows(subjects),
@@ -148,17 +170,18 @@ export const listTopics = async (req, res) => {
       });
     }
 
-    const classFilter = buildClassLabelFilter(classLabel, board);
     const subjectFilter = buildCaseInsensitiveExactFilter(subject);
-    const filter = {
-      isActive: true,
-      classLabel: classFilter || classLabel,
-      subject: subjectFilter || subject,
-    };
+    const filter = buildClassLabelFilter(classLabel, board);
+    filter.subject = subjectFilter || subject;
     applyBoardFilter(filter, board);
 
     const rows = await AiToolTopic.find(filter).select('topicName').lean();
-    const topics = uniqueSortedChapterTopics(rows.map((row) => normalizeText(row.topicName)));
+    let topics = uniqueSortedChapterTopics(rows.map((row) => normalizeText(row.topicName)));
+    if (isIitClassLabel(classLabel, board) && topics.length === 0) {
+      const { getChaptersForSubject } = await import('../services/hardcoded-content-service.js');
+      const chapters = await getChaptersForSubject('IIT-6', subject);
+      topics = uniqueSortedChapterTopics(chapters.map((row) => normalizeText(row.chapterName)));
+    }
     return res.json({
       success: true,
       data: toOptionRows(topics),
@@ -184,19 +207,19 @@ export const listSubtopics = async (req, res) => {
       });
     }
 
-    const classFilter = buildClassLabelFilter(classLabel, board);
     const subjectFilter = buildCaseInsensitiveExactFilter(subject);
     const topicFilter = buildCaseInsensitiveExactFilter(topicName);
-    const filter = {
-      isActive: true,
-      classLabel: classFilter || classLabel,
-      subject: subjectFilter || subject,
-      topicName: topicFilter || topicName,
-    };
+    const filter = buildClassLabelFilter(classLabel, board);
+    filter.subject = subjectFilter || subject;
+    filter.topicName = topicFilter || topicName;
     applyBoardFilter(filter, board);
 
     const rows = await AiToolTopic.find(filter).select('subTopic sortOrder createdAt').lean();
-    const subTopics = orderedUniqueSubTopics(rows);
+    let subTopics = orderedUniqueSubTopics(rows);
+    if (isIitClassLabel(classLabel, board) && subTopics.length === 0) {
+      const { getSubtopicsForChapter } = await import('../services/hardcoded-content-service.js');
+      subTopics = uniqueSorted(await getSubtopicsForChapter('IIT-6', subject, topicName));
+    }
     return res.json({
       success: true,
       data: toOptionRows(subTopics),

@@ -10,7 +10,7 @@ import {
   endTokenUsageSession,
 } from '../services/gemini-service.js';
 import { boardMongoMatch, canonicalBoardLabel, lockBoardKey, normalizeBoardLabelForGrouping, normalizeClassLabelForLock, resolveClassLabelForAiToolStorage } from '../utils/board-label.js';
-import { buildCaseInsensitiveExactFilter, buildClassLabelMongoFilter } from '../utils/ai-tool-data-match.js';
+import { applyClassLabelMongoFilter, buildCaseInsensitiveExactFilter } from '../utils/ai-tool-data-match.js';
 import { orderedUniqueSubTopics } from '../utils/ai-tool-topic-order.js';
 import {
   getAiGeneratorVariantAngle,
@@ -63,10 +63,7 @@ function normalizeClassLabelForTopics(classLabel) {
 }
 
 function buildClassLabelFilter(classLabel, board = '') {
-  const filter = buildClassLabelMongoFilter(classLabel, board);
-  if (filter.classLabel) return filter.classLabel;
-  if (filter.$or) return filter;
-  return normalizeClassLabelForTopics(classLabel) || null;
+  return applyClassLabelMongoFilter({}, classLabel, board);
 }
 
 function getRequestUserName(req) {
@@ -945,10 +942,10 @@ export async function getManagedTopicTaxonomy(req, res) {
 
     const filter = { isActive: true };
     if (board) filter.board = boardMongoMatch(board);
-    const classFilter = buildClassLabelFilter(classLabel, board);
+    const classClause = buildClassLabelFilter(classLabel, board);
+    Object.assign(filter, classClause);
     const subjectFilter = buildCaseInsensitiveExactFilter(subject);
     const topicFilter = buildCaseInsensitiveExactFilter(topicName);
-    if (classLabel) filter.classLabel = classFilter || normalizeClassLabelForTopics(classLabel);
     if (subject) filter.subject = subjectFilter || subject;
     if (topicName) filter.topicName = topicFilter || topicName;
 
