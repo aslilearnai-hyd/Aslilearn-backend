@@ -500,16 +500,41 @@ function scaffoldConceptRows(toolSlug, structured, meta = {}) {
   if (!Array.isArray(structured.concepts) || !structured.concepts.length) return structured;
   const out = { ...structured };
   const { topic, subject } = ctx(meta);
+  const variantN = Number(meta.generationVariant) || 0;
+  const angle = String(meta.variantAngle || '').trim();
+  const scenario = String(meta.variantScenario || '').trim();
+  const angleNote = angle ? ` (${angle.split('(')[0].trim()})` : variantN > 1 ? ` (guide ${variantN})` : '';
   out.concepts = structured.concepts.map((concept, i) => {
     const row = concept && typeof concept === 'object' ? { ...concept } : {};
-    const name = String(row.concept_name || row.concept_title || row.title || `${topic} — Concept ${i + 1}`).trim();
+    const baseName = String(row.concept_name || row.concept_title || row.title || `${topic} — Concept ${i + 1}`).trim();
+    const name = angle && variantN > 0 ? `${baseName}${angleNote}` : baseName;
     setIfEmpty(row, 'concept_name', name);
     setIfEmpty(row, 'concept_title', name);
-    setIfEmpty(row, 'simple_definition', `A clear explanation of ${name} linked to ${topic}.`);
-    setIfEmpty(row, 'why_important', `${name} helps students understand ${topic} in ${subject}.`);
+    setIfEmpty(
+      row,
+      'simple_definition',
+      angle
+        ? `${angle}: a clear explanation of ${baseName} linked to ${topic}.`
+        : `A clear explanation of ${baseName} linked to ${topic}.`,
+    );
+    setIfEmpty(row, 'why_important', `${baseName} helps students understand ${topic} in ${subject}.`);
     setIfEmpty(row, 'prior_knowledge_needed', `Basic vocabulary and ideas about ${topic}.`);
-    setIfEmpty(row, 'lesson', `Step-by-step explanation of ${name} with examples from ${topic}.`);
-    setIfEmpty(row, 'real_example', `Everyday example of ${name} from Indian context.`);
+    setIfEmpty(
+      row,
+      'lesson',
+      angle
+        ? `Teach ${baseName} using the angle "${angle}" with fresh examples from ${topic}.`
+        : `Step-by-step explanation of ${baseName} with examples from ${topic}.`,
+    );
+    setIfEmpty(
+      row,
+      'real_example',
+      scenario
+        ? `Example while exploring ${scenario}: ${baseName} in daily life.`
+        : angle
+          ? `Indian-context example for ${baseName} via ${angle}.`
+          : `Everyday example of ${baseName} from Indian context.`,
+    );
     setIfEmpty(row, 'common_mistakes', [`Confusing ${name} with a similar term.`]);
     setIfEmpty(row, 'key_points', [`Remember the core idea of ${name}.`]);
     setIfEmpty(row, 'concept_check_questions', [`What is ${name}? Give one example.`]);

@@ -3,8 +3,8 @@ import { BOOK_GENERATOR_UNIQUENESS_TARGET } from '../config/bookBasedTools.js';
 import { buildBookScopeQuery } from '../utils/book-grounded-record.js';
 
 /**
- * Lightweight batch context — count only (no Gemini prompt bloat, no loading past records).
- * Uniqueness within the current batch is handled locally in the orchestrator.
+ * Lightweight batch context — count only (no extra DB reads or prompt bloat).
+ * Concept Mastery variety uses per-slot angles + rotated book passages (one LLM call each).
  */
 export async function buildBookHistoricalGenerationContext(scope) {
   const query = buildBookScopeQuery(scope);

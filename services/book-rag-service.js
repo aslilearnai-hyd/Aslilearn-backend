@@ -199,3 +199,33 @@ export async function retrieveBookContextForGeneration(scope = {}) {
     chunkCount: chunks.length,
   };
 }
+
+/**
+ * Rotate textbook passages per batch variant so Concept Mastery slots see different source emphasis.
+ */
+export function buildBookContextTextForVariant(ragBase, scope = {}, variantIndex = 1) {
+  const chunks = Array.isArray(ragBase?.chunks) ? ragBase.chunks : [];
+  const curriculumBlock = buildCurriculumTargetBlock(scope);
+  if (!chunks.length) {
+    return ragBase?.contextText || curriculumBlock;
+  }
+
+  const windowSize = Math.max(2, Math.min(4, DEFAULT_TOP_K));
+  const stride = Math.max(1, Math.floor(windowSize / 2));
+  const start = ((Math.max(1, variantIndex) - 1) * stride) % chunks.length;
+  const selected = [];
+  for (let i = 0; i < windowSize; i += 1) {
+    selected.push(chunks[(start + i) % chunks.length]);
+  }
+
+  const bookContext = formatBookContextForPrompt(selected, {
+    bookTitle: scope.bookTitle,
+    subject: scope.subjectName || scope.subject,
+    class: scope.className || scope.class,
+  });
+  const variantNote =
+    variantIndex > 1
+      ? `\nVARIANT ${variantIndex}: Use a distinct teaching angle, examples, and concept-check questions — do not repeat wording from other variants on this sub-topic.`
+      : '';
+  return bookContext ? `${curriculumBlock}${variantNote}\n\n${bookContext}` : `${curriculumBlock}${variantNote}`;
+}

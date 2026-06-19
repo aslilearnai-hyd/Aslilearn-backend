@@ -736,7 +736,22 @@ export function finalizeConceptMasteryStructuredContent(structuredContent, meta 
   const deckTitle = String(
     deck.title || deck.concepts?.[0]?.concept_name || meta.subTopic || meta.topic || '',
   ).trim();
-  if (deckTitle.length >= 4) {
+  const variantN = Number(meta.generationVariant) || 0;
+  const angleShort = String(meta.variantAngle || '')
+    .split('(')[0]
+    .trim()
+    .slice(0, 48);
+  if (variantN > 0 && angleShort) {
+    deck = {
+      ...deck,
+      title: `${String(meta.subTopic || meta.topic || 'Concept').trim()} — ${angleShort}`,
+    };
+  } else if (variantN > 1) {
+    deck = {
+      ...deck,
+      title: `${String(meta.subTopic || meta.topic || 'Concept').trim()} — Concept Mastery (Guide ${variantN})`,
+    };
+  } else if (deckTitle.length >= 4) {
     deck = { ...deck, title: deckTitle };
   } else {
     deck = {

@@ -10,6 +10,7 @@ import {
   finalizeWorksheetStructuredContent,
   finalizePracticeQaStructuredContent,
   finalizeQuickAssignmentStructuredContent,
+  finalizeConceptMasteryStructuredContent,
 } from './ai-content-engine-service.js';
 import { buildBookHistoricalGenerationContext } from './book-generator-historical.js';
 import {
@@ -30,7 +31,7 @@ import {
   isAiGeneratorUltraEconomyEnabled,
   getBatchSlotMaxAttempts,
 } from '../utils/ai-generator-batch-config.js';
-import { retrieveBookContextForGeneration } from './book-rag-service.js';
+import { retrieveBookContextForGeneration, buildBookContextTextForVariant } from './book-rag-service.js';
 import {
   isBookBasedToolSlug,
   getBookBasedToolDisplayName,
@@ -57,6 +58,8 @@ function finalizeBookStructuredContent(toolSlug, structured, meta) {
       return finalizePracticeQaStructuredContent(source, meta);
     case 'quick-assignment-builder':
       return finalizeQuickAssignmentStructuredContent(source, meta);
+    case 'concept-mastery-helper':
+      return finalizeConceptMasteryStructuredContent(source, meta);
     default:
       return source;
   }
@@ -178,6 +181,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
     const historical = await buildBookHistoricalGenerationContext(scope);
     const batchTitles = [];
     const batchQuestionTexts = [];
+    const conceptMasteryBatch = toolSlug === 'concept-mastery-helper';
     const savedRecords = [];
     const failures = [];
     let tokenUsage = null;
@@ -197,8 +201,20 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             subtopicName,
             toolSlug,
             bookTitle: book.title,
+            topK: conceptMasteryBatch ? 8 : undefined,
           })
         : { contextText: '', chunkCount: 0, chunks: [] };
+
+      const ragScope = {
+        bookId,
+        board,
+        className: classNameForRag,
+        subjectName,
+        topicName,
+        subtopicName,
+        toolSlug,
+        bookTitle: book.title,
+      };
 
       const slots = Array.from({ length: batchSize }, (_, i) => ({
         batchIndex: i + 1,
@@ -252,6 +268,10 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               ...(attempt > 1 ? { recoveryPass: true } : {}),
             };
 
+            const pdfContext = conceptMasteryBatch
+              ? buildBookContextTextForVariant(ragBase, ragScope, variantIndex)
+              : ragBase.contextText;
+
             const generated = await generateStructuredContentForAiGenerator(toolSlug, {
               board,
               classLabel: className,
@@ -260,7 +280,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               topic: topicName || book.title,
               subTopic: subtopicName,
               extraParams,
-              pdfContext: ragBase.contextText,
+              pdfContext,
               historicalPromptBlock: '',
               upgradeToFlash:
                 !isAiGeneratorCostSaverEnabled() &&
@@ -276,6 +296,9 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               subtopic: subtopicName,
               board,
               className,
+              generationVariant: variantIndex,
+              variantAngle: extraParams.variantAngle,
+              variantScenario: extraParams.variantScenario,
             };
             let structuredContent = finalizeBookStructuredContent(
               toolSlug,

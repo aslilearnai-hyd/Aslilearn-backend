@@ -2499,6 +2499,14 @@ export function buildAiGeneratorStructuredPrompt(toolSlug, params = {}) {
       `EXAM PAPER RULE: structuredContent MUST use the 11-section Exam Question Paper format (paper_title, instructions, blueprint, section_a..section_e, internal_choices, answer_key, marking_scheme, open_ended_rubric). Minimum ${examTarget} questions across sections. Populate EVERY section array (section_a, section_b, section_c, section_d, section_e) with real questions — never leave Section D (long answer) or Section E (case-based) empty. Do NOT return Mock Test Builder fields.`,
     );
   }
+  if (slug === 'concept-mastery-helper') {
+    contextLines.push(
+      'CONCEPT MASTERY VARIETY RULE: Each batch variant covers the SAME sub-topic but MUST use a different teaching angle, diagram idea, real-life example, concept-check questions, and lesson wording. The saved title must reflect the creative angle — not only the raw sub-topic name.',
+    );
+    contextLines.push(
+      'Do NOT reuse the same lesson paragraph, key_points, or examples across variants. concept_name may include a short angle suffix (e.g. "Photosynthesis — hands-on lab angle").',
+    );
+  }
   const generationVariant = Number(extra.generationVariant ?? extra.variantIndex);
   const batchSize = Number(extra.batchSize);
   const variantAngle = String(extra.variantAngle || '').trim();

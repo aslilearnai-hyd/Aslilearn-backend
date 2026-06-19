@@ -266,6 +266,20 @@ export function validateRecordUniqueness(toolSlug, structured, ctx = {}) {
     }
   }
 
+  if (slug === 'concept-mastery-helper') {
+    const bodyThreshold = 0.72;
+    const against = [...batchTexts, ...historicalTexts];
+    for (const text of collectConceptMasteryTextsFromStructured(structured)) {
+      const bodyDup = findSimilarText(text, against, bodyThreshold);
+      if (bodyDup.duplicate) {
+        errors.push(
+          `Concept content too similar (${Math.round(bodyDup.similarity * 100)}%): "${text.slice(0, 60)}..."`,
+        );
+      }
+    }
+    return { valid: errors.length === 0, errors, duplicates: [] };
+  }
+
   if (!QUESTION_TOOLS.has(slug)) {
     return { valid: errors.length === 0, errors, duplicates: [] };
   }
@@ -313,6 +327,29 @@ export function collectQuestionTextsFromStructured(structured) {
     .filter((u) => u.contentType === 'question' || u.contentType === 'flashcard')
     .map((u) => String(u.text || '').trim())
     .filter(Boolean);
+}
+
+/** Fingerprintable lesson/example text from Concept Mastery structured JSON. */
+export function collectConceptMasteryTextsFromStructured(structured) {
+  if (!structured || typeof structured !== 'object' || Array.isArray(structured)) return [];
+  const concepts = Array.isArray(structured.concepts) ? structured.concepts : [];
+  const texts = [];
+  for (const concept of concepts) {
+    if (!concept || typeof concept !== 'object') continue;
+    for (const key of ['lesson', 'simple_definition', 'real_example', 'diagram_suggestion', 'exam_tips']) {
+      const t = String(concept[key] || '').trim();
+      if (t.length >= 20) texts.push(t);
+    }
+    for (const row of concept.concept_check_questions || concept.conceptCheckQuestions || []) {
+      const t = String(row || '').trim();
+      if (t.length >= 12) texts.push(t);
+    }
+    for (const row of concept.key_points || concept.keyPoints || []) {
+      const t = String(row || '').trim();
+      if (t.length >= 12) texts.push(t);
+    }
+  }
+  return texts;
 }
 
 export function collectTitleTexts(batchTitles, historicalTitles) {
