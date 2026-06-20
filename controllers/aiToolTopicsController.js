@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 import AiToolTopic from '../models/AiToolTopic.js';
 import { boardMongoMatch, canonicalBoardLabel } from '../utils/board-label.js';
 import {
+  buildAiToolTopicHierarchyTree,
   buildAiToolTopicTaxonomyFilter,
 } from '../utils/ai-tool-topic-taxonomy.js';
 import { buildDisplayTopicName } from '../utils/ai-tool-topic-display.js';
@@ -276,25 +277,106 @@ export async function bulkDeleteAiToolTopics(req, res) {
   }
 }
 
-export async function listAiToolTopicOptions(req, res) {
+const TOPIC_OPTIONS_SELECT = 'board classLabel subject label topicName subTopic sortOrder createdAt';
+
+function uniqueSortedValues(arr) {
+  return [...new Set(arr.filter(Boolean))].sort((a, b) => NATURAL_COLLATOR.compare(a, b));
+}
+
+async function queryTopicOptionRows(filter) {
+  return AiToolTopic.find(filter)
+    .select(TOPIC_OPTIONS_SELECT)
+    .sort({ sortOrder: 1, createdAt: 1, _id: 1 })
+    .lean();
+}
+
+export async function getAiToolTopicHierarchy(req, res) {
   try {
-    const filter = buildFilters(req.query);
+    const board = normalizeText(req.query.board);
 
-    const rows = await AiToolTopic.find(filter)
-      .select('board classLabel subject label topicName subTopic sortOrder createdAt')
-      .sort({ sortOrder: 1, createdAt: 1, _id: 1 })
-      .lean();
+    if (!board) {
+      const rawBoards = await AiToolTopic.distinct('board', { isActive: true });
+      const boards = uniqueSortedValues(rawBoards.map((value) => canonicalBoardLabel(value)));
+      return res.json({ success: true, data: { boards, tree: null } });
+    }
 
-    const unique = (arr) => [...new Set(arr.filter(Boolean))].sort((a, b) => NATURAL_COLLATOR.compare(a, b));
+    const filter = buildAiToolTopicTaxonomyFilter({ board });
+    const rows = await queryTopicOptionRows(filter);
 
     return res.json({
       success: true,
       data: {
-        boards: unique(rows.map((r) => canonicalBoardLabel(r.board))),
-        classes: unique(rows.map((r) => r.classLabel)),
-        subjects: unique(rows.map((r) => r.subject)),
-        labels: unique(rows.map((r) => r.label)),
-        topics: orderedUniqueTopics(rows, (row) => buildDisplayTopicName(row.label, row.topicName)),
+        tree: buildAiToolTopicHierarchyTree(rows),
+      },
+    });
+  } catch (error) {
+    console.error('getAiToolTopicHierarchy error:', error);
+    return res.status(500).json({ success: false, message: 'Failed to fetch AI tool topic hierarchy.' });
+  }
+}
+
+export async function listAiToolTopicOptions(req, res) {
+  try {
+    const filter = buildFilters(req.query);
+    const hasBoard = Boolean(normalizeText(req.query.board));
+    const hasClass = Boolean(normalizeText(req.query.classLabel));
+    const hasSubject = Boolean(normalizeText(req.query.subject));
+    const hasTopic = Boolean(normalizeText(req.query.topicName));
+
+    const emptyLists = {
+      boards: [],
+      classes: [],
+      subjects: [],
+      labels: [],
+      topics: [],
+      subTopics: [],
+    };
+
+    if (!hasBoard && !hasClass && !hasSubject && !hasTopic) {
+      const rawBoards = await AiToolTopic.distinct('board', { isActive: true });
+      return res.json({
+        success: true,
+        data: {
+          ...emptyLists,
+          boards: uniqueSortedValues(rawBoards.map((value) => canonicalBoardLabel(value))),
+        },
+      });
+    }
+
+    if (hasBoard && !hasClass) {
+      const classes = await AiToolTopic.distinct('classLabel', filter);
+      return res.json({
+        success: true,
+        data: {
+          ...emptyLists,
+          classes: uniqueSortedValues(classes),
+        },
+      });
+    }
+
+    if (hasBoard && hasClass && !hasSubject) {
+      const subjects = await AiToolTopic.distinct('subject', filter);
+      return res.json({
+        success: true,
+        data: {
+          ...emptyLists,
+          subjects: uniqueSortedValues(subjects),
+        },
+      });
+    }
+
+    const rows = await queryTopicOptionRows(filter);
+
+    return res.json({
+      success: true,
+      data: {
+        boards: hasBoard ? [] : uniqueSortedValues(rows.map((row) => canonicalBoardLabel(row.board))),
+        classes: hasClass ? [] : uniqueSortedValues(rows.map((row) => row.classLabel)),
+        subjects: hasSubject ? [] : uniqueSortedValues(rows.map((row) => row.subject)),
+        labels: uniqueSortedValues(rows.map((row) => row.label)),
+        topics: hasTopic
+          ? []
+          : orderedUniqueTopics(rows, (row) => buildDisplayTopicName(row.label, row.topicName)),
         subTopics: orderedUniqueSubTopics(rows),
       },
     });

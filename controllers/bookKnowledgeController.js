@@ -28,7 +28,13 @@ export async function listBooks(req, res) {
     if (subject) filter.subject = subject;
     if (status) filter.processingStatus = status;
 
-    const books = await Book.find(filter).sort({ updatedAt: -1 }).limit(200).lean();
+    const books = await Book.find(filter)
+      .select(
+        'title board class subject topic subtopic chunkCount processingStatus embeddingsCreated source generationStats updatedAt createdAt',
+      )
+      .sort({ updatedAt: -1 })
+      .limit(200)
+      .lean();
     res.json({ success: true, data: books.map((book) => enrichBookCurriculumFields(book)) });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message || 'Failed to list books.' });

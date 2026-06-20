@@ -66,6 +66,8 @@ aiToolGenerationSchema.index({ sourceType: 1, toolName: 1, createdAt: -1 });
 aiToolGenerationSchema.index({ 'metadata.contentEngineSourceId': 1 });
 aiToolGenerationSchema.index({ reviewStatus: 1, updatedAt: -1 });
 aiToolGenerationSchema.index({ reviewStatus: 1, classLabel: 1, subject: 1, createdAt: -1 });
+aiToolGenerationSchema.index({ 'metadata.bookGenerator': 1, createdAt: -1 });
+aiToolGenerationSchema.index({ sourceType: 1, board: 1, createdAt: -1 });
 
 const AiToolGeneration =
   mongoose.models.AiToolGeneration ||

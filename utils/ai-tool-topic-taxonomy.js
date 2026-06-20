@@ -1,7 +1,11 @@
 import AiToolTopic from '../models/AiToolTopic.js';
 import { boardMongoMatch } from './board-label.js';
 import { buildDisplayTopicName } from './ai-tool-topic-display.js';
-import { orderedUniqueSubTopics, orderedUniqueTopics } from './ai-tool-topic-order.js';
+import {
+  compareAiToolTopicRows,
+  orderedUniqueSubTopics,
+  orderedUniqueTopics,
+} from './ai-tool-topic-order.js';
 import {
   applyClassLabelMongoFilter,
   buildSubjectMongoFilter,
@@ -88,6 +92,29 @@ export function formatAiToolTopicTaxonomy(rows) {
     subTopics: orderedUniqueSubTopics(rows),
     labels: uniqueSorted(rows.map((r) => r.label)),
   };
+}
+
+/** Board-scoped tree: class → subject → topic → ordered sub-topics. */
+export function buildAiToolTopicHierarchyTree(rows) {
+  const sorted = [...rows].sort(compareAiToolTopicRows);
+  const tree = {};
+
+  for (const row of sorted) {
+    const classLabel = String(row?.classLabel || '').trim();
+    const subject = String(row?.subject || '').trim();
+    const topic = buildDisplayTopicName(row?.label, row?.topicName);
+    const subTopic = String(row?.subTopic || '').trim();
+    if (!classLabel || !subject || !topic || !subTopic) continue;
+
+    if (!tree[classLabel]) tree[classLabel] = {};
+    if (!tree[classLabel][subject]) tree[classLabel][subject] = {};
+    if (!tree[classLabel][subject][topic]) tree[classLabel][subject][topic] = [];
+
+    const list = tree[classLabel][subject][topic];
+    if (!list.includes(subTopic)) list.push(subTopic);
+  }
+
+  return tree;
 }
 
 export async function queryAiToolTopicTaxonomy(params = {}) {

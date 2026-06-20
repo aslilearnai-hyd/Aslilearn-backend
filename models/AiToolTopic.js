@@ -25,6 +25,8 @@ aiToolTopicSchema.index(
   { unique: true, partialFilterExpression: { isActive: true } },
 );
 
+aiToolTopicSchema.index({ isActive: 1, board: 1, classLabel: 1, subject: 1, sortOrder: 1 });
+
 const AiToolTopic =
   mongoose.models.AiToolTopic || mongoose.model('AiToolTopic', aiToolTopicSchema);
 

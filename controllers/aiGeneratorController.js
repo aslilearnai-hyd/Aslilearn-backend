@@ -179,6 +179,48 @@ function isDeprecatedGeneratorRecord(record) {
   );
 }
 
+/** Fields loaded for accordion list views — avoids shipping duplicate `content` blobs. */
+export const GENERATOR_LIST_SELECT =
+  'toolName toolDisplayName board classLabel subject topic subtopic createdAt updatedAt generatedContent metadata.bookTitle metadata.structuredContent metadata.extraParams metadata.generationVariant metadata.formatSource metadata.bookGenerator';
+
+const GENERATOR_LIST_PREVIEW_CHARS = 3000;
+
+/** Shrink a generation row for grouped list APIs (structured tools skip full markdown). */
+export function slimGeneratorRecordForList(record) {
+  if (!record) return null;
+  const meta = record.metadata && typeof record.metadata === 'object' ? record.metadata : {};
+  const hasStructured = meta.structuredContent != null;
+  const raw = String(record.generatedContent || record.content || '');
+  const extraParams =
+    meta.extraParams && typeof meta.extraParams === 'object' ? meta.extraParams : undefined;
+
+  return {
+    _id: record._id,
+    toolName: record.toolName,
+    toolDisplayName: record.toolDisplayName,
+    board: record.board,
+    classLabel: record.classLabel,
+    subject: record.subject,
+    topic: record.topic,
+    subtopic: record.subtopic,
+    createdAt: record.createdAt,
+    updatedAt: record.updatedAt,
+    generatedContent: hasStructured
+      ? ''
+      : raw.length <= GENERATOR_LIST_PREVIEW_CHARS
+        ? raw
+        : raw.slice(0, GENERATOR_LIST_PREVIEW_CHARS),
+    metadata: {
+      bookTitle: meta.bookTitle,
+      structuredContent: meta.structuredContent,
+      extraParams,
+      bookGenerator: meta.bookGenerator,
+      formatSource: meta.formatSource,
+      generationVariant: meta.generationVariant,
+    },
+  };
+}
+
 export function groupAiGeneratorRecords(items) {
   const toolMap = new Map();
 
@@ -548,19 +590,27 @@ export async function getAllGeneratorRecords(req, res) {
       subtopicName,
     });
 
-    const [fromMaster, fromLegacyColl] = await Promise.all([
-      AiToolGeneration.find(mongoQuery).sort({ createdAt: -1 }).lean(),
-      AIGeneratorRecord.find(legacyQuery).sort({ createdAt: -1 }).lean(),
+    const [totalMaster, fromMaster, fromLegacyColl] = await Promise.all([
+      AiToolGeneration.countDocuments(mongoQuery),
+      AiToolGeneration.find(mongoQuery)
+        .select(GENERATOR_LIST_SELECT)
+        .sort({ createdAt: -1 })
+        .lean(),
+      AIGeneratorRecord.find(legacyQuery)
+        .select('toolSlug toolName board className subjectName topicName subtopicName generatedContent createdAt updatedAt')
+        .sort({ createdAt: -1 })
+        .lean(),
     ]);
     const legacyMapped = fromLegacyColl.map(mapLegacyAiGeneratorDoc).filter(Boolean);
-    const items = [...fromMaster, ...legacyMapped].sort(
-      (a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0),
-    );
+    const items = [...fromMaster, ...legacyMapped]
+      .map(slimGeneratorRecordForList)
+      .filter(Boolean)
+      .sort((a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0));
     const grouped = groupAiGeneratorRecords(items);
 
     return res.json({
       success: true,
-      data: { grouped, total: items.length },
+      data: { grouped, total: totalMaster + legacyMapped.length },
     });
   } catch (error) {
     console.error('getAllGeneratorRecords error:', error);

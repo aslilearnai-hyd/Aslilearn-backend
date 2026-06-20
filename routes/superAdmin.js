@@ -51,6 +51,7 @@ import {
   deleteAiToolTopic,
   bulkDeleteAiToolTopics,
   listAiToolTopicOptions,
+  getAiToolTopicHierarchy,
 } from '../controllers/aiToolTopicsController.js';
 import { uploadAndParsePdf } from '../controllers/aiToolsController.js';
 import {
@@ -437,6 +438,7 @@ router.patch('/ai-tool-generations/document/:id', updateAiToolGenerationById);
 router.delete('/ai-tool-generations/document/:id', deleteAiToolGenerationById);
 
 // AI tool topics management (Super Admin taxonomy control)
+router.get('/ai-tool-topics/hierarchy', getAiToolTopicHierarchy);
 router.get('/ai-tool-topics/options', listAiToolTopicOptions);
 router.get('/ai-tool-topics', listAiToolTopics);
 router.post('/ai-tool-topics', createAiToolTopic);

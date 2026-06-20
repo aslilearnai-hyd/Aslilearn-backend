@@ -19,7 +19,11 @@ import {
 } from '../config/bookBasedTools.js';
 import { boardMongoMatch } from '../utils/board-label.js';
 import { bookGroundedMongoFilter, isBookGroundedRecord } from '../utils/book-grounded-record.js';
-import { groupAiGeneratorRecords } from './aiGeneratorController.js';
+import {
+  GENERATOR_LIST_SELECT,
+  groupAiGeneratorRecords,
+  slimGeneratorRecordForList,
+} from './aiGeneratorController.js';
 
 function ensureSuperAdmin(req, res) {
   if (req.user?.role !== 'super-admin') {
@@ -326,14 +330,20 @@ export async function listBookGeneratorRecords(req, res) {
   if (!ensureSuperAdmin(req, res)) return;
   try {
     const query = buildBookRecordsListQuery(req);
-    const records = await AiToolGeneration.find(query).sort({ createdAt: -1 }).lean();
-    const grouped = groupAiGeneratorRecords(records);
+    const [total, records] = await Promise.all([
+      AiToolGeneration.countDocuments(query),
+      AiToolGeneration.find(query)
+        .select(GENERATOR_LIST_SELECT)
+        .sort({ createdAt: -1 })
+        .lean(),
+    ]);
+    const slim = records.map(slimGeneratorRecordForList).filter(Boolean);
+    const grouped = groupAiGeneratorRecords(slim);
     res.json({
       success: true,
       data: {
         grouped,
-        total: records.length,
-        items: records,
+        total,
       },
     });
   } catch (err) {
