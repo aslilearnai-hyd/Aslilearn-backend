@@ -32,6 +32,20 @@ export function orderedUniqueSubTopics(rows) {
   return result;
 }
 
+/** Unique topic labels in admin sortOrder (first row per topic wins). */
+export function orderedUniqueTopics(rows, getTopicLabel) {
+  const sorted = [...rows].sort(compareAiToolTopicRows);
+  const seen = new Set();
+  const result = [];
+  for (const row of sorted) {
+    const name = String(getTopicLabel(row) || '').trim();
+    if (!name || seen.has(name)) continue;
+    seen.add(name);
+    result.push(name);
+  }
+  return result;
+}
+
 export async function resolveSortOrderStart(AiToolTopic, filter, explicitStart) {
   if (explicitStart != null && Number.isFinite(Number(explicitStart))) {
     return Number(explicitStart);

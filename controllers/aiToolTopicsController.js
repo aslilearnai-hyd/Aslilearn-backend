@@ -7,6 +7,7 @@ import {
 import { buildDisplayTopicName } from '../utils/ai-tool-topic-display.js';
 import {
   orderedUniqueSubTopics,
+  orderedUniqueTopics,
   resolveSortOrderStart,
 } from '../utils/ai-tool-topic-order.js';
 
@@ -277,19 +278,11 @@ export async function bulkDeleteAiToolTopics(req, res) {
 
 export async function listAiToolTopicOptions(req, res) {
   try {
-    const { board, classLabel, subject, topicName } = req.query;
-    const filter = { isActive: true };
-    if (board) filter.board = boardMongoMatch(normalizeText(board));
-    if (classLabel) filter.classLabel = normalizeText(classLabel);
-    if (subject) filter.subject = normalizeText(subject);
-    const topicMatch = buildTopicNameMatch(topicName);
-    if (topicMatch) {
-      if (!filter.$and) filter.$and = [];
-      filter.$and.push(topicMatch);
-    }
+    const filter = buildFilters(req.query);
 
     const rows = await AiToolTopic.find(filter)
       .select('board classLabel subject label topicName subTopic sortOrder createdAt')
+      .sort({ sortOrder: 1, createdAt: 1, _id: 1 })
       .lean();
 
     const unique = (arr) => [...new Set(arr.filter(Boolean))].sort((a, b) => NATURAL_COLLATOR.compare(a, b));
@@ -301,7 +294,7 @@ export async function listAiToolTopicOptions(req, res) {
         classes: unique(rows.map((r) => r.classLabel)),
         subjects: unique(rows.map((r) => r.subject)),
         labels: unique(rows.map((r) => r.label)),
-        topics: unique(rows.map((r) => buildDisplayTopicName(r.label, r.topicName))),
+        topics: orderedUniqueTopics(rows, (row) => buildDisplayTopicName(row.label, row.topicName)),
         subTopics: orderedUniqueSubTopics(rows),
       },
     });

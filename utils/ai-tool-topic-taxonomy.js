@@ -1,7 +1,7 @@
 import AiToolTopic from '../models/AiToolTopic.js';
 import { boardMongoMatch } from './board-label.js';
 import { buildDisplayTopicName } from './ai-tool-topic-display.js';
-import { orderedUniqueSubTopics } from './ai-tool-topic-order.js';
+import { orderedUniqueSubTopics, orderedUniqueTopics } from './ai-tool-topic-order.js';
 import {
   applyClassLabelMongoFilter,
   buildSubjectMongoFilter,
@@ -84,7 +84,7 @@ export function buildAiToolTopicTaxonomyFilter({
 export function formatAiToolTopicTaxonomy(rows) {
   return {
     subjects: uniqueSorted(rows.map((r) => r.subject)),
-    topics: uniqueSorted(rows.map((r) => buildDisplayTopicName(r.label, r.topicName))),
+    topics: orderedUniqueTopics(rows, (row) => buildDisplayTopicName(row.label, row.topicName)),
     subTopics: orderedUniqueSubTopics(rows),
     labels: uniqueSorted(rows.map((r) => r.label)),
   };
@@ -92,9 +92,11 @@ export function formatAiToolTopicTaxonomy(rows) {
 
 export async function queryAiToolTopicTaxonomy(params = {}) {
   const filter = buildAiToolTopicTaxonomyFilter(params);
-  return AiToolTopic.find(filter)
+  const rows = await AiToolTopic.find(filter)
     .select('board classLabel subject label topicName subTopic sortOrder createdAt')
+    .sort({ sortOrder: 1, createdAt: 1, _id: 1 })
     .lean();
+  return rows;
 }
 
 /** Prefer board-scoped rows; fall back to class-only when board filter returns nothing. */

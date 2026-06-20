@@ -167,7 +167,7 @@ export const listTopics = async (req, res) => {
     }
 
     const managed = await resolveAiToolTopicTaxonomy({ board, classLabel, subject });
-    let topics = uniqueSortedChapterTopics(managed.topics);
+    let topics = managed.topics;
     if (isIitClassLabel(classLabel, board) && topics.length === 0) {
       const { getChaptersForSubject } = await import('../services/hardcoded-content-service.js');
       const chapters = await getChaptersForSubject('IIT-6', subject);
