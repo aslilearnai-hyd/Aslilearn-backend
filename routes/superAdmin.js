@@ -41,6 +41,7 @@ import {
   getAiToolGenerationById,
   exportAiToolGenerationsBundle,
   getAiToolGenerationsMeta,
+  getAiToolGenerationsBootstrap,
   updateAiToolGenerationById,
   deleteAiToolGenerationById,
 } from '../controllers/aiToolGenerationsController.js';
@@ -429,6 +430,7 @@ router.get('/analytics', getAnalytics);
 router.get('/analytics/realtime', getRealTimeAnalytics);
 
 // AI tool generations (teacher tools — persisted for hierarchy + PDF export)
+router.get('/ai-tool-generations/bootstrap', getAiToolGenerationsBootstrap);
 router.get('/ai-tool-generations/meta', getAiToolGenerationsMeta);
 router.get('/ai-tool-generations/children', listAiToolChildren);
 router.get('/ai-tool-generations/records', listAiToolRecords);

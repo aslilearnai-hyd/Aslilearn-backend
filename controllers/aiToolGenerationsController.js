@@ -55,10 +55,26 @@ function mapLegacyAiGeneratorToCombined(doc) {
   });
 }
 
-/**
- * Single source of truth: all AI Tool Data + Generator + PDF master rows live in aitoolgenerations.
- */
-async function loadCombinedRecords(match = {}) {
+const FULL_RECORD_FIELDS_MASTER =
+  'toolName toolDisplayName sourceType classLabel subject topic subtopic content generatedContent createdAt metadata pdfFileUrl pdfFileName status board';
+const FULL_RECORD_FIELDS_LEGACY =
+  'toolSlug toolName className subjectName topicName subtopicName board generatedContent createdAt createdByRole createdByName';
+
+const LEGACY_GROUP_FIELD = {
+  toolName: 'toolSlug',
+  classLabel: 'className',
+  subject: 'subjectName',
+  topic: 'topicName',
+  subtopic: 'subtopicName',
+};
+
+const AGGREGATE_CACHE_TTL_MS = 30_000;
+/** @type {Map<string, { at: number, value: unknown }>} */
+const aggregateCache = new Map();
+/** @type {Map<string, Promise<unknown>>} */
+const aggregateInFlight = new Map();
+
+function buildMasterMongoFilter(match = {}) {
   const mongoFilter = {};
   if (match.toolName) mongoFilter.toolName = match.toolName;
   if ('board' in match) mongoFilter.board = boardMongoMatch(match.board ?? '');
@@ -66,21 +82,119 @@ async function loadCombinedRecords(match = {}) {
   if ('subject' in match) mongoFilter.subject = match.subject ?? '';
   if ('topic' in match) mongoFilter.topic = match.topic ?? '';
   if ('subtopic' in match) mongoFilter.subtopic = match.subtopic ?? '';
+  return mongoFilter;
+}
 
+function buildLegacyMongoFilter(match = {}) {
+  return {
+    ...(match.toolName ? { toolSlug: match.toolName } : {}),
+    ...('classLabel' in match ? { className: match.classLabel ?? '' } : {}),
+    ...('board' in match ? { board: boardMongoMatch(match.board ?? '') } : {}),
+    ...('subject' in match ? { subjectName: match.subject ?? '' } : {}),
+    ...('topic' in match ? { topicName: match.topic ?? '' } : {}),
+    ...('subtopic' in match ? { subtopicName: match.subtopic ?? '' } : {}),
+  };
+}
+
+function groupFieldPath(model, groupField) {
+  if (model === 'legacy') {
+    return `$${LEGACY_GROUP_FIELD[groupField] || groupField}`;
+  }
+  return `$${groupField}`;
+}
+
+async function aggregateCollectionGroupCounts(Model, modelKey, match, groupField) {
+  const filter = modelKey === 'legacy' ? buildLegacyMongoFilter(match) : buildMasterMongoFilter(match);
+  const fieldPath = groupFieldPath(modelKey, groupField);
+  return Model.aggregate([
+    { $match: filter },
+    { $group: { _id: { $ifNull: [fieldPath, ''] }, count: { $sum: 1 } } },
+  ]);
+}
+
+function mergeGroupCountRows(masterGroups, legacyGroups, groupField) {
+  const merged = new Map();
+  for (const group of [...masterGroups, ...legacyGroups]) {
+    const value = group._id ?? '';
+    if (groupField === 'toolName' && isDeprecatedAiToolIdentifier(value)) continue;
+    merged.set(value, (merged.get(value) || 0) + group.count);
+  }
+  return Array.from(merged.entries())
+    .sort((a, b) => String(a[0]).localeCompare(String(b[0])))
+    .map(([value, count]) => ({ value, count }));
+}
+
+async function withAggregateCache(cacheKey, loader) {
+  const cached = aggregateCache.get(cacheKey);
+  if (cached && Date.now() - cached.at < AGGREGATE_CACHE_TTL_MS) {
+    return cached.value;
+  }
+
+  const inFlight = aggregateInFlight.get(cacheKey);
+  if (inFlight) return inFlight;
+
+  const promise = loader()
+    .then((value) => {
+      aggregateCache.set(cacheKey, { at: Date.now(), value });
+      if (aggregateCache.size > 60) {
+        const cutoff = Date.now() - AGGREGATE_CACHE_TTL_MS;
+        for (const [key, entry] of aggregateCache) {
+          if (entry.at < cutoff) aggregateCache.delete(key);
+        }
+      }
+      return value;
+    })
+    .finally(() => {
+      aggregateInFlight.delete(cacheKey);
+    });
+
+  aggregateInFlight.set(cacheKey, promise);
+  return promise;
+}
+
+/** Count distinct hierarchy values in MongoDB — no full-document scans. */
+async function aggregateCombinedGroupCounts(match = {}, groupField) {
+  const cacheKey = `group:${groupField}:${JSON.stringify(match)}`;
+  return withAggregateCache(cacheKey, async () => {
+    const [masterGroups, legacyGroups] = await Promise.all([
+      aggregateCollectionGroupCounts(AiToolGeneration, 'master', match, groupField),
+      aggregateCollectionGroupCounts(AIGeneratorRecord, 'legacy', match, groupField),
+    ]);
+    return mergeGroupCountRows(masterGroups, legacyGroups, groupField);
+  });
+}
+
+async function getCombinedMetaStats(match = {}) {
+  const cacheKey = `meta:${JSON.stringify(match)}`;
+  return withAggregateCache(cacheKey, async () => {
+    const [toolGroups, masterTopics, legacyTopics] = await Promise.all([
+      aggregateCombinedGroupCounts(match, 'toolName'),
+      AiToolGeneration.distinct('topic', buildMasterMongoFilter(match)),
+      AIGeneratorRecord.distinct('topicName', buildLegacyMongoFilter(match)),
+    ]);
+
+    const total = toolGroups.reduce((sum, item) => sum + item.count, 0);
+    const topicsCount = new Set(
+      [...masterTopics, ...legacyTopics]
+        .map((topic) => String(topic || '').trim())
+        .filter((topic) => topic.length > 0),
+    ).size;
+
+    return { total, topicsCount, toolGroups };
+  });
+}
+
+function clearHierarchyCache() {
+  aggregateCache.clear();
+}
+
+/**
+ * Single source of truth: all AI Tool Data + Generator + PDF master rows live in aitoolgenerations.
+ */
+async function loadCombinedRecords(match = {}) {
   const [rows, legacyGeneratorRows] = await Promise.all([
-    AiToolGeneration.find(mongoFilter)
-      .select(
-        'toolName toolDisplayName sourceType classLabel subject topic subtopic content generatedContent createdAt metadata pdfFileUrl pdfFileName status',
-      )
-      .lean(),
-    AIGeneratorRecord.find({
-      ...(match.toolName ? { toolSlug: match.toolName } : {}),
-      ...('classLabel' in match ? { className: match.classLabel ?? '' } : {}),
-      ...('board' in match ? { board: boardMongoMatch(match.board ?? '') } : {}),
-      ...('subject' in match ? { subjectName: match.subject ?? '' } : {}),
-      ...('topic' in match ? { topicName: match.topic ?? '' } : {}),
-      ...('subtopic' in match ? { subtopicName: match.subtopic ?? '' } : {}),
-    }).lean(),
+    AiToolGeneration.find(buildMasterMongoFilter(match)).select(FULL_RECORD_FIELDS_MASTER).lean(),
+    AIGeneratorRecord.find(buildLegacyMongoFilter(match)).select(FULL_RECORD_FIELDS_LEGACY).lean(),
   ]);
 
   const masterRows = rows.map((d) => {
@@ -131,65 +245,58 @@ export const listAiToolChildren = async (req, res) => {
     if ('subject' in q) match.subject = q.subject ?? '';
     if ('topic' in q) match.topic = q.topic ?? '';
     if ('subtopic' in q) match.subtopic = q.subtopic ?? '';
-    const rows = await loadCombinedRecords(match);
-    const countBy = (key) => {
-      const m = new Map();
-      for (const r of rows) {
-        const v = r[key] ?? '';
-        if (key === 'toolName' && isDeprecatedAiToolIdentifier(v)) continue;
-        m.set(v, (m.get(v) || 0) + 1);
-      }
-      return Array.from(m.entries())
-        .sort((a, b) => String(a[0]).localeCompare(String(b[0])))
-        .map(([value, count]) => ({ value, count }));
-    };
 
     if (!('toolName' in q)) {
+      const items = await aggregateCombinedGroupCounts(match, 'toolName');
       return res.json({
         success: true,
         data: {
           nextLevel: 'classLabel',
-          items: countBy('toolName'),
+          items,
         },
       });
     }
 
     if (!('classLabel' in q)) {
+      const items = await aggregateCombinedGroupCounts(match, 'classLabel');
       return res.json({
         success: true,
         data: {
           nextLevel: 'subject',
-          items: countBy('classLabel'),
+          items,
         },
       });
     }
 
     if (!('subject' in q)) {
+      const items = await aggregateCombinedGroupCounts(match, 'subject');
       return res.json({
         success: true,
         data: {
           nextLevel: 'topic',
-          items: countBy('subject'),
+          items,
         },
       });
     }
 
     if (!('topic' in q)) {
+      const items = await aggregateCombinedGroupCounts(match, 'topic');
       return res.json({
         success: true,
         data: {
           nextLevel: 'subtopic',
-          items: countBy('topic'),
+          items,
         },
       });
     }
 
     if (!('subtopic' in q)) {
+      const items = await aggregateCombinedGroupCounts(match, 'subtopic');
       return res.json({
         success: true,
         data: {
           nextLevel: 'subtopic',
-          items: countBy('subtopic'),
+          items,
         },
       });
     }
@@ -346,6 +453,7 @@ export const updateAiToolGenerationById = async (req, res) => {
         return res.status(404).json({ success: false, message: 'Not found' });
       }
       const mapped = mapLegacyAiGeneratorToCombined(legacyUpdated);
+      clearHierarchyCache();
       return res.json({ success: true, data: mapped });
     }
 
@@ -370,6 +478,7 @@ export const updateAiToolGenerationById = async (req, res) => {
       }
     }
 
+    clearHierarchyCache();
     return res.json({ success: true, data: updated });
   } catch (error) {
     console.error('updateAiToolGenerationById error:', error);
@@ -389,6 +498,7 @@ export const deleteAiToolGenerationById = async (req, res) => {
       if (!legacyDeleted) {
         return res.status(404).json({ success: false, message: 'Not found' });
       }
+      clearHierarchyCache();
       return res.json({ success: true, message: 'Record deleted' });
     }
 
@@ -418,6 +528,7 @@ export const deleteAiToolGenerationById = async (req, res) => {
       }
     }
 
+    clearHierarchyCache();
     return res.json({ success: true, message: 'Record deleted' });
   } catch (error) {
     console.error('deleteAiToolGenerationById error:', error);
@@ -475,13 +586,30 @@ export const getAiToolGenerationsMeta = async (req, res) => {
   try {
     const match = {};
     if ('board' in req.query) match.board = req.query.board ?? '';
-    const rows = await loadCombinedRecords(match);
-    const total = rows.length;
-    const topicsCount = new Set(
-      rows.map((r) => String(r.topic || '').trim()).filter((x) => x.length > 0),
-    ).size;
+    const { total, topicsCount } = await getCombinedMetaStats(match);
     res.json({ success: true, data: { total, topicsCount } });
   } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+/** Meta + root tool list in one round trip for the Super Admin AI Tool Data page. */
+export const getAiToolGenerationsBootstrap = async (req, res) => {
+  try {
+    const match = {};
+    if ('board' in req.query) match.board = req.query.board ?? '';
+    const { total, topicsCount, toolGroups } = await getCombinedMetaStats(match);
+    res.json({
+      success: true,
+      data: {
+        total,
+        topicsCount,
+        nextLevel: 'classLabel',
+        items: toolGroups,
+      },
+    });
+  } catch (error) {
+    console.error('getAiToolGenerationsBootstrap error:', error);
     res.status(500).json({ success: false, message: error.message });
   }
 };

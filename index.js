@@ -69,6 +69,7 @@ import {
   getAiToolGenerationById,
   exportAiToolGenerationsBundle,
   getAiToolGenerationsMeta,
+  getAiToolGenerationsBootstrap,
   updateAiToolGenerationById,
   deleteAiToolGenerationById,
 } from './controllers/aiToolGenerationsController.js';
@@ -903,6 +904,7 @@ app.get('/api/super-admin/calendar/events', verifyToken, verifySuperAdmin, getCa
 app.post('/api/super-admin/calendar/events', verifyToken, verifySuperAdmin, createCalendarEvent);
 
 // AI tool generations — register on app before /api/super-admin router (avoids 404 if sub-router order/load differs)
+app.get('/api/super-admin/ai-tool-generations/bootstrap', verifyToken, verifySuperAdmin, getAiToolGenerationsBootstrap);
 app.get('/api/super-admin/ai-tool-generations/meta', verifyToken, verifySuperAdmin, getAiToolGenerationsMeta);
 app.get('/api/super-admin/ai-tool-generations/children', verifyToken, verifySuperAdmin, listAiToolChildren);
 app.get('/api/super-admin/ai-tool-generations/records', verifyToken, verifySuperAdmin, listAiToolRecords);
