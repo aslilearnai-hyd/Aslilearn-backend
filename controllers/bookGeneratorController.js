@@ -326,8 +326,7 @@ export async function listBookGeneratorRecords(req, res) {
   if (!ensureSuperAdmin(req, res)) return;
   try {
     const query = buildBookRecordsListQuery(req);
-
-    const records = await AiToolGeneration.find(query).sort({ createdAt: -1 }).limit(2000).lean();
+    const records = await AiToolGeneration.find(query).sort({ createdAt: -1 }).lean();
     const grouped = groupAiGeneratorRecords(records);
     res.json({
       success: true,

@@ -2,6 +2,10 @@ import mongoose from 'mongoose';
 import AiToolTopic from '../models/AiToolTopic.js';
 import { boardMongoMatch, canonicalBoardLabel } from '../utils/board-label.js';
 import {
+  buildAiToolTopicTaxonomyFilter,
+} from '../utils/ai-tool-topic-taxonomy.js';
+import { buildDisplayTopicName } from '../utils/ai-tool-topic-display.js';
+import {
   orderedUniqueSubTopics,
   resolveSortOrderStart,
 } from '../utils/ai-tool-topic-order.js';
@@ -12,62 +16,13 @@ function normalizeText(value) {
   return String(value || '').trim().replace(/\s+/g, ' ');
 }
 
-function buildDisplayTopicName(label, topicName) {
-  const safeLabel = normalizeText(label);
-  const safeTopicName = normalizeText(topicName);
-  if (!safeLabel) return safeTopicName;
-  const prefix = `${safeLabel} - `;
-  return safeTopicName.startsWith(prefix) ? safeTopicName : `${prefix}${safeTopicName}`;
-}
-
-function buildTopicNameMatch(value) {
-  const tn = normalizeText(value);
-  if (!tn) return null;
-  return {
-    $or: [
-      { topicName: tn },
-      {
-        $expr: {
-          $eq: [
-            tn,
-            {
-              $let: {
-                vars: {
-                  label: { $trim: { input: { $ifNull: ['$label', ''] } } },
-                  topic: { $trim: { input: { $ifNull: ['$topicName', ''] } } },
-                },
-                in: {
-                  $cond: {
-                    if: { $eq: ['$$label', ''] },
-                    then: '$$topic',
-                    else: {
-                      $cond: {
-                        if: { $eq: [{ $indexOfCP: ['$$topic', { $concat: ['$$label', ' - '] }] }, 0] },
-                        then: '$$topic',
-                        else: { $concat: ['$$label', ' - ', '$$topic'] },
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          ],
-        },
-      },
-    ],
-  };
-}
-
 function buildFilters(query) {
-  const filter = { isActive: true };
-  if (query.board) filter.board = boardMongoMatch(normalizeText(query.board));
-  if (query.classLabel) filter.classLabel = normalizeText(query.classLabel);
-  if (query.subject) filter.subject = normalizeText(query.subject);
-  const topicMatch = buildTopicNameMatch(query.topicName);
-  if (topicMatch) {
-    if (!filter.$and) filter.$and = [];
-    filter.$and.push(topicMatch);
-  }
+  const filter = buildAiToolTopicTaxonomyFilter({
+    board: query.board,
+    classLabel: query.classLabel,
+    subject: query.subject,
+    topicName: query.topicName,
+  });
   if (query.subTopic) filter.subTopic = normalizeText(query.subTopic);
   if (query.label) filter.label = normalizeText(query.label);
   return filter;

@@ -11,7 +11,9 @@ import {
 } from '../services/gemini-service.js';
 import { boardMongoMatch, canonicalBoardLabel, lockBoardKey, normalizeBoardLabelForGrouping, normalizeClassLabelForLock, resolveClassLabelForAiToolStorage } from '../utils/board-label.js';
 import { applyClassLabelMongoFilter, buildCaseInsensitiveExactFilter } from '../utils/ai-tool-data-match.js';
-import { orderedUniqueSubTopics } from '../utils/ai-tool-topic-order.js';
+import {
+  resolveAiToolTopicTaxonomy,
+} from '../utils/ai-tool-topic-taxonomy.js';
 import {
   getAiGeneratorVariantAngle,
   getAiGeneratorVariantScenario,
@@ -940,28 +942,16 @@ export async function getManagedTopicTaxonomy(req, res) {
     const subject = normalizeText(req.query.subject || req.query.subjectId);
     const topicName = normalizeText(req.query.topicName || req.query.topicId);
 
-    const filter = { isActive: true };
-    if (board) filter.board = boardMongoMatch(board);
-    const classClause = buildClassLabelFilter(classLabel, board);
-    Object.assign(filter, classClause);
-    const subjectFilter = buildCaseInsensitiveExactFilter(subject);
-    const topicFilter = buildCaseInsensitiveExactFilter(topicName);
-    if (subject) filter.subject = subjectFilter || subject;
-    if (topicName) filter.topicName = topicFilter || topicName;
-
-    const rows = await AiToolTopic.find(filter)
-      .select('board classLabel subject label topicName subTopic sortOrder createdAt')
-      .lean();
-
-    const unique = (arr) => [...new Set(arr.filter(Boolean))].sort((a, b) => a.localeCompare(b));
+    const data = await resolveAiToolTopicTaxonomy({
+      board,
+      classLabel,
+      subject,
+      topicName,
+    });
 
     return res.json({
       success: true,
-      data: {
-        topics: unique(rows.map((r) => r.topicName)),
-        subTopics: orderedUniqueSubTopics(rows),
-        labels: unique(rows.map((r) => r.label)),
-      },
+      data,
     });
   } catch (error) {
     console.error('getManagedTopicTaxonomy error:', error);

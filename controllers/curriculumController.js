@@ -2,10 +2,9 @@ import AiToolTopic from '../models/AiToolTopic.js';
 import { boardMongoMatch } from '../utils/board-label.js';
 import {
   applyClassLabelMongoFilter,
-  buildCaseInsensitiveExactFilter,
   normalizeMatchText,
 } from '../utils/ai-tool-data-match.js';
-import { orderedUniqueSubTopics } from '../utils/ai-tool-topic-order.js';
+import { resolveAiToolTopicTaxonomy } from '../utils/ai-tool-topic-taxonomy.js';
 
 function normalizeText(value) {
   return normalizeMatchText(value);
@@ -137,11 +136,8 @@ export const listSubjects = async (req, res) => {
       return res.status(400).json({ success: false, message: 'classId is required' });
     }
 
-    const filter = buildClassLabelFilter(classLabel, board);
-    applyBoardFilter(filter, board);
-
-    const rows = await AiToolTopic.find(filter).select('subject').lean();
-    let subjects = uniqueSorted(rows.map((row) => normalizeText(row.subject)));
+    const managed = await resolveAiToolTopicTaxonomy({ board, classLabel });
+    let subjects = uniqueSorted(managed.subjects);
     if (isIitClassLabel(classLabel, board) && subjects.length === 0) {
       const { getSubjectsForClass } = await import('../services/hardcoded-content-service.js');
       subjects = uniqueSorted(await getSubjectsForClass('IIT-6'));
@@ -170,13 +166,8 @@ export const listTopics = async (req, res) => {
       });
     }
 
-    const subjectFilter = buildCaseInsensitiveExactFilter(subject);
-    const filter = buildClassLabelFilter(classLabel, board);
-    filter.subject = subjectFilter || subject;
-    applyBoardFilter(filter, board);
-
-    const rows = await AiToolTopic.find(filter).select('topicName').lean();
-    let topics = uniqueSortedChapterTopics(rows.map((row) => normalizeText(row.topicName)));
+    const managed = await resolveAiToolTopicTaxonomy({ board, classLabel, subject });
+    let topics = uniqueSortedChapterTopics(managed.topics);
     if (isIitClassLabel(classLabel, board) && topics.length === 0) {
       const { getChaptersForSubject } = await import('../services/hardcoded-content-service.js');
       const chapters = await getChaptersForSubject('IIT-6', subject);
@@ -207,15 +198,13 @@ export const listSubtopics = async (req, res) => {
       });
     }
 
-    const subjectFilter = buildCaseInsensitiveExactFilter(subject);
-    const topicFilter = buildCaseInsensitiveExactFilter(topicName);
-    const filter = buildClassLabelFilter(classLabel, board);
-    filter.subject = subjectFilter || subject;
-    filter.topicName = topicFilter || topicName;
-    applyBoardFilter(filter, board);
-
-    const rows = await AiToolTopic.find(filter).select('subTopic sortOrder createdAt').lean();
-    let subTopics = orderedUniqueSubTopics(rows);
+    const managed = await resolveAiToolTopicTaxonomy({
+      board,
+      classLabel,
+      subject,
+      topicName,
+    });
+    let subTopics = managed.subTopics;
     if (isIitClassLabel(classLabel, board) && subTopics.length === 0) {
       const { getSubtopicsForChapter } = await import('../services/hardcoded-content-service.js');
       subTopics = uniqueSorted(await getSubtopicsForChapter('IIT-6', subject, topicName));
