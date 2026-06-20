@@ -33,9 +33,9 @@ function teacherToolDisplayName(toolType) {
 }
 
 function normalizeClassLabelFromInput(classInput) {
-  if (classInput === 'IIT-6') return 'IIT-6';
   const raw = String(classInput || '').trim();
-  const num = parseInt(raw.replace('Class ', ''), 10);
+  if (raw === 'IIT-6' || raw === 'Class-6-IIT') return 'Class 6';
+  const num = parseInt(raw.replace(/Class\s*/i, ''), 10);
   if (Number.isFinite(num)) return `Class ${num}`;
   return raw;
 }
@@ -382,6 +382,7 @@ export const createTeacherTool = async (req, res) => {
 
     const { normalizedSubject, validSubjectsList } = resolveValidCurriculumSubject(subject, {
       classNumber,
+      board,
     });
 
     if (!normalizedSubject) {
@@ -405,7 +406,7 @@ export const createTeacherTool = async (req, res) => {
     }
     
     const finalSubject = normalizedSubject;
-    const { isIIT6, classNum, classDisplay } = resolveClassDisplay(classNumber);
+    const { classNum, classDisplay } = resolveClassDisplay(classNumber);
 
     const topicForStore = normalizeTopicSub(
       topic !== undefined && topic !== null ? String(topic) : '',
@@ -434,7 +435,9 @@ export const createTeacherTool = async (req, res) => {
       toolName: toolType,
       board:
         String(req.body.board || '').trim() ||
-        (isIIT6 ? 'IIT' : programCtx.curriculumBoard || programCtx.displayBoard || 'CBSE'),
+        programCtx.curriculumBoard ||
+        programCtx.displayBoard ||
+        'CBSE',
       preferLatest: false,
       strictToolMatch: true,
       cursorScope: String(teacherId || ''),
@@ -490,7 +493,7 @@ export const createTeacherTool = async (req, res) => {
             ...(rawData ? { rawData } : {}),
             toolType,
             metadata: {
-              classNumber: isIIT6 ? 'IIT-6' : classNum,
+              classNumber: classNum,
               subject: finalSubject,
               topic: topicForStore,
               ...params,
@@ -573,7 +576,7 @@ export const getGeneratedContent = async (req, res) => {
       topic,
       subtopic: subTopic,
       toolName: toolType,
-      board: String(req.query.board || '').trim() || (classLabel === 'IIT-6' ? 'IIT' : ''),
+      board: String(req.query.board || '').trim(),
       preferLatest: false,
       strictToolMatch: true,
       cursorScope: String(req.userId || req.teacherId || ''),
@@ -796,7 +799,7 @@ export const uploadAndParsePdf = async (req, res) => {
       return res.status(400).json({ success: false, message: 'toolType, classNumber, and subject are required.' });
     }
 
-    const { isIIT6, classNum, classDisplay } = resolveClassDisplay(classNumber);
+    const { classNum, classDisplay } = resolveClassDisplay(classNumber);
     const finalSubject = normalizeTeacherSubjectForValidation(subject);
     const topicForStore = normalizeTopicSub(topic || '');
     const subtopicForStore = normalizeTopicSub(subTopic || '');

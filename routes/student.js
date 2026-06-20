@@ -4744,8 +4744,11 @@ router.post('/ai/tool', async (req, res) => {
     const { toolType, gradeLevel, subject, topic, board, ...params } = req.body;
     const userId = req.userId;
 
-    const { getStudentSchoolProgramContext, validateAiToolBoardAccess, isIitAiToolRequest } =
-      await import('../utils/schoolProgram.js');
+    const {
+      getStudentSchoolProgramContext,
+      validateAiToolBoardAccess,
+      resolveAiToolClassNumberFromRequest,
+    } = await import('../utils/schoolProgram.js');
     const programCtx = await getStudentSchoolProgramContext(userId);
     const boardCheck = validateAiToolBoardAccess(programCtx.isAsliPrepExclusive, {
       board,
@@ -4762,20 +4765,13 @@ router.post('/ai/tool', async (req, res) => {
       });
     }
 
-    // IIT track only when the user explicitly picks IIT board (Asli Prep schools).
-    let classNumber;
-    if (isIitAiToolRequest({ board, gradeLevel })) {
-      classNumber = 'IIT-6';
-    } else {
-      const classNum = parseInt(String(gradeLevel || '').replace('Class ', '').trim(), 10);
-      if (!isNaN(classNum)) {
-        classNumber = classNum;
-      } else {
-        return res.status(400).json({
-          success: false,
-          message: 'Invalid class. Please select a valid class.'
-        });
-      }
+    // Match super-admin storage: always Class N (legacy IIT-6 rows still found via board-aware filters).
+    const classNumber = resolveAiToolClassNumberFromRequest({ board, gradeLevel });
+    if (classNumber == null) {
+      return res.status(400).json({
+        success: false,
+        message: 'Invalid class. Please select a valid class.',
+      });
     }
 
     // Validate required fields
@@ -4826,6 +4822,7 @@ router.post('/ai/tool', async (req, res) => {
     );
     const { normalizedSubject, validSubjectsList } = resolveValidCurriculumSubject(subject, {
       classNumber,
+      board,
     });
 
     if (!normalizedSubject) {
@@ -4849,7 +4846,7 @@ router.post('/ai/tool', async (req, res) => {
 
     // Use normalized subject for processing
     const finalSubject = normalizedSubject;
-    const { isIIT6, classNum, classDisplay } = resolveClassDisplay(classNumber);
+    const { classNum, classDisplay } = resolveClassDisplay(classNumber);
 
     // For tools where topic is optional, pass empty string if not provided
     const topicForFetch = (toolType === 'personalized-revision-planner' || toolType === 'chapter-summary-creator') ? (topic || '') : topic;
@@ -4910,7 +4907,7 @@ router.post('/ai/tool', async (req, res) => {
 
     // Priority 1: Super Admin AI Tool Data (exact class+subject+topic+subtopic) with rotation.
     const lookupBoard =
-      String(req.body.board || '').trim() || (isIIT6 ? 'IIT' : programCtx.curriculumBoard || 'CBSE');
+      String(req.body.board || '').trim() || programCtx.curriculumBoard || 'CBSE';
 
     const { doc: adminDoc, matchType, totalCandidates, selectedIndex } = await fetchRotatingAiToolData({
       classLabel: classDisplay,
@@ -4952,7 +4949,7 @@ router.post('/ai/tool', async (req, res) => {
           ...(rawData ? { rawData } : {}),
           toolType,
           metadata: {
-            classNumber: isIIT6 ? 'IIT-6' : classNum,
+            classNumber: classNum,
             subject: finalSubject,
             topic: topicForFetch || '',
             subTopic: subTopicNormalized,

@@ -46,15 +46,13 @@ export function normalizeClassLabelForLock(raw) {
 
 /**
  * Canonical classLabel for AiToolGeneration rows (student/teacher rotation keys).
- * IIT/NEET Class 6 → IIT-6; CBSE Class 6 → Class 6.
+ * Always "Class N" — legacy IIT-6 / Class-6-IIT inputs normalize to Class 6.
  */
-export function resolveClassLabelForAiToolStorage(className, board) {
+export function resolveClassLabelForAiToolStorage(className, _board) {
   const s = trimBoard(className);
   if (!s) return '';
-  if (s === 'IIT-6' || s === 'Class-6-IIT') return 'IIT-6';
-  const boardKey = lockBoardKey(board);
+  if (s === 'IIT-6' || s === 'Class-6-IIT') return 'Class 6';
   const digits = s.match(/\d+/)?.[0];
-  if (boardKey === 'IIT/NEET' && digits === '6') return 'IIT-6';
   if (digits) return `Class ${digits}`;
   return s;
 }

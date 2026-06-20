@@ -1,6 +1,7 @@
 import User from '../models/User.js';
 import Teacher from '../models/Teacher.js';
 import { resolveUserDisplayBoard } from '../constants/boards.js';
+import { resolveClassLabelForAiToolStorage } from './board-label.js';
 
 /** All content types (Asli Prep exclusive schools). */
 export const ALL_CONTENT_TYPES = ['Video', 'Audio', 'TextBook', 'Workbook', 'Material', 'Homework'];
@@ -69,6 +70,19 @@ export function isIitAiToolRequest({ board, gradeLevel, classNumber } = {}) {
     gl === 'Class-6-IIT' ||
     cn === 'IIT-6'
   );
+}
+
+/**
+ * Resolve class key for AI tool lookups (matches AiToolGeneration.classLabel rules).
+ * Always numeric class (6, 7, …); legacy IIT-6 inputs normalize to 6.
+ */
+export function resolveAiToolClassNumberFromRequest({ board, gradeLevel, classNumber } = {}) {
+  const raw = String(gradeLevel || classNumber || '').trim();
+  if (!raw) return null;
+  const stored = resolveClassLabelForAiToolStorage(raw, board);
+  const digits = stored.match(/\d+/)?.[0] || raw.match(/\d+/)?.[0];
+  if (digits) return parseInt(digits, 10);
+  return null;
 }
 
 export function validateAiToolBoardAccess(isAsliPrepExclusive, params = {}) {

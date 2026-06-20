@@ -16,7 +16,7 @@ export function escapeRegex(value) {
 export function normalizeClassId(classId) {
   const s = normalizeMatchText(classId);
   if (!s) return '';
-  if (s === 'Class-6-IIT' || s === 'IIT-6') return 'IIT-6';
+  if (s === 'Class-6-IIT' || s === 'IIT-6') return 'Class 6';
   const match = s.match(/(\d+)/);
   if (match) return `Class ${match[1]}`;
   return s;
@@ -34,9 +34,7 @@ export function buildClassLabelMongoFilter(classLabel, board = '') {
   if (!normalized) return {};
 
   const boardKey = lockBoardKey(board);
-  const isIitClass6 =
-    normalized === 'IIT-6' ||
-    (boardKey === 'IIT/NEET' && normalized === 'Class 6');
+  const isIitClass6 = boardKey === 'IIT/NEET' && normalized === 'Class 6';
 
   if (isIitClass6) {
     const iitBoardMatch = boardMongoMatch(board || 'IIT');
@@ -154,6 +152,6 @@ export function topicTextMatches(stored, queried) {
 export function resolveLookupBoard(board, classLabel) {
   const b = normalizeMatchText(board);
   if (b) return b;
-  if (normalizeClassId(classLabel) === 'IIT-6') return 'IIT';
+  if (normalizeClassId(classLabel) === 'Class 6') return 'IIT';
   return '';
 }

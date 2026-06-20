@@ -1,6 +1,7 @@
 import { VALID_SUBJECTS } from '../services/hardcoded-content-service.js';
+import { lockBoardKey } from './board-label.js';
 
-const IIT6_SUBJECTS = ['Physics', 'Chemistry', 'Maths', 'Biology'];
+const IIT_TRACK_SUBJECTS = ['Physics', 'Chemistry', 'Maths', 'Biology'];
 
 /** Curriculum dropdowns often use "Mathematics"; stored rows use "Maths". */
 export function normalizeCurriculumSubjectForValidation(subject) {
@@ -41,15 +42,22 @@ export function isIit6ClassNumber(classNumber) {
 
 /** Normalized class label for AI tool lookups and API metadata. */
 export function resolveClassDisplay(classNumber) {
-  const isIIT6 = isIIT6Class(classNumber);
-  const classNum = isIIT6 ? 'IIT-6' : parseInt(String(classNumber), 10);
-  const classDisplay = isIIT6 ? 'IIT-6' : `Class ${classNum}`;
-  return { isIIT6, classNum, classDisplay };
+  if (isIIT6Class(classNumber)) {
+    return { isIIT6: false, classNum: 6, classDisplay: 'Class 6' };
+  }
+  const classNum = parseInt(String(classNumber), 10);
+  const classDisplay = Number.isFinite(classNum) ? `Class ${classNum}` : String(classNumber || '');
+  return { isIIT6: false, classNum, classDisplay };
 }
 
-export function resolveValidCurriculumSubject(subject, { classNumber } = {}) {
-  const isIIT6 = isIIT6Class(classNumber);
-  const validSubjectsList = isIIT6 ? IIT6_SUBJECTS : VALID_SUBJECTS;
+export function usesIitTrackSubjects({ board } = {}) {
+  return lockBoardKey(board) === 'IIT/NEET';
+}
+
+export function resolveValidCurriculumSubject(subject, { classNumber, board } = {}) {
+  const validSubjectsList = usesIitTrackSubjects({ board, classNumber })
+    ? IIT_TRACK_SUBJECTS
+    : VALID_SUBJECTS;
   const subjectForLookup = normalizeCurriculumSubjectForValidation(subject);
   const normalizedSubject = validSubjectsList.find(
     (s) => s.toLowerCase() === subjectForLookup.toLowerCase(),

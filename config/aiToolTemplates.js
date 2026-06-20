@@ -761,7 +761,7 @@ const TEMPLATES = {
     requiredFieldsForPdfExtract: ['title', 'passage'],
     pdfValidationRules: [{ id: 'passage-length', severity: 'warn', description: 'Passage should be substantive for reading practice.' }],
     parserHints: [
-      '13-section Reading Practice Room format; English and Hindi subjects only.',
+      '13-section Reading Practice Room format; English, Hindi, and Telugu subjects only.',
       'Split questions into read_and_recall, think_and_infer, apply_and_connect when PDF section headings indicate type.',
     ],
     regenerationRules: { mergePolicy: 'merge', allowTemplateRegeneration: true },
@@ -939,7 +939,7 @@ const TEMPLATES = {
     requiredFieldsForPdfExtract: ['title', 'passage'],
     pdfValidationRules: [{ id: 'passage-length', severity: 'warn', description: 'Passage should be substantive for classroom use.' }],
     parserHints: [
-      '19-section Story and Passage Creator format; English and Hindi subjects only.',
+      '19-section Story and Passage Creator format; English, Hindi, and Telugu subjects only.',
       'Split questions into read_and_recall, think_and_infer, apply_and_connect when PDF section headings indicate type.',
     ],
     regenerationRules: { mergePolicy: 'merge', allowTemplateRegeneration: true },

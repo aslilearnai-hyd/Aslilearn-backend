@@ -58,7 +58,7 @@ function escapeRegex(value) {
 function normalizeClassLabelForTopics(classLabel) {
   const normalized = normalizeText(classLabel);
   if (!normalized) return '';
-  if (normalized === 'IIT-6' || normalized === 'Class-6-IIT') return 'IIT-6';
+  if (normalized === 'IIT-6' || normalized === 'Class-6-IIT') return 'Class 6';
   const digits = normalized.match(/\d+/)?.[0];
   if (digits) return `Class ${digits}`;
   return normalized;
