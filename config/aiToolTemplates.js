@@ -7,6 +7,7 @@
 
 import { sanitizeStudyGuideTitle } from '../services/study-guide-title-utils.js';
 import { stripMarkdownSyntax } from '../utils/strip-markdown-syntax.js';
+import { buildStoryPassageLanguagePromptBlock } from '../utils/story-passage-subject.js';
 
 /** Pedagogy tags applied across tools (subset per tool in `pedagogyFrameworkTags`). */
 export const UNIVERSAL_PEDAGOGY_TAGS = Object.freeze([
@@ -2467,6 +2468,10 @@ export function buildAiGeneratorStructuredPrompt(toolSlug, params = {}) {
     contextLines.push(
       'STORY RULE: structuredContent MUST include ALL 19 Story and Passage Creator sections. passage must be a complete story (not just the title word). Each question array (read_and_recall, think_and_infer, apply_and_connect) needs at least 2 questions.',
     );
+  }
+  if (slug === 'reading-practice-room' || slug === 'story-passage-creator') {
+    const languageBlock = buildStoryPassageLanguagePromptBlock(String(params.subject || '').trim());
+    if (languageBlock) contextLines.push(languageBlock);
   }
   if (slug === 'flashcard-generator') {
     const targetCards = Math.max(

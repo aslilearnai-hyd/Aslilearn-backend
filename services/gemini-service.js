@@ -36,6 +36,7 @@ import {
   parsePdfExtractResponse,
   validatePdfExtractItems,
 } from './pdf-extract-validation.js';
+import { buildStoryPassageLanguagePromptBlock } from '../utils/story-passage-subject.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -535,6 +536,10 @@ async function callChatCompletions({
 }
 
 function buildTeacherToolPrompt(toolType, params = {}) {
+  const storyLanguageBlock =
+    toolType === 'reading-practice-room' || toolType === 'story-passage-creator'
+      ? buildStoryPassageLanguagePromptBlock(params.subject)
+      : '';
   const common = `You are a strict educational content generator.
 
 Return response ONLY in plain text.
@@ -605,12 +610,12 @@ Create a meaningful homework set with instructions, questions, answer key, and g
 Create a complete Rubrics, Evaluation & Report Card using ALL 10 sections: (1) Assessment Purpose, (2) Competency Assessed, (3) Evaluation Rubric with min 3 criteria and four performance levels each (Excellent, Good, Satisfactory, Needs Improvement), (4) Grading Criteria, (5) Strengths Observed, (6) Areas for Improvement, (7) Teacher Remarks, (8) Actionable Improvement Suggestions, (9) Parent-friendly Feedback, (10) Next-step Remedial / Enrichment Activity.`,
     'reading-practice-room': `${common}
 
-Create a Reading Practice Room set in the subject language using this 13-point format:
-1 Reading Practice Title, 2 Subtopic Link and Prior Knowledge Required, 3 Learning Objectives - Bloom's Taxonomy Aligned, 4 NCF Competency / Learning Outcome Alignment, 5 Vocabulary Warm-up, 6 Passage / Story, 7 Read and Recall Questions, 8 Think and Infer Questions, 9 Apply and Connect Questions, 10 Vocabulary Practice, 11 Answer Key / Suggested Responses, 12 Expected Learning Outcomes, 13 Reflection / Exit Ticket.`,
+Create a Reading Practice Room set using this 13-point format:
+1 Reading Practice Title, 2 Subtopic Link and Prior Knowledge Required, 3 Learning Objectives - Bloom's Taxonomy Aligned, 4 NCF Competency / Learning Outcome Alignment, 5 Vocabulary Warm-up, 6 Passage / Story, 7 Read and Recall Questions, 8 Think and Infer Questions, 9 Apply and Connect Questions, 10 Vocabulary Practice, 11 Answer Key / Suggested Responses, 12 Expected Learning Outcomes, 13 Reflection / Exit Ticket.${storyLanguageBlock ? `\n\n${storyLanguageBlock}` : ''}`,
     'story-passage-creator': `${common}
 
-Create a Story and Passage Creator set in the subject language using this 19-point format:
-1 Story / Passage Title, 2 Topic and Subtopic Connection, 3 Prior Knowledge Required, 4 Learning Objectives – Bloom's Taxonomy Aligned, 5 NCF Competency / Learning Outcome Alignment, 6 Vocabulary Warm-up, 7 Pre-reading Thinking Prompt, 8 Story / Passage Content, 9 Read and Recall Questions, 10 Think and Infer Questions, 11 Apply and Connect Questions, 12 Vocabulary and Grammar Practice, 13 Creative Response Activity, 14 Answer Key / Suggested Responses, 15 Common Mistakes to Avoid, 16 Differentiation Support, 17 Expected Learning Outcomes, 18 Real-life Application, 19 Reflection / Exit Ticket.`,
+Create a Story and Passage Creator set using this 19-point format:
+1 Story / Passage Title, 2 Topic and Subtopic Connection, 3 Prior Knowledge Required, 4 Learning Objectives – Bloom's Taxonomy Aligned, 5 NCF Competency / Learning Outcome Alignment, 6 Vocabulary Warm-up, 7 Pre-reading Thinking Prompt, 8 Story / Passage Content, 9 Read and Recall Questions, 10 Think and Infer Questions, 11 Apply and Connect Questions, 12 Vocabulary and Grammar Practice, 13 Creative Response Activity, 14 Answer Key / Suggested Responses, 15 Common Mistakes to Avoid, 16 Differentiation Support, 17 Expected Learning Outcomes, 18 Real-life Application, 19 Reflection / Exit Ticket.${storyLanguageBlock ? `\n\n${storyLanguageBlock}` : ''}`,
     'short-notes-summaries-maker': `${common}
 
 Create concise revision notes with key ideas, definitions, formulas (if any), and quick reference points.`,
@@ -1118,6 +1123,10 @@ ${PDF_STRICT_JSON_RULES}`;
 
 export function buildSingleItemGenerationPrompt(toolType, itemNumber, itemTitle, templateExamples = [], params = {}) {
   const { classLabel = '', subject = '', topic = '', subtopic = '' } = params;
+  const storyLanguageBlock =
+    toolType === 'reading-practice-room' || toolType === 'story-passage-creator'
+      ? buildStoryPassageLanguagePromptBlock(subject)
+      : '';
   const config = PDF_TOOL_CONFIG[toolType];
   const schemaStr = config ? JSON.stringify(config.schema, null, 2) : '{ "title": "string", "content": "string" }';
   const examplesStr = templateExamples
@@ -1162,6 +1171,7 @@ CONTEXT:
 - Topic: ${topic}
 - Subtopic: ${subtopic}
 - Tool Type: ${toolType}
+${storyLanguageBlock ? `\n${storyLanguageBlock}` : ''}
 
 TASK:
 Generate ONE complete item.

@@ -2,6 +2,7 @@ import geminiService from './gemini-service.js';
 import { getAiToolTemplate } from '../config/aiToolTemplates.js';
 import { buildCanonicalFieldsRetryHint } from '../utils/ai-generator-section-pad.js';
 import { extractJsonObject } from '../utils/ai-json-extract.js';
+import { buildStoryPassageLanguagePromptBlock } from '../utils/story-passage-subject.js';
 
 function deepMergeStructured(base, patch) {
   const out = base && typeof base === 'object' && !Array.isArray(base) ? { ...base } : {};
@@ -42,10 +43,15 @@ export async function repairMissingSectionsViaLlm(
   const topic = String(meta.subTopic || meta.subtopic || meta.topic || 'this subtopic').trim();
   const subject = String(meta.subject || 'Science').trim();
   const hint = buildCanonicalFieldsRetryHint(slug, missing);
+  const storyLanguageBlock =
+    slug === 'reading-practice-room' || slug === 'story-passage-creator'
+      ? buildStoryPassageLanguagePromptBlock(subject)
+      : '';
 
   const prompt = `You are repairing incomplete ${t?.title || slug} JSON for Super Admin AI Generator.
 
 CURRICULUM: ${subject} | Topic: ${meta.topic || ''} | Subtopic: ${topic} | Class: ${meta.classLabel || ''}
+${storyLanguageBlock ? `\n${storyLanguageBlock}\n` : ''}
 
 EXISTING structuredContent (preserve all filled fields — do NOT rewrite them):
 ${JSON.stringify(structured, null, 2)}
