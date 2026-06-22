@@ -44,6 +44,7 @@ import {
   getAiToolGenerationsBootstrap,
   updateAiToolGenerationById,
   deleteAiToolGenerationById,
+  getToolSectionGapSummaryHandler,
 } from '../controllers/aiToolGenerationsController.js';
 import {
   listAiToolTopics,
@@ -431,6 +432,7 @@ router.get('/analytics/realtime', getRealTimeAnalytics);
 
 // AI tool generations (teacher tools — persisted for hierarchy + PDF export)
 router.get('/ai-tool-generations/bootstrap', getAiToolGenerationsBootstrap);
+router.get('/ai-tool-generations/section-gap-summary', getToolSectionGapSummaryHandler);
 router.get('/ai-tool-generations/meta', getAiToolGenerationsMeta);
 router.get('/ai-tool-generations/children', listAiToolChildren);
 router.get('/ai-tool-generations/records', listAiToolRecords);

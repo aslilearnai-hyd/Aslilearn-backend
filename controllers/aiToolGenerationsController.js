@@ -6,6 +6,7 @@ import AiContentEngineChunk from '../models/AiContentEngineChunk.js';
 import { deleteFromConfiguredStorage } from '../services/cloud-storage.js';
 import { boardMongoMatch, canonicalBoardLabel } from '../utils/board-label.js';
 import { isDeprecatedAiToolIdentifier } from '../config/aiToolTemplates.js';
+import { checkRecordSectionGap, getToolSectionGapSummary, getSectionGapSummariesByTool } from '../services/ai-tool-data-audit-service.js';
 
 function previewFromContent(text, n = 220) {
   if (!text || typeof text !== 'string') return '';
@@ -341,21 +342,25 @@ export const listAiToolRecords = async (req, res) => {
     const rows = await loadCombinedRecords(match);
     rows.sort((a, b) => new Date(b.createdAt || 0).getTime() - new Date(a.createdAt || 0).getTime());
     const total = rows.length;
-    const items = rows.slice(skip, skip + lim).map((d) => ({
-      _id: d._id,
-      sourceType: d.sourceType,
-      toolName: d.toolName,
-      toolDisplayName: d.toolDisplayName,
-      classLabel: d.classLabel,
-      board: d.board || '',
-      subject: d.subject,
-      topic: d.topic,
-      subtopic: d.subtopic,
-      createdAt: d.createdAt,
-      preview: d.preview,
-      content: d.content,
-      metadata: d.metadata,
-    }));
+    const items = rows.slice(skip, skip + lim).map((d) => {
+      const sectionGap = checkRecordSectionGap(d);
+      return {
+        _id: d._id,
+        sourceType: d.sourceType,
+        toolName: d.toolName,
+        toolDisplayName: d.toolDisplayName,
+        classLabel: d.classLabel,
+        board: d.board || '',
+        subject: d.subject,
+        topic: d.topic,
+        subtopic: d.subtopic,
+        createdAt: d.createdAt,
+        preview: d.preview,
+        content: d.content,
+        metadata: d.metadata,
+        sectionGap,
+      };
+    });
 
     res.json({
       success: true,
@@ -610,6 +615,30 @@ export const getAiToolGenerationsBootstrap = async (req, res) => {
     });
   } catch (error) {
     console.error('getAiToolGenerationsBootstrap error:', error);
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+/** Section gap summaries — one scan for all tools, or single tool when toolName is set. */
+export const getToolSectionGapSummaryHandler = async (req, res) => {
+  try {
+    const scope = {};
+    if ('board' in req.query) scope.board = req.query.board ?? '';
+    if (req.query.limit) scope.limit = req.query.limit;
+
+    const toolName = String(req.query.toolName || '').trim();
+    const bypassCache = req.query.refresh === '1';
+
+    if (toolName) {
+      scope.toolName = toolName;
+      const data = await getToolSectionGapSummary(scope);
+      return res.json({ success: true, data });
+    }
+
+    const data = await getSectionGapSummariesByTool(scope, { bypassCache });
+    res.json({ success: true, data });
+  } catch (error) {
+    console.error('getToolSectionGapSummaryHandler error:', error);
     res.status(500).json({ success: false, message: error.message });
   }
 };
