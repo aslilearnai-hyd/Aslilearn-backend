@@ -3062,7 +3062,7 @@ function remapLegacyWorksheetSectionName(sectionName) {
 }
 
 function normalizeWorksheetAnswerKeyText(text) {
-  const raw = String(text || '').trim();
+  const raw = stripPdfAnswerKeyMarker(text);
   if (!raw) return '';
   if (raw.includes('\n')) {
     return raw
@@ -3078,6 +3078,17 @@ function normalizeWorksheetAnswerKeyText(text) {
     .filter(Boolean);
   if (parts.length >= 2) return parts.join('\n');
   return compact;
+}
+
+/** Strip internal merge marker; keep only the canonical sectioned answer key block. */
+function stripPdfAnswerKeyMarker(text) {
+  const raw = String(text || '').trim();
+  if (!raw) return '';
+  const parts = raw
+    .split(/\n*---\s*PDF Answer Key\s*---\s*\n?/gi)
+    .map((part) => part.trim())
+    .filter(Boolean);
+  return parts[0] || '';
 }
 
 /** Section 9 — all answers grouped under A, B, C, D, E. */
@@ -3234,10 +3245,8 @@ function polishWorksheetStructuredContent(source = {}) {
 
   const sectionedKey = buildWorksheetAnswerKeyFromSections(sections);
   const pdfAnswerKey = normalizeWorksheetAnswerKeyText(source.answer_key || '');
-  let answerKeyOut = sectionedKey || pdfAnswerKey;
-  if (sectionedKey && pdfAnswerKey && pdfAnswerKey !== sectionedKey) {
-    answerKeyOut = `${sectionedKey}\n\n--- PDF Answer Key ---\n${pdfAnswerKey}`;
-  }
+  // Structured section answers are canonical — never append legacy PDF answer text.
+  const answerKeyOut = sectionedKey || pdfAnswerKey;
 
   return {
     ...source,
