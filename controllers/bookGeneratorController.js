@@ -330,13 +330,21 @@ export async function listBookGeneratorRecords(req, res) {
   if (!ensureSuperAdmin(req, res)) return;
   try {
     const query = buildBookRecordsListQuery(req);
-    const [total, records] = await Promise.all([
-      AiToolGeneration.countDocuments(query),
-      AiToolGeneration.find(query)
-        .select(GENERATOR_LIST_SELECT)
-        .sort({ createdAt: -1 })
-        .lean(),
-    ]);
+    const limitRaw = Number(req.query.limit);
+    const envCap = Number(process.env.BOOK_GENERATOR_RECORDS_LIST_LIMIT || 0);
+    const listLimit =
+      Number.isFinite(limitRaw) && limitRaw > 0
+        ? Math.min(limitRaw, 10000)
+        : Number.isFinite(envCap) && envCap > 0
+          ? Math.min(envCap, 10000)
+          : 0;
+
+    let finder = AiToolGeneration.find(query)
+      .select(`${GENERATOR_LIST_SELECT} content`)
+      .sort({ createdAt: -1 });
+    if (listLimit > 0) finder = finder.limit(listLimit);
+
+    const [total, records] = await Promise.all([AiToolGeneration.countDocuments(query), finder.lean()]);
     const slim = records.map(slimGeneratorRecordForList).filter(Boolean);
     const grouped = groupAiGeneratorRecords(slim);
     res.json({
@@ -344,6 +352,8 @@ export async function listBookGeneratorRecords(req, res) {
       data: {
         grouped,
         total,
+        loadedCount: slim.length,
+        truncated: listLimit > 0 && total > slim.length,
       },
     });
   } catch (err) {

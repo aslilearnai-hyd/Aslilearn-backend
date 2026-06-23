@@ -4,6 +4,7 @@ import {
 } from '../utils/ai-generator-section-pad.js';
 import { isAiGeneratorSectionPadEnabled } from '../utils/ai-generator-batch-config.js';
 import { extractContentUnits } from './ai-generator-content-extractor.js';
+import { isStoryPassagePlaceholderText } from '../utils/story-passage-subject.js';
 
 /** Patterns that indicate scaffold/placeholder content — must never be saved. */
 const PLACEHOLDER_PATTERNS = [
@@ -37,6 +38,7 @@ const MIN_QUESTION_LEN = 10;
 function isPlaceholderText(text) {
   const t = String(text || '').trim();
   if (!t || t.length < MIN_SECTION_TEXT_LEN) return true;
+  if (isStoryPassagePlaceholderText(t)) return true;
   return PLACEHOLDER_PATTERNS.some((re) => re.test(t));
 }
 
@@ -164,6 +166,28 @@ export function runAiGeneratorQualityGate(toolSlug, structured, meta = {}) {
     if (!sectionPadActive && isPlaceholderText(o.text)) {
       errors.push(`Placeholder objective: "${String(o.text).slice(0, 60)}..."`);
       break;
+    }
+  }
+
+  if (['reading-practice-room', 'story-passage-creator'].includes(slug)) {
+    const passage = String(data.passage || data.content || data.story_passage_content || '').trim();
+    if (passage.length < 80 || isStoryPassagePlaceholderText(passage)) {
+      errors.push('Passage/story must be a full reading text (120+ words), not a section label.');
+    }
+    for (const key of [
+      'read_and_recall_questions',
+      'think_and_infer_questions',
+      'apply_and_connect_questions',
+    ]) {
+      const rows = Array.isArray(data[key]) ? data[key] : [];
+      const real = rows.filter((q) => {
+        const text = typeof q === 'string' ? q : String(q?.question || q?.text || q?.prompt || '');
+        return !isStoryPassagePlaceholderText(text) && text.trim().length >= MIN_QUESTION_LEN;
+      });
+      if (real.length < 2) {
+        errors.push(`${key} need at least 2 real questions (not section labels).`);
+        break;
+      }
     }
   }
 

@@ -40,7 +40,10 @@ import {
 } from '../config/bookBasedTools.js';
 import { canonicalBoardLabel, lockBoardKey, normalizeClassLabelForLock, resolveClassLabelForAiToolStorage } from '../utils/board-label.js';
 
-const DEFAULT_CONCURRENCY = Number(process.env.BOOK_GENERATOR_CONCURRENCY || process.env.AI_GENERATOR_BATCH_CONCURRENCY || 3);
+function getBookGeneratorConcurrency() {
+  const n = Number(process.env.BOOK_GENERATOR_CONCURRENCY || process.env.AI_GENERATOR_BATCH_CONCURRENCY || 5);
+  return Number.isFinite(n) && n > 0 ? Math.min(n, 8) : 5;
+}
 
 function finalizeBookStructuredContent(toolSlug, structured, meta) {
   const slug = String(toolSlug || '').trim();
@@ -222,7 +225,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
       }));
       let completedSlots = 0;
 
-      const slotResults = await runPool(slots, DEFAULT_CONCURRENCY, async (slot) => {
+      const slotResults = await runPool(slots, getBookGeneratorConcurrency(), async (slot) => {
         const { batchIndex, variantIndex } = slot;
         const maxAttempts = getMaxAttemptsPerSlot();
         let lastError = 'Unknown error';
@@ -351,15 +354,16 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               ...(teacherId ? { teacherId } : {}),
             });
 
-            await persistGenerationFingerprints(toolSlug, structuredContent, scope, record._id);
-
-            await Book.updateOne(
-              { _id: book._id },
-              {
-                $inc: { 'generationStats.totalGenerations': 1, [`generationStats.toolBreakdown.${toolSlug}`]: 1 },
-                $set: { 'generationStats.lastGeneratedAt': new Date() },
-              },
-            );
+            await Promise.all([
+              persistGenerationFingerprints(toolSlug, structuredContent, scope, record._id),
+              Book.updateOne(
+                { _id: book._id },
+                {
+                  $inc: { 'generationStats.totalGenerations': 1, [`generationStats.toolBreakdown.${toolSlug}`]: 1 },
+                  $set: { 'generationStats.lastGeneratedAt': new Date() },
+                },
+              ),
+            ]);
 
             completedSlots += 1;
             opts.onProgress?.(

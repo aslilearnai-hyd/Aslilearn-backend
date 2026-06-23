@@ -20,6 +20,7 @@ import {
   isVidyaEnabledForTeachers,
 } from './utils/vidyaSchoolAccess.js';
 import { configureMongoDns } from './config/mongo-dns.js';
+import { MONGOOSE_CONNECT_OPTIONS, attachMongooseConnectionListeners } from './config/mongoose-options.js';
 
 // Get current directory for ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -209,11 +210,9 @@ console.log('📦 Database:', dbName);
 
 configureMongoDns();
 
-mongoose.connect(MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoose.connect(MONGO_URI, MONGOOSE_CONNECT_OPTIONS)
 .then(async () => {
+  attachMongooseConnectionListeners(mongoose.connection);
   const dbName = mongoose.connection.db.databaseName;
   console.log('✅ Connected to MongoDB Atlas');
   console.log('📊 Database Name:', dbName);

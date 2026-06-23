@@ -7,6 +7,7 @@ import { deleteFromConfiguredStorage } from '../services/cloud-storage.js';
 import { boardMongoMatch, canonicalBoardLabel } from '../utils/board-label.js';
 import { isDeprecatedAiToolIdentifier } from '../config/aiToolTemplates.js';
 import { checkRecordSectionGap, getToolSectionGapSummary, getSectionGapSummariesByTool } from '../services/ai-tool-data-audit-service.js';
+import { compareAiToolRecordsByVariantThenDate, sortGroupedGeneratorRecords } from '../utils/ai-tool-record-sort.js';
 
 function previewFromContent(text, n = 220) {
   if (!text || typeof text !== 'string') return '';
@@ -340,7 +341,7 @@ export const listAiToolRecords = async (req, res) => {
     const skip = (p - 1) * lim;
 
     const rows = await loadCombinedRecords(match);
-    rows.sort((a, b) => new Date(b.createdAt || 0).getTime() - new Date(a.createdAt || 0).getTime());
+    rows.sort(compareAiToolRecordsByVariantThenDate);
     const total = rows.length;
     const items = rows.slice(skip, skip + lim).map((d) => {
       const sectionGap = checkRecordSectionGap(d);

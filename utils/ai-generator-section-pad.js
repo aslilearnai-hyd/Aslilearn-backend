@@ -575,7 +575,11 @@ export function padAiGeneratorCanonicalSections(toolSlug, data, meta = {}) {
     out = scaffoldQuickAssignmentSections(out, meta);
   }
 
-  if (!validateAllCanonicalToolFields(slug, out).valid) {
+  if (
+    !validateAllCanonicalToolFields(slug, out).valid &&
+    slug !== 'reading-practice-room' &&
+    slug !== 'story-passage-creator'
+  ) {
     out = scaffoldGenericSections(slug, out, meta);
   }
 
@@ -797,6 +801,10 @@ export function buildCanonicalFieldsRetryHint(toolSlug, missingSections = []) {
       ' Include all 13 fields: subtopic_link_prior_knowledge, ncf_competency_alignment, teacher_instructions[], student_instructions[], differentiation, assessment_criteria_rubric[], real_life_application, reflection_exit_ticket.',
     'project-idea-lab':
       ' Include all 14 project fields including safety_care_instructions[], observation_table, creative_output, self_assessment_rubric[].',
+    'reading-practice-room':
+      ' Include ALL 13 sections with REAL content in the output language. passage = full story (120+ words). Never use section headings like "Passage / Story for … in Hindi." as field values. Min 2 real questions in each question array.',
+    'story-passage-creator':
+      ' Include ALL 19 sections with REAL content in the output language. passage = full story (120+ words). Never echo canonical section labels. Min 2 real questions in each question array.',
   };
   return `${base}${extras[slug] || ''}`;
 }

@@ -39,6 +39,7 @@ import {
 } from '../utils/ai-generator-batch-config.js';
 import { runAiGeneratorQualityGate } from './ai-generator-quality-gate.js';
 import { repairMissingSectionsViaLlm } from './ai-generator-section-repair.js';
+import { isStoryPassagePlaceholderText } from '../utils/story-passage-subject.js';
 import {
   dedupeIntraRecordQuestions,
   renumberIntraRecordQuestions,
@@ -1230,7 +1231,9 @@ export function normalizeStoryPassageStructuredContent(raw) {
 
 function storyPassageTextFilled(value) {
   const t = String(value ?? '').trim();
-  return t.length > 8 && !/^(story|passage|title|n\/?a|tbd)$/i.test(t);
+  if (t.length <= 8 || /^(story|passage|title|n\/?a|tbd|reading practice)$/i.test(t)) return false;
+  if (isStoryPassagePlaceholderText(t)) return false;
+  return true;
 }
 
 function storyPassageQuestionCount(rows) {
@@ -1270,8 +1273,8 @@ export function getStoryPassageMissingSections(data) {
     missing.push('6. Vocabulary Warm-up (min 3 words)');
   }
   const passage = String(s.passage || s.content || s.story_passage_content || '').trim();
-  if (passage.length < 80) {
-    missing.push('8. Story / Passage Content (full story required, not title only)');
+  if (passage.length < 80 || isStoryPassagePlaceholderText(passage)) {
+    missing.push('8. Story / Passage Content (full story required, not a section label)');
   }
   if (storyPassageQuestionCount(s.read_and_recall_questions) < 2) {
     missing.push('9. Read and Recall Questions (min 2)');
@@ -1295,6 +1298,66 @@ export function getStoryPassageMissingSections(data) {
 
 export function storyPassageStructuredContentIsComplete(data) {
   return getStoryPassageMissingSections(data).length === 0;
+}
+
+/** @returns {string[]} Missing Reading Practice Room section labels. */
+export function getReadingPracticeMissingSections(data) {
+  const s = normalizeReadingPracticeStructuredContent(data && typeof data === 'object' ? data : {});
+  const missing = [];
+  const scalarChecks = [
+    ['reading_practice_title', '1. Reading Practice Title'],
+    ['subtopic_link_prior_knowledge', '2. Subtopic Link and Prior Knowledge Required'],
+    ['ncf_competency_alignment', '4. NCF Competency / Learning Outcome Alignment'],
+    ['reflection_exit_ticket', '13. Reflection / Exit Ticket'],
+  ];
+  for (const [key, label] of scalarChecks) {
+    if (!storyPassageTextFilled(s[key])) missing.push(label);
+  }
+  if (!Array.isArray(s.learning_objectives) || s.learning_objectives.length < 2) {
+    missing.push("3. Learning Objectives - Bloom's Taxonomy Aligned (min 2)");
+  } else if (s.learning_objectives.some((row) => isStoryPassagePlaceholderText(row))) {
+    missing.push("3. Learning Objectives - Bloom's Taxonomy Aligned (real objectives required)");
+  }
+  if (!Array.isArray(s.vocabulary_warmup) || s.vocabulary_warmup.length < 3) {
+    missing.push('5. Vocabulary Warm-up (min 3 words)');
+  } else if (s.vocabulary_warmup.some((row) => isStoryPassagePlaceholderText(row))) {
+    missing.push('5. Vocabulary Warm-up (real words required)');
+  }
+  const passage = String(s.passage || s.content || '').trim();
+  if (passage.length < 80 || isStoryPassagePlaceholderText(passage)) {
+    missing.push('6. Passage / Story (full passage required, not a section label)');
+  }
+  if (storyPassageQuestionCount(s.read_and_recall_questions) < 2) {
+    missing.push('7. Read and Recall Questions (min 2 real questions)');
+  }
+  if (storyPassageQuestionCount(s.think_and_infer_questions) < 2) {
+    missing.push('8. Think and Infer Questions (min 2 real questions)');
+  }
+  if (storyPassageQuestionCount(s.apply_and_connect_questions) < 2) {
+    missing.push('9. Apply and Connect Questions (min 2 real questions)');
+  }
+  if (!Array.isArray(s.vocabulary_practice) || s.vocabulary_practice.length < 1) {
+    missing.push('10. Vocabulary Practice');
+  } else if (s.vocabulary_practice.some((row) => isStoryPassagePlaceholderText(row))) {
+    missing.push('10. Vocabulary Practice (real tasks required)');
+  }
+  const answers = Array.isArray(s.answer_key_suggested_responses) ? s.answer_key_suggested_responses : [];
+  if (answers.length < 2) {
+    missing.push('11. Answer Key / Suggested Responses (min 2)');
+  } else if (answers.some((row) => isStoryPassagePlaceholderText(row))) {
+    missing.push('11. Answer Key / Suggested Responses (real answers required)');
+  }
+  const outcomes = Array.isArray(s.expected_learning_outcomes) ? s.expected_learning_outcomes : [];
+  if (outcomes.length < 2) {
+    missing.push('12. Expected Learning Outcomes (min 2)');
+  } else if (outcomes.some((row) => isStoryPassagePlaceholderText(row))) {
+    missing.push('12. Expected Learning Outcomes (real outcomes required)');
+  }
+  return missing;
+}
+
+export function readingPracticeStructuredContentIsComplete(data) {
+  return getReadingPracticeMissingSections(data).length === 0;
 }
 
 /** Fill derivable narrative fields from topic context; does not invent full passage. */
@@ -6364,10 +6427,9 @@ const TOOL_STRUCTURED_RULES = {
   },
   'reading-practice-room': {
     allowedTypes: ['Reading Practice', 'Story'],
-    validate: (data) =>
-      String(data?.passage || data?.content || '').trim().length > 0 ||
-      String(data?.reading_practice_title || data?.title || '').trim().length > 0,
-    message: 'Reading practice must include a non-empty passage or title.',
+    validate: (data) => readingPracticeStructuredContentIsComplete(data),
+    message:
+      'Reading Practice Room must include all 13 sections: full passage (120+ words), objectives, vocabulary, three question sets (min 2 each), answer key, and reflection — not section labels as content.',
   },
   'story-passage-creator': {
     allowedTypes: ['Story', 'Reading Practice'],
@@ -7918,6 +7980,8 @@ ${pdfContext}`
         structuredContent = finalizeRubricStructuredContent(structuredContent, meta);
       } else if (slug === 'story-passage-creator') {
         structuredContent = finalizeStoryPassageStructuredContent(structuredContent, meta);
+      } else if (slug === 'reading-practice-room') {
+        structuredContent = normalizeReadingPracticeStructuredContent(structuredContent);
       } else if (slug === 'worksheet-mcq-generator') {
         structuredContent = finalizeWorksheetStructuredContent(structuredContent, meta);
       }
@@ -8006,6 +8070,19 @@ ${pdfContext}`
 
       if (!validation.valid && slug === '__removed-rubrics-tool__') {
         structuredContent = finalizeRubricStructuredContent(structuredContent, meta);
+        validation = validateToolSpecificStructuredContent(
+          slug,
+          structuredContent,
+          contentType,
+          validationSourceText,
+        );
+        if (validation.normalizedStructuredContent) {
+          structuredContent = validation.normalizedStructuredContent;
+        }
+      }
+
+      if (!validation.valid && slug === 'reading-practice-room') {
+        structuredContent = normalizeReadingPracticeStructuredContent(structuredContent);
         validation = validateToolSpecificStructuredContent(
           slug,
           structuredContent,
@@ -8171,7 +8248,11 @@ ${pdfContext}`
           } else if (slug === 'story-passage-creator') {
             const missing = getStoryPassageMissingSections(structuredContent);
             const missingHint = missing.length ? ` Missing: ${missing.join('; ')}.` : '';
-            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return ALL 19 Story and Passage Creator fields. passage MUST be a complete story (120+ words), not just the title. Include at least 2 questions in read_and_recall_questions, think_and_infer_questions, and apply_and_connect_questions.`;
+            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return ALL 19 Story and Passage Creator fields with REAL content in the output language — never section headings like "Passage / Story for … in Hindi." passage MUST be a complete story (120+ words). Include at least 2 real questions in read_and_recall_questions, think_and_infer_questions, and apply_and_connect_questions.`;
+          } else if (slug === 'reading-practice-room') {
+            const missing = getReadingPracticeMissingSections(structuredContent);
+            const missingHint = missing.length ? ` Missing: ${missing.join('; ')}.` : '';
+            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return ALL 13 Reading Practice Room fields with REAL content in the output language — never section headings like "Passage / Story for … in Hindi." passage MUST be a full reading passage (120+ words). Include at least 2 real questions in read_and_recall_questions, think_and_infer_questions, and apply_and_connect_questions. Title must be a creative passage name, not "Reading Practice".`;
           } else if (slug === 'flashcard-generator' || slug === 'my-study-decks') {
             const missing = getFlashcardDeckMissingSections(structuredContent, slug);
             const missingHint = missing.length ? ` Missing: ${missing.join('; ')}.` : '';

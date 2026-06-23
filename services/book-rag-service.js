@@ -50,6 +50,12 @@ export async function deleteEmbedding(bookId) {
  * Vector search over BookChunk collection (MongoDB-stored embeddings).
  * @param {{ query: string, bookId?: string, board?: string, class?: string, subject?: string, chapter?: string, topic?: string, subtopic?: string, topK?: number }}
  */
+function getBookRagCandidateLimit(bookId) {
+  const env = Number(process.env.BOOK_RAG_CANDIDATE_LIMIT);
+  if (Number.isFinite(env) && env > 0) return Math.min(2000, Math.floor(env));
+  return bookId ? 600 : 2000;
+}
+
 export async function searchRelevantChunks({
   query,
   bookId,
@@ -60,6 +66,7 @@ export async function searchRelevantChunks({
   topic,
   subtopic,
   topK = DEFAULT_TOP_K,
+  queryEmbedding: queryEmbeddingInput = null,
 }) {
   const q = String(query || '').trim();
   if (!q) return [];
@@ -73,10 +80,12 @@ export async function searchRelevantChunks({
   if (topic) filter.topic = topic;
   if (subtopic) filter.subtopic = subtopic;
 
-  const { embedding: queryEmbedding } = await generateEmbedding(q);
+  const queryEmbedding = Array.isArray(queryEmbeddingInput) && queryEmbeddingInput.length
+    ? queryEmbeddingInput
+    : (await generateEmbedding(q)).embedding;
   const candidates = await BookChunk.find(filter).select(
     'content embedding embeddingModel chapter topic subtopic chunkIndex bookId subject class board',
-  ).limit(2000).lean();
+  ).limit(getBookRagCandidateLimit(bookId)).lean();
 
   return candidates
     .map((c) => ({
@@ -144,43 +153,43 @@ function buildCurriculumTargetBlock(scope = {}) {
 
 export async function retrieveBookContextForGeneration(scope = {}) {
   const query = buildBookRetrievalQuery(scope);
+  const topK = Number(scope.topK) || DEFAULT_TOP_K;
+  const { embedding: queryEmbedding } = await generateEmbedding(query);
   const classRaw = String(scope.className || scope.classLabel || scope.class || '').trim();
   const classDigits = classRaw.match(/\d+/)?.[0] || '';
   const classCandidates = [...new Set([classRaw, classDigits, classDigits ? `Class ${classDigits}` : ''].filter(Boolean))];
 
-  // Prefer strict curriculum filters; if they return nothing, progressively relax.
-  let chunks = [];
-  for (const classCandidate of classCandidates.length ? classCandidates : ['']) {
-    chunks = await searchRelevantChunks({
+  const searchWith = (extra = {}) =>
+    searchRelevantChunks({
       query,
+      queryEmbedding,
       bookId: scope.bookId,
       board: scope.board,
-      class: classCandidate || undefined,
       subject: scope.subjectName || scope.subject,
       chapter: scope.topicName || scope.topic,
       topic: scope.topicName || scope.topic,
       subtopic: scope.subtopicName || scope.subtopic,
-      topK: Number(scope.topK) || DEFAULT_TOP_K,
+      topK,
+      ...extra,
     });
+
+  // Prefer strict curriculum filters; if they return nothing, progressively relax.
+  let chunks = [];
+  for (const classCandidate of classCandidates.length ? classCandidates : ['']) {
+    chunks = await searchWith({ class: classCandidate || undefined });
     if (chunks.length > 0) break;
   }
 
   if (!chunks.length) {
-    chunks = await searchRelevantChunks({
-      query,
-      bookId: scope.bookId,
-      subject: scope.subjectName || scope.subject,
-      topic: scope.topicName || scope.topic,
-      subtopic: scope.subtopicName || scope.subtopic,
-      topK: Number(scope.topK) || DEFAULT_TOP_K,
-    });
+    chunks = await searchWith();
   }
 
   if (!chunks.length) {
-    chunks = await searchRelevantChunks({
-      query,
-      bookId: scope.bookId,
-      topK: Number(scope.topK) || DEFAULT_TOP_K,
+    chunks = await searchWith({
+      subject: undefined,
+      chapter: undefined,
+      topic: undefined,
+      subtopic: undefined,
     });
   }
 

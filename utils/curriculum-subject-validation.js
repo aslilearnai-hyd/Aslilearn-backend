@@ -54,11 +54,28 @@ export function usesIitTrackSubjects({ board } = {}) {
   return lockBoardKey(board) === 'IIT/NEET';
 }
 
+/** Curriculum dropdowns may list Physics/Chemistry/Biology; stored AI rows use Science (non-IIT). */
+export function isScienceBranchSubject(subject) {
+  const compact = String(subject || '')
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, '');
+  return (
+    compact.startsWith('physics') ||
+    compact.startsWith('chemistry') ||
+    compact.startsWith('biology')
+  );
+}
+
 export function resolveValidCurriculumSubject(subject, { classNumber, board } = {}) {
-  const validSubjectsList = usesIitTrackSubjects({ board, classNumber })
-    ? IIT_TRACK_SUBJECTS
-    : VALID_SUBJECTS;
-  const subjectForLookup = normalizeCurriculumSubjectForValidation(subject);
+  const iitTrack = usesIitTrackSubjects({ board, classNumber });
+  const validSubjectsList = iitTrack ? IIT_TRACK_SUBJECTS : VALID_SUBJECTS;
+  let subjectForLookup = normalizeCurriculumSubjectForValidation(subject);
+
+  if (!iitTrack && isScienceBranchSubject(subjectForLookup)) {
+    subjectForLookup = 'Science';
+  }
+
   const normalizedSubject = validSubjectsList.find(
     (s) => s.toLowerCase() === subjectForLookup.toLowerCase(),
   );

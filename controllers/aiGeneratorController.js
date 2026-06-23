@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { withMongoRetry, isMongoTransientError } from '../utils/mongo-retry.js';
 import PDFDocument from 'pdfkit';
 import AiToolGeneration from '../models/AiToolGeneration.js';
 import AIGeneratorRecord from '../models/AIGeneratorRecord.js';
@@ -11,6 +12,10 @@ import {
 } from '../services/gemini-service.js';
 import { boardMongoMatch, canonicalBoardLabel, lockBoardKey, normalizeBoardLabelForGrouping, normalizeClassLabelForLock, resolveClassLabelForAiToolStorage } from '../utils/board-label.js';
 import { applyClassLabelMongoFilter, buildCaseInsensitiveExactFilter } from '../utils/ai-tool-data-match.js';
+import {
+  compareAiToolRecordsByVariantThenDate,
+  sortGroupedGeneratorRecords,
+} from '../utils/ai-tool-record-sort.js';
 import {
   resolveAiToolTopicTaxonomy,
 } from '../utils/ai-tool-topic-taxonomy.js';
@@ -179,20 +184,65 @@ function isDeprecatedGeneratorRecord(record) {
   );
 }
 
-/** Fields loaded for accordion list views — avoids shipping duplicate `content` blobs. */
+/** Fields loaded for accordion list views — omit full structuredContent (fetch on View). */
 export const GENERATOR_LIST_SELECT =
-  'toolName toolDisplayName board classLabel subject topic subtopic createdAt updatedAt generatedContent metadata.bookTitle metadata.structuredContent metadata.extraParams metadata.generationVariant metadata.formatSource metadata.bookGenerator';
+  'toolName toolDisplayName board classLabel subject topic subtopic createdAt updatedAt generatedContent metadata.bookTitle metadata.extraParams metadata.generationVariant metadata.formatSource metadata.bookGenerator';
 
 const GENERATOR_LIST_PREVIEW_CHARS = 3000;
 
-/** Shrink a generation row for grouped list APIs (structured tools skip full markdown). */
+/** One-line preview for records list (no full structured JSON over the wire). */
+export function buildGeneratorListPreview(record) {
+  if (!record) return '';
+  const meta = record.metadata && typeof record.metadata === 'object' ? record.metadata : {};
+  const structured =
+    meta.structuredContent && typeof meta.structuredContent === 'object'
+      ? meta.structuredContent
+      : null;
+  if (structured) {
+    const title = String(
+      structured.reading_practice_title ||
+        structured.title ||
+        structured.lesson_name ||
+        structured.mock_test_title ||
+        structured.paper_title ||
+        '',
+    ).trim();
+    const passage = String(
+      structured.passage || structured.content || structured.story_passage_content || '',
+    ).trim();
+    if (passage) return passage.slice(0, 320);
+    if (title) return title.slice(0, 200);
+    const firstQuestion = [
+      ...(Array.isArray(structured.read_and_recall_questions) ? structured.read_and_recall_questions : []),
+      ...(Array.isArray(structured.questions) ? structured.questions : []),
+      ...(Array.isArray(structured.sections) ? structured.sections.flatMap((s) => s?.questions || []) : []),
+    ]
+      .map((q) => (typeof q === 'string' ? q : String(q?.question || q?.text || '')).trim())
+      .find(Boolean);
+    if (firstQuestion) return firstQuestion.slice(0, 280);
+    return title || '';
+  }
+  const raw = String(record.generatedContent || record.content || '').trim();
+  return raw.length <= GENERATOR_LIST_PREVIEW_CHARS ? raw : raw.slice(0, GENERATOR_LIST_PREVIEW_CHARS);
+}
+
+/** Shrink a generation row for grouped list APIs (no full structured JSON in list responses). */
 export function slimGeneratorRecordForList(record) {
   if (!record) return null;
   const meta = record.metadata && typeof record.metadata === 'object' ? record.metadata : {};
-  const hasStructured = meta.structuredContent != null;
+  const structured =
+    meta.structuredContent && typeof meta.structuredContent === 'object'
+      ? meta.structuredContent
+      : null;
   const raw = String(record.generatedContent || record.content || '');
   const extraParams =
     meta.extraParams && typeof meta.extraParams === 'object' ? meta.extraParams : undefined;
+
+  const listPreview = structured
+    ? buildGeneratorListPreview(record)
+    : raw.length <= GENERATOR_LIST_PREVIEW_CHARS
+      ? raw
+      : raw.slice(0, GENERATOR_LIST_PREVIEW_CHARS);
 
   return {
     _id: record._id,
@@ -205,14 +255,10 @@ export function slimGeneratorRecordForList(record) {
     subtopic: record.subtopic,
     createdAt: record.createdAt,
     updatedAt: record.updatedAt,
-    generatedContent: hasStructured
-      ? ''
-      : raw.length <= GENERATOR_LIST_PREVIEW_CHARS
-        ? raw
-        : raw.slice(0, GENERATOR_LIST_PREVIEW_CHARS),
+    generatedContent: listPreview,
     metadata: {
       bookTitle: meta.bookTitle,
-      structuredContent: meta.structuredContent,
+      listPreview,
       extraParams,
       bookGenerator: meta.bookGenerator,
       formatSource: meta.formatSource,
@@ -288,7 +334,7 @@ export function groupAiGeneratorRecords(items) {
     });
   }
 
-  return Array.from(toolMap.values());
+  return sortGroupedGeneratorRecords(Array.from(toolMap.values()));
 }
 
 export async function generateAndSaveContent(req, res) {
@@ -590,33 +636,59 @@ export async function getAllGeneratorRecords(req, res) {
       subtopicName,
     });
 
-    const [totalMaster, fromMaster, fromLegacyColl] = await Promise.all([
-      AiToolGeneration.countDocuments(mongoQuery),
-      AiToolGeneration.find(mongoQuery)
-        .select(GENERATOR_LIST_SELECT)
-        .sort({ createdAt: -1 })
-        .lean(),
-      AIGeneratorRecord.find(legacyQuery)
-        .select('toolSlug toolName board className subjectName topicName subtopicName generatedContent createdAt updatedAt')
-        .sort({ createdAt: -1 })
-        .lean(),
-    ]);
+    const limitRaw = Number(req.query.limit);
+    const envCap = Number(process.env.AI_GENERATOR_RECORDS_LIST_LIMIT || 0);
+    const listLimit =
+      Number.isFinite(limitRaw) && limitRaw > 0
+        ? Math.min(limitRaw, 10000)
+        : Number.isFinite(envCap) && envCap > 0
+          ? Math.min(envCap, 10000)
+          : 0;
+
+    const masterQuery = AiToolGeneration.find(mongoQuery)
+      .select(`${GENERATOR_LIST_SELECT} content`)
+      .sort({ createdAt: -1 });
+    const legacyQueryFind = AIGeneratorRecord.find(legacyQuery)
+      .select('toolSlug toolName board className subjectName topicName subtopicName generatedContent createdAt updatedAt')
+      .sort({ createdAt: -1 });
+    if (listLimit > 0) {
+      masterQuery.limit(listLimit);
+      legacyQueryFind.limit(listLimit);
+    }
+
+    const [totalMaster, fromMaster, fromLegacyColl] = await withMongoRetry(() =>
+      Promise.all([
+        AiToolGeneration.countDocuments(mongoQuery),
+        masterQuery.lean(),
+        legacyQueryFind.lean(),
+      ]),
+    );
     const legacyMapped = fromLegacyColl.map(mapLegacyAiGeneratorDoc).filter(Boolean);
     const items = [...fromMaster, ...legacyMapped]
       .map(slimGeneratorRecordForList)
       .filter(Boolean)
-      .sort((a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0));
+      .sort(compareAiToolRecordsByVariantThenDate);
     const grouped = groupAiGeneratorRecords(items);
+    const total = totalMaster + legacyMapped.length;
 
     return res.json({
       success: true,
-      data: { grouped, total: totalMaster + legacyMapped.length },
+      data: {
+        grouped,
+        total,
+        loadedCount: items.length,
+        truncated: listLimit > 0 && total > items.length,
+      },
     });
   } catch (error) {
     console.error('getAllGeneratorRecords error:', error);
-    return res.status(500).json({
+    const transient = isMongoTransientError(error);
+    return res.status(transient ? 503 : 500).json({
       success: false,
-      message: 'Failed to fetch records.',
+      message: transient
+        ? 'Database temporarily unavailable. Please retry in a moment.'
+        : 'Failed to fetch records.',
+      retryable: transient,
     });
   }
 }

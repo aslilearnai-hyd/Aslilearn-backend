@@ -195,6 +195,7 @@ export function isWorksheetPdfChrome(text) {
   const q = String(text || '').replace(/\s+/g, ' ').trim();
   if (!q) return true;
   if (isAnswerKeyLikeQuestion(q)) return true;
+  if (/^---\s*pdf\s+answer\s+key\s*---$/i.test(q)) return true;
   if (/worksheet\s*&\s*mcq/i.test(q)) return true;
   if (/nep[\s-]*ncf/i.test(q)) return true;
   if (/\bpage\s*\d+\b/i.test(q) && !/\?/.test(q) && !/_{2,}/.test(q)) return true;
@@ -240,6 +241,15 @@ export function cleanWorksheetQuestionText(text) {
 export const looksLikeQuestionPrompt = (text) => {
   const t = cleanWorksheetQuestionText(text);
   if (!t || isHeadingLikeLine(t) || isWorksheetPdfChrome(t)) return false;
+  if (
+    /(?:explained in class|core concept from|evidence about|using evidence about|a brief definition using)\b/i.test(
+      t,
+    ) &&
+    !/[?]/.test(t) &&
+    !/_{2,}/.test(t)
+  ) {
+    return false;
+  }
   if (/[?]|_{2,}/.test(t)) return true;
   if (
     /^\s*(what|which|why|how|define|choose|fill|select|state|identify|explain|describe|list|write|convert|find|calculate|solve|express|match|arrange|compare|name|complete|circle|tick|read|show|represent|form|make|give|add|subtract|multiply|divide|place|round|estimate|expand|simplify|design|create|prepare|draw|construct)\b/i.test(

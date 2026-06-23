@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { configureMongoDns } from './mongo-dns.js';
+import { MONGOOSE_CONNECT_OPTIONS, attachMongooseConnectionListeners } from './mongoose-options.js';
 
 // Get current directory for ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -39,27 +40,13 @@ console.log('📦 Database:', dbName);
 const connectDB = async () => {
   try {
     configureMongoDns();
-    const conn = await mongoose.connect(MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    const conn = await mongoose.connect(MONGO_URI, MONGOOSE_CONNECT_OPTIONS);
 
     const connectedDbName = conn.connection.db.databaseName;
     console.log(`✅ MongoDB Connected: ${conn.connection.host}`);
     console.log(`📊 Database Name: ${connectedDbName}`);
     
-    // Set up connection event listeners
-    mongoose.connection.on('error', (err) => {
-      console.error('MongoDB connection error:', err);
-    });
-
-    mongoose.connection.on('disconnected', () => {
-      console.log('MongoDB disconnected');
-    });
-
-    mongoose.connection.on('reconnected', () => {
-      console.log('MongoDB reconnected');
-    });
+    attachMongooseConnectionListeners(mongoose.connection);
 
     // Graceful shutdown
     process.on('SIGINT', async () => {

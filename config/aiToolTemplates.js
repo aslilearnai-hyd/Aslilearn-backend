@@ -7,7 +7,7 @@
 
 import { sanitizeStudyGuideTitle } from '../services/study-guide-title-utils.js';
 import { stripMarkdownSyntax } from '../utils/strip-markdown-syntax.js';
-import { buildStoryPassageLanguagePromptBlock } from '../utils/story-passage-subject.js';
+import { buildStoryPassageLanguagePromptBlock, buildStoryPassageContentPromptBlock } from '../utils/story-passage-subject.js';
 
 /** Pedagogy tags applied across tools (subset per tool in `pedagogyFrameworkTags`). */
 export const UNIVERSAL_PEDAGOGY_TAGS = Object.freeze([
@@ -2472,6 +2472,7 @@ export function buildAiGeneratorStructuredPrompt(toolSlug, params = {}) {
   if (slug === 'reading-practice-room' || slug === 'story-passage-creator') {
     const languageBlock = buildStoryPassageLanguagePromptBlock(String(params.subject || '').trim());
     if (languageBlock) contextLines.push(languageBlock);
+    contextLines.push(buildStoryPassageContentPromptBlock());
   }
   if (slug === 'flashcard-generator') {
     const targetCards = Math.max(

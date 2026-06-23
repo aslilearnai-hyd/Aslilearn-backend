@@ -36,7 +36,7 @@ import {
   parsePdfExtractResponse,
   validatePdfExtractItems,
 } from './pdf-extract-validation.js';
-import { buildStoryPassageLanguagePromptBlock } from '../utils/story-passage-subject.js';
+import { buildStoryPassageLanguagePromptBlock, buildStoryPassageContentPromptBlock } from '../utils/story-passage-subject.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -538,7 +538,9 @@ async function callChatCompletions({
 function buildTeacherToolPrompt(toolType, params = {}) {
   const storyLanguageBlock =
     toolType === 'reading-practice-room' || toolType === 'story-passage-creator'
-      ? buildStoryPassageLanguagePromptBlock(params.subject)
+      ? [buildStoryPassageLanguagePromptBlock(params.subject), buildStoryPassageContentPromptBlock()]
+          .filter(Boolean)
+          .join('\n\n')
       : '';
   const common = `You are a strict educational content generator.
 
@@ -1125,7 +1127,9 @@ export function buildSingleItemGenerationPrompt(toolType, itemNumber, itemTitle,
   const { classLabel = '', subject = '', topic = '', subtopic = '' } = params;
   const storyLanguageBlock =
     toolType === 'reading-practice-room' || toolType === 'story-passage-creator'
-      ? buildStoryPassageLanguagePromptBlock(subject)
+      ? [buildStoryPassageLanguagePromptBlock(subject), buildStoryPassageContentPromptBlock()]
+          .filter(Boolean)
+          .join('\n\n')
       : '';
   const config = PDF_TOOL_CONFIG[toolType];
   const schemaStr = config ? JSON.stringify(config.schema, null, 2) : '{ "title": "string", "content": "string" }';

@@ -2,7 +2,7 @@ import geminiService from './gemini-service.js';
 import { getAiToolTemplate } from '../config/aiToolTemplates.js';
 import { buildCanonicalFieldsRetryHint } from '../utils/ai-generator-section-pad.js';
 import { extractJsonObject } from '../utils/ai-json-extract.js';
-import { buildStoryPassageLanguagePromptBlock } from '../utils/story-passage-subject.js';
+import { buildStoryPassageLanguagePromptBlock, buildStoryPassageContentPromptBlock } from '../utils/story-passage-subject.js';
 
 function deepMergeStructured(base, patch) {
   const out = base && typeof base === 'object' && !Array.isArray(base) ? { ...base } : {};
@@ -45,7 +45,9 @@ export async function repairMissingSectionsViaLlm(
   const hint = buildCanonicalFieldsRetryHint(slug, missing);
   const storyLanguageBlock =
     slug === 'reading-practice-room' || slug === 'story-passage-creator'
-      ? buildStoryPassageLanguagePromptBlock(subject)
+      ? [buildStoryPassageLanguagePromptBlock(subject), buildStoryPassageContentPromptBlock()]
+          .filter(Boolean)
+          .join('\n\n')
       : '';
 
   const prompt = `You are repairing incomplete ${t?.title || slug} JSON for Super Admin AI Generator.
