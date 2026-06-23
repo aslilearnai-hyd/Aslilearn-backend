@@ -1132,12 +1132,7 @@ router.get('/students/performance', async (req, res) => {
           if (dailySessionTime.size > 0) {
             const totalMinutes = Array.from(dailySessionTime.values()).reduce((sum, minutes) => sum + minutes, 0);
             dailyAverageWatchTime = Math.round((totalMinutes / dailySessionTime.size) * 10) / 10; // Round to 1 decimal place
-            console.log(`⏱️ Calculated watch time for student ${student.fullName || student.name}: ${dailyAverageWatchTime} min (${dailySessionTime.size} days)`);
-          } else {
-            console.log(`⏱️ No session data found for student ${student.fullName || student.name}`);
           }
-        } else {
-          console.log(`⏱️ No session records found for student ${student.fullName || student.name}`);
         }
       } catch (error) {
         console.error(`Error calculating daily average watch time for student ${student._id}:`, error);

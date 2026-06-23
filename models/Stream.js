@@ -12,22 +12,24 @@ const streamSchema = new mongoose.Schema({
     trim: true,
     default: ''
   },
-  // Streamer (teacher or admin who is streaming)
+  // Streamer (teacher or admin who is streaming) — optional for super-admin YouTube sessions
   streamer: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User', // Can be admin
-    required: true
+    required: false,
+    default: null,
   },
   streamerTeacher: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Teacher', // Can be teacher
     default: null
   },
-  // Subject for the stream
+  // Subject for the stream (optional for school-wide YouTube live sessions)
   subject: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Subject',
-    required: true
+    required: false,
+    default: null,
   },
   // Board filter
   board: {
@@ -52,7 +54,8 @@ const streamSchema = new mongoose.Schema({
   // Scheduled start time
   scheduledStartTime: {
     type: Date,
-    required: true
+    required: false,
+    default: () => new Date(),
   },
   // Actual start time (when stream actually started)
   actualStartTime: {
@@ -74,6 +77,31 @@ const streamSchema = new mongoose.Schema({
     type: String,
     default: ''
   },
+  // YouTube Live (unlisted) — embed stays inside AsliLearn dashboards
+  youtubeUrl: {
+    type: String,
+    default: '',
+    trim: true,
+  },
+  youtubeEmbedUrl: {
+    type: String,
+    default: '',
+    trim: true,
+  },
+  // Who can see this session inside Edu OTT
+  visibility: {
+    type: String,
+    enum: ['teacher', 'student', 'both'],
+    default: 'both',
+  },
+  // Join click audit trail
+  joinLogs: [{
+    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    userRole: { type: String, trim: true },
+    fullName: { type: String, trim: true, default: '' },
+    email: { type: String, trim: true, default: '' },
+    joinedAt: { type: Date, default: Date.now },
+  }],
   // Stream key/token for authentication
   streamKey: {
     type: String,
@@ -116,6 +144,11 @@ const streamSchema = new mongoose.Schema({
     required: false,
     default: null
   },
+  // Schools that can see this YouTube live session (multi-school)
+  schoolAdminIds: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+  }],
   // Is stream active
   isActive: {
     type: Boolean,
@@ -140,6 +173,8 @@ streamSchema.index({ status: 1 });
 streamSchema.index({ scheduledStartTime: 1 });
 streamSchema.index({ adminId: 1, status: 1 });
 streamSchema.index({ board: 1, subject: 1, status: 1 });
+streamSchema.index({ adminId: 1, visibility: 1, status: 1 });
+streamSchema.index({ schoolAdminIds: 1, visibility: 1, status: 1 });
 
 export default mongoose.model('Stream', streamSchema);
 
