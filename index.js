@@ -2610,8 +2610,10 @@ app.post('/api/admin/subjects', async (req, res) => {
 app.put('/api/admin/subjects/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const { teacher } = req.body;
-    
+    const { teacher, teacherId } = req.body;
+    const hasTeacherUpdate = teacherId !== undefined || teacher !== undefined;
+    const resolvedTeacherId = teacherId ?? teacher ?? null;
+
     const subject = await Subject.findById(id);
     if (!subject) {
       return res.status(404).json({ 
@@ -2620,18 +2622,13 @@ app.put('/api/admin/subjects/:id', async (req, res) => {
       });
     }
 
-    // If teacher is being changed, update both old and new teacher
-    if (subject.teacher && subject.teacher.toString() !== teacher) {
-      // Remove from old teacher
-      await Teacher.findByIdAndUpdate(subject.teacher, { $pull: { subjects: id } });
+    if (hasTeacherUpdate) {
+      const { syncSubjectTeacher } = await import('./utils/subjectClassRelations.js');
+      await syncSubjectTeacher(id, resolvedTeacherId || null, null);
     }
-    
-    if (teacher && subject.teacher?.toString() !== teacher) {
-      // Add to new teacher
-      await Teacher.findByIdAndUpdate(teacher, { $addToSet: { subjects: id } });
-    }
-    
-    const updatedSubject = await Subject.findByIdAndUpdate(id, req.body, { new: true }).populate('teacher', 'fullName email');
+
+    const { teacher: _t, teacherId: _tid, ...rest } = req.body;
+    const updatedSubject = await Subject.findByIdAndUpdate(id, rest, { new: true });
     res.json(updatedSubject);
   } catch (error) {
     console.error('Failed to update subject:', error);
@@ -2683,20 +2680,14 @@ app.post('/api/admin/teachers/:id/assign-subjects', async (req, res) => {
 
     console.log('Teacher found:', teacher.email, 'Current subjects:', teacher.subjects);
 
-    // Update teacher's subjects
+    const previousSubjectIds = (teacher.subjects || []).map((sid) => String(sid));
     teacher.subjects = subjectIds || [];
     await teacher.save();
 
-    console.log('Teacher subjects updated:', teacher.subjects);
+    const { syncTeacherSubjectPrimaryLinks } = await import('./utils/subjectClassRelations.js');
+    await syncTeacherSubjectPrimaryLinks(id, previousSubjectIds, subjectIds || [], teacher.adminId);
 
-    // Update subjects to point to this teacher
-    if (subjectIds && subjectIds.length > 0) {
-      await Subject.updateMany(
-        { _id: { $in: subjectIds } },
-        { teacher: id }
-      );
-      console.log('Subjects updated to point to teacher:', id);
-    }
+    console.log('Teacher subjects updated:', teacher.subjects);
 
     res.json({ message: 'Subjects assigned successfully' });
   } catch (error) {

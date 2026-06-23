@@ -26,6 +26,7 @@ import {
   syncSubjectClassIds,
   syncClassSectionSubjects,
   syncSubjectTeacher,
+  syncTeacherSubjectPrimaryLinks,
   isCatalogStyleSubjectName,
   filterCatalogSubjectsWithCleanSibling,
   dedupeAdminSubjectsByPlainName,
@@ -1904,6 +1905,8 @@ export const assignSubjects = async (req, res) => {
       });
     }
 
+    const previousSubjectIds = (teacher.subjects || []).map((id) => String(id));
+
     const { assignments } = req.body;
     const updatePayload = {
       subjects: subjectIds,
@@ -1929,9 +1932,12 @@ export const assignSubjects = async (req, res) => {
       new: true,
     }).populate('subjects');
 
-    for (const subjectId of subjectIds) {
-      await syncSubjectTeacher(subjectId, teacherId, adminId);
-    }
+    await syncTeacherSubjectPrimaryLinks(
+      teacherId,
+      previousSubjectIds,
+      subjectIds,
+      adminId
+    );
 
     console.log('Updated teacher:', updatedTeacher);
 

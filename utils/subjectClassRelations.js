@@ -99,17 +99,13 @@ export async function syncClassSectionSubjects(classId, subjectIds, adminId) {
 }
 
 /**
- * Assign primary teacher on subject + keep Teacher.subjects in sync.
+ * Link a teacher to a subject without removing other teachers who teach the same subject.
+ * Sets Subject.teacherId (primary) when explicitly assigned from subject management.
  */
 export async function syncSubjectTeacher(subjectId, teacherId, adminId) {
   const subjectOid = new mongoose.Types.ObjectId(String(subjectId));
-  const teacherFilter = { _id: subjectOid };
   if (!teacherId) {
     await Subject.findByIdAndUpdate(subjectOid, { $unset: { teacherId: 1 } });
-    await Teacher.updateMany(
-      adminId ? { adminId, subjects: subjectOid } : { subjects: subjectOid },
-      { $pull: { subjects: subjectOid } }
-    );
     return null;
   }
 
@@ -119,20 +115,55 @@ export async function syncSubjectTeacher(subjectId, teacherId, adminId) {
   if (!teacher) return null;
 
   await Subject.findByIdAndUpdate(subjectOid, { $set: { teacherId: teacher._id } });
-
-  if (adminId) {
-    await Teacher.updateMany(
-      { adminId, subjects: subjectOid, _id: { $ne: teacher._id } },
-      { $pull: { subjects: subjectOid } }
-    );
-  } else {
-    await Teacher.updateMany(
-      { subjects: subjectOid, _id: { $ne: teacher._id } },
-      { $pull: { subjects: subjectOid } }
-    );
-  }
   await Teacher.findByIdAndUpdate(teacher._id, { $addToSet: { subjects: subjectOid } });
   return teacher;
+}
+
+/**
+ * Keep Subject.teacherId (primary) in sync after a teacher's subject list changes.
+ * Does not remove subjects from other teachers.
+ */
+export async function syncTeacherSubjectPrimaryLinks(
+  teacherId,
+  previousSubjectIds,
+  newSubjectIds,
+  adminId
+) {
+  const teacherOid = new mongoose.Types.ObjectId(String(teacherId));
+  const prev = new Set((previousSubjectIds || []).map(String));
+  const next = new Set((newSubjectIds || []).map(String));
+  const removed = [...prev].filter((id) => !next.has(id));
+  const added = [...next].filter((id) => !prev.has(id));
+  const teacherScope = { isActive: true, ...(adminId ? { adminId } : {}) };
+
+  for (const subjectId of removed) {
+    const subjectOid = new mongoose.Types.ObjectId(String(subjectId));
+    await Subject.updateOne(
+      { _id: subjectOid, teacherId: teacherOid },
+      { $unset: { teacherId: 1 } }
+    );
+    const replacement = await Teacher.findOne({
+      ...teacherScope,
+      subjects: subjectOid,
+      _id: { $ne: teacherOid },
+    })
+      .select('_id')
+      .lean();
+    if (replacement) {
+      await Subject.findByIdAndUpdate(subjectOid, { $set: { teacherId: replacement._id } });
+    }
+  }
+
+  for (const subjectId of added) {
+    const subjectOid = new mongoose.Types.ObjectId(String(subjectId));
+    await Subject.updateOne(
+      {
+        _id: subjectOid,
+        $or: [{ teacherId: null }, { teacherId: { $exists: false } }],
+      },
+      { $set: { teacherId: teacherOid } }
+    );
+  }
 }
 
 /**
