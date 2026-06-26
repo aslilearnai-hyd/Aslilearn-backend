@@ -4,7 +4,7 @@ import {
 } from '../utils/ai-generator-section-pad.js';
 import { isAiGeneratorSectionPadEnabled } from '../utils/ai-generator-batch-config.js';
 import { extractContentUnits } from './ai-generator-content-extractor.js';
-import { isStoryPassagePlaceholderText } from '../utils/story-passage-subject.js';
+import { isStoryPassagePlaceholderText, validateStoryPassageLanguageCompliance } from '../utils/story-passage-subject.js';
 
 /** Patterns that indicate scaffold/placeholder content — must never be saved. */
 const PLACEHOLDER_PATTERNS = [
@@ -188,6 +188,11 @@ export function runAiGeneratorQualityGate(toolSlug, structured, meta = {}) {
         errors.push(`${key} need at least 2 real questions (not section labels).`);
         break;
       }
+    }
+
+    const languageCheck = validateStoryPassageLanguageCompliance(meta.subject || data.subject, data);
+    if (!languageCheck.valid) {
+      errors.push(...languageCheck.errors);
     }
   }
 

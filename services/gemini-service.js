@@ -36,7 +36,7 @@ import {
   parsePdfExtractResponse,
   validatePdfExtractItems,
 } from './pdf-extract-validation.js';
-import { buildStoryPassageLanguagePromptBlock, buildStoryPassageContentPromptBlock } from '../utils/story-passage-subject.js';
+import { buildStoryPassageLanguagePromptBlock, buildStoryPassageContentPromptBlock, buildStoryPassageMonolingualOverrideBlock } from '../utils/story-passage-subject.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -538,7 +538,11 @@ async function callChatCompletions({
 function buildTeacherToolPrompt(toolType, params = {}) {
   const storyLanguageBlock =
     toolType === 'reading-practice-room' || toolType === 'story-passage-creator'
-      ? [buildStoryPassageLanguagePromptBlock(params.subject), buildStoryPassageContentPromptBlock()]
+      ? [
+          buildStoryPassageLanguagePromptBlock(params.subject),
+          buildStoryPassageContentPromptBlock(),
+          buildStoryPassageMonolingualOverrideBlock(params.subject),
+        ]
           .filter(Boolean)
           .join('\n\n')
       : '';
@@ -1127,7 +1131,11 @@ export function buildSingleItemGenerationPrompt(toolType, itemNumber, itemTitle,
   const { classLabel = '', subject = '', topic = '', subtopic = '' } = params;
   const storyLanguageBlock =
     toolType === 'reading-practice-room' || toolType === 'story-passage-creator'
-      ? [buildStoryPassageLanguagePromptBlock(subject), buildStoryPassageContentPromptBlock()]
+      ? [
+          buildStoryPassageLanguagePromptBlock(subject),
+          buildStoryPassageContentPromptBlock(),
+          buildStoryPassageMonolingualOverrideBlock(subject),
+        ]
           .filter(Boolean)
           .join('\n\n')
       : '';

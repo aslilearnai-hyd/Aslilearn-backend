@@ -7,7 +7,7 @@
 
 import { sanitizeStudyGuideTitle } from '../services/study-guide-title-utils.js';
 import { stripMarkdownSyntax } from '../utils/strip-markdown-syntax.js';
-import { buildStoryPassageLanguagePromptBlock, buildStoryPassageContentPromptBlock } from '../utils/story-passage-subject.js';
+import { buildStoryPassageLanguagePromptBlock, buildStoryPassageContentPromptBlock, buildStoryPassageMonolingualOverrideBlock } from '../utils/story-passage-subject.js';
 
 /** Pedagogy tags applied across tools (subset per tool in `pedagogyFrameworkTags`). */
 export const UNIVERSAL_PEDAGOGY_TAGS = Object.freeze([
@@ -2470,9 +2470,12 @@ export function buildAiGeneratorStructuredPrompt(toolSlug, params = {}) {
     );
   }
   if (slug === 'reading-practice-room' || slug === 'story-passage-creator') {
-    const languageBlock = buildStoryPassageLanguagePromptBlock(String(params.subject || '').trim());
+    const subjectLabel = String(params.subject || '').trim();
+    const languageBlock = buildStoryPassageLanguagePromptBlock(subjectLabel);
     if (languageBlock) contextLines.push(languageBlock);
     contextLines.push(buildStoryPassageContentPromptBlock());
+    const monolingualBlock = buildStoryPassageMonolingualOverrideBlock(subjectLabel);
+    if (monolingualBlock) contextLines.push(monolingualBlock);
   }
   if (slug === 'flashcard-generator') {
     const targetCards = Math.max(
@@ -2529,6 +2532,10 @@ export function buildAiGeneratorStructuredPrompt(toolSlug, params = {}) {
     }
     if (variantScenario) {
       contextLines.push(`MANDATORY SCENARIO SETTING (use in examples, story, and activities): ${variantScenario}`);
+    }
+    if (slug === 'reading-practice-room' || slug === 'story-passage-creator') {
+      const monolingualBlock = buildStoryPassageMonolingualOverrideBlock(String(params.subject || '').trim());
+      if (monolingualBlock) contextLines.push(monolingualBlock);
     }
     contextLines.push(
       'UNIQUENESS RULES: Change the title/heading, opening hook, examples, question stems, numbers, names, and activity steps. Do NOT reuse the same story, same MCQ options, or same step wording as another variant. The title/heading MUST visibly reflect the creative angle (not a generic title).',

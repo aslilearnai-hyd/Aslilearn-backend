@@ -39,7 +39,12 @@ import {
 } from '../utils/ai-generator-batch-config.js';
 import { runAiGeneratorQualityGate } from './ai-generator-quality-gate.js';
 import { repairMissingSectionsViaLlm } from './ai-generator-section-repair.js';
-import { isStoryPassagePlaceholderText } from '../utils/story-passage-subject.js';
+import {
+  canonicalStoryPassageSubject,
+  isStoryPassagePlaceholderText,
+  validateStoryPassageLanguageCompliance,
+  buildStoryPassageLanguageRetryHint,
+} from '../utils/story-passage-subject.js';
 import {
   dedupeIntraRecordQuestions,
   renumberIntraRecordQuestions,
@@ -1367,6 +1372,12 @@ export function finalizeStoryPassageStructuredContent(structuredContent, meta = 
   );
   const topic = String(meta.subTopic || meta.subtopic || meta.topic || 'the selected subtopic').trim();
   const subject = String(meta.subject || 'the subject').trim();
+  const storyLanguage = canonicalStoryPassageSubject(subject);
+
+  // Never inject English scaffold text for Hindi or Telugu — it pollutes monolingual output.
+  if (storyLanguage === 'Hindi' || storyLanguage === 'Telugu') {
+    return s;
+  }
 
   if (!storyPassageTextFilled(s.topic_subtopic_connection)) {
     s.topic_subtopic_connection = `This story connects to ${topic} within ${subject}, building on the class topic sequence.`;
@@ -7265,6 +7276,22 @@ export function validateToolSpecificStructuredContent(
     };
   }
 
+  if (normalizedTool === 'reading-practice-room' || normalizedTool === 'story-passage-creator') {
+    const languageCheck = validateStoryPassageLanguageCompliance(
+      meta.subject || contentForValidate.subject,
+      contentForValidate,
+    );
+    if (!languageCheck.valid) {
+      return {
+        valid: false,
+        message: languageCheck.errors.join(' '),
+        normalizedType: resolvedType,
+        normalizedStructuredContent: contentForValidate,
+        missingSections: [],
+      };
+    }
+  }
+
   const requireAllFields = isStrictAllFieldsValidation(meta);
   if (isAiGeneratorSectionPadEnabled()) {
     contentForValidate = padAiGeneratorCanonicalSections(normalizedTool, contentForValidate, meta);
@@ -8248,11 +8275,13 @@ ${pdfContext}`
           } else if (slug === 'story-passage-creator') {
             const missing = getStoryPassageMissingSections(structuredContent);
             const missingHint = missing.length ? ` Missing: ${missing.join('; ')}.` : '';
-            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return ALL 19 Story and Passage Creator fields with REAL content in the output language — never section headings like "Passage / Story for … in Hindi." passage MUST be a complete story (120+ words). Include at least 2 real questions in read_and_recall_questions, think_and_infer_questions, and apply_and_connect_questions.`;
+            const languageHint = buildStoryPassageLanguageRetryHint(meta.subject || '');
+            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return ALL 19 Story and Passage Creator fields with REAL content in the output language — never section headings like "Passage / Story for … in Hindi." passage MUST be a complete story (120+ words). Include at least 2 real questions in read_and_recall_questions, think_and_infer_questions, and apply_and_connect_questions.${languageHint ? ` ${languageHint}` : ''}`;
           } else if (slug === 'reading-practice-room') {
             const missing = getReadingPracticeMissingSections(structuredContent);
             const missingHint = missing.length ? ` Missing: ${missing.join('; ')}.` : '';
-            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return ALL 13 Reading Practice Room fields with REAL content in the output language — never section headings like "Passage / Story for … in Hindi." passage MUST be a full reading passage (120+ words). Include at least 2 real questions in read_and_recall_questions, think_and_infer_questions, and apply_and_connect_questions. Title must be a creative passage name, not "Reading Practice".`;
+            const languageHint = buildStoryPassageLanguageRetryHint(meta.subject || '');
+            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return ALL 13 Reading Practice Room fields with REAL content in the output language — never section headings like "Passage / Story for … in Hindi." passage MUST be a full reading passage (120+ words). Include at least 2 real questions in read_and_recall_questions, think_and_infer_questions, and apply_and_connect_questions. Title must be a creative passage name, not "Reading Practice".${languageHint ? ` ${languageHint}` : ''}`;
           } else if (slug === 'flashcard-generator' || slug === 'my-study-decks') {
             const missing = getFlashcardDeckMissingSections(structuredContent, slug);
             const missingHint = missing.length ? ` Missing: ${missing.join('; ')}.` : '';

@@ -1215,6 +1215,9 @@ export function validateDashboardAiToolContent(toolSlug, rawContent, options = {
 
   const validationMeta = {
     ...(options.meta && typeof options.meta === 'object' ? options.meta : {}),
+    subject:
+      (options.metadata && typeof options.metadata === 'object' ? options.metadata.subject : undefined) ||
+      (options.meta && typeof options.meta === 'object' ? options.meta.subject : undefined),
     skipWorksheetPad: true,
   };
 
