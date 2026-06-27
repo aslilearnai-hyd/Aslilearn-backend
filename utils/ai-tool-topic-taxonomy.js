@@ -126,16 +126,17 @@ export async function queryAiToolTopicTaxonomy(params = {}) {
   return rows;
 }
 
-/** Prefer board-scoped rows; fall back to class-only when board filter returns nothing. */
+/** Prefer board-scoped rows; try board label aliases only — never drop board filter. */
 export async function resolveAiToolTopicTaxonomy(params = {}) {
   const board = normalizeMatchText(params.board);
   let rows = await queryAiToolTopicTaxonomy(params);
   if (rows.length === 0 && board) {
-    rows = await queryAiToolTopicTaxonomy({ ...params, board: '' });
-  }
-  if (rows.length === 0 && board) {
-    // Some rows store full board labels like "IIT / NEET" while UI sends "IIT".
-    rows = await queryAiToolTopicTaxonomy({ ...params, board: 'IIT / NEET' });
+    const compact = board.toUpperCase().replace(/[\s/\\-]+/g, '');
+    if (compact.includes('IIT') || compact.includes('NEET') || compact.includes('JEE')) {
+      rows = await queryAiToolTopicTaxonomy({ ...params, board: 'IIT / NEET' });
+    } else if (compact === 'CBSE' || compact === 'CBSC') {
+      rows = await queryAiToolTopicTaxonomy({ ...params, board: 'CBSE' });
+    }
   }
   return formatAiToolTopicTaxonomy(rows);
 }
