@@ -18,11 +18,31 @@ export function isAiGeneratorUltraEconomyEnabled() {
 
 }
 
-/** Never upgrade batch/recovery runs to Flash when cost saver or ultra economy is on. */
+/** When true (default), AI Generator / Book Generator never use gemini-2.5-flash — Flash-Lite only. */
+
+export function isAiGeneratorFlashLiteOnlyEnabled() {
+
+  const raw = String(process.env.AI_GENERATOR_FLASH_LITE_ONLY ?? 'true').trim().toLowerCase();
+
+  return raw !== 'false' && raw !== '0' && raw !== 'off';
+
+}
+
+export function getAiGeneratorGeminiModel() {
+
+  return String(process.env.AI_GENERATOR_GEMINI_MODEL || 'gemini-2.5-flash-lite').trim();
+
+}
+
+/** Never upgrade batch/recovery runs to Flash when cost saver, ultra economy, or flash-lite-only is on. */
 
 export function shouldUseFlashForAiGeneratorRun({ upgradeRequested = false, recoveryPass = false } = {}) {
 
-  if (isAiGeneratorCostSaverEnabled() || isAiGeneratorUltraEconomyEnabled()) return false;
+  if (isAiGeneratorFlashLiteOnlyEnabled() || isAiGeneratorCostSaverEnabled() || isAiGeneratorUltraEconomyEnabled()) {
+
+    return false;
+
+  }
 
   return Boolean(upgradeRequested || recoveryPass);
 
@@ -184,7 +204,7 @@ export function getAiGeneratorValidationMaxAttempts(isBatchVariant = false, reco
 
 export function shouldUpgradeFlashOnDedupRetry(isBatchVariant = false, dedupTry = 1, recovery = false) {
 
-  if (isAiGeneratorCostSaverEnabled()) return false;
+  if (isAiGeneratorFlashLiteOnlyEnabled() || isAiGeneratorCostSaverEnabled()) return false;
 
   if (recovery) return true;
 
@@ -203,7 +223,11 @@ export function shouldUpgradeFlashOnDedupRetry(isBatchVariant = false, dedupTry 
 /** Use Flash from validation attempt 2+ when all sections are required (better completeness). */
 export function shouldUpgradeFlashOnValidationAttempt(isBatchVariant = false, attempt = 1, recovery = false) {
 
-  if (isAiGeneratorCostSaverEnabled() || isAiGeneratorUltraEconomyEnabled()) return false;
+  if (isAiGeneratorFlashLiteOnlyEnabled() || isAiGeneratorCostSaverEnabled() || isAiGeneratorUltraEconomyEnabled()) {
+
+    return false;
+
+  }
 
   if (recovery) return true;
 

@@ -27,9 +27,8 @@ import {
 } from '../constants/ai-generator-variant-angles.js';
 import { acquireGenerationLock, forceReleaseGenerationLock, releaseGenerationLock } from './ai-generator-lock-service.js';
 import {
-  isAiGeneratorCostSaverEnabled,
-  isAiGeneratorUltraEconomyEnabled,
   getBatchSlotMaxAttempts,
+  shouldUseFlashForAiGeneratorRun,
 } from '../utils/ai-generator-batch-config.js';
 import { retrieveBookContextForGeneration, buildBookContextTextForVariant } from './book-rag-service.js';
 import {
@@ -285,10 +284,10 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               extraParams,
               pdfContext,
               historicalPromptBlock: '',
-              upgradeToFlash:
-                !isAiGeneratorCostSaverEnabled() &&
-                !isAiGeneratorUltraEconomyEnabled() &&
-                attempt > 2,
+              upgradeToFlash: shouldUseFlashForAiGeneratorRun({
+                upgradeRequested: attempt > 2,
+                recoveryPass: attempt > 1,
+              }),
               recoveryPass: attempt > 1,
             });
 

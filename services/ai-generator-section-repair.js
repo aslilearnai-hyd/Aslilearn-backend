@@ -1,5 +1,6 @@
 import geminiService from './gemini-service.js';
 import { getAiToolTemplate } from '../config/aiToolTemplates.js';
+import { getAiGeneratorGeminiModel } from '../utils/ai-generator-batch-config.js';
 import { buildCanonicalFieldsRetryHint } from '../utils/ai-generator-section-pad.js';
 import { extractJsonObject } from '../utils/ai-json-extract.js';
 import { buildStoryPassageLanguagePromptBlock, buildStoryPassageContentPromptBlock, buildStoryPassageMonolingualOverrideBlock } from '../utils/story-passage-subject.js';
@@ -80,9 +81,10 @@ Rules:
 - Worksheet tools: ensure Section A MCQs, B Fill blanks, C VSA, D Short answer, E Application each have unique questions.
 - Never use template phrases like "Students explain key ideas about" or "See class notes".`;
 
-  const model = String(process.env.AI_GENERATOR_UPGRADE_MODEL || 'gemini-2.5-flash').trim();
+  const model = getAiGeneratorGeminiModel();
   const raw = await geminiService.generateStructuredContent(prompt, 'json', {
     primaryModel: model,
+    flashLiteOnly: true,
     temperature: 0.65,
     maxTokens: 8000,
   });

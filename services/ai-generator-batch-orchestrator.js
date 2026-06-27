@@ -48,7 +48,7 @@ import {
 
 } from './ai-generator-content-strategy.js';
 
-import { isAiGeneratorCostSaverEnabled, isAiGeneratorUltraEconomyEnabled, getBatchSlotMaxAttempts, shouldEnforceBatchUniquenessRetries } from '../utils/ai-generator-batch-config.js';
+import { getBatchSlotMaxAttempts, shouldEnforceBatchUniquenessRetries, shouldUseFlashForAiGeneratorRun } from '../utils/ai-generator-batch-config.js';
 
 import AiToolGeneration from '../models/AiToolGeneration.js';
 
@@ -371,10 +371,10 @@ export async function generateBatchAndSave(params, opts = {}) {
 
               historicalPromptBlock: historical.promptBlock,
 
-              upgradeToFlash:
-                !isAiGeneratorCostSaverEnabled() &&
-                !isAiGeneratorUltraEconomyEnabled() &&
-                (attempt > 2 || strategy.mode === 'strict_generate'),
+              upgradeToFlash: shouldUseFlashForAiGeneratorRun({
+                upgradeRequested: attempt > 2 || strategy.mode === 'strict_generate',
+                recoveryPass: attempt > 1,
+              }),
 
               recoveryPass: attempt > 1,
 

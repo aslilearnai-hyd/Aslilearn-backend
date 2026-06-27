@@ -31,7 +31,9 @@ import {
 import { stripMarkdownSyntax, deepStripMarkdownValues } from '../utils/strip-markdown-syntax.js';
 import {
   getAiGeneratorValidationMaxAttempts,
+  getAiGeneratorGeminiModel,
   isAiGeneratorCostSaverEnabled,
+  isAiGeneratorFlashLiteOnlyEnabled,
   isAiGeneratorSectionPadEnabled,
   isAiGeneratorUltraEconomyEnabled,
   shouldUpgradeFlashOnValidationAttempt,
@@ -7910,21 +7912,23 @@ ${pdfContext}`
     upgradeRequested: params.upgradeToFlash === true,
     recoveryPass,
   });
-  const batchModel = String(process.env.AI_GENERATOR_GEMINI_MODEL || 'gemini-2.5-flash-lite').trim();
-  const upgradeModel = String(process.env.AI_GENERATOR_UPGRADE_MODEL || 'gemini-2.5-flash').trim();
+  const batchModel = getAiGeneratorGeminiModel();
   const { getAiGeneratorMaxTokens } = await import('../utils/ai-generator-llm-budget.js');
   const maxTokens = getAiGeneratorMaxTokens(slug);
+  const flashLiteOnly = isAiGeneratorFlashLiteOnlyEnabled();
 
   const buildLlmOptions = (attempt) => {
     const useFlash =
-      upgradeToFlash ||
-      shouldUpgradeFlashOnValidationAttempt(isBatchVariant, attempt, recoveryPass);
+      !flashLiteOnly &&
+      (upgradeToFlash ||
+        shouldUpgradeFlashOnValidationAttempt(isBatchVariant, attempt, recoveryPass));
     if (useFlash) {
       return {
         isBatchVariant,
         temperature: 0.55,
-        primaryModel: upgradeModel,
+        primaryModel: batchModel,
         maxTokens,
+        flashLiteOnly,
       };
     }
     if (isBatchVariant) {
@@ -7933,9 +7937,10 @@ ${pdfContext}`
         temperature: 0.88,
         primaryModel: batchModel,
         maxTokens,
+        flashLiteOnly,
       };
     }
-    return { maxTokens };
+    return { maxTokens, primaryModel: batchModel, flashLiteOnly };
   };
 
   const meta = {
@@ -8391,6 +8396,7 @@ ${pdfContext}`
     String(process.env.AI_GENERATOR_REQUIRE_ALL_FIELDS ?? 'true').trim().toLowerCase() !== '0' &&
     String(process.env.AI_GENERATOR_REQUIRE_ALL_FIELDS ?? 'true').trim().toLowerCase() !== 'off';
   const upgradeOnFail =
+    !isAiGeneratorFlashLiteOnlyEnabled() &&
     requireAllFieldsEnv &&
     !isAiGeneratorSectionPadEnabled() &&
     !isAiGeneratorCostSaverEnabled() &&

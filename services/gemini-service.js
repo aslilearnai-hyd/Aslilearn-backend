@@ -310,14 +310,18 @@ async function callChatCompletions({
   preferJson = false, // kept for compatibility with callers
   usageLabel = 'llm',
   primaryModel = '',
+  flashLiteOnly = false,
 }) {
   const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   const contextTokens = Number(process.env.LLM_CONTEXT_TOKENS) || 0;
   const callGeminiFallback = async (normalizedMessages, jsonMode = preferJson) => {
     const { apiKey, modelChain: defaultChain } = getGeminiFallbackConfig();
-    const modelChain = String(primaryModel || '').trim()
-      ? mergeGeminiModelChain(primaryModel, defaultChain.join(','))
-      : defaultChain;
+    const liteModel = String(process.env.AI_GENERATOR_GEMINI_MODEL || 'gemini-2.5-flash-lite').trim();
+    const modelChain = flashLiteOnly
+      ? [liteModel || 'gemini-2.5-flash-lite']
+      : String(primaryModel || '').trim()
+        ? mergeGeminiModelChain(primaryModel, defaultChain.join(','))
+        : defaultChain;
     if (!apiKey) {
       throw new Error('Gemini API key is missing');
     }
@@ -2665,6 +2669,7 @@ Provide: (1) what you see, (2) explanation/solution, (3) key takeaways.`;
       preferJson: wantsJson,
       usageLabel: wantsJson ? 'structured-json' : 'structured-text',
       primaryModel: String(options.primaryModel || '').trim(),
+      flashLiteOnly: options.flashLiteOnly === true,
     });
 
     return wantsJson ? stripCodeFences(text) : text;
