@@ -1382,16 +1382,12 @@ router.post(
         return res.status(400).json({ success: false, message: 'toolType is required' });
       }
       const resolvedToolSlugEarly = String(toolType || '').trim();
-      if (
-        resolvedToolSlugEarly === 'story-passage-creator' ||
-        resolvedToolSlugEarly === 'reading-practice-room'
-      ) {
-        const { isStoryPassageAllowedSubject, STORY_PASSAGE_SUBJECT_ERROR } = await import(
-          '../utils/story-passage-subject.js'
-        );
+      {
+        const { validateAiToolSubjectForTool } = await import('../utils/ai-tool-subject-rules.js');
         const subjectCheck = String(req.body.subjectLabel || req.body.subject || '').trim();
-        if (!isStoryPassageAllowedSubject(subjectCheck)) {
-          return res.status(400).json({ success: false, message: STORY_PASSAGE_SUBJECT_ERROR });
+        const subjectError = validateAiToolSubjectForTool(resolvedToolSlugEarly, subjectCheck);
+        if (subjectError) {
+          return res.status(400).json({ success: false, message: subjectError });
         }
       }
       if (isDeprecatedAiToolIdentifier(toolType)) {

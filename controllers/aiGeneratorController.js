@@ -374,14 +374,13 @@ export async function generateAndSaveContent(req, res) {
       });
     }
 
-    if (toolSlug === 'story-passage-creator' || toolSlug === 'reading-practice-room') {
-      const { canonicalStoryPassageSubject, STORY_PASSAGE_SUBJECT_ERROR } = await import(
-        '../utils/story-passage-subject.js'
-      );
-      if (!canonicalStoryPassageSubject(subjectName)) {
+    {
+      const { validateAiToolSubjectForTool } = await import('../utils/ai-tool-subject-rules.js');
+      const subjectError = validateAiToolSubjectForTool(toolSlug, subjectName);
+      if (subjectError) {
         return res.status(400).json({
           success: false,
-          message: STORY_PASSAGE_SUBJECT_ERROR,
+          message: subjectError,
         });
       }
     }

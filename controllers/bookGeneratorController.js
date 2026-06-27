@@ -70,6 +70,14 @@ export async function generateBookBatch(req, res) {
       return res.status(400).json({ success: false, message: `Unsupported book-based tool: ${slug}` });
     }
 
+    {
+      const { validateAiToolSubjectForTool } = await import('../utils/ai-tool-subject-rules.js');
+      const subjectError = validateAiToolSubjectForTool(slug, subjectName);
+      if (subjectError) {
+        return res.status(400).json({ success: false, message: subjectError });
+      }
+    }
+
     const params = {
       toolSlug: slug,
       bookId,

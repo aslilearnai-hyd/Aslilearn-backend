@@ -392,15 +392,13 @@ export const createTeacherTool = async (req, res) => {
       });
     }
     
-    if (toolType === 'story-passage-creator' || toolType === 'reading-practice-room') {
-      const { canonicalStoryPassageSubject, STORY_PASSAGE_SUBJECT_ERROR } = await import(
-        '../utils/story-passage-subject.js'
-      );
-      const storySubject = canonicalStoryPassageSubject(normalizedSubject || subject);
-      if (!storySubject) {
+    {
+      const { validateAiToolSubjectForTool } = await import('../utils/ai-tool-subject-rules.js');
+      const subjectError = validateAiToolSubjectForTool(toolType, normalizedSubject || subject);
+      if (subjectError) {
         return res.status(400).json({
           success: false,
-          message: STORY_PASSAGE_SUBJECT_ERROR,
+          message: subjectError,
         });
       }
     }
