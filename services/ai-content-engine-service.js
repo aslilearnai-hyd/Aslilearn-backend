@@ -44,10 +44,11 @@ import { repairMissingSectionsViaLlm } from './ai-generator-section-repair.js';
 import {
   canonicalStoryPassageSubject,
   isStoryPassagePlaceholderText,
+  isStoryPassageLanguageToolSlug,
   validateStoryPassageLanguageCompliance,
   buildStoryPassageLanguageRetryHint,
-  isStoryPassageLanguageToolSlug,
   mustEnforceStoryPassageLanguageCompliance,
+  shouldSkipEnglishScaffoldForLanguageSubject,
   shouldBlockCostSaverForStoryLanguage,
   buildStoryPassageLanguagePromptTail,
 } from '../utils/story-passage-subject.js';
@@ -55,6 +56,10 @@ import {
   dedupeIntraRecordQuestions,
   renumberIntraRecordQuestions,
 } from './ai-generator-uniqueness-engine.js';
+
+function skipEnglishStructuredScaffold(meta = {}) {
+  return shouldSkipEnglishScaffoldForLanguageSubject(String(meta?.subject || '').trim());
+}
 
 const TOOL_ALIAS_TO_SLUG = buildToolAliasToSlugMap();
 
@@ -728,6 +733,7 @@ export function finalizeConceptMasteryStructuredContent(structuredContent, meta 
       ? structuredContent
       : {};
   let deck = normalizeConceptMasteryDeckStructuredContent(raw);
+  if (skipEnglishStructuredScaffold(meta)) return deck;
   if (!Array.isArray(deck.concepts) || !deck.concepts.length) {
     const fallback = buildCurriculumBackedConceptFallback(meta);
     deck = normalizeConceptMasteryDeckStructuredContent({ ...deck, ...fallback });
@@ -859,6 +865,7 @@ export function canonicalizeConceptBreakdownExtractedItem(raw) {
 /** AI Generator: flatten concepts[] and default title from subtopic when missing. */
 export function finalizeConceptBreakdownStructuredContent(structuredContent, meta = {}) {
   const s = normalizeConceptBreakdownStructuredContent(structuredContent);
+  if (skipEnglishStructuredScaffold(meta)) return s;
   let concept_title = String(s.concept_title || s.concept_name || '').trim();
   if (!concept_title || concept_title === 'Concept') {
     const fromMeta = String(meta.subTopic || meta.subtopic || meta.topic || '').trim();
@@ -2129,6 +2136,7 @@ export function keyPointsHasMinimumBody(data) {
 /** Ensure formulae/rules are populated before validation and display. */
 export function finalizeKeyPointsStructuredContent(raw, meta = {}) {
   let out = normalizeKeyPointsStructuredContent(raw);
+  if (skipEnglishStructuredScaffold(meta)) return out;
   const title = String(out.topic_title || out.title || '').trim();
   const isGeneric = !title || /^key\s*points$/i.test(title);
   if (isGeneric) {
@@ -2298,6 +2306,7 @@ export function finalizeQuickAssignmentStructuredContent(structuredContent, meta
       ? structuredContent
       : {};
   let out = normalizeQuickAssignmentStructuredContent(raw);
+  if (skipEnglishStructuredScaffold(meta)) return out;
   if (isAiGeneratorSectionPadEnabled()) {
     out = padAiGeneratorCanonicalSections('quick-assignment-builder', out, meta);
     out = normalizeQuickAssignmentStructuredContent(out);
@@ -2783,15 +2792,16 @@ export function finalizeFlashcardDeckStructuredContent(structuredContent, meta =
 
   const topic = String(meta.subTopic || meta.subtopic || meta.topic || 'this subtopic').trim();
   const subject = String(meta.subject || 'Science').trim();
+  const skipEnglishScaffold = mustEnforceStoryPassageLanguageCompliance(subject);
   const bloomLevels = ['Remember', 'Understand', 'Apply', 'Analyze', 'Evaluate', 'Create'];
 
-  if (!String(base.flashcard_deck_title || base.deck_title || base.title || '').trim()) {
+  if (!skipEnglishScaffold && !String(base.flashcard_deck_title || base.deck_title || base.title || '').trim()) {
     base.deck_title = `${topic} — Flashcards`;
     base.title = base.deck_title;
     if (slug === 'flashcard-generator') base.flashcard_deck_title = base.deck_title;
   }
 
-  if (slug === 'flashcard-generator') {
+  if (slug === 'flashcard-generator' && !skipEnglishScaffold) {
     if (!String(base.topic || '').trim()) {
       base.topic = String(meta.topic || meta.subject || subject).trim() || subject;
     }
@@ -2834,7 +2844,7 @@ export function finalizeFlashcardDeckStructuredContent(structuredContent, meta =
     if (!String(base.real_life_connection || '').trim()) {
       base.real_life_connection = `Relate each card to an observation from daily life linked to ${topic}.`;
     }
-  } else {
+  } else if (!skipEnglishScaffold) {
     if (!String(base.subtopic_link_prior_knowledge_required || '').trim()) {
       base.subtopic_link_prior_knowledge_required = `${topic} — prior knowledge: basic ${subject} vocabulary.`;
     }
@@ -2846,17 +2856,20 @@ export function finalizeFlashcardDeckStructuredContent(structuredContent, meta =
     }
   }
 
-  if (!Array.isArray(base.common_mistakes_to_avoid) || !base.common_mistakes_to_avoid.length) {
+  if (!skipEnglishScaffold && (!Array.isArray(base.common_mistakes_to_avoid) || !base.common_mistakes_to_avoid.length)) {
     base.common_mistakes_to_avoid = [`Mixing opinion with evidence when studying ${topic}.`];
   }
-  if (!Array.isArray(base.expected_learning_outcomes) || !base.expected_learning_outcomes.length) {
+  if (!skipEnglishScaffold && (!Array.isArray(base.expected_learning_outcomes) || !base.expected_learning_outcomes.length)) {
     base.expected_learning_outcomes = [`Students recall and explain core ideas about ${topic}.`];
   }
-  if (!String(base.reflection_exit_ticket || '').trim()) {
+  if (!skipEnglishScaffold && !String(base.reflection_exit_ticket || '').trim()) {
     base.reflection_exit_ticket = `Which card was hardest for ${topic}, and why?`;
   }
 
-  if (!Array.isArray(base.learning_objectives) || base.learning_objectives.length < 2) {
+  if (
+    !skipEnglishScaffold &&
+    (!Array.isArray(base.learning_objectives) || base.learning_objectives.length < 2)
+  ) {
     base.learning_objectives = [
       `Define and explain key ideas about ${topic}.`,
       `Apply ${topic} to short real-life examples.`,
@@ -2865,6 +2878,7 @@ export function finalizeFlashcardDeckStructuredContent(structuredContent, meta =
 
   const minCards = slug === 'my-study-decks' ? 10 : 5;
   let cards = Array.isArray(base.cards) ? base.cards.map((c) => normalizeFlashcardCard(c)) : [];
+  if (!skipEnglishScaffold) {
   while (countValidFlashcardRows(cards) < minCards) {
     const objectives = Array.isArray(base.learning_objectives) ? base.learning_objectives : [];
     for (const obj of objectives) {
@@ -2912,13 +2926,14 @@ export function finalizeFlashcardDeckStructuredContent(structuredContent, meta =
       }),
     );
   }
+  }
   base.cards = cards.filter(
     (c) => String(c.front || '').trim().length >= 4 && String(c.back || '').trim().length >= 4,
   );
   base.application_hots_cards = base.cards;
   base.flashcard_set = base.cards;
 
-  if (slug === 'my-study-decks') {
+  if (slug === 'my-study-decks' && !skipEnglishScaffold) {
     const lead = base.cards[0];
     if (!String(base.difficulty_tag_for_each_card || '').trim()) {
       base.difficulty_tag_for_each_card =
@@ -3500,6 +3515,7 @@ export function finalizeWorksheetStructuredContent(structuredContent, meta = {})
       ? structuredContent
       : {},
   );
+  if (skipEnglishStructuredScaffold(meta)) return base;
 
   const scaffoldForSection = (sectionName, qNum) => {
     if (sectionName === WORKSHEET_SECTION_LABELS.A) {
@@ -3916,6 +3932,7 @@ export function chapterSummaryHasMinimumBody(data) {
 /** Repair title and lift study-guide mislabels into chapter summary fields. */
 export function finalizeChapterSummaryStructuredContent(raw, meta = {}) {
   let out = normalizeChapterSummaryStructuredContent(raw);
+  if (skipEnglishStructuredScaffold(meta)) return out;
   const title = String(out.chapter_summary_title || out.title || '').trim();
   const isGeneric = !title || /^chapter\s*summary$/i.test(title);
   if (isGeneric) {
@@ -4052,6 +4069,8 @@ export function finalizePracticeQaStructuredContent(raw, meta = {}) {
     out = { ...out, sections: buildCanonicalPracticeQaSectionList(out.sections) };
   }
 
+  if (skipEnglishStructuredScaffold(meta)) return out;
+
   const title = String(out.title || out.practice_set_title || '').trim();
   const isGeneric = !title || /^practice\s*q\s*&?\s*a$/i.test(title);
   if (isGeneric) {
@@ -4091,6 +4110,7 @@ export function finalizeHomeworkStructuredContent(structuredContent, meta = {}) 
     structuredContent && typeof structuredContent === 'object' && !Array.isArray(structuredContent)
       ? structuredContent
       : {};
+  if (skipEnglishStructuredScaffold(meta)) return raw;
   if (!isAiGeneratorSectionPadEnabled()) return raw;
   return padAiGeneratorCanonicalSections('homework-creator', raw, meta);
 }
@@ -4983,6 +5003,7 @@ export function finalizeExamPaperStructuredContent(structuredContent, meta = {})
   const subject = String(meta.subject || 'Science').trim();
 
   let base = repairExamPaperStructuredContent(source, meta);
+  if (skipEnglishStructuredScaffold(meta)) return base;
 
   const pickArr = (key) => {
     const fromBase = base[key];
@@ -5251,6 +5272,7 @@ export function repairMockTestStructuredContent(raw, meta = {}) {
 /** Ensure mock test has a title and parsed questions before validation. */
 export function finalizeMockTestStructuredContent(raw, meta = {}) {
   let out = repairMockTestStructuredContent(raw, meta);
+  if (skipEnglishStructuredScaffold(meta)) return out;
   if (countMockTestQuestions(out) < 3) {
     const scaffold = buildScaffoldExamQuestions(meta, out.blueprint || '');
     out = normalizeMockTestStructuredContent({ ...out, ...scaffold }, collectMockTestParseableText(out));
@@ -5537,6 +5559,7 @@ export function finalizeRubricStructuredContent(structuredContent, meta = {}) {
   const s = normalizeRubricStructuredContent(
     structuredContent && typeof structuredContent === 'object' ? structuredContent : {},
   );
+  if (skipEnglishStructuredScaffold(meta)) return s;
   const topic = String(meta.subTopic || meta.subtopic || meta.topic || 'this subtopic').trim();
   const completeCriteria = (Array.isArray(s.criteria) ? s.criteria : []).filter(rubricCriterionRowIsComplete);
 
@@ -6114,6 +6137,7 @@ export function finalizeDailyClassPlanStructuredContent(structuredContent, meta 
   };
 
   let base = normalizeDailyClassPlanStructuredContent(mapped);
+  if (skipEnglishStructuredScaffold(meta)) return base;
 
   if (!String(base.day_period_topic_breakup || '').trim()) {
     base.day_period_topic_breakup = `${topic} — period-wise plan for ${subject}.`;
@@ -6978,6 +7002,9 @@ export function finalizeActivityStructuredContent(structuredContent, meta = {}, 
     structuredContent && typeof structuredContent === 'object' && !Array.isArray(structuredContent)
       ? structuredContent
       : {};
+  if (skipEnglishStructuredScaffold(meta)) {
+    return normalizeActivityStructuredContent(raw, toolSlug);
+  }
   return augmentActivityStructuredContent(raw, meta, toolSlug);
 }
 
@@ -7282,10 +7309,11 @@ export function validateToolSpecificStructuredContent(
     };
   }
 
-  if (normalizedTool === 'reading-practice-room' || normalizedTool === 'story-passage-creator') {
+  if (mustEnforceStoryPassageLanguageCompliance(meta.subject || contentForValidate.subject)) {
     const languageCheck = validateStoryPassageLanguageCompliance(
       meta.subject || contentForValidate.subject,
       contentForValidate,
+      { requirePassage: isStoryPassageLanguageToolSlug(normalizedTool) },
     );
     if (!languageCheck.valid) {
       return {
@@ -7303,10 +7331,11 @@ export function validateToolSpecificStructuredContent(
     contentForValidate = padAiGeneratorCanonicalSections(normalizedTool, contentForValidate, meta);
   }
 
-  if (normalizedTool === 'reading-practice-room' || normalizedTool === 'story-passage-creator') {
+  if (mustEnforceStoryPassageLanguageCompliance(meta.subject || contentForValidate.subject)) {
     const postPadLanguageCheck = validateStoryPassageLanguageCompliance(
       meta.subject || contentForValidate.subject,
       contentForValidate,
+      { requirePassage: isStoryPassageLanguageToolSlug(normalizedTool) },
     );
     if (!postPadLanguageCheck.valid) {
       return {
@@ -7915,7 +7944,7 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
   const pdfContext = String(params.pdfContext || '').trim();
   const historicalBlock = String(params.historicalPromptBlock || '').trim();
   const storyLanguageTail =
-    isStoryPassageLanguageToolSlug(slug) && mustEnforceStoryPassageLanguageCompliance(params.subject)
+    mustEnforceStoryPassageLanguageCompliance(params.subject)
       ? buildStoryPassageLanguagePromptTail(params.subject)
       : '';
   const ragLanguageNote =
@@ -7991,9 +8020,8 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
 
   let activePrompt = basePrompt;
   const baseValidationAttempts = getAiGeneratorValidationMaxAttempts(isBatchVariant, recoveryPass);
-  const storyLanguageEnforced =
-    isStoryPassageLanguageToolSlug(slug) && mustEnforceStoryPassageLanguageCompliance(meta.subject);
-  const maxValidationAttempts = storyLanguageEnforced
+  const languageSubjectEnforced = mustEnforceStoryPassageLanguageCompliance(meta.subject);
+  const maxValidationAttempts = languageSubjectEnforced
     ? Math.max(3, baseValidationAttempts)
     : baseValidationAttempts;
 
@@ -8297,7 +8325,8 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
             ? buildCanonicalFieldsRetryHint(slug, missingList)
             : lastValidationMessage;
         if (attempt < maxValidationAttempts) {
-          activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): ${allFieldsHint} Return structuredContent with EVERY canonical field filled — no empty strings, no empty arrays.`;
+          const languageHint = buildStoryPassageLanguageRetryHint(meta.subject || '');
+          activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): ${allFieldsHint} Return structuredContent with EVERY canonical field filled — no empty strings, no empty arrays.${languageHint ? ` ${languageHint}` : ''}`;
           if (slug === 'mock-test-builder') {
             activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. You MUST return structuredContent with mock_test_title and at least 8 questions in section_a..section_e (each with "question" text). Do not return only metadata without question arrays.`;
           } else if (slug === 'smart-qa-practice-generator') {
@@ -8332,7 +8361,8 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
             const missing = getFlashcardDeckMissingSections(structuredContent, slug);
             const missingHint = missing.length ? ` Missing: ${missing.join('; ')}.` : '';
             const targetCards = Number(meta?.cardCount) > 0 ? Number(meta.cardCount) : 10;
-            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return structuredContent with cards[] array (min ${targetCards} items). EVERY card MUST use "front" and "back" keys with non-empty strings — not term/definition only. Include difficulty_tag_for_each_card and memory_hook_quick_tip on each card.`;
+            const languageHint = buildStoryPassageLanguageRetryHint(meta.subject || '');
+            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return structuredContent with cards[] array (min ${targetCards} items). EVERY card MUST use "front" and "back" keys with non-empty strings — not term/definition only. Include difficulty_tag_for_each_card and memory_hook_quick_tip on each card. Write prior_knowledge_required, learning_objectives[], ncf_competency_alignment, and ALL card text in the output language — not English.${languageHint ? ` ${languageHint}` : ''}`;
           } else if (slug === 'daily-class-plan-maker') {
             const missing = getDailyClassPlanMissingSections(structuredContent);
             const missingHint = missing.length ? ` Missing: ${missing.join('; ')}.` : '';

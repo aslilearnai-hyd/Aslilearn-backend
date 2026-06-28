@@ -1,5 +1,6 @@
 import { getAiToolTemplate } from '../config/aiToolTemplates.js';
 import { applyAiGeneratorSectionFallbacks } from './ai-generator-section-fallbacks.js';
+import { mustEnforceStoryPassageLanguageCompliance } from './story-passage-subject.js';
 import { isAiGeneratorCostSaverEnabled } from './ai-generator-batch-config.js';
 
 const MIN_TEXT_LEN = 4;
@@ -559,6 +560,11 @@ export function padAiGeneratorCanonicalSections(toolSlug, data, meta = {}) {
       ? normalizeStructuredArrayFields({ ...data })
       : {};
   out = applyAiGeneratorSectionFallbacks(slug, out);
+
+  const skipEnglishScaffold = mustEnforceStoryPassageLanguageCompliance(meta.subject);
+  if (skipEnglishScaffold) {
+    return normalizeStructuredArrayFields(out);
+  }
 
   if (slug === 'lesson-planner') {
     out = scaffoldLessonPlannerSections(out, meta);

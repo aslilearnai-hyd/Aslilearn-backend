@@ -167,12 +167,13 @@ function walkStoryPassageStringValues(value, out = []) {
  * Reject Hindi/Telugu generations that mix English or the wrong Indic script.
  * @returns {{ valid: boolean, errors: string[] }}
  */
-export function validateStoryPassageLanguageCompliance(subject, structured) {
+export function validateStoryPassageLanguageCompliance(subject, structured, options = {}) {
   const required = storyPassageRequiredScript(subject);
   if (!required || required === 'english') {
     return { valid: true, errors: [] };
   }
 
+  const requirePassage = options.requirePassage !== false;
   const errors = [];
   const label =
     required === 'devanagari'
@@ -180,20 +181,23 @@ export function validateStoryPassageLanguageCompliance(subject, structured) {
       : 'Telugu (Telugu Lipi only)';
 
   const data = structured && typeof structured === 'object' ? structured : {};
-  let passageChecked = false;
-  for (const key of PASSAGE_FIELD_KEYS) {
-    const passage = String(data[key] || '').trim();
-    if (!passage || passage.length < 40) continue;
-    passageChecked = true;
-    if (!textMatchesStoryPassageScript(passage, required, { strict: true })) {
-      errors.push(
-        `${label}: passage/story must be written entirely in ${label} — not English. Found: "${passage.slice(0, 72)}${passage.length > 72 ? '…' : ''}"`,
-      );
-      break;
+
+  if (requirePassage) {
+    let passageChecked = false;
+    for (const key of PASSAGE_FIELD_KEYS) {
+      const passage = String(data[key] || '').trim();
+      if (!passage || passage.length < 40) continue;
+      passageChecked = true;
+      if (!textMatchesStoryPassageScript(passage, required, { strict: true })) {
+        errors.push(
+          `${label}: passage/story must be written entirely in ${label} — not English. Found: "${passage.slice(0, 72)}${passage.length > 72 ? '…' : ''}"`,
+        );
+        break;
+      }
     }
-  }
-  if (!passageChecked) {
-    errors.push(`${label}: passage/story field is missing or too short.`);
+    if (!passageChecked) {
+      errors.push(`${label}: passage/story field is missing or too short.`);
+    }
   }
 
   if (!errors.length) {
@@ -212,9 +216,8 @@ export function validateStoryPassageLanguageCompliance(subject, structured) {
   return { valid: errors.length === 0, errors };
 }
 
-/** Skip English/mixed records when serving Story/Reading + Hindi/Telugu from rotation. */
-export function storyPassageRecordLanguageValid(toolSlug, subject, doc) {
-  if (!isStoryPassageLanguageToolSlug(toolSlug)) return true;
+/** Skip English/mixed records when serving Hindi/Telugu language-subject content from rotation. */
+export function storyPassageRecordLanguageValid(_toolSlug, subject, doc) {
   if (!mustEnforceStoryPassageLanguageCompliance(subject)) return true;
 
   const docSubject = String(subject || doc?.subject || '').trim();
@@ -258,15 +261,45 @@ export function isStoryPassageLanguageToolSlug(toolSlug) {
   return slug === 'reading-practice-room' || slug === 'story-passage-creator';
 }
 
-/** Hindi/Telugu story tools must pass script compliance — never bypass for cost saver. */
+/** Tools where Hindi/Telugu subject requires Devanagari/Lipi in ALL string fields. */
+export function isIndicLanguageOutputToolSlug(toolSlug) {
+  const slug = String(toolSlug || '').trim();
+  return (
+    isStoryPassageLanguageToolSlug(slug) ||
+    slug === 'flashcard-generator' ||
+    slug === 'my-study-decks'
+  );
+}
+
+/** Hindi/Telugu language-class subjects must pass script compliance — never bypass for cost saver. */
 export function mustEnforceStoryPassageLanguageCompliance(subject) {
   const required = storyPassageRequiredScript(subject);
   return required === 'devanagari' || required === 'telugu';
 }
 
-/** True when economy-mode validation bypass would save mixed-language story output. */
-export function shouldBlockCostSaverForStoryLanguage(toolSlug, subject, structured, validationMessage = '') {
-  if (!isStoryPassageLanguageToolSlug(toolSlug)) return false;
+/** Hindi/Telugu language-class subjects — skip English finalize/scaffold injection. */
+export function shouldSkipEnglishScaffoldForLanguageSubject(subject) {
+  return mustEnforceStoryPassageLanguageCompliance(subject);
+}
+
+/** Prompt block for ANY AI tool when SUBJECT is Hindi, Telugu, or English (language class). */
+export function buildUniversalLanguageSubjectPromptBlock(subject) {
+  const canonical = canonicalStoryPassageSubject(subject);
+  if (!canonical) return '';
+  const languageBlock = buildStoryPassageLanguagePromptBlock(subject);
+  const monolingual = buildStoryPassageMonolingualOverrideBlock(subject);
+  const parts = [
+    languageBlock,
+    monolingual,
+    `UNIVERSAL OUTPUT LANGUAGE (all curriculum tools): SUBJECT is ${canonical} — a language class.`,
+    'Write EVERY JSON string value in the output language: titles, instructions, questions, MCQ options, answers, objectives, rubrics, homework, lesson steps, flashcard fronts/backs, project steps, summaries.',
+    'Never use English sentences or English boilerplate when SUBJECT is Hindi or Telugu. JSON property names stay in English.',
+  ].filter(Boolean);
+  return parts.join('\n');
+}
+
+/** True when economy-mode validation bypass would save mixed-language output. */
+export function shouldBlockCostSaverForStoryLanguage(_toolSlug, subject, structured, validationMessage = '') {
   if (!mustEnforceStoryPassageLanguageCompliance(subject)) return false;
   const langCheck = validateStoryPassageLanguageCompliance(subject, structured);
   if (!langCheck.valid) return true;

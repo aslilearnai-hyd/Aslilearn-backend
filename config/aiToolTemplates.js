@@ -7,7 +7,7 @@
 
 import { sanitizeStudyGuideTitle } from '../services/study-guide-title-utils.js';
 import { stripMarkdownSyntax } from '../utils/strip-markdown-syntax.js';
-import { buildStoryPassageLanguagePromptBlock, buildStoryPassageContentPromptBlock, buildStoryPassageMonolingualOverrideBlock } from '../utils/story-passage-subject.js';
+import { buildStoryPassageLanguagePromptBlock, buildStoryPassageContentPromptBlock, buildStoryPassageMonolingualOverrideBlock, buildUniversalLanguageSubjectPromptBlock } from '../utils/story-passage-subject.js';
 
 /** Pedagogy tags applied across tools (subset per tool in `pedagogyFrameworkTags`). */
 export const UNIVERSAL_PEDAGOGY_TAGS = Object.freeze([
@@ -2410,6 +2410,7 @@ export function buildAiGeneratorStructuredPrompt(toolSlug, params = {}) {
   const questionCount = Number(extra.questionCount ?? extra.numberOfQuestions);
   const cardCount = Number(extra.cardCount);
   const duration = String(extra.duration || '').trim();
+  const subjectLabel = String(params.subject || '').trim();
 
   const contextLines = [
     `TOOL: ${t.title}`,
@@ -2420,6 +2421,8 @@ export function buildAiGeneratorStructuredPrompt(toolSlug, params = {}) {
     `TOPIC: ${String(params.topic || '').trim() || '—'}`,
     `SUBTOPIC: ${String(params.subTopic || params.subtopic || '').trim() || '—'}`,
   ];
+  const universalLanguageBlock = buildUniversalLanguageSubjectPromptBlock(subjectLabel);
+  if (universalLanguageBlock) contextLines.push(universalLanguageBlock);
   if (bloomLevel) contextLines.push(`BLOOM / COGNITIVE TARGET: ${bloomLevel}`);
   if (Number.isFinite(questionCount) && questionCount > 0) {
     contextLines.push(`TARGET QUESTION COUNT: ${questionCount}`);
@@ -2470,7 +2473,6 @@ export function buildAiGeneratorStructuredPrompt(toolSlug, params = {}) {
     );
   }
   if (slug === 'reading-practice-room' || slug === 'story-passage-creator') {
-    const subjectLabel = String(params.subject || '').trim();
     const languageBlock = buildStoryPassageLanguagePromptBlock(subjectLabel);
     if (languageBlock) contextLines.push(languageBlock);
     contextLines.push(buildStoryPassageContentPromptBlock());

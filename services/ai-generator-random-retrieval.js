@@ -3,7 +3,6 @@ import { wordJaccardSimilarity } from '../utils/ai-generator-dedup.js';
 import { normalizeScope, scopeQuery } from './ai-generator-fingerprint-service.js';
 import { extractTitleFromStructured } from './ai-generator-content-extractor.js';
 import {
-  isStoryPassageLanguageToolSlug,
   mustEnforceStoryPassageLanguageCompliance,
   storyPassageRecordLanguageValid,
 } from '../utils/story-passage-subject.js';
@@ -96,10 +95,7 @@ export async function selectRandomUniqueRecords(scope, opts = {}) {
     return bScore - aScore;
   });
 
-  if (
-    isStoryPassageLanguageToolSlug(s.toolSlug) &&
-    mustEnforceStoryPassageLanguageCompliance(s.subject)
-  ) {
+  if (mustEnforceStoryPassageLanguageCompliance(s.subject)) {
     pool = pool.filter((rec) => storyPassageRecordLanguageValid(s.toolSlug, s.subject, rec));
   }
 

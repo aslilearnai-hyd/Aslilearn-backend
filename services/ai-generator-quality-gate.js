@@ -4,7 +4,7 @@ import {
 } from '../utils/ai-generator-section-pad.js';
 import { isAiGeneratorSectionPadEnabled } from '../utils/ai-generator-batch-config.js';
 import { extractContentUnits } from './ai-generator-content-extractor.js';
-import { isStoryPassagePlaceholderText, validateStoryPassageLanguageCompliance } from '../utils/story-passage-subject.js';
+import { isStoryPassagePlaceholderText, validateStoryPassageLanguageCompliance, mustEnforceStoryPassageLanguageCompliance } from '../utils/story-passage-subject.js';
 
 /** Patterns that indicate scaffold/placeholder content — must never be saved. */
 const PLACEHOLDER_PATTERNS = [
@@ -189,8 +189,12 @@ export function runAiGeneratorQualityGate(toolSlug, structured, meta = {}) {
         break;
       }
     }
+  }
 
-    const languageCheck = validateStoryPassageLanguageCompliance(meta.subject || data.subject, data);
+  if (mustEnforceStoryPassageLanguageCompliance(meta.subject || data.subject)) {
+    const languageCheck = validateStoryPassageLanguageCompliance(meta.subject || data.subject, data, {
+      requirePassage: ['reading-practice-room', 'story-passage-creator'].includes(slug),
+    });
     if (!languageCheck.valid) {
       errors.push(...languageCheck.errors);
     }
