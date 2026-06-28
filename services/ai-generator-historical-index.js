@@ -17,6 +17,7 @@ import { extractTitleFromStructured } from './ai-generator-content-extractor.js'
 import { collectForbiddenOpenings } from '../utils/ai-generator-dedup.js';
 
 import { computeTopicSaturation } from './ai-generator-topic-saturation.js';
+import { isAiGeneratorCostSaverEnabled } from '../utils/ai-generator-batch-config.js';
 
 
 
@@ -33,21 +34,21 @@ Create entirely new educational material with fresh examples, scenarios, and que
 
 
 function getHistoricalPromptLimit() {
-
+  if (isAiGeneratorCostSaverEnabled()) {
+    const eco = Number(process.env.AI_GENERATOR_HISTORICAL_PROMPT_LIMIT_ECONOMY);
+    if (Number.isFinite(eco) && eco > 0) return Math.min(eco, 10);
+    return 3;
+  }
   const n = Number(process.env.AI_GENERATOR_HISTORICAL_PROMPT_LIMIT);
-
   return Number.isFinite(n) && n > 0 ? Math.min(n, 50) : 20;
-
 }
 
 
 
 function getFingerprintPromptLimit() {
-
+  if (isAiGeneratorCostSaverEnabled()) return 5;
   const n = Number(process.env.AI_GENERATOR_FINGERPRINT_PROMPT_LIMIT);
-
   return Number.isFinite(n) && n > 0 ? Math.min(n, 100) : 20;
-
 }
 
 
@@ -73,8 +74,7 @@ export async function buildHistoricalGenerationContext(scope) {
   const query = scopeQuery(s);
 
   const promptLimit = getHistoricalPromptLimit();
-
-
+  const economyMode = isAiGeneratorCostSaverEnabled();
 
   const recentRecords = await AiToolGeneration.find(query)
 
@@ -136,11 +136,11 @@ export async function buildHistoricalGenerationContext(scope) {
 
 
 
-  const fingerprints = await loadHistoricalFingerprints(s, {
-
-    limit: getFingerprintPromptLimit() * 10,
-
-  });
+  const fingerprints = economyMode
+    ? { title: [], question: [], all: [] }
+    : await loadHistoricalFingerprints(s, {
+        limit: getFingerprintPromptLimit() * 10,
+      });
 
 
 
@@ -206,13 +206,13 @@ export async function buildHistoricalGenerationContext(scope) {
 
   }
 
-  if (objectiveSnippets.length) {
+  if (!economyMode && objectiveSnippets.length) {
 
     summaryLines.push(`Recent objectives (write NEW): ${[...new Set(objectiveSnippets)].slice(0, 8).join(' | ')}`);
 
   }
 
-  if (forbiddenOpenings.length) {
+  if (!economyMode && forbiddenOpenings.length) {
 
     summaryLines.push(`Avoid openings similar to: ${forbiddenOpenings.join(' | ')}`);
 
@@ -220,9 +220,20 @@ export async function buildHistoricalGenerationContext(scope) {
 
 
 
-  summaryLines.push(`Fingerprint index sample size: ${fingerprints.all.length} (of ${saturation.fingerprintCount} total in slot)`);
+  if (!economyMode) {
+    summaryLines.push(`Fingerprint index sample size: ${fingerprints.all.length} (of ${saturation.fingerprintCount} total in slot)`);
+  }
 
 
+
+  const promptBlock = economyMode
+    ? [
+        `Library: ${existingCount} existing record(s). Write original ${s.subject || 'topic'} content — do not reuse prior titles.`,
+        uniqueTitles.length ? `Avoid these recent titles: ${uniqueTitles.slice(0, 3).join(' | ')}` : '',
+      ]
+        .filter(Boolean)
+        .join('\n')
+    : `${ORIGINALITY_PREAMBLE}\n\nHISTORICAL CONTENT INDEX (compact — top ${promptLimit} nearest):\n${summaryLines.join('\n')}`;
 
   return {
 
@@ -232,7 +243,7 @@ export async function buildHistoricalGenerationContext(scope) {
 
     saturation,
 
-    promptBlock: `${ORIGINALITY_PREAMBLE}\n\nHISTORICAL CONTENT INDEX (compact — top ${promptLimit} nearest):\n${summaryLines.join('\n')}`,
+    promptBlock,
 
     titles: uniqueTitles,
 

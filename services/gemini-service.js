@@ -311,6 +311,8 @@ async function callChatCompletions({
   usageLabel = 'llm',
   primaryModel = '',
   flashLiteOnly = false,
+  maxAttemptsPerModel: maxAttemptsPerModelOption,
+  isBatchVariant = false,
 }) {
   const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   const contextTokens = Number(process.env.LLM_CONTEXT_TOKENS) || 0;
@@ -347,7 +349,18 @@ async function callChatCompletions({
     /** 404 often means model id not on this API version; try next model instead of hard-failing. */
     const isTryNextModelError = (msg) => /\b404\b|not found|NOT_FOUND|no such model/i.test(msg);
 
-    const maxAttemptsPerModel = Math.max(1, Math.min(5, Number(process.env.GEMINI_RETRY_ATTEMPTS_PER_MODEL) || 3));
+    const envMaxAttempts = Number(process.env.GEMINI_RETRY_ATTEMPTS_PER_MODEL);
+    const defaultMaxAttempts =
+      isBatchVariant && flashLiteOnly ? 1 : Number.isFinite(envMaxAttempts) && envMaxAttempts > 0 ? envMaxAttempts : 3;
+    const maxAttemptsPerModel = Math.max(
+      1,
+      Math.min(
+        5,
+        Number.isFinite(maxAttemptsPerModelOption) && maxAttemptsPerModelOption > 0
+          ? maxAttemptsPerModelOption
+          : defaultMaxAttempts,
+      ),
+    );
     let lastErr = null;
 
     for (const modelName of modelChain) {
@@ -527,6 +540,9 @@ async function callChatCompletions({
   try {
     return await callGeminiFallback(normalizedMessages);
   } catch (geminiError) {
+    if (isBatchVariant && flashLiteOnly) {
+      throw geminiError;
+    }
     try {
       return await callUpstreamFallback(normalizedMessages);
     } catch (upstreamError) {
@@ -2670,6 +2686,8 @@ Provide: (1) what you see, (2) explanation/solution, (3) key takeaways.`;
       usageLabel: wantsJson ? 'structured-json' : 'structured-text',
       primaryModel: String(options.primaryModel || '').trim(),
       flashLiteOnly: options.flashLiteOnly === true,
+      maxAttemptsPerModel: options.maxAttemptsPerModel,
+      isBatchVariant: options.isBatchVariant === true,
     });
 
     return wantsJson ? stripCodeFences(text) : text;

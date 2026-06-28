@@ -61,6 +61,22 @@ function skipEnglishStructuredScaffold(meta = {}) {
   return shouldSkipEnglishScaffoldForLanguageSubject(String(meta?.subject || '').trim());
 }
 
+function buildBatchEconomyRetryPrompt({ slug, meta, attemptNum, maxAttempts, hint, languageHint = '' }) {
+  const langBlock = buildStoryPassageLanguagePromptTail(meta?.subject || '');
+  return [
+    `Regenerate ONE ${slug} record as valid JSON only (validation retry ${attemptNum}/${maxAttempts}).`,
+    `${meta?.classLabel || meta?.gradeLevel || ''} · ${meta?.subject || ''} · ${meta?.topic || ''}${
+      meta?.subTopic ? ` · ${meta.subTopic}` : ''
+    }`,
+    langBlock,
+    `Fix these validation errors: ${hint}`,
+    languageHint,
+    'Return structuredContent with every required field filled. No markdown, no code fences.',
+  ]
+    .filter(Boolean)
+    .join('\n\n');
+}
+
 const TOOL_ALIAS_TO_SLUG = buildToolAliasToSlugMap();
 
 const CONTENT_TYPE_BY_TOOL_SLUG = Object.fromEntries(
@@ -7974,18 +7990,23 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
   const maxTokens = getAiGeneratorMaxTokens(slug);
   const flashLiteOnly = isAiGeneratorFlashLiteOnlyEnabled();
 
+  const batchEconomy = isBatchVariant && isAiGeneratorCostSaverEnabled();
+  const effectiveFlashLiteOnly = batchEconomy || flashLiteOnly;
+
   const buildLlmOptions = (attempt) => {
     const useFlash =
-      !flashLiteOnly &&
+      !effectiveFlashLiteOnly &&
       (upgradeToFlash ||
         shouldUpgradeFlashOnValidationAttempt(isBatchVariant, attempt, recoveryPass));
+    const economyOpts = batchEconomy ? { maxAttemptsPerModel: 1 } : {};
     if (useFlash) {
       return {
         isBatchVariant,
         temperature: 0.55,
         primaryModel: batchModel,
         maxTokens,
-        flashLiteOnly,
+        flashLiteOnly: effectiveFlashLiteOnly,
+        ...economyOpts,
       };
     }
     if (isBatchVariant) {
@@ -7994,10 +8015,11 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
         temperature: 0.88,
         primaryModel: batchModel,
         maxTokens,
-        flashLiteOnly,
+        flashLiteOnly: effectiveFlashLiteOnly,
+        ...economyOpts,
       };
     }
-    return { maxTokens, primaryModel: batchModel, flashLiteOnly };
+    return { maxTokens, primaryModel: batchModel, flashLiteOnly: effectiveFlashLiteOnly, ...economyOpts };
   };
 
   const meta = {
@@ -8022,7 +8044,9 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
   const baseValidationAttempts = getAiGeneratorValidationMaxAttempts(isBatchVariant, recoveryPass);
   const languageSubjectEnforced = mustEnforceStoryPassageLanguageCompliance(meta.subject);
   const maxValidationAttempts = languageSubjectEnforced
-    ? Math.max(3, baseValidationAttempts)
+    ? isBatchVariant && (isAiGeneratorCostSaverEnabled() || isAiGeneratorUltraEconomyEnabled())
+      ? Math.min(2, Math.max(2, baseValidationAttempts))
+      : Math.max(3, baseValidationAttempts)
     : baseValidationAttempts;
 
   for (let attempt = 1; attempt <= maxValidationAttempts; attempt += 1) {
@@ -8326,6 +8350,17 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
             : lastValidationMessage;
         if (attempt < maxValidationAttempts) {
           const languageHint = buildStoryPassageLanguageRetryHint(meta.subject || '');
+          if (isBatchVariant && isAiGeneratorCostSaverEnabled()) {
+            activePrompt = buildBatchEconomyRetryPrompt({
+              slug,
+              meta,
+              attemptNum: attempt + 1,
+              maxAttempts: maxValidationAttempts,
+              hint: allFieldsHint,
+              languageHint,
+            });
+            continue;
+          }
           activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): ${allFieldsHint} Return structuredContent with EVERY canonical field filled — no empty strings, no empty arrays.${languageHint ? ` ${languageHint}` : ''}`;
           if (slug === 'mock-test-builder') {
             activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. You MUST return structuredContent with mock_test_title and at least 8 questions in section_a..section_e (each with "question" text). Do not return only metadata without question arrays.`;

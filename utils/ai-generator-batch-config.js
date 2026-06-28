@@ -284,7 +284,7 @@ export function getBatchSlotMaxAttempts() {
   const parsed = Number.parseInt(String(envRaw ?? ''), 10);
   const fromEnv = Number.isFinite(parsed) && parsed > 0 ? Math.min(5, parsed) : null;
   if (isAiGeneratorUltraEconomyEnabled()) {
-    return fromEnv ?? 3;
+    return fromEnv ?? 1;
   }
   if (fromEnv) return fromEnv;
   return shouldEnforceBatchUniquenessRetries() ? 3 : 1;
