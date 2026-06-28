@@ -2,6 +2,11 @@ import AiToolGeneration from '../models/AiToolGeneration.js';
 import { wordJaccardSimilarity } from '../utils/ai-generator-dedup.js';
 import { normalizeScope, scopeQuery } from './ai-generator-fingerprint-service.js';
 import { extractTitleFromStructured } from './ai-generator-content-extractor.js';
+import {
+  isStoryPassageLanguageToolSlug,
+  mustEnforceStoryPassageLanguageCompliance,
+  storyPassageRecordLanguageValid,
+} from '../utils/story-passage-subject.js';
 
 const DEFAULT_BATCH_SIZE = 25;
 
@@ -90,6 +95,13 @@ export async function selectRandomUniqueRecords(scope, opts = {}) {
       (b.metadata?.structuredContent ? 2 : 0) + (b.metadata?.contentFingerprint ? 1 : 0);
     return bScore - aScore;
   });
+
+  if (
+    isStoryPassageLanguageToolSlug(s.toolSlug) &&
+    mustEnforceStoryPassageLanguageCompliance(s.subject)
+  ) {
+    pool = pool.filter((rec) => storyPassageRecordLanguageValid(s.toolSlug, s.subject, rec));
+  }
 
   const selected = [];
   const usedDifficulties = new Set();

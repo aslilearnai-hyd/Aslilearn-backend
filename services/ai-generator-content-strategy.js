@@ -1,5 +1,18 @@
 import { computeTopicSaturation } from './ai-generator-topic-saturation.js';
 import { selectRandomUniqueRecords } from './ai-generator-random-retrieval.js';
+import { isStoryLanguageTool } from '../utils/ai-tool-subject-rules.js';
+import { isStoryPassageAllowedSubject } from '../utils/story-passage-subject.js';
+
+/**
+ * Language/story tools must always call Gemini — random pool pulls stale English or pre-fix Hindi.
+ */
+export function shouldSkipRandomRetrievalForScope(scope) {
+  const toolSlug = String(scope?.toolSlug || '').trim();
+  const subject = String(scope?.subject || '').trim();
+  if (isStoryLanguageTool(toolSlug)) return true;
+  if (isStoryPassageAllowedSubject(subject)) return true;
+  return false;
+}
 
 /**
  * Decide generation strategy for a curriculum slot.
@@ -25,7 +38,7 @@ export async function resolveContentStrategy(scope, opts = {}) {
     };
   }
 
-  if (saturation.shouldUseRandomRetrieval) {
+  if (saturation.shouldUseRandomRetrieval && !shouldSkipRandomRetrievalForScope(s)) {
     return {
       action: 'random_retrieval',
       mode: 'saturated_pool',

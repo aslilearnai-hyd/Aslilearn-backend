@@ -79,6 +79,20 @@ export function buildStoryPassageLanguagePromptBlock(subject) {
   return `${lang.rule}\nOUTPUT LANGUAGE: ${lang.language} (${lang.script})`;
 }
 
+/** Prompt block appended at the END of the prompt (recency bias — model reads this last). */
+export function buildStoryPassageLanguagePromptTail(subject) {
+  const canonical = canonicalStoryPassageSubject(subject);
+  if (!canonical || canonical === 'English') return '';
+  const lang = resolveStoryPassageOutputLanguage(subject);
+  if (!lang) return '';
+  const monolingual = buildStoryPassageMonolingualOverrideBlock(subject);
+  return `[FINAL OUTPUT LANGUAGE — NON-NEGOTIABLE]
+Subject: ${canonical}. EVERY JSON string value MUST be in ${lang.language} (${lang.script}).
+If reference book text or examples are in English, TRANSLATE them — do NOT copy English into passage, questions, or answers.
+${monolingual}`.trim();
+}
+
+const PASSAGE_FIELD_KEYS = ['passage', 'content', 'story_passage_content', 'story'];
 const DEVANAGARI_CHAR_RE = /[\u0900-\u097F]/;
 const TELUGU_CHAR_RE = /[\u0C00-\u0C7F]/;
 
@@ -98,7 +112,8 @@ function countMatches(text, re) {
 }
 
 /** True when a user-facing string matches the required script for Hindi/Telugu/English subjects. */
-export function textMatchesStoryPassageScript(text, requiredScript) {
+export function textMatchesStoryPassageScript(text, requiredScript, opts = {}) {
+  const strict = opts.strict === true;
   const t = String(text || '').trim();
   if (!t || t.length < 10) return true;
 
@@ -107,15 +122,21 @@ export function textMatchesStoryPassageScript(text, requiredScript) {
   const latinLetters = (t.match(/[A-Za-z]/g) || []).length;
 
   if (requiredScript === 'devanagari') {
-    if (devCount < 6) return false;
-    if (telCount > Math.max(3, devCount * 0.15)) return false;
-    return latinLetters <= Math.max(12, Math.floor(devCount * 0.2));
+    const minDev = strict ? 50 : 10;
+    if (devCount < minDev) return false;
+    if (telCount > Math.max(3, devCount * 0.12)) return false;
+    const totalLetters = devCount + latinLetters;
+    if (totalLetters > 24 && latinLetters / totalLetters > (strict ? 0.08 : 0.12)) return false;
+    return latinLetters <= (strict ? 20 : Math.max(8, Math.floor(devCount * 0.1)));
   }
 
   if (requiredScript === 'telugu') {
-    if (telCount < 6) return false;
-    if (devCount > Math.max(3, telCount * 0.15)) return false;
-    return latinLetters <= Math.max(12, Math.floor(telCount * 0.2));
+    const minTel = strict ? 50 : 10;
+    if (telCount < minTel) return false;
+    if (devCount > Math.max(3, telCount * 0.12)) return false;
+    const totalLetters = telCount + latinLetters;
+    if (totalLetters > 24 && latinLetters / totalLetters > (strict ? 0.08 : 0.12)) return false;
+    return latinLetters <= (strict ? 20 : Math.max(8, Math.floor(telCount * 0.1)));
   }
 
   if (requiredScript === 'english') {
@@ -158,18 +179,60 @@ export function validateStoryPassageLanguageCompliance(subject, structured) {
       ? 'Hindi (Devanagari script only)'
       : 'Telugu (Telugu Lipi only)';
 
-  for (const text of walkStoryPassageStringValues(structured)) {
-    const t = String(text || '').trim();
-    if (t.length < 16) continue;
-    if (!textMatchesStoryPassageScript(t, required)) {
+  const data = structured && typeof structured === 'object' ? structured : {};
+  let passageChecked = false;
+  for (const key of PASSAGE_FIELD_KEYS) {
+    const passage = String(data[key] || '').trim();
+    if (!passage || passage.length < 40) continue;
+    passageChecked = true;
+    if (!textMatchesStoryPassageScript(passage, required, { strict: true })) {
       errors.push(
-        `${label}: content must not mix English or other languages — "${t.slice(0, 72)}${t.length > 72 ? '…' : ''}"`,
+        `${label}: passage/story must be written entirely in ${label} — not English. Found: "${passage.slice(0, 72)}${passage.length > 72 ? '…' : ''}"`,
       );
-      if (errors.length >= 3) break;
+      break;
+    }
+  }
+  if (!passageChecked) {
+    errors.push(`${label}: passage/story field is missing or too short.`);
+  }
+
+  if (!errors.length) {
+    for (const text of walkStoryPassageStringValues(data)) {
+      const t = String(text || '').trim();
+      if (t.length < 12) continue;
+      if (!textMatchesStoryPassageScript(t, required)) {
+        errors.push(
+          `${label}: content must not mix English or other languages — "${t.slice(0, 72)}${t.length > 72 ? '…' : ''}"`,
+        );
+        if (errors.length >= 4) break;
+      }
     }
   }
 
   return { valid: errors.length === 0, errors };
+}
+
+/** Skip English/mixed records when serving Story/Reading + Hindi/Telugu from rotation. */
+export function storyPassageRecordLanguageValid(toolSlug, subject, doc) {
+  if (!isStoryPassageLanguageToolSlug(toolSlug)) return true;
+  if (!mustEnforceStoryPassageLanguageCompliance(subject)) return true;
+
+  const docSubject = String(subject || doc?.subject || '').trim();
+  const structured = doc?.metadata?.structuredContent;
+  if (structured && typeof structured === 'object') {
+    return validateStoryPassageLanguageCompliance(docSubject, structured).valid;
+  }
+
+  const required = storyPassageRequiredScript(docSubject);
+  const text = String(doc?.generatedContent || doc?.content || '').trim();
+  if (!text || text.length < 40) return false;
+  if (required === 'devanagari') {
+    return textMatchesStoryPassageScript(text, 'devanagari', { strict: true });
+  }
+  if (required === 'telugu') {
+    return textMatchesStoryPassageScript(text, 'telugu', { strict: true });
+  }
+  return true;
 }
 
 /** Extra prompt lines when batch variant angles might encourage bilingual output. */

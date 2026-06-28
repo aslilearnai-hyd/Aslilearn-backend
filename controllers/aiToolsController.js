@@ -439,7 +439,11 @@ export const createTeacherTool = async (req, res) => {
       preferLatest: false,
       strictToolMatch: true,
       cursorScope: String(teacherId || ''),
-      validator: async (doc) => validateDashboardAiToolDoc(toolType, doc).valid,
+      validator: async (doc) => {
+        const { storyPassageRecordLanguageValid } = await import('../utils/story-passage-subject.js');
+        if (!validateDashboardAiToolDoc(toolType, doc).valid) return false;
+        return storyPassageRecordLanguageValid(toolType, finalSubject, doc);
+      },
     });
     if (cachedDoc) {
       const cachedContent = String(cachedDoc.generatedContent || cachedDoc.content || '').trim();
@@ -579,7 +583,11 @@ export const getGeneratedContent = async (req, res) => {
       strictToolMatch: true,
       cursorScope: String(req.userId || req.teacherId || ''),
       validator: toolType
-        ? async (doc) => validateDashboardAiToolDoc(toolType, doc).valid
+        ? async (doc) => {
+            const { storyPassageRecordLanguageValid } = await import('../utils/story-passage-subject.js');
+            if (!validateDashboardAiToolDoc(toolType, doc).valid) return false;
+            return storyPassageRecordLanguageValid(toolType, subject, doc);
+          }
         : null,
     });
 

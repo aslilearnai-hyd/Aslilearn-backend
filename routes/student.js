@@ -4918,7 +4918,11 @@ router.post('/ai/tool', async (req, res) => {
       preferLatest: false,
       strictToolMatch: true,
       cursorScope: String(userId || ''),
-      validator: async (doc) => validateDashboardAiToolDoc(toolType, doc).valid,
+      validator: async (doc) => {
+        const { storyPassageRecordLanguageValid } = await import('../utils/story-passage-subject.js');
+        if (!validateDashboardAiToolDoc(toolType, doc).valid) return false;
+        return storyPassageRecordLanguageValid(toolType, finalSubject, doc);
+      },
     });
     if (adminDoc) {
       const contentGate = validateDashboardAiToolDoc(toolType, adminDoc);

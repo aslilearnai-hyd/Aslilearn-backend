@@ -49,6 +49,7 @@ import {
   isStoryPassageLanguageToolSlug,
   mustEnforceStoryPassageLanguageCompliance,
   shouldBlockCostSaverForStoryLanguage,
+  buildStoryPassageLanguagePromptTail,
 } from '../utils/story-passage-subject.js';
 import {
   dedupeIntraRecordQuestions,
@@ -7302,6 +7303,22 @@ export function validateToolSpecificStructuredContent(
     contentForValidate = padAiGeneratorCanonicalSections(normalizedTool, contentForValidate, meta);
   }
 
+  if (normalizedTool === 'reading-practice-room' || normalizedTool === 'story-passage-creator') {
+    const postPadLanguageCheck = validateStoryPassageLanguageCompliance(
+      meta.subject || contentForValidate.subject,
+      contentForValidate,
+    );
+    if (!postPadLanguageCheck.valid) {
+      return {
+        valid: false,
+        message: postPadLanguageCheck.errors.join(' '),
+        normalizedType: resolvedType,
+        normalizedStructuredContent: contentForValidate,
+        missingSections: [],
+      };
+    }
+  }
+
   if (requireAllFields) {
     const allFields = validateAllCanonicalToolFields(normalizedTool, contentForValidate);
     if (!allFields.valid) {
@@ -7897,16 +7914,24 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
   const prompt = buildAiGeneratorStructuredPrompt(slug, params);
   const pdfContext = String(params.pdfContext || '').trim();
   const historicalBlock = String(params.historicalPromptBlock || '').trim();
-  const basePrompt = pdfContext
+  const storyLanguageTail =
+    isStoryPassageLanguageToolSlug(slug) && mustEnforceStoryPassageLanguageCompliance(params.subject)
+      ? buildStoryPassageLanguagePromptTail(params.subject)
+      : '';
+  const ragLanguageNote =
+    pdfContext && mustEnforceStoryPassageLanguageCompliance(params.subject)
+      ? `\nBOOK SOURCE LANGUAGE NOTE: Reference passages may be in English — you MUST still write ALL output string values in the required output language (translate/synthesize; never copy English into student-facing fields).`
+      : '';
+  let basePrompt = pdfContext
     ? `${prompt}${historicalBlock ? `\n\n${historicalBlock}` : ''}
 
 REFERENCE TEXTBOOK CONTENT (RAG — PRIMARY factual source for this generation):
 Use the passages below as the PRIMARY source. Follow textbook terminology, definitions, examples, formulae, and explanations.
 Do not invent facts that contradict the book. Only use general knowledge when the book is silent.
 Priority: (1) Uploaded Book  (2) Uploaded Notes  (3) Gemini knowledge.
-Synthesize into the tool schema above — do not paste blocks verbatim.
-${pdfContext}`
-    : `${prompt}${historicalBlock ? `\n\n${historicalBlock}` : ''}`;
+Synthesize into the tool schema above — do not paste blocks verbatim.${ragLanguageNote}
+${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
+    : `${prompt}${historicalBlock ? `\n\n${historicalBlock}` : ''}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`;
   const extra = params.extraParams && typeof params.extraParams === 'object' ? params.extraParams : {};
   const generationVariant = Number(extra.generationVariant ?? extra.variantIndex);
   const isBatchVariant = Number.isFinite(generationVariant) && generationVariant > 0;
@@ -7969,7 +7994,7 @@ ${pdfContext}`
   const storyLanguageEnforced =
     isStoryPassageLanguageToolSlug(slug) && mustEnforceStoryPassageLanguageCompliance(meta.subject);
   const maxValidationAttempts = storyLanguageEnforced
-    ? Math.max(2, baseValidationAttempts)
+    ? Math.max(3, baseValidationAttempts)
     : baseValidationAttempts;
 
   for (let attempt = 1; attempt <= maxValidationAttempts; attempt += 1) {
