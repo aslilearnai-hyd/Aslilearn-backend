@@ -48,7 +48,7 @@ import {
 
 } from './ai-generator-content-strategy.js';
 
-import { getBatchSlotMaxAttempts, shouldEnforceBatchUniquenessRetries, shouldUseFlashForAiGeneratorRun } from '../utils/ai-generator-batch-config.js';
+import { getBatchSlotMaxAttempts, isAiGeneratorCostSaverEnabled, shouldEnforceBatchUniquenessRetries, shouldUseFlashForAiGeneratorRun } from '../utils/ai-generator-batch-config.js';
 
 import AiToolGeneration from '../models/AiToolGeneration.js';
 
@@ -82,7 +82,9 @@ function getConcurrency() {
 
   const n = Number(process.env.AI_GENERATOR_BATCH_CONCURRENCY);
 
-  return Number.isFinite(n) && n > 0 ? Math.min(n, 6) : DEFAULT_CONCURRENCY;
+  const defaultC = isAiGeneratorCostSaverEnabled() ? 2 : DEFAULT_CONCURRENCY;
+
+  return Number.isFinite(n) && n > 0 ? Math.min(n, 6) : defaultC;
 
 }
 

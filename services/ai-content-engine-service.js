@@ -7998,7 +7998,6 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
       !effectiveFlashLiteOnly &&
       (upgradeToFlash ||
         shouldUpgradeFlashOnValidationAttempt(isBatchVariant, attempt, recoveryPass));
-    const economyOpts = batchEconomy ? { maxAttemptsPerModel: 1 } : {};
     if (useFlash) {
       return {
         isBatchVariant,
@@ -8006,7 +8005,6 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
         primaryModel: batchModel,
         maxTokens,
         flashLiteOnly: effectiveFlashLiteOnly,
-        ...economyOpts,
       };
     }
     if (isBatchVariant) {
@@ -8016,10 +8014,9 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
         primaryModel: batchModel,
         maxTokens,
         flashLiteOnly: effectiveFlashLiteOnly,
-        ...economyOpts,
       };
     }
-    return { maxTokens, primaryModel: batchModel, flashLiteOnly: effectiveFlashLiteOnly, ...economyOpts };
+    return { maxTokens, primaryModel: batchModel, flashLiteOnly: effectiveFlashLiteOnly };
   };
 
   const meta = {

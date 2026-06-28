@@ -149,6 +149,34 @@ function mergeGeminiModelChain(primaryModel, envFallbackCsv) {
   return out;
 }
 
+function mergeLiteModelChain(primaryModel, envFallbackCsv) {
+  const primary = String(primaryModel || 'gemini-2.5-flash-lite').trim();
+  const fromEnv = String(envFallbackCsv || '')
+    .split(',')
+    .map((m) => m.trim())
+    .filter(Boolean)
+    .filter((m) => !isUnsupportedGeminiV1BetaModel(m));
+  const seen = new Set();
+  const out = [];
+  for (const raw of [primary, ...fromEnv]) {
+    const m = String(raw || '').trim();
+    if (!m || isUnsupportedGeminiV1BetaModel(m)) continue;
+    const key = m.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(m);
+  }
+  return out.length ? out : ['gemini-2.5-flash-lite'];
+}
+
+function getFlashLiteModelChain(primaryLite) {
+  const overflowCsv =
+    process.env.AI_GENERATOR_GEMINI_LITE_OVERFLOW ||
+    process.env.VIDYA_AI_GEMINI_LITE_OVERFLOW ||
+    'gemini-2.0-flash-lite,gemini-1.5-flash-lite';
+  return mergeLiteModelChain(primaryLite || 'gemini-2.5-flash-lite', overflowCsv);
+}
+
 function getGeminiFallbackConfig() {
   const apiKey = String(
     process.env.VIDYA_AI_GEMINI_API_KEY ||
@@ -320,7 +348,7 @@ async function callChatCompletions({
     const { apiKey, modelChain: defaultChain } = getGeminiFallbackConfig();
     const liteModel = String(process.env.AI_GENERATOR_GEMINI_MODEL || 'gemini-2.5-flash-lite').trim();
     const modelChain = flashLiteOnly
-      ? [liteModel || 'gemini-2.5-flash-lite']
+      ? getFlashLiteModelChain(liteModel)
       : String(primaryModel || '').trim()
         ? mergeGeminiModelChain(primaryModel, defaultChain.join(','))
         : defaultChain;
@@ -350,8 +378,15 @@ async function callChatCompletions({
     const isTryNextModelError = (msg) => /\b404\b|not found|NOT_FOUND|no such model/i.test(msg);
 
     const envMaxAttempts = Number(process.env.GEMINI_RETRY_ATTEMPTS_PER_MODEL);
+    const batchTransientRetries = Number(process.env.GEMINI_BATCH_TRANSIENT_RETRIES);
     const defaultMaxAttempts =
-      isBatchVariant && flashLiteOnly ? 1 : Number.isFinite(envMaxAttempts) && envMaxAttempts > 0 ? envMaxAttempts : 3;
+      isBatchVariant && flashLiteOnly
+        ? Number.isFinite(batchTransientRetries) && batchTransientRetries > 0
+          ? Math.min(batchTransientRetries, 3)
+          : 2
+        : Number.isFinite(envMaxAttempts) && envMaxAttempts > 0
+          ? envMaxAttempts
+          : 3;
     const maxAttemptsPerModel = Math.max(
       1,
       Math.min(
@@ -435,6 +470,20 @@ async function callChatCompletions({
             );
             break;
           }
+          const is503Like =
+            /\b503\b|UNAVAILABLE|high demand|experiencing/i.test(msg);
+          if (is503Like) {
+            if (attempt < maxAttemptsPerModel) {
+              const delayMs = Math.min(12_000, Math.round(2500 * attempt + Math.random() * 1000));
+              console.warn(
+                `[Gemini] ${modelName} unavailable (503); waiting ${delayMs}ms then retry (${attempt}/${maxAttemptsPerModel})`,
+              );
+              await sleep(delayMs);
+              continue;
+            }
+            console.warn(`[Gemini] ${modelName} still unavailable after retries; trying next lite model.`);
+            break;
+          }
           const retryThisModel = isRetryableModelError(msg) && attempt < maxAttemptsPerModel;
           if (retryThisModel) {
             const backoff = Math.min(14_000, Math.round(1000 * 2 ** (attempt - 1) + Math.random() * 400));
@@ -445,7 +494,12 @@ async function callChatCompletions({
         }
       }
     }
-    throw lastErr || new Error('Gemini failed on all configured models');
+    throw (
+      lastErr ||
+      new Error(
+        'Gemini failed on all configured models. If you saw 503/unavailable, wait a minute and retry — demand spikes are usually temporary.',
+      )
+    );
   };
 
   const callUpstreamFallback = async (normalizedMessages) => {
