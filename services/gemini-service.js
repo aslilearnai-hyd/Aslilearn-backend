@@ -169,12 +169,24 @@ function mergeLiteModelChain(primaryModel, envFallbackCsv) {
   return out.length ? out : ['gemini-2.5-flash-lite'];
 }
 
-function getFlashLiteModelChain(primaryLite) {
+function getFlashLiteModelChain(primaryLite, isBatchVariant = false) {
   const overflowCsv =
     process.env.AI_GENERATOR_GEMINI_LITE_OVERFLOW ||
     process.env.VIDYA_AI_GEMINI_LITE_OVERFLOW ||
     'gemini-2.0-flash-lite,gemini-1.5-flash-lite';
-  return mergeLiteModelChain(primaryLite || 'gemini-2.5-flash-lite', overflowCsv);
+  const chain = mergeLiteModelChain(primaryLite || 'gemini-2.5-flash-lite', overflowCsv);
+  if (!isBatchVariant) return chain;
+  const maxModels = Number(process.env.GEMINI_BATCH_LITE_MODELS);
+  const cap = Number.isFinite(maxModels) && maxModels > 0 ? Math.min(maxModels, 3) : 2;
+  return chain.slice(0, cap);
+}
+
+/** True for 503/429/network errors — do not burn validation retries on these. */
+export function isTransientGeminiError(error) {
+  const msg = String(error?.message || error || '');
+  return /\b503\b|\b429\b|UNAVAILABLE|high demand|overloaded|temporar|RESOURCE_EXHAUSTED|ECONNRESET|EAI_AGAIN|ETIMEDOUT|failed to fetch|network/i.test(
+    msg,
+  );
 }
 
 function getGeminiFallbackConfig() {
@@ -348,7 +360,7 @@ async function callChatCompletions({
     const { apiKey, modelChain: defaultChain } = getGeminiFallbackConfig();
     const liteModel = String(process.env.AI_GENERATOR_GEMINI_MODEL || 'gemini-2.5-flash-lite').trim();
     const modelChain = flashLiteOnly
-      ? getFlashLiteModelChain(liteModel)
+      ? getFlashLiteModelChain(liteModel, isBatchVariant)
       : String(primaryModel || '').trim()
         ? mergeGeminiModelChain(primaryModel, defaultChain.join(','))
         : defaultChain;
@@ -382,8 +394,8 @@ async function callChatCompletions({
     const defaultMaxAttempts =
       isBatchVariant && flashLiteOnly
         ? Number.isFinite(batchTransientRetries) && batchTransientRetries > 0
-          ? Math.min(batchTransientRetries, 3)
-          : 2
+          ? Math.min(batchTransientRetries, 2)
+          : 1
         : Number.isFinite(envMaxAttempts) && envMaxAttempts > 0
           ? envMaxAttempts
           : 3;

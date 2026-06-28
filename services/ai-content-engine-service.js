@@ -1,5 +1,5 @@
 import { PDFParse } from 'pdf-parse';
-import geminiService from './gemini-service.js';
+import geminiService, { isTransientGeminiError } from './gemini-service.js';
 import {
   AI_TOOL_ORDERED_SLUGS,
   buildToolAliasToSlugMap,
@@ -2943,11 +2943,152 @@ export function finalizeFlashcardDeckStructuredContent(structuredContent, meta =
     );
   }
   }
-  base.cards = cards.filter(
-    (c) => String(c.front || '').trim().length >= 4 && String(c.back || '').trim().length >= 4,
-  );
-  base.application_hots_cards = base.cards;
-  base.flashcard_set = base.cards;
+
+  if (!skipEnglishScaffold) {
+    base.cards = cards.filter(
+      (c) => String(c.front || '').trim().length >= 4 && String(c.back || '').trim().length >= 4,
+    );
+    base.application_hots_cards = base.cards;
+    base.flashcard_set = base.cards;
+  }
+
+  if (skipEnglishScaffold) {
+    const canonical = canonicalStoryPassageSubject(subject);
+    const classLabel = String(meta.classLabel || meta.class || meta.grade || '').trim();
+    if (slug === 'flashcard-generator') {
+      if (!String(base.topic || '').trim()) base.topic = String(meta.topic || subject).trim() || subject;
+      if (!String(base.subtopic || '').trim()) base.subtopic = topic;
+      if (!String(base.topic_and_subtopic_link || '').trim()) {
+        base.topic_and_subtopic_link = `${base.topic} — ${base.subtopic}`;
+      }
+      if (!String(base.class_level || '').trim() && classLabel) base.class_level = classLabel;
+      if (!String(base.flashcard_deck_title || base.deck_title || base.title || '').trim()) {
+        const title =
+          canonical === 'Hindi'
+            ? `${topic} — फ़्लैशकार्ड`
+            : canonical === 'Telugu'
+              ? `${topic} — ఫ్లాష్‌కార్డ్‌లు`
+              : `${topic} — flashcards`;
+        base.flashcard_deck_title = title;
+        base.deck_title = title;
+        base.title = title;
+      }
+      if (!String(base.prior_knowledge_required || '').trim()) {
+        base.prior_knowledge_required =
+          canonical === 'Hindi'
+            ? `छात्रों को ${topic} से जुड़ी बुनियादी अवधारणाएँ पहले से ज्ञात होनी चाहिए।`
+            : canonical === 'Telugu'
+              ? `${topic} కు సంబంధించిన ప్రాథమిక అవగాహన అవసరం.`
+              : '';
+      }
+      if (!Array.isArray(base.learning_objectives) || base.learning_objectives.length < 2) {
+        base.learning_objectives =
+          canonical === 'Hindi'
+            ? [
+                `${topic} के मुख्य विचारों को अपनी भाषा में समझाना।`,
+                `${topic} से जुड़े प्रश्नों का उत्तर देना।`,
+              ]
+            : canonical === 'Telugu'
+              ? [`${topic} ప్రధాన అంశాలను వివరించడం.`, `${topic}కు సంబంధించిన ప్రశ్నలకు సమాధానం ఇవ్వడం.`]
+              : base.learning_objectives || [];
+      }
+      if (!String(base.ncf_competency_alignment || '').trim()) {
+        base.ncf_competency_alignment =
+          canonical === 'Hindi'
+            ? `एनसीएफ: ${subject} में ${topic} के लिए अवधारणात्मक समझ और अनुप्रयोग।`
+            : canonical === 'Telugu'
+              ? `NCF: ${subject} లో ${topic} కోసం సంభావనాత్మక అవగాహన.`
+              : '';
+      }
+      if (!String(base.deck_memory_hook || '').trim()) {
+        base.deck_memory_hook =
+          canonical === 'Hindi'
+            ? `प्रत्येक कार्ड को ${topic} की कहानी/पाठ के चित्र से जोड़कर याद रखें।`
+            : canonical === 'Telugu'
+              ? `ప్రతి కార్డ్‌ను ${topic} పాఠంతో అనుసంధానించి గుర్తుంచుకోండి.`
+              : '';
+      }
+      if (!String(base.self_check_rapid_recall_round || '').trim()) {
+        base.self_check_rapid_recall_round =
+          canonical === 'Hindi'
+            ? `कार्ड ढककर ${topic} के मुख्य बिंदु बिना देखे बताएँ।`
+            : canonical === 'Telugu'
+              ? `కార్డ్‌ను మూసి ${topic} ప్రధాన అంశాలు చెప్పండి.`
+              : '';
+      }
+      if (!Array.isArray(base.common_mistakes_to_avoid) || !base.common_mistakes_to_avoid.length) {
+        base.common_mistakes_to_avoid =
+          canonical === 'Hindi'
+            ? [`${topic} को याद किए बिना केवल शब्द रटना।`]
+            : canonical === 'Telugu'
+              ? [`${topic} అర్థం అర్థం చేసుకోకుండా పాఠం గుర్తు పెట్టుకోవడం.`]
+              : [];
+      }
+      if (!String(base.real_life_connection || '').trim()) {
+        base.real_life_connection =
+          canonical === 'Hindi'
+            ? `${topic} से जुड़ा एक दैनिक जीवन का उदाहरण सोचें और कार्ड से जोड़ें।`
+            : canonical === 'Telugu'
+              ? `${topic}కు సంబంధించిన నిత్యజీవిత ఉదాహరణను కార్డ్‌తో అనుసంధానించండి.`
+              : '';
+      }
+      if (!String(base.differentiation_support || '').trim()) {
+        base.differentiation_support =
+          canonical === 'Hindi'
+            ? `कमज़ोर छात्र: साथी के साथ कार्ड पढ़ें। उन्नत: ${topic} पर दो नए प्रश्न बनाएँ।`
+            : canonical === 'Telugu'
+              ? `బలహీన విద్యార్థులు: భాగస్వామితో కార్డ్‌లు చదవండి. అధునాతన: ${topic}పై రెండు కొత్త ప్రశ్నలు రూపొందించండి.`
+              : '';
+      }
+      if (!String(base.reflection_exit_ticket || '').trim()) {
+        base.reflection_exit_ticket =
+          canonical === 'Hindi'
+            ? `${topic} पर सबसे कठिन कार्ड कौन-सा था और क्यों?`
+            : canonical === 'Telugu'
+              ? `${topic}పై అత్యంత కష్టమైన కార్డ్ ఏది? ఎందుకు?`
+              : '';
+      }
+    } else if (!String(base.subtopic_link_prior_knowledge_required || '').trim()) {
+      base.subtopic_link_prior_knowledge_required =
+        canonical === 'Hindi'
+          ? `${topic} — पूर्व ज्ञान: ${subject} की बुनियादी शब्दावली।`
+          : canonical === 'Telugu'
+            ? `${topic} — ముందస్తు జ్ఞానం: ${subject} ప్రాథమిక పదజాలం.`
+            : '';
+    }
+
+    while (countValidFlashcardRows(cards) < minCards) {
+      const n = cards.length + 1;
+      if (canonical === 'Hindi') {
+        cards.push(
+          normalizeFlashcardCard({
+            front: `${topic} — प्रश्न ${n}: पाठ से मुख्य बिंदु क्या है?`,
+            back: `${topic} पर आधारित महत्वपूर्ण अवधारणा ${n} — उदाहरण सहित समझाएँ।`,
+            difficulty_tag_for_each_card: 'समझ',
+            memory_hook_quick_tip: 'पाठ की कहानी से इस बिंदु को जोड़कर याद रखें।',
+            self_check_round: 'बिना कार्ड देखे अपने शब्दों में उत्तर दें।',
+          }),
+        );
+      } else if (canonical === 'Telugu') {
+        cards.push(
+          normalizeFlashcardCard({
+            front: `${topic} — ప్రశ్న ${n}: పాఠం నుండి ప్రధాన అంశం ఏమిటి?`,
+            back: `${topic}కు సంబంధించిన ముఖ్య అవధారణ ${n} — ఉదాహరణతో వివరించండి.`,
+            difficulty_tag_for_each_card: 'అవగాహన',
+            memory_hook_quick_tip: 'పాఠాన్ని ఈ అంశంతో అనుసంధానించి గుర్తుంచుకోండి.',
+            self_check_round: 'కార్డ్ చూడకుండా మీ మాటల్లో సమాధానం ఇవ్వండి.',
+          }),
+        );
+      } else {
+        break;
+      }
+    }
+    base.cards = cards.filter(
+      (c) => String(c.front || '').trim().length >= 4 && String(c.back || '').trim().length >= 4,
+    );
+    base.application_hots_cards = base.cards;
+    base.flashcard_set = base.cards;
+  }
 
   if (slug === 'my-study-decks' && !skipEnglishScaffold) {
     const lead = base.cards[0];
@@ -7329,7 +7470,10 @@ export function validateToolSpecificStructuredContent(
     const languageCheck = validateStoryPassageLanguageCompliance(
       meta.subject || contentForValidate.subject,
       contentForValidate,
-      { requirePassage: isStoryPassageLanguageToolSlug(normalizedTool) },
+      {
+        requirePassage: isStoryPassageLanguageToolSlug(normalizedTool),
+        toolSlug: normalizedTool,
+      },
     );
     if (!languageCheck.valid) {
       return {
@@ -7351,7 +7495,10 @@ export function validateToolSpecificStructuredContent(
     const postPadLanguageCheck = validateStoryPassageLanguageCompliance(
       meta.subject || contentForValidate.subject,
       contentForValidate,
-      { requirePassage: isStoryPassageLanguageToolSlug(normalizedTool) },
+      {
+        requirePassage: isStoryPassageLanguageToolSlug(normalizedTool),
+        toolSlug: normalizedTool,
+      },
     );
     if (!postPadLanguageCheck.valid) {
       return {
@@ -8502,6 +8649,9 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
       };
     } catch (error) {
       lastError = error;
+      if (isTransientGeminiError(error)) {
+        throw error;
+      }
     }
   }
 

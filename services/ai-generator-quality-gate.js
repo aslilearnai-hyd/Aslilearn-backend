@@ -194,6 +194,7 @@ export function runAiGeneratorQualityGate(toolSlug, structured, meta = {}) {
   if (mustEnforceStoryPassageLanguageCompliance(meta.subject || data.subject)) {
     const languageCheck = validateStoryPassageLanguageCompliance(meta.subject || data.subject, data, {
       requirePassage: ['reading-practice-room', 'story-passage-creator'].includes(slug),
+      toolSlug: slug,
     });
     if (!languageCheck.valid) {
       errors.push(...languageCheck.errors);

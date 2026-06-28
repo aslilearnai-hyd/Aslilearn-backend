@@ -173,7 +173,9 @@ export function validateStoryPassageLanguageCompliance(subject, structured, opti
     return { valid: true, errors: [] };
   }
 
-  const requirePassage = options.requirePassage !== false;
+  const toolSlug = String(options.toolSlug || '').trim();
+  const isFlashcardTool = toolSlug === 'flashcard-generator' || toolSlug === 'my-study-decks';
+  const requirePassage = options.requirePassage !== false && !isFlashcardTool;
   const errors = [];
   const label =
     required === 'devanagari'
@@ -181,6 +183,54 @@ export function validateStoryPassageLanguageCompliance(subject, structured, opti
       : 'Telugu (Telugu Lipi only)';
 
   const data = structured && typeof structured === 'object' ? structured : {};
+
+  const checkText = (text, strict = false) => {
+    const t = String(text || '').trim();
+    if (t.length < 12) return;
+    if (!textMatchesStoryPassageScript(t, required, { strict })) {
+      errors.push(
+        `${label}: content must not mix English or other languages — "${t.slice(0, 72)}${t.length > 72 ? '…' : ''}"`,
+      );
+    }
+  };
+
+  if (isFlashcardTool) {
+    const narrativeKeys = [
+      'flashcard_deck_title',
+      'deck_title',
+      'title',
+      'prior_knowledge_required',
+      'ncf_competency_alignment',
+      'deck_memory_hook',
+      'self_check_rapid_recall_round',
+      'real_life_connection',
+      'differentiation_support',
+      'reflection_exit_ticket',
+      'topic_and_subtopic_link',
+    ];
+    for (const key of narrativeKeys) {
+      checkText(data[key]);
+      if (errors.length >= 3) break;
+    }
+    for (const item of [].concat(data.learning_objectives || [], data.common_mistakes_to_avoid || [])) {
+      checkText(item);
+      if (errors.length >= 3) break;
+    }
+    const cards = Array.isArray(data.cards) ? data.cards : [];
+    let cardsChecked = 0;
+    for (const card of cards) {
+      if (!card || typeof card !== 'object') continue;
+      for (const key of ['front', 'back', 'task', 'solution', 'term', 'definition', 'question', 'answer']) {
+        checkText(card[key], true);
+      }
+      cardsChecked += 1;
+      if (cardsChecked >= 8 || errors.length >= 4) break;
+    }
+    if (!errors.length && cardsChecked === 0) {
+      errors.push(`${label}: flashcard deck must include cards[] with front/back text in ${label}.`);
+    }
+    return { valid: errors.length === 0, errors };
+  }
 
   if (requirePassage) {
     let passageChecked = false;
@@ -299,9 +349,12 @@ export function buildUniversalLanguageSubjectPromptBlock(subject) {
 }
 
 /** True when economy-mode validation bypass would save mixed-language output. */
-export function shouldBlockCostSaverForStoryLanguage(_toolSlug, subject, structured, validationMessage = '') {
+export function shouldBlockCostSaverForStoryLanguage(toolSlug, subject, structured, validationMessage = '') {
   if (!mustEnforceStoryPassageLanguageCompliance(subject)) return false;
-  const langCheck = validateStoryPassageLanguageCompliance(subject, structured);
+  const langCheck = validateStoryPassageLanguageCompliance(subject, structured, {
+    toolSlug: String(toolSlug || '').trim(),
+    requirePassage: isStoryPassageLanguageToolSlug(toolSlug),
+  });
   if (!langCheck.valid) return true;
   const msg = String(validationMessage || '').toLowerCase();
   return (

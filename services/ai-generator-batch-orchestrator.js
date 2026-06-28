@@ -4,6 +4,8 @@ import {
 
   endTokenUsageSession,
 
+  isTransientGeminiError,
+
 } from './gemini-service.js';
 
 import { generateStructuredContentForAiGenerator } from './ai-content-engine-service.js';
@@ -62,6 +64,19 @@ const DEFAULT_CONCURRENCY = 3;
 
 
 
+function formatSlotFailureMessage(variantIndex, error) {
+  const msg = String(error || 'Unknown error').trim();
+  if (isTransientGeminiError({ message: msg })) {
+    return `Variant ${variantIndex}: Gemini is temporarily overloaded (503). Wait 1–2 minutes and click Generate again.`;
+  }
+  if (msg.length > 420) {
+    return `Variant ${variantIndex}: ${msg.slice(0, 420)}…`;
+  }
+  return `Variant ${variantIndex}: ${msg}`;
+}
+
+
+
 function getBatchSize(override) {
 
   const n = Number(override ?? process.env.AI_GENERATOR_BATCH_SIZE);
@@ -82,7 +97,7 @@ function getConcurrency() {
 
   const n = Number(process.env.AI_GENERATOR_BATCH_CONCURRENCY);
 
-  const defaultC = isAiGeneratorCostSaverEnabled() ? 2 : DEFAULT_CONCURRENCY;
+  const defaultC = isAiGeneratorCostSaverEnabled() ? 1 : DEFAULT_CONCURRENCY;
 
   return Number.isFinite(n) && n > 0 ? Math.min(n, 6) : defaultC;
 
@@ -562,7 +577,7 @@ export async function generateBatchAndSave(params, opts = {}) {
 
           console.warn(`[AI Generator batch] Variant ${result.variantIndex} failed: ${result.error}`);
 
-          failures.push(`Variant ${result.variantIndex}: ${result.error}`);
+          failures.push(formatSlotFailureMessage(result.variantIndex, result.error));
 
         }
 
