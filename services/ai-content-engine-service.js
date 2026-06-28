@@ -46,6 +46,9 @@ import {
   isStoryPassagePlaceholderText,
   validateStoryPassageLanguageCompliance,
   buildStoryPassageLanguageRetryHint,
+  isStoryPassageLanguageToolSlug,
+  mustEnforceStoryPassageLanguageCompliance,
+  shouldBlockCostSaverForStoryLanguage,
 } from '../utils/story-passage-subject.js';
 import {
   dedupeIntraRecordQuestions,
@@ -7962,7 +7965,12 @@ ${pdfContext}`
   let lastValidationMessage = '';
 
   let activePrompt = basePrompt;
-  const maxValidationAttempts = getAiGeneratorValidationMaxAttempts(isBatchVariant, recoveryPass);
+  const baseValidationAttempts = getAiGeneratorValidationMaxAttempts(isBatchVariant, recoveryPass);
+  const storyLanguageEnforced =
+    isStoryPassageLanguageToolSlug(slug) && mustEnforceStoryPassageLanguageCompliance(meta.subject);
+  const maxValidationAttempts = storyLanguageEnforced
+    ? Math.max(2, baseValidationAttempts)
+    : baseValidationAttempts;
 
   for (let attempt = 1; attempt <= maxValidationAttempts; attempt += 1) {
     const llmOptions = buildLlmOptions(attempt);
@@ -8242,11 +8250,19 @@ ${pdfContext}`
             structuredContent = validation.normalizedStructuredContent;
           }
           if (!validation.valid && isAiGeneratorCostSaverEnabled()) {
-            validation = {
-              valid: true,
-              normalizedStructuredContent: structuredContent,
-              normalizedType: contentType,
-            };
+            const blockBypass = shouldBlockCostSaverForStoryLanguage(
+              slug,
+              meta.subject,
+              structuredContent,
+              validation.message || '',
+            );
+            if (!blockBypass) {
+              validation = {
+                valid: true,
+                normalizedStructuredContent: structuredContent,
+                normalizedType: contentType,
+              };
+            }
           }
         }
         lastValidationMessage = validation.message || 'Structured content failed validation.';
@@ -8364,10 +8380,21 @@ ${pdfContext}`
 
       const finalQuality = runAiGeneratorQualityGate(slug, structuredContent, meta);
       if (!finalQuality.valid) {
-        if (isBatchVariant && (isAiGeneratorCostSaverEnabled() || isAiGeneratorSectionPadEnabled())) {
+        const finalQualityMessage = finalQuality.errors.join('; ');
+        const blockStoryLanguageSave = shouldBlockCostSaverForStoryLanguage(
+          slug,
+          meta.subject,
+          structuredContent,
+          finalQualityMessage,
+        );
+        if (
+          isBatchVariant &&
+          (isAiGeneratorCostSaverEnabled() || isAiGeneratorSectionPadEnabled()) &&
+          !blockStoryLanguageSave
+        ) {
           /* section pad / batch economy — save usable output without another LLM call */
         } else {
-          lastValidationMessage = finalQuality.errors.join('; ');
+          lastValidationMessage = finalQualityMessage;
           throw new Error(lastValidationMessage);
         }
       }

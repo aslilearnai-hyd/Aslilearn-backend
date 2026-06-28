@@ -337,9 +337,9 @@ export async function generateBatchAndSave(params, opts = {}) {
 
               variantIndex,
 
-              variantAngle: getAiGeneratorVariantAngle(variantIndex),
+              variantAngle: getAiGeneratorVariantAngle(variantIndex, subjectName),
 
-              variantScenario: getAiGeneratorVariantScenario(variantIndex),
+              variantScenario: getAiGeneratorVariantScenario(variantIndex, subjectName),
 
               batchSize,
 

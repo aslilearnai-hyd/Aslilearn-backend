@@ -1,3 +1,5 @@
+import { canonicalStoryPassageSubject } from '../utils/story-passage-subject.js';
+
 /** 25 distinct creative angles — one per batch variant for Super Admin AI Generator. */
 export const AI_GENERATOR_VARIANT_ANGLES = Object.freeze([
   'Hands-on lab or demonstration with everyday materials',
@@ -27,11 +29,25 @@ export const AI_GENERATOR_VARIANT_ANGLES = Object.freeze([
   'Project output — poster, model, comic strip, or presentation',
 ]);
 
-export function getAiGeneratorVariantAngle(variantIndex) {
+const MONOLINGUAL_STORY_ANGLE =
+  'Indian cultural story setting (festival, village, or market) — narration entirely in the output language only';
+
+const MONOLINGUAL_STORY_SCENARIO = 'a classroom story-reading circle in the output language';
+
+function isMonolingualStorySubject(subject) {
+  const canonical = canonicalStoryPassageSubject(subject);
+  return canonical === 'Hindi' || canonical === 'Telugu';
+}
+
+export function getAiGeneratorVariantAngle(variantIndex, subject = '') {
   const n = Math.floor(Number(variantIndex) || 0);
   if (n < 1) return '';
   const idx = (n - 1) % AI_GENERATOR_VARIANT_ANGLES.length;
-  return AI_GENERATOR_VARIANT_ANGLES[idx] || '';
+  const angle = AI_GENERATOR_VARIANT_ANGLES[idx] || '';
+  if (isMonolingualStorySubject(subject) && /bilingual|english \+ hindi/i.test(angle)) {
+    return MONOLINGUAL_STORY_ANGLE;
+  }
+  return angle;
 }
 
 /** Short scenario hooks so fallback/scaffold text differs per variant even when the model fails. */
@@ -63,8 +79,12 @@ export const AI_GENERATOR_VARIANT_SCENARIOS = Object.freeze([
   'a comic-strip storyboard',
 ]);
 
-export function getAiGeneratorVariantScenario(variantIndex) {
+export function getAiGeneratorVariantScenario(variantIndex, subject = '') {
   const n = Math.floor(Number(variantIndex) || 0);
   if (n < 1) return '';
-  return AI_GENERATOR_VARIANT_SCENARIOS[(n - 1) % AI_GENERATOR_VARIANT_SCENARIOS.length] || '';
+  const scenario = AI_GENERATOR_VARIANT_SCENARIOS[(n - 1) % AI_GENERATOR_VARIANT_SCENARIOS.length] || '';
+  if (isMonolingualStorySubject(subject) && /bilingual/i.test(scenario)) {
+    return MONOLINGUAL_STORY_SCENARIO;
+  }
+  return scenario;
 }

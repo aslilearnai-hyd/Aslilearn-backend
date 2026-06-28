@@ -92,7 +92,9 @@ export function storyPassageRequiredScript(subject) {
 }
 
 function countMatches(text, re) {
-  return (String(text).match(re) || []).length;
+  const source = re instanceof RegExp ? re.source : String(re);
+  const flags = re instanceof RegExp && re.flags.includes('i') ? 'gi' : 'g';
+  return (String(text).match(new RegExp(source, flags)) || []).length;
 }
 
 /** True when a user-facing string matches the required script for Hindi/Telugu/English subjects. */
@@ -186,6 +188,33 @@ export function buildStoryPassageLanguageRetryHint(subject) {
   const lang = resolveStoryPassageOutputLanguage(subject);
   if (!lang || lang.language === 'English') return '';
   return `LANGUAGE RETRY (critical): Regenerate ALL string values in ${lang.language} using ${lang.script} only. Remove every English sentence, English question, and Roman transliteration.`;
+}
+
+export function isStoryPassageLanguageToolSlug(toolSlug) {
+  const slug = String(toolSlug || '').trim();
+  return slug === 'reading-practice-room' || slug === 'story-passage-creator';
+}
+
+/** Hindi/Telugu story tools must pass script compliance — never bypass for cost saver. */
+export function mustEnforceStoryPassageLanguageCompliance(subject) {
+  const required = storyPassageRequiredScript(subject);
+  return required === 'devanagari' || required === 'telugu';
+}
+
+/** True when economy-mode validation bypass would save mixed-language story output. */
+export function shouldBlockCostSaverForStoryLanguage(toolSlug, subject, structured, validationMessage = '') {
+  if (!isStoryPassageLanguageToolSlug(toolSlug)) return false;
+  if (!mustEnforceStoryPassageLanguageCompliance(subject)) return false;
+  const langCheck = validateStoryPassageLanguageCompliance(subject, structured);
+  if (!langCheck.valid) return true;
+  const msg = String(validationMessage || '').toLowerCase();
+  return (
+    msg.includes('devanagari') ||
+    msg.includes('telugu lipi') ||
+    msg.includes('must not mix') ||
+    msg.includes('hindi (devanagari') ||
+    msg.includes('telugu (telugu lipi')
+  );
 }
 
 /** Canonical section labels echoed back as fake content (e.g. "Passage / Story for … in Hindi."). */

@@ -393,8 +393,8 @@ export async function generateAndSaveContent(req, res) {
         ? {
             generationVariant,
             variantIndex: generationVariant,
-            variantAngle: getAiGeneratorVariantAngle(generationVariant),
-            variantScenario: getAiGeneratorVariantScenario(generationVariant),
+            variantAngle: getAiGeneratorVariantAngle(generationVariant, subjectName),
+            variantScenario: getAiGeneratorVariantScenario(generationVariant, subjectName),
             uniqueSeed: `${Date.now()}-v${generationVariant}-${Math.random().toString(36).slice(2, 12)}-${Math.random().toString(36).slice(2, 8)}`,
           }
         : {}),
