@@ -47,6 +47,8 @@ import {
   resolveSubjectContentIds,
   resolveSubjectContentIdsMany,
   subjectIdAllowedWithSiblings,
+  subjectGroupKey,
+  extractPlainSubjectNameForContent,
 } from '../utils/resolveSubjectContentIds.js';
 import Subject from '../models/Subject.js';
 
@@ -383,16 +385,29 @@ router.get('/subjects', async (req, res) => {
     .select('_id name description code board');
     
     console.log(`Found ${subjects.length} subjects for teacher`);
-    res.json({ 
-      success: true, 
-      data: subjects.map(subj => ({
-        _id: subj._id.toString(),
-        id: subj._id.toString(),
-        name: subj.name,
+
+    const groupedSubjects = new Map();
+    for (const subj of subjects) {
+      const key = subjectGroupKey(subj.name);
+      const id = subj._id.toString();
+      if (!groupedSubjects.has(key)) {
+        groupedSubjects.set(key, { subj, ids: [id] });
+        continue;
+      }
+      groupedSubjects.get(key).ids.push(id);
+    }
+
+    res.json({
+      success: true,
+      data: Array.from(groupedSubjects.values()).map(({ subj, ids }) => ({
+        _id: ids[0],
+        id: ids[0],
+        name: extractPlainSubjectNameForContent(subj.name) || subj.name,
         description: subj.description || '',
         code: subj.code || '',
-        board: subj.board || ''
-      }))
+        board: subj.board || '',
+        mergedSubjectIds: ids,
+      })),
     });
   } catch (error) {
     console.error('Error fetching teacher subjects:', error);
