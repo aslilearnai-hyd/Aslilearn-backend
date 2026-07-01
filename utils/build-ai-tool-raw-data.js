@@ -196,8 +196,45 @@ export function buildRawDataForTool(toolType, content, metadata = {}) {
 
   if (slug === 'story-passage-creator') {
     const structured = extractStructuredFromStoredContent(content, metadata);
-    if (structured && typeof structured === 'object' && Object.keys(structured).length) {
-      return finalizeStoryPassageStructuredContent(structured, metadata);
+    const meta = metadata && typeof metadata === 'object' ? metadata : {};
+    const renderContent =
+      meta.renderContent && typeof meta.renderContent === 'object' && !Array.isArray(meta.renderContent)
+        ? meta.renderContent
+        : {};
+    const structuredObj =
+      structured && typeof structured === 'object' && !Array.isArray(structured) ? structured : {};
+    const pickQuestionList = (...candidates) => {
+      for (const candidate of candidates) {
+        if (Array.isArray(candidate) && candidate.length) return candidate;
+      }
+      return [];
+    };
+    const merged = {
+      ...structuredObj,
+      read_and_recall_questions: pickQuestionList(
+        structuredObj.read_and_recall_questions,
+        structuredObj.recall_questions,
+        renderContent.readAndRecallQuestions,
+        renderContent.read_and_recall_questions,
+        renderContent.recall_questions,
+      ),
+      think_and_infer_questions: pickQuestionList(
+        structuredObj.think_and_infer_questions,
+        structuredObj.infer_questions,
+        renderContent.thinkAndInferQuestions,
+        renderContent.think_and_infer_questions,
+        renderContent.infer_questions,
+      ),
+      apply_and_connect_questions: pickQuestionList(
+        structuredObj.apply_and_connect_questions,
+        structuredObj.connect_questions,
+        renderContent.applyAndConnectQuestions,
+        renderContent.apply_and_connect_questions,
+        renderContent.connect_questions,
+      ),
+    };
+    if (merged && typeof merged === 'object' && Object.keys(merged).length) {
+      return finalizeStoryPassageStructuredContent(merged, metadata);
     }
     if (parsed && typeof parsed === 'object') {
       return finalizeStoryPassageStructuredContent(parsed, metadata);

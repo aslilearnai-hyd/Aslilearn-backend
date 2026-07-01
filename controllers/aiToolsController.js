@@ -620,6 +620,11 @@ export const getGeneratedContent = async (req, res) => {
       }
     }
 
+    const metadataForRaw = { ...(matchedDoc.metadata || {}) };
+    const rawData = toolType
+      ? buildRawDataForTool(toolType, matchedDoc.generatedContent || matchedDoc.content || '', metadataForRaw)
+      : null;
+
     return res.json({
       success: true,
       data: {
@@ -630,6 +635,8 @@ export const getGeneratedContent = async (req, res) => {
         subTopic: matchedDoc.subtopic || '',
         section: matchedDoc.section || '',
         generatedContent: matchedDoc.generatedContent || matchedDoc.content || '',
+        structuredContent: metadataForRaw.structuredContent ?? null,
+        ...(rawData ? { rawData } : {}),
         createdAt: matchedDoc.createdAt,
         matchType,
         totalCandidates,

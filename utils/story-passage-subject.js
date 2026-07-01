@@ -2,22 +2,31 @@
  * Story & Passage Creator — English, Hindi, and Telugu only.
  */
 
+function plainStoryLanguageKey(subject) {
+  const raw = String(subject || '').split('__deleted__')[0].trim();
+  if (!raw) return null;
+  if (/(telugu|తెలుగు)/i.test(raw)) return 'telugu';
+  if (/(hindi|हिंदी|हिन्दी)/i.test(raw)) return 'hindi';
+  if (/english/i.test(raw)) return 'english';
+
+  const match = raw.match(/^(.+?)_\d+$/);
+  const plain = (match ? match[1] : raw).toLowerCase().trim();
+  if (['eng', 'english'].includes(plain) || plain.includes('english')) return 'english';
+  if (['hin', 'hindi'].includes(plain) || plain.includes('hindi')) return 'hindi';
+  if (['tel', 'telugu'].includes(plain) || plain.includes('telugu')) return 'telugu';
+  return null;
+}
+
 export function isStoryPassageAllowedSubject(subject) {
-  const s = String(subject || '').trim();
-  if (!s) return false;
-  if (/(telugu|తెలుగు)/i.test(s)) return true;
-  if (/(hindi|हिंदी|हिन्दी)/i.test(s)) return true;
-  if (/english/i.test(s)) return true;
-  return false;
+  return plainStoryLanguageKey(subject) != null;
 }
 
 /** Map curriculum label → canonical DB subject for lookups. */
 export function canonicalStoryPassageSubject(subject) {
-  const s = String(subject || '').trim();
-  if (!s) return null;
-  if (/(telugu|తెలుగు)/i.test(s)) return 'Telugu';
-  if (/(hindi|हिंदी|हिन्दी)/i.test(s)) return 'Hindi';
-  if (/english/i.test(s)) return 'English';
+  const key = plainStoryLanguageKey(subject);
+  if (key === 'telugu') return 'Telugu';
+  if (key === 'hindi') return 'Hindi';
+  if (key === 'english') return 'English';
   return null;
 }
 
