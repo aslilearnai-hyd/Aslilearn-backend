@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import AiToolTopic from '../models/AiToolTopic.js';
-import { boardMongoMatch, canonicalBoardLabel } from '../utils/board-label.js';
+import { boardMongoMatch, canonicalBoardLabel, resolveClassLabelForAiToolStorage } from '../utils/board-label.js';
 import {
   buildAiToolTopicHierarchyTree,
   buildAiToolTopicTaxonomyFilter,
@@ -83,7 +83,7 @@ export async function listAiToolTopics(req, res) {
 export async function createAiToolTopic(req, res) {
   try {
     const board = canonicalBoardLabel(normalizeText(req.body.board));
-    const classLabel = normalizeText(req.body.classLabel);
+    const classLabel = resolveClassLabelForAiToolStorage(normalizeText(req.body.classLabel), board);
     const subject = normalizeText(req.body.subject);
     const label = normalizeText(req.body.label || '');
     const topicInput = normalizeText(req.body.topicName);
@@ -184,7 +184,13 @@ export async function updateAiToolTopic(req, res) {
     for (const key of editableKeys) {
       if (req.body[key] !== undefined) {
         const raw = normalizeText(req.body[key]);
-        update[key] = key === 'board' ? canonicalBoardLabel(raw) : raw;
+        if (key === 'board') {
+          update[key] = canonicalBoardLabel(raw);
+        } else if (key === 'classLabel') {
+          update[key] = resolveClassLabelForAiToolStorage(raw, update.board || existing.board);
+        } else {
+          update[key] = raw;
+        }
       }
     }
 

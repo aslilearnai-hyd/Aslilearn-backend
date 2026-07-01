@@ -133,7 +133,10 @@ export async function resolveAiToolTopicTaxonomy(params = {}) {
   if (rows.length === 0 && board) {
     const compact = board.toUpperCase().replace(/[\s/\\-]+/g, '');
     if (compact.includes('IIT') || compact.includes('NEET') || compact.includes('JEE')) {
-      rows = await queryAiToolTopicTaxonomy({ ...params, board: 'IIT / NEET' });
+      for (const alias of ['IIT / NEET', 'IIT/NEET', 'IIT', 'NEET']) {
+        rows = await queryAiToolTopicTaxonomy({ ...params, board: alias });
+        if (rows.length > 0) break;
+      }
     } else if (compact === 'CBSE' || compact === 'CBSC') {
       rows = await queryAiToolTopicTaxonomy({ ...params, board: 'CBSE' });
     }

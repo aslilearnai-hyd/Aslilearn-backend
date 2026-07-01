@@ -1,5 +1,4 @@
 import {
-
   beginTokenUsageSession,
 
   endTokenUsageSession,
@@ -554,6 +553,10 @@ export async function generateBatchAndSave(params, opts = {}) {
           } catch (err) {
 
             lastError = err?.message || String(err);
+            if (isTransientGeminiError(err) && attempt < maxAttempts) {
+              await new Promise((resolve) => setTimeout(resolve, Math.min(12_000, 2500 * attempt)));
+              continue;
+            }
 
           }
 

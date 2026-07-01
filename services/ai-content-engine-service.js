@@ -8174,6 +8174,7 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
     return { maxTokens, primaryModel: batchModel, flashLiteOnly: effectiveFlashLiteOnly };
   };
 
+  const isBookBatch = isBatchVariant && Boolean(extra.bookId || extra.bookGenerator);
   const meta = {
     classLabel: params.classLabel || params.gradeLevel,
     subject: params.subject,
@@ -8185,8 +8186,10 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
     variantAngle: isBatchVariant ? String(extra.variantAngle || '').trim() : undefined,
     variantScenario: isBatchVariant ? String(extra.variantScenario || '').trim() : undefined,
     batchOrchestrator: isBatchVariant,
+    bookGenerator: isBookBatch,
     requireAllCanonicalFields:
-      !isBatchVariant || (!isAiGeneratorCostSaverEnabled() && !isAiGeneratorUltraEconomyEnabled()),
+      !isBatchVariant ||
+      (!isAiGeneratorCostSaverEnabled() && !isAiGeneratorUltraEconomyEnabled() && !isBookBatch),
   };
 
   let lastError = null;
@@ -8199,10 +8202,10 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
     isBatchVariant &&
     languageSubjectEnforced &&
     (slug === 'flashcard-generator' || slug === 'my-study-decks');
-  const maxValidationAttempts = isLanguageFlashcardBatch
+  const maxValidationAttempts = isLanguageFlashcardBatch && !isBookBatch
     ? 1
     : languageSubjectEnforced
-      ? isBatchVariant && (isAiGeneratorCostSaverEnabled() || isAiGeneratorUltraEconomyEnabled())
+      ? isBatchVariant && (isAiGeneratorCostSaverEnabled() || isAiGeneratorUltraEconomyEnabled() || isBookBatch)
         ? Math.min(2, Math.max(2, baseValidationAttempts))
         : Math.max(3, baseValidationAttempts)
       : baseValidationAttempts;
@@ -8643,7 +8646,7 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
         );
         if (
           isBatchVariant &&
-          (isAiGeneratorCostSaverEnabled() || isAiGeneratorSectionPadEnabled()) &&
+          (isAiGeneratorCostSaverEnabled() || isAiGeneratorSectionPadEnabled() || meta.bookGenerator) &&
           !blockStoryLanguageSave
         ) {
           /* section pad / batch economy — save usable output without another LLM call */

@@ -290,6 +290,14 @@ export function getBatchSlotMaxAttempts() {
   return shouldEnforceBatchUniquenessRetries() ? 3 : 1;
 }
 
+/** Book-Based Generator: default 2 slot attempts (503 / validation recovery). */
+export function getBookBatchSlotMaxAttempts() {
+  const envRaw = process.env.BOOK_GENERATOR_SLOT_MAX_ATTEMPTS;
+  const parsed = Number.parseInt(String(envRaw ?? ''), 10);
+  if (Number.isFinite(parsed) && parsed > 0) return Math.min(5, parsed);
+  return 2;
+}
+
 /** Max Gemini re-generations for single-record uniqueness (AI Generator API). Default 1 with cost saver. */
 export function getUniquenessMaxAttempts() {
   const envRaw = process.env.AI_GENERATOR_UNIQUENESS_MAX_ATTEMPTS;

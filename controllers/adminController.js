@@ -34,6 +34,99 @@ import {
 import { resolveSubjectContentIds } from '../utils/resolveSubjectContentIds.js';
 import { getClassScheduleAndRoomMap } from '../utils/teacherClassSchedule.js';
 
+async function buildAssignedClassesSummariesForTeachers(teachers, adminId) {
+  if (!teachers?.length) return teachers;
+
+  const classIdSet = new Set();
+  for (const teacher of teachers) {
+    for (const rawId of teacher.assignedClassIds || []) {
+      const id = String(rawId);
+      if (mongoose.Types.ObjectId.isValid(id)) classIdSet.add(id);
+    }
+  }
+
+  if (classIdSet.size === 0) {
+    return teachers.map((teacher) => ({ ...teacher, assignedClasses: [] }));
+  }
+
+  const classIds = [...classIdSet].map((id) => new mongoose.Types.ObjectId(id));
+  const classDocuments = await Class.find({
+    _id: { $in: classIds },
+    ...(adminId ? { assignedAdmin: adminId } : {}),
+    isActive: true,
+  })
+    .populate('assignedSubjects', '_id name description code board')
+    .select('_id classNumber section description name assignedSubjects')
+    .lean();
+
+  const classById = new Map(classDocuments.map((doc) => [doc._id.toString(), doc]));
+  const classObjectIds = classDocuments.map((doc) => doc._id);
+
+  const students = classObjectIds.length
+    ? await User.find({
+        role: 'student',
+        assignedClass: { $in: classObjectIds },
+        ...(adminId ? { assignedAdmin: adminId } : {}),
+      })
+        .select('assignedClass')
+        .lean()
+    : [];
+
+  const studentCountByClassId = new Map();
+  for (const student of students) {
+    const cid = student.assignedClass?.toString();
+    if (cid) {
+      studentCountByClassId.set(cid, (studentCountByClassId.get(cid) || 0) + 1);
+    }
+  }
+
+  return Promise.all(
+    teachers.map(async (teacher) => {
+      const teacherId = String(teacher._id || teacher.id);
+      const assignedClassIds = (teacher.assignedClassIds || []).map(String).filter(Boolean);
+      const assignedClasses = assignedClassIds
+        .map((classId) => {
+          const classDoc = classById.get(classId);
+          if (!classDoc) return null;
+          const className =
+            classDoc.name || `Class ${classDoc.classNumber}${classDoc.section || ''}`;
+          return {
+            id: classId,
+            name: className,
+            classNumber: classDoc.classNumber,
+            section: classDoc.section,
+            schedule: 'Not scheduled',
+            room: '—',
+            studentCount: studentCountByClassId.get(classId) || 0,
+            assignedSubjects: (classDoc.assignedSubjects || []).map((subj) => ({
+              _id: subj._id ? subj._id.toString() : String(subj),
+              id: subj._id ? subj._id.toString() : String(subj),
+              name: subj.name || 'Unknown Subject',
+              description: subj.description || '',
+              code: subj.code || '',
+              board: subj.board || '',
+            })),
+          };
+        })
+        .filter(Boolean);
+
+      if (assignedClasses.length > 0) {
+        const scheduleMap = await getClassScheduleAndRoomMap(
+          teacherId,
+          assignedClasses.map((c) => c.id)
+        );
+        for (const classRow of assignedClasses) {
+          const fromTimetable = scheduleMap.get(String(classRow.id));
+          if (fromTimetable?.schedule) classRow.schedule = fromTimetable.schedule;
+          if (fromTimetable?.room) classRow.room = fromTimetable.room;
+        }
+      }
+
+      return { ...teacher, assignedClasses };
+    })
+  );
+}
+
 const buildSafeAppendQuestionPipeline = (questionId) => [
   {
     $set: {
@@ -413,8 +506,13 @@ export const getTeachers = async (req, res) => {
       createdAt: teacher.createdAt,
       updatedAt: teacher.updatedAt
     }));
+
+    const withAssignedClasses = await buildAssignedClassesSummariesForTeachers(
+      transformedTeachers,
+      adminId
+    );
     
-    res.json(transformedTeachers);
+    res.json(withAssignedClasses);
   } catch (error) {
     console.error('Get teachers error:', error);
     res.status(500).json({ success: false, message: 'Failed to fetch teachers' });

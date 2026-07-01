@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import Book from '../models/Book.js';
 import AiToolGeneration from '../models/AiToolGeneration.js';
-import { beginTokenUsageSession, endTokenUsageSession, getTokenUsageSession } from './gemini-service.js';
+import { beginTokenUsageSession, endTokenUsageSession, getTokenUsageSession, isTransientGeminiError } from './gemini-service.js';
 import {
   generateStructuredContentForAiGenerator,
   finalizeExamPaperStructuredContent,
@@ -11,6 +11,8 @@ import {
   finalizePracticeQaStructuredContent,
   finalizeQuickAssignmentStructuredContent,
   finalizeConceptMasteryStructuredContent,
+  normalizeLessonPlannerStructuredContent,
+  finalizeFlashcardDeckStructuredContent,
 } from './ai-content-engine-service.js';
 import { buildBookHistoricalGenerationContext } from './book-generator-historical.js';
 import {
@@ -27,7 +29,7 @@ import {
 } from '../constants/ai-generator-variant-angles.js';
 import { acquireGenerationLock, forceReleaseGenerationLock, releaseGenerationLock } from './ai-generator-lock-service.js';
 import {
-  getBatchSlotMaxAttempts,
+  getBookBatchSlotMaxAttempts,
   shouldUseFlashForAiGeneratorRun,
 } from '../utils/ai-generator-batch-config.js';
 import { retrieveBookContextForGeneration, buildBookContextTextForVariant } from './book-rag-service.js';
@@ -40,8 +42,13 @@ import {
 import { canonicalBoardLabel, lockBoardKey, normalizeClassLabelForLock, resolveClassLabelForAiToolStorage } from '../utils/board-label.js';
 
 function getBookGeneratorConcurrency() {
-  const n = Number(process.env.BOOK_GENERATOR_CONCURRENCY || process.env.AI_GENERATOR_BATCH_CONCURRENCY || 5);
-  return Number.isFinite(n) && n > 0 ? Math.min(n, 8) : 5;
+  const n = Number(process.env.BOOK_GENERATOR_CONCURRENCY || process.env.AI_GENERATOR_BATCH_CONCURRENCY);
+  const defaultC = 1;
+  return Number.isFinite(n) && n > 0 ? Math.min(n, 4) : defaultC;
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 function finalizeBookStructuredContent(toolSlug, structured, meta) {
@@ -62,6 +69,13 @@ function finalizeBookStructuredContent(toolSlug, structured, meta) {
       return finalizeQuickAssignmentStructuredContent(source, meta);
     case 'concept-mastery-helper':
       return finalizeConceptMasteryStructuredContent(source, meta);
+    case 'lesson-planner':
+    case 'study-schedule-maker':
+      return normalizeLessonPlannerStructuredContent(source, slug);
+    case 'flashcard-generator':
+      return finalizeFlashcardDeckStructuredContent(source, meta, 'flashcard-generator');
+    case 'my-study-decks':
+      return finalizeFlashcardDeckStructuredContent(source, meta, 'my-study-decks');
     default:
       return source;
   }
@@ -87,7 +101,16 @@ function getBatchSize(override) {
 }
 
 function getMaxAttemptsPerSlot() {
-  return getBatchSlotMaxAttempts();
+  return getBookBatchSlotMaxAttempts();
+}
+
+function formatBookSlotFailureMessage(batchIndex, error) {
+  const msg = String(error || 'Unknown error').trim();
+  if (isTransientGeminiError({ message: msg })) {
+    return `Slot ${batchIndex}: Gemini temporarily busy — wait a minute and retry.`;
+  }
+  if (msg.length > 140) return `Slot ${batchIndex}: ${msg.slice(0, 140)}…`;
+  return `Slot ${batchIndex}: ${msg}`;
 }
 
 function formatBookBatchProgress({ saved, batchSize, batchIndex, callCount, costInr }) {
@@ -265,6 +288,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               batchSize,
               bookId,
               useBookKnowledge,
+              bookGenerator: true,
               uniqueSeed: `${Date.now()}-book-v${variantIndex}-a${attempt}`,
               strictUniqueness: false,
               ...(attempt > 1 ? { recoveryPass: true } : {}),
@@ -378,6 +402,10 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             return { ok: true, variantIndex, batchIndex, record: record.toObject() };
           } catch (err) {
             lastError = err?.message || String(err);
+            if (isTransientGeminiError(err) && attempt < maxAttempts) {
+              await sleep(Math.min(12_000, 2500 * attempt));
+              continue;
+            }
           }
         }
         return { ok: false, variantIndex, batchIndex, error: lastError };
@@ -386,9 +414,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
       for (const result of slotResults.sort((a, b) => a.batchIndex - b.batchIndex)) {
         if (result.ok) savedRecords.push(result.record);
         else {
-          const err = String(result.error || 'Unknown error');
-          const short = err.length > 140 ? `${err.slice(0, 140)}…` : err;
-          failures.push(`Slot ${result.batchIndex}: ${short}`);
+          failures.push(formatBookSlotFailureMessage(result.batchIndex, result.error));
         }
       }
     } finally {
