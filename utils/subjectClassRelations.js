@@ -101,6 +101,11 @@ export async function syncClassSectionSubjects(classId, subjectIds, adminId) {
 /**
  * Link a teacher to a subject without removing other teachers who teach the same subject.
  * Sets Subject.teacherId (primary) when explicitly assigned from subject management.
+ *
+ * Note: This only updates Subject.teacherId (the subject's primary teacher). It does NOT
+ * modify the teacher's own `subjects` list — that list is owned solely by the "Assign
+ * Subjects" teacher flow. Auto-adding here previously caused subjects the admin never
+ * selected in the Assign Subjects modal to appear on the teacher card.
  */
 export async function syncSubjectTeacher(subjectId, teacherId, adminId) {
   const subjectOid = new mongoose.Types.ObjectId(String(subjectId));
@@ -115,7 +120,6 @@ export async function syncSubjectTeacher(subjectId, teacherId, adminId) {
   if (!teacher) return null;
 
   await Subject.findByIdAndUpdate(subjectOid, { $set: { teacherId: teacher._id } });
-  await Teacher.findByIdAndUpdate(teacher._id, { $addToSet: { subjects: subjectOid } });
   return teacher;
 }
 

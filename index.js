@@ -2594,12 +2594,11 @@ app.post('/api/admin/subjects', async (req, res) => {
     });
 
     await newSubject.save();
-    
-    // If teacher is assigned, add subject to teacher's subjects array
-    if (teacher) {
-      await Teacher.findByIdAndUpdate(teacher, { $addToSet: { subjects: newSubject._id } });
-    }
-    
+
+    // Note: setting a subject's primary teacher must NOT add the subject to the
+    // teacher's own `subjects` list. That list is owned solely by the "Assign
+    // Subjects" teacher flow; auto-adding here leaked unselected subjects onto teachers.
+
     res.status(201).json({ message: 'Subject created successfully' });
   } catch (error) {
     console.error('Failed to create subject:', error);
