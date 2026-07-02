@@ -12,8 +12,8 @@ function plainStoryLanguageKey(subject) {
   const match = raw.match(/^(.+?)_\d+$/);
   const plain = (match ? match[1] : raw).toLowerCase().trim();
   if (['eng', 'english'].includes(plain) || plain.includes('english')) return 'english';
-  if (['hin', 'hindi'].includes(plain) || plain.includes('hindi')) return 'hindi';
-  if (['tel', 'telugu'].includes(plain) || plain.includes('telugu')) return 'telugu';
+  if (['hin', 'hindi'].includes(plain) || plain.includes('hindi') || /^hin\d*$/i.test(plain)) return 'hindi';
+  if (['tel', 'telugu'].includes(plain) || plain.includes('telugu') || /^tel\d*$/i.test(plain)) return 'telugu';
   return null;
 }
 
@@ -121,11 +121,132 @@ function countMatches(text, re) {
 }
 
 const ENGLISH_BOILERPLATE_RE =
-  /^(?:section\s+[a-e]\b|mcq|multiple\s+choice|short\s+answer|long\s+answer|bloom|ncf|marks?\s*:|total\s+marks|answer\s+key|question\s+paper)/i;
+  /^(?:section\s+[a-g]\s*:|section\s+[a-e]\b|mcq|multiple\s+choice|short\s+answer|long\s+answer|bloom|ncf|marks?\s*:|total\s+marks|answer\s+key|question\s+paper|very\s+short|case[\s-]?based|competency)/i;
+
+/** JSON keys that hold structural labels — not student-facing prose (skip in language walks). */
+const LANGUAGE_COMPLIANCE_SKIP_OBJECT_KEYS = new Set([
+  'sectionName',
+  'section',
+  'type',
+  'question_type',
+  'question_number',
+  'marks',
+  'difficulty_level',
+  'bloom_level',
+  'difficulty_tag_for_each_card',
+  'content_type',
+  'class_level',
+]);
 
 function indicScaffoldFilled(value) {
   const t = String(value || '').trim();
   return t.length >= 12 && !isStoryPassagePlaceholderText(t);
+}
+
+/** True when a Hindi/Telugu field already has usable Indic prose (not English-only LLM output). */
+function indicLanguageFieldFilled(value, requiredScript) {
+  const t = String(value || '').trim();
+  if (!t || t.length < 8) return false;
+  if (isStoryPassagePlaceholderText(t)) return false;
+  if (!requiredScript || requiredScript === 'english') return indicScaffoldFilled(t);
+  return textMatchesStoryPassageScript(t, requiredScript, { strict: false });
+}
+
+function questionBodyNeedsIndicRepair(question, requiredScript) {
+  const t = String(question?.question || question?.prompt || '').trim();
+  if (t.length < 10) return true;
+  if (!requiredScript || requiredScript === 'english') return false;
+  return !textMatchesStoryPassageScript(t, requiredScript, { strict: false });
+}
+
+/** Prefer curriculum subject; fall back to book.subject when only the book is tagged Hindi/Telugu. */
+export function resolveLanguageSubjectForGeneration(subject = '', bookSubject = '') {
+  const primary = String(subject || '').trim();
+  const fromBook = String(bookSubject || '').trim();
+  if (mustEnforceStoryPassageLanguageCompliance(primary)) return primary;
+  if (mustEnforceStoryPassageLanguageCompliance(fromBook)) return fromBook;
+  return primary || fromBook;
+}
+
+function extractLongestIndicRun(text, script) {
+  const re = script === 'telugu' ? TELUGU_CHAR_RE : DEVANAGARI_CHAR_RE;
+  const runs = [];
+  let current = '';
+  for (const ch of String(text || '')) {
+    if (re.test(ch)) {
+      current += ch;
+    } else if (current.length >= 2) {
+      runs.push(current);
+      current = '';
+    } else {
+      current = '';
+    }
+  }
+  if (current.length >= 2) runs.push(current);
+  return runs.sort((a, b) => b.length - a.length)[0] || '';
+}
+
+const HINDI_SCAFFOLD_TOPIC_HINTS = [
+  [/swadesh/i, 'स्वदेश'],
+  [/kavita|poems?|poem/i, 'कविता'],
+  [/paath\s*se\s*pehle|pre-?reading|let['']?s?\s*begin/i, 'पाठ से पहले'],
+  [/post-?reading|paath\s*ke\s*baad/i, 'पाठ के बाद'],
+  [/grammar|vyakaran/i, 'व्याकरण'],
+  [/prose|gadya/i, 'गद्य'],
+];
+
+const TELUGU_SCAFFOLD_TOPIC_HINTS = [
+  [/pre-?reading|patha\s*mundhu/i, 'పాఠం ముందు'],
+  [/post-?reading|patha\s*tarvata/i, 'పాఠం తర్వాత'],
+  [/kavita|poems?|poem/i, 'కవిత'],
+  [/grammar|vyakaranam/i, 'వ్యాకరణం'],
+];
+
+/**
+ * Hindi/Telugu scaffolds must not embed long Latin NCERT labels (e.g. "Pre-reading / Paath se Pehle")
+ * or language validation fails even when question bodies are valid Devanagari.
+ */
+export function resolveIndicScaffoldTopic(meta = {}, subjectOrScript = '') {
+  const subject = String(subjectOrScript || meta.subject || '').trim();
+  const script = ['devanagari', 'telugu'].includes(subjectOrScript)
+    ? subjectOrScript
+    : storyPassageRequiredScript(subject);
+  const isTelugu = script === 'telugu';
+  const fallback = isTelugu ? 'ఈ విషయం' : 'यह विषय';
+  const indicScript = isTelugu ? 'telugu' : 'devanagari';
+
+  const candidates = [
+    meta.subTopic,
+    meta.subtopic,
+    meta.topic,
+    meta.topicName,
+    meta.chapter,
+    meta.chapterTitle,
+  ]
+    .map((v) => String(v || '').trim())
+    .filter(Boolean);
+
+  const blob = candidates.join(' ');
+  let bestRun = '';
+  for (const c of candidates) {
+    const run = extractLongestIndicRun(c, indicScript);
+    if (run.length > bestRun.length) bestRun = run;
+  }
+  if (bestRun.length >= 3) return bestRun.trim();
+
+  const hints = isTelugu ? TELUGU_SCAFFOLD_TOPIC_HINTS : HINDI_SCAFFOLD_TOPIC_HINTS;
+  for (const [re, label] of hints) {
+    if (re.test(blob)) return label;
+  }
+
+  const topicOnly = String(meta.topic || meta.topicName || '').trim();
+  if (topicOnly) {
+    for (const [re, label] of hints) {
+      if (re.test(topicOnly)) return label;
+    }
+  }
+
+  return fallback;
 }
 
 /**
@@ -145,6 +266,10 @@ export function shouldSkipLanguageComplianceString(text, options = {}) {
   const indicCount = devCount + telCount;
 
   if (indicCount === 0 && latinLetters > 0 && t.length <= 140) return true;
+
+  // MCQ labels (A)–D)) and short Latin-only tokens beside Indic question bodies.
+  if (/^[A-Da-d][\).:\-\s]/.test(t) && t.length <= 120) return true;
+  if (/^Q\s*\d+[\).:\-\s]/i.test(t) && t.length <= 100) return true;
 
   if (options.relaxedWalk && indicCount < 14 && latinLetters > indicCount * 1.5) {
     return true;
@@ -168,7 +293,12 @@ export function textMatchesStoryPassageScript(text, requiredScript, opts = {}) {
     if (devCount < minDev) return false;
     if (telCount > Math.max(4, devCount * 0.15)) return false;
     const totalLetters = devCount + latinLetters;
-    if (totalLetters > 20 && latinLetters / totalLetters > (strict ? 0.14 : 0.18)) return false;
+    const latinRatio = totalLetters > 0 ? latinLetters / totalLetters : 0;
+    // Hindi papers often embed NCERT subtopic labels (Latin) inside Devanagari questions.
+    if (!strict && devCount >= 8 && latinLetters <= 56 && latinRatio <= 0.55) {
+      return true;
+    }
+    if (totalLetters > 20 && latinRatio > (strict ? 0.14 : 0.18)) return false;
     return latinLetters <= (strict ? 35 : Math.max(10, Math.floor(devCount * 0.12)));
   }
 
@@ -177,7 +307,11 @@ export function textMatchesStoryPassageScript(text, requiredScript, opts = {}) {
     if (telCount < minTel) return false;
     if (devCount > Math.max(4, telCount * 0.15)) return false;
     const totalLetters = telCount + latinLetters;
-    if (totalLetters > 20 && latinLetters / totalLetters > (strict ? 0.14 : 0.18)) return false;
+    const latinRatio = totalLetters > 0 ? latinLetters / totalLetters : 0;
+    if (!strict && telCount >= 8 && latinLetters <= 56 && latinRatio <= 0.55) {
+      return true;
+    }
+    if (totalLetters > 20 && latinRatio > (strict ? 0.14 : 0.18)) return false;
     return latinLetters <= (strict ? 35 : Math.max(10, Math.floor(telCount * 0.12)));
   }
 
@@ -189,18 +323,21 @@ export function textMatchesStoryPassageScript(text, requiredScript, opts = {}) {
   return true;
 }
 
-function walkStoryPassageStringValues(value, out = []) {
+function walkStoryPassageStringValues(value, out = [], parentKey = '') {
   if (value == null) return out;
   if (typeof value === 'string') {
     out.push(value);
     return out;
   }
   if (Array.isArray(value)) {
-    for (const item of value) walkStoryPassageStringValues(item, out);
+    for (const item of value) walkStoryPassageStringValues(item, out, parentKey);
     return out;
   }
   if (typeof value === 'object') {
-    for (const v of Object.values(value)) walkStoryPassageStringValues(v, out);
+    for (const [key, v] of Object.entries(value)) {
+      if (LANGUAGE_COMPLIANCE_SKIP_OBJECT_KEYS.has(key)) continue;
+      walkStoryPassageStringValues(v, out, key);
+    }
   }
   return out;
 }
@@ -291,7 +428,22 @@ export function validateStoryPassageLanguageCompliance(subject, structured, opti
         errors.push(
           `${label}: content must not mix English or other languages — "${t.slice(0, 72)}${t.length > 72 ? '…' : ''}"`,
         );
-        if (errors.length >= 4) break;
+        if (errors.length >= (relaxedWalk ? 6 : 4)) break;
+      }
+    }
+    // Non-story tools: pass when most checked prose is in the target script (LLM may leave Latin labels).
+    if (relaxedWalk && errors.length > 0 && errors.length <= 5) {
+      let checked = 0;
+      let passed = 0;
+      for (const text of walkStoryPassageStringValues(data)) {
+        const t = String(text || '').trim();
+        if (t.length < 16) continue;
+        if (shouldSkipLanguageComplianceString(t, { relaxedWalk: true })) continue;
+        checked += 1;
+        if (textMatchesStoryPassageScript(t, required)) passed += 1;
+      }
+      if (checked >= 4 && passed / checked >= 0.72) {
+        errors.length = 0;
       }
     }
   }
@@ -421,9 +573,7 @@ export function fillIndicStoryPassageScaffold(s, meta = {}) {
   const storyLanguage = canonicalStoryPassageSubject(meta.subject);
   if (storyLanguage !== 'Hindi' && storyLanguage !== 'Telugu') return s;
 
-  const topic =
-    String(meta.subTopic || meta.subtopic || meta.topic || '').trim() ||
-    (storyLanguage === 'Hindi' ? 'विषय' : 'విషయం');
+  const topic = resolveIndicScaffoldTopic(meta, storyLanguage === 'Telugu' ? 'telugu' : 'devanagari');
 
   if (storyLanguage === 'Hindi') {
     if (!indicScaffoldFilled(s.topic_subtopic_connection)) {
@@ -535,9 +685,7 @@ export function fillIndicReadingPracticeScaffold(s, meta = {}) {
   const storyLanguage = canonicalStoryPassageSubject(meta.subject);
   if (storyLanguage !== 'Hindi' && storyLanguage !== 'Telugu') return s;
 
-  const topic =
-    String(meta.subTopic || meta.subtopic || meta.topic || '').trim() ||
-    (storyLanguage === 'Hindi' ? 'विषय' : 'విషయం');
+  const topic = resolveIndicScaffoldTopic(meta, storyLanguage === 'Telugu' ? 'telugu' : 'devanagari');
 
   if (storyLanguage === 'Hindi') {
     if (!indicScaffoldFilled(s.subtopic_link_prior_knowledge)) {
@@ -579,6 +727,377 @@ export function fillIndicReadingPracticeScaffold(s, meta = {}) {
     }
   }
 
+  return s;
+}
+
+function parseIndicBlueprintCounts(blueprint = '') {
+  const text = String(blueprint || '');
+  const pick = (letter) => {
+    const m = text.match(new RegExp(`section\\s*${letter}[^\\d]*(\\d+)`, 'i'));
+    return m ? Math.max(0, Number(m[1])) : 0;
+  };
+  const parsed = { a: pick('a'), b: pick('b'), c: pick('c'), d: pick('d'), e: pick('e') };
+  const total = parsed.a + parsed.b + parsed.c + parsed.d + parsed.e;
+  if (total === 0) return { a: 2, b: 1, c: 1, d: 1, e: 1 };
+  return {
+    a: parsed.a || 1,
+    b: parsed.b || 1,
+    c: parsed.c || 1,
+    d: parsed.d || 1,
+    e: parsed.e || 1,
+  };
+}
+
+/** Hindi/Telugu exam questions when the model returns too few items. */
+export function buildIndicScaffoldExamQuestions(meta = {}, blueprint = '') {
+  const lang = canonicalStoryPassageSubject(meta.subject);
+  const topic = resolveIndicScaffoldTopic(meta, lang === 'Telugu' ? 'telugu' : 'devanagari');
+  const isTelugu = lang === 'Telugu';
+  const counts = parseIndicBlueprintCounts(blueprint);
+  const buckets = { section_a: [], section_b: [], section_c: [], section_d: [], section_e: [] };
+  let n = 1;
+
+  if (isTelugu) {
+    for (let i = 0; i < counts.a; i += 1) {
+      buckets.section_a.push({
+        question_number: n++,
+        question: `${topic} గురించి క్రింది వాటిలో ఏది సరైనది? (బహువికల్పం ${i + 1})`,
+        options: [
+          'A) ఆధారం లేకుండా అభిప్రాయం',
+          'B) పరిశీలన మరియు సాక్ష్యంతో కూడిన వివరణ',
+          'C) కేవలం పురావృత్తం',
+          'D) పరీక్షించలేని ఆచారం',
+        ],
+        answer: 'B) పరిశీలన మరియు సాక్ష్యంతో కూడిన వివరణ',
+        marks: 1,
+      });
+    }
+    for (let i = 0; i < counts.b; i += 1) {
+      buckets.section_b.push({
+        question_number: n++,
+        question: `${topic}కు సంబంధించిన ఒక ముఖ్య పదాన్ని నిర్వచించండి. (చాలా చిన్న సమాధానం ${i + 1})`,
+        answer: `${topic}కు సంబంధించిన సంక్షిప్త నిర్వచనం.`,
+        marks: 2,
+      });
+    }
+    for (let i = 0; i < counts.c; i += 1) {
+      buckets.section_c.push({
+        question_number: n++,
+        question: `${topic} దైనందిన జీవితంలో ఎలా ఉపయోగపడుతుందో వివరించండి. (చిన్న సమాధానం ${i + 1})`,
+        answer: `${topic}కు సంబంధించిన ఉదాహరణతో సమాధానం.`,
+        marks: 3,
+      });
+    }
+    for (let i = 0; i < counts.d; i += 1) {
+      buckets.section_d.push({
+        question_number: n++,
+        question: `${topic} యొక్క ప్రధాన ఆలోచనలను వివరంగా రాయండి. (దీర్ఘ సమాధానం ${i + 1})`,
+        answer: `${topic}కు సంబంధించిన వివరణాత్మక సమాధానం.`,
+        marks: 5,
+      });
+    }
+    for (let i = 0; i < counts.e; i += 1) {
+      buckets.section_e.push({
+        question_number: n++,
+        question: `${topic}పై కేస్ స్టడీ: పరిస్థితిని చదివి (ఎ)–(డ) ప్రశ్నలకు సమాధానం ఇవ్వండి.`,
+        answer: `పాఠ్య సాక్ష్యంతో ${topic}కు సంబంధించిన సమాధానాలు.`,
+        marks: 6,
+      });
+    }
+    return buckets;
+  }
+
+  for (let i = 0; i < counts.a; i += 1) {
+    buckets.section_a.push({
+      question_number: n++,
+      question: `${topic} के बारे में निम्न में से कौन-सा कथन सबसे उपयुक्त है? (बहुविकल्पीय ${i + 1})`,
+      options: [
+        'A) बिना साक्ष्य के अनुमान',
+        'B) प्रेक्षण और साक्ष्य पर आधारित तर्क',
+        'C) केवल रूढ़िवादी मान्यता',
+        'D) जाँच न की जा सकने वाली परंपरा',
+      ],
+      answer: 'B) प्रेक्षण और साक्ष्य पर आधारित तर्क',
+      marks: 1,
+    });
+  }
+  for (let i = 0; i < counts.b; i += 1) {
+    buckets.section_b.push({
+      question_number: n++,
+      question: `${topic} से जुड़ा एक मुख्य शब्द परिभाषित कीजिए। (अति लघु उत्तर ${i + 1})`,
+      answer: `${topic} की संक्षिप्त परिभाषा।`,
+      marks: 2,
+    });
+  }
+  for (let i = 0; i < counts.c; i += 1) {
+    buckets.section_c.push({
+      question_number: n++,
+      question: `${topic} दैनिक जीवन में कैसे उपयोगी है — एक उदाहरण सहित समझाइए। (लघु उत्तर ${i + 1})`,
+      answer: `${topic} से जुड़े वास्तविक उदाहरण पर आधारित उत्तर।`,
+      marks: 3,
+    });
+  }
+  for (let i = 0; i < counts.d; i += 1) {
+    buckets.section_d.push({
+      question_number: n++,
+      question: `${topic} के मुख्य बिंदुओं को विस्तार से लिखिए। (दीर्घ उत्तर ${i + 1})`,
+      answer: `${topic} पर विस्तृत, तर्कसंगत उत्तर।`,
+      marks: 5,
+    });
+  }
+  for (let i = 0; i < counts.e; i += 1) {
+    buckets.section_e.push({
+      question_number: n++,
+      question: `${topic} पर आधारित प्रसंग अध्ययन पढ़कर (क)–(घ) के उत्तर दीजिए।`,
+      answer: `पाठ्य सामग्री के साक्ष्य से ${topic} से संबंधित उत्तर।`,
+      marks: 6,
+    });
+  }
+  return buckets;
+}
+
+/** Pad Exam Question Paper metadata and questions in Hindi/Telugu (never English scaffold). */
+export function fillIndicExamPaperScaffold(s, meta = {}) {
+  const resolvedSubject = resolveLanguageSubjectForGeneration(meta.subject, meta.bookSubject);
+  const indicMeta = { ...meta, subject: resolvedSubject };
+  const storyLanguage = canonicalStoryPassageSubject(resolvedSubject);
+  if (storyLanguage !== 'Hindi' && storyLanguage !== 'Telugu') return s;
+
+  const requiredScript = storyPassageRequiredScript(resolvedSubject);
+  const topic = resolveIndicScaffoldTopic(indicMeta, requiredScript);
+  const subjectLabel = storyLanguage === 'Hindi' ? 'हिंदी' : 'తెలుగు';
+
+  const sectionKeys = ['section_a', 'section_b', 'section_c', 'section_d', 'section_e'];
+
+  // Lift questions from sections[] when Gemini only returns grouped sections.
+  if (Array.isArray(s.sections)) {
+    for (const sec of s.sections) {
+      if (!sec || typeof sec !== 'object') continue;
+      const name = String(sec.sectionName || sec.name || sec.title || '').trim().toLowerCase();
+      let key = '';
+      if (/section\s*a\b|\bmcq|multiple\s*choice/.test(name)) key = 'section_a';
+      else if (/section\s*b\b|very\s*short|vsa/.test(name)) key = 'section_b';
+      else if (/section\s*c\b|short\s*answer/.test(name) && !/very\s*short|vsa/.test(name)) key = 'section_c';
+      else if (/section\s*d\b|long\s*answer|essay/.test(name)) key = 'section_d';
+      else if (/section\s*e\b|case|competency|competence/.test(name)) key = 'section_e';
+      const rows = Array.isArray(sec.questions) ? sec.questions : [];
+      if (!key || !rows.length) continue;
+      const existing = Array.isArray(s[key]) ? s[key] : [];
+      s[key] = existing.length ? existing : rows;
+    }
+  }
+
+  if (Array.isArray(s.questions) && s.questions.length) {
+    let qNum = 1;
+    for (const key of sectionKeys) {
+      if (Array.isArray(s[key]) && s[key].length) continue;
+      const pick = s.questions[qNum - 1];
+      if (!pick) break;
+      s[key] = [typeof pick === 'string' ? { question: pick, answer: '' } : pick];
+      qNum += 1;
+    }
+  }
+
+  const scaffold = buildIndicScaffoldExamQuestions(indicMeta, s.blueprint || '');
+
+  if (!indicLanguageFieldFilled(s.paper_title, requiredScript) && !indicLanguageFieldFilled(s.title, requiredScript)) {
+    const title =
+      storyLanguage === 'Hindi'
+        ? `${topic} — ${subjectLabel} प्रश्न पत्र`
+        : `${topic} — ${subjectLabel} ప్రశ్న పత్రం`;
+    s.paper_title = title;
+    s.title = title;
+  }
+  if (!indicLanguageFieldFilled(s.instructions, requiredScript)) {
+    s.instructions =
+      storyLanguage === 'Hindi'
+        ? `सभी निर्देश ध्यान से पढ़िए। हर प्रश्न का उत्तर निर्धारित स्थान पर लिखिए। विषय: ${topic}।`
+        : `అన్ని సూచనలు జాగ్రత్తగా చదవండి. ప్రతి ప్రశ్నకు నిర్దిష్ట స్థలంలో సమాధానం రాయండి. విషయం: ${topic}.`;
+  }
+  if (!indicLanguageFieldFilled(s.blueprint, requiredScript)) {
+    s.blueprint =
+      storyLanguage === 'Hindi'
+        ? `प्रश्न पत्र खाका: खंड क (२ बहुविकल्पीय), खंड ख (१ अति लघु), खंड ग (१ लघु), खंड घ (१ दीर्घ), खंड घर (१ प्रसंग आधारित) — विषय: ${topic}।`
+        : `ప్రశ్న పత్రం రూపరేఖ: విభాగం A (2 బహువికల్పం), B (1 చాలా చిన్న), C (1 చిన్న), D (1 పొడవైన), E (1 పరిస్థితి) — విషయం: ${topic}.`;
+  }
+  if (!indicLanguageFieldFilled(s.internal_choices, requiredScript)) {
+    s.internal_choices =
+      storyLanguage === 'Hindi'
+        ? 'जहाँ "अथवा" दिया हो, केवल एक प्रश्न हल कीजिए। आंतरिक विकल्प खंड घ और घर में लागू हो सकता है।'
+        : 'ఎక్కడ "లేదా" ఉందో, ఒక ప్రశ్న మాత్రమే పరిష్కరించండి. అంతర్గత ఎంపికలు D మరియు E విభాగాల్లో వర్తిస్తాయి.';
+  }
+  if (!indicLanguageFieldFilled(s.marking_scheme, requiredScript)) {
+    s.marking_scheme =
+      storyLanguage === 'Hindi'
+        ? `सही अवधारणा, प्रक्रिया और इकाई के लिए अंक दें। विषय: ${topic}।`
+        : `సరైన అవగాహన, ప్రక్రియ మరియు యూనిట్లకు మార్కులు ఇవ్వండి. విషయం: ${topic}.`;
+  }
+  if (!indicLanguageFieldFilled(s.open_ended_rubric, requiredScript)) {
+    s.open_ended_rubric =
+      storyLanguage === 'Hindi'
+        ? `स्तर 4: पूर्ण और स्पष्ट; स्तर 3: अधिकांश सही; स्तर 2: आंशिक; स्तर 1: न्यूनतम समझ (${topic})।`
+        : `స్థాయి 4: పూర్తి మరియు స్పష్టం; 3: చాలా వరకు సరైనది; 2: పాక్షికం; 1: కనీస అవగాహన (${topic}).`;
+  }
+
+  for (const key of sectionKeys) {
+    const existing = Array.isArray(s[key]) ? s[key] : [];
+    const scaffoldRows = Array.isArray(scaffold[key]) ? scaffold[key] : [];
+    const repaired = [];
+    const targetCount = Math.max(existing.length, scaffoldRows.length ? 1 : 0, 1);
+    for (let i = 0; i < targetCount; i += 1) {
+      const q = existing[i];
+      const pick = scaffoldRows[i] || scaffoldRows[scaffoldRows.length - 1];
+      if (q && !questionBodyNeedsIndicRepair(q, requiredScript)) {
+        repaired.push(q);
+      } else if (pick) {
+        repaired.push({
+          ...pick,
+          question_number: q?.question_number ?? pick.question_number ?? i + 1,
+        });
+      }
+    }
+    const valid = repaired.filter((q) => String(q?.question || q?.prompt || '').trim().length >= 10);
+    s[key] = valid.length ? valid : scaffoldRows;
+  }
+
+  let totalQuestions = sectionKeys.reduce((n, key) => {
+    const rows = Array.isArray(s[key]) ? s[key] : [];
+    return (
+      n +
+      rows.filter((q) => String(q?.question || q?.prompt || '').trim().length >= 10).length
+    );
+  }, 0);
+  if (totalQuestions < 3) {
+    for (const key of sectionKeys) {
+      if (totalQuestions >= 3) break;
+      const scaffoldRows = Array.isArray(scaffold[key]) ? scaffold[key] : [];
+      if (!scaffoldRows.length) continue;
+      s[key] = scaffoldRows;
+      totalQuestions += scaffoldRows.length;
+    }
+  }
+
+  const lines = [];
+  for (const key of sectionKeys) {
+    for (const q of Array.isArray(s[key]) ? s[key] : []) {
+      if (String(q?.answer || '').trim()) {
+        const n = q.question_number != null ? `प्र${q.question_number}` : 'प्र';
+        lines.push(storyLanguage === 'Hindi' ? `${n}: ${q.answer}` : `Q${q.question_number ?? ''}: ${q.answer}`);
+      }
+    }
+  }
+  if (lines.length) {
+    s.answer_key = lines.join('\n');
+  } else if (!indicLanguageFieldFilled(s.answer_key, requiredScript)) {
+    s.answer_key =
+      storyLanguage === 'Hindi'
+        ? `उत्तर कुंजी: ${topic} पर आधारित मॉडल उत्तर संलग्न हैं।`
+        : `సమాధాన కీ: ${topic}పై ఆధారిత మోడల్ సమాధానాలు ఇవ్వబడ్డాయి.`;
+  }
+
+  return s;
+}
+
+/**
+ * Repair Hindi/Telugu structured output before save — replaces English LLM/RAG text with Indic scaffolds.
+ * @param {string} toolSlug
+ * @param {Record<string, unknown>} data
+ * @param {Record<string, unknown>} meta
+ */
+export function enforceIndicLanguageStructuredContent(toolSlug, data, meta = {}) {
+  const subject = resolveLanguageSubjectForGeneration(meta.subject, meta.bookSubject);
+  if (!mustEnforceStoryPassageLanguageCompliance(subject)) {
+    return data && typeof data === 'object' && !Array.isArray(data) ? data : {};
+  }
+  const enrichedMeta = { ...meta, subject };
+  let s = data && typeof data === 'object' && !Array.isArray(data) ? { ...data } : {};
+  const slug = String(toolSlug || '').trim();
+
+  if (slug === 'exam-question-paper-generator' || slug === 'mock-test-builder') {
+    s = fillIndicExamPaperScaffold(s, enrichedMeta);
+  } else if (slug === 'daily-class-plan-maker') {
+    s = fillIndicDailyClassPlanScaffold(s, enrichedMeta);
+  } else if (slug === 'story-passage-creator') {
+    s = fillIndicStoryPassageScaffold(s, enrichedMeta);
+  } else if (slug === 'reading-practice-room') {
+    s = fillIndicReadingPracticeScaffold(s, enrichedMeta);
+  }
+
+  return s;
+}
+
+/** Pad Daily Class Plan fields in Hindi/Telugu. */
+export function fillIndicDailyClassPlanScaffold(s, meta = {}) {
+  const storyLanguage = canonicalStoryPassageSubject(meta.subject);
+  if (storyLanguage !== 'Hindi' && storyLanguage !== 'Telugu') return s;
+
+  const topic = resolveIndicScaffoldTopic(meta, storyLanguage === 'Telugu' ? 'telugu' : 'devanagari');
+
+  if (storyLanguage === 'Hindi') {
+    if (!indicScaffoldFilled(s.day_period_topic_breakup)) {
+      s.day_period_topic_breakup = `${topic} — कक्षा अवधि विषय योजना।`;
+    }
+    if (!indicScaffoldFilled(s.title)) s.title = s.day_period_topic_breakup;
+    if (!Array.isArray(s.objectives) || s.objectives.length < 1) {
+      s.objectives = [
+        `${topic} के मुख्य विचारों को समझना।`,
+        `${topic} को उदाहरणों से जोड़ना।`,
+      ];
+    }
+    if (!Array.isArray(s.teaching_methods) || s.teaching_methods.length < 1) {
+      s.teaching_methods = ['चर्चा', 'प्रदर्शन', 'समूह गतिविधि'];
+    }
+    if (!Array.isArray(s.classroom_activity) || s.classroom_activity.length < 1) {
+      s.classroom_activity = [`${topic} से जुड़ी कक्षा गतिविधि।`];
+    }
+    if (!indicScaffoldFilled(s.exit_ticket)) {
+      s.exit_ticket = `${topic} के बारे में आज आपने क्या सीखा?`;
+    }
+    if (!indicScaffoldFilled(s.differentiated_support)) {
+      s.differentiated_support = 'सहायता: वाक्य आरंभकर्ता। विस्तार: दो नए उदाहरण बनाइए।';
+    }
+    if (!indicScaffoldFilled(s.homework_followup)) {
+      s.homework_followup = `${topic} पर नोट्स दोहराएँ और दो प्रश्न लिखिए।`;
+    }
+    if (!Array.isArray(s.teaching_aids) || s.teaching_aids.length < 1) {
+      s.teaching_aids = ['पाठ्यपुस्तक', 'चार्ट', 'कार्यपत्रक'];
+    }
+    if (!indicScaffoldFilled(s.teacher_reflection_notes)) {
+      s.teacher_reflection_notes = `${topic} पाठ पर शिक्षक प्रतिबिंब — क्या काम किया, क्या सुधारना है।`;
+    }
+  } else {
+    if (!indicScaffoldFilled(s.day_period_topic_breakup)) {
+      s.day_period_topic_breakup = `${topic} — తరగతి కాల విషయ ప్రణాళిక.`;
+    }
+    if (!indicScaffoldFilled(s.title)) s.title = s.day_period_topic_breakup;
+    if (!Array.isArray(s.objectives) || s.objectives.length < 1) {
+      s.objectives = [
+        `${topic} ప్రధాన ఆలోచనలను అర్థం చేసుకోవడం.`,
+        `${topic}ను ఉదాహరణలతో అనుసంధానం చేయడం.`,
+      ];
+    }
+    if (!Array.isArray(s.teaching_methods) || s.teaching_methods.length < 1) {
+      s.teaching_methods = ['చర్చ', 'ప్రదర్శన', 'సమూహ కార్యకలాపం'];
+    }
+    if (!Array.isArray(s.classroom_activity) || s.classroom_activity.length < 1) {
+      s.classroom_activity = [`${topic}కు సంబంధించిన తరగతి కార్యకలాపం.`];
+    }
+    if (!indicScaffoldFilled(s.exit_ticket)) {
+      s.exit_ticket = `${topic} గురించి ఈరోజు మీరు ఏమి నేర్చుకున్నారు?`;
+    }
+    if (!indicScaffoldFilled(s.differentiated_support)) {
+      s.differentiated_support = 'సహాయం: వాక్య ప్రారంభకర్తలు. విస్తరణ: రెండు కొత్త ఉదాహరణలు.';
+    }
+    if (!indicScaffoldFilled(s.homework_followup)) {
+      s.homework_followup = `${topic}పై నోట్స్ సమీక్షించి రెండు ప్రశ్నలు రాయండి.`;
+    }
+    if (!Array.isArray(s.teaching_aids) || s.teaching_aids.length < 1) {
+      s.teaching_aids = ['పాఠ్యపుస్తకం', 'చార్ట్', 'వర్క్‌షీట్'];
+    }
+    if (!indicScaffoldFilled(s.teacher_reflection_notes)) {
+      s.teacher_reflection_notes = `${topic} పాఠంపై ఉపాధ్యాయ ప్రతిబింబం.`;
+    }
+  }
   return s;
 }
 

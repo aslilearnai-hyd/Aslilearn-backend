@@ -54,6 +54,11 @@ import {
   shouldBlockCostSaverForStoryLanguage,
   fillIndicStoryPassageScaffold,
   fillIndicReadingPracticeScaffold,
+  fillIndicExamPaperScaffold,
+  fillIndicDailyClassPlanScaffold,
+  buildIndicScaffoldExamQuestions,
+  enforceIndicLanguageStructuredContent,
+  resolveLanguageSubjectForGeneration,
   buildStoryPassageLanguagePromptTail,
   textMatchesStoryPassageScript,
 } from '../utils/story-passage-subject.js';
@@ -63,7 +68,13 @@ import {
 } from './ai-generator-uniqueness-engine.js';
 
 function skipEnglishStructuredScaffold(meta = {}) {
-  return shouldSkipEnglishScaffoldForLanguageSubject(String(meta?.subject || '').trim());
+  const subject = resolveLanguageSubjectForGeneration(meta?.subject, meta?.bookSubject);
+  return shouldSkipEnglishScaffoldForLanguageSubject(subject);
+}
+
+function examPaperMeta(meta = {}) {
+  const subject = resolveLanguageSubjectForGeneration(meta?.subject, meta?.bookSubject);
+  return { ...meta, subject };
 }
 
 function buildBatchEconomyRetryPrompt({ slug, meta, attemptNum, maxAttempts, hint, languageHint = '' }) {
@@ -3684,7 +3695,33 @@ export function finalizeWorksheetStructuredContent(structuredContent, meta = {})
       ? structuredContent
       : {},
   );
-  if (skipEnglishStructuredScaffold(meta)) return base;
+  if (skipEnglishStructuredScaffold(meta)) {
+    const indicScaffold = buildIndicScaffoldExamQuestions(meta, '');
+    const sectionLabels =
+      canonicalStoryPassageSubject(meta.subject) === 'Telugu'
+        ? {
+            A: 'విభాగం A: బహువికల్ప ప్రశ్నలు',
+            B: 'విభాగం B: చాలా చిన్న సమాధాన ప్రశ్నలు',
+            C: 'విభాగం C: చిన్న సమాధాన ప్రశ్నలు',
+            D: 'విభాగం D: పొడవైన సమాధాన ప్రశ్నలు',
+            E: 'విభాగం E: పరిస్థితి ఆధారిత ప్రశ్నలు',
+          }
+        : {
+            A: 'खंड क: बहुविकल्पीय प्रश्न',
+            B: 'खंड ख: अति लघु उत्तर प्रश्न',
+            C: 'खंड ग: लघु उत्तर प्रश्न',
+            D: 'खंड घ: दीर्घ उत्तर प्रश्न',
+            E: 'खंड घर: प्रसंग आधारित प्रश्न',
+          };
+    const keyMap = { A: 'section_a', B: 'section_b', C: 'section_c', D: 'section_d', E: 'section_e' };
+    if (!Array.isArray(base.sections) || !base.sections.length) {
+      base.sections = Object.entries(keyMap).map(([letter, key]) => ({
+        sectionName: sectionLabels[letter],
+        questions: Array.isArray(indicScaffold[key]) ? indicScaffold[key] : [],
+      }));
+    }
+    return base;
+  }
 
   const scaffoldForSection = (sectionName, qNum) => {
     if (sectionName === WORKSHEET_SECTION_LABELS.A) {
@@ -5130,7 +5167,15 @@ export function repairExamPaperStructuredContent(raw, meta = {}) {
 
 /** @returns {string[]} Missing Exam Question Paper requirements (11-section template). */
 export function getExamPaperMissingSections(data, meta = {}) {
-  const n = finalizeExamPaperStructuredContent(data, meta);
+  const m = examPaperMeta(meta);
+  const skipRefinalize = meta.skipExamRefinalize === true;
+  const n = skipRefinalize
+    ? enforceIndicLanguageStructuredContent('exam-question-paper-generator', data, m)
+    : enforceIndicLanguageStructuredContent(
+        'exam-question-paper-generator',
+        finalizeExamPaperStructuredContent(data, m),
+        m,
+      );
   const missing = [];
   if (!String(n.paper_title || n.title || '').trim()) {
     missing.push('1. Paper Title and General Instructions');
@@ -5172,7 +5217,9 @@ export function finalizeExamPaperStructuredContent(structuredContent, meta = {})
   const subject = String(meta.subject || 'Science').trim();
 
   let base = repairExamPaperStructuredContent(source, meta);
-  if (skipEnglishStructuredScaffold(meta)) return base;
+  if (skipEnglishStructuredScaffold(meta)) {
+    return fillIndicExamPaperScaffold(base, meta);
+  }
 
   const pickArr = (key) => {
     const fromBase = base[key];
@@ -5441,7 +5488,22 @@ export function repairMockTestStructuredContent(raw, meta = {}) {
 /** Ensure mock test has a title and parsed questions before validation. */
 export function finalizeMockTestStructuredContent(raw, meta = {}) {
   let out = repairMockTestStructuredContent(raw, meta);
-  if (skipEnglishStructuredScaffold(meta)) return out;
+  if (skipEnglishStructuredScaffold(meta)) {
+    if (countMockTestQuestions(out) < 3) {
+      const scaffold = buildIndicScaffoldExamQuestions(meta, out.blueprint || '');
+      out = normalizeMockTestStructuredContent({ ...out, ...scaffold }, collectMockTestParseableText(out));
+    }
+    const mockTitle = String(out.mock_test_title || out.paper_title || out.title || '').trim();
+    if (!mockTitle) {
+      const lang = canonicalStoryPassageSubject(meta.subject);
+      const label =
+        [meta.topic, meta.subTopic].filter(Boolean).join(' — ').trim() ||
+        (lang === 'Telugu' ? 'మాక్ పరీక్ష' : 'मॉक परीक्षा');
+      const mockTitleFull = lang === 'Telugu' ? `మాక్ పరీక్ష: ${label}` : `मॉक परीक्षा: ${label}`;
+      out = { ...out, mock_test_title: mockTitleFull, paper_title: label, title: label };
+    }
+    return out;
+  }
   if (countMockTestQuestions(out) < 3) {
     const scaffold = buildScaffoldExamQuestions(meta, out.blueprint || '');
     out = normalizeMockTestStructuredContent({ ...out, ...scaffold }, collectMockTestParseableText(out));
@@ -6306,7 +6368,7 @@ export function finalizeDailyClassPlanStructuredContent(structuredContent, meta 
   };
 
   let base = normalizeDailyClassPlanStructuredContent(mapped);
-  if (skipEnglishStructuredScaffold(meta)) return base;
+  if (skipEnglishStructuredScaffold(meta)) return fillIndicDailyClassPlanScaffold(base, meta);
 
   if (!String(base.day_period_topic_breakup || '').trim()) {
     base.day_period_topic_breakup = `${topic} — period-wise plan for ${subject}.`;
@@ -6966,6 +7028,8 @@ function coerceRegenerationStructuredContent(toolSlug, parsed) {
       ...(root.title ? { title: root.title } : {}),
       ...(root.instructions ? { instructions: root.instructions } : {}),
       ...(root.blueprint ? { blueprint: root.blueprint } : {}),
+      ...(root.question_paper ? { question_paper: root.question_paper } : {}),
+      ...(Array.isArray(root.questions) ? { questions: root.questions } : {}),
       ...(Array.isArray(root.sections) ? { sections: root.sections } : {}),
       ...(Array.isArray(root.section_a) ? { section_a: root.section_a } : {}),
       ...(Array.isArray(root.section_b) ? { section_b: root.section_b } : {}),
@@ -6986,6 +7050,10 @@ function coerceRegenerationStructuredContent(toolSlug, parsed) {
     };
     if (Object.keys(rootPick).length) {
       inner = { ...rootPick, ...inner };
+    }
+    if (Object.keys(inner).length === 0) {
+      const { contentType: _ct, structuredContent: _sc, ...rest } = root;
+      if (Object.keys(rest).length) inner = { ...rest };
     }
   } else if (toolSlug === 'lesson-planner' || toolSlug === 'study-schedule-maker') {
     const rootPick = {
@@ -7352,11 +7420,16 @@ export function validateToolSpecificStructuredContent(
   const resolvedType = normalizedType || defaultType;
 
   if (normalizedTool === 'exam-question-paper-generator') {
-    const finalized = finalizeExamPaperStructuredContent(
-      structuredContent && typeof structuredContent === 'object' && !Array.isArray(structuredContent)
-        ? structuredContent
-        : {},
-      meta,
+    const examMeta = examPaperMeta(meta);
+    const finalized = enforceIndicLanguageStructuredContent(
+      normalizedTool,
+      finalizeExamPaperStructuredContent(
+        structuredContent && typeof structuredContent === 'object' && !Array.isArray(structuredContent)
+          ? structuredContent
+          : {},
+        examMeta,
+      ),
+      examMeta,
     );
     if (!allowed.includes(resolvedType)) {
       return {
@@ -7366,8 +7439,8 @@ export function validateToolSpecificStructuredContent(
         normalizedStructuredContent: finalized,
       };
     }
-    if (!examPaperStructuredContentIsComplete(finalized, meta)) {
-      const missing = getExamPaperMissingSections(finalized, meta);
+    if (!examPaperStructuredContentIsComplete(finalized, { ...examMeta, skipExamRefinalize: true })) {
+      const missing = getExamPaperMissingSections(finalized, { ...examMeta, skipExamRefinalize: true });
       return {
         valid: false,
         message: missing.join('; ') || rule.message,
@@ -7376,12 +7449,58 @@ export function validateToolSpecificStructuredContent(
         missingSections: missing,
       };
     }
-    const paddedExam = padAiGeneratorCanonicalSections(normalizedTool, finalized, meta);
+    let contentForValidate = padAiGeneratorCanonicalSections(normalizedTool, finalized, examMeta);
+
+    if (mustEnforceStoryPassageLanguageCompliance(examMeta.subject)) {
+      const languageCheck = validateStoryPassageLanguageCompliance(
+        examMeta.subject,
+        contentForValidate,
+        {
+          requirePassage: false,
+          toolSlug: normalizedTool,
+        },
+      );
+      if (!languageCheck.valid) {
+        return {
+          valid: false,
+          message: languageCheck.errors.join(' '),
+          normalizedType: resolvedType,
+          normalizedStructuredContent: contentForValidate,
+          missingSections: [],
+        };
+      }
+    }
+
+    const requireAllFields = isStrictAllFieldsValidation(meta);
+    if (requireAllFields) {
+      const allFields = validateAllCanonicalToolFields(normalizedTool, contentForValidate);
+      if (!allFields.valid) {
+        return {
+          valid: false,
+          message: buildAllFieldsRequiredMessage(allFields.missingSections),
+          normalizedType: resolvedType,
+          normalizedStructuredContent: contentForValidate,
+          missingSections: allFields.missingSections,
+        };
+      }
+    } else {
+      const fieldGate = validateCanonicalFieldsForSave(normalizedTool, contentForValidate, meta);
+      if (!fieldGate.valid) {
+        return {
+          valid: false,
+          message: fieldGate.message || buildAllFieldsRequiredMessage(fieldGate.missingSections),
+          normalizedType: resolvedType,
+          normalizedStructuredContent: contentForValidate,
+          missingSections: fieldGate.missingSections,
+        };
+      }
+    }
+
     return {
       valid: true,
       message: '',
       normalizedType: resolvedType,
-      normalizedStructuredContent: paddedExam,
+      normalizedStructuredContent: contentForValidate,
     };
   }
 
@@ -8115,15 +8234,20 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
   }
 
   const defaultContentType = CONTENT_TYPE_BY_TOOL_SLUG[slug] || getContentTypeDefault(slug);
-  const prompt = buildAiGeneratorStructuredPrompt(slug, params);
+  const extra = params.extraParams && typeof params.extraParams === 'object' ? params.extraParams : {};
+  const resolvedSubject = resolveLanguageSubjectForGeneration(
+    params.subject,
+    params.bookSubject || extra.bookSubject,
+  );
+  const prompt = buildAiGeneratorStructuredPrompt(slug, { ...params, subject: resolvedSubject });
   const pdfContext = String(params.pdfContext || '').trim();
   const historicalBlock = String(params.historicalPromptBlock || '').trim();
   const storyLanguageTail =
-    mustEnforceStoryPassageLanguageCompliance(params.subject)
-      ? buildStoryPassageLanguagePromptTail(params.subject)
+    mustEnforceStoryPassageLanguageCompliance(resolvedSubject)
+      ? buildStoryPassageLanguagePromptTail(resolvedSubject)
       : '';
   const ragLanguageNote =
-    pdfContext && mustEnforceStoryPassageLanguageCompliance(params.subject)
+    pdfContext && mustEnforceStoryPassageLanguageCompliance(resolvedSubject)
       ? `\nBOOK SOURCE LANGUAGE NOTE: Reference passages may be in English — you MUST still write ALL output string values in the required output language (translate/synthesize; never copy English into student-facing fields).`
       : '';
   let basePrompt = pdfContext
@@ -8136,7 +8260,6 @@ Priority: (1) Uploaded Book  (2) Uploaded Notes  (3) Gemini knowledge.
 Synthesize into the tool schema above — do not paste blocks verbatim.${ragLanguageNote}
 ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
     : `${prompt}${historicalBlock ? `\n\n${historicalBlock}` : ''}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`;
-  const extra = params.extraParams && typeof params.extraParams === 'object' ? params.extraParams : {};
   const generationVariant = Number(extra.generationVariant ?? extra.variantIndex);
   const isBatchVariant = Number.isFinite(generationVariant) && generationVariant > 0;
   const recoveryPass = extra.recoveryPass === true || params.recoveryPass === true;
@@ -8151,7 +8274,7 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
 
   const batchEconomy = isBatchVariant && isAiGeneratorCostSaverEnabled();
   const effectiveFlashLiteOnly = batchEconomy || flashLiteOnly;
-  const languageSubjectEnforced = mustEnforceStoryPassageLanguageCompliance(params.subject);
+  const languageSubjectEnforced = mustEnforceStoryPassageLanguageCompliance(resolvedSubject);
   const preferIndicFlash =
     languageSubjectEnforced && isAiGeneratorLanguageSubjectFlashOverrideEnabled();
   const indicFlashModel = getAiGeneratorLanguageSubjectGeminiModel();
@@ -8194,7 +8317,8 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
   const isBookBatch = isBatchVariant && Boolean(extra.bookId || extra.bookGenerator);
   const meta = {
     classLabel: params.classLabel || params.gradeLevel,
-    subject: params.subject,
+    subject: resolvedSubject,
+    bookSubject: params.bookSubject || extra.bookSubject,
     topic: params.topic,
     subTopic: params.subTopic || params.subtopic,
     board: params.board,
@@ -8279,6 +8403,10 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
         }
       } else if (slug === 'worksheet-mcq-generator') {
         structuredContent = finalizeWorksheetStructuredContent(structuredContent, meta);
+      }
+
+      if (languageSubjectEnforced) {
+        structuredContent = enforceIndicLanguageStructuredContent(slug, structuredContent, meta);
       }
 
       const contentType = normalizeContentType(json.contentType || defaultContentType);
@@ -8433,7 +8561,11 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
       }
 
       if (!validation.valid && slug === 'exam-question-paper-generator') {
-        structuredContent = finalizeExamPaperStructuredContent(structuredContent, meta);
+        structuredContent = enforceIndicLanguageStructuredContent(
+          slug,
+          finalizeExamPaperStructuredContent(structuredContent, examPaperMeta(meta)),
+          examPaperMeta(meta),
+        );
         validation = validateToolSpecificStructuredContent(
           slug,
           structuredContent,
@@ -8651,6 +8783,10 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
 
       structuredContent = dedupeIntraRecordQuestions(slug, structuredContent);
       structuredContent = renumberIntraRecordQuestions(slug, structuredContent);
+
+      if (languageSubjectEnforced) {
+        structuredContent = enforceIndicLanguageStructuredContent(slug, structuredContent, meta);
+      }
 
       const finalQuality = runAiGeneratorQualityGate(slug, structuredContent, meta);
       if (!finalQuality.valid) {

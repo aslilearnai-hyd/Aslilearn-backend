@@ -50,6 +50,7 @@ import {
 } from './ai-generator-content-strategy.js';
 
 import { getBatchSlotMaxAttempts, isAiGeneratorCostSaverEnabled, shouldEnforceBatchUniquenessRetries, shouldUseFlashForAiGeneratorRun } from '../utils/ai-generator-batch-config.js';
+import { resolveLanguageSubjectForGeneration } from '../utils/story-passage-subject.js';
 
 import AiToolGeneration from '../models/AiToolGeneration.js';
 
@@ -195,7 +196,10 @@ export async function generateBatchAndSave(params, opts = {}) {
     board,
   );
 
-  const subjectName = String(params.subjectName || params.subject || '').trim();
+  const subjectName = resolveLanguageSubjectForGeneration(
+    String(params.subjectName || params.subject || '').trim(),
+    String(params.bookSubject || '').trim(),
+  );
 
   const topicName = String(params.topicName || params.topic || '').trim();
 
