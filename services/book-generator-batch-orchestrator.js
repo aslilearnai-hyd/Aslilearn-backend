@@ -27,6 +27,7 @@ import {
   getAiGeneratorVariantAngle,
   getAiGeneratorVariantScenario,
 } from '../constants/ai-generator-variant-angles.js';
+import { resolveLanguageSubjectForGeneration } from '../utils/story-passage-subject.js';
 import { acquireGenerationLock, forceReleaseGenerationLock, releaseGenerationLock } from './ai-generator-lock-service.js';
 import {
   getBookBatchSlotMaxAttempts,
@@ -161,7 +162,10 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
   const classInput = String(params.className || book.class || '').trim();
   const className = resolveClassLabelForAiToolStorage(classInput, board);
   const classNameForRag = normalizeClassLabelForLock(classInput);
-  const subjectName = String(params.subjectName || book.subject || '').trim();
+  const subjectName = resolveLanguageSubjectForGeneration(
+    String(params.subjectName || '').trim(),
+    String(book.subject || '').trim(),
+  );
   const topicName = String(params.topicName || '').trim();
   const subtopicName = String(params.subtopicName || '').trim();
   const batchSize = getBatchSize(params.batchSize);
@@ -303,6 +307,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               classLabel: className,
               gradeLevel: className,
               subject: subjectName,
+              bookSubject: String(book.subject || '').trim(),
               topic: topicName || book.title,
               subTopic: subtopicName,
               extraParams,
@@ -317,6 +322,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
 
             const finalizeMeta = {
               subject: subjectName,
+              bookSubject: String(book.subject || '').trim(),
               topic: topicName,
               subTopic: subtopicName,
               subtopic: subtopicName,
