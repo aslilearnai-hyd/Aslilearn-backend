@@ -32,6 +32,8 @@ import { stripMarkdownSyntax, deepStripMarkdownValues } from '../utils/strip-mar
 import {
   getAiGeneratorValidationMaxAttempts,
   getAiGeneratorGeminiModel,
+  getAiGeneratorLanguageSubjectGeminiModel,
+  isAiGeneratorLanguageSubjectFlashOverrideEnabled,
   isAiGeneratorCostSaverEnabled,
   isAiGeneratorFlashLiteOnlyEnabled,
   isAiGeneratorSectionPadEnabled,
@@ -50,6 +52,8 @@ import {
   mustEnforceStoryPassageLanguageCompliance,
   shouldSkipEnglishScaffoldForLanguageSubject,
   shouldBlockCostSaverForStoryLanguage,
+  fillIndicStoryPassageScaffold,
+  fillIndicReadingPracticeScaffold,
   buildStoryPassageLanguagePromptTail,
   textMatchesStoryPassageScript,
 } from '../utils/story-passage-subject.js';
@@ -1404,9 +1408,9 @@ export function finalizeStoryPassageStructuredContent(structuredContent, meta = 
   const subject = String(meta.subject || 'the subject').trim();
   const storyLanguage = canonicalStoryPassageSubject(subject);
 
-  // Never inject English scaffold text for Hindi or Telugu — it pollutes monolingual output.
+  // Never inject English scaffold text for Hindi or Telugu — use Indic-language scaffolds instead.
   if (storyLanguage === 'Hindi' || storyLanguage === 'Telugu') {
-    return s;
+    return fillIndicStoryPassageScaffold(s, meta);
   }
 
   if (!storyPassageTextFilled(s.topic_subtopic_connection)) {
@@ -8147,8 +8151,21 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
 
   const batchEconomy = isBatchVariant && isAiGeneratorCostSaverEnabled();
   const effectiveFlashLiteOnly = batchEconomy || flashLiteOnly;
+  const languageSubjectEnforced = mustEnforceStoryPassageLanguageCompliance(params.subject);
+  const preferIndicFlash =
+    languageSubjectEnforced && isAiGeneratorLanguageSubjectFlashOverrideEnabled();
+  const indicFlashModel = getAiGeneratorLanguageSubjectGeminiModel();
 
   const buildLlmOptions = (attempt) => {
+    if (preferIndicFlash) {
+      return {
+        isBatchVariant,
+        temperature: attempt === 1 ? 0.65 : 0.55,
+        primaryModel: indicFlashModel,
+        maxTokens,
+        flashLiteOnly: false,
+      };
+    }
     const useFlash =
       !effectiveFlashLiteOnly &&
       (upgradeToFlash ||
@@ -8197,7 +8214,6 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
 
   let activePrompt = basePrompt;
   const baseValidationAttempts = getAiGeneratorValidationMaxAttempts(isBatchVariant, recoveryPass);
-  const languageSubjectEnforced = mustEnforceStoryPassageLanguageCompliance(meta.subject);
   const isLanguageFlashcardBatch =
     isBatchVariant &&
     languageSubjectEnforced &&
@@ -8205,9 +8221,7 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
   const maxValidationAttempts = isLanguageFlashcardBatch && !isBookBatch
     ? 1
     : languageSubjectEnforced
-      ? isBatchVariant && (isAiGeneratorCostSaverEnabled() || isAiGeneratorUltraEconomyEnabled() || isBookBatch)
-        ? Math.min(2, Math.max(2, baseValidationAttempts))
-        : Math.max(3, baseValidationAttempts)
+      ? Math.max(3, baseValidationAttempts)
       : baseValidationAttempts;
 
   for (let attempt = 1; attempt <= maxValidationAttempts; attempt += 1) {
@@ -8260,6 +8274,9 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
         structuredContent = finalizeStoryPassageStructuredContent(structuredContent, meta);
       } else if (slug === 'reading-practice-room') {
         structuredContent = normalizeReadingPracticeStructuredContent(structuredContent);
+        if (languageSubjectEnforced) {
+          structuredContent = fillIndicReadingPracticeScaffold(structuredContent, meta);
+        }
       } else if (slug === 'worksheet-mcq-generator') {
         structuredContent = finalizeWorksheetStructuredContent(structuredContent, meta);
       }

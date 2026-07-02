@@ -34,6 +34,16 @@ export function getAiGeneratorGeminiModel() {
 
 }
 
+/** Stronger model for Hindi/Telugu language-class subjects (overrides flash-lite-only / cost saver). */
+export function getAiGeneratorLanguageSubjectGeminiModel() {
+  return String(process.env.AI_GENERATOR_LANGUAGE_GEMINI_MODEL || 'gemini-2.5-flash').trim();
+}
+
+export function isAiGeneratorLanguageSubjectFlashOverrideEnabled() {
+  const raw = String(process.env.AI_GENERATOR_LANGUAGE_SUBJECT_FLASH ?? 'true').trim().toLowerCase();
+  return raw !== 'false' && raw !== '0' && raw !== 'off';
+}
+
 /** Never upgrade batch/recovery runs to Flash when cost saver, ultra economy, or flash-lite-only is on. */
 
 export function shouldUseFlashForAiGeneratorRun({ upgradeRequested = false, recoveryPass = false } = {}) {
