@@ -3358,7 +3358,9 @@ export function formatItemLinesFromTemplate(toolSlug, item, index = 0) {
         });
         sheet.sections = legacySections;
       }
-      lines.push(`## ${str(sheet.worksheet_title || sheet.title) || `Worksheet ${n}`}`, '');
+      pushSection(lines, '1. Worksheet Title', [
+        str(sheet.worksheet_title || sheet.title) || `Worksheet ${n}`,
+      ]);
       const lo = strArr(sheet.learning_objectives || sheet.objectives);
       pushSection(
         lines,
