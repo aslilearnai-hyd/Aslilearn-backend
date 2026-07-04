@@ -15,7 +15,7 @@ import {
   getToolRegistryMeta,
   isValidAiToolSlug,
 } from '../config/aiToolTemplates.js';
-import { buildRawDataForTool } from '../utils/build-ai-tool-raw-data.js';
+import { buildRawDataForTool, unwrapStoredAiToolContent } from '../utils/build-ai-tool-raw-data.js';
 import {
   extractActivityTitleFromMarkdown,
   isCurriculumBreadcrumbTitle,
@@ -479,7 +479,8 @@ export const createTeacherTool = async (req, res) => {
             maxQuestions,
           );
         }
-        const rawData = buildRawDataForTool(toolType, limitedContent, metadataForRaw);
+        const builtRaw = buildRawDataForTool(toolType, limitedContent, metadataForRaw);
+        const delivered = unwrapStoredAiToolContent(limitedContent, builtRaw);
         logTeacherToolUsage({
           teacherId,
           toolType,
@@ -491,8 +492,8 @@ export const createTeacherTool = async (req, res) => {
         return res.json({
           success: true,
           data: {
-            content: limitedContent,
-            ...(rawData ? { rawData } : {}),
+            content: delivered.content,
+            ...(delivered.rawData ? { rawData: delivered.rawData } : {}),
             toolType,
             metadata: {
               classNumber: classNum,
@@ -621,9 +622,11 @@ export const getGeneratedContent = async (req, res) => {
     }
 
     const metadataForRaw = { ...(matchedDoc.metadata || {}) };
-    const rawData = toolType
-      ? buildRawDataForTool(toolType, matchedDoc.generatedContent || matchedDoc.content || '', metadataForRaw)
+    const storedContent = matchedDoc.generatedContent || matchedDoc.content || '';
+    const builtRaw = toolType
+      ? buildRawDataForTool(toolType, storedContent, metadataForRaw)
       : null;
+    const delivered = unwrapStoredAiToolContent(storedContent, builtRaw);
 
     return res.json({
       success: true,
@@ -634,9 +637,10 @@ export const getGeneratedContent = async (req, res) => {
         topic: matchedDoc.topic || '',
         subTopic: matchedDoc.subtopic || '',
         section: matchedDoc.section || '',
-        generatedContent: matchedDoc.generatedContent || matchedDoc.content || '',
+        generatedContent: delivered.content,
+        content: delivered.content,
         structuredContent: metadataForRaw.structuredContent ?? null,
-        ...(rawData ? { rawData } : {}),
+        ...(delivered.rawData ? { rawData: delivered.rawData } : {}),
         createdAt: matchedDoc.createdAt,
         matchType,
         totalCandidates,

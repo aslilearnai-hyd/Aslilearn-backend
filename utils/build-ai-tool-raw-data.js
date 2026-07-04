@@ -22,6 +22,32 @@ export function tryParseJsonPayload(content) {
   }
 }
 
+/**
+ * Some Super Admin saves store generatedContent as `{ formatted, raw }`.
+ * Dashboards need plain markdown in `content` and structured data in `rawData`.
+ */
+export function unwrapStoredAiToolContent(content, rawData) {
+  let text = String(content || '').trim();
+  let structured = rawData && typeof rawData === 'object' ? rawData : null;
+  for (let i = 0; i < 2; i += 1) {
+    if (!text.startsWith('{')) break;
+    try {
+      const parsed = JSON.parse(text);
+      if (parsed && typeof parsed === 'object' && typeof parsed.formatted === 'string') {
+        text = String(parsed.formatted || '').trim();
+        if (!structured && parsed.raw && typeof parsed.raw === 'object') {
+          structured = parsed.raw;
+        }
+        continue;
+      }
+    } catch {
+      break;
+    }
+    break;
+  }
+  return { content: text || String(content || '').trim(), rawData: structured };
+}
+
 function pushActivityRow(rows, row) {
   if (!row || typeof row !== 'object' || Array.isArray(row)) return;
   rows.push(row);

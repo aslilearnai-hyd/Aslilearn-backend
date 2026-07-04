@@ -22,7 +22,7 @@ import {
 } from '../controllers/studentRankingController.js';
 import geminiService, { generateStudentTool } from '../services/gemini-service.js';
 import { fetchRotatingAiToolData } from '../services/ai-tool-rotation-service.js';
-import { buildRawDataForTool } from '../utils/build-ai-tool-raw-data.js';
+import { buildRawDataForTool, unwrapStoredAiToolContent } from '../utils/build-ai-tool-raw-data.js';
 import {
   advancedAnalyticsMockData,
   buildPerQuestionAttemptAnalytics,
@@ -4944,12 +4944,13 @@ router.post('/ai/tool', async (req, res) => {
         originalContent,
         params.questionCount ?? req.body?.questionCount,
       );
-      const rawData = buildRawDataForTool(toolType, content, adminDoc.metadata || {});
+      const builtRaw = buildRawDataForTool(toolType, content, adminDoc.metadata || {});
+      const delivered = unwrapStoredAiToolContent(content, builtRaw);
       return res.json({
         success: true,
         data: {
-          content,
-          ...(rawData ? { rawData } : {}),
+          content: delivered.content,
+          ...(delivered.rawData ? { rawData: delivered.rawData } : {}),
           toolType,
           metadata: {
             classNumber: classNum,
