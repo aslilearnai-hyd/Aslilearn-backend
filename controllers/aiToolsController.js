@@ -15,7 +15,11 @@ import {
   getToolRegistryMeta,
   isValidAiToolSlug,
 } from '../config/aiToolTemplates.js';
-import { buildRawDataForTool, unwrapStoredAiToolContent } from '../utils/build-ai-tool-raw-data.js';
+import {
+  buildDeliveryMetadataFromDoc,
+  buildRawDataForTool,
+  unwrapStoredAiToolContent,
+} from '../utils/build-ai-tool-raw-data.js';
 import {
   extractActivityTitleFromMarkdown,
   isCurriculumBreadcrumbTitle,
@@ -467,7 +471,7 @@ export const createTeacherTool = async (req, res) => {
           cachedContent,
           maxQuestions,
         );
-        const metadataForRaw = { ...(cachedDoc.metadata || {}) };
+        const metadataForRaw = buildDeliveryMetadataFromDoc(cachedDoc);
         if (
           maxQuestions &&
           toolType === 'worksheet-mcq-generator' &&
@@ -621,7 +625,7 @@ export const getGeneratedContent = async (req, res) => {
       }
     }
 
-    const metadataForRaw = { ...(matchedDoc.metadata || {}) };
+    const metadataForRaw = buildDeliveryMetadataFromDoc(matchedDoc);
     const storedContent = matchedDoc.generatedContent || matchedDoc.content || '';
     const builtRaw = toolType
       ? buildRawDataForTool(toolType, storedContent, metadataForRaw)

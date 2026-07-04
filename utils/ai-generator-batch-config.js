@@ -18,7 +18,7 @@ export function isAiGeneratorUltraEconomyEnabled() {
 
 }
 
-/** When true (default), AI Generator / Book Generator never use gemini-2.5-flash — Flash-Lite only. */
+/** When true (default), AI Generator / Book Generator never use full Flash — Flash-Lite only. */
 
 export function isAiGeneratorFlashLiteOnlyEnabled() {
 
@@ -30,7 +30,7 @@ export function isAiGeneratorFlashLiteOnlyEnabled() {
 
 export function getAiGeneratorGeminiModel() {
 
-  return String(process.env.AI_GENERATOR_GEMINI_MODEL || 'gemini-2.5-flash-lite').trim();
+  return String(process.env.AI_GENERATOR_GEMINI_MODEL || 'gemini-3.1-flash-lite').trim();
 
 }
 

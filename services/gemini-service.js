@@ -2,7 +2,15 @@ import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import dotenv from 'dotenv';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { GEMINI_MODELS_FALLBACK } from './gemini-models.js';
+import {
+  GEMINI_FLASH_FALLBACK_MODEL,
+  GEMINI_FLASH_MODEL,
+  GEMINI_LITE_FALLBACK_MODEL,
+  GEMINI_LITE_MODEL,
+  GEMINI_LITE_OVERFLOW_DEFAULT,
+  GEMINI_MODELS_FALLBACK,
+  isRetiredOrUnsupportedGeminiModel,
+} from './gemini-models.js';
 import { extractActivitiesFromCuriosityWorkbookPdf } from './curiosity-activity-pdf-parser.js';
 import {
   ACTIVITY_TITLE_FRAGMENT_RE,
@@ -102,20 +110,8 @@ function getLlmConfig() {
   };
 }
 
-/** gemini-1.5-* / 1.0-* often return 404 on v1beta generateContent; omit from chain. */
-function isUnsupportedGeminiV1BetaModel(m) {
-  const s = String(m || '').trim().toLowerCase();
-  return (
-    s.startsWith('gemini-1.5') ||
-    s.startsWith('gemini-1.0') ||
-    s.startsWith('gemini-1.1') ||
-    s === 'gemini-pro' ||
-    s === 'gemini-pro-vision'
-  );
-}
-
 /**
- * Extra models after primary + env list. Kept in sync with `./gemini-models.js` (Flash-only, v1beta-safe).
+ * Extra models after primary + env list. Kept in sync with `./gemini-models.js`.
  */
 function defaultResilienceTail() {
   return [...GEMINI_MODELS_FALLBACK];
@@ -123,10 +119,10 @@ function defaultResilienceTail() {
 
 function mergeGeminiModelChain(primaryModel, envFallbackCsv) {
   let primary = String(primaryModel || '').trim();
-  if (isUnsupportedGeminiV1BetaModel(primary)) {
-    const replacement = GEMINI_MODELS_FALLBACK[0] || 'gemini-2.5-flash';
+  if (isRetiredOrUnsupportedGeminiModel(primary)) {
+    const replacement = GEMINI_LITE_MODEL;
     console.warn(
-      `[Gemini] Model "${primaryModel}" is not supported for v1beta generateContent; using "${replacement}" in chain.`,
+      `[Gemini] Model "${primaryModel}" is retired or unsupported; using "${replacement}" in chain.`,
     );
     primary = replacement;
   }
@@ -134,47 +130,54 @@ function mergeGeminiModelChain(primaryModel, envFallbackCsv) {
     .split(',')
     .map((m) => m.trim())
     .filter(Boolean)
-    .filter((m) => !isUnsupportedGeminiV1BetaModel(m));
+    .filter((m) => !isRetiredOrUnsupportedGeminiModel(m));
   const merged = [primary, ...fromEnv, ...defaultResilienceTail()];
   const seen = new Set();
   const out = [];
   for (const raw of merged) {
     const m = String(raw || '').trim();
-    if (!m || isUnsupportedGeminiV1BetaModel(m)) continue;
+    if (!m || isRetiredOrUnsupportedGeminiModel(m)) continue;
     const key = m.toLowerCase();
     if (seen.has(key)) continue;
     seen.add(key);
     out.push(m);
   }
-  return out;
+  return out.length ? out : [GEMINI_LITE_MODEL, GEMINI_FLASH_MODEL];
 }
 
 function mergeLiteModelChain(primaryModel, envFallbackCsv) {
-  const primary = String(primaryModel || 'gemini-2.5-flash-lite').trim();
+  let primary = String(primaryModel || GEMINI_LITE_MODEL).trim();
+  if (isRetiredOrUnsupportedGeminiModel(primary)) {
+    console.warn(
+      `[Gemini] Lite model "${primaryModel}" is retired; using "${GEMINI_LITE_MODEL}".`,
+    );
+    primary = GEMINI_LITE_MODEL;
+  }
   const fromEnv = String(envFallbackCsv || '')
     .split(',')
     .map((m) => m.trim())
     .filter(Boolean)
-    .filter((m) => !isUnsupportedGeminiV1BetaModel(m));
+    .filter((m) => !isRetiredOrUnsupportedGeminiModel(m));
   const seen = new Set();
   const out = [];
-  for (const raw of [primary, ...fromEnv]) {
+  // Always include current lite + secondary, even when env still pins an older id.
+  for (const raw of [primary, GEMINI_LITE_MODEL, ...fromEnv, GEMINI_LITE_FALLBACK_MODEL]) {
     const m = String(raw || '').trim();
-    if (!m || isUnsupportedGeminiV1BetaModel(m)) continue;
+    if (!m || isRetiredOrUnsupportedGeminiModel(m)) continue;
     const key = m.toLowerCase();
     if (seen.has(key)) continue;
     seen.add(key);
     out.push(m);
   }
-  return out.length ? out : ['gemini-2.5-flash-lite'];
+  return out.length ? out : [GEMINI_LITE_MODEL, GEMINI_LITE_FALLBACK_MODEL];
 }
 
 function getFlashLiteModelChain(primaryLite, isBatchVariant = false) {
   const overflowCsv =
     process.env.AI_GENERATOR_GEMINI_LITE_OVERFLOW ||
     process.env.VIDYA_AI_GEMINI_LITE_OVERFLOW ||
-    'gemini-2.0-flash-lite,gemini-1.5-flash-lite';
-  const chain = mergeLiteModelChain(primaryLite || 'gemini-2.5-flash-lite', overflowCsv);
+    GEMINI_LITE_OVERFLOW_DEFAULT;
+  const chain = mergeLiteModelChain(primaryLite || GEMINI_LITE_MODEL, overflowCsv);
   if (!isBatchVariant) return chain;
   const maxModels = Number(process.env.GEMINI_BATCH_LITE_MODELS);
   const cap = Number.isFinite(maxModels) && maxModels > 0 ? Math.min(maxModels, 3) : 2;
@@ -198,11 +201,11 @@ function getGeminiFallbackConfig() {
   const primaryModel = String(
     process.env.GEMINI_FALLBACK_MODEL ||
       process.env.VIDYA_AI_GEMINI_MODEL ||
-      'gemini-2.5-flash'
+      GEMINI_FLASH_MODEL
   ).trim();
   const envFallbackCsv =
     process.env.VIDYA_AI_GEMINI_FALLBACK_MODELS ||
-    'gemini-2.5-flash-lite,gemini-2.0-flash,gemini-2.5-flash';
+    `${GEMINI_LITE_MODEL},${GEMINI_LITE_FALLBACK_MODEL},${GEMINI_FLASH_MODEL},${GEMINI_FLASH_FALLBACK_MODEL}`;
   const modelChain = mergeGeminiModelChain(primaryModel, envFallbackCsv);
   const baseUrl = String(
     process.env.GEMINI_API_BASE_URL || 'https://generativelanguage.googleapis.com/v1beta'
@@ -358,7 +361,7 @@ async function callChatCompletions({
   const contextTokens = Number(process.env.LLM_CONTEXT_TOKENS) || 0;
   const callGeminiFallback = async (normalizedMessages, jsonMode = preferJson) => {
     const { apiKey, modelChain: defaultChain } = getGeminiFallbackConfig();
-    const liteModel = String(process.env.AI_GENERATOR_GEMINI_MODEL || 'gemini-2.5-flash-lite').trim();
+    const liteModel = String(process.env.AI_GENERATOR_GEMINI_MODEL || GEMINI_LITE_MODEL).trim();
     const modelChain = flashLiteOnly
       ? getFlashLiteModelChain(liteModel, isBatchVariant)
       : String(primaryModel || '').trim()
@@ -386,8 +389,11 @@ async function callChatCompletions({
       /\b(429|500|502|503|504)\b|RESOURCE_EXHAUSTED|UNAVAILABLE|overloaded|high demand|try again later|temporar|fetch failed|ECONNRESET|EAI_AGAIN|ETIMEDOUT|timeout|failed to fetch|network/i.test(
         msg,
       );
-    /** 404 often means model id not on this API version; try next model instead of hard-failing. */
-    const isTryNextModelError = (msg) => /\b404\b|not found|NOT_FOUND|no such model/i.test(msg);
+    /** 404 / retired model ids — try next model instead of hard-failing. */
+    const isTryNextModelError = (msg) =>
+      /\b404\b|not found|NOT_FOUND|no such model|no longer available|is not found|not supported/i.test(
+        msg,
+      );
 
     const envMaxAttempts = Number(process.env.GEMINI_RETRY_ATTEMPTS_PER_MODEL);
     const batchTransientRetries = Number(process.env.GEMINI_BATCH_TRANSIENT_RETRIES);

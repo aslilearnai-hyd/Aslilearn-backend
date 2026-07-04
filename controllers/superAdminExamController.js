@@ -25,7 +25,7 @@ const GEMINI_BASE_URL = String(
 )
   .trim()
   .replace(/\/+$/, '');
-const DEFAULT_GEMINI_MODEL = 'gemini-2.0-flash';
+const DEFAULT_GEMINI_MODEL = 'gemini-2.5-flash';
 
 function getGeminiApiKey() {
   return String(process.env.VIDYA_AI_GEMINI_API_KEY || process.env.GEMINI_API_KEY || '').trim();
@@ -38,8 +38,21 @@ function getGeminiModelCandidates() {
     .split(',')
     .map((m) => String(m || '').trim())
     .filter(Boolean);
-  const defaults = ['gemini-2.5-flash-lite', 'gemini-2.5-flash', DEFAULT_GEMINI_MODEL];
-  return Array.from(new Set([preferred, singleFallback, ...listFallback, ...defaults].filter(Boolean)));
+  const defaults = [
+    'gemini-3.1-flash-lite',
+    'gemini-2.5-flash-lite',
+    'gemini-2.5-flash',
+    'gemini-3.5-flash',
+    DEFAULT_GEMINI_MODEL,
+  ];
+  const retired = /^(gemini-2\.0|gemini-1\.[015])/i;
+  return Array.from(
+    new Set(
+      [preferred, singleFallback, ...listFallback, ...defaults]
+        .filter(Boolean)
+        .filter((m) => !retired.test(String(m))),
+    ),
+  );
 }
 
 /** Max tokens for PDF question extraction (large papers need headroom). */

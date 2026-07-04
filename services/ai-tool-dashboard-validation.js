@@ -30,9 +30,14 @@ import {
   normalizeActivityStructuredContent,
   normalizeLessonPlannerStructuredContent,
   finalizeActivityStructuredContent,
+  finalizeFlashcardDeckStructuredContent,
+  finalizeDailyClassPlanStructuredContent,
+  finalizeExamPaperStructuredContent,
+  finalizeStoryPassageStructuredContent,
   PRACTICE_QA_SECTION_LABELS,
   WORKSHEET_SECTION_LABELS,
 } from './ai-content-engine-service.js';
+import { padAiGeneratorCanonicalSections } from '../utils/ai-generator-section-pad.js';
 
 const WORKSHEET_HEADING_SECTION = {
   section_a: WORKSHEET_SECTION_LABELS.A,
@@ -1235,14 +1240,47 @@ export function validateDashboardAiToolContent(toolSlug, rawContent, options = {
   let normalized =
     validateToolSpecificStructuredContent(slug, structured, contentType, content, validationMeta)
       .normalizedStructuredContent || structured;
-  if (slug === 'my-study-decks') {
-    normalized = normalizeMyStudyDecksStructuredContent(normalized);
-  }
-  if (slug === 'flashcard-generator') {
-    normalized = normalizeFlashcardDeckStructuredContent(normalized);
+  const deliveryMeta = {
+    ...(options.meta && typeof options.meta === 'object' ? options.meta : {}),
+    ...(options.metadata && typeof options.metadata === 'object' ? options.metadata : {}),
+    subject:
+      (options.metadata && typeof options.metadata === 'object'
+        ? options.metadata.subject
+        : undefined) ||
+      (options.meta && typeof options.meta === 'object' ? options.meta.subject : undefined),
+    topic:
+      (options.metadata && typeof options.metadata === 'object'
+        ? options.metadata.topic
+        : undefined) ||
+      (options.meta && typeof options.meta === 'object' ? options.meta.topic : undefined),
+    subTopic:
+      (options.metadata && typeof options.metadata === 'object'
+        ? options.metadata.subTopic || options.metadata.subtopic
+        : undefined) ||
+      (options.meta && typeof options.meta === 'object'
+        ? options.meta.subTopic || options.meta.subtopic
+        : undefined),
+    classLabel:
+      (options.metadata && typeof options.metadata === 'object'
+        ? options.metadata.classLabel
+        : undefined) ||
+      (options.meta && typeof options.meta === 'object' ? options.meta.classLabel : undefined),
+  };
+
+  if (slug === 'my-study-decks' || slug === 'flashcard-generator') {
+    normalized = finalizeFlashcardDeckStructuredContent(normalized, deliveryMeta, slug);
   }
   if (slug === 'concept-breakdown-explainer') {
     normalized = normalizeConceptBreakdownStructuredContent(normalized);
+  }
+  if (slug === 'daily-class-plan-maker') {
+    normalized = finalizeDailyClassPlanStructuredContent(normalized, deliveryMeta);
+  }
+  if (slug === 'exam-question-paper-generator') {
+    normalized = finalizeExamPaperStructuredContent(normalized, deliveryMeta);
+  }
+  if (slug === 'story-passage-creator' || slug === 'reading-practice-room') {
+    normalized = finalizeStoryPassageStructuredContent(normalized, deliveryMeta);
   }
   if (slug === 'smart-qa-practice-generator') {
     const merged =
@@ -1318,7 +1356,31 @@ export function validateDashboardAiToolContent(toolSlug, rawContent, options = {
     headingData = normalizeWorksheetStructuredContent(headingData, content);
   }
 
-  const { complete, missing, optionalMissing } = getMissingCanonicalSections(slug, headingData, content);
+  // Fill scaffold gaps the same way Super Admin save does, so teacher/student
+  // do not skip records that are stored but missing optional narrative fields.
+  headingData = padAiGeneratorCanonicalSections(slug, headingData, deliveryMeta);
+  if (slug === 'my-study-decks' || slug === 'flashcard-generator') {
+    headingData = finalizeFlashcardDeckStructuredContent(headingData, deliveryMeta, slug);
+  }
+
+  let { complete, missing, optionalMissing } = getMissingCanonicalSections(slug, headingData, content);
+  if (!complete) {
+    // Core payload present (cards / questions / steps) — deliver rather than hide.
+    const hasCorePayload =
+      (Array.isArray(headingData?.cards) && headingData.cards.length >= 3) ||
+      (Array.isArray(headingData?.questions) && headingData.questions.length >= 1) ||
+      (Array.isArray(headingData?.sections) &&
+        headingData.sections.some(
+          (s) => Array.isArray(s?.questions) && s.questions.length > 0,
+        )) ||
+      (Array.isArray(headingData?.steps) && headingData.steps.length >= 1) ||
+      (Array.isArray(headingData?.activities) && headingData.activities.length >= 1) ||
+      String(headingData?.passage || headingData?.story || '').trim().length >= 40;
+    if (hasCorePayload) {
+      complete = true;
+      missing = [];
+    }
+  }
   if (!complete) {
     return {
       valid: false,
@@ -1336,13 +1398,13 @@ export function validateDashboardAiToolContent(toolSlug, rawContent, options = {
 
   return {
     valid: true,
-    normalizedStructuredContent: normalized,
+    normalizedStructuredContent: headingData || normalized,
     contentType,
     optionalMissingSections: optionalMissing,
   };
 }
 
-/** @param {string} toolSlug @param {{ generatedContent?: string; content?: string; metadata?: unknown; toolName?: string }} doc */
+/** @param {string} toolSlug @param {{ generatedContent?: string; content?: string; metadata?: unknown; toolName?: string; subject?: string; topic?: string; subtopic?: string; classLabel?: string }} doc */
 export function validateDashboardAiToolDoc(toolSlug, doc) {
   const toolCheck = validateStoredRecordToolName(doc, toolSlug);
   if (!toolCheck.ok) {
@@ -1356,8 +1418,18 @@ export function validateDashboardAiToolDoc(toolSlug, doc) {
   const content = String(doc?.generatedContent || doc?.content || '').trim();
   const metadata =
     doc?.metadata && typeof doc.metadata === 'object' ? /** @type {Record<string, unknown>} */ (doc.metadata) : {};
+  // Merge document-level curriculum fields so finalize/pad can fill titles correctly.
+  const deliveryMetadata = {
+    ...metadata,
+    subject: doc?.subject || metadata.subject,
+    topic: doc?.topic || metadata.topic,
+    subTopic: doc?.subtopic || doc?.subTopic || metadata.subTopic || metadata.subtopic,
+    subtopic: doc?.subtopic || metadata.subtopic,
+    classLabel: doc?.classLabel || metadata.classLabel,
+  };
   return validateDashboardAiToolContent(toolSlug, content, {
-    metadata,
+    metadata: deliveryMetadata,
+    meta: deliveryMetadata,
     trustStoredTool: toolCheck.ok && Boolean(String(doc?.toolName || '').trim()),
   });
 }
