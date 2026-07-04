@@ -210,6 +210,9 @@ console.log('📦 Database:', dbName);
 
 configureMongoDns();
 
+// Fail buffered ops quickly while reconnecting (mongoose option, not driver).
+mongoose.set('bufferTimeoutMS', 10_000);
+
 mongoose.connect(MONGO_URI, MONGOOSE_CONNECT_OPTIONS)
 .then(async () => {
   attachMongooseConnectionListeners(mongoose.connection);
@@ -353,10 +356,26 @@ app.use((req, res, next) => {
 
 // Simple health check endpoint for Nginx and frontend connectivity tests
 app.get('/api/health', (req, res) => {
-  res.status(200).json({
-    status: 'ok',
-    message: 'AsliLearn backend is healthy',
-    time: new Date().toISOString()
+  const mongoReady = mongoose.connection.readyState === 1;
+  res.status(mongoReady ? 200 : 503).json({
+    status: mongoReady ? 'ok' : 'degraded',
+    message: mongoReady
+      ? 'AsliLearn backend is healthy'
+      : 'Backend is up but database is reconnecting — retry shortly',
+    mongo: mongoReady ? 'connected' : 'disconnected',
+    time: new Date().toISOString(),
+  });
+});
+
+// Fail fast while Mongo is reconnecting (avoids multi-minute hung requests → "Network error").
+app.use('/api', (req, res, next) => {
+  if (req.path === '/health' || req.path.startsWith('/health')) return next();
+  if (mongoose.connection.readyState === 1) return next();
+  res.setHeader('Retry-After', '3');
+  return res.status(503).json({
+    success: false,
+    code: 'DB_RECONNECTING',
+    message: 'Database is reconnecting. Please wait a few seconds and try again.',
   });
 });
 
@@ -6154,8 +6173,14 @@ app.post('/api/lesson-plan/generate', async (req, res) => {
   }
 });
 
-app.listen(PORT, '0.0.0.0', () => {
+// AI Generator / Book batches hold the HTTP connection for several minutes.
+// Default Node/proxy idle limits (~60–120s) surface as intermittent "Network error".
+const server = app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`Server accessible at http://0.0.0.0:${PORT}`);
   console.log(`Environment: ${nodeEnvEffective}`);
 });
+server.timeout = 0;
+server.requestTimeout = 0;
+server.headersTimeout = 0;
+server.keepAliveTimeout = 120_000;
