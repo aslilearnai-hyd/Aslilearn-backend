@@ -128,11 +128,23 @@ function validContentFilter() {
 
 function approvedFilter() {
   return {
-    $or: [
-      { reviewStatus: 'approved' },
-      { reviewStatus: 'draft' },
-      { reviewStatus: 'under_review' },
-      { reviewStatus: { $exists: false } },
+    status: { $nin: ['archived', 'inactive', 'deleted'] },
+    $and: [
+      {
+        $or: [
+          { reviewStatus: 'approved' },
+          { reviewStatus: 'draft' },
+          { reviewStatus: 'under_review' },
+          { reviewStatus: { $exists: false } },
+        ],
+      },
+      {
+        $or: [
+          { 'metadata.mergedInto': { $exists: false } },
+          { 'metadata.mergedInto': null },
+          { 'metadata.mergedInto': '' },
+        ],
+      },
     ],
   };
 }

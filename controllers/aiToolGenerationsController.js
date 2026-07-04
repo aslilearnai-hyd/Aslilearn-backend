@@ -643,3 +643,80 @@ export const getToolSectionGapSummaryHandler = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
+
+/** List near-duplicate AI Tool Data groups for Super Admin review. */
+export const listAiToolDuplicates = async (req, res) => {
+  try {
+    const { findAiToolDuplicateGroups } = await import('../services/ai-tool-duplicates-service.js');
+    const data = await findAiToolDuplicateGroups({
+      toolName: req.query.toolName,
+      board: req.query.board,
+      classLabel: req.query.classLabel,
+      subject: req.query.subject,
+      limit: req.query.limit,
+      threshold: req.query.threshold ? Number(req.query.threshold) : undefined,
+    });
+    res.json({ success: true, data });
+  } catch (error) {
+    console.error('listAiToolDuplicates error:', error);
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+/**
+ * Merge duplicates: keep primary, archive selected duplicates.
+ * Body: { primaryId, duplicateIds: string[] }
+ */
+export const mergeAiToolDuplicatesHandler = async (req, res) => {
+  try {
+    const { mergeAiToolDuplicates } = await import('../services/ai-tool-duplicates-service.js');
+    const primaryId = String(req.body?.primaryId || '').trim();
+    const duplicateIds = Array.isArray(req.body?.duplicateIds) ? req.body.duplicateIds : [];
+    const mergedBy =
+      req.user?.email || req.user?.id || req.user?._id || req.userId || 'super-admin';
+
+    const data = await mergeAiToolDuplicates({ primaryId, duplicateIds, mergedBy });
+    res.json({
+      success: true,
+      message: `Merged ${data.archivedCount} duplicate(s) into primary record.`,
+      data,
+    });
+  } catch (error) {
+    console.error('mergeAiToolDuplicatesHandler error:', error);
+    const status = error.status || 500;
+    res.status(status).json({ success: false, message: error.message });
+  }
+};
+
+/**
+ * Merge all duplicate groups (suggested primary kept in each).
+ * Body optional filters: { toolName, board, classLabel, subject }
+ */
+export const mergeAllAiToolDuplicatesHandler = async (req, res) => {
+  try {
+    const { mergeAllAiToolDuplicates } = await import('../services/ai-tool-duplicates-service.js');
+    const mergedBy =
+      req.user?.email || req.user?.id || req.user?._id || req.userId || 'super-admin';
+
+    const data = await mergeAllAiToolDuplicates({
+      toolName: req.body?.toolName,
+      board: req.body?.board,
+      classLabel: req.body?.classLabel,
+      subject: req.body?.subject,
+      mergedBy,
+    });
+
+    const failCount = Array.isArray(data.failures) ? data.failures.length : 0;
+    res.json({
+      success: true,
+      message:
+        failCount > 0
+          ? `Merged ${data.groupsMerged} group(s), archived ${data.archivedCount} extra(s). ${failCount} group(s) failed.`
+          : `Merged all ${data.groupsMerged} group(s) and archived ${data.archivedCount} extra record(s).`,
+      data,
+    });
+  } catch (error) {
+    console.error('mergeAllAiToolDuplicatesHandler error:', error);
+    res.status(500).json({ success: false, message: error.message });
+  }
+};

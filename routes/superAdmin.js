@@ -45,6 +45,9 @@ import {
   updateAiToolGenerationById,
   deleteAiToolGenerationById,
   getToolSectionGapSummaryHandler,
+  listAiToolDuplicates,
+  mergeAiToolDuplicatesHandler,
+  mergeAllAiToolDuplicatesHandler,
 } from '../controllers/aiToolGenerationsController.js';
 import {
   listAiToolTopics,
@@ -436,6 +439,9 @@ router.get('/ai-tool-generations/section-gap-summary', getToolSectionGapSummaryH
 router.get('/ai-tool-generations/meta', getAiToolGenerationsMeta);
 router.get('/ai-tool-generations/children', listAiToolChildren);
 router.get('/ai-tool-generations/records', listAiToolRecords);
+router.get('/ai-tool-generations/duplicates', listAiToolDuplicates);
+router.post('/ai-tool-generations/duplicates/merge', mergeAiToolDuplicatesHandler);
+router.post('/ai-tool-generations/duplicates/merge-all', mergeAllAiToolDuplicatesHandler);
 router.get('/ai-tool-generations/export-bundle', exportAiToolGenerationsBundle);
 router.get('/ai-tool-generations/document/:id', getAiToolGenerationById);
 router.patch('/ai-tool-generations/document/:id', updateAiToolGenerationById);
