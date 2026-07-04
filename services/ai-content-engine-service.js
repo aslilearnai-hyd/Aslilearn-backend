@@ -29,6 +29,7 @@ import {
   validateCanonicalFieldsForSave,
 } from '../utils/ai-generator-section-pad.js';
 import { stripMarkdownSyntax, deepStripMarkdownValues } from '../utils/strip-markdown-syntax.js';
+import { extractJsonObject } from '../utils/ai-json-extract.js';
 import {
   getAiGeneratorValidationMaxAttempts,
   getAiGeneratorGeminiModel,
@@ -2827,6 +2828,26 @@ export function flashcardDeckStructuredContentIsComplete(data, toolSlug = 'flash
   return getFlashcardDeckMissingSections(data, toolSlug).length === 0;
 }
 
+function resolveFlashcardTopicLabel(meta = {}) {
+  const candidates = [
+    meta.subTopic,
+    meta.subtopic,
+    meta.topic,
+    meta.topicName,
+    meta.chapter,
+  ]
+    .map((x) => String(x || '').trim())
+    .filter(Boolean)
+    .filter((x) => !/^this subtopic$/i.test(x));
+  if (candidates.length) return candidates[0];
+  const subject = String(meta.subject || '').trim();
+  return subject || 'Lesson';
+}
+
+function replaceThisSubtopicPlaceholder(text, topic) {
+  return String(text || '').replace(/\bthis subtopic\b/gi, topic);
+}
+
 /** Merge typed card groups and pad deck narrative fields; build cards from objectives when needed. */
 export function finalizeFlashcardDeckStructuredContent(structuredContent, meta = {}, toolSlug = 'flashcard-generator') {
   const slug = String(toolSlug || '').trim();
@@ -2835,10 +2856,27 @@ export function finalizeFlashcardDeckStructuredContent(structuredContent, meta =
       ? normalizeFlashcardDeckStructuredContent(structuredContent)
       : normalizeMyStudyDecksStructuredContent(structuredContent);
 
-  const topic = String(meta.subTopic || meta.subtopic || meta.topic || 'this subtopic').trim();
+  const topic = resolveFlashcardTopicLabel(meta);
   const subject = String(meta.subject || 'Science').trim();
   const skipEnglishScaffold = mustEnforceStoryPassageLanguageCompliance(subject);
   const bloomLevels = ['Remember', 'Understand', 'Apply', 'Analyze', 'Evaluate', 'Create'];
+
+  // Model sometimes copies the prompt placeholder "this subtopic" into titles.
+  for (const key of ['flashcard_deck_title', 'deck_title', 'title']) {
+    if (base[key] != null) base[key] = replaceThisSubtopicPlaceholder(base[key], topic);
+  }
+  for (const key of ['learning_objectives', 'expected_learning_outcomes']) {
+    if (Array.isArray(base[key])) {
+      base[key] = base[key].map((row) => replaceThisSubtopicPlaceholder(row, topic));
+    }
+  }
+  for (const key of [
+    'subtopic_link_prior_knowledge_required',
+    'ncf_competency_alignment',
+    'prior_knowledge_required',
+  ]) {
+    if (base[key] != null) base[key] = replaceThisSubtopicPlaceholder(base[key], topic);
+  }
 
   if (!skipEnglishScaffold && !String(base.flashcard_deck_title || base.deck_title || base.title || '').trim()) {
     base.deck_title = `${topic} — Flashcards`;
@@ -2993,9 +3031,14 @@ export function finalizeFlashcardDeckStructuredContent(structuredContent, meta =
         base.topic_and_subtopic_link = `${base.topic} — ${base.subtopic}`;
       }
       if (!String(base.class_level || '').trim() && classLabel) base.class_level = classLabel;
-      if (!String(base.flashcard_deck_title || base.deck_title || base.title || '').trim()) {
+      const deckTitleRaw = String(base.flashcard_deck_title || base.deck_title || base.title || '').trim();
+      if (!deckTitleRaw || /this subtopic/i.test(deckTitleRaw)) {
         base.flashcard_deck_title =
-          canonical === 'Hindi' ? 'पाठ — फ़्लैशकार्ड' : canonical === 'Telugu' ? 'పాఠం — ఫ్లాష్‌కార్డ్‌లు' : `${topic} — flashcards`;
+          canonical === 'Hindi'
+            ? `${topic} — फ़्लैशकार्ड`
+            : canonical === 'Telugu'
+              ? `${topic} — ఫ్లాష్‌కార్డ్‌లు`
+              : `${topic} — flashcards`;
         base.deck_title = base.flashcard_deck_title;
         base.title = base.flashcard_deck_title;
       }
@@ -3071,13 +3114,48 @@ export function finalizeFlashcardDeckStructuredContent(structuredContent, meta =
               ? 'ఈ పాఠంలో అత్యంత కష్టమైన కార్డ్ ఏది? ఎందుకు?'
               : '';
       }
-    } else if (!String(base.subtopic_link_prior_knowledge_required || '').trim()) {
-      base.subtopic_link_prior_knowledge_required =
-        canonical === 'Hindi'
-          ? 'पाठ — पूर्व ज्ञान: विषय की बुनियादी शब्दावली।'
-          : canonical === 'Telugu'
-            ? 'పాఠం — ముందస్తు జ్ఞానం: ప్రాథమిక పదజాలం.'
-            : '';
+    } else {
+      // my-study-decks (and other non-flashcard-generator decks)
+      const needsTitle =
+        !String(base.deck_title || base.title || '').trim() ||
+        /this subtopic/i.test(String(base.deck_title || base.title || ''));
+      if (needsTitle) {
+        base.deck_title =
+          canonical === 'Hindi'
+            ? `${topic} — फ़्लैशकार्ड`
+            : canonical === 'Telugu'
+              ? `${topic} — ఫ్లాష్‌కార్డ్‌లు`
+              : `${topic} — Flashcards`;
+        base.title = base.deck_title;
+      }
+      if (!String(base.subtopic_link_prior_knowledge_required || '').trim()) {
+        base.subtopic_link_prior_knowledge_required =
+          canonical === 'Hindi'
+            ? `${topic} — पूर्व ज्ञान: पाठ की बुनियादी शब्दावली।`
+            : canonical === 'Telugu'
+              ? `${topic} — ముందస్తు జ్ఞానం: ప్రాథమిక పదజాలం.`
+              : `${topic} — prior knowledge.`;
+      }
+      if (!Array.isArray(base.learning_objectives) || base.learning_objectives.length < 2) {
+        base.learning_objectives =
+          canonical === 'Hindi'
+            ? [`${topic} के मुख्य विचारों को अपनी भाषा में समझाना।`, `${topic} से संबंधित प्रश्नों का उत्तर देना।`]
+            : canonical === 'Telugu'
+              ? [`${topic} ప్రధాన అంశాలను వివరించడం.`, `${topic}కి సంబంధించిన ప్రశ్నలకు సమాధానం ఇవ్వడం.`]
+              : [`Define and explain key ideas about ${topic}.`, `Apply ${topic} to short examples.`];
+      } else {
+        base.learning_objectives = base.learning_objectives.map((row) =>
+          replaceThisSubtopicPlaceholder(row, topic),
+        );
+      }
+      if (!String(base.ncf_competency_alignment || '').trim() || /this subtopic/i.test(String(base.ncf_competency_alignment))) {
+        base.ncf_competency_alignment =
+          canonical === 'Hindi'
+            ? `एनसीएफ: ${topic} की अवधारणात्मक समझ और अनुप्रयोग।`
+            : canonical === 'Telugu'
+              ? `NCF: ${topic} యొక్క సంభావనాత్మక అవగాహన.`
+              : `Aligned to ${subject} competencies for ${topic}.`;
+      }
     }
 
     while (countValidFlashcardRows(cards) < minCards) {
@@ -6809,87 +6887,6 @@ function normalizeToolKey(value) {
     .replace(/[^a-z0-9]+/g, '');
 }
 
-function extractJsonObject(text) {
-  const raw = String(text || '')
-    .replace(/^```json\s*/i, '')
-    .replace(/^```\s*/i, '')
-    .replace(/\s*```$/i, '')
-    .trim();
-
-  const normalizeLooseJson = (value) =>
-    String(value || '')
-      .replace(/[\u2018\u2019]/g, "'")
-      .replace(/[\u201C\u201D]/g, '"')
-      .replace(/\u00A0/g, ' ')
-      .replace(/,\s*([}\]])/g, '$1')
-      .trim();
-
-  const parseCandidate = (value) => {
-    const cleaned = normalizeLooseJson(value);
-    if (!cleaned) return null;
-    try {
-      return JSON.parse(cleaned);
-    } catch {
-      return null;
-    }
-  };
-
-  const pickObject = (parsed) => {
-    if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) return parsed;
-    if (Array.isArray(parsed)) {
-      const firstObject = parsed.find((row) => row && typeof row === 'object' && !Array.isArray(row));
-      return firstObject || {};
-    }
-    return null;
-  };
-
-  const direct = pickObject(parseCandidate(raw));
-  if (direct) return direct;
-
-  const startIndices = [];
-  for (let i = 0; i < raw.length; i += 1) {
-    const ch = raw[i];
-    if (ch === '{' || ch === '[') startIndices.push(i);
-  }
-
-  for (const start of startIndices) {
-    const open = raw[start];
-    const close = open === '{' ? '}' : ']';
-    let depth = 0;
-    let inString = false;
-    let escape = false;
-
-    for (let i = start; i < raw.length; i += 1) {
-      const ch = raw[i];
-      if (escape) {
-        escape = false;
-        continue;
-      }
-      if (ch === '\\') {
-        escape = true;
-        continue;
-      }
-      if (ch === '"') {
-        inString = !inString;
-        continue;
-      }
-      if (inString) continue;
-
-      if (ch === open) depth += 1;
-      else if (ch === close) depth -= 1;
-
-      if (depth === 0) {
-        const candidate = raw.slice(start, i + 1);
-        const parsed = pickObject(parseCandidate(candidate));
-        if (parsed) return parsed;
-        break;
-      }
-    }
-  }
-
-  throw new Error('Gemini returned invalid JSON payload');
-}
-
 /**
  * Gemini often nests wrong, puts arrays at root, or stringifies structuredContent.
  */
@@ -8342,17 +8339,41 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
     isBatchVariant &&
     languageSubjectEnforced &&
     (slug === 'flashcard-generator' || slug === 'my-study-decks');
+  // Language flashcards: keep validation cheap, but allow one extra attempt for invalid JSON
+  // (Hindi/Telugu model output often breaks JSON with bare newlines / truncation).
   const maxValidationAttempts = isLanguageFlashcardBatch && !isBookBatch
-    ? 1
+    ? 2
     : languageSubjectEnforced
       ? Math.max(3, baseValidationAttempts)
-      : baseValidationAttempts;
+      : Math.max(2, baseValidationAttempts);
 
   for (let attempt = 1; attempt <= maxValidationAttempts; attempt += 1) {
     const llmOptions = buildLlmOptions(attempt);
     try {
       const raw = await geminiService.generateStructuredContent(activePrompt, 'json', llmOptions);
-      const json = extractJsonObject(raw);
+      let json;
+      try {
+        json = extractJsonObject(raw);
+      } catch (parseError) {
+        if (attempt < maxValidationAttempts) {
+          console.warn(
+            `[AI Generator] Invalid JSON on attempt ${attempt}/${maxValidationAttempts} (${slug}); retrying with strict JSON instruction.`,
+          );
+          activePrompt = `${basePrompt}
+
+CRITICAL RETRY: Your previous reply was NOT valid JSON and could not be parsed.
+Return ONLY one valid JSON object. Rules:
+- No markdown fences, no commentary before/after JSON
+- Escape every quote and newline inside strings (use \\n, not bare line breaks)
+- Do not truncate mid-string or mid-object
+- Use double quotes for all keys and string values
+- For flashcards use cards[] with "front" and "back" on every card
+Write all student-facing text in the required output language.`;
+          lastError = parseError;
+          continue;
+        }
+        throw parseError;
+      }
       let structuredContent = coerceRegenerationStructuredContent(slug, json);
       if (slug === 'mock-test-builder' && json && typeof json === 'object') {
         const fromStructured =
@@ -8827,6 +8848,13 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
       lastError = error;
       if (isTransientGeminiError(error)) {
         throw error;
+      }
+      const msg = String(error?.message || error || '');
+      if (/invalid JSON/i.test(msg) && attempt < maxValidationAttempts) {
+        activePrompt = `${basePrompt}
+
+CRITICAL RETRY: Previous output was invalid JSON. Return ONLY one valid JSON object with escaped strings and no markdown.`;
+        continue;
       }
     }
   }

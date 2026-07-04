@@ -452,23 +452,28 @@ export function validateStoryPassageLanguageCompliance(subject, structured, opti
 }
 
 /** Skip English/mixed records when serving Hindi/Telugu language-subject content from rotation. */
-export function storyPassageRecordLanguageValid(_toolSlug, subject, doc) {
+export function storyPassageRecordLanguageValid(toolSlug, subject, doc) {
   if (!mustEnforceStoryPassageLanguageCompliance(subject)) return true;
 
   const docSubject = String(subject || doc?.subject || '').trim();
+  const slug = String(toolSlug || doc?.toolName || '').trim();
   const structured = doc?.metadata?.structuredContent;
   if (structured && typeof structured === 'object') {
-    return validateStoryPassageLanguageCompliance(docSubject, structured).valid;
+    // Pass toolSlug so flashcards only check card front/back (not English scaffold labels).
+    return validateStoryPassageLanguageCompliance(docSubject, structured, {
+      toolSlug: slug,
+    }).valid;
   }
 
   const required = storyPassageRequiredScript(docSubject);
   const text = String(doc?.generatedContent || doc?.content || '').trim();
   if (!text || text.length < 40) return false;
+  // Markdown body: lenient script check (titles may include Latin topic names).
   if (required === 'devanagari') {
-    return textMatchesStoryPassageScript(text, 'devanagari', { strict: true });
+    return textMatchesStoryPassageScript(text, 'devanagari', { strict: false });
   }
   if (required === 'telugu') {
-    return textMatchesStoryPassageScript(text, 'telugu', { strict: true });
+    return textMatchesStoryPassageScript(text, 'telugu', { strict: false });
   }
   return true;
 }

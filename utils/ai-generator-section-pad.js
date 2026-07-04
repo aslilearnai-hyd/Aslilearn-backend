@@ -136,9 +136,13 @@ export function normalizeStructuredArrayFields(data) {
 }
 
 function ctx(meta = {}) {
-  const topic = String(meta.subTopic || meta.subtopic || meta.topic || 'this subtopic').trim();
+  const topic = String(
+    meta.subTopic || meta.subtopic || meta.topic || meta.topicName || meta.subject || 'Lesson',
+  )
+    .trim()
+    .replace(/^this subtopic$/i, String(meta.subject || 'Lesson').trim() || 'Lesson');
   const subject = String(meta.subject || 'Science').trim();
-  const title = String(meta.title || topic).trim();
+  const title = String(meta.title || topic).trim().replace(/\bthis subtopic\b/gi, topic);
   return { topic, subject, title };
 }
 

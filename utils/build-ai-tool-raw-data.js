@@ -22,6 +22,22 @@ export function tryParseJsonPayload(content) {
   }
 }
 
+/** Merge document curriculum fields into metadata for finalize/display. */
+export function buildDeliveryMetadataFromDoc(doc) {
+  const metadata =
+    doc?.metadata && typeof doc.metadata === 'object' && !Array.isArray(doc.metadata)
+      ? { ...doc.metadata }
+      : {};
+  return {
+    ...metadata,
+    subject: doc?.subject || metadata.subject,
+    topic: doc?.topic || metadata.topic,
+    subTopic: doc?.subtopic || doc?.subTopic || metadata.subTopic || metadata.subtopic,
+    subtopic: doc?.subtopic || metadata.subtopic,
+    classLabel: doc?.classLabel || metadata.classLabel,
+  };
+}
+
 /**
  * Some Super Admin saves store generatedContent as `{ formatted, raw }`.
  * Dashboards need plain markdown in `content` and structured data in `rawData`.
