@@ -39,6 +39,27 @@ function questionTextFromRow(row) {
   return String(row.question || row.prompt || row.text || row.front || '').trim();
 }
 
+function dedupeQuestionContentUnits(units = []) {
+  const seen = new Set();
+  const out = [];
+  for (const unit of units) {
+    const text = String(unit?.text || '').trim();
+    if (!text) continue;
+    const fp = contentFingerprint(text);
+    if (seen.has(fp)) continue;
+    seen.add(fp);
+    out.push(unit);
+  }
+  return out;
+}
+
+function uniqueQuestionUnitsForTool(toolSlug, structured) {
+  const units = extractContentUnits(toolSlug, structured).filter(
+    (u) => u.contentType === 'question' || u.contentType === 'flashcard',
+  );
+  return dedupeQuestionContentUnits(units);
+}
+
 function filterQuestionRows(rows, seen) {
   if (!Array.isArray(rows)) return rows;
   const kept = [];
@@ -284,9 +305,7 @@ export function validateRecordUniqueness(toolSlug, structured, ctx = {}) {
     return { valid: errors.length === 0, errors, duplicates: [] };
   }
 
-  const units = extractContentUnits(slug, structured).filter(
-    (u) => u.contentType === 'question' || u.contentType === 'flashcard',
-  );
+  const units = uniqueQuestionUnitsForTool(slug, structured);
   const seenInRecord = new Set();
   const duplicates = [];
 
@@ -322,11 +341,8 @@ export function validateRecordUniqueness(toolSlug, structured, ctx = {}) {
   return { valid: errors.length === 0, errors, duplicates };
 }
 
-export function collectQuestionTextsFromStructured(structured) {
-  return extractContentUnits('', structured)
-    .filter((u) => u.contentType === 'question' || u.contentType === 'flashcard')
-    .map((u) => String(u.text || '').trim())
-    .filter(Boolean);
+export function collectQuestionTextsFromStructured(structured, toolSlug = '') {
+  return uniqueQuestionUnitsForTool(toolSlug, structured).map((u) => String(u.text || '').trim()).filter(Boolean);
 }
 
 /** Fingerprintable lesson/example text from Concept Mastery structured JSON. */

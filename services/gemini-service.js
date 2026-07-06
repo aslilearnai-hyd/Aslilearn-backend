@@ -391,6 +391,7 @@ async function callChatCompletions({
   isBatchVariant = false,
   systemInstruction = '',
   responseSchema = null,
+  modelOverflow = '',
 }) {
   const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   const contextTokens = Number(process.env.LLM_CONTEXT_TOKENS) || 0;
@@ -401,7 +402,10 @@ async function callChatCompletions({
       ? getFlashLiteModelChain(liteModel, isBatchVariant)
       : reorderModelChainForCooldown(
           String(primaryModel || '').trim()
-            ? mergeGeminiModelChain(primaryModel, defaultChain.join(','))
+            ? mergeGeminiModelChain(
+                primaryModel,
+                String(modelOverflow || '').trim() || defaultChain.join(','),
+              )
             : defaultChain,
         );
     if (!apiKey) {
@@ -2834,6 +2838,7 @@ Provide: (1) what you see, (2) explanation/solution, (3) key takeaways.`;
       isBatchVariant: options.isBatchVariant === true,
       systemInstruction: systemContent,
       responseSchema: options.responseSchema && typeof options.responseSchema === 'object' ? options.responseSchema : null,
+      modelOverflow: String(options.modelOverflow || '').trim(),
     });
 
     return wantsJson ? stripCodeFences(text) : text;

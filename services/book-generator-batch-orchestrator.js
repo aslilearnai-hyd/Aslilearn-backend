@@ -11,8 +11,16 @@ import {
   finalizePracticeQaStructuredContent,
   finalizeQuickAssignmentStructuredContent,
   finalizeConceptMasteryStructuredContent,
-  normalizeLessonPlannerStructuredContent,
+  finalizeConceptBreakdownStructuredContent,
+  finalizeChapterSummaryStructuredContent,
+  finalizeKeyPointsStructuredContent,
+  finalizeActivityStructuredContent,
+  finalizeDailyClassPlanStructuredContent,
+  finalizeStoryPassageStructuredContent,
   finalizeFlashcardDeckStructuredContent,
+  normalizeLessonPlannerStructuredContent,
+  normalizeStudyGuideStructuredContent,
+  normalizeReadingPracticeStructuredContent,
 } from './ai-content-engine-service.js';
 import { buildBookHistoricalGenerationContext } from './book-generator-historical.js';
 import {
@@ -42,12 +50,12 @@ import {
   BOOK_GENERATOR_MAX_INR,
 } from '../config/bookBasedTools.js';
 import { canonicalBoardLabel, lockBoardKey, normalizeClassLabelForLock, resolveClassLabelForAiToolStorage } from '../utils/board-label.js';
-import { resolveQualityTierSettings } from '../utils/ai-generator-quality-tier.js';
+import { resolveQualityTierSettings, getQualityTierBatchConcurrency } from '../utils/ai-generator-quality-tier.js';
 
-function getBookGeneratorConcurrency() {
-  const n = Number(process.env.BOOK_GENERATOR_CONCURRENCY || process.env.AI_GENERATOR_BATCH_CONCURRENCY);
-  const defaultC = 1;
-  return Number.isFinite(n) && n > 0 ? Math.min(n, 4) : defaultC;
+function getBookGeneratorConcurrency(qualityTierSettings, batchSize) {
+  const env = Number(process.env.BOOK_GENERATOR_CONCURRENCY || process.env.AI_GENERATOR_BATCH_CONCURRENCY);
+  if (Number.isFinite(env) && env > 0) return Math.min(env, 4);
+  return getQualityTierBatchConcurrency(qualityTierSettings, batchSize);
 }
 
 function sleep(ms) {
@@ -72,6 +80,24 @@ function finalizeBookStructuredContent(toolSlug, structured, meta) {
       return finalizeQuickAssignmentStructuredContent(source, meta);
     case 'concept-mastery-helper':
       return finalizeConceptMasteryStructuredContent(source, meta);
+    case 'concept-breakdown-explainer':
+      return finalizeConceptBreakdownStructuredContent(source, meta);
+    case 'chapter-summary-creator':
+      return finalizeChapterSummaryStructuredContent(source, meta);
+    case 'key-points-formula-extractor':
+      return finalizeKeyPointsStructuredContent(source, meta);
+    case 'smart-study-guide-generator':
+    case 'short-notes-summaries-maker':
+      return normalizeStudyGuideStructuredContent(source, meta);
+    case 'activity-project-generator':
+    case 'project-idea-lab':
+      return finalizeActivityStructuredContent(source, meta, slug);
+    case 'daily-class-plan-maker':
+      return finalizeDailyClassPlanStructuredContent(source, meta);
+    case 'story-passage-creator':
+      return finalizeStoryPassageStructuredContent(source, meta);
+    case 'reading-practice-room':
+      return normalizeReadingPracticeStructuredContent(source);
     case 'lesson-planner':
     case 'study-schedule-maker':
       return normalizeLessonPlannerStructuredContent(source, slug);
@@ -174,7 +200,10 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
   const subtopicName = String(params.subtopicName || '').trim();
   const batchSize = getBatchSize(params.batchSize);
   const toolDisplayName = getBookBasedToolDisplayName(toolSlug);
-  const qualityTierSettings = resolveQualityTierSettings(params.qualityTier || params.extraParams?.qualityTier);
+  const qualityTierSettings = resolveQualityTierSettings(
+    params.qualityTier || params.extraParams?.qualityTier,
+    { batchSize },
+  );
   const useBookKnowledge = params.useBookKnowledge !== false;
 
   const scope = {
@@ -258,13 +287,14 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
       }));
       let completedSlots = 0;
 
-      const slotResults = await runPool(slots, getBookGeneratorConcurrency(), async (slot) => {
+      const slotResults = await runPool(slots, getBookGeneratorConcurrency(qualityTierSettings, batchSize), async (slot) => {
         const { batchIndex, variantIndex } = slot;
         const maxAttempts = getMaxAttemptsPerSlot(qualityTierSettings);
         let lastError = 'Unknown error';
 
-        if (batchIndex > 1 && qualityTierSettings.tier !== 'fast') {
-          await sleep(600 + Math.floor(Math.random() * 500));
+        const staggerMs = Number(qualityTierSettings.slotStaggerMs) || 0;
+        if (batchIndex > 1 && staggerMs > 0) {
+          await sleep(staggerMs + Math.floor(Math.random() * 200));
         }
 
         if (estimateSessionCostInr() >= getBookGeneratorMaxInr()) {
@@ -366,12 +396,26 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               if (!uniqueness.valid) {
                 lastError = uniqueness.errors.join('; ');
                 if (attempt < maxAttempts) continue;
+                throw new Error(`Duplicate content: ${lastError}`);
               }
+            }
+
+            if (!structuredContent || typeof structuredContent !== 'object') {
+              lastError = 'Model returned empty structured content.';
+              if (attempt < maxAttempts) continue;
+              throw new Error(lastError);
+            }
+
+            const formattedContent = String(generated.generatedContent || '').trim();
+            if (!formattedContent) {
+              lastError = 'Model returned empty formatted content.';
+              if (attempt < maxAttempts) continue;
+              throw new Error(lastError);
             }
 
             const title = extractTitleFromStructured(structuredContent);
             if (title) batchTitles.push(title);
-            batchQuestionTexts.push(...collectQuestionTextsFromStructured(structuredContent));
+            batchQuestionTexts.push(...collectQuestionTextsFromStructured(structuredContent, toolSlug));
 
             const uid = opts.reqUser?.userId || opts.reqUser?._id || 'unknown';
             const teacherId = mongoose.Types.ObjectId.isValid(uid) ? uid : undefined;
@@ -379,15 +423,15 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             const record = await AiToolGeneration.create({
               toolName: toolSlug,
               toolDisplayName,
-              sourceType: 'ai_generator',
+              sourceType: 'book_rag',
               board,
               classLabel: className,
               subject: subjectName,
               topic: topicName,
               subtopic: subtopicName,
               section: '',
-              content: generated.generatedContent,
-              generatedContent: generated.generatedContent,
+              content: formattedContent,
+              generatedContent: formattedContent,
               generatedBy: uid,
               status: 'active',
               reviewStatus: params.reviewStatus || 'approved',
@@ -408,21 +452,24 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                 batchOrchestrator: true,
                 bookGenerator: true,
                 qualityTier: qualityTierSettings.tier,
+                geminiModel: qualityTierSettings.primaryGeminiModel,
                 uniquenessTarget: historical.uniquenessTarget,
               },
               ...(teacherId ? { teacherId } : {}),
             });
 
-            await Promise.all([
-              persistGenerationFingerprints(toolSlug, structuredContent, scope, record._id),
-              Book.updateOne(
-                { _id: book._id },
-                {
-                  $inc: { 'generationStats.totalGenerations': 1, [`generationStats.toolBreakdown.${toolSlug}`]: 1 },
-                  $set: { 'generationStats.lastGeneratedAt': new Date() },
-                },
-              ),
-            ]);
+            await persistGenerationFingerprints(toolSlug, structuredContent, scope, record._id).catch(
+              (fpErr) => {
+                console.warn('[book-generator] fingerprint persist failed (record saved):', fpErr?.message || fpErr);
+              },
+            );
+            await Book.updateOne(
+              { _id: book._id },
+              {
+                $inc: { 'generationStats.totalGenerations': 1, [`generationStats.toolBreakdown.${toolSlug}`]: 1 },
+                $set: { 'generationStats.lastGeneratedAt': new Date() },
+              },
+            );
 
             completedSlots += 1;
             opts.onProgress?.(

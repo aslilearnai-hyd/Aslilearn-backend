@@ -758,6 +758,17 @@ export function buildIndicScaffoldExamQuestions(meta = {}, blueprint = '') {
   const lang = canonicalStoryPassageSubject(meta.subject);
   const topic = resolveIndicScaffoldTopic(meta, lang === 'Telugu' ? 'telugu' : 'devanagari');
   const isTelugu = lang === 'Telugu';
+  const variant = Number(meta.generationVariant ?? meta.variantIndex) || 1;
+  const angle = String(meta.variantAngle || '').trim();
+  const scenario = String(meta.variantScenario || '').trim();
+  const frame =
+    angle && scenario
+      ? `${angle} — ${scenario}`
+      : angle
+        ? angle
+        : scenario
+          ? `Scenario: ${scenario}`
+          : `Variant ${variant}`;
   const counts = parseIndicBlueprintCounts(blueprint);
   const buckets = { section_a: [], section_b: [], section_c: [], section_d: [], section_e: [] };
   let n = 1;
@@ -766,7 +777,7 @@ export function buildIndicScaffoldExamQuestions(meta = {}, blueprint = '') {
     for (let i = 0; i < counts.a; i += 1) {
       buckets.section_a.push({
         question_number: n++,
-        question: `${topic} గురించి క్రింది వాటిలో ఏది సరైనది? (బహువికల్పం ${i + 1})`,
+        question: `[${frame}] ${topic} గురించి క్రింది వాటిలో ఏది సరైనది? (బహువికల్పం ${i + 1})`,
         options: [
           'A) ఆధారం లేకుండా అభిప్రాయం',
           'B) పరిశీలన మరియు సాక్ష్యంతో కూడిన వివరణ',
@@ -780,7 +791,7 @@ export function buildIndicScaffoldExamQuestions(meta = {}, blueprint = '') {
     for (let i = 0; i < counts.b; i += 1) {
       buckets.section_b.push({
         question_number: n++,
-        question: `${topic}కు సంబంధించిన ఒక ముఖ్య పదాన్ని నిర్వచించండి. (చాలా చిన్న సమాధానం ${i + 1})`,
+        question: `[${frame}] ${topic}కు సంబంధించిన ఒక ముఖ్య పదాన్ని నిర్వచించండి. (చాలా చిన్న సమాధానం ${i + 1})`,
         answer: `${topic}కు సంబంధించిన సంక్షిప్త నిర్వచనం.`,
         marks: 2,
       });
@@ -788,7 +799,7 @@ export function buildIndicScaffoldExamQuestions(meta = {}, blueprint = '') {
     for (let i = 0; i < counts.c; i += 1) {
       buckets.section_c.push({
         question_number: n++,
-        question: `${topic} దైనందిన జీవితంలో ఎలా ఉపయోగపడుతుందో వివరించండి. (చిన్న సమాధానం ${i + 1})`,
+        question: `[${frame}] ${topic} దైనందిన జీవితంలో ఎలా ఉపయోగపడుతుందో వివరించండి. (చిన్న సమాధానం ${i + 1})`,
         answer: `${topic}కు సంబంధించిన ఉదాహరణతో సమాధానం.`,
         marks: 3,
       });
@@ -796,7 +807,7 @@ export function buildIndicScaffoldExamQuestions(meta = {}, blueprint = '') {
     for (let i = 0; i < counts.d; i += 1) {
       buckets.section_d.push({
         question_number: n++,
-        question: `${topic} యొక్క ప్రధాన ఆలోచనలను వివరంగా రాయండి. (దీర్ఘ సమాధానం ${i + 1})`,
+        question: `[${frame}] ${topic} యొక్క ప్రధాన ఆలోచనలను వివరంగా రాయండి. (దీర్ఘ సమాధానం ${i + 1})`,
         answer: `${topic}కు సంబంధించిన వివరణాత్మక సమాధానం.`,
         marks: 5,
       });
@@ -804,7 +815,7 @@ export function buildIndicScaffoldExamQuestions(meta = {}, blueprint = '') {
     for (let i = 0; i < counts.e; i += 1) {
       buckets.section_e.push({
         question_number: n++,
-        question: `${topic}పై కేస్ స్టడీ: పరిస్థితిని చదివి (ఎ)–(డ) ప్రశ్నలకు సమాధానం ఇవ్వండి.`,
+        question: `[${frame}] ${topic}పై కేస్ స్టడీ: పరిస్థితిని చదివి (ఎ)–(డ) ప్రశ్నలకు సమాధానం ఇవ్వండి.`,
         answer: `పాఠ్య సాక్ష్యంతో ${topic}కు సంబంధించిన సమాధానాలు.`,
         marks: 6,
       });
@@ -815,7 +826,7 @@ export function buildIndicScaffoldExamQuestions(meta = {}, blueprint = '') {
   for (let i = 0; i < counts.a; i += 1) {
     buckets.section_a.push({
       question_number: n++,
-      question: `${topic} के बारे में निम्न में से कौन-सा कथन सबसे उपयुक्त है? (बहुविकल्पीय ${i + 1})`,
+      question: `[${frame}] ${topic} के बारे में निम्न में से कौन-सा कथन सबसे उपयुक्त है? (बहुविकल्पीय ${i + 1})`,
       options: [
         'A) बिना साक्ष्य के अनुमान',
         'B) प्रेक्षण और साक्ष्य पर आधारित तर्क',
@@ -829,7 +840,7 @@ export function buildIndicScaffoldExamQuestions(meta = {}, blueprint = '') {
   for (let i = 0; i < counts.b; i += 1) {
     buckets.section_b.push({
       question_number: n++,
-      question: `${topic} से जुड़ा एक मुख्य शब्द परिभाषित कीजिए। (अति लघु उत्तर ${i + 1})`,
+      question: `[${frame}] ${topic} से जुड़ा एक मुख्य शब्द परिभाषित कीजिए। (अति लघु उत्तर ${i + 1})`,
       answer: `${topic} की संक्षिप्त परिभाषा।`,
       marks: 2,
     });
@@ -837,7 +848,7 @@ export function buildIndicScaffoldExamQuestions(meta = {}, blueprint = '') {
   for (let i = 0; i < counts.c; i += 1) {
     buckets.section_c.push({
       question_number: n++,
-      question: `${topic} दैनिक जीवन में कैसे उपयोगी है — एक उदाहरण सहित समझाइए। (लघु उत्तर ${i + 1})`,
+      question: `[${frame}] ${topic} दैनिक जीवन में कैसे उपयोगी है — एक उदाहरण सहित समझाइए। (लघु उत्तर ${i + 1})`,
       answer: `${topic} से जुड़े वास्तविक उदाहरण पर आधारित उत्तर।`,
       marks: 3,
     });
@@ -845,7 +856,7 @@ export function buildIndicScaffoldExamQuestions(meta = {}, blueprint = '') {
   for (let i = 0; i < counts.d; i += 1) {
     buckets.section_d.push({
       question_number: n++,
-      question: `${topic} के मुख्य बिंदुओं को विस्तार से लिखिए। (दीर्घ उत्तर ${i + 1})`,
+      question: `[${frame}] ${topic} के मुख्य बिंदुओं को विस्तार से लिखिए। (दीर्घ उत्तर ${i + 1})`,
       answer: `${topic} पर विस्तृत, तर्कसंगत उत्तर।`,
       marks: 5,
     });
@@ -853,7 +864,7 @@ export function buildIndicScaffoldExamQuestions(meta = {}, blueprint = '') {
   for (let i = 0; i < counts.e; i += 1) {
     buckets.section_e.push({
       question_number: n++,
-      question: `${topic} पर आधारित प्रसंग अध्ययन पढ़कर (क)–(घ) के उत्तर दीजिए।`,
+      question: `[${frame}] ${topic} पर आधारित प्रसंग अध्ययन पढ़कर (क)–(घ) के उत्तर दीजिए।`,
       answer: `पाठ्य सामग्री के साक्ष्य से ${topic} से संबंधित उत्तर।`,
       marks: 6,
     });
