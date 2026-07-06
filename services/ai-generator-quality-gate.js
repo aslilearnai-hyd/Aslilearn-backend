@@ -58,6 +58,32 @@ function walkValues(obj, out = []) {
   return out;
 }
 
+function hasScaffoldQuestionRows(data) {
+  if (!data || typeof data !== 'object') return false;
+  const pools = [
+    data.questions,
+    data.section_a,
+    data.section_b,
+    data.section_c,
+    data.section_d,
+    data.section_e,
+  ];
+  for (const pool of pools) {
+    if (!Array.isArray(pool)) continue;
+    for (const row of pool) {
+      if (row && typeof row === 'object' && row._scaffold === true) return true;
+    }
+  }
+  if (Array.isArray(data.sections)) {
+    for (const sec of data.sections) {
+      for (const row of Array.isArray(sec?.questions) ? sec.questions : []) {
+        if (row && typeof row === 'object' && row._scaffold === true) return true;
+      }
+    }
+  }
+  return false;
+}
+
 /**
  * Production quality gate — rejects incomplete, placeholder, or scaffold content.
  * @returns {{ valid: boolean, errors: string[], missingSections: string[] }}
@@ -77,7 +103,7 @@ export function runAiGeneratorQualityGate(toolSlug, structured, meta = {}) {
     if (detail.order === 999) errors.push(detail.label);
   }
 
-  const sectionPadActive = isAiGeneratorSectionPadEnabled();
+  const sectionPadActive = isAiGeneratorSectionPadEnabled() && meta.strictValidation !== true;
 
   const title = String(
     data.title ||
@@ -199,6 +225,10 @@ export function runAiGeneratorQualityGate(toolSlug, structured, meta = {}) {
     if (!languageCheck.valid) {
       errors.push(...languageCheck.errors);
     }
+  }
+
+  if (meta.strictValidation === true && hasScaffoldQuestionRows(data)) {
+    errors.push('Scaffold filler questions detected — Premium requires fully generated content.');
   }
 
   return {

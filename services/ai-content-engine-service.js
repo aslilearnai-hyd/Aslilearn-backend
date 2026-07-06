@@ -80,7 +80,7 @@ import {
 } from './ai-generator-uniqueness-engine.js';
 
 function skipEnglishStructuredScaffold(meta = {}) {
-  if (meta.skipSectionPad === true) return true;
+  // skipSectionPad only disables canonical section padding — not English finalizers.
   const subject = resolveLanguageSubjectForGeneration(meta?.subject, meta?.bookSubject);
   return shouldSkipEnglishScaffoldForLanguageSubject(subject);
 }
@@ -5158,15 +5158,60 @@ function countExamPaperQuestions(data) {
 }
 
 /** Curriculum-backed exam questions when the model returns too few items. */
-function buildScaffoldExamQuestions(meta = {}, blueprint = '') {
+function examScaffoldVariantContext(meta = {}) {
   const topic = String(meta.subTopic || meta.subtopic || meta.topic || 'this subtopic').trim();
+  const variant = Number(meta.generationVariant ?? meta.variantIndex) || 1;
+  const angle = String(meta.variantAngle || '').trim();
+  const scenario = String(meta.variantScenario || '').trim();
+  let frame = '';
+  if (angle && scenario) {
+    frame = `${angle} — ${scenario}`;
+  } else if (angle) {
+    frame = angle;
+  } else if (scenario) {
+    frame = `Scenario: ${scenario}`;
+  } else {
+    frame = `Variant ${variant}`;
+  }
+  return { topic, variant, frame };
+}
+
+function buildScaffoldExamQuestions(meta = {}, blueprint = '') {
+  const { topic, variant, frame } = examScaffoldVariantContext(meta);
   const counts = parseBlueprintSectionCounts(blueprint);
   const buckets = { section_a: [], section_b: [], section_c: [], section_d: [], section_e: [] };
+  const mcqStems = [
+    (t, f, i) => `[${f}] Which statement about ${t} is most accurate? (MCQ ${i})`,
+    (t, f, i) => `[${f}] Identify the correct idea related to ${t}. (MCQ ${i})`,
+    (t, f, i) => `[${f}] Choose the best description of ${t}. (MCQ ${i})`,
+    (t, f, i) => `[${f}] Which option correctly applies ${t}? (MCQ ${i})`,
+  ];
+  const vsaStems = [
+    (t, f, i) => `[${f}] Define a key term linked to ${t}. (VSA ${i})`,
+    (t, f, i) => `[${f}] State one essential fact about ${t}. (VSA ${i})`,
+    (t, f, i) => `[${f}] Name and define a core concept in ${t}. (VSA ${i})`,
+  ];
+  const saStems = [
+    (t, f, i) => `[${f}] Explain how ${t} applies in daily life. (SA ${i})`,
+    (t, f, i) => `[${f}] Give a reasoned example using ${t}. (SA ${i})`,
+    (t, f, i) => `[${f}] Describe a real-world use of ${t}. (SA ${i})`,
+  ];
+  const laStems = [
+    (t, f, i) => `[${f}] Describe the process of scientific inquiry for ${t}. (LA ${i})`,
+    (t, f, i) => `[${f}] Analyse the main principles of ${t} with steps. (LA ${i})`,
+    (t, f, i) => `[${f}] Discuss evidence-based reasoning for ${t}. (LA ${i})`,
+  ];
+  const caseStems = [
+    (t, f, i) => `[${f}] Case study on ${t}: read the scenario and answer parts (a)–(d). (Q${i})`,
+    (t, f, i) => `[${f}] Applied problem on ${t} with data — answer all parts. (Q${i})`,
+    (t, f, i) => `[${f}] Competency task on ${t}: interpret the situation and respond. (Q${i})`,
+  ];
   let n = 1;
   for (let i = 0; i < counts.a; i += 1) {
+    const stem = mcqStems[(variant + i) % mcqStems.length](topic, frame, i + 1);
     buckets.section_a.push({
       question_number: n++,
-      question: `Which of the following best describes ${topic}? (MCQ ${i + 1})`,
+      question: stem,
       options: [
         'A) Belief without evidence',
         'B) Systematic observation and evidence',
@@ -5175,38 +5220,43 @@ function buildScaffoldExamQuestions(meta = {}, blueprint = '') {
       ],
       answer: 'B) Systematic observation and evidence',
       marks: 1,
+      _scaffold: true,
     });
   }
   for (let i = 0; i < counts.b; i += 1) {
     buckets.section_b.push({
       question_number: n++,
-      question: `Define one key term related to ${topic}. (VSA ${i + 1})`,
-      answer: `A concise definition using evidence about ${topic}.`,
+      question: vsaStems[(variant + i) % vsaStems.length](topic, frame, i + 1),
+      answer: `A concise definition using evidence about ${topic} (${frame}).`,
       marks: 2,
+      _scaffold: true,
     });
   }
   for (let i = 0; i < counts.c; i += 1) {
     buckets.section_c.push({
       question_number: n++,
-      question: `Explain how ${topic} applies in daily life. (SA ${i + 1})`,
-      answer: `Students give a reasoned example connected to ${topic}.`,
+      question: saStems[(variant + i) % saStems.length](topic, frame, i + 1),
+      answer: `Students give a reasoned example connected to ${topic} (${frame}).`,
       marks: 3,
+      _scaffold: true,
     });
   }
   for (let i = 0; i < counts.d; i += 1) {
     buckets.section_d.push({
       question_number: n++,
-      question: `Describe the process of scientific inquiry for ${topic}. (LA ${i + 1})`,
-      answer: `A step-by-step explanation with observation, hypothesis, and evidence for ${topic}.`,
+      question: laStems[(variant + i) % laStems.length](topic, frame, i + 1),
+      answer: `A step-by-step explanation with observation, hypothesis, and evidence for ${topic} (${frame}).`,
       marks: 5,
+      _scaffold: true,
     });
   }
   for (let i = 0; i < counts.e; i += 1) {
     buckets.section_e.push({
       question_number: n++,
-      question: `Case study on ${topic}: read the scenario and answer parts (a)–(d).`,
-      answer: `Answers use evidence from the scenario and concepts from ${topic}.`,
+      question: caseStems[(variant + i) % caseStems.length](topic, frame, i + 1),
+      answer: `Answers use evidence from the scenario and concepts from ${topic} (${frame}).`,
       marks: 6,
+      _scaffold: true,
     });
   }
   return buckets;
@@ -5363,7 +5413,7 @@ export function finalizeExamPaperStructuredContent(structuredContent, meta = {})
     base[examSectionKeys[i]] = cleanAndTrim(base[examSectionKeys[i]], counts[countKeys[i]]);
   }
 
-  if (isAiGeneratorSectionPadEnabled()) {
+  if (isAiGeneratorSectionPadEnabled() && meta.strictValidation !== true) {
     const scaffold = buildScaffoldExamQuestions(meta, base.blueprint);
     let qNum = 1;
     for (let i = 0; i < examSectionKeys.length; i += 1) {
@@ -5413,7 +5463,7 @@ export function finalizeExamPaperStructuredContent(structuredContent, meta = {})
     base.open_ended_rubric = `Level 4: Complete, accurate, well-explained; Level 3: Mostly correct; Level 2: Partial; Level 1: Minimal understanding of ${topic}.`;
   }
 
-  if (countExamPaperQuestions(base) < 3) {
+  if (countExamPaperQuestions(base) < 3 && meta.strictValidation !== true) {
     const scaffold = buildScaffoldExamQuestions(meta, base.blueprint);
     base = normalizeExamPaperStructuredContent({
       ...base,
@@ -8246,7 +8296,10 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
   const extra = params.extraParams && typeof params.extraParams === 'object' ? params.extraParams : {};
   const qualityTierSettings = resolveQualityTierSettings(
     params.qualityTier || extra.qualityTier,
-    { qualityTier: params.qualityTier || extra.qualityTier },
+    {
+      qualityTier: params.qualityTier || extra.qualityTier,
+      batchSize: Number(extra.batchSize) || Number(params.batchSize) || 0,
+    },
   );
   const resolvedSubject = resolveLanguageSubjectForGeneration(
     params.subject,
@@ -8297,18 +8350,27 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
   });
   const batchModel = getAiGeneratorGeminiModel();
   const { getAiGeneratorMaxTokens } = await import('../utils/ai-generator-llm-budget.js');
-  const maxTokens = getAiGeneratorMaxTokens(slug);
+  const maxTokens = getAiGeneratorMaxTokens(slug, {
+    qualityTier: qualityTierSettings.tier,
+    skipUltraEconomyCaps: qualityTierSettings.skipUltraEconomyCaps === true,
+  });
   const flashLiteOnly = isAiGeneratorFlashLiteOnlyEnabled();
 
   const batchEconomy =
     isBatchVariant &&
     qualityTierSettings.tier === 'fast' &&
     isAiGeneratorCostSaverEnabled();
-  const effectiveFlashLiteOnly = batchEconomy || flashLiteOnly;
+  const tierPrimaryModel = qualityTierSettings.primaryGeminiModel || batchModel;
+  const effectiveFlashLiteOnly =
+    typeof qualityTierSettings.flashLiteOnly === 'boolean'
+      ? qualityTierSettings.flashLiteOnly
+      : batchEconomy || flashLiteOnly;
   const tierGeminiRetries = qualityTierSettings.geminiRetriesPerModel || 3;
   const languageSubjectEnforced = mustEnforceStoryPassageLanguageCompliance(resolvedSubject);
   const preferIndicFlash =
-    languageSubjectEnforced && isAiGeneratorLanguageSubjectFlashOverrideEnabled();
+    languageSubjectEnforced &&
+    isAiGeneratorLanguageSubjectFlashOverrideEnabled() &&
+    qualityTierSettings.tier === 'fast';
   const indicFlashModel = getAiGeneratorLanguageSubjectGeminiModel();
 
   const buildLlmOptions = (attempt) => {
@@ -8319,25 +8381,28 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
       systemPrompt,
       responseSchema,
       maxAttemptsPerModel: tierGeminiRetries,
+      ...(qualityTierSettings.modelOverflow
+        ? { modelOverflow: qualityTierSettings.modelOverflow }
+        : {}),
     };
     if (preferIndicFlash) {
       return {
         ...baseOpts,
         temperature: attempt === 1 ? Math.max(0.55, tierTemp - 0.15) : 0.55,
         primaryModel: indicFlashModel,
-        flashLiteOnly: false,
+        flashLiteOnly: true,
       };
     }
-    const useFlash =
-      !effectiveFlashLiteOnly &&
+    const useFlashUpgrade =
+      effectiveFlashLiteOnly &&
       (upgradeToFlash ||
         shouldUpgradeFlashOnValidationAttempt(isBatchVariant, attempt, recoveryPass));
-    if (useFlash) {
+    if (useFlashUpgrade) {
       return {
         ...baseOpts,
         temperature: 0.55,
-        primaryModel: batchModel,
-        flashLiteOnly: effectiveFlashLiteOnly,
+        primaryModel: tierPrimaryModel !== batchModel ? tierPrimaryModel : indicFlashModel,
+        flashLiteOnly: false,
       };
     }
     if (isBatchVariant) {
@@ -8345,11 +8410,16 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
         ...baseOpts,
         isBatchVariant: true,
         temperature: tierTemp,
-        primaryModel: batchModel,
+        primaryModel: tierPrimaryModel,
         flashLiteOnly: effectiveFlashLiteOnly,
       };
     }
-    return { ...baseOpts, temperature: tierTemp, primaryModel: batchModel, flashLiteOnly: effectiveFlashLiteOnly };
+    return {
+      ...baseOpts,
+      temperature: tierTemp,
+      primaryModel: tierPrimaryModel,
+      flashLiteOnly: effectiveFlashLiteOnly,
+    };
   };
 
   const isBookBatch = isBatchVariant && Boolean(extra.bookId || extra.bookGenerator);
@@ -8367,11 +8437,13 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
     batchOrchestrator: isBatchVariant,
     bookGenerator: isBookBatch,
     qualityTier: qualityTierSettings.tier,
+    strictValidation: qualityTierSettings.strictValidation === true,
     skipSectionPad: !qualityTierSettings.sectionPadEnabled,
     requireAllCanonicalFields:
       qualityTierSettings.tier === 'premium' ||
       (!isBatchVariant && !isAiGeneratorCostSaverEnabled()),
   };
+  const isPremiumStrict = meta.strictValidation === true;
 
   let lastError = null;
   let lastValidationMessage = '';
@@ -8691,7 +8763,7 @@ Write all student-facing text in the required output language.`;
         if (slug === 'flashcard-generator' || slug === 'my-study-decks') {
           structuredContent = finalizeFlashcardDeckStructuredContent(structuredContent, meta, slug);
         }
-        if (isBatchVariant && isAiGeneratorSectionPadEnabled()) {
+        if (isBatchVariant && isAiGeneratorSectionPadEnabled() && !isPremiumStrict) {
           structuredContent = padAiGeneratorCanonicalSections(slug, structuredContent, meta);
           if (slug === 'worksheet-mcq-generator') {
             structuredContent = finalizeWorksheetStructuredContent(structuredContent, meta);
@@ -8706,7 +8778,7 @@ Write all student-facing text in the required output language.`;
           if (validation.normalizedStructuredContent) {
             structuredContent = validation.normalizedStructuredContent;
           }
-          if (!validation.valid && isAiGeneratorCostSaverEnabled()) {
+          if (!validation.valid && isAiGeneratorCostSaverEnabled() && !isPremiumStrict) {
             const blockBypass = shouldBlockCostSaverForStoryLanguage(
               slug,
               meta.subject,
@@ -8730,7 +8802,7 @@ Write all student-facing text in the required output language.`;
             : lastValidationMessage;
         if (attempt < maxValidationAttempts) {
           const languageHint = buildStoryPassageLanguageRetryHint(meta.subject || '');
-          if (isBatchVariant && isAiGeneratorCostSaverEnabled()) {
+          if (isBatchVariant && isAiGeneratorCostSaverEnabled() && !isPremiumStrict) {
             activeUserPrompt = buildBatchEconomyRetryPrompt({
               slug,
               meta,
@@ -8834,7 +8906,7 @@ Write all student-facing text in the required output language.`;
         }
       }
 
-      if (isAiGeneratorSectionPadEnabled() && !meta.skipSectionPad) {
+      if (isAiGeneratorSectionPadEnabled() && !meta.strictValidation) {
         if (slug === 'flashcard-generator' || slug === 'my-study-decks') {
           structuredContent = finalizeFlashcardDeckStructuredContent(structuredContent, meta, slug);
         }
@@ -8870,6 +8942,11 @@ Write all student-facing text in the required output language.`;
       const finalQuality = runAiGeneratorQualityGate(slug, structuredContent, meta);
       if (!finalQuality.valid) {
         const finalQualityMessage = finalQuality.errors.join('; ');
+        if (attempt < maxValidationAttempts) {
+          lastValidationMessage = finalQualityMessage;
+          activeUserPrompt = `${baseUserPrompt}\n\nRETRY (attempt ${attempt + 1}): Quality gate failed: ${finalQualityMessage}. Return complete, non-placeholder content in every field.`;
+          continue;
+        }
         const blockStoryLanguageSave = shouldBlockCostSaverForStoryLanguage(
           slug,
           meta.subject,
@@ -8878,6 +8955,8 @@ Write all student-facing text in the required output language.`;
         );
         if (
           isBatchVariant &&
+          !isPremiumStrict &&
+          !meta.skipSectionPad &&
           (isAiGeneratorCostSaverEnabled() || isAiGeneratorSectionPadEnabled() || meta.bookGenerator) &&
           !blockStoryLanguageSave
         ) {
