@@ -178,10 +178,43 @@ function getFlashLiteModelChain(primaryLite, isBatchVariant = false) {
     process.env.VIDYA_AI_GEMINI_LITE_OVERFLOW ||
     GEMINI_LITE_OVERFLOW_DEFAULT;
   const chain = mergeLiteModelChain(primaryLite || GEMINI_LITE_MODEL, overflowCsv);
-  if (!isBatchVariant) return chain;
+  if (!isBatchVariant) return reorderModelChainForCooldown(chain);
   const maxModels = Number(process.env.GEMINI_BATCH_LITE_MODELS);
   const cap = Number.isFinite(maxModels) && maxModels > 0 ? Math.min(maxModels, 3) : 2;
-  return chain.slice(0, cap);
+  return reorderModelChainForCooldown(chain.slice(0, cap));
+}
+
+const MODEL_UNAVAILABLE_COOLDOWN_MS = Number(process.env.GEMINI_MODEL_COOLDOWN_MS) || 90_000;
+/** @type {Map<string, number>} */
+const modelCooldownUntil = new Map();
+/** @type {Map<string, number>} */
+const geminiWarnThrottle = new Map();
+
+function markModelCooldown(modelName, cooldownMs = MODEL_UNAVAILABLE_COOLDOWN_MS) {
+  modelCooldownUntil.set(String(modelName), Date.now() + cooldownMs);
+}
+
+function reorderModelChainForCooldown(chain) {
+  const now = Date.now();
+  const ready = [];
+  const cooling = [];
+  for (const name of chain) {
+    const until = modelCooldownUntil.get(name);
+    if (until && until > now) cooling.push(name);
+    else {
+      if (until) modelCooldownUntil.delete(name);
+      ready.push(name);
+    }
+  }
+  return ready.length ? [...ready, ...cooling] : chain;
+}
+
+function throttledGeminiWarn(key, message) {
+  const now = Date.now();
+  const last = geminiWarnThrottle.get(key) || 0;
+  if (now - last < 30_000) return;
+  geminiWarnThrottle.set(key, now);
+  console.warn(message);
 }
 
 /** True for 503/429/network errors — do not burn validation retries on these. */
@@ -356,6 +389,8 @@ async function callChatCompletions({
   flashLiteOnly = false,
   maxAttemptsPerModel: maxAttemptsPerModelOption,
   isBatchVariant = false,
+  systemInstruction = '',
+  responseSchema = null,
 }) {
   const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   const contextTokens = Number(process.env.LLM_CONTEXT_TOKENS) || 0;
@@ -364,17 +399,23 @@ async function callChatCompletions({
     const liteModel = String(process.env.AI_GENERATOR_GEMINI_MODEL || GEMINI_LITE_MODEL).trim();
     const modelChain = flashLiteOnly
       ? getFlashLiteModelChain(liteModel, isBatchVariant)
-      : String(primaryModel || '').trim()
-        ? mergeGeminiModelChain(primaryModel, defaultChain.join(','))
-        : defaultChain;
+      : reorderModelChainForCooldown(
+          String(primaryModel || '').trim()
+            ? mergeGeminiModelChain(primaryModel, defaultChain.join(','))
+            : defaultChain,
+        );
     if (!apiKey) {
       throw new Error('Gemini API key is missing');
     }
     const genAI = new GoogleGenerativeAI(apiKey);
 
-    const prompt = normalizedMessages
+    const systemText = String(systemInstruction || '').trim();
+    const userMessages = normalizedMessages.filter((m) => m.role !== 'system');
+    const userPrompt = userMessages
       .map((m) => `${m.role === 'assistant' ? 'Assistant' : 'User'}: ${String(m.content || '')}`)
       .join('\n\n');
+
+    const prompt = userPrompt || 'Help with educational content.';
 
     const isAuthOrConfigError = (msg) => {
       const m = String(msg || '');
@@ -419,19 +460,26 @@ async function callChatCompletions({
     for (const modelName of modelChain) {
       for (let attempt = 1; attempt <= maxAttemptsPerModel; attempt += 1) {
         try {
-          const modelClient = genAI.getGenerativeModel({ model: modelName });
+          const modelClient = genAI.getGenerativeModel({
+            model: modelName,
+            ...(systemText ? { systemInstruction: systemText } : {}),
+          });
+          const generationConfig = {
+            temperature,
+            maxOutputTokens: contextTokens > 0 ? Math.min(maxTokens, contextTokens) : maxTokens,
+            ...(jsonMode ? { responseMimeType: 'application/json' } : {}),
+            ...(jsonMode && responseSchema && typeof responseSchema === 'object'
+              ? { responseSchema }
+              : {}),
+          };
           const result = await modelClient.generateContent({
             contents: [
               {
                 role: 'user',
-                parts: [{ text: prompt || 'Help with educational content.' }],
+                parts: [{ text: prompt }],
               },
             ],
-            generationConfig: {
-              temperature,
-              maxOutputTokens: contextTokens > 0 ? Math.min(maxTokens, contextTokens) : maxTokens,
-              ...(jsonMode ? { responseMimeType: 'application/json' } : {}),
-            },
+            generationConfig,
           });
           const text = String(result?.response?.text?.() || '').trim();
           if (!text) {
@@ -458,7 +506,10 @@ async function callChatCompletions({
             totalTokens: Number(usageMeta?.totalTokenCount) || promptTokens + completionTokens,
           });
           if (modelName !== modelChain[0]) {
-            console.warn(`[Gemini] Succeeded on fallback model ${modelName} (primary busy or failed).`);
+            throttledGeminiWarn(
+              `fallback-${modelName}`,
+              `[Gemini] Succeeded on fallback model ${modelName} (primary busy or failed).`,
+            );
           }
           return text;
         } catch (error) {
@@ -477,15 +528,18 @@ async function callChatCompletions({
             const delayMs =
               suggested ?? Math.min(20_000, Math.round(1500 * attempt + Math.random() * 800));
             if (attempt < maxAttemptsPerModel) {
-              console.warn(
+              throttledGeminiWarn(
+                `rate-${modelName}`,
                 `[Gemini] ${modelName} rate limit / quota; waiting ${delayMs}ms then retry (${attempt}/${maxAttemptsPerModel})`,
               );
               await sleep(delayMs);
               continue;
             }
-            console.warn(
+            throttledGeminiWarn(
+              `quota-${modelName}`,
               `[Gemini] ${modelName} still over quota after ${maxAttemptsPerModel} attempts; trying next model.`,
             );
+            markModelCooldown(modelName);
             break;
           }
           const is503Like =
@@ -493,13 +547,18 @@ async function callChatCompletions({
           if (is503Like) {
             if (attempt < maxAttemptsPerModel) {
               const delayMs = Math.min(12_000, Math.round(2500 * attempt + Math.random() * 1000));
-              console.warn(
+              throttledGeminiWarn(
+                `503-${modelName}`,
                 `[Gemini] ${modelName} unavailable (503); waiting ${delayMs}ms then retry (${attempt}/${maxAttemptsPerModel})`,
               );
               await sleep(delayMs);
               continue;
             }
-            console.warn(`[Gemini] ${modelName} still unavailable after retries; trying next lite model.`);
+            throttledGeminiWarn(
+              `503-exhausted-${modelName}`,
+              `[Gemini] ${modelName} still unavailable after retries; trying next model.`,
+            );
+            markModelCooldown(modelName);
             break;
           }
           const retryThisModel = isRetryableModelError(msg) && attempt < maxAttemptsPerModel;
@@ -2731,14 +2790,27 @@ Provide: (1) what you see, (2) explanation/solution, (3) key takeaways.`;
 
   async generateStructuredContent(prompt, format = 'text', options = {}) {
     const wantsJson = String(format).toLowerCase() === 'json';
+    const systemContent = String(options.systemPrompt || options.systemInstruction || '').trim();
+    const userContent = String(options.userPrompt || prompt || '').trim();
     const messages = [
-      {
-        role: 'system',
-        content: wantsJson
-          ? 'Return only valid JSON. No markdown, no code fences, no extra text.'
-          : 'Return clear, structured educational content.',
-      },
-      { role: 'user', content: cleanText(prompt) },
+      ...(systemContent
+        ? [
+            {
+              role: 'system',
+              content: wantsJson
+                ? `${systemContent}\n\nReturn only valid JSON. No markdown, no code fences, no extra text.`
+                : systemContent,
+            },
+          ]
+        : [
+            {
+              role: 'system',
+              content: wantsJson
+                ? 'Return only valid JSON. No markdown, no code fences, no extra text.'
+                : 'Return clear, structured educational content.',
+            },
+          ]),
+      { role: 'user', content: userContent },
     ];
 
     const defaultJsonTemp = options.isBatchVariant ? 0.72 : 0.1;
@@ -2760,6 +2832,8 @@ Provide: (1) what you see, (2) explanation/solution, (3) key takeaways.`;
       flashLiteOnly: options.flashLiteOnly === true,
       maxAttemptsPerModel: options.maxAttemptsPerModel,
       isBatchVariant: options.isBatchVariant === true,
+      systemInstruction: systemContent,
+      responseSchema: options.responseSchema && typeof options.responseSchema === 'object' ? options.responseSchema : null,
     });
 
     return wantsJson ? stripCodeFences(text) : text;

@@ -1122,6 +1122,7 @@ export async function generateBatchContent(req, res) {
         subjectName,
         topicName,
         subtopicName,
+        qualityTier: normalizeText(req.body.qualityTier),
         extraParams: req.body.extraParams,
         reviewStatus: req.body.reviewStatus,
         forceGenerate,

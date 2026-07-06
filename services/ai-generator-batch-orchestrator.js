@@ -50,6 +50,7 @@ import {
 } from './ai-generator-content-strategy.js';
 
 import { getBatchSlotMaxAttempts, isAiGeneratorCostSaverEnabled, shouldEnforceBatchUniquenessRetries, shouldUseFlashForAiGeneratorRun } from '../utils/ai-generator-batch-config.js';
+import { resolveQualityTierSettings } from '../utils/ai-generator-quality-tier.js';
 import { resolveLanguageSubjectForGeneration } from '../utils/story-passage-subject.js';
 
 import AiToolGeneration from '../models/AiToolGeneration.js';
@@ -61,6 +62,10 @@ import mongoose from 'mongoose';
 const DEFAULT_BATCH_SIZE = 25;
 
 const DEFAULT_CONCURRENCY = 3;
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
 
 
@@ -87,7 +92,11 @@ function getBatchSize(override) {
 
 
 
-function getMaxAttemptsPerSlot() {
+function getMaxAttemptsPerSlot(qualityTierSettings) {
+  const tierMax = qualityTierSettings?.maxSlotAttempts;
+  if (Number.isFinite(tierMax) && tierMax > 0) {
+    return Math.min(5, tierMax);
+  }
   return getBatchSlotMaxAttempts();
 }
 
@@ -206,6 +215,9 @@ export async function generateBatchAndSave(params, opts = {}) {
   const subtopicName = String(params.subtopicName || params.subTopic || params.subtopic || '').trim();
 
   const toolDisplayName = String(params.toolName || params.toolDisplayName || toolSlug).trim();
+  const qualityTierSettings = resolveQualityTierSettings(
+    params.qualityTier || params.extraParams?.qualityTier,
+  );
 
   const forceGenerate =
 
@@ -339,9 +351,13 @@ export async function generateBatchAndSave(params, opts = {}) {
 
       const slotResults = await runPool(slots, getConcurrency(), async (variantIndex) => {
 
-        const maxAttempts = getMaxAttemptsPerSlot();
+        const maxAttempts = getMaxAttemptsPerSlot(qualityTierSettings);
 
         let lastError = 'Unknown error';
+
+        if (variantIndex > 1 && qualityTierSettings.tier !== 'fast') {
+          await sleep(600 + Math.floor(Math.random() * 500));
+        }
 
 
 
@@ -362,10 +378,11 @@ export async function generateBatchAndSave(params, opts = {}) {
               variantScenario: getAiGeneratorVariantScenario(variantIndex, subjectName),
 
               batchSize,
+              qualityTier: qualityTierSettings.tier,
 
               uniqueSeed: `${Date.now()}-v${variantIndex}-a${attempt}-${Math.random().toString(36).slice(2, 10)}`,
 
-              strictUniqueness: shouldEnforceBatchUniquenessRetries() && strategy.strictUniqueness,
+              strictUniqueness: qualityTierSettings.enforceBatchUniqueness && strategy.strictUniqueness,
 
               ...(attempt > 1 ? { recoveryPass: true } : {}),
 
@@ -389,7 +406,9 @@ export async function generateBatchAndSave(params, opts = {}) {
 
               extraParams,
 
-              historicalPromptBlock: historical.promptBlock,
+              qualityTier: qualityTierSettings.tier,
+
+              historicalPromptBlock: qualityTierSettings.useHistoricalPrompt ? historical.promptBlock : '',
 
               upgradeToFlash: shouldUseFlashForAiGeneratorRun({
                 upgradeRequested: attempt > 2 || strategy.mode === 'strict_generate',
@@ -409,7 +428,7 @@ export async function generateBatchAndSave(params, opts = {}) {
               generated.structuredContent = structuredContent;
             }
 
-            if (shouldEnforceBatchUniquenessRetries()) {
+            if (qualityTierSettings.enforceBatchUniqueness) {
               const uniqueness = validateRecordUniqueness(toolSlug, structuredContent, {
                 batchTitles,
                 batchTexts: batchQuestionTexts,

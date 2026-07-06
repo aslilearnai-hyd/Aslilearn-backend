@@ -19,6 +19,7 @@ import {
   collectQuestionTextsFromStructured,
   dedupeIntraRecordQuestions,
   renumberIntraRecordQuestions,
+  validateRecordUniqueness,
 } from './ai-generator-uniqueness-engine.js';
 import { extractTitleFromStructured } from './ai-generator-content-extractor.js';
 import { persistGenerationFingerprints } from './ai-generator-fingerprint-service.js';
@@ -41,6 +42,7 @@ import {
   BOOK_GENERATOR_MAX_INR,
 } from '../config/bookBasedTools.js';
 import { canonicalBoardLabel, lockBoardKey, normalizeClassLabelForLock, resolveClassLabelForAiToolStorage } from '../utils/board-label.js';
+import { resolveQualityTierSettings } from '../utils/ai-generator-quality-tier.js';
 
 function getBookGeneratorConcurrency() {
   const n = Number(process.env.BOOK_GENERATOR_CONCURRENCY || process.env.AI_GENERATOR_BATCH_CONCURRENCY);
@@ -101,8 +103,10 @@ function getBatchSize(override) {
   return Number.isFinite(n) && n > 0 ? Math.min(n, 50) : 25;
 }
 
-function getMaxAttemptsPerSlot() {
-  return getBookBatchSlotMaxAttempts();
+function getMaxAttemptsPerSlot(qualityTierSettings) {
+  const envMax = getBookBatchSlotMaxAttempts();
+  const tierMax = qualityTierSettings?.maxSlotAttempts || envMax;
+  return Math.max(envMax, tierMax);
 }
 
 function formatBookSlotFailureMessage(batchIndex, error) {
@@ -170,6 +174,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
   const subtopicName = String(params.subtopicName || '').trim();
   const batchSize = getBatchSize(params.batchSize);
   const toolDisplayName = getBookBasedToolDisplayName(toolSlug);
+  const qualityTierSettings = resolveQualityTierSettings(params.qualityTier || params.extraParams?.qualityTier);
   const useBookKnowledge = params.useBookKnowledge !== false;
 
   const scope = {
@@ -210,6 +215,8 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
     const historical = await buildBookHistoricalGenerationContext(scope);
     const batchTitles = [];
     const batchQuestionTexts = [];
+    const historicalQuestionTexts = [...historical.questionSnippets];
+    const historicalTitles = [...historical.titles];
     const conceptMasteryBatch = toolSlug === 'concept-mastery-helper';
     const savedRecords = [];
     const failures = [];
@@ -253,8 +260,12 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
 
       const slotResults = await runPool(slots, getBookGeneratorConcurrency(), async (slot) => {
         const { batchIndex, variantIndex } = slot;
-        const maxAttempts = getMaxAttemptsPerSlot();
+        const maxAttempts = getMaxAttemptsPerSlot(qualityTierSettings);
         let lastError = 'Unknown error';
+
+        if (batchIndex > 1 && qualityTierSettings.tier !== 'fast') {
+          await sleep(600 + Math.floor(Math.random() * 500));
+        }
 
         if (estimateSessionCostInr() >= getBookGeneratorMaxInr()) {
           return {
@@ -293,12 +304,16 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               bookId,
               useBookKnowledge,
               bookGenerator: true,
+              qualityTier: qualityTierSettings.tier,
               uniqueSeed: `${Date.now()}-book-v${variantIndex}-a${attempt}`,
-              strictUniqueness: false,
-              ...(attempt > 1 ? { recoveryPass: true } : {}),
+              strictUniqueness: qualityTierSettings.enforceBatchUniqueness,
+              ...(attempt > 1 ? { recoveryPass: true, dedupAttempt: attempt } : {}),
+              ...(historical.forbiddenOpenings?.length
+                ? { forbiddenOpenings: historical.forbiddenOpenings }
+                : {}),
             };
 
-            const pdfContext = conceptMasteryBatch
+            const pdfContext = useBookKnowledge
               ? buildBookContextTextForVariant(ragBase, ragScope, variantIndex)
               : ragBase.contextText;
 
@@ -310,9 +325,10 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               bookSubject: String(book.subject || '').trim(),
               topic: topicName || book.title,
               subTopic: subtopicName,
+              qualityTier: qualityTierSettings.tier,
               extraParams,
               pdfContext,
-              historicalPromptBlock: '',
+              historicalPromptBlock: qualityTierSettings.useHistoricalPrompt ? historical.promptBlock : '',
               upgradeToFlash: shouldUseFlashForAiGeneratorRun({
                 upgradeRequested: attempt > 2,
                 recoveryPass: attempt > 1,
@@ -339,6 +355,19 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             );
             structuredContent = dedupeIntraRecordQuestions(toolSlug, structuredContent);
             structuredContent = renumberIntraRecordQuestions(toolSlug, structuredContent);
+
+            if (qualityTierSettings.enforceBatchUniqueness) {
+              const uniqueness = validateRecordUniqueness(toolSlug, structuredContent, {
+                batchTitles,
+                batchTexts: batchQuestionTexts,
+                historicalTexts: historicalQuestionTexts,
+                historicalTitles,
+              });
+              if (!uniqueness.valid) {
+                lastError = uniqueness.errors.join('; ');
+                if (attempt < maxAttempts) continue;
+              }
+            }
 
             const title = extractTitleFromStructured(structuredContent);
             if (title) batchTitles.push(title);
@@ -378,6 +407,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                 batchSize,
                 batchOrchestrator: true,
                 bookGenerator: true,
+                qualityTier: qualityTierSettings.tier,
                 uniquenessTarget: historical.uniquenessTarget,
               },
               ...(teacherId ? { teacherId } : {}),

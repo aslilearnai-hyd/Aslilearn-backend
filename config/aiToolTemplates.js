@@ -1963,7 +1963,7 @@ const TEMPLATES = {
     regenerationRules: { mergePolicy: 'replace', allowTemplateRegeneration: true },
     gemini: {
       strictOutputHint:
-        'Practice Q&A JSON: title, learning_objectives[], instructions, sections[{sectionName,questions[]}] with question_number, type, question, options[], answer, explanation, bloom_level, difficulty_tag, marks; answer_key_with_explanations. Section names MUST be exactly: "Section A: MCQs", "Section B: Fill in the Blanks", "Section C: Match the Following", "Section D: Very Short Answer Questions", "Section E: Short Answer Questions", "Section F: Application / Case-based Questions", "Section G: HOTS / Analytical Questions". REQUIRED: include ALL seven sections A–G in sections[] — each section MUST have at least one question (distribute the target question count across sections; include Match in C, short answers in E, application/case in F). Do NOT duplicate the same question in sections[] and a top-level questions[] array. Every question object MUST have a non-empty "question" field.',
+        'Practice Q&A JSON: title, learning_objectives[], instructions, sections[{sectionName,questions[]}] with question_number, type, question, options[], answer, explanation, bloom_level, difficulty_tag, marks. Section names MUST be exactly: "Section A: MCQs", "Section B: Fill in the Blanks", "Section C: Match the Following", "Section D: Very Short Answer Questions", "Section E: Short Answer Questions", "Section F: Application / Case-based Questions", "Section G: HOTS / Analytical Questions". REQUIRED: include ALL seven sections A–G in sections[] — each section MUST have at least one question. Do NOT duplicate the same question in sections[] and a top-level questions[] array. Do NOT generate answer_key_with_explanations — put answer and explanation on each question object only. Every question object MUST have a non-empty "question" field.',
       pdfExtractSchema: {
         title: 'string',
         learning_objectives: ['string'],
@@ -2395,7 +2395,7 @@ export function getContentTypeDefault(slug) {
  * @param {string} toolSlug
  * @param {Record<string, unknown>} params
  */
-export function buildAiGeneratorStructuredPrompt(toolSlug, params = {}) {
+export function buildAiGeneratorPromptParts(toolSlug, params = {}) {
   const slug = String(toolSlug || '').trim();
   const t = getAiToolTemplate(slug);
   if (!t) throw new Error(`Unknown AI tool: ${toolSlug}`);
@@ -2572,38 +2572,61 @@ export function buildAiGeneratorStructuredPrompt(toolSlug, params = {}) {
       ? `COMPLETENESS RULE (mandatory): Fill ALL ${sectionCount} canonical sections listed below with real, non-empty content. The system validates every section before saving — any empty or missing field causes rejection and automatic retry. Do not omit sections or leave placeholder text.`
       : '';
 
-  return `You are an expert Indian school curriculum content generator aligned to NEP 2020 and NCF-SE 2023.
+  const toolSpecificRules = [
+    'For tools that produce multiple worksheet questions, exam items, or flashcards, put them in the arrays defined by the schema (e.g. questions[], sections[].questions[], cards[]).',
+    'For Smart Q&A Practice Generator, structuredContent.sections MUST list all seven entries (Section A through Section G) and each MUST contain at least one question object. Section C must be a Match-the-Following item (type "MATCH"). Do NOT generate answer_key_with_explanations — answers live on each question object only.',
+    'For Chapter Summary Creator use chapter_summary_title and chapter_overview — never study_guide_title or chapter_subtopic_overview field names.',
+    'For Concept Mastery Helper there is NO separate "concept" form field — use the SUBTOPIC (and TOPIC) from context as concept_name. structuredContent MUST be { "concepts": [ { ... } ] } with at least one filled concept object for that sub-topic.',
+    'For Activity & Project Generator, fill ALL 13 canonical fields in one structuredContent object.',
+    'For Story and Passage Creator, fill ALL 19 canonical fields with a full passage and at least two questions in sections 9, 10, and 11.',
+    'For Flash Card Generator, use the 5-block format; every item in cards[] and application_hots_cards[] MUST include front (Task) and back (Solution) as non-empty strings.',
+    'For My Study Decks, every item in cards[] MUST include front and back (non-empty strings).',
+    'For Daily Class Plan Maker, fill ALL 9 canonical daily-plan fields — not lesson planner fields (no introduction_warmup, teaching_strategy, or 13-section lesson layout).',
+    'For Exam Question Paper Generator, fill ALL 11 canonical exam-paper fields — not Mock Test Builder fields (no mock_test_title, test_purpose_subtopic_link, or 12-section mock layout).',
+    'If textbook passages do not contain enough information for a field, use general curriculum knowledge but never invent textbook quotations or claim a direct book quote.',
+    'Never paste instructional prompt text into structuredContent string values.',
+  ].join('\n');
 
-${contextLines.join('\n')}
+  const useSchemaInPrompt = params.useResponseSchema !== true;
 
-${completenessRule ? `${completenessRule}\n\n` : ''}CANONICAL OUTPUT SECTIONS (populate structuredContent using these headings and field names):
-${headings}
+  const systemPrompt = [
+    'You are an expert Indian school curriculum content generator aligned to NEP 2020 and NCF-SE 2023.',
+    'Return only valid JSON matching the enforced response schema. No markdown fences, no commentary outside JSON.',
+    completenessRule,
+    'Use plain text only in every JSON string value — no markdown bold (**), italics (*), backticks, or # headings.',
+    'Generate original, classroom-ready content. Do not repeat wording across variants on the same subtopic.',
+    'Do not invent facts that contradict uploaded textbook passages when RAG context is provided.',
+    toolSpecificRules,
+  ]
+    .filter(Boolean)
+    .join('\n\n');
 
-STRICT OUTPUT RULE:
-${strictHint}
+  const userParts = [
+    contextLines.join('\n'),
+    `CANONICAL OUTPUT SECTIONS (populate structuredContent using these headings and field names):\n${headings}`,
+    strictHint ? `STRICT OUTPUT RULE:\n${strictHint}` : '',
+    useSchemaInPrompt
+      ? `Return ONLY valid JSON (single root object):\n{\n  "contentType": "${t.contentTypeDefault}",\n  "structuredContent": { }\n}\n\nThe structuredContent object MUST match this JSON schema (field names and types exactly):\n${JSON.stringify(schema, null, 2)}`
+      : `Return contentType "${t.contentTypeDefault}" and a complete structuredContent object for the curriculum scope above.`,
+  ].filter(Boolean);
 
-Generate original, classroom-ready content for the class, subject, topic, and subtopic above. Use plain text only in every JSON string value — no markdown bold (**), italics (*), backticks, or # headings. Do not use markdown code fences inside JSON string values.
+  const userPrompt = userParts.join('\n\n');
 
-Return ONLY valid JSON (single root object, no markdown fences):
-{
-  "contentType": "${t.contentTypeDefault}",
-  "structuredContent": { }
+  return { systemPrompt, userPrompt, schema, contentTypeDefault: t.contentTypeDefault, legacyPrompt: `${systemPrompt}\n\n${userPrompt}` };
 }
 
-The structuredContent object MUST match this JSON schema (field names and types exactly):
-${JSON.stringify(schema, null, 2)}
+/**
+ * Legacy single-string prompt (tests / callers not yet migrated).
+ */
+export function buildAiGeneratorStructuredPrompt(toolSlug, params = {}) {
+  return buildAiGeneratorPromptParts(toolSlug, params).legacyPrompt;
+}
 
-For tools that produce multiple worksheet questions, exam items, or flashcards, put them in the arrays defined by the schema (e.g. questions[], sections[].questions[], cards[]).
-For Smart Q&A Practice Generator, structuredContent.sections MUST list all seven entries (Section A through Section G) and each MUST contain at least one question object. Section C must be a Match-the-Following item (type "MATCH").
-For Chapter Summary Creator use chapter_summary_title and chapter_overview — never study_guide_title or chapter_subtopic_overview field names.
-For Concept Mastery Helper there is NO separate "concept" form field — use the SUBTOPIC (and TOPIC) from context as concept_name. structuredContent MUST be { "concepts": [ { ... } ] } with at least one filled concept object for that sub-topic.
-For Activity & Project Generator, fill ALL 13 canonical fields in one structuredContent object.
-For Rubrics, Evaluation & Report Card, fill ALL 10 canonical fields; criteria[] must have at least 3 complete rubric rows with four performance levels each.
-For Story and Passage Creator, fill ALL 19 canonical fields with a full passage and at least two questions in sections 9, 10, and 11.
-For Flash Card Generator, use the 5-block format; every item in cards[] and application_hots_cards[] MUST include front (Task) and back (Solution) as non-empty strings.
-For My Study Decks, every item in cards[] MUST include front and back (non-empty strings).
-For Daily Class Plan Maker, fill ALL 9 canonical daily-plan fields — not lesson planner fields (no introduction_warmup, teaching_strategy, or 13-section lesson layout).
-For Exam Question Paper Generator, fill ALL 11 canonical exam-paper fields — not Mock Test Builder fields (no mock_test_title, test_purpose_subtopic_link, or 12-section mock layout).`;
+/** @param {string} toolSlug */
+export function getToolInformalSchema(toolSlug) {
+  const t = getAiToolTemplate(toolSlug);
+  if (!t) return {};
+  return t.gemini?.generatorStructuredSchema || t.gemini?.pdfExtractSchema || {};
 }
 
 /** @param {string} toolSlug @param {unknown} structured */
