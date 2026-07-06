@@ -60,6 +60,7 @@ export async function generateBookBatch(req, res) {
       subtopicName,
       batchSize,
       useBookKnowledge,
+      qualityTier,
       extraParams,
       forceUnlock,
       async: asyncMode,
@@ -87,7 +88,8 @@ export async function generateBookBatch(req, res) {
       topicName,
       subtopicName,
       batchSize,
-      useBookKnowledge: useBookKnowledge !== false,
+      useBookKnowledge,
+      qualityTier,
       extraParams,
       forceUnlock: forceUnlock === true,
     };
