@@ -3764,14 +3764,146 @@ export function normalizeWorksheetStructuredContent(raw, sourceText = '') {
   return polishWorksheetStructuredContent(draft);
 }
 
+function countWorksheetSectionQuestions(sections = []) {
+  return (Array.isArray(sections) ? sections : []).reduce(
+    (n, sec) => n + (Array.isArray(sec?.questions) ? sec.questions.length : 0),
+    0,
+  );
+}
+
+function extractBookGroundedSentences(pdfContext = '', topic = '') {
+  const raw = String(pdfContext || '')
+    .replace(/\[Chunk \d+\]/gi, '\n')
+    .replace(/REFERENCE TEXTBOOK CONTENT[^:]*:/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (!raw || raw.length < 80) return [];
+  const topicLower = String(topic || '').toLowerCase();
+  return raw
+    .split(/(?<=[.!?])\s+/)
+    .map((s) => s.replace(/\s+/g, ' ').trim())
+    .filter((s) => s.length >= 35 && s.length <= 320)
+    .filter((s) => !/^(page|figure|table|chapter|unit|exercise)\b/i.test(s))
+    .filter((s) => !/copyright|all rights reserved/i.test(s))
+    .sort((a, b) => {
+      const aHit = topicLower && a.toLowerCase().includes(topicLower) ? 1 : 0;
+      const bHit = topicLower && b.toLowerCase().includes(topicLower) ? 1 : 0;
+      return bHit - aHit;
+    })
+    .slice(0, 28);
+}
+
+function buildBookGroundedWorksheetQuestion(sectionName, sentence, topic, subject, qNum, variantSeed = 0) {
+  const fact = String(sentence || '').replace(/\s+/g, ' ').trim();
+  const shortFact = fact.length > 150 ? `${fact.slice(0, 147).trim()}…` : fact;
+  const topicLabel = String(topic || subject || 'the lesson').trim();
+  const angle = Number(variantSeed) || 0;
+
+  if (sectionName === WORKSHEET_SECTION_LABELS.A) {
+    return {
+      question_number: qNum,
+      type: 'MCQ',
+      section: sectionName,
+      question: `From the textbook section on ${topicLabel}, which option best reflects this idea: "${shortFact.slice(0, 88)}${shortFact.length > 88 ? '…' : ''}"?`,
+      options: [
+        'A) It matches the textbook explanation',
+        'B) It reverses cause and effect from the textbook',
+        'C) It is unrelated to the chapter content',
+        'D) It contradicts the definitions in the chapter',
+      ],
+      answer: 'A) It matches the textbook explanation',
+      marks: 1,
+    };
+  }
+  if (sectionName === WORKSHEET_SECTION_LABELS.B) {
+    const words = fact.split(/\s+/).filter(Boolean);
+    const pick = words[Math.min(3 + (angle % 4), words.length - 1)] || topicLabel;
+    return {
+      question_number: qNum,
+      type: 'FIB',
+      section: sectionName,
+      question: `Complete using the textbook: In ${topicLabel}, an important point is that ${pick} _____.`,
+      answer: fact.slice(0, 140),
+      marks: 1,
+    };
+  }
+  if (sectionName === WORKSHEET_SECTION_LABELS.C) {
+    return {
+      question_number: qNum,
+      type: 'VSA',
+      section: sectionName,
+      question: `State one key point about ${topicLabel} mentioned in the textbook passage.`,
+      answer: shortFact,
+      marks: 2,
+    };
+  }
+  if (sectionName === WORKSHEET_SECTION_LABELS.D) {
+    return {
+      question_number: qNum,
+      type: 'SA',
+      section: sectionName,
+      question: `Explain the following textbook statement about ${topicLabel}: "${shortFact.slice(0, 110)}${shortFact.length > 110 ? '…' : ''}"`,
+      answer: `Students summarise the textbook explanation using evidence from the chapter on ${topicLabel}.`,
+      marks: 3,
+    };
+  }
+  return {
+    question_number: qNum,
+    type: 'COMPETENCY',
+    section: sectionName,
+    question: `Apply the textbook idea about ${topicLabel} to a real situation at home or school. Refer to: "${shortFact.slice(0, 100)}${shortFact.length > 100 ? '…' : ''}"`,
+    answer: `A practical plan that uses the chapter concept on ${topicLabel} with steps and observations.`,
+    marks: 4,
+  };
+}
+
+/** Build worksheet sections from retrieved textbook text when the model omits questions. */
+function buildBookGroundedWorksheetSections(meta = {}) {
+  const pdfContext = String(meta.pdfContext || '').trim();
+  const topic = String(meta.subTopic || meta.subtopic || meta.topic || 'this topic').trim();
+  const subject = String(meta.subject || 'Science').trim();
+  const target = Math.max(5, Number(meta.questionCount) > 0 ? Number(meta.questionCount) : 10);
+  const variantSeed = Number(meta.generationVariant) || 0;
+
+  if (pdfContext.length > 120) {
+    const extracted = sanitizeWorksheetQuestions(
+      extractWorksheetItemsFromPdfText(pdfContext, target + 8),
+    );
+    if (extracted.length >= 3) {
+      return groupQuestionsIntoWorksheetSections(extracted);
+    }
+    let loose = sanitizeWorksheetQuestions(extractQuestionsFromText(pdfContext));
+    if (loose.length >= 3) {
+      return groupQuestionsIntoWorksheetSections(loose);
+    }
+  }
+
+  const sentences = extractBookGroundedSentences(pdfContext, topic);
+  if (!sentences.length) return null;
+
+  const sectionOrder = Object.values(WORKSHEET_SECTION_LABELS);
+  let qNum = 1;
+  const sections = sectionOrder.map((sectionName, idx) => {
+    const sentence = sentences[(idx + variantSeed) % sentences.length];
+    return {
+      sectionName,
+      questions: [buildBookGroundedWorksheetQuestion(sectionName, sentence, topic, subject, qNum++, variantSeed + idx)],
+      count: 1,
+    };
+  });
+  return sections;
+}
+
 /** Ensure worksheet has sections A–E each with at least one question (AI Generator completeness). */
 export function finalizeWorksheetStructuredContent(structuredContent, meta = {}) {
   const topic = String(meta.subTopic || meta.subtopic || meta.topic || 'this subtopic').trim();
   const subject = String(meta.subject || 'Science').trim();
+  const sourceText = String(meta.pdfContext || meta.sourceText || '').trim();
   const base = normalizeWorksheetStructuredContent(
     structuredContent && typeof structuredContent === 'object' && !Array.isArray(structuredContent)
       ? structuredContent
       : {},
+    sourceText,
   );
   if (skipEnglishStructuredScaffold(meta)) {
     const indicScaffold = buildIndicScaffoldExamQuestions(meta, '');
@@ -3799,6 +3931,19 @@ export function finalizeWorksheetStructuredContent(structuredContent, meta = {})
       }));
     }
     return base;
+  }
+
+  const bookGrounded =
+    (meta.bookGenerator || sourceText.length > 120) &&
+    countWorksheetSectionQuestions(base.sections) < 3;
+  let bookGroundedFallback = Boolean(meta.bookGroundedFallback);
+  if (bookGrounded) {
+    const fromBook = buildBookGroundedWorksheetSections({ ...meta, pdfContext: sourceText || meta.pdfContext });
+    if (fromBook?.length) {
+      base.sections = mergeWorksheetSections(base.sections || [], fromBook);
+      base.questions = fromBook.flatMap((s) => s.questions || []);
+      bookGroundedFallback = true;
+    }
   }
 
   const scaffoldForSection = (sectionName, qNum) => {
@@ -3892,7 +4037,9 @@ export function finalizeWorksheetStructuredContent(structuredContent, meta = {})
   const instructions =
     String(base.instructions || '').trim() ||
     (isAiGeneratorSectionPadEnabled()
-      ? `Read each section carefully. Answer all questions on ${topic} in your notebook.`
+      ? meta.bookGenerator || bookGroundedFallback
+        ? `Read each section. Use the textbook ideas on ${topic} while answering.`
+        : `Read each section carefully. Answer all questions on ${topic} in your notebook.`
       : '');
 
   const draft = {
@@ -3903,6 +4050,7 @@ export function finalizeWorksheetStructuredContent(structuredContent, meta = {})
     objectives: learning_objectives,
     instructions,
     sections,
+    bookGroundedFallback,
     section_a_mcqs: sections[0]?.questions || [],
     section_b_fib: sections[1]?.questions || [],
     section_c_vsa: sections[2]?.questions || [],
@@ -6992,6 +7140,40 @@ function coerceRegenerationStructuredContent(toolSlug, parsed) {
       const { contentType: _ct, structuredContent: _sc, ...rest } = root;
       if (Object.keys(rest).length) inner = { ...rest };
     }
+  } else if (toolSlug === 'worksheet-mcq-generator') {
+    const rootPick = {
+      ...(root.title ? { title: root.title } : {}),
+      ...(root.worksheet_title ? { worksheet_title: root.worksheet_title } : {}),
+      ...(Array.isArray(root.learning_objectives) ? { learning_objectives: root.learning_objectives } : {}),
+      ...(Array.isArray(root.objectives) ? { objectives: root.objectives } : {}),
+      ...(root.instructions ? { instructions: root.instructions } : {}),
+      ...(Array.isArray(root.sections) ? { sections: root.sections } : {}),
+      ...(Array.isArray(root.questions) ? { questions: root.questions } : {}),
+      ...(Array.isArray(root.mcqs) ? { mcqs: root.mcqs } : {}),
+      ...(Array.isArray(root.section_a_mcqs) ? { section_a_mcqs: root.section_a_mcqs } : {}),
+      ...(Array.isArray(root.section_a) ? { section_a: root.section_a } : {}),
+      ...(Array.isArray(root.section_b_fib) ? { section_b_fib: root.section_b_fib } : {}),
+      ...(Array.isArray(root.section_b) ? { section_b: root.section_b } : {}),
+      ...(Array.isArray(root.section_c_vsa) ? { section_c_vsa: root.section_c_vsa } : {}),
+      ...(Array.isArray(root.section_c) ? { section_c: root.section_c } : {}),
+      ...(Array.isArray(root.section_d_sa) ? { section_d_sa: root.section_d_sa } : {}),
+      ...(Array.isArray(root.section_d) ? { section_d: root.section_d } : {}),
+      ...(Array.isArray(root.section_e_competency) ? { section_e_competency: root.section_e_competency } : {}),
+      ...(Array.isArray(root.section_e) ? { section_e: root.section_e } : {}),
+      ...(root.answer_key ? { answer_key: root.answer_key } : {}),
+      ...(root.bloom_level ? { bloom_level: root.bloom_level } : {}),
+      ...(root.difficulty_tag ? { difficulty_tag: root.difficulty_tag } : {}),
+      ...(root.question ? { question: root.question } : {}),
+      ...(root.options ? { options: root.options } : {}),
+      ...(root.answer ? { answer: root.answer } : {}),
+    };
+    if (Object.keys(rootPick).length) {
+      inner = { ...rootPick, ...inner };
+    }
+    if (Object.keys(inner).length === 0) {
+      const { contentType: _ct, structuredContent: _sc, ...rest } = root;
+      if (Object.keys(rest).length) inner = { ...rest };
+    }
   } else if (toolSlug === 'smart-qa-practice-generator') {
     const rootPick = {
       ...(root.title ? { title: root.title } : {}),
@@ -8325,6 +8507,7 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
     variantScenario: isBatchVariant ? String(extra.variantScenario || '').trim() : undefined,
     batchOrchestrator: isBatchVariant,
     bookGenerator: isBookBatch,
+    pdfContext: pdfContext || undefined,
     requireAllCanonicalFields:
       !isBatchVariant ||
       (!isAiGeneratorCostSaverEnabled() && !isAiGeneratorUltraEconomyEnabled() && !isBookBatch),
@@ -8434,7 +8617,9 @@ Write all student-facing text in the required output language.`;
       const validationSourceText =
         slug === 'smart-qa-practice-generator'
           ? collectPracticeQaParseableText(structuredContent)
-          : collectMockTestParseableText(structuredContent);
+          : slug === 'worksheet-mcq-generator'
+            ? [collectMockTestParseableText(structuredContent), pdfContext].filter(Boolean).join('\n\n')
+            : collectMockTestParseableText(structuredContent);
       let validation = validateToolSpecificStructuredContent(
         slug,
         structuredContent,
@@ -8613,6 +8798,20 @@ Write all student-facing text in the required output language.`;
         }
       }
 
+      if (!validation.valid && slug === 'worksheet-mcq-generator') {
+        structuredContent = finalizeWorksheetStructuredContent(structuredContent, meta);
+        validation = validateToolSpecificStructuredContent(
+          slug,
+          structuredContent,
+          contentType,
+          validationSourceText,
+          meta,
+        );
+        if (validation.normalizedStructuredContent) {
+          structuredContent = validation.normalizedStructuredContent;
+        }
+      }
+
       if (!validation.valid && slug === 'quick-assignment-builder') {
         structuredContent = finalizeQuickAssignmentStructuredContent(structuredContent, meta);
         validation = validateToolSpecificStructuredContent(
@@ -8660,7 +8859,7 @@ Write all student-facing text in the required output language.`;
           if (validation.normalizedStructuredContent) {
             structuredContent = validation.normalizedStructuredContent;
           }
-          if (!validation.valid && isAiGeneratorCostSaverEnabled()) {
+          if (!validation.valid && (isAiGeneratorCostSaverEnabled() || meta.bookGenerator)) {
             const blockBypass = shouldBlockCostSaverForStoryLanguage(
               slug,
               meta.subject,
@@ -8750,7 +8949,10 @@ Write all student-facing text in the required output language.`;
 
       let sectionRepairCount = 0;
       for (let repairRound = 0; repairRound < 2; repairRound += 1) {
-        const quality = runAiGeneratorQualityGate(slug, structuredContent, meta);
+        const quality = runAiGeneratorQualityGate(slug, structuredContent, {
+          ...meta,
+          bookGroundedFallback: Boolean(structuredContent?.bookGroundedFallback),
+        });
         if (quality.valid) break;
 
         if (!isAiGeneratorSectionPadEnabled() && quality.missingSections?.length) {
@@ -8809,7 +9011,10 @@ Write all student-facing text in the required output language.`;
         structuredContent = enforceIndicLanguageStructuredContent(slug, structuredContent, meta);
       }
 
-      const finalQuality = runAiGeneratorQualityGate(slug, structuredContent, meta);
+      const finalQuality = runAiGeneratorQualityGate(slug, structuredContent, {
+        ...meta,
+        bookGroundedFallback: Boolean(structuredContent?.bookGroundedFallback),
+      });
       if (!finalQuality.valid) {
         const finalQualityMessage = finalQuality.errors.join('; ');
         const blockStoryLanguageSave = shouldBlockCostSaverForStoryLanguage(
