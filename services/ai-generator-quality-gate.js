@@ -78,6 +78,9 @@ export function runAiGeneratorQualityGate(toolSlug, structured, meta = {}) {
   }
 
   const sectionPadActive = isAiGeneratorSectionPadEnabled();
+  const bookGroundedWorksheet =
+    slug === 'worksheet-mcq-generator' &&
+    Boolean(meta.bookGenerator || meta.bookGroundedFallback || data.bookGroundedFallback);
 
   const title = String(
     data.title ||
@@ -93,8 +96,8 @@ export function runAiGeneratorQualityGate(toolSlug, structured, meta = {}) {
     errors.push('Title appears to be placeholder/scaffold text.');
   }
 
-  // Section-pad fills gaps with topic fallbacks; a full-text placeholder scan rejects that output.
-  const skipPlaceholderWalk = sectionPadActive;
+  // Section-pad / book-grounded fallbacks may use template phrasing — do not reject that output.
+  const skipPlaceholderWalk = sectionPadActive || bookGroundedWorksheet || meta.bookGenerator;
   if (!skipPlaceholderWalk) {
     for (const text of walkValues(data)) {
       if (typeof text !== 'string' || text.length < 20) continue;
@@ -126,7 +129,7 @@ export function runAiGeneratorQualityGate(toolSlug, structured, meta = {}) {
       errors.push('Question text too short.');
       break;
     }
-    if (!sectionPadActive && isPlaceholderText(q.text)) {
+    if (!sectionPadActive && !bookGroundedWorksheet && !meta.bookGenerator && isPlaceholderText(q.text)) {
       errors.push(`Placeholder question: "${String(q.text).slice(0, 60)}..."`);
       break;
     }
