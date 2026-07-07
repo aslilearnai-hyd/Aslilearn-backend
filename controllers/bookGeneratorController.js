@@ -42,6 +42,12 @@ export async function listBookBasedTools(req, res) {
       batchSize: BOOK_GENERATOR_DEFAULT_BATCH_SIZE,
       maxInr: BOOK_GENERATOR_MAX_INR,
       uniquenessTarget: BOOK_GENERATOR_UNIQUENESS_TARGET,
+      qualityTiers: {
+        premium: { model: 'gemini-3.1-flash-lite', label: 'Premium', concurrency: 3 },
+        balanced: { model: 'gemini-2.5-flash', label: 'Balanced', concurrency: 2 },
+        fast: { model: 'gemini-3.1-flash-lite', label: 'Fast', concurrency: 1 },
+      },
+      defaultQualityTier: 'premium',
     },
   });
 }
@@ -60,6 +66,7 @@ export async function generateBookBatch(req, res) {
       subtopicName,
       batchSize,
       useBookKnowledge,
+      qualityTier,
       extraParams,
       forceUnlock,
       async: asyncMode,
@@ -87,7 +94,8 @@ export async function generateBookBatch(req, res) {
       topicName,
       subtopicName,
       batchSize,
-      useBookKnowledge: useBookKnowledge !== false,
+      useBookKnowledge,
+      qualityTier,
       extraParams,
       forceUnlock: forceUnlock === true,
     };

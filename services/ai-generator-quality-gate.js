@@ -42,20 +42,60 @@ function isPlaceholderText(text) {
   return PLACEHOLDER_PATTERNS.some((re) => re.test(t));
 }
 
-function walkValues(obj, out = []) {
+function walkValues(obj, out = [], parentKey = '') {
   if (obj == null) return out;
   if (typeof obj === 'string') {
-    out.push(obj);
+    out.push({ key: parentKey, text: obj });
     return out;
   }
   if (Array.isArray(obj)) {
-    for (const x of obj) walkValues(x, out);
+    for (const x of obj) walkValues(x, out, parentKey);
     return out;
   }
   if (typeof obj === 'object') {
-    for (const v of Object.values(obj)) walkValues(v, out);
+    for (const [k, v] of Object.entries(obj)) walkValues(v, out, k);
   }
   return out;
+}
+
+/** Teacher boilerplate fields — not scanned for scaffold patterns on strict Premium. */
+const BOILERPLATE_META_KEYS = new Set([
+  'instructions',
+  'blueprint',
+  'internal_choices',
+  'internal_choice',
+  'marking_scheme',
+  'open_ended_rubric',
+  'general_instructions',
+  'homework_instructions',
+  'test_purpose',
+  'answer_key',
+]);
+
+function hasScaffoldQuestionRows(data) {
+  if (!data || typeof data !== 'object') return false;
+  const pools = [
+    data.questions,
+    data.section_a,
+    data.section_b,
+    data.section_c,
+    data.section_d,
+    data.section_e,
+  ];
+  for (const pool of pools) {
+    if (!Array.isArray(pool)) continue;
+    for (const row of pool) {
+      if (row && typeof row === 'object' && row._scaffold === true) return true;
+    }
+  }
+  if (Array.isArray(data.sections)) {
+    for (const sec of data.sections) {
+      for (const row of Array.isArray(sec?.questions) ? sec.questions : []) {
+        if (row && typeof row === 'object' && row._scaffold === true) return true;
+      }
+    }
+  }
+  return false;
 }
 
 /**
@@ -77,7 +117,7 @@ export function runAiGeneratorQualityGate(toolSlug, structured, meta = {}) {
     if (detail.order === 999) errors.push(detail.label);
   }
 
-  const sectionPadActive = isAiGeneratorSectionPadEnabled();
+  const sectionPadActive = isAiGeneratorSectionPadEnabled() && meta.strictValidation !== true;
   const bookGroundedWorksheet =
     slug === 'worksheet-mcq-generator' &&
     Boolean(meta.bookGenerator || meta.bookGroundedFallback || data.bookGroundedFallback);
@@ -99,7 +139,8 @@ export function runAiGeneratorQualityGate(toolSlug, structured, meta = {}) {
   // Section-pad / book-grounded fallbacks may use template phrasing — do not reject that output.
   const skipPlaceholderWalk = sectionPadActive || bookGroundedWorksheet || meta.bookGenerator;
   if (!skipPlaceholderWalk) {
-    for (const text of walkValues(data)) {
+    for (const { key, text } of walkValues(data)) {
+      if (BOILERPLATE_META_KEYS.has(key)) continue;
       if (typeof text !== 'string' || text.length < 20) continue;
       if (isPlaceholderText(text)) {
         errors.push(`Placeholder/scaffold detected: "${text.slice(0, 80)}..."`);
@@ -202,6 +243,10 @@ export function runAiGeneratorQualityGate(toolSlug, structured, meta = {}) {
     if (!languageCheck.valid) {
       errors.push(...languageCheck.errors);
     }
+  }
+
+  if (meta.strictValidation === true && hasScaffoldQuestionRows(data)) {
+    errors.push('Scaffold filler questions detected — Premium requires fully generated content.');
   }
 
   return {

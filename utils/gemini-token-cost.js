@@ -10,8 +10,20 @@ export function getUsdToInrRate() {
   return Number.isFinite(rate) && rate > 0 ? rate : 95.11;
 }
 
+/** Gemini 3.1 Pro preview list pricing (USD per 1M tokens). */
+export const GEMINI_31_PRO_INPUT_USD_PER_M = 2;
+export const GEMINI_31_PRO_OUTPUT_USD_PER_M = 12;
+
 export function resolveGeminiPricing(modelName = '') {
   const model = String(modelName || '').toLowerCase();
+  if (model.includes('pro')) {
+    return {
+      model: model.includes('3.1') ? 'gemini-3.1-pro-preview' : model,
+      inputUsdPerM: GEMINI_31_PRO_INPUT_USD_PER_M,
+      outputUsdPerM: GEMINI_31_PRO_OUTPUT_USD_PER_M,
+      pricingNote: 'Estimated from Pro list pricing (input $2/M, output $12/M).',
+    };
+  }
   if (model.includes('flash-lite') || model.includes('flash_lite')) {
     return {
       model: model.includes('3.1') ? 'gemini-3.1-flash-lite' : 'gemini-2.5-flash-lite',
