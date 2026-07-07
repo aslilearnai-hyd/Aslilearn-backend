@@ -3780,12 +3780,14 @@ export function normalizeWorksheetStructuredContent(raw, sourceText = '') {
 export function finalizeWorksheetStructuredContent(structuredContent, meta = {}) {
   const topic = String(meta.subTopic || meta.subtopic || meta.topic || 'this subtopic').trim();
   const subject = String(meta.subject || 'Science').trim();
+  const strictFinalize = meta.strictValidation === true;
+  const allowSectionPad = isAiGeneratorSectionPadEnabled() && !strictFinalize;
   const base = normalizeWorksheetStructuredContent(
     structuredContent && typeof structuredContent === 'object' && !Array.isArray(structuredContent)
       ? structuredContent
       : {},
   );
-  if (skipEnglishStructuredScaffold(meta)) {
+  if (skipEnglishStructuredScaffold(meta) && !strictFinalize) {
     const indicScaffold = buildIndicScaffoldExamQuestions(meta, '');
     const sectionLabels =
       canonicalStoryPassageSubject(meta.subject) === 'Telugu'
@@ -3884,7 +3886,7 @@ export function finalizeWorksheetStructuredContent(structuredContent, meta = {})
       }));
       return { ...sec, questions: renumbered, count: renumbered.length };
     }
-    if (!isAiGeneratorSectionPadEnabled()) {
+    if (!allowSectionPad) {
       return { ...sec, questions: [], count: 0 };
     }
     const scaffold = scaffoldForSection(sec.sectionName, globalQ++);
@@ -3894,7 +3896,7 @@ export function finalizeWorksheetStructuredContent(structuredContent, meta = {})
   const learning_objectives =
     Array.isArray(base.learning_objectives) && base.learning_objectives.length
       ? base.learning_objectives
-      : isAiGeneratorSectionPadEnabled()
+      : allowSectionPad
         ? [
             `Students recall key facts about ${topic}.`,
             `Students apply ${topic} to short ${subject} problems.`,
@@ -3903,7 +3905,7 @@ export function finalizeWorksheetStructuredContent(structuredContent, meta = {})
 
   const instructions =
     String(base.instructions || '').trim() ||
-    (isAiGeneratorSectionPadEnabled()
+    (allowSectionPad
       ? `Read each section carefully. Answer all questions on ${topic} in your notebook.`
       : '');
 

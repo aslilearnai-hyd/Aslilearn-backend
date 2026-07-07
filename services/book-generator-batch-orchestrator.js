@@ -377,6 +377,9 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               generationVariant: variantIndex,
               variantAngle: extraParams.variantAngle,
               variantScenario: extraParams.variantScenario,
+              qualityTier: qualityTierSettings.tier,
+              strictValidation: qualityTierSettings.strictValidation === true,
+              bookGenerator: true,
             };
             let structuredContent = finalizeBookStructuredContent(
               toolSlug,

@@ -42,21 +42,35 @@ function isPlaceholderText(text) {
   return PLACEHOLDER_PATTERNS.some((re) => re.test(t));
 }
 
-function walkValues(obj, out = []) {
+function walkValues(obj, out = [], parentKey = '') {
   if (obj == null) return out;
   if (typeof obj === 'string') {
-    out.push(obj);
+    out.push({ key: parentKey, text: obj });
     return out;
   }
   if (Array.isArray(obj)) {
-    for (const x of obj) walkValues(x, out);
+    for (const x of obj) walkValues(x, out, parentKey);
     return out;
   }
   if (typeof obj === 'object') {
-    for (const v of Object.values(obj)) walkValues(v, out);
+    for (const [k, v] of Object.entries(obj)) walkValues(v, out, k);
   }
   return out;
 }
+
+/** Teacher boilerplate fields — not scanned for scaffold patterns on strict Premium. */
+const BOILERPLATE_META_KEYS = new Set([
+  'instructions',
+  'blueprint',
+  'internal_choices',
+  'internal_choice',
+  'marking_scheme',
+  'open_ended_rubric',
+  'general_instructions',
+  'homework_instructions',
+  'test_purpose',
+  'answer_key',
+]);
 
 function hasScaffoldQuestionRows(data) {
   if (!data || typeof data !== 'object') return false;
@@ -122,7 +136,8 @@ export function runAiGeneratorQualityGate(toolSlug, structured, meta = {}) {
   // Section-pad fills gaps with topic fallbacks; a full-text placeholder scan rejects that output.
   const skipPlaceholderWalk = sectionPadActive;
   if (!skipPlaceholderWalk) {
-    for (const text of walkValues(data)) {
+    for (const { key, text } of walkValues(data)) {
+      if (BOILERPLATE_META_KEYS.has(key)) continue;
       if (typeof text !== 'string' || text.length < 20) continue;
       if (isPlaceholderText(text)) {
         errors.push(`Placeholder/scaffold detected: "${text.slice(0, 80)}..."`);
