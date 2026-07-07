@@ -18,12 +18,21 @@ function pushText(units, contentType, text, path = '') {
 function extractQuestionsFromStructured(toolSlug, data, units, prefix = '') {
   if (!data || typeof data !== 'object') return;
 
-  const pools = [
-    data.questions,
-    data.practice_questions,
-    data.concept_based_questions,
-    data.formative_assessment_questions,
-  ];
+  const slug = String(toolSlug || '').trim();
+  const hasExamSectionArrays =
+    slug === 'exam-question-paper-generator' &&
+    ['section_a', 'section_b', 'section_c', 'section_d', 'section_e'].some(
+      (k) => Array.isArray(data[k]) && data[k].length > 0,
+    );
+
+  const pools = hasExamSectionArrays
+    ? []
+    : [
+        data.questions,
+        data.practice_questions,
+        data.concept_based_questions,
+        data.formative_assessment_questions,
+      ];
   for (const pool of pools) {
     if (!Array.isArray(pool)) continue;
     for (let i = 0; i < pool.length; i += 1) {
@@ -37,7 +46,7 @@ function extractQuestionsFromStructured(toolSlug, data, units, prefix = '') {
     }
   }
 
-  if (Array.isArray(data.sections)) {
+  if (Array.isArray(data.sections) && !hasExamSectionArrays) {
     for (let si = 0; si < data.sections.length; si += 1) {
       const sec = data.sections[si];
       const secQs = Array.isArray(sec?.questions) ? sec.questions : [];

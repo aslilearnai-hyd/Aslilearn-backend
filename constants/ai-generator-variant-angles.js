@@ -1,6 +1,6 @@
 import { canonicalStoryPassageSubject } from '../utils/story-passage-subject.js';
 
-/** 25 distinct creative angles — one per batch variant for Super Admin AI Generator. */
+/** Base creative angles — combined programmatically with scenarios for 1000+ unique pairs. */
 export const AI_GENERATOR_VARIANT_ANGLES = Object.freeze([
   'Hands-on lab or demonstration with everyday materials',
   'Real-life Indian context (market, farm, festival, transport, or home)',
@@ -27,30 +27,24 @@ export const AI_GENERATOR_VARIANT_ANGLES = Object.freeze([
   'Differentiated support — scaffold for struggling learners',
   'Extension challenge for advanced learners',
   'Project output — poster, model, comic strip, or presentation',
+  'Map-based or geography-linked exploration',
+  'Timeline or cause-effect chain reasoning',
+  'Case study from Indian news or community context',
+  'Simulation or thought-experiment framing',
+  'Peer assessment and self-reflection loop',
+  'Inquiry-based discovery with guiding questions',
+  'STEM integration with measurement and units',
+  'Ethical dilemma or values-education angle',
+  'Career connection — how professionals use this idea',
+  'Vocabulary-first approach with word webs',
+  'Chunked micro-lesson with checkpoint pauses',
+  'Reverse teaching — students explain to the class',
+  'Gamified challenge with levels and badges',
+  'Outdoor learning or nature-linked observation',
+  'Digital portfolio artifact creation',
 ]);
 
-const MONOLINGUAL_STORY_ANGLE =
-  'Indian cultural story setting (festival, village, or market) — narration entirely in the output language only';
-
-const MONOLINGUAL_STORY_SCENARIO = 'a classroom story-reading circle in the output language';
-
-function isMonolingualStorySubject(subject) {
-  const canonical = canonicalStoryPassageSubject(subject);
-  return canonical === 'Hindi' || canonical === 'Telugu';
-}
-
-export function getAiGeneratorVariantAngle(variantIndex, subject = '') {
-  const n = Math.floor(Number(variantIndex) || 0);
-  if (n < 1) return '';
-  const idx = (n - 1) % AI_GENERATOR_VARIANT_ANGLES.length;
-  const angle = AI_GENERATOR_VARIANT_ANGLES[idx] || '';
-  if (isMonolingualStorySubject(subject) && /bilingual|english \+ hindi/i.test(angle)) {
-    return MONOLINGUAL_STORY_ANGLE;
-  }
-  return angle;
-}
-
-/** Short scenario hooks so fallback/scaffold text differs per variant even when the model fails. */
+/** Short scenario hooks — paired with angles for large combination space. */
 export const AI_GENERATOR_VARIANT_SCENARIOS = Object.freeze([
   'a local market visit',
   'a school science fair booth',
@@ -77,14 +71,55 @@ export const AI_GENERATOR_VARIANT_SCENARIOS = Object.freeze([
   'a step-by-step scaffold worksheet',
   'an advanced extension lab',
   'a comic-strip storyboard',
+  'a railway station crowd scene',
+  'a school assembly demonstration',
+  'a riverside ecology walk',
+  'a community health camp',
+  'a solar cooker trial at home',
+  'a weather diary for one week',
+  'a heritage monument visit',
+  'a cooperative group market survey',
+  'a kitchen measurement challenge',
+  'a classroom election simulation',
+  'a local newspaper letter to the editor',
+  'a science club exhibition',
+  'a math trail around the school',
+  'a storytelling corner in the library',
+  'a rainwater harvesting model',
 ]);
+
+const MONOLINGUAL_STORY_ANGLE =
+  'Indian cultural story setting (festival, village, or market) — narration entirely in the output language only';
+
+const MONOLINGUAL_STORY_SCENARIO = 'a classroom story-reading circle in the output language';
+
+function isMonolingualStorySubject(subject) {
+  const canonical = canonicalStoryPassageSubject(subject);
+  return canonical === 'Hindi' || canonical === 'Telugu';
+}
+
+export function getVariantCombinationCount() {
+  return AI_GENERATOR_VARIANT_ANGLES.length * AI_GENERATOR_VARIANT_SCENARIOS.length;
+}
+
+export function getAiGeneratorVariantAngle(variantIndex, subject = '') {
+  const n = Math.floor(Number(variantIndex) || 0);
+  if (n < 1) return '';
+  const idx = (n - 1) % AI_GENERATOR_VARIANT_ANGLES.length;
+  const angle = AI_GENERATOR_VARIANT_ANGLES[idx] || '';
+  if (isMonolingualStorySubject(subject) && /bilingual|english \+ hindi/i.test(angle)) {
+    return MONOLINGUAL_STORY_ANGLE;
+  }
+  return angle;
+}
 
 export function getAiGeneratorVariantScenario(variantIndex, subject = '') {
   const n = Math.floor(Number(variantIndex) || 0);
   if (n < 1) return '';
-  const scenario = AI_GENERATOR_VARIANT_SCENARIOS[(n - 1) % AI_GENERATOR_VARIANT_SCENARIOS.length] || '';
-  if (isMonolingualStorySubject(subject) && /bilingual/i.test(scenario)) {
+  if (isMonolingualStorySubject(subject)) {
     return MONOLINGUAL_STORY_SCENARIO;
   }
-  return scenario;
+  const angleIdx = (n - 1) % AI_GENERATOR_VARIANT_ANGLES.length;
+  const scenarioIdx = Math.floor((n - 1) / AI_GENERATOR_VARIANT_ANGLES.length) % AI_GENERATOR_VARIANT_SCENARIOS.length;
+  return AI_GENERATOR_VARIANT_SCENARIOS[(angleIdx + scenarioIdx) % AI_GENERATOR_VARIANT_SCENARIOS.length] || '';
 }

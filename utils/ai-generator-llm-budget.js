@@ -26,11 +26,16 @@ const MEDIUM_TOOLS = new Set([
   'short-notes-summaries-maker',
 ]);
 
-export function getAiGeneratorMaxTokens(toolSlug) {
+export function getAiGeneratorMaxTokens(toolSlug, options = {}) {
   const slug = String(toolSlug || '').trim();
+  const skipUltra =
+    options.skipUltraEconomyCaps === true ||
+    String(options.qualityTier || '').toLowerCase() === 'premium' ||
+    String(options.qualityTier || '').toLowerCase() === 'balanced';
   const ultra =
-    String(process.env.AI_GENERATOR_ULTRA_ECONOMY ?? 'false').trim().toLowerCase() === 'true' ||
-    String(process.env.AI_GENERATOR_ULTRA_ECONOMY ?? 'false').trim() === '1';
+    !skipUltra &&
+    (String(process.env.AI_GENERATOR_ULTRA_ECONOMY ?? 'false').trim().toLowerCase() === 'true' ||
+      String(process.env.AI_GENERATOR_ULTRA_ECONOMY ?? 'false').trim() === '1');
   const costSaver =
     String(process.env.AI_GENERATOR_COST_SAVER ?? 'true').trim().toLowerCase() !== 'false' &&
     String(process.env.AI_GENERATOR_COST_SAVER ?? 'true').trim().toLowerCase() !== '0' &&

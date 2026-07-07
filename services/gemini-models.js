@@ -20,6 +20,15 @@ export const GEMINI_FLASH_MODEL = 'gemini-2.5-flash';
 /** Newer Flash when 2.5 is busy or unavailable. */
 export const GEMINI_FLASH_FALLBACK_MODEL = 'gemini-3.5-flash';
 
+/** Premium tier — 3.1 Flash-Lite only (stable, no 3.5/2.5 Flash 503 retries). */
+export const GEMINI_PREMIUM_MODEL = GEMINI_LITE_MODEL;
+
+/** Lite-only overflow for Premium. */
+export const GEMINI_PREMIUM_OVERFLOW_DEFAULT = [
+  GEMINI_LITE_MODEL,
+  GEMINI_LITE_FALLBACK_MODEL,
+].join(',');
+
 /** Full resilience chain (Flash-only, v1beta-safe). */
 export const GEMINI_MODELS_FALLBACK = Object.freeze([
   GEMINI_LITE_MODEL,

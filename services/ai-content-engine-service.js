@@ -5,6 +5,8 @@ import {
   buildToolAliasToSlugMap,
   buildStrictOutputHintsMap,
   buildAiGeneratorStructuredPrompt,
+  buildAiGeneratorPromptParts,
+  getToolInformalSchema,
   buildMockTestSolutionsFromSections,
   formatMockTestAnswerKeyLinesFromSections,
   formatStructuredToolOutput,
@@ -42,6 +44,15 @@ import {
   shouldUpgradeFlashOnValidationAttempt,
   shouldUseFlashForAiGeneratorRun,
 } from '../utils/ai-generator-batch-config.js';
+import {
+  resolveQualityTierSettings,
+  getTemperatureForTool,
+} from '../utils/ai-generator-quality-tier.js';
+import {
+  buildGeminiResponseSchemaForTool,
+  isResponseSchemaEnabled,
+} from '../utils/ai-generator-response-schema.js';
+import { runPostGenerationContentValidation } from '../utils/ai-generator-post-validation.js';
 import { runAiGeneratorQualityGate } from './ai-generator-quality-gate.js';
 import { repairMissingSectionsViaLlm } from './ai-generator-section-repair.js';
 import {
@@ -69,6 +80,7 @@ import {
 } from './ai-generator-uniqueness-engine.js';
 
 function skipEnglishStructuredScaffold(meta = {}) {
+  // skipSectionPad only disables canonical section padding — not English finalizers.
   const subject = resolveLanguageSubjectForGeneration(meta?.subject, meta?.bookSubject);
   return shouldSkipEnglishScaffoldForLanguageSubject(subject);
 }
@@ -3899,13 +3911,15 @@ export function finalizeWorksheetStructuredContent(structuredContent, meta = {})
   const topic = String(meta.subTopic || meta.subtopic || meta.topic || 'this subtopic').trim();
   const subject = String(meta.subject || 'Science').trim();
   const sourceText = String(meta.pdfContext || meta.sourceText || '').trim();
+  const strictFinalize = meta.strictValidation === true;
+  const allowSectionPad = isAiGeneratorSectionPadEnabled() && !strictFinalize;
   const base = normalizeWorksheetStructuredContent(
     structuredContent && typeof structuredContent === 'object' && !Array.isArray(structuredContent)
       ? structuredContent
       : {},
     sourceText,
   );
-  if (skipEnglishStructuredScaffold(meta)) {
+  if (skipEnglishStructuredScaffold(meta) && !strictFinalize) {
     const indicScaffold = buildIndicScaffoldExamQuestions(meta, '');
     const sectionLabels =
       canonicalStoryPassageSubject(meta.subject) === 'Telugu'
@@ -4017,7 +4031,7 @@ export function finalizeWorksheetStructuredContent(structuredContent, meta = {})
       }));
       return { ...sec, questions: renumbered, count: renumbered.length };
     }
-    if (!isAiGeneratorSectionPadEnabled()) {
+    if (!allowSectionPad) {
       return { ...sec, questions: [], count: 0 };
     }
     const scaffold = scaffoldForSection(sec.sectionName, globalQ++);
@@ -4027,7 +4041,7 @@ export function finalizeWorksheetStructuredContent(structuredContent, meta = {})
   const learning_objectives =
     Array.isArray(base.learning_objectives) && base.learning_objectives.length
       ? base.learning_objectives
-      : isAiGeneratorSectionPadEnabled()
+      : allowSectionPad
         ? [
             `Students recall key facts about ${topic}.`,
             `Students apply ${topic} to short ${subject} problems.`,
@@ -4036,7 +4050,7 @@ export function finalizeWorksheetStructuredContent(structuredContent, meta = {})
 
   const instructions =
     String(base.instructions || '').trim() ||
-    (isAiGeneratorSectionPadEnabled()
+    (allowSectionPad
       ? meta.bookGenerator || bookGroundedFallback
         ? `Read each section. Use the textbook ideas on ${topic} while answering.`
         : `Read each section carefully. Answer all questions on ${topic} in your notebook.`
@@ -4711,8 +4725,8 @@ export function normalizePracticeQaStructuredContent(raw, sourceText = '') {
     ...real_life_problem_solving_questions,
   ]);
 
-  let answerKeyOut = answer_key_with_explanations;
-  if (!answerKeyOut && questions.length) {
+  let answerKeyOut = '';
+  if (questions.length) {
     const lines = [];
     for (const q of questions) {
       if (String(q.answer || '').trim()) {
@@ -5294,15 +5308,60 @@ function countExamPaperQuestions(data) {
 }
 
 /** Curriculum-backed exam questions when the model returns too few items. */
-function buildScaffoldExamQuestions(meta = {}, blueprint = '') {
+function examScaffoldVariantContext(meta = {}) {
   const topic = String(meta.subTopic || meta.subtopic || meta.topic || 'this subtopic').trim();
+  const variant = Number(meta.generationVariant ?? meta.variantIndex) || 1;
+  const angle = String(meta.variantAngle || '').trim();
+  const scenario = String(meta.variantScenario || '').trim();
+  let frame = '';
+  if (angle && scenario) {
+    frame = `${angle} — ${scenario}`;
+  } else if (angle) {
+    frame = angle;
+  } else if (scenario) {
+    frame = `Scenario: ${scenario}`;
+  } else {
+    frame = `Variant ${variant}`;
+  }
+  return { topic, variant, frame };
+}
+
+function buildScaffoldExamQuestions(meta = {}, blueprint = '') {
+  const { topic, variant, frame } = examScaffoldVariantContext(meta);
   const counts = parseBlueprintSectionCounts(blueprint);
   const buckets = { section_a: [], section_b: [], section_c: [], section_d: [], section_e: [] };
+  const mcqStems = [
+    (t, f, i) => `[${f}] Which statement about ${t} is most accurate? (MCQ ${i})`,
+    (t, f, i) => `[${f}] Identify the correct idea related to ${t}. (MCQ ${i})`,
+    (t, f, i) => `[${f}] Choose the best description of ${t}. (MCQ ${i})`,
+    (t, f, i) => `[${f}] Which option correctly applies ${t}? (MCQ ${i})`,
+  ];
+  const vsaStems = [
+    (t, f, i) => `[${f}] Define a key term linked to ${t}. (VSA ${i})`,
+    (t, f, i) => `[${f}] State one essential fact about ${t}. (VSA ${i})`,
+    (t, f, i) => `[${f}] Name and define a core concept in ${t}. (VSA ${i})`,
+  ];
+  const saStems = [
+    (t, f, i) => `[${f}] Explain how ${t} applies in daily life. (SA ${i})`,
+    (t, f, i) => `[${f}] Give a reasoned example using ${t}. (SA ${i})`,
+    (t, f, i) => `[${f}] Describe a real-world use of ${t}. (SA ${i})`,
+  ];
+  const laStems = [
+    (t, f, i) => `[${f}] Describe the process of scientific inquiry for ${t}. (LA ${i})`,
+    (t, f, i) => `[${f}] Analyse the main principles of ${t} with steps. (LA ${i})`,
+    (t, f, i) => `[${f}] Discuss evidence-based reasoning for ${t}. (LA ${i})`,
+  ];
+  const caseStems = [
+    (t, f, i) => `[${f}] Case study on ${t}: read the scenario and answer parts (a)–(d). (Q${i})`,
+    (t, f, i) => `[${f}] Applied problem on ${t} with data — answer all parts. (Q${i})`,
+    (t, f, i) => `[${f}] Competency task on ${t}: interpret the situation and respond. (Q${i})`,
+  ];
   let n = 1;
   for (let i = 0; i < counts.a; i += 1) {
+    const stem = mcqStems[(variant + i) % mcqStems.length](topic, frame, i + 1);
     buckets.section_a.push({
       question_number: n++,
-      question: `Which of the following best describes ${topic}? (MCQ ${i + 1})`,
+      question: stem,
       options: [
         'A) Belief without evidence',
         'B) Systematic observation and evidence',
@@ -5311,38 +5370,43 @@ function buildScaffoldExamQuestions(meta = {}, blueprint = '') {
       ],
       answer: 'B) Systematic observation and evidence',
       marks: 1,
+      _scaffold: true,
     });
   }
   for (let i = 0; i < counts.b; i += 1) {
     buckets.section_b.push({
       question_number: n++,
-      question: `Define one key term related to ${topic}. (VSA ${i + 1})`,
-      answer: `A concise definition using evidence about ${topic}.`,
+      question: vsaStems[(variant + i) % vsaStems.length](topic, frame, i + 1),
+      answer: `A concise definition using evidence about ${topic} (${frame}).`,
       marks: 2,
+      _scaffold: true,
     });
   }
   for (let i = 0; i < counts.c; i += 1) {
     buckets.section_c.push({
       question_number: n++,
-      question: `Explain how ${topic} applies in daily life. (SA ${i + 1})`,
-      answer: `Students give a reasoned example connected to ${topic}.`,
+      question: saStems[(variant + i) % saStems.length](topic, frame, i + 1),
+      answer: `Students give a reasoned example connected to ${topic} (${frame}).`,
       marks: 3,
+      _scaffold: true,
     });
   }
   for (let i = 0; i < counts.d; i += 1) {
     buckets.section_d.push({
       question_number: n++,
-      question: `Describe the process of scientific inquiry for ${topic}. (LA ${i + 1})`,
-      answer: `A step-by-step explanation with observation, hypothesis, and evidence for ${topic}.`,
+      question: laStems[(variant + i) % laStems.length](topic, frame, i + 1),
+      answer: `A step-by-step explanation with observation, hypothesis, and evidence for ${topic} (${frame}).`,
       marks: 5,
+      _scaffold: true,
     });
   }
   for (let i = 0; i < counts.e; i += 1) {
     buckets.section_e.push({
       question_number: n++,
-      question: `Case study on ${topic}: read the scenario and answer parts (a)–(d).`,
-      answer: `Answers use evidence from the scenario and concepts from ${topic}.`,
+      question: caseStems[(variant + i) % caseStems.length](topic, frame, i + 1),
+      answer: `Answers use evidence from the scenario and concepts from ${topic} (${frame}).`,
       marks: 6,
+      _scaffold: true,
     });
   }
   return buckets;
@@ -5499,7 +5563,7 @@ export function finalizeExamPaperStructuredContent(structuredContent, meta = {})
     base[examSectionKeys[i]] = cleanAndTrim(base[examSectionKeys[i]], counts[countKeys[i]]);
   }
 
-  if (isAiGeneratorSectionPadEnabled()) {
+  if (isAiGeneratorSectionPadEnabled() && meta.strictValidation !== true) {
     const scaffold = buildScaffoldExamQuestions(meta, base.blueprint);
     let qNum = 1;
     for (let i = 0; i < examSectionKeys.length; i += 1) {
@@ -5549,7 +5613,7 @@ export function finalizeExamPaperStructuredContent(structuredContent, meta = {})
     base.open_ended_rubric = `Level 4: Complete, accurate, well-explained; Level 3: Mostly correct; Level 2: Partial; Level 1: Minimal understanding of ${topic}.`;
   }
 
-  if (countExamPaperQuestions(base) < 3) {
+  if (countExamPaperQuestions(base) < 3 && meta.strictValidation !== true) {
     const scaffold = buildScaffoldExamQuestions(meta, base.blueprint);
     base = normalizeExamPaperStructuredContent({
       ...base,
@@ -8414,11 +8478,30 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
 
   const defaultContentType = CONTENT_TYPE_BY_TOOL_SLUG[slug] || getContentTypeDefault(slug);
   const extra = params.extraParams && typeof params.extraParams === 'object' ? params.extraParams : {};
+  const qualityTierSettings = resolveQualityTierSettings(
+    params.qualityTier || extra.qualityTier,
+    {
+      qualityTier: params.qualityTier || extra.qualityTier,
+      batchSize: Number(extra.batchSize) || Number(params.batchSize) || 0,
+    },
+  );
   const resolvedSubject = resolveLanguageSubjectForGeneration(
     params.subject,
     params.bookSubject || extra.bookSubject,
   );
-  const prompt = buildAiGeneratorStructuredPrompt(slug, { ...params, subject: resolvedSubject });
+  const useResponseSchema =
+    qualityTierSettings.useResponseSchema && isResponseSchemaEnabled(slug);
+  const promptParts = buildAiGeneratorPromptParts(slug, {
+    ...params,
+    subject: resolvedSubject,
+    useResponseSchema,
+  });
+  const responseSchema = useResponseSchema
+    ? buildGeminiResponseSchemaForTool(
+        getToolInformalSchema(slug),
+        promptParts.contentTypeDefault || defaultContentType,
+      )
+    : null;
   const pdfContext = String(params.pdfContext || '').trim();
   const historicalBlock = String(params.historicalPromptBlock || '').trim();
   const storyLanguageTail =
@@ -8429,8 +8512,8 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
     pdfContext && mustEnforceStoryPassageLanguageCompliance(resolvedSubject)
       ? `\nBOOK SOURCE LANGUAGE NOTE: Reference passages may be in English — you MUST still write ALL output string values in the required output language (translate/synthesize; never copy English into student-facing fields).`
       : '';
-  let basePrompt = pdfContext
-    ? `${prompt}${historicalBlock ? `\n\n${historicalBlock}` : ''}
+  const ragBlock = pdfContext
+    ? `${historicalBlock ? `\n\n${historicalBlock}` : ''}
 
 REFERENCE TEXTBOOK CONTENT (RAG — PRIMARY factual source for this generation):
 Use the passages below as the PRIMARY source. Follow textbook terminology, definitions, examples, formulae, and explanations.
@@ -8438,7 +8521,10 @@ Do not invent facts that contradict the book. Only use general knowledge when th
 Priority: (1) Uploaded Book  (2) Uploaded Notes  (3) Gemini knowledge.
 Synthesize into the tool schema above — do not paste blocks verbatim.${ragLanguageNote}
 ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
-    : `${prompt}${historicalBlock ? `\n\n${historicalBlock}` : ''}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`;
+    : `${historicalBlock ? `\n\n${historicalBlock}` : ''}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`.trim();
+
+  const baseUserPrompt = [promptParts.userPrompt, ragBlock].filter(Boolean).join('\n\n');
+  const systemPrompt = promptParts.systemPrompt;
   const generationVariant = Number(extra.generationVariant ?? extra.variantIndex);
   const isBatchVariant = Number.isFinite(generationVariant) && generationVariant > 0;
   const recoveryPass = extra.recoveryPass === true || params.recoveryPass === true;
@@ -8448,49 +8534,76 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
   });
   const batchModel = getAiGeneratorGeminiModel();
   const { getAiGeneratorMaxTokens } = await import('../utils/ai-generator-llm-budget.js');
-  const maxTokens = getAiGeneratorMaxTokens(slug);
+  const maxTokens = getAiGeneratorMaxTokens(slug, {
+    qualityTier: qualityTierSettings.tier,
+    skipUltraEconomyCaps: qualityTierSettings.skipUltraEconomyCaps === true,
+  });
   const flashLiteOnly = isAiGeneratorFlashLiteOnlyEnabled();
 
-  const batchEconomy = isBatchVariant && isAiGeneratorCostSaverEnabled();
-  const effectiveFlashLiteOnly = batchEconomy || flashLiteOnly;
+  const batchEconomy =
+    isBatchVariant &&
+    qualityTierSettings.tier === 'fast' &&
+    isAiGeneratorCostSaverEnabled();
+  const tierPrimaryModel = qualityTierSettings.primaryGeminiModel || batchModel;
+  const effectiveFlashLiteOnly =
+    typeof qualityTierSettings.flashLiteOnly === 'boolean'
+      ? qualityTierSettings.flashLiteOnly
+      : batchEconomy || flashLiteOnly;
+  const tierGeminiRetries = qualityTierSettings.geminiRetriesPerModel || 3;
   const languageSubjectEnforced = mustEnforceStoryPassageLanguageCompliance(resolvedSubject);
   const preferIndicFlash =
-    languageSubjectEnforced && isAiGeneratorLanguageSubjectFlashOverrideEnabled();
+    languageSubjectEnforced &&
+    isAiGeneratorLanguageSubjectFlashOverrideEnabled() &&
+    qualityTierSettings.tier === 'fast';
   const indicFlashModel = getAiGeneratorLanguageSubjectGeminiModel();
 
   const buildLlmOptions = (attempt) => {
+    const tierTemp = getTemperatureForTool(slug, qualityTierSettings);
+    const baseOpts = {
+      isBatchVariant,
+      maxTokens,
+      systemPrompt,
+      responseSchema,
+      maxAttemptsPerModel: tierGeminiRetries,
+      ...(qualityTierSettings.modelOverflow
+        ? { modelOverflow: qualityTierSettings.modelOverflow }
+        : {}),
+    };
     if (preferIndicFlash) {
       return {
-        isBatchVariant,
-        temperature: attempt === 1 ? 0.65 : 0.55,
+        ...baseOpts,
+        temperature: attempt === 1 ? Math.max(0.55, tierTemp - 0.15) : 0.55,
         primaryModel: indicFlashModel,
-        maxTokens,
-        flashLiteOnly: false,
+        flashLiteOnly: true,
       };
     }
-    const useFlash =
-      !effectiveFlashLiteOnly &&
+    const useFlashUpgrade =
+      effectiveFlashLiteOnly &&
       (upgradeToFlash ||
         shouldUpgradeFlashOnValidationAttempt(isBatchVariant, attempt, recoveryPass));
-    if (useFlash) {
+    if (useFlashUpgrade) {
       return {
-        isBatchVariant,
+        ...baseOpts,
         temperature: 0.55,
-        primaryModel: batchModel,
-        maxTokens,
-        flashLiteOnly: effectiveFlashLiteOnly,
+        primaryModel: tierPrimaryModel !== batchModel ? tierPrimaryModel : indicFlashModel,
+        flashLiteOnly: false,
       };
     }
     if (isBatchVariant) {
       return {
+        ...baseOpts,
         isBatchVariant: true,
-        temperature: 0.88,
-        primaryModel: batchModel,
-        maxTokens,
+        temperature: tierTemp,
+        primaryModel: tierPrimaryModel,
         flashLiteOnly: effectiveFlashLiteOnly,
       };
     }
-    return { maxTokens, primaryModel: batchModel, flashLiteOnly: effectiveFlashLiteOnly };
+    return {
+      ...baseOpts,
+      temperature: tierTemp,
+      primaryModel: tierPrimaryModel,
+      flashLiteOnly: effectiveFlashLiteOnly,
+    };
   };
 
   const isBookBatch = isBatchVariant && Boolean(extra.bookId || extra.bookGenerator);
@@ -8508,16 +8621,23 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
     batchOrchestrator: isBatchVariant,
     bookGenerator: isBookBatch,
     pdfContext: pdfContext || undefined,
+    qualityTier: qualityTierSettings.tier,
+    strictValidation: qualityTierSettings.strictValidation === true,
+    skipSectionPad: !qualityTierSettings.sectionPadEnabled,
     requireAllCanonicalFields:
-      !isBatchVariant ||
-      (!isAiGeneratorCostSaverEnabled() && !isAiGeneratorUltraEconomyEnabled() && !isBookBatch),
+      qualityTierSettings.tier === 'premium' ||
+      (!isBatchVariant && !isAiGeneratorCostSaverEnabled()),
   };
+  const isPremiumStrict = meta.strictValidation === true;
 
   let lastError = null;
   let lastValidationMessage = '';
 
-  let activePrompt = basePrompt;
-  const baseValidationAttempts = getAiGeneratorValidationMaxAttempts(isBatchVariant, recoveryPass);
+  let activeUserPrompt = baseUserPrompt;
+  const baseValidationAttempts = Math.max(
+    getAiGeneratorValidationMaxAttempts(isBatchVariant, recoveryPass),
+    qualityTierSettings.maxValidationAttempts,
+  );
   const isLanguageFlashcardBatch =
     isBatchVariant &&
     languageSubjectEnforced &&
@@ -8533,7 +8653,7 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
   for (let attempt = 1; attempt <= maxValidationAttempts; attempt += 1) {
     const llmOptions = buildLlmOptions(attempt);
     try {
-      const raw = await geminiService.generateStructuredContent(activePrompt, 'json', llmOptions);
+      const raw = await geminiService.generateStructuredContent(activeUserPrompt, 'json', llmOptions);
       let json;
       try {
         json = extractJsonObject(raw);
@@ -8542,7 +8662,7 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
           console.warn(
             `[AI Generator] Invalid JSON on attempt ${attempt}/${maxValidationAttempts} (${slug}); retrying with strict JSON instruction.`,
           );
-          activePrompt = `${basePrompt}
+          activeUserPrompt = `${baseUserPrompt}
 
 CRITICAL RETRY: Your previous reply was NOT valid JSON and could not be parsed.
 Return ONLY one valid JSON object. Rules:
@@ -8844,7 +8964,7 @@ Write all student-facing text in the required output language.`;
         if (slug === 'flashcard-generator' || slug === 'my-study-decks') {
           structuredContent = finalizeFlashcardDeckStructuredContent(structuredContent, meta, slug);
         }
-        if (isBatchVariant && isAiGeneratorSectionPadEnabled()) {
+        if (isBatchVariant && isAiGeneratorSectionPadEnabled() && !isPremiumStrict) {
           structuredContent = padAiGeneratorCanonicalSections(slug, structuredContent, meta);
           if (slug === 'worksheet-mcq-generator') {
             structuredContent = finalizeWorksheetStructuredContent(structuredContent, meta);
@@ -8859,7 +8979,10 @@ Write all student-facing text in the required output language.`;
           if (validation.normalizedStructuredContent) {
             structuredContent = validation.normalizedStructuredContent;
           }
-          if (!validation.valid && (isAiGeneratorCostSaverEnabled() || meta.bookGenerator)) {
+          if (
+            !validation.valid &&
+            (meta.bookGenerator || (isAiGeneratorCostSaverEnabled() && !isPremiumStrict))
+          ) {
             const blockBypass = shouldBlockCostSaverForStoryLanguage(
               slug,
               meta.subject,
@@ -8883,8 +9006,8 @@ Write all student-facing text in the required output language.`;
             : lastValidationMessage;
         if (attempt < maxValidationAttempts) {
           const languageHint = buildStoryPassageLanguageRetryHint(meta.subject || '');
-          if (isBatchVariant && isAiGeneratorCostSaverEnabled()) {
-            activePrompt = buildBatchEconomyRetryPrompt({
+          if (isBatchVariant && isAiGeneratorCostSaverEnabled() && !isPremiumStrict) {
+            activeUserPrompt = buildBatchEconomyRetryPrompt({
               slug,
               meta,
               attemptNum: attempt + 1,
@@ -8894,53 +9017,53 @@ Write all student-facing text in the required output language.`;
             });
             continue;
           }
-          activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): ${allFieldsHint} Return structuredContent with EVERY canonical field filled — no empty strings, no empty arrays.${languageHint ? ` ${languageHint}` : ''}`;
+          activeUserPrompt = `${baseUserPrompt}\n\nRETRY (attempt ${attempt + 1}): ${allFieldsHint} Return structuredContent with EVERY canonical field filled — no empty strings, no empty arrays.${languageHint ? ` ${languageHint}` : ''}`;
           if (slug === 'mock-test-builder') {
-            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. You MUST return structuredContent with mock_test_title and at least 8 questions in section_a..section_e (each with "question" text). Do not return only metadata without question arrays.`;
+            activeUserPrompt = `${baseUserPrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. You MUST return structuredContent with mock_test_title and at least 8 questions in section_a..section_e (each with "question" text). Do not return only metadata without question arrays.`;
           } else if (slug === 'smart-qa-practice-generator') {
             const target = Number(meta?.questionCount) > 0 ? Number(meta.questionCount) : 12;
             const missing = getPracticeQaMissingSections(structuredContent);
             const missingHint = missing.length
               ? ` You MUST add questions to: ${missing.join('; ')}.`
               : '';
-            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return structuredContent with title and sections[] — all seven section names exactly (Section A: MCQs … Section G: HOTS / Analytical Questions), each with at least one question. Section C MUST be type "MATCH" with a match-the-following prompt and options as Column A / Column B pairs (e.g. "1. Observation | A. Step before hypothesis"). Include short answers in Section E and application/case-based in Section F. Do NOT duplicate questions in sections[] and questions[]. Total at least ${target} questions.`;
+            activeUserPrompt = `${baseUserPrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return structuredContent with title and sections[] — all seven section names exactly (Section A: MCQs … Section G: HOTS / Analytical Questions), each with at least one question. Section C MUST be type "MATCH" with a match-the-following prompt and options as Column A / Column B pairs (e.g. "1. Observation | A. Step before hypothesis"). Include short answers in Section E and application/case-based in Section F. Do NOT duplicate questions in sections[] and questions[]. Total at least ${target} questions.`;
           } else if (slug === 'worksheet-mcq-generator') {
             const wsTarget = Number(meta?.questionCount) > 0 ? Number(meta.questionCount) : 10;
-            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. Return structuredContent with title, learning_objectives[], instructions, sections[] (Section A: MCQs through Section E: Competency / Real-life Application Questions). Include at least ${wsTarget} unique questions total across sections A–E — no duplicate question stems. Put questions ONLY in sections[].questions (not also in top-level questions[] or section_a_mcqs). Each MCQ needs four labeled options A)–D) and an answer.`;
+            activeUserPrompt = `${baseUserPrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. Return structuredContent with title, learning_objectives[], instructions, sections[] (Section A: MCQs through Section E: Competency / Real-life Application Questions). Include at least ${wsTarget} unique questions total across sections A–E — no duplicate question stems. Put questions ONLY in sections[].questions (not also in top-level questions[] or section_a_mcqs). Each MCQ needs four labeled options A)–D) and an answer.`;
           } else if (slug === 'chapter-summary-creator') {
-            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. Return Chapter Summary Creator JSON only — use chapter_summary_title, chapter_overview, important_concepts[] (min 3), formulae[] (min 3: name + formula where formula is an equation OR a must-know rule/fact sentence), quick_revision_notes[] (min 3), practice_recall_questions[] (min 3). Do NOT use Smart Study Guide fields (study_guide_title, prior_knowledge, key_concepts_explained, practice_questions with MCQ options).`;
+            activeUserPrompt = `${baseUserPrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. Return Chapter Summary Creator JSON only — use chapter_summary_title, chapter_overview, important_concepts[] (min 3), formulae[] (min 3: name + formula where formula is an equation OR a must-know rule/fact sentence), quick_revision_notes[] (min 3), practice_recall_questions[] (min 3). Do NOT use Smart Study Guide fields (study_guide_title, prior_knowledge, key_concepts_explained, practice_questions with MCQ options).`;
           } else if (slug === 'key-points-formula-extractor') {
-            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. Return Key Points JSON with topic_title, important_concepts[] (min 3), essential_definitions[], formulae[] (min 3 — name + formula; formula may be an equation OR a must-know rule), keywords_terminologies[], must_remember_facts[], real_life_connections[], frequently_asked_exam_points[], mnemonics_memory_tricks[], one_minute_revision_summary. Never leave formulae[] empty.`;
+            activeUserPrompt = `${baseUserPrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. Return Key Points JSON with topic_title, important_concepts[] (min 3), essential_definitions[], formulae[] (min 3 — name + formula; formula may be an equation OR a must-know rule), keywords_terminologies[], must_remember_facts[], real_life_connections[], frequently_asked_exam_points[], mnemonics_memory_tricks[], one_minute_revision_summary. Never leave formulae[] empty.`;
           } else if (slug === '__removed-rubrics-tool__') {
             const missing = getRubricMissingSections(structuredContent);
             const missingHint = missing.length ? ` Missing: ${missing.join('; ')}.` : '';
-            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return ALL 10 rubric sections. criteria[] MUST have at least 3 objects; each MUST include name, excellent, good, satisfactory, needs_improvement (non-empty strings). Include grading_criteria, actionable_suggestions, and next_step_remedial_enrichment.`;
+            activeUserPrompt = `${baseUserPrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return ALL 10 rubric sections. criteria[] MUST have at least 3 objects; each MUST include name, excellent, good, satisfactory, needs_improvement (non-empty strings). Include grading_criteria, actionable_suggestions, and next_step_remedial_enrichment.`;
           } else if (slug === 'story-passage-creator') {
             const missing = getStoryPassageMissingSections(structuredContent);
             const missingHint = missing.length ? ` Missing: ${missing.join('; ')}.` : '';
             const languageHint = buildStoryPassageLanguageRetryHint(meta.subject || '');
-            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return ALL 19 Story and Passage Creator fields with REAL content in the output language — never section headings like "Passage / Story for … in Hindi." passage MUST be a complete story (120+ words). Include at least 2 real questions in read_and_recall_questions, think_and_infer_questions, and apply_and_connect_questions.${languageHint ? ` ${languageHint}` : ''}`;
+            activeUserPrompt = `${baseUserPrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return ALL 19 Story and Passage Creator fields with REAL content in the output language — never section headings like "Passage / Story for … in Hindi." passage MUST be a complete story (120+ words). Include at least 2 real questions in read_and_recall_questions, think_and_infer_questions, and apply_and_connect_questions.${languageHint ? ` ${languageHint}` : ''}`;
           } else if (slug === 'reading-practice-room') {
             const missing = getReadingPracticeMissingSections(structuredContent);
             const missingHint = missing.length ? ` Missing: ${missing.join('; ')}.` : '';
             const languageHint = buildStoryPassageLanguageRetryHint(meta.subject || '');
-            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return ALL 13 Reading Practice Room fields with REAL content in the output language — never section headings like "Passage / Story for … in Hindi." passage MUST be a full reading passage (120+ words). Include at least 2 real questions in read_and_recall_questions, think_and_infer_questions, and apply_and_connect_questions. Title must be a creative passage name, not "Reading Practice".${languageHint ? ` ${languageHint}` : ''}`;
+            activeUserPrompt = `${baseUserPrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return ALL 13 Reading Practice Room fields with REAL content in the output language — never section headings like "Passage / Story for … in Hindi." passage MUST be a full reading passage (120+ words). Include at least 2 real questions in read_and_recall_questions, think_and_infer_questions, and apply_and_connect_questions. Title must be a creative passage name, not "Reading Practice".${languageHint ? ` ${languageHint}` : ''}`;
           } else if (slug === 'flashcard-generator' || slug === 'my-study-decks') {
             const missing = getFlashcardDeckMissingSections(structuredContent, slug);
             const missingHint = missing.length ? ` Missing: ${missing.join('; ')}.` : '';
             const targetCards = Number(meta?.cardCount) > 0 ? Number(meta.cardCount) : 10;
             const languageHint = buildStoryPassageLanguageRetryHint(meta.subject || '');
-            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return structuredContent with cards[] array (min ${targetCards} items). EVERY card MUST use "front" and "back" keys with non-empty strings — not term/definition only. Include difficulty_tag_for_each_card and memory_hook_quick_tip on each card. Write prior_knowledge_required, learning_objectives[], ncf_competency_alignment, and ALL card text in the output language — not English.${languageHint ? ` ${languageHint}` : ''}`;
+            activeUserPrompt = `${baseUserPrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return structuredContent with cards[] array (min ${targetCards} items). EVERY card MUST use "front" and "back" keys with non-empty strings — not term/definition only. Include difficulty_tag_for_each_card and memory_hook_quick_tip on each card. Write prior_knowledge_required, learning_objectives[], ncf_competency_alignment, and ALL card text in the output language — not English.${languageHint ? ` ${languageHint}` : ''}`;
           } else if (slug === 'daily-class-plan-maker') {
             const missing = getDailyClassPlanMissingSections(structuredContent);
             const missingHint = missing.length ? ` Missing: ${missing.join('; ')}.` : '';
-            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return Daily Class Plan JSON with ALL 9 sections (day_period_topic_breakup, objectives[], teaching_methods[], classroom_activity[], exit_ticket, differentiated_support, homework_followup, teaching_aids[], teacher_reflection_notes). This is NOT a 13-section lesson planner — do not use lesson_name, introduction_warmup, or teaching_strategy as primary fields.`;
+            activeUserPrompt = `${baseUserPrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return Daily Class Plan JSON with ALL 9 sections (day_period_topic_breakup, objectives[], teaching_methods[], classroom_activity[], exit_ticket, differentiated_support, homework_followup, teaching_aids[], teacher_reflection_notes). This is NOT a 13-section lesson planner — do not use lesson_name, introduction_warmup, or teaching_strategy as primary fields.`;
           } else if (slug === 'exam-question-paper-generator') {
             const missing = getExamPaperMissingSections(structuredContent, meta);
             const missingHint = missing.length ? ` Missing: ${missing.join('; ')}.` : '';
             const examTarget =
               Number(meta?.questionCount) > 0 ? Number(meta.questionCount) : 12;
-            activePrompt = `${basePrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return Exam Question Paper JSON with ALL 11 sections. Use paper_title, instructions, blueprint, section_a..section_e (each an array of question objects with question, options for MCQs, answer, marks). Include internal_choices, answer_key, marking_scheme, open_ended_rubric. This is NOT Mock Test Builder — do not use mock_test_title, test_purpose_subtopic_link, or ncf_competency_alignment. Minimum ${examTarget} questions across sections.`;
+            activeUserPrompt = `${baseUserPrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return Exam Question Paper JSON with ALL 11 sections. Use paper_title, instructions, blueprint, section_a..section_e (each an array of question objects with question, options for MCQs, answer, marks). Include internal_choices, answer_key, marking_scheme, open_ended_rubric. This is NOT Mock Test Builder — do not use mock_test_title, test_purpose_subtopic_link, or ncf_competency_alignment. Minimum ${examTarget} questions across sections.`;
           }
           continue;
         }
@@ -8990,7 +9113,7 @@ Write all student-facing text in the required output language.`;
         }
       }
 
-      if (isAiGeneratorSectionPadEnabled()) {
+      if (isAiGeneratorSectionPadEnabled() && !meta.strictValidation) {
         if (slug === 'flashcard-generator' || slug === 'my-study-decks') {
           structuredContent = finalizeFlashcardDeckStructuredContent(structuredContent, meta, slug);
         }
@@ -9007,6 +9130,18 @@ Write all student-facing text in the required output language.`;
       structuredContent = dedupeIntraRecordQuestions(slug, structuredContent);
       structuredContent = renumberIntraRecordQuestions(slug, structuredContent);
 
+      const postContentValidation = runPostGenerationContentValidation(slug, structuredContent, {
+        checkHots: qualityTierSettings.hotsHedgingRegen,
+      });
+      if (!postContentValidation.valid) {
+        lastValidationMessage = postContentValidation.errors.join('; ');
+        if (attempt < maxValidationAttempts) {
+          activeUserPrompt = `${baseUserPrompt}\n\nRETRY (attempt ${attempt + 1}): ${lastValidationMessage}`;
+          continue;
+        }
+        throw new Error(lastValidationMessage);
+      }
+
       if (languageSubjectEnforced) {
         structuredContent = enforceIndicLanguageStructuredContent(slug, structuredContent, meta);
       }
@@ -9017,6 +9152,11 @@ Write all student-facing text in the required output language.`;
       });
       if (!finalQuality.valid) {
         const finalQualityMessage = finalQuality.errors.join('; ');
+        if (attempt < maxValidationAttempts) {
+          lastValidationMessage = finalQualityMessage;
+          activeUserPrompt = `${baseUserPrompt}\n\nRETRY (attempt ${attempt + 1}): Quality gate failed: ${finalQualityMessage}. Return complete, non-placeholder content in every field.`;
+          continue;
+        }
         const blockStoryLanguageSave = shouldBlockCostSaverForStoryLanguage(
           slug,
           meta.subject,
@@ -9025,6 +9165,8 @@ Write all student-facing text in the required output language.`;
         );
         if (
           isBatchVariant &&
+          !isPremiumStrict &&
+          !meta.skipSectionPad &&
           (isAiGeneratorCostSaverEnabled() || isAiGeneratorSectionPadEnabled() || meta.bookGenerator) &&
           !blockStoryLanguageSave
         ) {
@@ -9056,7 +9198,7 @@ Write all student-facing text in the required output language.`;
       }
       const msg = String(error?.message || error || '');
       if (/invalid JSON/i.test(msg) && attempt < maxValidationAttempts) {
-        activePrompt = `${basePrompt}
+        activeUserPrompt = `${baseUserPrompt}
 
 CRITICAL RETRY: Previous output was invalid JSON. Return ONLY one valid JSON object with escaped strings and no markdown.`;
         continue;
