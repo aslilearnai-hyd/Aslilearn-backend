@@ -213,6 +213,9 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
     params.qualityTier || params.extraParams?.qualityTier,
     { batchSize },
   );
+  console.log(
+    `[book-generator] qualityTier=${qualityTierSettings.tier} primary=${qualityTierSettings.primaryGeminiModel} flashLiteOnly=${qualityTierSettings.flashLiteOnly}`,
+  );
   const useBookKnowledge = params.useBookKnowledge !== false;
 
   const scope = {

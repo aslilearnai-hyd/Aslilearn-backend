@@ -120,6 +120,7 @@ function defaultResilienceTail() {
 
 function mergeGeminiModelChain(primaryModel, envFallbackCsv) {
   let primary = String(primaryModel || '').trim();
+  primary = resolveAllowedGeminiModel(primary);
   if (isRetiredOrUnsupportedGeminiModel(primary)) {
     const replacement = GEMINI_LITE_MODEL;
     console.warn(
@@ -131,6 +132,7 @@ function mergeGeminiModelChain(primaryModel, envFallbackCsv) {
     .split(',')
     .map((m) => m.trim())
     .filter(Boolean)
+    .map((m) => resolveAllowedGeminiModel(m))
     .filter((m) => !isRetiredOrUnsupportedGeminiModel(m));
   const merged = [primary, ...fromEnv, ...defaultResilienceTail()];
   const seen = new Set();
@@ -431,19 +433,32 @@ async function callChatCompletions({
   const contextTokens = Number(process.env.LLM_CONTEXT_TOKENS) || 0;
   const callGeminiFallback = async (normalizedMessages, jsonMode = preferJson) => {
     const { apiKey, modelChain: defaultChain } = getGeminiFallbackConfig();
-    const liteModel = String(process.env.AI_GENERATOR_GEMINI_MODEL || GEMINI_LITE_MODEL).trim();
+    const liteModel = resolveAllowedGeminiModel(
+      process.env.AI_GENERATOR_GEMINI_MODEL || GEMINI_LITE_MODEL,
+    );
+    const resolvedPrimary = resolveAllowedGeminiModel(primaryModel || liteModel);
+    const resolvedOverflow = String(modelOverflow || '')
+      .split(',')
+      .map((m) => resolveAllowedGeminiModel(m.trim()))
+      .filter(Boolean)
+      .join(',');
     const modelChain = flashLiteOnly
       ? getFlashLiteModelChain(liteModel, isBatchVariant)
       : reorderModelChainForCooldown(
-          String(primaryModel || '').trim()
+          String(resolvedPrimary || '').trim()
             ? mergeGeminiModelChain(
-                primaryModel,
-                String(modelOverflow || '').trim() || defaultChain.join(','),
+                resolvedPrimary,
+                String(resolvedOverflow || '').trim() || defaultChain.join(','),
               )
             : defaultChain,
         );
     if (!apiKey) {
       throw new Error('Gemini API key is missing');
+    }
+    if (!flashLiteOnly && String(resolvedPrimary || '').includes('pro')) {
+      console.log(
+        `[Gemini] Premium path primary=${resolvedPrimary} chain=[${modelChain.join(', ')}]`,
+      );
     }
     const genAI = new GoogleGenerativeAI(apiKey);
 

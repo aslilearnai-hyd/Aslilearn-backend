@@ -55,9 +55,9 @@ export function resolveQualityTierSettings(tierInput, overrides = {}) {
     hotsHedgingRegen: false,
     primaryGeminiModel: resolvePremiumGeminiModel(),
     modelOverflow: getPremiumGeminiFallbackCsv(),
-    flashLiteOnly: true,
-    batchConcurrency: 3,
-    slotStaggerMs: 0,
+    flashLiteOnly: false,
+    batchConcurrency: 2,
+    slotStaggerMs: 150,
     skipUltraEconomyCaps: true,
   };
 
@@ -104,17 +104,17 @@ export function resolveQualityTierSettings(tierInput, overrides = {}) {
     };
   }
 
-  // Premium — great quality: 3.1 flash-lite only, LLM section repair (no 3.5 escalation)
+  // Premium — Gemini 3.1 Pro (+ Flash-Lite overflow), strict validation
   if (isAiGeneratorGreatQualityEnabled()) {
     return {
       ...base,
-      primaryGeminiModel: GEMINI_LITE_MODEL,
-      modelOverflow: GEMINI_LITE_MODEL,
-      flashLiteOnly: true,
+      primaryGeminiModel: resolvePremiumGeminiModel(),
+      modelOverflow: getPremiumGeminiFallbackCsv(),
+      flashLiteOnly: false,
       sectionPadEnabled: false,
       maxValidationAttempts: 4,
       maxSlotAttempts: 3,
-      geminiRetriesPerModel: 4,
+      geminiRetriesPerModel: 3,
       hotsHedgingRegen: false,
       batchConcurrency: smallBatch ? 2 : 2,
       slotStaggerMs: smallBatch ? 150 : 250,
@@ -123,8 +123,8 @@ export function resolveQualityTierSettings(tierInput, overrides = {}) {
 
   return {
     ...base,
-    batchConcurrency: smallBatch ? 3 : 3,
-    slotStaggerMs: 0,
+    batchConcurrency: smallBatch ? 2 : 2,
+    slotStaggerMs: smallBatch ? 150 : 250,
     modelOverflow: getPremiumGeminiFallbackCsv(),
   };
 }

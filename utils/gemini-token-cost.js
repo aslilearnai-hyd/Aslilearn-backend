@@ -18,15 +18,18 @@ export function normalizeGeminiModelLabel(modelName = '') {
   const raw = String(modelName || '').trim();
   if (!raw) return '';
   const lower = raw.toLowerCase();
+  if (lower.includes('pro')) {
+    return lower.includes('3.1') ? 'gemini-3.1-pro-preview' : raw;
+  }
   if (lower.includes('flash-lite') || lower.includes('flash_lite')) {
     return 'gemini-3.1-flash-lite';
   }
   if (lower.includes('3.5')) return 'gemini-3.5-flash';
   if (lower.includes('3.1') && lower.includes('flash')) return 'gemini-3.1-flash-lite';
   if (lower.startsWith('gemini-1.5') || lower.startsWith('gemini-1.0') || lower.startsWith('gemini-2.5')) {
-    return 'gemini-3.5-flash (legacy env model)';
+    return 'gemini-3.1-flash-lite (legacy env model)';
   }
-  if (lower.includes('flash')) return 'gemini-3.5-flash';
+  if (lower.includes('flash')) return 'gemini-3.1-flash-lite';
   return raw;
 }
 
