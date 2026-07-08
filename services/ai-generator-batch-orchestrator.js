@@ -213,6 +213,9 @@ export async function generateBatchAndSave(params, opts = {}) {
     params.qualityTier || params.extraParams?.qualityTier,
     { batchSize },
   );
+  console.log(
+    `[AI Generator batch] qualityTier=${qualityTierSettings.tier} primary=${qualityTierSettings.primaryGeminiModel} flashLiteOnly=${qualityTierSettings.flashLiteOnly} overflow=${qualityTierSettings.modelOverflow}`,
+  );
 
   const forceGenerate =
 
@@ -696,6 +699,15 @@ export async function generateBatchAndSave(params, opts = {}) {
       tokenUsage = endTokenUsageSession();
 
       cost = computeGeminiCostFromTokenUsage(tokenUsage);
+      if (cost && qualityTierSettings.tier === 'premium') {
+        const actual = String(cost.model || '');
+        const target = String(qualityTierSettings.primaryGeminiModel || '');
+        if (target && !actual.toLowerCase().includes('pro')) {
+          console.warn(
+            `[AI Generator batch] Premium target was ${target} but dominant call model was ${actual || 'unknown'} (overflow/fallback).`,
+          );
+        }
+      }
       if (cost && savedRecords.length > 0) {
         const shareCount = savedRecords.length;
         cost = {

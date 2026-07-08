@@ -9550,11 +9550,11 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
     isBatchVariant &&
     qualityTierSettings.tier === 'fast' &&
     isAiGeneratorCostSaverEnabled();
+  // Tier flag wins — Premium can use Pro even when global FLASH_LITE_ONLY=true.
   const effectiveFlashLiteOnly =
-    flashLiteOnly ||
-    (typeof qualityTierSettings.flashLiteOnly === 'boolean'
+    typeof qualityTierSettings.flashLiteOnly === 'boolean'
       ? qualityTierSettings.flashLiteOnly
-      : batchEconomy);
+      : flashLiteOnly || batchEconomy;
   const tierPrimaryModel = effectiveFlashLiteOnly
     ? liteModel
     : resolveAllowedGeminiModel(qualityTierSettings.primaryGeminiModel || batchModel);
