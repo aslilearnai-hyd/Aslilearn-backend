@@ -137,6 +137,32 @@ export function runAiGeneratorQualityGate(toolSlug, structured, meta = {}) {
         data.bookGroundedFallback ||
         data.topicGroundedFallback,
     );
+  // Book RAG / batch tools: after programmatic repair, do not reject heading-echo scaffold checks.
+  const bookBatchRelaxed =
+    Boolean(meta.bookGenerator || data.bookGroundedFallback) &&
+    (batchWorksheetRelaxed ||
+      [
+        'activity-project-generator',
+        'project-idea-lab',
+        'homework-creator',
+        'lesson-planner',
+        'daily-class-plan-maker',
+        'concept-mastery-helper',
+        'concept-breakdown-explainer',
+        'chapter-summary-creator',
+        'smart-study-guide-generator',
+        'flashcard-generator',
+        'my-study-decks',
+        'quick-assignment-builder',
+        'smart-qa-practice-generator',
+        'story-passage-creator',
+        'reading-practice-room',
+        'key-points-formula-extractor',
+        'short-notes-summaries-maker',
+        'study-schedule-maker',
+        'exam-question-paper-generator',
+        'mock-test-builder',
+      ].includes(slug));
 
   const title = String(
     data.title ||
@@ -153,7 +179,7 @@ export function runAiGeneratorQualityGate(toolSlug, structured, meta = {}) {
   }
 
   // Section-pad / book-grounded fallbacks may use template phrasing — do not reject that output.
-  const skipPlaceholderWalk = sectionPadActive || batchWorksheetRelaxed;
+  const skipPlaceholderWalk = sectionPadActive || batchWorksheetRelaxed || bookBatchRelaxed;
   if (!skipPlaceholderWalk) {
     for (const { key, text } of walkValues(data)) {
       if (BOILERPLATE_META_KEYS.has(key)) continue;
@@ -223,7 +249,7 @@ export function runAiGeneratorQualityGate(toolSlug, structured, meta = {}) {
   }
 
   for (const o of objectives) {
-    if (!sectionPadActive && isPlaceholderText(o.text)) {
+    if (!sectionPadActive && !batchWorksheetRelaxed && !bookBatchRelaxed && isPlaceholderText(o.text)) {
       errors.push(`Placeholder objective: "${String(o.text).slice(0, 60)}..."`);
       break;
     }

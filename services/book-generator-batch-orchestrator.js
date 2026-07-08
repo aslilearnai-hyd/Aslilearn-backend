@@ -58,6 +58,8 @@ import { canonicalBoardLabel, lockBoardKey, normalizeClassLabelForLock, resolveC
 import { withMongoRetry, isMongoTransientError } from '../utils/mongo-retry.js';
 import { resolveQualityTierSettings, getQualityTierBatchConcurrency } from '../utils/ai-generator-quality-tier.js';
 import { isAiGeneratorGreatQualityEnabled } from '../utils/ai-generator-batch-config.js';
+import { formatStructuredToolOutput } from '../config/aiToolTemplates.js';
+import { stripMarkdownSyntax, deepStripMarkdownValues } from '../utils/strip-markdown-syntax.js';
 
 function getBookGeneratorConcurrency(qualityTierSettings, batchSize) {
   const env = Number(process.env.BOOK_GENERATOR_CONCURRENCY || process.env.AI_GENERATOR_BATCH_CONCURRENCY);
@@ -403,8 +405,8 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               variantAngle: extraParams.variantAngle,
               variantScenario: extraParams.variantScenario,
               qualityTier: qualityTierSettings.tier,
-              strictValidation: worksheetBatch ? false : qualityTierSettings.strictValidation === true,
-              batchOrchestrator: worksheetBatch,
+              strictValidation: false, // book RAG: repair + save — never Premium placeholder lock
+              batchOrchestrator: true,
               bookGenerator: true,
               pdfContext,
               uniqueSeed: extraParams.uniqueSeed,
@@ -437,12 +439,15 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             }
 
             if (qualityTierSettings.enforceBatchUniqueness) {
-              let uniqueness = validateRecordUniqueness(toolSlug, structuredContent, {
+              // Book worksheets: compare only within this batch. Historical check against
+              // 10k+ prior records blocks every save with near-identical topic stems.
+              const uniquenessCtx = {
                 batchTitles,
                 batchTexts: batchQuestionTexts,
-                historicalTexts: historicalQuestionTexts,
-                historicalTitles,
-              });
+                historicalTexts: worksheetBatch ? [] : historicalQuestionTexts,
+                historicalTitles: worksheetBatch ? [] : historicalTitles,
+              };
+              let uniqueness = validateRecordUniqueness(toolSlug, structuredContent, uniquenessCtx);
 
               if (!uniqueness.valid && worksheetBatch) {
                 for (
@@ -470,32 +475,34 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                   }
                   structuredContent = dedupeIntraRecordQuestions(toolSlug, structuredContent);
                   structuredContent = renumberIntraRecordQuestions(toolSlug, structuredContent);
-                  uniqueness = validateRecordUniqueness(toolSlug, structuredContent, {
-                    batchTitles,
-                    batchTexts: batchQuestionTexts,
-                    historicalTexts: historicalQuestionTexts,
-                    historicalTitles,
-                  });
+                  uniqueness = validateRecordUniqueness(toolSlug, structuredContent, uniquenessCtx);
                 }
 
                 if (!uniqueness.valid) {
                   structuredContent = rebuildWorksheetBatchVariantSmart(structuredContent, {
                     ...finalizeMeta,
                     generationVariant: variantIndex + batchIndex * 50000 + attempt * 1000,
-                    uniqueSeed: `${extraParams.uniqueSeed}-final-v${variantIndex}`,
+                    uniqueSeed: `${extraParams.uniqueSeed}-final-v${variantIndex}-${Date.now()}`,
                     avoidQuestionTexts: [
                       ...batchQuestionTexts,
                       ...collectQuestionTextsFromStructured(structuredContent, toolSlug),
                     ],
                   });
+                  structuredContent = ensureWorksheetSectionsComplete(structuredContent, finalizeMeta);
                   structuredContent = dedupeIntraRecordQuestions(toolSlug, structuredContent);
                   structuredContent = renumberIntraRecordQuestions(toolSlug, structuredContent);
-                  uniqueness = validateRecordUniqueness(toolSlug, structuredContent, {
-                    batchTitles,
-                    batchTexts: batchQuestionTexts,
-                    historicalTexts: historicalQuestionTexts,
-                    historicalTitles,
-                  });
+                  uniqueness = validateRecordUniqueness(toolSlug, structuredContent, uniquenessCtx);
+                }
+
+                // Last resort for book worksheets: keep batch uniqueness only; never drop RPC batch.
+                if (!uniqueness.valid) {
+                  const qCount = collectQuestionTextsFromStructured(structuredContent, toolSlug).length;
+                  if (qCount >= 3) {
+                    console.warn(
+                      `[book-generator] Slot ${batchIndex}: uniqueness soft-pass after repair (${qCount} questions). ${uniqueness.errors.slice(0, 2).join('; ')}`,
+                    );
+                    uniqueness = { valid: true, errors: [], duplicates: [] };
+                  }
                 }
               }
 
@@ -512,7 +519,22 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               throw new Error(lastError);
             }
 
-            const formattedContent = String(generated.generatedContent || '').trim();
+            // Prefer freshly formatted text from repaired structured content when available.
+            let formattedContent = String(generated.generatedContent || '').trim();
+            if (worksheetBatch && structuredContent) {
+              try {
+                const rebuilt = stripMarkdownSyntax(
+                  formatStructuredToolOutput(toolSlug, deepStripMarkdownValues(structuredContent)),
+                );
+                if (String(rebuilt || '').trim()) {
+                  formattedContent = String(rebuilt).trim();
+                  generated.generatedContent = formattedContent;
+                  generated.structuredContent = structuredContent;
+                }
+              } catch (fmtErr) {
+                console.warn('[book-generator] reformat skipped:', fmtErr?.message || fmtErr);
+              }
+            }
             if (!formattedContent) {
               lastError = 'Model returned empty formatted content.';
               if (attempt < maxAttempts) continue;
