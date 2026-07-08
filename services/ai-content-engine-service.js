@@ -17,6 +17,12 @@ import {
 } from '../config/aiToolTemplates.js';
 import { splitMergedActivityTailSections } from './activity-section-headers.js';
 import { buildPdfRagContextFromText } from './pdf-rag-service.js';
+import {
+  buildCurriculumContextPromptBlock,
+  isAssessmentToolSlug,
+  isExamScaffoldPaddingAllowed,
+} from './curriculum-context-service.js';
+import { validateExamPaperPipeline } from './exam-paper-pipeline-validator.js';
 import { cleanActivityTitleForStorage } from './activity-title-utils.js';
 import {
   resolveStudyGuideDisplayTitle,
@@ -42,6 +48,7 @@ import {
   isAiGeneratorSectionPadEnabled,
   isAiGeneratorUltraEconomyEnabled,
   isAiGeneratorGreatQualityEnabled,
+  isAiGeneratorCompleteOnlySaveEnabled,
   shouldUpgradeFlashOnValidationAttempt,
   shouldUseFlashForAiGeneratorRun,
 } from '../utils/ai-generator-batch-config.js';
@@ -77,6 +84,10 @@ import {
   buildStoryPassageLanguagePromptTail,
   textMatchesStoryPassageScript,
 } from '../utils/story-passage-subject.js';
+import {
+  buildPromptEngineRewritePrompt,
+  isPromptEngineEnabled,
+} from '../prompts/registry.js';
 import {
   dedupeIntraRecordQuestions,
   renumberIntraRecordQuestions,
@@ -6544,7 +6555,7 @@ export function finalizeExamPaperStructuredContent(structuredContent, meta = {})
     base[examSectionKeys[i]] = cleanAndTrim(base[examSectionKeys[i]], counts[countKeys[i]]);
   }
 
-  if (isAiGeneratorSectionPadEnabled() && meta.strictValidation !== true) {
+  if (isExamScaffoldPaddingAllowed() && isAiGeneratorSectionPadEnabled() && meta.strictValidation !== true) {
     const scaffold = buildScaffoldExamQuestions(meta, base.blueprint);
     let qNum = 1;
     for (let i = 0; i < examSectionKeys.length; i += 1) {
@@ -6594,7 +6605,7 @@ export function finalizeExamPaperStructuredContent(structuredContent, meta = {})
     base.open_ended_rubric = `Level 4: Complete, accurate, well-explained; Level 3: Mostly correct; Level 2: Partial; Level 1: Minimal understanding of ${topic}.`;
   }
 
-  if (countExamPaperQuestions(base) < 3 && meta.strictValidation !== true) {
+  if (isExamScaffoldPaddingAllowed() && countExamPaperQuestions(base) < 3 && meta.strictValidation !== true) {
     const scaffold = buildScaffoldExamQuestions(meta, base.blueprint);
     base = normalizeExamPaperStructuredContent({
       ...base,
@@ -9507,7 +9518,25 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
         promptParts.contentTypeDefault || defaultContentType,
       )
     : null;
-  const pdfContext = String(params.pdfContext || '').trim();
+  const pdfContextParam = String(params.pdfContext || '').trim();
+  let pdfContext = pdfContextParam;
+  let curriculumSources = [];
+
+  if (!pdfContext && isAssessmentToolSlug(slug)) {
+    const curriculumBlock = await buildCurriculumContextPromptBlock({
+      board: params.board,
+      classLabel: params.classLabel || params.gradeLevel,
+      subject: resolvedSubject,
+      topic: params.topic,
+      subTopic: params.subTopic || params.subtopic,
+      toolSlug: slug,
+    });
+    if (curriculumBlock) {
+      pdfContext = curriculumBlock;
+      curriculumSources = ['curriculum-resolver'];
+    }
+  }
+
   const historicalBlock = String(params.historicalPromptBlock || '').trim();
   const storyLanguageTail =
     mustEnforceStoryPassageLanguageCompliance(resolvedSubject)
@@ -9628,6 +9657,7 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
     batchOrchestrator: isBatchVariant,
     bookGenerator: isBookBatch,
     pdfContext: pdfContext || undefined,
+    curriculumSources: curriculumSources.length ? curriculumSources : undefined,
     uniqueSeed: String(extra.uniqueSeed || extra.generationVariant || ''),
     qualityTier: qualityTierSettings.tier,
     // Book RAG batches must save after repair — never burn tokens on strict placeholder loops.
@@ -9987,6 +10017,61 @@ Write all student-facing text in the required output language.`;
         }
       }
 
+      if (
+        validation.valid &&
+        (slug === 'exam-question-paper-generator' || slug === 'mock-test-builder')
+      ) {
+        const examPipeline = validateExamPaperPipeline(
+          {
+            subject: resolvedSubject || meta.subject,
+            subtopic: meta.subTopic || meta.subtopic || meta.topic,
+            structured: structuredContent,
+          },
+          { blockSave: true },
+        );
+        if (!examPipeline.valid && (examPipeline.hardErrors || []).length > 0) {
+          validation = {
+            valid: false,
+            message:
+              (examPipeline.hardErrors || examPipeline.errors).join('; ') ||
+              'Exam paper failed subject-accuracy and quality pipeline.',
+            missingSections: validation.missingSections || [],
+          };
+        } else if ((examPipeline.warnings || []).length > 0) {
+          structuredContent = {
+            ...structuredContent,
+            _qualityWarnings: examPipeline.warnings,
+          };
+        }
+      }
+
+      if (
+        !validation.valid &&
+        slug === 'exam-question-paper-generator' &&
+        Array.isArray(validation.missingSections) &&
+        validation.missingSections.length > 0
+      ) {
+        const repairedExam = await repairMissingSectionsViaLlm(
+          slug,
+          structuredContent,
+          validation.missingSections,
+          meta,
+          historicalBlock,
+        );
+        validation = validateToolSpecificStructuredContent(
+          slug,
+          repairedExam,
+          contentType,
+          validationSourceText,
+          meta,
+        );
+        if (validation.normalizedStructuredContent) {
+          structuredContent = validation.normalizedStructuredContent;
+        } else {
+          structuredContent = repairedExam;
+        }
+      }
+
       if (!validation.valid) {
         if (slug === 'flashcard-generator' || slug === 'my-study-decks') {
           structuredContent = finalizeFlashcardDeckStructuredContent(structuredContent, meta, slug);
@@ -10007,7 +10092,12 @@ Write all student-facing text in the required output language.`;
             structuredContent = validation.normalizedStructuredContent;
           }
         }
-        if (isBatchVariant && isAiGeneratorSectionPadEnabled() && !isPremiumStrict) {
+        if (
+          isBatchVariant &&
+          isAiGeneratorSectionPadEnabled() &&
+          !isPremiumStrict &&
+          !isAiGeneratorCompleteOnlySaveEnabled()
+        ) {
           structuredContent = padAiGeneratorCanonicalSections(slug, structuredContent, meta);
           if (slug === 'worksheet-mcq-generator') {
             structuredContent = finalizeWorksheetStructuredContent(structuredContent, meta);
@@ -10056,6 +10146,17 @@ Write all student-facing text in the required output language.`;
             : lastValidationMessage;
         if (attempt < maxValidationAttempts) {
           const languageHint = buildStoryPassageLanguageRetryHint(meta.subject || '');
+          const promptEngineRewrite =
+            isPromptEngineEnabled()
+              ? buildPromptEngineRewritePrompt(slug, {
+                  ...meta,
+                  attempt: attempt + 1,
+                  validationMessage: lastValidationMessage,
+                  missingSections: missingList,
+                  classLabel: meta.classLabel || meta.gradeLevel,
+                  subTopic: meta.subTopic || meta.subtopic,
+                })
+              : '';
           if (isBatchVariant && isAiGeneratorCostSaverEnabled() && !isPremiumStrict) {
             activeUserPrompt = buildBatchEconomyRetryPrompt({
               slug,
@@ -10067,6 +10168,9 @@ Write all student-facing text in the required output language.`;
             });
             continue;
           }
+          if (promptEngineRewrite) {
+            activeUserPrompt = `${baseUserPrompt}\n\n${promptEngineRewrite}${languageHint ? `\n\n${languageHint}` : ''}`;
+          } else {
           activeUserPrompt = `${baseUserPrompt}\n\nRETRY (attempt ${attempt + 1}): ${allFieldsHint} Return structuredContent with EVERY canonical field filled — no empty strings, no empty arrays.${languageHint ? ` ${languageHint}` : ''}`;
           if (slug === 'mock-test-builder') {
             activeUserPrompt = `${baseUserPrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. You MUST return structuredContent with mock_test_title and at least 8 questions in section_a..section_e (each with "question" text). Do not return only metadata without question arrays.`;
@@ -10114,6 +10218,7 @@ Write all student-facing text in the required output language.`;
             const examTarget =
               Number(meta?.questionCount) > 0 ? Number(meta.questionCount) : 12;
             activeUserPrompt = `${baseUserPrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return Exam Question Paper JSON with ALL 11 sections. Use paper_title, instructions, blueprint, section_a..section_e (each an array of question objects with question, options for MCQs, answer, marks). Include internal_choices, answer_key, marking_scheme, open_ended_rubric. This is NOT Mock Test Builder — do not use mock_test_title, test_purpose_subtopic_link, or ncf_competency_alignment. Minimum ${examTarget} questions across sections.`;
+          }
           }
           continue;
         }
@@ -10265,6 +10370,7 @@ Write all student-facing text in the required output language.`;
         if (
           isBatchVariant &&
           !blockStoryLanguageSave &&
+          !isAiGeneratorCompleteOnlySaveEnabled() &&
           (canSaveBatchWorksheet ||
             canSaveBookActivity ||
             canSaveBookBatch ||

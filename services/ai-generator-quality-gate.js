@@ -5,6 +5,9 @@ import {
 import { isAiGeneratorSectionPadEnabled } from '../utils/ai-generator-batch-config.js';
 import { extractContentUnits } from './ai-generator-content-extractor.js';
 import { isStoryPassagePlaceholderText, validateStoryPassageLanguageCompliance, mustEnforceStoryPassageLanguageCompliance } from '../utils/story-passage-subject.js';
+import { runPromptEngineQualityCheck } from '../prompts/quality-content-check.js';
+import { isPromptEngineEnabled } from '../prompts/registry.js';
+import { detectBannedPhrase } from '../prompts/shared/banned-phrases.js';
 
 /** Patterns that indicate scaffold/placeholder content — must never be saved. */
 const PLACEHOLDER_PATTERNS = [
@@ -39,6 +42,7 @@ function isPlaceholderText(text) {
   const t = String(text || '').trim();
   if (!t || t.length < MIN_SECTION_TEXT_LEN) return true;
   if (isStoryPassagePlaceholderText(t)) return true;
+  if (isPromptEngineEnabled() && detectBannedPhrase(t).banned) return true;
   return PLACEHOLDER_PATTERNS.some((re) => re.test(t));
 }
 
@@ -289,6 +293,22 @@ export function runAiGeneratorQualityGate(toolSlug, structured, meta = {}) {
 
   if (meta.strictValidation === true && hasScaffoldQuestionRows(data) && !meta.bookGenerator) {
     errors.push('Scaffold filler questions detected — Premium requires fully generated content.');
+  }
+
+  if (
+    ['exam-question-paper-generator', 'mock-test-builder'].includes(slug) &&
+    hasScaffoldQuestionRows(data)
+  ) {
+    errors.push(
+      'Template/scaffold exam questions detected — regenerate with real chapter-specific content.',
+    );
+  }
+
+  if (isPromptEngineEnabled() && !bookBatchRelaxed && !batchWorksheetRelaxed) {
+    const promptQuality = runPromptEngineQualityCheck(slug, data);
+    if (!promptQuality.valid) {
+      errors.push(...promptQuality.errors);
+    }
   }
 
   if (

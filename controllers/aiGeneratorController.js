@@ -1026,9 +1026,18 @@ export async function generatePDF(req, res) {
       return res.status(404).json({ success: false, message: 'Record not found.' });
     }
 
-    const bodyText = record.generatedContent || record.content || '';
+    const bodyText = String(record.generatedContent || record.content || '').trim();
+    const toolName = String(record.toolDisplayName || record.toolName || 'AI Tool').trim();
+    const metaRows = [
+      ['Class', record.classLabel],
+      ['Subject', record.subject],
+      ['Topic', record.topic || 'General'],
+      ['Subtopic', record.subtopic],
+      ['Board', record.board],
+      ['Generated', record.createdAt ? new Date(record.createdAt).toLocaleString() : '—'],
+    ].filter(([, v]) => String(v || '').trim());
 
-    const doc = new PDFDocument({ size: 'A4', margin: 40 });
+    const doc = new PDFDocument({ size: 'A4', margin: 48 });
     const chunks = [];
     doc.on('data', (chunk) => chunks.push(chunk));
     doc.on('end', () => {
@@ -1036,19 +1045,41 @@ export async function generatePDF(req, res) {
       res.setHeader('Content-Type', 'application/pdf');
       res.setHeader(
         'Content-Disposition',
-        `inline; filename="ai-generator-${String(record._id)}.pdf"`,
+        `inline; filename="aslilearn-${String(record._id)}.pdf"`,
       );
       res.send(pdfBuffer);
     });
 
-    doc.fontSize(18).text('AI Generator Record', { align: 'center' }).moveDown(1);
-    doc.fontSize(12).text(`Tool: ${record.toolDisplayName || record.toolName}`);
-    doc.text(`Class: ${record.classLabel}`);
-    doc.text(`Subject: ${record.subject}`);
-    doc.text(`Topic: ${record.topic || 'General'}`);
-    doc.text(`Subtopic: ${record.subtopic}`);
-    doc.text(`Created At: ${new Date(record.createdAt).toLocaleString()}`).moveDown(1);
-    doc.fontSize(11).text(bodyText, { align: 'left' });
+    const pageW = doc.page.width - doc.page.margins.left - doc.page.margins.right;
+
+    doc.save();
+    doc.roundedRect(doc.page.margins.left, doc.y, pageW, 88, 12).fill('#4f46e5');
+    doc.fillColor('#ffffff');
+    doc.fontSize(9).text('ASLILEARN · AI V2', doc.page.margins.left + 16, doc.y + 14);
+    doc.fontSize(18).text(toolName, doc.page.margins.left + 16, doc.y + 30, {
+      width: pageW - 32,
+    });
+    doc.fontSize(10).text('Premium curriculum export', doc.page.margins.left + 16, doc.y + 58);
+    doc.restore();
+    doc.y += 100;
+
+    doc.fillColor('#1e293b').fontSize(11);
+    for (const [label, value] of metaRows) {
+      doc.font('Helvetica-Bold').text(`${label}: `, { continued: true });
+      doc.font('Helvetica').text(String(value));
+    }
+    doc.moveDown(1);
+
+    doc.strokeColor('#e2e8f0').moveTo(doc.page.margins.left, doc.y).lineTo(doc.page.margins.left + pageW, doc.y).stroke();
+    doc.moveDown(0.75);
+
+    doc.fillColor('#334155').fontSize(10).font('Helvetica');
+    doc.text(bodyText || '(no content)', {
+      align: 'left',
+      width: pageW,
+      lineGap: 3,
+    });
+
     doc.end();
   } catch (error) {
     console.error('generatePDF error:', error);

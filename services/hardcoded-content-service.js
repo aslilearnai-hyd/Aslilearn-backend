@@ -1205,7 +1205,7 @@ export async function getHardcodedContent(classNumber, subject, topic, toolType,
 async function getClass7to10Content(classNum, subject, topic, toolType, params = {}) {
   const subjectPath = await resolveSubjectPath(classNum, subject);
   if (!subjectPath) {
-    console.log(`❌ Subject folder not found for Class ${classNum}, ${subject}`);
+    if (!params.silent) console.log(`❌ Subject folder not found for Class ${classNum}, ${subject}`);
     return null;
   }
 
@@ -1218,23 +1218,25 @@ async function getClass7to10Content(classNum, subject, topic, toolType, params =
     const chapters = await discoverChapters(subjectPath);
     if (chapters.length === 0) return null;
     const firstChapter = chapters[0];
-    console.log(`ℹ️ No topic provided, using first chapter: ${firstChapter.raw}`);
+    if (!params.silent) console.log(`ℹ️ No topic provided, using first chapter: ${firstChapter.raw}`);
     return await getContentForChapterPath(firstChapter.fullPath, toolType, difficulty);
   }
 
   // Find the chapter folder matching the topic
   const chapter = await findChapterByTopic(subjectPath, topic);
   if (!chapter) {
-    console.log(`❌ Chapter not found for topic "${topic}" in ${subjectPath}`);
+    if (!params.silent) console.log(`❌ Chapter not found for topic "${topic}" in ${subjectPath}`);
     return null;
   }
 
-  console.log(`✅ Matched topic "${topic}" to chapter folder: ${chapter.raw} at ${chapter.fullPath}`);
-  return await getContentForChapterPath(chapter.fullPath, toolType, difficulty);
+  if (!params.silent) {
+    console.log(`✅ Matched topic "${topic}" to chapter folder: ${chapter.raw} at ${chapter.fullPath}`);
+  }
+  return await getContentForChapterPath(chapter.fullPath, toolType, difficulty, params);
 }
 
 /** Given a chapter folder path, get the content for a tool */
-async function getContentForChapterPath(chapterPath, toolType, difficulty = 'medium') {
+async function getContentForChapterPath(chapterPath, toolType, difficulty = 'medium', params = {}) {
   // Special combined tools
   if (toolType === 'worksheet-mcq-generator') {
     const combined = await buildCombinedWorksheet(chapterPath, difficulty);
@@ -1252,11 +1254,11 @@ async function getContentForChapterPath(chapterPath, toolType, difficulty = 'med
   // Standard single-file tools
   const filePath = await findContentInChapter(chapterPath, toolType, difficulty);
   if (!filePath) {
-    console.log(`❌ No content file found for ${toolType} in ${chapterPath}`);
+    if (!params.silent) console.log(`❌ No content file found for ${toolType} in ${chapterPath}`);
     return null;
   }
 
-  console.log(`✅ Found content file: ${filePath}`);
+  if (!params.silent) console.log(`✅ Found content file: ${filePath}`);
   let data = await readJSONFile(filePath);
 
   // Lesson planner files in some chapters have broken easy_lp.json (non-standard whitespace).

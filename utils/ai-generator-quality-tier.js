@@ -8,7 +8,21 @@ import {
   GEMINI_PREMIUM_OVERFLOW_DEFAULT,
   GEMINI_PREMIUM_MODEL,
 } from '../services/gemini-models.js';
-import { isAiGeneratorGreatQualityEnabled } from './ai-generator-batch-config.js';
+import {
+  isAiGeneratorFlashLiteOnlyEnabled,
+  isAiGeneratorGreatQualityEnabled,
+} from './ai-generator-batch-config.js';
+
+/** When flash-lite-only policy is on (default), every tier uses gemini-3.1-flash-lite exclusively. */
+function applyFlashLiteOnlyPolicy(settings) {
+  if (!isAiGeneratorFlashLiteOnlyEnabled()) return settings;
+  return {
+    ...settings,
+    primaryGeminiModel: GEMINI_LITE_MODEL,
+    modelOverflow: GEMINI_LITE_MODEL,
+    flashLiteOnly: true,
+  };
+}
 
 export const QUALITY_TIERS = Object.freeze(['fast', 'balanced', 'premium']);
 
@@ -65,7 +79,7 @@ export function resolveQualityTierSettings(tierInput, overrides = {}) {
   const smallBatch = Number.isFinite(batchSize) && batchSize > 0 && batchSize <= 10;
 
   if (tier === 'fast') {
-    return {
+    return applyFlashLiteOnlyPolicy({
       ...base,
       tier,
       temperatureCreative: 0.72,
@@ -81,11 +95,11 @@ export function resolveQualityTierSettings(tierInput, overrides = {}) {
       flashLiteOnly: true,
       batchConcurrency: 1,
       slotStaggerMs: 0,
-    };
+    });
   }
 
   if (tier === 'balanced') {
-    return {
+    return applyFlashLiteOnlyPolicy({
       ...base,
       tier,
       temperatureCreative: 0.8,
@@ -98,35 +112,25 @@ export function resolveQualityTierSettings(tierInput, overrides = {}) {
       geminiRetriesPerModel: 2,
       hotsHedgingRegen: false,
       primaryGeminiModel: resolveBalancedGeminiModel(),
-      flashLiteOnly: false,
+      flashLiteOnly: true,
       batchConcurrency: smallBatch ? 3 : 2,
       slotStaggerMs: smallBatch ? 0 : 200,
-    };
+    });
   }
 
-  // Premium — Gemini 3.1 Pro (+ Flash-Lite overflow), strict validation
-  if (isAiGeneratorGreatQualityEnabled()) {
-    return {
-      ...base,
-      primaryGeminiModel: resolvePremiumGeminiModel(),
-      modelOverflow: getPremiumGeminiFallbackCsv(),
-      flashLiteOnly: false,
-      sectionPadEnabled: false,
-      maxValidationAttempts: 4,
-      maxSlotAttempts: 3,
-      geminiRetriesPerModel: 3,
-      hotsHedgingRegen: false,
-      batchConcurrency: smallBatch ? 2 : 2,
-      slotStaggerMs: smallBatch ? 150 : 250,
-    };
-  }
-
-  return {
+  // Premium — strict validation; Flash-Lite only (default policy).
+  return applyFlashLiteOnlyPolicy({
     ...base,
+    primaryGeminiModel: GEMINI_LITE_MODEL,
+    modelOverflow: GEMINI_LITE_MODEL,
+    flashLiteOnly: true,
+    sectionPadEnabled: false,
+    maxValidationAttempts: 5,
+    maxSlotAttempts: 4,
+    geminiRetriesPerModel: 3,
     batchConcurrency: smallBatch ? 2 : 2,
     slotStaggerMs: smallBatch ? 150 : 250,
-    modelOverflow: getPremiumGeminiFallbackCsv(),
-  };
+  });
 }
 
 /** Creative bulk tools vs factual extraction tools. */
