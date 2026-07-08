@@ -3920,8 +3920,174 @@ function shouldRelaxBatchWorksheetSave(meta = {}, slug = '') {
   return meta.bookGenerator === true || meta.batchOrchestrator === true;
 }
 
+/** Book RAG batches must save after repair — do not burn tokens retrying placeholder labels. */
+function shouldRelaxBookBatchSave(meta = {}, slug = '') {
+  if (!(meta.bookGenerator === true || meta.batchOrchestrator === true)) return false;
+  const s = String(slug || meta.toolSlug || '').trim();
+  return Boolean(s);
+}
+
 function shouldRelaxBookGeneratorSave(meta = {}) {
-  return shouldRelaxBatchWorksheetSave(meta, 'worksheet-mcq-generator') && meta.bookGenerator === true;
+  return meta.bookGenerator === true;
+}
+
+function activityHasSaveableContent(structured = {}) {
+  const title = String(structured?.title || structured?.activity_name || '').trim();
+  const steps = Array.isArray(structured?.step_by_step_procedure)
+    ? structured.step_by_step_procedure
+    : Array.isArray(structured?.steps)
+      ? structured.steps
+      : [];
+  const materials = Array.isArray(structured?.materials_required)
+    ? structured.materials_required
+    : Array.isArray(structured?.materials)
+      ? structured.materials
+      : [];
+  const realSteps = steps.filter((s) => {
+    const t = String(s || '').trim();
+    return t.length >= 12 && !isStoryPassagePlaceholderText(t);
+  });
+  return title.length >= 4 && realSteps.length >= 3 && materials.length >= 2;
+}
+
+function isHeadingEchoFieldValue(text) {
+  const t = String(text || '').trim();
+  if (!t) return true;
+  if (isStoryPassagePlaceholderText(t)) return true;
+  if (/^(?:\d+\.\s*)?(?:subtopic link|prior knowledge|learning objectives|ncf competency|materials required|step[- ]by[- ]step|teacher instructions|student instructions|differentiation|assessment|expected learning|real[- ]life|reflection|safety|observation|creative output|self[- ]assessment)\b/i.test(t) && t.length < 160) {
+    return true;
+  }
+  return false;
+}
+
+/** Replace section-heading echoes ("Subtopic Link … for X") with real curriculum prose. */
+function repairActivityHeadingEchoFields(structured, meta = {}, toolSlug = 'activity-project-generator') {
+  const n =
+    structured && typeof structured === 'object' && !Array.isArray(structured) ? { ...structured } : {};
+  const topic = String(meta.subTopic || meta.subtopic || meta.topic || 'the selected topic').trim();
+  const subject = String(meta.subject || 'Science').trim();
+  const classLabel = String(meta.classLabel || meta.className || '').trim();
+  const fb = buildCurriculumBackedActivityFallback(meta);
+
+  const fillText = (key, fallback) => {
+    const cur = String(n[key] || '').trim();
+    if (!cur || isHeadingEchoFieldValue(cur)) n[key] = fallback;
+  };
+
+  fillText(
+    'subtopic_link_prior_knowledge',
+    `This project connects to ${topic} in ${subject}${classLabel ? ` (${classLabel})` : ''}. Learners should already know basic observation skills and simple cause–effect ideas from earlier class work.`,
+  );
+  fillText(
+    'prior_knowledge',
+    `Recall everyday examples of observing carefully, stating a simple hypothesis, and checking an idea with a fair test related to ${topic}.`,
+  );
+  fillText(
+    'ncf_competency_alignment',
+    `Aligns with scientific inquiry competencies: observe, hypothesise, plan a simple experiment, record evidence, and communicate findings for ${topic}.`,
+  );
+  fillText(
+    'expected_learning_outcomes',
+    fb.learningOutcome ||
+      `Learners will design and explain a small inquiry task on ${topic}, using observation, hypothesis, and evidence.`,
+  );
+  fillText(
+    'real_life_application',
+    `Transfer: apply observation–hypothesis–experiment thinking to a home or neighbourhood problem connected to ${topic} (for example moisture, spoilage, shadow length, or floating objects).`,
+  );
+  fillText(
+    'reflection_exit_ticket',
+    `Exit ticket: (1) One observation you made, (2) your hypothesis, (3) one change for a fairer test next time.`);
+  fillText(
+    'safety_care_instructions',
+    'Use only teacher-approved materials. No tasting chemicals. Keep liquids away from sockets. Wash hands after the activity.',
+  );
+  fillText(
+    'observation_data_recording_table',
+    `Trial | What I observed | Hypothesis supported? (Y/N) | Notes\n1 |  |  |  \n2 |  |  |  \n3 |  |  |`,
+  );
+  fillText(
+    'creative_output_final_product',
+    `Final product: a one-page poster or science-fair card showing the question, method, results table, and conclusion for ${topic}.`,
+  );
+  fillText(
+    'differentiation_support_extension',
+    'Support: sentence starters and paired roles (recorder / tester). Extension: redesign the experiment with one changed variable and predict the new result.',
+  );
+  fillText(
+    'differentiation',
+    'Support: checklist of steps. Extension: compare two hypotheses and justify which evidence is stronger.',
+  );
+
+  if (!String(n.title || '').trim() || isHeadingEchoFieldValue(n.title) || /^untitled/i.test(n.title)) {
+    n.title = fb.title;
+  }
+
+  const objectives = Array.isArray(n.learning_objectives)
+    ? n.learning_objectives
+    : Array.isArray(n.learningObjectives)
+      ? n.learningObjectives
+      : [];
+  const cleanedObjectives = objectives
+    .map((o) => String(o || '').trim())
+    .filter((o) => o && !isHeadingEchoFieldValue(o));
+  if (cleanedObjectives.length < 2) {
+    n.learning_objectives = [
+      `Observe and record patterns related to ${topic}.`,
+      `Form a simple testable hypothesis about ${topic}.`,
+      `Explain findings using evidence from a small experiment.`,
+    ];
+    n.learningObjectives = n.learning_objectives;
+  }
+
+  let materials = Array.isArray(n.materials_required)
+    ? n.materials_required
+    : Array.isArray(n.materials)
+      ? n.materials
+      : [];
+  materials = materials.map((m) => String(m || '').trim()).filter((m) => m && !isHeadingEchoFieldValue(m));
+  if (materials.length < 3) {
+    materials = fb.materials;
+  }
+  n.materials = materials;
+  n.materials_required = materials;
+
+  let steps = Array.isArray(n.step_by_step_procedure)
+    ? n.step_by_step_procedure
+    : Array.isArray(n.steps)
+      ? n.steps
+      : [];
+  steps = steps.map((s) => String(s || '').trim()).filter((s) => s && !isHeadingEchoFieldValue(s) && s.length >= 12);
+  if (steps.length < 5) {
+    steps = fb.steps;
+  }
+  n.steps = steps;
+  n.step_by_step_procedure = steps;
+
+  const rubric = Array.isArray(n.self_assessment_rubric)
+    ? n.self_assessment_rubric
+    : Array.isArray(n.assessment_criteria_rubric)
+      ? n.assessment_criteria_rubric
+      : [];
+  const cleanedRubric = rubric.map((r) => String(r || '').trim()).filter((r) => r && !isHeadingEchoFieldValue(r));
+  if (cleanedRubric.length < 2) {
+    const filled = [
+      'Level 4: Clear hypothesis, fair test, accurate recording, evidence-based conclusion.',
+      'Level 3: Mostly complete method and results with minor gaps.',
+      'Level 2: Incomplete steps or weak link between evidence and conclusion.',
+      'Level 1: Little planning or recording; conclusion not supported.',
+    ];
+    n.self_assessment_rubric = filled;
+    n.assessment_criteria_rubric = filled;
+  }
+
+  if (!String(n.expected_learning_outcomes || n.learningOutcome || '').trim()) {
+    n.expected_learning_outcomes = fb.learningOutcome;
+    n.learningOutcome = fb.learningOutcome;
+  }
+
+  n.bookGroundedFallback = Boolean(meta.bookGenerator) || Boolean(n.bookGroundedFallback);
+  return normalizeActivityStructuredContent(n, toolSlug);
 }
 
 function extractBookGroundedSentences(pdfContext = '', topic = '') {
@@ -8241,7 +8407,12 @@ function buildCurriculumBackedActivityFallback(meta = {}) {
 }
 
 function augmentActivityStructuredContent(normalizedFlat, meta, toolSlug = 'activity-project-generator') {
-  const n = normalizeActivityStructuredContent(normalizedFlat, toolSlug);
+  // Always replace heading-echo placeholders first (prevents Premium burn + 0 saves).
+  let n = repairActivityHeadingEchoFields(
+    normalizeActivityStructuredContent(normalizedFlat, toolSlug),
+    meta,
+    toolSlug,
+  );
   const hasErrOnly =
     n.steps?.length === 1 && /^no structured steps were returned/i.test(String(n.steps[0] || ''));
   const materialsOk = Array.isArray(n.materials) && n.materials.length >= 3;
@@ -8255,13 +8426,21 @@ function augmentActivityStructuredContent(normalizedFlat, meta, toolSlug = 'acti
     return n;
   }
 
-  if (isStrictAllFieldsValidation(meta)) {
+  // Strict Premium used to skip fallback entirely — that caused retries + cost with 0 saved.
+  // Book / batch generations must still get curriculum fallback so records can save.
+  const allowFallback =
+    !isStrictAllFieldsValidation(meta) ||
+    meta.bookGenerator === true ||
+    meta.batchOrchestrator === true ||
+    meta.strictValidation === false;
+
+  if (!allowFallback) {
     return n;
   }
 
   if (meta?.generationVariant) {
     console.warn(
-      `[AI Generator] Activity scaffold fallback for variant ${meta.generationVariant} — model output was incomplete; consider Flash model or higher token limit.`,
+      `[AI Generator] Activity scaffold fallback for variant ${meta.generationVariant} — model output was incomplete; applying curriculum fallback so the record can save.`,
     );
   }
 
@@ -8280,14 +8459,18 @@ function augmentActivityStructuredContent(normalizedFlat, meta, toolSlug = 'acti
   }
   const learningOutcome = loOk ? String(n.learningOutcome).trim() : fb.learningOutcome;
 
-  return normalizeActivityStructuredContent(
-    {
-      ...n,
-      title,
-      materials,
-      steps,
-      learningOutcome,
-    },
+  return repairActivityHeadingEchoFields(
+    normalizeActivityStructuredContent(
+      {
+        ...n,
+        title,
+        materials,
+        steps,
+        learningOutcome,
+      },
+      toolSlug,
+    ),
+    meta,
     toolSlug,
   );
 }
@@ -8298,7 +8481,11 @@ export function finalizeActivityStructuredContent(structuredContent, meta = {}, 
       ? structuredContent
       : {};
   if (skipEnglishStructuredScaffold(meta)) {
-    return normalizeActivityStructuredContent(raw, toolSlug);
+    return repairActivityHeadingEchoFields(
+      normalizeActivityStructuredContent(raw, toolSlug),
+      meta,
+      toolSlug,
+    );
   }
   return augmentActivityStructuredContent(raw, meta, toolSlug);
 }
@@ -9443,7 +9630,17 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
     pdfContext: pdfContext || undefined,
     uniqueSeed: String(extra.uniqueSeed || extra.generationVariant || ''),
     qualityTier: qualityTierSettings.tier,
-    strictValidation: qualityTierSettings.strictValidation === true,
+    // Book RAG batches must save after repair — never burn tokens on strict placeholder loops.
+    strictValidation:
+      shouldRelaxBookBatchSave(
+        {
+          bookGenerator: isBookBatch,
+          batchOrchestrator: isBatchVariant,
+        },
+        slug,
+      )
+        ? false
+        : qualityTierSettings.strictValidation === true,
     skipSectionPad: !qualityTierSettings.sectionPadEnabled,
     greatQuality: isAiGeneratorGreatQualityEnabled(),
     requireAllCanonicalFields:
@@ -9960,7 +10157,11 @@ Write all student-facing text in the required output language.`;
 
         if (quality.errors.length) {
           lastValidationMessage = quality.errors.join('; ');
-          if (isAiGeneratorSectionPadEnabled() || shouldRelaxBatchWorksheetSave(meta, slug)) {
+          if (
+            isAiGeneratorSectionPadEnabled() ||
+            shouldRelaxBatchWorksheetSave(meta, slug) ||
+            shouldRelaxBookBatchSave(meta, slug)
+          ) {
             if (
               slug === 'worksheet-mcq-generator' &&
               shouldRelaxBatchWorksheetSave(meta, slug) &&
@@ -9970,6 +10171,17 @@ Write all student-facing text in the required output language.`;
                 ...meta,
                 strictValidation: false,
               });
+              continue;
+            }
+            if (
+              (slug === 'project-idea-lab' || slug === 'activity-project-generator') &&
+              shouldRelaxBookBatchSave(meta, slug) &&
+              !activityHasSaveableContent(structuredContent)
+            ) {
+              structuredContent = finalizeActivityStructuredContent(structuredContent, {
+                ...meta,
+                strictValidation: false,
+              }, slug);
               continue;
             }
             break;
@@ -10039,10 +10251,23 @@ Write all student-facing text in the required output language.`;
           shouldRelaxBatchWorksheetSave(meta, slug) &&
           slug === 'worksheet-mcq-generator' &&
           worksheetHasSaveableContent(structuredContent);
+        const canSaveBookActivity =
+          shouldRelaxBookBatchSave(meta, slug) &&
+          (slug === 'project-idea-lab' || slug === 'activity-project-generator') &&
+          activityHasSaveableContent(structuredContent);
+        const canSaveBookBatch =
+          shouldRelaxBookBatchSave(meta, slug) &&
+          meta.bookGenerator === true &&
+          (canSaveBatchWorksheet ||
+            canSaveBookActivity ||
+            Boolean(structuredContent?.bookGroundedFallback) ||
+            Boolean(structuredContent?.title || structuredContent?.paper_title || structuredContent?.lesson_name));
         if (
           isBatchVariant &&
           !blockStoryLanguageSave &&
           (canSaveBatchWorksheet ||
+            canSaveBookActivity ||
+            canSaveBookBatch ||
             (!isPremiumStrict &&
               !meta.skipSectionPad &&
               (isAiGeneratorCostSaverEnabled() || isAiGeneratorSectionPadEnabled())))
