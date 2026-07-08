@@ -8,6 +8,11 @@
 import { sanitizeStudyGuideTitle } from '../services/study-guide-title-utils.js';
 import { stripMarkdownSyntax } from '../utils/strip-markdown-syntax.js';
 import { buildStoryPassageLanguagePromptBlock, buildStoryPassageContentPromptBlock, buildStoryPassageMonolingualOverrideBlock, buildUniversalLanguageSubjectPromptBlock } from '../utils/story-passage-subject.js';
+import {
+  buildPromptEngineGenerationBlock,
+  buildPromptEngineSystemPrompt,
+  isPromptEngineEnabled,
+} from '../prompts/registry.js';
 
 /** Pedagogy tags applied across tools (subset per tool in `pedagogyFrameworkTags`). */
 export const UNIVERSAL_PEDAGOGY_TAGS = Object.freeze([
@@ -2589,7 +2594,28 @@ export function buildAiGeneratorPromptParts(toolSlug, params = {}) {
 
   const useSchemaInPrompt = params.useResponseSchema !== true;
 
-  const systemPrompt = [
+  const promptEngineCtx = {
+    board: params.board,
+    classLabel: params.classLabel || params.gradeLevel,
+    gradeLevel: params.gradeLevel,
+    subject: params.subject,
+    topic: params.topic,
+    subTopic: params.subTopic || params.subtopic,
+    bloomLevel,
+    questionCount: Number.isFinite(questionCount) && questionCount > 0 ? questionCount : undefined,
+    cardCount: Number.isFinite(cardCount) && cardCount > 0 ? cardCount : undefined,
+    duration,
+    extraParams: extra,
+  };
+
+  const promptEngineSystem = isPromptEngineEnabled()
+    ? buildPromptEngineSystemPrompt(slug, promptEngineCtx)
+    : '';
+  const promptEngineGeneration = isPromptEngineEnabled()
+    ? buildPromptEngineGenerationBlock(slug, promptEngineCtx)
+    : '';
+
+  const legacySystemPrompt = [
     'You are an expert Indian school curriculum content generator aligned to NEP 2020 and NCF-SE 2023.',
     'Return only valid JSON matching the enforced response schema. No markdown fences, no commentary outside JSON.',
     completenessRule,
@@ -2601,8 +2627,13 @@ export function buildAiGeneratorPromptParts(toolSlug, params = {}) {
     .filter(Boolean)
     .join('\n\n');
 
+  const systemPrompt = promptEngineSystem
+    ? [promptEngineSystem, completenessRule].filter(Boolean).join('\n\n')
+    : legacySystemPrompt;
+
   const userParts = [
     contextLines.join('\n'),
+    promptEngineGeneration,
     `CANONICAL OUTPUT SECTIONS (populate structuredContent using these headings and field names):\n${headings}`,
     strictHint ? `STRICT OUTPUT RULE:\n${strictHint}` : '',
     useSchemaInPrompt

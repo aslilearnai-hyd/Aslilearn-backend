@@ -82,6 +82,12 @@ export function isAiGeneratorSectionPadEnabled() {
 
 
 
+/** When true (default), incomplete generations are not saved via scaffold pad or batch economy fallbacks. */
+export function isAiGeneratorCompleteOnlySaveEnabled() {
+  const raw = String(process.env.AI_GENERATOR_COMPLETE_ONLY_SAVE ?? 'true').trim().toLowerCase();
+  return raw !== 'false' && raw !== '0' && raw !== 'off';
+}
+
 /** Prioritize 25/25 complete sections over raw speed. */
 
 export function isAiGeneratorBatchQualityEnabled() {
@@ -220,8 +226,13 @@ export function getAiGeneratorValidationMaxAttempts(isBatchVariant = false, reco
   const fallback = costDefault ?? fastDefault;
 
   const parsed = Number.parseInt(String(envRaw ?? fallback), 10);
+  let attempts = Math.min(5, Math.max(1, Number.isFinite(parsed) ? parsed : Number(fallback)));
 
-  return Math.min(5, Math.max(1, Number.isFinite(parsed) ? parsed : Number(fallback)));
+  if (isAiGeneratorCompleteOnlySaveEnabled() && !isBatchVariant && !recovery) {
+    attempts = Math.max(attempts, 4);
+  }
+
+  return attempts;
 
 }
 

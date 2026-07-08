@@ -37,6 +37,7 @@ import {
   PRACTICE_QA_SECTION_LABELS,
   WORKSHEET_SECTION_LABELS,
 } from './ai-content-engine-service.js';
+import { validateExamPaperPipeline } from './exam-paper-pipeline-validator.js';
 import { padAiGeneratorCanonicalSections } from '../utils/ai-generator-section-pad.js';
 
 const WORKSHEET_HEADING_SECTION = {
@@ -1394,6 +1395,30 @@ export function validateDashboardAiToolContent(toolSlug, rawContent, options = {
   const extra = extraStrictChecks(slug, headingData, content);
   if (!extra.valid) {
     return { valid: false, code: 'AI_TOOL_CONTENT_INCOMPLETE', message: extra.message };
+  }
+
+  if (slug === 'exam-question-paper-generator' || slug === 'mock-test-builder') {
+    const meta =
+      options.meta && typeof options.meta === 'object'
+        ? /** @type {Record<string, unknown>} */ (options.meta)
+        : {};
+    const examCheck = validateExamPaperPipeline(
+      {
+        subject: String(meta.subject || ''),
+        subtopic: String(meta.subTopic || meta.subtopic || meta.topic || ''),
+        structured: headingData || normalized,
+      },
+      { blockSave: true },
+    );
+    if (!examCheck.valid && (examCheck.hardErrors || []).length > 0) {
+      return {
+        valid: false,
+        code: 'AI_TOOL_CONTENT_INCOMPLETE',
+        message:
+          'Exam paper failed quality review (template/scaffold or wrong subject content). Ask Super Admin to regenerate with chapter knowledge.',
+        missingSections: examCheck.errors,
+      };
+    }
   }
 
   return {
