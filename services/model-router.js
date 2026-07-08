@@ -1,15 +1,18 @@
-const DEFAULT_GEMINI_MODEL = 'gemini-2.5-flash';
-/** Skip retired gemini-2.0-* / gemini-1.5-* on v1beta. */
-const DEFAULT_FALLBACKS = 'gemini-3.1-flash-lite,gemini-2.5-flash-lite,gemini-2.5-flash,gemini-3.5-flash';
+import { GEMINI_LITE_MODEL, isRetiredOrUnsupportedGeminiModel, resolveAllowedGeminiModel } from './gemini-models.js';
+
+const DEFAULT_GEMINI_MODEL = GEMINI_LITE_MODEL;
+const DEFAULT_FALLBACKS = GEMINI_LITE_MODEL;
 
 export const getRouterConfig = () => {
   const apiKey = String(process.env.VIDYA_AI_GEMINI_API_KEY || process.env.GEMINI_API_KEY || '').trim();
   const model = String(process.env.VIDYA_AI_GEMINI_MODEL || DEFAULT_GEMINI_MODEL).trim();
+  const resolvedModel = resolveAllowedGeminiModel(model);
   const fallbackModels = String(process.env.VIDYA_AI_GEMINI_FALLBACK_MODELS || DEFAULT_FALLBACKS)
     .split(',')
     .map((m) => m.trim())
     .filter(Boolean)
-    .filter((m) => m !== model);
+    .filter((m) => !isRetiredOrUnsupportedGeminiModel(m))
+    .filter((m) => m !== resolvedModel);
   const baseUrl = (process.env.GEMINI_API_BASE_URL || 'https://generativelanguage.googleapis.com/v1beta').replace(
     /\/+$/,
     ''
@@ -19,7 +22,7 @@ export const getRouterConfig = () => {
   const openaiKey = String(process.env.OPENAI_API_KEY || '').trim();
   const openaiModel = String(process.env.OPENAI_FALLBACK_MODEL || 'gpt-4o-mini').trim();
   return {
-    gemini: { apiKey, model, fallbackModels, baseUrl },
+    gemini: { apiKey, model: resolvedModel, fallbackModels, baseUrl },
     anthropic: { apiKey: anthropicKey, model: anthropicModel },
     openai: { apiKey: openaiKey, model: openaiModel },
   };

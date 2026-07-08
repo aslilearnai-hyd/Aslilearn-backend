@@ -7,7 +7,7 @@ import {
 
 } from './gemini-service.js';
 
-import { generateStructuredContentForAiGenerator } from './ai-content-engine-service.js';
+import { generateStructuredContentForAiGenerator, finalizeWorksheetStructuredContent, repairWorksheetBatchDuplicates, ensureWorksheetSectionsComplete, rebuildWorksheetBatchVariant, resolveWorksheetTopicLabel } from './ai-content-engine-service.js';
 
 import { buildHistoricalGenerationContext } from './ai-generator-historical-index.js';
 
@@ -49,7 +49,7 @@ import {
 
 } from './ai-generator-content-strategy.js';
 
-import { getBatchSlotMaxAttempts, isAiGeneratorCostSaverEnabled, shouldEnforceBatchUniquenessRetries, shouldUseFlashForAiGeneratorRun } from '../utils/ai-generator-batch-config.js';
+import { getBatchSlotMaxAttempts, isAiGeneratorCostSaverEnabled, isAiGeneratorGreatQualityEnabled, shouldEnforceBatchUniquenessRetries, shouldUseFlashForAiGeneratorRun } from '../utils/ai-generator-batch-config.js';
 import { resolveQualityTierSettings, getQualityTierBatchConcurrency } from '../utils/ai-generator-quality-tier.js';
 import { resolveLanguageSubjectForGeneration } from '../utils/story-passage-subject.js';
 
@@ -407,7 +407,10 @@ export async function generateBatchAndSave(params, opts = {}) {
               historicalPromptBlock: qualityTierSettings.useHistoricalPrompt ? historical.promptBlock : '',
 
               upgradeToFlash: shouldUseFlashForAiGeneratorRun({
-                upgradeRequested: attempt > 2 || strategy.mode === 'strict_generate',
+                upgradeRequested:
+                  attempt > 1 ||
+                  isAiGeneratorGreatQualityEnabled() ||
+                  strategy.mode === 'strict_generate',
                 recoveryPass: attempt > 1,
               }),
 
@@ -418,6 +421,49 @@ export async function generateBatchAndSave(params, opts = {}) {
 
 
             let structuredContent = generated.structuredContent;
+            const worksheetBatch = toolSlug === 'worksheet-mcq-generator';
+            const worksheetTopic = resolveWorksheetTopicLabel({
+              subTopic: subtopicName,
+              subtopic: subtopicName,
+              topic: topicName,
+              subject: subjectName,
+              generationVariant: variantIndex,
+            });
+            const worksheetMeta = {
+              subject: subjectName,
+              topic: worksheetTopic,
+              subTopic: worksheetTopic,
+              subtopic: worksheetTopic,
+              board,
+              className,
+              generationVariant: variantIndex,
+              variantAngle: extraParams.variantAngle,
+              variantScenario: extraParams.variantScenario,
+              batchOrchestrator: true,
+              strictValidation: false,
+              uniqueSeed: extraParams.uniqueSeed,
+              avoidQuestionTexts: batchQuestionTexts,
+              greatQuality: isAiGeneratorGreatQualityEnabled(),
+            };
+
+            if (worksheetBatch && structuredContent && typeof structuredContent === 'object') {
+              structuredContent = finalizeWorksheetStructuredContent(structuredContent, worksheetMeta);
+              structuredContent = dedupeIntraRecordQuestions(toolSlug, structuredContent);
+              structuredContent = renumberIntraRecordQuestions(toolSlug, structuredContent);
+              if (batchQuestionTexts.length > 0) {
+                structuredContent = rebuildWorksheetBatchVariant(structuredContent, {
+                  ...worksheetMeta,
+                  generationVariant: variantIndex + batchIndex * 10007,
+                  uniqueSeed: `${extraParams.uniqueSeed}-proactive-v${variantIndex}`,
+                  avoidQuestionTexts: batchQuestionTexts,
+                });
+                structuredContent = dedupeIntraRecordQuestions(toolSlug, structuredContent);
+                structuredContent = renumberIntraRecordQuestions(toolSlug, structuredContent);
+              }
+              structuredContent = ensureWorksheetSectionsComplete(structuredContent, worksheetMeta);
+              generated.structuredContent = structuredContent;
+            }
+
             if (structuredContent && typeof structuredContent === 'object') {
               structuredContent = dedupeIntraRecordQuestions(toolSlug, structuredContent);
               structuredContent = renumberIntraRecordQuestions(toolSlug, structuredContent);
@@ -425,12 +471,44 @@ export async function generateBatchAndSave(params, opts = {}) {
             }
 
             if (qualityTierSettings.enforceBatchUniqueness) {
-              const uniqueness = validateRecordUniqueness(toolSlug, structuredContent, {
+              let uniqueness = validateRecordUniqueness(toolSlug, structuredContent, {
                 batchTitles,
                 batchTexts: batchQuestionTexts,
                 historicalTexts: historicalQuestionTexts,
                 historicalTitles,
               });
+
+              if (!uniqueness.valid && worksheetBatch) {
+                for (let dupPass = 0; !uniqueness.valid && dupPass < 10; dupPass += 1) {
+                  const regenSeed = variantIndex + attempt * 10000 + dupPass * 7919;
+                  const recoveryMeta = {
+                    ...worksheetMeta,
+                    generationVariant: regenSeed,
+                    variantAngle: getAiGeneratorVariantAngle(regenSeed, subjectName),
+                    variantScenario: getAiGeneratorVariantScenario(regenSeed, subjectName),
+                    uniqueSeed: `${extraParams.uniqueSeed || ''}-dup${attempt}-p${dupPass}`,
+                    avoidQuestionTexts: [
+                      ...batchQuestionTexts,
+                      ...collectQuestionTextsFromStructured(structuredContent, toolSlug),
+                    ],
+                  };
+
+                  if (dupPass === 0 && batchQuestionTexts.length === 0) {
+                    structuredContent = repairWorksheetBatchDuplicates(structuredContent, recoveryMeta);
+                  } else {
+                    structuredContent = rebuildWorksheetBatchVariant(structuredContent, recoveryMeta);
+                  }
+                  structuredContent = dedupeIntraRecordQuestions(toolSlug, structuredContent);
+                  structuredContent = renumberIntraRecordQuestions(toolSlug, structuredContent);
+                  uniqueness = validateRecordUniqueness(toolSlug, structuredContent, {
+                    batchTitles,
+                    batchTexts: batchQuestionTexts,
+                    historicalTexts: historicalQuestionTexts,
+                    historicalTitles,
+                  });
+                }
+                generated.structuredContent = structuredContent;
+              }
 
               if (!uniqueness.valid) {
                 lastError = uniqueness.errors.join('; ');

@@ -4,12 +4,11 @@
  */
 
 import {
-  GEMINI_FLASH_FALLBACK_MODEL,
-  GEMINI_FLASH_MODEL,
   GEMINI_LITE_MODEL,
   GEMINI_PREMIUM_OVERFLOW_DEFAULT,
   GEMINI_PREMIUM_MODEL,
 } from '../services/gemini-models.js';
+import { isAiGeneratorGreatQualityEnabled } from './ai-generator-batch-config.js';
 
 export const QUALITY_TIERS = Object.freeze(['fast', 'balanced', 'premium']);
 
@@ -22,7 +21,7 @@ export function getPremiumGeminiFallbackCsv() {
 }
 
 function resolveBalancedGeminiModel() {
-  return String(process.env.AI_GENERATOR_BALANCED_GEMINI_MODEL || GEMINI_FLASH_MODEL).trim();
+  return String(process.env.AI_GENERATOR_BALANCED_GEMINI_MODEL || GEMINI_LITE_MODEL).trim();
 }
 
 function resolveFastGeminiModel() {
@@ -52,7 +51,7 @@ export function resolveQualityTierSettings(tierInput, overrides = {}) {
     sectionPadEnabled: false,
     maxValidationAttempts: 3,
     maxSlotAttempts: 2,
-    geminiRetriesPerModel: 2,
+    geminiRetriesPerModel: 3,
     hotsHedgingRegen: false,
     primaryGeminiModel: resolvePremiumGeminiModel(),
     modelOverflow: getPremiumGeminiFallbackCsv(),
@@ -105,7 +104,23 @@ export function resolveQualityTierSettings(tierInput, overrides = {}) {
     };
   }
 
-  // Premium — strict full validation; Lite model + schema; parallel slots
+  // Premium — great quality: 3.1 flash-lite only, LLM section repair (no 3.5 escalation)
+  if (isAiGeneratorGreatQualityEnabled()) {
+    return {
+      ...base,
+      primaryGeminiModel: GEMINI_LITE_MODEL,
+      modelOverflow: GEMINI_LITE_MODEL,
+      flashLiteOnly: true,
+      sectionPadEnabled: false,
+      maxValidationAttempts: 4,
+      maxSlotAttempts: 3,
+      geminiRetriesPerModel: 4,
+      hotsHedgingRegen: false,
+      batchConcurrency: smallBatch ? 2 : 2,
+      slotStaggerMs: smallBatch ? 150 : 250,
+    };
+  }
+
   return {
     ...base,
     batchConcurrency: smallBatch ? 3 : 3,

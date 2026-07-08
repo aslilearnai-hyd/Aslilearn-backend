@@ -14,8 +14,25 @@ export function getUsdToInrRate() {
 export const GEMINI_31_PRO_INPUT_USD_PER_M = 2;
 export const GEMINI_31_PRO_OUTPUT_USD_PER_M = 12;
 
+export function normalizeGeminiModelLabel(modelName = '') {
+  const raw = String(modelName || '').trim();
+  if (!raw) return '';
+  const lower = raw.toLowerCase();
+  if (lower.includes('flash-lite') || lower.includes('flash_lite')) {
+    return 'gemini-3.1-flash-lite';
+  }
+  if (lower.includes('3.5')) return 'gemini-3.5-flash';
+  if (lower.includes('3.1') && lower.includes('flash')) return 'gemini-3.1-flash-lite';
+  if (lower.startsWith('gemini-1.5') || lower.startsWith('gemini-1.0') || lower.startsWith('gemini-2.5')) {
+    return 'gemini-3.5-flash (legacy env model)';
+  }
+  if (lower.includes('flash')) return 'gemini-3.5-flash';
+  return raw;
+}
+
 export function resolveGeminiPricing(modelName = '') {
   const model = String(modelName || '').toLowerCase();
+  const displayModel = normalizeGeminiModelLabel(modelName);
   if (model.includes('pro')) {
     return {
       model: model.includes('3.1') ? 'gemini-3.1-pro-preview' : model,
@@ -26,7 +43,7 @@ export function resolveGeminiPricing(modelName = '') {
   }
   if (model.includes('flash-lite') || model.includes('flash_lite')) {
     return {
-      model: model.includes('3.1') ? 'gemini-3.1-flash-lite' : 'gemini-2.5-flash-lite',
+      model: displayModel || 'gemini-3.1-flash-lite',
       inputUsdPerM: GEMINI_25_FLASH_LITE_INPUT_USD_PER_M,
       outputUsdPerM: GEMINI_25_FLASH_LITE_OUTPUT_USD_PER_M,
       pricingNote:
@@ -34,7 +51,7 @@ export function resolveGeminiPricing(modelName = '') {
     };
   }
   return {
-    model: model.includes('3.5') ? 'gemini-3.5-flash' : 'gemini-2.5-flash',
+    model: displayModel || 'gemini-3.5-flash',
     inputUsdPerM: GEMINI_25_FLASH_INPUT_USD_PER_M,
     outputUsdPerM: GEMINI_25_FLASH_OUTPUT_USD_PER_M,
     pricingNote: 'Estimated from Flash list pricing (input $0.30/M, output $2.50/M).',
@@ -86,6 +103,28 @@ export function dominantModelFromTokenUsage(tokenUsage) {
   return best;
 }
 
+/** Human-readable model line from token session (actual API model ids). */
+export function formatModelsUsedFromTokenUsage(tokenUsage = {}) {
+  const calls = Array.isArray(tokenUsage?.calls) ? tokenUsage.calls : [];
+  const labels = [];
+  const seen = new Set();
+  for (const call of calls) {
+    const label = normalizeGeminiModelLabel(call?.model || '');
+    if (!label || seen.has(label)) continue;
+    seen.add(label);
+    labels.push(label);
+  }
+  if (!labels.length) {
+    return normalizeGeminiModelLabel(
+      dominantModelFromTokenUsage(tokenUsage) ||
+        process.env.AI_GENERATOR_GEMINI_MODEL ||
+        'gemini-3.1-flash-lite',
+    );
+  }
+  if (labels.length === 1) return labels[0];
+  return `mixed (${labels[0]} + ${labels.length - 1} other${labels.length > 2 ? 's' : ''})`;
+}
+
 /**
  * Accurate cost: sum each LLM call at its model rate (Flash-Lite vs Flash may differ in one variant).
  * @param {{ calls?: Array<{ model?: string; promptTokens?: number; completionTokens?: number }>; totals?: object }} tokenUsage
@@ -125,8 +164,7 @@ export function computeGeminiCostFromTokenUsage(tokenUsage = {}, exchangeRateOve
     }
 
     const usd = inputUsd + outputUsd;
-    const modelLabel =
-      modelTokenCounts.size > 1 ? `mixed (${dominantModel} + others)` : dominantModel;
+    const modelLabel = formatModelsUsedFromTokenUsage(tokenUsage);
 
     return {
       usd: Number(usd.toFixed(6)),

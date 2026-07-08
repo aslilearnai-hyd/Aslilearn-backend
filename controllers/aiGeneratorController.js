@@ -10,7 +10,14 @@ import {
   beginTokenUsageSession,
   endTokenUsageSession,
 } from '../services/gemini-service.js';
-import { boardMongoMatch, canonicalBoardLabel, lockBoardKey, normalizeBoardLabelForGrouping, normalizeClassLabelForLock, resolveClassLabelForAiToolStorage } from '../utils/board-label.js';
+import {
+  boardMongoMatch,
+  canonicalBoardLabel,
+  lockBoardKey,
+  normalizeBoardLabelForGrouping,
+  normalizeClassLabelForLock,
+  resolveClassLabelForAiToolStorage,
+} from '../utils/board-label.js';
 import { applyClassLabelMongoFilter, buildCaseInsensitiveExactFilter } from '../utils/ai-tool-data-match.js';
 import {
   compareAiToolRecordsByVariantThenDate,
@@ -612,7 +619,8 @@ export async function getAllGeneratorRecords(req, res) {
     }
 
     const toolSlug = normalizeText(req.query.toolSlug);
-    const board = normalizeText(req.query.board);
+    const boardRaw = normalizeText(req.query.board);
+    const board = boardRaw ? lockBoardKey(boardRaw) : '';
     const className = normalizeText(req.query.className);
     const subjectName = normalizeText(req.query.subjectName);
     const topicName = normalizeText(req.query.topicName);
