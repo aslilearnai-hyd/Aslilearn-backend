@@ -8,6 +8,11 @@ import {
   finalizeMockTestStructuredContent,
   finalizeHomeworkStructuredContent,
   finalizeWorksheetStructuredContent,
+  repairWorksheetBatchDuplicates,
+  ensureWorksheetSectionsComplete,
+  rebuildWorksheetBatchVariant,
+  rebuildWorksheetBatchVariantSmart,
+  resolveWorksheetTopicLabel,
   finalizePracticeQaStructuredContent,
   finalizeQuickAssignmentStructuredContent,
   finalizeConceptMasteryStructuredContent,
@@ -50,7 +55,9 @@ import {
   BOOK_GENERATOR_MAX_INR,
 } from '../config/bookBasedTools.js';
 import { canonicalBoardLabel, lockBoardKey, normalizeClassLabelForLock, resolveClassLabelForAiToolStorage } from '../utils/board-label.js';
+import { withMongoRetry, isMongoTransientError } from '../utils/mongo-retry.js';
 import { resolveQualityTierSettings, getQualityTierBatchConcurrency } from '../utils/ai-generator-quality-tier.js';
+import { isAiGeneratorGreatQualityEnabled } from '../utils/ai-generator-batch-config.js';
 
 function getBookGeneratorConcurrency(qualityTierSettings, batchSize) {
   const env = Number(process.env.BOOK_GENERATOR_CONCURRENCY || process.env.AI_GENERATOR_BATCH_CONCURRENCY);
@@ -287,7 +294,13 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
       }));
       let completedSlots = 0;
 
-      const slotResults = await runPool(slots, getBookGeneratorConcurrency(qualityTierSettings, batchSize), async (slot) => {
+      const worksheetUniquenessBatch =
+        toolSlug === 'worksheet-mcq-generator' && qualityTierSettings.enforceBatchUniqueness;
+      const poolConcurrency = worksheetUniquenessBatch
+        ? 1
+        : getBookGeneratorConcurrency(qualityTierSettings, batchSize);
+
+      const slotResults = await runPool(slots, poolConcurrency, async (slot) => {
         const { batchIndex, variantIndex } = slot;
         const maxAttempts = getMaxAttemptsPerSlot(qualityTierSettings);
         let lastError = 'Unknown error';
@@ -360,27 +373,43 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               pdfContext,
               historicalPromptBlock: qualityTierSettings.useHistoricalPrompt ? historical.promptBlock : '',
               upgradeToFlash: shouldUseFlashForAiGeneratorRun({
-                upgradeRequested: attempt > 2,
+                upgradeRequested:
+                  attempt > 1 || isAiGeneratorGreatQualityEnabled() || qualityTierSettings.tier === 'premium',
                 recoveryPass: attempt > 1,
               }),
               recoveryPass: attempt > 1,
             });
 
+            const worksheetBatch = toolSlug === 'worksheet-mcq-generator';
+            const worksheetTopic = resolveWorksheetTopicLabel({
+              subTopic: subtopicName,
+              subtopic: subtopicName,
+              topic: topicName,
+              bookTitle: book.title,
+              subject: subjectName,
+              bookSubject: String(book.subject || '').trim(),
+              generationVariant: variantIndex,
+            });
             const finalizeMeta = {
               subject: subjectName,
               bookSubject: String(book.subject || '').trim(),
-              topic: topicName,
-              subTopic: subtopicName,
-              subtopic: subtopicName,
+              topic: worksheetTopic,
+              subTopic: subtopicName || worksheetTopic,
+              subtopic: subtopicName || worksheetTopic,
+              bookTitle: book.title,
               board,
               className,
               generationVariant: variantIndex,
               variantAngle: extraParams.variantAngle,
               variantScenario: extraParams.variantScenario,
               qualityTier: qualityTierSettings.tier,
-              strictValidation: qualityTierSettings.strictValidation === true,
+              strictValidation: worksheetBatch ? false : qualityTierSettings.strictValidation === true,
+              batchOrchestrator: worksheetBatch,
               bookGenerator: true,
               pdfContext,
+              uniqueSeed: extraParams.uniqueSeed,
+              avoidQuestionTexts: batchQuestionTexts,
+              greatQuality: isAiGeneratorGreatQualityEnabled(),
             };
             let structuredContent = finalizeBookStructuredContent(
               toolSlug,
@@ -390,13 +419,86 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             structuredContent = dedupeIntraRecordQuestions(toolSlug, structuredContent);
             structuredContent = renumberIntraRecordQuestions(toolSlug, structuredContent);
 
+            if (worksheetBatch && batchQuestionTexts.length > 0) {
+              structuredContent = rebuildWorksheetBatchVariantSmart(structuredContent, {
+                ...finalizeMeta,
+                generationVariant: variantIndex + batchIndex * 10007,
+                uniqueSeed: `${extraParams.uniqueSeed}-proactive-v${variantIndex}`,
+                avoidQuestionTexts: batchQuestionTexts,
+              });
+              structuredContent = dedupeIntraRecordQuestions(toolSlug, structuredContent);
+              structuredContent = renumberIntraRecordQuestions(toolSlug, structuredContent);
+            }
+
+            if (worksheetBatch) {
+              structuredContent = ensureWorksheetSectionsComplete(structuredContent, finalizeMeta);
+              structuredContent = dedupeIntraRecordQuestions(toolSlug, structuredContent);
+              structuredContent = renumberIntraRecordQuestions(toolSlug, structuredContent);
+            }
+
             if (qualityTierSettings.enforceBatchUniqueness) {
-              const uniqueness = validateRecordUniqueness(toolSlug, structuredContent, {
+              let uniqueness = validateRecordUniqueness(toolSlug, structuredContent, {
                 batchTitles,
                 batchTexts: batchQuestionTexts,
                 historicalTexts: historicalQuestionTexts,
                 historicalTitles,
               });
+
+              if (!uniqueness.valid && worksheetBatch) {
+                for (
+                  let dupPass = 0;
+                  !uniqueness.valid && dupPass < 10;
+                  dupPass += 1
+                ) {
+                  const regenSeed = variantIndex + attempt * 10000 + dupPass * 7919;
+                  const recoveryMeta = {
+                    ...finalizeMeta,
+                    generationVariant: regenSeed,
+                    variantAngle: getAiGeneratorVariantAngle(regenSeed, subjectName),
+                    variantScenario: getAiGeneratorVariantScenario(regenSeed, subjectName),
+                    uniqueSeed: `${extraParams.uniqueSeed || ''}-dup${attempt}-v${variantIndex}-p${dupPass}`,
+                    avoidQuestionTexts: [
+                      ...batchQuestionTexts,
+                      ...collectQuestionTextsFromStructured(structuredContent, toolSlug),
+                    ],
+                  };
+
+                  if (dupPass === 0 && batchQuestionTexts.length === 0) {
+                    structuredContent = repairWorksheetBatchDuplicates(structuredContent, recoveryMeta);
+                  } else {
+                    structuredContent = rebuildWorksheetBatchVariantSmart(structuredContent, recoveryMeta);
+                  }
+                  structuredContent = dedupeIntraRecordQuestions(toolSlug, structuredContent);
+                  structuredContent = renumberIntraRecordQuestions(toolSlug, structuredContent);
+                  uniqueness = validateRecordUniqueness(toolSlug, structuredContent, {
+                    batchTitles,
+                    batchTexts: batchQuestionTexts,
+                    historicalTexts: historicalQuestionTexts,
+                    historicalTitles,
+                  });
+                }
+
+                if (!uniqueness.valid) {
+                  structuredContent = rebuildWorksheetBatchVariantSmart(structuredContent, {
+                    ...finalizeMeta,
+                    generationVariant: variantIndex + batchIndex * 50000 + attempt * 1000,
+                    uniqueSeed: `${extraParams.uniqueSeed}-final-v${variantIndex}`,
+                    avoidQuestionTexts: [
+                      ...batchQuestionTexts,
+                      ...collectQuestionTextsFromStructured(structuredContent, toolSlug),
+                    ],
+                  });
+                  structuredContent = dedupeIntraRecordQuestions(toolSlug, structuredContent);
+                  structuredContent = renumberIntraRecordQuestions(toolSlug, structuredContent);
+                  uniqueness = validateRecordUniqueness(toolSlug, structuredContent, {
+                    batchTitles,
+                    batchTexts: batchQuestionTexts,
+                    historicalTexts: historicalQuestionTexts,
+                    historicalTitles,
+                  });
+                }
+              }
+
               if (!uniqueness.valid) {
                 lastError = uniqueness.errors.join('; ');
                 if (attempt < maxAttempts) continue;
@@ -424,7 +526,8 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             const uid = opts.reqUser?.userId || opts.reqUser?._id || 'unknown';
             const teacherId = mongoose.Types.ObjectId.isValid(uid) ? uid : undefined;
 
-            const record = await AiToolGeneration.create({
+            const record = await withMongoRetry(() =>
+              AiToolGeneration.create({
               toolName: toolSlug,
               toolDisplayName,
               sourceType: 'book_rag',
@@ -460,7 +563,8 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                 uniquenessTarget: historical.uniquenessTarget,
               },
               ...(teacherId ? { teacherId } : {}),
-            });
+            })
+            );
 
             await persistGenerationFingerprints(toolSlug, structuredContent, scope, record._id).catch(
               (fpErr) => {
@@ -489,10 +593,14 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             return { ok: true, variantIndex, batchIndex, record: record.toObject() };
           } catch (err) {
             lastError = err?.message || String(err);
-            if (isTransientGeminiError(err) && attempt < maxAttempts) {
+            if (
+              (isTransientGeminiError(err) || isMongoTransientError(err)) &&
+              attempt < maxAttempts
+            ) {
               await sleep(Math.min(12_000, 2500 * attempt));
               continue;
             }
+            if (attempt < maxAttempts) continue;
           }
         }
         return { ok: false, variantIndex, batchIndex, error: lastError };
@@ -501,6 +609,9 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
       for (const result of slotResults.sort((a, b) => a.batchIndex - b.batchIndex)) {
         if (result.ok) savedRecords.push(result.record);
         else {
+          console.warn(
+            `[Book Generator batch] Slot ${result.batchIndex} failed (${qualityTierSettings.tier}): ${result.error}`,
+          );
           failures.push(formatBookSlotFailureMessage(result.batchIndex, result.error));
         }
       }

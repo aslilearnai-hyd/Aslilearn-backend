@@ -10,6 +10,7 @@ import {
   GEMINI_LITE_OVERFLOW_DEFAULT,
   GEMINI_MODELS_FALLBACK,
   isRetiredOrUnsupportedGeminiModel,
+  resolveAllowedGeminiModel,
 } from './gemini-models.js';
 import { extractActivitiesFromCuriosityWorkbookPdf } from './curiosity-activity-pdf-parser.js';
 import {
@@ -142,7 +143,7 @@ function mergeGeminiModelChain(primaryModel, envFallbackCsv) {
     seen.add(key);
     out.push(m);
   }
-  return out.length ? out : [GEMINI_LITE_MODEL, GEMINI_FLASH_MODEL];
+  return out.length ? out : [GEMINI_LITE_MODEL];
 }
 
 function mergeLiteModelChain(primaryModel, envFallbackCsv) {
@@ -172,16 +173,48 @@ function mergeLiteModelChain(primaryModel, envFallbackCsv) {
   return out.length ? out : [GEMINI_LITE_MODEL, GEMINI_LITE_FALLBACK_MODEL];
 }
 
+function isGeminiLiteOnlyPolicy() {
+  const raw = String(process.env.AI_GENERATOR_FLASH_LITE_ONLY ?? 'true').trim().toLowerCase();
+  return raw !== 'false' && raw !== '0' && raw !== 'off';
+}
+
 function getFlashLiteModelChain(primaryLite, isBatchVariant = false) {
+  const litePrimary = resolveAllowedGeminiModel(primaryLite || GEMINI_LITE_MODEL);
+  if (isGeminiLiteOnlyPolicy()) {
+    const chain = [litePrimary];
+    if (!isBatchVariant) return reorderModelChainForCooldown(chain);
+    return reorderModelChainForCooldown(chain);
+  }
   const overflowCsv =
     process.env.AI_GENERATOR_GEMINI_LITE_OVERFLOW ||
     process.env.VIDYA_AI_GEMINI_LITE_OVERFLOW ||
     GEMINI_LITE_OVERFLOW_DEFAULT;
-  const chain = mergeLiteModelChain(primaryLite || GEMINI_LITE_MODEL, overflowCsv);
+  const liteChain = mergeLiteModelChain(litePrimary, overflowCsv);
+  const escalateOn503 =
+    String(process.env.GEMINI_503_ESCALATE_TO_FLASH ?? 'true').trim().toLowerCase() !== 'false' &&
+    String(process.env.GEMINI_503_ESCALATE_TO_FLASH ?? 'true').trim().toLowerCase() !== '0' &&
+    String(process.env.GEMINI_503_ESCALATE_TO_FLASH ?? 'true').trim().toLowerCase() !== 'off';
+  const escalateCsv =
+    process.env.GEMINI_503_ESCALATION_MODELS ||
+    `${GEMINI_FLASH_MODEL},${GEMINI_FLASH_FALLBACK_MODEL}`;
+  const chain = escalateOn503
+    ? mergeGeminiModelChain(liteChain.join(','), escalateCsv)
+    : liteChain;
   if (!isBatchVariant) return reorderModelChainForCooldown(chain);
   const maxModels = Number(process.env.GEMINI_BATCH_LITE_MODELS);
-  const cap = Number.isFinite(maxModels) && maxModels > 0 ? Math.min(maxModels, 3) : 2;
-  return reorderModelChainForCooldown(chain.slice(0, cap));
+  if (Number.isFinite(maxModels) && maxModels > 0) {
+    return reorderModelChainForCooldown(chain.slice(0, Math.min(maxModels, chain.length)));
+  }
+  return reorderModelChainForCooldown(chain);
+}
+
+/** Exponential backoff for 503 / UNAVAILABLE (attempt is 1-based). */
+function compute503BackoffMs(attempt) {
+  const base = Number(process.env.GEMINI_503_BACKOFF_BASE_MS) || 2000;
+  const cap = Number(process.env.GEMINI_503_BACKOFF_CAP_MS) || 30_000;
+  const exponential = base * 2 ** Math.max(0, attempt - 1);
+  const jitter = Math.floor(Math.random() * 600);
+  return Math.min(cap, exponential + jitter);
 }
 
 const MODEL_UNAVAILABLE_COOLDOWN_MS = Number(process.env.GEMINI_MODEL_COOLDOWN_MS) || 90_000;
@@ -231,15 +264,16 @@ function getGeminiFallbackConfig() {
       process.env.GEMINI_API_KEY ||
       ''
   ).trim();
-  const primaryModel = String(
+  const primaryModel = resolveAllowedGeminiModel(
     process.env.GEMINI_FALLBACK_MODEL ||
       process.env.VIDYA_AI_GEMINI_MODEL ||
-      GEMINI_FLASH_MODEL
-  ).trim();
+      GEMINI_LITE_MODEL,
+  );
   const envFallbackCsv =
-    process.env.VIDYA_AI_GEMINI_FALLBACK_MODELS ||
-    `${GEMINI_LITE_MODEL},${GEMINI_LITE_FALLBACK_MODEL},${GEMINI_FLASH_MODEL},${GEMINI_FLASH_FALLBACK_MODEL}`;
-  const modelChain = mergeGeminiModelChain(primaryModel, envFallbackCsv);
+    process.env.VIDYA_AI_GEMINI_FALLBACK_MODELS || GEMINI_LITE_MODEL;
+  const modelChain = isGeminiLiteOnlyPolicy()
+    ? [primaryModel]
+    : mergeGeminiModelChain(primaryModel, envFallbackCsv);
   const baseUrl = String(
     process.env.GEMINI_API_BASE_URL || 'https://generativelanguage.googleapis.com/v1beta'
   )
@@ -442,14 +476,15 @@ async function callChatCompletions({
 
     const envMaxAttempts = Number(process.env.GEMINI_RETRY_ATTEMPTS_PER_MODEL);
     const batchTransientRetries = Number(process.env.GEMINI_BATCH_TRANSIENT_RETRIES);
+    const default503Retries = Number(process.env.GEMINI_503_MAX_RETRIES) || 3;
     const defaultMaxAttempts =
       isBatchVariant && flashLiteOnly
         ? Number.isFinite(batchTransientRetries) && batchTransientRetries > 0
-          ? Math.min(batchTransientRetries, 2)
-          : 1
+          ? Math.min(batchTransientRetries, 5)
+          : default503Retries
         : Number.isFinite(envMaxAttempts) && envMaxAttempts > 0
           ? envMaxAttempts
-          : 3;
+          : default503Retries;
     const maxAttemptsPerModel = Math.max(
       1,
       Math.min(
@@ -550,7 +585,7 @@ async function callChatCompletions({
             /\b503\b|UNAVAILABLE|high demand|experiencing/i.test(msg);
           if (is503Like) {
             if (attempt < maxAttemptsPerModel) {
-              const delayMs = Math.min(12_000, Math.round(2500 * attempt + Math.random() * 1000));
+              const delayMs = compute503BackoffMs(attempt);
               throttledGeminiWarn(
                 `503-${modelName}`,
                 `[Gemini] ${modelName} unavailable (503); waiting ${delayMs}ms then retry (${attempt}/${maxAttemptsPerModel})`,
@@ -560,7 +595,7 @@ async function callChatCompletions({
             }
             throttledGeminiWarn(
               `503-exhausted-${modelName}`,
-              `[Gemini] ${modelName} still unavailable after retries; trying next model.`,
+              `[Gemini] ${modelName} still unavailable after ${maxAttemptsPerModel} retries; escalating to next model.`,
             );
             markModelCooldown(modelName);
             break;

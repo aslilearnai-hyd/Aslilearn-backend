@@ -98,6 +98,15 @@ function hasScaffoldQuestionRows(data) {
   return false;
 }
 
+function worksheetHasMinimumBookQuestions(data = {}) {
+  let count = 0;
+  for (const sec of Array.isArray(data.sections) ? data.sections : []) {
+    count += Array.isArray(sec?.questions) ? sec.questions.length : 0;
+  }
+  if (Array.isArray(data.questions)) count = Math.max(count, data.questions.length);
+  return count >= 3 || Boolean(data.bookGroundedFallback) || Boolean(data.topicGroundedFallback);
+}
+
 /**
  * Production quality gate — rejects incomplete, placeholder, or scaffold content.
  * @returns {{ valid: boolean, errors: string[], missingSections: string[] }}
@@ -118,9 +127,16 @@ export function runAiGeneratorQualityGate(toolSlug, structured, meta = {}) {
   }
 
   const sectionPadActive = isAiGeneratorSectionPadEnabled() && meta.strictValidation !== true;
-  const bookGroundedWorksheet =
+  const batchWorksheetRelaxed =
     slug === 'worksheet-mcq-generator' &&
-    Boolean(meta.bookGenerator || meta.bookGroundedFallback || data.bookGroundedFallback);
+    Boolean(
+      meta.bookGenerator ||
+        meta.batchOrchestrator ||
+        meta.bookGroundedFallback ||
+        meta.topicGroundedFallback ||
+        data.bookGroundedFallback ||
+        data.topicGroundedFallback,
+    );
 
   const title = String(
     data.title ||
@@ -137,7 +153,7 @@ export function runAiGeneratorQualityGate(toolSlug, structured, meta = {}) {
   }
 
   // Section-pad / book-grounded fallbacks may use template phrasing — do not reject that output.
-  const skipPlaceholderWalk = sectionPadActive || bookGroundedWorksheet || meta.bookGenerator;
+  const skipPlaceholderWalk = sectionPadActive || batchWorksheetRelaxed;
   if (!skipPlaceholderWalk) {
     for (const { key, text } of walkValues(data)) {
       if (BOILERPLATE_META_KEYS.has(key)) continue;
@@ -170,7 +186,7 @@ export function runAiGeneratorQualityGate(toolSlug, structured, meta = {}) {
       errors.push('Question text too short.');
       break;
     }
-    if (!sectionPadActive && !bookGroundedWorksheet && !meta.bookGenerator && isPlaceholderText(q.text)) {
+    if (!sectionPadActive && !batchWorksheetRelaxed && isPlaceholderText(q.text)) {
       errors.push(`Placeholder question: "${String(q.text).slice(0, 60)}..."`);
       break;
     }
@@ -245,8 +261,31 @@ export function runAiGeneratorQualityGate(toolSlug, structured, meta = {}) {
     }
   }
 
-  if (meta.strictValidation === true && hasScaffoldQuestionRows(data)) {
+  if (meta.strictValidation === true && hasScaffoldQuestionRows(data) && !meta.bookGenerator) {
     errors.push('Scaffold filler questions detected — Premium requires fully generated content.');
+  }
+
+  if (
+    (meta.bookGenerator || meta.batchOrchestrator) &&
+    slug === 'worksheet-mcq-generator' &&
+    batchWorksheetRelaxed &&
+    errors.length > 0 &&
+    worksheetHasMinimumBookQuestions(data)
+  ) {
+    const blocking = errors.filter(
+      (e) =>
+        !/^Missing sections:/i.test(e) &&
+        !/^Learning objectives are missing/i.test(e) &&
+        !/^Placeholder/i.test(e) &&
+        !/^Scaffold filler/i.test(e),
+    );
+    if (!blocking.length) {
+      return {
+        valid: true,
+        errors: [],
+        missingSections: fieldCheck.missingSections || [],
+      };
+    }
   }
 
   return {

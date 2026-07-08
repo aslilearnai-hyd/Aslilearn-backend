@@ -3098,6 +3098,21 @@ function canonicalWorksheetSectionName(name) {
   return n || 'Section';
 }
 
+function sanitizeWorksheetDisplayTitle(title) {
+  let t = String(title || '').trim();
+  t = t.replace(/\s*\(Uniqueness\s+Seed:[^)]*\)/gi, '');
+  t = t.replace(/\s*\(Distinct from all other variants[^)]*\)/gi, '');
+  t = t.replace(/\s*\(The title reflects the creative angle\.\)/gi, '');
+  for (let i = 0; i < 4; i += 1) {
+    const next = t.replace(/(\([^)]{12,140}\))\s*(?:\1\s*)+/g, '$1');
+    if (next === t) break;
+    t = next;
+  }
+  t = t.replace(/\s{2,}/g, ' ').trim();
+  if (t.length > 200) t = `${t.slice(0, 197).trim()}…`;
+  return t || 'Worksheet';
+}
+
 function normalizeWorksheetAnswerKeyLines(answerKey) {
   const raw = str(answerKey);
   if (!raw) return [];
@@ -3118,6 +3133,11 @@ function normalizeWorksheetAnswerKeyLines(answerKey) {
 
 function pushSection(lines, title, bodyLines) {
   lines.push(`### ${title}`, ...bodyLines, '');
+}
+
+/** Non-question worksheet blocks (answer key, Bloom) — use ## so markdown re-parse does not swallow them into Section E. */
+function pushWorksheetMetaSection(lines, title, bodyLines) {
+  lines.push('', '---', '', `## ${title}`, ...bodyLines, '');
 }
 
 /** Mock Test Builder — main template sections use ## for clearer parsing and display. */
@@ -3382,7 +3402,7 @@ export function formatItemLinesFromTemplate(toolSlug, item, index = 0) {
         sheet.sections = legacySections;
       }
       pushSection(lines, '1. Worksheet Title', [
-        str(sheet.worksheet_title || sheet.title) || `Worksheet ${n}`,
+        sanitizeWorksheetDisplayTitle(str(sheet.worksheet_title || sheet.title) || `Worksheet ${n}`),
       ]);
       const lo = strArr(sheet.learning_objectives || sheet.objectives);
       pushSection(
@@ -3427,13 +3447,13 @@ export function formatItemLinesFromTemplate(toolSlug, item, index = 0) {
         }
       });
       const answerKeyLines = normalizeWorksheetAnswerKeyLines(sheet.answer_key);
-      pushSection(
+      pushWorksheetMetaSection(
         lines,
         '9. Answer Key',
         answerKeyLines.length ? answerKeyLines : ['See answers under each question.'],
       );
       const bloom = [str(sheet.bloom_level), str(sheet.difficulty_tag || sheet.difficulty)].filter(Boolean).join(' — ');
-      pushSection(lines, "10. Bloom's Level and Difficulty Tag", [bloom || 'Apply — Medium']);
+      pushWorksheetMetaSection(lines, "10. Bloom's Level and Difficulty Tag", [bloom || 'Apply — Medium']);
       break;
     }
     case 'mock-test-builder': {

@@ -497,6 +497,13 @@ export function isAnswerKeyLikeQuestion(text) {
   const numberedShort = (q.match(/\d+[\).:\-]\s*[A-Da-d][);.]?/g) || []).length;
   if (numberedShort >= 3 && !/\?/.test(q) && !/_{2,}/.test(q) && q.length < 500) return true;
   if (/^(?:\d+[\).:\-]\s*[A-Za-z0-9][^?]{0,40}\s*;?\s*){3,}/.test(q) && !/\?/.test(q)) return true;
+  if (
+    /^(?:expected term or phrase|short accurate point|clear explanation linking)\b/i.test(q) &&
+    !/\?/.test(q)
+  ) {
+    return true;
+  }
+  if (/^q?\d+[\).:\-]\s*[A-Da-d][);.]\s+/i.test(q) && !/\?/.test(q) && !/_{2,}/.test(q)) return true;
   return false;
 }
 

@@ -5,6 +5,11 @@ import { cleanCsvCell } from '../utils/csv-encoding.js';
 import { spreadsheetBufferToCsv } from '../utils/spreadsheet-to-csv.js';
 import { VALID_SCHOOL_BOARDS, isValidSchoolBoard } from '../constants/boards.js';
 import {
+  GEMINI_LITE_MODEL,
+  isRetiredOrUnsupportedGeminiModel,
+  resolveAllowedGeminiModel,
+} from '../services/gemini-models.js';
+import {
   normalizeDifficulty,
   normalizeQuestionCategory,
 } from '../utils/advancedExamAnalytics.js';
@@ -25,7 +30,7 @@ const GEMINI_BASE_URL = String(
 )
   .trim()
   .replace(/\/+$/, '');
-const DEFAULT_GEMINI_MODEL = 'gemini-2.5-flash';
+const DEFAULT_GEMINI_MODEL = GEMINI_LITE_MODEL;
 
 function getGeminiApiKey() {
   return String(process.env.VIDYA_AI_GEMINI_API_KEY || process.env.GEMINI_API_KEY || '').trim();
@@ -38,19 +43,12 @@ function getGeminiModelCandidates() {
     .split(',')
     .map((m) => String(m || '').trim())
     .filter(Boolean);
-  const defaults = [
-    'gemini-3.1-flash-lite',
-    'gemini-2.5-flash-lite',
-    'gemini-2.5-flash',
-    'gemini-3.5-flash',
-    DEFAULT_GEMINI_MODEL,
-  ];
-  const retired = /^(gemini-2\.0|gemini-1\.[015])/i;
+  const defaults = [GEMINI_LITE_MODEL];
   return Array.from(
     new Set(
       [preferred, singleFallback, ...listFallback, ...defaults]
-        .filter(Boolean)
-        .filter((m) => !retired.test(String(m))),
+        .map((m) => resolveAllowedGeminiModel(m))
+        .filter(Boolean),
     ),
   );
 }

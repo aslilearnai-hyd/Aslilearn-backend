@@ -1,5 +1,15 @@
-/** Cost-saver mode: fewer retries, Flash-Lite only, dedup on ~50% of batch variants. */
+/**
+ * Great-quality mode: Flash primary, LLM section repair (no template pad), more retries.
+ * Default on when AI_GENERATOR_COST_SAVER=false unless AI_GENERATOR_GREAT_QUALITY=off.
+ */
+export function isAiGeneratorGreatQualityEnabled() {
+  const raw = String(process.env.AI_GENERATOR_GREAT_QUALITY ?? '').trim().toLowerCase();
+  if (raw === 'true' || raw === '1' || raw === 'on') return true;
+  if (raw === 'false' || raw === '0' || raw === 'off') return false;
+  return !isAiGeneratorCostSaverEnabled();
+}
 
+/** Cost-saver mode: fewer retries, Flash-Lite only, dedup on ~50% of batch variants. */
 export function isAiGeneratorCostSaverEnabled() {
 
   const raw = String(process.env.AI_GENERATOR_COST_SAVER ?? 'true').trim().toLowerCase();
@@ -36,7 +46,7 @@ export function getAiGeneratorGeminiModel() {
 
 /** Stronger model for Hindi/Telugu language-class subjects (overrides flash-lite-only / cost saver). */
 export function getAiGeneratorLanguageSubjectGeminiModel() {
-  return String(process.env.AI_GENERATOR_LANGUAGE_GEMINI_MODEL || 'gemini-2.5-flash').trim();
+  return String(process.env.AI_GENERATOR_LANGUAGE_GEMINI_MODEL || 'gemini-3.1-flash-lite').trim();
 }
 
 export function isAiGeneratorLanguageSubjectFlashOverrideEnabled() {
@@ -186,7 +196,12 @@ export function getAiGeneratorValidationMaxAttempts(isBatchVariant = false, reco
     return 1;
   }
 
-  if (!recovery && isBatchVariant && (isAiGeneratorCostSaverEnabled() || isAiGeneratorSectionPadEnabled())) {
+  if (
+    !recovery &&
+    isBatchVariant &&
+    !isAiGeneratorGreatQualityEnabled() &&
+    (isAiGeneratorCostSaverEnabled() || isAiGeneratorSectionPadEnabled())
+  ) {
     const padDefault = '1';
     const parsed = Number.parseInt(String(envRaw ?? padDefault), 10);
     return Math.min(3, Math.max(1, Number.isFinite(parsed) ? parsed : Number(padDefault)));
@@ -300,12 +315,12 @@ export function getBatchSlotMaxAttempts() {
   return shouldEnforceBatchUniquenessRetries() ? 3 : 1;
 }
 
-/** Book-Based Generator: default 2 slot attempts (503 / validation recovery). */
+/** Book-Based Generator: default 3 slot attempts (503 / validation / duplicate recovery). */
 export function getBookBatchSlotMaxAttempts() {
   const envRaw = process.env.BOOK_GENERATOR_SLOT_MAX_ATTEMPTS;
   const parsed = Number.parseInt(String(envRaw ?? ''), 10);
   if (Number.isFinite(parsed) && parsed > 0) return Math.min(5, parsed);
-  return 2;
+  return 3;
 }
 
 /** Max Gemini re-generations for single-record uniqueness (AI Generator API). Default 1 with cost saver. */
