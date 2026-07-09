@@ -3,6 +3,8 @@
  * Assigns Section A–E from PDF headings and question shape (MCQ, FIB, VSA, SA, competency).
  */
 
+import { stripVariantScaffoldFromQuestionText } from '../utils/sanitize-ai-question-display.js';
+
 export const WORKSHEET_CANONICAL_SECTIONS = [
   'Section A: MCQs',
   'Section B: Fill in the Blanks',
@@ -235,7 +237,7 @@ export function cleanWorksheetQuestionText(text) {
   q = q.replace(/\s*\|\s*nep[\s-]*ncf[^|?]*/gi, '').trim();
   q = q.replace(/\s*\|\s*page\s*\d+\s*$/i, '').trim();
   q = q.replace(/\s*\|\s*[^|?]+$/i, '').trim();
-  return q;
+  return stripVariantScaffoldFromQuestionText(q);
 };
 
 export const looksLikeQuestionPrompt = (text) => {

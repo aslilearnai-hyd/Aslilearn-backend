@@ -321,6 +321,40 @@ function scaffoldHomeworkSections(structured, meta = {}) {
   return out;
 }
 
+/** Ensure homework validation passes when the model returns too few practice questions. */
+export function ensureHomeworkPracticeQuestions(structured, meta = {}) {
+  const out = structured && typeof structured === 'object' ? { ...structured } : {};
+  const topic = String(meta.subTopic || meta.subtopic || meta.topic || 'this topic').trim();
+  const subject = String(meta.subject || 'Science').trim();
+  const countValid = (rows) =>
+    (Array.isArray(rows) ? rows : []).filter((q) => {
+      if (typeof q === 'string') return String(q).trim().length >= 8;
+      if (q && typeof q === 'object') {
+        return String(q.question || q.prompt || q.text || '').trim().length >= 8;
+      }
+      return false;
+    }).length;
+
+  const existing = Array.isArray(out.practice_questions) ? [...out.practice_questions] : [];
+  const fromQuestions = Array.isArray(out.questions) ? out.questions : [];
+  const validCount = countValid(existing) + countValid(fromQuestions);
+  if (validCount >= 3) return out;
+
+  const scaffold = [
+    homeworkQuestionRow(topic, subject, 1, `Summarise the central idea of ${topic} in your own words.`),
+    homeworkQuestionRow(topic, subject, 2, `Give two everyday examples linked to ${topic}.`),
+    homeworkQuestionRow(topic, subject, 3, `Why does ${topic} matter in ${subject}? Support with one fact.`),
+  ];
+  const merged = [...existing];
+  for (const row of scaffold) {
+    if (countValid(merged) >= 3) break;
+    merged.push(row);
+  }
+  out.practice_questions = merged;
+  out.questions = merged;
+  return out;
+}
+
 function quickAssignmentQuestionRow(topic, subject, n, prompt) {
   return {
     question_number: n,
@@ -673,9 +707,17 @@ function extraArrayRules(toolSlug, structured) {
   }
 
   if (toolSlug === 'homework-creator') {
+    const countValidHomeworkQuestion = (item) => {
+      if (typeof item === 'string') return String(item).trim().length >= 8;
+      if (item && typeof item === 'object') {
+        return String(item.question || item.prompt || item.text || '').trim().length >= 8;
+      }
+      return false;
+    };
     const pq = Array.isArray(structured.practice_questions) ? structured.practice_questions : [];
     const q = Array.isArray(structured.questions) ? structured.questions : [];
-    if (pq.length + q.length < 3) {
+    const good = [...pq, ...q].filter(countValidHomeworkQuestion).length;
+    if (good < 3) {
       missing.push('Homework questions (need at least 3 items)');
     }
   }
