@@ -114,12 +114,8 @@ export function getAiGeneratorVariantAngle(variantIndex, subject = '') {
 }
 
 export function getAiGeneratorVariantScenario(variantIndex, subject = '') {
-  const n = Math.floor(Number(variantIndex) || 0);
-  if (n < 1) return '';
-  if (isMonolingualStorySubject(subject)) {
-    return MONOLINGUAL_STORY_SCENARIO;
-  }
-  const angleIdx = (n - 1) % AI_GENERATOR_VARIANT_ANGLES.length;
-  const scenarioIdx = Math.floor((n - 1) / AI_GENERATOR_VARIANT_ANGLES.length) % AI_GENERATOR_VARIANT_SCENARIOS.length;
-  return AI_GENERATOR_VARIANT_SCENARIOS[(angleIdx + scenarioIdx) % AI_GENERATOR_VARIANT_SCENARIOS.length] || '';
+  // Scenarios are kept for batch metadata only — not injected into question text (precision mode).
+  void variantIndex;
+  void subject;
+  return '';
 }

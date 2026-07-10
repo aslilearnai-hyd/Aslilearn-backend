@@ -3,21 +3,28 @@
  * @module prompts/shared/subject-awareness
  */
 
+const PRECISION_RULES = Object.freeze([
+  'PRECISION: Every question names the exact subtopic and tests one clear skill — no story setup or role-play frame.',
+  'BAN: "Imagine…", "During…", "Design a poster…", "Role-play…", "In your community…", "Set the scene…".',
+  'DEPTH: Use definitions, formulas, numericals, cause–effect, and evidence — not thin activity wrappers.',
+  'Each line must be understandable without reading a fictional situation first.',
+]);
+
 const SUBJECT_RULES = Object.freeze({
   science: [
-    'Start with observation or a "What do you notice?" moment before naming concepts.',
-    'Include a simple hands-on or thought experiment using materials available in Indian schools.',
-    'Use prediction → observation → explanation sequence.',
-    'Name scientific terms only AFTER students have encountered the phenomenon.',
-    'Include safety notes for any practical work.',
-    'Real-life: Indian agriculture, weather, health, environment, daily technology.',
+    'Lead with the concept, definition, and formula (if any) for the subtopic.',
+    'Questions: define terms, state SI units, calculate with given values, explain cause–effect.',
+    'Numericals must show Given → Formula → Substitution → Answer with units.',
+    'One brief real device or phenomenon example only when it directly illustrates the subtopic.',
+    'Include safety notes only when a practical step is explicitly required.',
   ],
   maths: [
-    'Show step-by-step reasoning with "Think:" and "Therefore:" structure.',
-    'Include a visual representation suggestion (number line, diagram, table).',
+    'STRICT NUMERICAL MODE for Mathematics: every practice item is a calculation or data-based problem.',
+    'Every question must require step-by-step working (Given, Method, Working, Answer).',
+    'Use realistic values (₹, km, cm, kg, time) inline — not a long story before the numbers.',
+    'No essay, summary, speaking, or literature-style prompts.',
+    'Show step-by-step reasoning with "Given:", "Method:", "Therefore:" structure.',
     'Common error: show the wrong method first, then correct with "Why this fails:".',
-    'Mental math shortcuts where appropriate for the class level.',
-    'Word problems must use Indian currency (₹), distances (km), and familiar contexts.',
   ],
   english: [
     'Creative, varied sentence structures. Model good prose in teacher script.',
@@ -38,10 +45,10 @@ const SUBJECT_RULES = Object.freeze({
     'పదజాలం సందర్భ వాక్యాలతో.',
   ],
   social: [
-    'Use maps, timelines, case studies from Indian history/geography/civics.',
-    'Source-based questions: quote a short excerpt, ask interpretation.',
-    'Connect past events to present-day India where possible.',
-    'Debate or role-play with defined historical/fictional personas.',
+    'Use maps, timelines, and source excerpts from Indian history/geography/civics.',
+    'Source-based questions: quote a short excerpt, ask interpretation with evidence.',
+    'Connect past events to present-day India with named facts — not open-ended scenario prompts.',
+    'Avoid role-play; use direct analytical questions on causes, effects, and significance.',
   ],
   evs: [
     'Local environment examples: school garden, neighbourhood, festivals, seasons.',
@@ -80,5 +87,5 @@ export function buildSubjectAwarenessBlock(subject) {
       'Science: observation and experiment. Maths: step reasoning. Languages: communication skills. Social: evidence and perspective.',
     ].join('\n');
   }
-  return [`SUBJECT MODE: ${subject} (${cat})`, ...rules].join('\n');
+  return [`SUBJECT MODE: ${subject} (${cat})`, ...PRECISION_RULES, ...rules].join('\n');
 }

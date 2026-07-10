@@ -8,7 +8,7 @@ export default createToolPromptPack({
   includeDifferentiation: true,
   generationRules: [
     'FLASHCARD 5-BLOCK TEACHER DECK:',
-    'application_hots_cards[] AND cards[]: each item front = question/task/scenario; back = worked solution or explanation.',
+    'application_hots_cards[] AND cards[]: each item front = direct question/task on the subtopic; back = worked solution or explanation.',
     'CARDS ARE THE PRODUCT: write chapter-specific questions and complete answers — not meta-instructions like "Students should define the concept" or "give one example".',
     'Each back must teach: definition + mechanism/step + one concrete example from the subtopic.',
     'Include: image_suggestion, hint, memory_trick, real_example, quick_quiz variant per few cards.',

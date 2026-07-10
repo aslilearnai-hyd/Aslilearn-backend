@@ -6,6 +6,7 @@
 import { buildEducatorSystemPrompt, buildUniversalQualityBlock } from './shared/educator-persona.js';
 import { buildGradeLevelBlock } from './shared/grade-level.js';
 import { buildSubjectAwarenessBlock } from './shared/subject-awareness.js';
+import { buildPrecisionGenerationBlock } from './shared/precision-generation.js';
 import {
   buildPedagogyDepthBlock,
   buildDifferentiationBlock,
@@ -57,6 +58,7 @@ export function createToolPromptPack(config) {
   const buildGenerationExtras = (ctx) => {
     const blocks = [
       focus ? `TOOL MISSION: ${focus}` : '',
+      buildPrecisionGenerationBlock(),
       buildGradeLevelBlock(ctx.classLabel || ctx.gradeLevel),
       buildSubjectAwarenessBlock(ctx.subject),
       includePedagogyChecklist ? buildPedagogyDepthBlock() : '',

@@ -140,6 +140,11 @@ const SCAFFOLD_QUESTION_PATTERNS = [
   /accurate one-line definition from the/i,
   /concept from .+ applied to the situation with reasoning/i,
   /evaluates both statements using evidence from/i,
+  // Scenario-framing wrappers (precision mode)
+  /\b(?:imagine|during a|set the scene|role-play|in pairs, discuss|in your community)\b/i,
+  /\b(?:design a poster|school (?:science )?fair|market visit|festival preparation)\b/i,
+  /\b(?:speaking situation|observe a real conversation)\b/i,
+  /\bsummarise the main message\b/i,
 ];
 
 /** Above this fraction of scaffold questions, a batch must not be saved. */

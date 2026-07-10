@@ -13,6 +13,11 @@ import {
   buildPromptEngineSystemPrompt,
   isPromptEngineEnabled,
 } from '../prompts/registry.js';
+import {
+  buildBookGroundingPromptBlock,
+  buildPrecisionGenerationBlock,
+  buildVariantUniquenessBlock,
+} from '../prompts/shared/precision-generation.js';
 
 /** Pedagogy tags applied across tools (subset per tool in `pedagogyFrameworkTags`). */
 export const UNIVERSAL_PEDAGOGY_TAGS = Object.freeze([
@@ -296,7 +301,7 @@ const TEMPLATES = {
     regenerationRules: { mergePolicy: 'replace', allowTemplateRegeneration: true },
     gemini: {
       strictOutputHint:
-        'Return ONE JSON object per worksheet using strict section-wise format only: title, learning_objectives[], instructions, sections[{sectionName,questions[]}], answer_key, bloom_level, difficulty_tag. Sections MUST be exactly Section A (MCQs), B (Fill in the Blanks), C (Very Short Answer), D (Short Answer), E (Competency/Real-life). Do not merge sections, do not skip headings, and keep each question under its correct section. Section D and Section E must each contain at least one complete question. Section E questions must be real-life/application/case/scenario style prompts (not answer-key fragments, keywords, or one-line term lists). Flat rows (fallback): question_number, type, section, question, options[], answer, marks.',
+        'Return ONE JSON object per worksheet using strict section-wise format only: title, learning_objectives[], instructions, sections[{sectionName,questions[]}], answer_key, bloom_level, difficulty_tag. Sections MUST be exactly Section A (MCQs), B (Fill in the Blanks), C (Very Short Answer), D (Short Answer), E (Competency/Application). Do not merge sections, do not skip headings, and keep each question under its correct section. Section D and Section E must each contain at least one complete question. Section E = extended application: multi-step numerical, formula use, or explanation using textbook facts — direct stems only (no fictional scenario, case-study story, or role-play). Flat rows (fallback): question_number, type, section, question, options[], answer, marks.',
       pdfExtractSchema: {
         title: 'string',
         worksheet_title: 'string',
@@ -2411,6 +2416,9 @@ export function buildAiGeneratorPromptParts(toolSlug, params = {}) {
   const headings = canonicalHeadings.map((h) => `${h.order}. ${h.label}`).join('\n');
   const sectionCount = canonicalHeadings.length;
   const extra = params.extraParams && typeof params.extraParams === 'object' ? params.extraParams : {};
+  const hasBookContext = Boolean(
+    params.hasBookContext || params.pdfContext || extra.bookGenerator || extra.bookId,
+  );
   const bloomLevel = String(params.bloomLevel || extra.bloomLevel || '').trim();
   const questionCount = Number(extra.questionCount ?? extra.numberOfQuestions);
   const cardCount = Number(extra.cardCount);
@@ -2447,14 +2455,14 @@ export function buildAiGeneratorPromptParts(toolSlug, params = {}) {
     const practiceTarget =
       Number.isFinite(questionCount) && questionCount > 0 ? questionCount : 12;
     contextLines.push(
-      `TARGET PRACTICE QUESTIONS: ${practiceTarget} total, distributed across ALL sections A–G (each section must have at least 1 question; Section C = match, Section E = short answer, Section F = application/case-based)`,
+      `TARGET PRACTICE QUESTIONS: ${practiceTarget} total, distributed across ALL sections A–G (each section must have at least 1 question; Section C = match, Section E = short answer, Section F = applied problem using subtopic facts/formula, Section G = HOTS analytical on subtopic)`,
     );
   }
   if (slug === 'worksheet-mcq-generator') {
     const worksheetTarget =
       Number.isFinite(questionCount) && questionCount > 0 ? questionCount : 10;
     contextLines.push(
-      `WORKSHEET RULE: Generate exactly ${worksheetTarget} unique questions total across sections A–E (Section A MCQs, B fill blanks, C VSA, D short answer, E competency/real-life). Every question stem must be distinct — no repeats. Put questions ONLY in sections[].questions — do NOT duplicate the same items in top-level questions[] or section_a_mcqs.`,
+      `WORKSHEET RULE: Generate exactly ${worksheetTarget} unique questions total across sections A–E (Section A MCQs, B fill blanks, C VSA, D short answer, E extended application/numerical). Every question stem must be distinct, subtopic-specific, and direct — no scenario wrappers. Put questions ONLY in sections[].questions — do NOT duplicate the same items in top-level questions[] or section_a_mcqs.`,
     );
   }
   if (slug === 'chapter-summary-creator') {
@@ -2517,16 +2525,14 @@ export function buildAiGeneratorPromptParts(toolSlug, params = {}) {
   }
   if (slug === 'concept-mastery-helper') {
     contextLines.push(
-      'CONCEPT MASTERY VARIETY RULE: Each batch variant covers the SAME sub-topic but MUST use a different teaching angle, diagram idea, real-life example, concept-check questions, and lesson wording. The saved title must reflect the creative angle — not only the raw sub-topic name.',
+      'CONCEPT MASTERY VARIETY RULE: Each batch variant covers the SAME sub-topic but MUST use different definitions emphasis, diagram cues, numerical examples, concept-check questions, and lesson wording. Titles should name the subtopic clearly — not a fictional scenario.',
     );
     contextLines.push(
-      'Do NOT reuse the same lesson paragraph, key_points, or examples across variants. concept_name may include a short angle suffix (e.g. "Photosynthesis — hands-on lab angle").',
+      'Do NOT reuse the same lesson paragraph, key_points, or examples across variants. Vary which textbook facts and formulas you emphasise.',
     );
   }
   const generationVariant = Number(extra.generationVariant ?? extra.variantIndex);
   const batchSize = Number(extra.batchSize);
-  const variantAngle = String(extra.variantAngle || '').trim();
-  const variantScenario = String(extra.variantScenario || '').trim();
   const uniqueSeed = String(extra.uniqueSeed || '').trim();
   if (Number.isFinite(generationVariant) && generationVariant > 0) {
     const batchLabel =
@@ -2534,19 +2540,11 @@ export function buildAiGeneratorPromptParts(toolSlug, params = {}) {
     contextLines.push(
       `GENERATION VARIANT: ${Math.floor(generationVariant)}${batchLabel}. This output MUST be noticeably different from all other variants for the same subtopic.`,
     );
-    if (variantAngle) {
-      contextLines.push(`MANDATORY CREATIVE ANGLE (build the entire activity/content around this): ${variantAngle}`);
-    }
-    if (variantScenario) {
-      contextLines.push(`MANDATORY SCENARIO SETTING (use in examples, story, and activities): ${variantScenario}`);
-    }
+    contextLines.push(buildVariantUniquenessBlock(generationVariant, subjectLabel));
     if (slug === 'reading-practice-room' || slug === 'story-passage-creator') {
       const monolingualBlock = buildStoryPassageMonolingualOverrideBlock(String(params.subject || '').trim());
       if (monolingualBlock) contextLines.push(monolingualBlock);
     }
-    contextLines.push(
-      'UNIQUENESS RULES: Change the title/heading, opening hook, examples, question stems, numbers, names, and activity steps. Do NOT reuse the same story, same MCQ options, or same step wording as another variant. The title/heading MUST visibly reflect the creative angle (not a generic title).',
-    );
     contextLines.push(
       'COMPLETENESS RULE (critical): Fill EVERY canonical section/field listed below with real, non-empty content. The system validates ALL fields before saving — any empty section causes rejection and retry.',
     );
@@ -2572,6 +2570,16 @@ export function buildAiGeneratorPromptParts(toolSlug, params = {}) {
     }
   }
 
+  if (hasBookContext) {
+    contextLines.push(
+      buildBookGroundingPromptBlock({
+        topic: params.topic,
+        subTopic: params.subTopic || params.subtopic,
+        subject: subjectLabel,
+      }),
+    );
+  }
+
   const completenessRule =
     sectionCount > 0
       ? `COMPLETENESS RULE (mandatory): Fill ALL ${sectionCount} canonical sections listed below with real, non-empty content. The system validates every section before saving — any empty or missing field causes rejection and automatic retry. Do not omit sections or leave placeholder text.`
@@ -2588,7 +2596,7 @@ export function buildAiGeneratorPromptParts(toolSlug, params = {}) {
     'For My Study Decks, every item in cards[] MUST include front and back (non-empty strings).',
     'For Daily Class Plan Maker, fill ALL 9 canonical daily-plan fields — not lesson planner fields (no introduction_warmup, teaching_strategy, or 13-section lesson layout).',
     'For Exam Question Paper Generator, fill ALL 11 canonical exam-paper fields — not Mock Test Builder fields (no mock_test_title, test_purpose_subtopic_link, or 12-section mock layout).',
-    'If textbook passages do not contain enough information for a field, use general curriculum knowledge but never invent textbook quotations or claim a direct book quote.',
+    'If textbook passages do not contain enough information for a field, use general curriculum knowledge for THIS subtopic only — never invent textbook quotations or add fictional scenarios.',
     'Never paste instructional prompt text into structuredContent string values.',
   ].join('\n');
 
@@ -2618,6 +2626,12 @@ export function buildAiGeneratorPromptParts(toolSlug, params = {}) {
   const legacySystemPrompt = [
     'You are an expert Indian school curriculum content generator aligned to NEP 2020 and NCF-SE 2023.',
     'Return only valid JSON matching the enforced response schema. No markdown fences, no commentary outside JSON.',
+    buildPrecisionGenerationBlock(),
+    hasBookContext ? buildBookGroundingPromptBlock({
+      topic: params.topic,
+      subTopic: params.subTopic || params.subtopic,
+      subject: subjectLabel,
+    }) : '',
     completenessRule,
     'Use plain text only in every JSON string value — no markdown bold (**), italics (*), backticks, or # headings.',
     'Generate original, classroom-ready content. Do not repeat wording across variants on the same subtopic.',

@@ -13,7 +13,7 @@ export default createToolPromptPack({
   includePedagogyChecklist: true,
   generationRules: [
     'STUDENT PROJECT RULES:',
-    '- Frame as "You are a young scientist/designer investigating [subtopic]…"',
+    '- Title and steps must investigate the subtopic directly — definitions, observations, and conclusions on [subtopic].',
     '- safety_care_instructions: specific hazards (scissors, soil, water) and precautions.',
     '- observation_table: column headers + 4–6 rows students will fill during the project.',
     '- creative_output: what students make (model, poster, digital story, comic) with success criteria.',

@@ -6,7 +6,7 @@
 import { resolveSubjectCategory } from '../prompts/shared/subject-awareness.js';
 import { detectAssignmentSectionNum } from '../services/pdf-assignment-section-parser.js';
 
-/** @typedef {'stem'|'english'|'social'|'general'} ScaffoldBand */
+/** @typedef {'maths'|'stem'|'english'|'social'|'general'} ScaffoldBand */
 
 /**
  * @param {string} subject
@@ -20,16 +20,34 @@ export function resolveScaffoldBand(subject) {
     return 'social';
   }
   if (/evs|environmental/i.test(s)) return 'social';
+  if (/math|गणित/i.test(s)) return 'maths';
   const cat = resolveSubjectCategory(subject);
-  if (cat === 'science' || cat === 'maths') return 'stem';
+  if (cat === 'maths') return 'maths';
+  if (cat === 'science') return 'stem';
   if (cat === 'english' || cat === 'hindi' || cat === 'telugu') return 'english';
   if (cat === 'social' || cat === 'evs') return 'social';
   return 'general';
 }
 
 /** @param {string} subject */
+export function isMathsSubject(subject) {
+  return resolveScaffoldBand(subject) === 'maths';
+}
+
+/** @param {ScaffoldBand} band */
+export function isMathsBand(band) {
+  return band === 'maths';
+}
+
+/** @param {ScaffoldBand} band */
+export function isNumericalBand(band) {
+  return band === 'maths' || band === 'stem';
+}
+
+/** @param {string} subject */
 export function isStemSubject(subject) {
-  return resolveScaffoldBand(subject) === 'stem';
+  const band = resolveScaffoldBand(subject);
+  return band === 'stem' || band === 'maths';
 }
 
 /** @param {string} subject */
@@ -151,9 +169,9 @@ export function countValidQuestionRows(rows, minLen = 4) {
  */
 export function stemLearningObjectives(topic, subject) {
   return [
-    `Define and explain the core ideas of ${topic} using correct ${subject} terminology.`,
-    `Apply formulas and principles from ${topic} to solve short numerical or reasoning problems.`,
-    `Analyse one real-life application of ${topic} in everyday devices or situations.`,
+    `Define key terms in ${topic} and use correct ${subject} terminology and SI units.`,
+    `Apply the formula(s) for ${topic} to solve numerical problems with full working.`,
+    `Explain the cause–effect relationship central to ${topic} with one supporting example.`,
   ];
 }
 
@@ -164,8 +182,8 @@ export function stemLearningObjectives(topic, subject) {
  */
 export function englishLearningObjectives(topic, subject) {
   return [
-    `Recall and explain central ideas from ${topic}.`,
-    `Apply listening and speaking skills to discuss ${topic} in ${subject}.`,
+    `Identify and explain the central theme and key ideas in ${topic}.`,
+    `Analyse language, structure, or character/action in ${topic} with evidence from the text.`,
   ];
 }
 
@@ -176,8 +194,16 @@ export function englishLearningObjectives(topic, subject) {
  */
 export function generalLearningObjectives(topic, subject) {
   return [
-    `Explain the main ideas of ${topic} clearly.`,
-    `Apply ${topic} to a short task with examples from daily life.`,
+    `State and explain the main ideas of ${topic} clearly.`,
+    `Apply ${topic} to answer short written questions with relevant examples.`,
+  ];
+}
+
+export function mathsLearningObjectives(topic, subject) {
+  return [
+    `Solve standard numerical problems on ${topic} using the correct method and units.`,
+    `Apply ${topic} to one-step and two-step calculations with given data.`,
+    `Verify answers for ${topic} using estimation or reverse calculation.`,
   ];
 }
 
@@ -188,6 +214,7 @@ export function generalLearningObjectives(topic, subject) {
  * @returns {string[]}
  */
 export function learningObjectivesForBand(topic, subject, band) {
+  if (band === 'maths') return mathsLearningObjectives(topic, subject);
   if (band === 'stem') return stemLearningObjectives(topic, subject);
   if (band === 'english') return englishLearningObjectives(topic, subject);
   if (band === 'social') {
@@ -208,16 +235,18 @@ export function learningObjectivesForBand(topic, subject, band) {
  */
 export function scaffoldQuestionRow(topic, subject, band, n, prompt, answer) {
   const defaultAnswer =
-    band === 'stem'
-      ? `Use definitions, formulas, and examples from ${topic} in ${subject}.`
-      : band === 'english'
-        ? `Support your response with ideas from ${topic} in ${subject}.`
-        : `Use relevant examples and reasoning about ${topic} in ${subject}.`;
+    band === 'maths'
+      ? `Show Given, Formula/Method, Substitution, and final answer with correct units for ${topic}.`
+      : band === 'stem'
+        ? `Use definitions, formulas, and examples from ${topic} in ${subject}.`
+        : band === 'english'
+          ? `Support your response with ideas from ${topic} in ${subject}.`
+          : `Use relevant examples and reasoning about ${topic} in ${subject}.`;
   return {
     question_number: n,
     question: prompt,
-    type: n === 1 ? 'SA' : 'VSA',
-    marks: n === 1 ? 3 : 2,
+    type: band === 'maths' ? 'NUM' : n === 1 ? 'SA' : 'VSA',
+    marks: band === 'maths' ? (n === 1 ? 2 : n === 2 ? 3 : 4) : n === 1 ? 3 : 2,
     answer: answer || defaultAnswer,
   };
 }
@@ -229,6 +258,34 @@ export function scaffoldQuestionRow(topic, subject, band, n, prompt, answer) {
  * @returns {Array<Record<string, unknown>>}
  */
 export function conceptQuestionsForBand(topic, subject, band) {
+  if (band === 'maths') {
+    return [
+      scaffoldQuestionRow(
+        topic,
+        subject,
+        band,
+        1,
+        `Solve a direct numerical on ${topic}. Show Given, Method, Working, and Answer.`,
+        `Write Given, Method, Working, and Answer with units if needed.`,
+      ),
+      scaffoldQuestionRow(
+        topic,
+        subject,
+        band,
+        2,
+        `Given the required data for ${topic}, calculate the unknown. Show each step.`,
+        `Show clear step-by-step calculation and final answer with units.`,
+      ),
+      scaffoldQuestionRow(
+        topic,
+        subject,
+        band,
+        3,
+        `Solve a two-step numerical on ${topic}. Show full working for both steps.`,
+        `Show both steps with formula/method and final answer.`,
+      ),
+    ];
+  }
   if (band === 'stem') {
     return [
       scaffoldQuestionRow(
@@ -236,24 +293,24 @@ export function conceptQuestionsForBand(topic, subject, band) {
         subject,
         band,
         1,
-        `Define ${topic} and state its SI unit (if applicable).`,
-        `State the definition and correct unit for ${topic}.`,
+        `Define ${topic}. State the formula used (if any) and its SI unit.`,
+        `State the definition, formula, and correct unit for ${topic}.`,
       ),
       scaffoldQuestionRow(
         topic,
         subject,
         band,
         2,
-        `A device operates at 220 V and draws 2 A. Calculate the related quantity for ${topic} using the correct formula.`,
-        `Show formula substitution with correct units.`,
+        `Using the formula for ${topic}, calculate the result when V = 220 V and I = 2 A. Show substitution and units.`,
+        `Show formula substitution with correct units and final value.`,
       ),
       scaffoldQuestionRow(
         topic,
         subject,
         band,
         3,
-        `Give two real-life examples where ${topic} is used to compare or choose devices or situations.`,
-        `Examples should be specific to ${subject} and ${topic}.`,
+        `Explain the relationship between the quantities in ${topic}. Give one numerical example.`,
+        `Clear explanation of the relationship plus one worked numerical.`,
       ),
     ];
   }
@@ -264,28 +321,28 @@ export function conceptQuestionsForBand(topic, subject, band) {
         subject,
         band,
         1,
-        `Summarise the main message of ${topic} in your own words.`,
+        `State the central theme of ${topic} in one or two sentences.`,
       ),
       scaffoldQuestionRow(
         topic,
         subject,
         band,
         2,
-        `Identify two speaking situations where ideas from ${topic} would help.`,
+        `Quote one line from ${topic} and explain how it supports the main idea.`,
       ),
       scaffoldQuestionRow(
         topic,
         subject,
         band,
         3,
-        `Why is ${topic} relevant for learners studying ${subject}?`,
+        `Explain one literary device or structural choice used in ${topic} with evidence from the text.`,
       ),
     ];
   }
   return [
-    scaffoldQuestionRow(topic, subject, band, 1, `Explain the main idea of ${topic} in your own words.`),
-    scaffoldQuestionRow(topic, subject, band, 2, `Give two examples of ${topic} from daily life.`),
-    scaffoldQuestionRow(topic, subject, band, 3, `Why is ${topic} important in ${subject}?`),
+    scaffoldQuestionRow(topic, subject, band, 1, `Define ${topic} and state its importance in ${subject}.`),
+    scaffoldQuestionRow(topic, subject, band, 2, `Explain two key points about ${topic} with brief examples.`),
+    scaffoldQuestionRow(topic, subject, band, 3, `Analyse why ${topic} is significant in ${subject}.`),
   ];
 }
 
@@ -296,6 +353,9 @@ export function conceptQuestionsForBand(topic, subject, band) {
  * @returns {string}
  */
 export function instructionsForBand(topic, subject, band) {
+  if (band === 'maths') {
+    return `Solve all numerical questions on ${topic}. Show Given, Formula/Method, Working, and Answer. Use correct units and box the final answer.`;
+  }
   if (band === 'stem') {
     return `Complete all sections on ${topic}. Show formula substitutions, units, and reasoning for numerical answers.`;
   }
@@ -315,12 +375,129 @@ export function instructionsForBand(topic, subject, band) {
  */
 export function genericSectionFallback(label, topic, subject, band, isList = false) {
   const text =
-    band === 'stem'
-      ? `${label} for ${topic}: use definitions, formulas, and a worked example (${subject}).`
-      : band === 'english'
-        ? `${label} for ${topic}: use evidence from the text and clear communication (${subject}).`
-        : band === 'social'
-          ? `${label} for ${topic}: use facts, sources, and Indian-context examples (${subject}).`
-          : `${label} for ${topic} in ${subject}.`;
+    band === 'maths'
+      ? `${label} for ${topic}: numerical/word-problem practice only — show step-by-step working (${subject}).`
+      : band === 'stem'
+        ? `${label} for ${topic}: use definitions, formulas, and a worked example (${subject}).`
+        : band === 'english'
+          ? `${label} for ${topic}: use evidence from the text and clear communication (${subject}).`
+          : band === 'social'
+            ? `${label} for ${topic}: use facts, sources, and Indian-context examples (${subject}).`
+            : `${label} for ${topic} in ${subject}.`;
   return isList ? [text] : text;
+}
+
+export function applicationTasksForBand(topic, subject, band) {
+  if (band === 'maths') {
+    return [
+      `Solve five numericals on ${topic}. Show Given, Method, Working, and Answer.`,
+      `Solve one multi-step numerical on ${topic} and verify the answer by a second method.`,
+    ];
+  }
+  if (band === 'stem') {
+    return [
+      `Solve three numericals on ${topic} using the correct formula and SI units.`,
+      `Explain how ${topic} applies to one electrical or mechanical device — name the formula and one calculation.`,
+    ];
+  }
+  if (band === 'english') {
+    return [
+      `Write a paragraph analysing the theme of ${topic} with two text references.`,
+      `Identify and explain one figure of speech in ${topic} with a quoted line.`,
+    ];
+  }
+  return [
+    `Answer two short questions applying ${topic} in ${subject} with evidence or examples.`,
+    `Write a structured paragraph explaining ${topic} and its significance.`,
+  ];
+}
+
+export function realLifeActivityForBand(topic, subject, band) {
+  if (band === 'maths') {
+    return `Form and solve one numerical on ${topic} using three given measurements from the lesson data set.`;
+  }
+  if (band === 'stem') {
+    return `State the formula for ${topic}, substitute given values, and calculate with correct units.`;
+  }
+  if (band === 'english') {
+    return `Select two quotations from ${topic} and explain what each reveals about the theme.`;
+  }
+  return `List two facts about ${topic} and explain how each supports understanding in ${subject}.`;
+}
+
+export function creativeQuestionForBand(topic, subject, band) {
+  if (band === 'maths') {
+    return `Construct one original numerical on ${topic} with realistic data. Solve it and check by estimation.`;
+  }
+  if (band === 'stem') {
+    return `Derive or explain the formula for ${topic} and solve one non-standard numerical using it.`;
+  }
+  if (band === 'english') {
+    return `Analyse how the author develops the central idea in ${topic} — cite two specific lines.`;
+  }
+  return `Compare two key aspects of ${topic} and state which is more significant for ${subject}, with reasons.`;
+}
+
+export function collaborativeTaskForBand(topic, subject, band) {
+  if (band === 'maths') {
+    return `Compare two solution methods for the same ${topic} numerical and state which is more efficient.`;
+  }
+  if (band === 'stem') {
+    return `Explain ${topic} to a peer using definition, formula, and one worked numerical.`;
+  }
+  if (band === 'english') {
+    return `Identify the strongest evidence for the theme in ${topic} and justify your choice in writing.`;
+  }
+  return `Write three precise points about ${topic} and rank them by importance with justification.`;
+}
+
+export function challengeQuestionForBand(topic, subject, band) {
+  if (band === 'maths') {
+    return `Solve a multi-step numerical on ${topic}. Show full working and verify the final answer.`;
+  }
+  if (band === 'stem') {
+    return `Solve a two-part problem on ${topic}: (a) recall the formula, (b) calculate with given data and explain units.`;
+  }
+  if (band === 'english') {
+    return `Evaluate two interpretations of the theme in ${topic} and justify the stronger reading with evidence.`;
+  }
+  return `Identify a common misconception about ${topic} and correct it with accurate ${subject} reasoning.`;
+}
+
+export function assessmentRubricForBand(band) {
+  if (band === 'maths') {
+    return `Correct method, accurate calculation, units, neat working, and final answer (4-point scale).`;
+  }
+  if (band === 'stem') {
+    return `Concept accuracy, correct formula use, units, reasoning, and presentation (4-point scale).`;
+  }
+  if (band === 'english') {
+    return `Clarity, evidence from text, participation, and accuracy of language (4-point scale).`;
+  }
+  return `Clarity, accuracy, use of examples, and completeness (4-point scale).`;
+}
+
+export function expectedOutcomesForBand(topic, subject, band) {
+  if (band === 'maths') {
+    return [
+      `Students can solve direct and word-problem numericals on ${topic} with clear working.`,
+      `Students can check answers using estimation or reverse calculation.`,
+    ];
+  }
+  if (band === 'stem') {
+    return [
+      `Students can define ${topic}, state the formula, and use correct SI units.`,
+      `Students can solve numerical and explanatory questions on ${topic} with clear reasoning.`,
+    ];
+  }
+  if (band === 'english') {
+    return [
+      `Students can state the theme and key ideas of ${topic} with textual evidence.`,
+      `Students can analyse language and structure in ${topic} in short written responses.`,
+    ];
+  }
+  return [
+    `Students can explain key ideas from ${topic} accurately.`,
+    `Students can apply ${topic} in short written answers in ${subject}.`,
+  ];
 }
