@@ -61,3 +61,30 @@ if (!quality.valid) {
 }
 
 console.log('OK: book-grounded worksheet fallback produced', questionCount, 'questions');
+
+const pollutedRag = `REFERENCE TEXTBOOK CONTENT (RAG — PRIMARY factual source):
+Follow textbook terminology, definitions, examples, formulae, and explanations.
+Generate MCQs, worksheets, and practice in the same formats as the textbook Exercises.
+[1] (Chapter 8)
+The value of sin 30° is 1/2. For angle 45°, sin and cos are equal. tan 60° equals √3.`;
+
+const pollutedMeta = {
+  subject: 'Mathematics',
+  topic: 'Introduction to Trigonometry',
+  subTopic: '8.3 Trigonometric Ratios of Some Specific Angles',
+  bookGenerator: true,
+  pdfContext: pollutedRag,
+  generationVariant: 1,
+};
+
+const polluted = finalizeWorksheetStructuredContent({ title: 'Trig WS', sections: [] }, pollutedMeta);
+const pollutedQs = (polluted.sections || []).flatMap((s) => s.questions || []).map((q) => String(q.question || ''));
+if (pollutedQs.some((q) => /follow textbook terminology/i.test(q))) {
+  console.error('FAIL: prompt instruction leaked into worksheet question:', pollutedQs[0]);
+  process.exit(1);
+}
+if (!pollutedQs.some((q) => /sin|cos|tan|trigonometric|angle|ratio|numerical|formula|30|45|60/i.test(q))) {
+  console.error('FAIL: maths worksheet should have trigonometry content, got:', pollutedQs.join(' | '));
+  process.exit(1);
+}
+console.log('OK: polluted RAG meta lines filtered from worksheet questions');

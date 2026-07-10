@@ -71,6 +71,7 @@ import {
   isResponseSchemaEnabled,
 } from '../utils/ai-generator-response-schema.js';
 import { getAiGeneratorVariantAngle, getAiGeneratorVariantScenario } from '../constants/ai-generator-variant-angles.js';
+import { resolveSubjectCategory } from '../prompts/shared/subject-awareness.js';
 import { runPostGenerationContentValidation } from '../utils/ai-generator-post-validation.js';
 import { resolveAllowedGeminiModel } from './gemini-models.js';
 import {
@@ -4586,6 +4587,56 @@ function repairActivityHeadingEchoFields(structured, meta = {}, toolSlug = 'acti
   return normalizeActivityStructuredContent(n, toolSlug);
 }
 
+function isBookContextMetaLine(sentence = '') {
+  const t = String(sentence || '').replace(/\s+/g, ' ').trim();
+  if (!t || t.length < 20) return true;
+  const metaPatterns = [
+    /^follow textbook terminology/i,
+    /^use the (?:passages|textbook)/i,
+    /^reference textbook content/i,
+    /^textbook content \(primary/i,
+    /^priority:\s*\(1\)/i,
+    /^do not invent facts/i,
+    /^synthesize into the tool schema/i,
+    /^generate (?:mcqs|questions|questions and content)/i,
+    /^uploaded book/i,
+    /^gemini knowledge/i,
+    /^textbook-grounded generation/i,
+    /^classroom textbook methodology/i,
+    /^precision mode/i,
+    /^mandatory when passages/i,
+    /^align output with this curriculum/i,
+    /^ask directly about the subtopic/i,
+    /^when passages are thin/i,
+    /^quote or paraphrase textbook ideas/i,
+    /^variant \d+:/i,
+    /^book:\s/i,
+    /^subject:\s/i,
+    /^class:\s/i,
+    /^board:\s/i,
+    /^tool:\s/i,
+    /^sub-?topic:\s/i,
+    /^topic:\s/i,
+    /primary (?:source|factual source)/i,
+    /no fictional scenario/i,
+    /students recall key facts about/i,
+    /students apply .+ to short/i,
+  ];
+  return metaPatterns.some((re) => re.test(t));
+}
+
+function isSubstantiveBookSentence(sentence = '', subject = '') {
+  const t = String(sentence || '').replace(/\s+/g, ' ').trim();
+  if (!t || isBookContextMetaLine(t)) return false;
+  const cat = resolveSubjectCategory(subject);
+  if (cat === 'maths') {
+    return /sin|cos|tan|cot|sec|cosec|angle|ratio|trigonometric|°|degree|\d+\s*°|=\s*[\d./]+|evaluate|prove|find the value|calculate|^\s*\d+[\s.)]/i.test(
+      t,
+    );
+  }
+  return /[a-z]{4,}/i.test(t) && !/^it matches the textbook/i.test(t);
+}
+
 function extractBookGroundedSentences(pdfContext = '', topic = '') {
   const raw = String(pdfContext || '')
     .replace(/\[Chunk \d+\]/gi, '\n')
@@ -4593,6 +4644,14 @@ function extractBookGroundedSentences(pdfContext = '', topic = '') {
     .replace(/TEXTBOOK CONTENT[^:]*:/gi, ' ')
     .replace(/REFERENCE TEXTBOOK CONTENT[^:]*:/gi, ' ')
     .replace(/USER-SELECTED CURRICULUM[^]*?(?=\n\n|$)/gi, ' ')
+    .replace(/TEXTBOOK-GROUNDED GENERATION[^]*?(?=\[|\n\n|$)/gi, ' ')
+    .replace(/CLASSROOM TEXTBOOK METHODOLOGY[^]*?(?=\[|\n\n|$)/gi, ' ')
+    .replace(/PRECISION MODE[^]*?(?=\[|\n\n|$)/gi, ' ')
+    .replace(/Follow textbook terminology[^.!?]*[.!?]/gi, ' ')
+    .replace(/Generate (?:MCQs|questions)[^.!?]*[.!?]/gi, ' ')
+    .replace(/Do not (?:invent facts|wrap book content)[^.!?]*[.!?]/gi, ' ')
+    .replace(/Use the (?:REFERENCE )?TEXTBOOK[^.!?]*[.!?]/gi, ' ')
+    .replace(/Synthesize into the tool schema[^.!?]*[.!?]/gi, ' ')
     .replace(/\s+/g, ' ')
     .trim();
   if (!raw || raw.length < 80) return [];
@@ -4601,6 +4660,7 @@ function extractBookGroundedSentences(pdfContext = '', topic = '') {
     .split(/(?<=[.!?])\s+/)
     .map((s) => s.replace(/\s+/g, ' ').trim())
     .filter((s) => s.length >= 35 && s.length <= 320)
+    .filter((s) => !isBookContextMetaLine(s))
     .filter((s) => !/^(page|figure|table|chapter|unit|exercise)\b/i.test(s))
     .filter((s) => !/copyright|all rights reserved/i.test(s))
     .filter((s) => !/user-selected curriculum|generate content for this exact scope/i.test(s))
@@ -4724,7 +4784,7 @@ function buildBookGroundedWorksheetQuestion(sectionName, sentence, topic, subjec
     type: 'COMPETENCY',
     section: sectionName,
     question: pickStem(stems, mix),
-    answer: `A practical plan that uses the chapter concept on ${topicLabel} with steps and observations.`,
+    answer: `Structured answer with definition, formula, steps, and conclusion for ${topicLabel}.`,
     marks: 4,
   };
 }
@@ -4765,7 +4825,9 @@ function buildBookGroundedWorksheetSections(meta = {}) {
     }
   }
 
-  const sentences = extractBookGroundedSentences(pdfContext, topic);
+  const sentences = extractBookGroundedSentences(pdfContext, topic).filter((s) =>
+    isSubstantiveBookSentence(s, subject),
+  );
   if (!sentences.length) return null;
 
   const sectionOrder = Object.values(WORKSHEET_SECTION_LABELS);
@@ -5528,8 +5590,8 @@ export function finalizeWorksheetStructuredContent(structuredContent, meta = {})
       ? base.learning_objectives
       : allowSectionPad || bookGroundedFallback || topicGroundedFallback
         ? [
-            `Students recall key facts about ${topic}.`,
-            `Students apply ${topic} to short ${subject} problems.`,
+            `Students will recall key facts about: ${topic}.`,
+            `Students will apply ${topic} to short ${subject} exercises and numericals.`,
           ]
         : [];
 
