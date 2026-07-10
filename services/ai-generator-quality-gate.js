@@ -145,6 +145,8 @@ const SCAFFOLD_QUESTION_PATTERNS = [
   /\b(?:design a poster|school (?:science )?fair|market visit|festival preparation)\b/i,
   /\b(?:speaking situation|observe a real conversation)\b/i,
   /\bsummarise the main message\b/i,
+  /follow textbook terminology, definitions, examples, formulae/i,
+  /pick the best option linking "follow textbook/i,
 ];
 
 /** Above this fraction of scaffold questions, a batch must not be saved. */
