@@ -7,7 +7,7 @@
 /** Shared shape for the five non-core sections. */
 const SHARED_SECTION_SCHEMA = `"objectives": { "items": ["3-5 measurable objectives"], "alignment": "NCERT/SCERT chapter + outcomes", "bloom": ["Remember: …", "Understand: …", "Apply: …", "Analyze: …"] },
 "differentiation": { "support": "for struggling / first-gen learners", "core": "for the average learner", "stretch": "for advanced / IIT-level" },
-"assessment": { "answerKey": [{ "q": "1", "answer": "exact answer", "working": "worked solution / why other options are wrong" }], "rubric": "short marking guidance", "commonErrors": ["typical Indian student mistake", "…"] },
+"assessment": { "answerKey": [{ "q": "one object per question across ALL sections A-E in order, not only the MCQ", "answer": "complete model answer for THIS question", "working": "worked solution; for 2+ mark questions give point-wise marking with marks per point; for MCQ state why the other options are wrong" }], "rubric": "short marking guidance", "commonErrors": ["typical Indian student mistake", "…"] },
 "teacher": { "timing": "how it fits a 35-45 min period", "tlm": ["low-cost Indian teaching aids"], "tips": ["classroom management / blackboard tip"] },
 "reallife": { "connection": "authentic Indian real-life example", "family": "parent/community link", "reflection": "one short student reflection prompt" }`;
 

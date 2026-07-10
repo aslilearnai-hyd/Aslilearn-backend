@@ -30,6 +30,8 @@ STRICT OUTPUT RULES
 - The JSON must contain EXACTLY these six sections in this order: core, objectives, differentiation, assessment, teacher, reallife. Never add, merge, or drop a section.
 - Be concise and high-density. Quality is not length. Use short, scannable content.
 - Every field must contain REAL, subject-accurate content. Never use placeholders, template phrases, or filler like "expected term", "a concept from the subtopic", or "students should define…". If you cannot fill a field with real content, that is a failure — try harder, do not pad.
+- COMPLETE ANSWER KEY IS MANDATORY: assessment.answerKey MUST contain one entry for EVERY question you write in core — every MCQ, fill-in-the-blank, short-answer, application, and long-answer question, in order. Never answer only the MCQs. For any question worth 2+ marks, the answer must be a point-wise / step-wise model answer with a marks breakdown (e.g. "1 mark: … · 1 mark: …"), not a single sentence. A worksheet a teacher cannot mark from is a failure.
+- Every question must be sharp and chapter-specific — no vague, generic prompts (e.g. avoid "Why is X important?"). Anchor each question to a concrete idea, data point, case, or example from the subtopic.
 
 THE SIX SECTIONS (what each means)
 1. core — the main deliverable for this specific tool, immediately usable in a real Indian classroom. (For a worksheet this is the full question paper; for a lesson plan the plan; for notes the notes.)
