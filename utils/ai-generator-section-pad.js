@@ -2,7 +2,17 @@ import { getAiToolTemplate } from '../config/aiToolTemplates.js';
 import { applyAiGeneratorSectionFallbacks } from './ai-generator-section-fallbacks.js';
 import { mustEnforceStoryPassageLanguageCompliance } from './story-passage-subject.js';
 import { isAiGeneratorCostSaverEnabled } from './ai-generator-batch-config.js';
-import { detectAssignmentSectionNum } from '../services/pdf-assignment-section-parser.js';
+import {
+  conceptQuestionsForBand,
+  countValidQuestionRows,
+  genericSectionFallback,
+  instructionsForBand,
+  isTemplateSectionHeaderLine,
+  learningObjectivesForBand,
+  questionTextFromRow,
+  resolveScaffoldBand,
+  scaffoldQuestionRow,
+} from './subject-scaffold-profile.js';
 
 const MIN_TEXT_LEN = 4;
 
@@ -172,36 +182,57 @@ function firstFilledLines(structured, keys = []) {
 function scaffoldLessonPlannerSections(structured, meta = {}) {
   const out = { ...structured };
   const { topic, subject, title } = ctx(meta);
+  const band = resolveScaffoldBand(subject);
   const lessonTitle = String(out.lesson_name || out.title || out.name || `${topic} — ${subject}`).trim();
   out.lesson_name = lessonTitle;
   out.title = String(out.title || lessonTitle).trim() || lessonTitle;
 
-  setIfEmpty(out, 'learning_objectives', [
-    `Identify and explain two central ideas from ${topic} using chapter evidence.`,
-    `Apply ideas from ${topic} to a short written response with examples.`,
-  ]);
-  setIfEmpty(out, 'ncf_competency_alignment', `Aligns with inquiry, critical thinking, and scientific literacy for ${topic}.`);
+  setIfEmpty(out, 'learning_objectives', learningObjectivesForBand(topic, subject, band));
+  setIfEmpty(
+    out,
+    'ncf_competency_alignment',
+    band === 'stem'
+      ? `Aligns with scientific inquiry, problem-solving, and NCF competencies for ${topic}.`
+      : band === 'english'
+        ? `Aligns with communication, comprehension, and NCF language competencies for ${topic}.`
+        : `Aligns with inquiry, critical thinking, and NCF competencies for ${topic}.`,
+  );
   setIfEmpty(
     out,
     'prior_knowledge_diagnostic',
-    `What do you already know about ${topic}? Share one example from daily life.`,
+    band === 'stem'
+      ? `What do you already know about ${topic}? Name one formula or observation from daily life.`
+      : `What do you already know about ${topic}? Share one example from daily life.`,
   );
   setIfEmpty(
     out,
     'introduction_warmup',
     firstFilledLines(out, ['teaching_strategy', 'teaching_activities', 'activities'])[0] ||
-      `Warm-up: quick recall of prior ideas linked to ${topic}.`,
+      (band === 'stem'
+        ? `Warm-up: predict an outcome related to ${topic}, then verify with a quick demo or diagram.`
+        : `Warm-up: quick recall of prior ideas linked to ${topic}.`),
   );
   setIfEmpty(
     out,
     'teaching_strategy',
     firstFilledLines(out, ['introduction_warmup', 'teaching_activities', 'activities'])[0] ||
-      `Blend short lecture, paired discussion, and guided annotation focused on ${topic}.`,
+      (band === 'stem'
+        ? `Blend board explanation, worked example, and guided practice on ${topic}.`
+        : `Blend short lecture, paired discussion, and guided annotation focused on ${topic}.`),
   );
-  setIfEmpty(out, 'teaching_activities', [
-    `Guided explanation of ${topic} with board notes and student questions.`,
-    `Pair activity: students classify or sort examples related to ${topic}.`,
-  ]);
+  setIfEmpty(
+    out,
+    'teaching_activities',
+    band === 'stem'
+      ? [
+          `Demonstrate ${topic} with a labelled diagram and one numerical example.`,
+          `Students solve a short problem set in pairs and compare methods.`,
+        ]
+      : [
+          `Guided explanation of ${topic} with board notes and student questions.`,
+          `Pair activity: students classify or sort examples related to ${topic}.`,
+        ],
+  );
   setIfEmpty(out, 'activities', out.teaching_activities);
   setIfEmpty(
     out,
@@ -211,30 +242,61 @@ function scaffoldLessonPlannerSections(structured, meta = {}) {
   setIfEmpty(
     out,
     'student_tasks',
-    [
-      `Students record observations and answers about ${topic} in notebooks.`,
-      `Students discuss in pairs and share one finding with the class.`,
-    ],
+    band === 'stem'
+      ? [
+          `Students record given data, substitute into formulas, and check units for ${topic}.`,
+          `Students explain one real-life application of ${topic} in notebooks.`,
+        ]
+      : [
+          `Students record observations and answers about ${topic} in notebooks.`,
+          `Students discuss in pairs and share one finding with the class.`,
+        ],
   );
-  setIfEmpty(out, 'formative_assessment_questions', [
-    `State one definition central to ${topic} in your own words.`,
-    `Cite one line from the text that supports your understanding of ${topic}.`,
-  ]);
+  setIfEmpty(
+    out,
+    'formative_assessment_questions',
+    band === 'stem'
+      ? [
+          `Define the key term central to ${topic} and give its unit.`,
+          `Solve one short numerical based on ${topic}.`,
+        ]
+      : band === 'english'
+        ? [
+            `State one definition central to ${topic} in your own words.`,
+            `Cite one line from the text that supports your understanding of ${topic}.`,
+          ]
+        : [
+            `State one key idea about ${topic} in your own words.`,
+            `Give one example that supports your understanding of ${topic}.`,
+          ],
+  );
   setIfEmpty(
     out,
     'differentiation_plan',
-    `Support: sentence stems and visuals. Extension: students design a new example for ${topic}.`,
+    band === 'stem'
+      ? `Support: formula sheet and step hints. Extension: design a new problem involving ${topic}.`
+      : `Support: sentence stems and visuals. Extension: students design a new example for ${topic}.`,
   );
   setIfEmpty(
     out,
     'homework_practice',
-    `Read the assigned passage on ${topic}; write two evidence-based responses in your workbook.`,
+    band === 'stem'
+      ? `Solve three short questions on ${topic}; show formula, substitution, and units.`
+      : band === 'english'
+        ? `Read the assigned passage on ${topic}; write two evidence-based responses in your workbook.`
+        : `Complete two short written tasks on ${topic} with examples from ${subject}.`,
   );
-  setIfEmpty(out, 'teaching_aids_required', ['Board', 'Printed excerpt', 'Highlighters']);
+  setIfEmpty(
+    out,
+    'teaching_aids_required',
+    band === 'stem' ? ['Board', 'Chart paper', 'Calculator', 'Textbook'] : ['Board', 'Printed excerpt', 'Highlighters'],
+  );
   setIfEmpty(
     out,
     'closure_exit_ticket',
-    `Exit ticket: In one sentence, explain why ${topic} matters in ${subject}.`,
+    band === 'stem'
+      ? `Exit ticket: Write the formula for ${topic} and one real-life use.`
+      : `Exit ticket: In one sentence, explain why ${topic} matters in ${subject}.`,
   );
   return out;
 }
@@ -276,48 +338,72 @@ function scaffoldStudyScheduleSections(structured, meta = {}) {
   return out;
 }
 
-function homeworkQuestionRow(topic, subject, n, prompt) {
-  return {
-    question_number: n,
-    question: prompt,
-    type: n === 1 ? 'SA' : 'VSA',
-    marks: n === 1 ? 3 : 2,
-    answer: `Use chapter evidence about ${topic} in ${subject}.`,
-  };
-}
 
 function scaffoldHomeworkSections(structured, meta = {}) {
   const out = { ...structured };
   const { topic, subject } = ctx(meta);
+  const band = resolveScaffoldBand(subject);
   setIfEmpty(out, 'title', `${topic} — Homework`);
-  setIfEmpty(out, 'instructions', `Complete the following tasks on ${topic}. Write neatly and show your reasoning.`);
-  setIfEmpty(out, 'learning_objectives', [
-    `Recall key vocabulary and ideas from ${topic}.`,
-    `Apply ${topic} to a short written response with examples.`,
-  ]);
-  const existingPq = Array.isArray(out.practice_questions) ? out.practice_questions : [];
+  setIfEmpty(out, 'instructions', instructionsForBand(topic, subject, band));
+  setIfEmpty(out, 'learning_objectives', learningObjectivesForBand(topic, subject, band));
+  const existingPq = [
+    ...(Array.isArray(out.practice_questions) ? out.practice_questions : []),
+    ...(Array.isArray(out.questions) ? out.questions : []),
+  ];
   const hasObjectQuestions = existingPq.some(
-    (q) => q && typeof q === 'object' && String(q.question || q.prompt || '').trim().length >= MIN_TEXT_LEN,
+    (q) =>
+      q &&
+      typeof q === 'object' &&
+      questionTextFromRow(q).length >= MIN_TEXT_LEN &&
+      !isTemplateSectionHeaderLine(questionTextFromRow(q)),
   );
-  if (!hasObjectQuestions && existingPq.filter((q) => String(q ?? '').trim().length >= MIN_TEXT_LEN).length < 3) {
-    out.practice_questions = [
-      homeworkQuestionRow(topic, subject, 1, `Summarise the central idea of ${topic} in your own words.`),
-      homeworkQuestionRow(topic, subject, 2, `Give two everyday examples linked to ${topic}.`),
-      homeworkQuestionRow(topic, subject, 3, `Why does ${topic} matter in ${subject}? Support with one fact.`),
-    ];
+  if (!hasObjectQuestions && countValidQuestionRows(existingPq) < 3) {
+    out.practice_questions = conceptQuestionsForBand(topic, subject, band);
+    out.questions = out.practice_questions;
   } else if (!hasObjectQuestions) {
-    setIfEmpty(out, 'practice_questions', [
-      `Explain the main idea of ${topic} in 3–4 sentences.`,
-      `List two examples of ${topic} from daily life.`,
-      `State one reason ${topic} is important in ${subject}.`,
-    ]);
+    const cleaned = existingPq.filter((row) => {
+      const text = questionTextFromRow(row);
+      return text.length >= MIN_TEXT_LEN && !isTemplateSectionHeaderLine(text);
+    });
+    out.practice_questions = cleaned;
+    out.questions = cleaned;
   }
-  setIfEmpty(out, 'application_tasks', [`Apply ${topic} to solve a short scenario from ${subject}.`]);
-  setIfEmpty(out, 'creative_thinking_question', `How would you teach ${topic} to a younger student?`);
-  setIfEmpty(out, 'real_life_observation_task', `Observe your surroundings and note one example related to ${topic}.`);
-  setIfEmpty(out, 'challenge_question', `What might happen if ${topic} were misunderstood? Give one reason.`);
+  setIfEmpty(
+    out,
+    'application_tasks',
+    band === 'stem'
+      ? [`Solve a short numerical problem applying ${topic}.`, `Interpret data or a diagram related to ${topic}.`]
+      : [`Apply ${topic} to solve a short scenario from ${subject}.`],
+  );
+  setIfEmpty(
+    out,
+    'creative_thinking_question',
+    band === 'stem'
+      ? `Design a simple experiment or poster to teach ${topic} to younger students.`
+      : `How would you teach ${topic} to a younger student?`,
+  );
+  setIfEmpty(
+    out,
+    'real_life_observation_task',
+    band === 'stem'
+      ? `Observe devices or situations at home/school linked to ${topic}; record two observations with units where possible.`
+      : `Observe your surroundings and note one example related to ${topic}.`,
+  );
+  setIfEmpty(
+    out,
+    'challenge_question',
+    band === 'stem'
+      ? `Create a harder problem on ${topic} that requires two steps of reasoning.`
+      : `What might happen if ${topic} were misunderstood? Give one reason.`,
+  );
   setIfEmpty(out, 'support_hint', 'Use your class notes and textbook glossary if you get stuck.');
-  setIfEmpty(out, 'answer_hints', `Key ideas: evidence, examples, and clear definitions for ${topic}.`);
+  setIfEmpty(
+    out,
+    'answer_hints',
+    band === 'stem'
+      ? `Key ideas: definitions, formulas with units, and worked steps for ${topic}.`
+      : `Key ideas: evidence, examples, and clear definitions for ${topic}.`,
+  );
   setIfEmpty(out, 'parent_note', `Please encourage your child to explain ${topic} aloud after finishing.`);
   return out;
 }
@@ -327,25 +413,25 @@ export function ensureHomeworkPracticeQuestions(structured, meta = {}) {
   const out = structured && typeof structured === 'object' ? { ...structured } : {};
   const topic = String(meta.subTopic || meta.subtopic || meta.topic || 'this topic').trim();
   const subject = String(meta.subject || 'Science').trim();
-  const countValid = (rows) =>
-    (Array.isArray(rows) ? rows : []).filter((q) => {
-      if (typeof q === 'string') return String(q).trim().length >= 8;
-      if (q && typeof q === 'object') {
-        return String(q.question || q.prompt || q.text || '').trim().length >= 8;
-      }
-      return false;
-    }).length;
+  const band = resolveScaffoldBand(subject);
+  const countValid = (rows) => countValidQuestionRows(rows, 8);
 
   const existing = Array.isArray(out.practice_questions) ? [...out.practice_questions] : [];
   const fromQuestions = Array.isArray(out.questions) ? out.questions : [];
   const validCount = countValid(existing) + countValid(fromQuestions);
-  if (validCount >= 3) return out;
+  if (validCount >= 3) {
+    const cleaned = [...existing, ...fromQuestions].filter((row) => {
+      const text = questionTextFromRow(row);
+      return text.length >= 8 && !isTemplateSectionHeaderLine(text);
+    });
+    if (cleaned.length) {
+      out.practice_questions = cleaned;
+      out.questions = cleaned;
+    }
+    return out;
+  }
 
-  const scaffold = [
-    homeworkQuestionRow(topic, subject, 1, `Summarise the central idea of ${topic} in your own words.`),
-    homeworkQuestionRow(topic, subject, 2, `Give two everyday examples linked to ${topic}.`),
-    homeworkQuestionRow(topic, subject, 3, `Why does ${topic} matter in ${subject}? Support with one fact.`),
-  ];
+  const scaffold = conceptQuestionsForBand(topic, subject, band);
   const merged = [...existing];
   for (const row of scaffold) {
     if (countValid(merged) >= 3) break;
@@ -356,109 +442,15 @@ export function ensureHomeworkPracticeQuestions(structured, meta = {}) {
   return out;
 }
 
-function quickAssignmentQuestionRow(topic, subject, n, prompt, answer) {
-  return {
-    question_number: n,
-    question: prompt,
-    type: n === 1 ? 'SA' : 'VSA',
-    marks: n === 1 ? 3 : 2,
-    answer:
-      answer ||
-      `Use definitions, formulas, and examples from ${topic} in ${subject}.`,
-  };
-}
-
-function isEnglishLanguageSubject(subject) {
-  const compact = String(subject || '')
-    .trim()
-    .toLowerCase()
-    .replace(/[^a-z]/g, '');
-  return (
-    compact.includes('english') ||
-    compact.includes('hindi') ||
-    compact.includes('language') ||
-    compact.includes('literature') ||
-    compact.includes('sanskrit') ||
-    compact.includes('urdu')
-  );
-}
-
-function isStemSubject(subject) {
-  const compact = String(subject || '')
-    .trim()
-    .toLowerCase()
-    .replace(/[^a-z0-9]/g, '');
-  return (
-    compact.includes('science') ||
-    compact.startsWith('math') ||
-    compact.includes('physics') ||
-    compact.includes('chemistry') ||
-    compact.includes('biology')
-  );
-}
-
-function quickAssignmentSectionHeaderText(value) {
-  const raw = String(value ?? '').trim().replace(/^#{1,3}\s*/, '');
-  const withoutNum = raw.replace(/^\d{1,2}\.\s*/, '').trim();
-  return withoutNum || raw;
-}
-
-function isQuickAssignmentSectionHeader(value) {
-  const title = quickAssignmentSectionHeaderText(value);
-  if (!title || title.length > 96) return false;
-  return detectAssignmentSectionNum(title) > 0;
-}
-
-function conceptQuestionText(value) {
-  if (value && typeof value === 'object') {
-    return String(value.question || value.prompt || value.text || '').trim();
-  }
-  return String(value ?? '').trim();
-}
-
-function countValidQuickAssignmentConceptQuestions(rows) {
-  return (Array.isArray(rows) ? rows : []).filter((row) => {
-    const text = conceptQuestionText(row);
-    return text.length >= MIN_TEXT_LEN && !isQuickAssignmentSectionHeader(text);
-  }).length;
-}
-
 function scaffoldQuickAssignmentSections(structured, meta = {}) {
   const out = { ...structured };
   const { topic, subject } = ctx(meta);
-  const englishSubject = isEnglishLanguageSubject(subject);
-  const stemSubject = isStemSubject(subject);
+  const band = resolveScaffoldBand(subject);
   const assignmentTitle = String(out.assignment_title || out.title || `${topic} — Assignment`).trim();
   out.assignment_title = assignmentTitle;
   out.title = String(out.title || assignmentTitle).trim() || assignmentTitle;
-  setIfEmpty(
-    out,
-    'learning_objectives',
-    stemSubject
-      ? [
-          `Define and explain the core ideas of ${topic} using correct ${subject} terminology.`,
-          `Apply formulas and principles from ${topic} to solve short numerical or reasoning problems.`,
-          `Analyse one real-life application of ${topic} in everyday devices or situations.`,
-        ]
-      : englishSubject
-        ? [
-            `Recall and explain central ideas from ${topic}.`,
-            `Apply listening and speaking skills to discuss ${topic} in ${subject}.`,
-          ]
-        : [
-            `Explain the main ideas of ${topic} clearly.`,
-            `Apply ${topic} to a short task with examples from daily life.`,
-          ],
-  );
-  setIfEmpty(
-    out,
-    'instructions',
-    stemSubject
-      ? `Complete all sections on ${topic}. Show formula substitutions, units, and reasoning for numerical answers.`
-      : englishSubject
-        ? `Complete all sections on ${topic}. Write clearly and use examples from the text where asked.`
-        : `Complete all sections on ${topic}. Write clearly and support answers with relevant examples.`,
-  );
+  setIfEmpty(out, 'learning_objectives', learningObjectivesForBand(topic, subject, band));
+  setIfEmpty(out, 'instructions', instructionsForBand(topic, subject, band));
   const existingCq = Array.isArray(out.concept_based_questions)
     ? out.concept_based_questions
     : Array.isArray(out.questions)
@@ -468,84 +460,17 @@ function scaffoldQuickAssignmentSections(structured, meta = {}) {
     (q) =>
       q &&
       typeof q === 'object' &&
-      conceptQuestionText(q).length >= MIN_TEXT_LEN &&
-      !isQuickAssignmentSectionHeader(conceptQuestionText(q)),
+      questionTextFromRow(q).length >= MIN_TEXT_LEN &&
+      !isTemplateSectionHeaderLine(questionTextFromRow(q)),
   );
-  if (!hasObjectQuestions && countValidQuickAssignmentConceptQuestions(existingCq) < 3) {
-    out.concept_based_questions = stemSubject
-      ? [
-          quickAssignmentQuestionRow(
-            topic,
-            subject,
-            1,
-            `Define ${topic} and state its SI unit (if applicable).`,
-            `State the definition and correct unit for ${topic}.`,
-          ),
-          quickAssignmentQuestionRow(
-            topic,
-            subject,
-            2,
-            `A device operates at 220 V and draws 2 A. Calculate the power consumed using P = VI.`,
-            `P = VI = 220 × 2 = 440 W.`,
-          ),
-          quickAssignmentQuestionRow(
-            topic,
-            subject,
-            3,
-            `Give two real-life examples where ${topic} helps compare or choose electrical appliances.`,
-            `Examples may include bulbs, heaters, motors, or household appliances with power ratings.`,
-          ),
-        ]
-      : englishSubject
-        ? [
-            quickAssignmentQuestionRow(
-              topic,
-              subject,
-              1,
-              `Summarise the main message of ${topic} in your own words.`,
-              `Support your response with ideas from ${topic} in ${subject}.`,
-            ),
-            quickAssignmentQuestionRow(
-              topic,
-              subject,
-              2,
-              `Identify two speaking situations where ideas from ${topic} would help.`,
-              `Support your response with ideas from ${topic} in ${subject}.`,
-            ),
-            quickAssignmentQuestionRow(
-              topic,
-              subject,
-              3,
-              `Why is ${topic} relevant for Class 10 ${subject} learners?`,
-              `Support your response with ideas from ${topic} in ${subject}.`,
-            ),
-          ]
-        : [
-            quickAssignmentQuestionRow(
-              topic,
-              subject,
-              1,
-              `Explain the main idea of ${topic} in your own words.`,
-            ),
-            quickAssignmentQuestionRow(
-              topic,
-              subject,
-              2,
-              `Give two examples of ${topic} from daily life.`,
-            ),
-            quickAssignmentQuestionRow(
-              topic,
-              subject,
-              3,
-              `Why is ${topic} important in ${subject}?`,
-            ),
-          ];
+  if (!hasObjectQuestions && countValidQuestionRows(existingCq) < 3) {
+    out.concept_based_questions = conceptQuestionsForBand(topic, subject, band);
     out.questions = out.concept_based_questions;
     out.practice_questions = out.concept_based_questions;
   } else if (!hasObjectQuestions) {
     out.concept_based_questions = existingCq.filter((row) => {
-      const text = conceptQuestionText(row);
-      return text.length >= MIN_TEXT_LEN && !isQuickAssignmentSectionHeader(text);
+      const text = questionTextFromRow(row);
+      return text.length >= MIN_TEXT_LEN && !isTemplateSectionHeaderLine(text);
     });
     out.questions = out.concept_based_questions;
     out.practice_questions = out.concept_based_questions;
@@ -553,12 +478,12 @@ function scaffoldQuickAssignmentSections(structured, meta = {}) {
   setIfEmpty(
     out,
     'application_oriented_tasks',
-    stemSubject
+    band === 'stem'
       ? [
-          `Calculate power for three appliances using given voltage and current values.`,
-          `Design a chart comparing power ratings of common school-lab or home devices linked to ${topic}.`,
+          `Calculate values for three scenarios using formulas related to ${topic}.`,
+          `Design a chart comparing real devices or cases linked to ${topic}.`,
         ]
-      : englishSubject
+      : band === 'english'
         ? [
             `Role-play a short dialogue inspired by ${topic}.`,
             `Write a paragraph applying a theme from ${topic} to daily life.`,
@@ -571,57 +496,57 @@ function scaffoldQuickAssignmentSections(structured, meta = {}) {
   setIfEmpty(
     out,
     'real_life_competency_activity',
-    stemSubject
-      ? `List appliances at home or school with power ratings. Tabulate name, voltage, current (if known), and calculated power for ${topic}.`
-      : englishSubject
+    band === 'stem'
+      ? `Collect real examples of ${topic} from home or school; tabulate observations with units where possible.`
+      : band === 'english'
         ? `Observe a real conversation and note one listening skill used, linking it to ${topic}.`
         : `Observe your surroundings and note one example related to ${topic}.`,
   );
   setIfEmpty(
     out,
     'creative_thinking_question',
-    stemSubject
-      ? `Design a safety poster for a school science fair explaining how ${topic} relates to safe use of electrical devices.`
-      : englishSubject
+    band === 'stem'
+      ? `Design a poster or model that explains ${topic} for a school science display.`
+      : band === 'english'
         ? `If you were the author of ${topic}, what one line would you change and why?`
         : `How would you teach ${topic} to a younger student in one creative way?`,
   );
   setIfEmpty(
     out,
     'collaborative_discussion_task',
-    stemSubject
-      ? `In groups of three, compare power consumption of different bulbs and justify which is more energy-efficient using ${topic}.`
-      : englishSubject
+    band === 'stem'
+      ? `In groups, compare two cases involving ${topic} and justify which explanation is stronger.`
+      : band === 'english'
         ? `In pairs, discuss how ${topic} connects to your community. Share one insight with the class.`
         : `In pairs, discuss one application of ${topic} in your community and share a key insight.`,
   );
   setIfEmpty(
     out,
     'challenge_question_advanced',
-    stemSubject
-      ? `Two heaters have the same power rating but different voltages. Explain which draws more current and why, using ${topic}.`
-      : englishSubject
+    band === 'stem'
+      ? `Solve a two-step problem on ${topic} that combines concept recall and numerical reasoning.`
+      : band === 'english'
         ? `Analyse two different interpretations of ${topic} and justify which is stronger.`
         : `Analyse a common misconception about ${topic} and explain the correct understanding.`,
   );
   setIfEmpty(
     out,
     'assessment_criteria_rubric',
-    stemSubject
+    band === 'stem'
       ? `Concept accuracy, correct formula use, units, reasoning, and presentation (4-point scale).`
-      : englishSubject
+      : band === 'english'
         ? `Clarity, evidence from text, participation, and accuracy of language (4-point scale).`
         : `Clarity, accuracy, use of examples, and completeness (4-point scale).`,
   );
   setIfEmpty(
     out,
     'expected_learning_outcomes',
-    stemSubject
+    band === 'stem'
       ? [
           `Students can define ${topic} and use the correct formula with units.`,
-          `Students can solve basic numerical problems and relate ${topic} to real devices.`,
+          `Students can solve basic problems and relate ${topic} to real situations.`,
         ]
-      : englishSubject
+      : band === 'english'
         ? [
             `Students can explain key ideas from ${topic}.`,
             `Students can speak and listen confidently about ${topic}.`,
@@ -639,17 +564,15 @@ function scaffoldGenericSections(toolSlug, structured, meta = {}) {
   if (!t) return structured;
   const out = { ...structured };
   const { topic, subject } = ctx(meta);
+  const band = resolveScaffoldBand(subject);
   const check = validateAllCanonicalToolFields(toolSlug, out);
   for (const detail of check.missingDetails || []) {
     const keys = Array.isArray(detail.keys) ? detail.keys : [];
     const primary = keys[0];
     if (!primary) continue;
     const label = String(detail.label || primary).trim();
-    if (keys.some((k) => Array.isArray(out[k]))) {
-      setIfEmpty(out, primary, [`${label} for ${topic} (${subject}).`]);
-    } else {
-      setIfEmpty(out, primary, `${label} for ${topic} in ${subject}.`);
-    }
+    const isList = keys.some((k) => Array.isArray(out[k]));
+    setIfEmpty(out, primary, genericSectionFallback(label, topic, subject, band, isList));
   }
   return out;
 }
