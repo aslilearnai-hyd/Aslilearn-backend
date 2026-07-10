@@ -104,12 +104,11 @@ export function formatBookContextForPrompt(chunks = [], meta = {}) {
   if (!Array.isArray(chunks) || !chunks.length) return '';
 
   const header = [
+    '<<<TEXTBOOK_INSTRUCTIONS>>>',
     'TEXTBOOK CONTENT (PRIMARY SOURCE — use this as the main factual basis):',
     'Priority: (1) Uploaded Book  (2) Uploaded Notes  (3) General knowledge only when the book is silent.',
-    'Follow textbook terminology, definitions, examples, formulae, and explanations.',
-    'Generate questions in the same formats as textbook Exercises and Activities (MCQ, FIB, VSA, SA, numerical, match).',
-    'Build questions directly from these passages — do not invent facts or add fictional scenarios.',
-    'Do not invent facts that contradict the passages below.',
+    'Use terminology, definitions, formulae, and examples from the passages below only.',
+    '<<<END_TEXTBOOK_INSTRUCTIONS>>>',
     meta.bookTitle ? `Book: ${meta.bookTitle}` : '',
     meta.subject ? `Subject: ${meta.subject}` : '',
     meta.class ? `Class: ${meta.class}` : '',

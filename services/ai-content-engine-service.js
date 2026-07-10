@@ -72,6 +72,7 @@ import {
 } from '../utils/ai-generator-response-schema.js';
 import { getAiGeneratorVariantAngle, getAiGeneratorVariantScenario } from '../constants/ai-generator-variant-angles.js';
 import { resolveSubjectCategory } from '../prompts/shared/subject-awareness.js';
+import { resolveScaffoldBand } from '../utils/subject-scaffold-profile.js';
 import { runPostGenerationContentValidation } from '../utils/ai-generator-post-validation.js';
 import { resolveAllowedGeminiModel } from './gemini-models.js';
 import {
@@ -4587,6 +4588,21 @@ function repairActivityHeadingEchoFields(structured, meta = {}, toolSlug = 'acti
   return normalizeActivityStructuredContent(n, toolSlug);
 }
 
+function extractBookChunkBodies(pdfContext = '') {
+  const text = String(pdfContext || '');
+  const bodies = [];
+  const re = /\[\d+\]\s*\([^)]*\)\s*([\s\S]*?)(?=\[\d+\]\s*\(|$)/gi;
+  let match = re.exec(text);
+  while (match) {
+    const body = String(match[1] || '')
+      .replace(/\s+/g, ' ')
+      .trim();
+    if (body.length >= 40) bodies.push(body);
+    match = re.exec(text);
+  }
+  return bodies;
+}
+
 function isBookContextMetaLine(sentence = '') {
   const t = String(sentence || '').replace(/\s+/g, ' ').trim();
   if (!t || t.length < 20) return true;
@@ -4610,10 +4626,16 @@ function isBookContextMetaLine(sentence = '') {
     /^when passages are thin/i,
     /^quote or paraphrase textbook ideas/i,
     /^variant \d+:/i,
+    /^build questions directly/i,
+    /build questions directly from these passages/i,
+    /book:\s*.+subject:\s*.+class:/i,
     /^book:\s/i,
     /^subject:\s/i,
     /^class:\s/i,
-    /^board:\s/i,
+    /mathematics\s+10th/i,
+    /<<<textbook_instructions>>>/i,
+    /<<<end_textbook_instructions>>>/i,
+    /^use terminology, definitions/i,
     /^tool:\s/i,
     /^sub-?topic:\s/i,
     /^topic:\s/i,
@@ -4638,22 +4660,29 @@ function isSubstantiveBookSentence(sentence = '', subject = '') {
 }
 
 function extractBookGroundedSentences(pdfContext = '', topic = '') {
-  const raw = String(pdfContext || '')
-    .replace(/\[Chunk \d+\]/gi, '\n')
-    .replace(/\[\d+\]\s*\([^)]+\)\s*/g, '\n')
-    .replace(/TEXTBOOK CONTENT[^:]*:/gi, ' ')
-    .replace(/REFERENCE TEXTBOOK CONTENT[^:]*:/gi, ' ')
-    .replace(/USER-SELECTED CURRICULUM[^]*?(?=\n\n|$)/gi, ' ')
-    .replace(/TEXTBOOK-GROUNDED GENERATION[^]*?(?=\[|\n\n|$)/gi, ' ')
-    .replace(/CLASSROOM TEXTBOOK METHODOLOGY[^]*?(?=\[|\n\n|$)/gi, ' ')
-    .replace(/PRECISION MODE[^]*?(?=\[|\n\n|$)/gi, ' ')
-    .replace(/Follow textbook terminology[^.!?]*[.!?]/gi, ' ')
-    .replace(/Generate (?:MCQs|questions)[^.!?]*[.!?]/gi, ' ')
-    .replace(/Do not (?:invent facts|wrap book content)[^.!?]*[.!?]/gi, ' ')
-    .replace(/Use the (?:REFERENCE )?TEXTBOOK[^.!?]*[.!?]/gi, ' ')
-    .replace(/Synthesize into the tool schema[^.!?]*[.!?]/gi, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
+  const chunkBodies = extractBookChunkBodies(pdfContext);
+  const rawFromChunks = chunkBodies.join(' ').trim();
+  const raw =
+    rawFromChunks.length >= 80
+      ? rawFromChunks
+      : String(pdfContext || '')
+          .replace(/<<<TEXTBOOK_INSTRUCTIONS>>>[\s\S]*?<<<END_TEXTBOOK_INSTRUCTIONS>>>/gi, ' ')
+          .replace(/\[Chunk \d+\]/gi, '\n')
+          .replace(/\[\d+\]\s*\([^)]+\)\s*/g, '\n')
+          .replace(/TEXTBOOK CONTENT[^:]*:/gi, ' ')
+          .replace(/REFERENCE TEXTBOOK CONTENT[^:]*:/gi, ' ')
+          .replace(/USER-SELECTED CURRICULUM[^]*?(?=\n\n|$)/gi, ' ')
+          .replace(/TEXTBOOK-GROUNDED GENERATION[^]*?(?=\[|\n\n|$)/gi, ' ')
+          .replace(/CLASSROOM TEXTBOOK METHODOLOGY[^]*?(?=\[|\n\n|$)/gi, ' ')
+          .replace(/PRECISION MODE[^]*?(?=\[|\n\n|$)/gi, ' ')
+          .replace(/Follow textbook terminology[^.!?]*[.!?]/gi, ' ')
+          .replace(/Build questions directly[^.!?]*[.!?]/gi, ' ')
+          .replace(/Generate (?:MCQs|questions)[^.!?]*[.!?]/gi, ' ')
+          .replace(/Book:\s[^.!?\n]+/gi, ' ')
+          .replace(/Subject:\s[^.!?\n]+/gi, ' ')
+          .replace(/Class:\s[^.!?\n]+/gi, ' ')
+          .replace(/\s+/g, ' ')
+          .trim();
   if (!raw || raw.length < 80) return [];
   const topicLower = String(topic || '').toLowerCase();
   return raw
@@ -4673,10 +4702,143 @@ function extractBookGroundedSentences(pdfContext = '', topic = '') {
     .slice(0, 28);
 }
 
+function worksheetRowHasRagLeak(text = '') {
+  const t = String(text || '').trim();
+  if (!t) return false;
+  return (
+    isBookContextMetaLine(t) ||
+    /build questions directly from these passages/i.test(t) ||
+    /it matches the textbook explanation/i.test(t) ||
+    /students summarise the textbook explanation using evidence/i.test(t) ||
+    /structured response with definition, steps, and conclusion for/i.test(t) ||
+    /according to the chapter on .+, which choice reflects/i.test(t)
+  );
+}
+
+function worksheetSectionsHaveRagLeak(sections = []) {
+  for (const sec of Array.isArray(sections) ? sections : []) {
+    for (const q of Array.isArray(sec?.questions) ? sec.questions : []) {
+      const blob = [q?.question, q?.answer, ...(Array.isArray(q?.options) ? q.options : [])]
+        .filter(Boolean)
+        .join(' ');
+      if (worksheetRowHasRagLeak(blob)) return true;
+    }
+  }
+  return false;
+}
+
+function worksheetSectionsLackMathsNumericals(sections = [], subject = '', topic = '') {
+  if (resolveSubjectCategory(subject) !== 'maths') return false;
+  if (!/trigonometric|trigonometry|angle|sin|cos|tan|ratio/i.test(topic)) return false;
+  const blob = JSON.stringify(sections);
+  return !/sin|cos|tan|cot|sec|cosec|°|degree|evaluate|calculate|numerical|\d+\s*°|\/\s*2|√/i.test(blob);
+}
+
+function buildTrigWorksheetQuestion(sectionName, topicLabel, subjectLabel, qNum, meta, mix, pickStem) {
+  const variantIndex = Number(meta.generationVariant) || 1;
+  if (sectionName === WORKSHEET_SECTION_LABELS.A) {
+    const stems = [
+      'What is the value of sin 30°?',
+      'What is the value of cos 45°?',
+      'tan 60° equals:',
+      'Which is equal to sin 45°?',
+      'For angle 30°, sin θ equals:',
+    ];
+    const options = [
+      ['A) 1/2', 'B) √3/2', 'C) 1', 'D) 0'],
+      ['A) 1/√2', 'B) √3/2', 'C) 1/2', 'D) √3'],
+      ['A) √3', 'B) 1/√3', 'C) 1', 'D) 1/2'],
+      ['A) 1/√2', 'B) √3', 'C) 1/2', 'D) 0'],
+      ['A) 1/2', 'B) √3/2', 'C) 1/√2', 'D) √3'],
+    ];
+    const idx = ((Number(mix) % stems.length) + stems.length) % stems.length;
+    return {
+      question_number: qNum,
+      type: 'MCQ',
+      section: sectionName,
+      question: `${pickStem(stems, mix)} (${topicLabel})`,
+      options: options[idx],
+      answer: `${options[idx][0]}`,
+      marks: 1,
+    };
+  }
+  if (sectionName === WORKSHEET_SECTION_LABELS.B) {
+    const stems = [
+      'sin 45° = _____',
+      'The value of cos 60° is _____',
+      'tan 45° = _____',
+      'sin 30° + cos 60° = _____',
+      'For a right triangle, if one acute angle is 30°, the other acute angle is _____°',
+    ];
+    const answers = ['1/√2', '1/2', '1', '1', '60'];
+    const idx = ((Number(mix) % stems.length) + stems.length) % stems.length;
+    return {
+      question_number: qNum,
+      type: 'FIB',
+      section: sectionName,
+      question: pickStem(stems, mix),
+      answer: answers[idx],
+      marks: 1,
+    };
+  }
+  if (sectionName === WORKSHEET_SECTION_LABELS.C) {
+    const stems = [
+      'Write the value of sin 60°.',
+      'State the value of cos 30°.',
+      'Write tan 45° in simplest form.',
+      'State sin 90°.',
+      'Write cos 45° as a fraction.',
+    ];
+    const answers = ['√3/2', '√3/2', '1', '1', '1/√2'];
+    const idx = ((Number(mix) % stems.length) + stems.length) % stems.length;
+    return {
+      question_number: qNum,
+      type: 'VSA',
+      section: sectionName,
+      question: pickStem(stems, mix),
+      answer: answers[idx],
+      marks: 2,
+    };
+  }
+  if (sectionName === WORKSHEET_SECTION_LABELS.D) {
+    const stems = [
+      `Find sin 30° + cos 60°. Show working.`,
+      `Evaluate tan 45° + sin 45°. Show each step.`,
+      `Using the table of standard angles, find cos 30° and explain how it is obtained.`,
+      `Show that sin² 30° + cos² 30° = 1.`,
+    ];
+    return {
+      question_number: qNum,
+      type: 'SA',
+      section: sectionName,
+      question: pickStem(stems, mix),
+      answer: 'Show substitution from the standard trigonometric table with clear working.',
+      marks: 3,
+    };
+  }
+  const stems = [
+    `Evaluate: (sin 45° + cos 45°) × tan 60°. Show all working.`,
+    `If sin A = 1/2 for A = 30°, find cos A. Show steps.`,
+    `Prove using values: sin 60° cos 30° + sin 30° cos 60° = 1.`,
+    `A ladder makes 60° with the ground. If sin 60° = √3/2, write the ratio used for height. Calculate height when ladder length is 4 m.`,
+  ];
+  return {
+    question_number: qNum,
+    type: 'COMPETENCY',
+    section: sectionName,
+    question: pickStem(stems, mix),
+    answer: 'Given, formula/ratio, step-by-step calculation, and final answer with units if needed.',
+    marks: 4,
+  };
+}
+
 function buildBookGroundedWorksheetQuestion(sectionName, sentence, topic, subject, qNum, meta = {}) {
   const legacySeed = typeof meta === 'number' ? meta : Number(meta?.generationVariant ?? meta?.variantSeed) || 0;
   const metaObj = typeof meta === 'object' && meta !== null ? meta : { generationVariant: legacySeed };
   const fact = String(sentence || '').replace(/\s+/g, ' ').trim();
+  if (!isSubstantiveBookSentence(fact, subject)) {
+    return buildTopicGroundedWorksheetQuestionRaw(sectionName, topic, subject, qNum, meta);
+  }
   const shortFact = fact.length > 150 ? `${fact.slice(0, 147).trim()}…` : fact;
   const topicLabel = String(topic || subject || 'the lesson').trim();
   const subjectLabel = String(subject || 'Science').trim();
@@ -4828,7 +4990,9 @@ function buildBookGroundedWorksheetSections(meta = {}) {
   const sentences = extractBookGroundedSentences(pdfContext, topic).filter((s) =>
     isSubstantiveBookSentence(s, subject),
   );
-  if (!sentences.length) return null;
+  if (!sentences.length) {
+    return buildTopicGroundedWorksheetSections(meta);
+  }
 
   const sectionOrder = Object.values(WORKSHEET_SECTION_LABELS);
   let qNum = 1;
@@ -4992,7 +5156,12 @@ export function rebuildWorksheetBookBatchVariant(structuredContent, meta = {}) {
   const pdfContext = String(meta.pdfContext || '')
     .replace(/USER-SELECTED CURRICULUM[\s\S]*?(?=\[Chunk|\n{2,}|$)/i, '')
     .trim();
-  const sentences = extractBookGroundedSentences(pdfContext, topic);
+  const sentences = extractBookGroundedSentences(pdfContext, topic).filter((s) =>
+    isSubstantiveBookSentence(s, subject),
+  );
+  if (!sentences.length) {
+    return rebuildWorksheetBatchVariant(structuredContent, { ...meta, pdfContext, topic, subTopic: topic });
+  }
   const sectionOrder = Object.values(WORKSHEET_SECTION_LABELS);
   const usedTexts = [...avoid];
   let qNum = 1;
@@ -5096,7 +5265,8 @@ export function rebuildWorksheetBatchVariantSmart(structuredContent, meta = {}) 
   const preferBook =
     Boolean(meta.bookGenerator) &&
     pdfContext.length > 120 &&
-    extractBookGroundedSentences(pdfContext, topic).length >= 3;
+    extractBookGroundedSentences(pdfContext, topic).filter((s) => isSubstantiveBookSentence(s, subject))
+      .length >= 3;
   if (preferBook) {
     return rebuildWorksheetBookBatchVariant(structuredContent, { ...meta, pdfContext, topic, subTopic: topic });
   }
@@ -5125,6 +5295,12 @@ function buildTopicGroundedWorksheetQuestionRaw(sectionName, topic, subject, qNu
     hashSeedToInt(meta.uniqueSeed) +
     qNum * 13 +
     hashSeedToInt(`${sectionName}:${topicLabel}`);
+
+  const band = resolveScaffoldBand(subjectLabel);
+  const trigTopic = /trigonometric|trigonometry|angle|sin|cos|tan|ratio/i.test(topicLabel);
+  if (band === 'maths' && trigTopic) {
+    return buildTrigWorksheetQuestion(sectionName, topicLabel, subjectLabel, qNum, meta, mix, pickStem);
+  }
 
   if (sectionName === WORKSHEET_SECTION_LABELS.A) {
     const stems = [
@@ -5269,6 +5445,11 @@ function buildTopicGroundedWorksheetSections(meta = {}) {
 /** Strip echoed batch prompt metadata and runaway parenthetical repeats from worksheet titles. */
 function sanitizeAiGeneratorWorksheetTitle(title, meta = {}) {
   let t = String(title || '').trim();
+  t = t.replace(/\s*—\s*Precision Worksheet\s+\d+/gi, '');
+  t = t.replace(/\s*—\s*book\s*—\s*v\d+/gi, '');
+  t = t.replace(/\s*—\s*a\d+\s*—/gi, ' — ');
+  t = t.replace(/\s*—\s*Focus:\s*[^—]+/gi, '');
+  t = t.replace(/\s*\(Class\s+\d+\s*—\s*CBSE[^)]*\)/gi, '');
   t = t.replace(/\s*\(Uniqueness\s+Seed:[^)]*\)/gi, '');
   t = t.replace(/\s*\(Distinct from all other variants[^)]*\)/gi, '');
   t = t.replace(/\s*\(The title reflects the creative angle\.\)/gi, '');
@@ -5278,7 +5459,16 @@ function sanitizeAiGeneratorWorksheetTitle(title, meta = {}) {
     if (next === t) break;
     t = next;
   }
-  t = t.replace(/\s{2,}/g, ' ').replace(/\s+\)/g, ')').trim();
+  t = t.replace(/\s{2,}/g, ' ').replace(/\s+\)/g, ')').replace(/\s+—\s+—/g, ' — ').trim();
+  if (t.length > 120) {
+    const topic = String(meta.subTopic || meta.subtopic || meta.topic || '').trim();
+    if (topic && t.includes(topic)) {
+      const idx = t.indexOf(topic);
+      t = t.slice(0, idx + topic.length).trim();
+    } else if (topic) {
+      t = `${String(meta.subject || 'Worksheet').trim()} — ${topic}`;
+    }
+  }
   if (t.length > 200) t = `${t.slice(0, 197).trim()}…`;
   if (!t || t.length < 4) {
     const topic = String(meta.subTopic || meta.subtopic || meta.topic || 'Worksheet').trim();
@@ -5555,6 +5745,12 @@ export function finalizeWorksheetStructuredContent(structuredContent, meta = {})
     (Boolean(meta.batchOrchestrator) || topicGroundedFallback || bookGroundedFallback);
   let globalQ = 1;
   sections = sections.map((sec, secIdx) => {
+    const fillerMeta = {
+      ...meta,
+      generationVariant: Number(meta.generationVariant) || 1,
+      sectionPadIndex: secIdx + 1,
+      uniqueSeed: `${meta.uniqueSeed || ''}-pad${globalQ}-v${meta.generationVariant || 1}`,
+    };
     const existing = Array.isArray(sec.questions)
       ? sec.questions.filter((q) => String(q?.question || '').trim().length >= 10)
       : [];
@@ -5563,35 +5759,54 @@ export function finalizeWorksheetStructuredContent(structuredContent, meta = {})
       topicGroundedFallback &&
       existing.every((q) => isPlaceholderText(String(q?.question || '')));
     if (existing.length && !needsReplacement) {
-      const renumbered = existing.map((q) => ({
-        ...q,
-        question_number: globalQ++,
-        section: sec.sectionName,
-      }));
+      const renumbered = existing.map((q) => {
+        const blob = [q?.question, q?.answer, ...(Array.isArray(q?.options) ? q.options : [])]
+          .filter(Boolean)
+          .join(' ');
+        if (!worksheetRowHasRagLeak(blob)) {
+          return { ...q, question_number: globalQ++, section: sec.sectionName };
+        }
+        const replacement = buildTopicGroundedWorksheetQuestion(
+          sec.sectionName,
+          topic,
+          subject,
+          globalQ++,
+          fillerMeta,
+        );
+        topicGroundedFallback = true;
+        bookGroundedFallback = false;
+        return { ...replacement, question_number: replacement.question_number, section: sec.sectionName };
+      });
       return { ...sec, questions: renumbered, count: renumbered.length };
     }
     if (!allowSectionPad && !preferTopicPad) {
       return { ...sec, questions: [], count: 0 };
     }
-    const fillerMeta = {
-      ...meta,
-      generationVariant: Number(meta.generationVariant) || 1,
-      sectionPadIndex: secIdx + 1,
-      uniqueSeed: `${meta.uniqueSeed || ''}-pad${globalQ}-v${meta.generationVariant || 1}`,
-    };
     const filler = preferTopicPad
       ? buildTopicGroundedWorksheetQuestion(sec.sectionName, topic, subject, globalQ++, fillerMeta)
       : scaffoldForSection(sec.sectionName, globalQ++);
     return { ...sec, questions: [filler], count: 1 };
   });
 
+  if (
+    worksheetSectionsHaveRagLeak(sections) ||
+    worksheetSectionsLackMathsNumericals(sections, subject, topic)
+  ) {
+    const repaired = buildTopicGroundedWorksheetSections({ ...meta, subTopic: topic, topic, subtopic: topic });
+    if (repaired?.length) {
+      sections = buildCanonicalWorksheetSectionList(repaired);
+      topicGroundedFallback = true;
+      bookGroundedFallback = false;
+    }
+  }
+
   const learning_objectives =
     Array.isArray(base.learning_objectives) && base.learning_objectives.length
       ? base.learning_objectives
       : allowSectionPad || bookGroundedFallback || topicGroundedFallback
         ? [
-            `Students will recall key facts about: ${topic}.`,
-            `Students will apply ${topic} to short ${subject} exercises and numericals.`,
+            `Students will recall key facts for the subtopic "${topic}".`,
+            `Students will solve ${subject} exercises and numericals on "${topic}".`,
           ]
         : [];
 

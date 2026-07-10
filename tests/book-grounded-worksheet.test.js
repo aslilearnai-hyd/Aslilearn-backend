@@ -62,11 +62,15 @@ if (!quality.valid) {
 
 console.log('OK: book-grounded worksheet fallback produced', questionCount, 'questions');
 
-const pollutedRag = `REFERENCE TEXTBOOK CONTENT (RAG — PRIMARY factual source):
-Follow textbook terminology, definitions, examples, formulae, and explanations.
-Generate MCQs, worksheets, and practice in the same formats as the textbook Exercises.
-[1] (Chapter 8)
-The value of sin 30° is 1/2. For angle 45°, sin and cos are equal. tan 60° equals √3.`;
+const pollutedRag = `<<<TEXTBOOK_INSTRUCTIONS>>>
+TEXTBOOK CONTENT (PRIMARY SOURCE — use this as the main factual basis):
+Build questions directly from these passages — do not invent facts or add fictional scenarios.
+Book: MATHEMATICS 10th
+Subject: Mathematics
+Class: Class 10
+<<<END_TEXTBOOK_INSTRUCTIONS>>>
+[1] (Chapter 8 › 8.3 Trigonometric Ratios of Some Specific Angles)
+The value of sin 30° is 1/2. For angle 45°, sin and cos are equal at 1/√2. tan 60° equals √3.`;
 
 const pollutedMeta = {
   subject: 'Mathematics',
@@ -79,7 +83,7 @@ const pollutedMeta = {
 
 const polluted = finalizeWorksheetStructuredContent({ title: 'Trig WS', sections: [] }, pollutedMeta);
 const pollutedQs = (polluted.sections || []).flatMap((s) => s.questions || []).map((q) => String(q.question || ''));
-if (pollutedQs.some((q) => /follow textbook terminology/i.test(q))) {
+if (pollutedQs.some((q) => /follow textbook terminology|build questions directly from these passages|book:\s*mathematics/i.test(q))) {
   console.error('FAIL: prompt instruction leaked into worksheet question:', pollutedQs[0]);
   process.exit(1);
 }
@@ -88,3 +92,41 @@ if (!pollutedQs.some((q) => /sin|cos|tan|trigonometric|angle|ratio|numerical|for
   process.exit(1);
 }
 console.log('OK: polluted RAG meta lines filtered from worksheet questions');
+
+const geminiLeakWorksheet = {
+  title:
+    'Mathematics (NCERT) — Chapter 8: Trigonometric Ratios (Class 10 — CBSE Board Prep Series 1 of 5) — Precision Worksheet 1783687563165 — book — v1 — a1 — Focus: Definitions',
+  learning_objectives: [
+    'Students will recall key facts about:3 Trigonometric Ratios of Some Specific Angles',
+  ],
+  sections: [
+    {
+      sectionName: 'Section A: MCQs',
+      questions: [
+        {
+          question:
+            'According to the chapter on 8.3 Trigonometric Ratios, which choice reflects "Build questions directly from these passages — Book: MATHEMATICS 10th Subject: Mathematics Class: Class 10"?',
+          options: ['A) It matches the textbook explanation', 'B) It reverses cause and effect'],
+          answer: 'A) It matches the textbook explanation',
+        },
+      ],
+    },
+  ],
+};
+
+const repaired = finalizeWorksheetStructuredContent(geminiLeakWorksheet, pollutedMeta);
+const repairedTitle = String(repaired.title || '');
+if (/precision worksheet|book — v1|focus:/i.test(repairedTitle)) {
+  console.error('FAIL: bloated metadata still in title:', repairedTitle);
+  process.exit(1);
+}
+const repairedQs = (repaired.sections || []).flatMap((s) => s.questions || []).map((q) => String(q.question || ''));
+if (repairedQs.some((q) => /build questions directly|it matches the textbook explanation/i.test(q))) {
+  console.error('FAIL: leaked Gemini worksheet not repaired:', repairedQs.join(' | '));
+  process.exit(1);
+}
+if (!repairedQs.some((q) => /sin|cos|tan|30|45|60/i.test(q))) {
+  console.error('FAIL: repaired maths worksheet lacks trig numericals:', repairedQs.join(' | '));
+  process.exit(1);
+}
+console.log('OK: Gemini leak worksheet repaired with trig numericals');
