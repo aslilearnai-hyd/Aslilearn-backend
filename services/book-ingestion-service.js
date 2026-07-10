@@ -8,7 +8,7 @@ import Content from '../models/Content.js';
 import Subject from '../models/Subject.js';
 import { generateEmbedding } from './pdf-rag-service.js';
 import { uploadPdfToConfiguredStorage } from './cloud-storage.js';
-import geminiService from './gemini-service.js';
+import geminiService, { extractTextFromDocument } from './gemini-service.js';
 import { subjectDisplayName } from '../utils/subjectDelete.js';
 import {
   canonicalBoardLabel,
@@ -71,18 +71,23 @@ async function extractPdfText(buffer) {
 }
 
 /** OCR fallback for scanned PDFs via Gemini (when enabled and text is empty). */
-async function ocrFallbackWithGemini(buffer, fileName = 'document.pdf') {
+async function ocrFallbackWithGemini(buffer, fileName = 'document.pdf', mimeType = 'application/pdf') {
   const enabled = String(process.env.BOOK_OCR_FALLBACK || 'true').toLowerCase() !== 'false';
   if (!enabled) return '';
   try {
     const b64 = buffer.toString('base64');
+    // Gemini inline data is capped around 20MB base64; oversized scans must be split/reindexed.
+    if (b64.length > 20 * 1024 * 1024) {
+      console.warn(`[Book OCR] "${fileName}" too large for inline OCR (${b64.length} b64 bytes) — skipping.`);
+      return '';
+    }
     const prompt =
-      'Extract ALL readable educational text from this document. Return plain text only — preserve headings, numbered lists, and paragraph breaks. Do not summarize.';
-    const raw = await geminiService.generateStructuredContent(
-      `${prompt}\n\n[Document: ${fileName}, base64 length ${b64.length}]`,
-      'text',
-      { temperature: 0.1, maxTokens: 8000 },
-    );
+      'Extract ALL readable educational text from this document. Return plain text only — preserve headings, numbered lists, and paragraph breaks. Do not summarize or add commentary.';
+    // Send the ACTUAL document bytes so Gemini can OCR scanned pages (not just the filename).
+    const raw = await extractTextFromDocument(b64, mimeType, prompt, {
+      temperature: 0.1,
+      maxTokens: 8000,
+    });
     return normalizeSpaces(raw);
   } catch (err) {
     console.warn('[Book OCR] Gemini fallback failed:', err?.message || err);
@@ -95,7 +100,7 @@ export async function extractTextFromUpload(buffer, mimeType, originalName = '')
   if (mime.includes('pdf') || originalName.toLowerCase().endsWith('.pdf')) {
     let text = await extractPdfText(buffer);
     if (text.length < 80) {
-      const ocrText = await ocrFallbackWithGemini(buffer, originalName);
+      const ocrText = await ocrFallbackWithGemini(buffer, originalName, 'application/pdf');
       if (ocrText.length > text.length) text = ocrText;
     }
     return { text, requiresOcr: text.length < 80 };

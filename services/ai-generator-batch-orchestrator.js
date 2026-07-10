@@ -20,6 +20,8 @@ import {
 
 import { extractTitleFromStructured } from './ai-generator-content-extractor.js';
 
+import { computeScaffoldDensity, SCAFFOLD_DENSITY_CEILING } from './ai-generator-quality-gate.js';
+
 import { persistGenerationFingerprints } from './ai-generator-fingerprint-service.js';
 
 import { computeGeminiCostFromTokenUsage } from '../utils/gemini-token-cost.js';
@@ -102,8 +104,31 @@ function getMaxAttemptsPerSlot(qualityTierSettings) {
 
 
 
-function getConcurrency(qualityTierSettings, batchSize) {
-  return getQualityTierBatchConcurrency(qualityTierSettings, batchSize);
+function getConcurrency(qualityTierSettings, batchSize, toolSlug = '') {
+  const base = getQualityTierBatchConcurrency(qualityTierSettings, batchSize);
+  // Parallel slots read a stale shared batchQuestionTexts/batchTitles before peers push,
+  // defeating cross-slot dedup (question tools fail 100%; concept-mastery saves duplicates).
+  if (qualityTierSettings?.enforceBatchUniqueness && isCrossSlotUniquenessTool(toolSlug)) {
+    return 1;
+  }
+  return base;
+}
+
+function isQuestionUniquenessTool(toolSlug) {
+  return [
+    'worksheet-mcq-generator',
+    'homework-creator',
+    'mock-test-builder',
+    'exam-question-paper-generator',
+    'smart-qa-practice-generator',
+    'quick-assignment-builder',
+  ].includes(String(toolSlug || '').trim());
+}
+
+/** Tools that dedup question/body content across batch slots and must run serially under uniqueness. */
+function isCrossSlotUniquenessTool(toolSlug) {
+  const slug = String(toolSlug || '').trim();
+  return isQuestionUniquenessTool(slug) || slug === 'concept-mastery-helper';
 }
 
 
@@ -214,8 +239,9 @@ export async function generateBatchAndSave(params, opts = {}) {
     { batchSize },
   );
   console.log(
-    `[AI Generator batch] qualityTier=${qualityTierSettings.tier} primary=${qualityTierSettings.primaryGeminiModel} flashLiteOnly=${qualityTierSettings.flashLiteOnly} overflow=${qualityTierSettings.modelOverflow}`,
+    `[AI Generator batch] Starting ${batchSize} record(s) for ${toolSlug} | qualityTier=${qualityTierSettings.tier} primary=${qualityTierSettings.primaryGeminiModel} flashLiteOnly=${qualityTierSettings.flashLiteOnly} overflow=${qualityTierSettings.modelOverflow}`,
   );
+  const batchStartedAt = Date.now();
 
   const forceGenerate =
 
@@ -347,11 +373,15 @@ export async function generateBatchAndSave(params, opts = {}) {
 
 
 
-      const slotResults = await runPool(slots, getConcurrency(qualityTierSettings, batchSize), async (variantIndex) => {
+      const slotResults = await runPool(slots, getConcurrency(qualityTierSettings, batchSize, toolSlug), async (variantIndex) => {
 
         const maxAttempts = getMaxAttemptsPerSlot(qualityTierSettings);
 
         let lastError = 'Unknown error';
+        const variantStartedAt = Date.now();
+        console.log(
+          `[AI Generator batch] Variant ${variantIndex}/${batchSize} started (${toolSlug})`,
+        );
 
         const staggerMs = Number(qualityTierSettings.slotStaggerMs) || 0;
         if (variantIndex > 1 && staggerMs > 0) {
@@ -382,6 +412,8 @@ export async function generateBatchAndSave(params, opts = {}) {
               uniqueSeed: `${Date.now()}-v${variantIndex}-a${attempt}-${Math.random().toString(36).slice(2, 10)}`,
 
               strictUniqueness: qualityTierSettings.enforceBatchUniqueness && strategy.strictUniqueness,
+
+              avoidQuestionTexts: [...batchQuestionTexts],
 
               ...(attempt > 1 ? { recoveryPass: true } : {}),
 
@@ -456,7 +488,7 @@ export async function generateBatchAndSave(params, opts = {}) {
               if (batchQuestionTexts.length > 0) {
                 structuredContent = rebuildWorksheetBatchVariant(structuredContent, {
                   ...worksheetMeta,
-                  generationVariant: variantIndex + batchIndex * 10007,
+                  generationVariant: variantIndex,
                   uniqueSeed: `${extraParams.uniqueSeed}-proactive-v${variantIndex}`,
                   avoidQuestionTexts: batchQuestionTexts,
                 });
@@ -484,22 +516,35 @@ export async function generateBatchAndSave(params, opts = {}) {
               if (!uniqueness.valid && worksheetBatch) {
                 for (let dupPass = 0; !uniqueness.valid && dupPass < 10; dupPass += 1) {
                   const regenSeed = variantIndex + attempt * 10000 + dupPass * 7919;
-                  const recoveryMeta = {
+                  const baseRecoveryMeta = {
                     ...worksheetMeta,
                     generationVariant: regenSeed,
                     variantAngle: getAiGeneratorVariantAngle(regenSeed, subjectName),
                     variantScenario: getAiGeneratorVariantScenario(regenSeed, subjectName),
                     uniqueSeed: `${extraParams.uniqueSeed || ''}-dup${attempt}-p${dupPass}`,
-                    avoidQuestionTexts: [
-                      ...batchQuestionTexts,
-                      ...collectQuestionTextsFromStructured(structuredContent, toolSlug),
-                    ],
                   };
 
                   if (dupPass === 0 && batchQuestionTexts.length === 0) {
-                    structuredContent = repairWorksheetBatchDuplicates(structuredContent, recoveryMeta);
+                    // Repair ONLY questions that clash with OTHER records (batch + historical).
+                    // The record's own questions must NOT go in `avoid`: repairWorksheetBatchDuplicates
+                    // matches each question against that list, so including self would overwrite every
+                    // real LLM question with generic scaffold. Intra-record dups are caught by its
+                    // internal usedTexts pass regardless.
+                    const crossRecordAvoid = [...batchQuestionTexts, ...historicalQuestionTexts];
+                    if (crossRecordAvoid.length) {
+                      structuredContent = repairWorksheetBatchDuplicates(structuredContent, {
+                        ...baseRecoveryMeta,
+                        avoidQuestionTexts: crossRecordAvoid,
+                      });
+                    }
                   } else {
-                    structuredContent = rebuildWorksheetBatchVariant(structuredContent, recoveryMeta);
+                    structuredContent = rebuildWorksheetBatchVariant(structuredContent, {
+                      ...baseRecoveryMeta,
+                      avoidQuestionTexts: [
+                        ...batchQuestionTexts,
+                        ...collectQuestionTextsFromStructured(structuredContent, toolSlug),
+                      ],
+                    });
                   }
                   structuredContent = dedupeIntraRecordQuestions(toolSlug, structuredContent);
                   structuredContent = renumberIntraRecordQuestions(toolSlug, structuredContent);
@@ -513,6 +558,18 @@ export async function generateBatchAndSave(params, opts = {}) {
                 generated.structuredContent = structuredContent;
               }
 
+              // Never fail a Premium/Balanced slot solely for batch uniqueness after all retries —
+              // soft-pass when the record has real questions (same policy as book-generator worksheets).
+              if (!uniqueness.valid && attempt >= maxAttempts) {
+                const qCount = collectQuestionTextsFromStructured(structuredContent, toolSlug).length;
+                if (qCount >= 1) {
+                  console.warn(
+                    `[AI Generator batch] Variant ${variantIndex}: uniqueness soft-pass (${qCount} questions). ${uniqueness.errors.slice(0, 2).join('; ')}`,
+                  );
+                  uniqueness = { valid: true, errors: [], duplicates: [] };
+                }
+              }
+
               if (!uniqueness.valid) {
                 lastError = uniqueness.errors.join('; ');
                 duplicatePreventionCount += 1;
@@ -522,6 +579,20 @@ export async function generateBatchAndSave(params, opts = {}) {
             }
 
 
+
+            // Batch path: warn on scaffold-heavy content but still save (prefer 5/5 saved over slot failure).
+            if (
+              isQuestionUniquenessTool(toolSlug) &&
+              generated.structuredContent &&
+              typeof generated.structuredContent === 'object'
+            ) {
+              const scaffoldStats = computeScaffoldDensity(toolSlug, generated.structuredContent);
+              if (scaffoldStats.total >= 3 && scaffoldStats.density > SCAFFOLD_DENSITY_CEILING) {
+                console.warn(
+                  `[AI Generator batch] Variant ${variantIndex}: saving scaffold-heavy content (${Math.round(scaffoldStats.density * 100)}% filler questions).`,
+                );
+              }
+            }
 
             const title = extractTitleFromStructured(generated.structuredContent);
 
@@ -607,58 +678,52 @@ export async function generateBatchAndSave(params, opts = {}) {
 
 
 
-            const fingerprintMeta = await persistGenerationFingerprints(
+            // Record is already persisted. Post-insert enrichment (fingerprints + updateOne) must NOT
+            // throw out of this try — the catch below retries the attempt and AiToolGeneration.create
+            // would run a second time, leaving a duplicate row plus an orphaned un-fingerprinted one.
+            // Log and continue with the saved record instead.
+            let fingerprintMeta = {};
 
-              toolSlug,
+            try {
+              fingerprintMeta = await persistGenerationFingerprints(
+                toolSlug,
+                generated.structuredContent,
+                scope,
+                record._id,
+              );
 
-              generated.structuredContent,
-
-              scope,
-
-              record._id,
-
-            );
-
-
-
-            await AiToolGeneration.updateOne(
-
-              { _id: record._id },
-
-              {
-
-                $set: {
-
-                  'metadata.contentFingerprint': fingerprintMeta.contentFingerprint,
-
-                  'metadata.questionFingerprints': fingerprintMeta.questionFingerprints,
-
-                  'metadata.objectiveFingerprints': fingerprintMeta.objectiveFingerprints,
-
-                  'metadata.activityFingerprints': fingerprintMeta.activityFingerprints,
-
+              await AiToolGeneration.updateOne(
+                { _id: record._id },
+                {
+                  $set: {
+                    'metadata.contentFingerprint': fingerprintMeta.contentFingerprint,
+                    'metadata.questionFingerprints': fingerprintMeta.questionFingerprints,
+                    'metadata.objectiveFingerprints': fingerprintMeta.objectiveFingerprints,
+                    'metadata.activityFingerprints': fingerprintMeta.activityFingerprints,
+                  },
                 },
-
-              },
-
-            );
-
-
+              );
+            } catch (fpErr) {
+              console.warn(
+                `[AI Generator batch] Variant ${variantIndex}: record ${record._id} saved but fingerprint enrichment failed: ${fpErr?.message || fpErr}`,
+              );
+            }
 
             const lean = record.toObject();
 
             lean.metadata = { ...lean.metadata, ...fingerprintMeta };
 
+            console.log(
+              `[AI Generator batch] Variant ${variantIndex}/${batchSize} saved in ${Date.now() - variantStartedAt}ms`,
+            );
             return { ok: true, variantIndex, record: lean };
 
           } catch (err) {
 
             lastError = err?.message || String(err);
-            if (process.env.AI_GENERATOR_DEBUG_VALIDATION === 'true') {
-              console.warn(
-                `[AI Generator batch] Variant ${variantIndex} attempt ${attempt}/${maxAttempts} (${qualityTierSettings.tier}): ${lastError}`,
-              );
-            }
+            console.warn(
+              `[AI Generator batch] Variant ${variantIndex} attempt ${attempt}/${maxAttempts} (${qualityTierSettings.tier}): ${lastError}`,
+            );
             if (isTransientGeminiError(err) && attempt < maxAttempts) {
               await new Promise((resolve) => setTimeout(resolve, Math.min(12_000, 2500 * attempt)));
               continue;
@@ -670,6 +735,9 @@ export async function generateBatchAndSave(params, opts = {}) {
 
 
 
+        console.warn(
+          `[AI Generator batch] Variant ${variantIndex}/${batchSize} failed after ${Date.now() - variantStartedAt}ms: ${lastError}`,
+        );
         return { ok: false, variantIndex, error: lastError };
 
       });
@@ -772,6 +840,10 @@ export async function generateBatchAndSave(params, opts = {}) {
     }
 
 
+
+    console.log(
+      `[AI Generator batch] Finished in ${Date.now() - batchStartedAt}ms — saved ${savedRecords.length}/${batchSize} for ${toolSlug}`,
+    );
 
     return {
 

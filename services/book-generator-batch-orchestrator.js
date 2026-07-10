@@ -60,6 +60,17 @@ import { resolveQualityTierSettings, getQualityTierBatchConcurrency } from '../u
 import { isAiGeneratorGreatQualityEnabled } from '../utils/ai-generator-batch-config.js';
 import { formatStructuredToolOutput } from '../config/aiToolTemplates.js';
 import { stripMarkdownSyntax, deepStripMarkdownValues } from '../utils/strip-markdown-syntax.js';
+import { computeScaffoldDensity, SCAFFOLD_DENSITY_CEILING } from './ai-generator-quality-gate.js';
+
+/** Question tools that carry scaffold-prone question pools and cross-slot dedup. */
+const BOOK_QUESTION_UNIQUENESS_TOOLS = new Set([
+  'worksheet-mcq-generator',
+  'homework-creator',
+  'mock-test-builder',
+  'exam-question-paper-generator',
+  'smart-qa-practice-generator',
+  'quick-assignment-builder',
+]);
 
 function getBookGeneratorConcurrency(qualityTierSettings, batchSize) {
   const env = Number(process.env.BOOK_GENERATOR_CONCURRENCY || process.env.AI_GENERATOR_BATCH_CONCURRENCY);
@@ -299,9 +310,12 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
       }));
       let completedSlots = 0;
 
-      const worksheetUniquenessBatch =
-        toolSlug === 'worksheet-mcq-generator' && qualityTierSettings.enforceBatchUniqueness;
-      const poolConcurrency = worksheetUniquenessBatch
+      // Serialize any tool that dedups question/body content across slots — parallel slots read a
+      // stale shared batchQuestionTexts/batchTitles and either save duplicates or fail 100%.
+      const crossSlotUniquenessBatch =
+        qualityTierSettings.enforceBatchUniqueness &&
+        (BOOK_QUESTION_UNIQUENESS_TOOLS.has(toolSlug) || toolSlug === 'concept-mastery-helper');
+      const poolConcurrency = crossSlotUniquenessBatch
         ? 1
         : getBookGeneratorConcurrency(qualityTierSettings, batchSize);
 
@@ -442,13 +456,16 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             }
 
             if (qualityTierSettings.enforceBatchUniqueness) {
-              // Book worksheets: compare only within this batch. Historical check against
-              // 10k+ prior records blocks every save with near-identical topic stems.
+              // Question tools generated from ONE book chapter naturally repeat topic stems, so
+              // validating them against the 10k+ historical corpus over-rejects and fails whole
+              // batches as the pool grows (worksheet also has a repair loop below; the others go
+              // straight to retry/throw). Dedupe all question tools batch-only.
+              const historicalExemptQuestionTool = BOOK_QUESTION_UNIQUENESS_TOOLS.has(toolSlug);
               const uniquenessCtx = {
                 batchTitles,
                 batchTexts: batchQuestionTexts,
-                historicalTexts: worksheetBatch ? [] : historicalQuestionTexts,
-                historicalTitles: worksheetBatch ? [] : historicalTitles,
+                historicalTexts: historicalExemptQuestionTool ? [] : historicalQuestionTexts,
+                historicalTitles: historicalExemptQuestionTool ? [] : historicalTitles,
               };
               let uniqueness = validateRecordUniqueness(toolSlug, structuredContent, uniquenessCtx);
 
@@ -459,22 +476,33 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                   dupPass += 1
                 ) {
                   const regenSeed = variantIndex + attempt * 10000 + dupPass * 7919;
-                  const recoveryMeta = {
+                  const baseRecoveryMeta = {
                     ...finalizeMeta,
                     generationVariant: regenSeed,
                     variantAngle: getAiGeneratorVariantAngle(regenSeed, subjectName),
                     variantScenario: getAiGeneratorVariantScenario(regenSeed, subjectName),
                     uniqueSeed: `${extraParams.uniqueSeed || ''}-dup${attempt}-v${variantIndex}-p${dupPass}`,
-                    avoidQuestionTexts: [
-                      ...batchQuestionTexts,
-                      ...collectQuestionTextsFromStructured(structuredContent, toolSlug),
-                    ],
                   };
 
                   if (dupPass === 0 && batchQuestionTexts.length === 0) {
-                    structuredContent = repairWorksheetBatchDuplicates(structuredContent, recoveryMeta);
+                    // Repair only questions that clash with OTHER batch records. Book worksheets
+                    // compare batch-only (historical excluded above), so on the first slot there is
+                    // nothing to dedupe against — never pass the record's OWN questions as `avoid`
+                    // or repairWorksheetBatchDuplicates overwrites every real question with scaffold.
+                    if (batchQuestionTexts.length) {
+                      structuredContent = repairWorksheetBatchDuplicates(structuredContent, {
+                        ...baseRecoveryMeta,
+                        avoidQuestionTexts: [...batchQuestionTexts],
+                      });
+                    }
                   } else {
-                    structuredContent = rebuildWorksheetBatchVariantSmart(structuredContent, recoveryMeta);
+                    structuredContent = rebuildWorksheetBatchVariantSmart(structuredContent, {
+                      ...baseRecoveryMeta,
+                      avoidQuestionTexts: [
+                        ...batchQuestionTexts,
+                        ...collectQuestionTextsFromStructured(structuredContent, toolSlug),
+                      ],
+                    });
                   }
                   structuredContent = dedupeIntraRecordQuestions(toolSlug, structuredContent);
                   structuredContent = renumberIntraRecordQuestions(toolSlug, structuredContent);
@@ -497,10 +525,10 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                   uniqueness = validateRecordUniqueness(toolSlug, structuredContent, uniquenessCtx);
                 }
 
-                // Last resort for book worksheets: keep batch uniqueness only; never drop RPC batch.
+                // Last resort for book worksheets: save even when questions overlap prior batch slots.
                 if (!uniqueness.valid) {
                   const qCount = collectQuestionTextsFromStructured(structuredContent, toolSlug).length;
-                  if (qCount >= 3) {
+                  if (qCount >= 1) {
                     console.warn(
                       `[book-generator] Slot ${batchIndex}: uniqueness soft-pass after repair (${qCount} questions). ${uniqueness.errors.slice(0, 2).join('; ')}`,
                     );
@@ -511,8 +539,15 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
 
               if (!uniqueness.valid) {
                 lastError = uniqueness.errors.join('; ');
-                if (attempt < maxAttempts) continue;
-                throw new Error(`Duplicate content: ${lastError}`);
+                const qCount = collectQuestionTextsFromStructured(structuredContent, toolSlug).length;
+                if (qCount >= 1) {
+                  console.warn(
+                    `[book-generator] Slot ${batchIndex}: duplicate soft-pass — saving anyway (${qCount} questions). ${lastError}`,
+                  );
+                } else {
+                  if (attempt < maxAttempts) continue;
+                  throw new Error(`Duplicate content: ${lastError}`);
+                }
               }
             }
 
@@ -542,6 +577,16 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               lastError = 'Model returned empty formatted content.';
               if (attempt < maxAttempts) continue;
               throw new Error(lastError);
+            }
+
+            // Book batches: warn on scaffold-heavy content but still save (user prefers 5/5 saved).
+            if (BOOK_QUESTION_UNIQUENESS_TOOLS.has(toolSlug)) {
+              const scaffoldStats = computeScaffoldDensity(toolSlug, structuredContent);
+              if (scaffoldStats.total >= 3 && scaffoldStats.density > SCAFFOLD_DENSITY_CEILING) {
+                console.warn(
+                  `[book-generator] Slot ${batchIndex}: saving scaffold-heavy content (${Math.round(scaffoldStats.density * 100)}% filler questions).`,
+                );
+              }
             }
 
             const title = extractTitleFromStructured(structuredContent);
@@ -591,18 +636,25 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             })
             );
 
+            // Record is persisted. Post-insert steps must NOT throw out of this try — the catch
+            // below retries the attempt and AiToolGeneration.create would run again, leaving a
+            // duplicate row. Both steps swallow their own errors.
             await persistGenerationFingerprints(toolSlug, structuredContent, scope, record._id).catch(
               (fpErr) => {
                 console.warn('[book-generator] fingerprint persist failed (record saved):', fpErr?.message || fpErr);
               },
             );
-            await Book.updateOne(
-              { _id: book._id },
-              {
-                $inc: { 'generationStats.totalGenerations': 1, [`generationStats.toolBreakdown.${toolSlug}`]: 1 },
-                $set: { 'generationStats.lastGeneratedAt': new Date() },
-              },
-            );
+            try {
+              await Book.updateOne(
+                { _id: book._id },
+                {
+                  $inc: { 'generationStats.totalGenerations': 1, [`generationStats.toolBreakdown.${toolSlug}`]: 1 },
+                  $set: { 'generationStats.lastGeneratedAt': new Date() },
+                },
+              );
+            } catch (statErr) {
+              console.warn('[book-generator] generationStats update failed (record saved):', statErr?.message || statErr);
+            }
 
             completedSlots += 1;
             opts.onProgress?.(

@@ -38,7 +38,7 @@ export async function resolveContentStrategy(scope, opts = {}) {
     };
   }
 
-  if (saturation.shouldUseRandomRetrieval && !shouldSkipRandomRetrievalForScope(s)) {
+  if (saturation.shouldUseRandomRetrieval && !shouldSkipRandomRetrievalForScope(scope)) {
     return {
       action: 'random_retrieval',
       mode: 'saturated_pool',
