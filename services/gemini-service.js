@@ -284,6 +284,56 @@ function getGeminiFallbackConfig() {
   return { apiKey, model: primaryModel, modelChain, baseUrl };
 }
 
+/**
+ * Multimodal document OCR — sends the ACTUAL document bytes (PDF/image) to Gemini
+ * as inline data and returns extracted plain text. Used as a fallback for scanned
+ * PDFs where text-layer extraction yields nothing. Returns '' on any failure
+ * (callers are already guarded). Inline data is capped ~20MB base64 by the API.
+ * @param {string} base64Data  base64-encoded document bytes
+ * @param {string} mimeType    e.g. 'application/pdf', 'image/png'
+ * @param {string} promptText  extraction instruction
+ * @param {{ temperature?: number, maxTokens?: number }} [options]
+ * @returns {Promise<string>}
+ */
+export async function extractTextFromDocument(base64Data, mimeType, promptText, options = {}) {
+  const data = String(base64Data || '');
+  if (!data) return '';
+  const { apiKey, modelChain } = getGeminiFallbackConfig();
+  if (!apiKey) return '';
+  const genAI = new GoogleGenerativeAI(apiKey);
+  const maxTokens = Number(options.maxTokens) > 0 ? Number(options.maxTokens) : 8000;
+  const temperature = Number.isFinite(options.temperature) ? Number(options.temperature) : 0.1;
+  let lastErr = null;
+  for (const modelName of modelChain) {
+    try {
+      const modelClient = genAI.getGenerativeModel({ model: modelName });
+      const result = await withGeminiTimeout(
+        modelClient.generateContent({
+          contents: [
+            {
+              role: 'user',
+              parts: [
+                { text: String(promptText || 'Extract all readable text from this document.') },
+                { inlineData: { mimeType: String(mimeType || 'application/pdf'), data } },
+              ],
+            },
+          ],
+          generationConfig: { temperature, maxOutputTokens: maxTokens },
+        }),
+        `${modelName} document OCR`,
+      );
+      const text = String(result?.response?.text?.() || '').trim();
+      if (text) return text;
+      lastErr = new Error(`Empty OCR text from ${modelName}`);
+    } catch (err) {
+      lastErr = err;
+      if (!isTransientGeminiError(err)) break;
+    }
+  }
+  if (lastErr) console.warn('[Gemini OCR] document extraction failed:', lastErr?.message || lastErr);
+  return '';
+}
+
 function cleanText(value) {
   return value == null ? '' : String(value).trim();
 }
@@ -415,6 +465,30 @@ function recordTokenUsage(entry = {}) {
   activeTokenUsageSession.totals.callCount += 1;
 }
 
+function getGeminiRequestTimeoutMs() {
+  const raw = Number(process.env.GEMINI_REQUEST_TIMEOUT_MS);
+  if (Number.isFinite(raw) && raw >= 15_000) return Math.min(raw, 600_000);
+  return 120_000;
+}
+
+async function withGeminiTimeout(promise, label = 'Gemini request') {
+  const timeoutMs = getGeminiRequestTimeoutMs();
+  let timeoutId;
+  try {
+    return await Promise.race([
+      promise,
+      new Promise((_, reject) => {
+        timeoutId = setTimeout(
+          () => reject(new Error(`${label} timed out after ${timeoutMs}ms`)),
+          timeoutMs,
+        );
+      }),
+    ]);
+  } finally {
+    if (timeoutId) clearTimeout(timeoutId);
+  }
+}
+
 async function callChatCompletions({
   messages,
   temperature = 0.3,
@@ -526,15 +600,18 @@ async function callChatCompletions({
               ? { responseSchema }
               : {}),
           };
-          const result = await modelClient.generateContent({
-            contents: [
-              {
-                role: 'user',
-                parts: [{ text: prompt }],
-              },
-            ],
-            generationConfig,
-          });
+          const result = await withGeminiTimeout(
+            modelClient.generateContent({
+              contents: [
+                {
+                  role: 'user',
+                  parts: [{ text: prompt }],
+                },
+              ],
+              generationConfig,
+            }),
+            `${modelName} generateContent`,
+          );
           const text = String(result?.response?.text?.() || '').trim();
           if (!text) {
             lastErr = new Error(`Gemini returned empty content on ${modelName}`);

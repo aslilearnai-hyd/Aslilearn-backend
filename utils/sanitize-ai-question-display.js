@@ -109,6 +109,8 @@ export function isScaffoldFlashcardPair(front, back) {
   }
   if (/^What is .+\?$/i.test(f) && f.replace(/^What is (.+)\?$/i, '$1') === b) return true;
   if (/— key idea \d+$/i.test(f) && /Summarize one key idea about/i.test(b)) return true;
+  if (/explain how it connects to .+ in /i.test(b)) return true;
+  if (/to short real-life examples\??$/i.test(f)) return true;
   return false;
 }
 
@@ -129,6 +131,14 @@ export function stripAiGeneratorLeakage(text) {
   s = s.replace(/\(\s*uniqueness\s+seed\s*:[^)]*\)/gi, ' ').trim();
   s = s.replace(/\bseed\s*:\s*[\w-]+/gi, ' ').trim();
   s = s.replace(/\b\d+\s+of\s+\d+\s+variant\b/gi, ' ').trim();
+  // Internal metadata pills that leak into user-facing fields
+  // (e.g. "classlevel: secondary", "bloom_level: remember", "difficultylevel: foundation").
+  s = s
+    .replace(
+      /\b(?:class[_\s]?level|blooms?[_\s]?level|difficulty[_\s]?level)\s*[:=]\s*[^\s|,;]+/gi,
+      ' ',
+    )
+    .trim();
   s = s.replace(
     /\b(?:constraints|alignment|differentiation)\s*:[^.]{0,220}(?:foundation\s+level|provided|remember\s+through\s+create)[^.]*\.?/gi,
     ' ',
@@ -144,11 +154,47 @@ export function stripAiGeneratorLeakage(text) {
   return s;
 }
 
+/** Strip variant/uniqueness salts from flashcard topic link fields. */
+export function sanitizeFlashcardTopicLink(text) {
+  let s = stripLessonPlanLeakFromLabel(stripAiGeneratorLeakage(String(text || '')));
+  if (!s) return '';
+  if (/classlevel|difficultylevel|bloom_level|bloomlevel/i.test(s)) return '';
+
+  s = s
+    .replace(/\bEdition-[\w-]*/gi, ' ')
+    .replace(/\b\d{10,}-v\d+-a\d+-[a-z0-9][\w-]*/gi, ' ')
+    .replace(/(?:[-\s]V\d+-A\d+-[A-Z0-9]+)+/gi, ' ')
+    .replace(/\bFlashcard Deck\b/gi, ' ')
+    .replace(/\bSecondary Education\b/gi, ' ')
+    .replace(/\bTeacher Manual\b/gi, ' ')
+    .replace(/\bCompetency\b/gi, ' ')
+    .replace(/[,;]+/g, ' ')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+
+  s = s.replace(/(?:\s*[—–-]\s*)+$/g, '').trim();
+  s = s.replace(/\s*[—–-]\s*(?:V\d+|A\d+|[\w]{6,})\s*$/gi, '').trim();
+  if (!s || /^[\s,—–-]+$/.test(s)) return '';
+
+  if (s.length > 160 && !/\s[—–-]\s/.test(s)) return '';
+  return s.replace(/\s*[—–-]\s*/g, ' — ').trim();
+}
+
+/** Avoid "Class Class 10" when class_level is stored for display chips. */
+export function normalizeFlashcardClassLevel(text) {
+  const s = String(text || '').trim();
+  if (!s) return '';
+  const digits = s.match(/\d+/)?.[0];
+  if (digits) return `Class ${digits}`;
+  return s.replace(/^Class\s+Class\s+/i, 'Class ').trim();
+}
+
 /** Recursively sanitize all string fields in structured AI tool payloads. */
 export function sanitizeAiStructuredTextDeep(value, { labelField = false } = {}) {
   if (typeof value === 'string') {
     const cleaned = stripAiGeneratorLeakage(value);
-    return labelField ? stripLessonPlanLeakFromLabel(cleaned) : cleaned;
+    if (labelField) return sanitizeFlashcardTopicLink(cleaned) || stripLessonPlanLeakFromLabel(cleaned);
+    return cleaned;
   }
   if (Array.isArray(value)) {
     return value.map((row) => sanitizeAiStructuredTextDeep(row, { labelField: false }));
@@ -156,10 +202,16 @@ export function sanitizeAiStructuredTextDeep(value, { labelField = false } = {})
   if (value && typeof value === 'object') {
     const out = {};
     for (const [key, row] of Object.entries(value)) {
-      const isLabel = /^(topic|subtopic|sub_topic|title|deck_title|flashcard_deck_title|chapter|subTopic)$/i.test(
-        key,
-      );
-      out[key] = sanitizeAiStructuredTextDeep(row, { labelField: isLabel });
+      const isLabel =
+        /^(topic|subtopic|sub_topic|title|deck_title|flashcard_deck_title|chapter|subTopic|topic_and_subtopic_link|subtopic_link)$/i.test(
+          key,
+        );
+      const isClassLevel = /^class_level$/i.test(key);
+      if (isClassLevel && typeof row === 'string') {
+        out[key] = normalizeFlashcardClassLevel(row);
+      } else {
+        out[key] = sanitizeAiStructuredTextDeep(row, { labelField: isLabel });
+      }
     }
     return out;
   }

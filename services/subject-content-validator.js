@@ -68,7 +68,7 @@ function countKeywordHits(text, keywords) {
 
 function isAcidsBasesSubtopic(subtopic = '') {
   const s = String(subtopic || '').toLowerCase();
-  return /acid|base|alkali|litmus|neutral|ph|chemical propert/i.test(s);
+  return /\b(acid|base|alkali|litmus|neutral|ph|chemical propert)/i.test(s);
 }
 
 function collectQuestionRows(structured) {

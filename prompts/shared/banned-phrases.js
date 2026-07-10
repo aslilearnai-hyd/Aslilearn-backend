@@ -25,7 +25,6 @@ export const BANNED_GENERIC_PHRASES = Object.freeze([
   /^facilitate learning\.?$/i,
   /^engage students\.?$/i,
   /^assess understanding\.?$/i,
-  /\bexplain\s+photosynthesis\b/i,
   /\bexplain\s+the\s+concept\s+of\b/i,
   /\bdiscuss\s+the\s+importance\s+of\b/i,
   /\bstudents\s+will\s+learn\s+about\b/i,

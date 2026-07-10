@@ -69,14 +69,23 @@ function isAuditableRow(row) {
   return true;
 }
 
-async function loadToolRows(scope = {}) {
+async function loadToolRows(scope = {}, options = {}) {
   const masterFilter = buildScopeFilter(scope);
   const legacyFilter = buildLegacyScopeFilter(scope);
+  const rowLimit = Math.min(5000, Math.max(0, Number(options.limit) || 0));
 
-  const [masterRows, legacyRows] = await Promise.all([
-    AiToolGeneration.find(masterFilter).select(MASTER_FIELDS).lean(),
-    AIGeneratorRecord.find(legacyFilter).select(LEGACY_FIELDS).lean(),
-  ]);
+  const masterQuery = AiToolGeneration.find(masterFilter)
+    .select(MASTER_FIELDS)
+    .sort({ createdAt: -1 });
+  const legacyQuery = AIGeneratorRecord.find(legacyFilter)
+    .select(LEGACY_FIELDS)
+    .sort({ createdAt: -1 });
+  if (rowLimit > 0) {
+    masterQuery.limit(rowLimit);
+    legacyQuery.limit(rowLimit);
+  }
+
+  const [masterRows, legacyRows] = await Promise.all([masterQuery.lean(), legacyQuery.lean()]);
 
   return [
     ...masterRows.map(mapMasterRow),
@@ -120,7 +129,8 @@ export async function getSectionGapSummariesByTool(scope = {}, options = {}) {
   }
 
   const limitPerTool = Math.min(100, Math.max(1, parseInt(scope.limit, 10) || 50));
-  const rows = await loadToolRows(scope);
+  const scanLimit = Math.min(3000, Math.max(500, limitPerTool * 40));
+  const rows = await loadToolRows(scope, { limit: scanLimit });
   /** @type {Record<string, { toolName: string, toolDisplayName: string, totalScanned: number, incompleteCount: number, truncated: boolean, items: object[] }>} */
   const byTool = {};
   const scannedByTool = {};
