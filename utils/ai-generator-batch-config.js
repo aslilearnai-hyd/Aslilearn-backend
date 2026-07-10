@@ -9,12 +9,13 @@ export function isAiGeneratorGreatQualityEnabled() {
   return !isAiGeneratorCostSaverEnabled();
 }
 
-/** Cost-saver mode: fewer retries, Flash-Lite only, dedup on ~50% of batch variants. */
+/** Cost-saver mode: fewer retries, Flash-Lite only, dedup on ~50% of batch variants.
+ *  DEFAULT OFF — quality-first. Set AI_GENERATOR_COST_SAVER=true to trade quality for cost. */
 export function isAiGeneratorCostSaverEnabled() {
 
-  const raw = String(process.env.AI_GENERATOR_COST_SAVER ?? 'true').trim().toLowerCase();
+  const raw = String(process.env.AI_GENERATOR_COST_SAVER ?? 'false').trim().toLowerCase();
 
-  return raw !== 'false' && raw !== '0' && raw !== 'off';
+  return raw === 'true' || raw === '1' || raw === 'on';
 
 }
 
@@ -28,13 +29,14 @@ export function isAiGeneratorUltraEconomyEnabled() {
 
 }
 
-/** When true (default), AI Generator / Book Generator never use full Flash — Flash-Lite only. */
+/** Flash-Lite-only cap. DEFAULT OFF — Premium may use the Pro model. Set
+ *  AI_GENERATOR_FLASH_LITE_ONLY=true only to force the cheapest model everywhere. */
 
 export function isAiGeneratorFlashLiteOnlyEnabled() {
 
-  const raw = String(process.env.AI_GENERATOR_FLASH_LITE_ONLY ?? 'true').trim().toLowerCase();
+  const raw = String(process.env.AI_GENERATOR_FLASH_LITE_ONLY ?? 'false').trim().toLowerCase();
 
-  return raw !== 'false' && raw !== '0' && raw !== 'off';
+  return raw === 'true' || raw === '1' || raw === 'on';
 
 }
 
@@ -70,13 +72,15 @@ export function shouldUseFlashForAiGeneratorRun({ upgradeRequested = false, reco
 
 
 
-/** Local section padding fills gaps — skip expensive Flash retries (default on). */
+/** Local section padding fills gaps with template text. DEFAULT OFF — gaps now trigger
+ *  LLM repair or fail the slot instead of saving generic filler. Set
+ *  AI_GENERATOR_SECTION_PAD=true to re-enable padding (not recommended for board content). */
 
 export function isAiGeneratorSectionPadEnabled() {
 
-  const raw = String(process.env.AI_GENERATOR_SECTION_PAD ?? 'true').trim().toLowerCase();
+  const raw = String(process.env.AI_GENERATOR_SECTION_PAD ?? 'false').trim().toLowerCase();
 
-  return raw !== 'false' && raw !== '0' && raw !== 'off';
+  return raw === 'true' || raw === '1' || raw === 'on';
 
 }
 
