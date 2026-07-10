@@ -16,6 +16,7 @@ import {
   getAiGeneratorAnalytics,
   getTopicSaturation,
 } from '../controllers/aiGeneratorController.js';
+import { generateSixSectionPreview } from '../controllers/sixSectionController.js';
 
 const router = express.Router();
 
@@ -23,6 +24,8 @@ router.use(verifyToken);
 
 router.post('/generate', generateAndSaveContent);
 router.post('/generate-batch', generateBatchContent);
+// V2 six-section pilot (flag-gated by AI_GENERATOR_V2_SIX_SECTION; returns preview JSON, no save yet)
+router.post('/six-section', generateSixSectionPreview);
 router.post('/release-lock', releaseAiGeneratorLock);
 router.get('/audit/duplicates', getDuplicateAudit);
 router.get('/audit/analytics', getAiGeneratorAnalytics);

@@ -21,6 +21,9 @@ import {
 import { extractTitleFromStructured } from './ai-generator-content-extractor.js';
 
 import { computeScaffoldDensity, SCAFFOLD_DENSITY_CEILING } from './ai-generator-quality-gate.js';
+import { generateSixSectionContent } from './six-section-generator.js';
+import { isSixSectionV2Enabled } from '../prompts/v2/assemble.js';
+import { isV2SupportedTool } from '../prompts/v2/tool-packs.js';
 
 import { persistGenerationFingerprints } from './ai-generator-fingerprint-service.js';
 
@@ -393,6 +396,57 @@ export async function generateBatchAndSave(params, opts = {}) {
         for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
 
           try {
+
+            // V2 six-section pilot: when enabled + supported, generate the minimized
+            // 6-section content and save it directly (renders in SixSectionViewer).
+            // Bypasses the legacy pipeline entirely; quality comes from the Pro model.
+            if (isSixSectionV2Enabled() && isV2SupportedTool(toolSlug)) {
+              const v2 = await generateSixSectionContent(
+                toolSlug,
+                { board, classLabel: className, subject: subjectName, topic: topicName, subTopic: subtopicName },
+                { primaryModel: qualityTierSettings.primaryGeminiModel },
+              );
+              if (!v2.ok) {
+                lastError = v2.error || 'V2 six-section generation failed';
+                if (attempt < maxAttempts) continue;
+                throw new Error(lastError);
+              }
+              const uid = opts.reqUser?.userId || opts.reqUser?._id || 'unknown';
+              const teacherId = mongoose.Types.ObjectId.isValid(uid) ? uid : undefined;
+              const coreTitle =
+                v2.structuredContent?.core?.title || v2.structuredContent?.core?.worksheetTitle || 'Six-section content';
+              const rec = await AiToolGeneration.create({
+                toolName: toolSlug,
+                toolDisplayName,
+                sourceType: 'ai_generator',
+                board,
+                classLabel: className,
+                subject: subjectName,
+                topic: topicName,
+                subtopic: subtopicName,
+                section: '',
+                content: coreTitle,
+                generatedContent: coreTitle,
+                generatedBy: uid,
+                status: 'active',
+                reviewStatus: params.reviewStatus || 'approved',
+                metadata: {
+                  board,
+                  createdByName: opts.reqUser?.name || 'Super Admin',
+                  createdByRole: 'super-admin',
+                  contentType: 'structured',
+                  structuredContent: v2.structuredContent,
+                  formatSource: 'asli-v2-six-section',
+                  schemaVersion: 'asli-v2-six-section',
+                  generationVariant: variantIndex,
+                  batchSize,
+                  batchOrchestrator: true,
+                },
+                ...(teacherId ? { teacherId } : {}),
+              });
+              console.log(`[AI Generator batch] Variant ${variantIndex}/${batchSize} saved (V2 six-section)`);
+              return { ok: true, variantIndex, record: rec.toObject() };
+            }
 
             const extraParams = {
 

@@ -5301,6 +5301,7 @@ export function rebuildWorksheetBookBatchVariant(structuredContent, meta = {}) {
 /** Book-grounded rebuild when RAG text exists; otherwise topic-grounded. */
 export function rebuildWorksheetBatchVariantSmart(structuredContent, meta = {}) {
   const topic = resolveWorksheetTopicLabel(meta);
+  const subject = String(meta.subject || 'Science').trim();
   const pdfContext = String(meta.pdfContext || '')
     .replace(/USER-SELECTED CURRICULUM[\s\S]*?(?=\[Chunk|\n{2,}|$)/i, '')
     .trim();
