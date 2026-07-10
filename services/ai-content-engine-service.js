@@ -3002,6 +3002,10 @@ function structuredContentHasPromptLeak(value) {
   return (
     /\bNo filler content\b/i.test(blob) ||
     /\bValid JSON output required\b/i.test(blob) ||
+    /build questions directly from these passages/i.test(blob) ||
+    /it matches the textbook explanation/i.test(blob) ||
+    /book:\s*.+subject:\s*.+class:/i.test(blob) ||
+    /according to the chapter on .+, which choice reflects/i.test(blob) ||
     (/\bReady\b/gi.test(blob) && (blob.match(/\bReady\b/gi) || []).length >= 4)
   );
 }
@@ -4398,13 +4402,26 @@ function worksheetHasPlaceholderQuestions(structured = {}) {
   return placeholderCount >= Math.max(1, Math.ceil(rows.length * 0.5));
 }
 
-function worksheetHasSaveableContent(structured = {}) {
+function worksheetHasSaveableContent(structured = {}, meta = {}) {
   const rows = worksheetQuestionRows(structured);
+  if (worksheetSectionsHaveRagLeak(structured.sections || [])) return false;
+  const topic = resolveWorksheetTopicLabel({ ...meta, ...structured });
+  const subject = String(meta.subject || structured.subject || '').trim();
+  if (worksheetSectionsLackMathsNumericals(structured.sections || [], subject, topic)) return false;
   const real = rows.filter((row) => {
     const text = String(row?.question || row?.prompt || row?.text || '').trim();
+    const blob = [text, row?.answer, ...(Array.isArray(row?.options) ? row.options : [])]
+      .filter(Boolean)
+      .join(' ');
+    if (worksheetRowHasRagLeak(blob)) return false;
     return text.length >= 10 && !isPlaceholderText(text) && row?._scaffold !== true;
   });
-  return real.length >= 3 || Boolean(structured?.bookGroundedFallback) || Boolean(structured?.topicGroundedFallback);
+  return real.length >= 3;
+}
+
+/** Stricter batch save check — blocks prompt-leak and maths-without-numericals worksheets. */
+export function isWorksheetBatchSaveable(structured = {}, meta = {}) {
+  return worksheetHasSaveableContent(structured, meta);
 }
 
 function shouldRelaxBatchWorksheetSave(meta = {}, slug = '') {
@@ -10899,6 +10916,16 @@ Write all student-facing text in the required output language.`;
           structuredContent,
           shouldRelaxBatchWorksheetSave(meta, slug) ? { ...meta, strictValidation: false } : meta,
         );
+        if (
+          isBatchVariant &&
+          (structuredContentHasPromptLeak(structuredContent) ||
+            worksheetSectionsHaveRagLeak(structuredContent?.sections || []))
+        ) {
+          structuredContent = finalizeWorksheetStructuredContent(
+            { ...structuredContent, sections: [] },
+            { ...meta, strictValidation: false, generationVariant: Number(meta.generationVariant) || 1 },
+          );
+        }
       }
 
       if (languageSubjectEnforced) {
@@ -11301,7 +11328,7 @@ Write all student-facing text in the required output language.`;
           const canBypassBookWorksheet =
             slug === 'worksheet-mcq-generator' &&
             shouldRelaxBatchWorksheetSave(meta, slug) &&
-            worksheetHasSaveableContent(structuredContent);
+            worksheetHasSaveableContent(structuredContent, meta);
           const blockBypass =
             !canBypassBookWorksheet &&
             shouldBlockCostSaverForStoryLanguage(
@@ -11490,7 +11517,7 @@ Write all student-facing text in the required output language.`;
             if (
               slug === 'worksheet-mcq-generator' &&
               shouldRelaxBatchWorksheetSave(meta, slug) &&
-              !worksheetHasSaveableContent(structuredContent)
+              !worksheetHasSaveableContent(structuredContent, meta)
             ) {
               structuredContent = finalizeWorksheetStructuredContent(structuredContent, {
                 ...meta,
@@ -11550,7 +11577,7 @@ Write all student-facing text in the required output language.`;
         if (
           shouldRelaxBatchWorksheetSave(meta, slug) &&
           slug === 'worksheet-mcq-generator' &&
-          worksheetHasSaveableContent(structuredContent)
+          worksheetHasSaveableContent(structuredContent, meta)
         ) {
           /* book-grounded worksheet — save despite minor post-check noise */
         } else if (attempt < maxValidationAttempts) {
@@ -11610,7 +11637,11 @@ Write all student-facing text in the required output language.`;
         if (
           allowScaffoldBatchSave &&
           scaffoldStats.total >= 3 &&
-          scaffoldStats.density > SCAFFOLD_DENSITY_CEILING
+          scaffoldStats.density > SCAFFOLD_DENSITY_CEILING &&
+          !(
+            slug === 'worksheet-mcq-generator' &&
+            !isWorksheetBatchSaveable(structuredContent, meta)
+          )
         ) {
           console.warn(
             `[AI Generator] ${slug} saving scaffold-heavy batch content (${Math.round(scaffoldStats.density * 100)}% filler questions).`,
@@ -11630,7 +11661,7 @@ Write all student-facing text in the required output language.`;
         const canSaveBatchWorksheet =
           shouldRelaxBatchWorksheetSave(meta, slug) &&
           slug === 'worksheet-mcq-generator' &&
-          worksheetHasSaveableContent(structuredContent);
+          worksheetHasSaveableContent(structuredContent, meta);
         const canSavePracticeQaBatch =
           shouldRelaxPracticeQaBatchSave(meta, slug) &&
           practiceQaHasAllRequiredSections(structuredContent);

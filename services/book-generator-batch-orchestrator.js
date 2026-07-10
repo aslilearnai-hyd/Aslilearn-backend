@@ -8,6 +8,7 @@ import {
   finalizeMockTestStructuredContent,
   finalizeHomeworkStructuredContent,
   finalizeWorksheetStructuredContent,
+  isWorksheetBatchSaveable,
   repairWorksheetBatchDuplicates,
   ensureWorksheetSectionsComplete,
   rebuildWorksheetBatchVariant,
@@ -590,8 +591,26 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               throw new Error(lastError);
             }
 
-            // Book batches: warn on scaffold-heavy content but still save (user prefers 5/5 saved).
-            if (BOOK_QUESTION_UNIQUENESS_TOOLS.has(toolSlug)) {
+            // Book batches: block worksheets with prompt leakage or scaffold-only filler.
+            if (toolSlug === 'worksheet-mcq-generator') {
+              if (!isWorksheetBatchSaveable(structuredContent, finalizeMeta)) {
+                console.warn(
+                  `[book-generator] Slot ${batchIndex}: worksheet failed save gate — forcing full topic repair`,
+                );
+                structuredContent = finalizeWorksheetStructuredContent(
+                  { sections: [] },
+                  {
+                    ...finalizeMeta,
+                    generationVariant: variantIndex + batchIndex * 1000 + attempt,
+                  },
+                );
+              }
+              if (!isWorksheetBatchSaveable(structuredContent, finalizeMeta)) {
+                lastError = 'Worksheet failed quality gate (prompt leakage or missing chapter-specific content).';
+                if (attempt < maxAttempts) continue;
+                throw new Error(lastError);
+              }
+            } else if (BOOK_QUESTION_UNIQUENESS_TOOLS.has(toolSlug)) {
               const scaffoldStats = computeScaffoldDensity(toolSlug, structuredContent);
               if (scaffoldStats.total >= 3 && scaffoldStats.density > SCAFFOLD_DENSITY_CEILING) {
                 console.warn(
