@@ -4753,97 +4753,122 @@ function worksheetSectionsLackMathsNumericals(sections = [], subject = '', topic
 
 function buildTrigWorksheetQuestion(sectionName, topicLabel, subjectLabel, qNum, meta, mix, pickStem) {
   const variantIndex = Number(meta.generationVariant) || 1;
+  const slotPick = (pool, salt = 0) => {
+    const list = Array.isArray(pool) ? pool : [];
+    if (!list.length) return list[0];
+    const idx =
+      (variantIndex * 17 + qNum * 11 + hashSeedToInt(meta.uniqueSeed) + salt + Number(mix)) %
+      list.length;
+    return list[(idx + list.length) % list.length];
+  };
+
   if (sectionName === WORKSHEET_SECTION_LABELS.A) {
-    const stems = [
-      'What is the value of sin 30°?',
-      'What is the value of cos 45°?',
-      'tan 60° equals:',
-      'Which is equal to sin 45°?',
-      'For angle 30°, sin θ equals:',
+    const pool = [
+      { q: 'What is the value of sin 30°?', o: ['A) 1/2', 'B) √3/2', 'C) 1', 'D) 0'], a: 'A) 1/2' },
+      { q: 'What is the value of cos 45°?', o: ['A) 1/√2', 'B) √3/2', 'C) 1/2', 'D) √3'], a: 'A) 1/√2' },
+      { q: 'tan 60° equals:', o: ['A) √3', 'B) 1/√3', 'C) 1', 'D) 1/2'], a: 'A) √3' },
+      { q: 'Which is equal to sin 45°?', o: ['A) 1/√2', 'B) √3', 'C) 1/2', 'D) 0'], a: 'A) 1/√2' },
+      { q: 'For angle 30°, sin θ equals:', o: ['A) 1/2', 'B) √3/2', 'C) 1/√2', 'D) √3'], a: 'A) 1/2' },
+      { q: 'What is the value of cos 60°?', o: ['A) 1/2', 'B) √3/2', 'C) 1', 'D) 1/√2'], a: 'A) 1/2' },
+      { q: 'sin 90° equals:', o: ['A) 1', 'B) 0', 'C) 1/2', 'D) √3/2'], a: 'A) 1' },
+      { q: 'cot 45° equals:', o: ['A) 1', 'B) √3', 'C) 0', 'D) 1/√3'], a: 'A) 1' },
+      { q: 'sec 60° equals:', o: ['A) 2', 'B) √3', 'C) 1/2', 'D) 1'], a: 'A) 2' },
+      { q: 'cosec 30° equals:', o: ['A) 2', 'B) √3', 'C) 1/2', 'D) 1/√2'], a: 'A) 2' },
     ];
-    const options = [
-      ['A) 1/2', 'B) √3/2', 'C) 1', 'D) 0'],
-      ['A) 1/√2', 'B) √3/2', 'C) 1/2', 'D) √3'],
-      ['A) √3', 'B) 1/√3', 'C) 1', 'D) 1/2'],
-      ['A) 1/√2', 'B) √3', 'C) 1/2', 'D) 0'],
-      ['A) 1/2', 'B) √3/2', 'C) 1/√2', 'D) √3'],
-    ];
-    const idx = ((Number(mix) % stems.length) + stems.length) % stems.length;
+    const row = slotPick(pool, 3);
     return {
       question_number: qNum,
       type: 'MCQ',
       section: sectionName,
-      question: `${pickStem(stems, mix)} (${topicLabel})`,
-      options: options[idx],
-      answer: `${options[idx][0]}`,
+      question: row.q,
+      options: row.o,
+      answer: row.a,
       marks: 1,
     };
   }
   if (sectionName === WORKSHEET_SECTION_LABELS.B) {
-    const stems = [
-      'sin 45° = _____',
-      'The value of cos 60° is _____',
-      'tan 45° = _____',
-      'sin 30° + cos 60° = _____',
-      'For a right triangle, if one acute angle is 30°, the other acute angle is _____°',
+    const pool = [
+      { q: 'sin 45° = _____', a: '1/√2' },
+      { q: 'The value of cos 60° is _____', a: '1/2' },
+      { q: 'tan 45° = _____', a: '1' },
+      { q: 'sin 30° + cos 60° = _____', a: '1' },
+      { q: 'cos 30° = _____', a: '√3/2' },
+      { q: 'tan 30° = _____', a: '1/√3' },
+      { q: 'sin 60° = _____', a: '√3/2' },
+      { q: 'cos 45° = _____', a: '1/√2' },
+      { q: 'cot 60° = _____', a: '1/√3' },
+      { q: 'sec 45° = _____', a: '√2' },
     ];
-    const answers = ['1/√2', '1/2', '1', '1', '60'];
-    const idx = ((Number(mix) % stems.length) + stems.length) % stems.length;
+    const row = slotPick(pool, 5);
     return {
       question_number: qNum,
       type: 'FIB',
       section: sectionName,
-      question: pickStem(stems, mix),
-      answer: answers[idx],
+      question: pickStem([row.q], mix) || row.q,
+      answer: row.a,
       marks: 1,
     };
   }
   if (sectionName === WORKSHEET_SECTION_LABELS.C) {
-    const stems = [
-      'Write the value of sin 60°.',
-      'State the value of cos 30°.',
-      'Write tan 45° in simplest form.',
-      'State sin 90°.',
-      'Write cos 45° as a fraction.',
+    const pool = [
+      { q: 'Write the value of sin 60°.', a: '√3/2' },
+      { q: 'State the value of cos 30°.', a: '√3/2' },
+      { q: 'Write tan 45° in simplest form.', a: '1' },
+      { q: 'State sin 90°.', a: '1' },
+      { q: 'Write cos 45° as a fraction.', a: '1/√2' },
+      { q: 'State the value of tan 60°.', a: '√3' },
+      { q: 'Write sin 30° as a fraction.', a: '1/2' },
+      { q: 'State cos 60°.', a: '1/2' },
+      { q: 'Write cot 45°.', a: '1' },
+      { q: 'State sec 30°.', a: '2/√3' },
     ];
-    const answers = ['√3/2', '√3/2', '1', '1', '1/√2'];
-    const idx = ((Number(mix) % stems.length) + stems.length) % stems.length;
+    const row = slotPick(pool, 7);
     return {
       question_number: qNum,
       type: 'VSA',
       section: sectionName,
-      question: pickStem(stems, mix),
-      answer: answers[idx],
+      question: row.q,
+      answer: row.a,
       marks: 2,
     };
   }
   if (sectionName === WORKSHEET_SECTION_LABELS.D) {
-    const stems = [
-      `Find sin 30° + cos 60°. Show working.`,
-      `Evaluate tan 45° + sin 45°. Show each step.`,
-      `Using the table of standard angles, find cos 30° and explain how it is obtained.`,
-      `Show that sin² 30° + cos² 30° = 1.`,
+    const pool = [
+      'Find sin 30° + cos 60°. Show working.',
+      'Evaluate tan 45° + sin 45°. Show each step.',
+      'Using the table of standard angles, find cos 30° and explain how it is obtained.',
+      'Show that sin² 30° + cos² 30° = 1.',
+      'Evaluate sin 60° - cos 30°. Show working.',
+      'Find the value of 2 sin 45° cos 45°. Show steps.',
+      'Prove that tan 45° = sin 45° / cos 45° using standard values.',
+      'If sin θ = 1/2 and θ = 30°, find cos θ. Show working.',
     ];
     return {
       question_number: qNum,
       type: 'SA',
       section: sectionName,
-      question: pickStem(stems, mix),
+      question: pickStem([slotPick(pool, 9)], mix) || slotPick(pool, 9),
       answer: 'Show substitution from the standard trigonometric table with clear working.',
       marks: 3,
     };
   }
-  const stems = [
-    `Evaluate: (sin 45° + cos 45°) × tan 60°. Show all working.`,
-    `If sin A = 1/2 for A = 30°, find cos A. Show steps.`,
-    `Prove using values: sin 60° cos 30° + sin 30° cos 60° = 1.`,
-    `A ladder makes 60° with the ground. If sin 60° = √3/2, write the ratio used for height. Calculate height when ladder length is 4 m.`,
+  const pool = [
+    'Evaluate: (sin 45° + cos 45°) × tan 60°. Show all working.',
+    'If sin A = 1/2 for A = 30°, find cos A. Show steps.',
+    'Prove using values: sin 60° cos 30° + sin 30° cos 60° = 1.',
+    'A ladder makes 60° with the ground. If sin 60° = √3/2, find height when ladder length is 4 m.',
+    'Evaluate: 2 tan² 45° + cos² 30° - sin² 60°. Show all working.',
+    'The value of (sin 30° + cos 60°) is _____. Show working.',
+    'If tan θ = 1 for θ = 45°, find sin θ and cos θ. Show steps.',
+    'Evaluate: sin² 45° + cos² 45° + tan² 60°. Show each step.',
+    'From a point 10 m from the foot of a tower, the angle of elevation is 30°. Find height using tan 30° = 1/√3.',
+    'Prove that sin 45° = cos 45° using the standard angle table.',
   ];
   return {
     question_number: qNum,
     type: 'COMPETENCY',
     section: sectionName,
-    question: pickStem(stems, mix),
+    question: pickStem([slotPick(pool, 11)], mix) || slotPick(pool, 11),
     answer: 'Given, formula/ratio, step-by-step calculation, and final answer with units if needed.',
     marks: 4,
   };
