@@ -62,6 +62,9 @@ import { isAiGeneratorGreatQualityEnabled } from '../utils/ai-generator-batch-co
 import { formatStructuredToolOutput } from '../config/aiToolTemplates.js';
 import { stripMarkdownSyntax, deepStripMarkdownValues } from '../utils/strip-markdown-syntax.js';
 import { computeScaffoldDensity, SCAFFOLD_DENSITY_CEILING } from './ai-generator-quality-gate.js';
+import { generateSixSectionContent } from './six-section-generator.js';
+import { isSixSectionV2Enabled } from '../prompts/v2/assemble.js';
+import { isV2SupportedTool } from '../prompts/v2/tool-packs.js';
 
 /** Question tools that carry scaffold-prone question pools and cross-slot dedup. */
 const BOOK_QUESTION_UNIQUENESS_TOOLS = new Set([
