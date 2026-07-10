@@ -49,6 +49,10 @@ const PLACEHOLDER_PATTERNS = [
   /\bhow\s+would\s+you\s+use\s+ideas\s+from\b.*\bto\s+solve\s+a\s+problem\b/i,
   /\bsection\s+[a-e]\s+for\b.*\(\s*subject\s*\)/i,
   /\blabel\s+for\b.*\bin\s+subject\b/i,
+  /build questions directly from these passages/i,
+  /it matches the textbook explanation/i,
+  /book:\s*.+subject:\s*.+class:/i,
+  /according to the chapter on .+, which choice reflects/i,
 ];
 
 const MIN_SECTION_TEXT_LEN = 12;
