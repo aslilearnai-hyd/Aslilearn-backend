@@ -3,7 +3,7 @@ import { createToolPromptPack } from '../create-tool-prompt-pack.js';
 export default createToolPromptPack({
   slug: 'worksheet-mcq-generator',
   toolTitle: 'Worksheet & MCQ Generator',
-  focus: 'Exam-style worksheet with varied question types — every stem unique, subtopic-specific, and direct.',
+  focus: 'NCERT/CBSE-style worksheet — MCQ, FIB, VSA, SA, numerical — aligned to textbook exercises for the subtopic.',
   includeBloom: true,
   includeDifferentiation: true,
   includeMisconceptions: true,
@@ -21,7 +21,7 @@ export default createToolPromptPack({
     'bloom_tag: tag each question or section.',
     'Every question stem must name subtopic-specific terms — no generic "Which statement about Science is correct?"',
     'Numerical values must be realistic (SI units, class-appropriate magnitude).',
-    'When textbook passages are provided, ground facts and numbers in them.',
+    'When textbook passages are provided, mirror in-chapter Examples and end-of-section Exercise question patterns.',
   ],
   rewriteRules: [
     'Minimum unique questions across A–E. No duplicate stems. MCQs need 4 labelled options. No scenario wrappers.',

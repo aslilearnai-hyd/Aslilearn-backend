@@ -15,6 +15,7 @@ import {
 } from '../prompts/registry.js';
 import {
   buildBookGroundingPromptBlock,
+  buildClassroomTextbookMethodologyBlock,
   buildPrecisionGenerationBlock,
   buildVariantUniquenessBlock,
 } from '../prompts/shared/precision-generation.js';
@@ -301,7 +302,7 @@ const TEMPLATES = {
     regenerationRules: { mergePolicy: 'replace', allowTemplateRegeneration: true },
     gemini: {
       strictOutputHint:
-        'Return ONE JSON object per worksheet using strict section-wise format only: title, learning_objectives[], instructions, sections[{sectionName,questions[]}], answer_key, bloom_level, difficulty_tag. Sections MUST be exactly Section A (MCQs), B (Fill in the Blanks), C (Very Short Answer), D (Short Answer), E (Competency/Application). Do not merge sections, do not skip headings, and keep each question under its correct section. Section D and Section E must each contain at least one complete question. Section E = extended application: multi-step numerical, formula use, or explanation using textbook facts — direct stems only (no fictional scenario, case-study story, or role-play). Flat rows (fallback): question_number, type, section, question, options[], answer, marks.',
+        'Return ONE JSON object per worksheet using strict section-wise format only: title, learning_objectives[], instructions, sections[{sectionName,questions[]}], answer_key, bloom_level, difficulty_tag. Sections MUST be exactly Section A (MCQs), B (Fill in the Blanks), C (Very Short Answer), D (Short Answer), E (Competency/Application). Match NCERT/CBSE textbook exercise style (in-chapter and end-of-section questions). Do not merge sections, do not skip headings, and keep each question under its correct section. Section D and Section E must each contain at least one complete question. Section E = extended numerical or explanation like textbook long exercises — direct stems only. Flat rows (fallback): question_number, type, section, question, options[], answer, marks.',
       pdfExtractSchema: {
         title: 'string',
         worksheet_title: 'string',
@@ -2579,6 +2580,7 @@ export function buildAiGeneratorPromptParts(toolSlug, params = {}) {
       }),
     );
   }
+  contextLines.push(buildClassroomTextbookMethodologyBlock());
 
   const completenessRule =
     sectionCount > 0
@@ -2627,6 +2629,7 @@ export function buildAiGeneratorPromptParts(toolSlug, params = {}) {
     'You are an expert Indian school curriculum content generator aligned to NEP 2020 and NCF-SE 2023.',
     'Return only valid JSON matching the enforced response schema. No markdown fences, no commentary outside JSON.',
     buildPrecisionGenerationBlock(),
+    buildClassroomTextbookMethodologyBlock(),
     hasBookContext ? buildBookGroundingPromptBlock({
       topic: params.topic,
       subTopic: params.subTopic || params.subtopic,

@@ -107,6 +107,7 @@ export function formatBookContextForPrompt(chunks = [], meta = {}) {
     'TEXTBOOK CONTENT (PRIMARY SOURCE — use this as the main factual basis):',
     'Priority: (1) Uploaded Book  (2) Uploaded Notes  (3) General knowledge only when the book is silent.',
     'Follow textbook terminology, definitions, examples, formulae, and explanations.',
+    'Generate questions in the same formats as textbook Exercises and Activities (MCQ, FIB, VSA, SA, numerical, match).',
     'Build questions directly from these passages — do not invent facts or add fictional scenarios.',
     'Do not invent facts that contradict the passages below.',
     meta.bookTitle ? `Book: ${meta.bookTitle}` : '',

@@ -26,8 +26,8 @@ export function buildEducatorSystemPrompt(ctx = {}) {
     `You write${toolLabel} as professionally published Indian school material — indistinguishable from Pearson, Oxford, NCERT teacher manuals, or top CBSE lesson plans.`,
     '',
     'VOICE AND STYLE:',
-    '- Write like an experienced teacher speaking to colleagues, not like an AI assistant.',
-    '- Every sentence must earn its place: practical, specific, classroom-ready.',
+    '- Write like an experienced Indian classroom teacher using the textbook — practical, clear, easy to teach.',
+    '- Every sentence must earn its place: specific, classroom-ready, aligned to chapter exercises.',
     '- Use natural transitions, varied sentence length, and occasional storytelling.',
     '- Never use filler headings with one vague sentence underneath.',
     '- Never repeat the same sentence opening across sections.',
@@ -75,5 +75,6 @@ export function buildUniversalQualityBlock() {
     '8. Human voice: vary openings; no robotic lists of generic bullets.',
     '9. No scenario framing: ask directly about the subtopic — never "during a market visit" or "in pairs discuss community".',
     '10. Tool clarity: each section must match its purpose (concept Q vs practice vs application) in plain, precise wording.',
+    '11. Textbook classroom fit: MCQs, worksheets, and activities must resemble NCERT/CBSE in-chapter and end-of-section exercises.',
   ].join('\n');
 }

@@ -10343,6 +10343,7 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
 
 REFERENCE TEXTBOOK CONTENT (RAG — PRIMARY factual source for this generation):
 Use the passages below as the PRIMARY source. Follow textbook terminology, definitions, examples, formulae, and explanations.
+Generate MCQs, worksheets, and practice in the same formats as the textbook Exercises and Activities (not generic AI-style prompts).
 Generate questions and content DIRECTLY on the selected subtopic using these passages — no fictional scenario wrappers.
 Do not invent facts that contradict the book. Only use general knowledge when the book is silent, and stay on the same subtopic.
 Priority: (1) Uploaded Book  (2) Uploaded Notes  (3) Gemini knowledge.

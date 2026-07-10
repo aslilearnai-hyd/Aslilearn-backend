@@ -24,11 +24,31 @@ export function getPrecisionVariantFocus(variantIndex) {
 }
 
 /**
+ * Ground-level classroom + textbook exercise alignment (all tools).
+ * @returns {string}
+ */
+export function buildClassroomTextbookMethodologyBlock() {
+  return [
+    'CLASSROOM TEXTBOOK METHODOLOGY (mandatory):',
+    '- Write like NCERT/CBSE classroom material: easy for teachers to teach and students to follow.',
+    '- Match question TYPES from the textbook: MCQ, fill-in-the-blank, very short answer, short answer, numerical, match-the-following, true/false, label-the-diagram prompts.',
+    '- Mirror the STYLE of in-chapter Examples, Intext Questions, and end-of-section Exercises — same difficulty band and wording pattern.',
+    '- Activities = simplified versions of textbook Activities/Projects (materials, steps, observation table) — not invented story-based tasks.',
+    '- Teacher-facing text: who does what, with what material, for how long — plain classroom language.',
+    '- Student-facing questions: one clear instruction per item; answers should match what the textbook would accept.',
+    '- Prefer exercises that drill the same skill as the textbook (define, calculate, draw, explain, compare) on the SAME subtopic.',
+    '- Do NOT add content that is not teachable directly from the chapter (no generic life-skills wrappers).',
+  ].join('\n');
+}
+
+/**
  * Core precision block — direct, subtopic-stuck content.
  * @returns {string}
  */
 export function buildPrecisionGenerationBlock() {
   return [
+    buildClassroomTextbookMethodologyBlock(),
+    '',
     'PRECISION MODE (mandatory):',
     '- Every question/task names the exact SUBTOPIC and tests one clear skill.',
     '- Write exam-ready stems: define, state, calculate, explain, justify — no story setup.',
@@ -54,6 +74,8 @@ export function buildBookGroundingPromptBlock(ctx = {}) {
     'TEXTBOOK-GROUNDED GENERATION (mandatory when passages are attached):',
     `- Scope: ${scope}${subject ? ` (${subject})` : ''}.`,
     '- Use the REFERENCE TEXTBOOK CONTENT as the PRIMARY source for facts, definitions, formulae, examples, and terminology.',
+    '- Base MCQs, worksheets, and practice on the same kinds of tasks as the textbook Exercises and Activities in the passages.',
+    '- Reuse textbook numerical patterns, terminology, and question phrasing where appropriate (paraphrase, do not copy verbatim).',
     '- Questions must be answerable from the passages + standard curriculum for this subtopic.',
     '- Quote or paraphrase textbook ideas accurately; never invent fake textbook lines.',
     '- If a passage mentions a formula, numerical, or definition — prefer that in questions and explanations.',

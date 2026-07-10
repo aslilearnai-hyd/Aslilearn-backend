@@ -3,7 +3,7 @@ import { createToolPromptPack } from '../create-tool-prompt-pack.js';
 export default createToolPromptPack({
   slug: 'quick-assignment-builder',
   toolTitle: 'Quick Assignment Builder',
-  focus: '11-section assignment with concept Qs, application, rubric — direct exam-style stems on the subtopic.',
+  focus: '11-section assignment aligned to textbook exercise types — concept Qs, numericals, short activities teachers can run in class.',
   includeBloom: true,
   includeDifferentiation: true,
   generationRules: [

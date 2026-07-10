@@ -5,6 +5,7 @@
 
 const PRECISION_RULES = Object.freeze([
   'PRECISION: Every question names the exact subtopic and tests one clear skill — no story setup or role-play frame.',
+  'TEXTBOOK FIT: Match NCERT/CBSE exercise types (MCQ, FIB, VSA, SA, numerical, match, activity) from the chapter.',
   'BAN: "Imagine…", "During…", "Design a poster…", "Role-play…", "In your community…", "Set the scene…".',
   'DEPTH: Use definitions, formulas, numericals, cause–effect, and evidence — not thin activity wrappers.',
   'Each line must be understandable without reading a fictional situation first.',

@@ -354,15 +354,15 @@ export function conceptQuestionsForBand(topic, subject, band) {
  */
 export function instructionsForBand(topic, subject, band) {
   if (band === 'maths') {
-    return `Solve all numerical questions on ${topic}. Show Given, Formula/Method, Working, and Answer. Use correct units and box the final answer.`;
+    return `Solve all questions on ${topic} like textbook exercises. Show Given, Method, Working, and Answer. Use correct units.`;
   }
   if (band === 'stem') {
-    return `Complete all sections on ${topic}. Show formula substitutions, units, and reasoning for numerical answers.`;
+    return `Answer all questions on ${topic} in textbook exercise style. Show formulas, substitutions, and units where needed.`;
   }
   if (band === 'english') {
-    return `Complete all sections on ${topic}. Write clearly and use examples from the text where asked.`;
+    return `Answer all questions on ${topic}. Use evidence from the text where asked.`;
   }
-  return `Complete all sections on ${topic}. Write clearly and support answers with relevant examples.`;
+  return `Answer all questions on ${topic} clearly, as in end-of-section textbook exercises.`;
 }
 
 /**
