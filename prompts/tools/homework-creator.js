@@ -3,7 +3,7 @@ import { createToolPromptPack } from '../create-tool-prompt-pack.js';
 export default createToolPromptPack({
   slug: 'homework-creator',
   toolTitle: 'Homework Creator',
-  focus: 'Tiered homework (basic/standard/challenge) with direct practice on the subtopic — sized to duration with answer hints.',
+  focus: 'Tiered homework like textbook exercises — basic recall, standard apply, challenge numerical/analytical on the subtopic.',
   includeBloom: true,
   includeDifferentiation: true,
   generationRules: [
