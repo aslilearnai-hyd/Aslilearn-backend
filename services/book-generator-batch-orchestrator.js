@@ -368,6 +368,112 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             break;
           }
           try {
+            // V2 six-section (book-grounded): when enabled + supported, generate the
+            // 6-section content with the retrieved textbook passages passed as ragContext,
+            // and save directly. Bypasses the legacy worksheet leak/dedup/scaffold gates
+            // that fail single-chapter RAG slots (only 1/N saved). Quality comes from the
+            // Pro model + RAG layer; rendering reuses SixSectionViewer.
+            if (isSixSectionV2Enabled() && isV2SupportedTool(toolSlug)) {
+              const v2RagContext = useBookKnowledge
+                ? buildBookContextTextForVariant(ragBase, ragScope, variantIndex)
+                : ragBase.contextText;
+              const v2 = await generateSixSectionContent(
+                toolSlug,
+                {
+                  board,
+                  classLabel: className,
+                  subject: subjectName,
+                  topic: topicName || book.title,
+                  subTopic: subtopicName,
+                },
+                {
+                  primaryModel: qualityTierSettings.primaryGeminiModel,
+                  ragContext: v2RagContext,
+                },
+              );
+              if (!v2.ok) {
+                lastError = v2.error || 'V2 six-section generation failed';
+                if (attempt < maxAttempts) continue;
+                throw new Error(lastError);
+              }
+              const uid = opts.reqUser?.userId || opts.reqUser?._id || 'unknown';
+              const teacherId = mongoose.Types.ObjectId.isValid(uid) ? uid : undefined;
+              const coreTitle =
+                v2.structuredContent?.core?.title ||
+                v2.structuredContent?.core?.worksheetTitle ||
+                'Six-section content';
+              const rec = await withMongoRetry(() =>
+                AiToolGeneration.create({
+                  toolName: toolSlug,
+                  toolDisplayName,
+                  sourceType: 'book_rag',
+                  board,
+                  classLabel: className,
+                  subject: subjectName,
+                  topic: topicName || book.title,
+                  subtopic: subtopicName,
+                  section: '',
+                  content: coreTitle,
+                  generatedContent: coreTitle,
+                  generatedBy: uid,
+                  status: 'active',
+                  reviewStatus: params.reviewStatus || 'approved',
+                  metadata: {
+                    board,
+                    bookId: String(book._id),
+                    bookTitle: book.title,
+                    useBookKnowledge,
+                    ragChunkCount: ragBase.chunkCount,
+                    bookTextUsed: Boolean(ragBase.hasBookPassages),
+                    createdByName: opts.reqUser?.name || 'Super Admin',
+                    createdByRole: 'super-admin',
+                    contentType: 'structured',
+                    structuredContent: v2.structuredContent,
+                    formatSource: 'asli-v2-six-section',
+                    schemaVersion: 'asli-v2-six-section',
+                    generationVariant: variantIndex,
+                    batchSize,
+                    batchOrchestrator: true,
+                    bookGenerator: true,
+                    qualityTier: qualityTierSettings.tier,
+                    geminiModel: qualityTierSettings.primaryGeminiModel,
+                  },
+                  ...(teacherId ? { teacherId } : {}),
+                }),
+              );
+              try {
+                await Book.updateOne(
+                  { _id: book._id },
+                  {
+                    $inc: {
+                      'generationStats.totalGenerations': 1,
+                      [`generationStats.toolBreakdown.${toolSlug}`]: 1,
+                    },
+                    $set: { 'generationStats.lastGeneratedAt': new Date() },
+                  },
+                );
+              } catch (statErr) {
+                console.warn(
+                  '[book-generator] generationStats update failed (V2 record saved):',
+                  statErr?.message || statErr,
+                );
+              }
+              completedSlots += 1;
+              opts.onProgress?.(
+                formatBookBatchProgress({
+                  saved: completedSlots,
+                  batchSize,
+                  batchIndex,
+                  callCount: getTokenUsageSession()?.totals?.callCount ?? 0,
+                  costInr: estimateSessionCostInr(),
+                }),
+              );
+              console.log(
+                `[book-generator] Slot ${batchIndex}: saved (V2 six-section, book-grounded)`,
+              );
+              return { ok: true, variantIndex, batchIndex, record: rec.toObject() };
+            }
+
             const extraParams = {
               ...(params.extraParams && typeof params.extraParams === 'object' ? params.extraParams : {}),
               generationVariant: variantIndex,
