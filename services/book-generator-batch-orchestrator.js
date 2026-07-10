@@ -613,9 +613,11 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             } else if (BOOK_QUESTION_UNIQUENESS_TOOLS.has(toolSlug)) {
               const scaffoldStats = computeScaffoldDensity(toolSlug, structuredContent);
               if (scaffoldStats.total >= 3 && scaffoldStats.density > SCAFFOLD_DENSITY_CEILING) {
-                console.warn(
-                  `[book-generator] Slot ${batchIndex}: saving scaffold-heavy content (${Math.round(scaffoldStats.density * 100)}% filler questions).`,
-                );
+                // NEVER save scaffold-heavy book content — retry the slot, then fail it.
+                lastError = `Scaffold-heavy book content (${Math.round(scaffoldStats.density * 100)}% filler questions)`;
+                console.warn(`[book-generator] Slot ${batchIndex}: ${lastError} — not saving.`);
+                if (attempt < maxAttempts) continue;
+                throw new Error(lastError);
               }
             }
 

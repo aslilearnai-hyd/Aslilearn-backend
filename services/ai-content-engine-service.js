@@ -11641,14 +11641,10 @@ Write all student-facing text in the required output language.`;
       });
       if (!finalQuality.valid) {
         const finalQualityMessage = finalQuality.errors.join('; ');
-        // Scaffold density: retry on single-record Premium; batch/book orchestrators save with a warning.
+        // Scaffold density guard — applies to ALL paths (single-record, batch, AND book).
+        // Never save scaffold/filler: retry, then fail the slot. A failed slot beats junk.
         const scaffoldStats = computeScaffoldDensity(slug, structuredContent);
-        const allowScaffoldBatchSave = Boolean(meta.bookGenerator || meta.batchOrchestrator);
-        if (
-          !allowScaffoldBatchSave &&
-          scaffoldStats.total >= 3 &&
-          scaffoldStats.density > SCAFFOLD_DENSITY_CEILING
-        ) {
+        if (scaffoldStats.total >= 3 && scaffoldStats.density > SCAFFOLD_DENSITY_CEILING) {
           const pct = Math.round(scaffoldStats.density * 100);
           if (attempt < maxValidationAttempts) {
             lastValidationMessage = `Scaffold-heavy output (${pct}% filler questions)`;
@@ -11657,19 +11653,6 @@ Write all student-facing text in the required output language.`;
           }
           throw new Error(
             `Rejected: ${pct}% of questions are scaffold/filler (ceiling ${Math.round(SCAFFOLD_DENSITY_CEILING * 100)}%). Not saving placeholder content.`,
-          );
-        }
-        if (
-          allowScaffoldBatchSave &&
-          scaffoldStats.total >= 3 &&
-          scaffoldStats.density > SCAFFOLD_DENSITY_CEILING &&
-          !(
-            slug === 'worksheet-mcq-generator' &&
-            !isWorksheetBatchSaveable(structuredContent, meta)
-          )
-        ) {
-          console.warn(
-            `[AI Generator] ${slug} saving scaffold-heavy batch content (${Math.round(scaffoldStats.density * 100)}% filler questions).`,
           );
         }
         if (attempt < maxValidationAttempts && !shouldRelaxPracticeQaBatchSave(meta, slug)) {

@@ -510,14 +510,10 @@ export function runAiGeneratorQualityGate(toolSlug, structured, meta = {}) {
     );
   }
 
-  // Scaffold density: block single-record Premium saves; batch/book paths warn in orchestrator and still save.
+  // Scaffold density — blocks ALL paths (single-record, batch, AND book). No batch/book
+  // exemption: scaffold-heavy question content is never publishable, period.
   const scaffoldStats = computeScaffoldDensity(slug, data);
-  const allowScaffoldBatchSave = Boolean(meta.bookGenerator || meta.batchOrchestrator);
-  if (
-    !allowScaffoldBatchSave &&
-    scaffoldStats.total >= 3 &&
-    scaffoldStats.density > SCAFFOLD_SAVE_CEILING
-  ) {
+  if (scaffoldStats.total >= 3 && scaffoldStats.density > SCAFFOLD_SAVE_CEILING) {
     errors.push(
       `Scaffold-heavy content (${Math.round(scaffoldStats.density * 100)}% of ${scaffoldStats.total} questions are filler; ceiling ${Math.round(SCAFFOLD_SAVE_CEILING * 100)}%).`,
     );

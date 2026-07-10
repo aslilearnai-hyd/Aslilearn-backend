@@ -580,7 +580,8 @@ export async function generateBatchAndSave(params, opts = {}) {
 
 
 
-            // Batch path: warn on scaffold-heavy content but still save (prefer 5/5 saved over slot failure).
+            // NEVER persist scaffold-heavy question content. Retry the slot, then fail it —
+            // a failed slot ("3/5 saved") is acceptable; saving filler ("5/5 junk") is not.
             if (
               isQuestionUniquenessTool(toolSlug) &&
               generated.structuredContent &&
@@ -588,9 +589,11 @@ export async function generateBatchAndSave(params, opts = {}) {
             ) {
               const scaffoldStats = computeScaffoldDensity(toolSlug, generated.structuredContent);
               if (scaffoldStats.total >= 3 && scaffoldStats.density > SCAFFOLD_DENSITY_CEILING) {
-                console.warn(
-                  `[AI Generator batch] Variant ${variantIndex}: saving scaffold-heavy content (${Math.round(scaffoldStats.density * 100)}% filler questions).`,
-                );
+                lastError = `Scaffold-heavy after batch repair (${Math.round(scaffoldStats.density * 100)}% filler questions)`;
+                duplicatePreventionCount += 1;
+                console.warn(`[AI Generator batch] Variant ${variantIndex}: ${lastError} — not saving.`);
+                if (attempt < maxAttempts) continue;
+                throw new Error(lastError);
               }
             }
 
