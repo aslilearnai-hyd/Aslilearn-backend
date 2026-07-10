@@ -2,6 +2,7 @@ import { getAiToolTemplate } from '../config/aiToolTemplates.js';
 import { applyAiGeneratorSectionFallbacks } from './ai-generator-section-fallbacks.js';
 import { mustEnforceStoryPassageLanguageCompliance } from './story-passage-subject.js';
 import { isAiGeneratorCostSaverEnabled } from './ai-generator-batch-config.js';
+import { detectAssignmentSectionNum } from '../services/pdf-assignment-section-parser.js';
 
 const MIN_TEXT_LEN = 4;
 
@@ -355,30 +356,108 @@ export function ensureHomeworkPracticeQuestions(structured, meta = {}) {
   return out;
 }
 
-function quickAssignmentQuestionRow(topic, subject, n, prompt) {
+function quickAssignmentQuestionRow(topic, subject, n, prompt, answer) {
   return {
     question_number: n,
     question: prompt,
     type: n === 1 ? 'SA' : 'VSA',
     marks: n === 1 ? 3 : 2,
-    answer: `Support your response with ideas from ${topic} in ${subject}.`,
+    answer:
+      answer ||
+      `Use definitions, formulas, and examples from ${topic} in ${subject}.`,
   };
+}
+
+function isEnglishLanguageSubject(subject) {
+  const compact = String(subject || '')
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z]/g, '');
+  return (
+    compact.includes('english') ||
+    compact.includes('hindi') ||
+    compact.includes('language') ||
+    compact.includes('literature') ||
+    compact.includes('sanskrit') ||
+    compact.includes('urdu')
+  );
+}
+
+function isStemSubject(subject) {
+  const compact = String(subject || '')
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, '');
+  return (
+    compact.includes('science') ||
+    compact.startsWith('math') ||
+    compact.includes('physics') ||
+    compact.includes('chemistry') ||
+    compact.includes('biology')
+  );
+}
+
+function quickAssignmentSectionHeaderText(value) {
+  const raw = String(value ?? '').trim().replace(/^#{1,3}\s*/, '');
+  const withoutNum = raw.replace(/^\d{1,2}\.\s*/, '').trim();
+  return withoutNum || raw;
+}
+
+function isQuickAssignmentSectionHeader(value) {
+  const title = quickAssignmentSectionHeaderText(value);
+  if (!title || title.length > 96) return false;
+  return detectAssignmentSectionNum(title) > 0;
+}
+
+function conceptQuestionText(value) {
+  if (value && typeof value === 'object') {
+    return String(value.question || value.prompt || value.text || '').trim();
+  }
+  return String(value ?? '').trim();
+}
+
+function countValidQuickAssignmentConceptQuestions(rows) {
+  return (Array.isArray(rows) ? rows : []).filter((row) => {
+    const text = conceptQuestionText(row);
+    return text.length >= MIN_TEXT_LEN && !isQuickAssignmentSectionHeader(text);
+  }).length;
 }
 
 function scaffoldQuickAssignmentSections(structured, meta = {}) {
   const out = { ...structured };
   const { topic, subject } = ctx(meta);
+  const englishSubject = isEnglishLanguageSubject(subject);
+  const stemSubject = isStemSubject(subject);
   const assignmentTitle = String(out.assignment_title || out.title || `${topic} — Assignment`).trim();
   out.assignment_title = assignmentTitle;
   out.title = String(out.title || assignmentTitle).trim() || assignmentTitle;
-  setIfEmpty(out, 'learning_objectives', [
-    `Recall and explain central ideas from ${topic}.`,
-    `Apply listening and speaking skills to discuss ${topic} in ${subject}.`,
-  ]);
+  setIfEmpty(
+    out,
+    'learning_objectives',
+    stemSubject
+      ? [
+          `Define and explain the core ideas of ${topic} using correct ${subject} terminology.`,
+          `Apply formulas and principles from ${topic} to solve short numerical or reasoning problems.`,
+          `Analyse one real-life application of ${topic} in everyday devices or situations.`,
+        ]
+      : englishSubject
+        ? [
+            `Recall and explain central ideas from ${topic}.`,
+            `Apply listening and speaking skills to discuss ${topic} in ${subject}.`,
+          ]
+        : [
+            `Explain the main ideas of ${topic} clearly.`,
+            `Apply ${topic} to a short task with examples from daily life.`,
+          ],
+  );
   setIfEmpty(
     out,
     'instructions',
-    `Complete all sections on ${topic}. Write clearly and use examples from the text where asked.`,
+    stemSubject
+      ? `Complete all sections on ${topic}. Show formula substitutions, units, and reasoning for numerical answers.`
+      : englishSubject
+        ? `Complete all sections on ${topic}. Write clearly and use examples from the text where asked.`
+        : `Complete all sections on ${topic}. Write clearly and support answers with relevant examples.`,
   );
   const existingCq = Array.isArray(out.concept_based_questions)
     ? out.concept_based_questions
@@ -386,65 +465,172 @@ function scaffoldQuickAssignmentSections(structured, meta = {}) {
       ? out.questions
       : [];
   const hasObjectQuestions = existingCq.some(
-    (q) => q && typeof q === 'object' && String(q.question || q.prompt || '').trim().length >= MIN_TEXT_LEN,
+    (q) =>
+      q &&
+      typeof q === 'object' &&
+      conceptQuestionText(q).length >= MIN_TEXT_LEN &&
+      !isQuickAssignmentSectionHeader(conceptQuestionText(q)),
   );
-  if (!hasObjectQuestions && existingCq.filter((q) => String(q ?? '').trim().length >= MIN_TEXT_LEN).length < 3) {
-    out.concept_based_questions = [
-      quickAssignmentQuestionRow(
-        topic,
-        subject,
-        1,
-        `Summarise the main message of ${topic} in your own words.`,
-      ),
-      quickAssignmentQuestionRow(
-        topic,
-        subject,
-        2,
-        `Identify two speaking situations where ideas from ${topic} would help.`,
-      ),
-      quickAssignmentQuestionRow(
-        topic,
-        subject,
-        3,
-        `Why is ${topic} relevant for Class 10 ${subject} learners?`,
-      ),
-    ];
+  if (!hasObjectQuestions && countValidQuickAssignmentConceptQuestions(existingCq) < 3) {
+    out.concept_based_questions = stemSubject
+      ? [
+          quickAssignmentQuestionRow(
+            topic,
+            subject,
+            1,
+            `Define ${topic} and state its SI unit (if applicable).`,
+            `State the definition and correct unit for ${topic}.`,
+          ),
+          quickAssignmentQuestionRow(
+            topic,
+            subject,
+            2,
+            `A device operates at 220 V and draws 2 A. Calculate the power consumed using P = VI.`,
+            `P = VI = 220 × 2 = 440 W.`,
+          ),
+          quickAssignmentQuestionRow(
+            topic,
+            subject,
+            3,
+            `Give two real-life examples where ${topic} helps compare or choose electrical appliances.`,
+            `Examples may include bulbs, heaters, motors, or household appliances with power ratings.`,
+          ),
+        ]
+      : englishSubject
+        ? [
+            quickAssignmentQuestionRow(
+              topic,
+              subject,
+              1,
+              `Summarise the main message of ${topic} in your own words.`,
+              `Support your response with ideas from ${topic} in ${subject}.`,
+            ),
+            quickAssignmentQuestionRow(
+              topic,
+              subject,
+              2,
+              `Identify two speaking situations where ideas from ${topic} would help.`,
+              `Support your response with ideas from ${topic} in ${subject}.`,
+            ),
+            quickAssignmentQuestionRow(
+              topic,
+              subject,
+              3,
+              `Why is ${topic} relevant for Class 10 ${subject} learners?`,
+              `Support your response with ideas from ${topic} in ${subject}.`,
+            ),
+          ]
+        : [
+            quickAssignmentQuestionRow(
+              topic,
+              subject,
+              1,
+              `Explain the main idea of ${topic} in your own words.`,
+            ),
+            quickAssignmentQuestionRow(
+              topic,
+              subject,
+              2,
+              `Give two examples of ${topic} from daily life.`,
+            ),
+            quickAssignmentQuestionRow(
+              topic,
+              subject,
+              3,
+              `Why is ${topic} important in ${subject}?`,
+            ),
+          ];
+    out.questions = out.concept_based_questions;
+    out.practice_questions = out.concept_based_questions;
+  } else if (!hasObjectQuestions) {
+    out.concept_based_questions = existingCq.filter((row) => {
+      const text = conceptQuestionText(row);
+      return text.length >= MIN_TEXT_LEN && !isQuickAssignmentSectionHeader(text);
+    });
     out.questions = out.concept_based_questions;
     out.practice_questions = out.concept_based_questions;
   }
-  setIfEmpty(out, 'application_oriented_tasks', [
-    `Role-play a short dialogue inspired by ${topic}.`,
-    `Write a paragraph applying a theme from ${topic} to daily life.`,
-  ]);
+  setIfEmpty(
+    out,
+    'application_oriented_tasks',
+    stemSubject
+      ? [
+          `Calculate power for three appliances using given voltage and current values.`,
+          `Design a chart comparing power ratings of common school-lab or home devices linked to ${topic}.`,
+        ]
+      : englishSubject
+        ? [
+            `Role-play a short dialogue inspired by ${topic}.`,
+            `Write a paragraph applying a theme from ${topic} to daily life.`,
+          ]
+        : [
+            `Apply ${topic} to solve a short scenario from ${subject}.`,
+            `Create a one-page summary explaining ${topic} to a younger student.`,
+          ],
+  );
   setIfEmpty(
     out,
     'real_life_competency_activity',
-    `Observe a real conversation and note one listening skill used, linking it to ${topic}.`,
+    stemSubject
+      ? `List appliances at home or school with power ratings. Tabulate name, voltage, current (if known), and calculated power for ${topic}.`
+      : englishSubject
+        ? `Observe a real conversation and note one listening skill used, linking it to ${topic}.`
+        : `Observe your surroundings and note one example related to ${topic}.`,
   );
   setIfEmpty(
     out,
     'creative_thinking_question',
-    `If you were the author of ${topic}, what one line would you change and why?`,
+    stemSubject
+      ? `Design a safety poster for a school science fair explaining how ${topic} relates to safe use of electrical devices.`
+      : englishSubject
+        ? `If you were the author of ${topic}, what one line would you change and why?`
+        : `How would you teach ${topic} to a younger student in one creative way?`,
   );
   setIfEmpty(
     out,
     'collaborative_discussion_task',
-    `In pairs, discuss how ${topic} connects to your community. Share one insight with the class.`,
+    stemSubject
+      ? `In groups of three, compare power consumption of different bulbs and justify which is more energy-efficient using ${topic}.`
+      : englishSubject
+        ? `In pairs, discuss how ${topic} connects to your community. Share one insight with the class.`
+        : `In pairs, discuss one application of ${topic} in your community and share a key insight.`,
   );
   setIfEmpty(
     out,
     'challenge_question_advanced',
-    `Analyse two different interpretations of ${topic} and justify which is stronger.`,
+    stemSubject
+      ? `Two heaters have the same power rating but different voltages. Explain which draws more current and why, using ${topic}.`
+      : englishSubject
+        ? `Analyse two different interpretations of ${topic} and justify which is stronger.`
+        : `Analyse a common misconception about ${topic} and explain the correct understanding.`,
   );
   setIfEmpty(
     out,
     'assessment_criteria_rubric',
-    `Clarity, evidence from text, participation, and accuracy of language (4-point scale).`,
+    stemSubject
+      ? `Concept accuracy, correct formula use, units, reasoning, and presentation (4-point scale).`
+      : englishSubject
+        ? `Clarity, evidence from text, participation, and accuracy of language (4-point scale).`
+        : `Clarity, accuracy, use of examples, and completeness (4-point scale).`,
   );
-  setIfEmpty(out, 'expected_learning_outcomes', [
-    `Students can explain key ideas from ${topic}.`,
-    `Students can speak and listen confidently about ${topic}.`,
-  ]);
+  setIfEmpty(
+    out,
+    'expected_learning_outcomes',
+    stemSubject
+      ? [
+          `Students can define ${topic} and use the correct formula with units.`,
+          `Students can solve basic numerical problems and relate ${topic} to real devices.`,
+        ]
+      : englishSubject
+        ? [
+            `Students can explain key ideas from ${topic}.`,
+            `Students can speak and listen confidently about ${topic}.`,
+          ]
+        : [
+            `Students can explain key ideas from ${topic}.`,
+            `Students can apply ${topic} to everyday situations.`,
+          ],
+  );
   return out;
 }
 
