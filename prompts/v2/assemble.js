@@ -8,10 +8,10 @@ import { MASTER_SYSTEM_PROMPT } from './master-prompt.js';
 import { buildToolPack } from './tool-packs.js';
 import { buildBoardLayer, buildRagLayer, buildIitLayer } from './layers.js';
 
-/** Feature flag — off unless AI_GENERATOR_V2_SIX_SECTION is explicitly enabled. */
+/** Feature flag — on by default; set AI_GENERATOR_V2_SIX_SECTION=off to disable. */
 export function isSixSectionV2Enabled() {
-  const raw = String(process.env.AI_GENERATOR_V2_SIX_SECTION ?? '').trim().toLowerCase();
-  return raw === 'true' || raw === '1' || raw === 'on';
+  const raw = String(process.env.AI_GENERATOR_V2_SIX_SECTION ?? 'on').trim().toLowerCase();
+  return raw !== 'false' && raw !== '0' && raw !== 'off';
 }
 
 /**
