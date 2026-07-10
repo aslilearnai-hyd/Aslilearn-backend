@@ -274,12 +274,13 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
     const failures = [];
     let tokenUsage = null;
     let cost = null;
+    let ragBase = { contextText: '', chunkCount: 0, chunks: [], hasBookPassages: false };
 
     beginTokenUsageSession('book-generator-batch');
 
     try {
       opts.onProgress?.('Retrieving textbook chunks for your topic…');
-      const ragBase = useBookKnowledge
+      ragBase = useBookKnowledge
         ? await retrieveBookContextForGeneration({
             bookId,
             board,
