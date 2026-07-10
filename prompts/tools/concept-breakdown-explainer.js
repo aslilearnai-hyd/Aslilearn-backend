@@ -12,7 +12,7 @@ export default createToolPromptPack({
     'concept_title: clear name.',
     'big_idea_in_one_sentence: hook.',
     'step_by_step_breakdown[]: 5–7 steps, each with "Think:" prompt.',
-    'indian_context_examples[]: 3 relatable scenarios.',
+    'indian_context_examples[]: 3 concrete examples (device, formula, phenomenon) for this subtopic.',
     'common_confusions[]: wrong idea + fix + mini-quiz.',
     'visual_aid_description: diagram to draw.',
     'thinking_prompts[]: "What if…?" questions.',

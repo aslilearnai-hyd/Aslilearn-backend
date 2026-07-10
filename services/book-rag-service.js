@@ -107,6 +107,7 @@ export function formatBookContextForPrompt(chunks = [], meta = {}) {
     'TEXTBOOK CONTENT (PRIMARY SOURCE — use this as the main factual basis):',
     'Priority: (1) Uploaded Book  (2) Uploaded Notes  (3) General knowledge only when the book is silent.',
     'Follow textbook terminology, definitions, examples, formulae, and explanations.',
+    'Build questions directly from these passages — do not invent facts or add fictional scenarios.',
     'Do not invent facts that contradict the passages below.',
     meta.bookTitle ? `Book: ${meta.bookTitle}` : '',
     meta.subject ? `Subject: ${meta.subject}` : '',
@@ -146,51 +147,88 @@ function buildCurriculumTargetBlock(scope = {}) {
     scope.topicName || scope.topic ? `Topic: ${scope.topicName || scope.topic}` : '',
     scope.subtopicName || scope.subtopic ? `Sub-topic: ${scope.subtopicName || scope.subtopic}` : '',
     scope.toolSlug || scope.toolName ? `Tool: ${scope.toolSlug || scope.toolName}` : '',
-    'Use the textbook passages below as the PRIMARY source. Align output with this curriculum topic/sub-topic.',
+    'Use the textbook passages below as the PRIMARY source. Every question and explanation must stay on this sub-topic.',
+    'Ask directly about definitions, formulas, numericals, and explanations from the book — no scenario or role-play framing.',
   ].filter(Boolean);
   return lines.join('\n');
 }
+
+function topicMatchTokens(value = '') {
+  return String(value || '')
+    .toLowerCase()
+    .split(/[^a-z0-9]+/i)
+    .map((t) => t.trim())
+    .filter((t) => t.length >= 4);
+}
+
+function metadataMatchBonus(chunk = {}, scope = {}) {
+  let bonus = 0;
+  const board = String(scope.board || '').trim().toLowerCase();
+  const subject = String(scope.subjectName || scope.subject || '').trim().toLowerCase();
+  const classLabel = String(scope.className || scope.classLabel || scope.class || '').trim().toLowerCase();
+  const topic = String(scope.topicName || scope.topic || '').trim().toLowerCase();
+  const subtopic = String(scope.subtopicName || scope.subtopic || '').trim().toLowerCase();
+  const content = String(chunk.content || chunk.chunkText || '').toLowerCase();
+
+  if (board && String(chunk.board || '').trim().toLowerCase() === board) bonus += 0.04;
+  if (subject && String(chunk.subject || '').trim().toLowerCase().includes(subject)) bonus += 0.05;
+  if (classLabel) {
+    const chunkClass = String(chunk.class || '').trim().toLowerCase();
+    const classDigits = classLabel.match(/\d+/)?.[0] || '';
+    if (chunkClass === classLabel || (classDigits && chunkClass.includes(classDigits))) bonus += 0.04;
+  }
+  if (topic && (content.includes(topic) || String(chunk.topic || '').toLowerCase().includes(topic))) bonus += 0.08;
+  if (subtopic && (content.includes(subtopic) || String(chunk.subtopic || '').toLowerCase().includes(subtopic))) {
+    bonus += 0.12;
+  }
+  for (const token of [...new Set([...topicMatchTokens(topic), ...topicMatchTokens(subtopic)])]) {
+    if (content.includes(token)) bonus += 0.05;
+  }
+  return bonus;
+}
+
+function rerankBookChunks(chunks = [], scope = {}, topK = DEFAULT_TOP_K) {
+  return [...chunks]
+    .map((chunk) => ({
+      ...chunk,
+      score: Number(chunk.score || 0) + metadataMatchBonus(chunk, scope),
+    }))
+    .sort((a, b) => b.score - a.score)
+    .slice(0, Math.max(1, Math.min(20, topK)));
+}
+
+export { rerankBookChunks, metadataMatchBonus };
 
 export async function retrieveBookContextForGeneration(scope = {}) {
   const query = buildBookRetrievalQuery(scope);
   const topK = Number(scope.topK) || DEFAULT_TOP_K;
   const { embedding: queryEmbedding } = await generateEmbedding(query);
-  const classRaw = String(scope.className || scope.classLabel || scope.class || '').trim();
-  const classDigits = classRaw.match(/\d+/)?.[0] || '';
-  const classCandidates = [...new Set([classRaw, classDigits, classDigits ? `Class ${classDigits}` : ''].filter(Boolean))];
 
-  const searchWith = (extra = {}) =>
+  const baseSearch = (extra = {}) =>
     searchRelevantChunks({
       query,
       queryEmbedding,
       bookId: scope.bookId,
-      board: scope.board,
-      subject: scope.subjectName || scope.subject,
-      chapter: scope.topicName || scope.topic,
-      topic: scope.topicName || scope.topic,
-      subtopic: scope.subtopicName || scope.subtopic,
-      topK,
+      topK: Math.max(topK, 12),
       ...extra,
     });
 
-  // Prefer strict curriculum filters; if they return nothing, progressively relax.
-  let chunks = [];
-  for (const classCandidate of classCandidates.length ? classCandidates : ['']) {
-    chunks = await searchWith({ class: classCandidate || undefined });
-    if (chunks.length > 0) break;
+  // Chunk metadata stores PDF chapter titles, not curriculum topic/subtopic labels — semantic search first.
+  let chunks = rerankBookChunks(
+    await baseSearch({
+      board: scope.board,
+      subject: scope.subjectName || scope.subject,
+    }),
+    scope,
+    topK,
+  );
+
+  if (!chunks.length) {
+    chunks = rerankBookChunks(await baseSearch({ subject: scope.subjectName || scope.subject }), scope, topK);
   }
 
   if (!chunks.length) {
-    chunks = await searchWith();
-  }
-
-  if (!chunks.length) {
-    chunks = await searchWith({
-      subject: undefined,
-      chapter: undefined,
-      topic: undefined,
-      subtopic: undefined,
-    });
+    chunks = rerankBookChunks(await baseSearch(), scope, topK);
   }
 
   const bookContext = formatBookContextForPrompt(chunks, {
@@ -206,6 +244,8 @@ export async function retrieveBookContextForGeneration(scope = {}) {
     chunks,
     contextText,
     chunkCount: chunks.length,
+    hasBookPassages: chunks.length > 0,
+    retrievalQuery: query,
   };
 }
 
@@ -234,7 +274,7 @@ export function buildBookContextTextForVariant(ragBase, scope = {}, variantIndex
   });
   const variantNote =
     variantIndex > 1
-      ? `\nVARIANT ${variantIndex}: Use a distinct teaching angle, examples, and concept-check questions — do not repeat wording from other variants on this sub-topic.`
+      ? `\nVARIANT ${variantIndex}: Emphasise different textbook facts, numerical values, and question stems for the same sub-topic — direct exam-style wording only.`
       : '';
   return bookContext ? `${curriculumBlock}${variantNote}\n\n${bookContext}` : `${curriculumBlock}${variantNote}`;
 }

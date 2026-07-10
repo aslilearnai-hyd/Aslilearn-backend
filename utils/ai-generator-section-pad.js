@@ -11,7 +11,15 @@ import {
   learningObjectivesForBand,
   questionTextFromRow,
   resolveScaffoldBand,
-  scaffoldQuestionRow,
+  isMathsBand,
+  isNumericalBand,
+  applicationTasksForBand,
+  realLifeActivityForBand,
+  creativeQuestionForBand,
+  collaborativeTaskForBand,
+  challengeQuestionForBand,
+  assessmentRubricForBand,
+  expectedOutcomesForBand,
 } from './subject-scaffold-profile.js';
 
 const MIN_TEXT_LEN = 4;
@@ -191,47 +199,60 @@ function scaffoldLessonPlannerSections(structured, meta = {}) {
   setIfEmpty(
     out,
     'ncf_competency_alignment',
-    band === 'stem'
-      ? `Aligns with scientific inquiry, problem-solving, and NCF competencies for ${topic}.`
-      : band === 'english'
-        ? `Aligns with communication, comprehension, and NCF language competencies for ${topic}.`
-        : `Aligns with inquiry, critical thinking, and NCF competencies for ${topic}.`,
+    isMathsBand(band)
+      ? `Aligns with mathematical reasoning, problem-solving, and NCF numeracy competencies for ${topic}.`
+      : band === 'stem'
+        ? `Aligns with scientific inquiry, problem-solving, and NCF competencies for ${topic}.`
+        : band === 'english'
+          ? `Aligns with communication, comprehension, and NCF language competencies for ${topic}.`
+          : `Aligns with inquiry, critical thinking, and NCF competencies for ${topic}.`,
   );
   setIfEmpty(
     out,
     'prior_knowledge_diagnostic',
-    band === 'stem'
-      ? `What do you already know about ${topic}? Name one formula or observation from daily life.`
-      : `What do you already know about ${topic}? Share one example from daily life.`,
+    isMathsBand(band)
+      ? `Solve one easy warm-up numerical related to ${topic}.`
+      : band === 'stem'
+        ? `What do you already know about ${topic}? Name one formula or observation from daily life.`
+        : `What do you already know about ${topic}? Share one example from daily life.`,
   );
   setIfEmpty(
     out,
     'introduction_warmup',
     firstFilledLines(out, ['teaching_strategy', 'teaching_activities', 'activities'])[0] ||
-      (band === 'stem'
-        ? `Warm-up: predict an outcome related to ${topic}, then verify with a quick demo or diagram.`
-        : `Warm-up: quick recall of prior ideas linked to ${topic}.`),
+      (isMathsBand(band)
+        ? `Warm-up: solve 2 quick numericals on ${topic} on the board.`
+        : band === 'stem'
+          ? `Warm-up: predict an outcome related to ${topic}, then verify with a quick demo or diagram.`
+          : `Warm-up: quick recall of prior ideas linked to ${topic}.`),
   );
   setIfEmpty(
     out,
     'teaching_strategy',
     firstFilledLines(out, ['introduction_warmup', 'teaching_activities', 'activities'])[0] ||
-      (band === 'stem'
-        ? `Blend board explanation, worked example, and guided practice on ${topic}.`
-        : `Blend short lecture, paired discussion, and guided annotation focused on ${topic}.`),
+      (isMathsBand(band)
+        ? `Model one worked example on ${topic}, then guided practice with increasing difficulty.`
+        : band === 'stem'
+          ? `Blend board explanation, worked example, and guided practice on ${topic}.`
+          : `Blend short lecture, paired discussion, and guided annotation focused on ${topic}.`),
   );
   setIfEmpty(
     out,
     'teaching_activities',
-    band === 'stem'
+    isMathsBand(band)
       ? [
-          `Demonstrate ${topic} with a labelled diagram and one numerical example.`,
-          `Students solve a short problem set in pairs and compare methods.`,
+          `Teacher solves a standard numerical on ${topic} with step-by-step working.`,
+          `Students practise a set of ${topic} numericals in pairs and compare methods.`,
         ]
-      : [
-          `Guided explanation of ${topic} with board notes and student questions.`,
-          `Pair activity: students classify or sort examples related to ${topic}.`,
-        ],
+      : band === 'stem'
+        ? [
+            `Demonstrate ${topic} with a labelled diagram and one numerical example.`,
+            `Students solve a short problem set in pairs and compare methods.`,
+          ]
+        : [
+            `Guided explanation of ${topic} with board notes and student questions.`,
+            `Pair activity: students classify or sort examples related to ${topic}.`,
+          ],
   );
   setIfEmpty(out, 'activities', out.teaching_activities);
   setIfEmpty(
@@ -242,24 +263,34 @@ function scaffoldLessonPlannerSections(structured, meta = {}) {
   setIfEmpty(
     out,
     'student_tasks',
-    band === 'stem'
+    isMathsBand(band)
       ? [
-          `Students record given data, substitute into formulas, and check units for ${topic}.`,
-          `Students explain one real-life application of ${topic} in notebooks.`,
+          `Students solve ${topic} numericals in notebooks with Given, Method, Working, and Answer.`,
+          `Students create one word problem on ${topic} and exchange with a partner to solve.`,
         ]
-      : [
-          `Students record observations and answers about ${topic} in notebooks.`,
-          `Students discuss in pairs and share one finding with the class.`,
-        ],
+      : isNumericalBand(band)
+        ? [
+            `Students record given data, substitute into formulas, and check units for ${topic}.`,
+            `Students explain one real-life application of ${topic} in notebooks.`,
+          ]
+        : [
+            `Students record definitions and answers about ${topic} in notebooks.`,
+            `Students solve or explain one practice question on ${topic} and self-check.`,
+          ],
   );
   setIfEmpty(
     out,
     'formative_assessment_questions',
-    band === 'stem'
+    isMathsBand(band)
       ? [
-          `Define the key term central to ${topic} and give its unit.`,
-          `Solve one short numerical based on ${topic}.`,
+          `Solve one direct numerical on ${topic}.`,
+          `Solve one word problem on ${topic}.`,
         ]
+      : band === 'stem'
+        ? [
+            `Define the key term central to ${topic} and give its unit.`,
+            `Solve one short numerical based on ${topic}.`,
+          ]
       : band === 'english'
         ? [
             `State one definition central to ${topic} in your own words.`,
@@ -273,30 +304,40 @@ function scaffoldLessonPlannerSections(structured, meta = {}) {
   setIfEmpty(
     out,
     'differentiation_plan',
-    band === 'stem'
-      ? `Support: formula sheet and step hints. Extension: design a new problem involving ${topic}.`
-      : `Support: sentence stems and visuals. Extension: students design a new example for ${topic}.`,
+    isMathsBand(band)
+      ? `Support: formula hints and one worked example. Extension: design a challenging multi-step numerical on ${topic}.`
+      : isNumericalBand(band)
+        ? `Support: formula sheet and step hints. Extension: design a new problem involving ${topic}.`
+        : `Support: sentence stems and visuals. Extension: students design a new example for ${topic}.`,
   );
   setIfEmpty(
     out,
     'homework_practice',
-    band === 'stem'
-      ? `Solve three short questions on ${topic}; show formula, substitution, and units.`
-      : band === 'english'
-        ? `Read the assigned passage on ${topic}; write two evidence-based responses in your workbook.`
-        : `Complete two short written tasks on ${topic} with examples from ${subject}.`,
+    isMathsBand(band)
+      ? `Solve six numericals on ${topic} (mix of direct and word problems). Show full working.`
+      : band === 'stem'
+        ? `Solve three short questions on ${topic}; show formula, substitution, and units.`
+        : band === 'english'
+          ? `Read the assigned passage on ${topic}; write two evidence-based responses in your workbook.`
+          : `Complete two short written tasks on ${topic} with examples from ${subject}.`,
   );
   setIfEmpty(
     out,
     'teaching_aids_required',
-    band === 'stem' ? ['Board', 'Chart paper', 'Calculator', 'Textbook'] : ['Board', 'Printed excerpt', 'Highlighters'],
+    isMathsBand(band)
+      ? ['Board', 'Calculator', 'Graph paper', 'Textbook']
+      : isNumericalBand(band)
+        ? ['Board', 'Chart paper', 'Calculator', 'Textbook']
+        : ['Board', 'Printed excerpt', 'Highlighters'],
   );
   setIfEmpty(
     out,
     'closure_exit_ticket',
-    band === 'stem'
-      ? `Exit ticket: Write the formula for ${topic} and one real-life use.`
-      : `Exit ticket: In one sentence, explain why ${topic} matters in ${subject}.`,
+    isMathsBand(band)
+      ? `Exit ticket: Solve one ${topic} numerical and write the final answer with units.`
+      : isNumericalBand(band)
+        ? `Exit ticket: Write the formula for ${topic} and one real-life use.`
+        : `Exit ticket: In one sentence, explain why ${topic} matters in ${subject}.`,
   );
   return out;
 }
@@ -368,41 +409,23 @@ function scaffoldHomeworkSections(structured, meta = {}) {
     out.practice_questions = cleaned;
     out.questions = cleaned;
   }
-  setIfEmpty(
-    out,
-    'application_tasks',
-    band === 'stem'
-      ? [`Solve a short numerical problem applying ${topic}.`, `Interpret data or a diagram related to ${topic}.`]
-      : [`Apply ${topic} to solve a short scenario from ${subject}.`],
-  );
-  setIfEmpty(
-    out,
-    'creative_thinking_question',
-    band === 'stem'
-      ? `Design a simple experiment or poster to teach ${topic} to younger students.`
-      : `How would you teach ${topic} to a younger student?`,
-  );
-  setIfEmpty(
-    out,
-    'real_life_observation_task',
-    band === 'stem'
-      ? `Observe devices or situations at home/school linked to ${topic}; record two observations with units where possible.`
-      : `Observe your surroundings and note one example related to ${topic}.`,
-  );
+  setIfEmpty(out, 'application_tasks', applicationTasksForBand(topic, subject, band));
+  setIfEmpty(out, 'creative_thinking_question', creativeQuestionForBand(topic, subject, band));
+  setIfEmpty(out, 'real_life_observation_task', realLifeActivityForBand(topic, subject, band));
   setIfEmpty(
     out,
     'challenge_question',
-    band === 'stem'
-      ? `Create a harder problem on ${topic} that requires two steps of reasoning.`
-      : `What might happen if ${topic} were misunderstood? Give one reason.`,
+    challengeQuestionForBand(topic, subject, band),
   );
-  setIfEmpty(out, 'support_hint', 'Use your class notes and textbook glossary if you get stuck.');
+  setIfEmpty(out, 'support_hint', isMathsBand(band) ? 'Write Given, Method, Working, and Answer. Check units and estimate to verify.' : 'Use your class notes and textbook glossary if you get stuck.');
   setIfEmpty(
     out,
     'answer_hints',
-    band === 'stem'
-      ? `Key ideas: definitions, formulas with units, and worked steps for ${topic}.`
-      : `Key ideas: evidence, examples, and clear definitions for ${topic}.`,
+    isMathsBand(band)
+      ? `Key steps: identify known values, choose method/formula, substitute, calculate, and state the answer with units for ${topic}.`
+      : isNumericalBand(band)
+        ? `Key ideas: definitions, formulas with units, and worked steps for ${topic}.`
+        : `Key ideas: evidence, examples, and clear definitions for ${topic}.`,
   );
   setIfEmpty(out, 'parent_note', `Please encourage your child to explain ${topic} aloud after finishing.`);
   return out;
@@ -475,87 +498,13 @@ function scaffoldQuickAssignmentSections(structured, meta = {}) {
     out.questions = out.concept_based_questions;
     out.practice_questions = out.concept_based_questions;
   }
-  setIfEmpty(
-    out,
-    'application_oriented_tasks',
-    band === 'stem'
-      ? [
-          `Calculate values for three scenarios using formulas related to ${topic}.`,
-          `Design a chart comparing real devices or cases linked to ${topic}.`,
-        ]
-      : band === 'english'
-        ? [
-            `Role-play a short dialogue inspired by ${topic}.`,
-            `Write a paragraph applying a theme from ${topic} to daily life.`,
-          ]
-        : [
-            `Apply ${topic} to solve a short scenario from ${subject}.`,
-            `Create a one-page summary explaining ${topic} to a younger student.`,
-          ],
-  );
-  setIfEmpty(
-    out,
-    'real_life_competency_activity',
-    band === 'stem'
-      ? `Collect real examples of ${topic} from home or school; tabulate observations with units where possible.`
-      : band === 'english'
-        ? `Observe a real conversation and note one listening skill used, linking it to ${topic}.`
-        : `Observe your surroundings and note one example related to ${topic}.`,
-  );
-  setIfEmpty(
-    out,
-    'creative_thinking_question',
-    band === 'stem'
-      ? `Design a poster or model that explains ${topic} for a school science display.`
-      : band === 'english'
-        ? `If you were the author of ${topic}, what one line would you change and why?`
-        : `How would you teach ${topic} to a younger student in one creative way?`,
-  );
-  setIfEmpty(
-    out,
-    'collaborative_discussion_task',
-    band === 'stem'
-      ? `In groups, compare two cases involving ${topic} and justify which explanation is stronger.`
-      : band === 'english'
-        ? `In pairs, discuss how ${topic} connects to your community. Share one insight with the class.`
-        : `In pairs, discuss one application of ${topic} in your community and share a key insight.`,
-  );
-  setIfEmpty(
-    out,
-    'challenge_question_advanced',
-    band === 'stem'
-      ? `Solve a two-step problem on ${topic} that combines concept recall and numerical reasoning.`
-      : band === 'english'
-        ? `Analyse two different interpretations of ${topic} and justify which is stronger.`
-        : `Analyse a common misconception about ${topic} and explain the correct understanding.`,
-  );
-  setIfEmpty(
-    out,
-    'assessment_criteria_rubric',
-    band === 'stem'
-      ? `Concept accuracy, correct formula use, units, reasoning, and presentation (4-point scale).`
-      : band === 'english'
-        ? `Clarity, evidence from text, participation, and accuracy of language (4-point scale).`
-        : `Clarity, accuracy, use of examples, and completeness (4-point scale).`,
-  );
-  setIfEmpty(
-    out,
-    'expected_learning_outcomes',
-    band === 'stem'
-      ? [
-          `Students can define ${topic} and use the correct formula with units.`,
-          `Students can solve basic problems and relate ${topic} to real situations.`,
-        ]
-      : band === 'english'
-        ? [
-            `Students can explain key ideas from ${topic}.`,
-            `Students can speak and listen confidently about ${topic}.`,
-          ]
-        : [
-            `Students can explain key ideas from ${topic}.`,
-            `Students can apply ${topic} to everyday situations.`,
-          ],
-  );
+  setIfEmpty(out, 'application_oriented_tasks', applicationTasksForBand(topic, subject, band));
+  setIfEmpty(out, 'real_life_competency_activity', realLifeActivityForBand(topic, subject, band));
+  setIfEmpty(out, 'creative_thinking_question', creativeQuestionForBand(topic, subject, band));
+  setIfEmpty(out, 'collaborative_discussion_task', collaborativeTaskForBand(topic, subject, band));
+  setIfEmpty(out, 'challenge_question_advanced', challengeQuestionForBand(topic, subject, band));
+  setIfEmpty(out, 'assessment_criteria_rubric', assessmentRubricForBand(band));
+  setIfEmpty(out, 'expected_learning_outcomes', expectedOutcomesForBand(topic, subject, band));
   return out;
 }
 
@@ -597,8 +546,8 @@ function scaffoldConceptBreakdownSections(structured, meta = {}) {
     `Close with one classroom example that shows ${conceptTitle} in action.`,
   ]);
   setIfEmpty(out, 'real_life_examples', [
-    `Kitchen or lab observation connected to ${conceptTitle}.`,
-    `Indian-context example from daily ${subject} learning.`,
+    `One device or phenomenon that demonstrates ${conceptTitle}.`,
+    `One numerical or formula application for ${conceptTitle}.`,
   ]);
   setIfEmpty(out, 'important_terms', [
     { term: conceptTitle, definition: `Central term for ${topic}.` },
@@ -611,7 +560,7 @@ function scaffoldConceptBreakdownSections(structured, meta = {}) {
   setIfEmpty(
     out,
     'application_thinking_question',
-    `Use ${conceptTitle} to interpret a short ${subject} scenario from ${topic}.`,
+    `Use ${conceptTitle}: state the formula (if any), substitute values, and calculate.`,
   );
   setIfEmpty(
     out,
@@ -649,46 +598,36 @@ function scaffoldConceptRows(toolSlug, structured, meta = {}) {
   const out = { ...structured };
   const { topic, subject } = ctx(meta);
   const variantN = Number(meta.generationVariant) || 0;
-  const angle = String(meta.variantAngle || '').trim();
-  const scenario = String(meta.variantScenario || '').trim();
-  const angleNote = angle ? ` (${angle.split('(')[0].trim()})` : variantN > 1 ? ` (guide ${variantN})` : '';
+  const variantNote = variantN > 1 ? ` (set ${variantN})` : '';
   out.concepts = structured.concepts.map((concept, i) => {
     const row = concept && typeof concept === 'object' ? { ...concept } : {};
     const baseName = String(row.concept_name || row.concept_title || row.title || `${topic} — Concept ${i + 1}`).trim();
-    const name = angle && variantN > 0 ? `${baseName}${angleNote}` : baseName;
+    const name = baseName;
     setIfEmpty(row, 'concept_name', name);
     setIfEmpty(row, 'concept_title', name);
     setIfEmpty(
       row,
       'simple_definition',
-      angle
-        ? `${angle}: a clear explanation of ${baseName} linked to ${topic}.`
-        : `A clear explanation of ${baseName} linked to ${topic}.`,
+      `A clear definition of ${baseName}${variantNote} linked to ${topic}.`,
     );
     setIfEmpty(row, 'why_important', `${baseName} helps students understand ${topic} in ${subject}.`);
     setIfEmpty(row, 'prior_knowledge_needed', `Basic vocabulary and ideas about ${topic}.`);
     setIfEmpty(
       row,
       'lesson',
-      angle
-        ? `Teach ${baseName} using the angle "${angle}" with fresh examples from ${topic}.`
-        : `Step-by-step explanation of ${baseName} with examples from ${topic}.`,
+      `Step-by-step explanation of ${baseName}: definition, labelled diagram, worked example, and one check question from ${topic}.`,
     );
     setIfEmpty(
       row,
       'real_example',
-      scenario
-        ? `Example while exploring ${scenario}: ${baseName} in daily life.`
-        : angle
-          ? `Indian-context example for ${baseName} via ${angle}.`
-          : `Everyday example of ${baseName} from Indian context.`,
+      `One concrete example of ${baseName} — device, formula application, or phenomenon.`,
     );
     setIfEmpty(row, 'common_mistakes', [`Confusing ${name} with a similar term.`]);
     setIfEmpty(row, 'key_points', [`Remember the core idea of ${name}.`]);
-    setIfEmpty(row, 'concept_check_questions', [`What is ${name}? Give one example.`]);
+    setIfEmpty(row, 'concept_check_questions', [`Define ${name}. Give one example.`]);
     setIfEmpty(row, 'exam_tips', `Use precise terms when writing about ${name} in exams.`);
-    setIfEmpty(row, 'hots_question', `How would you apply ${name} to a new situation?`);
-    setIfEmpty(row, 'self_reflection_prompt', `What part of ${name} was hardest to understand?`);
+    setIfEmpty(row, 'hots_question', `Apply ${name}: solve one problem or explain one non-standard case.`);
+    setIfEmpty(row, 'self_reflection_prompt', `Which step in ${name} needs more practice?`);
     return row;
   });
   return out;

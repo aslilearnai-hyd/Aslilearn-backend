@@ -800,29 +800,19 @@ function buildCurriculumBackedConceptFallback(meta = {}) {
   const subject = String(meta.subject || 'this subject').trim();
   const classLabel = String(meta.classLabel || meta.gradeLevel || 'the class').trim();
   const variantN = Number(meta.generationVariant) || 0;
-  const angle = String(meta.variantAngle || '').trim();
-  const scenario = String(meta.variantScenario || '').trim();
   const conceptName = subTopic || topic || `${subject} concept`;
   const focus = subTopic && topic ? `${topic} — ${subTopic}` : subTopic || topic;
-  const angleLead = angle
-    ? `Frame the lesson using this angle: ${angle}. `
-    : variantN > 0
-      ? `Use variant ${variantN} with a fresh example set. `
-      : '';
+  const angleLead = variantN > 0 ? `Variant ${variantN}: ` : '';
   return {
     concepts: [
       normalizeConceptStructuredContent({
-        concept_name: angle ? `${conceptName} — ${angle.split('(')[0].trim().slice(0, 48)}` : conceptName,
-        simple_definition: `${angleLead}A clear introduction to ${conceptName} as part of ${focus} in ${subject}.`,
+        concept_name: conceptName,
+        simple_definition: `${angleLead}A clear definition of ${conceptName} as part of ${focus} in ${subject}.`,
         why_important: `Mastering ${conceptName} helps ${classLabel} learners understand ${focus} for class tests and applications.`,
         prior_knowledge_needed: `Familiarity with the main ideas from ${topic || 'the previous unit'}.`,
-        lesson: `${angleLead}Explain ${conceptName} step by step: definition, one labelled diagram, a worked example, and a short class discussion tied to ${focus}. Align examples to the NCERT/CBSE treatment of ${subject} for ${classLabel}.`,
+        lesson: `${angleLead}Explain ${conceptName} step by step: definition, labelled diagram, worked example, and one check question tied to ${focus}. Align to the NCERT/CBSE treatment of ${subject} for ${classLabel}.`,
         diagram_suggestion: `Labelled diagram or concept map for ${conceptName} (components, flow, or cause–effect as appropriate).`,
-        real_example: scenario
-          ? `Example while exploring ${scenario}: how ${conceptName} appears in real life.`
-          : angle
-            ? `Indian-context example for ${conceptName} via: ${angle}.`
-            : `Everyday example ${variantN > 0 ? `(set ${variantN}) ` : ''}that illustrates ${conceptName}.`,
+        real_example: `One concrete example that illustrates ${conceptName} directly (device, formula application, or phenomenon).`,
         common_mistakes: [
           `Mixing up terms related to ${conceptName}`,
           'Skipping units, labels, or direction arrows in diagrams',
@@ -4177,7 +4167,18 @@ function polishWorksheetStructuredContent(source = {}, meta = {}) {
     };
   });
 
-  const filledSections = padMissingWorksheetSections(sections, meta);
+  const filledSections = canPadWorksheetSections(meta)
+    ? padMissingWorksheetSections(sections, meta)
+    : canonical.map((sec) => ({
+        ...sec,
+        questions: (sec.questions || []).map((q, idx) => ({
+          ...q,
+          question_number: idx + 1,
+          section: sec.sectionName,
+          options: cleanWorksheetMcqOptions(q.options),
+        })),
+        count: (sec.questions || []).length,
+      }));
 
   const flatQuestions = filledSections.flatMap((sec) =>
     (sec.questions || []).map((q) => ({ ...q, section: sec.sectionName })),
@@ -4198,7 +4199,7 @@ function polishWorksheetStructuredContent(source = {}, meta = {}) {
 }
 
 /** Worksheet / MCQ PDF rows → 10-section template + sections A–E. */
-export function normalizeWorksheetStructuredContent(raw, sourceText = '') {
+export function normalizeWorksheetStructuredContent(raw, sourceText = '', meta = {}) {
   const source = raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
   const title = sanitizeAiGeneratorWorksheetTitle(
     String(source.title || source.worksheet_title || source.name || source.topic || '').trim(),
@@ -4352,7 +4353,12 @@ export function normalizeWorksheetStructuredContent(raw, sourceText = '') {
     type: String(source.type || 'Worksheet').trim() || 'Worksheet',
   };
 
-  return polishWorksheetStructuredContent(draft);
+  return polishWorksheetStructuredContent(draft, meta);
+}
+
+function canPadWorksheetSections(meta = {}) {
+  const topic = resolveWorksheetTopicLabel(meta);
+  return Boolean(topic) && !/^lesson focus\b/i.test(topic);
 }
 
 function countWorksheetSectionQuestions(sections = []) {
@@ -4583,7 +4589,10 @@ function repairActivityHeadingEchoFields(structured, meta = {}, toolSlug = 'acti
 function extractBookGroundedSentences(pdfContext = '', topic = '') {
   const raw = String(pdfContext || '')
     .replace(/\[Chunk \d+\]/gi, '\n')
+    .replace(/\[\d+\]\s*\([^)]+\)\s*/g, '\n')
+    .replace(/TEXTBOOK CONTENT[^:]*:/gi, ' ')
     .replace(/REFERENCE TEXTBOOK CONTENT[^:]*:/gi, ' ')
+    .replace(/USER-SELECTED CURRICULUM[^]*?(?=\n\n|$)/gi, ' ')
     .replace(/\s+/g, ' ')
     .trim();
   if (!raw || raw.length < 80) return [];
@@ -4631,12 +4640,11 @@ function buildBookGroundedWorksheetQuestion(sectionName, sentence, topic, subjec
 
   if (sectionName === WORKSHEET_SECTION_LABELS.A) {
     const stems = [
-      `Set ${variantIndex}: From the textbook on ${topicLabel}, which option best matches: "${snippet}"?`,
-      `MCQ ${variantIndex}: According to the chapter, which choice reflects "${snippet}"?`,
-      `Using "${angle}", which statement about "${snippet}" fits ${topicLabel}?`,
-      `During ${scenario}, which option correctly explains the textbook idea: "${snippet}"?`,
-      `Which MCQ about ${topicLabel} is supported by the passage: "${snippet}"?`,
-      `Pick the best answer linking "${snippet}" to ${topicLabel} (record ${variantIndex}).`,
+      `Which option best matches the textbook on ${topicLabel}: "${snippet}"?`,
+      `According to the chapter on ${topicLabel}, which choice reflects "${snippet}"?`,
+      `MCQ: Which statement about ${topicLabel} is supported by "${snippet}"?`,
+      `Which answer correctly explains the textbook idea: "${snippet}"?`,
+      `Pick the best option linking "${snippet}" to ${topicLabel}.`,
     ];
     return {
       question_number: qNum,
@@ -4655,11 +4663,11 @@ function buildBookGroundedWorksheetQuestion(sectionName, sentence, topic, subjec
   }
   if (sectionName === WORKSHEET_SECTION_LABELS.B) {
     const stems = [
-      `Record ${variantIndex}: Complete using the textbook — in ${topicLabel}, ${pickWord} _____.`,
-      `Fill in (set ${variantIndex}): During ${scenario}, ${topicLabel} involves ${pickWord} _____.`,
-      `Blank ${variantIndex}: From the passage on ${topicLabel}, evidence shows ${pickWord} _____.`,
-      `Complete: One textbook fact about ${topicLabel} (${angle.toLowerCase()}) is that ${pickWord} _____.`,
-      `Using the chapter on ${topicLabel}, students note ${pickWord} _____.`,
+      `Complete using the textbook on ${topicLabel}: ${pickWord} _____.`,
+      `Fill in the blank: In ${topicLabel}, ${pickWord} _____.`,
+      `From the passage on ${topicLabel}, evidence shows ${pickWord} _____.`,
+      `One textbook fact about ${topicLabel} is that ${pickWord} _____.`,
+      `Using the chapter on ${topicLabel}, ${pickWord} _____.`,
     ];
     return {
       question_number: qNum,
@@ -4672,11 +4680,11 @@ function buildBookGroundedWorksheetQuestion(sectionName, sentence, topic, subjec
   }
   if (sectionName === WORKSHEET_SECTION_LABELS.C) {
     const stems = [
-      `Set ${variantIndex}: State one key point about ${topicLabel} from the textbook passage.`,
-      `VSA ${variantIndex}: Name one idea about ${topicLabel} mentioned in the chapter (${angle.toLowerCase()}).`,
-      `Write one fact from the textbook about ${topicLabel} relevant to ${scenario}.`,
-      `Give one precise point about ${topicLabel} using evidence from the passage (record ${variantIndex}).`,
-      `List one characteristic of ${topicLabel} found in the textbook section.`,
+      `State one key point about ${topicLabel} from the textbook passage.`,
+      `Name one idea about ${topicLabel} mentioned in the chapter.`,
+      `Write one fact from the textbook about ${topicLabel}.`,
+      `Give one precise point about ${topicLabel} using evidence from the passage.`,
+      `List one characteristic of ${topicLabel} from the textbook section.`,
     ];
     return {
       question_number: qNum,
@@ -4689,9 +4697,9 @@ function buildBookGroundedWorksheetQuestion(sectionName, sentence, topic, subjec
   }
   if (sectionName === WORKSHEET_SECTION_LABELS.D) {
     const stems = [
-      `Set ${variantIndex}: Explain this textbook statement about ${topicLabel}: "${shortFact.slice(0, 110)}${shortFact.length > 110 ? '…' : ''}"`,
-      `Short answer ${variantIndex}: How does "${shortFact.slice(0, 90)}${shortFact.length > 90 ? '…' : ''}" relate to ${scenario}?`,
-      `Describe the textbook idea about ${topicLabel} using "${angle.toLowerCase()}" (record ${variantIndex}).`,
+      `Explain this textbook statement about ${topicLabel}: "${shortFact.slice(0, 110)}${shortFact.length > 110 ? '…' : ''}"`,
+      `Explain how "${shortFact.slice(0, 90)}${shortFact.length > 90 ? '…' : ''}" helps understand ${topicLabel}.`,
+      `Describe the textbook idea about ${topicLabel} using the passage evidence.`,
       `Explain how the passage supports understanding of ${topicLabel} in ${subjectLabel}.`,
       `Write a brief explanation linking "${snippet}" to ${topicLabel}.`,
     ];
@@ -4705,11 +4713,11 @@ function buildBookGroundedWorksheetQuestion(sectionName, sentence, topic, subjec
     };
   }
   const stems = [
-    `Set ${variantIndex}: Apply the textbook idea about ${topicLabel} to ${scenario}. Refer to: "${snippet}"`,
-    `Competency ${variantIndex}: Plan a task using "${angle}" for ${topicLabel} based on the passage.`,
-    `Design a real-world application of ${topicLabel} from the textbook (record ${variantIndex}).`,
-    `Propose an observation activity on ${topicLabel} inspired by: "${snippet}"`,
-    `Create a case-based question on ${topicLabel} set in ${scenario} (variant ${variantIndex}).`,
+    `Apply the textbook idea about ${topicLabel} using this passage: "${snippet}"`,
+    `Solve or explain a problem on ${topicLabel} based on the chapter content.`,
+    `Use the formula or principle from ${topicLabel} to answer with evidence from: "${snippet}"`,
+    `Explain how ${topicLabel} applies to the data or facts in the textbook passage.`,
+    `Write an extended answer on ${topicLabel} using "${snippet}" as evidence.`,
   ];
   return {
     question_number: qNum,
@@ -5039,7 +5047,7 @@ function buildTopicGroundedWorksheetQuestion(sectionName, topic, subject, qNum, 
 }
 
 function buildTopicGroundedWorksheetQuestionRaw(sectionName, topic, subject, qNum, meta = {}) {
-  const topicLabel = String(topic || 'the selected sub-topic').trim();
+  const topicLabel = String(resolveWorksheetTopicLabel(meta) || topic || 'the selected sub-topic').trim();
   const subjectLabel = String(subject || 'Science').trim();
   const variantIndex = Number(meta.generationVariant) || 1;
   const avoidTexts = Array.isArray(meta.avoidQuestionTexts) ? meta.avoidQuestionTexts : [];
@@ -5058,14 +5066,18 @@ function buildTopicGroundedWorksheetQuestionRaw(sectionName, topic, subject, qNu
 
   if (sectionName === WORKSHEET_SECTION_LABELS.A) {
     const stems = [
-      `Set ${variantIndex}: During ${scenario}, which ${subjectLabel} idea about ${topicLabel} is best supported?`,
-      `Using the frame "${angle}", which statement about ${topicLabel} is correct?`,
-      `In ${subjectLabel}, which option explains ${topicLabel} with evidence?`,
-      `Which choice about ${topicLabel} fits a lesson focused on ${angle.toLowerCase()}?`,
-      `After studying ${topicLabel}, which MCQ option is most scientifically sound?`,
-      `Which statement links ${topicLabel} to ${scenario} correctly?`,
-      `Pick the best answer about ${topicLabel} for ${subjectLabel} Class revision.`,
-      `Which option avoids a common misconception about ${topicLabel}?`,
+      `Which statement about ${topicLabel} is correct in ${subjectLabel}?`,
+      `Which option best defines ${topicLabel}?`,
+      `Which formula or principle applies to ${topicLabel}?`,
+      `Which SI unit is associated with ${topicLabel}?`,
+      `Which option explains ${topicLabel} with correct evidence?`,
+      `Which statement about ${topicLabel} is incorrect?`,
+      `Which step is correct when solving problems on ${topicLabel}?`,
+      `Which property is essential to ${topicLabel}?`,
+      `Which example correctly illustrates ${topicLabel}?`,
+      `Which option avoids a common error in ${topicLabel}?`,
+      `Which relation in ${topicLabel} is stated correctly?`,
+      `Pick the best answer about ${topicLabel} for ${subjectLabel} revision.`,
     ];
     const correct = [
       'Observation and reasoning support the claim',
@@ -5092,12 +5104,16 @@ function buildTopicGroundedWorksheetQuestionRaw(sectionName, topic, subject, qNu
   }
   if (sectionName === WORKSHEET_SECTION_LABELS.B) {
     const stems = [
-      `Record ${variantIndex}: During ${scenario}, ${topicLabel} can be described as _____.`,
-      `Complete: One measurable feature of ${topicLabel} in ${subjectLabel} is _____.`,
-      `Fill in: Students notice that ${topicLabel} involves _____.`,
-      `Blank: A key term for ${topicLabel} (${angle.toLowerCase()}) is _____.`,
-      `Complete the sentence: Evidence for ${topicLabel} shows _____.`,
-      `Fill in: In ${scenario}, ${topicLabel} is linked to _____.`,
+      `Complete: ${topicLabel} is defined as _____.`,
+      `Fill in: The formula for ${topicLabel} is _____.`,
+      `Complete: The SI unit of ${topicLabel} is _____.`,
+      `Fill in: One key property of ${topicLabel} is _____.`,
+      `Complete: ${topicLabel} is related to _____ because _____.`,
+      `Fill in the blank: A core term in ${topicLabel} is _____.`,
+      `Complete: Evidence for ${topicLabel} shows _____.`,
+      `Fill in: When ${topicLabel} increases, _____ changes.`,
+      `Complete: The symbol used in ${topicLabel} equations is _____.`,
+      `Fill in: One cause of ${topicLabel} is _____.`,
     ];
     return {
       question_number: qNum,
@@ -5110,12 +5126,16 @@ function buildTopicGroundedWorksheetQuestionRaw(sectionName, topic, subject, qNu
   }
   if (sectionName === WORKSHEET_SECTION_LABELS.C) {
     const stems = [
-      `State one fact about ${topicLabel} using the ${angle.toLowerCase()} approach.`,
-      `Write a very short answer: What should students remember about ${topicLabel}?`,
-      `Name one idea from ${topicLabel} relevant to ${scenario}.`,
+      `Define the central term in ${topicLabel}.`,
+      `State one essential fact about ${topicLabel}.`,
+      `Name the formula used in ${topicLabel} (if any).`,
+      `State the SI unit for ${topicLabel}.`,
       `Give one precise point about ${topicLabel} in ${subjectLabel}.`,
-      `List one characteristic of ${topicLabel} (VSA ${variantIndex}).`,
-      `Define a core term used when teaching ${topicLabel}.`,
+      `List one characteristic of ${topicLabel}.`,
+      `State one cause–effect link in ${topicLabel}.`,
+      `Name one quantity measured in ${topicLabel}.`,
+      `State one law or rule that applies to ${topicLabel}.`,
+      `Write one definition from ${topicLabel} in one sentence.`,
     ];
     return {
       question_number: qNum,
@@ -5128,36 +5148,40 @@ function buildTopicGroundedWorksheetQuestionRaw(sectionName, topic, subject, qNu
   }
   if (sectionName === WORKSHEET_SECTION_LABELS.D) {
     const stems = [
-      `Explain ${topicLabel} with reference to ${scenario}.`,
-      `Describe how ${angle.toLowerCase()} helps understand ${topicLabel}.`,
-      `Write a short answer connecting ${topicLabel} to daily life (example ${variantIndex}).`,
-      `Explain why ${topicLabel} matters in ${subjectLabel} using one example.`,
-      `Describe an observation task that clarifies ${topicLabel}.`,
-      `How does ${topicLabel} appear in ${scenario}? Explain briefly.`,
+      `Explain ${topicLabel}: definition and one example.`,
+      `Describe the principle behind ${topicLabel} in ${subjectLabel}.`,
+      `Explain the cause–effect relationship in ${topicLabel}.`,
+      `Explain how to use the formula for ${topicLabel} with one calculation.`,
+      `Describe two key properties of ${topicLabel}.`,
+      `Explain why ${topicLabel} is important in ${subjectLabel}.`,
+      `Explain the difference between related terms in ${topicLabel}.`,
+      `Describe how ${topicLabel} is measured and calculated.`,
     ];
     return {
       question_number: qNum,
       type: 'SA',
       section: sectionName,
       question: pickStem(stems, mix),
-      answer: `Clear explanation linking ${topicLabel} to ${scenario} (variant ${variantIndex}).`,
+      answer: `Clear, accurate explanation of ${topicLabel} with definition and example.`,
       marks: 3,
     };
   }
   const stems = [
-    `Design a mini-investigation on ${topicLabel} for ${scenario} (plan ${variantIndex}).`,
-    `Create a competency task using "${angle}" for ${topicLabel}.`,
-    `Propose a classroom activity that tests understanding of ${topicLabel}.`,
-    `Suggest a home-based observation related to ${topicLabel} after ${scenario}.`,
-    `Plan how students can apply ${topicLabel} in a real ${subjectLabel} problem.`,
-    `Draft a case-based question on ${topicLabel} set in ${scenario}.`,
+    `Solve a two-step problem on ${topicLabel}. Show all working.`,
+    `Apply the formula for ${topicLabel} to given data. Show each step.`,
+    `Explain ${topicLabel} and solve one numerical with correct units.`,
+    `Analyse ${topicLabel}: state the principle, substitute values, and find the answer.`,
+    `Write an extended answer on ${topicLabel} with definition, formula, and calculation.`,
+    `Derive the result for ${topicLabel} from given values and justify each step.`,
+    `Compare two methods for solving ${topicLabel} problems and choose the better one.`,
+    `Solve a multi-part problem on ${topicLabel}: (a) define, (b) calculate, (c) state units.`,
   ];
   return {
     question_number: qNum,
     type: 'COMPETENCY',
     section: sectionName,
     question: pickStem(stems, mix),
-    answer: `Structured response with steps, evidence, and conclusion for ${topicLabel} (variant ${variantIndex}).`,
+    answer: `Structured response with definition, steps, and conclusion for ${topicLabel}.`,
     marks: 4,
   };
 }
@@ -5332,6 +5356,7 @@ export function finalizeWorksheetStructuredContent(structuredContent, meta = {})
       ? structuredContent
       : {},
     sourceText,
+    meta,
   );
   if (skipEnglishStructuredScaffold(meta) && !strictFinalize) {
     const indicScaffold = buildIndicScaffoldExamQuestions(meta, '');
@@ -5446,8 +5471,8 @@ export function finalizeWorksheetStructuredContent(structuredContent, meta = {})
         question_number: qNum,
         type: 'SA',
         section: sectionName,
-        question: `Explain how ${topic} applies in daily life. Give one example.`,
-        answer: `Students describe a real example connecting ${topic} to everyday ${subject}.`,
+        question: `Explain ${topic} with definition and one example.`,
+        answer: `Clear explanation of ${topic} with definition and supporting example.`,
         marks: 3,
       };
     }
@@ -5455,8 +5480,8 @@ export function finalizeWorksheetStructuredContent(structuredContent, meta = {})
       question_number: qNum,
       type: 'COMPETENCY',
       section: sectionName,
-      question: `How would you use ideas from ${topic} to solve a problem at home or school?`,
-      answer: `A reasoned plan using concepts from ${topic} with steps and evidence.`,
+      question: `Solve or explain an extended problem on ${topic}. Show definition, steps, and conclusion.`,
+      answer: `Structured response using concepts from ${topic} with steps and evidence.`,
       marks: 4,
     };
   };
@@ -7060,19 +7085,7 @@ function countExamPaperQuestions(data) {
 function examScaffoldVariantContext(meta = {}) {
   const topic = String(meta.subTopic || meta.subtopic || meta.topic || 'this subtopic').trim();
   const variant = Number(meta.generationVariant ?? meta.variantIndex) || 1;
-  const angle = String(meta.variantAngle || '').trim();
-  const scenario = String(meta.variantScenario || '').trim();
-  let frame = '';
-  if (angle && scenario) {
-    frame = `${angle} — ${scenario}`;
-  } else if (angle) {
-    frame = angle;
-  } else if (scenario) {
-    frame = `Scenario: ${scenario}`;
-  } else {
-    frame = `Variant ${variant}`;
-  }
-  return { topic, variant, frame };
+  return { topic, variant, frame: `Set ${variant}` };
 }
 
 function buildScaffoldExamQuestions(meta = {}, blueprint = '') {
@@ -7091,19 +7104,19 @@ function buildScaffoldExamQuestions(meta = {}, blueprint = '') {
     (t) => `Name and define a core concept in ${t}.`,
   ];
   const saStems = [
-    (t) => `Explain how ${t} applies in daily life.`,
-    (t) => `Give a reasoned example using ${t}.`,
-    (t) => `Describe a real-world use of ${t}.`,
+    (t) => `Explain ${t} with definition and one example.`,
+    (t) => `Describe the principle behind ${t}.`,
+    (t) => `Explain how to apply the formula or rule for ${t}.`,
   ];
   const laStems = [
-    (t) => `Describe the process of scientific inquiry for ${t}.`,
-    (t) => `Analyse the main principles of ${t} with steps.`,
-    (t) => `Discuss evidence-based reasoning for ${t}.`,
+    (t) => `Explain ${t} in detail: definition, formula, and one worked example.`,
+    (t) => `Analyse the main principles of ${t} with steps and evidence.`,
+    (t) => `Discuss ${t} with definition, numerical application, and conclusion.`,
   ];
   const caseStems = [
-    (t) => `Case study on ${t}: read the scenario and answer parts (a)–(d).`,
-    (t) => `Applied problem on ${t} with data — answer all parts.`,
-    (t) => `Competency task on ${t}: interpret the situation and respond.`,
+    (t) => `Extended problem on ${t}: use given data and answer all parts.`,
+    (t) => `Applied question on ${t}: calculate and explain with full working.`,
+    (t) => `Multi-part question on ${t}: define, explain, and solve numerically.`,
   ];
   let n = 1;
   for (let i = 0; i < counts.a; i += 1) {
@@ -7126,7 +7139,7 @@ function buildScaffoldExamQuestions(meta = {}, blueprint = '') {
     buckets.section_b.push({
       question_number: n++,
       question: vsaStems[(variant + i) % vsaStems.length](topic),
-      answer: `A concise definition using evidence about ${topic} (${frame}).`,
+      answer: `A concise definition and explanation of ${topic}.`,
       marks: 2,
       _scaffold: true,
     });
@@ -7135,7 +7148,7 @@ function buildScaffoldExamQuestions(meta = {}, blueprint = '') {
     buckets.section_c.push({
       question_number: n++,
       question: saStems[(variant + i) % saStems.length](topic),
-      answer: `Students give a reasoned example connected to ${topic} (${frame}).`,
+      answer: `Clear explanation of ${topic} with definition and example.`,
       marks: 3,
       _scaffold: true,
     });
@@ -7144,7 +7157,7 @@ function buildScaffoldExamQuestions(meta = {}, blueprint = '') {
     buckets.section_d.push({
       question_number: n++,
       question: laStems[(variant + i) % laStems.length](topic),
-      answer: `A step-by-step explanation with observation, hypothesis, and evidence for ${topic} (${frame}).`,
+      answer: `Step-by-step explanation with definition, formula, and evidence for ${topic}.`,
       marks: 5,
       _scaffold: true,
     });
@@ -7153,7 +7166,7 @@ function buildScaffoldExamQuestions(meta = {}, blueprint = '') {
     buckets.section_e.push({
       question_number: n++,
       question: caseStems[(variant + i) % caseStems.length](topic),
-      answer: `Answers use evidence from the scenario and concepts from ${topic} (${frame}).`,
+      answer: `Structured answer using concepts and calculations from ${topic}.`,
       marks: 6,
       _scaffold: true,
     });
@@ -9130,45 +9143,26 @@ function buildCurriculumBackedActivityFallback(meta = {}) {
   const subject = String(meta.subject || 'this subject').trim();
   const classLabel = String(meta.classLabel || 'the class').trim();
   const variantN = Number(meta.generationVariant) || 0;
-  const angle = String(meta.variantAngle || '').trim();
-  const scenario = String(meta.variantScenario || '').trim();
   const tp = subTopic ? `${topic} — ${subTopic}` : topic;
-  const angleShort = angle ? angle.split('(')[0].trim().slice(0, 42) : '';
   return {
-    title: angleShort
-      ? `${angleShort}: ${topic}`
-      : variantN > 0
-        ? `Activity variant ${variantN}: ${topic}`
-        : `Hands-on activity: ${topic}`,
+    title: variantN > 0 ? `${topic} — practice activity ${variantN}` : `Activity: ${topic}`,
     materials: [
       'Notebook / loose paper',
       'Pencils and coloured pencils or markers',
-      'Plain A4 sheets for folding/cutting tasks (if needed)',
+      'Plain A4 sheets (if needed)',
       'Ruler',
       `${subject} textbook or excerpt from the uploaded PDF`,
-      'Chart paper / whiteboard markers for gallery walk (optional)',
+      'Board or chart paper for sharing answers (optional)',
     ],
     steps: [
-      scenario
-        ? `Set the scene: ${scenario}. In pairs, list four key ideas or vocabulary for ${topic} linked to this setting.`
-        : angle
-          ? `Start with the angle "${angle}". In pairs, list four vocabulary terms or diagrams for ${topic} on one half-sheet.`
-          : `In pairs, skim the material for ${topic} and list four key vocabulary terms or diagrams on one half-sheet.`,
-      variantN > 0
-        ? `Compare lists with another pair — each pair must add one unique example not used by others.`
-        : 'Compare lists with another pair — merge duplicates and circle the two concepts that seemed most challenging.',
-      angle
-        ? `Build a mini task for "${tp}" using the angle (${angleShort || angle})${scenario ? ` in the setting: ${scenario}` : ''}. Keep it doable in 15 minutes.`
-        : `Design one mini-demonstration or table that explains one idea from "${tp}"${scenario ? ` during ${scenario}` : ''}. Keep it doable in 15 minutes.`,
-      scenario
-        ? `Groups present findings from ${scenario}; each group explains one design choice in two sentences.`
-        : 'Groups post their artefact on the board; each group explains one design choice in two sentences.',
-      `Whole class agrees on three success checkpoints for understanding ${topic}.`,
-      `Exit slip: one new idea about ${subTopic || topic}, one question, one link to ${scenario || 'everyday life'} (${subject}).`,
+      `Read the section on ${topic} and list four key terms or formulas on one half-sheet.`,
+      `Compare lists — merge duplicates and mark the two terms that need the most clarification.`,
+      `Solve or explain one core problem on "${tp}" using definition, formula, and working.`,
+      `Each group writes one complete answer on the board: definition + one example or calculation.`,
+      `Whole class agrees on three checkpoints for understanding ${topic}.`,
+      `Exit slip: one definition, one numerical or evidence point, one question about ${subTopic || topic} (${subject}).`,
     ],
-    learningOutcome: angle
-      ? `Through "${angleShort || angle}", learners demonstrate understanding of ${tp} in ${subject} (${classLabel}).`
-      : `Learners apply ${tp} in ${subject} through a distinct classroom task (${classLabel}).`,
+    learningOutcome: `Learners demonstrate understanding of ${tp} in ${subject} through precise definitions and worked examples (${classLabel}).`,
   };
 }
 
@@ -10298,17 +10292,6 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
   );
   const useResponseSchema =
     qualityTierSettings.useResponseSchema && isResponseSchemaEnabled(slug);
-  const promptParts = buildAiGeneratorPromptParts(slug, {
-    ...params,
-    subject: resolvedSubject,
-    useResponseSchema,
-  });
-  const responseSchema = useResponseSchema
-    ? buildGeminiResponseSchemaForTool(
-        getToolInformalSchema(slug),
-        promptParts.contentTypeDefault || defaultContentType,
-      )
-    : null;
   const pdfContextParam = String(params.pdfContext || '').trim();
   let pdfContext = pdfContextParam;
   let curriculumSources = [];
@@ -10328,6 +10311,24 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
     }
   }
 
+  const hasBookContext = Boolean(
+    pdfContext && (extra.bookGenerator || extra.bookId || /TEXTBOOK CONTENT|REFERENCE TEXTBOOK|\[Chunk \d+\]/i.test(pdfContext)),
+  );
+
+  const promptParts = buildAiGeneratorPromptParts(slug, {
+    ...params,
+    subject: resolvedSubject,
+    useResponseSchema,
+    hasBookContext,
+    pdfContext: hasBookContext ? pdfContext : undefined,
+  });
+  const responseSchema = useResponseSchema
+    ? buildGeminiResponseSchemaForTool(
+        getToolInformalSchema(slug),
+        promptParts.contentTypeDefault || defaultContentType,
+      )
+    : null;
+
   const historicalBlock = String(params.historicalPromptBlock || '').trim();
   const storyLanguageTail =
     mustEnforceStoryPassageLanguageCompliance(resolvedSubject)
@@ -10342,7 +10343,8 @@ export async function generateStructuredContentForAiGenerator(toolSlug, params =
 
 REFERENCE TEXTBOOK CONTENT (RAG — PRIMARY factual source for this generation):
 Use the passages below as the PRIMARY source. Follow textbook terminology, definitions, examples, formulae, and explanations.
-Do not invent facts that contradict the book. Only use general knowledge when the book is silent.
+Generate questions and content DIRECTLY on the selected subtopic using these passages — no fictional scenario wrappers.
+Do not invent facts that contradict the book. Only use general knowledge when the book is silent, and stay on the same subtopic.
 Priority: (1) Uploaded Book  (2) Uploaded Notes  (3) Gemini knowledge.
 Synthesize into the tool schema above — do not paste blocks verbatim.${ragLanguageNote}
 ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`

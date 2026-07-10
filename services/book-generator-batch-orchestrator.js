@@ -291,7 +291,17 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             bookTitle: book.title,
             topK: conceptMasteryBatch ? 8 : undefined,
           })
-        : { contextText: '', chunkCount: 0, chunks: [] };
+        : { contextText: '', chunkCount: 0, chunks: [], hasBookPassages: false };
+
+      if (useBookKnowledge && !ragBase.hasBookPassages) {
+        console.warn(
+          `[book-generator] WARNING: No textbook chunks retrieved for book=${bookId} topic="${topicName}" subtopic="${subtopicName}". Generation will use curriculum labels only — reindex the book or check board/subject metadata.`,
+        );
+      } else if (useBookKnowledge) {
+        console.log(
+          `[book-generator] Retrieved ${ragBase.chunkCount} textbook chunk(s) for "${subtopicName || topicName}" from book="${book.title}"`,
+        );
+      }
 
       const ragScope = {
         bookId,
@@ -618,6 +628,11 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                 bookTitle: book.title,
                 useBookKnowledge,
                 ragChunkCount: ragBase.chunkCount,
+                bookTextUsed: Boolean(ragBase.hasBookPassages),
+                bookTextWarning:
+                  useBookKnowledge && !ragBase.hasBookPassages
+                    ? 'No textbook passages were retrieved. Content may not be book-grounded.'
+                    : undefined,
                 createdByName: opts.reqUser?.name || 'Super Admin',
                 createdByRole: 'super-admin',
                 extraParams,
@@ -711,7 +726,11 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
       mode: 'book_rag',
       bookId: String(book._id),
       bookTitle: book.title,
-      message: `Book-grounded batch: ${savedRecords.length}/${batchSize} saved from "${book.title}" (~₹${Number(cost?.inr || 0).toFixed(2)}).`,
+      ragChunkCount: ragBase.chunkCount,
+      bookTextUsed: Boolean(ragBase.hasBookPassages),
+      message: ragBase.hasBookPassages
+        ? `Book-grounded batch: ${savedRecords.length}/${batchSize} saved from "${book.title}" using ${ragBase.chunkCount} textbook passage(s) (~₹${Number(cost?.inr || 0).toFixed(2)}).`
+        : `Batch saved ${savedRecords.length}/${batchSize}, but NO textbook passages were retrieved from "${book.title}". Content may not be book-grounded — check book indexing and topic/subtopic.`,
     };
   } finally {
     try {
