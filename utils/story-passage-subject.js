@@ -419,6 +419,34 @@ export function validateStoryPassageLanguageCompliance(subject, structured, opti
     }
   }
 
+  // Aggregate document guard: the per-string walk below SKIPS short English fields
+  // (MCQ options, answers, objectives — nearly all < 140 chars), so a variant that is
+  // entirely English passes field-by-field and slips through. Catch a document that is
+  // mostly the wrong script overall. Real Hindi/Telugu content is ~85%+ target script;
+  // a drifted English variant is ~0% — the 45% gate separates them with wide margin and
+  // still tolerates embedded Latin (proper nouns, NCERT labels, numerals).
+  if (!errors.length) {
+    let indicTotal = 0;
+    let latinTotal = 0;
+    for (const text of walkStoryPassageStringValues(data)) {
+      const t = String(text || '').trim();
+      if (t.length < 12) continue;
+      if (isStoryPassagePlaceholderText(t)) continue;
+      if (STORY_SECTION_LABEL_PREFIX.test(t)) continue;
+      if (ENGLISH_BOILERPLATE_RE.test(t)) continue;
+      indicTotal += countMatches(t, required === 'telugu' ? TELUGU_CHAR_RE : DEVANAGARI_CHAR_RE);
+      latinTotal += (t.match(/[A-Za-z]/g) || []).length;
+    }
+    const totalLetters = indicTotal + latinTotal;
+    if (totalLetters >= 60 && indicTotal / totalLetters < 0.45) {
+      errors.push(
+        `${label}: the generated content is mostly English (only ${Math.round(
+          (indicTotal / totalLetters) * 100,
+        )}% ${required === 'telugu' ? 'Telugu' : 'Hindi'}). Regenerate ALL string values in ${label}.`,
+      );
+    }
+  }
+
   if (!errors.length) {
     for (const text of walkStoryPassageStringValues(data)) {
       const t = String(text || '').trim();
