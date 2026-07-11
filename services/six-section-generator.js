@@ -29,7 +29,7 @@ export async function generateSixSectionContent(toolSlug, params = {}, opts = {}
   }
 
   const model = opts.primaryModel || getAiGeneratorGeminiModel();
-  const temperature =
+  const baseTemp =
     Number.isFinite(opts.temperature) && opts.temperature > 0 && opts.temperature <= 1.2
       ? opts.temperature
       : 0.55;
@@ -38,24 +38,35 @@ export async function generateSixSectionContent(toolSlug, params = {}, opts = {}
   // full answer key). Overridable per call.
   const maxTokens =
     Number.isFinite(opts.maxTokens) && opts.maxTokens > 0 ? opts.maxTokens : 14000;
-  const raw = await geminiService.generateStructuredContent(assembled.prompt, 'json', {
-    primaryModel: model,
-    temperature,
-    maxTokens,
-  });
 
-  const json = extractJsonObject(raw);
-  if (!hasAllSixSections(json)) {
-    return { ok: false, error: 'Model did not return all six sections.', raw };
+  // Lighter models (gemini-3.1-flash-lite) intermittently return incomplete JSON
+  // (a missing section). Retry a few times — cheap on Flash-Lite (~₹0.1/call) — and
+  // lower the temperature on retries for more reliable structure. This keeps the
+  // cheapest model usable without ever falling to a costlier one.
+  const maxTries = Number.isFinite(opts.maxTries) && opts.maxTries > 0 ? opts.maxTries : 3;
+  let lastRaw = '';
+  for (let attempt = 1; attempt <= maxTries; attempt += 1) {
+    const temperature =
+      attempt === 1 ? baseTemp : Math.max(0.3, baseTemp - 0.2 * (attempt - 1));
+    const raw = await geminiService.generateStructuredContent(assembled.prompt, 'json', {
+      primaryModel: model,
+      temperature,
+      maxTokens,
+    });
+    lastRaw = raw;
+    const json = extractJsonObject(raw);
+    if (hasAllSixSections(json)) {
+      return {
+        ok: true,
+        structuredContent: {
+          schema: 'asli-v2-six-section',
+          tool: toolSlug,
+          ...Object.fromEntries(V2_SECTION_IDS.map((id) => [id, json[id]])),
+        },
+      };
+    }
   }
-
-  // Attach a stable schema version + the six sections in canonical order.
-  const structuredContent = {
-    schema: 'asli-v2-six-section',
-    tool: toolSlug,
-    ...Object.fromEntries(V2_SECTION_IDS.map((id) => [id, json[id]])),
-  };
-  return { ok: true, structuredContent };
+  return { ok: false, error: 'Model did not return all six sections.', raw: lastRaw };
 }
 
 export default generateSixSectionContent;
