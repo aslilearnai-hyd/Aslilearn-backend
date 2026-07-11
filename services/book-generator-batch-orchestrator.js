@@ -63,7 +63,7 @@ import { formatStructuredToolOutput } from '../config/aiToolTemplates.js';
 import { stripMarkdownSyntax, deepStripMarkdownValues } from '../utils/strip-markdown-syntax.js';
 import { computeScaffoldDensity, SCAFFOLD_DENSITY_CEILING } from './ai-generator-quality-gate.js';
 import { generateSixSectionContent } from './six-section-generator.js';
-import { isSixSectionV2Enabled } from '../prompts/v2/assemble.js';
+import { isSixSectionV2Enabled, buildV2VariantHint } from '../prompts/v2/assemble.js';
 import { isV2SupportedTool } from '../prompts/v2/tool-packs.js';
 
 /** Question tools that carry scaffold-prone question pools and cross-slot dedup. */
@@ -380,6 +380,13 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               const v2RagContext = useBookKnowledge
                 ? buildBookContextTextForVariant(ragBase, ragScope, variantIndex)
                 : ragBase.contextText;
+              const v2VariantHint = buildV2VariantHint({
+                variantIndex,
+                batchSize,
+                angle: getAiGeneratorVariantAngle(variantIndex, subjectName),
+                scenario: getAiGeneratorVariantScenario(variantIndex, subjectName),
+                seed: `${Date.now()}-book-v${variantIndex}-a${attempt}`,
+              });
               const v2 = await generateSixSectionContent(
                 toolSlug,
                 {
@@ -392,6 +399,8 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                 {
                   primaryModel: qualityTierSettings.primaryGeminiModel,
                   ragContext: v2RagContext,
+                  variantHint: v2VariantHint,
+                  temperature: Math.min(0.9, 0.6 + (variantIndex - 1) * 0.06),
                 },
               );
               if (!v2.ok) {
