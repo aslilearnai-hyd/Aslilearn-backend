@@ -48,7 +48,7 @@ export function assembleSixSectionPrompt(toolSlug, params = {}, opts = {}) {
   const board = params.board || 'CBSE';
   const boardLayer = buildBoardLayer({ board, classLabel: params.classLabel, subject: params.subject });
   const ragLayer = buildRagLayer(opts.ragContext);
-  const iitLayer = buildIitLayer({ board });
+  const iitLayer = buildIitLayer({ board, classLabel: params.classLabel });
 
   // Multiple subtopics → one COMBINED paper spanning all of them (like a unit test).
   const subTopicList = Array.isArray(params.subTopics)
