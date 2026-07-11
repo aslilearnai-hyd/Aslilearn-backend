@@ -1132,7 +1132,13 @@ export async function generateBatchContent(req, res) {
     );
     const subjectName = normalizeText(req.body.subjectName || req.body.subject);
     const topicName = normalizeText(req.body.topicName || req.body.topic);
-    const subtopicName = normalizeText(req.body.subtopicName || req.body.subTopic || req.body.subtopic);
+    // Multi-subtopic (combined paper): accept an array; fall back to single subtopic.
+    const subTopics = (Array.isArray(req.body.subTopics) ? req.body.subTopics : [])
+      .map((s) => normalizeText(s))
+      .filter(Boolean);
+    const subtopicName =
+      normalizeText(req.body.subtopicName || req.body.subTopic || req.body.subtopic) ||
+      subTopics.join(', ');
     const batchSize = Number.parseInt(String(req.body.batchSize ?? '25'), 10);
     const forceGenerate =
       req.body.forceGenerate === true ||
@@ -1161,6 +1167,7 @@ export async function generateBatchContent(req, res) {
         subjectName,
         topicName,
         subtopicName,
+        ...(subTopics.length > 1 ? { subTopics } : {}),
         qualityTier: normalizeText(req.body.qualityTier),
         extraParams: req.body.extraParams,
         reviewStatus: req.body.reviewStatus,
