@@ -29,9 +29,13 @@ export async function generateSixSectionContent(toolSlug, params = {}, opts = {}
   }
 
   const model = opts.primaryModel || getAiGeneratorGeminiModel();
+  const temperature =
+    Number.isFinite(opts.temperature) && opts.temperature > 0 && opts.temperature <= 1.2
+      ? opts.temperature
+      : 0.55;
   const raw = await geminiService.generateStructuredContent(assembled.prompt, 'json', {
     primaryModel: model,
-    temperature: 0.55,
+    temperature,
     maxTokens: 9000,
   });
 

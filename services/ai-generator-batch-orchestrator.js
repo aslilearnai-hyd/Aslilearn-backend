@@ -22,7 +22,7 @@ import { extractTitleFromStructured } from './ai-generator-content-extractor.js'
 
 import { computeScaffoldDensity, SCAFFOLD_DENSITY_CEILING } from './ai-generator-quality-gate.js';
 import { generateSixSectionContent } from './six-section-generator.js';
-import { isSixSectionV2Enabled } from '../prompts/v2/assemble.js';
+import { isSixSectionV2Enabled, buildV2VariantHint } from '../prompts/v2/assemble.js';
 import { isV2SupportedTool } from '../prompts/v2/tool-packs.js';
 
 import { persistGenerationFingerprints } from './ai-generator-fingerprint-service.js';
@@ -401,10 +401,21 @@ export async function generateBatchAndSave(params, opts = {}) {
             // 6-section content and save it directly (renders in SixSectionViewer).
             // Bypasses the legacy pipeline entirely; quality comes from the Pro model.
             if (isSixSectionV2Enabled() && isV2SupportedTool(toolSlug)) {
+              const v2VariantHint = buildV2VariantHint({
+                variantIndex,
+                batchSize,
+                angle: getAiGeneratorVariantAngle(variantIndex, subjectName),
+                scenario: getAiGeneratorVariantScenario(variantIndex, subjectName),
+                seed: `${Date.now()}-v${variantIndex}-a${attempt}`,
+              });
               const v2 = await generateSixSectionContent(
                 toolSlug,
                 { board, classLabel: className, subject: subjectName, topic: topicName, subTopic: subtopicName },
-                { primaryModel: qualityTierSettings.primaryGeminiModel },
+                {
+                  primaryModel: qualityTierSettings.primaryGeminiModel,
+                  variantHint: v2VariantHint,
+                  temperature: Math.min(0.9, 0.6 + (variantIndex - 1) * 0.06),
+                },
               );
               if (!v2.ok) {
                 lastError = v2.error || 'V2 six-section generation failed';
