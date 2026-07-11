@@ -33,10 +33,15 @@ export async function generateSixSectionContent(toolSlug, params = {}, opts = {}
     Number.isFinite(opts.temperature) && opts.temperature > 0 && opts.temperature <= 1.2
       ? opts.temperature
       : 0.55;
+  // Ceiling only — you pay for tokens actually generated, so a high cap just
+  // prevents truncated JSON on large outputs (e.g. a 25-question worksheet with a
+  // full answer key). Overridable per call.
+  const maxTokens =
+    Number.isFinite(opts.maxTokens) && opts.maxTokens > 0 ? opts.maxTokens : 14000;
   const raw = await geminiService.generateStructuredContent(assembled.prompt, 'json', {
     primaryModel: model,
     temperature,
-    maxTokens: 9000,
+    maxTokens,
   });
 
   const json = extractJsonObject(raw);
