@@ -44,16 +44,20 @@ ${chunks.slice(0, 12000)}
 }
 
 /** IIT / JEE enhancement layer — added when JEE Main/Advanced level is selected. */
-export function buildIitLayer({ board } = {}) {
+export function buildIitLayer({ board, classLabel } = {}) {
   const b = String(board || '').trim().toUpperCase();
   if (!/JEE|IIT/.test(b)) return '';
-  return `IIT/JEE MODE LAYER (apply on top of tool rules — this OVERRIDES board-basic difficulty).
-- The ENTIRE output must be at genuine JEE Main/Advanced level, NOT NCERT/board-basic. Every question, worked example, and explanation must match the depth a serious IIT aspirant actually needs. If it would be too easy for a JEE student, it is wrong — raise it.
-- Core questions: real JEE-style items only — Numerical Answer Type, Multi-correct (one or more correct), Paragraph/Comprehension, Assertion-Reason — each requiring multi-step reasoning and setting the conceptual traps JEE is known for. No trivial single-step recall or definition-only questions.
-- Difficulty calibration: base items at JEE Main level, Stretch tier at JEE Advanced level. Do not water down for the class label.
-- Worked solutions: show the full multi-step method a topper would use, not one-line answers.
-- Assessment: use the JEE marking scheme (including negative marking) and list the specific conceptual traps/misconceptions JEE exploits for this topic.
-- Objectives: map to JEE Main/Advanced syllabus weightage and the most frequently-tested sub-topics.
-- Reallife: engineering / research / competitive-exam relevance and career connections.
-- If the given subtopic is inherently below JEE scope, still frame every item at the highest rigor the topic allows and explicitly connect it to how JEE tests (or builds on) that idea.`;
+  const cls = Number(String(classLabel || '').replace(/[^0-9]/g, ''));
+  const isFoundation = Number.isFinite(cls) && cls > 0 && cls <= 10;
+  const levelRule = isFoundation
+    ? `- STAY IN SYLLABUS SCOPE: this is JEE FOUNDATION for Class ${cls}. Use ONLY Class ${cls} topics/concepts — do NOT introduce Class 11-12 topics. Raise DIFFICULTY within the class's own syllabus (multi-step, application, and reasoning on Class ${cls} concepts), not by pulling in higher-class content.`
+    : `- Full JEE Main/Advanced level within the selected class's syllabus: base items at JEE Main, hardest (Stretch) at JEE Advanced. Do not water down, but stay within the class's prescribed topics.`;
+  return `IIT/JEE MODE LAYER (apply on top of tool rules).
+${levelRule}
+- Every question must challenge a serious IIT aspirant AT THIS CLASS LEVEL — if it is trivial single-step recall, raise it; if it needs a higher class's concept, replace it with a hard problem on this class's own topics.
+- Core questions: JEE-style items — Numerical Answer Type, Multi-correct, Paragraph/Comprehension, Assertion-Reason — with multi-step reasoning and the conceptual traps JEE sets. No definition-only questions.
+- Worked solutions: show the full multi-step method, not one-line answers.
+- Assessment: consistent JEE marking scheme (state it once, apply it uniformly — do not mix schemes) and the specific misconceptions JEE exploits.
+- Objectives: map to JEE syllabus weightage and frequently-tested sub-topics.
+- Reallife: engineering / research / competitive-exam relevance.`;
 }
