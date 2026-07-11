@@ -999,6 +999,70 @@ export async function reviewGeneratorRecord(req, res) {
   }
 }
 
+/** Human-readable label from a structuredContent key (e.g. sectionA_mcq -> "Section A — MCQ"). */
+function humanizeV2Key(k) {
+  let s = String(k || '');
+  const sec = s.match(/^section([A-E])_?(.*)$/i);
+  if (sec) {
+    const kind = sec[2]
+      .replace(/mcq/i, 'MCQ')
+      .replace(/fib/i, 'Fill in the Blanks')
+      .replace(/([a-z])([A-Z])/g, '$1 $2');
+    return `Section ${sec[1].toUpperCase()}${kind ? ' — ' + kind.replace(/\b\w/g, (c) => c.toUpperCase()) : ''}`;
+  }
+  s = s.replace(/_/g, ' ').replace(/([a-z])([A-Z])/g, '$1 $2');
+  return s.replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+/** Render a V2 six-section structuredContent object into readable plain text for the PDF. */
+function formatV2SixSectionToText(sc) {
+  const lines = [];
+  const SECTIONS = [
+    ['core', 'CONTENT'],
+    ['objectives', 'LEARNING OBJECTIVES'],
+    ['differentiation', 'DIFFERENTIATION & SUPPORT'],
+    ['assessment', 'ANSWER KEY & ASSESSMENT'],
+    ['teacher', "TEACHER'S IMPLEMENTATION GUIDE"],
+    ['reallife', 'REAL-LIFE CONNECTION'],
+  ];
+  const walk = (val, indent) => {
+    if (val == null || val === '') return;
+    if (typeof val === 'string' || typeof val === 'number' || typeof val === 'boolean') {
+      lines.push(indent + String(val));
+      return;
+    }
+    if (Array.isArray(val)) {
+      for (const item of val) {
+        if (item && typeof item === 'object' && !Array.isArray(item)) {
+          walk(item, indent);
+          lines.push('');
+        } else {
+          walk(item, `${indent}• `);
+        }
+      }
+      return;
+    }
+    if (typeof val === 'object') {
+      for (const [k, v] of Object.entries(val)) {
+        if (v == null || v === '') continue;
+        if (typeof v === 'string' || typeof v === 'number' || typeof v === 'boolean') {
+          lines.push(`${indent}${humanizeV2Key(k)}: ${v}`);
+        } else {
+          lines.push(`${indent}${humanizeV2Key(k)}:`);
+          walk(v, `${indent}  `);
+        }
+      }
+    }
+  };
+  for (const [key, title] of SECTIONS) {
+    if (!sc || !sc[key]) continue;
+    lines.push('');
+    lines.push(title);
+    walk(sc[key], '');
+  }
+  return lines.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+}
+
 export async function generatePDF(req, res) {
   try {
     const role = req.user?.role;
@@ -1014,9 +1078,12 @@ export async function generatePDF(req, res) {
       return res.status(400).json({ success: false, message: 'Invalid record id.' });
     }
 
+    // By-id fetch for a record the user is already viewing (role checked above).
+    // Only exclude ai_pdf; the restrictive list-scoping $or wrongly dropped
+    // book_rag (book-based) records, causing "Record not found" on their PDF.
     let record = await AiToolGeneration.findOne({
       _id: id,
-      ...buildGeneratorMongoQuery({}),
+      sourceType: { $ne: 'ai_pdf' },
     }).lean();
     if (!record) {
       const leg = await AIGeneratorRecord.findById(id).lean();
@@ -1026,7 +1093,18 @@ export async function generatePDF(req, res) {
       return res.status(404).json({ success: false, message: 'Record not found.' });
     }
 
-    const bodyText = String(record.generatedContent || record.content || '').trim();
+    // V2 six-section records store only the title in content/generatedContent;
+    // the full content lives in metadata.structuredContent. Render it so the PDF
+    // isn't just the title.
+    const v2sc = record.metadata?.structuredContent;
+    const isV2Record =
+      record.metadata?.formatSource === 'asli-v2-six-section' ||
+      record.metadata?.schemaVersion === 'asli-v2-six-section' ||
+      v2sc?.schema === 'asli-v2-six-section';
+    const bodyText =
+      isV2Record && v2sc
+        ? formatV2SixSectionToText(v2sc)
+        : String(record.generatedContent || record.content || '').trim();
     const toolName = String(record.toolDisplayName || record.toolName || 'AI Tool').trim();
     const metaRows = [
       ['Class', record.classLabel],
