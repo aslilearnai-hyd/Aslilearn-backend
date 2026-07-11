@@ -236,6 +236,19 @@ export async function generateBatchAndSave(params, opts = {}) {
 
   const subtopicName = String(params.subtopicName || params.subTopic || params.subtopic || '').trim();
 
+  // Multi-subtopic (combined paper): request may send an array of subtopics.
+  const subTopicList = (
+    Array.isArray(params.subTopics)
+      ? params.subTopics
+      : Array.isArray(params.subtopicNames)
+        ? params.subtopicNames
+        : []
+  )
+    .map((s) => String(s || '').trim())
+    .filter(Boolean);
+  const combinedSubtopicLabel =
+    subTopicList.length > 1 ? subTopicList.join(', ') : subtopicName;
+
   const toolDisplayName = String(params.toolName || params.toolDisplayName || toolSlug).trim();
   const qualityTierSettings = resolveQualityTierSettings(
     params.qualityTier || params.extraParams?.qualityTier,
@@ -410,7 +423,14 @@ export async function generateBatchAndSave(params, opts = {}) {
               });
               const v2 = await generateSixSectionContent(
                 toolSlug,
-                { board, classLabel: className, subject: subjectName, topic: topicName, subTopic: subtopicName },
+                {
+                  board,
+                  classLabel: className,
+                  subject: subjectName,
+                  topic: topicName,
+                  subTopic: subtopicName,
+                  ...(subTopicList.length > 1 ? { subTopics: subTopicList } : {}),
+                },
                 {
                   primaryModel: qualityTierSettings.primaryGeminiModel,
                   variantHint: v2VariantHint,
@@ -434,7 +454,7 @@ export async function generateBatchAndSave(params, opts = {}) {
                 classLabel: className,
                 subject: subjectName,
                 topic: topicName,
-                subtopic: subtopicName,
+                subtopic: combinedSubtopicLabel,
                 section: '',
                 content: coreTitle,
                 generatedContent: coreTitle,
@@ -446,6 +466,7 @@ export async function generateBatchAndSave(params, opts = {}) {
                   createdByName: opts.reqUser?.name || 'Super Admin',
                   createdByRole: 'super-admin',
                   contentType: 'structured',
+                  ...(subTopicList.length > 1 ? { subTopics: subTopicList } : {}),
                   structuredContent: v2.structuredContent,
                   formatSource: 'asli-v2-six-section',
                   schemaVersion: 'asli-v2-six-section',

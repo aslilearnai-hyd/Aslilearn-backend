@@ -50,14 +50,32 @@ export function assembleSixSectionPrompt(toolSlug, params = {}, opts = {}) {
   const ragLayer = buildRagLayer(opts.ragContext);
   const iitLayer = buildIitLayer({ board });
 
+  // Multiple subtopics → one COMBINED paper spanning all of them (like a unit test).
+  const subTopicList = Array.isArray(params.subTopics)
+    ? params.subTopics.map((s) => String(s || '').trim()).filter(Boolean)
+    : [];
+  const isMultiSubtopic = subTopicList.length > 1;
+  const subtopicLine = isMultiSubtopic
+    ? `Subtopics (COMBINED — cover ALL): ${subTopicList.join(' | ')}`
+    : `Subtopic: ${params.subTopic || params.subtopic || subTopicList[0] || ''}`;
+
   const userBlock = [
     'USER PARAMETERS',
     `Board/Level: ${board}`,
     `Class: ${params.classLabel || ''}`,
     `Subject: ${params.subject || ''}`,
     `Chapter/Topic: ${params.topic || ''}`,
-    `Subtopic: ${params.subTopic || params.subtopic || ''}`,
+    subtopicLine,
   ].join('\n');
+
+  const multiSubtopicBlock = isMultiSubtopic
+    ? [
+        `MULTI-SUBTOPIC COMBINED PAPER (mandatory): This is ONE combined ${'paper/worksheet'} covering ${subTopicList.length} subtopics — ${subTopicList.join('; ')}.`,
+        'Distribute questions ACROSS ALL listed subtopics as evenly as the format allows — do not focus on only one. Every listed subtopic must be represented.',
+        'Where the tool has sections, spread each subtopic through the sections rather than grouping one subtopic per section.',
+        'In each question, make clear (in the answer key / working) which subtopic it targets.',
+      ].join('\n')
+    : '';
 
   // Per-variant differentiation: multiple variants are generated for the SAME
   // topic. Without this each variant is near-identical. The hint carries a
@@ -71,6 +89,7 @@ export function assembleSixSectionPrompt(toolSlug, params = {}, opts = {}) {
     ragLayer,
     iitLayer,
     userBlock,
+    multiSubtopicBlock,
     variantBlock,
     `Return the JSON now, exactly in this shape (fill every field with real content):\n${pack.responseSchema}`,
     'Output ONLY the JSON object with all six sections. No prose, no code fences.',
