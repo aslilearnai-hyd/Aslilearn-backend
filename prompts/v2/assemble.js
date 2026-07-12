@@ -24,11 +24,12 @@ export function buildV2VariantHint({ variantIndex, batchSize, angle, scenario, s
   const idx = Number(variantIndex) || 1;
   const total = Number(batchSize) || 0;
   return [
-    `VARIANT ${idx}${total ? ` OF ${total}` : ''} — MANDATORY DIFFERENTIATION`,
-    `Several variants are generated for the SAME board/class/subject/topic/subtopic. This is variant #${idx}.`,
-    'Produce a DISTINCT variant: use DIFFERENT question stems, different numbers/data/examples, and a fresh framing',
-    `${angle ? `angle (${angle})` : 'angle'}${scenario ? ` with a different real-life scenario (${scenario})` : ''}.`,
-    'Do NOT reuse the wording, questions, or examples another variant for this exact topic would produce. Vary the title wording too.',
+    `VARIANT ${idx}${total ? ` OF ${total}` : ''} — MANDATORY DIFFERENTIATION (FRESHNESS RULE)`,
+    `Several variants are generated for the SAME board/class/subject/subtopic. This is variant #${idx}. It MUST be substantially different from the others.`,
+    'Use COMPLETELY DIFFERENT specific numbers, coefficients, equations, values, names, and real-world contexts than a typical or previous version of this topic would use.',
+    'Do NOT fall back to the most common textbook examples for this concept (they repeat across variants). Invent fresh problems every time.',
+    `${angle ? `Framing angle: ${angle}.` : ''}${scenario ? ` Real-life scenario: ${scenario}.` : ''}`,
+    'No question here may be a minor reword of a "standard" version. Vary the title wording too.',
     seed ? `Uniqueness key (do not print in output): ${seed}` : '',
   ]
     .filter(Boolean)
