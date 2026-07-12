@@ -19,20 +19,35 @@ function hasAllSixSections(json) {
 // Guaranteed clean math: convert Unicode math glyphs to ASCII and strip corruption
 // artifacts (U+FFFD) so nothing garbles in the UI or the PDF's Helvetica font — even
 // if the model ignores the ASCII-math prompt rule.
-// Only convert glyphs that render poorly / inconsistently. KEEP symbols that
-// render fine and look correct — degree °, super/subscripts x² Ni²⁺, Greek (Δ π θ),
-// ± ≤ ≥ ≠ × — so proper chemistry/physics notation (ΔG, E°cell, x²) stays clean
-// instead of turning into ugly ASCII ("E degcell", "DeltaG", "x^2").
+// The generation pipeline corrupts characters ABOVE Latin-1 (superscript charge
+// signs ⁺⁻, subscripts, arrows →, roots √, Greek Δπθ) into garbage/mojibake, while
+// Latin-1 (² ³ ° ± × ½) survives and renders fine. So: convert every above-Latin-1
+// symbol to safe ASCII, KEEP Latin-1, then strip any remaining non-Latin-1 bytes
+// (mojibake/replacement chars). Result stays clean even if the model emits Unicode.
 const MATH_UNICODE_MAP = {
   '→': '->', '←': '<-', '↔': '<->', '⇌': '<=>', '⇋': '<=>', '⇒': '=>', '⇔': '<=>',
-  '√': 'sqrt', '∛': 'cbrt', '∑': 'sum', '∏': 'product', '∫': 'integral', '∇': 'grad',
-  '–': '-', '—': '-', '‘': "'", '’': "'", '“': '"', '”': '"', '…': '...',
+  '√': 'sqrt', '∛': 'cbrt', '∑': 'sum', '∏': 'product', '∫': 'integral', '∂': 'd', '∇': 'grad', '∞': 'infinity',
+  '≤': '<=', '≥': '>=', '≠': '!=', '≈': '~=', '≡': '=',
+  '⁰': '^0', '⁴': '^4', '⁵': '^5', '⁶': '^6', '⁷': '^7', '⁸': '^8', '⁹': '^9', '⁺': '+', '⁻': '-', 'ⁿ': '^n',
+  '₀': '0', '₁': '1', '₂': '2', '₃': '3', '₄': '4', '₅': '5', '₆': '6', '₇': '7', '₈': '8', '₉': '9', '₊': '+', '₋': '-',
+  'Δ': 'delta ', '∆': 'delta ', 'π': 'pi', 'θ': 'theta', 'α': 'alpha', 'β': 'beta', 'γ': 'gamma',
+  'λ': 'lambda', 'μ': 'mu', 'Ω': 'ohm', 'Σ': 'sum', 'Π': 'product',
+  '–': '-', '—': '-', '‘': "'", '’': "'", '“': '"', '”': '"', '…': '...', '′': "'", '″': '"',
 };
-const MATH_UNICODE_RE = new RegExp(`[${Object.keys(MATH_UNICODE_MAP).join('')}]`, 'g');
 function sanitizeMathString(s) {
-  return String(s)
-    .replace(MATH_UNICODE_RE, (ch) => MATH_UNICODE_MAP[ch] || ch)
-    .replace(/�/g, ''); // strip replacement char (encoding corruption)
+  let t = String(s);
+  for (const u of Object.keys(MATH_UNICODE_MAP)) {
+    if (t.indexOf(u) !== -1) t = t.split(u).join(MATH_UNICODE_MAP[u]);
+  }
+  // Keep tab/newline/CR + printable ASCII + Latin-1 (2^3 ^0 deg etc render fine).
+  // Drop control chars, the replacement char, and anything above Latin-1 (the bytes
+  // the pipeline corrupts into mojibake/garbage).
+  let out = "";
+  for (const ch of t) {
+    const c = ch.codePointAt(0);
+    if (c === 9 || c === 10 || c === 13 || (c >= 0x20 && c <= 0xFF)) out += ch;
+  }
+  return out;
 }
 function deepSanitizeMath(val) {
   if (typeof val === 'string') return sanitizeMathString(val);
