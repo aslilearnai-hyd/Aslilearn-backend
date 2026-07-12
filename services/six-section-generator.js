@@ -19,14 +19,13 @@ function hasAllSixSections(json) {
 // Guaranteed clean math: convert Unicode math glyphs to ASCII and strip corruption
 // artifacts (U+FFFD) so nothing garbles in the UI or the PDF's Helvetica font — even
 // if the model ignores the ASCII-math prompt rule.
+// Only convert glyphs that render poorly / inconsistently. KEEP symbols that
+// render fine and look correct — degree °, super/subscripts x² Ni²⁺, Greek (Δ π θ),
+// ± ≤ ≥ ≠ × — so proper chemistry/physics notation (ΔG, E°cell, x²) stays clean
+// instead of turning into ugly ASCII ("E degcell", "DeltaG", "x^2").
 const MATH_UNICODE_MAP = {
   '→': '->', '←': '<-', '↔': '<->', '⇌': '<=>', '⇋': '<=>', '⇒': '=>', '⇔': '<=>',
-  '≤': '<=', '≥': '>=', '≠': '!=', '≈': '~=', '±': '+/-', '×': 'x', '÷': '/', '⋅': '*', '·': '*',
-  '√': 'sqrt', '∛': 'cbrt', '∞': 'infinity', '∑': 'sum', '∏': 'product', '∫': 'integral',
-  '∂': 'd', '∆': 'delta', '∇': 'grad', 'π': 'pi', 'θ': 'theta', 'α': 'alpha', 'β': 'beta',
-  'γ': 'gamma', 'λ': 'lambda', 'μ': 'mu', 'Ω': 'ohm', '°': ' deg', '′': "'", '″': '"',
-  '⁰': '^0', '¹': '^1', '²': '^2', '³': '^3', '⁴': '^4', '⁵': '^5', '⁶': '^6', '⁷': '^7', '⁸': '^8', '⁹': '^9',
-  '½': '1/2', '⅓': '1/3', '⅔': '2/3', '¼': '1/4', '¾': '3/4',
+  '√': 'sqrt', '∛': 'cbrt', '∑': 'sum', '∏': 'product', '∫': 'integral', '∇': 'grad',
   '–': '-', '—': '-', '‘': "'", '’': "'", '“': '"', '”': '"', '…': '...',
 };
 const MATH_UNICODE_RE = new RegExp(`[${Object.keys(MATH_UNICODE_MAP).join('')}]`, 'g');
