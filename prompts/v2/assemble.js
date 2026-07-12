@@ -20,16 +20,29 @@ export function isSixSectionV2Enabled() {
  * out near-identical. Pass the result as opts.variantHint to generateSixSectionContent.
  * @param {{ variantIndex:number, batchSize?:number, angle?:string, scenario?:string, seed?:string|number }} p
  */
+/** Distinct primary focus per generation — rotates so N papers on ONE subtopic
+ *  differ in KIND, not just numbers. This is the strongest anti-repetition lever. */
+const VARIANT_FOCI = [
+  'NUMERICAL & problem-solving — mostly calculation/formula-application questions with fresh values',
+  'CONCEPTUAL — definitions, "why/how" reasoning, and understanding-check questions',
+  'APPLICATION & real-world case scenarios grounded in Indian daily life',
+  'DIAGRAM / GRAPH / data-interpretation — sketch, label, read-off, and analyse questions',
+  'COMPARISON, assertion-reason, and error/misconception analysis',
+  'MIXED higher-order thinking (HOTS) — multi-step, evaluate, and design questions',
+];
+
 export function buildV2VariantHint({ variantIndex, batchSize, angle, scenario, seed } = {}) {
   const idx = Number(variantIndex) || 1;
   const total = Number(batchSize) || 0;
+  const focus = VARIANT_FOCI[(idx - 1) % VARIANT_FOCI.length];
   return [
-    `VARIANT ${idx}${total ? ` OF ${total}` : ''} — MANDATORY DIFFERENTIATION (FRESHNESS RULE)`,
-    `Several variants are generated for the SAME board/class/subject/subtopic. This is variant #${idx}. It MUST be substantially different from the others.`,
-    'Use COMPLETELY DIFFERENT specific numbers, coefficients, equations, values, names, and real-world contexts than a typical or previous version of this topic would use.',
-    'Do NOT fall back to the most common textbook examples for this concept (they repeat across variants). Invent fresh problems every time.',
-    `${angle ? `Framing angle: ${angle}.` : ''}${scenario ? ` Real-life scenario: ${scenario}.` : ''}`,
-    'No question here may be a minor reword of a "standard" version. Vary the title wording too.',
+    `VARIANT ${idx}${total ? ` OF ${total}` : ''} — MANDATORY DIFFERENTIATION (STRICT FRESHNESS RULE)`,
+    `Many papers are generated for the SAME subtopic. This is variant #${idx}. It MUST be substantially different from every other variant — a teacher comparing them should NOT feel they are the same paper reworded.`,
+    `PRIMARY FOCUS for THIS variant (make most questions fit this): ${focus}.`,
+    'Use COMPLETELY DIFFERENT specific numbers, coefficients, equations, ions, cells, values, names, and contexts than a typical or previous version would use. Change the actual problems, not just the numbers.',
+    'Do NOT fall back to the most common textbook examples for this concept — they repeat across variants. Invent genuinely fresh problems every time.',
+    `${angle ? `Secondary angle: ${angle}.` : ''}${scenario ? ` Scenario flavour: ${scenario}.` : ''}`,
+    'No question may be a minor reword of a "standard" version or of another variant. Vary the title wording too.',
     seed ? `Uniqueness key (do not print in output): ${seed}` : '',
   ]
     .filter(Boolean)
