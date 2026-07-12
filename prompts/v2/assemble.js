@@ -49,6 +49,36 @@ export function buildV2VariantHint({ variantIndex, batchSize, angle, scenario, s
     .join('\n');
 }
 
+const OVERUSED_STOP = new Set([
+  'which', 'what', 'following', 'value', 'using', 'cell', 'reaction', 'the', 'and', 'for', 'are', 'with', 'that',
+  'this', 'from', 'when', 'will', 'has', 'have', 'into', 'also', 'each', 'both', 'then', 'than', 'only', 'other',
+  'some', 'such', 'more', 'most', 'many', 'question', 'calculate', 'find', 'determine', 'given', 'state', 'explain',
+  'write', 'identify', 'define', 'below', 'above', 'their', 'they', 'these', 'those', 'during', 'based', 'shown',
+  'marks', 'mark', 'answer', 'correct', 'option', 'options', 'true', 'false', 'blank', 'blanks', 'fill', 'section',
+]);
+
+/** Detect over-represented example terms across prior questions (theme-level dedup).
+ *  General — no subject hardcoding; returns whatever tokens recur across many papers. */
+function findOverusedTerms(questions) {
+  if (!Array.isArray(questions) || questions.length < 3) return [];
+  const counts = {};
+  for (const q of questions) {
+    const seen = new Set();
+    const words = String(q).toLowerCase().match(/[a-z][a-z0-9-]{3,}/g) || [];
+    for (const w of words) {
+      if (OVERUSED_STOP.has(w) || seen.has(w)) continue;
+      seen.add(w);
+      counts[w] = (counts[w] || 0) + 1;
+    }
+  }
+  const threshold = Math.max(2, Math.ceil(questions.length * 0.3));
+  return Object.entries(counts)
+    .filter(([, c]) => c >= threshold)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 12)
+    .map(([w]) => w);
+}
+
 /**
  * @param {string} toolSlug
  * @param {{ board?:string, classLabel?:string, subject?:string, topic?:string, subTopic?:string }} params
@@ -98,15 +128,22 @@ export function assembleSixSectionPrompt(toolSlug, params = {}, opts = {}) {
 
   // Cross-slot dedup: the caller passes the exact problems already used for this
   // subtopic (this batch + recent saved records) so the model cannot repeat them.
-  const avoid = Array.isArray(opts.avoidQuestions)
-    ? opts.avoidQuestions.map((q) => String(q || '').trim()).filter(Boolean).slice(0, 40)
+  const avoidAll = Array.isArray(opts.avoidQuestions)
+    ? opts.avoidQuestions.map((q) => String(q || '').trim()).filter(Boolean)
     : [];
-  const avoidBlock = avoid.length
+  const avoid = avoidAll.slice(0, 40);
+  const overused = findOverusedTerms(avoidAll);
+  const avoidBlock = avoidAll.length
     ? [
         `ALREADY-USED PROBLEMS — DO NOT REPEAT OR LIGHTLY REWORD ANY OF THESE ${avoid.length} (they were used in other papers on this SAME subtopic). Every question you write must be genuinely different:`,
         ...avoid.map((q, i) => `${i + 1}. ${q.slice(0, 150)}`),
-        'If any draft question matches one above in its underlying problem, numbers pattern, or scenario, THROW IT OUT and write a fresh, different one.',
-      ].join('\n')
+        overused.length
+          ? `OVERUSED EXAMPLES — these specific examples/scenarios appear too often across papers; you are FORBIDDEN from building any question around them: ${overused.join(', ')}. Pick different examples, ions, cells, and scenarios.`
+          : '',
+        'If any draft question matches one above in its underlying problem, numbers pattern, scenario, OR reuses an overused example, THROW IT OUT and write a genuinely fresh one.',
+      ]
+        .filter(Boolean)
+        .join('\n')
     : '';
 
   const prompt = [
