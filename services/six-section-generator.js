@@ -16,6 +16,36 @@ function hasAllSixSections(json) {
   return V2_SECTION_IDS.every((id) => json[id] && typeof json[id] === 'object');
 }
 
+// Guaranteed clean math: convert Unicode math glyphs to ASCII and strip corruption
+// artifacts (U+FFFD) so nothing garbles in the UI or the PDF's Helvetica font — even
+// if the model ignores the ASCII-math prompt rule.
+const MATH_UNICODE_MAP = {
+  '→': '->', '←': '<-', '↔': '<->', '⇌': '<=>', '⇋': '<=>', '⇒': '=>', '⇔': '<=>',
+  '≤': '<=', '≥': '>=', '≠': '!=', '≈': '~=', '±': '+/-', '×': 'x', '÷': '/', '⋅': '*', '·': '*',
+  '√': 'sqrt', '∛': 'cbrt', '∞': 'infinity', '∑': 'sum', '∏': 'product', '∫': 'integral',
+  '∂': 'd', '∆': 'delta', '∇': 'grad', 'π': 'pi', 'θ': 'theta', 'α': 'alpha', 'β': 'beta',
+  'γ': 'gamma', 'λ': 'lambda', 'μ': 'mu', 'Ω': 'ohm', '°': ' deg', '′': "'", '″': '"',
+  '⁰': '^0', '¹': '^1', '²': '^2', '³': '^3', '⁴': '^4', '⁵': '^5', '⁶': '^6', '⁷': '^7', '⁸': '^8', '⁹': '^9',
+  '½': '1/2', '⅓': '1/3', '⅔': '2/3', '¼': '1/4', '¾': '3/4',
+  '–': '-', '—': '-', '‘': "'", '’': "'", '“': '"', '”': '"', '…': '...',
+};
+const MATH_UNICODE_RE = new RegExp(`[${Object.keys(MATH_UNICODE_MAP).join('')}]`, 'g');
+function sanitizeMathString(s) {
+  return String(s)
+    .replace(MATH_UNICODE_RE, (ch) => MATH_UNICODE_MAP[ch] || ch)
+    .replace(/�/g, ''); // strip replacement char (encoding corruption)
+}
+function deepSanitizeMath(val) {
+  if (typeof val === 'string') return sanitizeMathString(val);
+  if (Array.isArray(val)) return val.map(deepSanitizeMath);
+  if (val && typeof val === 'object') {
+    const out = {};
+    for (const [k, v] of Object.entries(val)) out[k] = deepSanitizeMath(v);
+    return out;
+  }
+  return val;
+}
+
 /**
  * @param {string} toolSlug
  * @param {object} params { board, classLabel, subject, topic, subTopic }
@@ -58,11 +88,11 @@ export async function generateSixSectionContent(toolSlug, params = {}, opts = {}
     if (hasAllSixSections(json)) {
       return {
         ok: true,
-        structuredContent: {
+        structuredContent: deepSanitizeMath({
           schema: 'asli-v2-six-section',
           tool: toolSlug,
           ...Object.fromEntries(V2_SECTION_IDS.map((id) => [id, json[id]])),
-        },
+        }),
       };
     }
   }
