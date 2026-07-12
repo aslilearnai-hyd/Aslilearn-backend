@@ -34,26 +34,51 @@ const MATH_UNICODE_MAP = {
   'λ': 'lambda', 'μ': 'mu', 'Ω': 'ohm', 'Σ': 'sum', 'Π': 'product',
   '–': '-', '—': '-', '‘': "'", '’': "'", '“': '"', '”': '"', '…': '...', '′': "'", '″': '"',
 };
+// Latin-1 MATH symbols that render fine and are legitimate (° ± ² ³ µ · ¹ ¼ ½ ¾ × ÷).
+// Everything else in Latin-1 (accented LETTERS À Â Ã Æ é …) is mojibake in our
+// English/math content, so it is dropped.
+const KEEP_LATIN1 = new Set([0xb0, 0xb1, 0xb2, 0xb3, 0xb5, 0xb7, 0xb9, 0xbc, 0xbd, 0xbe, 0xd7, 0xf7]);
+
 function sanitizeMathString(s) {
   let t = String(s);
   for (const u of Object.keys(MATH_UNICODE_MAP)) {
     if (t.indexOf(u) !== -1) t = t.split(u).join(MATH_UNICODE_MAP[u]);
   }
-  // Keep tab/newline/CR + printable ASCII + Latin-1 (2^3 ^0 deg etc render fine).
-  // Drop control chars, the replacement char, and anything above Latin-1 (the bytes
-  // the pipeline corrupts into mojibake/garbage).
-  let out = "";
+  // Keep tab/newline/CR + printable ASCII + math symbols + Devanagari + Telugu.
+  // Drop control chars, replacement chars, mojibake accented letters, and garbage.
+  let out = '';
   for (const ch of t) {
     const c = ch.codePointAt(0);
     if (
       c === 9 || c === 10 || c === 13 ||
-      (c >= 0x20 && c <= 0xff) || // ASCII + Latin-1
-      (c >= 0x900 && c <= 0x97f) || // Devanagari (Hindi) — keep
-      (c >= 0xc00 && c <= 0xc7f) // Telugu — keep
+      (c >= 0x20 && c <= 0x7e) || // printable ASCII
+      KEEP_LATIN1.has(c) || // math-only Latin-1 symbols
+      (c >= 0x900 && c <= 0x97f) || // Devanagari (Hindi)
+      (c >= 0xc00 && c <= 0xc7f) // Telugu
     )
       out += ch;
   }
   return out;
+}
+
+/** How much genuine garbage a raw model response has (replacement chars +
+ *  un-mappable above-Latin-1 that is not Hindi/Telugu). High = a garbled generation. */
+function rawGarbageScore(raw) {
+  let bad = 0;
+  for (const ch of String(raw)) {
+    const c = ch.codePointAt(0);
+    if (c === 0xfffd) {
+      bad += 1;
+    } else if (
+      c > 0xff &&
+      !(c >= 0x900 && c <= 0x97f) &&
+      !(c >= 0xc00 && c <= 0xc7f) &&
+      MATH_UNICODE_MAP[ch] === undefined
+    ) {
+      bad += 1;
+    }
+  }
+  return bad;
 }
 function deepSanitizeMath(val) {
   if (typeof val === 'string') return sanitizeMathString(val);
@@ -106,6 +131,11 @@ export async function generateSixSectionContent(toolSlug, params = {}, opts = {}
     lastRaw = raw;
     const json = extractJsonObject(raw);
     if (hasAllSixSections(json)) {
+      // Reject a visibly garbled generation and retry for a clean one (Flash-Lite
+      // garbles intermittently). On the last attempt, sanitize and keep what we have.
+      if (attempt < maxTries && rawGarbageScore(raw) >= 4) {
+        continue;
+      }
       return {
         ok: true,
         structuredContent: deepSanitizeMath({
