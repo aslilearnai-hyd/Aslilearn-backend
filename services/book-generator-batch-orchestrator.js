@@ -197,17 +197,29 @@ async function runPool(items, concurrency, worker) {
 /**
  * Book-grounded batch generation — always uses textbook RAG context.
  */
-/** Pull question texts from a V2 six-section structuredContent (for cross-slot dedup). */
+/** Pull DISTINCTIVE content from a V2 structuredContent — works for ALL families
+ *  (questions, activity steps, explanations, cards), so dedup applies to every tool. */
 function extractV2QuestionTextsBook(sc) {
   const core = (sc && sc.core) || {};
   const out = [];
-  for (const k of ['sectionA_mcq', 'sectionB_fib', 'sectionC_short', 'sectionD_application', 'sectionE_long']) {
-    const arr = Array.isArray(core[k]) ? core[k] : [];
-    for (const q of arr) {
-      const t = String((q && q.question) || '').trim();
-      if (t) out.push(t);
+  const walk = (v) => {
+    if (typeof v === 'string') {
+      const t = v.trim();
+      if (t.length >= 15) out.push(t);
+    } else if (Array.isArray(v)) {
+      for (const item of v) {
+        if (item && typeof item === 'object' && typeof item.question === 'string') {
+          const t = item.question.trim();
+          if (t.length >= 8) out.push(t);
+        } else {
+          walk(item);
+        }
+      }
+    } else if (v && typeof v === 'object') {
+      for (const val of Object.values(v)) walk(val);
     }
-  }
+  };
+  walk(core);
   return out;
 }
 
