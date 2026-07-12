@@ -96,6 +96,19 @@ export function assembleSixSectionPrompt(toolSlug, params = {}, opts = {}) {
   // distinct angle/scenario/seed so variants diverge in questions and examples.
   const variantBlock = opts.variantHint ? String(opts.variantHint).trim() : '';
 
+  // Cross-slot dedup: the caller passes the exact problems already used for this
+  // subtopic (this batch + recent saved records) so the model cannot repeat them.
+  const avoid = Array.isArray(opts.avoidQuestions)
+    ? opts.avoidQuestions.map((q) => String(q || '').trim()).filter(Boolean).slice(0, 40)
+    : [];
+  const avoidBlock = avoid.length
+    ? [
+        `ALREADY-USED PROBLEMS — DO NOT REPEAT OR LIGHTLY REWORD ANY OF THESE ${avoid.length} (they were used in other papers on this SAME subtopic). Every question you write must be genuinely different:`,
+        ...avoid.map((q, i) => `${i + 1}. ${q.slice(0, 150)}`),
+        'If any draft question matches one above in its underlying problem, numbers pattern, or scenario, THROW IT OUT and write a fresh, different one.',
+      ].join('\n')
+    : '';
+
   const prompt = [
     MASTER_SYSTEM_PROMPT,
     pack.instructions,
@@ -105,6 +118,7 @@ export function assembleSixSectionPrompt(toolSlug, params = {}, opts = {}) {
     userBlock,
     multiSubtopicBlock,
     variantBlock,
+    avoidBlock,
     `Return the JSON now, exactly in this shape (fill every field with real content):\n${pack.responseSchema}`,
     'Output ONLY the JSON object with all six sections. No prose, no code fences.',
   ]

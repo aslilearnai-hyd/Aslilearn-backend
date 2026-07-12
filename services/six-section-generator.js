@@ -45,7 +45,13 @@ function sanitizeMathString(s) {
   let out = "";
   for (const ch of t) {
     const c = ch.codePointAt(0);
-    if (c === 9 || c === 10 || c === 13 || (c >= 0x20 && c <= 0xFF)) out += ch;
+    if (
+      c === 9 || c === 10 || c === 13 ||
+      (c >= 0x20 && c <= 0xff) || // ASCII + Latin-1
+      (c >= 0x900 && c <= 0x97f) || // Devanagari (Hindi) — keep
+      (c >= 0xc00 && c <= 0xc7f) // Telugu — keep
+    )
+      out += ch;
   }
   return out;
 }

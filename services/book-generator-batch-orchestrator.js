@@ -197,6 +197,20 @@ async function runPool(items, concurrency, worker) {
 /**
  * Book-grounded batch generation — always uses textbook RAG context.
  */
+/** Pull question texts from a V2 six-section structuredContent (for cross-slot dedup). */
+function extractV2QuestionTextsBook(sc) {
+  const core = (sc && sc.core) || {};
+  const out = [];
+  for (const k of ['sectionA_mcq', 'sectionB_fib', 'sectionC_short', 'sectionD_application', 'sectionE_long']) {
+    const arr = Array.isArray(core[k]) ? core[k] : [];
+    for (const q of arr) {
+      const t = String((q && q.question) || '').trim();
+      if (t) out.push(t);
+    }
+  }
+  return out;
+}
+
 export async function generateBookBatchAndSave(params = {}, opts = {}) {
   const toolSlug = String(params.toolSlug || params.toolName || '').trim();
   if (!isBookBasedToolSlug(toolSlug)) {
@@ -277,6 +291,9 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
     const historicalTitles = Array.isArray(historical.titles) ? [...historical.titles] : [];
     const conceptMasteryBatch = toolSlug === 'concept-mastery-helper';
     const savedRecords = [];
+
+    // Cross-slot dedup: each saved V2 slot appends its questions so later slots avoid them.
+    const usedV2Questions = [];
     const failures = [];
     let tokenUsage = null;
     let cost = null;
@@ -403,6 +420,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                   ragContext: v2RagContext,
                   variantHint: v2VariantHint,
                   temperature: Math.min(0.9, 0.6 + (variantIndex - 1) * 0.06),
+                  avoidQuestions: usedV2Questions.slice(0, 40),
                 },
               );
               if (!v2.ok) {
@@ -410,6 +428,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                 if (attempt < maxAttempts) continue;
                 throw new Error(lastError);
               }
+              usedV2Questions.push(...extractV2QuestionTextsBook(v2.structuredContent));
               const uid = opts.reqUser?.userId || opts.reqUser?._id || 'unknown';
               const teacherId = mongoose.Types.ObjectId.isValid(uid) ? uid : undefined;
               const coreTitle =
