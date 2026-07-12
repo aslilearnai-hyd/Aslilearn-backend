@@ -214,6 +214,43 @@ function mapRandomRecord(rec) {
 
  */
 
+/** Pull the question texts out of a V2 six-section structuredContent. */
+function extractV2QuestionTexts(sc) {
+  const core = (sc && sc.core) || {};
+  const out = [];
+  for (const k of ['sectionA_mcq', 'sectionB_fib', 'sectionC_short', 'sectionD_application', 'sectionE_long']) {
+    const arr = Array.isArray(core[k]) ? core[k] : [];
+    for (const q of arr) {
+      const t = String((q && q.question) || '').trim();
+      if (t) out.push(t);
+    }
+  }
+  return out;
+}
+
+/** Recent already-generated question texts for this exact scope (cross-batch dedup). */
+async function collectPriorV2Questions(scope, limit = 12) {
+  try {
+    const docs = await AiToolGeneration.find({
+      toolName: scope.toolSlug,
+      board: scope.board,
+      classLabel: scope.className,
+      subject: scope.subject,
+      subtopic: scope.subtopic,
+      'metadata.schemaVersion': 'asli-v2-six-section',
+    })
+      .sort({ createdAt: -1 })
+      .limit(limit)
+      .select('metadata.structuredContent')
+      .lean();
+    const out = [];
+    for (const d of docs) out.push(...extractV2QuestionTexts(d?.metadata?.structuredContent));
+    return out;
+  } catch {
+    return [];
+  }
+}
+
 export async function generateBatchAndSave(params, opts = {}) {
 
   const batchSize = getBatchSize(opts.batchSize ?? params.batchSize);
@@ -372,6 +409,11 @@ export async function generateBatchAndSave(params, opts = {}) {
 
     const savedRecords = [];
 
+    // Cross-slot / cross-batch dedup: seed with recent questions already generated
+    // for this exact subtopic; each saved slot appends its questions so later slots
+    // avoid them. Passed to the V2 generator as avoidQuestions.
+    const usedV2Questions = isV2SupportedTool(toolSlug) ? await collectPriorV2Questions(scope) : [];
+
     const failures = [];
 
     let tokenUsage = null;
@@ -436,6 +478,7 @@ export async function generateBatchAndSave(params, opts = {}) {
                   primaryModel: qualityTierSettings.primaryGeminiModel,
                   variantHint: v2VariantHint,
                   temperature: Math.min(0.9, 0.6 + (variantIndex - 1) * 0.06),
+                  avoidQuestions: usedV2Questions.slice(0, 40),
                 },
               );
               if (!v2.ok) {
@@ -443,6 +486,8 @@ export async function generateBatchAndSave(params, opts = {}) {
                 if (attempt < maxAttempts) continue;
                 throw new Error(lastError);
               }
+              // record this slot's questions so later slots avoid repeating them
+              usedV2Questions.push(...extractV2QuestionTexts(v2.structuredContent));
               const uid = opts.reqUser?.userId || opts.reqUser?._id || 'unknown';
               const teacherId = mongoose.Types.ObjectId.isValid(uid) ? uid : undefined;
               const coreTitle =
