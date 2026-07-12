@@ -53,6 +53,12 @@ function getFingerprintPromptLimit() {
 
 
 
+function asIterableList(value) {
+  if (Array.isArray(value)) return value;
+  if (value && typeof value === 'object' && Array.isArray(value.items)) return value.items;
+  return [];
+}
+
 /**
 
  * Load compact historical context — NEVER full history (scales to 100k+ records).
@@ -120,13 +126,13 @@ export async function buildHistoricalGenerationContext(scope) {
 
 
 
-    for (const o of structured.learning_objectives || structured.objectives || []) {
+    for (const o of asIterableList(structured.learning_objectives || structured.objectives)) {
 
       if (String(o || '').trim()) objectiveSnippets.push(String(o).trim().slice(0, 120));
 
     }
 
-    for (const a of structured.teaching_activities || structured.activities || []) {
+    for (const a of asIterableList(structured.teaching_activities || structured.activities || structured.steps)) {
 
       if (String(a || '').trim()) activitySnippets.push(String(a).trim().slice(0, 120));
 
@@ -279,18 +285,35 @@ function extractQuestionSnippetsFromStructured(structured, limit = 20) {
 
 
 
-  for (const q of structured.questions || []) pushQ(q);
+  for (const q of asIterableList(structured.questions)) pushQ(q);
 
-  for (const sec of structured.sections || []) {
+  for (const sec of asIterableList(structured.sections)) {
 
-    for (const q of sec?.questions || []) pushQ(q);
+    for (const q of asIterableList(sec?.questions)) pushQ(q);
 
   }
 
-  for (const key of ['section_a', 'section_b', 'section_c', 'section_d', 'section_e']) {
-
-    for (const q of structured[key] || []) pushQ(q);
-
+  for (const key of [
+    'section_a',
+    'section_b',
+    'section_c',
+    'section_d',
+    'section_e',
+    'section_a_mcqs',
+    'section_b_fib',
+    'section_c_vsa',
+    'section_d_sa',
+    'section_e_competency',
+    'sectionA_mcq',
+    'sectionB_fib',
+    'sectionC_short',
+    'sectionD_application',
+    'sectionE_long',
+  ]) {
+    const pool =
+      structured[key] ??
+      (structured.core && typeof structured.core === 'object' ? structured.core[key] : undefined);
+    for (const q of asIterableList(pool)) pushQ(q);
   }
 
   return out.slice(0, limit);

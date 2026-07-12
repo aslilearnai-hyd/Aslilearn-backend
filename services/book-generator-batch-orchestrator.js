@@ -271,8 +271,10 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
     const historical = await buildBookHistoricalGenerationContext(scope);
     const batchTitles = [];
     const batchQuestionTexts = [];
-    const historicalQuestionTexts = [...historical.questionSnippets];
-    const historicalTitles = [...historical.titles];
+    const historicalQuestionTexts = Array.isArray(historical.questionSnippets)
+      ? [...historical.questionSnippets]
+      : [];
+    const historicalTitles = Array.isArray(historical.titles) ? [...historical.titles] : [];
     const conceptMasteryBatch = toolSlug === 'concept-mastery-helper';
     const savedRecords = [];
     const failures = [];

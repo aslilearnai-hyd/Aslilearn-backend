@@ -359,9 +359,10 @@ export async function generateBatchAndSave(params, opts = {}) {
 
     const historical = await buildHistoricalGenerationContext(scope);
 
-    const historicalQuestionTexts = [...historical.questionSnippets];
-
-    const historicalTitles = [...historical.titles];
+    const historicalQuestionTexts = Array.isArray(historical.questionSnippets)
+      ? [...historical.questionSnippets]
+      : [];
+    const historicalTitles = Array.isArray(historical.titles) ? [...historical.titles] : [];
 
 
 
