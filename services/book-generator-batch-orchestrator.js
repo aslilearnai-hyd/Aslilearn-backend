@@ -64,7 +64,7 @@ import { stripMarkdownSyntax, deepStripMarkdownValues } from '../utils/strip-mar
 import { computeScaffoldDensity, SCAFFOLD_DENSITY_CEILING } from './ai-generator-quality-gate.js';
 import { generateSixSectionContent } from './six-section-generator.js';
 import { isSixSectionV2Enabled, buildV2VariantHint } from '../prompts/v2/assemble.js';
-import { isV2SupportedTool } from '../prompts/v2/tool-packs.js';
+import { isV2SupportedTool, v2ToolFamily } from '../prompts/v2/tool-packs.js';
 
 /** Question tools that carry scaffold-prone question pools and cross-slot dedup. */
 const BOOK_QUESTION_UNIQUENESS_TOOLS = new Set([
@@ -414,6 +414,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               const v2VariantHint = buildV2VariantHint({
                 variantIndex,
                 batchSize,
+                family: v2ToolFamily(toolSlug),
                 angle: getAiGeneratorVariantAngle(variantIndex, subjectName),
                 scenario: getAiGeneratorVariantScenario(variantIndex, subjectName),
                 seed: `${Date.now()}-book-v${variantIndex}-a${attempt}`,
