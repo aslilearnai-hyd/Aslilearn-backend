@@ -29,6 +29,8 @@ import { persistGenerationFingerprints } from './ai-generator-fingerprint-servic
 
 import { computeGeminiCostFromTokenUsage } from '../utils/gemini-token-cost.js';
 import { lockBoardKey, resolveClassLabelForAiToolStorage } from '../utils/board-label.js';
+import { formatStructuredToolOutput } from '../config/aiToolTemplates.js';
+import { mapV2StructuredToLegacy } from '../utils/v2-structured-to-legacy.js';
 
 import {
 
@@ -507,6 +509,17 @@ export async function generateBatchAndSave(params, opts = {}) {
               const teacherId = mongoose.Types.ObjectId.isValid(uid) ? uid : undefined;
               const coreTitle =
                 v2.structuredContent?.core?.title || v2.structuredContent?.core?.worksheetTitle || 'Six-section content';
+              const legacyStructured = mapV2StructuredToLegacy(toolSlug, v2.structuredContent);
+              let persistContent = coreTitle;
+              if (legacyStructured) {
+                try {
+                  persistContent =
+                    formatStructuredToolOutput(toolSlug, legacyStructured) ||
+                    JSON.stringify(legacyStructured);
+                } catch {
+                  persistContent = JSON.stringify(legacyStructured);
+                }
+              }
               const rec = await AiToolGeneration.create({
                 toolName: toolSlug,
                 toolDisplayName,
@@ -517,8 +530,8 @@ export async function generateBatchAndSave(params, opts = {}) {
                 topic: topicName,
                 subtopic: combinedSubtopicLabel,
                 section: '',
-                content: coreTitle,
-                generatedContent: coreTitle,
+                content: persistContent,
+                generatedContent: persistContent,
                 generatedBy: uid,
                 status: 'active',
                 reviewStatus: params.reviewStatus || 'approved',
@@ -529,6 +542,7 @@ export async function generateBatchAndSave(params, opts = {}) {
                   contentType: 'structured',
                   ...(subTopicList.length > 1 ? { subTopics: subTopicList } : {}),
                   structuredContent: v2.structuredContent,
+                  ...(legacyStructured ? { legacyStructuredContent: legacyStructured } : {}),
                   formatSource: 'asli-v2-six-section',
                   schemaVersion: 'asli-v2-six-section',
                   generationVariant: variantIndex,

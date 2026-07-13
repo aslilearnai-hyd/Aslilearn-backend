@@ -65,6 +65,7 @@ import { computeScaffoldDensity, SCAFFOLD_DENSITY_CEILING } from './ai-generator
 import { generateSixSectionContent } from './six-section-generator.js';
 import { isSixSectionV2Enabled, buildV2VariantHint } from '../prompts/v2/assemble.js';
 import { isV2SupportedTool, v2ToolFamily } from '../prompts/v2/tool-packs.js';
+import { mapV2StructuredToLegacy } from '../utils/v2-structured-to-legacy.js';
 
 /** Question tools that carry scaffold-prone question pools and cross-slot dedup. */
 const BOOK_QUESTION_UNIQUENESS_TOOLS = new Set([
@@ -448,6 +449,17 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                 v2.structuredContent?.core?.title ||
                 v2.structuredContent?.core?.worksheetTitle ||
                 'Six-section content';
+              const legacyStructured = mapV2StructuredToLegacy(toolSlug, v2.structuredContent);
+              let persistContent = coreTitle;
+              if (legacyStructured) {
+                try {
+                  persistContent =
+                    formatStructuredToolOutput(toolSlug, legacyStructured) ||
+                    JSON.stringify(legacyStructured);
+                } catch {
+                  persistContent = JSON.stringify(legacyStructured);
+                }
+              }
               const rec = await withMongoRetry(() =>
                 AiToolGeneration.create({
                   toolName: toolSlug,
@@ -459,8 +471,8 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                   topic: topicName || book.title,
                   subtopic: subtopicName,
                   section: '',
-                  content: coreTitle,
-                  generatedContent: coreTitle,
+                  content: persistContent,
+                  generatedContent: persistContent,
                   generatedBy: uid,
                   status: 'active',
                   reviewStatus: params.reviewStatus || 'approved',
@@ -475,6 +487,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                     createdByRole: 'super-admin',
                     contentType: 'structured',
                     structuredContent: v2.structuredContent,
+                    ...(legacyStructured ? { legacyStructuredContent: legacyStructured } : {}),
                     formatSource: 'asli-v2-six-section',
                     schemaVersion: 'asli-v2-six-section',
                     generationVariant: variantIndex,

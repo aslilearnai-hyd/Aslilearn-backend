@@ -39,6 +39,10 @@ import {
 } from './ai-content-engine-service.js';
 import { validateExamPaperPipeline } from './exam-paper-pipeline-validator.js';
 import { padAiGeneratorCanonicalSections } from '../utils/ai-generator-section-pad.js';
+import {
+  isV2SixSectionStructured,
+  mapV2StructuredToLegacy,
+} from '../utils/v2-structured-to-legacy.js';
 
 const WORKSHEET_HEADING_SECTION = {
   section_a: WORKSHEET_SECTION_LABELS.A,
@@ -468,21 +472,41 @@ function tryParseJson(text) {
 }
 
 /** @param {string} content @param {Record<string, unknown>} [metadata] */
+function maybeMapV2ToLegacy(structured) {
+  if (!isV2SixSectionStructured(structured)) return structured;
+  const toolSlug = String(structured.tool || '').trim();
+  const legacy = mapV2StructuredToLegacy(toolSlug, structured);
+  // Prefer legacy dashboard shape; keep V2 only if mapping failed (empty cards/sections).
+  return legacy || structured;
+}
+
+/**
+ * Resolve stored structured payload for teacher/student dashboards.
+ * V2 six-section records are mapped to legacy keys (cards[], sections[], …).
+ */
 export function extractStructuredFromStoredContent(content, metadata = {}) {
   const meta = metadata && typeof metadata === 'object' ? metadata : {};
+  // Prefer precomputed legacy snapshot when present (newer V2 saves).
+  if (
+    meta.legacyStructuredContent &&
+    typeof meta.legacyStructuredContent === 'object' &&
+    !Array.isArray(meta.legacyStructuredContent)
+  ) {
+    return meta.legacyStructuredContent;
+  }
   if (meta.structuredContent && typeof meta.structuredContent === 'object' && !Array.isArray(meta.structuredContent)) {
-    return meta.structuredContent;
+    return maybeMapV2ToLegacy(meta.structuredContent);
   }
   const parsed = tryParseJson(content);
   if (!parsed || typeof parsed !== 'object') return null;
   if (Array.isArray(parsed)) return { items: parsed };
   if (parsed.structuredContent && typeof parsed.structuredContent === 'object') {
-    return parsed.structuredContent;
+    return maybeMapV2ToLegacy(parsed.structuredContent);
   }
   if (parsed.rawData && typeof parsed.rawData === 'object' && !Array.isArray(parsed.rawData)) {
-    return parsed.rawData;
+    return maybeMapV2ToLegacy(parsed.rawData);
   }
-  return parsed;
+  return maybeMapV2ToLegacy(parsed);
 }
 
 /** Merge concept deck / nested rows for field lookup. */
@@ -1230,11 +1254,19 @@ export function validateDashboardAiToolContent(toolSlug, rawContent, options = {
   if (isValidAiToolSlug(slug)) {
     const structural = validateToolSpecificStructuredContent(slug, structured, contentType, content, validationMeta);
     if (!structural.valid) {
-      return {
-        valid: false,
-        code: 'AI_TOOL_CONTENT_INCOMPLETE',
-        message: structural.message || 'Content does not meet the minimum structure for this tool.',
-      };
+      // V2 six-section decks often store 3–4 strong cards; legacy save gate wants 5+.
+      // Teacher delivery should still show usable decks (extraStrictChecks enforces front/back).
+      const cards = Array.isArray(structured?.cards) ? structured.cards : [];
+      const usableFlashcards =
+        (slug === 'flashcard-generator' || slug === 'my-study-decks') &&
+        cards.filter((c) => isMeaningfulScalar(c?.front) && isMeaningfulScalar(c?.back)).length >= 3;
+      if (!usableFlashcards) {
+        return {
+          valid: false,
+          code: 'AI_TOOL_CONTENT_INCOMPLETE',
+          message: structural.message || 'Content does not meet the minimum structure for this tool.',
+        };
+      }
     }
   }
 
@@ -1444,6 +1476,8 @@ export function validateDashboardAiToolDoc(toolSlug, doc) {
   const metadata =
     doc?.metadata && typeof doc.metadata === 'object' ? /** @type {Record<string, unknown>} */ (doc.metadata) : {};
   // Merge document-level curriculum fields so finalize/pad can fill titles correctly.
+  // Clear batch save flags so delivery can scaffold narrative fields V2 often omits
+  // (batch saves skip framework padding; teacher dashboard still needs a complete deck).
   const deliveryMetadata = {
     ...metadata,
     subject: doc?.subject || metadata.subject,
@@ -1451,6 +1485,9 @@ export function validateDashboardAiToolDoc(toolSlug, doc) {
     subTopic: doc?.subtopic || doc?.subTopic || metadata.subTopic || metadata.subtopic,
     subtopic: doc?.subtopic || metadata.subtopic,
     classLabel: doc?.classLabel || metadata.classLabel,
+    batchOrchestrator: false,
+    skipFrameworkScaffold: false,
+    skipCardPadding: false,
   };
   return validateDashboardAiToolContent(toolSlug, content, {
     metadata: deliveryMetadata,
