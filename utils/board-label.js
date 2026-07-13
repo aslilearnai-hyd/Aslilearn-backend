@@ -59,7 +59,8 @@ export function resolveClassLabelForAiToolStorage(className, _board) {
 
 /**
  * MongoDB filter for `board` when reading. Empty string matches only empty board.
- * Prefer $in over $regex so board indexes can be used (CBSE/IIT stored via lockBoardKey).
+ * CBSE uses $in (indexed). IIT/NEET uses case-insensitive substring regex so legacy
+ * labels (IIT, IIT Foundation, iit/neet, etc.) still match — a narrow $in hid them.
  */
 export function boardMongoMatch(rawBoard) {
   const s = trimBoard(rawBoard);
@@ -70,7 +71,7 @@ export function boardMongoMatch(rawBoard) {
     return { $in: ['CBSE', 'CBSC', 'cbse', 'cbsc'] };
   }
   if (compact.includes('IIT') || compact.includes('NEET') || compact.includes('JEE')) {
-    return { $in: ['IIT/NEET', 'IIT', 'NEET', 'IIT/JEE', 'JEE'] };
+    return { $regex: /iit|neet|jee/i };
   }
   const locked = lockBoardKey(s);
   if (locked && locked !== s) {
