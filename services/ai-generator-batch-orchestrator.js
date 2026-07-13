@@ -23,7 +23,7 @@ import { extractTitleFromStructured } from './ai-generator-content-extractor.js'
 import { computeScaffoldDensity, SCAFFOLD_DENSITY_CEILING } from './ai-generator-quality-gate.js';
 import { generateSixSectionContent } from './six-section-generator.js';
 import { isSixSectionV2Enabled, buildV2VariantHint } from '../prompts/v2/assemble.js';
-import { isV2SupportedTool } from '../prompts/v2/tool-packs.js';
+import { isV2SupportedTool, v2ToolFamily } from '../prompts/v2/tool-packs.js';
 
 import { persistGenerationFingerprints } from './ai-generator-fingerprint-service.js';
 
@@ -474,6 +474,7 @@ export async function generateBatchAndSave(params, opts = {}) {
               const v2VariantHint = buildV2VariantHint({
                 variantIndex,
                 batchSize,
+                family: v2ToolFamily(toolSlug),
                 angle: getAiGeneratorVariantAngle(variantIndex, subjectName),
                 scenario: getAiGeneratorVariantScenario(variantIndex, subjectName),
                 seed: `${Date.now()}-v${variantIndex}-a${attempt}`,
