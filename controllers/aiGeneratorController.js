@@ -191,16 +191,23 @@ function isDeprecatedGeneratorRecord(record) {
   );
 }
 
-/** Fields loaded for accordion list views — omit full structuredContent (fetch on View). */
+/** Fields loaded for accordion list views — omit full bodies (fetch on View). */
 export const GENERATOR_LIST_SELECT =
-  'toolName toolDisplayName board classLabel subject topic subtopic createdAt updatedAt generatedContent metadata.bookTitle metadata.extraParams metadata.generationVariant metadata.formatSource metadata.bookGenerator';
+  'toolName toolDisplayName board classLabel subject topic subtopic createdAt updatedAt metadata.bookTitle metadata.extraParams metadata.generationVariant metadata.formatSource metadata.bookGenerator metadata.listPreview metadata.cost';
 
-const GENERATOR_LIST_PREVIEW_CHARS = 3000;
+/** Short list preview only — full content loads on View/Edit. */
+const GENERATOR_LIST_PREVIEW_CHARS = 280;
+
+/** Default cap when client/env omit limit (prevents unbounded list load). */
+export const GENERATOR_RECORDS_LIST_DEFAULT_LIMIT = 400;
 
 /** One-line preview for records list (no full structured JSON over the wire). */
 export function buildGeneratorListPreview(record) {
   if (!record) return '';
   const meta = record.metadata && typeof record.metadata === 'object' ? record.metadata : {};
+  const cached = String(meta.listPreview || '').trim();
+  if (cached) return cached.slice(0, GENERATOR_LIST_PREVIEW_CHARS);
+
   const structured =
     meta.structuredContent && typeof meta.structuredContent === 'object'
       ? meta.structuredContent
@@ -212,44 +219,34 @@ export function buildGeneratorListPreview(record) {
         structured.lesson_name ||
         structured.mock_test_title ||
         structured.paper_title ||
+        structured.core?.title ||
         '',
     ).trim();
-    const passage = String(
-      structured.passage || structured.content || structured.story_passage_content || '',
-    ).trim();
-    if (passage) return passage.slice(0, 320);
     if (title) return title.slice(0, 200);
-    const firstQuestion = [
-      ...(Array.isArray(structured.read_and_recall_questions) ? structured.read_and_recall_questions : []),
-      ...(Array.isArray(structured.questions) ? structured.questions : []),
-      ...(Array.isArray(structured.sections) ? structured.sections.flatMap((s) => s?.questions || []) : []),
-    ]
-      .map((q) => (typeof q === 'string' ? q : String(q?.question || q?.text || '')).trim())
-      .find(Boolean);
-    if (firstQuestion) return firstQuestion.slice(0, 280);
-    return title || '';
   }
+
   const raw = String(record.generatedContent || record.content || '').trim();
-  return raw.length <= GENERATOR_LIST_PREVIEW_CHARS ? raw : raw.slice(0, GENERATOR_LIST_PREVIEW_CHARS);
+  if (raw) {
+    return raw.length <= GENERATOR_LIST_PREVIEW_CHARS
+      ? raw
+      : raw.slice(0, GENERATOR_LIST_PREVIEW_CHARS);
+  }
+
+  return [record.topic, record.subtopic, record.toolDisplayName || record.toolName]
+    .map((x) => String(x || '').trim())
+    .filter(Boolean)
+    .join(' — ')
+    .slice(0, GENERATOR_LIST_PREVIEW_CHARS);
 }
 
 /** Shrink a generation row for grouped list APIs (no full structured JSON in list responses). */
 export function slimGeneratorRecordForList(record) {
   if (!record) return null;
   const meta = record.metadata && typeof record.metadata === 'object' ? record.metadata : {};
-  const structured =
-    meta.structuredContent && typeof meta.structuredContent === 'object'
-      ? meta.structuredContent
-      : null;
-  const raw = String(record.generatedContent || record.content || '');
   const extraParams =
     meta.extraParams && typeof meta.extraParams === 'object' ? meta.extraParams : undefined;
 
-  const listPreview = structured
-    ? buildGeneratorListPreview(record)
-    : raw.length <= GENERATOR_LIST_PREVIEW_CHARS
-      ? raw
-      : raw.slice(0, GENERATOR_LIST_PREVIEW_CHARS);
+  const listPreview = buildGeneratorListPreview(record);
 
   return {
     _id: record._id,
@@ -270,6 +267,7 @@ export function slimGeneratorRecordForList(record) {
       bookGenerator: meta.bookGenerator,
       formatSource: meta.formatSource,
       generationVariant: meta.generationVariant,
+      ...(meta.cost && typeof meta.cost === 'object' ? { cost: meta.cost } : {}),
     },
   };
 }
@@ -650,33 +648,40 @@ export async function getAllGeneratorRecords(req, res) {
         ? Math.min(limitRaw, 10000)
         : Number.isFinite(envCap) && envCap > 0
           ? Math.min(envCap, 10000)
-          : 0;
+          : GENERATOR_RECORDS_LIST_DEFAULT_LIMIT;
 
+    // List view: metadata + curriculum only (no generatedContent/content bodies).
     const masterQuery = AiToolGeneration.find(mongoQuery)
-      .select(`${GENERATOR_LIST_SELECT} content`)
-      .sort({ createdAt: -1 });
+      .select(GENERATOR_LIST_SELECT)
+      .sort({ createdAt: -1 })
+      .limit(listLimit)
+      .lean();
+    // Legacy collection: small cap only — most traffic is on AiToolGeneration now.
+    const legacyLimit = Math.min(50, listLimit);
     const legacyQueryFind = AIGeneratorRecord.find(legacyQuery)
-      .select('toolSlug toolName board className subjectName topicName subtopicName generatedContent createdAt updatedAt')
-      .sort({ createdAt: -1 });
-    if (listLimit > 0) {
-      masterQuery.limit(listLimit);
-      legacyQueryFind.limit(listLimit);
-    }
+      .select(
+        'toolSlug toolName board className subjectName topicName subtopicName createdAt updatedAt',
+      )
+      .sort({ createdAt: -1 })
+      .limit(legacyLimit)
+      .lean();
 
-    const [totalMaster, fromMaster, fromLegacyColl] = await withMongoRetry(() =>
+    const [totalMaster, totalLegacy, fromMaster, fromLegacyColl] = await withMongoRetry(() =>
       Promise.all([
         AiToolGeneration.countDocuments(mongoQuery),
-        masterQuery.lean(),
-        legacyQueryFind.lean(),
+        AIGeneratorRecord.countDocuments(legacyQuery),
+        masterQuery,
+        legacyQueryFind,
       ]),
     );
     const legacyMapped = fromLegacyColl.map(mapLegacyAiGeneratorDoc).filter(Boolean);
     const items = [...fromMaster, ...legacyMapped]
       .map(slimGeneratorRecordForList)
       .filter(Boolean)
-      .sort(compareAiToolRecordsByVariantThenDate);
+      .sort(compareAiToolRecordsByVariantThenDate)
+      .slice(0, listLimit);
     const grouped = groupAiGeneratorRecords(items);
-    const total = totalMaster + legacyMapped.length;
+    const total = totalMaster + totalLegacy;
 
     return res.json({
       success: true,
@@ -684,7 +689,7 @@ export async function getAllGeneratorRecords(req, res) {
         grouped,
         total,
         loadedCount: items.length,
-        truncated: listLimit > 0 && total > items.length,
+        truncated: total > items.length,
       },
     });
   } catch (error) {
