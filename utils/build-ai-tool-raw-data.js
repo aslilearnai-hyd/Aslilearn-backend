@@ -35,6 +35,10 @@ export function buildDeliveryMetadataFromDoc(doc) {
     subTopic: doc?.subtopic || doc?.subTopic || metadata.subTopic || metadata.subtopic,
     subtopic: doc?.subtopic || metadata.subtopic,
     classLabel: doc?.classLabel || metadata.classLabel,
+    // Delivery must not inherit batch save flags that skip flashcard scaffolding.
+    batchOrchestrator: false,
+    skipFrameworkScaffold: false,
+    skipCardPadding: false,
   };
 }
 
