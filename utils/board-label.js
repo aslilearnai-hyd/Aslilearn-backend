@@ -59,7 +59,7 @@ export function resolveClassLabelForAiToolStorage(className, _board) {
 
 /**
  * MongoDB filter for `board` when reading. Empty string matches only empty board.
- * CBSE/CBSC (any case) match either spelling in the database.
+ * Prefer $in over $regex so board indexes can be used (CBSE/IIT stored via lockBoardKey).
  */
 export function boardMongoMatch(rawBoard) {
   const s = trimBoard(rawBoard);
@@ -67,11 +67,14 @@ export function boardMongoMatch(rawBoard) {
 
   const compact = s.toUpperCase().replace(/[\s/\\-]+/g, '');
   if (compact === 'CBSE' || compact === 'CBSC') {
-    return { $regex: /^(cbse|cbsc)$/i };
+    return { $in: ['CBSE', 'CBSC', 'cbse', 'cbsc'] };
   }
   if (compact.includes('IIT') || compact.includes('NEET') || compact.includes('JEE')) {
-    return { $regex: /iit|neet|jee/i };
+    return { $in: ['IIT/NEET', 'IIT', 'NEET', 'IIT/JEE', 'JEE'] };
   }
-  const escaped = s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\s+/g, '\\s*');
-  return { $regex: new RegExp(`^${escaped}$`, 'i') };
+  const locked = lockBoardKey(s);
+  if (locked && locked !== s) {
+    return { $in: [...new Set([locked, s])] };
+  }
+  return locked || s;
 }
