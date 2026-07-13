@@ -7,6 +7,7 @@
 import { MASTER_SYSTEM_PROMPT } from './master-prompt.js';
 import { buildToolPack } from './tool-packs.js';
 import { buildBoardLayer, buildRagLayer, buildIitLayer } from './layers.js';
+import { buildUniversalLanguageSubjectPromptBlock } from '../../utils/story-passage-subject.js';
 
 /** Feature flag — on by default; set AI_GENERATOR_V2_SIX_SECTION=off to disable. */
 export function isSixSectionV2Enabled() {
@@ -128,6 +129,9 @@ export function assembleSixSectionPrompt(toolSlug, params = {}, opts = {}) {
   const boardLayer = buildBoardLayer({ board, classLabel: params.classLabel, subject: params.subject });
   const ragLayer = buildRagLayer(opts.ragContext);
   const iitLayer = buildIitLayer({ board, classLabel: params.classLabel });
+  // Language subjects (Hindi/Telugu/English) — force all string values into the
+  // subject's language/script. Empty string for non-language subjects, so harmless.
+  const languageLayer = buildUniversalLanguageSubjectPromptBlock(params.subject);
 
   // Multiple subtopics → one COMBINED paper spanning all of them (like a unit test).
   const subTopicList = Array.isArray(params.subTopics)
@@ -187,6 +191,7 @@ export function assembleSixSectionPrompt(toolSlug, params = {}, opts = {}) {
     boardLayer,
     ragLayer,
     iitLayer,
+    languageLayer,
     userBlock,
     multiSubtopicBlock,
     variantBlock,
