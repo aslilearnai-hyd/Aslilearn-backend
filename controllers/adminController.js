@@ -2133,8 +2133,19 @@ export const getClasses = async (req, res) => {
       assignedAdmin: adminId,
       isActive: true
     })
-    .populate('assignedSubjects', '_id name description code board')
-    .sort({ classNumber: 1, section: 1 });
+    .populate('assignedSubjects', '_id name description code board');
+
+    // classNumber is a string ("6", "10") — numeric grade order, then section
+    classDocuments.sort((a, b) => {
+      const an = parseInt(String(a.classNumber ?? ''), 10);
+      const bn = parseInt(String(b.classNumber ?? ''), 10);
+      const aNum = Number.isFinite(an) ? an : Number.MAX_SAFE_INTEGER;
+      const bNum = Number.isFinite(bn) ? bn : Number.MAX_SAFE_INTEGER;
+      if (aNum !== bNum) return aNum - bNum;
+      return String(a.section || '').localeCompare(String(b.section || ''), undefined, {
+        sensitivity: 'base',
+      });
+    });
 
     // Get students assigned to this admin with their assignedClass populated
     const students = await User.find({ 
