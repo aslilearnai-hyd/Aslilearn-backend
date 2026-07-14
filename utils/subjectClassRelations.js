@@ -110,7 +110,18 @@ export async function syncClassSectionSubjects(classId, subjectIds, adminId) {
 export async function syncSubjectTeacher(subjectId, teacherId, adminId) {
   const subjectOid = new mongoose.Types.ObjectId(String(subjectId));
   if (!teacherId) {
-    await Subject.findByIdAndUpdate(subjectOid, { $unset: { teacherId: 1 } });
+    // Only clear the shared primary if it belongs to this school (subjects are global by board).
+    if (adminId) {
+      const subject = await Subject.findById(subjectOid).select('teacherId').lean();
+      if (subject?.teacherId) {
+        const current = await Teacher.findById(subject.teacherId).select('adminId').lean();
+        if (current && String(current.adminId) === String(adminId)) {
+          await Subject.findByIdAndUpdate(subjectOid, { $unset: { teacherId: 1 } });
+        }
+      }
+    } else {
+      await Subject.findByIdAndUpdate(subjectOid, { $unset: { teacherId: 1 } });
+    }
     return null;
   }
 
@@ -118,6 +129,17 @@ export async function syncSubjectTeacher(subjectId, teacherId, adminId) {
   if (adminId) teacherQuery.adminId = adminId;
   const teacher = await Teacher.findOne(teacherQuery);
   if (!teacher) return null;
+
+  // Do not overwrite another school's primary teacher on the shared Subject doc.
+  if (adminId) {
+    const subject = await Subject.findById(subjectOid).select('teacherId').lean();
+    if (subject?.teacherId) {
+      const current = await Teacher.findById(subject.teacherId).select('adminId').lean();
+      if (current && String(current.adminId) !== String(adminId)) {
+        return teacher;
+      }
+    }
+  }
 
   await Subject.findByIdAndUpdate(subjectOid, { $set: { teacherId: teacher._id } });
   return teacher;
@@ -154,7 +176,18 @@ export async function syncTeacherSubjectPrimaryLinks(
       .select('_id')
       .lean();
     if (replacement) {
-      await Subject.findByIdAndUpdate(subjectOid, { $set: { teacherId: replacement._id } });
+      // Only claim the shared primary slot if empty or already ours.
+      const subject = await Subject.findById(subjectOid).select('teacherId').lean();
+      let canSet = !subject?.teacherId;
+      if (!canSet && subject?.teacherId && adminId) {
+        const current = await Teacher.findById(subject.teacherId).select('adminId').lean();
+        canSet = current && String(current.adminId) === String(adminId);
+      } else if (!canSet && !adminId) {
+        canSet = true;
+      }
+      if (canSet) {
+        await Subject.findByIdAndUpdate(subjectOid, { $set: { teacherId: replacement._id } });
+      }
     }
   }
 
@@ -212,9 +245,12 @@ export async function formatAdminSubject(subject, adminId, options = {}) {
   let teacher = null;
   if (subject.teacherId) {
     const t = await Teacher.findById(subject.teacherId)
-      .select('_id fullName email')
+      .select('_id fullName email adminId')
       .lean();
-    if (t) {
+    // Subject.teacherId is shared across schools; only show if teacher belongs to this admin.
+    const sameSchool =
+      !adminId || (t?.adminId && String(t.adminId) === String(adminId));
+    if (t && sameSchool) {
       teacher = {
         id: String(t._id),
         fullName: t.fullName,
