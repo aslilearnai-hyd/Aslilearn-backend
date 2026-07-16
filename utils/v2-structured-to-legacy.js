@@ -179,6 +179,32 @@ export function mapV2StructuredToLegacy(toolSlug, v2) {
     };
   }
 
+  if (slug === 'activity-project-generator' || slug === 'project-idea-lab') {
+    const steps = list(core.steps);
+    const materials = list(core.materials);
+    const roles = core.roles && typeof core.roles === 'object' ? core.roles : {};
+    const teacherRole = str(roles.teacher);
+    const studentRole = str(roles.student);
+    if (!steps.length && !str(core.overview) && !materials.length) return null;
+    return {
+      ...pedagogy,
+      title,
+      activity_title: title,
+      activity_overview: str(core.overview),
+      materials_required: materials,
+      step_by_step_procedure: steps,
+      steps,
+      activities: steps.length ? steps : [str(core.overview)].filter(Boolean),
+      teacher_instructions: teacherRole ? [teacherRole] : list(teacher.tips),
+      student_instructions: studentRole ? [studentRole] : [],
+      safety_precautions: list(core.safety),
+      assessment_criteria_rubric: str(assessment.rubric),
+      learning_objectives: list(objectives.items),
+      expected_learning_outcomes: list(objectives.items),
+      real_life_application: str(reallife.connection) || pedagogy.real_life_application,
+    };
+  }
+
   // Explain / plan / reading families — surface core fields teachers expect.
   return {
     ...pedagogy,

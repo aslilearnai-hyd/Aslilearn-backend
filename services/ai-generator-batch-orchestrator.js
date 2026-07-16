@@ -473,86 +473,109 @@ export async function generateBatchAndSave(params, opts = {}) {
             // 6-section content and save it directly (renders in SixSectionViewer).
             // Bypasses the legacy pipeline entirely; quality comes from the Pro model.
             if (isSixSectionV2Enabled() && isV2SupportedTool(toolSlug)) {
-              const v2VariantHint = buildV2VariantHint({
-                variantIndex,
-                batchSize,
-                family: v2ToolFamily(toolSlug),
-                angle: getAiGeneratorVariantAngle(variantIndex, subjectName),
-                scenario: getAiGeneratorVariantScenario(variantIndex, subjectName),
-                seed: `${Date.now()}-v${variantIndex}-a${attempt}`,
-              });
-              const v2 = await generateSixSectionContent(
-                toolSlug,
-                {
-                  board,
-                  classLabel: className,
-                  subject: subjectName,
-                  topic: topicName,
-                  subTopic: subtopicName,
-                  ...(subTopicList.length > 1 ? { subTopics: subTopicList } : {}),
-                },
-                {
-                  primaryModel: qualityTierSettings.primaryGeminiModel,
-                  variantHint: v2VariantHint,
-                  temperature: Math.min(0.9, 0.6 + (variantIndex - 1) * 0.06),
-                  avoidQuestions: usedV2Questions.slice(0, 40),
-                },
-              );
-              if (!v2.ok) {
+              try {
+                const v2VariantHint = buildV2VariantHint({
+                  variantIndex,
+                  batchSize,
+                  family: v2ToolFamily(toolSlug),
+                  angle: getAiGeneratorVariantAngle(variantIndex, subjectName),
+                  scenario: getAiGeneratorVariantScenario(variantIndex, subjectName),
+                  seed: `${Date.now()}-v${variantIndex}-a${attempt}`,
+                });
+                const v2 = await generateSixSectionContent(
+                  toolSlug,
+                  {
+                    board,
+                    classLabel: className,
+                    subject: subjectName,
+                    topic: topicName,
+                    subTopic: subtopicName,
+                    ...(subTopicList.length > 1 ? { subTopics: subTopicList } : {}),
+                  },
+                  {
+                    primaryModel: qualityTierSettings.primaryGeminiModel,
+                    modelOverflow: qualityTierSettings.modelOverflow,
+                    flashLiteOnly: qualityTierSettings.flashLiteOnly,
+                    maxAttemptsPerModel: qualityTierSettings.geminiRetriesPerModel,
+                    isBatchVariant: true,
+                    variantHint: v2VariantHint,
+                    temperature: Math.min(0.9, 0.6 + (variantIndex - 1) * 0.06),
+                    avoidQuestions: usedV2Questions.slice(0, 40),
+                  },
+                );
+                if (v2.ok) {
+                  usedV2Questions.push(...extractV2QuestionTexts(v2.structuredContent));
+                  const uid = opts.reqUser?.userId || opts.reqUser?._id || 'unknown';
+                  const teacherId = mongoose.Types.ObjectId.isValid(uid) ? uid : undefined;
+                  const coreTitle =
+                    v2.structuredContent?.core?.title || v2.structuredContent?.core?.worksheetTitle || 'Six-section content';
+                  const legacyStructured = mapV2StructuredToLegacy(toolSlug, v2.structuredContent);
+                  let persistContent = coreTitle;
+                  if (legacyStructured) {
+                    try {
+                      persistContent =
+                        formatStructuredToolOutput(toolSlug, legacyStructured) ||
+                        JSON.stringify(legacyStructured);
+                    } catch {
+                      persistContent = JSON.stringify(legacyStructured);
+                    }
+                  }
+                  const rec = await AiToolGeneration.create({
+                    toolName: toolSlug,
+                    toolDisplayName,
+                    sourceType: 'ai_generator',
+                    board,
+                    classLabel: className,
+                    subject: subjectName,
+                    topic: topicName,
+                    subtopic: combinedSubtopicLabel,
+                    section: '',
+                    content: persistContent,
+                    generatedContent: persistContent,
+                    generatedBy: uid,
+                    status: 'active',
+                    reviewStatus: params.reviewStatus || 'approved',
+                    metadata: {
+                      board,
+                      createdByName: opts.reqUser?.name || 'Super Admin',
+                      createdByRole: 'super-admin',
+                      contentType: 'structured',
+                      ...(subTopicList.length > 1 ? { subTopics: subTopicList } : {}),
+                      structuredContent: v2.structuredContent,
+                      ...(legacyStructured ? { legacyStructuredContent: legacyStructured } : {}),
+                      formatSource: 'asli-v2-six-section',
+                      schemaVersion: 'asli-v2-six-section',
+                      generationVariant: variantIndex,
+                      batchSize,
+                      batchOrchestrator: true,
+                    },
+                    ...(teacherId ? { teacherId } : {}),
+                  });
+                  console.log(`[AI Generator batch] Variant ${variantIndex}/${batchSize} saved (V2 six-section)`);
+                  return { ok: true, variantIndex, record: rec.toObject() };
+                }
+
                 lastError = v2.error || 'V2 six-section generation failed';
-                if (attempt < maxAttempts) continue;
-                throw new Error(lastError);
-              }
-              // record this slot's questions so later slots avoid repeating them
-              usedV2Questions.push(...extractV2QuestionTexts(v2.structuredContent));
-              const uid = opts.reqUser?.userId || opts.reqUser?._id || 'unknown';
-              const teacherId = mongoose.Types.ObjectId.isValid(uid) ? uid : undefined;
-              const coreTitle =
-                v2.structuredContent?.core?.title || v2.structuredContent?.core?.worksheetTitle || 'Six-section content';
-              const legacyStructured = mapV2StructuredToLegacy(toolSlug, v2.structuredContent);
-              let persistContent = coreTitle;
-              if (legacyStructured) {
-                try {
-                  persistContent =
-                    formatStructuredToolOutput(toolSlug, legacyStructured) ||
-                    JSON.stringify(legacyStructured);
-                } catch {
-                  persistContent = JSON.stringify(legacyStructured);
+                console.warn(
+                  `[AI Generator batch] Variant ${variantIndex} V2 failed (attempt ${attempt}/${maxAttempts}): ${lastError}`,
+                );
+                if (isTransientGeminiError({ message: lastError }) && attempt < maxAttempts) {
+                  await sleep(Math.min(12_000, 2500 * attempt));
+                  continue;
+                }
+              } catch (v2Err) {
+                lastError = v2Err?.message || String(v2Err);
+                console.warn(
+                  `[AI Generator batch] Variant ${variantIndex} V2 threw (attempt ${attempt}/${maxAttempts}): ${lastError}`,
+                );
+                if (isTransientGeminiError(v2Err) && attempt < maxAttempts) {
+                  await sleep(Math.min(12_000, 2500 * attempt));
+                  continue;
                 }
               }
-              const rec = await AiToolGeneration.create({
-                toolName: toolSlug,
-                toolDisplayName,
-                sourceType: 'ai_generator',
-                board,
-                classLabel: className,
-                subject: subjectName,
-                topic: topicName,
-                subtopic: combinedSubtopicLabel,
-                section: '',
-                content: persistContent,
-                generatedContent: persistContent,
-                generatedBy: uid,
-                status: 'active',
-                reviewStatus: params.reviewStatus || 'approved',
-                metadata: {
-                  board,
-                  createdByName: opts.reqUser?.name || 'Super Admin',
-                  createdByRole: 'super-admin',
-                  contentType: 'structured',
-                  ...(subTopicList.length > 1 ? { subTopics: subTopicList } : {}),
-                  structuredContent: v2.structuredContent,
-                  ...(legacyStructured ? { legacyStructuredContent: legacyStructured } : {}),
-                  formatSource: 'asli-v2-six-section',
-                  schemaVersion: 'asli-v2-six-section',
-                  generationVariant: variantIndex,
-                  batchSize,
-                  batchOrchestrator: true,
-                },
-                ...(teacherId ? { teacherId } : {}),
-              });
-              console.log(`[AI Generator batch] Variant ${variantIndex}/${batchSize} saved (V2 six-section)`);
-              return { ok: true, variantIndex, record: rec.toObject() };
+              console.warn(
+                `[AI Generator batch] Variant ${variantIndex}: falling back to legacy pipeline after V2 failure`,
+              );
             }
 
             const extraParams = {
