@@ -5,11 +5,16 @@
  * the frontend's job (SixSectionViewer) — this service does content only.
  */
 
-import geminiService from './gemini-service.js';
+import geminiService, { isTransientGeminiError } from './gemini-service.js';
 import { extractJsonObject } from '../utils/ai-json-extract.js';
 import { getAiGeneratorGeminiModel } from '../utils/ai-generator-batch-config.js';
 import { assembleSixSectionPrompt } from '../prompts/v2/assemble.js';
 import { V2_SECTION_IDS } from '../prompts/v2/master-prompt.js';
+import { GEMINI_LITE_MODEL } from './gemini-models.js';
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
 function hasAllSixSections(json) {
   if (!json || typeof json !== 'object') return false;
@@ -104,6 +109,7 @@ export async function generateSixSectionContent(toolSlug, params = {}, opts = {}
   }
 
   const model = opts.primaryModel || getAiGeneratorGeminiModel();
+  const fallbackModel = String(opts.fallbackModel || GEMINI_LITE_MODEL).trim();
   const baseTemp =
     Number.isFinite(opts.temperature) && opts.temperature > 0 && opts.temperature <= 1.2
       ? opts.temperature
@@ -120,14 +126,33 @@ export async function generateSixSectionContent(toolSlug, params = {}, opts = {}
   // cheapest model usable without ever falling to a costlier one.
   const maxTries = Number.isFinite(opts.maxTries) && opts.maxTries > 0 ? opts.maxTries : 3;
   let lastRaw = '';
+  let lastErr = '';
   for (let attempt = 1; attempt <= maxTries; attempt += 1) {
     const temperature =
       attempt === 1 ? baseTemp : Math.max(0.3, baseTemp - 0.2 * (attempt - 1));
-    const raw = await geminiService.generateStructuredContent(assembled.prompt, 'json', {
-      primaryModel: model,
-      temperature,
-      maxTokens,
-    });
+    const attemptModel =
+      attempt === maxTries && fallbackModel && fallbackModel !== model
+        ? fallbackModel
+        : model;
+    let raw = '';
+    try {
+      raw = await geminiService.generateStructuredContent(assembled.prompt, 'json', {
+        primaryModel: attemptModel,
+        modelOverflow: String(opts.modelOverflow || '').trim(),
+        flashLiteOnly: opts.flashLiteOnly === true,
+        maxAttemptsPerModel: opts.maxAttemptsPerModel,
+        isBatchVariant: opts.isBatchVariant !== false,
+        temperature,
+        maxTokens,
+      });
+    } catch (err) {
+      lastErr = err?.message || String(err);
+      if (attempt < maxTries && isTransientGeminiError(err)) {
+        await sleep(Math.min(12_000, 2000 * attempt));
+        continue;
+      }
+      return { ok: false, error: lastErr || 'Gemini request failed' };
+    }
     lastRaw = raw;
     const json = extractJsonObject(raw);
     if (hasAllSixSections(json)) {
@@ -146,7 +171,11 @@ export async function generateSixSectionContent(toolSlug, params = {}, opts = {}
       };
     }
   }
-  return { ok: false, error: 'Model did not return all six sections.', raw: lastRaw };
+  return {
+    ok: false,
+    error: lastErr || 'Model did not return all six sections.',
+    raw: lastRaw,
+  };
 }
 
 export default generateSixSectionContent;

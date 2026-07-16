@@ -8,6 +8,7 @@ import {
   mergeMongoFilters,
   normalizeMatchText,
   resolveLookupBoard,
+  subtopicTextMatches,
   topicTextMatches,
 } from '../utils/ai-tool-data-match.js';
 
@@ -81,28 +82,18 @@ function escapeRegex(value) {
   return String(value || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-function looseNormalize(value) {
-  return String(value || '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/gi, ' ')
-    .trim()
-    .replace(/\s+/g, ' ');
-}
-
-function looseIncludesEitherWay(a, b) {
-  const x = looseNormalize(a);
-  const y = looseNormalize(b);
-  if (!x || !y) return false;
-  return x.includes(y) || y.includes(x);
-}
-
 function hasUsableContent(doc) {
   const text = String(doc?.generatedContent || doc?.content || '').trim();
-  if (!text) return false;
-  if (/no activities\/projects found|no projects available|no data available/i.test(text)) {
-    return false;
+  if (text && !/no activities\/projects found|no projects available|no data available/i.test(text)) {
+    return true;
   }
-  return true;
+  const meta = doc?.metadata && typeof doc.metadata === 'object' ? doc.metadata : {};
+  if (meta.legacyStructuredContent && typeof meta.legacyStructuredContent === 'object') return true;
+  const structured = meta.structuredContent;
+  if (structured && typeof structured === 'object' && structured.schema === 'asli-v2-six-section') {
+    return true;
+  }
+  return false;
 }
 
 function validContentFilter() {
@@ -274,10 +265,10 @@ async function executeRotationSearch({
       }
       attempts.push({ matchType: 'subject-any-tool', filter: bf });
     }
-  } else if (!normalizedSubtopic && normalizedTopic) {
+  } else if (normalizedTopic) {
     if (normalizedTool) {
       attempts.push({
-        matchType: 'topic-with-tool',
+        matchType: normalizedSubtopic ? 'topic-with-tool-fuzzy-subtopic' : 'topic-with-tool',
         filter: mergeMongoFilters(topicOnlyFilter, toolNameMatchFilter(normalizedTool)),
       });
     }
@@ -327,6 +318,16 @@ async function executeRotationSearch({
           /* try next candidate */
         }
       }
+      // Records exist but failed strict pre-validation — deliver the first so the
+      // controller can return a precise incomplete/wrong-tool message instead of NOT_FOUND.
+      if (docs.length > 0) {
+        return {
+          doc: docs[order[0] ?? 0] || docs[0],
+          matchType: `${matchType}-validation-fallback`,
+          totalCandidates: docs.length,
+          selectedIndex: order[0] ?? 0,
+        };
+      }
       return {
         doc: null,
         matchType,
@@ -368,7 +369,18 @@ async function executeRotationSearch({
     for (const attempt of toolAttempts) {
       if (strictToolMatch && !filterHasToolName(attempt.filter)) continue;
       const docs = (await AiToolGeneration.find(attempt.filter).sort({ createdAt: 1 }).lean()).filter(
-        (doc) => hasUsableContent(doc) && toolSlugMatches(doc.toolName, tryToolName || normalizedTool),
+        (doc) => {
+          if (!hasUsableContent(doc) || !toolSlugMatches(doc.toolName, tryToolName || normalizedTool)) {
+            return false;
+          }
+          if (attempt.matchType.includes('fuzzy-subtopic') && normalizedSubtopic) {
+            const docSub = String(doc.subtopic || '').trim();
+            // Topic-level saves (empty subtopic) apply to any subtopic under that chapter.
+            if (!docSub) return true;
+            return subtopicTextMatches(docSub, normalizedSubtopic);
+          }
+          return true;
+        },
       );
       if (docs.length > 0) {
         const picked = await selectByRotation(
@@ -407,7 +419,7 @@ async function executeRotationSearch({
       const subtopicOk =
         !normalizedSubtopic ||
         !docSub ||
-        looseIncludesEitherWay(docSub, normalizedSubtopic);
+        subtopicTextMatches(docSub, normalizedSubtopic);
       const toolOk =
         !strictToolMatch || toolSlugMatches(doc.toolName, base.keyTool || normalizedTool);
       return topicOk && subtopicOk && toolOk;

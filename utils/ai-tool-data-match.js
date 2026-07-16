@@ -81,7 +81,44 @@ export function buildTopicNameVariants(topic) {
     if (suffix) variants.add(suffix);
     if (prefix) variants.add(prefix);
   }
+  const withoutChapter = tn.replace(/^chapter\s+\d+\s*[-:]\s*/i, '').trim();
+  if (withoutChapter && withoutChapter !== tn) variants.add(withoutChapter);
   return [...variants];
+}
+
+/** Subtopic variants — numbered prefixes, chapter crumbs, dash suffixes. */
+export function buildSubtopicNameVariants(subtopic) {
+  const st = normalizeMatchText(subtopic);
+  if (!st) return [];
+  const variants = new Set([st]);
+  const dashIdx = st.indexOf(' - ');
+  if (dashIdx > 0) {
+    const suffix = st.slice(dashIdx + 3).trim();
+    const prefix = st.slice(0, dashIdx).trim();
+    if (suffix) variants.add(suffix);
+    if (prefix) variants.add(prefix);
+  }
+  const withoutNumber = st
+    .replace(/^(\d+[\.)]\s*)+/, '')
+    .replace(/^chapter\s+\d+\s*[-:]\s*/i, '')
+    .trim();
+  if (withoutNumber) variants.add(withoutNumber);
+  return [...variants];
+}
+
+function looseNormalize(value) {
+  return String(value || '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/gi, ' ')
+    .trim()
+    .replace(/\s+/g, ' ');
+}
+
+function looseIncludesEitherWay(a, b) {
+  const x = looseNormalize(a);
+  const y = looseNormalize(b);
+  if (!x || !y) return false;
+  return x.includes(y) || y.includes(x);
 }
 
 /** Mongo filter for AiToolGeneration.topic (or topicName on topics collection). */
@@ -99,10 +136,17 @@ export function buildTopicFieldMongoFilter(topic) {
 }
 
 export function buildSubtopicFieldMongoFilter(subtopic) {
-  const st = normalizeMatchText(subtopic);
-  if (!st) return { subtopic: '' };
-  const exact = buildCaseInsensitiveExactFilter(st);
-  return exact ? { subtopic: exact } : { subtopic: st };
+  const variants = buildSubtopicNameVariants(subtopic);
+  if (!variants.length) return { subtopic: '' };
+  const clauses = variants
+    .map((v) => {
+      const exact = buildCaseInsensitiveExactFilter(v);
+      return exact ? { subtopic: exact } : null;
+    })
+    .filter(Boolean);
+  if (clauses.length === 1) return clauses[0];
+  if (!clauses.length) return { subtopic: normalizeMatchText(subtopic) };
+  return { $or: clauses };
 }
 
 /** Strict board scope (same as curriculum API). */
@@ -145,6 +189,17 @@ export function topicTextMatches(stored, queried) {
   if (!storedNorm) return !normalizeMatchText(queried);
   return variants.some((v) => {
     const q = v.toLowerCase();
+    return storedNorm === q || storedNorm.includes(q) || q.includes(storedNorm);
+  });
+}
+
+export function subtopicTextMatches(stored, queried) {
+  const variants = buildSubtopicNameVariants(queried);
+  const storedNorm = looseNormalize(stored);
+  if (!storedNorm) return !normalizeMatchText(queried);
+  return variants.some((v) => {
+    const q = looseNormalize(v);
+    if (!q) return false;
     return storedNorm === q || storedNorm.includes(q) || q.includes(storedNorm);
   });
 }
