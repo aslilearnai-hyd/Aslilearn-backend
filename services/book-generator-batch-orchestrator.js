@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import Book from '../models/Book.js';
 import AiToolGeneration from '../models/AiToolGeneration.js';
-import { beginTokenUsageSession, endTokenUsageSession, getTokenUsageSession, isTransientGeminiError } from './gemini-service.js';
+import { beginTokenUsageSession, endTokenUsageSession, getTokenUsageSession, formatGeminiFailureForUser, isTransientGeminiError } from './gemini-service.js';
 import {
   generateStructuredContentForAiGenerator,
   finalizeExamPaperStructuredContent,
@@ -161,12 +161,7 @@ function getMaxAttemptsPerSlot(qualityTierSettings) {
 }
 
 function formatBookSlotFailureMessage(batchIndex, error) {
-  const msg = String(error || 'Unknown error').trim();
-  if (isTransientGeminiError({ message: msg })) {
-    return `Slot ${batchIndex}: Gemini temporarily busy — wait a minute and retry.`;
-  }
-  if (msg.length > 140) return `Slot ${batchIndex}: ${msg.slice(0, 140)}…`;
-  return `Slot ${batchIndex}: ${msg}`;
+  return formatGeminiFailureForUser(error, { slotLabel: `Slot ${batchIndex}` });
 }
 
 function formatBookBatchProgress({ saved, batchSize, batchIndex, callCount, costInr }) {
