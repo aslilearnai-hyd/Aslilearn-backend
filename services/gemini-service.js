@@ -255,9 +255,43 @@ function throttledGeminiWarn(key, message) {
 /** True for 503/429/network errors — do not burn validation retries on these. */
 export function isTransientGeminiError(error) {
   const msg = String(error?.message || error || '');
+  if (isGeminiSpendingCapError(error)) return false;
+  if (isGeminiAuthConfigError(error)) return false;
   return /\b503\b|\b429\b|UNAVAILABLE|high demand|overloaded|temporar|RESOURCE_EXHAUSTED|ECONNRESET|EAI_AGAIN|ETIMEDOUT|failed to fetch|network/i.test(
     msg,
   );
+}
+
+/** Monthly spend cap / hard quota — retrying will not help until billing is fixed. */
+export function isGeminiSpendingCapError(error) {
+  const msg = String(error?.message || error || '');
+  return /spending cap|monthly spend|exceeded its monthly|billing|quota exceeded|exceeded.*quota|Too Many Requests.*spend/i.test(
+    msg,
+  );
+}
+
+export function isGeminiAuthConfigError(error) {
+  const msg = String(error?.message || error || '');
+  return /\b401\b|API key not valid|API_KEY_INVALID|invalid api key|UNAUTHENTICATED|Gemini API key is missing/i.test(
+    msg,
+  );
+}
+
+/** Short, actionable message for Super Admin batch UIs (optional slot prefix). */
+export function formatGeminiFailureForUser(error, { slotLabel = '' } = {}) {
+  const msg = String(error?.message || error || '').trim() || 'Unknown error';
+  const prefix = slotLabel ? `${slotLabel}: ` : '';
+  if (isGeminiSpendingCapError({ message: msg })) {
+    return `${prefix}Gemini monthly spending cap reached — open Google AI Studio → Billing/Spend, raise the project cap, then retry.`;
+  }
+  if (isGeminiAuthConfigError({ message: msg })) {
+    return `${prefix}Gemini API key is invalid or missing — check GEMINI_API_KEY on the server.`;
+  }
+  if (isTransientGeminiError({ message: msg })) {
+    return `${prefix}Gemini temporarily busy — wait a minute and retry.`;
+  }
+  if (msg.length > 160) return `${prefix}${msg.slice(0, 160)}…`;
+  return `${prefix}${msg}`;
 }
 
 function getGeminiFallbackConfig() {
