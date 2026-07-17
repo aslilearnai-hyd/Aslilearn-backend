@@ -741,6 +741,30 @@ function copyMeaningfulField(target, targetKey, source, sourceKeys) {
   }
 }
 
+/** Activity / Project: enough core body to show on teacher dashboard even when V2 omits narrative fields. */
+function activityDashboardHasCorePayload(toolSlug, structured, markdown = '') {
+  const slug = String(toolSlug || '').trim();
+  if (slug !== 'activity-project-generator' && slug !== 'project-idea-lab') return false;
+  const normalized = normalizeActivityStructuredContent(
+    structured && typeof structured === 'object' && !Array.isArray(structured) ? structured : {},
+    slug,
+  );
+  const steps = [
+    ...(Array.isArray(normalized.step_by_step_procedure) ? normalized.step_by_step_procedure : []),
+    ...(Array.isArray(normalized.steps) ? normalized.steps : []),
+    ...(Array.isArray(normalized.activities) ? normalized.activities : []),
+  ].filter((s) => isMeaningfulScalar(s));
+  const materials = [
+    ...(Array.isArray(normalized.materials_required) ? normalized.materials_required : []),
+    ...(Array.isArray(normalized.materials) ? normalized.materials : []),
+  ].filter((s) => isMeaningfulScalar(s));
+  if (steps.length >= 1 || materials.length >= 1) return true;
+  const md = String(markdown || '').trim();
+  if (!md) return false;
+  const sectionHits = (md.match(/^#{1,4}\s+\d+\./gm) || []).length;
+  return sectionHits >= 3 || md.length >= 400;
+}
+
 /** Apply template sectionFallbackRules (e.g. teacher_instructions ← differentiation). */
 function applySectionFallbacks(toolSlug, data) {
   const rules = getSectionFallbackRules(toolSlug);
@@ -1249,6 +1273,8 @@ export function validateDashboardAiToolContent(toolSlug, rawContent, options = {
       (options.metadata && typeof options.metadata === 'object' ? options.metadata.subject : undefined) ||
       (options.meta && typeof options.meta === 'object' ? options.meta.subject : undefined),
     skipWorksheetPad: true,
+    requireAllCanonicalFields: false,
+    dashboardDelivery: true,
   };
 
   if (isValidAiToolSlug(slug)) {
@@ -1260,7 +1286,10 @@ export function validateDashboardAiToolContent(toolSlug, rawContent, options = {
       const usableFlashcards =
         (slug === 'flashcard-generator' || slug === 'my-study-decks') &&
         cards.filter((c) => isMeaningfulScalar(c?.front) && isMeaningfulScalar(c?.back)).length >= 3;
-      if (!usableFlashcards) {
+      const activityCore =
+        (slug === 'activity-project-generator' || slug === 'project-idea-lab') &&
+        activityDashboardHasCorePayload(slug, structured, content);
+      if (!usableFlashcards && !activityCore) {
         return {
           valid: false,
           code: 'AI_TOOL_CONTENT_INCOMPLETE',
@@ -1488,6 +1517,8 @@ export function validateDashboardAiToolDoc(toolSlug, doc) {
     batchOrchestrator: false,
     skipFrameworkScaffold: false,
     skipCardPadding: false,
+    requireAllCanonicalFields: false,
+    dashboardDelivery: true,
   };
   return validateDashboardAiToolContent(toolSlug, content, {
     metadata: deliveryMetadata,

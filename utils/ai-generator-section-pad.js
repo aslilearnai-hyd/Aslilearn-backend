@@ -155,14 +155,15 @@ export function normalizeStructuredArrayFields(data) {
 }
 
 function ctx(meta = {}) {
+  const subTopic = String(meta.subTopic || meta.subtopic || '').trim();
   const topic = String(
-    meta.subTopic || meta.subtopic || meta.topic || meta.topicName || meta.subject || 'Lesson',
+    subTopic || meta.topic || meta.topicName || meta.subject || 'Lesson',
   )
     .trim()
     .replace(/^this subtopic$/i, String(meta.subject || 'Lesson').trim() || 'Lesson');
   const subject = String(meta.subject || 'Science').trim();
   const title = String(meta.title || topic).trim().replace(/\bthis subtopic\b/gi, topic);
-  return { topic, subject, title };
+  return { topic, subject, title, subTopic, subtopic: subTopic };
 }
 
 function setIfEmpty(target, key, value) {
@@ -508,6 +509,59 @@ function scaffoldQuickAssignmentSections(structured, meta = {}) {
   return out;
 }
 
+function scaffoldActivityProjectSections(structured, meta = {}, toolSlug = 'activity-project-generator') {
+  const out = { ...structured };
+  const { topic, subject, subTopic, subtopic } = ctx(meta);
+  const sub = String(subTopic || subtopic || topic || '').trim();
+  const band = resolveScaffoldBand(subject);
+  setIfEmpty(
+    out,
+    'subtopic_link_prior_knowledge',
+    sub
+      ? `Builds on prior knowledge for ${sub} in ${subject}.`
+      : `Review earlier ${subject} ideas before starting this activity.`,
+  );
+  setIfEmpty(out, 'learning_objectives', learningObjectivesForBand(topic, subject, band));
+  setIfEmpty(
+    out,
+    'ncf_competency_alignment',
+    `Aligned to inquiry and application competencies for ${topic || subject}.`,
+  );
+  if (!hasFieldContent(out.student_instructions) && !hasFieldContent(out.studentInstructions)) {
+    const proc = [
+      ...(Array.isArray(out.step_by_step_procedure) ? out.step_by_step_procedure : []),
+      ...(Array.isArray(out.steps) ? out.steps : []),
+    ].filter(Boolean);
+    if (proc.length) {
+      out.student_instructions = proc;
+      out.studentInstructions = proc;
+    } else {
+      setIfEmpty(out, 'student_instructions', [
+        `Follow each step carefully and record observations for ${topic || subject}.`,
+      ]);
+    }
+  }
+  setIfEmpty(out, 'differentiation', `Support: guided prompts; Core: standard task; Stretch: open-ended extension for ${topic || subject}.`);
+  if (!hasFieldContent(out.assessment_criteria_rubric) && !hasFieldContent(out.assessmentRubric)) {
+    setIfEmpty(out, 'assessment_criteria_rubric', assessmentRubricForBand(band));
+  }
+  setIfEmpty(out, 'expected_learning_outcomes', expectedOutcomesForBand(topic, subject, band));
+  setIfEmpty(
+    out,
+    'real_life_application',
+    `Connect ${topic || subject} to a familiar everyday Indian context.`,
+  );
+  setIfEmpty(
+    out,
+    'reflection_exit_ticket',
+    `Name one thing you learned about ${topic || sub || subject} today.`,
+  );
+  if (toolSlug === 'project-idea-lab' && !hasFieldContent(out.self_assessment_rubric)) {
+    setIfEmpty(out, 'self_assessment_rubric', assessmentRubricForBand(band));
+  }
+  return out;
+}
+
 function scaffoldGenericSections(toolSlug, structured, meta = {}) {
   const t = getAiToolTemplate(toolSlug);
   if (!t) return structured;
@@ -665,6 +719,8 @@ export function padAiGeneratorCanonicalSections(toolSlug, data, meta = {}) {
     out = scaffoldConceptRows(slug, out, meta);
   } else if (slug === 'quick-assignment-builder') {
     out = scaffoldQuickAssignmentSections(out, meta);
+  } else if (slug === 'activity-project-generator' || slug === 'project-idea-lab') {
+    out = scaffoldActivityProjectSections(out, meta, slug);
   }
 
   if (

@@ -185,24 +185,53 @@ export function mapV2StructuredToLegacy(toolSlug, v2) {
     const roles = core.roles && typeof core.roles === 'object' ? core.roles : {};
     const teacherRole = str(roles.teacher);
     const studentRole = str(roles.student);
+    const objectiveItems = list(objectives.items);
+    const rubricItems = [
+      ...list(assessment.rubric),
+      ...list(assessment.commonErrors),
+      str(assessment.rubric) ? str(assessment.rubric) : '',
+    ].filter(Boolean);
+    const priorKnowledge = str(core.overview) || objectiveItems[0] || '';
+    const expectedOutcomes = objectiveItems.length ? objectiveItems.join('; ') : '';
+    const studentInstructions = studentRole
+      ? [studentRole]
+      : steps.length
+        ? steps
+        : [];
     if (!steps.length && !str(core.overview) && !materials.length) return null;
-    return {
+    const activityBase = {
       ...pedagogy,
       title,
       activity_title: title,
       activity_overview: str(core.overview),
+      subtopic_link_prior_knowledge: priorKnowledge,
+      ncf_competency_alignment: str(objectives.alignment) || pedagogy.ncf_competency_alignment,
       materials_required: materials,
       step_by_step_procedure: steps,
       steps,
       activities: steps.length ? steps : [str(core.overview)].filter(Boolean),
       teacher_instructions: teacherRole ? [teacherRole] : list(teacher.tips),
-      student_instructions: studentRole ? [studentRole] : [],
+      student_instructions: studentInstructions,
+      differentiation:
+        str(differentiation.support) ||
+        str(differentiation.core) ||
+        pedagogy.differentiation ||
+        '',
       safety_precautions: list(core.safety),
-      assessment_criteria_rubric: str(assessment.rubric),
-      learning_objectives: list(objectives.items),
-      expected_learning_outcomes: list(objectives.items),
+      assessment_criteria_rubric: rubricItems,
+      learning_objectives: objectiveItems,
+      expected_learning_outcomes: expectedOutcomes,
       real_life_application: str(reallife.connection) || pedagogy.real_life_application,
+      reflection_exit_ticket: str(reallife.reflection) || pedagogy.reflection_exit_ticket,
     };
+    if (slug === 'project-idea-lab') {
+      return {
+        ...activityBase,
+        self_assessment_rubric: rubricItems,
+        safety_care_instructions: list(core.safety),
+      };
+    }
+    return activityBase;
   }
 
   // Explain / plan / reading families — surface core fields teachers expect.
