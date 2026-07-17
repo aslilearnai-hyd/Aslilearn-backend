@@ -9512,6 +9512,7 @@ function augmentActivityStructuredContent(normalizedFlat, meta, toolSlug = 'acti
     !isStrictAllFieldsValidation(meta) ||
     meta.bookGenerator === true ||
     meta.batchOrchestrator === true ||
+    meta.dashboardDelivery === true ||
     meta.strictValidation === false;
 
   if (!allowFallback) {
@@ -9987,6 +9988,18 @@ export function validateToolSpecificStructuredContent(
   if (requireAllFields) {
     const allFields = validateAllCanonicalToolFields(normalizedTool, contentForValidate);
     if (!allFields.valid) {
+      if (
+        meta.dashboardDelivery &&
+        (normalizedTool === 'activity-project-generator' || normalizedTool === 'project-idea-lab') &&
+        rule.validate(contentForValidate)
+      ) {
+        return {
+          valid: true,
+          message: '',
+          normalizedType: resolvedType,
+          normalizedStructuredContent: contentForValidate,
+        };
+      }
       if (
         shouldRelaxFlashcardBatchSave(meta, normalizedTool) &&
         flashcardBatchHasSaveableContent(contentForValidate, normalizedTool)
