@@ -204,22 +204,131 @@ export async function syncTeacherSubjectPrimaryLinks(
 }
 
 /**
+ * Before hiding Biology_6-style rows, copy their classIds onto the clean sibling
+ * so Assigned Classes is not lost when the catalog row is filtered out.
+ */
+export function mergeCatalogClassIdsOntoCleanSiblings(subjectDocs) {
+  const byKey = new Map();
+  for (const s of subjectDocs || []) {
+    const key = subjectGroupKey(s.name);
+    if (!byKey.has(key)) byKey.set(key, []);
+    byKey.get(key).push(s);
+  }
+
+  for (const group of byKey.values()) {
+    const clean = group.find((s) => !isCatalogStyleSubjectName(s.name));
+    if (!clean) continue;
+    const merged = new Set((clean.classIds || []).map((id) => String(id)));
+    for (const s of group) {
+      if (!isCatalogStyleSubjectName(s.name)) continue;
+      for (const id of s.classIds || []) merged.add(String(id));
+    }
+    clean.classIds = [...merged].filter((id) => mongoose.Types.ObjectId.isValid(id));
+  }
+
+  return subjectDocs;
+}
+
+/**
+ * When a teacher has subjects + classes (or explicit subject↔class assignments),
+ * keep Subject.classIds ↔ Class.assignedSubjects in sync so Subjects table
+ * "Assigned Classes" matches Teacher assignments.
+ */
+export async function syncTeacherSubjectClassLinks(teacherId, adminId) {
+  if (!teacherId || !mongoose.Types.ObjectId.isValid(String(teacherId))) {
+    return { ok: false, message: 'Invalid teacher id' };
+  }
+
+  const teacherQuery = { _id: teacherId, isActive: true };
+  if (adminId) teacherQuery.adminId = adminId;
+  const teacher = await Teacher.findOne(teacherQuery)
+    .select('_id subjects assignedClassIds assignments')
+    .lean();
+  if (!teacher) return { ok: false, message: 'Teacher not found' };
+
+  const subjectIds = [...new Set((teacher.subjects || []).map((id) => String(id)).filter(Boolean))];
+  const assignedClassIds = [
+    ...new Set((teacher.assignedClassIds || []).map((id) => String(id)).filter(Boolean)),
+  ];
+  const assignments = Array.isArray(teacher.assignments) ? teacher.assignments : [];
+
+  const pairs = new Map(); // subjectId -> Set(classId)
+  const ensurePair = (subjectId, classId) => {
+    if (!subjectId || !classId) return;
+    if (!mongoose.Types.ObjectId.isValid(subjectId) || !mongoose.Types.ObjectId.isValid(classId)) return;
+    if (!pairs.has(subjectId)) pairs.set(subjectId, new Set());
+    pairs.get(subjectId).add(classId);
+  };
+
+  if (assignments.length > 0) {
+    for (const row of assignments) {
+      ensurePair(String(row.subjectId || ''), String(row.classId || ''));
+    }
+  } else {
+    for (const subjectId of subjectIds) {
+      for (const classId of assignedClassIds) ensurePair(subjectId, classId);
+    }
+  }
+
+  for (const [subjectId, classIdSet] of pairs.entries()) {
+    const subject = await Subject.findById(subjectId).select('classIds').lean();
+    if (!subject) continue;
+    const merged = [
+      ...new Set([
+        ...(subject.classIds || []).map((id) => String(id)),
+        ...[...classIdSet],
+      ]),
+    ];
+    await syncSubjectClassIds(subjectId, merged, adminId);
+  }
+
+  return { ok: true, subjectCount: pairs.size };
+}
+
+/**
  * Classes linked to a subject.
  * @param {object} [options]
  * @param {boolean} [options.adminListOnly] — only Subject.classIds (explicit admin links), not legacy Class.assignedSubjects-only rows
  */
 export async function getClassesForSubject(subjectId, adminId, options = {}) {
-  const { adminListOnly = false } = options;
-  const subject = await Subject.findById(subjectId).select('classIds').lean();
+  const { adminListOnly = false, extraClassIds = [] } = options;
+  const subject = await Subject.findById(subjectId).select('classIds teacherId').lean();
   if (!subject) return [];
 
   const idSet = new Set((subject.classIds || []).map((id) => String(id)));
+  for (const id of extraClassIds || []) {
+    if (id) idSet.add(String(id));
+  }
 
   if (!adminListOnly) {
     const reverseQuery = { assignedSubjects: subjectId, isActive: true };
     if (adminId) reverseQuery.assignedAdmin = adminId;
     const reverse = await Class.find(reverseQuery).select('_id').lean();
     reverse.forEach((c) => idSet.add(String(c._id)));
+
+    // Also surface classes from teachers assigned this subject (Teacher Mgmt flow).
+    const teacherQuery = {
+      isActive: true,
+      $or: [{ subjects: subject._id }, ...(subject.teacherId ? [{ _id: subject.teacherId }] : [])],
+    };
+    if (adminId) teacherQuery.adminId = adminId;
+    const teachers = await Teacher.find(teacherQuery)
+      .select('assignedClassIds assignments subjects')
+      .lean();
+    for (const teacher of teachers) {
+      const assignments = Array.isArray(teacher.assignments) ? teacher.assignments : [];
+      if (assignments.length > 0) {
+        for (const row of assignments) {
+          if (String(row.subjectId) === String(subjectId) && row.classId) {
+            idSet.add(String(row.classId));
+          }
+        }
+      } else {
+        for (const classId of teacher.assignedClassIds || []) {
+          idSet.add(String(classId));
+        }
+      }
+    }
   }
 
   if (idSet.size === 0) return [];
@@ -277,6 +386,8 @@ export async function formatAdminSubject(subject, adminId, options = {}) {
 
   const classDocs = await getClassesForSubject(subject._id, adminId, {
     adminListOnly: options.adminListOnly === true,
+    // Preserve classIds merged onto lean docs (e.g. catalog → clean sibling) before DB re-read.
+    extraClassIds: (subject.classIds || []).map((id) => String(id)),
   });
   const classes = classDocs.map((c) => ({
     id: String(c._id),

@@ -96,7 +96,8 @@ app.post('/api/auth/login', async (req, res) => {
       });
     }
     
-    const { email, password } = req.body;
+    const email = String(req.body?.email || '').trim();
+    const password = String(req.body?.password || '').trim();
     
     if (!email || !password) {
       console.error('Missing email or password');
@@ -110,7 +111,8 @@ app.post('/api/auth/login', async (req, res) => {
     
     // Check for Super Admin credentials first
     const superAdminCredentials = [
-      { email: 'amenityforge@gmail.com', password: 'Amenity', fullName: 'Super Admin' }
+      { email: 'sealucknow2017@gmail.com', password: 'Asli123', fullName: 'Super Admin' },
+      { email: 'amenityforge@gmail.com', password: 'Amenity', fullName: 'Super Admin' },
     ];
     
     const validCredential = superAdminCredentials.find(
@@ -119,9 +121,37 @@ app.post('/api/auth/login', async (req, res) => {
     
     if (validCredential) {
       console.log('Super Admin login detected');
+      let superAdminUser = await User.findOne({ email: validCredential.email.toLowerCase() });
+      if (!superAdminUser) {
+        const hashedPassword = await bcrypt.hash(validCredential.password, 12);
+        superAdminUser = new User({
+          email: validCredential.email.toLowerCase(),
+          password: hashedPassword,
+          fullName: validCredential.fullName,
+          role: 'super-admin',
+          isActive: true,
+        });
+        await superAdminUser.save();
+      } else {
+        await User.findByIdAndUpdate(
+          superAdminUser._id,
+          {
+            fullName: validCredential.fullName,
+            role: 'super-admin',
+            isActive: true,
+            lastLogin: new Date(),
+            password: await bcrypt.hash(validCredential.password, 12),
+          },
+          { runValidators: false },
+        );
+        superAdminUser = await User.findById(superAdminUser._id);
+      }
+
+      const superAdminId = superAdminUser._id.toString();
       const token = jwt.sign(
         { 
-          id: 'super-admin-001',
+          id: superAdminId,
+          userId: superAdminId,
           email: validCredential.email,
           fullName: validCredential.fullName,
           role: 'super-admin'
@@ -134,7 +164,8 @@ app.post('/api/auth/login', async (req, res) => {
         success: true,
         token,
         user: {
-          id: 'super-admin-001',
+          id: superAdminId,
+          _id: superAdminId,
           email: validCredential.email,
           fullName: validCredential.fullName,
           role: 'super-admin'

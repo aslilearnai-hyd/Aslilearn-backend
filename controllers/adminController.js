@@ -27,8 +27,10 @@ import {
   syncClassSectionSubjects,
   syncSubjectTeacher,
   syncTeacherSubjectPrimaryLinks,
+  syncTeacherSubjectClassLinks,
   isCatalogStyleSubjectName,
   filterCatalogSubjectsWithCleanSibling,
+  mergeCatalogClassIdsOntoCleanSiblings,
   dedupeAdminSubjectsByPlainName,
 } from '../utils/subjectClassRelations.js';
 import { resolveSubjectContentIds } from '../utils/resolveSubjectContentIds.js';
@@ -1957,6 +1959,9 @@ export const assignClasses = async (req, res) => {
       { new: true }
     );
 
+    // Keep Subjects "Assigned Classes" in sync with teacher class + subject links.
+    await syncTeacherSubjectClassLinks(teacherId, adminId);
+
     console.log('Updated teacher classes:', updatedTeacher);
     console.log('Updated teacher assignedClassIds:', updatedTeacher.assignedClassIds);
 
@@ -2036,6 +2041,9 @@ export const assignSubjects = async (req, res) => {
       subjectIds,
       adminId
     );
+
+    // Mirror teacher subject+class assignments onto Subject ↔ Class links.
+    await syncTeacherSubjectClassLinks(teacherId, adminId);
 
     console.log('Updated teacher:', updatedTeacher);
 
@@ -2362,6 +2370,8 @@ export const getSubjects = async (req, res) => {
         if (subjectIdsFromClasses.has(sid)) return true;
         return false;
       });
+      // Preserve Biology_6 class links on clean Biology before catalog rows are hidden.
+      subjects = mergeCatalogClassIdsOntoCleanSiblings(subjects);
       subjects = filterCatalogSubjectsWithCleanSibling(subjects);
     }
 

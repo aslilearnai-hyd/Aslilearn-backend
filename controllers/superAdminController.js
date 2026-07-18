@@ -40,7 +40,8 @@ import {
 // Super Admin Login
 export const superAdminLogin = async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const email = String(req.body?.email || '').trim();
+    const password = String(req.body?.password || '').trim();
     
     // Super admin credentials
     const superAdminCredentials = [
@@ -53,9 +54,37 @@ export const superAdminLogin = async (req, res) => {
     );
     
     if (validCredential) {
+      let superAdminUser = await User.findOne({ email: validCredential.email.toLowerCase() });
+      if (!superAdminUser) {
+        const hashedPassword = await bcrypt.hash(validCredential.password, 12);
+        superAdminUser = new User({
+          email: validCredential.email.toLowerCase(),
+          password: hashedPassword,
+          fullName: validCredential.fullName,
+          role: 'super-admin',
+          isActive: true,
+        });
+        await superAdminUser.save();
+      } else {
+        await User.findByIdAndUpdate(
+          superAdminUser._id,
+          {
+            fullName: validCredential.fullName,
+            role: 'super-admin',
+            isActive: true,
+            lastLogin: new Date(),
+            password: await bcrypt.hash(validCredential.password, 12),
+          },
+          { runValidators: false },
+        );
+        superAdminUser = await User.findById(superAdminUser._id);
+      }
+
+      const superAdminId = superAdminUser._id.toString();
       const token = jwt.sign(
         { 
-          id: 'super-admin-001',
+          id: superAdminId,
+          userId: superAdminId,
           email: validCredential.email,
           fullName: validCredential.fullName,
           role: 'super-admin'
@@ -68,7 +97,8 @@ export const superAdminLogin = async (req, res) => {
         success: true,
         token,
         user: {
-          id: 'super-admin-001',
+          id: superAdminId,
+          _id: superAdminId,
           email: validCredential.email,
           fullName: validCredential.fullName,
           role: 'super-admin'
