@@ -31,12 +31,17 @@ const run = async () => {
       const email = config.email.toLowerCase();
       let user = await User.findOne({ email });
 
+      const hashedPassword = await bcrypt.hash(config.password, 12);
+
       if (user) {
-        console.log(`ℹ️ User already exists: ${email} (role=${user.role})`);
+        user.password = hashedPassword;
+        user.fullName = config.fullName;
+        user.role = config.role;
+        user.isActive = true;
+        await user.save();
+        console.log(`✅ Updated user: ${email} (role=${config.role})`);
         continue;
       }
-
-      const hashedPassword = await bcrypt.hash(config.password, 10);
 
       user = new User({
         email,
