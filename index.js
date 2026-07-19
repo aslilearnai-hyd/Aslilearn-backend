@@ -223,6 +223,19 @@ mongoose.connect(MONGO_URI, MONGOOSE_CONNECT_OPTIONS)
   // Initialize boards (creates board structure only, no seed data)
   const { initializeBoards } = await import('./controllers/boardController.js');
   await initializeBoards();
+  // Seed built-in IIT product tracks (Alpha / Beta / Gamma)
+  try {
+    const { ensureDefaultProductCategories } = await import('./constants/products.js');
+    await ensureDefaultProductCategories();
+  } catch (seedErr) {
+    console.warn('Product category seed skipped:', seedErr?.message || seedErr);
+  }
+  try {
+    const { ensureAiToolTopicIndexes } = await import('./models/AiToolTopic.js');
+    await ensureAiToolTopicIndexes();
+  } catch (idxErr) {
+    console.warn('AI tool topic index ensure skipped:', idxErr?.message || idxErr);
+  }
 })
 .catch(err => console.error('❌ MongoDB connection error:', err));
 
@@ -983,6 +996,32 @@ app.get('/api/admin/assessments', verifyToken, verifyAdmin, extractAdminId, getA
 app.get('/api/admin/videos', verifyToken, verifyAdmin, extractAdminId, getVideos);
 app.get('/api/admin/quizzes', verifyToken, verifyAdmin, extractAdminId, getQuizzes);
 app.get('/api/admin/analytics', verifyToken, verifyAdmin, extractAdminId, getAnalytics);
+
+// Public: active IIT product categories (for register + pickers; no secrets)
+app.get('/api/product-categories', async (req, res) => {
+  try {
+    const { listProductCategories, PRODUCT_IIT, formatIitCategoryLabel } = await import(
+      './constants/products.js'
+    );
+    const rows = await listProductCategories({ includeInactive: false });
+    res.json({
+      success: true,
+      data: rows.map((r) => ({
+        id: String(r._id),
+        code: r.code,
+        label: r.label || formatIitCategoryLabel(r.code),
+        product: r.product || PRODUCT_IIT,
+        description: r.description || '',
+        isActive: true,
+        isBuiltIn: Boolean(r.isBuiltIn),
+        sortOrder: r.sortOrder ?? 100,
+      })),
+    });
+  } catch (error) {
+    console.error('GET /api/product-categories:', error);
+    res.status(500).json({ success: false, message: 'Failed to load product categories' });
+  }
+});
 
 // Mount routes
 app.use('/api/super-admin', superAdminRoutes);

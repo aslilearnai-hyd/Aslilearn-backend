@@ -289,6 +289,12 @@ export async function generateBatchAndSave(params, opts = {}) {
 
   const subtopicName = String(params.subtopicName || params.subTopic || params.subtopic || '').trim();
 
+  const { normalizeTopicProductCategory } = await import('../utils/ai-tool-topic-taxonomy.js');
+  const productCategory =
+    normalizeTopicProductCategory(
+      params.productCategory ?? params.extraParams?.productCategory ?? '',
+    ) ?? '';
+
   // Multi-subtopic (combined paper): request may send an array of subtopics.
   const subTopicList = (
     Array.isArray(params.subTopics)
@@ -327,6 +333,8 @@ export async function generateBatchAndSave(params, opts = {}) {
     toolSlug,
 
     board,
+
+    productCategory,
 
     className,
 
@@ -486,6 +494,7 @@ export async function generateBatchAndSave(params, opts = {}) {
                   toolSlug,
                   {
                     board,
+                    productCategory,
                     classLabel: className,
                     subject: subjectName,
                     topic: topicName,
@@ -525,6 +534,7 @@ export async function generateBatchAndSave(params, opts = {}) {
                     toolDisplayName,
                     sourceType: 'ai_generator',
                     board,
+                    productCategory,
                     classLabel: className,
                     subject: subjectName,
                     topic: topicName,
@@ -537,6 +547,7 @@ export async function generateBatchAndSave(params, opts = {}) {
                     reviewStatus: params.reviewStatus || 'approved',
                     metadata: {
                       board,
+                      productCategory,
                       createdByName: opts.reqUser?.name || 'Super Admin',
                       createdByRole: 'super-admin',
                       contentType: 'structured',
@@ -805,6 +816,8 @@ export async function generateBatchAndSave(params, opts = {}) {
 
               board,
 
+              productCategory,
+
               classLabel: className,
 
               subject: subjectName,
@@ -828,6 +841,8 @@ export async function generateBatchAndSave(params, opts = {}) {
               metadata: {
 
                 board,
+
+                productCategory,
 
                 createdByName: opts.reqUser?.name || 'Super Admin',
 

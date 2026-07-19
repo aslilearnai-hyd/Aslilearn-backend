@@ -1,9 +1,10 @@
 import mongoose from 'mongoose';
-import AiToolTopic from '../models/AiToolTopic.js';
+import AiToolTopic, { ensureAiToolTopicIndexes } from '../models/AiToolTopic.js';
 import { boardMongoMatch, canonicalBoardLabel, resolveClassLabelForAiToolStorage } from '../utils/board-label.js';
 import {
   buildAiToolTopicHierarchyTree,
   buildAiToolTopicTaxonomyFilter,
+  normalizeTopicProductCategory,
 } from '../utils/ai-tool-topic-taxonomy.js';
 import { buildDisplayTopicName } from '../utils/ai-tool-topic-display.js';
 import {
@@ -11,8 +12,20 @@ import {
   orderedUniqueTopics,
   resolveSortOrderStart,
 } from '../utils/ai-tool-topic-order.js';
+import {
+  formatIitCategoryLabel,
+  getActiveProductCategoryCodes,
+  listProductCategories,
+} from '../constants/products.js';
 
 const NATURAL_COLLATOR = new Intl.Collator('en', { numeric: true, sensitivity: 'base' });
+
+let indexesEnsured = false;
+async function ensureIndexesOnce() {
+  if (indexesEnsured) return;
+  indexesEnsured = true;
+  await ensureAiToolTopicIndexes();
+}
 
 function normalizeText(value) {
   return String(value || '').trim().replace(/\s+/g, ' ');
@@ -21,6 +34,7 @@ function normalizeText(value) {
 function buildFilters(query) {
   const filter = buildAiToolTopicTaxonomyFilter({
     board: query.board,
+    productCategory: query.productCategory,
     classLabel: query.classLabel,
     subject: query.subject,
     topicName: query.topicName,
@@ -30,8 +44,45 @@ function buildFilters(query) {
   return filter;
 }
 
+async function resolveProductCategoriesForBoard(board) {
+  const filter = buildAiToolTopicTaxonomyFilter({ board });
+  const fromRows = await AiToolTopic.distinct('productCategory', filter);
+  const codesFromRows = [
+    ...new Set(
+      fromRows
+        .map((c) => normalizeTopicProductCategory(c === undefined ? null : c ?? ''))
+        .filter((c) => c !== null)
+        .map((c) => c || ''),
+    ),
+  ];
+  const activeCodes = await getActiveProductCategoryCodes();
+  const catalog = await listProductCategories({ includeInactive: false });
+  const labelMap = Object.fromEntries(
+    catalog.map((r) => [r.code, r.label || formatIitCategoryLabel(r.code)]),
+  );
+
+  const categories = [
+    { code: '', label: 'General' },
+    ...activeCodes.map((code) => ({
+      code,
+      label: labelMap[code] || formatIitCategoryLabel(code),
+    })),
+  ];
+
+  // Include orphan codes still present on topic rows
+  for (const code of codesFromRows) {
+    if (!code) continue;
+    if (!categories.some((c) => c.code === code)) {
+      categories.push({ code, label: formatIitCategoryLabel(code) });
+    }
+  }
+
+  return { categories, codesFromRows };
+}
+
 export async function listAiToolTopics(req, res) {
   try {
+    await ensureIndexesOnce();
     const page = Math.max(1, parseInt(req.query.page || '1', 10) || 1);
     const limit = Math.min(200, Math.max(1, parseInt(req.query.limit || '25', 10) || 25));
     const skip = (page - 1) * limit;
@@ -82,7 +133,9 @@ export async function listAiToolTopics(req, res) {
 
 export async function createAiToolTopic(req, res) {
   try {
+    await ensureIndexesOnce();
     const board = canonicalBoardLabel(normalizeText(req.body.board));
+    const productCategory = normalizeTopicProductCategory(req.body.productCategory ?? '') ?? '';
     const classLabel = resolveClassLabelForAiToolStorage(normalizeText(req.body.classLabel), board);
     const subject = normalizeText(req.body.subject);
     const label = normalizeText(req.body.label || '');
@@ -104,11 +157,12 @@ export async function createAiToolTopic(req, res) {
 
     const createdBy = req.userId || req.user?.id || null;
     const sortOrderRaw = req.body.sortOrder;
-    const topicFilter = { board, classLabel, subject, topicName, isActive: true };
+    const topicFilter = { board, productCategory, classLabel, subject, topicName, isActive: true };
     const baseSortOrder = await resolveSortOrderStart(AiToolTopic, topicFilter, sortOrderRaw);
 
     const docs = subTopics.map((subTopic, index) => ({
       board,
+      productCategory,
       classLabel,
       subject,
       label,
@@ -160,7 +214,7 @@ export async function createAiToolTopic(req, res) {
     if (error?.code === 11000) {
       return res.status(409).json({
         success: false,
-        message: 'This Board/Class/Subject/Topic/Sub Topic mapping already exists.',
+        message: 'This Board/Category/Class/Subject/Topic/Sub Topic mapping already exists.',
       });
     }
     return res.status(500).json({ success: false, message: 'Failed to create AI tool topic.' });
@@ -169,6 +223,7 @@ export async function createAiToolTopic(req, res) {
 
 export async function updateAiToolTopic(req, res) {
   try {
+    await ensureIndexesOnce();
     const { id } = req.params;
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return res.status(400).json({ success: false, message: 'Invalid topic id.' });
@@ -193,6 +248,9 @@ export async function updateAiToolTopic(req, res) {
         }
       }
     }
+    if (req.body.productCategory !== undefined) {
+      update.productCategory = normalizeTopicProductCategory(req.body.productCategory) ?? '';
+    }
 
     const finalLabel = update.label !== undefined ? update.label : normalizeText(existing.label || '');
     const finalTopicInput = update.topicName !== undefined ? update.topicName : normalizeText(existing.topicName || '');
@@ -216,7 +274,7 @@ export async function updateAiToolTopic(req, res) {
     if (error?.code === 11000) {
       return res.status(409).json({
         success: false,
-        message: 'This Board/Class/Subject/Topic/Sub Topic mapping already exists.',
+        message: 'This Board/Category/Class/Subject/Topic/Sub Topic mapping already exists.',
       });
     }
     return res.status(500).json({ success: false, message: 'Failed to update AI tool topic.' });
@@ -263,9 +321,13 @@ export async function bulkDeleteAiToolTopics(req, res) {
       });
     }
 
-    const filter = { isActive: true, board: boardMongoMatch(board) };
-    if (classLabel) filter.classLabel = classLabel;
-    if (subject) filter.subject = subject;
+    let filter = buildAiToolTopicTaxonomyFilter({
+      board,
+      productCategory:
+        req.body.productCategory !== undefined ? req.body.productCategory : undefined,
+      classLabel,
+      subject,
+    });
 
     const result = await AiToolTopic.updateMany(
       filter,
@@ -283,7 +345,8 @@ export async function bulkDeleteAiToolTopics(req, res) {
   }
 }
 
-const TOPIC_OPTIONS_SELECT = 'board classLabel subject label topicName subTopic sortOrder createdAt';
+const TOPIC_OPTIONS_SELECT =
+  'board productCategory classLabel subject label topicName subTopic sortOrder createdAt';
 
 function uniqueSortedValues(arr) {
   return [...new Set(arr.filter(Boolean))].sort((a, b) => NATURAL_COLLATOR.compare(a, b));
@@ -298,20 +361,39 @@ async function queryTopicOptionRows(filter) {
 
 export async function getAiToolTopicHierarchy(req, res) {
   try {
+    await ensureIndexesOnce();
     const board = normalizeText(req.query.board);
+    const productCategoryParam = req.query.productCategory;
 
     if (!board) {
       const rawBoards = await AiToolTopic.distinct('board', { isActive: true });
       const boards = uniqueSortedValues(rawBoards.map((value) => canonicalBoardLabel(value)));
-      return res.json({ success: true, data: { boards, tree: null } });
+      return res.json({ success: true, data: { boards, tree: null, productCategories: [] } });
     }
 
-    const filter = buildAiToolTopicTaxonomyFilter({ board });
+    const { categories } = await resolveProductCategoriesForBoard(board);
+
+    // Board only (no productCategory query key) → category pills; tree after category chosen.
+    if (!Object.prototype.hasOwnProperty.call(req.query, 'productCategory')) {
+      return res.json({
+        success: true,
+        data: {
+          productCategories: categories,
+          tree: null,
+        },
+      });
+    }
+
+    const filter = buildAiToolTopicTaxonomyFilter({
+      board,
+      productCategory: productCategoryParam,
+    });
     const rows = await queryTopicOptionRows(filter);
 
     return res.json({
       success: true,
       data: {
+        productCategories: categories,
         tree: buildAiToolTopicHierarchyTree(rows),
       },
     });
@@ -323,14 +405,17 @@ export async function getAiToolTopicHierarchy(req, res) {
 
 export async function listAiToolTopicOptions(req, res) {
   try {
+    await ensureIndexesOnce();
     const filter = buildFilters(req.query);
     const hasBoard = Boolean(normalizeText(req.query.board));
+    const hasCategory = Object.prototype.hasOwnProperty.call(req.query, 'productCategory');
     const hasClass = Boolean(normalizeText(req.query.classLabel));
     const hasSubject = Boolean(normalizeText(req.query.subject));
     const hasTopic = Boolean(normalizeText(req.query.topicName));
 
     const emptyLists = {
       boards: [],
+      productCategories: [],
       classes: [],
       subjects: [],
       labels: [],
@@ -345,6 +430,17 @@ export async function listAiToolTopicOptions(req, res) {
         data: {
           ...emptyLists,
           boards: uniqueSortedValues(rawBoards.map((value) => canonicalBoardLabel(value))),
+        },
+      });
+    }
+
+    if (hasBoard && !hasCategory && !hasClass) {
+      const { categories } = await resolveProductCategoriesForBoard(normalizeText(req.query.board));
+      return res.json({
+        success: true,
+        data: {
+          ...emptyLists,
+          productCategories: categories,
         },
       });
     }
@@ -377,6 +473,7 @@ export async function listAiToolTopicOptions(req, res) {
       success: true,
       data: {
         boards: hasBoard ? [] : uniqueSortedValues(rows.map((row) => canonicalBoardLabel(row.board))),
+        productCategories: [],
         classes: hasClass ? [] : uniqueSortedValues(rows.map((row) => row.classLabel)),
         subjects: hasSubject ? [] : uniqueSortedValues(rows.map((row) => row.subject)),
         labels: uniqueSortedValues(rows.map((row) => row.label)),

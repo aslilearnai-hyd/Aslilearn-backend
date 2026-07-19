@@ -4912,6 +4912,12 @@ router.post('/ai/tool', async (req, res) => {
     const lookupBoard =
       String(req.body.board || '').trim() || programCtx.curriculumBoard || 'CBSE';
 
+    const { normalizeTopicProductCategory } = await import('../utils/ai-tool-topic-taxonomy.js');
+    const studentProductCategory =
+      normalizeTopicProductCategory(
+        params.productCategory ?? req.body.productCategory ?? '',
+      ) ?? '';
+
     const { doc: adminDoc, matchType, totalCandidates, selectedIndex } = await fetchRotatingAiToolData({
       classLabel: classDisplay,
       subject: finalSubject,
@@ -4919,6 +4925,7 @@ router.post('/ai/tool', async (req, res) => {
       subtopic: subTopicNormalized,
       toolName: toolType,
       board: lookupBoard,
+      productCategory: studentProductCategory,
       preferLatest: false,
       strictToolMatch: true,
       cursorScope: String(userId || ''),

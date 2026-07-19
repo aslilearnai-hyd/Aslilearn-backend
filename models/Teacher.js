@@ -81,7 +81,7 @@ const teacherSchema = new mongoose.Schema({
     default: 'CBSE',
   },
   iitCategories: {
-    type: [{ type: String, enum: ['ALPHA', 'BETA', 'GAMMA'], uppercase: true }],
+    type: [{ type: String, uppercase: true, trim: true }],
     default: [],
   },
   interestedCourses: {

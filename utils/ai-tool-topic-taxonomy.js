@@ -12,11 +12,35 @@ import {
   mergeMongoFilters,
   normalizeMatchText,
 } from './ai-tool-data-match.js';
+import { normalizeIitCategoryLoose } from '../constants/products.js';
 
 const NATURAL_COLLATOR = new Intl.Collator('en', { numeric: true, sensitivity: 'base' });
 
 function uniqueSorted(values) {
   return [...new Set(values.filter(Boolean))].sort((a, b) => NATURAL_COLLATOR.compare(a, b));
+}
+
+/** Normalize query/storage value: '' = General. null = no filter. */
+export function normalizeTopicProductCategory(value) {
+  if (value === undefined || value === null) return null;
+  const raw = String(value).trim();
+  if (!raw || /^(NONE|GENERAL|__GENERAL__)$/i.test(raw)) return '';
+  return normalizeIitCategoryLoose(raw) || '';
+}
+
+/** Match General (empty / missing) or a specific product category code. */
+export function applyProductCategoryMongoFilter(filter, productCategory) {
+  const normalized = normalizeTopicProductCategory(productCategory);
+  if (normalized === null) return filter;
+  if (!normalized) {
+    return mergeMongoFilters(filter, {
+      $or: [
+        { productCategory: { $in: ['', null] } },
+        { productCategory: { $exists: false } },
+      ],
+    });
+  }
+  return mergeMongoFilters(filter, { productCategory: normalized });
 }
 
 /** Match topic dropdown value against stored topicName / label combinations. */
@@ -60,6 +84,7 @@ export function buildTopicNameMatchFilter(value) {
 
 export function buildAiToolTopicTaxonomyFilter({
   board = '',
+  productCategory = undefined,
   classLabel = '',
   subject = '',
   topicName = '',
@@ -70,6 +95,7 @@ export function buildAiToolTopicTaxonomyFilter({
     filter.board = boardMongoMatch(boardText);
   }
 
+  filter = applyProductCategoryMongoFilter(filter, productCategory);
   filter = applyClassLabelMongoFilter(filter, classLabel, boardText);
 
   const subjectClause = buildSubjectMongoFilter(subject);
@@ -91,6 +117,9 @@ export function formatAiToolTopicTaxonomy(rows) {
     topics: orderedUniqueTopics(rows, (row) => buildDisplayTopicName(row.label, row.topicName)),
     subTopics: orderedUniqueSubTopics(rows),
     labels: uniqueSorted(rows.map((r) => r.label)),
+    productCategories: uniqueSorted(
+      rows.map((r) => normalizeIitCategoryLoose(r.productCategory)).filter(Boolean),
+    ),
   };
 }
 
@@ -120,7 +149,7 @@ export function buildAiToolTopicHierarchyTree(rows) {
 export async function queryAiToolTopicTaxonomy(params = {}) {
   const filter = buildAiToolTopicTaxonomyFilter(params);
   const rows = await AiToolTopic.find(filter)
-    .select('board classLabel subject label topicName subTopic sortOrder createdAt')
+    .select('board productCategory classLabel subject label topicName subTopic sortOrder createdAt')
     .sort({ sortOrder: 1, createdAt: 1, _id: 1 })
     .lean();
   return rows;

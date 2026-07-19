@@ -4,6 +4,7 @@ const aiGenerationLockSchema = new mongoose.Schema(
   {
     toolSlug: { type: String, required: true, index: true },
     board: { type: String, default: '', index: true },
+    productCategory: { type: String, default: '', trim: true, uppercase: true, index: true },
     className: { type: String, required: true, index: true },
     subject: { type: String, required: true, index: true },
     topic: { type: String, default: '', index: true },
@@ -23,7 +24,7 @@ const aiGenerationLockSchema = new mongoose.Schema(
 );
 
 aiGenerationLockSchema.index(
-  { toolSlug: 1, board: 1, className: 1, subject: 1, topic: 1, subtopic: 1, status: 1 },
+  { toolSlug: 1, board: 1, productCategory: 1, className: 1, subject: 1, topic: 1, subtopic: 1, status: 1 },
   { unique: true, partialFilterExpression: { status: 'active' } },
 );
 

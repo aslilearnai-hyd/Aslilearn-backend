@@ -103,10 +103,13 @@ function isIitClassLabel(classLabel, board = '') {
 export const listClasses = async (req, res) => {
   try {
     const board = normalizeText(req.query.board);
+    const productCategory = req.query.productCategory;
     const filter = { isActive: true };
     applyBoardFilter(filter, board);
+    const { applyProductCategoryMongoFilter } = await import('../utils/ai-tool-topic-taxonomy.js');
+    const scoped = applyProductCategoryMongoFilter(filter, productCategory);
 
-    const rows = await AiToolTopic.find(filter).select('classLabel').lean();
+    const rows = await AiToolTopic.find(scoped).select('classLabel').lean();
     let classes = uniqueSortedClassLabels(
       rows.map((row) => canonicalClassLabelForBoard(row.classLabel, board)),
     );
@@ -136,7 +139,11 @@ export const listSubjects = async (req, res) => {
       return res.status(400).json({ success: false, message: 'classId is required' });
     }
 
-    const managed = await resolveAiToolTopicTaxonomy({ board, classLabel });
+    const managed = await resolveAiToolTopicTaxonomy({
+      board,
+      productCategory: req.query.productCategory,
+      classLabel,
+    });
     let subjects = uniqueSorted(managed.subjects);
     if (isIitClassLabel(classLabel, board) && subjects.length === 0) {
       const { getSubjectsForClass } = await import('../services/hardcoded-content-service.js');
@@ -166,7 +173,7 @@ export const listTopics = async (req, res) => {
       });
     }
 
-    const managed = await resolveAiToolTopicTaxonomy({ board, classLabel, subject });
+    const managed = await resolveAiToolTopicTaxonomy({ board, classLabel, subject, productCategory: req.query.productCategory });
     let topics = managed.topics;
     if (isIitClassLabel(classLabel, board) && topics.length === 0) {
       const { getChaptersForSubject } = await import('../services/hardcoded-content-service.js');
@@ -200,6 +207,7 @@ export const listSubtopics = async (req, res) => {
 
     const managed = await resolveAiToolTopicTaxonomy({
       board,
+      productCategory: req.query.productCategory,
       classLabel,
       subject,
       topicName,
