@@ -24,8 +24,10 @@ function auditEnabled(opts = {}) {
 function llmAuditEnabled(opts = {}) {
   if (opts.llmAudit === false) return false;
   if (opts.llmAudit === true) return true;
-  const raw = String(process.env.AI_ANSWER_KEY_LLM_AUDIT ?? 'on').trim().toLowerCase();
-  return raw !== 'false' && raw !== '0' && raw !== 'off';
+  // Default OFF — deterministic math/scope/notation gates are free and catch most failures.
+  // Set AI_ANSWER_KEY_LLM_AUDIT=on only when you want a second Gemini pass per generation.
+  const raw = String(process.env.AI_ANSWER_KEY_LLM_AUDIT ?? 'off').trim().toLowerCase();
+  return raw === 'true' || raw === '1' || raw === 'on';
 }
 
 function compactCoreForAudit(structured) {
