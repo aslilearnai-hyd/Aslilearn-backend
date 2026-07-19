@@ -6,7 +6,7 @@ Per-tool prompt packs that transform AI-generated educational content quality wi
 
 ```
 backend/prompts/
-├── registry.js              # Loads all 21 tool packs; enabled by default
+├── registry.js              # Loads 19 registered tool packs (2 retired packs remain on disk only)
 ├── create-tool-prompt-pack.js
 ├── quality-content-check.js   # Banned phrases + specificity scan
 ├── shared/

@@ -10,6 +10,13 @@ import {
   authorizeRoles
 } from '../middleware/auth.js';
 import {
+  loginSchema,
+  createAdminSchema,
+  createUserSchema,
+  createCourseSchema,
+  validateRequest,
+} from '../validators/superAdminValidator.js';
+import {
   superAdminLogin,
   getDashboardStats,
   getAllAdmins,
@@ -431,7 +438,7 @@ const schoolPhotoUpload = multer({
 });
 
 // Public routes
-router.post('/login', loginLimiter, superAdminLogin);
+router.post('/login', loginLimiter, validateRequest(loginSchema), superAdminLogin);
 
 // Protected routes - require super admin authentication
 router.use(verifyToken);
@@ -558,7 +565,7 @@ router.post('/admins/upload-school-photo', (req, res, next) => {
     });
   }
 });
-router.post('/admins', createAdmin);
+router.post('/admins', validateRequest(createAdminSchema), createAdmin);
 router.put('/admins/:id', updateAdmin);
 router.delete('/admins/:id', deleteAdmin);
 router.post('/migrate-boards', migrateAllBoards); // Migration endpoint
@@ -568,7 +575,7 @@ router.post('/delete-remaining-subjects', deleteRemainingSubjects); // Delete su
 
 // User Management (Global)
 router.get('/users', getAllUsers);
-router.post('/users', createUser);
+router.post('/users', validateRequest(createUserSchema), createUser);
 
 // AI Student Risk Analysis (Super Admin - can analyze any student)
 router.post('/ai/student-risk-analysis', analyzeStudentRiskSuperAdmin);
@@ -585,7 +592,7 @@ router.post('/teachers', createTeacher);
 
 // Course Management (Global)
 router.get('/courses', getAllCourses);
-router.post('/courses', createCourse);
+router.post('/courses', validateRequest(createCourseSchema), createCourse);
 
 // Individual trial members (B2C teacher/student signups)
 router.get('/trial-members', listTrialMembers);

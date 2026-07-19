@@ -1,5 +1,6 @@
 import express from 'express';
-import { verifyToken } from '../middleware/auth.js';
+import { verifyToken, verifySuperAdmin } from '../middleware/auth.js';
+import { aiHeavyLimiter } from '../middleware/rate-limit.js';
 import {
   generateAndSaveContent,
   generateBatchContent,
@@ -21,6 +22,8 @@ import { generateSixSectionPreview } from '../controllers/sixSectionController.j
 const router = express.Router();
 
 router.use(verifyToken);
+router.use(verifySuperAdmin);
+router.use(aiHeavyLimiter);
 
 router.post('/generate', generateAndSaveContent);
 router.post('/generate-batch', generateBatchContent);

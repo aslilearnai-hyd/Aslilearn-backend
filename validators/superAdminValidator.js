@@ -5,106 +5,81 @@ import Joi from 'joi';
 export const loginSchema = Joi.object({
   email: Joi.string().email().required().messages({
     'string.email': 'Please provide a valid email address',
-    'any.required': 'Email is required'
+    'any.required': 'Email is required',
   }),
   password: Joi.string().min(6).required().messages({
     'string.min': 'Password must be at least 6 characters long',
-    'any.required': 'Password is required'
-  })
+    'any.required': 'Password is required',
+  }),
 });
 
+/** School admin provisioning — allow extra school fields; require core identity. */
 export const createAdminSchema = Joi.object({
-  name: Joi.string().min(2).max(50).required().messages({
-    'string.min': 'Name must be at least 2 characters long',
-    'string.max': 'Name must not exceed 50 characters',
-    'any.required': 'Name is required'
-  }),
-  email: Joi.string().email().required().messages({
-    'string.email': 'Please provide a valid email address',
-    'any.required': 'Email is required'
-  }),
-  permissions: Joi.array().items(Joi.string()).default([]).messages({
-    'array.base': 'Permissions must be an array'
-  })
-});
+  name: Joi.string().min(2).max(100).required(),
+  email: Joi.string().email().required(),
+  password: Joi.string().min(6).required(),
+  schoolName: Joi.string().min(2).max(200).required(),
+  board: Joi.string().min(2).max(80).required(),
+  state: Joi.string().min(2).max(100).required(),
+  permissions: Joi.array().items(Joi.string()).default([]),
+  vidyaEnabledForTeachers: Joi.boolean().optional(),
+  vidyaEnabledForStudents: Joi.boolean().optional(),
+  isAsliPrepExclusive: Joi.boolean().optional(),
+  schoolLogo: Joi.string().allow('', null).optional(),
+  contactPerson: Joi.string().allow('', null).optional(),
+  phone: Joi.string().allow('', null).optional(),
+  secondaryContactPerson: Joi.string().allow('', null).optional(),
+  secondaryContactPhone: Joi.string().allow('', null).optional(),
+  place: Joi.string().allow('', null).optional(),
+  pin: Joi.string().allow('', null).optional(),
+  schoolDetails: Joi.object().unknown(true).optional(),
+}).unknown(true);
 
 export const updateAdminSchema = Joi.object({
-  permissions: Joi.array().items(Joi.string()).optional().messages({
-    'array.base': 'Permissions must be an array'
-  }),
-  isActive: Joi.boolean().optional().messages({
-    'boolean.base': 'isActive must be a boolean value'
-  })
-});
+  permissions: Joi.array().items(Joi.string()).optional(),
+  isActive: Joi.boolean().optional(),
+}).unknown(true);
 
 export const createUserSchema = Joi.object({
-  name: Joi.string().min(2).max(50).required().messages({
-    'string.min': 'Name must be at least 2 characters long',
-    'string.max': 'Name must not exceed 50 characters',
-    'any.required': 'Name is required'
-  }),
-  email: Joi.string().email().required().messages({
-    'string.email': 'Please provide a valid email address',
-    'any.required': 'Email is required'
-  }),
-  role: Joi.string().valid('student', 'teacher', 'admin').required().messages({
-    'any.only': 'Role must be one of: student, teacher, admin',
-    'any.required': 'Role is required'
-  }),
-  details: Joi.string().max(100).optional().messages({
-    'string.max': 'Details must not exceed 100 characters'
-  })
-});
+  name: Joi.string().min(2).max(50).required(),
+  email: Joi.string().email().required(),
+  role: Joi.string().valid('student', 'teacher', 'admin').required(),
+  details: Joi.string().max(100).optional(),
+}).unknown(true);
 
 export const createCourseSchema = Joi.object({
-  title: Joi.string().min(5).max(100).required().messages({
-    'string.min': 'Title must be at least 5 characters long',
-    'string.max': 'Title must not exceed 100 characters',
-    'any.required': 'Title is required'
-  }),
-  subject: Joi.string().min(2).max(50).required().messages({
-    'string.min': 'Subject must be at least 2 characters long',
-    'string.max': 'Subject must not exceed 50 characters',
-    'any.required': 'Subject is required'
-  }),
-  grade: Joi.string().valid('Class 8', 'Class 9', 'Class 10', 'Class 11', 'Class 12').required().messages({
-    'any.only': 'Grade must be one of: Class 8, Class 9, Class 10, Class 11, Class 12',
-    'any.required': 'Grade is required'
-  }),
-  board: Joi.string().valid('CBSE', 'ICSE', 'State Board', 'IB').required().messages({
-    'any.only': 'Board must be one of: CBSE, ICSE, State Board, IB',
-    'any.required': 'Board is required'
-  }),
-  teacher: Joi.string().min(2).max(50).required().messages({
-    'string.min': 'Teacher name must be at least 2 characters long',
-    'string.max': 'Teacher name must not exceed 50 characters',
-    'any.required': 'Teacher is required'
-  })
-});
+  title: Joi.string().min(5).max(100).required(),
+  subject: Joi.string().min(2).max(50).required(),
+  grade: Joi.string().required(),
+  board: Joi.string().required(),
+  teacher: Joi.string().min(2).max(50).required(),
+}).unknown(true);
 
-// Validation middleware
+/** Generic body validator — unknown keys kept unless schema forbids them. */
 export const validateRequest = (schema) => {
   return (req, res, next) => {
-    const { error, value } = schema.validate(req.body, { abortEarly: false });
-    
+    const { error, value } = schema.validate(req.body, {
+      abortEarly: false,
+      stripUnknown: false,
+      allowUnknown: true,
+    });
+
     if (error) {
-      const errorMessages = error.details.map(detail => detail.message);
+      const errorMessages = error.details.map((detail) => detail.message);
       return res.status(400).json({
         success: false,
         message: 'Validation failed',
-        errors: errorMessages
+        errors: errorMessages,
       });
     }
-    
+
     req.body = value;
     next();
   };
 };
 
-// Custom validation functions
-export const validateSuperAdminCredentials = (email, password) => {
-  return email === 'sealucknow2017@gmail.com' && password === 'Asli123';
-};
+// Custom validation functions — never hardcode live credentials
+export const validateSuperAdminCredentials = () => false;
 
 export const ALLOWED_SCHOOL_PORTAL_PERMISSIONS = [
   'User Management',
@@ -127,11 +102,3 @@ export const validateRole = (role) => {
   const allowedRoles = ['student', 'teacher', 'admin'];
   return allowedRoles.includes(role);
 };
-
-
-
-
-
-
-
-

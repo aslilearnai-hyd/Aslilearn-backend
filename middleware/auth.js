@@ -1,20 +1,22 @@
 import jwt from 'jsonwebtoken';
+import { JWT_SECRET, JWT_VERIFY_OPTS } from '../config/jwt.js';
+import { extractAuthToken } from '../utils/auth-cookie.js';
 
 // Enhanced middleware to verify JWT token and extract user info
 export const verifyToken = (req, res, next) => {
-  const token = req.header('Authorization')?.replace('Bearer ', '');
-  
+  const token = extractAuthToken(req);
+
   if (!token) {
     return res.status(401).json({ success: false, message: 'Access denied. No token provided.' });
   }
-  
+
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = jwt.verify(token, JWT_SECRET, JWT_VERIFY_OPTS);
     req.user = decoded;
     req.userId = decoded.userId || decoded.id; // Handle different JWT structures
     next();
   } catch (error) {
-    res.status(400).json({ success: false, message: 'Invalid token.' });
+    res.status(401).json({ success: false, message: 'Invalid token.' });
   }
 };
 
@@ -44,16 +46,9 @@ export const verifyTeacher = (req, res, next) => {
 
 // Enhanced middleware to extract teacher ID and add to request
 export const extractTeacherId = (req, res, next) => {
-  console.log('extractTeacherId middleware called');
-  console.log('req.user:', req.user);
-  console.log('req.userId:', req.userId);
-  
   if (req.user.role === 'teacher') {
     req.teacherId = req.userId;
-    console.log('Set req.teacherId to:', req.teacherId);
-    console.log('Teacher ID type:', typeof req.teacherId);
   } else {
-    console.log('User role is not teacher:', req.user.role);
     return res.status(403).json({ success: false, message: 'Access denied. Teacher privileges required.' });
   }
   next();
@@ -61,18 +56,12 @@ export const extractTeacherId = (req, res, next) => {
 
 // Enhanced middleware to extract admin ID and add to request
 export const extractAdminId = (req, res, next) => {
-  console.log('extractAdminId middleware - req.user:', req.user);
-  console.log('extractAdminId middleware - req.userId:', req.userId);
-  
   if (req.user && req.user.role === 'admin') {
     req.adminId = req.userId;
-    console.log('extractAdminId - Set req.adminId to:', req.adminId);
   } else if (req.user && req.user.role === 'super-admin') {
     // Super admin can access all data, so we don't set adminId filter
     req.adminId = null;
-    console.log('extractAdminId - Super admin, req.adminId set to null');
   } else {
-    console.log('extractAdminId - User role is not admin:', req.user?.role);
     return res.status(403).json({ success: false, message: 'Access denied. Admin privileges required.' });
   }
   next();

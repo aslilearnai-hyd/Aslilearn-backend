@@ -98,3 +98,35 @@ export function runPromptEngineQualityCheck(toolSlug, structured) {
     errors: unique.slice(0, 10),
   };
 }
+
+/** Detect scaffold / placeholder leakage that must never be saved for classroom tools. */
+const SCAFFOLD_RE =
+  /\[(?:insert|placeholder|your (?:answer|text|content))[^\]]*\]|\bTODO:|\blorem ipsum\b|\{\{[a-z0-9_]+\}\}|^\s*(?:section|part|question)\s*\d+\s*$/im;
+
+export function rejectScaffoldEchoContent(payload) {
+  const text =
+    typeof payload === 'string'
+      ? payload
+      : JSON.stringify(payload ?? '', (_k, v) => (typeof v === 'string' ? v : v));
+  if (!text || text.length < 40) {
+    return { ok: false, reason: 'Content too short or empty' };
+  }
+  if (SCAFFOLD_RE.test(text)) {
+    return { ok: false, reason: 'Content still contains scaffold/placeholder text — regenerate before saving' };
+  }
+  // Heading-echo heuristic: many identical short lines
+  const lines = text
+    .split(/\n+/)
+    .map((l) => l.trim())
+    .filter((l) => l.length > 0 && l.length < 40);
+  if (lines.length >= 8) {
+    const freq = new Map();
+    for (const l of lines) freq.set(l, (freq.get(l) || 0) + 1);
+    const max = Math.max(...freq.values());
+    if (max >= 5) {
+      return { ok: false, reason: 'Content looks like repeated heading scaffolding — regenerate before saving' };
+    }
+  }
+  return { ok: true };
+}
+

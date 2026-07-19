@@ -1,5 +1,6 @@
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import https from 'https';
 import dotenv from 'dotenv';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import {
@@ -97,7 +98,12 @@ function getLlmConfig() {
   const endpoint = resolveChatCompletionsEndpoint(baseUrlRaw);
 
   if (allowInsecureCert) {
-    process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+    // Do NOT set process.env.NODE_TLS_REJECT_UNAUTHORIZED — that disables TLS
+    // verification process-wide. Callers must pass an https.Agent with
+    // rejectUnauthorized:false only for the local LLM fetch (see fetch options).
+    console.warn(
+      '[LLM] ALLOW_INSECURE_LLM_CERT is on — use a scoped https.Agent for local LLM only; global TLS reject remains enabled.',
+    );
   }
 
   return {
@@ -761,11 +767,16 @@ async function callChatCompletions({
       headers.Authorization = `Bearer ${cfg.apiKey}`;
     }
 
-    const response = await fetch(cfg.endpoint, {
+    const fetchOpts = {
       method: 'POST',
       headers,
       body: JSON.stringify(payload),
-    });
+    };
+    if (cfg.allowInsecureCert) {
+      fetchOpts.agent = new https.Agent({ rejectUnauthorized: false });
+    }
+
+    const response = await fetch(cfg.endpoint, fetchOpts);
     if (!response.ok) {
       const errorText = await response.text().catch(() => '');
       throw new Error(`Upstream fallback failed (${response.status}): ${errorText}`);

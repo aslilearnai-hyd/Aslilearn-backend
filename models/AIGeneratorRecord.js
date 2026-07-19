@@ -13,7 +13,7 @@ const aiGeneratorRecordSchema = new mongoose.Schema(
     generatedContent: { type: String, required: true, trim: true },
     pdfUrl: { type: String, default: '', trim: true },
     createdByRole: { type: String, default: 'super-admin', trim: true, index: true },
-    createdById: { type: mongoose.Schema.Types.ObjectId, ref: 'Admin' },
+    createdById: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
     createdByName: { type: String, default: '', trim: true },
   },
   {

@@ -58,7 +58,9 @@ import {
 
 const router = express.Router();
 
-// iframe / window.open GETs cannot send Authorization. Allow JWT via ?token= for proxy routes only.
+// iframe / window.open GETs cannot send Authorization.
+// ONLY content-preview and content-download may accept ?token= (short-lived JWT).
+// Never add other routes here — tokens in URLs leak via Referer/logs.
 router.use((req, res, next) => {
   if (req.method !== 'GET') return next();
   const pathOnly = (req.originalUrl || req.url || '').split('?')[0].replace(/\/+$/, '') || '';

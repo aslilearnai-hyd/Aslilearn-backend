@@ -53,7 +53,7 @@ export const createAdmin = async (adminData) => {
     
     // Create new admin
     const bcrypt = await import('bcryptjs');
-    const hashedPassword = await bcrypt.hash(plainPassword, 10);
+    const hashedPassword = await bcrypt.hash(plainPassword, 12);
     
     const newAdmin = new User({
       fullName: name,
@@ -126,7 +126,7 @@ export const createUser = async (userData) => {
     
     // Create new user
     const bcrypt = await import('bcryptjs');
-    const hashedPassword = await bcrypt.hash('password123', 10);
+    const hashedPassword = await bcrypt.hash(String(process.env.DEFAULT_PROVISION_PASSWORD || '').trim() || (() => { throw new Error('DEFAULT_PROVISION_PASSWORD required'); })(), 12);
     
     const newUser = new User({
       fullName: name,
