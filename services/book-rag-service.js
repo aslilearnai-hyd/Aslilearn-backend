@@ -148,7 +148,11 @@ function buildCurriculumTargetBlock(scope = {}) {
     scope.subtopicName || scope.subtopic ? `Sub-topic: ${scope.subtopicName || scope.subtopic}` : '',
     scope.toolSlug || scope.toolName ? `Tool: ${scope.toolSlug || scope.toolName}` : '',
     'Use the textbook passages below as the PRIMARY source. Every question and explanation must stay on this sub-topic.',
+    scope.chapterScope
+      ? 'Scope: whole chapter — cover the full topic.'
+      : 'Scope: STRICT subtopic only — do not pull later chapter sections (e.g. do not ask factors/primes when the subtopic is place value).',
     'Ask directly about definitions, formulas, numericals, and explanations from the book — no scenario or role-play framing.',
+    'Prefer Concept Practice / worked examples / error tables in the passages as patterns for fresh questions (change numbers).',
   ].filter(Boolean);
   return lines.join('\n');
 }
@@ -199,36 +203,115 @@ function rerankBookChunks(chunks = [], scope = {}, topK = DEFAULT_TOP_K) {
 
 export { rerankBookChunks, metadataMatchBonus };
 
+function practiceBoost(chunk = {}) {
+  const text = String(chunk.content || chunk.chunkText || '').toLowerCase();
+  let bonus = 0;
+  if (/concept\s*practice|try\s*these|exercise|worked\s*example|example\s*\d/i.test(text)) bonus += 0.1;
+  if (/common\s*(error|mistake)|misconception|error\s*table|wrong\s*because/i.test(text)) bonus += 0.12;
+  if (/place\s*value|indian\s*system|international\s*system|lakh|crore/i.test(text)) bonus += 0.06;
+  return bonus;
+}
+
+function chunkKey(c) {
+  return String(c._id || `${c.bookId || ''}:${c.chunkIndex ?? ''}:${(c.content || '').slice(0, 40)}`);
+}
+
+function mergeChunkLists(lists = [], scope = {}, topK = DEFAULT_TOP_K) {
+  const map = new Map();
+  for (const list of lists) {
+    for (const c of list || []) {
+      const k = chunkKey(c);
+      const prev = map.get(k);
+      const score =
+        Number(c.score || 0) + metadataMatchBonus(c, scope) + practiceBoost(c);
+      if (!prev || score > prev.score) {
+        map.set(k, { ...c, score });
+      }
+    }
+  }
+  return [...map.values()]
+    .sort((a, b) => b.score - a.score)
+    .slice(0, Math.max(1, Math.min(24, topK)));
+}
+
 export async function retrieveBookContextForGeneration(scope = {}) {
   const query = buildBookRetrievalQuery(scope);
-  const topK = Number(scope.topK) || DEFAULT_TOP_K;
+  const topK = Math.max(Number(scope.topK) || DEFAULT_TOP_K, 6);
   const { embedding: queryEmbedding } = await generateEmbedding(query);
 
-  const baseSearch = (extra = {}) =>
+  const baseSearch = (extra = {}, q = query, emb = queryEmbedding) =>
     searchRelevantChunks({
-      query,
-      queryEmbedding,
+      query: q,
+      queryEmbedding: emb,
       bookId: scope.bookId,
       topK: Math.max(topK, 12),
       ...extra,
     });
 
-  // Chunk metadata stores PDF chapter titles, not curriculum topic/subtopic labels — semantic search first.
-  let chunks = rerankBookChunks(
-    await baseSearch({
-      board: scope.board,
-      subject: scope.subjectName || scope.subject,
+  const subject = scope.subjectName || scope.subject;
+  const topic = scope.topicName || scope.topic || '';
+  const subtopic = scope.subtopicName || scope.subtopic || '';
+
+  // Parallel deep retrieval: base semantic + Concept Practice / error / exercise few-shots.
+  const practiceQueryTexts = [
+    [topic, subtopic, 'Concept Practice'].filter(Boolean).join(' '),
+    [topic, subtopic, 'common errors mistakes misconceptions'].filter(Boolean).join(' '),
+    [topic, subtopic, 'worked example exercise numerical'].filter(Boolean).join(' '),
+    [query, 'place value Indian system International'].filter(Boolean).join(' '),
+  ].filter((q) => q && q.trim().length > 8);
+
+  const practiceSearches = await Promise.all(
+    practiceQueryTexts.slice(0, 3).map(async (pq) => {
+      try {
+        const { embedding } = await generateEmbedding(pq);
+        return baseSearch(
+          { board: scope.board, subject },
+          pq,
+          embedding,
+        );
+      } catch {
+        return [];
+      }
     }),
-    scope,
-    topK,
   );
 
-  if (!chunks.length) {
-    chunks = rerankBookChunks(await baseSearch({ subject: scope.subjectName || scope.subject }), scope, topK);
+  let primary = await baseSearch({ board: scope.board, subject });
+  if (!primary.length) {
+    primary = await baseSearch({ subject });
+  }
+  if (!primary.length) {
+    primary = await baseSearch();
   }
 
-  if (!chunks.length) {
-    chunks = rerankBookChunks(await baseSearch(), scope, topK);
+  let chunks = mergeChunkLists([primary, ...practiceSearches], scope, topK);
+
+  // Soft subtopic filter: prefer chunks that mention the subtopic; keep practice chunks.
+  if (subtopic && !scope.chapterScope) {
+    const tokens = topicMatchTokens(subtopic);
+    const preferred = chunks.filter((c) => {
+      const text = String(c.content || c.chunkText || '').toLowerCase();
+      const meta = String(c.subtopic || c.topic || '').toLowerCase();
+      if (practiceBoost(c) >= 0.1) return true;
+      if (meta.includes(subtopic.toLowerCase())) return true;
+      return tokens.some((t) => text.includes(t));
+    });
+    if (preferred.length >= Math.min(3, chunks.length)) {
+      chunks = preferred.slice(0, topK);
+    }
+  }
+
+  // If no Concept Practice / worked-example grounding, widen search once.
+  let hasPracticeGrounding = chunks.some((c) => practiceBoost(c) >= 0.1);
+  if (!hasPracticeGrounding && (topic || subtopic)) {
+    try {
+      const widenQ = [topic, subtopic, 'example exercise practice questions'].filter(Boolean).join(' ');
+      const { embedding } = await generateEmbedding(widenQ);
+      const extra = await baseSearch({ board: scope.board, subject }, widenQ, embedding);
+      chunks = mergeChunkLists([chunks, extra], scope, Math.max(topK, 10));
+      hasPracticeGrounding = chunks.some((c) => practiceBoost(c) >= 0.1);
+    } catch {
+      /* keep existing chunks */
+    }
   }
 
   const bookContext = formatBookContextForPrompt(chunks, {
@@ -245,7 +328,9 @@ export async function retrieveBookContextForGeneration(scope = {}) {
     contextText,
     chunkCount: chunks.length,
     hasBookPassages: chunks.length > 0,
+    hasPracticeGrounding,
     retrievalQuery: query,
+    practiceQueryCount: practiceQueryTexts.length,
   };
 }
 
@@ -259,11 +344,12 @@ export function buildBookContextTextForVariant(ragBase, scope = {}, variantIndex
     return ragBase?.contextText || curriculumBlock;
   }
 
-  const windowSize = Math.max(2, Math.min(4, DEFAULT_TOP_K));
+  // Prefer a wider window so Concept Practice / error-table chunks stay in-context.
+  const windowSize = Math.max(4, Math.min(8, Math.max(DEFAULT_TOP_K, chunks.length)));
   const stride = Math.max(1, Math.floor(windowSize / 2));
   const start = ((Math.max(1, variantIndex) - 1) * stride) % chunks.length;
   const selected = [];
-  for (let i = 0; i < windowSize; i += 1) {
+  for (let i = 0; i < Math.min(windowSize, chunks.length); i += 1) {
     selected.push(chunks[(start + i) % chunks.length]);
   }
 

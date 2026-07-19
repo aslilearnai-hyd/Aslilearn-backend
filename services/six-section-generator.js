@@ -11,6 +11,7 @@ import { getAiGeneratorGeminiModel } from '../utils/ai-generator-batch-config.js
 import { assembleSixSectionPrompt } from '../prompts/v2/assemble.js';
 import { V2_SECTION_IDS } from '../prompts/v2/master-prompt.js';
 import { GEMINI_LITE_MODEL } from './gemini-models.js';
+import { auditV2Generation } from './v2-content-quality-service.js';
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -161,14 +162,61 @@ export async function generateSixSectionContent(toolSlug, params = {}, opts = {}
       if (attempt < maxTries && rawGarbageScore(raw) >= 4) {
         continue;
       }
-      return {
-        ok: true,
-        structuredContent: deepSanitizeMath({
-          schema: 'asli-v2-six-section',
-          tool: toolSlug,
-          ...Object.fromEntries(V2_SECTION_IDS.map((id) => [id, json[id]])),
-        }),
-      };
+      const sanitized = deepSanitizeMath({
+        schema: 'asli-v2-six-section',
+        tool: toolSlug,
+        ...Object.fromEntries(V2_SECTION_IDS.map((id) => [id, json[id]])),
+      });
+
+      // Full quality: math/Indian/scope/LLM + density/placeholder + legacy scaffold gate.
+      if (opts.skipQualityPipeline === true) {
+        return { ok: true, structuredContent: sanitized };
+      }
+      try {
+        const quality = await auditV2Generation(toolSlug, sanitized, params, {
+          forceAudit: opts.forceAudit,
+          llmAudit: opts.llmAudit,
+          llmAuditAlways: opts.llmAuditAlways,
+          skipIndianNotation: opts.skipIndianNotation,
+          skipLegacyScaffold: opts.skipLegacyScaffold,
+          auditModel: opts.auditModel,
+        });
+        if (!quality.ok) {
+          lastErr = `Quality gate failed: ${quality.errors.slice(0, 4).join(' | ')}`;
+          if (attempt < maxTries) {
+            console.warn(`[six-section] ${lastErr} — retrying (${attempt}/${maxTries})`);
+            continue;
+          }
+          if (opts.softKeepOnQualityFail === true) {
+            return {
+              ok: true,
+              structuredContent: quality.structuredContent,
+              legacyStructured: quality.legacyStructured,
+              qualityWarnings: quality.errors,
+              qualityFixes: quality.fixes,
+            };
+          }
+          return {
+            ok: false,
+            error: lastErr,
+            qualityErrors: quality.errors,
+            structuredContent: quality.structuredContent,
+            legacyStructured: quality.legacyStructured,
+          };
+        }
+        return {
+          ok: true,
+          structuredContent: quality.structuredContent,
+          legacyStructured: quality.legacyStructured,
+          qualityFixes: quality.fixes,
+          qualityWarnings: quality.warnings,
+        };
+      } catch (qErr) {
+        console.warn('[six-section] quality pipeline error:', qErr?.message || qErr);
+        lastErr = `Quality pipeline error: ${qErr?.message || qErr}`;
+        if (attempt < maxTries) continue;
+        return { ok: false, error: lastErr };
+      }
     }
   }
   return {
