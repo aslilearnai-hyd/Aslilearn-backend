@@ -261,7 +261,8 @@ export async function retrieveBookContextForGeneration(scope = {}) {
   ].filter((q) => q && q.trim().length > 8);
 
   const practiceSearches = await Promise.all(
-    practiceQueryTexts.slice(0, 3).map(async (pq) => {
+    // One practice query by default (was 3) — embeddings are billed; widen below if empty.
+    practiceQueryTexts.slice(0, 1).map(async (pq) => {
       try {
         const { embedding } = await generateEmbedding(pq);
         return baseSearch(
@@ -344,8 +345,8 @@ export function buildBookContextTextForVariant(ragBase, scope = {}, variantIndex
     return ragBase?.contextText || curriculumBlock;
   }
 
-  // Prefer a wider window so Concept Practice / error-table chunks stay in-context.
-  const windowSize = Math.max(4, Math.min(8, Math.max(DEFAULT_TOP_K, chunks.length)));
+  // Prefer a moderate window (cost vs grounding). Override with BOOK_RAG_TOP_K.
+  const windowSize = Math.max(3, Math.min(5, Math.max(DEFAULT_TOP_K, 4)));
   const stride = Math.max(1, Math.floor(windowSize / 2));
   const start = ((Math.max(1, variantIndex) - 1) * stride) % chunks.length;
   const selected = [];

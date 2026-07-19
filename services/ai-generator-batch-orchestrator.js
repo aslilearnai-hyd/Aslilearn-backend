@@ -511,8 +511,8 @@ export async function generateBatchAndSave(params, opts = {}) {
                     variantHint: v2VariantHint,
                     temperature: Math.min(0.9, 0.6 + (variantIndex - 1) * 0.06),
                     avoidQuestions: usedV2Questions.slice(0, 40),
-                    maxTries: 3,
-                    llmAudit: true,
+                    maxTries: 2,
+                    llmAudit: undefined,
                     softKeepOnQualityFail: false,
                   },
                 );

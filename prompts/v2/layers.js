@@ -42,7 +42,7 @@ export function buildRagLayer(ragContext) {
 
 RETRIEVED TEXTBOOK CHUNKS:
 """
-${chunks.slice(0, 16000)}
+${chunks.slice(0, 12000)}
 """`;
 }
 
