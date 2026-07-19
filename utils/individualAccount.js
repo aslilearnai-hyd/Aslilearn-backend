@@ -164,23 +164,29 @@ export function resolveIndividualAccess(doc) {
     };
   }
 
-  const trialActive = ends != null && now < ends && status === 'trial';
-  const trialDaysLeft =
-    ends != null ? Math.max(0, Math.ceil((ends - now) / (24 * 60 * 60 * 1000))) : 0;
-  const paymentRequired = !trialActive;
+  const trialActive = Boolean(ends && ends > now && (status === 'trial' || !status || status === 'none'));
+  const daysLeft =
+    trialActive && ends ? Math.max(0, Math.ceil((ends - now) / (24 * 60 * 60 * 1000))) : 0;
 
   return {
     isIndividualAccount: true,
-    subscriptionStatus: paymentRequired ? 'expired' : 'trial',
-    paymentRequired,
+    subscriptionStatus: trialActive ? 'trial' : 'expired',
+    paymentRequired: !trialActive,
     trialActive,
     trialEndsAt: doc.trialEndsAt || null,
-    trialDaysLeft: trialActive ? trialDaysLeft : 0,
+    trialDaysLeft: daysLeft,
     trialAllowedContentTypes: Array.isArray(doc.trialAllowedContentTypes)
       ? doc.trialAllowedContentTypes
       : [],
     trialAllowedAiTools: Array.isArray(doc.trialAllowedAiTools) ? doc.trialAllowedAiTools : [],
   };
+}
+
+/** Individual accounts that are not fully paid — eligible for trialOnly quizzes. */
+export function isTrialQuizAudience(doc) {
+  if (!doc?.isIndividualAccount) return false;
+  const access = resolveIndividualAccess(doc);
+  return access.subscriptionStatus !== 'active';
 }
 
 export { IIT_CATEGORIES };

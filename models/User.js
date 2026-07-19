@@ -184,6 +184,25 @@ const userSchema = new mongoose.Schema({
     trim: true,
     default: '',
   },
+  /** Manual payment recorded by Super Admin for individual (B2C) accounts. */
+  trialPaymentAmount: {
+    type: Number,
+    default: null,
+  },
+  trialPaidAt: {
+    type: Date,
+    default: null,
+  },
+  trialPaymentMethod: {
+    type: String,
+    trim: true,
+    default: '',
+  },
+  trialPaymentReference: {
+    type: String,
+    trim: true,
+    default: '',
+  },
   // School name for admins
   schoolName: {
     type: String,

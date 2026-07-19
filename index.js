@@ -1,6 +1,9 @@
 import express from 'express';
 import cors from 'cors';
-import session from 'express-session';
+import helmet from 'helmet';
+import { loginLimiter } from './middleware/rate-limit.js';
+import { requestContext } from './middleware/request-context.js';
+import { logger } from './utils/logger.js';
 import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
 import bcrypt from 'bcryptjs';
@@ -147,6 +150,27 @@ if (envResult.error) {
   }
 }
 
+/*
+ * Required-secret check — fail fast, before anything can serve a request.
+ *
+ * JWT_SECRET used to fall back to a hardcoded string in 24 places across five
+ * files (with two DIFFERENT defaults). A deploy that forgot it kept running and
+ * signed tokens anyone could forge. Those fallbacks are gone, so an unset
+ * JWT_SECRET would now throw at first use — deep inside a login request, as a
+ * 500. Checking here turns that into an obvious startup failure instead.
+ */
+const REQUIRED_SECRETS = ['JWT_SECRET', 'MONGO_URI'];
+const missingSecrets = REQUIRED_SECRETS.filter((k) => !String(process.env[k] || '').trim());
+if (missingSecrets.length) {
+  console.error(`\n❌ FATAL: required environment variable(s) missing: ${missingSecrets.join(', ')}`);
+  console.error('   Set them in the environment. There are no defaults — that is deliberate.\n');
+  process.exit(1);
+}
+if (String(process.env.JWT_SECRET).length < 16) {
+  console.error('\n❌ FATAL: JWT_SECRET is shorter than 16 characters. Use a long random value.\n');
+  process.exit(1);
+}
+
 const app = express();
 
 // Match server log default: NODE unset → behave as production (see app.listen log).
@@ -273,6 +297,32 @@ const allowedOrigins = [
   process.env.CLIENT_URL
 ].filter(Boolean);
 
+/*
+ * Security headers. helmet was in package.json but had never been imported, so
+ * no response carried HSTS, X-Frame-Options, X-Content-Type-Options or a
+ * referrer policy.
+ *
+ * Mounted BEFORE cors so the headers apply to preflight responses too.
+ *
+ * contentSecurityPolicy is disabled: this process serves JSON to a separate
+ * frontend origin plus some static/uploaded files, and a default-src 'self'
+ * policy would need to be authored against the real asset origins first —
+ * shipping a wrong CSP breaks pages silently. crossOriginResourcePolicy is
+ * relaxed to cross-origin because the frontend is on a different domain and
+ * must be able to load files served from /uploads.
+ */
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+    crossOriginResourcePolicy: { policy: 'cross-origin' },
+    crossOriginEmbedderPolicy: false,
+  }),
+);
+
+// Assign a request id before anything else can log or fail, so every
+// subsequent line — including the error handler — can be correlated.
+app.use(requestContext);
+
 app.use(cors({
   origin: function (origin, callback) {
     // Allow requests with no origin (like mobile apps or curl requests)
@@ -320,14 +370,25 @@ app.use(cors({
       return callback(null, true);
     }
     
-    // In production, be more permissive to avoid CORS issues
-    if (process.env.NODE_ENV === 'production') {
-      console.log('[CORS] Allowing origin in production:', origin);
-      return callback(null, true);
-    }
-    
-    console.warn('[CORS] Unrecognized origin, defaulting to allow:', origin);
-    callback(null, true);
+    /*
+     * DENY unknown origins.
+     *
+     * This previously ended with "in production, be more permissive to avoid
+     * CORS issues" -> callback(null, true), plus a second catch-all that also
+     * allowed. Every check above it was therefore decorative: any origin was
+     * accepted, and with credentials: true set below, any website could issue
+     * authenticated cross-origin requests using a logged-in user's session.
+     *
+     * Verified against the running server before this change:
+     *     Origin: https://evil.example.com
+     *     -> Access-Control-Allow-Origin: https://evil.example.com
+     *
+     * Blocked origins are logged loudly rather than silently, so a legitimate
+     * frontend that is missing from the allowlist shows up in the logs as
+     * "[CORS] BLOCKED" instead of failing mysteriously in the browser.
+     */
+    console.warn('[CORS] BLOCKED unrecognized origin:', origin);
+    callback(null, false);
   },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
@@ -359,11 +420,34 @@ app.use((req, res, next) => {
   next();
 });
 
-// Add CORS headers to all responses
+/*
+ * CORS headers for all responses — ALLOWLISTED, not reflected.
+ *
+ * This previously read:
+ *     res.header('Access-Control-Allow-Origin', req.headers.origin || '*');
+ *     res.header('Access-Control-Allow-Credentials', 'true');
+ *
+ * which echoed back WHATEVER Origin the caller sent, together with
+ * credentials: true — silently defeating the cors() allowlist configured above,
+ * because this middleware runs afterwards and overwrites its header.
+ *
+ * Verified against the running server before the fix:
+ *     Origin: https://evil.example.com
+ *     -> Access-Control-Allow-Origin: https://evil.example.com
+ *
+ * With credentials allowed, that let ANY site issue authenticated cross-origin
+ * requests using a logged-in user's token. Now the origin is echoed only when
+ * it is on the same allowlist cors() uses; unknown origins get no CORS header
+ * at all and the browser blocks the response.
+ */
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', req.headers.origin || '*');
-  res.header('Access-Control-Allow-Credentials', 'true');
-  res.header('Access-Control-Expose-Headers', 'Set-Cookie');
+  const origin = req.headers.origin;
+  if (origin && allowedOrigins.includes(origin)) {
+    res.header('Access-Control-Allow-Origin', origin);
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.header('Access-Control-Expose-Headers', 'Set-Cookie');
+    res.header('Vary', 'Origin');
+  }
   next();
 });
 
@@ -701,7 +785,7 @@ const requireAuth = (req, res, next) => {
   const token = req.headers.authorization?.replace('Bearer ', '');
   if (!token) return res.status(401).json({ message: 'Not authenticated' });
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key');
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded;
     req.isAuthenticated = () => true;
     next();
@@ -927,6 +1011,50 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
   }
 });
 
+/** Unfinished trial-only login quizzes for individual trial accounts (students). */
+app.get('/api/auth/trial-login-quizzes', requireAuth, async (req, res) => {
+  try {
+    if (req.user?.role !== 'student') {
+      return res.json({ success: true, data: [] });
+    }
+    const authId = req.user.userId || req.user.id;
+    const student = await User.findById(authId);
+    if (!student) {
+      return res.json({ success: true, data: [] });
+    }
+    const { isTrialQuizAudience } = await import('./utils/individualAccount.js');
+    if (!isTrialQuizAudience(student)) {
+      return res.json({ success: true, data: [] });
+    }
+
+    const IQRankQuiz = (await import('./models/IQRankQuiz.js')).default;
+    const IQRankQuizResult = (await import('./models/IQRankQuizResult.js')).default;
+
+    const quizzes = await IQRankQuiz.find({
+      isActive: true,
+      trialOnly: true,
+      promptOnLogin: true,
+    })
+      .populate('subject', 'name')
+      .sort({ createdAt: -1 })
+      .lean();
+
+    const results = await IQRankQuizResult.find({
+      userId: student._id,
+      quizId: { $in: quizzes.map((q) => q._id) },
+    })
+      .select('quizId')
+      .lean();
+    const done = new Set(results.map((r) => String(r.quizId)));
+    const pending = quizzes.filter((q) => !done.has(String(q._id)));
+
+    res.json({ success: true, data: pending });
+  } catch (error) {
+    console.error('trial-login-quizzes error:', error);
+    res.status(500).json({ success: false, message: 'Failed to fetch trial login quizzes' });
+  }
+});
+
 // Update current user's profile
 app.patch('/api/users/:userId', requireAuth, async (req, res) => {
   try {
@@ -1041,24 +1169,29 @@ app.use('/api', practiceProgressRoutes);
 app.use('/api', dashboardRoutes);
 app.use('/api/timetable', timetableRoutes);
 
-// Serve static files
-// Session configuration
-app.use(session({
-  secret: process.env.SESSION_SECRET || 'your-secret-key',
-  resave: true, // Set to true to ensure session is saved
-  saveUninitialized: true, // Set to true to save new sessions
-  cookie: {
-    secure: false, // set true when the app is served only over HTTPS
-    httpOnly: false, // Set to false to allow JavaScript access
-    maxAge: 24 * 60 * 60 * 1000, // 24 hours
-    sameSite: 'lax', // Set to 'lax' for better compatibility
-    // Remove domain restriction to allow cross-origin sessions
-  }
-}));
-
-// Passport configuration
+/*
+ * Session middleware REMOVED (July 2026) — it was dead weight carrying three
+ * production defects:
+ *
+ *   1. `secret: process.env.SESSION_SECRET || 'your-secret-key'` and
+ *      SESSION_SECRET was never set, so cookies were being signed with a
+ *      publicly-known default string. Anyone could forge a session cookie.
+ *   2. `httpOnly: false` exposed the cookie to any script on the page, and
+ *      `secure: false` allowed it over plain HTTP.
+ *   3. `resave: true` + `saveUninitialized: true` on the default MemoryStore
+ *      created and re-wrote a session for EVERY visitor, including anonymous
+ *      ones — unbounded memory growth, and not shared across instances.
+ *
+ * None of it was in use: authentication is JWT-based (req.user is set by
+ * verifyToken in middleware/auth.js), `req.session` is never read anywhere in
+ * the codebase, and `passport.authenticate` / `req.login` are never called.
+ * passport.session() also requires session middleware, so it goes with it.
+ *
+ * passport.initialize() is retained only because the LocalStrategy and
+ * serialize/deserialize handlers below still reference passport; they are
+ * likewise unused and can be deleted in a follow-up.
+ */
 app.use(passport.initialize());
-app.use(passport.session());
 
 // Passport strategies
 passport.use(new LocalStrategy({
@@ -1306,7 +1439,7 @@ app.options('/api/auth/login', (req, res) => {
   res.sendStatus(200);
 });
 
-app.post('/api/auth/login', async (req, res) => {
+app.post('/api/auth/login', loginLimiter, async (req, res) => {
   try {
     console.log('=== LOGIN REQUEST ===');
     console.log('Request body:', req.body);
@@ -1382,7 +1515,7 @@ app.post('/api/auth/login', async (req, res) => {
           fullName: validCredential.fullName,
           role: 'super-admin'
         },
-        process.env.JWT_SECRET || 'your-secret-key',
+        process.env.JWT_SECRET,
         { expiresIn: '24h' }
       );
       
@@ -1425,7 +1558,7 @@ app.post('/api/auth/login', async (req, res) => {
           email: adminUser.email, 
           role: adminUser.role 
         },
-        process.env.JWT_SECRET || 'your-secret-key',
+        process.env.JWT_SECRET,
         { expiresIn: '24h' }
       );
       
@@ -1472,7 +1605,7 @@ app.post('/api/auth/login', async (req, res) => {
             email: teacher.email, 
             role: 'teacher' 
           },
-          process.env.JWT_SECRET || 'your-secret-key',
+          process.env.JWT_SECRET,
           { expiresIn: '24h' }
         );
         
@@ -1575,7 +1708,7 @@ app.post('/api/auth/login', async (req, res) => {
         email: user.email, 
         role: user.role 
       },
-      process.env.JWT_SECRET || 'your-secret-key',
+      process.env.JWT_SECRET,
       { expiresIn: '24h' }
     );
 
@@ -1649,7 +1782,7 @@ if (process.env.NODE_ENV === 'development') {
     const token = req.headers.authorization?.replace('Bearer ', '');
     if (token) {
       try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key');
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
         // Use real authenticated user if token is valid
         req.user = decoded;
         req.isAuthenticated = () => true;
@@ -2438,7 +2571,7 @@ app.get('/api/admin/users', async (req, res) => {
       return res.status(401).json({ message: 'No token provided' });
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key');
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const adminId = decoded.userId;
 
     // Only return students assigned to this admin
@@ -2462,7 +2595,7 @@ app.post('/api/admin/users', async (req, res) => {
       return res.status(401).json({ message: 'No token provided' });
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key');
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const adminId = decoded.userId;
 
     const { email, password, fullName, classNumber, phone, role = 'student', isActive = true } = req.body;
@@ -2598,7 +2731,7 @@ app.get('/api/admin/teachers', async (req, res) => {
       return res.status(401).json({ message: 'No token provided' });
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key');
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const adminId = decoded.userId;
 
     // Only return teachers assigned to this admin
@@ -2647,7 +2780,7 @@ app.post('/api/admin/teachers', async (req, res) => {
       return res.status(401).json({ message: 'No token provided' });
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key');
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const adminId = decoded.userId;
 
     const { email, password, fullName, phone, department, qualifications, subjects } = req.body;
@@ -4310,7 +4443,7 @@ app.post('/api/admin/users/upload', upload.single('file'), async (req, res) => {
       return res.status(401).json({ message: 'No token provided' });
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key');
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const adminId = decoded.userId;
     console.log('Admin ID for CSV upload:', adminId);
 
@@ -4584,7 +4717,7 @@ app.post('/api/admin/teachers/upload__legacy_removed', requireAuth, requireAdmin
       return res.status(401).json({ message: 'No token provided' });
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key');
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const adminId = decoded.userId;
     console.log('Admin ID for teacher CSV upload:', adminId);
 
@@ -4765,7 +4898,7 @@ app.get('/api/admin/classes', async (req, res) => {
       return res.status(401).json({ message: 'No token provided' });
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key');
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const adminId = decoded.userId;
 
     // Get classes from Class model
@@ -4931,7 +5064,7 @@ app.post('/api/admin/classes', async (req, res) => {
       return res.status(401).json({ success: false, message: 'No token provided' });
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key');
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const adminId = decoded.userId;
 
     const { classNumber, section, description } = req.body;
@@ -5288,10 +5421,11 @@ app.patch('/api/assessments/:id/toggle', async (req, res) => {
 });
 
 // Error handling middleware
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ message: 'Something went wrong!' });
-});
+// NOTE: the global error handler used to live here, but ~30 route
+// registrations follow this point in the file. Express only routes errors to
+// error middleware declared AFTER the routes that throw, so those 30 routes
+// were bypassing it entirely and falling through to Express's default handler.
+// It now sits immediately before app.listen — see the bottom of this file.
 
 // Vidya AI endpoints have moved to routes/vidya.js
 // (mounted via app.use('/api', vidyaRoutes) earlier in this file).
@@ -5507,7 +5641,7 @@ app.get('/api/debug/current-session', (req, res) => {
 });
 
 // Super Admin Authentication
-app.post('/api/super-admin/login', async (req, res) => {
+app.post('/api/super-admin/login', loginLimiter, async (req, res) => {
   try {
     const email = String(req.body?.email || '').trim();
     const password = String(req.body?.password || '').trim();
@@ -5558,7 +5692,7 @@ app.post('/api/super-admin/login', async (req, res) => {
           fullName: validCredential.fullName,
           role: 'super-admin'
         },
-        process.env.JWT_SECRET || 'your-secret-key',
+        process.env.JWT_SECRET,
         { expiresIn: '24h' }
       );
       
@@ -5885,7 +6019,7 @@ app.post('/api/teacher/videos-working', async (req, res) => {
     console.log('Token:', token);
     
     // Verify token and get user info (fallback secret for local dev)
-    const jwtSecret = process.env.JWT_SECRET || 'your-secret-key';
+    const jwtSecret = process.env.JWT_SECRET;
     const decoded = jwt.verify(token, jwtSecret);
     console.log('Decoded token:', decoded);
     
@@ -6169,7 +6303,7 @@ app.post('/api/teacher/assessments', async (req, res) => {
     }
     
     const token = authHeader.split(' ')[1];
-    const jwtSecret = process.env.JWT_SECRET || 'your-secret-key';
+    const jwtSecret = process.env.JWT_SECRET;
     const decoded = jwt.verify(token, jwtSecret);
     
     const teacherId = decoded.userId || decoded.id || decoded._id;
@@ -6225,7 +6359,7 @@ app.delete('/api/videos/:id', async (req, res) => {
     }
     
     const token = authHeader.split(' ')[1];
-    const jwtSecret = process.env.JWT_SECRET || 'your-secret-key';
+    const jwtSecret = process.env.JWT_SECRET;
     const decoded = jwt.verify(token, jwtSecret);
     
     const teacherId = decoded.userId || decoded.id || decoded._id;
@@ -6263,7 +6397,7 @@ app.post('/api/teacher/videos', async (req, res) => {
       return res.status(401).json({ success: false, message: 'No token provided' });
     }
     const token = authHeader.split(' ')[1];
-    const jwtSecret = process.env.JWT_SECRET || 'your-secret-key';
+    const jwtSecret = process.env.JWT_SECRET;
     const decoded = jwt.verify(token, jwtSecret);
 
     // Resolve teacher
@@ -6414,6 +6548,61 @@ app.post('/api/lesson-plan/generate', async (req, res) => {
 
 // AI Generator / Book batches hold the HTTP connection for several minutes.
 // Default Node/proxy idle limits (~60–120s) surface as intermittent "Network error".
+/*
+ * 404 for unmatched API routes.
+ *
+ * Unknown /api paths previously fell through to Express's default handler and
+ * returned an HTML error page, which a JSON client cannot parse — the frontend
+ * would fail on JSON.parse rather than reporting "not found".
+ */
+app.use('/api', (req, res) => {
+  res.status(404).json({
+    success: false,
+    message: `No such endpoint: ${req.method} ${req.originalUrl}`,
+    requestId: req.id,
+  });
+});
+
+/*
+ * Global error handler — MUST be last, after every route.
+ *
+ * Was: console.error(err.stack) + a bare 500 "Something went wrong!",
+ * registered ~1,100 lines before the final routes so it never saw their errors.
+ * Three further problems: the stack went to stdout with no request
+ * correlation, the caller got no reference to quote in a support ticket, and
+ * every failure became a 500 even when the error carried its own status (a 400
+ * validation error was reported as a server fault).
+ *
+ * Now: correlated structured log, the error's own status when it has one, and
+ * the request id returned to the caller. The message is still withheld in
+ * production — internal errors can carry connection strings and query
+ * fragments — but surfaced in development where it is useful.
+ */
+app.use((err, req, res, next) => {
+  if (res.headersSent) return next(err);
+
+  const status = Number(err?.status || err?.statusCode) || 500;
+  const log = req.log || logger;
+
+  log[status >= 500 ? 'error' : 'warn']('Request failed', {
+    status,
+    method: req.method,
+    url: req.originalUrl,
+    name: err?.name,
+    message: err?.message,
+    ...(status >= 500 ? { stack: err?.stack } : {}),
+  });
+
+  res.status(status).json({
+    success: false,
+    message:
+      status >= 500 && nodeEnvEffective === 'production'
+        ? 'Something went wrong. Please try again.'
+        : err?.message || 'Request failed',
+    requestId: req.id,
+  });
+});
+
 const server = app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`Server accessible at http://0.0.0.0:${PORT}`);
@@ -6423,3 +6612,46 @@ server.timeout = 0;
 server.requestTimeout = 0;
 server.headersTimeout = 0;
 server.keepAliveTimeout = 120_000;
+
+/*
+ * Process-level failure handling. There was none.
+ *
+ * An unhandled promise rejection previously produced a bare Node warning and
+ * left the process running in an unknown state; on newer Node it can terminate
+ * the process outright with no useful diagnostic. Either way the cause was
+ * invisible. These handlers make the failure loud and attributable.
+ *
+ * The distinction matters:
+ *   - unhandledRejection: log and KEEP SERVING. One route's forgotten .catch()
+ *     should not take down every other request in flight.
+ *   - uncaughtException: the process is genuinely in an undefined state, so
+ *     stop accepting connections, drain, and exit non-zero so the supervisor
+ *     (PM2 / Railway) restarts it. Forced exit after 10s in case drain hangs.
+ */
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('❌ UNHANDLED REJECTION — server continues:', reason instanceof Error ? reason.stack : reason);
+  console.error('   promise:', promise);
+});
+
+let shuttingDown = false;
+const shutdown = (signal, code = 0) => {
+  if (shuttingDown) return;
+  shuttingDown = true;
+  console.log(`\n${signal} received — closing server...`);
+  server.close(() => {
+    console.log('Server closed. Exiting.');
+    process.exit(code);
+  });
+  setTimeout(() => {
+    console.error('Shutdown timed out after 10s — forcing exit.');
+    process.exit(code || 1);
+  }, 10_000).unref();
+};
+
+process.on('uncaughtException', (err) => {
+  console.error('❌ UNCAUGHT EXCEPTION — shutting down:', err?.stack || err);
+  shutdown('uncaughtException', 1);
+});
+
+// SIGTERM is what PM2, Docker and Railway send on deploy/restart.
+process.on('SIGTERM', () => shutdown('SIGTERM'));

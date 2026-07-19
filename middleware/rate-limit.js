@@ -23,6 +23,30 @@ export const aiChatPerUserLimiter = rateLimit({
   handler: jsonHandler('You are chatting with Vidya very fast. Please wait a few seconds and try again.'),
 });
 
+/*
+ * Brute-force protection for credential endpoints.
+ *
+ * Rate limiting existed only on the Vidya AI chat routes, so every login
+ * endpoint — super admin, admin, teacher, student — accepted unlimited password
+ * attempts. Keyed by IP + submitted email so one attacker cannot lock out a
+ * whole NAT'd school, and so spraying many emails from one IP still counts.
+ *
+ * skipSuccessfulRequests means a legitimate user who logs in correctly never
+ * burns quota; only failures count toward the limit.
+ */
+export const loginLimiter = rateLimit({
+  windowMs: Number(process.env.LOGIN_WINDOW_MS || 15 * 60 * 1000),
+  limit: Number(process.env.LOGIN_MAX_ATTEMPTS || 10),
+  standardHeaders: true,
+  legacyHeaders: false,
+  skipSuccessfulRequests: true,
+  keyGenerator: (req) => {
+    const email = String(req.body?.email || req.body?.username || '').toLowerCase().trim();
+    return `${ipKeyGenerator(req)}:${email}`;
+  },
+  handler: jsonHandler('Too many sign-in attempts. Please wait a few minutes and try again.'),
+});
+
 export const aiHeavyLimiter = rateLimit({
   windowMs: 60 * 1000,
   limit: Number(process.env.VIDYA_HEAVY_RPM || 10),

@@ -19,6 +19,14 @@ export default createToolPromptPack({
     'reflection_exit_ticket: one metacognitive question.',
     'Minimum 5 cards; vary card types (MCQ, fill, explain, apply, diagram describe).',
     'Never copy learning-objective wording into card fronts (e.g. avoid "Apply X to short real-life examples" as a question).',
+    '',
+    // The "Foundations" canonical block was never named in this prompt. Its three
+    // fields must be emitted ALONGSIDE the cards — they are deck metadata, and
+    // the rule above still forbids their wording appearing in card fronts.
+    'ALSO REQUIRED — the Foundations block, emitted as deck-level fields (never as card fronts):',
+    'prior_knowledge_required: what students must already know before this deck.',
+    'learning_objectives: 3 measurable objectives for the deck.',
+    'ncf_competency_alignment: the NCF/NEP competency this deck builds, in plain language.',
   ],
   rewriteRules: [
     'Every card needs front AND back strings. Include HOTS and recall mix.',

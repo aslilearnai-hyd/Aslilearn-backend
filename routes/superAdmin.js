@@ -3,6 +3,7 @@ import multer from 'multer';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { loginLimiter } from '../middleware/rate-limit.js';
 import {
   verifyToken,
   verifySuperAdmin,
@@ -38,6 +39,7 @@ import {
 import {
   listTrialMembers,
   updateTrialMember,
+  applyTrialMemberDefaults,
 } from '../controllers/trialMembersController.js';
 import {
   getProductCategories,
@@ -429,7 +431,7 @@ const schoolPhotoUpload = multer({
 });
 
 // Public routes
-router.post('/login', superAdminLogin);
+router.post('/login', loginLimiter, superAdminLogin);
 
 // Protected routes - require super admin authentication
 router.use(verifyToken);
@@ -588,6 +590,7 @@ router.post('/courses', createCourse);
 // Individual trial members (B2C teacher/student signups)
 router.get('/trial-members', listTrialMembers);
 router.put('/trial-members/:id', updateTrialMember);
+router.post('/trial-members/apply-defaults', applyTrialMemberDefaults);
 
 // Product categories (IIT Alpha/Beta/Gamma + Super Admin custom tracks)
 router.get('/product-categories', getProductCategories);
@@ -816,7 +819,7 @@ router.post('/upload-question-image', (req, res, next) => {
 // IQ/Rank Boost Activities Routes
 router.post('/iq-rank-activities/generate-questions', async (req, res) => {
   try {
-    const { classNumber, numberOfQuestions, difficulty, subjectId } = req.body;
+    const { classNumber, numberOfQuestions, difficulty, subjectId, trialOnly, promptOnLogin } = req.body;
 
     if (!classNumber || !numberOfQuestions || !difficulty || !subjectId) {
       return res.status(400).json({
@@ -919,7 +922,9 @@ Requirements:
       questions: [],
       totalQuestions: questionsData.questions.length,
       isActive: true,
-      generatedBy: 'super-admin'
+      generatedBy: 'super-admin',
+      trialOnly: Boolean(trialOnly),
+      promptOnLogin: Boolean(trialOnly) && Boolean(promptOnLogin),
     });
     await newQuiz.save();
 
@@ -1039,6 +1044,8 @@ function mapQuizToActivity(quiz) {
     classNumber: q.classNumber,
     questions: totalQ,
     isActive: q.isActive !== false,
+    trialOnly: Boolean(q.trialOnly),
+    promptOnLogin: Boolean(q.promptOnLogin),
     createdAt: q.createdAt,
     updatedAt: q.updatedAt,
     participants: undefined,
@@ -1079,7 +1086,9 @@ router.post('/iq-rank-activities', async (req, res) => {
       subject,
       classNumber,
       questions: questionCount,
-      isActive
+      isActive,
+      trialOnly,
+      promptOnLogin,
     } = req.body;
 
     if (!title || !String(title).trim()) {
@@ -1110,6 +1119,8 @@ router.post('/iq-rank-activities', async (req, res) => {
         : 'quiz',
       points: points != null ? Number(points) : 100,
       durationMinutes: duration != null ? Number(duration) : 30,
+      trialOnly: Boolean(trialOnly),
+      promptOnLogin: Boolean(promptOnLogin),
       generatedBy: 'super-admin'
     });
     await quiz.save();
@@ -1161,6 +1172,8 @@ router.put('/iq-rank-activities/:id', async (req, res) => {
     if (classNumber != null) update.classNumber = String(classNumber).trim();
     if (questionCount != null) update.totalQuestions = Math.max(0, parseInt(String(questionCount), 10) || 0);
     if (isActive != null) update.isActive = Boolean(isActive);
+    if (req.body.trialOnly != null) update.trialOnly = Boolean(req.body.trialOnly);
+    if (req.body.promptOnLogin != null) update.promptOnLogin = Boolean(req.body.promptOnLogin);
 
     const quiz = await IQRankQuiz.findByIdAndUpdate(id, { $set: update }, { new: true })
       .populate('subject', 'name');

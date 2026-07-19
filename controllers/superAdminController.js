@@ -89,7 +89,7 @@ export const superAdminLogin = async (req, res) => {
           fullName: validCredential.fullName,
           role: 'super-admin'
         },
-        process.env.JWT_SECRET || 'your-secret-key',
+        process.env.JWT_SECRET,
         { expiresIn: '24h' }
       );
       

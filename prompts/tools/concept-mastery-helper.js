@@ -21,6 +21,9 @@ export default createToolPromptPack({
     'concept_check_questions: 5 items spanning Bloom levels with expected answers — direct stems.',
     'diagram_description: what to draw on board with labels.',
     'memory_tricks: mnemonic only when natural for this subtopic.',
+    // Required by the validator but never named here — contributed to the 4/12
+    // and 11/12 fill failures across 250+ records.
+    'hots_question: one higher-order thinking question (analyse/evaluate/design) on this concept, with the expected answer.',
     'Each batch variant MUST vary examples, check questions, and emphasised facts — no scenario framing.',
   ],
   rewriteRules: [

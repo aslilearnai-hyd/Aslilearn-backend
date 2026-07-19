@@ -22,8 +22,6 @@ import smartStudyGuideGenerator from './tools/smart-study-guide-generator.js';
 import conceptBreakdownExplainer from './tools/concept-breakdown-explainer.js';
 import smartQaPracticeGenerator from './tools/smart-qa-practice-generator.js';
 import chapterSummaryCreator from './tools/chapter-summary-creator.js';
-import keyPointsFormulaExtractor from './tools/key-points-formula-extractor.js';
-import quickAssignmentBuilder from './tools/quick-assignment-builder.js';
 
 /** @type {Record<string, import('./types.js').ToolPromptPack>} */
 export const PROMPT_REGISTRY = Object.freeze({
@@ -46,8 +44,6 @@ export const PROMPT_REGISTRY = Object.freeze({
   'concept-breakdown-explainer': conceptBreakdownExplainer,
   'smart-qa-practice-generator': smartQaPracticeGenerator,
   'chapter-summary-creator': chapterSummaryCreator,
-  'key-points-formula-extractor': keyPointsFormulaExtractor,
-  'quick-assignment-builder': quickAssignmentBuilder,
 });
 
 /**

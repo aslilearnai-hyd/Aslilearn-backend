@@ -61,7 +61,9 @@ async function fixUserLogin() {
       console.log('✅ Login verification successful!');
       console.log('\n📋 Login Credentials:');
       console.log(`   Email: ${email}`);
-      console.log(`   Password: ${password}`);
+      // Password deliberately NOT logged — it was printed in plaintext here, so
+      // it landed in terminal scrollback, CI output and any captured log file.
+      console.log('   Password: (set as provided — not printed)');
       console.log(`   Role: ${testUser.role}`);
     } else {
       console.log('❌ Login verification failed!');

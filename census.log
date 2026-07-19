@@ -1,0 +1,86 @@
+✅ Loaded .env file from: E:\Asli learn\backend\.env
+🔌 Connecting to MongoDB...
+📍 URI: mongodb+srv://aslilearnai:***@cluster0.lp2xgu2.mongodb.net/ASLI-LEARN?appName=Cluster0
+📦 Database: ASLI-LEARN
+✅ Gemini service ready: primary=gemini-3.1-flash-lite, chain=[gemini-3.1-flash-lite]
+Corpus census — no LLM calls, no token cost.
+
+🔧 MongoDB SRV DNS: using public resolvers (Windows router DNS workaround). Set MONGO_DNS_SERVERS=system to disable.
+✅ MongoDB Connected: ac-qplfas9-shard-00-02.lp2xgu2.mongodb.net
+📊 Database Name: ASLI-LEARN
+  master: 1000 scanned
+  master: 2000 scanned
+  master: 3000 scanned
+  master: 4000 scanned
+  master: 5000 scanned
+  master: 6000 scanned
+  master: 7000 scanned
+  master: 8000 scanned
+  master: 9000 scanned
+  master: 10000 scanned
+  master: 11000 scanned
+  master: 12000 scanned
+  master: 13000 scanned
+  master: 14000 scanned
+  master: 15000 scanned
+  master: 16000 scanned
+  master: 17000 scanned
+  master: 18000 scanned
+  master: 19000 scanned
+  master: 20000 scanned
+[AI Generator] Activity scaffold fallback for variant 1 — model output was incomplete; applying curriculum fallback so the record can save.
+[AI Generator] Activity scaffold fallback for variant 2 — model output was incomplete; applying curriculum fallback so the record can save.
+[AI Generator] Activity scaffold fallback for variant 3 — model output was incomplete; applying curriculum fallback so the record can save.
+[AI Generator] Activity scaffold fallback for variant 4 — model output was incomplete; applying curriculum fallback so the record can save.
+[AI Generator] Activity scaffold fallback for variant 5 — model output was incomplete; applying curriculum fallback so the record can save.
+[AI Generator] Activity scaffold fallback for variant 2 — model output was incomplete; applying curriculum fallback so the record can save.
+[AI Generator] Activity scaffold fallback for variant 1 — model output was incomplete; applying curriculum fallback so the record can save.
+[AI Generator] Activity scaffold fallback for variant 3 — model output was incomplete; applying curriculum fallback so the record can save.
+[AI Generator] Activity scaffold fallback for variant 4 — model output was incomplete; applying curriculum fallback so the record can save.
+[AI Generator] Activity scaffold fallback for variant 5 — model output was incomplete; applying curriculum fallback so the record can save.
+[AI Generator] Activity scaffold fallback for variant 1 — model output was incomplete; applying curriculum fallback so the record can save.
+[AI Generator] Activity scaffold fallback for variant 2 — model output was incomplete; applying curriculum fallback so the record can save.
+[AI Generator] Activity scaffold fallback for variant 4 — model output was incomplete; applying curriculum fallback so the record can save.
+[AI Generator] Activity scaffold fallback for variant 5 — model output was incomplete; applying curriculum fallback so the record can save.
+[AI Generator] Activity scaffold fallback for variant 3 — model output was incomplete; applying curriculum fallback so the record can save.
+[AI Generator] Activity scaffold fallback for variant 2 — model output was incomplete; applying curriculum fallback so the record can save.
+[AI Generator] Activity scaffold fallback for variant 1 — model output was incomplete; applying curriculum fallback so the record can save.
+[AI Generator] Activity scaffold fallback for variant 4 — model output was incomplete; applying curriculum fallback so the record can save.
+[AI Generator] Activity scaffold fallback for variant 5 — model output was incomplete; applying curriculum fallback so the record can save.
+[AI Generator] Activity scaffold fallback for variant 3 — model output was incomplete; applying curriculum fallback so the record can save.
+[AI Generator] Activity scaffold fallback for variant 2 — model output was incomplete; applying curriculum fallback so the record can save.
+[AI Generator] Activity scaffold fallback for variant 1 — model output was incomplete; applying curriculum fallback so the record can save.
+[AI Generator] Activity scaffold fallback for variant 3 — model output was incomplete; applying curriculum fallback so the record can save.
+[AI Generator] Activity scaffold fallback for variant 4 — model output was incomplete; applying curriculum fallback so the record can save.
+[AI Generator] Activity scaffold fallback for variant 5 — model output was incomplete; applying curriculum fallback so the record can save.
+
+Scanned 20356 master + 0 legacy rows.
+
+Tool                              Total  Incomplete  %   Scaffolded
+--------------------------------------------------------------------------
+worksheet-mcq-generator            2189        1075  49%          0
+exam-question-paper-generator      2169         582  27%          0
+lesson-planner                     1973         314  16%          0
+concept-mastery-helper             1571         263  17%          0
+homework-creator                   1913         254  13%          0
+short-notes-summaries-maker        1733         170  10%          0
+smart-qa-practice-generator         197         124  63%          0
+smart-study-guide-generator         179         115  64%          0
+mock-test-builder                   157         100  64%          0
+story-passage-creator               273         100  37%          0
+quick-assignment-builder             80          68  85%          0
+reading-practice-room                60          55  92%          0
+study-schedule-maker                 44          30  68%          0
+concept-breakdown-explainer          65          20  31%          0
+chapter-summary-creator              19           1   5%          0
+my-study-decks                      167           0   0%         36
+activity-project-generator         3751           0   0%          0
+project-idea-lab                    156           0   0%          0
+flashcard-generator                2052           0   0%        139
+daily-class-plan-maker             1596           0   0%          0
+key-points-formula-extractor         12           0   0%          0
+--------------------------------------------------------------------------
+TOTAL                             20356        3271  16%        175
+
+Full report (with missing-section breakdown + repair ids) → corpus-census.json
+MongoDB disconnected — driver will attempt to reconnect

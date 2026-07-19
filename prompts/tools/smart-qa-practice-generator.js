@@ -19,6 +19,8 @@ export default createToolPromptPack({
     'Each question object: question text, type, answer, marks, bloom_level.',
     'Total questions ≥ TARGET PRACTICE QUESTIONS param.',
     'No answer_key_with_explanations duplicate — answers on question objects.',
+    // Required canonical section never named here — this tool sits at 63% incomplete.
+    'learning_objectives: 3 measurable objectives this practice set assesses (emit as a deck-level field, not inside sections[]).',
   ],
   rewriteRules: [
     'All 7 sections with questions. Section C MUST be type MATCH with columns. Direct stems only.',

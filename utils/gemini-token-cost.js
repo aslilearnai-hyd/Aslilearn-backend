@@ -1,9 +1,24 @@
-/** Gemini 2.5 Flash paid-tier list prices (USD per 1M tokens). */
+/** Gemini 2.5 Flash paid-tier list prices (USD per 1M tokens). LEGACY — 2.5 is retired
+ *  per gemini-models.js; kept only so historical records can be re-priced correctly. */
 export const GEMINI_25_FLASH_INPUT_USD_PER_M = 0.3;
 export const GEMINI_25_FLASH_OUTPUT_USD_PER_M = 2.5;
-/** Gemini 2.5 Flash-Lite — used for AI Generator batch variants (lower cost). */
+/** Gemini 2.5 Flash-Lite. LEGACY — see above. */
 export const GEMINI_25_FLASH_LITE_INPUT_USD_PER_M = 0.1;
 export const GEMINI_25_FLASH_LITE_OUTPUT_USD_PER_M = 0.4;
+
+/**
+ * Gemini 3.1 Flash-Lite list pricing (USD per 1M tokens) — the model actually
+ * used for every AI Generator run (see gemini-models.js GEMINI_LITE_MODEL).
+ *
+ * BUGFIX (July 2026): resolveGeminiPricing was charging flash-lite traffic at the
+ * 2.5 Flash-Lite rate ($0.10/$0.40) while labelling it 'gemini-3.1-flash-lite'.
+ * Real 3.1 Flash-Lite is $0.25/$1.50 — 2.5x input and 3.75x output. Because these
+ * generations are output-dominant, every cost figure the platform has reported
+ * (per-record metadata.tokenUsage, batch totals, admin cost views) understated
+ * actual spend by roughly 3.5x.
+ */
+export const GEMINI_31_FLASH_LITE_INPUT_USD_PER_M = 0.25;
+export const GEMINI_31_FLASH_LITE_OUTPUT_USD_PER_M = 1.5;
 
 export function getUsdToInrRate() {
   const rate = Number(process.env.USD_TO_INR_RATE);
@@ -22,6 +37,9 @@ export function normalizeGeminiModelLabel(modelName = '') {
     return lower.includes('3.1') ? 'gemini-3.1-pro-preview' : raw;
   }
   if (lower.includes('flash-lite') || lower.includes('flash_lite')) {
+    // Keep legacy 2.5 records labelled as 2.5 — they are priced at the 2.5 rate,
+    // so relabelling them 3.1 would make a correct cost look like a wrong one.
+    if (lower.includes('2.5')) return 'gemini-2.5-flash-lite (legacy)';
     return 'gemini-3.1-flash-lite';
   }
   if (lower.includes('3.5')) return 'gemini-3.5-flash';
@@ -44,20 +62,38 @@ export function resolveGeminiPricing(modelName = '') {
       pricingNote: 'Estimated from Pro list pricing (input $2/M, output $12/M).',
     };
   }
-  if (model.includes('flash-lite') || model.includes('flash_lite')) {
+  // Legacy 2.5 Flash-Lite records — price at the rate that actually applied when
+  // they were generated, so historical spend is not retroactively inflated.
+  if (model.includes('2.5') && (model.includes('flash-lite') || model.includes('flash_lite'))) {
     return {
-      model: displayModel || 'gemini-3.1-flash-lite',
+      model: 'gemini-2.5-flash-lite (legacy)',
       inputUsdPerM: GEMINI_25_FLASH_LITE_INPUT_USD_PER_M,
       outputUsdPerM: GEMINI_25_FLASH_LITE_OUTPUT_USD_PER_M,
       pricingNote:
-        'Estimated from Flash-Lite list pricing (input $0.10/M, output $0.40/M).',
+        'Legacy Gemini 2.5 Flash-Lite list pricing (input $0.10/M, output $0.40/M).',
     };
   }
+  if (model.includes('flash-lite') || model.includes('flash_lite')) {
+    return {
+      model: displayModel || 'gemini-3.1-flash-lite',
+      inputUsdPerM: GEMINI_31_FLASH_LITE_INPUT_USD_PER_M,
+      outputUsdPerM: GEMINI_31_FLASH_LITE_OUTPUT_USD_PER_M,
+      pricingNote:
+        'Gemini 3.1 Flash-Lite list pricing (input $0.25/M, output $1.50/M).',
+    };
+  }
+  // Fallback. NOTE: this labels output 'gemini-3.5-flash' but prices it at the
+  // Gemini 2.5 Flash rate — the 3.5 Flash rate has NOT been verified, so the
+  // number is a placeholder, not a source of truth. In practice this branch
+  // should be unreachable: resolveAllowedGeminiModel in gemini-models.js remaps
+  // everything to 3.1 Flash-Lite or 3.1 Pro. If this note shows up in real cost
+  // reports, a non-allowlisted model is being called and the price is wrong.
   return {
     model: displayModel || 'gemini-3.5-flash',
     inputUsdPerM: GEMINI_25_FLASH_INPUT_USD_PER_M,
     outputUsdPerM: GEMINI_25_FLASH_OUTPUT_USD_PER_M,
-    pricingNote: 'Estimated from Flash list pricing (input $0.30/M, output $2.50/M).',
+    pricingNote:
+      'UNVERIFIED placeholder — priced at Gemini 2.5 Flash list rates (input $0.30/M, output $2.50/M).',
   };
 }
 

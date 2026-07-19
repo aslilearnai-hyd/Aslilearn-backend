@@ -1,0 +1,673 @@
+{
+  "generatedAt": "2026-07-19T14:49:57.216Z",
+  "scanned": {
+    "master": 20356,
+    "legacy": 0
+  },
+  "totals": {
+    "total": 20264,
+    "incomplete": 3203,
+    "scaffolded": 175
+  },
+  "byTool": [
+    {
+      "toolName": "worksheet-mcq-generator",
+      "toolDisplayName": "Worksheet & MCQ Generator",
+      "total": 2189,
+      "incomplete": 1075,
+      "scaffolded": 0,
+      "unparseable": 2189,
+      "failedWithoutSections": 1075,
+      "missingSectionCounts": {},
+      "failureCodes": {
+        "AI_TOOL_CONTENT_INCOMPLETE": 1075
+      },
+      "failureMessages": {
+        "At least 100% of template sections must be filled (9/10).": 796,
+        "At least 100% of template sections must be filled (8/10).": 239,
+        "At least 100% of template sections must be filled (7/10).": 39,
+        "At least 100% of template sections must be filled (6/10).": 1
+      },
+      "sampleIncompleteIds": [
+        "6a32b05a3879066aaed3fda3",
+        "6a32b0b33879066aaed3ff8f",
+        "6a32b0ea3879066aaed40481",
+        "6a3410f4d0443dc709abe4c7",
+        "6a341111d0443dc709abe537",
+        "6a341152d0443dc709abe596",
+        "6a34115ed0443dc709abe5c0",
+        "6a3437cd08d36af3c1673686",
+        "6a3437da08d36af3c167373d",
+        "6a34f57912375be98514ed68",
+        "6a34f58112375be98514edb9",
+        "6a34f59412375be98514eea2",
+        "6a34fa2712375be98514f542",
+        "6a34fa2e12375be98514f5a1",
+        "6a34fa4712375be98514f74e",
+        "6a34fcba12375be98514fcab",
+        "6a34fcc212375be98514fd4f",
+        "6a34fcca12375be98514fdff",
+        "6a34fcda12375be98514ff16",
+        "6a34fea812375be98515046b",
+        "6a34feb012375be98515057c",
+        "6a34feba12375be985150611",
+        "6a34fecb12375be985150745",
+        "6a34fed812375be9851507be",
+        "6a351b8c12375be985150cae"
+      ]
+    },
+    {
+      "toolName": "exam-question-paper-generator",
+      "toolDisplayName": "Exam Question Paper Generator",
+      "total": 2169,
+      "incomplete": 582,
+      "scaffolded": 0,
+      "unparseable": 2169,
+      "failedWithoutSections": 582,
+      "missingSectionCounts": {},
+      "failureCodes": {
+        "AI_TOOL_CONTENT_INCOMPLETE": 582
+      },
+      "failureMessages": {
+        "3–7. Question Paper Sections (missing: section_c)": 1,
+        "3–7. Question Paper Sections (missing: section_c, section_d)": 4,
+        "3–7. Question Paper Sections (missing: section_d)": 369,
+        "3–7. Question Paper Sections (missing: section_e)": 167,
+        "3–7. Question Paper Sections (missing: section_c, section_d, section_e)": 4,
+        "3–7. Question Paper Sections (missing: section_d, section_e)": 9,
+        "3–7. Question Paper Sections (missing: section_b, section_e)": 6,
+        "3–7. Question Paper Sections (missing: section_b, section_d, section_e)": 2,
+        "3–7. Question Paper Sections (missing: section_b, section_c)": 1,
+        "3–7. Question Paper Sections (missing: section_b, section_c, section_d, section_e)": 14,
+        "3–7. Question Paper Sections (missing: section_b)": 1,
+        "3–7. Question Paper Sections (missing: section_c, section_e)": 3,
+        "3–7. Question Paper Sections (missing: section_b, section_c, section_d)": 1
+      },
+      "sampleIncompleteIds": [
+        "6a336b043879066aaed49475",
+        "6a336b163879066aaed49498",
+        "6a34189159a79586a140a51b",
+        "6a34189459a79586a140a52c",
+        "6a3418a559a79586a140a563",
+        "6a3418b959a79586a140a589",
+        "6a3418cb59a79586a140a5ab",
+        "6a3418d059a79586a140a5bc",
+        "6a34190659a79586a140a605",
+        "6a3419ed878d07b2db14e911",
+        "6a3419f8878d07b2db14e934",
+        "6a341a23878d07b2db14e97e",
+        "6a341a33878d07b2db14e9a2",
+        "6a341a44878d07b2db14e9c7",
+        "6a34371408d36af3c1673449",
+        "6a34f7b712375be98514f059",
+        "6a34fb2112375be98514f949",
+        "6a34fd2512375be985150093",
+        "6a34fd3c12375be9851500df",
+        "6a351c6712375be9851510ab",
+        "6a35734912375be9851521b5",
+        "6a35735b12375be9851521ee",
+        "6a362cf912375be985153c9a",
+        "6a362fbf12375be985154913",
+        "6a36352e12375be985155300"
+      ]
+    },
+    {
+      "toolName": "lesson-planner",
+      "toolDisplayName": "Lesson Planner",
+      "total": 1973,
+      "incomplete": 314,
+      "scaffolded": 0,
+      "unparseable": 1973,
+      "failedWithoutSections": 314,
+      "missingSectionCounts": {},
+      "failureCodes": {
+        "AI_TOOL_CONTENT_INCOMPLETE": 314
+      },
+      "failureMessages": {
+        "At least 100% of template sections must be filled (7/14).": 314
+      },
+      "sampleIncompleteIds": [
+        "6a54b2d8dac93ed8e1a2ed43",
+        "6a54b2d9dac93ed8e1a2ed46",
+        "6a54b2dedac93ed8e1a2ed49",
+        "6a54b2e0dac93ed8e1a2ed4c",
+        "6a54b2e4dac93ed8e1a2ed50",
+        "6a54ba9fb835749b5cace09e",
+        "6a54baa0b835749b5cace0a1",
+        "6a54baa5b835749b5cace0a4",
+        "6a54baa5b835749b5cace0a7",
+        "6a54baabb835749b5cace0aa",
+        "6a54c13fb835749b5cacf33d",
+        "6a54c144b835749b5cacf340",
+        "6a54c14ab835749b5cacf343",
+        "6a54c150b835749b5cacf346",
+        "6a54c18bb835749b5cacf353",
+        "6a54c35eb57947f23abbd0a0",
+        "6a54c35fb57947f23abbd0a3",
+        "6a54c364b57947f23abbd0a6",
+        "6a54c364b57947f23abbd0a9",
+        "6a54c369b57947f23abbd0ac",
+        "6a54ca7eb57947f23abbd468",
+        "6a54ca7fb57947f23abbd46b",
+        "6a54ca84b57947f23abbd46e",
+        "6a54ca88b57947f23abbd471",
+        "6a54ca89b57947f23abbd474"
+      ]
+    },
+    {
+      "toolName": "concept-mastery-helper",
+      "toolDisplayName": "Concept Mastery Helper",
+      "total": 1571,
+      "incomplete": 263,
+      "scaffolded": 0,
+      "unparseable": 1571,
+      "failedWithoutSections": 258,
+      "missingSectionCounts": {
+        "Diagram / Visualisation Suggestion": 5
+      },
+      "failureCodes": {
+        "AI_TOOL_CONTENT_INCOMPLETE": 263
+      },
+      "failureMessages": {
+        "At least 100% of template sections must be filled (11/12).": 8,
+        "Content is incomplete for Concept Mastery Helper. Missing sections: Diagram / Visualisatio": 5,
+        "At least 100% of template sections must be filled (4/12).": 250
+      },
+      "sampleIncompleteIds": [
+        "6a4ffdb584ea89109d092ff6",
+        "6a4ffdbc84ea89109d093006",
+        "6a4ffdd084ea89109d09301b",
+        "6a4ffde184ea89109d09302b",
+        "6a4ffdf284ea89109d093060",
+        "6a4ffe7684ea89109d0931c3",
+        "6a4ffe8884ea89109d0931ca",
+        "6a4ffe9a84ea89109d0931d1",
+        "6a4ffea984ea89109d0931d8",
+        "6a4ffeba84ea89109d0931df",
+        "6a4f20019f7bfaa7e66e135a",
+        "6a4f202c9f7bfaa7e66e1378",
+        "6a4f203f9f7bfaa7e66e138f",
+        "6a55bf85b57947f23abc1bd7",
+        "6a55bf8bb57947f23abc1be9",
+        "6a55bf91b57947f23abc1bef",
+        "6a55bf98b57947f23abc1bf5",
+        "6a55bf9fb57947f23abc1bfb",
+        "6a55bfa5b57947f23abc1c01",
+        "6a55bfabb57947f23abc1c04",
+        "6a55bfb1b57947f23abc1c0d",
+        "6a55c006b57947f23abc1c10",
+        "6a55c00bb57947f23abc1c13",
+        "6a55c049b57947f23abc1c4a",
+        "6a55c04fb57947f23abc1c4d"
+      ]
+    },
+    {
+      "toolName": "homework-creator",
+      "toolDisplayName": "Homework Creator",
+      "total": 1913,
+      "incomplete": 254,
+      "scaffolded": 0,
+      "unparseable": 1913,
+      "failedWithoutSections": 254,
+      "missingSectionCounts": {},
+      "failureCodes": {
+        "AI_TOOL_CONTENT_INCOMPLETE": 254
+      },
+      "failureMessages": {
+        "At least 100% of template sections must be filled (4/10).": 254
+      },
+      "sampleIncompleteIds": [
+        "6a54b800dac93ed8e1a3066c",
+        "6a54b806dac93ed8e1a3066f",
+        "6a54b80ddac93ed8e1a30672",
+        "6a54b815dac93ed8e1a30675",
+        "6a54b81cdac93ed8e1a30678",
+        "6a54bafbb835749b5cace0e4",
+        "6a54bb02b835749b5cace0e7",
+        "6a54bb08b835749b5cace0ea",
+        "6a54bb0fb835749b5cace0ed",
+        "6a54bb16b835749b5cace0f0",
+        "6a54c251b835749b5cacf667",
+        "6a54c258b835749b5cacf66a",
+        "6a54c266b835749b5cacf66d",
+        "6a54c26cb835749b5cacf670",
+        "6a54c273b835749b5cacf673",
+        "6a54c68eb57947f23abbd3cf",
+        "6a54c695b57947f23abbd3d2",
+        "6a54c69bb57947f23abbd3d5",
+        "6a54c6a1b57947f23abbd3d8",
+        "6a54c6a8b57947f23abbd3db",
+        "6a54cb90b57947f23abbd4ae",
+        "6a54cb97b57947f23abbd4b1",
+        "6a54cb9eb57947f23abbd4b4",
+        "6a54cba5b57947f23abbd4b7",
+        "6a54cbabb57947f23abbd4ba"
+      ]
+    },
+    {
+      "toolName": "short-notes-summaries-maker",
+      "toolDisplayName": "Short Notes & Summaries",
+      "total": 1733,
+      "incomplete": 170,
+      "scaffolded": 0,
+      "unparseable": 1733,
+      "failedWithoutSections": 170,
+      "missingSectionCounts": {},
+      "failureCodes": {
+        "AI_TOOL_CONTENT_INCOMPLETE": 170
+      },
+      "failureMessages": {
+        "At least 100% of template sections must be filled (6/11).": 170
+      },
+      "sampleIncompleteIds": [
+        "6a54801d51547815d3e891ce",
+        "6a54801e51547815d3e891d1",
+        "6a54802351547815d3e891d4",
+        "6a54802451547815d3e891d8",
+        "6a54802851547815d3e891db",
+        "6a54802a51547815d3e891de",
+        "6a54802f51547815d3e891e1",
+        "6a54802f51547815d3e891e4",
+        "6a54803451547815d3e891e8",
+        "6a54803551547815d3e891eb",
+        "6a55c735b57947f23abc2271",
+        "6a55c736b57947f23abc2274",
+        "6a55c73cb57947f23abc2277",
+        "6a55c73cb57947f23abc227a",
+        "6a55c742b57947f23abc2280",
+        "6a55c748b57947f23abc2286",
+        "6a55c74eb57947f23abc228c",
+        "6a55c758b57947f23abc2292",
+        "6a55c75eb57947f23abc2295",
+        "6a55c790b57947f23abc229c",
+        "6a55c79eb57947f23abc22b4",
+        "6a55c79eb57947f23abc22b7",
+        "6a55c7a5b57947f23abc22ba",
+        "6a55c7a9b57947f23abc22bd",
+        "6a55c7afb57947f23abc22cd"
+      ]
+    },
+    {
+      "toolName": "smart-qa-practice-generator",
+      "toolDisplayName": "Smart Q&A Practice Generator",
+      "total": 197,
+      "incomplete": 124,
+      "scaffolded": 0,
+      "unparseable": 197,
+      "failedWithoutSections": 124,
+      "missingSectionCounts": {},
+      "failureCodes": {
+        "AI_TOOL_CONTENT_INCOMPLETE": 124
+      },
+      "failureMessages": {
+        "Practice Q&A must include at least one question in each section A–G. Missing: Section D: V": 14,
+        "At least 100% of template sections must be filled (4/11).": 110
+      },
+      "sampleIncompleteIds": [
+        "6a341b49878d07b2db14eb03",
+        "6a4ffa2bf73a6650cbc20a31",
+        "6a4ffa9084ea89109d0927f6",
+        "6a4ffab484ea89109d092835",
+        "6a4ffac884ea89109d09285b",
+        "6a4ffb1984ea89109d0928be",
+        "6a4ffb1b84ea89109d0928e6",
+        "6a50060a57c943f3b996b64b",
+        "6a50062257c943f3b996b664",
+        "6a50063357c943f3b996b67d",
+        "6a50064e57c943f3b996b696",
+        "6a50066357c943f3b996b6af",
+        "6a5083b4ab4ff077e094bfa1",
+        "6a50875c01cf32072607aca0",
+        "6a55ca26b57947f23abc2574",
+        "6a55ca2db57947f23abc2577",
+        "6a55ca35b57947f23abc257a",
+        "6a55ca3db57947f23abc257d",
+        "6a55ca44b57947f23abc2580",
+        "6a55ca51b57947f23abc2583",
+        "6a55ca58b57947f23abc2586",
+        "6a55ca63b57947f23abc2589",
+        "6a55ca6bb57947f23abc258c",
+        "6a55ca73b57947f23abc258f",
+        "6a55ca8bb57947f23abc25a5"
+      ]
+    },
+    {
+      "toolName": "smart-study-guide-generator",
+      "toolDisplayName": "Smart Study Guide Generator",
+      "total": 179,
+      "incomplete": 115,
+      "scaffolded": 0,
+      "unparseable": 179,
+      "failedWithoutSections": 115,
+      "missingSectionCounts": {},
+      "failureCodes": {
+        "AI_TOOL_CONTENT_INCOMPLETE": 115
+      },
+      "failureMessages": {
+        "Smart Study Guide must include all 11 sections with real content (key concepts, definition": 10,
+        "At least 100% of template sections must be filled (4/11).": 105
+      },
+      "sampleIncompleteIds": [
+        "6a4ffc2684ea89109d092afc",
+        "6a4ffc2c84ea89109d092b08",
+        "6a4ffc3384ea89109d092b54",
+        "6a4ffc3b84ea89109d092ba1",
+        "6a4ffc3d84ea89109d092bad",
+        "6a4ffcf784ea89109d092d98",
+        "6a4ffcf984ea89109d092da4",
+        "6a4ffd0084ea89109d092db0",
+        "6a4ffd0684ea89109d092dce",
+        "6a4ffd0784ea89109d092dda",
+        "6a55c971b57947f23abc24b0",
+        "6a55c972b57947f23abc24b3",
+        "6a55c976b57947f23abc24b6",
+        "6a55c978b57947f23abc24b9",
+        "6a55c97cb57947f23abc24bc",
+        "6a55c97eb57947f23abc24bf",
+        "6a55c982b57947f23abc24c2",
+        "6a55c985b57947f23abc24c5",
+        "6a55c988b57947f23abc24c8",
+        "6a55c98bb57947f23abc24cb",
+        "6a55c99ab57947f23abc24e1",
+        "6a55c99bb57947f23abc24e4",
+        "6a55c9a0b57947f23abc24e7",
+        "6a55c9a1b57947f23abc24ea",
+        "6a55c9a5b57947f23abc24ed"
+      ]
+    },
+    {
+      "toolName": "mock-test-builder",
+      "toolDisplayName": "Mock Test Builder",
+      "total": 157,
+      "incomplete": 100,
+      "scaffolded": 0,
+      "unparseable": 157,
+      "failedWithoutSections": 100,
+      "missingSectionCounts": {},
+      "failureCodes": {
+        "AI_TOOL_CONTENT_INCOMPLETE": 100
+      },
+      "failureMessages": {
+        "At least 100% of template sections must be filled (9/12).": 100
+      },
+      "sampleIncompleteIds": [
+        "6a55cf2eb57947f23abc287b",
+        "6a55cf37b57947f23abc287e",
+        "6a55cf3db57947f23abc2881",
+        "6a55cf44b57947f23abc2884",
+        "6a55cf4cb57947f23abc2887",
+        "6a55cf54b57947f23abc288a",
+        "6a55cf5bb57947f23abc289e",
+        "6a55cf61b57947f23abc28a4",
+        "6a55cf71b57947f23abc28aa",
+        "6a55cf78b57947f23abc28ad",
+        "6a55cf9bb57947f23abc28cf",
+        "6a55cfa4b57947f23abc28d2",
+        "6a55cfabb57947f23abc28d5",
+        "6a55cfb1b57947f23abc28d8",
+        "6a55cfbab57947f23abc28db",
+        "6a55cfc1b57947f23abc28de",
+        "6a55cfc8b57947f23abc28e1",
+        "6a55cfcfb57947f23abc28e4",
+        "6a55cfd6b57947f23abc28e7",
+        "6a55cfddb57947f23abc28ea",
+        "6a55cfedb57947f23abc2900",
+        "6a55cff4b57947f23abc2903",
+        "6a55cffbb57947f23abc2906",
+        "6a55d002b57947f23abc2909",
+        "6a55d009b57947f23abc290c"
+      ]
+    },
+    {
+      "toolName": "story-passage-creator",
+      "toolDisplayName": "Story and Passage Creator",
+      "total": 273,
+      "incomplete": 100,
+      "scaffolded": 0,
+      "unparseable": 273,
+      "failedWithoutSections": 100,
+      "missingSectionCounts": {},
+      "failureCodes": {
+        "AI_TOOL_CONTENT_INCOMPLETE": 100
+      },
+      "failureMessages": {
+        "Story and Passage Creator must include all 19 sections: full passage, objectives, vocabula": 100
+      },
+      "sampleIncompleteIds": [
+        "6a54b831dac93ed8e1a3068f",
+        "6a54b832dac93ed8e1a30692",
+        "6a54b837dac93ed8e1a30695",
+        "6a54b838dac93ed8e1a30698",
+        "6a54b83ddac93ed8e1a3069b",
+        "6a54bb40b835749b5cace107",
+        "6a54bb40b835749b5cace10a",
+        "6a54bb45b835749b5cace10d",
+        "6a54bb4bb835749b5cace110",
+        "6a54bb91b835749b5cace113",
+        "6a54c294b835749b5cacf68a",
+        "6a54c29bb835749b5cacf68d",
+        "6a54c2a1b835749b5cacf690",
+        "6a54c2a8b835749b5cacf693",
+        "6a54c2e2b835749b5cacf69d",
+        "6a54c6b8b57947f23abbd3f2",
+        "6a54c6b8b57947f23abbd3f5",
+        "6a54c6beb57947f23abbd3f8",
+        "6a54c6bfb57947f23abbd3fb",
+        "6a54c6c4b57947f23abbd3fe",
+        "6a54cc20b57947f23abbd4d1",
+        "6a54cc20b57947f23abbd4d4",
+        "6a54cc26b57947f23abbd4d7",
+        "6a54cc26b57947f23abbd4da",
+        "6a54cc2bb57947f23abbd4dd"
+      ]
+    },
+    {
+      "toolName": "reading-practice-room",
+      "toolDisplayName": "Reading Practice Room",
+      "total": 60,
+      "incomplete": 55,
+      "scaffolded": 0,
+      "unparseable": 60,
+      "failedWithoutSections": 55,
+      "missingSectionCounts": {},
+      "failureCodes": {
+        "AI_TOOL_CONTENT_INCOMPLETE": 55
+      },
+      "failureMessages": {
+        "Reading Practice Room must include all 13 sections: full passage (120+ words), objectives,": 55
+      },
+      "sampleIncompleteIds": [
+        "6a39427f782f56af47be67eb",
+        "6a3942a4782f56af47be67f4",
+        "6a3942a5782f56af47be67fb",
+        "6a4ffb9784ea89109d092a2d",
+        "6a4ffbb884ea89109d092a3f",
+        "6a4ffbd884ea89109d092a87",
+        "6a4ffc7584ea89109d092c62",
+        "6a4ffc8c84ea89109d092c7a",
+        "6a4ffca484ea89109d092ca4",
+        "6a4ffcbd84ea89109d092ceb",
+        "6a5778a6b57947f23abd09c8",
+        "6a5778acb57947f23abd09cb",
+        "6a5778b2b57947f23abd09ce",
+        "6a5778b9b57947f23abd09d1",
+        "6a5778f3b57947f23abd09d4",
+        "6a577923b57947f23abd09e9",
+        "6a577929b57947f23abd09ec",
+        "6a577930b57947f23abd09ef",
+        "6a577937b57947f23abd09f2",
+        "6a577987b57947f23abd09f5",
+        "6a5779dfb57947f23abd0a0a",
+        "6a5779e0b57947f23abd0a0d",
+        "6a5779e6b57947f23abd0a10",
+        "6a5779edb57947f23abd0a13",
+        "6a577a31b57947f23abd0a16"
+      ]
+    },
+    {
+      "toolName": "study-schedule-maker",
+      "toolDisplayName": "Study Schedule Maker",
+      "total": 44,
+      "incomplete": 30,
+      "scaffolded": 0,
+      "unparseable": 44,
+      "failedWithoutSections": 30,
+      "missingSectionCounts": {},
+      "failureCodes": {
+        "AI_TOOL_CONTENT_INCOMPLETE": 30
+      },
+      "failureMessages": {
+        "At least 100% of template sections must be filled (5/13).": 30
+      },
+      "sampleIncompleteIds": [
+        "6a586924b57947f23abdcd69",
+        "6a586924b57947f23abdcd6c",
+        "6a586929b57947f23abdcd6f",
+        "6a58692ab57947f23abdcd72",
+        "6a58692eb57947f23abdcd75",
+        "6a58693ab57947f23abdcd8a",
+        "6a58693fb57947f23abdcd8d",
+        "6a586945b57947f23abdcd90",
+        "6a58694ab57947f23abdcd93",
+        "6a58698ab57947f23abdcd96",
+        "6a5869aeb57947f23abdcdab",
+        "6a5869afb57947f23abdcdae",
+        "6a5869b3b57947f23abdcdb1",
+        "6a5869b4b57947f23abdcdb4",
+        "6a5869b8b57947f23abdcdb7",
+        "6a586a5fb57947f23abdcdcc",
+        "6a586a60b57947f23abdcdcf",
+        "6a586a65b57947f23abdcdd2",
+        "6a586a66b57947f23abdcdd5",
+        "6a586a6ab57947f23abdcdd8",
+        "6a586aabb57947f23abdcded",
+        "6a586aadb57947f23abdcdf0",
+        "6a586ab1b57947f23abdcdf3",
+        "6a586ab2b57947f23abdcdf6",
+        "6a586ab7b57947f23abdcdf9"
+      ]
+    },
+    {
+      "toolName": "concept-breakdown-explainer",
+      "toolDisplayName": "Concept Breakdown Explainer",
+      "total": 65,
+      "incomplete": 20,
+      "scaffolded": 0,
+      "unparseable": 65,
+      "failedWithoutSections": 20,
+      "missingSectionCounts": {},
+      "failureCodes": {
+        "AI_TOOL_CONTENT_INCOMPLETE": 20
+      },
+      "failureMessages": {
+        "At least 100% of template sections must be filled (3/9).": 20
+      },
+      "sampleIncompleteIds": [
+        "6a55cc42b57947f23abc2682",
+        "6a55cc42b57947f23abc2686",
+        "6a55cc47b57947f23abc2699",
+        "6a55cc48b57947f23abc269f",
+        "6a55cc4db57947f23abc26a8",
+        "6a55cc4eb57947f23abc26ab",
+        "6a55cc53b57947f23abc26b5",
+        "6a55cc54b57947f23abc26b8",
+        "6a55cc5ab57947f23abc26bd",
+        "6a55cc5ab57947f23abc26c0",
+        "6a55cc9fb57947f23abc26f9",
+        "6a55cca0b57947f23abc26fc",
+        "6a55cca6b57947f23abc26ff",
+        "6a55cca7b57947f23abc2702",
+        "6a55ccacb57947f23abc2705",
+        "6a55ccadb57947f23abc2708",
+        "6a55ccb2b57947f23abc270b",
+        "6a55ccb3b57947f23abc270e",
+        "6a55ccb9b57947f23abc2711",
+        "6a55ccb9b57947f23abc2714"
+      ]
+    },
+    {
+      "toolName": "chapter-summary-creator",
+      "toolDisplayName": "Chapter Summary Creator",
+      "total": 19,
+      "incomplete": 1,
+      "scaffolded": 0,
+      "unparseable": 19,
+      "failedWithoutSections": 1,
+      "missingSectionCounts": {},
+      "failureCodes": {
+        "AI_TOOL_CONTENT_INCOMPLETE": 1
+      },
+      "failureMessages": {
+        "Chapter summary must use the 10-section Chapter Summary format (overview, important concep": 1
+      },
+      "sampleIncompleteIds": [
+        "6a4ffc9284ea89109d092c7d"
+      ]
+    },
+    {
+      "toolName": "my-study-decks",
+      "toolDisplayName": "My Study Decks",
+      "total": 167,
+      "incomplete": 0,
+      "scaffolded": 36,
+      "unparseable": 0,
+      "failedWithoutSections": 0,
+      "missingSectionCounts": {},
+      "failureCodes": {},
+      "failureMessages": {},
+      "sampleIncompleteIds": []
+    },
+    {
+      "toolName": "activity-project-generator",
+      "toolDisplayName": "Activity / Project Generator",
+      "total": 3751,
+      "incomplete": 0,
+      "scaffolded": 0,
+      "unparseable": 3751,
+      "failedWithoutSections": 0,
+      "missingSectionCounts": {},
+      "failureCodes": {},
+      "failureMessages": {},
+      "sampleIncompleteIds": []
+    },
+    {
+      "toolName": "project-idea-lab",
+      "toolDisplayName": "Project Idea Lab",
+      "total": 156,
+      "incomplete": 0,
+      "scaffolded": 0,
+      "unparseable": 156,
+      "failedWithoutSections": 0,
+      "missingSectionCounts": {},
+      "failureCodes": {},
+      "failureMessages": {},
+      "sampleIncompleteIds": []
+    },
+    {
+      "toolName": "flashcard-generator",
+      "toolDisplayName": "Flash Card Generator",
+      "total": 2052,
+      "incomplete": 0,
+      "scaffolded": 139,
+      "unparseable": 14,
+      "failedWithoutSections": 0,
+      "missingSectionCounts": {},
+      "failureCodes": {},
+      "failureMessages": {},
+      "sampleIncompleteIds": []
+    },
+    {
+      "toolName": "daily-class-plan-maker",
+      "toolDisplayName": "Daily Class Plan",
+      "total": 1596,
+      "incomplete": 0,
+      "scaffolded": 0,
+      "unparseable": 1596,
+      "failedWithoutSections": 0,
+      "missingSectionCounts": {},
+      "failureCodes": {},
+      "failureMessages": {},
+      "sampleIncompleteIds": []
+    }
+  ]
+}

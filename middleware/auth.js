@@ -9,7 +9,7 @@ export const verifyToken = (req, res, next) => {
   }
   
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key');
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded;
     req.userId = decoded.userId || decoded.id; // Handle different JWT structures
     next();

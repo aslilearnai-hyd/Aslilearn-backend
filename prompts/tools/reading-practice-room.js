@@ -22,6 +22,12 @@ export default createToolPromptPack({
     'moral_or_theme: stated clearly without preaching.',
     'Never use section headings as field values. Title = creative story name.',
     'ALL content in output language — not English for Hindi/Telugu subjects.',
+    '',
+    // Required by the validator's 100% fill rule but never named here, so every
+    // record failed at 8/13. Field keys given explicitly.
+    'ALSO REQUIRED — emit both of these fields (in the output language):',
+    'ncf_competency_alignment: the NCF/NEP literacy competency this passage builds, in plain language.',
+    'expected_learning_outcomes: 3 measurable things the student can do after the passage and questions.',
   ],
   rewriteRules: [
     'passage minimum 120 words real story. Min 2 questions per question array. No placeholder titles.',

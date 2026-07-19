@@ -118,6 +118,24 @@ const teacherSchema = new mongoose.Schema({
     trim: true,
     default: '',
   },
+  trialPaymentAmount: {
+    type: Number,
+    default: null,
+  },
+  trialPaidAt: {
+    type: Date,
+    default: null,
+  },
+  trialPaymentMethod: {
+    type: String,
+    trim: true,
+    default: '',
+  },
+  trialPaymentReference: {
+    type: String,
+    trim: true,
+    default: '',
+  },
   isActive: {
     type: Boolean,
     default: true

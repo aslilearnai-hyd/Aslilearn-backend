@@ -160,7 +160,11 @@ export function getAiGeneratorDedupMaxAttempts(isBatchVariant = false, recovery 
 
     const parsed = Number.parseInt(String(envRaw ?? recoveryDefault), 10);
 
-    return Math.min(5, Math.max(1, Number.isFinite(parsed) ? parsed : Number(recoveryDefault)));
+    // Recovery re-runs already-failed records, so it is the path the bulk
+    // backfill uses — capped at 2 like the normal path. Left uncapped it paired
+    // with recovery validation for 5 x 5 = 25 full generations (~12 INR/record),
+    // worse than the 16 this change set out to remove.
+    return Math.min(2, Math.max(1, Number.isFinite(parsed) ? parsed : Number(recoveryDefault)));
 
   }
 
@@ -176,7 +180,26 @@ export function getAiGeneratorDedupMaxAttempts(isBatchVariant = false, recovery 
 
   const parsed = Number.parseInt(String(envRaw ?? fallback), 10);
 
-  return Math.min(5, Math.max(1, Number.isFinite(parsed) ? parsed : Number(fallback)));
+  const attempts = Math.min(5, Math.max(1, Number.isFinite(parsed) ? parsed : Number(fallback)));
+
+  /*
+   * Dedup retries are the SECOND full-record multiplier. They stack with the
+   * validation attempts above, so the old defaults allowed 4 x 4 = 16 full
+   * generations for one saved record.
+   *
+   * Each dedup retry re-emits the entire record because the draft looked too
+   * similar to an existing one — but assemble.js already pushes uniqueness into
+   * the prompt itself (buildV2VariantHint per-variant foci, the avoid-list of up
+   * to 40 prior problems, and findOverusedTerms theme dedup). That front-loaded
+   * differentiation is far cheaper than paying for a re-roll, so the extra
+   * attempts have a low hit rate for their cost.
+   *
+   * Capped at 2. Combined with COST_CAPPED_FULL_ATTEMPTS this bounds a record at
+   * 4 full generations worst case (~2 INR) instead of 16 (~8 INR), with the
+   * typical path being a single generation plus a targeted repair (~0.57 INR).
+   */
+  const COST_CAPPED_DEDUP_ATTEMPTS = 2;
+  return Math.min(attempts, COST_CAPPED_DEDUP_ATTEMPTS);
 
 }
 
@@ -192,7 +215,10 @@ export function getAiGeneratorValidationMaxAttempts(isBatchVariant = false, reco
 
     const parsed = Number.parseInt(String(envRaw ?? recoveryDefault), 10);
 
-    return Math.min(5, Math.max(1, Number.isFinite(parsed) ? parsed : Number(recoveryDefault)));
+    // Capped at 3 (one more than the normal path — a record that already failed
+    // deserves a little more headroom) and paired with dedup capped at 2, so
+    // recovery is bounded at 6 full generations instead of 25.
+    return Math.min(3, Math.max(1, Number.isFinite(parsed) ? parsed : Number(recoveryDefault)));
 
   }
 
@@ -232,8 +258,29 @@ export function getAiGeneratorValidationMaxAttempts(isBatchVariant = false, reco
   const parsed = Number.parseInt(String(envRaw ?? fallback), 10);
   let attempts = Math.min(5, Math.max(1, Number.isFinite(parsed) ? parsed : Number(fallback)));
 
-  if (isAiGeneratorCompleteOnlySaveEnabled() && !isBatchVariant && !recovery) {
-    attempts = Math.max(attempts, 4);
+  /*
+   * Completeness is enforced on EVERY path, batch included.
+   *
+   * Previously this branch carried `!isBatchVariant`, which exempted batch from
+   * the strict path. Batch produces ~90% of the corpus, so the one path that
+   * mattered was the one path not held to completeness — that is why the July
+   * 2026 census found 3,271 incomplete records (16% of 20,356), concentrated in
+   * the high-volume batch tools.
+   *
+   * But completeness is NOT bought with full-record retries any more. Re-rolling
+   * a 12-section record to fix 3 thin sections costs a whole generation
+   * (~3k output tokens, ~0.5 INR on 3.1 Flash-Lite) and typically loses a
+   * DIFFERENT three sections, so attempts 2..4 were largely wasted spend. The
+   * old 4x4 dedup x validation ceiling could reach 16 generations (~8 INR) for
+   * one saved record.
+   *
+   * Gaps are now closed by repairMissingSectionsViaLlm, which re-emits only the
+   * missing sections (~500 output tokens, ~0.07 INR). So we cap full-record
+   * attempts low and let targeted repair carry completeness.
+   */
+  const COST_CAPPED_FULL_ATTEMPTS = 2;
+  if (isAiGeneratorCompleteOnlySaveEnabled() && !recovery) {
+    attempts = Math.min(attempts, COST_CAPPED_FULL_ATTEMPTS);
   }
 
   return attempts;
