@@ -526,7 +526,27 @@ export const createTeacherTool = async (req, res) => {
       validator: async (doc) => {
         const { storyPassageRecordLanguageValid } = await import('../utils/story-passage-subject.js');
         if (!validateDashboardAiToolDoc(toolType, doc).valid) return false;
-        return storyPassageRecordLanguageValid(toolType, finalSubject, doc);
+        if (!storyPassageRecordLanguageValid(toolType, finalSubject, doc)) return false;
+        const { auditStoredGenerationDoc } = await import('../services/v2-content-quality-service.js');
+        const prior = doc.metadata?.qualityAudit;
+        if (prior && prior.ok === false) return false;
+        const audit = prior?.checkedAt
+          ? prior
+          : auditStoredGenerationDoc(doc);
+        if (!audit.ok) {
+          // Persist fail so future rotations skip without re-scanning.
+          try {
+            const AiToolGeneration = (await import('../models/AiToolGeneration.js')).default;
+            await AiToolGeneration.updateOne(
+              { _id: doc._id },
+              { $set: { 'metadata.qualityAudit': audit } },
+            );
+          } catch {
+            /* non-fatal */
+          }
+          return false;
+        }
+        return true;
       },
     });
     if (cachedDoc) {
@@ -673,7 +693,24 @@ export const getGeneratedContent = async (req, res) => {
         ? async (doc) => {
             const { storyPassageRecordLanguageValid } = await import('../utils/story-passage-subject.js');
             if (!validateDashboardAiToolDoc(toolType, doc).valid) return false;
-            return storyPassageRecordLanguageValid(toolType, subject, doc);
+            if (!storyPassageRecordLanguageValid(toolType, subject, doc)) return false;
+            const { auditStoredGenerationDoc } = await import('../services/v2-content-quality-service.js');
+            const prior = doc.metadata?.qualityAudit;
+            if (prior && prior.ok === false) return false;
+            const audit = prior?.checkedAt ? prior : auditStoredGenerationDoc(doc);
+            if (!audit.ok) {
+              try {
+                const AiToolGeneration = (await import('../models/AiToolGeneration.js')).default;
+                await AiToolGeneration.updateOne(
+                  { _id: doc._id },
+                  { $set: { 'metadata.qualityAudit': audit } },
+                );
+              } catch {
+                /* non-fatal */
+              }
+              return false;
+            }
+            return true;
           }
         : null,
     });

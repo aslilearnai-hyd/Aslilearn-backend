@@ -15,6 +15,7 @@ import {
   getDuplicateAudit,
   getAiGeneratorAnalytics,
   getTopicSaturation,
+  bulkQualityAudit,
 } from '../controllers/aiGeneratorController.js';
 import { generateSixSectionPreview } from '../controllers/sixSectionController.js';
 
@@ -30,6 +31,7 @@ router.post('/release-lock', releaseAiGeneratorLock);
 router.get('/audit/duplicates', getDuplicateAudit);
 router.get('/audit/analytics', getAiGeneratorAnalytics);
 router.get('/audit/saturation', getTopicSaturation);
+router.post('/audit/quality', bulkQualityAudit);
 router.get('/records', getAllGeneratorRecords);
 router.get('/topic-taxonomy', getManagedTopicTaxonomy);
 router.get('/records/:id', getSingleGeneratorRecord);
