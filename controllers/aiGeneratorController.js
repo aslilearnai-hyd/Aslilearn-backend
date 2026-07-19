@@ -4,14 +4,8 @@ import PDFDocument from 'pdfkit';
 import AiToolGeneration from '../models/AiToolGeneration.js';
 import AIGeneratorRecord from '../models/AIGeneratorRecord.js';
 import AiToolTopic from '../models/AiToolTopic.js';
-import { isDeprecatedAiToolIdentifier, isValidAiToolSlug, formatStructuredToolOutput } from '../config/aiToolTemplates.js';
+import { isDeprecatedAiToolIdentifier, isValidAiToolSlug } from '../config/aiToolTemplates.js';
 import { generateStructuredContentForAiGenerator } from '../services/ai-content-engine-service.js';
-import { generateSixSectionContent } from '../services/six-section-generator.js';
-import { isSixSectionV2Enabled, buildV2VariantHint } from '../prompts/v2/assemble.js';
-import { isV2SupportedTool, v2ToolFamily } from '../prompts/v2/tool-packs.js';
-import { mapV2StructuredToLegacy } from '../utils/v2-structured-to-legacy.js';
-import { auditStoredGenerationDoc } from '../services/v2-content-quality-service.js';
-import { runAiGeneratorQualityGate } from '../services/ai-generator-quality-gate.js';
 import {
   beginTokenUsageSession,
   endTokenUsageSession,
@@ -450,132 +444,48 @@ export async function generateAndSaveContent(req, res) {
     let contentType;
     let sectionRepairCount = 0;
     let duplicatePreventionCount = 0;
-    let formatSource = 'aiToolTemplates';
-    let schemaVersion = undefined;
-    let v2StructuredContent = null;
-    let qualityFixes = [];
-    let qualityWarnings = [];
     const maxUniquenessAttempts = getUniquenessMaxAttempts();
 
     try {
       let lastUniquenessError = '';
-      let usedV2 = false;
-
-      // Prefer V2 six-section + full quality pipeline (math / Indian / scope / density / scaffold).
-      if (isSixSectionV2Enabled() && isV2SupportedTool(toolSlug)) {
+      for (let uniqAttempt = 1; uniqAttempt <= maxUniquenessAttempts; uniqAttempt += 1) {
         try {
-          const v2VariantHint = isBatchVariant
-            ? buildV2VariantHint({
-                variantIndex: generationVariant,
-                batchSize: Number.isFinite(batchSize) ? batchSize : 0,
-                family: v2ToolFamily(toolSlug),
-                angle: getAiGeneratorVariantAngle(generationVariant, subjectName),
-                scenario: getAiGeneratorVariantScenario(generationVariant, subjectName),
-                seed: `${Date.now()}-single-v${generationVariant || 1}`,
-              })
-            : '';
-          const v2 = await generateSixSectionContent(
-            toolSlug,
-            {
+          ({ generatedContent, structuredContent, contentType, sectionRepairCount } =
+            await generateStructuredContentForAiGenerator(toolSlug, {
               board,
               classLabel: className,
+              gradeLevel: className,
               subject: subjectName,
               topic: topicName || 'General',
               subTopic: subtopicName,
-            },
-            {
-              isBatchVariant: Boolean(isBatchVariant),
-              variantHint: v2VariantHint || undefined,
-              avoidQuestions: uniquenessCtx.batchTexts.slice(0, 40),
-              maxTries: 1,
-              llmAudit: false,
-              skipIndianNotation: true,
-              skipLegacyScaffold: true,
-              softKeepOnQualityFail: false,
-            },
-          );
-          if (v2.ok && v2.structuredContent) {
-            const legacy =
-              v2.legacyStructured || mapV2StructuredToLegacy(toolSlug, v2.structuredContent);
-            let persistContent =
-              v2.structuredContent?.core?.title ||
-              v2.structuredContent?.core?.worksheetTitle ||
-              toolDisplayName;
-            if (legacy) {
-              try {
-                persistContent =
-                  formatStructuredToolOutput(toolSlug, legacy) || JSON.stringify(legacy);
-              } catch {
-                persistContent = JSON.stringify(legacy);
-              }
-            }
-            generatedContent = persistContent;
-            structuredContent = legacy || v2.structuredContent;
-            v2StructuredContent = v2.structuredContent;
-            contentType = 'structured';
-            formatSource = 'asli-v2-six-section';
-            schemaVersion = 'asli-v2-six-section';
-            qualityFixes = v2.qualityFixes || [];
-            qualityWarnings = v2.qualityWarnings || [];
-            usedV2 = true;
-
-            const uniqueness = validateRecordUniqueness(toolSlug, structuredContent, uniquenessCtx);
-            if (!uniqueness.valid) {
-              lastUniquenessError = uniqueness.errors.join('; ');
-              duplicatePreventionCount += 1;
-              // Still save V2 when uniqueness soft-fails (cost-saver) — quality gates already passed.
-            }
-          }
-        } catch (v2Err) {
-          console.warn(
-            '[generateAndSaveContent] V2 path failed, falling back to legacy:',
-            v2Err?.message || v2Err,
-          );
-        }
-      }
-
-      if (!usedV2) {
-        for (let uniqAttempt = 1; uniqAttempt <= maxUniquenessAttempts; uniqAttempt += 1) {
-          try {
-            ({ generatedContent, structuredContent, contentType, sectionRepairCount } =
-              await generateStructuredContentForAiGenerator(toolSlug, {
-                board,
-                classLabel: className,
-                gradeLevel: className,
-                subject: subjectName,
-                topic: topicName || 'General',
-                subTopic: subtopicName,
-                extraParams: {
-                  ...extraParams,
-                  ...(uniqAttempt > 1 ? { recoveryPass: true } : {}),
-                },
-                historicalPromptBlock: historical.promptBlock,
-                upgradeToFlash: shouldUseFlashForAiGeneratorRun({
-                  upgradeRequested: uniqAttempt > 1,
-                  recoveryPass: recoveryPass || uniqAttempt > 1,
-                }),
+              extraParams: {
+                ...extraParams,
+                ...(uniqAttempt > 1 ? { recoveryPass: true } : {}),
+              },
+              historicalPromptBlock: historical.promptBlock,
+              upgradeToFlash: shouldUseFlashForAiGeneratorRun({
+                upgradeRequested: uniqAttempt > 1,
                 recoveryPass: recoveryPass || uniqAttempt > 1,
-              }));
-          } catch (genErr) {
-            if (uniqAttempt >= maxUniquenessAttempts) throw genErr;
-            duplicatePreventionCount += 1;
-            continue;
-          }
-
-          structuredContent = dedupeIntraRecordQuestions(toolSlug, structuredContent);
-          structuredContent = renumberIntraRecordQuestions(toolSlug, structuredContent);
-
-          const uniqueness = validateRecordUniqueness(toolSlug, structuredContent, uniquenessCtx);
-          if (uniqueness.valid) break;
-          lastUniquenessError = uniqueness.errors.join('; ');
+              }),
+              recoveryPass: recoveryPass || uniqAttempt > 1,
+            }));
+        } catch (genErr) {
+          if (uniqAttempt >= maxUniquenessAttempts) throw genErr;
           duplicatePreventionCount += 1;
-          if (uniqAttempt >= maxUniquenessAttempts) {
-            break;
-          }
+          continue;
         }
-      }
-      if (lastUniquenessError) {
-        /* retained for metadata below */
+
+        structuredContent = dedupeIntraRecordQuestions(toolSlug, structuredContent);
+        structuredContent = renumberIntraRecordQuestions(toolSlug, structuredContent);
+
+        const uniqueness = validateRecordUniqueness(toolSlug, structuredContent, uniquenessCtx);
+        if (uniqueness.valid) break;
+        lastUniquenessError = uniqueness.errors.join('; ');
+        duplicatePreventionCount += 1;
+        if (uniqAttempt >= maxUniquenessAttempts) {
+          /* cost-saver default: save deduped output even if similar to prior records */
+          break;
+        }
       }
     } finally {
       tokenUsage = endTokenUsageSession();
@@ -591,40 +501,6 @@ export async function generateAndSaveContent(req, res) {
     const reviewStatus = allowedReviewStates.includes(explicitReviewStatus)
       ? explicitReviewStatus
       : 'approved';
-
-    const serveAudit = auditStoredGenerationDoc({
-      toolName: toolSlug,
-      classLabel: className,
-      subject: subjectName,
-      topic: topicName,
-      subtopic: subtopicName,
-      content: generatedContent,
-      generatedContent,
-      metadata: {
-        structuredContent: v2StructuredContent || structuredContent,
-        schemaVersion,
-      },
-    });
-    if (!serveAudit.ok) {
-      return res.status(422).json({
-        success: false,
-        message: `Quality gate blocked save: ${serveAudit.errors.slice(0, 3).join(' | ')}`,
-        qualityErrors: serveAudit.errors,
-      });
-    }
-    if (!v2StructuredContent && structuredContent) {
-      const legacyGate = runAiGeneratorQualityGate(toolSlug, structuredContent, {
-        strictValidation: true,
-        subject: subjectName,
-      });
-      if (!legacyGate.valid) {
-        return res.status(422).json({
-          success: false,
-          message: `Legacy quality gate blocked save: ${(legacyGate.errors || []).slice(0, 3).join(' | ')}`,
-          qualityErrors: legacyGate.errors,
-        });
-      }
-    }
 
     const record = await AiToolGeneration.create({
       toolName: toolSlug,
@@ -647,12 +523,8 @@ export async function generateAndSaveContent(req, res) {
         createdByRole: 'super-admin',
         extraParams,
         contentType,
-        structuredContent: v2StructuredContent || structuredContent,
-        ...(v2StructuredContent && structuredContent && structuredContent !== v2StructuredContent
-          ? { legacyStructuredContent: structuredContent }
-          : {}),
-        formatSource,
-        schemaVersion,
+        structuredContent,
+        formatSource: 'aiToolTemplates',
         generationVariant: Number.isFinite(generationVariant) && generationVariant > 0 ? generationVariant : undefined,
         batchSize: Number.isFinite(batchSize) && batchSize > 0 ? batchSize : undefined,
         existingCountAtGeneration: historical.existingCount,
@@ -660,17 +532,6 @@ export async function generateAndSaveContent(req, res) {
         duplicatePreventionCount,
         tokenUsage,
         cost,
-        qualityFixes,
-        qualityWarnings,
-        qualityAudit: serveAudit,
-        qualityGates: [
-          'math-accuracy',
-          'indian-notation',
-          'subtopic-scope',
-          'content-density',
-          'legacy-scaffold',
-          'answer-key-audit',
-        ],
       },
       ...(teacherId ? { teacherId } : {}),
     });
@@ -1493,79 +1354,6 @@ export async function releaseAiGeneratorLock(req, res) {
     return res.status(500).json({
       success: false,
       message: error?.message || 'Failed to release lock.',
-    });
-  }
-}
-
-/**
- * Bulk re-audit active generations. Marks metadata.qualityAudit and optionally
- * quarantines failures (reviewStatus=under_review) when quarantine=true.
- * POST /api/ai-generator/audit/quality
- * body: { toolSlug?, board?, className?, subjectName?, limit?, quarantine? }
- */
-export async function bulkQualityAudit(req, res) {
-  try {
-    if (!ensureSuperAdmin(req, res)) return;
-
-    const toolSlug = normalizeText(req.body.toolSlug || req.query.toolSlug);
-    const board = normalizeText(req.body.board || req.query.board);
-    const className = normalizeText(req.body.className || req.query.className);
-    const subjectName = normalizeText(req.body.subjectName || req.body.subject || req.query.subjectName);
-    const limit = Math.min(500, Math.max(1, Number(req.body.limit || req.query.limit || 100) || 100));
-    const quarantine = req.body.quarantine === true || req.query.quarantine === 'true';
-
-    const filter = { status: 'active' };
-    if (toolSlug) filter.toolName = toolSlug;
-    if (board) Object.assign(filter, boardMongoMatch(board));
-    if (className) applyClassLabelMongoFilter(filter, className, board);
-    if (subjectName) Object.assign(filter, buildCaseInsensitiveExactFilter('subject', subjectName));
-
-    const docs = await AiToolGeneration.find(filter)
-      .sort({ updatedAt: -1 })
-      .limit(limit)
-      .lean();
-
-    const results = [];
-    let pass = 0;
-    let fail = 0;
-    for (const doc of docs) {
-      const audit = auditStoredGenerationDoc(doc);
-      const update = { 'metadata.qualityAudit': audit };
-      if (quarantine && !audit.ok) {
-        update.reviewStatus = 'under_review';
-      }
-      await AiToolGeneration.updateOne({ _id: doc._id }, { $set: update });
-      if (audit.ok) pass += 1;
-      else fail += 1;
-      results.push({
-        id: String(doc._id),
-        toolName: doc.toolName,
-        classLabel: doc.classLabel,
-        subject: doc.subject,
-        topic: doc.topic,
-        subtopic: doc.subtopic,
-        ok: audit.ok,
-        errors: audit.errors.slice(0, 5),
-        warnings: (audit.warnings || []).slice(0, 3),
-      });
-    }
-
-    return res.json({
-      success: true,
-      data: {
-        scanned: docs.length,
-        pass,
-        fail,
-        quarantine,
-        results,
-      },
-      message: `Quality audit: ${pass} pass, ${fail} fail of ${docs.length} records.`,
-    });
-  } catch (error) {
-    console.error('bulkQualityAudit error:', error);
-    return res.status(500).json({
-      success: false,
-      message: error?.message || 'Bulk quality audit failed.',
     });
   }
 }

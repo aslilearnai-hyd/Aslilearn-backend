@@ -6,8 +6,8 @@ function getBookRagMaxContextChars() {
   const env = Number(process.env.BOOK_RAG_MAX_CONTEXT_CHARS);
   if (Number.isFinite(env) && env > 0) return env;
   const costSaver =
-    String(process.env.AI_GENERATOR_COST_SAVER ?? 'false').trim().toLowerCase() === 'true' ||
-    String(process.env.AI_GENERATOR_COST_SAVER ?? 'false').trim().toLowerCase() === '1';
+    String(process.env.AI_GENERATOR_COST_SAVER ?? 'true').trim().toLowerCase() !== 'false' &&
+    String(process.env.AI_GENERATOR_COST_SAVER ?? 'true').trim().toLowerCase() !== '0';
   return costSaver ? 10000 : 18000;
 }
 
@@ -148,11 +148,7 @@ function buildCurriculumTargetBlock(scope = {}) {
     scope.subtopicName || scope.subtopic ? `Sub-topic: ${scope.subtopicName || scope.subtopic}` : '',
     scope.toolSlug || scope.toolName ? `Tool: ${scope.toolSlug || scope.toolName}` : '',
     'Use the textbook passages below as the PRIMARY source. Every question and explanation must stay on this sub-topic.',
-    scope.chapterScope
-      ? 'Scope: whole chapter — cover the full topic.'
-      : 'Scope: STRICT subtopic only — do not pull later chapter sections (e.g. do not ask factors/primes when the subtopic is place value).',
     'Ask directly about definitions, formulas, numericals, and explanations from the book — no scenario or role-play framing.',
-    'Prefer Concept Practice / worked examples / error tables in the passages as patterns for fresh questions (change numbers).',
   ].filter(Boolean);
   return lines.join('\n');
 }
@@ -203,103 +199,37 @@ function rerankBookChunks(chunks = [], scope = {}, topK = DEFAULT_TOP_K) {
 
 export { rerankBookChunks, metadataMatchBonus };
 
-function practiceBoost(chunk = {}) {
-  const text = String(chunk.content || chunk.chunkText || '').toLowerCase();
-  let bonus = 0;
-  if (/concept\s*practice|try\s*these|exercise|worked\s*example|example\s*\d/i.test(text)) bonus += 0.1;
-  if (/common\s*(error|mistake)|misconception|error\s*table|wrong\s*because/i.test(text)) bonus += 0.12;
-  if (/place\s*value|indian\s*system|international\s*system|lakh|crore/i.test(text)) bonus += 0.06;
-  return bonus;
-}
-
-function chunkKey(c) {
-  return String(c._id || `${c.bookId || ''}:${c.chunkIndex ?? ''}:${(c.content || '').slice(0, 40)}`);
-}
-
-function mergeChunkLists(lists = [], scope = {}, topK = DEFAULT_TOP_K) {
-  const map = new Map();
-  for (const list of lists) {
-    for (const c of list || []) {
-      const k = chunkKey(c);
-      const prev = map.get(k);
-      const score =
-        Number(c.score || 0) + metadataMatchBonus(c, scope) + practiceBoost(c);
-      if (!prev || score > prev.score) {
-        map.set(k, { ...c, score });
-      }
-    }
-  }
-  return [...map.values()]
-    .sort((a, b) => b.score - a.score)
-    .slice(0, Math.max(1, Math.min(24, topK)));
-}
-
 export async function retrieveBookContextForGeneration(scope = {}) {
   const query = buildBookRetrievalQuery(scope);
-  // Stable Flash-Lite path: single semantic query, modest topK (deep RAG caused chapter bleed).
-  const deepRag =
-    String(process.env.BOOK_RAG_DEEP ?? 'off').trim().toLowerCase() === 'on' ||
-    String(process.env.BOOK_RAG_DEEP ?? 'off').trim().toLowerCase() === 'true';
   const topK = Number(scope.topK) || DEFAULT_TOP_K;
   const { embedding: queryEmbedding } = await generateEmbedding(query);
 
-  const baseSearch = (extra = {}, q = query, emb = queryEmbedding) =>
+  const baseSearch = (extra = {}) =>
     searchRelevantChunks({
-      query: q,
-      queryEmbedding: emb,
+      query,
+      queryEmbedding,
       bookId: scope.bookId,
       topK: Math.max(topK, 12),
       ...extra,
     });
 
-  const subject = scope.subjectName || scope.subject;
-  const topic = scope.topicName || scope.topic || '';
-  const subtopic = scope.subtopicName || scope.subtopic || '';
+  // Chunk metadata stores PDF chapter titles, not curriculum topic/subtopic labels — semantic search first.
+  let chunks = rerankBookChunks(
+    await baseSearch({
+      board: scope.board,
+      subject: scope.subjectName || scope.subject,
+    }),
+    scope,
+    topK,
+  );
 
-  let primary = await baseSearch({ board: scope.board, subject });
-  if (!primary.length) {
-    primary = await baseSearch({ subject });
-  }
-  if (!primary.length) {
-    primary = await baseSearch();
-  }
-
-  let chunks = rerankBookChunks(primary, scope, topK);
-  let practiceQueryCount = 0;
-
-  if (deepRag) {
-    const practiceQueryTexts = [
-      [topic, subtopic, 'Concept Practice'].filter(Boolean).join(' '),
-    ].filter((q) => q && q.trim().length > 8);
-    practiceQueryCount = practiceQueryTexts.length;
-    const practiceSearches = await Promise.all(
-      practiceQueryTexts.slice(0, 1).map(async (pq) => {
-        try {
-          const { embedding } = await generateEmbedding(pq);
-          return baseSearch({ board: scope.board, subject }, pq, embedding);
-        } catch {
-          return [];
-        }
-      }),
-    );
-    chunks = mergeChunkLists([chunks, ...practiceSearches], scope, topK);
+  if (!chunks.length) {
+    chunks = rerankBookChunks(await baseSearch({ subject: scope.subjectName || scope.subject }), scope, topK);
   }
 
-  // Prefer subtopic-matching chunks when a subtopic is selected (reduces chapter bleed).
-  if (subtopic && !scope.chapterScope) {
-    const tokens = topicMatchTokens(subtopic);
-    const preferred = chunks.filter((c) => {
-      const text = String(c.content || c.chunkText || '').toLowerCase();
-      const meta = String(c.subtopic || c.topic || '').toLowerCase();
-      if (meta.includes(subtopic.toLowerCase())) return true;
-      return tokens.some((t) => text.includes(t));
-    });
-    if (preferred.length >= Math.min(2, chunks.length)) {
-      chunks = preferred.slice(0, topK);
-    }
+  if (!chunks.length) {
+    chunks = rerankBookChunks(await baseSearch(), scope, topK);
   }
-
-  const hasPracticeGrounding = chunks.some((c) => practiceBoost(c) >= 0.1);
 
   const bookContext = formatBookContextForPrompt(chunks, {
     bookTitle: scope.bookTitle,
@@ -315,9 +245,7 @@ export async function retrieveBookContextForGeneration(scope = {}) {
     contextText,
     chunkCount: chunks.length,
     hasBookPassages: chunks.length > 0,
-    hasPracticeGrounding,
     retrievalQuery: query,
-    practiceQueryCount,
   };
 }
 
@@ -331,12 +259,11 @@ export function buildBookContextTextForVariant(ragBase, scope = {}, variantIndex
     return ragBase?.contextText || curriculumBlock;
   }
 
-  // Prefer a tight window (stable Flash-Lite path). Override with BOOK_RAG_TOP_K.
   const windowSize = Math.max(2, Math.min(4, DEFAULT_TOP_K));
   const stride = Math.max(1, Math.floor(windowSize / 2));
   const start = ((Math.max(1, variantIndex) - 1) * stride) % chunks.length;
   const selected = [];
-  for (let i = 0; i < Math.min(windowSize, chunks.length); i += 1) {
+  for (let i = 0; i < windowSize; i += 1) {
     selected.push(chunks[(start + i) % chunks.length]);
   }
 

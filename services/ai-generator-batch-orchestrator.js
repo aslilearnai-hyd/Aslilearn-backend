@@ -31,7 +31,6 @@ import { computeGeminiCostFromTokenUsage } from '../utils/gemini-token-cost.js';
 import { lockBoardKey, resolveClassLabelForAiToolStorage } from '../utils/board-label.js';
 import { formatStructuredToolOutput } from '../config/aiToolTemplates.js';
 import { mapV2StructuredToLegacy } from '../utils/v2-structured-to-legacy.js';
-import { auditStoredGenerationDoc } from './v2-content-quality-service.js';
 
 import {
 
@@ -511,11 +510,6 @@ export async function generateBatchAndSave(params, opts = {}) {
                     variantHint: v2VariantHint,
                     temperature: Math.min(0.9, 0.6 + (variantIndex - 1) * 0.06),
                     avoidQuestions: usedV2Questions.slice(0, 40),
-                    maxTries: 1,
-                    llmAudit: false,
-                    skipIndianNotation: true,
-                    skipLegacyScaffold: true,
-                    softKeepOnQualityFail: false,
                   },
                 );
                 if (v2.ok) {
@@ -565,29 +559,6 @@ export async function generateBatchAndSave(params, opts = {}) {
                       generationVariant: variantIndex,
                       batchSize,
                       batchOrchestrator: true,
-                      qualityFixes: v2.qualityFixes || [],
-                      qualityWarnings: v2.qualityWarnings || [],
-                      qualityAudit: auditStoredGenerationDoc({
-                        toolName: toolSlug,
-                        classLabel: className,
-                        subject: subjectName,
-                        topic: topicName,
-                        subtopic: combinedSubtopicLabel,
-                        content: persistContent,
-                        generatedContent: persistContent,
-                        metadata: {
-                          structuredContent: v2.structuredContent,
-                          schemaVersion: 'asli-v2-six-section',
-                        },
-                      }),
-                      qualityGates: [
-                        'math-accuracy',
-                        'indian-notation',
-                        'subtopic-scope',
-                        'content-density',
-                        'legacy-scaffold',
-                        'answer-key-audit',
-                      ],
                     },
                     ...(teacherId ? { teacherId } : {}),
                   });
@@ -599,11 +570,7 @@ export async function generateBatchAndSave(params, opts = {}) {
                 console.warn(
                   `[AI Generator batch] Variant ${variantIndex} V2 failed (attempt ${attempt}/${maxAttempts}): ${lastError}`,
                 );
-                const qualityFail = /quality gate failed/i.test(String(lastError));
-                if (
-                  attempt < maxAttempts &&
-                  (qualityFail || isTransientGeminiError({ message: lastError }))
-                ) {
+                if (isTransientGeminiError({ message: lastError }) && attempt < maxAttempts) {
                   await sleep(Math.min(12_000, 2500 * attempt));
                   continue;
                 }

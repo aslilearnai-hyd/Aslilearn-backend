@@ -1,5 +1,5 @@
 /**
- * Sort AI tool generation rows for list UIs: newest first; variant is only a tie-breaker.
+ * Sort AI tool generation rows for list UIs: Variant 1, 2, 3… then newest first for non-variant rows.
  */
 export function generationVariantFromRecord(record) {
   if (!record || typeof record !== 'object') return null;
@@ -12,16 +12,12 @@ export function generationVariantFromRecord(record) {
 }
 
 export function compareAiToolRecordsByVariantThenDate(a, b) {
-  const tb = new Date(b?.createdAt || 0).getTime();
-  const ta = new Date(a?.createdAt || 0).getTime();
-  if (tb !== ta) return tb - ta;
-
   const va = generationVariantFromRecord(a);
   const vb = generationVariantFromRecord(b);
-  if (va != null && vb != null && va !== vb) return vb - va;
+  if (va != null && vb != null && va !== vb) return va - vb;
   if (va != null && vb == null) return -1;
   if (va == null && vb != null) return 1;
-  return 0;
+  return new Date(b?.createdAt || 0).getTime() - new Date(a?.createdAt || 0).getTime();
 }
 
 export function sortAiToolRecordsByVariantThenDate(records) {
