@@ -66,10 +66,6 @@ import { generateSixSectionContent } from './six-section-generator.js';
 import { isSixSectionV2Enabled, buildV2VariantHint } from '../prompts/v2/assemble.js';
 import { isV2SupportedTool, v2ToolFamily } from '../prompts/v2/tool-packs.js';
 import { mapV2StructuredToLegacy } from '../utils/v2-structured-to-legacy.js';
-import {
-  auditStoredGenerationDoc,
-  practiceGroundingRequired,
-} from './v2-content-quality-service.js';
 
 /** Question tools that carry scaffold-prone question pools and cross-slot dedup. */
 const BOOK_QUESTION_UNIQUENESS_TOOLS = new Set([
@@ -335,27 +331,8 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
         );
       } else if (useBookKnowledge) {
         console.log(
-          `[book-generator] Retrieved ${ragBase.chunkCount} textbook chunk(s) for "${subtopicName || topicName}" from book="${book.title}"` +
-            (ragBase.hasPracticeGrounding ? ' (practice-grounded)' : ' (no Concept Practice hit)'),
+          `[book-generator] Retrieved ${ragBase.chunkCount} textbook chunk(s) for "${subtopicName || topicName}" from book="${book.title}"`,
         );
-      }
-
-      if (
-        useBookKnowledge &&
-        practiceGroundingRequired(toolSlug, { useBookKnowledge: true }) &&
-        ragBase.hasBookPassages &&
-        !ragBase.hasPracticeGrounding
-      ) {
-        console.warn(
-          `[book-generator] Practice grounding missing for ${toolSlug} — continuing with semantic chunks only (set BOOK_RAG_REQUIRE_PRACTICE=strict to hard-fail).`,
-        );
-        const strict =
-          String(process.env.BOOK_RAG_REQUIRE_PRACTICE || '').trim().toLowerCase() === 'strict';
-        if (strict) {
-          throw new Error(
-            'Book RAG found no Concept Practice / worked-example chunks for this topic. Reindex the book or widen chapter coverage.',
-          );
-        }
       }
 
       const ragScope = {
@@ -367,8 +344,6 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
         subtopicName,
         toolSlug,
         bookTitle: book.title,
-        chapterScope: !String(subtopicName || '').trim(),
-        topK: Math.max(3, Number(process.env.BOOK_RAG_TOP_K || 4) || 4),
       };
 
       const slots = Array.from({ length: batchSize }, (_, i) => ({
@@ -449,7 +424,6 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                     subject: subjectName,
                     topic: topicName || book.title,
                     subTopic: subtopicName,
-                    chapterScope: ragScope.chapterScope,
                   },
                   {
                     primaryModel: qualityTierSettings.primaryGeminiModel,
@@ -461,12 +435,6 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                     variantHint: v2VariantHint,
                     temperature: Math.min(0.9, 0.6 + (variantIndex - 1) * 0.06),
                     avoidQuestions: usedV2Questions.slice(0, 40),
-                    // Book path: hard math/answer-key gate + Indian notation + LLM audit
-                    maxTries: 1,
-                    llmAudit: false,
-                    skipIndianNotation: true,
-                    skipLegacyScaffold: true,
-                    softKeepOnQualityFail: false,
                   },
                 );
                 if (v2.ok) {
@@ -511,7 +479,6 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                         useBookKnowledge,
                         ragChunkCount: ragBase.chunkCount,
                         bookTextUsed: Boolean(ragBase.hasBookPassages),
-                        practiceQueryCount: ragBase.practiceQueryCount || 0,
                         createdByName: opts.reqUser?.name || 'Super Admin',
                         createdByRole: 'super-admin',
                         contentType: 'structured',
@@ -525,30 +492,6 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                         bookGenerator: true,
                         qualityTier: qualityTierSettings.tier,
                         geminiModel: qualityTierSettings.primaryGeminiModel,
-                        qualityFixes: v2.qualityFixes || [],
-                        qualityWarnings: v2.qualityWarnings || [],
-                        qualityAudit: auditStoredGenerationDoc({
-                          toolName: toolSlug,
-                          classLabel: className,
-                          subject: subjectName,
-                          topic: topicName || book.title,
-                          subtopic: subtopicName,
-                          content: persistContent,
-                          generatedContent: persistContent,
-                          metadata: {
-                            structuredContent: v2.structuredContent,
-                            schemaVersion: 'asli-v2-six-section',
-                          },
-                        }),
-                        hasPracticeGrounding: Boolean(ragBase.hasPracticeGrounding),
-                        qualityGates: [
-                          'math-accuracy',
-                          'indian-notation',
-                          'subtopic-scope',
-                          'content-density',
-                          'legacy-scaffold',
-                          'answer-key-audit',
-                        ],
                       },
                       ...(teacherId ? { teacherId } : {}),
                     }),
@@ -590,12 +533,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                 console.warn(
                   `[book-generator] Slot ${batchIndex} V2 failed (attempt ${attempt}/${maxAttempts}): ${lastError}`,
                 );
-                // Retry on quality-gate failures and transient Gemini errors — never save bad maths.
-                const qualityFail = /quality gate failed/i.test(String(lastError));
-                if (
-                  attempt < maxAttempts &&
-                  (qualityFail || isTransientGeminiError({ message: lastError }))
-                ) {
+                if (isTransientGeminiError({ message: lastError }) && attempt < maxAttempts) {
                   await sleep(Math.min(12_000, 2500 * attempt));
                   continue;
                 }

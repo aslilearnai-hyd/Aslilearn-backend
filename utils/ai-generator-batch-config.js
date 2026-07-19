@@ -29,13 +29,14 @@ export function isAiGeneratorUltraEconomyEnabled() {
 
 }
 
-/** Flash-Lite-only cap. DEFAULT ON — all tiers use gemini-3.1-flash-lite.
- *  Set AI_GENERATOR_FLASH_LITE_ONLY=false to allow Premium Pro. */
+/** Flash-Lite-only cap. DEFAULT OFF — Premium may use the Pro model. Set
+ *  AI_GENERATOR_FLASH_LITE_ONLY=true only to force the cheapest model everywhere. */
+
 export function isAiGeneratorFlashLiteOnlyEnabled() {
 
-  const raw = String(process.env.AI_GENERATOR_FLASH_LITE_ONLY ?? 'true').trim().toLowerCase();
+  const raw = String(process.env.AI_GENERATOR_FLASH_LITE_ONLY ?? 'false').trim().toLowerCase();
 
-  return raw !== 'false' && raw !== '0' && raw !== 'off';
+  return raw === 'true' || raw === '1' || raw === 'on';
 
 }
 
