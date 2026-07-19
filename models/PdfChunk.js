@@ -11,7 +11,7 @@ const pdfChunkSchema = new mongoose.Schema(
     chunkIndex: { type: Number, required: true },
     chunkText: { type: String, required: true },
     embedding: { type: [Number], default: [] },
-    embeddingModel: { type: String, default: 'local-hash-256' },
+    embeddingModel: { type: String, default: 'gemini' },
     tokenCount: { type: Number, default: 0 },
     subject: { type: String, required: true, trim: true },
     classLabel: { type: String, required: true, trim: true },

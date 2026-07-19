@@ -1,5 +1,9 @@
 /**
  * Prompt Engine registry — one pack per AI tool slug.
+ *
+ * Registered: 19 packs. On disk but intentionally NOT registered (retired):
+ *   - key-points-formula-extractor.js
+ *   - quick-assignment-builder.js
  * @module prompts/registry
  */
 

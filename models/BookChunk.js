@@ -16,7 +16,7 @@ const bookChunkSchema = new mongoose.Schema(
     wordCount: { type: Number, default: 0 },
     tokenCount: { type: Number, default: 0 },
     embedding: { type: [Number], default: [] },
-    embeddingModel: { type: String, default: 'local-hash-256' },
+    embeddingModel: { type: String, default: 'gemini' },
     board: { type: String, default: '', trim: true },
     class: { type: String, default: '', trim: true },
     subject: { type: String, default: '', trim: true },

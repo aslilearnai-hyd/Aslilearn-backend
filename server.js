@@ -6,6 +6,19 @@ import bcrypt from 'bcryptjs';
 import mongoose from 'mongoose';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+
+/*
+ * DEPRECATED second Express app (P2.23).
+ * Production entrypoint is `backend/index.js` only.
+ * Set ALLOW_LEGACY_SERVER=1 only for emergency local debugging.
+ */
+if (process.env.ALLOW_LEGACY_SERVER !== '1') {
+  console.error(
+    '[DEPRECATED] backend/server.js is disabled. Use `node index.js` (or npm start). Set ALLOW_LEGACY_SERVER=1 to override.',
+  );
+  process.exit(1);
+}
+
 import connectDB from './config/database.js';
 import superAdminRoutes from './routes/superAdmin.js';
 import adminRoutes from './routes/admin.js';
@@ -109,77 +122,13 @@ app.post('/api/auth/login', async (req, res) => {
     
     console.log('Login attempt:', { email: email.toLowerCase(), timestamp: new Date().toISOString() });
     
-    // Check for Super Admin credentials first
-    const superAdminCredentials = [
-      { email: 'sealucknow2017@gmail.com', password: 'Asli123', fullName: 'Super Admin' },
-      { email: 'amenityforge@gmail.com', password: 'Amenity', fullName: 'Super Admin' },
-    ];
-    
-    const validCredential = superAdminCredentials.find(
-      cred => cred.email.toLowerCase() === email.toLowerCase() && cred.password === password
-    );
-    
-    if (validCredential) {
-      console.log('Super Admin login detected');
-      let superAdminUser = await User.findOne({ email: validCredential.email.toLowerCase() });
-      if (!superAdminUser) {
-        const hashedPassword = await bcrypt.hash(validCredential.password, 12);
-        superAdminUser = new User({
-          email: validCredential.email.toLowerCase(),
-          password: hashedPassword,
-          fullName: validCredential.fullName,
-          role: 'super-admin',
-          isActive: true,
-        });
-        await superAdminUser.save();
-      } else {
-        await User.findByIdAndUpdate(
-          superAdminUser._id,
-          {
-            fullName: validCredential.fullName,
-            role: 'super-admin',
-            isActive: true,
-            lastLogin: new Date(),
-            password: await bcrypt.hash(validCredential.password, 12),
-          },
-          { runValidators: false },
-        );
-        superAdminUser = await User.findById(superAdminUser._id);
-      }
-
-      const superAdminId = superAdminUser._id.toString();
-      const token = jwt.sign(
-        { 
-          id: superAdminId,
-          userId: superAdminId,
-          email: validCredential.email,
-          fullName: validCredential.fullName,
-          role: 'super-admin'
-        },
-        process.env.JWT_SECRET,
-        { expiresIn: '24h' }
-      );
-      
-      return res.json({
-        success: true,
-        token,
-        user: {
-          id: superAdminId,
-          _id: superAdminId,
-          email: validCredential.email,
-          fullName: validCredential.fullName,
-          role: 'super-admin'
-        }
-      });
-    }
-    
-    // Check for regular admin login in database
+    // Authenticate against DB only (no hardcoded credential backdoors)
     console.log('Looking for user with email:', email.toLowerCase());
     let user;
     try {
       user = await User.findOne({ email: email.toLowerCase() });
     } catch (dbError) {
-      console.error('❌ Database query error:', dbError);
+      console.error('Database query error:', dbError);
       return res.status(500).json({ 
         success: false,
         message: 'Database error. Please try again.',
@@ -188,7 +137,6 @@ app.post('/api/auth/login', async (req, res) => {
     }
     
     if (!user) {
-      console.log('User not found in database');
       return res.status(401).json({ 
         success: false,
         message: 'User not found' 
@@ -390,10 +338,6 @@ app.listen(PORT, () => {
   console.log(`🌐 API Base URL: ${baseUrl}`);
   console.log(`🔐 Super Admin Login: ${baseUrl}/api/super-admin/login`);
   console.log(`📊 Dashboard Stats: ${baseUrl}/api/super-admin/stats`);
-  console.log('');
-  console.log('🔑 Super Admin Credentials:');
-  console.log('   Email: amenityforge@gmail.com');
-  console.log('   Password: Amenity');
   console.log('');
   
   const frontendUrl = process.env.FRONTEND_URL || 

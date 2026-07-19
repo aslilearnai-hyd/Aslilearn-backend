@@ -5,9 +5,21 @@ import {
 import { isAiGeneratorSectionPadEnabled } from '../utils/ai-generator-batch-config.js';
 import { extractContentUnits } from './ai-generator-content-extractor.js';
 import { isStoryPassagePlaceholderText, validateStoryPassageLanguageCompliance, mustEnforceStoryPassageLanguageCompliance } from '../utils/story-passage-subject.js';
-import { runPromptEngineQualityCheck } from '../prompts/quality-content-check.js';
+import {
+  runPromptEngineQualityCheck,
+  rejectScaffoldEchoContent,
+} from '../prompts/quality-content-check.js';
 import { isPromptEngineEnabled } from '../prompts/registry.js';
 import { detectBannedPhrase } from '../prompts/shared/banned-phrases.js';
+
+/** Tools historically leaking scaffold/heading-echo into classroom saves (P1.20). */
+const WEAK_INCOMPLETE_SAVE_TOOLS = new Set([
+  'reading-practice-room',
+  'smart-qa-practice-generator',
+  'mock-test-builder',
+  'smart-study-guide-generator',
+  'study-schedule-maker',
+]);
 
 function flashcardBatchLooksSaveable(data, slug) {
   const minCards = slug === 'my-study-decks' ? 10 : 5;
@@ -391,6 +403,14 @@ export function runAiGeneratorQualityGate(toolSlug, structured, meta = {}) {
         errors.push(`Placeholder/scaffold detected: "${text.slice(0, 80)}..."`);
         break;
       }
+    }
+  }
+
+  // Hard block scaffold/heading-echo for historically weak classroom tools (never relax).
+  if (WEAK_INCOMPLETE_SAVE_TOOLS.has(slug) && !bookBatchRelaxed) {
+    const scaffold = rejectScaffoldEchoContent(data);
+    if (!scaffold.ok) {
+      errors.push(scaffold.reason || 'Scaffold/placeholder content must not be saved.');
     }
   }
 

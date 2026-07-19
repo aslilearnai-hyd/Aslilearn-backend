@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import { loginLimiter } from './middleware/rate-limit.js';
 import { requestContext } from './middleware/request-context.js';
 import { logger } from './utils/logger.js';
+import { loginSchema, validateRequest } from './validators/superAdminValidator.js';
 import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
 import bcrypt from 'bcryptjs';
@@ -24,6 +25,12 @@ import {
 } from './utils/vidyaSchoolAccess.js';
 import { configureMongoDns } from './config/mongo-dns.js';
 import { MONGOOSE_CONNECT_OPTIONS, attachMongooseConnectionListeners } from './config/mongoose-options.js';
+import {
+  attachCookies,
+  setAuthCookie,
+  clearAuthCookie,
+  extractAuthToken,
+} from './utils/auth-cookie.js';
 
 // Get current directory for ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -209,10 +216,23 @@ if (nodeEnvEffective === 'production') {
 const PORT = process.env.PORT || 5000;
 initPdfProcessingQueue();
 
-// Configure multer for file uploads
-const upload = multer({ 
+// Configure multer for file uploads (MIME allow-list)
+const upload = multer({
   storage: multer.memoryStorage(),
-  limits: { fileSize: 5 * 1024 * 1024 } // 5MB limit
+  limits: { fileSize: 5 * 1024 * 1024 }, // 5MB limit
+  fileFilter: (_req, file, cb) => {
+    const mime = String(file.mimetype || '').toLowerCase();
+    const ok =
+      mime.startsWith('image/') ||
+      mime === 'application/pdf' ||
+      mime === 'text/csv' ||
+      mime === 'application/vnd.ms-excel' ||
+      mime === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' ||
+      mime === 'application/msword' ||
+      mime === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
+    if (ok) return cb(null, true);
+    return cb(new Error('Unsupported file type'), false);
+  },
 });
 
 // MongoDB connection - MUST be set in .env file
@@ -404,21 +424,31 @@ app.use(cors({
   optionsSuccessStatus: 204,
   maxAge: 86400
 }));
-// Match nginx client_max_body_size / multer content uploads (100MB)
-app.use(express.json({ limit: '100mb' }));
-app.use(express.urlencoded({ extended: true, limit: '100mb' }));
+// Match nginx uploads via multer; keep JSON bodies modest (files use multipart)
+app.use(express.json({ limit: process.env.JSON_BODY_LIMIT || '2mb' }));
+app.use(express.urlencoded({ extended: true, limit: process.env.JSON_BODY_LIMIT || '2mb' }));
+app.use(attachCookies);
 
-// Serve uploaded files directly from disk
-app.use('/uploads', express.static(join(__dirname, 'uploads')));
+// Serve uploaded files — gate sensitive paths; school logos stay public for branding
+app.use('/uploads', (req, res, next) => {
+  const p = String(req.path || '').toLowerCase();
+  const sensitive =
+    /\/(reports?|risk|homework|submission|exam|orders\/documents|questions)\b/.test(p) ||
+    p.includes('risk-analysis') ||
+    p.includes('/homework');
+  if (!sensitive) return next();
 
-// Request logging middleware (after body parser)
-app.use((req, res, next) => {
-  if (req.path.includes('/api/auth/login')) {
-    console.log('📥 Incoming request:', req.method, req.path);
-    console.log('📦 Request body:', req.body);
+  const token = extractAuthToken(req);
+  if (!token) {
+    return res.status(401).json({ success: false, message: 'Authentication required for this file' });
   }
-  next();
-});
+  try {
+    jwt.verify(token, process.env.JWT_SECRET, { algorithms: ['HS256'] });
+    return next();
+  } catch {
+    return res.status(401).json({ success: false, message: 'Invalid or expired token' });
+  }
+}, express.static(join(__dirname, 'uploads')));
 
 /*
  * CORS headers for all responses — ALLOWLISTED, not reflected.
@@ -765,27 +795,27 @@ app.post('/api/auth/logout', (req, res) => {
           console.error('Logout error:', err);
           return res.status(500).json({ success: false, message: 'Logout failed' });
         }
+        clearAuthCookie(res);
         res.json({ success: true, message: 'Logout successful' });
       });
     } else {
-      // JWT-based logout (token removed client-side)
-      // Always return success - logout is handled client-side
-      console.log('✅ Logout successful (JWT-based)');
+      // JWT-based logout — clear httpOnly cookie; client also drops localStorage token
+      clearAuthCookie(res);
       res.json({ success: true, message: 'Logout successful' });
     }
   } catch (error) {
     console.error('Logout error:', error);
-    // Still return success for JWT-based auth since token is removed client-side
+    clearAuthCookie(res);
     res.json({ success: true, message: 'Logout successful' });
   }
 });
 
 // JWT auth middleware (defined here so /api/auth/me can be registered before app.use('/api', ...))
 const requireAuth = (req, res, next) => {
-  const token = req.headers.authorization?.replace('Bearer ', '');
+  const token = extractAuthToken(req);
   if (!token) return res.status(401).json({ message: 'Not authenticated' });
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = jwt.verify(token, process.env.JWT_SECRET, { algorithms: ['HS256'] });
     req.user = decoded;
     req.isAuthenticated = () => true;
     next();
@@ -1199,39 +1229,11 @@ passport.use(new LocalStrategy({
   passwordField: 'password'
 }, async (email, password, done) => {
   try {
-    // Check for specific admin credentials first
-    if (email === 'amenityforge@gmail.com' && password === 'Amenity') {
-      // Create or find admin user
-      let adminUser = await User.findOne({ email: 'amenityforge@gmail.com' });
-      
-      if (!adminUser) {
-        // Create admin user if doesn't exist
-        const hashedPassword = await bcrypt.hash('Amenity', 12);
-        adminUser = new User({
-          email: 'amenityforge@gmail.com',
-          password: hashedPassword,
-          fullName: 'Admin User',
-          role: 'admin',
-          isActive: true
-        });
-        await adminUser.save();
-      } else {
-        // Update last login
-        adminUser.lastLogin = new Date();
-        await adminUser.save();
-      }
-      
-      return done(null, adminUser);
-    }
-
     // Check Teacher model first
     const teacher = await Teacher.findOne({ email });
-    console.log('Teacher lookup for', email, ':', teacher ? 'Found' : 'Not found');
     
     if (teacher) {
-      console.log('Teacher found:', teacher.email, 'Active:', teacher.isActive);
       const isValidPassword = await bcrypt.compare(password, teacher.password);
-      console.log('Password validation for teacher:', isValidPassword);
       
       if (isValidPassword) {
         // Update last login
@@ -1247,10 +1249,7 @@ passport.use(new LocalStrategy({
           isActive: teacher.isActive
         };
         
-        console.log('Teacher authentication successful:', teacherUser.email);
         return done(null, teacherUser);
-      } else {
-        console.log('Teacher password invalid for:', email);
       }
     }
 
@@ -1439,13 +1438,8 @@ app.options('/api/auth/login', (req, res) => {
   res.sendStatus(200);
 });
 
-app.post('/api/auth/login', loginLimiter, async (req, res) => {
+app.post('/api/auth/login', loginLimiter, validateRequest(loginSchema), async (req, res) => {
   try {
-    console.log('=== LOGIN REQUEST ===');
-    console.log('Request body:', req.body);
-    console.log('Request headers:', req.headers);
-    console.log('Content-Type:', req.headers['content-type']);
-    
     // Check if MongoDB is connected
     if (mongoose.connection.readyState !== 1) {
       console.error('MongoDB not connected. Connection state:', mongoose.connection.readyState);
@@ -1454,128 +1448,17 @@ app.post('/api/auth/login', loginLimiter, async (req, res) => {
     
     // Check if body is parsed
     if (!req.body) {
-      console.error('req.body is undefined or null');
       return res.status(400).json({ message: 'Invalid request body' });
     }
     
     const email = String(req.body.email || '').trim();
     const password = String(req.body.password || '').trim();
     
-    console.log('Extracted email:', email);
-    console.log('Extracted password:', password ? '***' : 'undefined');
-    
     if (!email || !password) {
-      console.error('Missing email or password');
       return res.status(400).json({ message: 'Email and password are required' });
     }
     
-    // Check for Super Admin credentials first
-    const superAdminCredentials = [
-      { email: 'sealucknow2017@gmail.com', password: 'Asli123', fullName: 'Super Admin' }
-    ];
-    
-    const validCredential = superAdminCredentials.find(
-      cred => cred.email.toLowerCase() === email.toLowerCase() && cred.password === password
-    );
-    
-    if (validCredential) {
-      console.log('Super Admin login detected');
-      let superAdminUser = await User.findOne({ email: validCredential.email.toLowerCase() });
-      if (!superAdminUser) {
-        const hashedPassword = await bcrypt.hash(validCredential.password, 12);
-        superAdminUser = new User({
-          email: validCredential.email.toLowerCase(),
-          password: hashedPassword,
-          fullName: validCredential.fullName,
-          role: 'super-admin',
-          isActive: true,
-        });
-        await superAdminUser.save();
-      } else {
-        const needsPasswordRefresh = !(await bcrypt.compare(validCredential.password, superAdminUser.password || ''));
-        const updates = {
-          fullName: validCredential.fullName,
-          role: 'super-admin',
-          isActive: true,
-          lastLogin: new Date(),
-        };
-        if (needsPasswordRefresh) {
-          updates.password = await bcrypt.hash(validCredential.password, 12);
-        }
-        await User.findByIdAndUpdate(superAdminUser._id, updates, { runValidators: false });
-        superAdminUser = await User.findById(superAdminUser._id);
-      }
-
-      const superAdminId = superAdminUser._id.toString();
-      const token = jwt.sign(
-        { 
-          id: superAdminId,
-          userId: superAdminId,
-          email: validCredential.email,
-          fullName: validCredential.fullName,
-          role: 'super-admin'
-        },
-        process.env.JWT_SECRET,
-        { expiresIn: '24h' }
-      );
-      
-      return res.json({
-        success: true,
-        token,
-        user: {
-          id: superAdminId,
-          _id: superAdminId,
-          email: validCredential.email,
-          fullName: validCredential.fullName,
-          role: 'super-admin'
-        }
-      });
-    }
-    
-    // Check for specific admin credentials
-    if (email === 'amenityforge@gmail.com' && password === 'Amenity') {
-      let adminUser = await User.findOne({ email: 'amenityforge@gmail.com' });
-      
-      if (!adminUser) {
-        const hashedPassword = await bcrypt.hash('Amenity', 12);
-        adminUser = new User({
-          email: 'amenityforge@gmail.com',
-          password: hashedPassword,
-          fullName: 'Admin User',
-          role: 'admin',
-          isActive: true
-        });
-        await adminUser.save();
-      }
-      
-      // Update last login without triggering full document validation
-      await User.findByIdAndUpdate(adminUser._id, { lastLogin: new Date() }, { runValidators: false });
-      
-      const token = jwt.sign(
-        { 
-          userId: adminUser._id.toString(), 
-          id: adminUser._id.toString(),
-          email: adminUser.email, 
-          role: adminUser.role 
-        },
-        process.env.JWT_SECRET,
-        { expiresIn: '24h' }
-      );
-      
-      return res.json({
-        success: true,
-        token,
-        user: {
-          id: adminUser._id.toString(),
-          _id: adminUser._id.toString(),
-          email: adminUser.email,
-          fullName: adminUser.fullName,
-          role: adminUser.role
-        }
-      });
-    }
-
-    // Check Teacher model first
+    // Authenticate against DB only (no hardcoded credential backdoors)
     let teacher = null;
     try {
       teacher = await Teacher.findOne({ email: email.toLowerCase() });
@@ -1604,11 +1487,9 @@ app.post('/api/auth/login', loginLimiter, async (req, res) => {
             id: teacher._id.toString(),
             email: teacher.email, 
             role: 'teacher' 
-          },
-          process.env.JWT_SECRET,
-          { expiresIn: '24h' }
-        );
-        
+          }, process.env.JWT_SECRET, { expiresIn: '24h', algorithm: 'HS256' });
+        setAuthCookie(res, token);
+
         // Fetch teacher subjects if needed
         let subjects = [];
         try {
@@ -1647,35 +1528,24 @@ app.post('/api/auth/login', loginLimiter, async (req, res) => {
     let user = null;
     try {
       user = await User.findOne({ email: email.toLowerCase() });
-      console.log('User lookup result:', user ? {
-        email: user.email,
-        role: user.role,
-        isActive: user.isActive,
-        hasPassword: !!user.password
-      } : 'User not found');
     } catch (userError) {
       console.error('Error querying User model:', userError);
       throw userError; // Re-throw if User query fails
     }
     
     if (!user) {
-      console.log(`Login failed: User with email ${email.toLowerCase()} not found`);
       return res.status(401).json({ 
         success: false,
         message: 'User not found'
       });
     }
 
-    console.log('Checking password for user:', user.email);
     const isValidPassword = await bcrypt.compare(password, user.password || '');
-    console.log('Password validation result:', isValidPassword);
     
     if (!isValidPassword) {
-      console.log(`Login failed: Invalid password for user ${user.email}`);
       return res.status(401).json({ 
         success: false,
-        message: 'Invalid credentials',
-        hint: 'Password does not match'
+        message: 'Invalid credentials'
       });
     }
     
@@ -1707,10 +1577,8 @@ app.post('/api/auth/login', loginLimiter, async (req, res) => {
         id: user._id.toString(),
         email: user.email, 
         role: user.role 
-      },
-      process.env.JWT_SECRET,
-      { expiresIn: '24h' }
-    );
+      }, process.env.JWT_SECRET, { expiresIn: '24h', algorithm: 'HS256' });
+    setAuthCookie(res, token);
 
     res.json({ 
       success: true,
@@ -1773,34 +1641,8 @@ app.get('/api/assessments', async (req, res) => {
   }
 });
 
-// Admin routes (protected)
-// For development, allow access without authentication, but prefer real auth if available
-if (process.env.NODE_ENV === 'development') {
-  console.log('Development mode: Admin routes accessible, but will use real auth if available');
-  app.use('/api/admin', (req, res, next) => {
-    // Check if user is already authenticated via JWT
-    const token = req.headers.authorization?.replace('Bearer ', '');
-    if (token) {
-      try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        // Use real authenticated user if token is valid
-        req.user = decoded;
-        req.isAuthenticated = () => true;
-        console.log('Development mode: Using authenticated user from JWT:', decoded.email);
-        return next();
-      } catch (error) {
-        // Token invalid, fall through to dev mode
-        console.log('Development mode: JWT invalid, using dev user');
-      }
-    }
-    // Only use mock user if no valid token
-    req.user = { _id: 'dev-admin', email: 'dev@admin.com', role: 'admin' };
-    req.isAuthenticated = () => true;
-    next();
-  });
-} else {
-  app.use('/api/admin', requireAuth, requireAdmin);
-}
+// Admin routes (protected) — fail closed in every environment
+app.use('/api/admin', requireAuth, requireAdmin);
 
 // Admin video management
 app.post('/api/admin/videos', async (req, res) => {
@@ -2571,7 +2413,7 @@ app.get('/api/admin/users', async (req, res) => {
       return res.status(401).json({ message: 'No token provided' });
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = jwt.verify(token, process.env.JWT_SECRET, { algorithms: ['HS256'] });
     const adminId = decoded.userId;
 
     // Only return students assigned to this admin
@@ -2595,7 +2437,7 @@ app.post('/api/admin/users', async (req, res) => {
       return res.status(401).json({ message: 'No token provided' });
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = jwt.verify(token, process.env.JWT_SECRET, { algorithms: ['HS256'] });
     const adminId = decoded.userId;
 
     const { email, password, fullName, classNumber, phone, role = 'student', isActive = true } = req.body;
@@ -2731,7 +2573,7 @@ app.get('/api/admin/teachers', async (req, res) => {
       return res.status(401).json({ message: 'No token provided' });
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = jwt.verify(token, process.env.JWT_SECRET, { algorithms: ['HS256'] });
     const adminId = decoded.userId;
 
     // Only return teachers assigned to this admin
@@ -2780,7 +2622,7 @@ app.post('/api/admin/teachers', async (req, res) => {
       return res.status(401).json({ message: 'No token provided' });
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = jwt.verify(token, process.env.JWT_SECRET, { algorithms: ['HS256'] });
     const adminId = decoded.userId;
 
     const { email, password, fullName, phone, department, qualifications, subjects } = req.body;
@@ -3231,1931 +3073,7 @@ app.get('/api/health', (req, res) => {
     uptime: process.uptime()
   });
 });
-
-// Quick test endpoint to verify teacher account
-app.get('/api/debug/test-teacher', async (req, res) => {
-  try {
-    const teacher = await Teacher.findOne({ email: 'teacher@test.com' });
-    if (!teacher) {
-      return res.json({ 
-        exists: false, 
-        message: 'Teacher account does not exist' 
-      });
-    }
-    
-    // Test password
-    const bcrypt = require('bcryptjs');
-    const isPasswordValid = await bcrypt.compare('Password123', teacher.password);
-    
-    res.json({
-      exists: true,
-      email: teacher.email,
-      fullName: teacher.fullName,
-      isActive: teacher.isActive,
-      passwordValid: isPasswordValid,
-      message: isPasswordValid ? 'Teacher account is ready' : 'Password mismatch'
-    });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-
-// Debug endpoint to check exams in database
-app.get('/api/debug/exams', async (req, res) => {
-  try {
-    const allExams = await Exam.find({}).populate('questions');
-    const activeExams = await Exam.find({ isActive: true }).populate('questions');
-    
-    res.json({
-      totalExams: allExams.length,
-      activeExams: activeExams.length,
-      allExams: allExams.map(exam => ({
-        id: exam._id,
-        title: exam.title,
-        examType: exam.examType,
-        isActive: exam.isActive,
-        questionsCount: exam.questions.length,
-        createdAt: exam.createdAt
-      })),
-      activeExams: activeExams.map(exam => ({
-        id: exam._id,
-        title: exam.title,
-        examType: exam.examType,
-        isActive: exam.isActive,
-        questionsCount: exam.questions.length
-      }))
-    });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-
-// Debug endpoint to show exam questions and correct answers
-app.get('/api/debug/exam-answers/:examId', async (req, res) => {
-  try {
-    const { examId } = req.params;
-    const exam = await Exam.findById(examId).populate('questions');
-    
-    if (!exam) {
-      return res.status(404).json({ 
-        success: false,
-        message: 'Exam not found in database' 
-      });
-    }
-    
-    const questionsWithAnswers = exam.questions.map((question, index) => ({
-      questionNumber: index + 1,
-      questionId: question._id,
-      questionText: question.questionText,
-      questionImage: question.questionImage,
-      questionType: question.questionType,
-      options: question.options,
-      correctAnswer: question.correctAnswer,
-      marks: question.marks,
-      negativeMarks: question.negativeMarks,
-      subject: question.subject
-    }));
-    
-    res.json({
-      examId: exam._id,
-      examTitle: exam.title,
-      examType: exam.examType,
-      totalQuestions: exam.questions.length,
-      questions: questionsWithAnswers
-    });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-
-// Create test student account for easy testing
-app.post('/api/debug/create-test-student', async (req, res) => {
-  try {
-    const bcrypt = require('bcryptjs');
-    
-    // Check if test student already exists
-    const existingStudent = await User.findOne({ email: 'student@test.com' });
-    if (existingStudent) {
-      return res.json({ 
-        message: 'Test student already exists',
-        student: {
-          email: existingStudent.email,
-          fullName: existingStudent.fullName,
-          role: existingStudent.role
-        }
-      });
-    }
-    
-    // Create test student
-    const hashedPassword = await bcrypt.hash('password123', 10);
-    const testStudent = new User({
-      fullName: 'Test Student',
-      email: 'student@test.com',
-      password: hashedPassword,
-      role: 'student',
-      isActive: true,
-      classNumber: 'Test-Class-1',
-      phone: '+1234567890'
-    });
-    
-    await testStudent.save();
-    
-    res.json({
-      message: 'Test student created successfully',
-      student: {
-        email: testStudent.email,
-        fullName: testStudent.fullName,
-        role: testStudent.role,
-        password: 'password123'
-      }
-    });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-
-// Fix/Create user for login (debug only)
-app.post('/api/debug/fix-user', async (req, res) => {
-  try {
-    const { email = 'ak@gmail.com', password = 'Password123', fullName = 'Akhilesh', role = 'admin' } = req.body;
-    
-    // Check if user exists
-    let user = await User.findOne({ email: email.toLowerCase() });
-    
-    if (!user) {
-      console.log('Creating new user:', email);
-      const hashedPassword = await bcrypt.hash(password, 12);
-      user = new User({
-        email: email.toLowerCase(),
-        password: hashedPassword,
-        fullName: fullName,
-        role: role,
-        isActive: true,
-        board: 'ASLI_EXCLUSIVE_SCHOOLS',
-        schoolName: 'Default School'
-      });
-      await user.save();
-      
-      return res.json({
-        success: true,
-        message: 'User created successfully',
-        user: {
-          email: user.email,
-          fullName: user.fullName,
-          role: user.role,
-          password: password
-        }
-      });
-    } else {
-      console.log('Updating existing user:', email);
-      const hashedPassword = await bcrypt.hash(password, 12);
-      user.password = hashedPassword;
-      user.isActive = true;
-      await user.save();
-      
-      return res.json({
-        success: true,
-        message: 'User password updated successfully',
-        user: {
-          email: user.email,
-          fullName: user.fullName,
-          role: user.role,
-          password: password
-        }
-      });
-    }
-  } catch (error) {
-    console.error('Fix user error:', error);
-    res.status(500).json({ 
-      success: false,
-      error: error.message 
-    });
-  }
-});
-
-// Create test user with specific email
-app.post('/api/debug/create-user', async (req, res) => {
-  try {
-    const bcrypt = require('bcryptjs');
-    const { email, fullName, role } = req.body;
-    
-    // Check if user already exists
-    const existingUser = await User.findOne({ email });
-    if (existingUser) {
-      return res.json({ 
-        message: 'User already exists',
-        user: {
-          email: existingUser.email,
-          fullName: existingUser.fullName,
-          role: existingUser.role
-        }
-      });
-    }
-    
-    // Create user
-    const hashedPassword = await bcrypt.hash('Password123', 10);
-    const newUser = new User({
-      fullName: fullName || 'Test User',
-      email: email,
-      password: hashedPassword,
-      role: role || 'student',
-      isActive: true,
-      classNumber: 'Test-Class-1',
-      phone: '+1234567890'
-    });
-    
-    await newUser.save();
-    
-    res.json({
-      message: 'User created successfully',
-      user: {
-        email: newUser.email,
-        fullName: newUser.fullName,
-        role: newUser.role,
-        password: 'Password123'
-      }
-    });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-
-// List all existing users (for debugging)
-app.get('/api/debug/users', async (req, res) => {
-  try {
-    const users = await User.find().select('-password').sort({ createdAt: -1 });
-    
-    res.json({
-      message: 'Existing users found',
-      count: users.length,
-      users: users.map(user => ({
-        id: user._id,
-        email: user.email,
-        fullName: user.fullName,
-        role: user.role,
-        isActive: user.isActive,
-        createdAt: user.createdAt,
-        lastLogin: user.lastLogin
-      }))
-    });
-  } catch (error) {
-    console.error('Failed to fetch users:', error);
-    res.status(500).json({ error: error.message });
-  }
-});
-
-// List all existing teachers (for debugging)
-app.get('/api/debug/teachers', async (req, res) => {
-  try {
-    const teachers = await Teacher.find().populate('subjects').select('-password').sort({ createdAt: -1 });
-    
-    res.json({
-      message: 'Existing teachers found',
-      count: teachers.length,
-      teachers: teachers.map(teacher => ({
-        id: teacher._id,
-        email: teacher.email,
-        fullName: teacher.fullName,
-        department: teacher.department,
-        qualifications: teacher.qualifications,
-        subjects: teacher.subjects?.map(s => ({ id: s._id, name: s.name })) || [],
-        subjectsCount: teacher.subjects?.length || 0,
-        isActive: teacher.isActive,
-        createdAt: teacher.createdAt,
-        lastLogin: teacher.lastLogin
-      }))
-    });
-  } catch (error) {
-    console.error('Failed to fetch teachers:', error);
-    res.status(500).json({ error: error.message });
-  }
-});
-
-// Create test teacher account for easy testing
-app.post('/api/debug/create-test-teacher', async (req, res) => {
-  try {
-    const bcrypt = await import('bcryptjs');
-    
-    // Check if test teacher already exists
-    const existingTeacher = await Teacher.findOne({ email: 'teacher@test.com' });
-    if (existingTeacher) {
-      // Update password to ensure it's correct
-      const hashedPassword = await bcrypt.default.hash('Password123', 10);
-      existingTeacher.password = hashedPassword;
-      await existingTeacher.save();
-      
-      return res.json({ 
-        message: 'Test teacher already exists, password updated',
-        teacher: {
-          email: existingTeacher.email,
-          fullName: existingTeacher.fullName,
-          role: existingTeacher.role,
-          password: 'Password123'
-        }
-      });
-    }
-    
-    // Create test teacher
-    const hashedPassword = await bcrypt.default.hash('Password123', 10);
-    const testTeacher = new Teacher({
-      email: 'teacher@test.com',
-      password: hashedPassword,
-      fullName: 'Test Teacher',
-      phone: '+1234567890',
-      department: 'Science',
-      qualifications: 'M.Sc Physics, B.Ed',
-      role: 'teacher',
-      isActive: true
-    });
-    
-    await testTeacher.save();
-    
-    res.json({ 
-      message: 'Test teacher created successfully',
-      teacher: {
-        email: testTeacher.email,
-        fullName: testTeacher.fullName,
-        role: testTeacher.role,
-        password: 'Password123'
-      }
-    });
-  } catch (error) {
-    console.error('Failed to create test teacher:', error);
-    res.status(500).json({ error: error.message });
-  }
-});
-
-// Create a guaranteed working test teacher
-app.post('/api/debug/create-working-teacher', async (req, res) => {
-  try {
-    const bcrypt = await import('bcryptjs');
-    
-    // Delete any existing test teacher first
-    await Teacher.deleteOne({ email: 'testteacher@cognilearn.com' });
-    
-    // Create guaranteed working teacher
-    const hashedPassword = await bcrypt.default.hash('Teacher123', 10);
-    const workingTeacher = new Teacher({
-      email: 'testteacher@cognilearn.com',
-      password: hashedPassword,
-      fullName: 'Test Teacher CogniLearn',
-      phone: '+1234567890',
-      department: 'Mathematics',
-      qualifications: 'M.Sc Mathematics, B.Ed',
-      role: 'teacher',
-      isActive: true
-    });
-    
-    await workingTeacher.save();
-    
-    res.json({ 
-      message: 'Working test teacher created successfully',
-      credentials: {
-        email: 'testteacher@cognilearn.com',
-        password: 'Teacher123',
-        fullName: 'Test Teacher CogniLearn',
-        role: 'teacher'
-      },
-      loginUrl: 'http://localhost:5174/signin'
-    });
-  } catch (error) {
-    console.error('Failed to create working teacher:', error);
-    res.status(500).json({ error: error.message });
-  }
-});
-
-// Fix teacher login - check and reset password
-app.post('/api/debug/fix-teacher-login', async (req, res) => {
-  try {
-    const { email, newPassword } = req.body;
-    
-    if (!email) {
-      return res.status(400).json({ 
-        success: false,
-        message: 'Email is required' 
-      });
-    }
-
-    const password = newPassword || 'Password123';
-    
-    // Find teacher
-    const teacher = await Teacher.findOne({ email: email.toLowerCase() });
-    
-    if (!teacher) {
-      return res.status(404).json({ 
-        success: false,
-        message: `Teacher with email "${email}" not found in database`,
-        suggestion: 'Use /api/debug/create-test-teacher to create a test teacher account'
-      });
-    }
-
-    console.log(`🔧 Fixing teacher login for: ${teacher.email}`);
-    console.log(`   Current status: Active=${teacher.isActive}, HasPassword=${!!teacher.password}`);
-
-    // Activate account if inactive
-    if (!teacher.isActive) {
-      teacher.isActive = true;
-      console.log('   ✅ Activating account');
-    }
-
-    // Reset password
-    const bcrypt = await import('bcryptjs');
-    const hashedPassword = await bcrypt.default.hash(password, 12);
-    teacher.password = hashedPassword;
-    await teacher.save();
-
-    // Verify password
-    const verifyPassword = await bcrypt.default.compare(password, teacher.password);
-    
-    res.json({ 
-      success: true,
-      message: 'Teacher account fixed successfully',
-      teacher: {
-        email: teacher.email,
-        fullName: teacher.fullName,
-        isActive: teacher.isActive,
-        passwordReset: true,
-        passwordVerified: verifyPassword
-      },
-      credentials: {
-        email: teacher.email,
-        password: password,
-        note: 'Use these credentials to login'
-      }
-    });
-  } catch (error) {
-    console.error('Failed to fix teacher login:', error);
-    res.status(500).json({ 
-      success: false,
-      error: error.message 
-    });
-  }
-});
-
-// Create multiple teacher accounts for testing
-app.post('/api/debug/create-multiple-teachers', async (req, res) => {
-  try {
-    const bcrypt = await import('bcryptjs');
-    
-    const teachers = [
-      {
-        email: 'math.teacher@cognilearn.com',
-        password: 'MathTeacher123',
-        fullName: 'Dr. Sarah Johnson',
-        phone: '+1234567891',
-        department: 'Mathematics',
-        qualifications: 'Ph.D Mathematics, M.Ed',
-        role: 'teacher',
-        isActive: true
-      },
-      {
-        email: 'physics.teacher@cognilearn.com',
-        password: 'PhysicsTeacher123',
-        fullName: 'Prof. Michael Chen',
-        phone: '+1234567892',
-        department: 'Physics',
-        qualifications: 'Ph.D Physics, B.Ed',
-        role: 'teacher',
-        isActive: true
-      },
-      {
-        email: 'chemistry.teacher@cognilearn.com',
-        password: 'ChemTeacher123',
-        fullName: 'Dr. Emily Rodriguez',
-        phone: '+1234567893',
-        department: 'Chemistry',
-        qualifications: 'Ph.D Chemistry, M.Ed',
-        role: 'teacher',
-        isActive: true
-      },
-      {
-        email: 'english.teacher@cognilearn.com',
-        password: 'EnglishTeacher123',
-        fullName: 'Ms. Jennifer Smith',
-        phone: '+1234567894',
-        department: 'English',
-        qualifications: 'M.A English Literature, B.Ed',
-        role: 'teacher',
-        isActive: true
-      }
-    ];
-    
-    const createdTeachers = [];
-    
-    for (const teacherData of teachers) {
-      // Delete existing teacher if exists
-      await Teacher.deleteOne({ email: teacherData.email });
-      
-      // Hash password
-      const hashedPassword = await bcrypt.default.hash(teacherData.password, 10);
-      
-      // Create teacher
-      const teacher = new Teacher({
-        ...teacherData,
-        password: hashedPassword
-      });
-      
-      await teacher.save();
-      createdTeachers.push({
-        email: teacherData.email,
-        password: teacherData.password,
-        fullName: teacherData.fullName,
-        department: teacherData.department,
-        role: teacherData.role
-      });
-    }
-    
-    res.json({ 
-      message: 'Multiple teachers created successfully',
-      teachers: createdTeachers,
-      loginUrl: 'http://localhost:5174/signin',
-      totalCreated: createdTeachers.length
-    });
-  } catch (error) {
-    console.error('Failed to create multiple teachers:', error);
-    res.status(500).json({ error: error.message });
-  }
-});
-
-// Teacher routes are already mounted above at line 195
-
-// Get teacher profile with subjects
-app.get('/api/teacher/profile', async (req, res) => {
-  try {
-    const teacher = await Teacher.findById(req.user._id).populate('subjects');
-    if (!teacher) {
-      return res.status(404).json({ message: 'Teacher not found' });
-    }
-    
-    console.log('Teacher profile requested:', {
-      id: teacher._id,
-      email: teacher.email,
-      subjectsCount: teacher.subjects?.length || 0,
-      subjects: teacher.subjects?.map(s => s.name) || []
-    });
-    
-    res.json({
-      id: teacher._id,
-      fullName: teacher.fullName,
-      email: teacher.email,
-      phone: teacher.phone,
-      department: teacher.department,
-      qualifications: teacher.qualifications,
-      subjects: teacher.subjects || []
-    });
-  } catch (error) {
-    console.error('Failed to fetch teacher profile:', error);
-    res.status(500).json({ message: 'Failed to fetch teacher profile' });
-  }
-});
-
-// Assign subjects to current teacher (for testing)
-app.post('/api/teacher/assign-subjects', async (req, res) => {
-  try {
-    const { subjectIds } = req.body;
-    const teacherId = req.user._id;
-    
-    console.log('Assigning subjects to teacher:', { teacherId, subjectIds });
-    
-    const teacher = await Teacher.findById(teacherId);
-    if (!teacher) {
-      return res.status(404).json({ message: 'Teacher not found' });
-    }
-
-    // Update teacher's subjects
-    teacher.subjects = subjectIds;
-    await teacher.save();
-    
-    // Populate subjects for response
-    await teacher.populate('subjects');
-    
-    res.json({
-      message: 'Subjects assigned successfully',
-      teacher: {
-        id: teacher._id,
-        email: teacher.email,
-        subjects: teacher.subjects
-      }
-    });
-  } catch (error) {
-    console.error('Failed to assign subjects:', error);
-    res.status(500).json({ message: 'Failed to assign subjects' });
-  }
-});
-
-// Teacher content creation endpoints
-app.post('/api/teacher/quizzes', async (req, res) => {
-  try {
-    const { title, description, subject, duration, difficulty, questions } = req.body;
-    const teacherId = req.user._id;
-    
-    // Calculate total points
-    const totalPoints = questions.reduce((sum, q) => sum + (q.points || 1), 0);
-    
-    const newQuiz = new Assessment({
-      title,
-      description,
-      questions,
-      subjectIds: [subject],
-      difficulty,
-      duration,
-      totalPoints,
-      createdBy: teacherId,
-      isPublished: true
-    });
-
-    await newQuiz.save();
-    res.status(201).json(newQuiz);
-  } catch (error) {
-    console.error('Failed to create quiz:', error);
-    res.status(500).json({ message: 'Failed to create quiz' });
-  }
-});
-
-app.post('/api/teacher/videos', async (req, res) => {
-  try {
-    const { title, description, videoUrl, subject, duration, difficulty } = req.body;
-    const teacherId = req.user._id;
-    
-    // Extract YouTube video ID from URL
-    let youtubeId = '';
-    if (videoUrl && videoUrl.includes('youtube.com/watch?v=')) {
-      youtubeId = videoUrl.split('v=')[1].split('&')[0];
-    } else if (videoUrl && videoUrl.includes('youtu.be/')) {
-      youtubeId = videoUrl.split('youtu.be/')[1].split('?')[0];
-    }
-    
-    const thumbnailUrl = youtubeId ? `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg` : '';
-    
-    const newVideo = new Video({
-      title,
-      description,
-      videoUrl,
-      thumbnailUrl,
-      duration: parseInt(duration),
-      subjectId: subject,
-      difficulty,
-      createdBy: teacherId,
-      isPublished: true
-    });
-
-    await newVideo.save();
-    res.status(201).json(newVideo);
-  } catch (error) {
-    console.error('Failed to create video:', error);
-    res.status(500).json({ message: 'Failed to create video' });
-  }
-});
-
-app.post('/api/teacher/assessments', async (req, res) => {
-  try {
-    const { title, description, subject, type, duration, difficulty, questions, isDriveQuiz, driveLink } = req.body;
-    const teacherId = req.user._id;
-    
-    // Calculate total points
-    const totalPoints = questions.reduce((sum, q) => sum + (q.points || 1), 0);
-    
-    const newAssessment = new Assessment({
-      title,
-      description,
-      questions,
-      subjectIds: [subject],
-      difficulty,
-      duration,
-      totalPoints,
-      createdBy: new mongoose.Types.ObjectId(teacherId),
-      isPublished: true,
-      isDriveQuiz: isDriveQuiz || false,
-      driveLink: driveLink || ''
-    });
-
-    await newAssessment.save();
-    res.status(201).json(newAssessment);
-  } catch (error) {
-    console.error('Failed to create assessment:', error);
-    res.status(500).json({ message: 'Failed to create assessment' });
-  }
-});
-
-// Get teacher's content
-app.get('/api/teacher/quizzes', async (req, res) => {
-  try {
-    const teacherId = req.user._id;
-    const quizzes = await Assessment.find({ 
-      createdBy: teacherId,
-      isPublished: true 
-    }).sort({ createdAt: -1 });
-    res.json(quizzes);
-  } catch (error) {
-    console.error('Failed to fetch teacher quizzes:', error);
-    res.status(500).json({ message: 'Failed to fetch quizzes' });
-  }
-});
-
-app.get('/api/teacher/videos', async (req, res) => {
-  try {
-    const teacherId = req.user._id;
-    const videos = await Video.find({ 
-      createdBy: teacherId,
-      isPublished: true 
-    }).sort({ createdAt: -1 });
-    res.json(videos);
-  } catch (error) {
-    console.error('Failed to fetch teacher videos:', error);
-    res.status(500).json({ message: 'Failed to fetch videos' });
-  }
-});
-
-app.get('/api/teacher/assessments', async (req, res) => {
-  try {
-    const teacherId = req.user._id;
-    const assessments = await Assessment.find({ 
-      createdBy: teacherId,
-      isPublished: true 
-    }).sort({ createdAt: -1 });
-    res.json(assessments);
-  } catch (error) {
-    console.error('Failed to fetch teacher assessments:', error);
-    res.status(500).json({ message: 'Failed to fetch assessments' });
-  }
-});
-
-// Student endpoints to access teacher-created content
-app.get('/api/student/content', async (req, res) => {
-  try {
-    // Get all published content from teachers
-    const [videos, assessments] = await Promise.all([
-      Video.find({ isPublished: true }).populate('createdBy', 'fullName').sort({ createdAt: -1 }),
-      Assessment.find({ isPublished: true }).populate('createdBy', 'fullName').sort({ createdAt: -1 })
-    ]);
-    
-    if ((!videos || videos.length === 0) && (!assessments || assessments.length === 0)) {
-      return res.status(404).json({ 
-        success: false,
-        message: 'No content found in database',
-        videos: [],
-        assessments: [],
-        totalVideos: 0,
-        totalAssessments: 0
-      });
-    }
-    
-    res.json({
-      videos: videos || [],
-      assessments: assessments || [],
-      totalVideos: videos ? videos.length : 0,
-      totalAssessments: assessments ? assessments.length : 0
-    });
-  } catch (error) {
-    console.error('Failed to fetch student content:', error);
-    res.status(500).json({ message: 'Failed to fetch content' });
-  }
-});
-
-// These routes are now handled by student.js with proper multi-tenant filtering
-// app.get('/api/student/videos', async (req, res) => {
-//   try {
-//     const videos = await Video.find({ isPublished: true })
-//       .populate('createdBy', 'fullName')
-//       .sort({ createdAt: -1 });
-//     res.json(videos);
-//   } catch (error) {
-//     console.error('Failed to fetch student videos:', error);
-//     res.status(500).json({ message: 'Failed to fetch videos' });
-//   }
-// });
-
-// app.get('/api/student/assessments', async (req, res) => {
-//   try {
-//     const assessments = await Assessment.find({ isPublished: true })
-//       .populate('createdBy', 'fullName')
-//       .sort({ createdAt: -1 });
-//     res.json(assessments);
-//   } catch (error) {
-//     console.error('Failed to fetch student assessments:', error);
-//     res.status(500).json({ message: 'Failed to fetch assessments' });
-//   }
-// });
-
-// This route is now handled by studentRoutes in routes/student.js
-// app.get('/api/student/quizzes', async (req, res) => {
-//   try {
-//     const quizzes = await Assessment.find({ isPublished: true })
-//       .populate('createdBy', 'fullName')
-//       .sort({ createdAt: -1 });
-//     res.json(quizzes);
-//   } catch (error) {
-//     console.error('Failed to fetch student quizzes:', error);
-//     res.status(500).json({ message: 'Failed to fetch quizzes' });
-//   }
-// });
-
-// Question management endpoints
-app.get('/api/admin/exams/:examId/questions', requireAuth, requireAdmin, async (req, res) => {
-  try {
-    const { examId } = req.params;
-    
-    // Validate ObjectId format
-    if (!mongoose.Types.ObjectId.isValid(examId)) {
-      return res.status(400).json({ message: 'Invalid exam ID format' });
-    }
-    
-    console.log('Fetching questions for exam ID:', examId);
-    const questions = await Question.find({ exam: examId }).sort({ createdAt: -1 });
-    console.log('Found questions:', questions.length);
-    res.json(questions);
-  } catch (error) {
-    console.error('Failed to fetch questions:', error);
-    res.status(500).json({ message: 'Failed to fetch questions', error: error.message });
-  }
-});
-
-app.post('/api/admin/exams/:examId/questions', requireAuth, requireAdmin, async (req, res) => {
-  try {
-    const { examId } = req.params;
-    
-    // Validate ObjectId format
-    if (!mongoose.Types.ObjectId.isValid(examId)) {
-      return res.status(400).json({ message: 'Invalid exam ID format' });
-    }
-    const {
-      questionText,
-      questionImage,
-      questionType,
-      options,
-      correctAnswer,
-      marks,
-      negativeMarks,
-      explanation,
-      subject
-    } = req.body;
-
-    console.log('Creating question with data:', {
-      questionText,
-      questionImage,
-      questionType,
-      options,
-      correctAnswer,
-      marks,
-      negativeMarks,
-      explanation,
-      subject,
-      examId
-    });
-
-    // Validate that either question text or image is provided
-    if (!questionText?.trim() && !questionImage) {
-      return res.status(400).json({ message: 'Either question text or image is required' });
-    }
-
-    // Clean up questionText - set to empty string if only whitespace
-    const cleanQuestionText = questionText?.trim() || '';
-
-    // Validate question type and options
-    if ((questionType === 'mcq' || questionType === 'multiple') && (!options || options.length === 0)) {
-      return res.status(400).json({ message: 'Options are required for MCQ and Multiple Choice questions' });
-    }
-
-    const question = new Question({
-      questionText: cleanQuestionText,
-      questionImage,
-      questionType,
-      options,
-      correctAnswer,
-      marks: marks || 1,
-      negativeMarks: negativeMarks || 0,
-      explanation,
-      subject: subject || 'maths',
-      exam: examId,
-      createdBy: req.user.id
-    });
-
-    await question.save();
-    console.log('Question saved successfully:', question._id);
-
-    // Add question to exam
-    await Exam.updateOne(
-      { _id: examId },
-      buildSafeAppendQuestionPipeline(question._id)
-    );
-    console.log('Question added to exam:', examId);
-
-    res.status(201).json(question);
-  } catch (error) {
-    console.error('Failed to create question:', error);
-    console.error('Error details:', {
-      message: error.message,
-      name: error.name,
-      stack: error.stack
-    });
-    res.status(500).json({ 
-      message: 'Failed to create question', 
-      error: error.message,
-      details: process.env.NODE_ENV === 'development' ? error.stack : undefined
-    });
-  }
-});
-
-app.put('/api/admin/questions/:id', requireAuth, requireAdmin, async (req, res) => {
-  try {
-    const { id } = req.params;
-    const updateData = req.body;
-
-    const question = await Question.findByIdAndUpdate(id, updateData, { new: true });
-    if (!question) {
-      return res.status(404).json({ message: 'Question not found' });
-    }
-
-    res.json(question);
-  } catch (error) {
-    console.error('Failed to update question:', error);
-    res.status(500).json({ message: 'Failed to update question' });
-  }
-});
-
-app.delete('/api/admin/questions/:id', requireAuth, requireAdmin, async (req, res) => {
-  try {
-    const { id } = req.params;
-    
-    const question = await Question.findById(id);
-    if (!question) {
-      return res.status(404).json({ message: 'Question not found' });
-    }
-
-    // Remove question from exam
-    await Exam.updateOne(
-      { _id: question.exam },
-      buildSafeRemoveQuestionPipeline(question._id)
-    );
-    
-    await Question.findByIdAndDelete(id);
-    res.json({ message: 'Question deleted successfully' });
-  } catch (error) {
-    console.error('Failed to delete question:', error);
-    res.status(500).json({ message: 'Failed to delete question' });
-  }
-});
-
-// Image upload endpoint for questions
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'uploads/questions/');
-  },
-  filename: function (req, file, cb) {
-    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-    cb(null, 'question-' + uniqueSuffix + '.' + file.originalname.split('.').pop());
-  }
-});
-
-const imageUpload = multer({ 
-  storage: storage,
-  limits: { fileSize: 5 * 1024 * 1024 }, // 5MB limit
-  fileFilter: (req, file, cb) => {
-    if (file.mimetype.startsWith('image/')) {
-      cb(null, true);
-    } else {
-      cb(new Error('Only image files are allowed!'), false);
-    }
-  }
-});
-
-app.post('/api/admin/upload-question-image', (req, res, next) => {
-  imageUpload.single('image')(req, res, (err) => {
-    if (err) {
-      console.error('Multer error:', err);
-      if (err.code === 'LIMIT_FILE_SIZE') {
-        return res.status(400).json({ 
-          success: false,
-          message: 'File too large. Maximum size is 5MB.' 
-        });
-      }
-      if (err.message === 'Only image files are allowed!') {
-        return res.status(400).json({ 
-          success: false,
-          message: 'Only image files are allowed.' 
-        });
-      }
-      return res.status(500).json({ 
-        success: false,
-        message: 'File upload error',
-        error: err.message 
-      });
-    }
-    next();
-  });
-}, (req, res) => {
-  try {
-    console.log('Image upload request received:', {
-      file: req.file ? {
-        originalname: req.file.originalname,
-        mimetype: req.file.mimetype,
-        size: req.file.size,
-        filename: req.file.filename
-      } : 'No file',
-      body: req.body
-    });
-
-    if (!req.file) {
-      console.log('No file provided in request');
-      return res.status(400).json({ message: 'No image file provided' });
-    }
-
-    // Ensure the uploads directory exists
-    const fs = require('fs');
-    const path = require('path');
-    const uploadDir = path.join(__dirname, 'uploads', 'questions');
-    
-    if (!fs.existsSync(uploadDir)) {
-      console.log('Creating uploads/questions directory');
-      fs.mkdirSync(uploadDir, { recursive: true });
-    }
-
-    const imageUrl = `/uploads/questions/${req.file.filename}`;
-    console.log('Image uploaded successfully:', imageUrl);
-    
-    res.json({ 
-      success: true,
-      imageUrl,
-      filename: req.file.filename,
-      originalName: req.file.originalname,
-      size: req.file.size
-    });
-  } catch (error) {
-    console.error('Failed to upload image:', error);
-    res.status(500).json({ 
-      success: false,
-      message: 'Failed to upload image',
-      error: error.message 
-    });
-  }
-});
-
-// Generic file upload endpoint for homework and other documents
-const fileStorage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    const uploadDir = join(__dirname, 'uploads', 'files');
-    if (!fs.existsSync(uploadDir)) {
-      fs.mkdirSync(uploadDir, { recursive: true });
-    }
-    cb(null, uploadDir);
-  },
-  filename: function (req, file, cb) {
-    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-    const ext = extname(file.originalname);
-    cb(null, 'file-' + uniqueSuffix + ext);
-  }
-});
-
-const fileUpload = multer({ 
-  storage: fileStorage,
-  limits: { fileSize: 50 * 1024 * 1024 }, // 50MB limit for documents
-  fileFilter: (req, file, cb) => {
-    // Allow common document types
-    const allowedMimes = [
-      'application/pdf',
-      'application/msword',
-      'application/vnd.openxmlformats-officedocument.wordprocessingml.document', // .docx
-      'application/vnd.ms-powerpoint',
-      'application/vnd.openxmlformats-officedocument.presentationml.presentation', // .pptx
-      'application/vnd.ms-excel',
-      'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', // .xlsx
-      'text/plain',
-      'image/jpeg',
-      'image/png',
-      'image/gif'
-    ];
-    
-    if (allowedMimes.includes(file.mimetype)) {
-      cb(null, true);
-    } else {
-      cb(new Error('File type not allowed. Accepted: PDF, DOC, DOCX, PPT, PPTX, XLS, XLSX, TXT, Images'), false);
-    }
-  }
-});
-
-app.post('/api/upload', verifyToken, fileUpload.single('file'), (req, res) => {
-  try {
-    console.log('File upload request received:', {
-      file: req.file ? {
-        originalname: req.file.originalname,
-        mimetype: req.file.mimetype,
-        size: req.file.size,
-        filename: req.file.filename
-      } : 'No file',
-      body: req.body
-    });
-
-    if (!req.file) {
-      return res.status(400).json({ 
-        success: false,
-        message: 'No file provided' 
-      });
-    }
-
-    const fileUrl = `${req.protocol}://${req.get('host')}/uploads/files/${req.file.filename}`;
-    console.log('File uploaded successfully:', fileUrl);
-    
-    res.json({ 
-      success: true,
-      url: fileUrl,
-      fileUrl: fileUrl,
-      filename: req.file.filename,
-      originalName: req.file.originalname,
-      size: req.file.size,
-      mimetype: req.file.mimetype
-    });
-  } catch (error) {
-    console.error('Failed to upload file:', error);
-    res.status(500).json({ 
-      success: false,
-      message: 'Failed to upload file',
-      error: error.message 
-    });
-  }
-});
-
-app.delete('/api/admin/users/:id', async (req, res) => {
-  try {
-    const { id } = req.params;
-    
-    const deletedUser = await User.findByIdAndDelete(id);
-
-    if (!deletedUser) {
-      return res.status(404).json({ message: 'User not found' });
-    }
-
-    res.json({ message: 'User deleted successfully' });
-  } catch (error) {
-    console.error('Failed to delete user:', error);
-    res.status(500).json({ message: 'Failed to delete user' });
-  }
-});
-
-app.patch('/api/admin/users/:id/toggle-status', async (req, res) => {
-  try {
-    const { id } = req.params;
-    const { isActive } = req.body;
-    
-    const updatedUser = await User.findByIdAndUpdate(
-      id, 
-      { isActive, updatedAt: new Date() },
-      { new: true }
-    ).select('-password');
-
-    if (!updatedUser) {
-      return res.status(404).json({ message: 'User not found' });
-    }
-
-    res.json(updatedUser);
-  } catch (error) {
-    console.error('Failed to toggle user status:', error);
-    res.status(500).json({ message: 'Failed to toggle user status' });
-  }
-});
-
-// CSV upload endpoint - Add CORS preflight
-app.options('/api/admin/users/upload', (req, res) => {
-  res.header('Access-Control-Allow-Origin', req.headers.origin || '*');
-  res.header('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  res.header('Access-Control-Allow-Credentials', 'true');
-  res.sendStatus(200);
-});
-
-app.post('/api/admin/users/upload', upload.single('file'), async (req, res) => {
-  try {
-    console.log('CSV upload request received');
-    console.log('File:', req.file ? `${req.file.originalname} (${req.file.size} bytes)` : 'No file');
-    console.log('Request headers:', {
-      authorization: req.headers.authorization ? 'Present' : 'Missing',
-      'content-type': req.headers['content-type'],
-      origin: req.headers.origin
-    });
-    
-    if (!req.file) {
-      console.log('No file uploaded');
-      return res.status(400).json({ message: 'No file uploaded' });
-    }
-
-    // Get admin ID from JWT token
-    const token = req.header('Authorization')?.replace('Bearer ', '');
-    if (!token) {
-      return res.status(401).json({ message: 'No token provided' });
-    }
-
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    const adminId = decoded.userId;
-    console.log('Admin ID for CSV upload:', adminId);
-
-    // Get admin to inherit board and school
-    const admin = await User.findById(adminId).select('board schoolName role');
-    if (!admin || admin.role !== 'admin') {
-      return res.status(404).json({ message: 'Admin not found' });
-    }
-
-    if (!admin.board) {
-      return res.status(400).json({ 
-        message: 'Admin must have a board assigned before uploading students. Please update your admin profile first.' 
-      });
-    }
-
-    console.log('Admin board:', admin.board, 'School:', admin.schoolName);
-
-    // Accept .xlsx / .xls natively OR .csv (encoding auto-detected).
-    let csvData;
-    try {
-      ({ csv: csvData } = spreadsheetBufferToCsv(req.file.buffer, req.file.originalname));
-    } catch (err) {
-      return res.status(400).json({ message: `Failed to read uploaded file: ${err.message}` });
-    }
-    
-    // Parse CSV data - handle both \n and \r\n line endings
-    const lines = csvData.split(/\r?\n/).filter(line => line.trim());
-    if (lines.length < 2) {
-      return res.status(400).json({ message: 'File must have at least a header row and one data row' });
-    }
-
-    // Helper function to parse CSV line (handles quoted values); cleanCsvCell
-    // also normalizes smart punctuation (−, –, —, ’, “, …) back to plain ASCII.
-    const parseCSVLine = (line) => {
-      const result = [];
-      let current = '';
-      let inQuotes = false;
-      
-      for (let i = 0; i < line.length; i++) {
-        const char = line[i];
-        const nextChar = line[i + 1];
-        
-        if (char === '"') {
-          if (inQuotes && nextChar === '"') {
-            current += '"';
-            i++; // Skip next quote
-          } else {
-            inQuotes = !inQuotes;
-          }
-        } else if (char === ',' && !inQuotes) {
-          result.push(cleanCsvCell(current));
-          current = '';
-        } else {
-          current += char;
-        }
-      }
-      result.push(cleanCsvCell(current)); // Add last field
-      return result;
-    };
-
-    // Get header row
-    const headers = parseCSVLine(lines[0]).map(h => h.trim().toLowerCase().replace(/^"|"$/g, ''));
-    
-    // Validate headers - check for both classNumber and classnumber
-    const requiredHeaders = ['name', 'email', 'phone'];
-    const classHeader = headers.find(h => h === 'classnumber');
-    const missingHeaders = requiredHeaders.filter(h => !headers.includes(h));
-    
-    if (missingHeaders.length > 0) {
-      return res.status(400).json({ 
-        message: `Missing required headers: ${missingHeaders.join(', ')}` 
-      });
-    }
-    
-    if (!classHeader) {
-      return res.status(400).json({ 
-        message: 'Missing class header. Please include "classnumber" column' 
-      });
-    }
-
-    const createdUsers = [];
-    const errors = [];
-    const createdClasses = new Map(); // Track created classes to avoid duplicates
-
-    // Import Class model
-    const Class = (await import('./models/Class.js')).default;
-
-    // Helper function to parse class number and section from CSV
-    const parseClassInfo = (classValue) => {
-      if (!classValue || classValue.trim() === '' || classValue.toLowerCase() === 'unassigned') {
-        return { classNumber: null, section: 'A' };
-      }
-
-      const classStr = classValue.trim();
-      
-      // Try to extract section from formats like "10-A", "10A", "Class 10-A", "Class 10A"
-      const sectionMatch = classStr.match(/[-_]?([ABC])$/i);
-      const section = sectionMatch ? sectionMatch[1].toUpperCase() : 'A';
-      
-      // Extract class number (remove "Class", "Class-", section, etc.)
-      let classNumber = classStr
-        .replace(/^class\s*/i, '')  // Remove "Class" prefix
-        .replace(/[-_]?[ABC]$/i, '')  // Remove section suffix
-        .trim();
-      
-      // If still empty or invalid, use the original value
-      if (!classNumber || classNumber === '') {
-        classNumber = classStr.replace(/[-_]?[ABC]$/i, '').trim();
-      }
-
-      return { classNumber, section };
-    };
-
-    // Helper function to get or create class
-    const getOrCreateClass = async (classNumber, section) => {
-      if (!classNumber || classNumber === 'Unassigned') {
-        return null;
-      }
-
-      const classKey = `${classNumber}-${section}`;
-      
-      // Check if we already created this class in this batch
-      if (createdClasses.has(classKey)) {
-        return createdClasses.get(classKey);
-      }
-
-      // Check if class already exists
-      let classDoc = await Class.findOne({
-        classNumber: classNumber.trim(),
-        section: section,
-        assignedAdmin: adminId
-      });
-
-      if (!classDoc) {
-        // Create new class
-        const fullClassName = `Class ${classNumber}${section}`;
-        classDoc = new Class({
-          classNumber: classNumber.trim(),
-          section: section,
-          name: fullClassName,
-          description: `Auto-created from CSV upload`,
-          board: admin.board,
-          school: admin.schoolName || '',
-          assignedAdmin: adminId,
-          isActive: true,
-          assignedSubjects: []
-        });
-
-        await classDoc.save();
-        console.log(`✅ Created new class: ${fullClassName}`);
-      }
-
-      createdClasses.set(classKey, classDoc);
-      return classDoc;
-    };
-
-    // Process each data row
-    for (let i = 1; i < lines.length; i++) {
-      try {
-        const values = parseCSVLine(lines[i]).map(v => v.trim().replace(/^"|"$/g, ''));
-        
-        if (values.length !== headers.length) {
-          errors.push(`Row ${i + 1}: Column count mismatch`);
-          continue;
-        }
-
-        // Create user object
-        const userData = {};
-        headers.forEach((header, index) => {
-          userData[header] = values[index];
-        });
-
-        // Check if user already exists
-        const existingUser = await User.findOne({ email: userData.email });
-        if (existingUser) {
-          errors.push(`Row ${i + 1}: User with email ${userData.email} already exists`);
-          continue;
-        }
-
-        // Hash password
-        const hashedPassword = await bcrypt.hash('Password123', 12);
-
-        // Parse class information from CSV
-        const classValue = userData.classnumber || userData.class || '';
-        const { classNumber, section } = parseClassInfo(classValue);
-
-        // Get or create class if class number is provided
-        let assignedClass = null;
-        if (classNumber && classNumber !== 'Unassigned') {
-          try {
-            assignedClass = await getOrCreateClass(classNumber, section);
-          } catch (classError) {
-            errors.push(`Row ${i + 1}: Failed to create class ${classNumber}${section}: ${classError.message}`);
-            // Continue with user creation even if class creation fails
-          }
-        }
-
-        // Create new user and assign to the logged-in admin
-        const newUser = new User({
-          fullName: userData.name,
-          email: userData.email,
-          classNumber: classNumber || 'Unassigned',
-          phone: userData.phone,
-          password: hashedPassword,
-          role: 'student',
-          isActive: true,
-          assignedAdmin: adminId,  // Assign to the logged-in admin
-          assignedClass: assignedClass ? assignedClass._id : undefined,  // Assign to class if created
-          board: admin.board,      // Inherit board from admin
-          schoolName: admin.schoolName || ''  // Inherit school name from admin
-        });
-
-        await newUser.save();
-        createdUsers.push({
-          id: newUser._id,
-          name: newUser.fullName,
-          email: newUser.email,
-          classNumber: newUser.classNumber,
-          class: assignedClass ? `${assignedClass.classNumber}${assignedClass.section}` : 'Unassigned'
-        });
-
-      } catch (error) {
-        errors.push(`Row ${i + 1}: ${error.message}`);
-      }
-    }
-
-    const classesCreated = createdClasses.size;
-    let message = `CSV processed successfully. Created ${createdUsers.length} students.`;
-    if (classesCreated > 0) {
-      message += ` Created ${classesCreated} new class${classesCreated > 1 ? 'es' : ''}.`;
-    }
-
-    res.json({
-      message: message,
-      createdUsers,
-      classesCreated: classesCreated,
-      errors: errors.length > 0 ? errors : undefined
-    });
-
-  } catch (error) {
-    console.error('Failed to upload CSV:', error);
-    console.error('Error stack:', error.stack);
-    res.status(500).json({ 
-      message: 'Failed to upload CSV',
-      error: error.message,
-      hint: error.message.includes('board') ? 'Make sure your admin account has a board assigned' : 'Please check the CSV format and try again'
-    });
-  }
-});
-
-// Teacher CSV upload: see routes/admin.js POST /teachers/upload → uploadTeachersCsv
-
-app.post('/api/admin/teachers/upload__legacy_removed', requireAuth, requireAdmin, upload.single('file'), async (req, res) => {
-  try {
-    console.log('Teacher CSV upload request received');
-    console.log('File:', req.file ? `${req.file.originalname} (${req.file.size} bytes)` : 'No file');
-    console.log('Request headers:', {
-      authorization: req.headers.authorization ? 'Present' : 'Missing',
-      'content-type': req.headers['content-type'],
-      origin: req.headers.origin
-    });
-    
-    if (!req.file) {
-      console.log('No file uploaded');
-      return res.status(400).json({ message: 'No file uploaded' });
-    }
-
-    // Get admin ID from JWT token
-    const token = req.header('Authorization')?.replace('Bearer ', '');
-    if (!token) {
-      return res.status(401).json({ message: 'No token provided' });
-    }
-
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    const adminId = decoded.userId;
-    console.log('Admin ID for teacher CSV upload:', adminId);
-
-    // Get admin to inherit board and school
-    const admin = await User.findById(adminId).select('board schoolName role');
-    if (!admin || admin.role !== 'admin') {
-      return res.status(404).json({ message: 'Admin not found' });
-    }
-
-    if (!admin.board) {
-      return res.status(400).json({ 
-        message: 'Admin must have a board assigned before uploading teachers. Please update your admin profile first.' 
-      });
-    }
-
-    console.log('Admin board:', admin.board, 'School:', admin.schoolName);
-
-    // Accept .xlsx / .xls natively OR .csv (encoding auto-detected).
-    let csvData;
-    try {
-      ({ csv: csvData } = spreadsheetBufferToCsv(req.file.buffer, req.file.originalname));
-    } catch (err) {
-      return res.status(400).json({ message: `Failed to read uploaded file: ${err.message}` });
-    }
-    
-    // Parse CSV data - handle both \n and \r\n line endings
-    const lines = csvData.split(/\r?\n/).filter(line => line.trim());
-    if (lines.length < 2) {
-      return res.status(400).json({ message: 'File must have at least a header row and one data row' });
-    }
-
-    // Helper function to parse CSV line (handles quoted values); cleanCsvCell
-    // also normalizes smart punctuation (−, –, —, ’, “, …) back to plain ASCII.
-    const parseCSVLine = (line) => {
-      const result = [];
-      let current = '';
-      let inQuotes = false;
-      
-      for (let i = 0; i < line.length; i++) {
-        const char = line[i];
-        const nextChar = line[i + 1];
-        
-        if (char === '"') {
-          if (inQuotes && nextChar === '"') {
-            current += '"';
-            i++; // Skip next quote
-          } else {
-            inQuotes = !inQuotes;
-          }
-        } else if (char === ',' && !inQuotes) {
-          result.push(cleanCsvCell(current));
-          current = '';
-        } else {
-          current += char;
-        }
-      }
-      result.push(cleanCsvCell(current)); // Add last field
-      return result;
-    };
-
-    // Get header row
-    const headers = parseCSVLine(lines[0]).map(h => h.trim().toLowerCase().replace(/^"|"$/g, ''));
-    
-    // Validate headers
-    const requiredHeaders = ['name', 'email'];
-    const missingHeaders = requiredHeaders.filter(h => !headers.includes(h));
-    
-    if (missingHeaders.length > 0) {
-      return res.status(400).json({ 
-        message: `Missing required headers: ${missingHeaders.join(', ')}` 
-      });
-    }
-
-    const createdTeachers = [];
-    const errors = [];
-
-    // Process each data row
-    for (let i = 1; i < lines.length; i++) {
-      try {
-        const values = parseCSVLine(lines[i]).map(v => v.trim().replace(/^"|"$/g, ''));
-        
-        if (values.length !== headers.length) {
-          errors.push(`Row ${i + 1}: Column count mismatch`);
-          continue;
-        }
-
-        // Create teacher object
-        const teacherData = {};
-        headers.forEach((header, index) => {
-          teacherData[header] = values[index];
-        });
-
-        // Check if teacher already exists
-        const existingTeacher = await Teacher.findOne({ email: teacherData.email });
-        if (existingTeacher) {
-          errors.push(`Row ${i + 1}: Teacher with email ${teacherData.email} already exists`);
-          continue;
-        }
-
-        // Hash password (default password)
-        const hashedPassword = await bcrypt.hash('Password123', 12);
-
-        // Parse subjects (comma-separated)
-        let subjectIds = [];
-        if (teacherData.subjects) {
-          const subjectNames = teacherData.subjects.split(',').map(s => s.trim()).filter(s => s);
-          // Find subjects by name
-          for (const subjectName of subjectNames) {
-            const subject = await Subject.findOne({ 
-              name: { $regex: new RegExp(`^${subjectName}$`, 'i') },
-              assignedAdmin: adminId
-            });
-            if (subject) {
-              subjectIds.push(subject._id);
-            } else {
-              errors.push(`Row ${i + 1}: Subject "${subjectName}" not found. Please create the subject first.`);
-            }
-          }
-        }
-
-        // Create new teacher
-        const newTeacher = new Teacher({
-          fullName: teacherData.name,
-          email: teacherData.email,
-          phone: teacherData.phone || '',
-          department: teacherData.department || '',
-          qualifications: teacherData.qualifications || '',
-          subjects: subjectIds,
-          password: hashedPassword,
-          isActive: true,
-          assignedAdmin: adminId,
-          board: admin.board,
-          schoolName: admin.schoolName || ''
-        });
-
-        await newTeacher.save();
-        createdTeachers.push({
-          id: newTeacher._id,
-          name: newTeacher.fullName,
-          email: newTeacher.email,
-          department: newTeacher.department,
-          subjects: subjectIds.length
-        });
-
-      } catch (error) {
-        errors.push(`Row ${i + 1}: ${error.message}`);
-      }
-    }
-
-    let message = `CSV processed successfully. Created ${createdTeachers.length} teachers.`;
-    if (errors.length > 0) {
-      message += ` ${errors.length} error(s) occurred.`;
-    }
-
-    res.json({
-      message: message,
-      createdTeachers,
-      errors: errors.length > 0 ? errors : undefined
-    });
-
-  } catch (error) {
-    console.error('Failed to upload teacher CSV:', error);
-    console.error('Error stack:', error.stack);
-    res.status(500).json({ 
-      message: 'Failed to upload CSV',
-      error: error.message,
-      hint: error.message.includes('board') ? 'Make sure your admin account has a board assigned' : 'Please check the CSV format and try again'
-    });
-  }
-});
-
-// Classes endpoint - returns classes from Class model and students
-app.get('/api/admin/classes', async (req, res) => {
-  try {
-    // Get admin ID from JWT token
-    const token = req.header('Authorization')?.replace('Bearer ', '');
-    if (!token) {
-      return res.status(401).json({ message: 'No token provided' });
-    }
-
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    const adminId = decoded.userId;
-
-    // Get classes from Class model
-    const Class = (await import('./models/Class.js')).default;
-    const classDocuments = await Class.find({
-      assignedAdmin: adminId,
-      isActive: true
-    })
-      .populate('assignedSubjects', '_id name description code board')
-      .sort({ classNumber: 1, section: 1 });
-
-    // Get students assigned to this admin
-    const students = await User.find({ 
-      role: 'student',
-      assignedAdmin: adminId 
-    }).select('fullName email classNumber phone isActive createdAt lastLogin assignedClass')
-      .populate('assignedClass', '_id classNumber section');
-    
-    if (!students || students.length === 0) {
-      return res.json({
-        success: true,
-        data: classDocuments.map((classDoc) => ({
-          id: classDoc._id.toString(),
-          name: classDoc.name || `Class ${classDoc.classNumber}${classDoc.section}`,
-          description: classDoc.description || '',
-          classNumber: classDoc.classNumber,
-          section: classDoc.section,
-          assignedSubjects: (classDoc.assignedSubjects || []).map((subj) => ({
-            _id: subj._id ? subj._id.toString() : String(subj),
-            id: subj._id ? subj._id.toString() : String(subj),
-            name: subj.name || 'Unknown Subject',
-            description: subj.description || '',
-            code: subj.code || '',
-            board: subj.board || '',
-          })),
-          subject: 'General',
-          grade: classDoc.classNumber,
-          teacher: 'TBD',
-          schedule: 'Not scheduled',
-          room: classDoc.name || `Class ${classDoc.classNumber}${classDoc.section}`,
-          studentCount: 0,
-          students: [],
-          createdAt: classDoc.createdAt,
-        })),
-      });
-    }
-    
-    // Create a map of classNumber+section to students
-    const studentClassMap = new Map();
-    students.forEach(student => {
-      const classKey = student.classNumber || 'Unassigned';
-      if (!studentClassMap.has(classKey)) {
-        studentClassMap.set(classKey, []);
-      }
-      studentClassMap.get(classKey).push({
-        id: student._id,
-        name: student.fullName,
-        email: student.email,
-        classNumber: student.classNumber,
-        phone: student.phone,
-        status: student.isActive ? 'active' : 'inactive',
-        createdAt: student.createdAt,
-        lastLogin: student.lastLogin
-      });
-    });
-
-    // Format classes with students
-    const classes = classDocuments.map(classDoc => {
-      const fullClassKey = `${classDoc.classNumber}${classDoc.section}`;
-      const classStudents = students
-        .filter((student) => {
-          const assigned = student.assignedClass;
-          if (!assigned) return false;
-          const assignedId = assigned._id ? assigned._id.toString() : String(assigned);
-          return assignedId === classDoc._id.toString();
-        })
-        .map((student) => ({
-          id: student._id,
-          name: student.fullName,
-          email: student.email,
-          classNumber: student.classNumber,
-          phone: student.phone,
-          status: student.isActive ? 'active' : 'inactive',
-          createdAt: student.createdAt,
-          lastLogin: student.lastLogin,
-        }));
-      const assignedSubjects = Array.isArray(classDoc.assignedSubjects)
-        ? classDoc.assignedSubjects.map((subj) => ({
-            _id: subj._id ? subj._id.toString() : String(subj),
-            id: subj._id ? subj._id.toString() : String(subj),
-            name: subj.name || 'Unknown Subject',
-            description: subj.description || '',
-            code: subj.code || '',
-            board: subj.board || '',
-          }))
-        : [];
-
-      return {
-        id: classDoc._id.toString(),
-        name: classDoc.name || `Class ${classDoc.classNumber}${classDoc.section}`,
-        description: classDoc.description || '',
-        classNumber: classDoc.classNumber,
-        section: classDoc.section,
-        assignedSubjects,
-        subject:
-          assignedSubjects.length > 0
-            ? assignedSubjects.map((s) => s.name).filter(Boolean).join(', ')
-            : 'General',
-        grade: classDoc.classNumber,
-        teacher: 'TBD',
-        schedule: 'Not scheduled',
-        room: classDoc.name || `Class ${classDoc.classNumber}${classDoc.section}`,
-        studentCount: classStudents.length,
-        students: classStudents,
-        createdAt: classDoc.createdAt
-      };
-    });
-
-    // Also include classes that exist only in student data (for backward compatibility)
-    const classKeysFromStudents = new Set(students.map(s => s.classNumber).filter(Boolean));
-    classKeysFromStudents.forEach(classKey => {
-      // Check if this class already exists in classDocuments
-      const exists = classDocuments.some(c => `${c.classNumber}${c.section}` === classKey);
-      if (!exists && classKey !== 'Unassigned') {
-        const classStudents = studentClassMap.get(classKey) || [];
-        classes.push({
-          id: classKey,
-          name: `Class ${classKey}`,
-          description: `Students in class ${classKey}`,
-          classNumber: classKey,
-          section: '',
-          subject: 'General',
-          grade: classKey,
-          teacher: 'TBD',
-          schedule: 'Not scheduled',
-          room: `Class ${classKey}`,
-          studentCount: classStudents.length,
-          students: classStudents,
-          createdAt: new Date().toISOString()
-        });
-      }
-    });
-    
-    console.log('Classes being returned:', classes.map(c => ({ 
-      name: c.name, 
-      classNumber: c.classNumber,
-      section: c.section,
-      studentCount: c.studentCount
-    })));
-    res.json(classes);
-  } catch (error) {
-    console.error('Failed to fetch classes:', error);
-    res.status(500).json({ message: 'Failed to fetch classes' });
-  }
-});
-
-// Create new class
-app.post('/api/admin/classes', async (req, res) => {
-  try {
-    // Get admin ID from JWT token
-    const token = req.header('Authorization')?.replace('Bearer ', '');
-    if (!token) {
-      return res.status(401).json({ success: false, message: 'No token provided' });
-    }
-
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    const adminId = decoded.userId;
-
-    const { classNumber, section, description } = req.body;
-    
-    // Validate required fields
-    if (!classNumber || !section) {
-      return res.status(400).json({ 
-        success: false, 
-        message: 'Class number and section are required' 
-      });
-    }
-
-    const sectionKey = String(section).trim().toUpperCase();
-    if (!/^[A-Z0-9]{1,3}$/.test(sectionKey)) {
-      return res.status(400).json({ 
-        success: false, 
-        message: 'Section must be 1–3 letters or numbers (e.g. A, D, E1)' 
-      });
-    }
-    
-    // Get admin to inherit board and school
-    const admin = await User.findById(adminId).select('board schoolName');
-    if (!admin || admin.role !== 'admin') {
-      return res.status(404).json({ success: false, message: 'Admin not found' });
-    }
-
-    if (!admin.board) {
-      return res.status(400).json({ success: false, message: 'Admin must have a board assigned' });
-    }
-
-    // Check if class already exists (classNumber + section + admin)
-    const Class = (await import('./models/Class.js')).default;
-    const existingClass = await Class.findOne({
-      classNumber: classNumber.trim(),
-      section: sectionKey,
-      assignedAdmin: adminId
-    });
-
-    if (existingClass) {
-      return res.status(400).json({ 
-        success: false, 
-        message: `Class ${classNumber}${sectionKey} already exists. Cannot create duplicate classes.` 
-      });
-    }
-
-    // Create full class name
-    const fullClassName = `Class ${classNumber}${sectionKey}`;
-    
-    // Create new class
-    const newClass = new Class({
-      classNumber: classNumber.trim(),
-      section: sectionKey,
-      name: fullClassName,
-      description: description?.trim() || '',
-      board: admin.board,
-      school: admin.schoolName || '',
-      assignedAdmin: adminId,
-      isActive: true,
-      assignedSubjects: []
-    });
-
-    await newClass.save();
-
-    res.status(201).json({
-      success: true,
-      message: 'Class created successfully',
-      data: {
-        id: newClass._id,
-        classNumber: newClass.classNumber,
-        section: newClass.section,
-        name: newClass.name,
-        description: newClass.description,
-        board: newClass.board,
-        school: newClass.school,
-        assignedAdmin: newClass.assignedAdmin
-      }
-    });
-  } catch (error) {
-    console.error('Failed to create class:', error);
-    res.status(500).json({ success: false, message: 'Failed to create class' });
-  }
-});
-
-// Delete class
-app.delete('/api/admin/classes/:id', async (req, res) => {
-  try {
-    const { id } = req.params;
-    
-    // For now, just return success - in a real app, you'd delete from database
-    res.json({ message: 'Class deleted successfully' });
-  } catch (error) {
+ catch (error) {
     console.error('Failed to delete class:', error);
     res.status(500).json({ message: 'Failed to delete class' });
   }
@@ -5594,168 +3512,6 @@ app.post('/api/subjects/:id/quizzes', async (req, res) => {
     res.status(500).json({ success: false, message: 'Failed to add quiz to subject' });
   }
 });
-
-// Assign subjects to any teacher (for debugging)
-app.post('/api/debug/assign-subjects-to-teacher', async (req, res) => {
-  try {
-    const { teacherEmail, subjectIds } = req.body;
-    
-    const teacher = await Teacher.findOne({ email: teacherEmail });
-    if (!teacher) {
-      return res.status(404).json({ message: 'Teacher not found' });
-    }
-    
-    // Update teacher's subjects
-    teacher.subjects = subjectIds;
-    await teacher.save();
-    
-    // Populate subjects for response
-    await teacher.populate('subjects');
-    
-    res.json({
-      message: 'Subjects assigned successfully',
-      teacher: {
-        id: teacher._id,
-        email: teacher.email,
-        fullName: teacher.fullName,
-        subjects: teacher.subjects
-      }
-    });
-  } catch (error) {
-    console.error('Failed to assign subjects:', error);
-    res.status(500).json({ message: 'Failed to assign subjects' });
-  }
-});
-
-// Debug current session
-app.get('/api/debug/current-session', (req, res) => {
-  res.json({
-    isAuthenticated: req.isAuthenticated(),
-    user: req.user ? {
-      id: req.user._id,
-      email: req.user.email,
-      fullName: req.user.fullName,
-      role: req.user.role
-    } : null
-  });
-});
-
-// Super Admin Authentication
-app.post('/api/super-admin/login', loginLimiter, async (req, res) => {
-  try {
-    const email = String(req.body?.email || '').trim();
-    const password = String(req.body?.password || '').trim();
-    
-    // Super admin credentials
-    const superAdminCredentials = [
-      { email: 'sealucknow2017@gmail.com', password: 'Asli123', fullName: 'Super Admin' }
-    ];
-    
-    // Check super admin credentials
-    const validCredential = superAdminCredentials.find(
-      cred => cred.email.toLowerCase() === email.toLowerCase() && cred.password === password
-    );
-    
-    if (validCredential) {
-      let superAdminUser = await User.findOne({ email: validCredential.email.toLowerCase() });
-      if (!superAdminUser) {
-        const hashedPassword = await bcrypt.hash(validCredential.password, 12);
-        superAdminUser = new User({
-          email: validCredential.email.toLowerCase(),
-          password: hashedPassword,
-          fullName: validCredential.fullName,
-          role: 'super-admin',
-          isActive: true,
-        });
-        await superAdminUser.save();
-      } else {
-        await User.findByIdAndUpdate(
-          superAdminUser._id,
-          {
-            fullName: validCredential.fullName,
-            role: 'super-admin',
-            isActive: true,
-            lastLogin: new Date(),
-            password: await bcrypt.hash(validCredential.password, 12),
-          },
-          { runValidators: false },
-        );
-        superAdminUser = await User.findById(superAdminUser._id);
-      }
-
-      const superAdminId = superAdminUser._id.toString();
-      const token = jwt.sign(
-        { 
-          id: superAdminId,
-          userId: superAdminId,
-          email: validCredential.email,
-          fullName: validCredential.fullName,
-          role: 'super-admin'
-        },
-        process.env.JWT_SECRET,
-        { expiresIn: '24h' }
-      );
-      
-      res.json({
-        success: true,
-        token,
-        user: {
-          id: superAdminId,
-          _id: superAdminId,
-          email: validCredential.email,
-          fullName: validCredential.fullName,
-          role: 'super-admin'
-        }
-      });
-    } else {
-      res.status(401).json({ success: false, message: 'Invalid credentials' });
-    }
-  } catch (error) {
-    console.error('Super admin login error:', error);
-    res.status(500).json({ success: false, message: 'Server error' });
-  }
-});
-
-// Super Admin Dashboard Stats
-app.get('/api/super-admin/stats', async (req, res) => {
-  try {
-    const totalUsers = await User.countDocuments();
-    const totalTeachers = await Teacher.countDocuments();
-    const totalVideos = await Video.countDocuments();
-    const totalAssessments = await Assessment.countDocuments();
-
-    const totalAdmins = await User.countDocuments({ role: 'admin' });
-
-    res.json({
-      success: true,
-      data: {
-        totalUsers,
-        revenue: 0, // Revenue tracking to be implemented
-        courses: totalVideos,
-        teachers: totalTeachers,
-        admins: totalAdmins,
-        superAdmins: 1
-      }
-    });
-  } catch (error) {
-    console.error('Stats error:', error);
-
-    // Fallback so the dashboard doesn't completely break if DB is down
-    res.status(200).json({
-      success: false,
-      message: 'Failed to fetch stats from database, using fallback zeros',
-      data: {
-        totalUsers: 0,
-        revenue: 0,
-        courses: 0,
-        teachers: 0,
-        admins: 0,
-        superAdmins: 1
-      }
-    });
-  }
-});
-
 // Get all admins with enhanced data
 app.get('/api/super-admin/admins', async (req, res) => {
   try {
@@ -5829,7 +3585,7 @@ app.post('/api/super-admin/users', async (req, res) => {
     }
     
     // Create new user
-    const hashedPassword = await bcrypt.hash('password123', 10); // Default password
+    const hashedPassword = await bcrypt.hash('password123', 12); // Default password
     const newUser = new User({
       fullName: name,
       email,
@@ -6020,7 +3776,7 @@ app.post('/api/teacher/videos-working', async (req, res) => {
     
     // Verify token and get user info (fallback secret for local dev)
     const jwtSecret = process.env.JWT_SECRET;
-    const decoded = jwt.verify(token, jwtSecret);
+    const decoded = jwt.verify(token, jwtSecret, { algorithms: ['HS256'] });
     console.log('Decoded token:', decoded);
     
     if (decoded.role !== 'teacher') {
@@ -6094,7 +3850,7 @@ app.post('/api/teacher-videos-admin-style', async (req, res) => {
     console.log('Token:', token);
     
     // Verify token and get user info
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = jwt.verify(token, process.env.JWT_SECRET, { algorithms: ['HS256'] });
     console.log('Decoded token:', decoded);
     
     if (decoded.role !== 'teacher') {
@@ -6304,7 +4060,7 @@ app.post('/api/teacher/assessments', async (req, res) => {
     
     const token = authHeader.split(' ')[1];
     const jwtSecret = process.env.JWT_SECRET;
-    const decoded = jwt.verify(token, jwtSecret);
+    const decoded = jwt.verify(token, jwtSecret, { algorithms: ['HS256'] });
     
     const teacherId = decoded.userId || decoded.id || decoded._id;
     if (!teacherId || !mongoose.Types.ObjectId.isValid(teacherId)) {
@@ -6360,7 +4116,7 @@ app.delete('/api/videos/:id', async (req, res) => {
     
     const token = authHeader.split(' ')[1];
     const jwtSecret = process.env.JWT_SECRET;
-    const decoded = jwt.verify(token, jwtSecret);
+    const decoded = jwt.verify(token, jwtSecret, { algorithms: ['HS256'] });
     
     const teacherId = decoded.userId || decoded.id || decoded._id;
     if (!teacherId || !mongoose.Types.ObjectId.isValid(teacherId)) {
@@ -6398,7 +4154,7 @@ app.post('/api/teacher/videos', async (req, res) => {
     }
     const token = authHeader.split(' ')[1];
     const jwtSecret = process.env.JWT_SECRET;
-    const decoded = jwt.verify(token, jwtSecret);
+    const decoded = jwt.verify(token, jwtSecret, { algorithms: ['HS256'] });
 
     // Resolve teacher
     const teacherId = decoded.userId || decoded.id || decoded._id;
@@ -6608,10 +4364,10 @@ const server = app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server accessible at http://0.0.0.0:${PORT}`);
   console.log(`Environment: ${nodeEnvEffective}`);
 });
-server.timeout = 0;
-server.requestTimeout = 0;
-server.headersTimeout = 0;
-server.keepAliveTimeout = 120_000;
+server.timeout = Number(process.env.SERVER_TIMEOUT_MS || 300_000); // 5 min default (AI jobs)
+server.requestTimeout = Number(process.env.SERVER_REQUEST_TIMEOUT_MS || 310_000);
+server.headersTimeout = Number(process.env.SERVER_HEADERS_TIMEOUT_MS || 65_000);
+server.keepAliveTimeout = Number(process.env.SERVER_KEEPALIVE_MS || 120_000);
 
 /*
  * Process-level failure handling. There was none.

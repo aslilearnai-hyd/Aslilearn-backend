@@ -132,7 +132,10 @@ async function ollamaEmbedding(text) {
 }
 
 export async function generateEmbedding(text) {
-  const provider = String(process.env.EMBEDDING_PROVIDER || 'local').toLowerCase();
+  const provider = String(process.env.EMBEDDING_PROVIDER || (process.env.NODE_ENV === 'production' ? 'gemini' : 'local')).toLowerCase();
+  if (provider === 'local' && process.env.NODE_ENV === 'production') {
+    console.warn('[RAG] Using local-hash embeddings in production — set EMBEDDING_PROVIDER=gemini');
+  }
   if (provider === 'gemini') {
     try {
       const vec = await geminiEmbedding(text);

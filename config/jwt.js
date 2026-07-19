@@ -24,16 +24,18 @@ if (!JWT_SECRET || JWT_SECRET.length < 16) {
   );
 }
 const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || '24h';
+const JWT_SIGN_OPTS = { expiresIn: JWT_EXPIRES_IN, algorithm: 'HS256' };
+const JWT_VERIFY_OPTS = { algorithms: ['HS256'] };
 
 // Generate JWT token
 export const generateToken = (payload) => {
-  return jwt.sign(payload, JWT_SECRET, { expiresIn: JWT_EXPIRES_IN });
+  return jwt.sign(payload, JWT_SECRET, JWT_SIGN_OPTS);
 };
 
 // Verify JWT token
 export const verifyToken = (token) => {
   try {
-    return jwt.verify(token, JWT_SECRET);
+    return jwt.verify(token, JWT_SECRET, JWT_VERIFY_OPTS);
   } catch (error) {
     throw new Error('Invalid token');
   }
@@ -110,12 +112,4 @@ export const getTokenExpiration = (token) => {
   }
 };
 
-export { JWT_SECRET, JWT_EXPIRES_IN };
-
-
-
-
-
-
-
-
+export { JWT_SECRET, JWT_EXPIRES_IN, JWT_SIGN_OPTS, JWT_VERIFY_OPTS };

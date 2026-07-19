@@ -1,5 +1,6 @@
 import express from 'express';
-import { verifyToken } from '../middleware/auth.js';
+import { verifyToken, verifySuperAdmin } from '../middleware/auth.js';
+import { aiHeavyLimiter } from '../middleware/rate-limit.js';
 import {
   listBookBasedTools,
   generateBookBatch,
@@ -16,6 +17,8 @@ import {
 
 const router = express.Router();
 router.use(verifyToken);
+router.use(verifySuperAdmin);
+router.use(aiHeavyLimiter);
 
 router.get('/tools', listBookBasedTools);
 router.get('/books', listBooksForGenerator);

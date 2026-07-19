@@ -24,6 +24,21 @@ const router = express.Router();
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: { fileSize: 10 * 1024 * 1024 },
+  fileFilter: (_req, file, cb) => {
+    const mime = String(file.mimetype || '').toLowerCase();
+    const name = String(file.originalname || '').toLowerCase();
+    const ok =
+      mime === 'text/csv' ||
+      mime === 'application/vnd.ms-excel' ||
+      mime === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' ||
+      mime === 'application/csv' ||
+      mime === 'text/plain' ||
+      name.endsWith('.csv') ||
+      name.endsWith('.xlsx') ||
+      name.endsWith('.xls');
+    if (ok) return cb(null, true);
+    return cb(new Error('Only CSV/Excel timetable files are allowed'), false);
+  },
 });
 
 router.use(verifyToken);

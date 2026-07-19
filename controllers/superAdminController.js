@@ -1,5 +1,6 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import { setAuthCookie } from '../utils/auth-cookie.js';
 import User from '../models/User.js';
 import Video from '../models/Video.js';
 import Teacher from '../models/Teacher.js';
@@ -37,79 +38,63 @@ import {
   isValidOptionalPhoneTenDigits,
 } from '../services/schoolService.js';
 
-// Super Admin Login
+// Super Admin Login — database accounts only (no hardcoded credentials)
 export const superAdminLogin = async (req, res) => {
   try {
-    const email = String(req.body?.email || '').trim();
+    const email = String(req.body?.email || '').trim().toLowerCase();
     const password = String(req.body?.password || '').trim();
-    
-    // Super admin credentials
-    const superAdminCredentials = [
-      { email: 'sealucknow2017@gmail.com', password: 'Asli123', fullName: 'Super Admin' }
-    ];
-    
-    // Check super admin credentials
-    const validCredential = superAdminCredentials.find(
-      cred => cred.email.toLowerCase() === email.toLowerCase() && cred.password === password
-    );
-    
-    if (validCredential) {
-      let superAdminUser = await User.findOne({ email: validCredential.email.toLowerCase() });
-      if (!superAdminUser) {
-        const hashedPassword = await bcrypt.hash(validCredential.password, 12);
-        superAdminUser = new User({
-          email: validCredential.email.toLowerCase(),
-          password: hashedPassword,
-          fullName: validCredential.fullName,
-          role: 'super-admin',
-          isActive: true,
-        });
-        await superAdminUser.save();
-      } else {
-        await User.findByIdAndUpdate(
-          superAdminUser._id,
-          {
-            fullName: validCredential.fullName,
-            role: 'super-admin',
-            isActive: true,
-            lastLogin: new Date(),
-            password: await bcrypt.hash(validCredential.password, 12),
-          },
-          { runValidators: false },
-        );
-        superAdminUser = await User.findById(superAdminUser._id);
-      }
 
-      const superAdminId = superAdminUser._id.toString();
-      const token = jwt.sign(
-        { 
-          id: superAdminId,
-          userId: superAdminId,
-          email: validCredential.email,
-          fullName: validCredential.fullName,
-          role: 'super-admin'
-        },
-        process.env.JWT_SECRET,
-        { expiresIn: '24h' }
-      );
-      
-      res.json({
-        success: true,
-        token,
-        user: {
-          id: superAdminId,
-          _id: superAdminId,
-          email: validCredential.email,
-          fullName: validCredential.fullName,
-          role: 'super-admin'
-        }
-      });
-    } else {
-      res.status(401).json({ success: false, message: 'Invalid credentials' });
+    if (!email || !password) {
+      return res.status(400).json({ success: false, message: 'Email and password are required' });
     }
+
+    const superAdminUser = await User.findOne({ email, role: 'super-admin' });
+    if (!superAdminUser || !superAdminUser.isActive) {
+      return res.status(401).json({ success: false, message: 'Invalid credentials' });
+    }
+    if (!superAdminUser.password) {
+      return res.status(401).json({ success: false, message: 'Invalid credentials' });
+    }
+
+    const ok = await bcrypt.compare(password, superAdminUser.password);
+    if (!ok) {
+      return res.status(401).json({ success: false, message: 'Invalid credentials' });
+    }
+
+    await User.findByIdAndUpdate(
+      superAdminUser._id,
+      { lastLogin: new Date() },
+      { runValidators: false }
+    );
+
+    const superAdminId = superAdminUser._id.toString();
+    const token = jwt.sign(
+      {
+        id: superAdminId,
+        userId: superAdminId,
+        email: superAdminUser.email,
+        fullName: superAdminUser.fullName,
+        role: 'super-admin',
+      },
+      process.env.JWT_SECRET,
+      { expiresIn: '24h', algorithm: 'HS256' }
+    );
+    setAuthCookie(res, token);
+
+    return res.json({
+      success: true,
+      token,
+      user: {
+        id: superAdminId,
+        _id: superAdminId,
+        email: superAdminUser.email,
+        fullName: superAdminUser.fullName,
+        role: 'super-admin',
+      },
+    });
   } catch (error) {
     console.error('Super admin login error:', error);
-    res.status(500).json({ success: false, message: 'Server error' });
+    return res.status(500).json({ success: false, message: 'Server error' });
   }
 };
 
@@ -767,7 +752,7 @@ export const createAdmin = async (req, res) => {
       }
     }
     
-    const hashedPassword = await bcrypt.hash(plainPassword, 10);
+    const hashedPassword = await bcrypt.hash(plainPassword, 12);
 
     const school = await School.create({
       ...schoolFields,
@@ -892,7 +877,7 @@ export const updateAdmin = async (req, res) => {
           message: 'Password must be at least 6 characters',
         });
       }
-      userUpdate.password = await bcrypt.hash(plainPassword, 10);
+      userUpdate.password = await bcrypt.hash(plainPassword, 12);
     }
 
     const schoolProfileTouched =
@@ -1650,7 +1635,7 @@ export const createUser = async (req, res) => {
     }
     
     // Create new user
-    const hashedPassword = await bcrypt.hash('password123', 10); // Default password
+    const hashedPassword = await bcrypt.hash(String(process.env.DEFAULT_PROVISION_PASSWORD || '').trim() || (() => { throw new Error('DEFAULT_PROVISION_PASSWORD required'); })(), 12); // Default password
     const newUser = new User({
       fullName: name,
       email,
