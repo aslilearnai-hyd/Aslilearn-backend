@@ -7072,6 +7072,74 @@ export function redistributeExamPaperToCanonicalSections(data) {
     }
   }
 
+  /*
+   * Dedupe each bucket AFTER both sources have been merged into it.
+   *
+   * Above, source.section_a..e and source.sections are each deduped on their own
+   * and then pushed into the same bucket — so a question present in BOTH (the
+   * normal case, since normalizeExamPaperStructuredContent passes `sections`
+   * alongside the very buckets it derived from them) survived twice. A
+   * 9-question paper finalized to 20 rows with every question repeated, one
+   * appearing twice in section_b and twice again in section_c.
+   *
+   * Nothing was invented — scaffold padding is gated behind
+   * isAiGeneratorSectionPadEnabled(), which is off — so this was pure
+   * duplication, but a teacher would have printed each question twice.
+   */
+  for (const key of Object.keys(buckets)) {
+    buckets[key] = dedupeExamQuestionRows(buckets[key]);
+  }
+
+  /*
+   * ...and ACROSS buckets: a question belongs to exactly one section. The
+   * per-bucket pass above cannot catch a stem that landed in both section_c and
+   * section_e, which happens when the section label on the question disagrees
+   * with the key it arrived under. First section wins, in canonical order.
+   */
+  const claimedBy = new Map();
+  const originalBuckets = {};
+  for (const key of Object.keys(buckets)) {
+    originalBuckets[key] = buckets[key];
+    buckets[key] = buckets[key].filter((q) => {
+      const stem = normalizeExamDedupeKeyText(q?.question || '');
+      if (!stem) return true;
+      if (claimedBy.has(stem)) return false;
+      claimedBy.set(stem, key);
+      return true;
+    });
+  }
+
+  /*
+   * A section emptied by the pass above gets its question RELEASED back to it
+   * rather than duplicated into it.
+   *
+   * This happens when a section's only question is a stem an earlier section
+   * already claimed — the model sometimes emits the same item into both
+   * core.sectionD_application and core.sectionE_long. Leaving the section empty
+   * fails the paper gate ("Question Paper Sections (missing: section_d)"), and
+   * keeping a copy prints the same question twice.
+   *
+   * So we take it off the section that claimed it, provided that section has a
+   * spare. The stem then appears EXACTLY ONCE, in the more specific section,
+   * question totals are unchanged, and no section is left blank. If the claimer
+   * has no spare we leave the section empty rather than duplicate — a missing
+   * section is an honest failure the gate will catch, a silent duplicate is not.
+   */
+  for (const key of Object.keys(buckets)) {
+    if (buckets[key].length || !originalBuckets[key].length) continue;
+    for (const candidate of originalBuckets[key]) {
+      const stem = normalizeExamDedupeKeyText(candidate?.question || '');
+      const holder = claimedBy.get(stem);
+      if (!holder || holder === key || buckets[holder].length <= 1) continue;
+      buckets[holder] = buckets[holder].filter(
+        (q) => normalizeExamDedupeKeyText(q?.question || '') !== stem,
+      );
+      buckets[key] = [candidate];
+      claimedBy.set(stem, key);
+      break;
+    }
+  }
+
   let all = dedupeExamQuestionRows([
     ...loose,
     ...buckets.section_a,
@@ -10817,7 +10885,19 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
   let lastValidationMessage = '';
 
   let activeUserPrompt = baseUserPrompt;
-  const baseValidationAttempts = Math.max(
+  /*
+   * The cost cap in getAiGeneratorValidationMaxAttempts is a CEILING, not a floor.
+   *
+   * This was Math.max(configCap, tierAttempts), so the premium tier's 5 attempts
+   * silently overrode the cap — a live measurement (July 2026) logged
+   * "validation attempt 1/5" on a batch run that the config had capped at 2.
+   * Since 'premium' is the default tier (ai-generator-quality-tier.js), that made
+   * the cap dead code on effectively every generation.
+   *
+   * Each attempt is a full-record regeneration (~3.3k output tokens, ~0.65 INR
+   * measured), so the tier must not be able to raise the cap.
+   */
+  const baseValidationAttempts = Math.min(
     getAiGeneratorValidationMaxAttempts(isBatchVariant, recoveryPass),
     qualityTierSettings.maxValidationAttempts,
   );

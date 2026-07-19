@@ -1,0 +1,238 @@
+{
+  "scannedAt": "2026-07-19T14:21:44.852Z",
+  "samplePerTool": 120,
+  "totalRecords": 20356,
+  "tools": [
+    {
+      "slug": "activity-project-generator",
+      "title": "Activity / Project Generator",
+      "sections": 13,
+      "records": 3751,
+      "scanned": 120,
+      "incomplete": 0,
+      "incompletePct": 0,
+      "completenessScore": 10,
+      "topMissing": []
+    },
+    {
+      "slug": "project-idea-lab",
+      "title": "Project Idea Lab",
+      "sections": 14,
+      "records": 156,
+      "scanned": 120,
+      "incomplete": 0,
+      "incompletePct": 0,
+      "completenessScore": 10,
+      "topMissing": []
+    },
+    {
+      "slug": "worksheet-mcq-generator",
+      "title": "Worksheet & MCQ Generator",
+      "sections": 10,
+      "records": 2189,
+      "scanned": 120,
+      "incomplete": 106,
+      "incompletePct": 88,
+      "completenessScore": 1,
+      "topMissing": []
+    },
+    {
+      "slug": "concept-mastery-helper",
+      "title": "Concept Mastery Helper",
+      "sections": 12,
+      "records": 1571,
+      "scanned": 120,
+      "incomplete": 120,
+      "incompletePct": 100,
+      "completenessScore": 0,
+      "topMissing": []
+    },
+    {
+      "slug": "lesson-planner",
+      "title": "Lesson Planner",
+      "sections": 14,
+      "records": 1973,
+      "scanned": 120,
+      "incomplete": 120,
+      "incompletePct": 100,
+      "completenessScore": 0,
+      "topMissing": []
+    },
+    {
+      "slug": "study-schedule-maker",
+      "title": "Study Schedule Maker",
+      "sections": 13,
+      "records": 44,
+      "scanned": 44,
+      "incomplete": 30,
+      "incompletePct": 68,
+      "completenessScore": 3,
+      "topMissing": []
+    },
+    {
+      "slug": "homework-creator",
+      "title": "Homework Creator",
+      "sections": 10,
+      "records": 1913,
+      "scanned": 120,
+      "incomplete": 120,
+      "incompletePct": 100,
+      "completenessScore": 0,
+      "topMissing": []
+    },
+    {
+      "slug": "reading-practice-room",
+      "title": "Reading Practice Room",
+      "sections": 13,
+      "records": 60,
+      "scanned": 60,
+      "incomplete": 55,
+      "incompletePct": 92,
+      "completenessScore": 1,
+      "topMissing": []
+    },
+    {
+      "slug": "story-passage-creator",
+      "title": "Story and Passage Creator",
+      "sections": 19,
+      "records": 273,
+      "scanned": 120,
+      "incomplete": 100,
+      "incompletePct": 83,
+      "completenessScore": 2,
+      "topMissing": []
+    },
+    {
+      "slug": "short-notes-summaries-maker",
+      "title": "Short Notes & Summaries",
+      "sections": 11,
+      "records": 1733,
+      "scanned": 120,
+      "incomplete": 120,
+      "incompletePct": 100,
+      "completenessScore": 0,
+      "topMissing": []
+    },
+    {
+      "slug": "my-study-decks",
+      "title": "My Study Decks",
+      "sections": 12,
+      "records": 167,
+      "scanned": 120,
+      "incomplete": 0,
+      "incompletePct": 0,
+      "completenessScore": 10,
+      "topMissing": []
+    },
+    {
+      "slug": "flashcard-generator",
+      "title": "Flash Card Generator",
+      "sections": 5,
+      "records": 2052,
+      "scanned": 120,
+      "incomplete": 0,
+      "incompletePct": 0,
+      "completenessScore": 10,
+      "topMissing": []
+    },
+    {
+      "slug": "daily-class-plan-maker",
+      "title": "Daily Class Plan",
+      "sections": 9,
+      "records": 1596,
+      "scanned": 120,
+      "incomplete": 0,
+      "incompletePct": 0,
+      "completenessScore": 10,
+      "topMissing": []
+    },
+    {
+      "slug": "mock-test-builder",
+      "title": "Mock Test Builder",
+      "sections": 12,
+      "records": 157,
+      "scanned": 120,
+      "incomplete": 100,
+      "incompletePct": 83,
+      "completenessScore": 2,
+      "topMissing": []
+    },
+    {
+      "slug": "exam-question-paper-generator",
+      "title": "Exam Question Paper Generator",
+      "sections": 11,
+      "records": 2169,
+      "scanned": 120,
+      "incomplete": 120,
+      "incompletePct": 100,
+      "completenessScore": 0,
+      "topMissing": []
+    },
+    {
+      "slug": "smart-study-guide-generator",
+      "title": "Smart Study Guide Generator",
+      "sections": 11,
+      "records": 179,
+      "scanned": 120,
+      "incomplete": 115,
+      "incompletePct": 96,
+      "completenessScore": 0,
+      "topMissing": []
+    },
+    {
+      "slug": "concept-breakdown-explainer",
+      "title": "Concept Breakdown Explainer",
+      "sections": 9,
+      "records": 65,
+      "scanned": 65,
+      "incomplete": 20,
+      "incompletePct": 31,
+      "completenessScore": 7,
+      "topMissing": []
+    },
+    {
+      "slug": "smart-qa-practice-generator",
+      "title": "Smart Q&A Practice Generator",
+      "sections": 11,
+      "records": 197,
+      "scanned": 120,
+      "incomplete": 115,
+      "incompletePct": 96,
+      "completenessScore": 0,
+      "topMissing": []
+    },
+    {
+      "slug": "chapter-summary-creator",
+      "title": "Chapter Summary Creator",
+      "sections": 10,
+      "records": 19,
+      "scanned": 19,
+      "incomplete": 1,
+      "incompletePct": 5,
+      "completenessScore": 10,
+      "topMissing": []
+    },
+    {
+      "slug": "key-points-formula-extractor",
+      "title": "Key Points Extractor",
+      "sections": 10,
+      "records": 12,
+      "scanned": 12,
+      "incomplete": 0,
+      "incompletePct": 0,
+      "completenessScore": 10,
+      "topMissing": []
+    },
+    {
+      "slug": "quick-assignment-builder",
+      "title": "Quick Assignment Builder",
+      "sections": 11,
+      "records": 80,
+      "scanned": 80,
+      "incomplete": 68,
+      "incompletePct": 85,
+      "completenessScore": 2,
+      "topMissing": []
+    }
+  ]
+}

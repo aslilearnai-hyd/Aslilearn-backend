@@ -20,6 +20,9 @@ export default createToolPromptPack({
     'revision_notes: bullet cram sheet.',
     'self_assessment_checklist: "I can…" statements.',
     'exam_connection: how this subtopic appears in board papers.',
+    // Required canonical section that was never named here — contributed to the
+    // 64% incomplete rate on this tool.
+    'improvement_tips: 3 concrete next steps for a student who scored poorly on this subtopic (what to redo, in what order).',
     'Use study_guide fields — NOT chapter_summary field names.',
   ],
   rewriteRules: [

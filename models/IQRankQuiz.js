@@ -54,6 +54,16 @@ const iqRankQuizSchema = new mongoose.Schema({
     enum: ['iq-test', 'rank-boost', 'challenge', 'quiz'],
     default: 'quiz'
   },
+  /** When true, only individual trial (non-paid) accounts can see this quiz. */
+  trialOnly: {
+    type: Boolean,
+    default: false,
+  },
+  /** When true with trialOnly, surface after trial user login until completed. */
+  promptOnLogin: {
+    type: Boolean,
+    default: false,
+  },
   points: {
     type: Number,
     default: 100

@@ -988,6 +988,30 @@ export async function generateBatchAndSave(params, opts = {}) {
           perRecordInr: Number((Number(cost.inr || 0) / shareCount).toFixed(4)),
           savedCount: shareCount,
         };
+
+        /*
+         * Cost instrumentation. The retry caps in ai-generator-batch-config.js were
+         * sized against ESTIMATED prompt/output token counts — this logs what each
+         * saved record actually cost so the caps can be tuned against measurements
+         * rather than arithmetic.
+         *
+         * llmCallsPerRecord is the efficiency signal worth watching: 1.0 means every
+         * LLM call produced a saved record, while a high ratio means calls are being
+         * spent on retries that get discarded. That ratio, not the token count, is
+         * what the attempt caps actually control.
+         */
+        const targetInr = Number(process.env.AI_GENERATOR_TARGET_INR_PER_RECORD || 0.2);
+        const callCount = Number(tokenUsage?.totals?.callCount || 0);
+        const callsPerRecord = shareCount ? callCount / shareCount : 0;
+        const overBudget = cost.perRecordInr > targetInr;
+        console.log(
+          `[AI Generator cost] ${shareCount} saved | INR ${cost.perRecordInr}/record ` +
+            `(target ${targetInr}) ${overBudget ? 'OVER' : 'ok'} | batch INR ${cost.inr} | ` +
+            `${callsPerRecord.toFixed(2)} LLM calls/record | ` +
+            `${Math.round(Number(tokenUsage?.totals?.promptTokens || 0) / shareCount)} in / ` +
+            `${Math.round(Number(tokenUsage?.totals?.completionTokens || 0) / shareCount)} out tokens | ` +
+            `${cost.model}`,
+        );
       }
 
     }

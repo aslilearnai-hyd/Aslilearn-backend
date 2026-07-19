@@ -22,6 +22,10 @@ export default createToolPromptPack({
     'creative_writing_extension + role_play + cross_curricular_connection.',
     'comprehension_mcq[]: 4-option items testing inference not just recall.',
     'reflection_questions for journal.',
+    // Two of the 19 canonical sections were never named here despite the header
+    // claiming 19 — a contributor to the 100 incomplete records.
+    'prior_knowledge_required: what students must already know before this passage.',
+    'common_mistakes_to_avoid: 3 errors students make on this text or its vocabulary, each with the correction.',
     'Output language = subject language (Hindi/Telugu/English).',
   ],
   rewriteRules: [

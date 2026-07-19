@@ -156,7 +156,7 @@ app.post('/api/auth/login', async (req, res) => {
           fullName: validCredential.fullName,
           role: 'super-admin'
         },
-        process.env.JWT_SECRET || 'your-secret-key',
+        process.env.JWT_SECRET,
         { expiresIn: '24h' }
       );
       
@@ -244,7 +244,7 @@ app.post('/api/auth/login', async (req, res) => {
         fullName: user.fullName,
         role: user.role
       },
-      process.env.JWT_SECRET || 'your-secret-key',
+      process.env.JWT_SECRET,
       { expiresIn: '24h' }
     );
     
@@ -291,7 +291,7 @@ app.get('/api/auth/me', async (req, res) => {
     }
 
     const token = authHeader.substring(7);
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key');
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
     
     // Get user from database
     const user = await User.findById(decoded.id).select('-password');

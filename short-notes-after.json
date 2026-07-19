@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-07-19T15:18:31.656Z",
+  "scanned": {
+    "master": 1733,
+    "legacy": 0
+  },
+  "totals": {
+    "total": 1733,
+    "incomplete": 0,
+    "scaffolded": 0
+  },
+  "byTool": [
+    {
+      "toolName": "short-notes-summaries-maker",
+      "toolDisplayName": "Short Notes & Summaries",
+      "total": 1733,
+      "incomplete": 0,
+      "scaffolded": 0,
+      "unparseable": 1733,
+      "failedWithoutSections": 0,
+      "missingSectionCounts": {},
+      "failureCodes": {},
+      "failureMessages": {},
+      "sampleIncompleteIds": []
+    }
+  ]
+}

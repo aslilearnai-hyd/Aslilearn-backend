@@ -67,8 +67,6 @@ export const AI_TOOL_ORDERED_SLUGS = Object.freeze([
   'concept-breakdown-explainer',
   'smart-qa-practice-generator',
   'chapter-summary-creator',
-  'key-points-formula-extractor',
-  'quick-assignment-builder',
 ]);
 
 /** Normalize tool label/slug for comparison (lowercase alphanumeric only). */
@@ -83,10 +81,30 @@ export function normalizeAiToolIdentifierKey(value) {
 export const DEPRECATED_AI_TOOL_LABELS = Object.freeze([
   'Enrichment / HOTS Task Generator',
   'Remedial Support Plan Generator',
+  // Consolidated into host tools (client request, July 2026). Their unique value
+  // survives as options: Key Points -> Chapter Summary revision-sheet mode,
+  // Quick Assignment -> Mock Test assignment mode.
+  'Key Points Extractor',
+  'Quick Assignment Builder',
+]);
+
+/**
+ * Retired slugs. Registered separately from labels because
+ * normalizeAiToolIdentifierKey strips punctuation only — a slug and its display
+ * label normalize to DIFFERENT keys ('keypointsformulaextractor' vs
+ * 'keypointsextractor'). Stored records carry the slug in toolName and the label
+ * in toolDisplayName, so both forms must be registered or retired records keep
+ * showing up in gap counts and scoring.
+ */
+export const DEPRECATED_AI_TOOL_SLUGS = Object.freeze([
+  'key-points-formula-extractor',
+  'quick-assignment-builder',
 ]);
 
 const _deprecatedToolKeys = new Set(
-  DEPRECATED_AI_TOOL_LABELS.map((label) => normalizeAiToolIdentifierKey(label)),
+  [...DEPRECATED_AI_TOOL_LABELS, ...DEPRECATED_AI_TOOL_SLUGS].map((value) =>
+    normalizeAiToolIdentifierKey(value),
+  ),
 );
 
 /** @param {unknown} value Tool slug, display label, or legacy contentType string */

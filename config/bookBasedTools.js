@@ -1,12 +1,10 @@
-/** Tools enabled for Book-Based (RAG-grounded) AI generation — all student & teacher tools (21). */
+/** Tools enabled for Book-Based (RAG-grounded) AI generation — all student & teacher tools (19). */
 
 export const BOOK_BASED_STUDENT_TOOL_SLUGS = [
   'smart-study-guide-generator',
   'smart-qa-practice-generator',
   'concept-breakdown-explainer',
   'chapter-summary-creator',
-  'key-points-formula-extractor',
-  'quick-assignment-builder',
   'my-study-decks',
   'mock-test-builder',
   'project-idea-lab',
@@ -36,9 +34,7 @@ export const BOOK_BASED_TOOL_META = {
   'smart-study-guide-generator': { name: 'Smart Study Guide Generator', description: 'Study guides aligned to textbook terminology.', audience: 'student' },
   'smart-qa-practice-generator': { name: 'Smart Q&A Practice Generator', description: 'Practice Q&A sets using book definitions and examples.', audience: 'student' },
   'concept-breakdown-explainer': { name: 'Concept Breakdown Explainer', description: 'Step-by-step concept breakdown from book passages.', audience: 'student' },
-  'chapter-summary-creator': { name: 'Chapter Summary Creator', description: 'Chapter summaries with concepts and recall questions from textbook chunks.', audience: 'student' },
-  'key-points-formula-extractor': { name: 'Key Points Extractor', description: 'Formulae, facts, and keywords from textbook chunks.', audience: 'student' },
-  'quick-assignment-builder': { name: 'Quick Assignment Builder', description: 'Assignments with concept questions grounded in book material.', audience: 'student' },
+  'chapter-summary-creator': { name: 'Chapter Summary Creator', description: 'Chapter summaries, formulae, and revision sheets from textbook chunks.', audience: 'student' },
   'my-study-decks': { name: 'My Study Decks', description: 'Flashcard decks grounded in textbook content.', audience: 'student' },
   'mock-test-builder': { name: 'Mock Test Builder', description: 'Exam-style mock tests from uploaded books.', audience: 'student' },
   'project-idea-lab': { name: 'Project Idea Lab', description: 'Student projects inspired by textbook topics and examples.', audience: 'student' },

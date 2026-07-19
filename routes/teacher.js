@@ -65,33 +65,16 @@ function parseDateKeyToUtc(dateStr) {
   return new Date(Date.UTC(y, mo, d));
 }
 
-// Test route without any middleware
-router.post('/test-video', async (req, res) => {
-  try {
-    console.log('=== SIMPLE TEST VIDEO ===');
-    console.log('Body:', req.body);
-    
-    const testVideo = new Video({
-      title: 'Simple Test',
-      description: 'Test',
-      subjectId: 'test',
-      duration: 3600,
-      videoUrl: 'https://test.com',
-      youtubeUrl: 'https://test.com',
-      isYouTubeVideo: true,
-      difficulty: 'beginner',
-      createdBy: new mongoose.Types.ObjectId('507f1f77bcf86cd799439011'),
-      adminId: new mongoose.Types.ObjectId('507f1f77bcf86cd799439011'),
-      isPublished: true
-    });
-    
-    await testVideo.save();
-    res.json({ success: true, message: 'Simple test passed', id: testVideo._id });
-  } catch (error) {
-    console.error('Simple test error:', error);
-    res.status(500).json({ success: false, error: error.message });
-  }
-});
+/*
+ * REMOVED (July 2026): `POST /test-video`, an unauthenticated debug route.
+ *
+ * It was registered ABOVE the `router.use(verifyToken)` guard further down, so
+ * it required no auth — and it WROTE to the database, creating a Video document
+ * with hardcoded ObjectIds. Any unauthenticated caller could POST to
+ * /api/teacher/test-video and insert records at will.
+ *
+ * Nothing calls it; it was left over from debugging video upload.
+ */
 
 // Configure multer for file uploads
 const upload = multer({
@@ -120,8 +103,11 @@ const upload = multer({
   }
 });
 
-// Teacher Dashboard Routes (before auth middleware for testing)
-router.get('/test', testTeacherData);
+/*
+ * REMOVED (July 2026): `GET /test` -> testTeacherData, which sat above the auth
+ * guard and returned teacher data to unauthenticated callers. The comment
+ * "before auth middleware for testing" was the bug, not an explanation.
+ */
 
 // Apply authentication middleware to all routes
 router.use(verifyToken);

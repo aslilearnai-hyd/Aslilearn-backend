@@ -230,7 +230,25 @@ export function cleanWorksheetQuestionText(text) {
   q = q.replace(/\s+\d{1,2}[\.\):\-]\s+section\s+[a-f]\s*:\s*.+$/i, '').trim();
   q = q.replace(/(?:\s+\*{0,2}Section\s+\d{1,2}\*{0,2})+.*$/i, '').trim();
   q = q.replace(/(?:\s+Section\s+\d{1,2}\b)+.*$/i, '').trim();
-  if (/\.\s+\d{1,2}[\.\):\-]\s+/i.test(q)) {
+  /*
+   * Strip a NEXT question that ran on into this one — a PDF-extraction artifact
+   * where "Q1. …text. 2. next question" arrives as a single string.
+   *
+   * But do NOT strip the sub-parts of a genuine multi-part question. Exam papers
+   * and long-answer items are routinely written as:
+   *   "A scientist investigates three substances… 1) Sketch the particle
+   *    arrangement. 2) Evaluate which is best for a hydraulic jack."
+   * This used to cut at ". 1)" and keep only the scenario — deleting 147 of 354
+   * characters and leaving a case study with NO question attached. It also made
+   * the surviving text fail looksLikeQuestionPrompt (no verb, no "?"), so the
+   * item was then dropped entirely by sanitizeWorksheetQuestions.
+   *
+   * A run-on next question continues the paper's numbering (2., 3., …); a
+   * multi-part question numbers its own parts from 1. So only strip when the
+   * first marker is not 1.
+   */
+  const runOnMarker = q.match(/\.\s+(\d{1,2})[\.\):\-]\s+/);
+  if (runOnMarker && Number(runOnMarker[1]) !== 1) {
     q = q.replace(/\.\s+\d{1,2}[\.\):\-]\s+.+$/i, '.').trim();
   }
   q = q.replace(/\s*\|\s*worksheet\s*&\s*mcq[^|?]*/gi, '').trim();
@@ -239,6 +257,42 @@ export function cleanWorksheetQuestionText(text) {
   q = q.replace(/\s*\|\s*[^|?]+$/i, '').trim();
   return stripVariantScaffoldFromQuestionText(q);
 };
+
+/*
+ * Single source of truth for question-stem imperatives.
+ *
+ * This list was previously duplicated: the sentence-start test and the
+ * later-sentence test each carried their own copy, and they drifted. "contrast"
+ * existed in neither, so "Contrast the movement of particles in a block of
+ * granite versus a bottle of mustard oil." — a perfectly good VSA question with
+ * no "?" — failed both tests and was silently deleted by
+ * sanitizeWorksheetQuestions. Losing a question this way is invisible: the
+ * section still renders, just one item shorter.
+ *
+ * Includes the Bloom's verbs the curriculum prompts actively ask for
+ * (analyse/evaluate/justify/contrast), which is exactly the set most likely to
+ * appear without a question mark.
+ */
+const QUESTION_IMPERATIVES = [
+  'what', 'which', 'why', 'how', 'define', 'choose', 'fill', 'select', 'state', 'identify',
+  'explain', 'describe', 'list', 'write', 'convert', 'find', 'calculate', 'solve', 'express',
+  'match', 'arrange', 'compare', 'contrast', 'name', 'complete', 'circle', 'tick', 'read',
+  'show', 'represent', 'form', 'make', 'give', 'add', 'subtract', 'multiply', 'divide',
+  'place', 'round', 'estimate', 'expand', 'simplify', 'design', 'create', 'prepare', 'draw',
+  'sketch', 'construct', 'evaluate', 'analyse', 'analyze', 'discuss', 'comment', 'derive',
+  'prove', 'illustrate', 'label', 'classify', 'differentiate', 'distinguish', 'interpret',
+  'summarise', 'summarize', 'justify', 'suggest', 'predict', 'outline', 'trace', 'apply',
+  'examine', 'assess', 'measure', 'plot', 'balance', 'deduce', 'infer',
+].join('|');
+
+/** Verb at the very start of the stem. */
+const IMPERATIVE_AT_START = new RegExp(`^\\s*(?:${QUESTION_IMPERATIVES})\\b`, 'i');
+
+/** Verb opening a later sentence or sub-part — scenario-led and multi-part stems. */
+const IMPERATIVE_AFTER_BOUNDARY = new RegExp(
+  `(?:[.;:!]|,)\\s+(?:\\(?[a-z0-9]{1,3}[.):]\\s*)?(?:then\\s+)?(?:${QUESTION_IMPERATIVES})\\b`,
+  'i',
+);
 
 export const looksLikeQuestionPrompt = (text) => {
   const t = cleanWorksheetQuestionText(text);
@@ -253,16 +307,36 @@ export const looksLikeQuestionPrompt = (text) => {
     return false;
   }
   if (/[?]|_{2,}/.test(t)) return true;
-  if (
-    /^\s*(what|which|why|how|define|choose|fill|select|state|identify|explain|describe|list|write|convert|find|calculate|solve|express|match|arrange|compare|name|complete|circle|tick|read|show|represent|form|make|give|add|subtract|multiply|divide|place|round|estimate|expand|simplify|design|create|prepare|draw|construct)\b/i.test(
-      t,
-    )
-  ) {
+  if (IMPERATIVE_AT_START.test(t)) {
     return true;
   }
   if (/\d[\d,]*/.test(t) && /\b(how many|how much|total|voted|registered|photos|masks|numerals|ascending|descending|greater|less|difference|sum|product)\b/i.test(t)) {
     return true;
   }
+  /*
+   * Scenario-led questions: the imperative comes AFTER the setup, so the
+   * anchored test above misses them.
+   *
+   *   "A student observes that camphor kept in an open jar disappears after a
+   *    few days. Name the process and explain the change in particle
+   *    arrangement."
+   *
+   * There is no "?" and no blank, and the line does not START with an
+   * imperative — so this returned false and sanitizeWorksheetQuestions silently
+   * DELETED the question. That is the exact shape the schema asks for in
+   * sectionD_application and sectionE_long ("real-life / numerical /
+   * case-based"), so the filter was destroying the highest-value items on the
+   * paper while keeping the plain ones. Two records from one batch disagreed
+   * purely on whether their questions happened to be phrased scenario-first.
+   *
+   * Accept the same verb set when it opens a later sentence or follows a comma,
+   * which is what a case-based stem looks like. isHeadingLikeLine /
+   * isWorksheetPdfChrome have already run, so headings cannot slip through here.
+   */
+  if (IMPERATIVE_AFTER_BOUNDARY.test(t)) {
+    return true;
+  }
+
   const words = t.split(/\s+/).filter(Boolean).length;
   return (
     words >= 6 &&

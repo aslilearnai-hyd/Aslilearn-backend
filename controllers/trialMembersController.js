@@ -11,12 +11,16 @@ import {
 } from '../utils/individualAccount.js';
 
 const VALID_CONTENT_TYPES = new Set([...ALL_CONTENT_TYPES, ...NORMAL_SCHOOL_CONTENT_TYPES]);
+const VALID_PAYMENT_METHODS = new Set(['', 'manual', 'upi', 'bank', 'other']);
 
 function formatMember(doc, role) {
   const access = resolveIndividualAccess(doc);
   const now = Date.now();
   const ends = doc.trialEndsAt ? new Date(doc.trialEndsAt).getTime() : null;
-  const exceeded = Boolean(doc.isIndividualAccount) && (!ends || now >= ends) && access.subscriptionStatus !== 'active';
+  const exceeded =
+    Boolean(doc.isIndividualAccount) &&
+    (!ends || now >= ends) &&
+    access.subscriptionStatus !== 'active';
 
   return {
     id: String(doc._id),
@@ -43,6 +47,13 @@ function formatMember(doc, role) {
       : [],
     trialAllowedAiTools: Array.isArray(doc.trialAllowedAiTools) ? doc.trialAllowedAiTools : [],
     trialAdminNotes: doc.trialAdminNotes || '',
+    trialPaymentAmount:
+      doc.trialPaymentAmount != null && Number.isFinite(Number(doc.trialPaymentAmount))
+        ? Number(doc.trialPaymentAmount)
+        : null,
+    trialPaidAt: doc.trialPaidAt || null,
+    trialPaymentMethod: doc.trialPaymentMethod || '',
+    trialPaymentReference: doc.trialPaymentReference || '',
     createdAt: doc.createdAt || null,
     lastLogin: doc.lastLogin || null,
   };
@@ -50,12 +61,123 @@ function formatMember(doc, role) {
 
 function normalizeContentTypes(list) {
   if (!Array.isArray(list)) return [];
-  return [...new Set(list.map((t) => String(t || '').trim()).filter((t) => VALID_CONTENT_TYPES.has(t)))];
+  return [
+    ...new Set(list.map((t) => String(t || '').trim()).filter((t) => VALID_CONTENT_TYPES.has(t))),
+  ];
 }
 
 function normalizeToolSlugs(list) {
   if (!Array.isArray(list)) return [];
   return [...new Set(list.map((t) => String(t || '').trim()).filter(Boolean))];
+}
+
+function applyPaymentFields(doc, body = {}) {
+  if (body.trialPaymentAmount !== undefined) {
+    if (body.trialPaymentAmount === null || body.trialPaymentAmount === '') {
+      doc.trialPaymentAmount = null;
+    } else {
+      const amount = Number(body.trialPaymentAmount);
+      if (!Number.isFinite(amount) || amount < 0) {
+        throw new Error('trialPaymentAmount must be a non-negative number');
+      }
+      doc.trialPaymentAmount = amount;
+    }
+  }
+  if (body.trialPaymentMethod !== undefined) {
+    const method = String(body.trialPaymentMethod || '').toLowerCase().trim();
+    if (!VALID_PAYMENT_METHODS.has(method)) {
+      throw new Error('trialPaymentMethod must be manual, upi, bank, other, or empty');
+    }
+    doc.trialPaymentMethod = method;
+  }
+  if (body.trialPaymentReference !== undefined) {
+    doc.trialPaymentReference = String(body.trialPaymentReference || '').trim();
+  }
+  if (body.trialPaidAt !== undefined) {
+    if (body.trialPaidAt === null || body.trialPaidAt === '') {
+      doc.trialPaidAt = null;
+    } else {
+      const paidAt = new Date(body.trialPaidAt);
+      if (Number.isNaN(paidAt.getTime())) {
+        throw new Error('Invalid trialPaidAt');
+      }
+      doc.trialPaidAt = paidAt;
+    }
+  }
+}
+
+function applyAccessAndAllowLists(doc, body = {}) {
+  const {
+    trialDays,
+    trialEndsAt,
+    subscriptionStatus,
+    trialAllowedContentTypes,
+    trialAllowedAiTools,
+    trialAdminNotes,
+    isActive,
+    resetTrial,
+    extendDays,
+  } = body;
+
+  if (resetTrial === true || (trialDays != null && Number(trialDays) > 0)) {
+    const days = Number(trialDays) > 0 ? Math.floor(Number(trialDays)) : INDIVIDUAL_TRIAL_DAYS;
+    const window = buildTrialWindow(new Date(), days);
+    doc.trialStartsAt = window.trialStartsAt;
+    doc.trialEndsAt = window.trialEndsAt;
+    doc.subscriptionStatus = 'trial';
+  } else if (extendDays != null && Number(extendDays) > 0) {
+    const add = Math.floor(Number(extendDays));
+    const base =
+      doc.trialEndsAt && new Date(doc.trialEndsAt).getTime() > Date.now()
+        ? new Date(doc.trialEndsAt)
+        : new Date();
+    base.setDate(base.getDate() + add);
+    doc.trialEndsAt = base;
+    if (!doc.trialStartsAt) doc.trialStartsAt = new Date();
+    doc.subscriptionStatus = 'trial';
+  } else if (trialEndsAt) {
+    const ends = new Date(trialEndsAt);
+    if (Number.isNaN(ends.getTime())) {
+      throw new Error('Invalid trialEndsAt');
+    }
+    doc.trialEndsAt = ends;
+    if (!doc.trialStartsAt) doc.trialStartsAt = new Date();
+    if (ends.getTime() > Date.now()) {
+      doc.subscriptionStatus = 'trial';
+    }
+  }
+
+  if (subscriptionStatus !== undefined) {
+    const status = String(subscriptionStatus).toLowerCase().trim();
+    if (!['trial', 'active', 'expired', 'none'].includes(status)) {
+      throw new Error('subscriptionStatus must be trial, active, expired, or none');
+    }
+    doc.subscriptionStatus = status;
+    if (status === 'active') {
+      if (!doc.trialPaidAt) doc.trialPaidAt = new Date();
+      if (!doc.trialPaymentMethod) doc.trialPaymentMethod = 'manual';
+    } else if (status === 'expired') {
+      doc.trialEndsAt = doc.trialEndsAt || new Date();
+      if (new Date(doc.trialEndsAt).getTime() > Date.now()) {
+        doc.trialEndsAt = new Date();
+      }
+    }
+  }
+
+  if (trialAllowedContentTypes !== undefined) {
+    doc.trialAllowedContentTypes = normalizeContentTypes(trialAllowedContentTypes);
+  }
+  if (trialAllowedAiTools !== undefined) {
+    doc.trialAllowedAiTools = normalizeToolSlugs(trialAllowedAiTools);
+  }
+  if (trialAdminNotes !== undefined) {
+    doc.trialAdminNotes = String(trialAdminNotes || '').trim();
+  }
+  if (isActive !== undefined) {
+    doc.isActive = Boolean(isActive);
+  }
+
+  applyPaymentFields(doc, body);
 }
 
 async function findTrialMember(id, roleHint) {
@@ -111,7 +233,7 @@ export async function listTrialMembers(req, res) {
           m.fullName.toLowerCase().includes(q) ||
           m.email.toLowerCase().includes(q) ||
           m.schoolName.toLowerCase().includes(q) ||
-          m.phone.includes(q)
+          m.phone.includes(q),
       );
     }
 
@@ -148,8 +270,6 @@ export async function listTrialMembers(req, res) {
 
 /**
  * PUT /api/super-admin/trial-members/:id
- * Body: { role?, trialDays?, trialEndsAt?, subscriptionStatus?,
- *         trialAllowedContentTypes?, trialAllowedAiTools?, trialAdminNotes?, isActive?, resetTrial? }
  */
 export async function updateTrialMember(req, res) {
   try {
@@ -160,88 +280,81 @@ export async function updateTrialMember(req, res) {
       return res.status(404).json({ success: false, message: 'Trial member not found' });
     }
 
-    const { doc } = found;
-    const {
-      trialDays,
-      trialEndsAt,
-      subscriptionStatus,
-      trialAllowedContentTypes,
-      trialAllowedAiTools,
-      trialAdminNotes,
-      isActive,
-      resetTrial,
-      extendDays,
-    } = req.body;
-
-    if (resetTrial === true || (trialDays != null && Number(trialDays) > 0)) {
-      const days = Number(trialDays) > 0 ? Math.floor(Number(trialDays)) : INDIVIDUAL_TRIAL_DAYS;
-      const window = buildTrialWindow(new Date(), days);
-      doc.trialStartsAt = window.trialStartsAt;
-      doc.trialEndsAt = window.trialEndsAt;
-      doc.subscriptionStatus = 'trial';
-    } else if (extendDays != null && Number(extendDays) > 0) {
-      const add = Math.floor(Number(extendDays));
-      const base =
-        doc.trialEndsAt && new Date(doc.trialEndsAt).getTime() > Date.now()
-          ? new Date(doc.trialEndsAt)
-          : new Date();
-      base.setDate(base.getDate() + add);
-      doc.trialEndsAt = base;
-      if (!doc.trialStartsAt) doc.trialStartsAt = new Date();
-      doc.subscriptionStatus = 'trial';
-    } else if (trialEndsAt) {
-      const ends = new Date(trialEndsAt);
-      if (Number.isNaN(ends.getTime())) {
-        return res.status(400).json({ success: false, message: 'Invalid trialEndsAt' });
-      }
-      doc.trialEndsAt = ends;
-      if (!doc.trialStartsAt) doc.trialStartsAt = new Date();
-      if (ends.getTime() > Date.now()) {
-        doc.subscriptionStatus = 'trial';
-      }
+    try {
+      applyAccessAndAllowLists(found.doc, req.body);
+    } catch (err) {
+      return res.status(400).json({ success: false, message: err.message || 'Invalid update' });
     }
 
-    if (subscriptionStatus !== undefined) {
-      const status = String(subscriptionStatus).toLowerCase().trim();
-      if (!['trial', 'active', 'expired', 'none'].includes(status)) {
-        return res.status(400).json({
-          success: false,
-          message: 'subscriptionStatus must be trial, active, expired, or none',
-        });
-      }
-      doc.subscriptionStatus = status;
-      if (status === 'active') {
-        // Paid / unlocked by Super Admin
-      } else if (status === 'expired') {
-        doc.trialEndsAt = doc.trialEndsAt || new Date();
-        if (new Date(doc.trialEndsAt).getTime() > Date.now()) {
-          doc.trialEndsAt = new Date();
-        }
-      }
-    }
-
-    if (trialAllowedContentTypes !== undefined) {
-      doc.trialAllowedContentTypes = normalizeContentTypes(trialAllowedContentTypes);
-    }
-    if (trialAllowedAiTools !== undefined) {
-      doc.trialAllowedAiTools = normalizeToolSlugs(trialAllowedAiTools);
-    }
-    if (trialAdminNotes !== undefined) {
-      doc.trialAdminNotes = String(trialAdminNotes || '').trim();
-    }
-    if (isActive !== undefined) {
-      doc.isActive = Boolean(isActive);
-    }
-
-    await doc.save();
+    await found.doc.save();
 
     res.json({
       success: true,
       message: 'Trial member updated',
-      data: formatMember(doc.toObject ? doc.toObject() : doc, found.role),
+      data: formatMember(found.doc.toObject ? found.doc.toObject() : found.doc, found.role),
     });
   } catch (error) {
     console.error('updateTrialMember error:', error);
     res.status(500).json({ success: false, message: 'Failed to update trial member' });
+  }
+}
+
+/**
+ * POST /api/super-admin/trial-members/apply-defaults
+ * Body: { memberIds: [{ id, role }], trialAllowedContentTypes?, trialAllowedAiTools? }
+ */
+export async function applyTrialMemberDefaults(req, res) {
+  try {
+    const memberIds = Array.isArray(req.body.memberIds) ? req.body.memberIds : [];
+    if (memberIds.length === 0) {
+      return res.status(400).json({ success: false, message: 'memberIds is required' });
+    }
+
+    const patch = {};
+    if (req.body.trialAllowedContentTypes !== undefined) {
+      patch.trialAllowedContentTypes = normalizeContentTypes(req.body.trialAllowedContentTypes);
+    }
+    if (req.body.trialAllowedAiTools !== undefined) {
+      patch.trialAllowedAiTools = normalizeToolSlugs(req.body.trialAllowedAiTools);
+    }
+    if (Object.keys(patch).length === 0) {
+      return res.status(400).json({
+        success: false,
+        message: 'Provide trialAllowedContentTypes and/or trialAllowedAiTools',
+      });
+    }
+
+    const updated = [];
+    const failed = [];
+    for (const item of memberIds) {
+      const id = item?.id || item;
+      const roleHint = item?.role;
+      try {
+        const found = await findTrialMember(id, roleHint);
+        if (!found) {
+          failed.push({ id: String(id), reason: 'not found' });
+          continue;
+        }
+        if (patch.trialAllowedContentTypes !== undefined) {
+          found.doc.trialAllowedContentTypes = patch.trialAllowedContentTypes;
+        }
+        if (patch.trialAllowedAiTools !== undefined) {
+          found.doc.trialAllowedAiTools = patch.trialAllowedAiTools;
+        }
+        await found.doc.save();
+        updated.push(formatMember(found.doc.toObject ? found.doc.toObject() : found.doc, found.role));
+      } catch (err) {
+        failed.push({ id: String(id), reason: err.message || 'update failed' });
+      }
+    }
+
+    res.json({
+      success: true,
+      message: `Applied defaults to ${updated.length} member(s)`,
+      data: { updated, failed, patch },
+    });
+  } catch (error) {
+    console.error('applyTrialMemberDefaults error:', error);
+    res.status(500).json({ success: false, message: 'Failed to apply trial defaults' });
   }
 }

@@ -11,7 +11,24 @@ export function buildPerformanceSummary({ ctx, performance, weakTopics, marks, r
 
 export function buildAutoGreeting(summary) {
   const student = summary?.student || 'Student';
-  const trend = summary?.trend || 'steady';
-  return `Hi ${student}! Your recent learning trend looks ${trend}. Ask me what to study next.`;
+  const trend = String(summary?.trend || 'unknown').toLowerCase();
+  const hasHistory = Boolean(summary?.highestMark) || Number(summary?.weakTopicCount) > 0;
+
+  // A student with no attempts yet has no trend to report. The engine returns
+  // 'unknown' for them, and the old greeting interpolated it straight in —
+  // so a brand-new student was told their learning was "declining".
+  if (!hasHistory || trend === 'unknown') {
+    return `Hi ${student}! I'm Vidya, your study assistant. Ask me anything about your subjects, or tell me a chapter and I'll help you practise.`;
+  }
+
+  if (trend === 'improving') {
+    return `Hi ${student}! Your scores are trending up — nice work. Want to keep the momentum going?`;
+  }
+
+  if (trend === 'declining') {
+    return `Hi ${student}! Let's get you back on track. Want me to go over the topics you've been finding tricky?`;
+  }
+
+  return `Hi ${student}! Your progress is holding steady. Ask me what to study next, or pick a topic to practise.`;
 }
 

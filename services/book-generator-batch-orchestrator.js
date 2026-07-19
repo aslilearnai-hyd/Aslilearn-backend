@@ -46,8 +46,10 @@ import { resolveLanguageSubjectForGeneration } from '../utils/story-passage-subj
 import { acquireGenerationLock, forceReleaseGenerationLock, releaseGenerationLock } from './ai-generator-lock-service.js';
 import {
   getBookBatchSlotMaxAttempts,
+  isAiGeneratorCompleteOnlySaveEnabled,
   shouldUseFlashForAiGeneratorRun,
 } from '../utils/ai-generator-batch-config.js';
+import { validateDashboardAiToolDoc } from './ai-tool-dashboard-validation.js';
 import { retrieveBookContextForGeneration, buildBookContextTextForVariant } from './book-rag-service.js';
 import {
   isBookBasedToolSlug,
@@ -454,6 +456,72 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                         JSON.stringify(legacyStructured);
                     } catch {
                       persistContent = JSON.stringify(legacyStructured);
+                    }
+                  }
+
+                  /*
+                   * Completeness gate — the book path previously had none.
+                   *
+                   * This orchestrator checked only scaffold density, so an
+                   * incomplete generation still saved here while the normal
+                   * batch path (AI_GENERATOR_COMPLETE_ONLY_SAVE) refused it.
+                   * A 3,000-record sample of the newest book records was 61%
+                   * incomplete, worst being daily-class-plan-maker at 150/150
+                   * under 200 chars — records that rendered as a bare title yet
+                   * were counted as healthy.
+                   *
+                   * Failing the slot instead of saving feeds the existing
+                   * attempt loop (getMaxAttemptsPerSlot), so a bad generation is
+                   * retried rather than persisted. Honoured only when
+                   * complete-only-save is on, so the flag still governs both
+                   * paths from one place.
+                   */
+                  /*
+                   * Render guard — the section gate alone does NOT catch this.
+                   *
+                   * validateDashboardAiToolDoc reads metadata.structuredContent
+                   * in preference to the rendered text, so a record whose
+                   * `content` collapsed to just the title still validates as
+                   * complete: 150 book daily-class-plan records sat at 51-63
+                   * chars ("## Mapping Earths Landmasses: A Silhouette
+                   * Activity") and every one passed the gate. Teachers opened an
+                   * empty plan the audit scored as healthy.
+                   *
+                   * A rendered body barely longer than the title while the
+                   * structured payload is substantial means the mapper produced
+                   * nothing for this tool and formatStructuredToolOutput fell
+                   * back to the title. Fail the slot so the attempt loop retries
+                   * rather than persisting an empty document.
+                   */
+                  const renderedLen = String(persistContent || '').trim().length;
+                  const payloadLen = JSON.stringify(v2.structuredContent || {}).length;
+                  if (renderedLen <= String(coreTitle || '').trim().length + 20 && payloadLen > 800) {
+                    lastError = `Render collapsed to title (${renderedLen} chars from a ${payloadLen}-char payload)`;
+                    console.warn(
+                      `[book-generator] Slot ${batchIndex} attempt ${attempt}: not saved — ${lastError}`,
+                    );
+                    continue;
+                  }
+
+                  if (isAiGeneratorCompleteOnlySaveEnabled()) {
+                    const bookGate = validateDashboardAiToolDoc(toolSlug, {
+                      toolName: toolSlug,
+                      content: persistContent,
+                      generatedContent: persistContent,
+                      metadata: {
+                        structuredContent: v2.structuredContent,
+                        ...(legacyStructured ? { legacyStructuredContent: legacyStructured } : {}),
+                      },
+                    });
+                    if (!bookGate.valid) {
+                      const detail =
+                        (bookGate.missingSections || []).join(', ') ||
+                        String(bookGate.message || 'incomplete').slice(0, 90);
+                      lastError = `Incomplete content (${detail})`;
+                      console.warn(
+                        `[book-generator] Slot ${batchIndex} attempt ${attempt}: not saved — ${detail}`,
+                      );
+                      continue;
                     }
                   }
                   const rec = await withMongoRetry(() =>

@@ -1290,10 +1290,33 @@ export function validateDashboardAiToolContent(toolSlug, rawContent, options = {
         (slug === 'activity-project-generator' || slug === 'project-idea-lab') &&
         activityDashboardHasCorePayload(slug, structured, content);
       if (!usableFlashcards && !activityCore) {
+        /*
+         * Propagate WHICH sections are missing, not just that something is.
+         *
+         * `structural` comes from validateToolSpecificStructuredContent ->
+         * validateCanonicalFieldsForSave (ai-generator-section-pad.js), which
+         * spreads the canonical field check and therefore already carries
+         * missingSections. This return dropped it and kept only the message.
+         *
+         * Two things depended on those names and silently got nothing:
+         *  1. ai-content-engine-service.js gates LLM section repair on
+         *     `quality.missingSections?.length` — always falsy here, so targeted
+         *     repair never fired for this failure mode.
+         *  2. The Super Admin gap report and the corpus census showed these as
+         *     incomplete with an empty missing list, making a systemic shortfall
+         *     look like an unexplained failure.
+         *
+         * The July 2026 census found 3,203 records failing this way (every one of
+         * homework-creator's 254 failures sits at exactly 4/10 sections), all with
+         * no section names attached.
+         */
         return {
           valid: false,
           code: 'AI_TOOL_CONTENT_INCOMPLETE',
           message: structural.message || 'Content does not meet the minimum structure for this tool.',
+          missingSections: Array.isArray(structural.missingSections)
+            ? structural.missingSections
+            : [],
         };
       }
     }
@@ -1455,7 +1478,15 @@ export function validateDashboardAiToolContent(toolSlug, rawContent, options = {
 
   const extra = extraStrictChecks(slug, headingData, content);
   if (!extra.valid) {
-    return { valid: false, code: 'AI_TOOL_CONTENT_INCOMPLETE', message: extra.message };
+    // extraStrictChecks returns only {valid, message}; pass through any section
+    // names it does carry so callers see a consistent shape.
+    return {
+      valid: false,
+      code: 'AI_TOOL_CONTENT_INCOMPLETE',
+      message: extra.message,
+      missingSections: Array.isArray(extra.missingSections) ? extra.missingSections : [],
+      optionalMissingSections: optionalMissing,
+    };
   }
 
   if (slug === 'exam-question-paper-generator' || slug === 'mock-test-builder') {

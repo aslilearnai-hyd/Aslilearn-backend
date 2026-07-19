@@ -18,6 +18,8 @@ export default createToolPromptPack({
     'thinking_prompts[]: "What if…?" questions.',
     'practice_apply: 2 application problems with hints.',
     'connect_to_exam: typical question formats.',
+    // Required canonical section never named here despite the "9 SECTIONS" header.
+    'quick_revision_summary: a dense 4–6 line recap of the whole breakdown for last-minute revision.',
     'Tone: patient older sibling explaining — not textbook drone.',
   ],
   rewriteRules: [

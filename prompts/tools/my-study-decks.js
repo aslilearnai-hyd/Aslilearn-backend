@@ -13,6 +13,13 @@ export default createToolPromptPack({
     'study_strategy_note: how to use deck (Leitner, shuffle, teach-back).',
     'self_test_routine: 10-minute daily plan.',
     'Student tone: friendly coach, not teacher manual.',
+    '',
+    // Required by the validator's 100% fill rule but never named here, so every
+    // record failed at 5/12. Field keys given explicitly.
+    'ALSO REQUIRED — emit all of these fields:',
+    'common_mistakes_to_avoid: 3 specific errors students make on THIS subtopic, each with the correction.',
+    'ncf_competency_alignment: the NCF/NEP competency this deck builds, in plain language.',
+    'expected_learning_outcomes: 3 measurable things the student can do after working the deck.',
   ],
   rewriteRules: [
     'Min 10 cards with front/back. No term-only fronts without a question frame.',
