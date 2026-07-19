@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import { VALID_SCHOOL_BOARDS } from '../constants/boards.js';
+import { IIT_CATEGORIES, PRODUCT_CATEGORY_NONE } from '../constants/products.js';
 
 const contentSchema = new mongoose.Schema({
   title: {
@@ -27,6 +28,14 @@ const contentSchema = new mongoose.Schema({
     type: String,
     trim: true,
     default: ''
+  },
+  /** IIT track (ALPHA/BETA/GAMMA); empty = general curriculum content. */
+  productCategory: {
+    type: String,
+    enum: [...IIT_CATEGORIES, PRODUCT_CATEGORY_NONE],
+    uppercase: true,
+    default: PRODUCT_CATEGORY_NONE,
+    trim: true,
   },
   subject: {
     type: mongoose.Schema.Types.ObjectId,

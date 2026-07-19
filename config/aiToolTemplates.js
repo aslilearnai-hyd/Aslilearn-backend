@@ -19,6 +19,10 @@ import {
   buildPrecisionGenerationBlock,
   buildVariantUniquenessBlock,
 } from '../prompts/shared/precision-generation.js';
+import {
+  formatQuestionCompositionPromptLine,
+  normalizeQuestionComposition,
+} from '../utils/questionComposition.js';
 
 /** Pedagogy tags applied across tools (subset per tool in `pedagogyFrameworkTags`). */
 export const UNIVERSAL_PEDAGOGY_TAGS = Object.freeze([
@@ -2452,6 +2456,22 @@ export function buildAiGeneratorPromptParts(toolSlug, params = {}) {
       `TARGET EXAM QUESTIONS: at least ${examQuestionTarget} across sections A–E (section_a..section_e or sections[])`,
     );
   }
+  if (slug === 'worksheet-mcq-generator' || slug === 'exam-question-paper-generator') {
+    const { composition, total } = normalizeQuestionComposition({
+      ...params,
+      ...extra,
+      questionComposition: params.questionComposition || extra.questionComposition,
+    });
+    contextLines.push(formatQuestionCompositionPromptLine(composition, total));
+    const scopeSub = String(params.subTopic || params.subtopic || '').trim();
+    if (!scopeSub || params.chapterScope || extra.chapterScope) {
+      contextLines.push(
+        'SCOPE: Whole chapter/topic — cover the full chapter (all major subtopics). Do not limit questions to a single subtopic.',
+      );
+    } else {
+      contextLines.push(`SCOPE: Subtopic-focused — ${scopeSub}`);
+    }
+  }
   if (slug === 'smart-qa-practice-generator') {
     const practiceTarget =
       Number.isFinite(questionCount) && questionCount > 0 ? questionCount : 12;
@@ -2460,10 +2480,13 @@ export function buildAiGeneratorPromptParts(toolSlug, params = {}) {
     );
   }
   if (slug === 'worksheet-mcq-generator') {
-    const worksheetTarget =
-      Number.isFinite(questionCount) && questionCount > 0 ? questionCount : 10;
+    const { composition, total } = normalizeQuestionComposition({
+      ...params,
+      ...extra,
+      questionComposition: params.questionComposition || extra.questionComposition,
+    });
     contextLines.push(
-      `WORKSHEET RULE: Generate exactly ${worksheetTarget} unique questions total across sections A–E (Section A MCQs, B fill blanks, C VSA, D short answer, E extended application/numerical). Every question stem must be distinct, subtopic-specific, and direct — no scenario wrappers. Put questions ONLY in sections[].questions — do NOT duplicate the same items in top-level questions[] or section_a_mcqs.`,
+      `WORKSHEET RULE: Generate exactly ${total} unique questions matching the QUESTION COMPOSITION counts (MCQ ${composition.mcq}, FIB ${composition.fib}, VSAQ ${composition.vsaq}, SAQ ${composition.saq}, LAQ ${composition.laq}). Put questions ONLY in sections[].questions — do NOT duplicate the same items in top-level questions[]. Every stem must be distinct and curriculum-specific — no scenario wrappers.`,
     );
   }
   if (slug === 'chapter-summary-creator') {

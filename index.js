@@ -729,7 +729,7 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
         let teacherAdmin = null;
         if (teacher.adminId) {
           teacherAdmin = await User.findById(teacher.adminId)
-            .select('board curriculumBoard isAsliPrepExclusive schoolName schoolLogo vidyaEnabledForTeachers vidyaEnabledForStudents')
+            .select('board curriculumBoard isAsliPrepExclusive iitCategories schoolName schoolLogo vidyaEnabledForTeachers vidyaEnabledForStudents')
             .lean();
         }
         const teacherCtx = { board: teacher.board, isAsliPrepExclusive: false };
@@ -743,6 +743,9 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
           (teacher.board && teacher.board !== 'ASLI_EXCLUSIVE_SCHOOLS' ? teacher.board : '') ||
           (displayBoard && displayBoard !== 'ASLI_EXCLUSIVE_SCHOOLS' ? displayBoard : '') ||
           'CBSE';
+        const iitCategories = Array.isArray(teacherAdmin?.iitCategories)
+          ? teacherAdmin.iitCategories
+          : [];
 
         const teacherUserData = {
           id: teacher._id,
@@ -755,6 +758,7 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
           phone: teacher.phone || '',
           board: displayBoard || teacher.board || '',
           curriculumBoard,
+          iitCategories,
           schoolName: teacherAdmin?.schoolName || teacher.school || '',
           schoolLogo: teacherAdmin?.schoolLogo || '',
           profilePhoto: '',
@@ -764,12 +768,23 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
           isAsliPrepExclusive,
           subjects: teacher.subjects || [],
           vidyaEnabled: isVidyaEnabledForTeachers(teacherAdmin),
+          schoolName: teacherAdmin?.schoolName || teacher.school || teacher.schoolName || '',
+          phone: teacher.phone || '',
+          classNumber: teacher.classNumber || '',
+          interestedCourses: teacher.interestedCourses || [],
+          interestedSubjects: teacher.interestedSubjects || [],
+          iitCategories: Array.isArray(teacher.iitCategories) && teacher.iitCategories.length
+            ? teacher.iitCategories
+            : iitCategories,
+          isIndividualAccount: Boolean(teacher.isIndividualAccount),
+          ...((await import('./utils/individualAccount.js')).resolveIndividualAccess(teacher)),
         };
         if (teacherAdmin) {
           teacherUserData.assignedAdmin = {
             board: teacherAdmin.board,
             curriculumBoard: teacherAdmin.curriculumBoard,
             isAsliPrepExclusive: teacherAdmin.isAsliPrepExclusive === true,
+            iitCategories,
             schoolName: teacherAdmin.schoolName || '',
             schoolLogo: teacherAdmin.schoolLogo || '',
           };
@@ -787,7 +802,7 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
     if (user.role === 'student' && user.assignedAdmin) {
       await user.populate(
         'assignedAdmin',
-        'board curriculumBoard isAsliPrepExclusive schoolName schoolLogo vidyaEnabledForTeachers vidyaEnabledForStudents'
+        'board curriculumBoard isAsliPrepExclusive iitCategories schoolName schoolLogo vidyaEnabledForTeachers vidyaEnabledForStudents'
       );
     }
     let teacherAdmin = null;
@@ -795,7 +810,7 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
       const teacher = await Teacher.findById(user._id).select('adminId').lean();
       if (teacher?.adminId) {
         teacherAdmin = await User.findById(teacher.adminId)
-          .select('board curriculumBoard isAsliPrepExclusive schoolName schoolLogo vidyaEnabledForTeachers vidyaEnabledForStudents')
+          .select('board curriculumBoard isAsliPrepExclusive iitCategories schoolName schoolLogo vidyaEnabledForTeachers vidyaEnabledForStudents')
           .lean();
       }
     }
@@ -804,6 +819,14 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
       user,
       user.role === 'student' ? user.assignedAdmin : teacherAdmin,
     );
+    const resolvedIitCategories =
+      user.role === 'admin' && Array.isArray(user.iitCategories)
+        ? user.iitCategories
+        : Array.isArray(user.assignedAdmin?.iitCategories)
+          ? user.assignedAdmin.iitCategories
+          : Array.isArray(teacherAdmin?.iitCategories)
+            ? teacherAdmin.iitCategories
+            : [];
     const userData = {
       id: user._id,
       _id: user._id,
@@ -826,6 +849,7 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
         (user.role === 'teacher' ? teacherAdmin?.curriculumBoard : null) ||
         (displayBoard && displayBoard !== 'ASLI_EXCLUSIVE_SCHOOLS' ? displayBoard : '') ||
         'CBSE',
+      iitCategories: resolvedIitCategories,
       schoolName:
         user.schoolName ||
         user.assignedAdmin?.schoolName ||
@@ -841,6 +865,10 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
       assignedClass: user.assignedClass || null,
       studyStreak: user.studyStreak || { current: 0, longest: 0, lastActiveDate: '' },
       isAsliPrepExclusive,
+      interestedCourses: user.interestedCourses || [],
+      interestedSubjects: user.interestedSubjects || [],
+      isIndividualAccount: Boolean(user.isIndividualAccount),
+      ...((await import('./utils/individualAccount.js')).resolveIndividualAccess(user)),
     };
     if (user.role === 'student') {
       userData.vidyaEnabled = isVidyaEnabledForStudents(user.assignedAdmin);
@@ -850,6 +878,9 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
           board: user.assignedAdmin.board,
           curriculumBoard: user.assignedAdmin.curriculumBoard,
           isAsliPrepExclusive: user.assignedAdmin.isAsliPrepExclusive === true,
+          iitCategories: Array.isArray(user.assignedAdmin.iitCategories)
+            ? user.assignedAdmin.iitCategories
+            : [],
           schoolName: user.assignedAdmin.schoolName || '',
           schoolLogo: user.assignedAdmin.schoolLogo || '',
         };
@@ -867,6 +898,9 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
           board: teacherAdmin.board,
           curriculumBoard: teacherAdmin.curriculumBoard,
           isAsliPrepExclusive: teacherAdmin.isAsliPrepExclusive === true,
+          iitCategories: Array.isArray(teacherAdmin.iitCategories)
+            ? teacherAdmin.iitCategories
+            : [],
           schoolName: teacherAdmin.schoolName || '',
           schoolLogo: teacherAdmin.schoolLogo || '',
         };
@@ -1108,38 +1142,115 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });
 
-// Authentication routes
+// Authentication routes — individual teacher/student signup (B2C)
 app.post('/api/auth/register', async (req, res) => {
   try {
-    const { email, password, fullName, role = 'student' } = req.body;
-    
-    // Check if user already exists
-    const existingUser = await User.findOne({ email });
+    const {
+      normalizeIndividualSignupBody,
+      resolveIndividualAccess,
+    } = await import('./utils/individualAccount.js');
+    const parsed = normalizeIndividualSignupBody(req.body);
+    if (!parsed.ok) {
+      return res.status(400).json({ message: parsed.message });
+    }
+    const d = parsed.data;
+
+    const existingUser = await User.findOne({ email: d.email });
     if (existingUser) {
-      return res.status(400).json({ message: 'User already exists' });
+      return res.status(400).json({ message: 'An account with this email already exists' });
+    }
+    const existingTeacher = await Teacher.findOne({ email: d.email });
+    if (existingTeacher) {
+      return res.status(400).json({ message: 'An account with this email already exists' });
     }
 
-    // Hash password
-    const hashedPassword = await bcrypt.hash(password, 12);
+    const hashedPassword = await bcrypt.hash(d.password, 12);
+    const trialFields = {
+      isIndividualAccount: true,
+      schoolName: d.schoolName,
+      phone: d.phone,
+      classNumber: d.classNumber || 'Unassigned',
+      curriculumBoard: d.curriculumBoard,
+      board: d.isAsliPrepExclusive ? 'ASLI_EXCLUSIVE_SCHOOLS' : d.curriculumBoard,
+      isAsliPrepExclusive: d.isAsliPrepExclusive,
+      iitCategories: d.iitCategories,
+      interestedCourses: d.interestedCourses,
+      interestedSubjects: d.interestedSubjects,
+      subscriptionStatus: 'trial',
+      trialStartsAt: d.trialStartsAt,
+      trialEndsAt: d.trialEndsAt,
+    };
 
-    // Create user
+    if (d.role === 'teacher') {
+      const teacher = new Teacher({
+        email: d.email,
+        password: hashedPassword,
+        fullName: d.fullName,
+        phone: d.phone,
+        school: d.schoolName,
+        schoolName: d.schoolName,
+        board: trialFields.board,
+        curriculumBoard: d.curriculumBoard,
+        classNumber: d.classNumber,
+        iitCategories: d.iitCategories,
+        interestedCourses: d.interestedCourses,
+        interestedSubjects: d.interestedSubjects,
+        isIndividualAccount: true,
+        subscriptionStatus: 'trial',
+        trialStartsAt: d.trialStartsAt,
+        trialEndsAt: d.trialEndsAt,
+        adminId: null,
+        isActive: true,
+        role: 'teacher',
+      });
+      await teacher.save();
+
+      const access = resolveIndividualAccess(teacher);
+      return res.status(201).json({
+        message: `Account created. Your ${d.trialDays}-day free trial has started.`,
+        user: {
+          id: teacher._id,
+          email: teacher.email,
+          fullName: teacher.fullName,
+          role: 'teacher',
+          schoolName: teacher.schoolName,
+          phone: teacher.phone,
+          classNumber: teacher.classNumber,
+          interestedCourses: teacher.interestedCourses,
+          interestedSubjects: teacher.interestedSubjects,
+          iitCategories: teacher.iitCategories,
+          ...access,
+        },
+      });
+    }
+
     const newUser = new User({
-      email,
+      email: d.email,
       password: hashedPassword,
-      fullName,
-      role
+      fullName: d.fullName,
+      role: 'student',
+      assignedAdmin: null,
+      ...trialFields,
+      isActive: true,
     });
-
     await newUser.save();
 
-    res.status(201).json({ 
-      message: 'User created successfully',
-      user: { 
-        id: newUser._id, 
-        email: newUser.email, 
-        fullName: newUser.fullName, 
-        role: newUser.role 
-      }
+    const access = resolveIndividualAccess(newUser);
+    return res.status(201).json({
+      message: `Account created. Your ${d.trialDays}-day free trial has started.`,
+      user: {
+        id: newUser._id,
+        email: newUser.email,
+        fullName: newUser.fullName,
+        role: newUser.role,
+        schoolName: newUser.schoolName,
+        phone: newUser.phone,
+        classNumber: newUser.classNumber,
+        interestedCourses: newUser.interestedCourses,
+        interestedSubjects: newUser.interestedSubjects,
+        iitCategories: newUser.iitCategories,
+        ...access,
+      },
     });
   } catch (error) {
     console.error('Registration error:', error);
@@ -1308,6 +1419,11 @@ app.post('/api/auth/login', async (req, res) => {
       if (isValidPassword && teacher.isActive) {
         // Update last login
         teacher.lastLogin = new Date();
+        const { resolveIndividualAccess } = await import('./utils/individualAccount.js');
+        const teacherAccess = resolveIndividualAccess(teacher);
+        if (teacher.isIndividualAccount && teacherAccess.paymentRequired && teacher.subscriptionStatus === 'trial') {
+          teacher.subscriptionStatus = 'expired';
+        }
         await teacher.save();
         
         const token = jwt.sign(
@@ -1341,7 +1457,15 @@ app.post('/api/auth/login', async (req, res) => {
             email: teacher.email,
             fullName: teacher.fullName,
             role: 'teacher',
-            subjects: subjects
+            subjects: subjects,
+            schoolName: teacher.schoolName || teacher.school || '',
+            phone: teacher.phone || '',
+            classNumber: teacher.classNumber || '',
+            interestedCourses: teacher.interestedCourses || [],
+            interestedSubjects: teacher.interestedSubjects || [],
+            iitCategories: teacher.iitCategories || [],
+            isIndividualAccount: Boolean(teacher.isIndividualAccount),
+            ...teacherAccess,
           }
         });
       }
@@ -1395,6 +1519,16 @@ app.post('/api/auth/login', async (req, res) => {
     // Update last login without triggering full document validation (avoids board enum validation)
     await User.findByIdAndUpdate(user._id, { lastLogin: new Date() }, { runValidators: false });
 
+    const { resolveIndividualAccess } = await import('./utils/individualAccount.js');
+    const access = resolveIndividualAccess(user);
+    if (user.isIndividualAccount && access.paymentRequired && user.subscriptionStatus === 'trial') {
+      await User.findByIdAndUpdate(
+        user._id,
+        { subscriptionStatus: 'expired' },
+        { runValidators: false }
+      );
+    }
+
     const token = jwt.sign(
       { 
         userId: user._id.toString(),
@@ -1414,7 +1548,15 @@ app.post('/api/auth/login', async (req, res) => {
         _id: user._id.toString(),
         email: user.email,
         fullName: user.fullName,
-        role: user.role
+        role: user.role,
+        schoolName: user.schoolName || '',
+        phone: user.phone || '',
+        classNumber: user.classNumber || '',
+        interestedCourses: user.interestedCourses || [],
+        interestedSubjects: user.interestedSubjects || [],
+        iitCategories: user.iitCategories || [],
+        isIndividualAccount: Boolean(user.isIndividualAccount),
+        ...access,
       }
     });
   } catch (error) {

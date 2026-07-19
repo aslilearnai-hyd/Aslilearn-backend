@@ -52,12 +52,45 @@ export function filterContentsByBoardForAsliPrep(contents, curriculumBoard) {
   });
 }
 
-export function applySchoolProgramContentFilters(contents, { isAsliPrepExclusive, curriculumBoard }) {
+export function applySchoolProgramContentFilters(contents, { isAsliPrepExclusive, curriculumBoard, iitCategories, trialAllowedContentTypes }) {
   let rows = filterContentsBySchoolProgram(contents, isAsliPrepExclusive);
   if (isAsliPrepExclusive) {
     rows = filterContentsByBoardForAsliPrep(rows, curriculumBoard);
   }
+  rows = filterByProductCategory(rows, iitCategories);
+  rows = filterByTrialContentTypes(rows, trialAllowedContentTypes);
   return rows;
+}
+
+/** Super Admin trial restriction: if list is non-empty, only those types are visible. */
+export function filterByTrialContentTypes(rows, trialAllowedContentTypes) {
+  if (!Array.isArray(rows)) return [];
+  if (!Array.isArray(trialAllowedContentTypes) || trialAllowedContentTypes.length === 0) {
+    return rows;
+  }
+  const allowed = new Set(trialAllowedContentTypes.map((t) => String(t || '').trim()));
+  return rows.filter((row) => allowed.has(String(row?.type || '').trim()));
+}
+
+/**
+ * School sees general catalog (empty productCategory) plus assigned IIT tracks.
+ */
+export function filterByProductCategory(rows, schoolIitCategories) {
+  if (!Array.isArray(rows)) return [];
+  const allowed = new Set(
+    (Array.isArray(schoolIitCategories) ? schoolIitCategories : [])
+      .map((c) => String(c || '').toUpperCase().trim())
+      .filter(Boolean)
+  );
+  return rows.filter((row) => {
+    const cat = String(
+      row?.productCategory || row?.subject?.productCategory || ''
+    )
+      .toUpperCase()
+      .trim();
+    if (!cat) return true;
+    return allowed.has(cat);
+  });
 }
 
 export function isIitAiToolRequest({ board, gradeLevel, classNumber } = {}) {
@@ -113,28 +146,68 @@ export function getDefaultAiToolBoard(_isAsliPrepExclusive, curriculumBoard) {
 
 export async function getStudentSchoolProgramContext(userId) {
   const student = await User.findById(userId)
-    .populate('assignedAdmin', 'board curriculumBoard isAsliPrepExclusive')
+    .populate('assignedAdmin', 'board curriculumBoard isAsliPrepExclusive iitCategories')
+    .select(
+      'board curriculumBoard isAsliPrepExclusive iitCategories isIndividualAccount trialAllowedContentTypes trialAllowedAiTools assignedAdmin'
+    )
     .lean();
   if (!student) {
-    return { isAsliPrepExclusive: false, curriculumBoard: 'CBSE', adminBoard: '' };
+    return {
+      isAsliPrepExclusive: false,
+      curriculumBoard: 'CBSE',
+      adminBoard: '',
+      iitCategories: [],
+      trialAllowedContentTypes: [],
+      trialAllowedAiTools: [],
+    };
   }
-  const isAsliPrepExclusive = resolveIsAsliPrepExclusive(student, student.assignedAdmin);
+  const isAsliPrepExclusive =
+    resolveIsAsliPrepExclusive(student, student.assignedAdmin) ||
+    Boolean(student.isIndividualAccount);
   const curriculumBoard = resolveUserDisplayBoard(student, student.assignedAdmin) || 'CBSE';
   const adminBoard = student.assignedAdmin?.board || student.board || '';
-  return { isAsliPrepExclusive, curriculumBoard, adminBoard };
+  const iitCategories =
+    Array.isArray(student.iitCategories) && student.iitCategories.length
+      ? student.iitCategories
+      : Array.isArray(student.assignedAdmin?.iitCategories)
+        ? student.assignedAdmin.iitCategories
+        : [];
+  return {
+    isAsliPrepExclusive,
+    curriculumBoard,
+    adminBoard,
+    iitCategories,
+    trialAllowedContentTypes: Array.isArray(student.trialAllowedContentTypes)
+      ? student.trialAllowedContentTypes
+      : [],
+    trialAllowedAiTools: Array.isArray(student.trialAllowedAiTools)
+      ? student.trialAllowedAiTools
+      : [],
+  };
 }
 
 export async function getTeacherSchoolProgramContext(teacherId) {
-  const teacher = await Teacher.findById(teacherId).select('adminId board').lean();
+  const teacher = await Teacher.findById(teacherId)
+    .select(
+      'adminId board isIndividualAccount iitCategories curriculumBoard isAsliPrepExclusive trialAllowedContentTypes trialAllowedAiTools'
+    )
+    .lean();
   let admin = null;
   if (teacher?.adminId) {
     admin = await User.findById(teacher.adminId)
-      .select('board curriculumBoard isAsliPrepExclusive schoolName')
+      .select('board curriculumBoard isAsliPrepExclusive schoolName iitCategories')
       .lean();
   }
-  const teacherCtx = teacher ? { board: teacher.board, isAsliPrepExclusive: false } : null;
+  const teacherCtx = teacher
+    ? {
+        board: teacher.board,
+        isAsliPrepExclusive: Boolean(teacher.isAsliPrepExclusive || teacher.isIndividualAccount),
+        iitCategories: teacher.iitCategories,
+      }
+    : null;
   const isAsliPrepExclusive = resolveIsAsliPrepExclusive(teacherCtx, admin);
   const curriculumBoard =
+    teacher?.curriculumBoard ||
     admin?.curriculumBoard ||
     (admin?.board && admin.board !== 'ASLI_EXCLUSIVE_SCHOOLS' ? admin.board : '') ||
     (teacher?.board && teacher.board !== 'ASLI_EXCLUSIVE_SCHOOLS' ? teacher.board : '') ||
@@ -144,19 +217,31 @@ export async function getTeacherSchoolProgramContext(teacherId) {
     resolveUserDisplayBoard(admin, null) ||
     curriculumBoard ||
     'CBSE';
+  const iitCategories = Array.isArray(teacher?.iitCategories) && teacher.iitCategories.length
+    ? teacher.iitCategories
+    : Array.isArray(admin?.iitCategories)
+      ? admin.iitCategories
+      : [];
   return {
-    isAsliPrepExclusive,
+    isAsliPrepExclusive: isAsliPrepExclusive || Boolean(teacher?.isIndividualAccount),
     curriculumBoard: displayBoard,
     adminBoard: admin?.board || teacher?.board || '',
+    iitCategories,
+    trialAllowedContentTypes: Array.isArray(teacher?.trialAllowedContentTypes)
+      ? teacher.trialAllowedContentTypes
+      : [],
+    trialAllowedAiTools: Array.isArray(teacher?.trialAllowedAiTools)
+      ? teacher.trialAllowedAiTools
+      : [],
   };
 }
 
 export async function getAdminSchoolProgramContext(adminId) {
   const admin = await User.findById(adminId)
-    .select('board curriculumBoard isAsliPrepExclusive')
+    .select('board curriculumBoard isAsliPrepExclusive iitCategories')
     .lean();
   if (!admin) {
-    return { isAsliPrepExclusive: false, curriculumBoard: 'CBSE', adminBoard: '' };
+    return { isAsliPrepExclusive: false, curriculumBoard: 'CBSE', adminBoard: '', iitCategories: [] };
   }
   const isAsliPrepExclusive = resolveIsAsliPrepExclusive(admin, null);
   const curriculumBoard = resolveUserDisplayBoard(admin, null) || 'CBSE';
@@ -164,5 +249,6 @@ export async function getAdminSchoolProgramContext(adminId) {
     isAsliPrepExclusive,
     curriculumBoard,
     adminBoard: admin.board || '',
+    iitCategories: Array.isArray(admin.iitCategories) ? admin.iitCategories : [],
   };
 }

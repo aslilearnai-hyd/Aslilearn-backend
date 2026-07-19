@@ -140,7 +140,17 @@ export function assembleSixSectionPrompt(toolSlug, params = {}, opts = {}) {
   const isMultiSubtopic = subTopicList.length > 1;
   const subtopicLine = isMultiSubtopic
     ? `Subtopics (COMBINED — cover ALL): ${subTopicList.join(' | ')}`
-    : `Subtopic: ${params.subTopic || params.subtopic || subTopicList[0] || ''}`;
+    : params.chapterScope || !(params.subTopic || params.subtopic || subTopicList[0])
+      ? 'Subtopic: (whole chapter — cover the full Chapter/Topic)'
+      : `Subtopic: ${params.subTopic || params.subtopic || subTopicList[0] || ''}`;
+
+  const composition =
+    params.questionComposition && typeof params.questionComposition === 'object'
+      ? params.questionComposition
+      : null;
+  const compositionLine = composition
+    ? `Question composition: MCQ=${composition.mcq ?? 0}, VSAQ=${composition.vsaq ?? 0}, SAQ=${composition.saq ?? 0}, LAQ=${composition.laq ?? 0}, FIB=${composition.fib ?? 0}`
+    : '';
 
   const userBlock = [
     'USER PARAMETERS',
@@ -149,7 +159,11 @@ export function assembleSixSectionPrompt(toolSlug, params = {}, opts = {}) {
     `Subject: ${params.subject || ''}`,
     `Chapter/Topic: ${params.topic || ''}`,
     subtopicLine,
-  ].join('\n');
+    compositionLine,
+    params.productCategory ? `IIT product category: ${params.productCategory}` : '',
+  ]
+    .filter(Boolean)
+    .join('\n');
 
   const multiSubtopicBlock = isMultiSubtopic
     ? [

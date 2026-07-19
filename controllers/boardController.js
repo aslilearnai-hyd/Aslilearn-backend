@@ -7,6 +7,11 @@ import ExamResult from '../models/ExamResult.js';
 import User from '../models/User.js';
 import Teacher from '../models/Teacher.js';
 import { VALID_SCHOOL_BOARDS, CURRICULUM_BOARDS, isValidSchoolBoard } from '../constants/boards.js';
+import {
+  formatIitCategoryLabel,
+  normalizeIitCategory,
+  PRODUCT_CATEGORY_NONE,
+} from '../constants/products.js';
 import { subjectDisplayName, softDeleteSubject } from '../utils/subjectDelete.js';
 import { isSoftDeletedSubjectName } from '../utils/activeCatalog.js';
 import {
@@ -37,8 +42,9 @@ function normalizedStateNameForBoard(boardUpper, rawStateName) {
 }
 
 /** Active subject lookup: STATE rows match exact stateName; others match empty/missing stateName. */
-function findActiveSubjectByIdentity(name, boardUpper, stateForDb) {
-  const base = { name, board: boardUpper, isActive: true };
+function findActiveSubjectByIdentity(name, boardUpper, stateForDb, productCategory = PRODUCT_CATEGORY_NONE) {
+  const cat = normalizeIitCategory(productCategory);
+  const base = { name, board: boardUpper, isActive: true, productCategory: cat };
   if (stateForDb) {
     return Subject.findOne({ ...base, stateName: stateForDb });
   }
@@ -63,18 +69,22 @@ function parseSubjectNameParts(name, classNumberField) {
 }
 
 /** Case-insensitive identity for duplicate detection (MATHS_6 vs Maths_6). */
-function subjectCatalogIdentityKey(name, boardUpper, stateForDb, classNumberField) {
+function subjectCatalogIdentityKey(name, boardUpper, stateForDb, classNumberField, productCategory = PRODUCT_CATEGORY_NONE) {
   const { plain, classNum } = parseSubjectNameParts(name, classNumberField);
   const stateKey = stateForDb ? String(stateForDb).trim().toLowerCase() : '';
-  return `${plain.trim().toLowerCase()}|${classNum}|${boardUpper}|${stateKey}`;
+  const cat = normalizeIitCategory(productCategory) || '';
+  return `${plain.trim().toLowerCase()}|${classNum}|${boardUpper}|${stateKey}|${cat}`;
 }
 
-async function findActiveSubjectsForBoardState(boardUpper, stateForDb) {
+async function findActiveSubjectsForBoardState(boardUpper, stateForDb, productCategory = null) {
   const base = {
     board: boardUpper,
     isActive: true,
     name: { $not: /__deleted__/ },
   };
+  if (productCategory !== null && productCategory !== undefined) {
+    base.productCategory = normalizeIitCategory(productCategory);
+  }
   if (stateForDb) {
     return Subject.find({ ...base, stateName: stateForDb });
   }
@@ -95,7 +105,8 @@ function findActiveSubjectByCatalogIdentity(peers, identityKey, excludeId) {
         row.name,
         String(row.board || '').toUpperCase(),
         row.stateName,
-        row.classNumber
+        row.classNumber,
+        row.productCategory
       ) === identityKey
   );
 }
@@ -502,9 +513,9 @@ export const createSubject = async (req, res) => {
     console.log('Request body:', req.body);
     console.log('User:', req.user);
     
-    const { name, board, description, code, classNumber, stateName: rawStateName } = req.body;
+    const { name, board, description, code, classNumber, stateName: rawStateName, productCategory: rawProductCategory } = req.body;
 
-    console.log('📚 Creating subject:', { name, board, description, code, classNumber, stateName: rawStateName });
+    console.log('📚 Creating subject:', { name, board, description, code, classNumber, stateName: rawStateName, productCategory: rawProductCategory });
 
     if (!name || !board) {
       return res.status(400).json({ success: false, message: 'Name and board are required' });
@@ -526,20 +537,38 @@ export const createSubject = async (req, res) => {
       });
     }
 
+    const productCategory = normalizeIitCategory(rawProductCategory);
+    const categoryLabel = productCategory
+      ? ` and IIT ${formatIitCategoryLabel(productCategory)}`
+      : '';
+
     // Active duplicate check only (soft-deleted subjects can be recreated/reused).
     const normalizedName = name.trim();
     const normalizedCode = code?.trim() || '';
-    const existingActiveByName = await findActiveSubjectByIdentity(normalizedName, boardUpper, stateForDb);
+    const existingActiveByName = await findActiveSubjectByIdentity(
+      normalizedName,
+      boardUpper,
+      stateForDb,
+      productCategory
+    );
     if (existingActiveByName) {
-      return res.status(400).json({ success: false, message: 'Subject already exists for this board and state' });
+      return res.status(400).json({
+        success: false,
+        message: `Subject already exists for this board and state${categoryLabel}`,
+      });
     }
 
-    const catalogPeers = await findActiveSubjectsForBoardState(boardUpper, stateForDb);
+    const catalogPeers = await findActiveSubjectsForBoardState(
+      boardUpper,
+      stateForDb,
+      productCategory
+    );
     const newIdentity = subjectCatalogIdentityKey(
       normalizedName,
       boardUpper,
       stateForDb,
-      classNumber
+      classNumber,
+      productCategory
     );
     const existingByCatalogIdentity = findActiveSubjectByCatalogIdentity(
       catalogPeers,
@@ -549,7 +578,7 @@ export const createSubject = async (req, res) => {
     if (existingByCatalogIdentity) {
       return res.status(400).json({
         success: false,
-        message: 'Subject already exists for this board and state (name may differ only by letter case)',
+        message: `Subject already exists for this board and state${categoryLabel} (name may differ only by letter case)`,
       });
     }
 
@@ -586,12 +615,14 @@ export const createSubject = async (req, res) => {
         isActive: false,
         name: reviveNamePattern,
         stateName: stateForDb,
+        productCategory,
       };
     } else {
       reviveQuery = {
         board: boardUpper,
         isActive: false,
         name: reviveNamePattern,
+        productCategory,
         $or: [{ stateName: '' }, { stateName: { $exists: false } }],
       };
     }
@@ -602,6 +633,7 @@ export const createSubject = async (req, res) => {
       if (description !== undefined) existingInactive.description = description?.trim() || '';
       if (classNumber !== undefined) existingInactive.classNumber = classNumber?.trim() || undefined;
       existingInactive.stateName = stateForDb;
+      existingInactive.productCategory = productCategory;
       existingInactive.isActive = true;
       await existingInactive.save();
 
@@ -619,6 +651,7 @@ export const createSubject = async (req, res) => {
       name: normalizedName,
       board: boardUpper,
       stateName: stateForDb,
+      productCategory,
       createdBy: 'super-admin' // Required by schema enum
     };
 
@@ -739,17 +772,23 @@ export const deleteSubject = async (req, res) => {
       subject.name,
       boardUpper,
       stateForDb,
-      subject.classNumber
+      subject.classNumber,
+      subject.productCategory
     );
 
-    const peers = await findActiveSubjectsForBoardState(boardUpper, stateForDb);
+    const peers = await findActiveSubjectsForBoardState(
+      boardUpper,
+      stateForDb,
+      subject.productCategory
+    );
     const toDelete = peers.filter(
       (row) =>
         subjectCatalogIdentityKey(
           row.name,
           boardUpper,
           stateForDb,
-          row.classNumber
+          row.classNumber,
+          row.productCategory
         ) === identityKey
     );
 
@@ -781,7 +820,7 @@ export const deleteSubject = async (req, res) => {
 export const updateSubject = async (req, res) => {
   try {
     const { subjectId } = req.params;
-    const { name, description, classNumber, board: rawBoard, stateName: rawStateName } = req.body;
+    const { name, description, classNumber, board: rawBoard, stateName: rawStateName, productCategory: rawProductCategory } = req.body;
 
     if (!subjectId || !mongoose.Types.ObjectId.isValid(subjectId)) {
       return res.status(400).json({ success: false, message: 'Invalid subject ID' });
@@ -818,15 +857,33 @@ export const updateSubject = async (req, res) => {
       });
     }
 
-    const catalogPeers = await findActiveSubjectsForBoardState(boardUpper, stateForDb);
+    const productCategory =
+      rawProductCategory !== undefined
+        ? normalizeIitCategory(rawProductCategory)
+        : normalizeIitCategory(subject.productCategory);
+    const categoryLabel = productCategory
+      ? ` and IIT ${formatIitCategoryLabel(productCategory)}`
+      : '';
+
+    const catalogPeers = await findActiveSubjectsForBoardState(
+      boardUpper,
+      stateForDb,
+      productCategory
+    );
     const targetIdentity = subjectCatalogIdentityKey(
       updatedName,
       boardUpper,
       stateForDb,
-      classNumber !== undefined ? classNumber : subject.classNumber
+      classNumber !== undefined ? classNumber : subject.classNumber,
+      productCategory
     );
 
-    const exactDup = await findActiveSubjectByIdentity(updatedName, boardUpper, stateForDb);
+    const exactDup = await findActiveSubjectByIdentity(
+      updatedName,
+      boardUpper,
+      stateForDb,
+      productCategory
+    );
     const catalogDup = findActiveSubjectByCatalogIdentity(
       catalogPeers,
       targetIdentity,
@@ -843,13 +900,14 @@ export const updateSubject = async (req, res) => {
           conflicting.name,
           boardUpper,
           stateForDb,
-          conflicting.classNumber
+          conflicting.classNumber,
+          conflicting.productCategory
         ) === targetIdentity;
 
       if (!sameCatalogIdentity) {
         return res.status(400).json({
           success: false,
-          message: 'Another subject with this name already exists for this board and state',
+          message: `Another subject with this name already exists for this board and state${categoryLabel}`,
         });
       }
 
@@ -866,6 +924,7 @@ export const updateSubject = async (req, res) => {
 
       conflicting.name = updatedName;
       conflicting.stateName = stateForDb;
+      conflicting.productCategory = productCategory;
       if (description !== undefined) {
         conflicting.description = description?.trim() || '';
       }
@@ -883,6 +942,7 @@ export const updateSubject = async (req, res) => {
 
     subject.name = updatedName;
     subject.stateName = stateForDb;
+    subject.productCategory = productCategory;
     if (description !== undefined) {
       subject.description = description?.trim() || '';
     }
@@ -997,6 +1057,7 @@ export const uploadContent = async (req, res) => {
       size,
       deadline,
       stateName: rawContentState,
+      productCategory: rawProductCategory,
     } = req.body;
     const moduleLabel = req.body.module ?? req.body.moduleName;
     const normalizedType = normalizeContentType(type);
@@ -1103,11 +1164,18 @@ export const uploadContent = async (req, res) => {
       });
     }
 
+    const contentProductCategory =
+      rawProductCategory !== undefined && rawProductCategory !== null && String(rawProductCategory).trim() !== ''
+        ? normalizeIitCategory(rawProductCategory)
+        : normalizeIitCategory(subjectDoc.productCategory);
+
     const contentData = {
       title: title.trim(),
       description: description?.trim() || undefined,
       type: normalizedType,
       board: boardNorm,
+      stateName: contentStateNorm || '',
+      productCategory: contentProductCategory,
       subject,
       topic: topic?.trim() || undefined,
       chapter: normalizedType === 'Video' ? normalizeVideoNumber(chapter) : undefined,

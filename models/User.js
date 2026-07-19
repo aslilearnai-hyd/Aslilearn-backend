@@ -128,6 +128,62 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false
   },
+  /** Assigned IIT product tracks (mirrored from School for admins). */
+  iitCategories: {
+    type: [{ type: String, enum: ['ALPHA', 'BETA', 'GAMMA'], uppercase: true }],
+    default: [],
+  },
+  /** True for B2C / single-user teacher or student signups (not school-managed). */
+  isIndividualAccount: {
+    type: Boolean,
+    default: false,
+  },
+  /** Courses the individual selected at signup (e.g. IIT Foundation, NEET, CBSE). */
+  interestedCourses: {
+    type: [String],
+    default: [],
+  },
+  /** Subject names the individual selected at signup. */
+  interestedSubjects: {
+    type: [String],
+    default: [],
+  },
+  /** trial | active | expired | none */
+  subscriptionStatus: {
+    type: String,
+    enum: ['trial', 'active', 'expired', 'none'],
+    default: 'none',
+  },
+  trialStartsAt: {
+    type: Date,
+    default: null,
+  },
+  trialEndsAt: {
+    type: Date,
+    default: null,
+  },
+  /**
+   * Super Admin: which content types this individual trial account may access.
+   * Empty = use default program rules (no extra restriction).
+   */
+  trialAllowedContentTypes: {
+    type: [String],
+    default: [],
+  },
+  /**
+   * Super Admin: which AI tool slugs this trial account may use.
+   * Empty = all tools allowed (subject to trial payment status).
+   */
+  trialAllowedAiTools: {
+    type: [String],
+    default: [],
+  },
+  /** Super Admin notes for trial member. */
+  trialAdminNotes: {
+    type: String,
+    trim: true,
+    default: '',
+  },
   // School name for admins
   schoolName: {
     type: String,
@@ -227,6 +283,8 @@ userSchema.index({ role: 1, board: 1 }); // Compound index for role + board quer
 userSchema.index({ role: 1, isActive: 1 }); // For active user queries
 userSchema.index({ role: 1, assignedAdmin: 1, isActive: 1 }); // Compound for admin's active students
 userSchema.index({ assignedClass: 1 }); // For class-based queries
+userSchema.index({ isIndividualAccount: 1, subscriptionStatus: 1 });
+userSchema.index({ trialEndsAt: 1 });
 userSchema.index({ email: 1 }); // For email lookups
 
 export default mongoose.model('User', userSchema);

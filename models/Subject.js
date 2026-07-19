@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import { VALID_SCHOOL_BOARDS } from '../constants/boards.js';
+import { IIT_CATEGORIES, PRODUCT_CATEGORY_NONE } from '../constants/products.js';
 
 const subjectSchema = new mongoose.Schema({
   name: {
@@ -23,6 +24,14 @@ const subjectSchema = new mongoose.Schema({
     type: String,
     trim: true,
     default: ''
+  },
+  /** IIT track (ALPHA/BETA/GAMMA); empty = general curriculum subject. */
+  productCategory: {
+    type: String,
+    enum: [...IIT_CATEGORIES, PRODUCT_CATEGORY_NONE],
+    uppercase: true,
+    default: PRODUCT_CATEGORY_NONE,
+    trim: true,
   },
   classNumber: {
     type: String,
@@ -56,9 +65,10 @@ const subjectSchema = new mongoose.Schema({
   timestamps: true
 });
 
-// Unique subject per board + state (STATE syllabus differentiates by stateName)
-subjectSchema.index({ name: 1, board: 1, stateName: 1 }, { unique: true });
+// Unique subject per board + state + IIT product category
+subjectSchema.index({ name: 1, board: 1, stateName: 1, productCategory: 1 }, { unique: true });
 subjectSchema.index({ board: 1 });
+subjectSchema.index({ productCategory: 1 });
 subjectSchema.index({ classNumber: 1 });
 subjectSchema.index({ board: 1, classNumber: 1 });
 subjectSchema.index({ classIds: 1 });

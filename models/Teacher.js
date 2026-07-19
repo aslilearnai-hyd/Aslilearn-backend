@@ -57,7 +57,66 @@ const teacherSchema = new mongoose.Schema({
   adminId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
-    required: true
+    required: false,
+    default: null,
+  },
+  /** B2C / single-user teacher (no school admin). */
+  isIndividualAccount: {
+    type: Boolean,
+    default: false,
+  },
+  schoolName: {
+    type: String,
+    trim: true,
+    default: '',
+  },
+  classNumber: {
+    type: String,
+    trim: true,
+    default: '',
+  },
+  curriculumBoard: {
+    type: String,
+    uppercase: true,
+    default: 'CBSE',
+  },
+  iitCategories: {
+    type: [{ type: String, enum: ['ALPHA', 'BETA', 'GAMMA'], uppercase: true }],
+    default: [],
+  },
+  interestedCourses: {
+    type: [String],
+    default: [],
+  },
+  interestedSubjects: {
+    type: [String],
+    default: [],
+  },
+  subscriptionStatus: {
+    type: String,
+    enum: ['trial', 'active', 'expired', 'none'],
+    default: 'none',
+  },
+  trialStartsAt: {
+    type: Date,
+    default: null,
+  },
+  trialEndsAt: {
+    type: Date,
+    default: null,
+  },
+  trialAllowedContentTypes: {
+    type: [String],
+    default: [],
+  },
+  trialAllowedAiTools: {
+    type: [String],
+    default: [],
+  },
+  trialAdminNotes: {
+    type: String,
+    trim: true,
+    default: '',
   },
   isActive: {
     type: Boolean,

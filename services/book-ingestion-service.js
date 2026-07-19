@@ -15,6 +15,43 @@ import {
   lockBoardKey,
   resolveClassLabelForAiToolStorage,
 } from '../utils/board-label.js';
+import { normalizeIitCategory } from '../constants/products.js';
+
+let bookContentIdIndexReady = false;
+
+/** Drop legacy unique-on-null contentId index; allow many PDF uploads without Content link. */
+export async function ensureBookContentIdIndex() {
+  if (bookContentIdIndexReady) return;
+  try {
+    const coll = Book.collection;
+    await coll.updateMany(
+      { $or: [{ contentId: null }, { contentId: { $type: 'null' } }] },
+      { $unset: { contentId: '' } }
+    );
+    for (const name of ['contentId_1', 'contentId_1_sparse']) {
+      try {
+        await coll.dropIndex(name);
+      } catch {
+        /* missing */
+      }
+    }
+    const indexes = await coll.indexes();
+    const hasPartial = indexes.some((i) => i.name === 'contentId_1_partial');
+    if (!hasPartial) {
+      await coll.createIndex(
+        { contentId: 1 },
+        {
+          unique: true,
+          name: 'contentId_1_partial',
+          partialFilterExpression: { contentId: { $exists: true, $type: 'objectId' } },
+        }
+      );
+    }
+    bookContentIdIndexReady = true;
+  } catch (err) {
+    console.warn('ensureBookContentIdIndex:', err.message);
+  }
+}
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const BOOK_UPLOAD_DIR = path.join(__dirname, '..', 'uploads', 'book-knowledge');
@@ -218,7 +255,9 @@ export async function createBookFromUpload({
   source,
   uploadedBy,
   uploadedByRole,
+  productCategory,
 }) {
+  await ensureBookContentIdIndex();
   await ensureUploadDir();
   const safeName = `${Date.now()}-${Math.round(Math.random() * 1e9)}${path.extname(originalName || '.pdf')}`;
   const localPath = path.join(BOOK_UPLOAD_DIR, safeName);
@@ -251,6 +290,7 @@ export async function createBookFromUpload({
     board: board || 'CBSE',
     class: classLabel,
     subject,
+    productCategory: normalizeIitCategory(productCategory),
     topic: String(topic || '').trim(),
     subtopic: String(subtopic || '').trim(),
     source: source || 'textbook',
@@ -552,6 +592,7 @@ export async function listImportableLearningContent({ board, type, imported } = 
 
 /** Create a Book from an existing learning-path Content row (reuses file, no re-upload). */
 export async function createBookFromContent({ contentId, uploadedBy, uploadedByRole }) {
+  await ensureBookContentIdIndex();
   const content = await Content.findById(contentId).lean();
   if (!content) throw new Error('Content not found.');
   if (!IMPORTABLE_CONTENT_TYPES.has(content.type)) {

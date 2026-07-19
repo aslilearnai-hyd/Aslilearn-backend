@@ -641,6 +641,7 @@ export const getAdminSchoolDetail = async (req, res) => {
         (isStoredCurriculumBoard(admin.board) ? String(admin.board).toUpperCase().trim() : 'CBSE'),
       isAsliPrepExclusive:
         admin.isAsliPrepExclusive === true || admin.board === 'ASLI_EXCLUSIVE_SCHOOLS',
+      iitCategories: Array.isArray(admin.iitCategories) ? admin.iitCategories : [],
       status: admin.isActive ? 'Active' : 'Inactive',
       joinDate: admin.createdAt,
     };
