@@ -487,8 +487,10 @@ export async function generateAndSaveContent(req, res) {
               isBatchVariant: Boolean(isBatchVariant),
               variantHint: v2VariantHint || undefined,
               avoidQuestions: uniquenessCtx.batchTexts.slice(0, 40),
-              maxTries: 2,
-              llmAudit: undefined,
+              maxTries: 1,
+              llmAudit: false,
+              skipIndianNotation: true,
+              skipLegacyScaffold: true,
               softKeepOnQualityFail: false,
             },
           );

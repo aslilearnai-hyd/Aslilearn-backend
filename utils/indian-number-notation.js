@@ -1,11 +1,18 @@
 /**
- * Indian place-value notation for Class 6–8 Maths (and similar).
- * Western: 1,234,567  →  Indian: 12,34,567
- * Also normalises place names: million→ten lakh, billion→hundred crore, etc.
+ * Indian place-value notation helpers for Class 6–8 Maths.
+ *
+ * CRITICAL: never rewrite numbers that are already Indian-grouped
+ * (e.g. 10,00,000). A naive Western regex matches the trailing ",00,000"
+ * and collapses it to "10,0" — that regression showed up in client audits.
+ *
+ * Safe policy:
+ * - Convert only CLEAR Western groupings with 2+ groups of exactly 3
+ *   (e.g. 1,234,567 → 12,34,567).
+ * - Leave 2-part forms alone (10,000 / 1,000 — same in both systems).
+ * - Do not touch bare integers inside place-value / power-of-ten expressions.
  */
 
-const WESTERN_GROUPED_RE = /\b\d{1,3}(?:,\d{3})+\b/g;
-const BARE_LARGE_INT_RE = /\b([1-9]\d{4,14})\b/g;
+const CLEAR_WESTERN_RE = /\b\d{1,3}(?:,\d{3}){2,}\b/g;
 
 /** Format a non-negative integer with Indian comma grouping. */
 export function formatIndianNumber(n) {
@@ -30,13 +37,34 @@ export function parseGroupedInteger(raw) {
   return Number.isSafeInteger(n) ? n : null;
 }
 
-function rewriteWesternGrouped(match) {
+/** True when every group after the first is exactly 3 digits (Western). */
+export function isClearWesternGrouping(s) {
+  const parts = String(s || '').split(',');
+  if (parts.length < 3) return false; // 10,000 is ambiguous — leave alone
+  if (!/^\d{1,3}$/.test(parts[0])) return false;
+  return parts.slice(1).every((p) => /^\d{3}$/.test(p));
+}
+
+/** Detect broken / corrupted place-value comma patterns from bad rewrites. */
+export function hasBrokenIndianNotation(text) {
+  const t = String(text || '');
+  // e.g. 3 x 10,0  or  7 × 10,00
+  if (/\d\s*[x×*]\s*10,\d{1,2}(?!\d)/i.test(t)) return true;
+  // e.g. 9,4,027 or 2,1,009 (single-digit middle group)
+  if (/\b\d{1,2},\d,\d{3}\b/.test(t)) return true;
+  // e.g. 3 x 1,00,0 (truncated Indian period)
+  if (/\d\s*[x×*]\s*\d{1,2},\d{2},\d(?!\d)/i.test(t)) return true;
+  return false;
+}
+
+function rewriteClearWestern(match) {
+  if (!isClearWesternGrouping(match)) return match;
   const n = parseGroupedInteger(match);
   if (n == null) return match;
   return formatIndianNumber(n);
 }
 
-/** Prefer Indian place-name vocabulary in prose (case-preserving light touch). */
+/** Prefer Indian place-name vocabulary in prose (light touch). */
 function rewritePlaceNames(text) {
   return String(text || '')
     .replace(/\bten\s+millions?\b/gi, 'crore')
@@ -46,23 +74,32 @@ function rewritePlaceNames(text) {
     .replace(/\bone\s+million\b/gi, 'ten lakh')
     .replace(/\ba\s+million\b/gi, 'ten lakh')
     .replace(/\bmillions?\b/gi, 'ten lakh')
-    .replace(/\bhundred\s+thousands?\b/gi, 'lakh')
-    .replace(/\bten\s+thousands?\b/gi, 'ten thousand');
+    .replace(/\bhundred\s+thousands?\b/gi, 'lakh');
 }
 
 /**
- * Convert Western thousands commas → Indian grouping in free text.
- * Leaves decimals and very short numbers alone.
+ * Convert CLEAR Western thousands commas → Indian grouping.
+ * Does NOT rewrite bare integers (avoids breaking 10000 in "3 x 10000").
+ * Does NOT rewrite already-Indian numbers.
  */
 export function standardizeIndianNumberText(text, { rewriteNames = true } = {}) {
   let t = String(text || '');
-  t = t.replace(WESTERN_GROUPED_RE, rewriteWesternGrouped);
-  // Bare 5+ digit integers without commas → Indian commas (skip years 1900–2099).
-  t = t.replace(BARE_LARGE_INT_RE, (m) => {
-    const n = Number(m);
-    if (n >= 1900 && n <= 2099) return m;
-    return formatIndianNumber(n);
-  });
+  // Protect place-value / power-of-ten expressions from any rewrite.
+  const shields = [];
+  t = t.replace(
+    /(\d+\s*[x×*]\s*10(?:\s*\^\s*\d+|\s*to\s+the\s+power\s+\d+)?|\b10\s*\^\s*\d+)/gi,
+    (m) => {
+      const i = shields.length;
+      shields.push(m);
+      return `\u0000SHIELD${i}\u0000`;
+    },
+  );
+
+  t = t.replace(CLEAR_WESTERN_RE, rewriteClearWestern);
+
+  for (let i = 0; i < shields.length; i += 1) {
+    t = t.split(`\u0000SHIELD${i}\u0000`).join(shields[i]);
+  }
   if (rewriteNames) t = rewritePlaceNames(t);
   return t;
 }
@@ -78,7 +115,7 @@ function deepMapStrings(val, fn) {
   return val;
 }
 
-/** Apply Indian number notation across a V2 structuredContent tree. */
+/** Apply safe Indian number notation across a V2 structuredContent tree. */
 export function applyIndianNotationToStructured(structured, opts = {}) {
   if (!structured || typeof structured !== 'object') return structured;
   return deepMapStrings(structured, (s) => standardizeIndianNumberText(s, opts));
@@ -87,7 +124,7 @@ export function applyIndianNotationToStructured(structured, opts = {}) {
 /** True when class is typically taught with Indian system emphasis (6–8). */
 export function shouldUseIndianNotation(classLabel, subject = '') {
   const cls = Number(String(classLabel || '').replace(/[^0-9]/g, ''));
-  if (!Number.isFinite(cls) || cls < 1) return true; // default on for school content
+  if (!Number.isFinite(cls) || cls < 1) return true;
   if (cls >= 6 && cls <= 10) return true;
   const sub = String(subject || '').toLowerCase();
   return /math|mathematics|arith/.test(sub) && cls <= 12;
@@ -96,6 +133,8 @@ export function shouldUseIndianNotation(classLabel, subject = '') {
 export default {
   formatIndianNumber,
   parseGroupedInteger,
+  isClearWesternGrouping,
+  hasBrokenIndianNotation,
   standardizeIndianNumberText,
   applyIndianNotationToStructured,
   shouldUseIndianNotation,

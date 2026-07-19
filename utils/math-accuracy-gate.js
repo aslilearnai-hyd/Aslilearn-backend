@@ -4,7 +4,7 @@
  * answer letters that don't match options, and simple arithmetic mismatches.
  */
 
-import { parseGroupedInteger } from './indian-number-notation.js';
+import { parseGroupedInteger, hasBrokenIndianNotation } from './indian-number-notation.js';
 
 const SELF_CONTRADICTION_RE =
   /\b(wait[,!]?\s*(recalculate|correct|fix)|oops|i\s+made\s+a\s+mistake|correction\s*:|actually\s+the\s+answer|recalculat(e|ing)|wrong[,.]?\s*it\s+should)/i;
@@ -110,6 +110,11 @@ export function validateMathAccuracy(structured) {
   const errors = [];
   const warnings = [];
   if (!structured?.core) return { valid: true, errors, warnings };
+
+  const allText = JSON.stringify(structured);
+  if (hasBrokenIndianNotation(allText)) {
+    errors.push('Broken Indian place-value notation in content (e.g. 10,0 / 9,4,027)');
+  }
 
   const questions = walkCoreQuestions(structured.core);
   const keys = answerKeyRows(structured.assessment);

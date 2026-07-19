@@ -6,8 +6,8 @@ function getBookRagMaxContextChars() {
   const env = Number(process.env.BOOK_RAG_MAX_CONTEXT_CHARS);
   if (Number.isFinite(env) && env > 0) return env;
   const costSaver =
-    String(process.env.AI_GENERATOR_COST_SAVER ?? 'true').trim().toLowerCase() !== 'false' &&
-    String(process.env.AI_GENERATOR_COST_SAVER ?? 'true').trim().toLowerCase() !== '0';
+    String(process.env.AI_GENERATOR_COST_SAVER ?? 'false').trim().toLowerCase() === 'true' ||
+    String(process.env.AI_GENERATOR_COST_SAVER ?? 'false').trim().toLowerCase() === '1';
   return costSaver ? 10000 : 18000;
 }
 
@@ -236,7 +236,11 @@ function mergeChunkLists(lists = [], scope = {}, topK = DEFAULT_TOP_K) {
 
 export async function retrieveBookContextForGeneration(scope = {}) {
   const query = buildBookRetrievalQuery(scope);
-  const topK = Math.max(Number(scope.topK) || DEFAULT_TOP_K, 6);
+  // Stable Flash-Lite path: single semantic query, modest topK (deep RAG caused chapter bleed).
+  const deepRag =
+    String(process.env.BOOK_RAG_DEEP ?? 'off').trim().toLowerCase() === 'on' ||
+    String(process.env.BOOK_RAG_DEEP ?? 'off').trim().toLowerCase() === 'true';
+  const topK = Number(scope.topK) || DEFAULT_TOP_K;
   const { embedding: queryEmbedding } = await generateEmbedding(query);
 
   const baseSearch = (extra = {}, q = query, emb = queryEmbedding) =>
@@ -252,30 +256,6 @@ export async function retrieveBookContextForGeneration(scope = {}) {
   const topic = scope.topicName || scope.topic || '';
   const subtopic = scope.subtopicName || scope.subtopic || '';
 
-  // Parallel deep retrieval: base semantic + Concept Practice / error / exercise few-shots.
-  const practiceQueryTexts = [
-    [topic, subtopic, 'Concept Practice'].filter(Boolean).join(' '),
-    [topic, subtopic, 'common errors mistakes misconceptions'].filter(Boolean).join(' '),
-    [topic, subtopic, 'worked example exercise numerical'].filter(Boolean).join(' '),
-    [query, 'place value Indian system International'].filter(Boolean).join(' '),
-  ].filter((q) => q && q.trim().length > 8);
-
-  const practiceSearches = await Promise.all(
-    // One practice query by default (was 3) — embeddings are billed; widen below if empty.
-    practiceQueryTexts.slice(0, 1).map(async (pq) => {
-      try {
-        const { embedding } = await generateEmbedding(pq);
-        return baseSearch(
-          { board: scope.board, subject },
-          pq,
-          embedding,
-        );
-      } catch {
-        return [];
-      }
-    }),
-  );
-
   let primary = await baseSearch({ board: scope.board, subject });
   if (!primary.length) {
     primary = await baseSearch({ subject });
@@ -284,36 +264,42 @@ export async function retrieveBookContextForGeneration(scope = {}) {
     primary = await baseSearch();
   }
 
-  let chunks = mergeChunkLists([primary, ...practiceSearches], scope, topK);
+  let chunks = rerankBookChunks(primary, scope, topK);
+  let practiceQueryCount = 0;
 
-  // Soft subtopic filter: prefer chunks that mention the subtopic; keep practice chunks.
+  if (deepRag) {
+    const practiceQueryTexts = [
+      [topic, subtopic, 'Concept Practice'].filter(Boolean).join(' '),
+    ].filter((q) => q && q.trim().length > 8);
+    practiceQueryCount = practiceQueryTexts.length;
+    const practiceSearches = await Promise.all(
+      practiceQueryTexts.slice(0, 1).map(async (pq) => {
+        try {
+          const { embedding } = await generateEmbedding(pq);
+          return baseSearch({ board: scope.board, subject }, pq, embedding);
+        } catch {
+          return [];
+        }
+      }),
+    );
+    chunks = mergeChunkLists([chunks, ...practiceSearches], scope, topK);
+  }
+
+  // Prefer subtopic-matching chunks when a subtopic is selected (reduces chapter bleed).
   if (subtopic && !scope.chapterScope) {
     const tokens = topicMatchTokens(subtopic);
     const preferred = chunks.filter((c) => {
       const text = String(c.content || c.chunkText || '').toLowerCase();
       const meta = String(c.subtopic || c.topic || '').toLowerCase();
-      if (practiceBoost(c) >= 0.1) return true;
       if (meta.includes(subtopic.toLowerCase())) return true;
       return tokens.some((t) => text.includes(t));
     });
-    if (preferred.length >= Math.min(3, chunks.length)) {
+    if (preferred.length >= Math.min(2, chunks.length)) {
       chunks = preferred.slice(0, topK);
     }
   }
 
-  // If no Concept Practice / worked-example grounding, widen search once.
-  let hasPracticeGrounding = chunks.some((c) => practiceBoost(c) >= 0.1);
-  if (!hasPracticeGrounding && (topic || subtopic)) {
-    try {
-      const widenQ = [topic, subtopic, 'example exercise practice questions'].filter(Boolean).join(' ');
-      const { embedding } = await generateEmbedding(widenQ);
-      const extra = await baseSearch({ board: scope.board, subject }, widenQ, embedding);
-      chunks = mergeChunkLists([chunks, extra], scope, Math.max(topK, 10));
-      hasPracticeGrounding = chunks.some((c) => practiceBoost(c) >= 0.1);
-    } catch {
-      /* keep existing chunks */
-    }
-  }
+  const hasPracticeGrounding = chunks.some((c) => practiceBoost(c) >= 0.1);
 
   const bookContext = formatBookContextForPrompt(chunks, {
     bookTitle: scope.bookTitle,
@@ -331,7 +317,7 @@ export async function retrieveBookContextForGeneration(scope = {}) {
     hasBookPassages: chunks.length > 0,
     hasPracticeGrounding,
     retrievalQuery: query,
-    practiceQueryCount: practiceQueryTexts.length,
+    practiceQueryCount,
   };
 }
 
@@ -345,8 +331,8 @@ export function buildBookContextTextForVariant(ragBase, scope = {}, variantIndex
     return ragBase?.contextText || curriculumBlock;
   }
 
-  // Prefer a moderate window (cost vs grounding). Override with BOOK_RAG_TOP_K.
-  const windowSize = Math.max(3, Math.min(5, Math.max(DEFAULT_TOP_K, 4)));
+  // Prefer a tight window (stable Flash-Lite path). Override with BOOK_RAG_TOP_K.
+  const windowSize = Math.max(2, Math.min(4, DEFAULT_TOP_K));
   const stride = Math.max(1, Math.floor(windowSize / 2));
   const start = ((Math.max(1, variantIndex) - 1) * stride) % chunks.length;
   const selected = [];
