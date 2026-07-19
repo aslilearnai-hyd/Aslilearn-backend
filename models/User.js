@@ -128,9 +128,9 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false
   },
-  /** Assigned IIT product tracks (mirrored from School for admins). */
+  /** Assigned IIT / product tracks (mirrored from School for admins; custom codes allowed). */
   iitCategories: {
-    type: [{ type: String, enum: ['ALPHA', 'BETA', 'GAMMA'], uppercase: true }],
+    type: [{ type: String, uppercase: true, trim: true }],
     default: [],
   },
   /** True for B2C / single-user teacher or student signups (not school-managed). */

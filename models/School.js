@@ -1,6 +1,5 @@
 import mongoose from 'mongoose';
 import { CURRICULUM_BOARDS } from '../constants/boards.js';
-import { IIT_CATEGORIES } from '../constants/products.js';
 
 const schoolDetailsSchema = {
   doorNo: { type: String, trim: true, default: '' },
@@ -52,9 +51,9 @@ const schoolSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
-    /** Assigned IIT product tracks (Alpha / Beta / Gamma). Empty = no IIT catalog. */
+    /** Assigned IIT / product tracks (Alpha, Beta, Gamma, or Super Admin custom codes). */
     iitCategories: {
-      type: [{ type: String, enum: IIT_CATEGORIES, uppercase: true }],
+      type: [{ type: String, uppercase: true, trim: true }],
       default: [],
     },
     /** Login user (admin) for this school */

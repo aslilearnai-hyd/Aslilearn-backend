@@ -12,6 +12,14 @@ const aiToolGenerationSchema = new mongoose.Schema(
       index: true,
     },
     board: { type: String, default: '', index: true },
+    /** IIT product track (ALPHA / BETA / …). Empty = General. */
+    productCategory: {
+      type: String,
+      default: '',
+      trim: true,
+      uppercase: true,
+      index: true,
+    },
     classLabel: { type: String, required: true, index: true },
     subject: { type: String, required: true, index: true },
     topic: { type: String, default: '' },
@@ -47,6 +55,23 @@ const aiToolGenerationSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
+aiToolGenerationSchema.index({
+  board: 1,
+  productCategory: 1,
+  toolName: 1,
+  classLabel: 1,
+  subject: 1,
+  topic: 1,
+  subtopic: 1,
+});
+aiToolGenerationSchema.index({
+  productCategory: 1,
+  classLabel: 1,
+  subject: 1,
+  topic: 1,
+  subtopic: 1,
+  createdAt: -1,
+});
 aiToolGenerationSchema.index({
   board: 1,
   toolName: 1,

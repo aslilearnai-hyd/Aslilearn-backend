@@ -57,7 +57,7 @@ function normalizeLockScope(scope) {
 
 function scopeKey(scope) {
   const s = normalizeLockScope(scope);
-  return [s.toolSlug, s.board, s.className, s.subject, s.topic, s.subtopic].join('|');
+  return [s.toolSlug, s.board, s.productCategory || '', s.className, s.subject, s.topic, s.subtopic].join('|');
 }
 
 /**
@@ -81,6 +81,7 @@ export async function forceReleaseGenerationLock(scope) {
     {
       toolSlug: s.toolSlug,
       board: s.board,
+      productCategory: s.productCategory || '',
       className: s.className,
       subject: s.subject,
       topic: s.topic,
@@ -134,6 +135,7 @@ export async function acquireGenerationLock(scope, lockedBy = 'unknown', opts = 
   const existing = await AiGenerationLock.findOne({
     toolSlug: s.toolSlug,
     board: s.board,
+    productCategory: s.productCategory || '',
     className: s.className,
     subject: s.subject,
     topic: s.topic,
@@ -160,6 +162,7 @@ export async function acquireGenerationLock(scope, lockedBy = 'unknown', opts = 
     const lock = await AiGenerationLock.create({
       toolSlug: s.toolSlug,
       board: s.board,
+      productCategory: s.productCategory || '',
       className: s.className,
       subject: s.subject,
       topic: s.topic,
@@ -175,6 +178,7 @@ export async function acquireGenerationLock(scope, lockedBy = 'unknown', opts = 
       const dup = await AiGenerationLock.findOne({
         toolSlug: s.toolSlug,
         board: s.board,
+        productCategory: s.productCategory || '',
         className: s.className,
         subject: s.subject,
         topic: s.topic,

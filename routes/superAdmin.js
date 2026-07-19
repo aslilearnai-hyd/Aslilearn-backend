@@ -40,6 +40,13 @@ import {
   updateTrialMember,
 } from '../controllers/trialMembersController.js';
 import {
+  getProductCategories,
+  getActiveProductCategoryCodesHandler,
+  createProductCategory,
+  updateProductCategory,
+  deleteProductCategory,
+} from '../controllers/productCategoryController.js';
+import {
   listAiToolChildren,
   listAiToolRecords,
   getAiToolGenerationById,
@@ -581,6 +588,13 @@ router.post('/courses', createCourse);
 // Individual trial members (B2C teacher/student signups)
 router.get('/trial-members', listTrialMembers);
 router.put('/trial-members/:id', updateTrialMember);
+
+// Product categories (IIT Alpha/Beta/Gamma + Super Admin custom tracks)
+router.get('/product-categories', getProductCategories);
+router.get('/product-categories/active', getActiveProductCategoryCodesHandler);
+router.post('/product-categories', createProductCategory);
+router.put('/product-categories/:id', updateProductCategory);
+router.delete('/product-categories/:id', deleteProductCategory);
 
 // Analytics & Reports
 router.get('/subscriptions', getSubscriptions);

@@ -11,6 +11,7 @@ import {
   subtopicTextMatches,
   topicTextMatches,
 } from '../utils/ai-tool-data-match.js';
+import { applyProductCategoryMongoFilter } from '../utils/ai-tool-topic-taxonomy.js';
 
 /** Student slugs that may fall back to legacy stored toolName values (same tool family only). */
 export const TOOL_ROTATION_ALIASES = Object.freeze({
@@ -140,20 +141,24 @@ function approvedFilter() {
   };
 }
 
-function scopeFilter({ classLabel, subject, board, strictBoard = true }) {
-  const scope = buildAiToolDataScopeFilter({
+function scopeFilter({ classLabel, subject, board, productCategory, strictBoard = true }) {
+  let scope = buildAiToolDataScopeFilter({
     classLabel,
     subject,
     board: strictBoard ? board : '',
   });
+  if (productCategory !== undefined && productCategory !== null) {
+    scope = applyProductCategoryMongoFilter(scope, productCategory);
+  }
   return mergeMongoFilters(scope, validContentFilter(), approvedFilter());
 }
 
-function rotationKey({ classLabel, subject, topic, subtopic, toolName, scope, board }) {
+function rotationKey({ classLabel, subject, topic, subtopic, toolName, scope, board, productCategory }) {
   return [
     'ai-tool-data-rotation',
     normalize(scope) || '*',
     normalize(board) || '*',
+    String(productCategory ?? '*'),
     normalize(classLabel),
     normalize(subject),
     normalize(topic),
@@ -194,8 +199,8 @@ function filterHasToolName(filter) {
   return false;
 }
 
-function buildAttemptFilters({ classLabel, subject, topic, subtopic, board, strictBoard }) {
-  const bf = scopeFilter({ classLabel, subject, board, strictBoard });
+function buildAttemptFilters({ classLabel, subject, topic, subtopic, board, productCategory, strictBoard }) {
+  const bf = scopeFilter({ classLabel, subject, board, productCategory, strictBoard });
   const normalizedTopic = normalize(topic);
   const normalizedSubtopic = normalize(subtopic);
 
@@ -220,6 +225,7 @@ async function executeRotationSearch({
   subtopic,
   toolName,
   board,
+  productCategory,
   preferLatest,
   strictToolMatch,
   cursorScope,
@@ -233,6 +239,7 @@ async function executeRotationSearch({
     topic,
     subtopic,
     board,
+    productCategory,
     strictBoard,
   });
 
@@ -288,6 +295,7 @@ async function executeRotationSearch({
       toolName: keyToolName,
       scope: cursorScope,
       board: strictBoard ? board : '',
+      productCategory,
     });
 
     const pickFromOrder = async (order) => {
@@ -453,6 +461,7 @@ export async function fetchRotatingAiToolData({
   subtopic,
   toolName = '',
   board = '',
+  productCategory,
   preferLatest = false,
   strictToolMatch = false,
   cursorScope = '',
@@ -467,6 +476,7 @@ export async function fetchRotatingAiToolData({
     subtopic,
     toolName,
     board: lookupBoard,
+    productCategory,
     preferLatest,
     strictToolMatch,
     cursorScope,
@@ -484,6 +494,7 @@ export async function fetchRotatingAiToolData({
     subtopic,
     toolName,
     board: lookupBoard,
+    productCategory,
     preferLatest,
     strictToolMatch,
     cursorScope,

@@ -3,11 +3,21 @@ import AiToolGeneration from '../models/AiToolGeneration.js';
 import { contentFingerprint, normalizeContentForDedup } from '../utils/ai-generator-dedup.js';
 import { extractContentUnits, extractTitleFromStructured } from './ai-generator-content-extractor.js';
 import { boardMongoMatch } from '../utils/board-label.js';
+import {
+  applyProductCategoryMongoFilter,
+  normalizeTopicProductCategory,
+} from '../utils/ai-tool-topic-taxonomy.js';
 
 function normalizeScope(scope = {}) {
+  const rawCat =
+    scope.productCategory !== undefined && scope.productCategory !== null
+      ? scope.productCategory
+      : scope.extraParams?.productCategory ?? '';
+  const productCategory = normalizeTopicProductCategory(rawCat) ?? '';
   return {
     toolSlug: String(scope.toolSlug || '').trim(),
     board: String(scope.board || '').trim(),
+    productCategory,
     className: String(scope.className || scope.classLabel || '').trim(),
     subject: String(scope.subject || scope.subjectName || '').trim(),
     topic: String(scope.topic || scope.topicName || '').trim(),
@@ -17,7 +27,7 @@ function normalizeScope(scope = {}) {
 
 function scopeQuery(scope) {
   const s = normalizeScope(scope);
-  const q = {
+  let q = {
     toolName: s.toolSlug,
     classLabel: s.className,
     subject: s.subject,
@@ -26,6 +36,7 @@ function scopeQuery(scope) {
   if (s.board) q.board = boardMongoMatch(s.board);
   if (s.topic) q.topic = s.topic;
   if (s.subtopic) q.subtopic = s.subtopic;
+  q = applyProductCategoryMongoFilter(q, s.productCategory);
   return q;
 }
 
@@ -64,6 +75,7 @@ export async function persistGenerationFingerprints(toolSlug, structured, scope,
     docs.push({
       toolSlug: s.toolSlug,
       board: s.board,
+      productCategory: s.productCategory,
       className: s.className,
       subject: s.subject,
       topic: s.topic,
@@ -114,6 +126,7 @@ export async function loadHistoricalFingerprints(scope, opts = {}) {
     toolSlug: s.toolSlug,
     className: s.className,
     subject: s.subject,
+    productCategory: s.productCategory || '',
     ...(s.board ? { board: s.board } : {}),
     ...(s.topic ? { topic: s.topic } : {}),
     ...(s.subtopic ? { subtopic: s.subtopic } : {}),
@@ -148,6 +161,7 @@ export async function fingerprintExists(fingerprint, contentType, scope) {
     toolSlug: s.toolSlug,
     className: s.className,
     subject: s.subject,
+    productCategory: s.productCategory || '',
     ...(s.subtopic ? { subtopic: s.subtopic } : {}),
   })
     .select('_id')

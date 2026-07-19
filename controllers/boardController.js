@@ -9,7 +9,7 @@ import Teacher from '../models/Teacher.js';
 import { VALID_SCHOOL_BOARDS, CURRICULUM_BOARDS, isValidSchoolBoard } from '../constants/boards.js';
 import {
   formatIitCategoryLabel,
-  normalizeIitCategory,
+  normalizeIitCategoryLoose,
   PRODUCT_CATEGORY_NONE,
 } from '../constants/products.js';
 import { subjectDisplayName, softDeleteSubject } from '../utils/subjectDelete.js';
@@ -43,7 +43,7 @@ function normalizedStateNameForBoard(boardUpper, rawStateName) {
 
 /** Active subject lookup: STATE rows match exact stateName; others match empty/missing stateName. */
 function findActiveSubjectByIdentity(name, boardUpper, stateForDb, productCategory = PRODUCT_CATEGORY_NONE) {
-  const cat = normalizeIitCategory(productCategory);
+  const cat = normalizeIitCategoryLoose(productCategory);
   const base = { name, board: boardUpper, isActive: true, productCategory: cat };
   if (stateForDb) {
     return Subject.findOne({ ...base, stateName: stateForDb });
@@ -72,7 +72,7 @@ function parseSubjectNameParts(name, classNumberField) {
 function subjectCatalogIdentityKey(name, boardUpper, stateForDb, classNumberField, productCategory = PRODUCT_CATEGORY_NONE) {
   const { plain, classNum } = parseSubjectNameParts(name, classNumberField);
   const stateKey = stateForDb ? String(stateForDb).trim().toLowerCase() : '';
-  const cat = normalizeIitCategory(productCategory) || '';
+  const cat = normalizeIitCategoryLoose(productCategory) || '';
   return `${plain.trim().toLowerCase()}|${classNum}|${boardUpper}|${stateKey}|${cat}`;
 }
 
@@ -83,7 +83,7 @@ async function findActiveSubjectsForBoardState(boardUpper, stateForDb, productCa
     name: { $not: /__deleted__/ },
   };
   if (productCategory !== null && productCategory !== undefined) {
-    base.productCategory = normalizeIitCategory(productCategory);
+    base.productCategory = normalizeIitCategoryLoose(productCategory);
   }
   if (stateForDb) {
     return Subject.find({ ...base, stateName: stateForDb });
@@ -537,7 +537,7 @@ export const createSubject = async (req, res) => {
       });
     }
 
-    const productCategory = normalizeIitCategory(rawProductCategory);
+    const productCategory = normalizeIitCategoryLoose(rawProductCategory);
     const categoryLabel = productCategory
       ? ` and IIT ${formatIitCategoryLabel(productCategory)}`
       : '';
@@ -859,8 +859,8 @@ export const updateSubject = async (req, res) => {
 
     const productCategory =
       rawProductCategory !== undefined
-        ? normalizeIitCategory(rawProductCategory)
-        : normalizeIitCategory(subject.productCategory);
+        ? normalizeIitCategoryLoose(rawProductCategory)
+        : normalizeIitCategoryLoose(subject.productCategory);
     const categoryLabel = productCategory
       ? ` and IIT ${formatIitCategoryLabel(productCategory)}`
       : '';
@@ -1166,8 +1166,8 @@ export const uploadContent = async (req, res) => {
 
     const contentProductCategory =
       rawProductCategory !== undefined && rawProductCategory !== null && String(rawProductCategory).trim() !== ''
-        ? normalizeIitCategory(rawProductCategory)
-        : normalizeIitCategory(subjectDoc.productCategory);
+        ? normalizeIitCategoryLoose(rawProductCategory)
+        : normalizeIitCategoryLoose(subjectDoc.productCategory);
 
     const contentData = {
       title: title.trim(),

@@ -1187,6 +1187,7 @@ export async function getManagedTopicTaxonomy(req, res) {
 
     const data = await resolveAiToolTopicTaxonomy({
       board,
+      productCategory: req.query.productCategory,
       classLabel,
       subject,
       topicName,
@@ -1246,6 +1247,8 @@ export async function generateBatchContent(req, res) {
         toolSlug,
         toolName: toolDisplayName,
         board,
+        productCategory:
+          req.body.productCategory ?? req.body.extraParams?.productCategory ?? '',
         className,
         subjectName,
         topicName,

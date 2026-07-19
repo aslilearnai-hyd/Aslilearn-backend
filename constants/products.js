@@ -1,58 +1,149 @@
-/** Commercial / curriculum product lines (separate from school board codes). */
-export const PRODUCT_IIT = 'IIT';
+/**
+ * Product category helpers — built-in Alpha/Beta/Gamma plus Super Admin custom codes.
+ * Category list is cached from ProductCategory collection when available.
+ */
+import ProductCategory from '../models/ProductCategory.js';
 
+export const PRODUCT_IIT = 'IIT';
 export const PRODUCTS = [PRODUCT_IIT];
 
-/** IIT track categories. Empty string on catalog rows = normal curriculum (non-IIT). */
+/** Default seeded tracks (always present). */
 export const IIT_CATEGORIES = ['ALPHA', 'BETA', 'GAMMA'];
-
-/** Reserved UI slot for a future fourth IIT curriculum track (not assignable yet). */
-export const IIT_FUTURE_CATEGORY_SLOT = {
-  id: 'FUTURE',
-  label: 'Future curriculum',
-  enabled: false,
-};
 
 export const PRODUCT_CATEGORY_NONE = '';
 
-export function normalizeIitCategory(value) {
+/** @type {string[] | null} */
+let cachedActiveCodes = null;
+let cacheLoadedAt = 0;
+const CACHE_TTL_MS = 30_000;
+
+export function invalidateProductCategoryCache() {
+  cachedActiveCodes = null;
+  cacheLoadedAt = 0;
+}
+
+export async function ensureDefaultProductCategories() {
+  const defaults = [
+    { code: 'ALPHA', label: 'Alpha', sortOrder: 1, description: 'IIT Alpha curriculum track' },
+    { code: 'BETA', label: 'Beta', sortOrder: 2, description: 'IIT Beta curriculum track' },
+    { code: 'GAMMA', label: 'Gamma', sortOrder: 3, description: 'IIT Gamma curriculum track' },
+  ];
+  for (const row of defaults) {
+    await ProductCategory.findOneAndUpdate(
+      { code: row.code },
+      {
+        $setOnInsert: {
+          code: row.code,
+          label: row.label,
+          product: PRODUCT_IIT,
+          description: row.description,
+          isActive: true,
+          isBuiltIn: true,
+          sortOrder: row.sortOrder,
+        },
+      },
+      { upsert: true, new: true }
+    );
+  }
+  invalidateProductCategoryCache();
+}
+
+export async function getActiveProductCategoryCodes({ force = false } = {}) {
+  const now = Date.now();
+  if (
+    !force &&
+    cachedActiveCodes &&
+    now - cacheLoadedAt < CACHE_TTL_MS
+  ) {
+    return cachedActiveCodes;
+  }
+  try {
+    await ensureDefaultProductCategories();
+    const rows = await ProductCategory.find({ isActive: true })
+      .sort({ sortOrder: 1, label: 1 })
+      .select('code')
+      .lean();
+    const codes = rows.map((r) => String(r.code || '').toUpperCase()).filter(Boolean);
+    cachedActiveCodes = codes.length ? codes : [...IIT_CATEGORIES];
+    cacheLoadedAt = now;
+    return cachedActiveCodes;
+  } catch {
+    return [...IIT_CATEGORIES];
+  }
+}
+
+export async function listProductCategories({ includeInactive = false } = {}) {
+  await ensureDefaultProductCategories();
+  const query = includeInactive ? {} : { isActive: true };
+  return ProductCategory.find(query).sort({ sortOrder: 1, label: 1 }).lean();
+}
+
+export function normalizeCategoryCode(raw) {
+  return String(raw || '')
+    .toUpperCase()
+    .trim()
+    .replace(/[^A-Z0-9_]+/g, '_')
+    .replace(/^_+|_+$/g, '')
+    .slice(0, 32);
+}
+
+export function normalizeIitCategory(value, allowedCodes = null) {
   if (value === undefined || value === null || value === '') return PRODUCT_CATEGORY_NONE;
-  const u = String(value).toUpperCase().trim();
-  return IIT_CATEGORIES.includes(u) ? u : PRODUCT_CATEGORY_NONE;
+  const u = normalizeCategoryCode(value);
+  if (!u) return PRODUCT_CATEGORY_NONE;
+  const allowed = Array.isArray(allowedCodes) && allowedCodes.length
+    ? allowedCodes
+    : cachedActiveCodes && cachedActiveCodes.length
+      ? cachedActiveCodes
+      : IIT_CATEGORIES;
+  return allowed.includes(u) ? u : PRODUCT_CATEGORY_NONE;
 }
 
-export function isValidIitCategory(value) {
-  if (value === undefined || value === null || value === '') return false;
-  return IIT_CATEGORIES.includes(String(value).toUpperCase().trim());
+/** Sync check used when cache may be cold — accepts any CODE-like string; DB validates on write. */
+export function normalizeIitCategoryLoose(value) {
+  if (value === undefined || value === null || value === '') return PRODUCT_CATEGORY_NONE;
+  return normalizeCategoryCode(value) || PRODUCT_CATEGORY_NONE;
 }
 
-/** Normalize a school/user assignment list; drops unknowns and duplicates. */
-export function normalizeIitCategories(list) {
+export function isValidIitCategory(value, allowedCodes = null) {
+  const c = normalizeIitCategory(value, allowedCodes);
+  return Boolean(c);
+}
+
+export function normalizeIitCategories(list, allowedCodes = null) {
   if (!Array.isArray(list)) return [];
   const out = [];
   const seen = new Set();
   for (const item of list) {
-    const c = normalizeIitCategory(item);
+    const c = normalizeIitCategoryLoose(item);
     if (!c || seen.has(c)) continue;
+    if (allowedCodes && allowedCodes.length && !allowedCodes.includes(c)) continue;
     seen.add(c);
     out.push(c);
   }
   return out;
 }
 
-export function formatIitCategoryLabel(value) {
-  const c = normalizeIitCategory(value);
+export function formatIitCategoryLabel(value, labelMap = null) {
+  const c = normalizeIitCategoryLoose(value);
   if (!c) return '';
-  return c.charAt(0) + c.slice(1).toLowerCase();
+  if (labelMap && labelMap[c]) return labelMap[c];
+  return c
+    .split('_')
+    .map((p) => p.charAt(0) + p.slice(1).toLowerCase())
+    .join(' ');
 }
 
-/**
- * School may see a catalog row when productCategory is empty (general)
- * or matches one of the school's assigned IIT categories.
- */
 export function schoolCanAccessProductCategory(schoolIitCategories, productCategory) {
-  const cat = normalizeIitCategory(productCategory);
+  const cat = normalizeIitCategoryLoose(productCategory);
   if (!cat) return true;
   const allowed = normalizeIitCategories(schoolIitCategories);
   return allowed.includes(cat);
 }
+
+/** @deprecated — use ensureDefaultProductCategories */
+export const IIT_FUTURE_CATEGORY_SLOT = {
+  id: 'FUTURE',
+  label: 'Future curriculum',
+  enabled: false,
+};

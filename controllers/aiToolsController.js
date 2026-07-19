@@ -429,24 +429,37 @@ export const createTeacherTool = async (req, res) => {
     }
 
     const productCategoryRaw = params.productCategory || params.iitCategory || '';
-    if (productCategoryRaw) {
-      const { normalizeIitCategory, isValidIitCategory } = await import('../constants/products.js');
-      const cat = normalizeIitCategory(productCategoryRaw);
-      if (productCategoryRaw && !isValidIitCategory(cat) && String(productCategoryRaw).trim()) {
-        return res.status(400).json({
-          success: false,
-          message: 'Invalid IIT product category. Use ALPHA, BETA, or GAMMA.',
-        });
-      }
-      if (cat) {
-        const allowed = Array.isArray(programCtx?.iitCategories) ? programCtx.iitCategories : [];
-        if (allowed.length && !allowed.map((c) => String(c).toUpperCase()).includes(cat)) {
-          return res.status(403).json({
+    let resolvedProductCategory = '';
+    {
+      const { normalizeTopicProductCategory } = await import('../utils/ai-tool-topic-taxonomy.js');
+      resolvedProductCategory = normalizeTopicProductCategory(productCategoryRaw ?? '') ?? '';
+      if (resolvedProductCategory) {
+        const {
+          getActiveProductCategoryCodes,
+          normalizeIitCategory,
+          isValidIitCategory,
+        } = await import('../constants/products.js');
+        const activeCodes = await getActiveProductCategoryCodes();
+        const cat = normalizeIitCategory(resolvedProductCategory, activeCodes);
+        if (productCategoryRaw && !isValidIitCategory(cat, activeCodes) && String(productCategoryRaw).trim()) {
+          return res.status(400).json({
             success: false,
-            message: `Your school is not assigned IIT ${cat}.`,
+            message: 'Invalid IIT product category. Choose an active track from Products.',
           });
         }
-        params.productCategory = cat;
+        if (cat) {
+          const allowed = Array.isArray(programCtx?.iitCategories) ? programCtx.iitCategories : [];
+          if (allowed.length && !allowed.map((c) => String(c).toUpperCase()).includes(cat)) {
+            return res.status(403).json({
+              success: false,
+              message: `Your school is not assigned IIT ${cat}.`,
+            });
+          }
+          resolvedProductCategory = cat;
+          params.productCategory = cat;
+        }
+      } else {
+        params.productCategory = '';
       }
     }
 
@@ -506,6 +519,7 @@ export const createTeacherTool = async (req, res) => {
         programCtx.curriculumBoard ||
         programCtx.displayBoard ||
         'CBSE',
+      productCategory: resolvedProductCategory,
       preferLatest: false,
       strictToolMatch: true,
       cursorScope: String(teacherId || ''),
@@ -651,6 +665,7 @@ export const getGeneratedContent = async (req, res) => {
       subtopic: subTopic,
       toolName: toolType,
       board: String(req.query.board || '').trim(),
+      productCategory: req.query.productCategory,
       preferLatest: false,
       strictToolMatch: true,
       cursorScope: String(req.userId || req.teacherId || ''),
