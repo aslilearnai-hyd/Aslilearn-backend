@@ -5,6 +5,7 @@ import {
   isStoredCurriculumBoard,
   resolveAdminStoredBoard,
 } from '../constants/boards.js';
+import { normalizeIitCategories } from '../constants/products.js';
 
 /** Keep only digits, max 10 (Indian mobile). Empty string if none. */
 export function normalizePhoneTenDigits(raw) {
@@ -54,6 +55,7 @@ export function buildSchoolFieldsFromBody(body) {
     schoolDetails: rawSchoolDetails,
     board,
     isAsliPrepExclusive: rawExclusive,
+    iitCategories: rawIitCategories,
   } = body;
 
   const curriculumUpper = String(board || 'CBSE').toUpperCase().trim();
@@ -64,6 +66,7 @@ export function buildSchoolFieldsFromBody(body) {
   const placeLine =
     (place && String(place).trim()) ||
     [schoolDetails.city, schoolDetails.district, schoolDetails.state].filter(Boolean).join(', ');
+  const iitCategories = exclusive ? normalizeIitCategories(rawIitCategories) : [];
 
   return {
     name: String(schoolName || '').trim(),
@@ -78,6 +81,7 @@ export function buildSchoolFieldsFromBody(body) {
     board: finalBoard,
     curriculumBoard: curriculumUpper,
     isAsliPrepExclusive: exclusive,
+    iitCategories,
   };
 }
 
@@ -97,6 +101,7 @@ export function applySchoolToAdminUser(admin, school) {
   admin.board = school.board;
   admin.curriculumBoard = school.curriculumBoard;
   admin.isAsliPrepExclusive = school.isAsliPrepExclusive;
+  admin.iitCategories = Array.isArray(school.iitCategories) ? school.iitCategories : [];
 }
 
 /** Build a school-shaped object from an admin user when schools collection row is missing */
@@ -109,6 +114,7 @@ export function schoolShapeFromAdminUser(admin) {
     board: admin.board || 'ASLI_EXCLUSIVE_SCHOOLS',
     curriculumBoard: admin.curriculumBoard || 'CBSE',
     isAsliPrepExclusive: Boolean(admin.isAsliPrepExclusive),
+    iitCategories: Array.isArray(admin.iitCategories) ? admin.iitCategories : [],
     schoolLogo: admin.schoolLogo || '',
     contactPerson: admin.contactPerson || admin.fullName || '',
     phone: admin.phone || '',
@@ -152,6 +158,11 @@ export function formatSchoolListItem(school, admin, stats = {}) {
       (isStoredCurriculumBoard(school?.board) ? String(school.board).toUpperCase().trim() : 'CBSE'),
     isAsliPrepExclusive:
       school?.isAsliPrepExclusive === true || school?.board === 'ASLI_EXCLUSIVE_SCHOOLS',
+    iitCategories: Array.isArray(school?.iitCategories)
+      ? school.iitCategories
+      : Array.isArray(admin?.iitCategories)
+        ? admin.iitCategories
+        : [],
     status: (admin?.isActive !== false && school?.isActive !== false) ? 'Active' : 'Inactive',
     joinDate: school?.createdAt || admin?.createdAt,
     stats: {

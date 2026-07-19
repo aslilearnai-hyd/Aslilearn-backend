@@ -88,6 +88,7 @@ export async function uploadBook(req, res) {
       topic: req.body.topic,
       subtopic: req.body.subtopic || req.body.subTopic,
       source: req.body.source,
+      productCategory: req.body.productCategory,
       uploadedBy: resolveAuthenticatedUserId(req),
       uploadedByRole: req.user?.role || 'super-admin',
     });

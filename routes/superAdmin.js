@@ -36,6 +36,10 @@ import {
   downloadRiskAnalysisPDF
 } from '../controllers/superAdminController.js';
 import {
+  listTrialMembers,
+  updateTrialMember,
+} from '../controllers/trialMembersController.js';
+import {
   listAiToolChildren,
   listAiToolRecords,
   getAiToolGenerationById,
@@ -573,6 +577,10 @@ router.post('/teachers', createTeacher);
 // Course Management (Global)
 router.get('/courses', getAllCourses);
 router.post('/courses', createCourse);
+
+// Individual trial members (B2C teacher/student signups)
+router.get('/trial-members', listTrialMembers);
+router.put('/trial-members/:id', updateTrialMember);
 
 // Analytics & Reports
 router.get('/subscriptions', getSubscriptions);

@@ -333,6 +333,36 @@ export const createTeacherTool = async (req, res) => {
     const { toolType, classNumber, subject, topic, board, ...params } = req.body;
     const teacherId = req.teacherId;
 
+    const Teacher = (await import('../models/Teacher.js')).default;
+    const teacherDoc = await Teacher.findById(teacherId)
+      .select(
+        'isIndividualAccount subscriptionStatus trialEndsAt iitCategories isAsliPrepExclusive curriculumBoard board trialAllowedAiTools'
+      )
+      .lean();
+    if (teacherDoc?.isIndividualAccount) {
+      const { resolveIndividualAccess } = await import('../utils/individualAccount.js');
+      const access = resolveIndividualAccess(teacherDoc);
+      if (access.paymentRequired) {
+        return res.status(402).json({
+          success: false,
+          code: 'PAYMENT_REQUIRED',
+          message:
+            'Your free trial has ended. Please subscribe to continue using AI tools.',
+        });
+      }
+      const allowedTools = Array.isArray(teacherDoc.trialAllowedAiTools)
+        ? teacherDoc.trialAllowedAiTools
+        : [];
+      if (allowedTools.length > 0 && toolType && !allowedTools.includes(String(toolType).trim())) {
+        return res.status(403).json({
+          success: false,
+          code: 'TRIAL_TOOL_RESTRICTED',
+          message:
+            'This AI tool is not included in your trial. Contact support or wait for Super Admin to unlock it.',
+        });
+      }
+    }
+
     const { getTeacherSchoolProgramContext, validateAiToolBoardAccess } =
       await import('../utils/schoolProgram.js');
     const programCtx = await getTeacherSchoolProgramContext(teacherId);
@@ -377,11 +407,47 @@ export const createTeacherTool = async (req, res) => {
 
     const rawSubTopic =
       params.subTopic != null && params.subTopic !== '' ? String(params.subTopic) : '';
-    if (!normalizeTopicSub(rawSubTopic)) {
+    const { isChapterScopeTool } = await import('../utils/questionComposition.js');
+    if (!normalizeTopicSub(rawSubTopic) && !isChapterScopeTool(toolType)) {
       return res.status(400).json({
         success: false,
         message: 'Sub topic is required.',
       });
+    }
+
+    if (isChapterScopeTool(toolType)) {
+      const {
+        normalizeQuestionComposition,
+      } = await import('../utils/questionComposition.js');
+      const { composition, total } = normalizeQuestionComposition(params);
+      params.questionComposition = composition;
+      params.questionCount = total;
+      if (!normalizeTopicSub(rawSubTopic)) {
+        params.chapterScope = true;
+        params.subTopic = '';
+      }
+    }
+
+    const productCategoryRaw = params.productCategory || params.iitCategory || '';
+    if (productCategoryRaw) {
+      const { normalizeIitCategory, isValidIitCategory } = await import('../constants/products.js');
+      const cat = normalizeIitCategory(productCategoryRaw);
+      if (productCategoryRaw && !isValidIitCategory(cat) && String(productCategoryRaw).trim()) {
+        return res.status(400).json({
+          success: false,
+          message: 'Invalid IIT product category. Use ALPHA, BETA, or GAMMA.',
+        });
+      }
+      if (cat) {
+        const allowed = Array.isArray(programCtx?.iitCategories) ? programCtx.iitCategories : [];
+        if (allowed.length && !allowed.map((c) => String(c).toUpperCase()).includes(cat)) {
+          return res.status(403).json({
+            success: false,
+            message: `Your school is not assigned IIT ${cat}.`,
+          });
+        }
+        params.productCategory = cat;
+      }
     }
 
     const { normalizedSubject, validSubjectsList } = resolveValidCurriculumSubject(subject, {
@@ -519,8 +585,9 @@ export const createTeacherTool = async (req, res) => {
     return res.status(404).json({
       success: false,
       code: 'AI_TOOL_DATA_NOT_FOUND',
-      message:
-        'No matching AI Tool Data found for the selected class, subject, topic, and sub topic. Please ask Super Admin to add this mapping in AI Tool Generations.',
+      message: isChapterScopeTool(toolType)
+        ? 'No matching AI Tool Data found for the selected class, subject, and topic (chapter). Please ask Super Admin to add this mapping in AI Tool Generations.'
+        : 'No matching AI Tool Data found for the selected class, subject, topic, and sub topic. Please ask Super Admin to add this mapping in AI Tool Generations.',
     });
   } catch (error) {
     console.error('Create teacher tool error:', error);

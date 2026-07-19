@@ -18,6 +18,8 @@ const bookSchema = new mongoose.Schema(
     board: { type: String, default: 'CBSE', trim: true },
     class: { type: String, required: true, trim: true },
     subject: { type: String, required: true, trim: true },
+    /** IIT track (ALPHA/BETA/GAMMA); empty = general curriculum book. */
+    productCategory: { type: String, default: '', trim: true, uppercase: true },
     topic: { type: String, default: '', trim: true },
     subtopic: { type: String, default: '', trim: true },
     source: {
@@ -44,11 +46,11 @@ const bookSchema = new mongoose.Schema(
     processingError: { type: String, default: '' },
     requiresOcr: { type: Boolean, default: false },
     lastIndexedAt: { type: Date, default: null },
-    /** Linked learning-path Content row when imported (no duplicate upload). */
+    /** Linked learning-path Content row when imported. Omit when not linked (do not store null). */
     contentId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Content',
-      default: null,
+      required: false,
     },
     /** JWTs may use symbolic ids (e.g. super-admin-001) — store as string. */
     uploadedBy: { type: String, default: '', trim: true },
@@ -63,8 +65,17 @@ const bookSchema = new mongoose.Schema(
 );
 
 bookSchema.index({ board: 1, class: 1, subject: 1 });
+bookSchema.index({ productCategory: 1 });
 bookSchema.index({ processingStatus: 1, updatedAt: -1 });
 bookSchema.index({ title: 'text', subject: 'text' });
-bookSchema.index({ contentId: 1 }, { unique: true, sparse: true });
+/** Unique only when a real Content link exists — multiple PDF uploads may omit contentId. */
+bookSchema.index(
+  { contentId: 1 },
+  {
+    unique: true,
+    name: 'contentId_1_partial',
+    partialFilterExpression: { contentId: { $exists: true, $type: 'objectId' } },
+  }
+);
 
 export default mongoose.model('Book', bookSchema);
