@@ -368,7 +368,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
         toolSlug,
         bookTitle: book.title,
         chapterScope: !String(subtopicName || '').trim(),
-        topK: Math.max(4, Number(process.env.BOOK_RAG_TOP_K || 5) || 5),
+        topK: Math.max(3, Number(process.env.BOOK_RAG_TOP_K || 4) || 4),
       };
 
       const slots = Array.from({ length: batchSize }, (_, i) => ({
@@ -462,9 +462,10 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                     temperature: Math.min(0.9, 0.6 + (variantIndex - 1) * 0.06),
                     avoidQuestions: usedV2Questions.slice(0, 40),
                     // Book path: hard math/answer-key gate + Indian notation + LLM audit
-                    maxTries: 2,
-                    // Respect AI_ANSWER_KEY_LLM_AUDIT env (default off) — do not force a 2nd LLM call.
-                    llmAudit: undefined,
+                    maxTries: 1,
+                    llmAudit: false,
+                    skipIndianNotation: true,
+                    skipLegacyScaffold: true,
                     softKeepOnQualityFail: false,
                   },
                 );

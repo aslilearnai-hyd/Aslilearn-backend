@@ -3,7 +3,7 @@
  * Deterministic by default (no extra LLM). Optional LLM answer-key audit on create.
  */
 
-import { runV2QualityPipeline } from './answer-key-audit-service.js';
+import { runV2QualityPipeline } from './answer-audit-service.js';
 import { mapV2StructuredToLegacy } from '../utils/v2-structured-to-legacy.js';
 import {
   runAiGeneratorQualityGate,
@@ -12,7 +12,7 @@ import {
 } from './ai-generator-quality-gate.js';
 import { validateMathAccuracy } from '../utils/math-accuracy-gate.js';
 import { validateSubtopicScope } from '../utils/subtopic-scope.js';
-import { shouldUseIndianNotation } from '../utils/indian-number-notation.js';
+import { shouldUseIndianNotation, hasBrokenIndianNotation } from '../utils/indian-number-notation.js';
 import { v2ToolFamily } from '../prompts/v2/tool-packs.js';
 import { detectBannedPhrase } from '../prompts/shared/banned-phrases.js';
 import { isPromptEngineEnabled } from '../prompts/registry.js';
@@ -40,6 +40,22 @@ const PROMPT_LEAK_RE = [
   /according to the chapter on .+, which choice reflects/i,
 ];
 
+/** Classic RAG dump / book chrome leaked into the student paper. */
+const RAG_DUMP_RE = [
+  /<<<\s*TEXTBOOK_/i,
+  /TEXTBOOK CONTENT\s*\(PRIMARY/i,
+  /\bDid You Know\b/i,
+  /\bTable of Contents\b/i,
+  /\bContents\b[\s\S]{0,40}\bChapter\s+\d/i,
+  /\bLearning Outcomes?\b[\s\S]{0,80}\bstudents will be able to\b/i,
+  /\bRETRIEVED TEXTBOOK CHUNKS\b/i,
+  /\bPassage\s+\d+\s*\(/i,
+  /\bas provided in the textbook\b/i,
+  /\bread the textbook excerpt\b/i,
+  /\bWait,?\s*recalculate\b/i,
+  /\boops,?\s*i\s+made\s+a\s+mistake\b/i,
+];
+
 function blobHasPlaceholders(blob) {
   return PLACEHOLDER_RE.some((re) => re.test(blob));
 }
@@ -48,6 +64,23 @@ function blobHasPromptLeak(blob) {
   if (PROMPT_LEAK_RE.some((re) => re.test(blob))) return true;
   const readyHits = blob.match(/\bReady\b/gi);
   return Boolean(readyHits && readyHits.length >= 4);
+}
+
+function blobHasRagDump(blob) {
+  return RAG_DUMP_RE.some((re) => re.test(blob));
+}
+
+/** MCQ options that look truncated / schema-broken. */
+function hasBrokenMcqOptions(core = {}) {
+  const mcqs = Array.isArray(core.sectionA_mcq) ? core.sectionA_mcq : [];
+  for (const q of mcqs) {
+    const opts = Array.isArray(q?.options) ? q.options.map(String) : [];
+    if (opts.length > 0 && opts.length < 4) return true;
+    if (opts.some((o) => /^[A-Da-d]\s*[).:]?\s*$/.test(o.trim()) || o.trim().length < 2)) return true;
+    const stem = String(q?.question || '');
+    if (stem.length > 450) return true; // dumped paragraph into MCQ stem
+  }
+  return false;
 }
 
 /** Non-math density / placeholder / leak checks for any V2 family. */
@@ -60,15 +93,29 @@ export function validateV2ContentDensity(structured, toolSlug = '') {
 
   const blob = JSON.stringify(structured);
   if (blobHasPlaceholders(blob)) {
-    errors.push('Placeholder / scaffold phrasing detected in V2 content');
+    warnings.push('Placeholder / scaffold phrasing detected in V2 content');
   }
   if (blobHasPromptLeak(blob)) {
     errors.push('Prompt/RAG chrome leaked into V2 content');
   }
-  if (isPromptEngineEnabled()) {
-    const banned = detectBannedPhrase(blob);
-    if (banned?.banned) {
-      errors.push(`Banned phrase: ${banned.reason || 'detected'}`);
+  if (blobHasRagDump(blob)) {
+    errors.push('Textbook dump / RAG contamination detected (Did You Know, TOC, or self-correction text)');
+  }
+  if (hasBrokenIndianNotation(blob)) {
+    errors.push('Broken Indian place-value notation (e.g. 10,0 or 9,4,027)');
+  }
+  if (structured.core && hasBrokenMcqOptions(structured.core)) {
+    errors.push('Broken MCQ schema (incomplete options or dumped paragraph stem)');
+  }
+  // Do NOT run detectBannedPhrase on the full JSON blob — teacher tips legitimately
+  // say "use the blackboard" and that was causing mass retries + cost. Scan core only.
+  if (isPromptEngineEnabled() && structured.core) {
+    const coreBlob = JSON.stringify(structured.core);
+    const banned = detectBannedPhrase(coreBlob);
+    if (banned?.banned && /AI marker/i.test(String(banned.reason || ''))) {
+      warnings.push(`Banned phrase: ${banned.reason || 'detected'}`);
+    } else if (banned?.banned) {
+      warnings.push(`Generic phrasing in core: ${banned.reason || 'detected'}`);
     }
   }
 
@@ -81,16 +128,18 @@ export function validateV2ContentDensity(structured, toolSlug = '') {
   const family = v2ToolFamily(toolSlug) || '';
   const coreStr = JSON.stringify(core);
   if (coreStr.length < 180) {
-    errors.push('V2 core content too thin');
+    warnings.push('V2 core content looks thin');
   }
 
-  // Family-specific minimums
+  // Family-specific minimums — hard only when almost empty
   if (family === 'questions') {
     const mcq = Array.isArray(core.sectionA_mcq) ? core.sectionA_mcq.length : 0;
     const fib = Array.isArray(core.sectionB_fib) ? core.sectionB_fib.length : 0;
     const short = Array.isArray(core.sectionC_short) ? core.sectionC_short.length : 0;
-    if (mcq + fib + short < 3) {
-      errors.push('Questions family: fewer than 3 items across MCQ/FIB/short');
+    if (mcq + fib + short < 1) {
+      errors.push('Questions family: no MCQ/FIB/short items');
+    } else if (mcq + fib + short < 3) {
+      warnings.push('Questions family: fewer than 3 items across MCQ/FIB/short');
     }
   }
   if (family === 'cards') {
@@ -179,7 +228,8 @@ export async function auditV2Generation(toolSlug, structured, params = {}, opts 
   warnings.push(...density.warnings);
 
   let legacyResult = { valid: true, errors: [], warnings: [], legacy: null };
-  if (opts.skipLegacyScaffold !== true) {
+  // Legacy scaffold gate OFF by default — V2→legacy maps are partial and caused retry storms.
+  if (opts.skipLegacyScaffold === false) {
     legacyResult = validateV2MappedLegacy(toolSlug, content, {
       subject: params.subject,
       topic: params.topic,
@@ -187,6 +237,12 @@ export async function auditV2Generation(toolSlug, structured, params = {}, opts 
     });
     errors.push(...legacyResult.errors);
     warnings.push(...legacyResult.warnings);
+  } else {
+    try {
+      legacyResult.legacy = mapV2StructuredToLegacy(toolSlug, content);
+    } catch {
+      legacyResult.legacy = null;
+    }
   }
 
   return {
@@ -284,8 +340,9 @@ export function practiceGroundingRequired(toolSlug, scope = {}) {
   if (!scope.useBookKnowledge && scope.useBookKnowledge !== undefined) return false;
   const family = v2ToolFamily(toolSlug);
   if (family !== 'questions' && family !== 'explain') return false;
-  const raw = String(process.env.BOOK_RAG_REQUIRE_PRACTICE ?? 'on').trim().toLowerCase();
-  return raw !== 'false' && raw !== '0' && raw !== 'off';
+  // Default OFF — deep practice retrieval caused chapter contamination.
+  const raw = String(process.env.BOOK_RAG_REQUIRE_PRACTICE ?? 'off').trim().toLowerCase();
+  return raw === 'true' || raw === '1' || raw === 'on' || raw === 'strict';
 }
 
 export default {

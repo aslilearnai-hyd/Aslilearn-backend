@@ -36,7 +36,8 @@ export function buildRagLayer(ragContext) {
 - SILENT grounding: do NOT print page numbers, exercise/figure ids, or phrases like "as provided in the textbook" / "read the textbook excerpt" in any field. Match the textbook's terminology and examples, but keep every question and statement self-contained (answerable without the book in hand). Broad curriculum mapping ("NCERT Class 11, Equilibrium") is fine; specific page/exercise citations are not.
 - Missing content: if the chunks do not cover something needed, quietly fill it with correct on-syllabus content — do not add "Teacher to add" or "not in textbook" notes to the output.
 - FEW-SHOT PRIORITY: prefer "Concept Practice", worked examples, error/misconception tables, and exercise numericals from the chunks as patterns for NEW questions (change the numbers — do not copy stems verbatim).
-- MATH FIDELITY: when chunks show Indian place-value commas (lakh/crore) or International commas, match the system the question asks for; default to Indian for Class 6–8.
+- NEVER PASTE book chrome: "Did You Know", table of contents, biographies, learning-outcome lists, or raw passage blocks into any JSON field.
+- MATH FIDELITY: when chunks show Indian place-value commas (lakh/crore) or International commas, match the system the question asks for; default to Indian for Class 6–8. Never put commas inside power-of-ten factors (write 3 x 10000 or 3 x 10^4, not 3 x 10,0).
 - Section 6 exception: only in "reallife" may you add short Indian real-life context not in the textbook.
 - Preserve pedagogical extras (common errors, wrong-option reasons, marking points) — never invent a wrong final answer to pad them.
 

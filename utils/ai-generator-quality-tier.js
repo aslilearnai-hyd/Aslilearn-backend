@@ -118,12 +118,9 @@ export function resolveQualityTierSettings(tierInput, overrides = {}) {
     });
   }
 
-  // Premium — the board-grade quality path. Uses the REAL Pro model
-  // (gemini-3.1-pro-preview via resolvePremiumGeminiModel), strict validation, no
-  // template padding, and is NEVER downgraded to Flash-Lite. Use Fast/Balanced for
-  // cheap bulk. This tier must not be flash-lite: a "Premium" that secretly runs the
-  // cheapest model was the root cause of board-unusable content.
-  return {
+  // Premium — strict validation, no template padding.
+  // When AI_GENERATOR_FLASH_LITE_ONLY is on (default), Pro is not used.
+  return applyFlashLiteOnlyPolicy({
     ...base,
     tier,
     strictValidation: true,
@@ -136,7 +133,7 @@ export function resolveQualityTierSettings(tierInput, overrides = {}) {
     geminiRetriesPerModel: 3,
     batchConcurrency: smallBatch ? 2 : 2,
     slotStaggerMs: smallBatch ? 150 : 250,
-  };
+  });
 }
 
 /** Creative bulk tools vs factual extraction tools. */

@@ -1,7 +1,7 @@
 /**
  * Answer-key audit for V2 six-section content.
- * 1) Deterministic math/scope gates (always).
- * 2) Optional second-pass Gemini audit when AI_ANSWER_KEY_AUDIT=on (default on for book RAG).
+ * Flash-Lite stable path: do NOT mutate content (no Indian rewrite / LLM rewrite by default).
+ * Only deterministic reject gates for catastrophic failures.
  */
 
 import geminiService from './gemini-service.js';
@@ -24,10 +24,23 @@ function auditEnabled(opts = {}) {
 function llmAuditEnabled(opts = {}) {
   if (opts.llmAudit === false) return false;
   if (opts.llmAudit === true) return true;
-  // Default OFF — deterministic math/scope/notation gates are free and catch most failures.
-  // Set AI_ANSWER_KEY_LLM_AUDIT=on only when you want a second Gemini pass per generation.
   const raw = String(process.env.AI_ANSWER_KEY_LLM_AUDIT ?? 'off').trim().toLowerCase();
   return raw === 'true' || raw === '1' || raw === 'on';
+}
+
+/** Post-gen Indian rewrite caused 10,00,000 → 10,0 regressions. Default OFF. */
+function indianRewriteEnabled(opts = {}) {
+  if (opts.skipIndianNotation === true) return false;
+  if (opts.forceIndianNotation === true) return true;
+  const raw = String(process.env.AI_INDIAN_NOTATION_REWRITE ?? 'off').trim().toLowerCase();
+  return raw === 'true' || raw === '1' || raw === 'on';
+}
+
+function autoFixMcqEnabled(opts = {}) {
+  if (opts.autoFixMcq === false) return false;
+  if (opts.autoFixMcq === true) return true;
+  const raw = String(process.env.AI_MATH_AUTO_FIX ?? 'on').trim().toLowerCase();
+  return raw !== 'false' && raw !== '0' && raw !== 'off';
 }
 
 function compactCoreForAudit(structured) {
@@ -49,10 +62,6 @@ function compactCoreForAudit(structured) {
   ).slice(0, 14000);
 }
 
-/**
- * Dual-LLM / second-pass: ask a cheap model to list hard errors only.
- * Returns { ok, issues[], correctedAnswerKey? }.
- */
 async function runLlmAnswerKeyAudit(structured, params = {}, opts = {}) {
   if (!llmAuditEnabled(opts)) return { ok: true, issues: [], skipped: true };
 
@@ -62,12 +71,6 @@ Ignore pedagogy, formatting, and style.
 
 Return JSON only:
 {"ok":true|false,"issues":["Q1: …"],"fixes":[{"qIndex":0,"correctAnswer":"B) …","working":"one-line correct working"}]}
-
-Rules:
-- ok=false if any MCQ letter is wrong, any numerical answer is wrong, or working contradicts the selected answer.
-- Prefer Indian number commas (12,34,567) and place names (lakh/crore) in fixes for Class 6-8.
-- Empty issues array if everything is correct.
-- qIndex is 0-based across all questions in order (A→E).
 
 CONTENT:
 ${compactCoreForAudit(structured)}
@@ -91,7 +94,6 @@ Class: ${params.classLabel || ''} Subject: ${params.subject || ''} Topic: ${para
       skipped: false,
     };
   } catch (err) {
-    // Soft-fail LLM audit — deterministic gates still apply.
     return {
       ok: true,
       issues: [],
@@ -137,7 +139,6 @@ function applyLlmFixes(structured, fixes = []) {
 
 /**
  * Full post-generation quality pipeline for V2 structured content.
- * @returns {Promise<{ ok:boolean, structuredContent:object, errors:string[], warnings:string[], fixes:string[], audit:object }>}
  */
 export async function runV2QualityPipeline(structured, params = {}, opts = {}) {
   const errors = [];
@@ -145,41 +146,45 @@ export async function runV2QualityPipeline(structured, params = {}, opts = {}) {
   const fixes = [];
   let content = structured;
 
-  // 1) Indian notation (Classes 6–10 Maths / school default)
-  if (shouldUseIndianNotation(params.classLabel, params.subject) && opts.skipIndianNotation !== true) {
+  // 1) Indian rewrite — OFF by default (was corrupting place-value). Prompt handles commas.
+  if (
+    indianRewriteEnabled(opts) &&
+    shouldUseIndianNotation(params.classLabel, params.subject)
+  ) {
     content = applyIndianNotationToStructured(content);
     fixes.push('applied Indian number notation');
   }
 
-  // 2) Deterministic auto-fix for unambiguous MCQ arithmetic
-  const auto = tryAutoFixMcqAnswers(content);
-  if (auto.fixed) {
-    content = auto.structured;
-    fixes.push(...auto.fixes.map((f) => `auto-fix ${f}`));
+  // 2) Safe MCQ arithmetic auto-fix only (does not touch commas)
+  if (autoFixMcqEnabled(opts)) {
+    const auto = tryAutoFixMcqAnswers(content);
+    if (auto.fixed) {
+      content = auto.structured;
+      fixes.push(...auto.fixes.map((f) => `auto-fix ${f}`));
+    }
   }
 
-  // 3) Hard math gate
+  // 3) Hard math gate (wrong answers / Wait recalculate / broken notation)
   const math = validateMathAccuracy(content);
   errors.push(...math.errors);
   warnings.push(...math.warnings);
 
-  // 4) Strict subtopic scope
+  // 4) Subtopic scope — warn only (hard-fail caused retry storms on Flash-Lite)
   const scope = validateSubtopicScope(content, params);
-  errors.push(...scope.errors);
+  if (opts.strictSubtopicScope === true) {
+    errors.push(...scope.errors);
+  } else {
+    warnings.push(...scope.errors);
+  }
 
-  // 5) Optional LLM second-pass (only if deterministic still clean or forced)
+  // 5) LLM audit — OFF by default
   let audit = { skipped: true };
-  if (auditEnabled(opts) && (errors.length === 0 || opts.llmAuditAlways)) {
+  if (auditEnabled(opts) && llmAuditEnabled(opts) && (errors.length === 0 || opts.llmAuditAlways)) {
     audit = await runLlmAnswerKeyAudit(content, params, opts);
     if (!audit.skipped && audit.fixes?.length) {
       content = applyLlmFixes(content, audit.fixes);
-      // Re-run notation after LLM fixes
-      if (shouldUseIndianNotation(params.classLabel, params.subject)) {
-        content = applyIndianNotationToStructured(content);
-      }
       fixes.push(`llm-audit applied ${audit.fixes.length} fix(es)`);
       const math2 = validateMathAccuracy(content);
-      // Replace prior math errors with post-fix result
       errors.length = 0;
       errors.push(...math2.errors);
       warnings.push(...math2.warnings);
@@ -189,9 +194,8 @@ export async function runV2QualityPipeline(structured, params = {}, opts = {}) {
     }
   }
 
-  const ok = errors.length === 0;
   return {
-    ok,
+    ok: errors.length === 0,
     structuredContent: content,
     errors,
     warnings,
