@@ -3073,11 +3073,6 @@ app.get('/api/health', (req, res) => {
     uptime: process.uptime()
   });
 });
- catch (error) {
-    console.error('Failed to delete class:', error);
-    res.status(500).json({ message: 'Failed to delete class' });
-  }
-});
 
 
 // Admin Quizzes endpoints
