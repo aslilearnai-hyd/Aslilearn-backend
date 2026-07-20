@@ -1991,7 +1991,7 @@ const TEMPLATES = {
     ],
     parserHints: [
       '11-section practice set: title, objectives, instructions, sections A–G, answer key with explanations; each question includes bloom_level and difficulty_tag.',
-      'Section C example: sectionName "Section C: True or False", questions[{ type:"TF", question:"State whether true or false: …", options:["True","False"], answer:"True", marks:1 }].
+      'Section C example: sectionName "Section C: True or False", questions[{ type:"TF", question:"State whether true or false: ...", options:["True","False"], answer:"True", marks:1 }].',
     ],
     regenerationRules: { mergePolicy: 'replace', allowTemplateRegeneration: true },
     gemini: {
