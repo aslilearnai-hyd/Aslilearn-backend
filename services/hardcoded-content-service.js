@@ -5,6 +5,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import { filterUnsupportedQuestions } from '../utils/unsupported-question-filter.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -543,7 +544,7 @@ async function buildCombinedExam(chapterPath, difficulty = 'medium') {
       const data = await readJSONFile(filePath);
       if (!data || !Array.isArray(data.questions)) continue;
 
-      const qs = data.questions.map(q => ({
+      const qs = filterUnsupportedQuestions(data.questions).map(q => ({
         ...q,
         question_number: qCounter++,
         question_type: type,
@@ -625,7 +626,7 @@ async function buildCombinedHomework(chapterPath, difficulty = 'medium') {
       const data = await readJSONFile(filePath);
       if (!data || !Array.isArray(data.questions)) continue;
 
-      const qs = data.questions.map(q => ({
+      const qs = filterUnsupportedQuestions(data.questions).map(q => ({
         ...q,
         question_number: qCounter++,
         question_type: type,
@@ -676,7 +677,7 @@ async function buildCombinedWorksheet(chapterPath, difficulty = 'medium') {
       const data = await readJSONFile(path.join(dirPath, fileName));
       if (!data || !Array.isArray(data.questions)) return;
 
-      const sectionQuestions = data.questions.map(q => ({
+      const sectionQuestions = filterUnsupportedQuestions(data.questions).map(q => ({
         ...q,
         question_number: qCounter++,
         question_type: type,
@@ -1161,6 +1162,9 @@ export async function getSubtopicsForChapter(classNumber, subject, topicDisplayN
  */
 export async function getHardcodedContent(classNumber, subject, topic, toolType, params = {}) {
   try {
+    // Match-the-following is unsupported in product UI — never serve book CSV/JSON for it.
+    if (toolType === 'match-following') return null;
+
     // IIT-6
     if (classNumber === IIT_CLASS_NAME) {
       const result = await getIIT6Content(subject, topic, toolType);

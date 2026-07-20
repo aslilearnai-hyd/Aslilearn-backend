@@ -1,5 +1,7 @@
 // Formatter for hardcoded content - Converts JSON/CSV to Markdown format
 
+import { filterUnsupportedQuestions, isUnsupportedQuestionStem } from './unsupported-question-filter.js';
+
 /**
  * Format Concept Mastery Helper content with beautiful card-based design
  * Uses special HTML markers that will be rendered directly
@@ -498,8 +500,12 @@ function formatCSVContent(csvData, toolType, metadata) {
   // MCQ format
   if (headers.includes('Question') && headers.includes('Option A')) {
     markdown += `### Multiple Choice Questions\n\n`;
-    rows.forEach((row, index) => {
-      markdown += `**Question ${index + 1}:** ${row.Question || ''}\n\n`;
+    let index = 0;
+    rows.forEach((row) => {
+      const stem = String(row.Question || '').trim();
+      if (!stem || isUnsupportedQuestionStem(stem)) return;
+      index += 1;
+      markdown += `**Question ${index}:** ${stem}\n\n`;
       if (row['Option A']) markdown += `A. ${row['Option A']}\n`;
       if (row['Option B']) markdown += `B. ${row['Option B']}\n`;
       if (row['Option C']) markdown += `C. ${row['Option C']}\n`;
@@ -510,14 +516,9 @@ function formatCSVContent(csvData, toolType, metadata) {
       markdown += `\n---\n\n`;
     });
   }
-  // Match the following format
+  // Match the following format — unsupported in product UI; skip entirely
   else if (headers.includes('Column A') && headers.includes('Column B / Correct Match')) {
-    markdown += `### Match the Following\n\n`;
-    rows.forEach((row, index) => {
-      if (row['Column A'] && row['Column B / Correct Match']) {
-        markdown += `**${index + 1}.** ${row['Column A']} → ${row['Column B / Correct Match']}\n\n`;
-      }
-    });
+    return markdown + `No questions available.\n`;
   }
   // Fill in the blanks, Short answer, Long answer, True or False format
   else if (headers.includes('Question') && headers.includes('Answer')) {
@@ -527,8 +528,12 @@ function formatCSVContent(csvData, toolType, metadata) {
                          toolType.includes('true') ? 'True or False' : 'Questions';
     
     markdown += `### ${questionType}\n\n`;
-    rows.forEach((row, index) => {
-      markdown += `**Question ${index + 1}:** ${row.Question || ''}\n\n`;
+    let index = 0;
+    rows.forEach((row) => {
+      const stem = String(row.Question || '').trim();
+      if (!stem || isUnsupportedQuestionStem(stem)) return;
+      index += 1;
+      markdown += `**Question ${index}:** ${stem}\n\n`;
       markdown += `**Answer:** ${row.Answer || ''}\n\n`;
       markdown += `---\n\n`;
     });
@@ -928,6 +933,10 @@ function formatExamPaper(data, toolType, metadata) {
 
   // Format each section with professional exam styling
   data.sections.forEach((section, sectionIndex) => {
+    if (/match\s+the\s+following/i.test(String(section.type || ''))) return;
+    const filteredQuestions = filterUnsupportedQuestions(section.questions || []);
+    if (!filteredQuestions.length) return;
+
     // Section header with marks and time
     const sectionColors = [
       { bg: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)', border: '#1e3a8a', icon: '🔘' },
@@ -946,14 +955,14 @@ function formatExamPaper(data, toolType, metadata) {
     markdown += `<span>Section ${String.fromCharCode(65 + sectionIndex)}: ${section.type}</span>\n`;
     markdown += `</h2>\n`;
     markdown += `<div style="display: flex; gap: 20px; color: white; font-weight: 600;">\n`;
-    markdown += `<div style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 8px;">Questions: ${section.count}</div>\n`;
+    markdown += `<div style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 8px;">Questions: ${filteredQuestions.length}</div>\n`;
     markdown += `<div style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 8px;">Marks: ${section.total_marks}</div>\n`;
     markdown += `<div style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 8px;">Time: ${section.estimated_time} min</div>\n`;
     markdown += `</div>\n`;
     markdown += `</div>\n`;
     
-    if (section.questions && Array.isArray(section.questions)) {
-      section.questions.forEach((q, qIndex) => {
+    if (filteredQuestions.length) {
+      filteredQuestions.forEach((q, qIndex) => {
         const qNum = q.question_number || (qIndex + 1);
         
         // Question card with marks badge
@@ -1066,6 +1075,10 @@ function formatWorksheet(data, toolType, metadata) {
 
   // Format each section with beautiful styling
   data.sections.forEach((section, sectionIndex) => {
+    if (/match\s+the\s+following/i.test(String(section.type || ''))) return;
+    const filteredQuestions = filterUnsupportedQuestions(section.questions || []);
+    if (!filteredQuestions.length) return;
+
     // Section header with gradient - different colors for different question types
     const sectionColors = [
       { bg: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', border: '#5a67d8', icon: '🔘' },
@@ -1078,12 +1091,12 @@ function formatWorksheet(data, toolType, metadata) {
     markdown += `<div style="background: ${colors.bg}; border-radius: 12px; padding: 20px; margin: 24px 0; box-shadow: 0 6px 12px rgba(0,0,0,0.15); border-left: 5px solid ${colors.border};">\n`;
     markdown += `<h2 style="color: white; margin: 0 0 16px 0; font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 10px;">\n`;
     markdown += `<span style="font-size: 1.8rem;">${colors.icon}</span>\n`;
-    markdown += `<span>${section.type} (${section.count} questions)</span>\n`;
+    markdown += `<span>${section.type} (${filteredQuestions.length} questions)</span>\n`;
     markdown += `</h2>\n`;
     markdown += `</div>\n\n`;
     
-    if (section.questions && Array.isArray(section.questions)) {
-      section.questions.forEach((q, qIndex) => {
+    if (filteredQuestions.length) {
+      filteredQuestions.forEach((q, qIndex) => {
         const qNum = q.question_number || (qIndex + 1);
         
         // Question card with nice styling
@@ -1159,46 +1172,20 @@ function formatWorksheet(data, toolType, metadata) {
           
           markdown += `</div>\n`;
         } else if (section.type === 'Match the Following') {
-          // Format Match the Following questions
+          // Unsupported — skip item body (section already filtered above)
+          markdown += `</div>\n`;
+          return;
+        } else {
           markdown += `<div style="margin-bottom: 16px;">\n`;
-          markdown += `<div style="display: flex; align-items: start; gap: 12px; margin-bottom: 16px;">\n`;
+          markdown += `<div style="display: flex; align-items: start; gap: 12px; margin-bottom: 12px;">\n`;
           markdown += `<div style="background: ${borderColor}; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">${qNum}</div>\n`;
-          markdown += `<div style="flex: 1;">\n`;
-          markdown += `<div style="font-size: 1.05rem; font-weight: 600; color: #1f2937; margin-bottom: 12px;">${q.question || 'Match the following:'}</div>\n`;
-          
-          // Match item display - side by side
-          markdown += `<div style="display: flex; align-items: center; gap: 16px; margin-top: 12px; padding: 12px; background: #f9fafb; border-radius: 8px; border: 2px solid #e5e7eb;">\n`;
-          
-          // Column A item
-          markdown += `<div style="flex: 1; padding: 12px; background: white; border-radius: 6px; border-left: 4px solid #667eea;">\n`;
-          markdown += `<div style="font-weight: 600; color: #667eea; font-size: 0.85rem; margin-bottom: 4px;">Column A</div>\n`;
-          if (q.column_a) {
-            markdown += `<div style="color: #374151; font-size: 1rem; line-height: 1.5;">${q.column_a}</div>\n`;
-          }
+          markdown += `<div style="flex: 1; font-size: 1.05rem; font-weight: 600; color: #1f2937; line-height: 1.6;">${q.question || ''}</div>\n`;
           markdown += `</div>\n`;
-          
-          // Arrow
-          markdown += `<div style="font-size: 1.5rem; color: #9ca3af; font-weight: bold;">→</div>\n`;
-          
-          // Column B item
-          markdown += `<div style="flex: 1; padding: 12px; background: white; border-radius: 6px; border-left: 4px solid #f5576c;">\n`;
-          markdown += `<div style="font-weight: 600; color: #f5576c; font-size: 0.85rem; margin-bottom: 4px;">Column B</div>\n`;
-          if (q.column_b) {
-            markdown += `<div style="color: #374151; font-size: 1rem; line-height: 1.5;">${q.column_b}</div>\n`;
-          }
-          markdown += `</div>\n`;
-          
-          markdown += `</div>\n`; // End match item container
-          markdown += `</div>\n`; // End flex container
-          markdown += `</div>\n`; // End question container
-          
-          // Answer
-          if (q.correct_match) {
+          if (q.correct_answer) {
             markdown += `<div style="margin-left: 44px; margin-top: 12px; padding: 12px; background: #ecfdf5; border-radius: 8px; border-left: 4px solid #10b981;">\n`;
-            markdown += `<strong style="color: #059669;">✓ Correct Match:</strong> <span style="color: #047857; font-weight: 600;">${q.column_a || ''} → ${q.correct_match}</span>\n`;
+            markdown += `<strong style="color: #059669;">✓ Answer:</strong> <span style="color: #047857; font-weight: 600;">${q.correct_answer}</span>\n`;
             markdown += `</div>\n`;
           }
-          
           markdown += `</div>\n`;
         }
         
@@ -1243,10 +1230,13 @@ function formatHomework(data, toolType, metadata) {
 
   // Format each section
   data.sections.forEach((section, sectionIndex) => {
-    markdown += `## ${section.type} (${section.count} questions)\n\n`;
+    if (/match\s+the\s+following/i.test(String(section.type || ''))) return;
+    const filteredQuestions = filterUnsupportedQuestions(section.questions || []);
+    if (!filteredQuestions.length) return;
+
+    markdown += `## ${section.type} (${filteredQuestions.length} questions)\n\n`;
     
-    if (section.questions && Array.isArray(section.questions)) {
-      section.questions.forEach((q, qIndex) => {
+    filteredQuestions.forEach((q, qIndex) => {
         const qNum = q.question_number || (qIndex + 1);
         
         // Format question based on type
@@ -1280,7 +1270,6 @@ function formatHomework(data, toolType, metadata) {
         
         markdown += `\n---\n\n`;
       });
-    }
   });
 
   return markdown;

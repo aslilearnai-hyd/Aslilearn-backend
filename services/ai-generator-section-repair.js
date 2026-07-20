@@ -323,7 +323,7 @@ Return ONLY valid JSON:
         "questions": [{ "question": "...", "type": "MCQ", "options": ["A)...","B)...","C)...","D)..."], "answer": "B) ...", "marks": 1, "bloom_level": "Remember" }]
       },
       { "sectionName": "Section B: Fill in the Blanks", "questions": [{ "question": "...", "type": "FIB", "answer": "...", "marks": 1 }] },
-      { "sectionName": "Section C: Match the Following", "questions": [{ "question": "Match Column A with Column B.", "type": "MATCH", "options": ["1. ... | A. ...", "2. ... | B. ...", "3. ... | C. ..."], "answer": "1-A, 2-B, 3-C", "marks": 2 }] },
+      { "sectionName": "Section C: True or False", "questions": [{ "question": "State whether true or false: A key NCERT fact for this subtopic is correctly stated.", "type": "TF", "options": ["True", "False"], "answer": "True", "marks": 1 }] },
       { "sectionName": "Section D: Very Short Answer Questions", "questions": [{ "question": "...", "type": "VSA", "answer": "...", "marks": 2 }] },
       { "sectionName": "Section E: Short Answer Questions", "questions": [{ "question": "...", "type": "SA", "answer": "...", "marks": 3 }] },
       { "sectionName": "Section F: Application / Case-based Questions", "questions": [{ "question": "Indian real-life scenario about ${topic}...", "type": "APPLICATION", "answer": "...", "marks": 4 }] },

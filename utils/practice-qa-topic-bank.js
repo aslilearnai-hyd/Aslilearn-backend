@@ -19,7 +19,7 @@ const PRACTICE_QA_TOPIC_BANK = [
       'Relate floral reproduction to fruit yield, hybrid seeds, and pollination challenges in Indian crops.',
     ],
     instructions:
-      'Attempt Sections A–G in order. Use precise NCERT terms (stamen, pistil, stigma, anther, ovule, zygote, endosperm). Draw a labelled flower diagram where helpful. Section A: one correct option only. Section C: write the full matching pairs.',
+      'Attempt Sections A–G in order. Use precise NCERT terms (stamen, pistil, stigma, anther, ovule, zygote, endosperm). Section A: one correct option only. Section C: mark each statement true or false. Do not ask students to refer to figures or diagrams.',
     sections: {
       'Section A: MCQs': [
         {
@@ -75,31 +75,21 @@ const PRACTICE_QA_TOPIC_BANK = [
           bloom_level: 'Remember',
         },
       ],
-      'Section C: Match the Following': [
+      'Section C: True or False': [
         {
-          type: 'MATCH',
-          question: 'Match Column A with Column B.',
-          options: [
-            '1. Stamen | A. Male reproductive part',
-            '2. Pistil | B. Female reproductive part',
-            '3. Pollen grain | C. Male gametophyte',
-            '4. Ovule | D. Contains female gamete',
-          ],
-          answer: '1-A, 2-B, 3-C, 4-D',
-          marks: 2,
+          type: 'TF',
+          question: 'State whether true or false: The stamen is the male reproductive part of a flower.',
+          options: ['True', 'False'],
+          answer: 'True',
+          marks: 1,
           bloom_level: 'Understand',
         },
         {
-          type: 'MATCH',
-          question: 'Match the floral structure with its function.',
-          options: [
-            '1. Anther | A. Produces pollen',
-            '2. Stigma | B. Receives pollen',
-            '3. Ovary | C. Contains ovules',
-            '4. Style | D. Connects stigma to ovary',
-          ],
-          answer: '1-A, 2-B, 3-C, 4-D',
-          marks: 2,
+          type: 'TF',
+          question: 'State whether true or false: The stigma is the part of the pistil that receives pollen.',
+          options: ['True', 'False'],
+          answer: 'True',
+          marks: 1,
           bloom_level: 'Understand',
         },
       ],

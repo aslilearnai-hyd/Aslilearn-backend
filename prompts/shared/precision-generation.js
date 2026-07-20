@@ -1,3 +1,5 @@
+import { buildUnsupportedQuestionBanBlock } from '../../utils/unsupported-question-filter.js';
+
 /**
  * Precision + textbook-grounding rules for all AI tools (including book-based generator).
  * @module prompts/shared/precision-generation
@@ -31,7 +33,7 @@ export function buildClassroomTextbookMethodologyBlock() {
   return [
     'CLASSROOM TEXTBOOK METHODOLOGY (mandatory):',
     '- Write like NCERT/CBSE classroom material: easy for teachers to teach and students to follow.',
-    '- Match question TYPES from the textbook: MCQ, fill-in-the-blank, very short answer, short answer, numerical, match-the-following, true/false, label-the-diagram prompts.',
+    '- Match question TYPES from the textbook that work in text-only UI: MCQ, fill-in-the-blank, true/false, very short answer, short answer, numerical. NEVER match-the-following, NEVER image/figure/diagram-based or label-the-diagram prompts.',
     '- Mirror the STYLE of in-chapter Examples, Intext Questions, and end-of-section Exercises — same difficulty band and wording pattern.',
     '- Activities = simplified versions of textbook Activities/Projects (materials, steps, observation table) — not invented story-based tasks.',
     '- Teacher-facing text: who does what, with what material, for how long — plain classroom language.',
@@ -49,10 +51,13 @@ export function buildPrecisionGenerationBlock() {
   return [
     buildClassroomTextbookMethodologyBlock(),
     '',
+    buildUnsupportedQuestionBanBlock(),
+    '',
     'PRECISION MODE (mandatory):',
     '- Every question/task names the exact SUBTOPIC and tests one clear skill.',
     '- Write exam-ready stems: define, state, calculate, explain, justify — no story setup.',
     '- BAN: "Imagine…", "During a school fair…", "Role-play…", "Design a poster…", "In your community…", "Set the scene…".',
+    '- BAN: Match-the-Following / Column A–B matching, and any image/figure/diagram/picture-based stems (refer to figure, as shown in the diagram, label the diagram, etc.).',
     '- BAN: Literature-style prompts (summarise the message, speaking situations) for Science/Maths.',
     '- Science/Maths: definitions, formulas, numericals, units, cause–effect — not observation diaries.',
     '- Depth = substantive content on the subtopic (steps, formulas, evidence), not activity wrappers.',

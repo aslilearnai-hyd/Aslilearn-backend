@@ -37,6 +37,7 @@ import {
   validateCanonicalFieldsForSave,
   ensureHomeworkPracticeQuestions,
 } from '../utils/ai-generator-section-pad.js';
+import { filterUnsupportedQuestions, buildUnsupportedQuestionBanBlock, isUnsupportedQuestionStem } from '../utils/unsupported-question-filter.js';
 import { stripMarkdownSyntax, deepStripMarkdownValues } from '../utils/strip-markdown-syntax.js';
 import {
   stripVariantScaffoldFromQuestionText,
@@ -261,7 +262,7 @@ function cleanWorksheetMcqOptions(options = []) {
 /** Homework Creator: keep real questions; avoid worksheet filters that drop short valid stems. */
 function sanitizeHomeworkPracticeQuestions(questions = []) {
   const seen = new Set();
-  return questions
+  return filterUnsupportedQuestions(questions)
     .map((row) => ({
       question_number: row?.question_number ?? row?.sl_no,
       type: String(row?.type || '').trim(),
@@ -274,6 +275,7 @@ function sanitizeHomeworkPracticeQuestions(questions = []) {
       ),
     }))
     .filter((row) => row.question && row.question.length >= 8)
+    .filter((row) => !isUnsupportedQuestionStem(row.question, row.type))
     .filter((row) => !isAnswerKeyLikeQuestion(row.question))
     .filter((row) => {
       const key = worksheetQuestionDedupeKey(row);
@@ -285,7 +287,7 @@ function sanitizeHomeworkPracticeQuestions(questions = []) {
 
 const sanitizeWorksheetQuestions = (questions = []) => {
   const seenFull = new Set();
-  return questions
+  return filterUnsupportedQuestions(questions)
     .map((row) => ({
       question: stripVariantScaffoldFromQuestionText(cleanWorksheetQuestionText(row?.question)),
       options: cleanWorksheetMcqOptions(row?.options),
@@ -299,6 +301,7 @@ const sanitizeWorksheetQuestions = (questions = []) => {
       ...(row?._scaffold === true ? { _scaffold: true } : {}),
     }))
     .filter((row) => row.question)
+    .filter((row) => !isUnsupportedQuestionStem(row.question, row.type))
     .filter((row) => !isHeadingLikeLine(row.question))
     .filter((row) => !isWorksheetPdfChrome(row.question))
     .filter((row) => !isAnswerKeyLikeQuestion(row.question))
@@ -5979,7 +5982,7 @@ export function buildWorksheetRenderableFromStructured(source, sourceText = '') 
 export const PRACTICE_QA_SECTION_LABELS = {
   A: 'Section A: MCQs',
   B: 'Section B: Fill in the Blanks',
-  C: 'Section C: Match the Following',
+  C: 'Section C: True or False',
   D: 'Section D: Very Short Answer Questions',
   E: 'Section E: Short Answer Questions',
   F: 'Section F: Application / Case-based Questions',
@@ -5994,6 +5997,9 @@ const PRACTICE_QA_SECTION_KEY_PAIRS = [
   ['section_b_fill_in_blanks', PRACTICE_QA_SECTION_LABELS.B],
   ['section_b_fib', PRACTICE_QA_SECTION_LABELS.B],
   ['fill_in_blanks', PRACTICE_QA_SECTION_LABELS.B],
+  ['section_c_true_false', PRACTICE_QA_SECTION_LABELS.C],
+  ['section_c_tf', PRACTICE_QA_SECTION_LABELS.C],
+  ['true_false', PRACTICE_QA_SECTION_LABELS.C],
   ['section_c_match_following', PRACTICE_QA_SECTION_LABELS.C],
   ['section_c_match', PRACTICE_QA_SECTION_LABELS.C],
   ['match_following', PRACTICE_QA_SECTION_LABELS.C],
@@ -6056,7 +6062,7 @@ function looksLikePracticeQaQuestion(text) {
 }
 
 function sanitizePracticeQaQuestions(questions = []) {
-  return questions
+  return filterUnsupportedQuestions(questions)
     .map((row) => ({
       ...row,
       question: stripVariantScaffoldFromQuestionText(String(row?.question || '').replace(/\s+/g, ' ').trim()),
@@ -6389,16 +6395,12 @@ function buildPracticeQaFallbackQuestionRaw(sectionName, topicLabel, subject, qu
   if (sectionName === PRACTICE_QA_SECTION_LABELS.C) {
     return {
       question_number: questionNumber,
-      type: 'MATCH',
+      type: 'TF',
       section: sectionName,
-      question: uniqueQ(`Match terms related to ${topicLabel} with their meanings.`),
-      options: [
-        '1. Key structure | A. Main function',
-        '2. Process step | B. What happens in the lesson',
-        '3. End product | C. Outcome described in class',
-      ],
-      answer: '1-A, 2-B, 3-C',
-      marks: 2,
+      question: uniqueQ(`State whether true or false: A core fact about ${topicLabel} from the NCERT lesson is correctly stated.`),
+      options: ['True', 'False'],
+      answer: 'True',
+      marks: 1,
     };
   }
   if (sectionName === PRACTICE_QA_SECTION_LABELS.D) {
@@ -6677,7 +6679,7 @@ function inferPracticeQaSectionLabel(sectionRaw, question = {}) {
   const t = String(question.type || '').trim().toUpperCase();
   if (/^A\b|SECTION\s*A|MCQ|MULTIPLE\s*CHOICE/i.test(s) || t === 'MCQ') return PRACTICE_QA_SECTION_LABELS.A;
   if (/^B\b|SECTION\s*B|FILL|FIB|BLANK/i.test(s) || t === 'FIB') return PRACTICE_QA_SECTION_LABELS.B;
-  if (/^C\b|SECTION\s*C|MATCH/i.test(s) || t === 'MATCH') return PRACTICE_QA_SECTION_LABELS.C;
+  if (/^C\b|SECTION\s*C|TRUE\s*OR\s*FALSE|T\/?F|MATCH/i.test(s) || t === 'MATCH' || t === 'TF' || t === 'TRUEFALSE' || t === 'TRUE_FALSE') return PRACTICE_QA_SECTION_LABELS.C;
   if (/^6\b|section\s*6/i.test(s) && /match/i.test(s)) return PRACTICE_QA_SECTION_LABELS.C;
   if (/^D\b|SECTION\s*D|VERY\s*SHORT|VSA/i.test(s) || t === 'VSA') return PRACTICE_QA_SECTION_LABELS.D;
   if (/^E\b|SECTION\s*E|SHORT\s*ANSWER/i.test(s) && !/very/i.test(s)) return PRACTICE_QA_SECTION_LABELS.E;
@@ -6689,7 +6691,7 @@ function inferPracticeQaSectionLabel(sectionRaw, question = {}) {
   if (s && s !== 'Questions') return s;
   if (Array.isArray(question.options) && question.options.length >= 2) return PRACTICE_QA_SECTION_LABELS.A;
   if (/_{2,}/.test(String(question.question || ''))) return PRACTICE_QA_SECTION_LABELS.B;
-  if (/match\s*(the\s*)?following/i.test(String(question.question || ''))) {
+  if (/true\s*or\s*false|t\/?f\b/i.test(String(question.question || ''))) {
     return PRACTICE_QA_SECTION_LABELS.C;
   }
   if (/application|case[\s-]*based|competency/i.test(String(question.question || ''))) {
@@ -9237,7 +9239,7 @@ const TOOL_STRUCTURED_RULES = {
     allowedTypes: ['Practice Q&A', 'Homework', 'MCQ', 'Worksheet'],
     validate: (data) => practiceQaHasAllRequiredSections(data),
     message:
-      'Practice Q&A must include at least one question in every section A–G (including Match the Following in Section C).',
+      'Practice Q&A must include at least one question in every section A–G (Section C = True or False). Never Match-the-Following or image-based questions.',
   },
   'chapter-summary-creator': {
     allowedTypes: ['Chapter Summary', 'Summary', 'Notes', 'Study Guide'],
@@ -11529,7 +11531,7 @@ Write all student-facing text in the required output language.`;
             const missingHint = missing.length
               ? ` You MUST add questions to: ${missing.join('; ')}.`
               : '';
-            activeUserPrompt = `${baseUserPrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return structuredContent with title and sections[] — all seven section names exactly (Section A: MCQs … Section G: HOTS / Analytical Questions), each with at least one question. Section C MUST be type "MATCH" with a match-the-following prompt and options as Column A / Column B pairs (e.g. "1. Observation | A. Step before hypothesis"). Include short answers in Section E and application/case-based in Section F. Do NOT duplicate questions in sections[] and questions[]. Total at least ${target} questions.`;
+            activeUserPrompt = `${baseUserPrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return structuredContent with title and sections[] — all seven section names exactly (Section A: MCQs … Section G: HOTS / Analytical Questions), each with at least one question. Section C MUST be type "TF" with True/False statements (options ["True","False"]). Do NOT generate Match-the-Following or image/figure-based questions. Include short answers in Section E and application/case-based in Section F. Do NOT duplicate questions in sections[] and questions[]. Total at least ${target} questions.`;
           } else if (slug === 'worksheet-mcq-generator') {
             const wsTarget = Number(meta?.questionCount) > 0 ? Number(meta.questionCount) : 10;
             activeUserPrompt = `${baseUserPrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. Return structuredContent with title, learning_objectives[], instructions, sections[] (Section A: MCQs through Section E: Competency / Real-life Application Questions). Include at least ${wsTarget} unique questions total across sections A–E — no duplicate question stems. Put questions ONLY in sections[].questions (not also in top-level questions[] or section_a_mcqs). Each MCQ needs four labeled options A)–D) and an answer.`;
