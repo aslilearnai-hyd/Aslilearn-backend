@@ -1944,9 +1944,9 @@ const TEMPLATES = {
       {
         order: 6,
         id: 'section_c',
-        label: 'Section C: Match the Following',
+        label: 'Section C: True or False',
         universalBlock: 'output',
-        storageKeys: ['section_c_match_following', 'section_c_match', 'match_following'],
+        storageKeys: ['section_c_true_false', 'section_c_tf', 'true_false', 'section_c_match_following', 'section_c_match', 'match_following'],
       },
       {
         order: 7,
@@ -1991,12 +1991,12 @@ const TEMPLATES = {
     ],
     parserHints: [
       '11-section practice set: title, objectives, instructions, sections A–G, answer key with explanations; each question includes bloom_level and difficulty_tag.',
-      'Section C example: sectionName "Section C: Match the Following", questions[{ type:"MATCH", question:"Match Column A with Column B.", options:["1. Observation — A. First step","2. Hypothesis — B. Testable explanation"], answer:"1-A, 2-B", marks:2 }].',
+      'Section C example: sectionName "Section C: True or False", questions[{ type:"TF", question:"State whether true or false: …", options:["True","False"], answer:"True", marks:1 }].
     ],
     regenerationRules: { mergePolicy: 'replace', allowTemplateRegeneration: true },
     gemini: {
       strictOutputHint:
-        'Practice Q&A JSON: title, learning_objectives[], instructions, sections[{sectionName,questions[]}] with question_number, type, question, options[], answer, explanation, bloom_level, difficulty_tag, marks. Section names MUST be exactly: "Section A: MCQs", "Section B: Fill in the Blanks", "Section C: Match the Following", "Section D: Very Short Answer Questions", "Section E: Short Answer Questions", "Section F: Application / Case-based Questions", "Section G: HOTS / Analytical Questions". REQUIRED: include ALL seven sections A–G in sections[] — each section MUST have at least one question. Do NOT duplicate the same question in sections[] and a top-level questions[] array. Do NOT generate answer_key_with_explanations — put answer and explanation on each question object only. Every question object MUST have a non-empty "question" field.',
+        'Practice Q&A JSON: title, learning_objectives[], instructions, sections[{sectionName,questions[]}] with question_number, type, question, options[], answer, explanation, bloom_level, difficulty_tag, marks. Section names MUST be exactly: "Section A: MCQs", "Section B: Fill in the Blanks", "Section C: True or False", "Section D: Very Short Answer Questions", "Section E: Short Answer Questions", "Section F: Application / Case-based Questions", "Section G: HOTS / Analytical Questions". REQUIRED: include ALL seven sections A–G in sections[] — each section MUST have at least one question. Do NOT duplicate the same question in sections[] and a top-level questions[] array. Do NOT generate answer_key_with_explanations — put answer and explanation on each question object only. Every question object MUST have a non-empty "question" field.',
       pdfExtractSchema: {
         title: 'string',
         learning_objectives: ['string'],
@@ -2507,7 +2507,7 @@ export function buildAiGeneratorPromptParts(toolSlug, params = {}) {
     const practiceTarget =
       Number.isFinite(questionCount) && questionCount > 0 ? questionCount : 12;
     contextLines.push(
-      `TARGET PRACTICE QUESTIONS: ${practiceTarget} total, distributed across ALL sections A–G (each section must have at least 1 question; Section C = match, Section E = short answer, Section F = applied problem using subtopic facts/formula, Section G = HOTS analytical on subtopic)`,
+      `TARGET PRACTICE QUESTIONS: ${practiceTarget} total, distributed across ALL sections A–G (each section must have at least 1 question; Section C = true/false, Section E = short answer, Section F = applied problem using subtopic facts/formula, Section G = HOTS analytical on subtopic)`,
     );
   }
   if (slug === 'worksheet-mcq-generator') {
@@ -2643,7 +2643,7 @@ export function buildAiGeneratorPromptParts(toolSlug, params = {}) {
 
   const toolSpecificRules = [
     'For tools that produce multiple worksheet questions, exam items, or flashcards, put them in the arrays defined by the schema (e.g. questions[], sections[].questions[], cards[]).',
-    'For Smart Q&A Practice Generator, structuredContent.sections MUST list all seven entries (Section A through Section G) and each MUST contain at least one question object. Section C must be a Match-the-Following item (type "MATCH"). Do NOT generate answer_key_with_explanations — answers live on each question object only.',
+    'For Smart Q&A Practice Generator, structuredContent.sections MUST list all seven entries (Section A through Section G) and each MUST contain at least one question object. Section C must be True or False items (type "TF"). Do NOT generate Match-the-Following or image/figure-based questions. Do NOT generate answer_key_with_explanations — answers live on each question object only.',
     'For Chapter Summary Creator use chapter_summary_title and chapter_overview — never study_guide_title or chapter_subtopic_overview field names.',
     'For Concept Mastery Helper there is NO separate "concept" form field — use the SUBTOPIC (and TOPIC) from context as concept_name. structuredContent MUST be { "concepts": [ { ... } ] } with at least one filled concept object for that sub-topic.',
     'For Activity & Project Generator, fill ALL 13 canonical fields in one structuredContent object.',
@@ -4308,7 +4308,7 @@ export function formatItemLinesFromTemplate(toolSlug, item, index = 0) {
         const sectionOrder = [
           'Section A: MCQs',
           'Section B: Fill in the Blanks',
-          'Section C: Match the Following',
+          'Section C: True or False',
           'Section D: Very Short Answer Questions',
           'Section E: Short Answer Questions',
           'Section F: Application / Case-based Questions',

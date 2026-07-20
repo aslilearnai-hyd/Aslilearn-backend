@@ -31,7 +31,7 @@ export function resolveGradeBand(classLabel) {
     primary: [
       'Use short sentences (8–12 words average). Concrete nouns children see daily.',
       'Activities: hands-on, 5–10 minute chunks, movement, drawing, role-play.',
-      'Questions: oral first, picture-based, one-step reasoning.',
+      'Questions: oral first, oral/one-step reasoning (text-only — no picture/image stems).',
       'Avoid abstract terms without a physical example (e.g. show a real leaf before "photosynthesis").',
       'Homework: 15–20 minutes max; parent-friendly instructions.',
     ],
