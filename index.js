@@ -66,6 +66,7 @@ import practiceProgressRoutes from './routes/practice-progress.js';
 import dashboardRoutes from './routes/dashboards.js';
 import timetableRoutes from './routes/timetable.js';
 import { initPdfProcessingQueue } from './queues/pdfProcessingQueue.js';
+import { startWeeklyImpactScheduler } from './services/weekly-impact-scheduler.js';
 import { verifyToken, verifySuperAdmin, verifyAdmin, extractAdminId } from './middleware/auth.js';
 import {
   getAssessments,
@@ -215,6 +216,7 @@ if (nodeEnvEffective === 'production') {
 
 const PORT = process.env.PORT || 5000;
 initPdfProcessingQueue();
+startWeeklyImpactScheduler();
 
 // Configure multer for file uploads (MIME allow-list)
 const upload = multer({

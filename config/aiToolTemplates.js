@@ -2482,9 +2482,22 @@ export function buildAiGeneratorPromptParts(toolSlug, params = {}) {
     });
     contextLines.push(formatQuestionCompositionPromptLine(composition, total));
     const scopeSub = String(params.subTopic || params.subtopic || '').trim();
+    const multiSubs = (
+      Array.isArray(params.subTopics)
+        ? params.subTopics
+        : Array.isArray(extra.subTopics)
+          ? extra.subTopics
+          : []
+    )
+      .map((s) => String(s || '').trim())
+      .filter(Boolean);
     if (!scopeSub || params.chapterScope || extra.chapterScope) {
       contextLines.push(
         'SCOPE: Whole chapter/topic — cover the full chapter (all major subtopics). Do not limit questions to a single subtopic.',
+      );
+    } else if (multiSubs.length > 1) {
+      contextLines.push(
+        `SCOPE: Combined multi-subtopic paper — cover ALL of: ${multiSubs.join(' | ')}. Distribute questions across these subtopics.`,
       );
     } else {
       contextLines.push(`SCOPE: Subtopic-focused — ${scopeSub}`);

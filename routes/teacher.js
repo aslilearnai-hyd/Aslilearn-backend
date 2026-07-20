@@ -29,6 +29,7 @@ import {
   getTopics,
   getAvailableContent
 } from '../controllers/aiToolsController.js';
+import { getMyWeeklyDigest } from '../controllers/impactReportController.js';
 import Video from '../models/Video.js';
 import Assessment from '../models/Assessment.js';
 import Exam from '../models/Exam.js';
@@ -135,6 +136,7 @@ router.post('/ai/tool', allowTeacherOrStudent, createTeacherTool); // Uses hardc
 router.post('/ai/generate-content', allowTeacherOrStudent, generateContent); // Generate + persist
 router.get('/ai/generated-content', allowTeacherOrStudent, getGeneratedContent); // Fallback latest generated content
 router.get('/ai/tool-stats', allowTeacherOrStudent, getTeacherToolStats);
+router.get('/weekly-digest', allowTeacherOrStudent, getMyWeeklyDigest);
 
 // Apply teacher-only middleware for other routes
 router.use(verifyTeacher);
