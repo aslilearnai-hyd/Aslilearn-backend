@@ -246,6 +246,21 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
   );
   const topicName = String(params.topicName || '').trim();
   const subtopicName = String(params.subtopicName || '').trim();
+  const subTopicList = (
+    Array.isArray(params.subTopics)
+      ? params.subTopics
+      : Array.isArray(params.subtopicNames)
+        ? params.subtopicNames
+        : []
+  )
+    .map((s) => String(s || '').trim())
+    .filter(Boolean);
+  const isWholeChapter = !subtopicName || params.chapterScope === true;
+  const combinedSubtopicLabel =
+    subTopicList.length > 1 ? subTopicList.join(', ') : subtopicName;
+  const storageSubtopic = isWholeChapter
+    ? combinedSubtopicLabel || 'Whole chapter'
+    : subtopicName;
   const batchSize = getBatchSize(params.batchSize);
   const toolDisplayName = getBookBasedToolDisplayName(toolSlug);
   const qualityTierSettings = resolveQualityTierSettings(
@@ -263,14 +278,14 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
     className,
     subject: subjectName,
     topic: topicName,
-    subtopic: subtopicName,
+    subtopic: storageSubtopic,
     bookId,
     bookTitle: book.title,
   };
 
   const lockScope = {
     ...scope,
-    subtopic: `${subtopicName}::book:${bookId}`,
+    subtopic: `${isWholeChapter ? 'whole-chapter' : subtopicName}::book:${bookId}`,
   };
 
   const lockedBy = opts.reqUser?.userId || opts.reqUser?._id || 'unknown';
@@ -320,16 +335,17 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             className: classNameForRag,
             subjectName,
             topicName,
-            subtopicName,
+            subtopicName: isWholeChapter ? '' : subtopicName,
+            subTopics: isWholeChapter && subTopicList.length ? subTopicList : undefined,
             toolSlug,
             bookTitle: book.title,
-            topK: conceptMasteryBatch ? 8 : undefined,
+            topK: conceptMasteryBatch ? 8 : isWholeChapter ? 16 : undefined,
           })
         : { contextText: '', chunkCount: 0, chunks: [], hasBookPassages: false };
 
       if (useBookKnowledge && !ragBase.hasBookPassages) {
         console.warn(
-          `[book-generator] WARNING: No textbook chunks retrieved for book=${bookId} topic="${topicName}" subtopic="${subtopicName}". Generation will use curriculum labels only — reindex the book or check board/subject metadata.`,
+          `[book-generator] WARNING: No textbook chunks retrieved for book=${bookId} topic="${topicName}" subtopic="${isWholeChapter ? 'whole-chapter' : subtopicName}". Generation will use curriculum labels only — reindex the book or check board/subject metadata.`,
         );
       } else if (useBookKnowledge) {
         console.log(
@@ -425,7 +441,9 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                     classLabel: className,
                     subject: subjectName,
                     topic: topicName || book.title,
-                    subTopic: subtopicName,
+                    subTopic: isWholeChapter ? '' : subtopicName,
+                    chapterScope: isWholeChapter,
+                    ...(isWholeChapter && subTopicList.length > 1 ? { subTopics: subTopicList } : {}),
                   },
                   {
                     primaryModel: qualityTierSettings.primaryGeminiModel,
@@ -533,7 +551,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                       classLabel: className,
                       subject: subjectName,
                       topic: topicName || book.title,
-                      subtopic: subtopicName,
+                      subtopic: storageSubtopic,
                       section: '',
                       content: persistContent,
                       generatedContent: persistContent,
@@ -547,6 +565,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                         useBookKnowledge,
                         ragChunkCount: ragBase.chunkCount,
                         bookTextUsed: Boolean(ragBase.hasBookPassages),
+                        chapterScope: isWholeChapter,
                         createdByName: opts.reqUser?.name || 'Super Admin',
                         createdByRole: 'super-admin',
                         contentType: 'structured',
@@ -650,7 +669,9 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               subject: subjectName,
               bookSubject: String(book.subject || '').trim(),
               topic: topicName || book.title,
-              subTopic: subtopicName,
+              subTopic: isWholeChapter ? '' : subtopicName,
+              chapterScope: isWholeChapter,
+              ...(isWholeChapter && subTopicList.length > 1 ? { subTopics: subTopicList } : {}),
               qualityTier: qualityTierSettings.tier,
               extraParams,
               pdfContext,
@@ -665,22 +686,24 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
 
             const worksheetBatch = toolSlug === 'worksheet-mcq-generator';
             const worksheetTopic = resolveWorksheetTopicLabel({
-              subTopic: subtopicName,
-              subtopic: subtopicName,
+              subTopic: isWholeChapter ? '' : subtopicName,
+              subtopic: isWholeChapter ? '' : subtopicName,
               topic: topicName,
               bookTitle: book.title,
               subject: subjectName,
               bookSubject: String(book.subject || '').trim(),
               generationVariant: variantIndex,
+              chapterScope: isWholeChapter,
             });
             const finalizeMeta = {
               subject: subjectName,
               bookSubject: String(book.subject || '').trim(),
               topic: worksheetTopic,
-              subTopic: subtopicName || worksheetTopic,
-              subtopic: subtopicName || worksheetTopic,
+              subTopic: isWholeChapter ? worksheetTopic : subtopicName || worksheetTopic,
+              subtopic: isWholeChapter ? worksheetTopic : subtopicName || worksheetTopic,
               bookTitle: book.title,
               board,
+              chapterScope: isWholeChapter,
               className,
               generationVariant: variantIndex,
               variantAngle: extraParams.variantAngle,
@@ -889,7 +912,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               classLabel: className,
               subject: subjectName,
               topic: topicName,
-              subtopic: subtopicName,
+              subtopic: storageSubtopic,
               section: '',
               content: formattedContent,
               generatedContent: formattedContent,
@@ -903,6 +926,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                 useBookKnowledge,
                 ragChunkCount: ragBase.chunkCount,
                 bookTextUsed: Boolean(ragBase.hasBookPassages),
+                chapterScope: isWholeChapter,
                 bookTextWarning:
                   useBookKnowledge && !ragBase.hasBookPassages
                     ? 'No textbook passages were retrieved. Content may not be book-grounded.'

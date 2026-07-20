@@ -11,6 +11,9 @@ export default createToolPromptPack({
     'When SCOPE is whole chapter, cover the full chapter/topic fairly across sections.',
     'When a subtopic is provided, keep the paper focused on that subtopic.',
     'CRITICAL: Use CURRICULUM KNOWLEDGE block — every MCQ must test real chapter facts.',
+    'DIRECT EXAM STYLE ONLY: paper_title = "{Chapter/Subtopic} — {Subject} Examination Paper". BAN adventure, journey, market-day, "exploring…", or story titles.',
+    'instructions = standard board-exam instructions (read carefully, attempt all, marks indicated). BAN "Welcome young scientists", market visits, journeys, role-play.',
+    'Every stem is direct: Define / State / Calculate / Explain / Distinguish / Draw and label — no story setup before the question.',
     'FORBIDDEN MCQ OPTIONS: "Belief without evidence", "Systematic observation and evidence", "Superstition only" — these are NOT subject options.',
     'FORBIDDEN STEMS: "Identify the correct idea related to [topic title]" — ask specific curriculum content instead.',
     'paper_title, instructions, blueprint (section-wise marks table).',
@@ -27,5 +30,6 @@ export default createToolPromptPack({
   ],
   rewriteRules: [
     'Match composition counts exactly. Populate answer key and marking scheme for every question.',
+    'If title or instructions use a scenario/adventure frame, rewrite to direct exam wording before return.',
   ],
 });

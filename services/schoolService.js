@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import School from '../models/School.js';
 import User from '../models/User.js';
+import Teacher from '../models/Teacher.js';
 import {
   isStoredCurriculumBoard,
   resolveAdminStoredBoard,
@@ -56,6 +57,9 @@ export function buildSchoolFieldsFromBody(body) {
     board,
     isAsliPrepExclusive: rawExclusive,
     iitCategories: rawIitCategories,
+    licensedStudents,
+    licensedTeachers,
+    accountSeatsNotes,
   } = body;
 
   const curriculumUpper = String(board || 'CBSE').toUpperCase().trim();
@@ -68,7 +72,7 @@ export function buildSchoolFieldsFromBody(body) {
     [schoolDetails.city, schoolDetails.district, schoolDetails.state].filter(Boolean).join(', ');
   const iitCategories = exclusive ? normalizeIitCategories(rawIitCategories) : [];
 
-  return {
+  const fields = {
     name: String(schoolName || '').trim(),
     schoolLogo: schoolLogo?.trim() || '',
     contactPerson: contactPerson?.trim() || '',
@@ -82,6 +86,36 @@ export function buildSchoolFieldsFromBody(body) {
     curriculumBoard: curriculumUpper,
     isAsliPrepExclusive: exclusive,
     iitCategories,
+  };
+
+  if (licensedStudents !== undefined && licensedStudents !== null && licensedStudents !== '') {
+    fields.licensedStudents = Math.max(0, Math.floor(Number(licensedStudents) || 0));
+  }
+  if (licensedTeachers !== undefined && licensedTeachers !== null && licensedTeachers !== '') {
+    fields.licensedTeachers = Math.max(0, Math.floor(Number(licensedTeachers) || 0));
+  }
+  if (accountSeatsNotes !== undefined && accountSeatsNotes !== null) {
+    fields.accountSeatsNotes = String(accountSeatsNotes).trim();
+  }
+
+  return fields;
+}
+
+/** Normalize non-negative integer seat counts from request body */
+export function normalizeAccountSeats(body = {}) {
+  const parseSeat = (v) => {
+    if (v === undefined || v === null || v === '') return null;
+    const n = Math.floor(Number(v));
+    if (!Number.isFinite(n) || n < 0) return NaN;
+    return n;
+  };
+  return {
+    licensedStudents: parseSeat(body.licensedStudents),
+    licensedTeachers: parseSeat(body.licensedTeachers),
+    accountSeatsNotes:
+      body.accountSeatsNotes === undefined || body.accountSeatsNotes === null
+        ? null
+        : String(body.accountSeatsNotes).trim(),
   };
 }
 
@@ -102,6 +136,15 @@ export function applySchoolToAdminUser(admin, school) {
   admin.curriculumBoard = school.curriculumBoard;
   admin.isAsliPrepExclusive = school.isAsliPrepExclusive;
   admin.iitCategories = Array.isArray(school.iitCategories) ? school.iitCategories : [];
+  if (school.licensedStudents !== undefined) {
+    admin.licensedStudents = Math.max(0, Math.floor(Number(school.licensedStudents) || 0));
+  }
+  if (school.licensedTeachers !== undefined) {
+    admin.licensedTeachers = Math.max(0, Math.floor(Number(school.licensedTeachers) || 0));
+  }
+  if (school.accountSeatsNotes !== undefined) {
+    admin.accountSeatsNotes = String(school.accountSeatsNotes || '').trim();
+  }
 }
 
 /** Build a school-shaped object from an admin user when schools collection row is missing */
@@ -123,6 +166,9 @@ export function schoolShapeFromAdminUser(admin) {
     place: admin.place || '',
     pin: admin.pin || '',
     schoolDetails: normalizeSchoolDetails(admin.schoolDetails),
+    licensedStudents: Math.max(0, Math.floor(Number(admin.licensedStudents) || 0)),
+    licensedTeachers: Math.max(0, Math.floor(Number(admin.licensedTeachers) || 0)),
+    accountSeatsNotes: String(admin.accountSeatsNotes || '').trim(),
     isActive: admin.isActive !== false,
     createdAt: admin.createdAt,
     updatedAt: admin.updatedAt,
@@ -165,6 +211,25 @@ export function formatSchoolListItem(school, admin, stats = {}) {
         : [],
     status: (admin?.isActive !== false && school?.isActive !== false) ? 'Active' : 'Inactive',
     joinDate: school?.createdAt || admin?.createdAt,
+    licensedStudents: Math.max(
+      0,
+      Math.floor(
+        Number(
+          school?.licensedStudents ?? admin?.licensedStudents ?? 0
+        ) || 0
+      )
+    ),
+    licensedTeachers: Math.max(
+      0,
+      Math.floor(
+        Number(
+          school?.licensedTeachers ?? admin?.licensedTeachers ?? 0
+        ) || 0
+      )
+    ),
+    accountSeatsNotes: String(
+      school?.accountSeatsNotes ?? admin?.accountSeatsNotes ?? ''
+    ).trim(),
     stats: {
       students: stats.students ?? 0,
       teachers: stats.teachers ?? 0,
@@ -182,6 +247,77 @@ export function formatSchoolListItem(school, admin, stats = {}) {
 export async function findSchoolByAdminId(adminId) {
   if (!adminId) return null;
   return School.findOne({ adminUserId: adminId }).lean();
+}
+
+/**
+ * Live used + licensed seat counts for a school admin.
+ * licensed = 0 means no cap set yet (treat as unlimited for enforcement).
+ */
+export async function getAccountSeatUsage(adminId) {
+  const id = adminId?.toString?.() || adminId;
+  if (!id) {
+    return {
+      usedStudents: 0,
+      usedTeachers: 0,
+      licensedStudents: 0,
+      licensedTeachers: 0,
+      accountSeatsNotes: '',
+    };
+  }
+
+  const [admin, school, usedStudents, usedTeachers] = await Promise.all([
+    User.findById(id)
+      .select('licensedStudents licensedTeachers accountSeatsNotes')
+      .lean(),
+    School.findOne({ adminUserId: id })
+      .select('licensedStudents licensedTeachers accountSeatsNotes')
+      .lean(),
+    User.countDocuments({ role: 'student', assignedAdmin: id }),
+    Teacher.countDocuments({ adminId: id }),
+  ]);
+
+  const licensedStudents = Math.max(
+    0,
+    Math.floor(Number(school?.licensedStudents ?? admin?.licensedStudents ?? 0) || 0)
+  );
+  const licensedTeachers = Math.max(
+    0,
+    Math.floor(Number(school?.licensedTeachers ?? admin?.licensedTeachers ?? 0) || 0)
+  );
+
+  return {
+    usedStudents,
+    usedTeachers,
+    licensedStudents,
+    licensedTeachers,
+    accountSeatsNotes: String(
+      school?.accountSeatsNotes ?? admin?.accountSeatsNotes ?? ''
+    ).trim(),
+  };
+}
+
+/** Returns error message if creating `extra` accounts would exceed licensed seats; null if ok. */
+export async function assertWithinAccountSeats(adminId, { students = 0, teachers = 0 } = {}) {
+  const usage = await getAccountSeatUsage(adminId);
+  if (students > 0 && usage.licensedStudents > 0) {
+    if (usage.usedStudents + students > usage.licensedStudents) {
+      return {
+        ok: false,
+        message: `Student account limit reached (${usage.usedStudents}/${usage.licensedStudents}). Contact Super Admin to increase licensed student seats.`,
+        usage,
+      };
+    }
+  }
+  if (teachers > 0 && usage.licensedTeachers > 0) {
+    if (usage.usedTeachers + teachers > usage.licensedTeachers) {
+      return {
+        ok: false,
+        message: `Teacher account limit reached (${usage.usedTeachers}/${usage.licensedTeachers}). Contact Super Admin to increase licensed teacher seats.`,
+        usage,
+      };
+    }
+  }
+  return { ok: true, usage };
 }
 
 export async function deleteSchoolById(schoolId) {

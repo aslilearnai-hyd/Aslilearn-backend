@@ -11,6 +11,9 @@ export default createToolPromptPack({
     'Honor QUESTION COMPOSITION exact counts for MCQ, VSAQ, SAQ, LAQ, and FIB. If a count is 0, omit that type.',
     'When SCOPE is whole chapter, distribute questions across major ideas in the chapter/topic.',
     'When a subtopic is provided, keep every stem tightly focused on that subtopic.',
+    'DIRECT WORKSHEET STYLE: title = "{Chapter/Subtopic} — {Subject} Worksheet". BAN adventure, market-day, journey, or story titles.',
+    'instructions = timing, units, attempt-all — never "Welcome young scientists" or market/journey framing.',
+    'Every stem is direct: Define / State / Calculate / Explain / Fill in / Choose the correct option — no story setup.',
     'MCQs: 4 options, distractors from real misconceptions.',
     'FIB: definition/formula/unit sentences.',
     'VSAQ: 1–2 marks — define, state, name.',
@@ -26,5 +29,6 @@ export default createToolPromptPack({
   ],
   rewriteRules: [
     'Exact composition counts. No duplicate stems. MCQs need 4 labelled options. No scenario wrappers.',
+    'If title or instructions use a scenario/adventure frame, rewrite to direct worksheet wording.',
   ],
 });

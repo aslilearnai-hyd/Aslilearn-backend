@@ -62,6 +62,25 @@ const schoolSchema = new mongoose.Schema(
       ref: 'User',
       default: null,
     },
+    /**
+     * Subscribed / licensed account seats (manual Super Admin entry).
+     * Live used counts come from registered teachers + students, not these fields.
+     */
+    licensedStudents: {
+      type: Number,
+      min: 0,
+      default: 0,
+    },
+    licensedTeachers: {
+      type: Number,
+      min: 0,
+      default: 0,
+    },
+    accountSeatsNotes: {
+      type: String,
+      trim: true,
+      default: '',
+    },
     isActive: {
       type: Boolean,
       default: true,

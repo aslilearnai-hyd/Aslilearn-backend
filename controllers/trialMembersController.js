@@ -54,6 +54,8 @@ function formatMember(doc, role) {
     trialPaidAt: doc.trialPaidAt || null,
     trialPaymentMethod: doc.trialPaymentMethod || '',
     trialPaymentReference: doc.trialPaymentReference || '',
+    converted: access.subscriptionStatus === 'active',
+    convertedAt: doc.trialPaidAt || null,
     createdAt: doc.createdAt || null,
     lastLogin: doc.lastLogin || null,
   };
@@ -219,11 +221,27 @@ export async function listTrialMembers(req, res) {
       ...teachers.map((t) => formatMember(t, 'teacher')),
     ];
 
+    // Global summary (before filters) so cards stay accurate while the table is filtered.
+    const summary = {
+      total: members.length,
+      trialActive: members.filter((m) => m.trialActive).length,
+      exceeded: members.filter((m) => m.trialExceeded).length,
+      paid: members.filter((m) => m.subscriptionStatus === 'active').length,
+      converted: members.filter((m) => m.converted).length,
+      students: members.filter((m) => m.role === 'student').length,
+      teachers: members.filter((m) => m.role === 'teacher').length,
+      revenueInr: members
+        .filter((m) => m.subscriptionStatus === 'active' && m.trialPaymentAmount != null)
+        .reduce((sum, m) => sum + (Number(m.trialPaymentAmount) || 0), 0),
+    };
+    const conversionRate =
+      summary.total > 0 ? Math.round((summary.converted / summary.total) * 1000) / 10 : 0;
+
     if (status === 'active' || status === 'trial') {
       members = members.filter((m) => m.trialActive || m.subscriptionStatus === 'trial');
     } else if (status === 'exceeded' || status === 'expired') {
       members = members.filter((m) => m.trialExceeded || m.subscriptionStatus === 'expired');
-    } else if (status === 'paid' || status === 'active_paid') {
+    } else if (status === 'paid' || status === 'active_paid' || status === 'converted') {
       members = members.filter((m) => m.subscriptionStatus === 'active');
     }
 
@@ -244,20 +262,11 @@ export async function listTrialMembers(req, res) {
       return new Date(b.createdAt || 0) - new Date(a.createdAt || 0);
     });
 
-    const summary = {
-      total: members.length,
-      trialActive: members.filter((m) => m.trialActive).length,
-      exceeded: members.filter((m) => m.trialExceeded).length,
-      paid: members.filter((m) => m.subscriptionStatus === 'active').length,
-      students: members.filter((m) => m.role === 'student').length,
-      teachers: members.filter((m) => m.role === 'teacher').length,
-    };
-
     res.json({
       success: true,
       data: {
         members,
-        summary,
+        summary: { ...summary, conversionRate },
         contentTypeOptions: [...ALL_CONTENT_TYPES],
         defaultTrialDays: INDIVIDUAL_TRIAL_DAYS,
       },
