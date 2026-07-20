@@ -22,6 +22,7 @@ import {
   getAllAdmins,
   getAdminAnalytics,
   getAdminSchoolDetail,
+  updateAdminAccountSeats,
   createAdmin,
   updateAdmin,
   deleteAdmin,
@@ -481,6 +482,7 @@ router.post('/ai-tools/upload-pdf', pdfUpload.single('pdf'), uploadAndParsePdf);
 router.get('/admins', getAllAdmins);
 router.get('/admins/:adminId/analytics', getAdminAnalytics);
 router.get('/admins/:adminId/school-detail', getAdminSchoolDetail);
+router.put('/admins/:adminId/account-seats', updateAdminAccountSeats);
 router.post('/admins/upload-logo', (req, res, next) => {
   schoolLogoUpload.single('logo')(req, res, (err) => {
     if (err) {

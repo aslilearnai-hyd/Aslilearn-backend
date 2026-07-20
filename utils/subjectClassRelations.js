@@ -351,37 +351,35 @@ export function formatClassLabel(classDoc) {
 /** Build API shape for admin subject list. */
 export async function formatAdminSubject(subject, adminId, options = {}) {
   const subjectId = String(subject._id);
+
+  // Collect every teacher linked to this subject (Teacher.subjects and/or Subject.teacherId).
+  const teacherQuery = {
+    isActive: true,
+    $or: [
+      { subjects: subject._id },
+      ...(subject.teacherId ? [{ _id: subject.teacherId }] : []),
+    ],
+  };
+  if (adminId) teacherQuery.adminId = adminId;
+
+  const teacherDocs = await Teacher.find(teacherQuery)
+    .select('_id fullName email')
+    .sort({ fullName: 1 })
+    .lean();
+
+  const teachers = teacherDocs.map((t) => ({
+    id: String(t._id),
+    fullName: t.fullName || '',
+    email: t.email || '',
+  }));
+
+  // Primary = Subject.teacherId when present; otherwise first assigned teacher.
   let teacher = null;
   if (subject.teacherId) {
-    const t = await Teacher.findById(subject.teacherId)
-      .select('_id fullName email adminId')
-      .lean();
-    // Subject.teacherId is shared across schools; only show if teacher belongs to this admin.
-    const sameSchool =
-      !adminId || (t?.adminId && String(t.adminId) === String(adminId));
-    if (t && sameSchool) {
-      teacher = {
-        id: String(t._id),
-        fullName: t.fullName,
-        email: t.email,
-      };
-    }
+    teacher = teachers.find((t) => t.id === String(subject.teacherId)) || null;
   }
-  if (!teacher) {
-    const fallback = await Teacher.findOne({
-      subjects: subject._id,
-      isActive: true,
-      ...(adminId ? { adminId } : {}),
-    })
-      .select('_id fullName email')
-      .lean();
-    if (fallback) {
-      teacher = {
-        id: String(fallback._id),
-        fullName: fallback.fullName,
-        email: fallback.email,
-      };
-    }
+  if (!teacher && teachers.length > 0) {
+    teacher = teachers[0];
   }
 
   const classDocs = await getClassesForSubject(subject._id, adminId, {
@@ -404,6 +402,7 @@ export async function formatAdminSubject(subject, adminId, options = {}) {
     board: subject.board,
     isActive: subject.isActive !== false,
     teacher,
+    teachers,
     classes,
     classIds: classes.map((c) => c.id),
     createdAt: subject.createdAt,
@@ -438,9 +437,18 @@ export function dedupeAdminSubjectsByPlainName(formattedRows) {
   const merged = [];
   for (const rows of groups.values()) {
     if (rows.length === 1) {
+      const only = rows[0];
+      const teachers =
+        Array.isArray(only.teachers) && only.teachers.length > 0
+          ? only.teachers
+          : only.teacher
+            ? [only.teacher]
+            : [];
       merged.push({
-        ...rows[0],
-        variantIds: [rows[0].id],
+        ...only,
+        teachers,
+        teacher: only.teacher || teachers[0] || null,
+        variantIds: [only.id],
       });
       continue;
     }
@@ -467,6 +475,32 @@ export function dedupeAdminSubjectsByPlainName(formattedRows) {
         ...fallback,
         name: extractPlainSubjectNameForContent(fallback.name),
       };
+    }
+
+    // Merge all teachers from variant rows (MATHS + MATHS_6, etc.).
+    const teacherMap = new Map();
+    for (const row of rows) {
+      const list =
+        Array.isArray(row.teachers) && row.teachers.length > 0
+          ? row.teachers
+          : row.teacher
+            ? [row.teacher]
+            : [];
+      for (const t of list) {
+        if (t?.id) teacherMap.set(String(t.id), t);
+      }
+    }
+    primary.teachers = [...teacherMap.values()].sort((a, b) =>
+      String(a.fullName || '').localeCompare(String(b.fullName || ''), 'en', {
+        sensitivity: 'base',
+      })
+    );
+    if (primary.teacher?.id) {
+      primary.teacher =
+        primary.teachers.find((t) => t.id === String(primary.teacher.id)) ||
+        primary.teacher;
+    } else {
+      primary.teacher = primary.teachers[0] || null;
     }
 
     const classMap = new Map();

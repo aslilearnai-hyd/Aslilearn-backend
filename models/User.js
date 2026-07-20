@@ -262,6 +262,22 @@ const userSchema = new mongoose.Schema({
     },
     default: () => ({})
   },
+  /** Licensed account seats for school admins (synced from School; Super Admin manual entry) */
+  licensedStudents: {
+    type: Number,
+    min: 0,
+    default: 0,
+  },
+  licensedTeachers: {
+    type: Number,
+    min: 0,
+    default: 0,
+  },
+  accountSeatsNotes: {
+    type: String,
+    trim: true,
+    default: '',
+  },
   // Overall progress for students (calculated from exam and learning path progress)
   overallProgress: {
     type: Number,

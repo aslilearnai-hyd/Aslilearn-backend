@@ -158,7 +158,8 @@ const SCAFFOLD_QUESTION_PATTERNS = [
   /evaluates both statements using evidence from/i,
   // Scenario-framing wrappers (precision mode)
   /\b(?:imagine|during a|set the scene|role-play|in pairs, discuss|in your community)\b/i,
-  /\b(?:design a poster|school (?:science )?fair|market visit|festival preparation)\b/i,
+  /\b(?:design a poster|school (?:science )?fair|market visit|festival preparation|market day|bustling)\b/i,
+  /\b(?:welcome,?\s+young|embarking on|inspired by a visit)\b/i,
   /\b(?:speaking situation|observe a real conversation)\b/i,
   /\bsummarise the main message\b/i,
   /follow textbook terminology, definitions, examples, formulae/i,

@@ -65,6 +65,8 @@ export async function generateBookBatch(req, res) {
       subjectName,
       topicName,
       subtopicName,
+      subTopics,
+      chapterScope,
       batchSize,
       useBookKnowledge,
       qualityTier,
@@ -86,6 +88,12 @@ export async function generateBookBatch(req, res) {
       }
     }
 
+    const normalizedSubTopics = (Array.isArray(subTopics) ? subTopics : [])
+      .map((s) => String(s || '').trim())
+      .filter(Boolean);
+    const isWholeChapter =
+      chapterScope === true || !String(subtopicName || '').trim();
+
     const params = {
       toolSlug: slug,
       bookId,
@@ -93,7 +101,9 @@ export async function generateBookBatch(req, res) {
       className,
       subjectName,
       topicName,
-      subtopicName,
+      subtopicName: isWholeChapter ? '' : subtopicName,
+      chapterScope: isWholeChapter,
+      ...(normalizedSubTopics.length ? { subTopics: normalizedSubTopics } : {}),
       batchSize,
       useBookKnowledge,
       qualityTier,
@@ -107,7 +117,7 @@ export async function generateBookBatch(req, res) {
         toolSlug: slug,
         bookId,
         topicName,
-        subtopicName,
+        subtopicName: isWholeChapter ? 'whole-chapter' : String(subtopicName || '').trim(),
       };
 
       if (forceUnlock === true) {
@@ -201,17 +211,19 @@ export async function releaseBookGeneratorLock(req, res) {
       });
     }
 
+    const lockSubtopic = String(subtopicName || '').trim() || 'whole-chapter';
+
     cancelBookGeneratorJobsForScope({
       toolSlug: slug,
       bookId,
       topicName,
-      subtopicName,
+      subtopicName: lockSubtopic,
     });
 
     const released = await forceReleaseBookGeneratorLocks({
       toolSlug: slug,
       bookId,
-      subtopicName,
+      subtopicName: lockSubtopic,
     });
 
     return res.json({

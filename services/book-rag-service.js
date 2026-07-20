@@ -139,15 +139,25 @@ export function buildBookRetrievalQuery(scope = {}) {
 }
 
 function buildCurriculumTargetBlock(scope = {}) {
+  const hasSubtopic = Boolean(String(scope.subtopicName || scope.subtopic || '').trim());
+  const subTopicList = Array.isArray(scope.subTopics)
+    ? scope.subTopics.map((s) => String(s || '').trim()).filter(Boolean)
+    : [];
   const lines = [
     'USER-SELECTED CURRICULUM (generate content for this exact scope):',
     scope.board ? `Board: ${scope.board}` : '',
     scope.className || scope.classLabel || scope.class ? `Class: ${scope.className || scope.classLabel || scope.class}` : '',
     scope.subjectName || scope.subject ? `Subject: ${scope.subjectName || scope.subject}` : '',
-    scope.topicName || scope.topic ? `Topic: ${scope.topicName || scope.topic}` : '',
-    scope.subtopicName || scope.subtopic ? `Sub-topic: ${scope.subtopicName || scope.subtopic}` : '',
+    scope.topicName || scope.topic ? `Topic / Chapter: ${scope.topicName || scope.topic}` : '',
+    hasSubtopic
+      ? `Sub-topic: ${scope.subtopicName || scope.subtopic}`
+      : subTopicList.length > 1
+        ? `Subtopics (COMBINED — cover ALL): ${subTopicList.join(' | ')}`
+        : 'Scope: WHOLE CHAPTER — cover the full Topic/Chapter fairly across sections (not one narrow sub-topic only).',
     scope.toolSlug || scope.toolName ? `Tool: ${scope.toolSlug || scope.toolName}` : '',
-    'Use the textbook passages below as the PRIMARY source. Every question and explanation must stay on this sub-topic.',
+    hasSubtopic
+      ? 'Use the textbook passages below as the PRIMARY source. Every question and explanation must stay on this sub-topic.'
+      : 'Use the textbook passages below as the PRIMARY source. Distribute questions across the major ideas in this chapter.',
     'Ask directly about definitions, formulas, numericals, and explanations from the book — no scenario or role-play framing.',
   ].filter(Boolean);
   return lines.join('\n');

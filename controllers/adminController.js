@@ -20,7 +20,7 @@ import {
   getOrCreateClassForAdmin,
   parseClassAndSection,
 } from '../services/studentCsvImport.js';
-import { normalizePhoneTenDigits } from '../services/schoolService.js';
+import { normalizePhoneTenDigits, assertWithinAccountSeats, getAccountSeatUsage } from '../services/schoolService.js';
 import {
   formatAdminSubject,
   syncSubjectClassIds,
@@ -191,7 +191,8 @@ export const getAdminDashboardStats = async (req, res) => {
       activeUsers,
       totalClasses,
       totalQuizzes,
-      totalContent
+      totalContent,
+      seatUsage,
     ] = await Promise.all([
       User.countDocuments({ role: 'student', ...userFilter }),
       Teacher.countDocuments(filter),
@@ -205,7 +206,16 @@ export const getAdminDashboardStats = async (req, res) => {
       }),
       Class.countDocuments(classFilter),
       Assessment.countDocuments({ ...filter, isPublished: true }),
-      adminBoard ? Content.countDocuments(contentFilter) : Promise.resolve(0)
+      adminBoard ? Content.countDocuments(contentFilter) : Promise.resolve(0),
+      adminId
+        ? getAccountSeatUsage(adminId)
+        : Promise.resolve({
+            usedStudents: 0,
+            usedTeachers: 0,
+            licensedStudents: 0,
+            licensedTeachers: 0,
+            accountSeatsNotes: '',
+          }),
     ]);
     
     res.json({
@@ -219,7 +229,10 @@ export const getAdminDashboardStats = async (req, res) => {
         activeUsers,
         totalClasses,
         totalQuizzes,
-        totalContent
+        totalContent,
+        licensedStudents: seatUsage.licensedStudents,
+        licensedTeachers: seatUsage.licensedTeachers,
+        accountSeatsNotes: seatUsage.accountSeatsNotes,
       }
     });
   } catch (error) {
@@ -340,6 +353,11 @@ export const createStudent = async (req, res) => {
 
     if (!admin.board) {
       return res.status(400).json({ success: false, message: 'Admin must have a board assigned' });
+    }
+
+    const studentSeatCheck = await assertWithinAccountSeats(admin._id, { students: 1 });
+    if (!studentSeatCheck.ok) {
+      return res.status(403).json({ success: false, message: studentSeatCheck.message });
     }
     
     // Check if student already exists
@@ -614,6 +632,11 @@ export const createTeacher = async (req, res) => {
         success: false, 
         message: `User with ID ${adminId} is not an admin. Role: ${admin.role}. Please log in as an admin.` 
       });
+    }
+
+    const teacherSeatCheck = await assertWithinAccountSeats(admin._id, { teachers: 1 });
+    if (!teacherSeatCheck.ok) {
+      return res.status(403).json({ success: false, message: teacherSeatCheck.message });
     }
     
     const hashedPassword = await bcrypt.hash(passwordValue, 12);

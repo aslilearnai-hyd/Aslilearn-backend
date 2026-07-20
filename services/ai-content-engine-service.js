@@ -71,6 +71,14 @@ import {
   isResponseSchemaEnabled,
 } from '../utils/ai-generator-response-schema.js';
 import { getAiGeneratorVariantAngle, getAiGeneratorVariantScenario } from '../constants/ai-generator-variant-angles.js';
+import {
+  looksLikeScenarioTitle,
+  looksLikeScenarioInstructions,
+  directExamPaperTitle,
+  directExamInstructions,
+  directWorksheetTitle,
+  directWorksheetInstructions,
+} from '../utils/strip-scenario-framing.js';
 import { resolveSubjectCategory } from '../prompts/shared/subject-awareness.js';
 import { resolveScaffoldBand } from '../utils/subject-scaffold-profile.js';
 import { runPostGenerationContentValidation } from '../utils/ai-generator-post-validation.js';
@@ -4209,11 +4217,16 @@ export function normalizeWorksheetStructuredContent(raw, sourceText = '', meta =
   const source = raw && typeof raw === 'object' && !Array.isArray(raw) ? { ...raw } : {};
   const title = sanitizeAiGeneratorWorksheetTitle(
     String(source.title || source.worksheet_title || source.name || source.topic || '').trim(),
-    {},
+    meta,
   );
-  const instructions = String(
+  let instructions = String(
     source.instructions || source.student_instructions || source.worksheet_instructions || '',
   ).trim();
+  if (!instructions || looksLikeScenarioInstructions(instructions)) {
+    instructions = directWorksheetInstructions(
+      meta.subTopic || meta.subtopic || meta.topic || title || 'the chapter',
+    );
+  }
   const learning_objectives = dedupeStringList([
     ...coerceBulletLines(source.learning_objectives),
     ...coerceBulletLines(source.objectives),
@@ -5503,23 +5516,27 @@ function sanitizeAiGeneratorWorksheetTitle(title, meta = {}) {
     t = next;
   }
   t = t.replace(/\s{2,}/g, ' ').replace(/\s+\)/g, ')').replace(/\s+—\s+—/g, ' — ').trim();
+  if (looksLikeScenarioTitle(t)) {
+    t = directWorksheetTitle(
+      meta.subTopic || meta.subtopic || meta.topic || 'Chapter',
+      meta.subject || 'Worksheet',
+    );
+  }
   if (t.length > 120) {
     const topic = String(meta.subTopic || meta.subtopic || meta.topic || '').trim();
     if (topic && t.includes(topic)) {
       const idx = t.indexOf(topic);
       t = t.slice(0, idx + topic.length).trim();
     } else if (topic) {
-      t = `${String(meta.subject || 'Worksheet').trim()} — ${topic}`;
+      t = directWorksheetTitle(topic, meta.subject || 'Worksheet');
     }
   }
   if (t.length > 200) t = `${t.slice(0, 197).trim()}…`;
-  if (!t || t.length < 4) {
-    const topic = String(meta.subTopic || meta.subtopic || meta.topic || 'Worksheet').trim();
-    const angle = String(meta.variantAngle || '')
-      .split('(')[0]
-      .trim()
-      .slice(0, 48);
-    t = angle ? `${topic} — ${angle}` : `${topic} — Worksheet`;
+  if (!t || t.length < 4 || looksLikeScenarioTitle(t)) {
+    t = directWorksheetTitle(
+      meta.subTopic || meta.subtopic || meta.topic || 'Worksheet',
+      meta.subject || 'Worksheet',
+    );
   }
   return t;
 }
@@ -7743,12 +7760,18 @@ export function finalizeExamPaperStructuredContent(structuredContent, meta = {})
   }));
 
   const title = String(base.paper_title || base.title || '').trim();
-  if (!title || title === 'Exam Paper' || /^mock\s*test$/i.test(title)) {
-    base.paper_title = `${topic} — ${subject} Examination Paper`;
+  if (
+    !title ||
+    title === 'Exam Paper' ||
+    /^mock\s*test$/i.test(title) ||
+    looksLikeScenarioTitle(title)
+  ) {
+    base.paper_title = directExamPaperTitle(topic, subject, meta.classLabel || meta.gradeLevel || meta.className);
     base.title = base.paper_title;
   }
-  if (!String(base.instructions || '').trim()) {
-    base.instructions = `Read all instructions carefully. Answer every question in the space provided. Content focus: ${topic}.`;
+  const instructions = String(base.instructions || '').trim();
+  if (!instructions || looksLikeScenarioInstructions(instructions)) {
+    base.instructions = directExamInstructions(topic);
   }
   if (!String(base.blueprint || '').trim()) {
     base.blueprint = `Blueprint: Section A MCQs on ${topic}; Section B very short answers; Section C short answers; Section D long answers; Section E case-based competency.`;

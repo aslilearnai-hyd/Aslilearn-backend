@@ -36,6 +36,7 @@ import {
   resolveSchoolAndAdminByParamId,
   normalizePhoneTenDigits,
   isValidOptionalPhoneTenDigits,
+  normalizeAccountSeats,
 } from '../services/schoolService.js';
 
 // Super Admin Login — database accounts only (no hardcoded credentials)
@@ -581,15 +582,15 @@ export const getAdminSchoolDetail = async (req, res) => {
       return res.status(400).json({ success: false, message: 'School id is required' });
     }
 
-    const admin = await User.findById(adminId).select('-password');
+    const { admin, school } = await resolveSchoolAndAdminByParamId(adminId);
     if (!admin || admin.role !== 'admin') {
       return res.status(404).json({ success: false, message: 'School not found' });
     }
 
     const [assignedStudents, examStudentIds, teacherCount] = await Promise.all([
-      User.find({ role: 'student', assignedAdmin: adminId }).select('_id').lean(),
-      ExamResult.distinct('userId', { adminId, userId: { $ne: null } }),
-      Teacher.countDocuments({ adminId }),
+      User.find({ role: 'student', assignedAdmin: admin._id }).select('_id').lean(),
+      ExamResult.distinct('userId', { adminId: admin._id, userId: { $ne: null } }),
+      Teacher.countDocuments({ adminId: admin._id }),
     ]);
     const studentCount = new Set([
       ...assignedStudents.map((s) => s._id.toString()),
@@ -602,6 +603,7 @@ export const getAdminSchoolDetail = async (req, res) => {
         : admin.schoolDetails || {};
 
     const displayBoard = resolveUserDisplayBoard(admin, null);
+    const schoolLean = school && typeof school.toObject === 'function' ? school.toObject() : school;
 
     const profile = {
       id: admin._id,
@@ -647,13 +649,147 @@ export const getAdminSchoolDetail = async (req, res) => {
       success: true,
       data: {
         profile,
-        stats: { students: studentCount, teachers: teacherCount },
+        stats: {
+          students: studentCount,
+          teachers: teacherCount,
+          licensedStudents: Math.max(
+            0,
+            Math.floor(Number(schoolLean?.licensedStudents ?? admin.licensedStudents ?? 0) || 0)
+          ),
+          licensedTeachers: Math.max(
+            0,
+            Math.floor(Number(schoolLean?.licensedTeachers ?? admin.licensedTeachers ?? 0) || 0)
+          ),
+          accountSeatsNotes: String(
+            schoolLean?.accountSeatsNotes ?? admin.accountSeatsNotes ?? ''
+          ).trim(),
+        },
         billing,
       },
     });
   } catch (error) {
     console.error('Get admin school detail error:', error);
     res.status(500).json({ success: false, message: 'Failed to load school details' });
+  }
+};
+
+/** Manual entry: licensed teacher/student account seats for a school */
+export const updateAdminAccountSeats = async (req, res) => {
+  try {
+    const { adminId } = req.params;
+    if (!adminId) {
+      return res.status(400).json({ success: false, message: 'School id is required' });
+    }
+
+    const { admin, school } = await resolveSchoolAndAdminByParamId(adminId);
+    if (!admin || admin.role !== 'admin') {
+      return res.status(404).json({ success: false, message: 'School not found' });
+    }
+
+    const seats = normalizeAccountSeats(req.body);
+    if (
+      (seats.licensedStudents !== null && Number.isNaN(seats.licensedStudents)) ||
+      (seats.licensedTeachers !== null && Number.isNaN(seats.licensedTeachers))
+    ) {
+      return res.status(400).json({
+        success: false,
+        message: 'Licensed student and teacher counts must be non-negative whole numbers',
+      });
+    }
+
+    if (
+      seats.licensedStudents === null &&
+      seats.licensedTeachers === null &&
+      seats.accountSeatsNotes === null
+    ) {
+      return res.status(400).json({
+        success: false,
+        message: 'Provide licensedStudents, licensedTeachers, and/or accountSeatsNotes',
+      });
+    }
+
+    const schoolPatch = {};
+    const userPatch = {};
+    if (seats.licensedStudents !== null) {
+      schoolPatch.licensedStudents = seats.licensedStudents;
+      userPatch.licensedStudents = seats.licensedStudents;
+    }
+    if (seats.licensedTeachers !== null) {
+      schoolPatch.licensedTeachers = seats.licensedTeachers;
+      userPatch.licensedTeachers = seats.licensedTeachers;
+    }
+    if (seats.accountSeatsNotes !== null) {
+      schoolPatch.accountSeatsNotes = seats.accountSeatsNotes;
+      userPatch.accountSeatsNotes = seats.accountSeatsNotes;
+    }
+
+    let updatedSchool = school;
+    if (school) {
+      updatedSchool = await School.findByIdAndUpdate(school._id, schoolPatch, {
+        new: true,
+        runValidators: true,
+      });
+    } else if (Object.keys(schoolPatch).length) {
+      // Orphan admin without schools row — still persist on user; create thin school if possible
+      updatedSchool = await School.create({
+        name: admin.schoolName || admin.fullName || admin.email || 'School',
+        adminUserId: admin._id,
+        board: admin.board || 'ASLI_EXCLUSIVE_SCHOOLS',
+        curriculumBoard: admin.curriculumBoard || 'CBSE',
+        isAsliPrepExclusive: Boolean(admin.isAsliPrepExclusive),
+        schoolDetails: normalizeSchoolDetails(admin.schoolDetails),
+        ...schoolPatch,
+      });
+      userPatch.schoolId = updatedSchool._id;
+    }
+
+    const updatedAdmin = await User.findByIdAndUpdate(admin._id, userPatch, {
+      new: true,
+      runValidators: false,
+    }).select('-password');
+
+    const [assignedStudents, examStudentIds, teacherCount] = await Promise.all([
+      User.find({ role: 'student', assignedAdmin: admin._id }).select('_id').lean(),
+      ExamResult.distinct('userId', { adminId: admin._id, userId: { $ne: null } }),
+      Teacher.countDocuments({ adminId: admin._id }),
+    ]);
+    const studentCount = new Set([
+      ...assignedStudents.map((s) => s._id.toString()),
+      ...examStudentIds.map((id) => id.toString()),
+    ]).size;
+
+    res.json({
+      success: true,
+      message: 'Account seats updated',
+      data: {
+        id: updatedAdmin._id.toString(),
+        schoolId: updatedSchool?._id?.toString(),
+        licensedStudents: Math.max(
+          0,
+          Math.floor(
+            Number(
+              updatedSchool?.licensedStudents ?? updatedAdmin.licensedStudents ?? 0
+            ) || 0
+          )
+        ),
+        licensedTeachers: Math.max(
+          0,
+          Math.floor(
+            Number(
+              updatedSchool?.licensedTeachers ?? updatedAdmin.licensedTeachers ?? 0
+            ) || 0
+          )
+        ),
+        accountSeatsNotes: String(
+          updatedSchool?.accountSeatsNotes ?? updatedAdmin.accountSeatsNotes ?? ''
+        ).trim(),
+        usedStudents: studentCount,
+        usedTeachers: teacherCount,
+      },
+    });
+  } catch (error) {
+    console.error('Update admin account seats error:', error);
+    res.status(500).json({ success: false, message: 'Failed to update account seats' });
   }
 };
 
@@ -891,7 +1027,10 @@ export const updateAdmin = async (req, res) => {
       rawSchoolDetails !== undefined ||
       req.body.state !== undefined ||
       board !== undefined ||
-      isAsliPrepExclusive !== undefined;
+      isAsliPrepExclusive !== undefined ||
+      req.body.licensedStudents !== undefined ||
+      req.body.licensedTeachers !== undefined ||
+      req.body.accountSeatsNotes !== undefined;
 
     let updatedSchool = school;
 
@@ -1952,35 +2091,110 @@ export const getRealTimeAnalytics = async (req, res) => {
   }
 };
 
-// Get Analytics (Global view)
+// Get Analytics (Global view) — real counts only (no mock growth metrics)
 export const getAnalytics = async (req, res) => {
   try {
-    const totalUsers = await User.countDocuments();
-    const totalTeachers = await Teacher.countDocuments();
-    const totalVideos = await Video.countDocuments();
-    const totalAdmins = await School.countDocuments({});
-    
-    // Calculate daily active users (mock data)
-    const dailyActive = Math.floor(totalUsers * 0.1);
-    const weeklyActive = Math.floor(totalUsers * 0.3);
-    const monthlyActive = Math.floor(totalUsers * 0.7);
-    
+    const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+    const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
+
+    const [
+      totalUsers,
+      totalTeachers,
+      totalVideos,
+      totalAdmins,
+      schoolStudents,
+      individualStudents,
+      individualTeachers,
+      individualPaidStudents,
+      individualPaidTeachers,
+      individualTrialStudents,
+      individualTrialTeachers,
+      weeklyActiveStudents,
+      monthlyActiveStudents,
+      paidStudentPayments,
+      paidTeacherPayments,
+    ] = await Promise.all([
+      User.countDocuments(),
+      Teacher.countDocuments(),
+      Video.countDocuments(),
+      School.countDocuments({}),
+      User.countDocuments({ role: 'student', isIndividualAccount: { $ne: true } }),
+      User.countDocuments({ role: 'student', isIndividualAccount: true }),
+      Teacher.countDocuments({ isIndividualAccount: true }),
+      User.countDocuments({
+        role: 'student',
+        isIndividualAccount: true,
+        subscriptionStatus: 'active',
+      }),
+      Teacher.countDocuments({ isIndividualAccount: true, subscriptionStatus: 'active' }),
+      User.countDocuments({
+        role: 'student',
+        isIndividualAccount: true,
+        subscriptionStatus: 'trial',
+      }),
+      Teacher.countDocuments({ isIndividualAccount: true, subscriptionStatus: 'trial' }),
+      User.countDocuments({
+        role: 'student',
+        lastLogin: { $gte: sevenDaysAgo },
+      }),
+      User.countDocuments({
+        role: 'student',
+        lastLogin: { $gte: thirtyDaysAgo },
+      }),
+      User.aggregate([
+        {
+          $match: {
+            role: 'student',
+            isIndividualAccount: true,
+            subscriptionStatus: 'active',
+            trialPaymentAmount: { $gt: 0 },
+          },
+        },
+        { $group: { _id: null, total: { $sum: '$trialPaymentAmount' }, count: { $sum: 1 } } },
+      ]),
+      Teacher.aggregate([
+        {
+          $match: {
+            isIndividualAccount: true,
+            subscriptionStatus: 'active',
+            trialPaymentAmount: { $gt: 0 },
+          },
+        },
+        { $group: { _id: null, total: { $sum: '$trialPaymentAmount' }, count: { $sum: 1 } } },
+      ]),
+    ]);
+
+    const individualTotal = individualStudents + individualTeachers;
+    const individualPaid = individualPaidStudents + individualPaidTeachers;
+    const individualTrial = individualTrialStudents + individualTrialTeachers;
+    const individualExceeded = Math.max(0, individualTotal - individualPaid - individualTrial);
+    const conversionRate =
+      individualTotal > 0 ? Math.round((individualPaid / individualTotal) * 1000) / 10 : 0;
+    const b2cRevenueInr =
+      (paidStudentPayments[0]?.total || 0) + (paidTeacherPayments[0]?.total || 0);
+
     res.json({
       success: true,
       data: {
-        dailyActive,
-        weeklyActive,
-        monthlyActive,
-        avgSessionTime: "24m 35s",
-        completionRate: 76,
-        revenueGrowth: 23.5,
-        userGrowth: 18.2,
-        courseEngagement: 89,
         totalUsers,
         totalTeachers,
         totalVideos,
-        totalAdmins
-      }
+        totalAdmins,
+        schoolStudents,
+        weeklyActiveStudents,
+        monthlyActiveStudents,
+        individual: {
+          total: individualTotal,
+          students: individualStudents,
+          teachers: individualTeachers,
+          trialActive: individualTrial,
+          exceeded: individualExceeded,
+          paid: individualPaid,
+          converted: individualPaid,
+          conversionRate,
+          revenueInr: Math.round(b2cRevenueInr * 100) / 100,
+        },
+      },
     });
   } catch (error) {
     console.error('Analytics error:', error);
