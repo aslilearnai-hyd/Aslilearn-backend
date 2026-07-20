@@ -15,6 +15,7 @@ import TeacherWorkDiary from '../models/TeacherWorkDiary.js';
 import RiskAnalysisReport from '../models/RiskAnalysisReport.js';
 import GeminiPerformanceReport from '../models/GeminiPerformanceReport.js';
 import { verifyToken } from '../middleware/auth.js';
+import { getMyWeeklyDigest } from '../controllers/impactReportController.js';
 import { getSchoolAdminCalendarEvents, monthBounds } from '../controllers/calendarController.js';
 import {
   getStudentExamRanking,
@@ -79,6 +80,8 @@ router.use((req, res, next) => {
 
 // Apply authentication middleware to all routes
 router.use(verifyToken);
+
+router.get('/weekly-digest', getMyWeeklyDigest);
 
 // Combined dashboard payload (one round trip — user, subjects, content, quizzes)
 router.get('/dashboard-bootstrap', async (req, res) => {

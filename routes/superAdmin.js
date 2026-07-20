@@ -45,6 +45,12 @@ import {
   downloadRiskAnalysisPDF
 } from '../controllers/superAdminController.js';
 import {
+  listImpactReports,
+  getImpactReportForAdmin,
+  runImpactReportsJob,
+  downloadImpactReportPdf,
+} from '../controllers/impactReportController.js';
+import {
   listTrialMembers,
   updateTrialMember,
   applyTrialMemberDefaults,
@@ -453,6 +459,12 @@ router.post('/calendar/events', createCalendarEvent);
 router.get('/dashboard/stats', getDashboardStats);
 router.get('/analytics', getAnalytics);
 router.get('/analytics/realtime', getRealTimeAnalytics);
+
+// Weekly School Impact Reports
+router.get('/impact-reports', listImpactReports);
+router.post('/impact-reports/run', runImpactReportsJob);
+router.get('/impact-reports/:adminId', getImpactReportForAdmin);
+router.get('/impact-reports/:adminId/pdf', downloadImpactReportPdf);
 
 // AI tool generations (teacher tools — persisted for hierarchy + PDF export)
 router.get('/ai-tool-generations/bootstrap', getAiToolGenerationsBootstrap);

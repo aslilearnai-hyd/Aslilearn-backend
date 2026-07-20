@@ -75,6 +75,10 @@ import {
   downloadRiskAnalysisPDF
 } from '../controllers/adminController.js';
 import {
+  getMySchoolImpactReport,
+  downloadMySchoolImpactPdf,
+} from '../controllers/impactReportController.js';
+import {
   getViewableExams,
   getExamDetails,
   getStudentExamResults,
@@ -100,6 +104,8 @@ router.use(extractAdminId);
 router.get('/dashboard/stats', getAdminDashboardStats);
 router.get('/analytics', getAnalytics);
 router.get('/reports', getAdminReports);
+router.get('/impact-report', getMySchoolImpactReport);
+router.get('/impact-report/pdf', downloadMySchoolImpactPdf);
 router.get('/school-settings', getSchoolSettings);
 router.put('/school-settings', updateSchoolSettings);
 router.get('/risk-summary', async (req, res) => {

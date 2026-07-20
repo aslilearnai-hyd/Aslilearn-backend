@@ -306,7 +306,7 @@ export async function generateBatchAndSave(params, opts = {}) {
     .map((s) => String(s || '').trim())
     .filter(Boolean);
   const combinedSubtopicLabel =
-    subTopicList.length > 1 ? subTopicList.join(', ') : subtopicName;
+    subTopicList.length > 1 ? 'Whole chapter' : subtopicName;
 
   const toolDisplayName = String(params.toolName || params.toolDisplayName || toolSlug).trim();
   const qualityTierSettings = resolveQualityTierSettings(
