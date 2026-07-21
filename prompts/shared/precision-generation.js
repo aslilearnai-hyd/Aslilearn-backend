@@ -38,7 +38,8 @@ export function buildClassroomTextbookMethodologyBlock() {
     '- Activities = simplified versions of textbook Activities/Projects (materials, steps, observation table) — not invented story-based tasks.',
     '- Teacher-facing text: who does what, with what material, for how long — plain classroom language.',
     '- Student-facing questions: one clear instruction per item; answers should match what the textbook would accept.',
-    '- Prefer exercises that drill the same skill as the textbook (define, calculate, draw, explain, compare) on the SAME subtopic.',
+    '- MATH / SCIENCE NOTATION: Prefer Unicode classroom style in plain text — sin²θ, (a+b)², H₂O, CO₂. Do NOT write computer ASCII like sin^2, (...)^2, or H2O when a Unicode form exists. Greek letters as θ α β π when natural.',
+    '- Prefer exercises that drill the same skill as the textbook (define, calculate, explain, compare) on the SAME subtopic.',
     '- Do NOT add content that is not teachable directly from the chapter (no generic life-skills wrappers).',
   ].join('\n');
 }
