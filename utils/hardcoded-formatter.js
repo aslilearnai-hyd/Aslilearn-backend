@@ -1,6 +1,11 @@
 // Formatter for hardcoded content - Converts JSON/CSV to Markdown format
 
 import { filterUnsupportedQuestions, isUnsupportedQuestionStem } from './unsupported-question-filter.js';
+import { formatClassroomScienceText } from './classroom-text-format.js';
+
+function fmtQ(text) {
+  return formatClassroomScienceText(text);
+}
 
 /**
  * Format Concept Mastery Helper content with beautiful card-based design
@@ -972,7 +977,7 @@ function formatExamPaper(data, toolType, metadata) {
         markdown += `<div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">\n`;
         markdown += `<div style="display: flex; align-items: center; gap: 12px;">\n`;
         markdown += `<div style="background: ${colors.border}; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; flex-shrink: 0;">${qNum}</div>\n`;
-        markdown += `<div style="font-size: 1.1rem; font-weight: 700; color: #1f2937; flex: 1;">${q.question || ''}</div>\n`;
+        markdown += `<div style="font-size: 1.1rem; font-weight: 700; color: #1f2937; flex: 1;">${fmtQ(q.question || '')}</div>\n`;
         markdown += `</div>\n`;
         markdown += `<div style="background: #fef3c7; color: #d97706; padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 0.9rem; white-space: nowrap;">[${q.marks || 1} Marks]</div>\n`;
         markdown += `</div>\n`;
@@ -1108,7 +1113,7 @@ function formatWorksheet(data, toolType, metadata) {
           markdown += `<div style="margin-bottom: 16px;">\n`;
           markdown += `<div style="display: flex; align-items: start; gap: 12px; margin-bottom: 12px;">\n`;
           markdown += `<div style="background: ${sectionIndex === 0 ? '#667eea' : '#f5576c'}; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">${qNum}</div>\n`;
-          markdown += `<div style="flex: 1; font-size: 1.05rem; font-weight: 600; color: #1f2937; line-height: 1.6;">${q.question || ''}</div>\n`;
+          markdown += `<div style="flex: 1; font-size: 1.05rem; font-weight: 600; color: #1f2937; line-height: 1.6;">${fmtQ(q.question || '')}</div>\n`;
           markdown += `</div>\n`;
           
           // Options with nice styling
@@ -1160,7 +1165,7 @@ function formatWorksheet(data, toolType, metadata) {
           markdown += `<div style="margin-bottom: 16px;">\n`;
           markdown += `<div style="display: flex; align-items: start; gap: 12px; margin-bottom: 12px;">\n`;
           markdown += `<div style="background: ${borderColor}; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">${qNum}</div>\n`;
-          markdown += `<div style="flex: 1; font-size: 1.05rem; font-weight: 600; color: #1f2937; line-height: 1.6;">${q.question || ''}</div>\n`;
+          markdown += `<div style="flex: 1; font-size: 1.05rem; font-weight: 600; color: #1f2937; line-height: 1.6;">${fmtQ(q.question || '')}</div>\n`;
           markdown += `</div>\n`;
           
           // Answer
@@ -1179,7 +1184,7 @@ function formatWorksheet(data, toolType, metadata) {
           markdown += `<div style="margin-bottom: 16px;">\n`;
           markdown += `<div style="display: flex; align-items: start; gap: 12px; margin-bottom: 12px;">\n`;
           markdown += `<div style="background: ${borderColor}; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">${qNum}</div>\n`;
-          markdown += `<div style="flex: 1; font-size: 1.05rem; font-weight: 600; color: #1f2937; line-height: 1.6;">${q.question || ''}</div>\n`;
+          markdown += `<div style="flex: 1; font-size: 1.05rem; font-weight: 600; color: #1f2937; line-height: 1.6;">${fmtQ(q.question || '')}</div>\n`;
           markdown += `</div>\n`;
           if (q.correct_answer) {
             markdown += `<div style="margin-left: 44px; margin-top: 12px; padding: 12px; background: #ecfdf5; border-radius: 8px; border-left: 4px solid #10b981;">\n`;
@@ -1241,7 +1246,7 @@ function formatHomework(data, toolType, metadata) {
         
         // Format question based on type
         if (section.type === 'MCQs') {
-          markdown += `**Question ${qNum}:** ${q.question || ''}\n\n`;
+          markdown += `**Question ${qNum}:** ${fmtQ(q.question || '')}\n\n`;
           if (q.options) {
             if (q.options.A) markdown += `A. ${q.options.A}\n`;
             if (q.options.B) markdown += `B. ${q.options.B}\n`;
@@ -1252,13 +1257,13 @@ function formatHomework(data, toolType, metadata) {
             markdown += `\n**Answer:** ${q.correct_answer}\n`;
           }
         } else if (section.type === 'Fill in the Blanks') {
-          markdown += `**Question ${qNum}:** ${q.question || ''}\n\n`;
+          markdown += `**Question ${qNum}:** ${fmtQ(q.question || '')}\n\n`;
           if (q.correct_answer) {
             markdown += `**Answer:** ${q.correct_answer}\n`;
           }
         } else {
           // Short Answer, Long Answer, Very Short Answer
-          markdown += `**Question ${qNum}:** ${q.question || ''}\n\n`;
+          markdown += `**Question ${qNum}:** ${fmtQ(q.question || '')}\n\n`;
           if (q.answer) {
             markdown += `**Answer:** ${q.answer}\n`;
           }
