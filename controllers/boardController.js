@@ -1,12 +1,20 @@
 import mongoose from 'mongoose';
-import Board from '../models/Board.js';
+import Board, { BOARD_KINDS } from '../models/Board.js';
 import Subject from '../models/Subject.js';
 import Content from '../models/Content.js';
 import Exam from '../models/Exam.js';
 import ExamResult from '../models/ExamResult.js';
 import User from '../models/User.js';
 import Teacher from '../models/Teacher.js';
-import { VALID_SCHOOL_BOARDS, CURRICULUM_BOARDS, isValidSchoolBoard } from '../constants/boards.js';
+import {
+  VALID_SCHOOL_BOARDS,
+  CURRICULUM_BOARDS,
+  isValidSchoolBoard,
+  isValidCurriculumBoard,
+  BUILTIN_BOARD_SEED,
+  setDynamicBoardCache,
+  getBoardDisplayName,
+} from '../constants/boards.js';
 import {
   formatIitCategoryLabel,
   normalizeIitCategoryLoose,
@@ -111,26 +119,157 @@ function findActiveSubjectByCatalogIdentity(peers, identityKey, excludeId) {
   );
 }
 
+async function refreshBoardCodeCache() {
+  const boards = await Board.find({}).select('code name kind isActive').lean();
+  setDynamicBoardCache(boards.filter((b) => b.isActive !== false));
+}
+
 // Initialize boards if they don't exist
 export const initializeBoards = async () => {
   try {
-    const boards = [
-      { code: 'ASLI_EXCLUSIVE_SCHOOLS', name: 'ASLI EXCLUSIVE SCHOOLS', description: 'ASLI Exclusive Schools - All Boards Content' },
-      { code: 'CBSE', name: 'CBSE', description: 'Central Board of Secondary Education' },
-      { code: 'STATE', name: 'State Board', description: 'State board curriculum' },
-    ];
-
-    for (const boardData of boards) {
+    for (const boardData of BUILTIN_BOARD_SEED) {
       await Board.findOneAndUpdate(
         { code: boardData.code },
-        boardData,
+        {
+          $set: {
+            name: boardData.name,
+            description: boardData.description,
+            kind: boardData.kind,
+          },
+          $setOnInsert: { isActive: true },
+        },
         { upsert: true, new: true }
       );
     }
 
+    await refreshBoardCodeCache();
     console.log('Boards initialized successfully');
   } catch (error) {
     console.error('Error initializing boards:', error);
+  }
+};
+
+/** POST /api/super-admin/boards — create a curriculum / state / iit board */
+export const createBoard = async (req, res) => {
+  try {
+    const code = String(req.body?.code || '')
+      .toUpperCase()
+      .trim()
+      .replace(/\s+/g, '_');
+    const name = String(req.body?.name || '').trim();
+    const description = String(req.body?.description || '').trim();
+    const kind = String(req.body?.kind || 'curriculum')
+      .toLowerCase()
+      .trim();
+
+    if (!code || !/^[A-Z][A-Z0-9_/.-]{1,47}$/.test(code)) {
+      return res.status(400).json({
+        success: false,
+        message:
+          'Board code must start with a letter and use uppercase letters, numbers, or _ / . - (2–48 chars).',
+      });
+    }
+    if (!name) {
+      return res.status(400).json({ success: false, message: 'Display name is required.' });
+    }
+    if (!BOARD_KINDS.includes(kind)) {
+      return res.status(400).json({
+        success: false,
+        message: `kind must be one of: ${BOARD_KINDS.join(', ')}`,
+      });
+    }
+
+    const existing = await Board.findOne({ code });
+    if (existing) {
+      return res.status(409).json({
+        success: false,
+        message: `Board code ${code} already exists.`,
+      });
+    }
+
+    const board = await Board.create({
+      code,
+      name,
+      description,
+      kind,
+      isActive: true,
+    });
+    await refreshBoardCodeCache();
+
+    return res.status(201).json({ success: true, data: board });
+  } catch (error) {
+    console.error('Create board error:', error);
+    if (error?.code === 11000) {
+      return res.status(409).json({ success: false, message: 'Board code already exists.' });
+    }
+    return res.status(500).json({ success: false, message: 'Failed to create board' });
+  }
+};
+
+/** PUT /api/super-admin/boards/:code — update name / description / isActive (code immutable) */
+export const updateBoard = async (req, res) => {
+  try {
+    const code = String(req.params.code || '')
+      .toUpperCase()
+      .trim();
+    if (!code) {
+      return res.status(400).json({ success: false, message: 'Board code is required.' });
+    }
+
+    const board = await Board.findOne({ code });
+    if (!board) {
+      return res.status(404).json({ success: false, message: 'Board not found.' });
+    }
+
+    if (req.body?.name !== undefined) {
+      const name = String(req.body.name || '').trim();
+      if (!name) {
+        return res.status(400).json({ success: false, message: 'Display name cannot be empty.' });
+      }
+      board.name = name;
+    }
+    if (req.body?.description !== undefined) {
+      board.description = String(req.body.description || '').trim();
+    }
+    if (req.body?.isActive !== undefined) {
+      board.isActive = Boolean(req.body.isActive);
+    }
+    if (req.body?.kind !== undefined) {
+      const kind = String(req.body.kind || '')
+        .toLowerCase()
+        .trim();
+      if (!BOARD_KINDS.includes(kind)) {
+        return res.status(400).json({
+          success: false,
+          message: `kind must be one of: ${BOARD_KINDS.join(', ')}`,
+        });
+      }
+      board.kind = kind;
+    }
+
+    await board.save();
+    await refreshBoardCodeCache();
+
+    return res.json({ success: true, data: board });
+  } catch (error) {
+    console.error('Update board error:', error);
+    return res.status(500).json({ success: false, message: 'Failed to update board' });
+  }
+};
+
+// Get all boards (active by default; ?all=1 includes inactive for management)
+export const getAllBoards = async (req, res) => {
+  try {
+    const includeAll =
+      req.query.all === '1' ||
+      req.query.all === 'true' ||
+      req.query.includeInactive === '1';
+    const filter = includeAll ? {} : { isActive: true };
+    const boards = await Board.find(filter).sort({ kind: 1, name: 1, code: 1 });
+    res.json({ success: true, data: boards });
+  } catch (error) {
+    console.error('Get boards error:', error);
+    res.status(500).json({ success: false, message: 'Failed to fetch boards' });
   }
 };
 
@@ -243,17 +382,6 @@ export const seedClass10Subjects = async () => {
   } catch (error) {
     console.error('Error seeding class 10 subjects:', error);
     throw error;
-  }
-};
-
-// Get all boards
-export const getAllBoards = async (req, res) => {
-  try {
-    const boards = await Board.find({ isActive: true }).sort({ code: 1 });
-    res.json({ success: true, data: boards });
-  } catch (error) {
-    console.error('Get boards error:', error);
-    res.status(500).json({ success: false, message: 'Failed to fetch boards' });
   }
 };
 
@@ -525,7 +653,7 @@ export const createSubject = async (req, res) => {
     if (!isValidSchoolBoard(boardUpper)) {
       return res.status(400).json({
         success: false,
-        message: `Invalid board code: ${board}. Must be one of: ${VALID_SCHOOL_BOARDS.join(', ')}`,
+        message: `Invalid board code: ${board}. Use Boards Management to create custom boards.`,
       });
     }
 
@@ -736,7 +864,7 @@ export const getSubjectsByBoard = async (req, res) => {
     if (!isValidSchoolBoard(boardUpper)) {
       return res.status(400).json({
         success: false,
-        message: `Invalid board code: ${board}. Must be one of: ${VALID_SCHOOL_BOARDS.join(', ')}`,
+        message: `Invalid board code: ${board}. Use Boards Management to create custom boards.`,
       });
     }
 
@@ -842,7 +970,7 @@ export const updateSubject = async (req, res) => {
       if (!isValidSchoolBoard(nextBoard)) {
         return res.status(400).json({
           success: false,
-          message: `Invalid board code: ${rawBoard}. Must be one of: ${VALID_SCHOOL_BOARDS.join(', ')}`,
+          message: `Invalid board code: ${rawBoard}. Use Boards Management to create custom boards.`,
         });
       }
       boardUpper = nextBoard;
@@ -1093,7 +1221,7 @@ export const uploadContent = async (req, res) => {
     if (!isValidSchoolBoard(boardNorm)) {
       return res.status(400).json({
         success: false,
-        message: `Invalid board code. Must be one of: ${VALID_SCHOOL_BOARDS.join(', ')}`,
+        message: `Invalid board code. Use Boards Management to create custom boards.`,
       });
     }
 
@@ -1416,7 +1544,7 @@ export const updateContent = async (req, res) => {
       if (!isValidSchoolBoard(boardNorm)) {
         return res.status(400).json({
           success: false,
-          message: `Invalid board code. Must be one of: ${VALID_SCHOOL_BOARDS.join(', ')}`,
+          message: `Invalid board code. Use Boards Management to create custom boards.`,
         });
       }
       if (subjectDoc.board !== boardNorm) {

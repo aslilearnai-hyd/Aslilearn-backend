@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-import { CURRICULUM_BOARDS } from '../constants/boards.js';
 
 const schoolDetailsSchema = {
   doorNo: { type: String, trim: true, default: '' },
@@ -43,8 +42,8 @@ const schoolSchema = new mongoose.Schema(
     },
     curriculumBoard: {
       type: String,
-      enum: CURRICULUM_BOARDS,
       uppercase: true,
+      trim: true,
       default: 'CBSE',
     },
     isAsliPrepExclusive: {

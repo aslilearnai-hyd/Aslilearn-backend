@@ -37,12 +37,16 @@ export function filterContentsBySchoolProgram(contents, isAsliPrepExclusive) {
 }
 
 /**
- * Asli Prep students: keep content whose board matches curriculum + ASLI hub.
+ * Asli Prep students: keep content whose board matches curriculum + ASLI hub + IIT (when tracks assigned).
  */
-export function filterContentsByBoardForAsliPrep(contents, curriculumBoard) {
+export function filterContentsByBoardForAsliPrep(contents, curriculumBoard, iitCategories = []) {
   if (!Array.isArray(contents)) return [];
   const curriculum = String(curriculumBoard || 'CBSE').toUpperCase().trim();
   const allowed = new Set([curriculum, 'ASLI_EXCLUSIVE_SCHOOLS']);
+  const hasIitTracks =
+    Array.isArray(iitCategories) &&
+    iitCategories.some((c) => String(c || '').trim());
+  if (hasIitTracks) allowed.add('IIT');
   return contents.filter((row) => {
     const contentBoard = String(row?.board || '').toUpperCase().trim();
     const subjectBoard = String(row?.subject?.board || '').toUpperCase().trim();
@@ -52,13 +56,58 @@ export function filterContentsByBoardForAsliPrep(contents, curriculumBoard) {
   });
 }
 
-export function applySchoolProgramContentFilters(contents, { isAsliPrepExclusive, curriculumBoard, iitCategories, trialAllowedContentTypes }) {
+/** Video tied to IIT board or an IIT product track (Alpha/Beta/Gamma). */
+export function isIitTrackVideo(row) {
+  if (String(row?.type || '').trim() !== 'Video') return false;
+  const board = String(row?.board || row?.subject?.board || '')
+    .toUpperCase()
+    .trim();
+  if (board === 'IIT') return true;
+  const cat = String(row?.productCategory || row?.subject?.productCategory || '')
+    .toUpperCase()
+    .trim();
+  return Boolean(cat);
+}
+
+/** EduOTT: only IIT-track videos. */
+export function filterVideosForEduOtt(rows) {
+  if (!Array.isArray(rows)) return [];
+  return rows.filter((row) => isIitTrackVideo(row));
+}
+
+/** Learning Paths: drop IIT-track videos; keep board videos + all non-video. */
+export function filterVideosForLearningPath(rows) {
+  if (!Array.isArray(rows)) return [];
+  return rows.filter((row) => {
+    if (String(row?.type || '').trim() !== 'Video') return true;
+    return !isIitTrackVideo(row);
+  });
+}
+
+export function applySurfaceContentFilters(rows, surface) {
+  const s = String(surface || '')
+    .toLowerCase()
+    .trim();
+  if (s === 'eduott' || s === 'edu-ott') {
+    return filterVideosForEduOtt(rows);
+  }
+  if (s === 'learning-path' || s === 'learningpath' || s === 'lp') {
+    return filterVideosForLearningPath(rows);
+  }
+  return rows;
+}
+
+export function applySchoolProgramContentFilters(
+  contents,
+  { isAsliPrepExclusive, curriculumBoard, iitCategories, trialAllowedContentTypes, surface }
+) {
   let rows = filterContentsBySchoolProgram(contents, isAsliPrepExclusive);
   if (isAsliPrepExclusive) {
-    rows = filterContentsByBoardForAsliPrep(rows, curriculumBoard);
+    rows = filterContentsByBoardForAsliPrep(rows, curriculumBoard, iitCategories);
   }
   rows = filterByProductCategory(rows, iitCategories);
   rows = filterByTrialContentTypes(rows, trialAllowedContentTypes);
+  rows = applySurfaceContentFilters(rows, surface);
   return rows;
 }
 

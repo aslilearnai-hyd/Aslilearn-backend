@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-import { VALID_SCHOOL_BOARDS } from '../constants/boards.js';
 import { PRODUCT_CATEGORY_NONE } from '../constants/products.js';
 
 const subjectSchema = new mongoose.Schema({
@@ -15,8 +14,8 @@ const subjectSchema = new mongoose.Schema({
   board: {
     type: String,
     required: true,
-    enum: VALID_SCHOOL_BOARDS,
     uppercase: true,
+    trim: true,
     default: 'ASLI_EXCLUSIVE_SCHOOLS'
   },
   /** Indian state name when board is STATE; empty for CBSE / ASLI. */

@@ -1448,14 +1448,17 @@ router.get('/exams/:examId', async (req, res) => {
 // Get Asli Prep Exclusive Content (filtered by board and class assigned subjects)
 router.get('/asli-prep-content', async (req, res) => {
   try {
-    const { subject, type, topic, class: classParam } = req.query;
+    const { subject, type, topic, class: classParam, surface } = req.query;
     
     console.log('📚 Fetching Asli Prep content for student:', req.userId);
-    console.log('Query params:', { subject, type, topic });
+    console.log('Query params:', { subject, type, topic, surface });
 
     const { getStudentSchoolProgramContext, applySchoolProgramContentFilters, isAllowedContentType } =
       await import('../utils/schoolProgram.js');
-    const programCtx = await getStudentSchoolProgramContext(req.userId);
+    const programCtx = {
+      ...(await getStudentSchoolProgramContext(req.userId)),
+      surface,
+    };
 
     if (type && type !== 'all' && !isAllowedContentType(type, programCtx.isAsliPrepExclusive)) {
       return res.json({ success: true, data: [] });
