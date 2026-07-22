@@ -5612,7 +5612,7 @@ router.get('/content-download', async (req, res) => {
     res.setHeader('Content-Type', isPdf ? 'application/pdf' : upstreamType);
     res.setHeader('Content-Disposition', `${isPdf ? 'inline' : 'attachment'}; filename="${safeFilename.replace(/"/g, '')}"`);
     setPdfProxyCorsHeaders(req, res);
-    res.removeHeader('X-Frame-Options');
+    allowTrustedPdfFraming(res);
     console.log('[PDF_PROXY] /content-download response', {
       status: 200,
       isPdf,
@@ -5654,6 +5654,15 @@ function setPdfProxyCorsHeaders(req, res) {
   } else {
     res.setHeader('Access-Control-Allow-Origin', '*');
   }
+}
+
+/** Let aslilearn.ai / Vercel embed proxied PDFs (nginx may still override — prefer canvas preview). */
+function allowTrustedPdfFraming(res) {
+  res.removeHeader('X-Frame-Options');
+  res.setHeader(
+    'Content-Security-Policy',
+    "frame-ancestors 'self' https://aslilearn.ai https://www.aslilearn.ai https://*.vercel.app",
+  );
 }
 
 // Proxy file preview for student content URLs (inline rendering in iframe/object)
@@ -5715,7 +5724,7 @@ router.get('/content-preview', async (req, res) => {
     res.setHeader('X-Pdf-Validated', isPdf ? '1' : '0');
     res.setHeader('Content-Disposition', `inline; filename="${safeFilename.replace(/"/g, '')}"`);
     setPdfProxyCorsHeaders(req, res);
-    res.removeHeader('X-Frame-Options');
+    allowTrustedPdfFraming(res);
     console.log('[PDF_PROXY] /content-preview response', {
       status: 200,
       isPdf,
