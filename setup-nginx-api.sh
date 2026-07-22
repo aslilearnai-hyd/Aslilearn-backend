@@ -42,8 +42,9 @@ server {
     ssl_session_cache shared:SSL:10m;
     ssl_session_timeout 10m;
 
-    # Security Headers
-    add_header X-Frame-Options "SAMEORIGIN" always;
+    # Security headers (do NOT set X-Frame-Options globally — it blocks
+    # textbook/PDF embeds from aslilearn.ai into api.aslilearn.ai responses.
+    # Framing policy is set by the Node app on /uploads and content-preview.)
     add_header X-Content-Type-Options "nosniff" always;
     add_header X-XSS-Protection "1; mode=block" always;
 

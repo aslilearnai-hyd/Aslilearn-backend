@@ -431,8 +431,16 @@ app.use(express.json({ limit: process.env.JSON_BODY_LIMIT || '2mb' }));
 app.use(express.urlencoded({ extended: true, limit: process.env.JSON_BODY_LIMIT || '2mb' }));
 app.use(attachCookies);
 
-// Serve uploaded files — gate sensitive paths; school logos stay public for branding
+// Serve uploaded files — gate sensitive paths; school logos stay public for branding.
+// Allow framing from the product site so textbook/PDF previews can embed /uploads
+// (helmet defaults to X-Frame-Options: SAMEORIGIN which breaks aslilearn.ai → api embeds).
+const TRUSTED_FRAME_ANCESTORS =
+  "frame-ancestors 'self' https://aslilearn.ai https://www.aslilearn.ai https://*.vercel.app";
+
 app.use('/uploads', (req, res, next) => {
+  res.removeHeader('X-Frame-Options');
+  res.setHeader('Content-Security-Policy', TRUSTED_FRAME_ANCESTORS);
+
   const p = String(req.path || '').toLowerCase();
   const sensitive =
     /\/(reports?|risk|homework|submission|exam|orders\/documents|questions)\b/.test(p) ||
