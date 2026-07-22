@@ -38,6 +38,12 @@ import {
   ensureHomeworkPracticeQuestions,
 } from '../utils/ai-generator-section-pad.js';
 import { filterUnsupportedQuestions, buildUnsupportedQuestionBanBlock, isUnsupportedQuestionStem } from '../utils/unsupported-question-filter.js';
+import {
+  formatMatchAnswerKey,
+  isMatchQuestionType,
+  isMatchStemText,
+  normalizeMatchPairs,
+} from '../utils/match-following.js';
 import { stripMarkdownSyntax, deepStripMarkdownValues } from '../utils/strip-markdown-syntax.js';
 import {
   stripVariantScaffoldFromQuestionText,
@@ -228,17 +234,39 @@ const toQuestionArray = (value = []) =>
           ).trim();
         if (!question) return null;
         const options = collectOptionsFromEntry(entry);
-        const answer = String(entry.answer || entry.correctAnswer || '').trim();
+        const imageUrl = String(
+          entry.imageUrl || entry.image_url || entry.questionImage || '',
+        ).trim();
+        const imagePrompt = String(
+          entry.imagePrompt || entry.image_prompt || entry.figurePrompt || '',
+        ).trim();
+        const needsDiagramRaw = entry.needsDiagram ?? entry.needs_diagram ?? entry.needsFigure;
+        const needsDiagram =
+          needsDiagramRaw === true ||
+          needsDiagramRaw === 1 ||
+          ['true', '1', 'yes'].includes(String(needsDiagramRaw || '').trim().toLowerCase());
+        const matchPairs = normalizeMatchPairs(entry);
+        const type = String(entry.type || entry.question_type || '').trim();
+        const inferredType =
+          type ||
+          (matchPairs.length >= 2 || isMatchStemText(question) ? 'MATCH' : '');
+        const answer =
+          String(entry.answer || entry.correctAnswer || '').trim() ||
+          (matchPairs.length >= 2 ? formatMatchAnswerKey(matchPairs) : '');
         return {
           question,
           options,
           answer,
           section: String(entry.section || entry.sectionName || '').trim(),
           question_number: entry.question_number ?? entry.sl_no ?? entry.number,
-          type: String(entry.type || entry.question_type || '').trim(),
+          type: inferredType,
           marks: entry.marks != null && entry.marks !== '' ? Number(entry.marks) : undefined,
           explanation: String(entry.explanation || '').trim(),
           bloom_level: String(entry.bloom_level || entry.bloomLevel || '').trim(),
+          ...(imageUrl ? { imageUrl } : {}),
+          ...(imagePrompt ? { imagePrompt } : {}),
+          ...(needsDiagram ? { needsDiagram: true } : {}),
+          ...(matchPairs.length >= 2 ? { matchPairs } : {}),
           // Preserve the internal scaffold marker so the density guard stays phrase-independent.
           ...(entry._scaffold === true ? { _scaffold: true } : {}),
         };
@@ -263,19 +291,33 @@ function cleanWorksheetMcqOptions(options = []) {
 function sanitizeHomeworkPracticeQuestions(questions = []) {
   const seen = new Set();
   return filterUnsupportedQuestions(questions)
-    .map((row) => ({
+    .map((row) => {
+      const matchPairs = normalizeMatchPairs(row);
+      return {
       question_number: row?.question_number ?? row?.sl_no,
-      type: String(row?.type || '').trim(),
+      type: String(row?.type || (matchPairs.length >= 2 ? 'MATCH' : '')).trim(),
       marks: row?.marks,
-      answer: String(row?.answer || '').replace(/\s+/g, ' ').trim(),
+      answer:
+        String(row?.answer || '').replace(/\s+/g, ' ').trim() ||
+        (matchPairs.length >= 2 ? formatMatchAnswerKey(matchPairs) : ''),
       explanation: String(row?.explanation || '').trim(),
       options: cleanWorksheetMcqOptions(row?.options),
       question: stripAiGeneratorLeakage(
         stripVariantScaffoldFromQuestionText(cleanWorksheetQuestionText(row?.question)),
       ),
-    }))
+      ...(String(row?.imageUrl || '').trim() ? { imageUrl: String(row.imageUrl).trim() } : {}),
+      ...(String(row?.imagePrompt || '').trim()
+        ? { imagePrompt: String(row.imagePrompt).trim() }
+        : {}),
+      ...(row?.needsDiagram ? { needsDiagram: true } : {}),
+      ...(matchPairs.length >= 2 ? { matchPairs } : {}),
+    };
+    })
     .filter((row) => row.question && row.question.length >= 8)
-    .filter((row) => !isUnsupportedQuestionStem(row.question, row.type))
+    .filter((row) => !isUnsupportedQuestionStem(row.question, row.type, {
+      hasImage: Boolean(row.imageUrl || row.imagePrompt || row.needsDiagram),
+      hasMatch: Array.isArray(row.matchPairs) && row.matchPairs.length >= 2,
+    }))
     .filter((row) => !isAnswerKeyLikeQuestion(row.question))
     .filter((row) => {
       const key = worksheetQuestionDedupeKey(row);
@@ -288,24 +330,47 @@ function sanitizeHomeworkPracticeQuestions(questions = []) {
 const sanitizeWorksheetQuestions = (questions = []) => {
   const seenFull = new Set();
   return filterUnsupportedQuestions(questions)
-    .map((row) => ({
+    .map((row) => {
+      const matchPairs = normalizeMatchPairs(row);
+      return {
       question: stripVariantScaffoldFromQuestionText(cleanWorksheetQuestionText(row?.question)),
       options: cleanWorksheetMcqOptions(row?.options),
-      answer: String(row?.answer || '').replace(/\s+/g, ' ').trim(),
+      answer:
+        String(row?.answer || '').replace(/\s+/g, ' ').trim() ||
+        (matchPairs.length >= 2 ? formatMatchAnswerKey(matchPairs) : ''),
       section: String(row?.section || '').trim(),
-      type: String(row?.type || '').trim(),
+      type: String(row?.type || (matchPairs.length >= 2 ? 'MATCH' : '')).trim(),
       marks: row?.marks,
       explanation: String(row?.explanation || '').trim(),
       bloom_level: String(row?.bloom_level || '').trim(),
       question_number: row?.question_number ?? row?.sl_no,
+      ...(String(row?.imageUrl || '').trim() ? { imageUrl: String(row.imageUrl).trim() } : {}),
+      ...(String(row?.imagePrompt || '').trim()
+        ? { imagePrompt: String(row.imagePrompt).trim() }
+        : {}),
+      ...(row?.needsDiagram ? { needsDiagram: true } : {}),
+      ...(matchPairs.length >= 2 ? { matchPairs } : {}),
       ...(row?._scaffold === true ? { _scaffold: true } : {}),
-    }))
+    };
+    })
     .filter((row) => row.question)
-    .filter((row) => !isUnsupportedQuestionStem(row.question, row.type))
+    .filter((row) =>
+      !isUnsupportedQuestionStem(row.question, row.type, {
+        hasImage: Boolean(row.imageUrl || row.imagePrompt || row.needsDiagram),
+        hasMatch: Array.isArray(row.matchPairs) && row.matchPairs.length >= 2,
+      }),
+    )
     .filter((row) => !isHeadingLikeLine(row.question))
     .filter((row) => !isWorksheetPdfChrome(row.question))
     .filter((row) => !isAnswerKeyLikeQuestion(row.question))
-    .filter((row) => looksLikeQuestionPrompt(row.question) || row.options.length >= 2 || /_{2,}/.test(row.question))
+    .filter(
+      (row) =>
+        looksLikeQuestionPrompt(row.question) ||
+        row.options.length >= 2 ||
+        /_{2,}/.test(row.question) ||
+        (Array.isArray(row.matchPairs) && row.matchPairs.length >= 2) ||
+        isMatchQuestionType(row.type),
+    )
     .filter((row) => {
       const fullKey = worksheetQuestionDedupeKey(row);
       if (!fullKey) return false;

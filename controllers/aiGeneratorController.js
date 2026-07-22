@@ -38,6 +38,7 @@ import {
 import { computeGeminiCostFromTokenUsage } from '../utils/gemini-token-cost.js';
 import { buildHistoricalGenerationContext } from '../services/ai-generator-historical-index.js';
 import { persistGenerationFingerprints } from '../services/ai-generator-fingerprint-service.js';
+import { enrichStructuredContentWithDiagrams } from '../services/ai-diagram-generation-service.js';
 import {
   validateRecordUniqueness,
   collectQuestionTextsFromStructured,
@@ -490,6 +491,28 @@ export async function generateAndSaveContent(req, res) {
     } finally {
       tokenUsage = endTokenUsageSession();
       cost = computeGeminiCostFromTokenUsage(tokenUsage);
+    }
+
+    if (structuredContent && typeof structuredContent === 'object') {
+      try {
+        const diagramStats = await enrichStructuredContentWithDiagrams(structuredContent, {
+          toolSlug,
+          subject: subjectName,
+          topic: topicName,
+          subtopic: subtopicName,
+          classLabel: className,
+        });
+        if (diagramStats.generated > 0 || diagramStats.failed > 0) {
+          console.log(
+            `[AI Generator] Diagrams for ${toolSlug}: generated=${diagramStats.generated} failed=${diagramStats.failed}`,
+          );
+        }
+      } catch (diagramErr) {
+        console.warn(
+          '[AI Generator] Diagram enrichment skipped:',
+          String(diagramErr?.message || diagramErr).slice(0, 200),
+        );
+      }
     }
 
     const uid = req.userId;
