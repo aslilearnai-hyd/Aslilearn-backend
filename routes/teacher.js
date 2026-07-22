@@ -975,11 +975,18 @@ router.post('/homework', async (req, res) => {
     
     const librarySubjectIds = getExplicitTeacherSubjectObjectIds(teacher);
     const subjectId = new mongoose.Types.ObjectId(subject);
-    const teacherBoardUpper = teacher.board ? String(teacher.board).toUpperCase() : undefined;
-
-    const allowed = await subjectIdAllowedWithSiblings(subjectId, librarySubjectIds, {
-      board: teacherBoardUpper,
+    const { getTeacherSchoolProgramContext } = await import('../utils/schoolProgram.js');
+    const { boardsForSchoolContentScope } = await import('../constants/boards.js');
+    const programCtx = await getTeacherSchoolProgramContext(teacherId);
+    const contentBoards = boardsForSchoolContentScope({
+      board: programCtx.adminBoard || teacher.board,
+      curriculumBoard: programCtx.curriculumBoard,
+      isAsliPrepExclusive: programCtx.isAsliPrepExclusive,
     });
+    const boardResolveOpts =
+      contentBoards.length > 0 ? { boards: contentBoards } : {};
+
+    const allowed = await subjectIdAllowedWithSiblings(subjectId, librarySubjectIds, boardResolveOpts);
     if (!allowed) {
       return res.status(403).json({ 
         success: false, 
@@ -1593,14 +1600,22 @@ router.get('/asli-prep-content', async (req, res) => {
       });
     }
 
-    const teacherBoard = teacher.board ? String(teacher.board).toUpperCase() : undefined;
-    const contentSubjectIds = await resolveSubjectContentIdsMany(librarySubjectIds, {
-      board: teacherBoard,
+    // Resolve siblings across this school's boards (stored + curriculum), not teacher.board alone.
+    // Asli Prep teachers store ASLI hub board while content often sits on curriculum subjects.
+    const { boardsForSchoolContentScope } = await import('../constants/boards.js');
+    const contentBoards = boardsForSchoolContentScope({
+      board: programCtx.adminBoard || teacher.board,
+      curriculumBoard: programCtx.curriculumBoard,
+      isAsliPrepExclusive: programCtx.isAsliPrepExclusive,
     });
+    const boardResolveOpts =
+      contentBoards.length > 0 ? { boards: contentBoards } : {};
+
+    const contentSubjectIds = await resolveSubjectContentIdsMany(librarySubjectIds, boardResolveOpts);
     const activeIdSet = buildActiveSubjectIdSet(contentSubjectIds);
 
     console.log(
-      `📋 Teacher library subjects: ${librarySubjectIds.length}, content ids (incl. siblings): ${contentSubjectIds.length}`
+      `📋 Teacher library subjects: ${librarySubjectIds.length}, content ids (incl. siblings): ${contentSubjectIds.length}, boards: ${contentBoards.join(',') || 'any'}`
     );
 
     const query = {
@@ -1609,11 +1624,9 @@ router.get('/asli-prep-content', async (req, res) => {
     };
 
     if (subject && subject !== 'all' && mongoose.Types.ObjectId.isValid(subject)) {
-      const allowed = await subjectIdAllowedWithSiblings(subject, librarySubjectIds, {
-        board: teacherBoard,
-      });
+      const allowed = await subjectIdAllowedWithSiblings(subject, librarySubjectIds, boardResolveOpts);
       if (allowed) {
-        const resolved = await resolveSubjectContentIds(subject, { board: teacherBoard });
+        const resolved = await resolveSubjectContentIds(subject, boardResolveOpts);
         query.subject = { $in: resolved };
       } else {
         console.log('⚠️ Requested subject not in teacher subject scope');
@@ -1788,10 +1801,17 @@ router.get('/homework-submissions', async (req, res) => {
     });
     
     const librarySubjectIds = getExplicitTeacherSubjectObjectIds(teacher);
-    const teacherBoardUpper = teacher.board ? String(teacher.board).toUpperCase() : undefined;
-    const contentSubjectIds = await resolveSubjectContentIdsMany(librarySubjectIds, {
-      board: teacherBoardUpper,
+    const { getTeacherSchoolProgramContext } = await import('../utils/schoolProgram.js');
+    const { boardsForSchoolContentScope } = await import('../constants/boards.js');
+    const programCtx = await getTeacherSchoolProgramContext(teacherId);
+    const contentBoards = boardsForSchoolContentScope({
+      board: programCtx.adminBoard || teacher.board,
+      curriculumBoard: programCtx.curriculumBoard,
+      isAsliPrepExclusive: programCtx.isAsliPrepExclusive,
     });
+    const boardResolveOpts =
+      contentBoards.length > 0 ? { boards: contentBoards } : {};
+    const contentSubjectIds = await resolveSubjectContentIdsMany(librarySubjectIds, boardResolveOpts);
     const allHomeworks = await Content.find({
       type: 'Homework',
       subject: { $in: contentSubjectIds },
