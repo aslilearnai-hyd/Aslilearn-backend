@@ -36,21 +36,36 @@ export function filterContentsBySchoolProgram(contents, isAsliPrepExclusive) {
   return contents.filter((row) => isAllowedContentType(row?.type, false));
 }
 
+/** Normalize board codes so IIT / IIT/NEET / IIT-NEET all match. */
+export function normalizeContentBoardKey(raw) {
+  const s = String(raw || '')
+    .toUpperCase()
+    .trim()
+    .replace(/[\s/\\-]+/g, '');
+  if (!s) return '';
+  if (s === 'CBSE' || s === 'CBSC') return 'CBSE';
+  if (s.includes('IIT') || s.includes('NEET') || s.includes('JEE')) return 'IIT';
+  if (s === 'ASLIEXCLUSIVESCHOOLS' || s === 'ASLIEXCLUSIVE') return 'ASLI_EXCLUSIVE_SCHOOLS';
+  return String(raw || '')
+    .toUpperCase()
+    .trim();
+}
+
 /**
  * Asli Prep students: keep content whose board matches curriculum + ASLI hub + IIT (when tracks assigned).
  */
 export function filterContentsByBoardForAsliPrep(contents, curriculumBoard, iitCategories = []) {
   if (!Array.isArray(contents)) return [];
-  const curriculum = String(curriculumBoard || 'CBSE').toUpperCase().trim();
-  const allowed = new Set([curriculum, 'ASLI_EXCLUSIVE_SCHOOLS']);
+  const curriculum = normalizeContentBoardKey(curriculumBoard || 'CBSE');
+  const allowed = new Set([curriculum, 'ASLI_EXCLUSIVE_SCHOOLS'].filter(Boolean));
   const hasIitTracks =
     Array.isArray(iitCategories) &&
     iitCategories.some((c) => String(c || '').trim());
   if (hasIitTracks) allowed.add('IIT');
   return contents.filter((row) => {
-    const contentBoard = String(row?.board || '').toUpperCase().trim();
-    const subjectBoard = String(row?.subject?.board || '').toUpperCase().trim();
-    const board = contentBoard || subjectBoard;
+    const board = normalizeContentBoardKey(
+      row?.board || row?.subject?.board || ''
+    );
     if (!board) return true;
     return allowed.has(board);
   });
@@ -59,9 +74,7 @@ export function filterContentsByBoardForAsliPrep(contents, curriculumBoard, iitC
 /** Video tied to IIT board or an IIT product track (Alpha/Beta/Gamma). */
 export function isIitTrackVideo(row) {
   if (String(row?.type || '').trim() !== 'Video') return false;
-  const board = String(row?.board || row?.subject?.board || '')
-    .toUpperCase()
-    .trim();
+  const board = normalizeContentBoardKey(row?.board || row?.subject?.board || '');
   if (board === 'IIT') return true;
   const cat = String(row?.productCategory || row?.subject?.productCategory || '')
     .toUpperCase()

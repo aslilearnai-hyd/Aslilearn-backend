@@ -256,7 +256,7 @@ router.get('/asli-prep-content', async (req, res) => {
     console.log('📋 Content query:', JSON.stringify(query, null, 2));
 
     let contents = await Content.find(query)
-      .populate('subject', 'name isActive classNumber board stateName')
+      .populate('subject', 'name isActive classNumber board stateName productCategory')
       .sort({ createdAt: -1 })
       .lean();
 
