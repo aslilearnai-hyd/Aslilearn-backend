@@ -5,21 +5,30 @@ import {
   isStoredCurriculumBoard,
   isValidCurriculumBoard,
   normalizeSchoolBoard,
+  getBoardDisplayName,
 } from '../constants/boards.js';
 
 /** Boards shown in performance comparison (curriculum only — not Asli Exclusive hub). */
 export const COMPARISON_BOARDS = [...CURRICULUM_BOARDS];
 
-/** Human-readable labels for comparison UI */
+/** Human-readable labels for comparison UI (fallback; prefer getBoardDisplayName). */
 export const BOARD_DISPLAY_NAMES = {
-  ASLI_EXCLUSIVE_SCHOOLS: 'ASLI EXCLUSIVE SCHOOLS',
+  ASLI_EXCLUSIVE_SCHOOLS: 'Asli Exclusive Schools',
+  IIT: 'IIT',
   CBSE: 'CBSE',
-  STATE: 'State Board',
+  STATE: 'State Board (generic)',
   SSC: 'SSC',
   ICSE: 'ICSE',
   IB: 'IB',
   CAMBRIDGE: 'Cambridge',
 };
+
+export function resolveBoardDisplayName(code) {
+  const key = String(code || '')
+    .toUpperCase()
+    .trim();
+  return getBoardDisplayName(key) || BOARD_DISPLAY_NAMES[key] || key;
+}
 
 /**
  * Analytics board for comparison charts: always the school's curriculum (CBSE, STATE, …).
@@ -212,7 +221,7 @@ export async function computeBoardMetrics(boardCode, { User, Teacher, Exam, Exam
 
   return {
     board: code,
-    boardName: BOARD_DISPLAY_NAMES[code] || code,
+    boardName: resolveBoardDisplayName(code),
     students,
     teachers,
     exams,
@@ -259,7 +268,7 @@ export async function computeAllBoardsMetrics({ Teacher, Exam, ExamResult }) {
 
       return {
         board: code,
-        boardName: BOARD_DISPLAY_NAMES[code] || code,
+        boardName: resolveBoardDisplayName(code),
         students,
         teachers,
         exams,

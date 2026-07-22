@@ -1,36 +1,43 @@
 import mongoose from 'mongoose';
-import { VALID_SCHOOL_BOARDS } from '../constants/boards.js';
 
-const boardSchema = new mongoose.Schema({
-  code: {
-    type: String,
-    required: true,
-    unique: true,
-    enum: VALID_SCHOOL_BOARDS,
-    uppercase: true
-  },
-  name: {
-    type: String,
-    required: true,
-    trim: true
-  },
-  description: {
-    type: String,
-    trim: true
-  },
-  isActive: {
-    type: Boolean,
-    default: true
-  }
-}, {
-  timestamps: true
-});
+export const BOARD_KINDS = ['curriculum', 'state', 'iit'];
 
-// Index for better performance
+const boardSchema = new mongoose.Schema(
+  {
+    code: {
+      type: String,
+      required: true,
+      unique: true,
+      uppercase: true,
+      trim: true,
+    },
+    name: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    description: {
+      type: String,
+      trim: true,
+      default: '',
+    },
+    /** curriculum | state | iit — drives school dropdowns and content scope */
+    kind: {
+      type: String,
+      enum: BOARD_KINDS,
+      default: 'curriculum',
+      required: true,
+    },
+    isActive: {
+      type: Boolean,
+      default: true,
+    },
+  },
+  { timestamps: true }
+);
+
 boardSchema.index({ code: 1 });
 boardSchema.index({ isActive: 1 });
+boardSchema.index({ kind: 1 });
 
 export default mongoose.model('Board', boardSchema);
-
-
-

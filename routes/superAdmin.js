@@ -88,6 +88,8 @@ import {
 import { uploadAndParsePdf } from '../controllers/aiToolsController.js';
 import {
   getAllBoards,
+  createBoard,
+  updateBoard,
   getBoardDashboard,
   createSubject,
   updateSubject,
@@ -644,6 +646,8 @@ router.get('/export', exportData);
 
 // Board Management Routes
 router.get('/boards', getAllBoards);
+router.post('/boards', createBoard);
+router.put('/boards/:code', updateBoard);
 router.get('/boards/analytics/comparison', getBoardAnalytics); // Must come before parameterized routes
 router.get('/boards/export', getBoardExportData); // Export detailed data
 router.get('/boards/:boardCode/dashboard', getBoardDashboard);
@@ -657,16 +661,13 @@ router.get('/subjects', async (req, res) => {
     const Subject = (await import('../models/Subject.js')).default;
     const includeInactive =
       req.query.includeInactive === 'true' && req.user?.role === 'super-admin';
-    const query = {
-      board: { $in: VALID_SCHOOL_BOARDS },
-    };
+    const query = {};
     // Super-admin catalog view needs soft-deleted rows to match orphaned content.
     if (!includeInactive) {
       query.name = { $not: /__deleted__/ };
       query.isActive = true;
     }
-    const subjects = await Subject.find(query)
-      .sort({ name: 1 });
+    const subjects = await Subject.find(query).sort({ name: 1 });
     res.json({
       success: true,
       data: subjects

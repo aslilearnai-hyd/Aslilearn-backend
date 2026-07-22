@@ -982,6 +982,7 @@ router.post('/homework', async (req, res) => {
       board: programCtx.adminBoard || teacher.board,
       curriculumBoard: programCtx.curriculumBoard,
       isAsliPrepExclusive: programCtx.isAsliPrepExclusive,
+      iitCategories: programCtx.iitCategories,
     });
     const boardResolveOpts =
       contentBoards.length > 0 ? { boards: contentBoards } : {};
@@ -1562,15 +1563,18 @@ router.get('/students/:studentId/performance', async (req, res) => {
 // Get Asli Prep content for teacher's assigned subjects
 router.get('/asli-prep-content', async (req, res) => {
   try {
-    const { subject, type, topic } = req.query;
+    const { subject, type, topic, surface } = req.query;
     const teacherId = req.teacherId;
     
     console.log('📚 Fetching Asli Prep content for teacher:', teacherId);
-    console.log('Query params:', { subject, type, topic });
+    console.log('Query params:', { subject, type, topic, surface });
 
     const { getTeacherSchoolProgramContext, applySchoolProgramContentFilters, isAllowedContentType } =
       await import('../utils/schoolProgram.js');
-    const programCtx = await getTeacherSchoolProgramContext(teacherId);
+    const programCtx = {
+      ...(await getTeacherSchoolProgramContext(teacherId)),
+      surface,
+    };
 
     if (type && type !== 'all' && !isAllowedContentType(type, programCtx.isAsliPrepExclusive)) {
       return res.json({ success: true, data: [] });
@@ -1607,6 +1611,7 @@ router.get('/asli-prep-content', async (req, res) => {
       board: programCtx.adminBoard || teacher.board,
       curriculumBoard: programCtx.curriculumBoard,
       isAsliPrepExclusive: programCtx.isAsliPrepExclusive,
+      iitCategories: programCtx.iitCategories,
     });
     const boardResolveOpts =
       contentBoards.length > 0 ? { boards: contentBoards } : {};
@@ -1808,6 +1813,7 @@ router.get('/homework-submissions', async (req, res) => {
       board: programCtx.adminBoard || teacher.board,
       curriculumBoard: programCtx.curriculumBoard,
       isAsliPrepExclusive: programCtx.isAsliPrepExclusive,
+      iitCategories: programCtx.iitCategories,
     });
     const boardResolveOpts =
       contentBoards.length > 0 ? { boards: contentBoards } : {};

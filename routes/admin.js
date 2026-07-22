@@ -206,11 +206,11 @@ router.get('/exams/:examId/analytics', getExamPerformanceAnalytics); // View exa
 // Get Asli Prep content for admin's board
 router.get('/asli-prep-content', async (req, res) => {
   try {
-    const { subject, type, topic } = req.query;
+    const { subject, type, topic, surface } = req.query;
     const adminId = req.adminId;
     
     console.log('📚 Fetching Asli Prep content for admin:', adminId);
-    console.log('Query params:', { subject, type, topic });
+    console.log('Query params:', { subject, type, topic, surface });
     
     // Remove board restrictions - show all content to all admins
     // Content is filtered only by class/subject, not by board
@@ -218,7 +218,10 @@ router.get('/asli-prep-content', async (req, res) => {
 
     const { getAdminSchoolProgramContext, applySchoolProgramContentFilters, isAllowedContentType } =
       await import('../utils/schoolProgram.js');
-    const programCtx = await getAdminSchoolProgramContext(adminId);
+    const programCtx = {
+      ...(await getAdminSchoolProgramContext(adminId)),
+      surface,
+    };
 
     if (type && type !== 'all' && !isAllowedContentType(type, programCtx.isAsliPrepExclusive)) {
       return res.json({ success: true, data: [] });

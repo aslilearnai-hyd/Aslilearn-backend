@@ -105,22 +105,16 @@ const userSchema = new mongoose.Schema({
   // Board assignment for admins and students (ASLI_EXCLUSIVE_SCHOOLS = Asli Prep exclusive track)
   board: {
     type: String,
-    enum: {
-      values: ['ASLI_EXCLUSIVE_SCHOOLS', 'CBSE', 'STATE', 'SSC', 'ICSE', 'IB', 'CAMBRIDGE'],
-      message: '{VALUE} is not a valid board'
-    },
     uppercase: true,
+    trim: true,
     default: 'ASLI_EXCLUSIVE_SCHOOLS',
     required: false
   },
   // Curriculum alignment (used with isAsliPrepExclusive)
   curriculumBoard: {
     type: String,
-    enum: {
-      values: ['CBSE', 'STATE', 'SSC', 'ICSE', 'IB', 'CAMBRIDGE'],
-      message: '{VALUE} is not a valid curriculum board'
-    },
     uppercase: true,
+    trim: true,
     default: 'CBSE',
     required: false
   },
