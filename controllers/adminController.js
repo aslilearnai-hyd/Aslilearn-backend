@@ -13,7 +13,12 @@ import Subject from '../models/Subject.js';
 import Content from '../models/Content.js';
 import RiskAnalysisReport from '../models/RiskAnalysisReport.js';
 import { getExplicitTeacherSubjectObjectIds } from '../utils/teacherSubjectScope.js';
-import { isValidSchoolBoard, normalizeSchoolBoard } from '../constants/boards.js';
+import {
+  isValidSchoolBoard,
+  normalizeSchoolBoard,
+  boardsForSchoolContentScope,
+} from '../constants/boards.js';
+import { getTeacherSchoolProgramContext } from '../utils/schoolProgram.js';
 import { processTeacherCsvUpload } from '../services/teacherCsvImport.js';
 import {
   processStudentCsvUpload,
@@ -1857,11 +1862,18 @@ export const getTeacherDashboardStats = async (req, res) => {
       (s) => s != null && s._id && s.isActive !== false
     );
 
-    const teacherBoardUpper = teacher.board ? String(teacher.board).toUpperCase() : undefined;
+    const programCtx = await getTeacherSchoolProgramContext(teacher._id);
+    const contentBoards = boardsForSchoolContentScope({
+      board: programCtx.adminBoard || teacher.board,
+      curriculumBoard: programCtx.curriculumBoard,
+      isAsliPrepExclusive: programCtx.isAsliPrepExclusive,
+    });
+    const boardResolveOpts =
+      contentBoards.length > 0 ? { boards: contentBoards } : {};
     const teacherSubjectsWithCounts = await Promise.all(
       teacherSubjectsExplicit.map(async (s) => {
         const row = s.toObject ? s.toObject() : { ...s };
-        const contentIds = await resolveSubjectContentIds(row._id, { board: teacherBoardUpper });
+        const contentIds = await resolveSubjectContentIds(row._id, boardResolveOpts);
         const contentCount = await Content.countDocuments({
           subject: { $in: contentIds },
           isActive: true,

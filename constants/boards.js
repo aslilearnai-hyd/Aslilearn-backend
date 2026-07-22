@@ -67,3 +67,35 @@ export function resolveUserDisplayBoard(user, assignedAdmin) {
   const fallback = String(u.board || a?.board || '').toUpperCase().trim();
   return isValidCurriculumBoard(fallback) ? fallback : fallback || '';
 }
+
+/**
+ * Boards to use when resolving catalog subject siblings for a school.
+ * Driven only by that school's stored board + curriculumBoard (no school/subject hardcoding).
+ * Asli Prep schools typically store board=ASLI_EXCLUSIVE_SCHOOLS and curriculumBoard=CBSE/etc.,
+ * so both must be included or teachers miss content linked to either subject board.
+ */
+export function boardsForSchoolContentScope({
+  board,
+  curriculumBoard,
+  isAsliPrepExclusive,
+} = {}) {
+  const boards = new Set();
+  const storedRaw = String(board || '').toUpperCase().trim();
+  const stored = storedRaw && isValidSchoolBoard(storedRaw) ? normalizeSchoolBoard(storedRaw) : '';
+  const curriculum =
+    curriculumBoard && isValidCurriculumBoard(curriculumBoard)
+      ? String(curriculumBoard).toUpperCase().trim()
+      : '';
+
+  if (stored) boards.add(stored);
+  if (curriculum) boards.add(curriculum);
+
+  const exclusive =
+    isAsliPrepExclusive === true || stored === 'ASLI_EXCLUSIVE_SCHOOLS';
+  if (exclusive) {
+    boards.add('ASLI_EXCLUSIVE_SCHOOLS');
+    if (curriculum) boards.add(curriculum);
+  }
+
+  return [...boards];
+}

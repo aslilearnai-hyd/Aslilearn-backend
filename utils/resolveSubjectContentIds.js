@@ -59,11 +59,24 @@ function escapeRegex(value) {
 }
 
 /**
+ * Normalize options.board / options.boards into a list of uppercase board codes.
+ * Empty list means do not filter siblings by board.
+ */
+function normalizeBoardFilter(options = {}) {
+  const fromList = Array.isArray(options.boards)
+    ? options.boards.map((b) => String(b || '').toUpperCase().trim()).filter(Boolean)
+    : [];
+  if (fromList.length) return [...new Set(fromList)];
+  if (options.board) return [String(options.board).toUpperCase().trim()].filter(Boolean);
+  return [];
+}
+
+/**
  * All subject ObjectIds that share the same plain name (MATHS, MATHS_6, MATHS_7).
  * Used to query Content linked to legacy suffixed subjects during migration.
+ * Pass `board` (string) or `boards` (string[]) to limit sibling lookup by school boards.
  */
 export async function resolveSubjectContentIds(subjectId, options = {}) {
-  const { board } = options;
   if (!subjectId || !mongoose.Types.ObjectId.isValid(String(subjectId))) {
     return [];
   }
@@ -85,8 +98,11 @@ export async function resolveSubjectContentIds(subjectId, options = {}) {
     name: { $not: /__deleted__/ },
     $or: [{ name: plain }, { name: new RegExp(`^${plainEscaped}_\\d+$`, 'i') }],
   };
-  if (board) {
-    nameQuery.board = String(board).toUpperCase();
+  const boardList = normalizeBoardFilter(options);
+  if (boardList.length === 1) {
+    nameQuery.board = boardList[0];
+  } else if (boardList.length > 1) {
+    nameQuery.board = { $in: boardList };
   }
 
   const siblings = await Subject.find(nameQuery).select('_id').lean();
