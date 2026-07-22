@@ -521,9 +521,18 @@ function formatCSVContent(csvData, toolType, metadata) {
       markdown += `\n---\n\n`;
     });
   }
-  // Match the following format — unsupported in product UI; skip entirely
+  // Match the following format
   else if (headers.includes('Column A') && headers.includes('Column B / Correct Match')) {
-    return markdown + `No questions available.\n`;
+    markdown += `### Match the Following\n\n`;
+    let index = 0;
+    rows.forEach((row) => {
+      const left = String(row['Column A'] || '').trim();
+      const right = String(row['Column B / Correct Match'] || row['Column B'] || '').trim();
+      if (!left || !right) return;
+      index += 1;
+      markdown += `${index}. **${left}** → ${right}\n\n`;
+    });
+    if (index === 0) markdown += `No questions available.\n`;
   }
   // Fill in the blanks, Short answer, Long answer, True or False format
   else if (headers.includes('Question') && headers.includes('Answer')) {

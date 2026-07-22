@@ -29,11 +29,23 @@ export function getPrecisionVariantFocus(variantIndex) {
  * Ground-level classroom + textbook exercise alignment (all tools).
  * @returns {string}
  */
-export function buildClassroomTextbookMethodologyBlock() {
+export function buildClassroomTextbookMethodologyBlock(opts = {}) {
+  const allowDiagrams =
+    opts.allowDiagrams === true ||
+    (opts.allowDiagrams !== false &&
+      (() => {
+        const v = process.env.AI_DIAGRAM_GENERATION;
+        if (v == null || String(v).trim() === '') return true;
+        const n = String(v).trim().toLowerCase();
+        return !['0', 'false', 'no', 'off'].includes(n);
+      })());
+
   return [
     'CLASSROOM TEXTBOOK METHODOLOGY (mandatory):',
     '- Write like NCERT/CBSE classroom material: easy for teachers to teach and students to follow.',
-    '- Match question TYPES from the textbook that work in text-only UI: MCQ, fill-in-the-blank, true/false, very short answer, short answer, numerical. NEVER match-the-following, NEVER image/figure/diagram-based or label-the-diagram prompts.',
+    allowDiagrams
+      ? '- Match question TYPES from the textbook: MCQ, fill-in-the-blank, true/false, very short answer, short answer, numerical, Match-the-Following (with matchPairs), and figure-based stems WHEN a labelled diagram helps (include needsDiagram + imagePrompt).'
+      : '- Match question TYPES from the textbook: MCQ, fill-in-the-blank, true/false, very short answer, short answer, numerical, and Match-the-Following (with matchPairs). NEVER image/figure/diagram-based prompts.',
     '- Mirror the STYLE of in-chapter Examples, Intext Questions, and end-of-section Exercises — same difficulty band and wording pattern.',
     '- Activities = simplified versions of textbook Activities/Projects (materials, steps, observation table) — not invented story-based tasks.',
     '- Teacher-facing text: who does what, with what material, for how long — plain classroom language.',
@@ -48,17 +60,29 @@ export function buildClassroomTextbookMethodologyBlock() {
  * Core precision block — direct, subtopic-stuck content.
  * @returns {string}
  */
-export function buildPrecisionGenerationBlock() {
+export function buildPrecisionGenerationBlock(opts = {}) {
+  const allowDiagrams =
+    opts.allowDiagrams === true ||
+    (opts.allowDiagrams !== false &&
+      (() => {
+        const v = process.env.AI_DIAGRAM_GENERATION;
+        if (v == null || String(v).trim() === '') return true;
+        const n = String(v).trim().toLowerCase();
+        return !['0', 'false', 'no', 'off'].includes(n);
+      })());
+
   return [
-    buildClassroomTextbookMethodologyBlock(),
+    buildClassroomTextbookMethodologyBlock(opts),
     '',
-    buildUnsupportedQuestionBanBlock(),
+    buildUnsupportedQuestionBanBlock(opts),
     '',
     'PRECISION MODE (mandatory):',
     '- Every question/task names the exact SUBTOPIC and tests one clear skill.',
     '- Write exam-ready stems: define, state, calculate, explain, justify — no story setup.',
     '- BAN: "Imagine…", "During a school fair…", "Role-play…", "Design a poster…", "In your community…", "Set the scene…".',
-    '- BAN: Match-the-Following / Column A–B matching, and any image/figure/diagram/picture-based stems (refer to figure, as shown in the diagram, label the diagram, etc.).',
+    allowDiagrams
+      ? '- Match-the-Following IS allowed (type MATCH + matchPairs). Figure-based stems ARE allowed when needsDiagram=true and imagePrompt describes an accurate NCERT-style labelled diagram.'
+      : '- Match-the-Following IS allowed (type MATCH + matchPairs). BAN image/figure/diagram/picture-based stems.',
     '- BAN: Literature-style prompts (summarise the message, speaking situations) for Science/Maths.',
     '- Science/Maths: definitions, formulas, numericals, units, cause–effect — not observation diaries.',
     '- Depth = substantive content on the subtopic (steps, formulas, evidence), not activity wrappers.',

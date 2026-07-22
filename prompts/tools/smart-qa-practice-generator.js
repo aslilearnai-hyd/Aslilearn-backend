@@ -3,7 +3,7 @@ import { createToolPromptPack } from '../create-tool-prompt-pack.js';
 export default createToolPromptPack({
   slug: 'smart-qa-practice-generator',
   toolTitle: 'Smart Q&A Practice Generator',
-  focus: 'Seven-section practice bank (A–G) with true/false, applied problems, HOTS — progressive Bloom difficulty on the subtopic. No match-the-following or image-based items.',
+  focus: 'Seven-section practice bank (A–G) with true/false, applied problems, HOTS — progressive Bloom difficulty on the subtopic. Match-the-Following allowed when matchPairs are provided; figure questions allowed with needsDiagram + imagePrompt.',
   includeBloom: true,
   includeDifferentiation: true,
   generationRules: [

@@ -26,6 +26,7 @@ import { isSixSectionV2Enabled, buildV2VariantHint } from '../prompts/v2/assembl
 import { isV2SupportedTool, v2ToolFamily } from '../prompts/v2/tool-packs.js';
 
 import { persistGenerationFingerprints } from './ai-generator-fingerprint-service.js';
+import { enrichStructuredContentWithDiagrams } from './ai-diagram-generation-service.js';
 
 import { computeGeminiCostFromTokenUsage } from '../utils/gemini-token-cost.js';
 import { lockBoardKey, resolveClassLabelForAiToolStorage } from '../utils/board-label.js';
@@ -519,6 +520,29 @@ export async function generateBatchAndSave(params, opts = {}) {
                   const coreTitle =
                     v2.structuredContent?.core?.title || v2.structuredContent?.core?.worksheetTitle || 'Six-section content';
                   const legacyStructured = mapV2StructuredToLegacy(toolSlug, v2.structuredContent);
+                  try {
+                    await enrichStructuredContentWithDiagrams(v2.structuredContent, {
+                      toolSlug,
+                      subject: subjectName,
+                      topic: topicName,
+                      subtopic: combinedSubtopicLabel,
+                      classLabel: className,
+                    });
+                    if (legacyStructured && typeof legacyStructured === 'object') {
+                      await enrichStructuredContentWithDiagrams(legacyStructured, {
+                        toolSlug,
+                        subject: subjectName,
+                        topic: topicName,
+                        subtopic: combinedSubtopicLabel,
+                        classLabel: className,
+                      });
+                    }
+                  } catch (diagramErr) {
+                    console.warn(
+                      '[AI Generator batch] V2 diagram enrichment skipped:',
+                      String(diagramErr?.message || diagramErr).slice(0, 200),
+                    );
+                  }
                   let persistContent = coreTitle;
                   if (legacyStructured) {
                     try {
@@ -804,7 +828,22 @@ export async function generateBatchAndSave(params, opts = {}) {
 
             const teacherId = mongoose.Types.ObjectId.isValid(uid) ? uid : undefined;
 
-
+            if (generated.structuredContent && typeof generated.structuredContent === 'object') {
+              try {
+                await enrichStructuredContentWithDiagrams(generated.structuredContent, {
+                  toolSlug,
+                  subject: subjectName,
+                  topic: topicName,
+                  subtopic: subtopicName,
+                  classLabel: className,
+                });
+              } catch (diagramErr) {
+                console.warn(
+                  '[AI Generator batch] Diagram enrichment skipped:',
+                  String(diagramErr?.message || diagramErr).slice(0, 200),
+                );
+              }
+            }
 
             const record = await AiToolGeneration.create({
 
