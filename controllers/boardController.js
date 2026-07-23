@@ -11,6 +11,7 @@ import {
   CURRICULUM_BOARDS,
   isValidSchoolBoard,
   isValidCurriculumBoard,
+  canonicalizeSchoolBoard,
   BUILTIN_BOARD_SEED,
   setDynamicBoardCache,
   getBoardDisplayName,
@@ -35,6 +36,10 @@ import {
   isUnifiedPlatformBoard,
   buildPlatformAdminQuery,
 } from '../services/boardScope.js';
+
+function isIitBoardCode(boardUpper) {
+  return canonicalizeSchoolBoard(boardUpper) === 'IIT';
+}
 
 function classNumberFromSubjectName(name) {
   const base = subjectDisplayName(name);
@@ -649,7 +654,7 @@ export const createSubject = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Name and board are required' });
     }
 
-    const boardUpper = board.toUpperCase().trim();
+    const boardUpper = canonicalizeSchoolBoard(board);
     if (!isValidSchoolBoard(boardUpper)) {
       return res.status(400).json({
         success: false,
@@ -666,6 +671,12 @@ export const createSubject = async (req, res) => {
     }
 
     const productCategory = normalizeIitCategoryLoose(rawProductCategory);
+    if (isIitBoardCode(boardUpper) && !productCategory) {
+      return res.status(400).json({
+        success: false,
+        message: 'Product category (Alpha / Beta / Gamma) is required for IIT subjects',
+      });
+    }
     const categoryLabel = productCategory
       ? ` and IIT ${formatIitCategoryLabel(productCategory)}`
       : '';
@@ -818,7 +829,9 @@ export const createSubject = async (req, res) => {
         if (saveError.keyPattern && saveError.keyPattern.name) {
           return res.status(400).json({ 
             success: false, 
-            message: 'Subject already exists for this board' 
+            message: productCategory
+              ? `Subject already exists for this board and IIT ${formatIitCategoryLabel(productCategory)}`
+              : 'Subject already exists for this board',
           });
         }
         if (saveError.keyPattern && saveError.keyPattern.code) {
@@ -829,7 +842,7 @@ export const createSubject = async (req, res) => {
         }
         return res.status(400).json({ 
           success: false, 
-          message: 'Subject already exists. Please check the subject name and board.' 
+          message: 'Subject already exists. Please check the subject name, board, and product category.' 
         });
       }
       throw saveError; // Re-throw if it's a different error
@@ -841,9 +854,20 @@ export const createSubject = async (req, res) => {
   } catch (error) {
     console.error('❌ Create subject error:', error);
     console.error('Error stack:', error.stack);
+    if (error?.name === 'ValidationError') {
+      const details = Object.values(error.errors || {})
+        .map((e) => e?.message)
+        .filter(Boolean)
+        .join('; ');
+      return res.status(400).json({
+        success: false,
+        message: details || 'Subject validation failed',
+        error: error.message,
+      });
+    }
     res.status(500).json({ 
       success: false, 
-      message: 'Failed to create subject', 
+      message: error?.message ? `Failed to create subject: ${error.message}` : 'Failed to create subject', 
       error: error.message 
     });
   }
@@ -964,9 +988,9 @@ export const updateSubject = async (req, res) => {
     }
 
     const updatedName = String(name).trim();
-    let boardUpper = String(subject.board || '').toUpperCase();
+    let boardUpper = canonicalizeSchoolBoard(subject.board);
     if (rawBoard !== undefined && rawBoard !== null && String(rawBoard).trim() !== '') {
-      const nextBoard = String(rawBoard).toUpperCase().trim();
+      const nextBoard = canonicalizeSchoolBoard(rawBoard);
       if (!isValidSchoolBoard(nextBoard)) {
         return res.status(400).json({
           success: false,
@@ -989,6 +1013,12 @@ export const updateSubject = async (req, res) => {
       rawProductCategory !== undefined
         ? normalizeIitCategoryLoose(rawProductCategory)
         : normalizeIitCategoryLoose(subject.productCategory);
+    if (isIitBoardCode(boardUpper) && !productCategory) {
+      return res.status(400).json({
+        success: false,
+        message: 'Product category (Alpha / Beta / Gamma) is required for IIT subjects',
+      });
+    }
     const categoryLabel = productCategory
       ? ` and IIT ${formatIitCategoryLabel(productCategory)}`
       : '';
@@ -1217,7 +1247,7 @@ export const uploadContent = async (req, res) => {
     const resolvedDate =
       date && String(date).trim() ? String(date).trim() : new Date().toISOString().slice(0, 10);
 
-    const boardNorm = String(board || '').toUpperCase().trim();
+    const boardNorm = canonicalizeSchoolBoard(board);
     if (!isValidSchoolBoard(boardNorm)) {
       return res.status(400).json({
         success: false,
@@ -1248,7 +1278,7 @@ export const uploadContent = async (req, res) => {
     if (!subjectDoc) {
       return res.status(404).json({ success: false, message: 'Subject not found' });
     }
-    if (subjectDoc.board !== boardNorm) {
+    if (canonicalizeSchoolBoard(subjectDoc.board) !== boardNorm) {
       return res.status(400).json({ success: false, message: 'Subject does not belong to the selected board' });
     }
 
@@ -1515,21 +1545,27 @@ export const updateContent = async (req, res) => {
     if (description !== undefined) content.description = description?.trim() || undefined;
     if (topic !== undefined) content.topic = topic?.trim() || undefined;
     if (normalizeContentType(content.type) === 'Video') {
-      const nextChapter =
-        chapter !== undefined
+      // Title-only renames must not fail when legacy videos lack chapter/module.
+      // Only validate/set when the client sends non-empty chapter/module values.
+      const chapterProvided =
+        chapter !== undefined && String(chapter).trim() !== '';
+      const moduleProvided =
+        moduleLabel !== undefined && String(moduleLabel).trim() !== '';
+      if (chapterProvided || moduleProvided) {
+        const nextChapter = chapterProvided
           ? normalizeVideoNumber(chapter)
           : normalizeVideoNumber(content.chapter);
-      const nextModule =
-        moduleLabel !== undefined
+        const nextModule = moduleProvided
           ? normalizeVideoNumber(moduleLabel)
           : normalizeVideoNumber(content.module);
-      if (!isValidVideoNumber(nextChapter) || !isValidVideoNumber(nextModule)) {
-        return res.status(400).json({
-          success: false,
-          message: 'Chapter and module must be numbers only (e.g. 1)',
-        });
+        if (!isValidVideoNumber(nextChapter) || !isValidVideoNumber(nextModule)) {
+          return res.status(400).json({
+            success: false,
+            message: 'Chapter and module must be numbers only (e.g. 1)',
+          });
+        }
+        content.set({ chapter: nextChapter, module: nextModule });
       }
-      content.set({ chapter: nextChapter, module: nextModule });
     }
     if (date !== undefined && String(date).trim() !== '') {
       const nextDate = new Date(date);
@@ -1540,14 +1576,15 @@ export const updateContent = async (req, res) => {
     if (classNumber !== undefined) content.classNumber = classNumber?.trim() || undefined;
 
     if (rawBoard !== undefined && rawBoard !== null && String(rawBoard).trim() !== '') {
-      const boardNorm = String(rawBoard).toUpperCase().trim();
+      const boardNorm = canonicalizeSchoolBoard(rawBoard);
       if (!isValidSchoolBoard(boardNorm)) {
         return res.status(400).json({
           success: false,
           message: `Invalid board code. Use Boards Management to create custom boards.`,
         });
       }
-      if (subjectDoc.board !== boardNorm) {
+      const subjectBoard = canonicalizeSchoolBoard(subjectDoc.board);
+      if (subjectBoard !== boardNorm) {
         return res.status(400).json({
           success: false,
           message: 'Content syllabus must match the linked subject\'s board',
