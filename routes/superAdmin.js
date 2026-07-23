@@ -115,6 +115,8 @@ import {
   bulkUploadExams,
   bulkUploadQuestions,
   convertPdfToQuestions,
+  updateQuestion,
+  reorderQuestions,
   deleteQuestion,
   deleteAllQuestions,
   normalizeExamClassFields
@@ -1273,7 +1275,12 @@ router.get('/exams/:examId/questions', async (req, res) => {
   try {
     console.log('📋 Fetching questions for exam:', req.params.examId);
     const Question = (await import('../models/Question.js')).default;
-    const questions = await Question.find({ exam: req.params.examId }).sort({ createdAt: 1, _id: 1 });
+    const {
+      ensureExamQuestionDisplayOrders,
+      QUESTION_LIST_SORT,
+    } = await import('../utils/exam-question-order.js');
+    await ensureExamQuestionDisplayOrders(Question, req.params.examId);
+    const questions = await Question.find({ exam: req.params.examId }).sort(QUESTION_LIST_SORT);
     console.log(`✅ Found ${questions.length} questions`);
     res.json({ success: true, data: questions });
   } catch (error) {
@@ -1283,6 +1290,8 @@ router.get('/exams/:examId/questions', async (req, res) => {
   }
 });
 router.post('/exams/:examId/questions', addQuestion);
+router.put('/exams/:examId/questions/reorder', reorderQuestions);
+router.put('/exams/:examId/questions/:questionId', updateQuestion);
 router.post('/exams/:examId/questions/bulk-upload', csvUpload.single('file'), bulkUploadQuestions);
 router.post('/exams/:examId/questions/pdf-convert', pdfUpload.single('file'), convertPdfToQuestions);
 router.delete('/exams/:examId/questions/:questionId', deleteQuestion);

@@ -35,6 +35,7 @@ import {
   generateAdvancedAnalytics,
 } from '../utils/advancedExamAnalytics.js';
 import { normalizeSchoolBoard, resolveUserDisplayBoard } from '../constants/boards.js';
+import { QUESTION_LIST_SORT, ensureExamQuestionDisplayOrders } from '../utils/exam-question-order.js';
 import { dedupeExamResultRows } from '../utils/dedupe-exam-results.js';
 import {
   examMatchesStudentAssignedClass,
@@ -1127,7 +1128,7 @@ async function hydrateExamQuestions(examDoc, { hideAnswers = false } = {}) {
 
   // Source of truth is Question.exam; fallback to Exam.questions to preserve legacy behavior
   let linkedQuestions = await Question.find({ exam: examId, isActive: { $ne: false } })
-    .sort({ createdAt: 1, _id: 1 })
+    .sort(QUESTION_LIST_SORT)
     .lean();
 
   if (!linkedQuestions.length && Array.isArray(examDoc.questions) && examDoc.questions.length > 0) {
@@ -1135,7 +1136,7 @@ async function hydrateExamQuestions(examDoc, { hideAnswers = false } = {}) {
       _id: { $in: examDoc.questions.map((q) => q?._id || q).filter(Boolean) },
       isActive: { $ne: false }
     })
-      .sort({ createdAt: 1, _id: 1 })
+      .sort(QUESTION_LIST_SORT)
       .lean();
   }
 
@@ -1156,6 +1157,8 @@ async function hydrateExamQuestions(examDoc, { hideAnswers = false } = {}) {
         negativeMarks: Number(q.negativeMarks) || 0,
         explanation: q.explanation || undefined,
         subject: String(q.subject || 'maths').toLowerCase(),
+        sectionHeading: String(q.sectionHeading || '').trim(),
+        displayOrder: Number(q.displayOrder) > 0 ? Number(q.displayOrder) : index + 1,
         exam: examId,
       }));
     if (embeddedQuestions.length > 0) {
@@ -1211,12 +1214,12 @@ async function loadExamQuestionBankForResults(examId) {
   }
   const examDoc = await Exam.findById(id).lean();
   let questions = await Question.find({ exam: id, isActive: { $ne: false } })
-    .sort({ createdAt: 1, _id: 1 })
+    .sort(QUESTION_LIST_SORT)
     .lean();
 
   if (!questions.length) {
     questions = await Question.find({ exam: id })
-      .sort({ createdAt: 1, _id: 1 })
+      .sort(QUESTION_LIST_SORT)
       .lean();
   }
 
@@ -1225,7 +1228,7 @@ async function loadExamQuestionBankForResults(examId) {
       _id: { $in: examDoc.questions.map((q) => q?._id || q).filter(Boolean) },
       isActive: { $ne: false },
     })
-      .sort({ createdAt: 1, _id: 1 })
+      .sort(QUESTION_LIST_SORT)
       .lean();
   }
 
@@ -1233,7 +1236,7 @@ async function loadExamQuestionBankForResults(examId) {
     questions = await Question.find({
       _id: { $in: examDoc.questions.map((q) => q?._id || q).filter(Boolean) },
     })
-      .sort({ createdAt: 1, _id: 1 })
+      .sort(QUESTION_LIST_SORT)
       .lean();
   }
 
@@ -1307,6 +1310,21 @@ const canStudentAccessExam = (exam, studentAdminId) => {
 
   return false;
 };
+
+/** Enforce exam start/end window on the server (not only in the UI). */
+function getExamWindowStatus(exam) {
+  if (!exam) return { ok: false, message: 'Exam not found' };
+  const now = Date.now();
+  const start = exam.startDate ? new Date(exam.startDate).getTime() : NaN;
+  const end = exam.endDate ? new Date(exam.endDate).getTime() : NaN;
+  if (Number.isFinite(start) && now < start) {
+    return { ok: false, message: 'Exam has not started yet.' };
+  }
+  if (Number.isFinite(end) && now > end) {
+    return { ok: false, message: 'Exam window has ended.' };
+  }
+  return { ok: true };
+}
 
 // Get student's exams (respect school targeting)
 router.get('/exams', async (req, res) => {
@@ -1423,6 +1441,14 @@ router.get('/exams/:examId', async (req, res) => {
       return res.status(403).json({
         success: false,
         message: 'This exam is not assigned to your class.'
+      });
+    }
+
+    const windowStatus = getExamWindowStatus(exam);
+    if (!windowStatus.ok) {
+      return res.status(403).json({
+        success: false,
+        message: windowStatus.message,
       });
     }
 
@@ -3949,13 +3975,44 @@ router.post('/exam-results', async (req, res) => {
       return res.status(400).json({ success: false, message: 'examId is required' });
     }
 
-    // Get student's assigned admin and curriculum board for analytics bucketing.
-    const student = await User.findById(req.userId).populate(
-      'assignedAdmin',
-      'board curriculumBoard isAsliPrepExclusive'
-    );
+    // Get student's assigned admin, class, and curriculum board for analytics bucketing.
+    const student = await User.findById(req.userId)
+      .populate('assignedAdmin', 'board curriculumBoard isAsliPrepExclusive')
+      .populate('assignedClass', 'classNumber section');
     if (!student) {
       return res.status(400).json({ success: false, message: 'Student not found' });
+    }
+
+    const examDoc = await Exam.findById(examId).lean();
+    if (!examDoc || examDoc.isActive === false || examDoc.createdByRole !== 'super-admin') {
+      return res.status(404).json({
+        success: false,
+        message: 'Exam not found or is no longer available.',
+      });
+    }
+
+    const studentAdminId = student.assignedAdmin?._id || student.assignedAdmin;
+    if (!canStudentAccessExam(examDoc, studentAdminId)) {
+      return res.status(403).json({
+        success: false,
+        message: 'This exam is not assigned to your school.',
+      });
+    }
+
+    const studentClassNumber = resolveStudentClassNumber(student, student.assignedClass);
+    if (!examMatchesStudentAssignedClass(examDoc, studentClassNumber)) {
+      return res.status(403).json({
+        success: false,
+        message: 'This exam is not assigned to your class.',
+      });
+    }
+
+    const windowStatus = getExamWindowStatus(examDoc);
+    if (!windowStatus.ok) {
+      return res.status(403).json({
+        success: false,
+        message: windowStatus.message,
+      });
     }
 
     const displayBoard = resolveUserDisplayBoard(student, student.assignedAdmin);
@@ -3968,9 +4025,8 @@ router.post('/exam-results', async (req, res) => {
     // Load the real questions from the DB and grade against THEM — never trust
     // client-supplied correctAnswers / obtainedMarks / percentage. The student
     // could have crafted the request in DevTools.
-    const examDoc = await Exam.findById(examId).lean();
     const questions = await Question.find({ exam: examId, isActive: { $ne: false } })
-      .sort({ createdAt: 1, _id: 1 })
+      .sort(QUESTION_LIST_SORT)
       .lean();
     let effectiveQuestions = Array.isArray(questions) ? questions : [];
 
@@ -3979,7 +4035,7 @@ router.post('/exam-results', async (req, res) => {
         _id: { $in: examDoc.questions.map((q) => q?._id || q).filter(Boolean) },
         isActive: { $ne: false }
       })
-        .sort({ createdAt: 1, _id: 1 })
+        .sort(QUESTION_LIST_SORT)
         .lean();
     }
 
@@ -4003,6 +4059,13 @@ router.post('/exam-results', async (req, res) => {
         }));
     }
 
+    if (!effectiveQuestions.length) {
+      return res.status(400).json({
+        success: false,
+        message: 'Exam has no questions available for grading.',
+      });
+    }
+
     const answerMap = (answers && typeof answers === 'object') ? answers : {};
 
     let correctAnswers = 0;
@@ -4011,9 +4074,8 @@ router.post('/exam-results', async (req, res) => {
     let totalMarks = 0;
     const subjectWiseScore = {};
 
-    effectiveQuestions.forEach((q) => {
-      const qId = String(q._id);
-      const userAnswer = answerMap[qId];
+    effectiveQuestions.forEach((q, index) => {
+      const userAnswer = lookupUserAnswerFromMap(answerMap, q, index);
       const marks = Number(q.marks) || 0;
       const negativeMarks = Number(q.negativeMarks) || 0;
       totalMarks += marks;
@@ -4083,7 +4145,28 @@ router.post('/exam-results', async (req, res) => {
       attemptNumber,
     };
 
-    const examResult = await ExamResult.create(resultData);
+    let examResult;
+    try {
+      examResult = await ExamResult.create(resultData);
+    } catch (createErr) {
+      if (createErr?.code === 11000) {
+        return res.status(403).json({
+          success: false,
+          message: `Maximum attempts (${maxAttempts}) reached for this exam.`,
+        });
+      }
+      throw createErr;
+    }
+
+    // Race guard: if two submits slipped past countDocuments, drop the excess row.
+    const finalCount = await ExamResult.countDocuments({ userId: req.userId, examId });
+    if (finalCount > maxAttempts) {
+      await ExamResult.deleteOne({ _id: examResult._id });
+      return res.status(403).json({
+        success: false,
+        message: `Maximum attempts (${maxAttempts}) reached for this exam.`,
+      });
+    }
 
     try {
       const { createPostExamPrompt } = await import('../services/vidya-student/post-exam-trigger-service.js');
@@ -4192,7 +4275,7 @@ router.get('/exam/:examId/advanced-analytics', async (req, res) => {
       exam: examId,
       isActive: { $ne: false },
     })
-      .sort({ createdAt: 1, _id: 1 })
+      .sort(QUESTION_LIST_SORT)
       .lean();
 
     const questionAnalytics =

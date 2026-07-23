@@ -13,6 +13,12 @@ import {
   normalizeDifficulty,
   normalizeQuestionCategory,
 } from '../utils/advancedExamAnalytics.js';
+import {
+  nextQuestionDisplayOrder,
+  ensureExamQuestionDisplayOrders,
+  QUESTION_LIST_SORT,
+  subjectSectionLabel,
+} from '../utils/exam-question-order.js';
 
 const QUESTION_CATEGORY_CSV_VALUES = [
   'Numerical',
@@ -1091,7 +1097,7 @@ export const updateExam = async (req, res) => {
   }
 };
 
-// Delete Exam (Super Admin)
+// Delete Exam (Super Admin) — soft-delete so result history remains
 export const deleteExam = async (req, res) => {
   try {
     const { examId } = req.params;
@@ -1102,11 +1108,9 @@ export const deleteExam = async (req, res) => {
       return res.status(404).json({ success: false, message: 'Exam not found' });
     }
 
-    // Delete associated questions
-    await Question.deleteMany({ exam: examId });
-
-    // Delete exam
-    await Exam.findByIdAndDelete(examId);
+    exam.isActive = false;
+    await exam.save();
+    await Question.updateMany({ exam: examId }, { $set: { isActive: false } });
 
     res.json({
       success: true,
@@ -1142,6 +1146,8 @@ export const addQuestion = async (req, res) => {
       questionCategory,
       conceptType,
       board,
+      displayOrder: rawDisplayOrder,
+      sectionHeading: rawSectionHeading,
       replaceDuplicate = false
     } = req.body;
 
@@ -1346,6 +1352,17 @@ export const addQuestion = async (req, res) => {
       console.log('♻️ Replacing duplicate question:', duplicateQuestion._id);
     }
 
+    const parsedDisplayOrder = Number(rawDisplayOrder);
+    const displayOrder =
+      Number.isFinite(parsedDisplayOrder) && parsedDisplayOrder >= 1
+        ? Math.floor(parsedDisplayOrder)
+        : await nextQuestionDisplayOrder(Question, examId);
+
+    const sectionHeading =
+      rawSectionHeading !== undefined && rawSectionHeading !== null
+        ? String(rawSectionHeading).trim()
+        : subjectSectionLabel(normalizedQuestionSubject);
+
     const question = new Question({
       questionText: finalQuestionText || undefined,
       questionImage: finalQuestionImage || undefined,
@@ -1356,6 +1373,8 @@ export const addQuestion = async (req, res) => {
       negativeMarks: negativeMarksValue,
       explanation: explanation?.trim() || undefined,
       subject: normalizedQuestionSubject,
+      displayOrder,
+      sectionHeading,
       chapter: String(chapter || '').trim() || 'General',
       difficulty: ['easy', 'moderate', 'difficult', 'highly_difficult'].includes(String(difficulty || '').toLowerCase())
         ? String(difficulty).toLowerCase()
@@ -1600,6 +1619,13 @@ export const bulkUploadExams = async (req, res) => {
           targetSchools = examData.targetschools.split(',').map((id) => id.trim()).filter((id) => id);
         }
 
+        if (isSchoolSpecific && targetSchools.length === 0) {
+          errors.push(
+            `Row ${i + 1}: filterType is specific-schools but targetSchools is empty`
+          );
+          continue;
+        }
+
         // Create exam data object
         const newExamData = {
           title: examData.title,
@@ -1839,6 +1865,7 @@ export const bulkUploadQuestions = async (req, res) => {
     // Collect new question IDs so we can push them into the exam in one update
     // at the end (instead of one $push per question).
     const newQuestionIdsToPush = [];
+    let nextOrder = await nextQuestionDisplayOrder(Question, examId);
 
     // Process each data row
     for (let i = 1; i < lines.length; i++) {
@@ -2048,6 +2075,26 @@ export const bulkUploadQuestions = async (req, res) => {
         const difficulty = normalizeDifficulty(rawDifficulty, marks);
 
         // Create question data object
+        const rawOrder = getRowValue(
+          'displayorder',
+          'display_order',
+          'orderno',
+          'order',
+          'qno',
+          'questionnumber',
+          'question_number'
+        );
+        const parsedOrder = parseInt(rawOrder, 10);
+        const displayOrder =
+          Number.isFinite(parsedOrder) && parsedOrder >= 1 ? parsedOrder : nextOrder++;
+        if (Number.isFinite(parsedOrder) && parsedOrder >= 1) {
+          nextOrder = Math.max(nextOrder, parsedOrder + 1);
+        }
+
+        const sectionHeading =
+          getRowValue('sectionheading', 'section_heading', 'section', 'heading') ||
+          subjectSectionLabel(subject);
+
         const newQuestionData = {
           questionText: getRowValue('questiontext', 'question_text') || undefined,
           questionImage: getRowValue('questionimage', 'question_image') || undefined,
@@ -2058,6 +2105,8 @@ export const bulkUploadQuestions = async (req, res) => {
           negativeMarks,
           explanation: getRowValue('explanation') || undefined,
           subject,
+          displayOrder,
+          sectionHeading,
           chapter: getRowValue('chapter', 'chaptername', 'chapter_name', 'topic', 'unit') || 'General',
           difficulty,
           questionCategory,
@@ -2210,6 +2259,183 @@ export const convertPdfToQuestions = async (req, res) => {
     return res.status(status).json({
       success: false,
       message: msg,
+    });
+  }
+};
+
+// Update question fields (display order, section heading, subject, etc.)
+export const updateQuestion = async (req, res) => {
+  try {
+    const { examId, questionId } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(examId) || !mongoose.Types.ObjectId.isValid(questionId)) {
+      return res.status(400).json({ success: false, message: 'Invalid exam/question id format' });
+    }
+
+    const exam = await Exam.findById(examId);
+    if (!exam || exam.createdByRole !== 'super-admin') {
+      return res.status(404).json({ success: false, message: 'Exam not found or not accessible' });
+    }
+
+    const question = await Question.findOne({ _id: questionId, exam: examId });
+    if (!question) {
+      return res.status(404).json({ success: false, message: 'Question not found' });
+    }
+
+    const {
+      displayOrder,
+      sectionHeading,
+      subject,
+      chapter,
+      marks,
+      negativeMarks,
+      explanation,
+      questionText,
+    } = req.body || {};
+
+    if (displayOrder !== undefined) {
+      const n = Number(displayOrder);
+      if (!Number.isFinite(n) || n < 1) {
+        return res.status(400).json({
+          success: false,
+          message: 'displayOrder must be a number >= 1',
+        });
+      }
+      question.displayOrder = Math.floor(n);
+    }
+
+    if (sectionHeading !== undefined) {
+      question.sectionHeading = String(sectionHeading || '').trim();
+    }
+
+    if (subject !== undefined) {
+      const normalized = String(subject || '').trim().toLowerCase();
+      const allowed = ['maths', 'physics', 'chemistry', 'biology'];
+      if (!allowed.includes(normalized)) {
+        return res.status(400).json({
+          success: false,
+          message: `Invalid subject. Use one of: ${allowed.join(', ')}`,
+        });
+      }
+      const examSubjects = Array.isArray(exam.subjects)
+        ? exam.subjects.map((s) => String(s).toLowerCase())
+        : [];
+      if (examSubjects.length && !examSubjects.includes(normalized)) {
+        return res.status(400).json({
+          success: false,
+          message: `Subject "${normalized}" is not allowed for this exam`,
+        });
+      }
+      question.subject = normalized;
+      if (sectionHeading === undefined && !String(question.sectionHeading || '').trim()) {
+        question.sectionHeading = subjectSectionLabel(normalized);
+      }
+    }
+
+    if (chapter !== undefined) {
+      question.chapter = String(chapter || '').trim() || 'General';
+    }
+    if (marks !== undefined) {
+      const m = Number(marks);
+      if (!Number.isFinite(m) || m < 0) {
+        return res.status(400).json({ success: false, message: 'Invalid marks' });
+      }
+      question.marks = m;
+    }
+    if (negativeMarks !== undefined) {
+      const nm = Number(negativeMarks);
+      if (!Number.isFinite(nm) || nm < 0) {
+        return res.status(400).json({ success: false, message: 'Invalid negativeMarks' });
+      }
+      question.negativeMarks = nm;
+    }
+    if (explanation !== undefined) {
+      question.explanation = String(explanation || '').trim() || undefined;
+    }
+    if (questionText !== undefined) {
+      const text = String(questionText || '').trim();
+      if (!text && !question.questionImage) {
+        return res.status(400).json({
+          success: false,
+          message: 'Either question text or image is required',
+        });
+      }
+      question.questionText = text || undefined;
+    }
+
+    await question.save();
+    if (marks !== undefined) {
+      await syncExamQuestionTotals(examId);
+    }
+
+    return res.json({
+      success: true,
+      message: 'Question updated successfully',
+      data: question,
+    });
+  } catch (error) {
+    console.error('❌ updateQuestion error:', error);
+    return res.status(500).json({
+      success: false,
+      message: error.message || 'Failed to update question',
+    });
+  }
+};
+
+/**
+ * Reorder all questions for an exam.
+ * Body: { orderedIds: string[] } — full list of question ids in desired display order.
+ */
+export const reorderQuestions = async (req, res) => {
+  try {
+    const { examId } = req.params;
+    const orderedIds = Array.isArray(req.body?.orderedIds) ? req.body.orderedIds.map(String) : [];
+
+    if (!mongoose.Types.ObjectId.isValid(examId)) {
+      return res.status(400).json({ success: false, message: 'Invalid exam id' });
+    }
+    if (orderedIds.length === 0) {
+      return res.status(400).json({ success: false, message: 'orderedIds is required' });
+    }
+
+    const exam = await Exam.findById(examId);
+    if (!exam || exam.createdByRole !== 'super-admin') {
+      return res.status(404).json({ success: false, message: 'Exam not found or not accessible' });
+    }
+
+    await ensureExamQuestionDisplayOrders(Question, examId);
+
+    const existing = await Question.find({ exam: examId }).select('_id').lean();
+    const existingSet = new Set(existing.map((q) => String(q._id)));
+    const uniqueOrdered = [];
+    const seen = new Set();
+    for (const id of orderedIds) {
+      if (!existingSet.has(id) || seen.has(id)) continue;
+      seen.add(id);
+      uniqueOrdered.push(id);
+    }
+    for (const id of existingSet) {
+      if (!seen.has(id)) uniqueOrdered.push(id);
+    }
+
+    const ops = uniqueOrdered.map((id, idx) => ({
+      updateOne: {
+        filter: { _id: id, exam: examId },
+        update: { $set: { displayOrder: idx + 1, updatedAt: new Date() } },
+      },
+    }));
+    if (ops.length) await Question.bulkWrite(ops);
+
+    const questions = await Question.find({ exam: examId }).sort(QUESTION_LIST_SORT);
+    return res.json({
+      success: true,
+      message: 'Questions reordered successfully',
+      data: questions,
+    });
+  } catch (error) {
+    console.error('❌ reorderQuestions error:', error);
+    return res.status(500).json({
+      success: false,
+      message: error.message || 'Failed to reorder questions',
     });
   }
 };

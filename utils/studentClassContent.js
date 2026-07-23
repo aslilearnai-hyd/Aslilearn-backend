@@ -99,7 +99,8 @@ export function getExamAssignedClassNumbers(exam) {
 /** Student may only take exams explicitly assigned to their class. */
 export function examMatchesStudentAssignedClass(exam, studentClassNumber) {
   const want = studentClassNumber ? normalizeClassNumberLabel(studentClassNumber) : '';
-  if (!want) return true;
+  // No class on the student → deny class-targeted exams (do not treat as "see all").
+  if (!want) return false;
   const examClasses = getExamAssignedClassNumbers(exam);
   if (examClasses.length === 0) return false;
   return examClasses.some((c) => classLabelsMatch(c, want));
