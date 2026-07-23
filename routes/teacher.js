@@ -1938,23 +1938,55 @@ router.get('/class-stats', async (req, res) => {
     // Get Class model
     const Class = (await import('../models/Class.js')).default;
     
-    // Fetch class documents
-    const classDocuments = await Class.find({
-      $or: [
-        { _id: { $in: teacher.assignedClassIds } },
-        { classNumber: { $in: teacher.assignedClassIds } }
-      ],
-      isActive: true
-    });
+    // Fetch class documents — scoped to this teacher's school only
+    const assignedIds = (teacher.assignedClassIds || []).map(String).filter(Boolean);
+    const objectIds = assignedIds.filter(
+      (id) => mongoose.Types.ObjectId.isValid(id) && String(id).length === 24
+    );
+    const classNumbers = assignedIds.filter(
+      (id) => !(mongoose.Types.ObjectId.isValid(id) && String(id).length === 24)
+    );
+    const classOr = [];
+    if (objectIds.length) classOr.push({ _id: { $in: objectIds } });
+    if (classNumbers.length) classOr.push({ classNumber: { $in: classNumbers } });
 
-    const classObjectIds = classDocuments.map(c => c._id);
-    
+    const classDocuments =
+      classOr.length > 0
+        ? await Class.find({
+            ...(teacher.adminId ? { assignedAdmin: teacher.adminId } : {}),
+            isActive: true,
+            $or: classOr,
+          })
+        : [];
+
+    const classObjectIds = classDocuments.map((c) => c._id);
+    const resolvedClassNumbers = [
+      ...new Set(
+        classDocuments.map((c) => String(c.classNumber || '').trim()).filter(Boolean)
+      ),
+    ];
+
+    const studentOr = [];
+    if (classObjectIds.length) {
+      studentOr.push({ assignedClass: { $in: classObjectIds } });
+    }
+    if (resolvedClassNumbers.length && teacher.adminId) {
+      studentOr.push({
+        assignedAdmin: teacher.adminId,
+        classNumber: { $in: resolvedClassNumbers },
+        $or: [{ assignedClass: null }, { assignedClass: { $exists: false } }],
+      });
+    }
+
     // Get students for these classes
-    const students = await User.find({ 
-      role: 'student',
-      assignedClass: { $in: classObjectIds },
-      assignedAdmin: teacher.adminId
-    });
+    const students =
+      studentOr.length > 0
+        ? await User.find({
+            role: 'student',
+            ...(teacher.adminId ? { assignedAdmin: teacher.adminId } : {}),
+            $or: studentOr,
+          })
+        : [];
 
     // Get exam results for performance calculation
     const ExamResult = (await import('../models/ExamResult.js')).default;
