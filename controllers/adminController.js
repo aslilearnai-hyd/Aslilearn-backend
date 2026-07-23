@@ -38,8 +38,12 @@ import {
   mergeCatalogClassIdsOntoCleanSiblings,
   dedupeAdminSubjectsByPlainName,
 } from '../utils/subjectClassRelations.js';
-import { resolveSubjectContentIds } from '../utils/resolveSubjectContentIds.js';
+import { resolveSubjectContentIds, resolveSubjectContentIdsMany } from '../utils/resolveSubjectContentIds.js';
 import { getClassScheduleAndRoomMap } from '../utils/teacherClassSchedule.js';
+
+function isMongoObjectIdString(id) {
+  return mongoose.Types.ObjectId.isValid(id) && String(id).length === 24;
+}
 
 async function buildAssignedClassesSummariesForTeachers(teachers, adminId) {
   if (!teachers?.length) return teachers;
@@ -1692,44 +1696,107 @@ export const getTeacherDashboardStats = async (req, res) => {
       if (a.classId) classIdSet.add(String(a.classId));
     });
 
+    const programCtx = await getTeacherSchoolProgramContext(teacher._id);
+    const contentBoards = boardsForSchoolContentScope({
+      board: programCtx.adminBoard || teacher.board,
+      curriculumBoard: programCtx.curriculumBoard,
+      isAsliPrepExclusive: programCtx.isAsliPrepExclusive,
+      iitCategories: programCtx.iitCategories,
+    });
+    const boardResolveOpts =
+      contentBoards.length > 0 ? { boards: contentBoards } : {};
+
     if (classIdSet.size > 0) {
       const classIdList = [...classIdSet];
-      const classDocuments = await Class.find({
-        $or: [
-          { _id: { $in: classIdList.filter((id) => mongoose.Types.ObjectId.isValid(id)) } },
-          { classNumber: { $in: classIdList } },
-        ],
-        isActive: true,
-      })
-        .populate('assignedSubjects', '_id name description code board')
-        .select('_id classNumber section description assignedSubjects');
+      const objectIds = classIdList.filter((id) => isMongoObjectIdString(id));
+      const classNumbers = classIdList.filter((id) => !isMongoObjectIdString(id));
+
+      const classOr = [];
+      if (objectIds.length) {
+        classOr.push({ _id: { $in: objectIds } });
+      }
+      // Grade labels only — never match other schools' sections.
+      if (classNumbers.length) {
+        classOr.push({ classNumber: { $in: classNumbers } });
+      }
+
+      const classDocuments =
+        classOr.length > 0
+          ? await Class.find({
+              ...(teacher.adminId ? { assignedAdmin: teacher.adminId } : {}),
+              isActive: true,
+              $or: classOr,
+            })
+              .populate('assignedSubjects', '_id name description code board')
+              .select('_id classNumber section description assignedSubjects')
+          : [];
 
       const uniqueClassDocs = [
         ...new Map(classDocuments.map((doc) => [doc._id.toString(), doc])).values(),
       ];
       const classObjectIds = uniqueClassDocs.map((c) => c._id);
+      const resolvedClassNumbers = [
+        ...new Set(
+          uniqueClassDocs
+            .map((c) => String(c.classNumber || '').trim())
+            .filter(Boolean)
+        ),
+      ];
 
-      students = await User.find({
-        role: 'student',
-        assignedClass: { $in: classObjectIds },
-        assignedAdmin: teacher.adminId,
-      })
-        .populate('assignedClass', '_id classNumber section')
-        .select('fullName email classNumber phone isActive createdAt lastLogin assignedClass');
+      const studentOr = [];
+      if (classObjectIds.length) {
+        studentOr.push({ assignedClass: { $in: classObjectIds } });
+      }
+      // Legacy students linked only by classNumber (no assignedClass ObjectId).
+      if (resolvedClassNumbers.length && teacher.adminId) {
+        studentOr.push({
+          assignedAdmin: teacher.adminId,
+          classNumber: { $in: resolvedClassNumbers },
+          $or: [{ assignedClass: null }, { assignedClass: { $exists: false } }],
+        });
+      }
+
+      students =
+        studentOr.length > 0
+          ? await User.find({
+              role: 'student',
+              ...(teacher.adminId ? { assignedAdmin: teacher.adminId } : {}),
+              $or: studentOr,
+            })
+              .populate('assignedClass', '_id classNumber section')
+              .select(
+                'fullName email classNumber phone isActive createdAt lastLogin assignedClass'
+              )
+          : [];
 
       const studentCountByClassId = new Map();
       for (const student of students) {
         const cid = student.assignedClass?._id?.toString();
         if (cid) {
           studentCountByClassId.set(cid, (studentCountByClassId.get(cid) || 0) + 1);
+        } else if (student.classNumber) {
+          const match = uniqueClassDocs.find(
+            (c) => String(c.classNumber) === String(student.classNumber)
+          );
+          if (match) {
+            const mid = match._id.toString();
+            studentCountByClassId.set(mid, (studentCountByClassId.get(mid) || 0) + 1);
+          }
         }
       }
 
       assignedClassesDetails = uniqueClassDocs.map((classDoc) => {
         const classIdStr = classDoc._id.toString();
-        const classStudents = students.filter(
-          (s) => s.assignedClass?._id?.toString() === classIdStr
-        );
+        const classStudents = students.filter((s) => {
+          if (s.assignedClass?._id?.toString() === classIdStr) return true;
+          if (
+            !s.assignedClass &&
+            String(s.classNumber || '') === String(classDoc.classNumber || '')
+          ) {
+            return true;
+          }
+          return false;
+        });
         const className = `${classDoc.classNumber}${classDoc.section || ''}`;
 
         const assignmentRows = (teacher.assignments || []).filter(
@@ -1806,12 +1873,29 @@ export const getTeacherDashboardStats = async (req, res) => {
       }
     }
 
-    // Get teacher's videos and assessments
+    // Teacher-uploaded Video docs (legacy) + library Content videos for Overview card.
     const [videos, assessments, exams] = await Promise.all([
       Video.find({ createdBy: teacherId }).populate('createdBy', 'fullName email'),
       Assessment.find({ createdBy: teacherId }).populate('createdBy', 'fullName email'),
-      Exam.find({ createdBy: teacherId }).populate('createdBy', 'fullName email')
+      Exam.find({ createdBy: teacherId }).populate('createdBy', 'fullName email'),
     ]);
+
+    let libraryVideoCount = 0;
+    const librarySubjectIds = getExplicitTeacherSubjectObjectIds(teacher);
+    if (librarySubjectIds.length > 0) {
+      const contentSubjectIds = await resolveSubjectContentIdsMany(
+        librarySubjectIds,
+        boardResolveOpts
+      );
+      if (contentSubjectIds.length > 0) {
+        libraryVideoCount = await Content.countDocuments({
+          subject: { $in: contentSubjectIds },
+          type: 'Video',
+          isActive: true,
+        });
+      }
+    }
+    const totalVideosForStats = Math.max(videos.length, libraryVideoCount);
 
     // Calculate average performance
     const examResults = await ExamResult.find({ 
@@ -1862,14 +1946,6 @@ export const getTeacherDashboardStats = async (req, res) => {
       (s) => s != null && s._id && s.isActive !== false
     );
 
-    const programCtx = await getTeacherSchoolProgramContext(teacher._id);
-    const contentBoards = boardsForSchoolContentScope({
-      board: programCtx.adminBoard || teacher.board,
-      curriculumBoard: programCtx.curriculumBoard,
-      isAsliPrepExclusive: programCtx.isAsliPrepExclusive,
-    });
-    const boardResolveOpts =
-      contentBoards.length > 0 ? { boards: contentBoards } : {};
     const teacherSubjectsWithCounts = await Promise.all(
       teacherSubjectsExplicit.map(async (s) => {
         const row = s.toObject ? s.toObject() : { ...s };
@@ -1888,7 +1964,7 @@ export const getTeacherDashboardStats = async (req, res) => {
         stats: {
           totalStudents: students.length,
           totalClasses: assignedClassesDetails.length,
-          totalVideos: videos.length,
+          totalVideos: totalVideosForStats,
           totalAssessments: assessments.length,
           totalExams: exams.length,
           averagePerformance: Math.round(averagePerformance)
