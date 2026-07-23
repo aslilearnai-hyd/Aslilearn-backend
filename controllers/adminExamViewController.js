@@ -125,13 +125,9 @@ export const getStudentExamResults = async (req, res) => {
 
       let filteredResults = results;
       if (subject) {
-        filteredResults = results.filter((result) => {
-          const subjectScores = result.subjectWiseScore;
-          if (subjectScores && typeof subjectScores.get === 'function') {
-            return subjectScores.has(subject);
-          }
-          return false;
-        });
+        filteredResults = results.filter((result) =>
+          subjectWiseScoreHasKey(result.subjectWiseScore, subject)
+        );
       }
 
       return res.json({
@@ -189,13 +185,9 @@ export const getStudentExamResults = async (req, res) => {
 
     let filteredResults = results;
     if (subject) {
-      filteredResults = results.filter(result => {
-        const subjectScores = result.subjectWiseScore;
-        if (subjectScores && typeof subjectScores.get === 'function') {
-          return subjectScores.has(subject);
-        }
-        return false;
-      });
+      filteredResults = results.filter((result) =>
+        subjectWiseScoreHasKey(result.subjectWiseScore, subject)
+      );
     }
 
     res.json({
@@ -208,6 +200,17 @@ export const getStudentExamResults = async (req, res) => {
     res.status(500).json({ success: false, message: 'Failed to fetch exam results' });
   }
 };
+
+function subjectWiseScoreHasKey(subjectScores, subject) {
+  if (!subjectScores || !subject) return false;
+  if (typeof subjectScores.get === 'function') {
+    return subjectScores.has(subject);
+  }
+  if (typeof subjectScores === 'object') {
+    return Object.prototype.hasOwnProperty.call(subjectScores, subject);
+  }
+  return false;
+}
 
 function buildTopPerformersAndClassStats(results) {
   const topPerformers = results.slice(0, 10).map((r, idx) => ({
@@ -326,7 +329,10 @@ export const getExamPerformanceAnalytics = async (req, res) => {
     .sort({ percentage: -1 });
 
     const totalStudents = studentIds.length;
-    const attemptedCount = results.length;
+    const uniqueAttempters = new Set(
+      results.map((r) => String(r.userId?._id || r.userId || '')).filter(Boolean)
+    ).size;
+    const attemptedCount = uniqueAttempters;
     const averageScore = results.length > 0
       ? results.reduce((sum, r) => sum + (Number(r.percentage) || 0), 0) / results.length
       : 0;
@@ -338,7 +344,7 @@ export const getExamPerformanceAnalytics = async (req, res) => {
       data: {
         totalStudents,
         attemptedCount,
-        notAttemptedCount: totalStudents - attemptedCount,
+        notAttemptedCount: Math.max(0, totalStudents - attemptedCount),
         averageScore: averageScore.toFixed(2),
         topPerformers,
         classPerformance: classStats

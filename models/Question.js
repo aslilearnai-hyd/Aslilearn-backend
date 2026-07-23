@@ -45,6 +45,25 @@ const questionSchema = new mongoose.Schema({
     required: true,
     default: 'maths'
   },
+  /**
+   * Paper display order (1-based preferred). Lower values appear first for students.
+   * Falls back to createdAt when missing on legacy rows.
+   */
+  displayOrder: {
+    type: Number,
+    default: 0,
+    min: 0,
+  },
+  /**
+   * Optional section title shown above this question block
+   * (e.g. "Maths", "Physics", "Section A – Algebra").
+   * Empty → UI falls back to subject label.
+   */
+  sectionHeading: {
+    type: String,
+    trim: true,
+    default: '',
+  },
   chapter: {
     type: String,
     trim: true,
@@ -120,5 +139,6 @@ questionSchema.index({ exam: 1 });
 questionSchema.index({ subject: 1 });
 questionSchema.index({ isActive: 1 });
 questionSchema.index({ createdAt: -1 });
+questionSchema.index({ exam: 1, displayOrder: 1, _id: 1 });
 
 export default mongoose.model('Question', questionSchema);

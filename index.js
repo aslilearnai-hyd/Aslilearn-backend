@@ -2914,106 +2914,34 @@ app.post('/api/admin/teachers/:id/assign-subjects', async (req, res) => {
   }
 });
 
-// Exam management endpoints
-app.get('/api/admin/exams', async (req, res) => {
-  try {
-    const exams = await Exam.find()
-      .populate('createdBy', 'fullName email')
-      .populate('questions')
-      .sort({ createdAt: -1 });
-    
-    if (!exams || exams.length === 0) {
-      return res.status(404).json({ 
-        success: false,
-        message: 'No exams found in database',
-        data: []
-      });
-    }
-    
-    res.json(exams);
-  } catch (error) {
-    console.error('Failed to fetch exams:', error);
-    res.status(500).json({ message: 'Failed to fetch exams' });
-  }
+// School admin exams are VIEW-ONLY (see /api/admin/exams/viewable on admin router).
+// Legacy write APIs removed so school admins cannot create/edit/delete exams.
+app.get('/api/admin/exams', (req, res) => {
+  res.status(410).json({
+    success: false,
+    message: 'Use GET /api/admin/exams/viewable — school admins have view-only access.',
+  });
 });
 
-app.post('/api/admin/exams', async (req, res) => {
-  try {
-    const {
-      title,
-      description,
-      examType,
-      duration,
-      totalQuestions,
-      totalMarks,
-      instructions,
-      startDate,
-      endDate
-    } = req.body;
-
-    const exam = new Exam({
-      title,
-      description,
-      examType: examType || 'weekend',
-      duration,
-      totalQuestions,
-      totalMarks,
-      instructions,
-      startDate: new Date(startDate),
-      endDate: new Date(endDate),
-      createdBy: req.user.id
-    });
-
-    await exam.save();
-    res.status(201).json(exam);
-  } catch (error) {
-    console.error('Failed to create exam:', error);
-    res.status(500).json({ message: 'Failed to create exam' });
-  }
+app.post('/api/admin/exams', (req, res) => {
+  res.status(403).json({
+    success: false,
+    message: 'School admins can view exams only. Create exams as Super Admin.',
+  });
 });
 
-app.put('/api/admin/exams/:id', async (req, res) => {
-  try {
-    const { id } = req.params;
-    const updateData = req.body;
-
-    // Convert date strings to Date objects if present
-    if (updateData.startDate) {
-      updateData.startDate = new Date(updateData.startDate);
-    }
-    if (updateData.endDate) {
-      updateData.endDate = new Date(updateData.endDate);
-    }
-
-    const exam = await Exam.findByIdAndUpdate(id, updateData, { new: true });
-    if (!exam) {
-      return res.status(404).json({ message: 'Exam not found' });
-    }
-
-    res.json(exam);
-  } catch (error) {
-    console.error('Failed to update exam:', error);
-    res.status(500).json({ message: 'Failed to update exam' });
-  }
+app.put('/api/admin/exams/:id', (req, res) => {
+  res.status(403).json({
+    success: false,
+    message: 'School admins can view exams only. Edit exams as Super Admin.',
+  });
 });
 
-app.delete('/api/admin/exams/:id', async (req, res) => {
-  try {
-    const { id } = req.params;
-    
-    // Delete all questions associated with this exam
-    await Question.deleteMany({ exam: id });
-    
-    const deletedExam = await Exam.findByIdAndDelete(id);
-    if (!deletedExam) {
-      return res.status(404).json({ message: 'Exam not found' });
-    }
-
-    res.json({ message: 'Exam deleted successfully' });
-  } catch (error) {
-    console.error('Failed to delete exam:', error);
-    res.status(500).json({ message: 'Failed to delete exam' });
-  }
+app.delete('/api/admin/exams/:id', (req, res) => {
+  res.status(403).json({
+    success: false,
+    message: 'School admins can view exams only. Delete exams as Super Admin.',
+  });
 });
 
 // Student exam endpoints
