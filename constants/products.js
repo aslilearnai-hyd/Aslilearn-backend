@@ -102,7 +102,12 @@ export function normalizeIitCategory(value, allowedCodes = null) {
 /** Sync check used when cache may be cold — accepts any CODE-like string; DB validates on write. */
 export function normalizeIitCategoryLoose(value) {
   if (value === undefined || value === null || value === '') return PRODUCT_CATEGORY_NONE;
-  return normalizeCategoryCode(value) || PRODUCT_CATEGORY_NONE;
+  let u = normalizeCategoryCode(value) || PRODUCT_CATEGORY_NONE;
+  if (!u) return PRODUCT_CATEGORY_NONE;
+  // UI labels like "IIT Alpha" / "IIT_ALPHA" → ALPHA
+  if (u.startsWith('IIT_')) u = u.slice(4);
+  if (u === 'GENERAL' || u === 'NONE' || u === 'ALL') return PRODUCT_CATEGORY_NONE;
+  return u;
 }
 
 export function isValidIitCategory(value, allowedCodes = null) {

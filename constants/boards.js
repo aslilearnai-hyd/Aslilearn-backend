@@ -118,6 +118,24 @@ export function isValidSchoolBoard(code) {
 }
 
 /**
+ * Normalize board codes for Subject/Content storage.
+ * UI may use "IIT/NEET" or "IIT NEET"; catalog board code is "IIT".
+ */
+export function canonicalizeSchoolBoard(code) {
+  const raw = String(code || '').trim();
+  if (!raw) return '';
+  const u = raw.toUpperCase();
+  const compact = u.replace(/[\s/\\-_]+/g, '');
+  if (compact.includes('IIT') || compact.includes('NEET') || compact.includes('JEE')) {
+    return 'IIT';
+  }
+  if (compact === 'ASLIEXCLUSIVESCHOOLS' || compact === 'ASLIEXCLUSIVE') {
+    return 'ASLI_EXCLUSIVE_SCHOOLS';
+  }
+  return u;
+}
+
+/**
  * Curriculum / state boards assignable to schools (not IIT hub, not ASLI hub alone).
  */
 export function isValidCurriculumBoard(code) {

@@ -277,6 +277,12 @@ mongoose.connect(MONGO_URI, MONGOOSE_CONNECT_OPTIONS)
     console.warn('Product category seed skipped:', seedErr?.message || seedErr);
   }
   try {
+    const { ensureSubjectIndexes } = await import('./models/Subject.js');
+    await ensureSubjectIndexes();
+  } catch (idxErr) {
+    console.warn('Subject index ensure skipped:', idxErr?.message || idxErr);
+  }
+  try {
     const { ensureAiToolTopicIndexes } = await import('./models/AiToolTopic.js');
     await ensureAiToolTopicIndexes();
   } catch (idxErr) {

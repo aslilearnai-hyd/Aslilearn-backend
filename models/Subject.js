@@ -75,4 +75,35 @@ subjectSchema.index({ isActive: 1 });
 // Sparse unique index on code - only unique for non-null values
 subjectSchema.index({ code: 1 }, { unique: true, sparse: true });
 
-export default mongoose.model('Subject', subjectSchema);
+const Subject = mongoose.models.Subject || mongoose.model('Subject', subjectSchema);
+
+/**
+ * Drop legacy unique indexes that omit productCategory so the same subject
+ * name can exist once per IIT track (Alpha / Beta / Gamma).
+ */
+export async function ensureSubjectIndexes() {
+  try {
+    const coll = mongoose.connection.collection('subjects');
+    const indexes = await coll.indexes();
+    for (const idx of indexes) {
+      if (!idx?.unique || !idx.key) continue;
+      const keys = Object.keys(idx.key);
+      const hasNameBoard = idx.key.name === 1 && idx.key.board === 1;
+      const hasProductCategory = idx.key.productCategory !== undefined;
+      // Old: name+board or name+board+stateName (no productCategory)
+      if (
+        hasNameBoard &&
+        !hasProductCategory &&
+        keys.every((k) => ['name', 'board', 'stateName'].includes(k))
+      ) {
+        await coll.dropIndex(idx.name);
+        console.log(`Dropped legacy subjects unique index: ${idx.name}`);
+      }
+    }
+    await Subject.syncIndexes();
+  } catch (err) {
+    console.warn('ensureSubjectIndexes:', err?.message || err);
+  }
+}
+
+export default Subject;
