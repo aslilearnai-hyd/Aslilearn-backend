@@ -908,7 +908,7 @@ export const getSubjectsByBoard = async (req, res) => {
   }
 };
 
-// Delete Subject (Super Admin only)
+// Delete Subject (Super Admin only) — deletes ONLY the requested subject id.
 export const deleteSubject = async (req, res) => {
   try {
     const { subjectId } = req.params;
@@ -918,53 +918,20 @@ export const deleteSubject = async (req, res) => {
       return res.status(404).json({ success: false, message: 'Subject not found' });
     }
 
-    const boardUpper = String(subject.board || '').toUpperCase();
-    const stateForDb = normalizedStateNameForBoard(boardUpper, subject.stateName);
-    const identityKey = subjectCatalogIdentityKey(
-      subject.name,
-      boardUpper,
-      stateForDb,
-      subject.classNumber,
-      subject.productCategory
-    );
-
-    const peers = await findActiveSubjectsForBoardState(
-      boardUpper,
-      stateForDb,
-      subject.productCategory
-    );
-    const toDelete = peers.filter(
-      (row) =>
-        subjectCatalogIdentityKey(
-          row.name,
-          boardUpper,
-          stateForDb,
-          row.classNumber,
-          row.productCategory
-        ) === identityKey
-    );
-
-    if (toDelete.length === 0 && !subject.isActive) {
+    if (!subject.isActive) {
       return res.json({ success: true, message: 'Subject already deleted' });
     }
 
-    const targets = toDelete.length > 0 ? toDelete : [subject];
-    for (const row of targets) {
-      if (row.isActive) {
-        await softDeleteSubject(row);
-      }
-    }
+    await softDeleteSubject(subject);
 
     res.json({
       success: true,
-      message:
-        targets.length > 1
-          ? `Deleted ${targets.length} duplicate catalog entries for this subject`
-          : 'Subject deleted successfully',
+      message: 'Subject deleted successfully',
+      deletedCount: 1,
     });
   } catch (error) {
     console.error('Delete subject error:', error);
-    res.status(500).json({ success: false, message: 'Failed to delete subject' });
+    res.status(500).json({ success: false, message: 'Failed to delete subject', error: error.message });
   }
 };
 
@@ -1366,7 +1333,8 @@ export const uploadContent = async (req, res) => {
       subject: content.subject
     });
 
-    res.json({ success: true, data: content, message: 'Content uploaded successfully' });
+    const data = await contentResponsePayload(content);
+    res.json({ success: true, data, message: 'Content uploaded successfully' });
   } catch (error) {
     console.error('Upload content error:', error);
     console.error('Error details:', {
@@ -1395,16 +1363,51 @@ export const uploadContent = async (req, res) => {
 function inferSubjectDisplayNameFromContent(row) {
   const text = `${row.title || ''} ${row.description || ''} ${row.topic || ''}`.toLowerCase();
   if (/ganita|mathematics|maths|\bmath\b/.test(text)) return 'Mathematics';
-  if (/science|curiosity|physics|chemistry|biology/.test(text)) return 'Science';
+  if (/\bphysics\b/.test(text)) return 'Physics';
+  if (/\bchemistry\b/.test(text)) return 'Chemistry';
+  if (/\bbiolog/.test(text)) return 'Biology';
+  if (/science|curiosity/.test(text)) return 'Science';
   if (/english/.test(text)) return 'English';
   if (/social|history|geography/.test(text)) return 'Social Studies';
   if (/hindi/.test(text)) return 'Hindi';
   if (/telugu/.test(text)) return 'Telugu';
-  const fromTitle = String(row.title || '')
-    .replace(/\s+(vol\s*\d+\s*)?class\s*\d+.*$/i, '')
-    .replace(/\s+/g, ' ')
-    .trim();
-  return fromTitle || 'General';
+  // Never use raw video/chapter titles as subject names (e.g. "A Square and a Cube").
+  return 'Unassigned';
+}
+
+async function contentResponsePayload(contentDoc) {
+  const lean =
+    contentDoc && typeof contentDoc.toObject === 'function'
+      ? contentDoc.toObject()
+      : { ...(contentDoc || {}) };
+  const subjectId = lean.subject ? String(lean.subject._id || lean.subject) : null;
+  let subjectPayload = null;
+  if (subjectId && mongoose.Types.ObjectId.isValid(subjectId)) {
+    const subjectDoc = await Subject.findById(subjectId)
+      .select('name board classNumber stateName productCategory isActive')
+      .lean();
+    if (subjectDoc) {
+      subjectPayload = {
+        _id: subjectId,
+        name: subjectDisplayName(subjectDoc.name),
+        board: subjectDoc.board,
+        classNumber: subjectDoc.classNumber,
+        stateName: subjectDoc.stateName,
+        productCategory: subjectDoc.productCategory,
+        missingFromCatalog:
+          subjectDoc.isActive === false || isSoftDeletedSubjectName(subjectDoc.name),
+      };
+    } else {
+      subjectPayload = {
+        _id: subjectId,
+        name: inferSubjectDisplayNameFromContent(lean),
+        board: lean.board,
+        classNumber: lean.classNumber,
+        missingFromCatalog: true,
+      };
+    }
+  }
+  return { ...lean, subject: subjectPayload || lean.subject };
 }
 
 // Get Content by Board (or all boards - board filtering removed for visibility)
@@ -1430,7 +1433,7 @@ export const getContentByBoard = async (req, res) => {
     ];
     const subjectDocs = subjectIds.length
       ? await Subject.find({ _id: { $in: subjectIds } })
-          .select('name board classNumber stateName isActive')
+          .select('name board classNumber stateName productCategory isActive')
           .lean()
       : [];
     const subjectById = new Map(subjectDocs.map((s) => [String(s._id), s]));
@@ -1439,9 +1442,15 @@ export const getContentByBoard = async (req, res) => {
       .map((row) => {
       const subjectId = row.subject ? String(row.subject) : null;
       const subjectDoc = subjectId ? subjectById.get(subjectId) : null;
-      const displayName = subjectDoc?.name
+      const catalogActive =
+        subjectDoc &&
+        subjectDoc.isActive !== false &&
+        !isSoftDeletedSubjectName(subjectDoc.name);
+      const displayName = catalogActive
         ? subjectDisplayName(subjectDoc.name)
-        : inferSubjectDisplayNameFromContent(row);
+        : subjectDoc?.name
+          ? subjectDisplayName(subjectDoc.name)
+          : inferSubjectDisplayNameFromContent(row);
       const resolvedClassNumber =
         (row.classNumber != null && String(row.classNumber).trim() !== ''
           ? String(row.classNumber).trim()
@@ -1451,10 +1460,6 @@ export const getContentByBoard = async (req, res) => {
           : null) ||
         classNumberFromSubjectName(subjectDoc?.name || '') ||
         null;
-      const catalogActive =
-        subjectDoc &&
-        subjectDoc.isActive !== false &&
-        !isSoftDeletedSubjectName(subjectDoc.name);
 
       return {
         ...row,
@@ -1465,6 +1470,7 @@ export const getContentByBoard = async (req, res) => {
               board: subjectDoc?.board || row.board,
               classNumber: resolvedClassNumber || undefined,
               stateName: subjectDoc?.stateName,
+              productCategory: subjectDoc?.productCategory || row.productCategory,
               missingFromCatalog: !catalogActive,
             }
           : {
@@ -1638,10 +1644,11 @@ export const updateContent = async (req, res) => {
 
     await content.save();
 
+    const data = await contentResponsePayload(content);
     res.json({ 
       success: true, 
       message: 'Content updated successfully',
-      data: content 
+      data,
     });
   } catch (error) {
     console.error('Update content error:', error);
