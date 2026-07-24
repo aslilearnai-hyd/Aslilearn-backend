@@ -2772,7 +2772,7 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
     };
 
     const meaningfulChapterLabel = (raw) => {
-      const s = String(raw || '').trim();
+      const s = String(raw || '').replace(/\s+/g, ' ').trim();
       if (!s) return '';
       const lower = s.toLowerCase();
       const meaningless = new Set([
@@ -2794,16 +2794,24 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
         'chemistry',
         'biology',
         'science',
+        'core concepts',
       ]);
       if (meaningless.has(lower)) return '';
       if (/^(maths?|mathematics|physics|chemistry|biology|science)\s+fundamentals$/i.test(lower)) {
         return '';
       }
+      // Pure numbers / option values mistaken for topics ("222 444")
+      if (/^\d+(\s+\d+)*$/.test(lower)) return '';
+      if ((lower.match(/\d/g) || []).length >= (lower.match(/[a-z]/g) || []).length) return '';
+      // Stem fragments mistaken for chapter names
       if (
-        /\b(directions?|instruction|read the following|each of the following|four choices|choose the correct|answer the following)\b/i.test(
+        /\b(directions?|instruction|read the following|each of the following|four choices|choose the correct|answer the following|which of the following|what is the|how many|find the|calculate|greatest among|least among|select the correct)\b/i.test(
           lower
         )
       ) {
+        return '';
+      }
+      if (/^(following|among|greatest|least|given|below|above|correct|option|choose|select|which|what|find)\b/i.test(lower)) {
         return '';
       }
       if (s.length > 48 || /\?/.test(s) || s.split(/\s+/).length > 8) return '';
@@ -2833,19 +2841,16 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       const isCorrect = analyticsRow
         ? String(analyticsRow.status || '').toLowerCase() === 'correct'
         : isAnswerCorrect(q, userAnswer);
+      const rawChapter = String(analyticsRow?.chapter || q.chapter || '').trim();
+      const rawTopic = String(analyticsRow?.topic || q.topic || q.unit || '').trim();
+      const rawSection = String(q.sectionHeading || q.section || '').trim();
       return {
         index: index + 1,
         questionId,
         subject: String(q.subject || 'general').toLowerCase(),
-        chapter: meaningfulChapterLabel(
-          String(
-            analyticsRow?.chapter ||
-              q.chapter ||
-              q.topic ||
-              q.unit ||
-              ''
-          ).trim()
-        ),
+        chapter: meaningfulChapterLabel(rawChapter) || meaningfulChapterLabel(rawTopic),
+        topic: meaningfulChapterLabel(rawTopic) || meaningfulChapterLabel(rawChapter),
+        sectionHeading: meaningfulChapterLabel(rawSection),
         questionType: q.questionType,
         questionText: shorten(q.questionText || ''),
         hasImage: Boolean(q.questionImage),
@@ -2868,13 +2873,6 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       return text || 'not answered';
     };
 
-    const shortConcept = (value) => {
-      const cleaned = String(value || '').replace(/\s+/g, ' ').trim();
-      if (!cleaned) return 'this concept';
-      const words = cleaned.split(' ').slice(0, 8).join(' ');
-      return words.length > 70 ? `${words.slice(0, 67)}...` : words;
-    };
-
     const inferTopicFromQuestion = (q) => {
       const chapterOk = meaningfulChapterLabel(q?.chapter);
       if (chapterOk) return chapterOk;
@@ -2891,55 +2889,51 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
         .replace(/\s+/g, ' ')
         .trim()
         .toLowerCase();
-      if (!text) return `${q.subject || 'subject'} fundamentals`;
+      if (!text) return 'Core concepts';
       if (
         /\b(directions?|each of the following|four choices|read the following)\b/.test(text) &&
         text.length < 80
       ) {
-        return `${q.subject || 'subject'} fundamentals`;
+        return 'Core concepts';
       }
 
       const topicPatterns = [
-        { topic: 'Rational Numbers', regex: /\brational number\b|\bterminating decimal\b|\badditive inverse\b/ },
+        { topic: 'Rational Numbers', regex: /\brational numbers?\b|\bterminating decimals?\b|\bnon[- ]terminating\b|\badditive inverse\b|\bmultiplicative inverse\b/ },
+        { topic: 'Comparing Numbers', regex: /\bgreatest among\b|\bleast among\b|\bwhich is (?:the )?(?:greatest|least|largest|smallest)\b|\bcompare (?:the )?(?:fractions?|numbers?|decimals?)\b/ },
+        { topic: 'Fractions and Decimals', regex: /\bfractions?\b|\bdecimals?\b|\bnumerator\b|\bdenominator\b/ },
         { topic: 'Arithmetic Progression', regex: /\barithmetic progression\b|\ba\.?p\.?\b/ },
         { topic: 'Quadrilateral Properties', regex: /\bquadrilateral\b|\bparallelogram\b|\brhombus\b|\btrapez/ },
         { topic: 'Polygon Angles', regex: /\bpolygon\b|\binterior angles?\b|\bexterior angles?\b/ },
-        { topic: 'Ratio and Proportion', regex: /\bratio\b|\bproportion\b/ },
-        { topic: 'Linear Equations', regex: /\blinear equation\b|\bsolve for\b|\bequation\b/ },
-        { topic: 'Probability', regex: /\bprobability\b|\bchance\b|\boutcome\b/ },
-        { topic: 'Force and Laws of Motion', regex: /\bnet force\b|\bforce\b|\bnewton\b|\baccelerat/ },
+        { topic: 'Ratio and Proportion', regex: /\bratios?\b|\bproportions?\b/ },
+        { topic: 'Linear Equations', regex: /\blinear equations?\b|\bsolve for\b|\bequation\b/ },
+        { topic: 'Probability', regex: /\bprobability\b|\bchance\b|\boutcomes?\b/ },
+        { topic: 'Force and Laws of Motion', regex: /\bnet force\b|\bforces?\b|\bnewton\b|\baccelerat/ },
         { topic: 'Motion and Kinematics', regex: /\bmotion\b|\bvelocity\b|\bacceleration\b|\bdisplacement\b/ },
         { topic: 'Pressure and Hydraulics', regex: /\bhydraulic\b|\bpiston\b|\bpascal\b|\bpressure\b/ },
-        { topic: 'Atomic Structure', regex: /\batomic number\b|\bmass number\b|\bneutron\b|\bproton\b|\belectron\b|\batom\b/ },
-        { topic: 'Electricity and Circuits', regex: /\bohm\b|\bcurrent\b|\bvoltage\b|\bresistance\b|\bcircuit\b/ },
+        { topic: 'Atomic Structure', regex: /\batomic numbers?\b|\bmass numbers?\b|\bneutrons?\b|\bprotons?\b|\belectrons?\b|\batoms?\b/ },
+        { topic: 'Electricity and Circuits', regex: /\bohm\b|\bcurrent\b|\bvoltage\b|\bresistance\b|\bcircuits?\b/ },
         { topic: 'Hybridization', regex: /\bhybridization\b|\bhybrid orbital\b|\bsp\s*3\b|\bsp\s*2\b|\bsp\s*hybrid\b|\bdsp\s*[23]\b/ },
-        { topic: 'Oxidation States', regex: /\boxidation state\b|\boxidation number\b/ },
+        { topic: 'Oxidation States', regex: /\boxidation states?\b|\boxidation numbers?\b/ },
         {
           topic: 'Molar Mass and Stoichiometry',
           regex: /\bmolar mass\b|\bmolecular mass\b|\bmolarity\b|\bstoichiometry\b|\bmoles?\b|\bmol\b/,
         },
-        { topic: 'Acids, Bases and Salts', regex: /\bacid\b|\bbase\b|\bsalt\b|\bph\b/ },
-        { topic: 'Carbon Compounds', regex: /\bcarbon\b|\bhydrocarbon\b|\borganic\b/ },
+        { topic: 'Acids, Bases and Salts', regex: /\bacids?\b|\bbases?\b|\bsalts?\b|\bph\b/ },
+        { topic: 'Carbon Compounds', regex: /\bcarbon\b|\bhydrocarbons?\b|\borganic\b/ },
+        { topic: 'Cell Structure', regex: /\bcell membrane\b|\bcytoplasm\b|\bnucleus\b|\borganelles?\b/ },
+        { topic: 'Life Processes', regex: /\bphotosynthesis\b|\brespiration\b|\bexcretion\b|\bnutrition\b/ },
+        { topic: 'Heredity and Evolution', regex: /\bheredity\b|\bevolution\b|\bgenes?\b|\bdna\b/ },
       ];
 
       const matched = topicPatterns.find((item) => item.regex.test(text));
       if (matched) return matched.topic;
 
-      const stop = new Set([
-        'the', 'and', 'that', 'this', 'with', 'from', 'into', 'your', 'which', 'what', 'when', 'where', 'while',
-        'likely', 'consequence', 'value', 'find', 'calculate', 'question', 'term', 'first', 'second', 'third',
-        'fourth', 'fifth', 'will', 'then', 'than', 'have', 'has', 'for', 'are', 'is', 'was', 'were', 'following',
-        'among', 'given', 'equal', 'opposite', 'present', 'number',
-      ]);
-      const keywords = text
-        .split(' ')
-        .map((x) => x.trim())
-        .filter((x) => x.length > 2 && !stop.has(x));
-      const compact = keywords.slice(0, 3).join(' ');
-      if (compact && compact.length <= 36 && !/\b(which|what|how|find|calculate)\b/i.test(compact)) {
-        return compact.replace(/\b\w/g, (c) => c.toUpperCase());
+      // Do NOT invent topics from random stem keywords ("222 444", "Greatest Among").
+      const subject = String(q.subject || '').trim();
+      if (subject && !/^(general|unknown)$/i.test(subject)) {
+        return `${subject.charAt(0).toUpperCase()}${subject.slice(1)} fundamentals`;
       }
-      return `${q.subject || 'subject'} fundamentals`;
+      return 'Core concepts';
     };
 
     const insightStemLead = (_q) => '';
@@ -3015,14 +3009,15 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
         if (q.isCorrect) return;
         const subject = String(q.subject || 'general').toLowerCase();
         const topic = inferTopicFromQuestion(q);
-        const key = `${subject}::${topic}`;
+        const key = `${subject}::${normalizeTopicLabel(topic)}`;
         if (!grouped.has(key)) {
-          grouped.set(key, { subject, topic, count: 0, unattempted: 0, wrong: 0 });
+          grouped.set(key, { subject, topic, count: 0, unattempted: 0, wrong: 0, indexes: [] });
         }
         const row = grouped.get(key);
         row.count += 1;
         if (q.hasAnswer) row.wrong += 1;
         else row.unattempted += 1;
+        if (row.indexes.length < 3) row.indexes.push(q.index);
       });
 
       return Array.from(grouped.values())
@@ -3030,10 +3025,13 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
         .slice(0, 4)
         .map((x) => ({
           subject: x.subject,
-          issue: `Low accuracy/confidence in ${x.topic}${x.unattempted > 0 ? ' (skips detected)' : ''}.`,
-          whatToDo: `Run one focused ${x.subject} drill on "${x.topic}" daily and review every wrong/skipped attempt.`,
-          priority: x.count >= 2 ? 'high' : 'medium',
           topic: x.topic,
+          issue: x.topic,
+          whatToDo:
+            x.indexes.length > 0
+              ? `Wrong · Q${x.indexes.join(', Q')} · review working`
+              : `Review ${x.topic} and practise 8–10 similar questions.`,
+          priority: x.count >= 2 ? 'high' : 'medium',
         }));
     };
 
@@ -3045,7 +3043,7 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
           : 'unattempted';
       const userAnswerText = formatAnswer(q.userAnswer);
       const correctAnswerText = formatAnswer(q.correctAnswer);
-      const concept = shortConcept(q.questionText);
+      const topic = inferTopicFromQuestion(q);
       const explanationHint = String(q.explanation || '').trim();
       const explanationLine = explanationHint
         ? `Review explanation hint: "${explanationHint}".`
@@ -3058,6 +3056,7 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
           index: q.index,
           questionId: q.questionId,
           subject: q.subject || 'general',
+          topic,
           questionType: q.questionType || 'mcq',
           status,
           conceptGap: buildGapLine(q, status),
@@ -3073,6 +3072,7 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
           index: q.index,
           questionId: q.questionId,
           subject: q.subject || 'general',
+          topic,
           questionType: q.questionType || 'mcq',
           status,
           conceptGap: buildGapLine(q, status),
@@ -3087,6 +3087,7 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
         index: q.index,
         questionId: q.questionId,
         subject: q.subject || 'general',
+        topic,
         questionType: q.questionType || 'mcq',
         status,
         conceptGap: `${buildGapLine(q, status)} Selected "${userAnswerText}" but expected "${correctAnswerText}".`,
@@ -3454,14 +3455,25 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       aiParsed.focusAreas = derivedFocusAreas;
     } else {
       const cleanedFocusAreas = aiParsed.focusAreas
-        .map((item) => ({
-          subject: String(item?.subject || '').toLowerCase() || 'general',
-          issue: String(item?.issue || '').trim(),
-          whatToDo: String(item?.whatToDo || '').trim(),
-          priority: ['high', 'medium', 'low'].includes(String(item?.priority || '').toLowerCase())
-            ? String(item.priority).toLowerCase()
-            : 'medium',
-        }))
+        .map((item) => {
+          const subject = String(item?.subject || '').toLowerCase() || 'general';
+          const topicRaw = String(item?.topic || '').trim();
+          const issueRaw = String(item?.issue || '').trim();
+          const topic =
+            meaningfulChapterLabel(topicRaw) ||
+            meaningfulChapterLabel(issueRaw.replace(/^low accuracy\/confidence in\s+/i, '').replace(/\s*\(skips detected\)\.?$/i, '')) ||
+            '';
+          const issue = topic || issueRaw;
+          return {
+            subject,
+            topic: topic || issue,
+            issue,
+            whatToDo: String(item?.whatToDo || '').trim(),
+            priority: ['high', 'medium', 'low'].includes(String(item?.priority || '').toLowerCase())
+              ? String(item.priority).toLowerCase()
+              : 'medium',
+          };
+        })
         .filter((item) => item.issue || item.whatToDo);
 
       const mostlyGeneric =
@@ -3524,6 +3536,7 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
           index: q.index,
           questionId: q.questionId,
           subject: q.subject || aiItem.subject || 'general',
+          topic: fallback.topic || meaningfulChapterLabel(aiItem.topic) || '',
           questionType: q.questionType || aiItem.questionType || 'mcq',
           // Keep factual status from saved result (avoid model status hallucinations).
           status: fallback.status,
