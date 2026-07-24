@@ -2787,8 +2787,26 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
         'default',
         'other',
         'none',
+        'maths',
+        'math',
+        'mathematics',
+        'physics',
+        'chemistry',
+        'biology',
+        'science',
       ]);
       if (meaningless.has(lower)) return '';
+      if (/^(maths?|mathematics|physics|chemistry|biology|science)\s+fundamentals$/i.test(lower)) {
+        return '';
+      }
+      if (
+        /\b(directions?|instruction|read the following|each of the following|four choices|choose the correct|answer the following)\b/i.test(
+          lower
+        )
+      ) {
+        return '';
+      }
+      if (s.length > 48 || /\?/.test(s) || s.split(/\s+/).length > 8) return '';
       return s;
     };
 
@@ -2860,22 +2878,39 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
     const inferTopicFromQuestion = (q) => {
       const chapterOk = meaningfulChapterLabel(q?.chapter);
       if (chapterOk) return chapterOk;
+      const topicOk = meaningfulChapterLabel(q?.topic);
+      if (topicOk) return topicOk;
+      const sectionOk = meaningfulChapterLabel(q?.sectionHeading);
+      if (sectionOk) return sectionOk;
 
       const text = String(q?.questionText || '')
+        .replace(/^directions?\s*[:.\-–—]?\s*/i, '')
+        .replace(/^each of the following[^.!?]{0,120}[.!?]\s*/i, '')
+        .replace(/^read the following[^.!?]{0,120}[.!?]\s*/i, '')
         .replace(/[^a-zA-Z0-9\s]/g, ' ')
         .replace(/\s+/g, ' ')
         .trim()
         .toLowerCase();
       if (!text) return `${q.subject || 'subject'} fundamentals`;
+      if (
+        /\b(directions?|each of the following|four choices|read the following)\b/.test(text) &&
+        text.length < 80
+      ) {
+        return `${q.subject || 'subject'} fundamentals`;
+      }
 
       const topicPatterns = [
+        { topic: 'Rational Numbers', regex: /\brational number\b|\bterminating decimal\b|\badditive inverse\b/ },
         { topic: 'Arithmetic Progression', regex: /\barithmetic progression\b|\ba\.?p\.?\b/ },
         { topic: 'Quadrilateral Properties', regex: /\bquadrilateral\b|\bparallelogram\b|\brhombus\b|\btrapez/ },
         { topic: 'Polygon Angles', regex: /\bpolygon\b|\binterior angles?\b|\bexterior angles?\b/ },
         { topic: 'Ratio and Proportion', regex: /\bratio\b|\bproportion\b/ },
         { topic: 'Linear Equations', regex: /\blinear equation\b|\bsolve for\b|\bequation\b/ },
         { topic: 'Probability', regex: /\bprobability\b|\bchance\b|\boutcome\b/ },
+        { topic: 'Force and Laws of Motion', regex: /\bnet force\b|\bforce\b|\bnewton\b|\baccelerat/ },
         { topic: 'Motion and Kinematics', regex: /\bmotion\b|\bvelocity\b|\bacceleration\b|\bdisplacement\b/ },
+        { topic: 'Pressure and Hydraulics', regex: /\bhydraulic\b|\bpiston\b|\bpascal\b|\bpressure\b/ },
+        { topic: 'Atomic Structure', regex: /\batomic number\b|\bmass number\b|\bneutron\b|\bproton\b|\belectron\b|\batom\b/ },
         { topic: 'Electricity and Circuits', regex: /\bohm\b|\bcurrent\b|\bvoltage\b|\bresistance\b|\bcircuit\b/ },
         { topic: 'Hybridization', regex: /\bhybridization\b|\bhybrid orbital\b|\bsp\s*3\b|\bsp\s*2\b|\bsp\s*hybrid\b|\bdsp\s*[23]\b/ },
         { topic: 'Oxidation States', regex: /\boxidation state\b|\boxidation number\b/ },
@@ -2893,23 +2928,24 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       const stop = new Set([
         'the', 'and', 'that', 'this', 'with', 'from', 'into', 'your', 'which', 'what', 'when', 'where', 'while',
         'likely', 'consequence', 'value', 'find', 'calculate', 'question', 'term', 'first', 'second', 'third',
-        'fourth', 'fifth', 'will', 'then', 'than', 'have', 'has', 'for', 'are', 'is', 'was', 'were', 'been',
+        'fourth', 'fifth', 'will', 'then', 'than', 'have', 'has', 'for', 'are', 'is', 'was', 'were', 'following',
+        'among', 'given', 'equal', 'opposite', 'present', 'number',
       ]);
       const keywords = text
         .split(' ')
         .map((x) => x.trim())
         .filter((x) => x.length > 2 && !stop.has(x));
-      const compact = keywords.slice(0, 4).join(' ');
-      return compact ? compact.replace(/\b\w/g, (c) => c.toUpperCase()) : `${q.subject || 'subject'} fundamentals`;
+      const compact = keywords.slice(0, 3).join(' ');
+      if (compact && compact.length <= 36 && !/\b(which|what|how|find|calculate)\b/i.test(compact)) {
+        return compact.replace(/\b\w/g, (c) => c.toUpperCase());
+      }
+      return `${q.subject || 'subject'} fundamentals`;
     };
 
-    const insightStemLead = (q) => {
-      const s = shorten(q?.questionText || '', 96);
-      return s ? `This item starts: “${s}”. ` : '';
-    };
+    const insightStemLead = (_q) => '';
 
     const insightUnitLead = (q) => {
-      const ch = meaningfulChapterLabel(q?.chapter);
+      const ch = meaningfulChapterLabel(q?.chapter) || meaningfulChapterLabel(q?.topic);
       return ch ? `Syllabus unit “${ch}”: ` : '';
     };
 
@@ -2997,6 +3033,7 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
           issue: `Low accuracy/confidence in ${x.topic}${x.unattempted > 0 ? ' (skips detected)' : ''}.`,
           whatToDo: `Run one focused ${x.subject} drill on "${x.topic}" daily and review every wrong/skipped attempt.`,
           priority: x.count >= 2 ? 'high' : 'medium',
+          topic: x.topic,
         }));
     };
 
