@@ -223,21 +223,30 @@ export async function processStudentCsvUpload(fileBuffer, originalName, adminId)
           errors.push(
             `Row ${i + 1}: Failed to create class ${classNumber}-${section}: ${classError.message}`
           );
+          continue;
+        }
+        if (!assignedClass?._id) {
+          errors.push(
+            `Row ${i + 1}: Could not link student to class ${classNumber}-${section}`
+          );
+          continue;
         }
       }
 
       const hashedPassword = await bcrypt.hash(plainPassword, 12);
+      const resolvedClassNumber = assignedClass?.classNumber || classNumber || 'Unassigned';
+      const resolvedSection = assignedClass?.section || section || '';
 
       const newUser = await User.create({
         fullName: name,
         email,
-        classNumber: classNumber || 'Unassigned',
+        classNumber: resolvedClassNumber,
         phone: normalizePhoneTenDigits(row.phone),
         password: hashedPassword,
         role: 'student',
         isActive: true,
         assignedAdmin: validAdminId,
-        assignedClass: assignedClass?._id,
+        assignedClass: assignedClass?._id || null,
         board: admin.board,
         schoolName: admin.schoolName || '',
       });
@@ -246,11 +255,15 @@ export async function processStudentCsvUpload(fileBuffer, originalName, adminId)
         id: newUser._id.toString(),
         name: newUser.fullName,
         email: newUser.email,
-        classNumber: newUser.classNumber,
-        section,
+        classNumber: resolvedClassNumber,
+        section: resolvedSection,
+        assignedClass: assignedClass?._id ? String(assignedClass._id) : null,
         class: assignedClass
-          ? `${assignedClass.classNumber}-${assignedClass.section}`
+          ? `${resolvedClassNumber}-${resolvedSection}`
           : 'Unassigned',
+        classLabel: assignedClass
+          ? `${resolvedClassNumber}-${resolvedSection}`
+          : resolvedClassNumber || 'Unassigned',
       });
     } catch (error) {
       errors.push(`Row ${i + 1}: ${error.message}`);
