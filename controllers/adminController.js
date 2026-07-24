@@ -263,12 +263,60 @@ export const getStudents = async (req, res) => {
     .select('-password')
     .populate('assignedClass', 'name classNumber section description')
     .sort({ createdAt: -1 })
-    .limit(1000); // Reasonable limit
-    // Note: lean() removed to maintain populate() functionality
+    .limit(1000)
+    .lean();
+
+    // Flatten class/section so the Students tab never depends on nested populate timing.
+    const data = students.map((student) => {
+      const assigned = student.assignedClass;
+      const assignedClassId =
+        assigned && typeof assigned === 'object' && assigned._id
+          ? String(assigned._id)
+          : assigned
+            ? String(assigned)
+            : null;
+      const section =
+        assigned && typeof assigned === 'object' && assigned.section
+          ? String(assigned.section)
+          : '';
+      const grade =
+        (assigned && typeof assigned === 'object' && assigned.classNumber
+          ? String(assigned.classNumber)
+          : String(student.classNumber || '')).trim() || 'Unassigned';
+      const classLabel =
+        assignedClassId && section
+          ? `${grade}-${section}`
+          : assignedClassId
+            ? grade
+            : grade === 'Unassigned'
+              ? 'Unassigned'
+              : grade;
+
+      return {
+        ...student,
+        classNumber: grade,
+        section,
+        classLabel,
+        assignedClass: assignedClassId
+          ? {
+              _id: assignedClassId,
+              id: assignedClassId,
+              name:
+                assigned && typeof assigned === 'object'
+                  ? assigned.name || `Class ${grade}${section ? `-${section}` : ''}`
+                  : `Class ${grade}`,
+              classNumber: grade,
+              section,
+              description:
+                assigned && typeof assigned === 'object' ? assigned.description || '' : '',
+            }
+          : null,
+      };
+    });
     
     res.json({
       success: true,
-      data: students
+      data
     });
   } catch (error) {
     console.error('Get students error:', error);
