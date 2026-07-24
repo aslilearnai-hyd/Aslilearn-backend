@@ -41,7 +41,8 @@ export const getExamDetails = async (req, res) => {
     // All exams are accessible to all schools - no restrictions
     const exam = await Exam.findOne({
       _id: examId,
-      createdByRole: 'super-admin'
+      createdByRole: 'super-admin',
+      isActive: { $ne: false },
     })
     .populate('questions')
     .populate('createdBy', 'fullName email')

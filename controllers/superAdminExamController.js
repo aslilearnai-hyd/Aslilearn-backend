@@ -837,7 +837,8 @@ export const getAllExams = async (req, res) => {
     console.log('📋 getAllExams controller called');
     const { board, schoolIds, classNumbers } = req.query;
     
-    let query = { createdByRole: 'super-admin' };
+    // Soft-deleted exams set isActive=false; hide them from management lists.
+    let query = { createdByRole: 'super-admin', isActive: { $ne: false } };
     const conditions = [];
     
     // Filter by board if provided, but include all-boards exams too
@@ -935,7 +936,8 @@ export const getExamsByBoard = async (req, res) => {
 
     const exams = await Exam.find({ 
       board: bc,
-      createdByRole: 'super-admin' 
+      createdByRole: 'super-admin',
+      isActive: { $ne: false },
     })
       .populate('questions')
       .sort({ createdAt: -1 });
