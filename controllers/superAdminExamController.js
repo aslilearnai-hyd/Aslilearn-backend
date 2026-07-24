@@ -16,6 +16,7 @@ import {
 import {
   nextQuestionDisplayOrder,
   ensureExamQuestionDisplayOrders,
+  moveQuestionToDisplayOrder,
   QUESTION_LIST_SORT,
   subjectSectionLabel,
 } from '../utils/exam-question-order.js';
@@ -579,31 +580,30 @@ export function normalizeExamClassFields(exam) {
 
 const ALLOWED_EXAM_SUBJECTS = ['maths', 'physics', 'chemistry', 'biology'];
 
-const buildSafeAppendQuestionsPipeline = ({ questionIds = [], totalQuestionsDelta = 0, totalMarksDelta = 0 }) => {
+const buildSafeAppendQuestionsPipeline = ({ questionIds = [] }) => {
   const ids = Array.isArray(questionIds) ? questionIds.filter(Boolean) : [];
   return [
     {
       $set: {
         questions: {
-          $cond: [{ $isArray: '$questions' }, '$questions', []]
+          $cond: [{ $isArray: '$questions' }, '$questions', []],
         },
       },
     },
     {
       $set: {
+        // Keep Exam.totalQuestions / totalMarks as planned caps — do not bump them here.
         questions: { $concatArrays: ['$questions', ids] },
-        totalQuestions: { $add: [{ $ifNull: ['$totalQuestions', 0] }, totalQuestionsDelta] },
-        totalMarks: { $add: [{ $ifNull: ['$totalMarks', 0] }, totalMarksDelta] },
       },
     },
   ];
 };
 
-const buildSafeRemoveQuestionPipeline = ({ questionId, totalQuestionsDelta = 0, totalMarksDelta = 0 }) => [
+const buildSafeRemoveQuestionPipeline = ({ questionId }) => [
   {
     $set: {
       questions: {
-        $cond: [{ $isArray: '$questions' }, '$questions', []]
+        $cond: [{ $isArray: '$questions' }, '$questions', []],
       },
     },
   },
@@ -616,37 +616,66 @@ const buildSafeRemoveQuestionPipeline = ({ questionId, totalQuestionsDelta = 0, 
           cond: { $ne: ['$$questionId', questionId] },
         },
       },
-      totalQuestions: {
-        $max: [0, { $add: [{ $ifNull: ['$totalQuestions', 0] }, totalQuestionsDelta] }]
-      },
-      totalMarks: {
-        $max: [0, { $add: [{ $ifNull: ['$totalMarks', 0] }, totalMarksDelta] }]
-      },
     },
   },
 ];
 
-const syncExamQuestionTotals = async (examId) => {
+/** Actual uploaded question count + marks sum (not the planned exam caps). */
+const getExamActualTotals = async (examId) => {
+  const oid = mongoose.Types.ObjectId.isValid(examId)
+    ? new mongoose.Types.ObjectId(examId)
+    : examId;
   const [totals] = await Question.aggregate([
-    { $match: { exam: new mongoose.Types.ObjectId(examId) } },
+    { $match: { exam: oid } },
     {
       $group: {
         _id: '$exam',
-        totalQuestions: { $sum: 1 },
-        totalMarks: { $sum: { $ifNull: ['$marks', 0] } },
+        questionCount: { $sum: 1 },
+        marksSum: { $sum: { $ifNull: ['$marks', 0] } },
       },
     },
   ]);
+  return {
+    questionCount: Number(totals?.questionCount) || 0,
+    marksSum: Number(totals?.marksSum) || 0,
+  };
+};
 
+/**
+ * Keep Exam.questions array in sync with Question docs.
+ * Never overwrite planned totalQuestions / totalMarks (those are admin caps).
+ */
+const syncExamQuestionTotals = async (examId) => {
+  const ids = await Question.find({ exam: examId }).select('_id').lean();
   await Exam.updateOne(
     { _id: examId },
-    {
-      $set: {
-        totalQuestions: Number(totals?.totalQuestions) || 0,
-        totalMarks: Number(totals?.totalMarks) || 0,
-      },
-    }
+    { $set: { questions: ids.map((q) => q._id) } },
   );
+};
+
+/** Reject when next count/marks would exceed exam planned caps. */
+const assertWithinExamCaps = (exam, { nextQuestionCount, nextMarksSum }) => {
+  const maxQuestions = Number(exam?.totalQuestions);
+  const maxMarks = Number(exam?.totalMarks);
+  const hasQuestionCap = Number.isFinite(maxQuestions) && maxQuestions > 0;
+  const hasMarksCap = Number.isFinite(maxMarks) && maxMarks > 0;
+
+  if (hasQuestionCap && nextQuestionCount > maxQuestions) {
+    const err = new Error(
+      `Cannot exceed Total Questions (${maxQuestions}). This exam already has questions at the limit or the upload would go over.`,
+    );
+    err.status = 400;
+    err.code = 'EXAM_QUESTION_CAP';
+    throw err;
+  }
+  if (hasMarksCap && nextMarksSum > maxMarks) {
+    const err = new Error(
+      `Cannot exceed Total Marks (${maxMarks}). Reduce question marks or raise the exam Total Marks.`,
+    );
+    err.status = 400;
+    err.code = 'EXAM_MARKS_CAP';
+    throw err;
+  }
 };
 
 function buildQuestionDedupKey({
@@ -905,7 +934,35 @@ export const getAllExams = async (req, res) => {
       .populate('targetSchools', 'schoolName fullName email')
       .sort({ createdAt: -1 });
 
-    const normalizedExams = exams.map((ex) => normalizeExamClassFields(ex));
+    const examIds = exams.map((ex) => ex._id);
+    const actualByExam = new Map();
+    if (examIds.length) {
+      const actualRows = await Question.aggregate([
+        { $match: { exam: { $in: examIds } } },
+        {
+          $group: {
+            _id: '$exam',
+            questionCount: { $sum: 1 },
+            marksSum: { $sum: { $ifNull: ['$marks', 0] } },
+          },
+        },
+      ]);
+      for (const row of actualRows) {
+        actualByExam.set(String(row._id), {
+          actualQuestionCount: Number(row.questionCount) || 0,
+          actualMarksSum: Number(row.marksSum) || 0,
+        });
+      }
+    }
+
+    const normalizedExams = exams.map((ex) => {
+      const base = normalizeExamClassFields(ex);
+      const actual = actualByExam.get(String(ex._id)) || {
+        actualQuestionCount: Array.isArray(ex.questions) ? ex.questions.length : 0,
+        actualMarksSum: 0,
+      };
+      return { ...base, ...actual };
+    });
 
     console.log(`✅ Found ${normalizedExams.length} exams`);
     if (schoolIds) {
@@ -1038,9 +1095,41 @@ export const updateExam = async (req, res) => {
       }
       exam.maxAttempts = parsedMaxAttempts;
     }
-    if (duration) exam.duration = parseInt(duration);
-    if (totalQuestions) exam.totalQuestions = parseInt(totalQuestions);
-    if (totalMarks) exam.totalMarks = parseInt(totalMarks);
+    if (duration !== undefined && duration !== null && String(duration).trim() !== '') {
+      const parsedDuration = parseInt(duration, 10);
+      if (!Number.isFinite(parsedDuration) || parsedDuration < 1) {
+        return res.status(400).json({ success: false, message: 'duration must be a number >= 1' });
+      }
+      exam.duration = parsedDuration;
+    }
+    if (totalQuestions !== undefined && totalQuestions !== null && String(totalQuestions).trim() !== '') {
+      const parsedTQ = parseInt(totalQuestions, 10);
+      if (!Number.isFinite(parsedTQ) || parsedTQ < 1) {
+        return res.status(400).json({ success: false, message: 'totalQuestions must be a number >= 1' });
+      }
+      const actual = await getExamActualTotals(examId);
+      if (parsedTQ < actual.questionCount) {
+        return res.status(400).json({
+          success: false,
+          message: `Total Questions cannot be less than uploaded questions (${actual.questionCount}). Delete questions first or set Total Questions to at least ${actual.questionCount}.`,
+        });
+      }
+      exam.totalQuestions = parsedTQ;
+    }
+    if (totalMarks !== undefined && totalMarks !== null && String(totalMarks).trim() !== '') {
+      const parsedTM = parseInt(totalMarks, 10);
+      if (!Number.isFinite(parsedTM) || parsedTM < 1) {
+        return res.status(400).json({ success: false, message: 'totalMarks must be a number >= 1' });
+      }
+      const actual = await getExamActualTotals(examId);
+      if (parsedTM < actual.marksSum) {
+        return res.status(400).json({
+          success: false,
+          message: `Total Marks cannot be less than uploaded question marks (${actual.marksSum}). Lower question marks or set Total Marks to at least ${actual.marksSum}.`,
+        });
+      }
+      exam.totalMarks = parsedTM;
+    }
     if (instructions !== undefined) exam.instructions = instructions?.trim() || '';
     if (startDate) exam.startDate = new Date(startDate);
     if (endDate) exam.endDate = new Date(endDate);
@@ -1345,16 +1434,27 @@ export const addQuestion = async (req, res) => {
 
     if (duplicateQuestion && replaceDuplicate) {
       await Question.findByIdAndDelete(duplicateQuestion._id);
-      const duplicateMarks = Number(duplicateQuestion.marks) || 0;
       await Exam.updateOne(
         { _id: examId },
         buildSafeRemoveQuestionPipeline({
           questionId: duplicateQuestion._id,
-          totalQuestionsDelta: -1,
-          totalMarksDelta: -duplicateMarks,
         })
       );
       console.log('♻️ Replacing duplicate question:', duplicateQuestion._id);
+    }
+
+    const actual = await getExamActualTotals(examId);
+    try {
+      assertWithinExamCaps(exam, {
+        nextQuestionCount: actual.questionCount + 1,
+        nextMarksSum: actual.marksSum + marksValue,
+      });
+    } catch (capErr) {
+      return res.status(capErr.status || 400).json({
+        success: false,
+        message: capErr.message,
+        code: capErr.code,
+      });
     }
 
     const parsedDisplayOrder = Number(rawDisplayOrder);
@@ -1406,8 +1506,6 @@ export const addQuestion = async (req, res) => {
       { _id: examId },
       buildSafeAppendQuestionsPipeline({
         questionIds: [question._id],
-        totalQuestionsDelta: 1,
-        totalMarksDelta: marksValue,
       })
     );
     await syncExamQuestionTotals(examId);
@@ -1871,6 +1969,7 @@ export const bulkUploadQuestions = async (req, res) => {
     // at the end (instead of one $push per question).
     const newQuestionIdsToPush = [];
     let nextOrder = await nextQuestionDisplayOrder(Question, examId);
+    let runningActual = await getExamActualTotals(examId);
 
     // Process each data row
     for (let i = 1; i < lines.length; i++) {
@@ -2041,6 +2140,16 @@ export const bulkUploadQuestions = async (req, res) => {
           marks = parsedMarks;
         }
 
+        try {
+          assertWithinExamCaps(exam, {
+            nextQuestionCount: runningActual.questionCount + 1,
+            nextMarksSum: runningActual.marksSum + marks,
+          });
+        } catch (capErr) {
+          errors.push(`Row ${i + 1}: ${capErr.message}`);
+          continue;
+        }
+
         const negativeMarksRaw = getRowValue('negativemarks', 'negative_marks', 'negativeMarks');
         let negativeMarks = 0;
         if (negativeMarksRaw !== '') {
@@ -2144,6 +2253,10 @@ export const bulkUploadQuestions = async (req, res) => {
           seenQuestionKeys.add(questionKey);
         }
         newQuestionIdsToPush.push(newQuestion._id);
+        runningActual = {
+          questionCount: runningActual.questionCount + 1,
+          marksSum: runningActual.marksSum + marks,
+        };
 
         createdQuestions.push({
           id: newQuestion._id,
@@ -2158,22 +2271,13 @@ export const bulkUploadQuestions = async (req, res) => {
       }
     }
 
-    // Attach all newly-created questions to the exam in a single update (and
-    // keep Exam.totalQuestions / Exam.totalMarks consistent).
+    // Attach all newly-created questions to the exam in a single update.
+    // Planned totalQuestions / totalMarks caps are left unchanged.
     if (newQuestionIdsToPush.length > 0) {
-      const addedMarks = createdQuestions.length
-        ? (await Question.find(
-            { _id: { $in: newQuestionIdsToPush } },
-            { marks: 1 }
-          ).lean()).reduce((sum, q) => sum + (Number(q?.marks) || 0), 0)
-        : 0;
-
       await Exam.updateOne(
         { _id: examId },
         buildSafeAppendQuestionsPipeline({
           questionIds: newQuestionIdsToPush,
-          totalQuestionsDelta: newQuestionIdsToPush.length,
-          totalMarksDelta: addedMarks,
         })
       );
       await syncExamQuestionTotals(examId);
@@ -2297,6 +2401,7 @@ export const updateQuestion = async (req, res) => {
       questionText,
     } = req.body || {};
 
+    let orderMove = null;
     if (displayOrder !== undefined) {
       const n = Number(displayOrder);
       if (!Number.isFinite(n) || n < 1) {
@@ -2305,11 +2410,20 @@ export const updateQuestion = async (req, res) => {
           message: 'displayOrder must be a number >= 1',
         });
       }
-      question.displayOrder = Math.floor(n);
+      // Insert-style move: shift neighbors so orders stay unique 1..N (no collisions / "missing" Qs).
+      orderMove = await moveQuestionToDisplayOrder(Question, examId, questionId, Math.floor(n));
+    }
+
+    // Re-load after possible reorder so later field updates apply to the same doc.
+    const questionToUpdate = orderMove?.moved
+      ? await Question.findOne({ _id: questionId, exam: examId })
+      : question;
+    if (!questionToUpdate) {
+      return res.status(404).json({ success: false, message: 'Question not found' });
     }
 
     if (sectionHeading !== undefined) {
-      question.sectionHeading = String(sectionHeading || '').trim();
+      questionToUpdate.sectionHeading = String(sectionHeading || '').trim();
     }
 
     if (subject !== undefined) {
@@ -2330,56 +2444,79 @@ export const updateQuestion = async (req, res) => {
           message: `Subject "${normalized}" is not allowed for this exam`,
         });
       }
-      question.subject = normalized;
-      if (sectionHeading === undefined && !String(question.sectionHeading || '').trim()) {
-        question.sectionHeading = subjectSectionLabel(normalized);
+      questionToUpdate.subject = normalized;
+      if (sectionHeading === undefined && !String(questionToUpdate.sectionHeading || '').trim()) {
+        questionToUpdate.sectionHeading = subjectSectionLabel(normalized);
       }
     }
 
     if (chapter !== undefined) {
-      question.chapter = String(chapter || '').trim() || 'General';
+      questionToUpdate.chapter = String(chapter || '').trim() || 'General';
     }
     if (marks !== undefined) {
       const m = Number(marks);
       if (!Number.isFinite(m) || m < 0) {
         return res.status(400).json({ success: false, message: 'Invalid marks' });
       }
-      question.marks = m;
+      const actual = await getExamActualTotals(examId);
+      const oldMarks = Number(questionToUpdate.marks) || 0;
+      try {
+        assertWithinExamCaps(exam, {
+          nextQuestionCount: actual.questionCount,
+          nextMarksSum: actual.marksSum - oldMarks + m,
+        });
+      } catch (capErr) {
+        return res.status(capErr.status || 400).json({
+          success: false,
+          message: capErr.message,
+          code: capErr.code,
+        });
+      }
+      questionToUpdate.marks = m;
     }
     if (negativeMarks !== undefined) {
       const nm = Number(negativeMarks);
       if (!Number.isFinite(nm) || nm < 0) {
         return res.status(400).json({ success: false, message: 'Invalid negativeMarks' });
       }
-      question.negativeMarks = nm;
+      questionToUpdate.negativeMarks = nm;
     }
     if (explanation !== undefined) {
-      question.explanation = String(explanation || '').trim() || undefined;
+      questionToUpdate.explanation = String(explanation || '').trim() || undefined;
     }
     if (questionText !== undefined) {
       const text = String(questionText || '').trim();
-      if (!text && !question.questionImage) {
+      if (!text && !questionToUpdate.questionImage) {
         return res.status(400).json({
           success: false,
           message: 'Either question text or image is required',
         });
       }
-      question.questionText = text || undefined;
+      questionToUpdate.questionText = text || undefined;
     }
 
-    await question.save();
+    await questionToUpdate.save();
     if (marks !== undefined) {
       await syncExamQuestionTotals(examId);
     }
 
+    const refreshed = orderMove?.questions?.length
+      ? await Question.find({ exam: examId }).sort(QUESTION_LIST_SORT)
+      : null;
+    const latest = refreshed?.find((q) => String(q._id) === String(questionId)) || questionToUpdate;
+
     return res.json({
       success: true,
-      message: 'Question updated successfully',
-      data: question,
+      message: orderMove && orderMove.from !== orderMove.to
+        ? `Question moved from Q${orderMove.from} to Q${orderMove.to}; other questions shifted`
+        : 'Question updated successfully',
+      data: latest,
+      questions: refreshed || undefined,
     });
   } catch (error) {
     console.error('❌ updateQuestion error:', error);
-    return res.status(500).json({
+    const status = error.status || 500;
+    return res.status(status).json({
       success: false,
       message: error.message || 'Failed to update question',
     });
@@ -2467,8 +2604,6 @@ export const deleteQuestion = async (req, res) => {
       { _id: examId },
       buildSafeRemoveQuestionPipeline({
         questionId: new mongoose.Types.ObjectId(questionId),
-        totalQuestionsDelta: -1,
-        totalMarksDelta: -(Number(question.marks) || 0),
       }),
     );
     await syncExamQuestionTotals(examId);
@@ -2505,8 +2640,7 @@ export const deleteAllQuestions = async (req, res) => {
       {
         $set: {
           questions: [],
-          totalQuestions: 0,
-          totalMarks: 0,
+          // Keep planned Total Questions / Total Marks caps; only clear question refs.
         },
       },
     );

@@ -38,21 +38,88 @@ export async function nextQuestionDisplayOrder(QuestionModel, examId) {
 }
 
 /**
- * Backfill displayOrder for questions missing it (0 / null / undefined),
- * preserving current createdAt order. Safe to call before listing.
+ * Backfill / heal displayOrder: missing/invalid values or duplicate numbers.
+ * Renumbers densely 1..N in current sort order. Safe to call before listing.
  */
 export async function ensureExamQuestionDisplayOrders(QuestionModel, examId) {
   const rows = await QuestionModel.find({ exam: examId })
-    .sort({ createdAt: 1, _id: 1 })
+    .sort({ displayOrder: 1, createdAt: 1, _id: 1 })
     .select('_id displayOrder')
     .lean();
-  const needs = rows.some((r) => !Number(r.displayOrder) || Number(r.displayOrder) < 1);
-  if (!needs || rows.length === 0) return;
-  const ops = rows.map((r, idx) => ({
+  if (rows.length === 0) return;
+
+  const orders = rows.map((r) => Number(r.displayOrder) || 0);
+  const hasInvalid = orders.some((o) => o < 1);
+  const hasDupes = new Set(orders).size !== orders.length;
+  const notDense = orders.some((o, i) => o !== i + 1);
+  if (!hasInvalid && !hasDupes && !notDense) return;
+
+  // Prefer createdAt order when repairing broken/missing orders so we don't
+  // scramble relative history; keep displayOrder sort when only densifying gaps/dupes.
+  const ordered = hasInvalid
+    ? await QuestionModel.find({ exam: examId })
+        .sort({ createdAt: 1, _id: 1 })
+        .select('_id')
+        .lean()
+    : rows;
+
+  const ops = ordered.map((r, idx) => ({
     updateOne: {
       filter: { _id: r._id },
       update: { $set: { displayOrder: idx + 1, updatedAt: new Date() } },
     },
   }));
   if (ops.length) await QuestionModel.bulkWrite(ops);
+}
+
+/**
+ * Move one question to a 1-based display position and shift neighbors.
+ * Example: move #80 → #1 shifts old 1..79 up by one. Move #70 → #35 shifts 35..69 up by one.
+ * Always renumbers densely 1..N. Returns sorted questions + the moved doc.
+ */
+export async function moveQuestionToDisplayOrder(QuestionModel, examId, questionId, targetOrder) {
+  await ensureExamQuestionDisplayOrders(QuestionModel, examId);
+
+  const rows = await QuestionModel.find({ exam: examId })
+    .sort(QUESTION_LIST_SORT)
+    .select('_id')
+    .lean();
+
+  if (!rows.length) {
+    return { questions: [], moved: null, from: null, to: null };
+  }
+
+  const fromIndex = rows.findIndex((r) => String(r._id) === String(questionId));
+  if (fromIndex < 0) {
+    const err = new Error('Question not found');
+    err.status = 404;
+    throw err;
+  }
+
+  let toIndex = Math.floor(Number(targetOrder)) - 1;
+  if (!Number.isFinite(toIndex) || toIndex < 0) toIndex = 0;
+  if (toIndex >= rows.length) toIndex = rows.length - 1;
+
+  const orderedIds = rows.map((r) => r._id);
+  if (fromIndex !== toIndex) {
+    const [item] = orderedIds.splice(fromIndex, 1);
+    orderedIds.splice(toIndex, 0, item);
+  }
+
+  const ops = orderedIds.map((id, idx) => ({
+    updateOne: {
+      filter: { _id: id, exam: examId },
+      update: { $set: { displayOrder: idx + 1, updatedAt: new Date() } },
+    },
+  }));
+  if (ops.length) await QuestionModel.bulkWrite(ops);
+
+  const questions = await QuestionModel.find({ exam: examId }).sort(QUESTION_LIST_SORT);
+  const moved = questions.find((q) => String(q._id) === String(questionId)) || null;
+  return {
+    questions,
+    moved,
+    from: fromIndex + 1,
+    to: toIndex + 1,
+  };
 }
