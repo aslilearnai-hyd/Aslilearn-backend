@@ -658,7 +658,10 @@ function buildQuestionDedupKey({
 }) {
   const textKey = String(questionText || '').trim().toLowerCase();
   const imageKey = String(questionImage || '').trim();
-  const contentKey = textKey || imageKey;
+  // Use BOTH text and image. Image questions often share the same/empty caption;
+  // `text || image` falsely treated different figures as duplicates and
+  // "replace duplicate" deleted the previous question (e.g. Q14 removed when adding Q15).
+  const contentKey = `${textKey}||${imageKey}`;
   return [String(examId), String(subject || '').trim().toLowerCase(), String(questionType || '').trim().toLowerCase(), contentKey].join('::');
 }
 
