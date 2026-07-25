@@ -26,6 +26,7 @@ import {
 import {
   resolveAiToolTopicTaxonomy,
 } from '../utils/ai-tool-topic-taxonomy.js';
+import { canonicalizeGeneratorSubtopic } from '../utils/generator-subtopic-label.js';
 import {
   getAiGeneratorVariantAngle,
   getAiGeneratorVariantScenario,
@@ -313,9 +314,11 @@ export function groupAiGeneratorRecords(items) {
       subjectNode.topics.push(topicNode);
     }
 
-    let subtopicNode = topicNode.subtopics.find((x) => x.subtopicName === record.subtopic);
+    // Merge empty / "whole-chapter" / joined multi-lists into one Whole chapter bucket.
+    const subtopicKey = canonicalizeGeneratorSubtopic(record.subtopic);
+    let subtopicNode = topicNode.subtopics.find((x) => x.subtopicName === subtopicKey);
     if (!subtopicNode) {
-      subtopicNode = { subtopicName: record.subtopic, records: [] };
+      subtopicNode = { subtopicName: subtopicKey, records: [] };
       topicNode.subtopics.push(subtopicNode);
     }
 
@@ -327,7 +330,7 @@ export function groupAiGeneratorRecords(items) {
       className: record.classLabel,
       subjectName: record.subject,
       topicName: record.topic || '',
-      subtopicName: record.subtopic,
+      subtopicName: subtopicKey,
       generatedContent: record.generatedContent || record.content || '',
       createdAt: record.createdAt,
       updatedAt: record.updatedAt,
@@ -1239,23 +1242,34 @@ export async function generateBatchContent(req, res) {
     );
     const subjectName = normalizeText(req.body.subjectName || req.body.subject);
     const topicName = normalizeText(req.body.topicName || req.body.topic);
-    // Multi-subtopic (combined paper): accept an array; fall back to single subtopic.
+    // Multi-subtopic: accept an array. Never join into the storage name (that created
+    // duplicate "Whole chapter" buckets alongside real joined labels).
     const subTopics = (Array.isArray(req.body.subTopics) ? req.body.subTopics : [])
       .map((s) => normalizeText(s))
       .filter(Boolean);
-    const subtopicName =
-      normalizeText(req.body.subtopicName || req.body.subTopic || req.body.subtopic) ||
-      subTopics.join(', ');
+    const rawSubtopic =
+      normalizeText(req.body.subtopicName || req.body.subTopic || req.body.subtopic) || '';
+    const expandSubtopics = req.body.expandSubtopics === true;
+    const includeWholeChapter =
+      req.body.includeWholeChapter === true || req.body.chapterScope === true;
+    const combineSubtopics = req.body.combineSubtopics !== false && !expandSubtopics;
+
     const batchSize = Number.parseInt(String(req.body.batchSize ?? '25'), 10);
     const forceGenerate =
       req.body.forceGenerate === true ||
       req.body.forceGenerateNew === true ||
       req.body.extraParams?.forceGenerate === true;
 
-    if (!toolSlug || !toolDisplayName || !className || !subjectName || !subtopicName) {
+    if (!toolSlug || !toolDisplayName || !className || !subjectName) {
       return res.status(400).json({
         success: false,
-        message: 'toolSlug, toolName, className, subjectName, and subtopicName are required.',
+        message: 'toolSlug, toolName, className, and subjectName are required.',
+      });
+    }
+    if (!expandSubtopics && !rawSubtopic && subTopics.length === 0) {
+      return res.status(400).json({
+        success: false,
+        message: 'subtopicName is required (or pass subTopics with expandSubtopics).',
       });
     }
     if (!isValidAiToolSlug(toolSlug)) {
@@ -1265,32 +1279,107 @@ export async function generateBatchContent(req, res) {
       });
     }
 
+    const baseParams = {
+      toolSlug,
+      toolName: toolDisplayName,
+      board,
+      productCategory:
+        req.body.productCategory ?? req.body.extraParams?.productCategory ?? '',
+      className,
+      subjectName,
+      topicName,
+      qualityTier: normalizeText(req.body.qualityTier),
+      extraParams: req.body.extraParams,
+      reviewStatus: req.body.reviewStatus,
+      forceGenerate,
+      forceGenerateNew: forceGenerate,
+      forceUnlock: req.body.forceUnlock === true,
+    };
+    const runOpts = {
+      batchSize: Number.isFinite(batchSize) && batchSize > 0 ? batchSize : 25,
+      reqUser: {
+        userId: req.userId,
+        name: getRequestUserName(req),
+      },
+    };
+
+    // Expand: one batch per real subtopic (+ optional Whole chapter) so content
+    // is filed under the correct SUBTOPIC cards — not all under Whole chapter.
+    if (expandSubtopics && (subTopics.length > 0 || includeWholeChapter)) {
+      const targets = [];
+      for (const st of subTopics) {
+        if (st && !/^whole\s*chapter$/i.test(st)) targets.push({ subtopicName: st, chapterScope: false });
+      }
+      if (includeWholeChapter || rawSubtopic === '' || /^whole\s*chapter$/i.test(rawSubtopic)) {
+        targets.push({ subtopicName: 'Whole chapter', chapterScope: true, subTopics });
+      }
+      if (targets.length === 0) {
+        return res.status(400).json({
+          success: false,
+          message: 'expandSubtopics needs at least one subtopic or includeWholeChapter.',
+        });
+      }
+
+      const merged = {
+        success: true,
+        savedCount: 0,
+        failedCount: 0,
+        batchSize: 0,
+        records: [],
+        failures: [],
+        expanded: targets.map((t) => t.subtopicName),
+      };
+      for (const target of targets) {
+        const result = await generateBatchAndSave(
+          {
+            ...baseParams,
+            subtopicName: target.subtopicName,
+            chapterScope: target.chapterScope === true,
+            combineSubtopics: false,
+            ...(target.subTopics?.length ? { subTopics: target.subTopics } : {}),
+          },
+          runOpts,
+        );
+        merged.savedCount += Number(result.savedCount) || 0;
+        merged.failedCount += Number(result.failedCount) || 0;
+        merged.batchSize += Number(result.batchSize) || 0;
+        if (Array.isArray(result.records)) merged.records.push(...result.records);
+        if (Array.isArray(result.failures)) merged.failures.push(...result.failures);
+        if (result.locked) {
+          return res.status(409).json({
+            success: false,
+            message: result.message || 'Generation already in progress.',
+            data: merged,
+          });
+        }
+      }
+      return res.json({
+        success: merged.savedCount > 0,
+        message:
+          merged.savedCount > 0
+            ? `Expanded generation saved ${merged.savedCount} record(s) across ${targets.length} subtopic scope(s).`
+            : 'Expanded generation failed for all subtopic scopes.',
+        data: merged,
+      });
+    }
+
+    const subtopicName = rawSubtopic || (subTopics.length > 1 ? 'Whole chapter' : subTopics[0] || '');
+    if (!subtopicName) {
+      return res.status(400).json({
+        success: false,
+        message: 'toolSlug, toolName, className, subjectName, and subtopicName are required.',
+      });
+    }
+
     const result = await generateBatchAndSave(
       {
-        toolSlug,
-        toolName: toolDisplayName,
-        board,
-        productCategory:
-          req.body.productCategory ?? req.body.extraParams?.productCategory ?? '',
-        className,
-        subjectName,
-        topicName,
+        ...baseParams,
         subtopicName,
         ...(subTopics.length > 1 ? { subTopics } : {}),
-        qualityTier: normalizeText(req.body.qualityTier),
-        extraParams: req.body.extraParams,
-        reviewStatus: req.body.reviewStatus,
-        forceGenerate,
-        forceGenerateNew: forceGenerate,
-        forceUnlock: req.body.forceUnlock === true,
+        combineSubtopics,
+        chapterScope: req.body.chapterScope === true,
       },
-      {
-        batchSize: Number.isFinite(batchSize) && batchSize > 0 ? batchSize : 25,
-        reqUser: {
-          userId: req.userId,
-          name: getRequestUserName(req),
-        },
-      },
+      runOpts,
     );
 
     if (result.locked) {

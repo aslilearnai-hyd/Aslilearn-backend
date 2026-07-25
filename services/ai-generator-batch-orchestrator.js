@@ -306,8 +306,17 @@ export async function generateBatchAndSave(params, opts = {}) {
   )
     .map((s) => String(s || '').trim())
     .filter(Boolean);
-  const combinedSubtopicLabel =
-    subTopicList.length > 1 ? 'Whole chapter' : subtopicName;
+  const { canonicalizeGeneratorSubtopic } = await import('../utils/generator-subtopic-label.js');
+  // Combined multi-subtopic papers + whole-chapter scope share one storage label.
+  // Single-subtopic runs keep their real name (never collapse into Whole chapter).
+  const combinedSubtopicLabel = canonicalizeGeneratorSubtopic(subtopicName, {
+    chapterScope: params.chapterScope === true,
+    subTopicList: params.combineSubtopics === false ? [] : subTopicList,
+    forceWholeChapter:
+      params.combineSubtopics === true && subTopicList.length > 1
+        ? true
+        : undefined,
+  });
 
   const toolDisplayName = String(params.toolName || params.toolDisplayName || toolSlug).trim();
   const qualityTierSettings = resolveQualityTierSettings(
@@ -863,7 +872,7 @@ export async function generateBatchAndSave(params, opts = {}) {
 
               topic: topicName,
 
-              subtopic: subtopicName,
+              subtopic: combinedSubtopicLabel,
 
               section: '',
 

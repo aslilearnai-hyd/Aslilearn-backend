@@ -89,6 +89,9 @@ export async function generateBookBatch(req, res) {
       }
     }
 
+    const expandSubtopics = req.body.expandSubtopics === true;
+    const includeWholeChapter =
+      req.body.includeWholeChapter === true || chapterScope === true || !String(subtopicName || '').trim();
     const normalizedSubTopics = (Array.isArray(subTopics) ? subTopics : [])
       .map((s) => String(s || '').trim())
       .filter(Boolean);
@@ -101,6 +104,172 @@ export async function generateBookBatch(req, res) {
         productCategory ?? extraParams?.productCategory ?? '',
       ) ?? '';
 
+    const runOpts = { reqUser: req.user };
+
+    // Expand: file one batch under each real subtopic (+ whole chapter), instead of
+    // dumping everything into a single "Whole chapter" card.
+    if (expandSubtopics && (normalizedSubTopics.length > 0 || includeWholeChapter)) {
+      const targets = [];
+      for (const st of normalizedSubTopics) {
+        if (st && !/^whole\s*chapter$/i.test(st) && st !== 'whole-chapter') {
+          targets.push({ subtopicName: st, chapterScope: false, subTopics: undefined });
+        }
+      }
+      if (includeWholeChapter || isWholeChapter) {
+        targets.push({
+          subtopicName: '',
+          chapterScope: true,
+          subTopics: normalizedSubTopics,
+        });
+      }
+      if (targets.length === 0) {
+        return res.status(400).json({
+          success: false,
+          message: 'expandSubtopics needs at least one subtopic or whole-chapter scope.',
+        });
+      }
+
+      const useAsync = asyncMode !== false;
+      if (useAsync) {
+        // Sequential expand in one async job so the client still polls a single jobId.
+        const jobMeta = {
+          toolSlug: slug,
+          bookId,
+          topicName,
+          subtopicName: 'expand-subtopics',
+        };
+        if (forceUnlock === true) {
+          await forceReleaseBookGeneratorLocks({
+            toolSlug: slug,
+            bookId,
+            subtopicName: '',
+          });
+          cancelBookGeneratorJobsForScope(jobMeta);
+        }
+        const job = createBookGeneratorJob(jobMeta);
+        void runBookGeneratorJob(job.id, async (onProgress) => {
+          const merged = {
+            success: true,
+            savedCount: 0,
+            failedCount: 0,
+            batchSize: 0,
+            records: [],
+            failures: [],
+            expanded: targets.map((t) => (t.chapterScope ? 'Whole chapter' : t.subtopicName)),
+          };
+          for (let i = 0; i < targets.length; i += 1) {
+            const target = targets[i];
+            onProgress?.(
+              `Scope ${i + 1}/${targets.length}: ${target.chapterScope ? 'Whole chapter' : target.subtopicName}…`,
+            );
+            const params = {
+              toolSlug: slug,
+              bookId,
+              board,
+              className,
+              subjectName,
+              topicName,
+              subtopicName: target.subtopicName,
+              chapterScope: target.chapterScope,
+              productCategory: resolvedProductCategory,
+              combineSubtopics: false,
+              ...(target.subTopics?.length ? { subTopics: target.subTopics } : {}),
+              batchSize,
+              useBookKnowledge,
+              qualityTier,
+              extraParams: {
+                ...(extraParams && typeof extraParams === 'object' ? extraParams : {}),
+                ...(resolvedProductCategory ? { productCategory: resolvedProductCategory } : {}),
+              },
+              forceUnlock: forceUnlock === true && i === 0,
+            };
+            const result = await generateBookBatchAndSave(params, { reqUser: req.user, onProgress });
+            merged.savedCount += Number(result.savedCount) || 0;
+            merged.failedCount += Number(result.failedCount) || 0;
+            merged.batchSize += Number(result.batchSize) || 0;
+            if (Array.isArray(result.records)) merged.records.push(...result.records);
+            if (Array.isArray(result.failures)) merged.failures.push(...result.failures);
+            if (result.locked) {
+              merged.success = false;
+              merged.message = result.message || 'Generation locked.';
+              return merged;
+            }
+          }
+          merged.success = merged.savedCount > 0;
+          merged.message =
+            merged.savedCount > 0
+              ? `Expanded book generation: ${merged.savedCount} saved across ${targets.length} scope(s).`
+              : 'Expanded book generation failed for all scopes.';
+          return merged;
+        });
+
+        return res.status(202).json({
+          success: true,
+          async: true,
+          jobId: job.id,
+          message: `Book generation started for ${targets.length} subtopic scope(s). Poll job status until complete.`,
+          data: { jobId: job.id, status: 'queued', expanded: targets.length },
+        });
+      }
+
+      // Sync expand path
+      const merged = {
+        success: true,
+        savedCount: 0,
+        failedCount: 0,
+        batchSize: 0,
+        records: [],
+        failures: [],
+        expanded: targets.map((t) => (t.chapterScope ? 'Whole chapter' : t.subtopicName)),
+      };
+      for (const target of targets) {
+        const params = {
+          toolSlug: slug,
+          bookId,
+          board,
+          className,
+          subjectName,
+          topicName,
+          subtopicName: target.subtopicName,
+          chapterScope: target.chapterScope,
+          productCategory: resolvedProductCategory,
+          combineSubtopics: false,
+          ...(target.subTopics?.length ? { subTopics: target.subTopics } : {}),
+          batchSize,
+          useBookKnowledge,
+          qualityTier,
+          extraParams: {
+            ...(extraParams && typeof extraParams === 'object' ? extraParams : {}),
+            ...(resolvedProductCategory ? { productCategory: resolvedProductCategory } : {}),
+          },
+          forceUnlock: forceUnlock === true,
+        };
+        const result = await generateBookBatchAndSave(params, runOpts);
+        merged.savedCount += Number(result.savedCount) || 0;
+        merged.failedCount += Number(result.failedCount) || 0;
+        merged.batchSize += Number(result.batchSize) || 0;
+        if (Array.isArray(result.records)) merged.records.push(...result.records);
+        if (Array.isArray(result.failures)) merged.failures.push(...result.failures);
+        if (result.locked) {
+          return res.status(409).json({
+            success: false,
+            locked: true,
+            message: result.message || 'Generation already in progress.',
+            data: merged,
+          });
+        }
+      }
+      merged.success = merged.savedCount > 0;
+      return res.status(merged.success ? 200 : 502).json({
+        success: merged.success,
+        data: merged,
+        message:
+          merged.savedCount > 0
+            ? `Expanded book generation: ${merged.savedCount} saved across ${targets.length} scope(s).`
+            : 'Expanded book generation failed for all scopes.',
+      });
+    }
+
     const params = {
       toolSlug: slug,
       bookId,
@@ -111,6 +280,7 @@ export async function generateBookBatch(req, res) {
       subtopicName: isWholeChapter ? '' : subtopicName,
       chapterScope: isWholeChapter,
       productCategory: resolvedProductCategory,
+      combineSubtopics: req.body.combineSubtopics !== false,
       ...(normalizedSubTopics.length ? { subTopics: normalizedSubTopics } : {}),
       batchSize,
       useBookKnowledge,
