@@ -40,6 +40,17 @@ export function applyProductCategoryMongoFilter(filter, productCategory) {
       ],
     });
   }
+  // Legacy: early IIT generations were saved without a track and were Alpha-only.
+  // When looking up ALPHA, also serve untagged (empty/missing) records.
+  if (normalized === 'ALPHA') {
+    return mergeMongoFilters(filter, {
+      $or: [
+        { productCategory: 'ALPHA' },
+        { productCategory: { $in: ['', null] } },
+        { productCategory: { $exists: false } },
+      ],
+    });
+  }
   return mergeMongoFilters(filter, { productCategory: normalized });
 }
 
