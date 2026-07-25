@@ -72,8 +72,24 @@ function normalizeBoardFilter(options = {}) {
 }
 
 /**
- * All subject ObjectIds that share the same plain name (MATHS, MATHS_6, MATHS_7).
- * Used to query Content linked to legacy suffixed subjects during migration.
+ * All plain-name spellings that belong to the same subject group
+ * (e.g. maths / math / mathematics).
+ */
+export function subjectGroupAliasNames(nameOrKey) {
+  const groupKey = subjectGroupKey(nameOrKey);
+  const names = new Set([groupKey]);
+  for (const [alias, key] of Object.entries(SUBJECT_GROUP_ALIASES)) {
+    if (key === groupKey) names.add(alias);
+  }
+  const plain = extractPlainSubjectNameForContent(nameOrKey).toLowerCase().trim();
+  if (plain) names.add(plain);
+  return [...names].filter(Boolean);
+}
+
+/**
+ * All subject ObjectIds that share the same subject group
+ * (MATHS, Mathematics, MATHS_6, Mathematics_8, …).
+ * Used to query Content linked to legacy / alternate subject spellings.
  * Pass `board` (string) or `boards` (string[]) to limit sibling lookup by school boards.
  */
 export async function resolveSubjectContentIds(subjectId, options = {}) {
@@ -92,11 +108,18 @@ export async function resolveSubjectContentIds(subjectId, options = {}) {
     return [rootOid];
   }
 
-  const plainEscaped = escapeRegex(plain);
+  const aliases = subjectGroupAliasNames(plain);
+  const nameOr = [];
+  for (const alias of aliases) {
+    const esc = escapeRegex(alias);
+    nameOr.push({ name: new RegExp(`^${esc}$`, 'i') });
+    nameOr.push({ name: new RegExp(`^${esc}_\\d+$`, 'i') });
+  }
+
   const nameQuery = {
     isActive: true,
     name: { $not: /__deleted__/ },
-    $or: [{ name: plain }, { name: new RegExp(`^${plainEscaped}_\\d+$`, 'i') }],
+    $or: nameOr,
   };
   const boardList = normalizeBoardFilter(options);
   if (boardList.length === 1) {
