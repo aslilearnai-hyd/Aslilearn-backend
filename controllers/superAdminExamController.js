@@ -2372,7 +2372,7 @@ export const convertPdfToQuestions = async (req, res) => {
   }
 };
 
-// Update question fields (display order, section heading, subject, etc.)
+// Update question fields (meta + full content: text, options, answer, type, image, etc.)
 export const updateQuestion = async (req, res) => {
   try {
     const { examId, questionId } = req.params;
@@ -2399,7 +2399,21 @@ export const updateQuestion = async (req, res) => {
       negativeMarks,
       explanation,
       questionText,
+      questionImage,
+      questionType,
+      options,
+      correctAnswer,
+      difficulty,
+      questionCategory,
+      conceptType,
     } = req.body || {};
+
+    const contentUpdateRequested =
+      questionText !== undefined ||
+      questionImage !== undefined ||
+      questionType !== undefined ||
+      options !== undefined ||
+      correctAnswer !== undefined;
 
     let orderMove = null;
     if (displayOrder !== undefined) {
@@ -2484,25 +2498,144 @@ export const updateQuestion = async (req, res) => {
     if (explanation !== undefined) {
       questionToUpdate.explanation = String(explanation || '').trim() || undefined;
     }
+    if (difficulty !== undefined) {
+      questionToUpdate.difficulty = String(difficulty || '').trim() || undefined;
+    }
+    if (questionCategory !== undefined) {
+      questionToUpdate.questionCategory = String(questionCategory || '').trim() || undefined;
+    }
+    if (conceptType !== undefined) {
+      questionToUpdate.conceptType = String(conceptType || '').trim() || undefined;
+    }
+
+    if (questionImage !== undefined) {
+      questionToUpdate.questionImage = String(questionImage || '').trim() || null;
+    }
+
     if (questionText !== undefined) {
-      const text = String(questionText || '').trim();
-      if (!text && !questionToUpdate.questionImage) {
+      questionToUpdate.questionText = String(questionText || '').trim() || undefined;
+    }
+
+    const nextTypeRaw =
+      questionType !== undefined
+        ? String(questionType || '').trim().toLowerCase()
+        : String(questionToUpdate.questionType || 'mcq').trim().toLowerCase();
+    const nextType = ['mcq', 'multiple', 'integer'].includes(nextTypeRaw) ? nextTypeRaw : null;
+    if (questionType !== undefined && !nextType) {
+      return res.status(400).json({
+        success: false,
+        message: 'Invalid questionType. Use mcq, multiple, or integer',
+      });
+    }
+    if (nextType) {
+      questionToUpdate.questionType = nextType;
+    }
+
+    // Full content update: reformat options + correctAnswer like addQuestion
+    if (contentUpdateRequested && (options !== undefined || correctAnswer !== undefined || questionType !== undefined)) {
+      const effectiveType = questionToUpdate.questionType;
+      const incomingOptions = options !== undefined ? options : questionToUpdate.options;
+      let formattedCorrectAnswer =
+        correctAnswer !== undefined ? correctAnswer : questionToUpdate.correctAnswer;
+
+      if ((effectiveType === 'mcq' || effectiveType === 'multiple') && (!incomingOptions || incomingOptions.length === 0)) {
         return res.status(400).json({
           success: false,
-          message: 'Either question text or image is required',
+          message: 'Options are required for MCQ and Multiple Choice questions',
         });
       }
-      questionToUpdate.questionText = text || undefined;
+
+      if (effectiveType === 'integer') {
+        formattedCorrectAnswer =
+          typeof formattedCorrectAnswer === 'number'
+            ? formattedCorrectAnswer
+            : parseInt(formattedCorrectAnswer, 10);
+        if (Number.isNaN(formattedCorrectAnswer)) {
+          return res.status(400).json({ success: false, message: 'Invalid integer answer' });
+        }
+      } else if (effectiveType === 'multiple' && Array.isArray(formattedCorrectAnswer)) {
+        formattedCorrectAnswer = formattedCorrectAnswer.map((idx) => {
+          const optionIndex = parseInt(idx, 10);
+          if (!Number.isNaN(optionIndex) && incomingOptions && incomingOptions[optionIndex]) {
+            const opt = incomingOptions[optionIndex];
+            return typeof opt === 'string' ? opt : opt?.text ?? idx;
+          }
+          return idx;
+        });
+        if (formattedCorrectAnswer.length === 0) {
+          formattedCorrectAnswer = correctAnswer;
+        }
+      } else if (effectiveType === 'mcq' && incomingOptions && incomingOptions.length > 0) {
+        const optionIndex = parseInt(formattedCorrectAnswer, 10);
+        if (!Number.isNaN(optionIndex) && incomingOptions[optionIndex]) {
+          const opt = incomingOptions[optionIndex];
+          formattedCorrectAnswer = typeof opt === 'string' ? opt : opt?.text ?? formattedCorrectAnswer;
+        }
+      }
+
+      if (
+        formattedCorrectAnswer === null ||
+        formattedCorrectAnswer === undefined ||
+        (typeof formattedCorrectAnswer === 'string' && formattedCorrectAnswer.trim() === '') ||
+        (Array.isArray(formattedCorrectAnswer) && formattedCorrectAnswer.length === 0)
+      ) {
+        return res.status(400).json({
+          success: false,
+          message: 'Correct answer is required and cannot be empty',
+        });
+      }
+
+      const finalOptions =
+        effectiveType === 'integer'
+          ? []
+          : (incomingOptions || []).map((opt) => {
+              const text = typeof opt === 'string' ? opt : opt?.text ?? '';
+              return { text: String(text), isCorrect: false };
+            }).filter((o) => String(o.text || '').trim() !== '');
+
+      if (effectiveType === 'mcq') {
+        const correctText = String(formattedCorrectAnswer || '').trim().toLowerCase();
+        const idx = finalOptions.findIndex(
+          (o) => String(o.text || '').trim().toLowerCase() === correctText
+        );
+        if (idx >= 0) finalOptions[idx].isCorrect = true;
+      } else if (effectiveType === 'multiple' && Array.isArray(formattedCorrectAnswer)) {
+        const correctSet = new Set(
+          formattedCorrectAnswer.map((t) => String(t).trim().toLowerCase())
+        );
+        finalOptions.forEach((o) => {
+          if (correctSet.has(String(o.text || '').trim().toLowerCase())) {
+            o.isCorrect = true;
+          }
+        });
+      }
+
+      questionToUpdate.options = finalOptions;
+      questionToUpdate.correctAnswer = formattedCorrectAnswer;
     }
+
+    const finalText = String(questionToUpdate.questionText || '').trim();
+    const finalImage = String(questionToUpdate.questionImage || '').trim();
+    if (!finalText && !finalImage) {
+      return res.status(400).json({
+        success: false,
+        message: 'Either question text or image is required',
+      });
+    }
+    questionToUpdate.questionText = finalText || undefined;
+    questionToUpdate.questionImage = finalImage || null;
 
     await questionToUpdate.save();
     if (marks !== undefined) {
       await syncExamQuestionTotals(examId);
+    } else if (contentUpdateRequested) {
+      await syncExamQuestionTotals(examId);
     }
 
-    const refreshed = orderMove?.questions?.length
-      ? await Question.find({ exam: examId }).sort(QUESTION_LIST_SORT)
-      : null;
+    const refreshed =
+      orderMove?.questions?.length || contentUpdateRequested
+        ? await Question.find({ exam: examId }).sort(QUESTION_LIST_SORT)
+        : null;
     const latest = refreshed?.find((q) => String(q._id) === String(questionId)) || questionToUpdate;
 
     return res.json({

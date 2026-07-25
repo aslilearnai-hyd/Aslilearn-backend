@@ -70,6 +70,7 @@ export async function generateBookBatch(req, res) {
       batchSize,
       useBookKnowledge,
       qualityTier,
+      productCategory,
       extraParams,
       forceUnlock,
       async: asyncMode,
@@ -94,6 +95,12 @@ export async function generateBookBatch(req, res) {
     const isWholeChapter =
       chapterScope === true || !String(subtopicName || '').trim();
 
+    const { normalizeTopicProductCategory } = await import('../utils/ai-tool-topic-taxonomy.js');
+    const resolvedProductCategory =
+      normalizeTopicProductCategory(
+        productCategory ?? extraParams?.productCategory ?? '',
+      ) ?? '';
+
     const params = {
       toolSlug: slug,
       bookId,
@@ -103,11 +110,15 @@ export async function generateBookBatch(req, res) {
       topicName,
       subtopicName: isWholeChapter ? '' : subtopicName,
       chapterScope: isWholeChapter,
+      productCategory: resolvedProductCategory,
       ...(normalizedSubTopics.length ? { subTopics: normalizedSubTopics } : {}),
       batchSize,
       useBookKnowledge,
       qualityTier,
-      extraParams,
+      extraParams: {
+        ...(extraParams && typeof extraParams === 'object' ? extraParams : {}),
+        ...(resolvedProductCategory ? { productCategory: resolvedProductCategory } : {}),
+      },
       forceUnlock: forceUnlock === true,
     };
 

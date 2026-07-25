@@ -246,6 +246,11 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
   );
   const topicName = String(params.topicName || '').trim();
   const subtopicName = String(params.subtopicName || '').trim();
+  const { normalizeTopicProductCategory } = await import('../utils/ai-tool-topic-taxonomy.js');
+  const productCategory =
+    normalizeTopicProductCategory(
+      params.productCategory ?? params.extraParams?.productCategory ?? '',
+    ) ?? '';
   const subTopicList = (
     Array.isArray(params.subTopics)
       ? params.subTopics
@@ -279,6 +284,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
     subject: subjectName,
     topic: topicName,
     subtopic: storageSubtopic,
+    productCategory,
     bookId,
     bookTitle: book.title,
   };
@@ -552,6 +558,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                       subject: subjectName,
                       topic: topicName || book.title,
                       subtopic: storageSubtopic,
+                      productCategory: productCategory || undefined,
                       section: '',
                       content: persistContent,
                       generatedContent: persistContent,
@@ -560,6 +567,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                       reviewStatus: params.reviewStatus || 'approved',
                       metadata: {
                         board,
+                        productCategory: productCategory || '',
                         bookId: String(book._id),
                         bookTitle: book.title,
                         useBookKnowledge,
@@ -914,6 +922,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               subject: subjectName,
               topic: topicName,
               subtopic: storageSubtopic,
+              productCategory: productCategory || undefined,
               section: '',
               content: formattedContent,
               generatedContent: formattedContent,
@@ -922,6 +931,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               reviewStatus: params.reviewStatus || 'approved',
               metadata: {
                 board,
+                productCategory: productCategory || '',
                 bookId: String(book._id),
                 bookTitle: book.title,
                 useBookKnowledge,

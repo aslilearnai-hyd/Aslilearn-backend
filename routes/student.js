@@ -5121,21 +5121,11 @@ router.post('/ai/tool', async (req, res) => {
     }
 
     const subTopicNormalized = String(params.subTopic || params.subtopic || '').trim().replace(/\s+/g, ' ');
-
-    const toolsRequiringSubTopic = [
-      'smart-study-guide-generator',
-      'concept-breakdown-explainer',
-      'smart-qa-practice-generator',
-      'chapter-summary-creator',
-      'key-points-formula-extractor',
-      'quick-assignment-builder',
-    ];
-
-    if (toolsRequiringSubTopic.includes(toolType) && !subTopicNormalized) {
-      return res.status(400).json({
-        success: false,
-        message: 'Sub topic is required for this tool type.',
-      });
+    const { isWholeChapterSubtopic } = await import('../utils/questionComposition.js');
+    if (isWholeChapterSubtopic(subTopicNormalized)) {
+      params.chapterScope = true;
+      params.subTopic = '';
+      params.subtopic = '';
     }
 
     const { resolveValidCurriculumSubject, resolveClassDisplay } = await import(

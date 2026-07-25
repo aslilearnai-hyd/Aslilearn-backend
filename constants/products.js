@@ -8,7 +8,7 @@ export const PRODUCT_IIT = 'IIT';
 export const PRODUCTS = [PRODUCT_IIT];
 
 /** Default seeded tracks (always present). */
-export const IIT_CATEGORIES = ['ALPHA', 'BETA', 'GAMMA'];
+export const IIT_CATEGORIES = ['ALPHA', 'BETA', 'GAMMA', 'DELTA'];
 
 export const PRODUCT_CATEGORY_NONE = '';
 
@@ -27,6 +27,7 @@ export async function ensureDefaultProductCategories() {
     { code: 'ALPHA', label: 'Alpha', sortOrder: 1, description: 'IIT Alpha curriculum track' },
     { code: 'BETA', label: 'Beta', sortOrder: 2, description: 'IIT Beta curriculum track' },
     { code: 'GAMMA', label: 'Gamma', sortOrder: 3, description: 'IIT Gamma curriculum track' },
+    { code: 'DELTA', label: 'Delta', sortOrder: 4, description: 'IIT Delta curriculum track' },
   ];
   for (const row of defaults) {
     await ProductCategory.findOneAndUpdate(
@@ -40,6 +41,12 @@ export async function ensureDefaultProductCategories() {
           isActive: true,
           isBuiltIn: true,
           sortOrder: row.sortOrder,
+        },
+        $set: {
+          label: row.label,
+          description: row.description,
+          sortOrder: row.sortOrder,
+          isBuiltIn: true,
         },
       },
       { upsert: true, new: true }
@@ -146,9 +153,9 @@ export function schoolCanAccessProductCategory(schoolIitCategories, productCateg
   return allowed.includes(cat);
 }
 
-/** @deprecated — use ensureDefaultProductCategories */
+/** @deprecated — Delta is seeded as a built-in track; custom codes still work via Products. */
 export const IIT_FUTURE_CATEGORY_SLOT = {
-  id: 'FUTURE',
-  label: 'Future curriculum',
-  enabled: false,
+  id: 'DELTA',
+  label: 'Delta',
+  enabled: true,
 };
