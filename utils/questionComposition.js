@@ -87,7 +87,7 @@ export function formatQuestionCompositionPromptLine(composition, total) {
   return `QUESTION COMPOSITION (exact counts — generate exactly these, total ${total}): ${parts.join('; ')}. Do not add extra question types beyond what is requested. If a count is 0, omit that type entirely.`;
 }
 
-/** Tools that allow chapter-wide generation without a subtopic. */
+/** Tools that accept question-composition counts (MCQ/VSAQ/…) and chapter-wide scope. */
 export const CHAPTER_SCOPE_OPTIONAL_SUBTOPIC_TOOLS = new Set([
   'worksheet-mcq-generator',
   'exam-question-paper-generator',
@@ -95,4 +95,18 @@ export const CHAPTER_SCOPE_OPTIONAL_SUBTOPIC_TOOLS = new Set([
 
 export function isChapterScopeTool(toolType) {
   return CHAPTER_SCOPE_OPTIONAL_SUBTOPIC_TOOLS.has(String(toolType || '').trim());
+}
+
+/** True when the user selected whole-chapter scope (no specific subtopic). */
+export function isWholeChapterSubtopic(value) {
+  const raw = String(value ?? '').trim();
+  if (!raw) return true;
+  const norm = raw.toLowerCase().replace(/[_-]+/g, ' ').replace(/\s+/g, ' ');
+  return (
+    norm === 'whole chapter' ||
+    norm === 'wholechapter' ||
+    norm === '__whole_chapter__' ||
+    norm === 'all subtopics' ||
+    norm === 'entire chapter'
+  );
 }

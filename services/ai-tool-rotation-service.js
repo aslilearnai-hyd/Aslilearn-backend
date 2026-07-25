@@ -207,7 +207,17 @@ function buildAttemptFilters({ classLabel, subject, topic, subtopic, board, prod
   const exactFilter = mergeMongoFilters(
     bf,
     normalizedTopic ? buildTopicFieldMongoFilter(normalizedTopic) : { topic: '' },
-    normalizedSubtopic ? buildSubtopicFieldMongoFilter(normalizedSubtopic) : { subtopic: '' },
+    normalizedSubtopic
+      ? buildSubtopicFieldMongoFilter(normalizedSubtopic)
+      : {
+          // Match empty subtopic OR Super Admin "Whole chapter" saves
+          $or: [
+            { subtopic: '' },
+            { subtopic: { $exists: false } },
+            { subtopic: null },
+            { subtopic: { $regex: /^whole[\s_-]*chapter$/i } },
+          ],
+        },
   );
 
   const topicOnlyFilter = mergeMongoFilters(

@@ -407,12 +407,14 @@ export const createTeacherTool = async (req, res) => {
 
     const rawSubTopic =
       params.subTopic != null && params.subTopic !== '' ? String(params.subTopic) : '';
-    const { isChapterScopeTool } = await import('../utils/questionComposition.js');
-    if (!normalizeTopicSub(rawSubTopic) && !isChapterScopeTool(toolType)) {
-      return res.status(400).json({
-        success: false,
-        message: 'Sub topic is required.',
-      });
+    const { isChapterScopeTool, isWholeChapterSubtopic } = await import('../utils/questionComposition.js');
+
+    // All tools allow whole-chapter scope (empty / "Whole chapter" subtopic) so
+    // Super Admin generations stored as "Whole chapter" are usable by teachers/students.
+    if (isWholeChapterSubtopic(rawSubTopic)) {
+      params.chapterScope = true;
+      params.subTopic = '';
+      params.subtopic = '';
     }
 
     if (isChapterScopeTool(toolType)) {
@@ -422,10 +424,6 @@ export const createTeacherTool = async (req, res) => {
       const { composition, total } = normalizeQuestionComposition(params);
       params.questionComposition = composition;
       params.questionCount = total;
-      if (!normalizeTopicSub(rawSubTopic)) {
-        params.chapterScope = true;
-        params.subTopic = '';
-      }
     }
 
     const productCategoryRaw = params.productCategory || params.iitCategory || '';
@@ -599,8 +597,8 @@ export const createTeacherTool = async (req, res) => {
     return res.status(404).json({
       success: false,
       code: 'AI_TOOL_DATA_NOT_FOUND',
-      message: isChapterScopeTool(toolType)
-        ? 'No matching AI Tool Data found for the selected class, subject, and topic (chapter). Please ask Super Admin to add this mapping in AI Tool Generations.'
+      message: !subtopicForStore
+        ? 'No matching AI Tool Data found for the selected class, subject, and topic (whole chapter). Please ask Super Admin to add this mapping in AI Tool Generations.'
         : 'No matching AI Tool Data found for the selected class, subject, topic, and sub topic. Please ask Super Admin to add this mapping in AI Tool Generations.',
     });
   } catch (error) {
