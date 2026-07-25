@@ -23,12 +23,13 @@ const router = express.Router();
 
 router.use(verifyToken);
 router.use(verifySuperAdmin);
-router.use(aiHeavyLimiter);
 
-router.post('/generate', generateAndSaveContent);
-router.post('/generate-batch', generateBatchContent);
-// V2 six-section pilot (flag-gated by AI_GENERATOR_V2_SIX_SECTION; returns preview JSON, no save yet)
-router.post('/six-section', generateSixSectionPreview);
+// Heavy limiter ONLY on Gemini/generate paths — not on list/view/poll (those burned
+// the 10/min quota and caused "Records load failed" right after a successful batch).
+router.post('/generate', aiHeavyLimiter, generateAndSaveContent);
+router.post('/generate-batch', aiHeavyLimiter, generateBatchContent);
+router.post('/six-section', aiHeavyLimiter, generateSixSectionPreview);
+
 router.post('/release-lock', releaseAiGeneratorLock);
 router.get('/audit/duplicates', getDuplicateAudit);
 router.get('/audit/analytics', getAiGeneratorAnalytics);

@@ -49,10 +49,14 @@ export const loginLimiter = rateLimit({
 
 export const aiHeavyLimiter = rateLimit({
   windowMs: 60 * 1000,
-  limit: Number(process.env.VIDYA_HEAVY_RPM || 10),
+  // Generate/batch only — raised slightly so Super Admin can retry a failed batch
+  // without waiting a full minute. Reads/polls are not attached to this limiter.
+  limit: Number(process.env.VIDYA_HEAVY_RPM || 20),
   standardHeaders: true,
   legacyHeaders: false,
   keyGenerator: (req) => String(req.userId || ipKeyGenerator(req) || 'anonymous'),
-  handler: jsonHandler('That action is temporarily rate-limited. Please try again shortly.'),
+  handler: jsonHandler(
+    'Generation is temporarily rate-limited. Please wait a few seconds and try again (listing records is not limited).',
+  ),
 });
 

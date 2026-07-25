@@ -18,11 +18,13 @@ import {
 const router = express.Router();
 router.use(verifyToken);
 router.use(verifySuperAdmin);
-router.use(aiHeavyLimiter);
 
 router.get('/tools', listBookBasedTools);
 router.get('/books', listBooksForGenerator);
-router.post('/generate-batch', generateBookBatch);
+
+// Limit only the Gemini batch kickoff — job polling + records list must stay free
+// or Super Admin hits 429 ("Records load failed") after a successful 5/5 save.
+router.post('/generate-batch', aiHeavyLimiter, generateBookBatch);
 router.get('/jobs/:jobId', getBookGeneratorJobStatus);
 router.post('/release-lock', releaseBookGeneratorLock);
 router.get('/records', listBookGeneratorRecords);

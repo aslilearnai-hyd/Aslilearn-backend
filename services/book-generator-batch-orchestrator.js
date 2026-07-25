@@ -260,12 +260,22 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
   )
     .map((s) => String(s || '').trim())
     .filter(Boolean);
-  const isWholeChapter = !subtopicName || params.chapterScope === true;
-  const isCombinedMulti = !isWholeChapter && subTopicList.length > 1;
+  const isWholeChapter =
+    !subtopicName ||
+    params.chapterScope === true ||
+    /^whole\s*chapter$/i.test(subtopicName) ||
+    subtopicName === 'whole-chapter';
+  const combineMulti =
+    params.combineSubtopics !== false && !isWholeChapter && subTopicList.length > 1;
+  const { canonicalizeGeneratorSubtopic } = await import('../utils/generator-subtopic-label.js');
   // Persist a short label only — never dump every subtopic name into the record field.
   // Full subtopic lists stay in generation params (subTopics) for prompt coverage.
-  const storageSubtopic =
-    isWholeChapter || isCombinedMulti ? 'Whole chapter' : subtopicName;
+  const storageSubtopic = canonicalizeGeneratorSubtopic(subtopicName, {
+    chapterScope: isWholeChapter,
+    subTopicList: combineMulti ? subTopicList : [],
+    forceWholeChapter: combineMulti || isWholeChapter,
+  });
+  const isCombinedMulti = combineMulti;
   const batchSize = getBatchSize(params.batchSize);
   const toolDisplayName = getBookBasedToolDisplayName(toolSlug);
   const qualityTierSettings = resolveQualityTierSettings(
