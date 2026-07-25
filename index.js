@@ -288,6 +288,13 @@ mongoose.connect(MONGO_URI, MONGOOSE_CONNECT_OPTIONS)
   } catch (idxErr) {
     console.warn('AI tool topic index ensure skipped:', idxErr?.message || idxErr);
   }
+  // Untagged IIT generations/topics were produced for Alpha before tracks existed.
+  try {
+    const { backfillLegacyIitContentToAlpha } = await import('./utils/backfill-legacy-alpha.js');
+    await backfillLegacyIitContentToAlpha();
+  } catch (bfErr) {
+    console.warn('Legacy Alpha backfill skipped:', bfErr?.message || bfErr);
+  }
 })
 .catch(err => console.error('❌ MongoDB connection error:', err));
 
