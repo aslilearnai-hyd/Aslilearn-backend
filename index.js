@@ -1184,7 +1184,8 @@ app.get('/api/product-categories', async (req, res) => {
     const { listProductCategories, PRODUCT_IIT, formatIitCategoryLabel } = await import(
       './constants/products.js'
     );
-    const rows = await listProductCategories({ includeInactive: false });
+    const product = String(req.query.product || '').toUpperCase().trim();
+    const rows = await listProductCategories({ includeInactive: false, product: product || null });
     res.json({
       success: true,
       data: rows.map((r) => ({

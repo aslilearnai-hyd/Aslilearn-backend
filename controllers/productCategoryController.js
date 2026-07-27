@@ -12,7 +12,8 @@ import {
 export async function getProductCategories(req, res) {
   try {
     const includeInactive = req.query.includeInactive === 'true';
-    const rows = await listProductCategories({ includeInactive });
+    const product = String(req.query.product || '').toUpperCase().trim();
+    const rows = await listProductCategories({ includeInactive, product: product || null });
     res.json({
       success: true,
       data: rows.map((r) => ({
@@ -35,11 +36,12 @@ export async function getProductCategories(req, res) {
 /** Public-ish list for forms (active only) — same auth as super-admin router. */
 export async function getActiveProductCategoryCodesHandler(req, res) {
   try {
-    const rows = await listProductCategories({ includeInactive: false });
+    const product = String(req.query.product || PRODUCT_IIT).toUpperCase().trim();
+    const rows = await listProductCategories({ includeInactive: false, product });
     res.json({
       success: true,
       data: {
-        product: PRODUCT_IIT,
+        product,
         categories: rows.map((r) => ({
           code: r.code,
           label: r.label || formatIitCategoryLabel(r.code),
