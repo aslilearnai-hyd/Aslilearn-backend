@@ -133,8 +133,11 @@ router.use((req, res, next) => {
     });
   }
   
-  // Verify user is a student
-  if (req.user && req.user.role !== 'student') {
+  // Verify user is a student — except content proxy routes used by all roles for PDF iframe/open.
+  const pathOnly = (req.originalUrl || req.url || '').split('?')[0].replace(/\/+$/, '') || '';
+  const isSharedContentProxy =
+    pathOnly.endsWith('/content-preview') || pathOnly.endsWith('/content-download');
+  if (req.user && req.user.role !== 'student' && !isSharedContentProxy) {
     console.error('❌ Non-student trying to access student routes:', req.user.role);
     return res.status(403).json({
       success: false,
