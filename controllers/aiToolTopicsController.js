@@ -1,7 +1,13 @@
 import mongoose from 'mongoose';
 import AiToolTopic, { ensureAiToolTopicIndexes } from '../models/AiToolTopic.js';
 import Board from '../models/Board.js';
-import { boardMongoMatch, canonicalBoardLabel, resolveClassLabelForAiToolStorage } from '../utils/board-label.js';
+import {
+  boardMongoMatch,
+  canonicalBoardLabel,
+  normalizeBoardLabelForGrouping,
+  resolveClassLabelForAiToolStorage,
+} from '../utils/board-label.js';
+import { canonicalizeSchoolBoard } from '../constants/boards.js';
 import {
   buildAiToolTopicHierarchyTree,
   buildAiToolTopicTaxonomyFilter,
@@ -46,7 +52,7 @@ function buildFilters(query) {
 }
 
 async function resolveProductCategoriesForBoard(board) {
-  const boardCode = canonicalBoardLabel(board);
+  const boardCode = canonicalizeSchoolBoard(board);
   const filter = buildAiToolTopicTaxonomyFilter({ board });
   const fromRows = await AiToolTopic.distinct('productCategory', filter);
   const codesFromRows = [
@@ -378,7 +384,7 @@ export async function getAiToolTopicHierarchy(req, res) {
 
     if (!board) {
       const rawBoards = await AiToolTopic.distinct('board', { isActive: true });
-      const boards = uniqueSortedValues(rawBoards.map((value) => canonicalBoardLabel(value)));
+      const boards = uniqueSortedValues(rawBoards.map((value) => normalizeBoardLabelForGrouping(value)));
       return res.json({ success: true, data: { boards, tree: null, productCategories: [] } });
     }
 
@@ -440,7 +446,7 @@ export async function listAiToolTopicOptions(req, res) {
         success: true,
         data: {
           ...emptyLists,
-          boards: uniqueSortedValues(rawBoards.map((value) => canonicalBoardLabel(value))),
+          boards: uniqueSortedValues(rawBoards.map((value) => normalizeBoardLabelForGrouping(value))),
         },
       });
     }
@@ -483,7 +489,7 @@ export async function listAiToolTopicOptions(req, res) {
     return res.json({
       success: true,
       data: {
-        boards: hasBoard ? [] : uniqueSortedValues(rows.map((row) => canonicalBoardLabel(row.board))),
+        boards: hasBoard ? [] : uniqueSortedValues(rows.map((row) => normalizeBoardLabelForGrouping(row.board))),
         productCategories: [],
         classes: hasClass ? [] : uniqueSortedValues(rows.map((row) => row.classLabel)),
         subjects: hasSubject ? [] : uniqueSortedValues(rows.map((row) => row.subject)),
