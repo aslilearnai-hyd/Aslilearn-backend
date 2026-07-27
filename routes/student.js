@@ -17,6 +17,7 @@ import GeminiPerformanceReport from '../models/GeminiPerformanceReport.js';
 import { verifyToken } from '../middleware/auth.js';
 import { getMyWeeklyDigest } from '../controllers/impactReportController.js';
 import { getSchoolAdminCalendarEvents, monthBounds } from '../controllers/calendarController.js';
+import { examVisibleToSchool } from '../utils/exam-visibility.js';
 import {
   getStudentExamRanking,
   getAllStudentRankings
@@ -1286,29 +1287,7 @@ function toPlainExamResultForApi(row) {
 }
 
 const canStudentAccessExam = (exam, studentAdminId) => {
-  if (!exam) return false;
-  if (!studentAdminId) return !exam.isSchoolSpecific;
-
-  const toIdString = (value) => {
-    if (!value) return '';
-    if (typeof value === 'object' && value._id) return String(value._id);
-    return String(value);
-  };
-
-  const studentAdminIdStr = String(studentAdminId);
-  const examSchoolIdStr = toIdString(exam.schoolId);
-  const targetSchoolIds = Array.isArray(exam.targetSchools)
-    ? exam.targetSchools.map((id) => toIdString(id)).filter(Boolean)
-    : [];
-
-  // Non-school-specific exams are visible to everyone on the board.
-  if (!exam.isSchoolSpecific) return true;
-
-  // School-specific exam: allow only if student's assigned admin/school matches.
-  if (examSchoolIdStr && examSchoolIdStr === studentAdminIdStr) return true;
-  if (targetSchoolIds.includes(studentAdminIdStr)) return true;
-
-  return false;
+  return examVisibleToSchool(exam, studentAdminId);
 };
 
 /** Enforce exam start/end window on the server (not only in the UI). */

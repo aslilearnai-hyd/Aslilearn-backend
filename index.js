@@ -970,7 +970,7 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
       user.role === 'student' ? user.assignedAdmin : teacherAdmin,
     );
     const resolvedIitCategories =
-      user.role === 'admin' && Array.isArray(user.iitCategories)
+      Array.isArray(user.iitCategories) && user.iitCategories.length > 0
         ? user.iitCategories
         : Array.isArray(user.assignedAdmin?.iitCategories)
           ? user.assignedAdmin.iitCategories

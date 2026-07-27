@@ -2,6 +2,10 @@ import mongoose from 'mongoose';
 import Exam from '../models/Exam.js';
 import CalendarEvent from '../models/CalendarEvent.js';
 import Event from '../models/Event.js';
+import { examVisibleToSchool } from '../utils/exam-visibility.js';
+
+/** Re-export for callers that imported from this module. */
+export { examVisibleToSchool };
 
 export function monthBounds(monthStr) {
   const [y, m] = monthStr.split('-').map((v) => parseInt(v, 10));
@@ -65,17 +69,6 @@ export async function getSchoolAdminCalendarEvents(schoolAdminId, month) {
   return [...adminLegacyEvents, ...adminCalendarEvents].sort(
     (a, b) => new Date(a.startDate) - new Date(b.startDate)
   );
-}
-
-/** Whether an exam should appear on the calendar for the selected school admin. */
-export function examVisibleToSchool(exam, schoolOid) {
-  const sid = schoolOid.toString();
-  if (exam.schoolId && exam.schoolId.toString() === sid) return true;
-  if (Array.isArray(exam.targetSchools) && exam.targetSchools.length > 0) {
-    return exam.targetSchools.some((t) => (t._id || t).toString() === sid);
-  }
-  if (exam.isSchoolSpecific === true) return false;
-  return true;
 }
 
 /**
