@@ -55,7 +55,7 @@ export async function ensureDefaultProductCategories() {
   invalidateProductCategoryCache();
 }
 
-export async function getActiveProductCategoryCodes({ force = false } = {}) {
+export async function getActiveProductCategoryCodes({ force = false, product = PRODUCT_IIT } = {}) {
   const now = Date.now();
   if (
     !force &&
@@ -66,7 +66,9 @@ export async function getActiveProductCategoryCodes({ force = false } = {}) {
   }
   try {
     await ensureDefaultProductCategories();
-    const rows = await ProductCategory.find({ isActive: true })
+    const query = { isActive: true };
+    if (product) query.product = String(product).toUpperCase().trim();
+    const rows = await ProductCategory.find(query)
       .sort({ sortOrder: 1, label: 1 })
       .select('code')
       .lean();
@@ -79,9 +81,12 @@ export async function getActiveProductCategoryCodes({ force = false } = {}) {
   }
 }
 
-export async function listProductCategories({ includeInactive = false } = {}) {
+export async function listProductCategories({ includeInactive = false, product = null } = {}) {
   await ensureDefaultProductCategories();
   const query = includeInactive ? {} : { isActive: true };
+  if (product) {
+    query.product = String(product).toUpperCase().trim();
+  }
   return ProductCategory.find(query).sort({ sortOrder: 1, label: 1 }).lean();
 }
 

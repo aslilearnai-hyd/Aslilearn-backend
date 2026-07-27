@@ -21,6 +21,13 @@ const boardSchema = new mongoose.Schema(
       trim: true,
       default: '',
     },
+    /** Optional linked product line (e.g. IIT). Its categories become available on this board. */
+    product: {
+      type: String,
+      trim: true,
+      uppercase: true,
+      default: '',
+    },
     /** curriculum | state | iit — drives school dropdowns and content scope */
     kind: {
       type: String,
@@ -39,5 +46,6 @@ const boardSchema = new mongoose.Schema(
 boardSchema.index({ code: 1 });
 boardSchema.index({ isActive: 1 });
 boardSchema.index({ kind: 1 });
+boardSchema.index({ product: 1 });
 
 export default mongoose.model('Board', boardSchema);
