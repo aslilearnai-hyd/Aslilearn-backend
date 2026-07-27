@@ -30,17 +30,14 @@ export async function ensureDefaultProductCategories() {
     { code: 'DELTA', label: 'Delta', sortOrder: 4, description: 'IIT Delta curriculum track' },
   ];
   for (const row of defaults) {
+    // Mongo forbids the same path in both $set and $setOnInsert (ConflictingUpdateOperators).
     await ProductCategory.findOneAndUpdate(
       { code: row.code },
       {
         $setOnInsert: {
           code: row.code,
-          label: row.label,
           product: PRODUCT_IIT,
-          description: row.description,
           isActive: true,
-          isBuiltIn: true,
-          sortOrder: row.sortOrder,
         },
         $set: {
           label: row.label,
@@ -82,7 +79,11 @@ export async function getActiveProductCategoryCodes({ force = false, product = P
 }
 
 export async function listProductCategories({ includeInactive = false, product = null } = {}) {
-  await ensureDefaultProductCategories();
+  try {
+    await ensureDefaultProductCategories();
+  } catch (err) {
+    console.warn('ensureDefaultProductCategories failed:', err?.message || err);
+  }
   const query = includeInactive ? {} : { isActive: true };
   if (product) {
     query.product = String(product).toUpperCase().trim();
