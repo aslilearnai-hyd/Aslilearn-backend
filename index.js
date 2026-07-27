@@ -3,6 +3,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import { loginLimiter } from './middleware/rate-limit.js';
 import { requestContext } from './middleware/request-context.js';
+import { auditTrail } from './middleware/audit-trail.js';
 import { logger } from './utils/logger.js';
 import { loginSchema, validateRequest } from './validators/superAdminValidator.js';
 import passport from 'passport';
@@ -443,6 +444,8 @@ app.use(cors({
 app.use(express.json({ limit: process.env.JSON_BODY_LIMIT || '2mb' }));
 app.use(express.urlencoded({ extended: true, limit: process.env.JSON_BODY_LIMIT || '2mb' }));
 app.use(attachCookies);
+// Durable who/what/when audit for POST/PUT/PATCH/DELETE under /api
+app.use('/api', auditTrail);
 
 // Serve uploaded files — gate sensitive paths; school logos stay public for branding.
 // Allow framing from the product site so textbook/PDF previews can embed /uploads

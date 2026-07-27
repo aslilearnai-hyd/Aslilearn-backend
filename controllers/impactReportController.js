@@ -1,8 +1,7 @@
 import fs from 'fs';
 import {
   startOfIsoWeek,
-  endOfIsoWeek,
-  formatPeriodLabel,
+  resolveImpactPeriod,
   buildSchoolImpactSnapshot,
   buildAllSchoolImpactSnapshots,
   buildDigestsForSchool,
@@ -15,28 +14,34 @@ import { deliverPendingDigestsForWeek } from '../services/digest-email-service.j
 import { runWeeklyImpactJob } from '../services/weekly-impact-scheduler.js';
 import WeeklyDigest from '../models/WeeklyDigest.js';
 
-function parseWeek(q) {
-  if (!q) return startOfIsoWeek(new Date());
-  const d = new Date(q);
-  if (Number.isNaN(d.getTime())) return startOfIsoWeek(new Date());
-  return startOfIsoWeek(d);
+/** Parse weekStart / from / to from query or body. */
+function periodFromReq(req) {
+  const src = { ...(req.query || {}), ...(req.body || {}) };
+  if (src.from || src.to) {
+    return resolveImpactPeriod({ from: src.from, to: src.to });
+  }
+  if (src.weekStart) {
+    return resolveImpactPeriod({ weekStart: src.weekStart });
+  }
+  return resolveImpactPeriod({ weekStart: new Date() });
 }
 
-/** Super Admin: list all school snapshots for a week */
+/** Super Admin: list all school snapshots for a week or custom range */
 export async function listImpactReports(req, res) {
   try {
-    const weekStart = parseWeek(req.query.weekStart);
-    let rows = await listSchoolSnapshots(weekStart);
+    const period = periodFromReq(req);
+    let rows = await listSchoolSnapshots(period);
     if (!rows.length && req.query.build === '1') {
-      await buildAllSchoolImpactSnapshots(weekStart, 'manual');
-      rows = await listSchoolSnapshots(weekStart);
+      await buildAllSchoolImpactSnapshots(period, 'manual');
+      rows = await listSchoolSnapshots(period);
     }
     return res.json({
       success: true,
       data: {
-        weekStart,
-        weekEnd: endOfIsoWeek(weekStart),
-        periodLabel: formatPeriodLabel(weekStart, endOfIsoWeek(weekStart)),
+        weekStart: period.weekStart,
+        weekEnd: period.weekEnd,
+        periodLabel: period.periodLabel,
+        mode: period.mode,
         schools: rows,
       },
     });
@@ -48,29 +53,38 @@ export async function listImpactReports(req, res) {
 /** Super Admin: one school snapshot */
 export async function getImpactReportForAdmin(req, res) {
   try {
-    const weekStart = parseWeek(req.query.weekStart);
-    const snap = await getSchoolSnapshot(req.params.adminId, weekStart);
+    const period = periodFromReq(req);
+    const snap = await getSchoolSnapshot(req.params.adminId, period);
     return res.json({ success: true, data: snap });
   } catch (err) {
     return res.status(500).json({ success: false, message: err.message || 'Failed to load impact report' });
   }
 }
 
-/** Super Admin: force run weekly job */
+/** Super Admin: force run weekly / range job */
 export async function runImpactReportsJob(req, res) {
   try {
     const force = req.body?.force !== false;
-    const weekStart = parseWeek(req.body?.weekStart || req.query?.weekStart);
-    if (req.body?.weekStart || req.query?.weekStart) {
-      const schoolResults = await buildAllSchoolImpactSnapshots(weekStart, 'manual');
-      const { default: User } = await import('../models/User.js');
-      const admins = await User.find({ role: 'admin', isActive: { $ne: false } }).select('_id').lean();
+    const hasCustom =
+      Boolean(req.body?.weekStart || req.query?.weekStart || req.body?.from || req.body?.to || req.query?.from || req.query?.to);
+    if (hasCustom) {
+      const period = periodFromReq(req);
+      const schoolResults = await buildAllSchoolImpactSnapshots(period, 'manual');
+      // Digests remain weekly-keyed; only build when this is a normal ISO week window
       let digests = 0;
-      for (const a of admins) {
-        digests += (await buildDigestsForSchool(a._id, weekStart)).length;
+      let email = null;
+      if (period.mode === 'weekly') {
+        const { default: User } = await import('../models/User.js');
+        const admins = await User.find({ role: 'admin', isActive: { $ne: false } }).select('_id').lean();
+        for (const a of admins) {
+          digests += (await buildDigestsForSchool(a._id, period.weekStart)).length;
+        }
+        email = await deliverPendingDigestsForWeek(period.weekStart);
       }
-      const email = await deliverPendingDigestsForWeek(weekStart);
-      return res.json({ success: true, data: { weekStart, schools: schoolResults, digests, email } });
+      return res.json({
+        success: true,
+        data: { weekStart: period.weekStart, weekEnd: period.weekEnd, periodLabel: period.periodLabel, schools: schoolResults, digests, email },
+      });
     }
     const result = await runWeeklyImpactJob({ source: 'manual', force });
     return res.json({ success: result.ok, data: result });
@@ -83,8 +97,13 @@ export async function runImpactReportsJob(req, res) {
 export async function downloadImpactReportPdf(req, res) {
   try {
     const adminId = req.params.adminId || req.user?._id || req.user?.userId;
-    const weekStart = parseWeek(req.query.weekStart);
-    const snap = await getSchoolSnapshot(adminId, weekStart);
+    const period = periodFromReq(req);
+    let snap = await getSchoolSnapshot(adminId, period);
+    if (!snap) {
+      // Build on the fly for PDF grab
+      await buildSchoolImpactSnapshot(adminId, period, 'manual');
+      snap = await getSchoolSnapshot(adminId, period);
+    }
     if (!snap) {
       return res.status(404).json({ success: false, message: 'Snapshot not found' });
     }
@@ -102,8 +121,8 @@ export async function downloadImpactReportPdf(req, res) {
 export async function getMySchoolImpactReport(req, res) {
   try {
     const adminId = req.user?._id || req.user?.userId;
-    const weekStart = parseWeek(req.query.weekStart);
-    const snap = await getSchoolSnapshot(adminId, weekStart);
+    const period = periodFromReq(req);
+    const snap = await getSchoolSnapshot(adminId, period);
     return res.json({ success: true, data: snap });
   } catch (err) {
     return res.status(500).json({ success: false, message: err.message || 'Failed to load school impact report' });
@@ -121,7 +140,7 @@ export async function getMyWeeklyDigest(req, res) {
     const userId = req.user?._id || req.user?.userId;
     let digest = await getLatestDigestForUser(userId);
     if (!digest && req.query.build === '1') {
-      const weekStart = parseWeek(req.query.weekStart);
+      const weekStart = startOfIsoWeek(req.query.weekStart ? new Date(req.query.weekStart) : new Date());
       const role = req.user?.role;
       const adminId = req.user?.assignedAdmin;
       if (adminId && (role === 'teacher' || role === 'student')) {

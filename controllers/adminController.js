@@ -537,6 +537,24 @@ export const deleteStudent = async (req, res) => {
         message: 'Student not found or access denied' 
       });
     }
+
+    req.setAudit?.({
+      action: 'student.delete',
+      summary: `Deleted student ${deletedStudent.email || deletedStudent.fullName || id}`,
+      target: {
+        type: 'student',
+        id: String(deletedStudent._id),
+        label: deletedStudent.fullName || null,
+        email: deletedStudent.email || null,
+      },
+      meta: {
+        assignedAdmin: deletedStudent.assignedAdmin
+          ? String(deletedStudent.assignedAdmin)
+          : null,
+        classNumber: deletedStudent.classNumber || null,
+        schoolName: deletedStudent.schoolName || null,
+      },
+    });
     
     res.json({
       success: true,
@@ -836,6 +854,21 @@ export const deleteTeacher = async (req, res) => {
         message: 'Teacher not found or access denied' 
       });
     }
+
+    req.setAudit?.({
+      action: 'teacher.delete',
+      summary: `Deleted teacher ${deletedTeacher.email || deletedTeacher.fullName || id}`,
+      target: {
+        type: 'teacher',
+        id: String(deletedTeacher._id),
+        label: deletedTeacher.fullName || null,
+        email: deletedTeacher.email || null,
+      },
+      meta: {
+        adminId: deletedTeacher.adminId ? String(deletedTeacher.adminId) : null,
+        schoolName: deletedTeacher.schoolName || deletedTeacher.school || null,
+      },
+    });
     
     res.json({
       success: true,
