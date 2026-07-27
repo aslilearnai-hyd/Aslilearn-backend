@@ -3,28 +3,41 @@ import Exam from '../models/Exam.js';
 import ExamResult from '../models/ExamResult.js';
 import User from '../models/User.js';
 import Question from '../models/Question.js';
+import { examVisibleToSchoolAdmin } from '../utils/exam-visibility.js';
 
-// Get all exams for admin's board (Super Admin created + view only)
-// ALL exams are visible to ALL schools regardless of board or school restrictions
+/**
+ * School-admin viewable exams: Super Admin exams assigned to this school
+ * (or open to all schools on the admin's board). New schools must not see
+ * exams that were targeted at other schools only.
+ */
 export const getViewableExams = async (req, res) => {
   try {
     const adminId = req.adminId;
-    
-    // Get all exams created by Super Admin - no restrictions
-    // All schools can see all exams regardless of board or school-specific targeting
+    if (!adminId || !mongoose.Types.ObjectId.isValid(String(adminId))) {
+      return res.status(400).json({ success: false, message: 'Admin context missing' });
+    }
+
+    const admin = await User.findById(adminId).select('_id board schoolName fullName role').lean();
+    if (!admin || admin.role !== 'admin') {
+      return res.status(403).json({ success: false, message: 'School admin access required' });
+    }
+
     const exams = await Exam.find({
       createdByRole: 'super-admin',
-      isActive: true
+      isActive: true,
     })
-    .populate('questions')
-    .populate('createdBy', 'fullName email')
-    .populate('targetSchools', 'schoolName fullName email')
-    .sort({ createdAt: -1 });
+      .populate('questions')
+      .populate('createdBy', 'fullName email')
+      .populate('targetSchools', 'schoolName fullName email')
+      .sort({ createdAt: -1 })
+      .lean();
+
+    const visible = exams.filter((exam) => examVisibleToSchoolAdmin(exam, admin));
 
     res.json({
       success: true,
-      data: exams,
-      message: 'Exams fetched successfully'
+      data: visible,
+      message: 'Exams fetched successfully',
     });
   } catch (error) {
     console.error('Get viewable exams error:', error);
@@ -32,29 +45,41 @@ export const getViewableExams = async (req, res) => {
   }
 };
 
-// Get exam details (view only)
-// All exams are accessible to all schools - no restrictions
+/** Exam details — same school/board targeting as the list. */
 export const getExamDetails = async (req, res) => {
   try {
     const { examId } = req.params;
+    const adminId = req.adminId;
 
-    // All exams are accessible to all schools - no restrictions
+    if (!adminId || !mongoose.Types.ObjectId.isValid(String(adminId))) {
+      return res.status(400).json({ success: false, message: 'Admin context missing' });
+    }
+    if (!mongoose.Types.ObjectId.isValid(String(examId))) {
+      return res.status(400).json({ success: false, message: 'Invalid exam id' });
+    }
+
+    const admin = await User.findById(adminId).select('_id board role').lean();
+    if (!admin || admin.role !== 'admin') {
+      return res.status(403).json({ success: false, message: 'School admin access required' });
+    }
+
     const exam = await Exam.findOne({
       _id: examId,
       createdByRole: 'super-admin',
       isActive: { $ne: false },
     })
-    .populate('questions')
-    .populate('createdBy', 'fullName email')
-    .populate('targetSchools', 'schoolName fullName email');
+      .populate('questions')
+      .populate('createdBy', 'fullName email')
+      .populate('targetSchools', 'schoolName fullName email')
+      .lean();
 
-    if (!exam) {
+    if (!exam || !examVisibleToSchoolAdmin(exam, admin)) {
       return res.status(404).json({ success: false, message: 'Exam not found' });
     }
 
     res.json({
       success: true,
-      data: exam
+      data: exam,
     });
   } catch (error) {
     console.error('Get exam details error:', error);
