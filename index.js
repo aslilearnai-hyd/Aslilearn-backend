@@ -444,7 +444,7 @@ app.use(cors({
 app.use(express.json({ limit: process.env.JSON_BODY_LIMIT || '2mb' }));
 app.use(express.urlencoded({ extended: true, limit: process.env.JSON_BODY_LIMIT || '2mb' }));
 app.use(attachCookies);
-// Durable who/what/when audit for POST/PUT/PATCH/DELETE under /api
+// Durable who/what/when audit for all /api requests (except health/streams)
 app.use('/api', auditTrail);
 
 // Serve uploaded files — gate sensitive paths; school logos stay public for branding.
@@ -812,6 +812,33 @@ app.post('/api/auth/logout', (req, res) => {
     // Handle CORS preflight if needed
     if (req.method === 'OPTIONS') {
       return res.sendStatus(200);
+    }
+
+    // Attribute logout to whoever held the token (before cookie clear).
+    try {
+      const token =
+        (typeof req.headers?.authorization === 'string' &&
+          req.headers.authorization.startsWith('Bearer ') &&
+          req.headers.authorization.slice(7).trim()) ||
+        req.cookies?.aslilearn_token ||
+        '';
+      if (token && process.env.JWT_SECRET) {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET, { algorithms: ['HS256'] });
+        req.setAudit?.({
+          action: 'auth.logout',
+          summary: `Logout: ${decoded.email || decoded.id || 'user'}`,
+          actor: {
+            id: decoded.userId || decoded.id || null,
+            role: decoded.role || null,
+            email: decoded.email || null,
+            name: decoded.fullName || decoded.name || null,
+          },
+        });
+      } else {
+        req.setAudit?.({ action: 'auth.logout', summary: 'Logout' });
+      }
+    } catch {
+      req.setAudit?.({ action: 'auth.logout', summary: 'Logout' });
     }
     
     if (req.logout && typeof req.logout === 'function') {
@@ -1517,6 +1544,18 @@ app.post('/api/auth/login', loginLimiter, validateRequest(loginSchema), async (r
           }, process.env.JWT_SECRET, { expiresIn: '24h', algorithm: 'HS256' });
         setAuthCookie(res, token);
 
+        req.setAudit?.({
+          action: 'auth.login',
+          summary: `Teacher login: ${teacher.email}`,
+          actor: {
+            id: teacher._id.toString(),
+            role: 'teacher',
+            email: teacher.email,
+            name: teacher.fullName || null,
+          },
+          meta: { loginRole: 'teacher' },
+        });
+
         // Fetch teacher subjects if needed
         let subjects = [];
         try {
@@ -1606,6 +1645,18 @@ app.post('/api/auth/login', loginLimiter, validateRequest(loginSchema), async (r
         role: user.role 
       }, process.env.JWT_SECRET, { expiresIn: '24h', algorithm: 'HS256' });
     setAuthCookie(res, token);
+
+    req.setAudit?.({
+      action: 'auth.login',
+      summary: `${user.role} login: ${user.email}`,
+      actor: {
+        id: user._id.toString(),
+        role: user.role,
+        email: user.email,
+        name: user.fullName || null,
+      },
+      meta: { loginRole: user.role },
+    });
 
     res.json({ 
       success: true,

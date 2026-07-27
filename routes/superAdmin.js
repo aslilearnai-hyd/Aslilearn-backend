@@ -18,6 +18,7 @@ import {
 } from '../validators/superAdminValidator.js';
 import {
   superAdminLogin,
+  changeSuperAdminPassword,
   getDashboardStats,
   getAllAdmins,
   getAdminAnalytics,
@@ -455,6 +456,8 @@ router.post('/login', loginLimiter, validateRequest(loginSchema), superAdminLogi
 // Protected routes - require super admin authentication
 router.use(verifyToken);
 router.use(verifySuperAdmin);
+
+router.post('/change-password', changeSuperAdminPassword);
 
 // School calendar (before generic /:param routes)
 router.get('/calendar/events', getCalendarEvents);

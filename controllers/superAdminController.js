@@ -40,6 +40,80 @@ import {
 } from '../services/schoolService.js';
 
 // Super Admin Login — database accounts only (no hardcoded credentials)
+/** POST /api/super-admin/change-password — authenticated super-admin only */
+export const changeSuperAdminPassword = async (req, res) => {
+  try {
+    const currentPassword = String(req.body?.currentPassword || '');
+    const newPassword = String(req.body?.newPassword || '');
+    const confirmPassword = String(req.body?.confirmPassword || '');
+
+    if (!currentPassword || !newPassword) {
+      return res.status(400).json({
+        success: false,
+        message: 'Current password and new password are required',
+      });
+    }
+    if (newPassword.length < 8) {
+      return res.status(400).json({
+        success: false,
+        message: 'New password must be at least 8 characters',
+      });
+    }
+    if (confirmPassword && confirmPassword !== newPassword) {
+      return res.status(400).json({
+        success: false,
+        message: 'New password and confirmation do not match',
+      });
+    }
+    if (currentPassword === newPassword) {
+      return res.status(400).json({
+        success: false,
+        message: 'New password must be different from the current password',
+      });
+    }
+
+    const userId = req.userId || req.user?.userId || req.user?.id;
+    if (!userId) {
+      return res.status(401).json({ success: false, message: 'Unauthorized' });
+    }
+
+    const superAdminUser = await User.findOne({ _id: userId, role: 'super-admin' });
+    if (!superAdminUser) {
+      return res.status(404).json({ success: false, message: 'Super admin not found' });
+    }
+    if (!superAdminUser.password) {
+      return res.status(400).json({
+        success: false,
+        message: 'Password change is not available for this account',
+      });
+    }
+
+    const valid = await bcrypt.compare(currentPassword, superAdminUser.password);
+    if (!valid) {
+      return res.status(401).json({ success: false, message: 'Current password is incorrect' });
+    }
+
+    superAdminUser.password = await bcrypt.hash(newPassword, 12);
+    await superAdminUser.save();
+
+    req.setAudit?.({
+      action: 'auth.change-password',
+      summary: `Super admin changed password: ${superAdminUser.email}`,
+      actor: {
+        id: String(superAdminUser._id),
+        role: 'super-admin',
+        email: superAdminUser.email,
+        name: superAdminUser.fullName || null,
+      },
+    });
+
+    return res.json({ success: true, message: 'Password updated successfully' });
+  } catch (error) {
+    console.error('Failed to change super-admin password:', error);
+    return res.status(500).json({ success: false, message: 'Failed to change password' });
+  }
+};
+
 export const superAdminLogin = async (req, res) => {
   try {
     const email = String(req.body?.email || '').trim().toLowerCase();
@@ -81,6 +155,18 @@ export const superAdminLogin = async (req, res) => {
       { expiresIn: '24h', algorithm: 'HS256' }
     );
     setAuthCookie(res, token);
+
+    req.setAudit?.({
+      action: 'auth.login',
+      summary: `Super admin login: ${superAdminUser.email}`,
+      actor: {
+        id: superAdminId,
+        role: 'super-admin',
+        email: superAdminUser.email,
+        name: superAdminUser.fullName || null,
+      },
+      meta: { loginRole: 'super-admin' },
+    });
 
     return res.json({
       success: true,

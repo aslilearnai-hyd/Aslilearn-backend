@@ -38,8 +38,21 @@ export async function listAuditLogs(req, res) {
     }
     if (req.query.from || req.query.to) {
       filter.at = {};
-      if (req.query.from) filter.at.$gte = new Date(String(req.query.from));
-      if (req.query.to) filter.at.$lte = new Date(String(req.query.to));
+      if (req.query.from) {
+        const fromRaw = String(req.query.from).trim();
+        filter.at.$gte =
+          fromRaw.length <= 10
+            ? new Date(`${fromRaw}T00:00:00.000`)
+            : new Date(fromRaw);
+      }
+      if (req.query.to) {
+        const toRaw = String(req.query.to).trim();
+        // Date-only "to" should include the full calendar day
+        filter.at.$lte =
+          toRaw.length <= 10
+            ? new Date(`${toRaw}T23:59:59.999`)
+            : new Date(toRaw);
+      }
     }
     if (req.query.method) {
       filter.method = String(req.query.method).toUpperCase();
