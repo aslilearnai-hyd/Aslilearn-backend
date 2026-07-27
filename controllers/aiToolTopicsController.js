@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import AiToolTopic, { ensureAiToolTopicIndexes } from '../models/AiToolTopic.js';
+import Board from '../models/Board.js';
 import { boardMongoMatch, canonicalBoardLabel, resolveClassLabelForAiToolStorage } from '../utils/board-label.js';
 import {
   buildAiToolTopicHierarchyTree,
@@ -45,6 +46,7 @@ function buildFilters(query) {
 }
 
 async function resolveProductCategoriesForBoard(board) {
+  const boardCode = canonicalBoardLabel(board);
   const filter = buildAiToolTopicTaxonomyFilter({ board });
   const fromRows = await AiToolTopic.distinct('productCategory', filter);
   const codesFromRows = [
@@ -55,8 +57,17 @@ async function resolveProductCategoriesForBoard(board) {
         .map((c) => c || ''),
     ),
   ];
-  const activeCodes = await getActiveProductCategoryCodes();
-  const catalog = await listProductCategories({ includeInactive: false });
+  const boardDoc = boardCode
+    ? await Board.findOne({ code: boardCode }).select('product').lean()
+    : null;
+  const linkedProduct = String(boardDoc?.product || '').toUpperCase().trim();
+  const activeCodes = linkedProduct
+    ? await getActiveProductCategoryCodes({ product: linkedProduct })
+    : [];
+  const catalog = await listProductCategories({
+    includeInactive: false,
+    product: linkedProduct || null,
+  });
   const labelMap = Object.fromEntries(
     catalog.map((r) => [r.code, r.label || formatIitCategoryLabel(r.code)]),
   );

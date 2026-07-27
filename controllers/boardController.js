@@ -20,6 +20,7 @@ import {
   formatIitCategoryLabel,
   normalizeIitCategoryLoose,
   PRODUCT_CATEGORY_NONE,
+  PRODUCT_IIT,
 } from '../constants/products.js';
 import { subjectDisplayName, softDeleteSubject } from '../utils/subjectDelete.js';
 import { isSoftDeletedSubjectName } from '../utils/activeCatalog.js';
@@ -140,6 +141,12 @@ export const initializeBoards = async () => {
             name: boardData.name,
             description: boardData.description,
             kind: boardData.kind,
+            product:
+              boardData.product !== undefined
+                ? String(boardData.product || '').toUpperCase().trim()
+                : boardData.kind === 'iit'
+                  ? PRODUCT_IIT
+                  : '',
           },
           $setOnInsert: { isActive: true },
         },
@@ -165,6 +172,9 @@ export const createBoard = async (req, res) => {
     const description = String(req.body?.description || '').trim();
     const kind = String(req.body?.kind || 'curriculum')
       .toLowerCase()
+      .trim();
+    const product = String(req.body?.product || '')
+      .toUpperCase()
       .trim();
 
     if (!code || !/^[A-Z][A-Z0-9_/.-]{1,47}$/.test(code)) {
@@ -197,6 +207,7 @@ export const createBoard = async (req, res) => {
       name,
       description,
       kind,
+      product: product || (kind === 'iit' ? PRODUCT_IIT : ''),
       isActive: true,
     });
     await refreshBoardCodeCache();
@@ -236,6 +247,11 @@ export const updateBoard = async (req, res) => {
     if (req.body?.description !== undefined) {
       board.description = String(req.body.description || '').trim();
     }
+    if (req.body?.product !== undefined) {
+      board.product = String(req.body.product || '')
+        .toUpperCase()
+        .trim();
+    }
     if (req.body?.isActive !== undefined) {
       board.isActive = Boolean(req.body.isActive);
     }
@@ -250,6 +266,9 @@ export const updateBoard = async (req, res) => {
         });
       }
       board.kind = kind;
+      if (kind === 'iit' && !String(board.product || '').trim()) {
+        board.product = PRODUCT_IIT;
+      }
     }
 
     await board.save();

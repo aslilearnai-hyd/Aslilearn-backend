@@ -33,6 +33,7 @@ export const BUILTIN_BOARD_SEED = [
     name: 'IIT',
     description: 'IIT materials, workbooks, and EduOTT videos (Alpha / Beta / Gamma tracks)',
     kind: 'iit',
+    product: 'IIT',
   },
   {
     code: 'CBSE',
