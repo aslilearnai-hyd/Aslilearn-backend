@@ -17,3 +17,6 @@ node_modules/
 # Runtime uploads & local env backups (production server)
 uploads/
 .env.bak.*
+
+# Local Atlas snapshot restore workspace (large binaries)
+scripts/_restore-work/

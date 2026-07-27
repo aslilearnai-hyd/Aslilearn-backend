@@ -1,0 +1,13 @@
+{
+  "status": 400,
+  "json": {
+    "detail": "The required attribute deliveryType was not specified.",
+    "error": 400,
+    "errorCode": "MISSING_ATTRIBUTE",
+    "parameters": [
+      "deliveryType"
+    ],
+    "reason": "Bad Request"
+  },
+  "text": "{\"detail\":\"The required attribute deliveryType was not specified.\",\"error\":400,\"errorCode\":\"MISSING_ATTRIBUTE\",\"parameters\":[\"deliveryType\"],\"reason\":\"Bad Request\"}"
+}

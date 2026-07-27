@@ -55,6 +55,7 @@ import {
   updateTrialMember,
   applyTrialMemberDefaults,
 } from '../controllers/trialMembersController.js';
+import { listAuditLogs } from '../controllers/auditLogController.js';
 import {
   getProductCategories,
   getActiveProductCategoryCodesHandler,
@@ -463,6 +464,7 @@ router.post('/calendar/events', createCalendarEvent);
 router.get('/dashboard/stats', getDashboardStats);
 router.get('/analytics', getAnalytics);
 router.get('/analytics/realtime', getRealTimeAnalytics);
+router.get('/audit-logs', listAuditLogs);
 
 // Weekly School Impact Reports
 router.get('/impact-reports', listImpactReports);

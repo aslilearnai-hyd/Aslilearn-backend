@@ -32,6 +32,59 @@ export function endOfIsoWeek(weekStart) {
   return end;
 }
 
+export function startOfUtcDay(d = new Date()) {
+  const date = new Date(d);
+  date.setUTCHours(0, 0, 0, 0);
+  return date;
+}
+
+export function endOfUtcDay(d = new Date()) {
+  const date = new Date(d);
+  date.setUTCHours(23, 59, 59, 999);
+  return date;
+}
+
+/**
+ * Resolve a reporting window.
+ * - Custom: { from, to } (inclusive calendar days)
+ * - Weekly: { weekStart } → ISO week Mon–Sun
+ */
+export function resolveImpactPeriod({ weekStart, from, to } = {}) {
+  if (from || to) {
+    const rawFrom = from ? new Date(from) : new Date(to);
+    const rawTo = to ? new Date(to) : new Date(from);
+    if (Number.isNaN(rawFrom.getTime()) || Number.isNaN(rawTo.getTime())) {
+      throw new Error('Invalid from/to date');
+    }
+    let start = startOfUtcDay(rawFrom);
+    let end = endOfUtcDay(rawTo);
+    if (start > end) {
+      const tmp = start;
+      start = startOfUtcDay(end);
+      end = endOfUtcDay(tmp);
+    }
+    // Cap range to 93 days to avoid runaway jobs
+    const maxMs = 93 * 24 * 60 * 60 * 1000;
+    if (end.getTime() - start.getTime() > maxMs) {
+      throw new Error('Date range cannot exceed 93 days');
+    }
+    return {
+      weekStart: start,
+      weekEnd: end,
+      periodLabel: formatPeriodLabel(start, end),
+      mode: 'custom',
+    };
+  }
+  const ws = startOfIsoWeek(weekStart ? new Date(weekStart) : new Date());
+  const we = endOfIsoWeek(ws);
+  return {
+    weekStart: ws,
+    weekEnd: we,
+    periodLabel: formatPeriodLabel(ws, we),
+    mode: 'weekly',
+  };
+}
+
 export function formatPeriodLabel(weekStart, weekEnd) {
   const opts = { day: 'numeric', month: 'short', year: 'numeric' };
   return `${weekStart.toLocaleDateString('en-IN', opts)} – ${weekEnd.toLocaleDateString('en-IN', opts)}`;
@@ -293,11 +346,16 @@ function buildKeyObservation(snap) {
 }
 
 /**
- * Compute + upsert school impact snapshot for one admin and week.
+ * Compute + upsert school impact snapshot for one admin and period.
+ * @param {string|ObjectId} adminId
+ * @param {Date|string|{ weekStart?: Date|string, from?: Date|string, to?: Date|string }} periodInput
  */
-export async function buildSchoolImpactSnapshot(adminId, weekStartInput = new Date(), source = 'api') {
-  const weekStart = startOfIsoWeek(weekStartInput);
-  const weekEnd = endOfIsoWeek(weekStart);
+export async function buildSchoolImpactSnapshot(adminId, periodInput = new Date(), source = 'api') {
+  const periodOpts =
+    periodInput && typeof periodInput === 'object' && !(periodInput instanceof Date)
+      ? periodInput
+      : { weekStart: periodInput };
+  const { weekStart, weekEnd, periodLabel } = resolveImpactPeriod(periodOpts);
   const admin = await schoolAdminUser(adminId);
   if (!admin) throw new Error('School admin not found');
 
@@ -381,7 +439,7 @@ export async function buildSchoolImpactSnapshot(adminId, weekStartInput = new Da
     location,
     weekStart,
     weekEnd,
-    periodLabel: formatPeriodLabel(weekStart, weekEnd),
+    periodLabel,
     freeTeacherLicenses: teachers.length,
     teachersIssued: teachers.length,
     teachersLoggedIn,
@@ -415,12 +473,12 @@ export async function buildSchoolImpactSnapshot(adminId, weekStartInput = new Da
   return doc;
 }
 
-export async function buildAllSchoolImpactSnapshots(weekStartInput = new Date(), source = 'cron') {
+export async function buildAllSchoolImpactSnapshots(periodInput = new Date(), source = 'cron') {
   const admins = await User.find({ role: 'admin', isActive: { $ne: false } }).select('_id').lean();
   const results = [];
   for (const a of admins) {
     try {
-      const snap = await buildSchoolImpactSnapshot(a._id, weekStartInput, source);
+      const snap = await buildSchoolImpactSnapshot(a._id, periodInput, source);
       results.push({ adminId: String(a._id), ok: true, id: String(snap._id) });
     } catch (err) {
       results.push({ adminId: String(a._id), ok: false, error: err.message });
@@ -549,16 +607,25 @@ export async function buildDigestsForSchool(adminId, weekStartInput = new Date()
   return digests;
 }
 
-export async function listSchoolSnapshots(weekStartInput) {
-  const weekStart = startOfIsoWeek(weekStartInput || new Date());
+export async function listSchoolSnapshots(periodInput) {
+  const { weekStart } = resolveImpactPeriod(
+    periodInput && typeof periodInput === 'object' && !(periodInput instanceof Date)
+      ? periodInput
+      : { weekStart: periodInput || new Date() },
+  );
   return WeeklyImpactSnapshot.find({ weekStart }).sort({ schoolName: 1 }).lean();
 }
 
-export async function getSchoolSnapshot(adminId, weekStartInput) {
-  const weekStart = startOfIsoWeek(weekStartInput || new Date());
+export async function getSchoolSnapshot(adminId, periodInput) {
+  const periodOpts =
+    periodInput && typeof periodInput === 'object' && !(periodInput instanceof Date)
+      ? periodInput
+      : { weekStart: periodInput || new Date() };
+  const { weekStart } = resolveImpactPeriod(periodOpts);
   let snap = await WeeklyImpactSnapshot.findOne({ adminId, weekStart }).lean();
   if (!snap) {
-    snap = (await buildSchoolImpactSnapshot(adminId, weekStart, 'api')).toObject?.() ||
+    snap =
+      (await buildSchoolImpactSnapshot(adminId, periodOpts, 'api')).toObject?.() ||
       (await WeeklyImpactSnapshot.findOne({ adminId, weekStart }).lean());
   }
   return snap;
