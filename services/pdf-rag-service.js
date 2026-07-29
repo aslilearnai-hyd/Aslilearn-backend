@@ -98,10 +98,13 @@ function localHashEmbedding(text, dimension = LOCAL_EMBED_DIM) {
   return normalizeVector(vec);
 }
 
+const DEFAULT_GEMINI_EMBEDDING_MODEL = 'gemini-embedding-001';
+
 async function geminiEmbedding(text) {
   const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
   if (!apiKey) throw new Error('GEMINI_API_KEY is not configured');
-  const modelName = process.env.GEMINI_EMBEDDING_MODEL || 'text-embedding-004';
+  // text-embedding-004 was shut down (404 on v1beta). Use gemini-embedding-001.
+  const modelName = process.env.GEMINI_EMBEDDING_MODEL || DEFAULT_GEMINI_EMBEDDING_MODEL;
   const genAI = new GoogleGenerativeAI(apiKey);
   const model = genAI.getGenerativeModel({ model: modelName });
   const result = await model.embedContent(text);
@@ -139,7 +142,10 @@ export async function generateEmbedding(text) {
   if (provider === 'gemini') {
     try {
       const vec = await geminiEmbedding(text);
-      return { embedding: vec, embeddingModel: process.env.GEMINI_EMBEDDING_MODEL || 'text-embedding-004' };
+      return {
+        embedding: vec,
+        embeddingModel: process.env.GEMINI_EMBEDDING_MODEL || DEFAULT_GEMINI_EMBEDDING_MODEL,
+      };
     } catch (error) {
       console.warn('Gemini embedding failed, falling back to local hash:', error.message);
     }
