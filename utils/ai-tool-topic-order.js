@@ -32,7 +32,7 @@ export function orderedUniqueSubTopics(rows) {
   return result;
 }
 
-/** Unique topic labels in admin sortOrder (first row per topic wins). */
+/** Unique topic labels — prefer admin sortOrder, then chapter-wise (1,2,…10,11). */
 export function orderedUniqueTopics(rows, getTopicLabel) {
   const sorted = [...rows].sort(compareAiToolTopicRows);
   const seen = new Set();
@@ -43,7 +43,9 @@ export function orderedUniqueTopics(rows, getTopicLabel) {
     seen.add(name);
     result.push(name);
   }
-  return result;
+  return result.sort((a, b) =>
+    String(a).localeCompare(String(b), 'en', { numeric: true, sensitivity: 'base' }),
+  );
 }
 
 export async function resolveSortOrderStart(AiToolTopic, filter, explicitStart) {

@@ -154,6 +154,23 @@ export function buildAiToolTopicHierarchyTree(rows) {
     if (!list.includes(subTopic)) list.push(subTopic);
   }
 
+  // Rebuild topic key order chapter-wise so Object.keys is 1,2,…10,11 (not 1,11,2).
+  for (const classLabel of Object.keys(tree)) {
+    for (const subject of Object.keys(tree[classLabel])) {
+      const topicMap = tree[classLabel][subject];
+      const topicNames = Object.keys(topicMap).sort((a, b) =>
+        a.localeCompare(b, 'en', { numeric: true, sensitivity: 'base' }),
+      );
+      const rebuilt = {};
+      for (const topic of topicNames) {
+        rebuilt[topic] = [...topicMap[topic]].sort((a, b) =>
+          a.localeCompare(b, 'en', { numeric: true, sensitivity: 'base' }),
+        );
+      }
+      tree[classLabel][subject] = rebuilt;
+    }
+  }
+
   return tree;
 }
 

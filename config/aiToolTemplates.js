@@ -2461,7 +2461,9 @@ export function buildAiGeneratorPromptParts(toolSlug, params = {}) {
   if (universalLanguageBlock) contextLines.push(universalLanguageBlock);
   if (bloomLevel) contextLines.push(`BLOOM / COGNITIVE TARGET: ${bloomLevel}`);
   if (Number.isFinite(questionCount) && questionCount > 0) {
-    contextLines.push(`TARGET QUESTION COUNT: ${questionCount}`);
+    contextLines.push(
+      `TARGET QUESTION COUNT: EXACTLY ${questionCount} questions total (not fewer, not more)`,
+    );
   }
   if (Number.isFinite(cardCount) && cardCount > 0) {
     contextLines.push(`TARGET FLASHCARD COUNT: ${cardCount}`);
@@ -2471,7 +2473,14 @@ export function buildAiGeneratorPromptParts(toolSlug, params = {}) {
     const examQuestionTarget =
       Number.isFinite(questionCount) && questionCount > 0 ? questionCount : 12;
     contextLines.push(
-      `TARGET EXAM QUESTIONS: at least ${examQuestionTarget} across sections A–E (section_a..section_e or sections[])`,
+      `TARGET EXAM QUESTIONS: EXACTLY ${examQuestionTarget} questions across sections A–E (section_a..section_e or sections[]) — count must match exactly`,
+    );
+  }
+  if (slug === 'homework-creator') {
+    const hwTarget =
+      Number.isFinite(questionCount) && questionCount > 0 ? questionCount : 8;
+    contextLines.push(
+      `TARGET HOMEWORK QUESTIONS: EXACTLY ${hwTarget} practice/homework questions total`,
     );
   }
   if (slug === 'worksheet-mcq-generator' || slug === 'exam-question-paper-generator') {
@@ -2479,6 +2488,9 @@ export function buildAiGeneratorPromptParts(toolSlug, params = {}) {
       ...params,
       ...extra,
       questionComposition: params.questionComposition || extra.questionComposition,
+      questionCount: Number.isFinite(questionCount) && questionCount > 0 ? questionCount : undefined,
+      numberOfQuestions:
+        Number.isFinite(questionCount) && questionCount > 0 ? questionCount : undefined,
     });
     contextLines.push(formatQuestionCompositionPromptLine(composition, total));
     const scopeSub = String(params.subTopic || params.subtopic || '').trim();
@@ -2507,7 +2519,7 @@ export function buildAiGeneratorPromptParts(toolSlug, params = {}) {
     const practiceTarget =
       Number.isFinite(questionCount) && questionCount > 0 ? questionCount : 12;
     contextLines.push(
-      `TARGET PRACTICE QUESTIONS: ${practiceTarget} total, distributed across ALL sections A–G (each section must have at least 1 question; Section C = true/false, Section E = short answer, Section F = applied problem using subtopic facts/formula, Section G = HOTS analytical on subtopic)`,
+      `TARGET PRACTICE QUESTIONS: EXACTLY ${practiceTarget} total, distributed across ALL sections A–G (each section must have at least 1 question when total ≥ 7; Section C = true/false, Section E = short answer, Section F = applied problem using subtopic facts/formula, Section G = HOTS analytical on subtopic). Do not generate fewer or more than ${practiceTarget}.`,
     );
   }
   if (slug === 'worksheet-mcq-generator') {
@@ -2515,9 +2527,12 @@ export function buildAiGeneratorPromptParts(toolSlug, params = {}) {
       ...params,
       ...extra,
       questionComposition: params.questionComposition || extra.questionComposition,
+      questionCount: Number.isFinite(questionCount) && questionCount > 0 ? questionCount : undefined,
+      numberOfQuestions:
+        Number.isFinite(questionCount) && questionCount > 0 ? questionCount : undefined,
     });
     contextLines.push(
-      `WORKSHEET RULE: Generate exactly ${total} unique questions matching the QUESTION COMPOSITION counts (MCQ ${composition.mcq}, FIB ${composition.fib}, VSAQ ${composition.vsaq}, SAQ ${composition.saq}, LAQ ${composition.laq}). Put questions ONLY in sections[].questions — do NOT duplicate the same items in top-level questions[]. Every stem must be distinct and curriculum-specific — no scenario wrappers.`,
+      `WORKSHEET RULE: Generate EXACTLY ${total} unique questions matching the QUESTION COMPOSITION counts (MCQ ${composition.mcq}, FIB ${composition.fib}, VSAQ ${composition.vsaq}, SAQ ${composition.saq}, LAQ ${composition.laq}). Put questions ONLY in sections[].questions — do NOT duplicate the same items in top-level questions[]. Every stem must be distinct and curriculum-specific — no scenario wrappers.`,
     );
   }
   if (slug === 'chapter-summary-creator') {
@@ -2575,7 +2590,7 @@ export function buildAiGeneratorPromptParts(toolSlug, params = {}) {
     const examTarget =
       Number.isFinite(questionCount) && questionCount > 0 ? questionCount : 12;
     contextLines.push(
-      `EXAM PAPER RULE: structuredContent MUST use the 11-section Exam Question Paper format (paper_title, instructions, blueprint, section_a..section_e, internal_choices, answer_key, marking_scheme, open_ended_rubric). Minimum ${examTarget} questions across sections. Populate EVERY section array (section_a, section_b, section_c, section_d, section_e) with real questions — never leave Section D (long answer) or Section E (case-based) empty. Do NOT return Mock Test Builder fields.`,
+      `EXAM PAPER RULE: structuredContent MUST use the 11-section Exam Question Paper format (paper_title, instructions, blueprint, section_a..section_e, internal_choices, answer_key, marking_scheme, open_ended_rubric). Generate EXACTLY ${examTarget} questions across sections. Populate EVERY section array (section_a, section_b, section_c, section_d, section_e) with real questions — never leave Section D (long answer) or Section E (case-based) empty. Do NOT return Mock Test Builder fields.`,
     );
   }
   if (slug === 'concept-mastery-helper') {

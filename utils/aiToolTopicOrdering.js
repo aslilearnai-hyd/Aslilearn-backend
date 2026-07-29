@@ -23,8 +23,15 @@ export function orderedUniqueBySortField(rows, field) {
   }
   return [...orderFirst.entries()]
     .sort((a, b) => {
-      if (a[1] !== b[1]) return a[1] - b[1];
-      return a[0].localeCompare(b[0], 'en', { numeric: true, sensitivity: 'base' });
+      const labelCmp = a[0].localeCompare(b[0], 'en', { numeric: true, sensitivity: 'base' });
+      if (a[1] !== b[1]) {
+        // Prefer chapter-wise label when both look like Chapter N (avoids 1,11,2 from bad sortOrder).
+        const aCh = /\b(?:chapter|ch\.?|unit)\s*[#:]?\s*\d+\b/i.test(a[0]);
+        const bCh = /\b(?:chapter|ch\.?|unit)\s*[#:]?\s*\d+\b/i.test(b[0]);
+        if (aCh && bCh && labelCmp !== 0) return labelCmp;
+        return a[1] - b[1];
+      }
+      return labelCmp;
     })
     .map(([k]) => k);
 }
