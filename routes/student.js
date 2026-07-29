@@ -4958,15 +4958,16 @@ router.post('/session-time', async (req, res) => {
     if (session) {
       // Update existing session - use maximum duration (in case of multiple updates)
       const newDuration = capSessionMinutesPerDay(totalMinutes);
-      if (newDuration > session.duration) {
+      if (newDuration > (session.duration || 0)) {
         session.duration = newDuration;
         session.endTime = new Date();
+        // Mark duration dirty so pre-save does not overwrite with endTime - startTime.
+        session.markModified('duration');
         await session.save();
       }
     } else {
       // Create new session record
-      const startOfDay = new Date(dateKey);
-      startOfDay.setHours(0, 0, 0, 0);
+      const startOfDay = new Date(`${dateKey}T00:00:00`);
       
       session = new UserSession({
         userId: userId,
