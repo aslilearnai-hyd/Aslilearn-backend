@@ -34,6 +34,7 @@ import {
   finalizeDailyClassPlanStructuredContent,
   finalizeExamPaperStructuredContent,
   finalizeStoryPassageStructuredContent,
+  normalizeConceptMasteryDeckStructuredContent,
   PRACTICE_QA_SECTION_LABELS,
   WORKSHEET_SECTION_LABELS,
 } from './ai-content-engine-service.js';
@@ -1447,20 +1448,37 @@ export function validateDashboardAiToolContent(toolSlug, rawContent, options = {
   if (slug === 'my-study-decks' || slug === 'flashcard-generator') {
     headingData = finalizeFlashcardDeckStructuredContent(headingData, deliveryMeta, slug);
   }
+  if (slug === 'concept-mastery-helper') {
+    headingData = normalizeConceptMasteryDeckStructuredContent(headingData);
+  }
 
   let { complete, missing, optionalMissing } = getMissingCanonicalSections(slug, headingData, content);
   if (!complete) {
     // Core payload present (cards / questions / steps) — deliver rather than hide.
+    const shortNoteBody = String(
+      headingData?.short_note_summary || headingData?.summary || '',
+    ).trim();
+    const shortNotePoints = Array.isArray(headingData?.key_points_to_remember)
+      ? headingData.key_points_to_remember
+      : Array.isArray(headingData?.key_points)
+        ? headingData.key_points
+        : [];
+    const conceptRows = Array.isArray(headingData?.concepts) ? headingData.concepts : [];
     const hasCorePayload =
       (Array.isArray(headingData?.cards) && headingData.cards.length >= 3) ||
       (Array.isArray(headingData?.questions) && headingData.questions.length >= 1) ||
+      (Array.isArray(headingData?.practice_questions) &&
+        headingData.practice_questions.length >= 1) ||
       (Array.isArray(headingData?.sections) &&
         headingData.sections.some(
           (s) => Array.isArray(s?.questions) && s.questions.length > 0,
         )) ||
       (Array.isArray(headingData?.steps) && headingData.steps.length >= 1) ||
       (Array.isArray(headingData?.activities) && headingData.activities.length >= 1) ||
-      String(headingData?.passage || headingData?.story || '').trim().length >= 40;
+      String(headingData?.passage || headingData?.story || '').trim().length >= 40 ||
+      (slug === 'short-notes-summaries-maker' &&
+        (shortNoteBody.length >= 40 || shortNotePoints.length >= 1)) ||
+      (slug === 'concept-mastery-helper' && conceptRows.length >= 1);
     if (hasCorePayload) {
       complete = true;
       missing = [];

@@ -648,12 +648,25 @@ function scaffoldConceptBreakdownSections(structured, meta = {}) {
 }
 
 function scaffoldConceptRows(toolSlug, structured, meta = {}) {
-  if (!Array.isArray(structured.concepts) || !structured.concepts.length) return structured;
-  const out = { ...structured };
+  let base = structured && typeof structured === 'object' ? { ...structured } : {};
+  if (!Array.isArray(base.concepts) || !base.concepts.length) {
+    // Flat V2/legacy rows (concept_name / simple_definition) → wrap for dashboard gate
+    const hasFlat =
+      Boolean(String(base.concept_name || base.title || '').trim()) ||
+      Boolean(String(base.simple_definition || base.definition || '').trim()) ||
+      (Array.isArray(base.key_points) && base.key_points.length > 0) ||
+      (Array.isArray(base.step_by_step_explanation) && base.step_by_step_explanation.length > 0);
+    if (hasFlat) {
+      base = { ...base, concepts: [{ ...base }] };
+    } else {
+      return structured;
+    }
+  }
+  const out = { ...base };
   const { topic, subject } = ctx(meta);
   const variantN = Number(meta.generationVariant) || 0;
   const variantNote = variantN > 1 ? ` (set ${variantN})` : '';
-  out.concepts = structured.concepts.map((concept, i) => {
+  out.concepts = base.concepts.map((concept, i) => {
     const row = concept && typeof concept === 'object' ? { ...concept } : {};
     const baseName = String(row.concept_name || row.concept_title || row.title || `${topic} — Concept ${i + 1}`).trim();
     const name = baseName;
