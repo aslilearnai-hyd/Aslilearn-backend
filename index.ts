@@ -10,6 +10,17 @@ import postgres from 'postgres';
 import { eq } from 'drizzle-orm';
 import { users, videos, learningPaths, assessments } from './schema';
 
+/*
+ * DEPRECATED Postgres/Passport prototype. Production API is backend/index.js (Mongo).
+ * Refusing to listen unless explicitly enabled.
+ */
+if (process.env.ALLOW_LEGACY_TS_SERVER !== '1') {
+  console.error(
+    '[DEPRECATED] backend/index.ts is disabled. Use `node index.js`. Set ALLOW_LEGACY_TS_SERVER=1 only for emergency debugging.',
+  );
+  process.exit(1);
+}
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 

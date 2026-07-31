@@ -13,7 +13,7 @@ import {
 
 /** Paths that would flood storage or are not useful as audit events. */
 const SKIP =
-  /^\/api\/(health|ready|vidya\/.*\/stream|.*\/stream|student\/content-preview|uploads)(\/|$)/i;
+  /^\/api\/(health|ready|metrics|vidya\/.*\/stream|.*\/stream|student\/content-preview|uploads)(\/|$)/i;
 
 const SKIP_METHODS = new Set(['OPTIONS', 'HEAD']);
 

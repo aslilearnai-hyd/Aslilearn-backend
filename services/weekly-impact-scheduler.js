@@ -87,9 +87,12 @@ export function startWeeklyImpactScheduler() {
       await runWeeklyImpactJob({ source: 'cron' });
     }
     timer = setTimeout(tick, 60 * 60 * 1000); // check hourly
+    if (typeof timer.unref === 'function') timer.unref();
   };
 
   const delay = msUntilNextMondayUtc0100();
   console.log(`[weekly-impact] Scheduler armed; first check in ~${Math.round(delay / 60000)} min`);
   timer = setTimeout(tick, Math.min(delay, 60 * 60 * 1000));
+  // Allow Node to exit in tests / short-lived processes
+  if (typeof timer.unref === 'function') timer.unref();
 }

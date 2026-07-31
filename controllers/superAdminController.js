@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import { setAuthCookie } from '../utils/auth-cookie.js';
+import { setAuthCookie, setRefreshCookie } from '../utils/auth-cookie.js';
 import User from '../models/User.js';
 import Video from '../models/Video.js';
 import Teacher from '../models/Teacher.js';
@@ -156,6 +156,21 @@ export const superAdminLogin = async (req, res) => {
     );
     setAuthCookie(res, token);
 
+    let refreshToken = null;
+    try {
+      const { issueRefreshToken } = await import('../utils/auth-tokens.js');
+      const issued = await issueRefreshToken({
+        userId: superAdminUser._id,
+        role: 'super-admin',
+        userAgent: req.headers?.['user-agent'] || '',
+        ip: req.ip || '',
+      });
+      refreshToken = issued.refreshToken;
+      setRefreshCookie(res, refreshToken);
+    } catch (refreshErr) {
+      console.warn('Super-admin refresh token skipped:', refreshErr?.message);
+    }
+
     req.setAudit?.({
       action: 'auth.login',
       summary: `Super admin login: ${superAdminUser.email}`,
@@ -171,6 +186,8 @@ export const superAdminLogin = async (req, res) => {
     return res.json({
       success: true,
       token,
+      accessToken: token,
+      refreshToken,
       user: {
         id: superAdminId,
         _id: superAdminId,
@@ -1931,8 +1948,14 @@ export const createTeacher = async (req, res) => {
       }
     }
     
-    // Create new teacher
-    const hashedPassword = await bcrypt.hash(password || 'Password123', 12);
+    // Create new teacher — require explicit password (no fixed default)
+    if (!password || String(password).length < 8) {
+      return res.status(400).json({
+        success: false,
+        message: 'Password is required and must be at least 8 characters',
+      });
+    }
+    const hashedPassword = await bcrypt.hash(password, 12);
     const newTeacher = new Teacher({
       email,
       password: hashedPassword,

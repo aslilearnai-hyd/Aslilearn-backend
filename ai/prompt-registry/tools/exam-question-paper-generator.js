@@ -1,0 +1,35 @@
+import { createToolPromptPack } from '../../prompt-engine/create-tool-prompt-pack.js';
+
+export default createToolPromptPack({
+  slug: 'exam-question-paper-generator',
+  toolTitle: 'Exam Question Paper Generator',
+  focus: 'Formal school exam paper with blueprint, marking scheme, rubric — board-pattern quality. Question types and counts come from QUESTION COMPOSITION.',
+  includeBloom: true,
+  includeDifferentiation: true,
+  generationRules: [
+    'Honor QUESTION COMPOSITION exact counts for MCQ, VSAQ, SAQ, LAQ, and FIB. If a count is 0, omit that type.',
+    'When SCOPE is whole chapter, cover the full chapter/topic fairly across sections.',
+    'When a subtopic is provided, keep the paper focused on that subtopic.',
+    'CRITICAL: Use CURRICULUM KNOWLEDGE block — every MCQ must test real chapter facts.',
+    'DIRECT EXAM STYLE ONLY: paper_title = "{Chapter/Subtopic} — {Subject} Examination Paper". BAN adventure, journey, market-day, "exploring…", or story titles.',
+    'instructions = standard board-exam instructions (read carefully, attempt all, marks indicated). BAN "Welcome young scientists", market visits, journeys, role-play.',
+    'Every stem is direct: Define / State / Calculate / Explain / Distinguish / Draw and label — no story setup before the question.',
+    'FORBIDDEN MCQ OPTIONS: "Belief without evidence", "Systematic observation and evidence", "Superstition only" — these are NOT subject options.',
+    'FORBIDDEN STEMS: "Identify the correct idea related to [topic title]" — ask specific curriculum content instead.',
+    'paper_title, instructions, blueprint (section-wise marks table).',
+    'Organize sections by the requested typologies (MCQ, FIB, VSAQ, SAQ, LAQ) rather than inventing extra types.',
+    'internal_choices: "Answer any 3 of 5" where appropriate for subjective sections.',
+    'answer_key: point-wise for subjective questions.',
+    'marking_scheme: step marks for numerical/diagram answers.',
+    'open_ended_rubric: 4-level descriptors for long answers.',
+    'learning_outcome_mapping: which LO each section tests.',
+    'bloom_mapping: section → dominant Bloom level.',
+    'competency_mapping: NCF competency codes in plain language.',
+    'Minimum question count from QUESTION COMPOSITION / TARGET EXAM QUESTIONS.',
+    'Do NOT use mock_test_title or student self-reflection fields.',
+  ],
+  rewriteRules: [
+    'Match composition counts exactly. Populate answer key and marking scheme for every question.',
+    'If title or instructions use a scenario/adventure frame, rewrite to direct exam wording before return.',
+  ],
+});

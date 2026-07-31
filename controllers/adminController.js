@@ -963,18 +963,21 @@ export const createVideo = async (req, res) => {
 export const updateVideo = async (req, res) => {
   try {
     const { id } = req.params;
-    const updateData = req.body;
     const adminId = req.adminId;
+    const { pickAllowedFields, SAFE_VIDEO_UPDATE_FIELDS } = await import('../utils/safe-update-fields.js');
+    const updateData = pickAllowedFields(req.body, SAFE_VIDEO_UPDATE_FIELDS);
     
-    // Build update filter
+    // Build update filter — always tenant-scoped for school admins
     const filter = { _id: id };
     if (adminId) {
       filter.adminId = adminId;
+    } else {
+      return res.status(403).json({ success: false, message: 'Admin context required' });
     }
     
     const updatedVideo = await Video.findOneAndUpdate(
       filter,
-      updateData,
+      { $set: updateData },
       { new: true }
     );
     
@@ -1108,23 +1111,25 @@ export const createAssessment = async (req, res) => {
 export const updateAssessment = async (req, res) => {
   try {
     const { id } = req.params;
-    const updateData = req.body;
     const adminId = req.adminId;
+    const { pickAllowedFields, SAFE_ASSESSMENT_UPDATE_FIELDS } = await import('../utils/safe-update-fields.js');
+    const updateData = pickAllowedFields(req.body, SAFE_ASSESSMENT_UPDATE_FIELDS);
     
     // Recalculate total points if questions are updated
     if (updateData.questions) {
       updateData.totalPoints = updateData.questions.reduce((sum, q) => sum + (q.points || 1), 0);
     }
     
-    // Build update filter
     const filter = { _id: id };
     if (adminId) {
       filter.adminId = adminId;
+    } else {
+      return res.status(403).json({ success: false, message: 'Admin context required' });
     }
     
     const updatedAssessment = await Assessment.findOneAndUpdate(
       filter,
-      updateData,
+      { $set: updateData },
       { new: true }
     );
     
