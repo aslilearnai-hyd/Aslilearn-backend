@@ -267,7 +267,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
     subtopicName === 'whole-chapter';
   const combineMulti =
     params.combineSubtopics !== false && !isWholeChapter && subTopicList.length > 1;
-  const { canonicalizeGeneratorSubtopic } = await import('../../shared/generator-subtopic-label.js');
+  const { canonicalizeGeneratorSubtopic } = await import('../shared/generator-subtopic-label.js');
   // Persist a short label only — never dump every subtopic name into the record field.
   // Full subtopic lists stay in generation params (subTopics) for prompt coverage.
   const storageSubtopic = canonicalizeGeneratorSubtopic(subtopicName, {

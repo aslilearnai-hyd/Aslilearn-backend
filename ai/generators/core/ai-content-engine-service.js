@@ -10854,7 +10854,7 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
   const flashLiteOnly = isAiGeneratorFlashLiteOnlyEnabled();
   const batchModel = getAiGeneratorGeminiModel();
   const liteModel = resolveAllowedGeminiModel(batchModel);
-  const { getAiGeneratorMaxTokens } = await import('../../shared/ai-generator-llm-budget.js');
+  const { getAiGeneratorMaxTokens } = await import('../shared/ai-generator-llm-budget.js');
   const maxTokens = getAiGeneratorMaxTokens(slug, {
     qualityTier: qualityTierSettings.tier,
     skipUltraEconomyCaps: qualityTierSettings.skipUltraEconomyCaps === true,

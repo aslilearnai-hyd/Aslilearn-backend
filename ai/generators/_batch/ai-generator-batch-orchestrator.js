@@ -306,7 +306,7 @@ export async function generateBatchAndSave(params, opts = {}) {
   )
     .map((s) => String(s || '').trim())
     .filter(Boolean);
-  const { canonicalizeGeneratorSubtopic } = await import('../../shared/generator-subtopic-label.js');
+  const { canonicalizeGeneratorSubtopic } = await import('../shared/generator-subtopic-label.js');
   // Combined multi-subtopic papers + whole-chapter scope share one storage label.
   // Single-subtopic runs keep their real name (never collapse into Whole chapter).
   const combinedSubtopicLabel = canonicalizeGeneratorSubtopic(subtopicName, {
