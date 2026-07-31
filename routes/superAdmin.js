@@ -9,6 +9,7 @@ import {
   verifySuperAdmin,
   authorizeRoles
 } from '../middleware/auth.js';
+import superAdminEventRoutes from './superAdminEventRoutes.js';
 import {
   loginSchema,
   createAdminSchema,
@@ -1316,5 +1317,7 @@ console.log('✅ Super Admin exam routes registered:', {
   'DELETE /exams/:examId/questions/:questionId': 'deleteQuestion',
   'DELETE /exams/:examId/questions': 'deleteAllQuestions'
 });
+
+router.use(superAdminEventRoutes);
 
 export default router;

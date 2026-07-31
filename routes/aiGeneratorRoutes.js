@@ -22,6 +22,8 @@ import { generateSixSectionPreview } from '../controllers/sixSectionController.j
 const router = express.Router();
 
 router.use(verifyToken);
+// Teachers/students need read-only taxonomy for AI tool dropdowns (controller enforces roles).
+router.get('/topic-taxonomy', getManagedTopicTaxonomy);
 router.use(verifySuperAdmin);
 
 // Heavy limiter ONLY on Gemini/generate paths — not on list/view/poll (those burned
@@ -35,7 +37,6 @@ router.get('/audit/duplicates', getDuplicateAudit);
 router.get('/audit/analytics', getAiGeneratorAnalytics);
 router.get('/audit/saturation', getTopicSaturation);
 router.get('/records', getAllGeneratorRecords);
-router.get('/topic-taxonomy', getManagedTopicTaxonomy);
 router.get('/records/:id', getSingleGeneratorRecord);
 router.put('/records/:id', updateGeneratorRecord);
 router.post('/records/bulk-delete', bulkDeleteGeneratorRecords);

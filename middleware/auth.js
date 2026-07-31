@@ -107,7 +107,7 @@ export const canAccessAdminData = (req, res, next) => {
     return next();
   }
   
-  if (req.user.role === 'admin' && req.userId === adminId) {
+  if (req.user.role === 'admin' && String(req.userId) === String(adminId)) {
     // Admin can only access their own data
     req.targetAdminId = adminId;
     return next();
@@ -135,12 +135,34 @@ export const verifyDataOwnership = (Model) => {
         return next();
       }
       
-      // Admin can only access their own data
+      // Admin can only access their own tenant data — fail closed if no owner field
       if (req.user.role === 'admin') {
-        if (document.adminId && document.adminId.toString() !== req.userId) {
+        const ownerId =
+          document.adminId ||
+          document.assignedAdmin ||
+          document.createdBy ||
+          null;
+        if (!ownerId) {
+          return res.status(403).json({
+            success: false,
+            message: 'Access denied. Resource has no tenant owner.',
+          });
+        }
+        if (ownerId.toString() !== req.userId) {
           return res.status(403).json({ 
             success: false, 
             message: 'Access denied. You can only access your own data.' 
+          });
+        }
+        // User documents use assignedAdmin (not adminId)
+        if (
+          document.role === 'student' &&
+          document.assignedAdmin &&
+          document.assignedAdmin.toString() !== req.userId
+        ) {
+          return res.status(403).json({
+            success: false,
+            message: 'Access denied. You can only access your own students.',
           });
         }
       }

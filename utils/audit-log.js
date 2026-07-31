@@ -2,6 +2,7 @@ import AuditLog from '../models/AuditLog.js';
 import { logger } from './logger.js';
 import jwt from 'jsonwebtoken';
 import { extractAuthToken } from './auth-cookie.js';
+import mongoose from 'mongoose';
 
 const SECRET_KEYS =
   /^(password|pass|pwd|token|accessToken|refreshToken|authorization|auth|secret|jwt|apiKey|api_key|mongo_uri|mongoUri|cookie|sessionId|privateKey)$/i;
@@ -30,6 +31,9 @@ function sanitize(value, depth = 0) {
  */
 export async function writeAudit(entry = {}) {
   try {
+    // Avoid mongoose buffering timeouts when DB is down (tests, reconnect windows).
+    if (mongoose.connection.readyState !== 1) return;
+
     const doc = {
       at: entry.at || new Date(),
       action: String(entry.action || 'unknown').slice(0, 120),

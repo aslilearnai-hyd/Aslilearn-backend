@@ -20,12 +20,15 @@ async function fixTeacherLogin() {
   try {
     // Get email from command line arguments
     const email = process.argv[2];
-    const newPassword = process.argv[3] || 'Password123';
+    const newPassword = process.argv[3] || process.env.TEACHER_RESET_PASSWORD;
 
     if (!email) {
       console.error('❌ Please provide teacher email as argument');
-      console.log('Usage: node backend/scripts/fix-teacher-login.js <email> [newPassword]');
-      console.log('Example: node backend/scripts/fix-teacher-login.js akhileshsamayamanthula@gmail.com Password123');
+      console.log('Usage: TEACHER_RESET_PASSWORD="..." node backend/scripts/fix-teacher-login.js <email> [newPassword]');
+      process.exit(1);
+    }
+    if (!newPassword || String(newPassword).length < 12) {
+      console.error('❌ Provide a new password (≥12 chars) as argv[3] or TEACHER_RESET_PASSWORD.');
       process.exit(1);
     }
 

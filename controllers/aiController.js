@@ -6,6 +6,22 @@ import Assessment from '../models/Assessment.js';
 import Exam from '../models/Exam.js';
 import ExamResult from '../models/ExamResult.js';
 
+/** Ensure caller may access the given student (same tenant). Super-admin always allowed. */
+async function assertStudentTenantAccess(req, studentId) {
+  if (req.user?.role === 'super-admin') return { ok: true };
+  const student = await User.findById(studentId).select('role assignedAdmin');
+  if (!student || student.role !== 'student') {
+    return { ok: false, status: 404, message: 'Student not found' };
+  }
+  if (req.user?.role === 'admin') {
+    if (String(student.assignedAdmin) !== String(req.userId)) {
+      return { ok: false, status: 403, message: 'Access denied for this student' };
+    }
+    return { ok: true };
+  }
+  return { ok: false, status: 403, message: 'Access denied' };
+}
+
 // Get comprehensive AI analytics
 export const getAIAnalytics = async (req, res) => {
   try {
@@ -250,6 +266,10 @@ export const getRiskAssessment = async (req, res) => {
 export const generatePersonalizedContent = async (req, res) => {
   try {
     const { studentId, subject } = req.body;
+    const access = await assertStudentTenantAccess(req, studentId);
+    if (!access.ok) {
+      return res.status(access.status).json({ success: false, message: access.message });
+    }
     
     const personalizedContent = await AIService.generatePersonalizedContent(studentId, subject);
     
@@ -270,6 +290,10 @@ export const generatePersonalizedContent = async (req, res) => {
 export const predictExamOutcome = async (req, res) => {
   try {
     const { examId, studentId } = req.params;
+    const access = await assertStudentTenantAccess(req, studentId);
+    if (!access.ok) {
+      return res.status(access.status).json({ success: false, message: access.message });
+    }
     
     const prediction = await AIService.predictExamOutcome(examId, studentId);
     
@@ -290,6 +314,10 @@ export const predictExamOutcome = async (req, res) => {
 export const optimizeLearningPath = async (req, res) => {
   try {
     const { studentId } = req.params;
+    const access = await assertStudentTenantAccess(req, studentId);
+    if (!access.ok) {
+      return res.status(access.status).json({ success: false, message: access.message });
+    }
     
     const optimizedPath = await AIService.optimizeLearningPath(studentId);
     

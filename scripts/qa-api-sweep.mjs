@@ -4,7 +4,11 @@
  */
 const BASE = process.env.QA_API_BASE || 'http://localhost:5000';
 const EMAIL = process.env.QA_EMAIL || 'sealucknow2017@gmail.com';
-const PASS = process.env.QA_PASSWORD || 'Asli123';
+const PASS = process.env.QA_PASSWORD;
+if (!PASS || PASS.length < 8) {
+  console.error('Set QA_PASSWORD (test account password) before running qa-api-sweep.');
+  process.exit(1);
+}
 
 const QA_TOOL_ORDER = [
   'flashcard-generator',

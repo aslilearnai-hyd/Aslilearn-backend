@@ -30,7 +30,11 @@ const ADMIN_EMAIL = 'brahmamtalent@gmail.com';
 const SCHOOL_NAME = 'Brahmam Talent High School';
 const CLASS_NUMBER = '6';
 const CLASS_SECTION = 'C';
-const DEFAULT_PASSWORD = 'Password123';
+const DEFAULT_PASSWORD = process.env.IMPORT_DEFAULT_PASSWORD || '';
+if (!DEFAULT_PASSWORD || DEFAULT_PASSWORD.length < 12) {
+  console.error('Set IMPORT_DEFAULT_PASSWORD (≥12 chars) before running this import script.');
+  process.exit(1);
+}
 
 // Connect to MongoDB
 async function connectDB() {

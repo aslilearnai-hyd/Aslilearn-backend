@@ -47,6 +47,15 @@ export const loginLimiter = rateLimit({
   handler: jsonHandler('Too many sign-in attempts. Please wait a few minutes and try again.'),
 });
 
+export const signupLimiter = rateLimit({
+  windowMs: Number(process.env.SIGNUP_WINDOW_MS || 60 * 60 * 1000),
+  limit: Number(process.env.SIGNUP_MAX_ATTEMPTS || 5),
+  standardHeaders: true,
+  legacyHeaders: false,
+  keyGenerator: (req) => ipKeyGenerator(req),
+  handler: jsonHandler('Too many registration attempts. Please try again later.'),
+});
+
 export const aiHeavyLimiter = rateLimit({
   windowMs: 60 * 1000,
   // Generate/batch only — raised slightly so Super Admin can retry a failed batch

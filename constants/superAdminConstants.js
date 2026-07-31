@@ -1,8 +1,10 @@
-// Super Admin Constants
+// Super Admin Constants — never store plaintext passwords in source.
+// Operational credentials must come from environment / secrets manager.
 
 export const SUPER_ADMIN_CREDENTIALS = {
-  email: 'sealucknow2017@gmail.com',
-  password: 'Asli123'
+  email: process.env.SUPER_ADMIN_EMAIL || '',
+  // Intentionally empty — login must use DB-hashed password, not a source constant
+  password: '',
 };
 
 export const USER_ROLES = {
@@ -70,8 +72,9 @@ export const PAYMENT_METHODS = [
 ];
 
 export const DEFAULT_PASSWORDS = {
-  ADMIN: 'admin123',
-  USER: 'password123'
+  // Deprecated: fixed defaults are a security risk. Callers must supply or generate passwords.
+  ADMIN: '',
+  USER: '',
 };
 
 export const API_ENDPOINTS = {

@@ -517,7 +517,8 @@ export const createTeacherTool = async (req, res) => {
         programCtx.curriculumBoard ||
         programCtx.displayBoard ||
         'CBSE',
-      productCategory: resolvedProductCategory,
+      // Empty = do not filter by product track (avoids missing CBSE rows saved with GENERAL/legacy tags)
+      productCategory: resolvedProductCategory || undefined,
       preferLatest: false,
       strictToolMatch: true,
       cursorScope: String(teacherId || ''),
@@ -593,6 +594,11 @@ export const createTeacherTool = async (req, res) => {
           },
         });
       }
+    }
+    if (!cachedDoc) {
+      console.warn(
+        `📭 AI Tool Data NOT FOUND: ${toolType} | ${classDisplay} | ${finalSubject} | topic="${topicForStore}" | subtopic="${subtopicForStore}" | board=${String(req.body.board || programCtx.curriculumBoard || 'CBSE')}`,
+      );
     }
     return res.status(404).json({
       success: false,

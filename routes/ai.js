@@ -2,7 +2,8 @@ import express from 'express';
 import {
   verifyToken,
   verifySuperAdmin,
-  authorizeRoles
+  authorizeRoles,
+  canAccessAdminData,
 } from '../middleware/auth.js';
 import {
   getAIAnalytics,
@@ -28,12 +29,12 @@ router.use(verifyToken);
 router.get('/analytics', verifySuperAdmin, getAIAnalytics);
 router.get('/detailed-analytics', verifySuperAdmin, getDetailedAIAnalytics);
 
-// Admin-specific AI Analytics Routes
-router.get('/admins/:adminId/predictions', authorizeRoles('super-admin', 'admin'), getStudentPredictions);
-router.get('/admins/:adminId/recommendations', authorizeRoles('super-admin', 'admin'), getContentRecommendations);
-router.get('/admins/:adminId/patterns', authorizeRoles('super-admin', 'admin'), getLearningPatterns);
-router.get('/admins/:adminId/risk-assessment', authorizeRoles('super-admin', 'admin'), getRiskAssessment);
-router.get('/admins/:adminId/detailed-analytics', authorizeRoles('super-admin', 'admin'), getAdminDetailedAnalytics);
+// Admin-specific AI Analytics Routes — tenant-scoped via canAccessAdminData
+router.get('/admins/:adminId/predictions', authorizeRoles('super-admin', 'admin'), canAccessAdminData, getStudentPredictions);
+router.get('/admins/:adminId/recommendations', authorizeRoles('super-admin', 'admin'), canAccessAdminData, getContentRecommendations);
+router.get('/admins/:adminId/patterns', authorizeRoles('super-admin', 'admin'), canAccessAdminData, getLearningPatterns);
+router.get('/admins/:adminId/risk-assessment', authorizeRoles('super-admin', 'admin'), canAccessAdminData, getRiskAssessment);
+router.get('/admins/:adminId/detailed-analytics', authorizeRoles('super-admin', 'admin'), canAccessAdminData, getAdminDetailedAnalytics);
 
 // Personalized AI Features
 router.post('/personalized-content', authorizeRoles('super-admin', 'admin'), generatePersonalizedContent);

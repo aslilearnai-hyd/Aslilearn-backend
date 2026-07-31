@@ -5,6 +5,7 @@ import path from 'path';
 import mongoose from 'mongoose';
 import { fileURLToPath } from 'url';
 import { verifyToken, authorizeRoles } from '../middleware/auth.js';
+import Teacher from '../models/Teacher.js';
 import AiContentEngineSource from '../models/AiContentEngineSource.js';
 import AiContentEngineChunk from '../models/AiContentEngineChunk.js';
 import AiToolGeneration from '../models/AiToolGeneration.js';
@@ -1143,7 +1144,66 @@ async function resolvePdfGeneration(id) {
   return { generation, source, master };
 }
 
-async function fetchPaginatedPdfList({ query, page, limit, summary }) {
+async function resolvePdfVisibleUploaderIds(req) {
+  const role = req.user?.role;
+  if (role === 'super-admin') return null; // unrestricted
+  const selfId = String(req.userId || req.user?.userId || req.user?.id || '');
+  if (!selfId) return [];
+  if (role === 'admin') {
+    const teachers = await Teacher.find({ adminId: selfId }).select('_id').lean();
+    return [selfId, ...teachers.map((t) => String(t._id))];
+  }
+  // teacher (and any other non-super roles): own uploads only
+  return [selfId];
+}
+
+function pdfRowUploaderId(row) {
+  if (!row) return '';
+  return String(
+    row.uploadedBy ||
+      row.generatedBy ||
+      row.metadata?.uploadedBy ||
+      row.teacherId ||
+      '',
+  );
+}
+
+function filterPdfRowsByUploader(rows, allowedIds) {
+  if (allowedIds == null) return rows;
+  const set = new Set(allowedIds.map(String));
+  return rows.filter((row) => {
+    const uid = pdfRowUploaderId(row);
+    return uid && set.has(uid);
+  });
+}
+
+async function assertPdfRecordAccess(req, requestedId) {
+  const allowed = await resolvePdfVisibleUploaderIds(req);
+  if (allowed == null) return { ok: true };
+
+  const id = String(requestedId || '').trim();
+  const { generation, source: genSource } = await resolvePdfGeneration(id);
+  if (generation) {
+    const owner = String(generation.generatedBy || genSource?.uploadedBy || '');
+    if (owner && allowed.includes(owner)) return { ok: true };
+    return { ok: false, status: 403, message: 'Access denied for this PDF record' };
+  }
+
+  const { master, source } = await resolvePdfMasterAndSource(id);
+  const owner = String(
+    source?.uploadedBy ||
+      master?.generatedBy ||
+      master?.metadata?.uploadedBy ||
+      '',
+  );
+  if (owner && allowed.includes(owner)) return { ok: true };
+  if (!generation && !master && !source) {
+    return { ok: false, status: 404, message: 'PDF source not found' };
+  }
+  return { ok: false, status: 403, message: 'Access denied for this PDF record' };
+}
+
+async function fetchPaginatedPdfList({ query, page, limit, summary, allowedUploaderIds = null }) {
   const genMatch = buildPdfGenerationListMatch(query);
   const masterMatch = buildPdfListMasterMatch(query);
 
@@ -1195,9 +1255,10 @@ async function fetchPaginatedPdfList({ query, page, limit, summary }) {
         new Date(a.uploadDate || a.updatedAt || 0).getTime(),
     );
 
-  const total = merged.length;
+  const scoped = filterPdfRowsByUploader(merged, allowedUploaderIds);
+  const total = scoped.length;
   const skip = (page - 1) * limit;
-  const data = merged.slice(skip, skip + limit);
+  const data = scoped.slice(skip, skip + limit);
   const tokenUsageSummary = await aggregateAiPdfTokenUsage(masterMatch);
 
   return {
@@ -1864,11 +1925,13 @@ router.get('/pdf/list', verifyToken, authorizeRoles('teacher', 'admin', 'super-a
       req.query.summary === '' ||
       req.query.summary === '1' ||
       req.query.summary === 'true';
+    const allowedUploaderIds = await resolvePdfVisibleUploaderIds(req);
     const { data, pagination, tokenUsageSummary, listMeta } = await fetchPaginatedPdfList({
       query: req.query,
       page,
       limit,
       summary,
+      allowedUploaderIds,
     });
     return res.json({
       success: true,
@@ -1981,6 +2044,11 @@ router.post('/pdf/bulk-delete', verifyToken, authorizeRoles('teacher', 'admin', 
     let deletedCount = 0;
     const errors = [];
     for (const id of ids) {
+      const access = await assertPdfRecordAccess(req, id);
+      if (!access.ok) {
+        errors.push({ id, message: access.message || 'Access denied' });
+        continue;
+      }
       const result = await deletePdfRecordById(id);
       if (result.ok) {
         deletedCount += 1;
@@ -2004,6 +2072,10 @@ router.post('/pdf/bulk-delete', verifyToken, authorizeRoles('teacher', 'admin', 
 // DELETE /api/pdf/:id — master id deletes one generation; source id deletes all linked rows + PDF file
 router.delete('/pdf/:id', verifyToken, authorizeRoles('teacher', 'admin', 'super-admin'), async (req, res) => {
   try {
+    const access = await assertPdfRecordAccess(req, req.params.id);
+    if (!access.ok) {
+      return res.status(access.status || 403).json({ success: false, message: access.message });
+    }
     const result = await deletePdfRecordById(req.params.id);
     if (!result.ok) {
       return res.status(result.status || 500).json({ success: false, message: result.message || 'Delete failed' });
@@ -2017,6 +2089,10 @@ router.delete('/pdf/:id', verifyToken, authorizeRoles('teacher', 'admin', 'super
 // GET /api/generations/:id — single generation content only (zero LLM)
 router.get('/generations/:id', verifyToken, authorizeRoles('teacher', 'admin', 'super-admin'), async (req, res) => {
   try {
+    const access = await assertPdfRecordAccess(req, req.params.id);
+    if (!access.ok) {
+      return res.status(access.status || 403).json({ success: false, message: access.message });
+    }
     const { generation, source } = await resolvePdfGeneration(req.params.id);
     if (!generation) {
       return res.status(404).json({ success: false, message: 'Generation not found' });
@@ -2070,6 +2146,10 @@ router.get('/generations/:id', verifyToken, authorizeRoles('teacher', 'admin', '
 // DELETE /api/generations/:id — delete one generation only
 router.delete('/generations/:id', verifyToken, authorizeRoles('teacher', 'admin', 'super-admin'), async (req, res) => {
   try {
+    const access = await assertPdfRecordAccess(req, req.params.id);
+    if (!access.ok) {
+      return res.status(access.status || 403).json({ success: false, message: access.message });
+    }
     const result = await deletePdfGenerationById(req.params.id);
     if (!result.ok) {
       return res.status(result.status || 500).json({ success: false, message: result.message || 'Delete failed' });
@@ -2087,6 +2167,10 @@ router.get(
   authorizeRoles('teacher', 'admin', 'super-admin'),
   async (req, res) => {
     try {
+      const access = await assertPdfRecordAccess(req, req.params.id);
+      if (!access.ok) {
+        return res.status(access.status || 403).json({ success: false, message: access.message });
+      }
       const { master, source } = await resolvePdfMasterAndSource(req.params.id);
       const kb =
         source?.knowledgeBase ||
@@ -2113,6 +2197,10 @@ router.get(
 // GET /api/pdf/:id
 router.get('/pdf/:id', verifyToken, authorizeRoles('teacher', 'admin', 'super-admin'), async (req, res) => {
   try {
+    const access = await assertPdfRecordAccess(req, req.params.id);
+    if (!access.ok) {
+      return res.status(access.status || 403).json({ success: false, message: access.message });
+    }
     const { generation, source: genSource } = await resolvePdfGeneration(req.params.id);
     if (generation) {
       const row = {
