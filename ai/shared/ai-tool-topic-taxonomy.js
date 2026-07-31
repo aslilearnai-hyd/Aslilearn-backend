@@ -1,5 +1,5 @@
 import AiToolTopic from '../../models/AiToolTopic.js';
-import { boardMongoMatch } from '../../utils/board-label.js';
+import { boardMongoMatch, lockBoardKey } from '../../utils/board-label.js';
 import { buildDisplayTopicName } from './ai-tool-topic-display.js';
 import {
   compareAiToolTopicRows,
@@ -8,8 +8,11 @@ import {
 } from './ai-tool-topic-order.js';
 import {
   applyClassLabelMongoFilter,
+  buildHierarchyBoardMongoFilter,
   buildSubjectMongoFilter,
+  buildTopicFieldMongoFilter,
   mergeMongoFilters,
+  normalizeClassId,
   normalizeMatchText,
 } from './ai-tool-data-match.js';
 import { normalizeIitCategoryLoose } from '../../constants/products.js';
@@ -18,6 +21,20 @@ const NATURAL_COLLATOR = new Intl.Collator('en', { numeric: true, sensitivity: '
 
 function uniqueSorted(values) {
   return [...new Set(values.filter(Boolean))].sort((a, b) => NATURAL_COLLATOR.compare(a, b));
+}
+
+function mergeUniqueChapterLabels(primary = [], extra = []) {
+  const seen = new Set();
+  const out = [];
+  for (const raw of [...primary, ...extra]) {
+    const name = String(raw || '').trim();
+    if (!name) continue;
+    const key = name.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(name);
+  }
+  return out.sort((a, b) => NATURAL_COLLATOR.compare(a, b));
 }
 
 /** Normalize query/storage value: '' = General. null = no filter. */
@@ -102,14 +119,29 @@ export function buildAiToolTopicTaxonomyFilter({
 } = {}) {
   let filter = { isActive: true };
   const boardText = normalizeMatchText(board);
-  if (boardText) {
-    filter.board = boardMongoMatch(boardText);
-  }
+  const classText = normalizeMatchText(classLabel);
 
   filter = applyProductCategoryMongoFilter(filter, productCategory);
-  filter = applyClassLabelMongoFilter(filter, classLabel, boardText);
 
-  const subjectClause = buildSubjectMongoFilter(subject);
+  // Avoid top-level board:/iit/ + Class 6 empty-board $or (empty rows never matched).
+  if (classText) {
+    filter = applyClassLabelMongoFilter(filter, classText, boardText);
+    const isIitClass6 =
+      lockBoardKey(boardText) === 'IIT/NEET' && normalizeClassId(classText) === 'Class 6';
+    if (boardText && !isIitClass6) {
+      filter = mergeMongoFilters(filter, { board: boardMongoMatch(boardText) });
+    }
+  } else if (boardText) {
+    filter = mergeMongoFilters(
+      filter,
+      buildHierarchyBoardMongoFilter(boardText, {
+        boardField: 'board',
+        classField: 'classLabel',
+      }),
+    );
+  }
+
+  const subjectClause = buildSubjectMongoFilter(subject, boardText);
   if (subjectClause && Object.keys(subjectClause).length > 0) {
     filter = mergeMongoFilters(filter, subjectClause);
   }
@@ -198,5 +230,83 @@ export async function resolveAiToolTopicTaxonomy(params = {}) {
       rows = await queryAiToolTopicTaxonomy({ ...params, board: 'CBSE' });
     }
   }
-  return formatAiToolTopicTaxonomy(rows);
+
+  const formatted = formatAiToolTopicTaxonomy(rows);
+  const classLabel = normalizeMatchText(params.classLabel);
+  const subject = normalizeMatchText(params.subject);
+  const topicName = normalizeMatchText(params.topicName);
+
+  // Union chapters/subtopics that already have AiToolGeneration rows so tools
+  // still list content when AI Tool Topics seed is incomplete.
+  if (classLabel && subject) {
+    try {
+      const fromGenerations = await distinctTopicsFromGenerations({
+        board,
+        productCategory: params.productCategory,
+        classLabel,
+        subject,
+        topicName,
+      });
+      if (topicName) {
+        formatted.subTopics = mergeUniqueChapterLabels(
+          formatted.subTopics,
+          fromGenerations.subTopics,
+        );
+      } else {
+        formatted.topics = mergeUniqueChapterLabels(formatted.topics, fromGenerations.topics);
+      }
+      formatted.subjects = mergeUniqueChapterLabels(formatted.subjects, fromGenerations.subjects);
+    } catch (err) {
+      console.warn(
+        '[ai-tool-topic-taxonomy] generation union skipped:',
+        String(err?.message || err).slice(0, 200),
+      );
+    }
+  }
+
+  return formatted;
+}
+
+async function distinctTopicsFromGenerations({
+  board = '',
+  productCategory,
+  classLabel,
+  subject,
+  topicName = '',
+}) {
+  const AiToolGeneration = (await import('../../models/AiToolGeneration.js')).default;
+  const boardText = normalizeMatchText(board);
+  const classText = normalizeMatchText(classLabel);
+  const subjectText = normalizeMatchText(subject);
+
+  let filter = {
+    status: { $nin: ['archived', 'inactive', 'deleted'] },
+  };
+  filter = applyClassLabelMongoFilter(filter, classText, boardText);
+  const isIitClass6 =
+    lockBoardKey(boardText) === 'IIT/NEET' && normalizeClassId(classText) === 'Class 6';
+  if (boardText && !isIitClass6) {
+    filter = mergeMongoFilters(filter, { board: boardMongoMatch(boardText) });
+  }
+  filter = mergeMongoFilters(filter, buildSubjectMongoFilter(subjectText, boardText));
+  filter = applyProductCategoryMongoFilter(filter, productCategory);
+
+  if (topicName) {
+    filter = mergeMongoFilters(filter, buildTopicFieldMongoFilter(topicName));
+    const subTopics = (await AiToolGeneration.distinct('subtopic', filter))
+      .map((v) => String(v || '').trim())
+      .filter(Boolean);
+    return { topics: [], subTopics, subjects: [] };
+  }
+
+  const [topics, subjects] = await Promise.all([
+    AiToolGeneration.distinct('topic', filter),
+    AiToolGeneration.distinct('subject', filter),
+  ]);
+
+  return {
+    topics: topics.map((v) => String(v || '').trim()).filter(Boolean),
+    subTopics: [],
+    subjects: subjects.map((v) => String(v || '').trim()).filter(Boolean),
+  };
 }

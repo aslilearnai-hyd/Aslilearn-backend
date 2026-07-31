@@ -55,7 +55,7 @@ export function buildClassLabelMongoFilter(classLabel, board = '') {
   };
 }
 
-export function buildSubjectMongoFilter(subject) {
+export function buildSubjectMongoFilter(subject, board = '') {
   const v = normalizeMatchText(subject);
   if (!v) return {};
   const lower = v.toLowerCase();
@@ -65,6 +65,18 @@ export function buildSubjectMongoFilter(subject) {
   }
   if (lower === 'social science' || lower === 'social studies' || lower === 'sst') {
     return { subject: { $regex: '^(social\\s*science|social\\s*studies|sst)$', $options: 'i' } };
+  }
+  // Non-IIT schools store Science; generators sometimes save Physics/Chemistry/Biology.
+  const boardKey = lockBoardKey(board);
+  const isScienceBranch =
+    lower === 'science' ||
+    lower === 'physics' ||
+    lower === 'chemistry' ||
+    lower === 'biology';
+  if (isScienceBranch && boardKey !== 'IIT/NEET') {
+    return {
+      subject: { $regex: '^(science|physics|chemistry|biology)$', $options: 'i' },
+    };
   }
   const exact = buildCaseInsensitiveExactFilter(v);
   return exact ? { subject: exact } : { subject: v };
@@ -176,6 +188,44 @@ export function buildBoardMongoFilter(board) {
   return { board: boardMongoMatch(b) };
 }
 
+/**
+ * Hierarchy browse board filter. IIT/NEET also includes empty-board Class 6 rows —
+ * those are common for legacy / teacher saves and delivery already soft-matches them.
+ */
+export function buildHierarchyBoardMongoFilter(
+  board,
+  { boardField = 'board', classField = 'classLabel' } = {},
+) {
+  const raw = normalizeMatchText(board);
+  if (!raw) return { [boardField]: '' };
+  const locked = lockBoardKey(raw);
+  const boardMatch = boardMongoMatch(raw);
+  if (locked !== 'IIT/NEET') {
+    return { [boardField]: boardMatch };
+  }
+  return {
+    $or: [
+      { [boardField]: boardMatch },
+      {
+        $and: [
+          {
+            $or: [
+              { [boardField]: '' },
+              { [boardField]: null },
+              { [boardField]: { $exists: false } },
+            ],
+          },
+          {
+            [classField]: {
+              $in: ['Class 6', 'IIT-6', 'Class-6-IIT', '6'],
+            },
+          },
+        ],
+      },
+    ],
+  };
+}
+
 export function mergeMongoFilters(...parts) {
   const clauses = parts.filter((p) => p && typeof p === 'object' && Object.keys(p).length > 0);
   if (!clauses.length) return {};
@@ -199,7 +249,7 @@ export function buildAiToolDataScopeFilter({ classLabel, subject, board }) {
   return mergeMongoFilters(
     buildBoardMongoFilter(board),
     buildClassLabelMongoFilter(classLabel, board),
-    buildSubjectMongoFilter(subject),
+    buildSubjectMongoFilter(subject, board),
   );
 }
 
