@@ -896,6 +896,9 @@ export async function generateBatchAndSave(params, opts = {}) {
 
                 createdByRole: 'super-admin',
 
+                /** Original expand/target name before canonicalize (for audits / repair). */
+                requestedSubtopic: subtopicName,
+
                 extraParams,
 
                 contentType: generated.contentType,
