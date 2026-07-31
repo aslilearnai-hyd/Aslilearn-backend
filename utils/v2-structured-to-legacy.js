@@ -723,18 +723,18 @@ export function mapV2StructuredToLegacy(toolSlug, v2) {
         return q && ans ? `${q} — ${ans}` : q || ans;
       })
       .filter(Boolean);
-    return {
-      ...pedagogy,
-      title,
+    const conceptRow = {
       concept_name: title,
       simple_definition: str(core.definition),
       why_important: str(reallife.connection) || pedagogy.real_life_connection,
       prior_knowledge_needed: str(core.priorKnowledge),
       step_by_step_explanation: list(core.explanation),
       explanation: list(core.explanation),
+      lesson: list(core.explanation).join('\n') || str(core.definition),
       diagram_suggestion: str(core.diagram),
       real_life_examples: list(core.examples),
       examples: list(core.examples),
+      real_example: list(core.examples)[0] || '',
       common_mistakes: list(assessment.commonErrors),
       concept_check_questions: checks,
       key_points: list(core.keyPoints),
@@ -742,6 +742,13 @@ export function mapV2StructuredToLegacy(toolSlug, v2) {
       hots_question: str(core.hotsQuestion),
       self_reflection_prompt: str(reallife.reflection) || pedagogy.reflection_exit_ticket,
       formulae: list(core.formulae),
+    };
+    return {
+      ...pedagogy,
+      title,
+      ...conceptRow,
+      // Teacher/student viewers and dashboard gate expect concepts[]
+      concepts: [conceptRow],
     };
   }
 
