@@ -584,6 +584,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                         ragChunkCount: ragBase.chunkCount,
                         bookTextUsed: Boolean(ragBase.hasBookPassages),
                         chapterScope: isWholeChapter,
+                        requestedSubtopic: subtopicName,
                         ...(subTopicList.length > 1 ? { coveredSubtopics: subTopicList } : {}),
                         createdByName: opts.reqUser?.name || 'Super Admin',
                         createdByRole: 'super-admin',
@@ -948,6 +949,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                 ragChunkCount: ragBase.chunkCount,
                 bookTextUsed: Boolean(ragBase.hasBookPassages),
                 chapterScope: isWholeChapter,
+                requestedSubtopic: subtopicName,
                 ...(subTopicList.length > 1 ? { coveredSubtopics: subTopicList } : {}),
                 bookTextWarning:
                   useBookKnowledge && !ragBase.hasBookPassages

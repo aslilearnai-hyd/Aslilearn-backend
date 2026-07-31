@@ -1,18 +1,31 @@
 /**
  * Canonical subtopic labels for AI/book generator storage + grouped lists.
- * Prevents duplicate "Whole chapter" buckets (empty / aliases / joined lists).
+ * Prevents duplicate "Whole chapter" buckets (empty / aliases / true multi-joins).
+ *
+ * IMPORTANT: Do NOT treat natural-language commas in a single curriculum title as a
+ * multi-list (e.g. "Speed, Velocity and Acceleration"). Combined papers use "|" or
+ * an explicit subTopics[] array with combineSubtopics=true.
  */
 import { isWholeChapterSubtopic } from '../../../utils/questionComposition.js';
 
 const WHOLE_CHAPTER_LABEL = 'Whole chapter';
 
-/** True when the value is a joined multi-subtopic list, not one focused subtopic. */
+/**
+ * True when the value is an intentional joined multi-subtopic list, not one title.
+ * Only "|" (and similar explicit joiners) count — commas appear in real chapter titles.
+ */
 export function isJoinedMultiSubtopicLabel(value) {
   const t = String(value || '').trim();
   if (!t) return false;
-  if (/\|\s*/.test(t) && t.split('|').filter((p) => p.trim()).length >= 2) return true;
-  const commaParts = t.split(/\s*,\s*/).map((p) => p.trim()).filter(Boolean);
-  return commaParts.length >= 2;
+  // App join separator when combining selected subtopics into one paper
+  if (t.includes('|') && t.split('|').map((p) => p.trim()).filter(Boolean).length >= 2) {
+    return true;
+  }
+  // Explicit " + " joins (rare, but used in some combine UIs)
+  if (/\s\+\s/.test(t) && t.split(/\s\+\s/).map((p) => p.trim()).filter(Boolean).length >= 2) {
+    return true;
+  }
+  return false;
 }
 
 export function isSingleSubtopicLabel(value) {
@@ -25,8 +38,8 @@ export function isSingleSubtopicLabel(value) {
 
 /**
  * Normalize what we persist / group under.
- * - empty, aliases, joined lists, explicit multi-subtopic scope → "Whole chapter"
- * - otherwise keep the trimmed single subtopic name
+ * - empty, aliases, explicit multi-joins, chapterScope / combine → "Whole chapter"
+ * - otherwise keep the trimmed single subtopic name (commas allowed)
  */
 export function canonicalizeGeneratorSubtopic(value, opts = {}) {
   const forceWhole =

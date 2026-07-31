@@ -15,6 +15,11 @@ export function getAllowedOrigins() {
     'https://aslilearn.ai',
     'https://www.aslilearn.ai',
     'https://api.aslilearn.ai',
+    // Android / Expo WebView Origin (bundle id com.tech.aslilearnai)
+    'https://com.tech.aslilearnai',
+    'http://com.tech.aslilearnai',
+    'capacitor://localhost',
+    'ionic://localhost',
     'https://alsi-stud-frontend-mf3r-ampkob5el-akhilesh2006s-projects.vercel.app',
     'https://alsi-stud-frontend-mf3r-es6c3f5aq-akhilesh2006s-projects.vercel.app',
     'https://alsi-stud-frontend-mf3r-ea1jir1t6-akhilesh2006s-projects.vercel.app',
