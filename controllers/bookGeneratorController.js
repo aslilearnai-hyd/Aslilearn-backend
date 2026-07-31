@@ -117,7 +117,7 @@ export async function generateBookBatch(req, res) {
       }
       if (includeWholeChapter || isWholeChapter) {
         targets.push({
-          subtopicName: '',
+          subtopicName: 'Whole chapter',
           chapterScope: true,
           subTopics: normalizedSubTopics,
         });

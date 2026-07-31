@@ -8,7 +8,25 @@ import { boardMongoMatch, canonicalBoardLabel } from '../utils/board-label.js';
 import { isDeprecatedAiToolIdentifier } from '../config/aiToolTemplates.js';
 import { checkRecordSectionGap, getToolSectionGapSummary, getSectionGapSummariesByTool } from '../services/ai-tool-data-audit-service.js';
 import { compareAiToolRecordsByVariantThenDate, sortGroupedGeneratorRecords } from '../utils/ai-tool-record-sort.js';
+import { isWholeChapterSubtopic } from '../utils/questionComposition.js';
 
+const WHOLE_CHAPTER_LABEL = 'Whole chapter';
+
+function isWholeChapterStorageLabel(value) {
+  return isWholeChapterSubtopic(value);
+}
+
+/** Mongo match for Whole chapter + legacy empty / alias labels. */
+function wholeChapterSubtopicMongoClause(field = 'subtopic') {
+  return {
+    $or: [
+      { [field]: { $in: ['', WHOLE_CHAPTER_LABEL, 'whole-chapter', 'Whole Chapter'] } },
+      { [field]: { $exists: false } },
+      { [field]: null },
+      { [field]: { $regex: /^whole[\s_-]*chapter$/i } },
+    ],
+  };
+}
 function previewFromContent(text, n = 220) {
   if (!text || typeof text !== 'string') return '';
   const plain = text.replace(/[#*_`[\]()]/g, ' ').replace(/\s+/g, ' ').trim();
@@ -83,19 +101,34 @@ function buildMasterMongoFilter(match = {}) {
   if ('classLabel' in match) mongoFilter.classLabel = match.classLabel ?? '';
   if ('subject' in match) mongoFilter.subject = match.subject ?? '';
   if ('topic' in match) mongoFilter.topic = match.topic ?? '';
-  if ('subtopic' in match) mongoFilter.subtopic = match.subtopic ?? '';
+  if ('subtopic' in match) {
+    const st = match.subtopic ?? '';
+    if (isWholeChapterStorageLabel(st)) {
+      Object.assign(mongoFilter, wholeChapterSubtopicMongoClause('subtopic'));
+    } else {
+      mongoFilter.subtopic = st;
+    }
+  }
   return mongoFilter;
 }
 
 function buildLegacyMongoFilter(match = {}) {
-  return {
+  const filter = {
     ...(match.toolName ? { toolSlug: match.toolName } : {}),
     ...('classLabel' in match ? { className: match.classLabel ?? '' } : {}),
     ...('board' in match ? { board: boardMongoMatch(match.board ?? '') } : {}),
     ...('subject' in match ? { subjectName: match.subject ?? '' } : {}),
     ...('topic' in match ? { topicName: match.topic ?? '' } : {}),
-    ...('subtopic' in match ? { subtopicName: match.subtopic ?? '' } : {}),
   };
+  if ('subtopic' in match) {
+    const st = match.subtopic ?? '';
+    if (isWholeChapterStorageLabel(st)) {
+      Object.assign(filter, wholeChapterSubtopicMongoClause('subtopicName'));
+    } else {
+      filter.subtopicName = st;
+    }
+  }
+  return filter;
 }
 
 function groupFieldPath(model, groupField) {
@@ -117,12 +150,21 @@ async function aggregateCollectionGroupCounts(Model, modelKey, match, groupField
 function mergeGroupCountRows(masterGroups, legacyGroups, groupField) {
   const merged = new Map();
   for (const group of [...masterGroups, ...legacyGroups]) {
-    const value = group._id ?? '';
+    let value = group._id ?? '';
     if (groupField === 'toolName' && isDeprecatedAiToolIdentifier(value)) continue;
+    if (groupField === 'subtopic' && isWholeChapterStorageLabel(value)) {
+      value = WHOLE_CHAPTER_LABEL;
+    }
     merged.set(value, (merged.get(value) || 0) + group.count);
   }
   return Array.from(merged.entries())
-    .sort((a, b) => String(a[0]).localeCompare(String(b[0])))
+    .sort((a, b) => {
+      if (groupField === 'subtopic') {
+        if (a[0] === WHOLE_CHAPTER_LABEL) return -1;
+        if (b[0] === WHOLE_CHAPTER_LABEL) return 1;
+      }
+      return String(a[0]).localeCompare(String(b[0]));
+    })
     .map(([value, count]) => ({ value, count }));
 }
 

@@ -832,12 +832,17 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                   uniqueness = validateRecordUniqueness(toolSlug, structuredContent, uniquenessCtx);
                 }
 
-                // Last resort for book worksheets: save even when questions overlap prior batch slots.
+                // Last resort: save even when titles/questions overlap prior batch slots.
                 if (!uniqueness.valid) {
                   const qCount = collectQuestionTextsFromStructured(structuredContent, toolSlug).length;
-                  if (qCount >= 1) {
+                  const activityCount = Array.isArray(structuredContent?.activities)
+                    ? structuredContent.activities.length
+                    : Array.isArray(structuredContent?.projects)
+                      ? structuredContent.projects.length
+                      : 0;
+                  if (qCount >= 1 || activityCount >= 1) {
                     console.warn(
-                      `[book-generator] Slot ${batchIndex}: uniqueness soft-pass after repair (${qCount} questions). ${uniqueness.errors.slice(0, 2).join('; ')}`,
+                      `[book-generator] Slot ${batchIndex}: uniqueness soft-pass after repair (q=${qCount}, activities=${activityCount}). ${uniqueness.errors.slice(0, 2).join('; ')}`,
                     );
                     uniqueness = { valid: true, errors: [], duplicates: [] };
                   }
@@ -847,9 +852,14 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               if (!uniqueness.valid) {
                 lastError = uniqueness.errors.join('; ');
                 const qCount = collectQuestionTextsFromStructured(structuredContent, toolSlug).length;
-                if (qCount >= 1) {
+                const activityCount = Array.isArray(structuredContent?.activities)
+                  ? structuredContent.activities.length
+                  : Array.isArray(structuredContent?.projects)
+                    ? structuredContent.projects.length
+                    : 0;
+                if (qCount >= 1 || activityCount >= 1) {
                   console.warn(
-                    `[book-generator] Slot ${batchIndex}: duplicate soft-pass — saving anyway (${qCount} questions). ${lastError}`,
+                    `[book-generator] Slot ${batchIndex}: duplicate soft-pass — saving anyway (q=${qCount}, activities=${activityCount}). ${lastError}`,
                   );
                 } else {
                   if (attempt < maxAttempts) continue;
