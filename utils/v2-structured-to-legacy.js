@@ -854,3 +854,87 @@ export function isV2SixSectionStructured(structured) {
       structured.schema === 'asli-v2-six-section',
   );
 }
+
+function questionRowsHaveText(rows) {
+  return arr(rows).some((q) => str(q?.question || q?.prompt || q?.text).length >= 10);
+}
+
+/**
+ * Fill empty worksheet Section D/E on V2 core before legacy map + save gate.
+ * Book batches were dropping slots when Gemini omitted sectionE_long (most common).
+ */
+export function ensureV2WorksheetCoreSections(v2, meta = {}) {
+  if (!isV2SixSectionStructured(v2)) return v2;
+  const core = v2.core && typeof v2.core === 'object' ? { ...v2.core } : {};
+  const topic = str(meta.topic || core.title || core.worksheetTitle || 'this topic');
+  const subject = str(meta.subject || 'Science');
+  const realLife = str(v2?.reallife?.connection);
+
+  if (!questionRowsHaveText(core.sectionD_application)) {
+    const fromC = arr(core.sectionC_short).find((q) => str(q?.question || q?.prompt).length >= 8);
+    core.sectionD_application = [
+      {
+        question: fromC
+          ? `Explain in detail: ${str(fromC.question).slice(0, 160)}`
+          : `Explain ${topic} with one clear example from ${subject}.`,
+        answer:
+          str(fromC?.answer) ||
+          `Give a clear explanation of ${topic} with definition and one example.`,
+        marks: 3,
+      },
+    ];
+  }
+
+  if (!questionRowsHaveText(core.sectionE_long)) {
+    const fromD = arr(core.sectionD_application).find(
+      (q) => str(q?.question || q?.prompt).length >= 8,
+    );
+    core.sectionE_long = [
+      {
+        question: realLife
+          ? `Real-life application: ${realLife}. Explain which idea from ${topic} is used and why it works.`
+          : fromD
+            ? `Using the idea behind "${str(fromD.question).slice(0, 120)}", describe a real-life situation involving ${topic} and solve it step by step.`
+            : `Describe one real-life situation where ${topic} (${subject}) is used. Explain the concept and show your reasoning.`,
+        answer:
+          str(fromD?.answer) ||
+          realLife ||
+          `Connect ${topic} to an everyday example with clear steps and a conclusion.`,
+        marks: 5,
+      },
+    ];
+  }
+
+  return { ...v2, core };
+}
+
+/** Copy padded legacy worksheet sections back onto V2 core arrays. */
+export function syncLegacyWorksheetSectionsIntoV2(v2, legacy) {
+  if (!isV2SixSectionStructured(v2) || !legacy || typeof legacy !== 'object') return v2;
+  const sections = Array.isArray(legacy.sections) ? legacy.sections : [];
+  if (!sections.length) return v2;
+  const core = v2.core && typeof v2.core === 'object' ? { ...v2.core } : {};
+  const pick = (re) =>
+    sections.find((s) => re.test(String(s?.sectionName || s?.name || '')))?.questions || [];
+  const toCore = (rows) =>
+    arr(rows)
+      .map((q) => ({
+        question: str(q?.question || q?.prompt || q?.text),
+        options: Array.isArray(q?.options) ? q.options.map(str) : [],
+        answer: str(q?.answer),
+        marks: q?.marks,
+      }))
+      .filter((q) => q.question);
+
+  const a = toCore(pick(/section\s*a\b/i));
+  const b = toCore(pick(/section\s*b\b/i));
+  const c = toCore(pick(/section\s*c\b/i));
+  const d = toCore(pick(/section\s*d\b/i));
+  const e = toCore(pick(/section\s*e\b/i));
+  if (a.length) core.sectionA_mcq = a;
+  if (b.length) core.sectionB_fib = b;
+  if (c.length) core.sectionC_short = c;
+  if (d.length) core.sectionD_application = d;
+  if (e.length) core.sectionE_long = e;
+  return { ...v2, core };
+}

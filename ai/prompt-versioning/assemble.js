@@ -8,6 +8,19 @@ import { MASTER_SYSTEM_PROMPT } from './master-prompt.js';
 import { buildToolPack } from './tool-packs.js';
 import { buildBoardLayer, buildRagLayer, buildIitLayer } from './layers.js';
 import { buildUniversalLanguageSubjectPromptBlock } from '../shared/story-passage-subject.js';
+import {
+  formatQuestionCompositionPromptLine,
+  normalizeQuestionComposition,
+} from '../../utils/questionComposition.js';
+
+/** Default worksheet blueprint matching the historic V2 pack (16 questions). */
+const WORKSHEET_V2_DEFAULT_COMPOSITION = {
+  mcq: 5,
+  fib: 5,
+  vsaq: 3,
+  saq: 2,
+  laq: 1,
+};
 
 /** Feature flag — on by default; set AI_GENERATOR_V2_SIX_SECTION=off to disable. */
 export function isSixSectionV2Enabled() {
@@ -146,13 +159,45 @@ export function assembleSixSectionPrompt(toolSlug, params = {}, opts = {}) {
       ? 'Subtopic: (whole chapter — cover the full Chapter/Topic)'
       : `Subtopic: ${params.subTopic || params.subtopic || subTopicList[0] || ''}`;
 
-  const composition =
+  const compositionFromParams =
     params.questionComposition && typeof params.questionComposition === 'object'
       ? params.questionComposition
       : null;
-  const compositionLine = composition
-    ? `Question composition: MCQ=${composition.mcq ?? 0}, VSAQ=${composition.vsaq ?? 0}, SAQ=${composition.saq ?? 0}, LAQ=${composition.laq ?? 0}, FIB=${composition.fib ?? 0}`
-    : '';
+  const requestedCount = Number(params.questionCount ?? params.numberOfQuestions);
+  const hasRequestedCount = Number.isFinite(requestedCount) && requestedCount > 0;
+  let compositionLine = '';
+  let countOverrideBlock = '';
+
+  if (
+    pack.family === 'questions' &&
+    (hasRequestedCount ||
+      compositionFromParams ||
+      toolSlug === 'worksheet-mcq-generator' ||
+      toolSlug === 'exam-question-paper-generator' ||
+      toolSlug === 'mock-test-builder' ||
+      toolSlug === 'smart-qa-practice-generator' ||
+      toolSlug === 'homework-creator' ||
+      toolSlug === 'quick-assignment-builder')
+  ) {
+    const { composition, total } = hasRequestedCount || compositionFromParams
+      ? normalizeQuestionComposition({
+          questionCount: hasRequestedCount ? requestedCount : undefined,
+          numberOfQuestions: hasRequestedCount ? requestedCount : undefined,
+          questionComposition: compositionFromParams || undefined,
+        })
+      : {
+          composition: { ...WORKSHEET_V2_DEFAULT_COMPOSITION },
+          total: Object.values(WORKSHEET_V2_DEFAULT_COMPOSITION).reduce((a, b) => a + b, 0),
+        };
+    compositionLine = formatQuestionCompositionPromptLine(composition, total);
+    countOverrideBlock = [
+      `MANDATORY TOTAL: EXACTLY ${total} questions across sectionA_mcq + sectionB_fib + sectionC_short + sectionD_application + sectionE_long.`,
+      `Section counts (must match exactly): sectionA_mcq=${composition.mcq}, sectionB_fib=${composition.fib}, sectionC_short=${composition.vsaq}, sectionD_application=${composition.saq}, sectionE_long=${composition.laq}.`,
+      hasRequestedCount
+        ? `USER REQUESTED ${requestedCount} QUESTIONS — this OVERRIDES any default 16-question worksheet blueprint in the tool rules above. Do not stop at 15 or 16 if the target is higher.`
+        : 'Use the default section counts above unless USER PARAMETERS change them.',
+    ].join('\n');
+  }
 
   const userBlock = [
     'USER PARAMETERS',
@@ -161,7 +206,9 @@ export function assembleSixSectionPrompt(toolSlug, params = {}, opts = {}) {
     `Subject: ${params.subject || ''}`,
     `Chapter/Topic: ${params.topic || ''}`,
     subtopicLine,
+    hasRequestedCount ? `Requested question count: ${requestedCount}` : '',
     compositionLine,
+    countOverrideBlock,
     params.productCategory ? `IIT product category: ${params.productCategory}` : '',
   ]
     .filter(Boolean)
