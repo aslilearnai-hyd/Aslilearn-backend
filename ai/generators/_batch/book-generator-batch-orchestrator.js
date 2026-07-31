@@ -67,7 +67,8 @@ import { computeScaffoldDensity, SCAFFOLD_DENSITY_CEILING } from '../../quality-
 import { generateSixSectionContent } from '../_v2/six-section-generator.js';
 import { isSixSectionV2Enabled, buildV2VariantHint } from '../../prompt-versioning/assemble.js';
 import { isV2SupportedTool, v2ToolFamily } from '../../prompt-versioning/tool-packs.js';
-import { mapV2StructuredToLegacy } from '../../../utils/v2-structured-to-legacy.js';
+import { mapV2StructuredToLegacy, ensureV2WorksheetCoreSections, syncLegacyWorksheetSectionsIntoV2 } from '../../../utils/v2-structured-to-legacy.js';
+import { pickQuestionCountParams } from '../../../utils/questionComposition.js';
 
 /** Question tools that carry scaffold-prone question pools and cross-slot dedup. */
 const BOOK_QUESTION_UNIQUENESS_TOOLS = new Set([
@@ -460,6 +461,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                     subTopic: isWholeChapter ? '' : subtopicName,
                     chapterScope: isWholeChapter,
                     ...(subTopicList.length > 1 ? { subTopics: subTopicList } : {}),
+                    ...pickQuestionCountParams(params),
                   },
                   {
                     primaryModel: qualityTierSettings.primaryGeminiModel,
@@ -481,7 +483,26 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                     v2.structuredContent?.core?.title ||
                     v2.structuredContent?.core?.worksheetTitle ||
                     'Six-section content';
-                  const legacyStructured = mapV2StructuredToLegacy(toolSlug, v2.structuredContent);
+                  const padMeta = {
+                    subject: subjectName,
+                    topic: topicName || book.title,
+                    subTopic: isWholeChapter ? '' : subtopicName,
+                    bookGenerator: true,
+                    batchOrchestrator: true,
+                    pdfContext: v2RagContext,
+                    generationVariant: variantIndex,
+                  };
+                  let structuredV2 = ensureV2WorksheetCoreSections(v2.structuredContent, padMeta);
+                  let legacyStructured = mapV2StructuredToLegacy(toolSlug, structuredV2);
+                  if (toolSlug === 'worksheet-mcq-generator') {
+                    legacyStructured = ensureWorksheetSectionsComplete(
+                      legacyStructured && typeof legacyStructured === 'object'
+                        ? legacyStructured
+                        : { title: coreTitle, sections: [] },
+                      padMeta,
+                    );
+                    structuredV2 = syncLegacyWorksheetSectionsIntoV2(structuredV2, legacyStructured);
+                  }
                   let persistContent = coreTitle;
                   if (legacyStructured) {
                     try {
@@ -528,7 +549,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                    * rather than persisting an empty document.
                    */
                   const renderedLen = String(persistContent || '').trim().length;
-                  const payloadLen = JSON.stringify(v2.structuredContent || {}).length;
+                  const payloadLen = JSON.stringify(structuredV2 || {}).length;
                   if (renderedLen <= String(coreTitle || '').trim().length + 20 && payloadLen > 800) {
                     lastError = `Render collapsed to title (${renderedLen} chars from a ${payloadLen}-char payload)`;
                     console.warn(
@@ -543,7 +564,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                       content: persistContent,
                       generatedContent: persistContent,
                       metadata: {
-                        structuredContent: v2.structuredContent,
+                        structuredContent: structuredV2,
                         ...(legacyStructured ? { legacyStructuredContent: legacyStructured } : {}),
                       },
                     });
@@ -551,11 +572,26 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                       const detail =
                         (bookGate.missingSections || []).join(', ') ||
                         String(bookGate.message || 'incomplete').slice(0, 90);
-                      lastError = `Incomplete content (${detail})`;
-                      console.warn(
-                        `[book-generator] Slot ${batchIndex} attempt ${attempt}: not saved — ${detail}`,
-                      );
-                      continue;
+                      // Last attempt: keep usable worksheets rather than dropping the slot.
+                      const qCount = Array.isArray(legacyStructured?.questions)
+                        ? legacyStructured.questions.length
+                        : Array.isArray(legacyStructured?.sections)
+                          ? legacyStructured.sections.reduce(
+                              (n, s) => n + (Array.isArray(s?.questions) ? s.questions.length : 0),
+                              0,
+                            )
+                          : 0;
+                      if (attempt >= maxAttempts && qCount >= 6 && renderedLen > 400) {
+                        console.warn(
+                          `[book-generator] Slot ${batchIndex}: completeness soft-pass (q=${qCount}) after pad — ${detail}`,
+                        );
+                      } else {
+                        lastError = `Incomplete content (${detail})`;
+                        console.warn(
+                          `[book-generator] Slot ${batchIndex} attempt ${attempt}: not saved — ${detail}`,
+                        );
+                        continue;
+                      }
                     }
                   }
                   const rec = await withMongoRetry(() =>
@@ -589,7 +625,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                         createdByName: opts.reqUser?.name || 'Super Admin',
                         createdByRole: 'super-admin',
                         contentType: 'structured',
-                        structuredContent: v2.structuredContent,
+                        structuredContent: structuredV2,
                         ...(legacyStructured ? { legacyStructuredContent: legacyStructured } : {}),
                         formatSource: 'asli-v2-six-section',
                         schemaVersion: 'asli-v2-six-section',

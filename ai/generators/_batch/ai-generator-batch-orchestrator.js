@@ -32,6 +32,7 @@ import { computeGeminiCostFromTokenUsage } from '../../providers/gemini-token-co
 import { lockBoardKey, resolveClassLabelForAiToolStorage } from '../../../utils/board-label.js';
 import { formatStructuredToolOutput } from '../../../config/aiToolTemplates.js';
 import { mapV2StructuredToLegacy } from '../../../utils/v2-structured-to-legacy.js';
+import { pickQuestionCountParams } from '../../../utils/questionComposition.js';
 
 import {
 
@@ -540,6 +541,7 @@ export async function generateBatchAndSave(params, opts = {}) {
                     topic: topicName,
                     subTopic: subtopicName,
                     ...(subTopicList.length > 1 ? { subTopics: subTopicList } : {}),
+                    ...pickQuestionCountParams(params),
                   },
                   {
                     primaryModel: qualityTierSettings.primaryGeminiModel,

@@ -168,6 +168,32 @@ export function formatQuestionCompositionPromptLine(composition, total) {
   return `QUESTION COMPOSITION (exact counts — generate exactly these, total ${total}): ${parts.join('; ')}. Do not add extra question types beyond what is requested. If a count is 0, omit that type entirely.`;
 }
 
+/** Pull questionCount / composition from batch or request params (+ extraParams). */
+export function pickQuestionCountParams(params = {}) {
+  const extra =
+    params.extraParams && typeof params.extraParams === 'object' ? params.extraParams : {};
+  const questionCount = Number(
+    params.questionCount ??
+      params.numberOfQuestions ??
+      extra.questionCount ??
+      extra.numberOfQuestions,
+  );
+  const questionComposition =
+    (params.questionComposition && typeof params.questionComposition === 'object'
+      ? params.questionComposition
+      : null) ||
+    (extra.questionComposition && typeof extra.questionComposition === 'object'
+      ? extra.questionComposition
+      : null) ||
+    undefined;
+  return {
+    ...(Number.isFinite(questionCount) && questionCount > 0
+      ? { questionCount, numberOfQuestions: questionCount }
+      : {}),
+    ...(questionComposition ? { questionComposition } : {}),
+  };
+}
+
 /** Tools that accept question-composition counts (MCQ/VSAQ/…) and chapter-wide scope. */
 export const CHAPTER_SCOPE_OPTIONAL_SUBTOPIC_TOOLS = new Set([
   'worksheet-mcq-generator',
