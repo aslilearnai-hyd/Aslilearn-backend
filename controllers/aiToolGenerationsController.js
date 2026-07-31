@@ -4,11 +4,26 @@ import AIGeneratorRecord from '../models/AIGeneratorRecord.js';
 import AiContentEngineSource from '../models/AiContentEngineSource.js';
 import AiContentEngineChunk from '../models/AiContentEngineChunk.js';
 import { deleteFromConfiguredStorage } from '../services/cloud-storage.js';
-import { boardMongoMatch, canonicalBoardLabel } from '../utils/board-label.js';
+import { boardMongoMatch, canonicalBoardLabel, lockBoardKey } from '../utils/board-label.js';
 import { isDeprecatedAiToolIdentifier } from '../config/aiToolTemplates.js';
 import { checkRecordSectionGap, getToolSectionGapSummary, getSectionGapSummariesByTool } from '../services/ai-tool-data-audit-service.js';
 import { compareAiToolRecordsByVariantThenDate, sortGroupedGeneratorRecords } from '../utils/ai-tool-record-sort.js';
 import { isWholeChapterSubtopic } from '../utils/questionComposition.js';
+import {
+  aggregateCache,
+  aggregateInFlight,
+  clearAiToolHierarchyCache,
+} from '../utils/ai-tool-hierarchy-cache.js';
+import {
+  buildClassLabelMongoFilter,
+  buildHierarchyBoardMongoFilter,
+  buildSubjectMongoFilter,
+  buildSubtopicFieldMongoFilter,
+  buildTopicFieldMongoFilter,
+  mergeMongoFilters,
+  normalizeClassId,
+  normalizeMatchText,
+} from '../ai/shared/ai-tool-data-match.js';
 
 const WHOLE_CHAPTER_LABEL = 'Whole chapter';
 
@@ -89,46 +104,179 @@ const LEGACY_GROUP_FIELD = {
 };
 
 const AGGREGATE_CACHE_TTL_MS = 30_000;
-/** @type {Map<string, { at: number, value: unknown }>} */
-const aggregateCache = new Map();
-/** @type {Map<string, Promise<unknown>>} */
-const aggregateInFlight = new Map();
 
 function buildMasterMongoFilter(match = {}) {
-  const mongoFilter = {};
-  if (match.toolName) mongoFilter.toolName = match.toolName;
-  if ('board' in match) mongoFilter.board = boardMongoMatch(match.board ?? '');
-  if ('classLabel' in match) mongoFilter.classLabel = match.classLabel ?? '';
-  if ('subject' in match) mongoFilter.subject = match.subject ?? '';
-  if ('topic' in match) mongoFilter.topic = match.topic ?? '';
-  if ('subtopic' in match) {
-    const st = match.subtopic ?? '';
-    if (isWholeChapterStorageLabel(st)) {
-      Object.assign(mongoFilter, wholeChapterSubtopicMongoClause('subtopic'));
+  const parts = [];
+  if (match.toolName) parts.push({ toolName: match.toolName });
+
+  const hasBoard = 'board' in match;
+  const hasClass = 'classLabel' in match;
+  const boardVal = hasBoard ? String(match.board ?? '') : '';
+  const classVal = hasClass ? String(match.classLabel ?? '') : '';
+
+  if (hasClass) {
+    if (classVal) {
+      parts.push(buildClassLabelMongoFilter(classVal, boardVal));
+      const isIitClass6 =
+        lockBoardKey(boardVal) === 'IIT/NEET' && normalizeClassId(classVal) === 'Class 6';
+      if (hasBoard && boardVal && !isIitClass6) {
+        parts.push({ board: boardMongoMatch(boardVal) });
+      } else if (hasBoard && !boardVal) {
+        parts.push({ board: '' });
+      }
     } else {
-      mongoFilter.subtopic = st;
+      parts.push({ classLabel: '' });
+      if (hasBoard) {
+        parts.push(
+          boardVal
+            ? buildHierarchyBoardMongoFilter(boardVal, {
+                boardField: 'board',
+                classField: 'classLabel',
+              })
+            : { board: '' },
+        );
+      }
+    }
+  } else if (hasBoard) {
+    parts.push(
+      boardVal
+        ? buildHierarchyBoardMongoFilter(boardVal, {
+            boardField: 'board',
+            classField: 'classLabel',
+          })
+        : { board: '' },
+    );
+  }
+
+  if ('subject' in match) {
+    const subject = String(match.subject ?? '');
+    parts.push(subject ? buildSubjectMongoFilter(subject, boardVal) : { subject: '' });
+  }
+  if ('topic' in match) {
+    const topic = String(match.topic ?? '');
+    parts.push(topic ? buildTopicFieldMongoFilter(topic) : { topic: '' });
+  }
+  if ('subtopic' in match) {
+    const st = String(match.subtopic ?? '');
+    if (isWholeChapterStorageLabel(st)) {
+      parts.push(wholeChapterSubtopicMongoClause('subtopic'));
+    } else if (st) {
+      parts.push(buildSubtopicFieldMongoFilter(st));
+    } else {
+      parts.push({ subtopic: '' });
     }
   }
-  return mongoFilter;
+
+  return mergeMongoFilters(...parts);
+}
+
+function buildLegacyClassLabelFilter(classLabel, board = '') {
+  const normalized = normalizeClassId(classLabel);
+  if (!normalized) return {};
+  const boardKey = lockBoardKey(board);
+  const isIitClass6 = boardKey === 'IIT/NEET' && normalized === 'Class 6';
+  if (isIitClass6) {
+    const iitBoardMatch = boardMongoMatch(board || 'IIT');
+    return {
+      $or: [
+        { className: { $in: ['IIT-6', 'Class-6-IIT'] } },
+        { className: 'Class 6', board: iitBoardMatch },
+        { className: 'Class 6', board: '' },
+        { className: 'Class 6', board: { $exists: false } },
+      ],
+    };
+  }
+  const digits = normalized.match(/\d+/)?.[0];
+  if (!digits) return { className: normalized };
+  return {
+    className: { $in: [`Class ${digits}`, digits, `-${digits}`, normalized] },
+  };
+}
+
+function buildLegacySubjectFilter(subject) {
+  const v = normalizeMatchText(subject);
+  if (!v) return { subjectName: '' };
+  const lower = v.toLowerCase();
+  if (lower === 'maths' || lower === 'mathematics' || lower === 'math') {
+    return { subjectName: { $regex: '^(maths|mathematics|math)$', $options: 'i' } };
+  }
+  if (lower === 'social science' || lower === 'social studies' || lower === 'sst') {
+    return {
+      subjectName: { $regex: '^(social\\s*science|social\\s*studies|sst)$', $options: 'i' },
+    };
+  }
+  return { subjectName: { $regex: `^${v.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`, $options: 'i' } };
+}
+
+function buildLegacyTopicFilter(topic) {
+  const filter = buildTopicFieldMongoFilter(topic);
+  if (filter.topic !== undefined) return { topicName: filter.topic };
+  if (filter.$or) {
+    return { $or: filter.$or.map((clause) => ({ topicName: clause.topic })) };
+  }
+  return { topicName: topic };
 }
 
 function buildLegacyMongoFilter(match = {}) {
-  const filter = {
-    ...(match.toolName ? { toolSlug: match.toolName } : {}),
-    ...('classLabel' in match ? { className: match.classLabel ?? '' } : {}),
-    ...('board' in match ? { board: boardMongoMatch(match.board ?? '') } : {}),
-    ...('subject' in match ? { subjectName: match.subject ?? '' } : {}),
-    ...('topic' in match ? { topicName: match.topic ?? '' } : {}),
-  };
-  if ('subtopic' in match) {
-    const st = match.subtopic ?? '';
-    if (isWholeChapterStorageLabel(st)) {
-      Object.assign(filter, wholeChapterSubtopicMongoClause('subtopicName'));
+  const parts = [];
+  if (match.toolName) parts.push({ toolSlug: match.toolName });
+
+  const hasBoard = 'board' in match;
+  const hasClass = 'classLabel' in match;
+  const boardVal = hasBoard ? String(match.board ?? '') : '';
+  const classVal = hasClass ? String(match.classLabel ?? '') : '';
+
+  if (hasClass) {
+    if (classVal) {
+      parts.push(buildLegacyClassLabelFilter(classVal, boardVal));
+      const isIitClass6 =
+        lockBoardKey(boardVal) === 'IIT/NEET' && normalizeClassId(classVal) === 'Class 6';
+      if (hasBoard && boardVal && !isIitClass6) {
+        parts.push({ board: boardMongoMatch(boardVal) });
+      } else if (hasBoard && !boardVal) {
+        parts.push({ board: '' });
+      }
     } else {
-      filter.subtopicName = st;
+      parts.push({ className: '' });
+      if (hasBoard) {
+        parts.push(
+          boardVal
+            ? buildHierarchyBoardMongoFilter(boardVal, {
+                boardField: 'board',
+                classField: 'className',
+              })
+            : { board: '' },
+        );
+      }
+    }
+  } else if (hasBoard) {
+    parts.push(
+      boardVal
+        ? buildHierarchyBoardMongoFilter(boardVal, {
+            boardField: 'board',
+            classField: 'className',
+          })
+        : { board: '' },
+    );
+  }
+
+  if ('subject' in match) {
+    parts.push(buildLegacySubjectFilter(match.subject ?? ''));
+  }
+  if ('topic' in match) {
+    const topic = String(match.topic ?? '');
+    parts.push(topic ? buildLegacyTopicFilter(topic) : { topicName: '' });
+  }
+  if ('subtopic' in match) {
+    const st = String(match.subtopic ?? '');
+    if (isWholeChapterStorageLabel(st)) {
+      parts.push(wholeChapterSubtopicMongoClause('subtopicName'));
+    } else {
+      parts.push({ subtopicName: st });
     }
   }
-  return filter;
+
+  return mergeMongoFilters(...parts);
 }
 
 function groupFieldPath(model, groupField) {
@@ -152,20 +300,41 @@ function mergeGroupCountRows(masterGroups, legacyGroups, groupField) {
   for (const group of [...masterGroups, ...legacyGroups]) {
     let value = group._id ?? '';
     if (groupField === 'toolName' && isDeprecatedAiToolIdentifier(value)) continue;
+    if (groupField === 'classLabel') {
+      value = normalizeClassId(value) || value;
+    }
+    if (groupField === 'subject') {
+      const normalized = normalizeMatchText(value);
+      const lower = normalized.toLowerCase();
+      if (lower === 'maths' || lower === 'mathematics' || lower === 'math') {
+        value = 'Mathematics';
+      } else if (lower === 'social science' || lower === 'social studies' || lower === 'sst') {
+        value = 'Social Science';
+      } else {
+        value = normalized;
+      }
+    }
     if (groupField === 'subtopic' && isWholeChapterStorageLabel(value)) {
       value = WHOLE_CHAPTER_LABEL;
     }
-    merged.set(value, (merged.get(value) || 0) + group.count);
+    const mergeKey =
+      groupField === 'subject' ? String(value).toLowerCase() : String(value);
+    const prev = merged.get(mergeKey);
+    if (prev) {
+      prev.count += group.count;
+    } else {
+      merged.set(mergeKey, { value, count: group.count });
+    }
   }
-  return Array.from(merged.entries())
+  return Array.from(merged.values())
     .sort((a, b) => {
       if (groupField === 'subtopic') {
-        if (a[0] === WHOLE_CHAPTER_LABEL) return -1;
-        if (b[0] === WHOLE_CHAPTER_LABEL) return 1;
+        if (a.value === WHOLE_CHAPTER_LABEL) return -1;
+        if (b.value === WHOLE_CHAPTER_LABEL) return 1;
       }
-      return String(a[0]).localeCompare(String(b[0]));
+      return String(a.value).localeCompare(String(b.value));
     })
-    .map(([value, count]) => ({ value, count }));
+    .map(({ value, count }) => ({ value, count }));
 }
 
 async function withAggregateCache(cacheKey, loader) {
@@ -228,9 +397,7 @@ async function getCombinedMetaStats(match = {}) {
   });
 }
 
-function clearHierarchyCache() {
-  aggregateCache.clear();
-}
+export { clearAiToolHierarchyCache as clearHierarchyCache };
 
 /**
  * Single source of truth: all AI Tool Data + Generator + PDF master rows live in aitoolgenerations.
@@ -501,7 +668,7 @@ export const updateAiToolGenerationById = async (req, res) => {
         return res.status(404).json({ success: false, message: 'Not found' });
       }
       const mapped = mapLegacyAiGeneratorToCombined(legacyUpdated);
-      clearHierarchyCache();
+      clearAiToolHierarchyCache();
       return res.json({ success: true, data: mapped });
     }
 
@@ -526,7 +693,7 @@ export const updateAiToolGenerationById = async (req, res) => {
       }
     }
 
-    clearHierarchyCache();
+    clearAiToolHierarchyCache();
     return res.json({ success: true, data: updated });
   } catch (error) {
     console.error('updateAiToolGenerationById error:', error);
@@ -546,7 +713,7 @@ export const deleteAiToolGenerationById = async (req, res) => {
       if (!legacyDeleted) {
         return res.status(404).json({ success: false, message: 'Not found' });
       }
-      clearHierarchyCache();
+      clearAiToolHierarchyCache();
       return res.json({ success: true, message: 'Record deleted' });
     }
 
@@ -576,7 +743,7 @@ export const deleteAiToolGenerationById = async (req, res) => {
       }
     }
 
-    clearHierarchyCache();
+    clearAiToolHierarchyCache();
     return res.json({ success: true, message: 'Record deleted' });
   } catch (error) {
     console.error('deleteAiToolGenerationById error:', error);

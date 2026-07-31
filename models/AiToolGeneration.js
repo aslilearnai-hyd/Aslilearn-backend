@@ -94,6 +94,24 @@ aiToolGenerationSchema.index({ reviewStatus: 1, classLabel: 1, subject: 1, creat
 aiToolGenerationSchema.index({ 'metadata.bookGenerator': 1, createdAt: -1 });
 aiToolGenerationSchema.index({ sourceType: 1, board: 1, createdAt: -1 });
 
+function bumpHierarchyCache() {
+  try {
+    // Lazy import avoids circular init with controllers that import this model.
+    import('../utils/ai-tool-hierarchy-cache.js')
+      .then((m) => m.clearAiToolHierarchyCache?.())
+      .catch(() => {});
+  } catch {
+    // ignore
+  }
+}
+
+aiToolGenerationSchema.post('save', bumpHierarchyCache);
+aiToolGenerationSchema.post('insertMany', bumpHierarchyCache);
+aiToolGenerationSchema.post('findOneAndUpdate', bumpHierarchyCache);
+aiToolGenerationSchema.post('findOneAndDelete', bumpHierarchyCache);
+aiToolGenerationSchema.post('deleteOne', bumpHierarchyCache);
+aiToolGenerationSchema.post('deleteMany', bumpHierarchyCache);
+
 const AiToolGeneration =
   mongoose.models.AiToolGeneration ||
   mongoose.model('AiToolGeneration', aiToolGenerationSchema);

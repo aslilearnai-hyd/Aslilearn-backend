@@ -175,10 +175,18 @@ export const listTopics = async (req, res) => {
 
     const managed = await resolveAiToolTopicTaxonomy({ board, classLabel, subject, productCategory: req.query.productCategory });
     let topics = managed.topics;
-    if (isIitClassLabel(classLabel, board) && topics.length === 0) {
-      const { getChaptersForSubject } = await import('../services/hardcoded-content-service.js');
-      const chapters = await getChaptersForSubject('IIT-6', subject);
-      topics = uniqueSortedChapterTopics(chapters.map((row) => normalizeText(row.chapterName)));
+    if (isIitClassLabel(classLabel, board)) {
+      try {
+        const { getChaptersForSubject } = await import('../services/hardcoded-content-service.js');
+        const chapters = await getChaptersForSubject('IIT-6', subject);
+        const fallback = chapters.map((row) => normalizeText(row.chapterName)).filter(Boolean);
+        topics = uniqueSortedChapterTopics([...topics, ...fallback]);
+      } catch (err) {
+        console.warn('listTopics IIT chapter merge skipped:', String(err?.message || err).slice(0, 160));
+        if (topics.length === 0) {
+          topics = [];
+        }
+      }
     }
     return res.json({
       success: true,
