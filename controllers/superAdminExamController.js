@@ -298,6 +298,22 @@ function postProcessGeminiPdfQuestionRows(rawList) {
             explanation,
           });
         }
+        // Keep numbered stems even with incomplete options — answer key can still attach,
+        // and gap-fill may enrich options on a later pass.
+        if (questionNumber != null) {
+          return withMeta({
+            questionText,
+            questionType: qt === 'MSQ' ? 'MSQ' : 'MCQ',
+            subject,
+            marks,
+            option1: slots[0] || '',
+            option2: slots[1] || '',
+            option3: slots[2] || '',
+            option4: slots[3] || '',
+            correctAnswer: ca,
+            explanation,
+          });
+        }
         return null;
       }
 
@@ -709,7 +725,7 @@ Important rules:
   };
 
   // Large multi-subject papers (e.g. 80 Qs) truncate in one Gemini response.
-  // Use number-range chunks and merge so we get the full set.
+  // Always chunk by ranges when we know the paper size (answer key) or first pass is short.
   const RANGE_CHUNKS = [
     [1, 20],
     [21, 40],
@@ -718,13 +734,46 @@ Important rules:
     [81, 120],
   ];
 
+  const presentQuestionNumbers = (rows) => {
+    const set = new Set();
+    for (const r of rows || []) {
+      const n = Number(r?.questionNumber);
+      if (Number.isFinite(n) && n >= 1) set.add(Math.floor(n));
+    }
+    return set;
+  };
+
+  const expectedQuestionNumbers = (rows) => {
+    if (answerKeyByNumber.size > 0) {
+      return [...answerKeyByNumber.keys()].sort((a, b) => a - b);
+    }
+    const present = [...presentQuestionNumbers(rows)];
+    const max = present.length ? Math.max(...present) : 0;
+    if (max >= 40) {
+      return Array.from({ length: max }, (_, i) => i + 1);
+    }
+    return [];
+  };
+
+  const missingQuestionNumbers = (rows) => {
+    const present = presentQuestionNumbers(rows);
+    return expectedQuestionNumbers(rows).filter((n) => !present.has(n));
+  };
+
+  /** Batch missing ids into small prompts, e.g. [14,15,57,58] → "14, 15, 57, 58" */
+  const chunkMissingIds = (ids, size = 6) => {
+    const out = [];
+    for (let i = 0; i < ids.length; i += size) out.push(ids.slice(i, i + size));
+    return out;
+  };
+
   for (const model of modelCandidates) {
     const collected = [];
     let truncated = false;
 
     const full = await extractOnce(
       model,
-      'Scope: extract ALL questions from the question paper body (not the answer key).',
+      'Scope: extract ALL questions from the question paper body (not the answer key). Include every printed question number.',
     );
     if (full.ok && Array.isArray(full.parsed)) {
       collected.push(...full.parsed);
@@ -732,18 +781,28 @@ Important rules:
     }
 
     let refined = postProcessGeminiPdfQuestionRows(collected);
-    const likelyIncomplete = truncated || refined.length < 50 || refined.length === 0;
+    const expectedCount = answerKeyByNumber.size || 0;
+    const shouldChunk =
+      truncated ||
+      refined.length === 0 ||
+      refined.length < 70 ||
+      (expectedCount > 0 && refined.length < expectedCount);
 
-    if (likelyIncomplete) {
+    if (shouldChunk) {
       console.log('[PDF_EXAM_EXTRACT] chunking by question ranges', {
         model,
         firstPass: refined.length,
+        expectedCount,
         truncated,
       });
       for (const [from, to] of RANGE_CHUNKS) {
+        // Skip empty high ranges when key says max is 80
+        if (expectedCount > 0 && from > expectedCount) continue;
         const chunk = await extractOnce(
           model,
-          `Scope: extract ONLY questions numbered ${from} through ${to} (inclusive). Skip any question outside this range. Skip answer-key pages.`,
+          `Scope: extract ONLY questions numbered ${from} through ${to} (inclusive). ` +
+            `You must return every question in this range that appears in the paper. ` +
+            `Skip any question outside this range.`,
         );
         if (chunk.ok && Array.isArray(chunk.parsed)) {
           collected.push(...chunk.parsed);
@@ -754,12 +813,52 @@ Important rules:
     }
 
     refined = dedupePdfQuestionRows(refined);
+
+    // Gap-fill: re-ask specifically for missing printed numbers (e.g. 76→80 left 4 gaps).
+    let missing = missingQuestionNumbers(refined);
+    let gapPass = 0;
+    while (missing.length > 0 && gapPass < 3) {
+      gapPass += 1;
+      console.log('[PDF_EXAM_EXTRACT] gap-fill missing numbers', {
+        model,
+        pass: gapPass,
+        missingCount: missing.length,
+        missing: missing.slice(0, 20),
+      });
+      for (const batch of chunkMissingIds(missing, 5)) {
+        const list = batch.join(', ');
+        const chunk = await extractOnce(
+          model,
+          `Scope: extract ONLY these exact question numbers: ${list}. ` +
+            `Return one object per number if that question exists in the paper. ` +
+            `Set questionNumber exactly. Do not skip Match-the-Following or Assertion-Reason items.`,
+        );
+        if (chunk.ok && Array.isArray(chunk.parsed)) {
+          collected.push(...chunk.parsed);
+        }
+      }
+      refined = dedupePdfQuestionRows(postProcessGeminiPdfQuestionRows(collected));
+      missing = missingQuestionNumbers(refined);
+      if (missing.length === 0) break;
+    }
+
     refined = applyAnswerKeyLettersToRows(refined, answerKeyByNumber);
+    // Prefer stable order by printed question number when available
+    refined.sort((a, b) => {
+      const an = Number(a?.questionNumber);
+      const bn = Number(b?.questionNumber);
+      const aOk = Number.isFinite(an) ? an : Number.MAX_SAFE_INTEGER;
+      const bOk = Number.isFinite(bn) ? bn : Number.MAX_SAFE_INTEGER;
+      if (aOk !== bOk) return aOk - bOk;
+      return String(a?.questionText || '').localeCompare(String(b?.questionText || ''));
+    });
+
     console.log('[PDF_EXAM_EXTRACT] model result', {
       model,
       count: refined.length,
       truncated,
       answerKeyApplied: answerKeyByNumber.size,
+      stillMissing: missingQuestionNumbers(refined).slice(0, 20),
     });
     if (refined.length > 0) return refined;
     attemptErrors.push(`${model}: model returned rows but none passed validation after cleanup`);
