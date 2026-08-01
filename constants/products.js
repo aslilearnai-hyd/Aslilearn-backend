@@ -152,6 +152,66 @@ export function formatIitCategoryLabel(value, labelMap = null) {
     .join(' ');
 }
 
+/**
+ * Infer ALPHA/BETA/… from a folder-relative path or filename.
+ * Super Admin textbook trees are often `…/Alpha/Class 6/Physics.pdf` with a
+ * generic basename — the parent directory is the track, not the file name.
+ */
+export function inferProductCategoryFromPath(relativePath) {
+  const raw = String(relativePath || '')
+    .replace(/\\/g, '/')
+    .trim();
+  if (!raw) return PRODUCT_CATEGORY_NONE;
+
+  const allowed = new Set(
+    cachedActiveCodes && cachedActiveCodes.length ? cachedActiveCodes : IIT_CATEGORIES,
+  );
+
+  const segments = raw
+    .split('/')
+    .map((s) => s.trim())
+    .filter(Boolean);
+
+  // Prefer directory segments over the file basename.
+  const dirs = segments.length > 1 ? segments.slice(0, -1) : segments;
+  for (let i = dirs.length - 1; i >= 0; i -= 1) {
+    const seg = dirs[i];
+    const compact = seg.toUpperCase().replace(/[\s/\\-]+/g, '');
+    // Match Alpha / IITAlpha / Alpha_Track / "Beta Books"
+    const match = compact.match(/(ALPHA|BETA|GAMMA|DELTA)/);
+    if (match && allowed.has(match[1])) {
+      return match[1];
+    }
+  }
+
+  // Last resort: whole path string with path separators around the code
+  const upper = raw.toUpperCase().replace(/\\/g, '/');
+  for (const code of allowed) {
+    if (new RegExp(`(^|[/\\\\_-])${code}([/\\\\_-]|$)`).test(upper)) {
+      return code;
+    }
+  }
+  return PRODUCT_CATEGORY_NONE;
+}
+
+/** Display title for a material slot — Subject · Alpha (not bare "Physics"). */
+export function buildMaterialSlotTitle({ subject, productCategory, fallbackTitle } = {}) {
+  const subj = String(subject || '').trim();
+  const cat = normalizeIitCategoryLoose(productCategory);
+  const catLabel = cat ? formatIitCategoryLabel(cat) : '';
+  if (subj && catLabel) return `${subj} · ${catLabel}`;
+  if (subj) return subj;
+  const fallback = String(fallbackTitle || '').trim();
+  if (fallback && catLabel) {
+    // Avoid "Physics · Alpha" doubling if fallback already has track
+    if (new RegExp(`\\b${cat}\\b`, 'i').test(fallback) || new RegExp(`\\b${catLabel}\\b`, 'i').test(fallback)) {
+      return fallback;
+    }
+    return `${fallback} · ${catLabel}`;
+  }
+  return fallback || 'Untitled';
+}
+
 export function schoolCanAccessProductCategory(schoolIitCategories, productCategory) {
   const cat = normalizeIitCategoryLoose(productCategory);
   if (!cat) return true;

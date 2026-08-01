@@ -38,7 +38,8 @@ import Content from '../../models/Content.js';
 import StudentRemark from '../../models/StudentRemark.js';
 import TeacherWorkDiary from '../../models/TeacherWorkDiary.js';
 import Subject from '../../models/Subject.js';
-import { examVisibleToSchool, getSchoolAdminCalendarEvents, monthBounds } from '../../controllers/calendarController.js';
+import { examVisibleToSchool, examMatchesAdminBoard } from '../../utils/exam-visibility.js';
+import { getSchoolAdminCalendarEvents, monthBounds } from '../../controllers/calendarController.js';
 import {
   getExplicitTeacherSubjectObjectIds,
   subjectIdAllowed,
@@ -64,7 +65,7 @@ router.get('/calendar/events', async (req, res) => {
       });
     }
 
-    const teacher = await Teacher.findById(req.teacherId).select('_id adminId');
+    const teacher = await Teacher.findById(req.teacherId).select('_id adminId').lean();
     if (!teacher) {
       return res.status(404).json({ success: false, message: 'Teacher not found' });
     }
@@ -78,6 +79,8 @@ router.get('/calendar/events', async (req, res) => {
     }
     const { monthStart, monthEnd } = bounds;
     const schoolOid = new mongoose.Types.ObjectId(teacher.adminId);
+    const schoolAdmin = await User.findById(teacher.adminId).select('board').lean();
+    const schoolBoard = schoolAdmin?.board || '';
 
     const examDocs = await Exam.find({
       startDate: { $lte: monthEnd },
@@ -91,7 +94,11 @@ router.get('/calendar/events', async (req, res) => {
       .lean();
 
     const examEvents = examDocs
-      .filter((ex) => examVisibleToSchool(ex, schoolOid))
+      .filter(
+        (ex) =>
+          examVisibleToSchool(ex, schoolOid) &&
+          examMatchesAdminBoard(ex, schoolBoard),
+      )
       .map((ex) => ({
         id: `exam-${ex._id.toString()}`,
         title: ex.title,

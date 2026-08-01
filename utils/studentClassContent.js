@@ -4,9 +4,19 @@
 
 export function normalizeClassNumberLabel(value) {
   if (value == null) return '';
-  const s = String(value).trim().replace(/^class\s+/i, '');
-  if (/^\d+$/.test(s)) return String(parseInt(s, 10));
-  return s;
+  const raw = String(value).trim();
+  if (!raw) return '';
+  // IIT-6 / Class-6-IIT → 6
+  if (/^iit[-\s]*\d+/i.test(raw) || /^class[-\s]*\d+[-\s]*iit/i.test(raw)) {
+    const d = raw.match(/(\d+)/);
+    return d ? String(parseInt(d[1], 10)) : raw;
+  }
+  const withoutClass = raw.replace(/^class\s+/i, '').trim();
+  // "6", "6th", "Class 6", "VI" handled via digits when present
+  const digitMatch = withoutClass.match(/(\d+)/);
+  if (digitMatch) return String(parseInt(digitMatch[1], 10));
+  if (/^\d+$/.test(withoutClass)) return String(parseInt(withoutClass, 10));
+  return withoutClass;
 }
 
 export function classLabelFromContent(doc) {

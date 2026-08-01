@@ -32,7 +32,16 @@ const examSchema = new mongoose.Schema({
   },
   subjects: [{
     type: String,
-    enum: ['maths', 'physics', 'chemistry', 'biology'],
+    enum: [
+      'maths',
+      'physics',
+      'chemistry',
+      'biology',
+      'science',
+      'english',
+      'hindi',
+      'social_science',
+    ],
     trim: true,
     lowercase: true
   }],

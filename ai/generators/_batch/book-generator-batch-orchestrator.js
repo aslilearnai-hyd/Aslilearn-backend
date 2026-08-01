@@ -67,7 +67,7 @@ import { computeScaffoldDensity, SCAFFOLD_DENSITY_CEILING } from '../../quality-
 import { generateSixSectionContent } from '../_v2/six-section-generator.js';
 import { isSixSectionV2Enabled, buildV2VariantHint } from '../../prompt-versioning/assemble.js';
 import { isV2SupportedTool, v2ToolFamily } from '../../prompt-versioning/tool-packs.js';
-import { mapV2StructuredToLegacy, ensureV2WorksheetCoreSections, syncLegacyWorksheetSectionsIntoV2 } from '../../../utils/v2-structured-to-legacy.js';
+import { mapV2StructuredToLegacy, ensureV2WorksheetCoreSections, syncLegacyWorksheetSectionsIntoV2, countUsableQuestionsFromV2OrLegacy } from '../../../utils/v2-structured-to-legacy.js';
 import { pickQuestionCountParams } from '../../../utils/questionComposition.js';
 
 /** Question tools that carry scaffold-prone question pools and cross-slot dedup. */
@@ -572,18 +572,20 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                       const detail =
                         (bookGate.missingSections || []).join(', ') ||
                         String(bookGate.message || 'incomplete').slice(0, 90);
-                      // Last attempt: keep usable worksheets rather than dropping the slot.
-                      const qCount = Array.isArray(legacyStructured?.questions)
-                        ? legacyStructured.questions.length
-                        : Array.isArray(legacyStructured?.sections)
-                          ? legacyStructured.sections.reduce(
-                              (n, s) => n + (Array.isArray(s?.questions) ? s.questions.length : 0),
-                              0,
-                            )
-                          : 0;
-                      if (attempt >= maxAttempts && qCount >= 6 && renderedLen > 400) {
+                      const qCount = countUsableQuestionsFromV2OrLegacy(
+                        structuredV2,
+                        legacyStructured,
+                      );
+                      // Last attempt: never drop a completed Gemini payload that has
+                      // real body text. Exam papers use section_a..e (not sections[]),
+                      // so the old qCount>=6 soft-pass never fired for question papers.
+                      const usablePayload =
+                        qCount >= 1 ||
+                        renderedLen > 400 ||
+                        payloadLen > 1200;
+                      if (attempt >= maxAttempts && usablePayload) {
                         console.warn(
-                          `[book-generator] Slot ${batchIndex}: completeness soft-pass (q=${qCount}) after pad — ${detail}`,
+                          `[book-generator] Slot ${batchIndex}: completeness soft-pass (q=${qCount}, chars=${renderedLen}) — ${detail}`,
                         );
                       } else {
                         lastError = `Incomplete content (${detail})`;

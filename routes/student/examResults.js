@@ -17,7 +17,7 @@ import GeminiPerformanceReport from '../../models/GeminiPerformanceReport.js';
 import { verifyToken } from '../../middleware/auth.js';
 import { getMyWeeklyDigest } from '../../controllers/impactReportController.js';
 import { getSchoolAdminCalendarEvents, monthBounds } from '../../controllers/calendarController.js';
-import { examVisibleToSchool } from '../../utils/exam-visibility.js';
+import { examVisibleToSchool, examVisibleToStudent } from '../../utils/exam-visibility.js';
 import {
   getStudentExamRanking,
   getAllStudentRankings,
@@ -1765,7 +1765,8 @@ router.post('/exam-results', async (req, res) => {
     }
 
     const studentAdminId = student.assignedAdmin?._id || student.assignedAdmin;
-    if (!canStudentAccessExam(examDoc, studentAdminId)) {
+    const studentBoard = student.assignedAdmin?.board || student.board || '';
+    if (!examVisibleToStudent(examDoc, studentAdminId, studentBoard)) {
       return res.status(403).json({
         success: false,
         message: 'This exam is not assigned to your school.',

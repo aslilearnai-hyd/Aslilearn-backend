@@ -19,6 +19,8 @@ import {
 import {
   formatIitCategoryLabel,
   normalizeIitCategoryLoose,
+  inferProductCategoryFromPath,
+  buildMaterialSlotTitle,
   PRODUCT_CATEGORY_NONE,
   PRODUCT_IIT,
 } from '../constants/products.js';
@@ -1202,6 +1204,7 @@ export const uploadContent = async (req, res) => {
       deadline,
       stateName: rawContentState,
       productCategory: rawProductCategory,
+      relativePath,
     } = req.body;
     const moduleLabel = req.body.module ?? req.body.moduleName;
     const normalizedType = normalizeContentType(type);
@@ -1309,12 +1312,27 @@ export const uploadContent = async (req, res) => {
     }
 
     const contentProductCategory =
-      rawProductCategory !== undefined && rawProductCategory !== null && String(rawProductCategory).trim() !== ''
+      (rawProductCategory !== undefined &&
+      rawProductCategory !== null &&
+      String(rawProductCategory).trim() !== ''
         ? normalizeIitCategoryLoose(rawProductCategory)
-        : normalizeIitCategoryLoose(subjectDoc.productCategory);
+        : '') ||
+      normalizeIitCategoryLoose(subjectDoc.productCategory) ||
+      inferProductCategoryFromPath(relativePath || title) ||
+      '';
+
+    const materialTypes = new Set(['Textbook', 'Material', 'Workbook']);
+    const resolvedTitle =
+      materialTypes.has(normalizedType) && contentProductCategory
+        ? buildMaterialSlotTitle({
+            subject: subjectDisplayName(subjectDoc?.name) || subjectDoc?.name,
+            productCategory: contentProductCategory,
+            fallbackTitle: title.trim(),
+          })
+        : title.trim();
 
     const contentData = {
-      title: title.trim(),
+      title: resolvedTitle,
       description: description?.trim() || undefined,
       type: normalizedType,
       board: boardNorm,
@@ -1339,6 +1357,37 @@ export const uploadContent = async (req, res) => {
       contentData.classNumber = classNumber.trim();
     }
 
+    // One Textbook/Material/Workbook per (board, class, subject, productCategory, type).
+    if (materialTypes.has(normalizedType)) {
+      const slotFilter = {
+        subject,
+        board: boardNorm,
+        type: normalizedType,
+        productCategory: contentProductCategory || '',
+        isActive: { $ne: false },
+      };
+      if (classNumber && classNumber.trim()) {
+        slotFilter.classNumber = classNumber.trim();
+      }
+      const existingSlot = await Content.findOne(slotFilter).sort({ updatedAt: -1 });
+      if (existingSlot) {
+        Object.assign(existingSlot, contentData);
+        await existingSlot.save();
+        console.log('✅ Content slot replaced:', {
+          id: existingSlot._id,
+          title: existingSlot.title,
+          productCategory: existingSlot.productCategory,
+          type: existingSlot.type,
+        });
+        const data = await contentResponsePayload(existingSlot);
+        return res.json({
+          success: true,
+          data,
+          message: 'Content updated in existing Alpha/Beta slot',
+          replaced: true,
+        });
+      }
+    }
 
     const content = new Content(contentData);
 
@@ -1349,6 +1398,7 @@ export const uploadContent = async (req, res) => {
       title: content.title,
       board: content.board,
       type: content.type,
+      productCategory: content.productCategory,
       subject: content.subject
     });
 
