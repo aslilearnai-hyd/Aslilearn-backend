@@ -513,17 +513,47 @@ function applyAnswerKeyLettersToRows(rows, answerKeyByNumber) {
   });
 }
 
+function optionFillScore(row) {
+  return [row?.option1, row?.option2, row?.option3, row?.option4]
+    .map((o) => String(o || '').trim())
+    .filter(Boolean).length;
+}
+
 function dedupePdfQuestionRows(rows) {
-  const seen = new Set();
-  const out = [];
+  const byNumber = new Map();
+  const unnumbered = [];
   for (const r of rows || []) {
+    const n = Number(r?.questionNumber);
+    if (Number.isFinite(n) && n >= 1) {
+      const key = Math.floor(n);
+      const prev = byNumber.get(key);
+      if (!prev || optionFillScore(r) > optionFillScore(prev)) {
+        byNumber.set(key, r);
+      }
+      continue;
+    }
+    unnumbered.push(r);
+  }
+
+  const numberedTexts = new Set(
+    [...byNumber.values()].map((r) =>
+      String(r?.questionText || '')
+        .toLowerCase()
+        .replace(/\s+/g, ' ')
+        .trim()
+        .slice(0, 200),
+    ),
+  );
+
+  const out = [...byNumber.values()];
+  for (const r of unnumbered) {
     const key = String(r?.questionText || '')
       .toLowerCase()
       .replace(/\s+/g, ' ')
       .trim()
       .slice(0, 200);
-    if (!key || seen.has(key)) continue;
-    seen.add(key);
+    if (!key || numberedTexts.has(key)) continue;
+    numberedTexts.add(key);
     out.push(r);
   }
   return out;
@@ -814,26 +844,39 @@ Important rules:
 
     refined = dedupePdfQuestionRows(refined);
 
-    // Gap-fill: re-ask specifically for missing printed numbers (e.g. 76→80 left 4 gaps).
+    // Gap-fill: re-ask specifically for missing printed numbers (e.g. 79/80 left 1 gap).
     let missing = missingQuestionNumbers(refined);
     let gapPass = 0;
-    while (missing.length > 0 && gapPass < 3) {
+    while (missing.length > 0 && gapPass < 5) {
       gapPass += 1;
+      // First passes: small batches. Last passes: one question at a time (more reliable).
+      const batchSize = gapPass <= 2 ? 5 : 1;
       console.log('[PDF_EXAM_EXTRACT] gap-fill missing numbers', {
         model,
         pass: gapPass,
+        batchSize,
         missingCount: missing.length,
         missing: missing.slice(0, 20),
       });
-      for (const batch of chunkMissingIds(missing, 5)) {
+      for (const batch of chunkMissingIds(missing, batchSize)) {
         const list = batch.join(', ');
+        const alone = batch.length === 1;
         const chunk = await extractOnce(
           model,
-          `Scope: extract ONLY these exact question numbers: ${list}. ` +
-            `Return one object per number if that question exists in the paper. ` +
-            `Set questionNumber exactly. Do not skip Match-the-Following or Assertion-Reason items.`,
+          alone
+            ? `Scope: extract ONLY question number ${batch[0]}. ` +
+              `This is mandatory — locate the printed "${batch[0]}." question in the paper and return exactly one object. ` +
+              `Set questionNumber to ${batch[0]}. Include Match-the-Following / Assertion-Reason / Case-based if that is Q${batch[0]}. ` +
+              `Copy all four options a)–d) into option1–option4.`
+            : `Scope: extract ONLY these exact question numbers: ${list}. ` +
+              `Return one object per number if that question exists in the paper. ` +
+              `Set questionNumber exactly. Do not skip Match-the-Following or Assertion-Reason items.`,
         );
         if (chunk.ok && Array.isArray(chunk.parsed)) {
+          // Force questionNumber when single-target extract omitted it
+          if (alone && chunk.parsed.length === 1 && !Number(chunk.parsed[0]?.questionNumber)) {
+            chunk.parsed[0].questionNumber = batch[0];
+          }
           collected.push(...chunk.parsed);
         }
       }
