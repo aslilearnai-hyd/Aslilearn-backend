@@ -17,7 +17,7 @@ import GeminiPerformanceReport from '../../models/GeminiPerformanceReport.js';
 import { verifyToken } from '../../middleware/auth.js';
 import { getMyWeeklyDigest } from '../../controllers/impactReportController.js';
 import { getSchoolAdminCalendarEvents, monthBounds } from '../../controllers/calendarController.js';
-import { examVisibleToSchool } from '../../utils/exam-visibility.js';
+import { examVisibleToSchool, examMatchesAdminBoard, examVisibleToStudent } from '../../utils/exam-visibility.js';
 import {
   getStudentExamRanking,
   getAllStudentRankings,
@@ -239,8 +239,8 @@ function toPlainExamResultForApi(row) {
   return out;
 }
 
-const canStudentAccessExam = (exam, studentAdminId) => {
-  return examVisibleToSchool(exam, studentAdminId);
+const canStudentAccessExam = (exam, studentAdminId, studentBoard) => {
+  return examVisibleToStudent(exam, studentAdminId, studentBoard);
 };
 
 /** Enforce exam start/end window on the server (not only in the UI). */
@@ -274,8 +274,12 @@ router.get('/exams', async (req, res) => {
 
     const studentClassNumber = resolveStudentClassNumber(student, student.assignedClass);
     const studentAdminId = student.assignedAdmin?._id || student.assignedAdmin;
+    const studentBoard =
+      student.assignedAdmin?.board ||
+      student.board ||
+      '';
 
-    // Keep exam discovery broad at DB level, then enforce school targeting in-memory.
+    // Keep exam discovery broad at DB level, then enforce school + board + class.
     const query = {
       createdByRole: 'super-admin',
       isActive: true
@@ -283,7 +287,6 @@ router.get('/exams', async (req, res) => {
 
     console.log('📋 Student exams base query:', JSON.stringify(query, null, 2));
 
-    // Get all exams created by Super Admin - no board restrictions
     const exams = await Exam.find(query)
       .populate('createdBy', 'fullName email')
       .populate('targetSchools', 'schoolName fullName email')
@@ -295,16 +298,17 @@ router.get('/exams', async (req, res) => {
     );
 
     // Only show exams that:
-    // 1) student is allowed to access by school targeting
-    // 2) have uploaded questions (avoid empty exam cards)
+    // 1) student is allowed to access by school + board targeting
+    // 2) match assigned class
+    // 3) have uploaded questions (avoid empty exam cards)
     const publishedExams = hydratedExams.filter((exam) => {
-      if (!canStudentAccessExam(exam, studentAdminId)) return false;
+      if (!canStudentAccessExam(exam, studentAdminId, studentBoard)) return false;
       if (!examMatchesStudentAssignedClass(exam, studentClassNumber)) return false;
       return Array.isArray(exam?.questions) && exam.questions.length > 0;
     });
 
     console.log(
-      `✅ Found ${publishedExams.length} accessible exams for class ${studentClassNumber || 'unset'} (from ${hydratedExams.length} total)`
+      `✅ Found ${publishedExams.length} accessible exams for class ${studentClassNumber || 'unset'} board ${studentBoard || 'unset'} (from ${hydratedExams.length} total)`
     );
     
     res.json({
@@ -340,7 +344,9 @@ router.get('/exams/:examId', async (req, res) => {
   try {
     const { examId } = req.params;
     
-    const student = await User.findById(req.userId).populate('assignedClass', 'classNumber section');
+    const student = await User.findById(req.userId)
+      .populate('assignedClass', 'classNumber section')
+      .populate('assignedAdmin', 'board');
     if (!student) {
       return res.status(404).json({ 
         success: false, 
@@ -363,7 +369,8 @@ router.get('/exams/:examId', async (req, res) => {
 
     const studentClassNumber = resolveStudentClassNumber(student, student.assignedClass);
     const studentAdminId = student.assignedAdmin?._id || student.assignedAdmin;
-    if (!canStudentAccessExam(exam, studentAdminId)) {
+    const studentBoard = student.assignedAdmin?.board || student.board || '';
+    if (!canStudentAccessExam(exam, studentAdminId, studentBoard)) {
       return res.status(403).json({
         success: false,
         message: 'This exam is not assigned to your school.'

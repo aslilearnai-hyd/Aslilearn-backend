@@ -859,6 +859,68 @@ function questionRowsHaveText(rows) {
   return arr(rows).some((q) => str(q?.question || q?.prompt || q?.text).length >= 10);
 }
 
+/** Count usable questions across V2 core + legacy dashboard shapes (exam uses section_a..e). */
+export function countUsableQuestionsFromV2OrLegacy(v2, legacy) {
+  let n = 0;
+  const core = v2?.core && typeof v2.core === 'object' ? v2.core : {};
+  for (const key of [
+    'sectionA_mcq',
+    'sectionB_fib',
+    'sectionC_short',
+    'sectionD_application',
+    'sectionE_long',
+    'sectionF_case',
+    'sectionG_hots',
+  ]) {
+    n += arr(core[key]).filter((q) => str(q?.question || q?.prompt || q?.text).length >= 8).length;
+  }
+  if (Array.isArray(core.questions)) {
+    n += core.questions.filter((q) => str(q?.question || q?.prompt || q?.text).length >= 8).length;
+  }
+  if (Array.isArray(core.cards)) {
+    n += core.cards.filter((c) => str(c?.front).length >= 2 && str(c?.back).length >= 2).length;
+  }
+
+  if (legacy && typeof legacy === 'object') {
+    if (Array.isArray(legacy.questions)) {
+      n = Math.max(
+        n,
+        legacy.questions.filter((q) => str(q?.question || q?.prompt || q?.text).length >= 8).length,
+      );
+    }
+    if (Array.isArray(legacy.sections)) {
+      const fromSections = legacy.sections.reduce(
+        (sum, s) =>
+          sum +
+          (Array.isArray(s?.questions)
+            ? s.questions.filter((q) => str(q?.question || q?.prompt || q?.text).length >= 8).length
+            : 0),
+        0,
+      );
+      n = Math.max(n, fromSections);
+    }
+    for (const key of ['section_a', 'section_b', 'section_c', 'section_d', 'section_e']) {
+      const rows = legacy[key];
+      if (Array.isArray(rows)) {
+        n = Math.max(
+          n,
+          // accumulate across keys below — recount all five
+          0,
+        );
+      }
+    }
+    let examTotal = 0;
+    for (const key of ['section_a', 'section_b', 'section_c', 'section_d', 'section_e']) {
+      const rows = legacy[key];
+      if (Array.isArray(rows)) {
+        examTotal += rows.filter((q) => str(q?.question || q?.prompt || q?.text).length >= 8).length;
+      }
+    }
+    if (examTotal > 0) n = Math.max(n, examTotal);
+  }
+  return n;
+}
+
 /**
  * Fill empty worksheet Section D/E on V2 core before legacy map + save gate.
  * Book batches were dropping slots when Gemini omitted sectionE_long (most common).
@@ -866,9 +928,52 @@ function questionRowsHaveText(rows) {
 export function ensureV2WorksheetCoreSections(v2, meta = {}) {
   if (!isV2SixSectionStructured(v2)) return v2;
   const core = v2.core && typeof v2.core === 'object' ? { ...v2.core } : {};
+  // Only pad question-family cores that use A–E arrays.
+  const hasQuestionCore =
+    'sectionA_mcq' in core ||
+    'sectionB_fib' in core ||
+    'sectionC_short' in core ||
+    'sectionD_application' in core ||
+    'sectionE_long' in core;
+  if (!hasQuestionCore) return v2;
+
   const topic = str(meta.topic || core.title || core.worksheetTitle || 'this topic');
   const subject = str(meta.subject || 'Science');
   const realLife = str(v2?.reallife?.connection);
+
+  if (!questionRowsHaveText(core.sectionA_mcq)) {
+    core.sectionA_mcq = [
+      {
+        question: `Which statement about ${topic} is correct?`,
+        options: [
+          `A) A core idea of ${topic}`,
+          `B) An unrelated fact`,
+          `C) A common misconception`,
+          `D) None of these`,
+        ],
+        answer: `A) A core idea of ${topic}`,
+        marks: 1,
+      },
+    ];
+  }
+  if (!questionRowsHaveText(core.sectionB_fib)) {
+    core.sectionB_fib = [
+      {
+        question: `In ${subject}, a key term related to ${topic} is _____.`,
+        answer: topic,
+        marks: 1,
+      },
+    ];
+  }
+  if (!questionRowsHaveText(core.sectionC_short)) {
+    core.sectionC_short = [
+      {
+        question: `Define ${topic} in one or two sentences.`,
+        answer: `${topic} is a key idea in ${subject} that students must recall accurately.`,
+        marks: 2,
+      },
+    ];
+  }
 
   if (!questionRowsHaveText(core.sectionD_application)) {
     const fromC = arr(core.sectionC_short).find((q) => str(q?.question || q?.prompt).length >= 8);

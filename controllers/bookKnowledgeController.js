@@ -21,16 +21,20 @@ function ensureSuperAdmin(req, res) {
 export async function listBooks(req, res) {
   if (!ensureSuperAdmin(req, res)) return;
   try {
-    const { board, class: classLabel, subject, status } = req.query;
+    const { board, class: classLabel, subject, status, productCategory } = req.query;
     const filter = {};
     if (board) filter.board = board;
     if (classLabel) filter.class = classLabel;
     if (subject) filter.subject = subject;
     if (status) filter.processingStatus = status;
+    if (productCategory !== undefined && productCategory !== null && String(productCategory).trim() !== '') {
+      const { normalizeIitCategoryLoose } = await import('../constants/products.js');
+      filter.productCategory = normalizeIitCategoryLoose(productCategory);
+    }
 
     const books = await Book.find(filter)
       .select(
-        'title board class subject topic subtopic chunkCount processingStatus embeddingsCreated source generationStats updatedAt createdAt',
+        'title board class subject productCategory topic subtopic chunkCount processingStatus embeddingsCreated source generationStats updatedAt createdAt contentId',
       )
       .sort({ updatedAt: -1 })
       .limit(200)
@@ -89,6 +93,7 @@ export async function uploadBook(req, res) {
       subtopic: req.body.subtopic || req.body.subTopic,
       source: req.body.source,
       productCategory: req.body.productCategory,
+      relativePath: req.body.relativePath || req.body.webkitRelativePath || req.file.originalname,
       uploadedBy: resolveAuthenticatedUserId(req),
       uploadedByRole: req.user?.role || 'super-admin',
     });

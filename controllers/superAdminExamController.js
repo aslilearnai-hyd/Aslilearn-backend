@@ -20,6 +20,7 @@ import {
   QUESTION_LIST_SORT,
   subjectSectionLabel,
 } from '../utils/exam-question-order.js';
+import { normalizeClassNumberLabel } from '../utils/studentClassContent.js';
 
 const QUESTION_CATEGORY_CSV_VALUES = [
   'Numerical',
@@ -565,12 +566,13 @@ export function normalizeExamClassFields(exam) {
   e.classNumber = cn;
 
   const normalizedSubjects = normalizeExamSubjects(e.subject, e.subjects)
+    .map((s) => normalizeExamSubjectKey(s))
     .filter((s) => ALLOWED_EXAM_SUBJECTS.includes(s));
   if (normalizedSubjects.length > 0) {
     e.subjects = normalizedSubjects;
     e.subject = normalizedSubjects[0];
   } else {
-    const fallbackSubject = String(e.subject || 'maths').trim().toLowerCase();
+    const fallbackSubject = normalizeExamSubjectKey(e.subject || 'maths');
     e.subject = ALLOWED_EXAM_SUBJECTS.includes(fallbackSubject) ? fallbackSubject : 'maths';
     e.subjects = [e.subject];
   }
@@ -578,7 +580,32 @@ export function normalizeExamClassFields(exam) {
   return e;
 }
 
-const ALLOWED_EXAM_SUBJECTS = ['maths', 'physics', 'chemistry', 'biology'];
+const ALLOWED_EXAM_SUBJECTS = [
+  'maths',
+  'physics',
+  'chemistry',
+  'biology',
+  'science',
+  'english',
+  'hindi',
+  'social_science',
+];
+
+/** Map CSV / UI subject labels to a stable exam subject key. */
+function normalizeExamSubjectKey(raw) {
+  const s = String(raw || '')
+    .trim()
+    .toLowerCase()
+    .replace(/[_-]+/g, ' ')
+    .replace(/\s+/g, ' ');
+  if (!s) return '';
+  if (s === 'mathematics' || s === 'math') return 'maths';
+  if (s === 'social science' || s === 'social studies' || s === 'sst' || s === 'socialscience') {
+    return 'social_science';
+  }
+  if (s === 'bio') return 'biology';
+  return s.replace(/\s+/g, '_');
+}
 
 const buildSafeAppendQuestionsPipeline = ({ questionIds = [] }) => {
   const ids = Array.isArray(questionIds) ? questionIds.filter(Boolean) : [];
@@ -744,8 +771,12 @@ export const createExam = async (req, res) => {
 
     // Validation
     const normalizedAssignedClasses = Array.isArray(assignedClasses)
-      ? assignedClasses.map((c) => String(c).trim()).filter(Boolean)
-      : (classNumber ? [String(classNumber).trim()] : []);
+      ? assignedClasses
+          .map((c) => normalizeClassNumberLabel(c) || String(c).trim())
+          .filter(Boolean)
+      : classNumber
+        ? [normalizeClassNumberLabel(classNumber) || String(classNumber).trim()].filter(Boolean)
+        : [];
 
     const normalizedSubjects = normalizeExamSubjects(subject, subjects);
 
@@ -822,7 +853,8 @@ export const createExam = async (req, res) => {
       isActive: true,
       isSchoolSpecific: isSchoolSpecific || false,
       isBoardSpecific: isBoardSpecific || false,
-      isAllBoards: isAllBoards || false
+      // Cross-board only when explicitly requested — never treat "all schools" as all boards.
+      isAllBoards: Boolean(isAllBoards) && !Boolean(isSchoolSpecific),
     };
 
     // Add target schools if provided
@@ -1056,7 +1088,7 @@ export const updateExam = async (req, res) => {
     if (examType) exam.examType = examType;
     if (assignedClasses !== undefined) {
       const normalizedAssignedClasses = (Array.isArray(assignedClasses) ? assignedClasses : [assignedClasses])
-        .map((c) => String(c).trim())
+        .map((c) => normalizeClassNumberLabel(c) || String(c).trim())
         .filter(Boolean);
 
       if (normalizedAssignedClasses.length === 0) {
@@ -1066,7 +1098,7 @@ export const updateExam = async (req, res) => {
       exam.assignedClasses = normalizedAssignedClasses;
       exam.classNumber = normalizedAssignedClasses[0];
     } else if (classNumber !== undefined) {
-      const normalizedClass = String(classNumber).trim();
+      const normalizedClass = normalizeClassNumberLabel(classNumber) || String(classNumber).trim();
       if (!normalizedClass) {
         return res.status(400).json({ success: false, message: 'classNumber cannot be empty' });
       }
@@ -1155,6 +1187,7 @@ export const updateExam = async (req, res) => {
     }
     if (issBody !== undefined) exam.isSchoolSpecific = Boolean(issBody);
     if (iabBody !== undefined) exam.isAllBoards = Boolean(iabBody);
+    if (exam.isSchoolSpecific) exam.isAllBoards = false;
     if (exam.targetSchools?.length) {
       exam.schoolId = exam.targetSchools[0];
     } else if (!exam.isSchoolSpecific) {
@@ -1699,9 +1732,11 @@ export const bulkUploadExams = async (req, res) => {
           continue;
         }
 
-        const normalizedSubject = examData.subject.toLowerCase();
-        if (!['maths', 'physics', 'chemistry', 'biology'].includes(normalizedSubject)) {
-          errors.push(`Row ${i + 1}: Invalid subject "${normalizedSubject}". Must be one of: maths, physics, chemistry, biology`);
+        const normalizedSubject = normalizeExamSubjectKey(examData.subject);
+        if (!ALLOWED_EXAM_SUBJECTS.includes(normalizedSubject)) {
+          errors.push(
+            `Row ${i + 1}: Invalid subject "${examData.subject}". Must be one of: ${ALLOWED_EXAM_SUBJECTS.join(', ')} (aliases: mathematics→maths, social science→social_science)`,
+          );
           continue;
         }
 
@@ -1712,9 +1747,12 @@ export const bulkUploadExams = async (req, res) => {
         }
 
         // Parse filterType and targetSchools
+        // all-schools = all schools on THIS board (not cross-board)
+        // all-boards = every board
+        // specific-schools = only listed school admin ids
         const filterType = (examData.filtertype || 'all-schools').toLowerCase();
         const isSchoolSpecific = filterType === 'specific-schools';
-        const isAllBoards = filterType === 'all-schools';
+        const isAllBoards = filterType === 'all-boards' || filterType === 'allboards';
         
         let targetSchools = [];
         if (isSchoolSpecific && examData.targetschools) {
@@ -1729,13 +1767,22 @@ export const bulkUploadExams = async (req, res) => {
           continue;
         }
 
+        const assignedClasses = String(examData.classnumber || '')
+          .split(/[|,]/)
+          .map((c) => normalizeClassNumberLabel(c) || String(c).trim())
+          .filter(Boolean);
+        if (assignedClasses.length === 0) {
+          errors.push(`Row ${i + 1}: Invalid classNumber`);
+          continue;
+        }
+
         // Create exam data object
         const newExamData = {
           title: examData.title,
           description: examData.description || '',
           examType,
-          classNumber: examData.classnumber.toString().trim(),
-          assignedClasses: examData.classnumber.split('|').map((c) => c.trim()).filter(Boolean),
+          classNumber: assignedClasses[0],
+          assignedClasses,
           subject: normalizedSubject,
           maxAttempts: parsedMaxAttempts,
           duration: parseInt(examData.duration),
@@ -2016,7 +2063,10 @@ export const bulkUploadQuestions = async (req, res) => {
         }
 
         // Validate subject
-        const subject = String(getRowValue('subject') || '').trim().toLowerCase() || examAllowedSubjects[0] || 'maths';
+        const subject =
+          normalizeExamSubjectKey(getRowValue('subject') || '') ||
+          examAllowedSubjects[0] ||
+          'maths';
         if (!ALLOWED_EXAM_SUBJECTS.includes(subject)) {
           errors.push(`Row ${i + 1}: Invalid subject "${subject}". Must be one of: ${ALLOWED_EXAM_SUBJECTS.join(', ')}`);
           continue;
@@ -2441,16 +2491,15 @@ export const updateQuestion = async (req, res) => {
     }
 
     if (subject !== undefined) {
-      const normalized = String(subject || '').trim().toLowerCase();
-      const allowed = ['maths', 'physics', 'chemistry', 'biology'];
-      if (!allowed.includes(normalized)) {
+      const normalized = normalizeExamSubjectKey(subject);
+      if (!ALLOWED_EXAM_SUBJECTS.includes(normalized)) {
         return res.status(400).json({
           success: false,
-          message: `Invalid subject. Use one of: ${allowed.join(', ')}`,
+          message: `Invalid subject. Use one of: ${ALLOWED_EXAM_SUBJECTS.join(', ')}`,
         });
       }
       const examSubjects = Array.isArray(exam.subjects)
-        ? exam.subjects.map((s) => String(s).toLowerCase())
+        ? exam.subjects.map((s) => normalizeExamSubjectKey(s))
         : [];
       if (examSubjects.length && !examSubjects.includes(normalized)) {
         return res.status(400).json({

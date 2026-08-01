@@ -15,7 +15,7 @@ import {
   lockBoardKey,
   resolveClassLabelForAiToolStorage,
 } from '../../../utils/board-label.js';
-import { normalizeIitCategory } from '../../../constants/products.js';
+import { normalizeIitCategoryLoose, inferProductCategoryFromPath, buildMaterialSlotTitle } from '../../../constants/products.js';
 
 let bookContentIdIndexReady = false;
 
@@ -256,6 +256,7 @@ export async function createBookFromUpload({
   uploadedBy,
   uploadedByRole,
   productCategory,
+  relativePath,
 }) {
   await ensureBookContentIdIndex();
   await ensureUploadDir();
@@ -285,12 +286,24 @@ export async function createBookFromUpload({
   const { text, requiresOcr } = await extractTextFromUpload(buffer, mimeType, originalName);
   const chapters = splitIntoChapters(text).map(({ text: _t, ...ch }) => ch);
 
-  const book = await Book.create({
-    title: String(title || originalName || 'Untitled Book').trim(),
-    board: board || 'CBSE',
+  const resolvedCategory =
+    normalizeIitCategoryLoose(productCategory) ||
+    inferProductCategoryFromPath(relativePath || originalName) ||
+    '';
+  const subjectName = String(subject || '').trim();
+  const boardLabel = board || 'CBSE';
+  const slotTitle = buildMaterialSlotTitle({
+    subject: subjectName,
+    productCategory: resolvedCategory,
+    fallbackTitle: title || originalName || 'Untitled Book',
+  });
+
+  const sharedFields = {
+    title: String(title || '').trim() || slotTitle,
+    board: boardLabel,
     class: classLabel,
-    subject,
-    productCategory: normalizeIitCategory(productCategory),
+    subject: subjectName,
+    productCategory: resolvedCategory || '',
     topic: String(topic || '').trim(),
     subtopic: String(subtopic || '').trim(),
     source: source || 'textbook',
@@ -308,7 +321,24 @@ export async function createBookFromUpload({
     processingError: text.length < 80 ? 'No extractable text — scanned PDF may need OCR.' : '',
     uploadedBy: String(uploadedBy || '').trim(),
     uploadedByRole: String(uploadedByRole || 'super-admin').trim(),
-  });
+  };
+
+  let book = null;
+  if (subjectName) {
+    book = await Book.findOne({
+      board: boardLabel,
+      class: classLabel,
+      subject: subjectName,
+      productCategory: resolvedCategory || '',
+    }).sort({ updatedAt: -1 });
+  }
+
+  if (book) {
+    Object.assign(book, sharedFields);
+    await book.save();
+  } else {
+    book = await Book.create(sharedFields);
+  }
 
   if (text.length >= 80) {
     await indexBook(book._id);
@@ -548,13 +578,15 @@ export async function listImportableLearningContent({ board, type, imported } = 
   const rows = await Content.find(filter).sort({ createdAt: -1 }).limit(500).lean();
   const subjectIds = [...new Set(rows.map((r) => String(r.subject || '')).filter(Boolean))];
   const subjects = subjectIds.length
-    ? await Subject.find({ _id: { $in: subjectIds } }).select('name classNumber board').lean()
+    ? await Subject.find({ _id: { $in: subjectIds } })
+        .select('name classNumber board productCategory')
+        .lean()
     : [];
   const subjectById = new Map(subjects.map((s) => [String(s._id), s]));
 
   const contentIds = rows.map((r) => r._id);
   const linkedBooks = await Book.find({ contentId: { $in: contentIds } })
-    .select('_id contentId processingStatus chunkCount title')
+    .select('_id contentId processingStatus chunkCount title productCategory')
     .lean();
   const bookByContentId = new Map(linkedBooks.map((b) => [String(b.contentId), b]));
 
@@ -566,6 +598,10 @@ export async function listImportableLearningContent({ board, type, imported } = 
       const subjectDoc = row.subject ? subjectById.get(String(row.subject)) : null;
       const subjectName = normalizeImportedSubjectName(subjectDoc?.name, row.title);
       const classLabel = resolveImportedClassLabel({ content: row, subjectDoc, title: row.title });
+      const productCategory =
+        normalizeIitCategoryLoose(row.productCategory) ||
+        normalizeIitCategoryLoose(subjectDoc?.productCategory) ||
+        '';
 
       const linked = bookByContentId.get(String(row._id));
       return {
@@ -575,6 +611,7 @@ export async function listImportableLearningContent({ board, type, imported } = 
         board: row.board,
         classNumber: classLabel,
         subjectName,
+        productCategory,
         topic: row.topic || row.chapter || '',
         fileUrl,
         imported: Boolean(linked),
@@ -613,6 +650,17 @@ export async function createBookFromContent({ contentId, uploadedBy, uploadedByR
   const subjectName = normalizeImportedSubjectName(subjectDoc?.name, content.title);
   const classLabel = resolveImportedClassLabel({ content, subjectDoc, title: content.title });
   const boardLabel = canonicalBoardLabel(content.board || subjectDoc?.board || 'CBSE') || 'CBSE';
+  const productCategory =
+    normalizeIitCategoryLoose(content.productCategory) ||
+    normalizeIitCategoryLoose(subjectDoc?.productCategory) ||
+    inferProductCategoryFromPath(content.title) ||
+    inferProductCategoryFromPath(content.fileUrl) ||
+    '';
+  const slotTitle = buildMaterialSlotTitle({
+    subject: subjectName,
+    productCategory,
+    fallbackTitle: content.title,
+  });
 
   const buffer = await readContentFileBuffer(fileUrl);
   const mimeType = mimeFromFileUrl(fileUrl);
@@ -620,11 +668,20 @@ export async function createBookFromContent({ contentId, uploadedBy, uploadedByR
   const { text, requiresOcr } = await extractTextFromUpload(buffer, mimeType, originalName);
   const chapters = splitIntoChapters(text).map(({ text: _t, ...ch }) => ch);
 
-  const book = await Book.create({
-    title: String(content.title || 'Untitled').trim(),
+  // One book per (board, class, subject, productCategory) slot — replace if already filled.
+  const slotExisting = await Book.findOne({
     board: boardLabel,
     class: classLabel,
     subject: subjectName,
+    productCategory: productCategory || '',
+  }).sort({ updatedAt: -1 });
+
+  const sharedFields = {
+    title: slotTitle,
+    board: boardLabel,
+    class: classLabel,
+    subject: subjectName,
+    productCategory: productCategory || '',
     topic: String(content.topic || content.chapter || '').trim(),
     subtopic: String(content.module || '').trim(),
     source: mapContentTypeToBookSource(content.type),
@@ -643,13 +700,27 @@ export async function createBookFromContent({ contentId, uploadedBy, uploadedByR
     processingError: text.length < 80 ? 'No extractable text — scanned PDF may need OCR.' : '',
     uploadedBy: String(uploadedBy || '').trim(),
     uploadedByRole: String(uploadedByRole || 'super-admin').trim(),
-  });
+  };
+
+  let book;
+  if (slotExisting && String(slotExisting.contentId || '') !== String(content._id)) {
+    // Different content claiming same Alpha/Beta slot — replace file in place.
+    Object.assign(slotExisting, sharedFields);
+    await slotExisting.save();
+    book = slotExisting;
+  } else if (slotExisting) {
+    Object.assign(slotExisting, sharedFields);
+    await slotExisting.save();
+    book = slotExisting;
+  } else {
+    book = await Book.create(sharedFields);
+  }
 
   if (text.length >= 80) {
     await indexBook(book._id);
     const refreshed = await Book.findById(book._id);
-    return { book: refreshed || book, alreadyImported: false };
+    return { book: refreshed || book, alreadyImported: Boolean(slotExisting) };
   }
 
-  return { book, alreadyImported: false };
+  return { book, alreadyImported: Boolean(slotExisting) };
 }

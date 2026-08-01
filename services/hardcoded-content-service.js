@@ -171,13 +171,15 @@ async function findFolder(parentPath, targetNames) {
       const match = entries.find(e => e.isDirectory() && e.name.toLowerCase() === tLower);
       if (match) return match.name;
     }
-    // Partial / contains match (handles "Summary and Short Notes" vs "Summaries and Short notes")
+    // Partial / contains match only when exactly one directory matches (avoids wrong chapter).
     for (const target of targetNames) {
       const tLower = target.toLowerCase();
-      const match = entries.find(e =>
-        e.isDirectory() && (e.name.toLowerCase().includes(tLower) || tLower.includes(e.name.toLowerCase()))
+      const matches = entries.filter(
+        (e) =>
+          e.isDirectory() &&
+          (e.name.toLowerCase().includes(tLower) || tLower.includes(e.name.toLowerCase())),
       );
-      if (match) return match.name;
+      if (matches.length === 1) return matches[0].name;
     }
   } catch { /* ignore */ }
   return null;
@@ -895,8 +897,19 @@ async function getClass6Content(classNum, subject, topic, toolType, params = {})
 
   const fileName = `${topicCode.toLowerCase()} ${difficulty}.csv`;
   const filePath = path.join(subjectPath, actualFolder, fileName);
-  if (!await exists(filePath)) return null;
-  return await readCSVFile(filePath);
+  if (await exists(filePath)) return await readCSVFile(filePath);
+  // Case-insensitive fallback (Linux/prod often differs from Windows casing)
+  try {
+    const files = await fs.readdir(path.join(subjectPath, actualFolder));
+    const want = fileName.toLowerCase();
+    const hit = files.find((f) => String(f).toLowerCase() === want);
+    if (hit) {
+      return await readCSVFile(path.join(subjectPath, actualFolder, hit));
+    }
+  } catch {
+    /* ignore */
+  }
+  return null;
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════

@@ -53,8 +53,17 @@ export function examMatchesAdminBoard(exam, adminBoard) {
   if (exam.isAllBoards === true) return true;
   const examBoard = normalizeBoardKey(exam.board);
   const adminKey = normalizeBoardKey(adminBoard);
-  if (!examBoard || !adminKey) return true;
+  // Missing either side → do not allow (prevents CSV all-board leaks)
+  if (!examBoard || !adminKey) return false;
   return examBoard === adminKey;
+}
+
+/** Student access: school targeting + board of their assigned school admin. */
+export function examVisibleToStudent(exam, studentAdminId, studentBoard) {
+  if (!examVisibleToSchool(exam, studentAdminId)) return false;
+  if (studentBoard) return examMatchesAdminBoard(exam, studentBoard);
+  // No board on student/admin → still allow school-targeted exams only
+  return exam.isAllBoards !== true;
 }
 
 /** Full check for school-admin dashboards. */
