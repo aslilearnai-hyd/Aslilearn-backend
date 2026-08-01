@@ -66,7 +66,7 @@ function getGeminiModelCandidates() {
 function getPdfExtractionMaxOutputTokens() {
   const n = Number(process.env.GEMINI_PDF_EXTRACTION_MAX_TOKENS);
   if (Number.isFinite(n) && n >= 1024) return Math.min(n, 65536);
-  return 16384;
+  return 32768;
 }
 
 /**
@@ -335,6 +335,22 @@ async function safeGeminiErrorText(response) {
   }
 }
 
+function dedupePdfQuestionRows(rows) {
+  const seen = new Set();
+  const out = [];
+  for (const r of rows || []) {
+    const key = String(r?.questionText || '')
+      .toLowerCase()
+      .replace(/\s+/g, ' ')
+      .trim()
+      .slice(0, 200);
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    out.push(r);
+  }
+  return out;
+}
+
 async function extractQuestionsFromPdfViaGemini({
   buffer,
   mimeType = 'application/pdf',
@@ -355,27 +371,30 @@ async function extractQuestionsFromPdfViaGemini({
     mimeType,
   });
 
-  const prompt = `Extract all exam questions from this PDF and return ONLY valid JSON.
+  const buildPrompt = (rangeHint = '') => `Extract exam questions from this PDF and return ONLY valid JSON.
 Preferred shape: {"questions":[ ... ]}. A bare JSON array of question objects is also accepted.
 Each question object must have these exact keys:
 questionText, questionType (MCQ/MSQ/integer), subject, marks (number), option1, option2, option3, option4, correctAnswer, explanation.
 
-For subject: Read the actual subject name from the PDF content itself (e.g. from section headers, page titles, question labels, or context clues like "Physics - Section A"). Do NOT assume or default to any subject. If the subject cannot be determined from the PDF, set subject to empty string "".
-When the PDF clearly indicates one of the standard areas, use exactly one of these lowercase slugs for subject: maths, physics, chemistry, biology. If the PDF suggests a different label that maps obviously to one of these (e.g. "Mathematics" → maths), use that slug. Otherwise use "".
+${rangeHint}
 
-For MCQ: correctAnswer is the text of the correct option (full option text, not a letter).
-For MSQ: correctAnswer is comma-separated correct option texts.
-For integer: correctAnswer is the numeric answer; options can be empty strings.
-
-Accuracy: Copy stems and options faithfully. Strip leading "Q1." / "1." from questionText only. Strip "A." / "(a)" prefixes from option bodies. Skip items that cannot be represented as MCQ/MSQ/integer with real choices.
-
-Return only valid JSON, no markdown, no explanation.`;
+Important rules:
+- Extract EVERY matching question in scope (do not stop early).
+- SKIP answer-key / "Test Key" pages and rough-work pages.
+- Include Single Correct, Multi Correct (MSQ), Assertion-Reason, Case-based, and Match-the-Following when they have options a)–d).
+- For Match-the-Following, put the matching codes into option1–option4 (e.g. "A-2, B-4, C-1, D-3").
+- For subject: read from PDF section headers (Mathematics→maths, Physics→physics, Chemistry→chemistry, Biology→biology). Otherwise "".
+- For MCQ: correctAnswer is the full text of the correct option (not only a letter), when the key is visible; else best effort from the paper.
+- For MSQ: correctAnswer is comma-separated correct option texts.
+- For integer: correctAnswer is the numeric answer; options can be empty strings.
+- Strip leading "Q1." / "1." from questionText only. Strip "A." / "(a)" prefixes from option bodies.
+- Return only valid JSON, no markdown, no explanation.`;
 
   const maxOut = getPdfExtractionMaxOutputTokens();
   const attemptErrors = [];
   let sawQuotaError = false;
   let sawDeniedError = false;
-  const requestTimeoutMs = Number(process.env.GEMINI_PDF_REQUEST_TIMEOUT_MS) || 90000;
+  const requestTimeoutMs = Number(process.env.GEMINI_PDF_REQUEST_TIMEOUT_MS) || 120000;
 
   const fetchWithTimeout = async (url, options) => {
     const controller = new AbortController();
@@ -390,7 +409,7 @@ Return only valid JSON, no markdown, no explanation.`;
   const parseGeminiJsonArray = (data, modelLabel) => {
     const finishReason = data?.candidates?.[0]?.finishReason;
     if (finishReason === 'MAX_TOKENS') {
-      attemptErrors.push(`${modelLabel}: output truncated (MAX_TOKENS); increase GEMINI_PDF_EXTRACTION_MAX_TOKENS or split PDF`);
+      attemptErrors.push(`${modelLabel}: output truncated (MAX_TOKENS); will retry in smaller chunks`);
     }
     if (data?.promptFeedback?.blockReason) {
       attemptErrors.push(`${modelLabel}: blocked (${data.promptFeedback.blockReason})`);
@@ -413,124 +432,160 @@ Return only valid JSON, no markdown, no explanation.`;
     try {
       parsed = JSON.parse(cleaned);
     } catch {
-      attemptErrors.push(`${modelLabel}: returned invalid JSON`);
+      // Truncated JSON is common on large papers — keep going with chunked retries.
+      attemptErrors.push(`${modelLabel}: returned invalid JSON (often truncated)`);
       return null;
     }
-    // Structured schema returns { questions: [...] }; loose mode may return a bare array.
-    if (Array.isArray(parsed)) return parsed;
+    if (Array.isArray(parsed)) return { rows: parsed, finishReason };
     if (parsed && typeof parsed === 'object') {
-      if (Array.isArray(parsed.questions)) return parsed.questions;
-      if (Array.isArray(parsed.items)) return parsed.items;
-      if (Array.isArray(parsed.data)) return parsed.data;
+      if (Array.isArray(parsed.questions)) return { rows: parsed.questions, finishReason };
+      if (Array.isArray(parsed.items)) return { rows: parsed.items, finishReason };
+      if (Array.isArray(parsed.data)) return { rows: parsed.data, finishReason };
     }
     attemptErrors.push(`${modelLabel}: did not return a JSON array`);
     return null;
   };
 
-  for (const model of modelCandidates) {
-    const tryModel = async (useStructured) => {
-      const generationConfig = {
-        temperature: 0,
-        topP: 0.95,
-        maxOutputTokens: maxOut,
-        ...(useStructured
-          ? {
-              responseMimeType: 'application/json',
-              responseSchema: PDF_QUESTIONS_RESPONSE_SCHEMA,
-            }
-          : {}),
-      };
-
-      const payload = {
-        contents: [
-          {
-            role: 'user',
-            parts: [
-              { text: prompt },
-              {
-                inlineData: {
-                  mimeType,
-                  data: buffer.toString('base64'),
-                },
-              },
-            ],
-          },
-        ],
-        generationConfig,
-      };
-
-      let response;
-      try {
-        response = await fetchWithTimeout(
-          `${GEMINI_BASE_URL}/models/${model}:generateContent?key=${apiKey}`,
-          {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload),
-          },
-        );
-      } catch (error) {
-        return {
-          ok: false,
-          status: 408,
-          errorText: error?.name === 'AbortError'
-            ? `Gemini request timed out after ${requestTimeoutMs}ms`
-            : String(error?.message || 'Gemini request failed'),
-        };
-      }
-
-      if (!response.ok) {
-        const errorText = await safeGeminiErrorText(response);
-        return { ok: false, status: response.status, errorText };
-      }
-
-      const data = await response.json();
-      const parsed = parseGeminiJsonArray(data, `${model}${useStructured ? '+schema' : ''}`);
-      if (!parsed) return { ok: false, status: 200, errorText: 'parse failed' };
-      return { ok: true, parsed };
+  const tryModelWithPrompt = async (model, promptText, useStructured) => {
+    const generationConfig = {
+      temperature: 0,
+      topP: 0.95,
+      maxOutputTokens: maxOut,
+      ...(useStructured
+        ? {
+            responseMimeType: 'application/json',
+            responseSchema: PDF_QUESTIONS_RESPONSE_SCHEMA,
+          }
+        : {}),
     };
 
-    let parsed = null;
+    const payload = {
+      contents: [
+        {
+          role: 'user',
+          parts: [
+            { text: promptText },
+            {
+              inlineData: {
+                mimeType,
+                data: buffer.toString('base64'),
+              },
+            },
+          ],
+        },
+      ],
+      generationConfig,
+    };
 
-    const structured = await tryModel(true);
-    if (structured.ok && structured.parsed) {
-      parsed = structured.parsed;
-    } else if (structured.status === 400 && /schema|mime|response/i.test(String(structured.errorText || ''))) {
-      attemptErrors.push(`${model}: structured output rejected (${structured.errorText || structured.status})`);
-      const loose = await tryModel(false);
-      if (loose.ok && loose.parsed) parsed = loose.parsed;
-      else if (!loose.ok) {
-        const errorText = loose.errorText || '';
-        const isQuota = loose.status === 429 || /quota|resource_exhausted/i.test(errorText);
-        const isDenied = loose.status === 403 || /denied access|permission denied/i.test(errorText);
-        sawQuotaError = sawQuotaError || isQuota;
-        sawDeniedError = sawDeniedError || isDenied;
-        attemptErrors.push(`${model}: ${loose.status} ${errorText}`);
-      }
-    } else if (!structured.ok) {
-      const errorText = structured.errorText || '';
-      const isQuota = structured.status === 429 || /quota|resource_exhausted/i.test(errorText);
-      const isDenied = structured.status === 403 || /denied access|permission denied/i.test(errorText);
+    let response;
+    try {
+      response = await fetchWithTimeout(
+        `${GEMINI_BASE_URL}/models/${model}:generateContent?key=${apiKey}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        },
+      );
+    } catch (error) {
+      return {
+        ok: false,
+        status: 408,
+        errorText: error?.name === 'AbortError'
+          ? `Gemini request timed out after ${requestTimeoutMs}ms`
+          : String(error?.message || 'Gemini request failed'),
+      };
+    }
+
+    if (!response.ok) {
+      const errorText = await safeGeminiErrorText(response);
+      return { ok: false, status: response.status, errorText };
+    }
+
+    const data = await response.json();
+    const parsed = parseGeminiJsonArray(data, `${model}${useStructured ? '+schema' : ''}`);
+    if (!parsed) return { ok: false, status: 200, errorText: 'parse failed', finishReason: data?.candidates?.[0]?.finishReason };
+    return { ok: true, parsed: parsed.rows, finishReason: parsed.finishReason };
+  };
+
+  const extractOnce = async (model, rangeHint) => {
+    const promptText = buildPrompt(rangeHint);
+    let result = await tryModelWithPrompt(model, promptText, true);
+    if (result.ok && result.parsed) return result;
+
+    if (result.status === 400 && /schema|mime|response/i.test(String(result.errorText || ''))) {
+      attemptErrors.push(`${model}: structured output rejected (${result.errorText || result.status})`);
+    } else if (!result.ok) {
+      const errorText = result.errorText || '';
+      const isQuota = result.status === 429 || /quota|resource_exhausted/i.test(errorText);
+      const isDenied = result.status === 403 || /denied access|permission denied/i.test(errorText);
       sawQuotaError = sawQuotaError || isQuota;
       sawDeniedError = sawDeniedError || isDenied;
-      attemptErrors.push(`${model}: ${structured.status} ${errorText}`);
-      const loose = await tryModel(false);
-      if (loose.ok && loose.parsed) parsed = loose.parsed;
-      else if (!loose.ok) {
-        const err2 = loose.errorText || '';
-        const isQ2 = loose.status === 429 || /quota|resource_exhausted/i.test(err2);
-        const isDenied2 = loose.status === 403 || /denied access|permission denied/i.test(err2);
-        sawQuotaError = sawQuotaError || isQ2;
-        sawDeniedError = sawDeniedError || isDenied2;
-        attemptErrors.push(`${model} (no schema): ${loose.status} ${err2}`);
-      }
+      attemptErrors.push(`${model}: ${result.status} ${errorText}`);
     }
 
-    if (parsed && Array.isArray(parsed)) {
-      const refined = postProcessGeminiPdfQuestionRows(parsed);
-      if (refined.length > 0) return refined;
-      attemptErrors.push(`${model}: model returned rows but none passed validation after cleanup`);
+    const loose = await tryModelWithPrompt(model, promptText, false);
+    if (loose.ok && loose.parsed) return loose;
+    if (!loose.ok) {
+      const err2 = loose.errorText || '';
+      const isQ2 = loose.status === 429 || /quota|resource_exhausted/i.test(err2);
+      const isDenied2 = loose.status === 403 || /denied access|permission denied/i.test(err2);
+      sawQuotaError = sawQuotaError || isQ2;
+      sawDeniedError = sawDeniedError || isDenied2;
+      attemptErrors.push(`${model} (no schema): ${loose.status} ${err2}`);
     }
+    return { ok: false, parsed: null, finishReason: result.finishReason || loose.finishReason };
+  };
+
+  // Large multi-subject papers (e.g. 80 Qs) truncate in one Gemini response.
+  // Use number-range chunks and merge so we get the full set.
+  const RANGE_CHUNKS = [
+    [1, 20],
+    [21, 40],
+    [41, 60],
+    [61, 80],
+    [81, 120],
+  ];
+
+  for (const model of modelCandidates) {
+    const collected = [];
+    let truncated = false;
+
+    const full = await extractOnce(
+      model,
+      'Scope: extract ALL questions from the question paper body (not the answer key).',
+    );
+    if (full.ok && Array.isArray(full.parsed)) {
+      collected.push(...full.parsed);
+      if (full.finishReason === 'MAX_TOKENS') truncated = true;
+    }
+
+    let refined = postProcessGeminiPdfQuestionRows(collected);
+    const likelyIncomplete = truncated || refined.length < 50 || refined.length === 0;
+
+    if (likelyIncomplete) {
+      console.log('[PDF_EXAM_EXTRACT] chunking by question ranges', {
+        model,
+        firstPass: refined.length,
+        truncated,
+      });
+      for (const [from, to] of RANGE_CHUNKS) {
+        const chunk = await extractOnce(
+          model,
+          `Scope: extract ONLY questions numbered ${from} through ${to} (inclusive). Skip any question outside this range. Skip answer-key pages.`,
+        );
+        if (chunk.ok && Array.isArray(chunk.parsed)) {
+          collected.push(...chunk.parsed);
+          if (chunk.finishReason === 'MAX_TOKENS') truncated = true;
+        }
+      }
+      refined = postProcessGeminiPdfQuestionRows(collected);
+    }
+
+    refined = dedupePdfQuestionRows(refined);
+    console.log('[PDF_EXAM_EXTRACT] model result', { model, count: refined.length, truncated });
+    if (refined.length > 0) return refined;
+    attemptErrors.push(`${model}: model returned rows but none passed validation after cleanup`);
   }
 
   if (sawDeniedError) {
