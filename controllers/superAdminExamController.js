@@ -6,6 +6,7 @@ import { spreadsheetBufferToCsv } from '../utils/spreadsheet-to-csv.js';
 import { VALID_SCHOOL_BOARDS, isValidSchoolBoard } from '../constants/boards.js';
 import {
   GEMINI_LITE_MODEL,
+  GEMINI_FLASH_PREVIEW_MODEL,
   isRetiredOrUnsupportedGeminiModel,
   resolveAllowedGeminiModel,
 } from '../services/gemini-models.js';
@@ -51,7 +52,7 @@ function getGeminiModelCandidates() {
     .split(',')
     .map((m) => String(m || '').trim())
     .filter(Boolean);
-  const defaults = [GEMINI_LITE_MODEL];
+  const defaults = [GEMINI_LITE_MODEL, GEMINI_FLASH_PREVIEW_MODEL];
   return Array.from(
     new Set(
       [preferred, singleFallback, ...listFallback, ...defaults]
@@ -95,39 +96,48 @@ function normalizePdfSubjectField(raw) {
   return CANONICAL_EXAM_SUBJECT_SLUGS.includes(v) ? v : '';
 }
 
-const PDF_QUESTIONS_RESPONSE_SCHEMA = {
-  type: 'array',
-  items: {
-    type: 'object',
-    properties: {
-      questionText: { type: 'string', description: 'Full question stem only, no leading number.' },
-      questionType: { type: 'string', enum: ['MCQ', 'MSQ', 'integer'] },
-      subject: {
-        type: 'string',
-        description:
-          'From PDF only: maths|physics|chemistry|biology lowercase slug when clear from headers/context; otherwise empty string.',
-      },
-      marks: { type: 'number' },
-      option1: { type: 'string' },
-      option2: { type: 'string' },
-      option3: { type: 'string' },
-      option4: { type: 'string' },
-      correctAnswer: { type: 'string' },
-      explanation: { type: 'string' },
+const PDF_QUESTION_ITEM_SCHEMA = {
+  type: 'OBJECT',
+  properties: {
+    questionText: { type: 'STRING', description: 'Full question stem only, no leading number.' },
+    questionType: { type: 'STRING', enum: ['MCQ', 'MSQ', 'integer'] },
+    subject: {
+      type: 'STRING',
+      description:
+        'From PDF only: maths|physics|chemistry|biology lowercase slug when clear from headers/context; otherwise empty string.',
     },
-    required: [
-      'questionText',
-      'questionType',
-      'subject',
-      'marks',
-      'option1',
-      'option2',
-      'option3',
-      'option4',
-      'correctAnswer',
-      'explanation',
-    ],
+    marks: { type: 'NUMBER' },
+    option1: { type: 'STRING' },
+    option2: { type: 'STRING' },
+    option3: { type: 'STRING' },
+    option4: { type: 'STRING' },
+    correctAnswer: { type: 'STRING' },
+    explanation: { type: 'STRING' },
   },
+  required: [
+    'questionText',
+    'questionType',
+    'subject',
+    'marks',
+    'option1',
+    'option2',
+    'option3',
+    'option4',
+    'correctAnswer',
+    'explanation',
+  ],
+};
+
+/** Gemini structured output requires an OBJECT root (not a bare ARRAY). */
+const PDF_QUESTIONS_RESPONSE_SCHEMA = {
+  type: 'OBJECT',
+  properties: {
+    questions: {
+      type: 'ARRAY',
+      items: PDF_QUESTION_ITEM_SCHEMA,
+    },
+  },
+  required: ['questions'],
 };
 
 function normalizeMcqAnswerKey(s) {
@@ -331,14 +341,23 @@ async function extractQuestionsFromPdfViaGemini({
 }) {
   const apiKey = getGeminiApiKey();
   if (!apiKey) {
-    throw new Error('Gemini API key is missing');
+    throw new Error(
+      'Gemini API key is missing on the server. Set GEMINI_API_KEY or VIDYA_AI_GEMINI_API_KEY in ASLI-STUD-BACK .env, then restart pm2 (asli-api).',
+    );
   }
-  const modelCandidates = getGeminiModelCandidates().slice(0, 3);
+  const modelCandidates = getGeminiModelCandidates().slice(0, 4);
   if (modelCandidates.length === 0) {
     throw new Error('No Gemini model configured');
   }
+  console.log('[PDF_EXAM_EXTRACT] starting', {
+    models: modelCandidates,
+    bytes: buffer?.length || 0,
+    mimeType,
+  });
 
-  const prompt = `Extract all exam questions from this PDF and return ONLY a JSON array. Each object must have these exact keys:
+  const prompt = `Extract all exam questions from this PDF and return ONLY valid JSON.
+Preferred shape: {"questions":[ ... ]}. A bare JSON array of question objects is also accepted.
+Each question object must have these exact keys:
 questionText, questionType (MCQ/MSQ/integer), subject, marks (number), option1, option2, option3, option4, correctAnswer, explanation.
 
 For subject: Read the actual subject name from the PDF content itself (e.g. from section headers, page titles, question labels, or context clues like "Physics - Section A"). Do NOT assume or default to any subject. If the subject cannot be determined from the PDF, set subject to empty string "".
@@ -373,12 +392,22 @@ Return only valid JSON, no markdown, no explanation.`;
     if (finishReason === 'MAX_TOKENS') {
       attemptErrors.push(`${modelLabel}: output truncated (MAX_TOKENS); increase GEMINI_PDF_EXTRACTION_MAX_TOKENS or split PDF`);
     }
+    if (data?.promptFeedback?.blockReason) {
+      attemptErrors.push(`${modelLabel}: blocked (${data.promptFeedback.blockReason})`);
+      return null;
+    }
     const raw = String(
       (data?.candidates?.[0]?.content?.parts || [])
         .map((p) => (typeof p?.text === 'string' ? p.text : ''))
         .join('')
         .trim(),
     );
+    if (!raw) {
+      attemptErrors.push(
+        `${modelLabel}: empty model response (finishReason=${finishReason || 'none'})`,
+      );
+      return null;
+    }
     const cleaned = raw.replace(/^```json\s*/i, '').replace(/^```\s*/i, '').replace(/\s*```$/i, '').trim();
     let parsed;
     try {
@@ -387,11 +416,15 @@ Return only valid JSON, no markdown, no explanation.`;
       attemptErrors.push(`${modelLabel}: returned invalid JSON`);
       return null;
     }
-    if (!Array.isArray(parsed)) {
-      attemptErrors.push(`${modelLabel}: did not return a JSON array`);
-      return null;
+    // Structured schema returns { questions: [...] }; loose mode may return a bare array.
+    if (Array.isArray(parsed)) return parsed;
+    if (parsed && typeof parsed === 'object') {
+      if (Array.isArray(parsed.questions)) return parsed.questions;
+      if (Array.isArray(parsed.items)) return parsed.items;
+      if (Array.isArray(parsed.data)) return parsed.data;
     }
-    return parsed;
+    attemptErrors.push(`${modelLabel}: did not return a JSON array`);
+    return null;
   };
 
   for (const model of modelCandidates) {
@@ -2410,9 +2443,9 @@ export const convertPdfToQuestions = async (req, res) => {
     console.error('❌ convertPdfToQuestions error:', error);
     const msg = String(error?.message || 'Failed to extract questions from PDF');
     const status =
-      msg.includes('Gemini API key is missing') ? 500 :
+      /Gemini API key is missing/i.test(msg) ? 503 :
       /quota exceeded|resource_exhausted|429/i.test(msg) ? 429 :
-      msg.includes('Gemini PDF extraction failed') ? 502 :
+      msg.includes('Gemini PDF extraction failed') || msg.includes('Gemini PDF upload blocked') ? 502 :
       msg.includes('invalid JSON') || msg.includes('did not return a JSON array') ? 422 :
       500;
     return res.status(status).json({
