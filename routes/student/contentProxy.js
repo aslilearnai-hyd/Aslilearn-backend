@@ -1,6 +1,9 @@
 import express from 'express';
 import http from 'http';
 import https from 'https';
+import fs from 'fs/promises';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import mongoose from 'mongoose';
 import User from '../../models/User.js';
 import Video from '../../models/Video.js';
@@ -51,6 +54,10 @@ import {
 } from '../../utils/resolveSubjectContentIds.js';
 import { assertAllowedFetchUrl, getContentProxyAllowlist } from '../../utils/url-allowlist.js';
 import {
+  roleMayAccessUpload,
+  signUploadPath,
+} from '../../utils/upload-access.js';
+import {
   buildCachedAnalysisResponse,
   cachedHasStaleAiExplanations,
   collectCachedExplanationsByQuestionId,
@@ -75,8 +82,117 @@ import {
 
 
 const router = express.Router();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const UPLOADS_ROOT = path.resolve(__dirname, '../../uploads');
 
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+/** True when URL points at our own /uploads tree (needs auth/signature if fetched over HTTP). */
+function parseOwnUploadsPath(rawUrl) {
+  let parsed;
+  try {
+    parsed = new URL(String(rawUrl || '').trim());
+  } catch {
+    return null;
+  }
+  if (!['http:', 'https:'].includes(parsed.protocol)) return null;
+  const pathname = decodeURIComponent(parsed.pathname || '');
+  if (!pathname.startsWith('/uploads/')) return null;
+  const host = parsed.hostname.replace(/\.$/, '').toLowerCase();
+  const apiHost = (() => {
+    try {
+      return new URL(process.env.API_PUBLIC_URL || process.env.BACKEND_URL || '').hostname
+        .replace(/\.$/, '')
+        .toLowerCase();
+    } catch {
+      return '';
+    }
+  })();
+  const isOurs =
+    host.includes('aslilearn.ai') ||
+    host === 'localhost' ||
+    host === '127.0.0.1' ||
+    (apiHost && host === apiHost);
+  if (!isOurs) return null;
+  return { parsed, absoluteUploadPath: pathname.split('?')[0] };
+}
+
+/**
+ * Serve /uploads from disk (avoids HTTP loopback hitting the auth gate without credentials).
+ * Returns null when not our uploads URL or file missing.
+ */
+async function readLocalUploadFile(rawUrl, user) {
+  const own = parseOwnUploadsPath(rawUrl);
+  if (!own) return null;
+
+  const mountPath = own.absoluteUploadPath.replace(/^\/uploads/, '') || '/';
+  if (!roleMayAccessUpload(mountPath, user || { role: 'student' })) {
+    const err = new Error('Not allowed to access this file');
+    err.status = 403;
+    throw err;
+  }
+
+  const rel = own.absoluteUploadPath.replace(/^\/uploads\//, '');
+  if (!rel || rel.includes('..') || path.isAbsolute(rel)) {
+    const err = new Error('Invalid upload path');
+    err.status = 400;
+    throw err;
+  }
+
+  const fullPath = path.resolve(UPLOADS_ROOT, rel);
+  if (!fullPath.startsWith(UPLOADS_ROOT + path.sep) && fullPath !== UPLOADS_ROOT) {
+    const err = new Error('Invalid upload path');
+    err.status = 400;
+    throw err;
+  }
+
+  try {
+    const buffer = await fs.readFile(fullPath);
+    const ext = path.extname(fullPath).toLowerCase();
+    const upstreamType =
+      ext === '.pdf'
+        ? 'application/pdf'
+        : ext === '.png'
+          ? 'image/png'
+          : ext === '.jpg' || ext === '.jpeg'
+            ? 'image/jpeg'
+            : 'application/octet-stream';
+    console.log('[PDF_PROXY] local uploads hit', {
+      path: own.absoluteUploadPath,
+      bytes: buffer.length,
+    });
+    return { buffer, upstreamType };
+  } catch (e) {
+    if (e && (e.code === 'ENOENT' || e.code === 'ENOTDIR')) return null;
+    throw e;
+  }
+}
+
+/** Add ?exp=&sig= so server→server fetch of our /uploads passes the ACL middleware. */
+function withSignedUploadAccess(rawUrl) {
+  const own = parseOwnUploadsPath(rawUrl);
+  if (!own) return rawUrl;
+  if (own.parsed.searchParams.get('sig') && own.parsed.searchParams.get('exp')) {
+    return own.parsed.toString();
+  }
+  try {
+    const { exp, sig } = signUploadPath(own.absoluteUploadPath, 3600);
+    own.parsed.searchParams.set('exp', String(exp));
+    own.parsed.searchParams.set('sig', sig);
+    return own.parsed.toString();
+  } catch (e) {
+    console.warn('[PDF_PROXY] could not sign upload URL', e?.message || e);
+    return rawUrl;
+  }
+}
+
+async function loadProxiedFile(rawUrl, contextLabel, user) {
+  const local = await readLocalUploadFile(rawUrl, user);
+  if (local) return local;
+  const fetchUrl = withSignedUploadAccess(rawUrl);
+  return fetchRemoteFileWithRetry(fetchUrl, contextLabel);
+}
 
 /** NCERT / many government PDF hosts block or slow datacenter egress; browser fetch often works. */
 function isBrowserDirectPdfHost(hostname) {
@@ -396,7 +512,7 @@ router.get('/content-download', async (req, res) => {
       });
     }
 
-    const { buffer, upstreamType } = await fetchRemoteFileWithRetry(url, 'download file');
+    const { buffer, upstreamType } = await loadProxiedFile(url, 'download file', req.user);
     const looksLikePdf = buffer.length >= 4 && buffer.subarray(0, 4).toString('ascii') === '%PDF';
     const isPdf = looksLikePdf || upstreamType.toLowerCase().includes('application/pdf');
     const safeFilename = typeof filename === 'string' && filename.trim()
@@ -427,14 +543,25 @@ router.get('/content-download', async (req, res) => {
       : isTimeout
         ? 504
         : 500;
-    res.status(statusCode).json({
+    // Upstream /uploads ACL 401 is not a student session failure — map for clearer clients.
+    const clientStatus =
+      statusCode === 401 || statusCode === 403
+        ? 502
+        : statusCode;
+    res.status(clientStatus).json({
       success: false,
-      code: isTimeout ? 'UPSTREAM_TIMEOUT' : undefined,
+      code: isTimeout
+        ? 'UPSTREAM_TIMEOUT'
+        : statusCode === 401 || statusCode === 403
+          ? 'UPSTREAM_UNAUTHORIZED'
+          : undefined,
       message: isTimeout
         ? 'The document host took too long to respond. Try again later or open the file in a new tab.'
-        : statusCode === 500
-          ? 'Failed to download file'
-          : `Failed to download file: ${statusCode}`,
+        : statusCode === 401 || statusCode === 403
+          ? 'Could not fetch the document from storage (access denied). Try Download, or contact support if this persists.'
+          : clientStatus === 500
+            ? 'Failed to download file'
+            : `Failed to download file: ${statusCode}`,
     });
   }
 });
@@ -523,7 +650,7 @@ router.get('/content-preview', async (req, res) => {
       });
     }
 
-    const { buffer, upstreamType } = await fetchRemoteFileWithRetry(url, 'preview file');
+    const { buffer, upstreamType } = await loadProxiedFile(url, 'preview file', req.user);
     const looksLikePdf = buffer.length >= 4 && buffer.subarray(0, 4).toString('ascii') === '%PDF';
     const isPdf = looksLikePdf || upstreamType.toLowerCase().includes('application/pdf');
     const safeFilename = typeof filename === 'string' && filename.trim()
@@ -558,14 +685,24 @@ router.get('/content-preview', async (req, res) => {
       : isTimeout
         ? 504
         : 500;
-    res.status(statusCode).json({
+    const clientStatus =
+      statusCode === 401 || statusCode === 403
+        ? 502
+        : statusCode;
+    res.status(clientStatus).json({
       success: false,
-      code: isTimeout ? 'UPSTREAM_TIMEOUT' : undefined,
+      code: isTimeout
+        ? 'UPSTREAM_TIMEOUT'
+        : statusCode === 401 || statusCode === 403
+          ? 'UPSTREAM_UNAUTHORIZED'
+          : undefined,
       message: isTimeout
         ? 'The document host took too long to respond. Try opening the original link, or use Download.'
-        : statusCode === 500
-          ? 'Failed to preview file'
-          : `Failed to preview file: ${statusCode}`,
+        : statusCode === 401 || statusCode === 403
+          ? 'Could not fetch the document from storage (access denied). Try Download, or contact support if this persists.'
+          : clientStatus === 500
+            ? 'Failed to preview file'
+            : `Failed to preview file: ${statusCode}`,
     });
   }
 });
