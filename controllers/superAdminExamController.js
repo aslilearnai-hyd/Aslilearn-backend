@@ -99,6 +99,10 @@ function normalizePdfSubjectField(raw) {
 const PDF_QUESTION_ITEM_SCHEMA = {
   type: 'OBJECT',
   properties: {
+    questionNumber: {
+      type: 'NUMBER',
+      description: 'Printed question number from the paper (1, 2, 3…), if visible.',
+    },
     questionText: { type: 'STRING', description: 'Full question stem only, no leading number.' },
     questionType: { type: 'STRING', enum: ['MCQ', 'MSQ', 'integer'] },
     subject: {
@@ -231,6 +235,17 @@ function postProcessGeminiPdfQuestionRows(rawList) {
       const questionText = stripPdfQuestionLeadingIndex(String(r?.questionText || '').trim());
       if (!questionText) return null;
 
+      const qnRaw = Number(r?.questionNumber);
+      const fromStem = String(r?.questionText || '').match(
+        /^\s*(?:q(?:uestion)?\s*)?(\d{1,3})[\.)]\s+/i,
+      );
+      const questionNumber =
+        Number.isFinite(qnRaw) && qnRaw >= 1
+          ? Math.floor(qnRaw)
+          : fromStem
+            ? parseInt(fromStem[1], 10)
+            : undefined;
+
       let qt = String(r?.questionType || '').trim().toUpperCase();
       if (qt === 'MULTIPLE' || qt === 'MULTI') qt = 'MSQ';
       if (!['MCQ', 'MSQ', 'INTEGER'].includes(qt)) qt = 'MCQ';
@@ -248,10 +263,12 @@ function postProcessGeminiPdfQuestionRows(rawList) {
 
       const slots = [o1, o2, o3, o4];
       const nonEmpty = slots.map((s) => s.trim()).filter(Boolean);
+      const withMeta = (row) =>
+        questionNumber != null ? { ...row, questionNumber } : row;
 
       if (qt === 'INTEGER') {
         const ca = String(r?.correctAnswer ?? '').trim();
-        return {
+        return withMeta({
           questionText,
           questionType: 'INTEGER',
           subject,
@@ -262,13 +279,13 @@ function postProcessGeminiPdfQuestionRows(rawList) {
           option4: '',
           correctAnswer: ca,
           explanation,
-        };
+        });
       }
 
       if (nonEmpty.length < 2) {
         const ca = String(r?.correctAnswer ?? '').trim();
         if (qt === 'MCQ' && ca && /^-?\d+(\.\d+)?$/.test(ca.trim())) {
-          return {
+          return withMeta({
             questionText,
             questionType: 'INTEGER',
             subject,
@@ -279,7 +296,7 @@ function postProcessGeminiPdfQuestionRows(rawList) {
             option4: '',
             correctAnswer: ca.trim(),
             explanation,
-          };
+          });
         }
         return null;
       }
@@ -309,7 +326,7 @@ function postProcessGeminiPdfQuestionRows(rawList) {
         if (idx >= 0) correctAnswer = nonEmpty[idx];
       }
 
-      return {
+      return withMeta({
         questionText,
         questionType: qt,
         subject,
@@ -320,7 +337,7 @@ function postProcessGeminiPdfQuestionRows(rawList) {
         option4: slots[3] || '',
         correctAnswer,
         explanation,
-      };
+      });
     })
     .filter(Boolean);
 }
@@ -333,6 +350,151 @@ async function safeGeminiErrorText(response) {
   } catch {
     return raw;
   }
+}
+
+/** Pages that are rough work / answer key — confuse Gemini and eat output tokens. */
+function isPureExamPdfTailPageText(pageText) {
+  const t = String(pageText || '');
+  if (!t.trim()) return true;
+  if (/Test\s*Key/i.test(t) || /ANSWER\s*KEY/i.test(t)) return true;
+  const compact = t.replace(/\s+/g, ' ').trim();
+  // Pure rough-work sheet (no real numbered questions)
+  if (/Rough\s*Work/i.test(t) && !/\d{1,3}[\.)]\s+\S/.test(t) && compact.length < 600) {
+    return true;
+  }
+  return false;
+}
+
+/**
+ * Drop trailing Rough Work / Test Key pages before sending PDF to Gemini,
+ * and parse letter keys from the dropped pages so we can fill correctAnswer.
+ */
+async function prepareExamPdfBufferForExtraction(buffer) {
+  const result = {
+    buffer,
+    removedTailPages: 0,
+    totalPages: 0,
+    answerKeyByNumber: new Map(),
+  };
+  try {
+    const { PDFParse } = await import('pdf-parse');
+    const { PDFDocument } = await import('pdf-lib');
+    const parser = new PDFParse({ data: buffer });
+    const parsed = await parser.getText();
+    await parser.destroy().catch(() => {});
+
+    const pages = Array.isArray(parsed?.pages) ? parsed.pages : [];
+    result.totalPages = pages.length || Number(parsed?.total) || 0;
+    if (pages.length < 2) return result;
+
+    const pageTexts = pages.map((p) => String(p?.text || p || ''));
+
+    // Parse answer key from full text (before strip).
+    const fullText = pageTexts.join('\n');
+    result.answerKeyByNumber = parseAsliPrepTestKeyLetters(fullText);
+
+    // Find Test Key / Answer Key page, then walk back over pure Rough Work pages.
+    let keyPage = -1;
+    for (let i = 0; i < pageTexts.length; i += 1) {
+      if (/Test\s*Key|ANSWER\s*KEY/i.test(pageTexts[i])) {
+        keyPage = i;
+        break;
+      }
+    }
+
+    let firstTail = -1;
+    if (keyPage >= 0) {
+      firstTail = keyPage;
+      while (firstTail > 0 && isPureExamPdfTailPageText(pageTexts[firstTail - 1])) {
+        firstTail -= 1;
+      }
+    } else {
+      // No explicit key page — strip only trailing pure rough-work pages
+      firstTail = pageTexts.length;
+      while (firstTail > 0 && isPureExamPdfTailPageText(pageTexts[firstTail - 1])) {
+        firstTail -= 1;
+      }
+      if (firstTail === pageTexts.length) firstTail = -1;
+    }
+
+    if (firstTail < 0 || firstTail === 0 || firstTail >= pageTexts.length) return result;
+
+    const src = await PDFDocument.load(buffer, { ignoreEncryption: true });
+    if (src.getPageCount() !== pageTexts.length) {
+      // Page-count mismatch — don't risk cutting real questions.
+      return result;
+    }
+    const out = await PDFDocument.create();
+    const keepIdx = Array.from({ length: firstTail }, (_, i) => i);
+    const copied = await out.copyPages(src, keepIdx);
+    copied.forEach((p) => out.addPage(p));
+    const stripped = Buffer.from(await out.save());
+    result.buffer = stripped;
+    result.removedTailPages = pageTexts.length - firstTail;
+    console.log('[PDF_EXAM_EXTRACT] stripped answer-key/rough-work tail', {
+      totalPages: pageTexts.length,
+      keptPages: firstTail,
+      removedTailPages: result.removedTailPages,
+      answerKeyEntries: result.answerKeyByNumber.size,
+    });
+    return result;
+  } catch (e) {
+    console.warn('[PDF_EXAM_EXTRACT] prepareExamPdfBufferForExtraction failed:', e?.message || e);
+    return result;
+  }
+}
+
+/**
+ * Parse Asli Prep style keys:
+ *   Test Key
+ *   1 2 3 4 5
+ *   b b a c c
+ */
+function parseAsliPrepTestKeyLetters(fullText) {
+  const map = new Map();
+  const text = String(fullText || '');
+  if (!/Test\s*Key|ANSWER\s*KEY/i.test(text)) return map;
+
+  const lines = text
+    .split(/\r?\n/)
+    .map((l) => l.replace(/\s+/g, ' ').trim())
+    .filter(Boolean);
+
+  for (let i = 0; i < lines.length - 1; i += 1) {
+    const numLine = lines[i];
+    const ansLine = lines[i + 1];
+    if (!/^\d+(?:\s+\d+){2,}$/.test(numLine)) continue;
+    if (!/^[a-dA-D](?:\s+[a-dA-D]){2,}$/.test(ansLine)) continue;
+    const nums = numLine.split(/\s+/).map((n) => parseInt(n, 10));
+    const letters = ansLine.split(/\s+/).map((a) => a.toLowerCase());
+    const n = Math.min(nums.length, letters.length);
+    for (let k = 0; k < n; k += 1) {
+      if (Number.isFinite(nums[k]) && /^[a-d]$/.test(letters[k])) {
+        map.set(nums[k], letters[k]);
+      }
+    }
+  }
+  return map;
+}
+
+function applyAnswerKeyLettersToRows(rows, answerKeyByNumber) {
+  if (!Array.isArray(rows) || !answerKeyByNumber?.size) return rows;
+  return rows.map((r) => {
+    const qn = Number(r?.questionNumber);
+    if (!Number.isFinite(qn) || qn < 1) return r;
+    const letter = answerKeyByNumber.get(qn);
+    if (!letter) return r;
+    const opts = [r.option1, r.option2, r.option3, r.option4].map((o) => String(o || '').trim());
+    const idx = letter.charCodeAt(0) - 97;
+    if (idx < 0 || idx > 3) return r;
+    const chosen = opts[idx];
+    // Multi-correct keys in this format are still single letters per Q in Asli keys.
+    if (String(r.questionType || '').toUpperCase() === 'MSQ' && chosen) {
+      return { ...r, correctAnswer: chosen };
+    }
+    if (chosen) return { ...r, correctAnswer: chosen };
+    return { ...r, correctAnswer: letter };
+  });
 }
 
 function dedupePdfQuestionRows(rows) {
@@ -365,27 +527,36 @@ async function extractQuestionsFromPdfViaGemini({
   if (modelCandidates.length === 0) {
     throw new Error('No Gemini model configured');
   }
+
+  // Strip trailing Rough Work / Test Key pages (Grade 6 style) — they confuse Gemini
+  // and burn output tokens. Keep parsed keys to fill correctAnswer after extract.
+  const prepared = await prepareExamPdfBufferForExtraction(buffer);
+  const pdfBuffer = prepared.buffer || buffer;
+  const answerKeyByNumber = prepared.answerKeyByNumber || new Map();
+
   console.log('[PDF_EXAM_EXTRACT] starting', {
     models: modelCandidates,
-    bytes: buffer?.length || 0,
+    bytes: pdfBuffer?.length || 0,
     mimeType,
+    removedTailPages: prepared.removedTailPages || 0,
+    answerKeyEntries: answerKeyByNumber.size,
   });
 
   const buildPrompt = (rangeHint = '') => `Extract exam questions from this PDF and return ONLY valid JSON.
 Preferred shape: {"questions":[ ... ]}. A bare JSON array of question objects is also accepted.
 Each question object must have these exact keys:
-questionText, questionType (MCQ/MSQ/integer), subject, marks (number), option1, option2, option3, option4, correctAnswer, explanation.
+questionNumber (printed number if visible), questionText, questionType (MCQ/MSQ/integer), subject, marks (number), option1, option2, option3, option4, correctAnswer, explanation.
 
 ${rangeHint}
 
 Important rules:
 - Extract EVERY matching question in scope (do not stop early).
-- SKIP answer-key / "Test Key" pages and rough-work pages.
+- This PDF should already exclude answer-key / rough-work pages — do not invent key tables.
 - Include Single Correct, Multi Correct (MSQ), Assertion-Reason, Case-based, and Match-the-Following when they have options a)–d).
 - For Match-the-Following, put the matching codes into option1–option4 (e.g. "A-2, B-4, C-1, D-3").
+- Always set questionNumber to the printed question number (1, 2, 3…).
 - For subject: read from PDF section headers (Mathematics→maths, Physics→physics, Chemistry→chemistry, Biology→biology). Otherwise "".
-- For MCQ: correctAnswer is the full text of the correct option (not only a letter), when the key is visible; else best effort from the paper.
-- For MSQ: correctAnswer is comma-separated correct option texts.
+- For MCQ/MSQ: correctAnswer may be a letter (a/b/c/d) or full option text.
 - For integer: correctAnswer is the numeric answer; options can be empty strings.
 - Strip leading "Q1." / "1." from questionText only. Strip "A." / "(a)" prefixes from option bodies.
 - Return only valid JSON, no markdown, no explanation.`;
@@ -468,7 +639,7 @@ Important rules:
             {
               inlineData: {
                 mimeType,
-                data: buffer.toString('base64'),
+                data: pdfBuffer.toString('base64'),
               },
             },
           ],
@@ -583,7 +754,13 @@ Important rules:
     }
 
     refined = dedupePdfQuestionRows(refined);
-    console.log('[PDF_EXAM_EXTRACT] model result', { model, count: refined.length, truncated });
+    refined = applyAnswerKeyLettersToRows(refined, answerKeyByNumber);
+    console.log('[PDF_EXAM_EXTRACT] model result', {
+      model,
+      count: refined.length,
+      truncated,
+      answerKeyApplied: answerKeyByNumber.size,
+    });
     if (refined.length > 0) return refined;
     attemptErrors.push(`${model}: model returned rows but none passed validation after cleanup`);
   }
