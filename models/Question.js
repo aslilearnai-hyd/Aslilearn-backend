@@ -92,6 +92,18 @@ const questionSchema = new mongoose.Schema({
     enum: ['Concept', 'Application'],
     default: 'Concept'
   },
+  // Set when a question was imported with an uncertain answer (e.g. the PDF's
+  // printed key was unusable). Stays on the saved question so the warning
+  // survives upload, and clears only when a human edits the content.
+  needsReview: {
+    type: Boolean,
+    default: false
+  },
+  reviewNote: {
+    type: String,
+    trim: true,
+    default: ''
+  },
   exam: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Exam',

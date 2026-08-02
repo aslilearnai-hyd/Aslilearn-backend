@@ -3159,6 +3159,10 @@ export const bulkUploadQuestions = async (req, res) => {
             if (rawConcept.includes('application') || rawConcept.includes('problem')) return 'Application';
             return 'Concept';
           })(),
+          needsReview: ['true', '1', 'yes'].includes(
+            String(getRowValue('needsreview', 'needs_review') || '').trim().toLowerCase(),
+          ),
+          reviewNote: getRowValue('reviewnote', 'review_note') || '',
           exam: examId,
           board: exam.board,
           createdBy: createdById
@@ -3495,6 +3499,14 @@ export const updateQuestion = async (req, res) => {
     }
     if (conceptType !== undefined) {
       questionToUpdate.conceptType = String(conceptType || '').trim() || undefined;
+    }
+
+    // A content edit means a human has looked at this question, so the
+    // "needs review" warning has served its purpose. Reordering or retagging
+    // is not a review and deliberately leaves the flag alone.
+    if (contentUpdateRequested) {
+      questionToUpdate.needsReview = false;
+      questionToUpdate.reviewNote = '';
     }
 
     if (questionImage !== undefined) {
