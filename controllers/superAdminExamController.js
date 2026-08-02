@@ -623,7 +623,7 @@ export function flagAnswersContradictedByExplanation(rows) {
       (o) => numericCore(o) !== chosenNum && standaloneNumberInText(numericCore(o), explanation),
     );
     if (!otherSupported) return row;
-    return { ...row, answerConflict: true };
+    return { ...row, answerConflict: true, conflictReason: 'explanation' };
   });
 }
 
@@ -1128,7 +1128,12 @@ Important rules:
       const current = String(r.correctAnswer || '').trim();
       if (current.toLowerCase() === verified.toLowerCase()) return r;
       changed += 1;
-      return { ...r, answerConflict: true, secondOpinionAnswer: verified };
+      return {
+        ...r,
+        answerConflict: true,
+        conflictReason: 'second_opinion',
+        secondOpinionAnswer: verified,
+      };
     });
     console.log('[PDF_EXAM_EXTRACT] answer verification pass', {
       checked: chosenByNumber.size,
@@ -1334,7 +1339,9 @@ Important rules:
       // Key won, but where it disagreed the admin should look before publishing.
       const conflictSet = new Set(keyTrust.conflicts);
       refined = refined.map((r) =>
-        conflictSet.has(Number(r?.questionNumber)) ? { ...r, answerConflict: true } : r,
+        conflictSet.has(Number(r?.questionNumber))
+          ? { ...r, answerConflict: true, conflictReason: 'printed_key' }
+          : r,
       );
     } else {
       console.warn('[PDF_EXAM_EXTRACT] answer key NOT applied:', keyTrust.reason);
@@ -3289,6 +3296,8 @@ export const convertPdfToQuestions = async (req, res) => {
           questionImage: String(r?.questionImage || '').trim(),
           hasFigure: r?.hasFigure === true,
           answerConflict: r?.answerConflict === true,
+          conflictReason: String(r?.conflictReason || ''),
+          secondOpinionAnswer: String(r?.secondOpinionAnswer || '').trim(),
           passageId: '',
           passageText: '',
         };
@@ -3307,9 +3316,14 @@ export const convertPdfToQuestions = async (req, res) => {
       if (r.answerConflict === true) {
         flags.push('answer_conflict');
         const second = String(r.secondOpinionAnswer || '').trim();
-        note = second
-          ? `Answer needs checking — a second reading of this question gives "${second.slice(0, 60)}"`
-          : 'Answer needs checking — the printed key disagrees with the question';
+        note =
+          r.conflictReason === 'second_opinion' && second
+            ? `Answer needs checking — solving this question again gives "${second.slice(0, 60)}"`
+            : r.conflictReason === 'explanation'
+              ? "Answer needs checking — this question's own explanation points to a different option"
+              : r.conflictReason === 'printed_key'
+                ? "Answer needs checking — the paper's printed key disagrees with the question"
+                : 'Answer needs checking';
       }
       return {
         ...r,
