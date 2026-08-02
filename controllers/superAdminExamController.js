@@ -22,6 +22,7 @@ import {
   subjectSectionLabel,
 } from '../utils/exam-question-order.js';
 import { normalizeClassNumberLabel } from '../utils/studentClassContent.js';
+import { enrichExtractedExamQuestions } from '../services/exam-pdf-enrichment.js';
 
 const QUESTION_CATEGORY_CSV_VALUES = [
   'Numerical',
@@ -103,7 +104,11 @@ const PDF_QUESTION_ITEM_SCHEMA = {
       type: 'NUMBER',
       description: 'Printed question number from the paper (1, 2, 3…), if visible.',
     },
-    questionText: { type: 'STRING', description: 'Full question stem only, no leading number.' },
+    questionText: {
+      type: 'STRING',
+      description:
+        'Full stem as students must see it. For case/passage questions include the full case text before the question. Keep exact math grouping. No leading Q number.',
+    },
     questionType: { type: 'STRING', enum: ['MCQ', 'MSQ', 'integer'] },
     subject: {
       type: 'STRING',
@@ -224,6 +229,28 @@ function stripPdfOptionPrefix(text) {
 }
 
 /**
+ * Prefer classroom Unicode over Gemini verbal math ("cube root of", "sqrt(...)").
+ * Does not invent new grouping — only replaces wording/function names.
+ */
+function normalizeVerbalMathInExamText(text) {
+  let s = String(text || '');
+  if (!s) return s;
+  // cube root of ( ... )  /  cuberoot(...)
+  s = s.replace(/\bcube\s*roots?\s+of\s*\(/gi, '∛(');
+  s = s.replace(/\bcuberoot\s*\(/gi, '∛(');
+  s = s.replace(/\bcube\s*roots?\s+of\s+(\d+)/gi, '∛$1');
+  // square root of / sqrt(
+  s = s.replace(/\bsquare\s*roots?\s+of\s*\(/gi, '√(');
+  s = s.replace(/\bsqrt\s*\(/gi, '√(');
+  s = s.replace(/\bsquare\s*roots?\s+of\s+(\d+)/gi, '√$1');
+  s = s.replace(/\bsqrt\s+(\d+)/gi, '√$1');
+  // caret powers already handled on client; light pass here
+  s = s.replace(/\^2\b/g, '²');
+  s = s.replace(/\^3\b/g, '³');
+  return s;
+}
+
+/**
  * Normalize Gemini PDF rows: clean labels, canonicalize subject (or ""), align correctAnswer to option text.
  * Never fills subject from exam or other defaults.
  */
@@ -232,7 +259,9 @@ function postProcessGeminiPdfQuestionRows(rawList) {
 
   return rawList
     .map((r) => {
-      const questionText = stripPdfQuestionLeadingIndex(String(r?.questionText || '').trim());
+      const questionText = normalizeVerbalMathInExamText(
+        stripPdfQuestionLeadingIndex(String(r?.questionText || '').trim()),
+      );
       if (!questionText) return null;
 
       const qnRaw = Number(r?.questionNumber);
@@ -255,11 +284,11 @@ function postProcessGeminiPdfQuestionRows(rawList) {
       let marks = Number(r?.marks);
       if (!Number.isFinite(marks) || marks <= 0) marks = 1;
 
-      const o1 = stripPdfOptionPrefix(String(r?.option1 ?? '').trim());
-      const o2 = stripPdfOptionPrefix(String(r?.option2 ?? '').trim());
-      const o3 = stripPdfOptionPrefix(String(r?.option3 ?? '').trim());
-      const o4 = stripPdfOptionPrefix(String(r?.option4 ?? '').trim());
-      const explanation = String(r?.explanation ?? '').trim();
+      const o1 = normalizeVerbalMathInExamText(stripPdfOptionPrefix(String(r?.option1 ?? '').trim()));
+      const o2 = normalizeVerbalMathInExamText(stripPdfOptionPrefix(String(r?.option2 ?? '').trim()));
+      const o3 = normalizeVerbalMathInExamText(stripPdfOptionPrefix(String(r?.option3 ?? '').trim()));
+      const o4 = normalizeVerbalMathInExamText(stripPdfOptionPrefix(String(r?.option4 ?? '').trim()));
+      const explanation = normalizeVerbalMathInExamText(String(r?.explanation ?? '').trim());
 
       const slots = [o1, o2, o3, o4];
       const nonEmpty = slots.map((s) => s.trim()).filter(Boolean);
@@ -605,6 +634,15 @@ Important rules:
 - For MCQ/MSQ: correctAnswer may be a letter (a/b/c/d) or full option text.
 - For integer: correctAnswer is the numeric answer; options can be empty strings.
 - Strip leading "Q1." / "1." from questionText only. Strip "A." / "(a)" prefixes from option bodies.
+- MATH FIDELITY (critical): Copy expressions EXACTLY as printed — same parentheses, nesting, and operator order.
+  Prefer Unicode: √ ∛ ² ³ − × ÷. Do NOT rewrite as "cube root of" / "sqrt" / "square root of" unless the PDF itself uses words.
+  Example: printed ∛(109 + √256) + √(117² − 108²) must stay that nesting — NEVER flatten to ∛(109 + √256 + √(...)).
+- CASE / PASSAGE CONTEXT (critical): For Case-Based, Comprehension, or passage questions, each questionText MUST begin with the full case/passage text (Case I / Case II / paragraph), then the question.
+  Do NOT store only the short stem (e.g. "What is the side length…") without the numbers/facts from the case.
+  Example format:
+  "Case I: A square solar learning park covers 11,025 m². … edge of 7 m.\\n\\nWhat is the side length of the square solar farm?"
+  Repeat the same case text on every question that depends on that case (Q9 and Q10 share Case I, etc.).
+- ASSERTION–REASON: Put both A and R into questionText (full sentences), and put the four standard A/R choice lines into option1–option4.
 - Return only valid JSON, no markdown, no explanation.`;
 
   const maxOut = getPdfExtractionMaxOutputTokens();
@@ -867,10 +905,12 @@ Important rules:
             ? `Scope: extract ONLY question number ${batch[0]}. ` +
               `This is mandatory — locate the printed "${batch[0]}." question in the paper and return exactly one object. ` +
               `Set questionNumber to ${batch[0]}. Include Match-the-Following / Assertion-Reason / Case-based if that is Q${batch[0]}. ` +
+              `If it is case-based, questionText MUST include the full Case/passage paragraph first, then the question stem. ` +
               `Copy all four options a)–d) into option1–option4.`
             : `Scope: extract ONLY these exact question numbers: ${list}. ` +
               `Return one object per number if that question exists in the paper. ` +
-              `Set questionNumber exactly. Do not skip Match-the-Following or Assertion-Reason items.`,
+              `Set questionNumber exactly. For case-based items, include the full case/passage in questionText. ` +
+              `Do not skip Match-the-Following or Assertion-Reason items.`,
         );
         if (chunk.ok && Array.isArray(chunk.parsed)) {
           // Force questionNumber when single-target extract omitted it
@@ -2788,30 +2828,67 @@ export const convertPdfToQuestions = async (req, res) => {
       mimeType: req.file.mimetype || 'application/pdf',
     });
 
-    const normalized = rows.map((r, idx) => {
-      const questionTypeRaw = String(r?.questionType || '').trim().toUpperCase();
-      const mappedType = questionTypeRaw === 'MSQ' ? 'multiple' : questionTypeRaw === 'INTEGER' ? 'integer' : 'mcq';
-      const subject = String(r?.subject ?? '').trim().toLowerCase();
-      const marks = Number(r?.marks);
-      return {
-        row: idx + 1,
-        questionText: String(r?.questionText || '').trim(),
-        questionType: mappedType,
-        subject,
-        marks: Number.isFinite(marks) && marks > 0 ? marks : 1,
-        option1: String(r?.option1 || '').trim(),
-        option2: String(r?.option2 || '').trim(),
-        option3: String(r?.option3 || '').trim(),
-        option4: String(r?.option4 || '').trim(),
-        correctAnswer: String(r?.correctAnswer || '').trim(),
-        explanation: String(r?.explanation || '').trim(),
-      };
-    }).filter((r) => r.questionText);
+    const normalizedBase = rows
+      .map((r, idx) => {
+        const questionTypeRaw = String(r?.questionType || '').trim().toUpperCase();
+        const mappedType =
+          questionTypeRaw === 'MSQ' ? 'multiple' : questionTypeRaw === 'INTEGER' ? 'integer' : 'mcq';
+        const subject = String(r?.subject ?? '').trim().toLowerCase();
+        const marks = Number(r?.marks);
+        const qn = Number(r?.questionNumber);
+        return {
+          row: idx + 1,
+          questionNumber: Number.isFinite(qn) && qn >= 1 ? Math.floor(qn) : undefined,
+          questionText: String(r?.questionText || '').trim(),
+          questionType: mappedType,
+          subject,
+          marks: Number.isFinite(marks) && marks > 0 ? marks : 1,
+          option1: String(r?.option1 || '').trim(),
+          option2: String(r?.option2 || '').trim(),
+          option3: String(r?.option3 || '').trim(),
+          option4: String(r?.option4 || '').trim(),
+          correctAnswer: String(r?.correctAnswer || '').trim(),
+          explanation: String(r?.explanation || '').trim(),
+          questionImage: String(r?.questionImage || '').trim(),
+          passageId: '',
+          passageText: '',
+        };
+      })
+      .filter((r) => r.questionText);
+
+    const enriched = await enrichExtractedExamQuestions({
+      pdfBuffer: req.file.buffer,
+      rows: normalizedBase,
+      examId,
+    });
+
+    const normalized = (enriched.rows || []).map((r, idx) => ({
+      ...r,
+      row: idx + 1,
+      questionImage: String(r.questionImage || '').trim(),
+      passageText: String(r.passageText || '').trim(),
+      passageId: String(r.passageId || '').trim(),
+      solvable: r.solvable !== false,
+      validationFlags: Array.isArray(r.validationFlags) ? r.validationFlags : [],
+      validationNote: String(r.validationNote || ''),
+    }));
+
+    const flagged = normalized.filter((r) => !r.solvable).length;
+    const withImages = normalized.filter((r) => r.questionImage).length;
 
     return res.json({
       success: true,
       data: normalized,
-      message: `Extracted ${normalized.length} question(s) from PDF.`,
+      meta: {
+        ...(enriched.meta || {}),
+        flaggedCount: flagged,
+        withImages,
+      },
+      message:
+        `Extracted ${normalized.length} question(s) from PDF` +
+        (withImages ? `, ${withImages} with figure(s)` : '') +
+        (flagged ? `, ${flagged} flagged for passage/figure review` : '') +
+        '.',
     });
   } catch (error) {
     console.error('❌ convertPdfToQuestions error:', error);
