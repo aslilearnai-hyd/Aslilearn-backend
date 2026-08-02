@@ -49,6 +49,7 @@ import calendarPublicRoutes from './routes/calendarPublic.js';
 import catalogRoutes from './routes/catalog.js';
 import legacyStubsRoutes from './routes/legacyStubs.js';
 import lessonPlanRoutes from './routes/lessonPlan.js';
+import publicDemoRoutes from './routes/publicDemo.js';
 
 /**
  * Build the Express application (middleware + routes). Does not listen or connect Mongo.
@@ -255,6 +256,7 @@ export function createApp(options = {}) {
   app.use('/api', calendarPublicRoutes);
   app.use('/api/auth', authRoutes);
   app.use('/api/users', usersRouter);
+  app.use('/api/public', publicDemoRoutes);
 
   app.use('/api/super-admin', superAdminRoutes);
   app.use('/api/admin', adminRoutes);
