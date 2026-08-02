@@ -1,6 +1,6 @@
 /**
  * Enrich Gemini PDF question extraction:
- * - Detect shared case/passage blocks and attach to child questions
+ * - Detect shared case/passage blocks and attach to child questions (tight ranges only)
  * - Detect Assertion–Reason shared option sets
  * - Extract/attach PDF figures as questionImage files
  * - Flag rows that still look unsolvable without passage/figure
@@ -21,7 +21,13 @@ const DEFAULT_AR_OPTIONS = [
 ];
 
 const FIGURE_HINT_RE =
-  /\b(screw\s*gauge|vernier|calliper|caliper|diagram|figure|shown\s+in\s+the\s+(?:figure|diagram)|least\s*count|circular\s*scale|main\s*scale|as\s+shown)\b/i;
+  /\b(screw\s*gauge|vernier|calliper|caliper|diagram|figure|shown\s+in\s+the\s+(?:figure|diagram)|least\s*count|circular\s*scale|main\s*scale|as\s+shown|refer\s+to\s+(?:the\s+)?(?:figure|diagram)|given\s+figure|marked\s+point|shown\s+below)\b/i;
+
+/** Stops a case block from swallowing the rest of the paper */
+const SECTION_STOP_RE =
+  /(?:^|\n)\s*(?:Mathematics|Maths|Physics|Chemistry|Biology|Science|English|Hindi|Social\s*Science|Assertion\s*[-–]?\s*Reason|Match\s+the\s+Following|SECTION\s*[A-D]|Single\s+Correct|Multi\s+Correct|Integer\s+Type)\b/i;
+
+const MAX_QUESTIONS_PER_PASSAGE = 5;
 
 function normalizeSpaces(s) {
   return String(s || '')
@@ -29,20 +35,67 @@ function normalizeSpaces(s) {
     .trim();
 }
 
-function extractQuestionNumbersNear(text, fromIdx, toIdx) {
+function extractQuestionNumbersNear(text, fromIdx, toIdx, minNumber = 0) {
   const slice = String(text || '').slice(fromIdx, toIdx);
   const nums = new Set();
   const re = /(?:^|\n)\s*(\d{1,3})\.\s+\S/g;
   let m;
   while ((m = re.exec(slice))) {
     const n = parseInt(m[1], 10);
-    if (n >= 1 && n <= 200) nums.add(n);
+    if (n >= 1 && n <= 200 && n > minNumber) nums.add(n);
   }
   return [...nums].sort((a, b) => a - b);
 }
 
 /**
- * Detect Case I / Case II / passage blocks and the question numbers that follow.
+ * Highest question number printed before `idx`. A passage's questions must come
+ * after it — without this floor, "Column II" lists inside a Match-the-Following
+ * ("1. …", "2. …") are read as question numbers 1-4 and the passage gets
+ * attached to Q1-Q4 instead of the questions that actually follow it.
+ */
+function highestQuestionNumberBefore(text, idx) {
+  const head = String(text || '').slice(0, idx);
+  const re = /(?:^|\n)\s*(\d{1,3})\.\s+\S/g;
+  let max = 0;
+  let m;
+  while ((m = re.exec(head))) {
+    const n = parseInt(m[1], 10);
+    if (n >= 1 && n <= 200 && n > max) max = n;
+  }
+  return max;
+}
+
+/** Keep only the first consecutive run (e.g. 9,10,11) capped in length. */
+function consecutiveQuestionRun(nums, maxLen = MAX_QUESTIONS_PER_PASSAGE) {
+  if (!Array.isArray(nums) || nums.length === 0) return [];
+  const sorted = [...new Set(nums.map(Number).filter((n) => Number.isFinite(n)))].sort(
+    (a, b) => a - b,
+  );
+  const run = [sorted[0]];
+  for (let i = 1; i < sorted.length && run.length < maxLen; i += 1) {
+    if (sorted[i] === run[run.length - 1] + 1) run.push(sorted[i]);
+    else break;
+  }
+  return run;
+}
+
+function findSectionStopAfter(text, fromIdx) {
+  const slice = String(text || '').slice(fromIdx);
+  const m = slice.match(SECTION_STOP_RE);
+  if (!m || m.index == null) return -1;
+  // Ignore a stop that is at the very start of the slice (same heading)
+  if (m.index < 8) {
+    const again = slice.slice(m.index + m[0].length).match(SECTION_STOP_RE);
+    if (!again || again.index == null) return -1;
+    return fromIdx + m.index + m[0].length + again.index;
+  }
+  return fromIdx + m.index;
+}
+
+/**
+ * Detect Case I / Case II / Case Study / Paragraph / passage blocks.
+ * Intentionally does NOT match bare "Case Based Type Questions" section titles —
+ * those were attaching one chemistry case onto dozens of unrelated later questions.
  */
 export function detectPassagesFromPdfText(fullText) {
   const text = String(fullText || '');
@@ -50,31 +103,47 @@ export function detectPassagesFromPdfText(fullText) {
 
   const markers = [];
   const markerRe =
-    /(?:^|\n)\s*((?:Case\s*[-–:]?\s*(?:Based(?:\s+Type)?(?:\s+Questions)?)?|Case\s*(?:I{1,3}|IV|\d+|Study)|Directions\s*:\s*Read\s+the\s+following\s+passage)[^\n]*)/gi;
+    /(?:^|\n)\s*((?:Case\s*(?:I{1,3}|IV|\d+)\b[^\n]{0,120}|Case\s*Study\s*[:.\-][^\n]{0,160}|Paragraph\s*:\s*[^\n]{0,200}|Directions\s*:\s*Read\s+the\s+following\s+passage[^\n]{0,120}))/gi;
   let m;
   while ((m = markerRe.exec(text))) {
-    markers.push({ index: m.index + (m[0].startsWith('\n') ? 1 : 0), title: normalizeSpaces(m[1]) });
+    const title = normalizeSpaces(m[1]);
+    // Skip section banners without a real case body
+    if (/^case\s*based(\s+type)?(\s+questions)?$/i.test(title)) continue;
+    markers.push({
+      index: m.index + (m[0].startsWith('\n') ? 1 : 0),
+      title,
+    });
   }
   if (markers.length === 0) return [];
 
   const passages = [];
   for (let i = 0; i < markers.length; i += 1) {
     const start = markers[i].index;
-    const end = i + 1 < markers.length ? markers[i + 1].index : Math.min(text.length, start + 3500);
-    const block = text.slice(start, end);
-    // Passage body: until first numbered question in this block
+    const nextMarker = i + 1 < markers.length ? markers[i + 1].index : text.length;
+    const sectionStop = findSectionStopAfter(text, start + Math.min(80, markers[i].title.length + 5));
+    const hardEnd = Math.min(
+      nextMarker,
+      sectionStop > start ? sectionStop : text.length,
+      start + 4500,
+    );
+
+    const block = text.slice(start, hardEnd);
     const firstQ = block.search(/(?:^|\n)\s*\d{1,3}\.\s+\S/);
     const passageBody =
       firstQ > 0
         ? normalizeSpaces(block.slice(0, firstQ))
-        : normalizeSpaces(block.slice(0, Math.min(block.length, 1200)));
-    if (passageBody.length < 40) continue;
+        : normalizeSpaces(block.slice(0, Math.min(block.length, 900)));
+    if (passageBody.length < 50) continue;
 
-    const qEnd =
-      i + 1 < markers.length
-        ? markers[i + 1].index
-        : Math.min(text.length, start + block.length + 2500);
-    const questionRange = extractQuestionNumbersNear(text, start, qEnd);
+    // Questions that belong to this case: only those printed after the passage body
+    const qStart = start + (firstQ > 0 ? firstQ : 0);
+    const rawRange = extractQuestionNumbersNear(
+      text,
+      qStart,
+      hardEnd,
+      highestQuestionNumberBefore(text, start),
+    );
+    const questionRange = consecutiveQuestionRun(rawRange, MAX_QUESTIONS_PER_PASSAGE);
     if (questionRange.length === 0) continue;
 
     passages.push({
@@ -101,7 +170,6 @@ export function detectAssertionReasonBlocks(fullText) {
     markers.push(m.index);
   }
   if (markers.length === 0 && /Both\s+A\s+and\s+R\s+are\s+true/i.test(text)) {
-    // Single shared AR option set somewhere in paper
     const qRange = [];
     const qRe = /(?:^|\n)\s*(\d{1,3})\.\s*A\s*:\s*/gi;
     let qm;
@@ -113,7 +181,7 @@ export function detectAssertionReasonBlocks(fullText) {
       blocks.push({
         sharedOptionsId: 'AR1',
         sharedOptions: [...DEFAULT_AR_OPTIONS],
-        questionRange: qRange,
+        questionRange: consecutiveQuestionRun(qRange, 8),
       });
     }
     return blocks;
@@ -130,20 +198,34 @@ export function detectAssertionReasonBlocks(fullText) {
       const n = parseInt(qm[1], 10);
       if (n >= 1 && n <= 200) qRange.push(n);
     }
-    // Also catch "13. A:" style after directions without A: on same scan of following section
     if (qRange.length === 0) {
-      const nums = extractQuestionNumbersNear(text, start, end);
-      // Heuristic: AR sections usually 3–4 questions
+      const nums = extractQuestionNumbersNear(
+        text,
+        start,
+        end,
+        highestQuestionNumberBefore(text, start),
+      );
       qRange.push(...nums.slice(0, 8));
     }
     if (!qRange.length) continue;
     blocks.push({
       sharedOptionsId: `AR${blocks.length + 1}`,
       sharedOptions: [...DEFAULT_AR_OPTIONS],
-      questionRange: [...new Set(qRange)].sort((a, b) => a - b),
+      questionRange: consecutiveQuestionRun([...new Set(qRange)], 8),
     });
   }
   return blocks;
+}
+
+function stemAlreadyHasPassageContext(stem, passage) {
+  const s = String(stem || '').trim();
+  const p = String(passage || '').trim();
+  if (!s) return false;
+  if (/^(case\s*(i{1,3}|iv|\d+|study)|paragraph\s*:|directions\s*:)/i.test(s)) return true;
+  if (p.length > 40 && s.toLowerCase().includes(p.slice(0, 48).toLowerCase())) return true;
+  // Long stem from Gemini that already inlined case facts — do not double-prepend
+  if (s.length >= 140 && /case\s*(i{1,3}|iv|\d+|study)|paragraph\s*:/i.test(s)) return true;
+  return false;
 }
 
 export function attachPassagesToRows(rows, passages) {
@@ -155,18 +237,28 @@ export function attachPassagesToRows(rows, passages) {
     if (!hit) return row;
     const stem = String(row.questionText || '').trim();
     const passage = String(hit.passageText || '').trim();
-    const alreadyHas =
-      passage.length > 40 &&
-      stem.toLowerCase().includes(passage.slice(0, 60).toLowerCase());
-    const questionText = alreadyHas
-      ? stem
-      : `${passage}\n\n${stem}`.trim();
-    return {
-      ...row,
-      passageId: hit.passageId,
-      passageText: passage,
-      questionText,
-    };
+
+    // Always store metadata; only prepend when the stem is a short orphan
+    if (stemAlreadyHasPassageContext(stem, passage)) {
+      return {
+        ...row,
+        passageId: hit.passageId,
+        passageText: passage,
+        questionText: stem,
+      };
+    }
+
+    if (stem.length < 120) {
+      return {
+        ...row,
+        passageId: hit.passageId,
+        passageText: passage,
+        questionText: `${passage}\n\n${stem}`.trim(),
+      };
+    }
+
+    // Long unrelated stem that wrongly matched a wide range — keep stem, skip passage
+    return row;
   });
 }
 
@@ -181,7 +273,6 @@ export function attachAssertionReasonOptions(rows, arBlocks) {
     const hasOwnOptions = [row.option1, row.option2, row.option3, row.option4].filter((o) =>
       String(o || '').trim(),
     ).length >= 2;
-    // Replace thin/missing options with shared AR set
     const looksLikeAR =
       /\bA\s*[:：]/i.test(String(row.questionText || '')) ||
       /\bR\s*[:：]/i.test(String(row.questionText || '')) ||
@@ -214,7 +305,6 @@ export function validateExtractedQuestionRow(row) {
     flags.push('needs_figure');
   }
 
-  // Short stem without numbers, but answer key exists → likely missing case numbers
   const numbersInStem = combined.match(/\d/g) || [];
   if (
     text.length < 90 &&
@@ -226,7 +316,6 @@ export function validateExtractedQuestionRow(row) {
     flags.push('needs_passage');
   }
 
-  // Passage was expected (passageId) but not present in text
   if (row?.passageId && !passage && numbersInStem.length < 2) {
     flags.push('needs_passage');
   }
@@ -250,8 +339,8 @@ async function ensureQuestionsUploadDir() {
 function isLikelyLogoOrTiny(img) {
   const w = Number(img?.width) || 0;
   const h = Number(img?.height) || 0;
-  if (w < 120 || h < 80) return true;
-  if (w * h < 20000) return true;
+  if (w < 100 || h < 70) return true;
+  if (w * h < 14000) return true;
   return false;
 }
 
@@ -269,7 +358,7 @@ function bufferFromImageData(data) {
 async function mapQuestionNumbersToPages(parser) {
   const parsed = await parser.getText();
   const pages = Array.isArray(parsed?.pages) ? parsed.pages : [];
-  const map = new Map(); // qn -> pageNumber (1-based)
+  const map = new Map();
   pages.forEach((p, idx) => {
     const pageNumber = Number(p?.pageNumber) || idx + 1;
     const t = String(p?.text || '');
@@ -284,55 +373,126 @@ async function mapQuestionNumbersToPages(parser) {
 }
 
 /**
- * Save largest suitable image(s) from pages and attach to figure/case questions on those pages.
+ * Attach PDF figures to the questions that need them.
+ *
+ * How figures are matched (all heuristic, but grounded in two strong signals):
+ * 1. Which questions NEED a figure: Gemini's per-question `hasFigure` flag
+ *    (it reads the PDF visually), plus FIGURE_HINT_RE text hints as fallback.
+ * 2. Which images are real figures: page images minus tiny/logo images minus
+ *    "banners" — byte-identical images repeated on 3+ pages (page headers).
+ * 3. Pairing: on each page, figure-needing questions are grouped (questions
+ *    sharing a case/passage share one figure) in printed order, and page images
+ *    are kept in content order (top→bottom), then zipped group-by-image.
  */
 export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId } = {}) {
   if (!Array.isArray(rows) || rows.length === 0) return rows;
   let parser;
   try {
-    await ensureQuestionsUploadDir();
     parser = new PDFParse({ data: pdfBuffer });
     const { map: qToPage } = await mapQuestionNumbersToPages(parser);
     const imageResult = await parser.getImage();
     const pages = Array.isArray(imageResult?.pages) ? imageResult.pages : [];
 
-    /** pageNumber -> saved relative url of best figure */
-    const pageFigureUrl = new Map();
+    const imageKey = (img) => {
+      const buf = bufferFromImageData(img?.data);
+      if (!buf || buf.length < 500) return null;
+      return `${buf.length}:${buf.subarray(0, 32).toString('hex')}`;
+    };
 
+    // Byte-identical images on 3+ pages are page furniture (header banner, watermark)
+    const pagesSeenByImage = new Map();
     for (const page of pages) {
-      const pageNumber = Number(page?.pageNumber) || 0;
-      const images = Array.isArray(page?.images) ? page.images : [];
-      const candidates = images
-        .filter((img) => !isLikelyLogoOrTiny(img))
-        .sort((a, b) => (b.width || 0) * (b.height || 0) - (a.width || 0) * (a.height || 0));
-      if (!candidates.length) continue;
-      const best = candidates[0];
-      const buf = bufferFromImageData(best.data);
-      if (!buf || buf.length < 500) continue;
-      const ext = buf[0] === 0x89 ? 'png' : buf[0] === 0xff ? 'jpg' : 'png';
-      const filename = `exam-${String(examId || 'pdf').slice(-8)}-p${pageNumber}-${Date.now()}-${Math.random().toString(36).slice(2, 7)}.${ext}`;
-      const full = path.join(QUESTIONS_UPLOAD_DIR, filename);
-      await fs.writeFile(full, buf);
-      pageFigureUrl.set(pageNumber, `/uploads/questions/${filename}`);
+      const uniqueKeys = new Set(
+        (Array.isArray(page?.images) ? page.images : []).map(imageKey).filter(Boolean),
+      );
+      for (const k of uniqueKeys) {
+        pagesSeenByImage.set(k, (pagesSeenByImage.get(k) || 0) + 1);
+      }
     }
 
-    return rows.map((row) => {
+    // Real figure candidates per page, in content order (top of page first)
+    const candidatesByPage = new Map();
+    for (const page of pages) {
+      const pageNumber = Number(page?.pageNumber) || 0;
+      const list = [];
+      for (const img of Array.isArray(page?.images) ? page.images : []) {
+        if (isLikelyLogoOrTiny(img)) continue;
+        const key = imageKey(img);
+        if (!key || (pagesSeenByImage.get(key) || 0) >= 3) continue;
+        list.push({ buf: bufferFromImageData(img.data), key });
+      }
+      if (list.length) candidatesByPage.set(pageNumber, list);
+    }
+
+    // Index rows by page
+    const rowsByPage = new Map();
+    rows.forEach((row, idx) => {
       const qn = Number(row?.questionNumber);
-      const pageNumber = Number.isFinite(qn) ? qToPage.get(qn) : null;
-      const figureUrl = pageNumber ? pageFigureUrl.get(pageNumber) : null;
-      if (!figureUrl) return row;
-      if (String(row.questionImage || '').trim()) return row;
+      if (!Number.isFinite(qn)) return;
+      const pageNumber = qToPage.get(qn);
+      if (!pageNumber) return;
+      if (!rowsByPage.has(pageNumber)) rowsByPage.set(pageNumber, []);
+      rowsByPage.get(pageNumber).push({ row, idx, qn });
+    });
 
-      const text = `${String(row?.passageText || '')}\n${String(row?.questionText || '')}`;
-      const wantsFigure =
-        FIGURE_HINT_RE.test(text) ||
-        Boolean(row?.passageId) ||
-        /case\s*(?:i{1,3}|\d+|study|based)/i.test(text);
-      if (!wantsFigure) return row;
+    // Decide row → image assignments
+    const savedUrlByImageKey = new Map();
+    const urlByRowIdx = new Map();
+    for (const [pageNumber, candidates] of candidatesByPage) {
+      const pageRows = (rowsByPage.get(pageNumber) || []).sort((a, b) => a.qn - b.qn);
+      if (!pageRows.length) continue;
 
+      let wanting = pageRows.filter(({ row }) => {
+        if (String(row.questionImage || '').trim()) return false;
+        const text = `${String(row.passageText || '')}\n${String(row.questionText || '')}`;
+        return row.hasFigure === true || FIGURE_HINT_RE.test(text);
+      });
+      // Single question alone on a page with an image → that image is its figure
+      if (!wanting.length && pageRows.length === 1) wanting = pageRows;
+      if (!wanting.length) continue;
+
+      // Questions sharing a case/passage share one figure — group them
+      const groups = [];
+      const groupByKey = new Map();
+      for (const entry of wanting) {
+        const key = String(entry.row.passageId || '').trim() || `q${entry.qn}`;
+        if (!groupByKey.has(key)) {
+          const group = [];
+          groupByKey.set(key, group);
+          groups.push(group);
+        }
+        groupByKey.get(key).push(entry);
+      }
+
+      const n = Math.min(groups.length, candidates.length);
+      for (let i = 0; i < n; i += 1) {
+        for (const entry of groups[i]) {
+          urlByRowIdx.set(entry.idx, candidates[i]);
+        }
+      }
+    }
+
+    if (urlByRowIdx.size === 0) return rows;
+    await ensureQuestionsUploadDir();
+
+    // Save each distinct assigned image once
+    for (const candidate of new Set(urlByRowIdx.values())) {
+      const { buf, key } = candidate;
+      if (savedUrlByImageKey.has(key)) continue;
+      const ext = buf[0] === 0x89 ? 'png' : buf[0] === 0xff ? 'jpg' : 'png';
+      const filename = `exam-${String(examId || 'pdf').slice(-8)}-${Date.now()}-${Math.random().toString(36).slice(2, 7)}.${ext}`;
+      await fs.writeFile(path.join(QUESTIONS_UPLOAD_DIR, filename), buf);
+      savedUrlByImageKey.set(key, `/uploads/questions/${filename}`);
+    }
+
+    return rows.map((row, idx) => {
+      const candidate = urlByRowIdx.get(idx);
+      if (!candidate) return row;
+      const url = savedUrlByImageKey.get(candidate.key);
+      if (!url) return row;
       return {
         ...row,
-        questionImage: figureUrl,
+        questionImage: url,
         hasFigure: true,
       };
     });
@@ -386,6 +546,7 @@ export async function enrichExtractedExamQuestions({
   console.log('[PDF_ENRICH] done', {
     rows: next.length,
     passages: passages.length,
+    passageRanges: passages.map((p) => ({ id: p.passageId, q: p.questionRange })),
     arBlocks: arBlocks.length,
     withImages: next.filter((r) => r.questionImage).length,
     flagged: next.filter((r) => !r.solvable).length,
