@@ -2,14 +2,23 @@
  * Book-Based Generator rows in aitoolgenerations (legacy sourceType book_rag or metadata flags).
  */
 export function bookGroundedMongoFilter(extra = {}) {
-  return {
-    ...extra,
+  const groundedOr = {
     $or: [
       { sourceType: 'book_rag' },
       { 'metadata.bookGenerator': true },
       { 'metadata.formatSource': 'bookRag' },
     ],
   };
+
+  const extraKeys = Object.keys(extra || {}).filter((k) => {
+    const v = extra[k];
+    return v !== undefined && v !== null && v !== '';
+  });
+  if (extraKeys.length === 0) return groundedOr;
+
+  const scoped = {};
+  for (const k of extraKeys) scoped[k] = extra[k];
+  return { $and: [groundedOr, scoped] };
 }
 
 export function buildBookScopeQuery(scope) {

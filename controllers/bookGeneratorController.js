@@ -17,7 +17,7 @@ import {
   BOOK_GENERATOR_MAX_INR,
   BOOK_GENERATOR_UNIQUENESS_TARGET,
 } from '../config/bookBasedTools.js';
-import { boardMongoMatch } from '../utils/board-label.js';
+import { boardMongoMatch, lockBoardKey, canonicalBoardLabel } from '../utils/board-label.js';
 import { bookGroundedMongoFilter, isBookGroundedRecord } from '../utils/book-grounded-record.js';
 import {
   GENERATOR_LIST_SELECT,
@@ -438,12 +438,69 @@ function buildBookRecordsListQuery(req) {
   const extra = {};
   if (toolSlug) extra.toolName = toolSlug;
   if (bookId) extra['metadata.bookId'] = String(bookId);
-  if (board) extra.board = boardMongoMatch(board) || board;
+  const boardRaw = String(board || '').trim();
+  if (boardRaw && boardRaw !== '__all__') {
+    const locked = lockBoardKey(canonicalBoardLabel(boardRaw));
+    extra.board = boardMongoMatch(locked || boardRaw) || locked || boardRaw;
+  }
   if (className) extra.classLabel = className;
   if (subjectName) extra.subject = subjectName;
   if (topicName) extra.topic = topicName;
   if (subtopicName) extra.subtopic = subtopicName;
   return bookGroundedMongoFilter(extra);
+}
+
+/** Newest-per-board sample so "All boards" is not dominated by one busy board. */
+async function fetchBookRecordsStratified(baseQuery, listLimit) {
+  const boardGroups = await AiToolGeneration.aggregate([
+    { $match: baseQuery },
+    {
+      $group: {
+        _id: { $ifNull: ['$board', ''] },
+        count: { $sum: 1 },
+      },
+    },
+    { $sort: { count: -1 } },
+  ]);
+
+  const boardsMeta = boardGroups.map((g) => ({
+    board: lockBoardKey(canonicalBoardLabel(g._id)) || String(g._id || '').trim() || '(none)',
+    rawBoard: String(g._id || ''),
+    count: Number(g.count) || 0,
+  }));
+
+  if (boardsMeta.length <= 1) {
+    const records = await AiToolGeneration.find(baseQuery)
+      .select(GENERATOR_LIST_SELECT)
+      .sort({ createdAt: -1 })
+      .limit(listLimit)
+      .lean();
+    return { records, boardsMeta };
+  }
+
+  const perBoard = Math.max(15, Math.ceil(listLimit / boardsMeta.length));
+  const chunks = await Promise.all(
+    boardsMeta.map(async (b) => {
+      const boardFilter =
+        !b.rawBoard
+          ? { $or: [{ board: '' }, { board: null }, { board: { $exists: false } }] }
+          : { board: boardMongoMatch(b.rawBoard) || b.rawBoard };
+      const scoped = { $and: [baseQuery, boardFilter] };
+      return AiToolGeneration.find(scoped)
+        .select(GENERATOR_LIST_SELECT)
+        .sort({ createdAt: -1 })
+        .limit(perBoard)
+        .lean();
+    }),
+  );
+
+  const merged = chunks
+    .flat()
+    .filter(Boolean)
+    .sort((a, b) => new Date(b.createdAt || 0).getTime() - new Date(a.createdAt || 0).getTime())
+    .slice(0, listLimit);
+
+  return { records: merged, boardsMeta };
 }
 
 export async function getBookGeneratorRecord(req, res) {
@@ -549,16 +606,32 @@ export async function listBookGeneratorRecords(req, res) {
           ? Math.min(envCap, 10000)
           : GENERATOR_RECORDS_LIST_DEFAULT_LIMIT;
 
-    const finder = AiToolGeneration.find(query)
-      .select(GENERATOR_LIST_SELECT)
-      .sort({ createdAt: -1 })
-      .limit(listLimit)
-      .lean();
+    const boardRaw = String(req.query.board || '').trim();
+    const isAllBoards = !boardRaw || boardRaw === '__all__';
 
-    const [total, records] = await Promise.all([
-      AiToolGeneration.countDocuments(query),
-      finder,
-    ]);
+    const total = await AiToolGeneration.countDocuments(query);
+
+    let records;
+    let boardsMeta = [];
+
+    if (isAllBoards) {
+      const stratified = await fetchBookRecordsStratified(query, listLimit);
+      records = stratified.records;
+      boardsMeta = stratified.boardsMeta;
+    } else {
+      records = await AiToolGeneration.find(query)
+        .select(GENERATOR_LIST_SELECT)
+        .sort({ createdAt: -1 })
+        .limit(listLimit)
+        .lean();
+      boardsMeta = [
+        {
+          board: lockBoardKey(canonicalBoardLabel(boardRaw)) || boardRaw,
+          count: total,
+        },
+      ];
+    }
+
     const slim = records.map(slimGeneratorRecordForList).filter(Boolean);
     const grouped = groupAiGeneratorRecords(slim);
     res.json({
@@ -568,6 +641,8 @@ export async function listBookGeneratorRecords(req, res) {
         total,
         loadedCount: slim.length,
         truncated: total > slim.length,
+        stratified: isAllBoards && boardsMeta.length > 1,
+        boards: boardsMeta.map(({ board, count }) => ({ board, count })),
       },
     });
   } catch (err) {
