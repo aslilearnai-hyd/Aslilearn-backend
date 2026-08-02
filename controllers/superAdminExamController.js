@@ -102,7 +102,12 @@ const PDF_QUESTION_ITEM_SCHEMA = {
   properties: {
     questionNumber: {
       type: 'NUMBER',
-      description: 'Printed question number from the paper (1, 2, 3…), if visible.',
+      description: 'Printed question number from the paper (1, 2, 3…). Mandatory — read it from the paper.',
+    },
+    hasFigure: {
+      type: 'BOOLEAN',
+      description:
+        'true only when this question (or its case/passage) depends on a picture, diagram, graph or figure printed in the paper. false for pure text/math questions.',
     },
     questionText: {
       type: 'STRING',
@@ -124,6 +129,8 @@ const PDF_QUESTION_ITEM_SCHEMA = {
     explanation: { type: 'STRING' },
   },
   required: [
+    'questionNumber',
+    'hasFigure',
     'questionText',
     'questionType',
     'subject',
@@ -135,6 +142,25 @@ const PDF_QUESTION_ITEM_SCHEMA = {
     'correctAnswer',
     'explanation',
   ],
+};
+
+/** Second-opinion answer check (text-only, no PDF attached — cheap). */
+const ANSWER_VERIFY_RESPONSE_SCHEMA = {
+  type: 'OBJECT',
+  properties: {
+    answers: {
+      type: 'ARRAY',
+      items: {
+        type: 'OBJECT',
+        properties: {
+          questionNumber: { type: 'NUMBER' },
+          correctOption: { type: 'STRING', enum: ['a', 'b', 'c', 'd'] },
+        },
+        required: ['questionNumber', 'correctOption'],
+      },
+    },
+  },
+  required: ['answers'],
 };
 
 /** Gemini structured output requires an OBJECT root (not a bare ARRAY). */
@@ -292,8 +318,11 @@ function postProcessGeminiPdfQuestionRows(rawList) {
 
       const slots = [o1, o2, o3, o4];
       const nonEmpty = slots.map((s) => s.trim()).filter(Boolean);
-      const withMeta = (row) =>
-        questionNumber != null ? { ...row, questionNumber } : row;
+      const withMeta = (row) => ({
+        ...row,
+        ...(questionNumber != null ? { questionNumber } : {}),
+        hasFigure: r?.hasFigure === true,
+      });
 
       if (qt === 'INTEGER') {
         const ca = String(r?.correctAnswer ?? '').trim();
@@ -387,6 +416,33 @@ function postProcessGeminiPdfQuestionRows(rawList) {
     .filter(Boolean);
 }
 
+/**
+ * Split CSV text into records, respecting quoted cells that contain newlines.
+ * A naive split(/\r?\n/) breaks any row whose questionText holds a case
+ * passage or Assertion–Reason stem (multi-line), shifting every field after it.
+ */
+function splitCsvRecords(csvText) {
+  const records = [];
+  const text = String(csvText || '');
+  let current = '';
+  let inQuotes = false;
+  for (let i = 0; i < text.length; i += 1) {
+    const char = text[i];
+    if (char === '"') {
+      inQuotes = !inQuotes; // escaped "" toggles twice — net no change, safe here
+      current += char;
+    } else if ((char === '\n' || char === '\r') && !inQuotes) {
+      if (char === '\r' && text[i + 1] === '\n') i += 1;
+      if (current.trim()) records.push(current);
+      current = '';
+    } else {
+      current += char;
+    }
+  }
+  if (current.trim()) records.push(current);
+  return records;
+}
+
 async function safeGeminiErrorText(response) {
   const raw = await response.text();
   try {
@@ -420,6 +476,9 @@ async function prepareExamPdfBufferForExtraction(buffer) {
     removedTailPages: 0,
     totalPages: 0,
     answerKeyByNumber: new Map(),
+    printedQuestionNumbers: [],
+    bodyPaperCode: '',
+    keyPaperCode: '',
   };
   try {
     const { PDFParse } = await import('pdf-parse');
@@ -447,6 +506,15 @@ async function prepareExamPdfBufferForExtraction(buffer) {
       }
     }
 
+    // Paper identity, so a key page from a different sitting can be spotted.
+    // AsliPrep papers print e.g. "CODE: VII – DPS/MA1_B/(2026-27)" on the body
+    // and "Class: VII (MA1-N) … (2025-26)" on the key.
+    if (keyPage >= 0) {
+      const bodyText = pageTexts.slice(0, keyPage).join('\n');
+      result.bodyPaperCode = examPaperIdentitySignature(bodyText);
+      result.keyPaperCode = examPaperIdentitySignature(pageTexts[keyPage]);
+    }
+
     let firstTail = -1;
     if (keyPage >= 0) {
       firstTail = keyPage;
@@ -460,6 +528,28 @@ async function prepareExamPdfBufferForExtraction(buffer) {
         firstTail -= 1;
       }
       if (firstTail === pageTexts.length) firstTail = -1;
+    }
+
+    // Printed question numbers from the question-paper body (kept pages only).
+    // Only accept numbers that continue a consecutive run from 1 — this rejects
+    // false positives like "1. 0.5" entries inside Match-the-Following columns.
+    {
+      const bodyPages = firstTail > 0 ? pageTexts.slice(0, firstTail) : pageTexts;
+      const seen = new Set();
+      let expectedNext = 1;
+      const re = /(?:^|\n)\s*(\d{1,3})[.)]\s+\S/g;
+      for (const pageText of bodyPages) {
+        let m;
+        while ((m = re.exec(pageText))) {
+          const n = parseInt(m[1], 10);
+          if (n === expectedNext && n >= 1 && n <= 200) {
+            seen.add(n);
+            expectedNext = n + 1;
+          }
+        }
+        re.lastIndex = 0;
+      }
+      result.printedQuestionNumbers = [...seen].sort((a, b) => a - b);
     }
 
     if (firstTail < 0 || firstTail === 0 || firstTail >= pageTexts.length) return result;
@@ -490,6 +580,120 @@ async function prepareExamPdfBufferForExtraction(buffer) {
 }
 
 /**
+ * Flag numeric-option questions whose chosen answer contradicts the model's own
+ * explanation. On a paper with no usable key these are the answers most likely
+ * to be wrong: the working in the explanation reaches one value while a
+ * different option got selected. Flags only — never silently rewrites the
+ * answer, since the explanation can be the faulty half.
+ */
+export function flagAnswersContradictedByExplanation(rows) {
+  const numericCore = (s) =>
+    String(s || '')
+      .replace(/[,\s]/g, '')
+      .match(/-?\d+(?:\.\d+)?/)?.[0] || '';
+  const standaloneNumberInText = (num, text) => {
+    if (!num) return false;
+    const escaped = num.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    // Boundaries must reject 16 inside 160 or 16.5, but accept a sentence-final
+    // "= 16." — a dot only continues the number when a digit follows it.
+    return new RegExp(`(?<!\\d)(?<!\\d\\.)${escaped}(?!\\d)(?!\\.\\d)`).test(
+      String(text || '').replace(/,/g, ''),
+    );
+  };
+
+  return (rows || []).map((row) => {
+    if (row?.answerConflict) return row;
+    const opts = [row?.option1, row?.option2, row?.option3, row?.option4]
+      .map((o) => String(o || '').trim())
+      .filter(Boolean);
+    if (opts.length < 3) return row;
+    // Only judge short numeric choices ("20 N", "2,000 Pa", "641") — for prose
+    // options the explanation rarely repeats the wording, so absence proves nothing.
+    if (!opts.every((o) => o.length <= 14 && numericCore(o))) return row;
+
+    const explanation = String(row?.explanation || '');
+    if (explanation.length < 10) return row;
+
+    const chosen = String(row?.correctAnswer || '').trim();
+    const chosenNum = numericCore(chosen);
+    if (!chosenNum) return row;
+    if (standaloneNumberInText(chosenNum, explanation)) return row;
+
+    const otherSupported = opts.some(
+      (o) => numericCore(o) !== chosenNum && standaloneNumberInText(numericCore(o), explanation),
+    );
+    if (!otherSupported) return row;
+    return { ...row, answerConflict: true };
+  });
+}
+
+/**
+ * Paper-identity fingerprint: the paper/set code (MA1_B, MA1-N…) and academic
+ * year, normalized. Used to tell whether an answer-key page belongs to the
+ * question paper it is stapled to. Returns '' when nothing identifiable.
+ */
+function examPaperIdentitySignature(text) {
+  const t = String(text || '');
+  const codeMatch = t.match(/\b([A-Z]{1,4}\s*\d{1,2}\s*[_\-–]\s*[A-Z]{1,2})\b/);
+  const yearMatch = t.match(/\b(20\d{2})\s*[-–—]\s*(\d{2})\b/);
+  const code = codeMatch ? codeMatch[1].replace(/[\s_\-–]/g, '').toUpperCase() : '';
+  const year = yearMatch ? `${yearMatch[1]}-${yearMatch[2]}` : '';
+  return [code, year].filter(Boolean).join('/');
+}
+
+/**
+ * Does this answer key actually belong to this paper?
+ *
+ * A key stapled from a different sitting silently corrupts every answer, so it
+ * is checked two ways: the printed paper code/year, and how often the key
+ * agrees with the answers derived from reading the questions. A genuine key
+ * agrees on the large majority; an unrelated one lands near chance (1 in 4).
+ */
+function assessAnswerKeyTrust({ rows, answerKeyByNumber, bodyPaperCode, keyPaperCode }) {
+  const result = { apply: true, agreedPct: null, conflicts: [], reason: '' };
+  if (!answerKeyByNumber?.size) {
+    result.apply = false;
+    result.reason = 'no answer key found in PDF';
+    return result;
+  }
+
+  if (bodyPaperCode && keyPaperCode && bodyPaperCode !== keyPaperCode) {
+    result.apply = false;
+    result.reason = `answer key is for a different paper (paper ${bodyPaperCode}, key ${keyPaperCode})`;
+    return result;
+  }
+
+  let compared = 0;
+  for (const row of rows || []) {
+    const qn = Number(row?.questionNumber);
+    const letter = answerKeyByNumber.get(qn);
+    if (!letter || String(row?.questionType || '').toUpperCase() === 'INTEGER') continue;
+    const opts = [row.option1, row.option2, row.option3, row.option4].map((o) =>
+      String(o || '').trim(),
+    );
+    const keyText = opts[letter.charCodeAt(0) - 97];
+    if (!keyText) continue;
+    const modelAnswer = String(row?.correctAnswer || '').trim();
+    if (!modelAnswer) continue;
+    compared += 1;
+    if (modelAnswer.toLowerCase() !== keyText.toLowerCase()) {
+      result.conflicts.push(qn);
+    }
+  }
+
+  if (compared < 5) return result; // too little overlap to judge — trust the key
+  const agreed = compared - result.conflicts.length;
+  result.agreedPct = Math.round((agreed / compared) * 100);
+  if (result.agreedPct < 60) {
+    result.apply = false;
+    result.reason =
+      `answer key matches only ${result.agreedPct}% of the questions in this paper, ` +
+      'so it appears to belong to a different paper';
+  }
+  return result;
+}
+
+/**
  * Parse Asli Prep style keys:
  *   Test Key
  *   1 2 3 4 5
@@ -505,17 +709,23 @@ function parseAsliPrepTestKeyLetters(fullText) {
     .map((l) => l.replace(/\s+/g, ' ').trim())
     .filter(Boolean);
 
+  // A key cell is a letter a-d, or a non-answer token like "Bonus" / "*" / "-"
+  // (dropped questions). Non-letter tokens keep their position so the rest of
+  // the row still lines up with the number row above it.
+  const keyToken = /^(?:[a-dA-D]|bonus|\*|[-–—]+)$/i;
   for (let i = 0; i < lines.length - 1; i += 1) {
     const numLine = lines[i];
     const ansLine = lines[i + 1];
     if (!/^\d+(?:\s+\d+){2,}$/.test(numLine)) continue;
-    if (!/^[a-dA-D](?:\s+[a-dA-D]){2,}$/.test(ansLine)) continue;
+    const tokens = ansLine.split(/\s+/);
+    if (tokens.length < 3 || !tokens.every((t) => keyToken.test(t))) continue;
+    if (tokens.filter((t) => /^[a-dA-D]$/.test(t)).length < 2) continue;
     const nums = numLine.split(/\s+/).map((n) => parseInt(n, 10));
-    const letters = ansLine.split(/\s+/).map((a) => a.toLowerCase());
-    const n = Math.min(nums.length, letters.length);
+    const n = Math.min(nums.length, tokens.length);
     for (let k = 0; k < n; k += 1) {
-      if (Number.isFinite(nums[k]) && /^[a-d]$/.test(letters[k])) {
-        map.set(nums[k], letters[k]);
+      const letter = tokens[k].toLowerCase();
+      if (Number.isFinite(nums[k]) && /^[a-d]$/.test(letter)) {
+        map.set(nums[k], letter);
       }
     }
   }
@@ -527,6 +737,9 @@ function applyAnswerKeyLettersToRows(rows, answerKeyByNumber) {
   return rows.map((r) => {
     const qn = Number(r?.questionNumber);
     if (!Number.isFinite(qn) || qn < 1) return r;
+    // Integer rows have no options, so a letter key can't map to anything —
+    // overwriting the numeric answer with "a" only breaks save validation.
+    if (String(r?.questionType || '').toUpperCase() === 'INTEGER') return r;
     const letter = answerKeyByNumber.get(qn);
     if (!letter) return r;
     const opts = [r.option1, r.option2, r.option3, r.option4].map((o) => String(o || '').trim());
@@ -543,9 +756,13 @@ function applyAnswerKeyLettersToRows(rows, answerKeyByNumber) {
 }
 
 function optionFillScore(row) {
-  return [row?.option1, row?.option2, row?.option3, row?.option4]
-    .map((o) => String(o || '').trim())
-    .filter(Boolean).length;
+  const opts = [row?.option1, row?.option2, row?.option3, row?.option4].map((o) =>
+    String(o || '').trim(),
+  );
+  const filled = opts.filter(Boolean).length;
+  const totalLen = opts.reduce((acc, o) => acc + o.length, 0);
+  // Filled slots dominate; option text length breaks ties (richer extraction wins).
+  return filled * 10000 + Math.min(totalLen, 9999);
 }
 
 function dedupePdfQuestionRows(rows) {
@@ -588,7 +805,23 @@ function dedupePdfQuestionRows(rows) {
   return out;
 }
 
-async function extractQuestionsFromPdfViaGemini({
+/**
+ * Rupee-visible cost estimate for one extraction (gemini flash-lite pricing:
+ * $0.10/M input, $0.40/M output tokens; ~₹88/USD). Estimate only — shown in
+ * API meta so admins can see what each upload costs.
+ */
+function buildExtractionUsage(totals) {
+  const usd = ((totals.promptTokens || 0) * 0.1 + (totals.outputTokens || 0) * 0.4) / 1e6;
+  return {
+    geminiCalls: totals.calls || 0,
+    promptTokens: totals.promptTokens || 0,
+    outputTokens: totals.outputTokens || 0,
+    approxCostUsd: Number(usd.toFixed(4)),
+    approxCostInr: Number((usd * 88).toFixed(2)),
+  };
+}
+
+export async function extractQuestionsFromPdfViaGemini({
   buffer,
   mimeType = 'application/pdf',
 }) {
@@ -620,7 +853,7 @@ async function extractQuestionsFromPdfViaGemini({
   const buildPrompt = (rangeHint = '') => `Extract exam questions from this PDF and return ONLY valid JSON.
 Preferred shape: {"questions":[ ... ]}. A bare JSON array of question objects is also accepted.
 Each question object must have these exact keys:
-questionNumber (printed number if visible), questionText, questionType (MCQ/MSQ/integer), subject, marks (number), option1, option2, option3, option4, correctAnswer, explanation.
+questionNumber (printed number — mandatory), hasFigure (boolean), questionText, questionType (MCQ/MSQ/integer), subject, marks (number), option1, option2, option3, option4, correctAnswer, explanation.
 
 ${rangeHint}
 
@@ -629,19 +862,23 @@ Important rules:
 - This PDF should already exclude answer-key / rough-work pages — do not invent key tables.
 - Include Single Correct, Multi Correct (MSQ), Assertion-Reason, Case-based, and Match-the-Following when they have options a)–d).
 - For Match-the-Following, put the matching codes into option1–option4 (e.g. "A-2, B-4, C-1, D-3").
-- Always set questionNumber to the printed question number (1, 2, 3…).
+- Always set questionNumber to the printed question number (1, 2, 3…). NEVER omit it — every question in the paper has a printed number.
+- Set hasFigure=true ONLY when the question (or its case) refers to a picture, diagram, graph or figure printed in the paper (e.g. "marked point", "shown below", a drawing next to the question). Pure text/math questions get hasFigure=false.
 - For subject: read from PDF section headers (Mathematics→maths, Physics→physics, Chemistry→chemistry, Biology→biology). Otherwise "".
 - For MCQ/MSQ: correctAnswer may be a letter (a/b/c/d) or full option text.
 - For integer: correctAnswer is the numeric answer; options can be empty strings.
+- If four choices a)-d) are printed, the question is MCQ — even under an "Integer Value Type Questions" heading. Only use questionType "integer" when NO options are printed.
+- Your correctAnswer must be one of the printed options and must agree with your own explanation. Work out the answer, then pick the option that matches it.
 - Strip leading "Q1." / "1." from questionText only. Strip "A." / "(a)" prefixes from option bodies.
 - MATH FIDELITY (critical): Copy expressions EXACTLY as printed — same parentheses, nesting, and operator order.
   Prefer Unicode: √ ∛ ² ³ − × ÷. Do NOT rewrite as "cube root of" / "sqrt" / "square root of" unless the PDF itself uses words.
   Example: printed ∛(109 + √256) + √(117² − 108²) must stay that nesting — NEVER flatten to ∛(109 + √256 + √(...)).
-- CASE / PASSAGE CONTEXT (critical): For Case-Based, Comprehension, or passage questions, each questionText MUST begin with the full case/passage text (Case I / Case II / paragraph), then the question.
-  Do NOT store only the short stem (e.g. "What is the side length…") without the numbers/facts from the case.
-  Example format:
+- CASE / PASSAGE CONTEXT (critical): For Case-Based / Comprehension questions ONLY, each dependent questionText MUST begin with that case's full passage, then the question stem.
+  Do NOT attach a case/passage to unrelated questions in later sections (e.g. never paste a Chemistry case onto Biology or Match questions).
+  Do NOT invent or reuse one case for the whole paper — only questions that belong to that Case I / Case II / Paragraph.
+  Example:
   "Case I: A square solar learning park covers 11,025 m². … edge of 7 m.\\n\\nWhat is the side length of the square solar farm?"
-  Repeat the same case text on every question that depends on that case (Q9 and Q10 share Case I, etc.).
+  Q9 and Q10 that share Case I both get the same Case I text; Q11 under Case II gets Case II only.
 - ASSERTION–REASON: Put both A and R into questionText (full sentences), and put the four standard A/R choice lines into option1–option4.
 - Return only valid JSON, no markdown, no explanation.`;
 
@@ -650,6 +887,16 @@ Important rules:
   let sawQuotaError = false;
   let sawDeniedError = false;
   const requestTimeoutMs = Number(process.env.GEMINI_PDF_REQUEST_TIMEOUT_MS) || 120000;
+
+  // Hard budget on Gemini calls per upload. Every call re-sends the whole PDF,
+  // so an unbounded retry cascade multiplies cost. ~6 calls handles an 80-question
+  // paper (4 range chunks + gap-fill); the cap is headroom, not the normal path.
+  const maxCallsPerUpload = (() => {
+    const n = Number(process.env.GEMINI_PDF_MAX_CALLS);
+    return Number.isFinite(n) && n >= 3 ? Math.min(n, 40) : 14;
+  })();
+  const usageTotals = { calls: 0, promptTokens: 0, outputTokens: 0 };
+  const callBudgetExhausted = () => usageTotals.calls >= maxCallsPerUpload;
 
   const fetchWithTimeout = async (url, options) => {
     const controller = new AbortController();
@@ -702,6 +949,14 @@ Important rules:
   };
 
   const tryModelWithPrompt = async (model, promptText, useStructured) => {
+    if (callBudgetExhausted()) {
+      return {
+        ok: false,
+        status: 0,
+        errorText: `per-upload Gemini call budget (${maxCallsPerUpload}) exhausted`,
+      };
+    }
+    usageTotals.calls += 1;
     const generationConfig = {
       temperature: 0,
       topP: 0.95,
@@ -758,9 +1013,128 @@ Important rules:
     }
 
     const data = await response.json();
+    usageTotals.promptTokens += Number(data?.usageMetadata?.promptTokenCount) || 0;
+    usageTotals.outputTokens += Number(data?.usageMetadata?.candidatesTokenCount) || 0;
     const parsed = parseGeminiJsonArray(data, `${model}${useStructured ? '+schema' : ''}`);
     if (!parsed) return { ok: false, status: 200, errorText: 'parse failed', finishReason: data?.candidates?.[0]?.finishReason };
     return { ok: true, parsed: parsed.rows, finishReason: parsed.finishReason };
+  };
+
+  /**
+   * Text-only Gemini call. Costs a fraction of an extraction call because the
+   * PDF (≈6.4k image tokens every time) is not attached.
+   */
+  const callGeminiText = async (model, promptText, responseSchema) => {
+    if (callBudgetExhausted()) return null;
+    usageTotals.calls += 1;
+    let response;
+    try {
+      response = await fetchWithTimeout(
+        `${GEMINI_BASE_URL}/models/${model}:generateContent?key=${apiKey}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [{ role: 'user', parts: [{ text: promptText }] }],
+            generationConfig: {
+              temperature: 0,
+              topP: 0.95,
+              maxOutputTokens: 8192,
+              responseMimeType: 'application/json',
+              responseSchema,
+            },
+          }),
+        },
+      );
+    } catch {
+      return null;
+    }
+    if (!response.ok) return null;
+    const data = await response.json();
+    usageTotals.promptTokens += Number(data?.usageMetadata?.promptTokenCount) || 0;
+    usageTotals.outputTokens += Number(data?.usageMetadata?.candidatesTokenCount) || 0;
+    const raw = (data?.candidates?.[0]?.content?.parts || [])
+      .map((p) => (typeof p?.text === 'string' ? p.text : ''))
+      .join('')
+      .trim();
+    if (!raw) return null;
+    try {
+      return JSON.parse(raw.replace(/^```json\s*/i, '').replace(/^```\s*/i, '').replace(/\s*```$/i, ''));
+    } catch {
+      return null;
+    }
+  };
+
+  /**
+   * Re-solve each MCQ from its extracted text alone and compare with the answer
+   * chosen during extraction. The extraction pass does OCR, layout parsing and
+   * solving at once and slips on arithmetic, so a disagreement is a strong
+   * signal that one of the two is wrong.
+   *
+   * It only flags — it never rewrites the answer. This pass sees the text
+   * without the PDF's visual maths layout, so it is wrong often enough that
+   * letting it overrule extraction turns correct answers into incorrect ones.
+   * Detection is the value here; the admin resolves the flagged rows.
+   */
+  const verifyAnswersWithTextPass = async (model, rows) => {
+    const candidates = (rows || []).filter((r) => {
+      if (String(r?.questionType || '').toUpperCase() !== 'MCQ') return false;
+      if (!Number.isFinite(Number(r?.questionNumber))) return false;
+      return [r.option1, r.option2, r.option3, r.option4].every((o) => String(o || '').trim());
+    });
+    if (candidates.length === 0) return rows;
+
+    const chosenByNumber = new Map();
+    const BATCH = 20;
+    for (let i = 0; i < candidates.length; i += BATCH) {
+      if (callBudgetExhausted()) break;
+      const batch = candidates.slice(i, i + BATCH);
+      const block = batch
+        .map((r) => {
+          const stem = String(r.questionText || '').replace(/\s+/g, ' ').slice(0, 700);
+          return (
+            `Q${r.questionNumber}: ${stem}\n` +
+            `a) ${r.option1}\nb) ${r.option2}\nc) ${r.option3}\nd) ${r.option4}`
+          );
+        })
+        .join('\n\n');
+      const parsed = await callGeminiText(
+        model,
+        'You are checking the answer key for a Grade 7 IIT/NEET foundation exam.\n' +
+          'Solve each question below and return the letter of the correct option.\n' +
+          'Do the arithmetic carefully and step by step in your head before choosing; ' +
+          'a plausible-looking option is often a deliberate distractor.\n' +
+          'Some questions carry a figure that is not shown here — for those, answer from the physics/reasoning as best you can.\n' +
+          'Return one entry per question, using the exact question numbers given.\n\n' +
+          block,
+        ANSWER_VERIFY_RESPONSE_SCHEMA,
+      );
+      for (const a of parsed?.answers || []) {
+        const qn = Number(a?.questionNumber);
+        const letter = String(a?.correctOption || '').trim().toLowerCase();
+        if (Number.isFinite(qn) && /^[a-d]$/.test(letter)) chosenByNumber.set(qn, letter);
+      }
+    }
+    if (chosenByNumber.size === 0) return rows;
+
+    let changed = 0;
+    const next = rows.map((r) => {
+      const qn = Number(r?.questionNumber);
+      const letter = chosenByNumber.get(qn);
+      if (!letter) return r;
+      const opts = [r.option1, r.option2, r.option3, r.option4].map((o) => String(o || '').trim());
+      const verified = opts[letter.charCodeAt(0) - 97];
+      if (!verified) return r;
+      const current = String(r.correctAnswer || '').trim();
+      if (current.toLowerCase() === verified.toLowerCase()) return r;
+      changed += 1;
+      return { ...r, answerConflict: true, secondOpinionAnswer: verified };
+    });
+    console.log('[PDF_EXAM_EXTRACT] answer verification pass', {
+      checked: chosenByNumber.size,
+      disagreed: changed,
+    });
+    return next;
   };
 
   const extractOnce = async (model, rangeHint) => {
@@ -792,9 +1166,8 @@ Important rules:
     return { ok: false, parsed: null, finishReason: result.finishReason || loose.finishReason };
   };
 
-  // Large multi-subject papers (e.g. 80 Qs) truncate in one Gemini response.
-  // Always chunk by ranges when we know the paper size (answer key) or first pass is short.
-  const RANGE_CHUNKS = [
+  // Papers of unknown size fall back to these ranges when the first pass fails.
+  const FALLBACK_RANGE_CHUNKS = [
     [1, 20],
     [21, 40],
     [41, 60],
@@ -811,21 +1184,17 @@ Important rules:
     return set;
   };
 
-  const expectedQuestionNumbers = (rows) => {
-    if (answerKeyByNumber.size > 0) {
-      return [...answerKeyByNumber.keys()].sort((a, b) => a - b);
-    }
-    const present = [...presentQuestionNumbers(rows)];
-    const max = present.length ? Math.max(...present) : 0;
-    if (max >= 40) {
-      return Array.from({ length: max }, (_, i) => i + 1);
-    }
-    return [];
-  };
+  // Ground truth for "which questions exist": answer key ∪ printed numbers from
+  // the PDF text layer (covers Bonus questions the key skips).
+  const expectedNumbers = (() => {
+    const set = new Set(prepared.printedQuestionNumbers || []);
+    for (const n of answerKeyByNumber.keys()) set.add(n);
+    return [...set].sort((a, b) => a - b);
+  })();
 
   const missingQuestionNumbers = (rows) => {
     const present = presentQuestionNumbers(rows);
-    return expectedQuestionNumbers(rows).filter((n) => !present.has(n));
+    return expectedNumbers.filter((n) => !present.has(n));
   };
 
   /** Batch missing ids into small prompts, e.g. [14,15,57,58] → "14, 15, 57, 58" */
@@ -836,36 +1205,58 @@ Important rules:
   };
 
   for (const model of modelCandidates) {
+    if (callBudgetExhausted()) break;
     const collected = [];
     let truncated = false;
+    const maxExpected = expectedNumbers.length ? expectedNumbers[expectedNumbers.length - 1] : 0;
 
-    const full = await extractOnce(
-      model,
-      'Scope: extract ALL questions from the question paper body (not the answer key). Include every printed question number.',
-    );
-    if (full.ok && Array.isArray(full.parsed)) {
-      collected.push(...full.parsed);
-      if (full.finishReason === 'MAX_TOKENS') truncated = true;
+    // Known large papers: skip the full-paper pass entirely. Flash models stop
+    // early on 80-question papers (finishReason STOP after ~10 questions), so
+    // that pass is pure wasted cost — range chunks are the reliable path.
+    const skipFullPass = maxExpected >= 30;
+
+    if (!skipFullPass) {
+      const full = await extractOnce(
+        model,
+        'Scope: extract ALL questions from the question paper body (not the answer key). Include every printed question number.',
+      );
+      if (full.ok && Array.isArray(full.parsed)) {
+        collected.push(...full.parsed);
+        if (full.finishReason === 'MAX_TOKENS') truncated = true;
+      }
     }
 
     let refined = postProcessGeminiPdfQuestionRows(collected);
-    const expectedCount = answerKeyByNumber.size || 0;
     const shouldChunk =
-      truncated ||
-      refined.length === 0 ||
-      refined.length < 70 ||
-      (expectedCount > 0 && refined.length < expectedCount);
+      skipFullPass || truncated || refined.length === 0 || missingQuestionNumbers(refined).length > 0;
 
     if (shouldChunk) {
+      const ranges =
+        maxExpected > 0
+          ? Array.from({ length: Math.ceil(maxExpected / 20) }, (_, i) => [
+              i * 20 + 1,
+              Math.min(i * 20 + 20, maxExpected),
+            ])
+          : FALLBACK_RANGE_CHUNKS;
+      const missingBefore = new Set(missingQuestionNumbers(refined));
       console.log('[PDF_EXAM_EXTRACT] chunking by question ranges', {
         model,
         firstPass: refined.length,
-        expectedCount,
+        skipFullPass,
+        maxExpected,
         truncated,
+        ranges: ranges.length,
       });
-      for (const [from, to] of RANGE_CHUNKS) {
-        // Skip empty high ranges when key says max is 80
-        if (expectedCount > 0 && from > expectedCount) continue;
+      for (const [from, to] of ranges) {
+        if (callBudgetExhausted()) break;
+        // Skip ranges that are already fully extracted
+        if (
+          expectedNumbers.length > 0 &&
+          refined.length > 0 &&
+          ![...missingBefore].some((n) => n >= from && n <= to)
+        ) {
+          continue;
+        }
         const chunk = await extractOnce(
           model,
           `Scope: extract ONLY questions numbered ${from} through ${to} (inclusive). ` +
@@ -885,7 +1276,7 @@ Important rules:
     // Gap-fill: re-ask specifically for missing printed numbers (e.g. 79/80 left 1 gap).
     let missing = missingQuestionNumbers(refined);
     let gapPass = 0;
-    while (missing.length > 0 && gapPass < 5) {
+    while (missing.length > 0 && gapPass < 3 && !callBudgetExhausted()) {
       gapPass += 1;
       // First passes: small batches. Last passes: one question at a time (more reliable).
       const batchSize = gapPass <= 2 ? 5 : 1;
@@ -897,6 +1288,7 @@ Important rules:
         missing: missing.slice(0, 20),
       });
       for (const batch of chunkMissingIds(missing, batchSize)) {
+        if (callBudgetExhausted()) break;
         const list = batch.join(', ');
         const alone = batch.length === 1;
         const chunk = await extractOnce(
@@ -925,7 +1317,33 @@ Important rules:
       if (missing.length === 0) break;
     }
 
-    refined = applyAnswerKeyLettersToRows(refined, answerKeyByNumber);
+    // Once every expected printed number is present, unnumbered leftovers are
+    // duplicate re-extractions with formatting drift — drop them.
+    if (expectedNumbers.length > 0 && missingQuestionNumbers(refined).length === 0) {
+      refined = refined.filter((r) => Number.isFinite(Number(r?.questionNumber)));
+    }
+
+    const keyTrust = assessAnswerKeyTrust({
+      rows: refined,
+      answerKeyByNumber,
+      bodyPaperCode: prepared.bodyPaperCode,
+      keyPaperCode: prepared.keyPaperCode,
+    });
+    if (keyTrust.apply) {
+      refined = applyAnswerKeyLettersToRows(refined, answerKeyByNumber);
+      // Key won, but where it disagreed the admin should look before publishing.
+      const conflictSet = new Set(keyTrust.conflicts);
+      refined = refined.map((r) =>
+        conflictSet.has(Number(r?.questionNumber)) ? { ...r, answerConflict: true } : r,
+      );
+    } else {
+      console.warn('[PDF_EXAM_EXTRACT] answer key NOT applied:', keyTrust.reason);
+      // No trustworthy key, so the answers must stand on their own: re-solve
+      // them independently, then surface any the explanation contradicts.
+      refined = await verifyAnswersWithTextPass(model, refined);
+      refined = flagAnswersContradictedByExplanation(refined);
+    }
+
     // Prefer stable order by printed question number when available
     refined.sort((a, b) => {
       const an = Number(a?.questionNumber);
@@ -942,8 +1360,23 @@ Important rules:
       truncated,
       answerKeyApplied: answerKeyByNumber.size,
       stillMissing: missingQuestionNumbers(refined).slice(0, 20),
+      geminiCalls: usageTotals.calls,
+      promptTokens: usageTotals.promptTokens,
+      outputTokens: usageTotals.outputTokens,
     });
-    if (refined.length > 0) return refined;
+    if (refined.length > 0) {
+      return {
+        rows: refined,
+        usage: buildExtractionUsage(usageTotals),
+        answerKey: {
+          found: answerKeyByNumber.size > 0,
+          applied: keyTrust.apply,
+          agreedPct: keyTrust.agreedPct,
+          conflictCount: refined.filter((r) => r?.answerConflict).length,
+          reason: keyTrust.reason,
+        },
+      };
+    }
     attemptErrors.push(`${model}: model returned rows but none passed validation after cleanup`);
   }
 
@@ -2033,7 +2466,7 @@ export const bulkUploadExams = async (req, res) => {
     }
     
     // Parse CSV data - handle both \n and \r\n line endings
-    const lines = csvData.split(/\r?\n/).filter(line => line.trim());
+    const lines = splitCsvRecords(csvData);
     if (lines.length < 2) {
       return res.status(400).json({ 
         success: false, 
@@ -2372,7 +2805,7 @@ export const bulkUploadQuestions = async (req, res) => {
     }
     
     // Parse CSV data - handle both \n and \r\n line endings
-    const lines = csvData.split(/\r?\n/).filter(line => line.trim());
+    const lines = splitCsvRecords(csvData);
     if (lines.length < 2) {
       return res.status(400).json({ 
         success: false, 
@@ -2823,7 +3256,7 @@ export const convertPdfToQuestions = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Only PDF files are allowed' });
     }
 
-    const rows = await extractQuestionsFromPdfViaGemini({
+    const { rows, usage, answerKey } = await extractQuestionsFromPdfViaGemini({
       buffer: req.file.buffer,
       mimeType: req.file.mimetype || 'application/pdf',
     });
@@ -2850,6 +3283,8 @@ export const convertPdfToQuestions = async (req, res) => {
           correctAnswer: String(r?.correctAnswer || '').trim(),
           explanation: String(r?.explanation || '').trim(),
           questionImage: String(r?.questionImage || '').trim(),
+          hasFigure: r?.hasFigure === true,
+          answerConflict: r?.answerConflict === true,
           passageId: '',
           passageText: '',
         };
@@ -2862,16 +3297,27 @@ export const convertPdfToQuestions = async (req, res) => {
       examId,
     });
 
-    const normalized = (enriched.rows || []).map((r, idx) => ({
-      ...r,
-      row: idx + 1,
-      questionImage: String(r.questionImage || '').trim(),
-      passageText: String(r.passageText || '').trim(),
-      passageId: String(r.passageId || '').trim(),
-      solvable: r.solvable !== false,
-      validationFlags: Array.isArray(r.validationFlags) ? r.validationFlags : [],
-      validationNote: String(r.validationNote || ''),
-    }));
+    const normalized = (enriched.rows || []).map((r, idx) => {
+      const flags = Array.isArray(r.validationFlags) ? [...r.validationFlags] : [];
+      let note = String(r.validationNote || '');
+      if (r.answerConflict === true) {
+        flags.push('answer_conflict');
+        const second = String(r.secondOpinionAnswer || '').trim();
+        note = second
+          ? `Answer needs checking — a second reading of this question gives "${second.slice(0, 60)}"`
+          : 'Answer needs checking — the printed key disagrees with the question';
+      }
+      return {
+        ...r,
+        row: idx + 1,
+        questionImage: String(r.questionImage || '').trim(),
+        passageText: String(r.passageText || '').trim(),
+        passageId: String(r.passageId || '').trim(),
+        solvable: r.solvable !== false && r.answerConflict !== true,
+        validationFlags: flags,
+        validationNote: note,
+      };
+    });
 
     const flagged = normalized.filter((r) => !r.solvable).length;
     const withImages = normalized.filter((r) => r.questionImage).length;
@@ -2883,12 +3329,22 @@ export const convertPdfToQuestions = async (req, res) => {
         ...(enriched.meta || {}),
         flaggedCount: flagged,
         withImages,
+        extraction: usage,
+        answerKey,
       },
       message:
         `Extracted ${normalized.length} question(s) from PDF` +
         (withImages ? `, ${withImages} with figure(s)` : '') +
-        (flagged ? `, ${flagged} flagged for passage/figure review` : '') +
-        '.',
+        (flagged ? `, ${flagged} flagged for review` : '') +
+        '. ' +
+        (answerKey?.found && !answerKey?.applied
+          ? `WARNING: the printed answer key was NOT used because ${answerKey.reason}. ` +
+            'Answers below were read from the questions themselves — please check them before saving.'
+          : answerKey?.applied && answerKey?.conflictCount
+            ? `Printed answer key applied; ${answerKey.conflictCount} question(s) where it disagrees are flagged.`
+            : answerKey?.applied
+              ? 'Printed answer key applied.'
+              : 'No printed answer key found — answers were read from the questions.'),
     });
   } catch (error) {
     console.error('❌ convertPdfToQuestions error:', error);
