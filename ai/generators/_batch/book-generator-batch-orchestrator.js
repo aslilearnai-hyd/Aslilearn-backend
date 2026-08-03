@@ -165,7 +165,9 @@ function getBatchSize(override) {
 function getMaxAttemptsPerSlot(qualityTierSettings) {
   const envMax = getBookBatchSlotMaxAttempts();
   const tierMax = qualityTierSettings?.maxSlotAttempts || envMax;
-  return Math.max(envMax, tierMax);
+  // Env is a hard ceiling (cost control). Old Math.max let Premium force 4 attempts
+  // even when AI_GENERATOR_BATCH_SLOT_MAX_ATTEMPTS=1.
+  return Math.max(1, Math.min(envMax, tierMax));
 }
 
 function formatBookSlotFailureMessage(batchIndex, error) {
@@ -382,7 +384,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             subTopics: subTopicList.length > 1 ? subTopicList : undefined,
             toolSlug,
             bookTitle: book.title,
-            topK: conceptMasteryBatch ? 8 : isWholeChapter || subTopicList.length > 1 ? 16 : undefined,
+            topK: conceptMasteryBatch ? 4 : isWholeChapter || subTopicList.length > 1 ? 6 : undefined,
           })
         : { contextText: '', chunkCount: 0, chunks: [], hasBookPassages: false };
 

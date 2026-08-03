@@ -62,9 +62,9 @@ export function resolveQualityTierSettings(tierInput, overrides = {}) {
     /** Premium never bypasses validation via cost-saver or silent section-pad saves. */
     strictValidation: true,
     sectionPadEnabled: false,
-    maxValidationAttempts: 3,
+    maxValidationAttempts: 2,
     maxSlotAttempts: 2,
-    geminiRetriesPerModel: 3,
+    geminiRetriesPerModel: 1,
     hotsHedgingRegen: false,
     primaryGeminiModel: resolvePremiumGeminiModel(),
     modelOverflow: getPremiumGeminiFallbackCsv(),
@@ -106,9 +106,9 @@ export function resolveQualityTierSettings(tierInput, overrides = {}) {
       useHistoricalPrompt: true,
       strictValidation: false,
       sectionPadEnabled: true,
-      maxValidationAttempts: smallBatch ? 3 : 3,
-      maxSlotAttempts: smallBatch ? 2 : 3,
-      geminiRetriesPerModel: 2,
+      maxValidationAttempts: 2,
+      maxSlotAttempts: 2,
+      geminiRetriesPerModel: 1,
       hotsHedgingRegen: false,
       primaryGeminiModel: resolveBalancedGeminiModel(),
       flashLiteOnly: true,
@@ -117,7 +117,7 @@ export function resolveQualityTierSettings(tierInput, overrides = {}) {
     });
   }
 
-  // Premium — stricter validation / more retries on Gemini 3.1 Flash-Lite (never Pro).
+  // Premium — Flash-Lite only, cost-capped retries (still stricter than Balanced).
   return applyFlashLiteOnlyPolicy({
     ...base,
     tier,
@@ -126,11 +126,11 @@ export function resolveQualityTierSettings(tierInput, overrides = {}) {
     flashLiteOnly: true,
     primaryGeminiModel: resolvePremiumGeminiModel(),
     modelOverflow: getPremiumGeminiFallbackCsv(),
-    maxValidationAttempts: 5,
-    maxSlotAttempts: 4,
-    geminiRetriesPerModel: 3,
+    maxValidationAttempts: 2,
+    maxSlotAttempts: 2,
+    geminiRetriesPerModel: 1,
     batchConcurrency: smallBatch ? 2 : 2,
-    slotStaggerMs: smallBatch ? 150 : 250,
+    slotStaggerMs: smallBatch ? 100 : 150,
   });
 }
 
