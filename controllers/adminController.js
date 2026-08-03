@@ -12,7 +12,7 @@ import Class from '../models/Class.js';
 import Subject from '../models/Subject.js';
 import Content from '../models/Content.js';
 import RiskAnalysisReport from '../models/RiskAnalysisReport.js';
-import { getExplicitTeacherSubjectObjectIds } from '../utils/teacherSubjectScope.js';
+import { getEffectiveTeacherSubjectObjectIds } from '../utils/teacherSubjectScope.js';
 import {
   isValidSchoolBoard,
   normalizeSchoolBoard,
@@ -1793,9 +1793,8 @@ export const getTeacherDashboardStats = async (req, res) => {
       return res.status(404).json({ success: false, message: 'Teacher not found' });
     }
 
-    const explicitSubjectIdStr = new Set(
-      getExplicitTeacherSubjectObjectIds(teacher).map((id) => id.toString())
-    );
+    const effectiveSubjectIds = await getEffectiveTeacherSubjectObjectIds(teacher);
+    const effectiveSubjectIdStr = new Set(effectiveSubjectIds.map((id) => id.toString()));
 
     // Get class details for assigned classes
     let assignedClassesDetails = [];
@@ -1927,7 +1926,8 @@ export const getTeacherDashboardStats = async (req, res) => {
         const assignedSubjects = (classDoc.assignedSubjects || [])
           .filter((subj) => {
             const sid = (subj._id != null ? subj._id : subj).toString();
-            return explicitSubjectIdStr.has(sid) || assignmentSubjectIdStr.has(sid);
+            // Class roster subjects + teacher profile / assignment subjects
+            return effectiveSubjectIdStr.has(sid) || assignmentSubjectIdStr.has(sid);
           })
           .map((subj) => ({
             _id: subj._id ? subj._id.toString() : subj.toString(),
@@ -1937,11 +1937,29 @@ export const getTeacherDashboardStats = async (req, res) => {
             board: subj.board || '',
           }));
 
-        const subject =
-          subjectFromAssignments.length > 0
-            ? subjectFromAssignments.join(', ')
-            : assignedSubjects.length > 0
-              ? assignedSubjects.map((s) => s.name).join(', ')
+        // Prefer full class subject list for Teaching Aids when the class has subjects
+        // wired in Super Admin (common school workflow).
+        const classRosterSubjects = (classDoc.assignedSubjects || []).map((subj) => ({
+          _id: subj._id ? subj._id.toString() : subj.toString(),
+          name: subj.name || 'Unknown Subject',
+          description: subj.description || '',
+          code: subj.code || '',
+          board: subj.board || '',
+        }));
+        const teachingAidSubjects =
+          classRosterSubjects.length > 0 ? classRosterSubjects : assignedSubjects;
+
+        // Prefer readable labels on Teaching Aids (Biology_6 → Biology).
+        // Class roster from Super Admin wins over sparse teacher.assignments rows.
+        const subjectDisplay =
+          teachingAidSubjects.length > 0
+            ? [...new Set(teachingAidSubjects.map((s) => {
+                  const raw = String(s.name || '').trim();
+                  const plain = raw.replace(/_\d+$/, '').trim();
+                  return plain || raw;
+                }))].join(', ')
+            : subjectFromAssignments.length > 0
+              ? subjectFromAssignments.join(', ')
               : 'General';
 
         return {
@@ -1950,8 +1968,8 @@ export const getTeacherDashboardStats = async (req, res) => {
           classNumber: classDoc.classNumber,
           section: classDoc.section,
           description: classDoc.description || '',
-          assignedSubjects,
-          subject,
+          assignedSubjects: teachingAidSubjects,
+          subject: subjectDisplay,
           schedule: 'Not scheduled',
           room: `Room ${className}`,
           studentCount: studentCountByClassId.get(classIdStr) || 0,
@@ -1992,7 +2010,7 @@ export const getTeacherDashboardStats = async (req, res) => {
     ]);
 
     let libraryVideoCount = 0;
-    const librarySubjectIds = getExplicitTeacherSubjectObjectIds(teacher);
+    const librarySubjectIds = effectiveSubjectIds;
     if (librarySubjectIds.length > 0) {
       const contentSubjectIds = await resolveSubjectContentIdsMany(
         librarySubjectIds,
@@ -2052,13 +2070,19 @@ export const getTeacherDashboardStats = async (req, res) => {
     
     recentActivity.push(...recentVideos, ...recentAssessments, ...recentExams);
 
-    // Only subjects explicitly assigned on the teacher profile (not every class subject)
-    const teacherSubjectsExplicit = (teacher.subjects || []).filter(
-      (s) => s != null && s._id && s.isActive !== false
-    );
+    // Teacher profile subjects ∪ subjects on assigned classes (class roster is source of truth in many schools)
+    const teacherSubjectDocs =
+      effectiveSubjectIds.length > 0
+        ? await Subject.find({
+            _id: { $in: effectiveSubjectIds },
+            isActive: true,
+          })
+            .select('_id name description code board classNumber isActive')
+            .sort({ name: 1 })
+        : [];
 
     const teacherSubjectsWithCounts = await Promise.all(
-      teacherSubjectsExplicit.map(async (s) => {
+      teacherSubjectDocs.map(async (s) => {
         const row = s.toObject ? s.toObject() : { ...s };
         const contentIds = await resolveSubjectContentIds(row._id, boardResolveOpts);
         const contentCount = await Content.countDocuments({
@@ -2132,8 +2156,8 @@ export const getTeacherDashboardStats = async (req, res) => {
     });
     
     console.log(
-      'Sending teacher subjects in response (explicit profile assignments only):',
-      teacherSubjectsExplicit.length
+      'Sending teacher subjects in response (profile ∪ class roster):',
+      teacherSubjectsWithCounts.length
     );
   } catch (error) {
     console.error('Teacher dashboard stats error:', error);

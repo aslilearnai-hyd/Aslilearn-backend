@@ -41,6 +41,7 @@ import Subject from '../../models/Subject.js';
 import { examVisibleToSchool, getSchoolAdminCalendarEvents, monthBounds } from '../../controllers/calendarController.js';
 import {
   getExplicitTeacherSubjectObjectIds,
+  getEffectiveTeacherSubjectObjectIds,
   subjectIdAllowed,
 } from '../../utils/teacherSubjectScope.js';
 import {
@@ -78,7 +79,7 @@ router.get('/subjects', async (req, res) => {
       return res.status(404).json({ success: false, message: 'Teacher not found' });
     }
     
-    let subjectIds = getExplicitTeacherSubjectObjectIds(teacher);
+    let subjectIds = await getEffectiveTeacherSubjectObjectIds(teacher);
     // Individual (B2C) teachers have interestedSubjects + class, not admin-assigned Subject refs
     if (subjectIds.length === 0 && teacher.isIndividualAccount) {
       const { resolveIndividualCatalogSubjectIds } = await import(
@@ -90,7 +91,7 @@ router.get('/subjects', async (req, res) => {
       );
     }
     if (subjectIds.length === 0) {
-      console.log('Teacher has no subjects on profile');
+      console.log('Teacher has no subjects on profile or assigned classes');
       return res.json({ success: true, data: [] });
     }
 
@@ -228,13 +229,11 @@ router.get('/classes/:classNumber/subjects', async (req, res) => {
 
     let subjectIds = [...subjectIdSet].map((id) => new mongoose.Types.ObjectId(id));
     const explicitIds = getExplicitTeacherSubjectObjectIds(teacher);
-    const explicitStr = new Set(explicitIds.map((id) => id.toString()));
 
-    // Only subjects both on the class and explicitly assigned on the teacher profile
-    if (subjectIds.length > 0) {
-      subjectIds = subjectIds.filter((id) => explicitStr.has(id.toString()));
-    } else {
-      // Class row has no subjects — fall back to teacher profile subjects only
+    // Teacher is already confirmed on this class. Prefer the full class subject
+    // roster (Super Admin class assign). Fall back to teacher profile subjects
+    // only when the class has none wired yet.
+    if (subjectIds.length === 0) {
       subjectIds = explicitIds;
     }
 
