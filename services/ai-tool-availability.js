@@ -7,6 +7,8 @@
  * the query lives here rather than being copied into each one.
  */
 import AiToolGeneration from '../models/AiToolGeneration.js';
+import { toolNameFilterValues } from '../ai/generators/shared/ai-tool-rotation-service.js';
+import { escapeRegex } from '../ai/shared/ai-tool-data-match.js';
 import { subjectFilterForDb } from '../utils/curriculum-subject-validation.js';
 
 /** A record only counts as usable if it actually carries content. */
@@ -27,11 +29,25 @@ export const VALID_AI_TOOL_CONTENT_OR = [
   },
 ];
 
+function toolNameAvailabilityFilter(toolName) {
+  const values = toolNameFilterValues(toolName);
+  if (!values.length) return {};
+  return {
+    toolName: {
+      $in: values.map((v) => new RegExp(`^${escapeRegex(v)}$`, 'i')),
+    },
+  };
+}
+
 /**
  * Chapters that have content for a class/subject, optionally narrowed to one
  * tool. `subject` must already be normalized (e.g. "Maths") — subjectFilterForDb
  * reconciles the "Maths"/"Mathematics" split in the stored data.
  * Returns [] on failure: availability is a hint, never a gate.
+ *
+ * toolName matching must use the same slug/alias/title set as content lookup
+ * (fetchRotatingAiToolData), otherwise the dropdown greys out chapters that
+ * actually open fine.
  */
 export async function listTopicsWithContent({ classDisplay, subject, toolName } = {}) {
   if (!classDisplay || !subject) return [];
@@ -40,7 +56,7 @@ export async function listTopicsWithContent({ classDisplay, subject, toolName } 
       classLabel: classDisplay,
       subject: subjectFilterForDb(subject),
       $or: VALID_AI_TOOL_CONTENT_OR,
-      ...(toolName ? { toolName } : {}),
+      ...(toolName ? toolNameAvailabilityFilter(toolName) : {}),
     });
     return topics.map((t) => String(t || '').trim()).filter(Boolean);
   } catch (error) {
