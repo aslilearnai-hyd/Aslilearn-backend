@@ -73,7 +73,7 @@ export function resolveGeminiPricing(modelName = '') {
   }
   if (model.includes('flash-lite') || model.includes('flash_lite')) {
     return {
-      model: displayModel || 'gemini-3.1-flash-lite',
+      model: 'gemini-3.1-flash-lite',
       inputUsdPerM: GEMINI_31_FLASH_LITE_INPUT_USD_PER_M,
       outputUsdPerM: GEMINI_31_FLASH_LITE_OUTPUT_USD_PER_M,
       pricingNote:
@@ -84,14 +84,14 @@ export function resolveGeminiPricing(modelName = '') {
   // Gemini 2.5 Flash rate — the 3.5 Flash rate has NOT been verified, so the
   // number is a placeholder, not a source of truth. In practice this branch
   // should be unreachable: resolveAllowedGeminiModel in gemini-models.js remaps
-  // everything to 3.1 Flash-Lite or 3.1 Pro. If this note shows up in real cost
+  // everything to 3.1 Flash-Lite. If this note shows up in real cost
   // reports, a non-allowlisted model is being called and the price is wrong.
   return {
-    model: displayModel || 'gemini-3.5-flash',
-    inputUsdPerM: GEMINI_25_FLASH_INPUT_USD_PER_M,
-    outputUsdPerM: GEMINI_25_FLASH_OUTPUT_USD_PER_M,
+    model: 'gemini-3.1-flash-lite',
+    inputUsdPerM: GEMINI_31_FLASH_LITE_INPUT_USD_PER_M,
+    outputUsdPerM: GEMINI_31_FLASH_LITE_OUTPUT_USD_PER_M,
     pricingNote:
-      'UNVERIFIED placeholder — priced at Gemini 2.5 Flash list rates (input $0.30/M, output $2.50/M).',
+      'Fallback priced at Gemini 3.1 Flash-Lite list rates (input $0.25/M, output $1.50/M).',
   };
 }
 
