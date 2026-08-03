@@ -37,7 +37,6 @@ export async function listBooks(req, res) {
         'title board class subject productCategory topic subtopic chunkCount processingStatus embeddingsCreated source generationStats updatedAt createdAt contentId',
       )
       .sort({ updatedAt: -1 })
-      .limit(200)
       .lean();
     res.json({ success: true, data: books.map((book) => enrichBookCurriculumFields(book)) });
   } catch (err) {
@@ -250,7 +249,25 @@ export async function importBooksFromContentBulk(req, res) {
           processingStatus: result.book?.processingStatus,
         });
       } catch (err) {
-        results.push({ contentId, success: false, message: err.message || 'Import failed.' });
+        results.push({
+          contentId,
+          success: false,
+          title: String(contentId || ''),
+          message: err.message || 'Import failed.',
+        });
+      }
+    }
+
+    // Enrich failure titles from Content for clearer UI messages.
+    const failedIds = results.filter((r) => !r.success).map((r) => r.contentId).filter(Boolean);
+    if (failedIds.length) {
+      const Content = (await import('../models/Content.js')).default;
+      const docs = await Content.find({ _id: { $in: failedIds } }).select('_id title').lean();
+      const titleById = new Map(docs.map((d) => [String(d._id), d.title]));
+      for (const row of results) {
+        if (!row.success && titleById.has(String(row.contentId))) {
+          row.title = titleById.get(String(row.contentId));
+        }
       }
     }
 
