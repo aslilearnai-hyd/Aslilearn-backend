@@ -5,8 +5,6 @@
 
 import {
   GEMINI_LITE_MODEL,
-  GEMINI_PREMIUM_OVERFLOW_DEFAULT,
-  GEMINI_PREMIUM_MODEL,
 } from '../providers/gemini-models.js';
 import {
   isAiGeneratorFlashLiteOnlyEnabled,
@@ -27,11 +25,12 @@ function applyFlashLiteOnlyPolicy(settings) {
 export const QUALITY_TIERS = Object.freeze(['fast', 'balanced', 'premium']);
 
 function resolvePremiumGeminiModel() {
-  return String(process.env.AI_GENERATOR_PREMIUM_GEMINI_MODEL || GEMINI_PREMIUM_MODEL).trim();
+  // Always Gemini 3.1 Flash-Lite (client requirement). Ignore Pro env overrides.
+  return GEMINI_LITE_MODEL;
 }
 
 export function getPremiumGeminiFallbackCsv() {
-  return String(process.env.AI_GENERATOR_PREMIUM_GEMINI_OVERFLOW || GEMINI_PREMIUM_OVERFLOW_DEFAULT).trim();
+  return GEMINI_LITE_MODEL;
 }
 
 function resolveBalancedGeminiModel() {
@@ -118,17 +117,13 @@ export function resolveQualityTierSettings(tierInput, overrides = {}) {
     });
   }
 
-  // Premium — the board-grade quality path. Uses the REAL Pro model
-  // (gemini-3.1-pro-preview via resolvePremiumGeminiModel), strict validation, no
-  // template padding, and is NEVER downgraded to Flash-Lite. Use Fast/Balanced for
-  // cheap bulk. This tier must not be flash-lite: a "Premium" that secretly runs the
-  // cheapest model was the root cause of board-unusable content.
-  return {
+  // Premium — stricter validation / more retries on Gemini 3.1 Flash-Lite (never Pro).
+  return applyFlashLiteOnlyPolicy({
     ...base,
     tier,
     strictValidation: true,
     sectionPadEnabled: false,
-    flashLiteOnly: false,
+    flashLiteOnly: true,
     primaryGeminiModel: resolvePremiumGeminiModel(),
     modelOverflow: getPremiumGeminiFallbackCsv(),
     maxValidationAttempts: 5,
@@ -136,7 +131,7 @@ export function resolveQualityTierSettings(tierInput, overrides = {}) {
     geminiRetriesPerModel: 3,
     batchConcurrency: smallBatch ? 2 : 2,
     slotStaggerMs: smallBatch ? 150 : 250,
-  };
+  });
 }
 
 /** Creative bulk tools vs factual extraction tools. */

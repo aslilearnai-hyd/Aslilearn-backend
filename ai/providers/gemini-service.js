@@ -12,6 +12,7 @@ import {
   GEMINI_MODELS_FALLBACK,
   isRetiredOrUnsupportedGeminiModel,
   resolveAllowedGeminiModel,
+  sanitizeGeminiModelChain,
 } from './gemini-models.js';
 import { extractActivitiesFromCuriosityWorkbookPdf } from '../rag/pdf/curiosity-activity-pdf-parser.js';
 import {
@@ -151,7 +152,7 @@ function mergeGeminiModelChain(primaryModel, envFallbackCsv) {
     seen.add(key);
     out.push(m);
   }
-  return out.length ? out : [GEMINI_LITE_MODEL];
+  return sanitizeGeminiModelChain(out.length ? out : [GEMINI_LITE_MODEL]);
 }
 
 function mergeLiteModelChain(primaryModel, envFallbackCsv) {
@@ -178,41 +179,18 @@ function mergeLiteModelChain(primaryModel, envFallbackCsv) {
     seen.add(key);
     out.push(m);
   }
-  return out.length ? out : [GEMINI_LITE_MODEL, GEMINI_LITE_FALLBACK_MODEL];
+  return sanitizeGeminiModelChain(out.length ? out : [GEMINI_LITE_MODEL]);
 }
 
 function isGeminiLiteOnlyPolicy() {
+  // Product rule: never escalate to Pro. Default ON.
   const raw = String(process.env.AI_GENERATOR_FLASH_LITE_ONLY ?? 'true').trim().toLowerCase();
   return raw !== 'false' && raw !== '0' && raw !== 'off';
 }
 
 function getFlashLiteModelChain(primaryLite, isBatchVariant = false) {
-  const litePrimary = resolveAllowedGeminiModel(primaryLite || GEMINI_LITE_MODEL);
-  if (isGeminiLiteOnlyPolicy()) {
-    const chain = [litePrimary];
-    if (!isBatchVariant) return reorderModelChainForCooldown(chain);
-    return reorderModelChainForCooldown(chain);
-  }
-  const overflowCsv =
-    process.env.AI_GENERATOR_GEMINI_LITE_OVERFLOW ||
-    process.env.VIDYA_AI_GEMINI_LITE_OVERFLOW ||
-    GEMINI_LITE_OVERFLOW_DEFAULT;
-  const liteChain = mergeLiteModelChain(litePrimary, overflowCsv);
-  const escalateOn503 =
-    String(process.env.GEMINI_503_ESCALATE_TO_FLASH ?? 'true').trim().toLowerCase() !== 'false' &&
-    String(process.env.GEMINI_503_ESCALATE_TO_FLASH ?? 'true').trim().toLowerCase() !== '0' &&
-    String(process.env.GEMINI_503_ESCALATE_TO_FLASH ?? 'true').trim().toLowerCase() !== 'off';
-  const escalateCsv =
-    process.env.GEMINI_503_ESCALATION_MODELS ||
-    `${GEMINI_FLASH_MODEL},${GEMINI_FLASH_FALLBACK_MODEL}`;
-  const chain = escalateOn503
-    ? mergeGeminiModelChain(liteChain.join(','), escalateCsv)
-    : liteChain;
-  if (!isBatchVariant) return reorderModelChainForCooldown(chain);
-  const maxModels = Number(process.env.GEMINI_BATCH_LITE_MODELS);
-  if (Number.isFinite(maxModels) && maxModels > 0) {
-    return reorderModelChainForCooldown(chain.slice(0, Math.min(maxModels, chain.length)));
-  }
+  // Always Flash-Lite only — ignore overflow env that might list Pro.
+  const chain = sanitizeGeminiModelChain([primaryLite || GEMINI_LITE_MODEL, GEMINI_LITE_MODEL]);
   return reorderModelChainForCooldown(chain);
 }
 

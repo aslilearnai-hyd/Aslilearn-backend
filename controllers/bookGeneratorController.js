@@ -44,7 +44,7 @@ export async function listBookBasedTools(req, res) {
       maxInr: BOOK_GENERATOR_MAX_INR,
       uniquenessTarget: BOOK_GENERATOR_UNIQUENESS_TARGET,
       qualityTiers: {
-        premium: { model: 'gemini-3.1-pro-preview', label: 'Premium', concurrency: 2 },
+        premium: { model: 'gemini-3.1-flash-lite', label: 'Premium', concurrency: 1 },
         balanced: { model: 'gemini-3.1-flash-lite', label: 'Balanced', concurrency: 2 },
         fast: { model: 'gemini-3.1-flash-lite', label: 'Fast', concurrency: 1 },
       },
