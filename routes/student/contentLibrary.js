@@ -84,7 +84,7 @@ router.get('/asli-prep-content', async (req, res) => {
     console.log('Query params:', { subject, type, topic, surface });
 
     const { getStudentSchoolProgramContext, applySchoolProgramContentFilters, isAllowedContentType } =
-      await import('../utils/schoolProgram.js');
+      await import('../../utils/schoolProgram.js');
     const programCtx = {
       ...(await getStudentSchoolProgramContext(req.userId)),
       surface,
@@ -129,7 +129,7 @@ router.get('/asli-prep-content', async (req, res) => {
     }
 
     const { filterToActiveCatalogSubjectIds, buildActiveSubjectIdSet, filterContentRowsForActiveCatalog } =
-      await import('../utils/activeCatalog.js');
+      await import('../../utils/activeCatalog.js');
     librarySubjectIds = await filterToActiveCatalogSubjectIds(librarySubjectIds);
 
     if (librarySubjectIds.length === 0) {
@@ -194,7 +194,7 @@ router.get('/asli-prep-content', async (req, res) => {
       normalizeClassNumberLabel,
       resolveStudentClassNumber,
       filterContentsForStudentClass,
-    } = await import('../utils/studentClassContent.js');
+    } = await import('../../utils/studentClassContent.js');
     const studentClassNumber = resolveStudentClassNumber(student, studentClassDoc);
 
     if (!studentClassNumber) {
@@ -234,10 +234,10 @@ router.get('/asli-prep-content', async (req, res) => {
 
     console.log(`✅ Found ${contents.length} contents for student's class subjects (after class/subject filters)`);
 
-    const { enrichContentDurations } = await import('../utils/enrichContentDurations.js');
+    const { enrichContentDurations } = await import('../../utils/enrichContentDurations.js');
     contents = await enrichContentDurations(contents);
 
-    const { dedupeLibraryContents } = await import('../utils/dedupeLibraryContents.js');
+    const { dedupeLibraryContents } = await import('../../utils/dedupeLibraryContents.js');
     contents = dedupeLibraryContents(contents);
 
     res.json({

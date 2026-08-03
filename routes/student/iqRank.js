@@ -83,8 +83,8 @@ router.get('/iq-rank-quizzes', async (req, res) => {
       return res.json({ success: true, data: [] });
     }
 
-    const { isTrialQuizAudience } = await import('../utils/individualAccount.js');
-    const IQRankQuiz = (await import('../models/IQRankQuiz.js')).default;
+    const { isTrialQuizAudience } = await import('../../utils/individualAccount.js');
+    const IQRankQuiz = (await import('../../models/IQRankQuiz.js')).default;
 
     let studentClassNumber = null;
     if (student.assignedClass?.classNumber) {
@@ -150,13 +150,13 @@ router.get('/trial-login-quizzes', async (req, res) => {
       return res.json({ success: true, data: [] });
     }
 
-    const { isTrialQuizAudience } = await import('../utils/individualAccount.js');
+    const { isTrialQuizAudience } = await import('../../utils/individualAccount.js');
     if (!isTrialQuizAudience(student)) {
       return res.json({ success: true, data: [] });
     }
 
-    const IQRankQuiz = (await import('../models/IQRankQuiz.js')).default;
-    const IQRankQuizResult = (await import('../models/IQRankQuizResult.js')).default;
+    const IQRankQuiz = (await import('../../models/IQRankQuiz.js')).default;
+    const IQRankQuizResult = (await import('../../models/IQRankQuizResult.js')).default;
 
     const quizzes = await IQRankQuiz.find({
       isActive: true,
@@ -194,9 +194,9 @@ router.get('/iq-rank-questions', async (req, res) => {
       return res.json({ success: true, data: [] });
     }
 
-    const { isTrialQuizAudience } = await import('../utils/individualAccount.js');
-    const IQRankQuestion = (await import('../models/IQRankQuestion.js')).default;
-    const IQRankQuiz = (await import('../models/IQRankQuiz.js')).default;
+    const { isTrialQuizAudience } = await import('../../utils/individualAccount.js');
+    const IQRankQuestion = (await import('../../models/IQRankQuestion.js')).default;
+    const IQRankQuiz = (await import('../../models/IQRankQuiz.js')).default;
 
     if (quizId) {
       const quiz = await IQRankQuiz.findById(quizId).populate('subject', 'name').populate('questions');
@@ -325,7 +325,7 @@ router.post('/iq-rank-quiz-result', async (req, res) => {
       });
     }
 
-    const { isTrialQuizAudience } = await import('../utils/individualAccount.js');
+    const { isTrialQuizAudience } = await import('../../utils/individualAccount.js');
 
     // Get student's class number
     let studentClassNumber = null;
@@ -346,7 +346,7 @@ router.post('/iq-rank-quiz-result', async (req, res) => {
       });
     }
 
-    const IQRankQuizResult = (await import('../models/IQRankQuizResult.js')).default;
+    const IQRankQuizResult = (await import('../../models/IQRankQuizResult.js')).default;
 
     const existingResult = quizId
       ? await IQRankQuizResult.findOne({ userId: req.userId, quizId })
@@ -401,7 +401,7 @@ router.post('/iq-rank-quiz-result', async (req, res) => {
 // Get IQ/Rank Boost quiz results for student (grouped by subject)
 router.get('/iq-rank-quiz-results', async (req, res) => {
   try {
-    const IQRankQuizResult = (await import('../models/IQRankQuizResult.js')).default;
+    const IQRankQuizResult = (await import('../../models/IQRankQuizResult.js')).default;
 
     const results = await IQRankQuizResult.find({
       userId: req.userId

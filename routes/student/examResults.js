@@ -92,7 +92,7 @@ router.get('/exam-results', async (req, res) => {
       ? new mongoose.Types.ObjectId(req.userId) 
       : req.userId;
 
-    const ExamResult = (await import('../models/ExamResult.js')).default;
+    const ExamResult = (await import('../../models/ExamResult.js')).default;
 
     // Do NOT populate examId: if the Exam doc was removed, populate() sets examId to null
     // and the client loses the id (breaks Attempted Exams / rankings). examTitle is on the row.
@@ -217,7 +217,7 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
     }
     const examObjectId = new mongoose.Types.ObjectId(examIdStr);
 
-    const ExamResultModel = (await import('../models/ExamResult.js')).default;
+    const ExamResultModel = (await import('../../models/ExamResult.js')).default;
     let savedExamResult = null;
     const resultDocId = result._id || result.resultId;
     if (resultDocId && mongoose.Types.ObjectId.isValid(String(resultDocId))) {
@@ -1450,7 +1450,7 @@ router.get('/exam-results/:examId/review', async (req, res) => {
     }
 
     const mongooseLib = (await import('mongoose')).default;
-    const ExamResult = (await import('../models/ExamResult.js')).default;
+    const ExamResult = (await import('../../models/ExamResult.js')).default;
     let latestResult = null;
 
     const examIdFilter = mongooseLib.Types.ObjectId.isValid(examId)
@@ -1884,7 +1884,7 @@ router.post('/exam-results', async (req, res) => {
       isAnswerCorrect,
     });
 
-    const ExamResult = (await import('../models/ExamResult.js')).default;
+    const ExamResult = (await import('../../models/ExamResult.js')).default;
     const maxAttempts = Math.max(1, Number(examDoc?.maxAttempts) || 1);
     const priorCount = await ExamResult.countDocuments({
       userId: req.userId,
@@ -1943,7 +1943,7 @@ router.post('/exam-results', async (req, res) => {
     }
 
     try {
-      const { createPostExamPrompt } = await import('../services/vidya-student/post-exam-trigger-service.js');
+      const { createPostExamPrompt } = await import('../../services/vidya-student/post-exam-trigger-service.js');
       const weakTopics = perQuestionAnalytics
         .filter((q) => q.status === 'wrong' || q.status === 'not_answered')
         .map((q) => ({
@@ -2017,7 +2017,7 @@ router.get('/exam/:examId/advanced-analytics', async (req, res) => {
       return res.status(400).json({ success: false, message: 'Invalid exam id' });
     }
 
-    const ExamResult = (await import('../models/ExamResult.js')).default;
+    const ExamResult = (await import('../../models/ExamResult.js')).default;
     const { resultId } = req.query;
     let latestResult = null;
 

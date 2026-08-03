@@ -98,7 +98,7 @@ router.post('/homework-submission', async (req, res) => {
     }
 
     // Get homework content to verify it exists and get subject
-    const Content = (await import('../models/Content.js')).default;
+    const Content = (await import('../../models/Content.js')).default;
     const homework = await Content.findById(homeworkId)
       .populate('subject', 'name');
     
@@ -167,7 +167,7 @@ router.post('/homework-submission', async (req, res) => {
       });
     }
 
-    const HomeworkSubmission = (await import('../models/HomeworkSubmission.js')).default;
+    const HomeworkSubmission = (await import('../../models/HomeworkSubmission.js')).default;
 
     // Check if submission already exists
     const existingSubmission = await HomeworkSubmission.findOne({
@@ -222,7 +222,7 @@ router.get('/homework-submission/:homeworkId', async (req, res) => {
   try {
     const { homeworkId } = req.params;
 
-    const HomeworkSubmission = (await import('../models/HomeworkSubmission.js')).default;
+    const HomeworkSubmission = (await import('../../models/HomeworkSubmission.js')).default;
 
     const submission = await HomeworkSubmission.findOne({
       homeworkId: homeworkId,
@@ -255,7 +255,7 @@ router.get('/homework-submission/:homeworkId', async (req, res) => {
 // Get all homework submissions for student
 router.get('/homework-submissions', async (req, res) => {
   try {
-    const HomeworkSubmission = (await import('../models/HomeworkSubmission.js')).default;
+    const HomeworkSubmission = (await import('../../models/HomeworkSubmission.js')).default;
 
     const submissions = await HomeworkSubmission.find({
       studentId: req.userId
