@@ -1290,7 +1290,13 @@ export function validateDashboardAiToolContent(toolSlug, rawContent, options = {
       const activityCore =
         (slug === 'activity-project-generator' || slug === 'project-idea-lab') &&
         activityDashboardHasCorePayload(slug, structured, content);
-      if (!usableFlashcards && !activityCore) {
+      const homeworkCore =
+        slug === 'homework-creator' &&
+        ((Array.isArray(structured?.practice_questions) && structured.practice_questions.length >= 1) ||
+          (Array.isArray(structured?.questions) && structured.questions.length >= 1) ||
+          (Array.isArray(structured?.application_tasks) && structured.application_tasks.length >= 1) ||
+          String(structured?.creative_task || structured?.creativeTask || '').trim().length >= 20);
+      if (!usableFlashcards && !activityCore && !homeworkCore) {
         /*
          * Propagate WHICH sections are missing, not just that something is.
          *

@@ -102,6 +102,24 @@ export function buildTopicNameVariants(topic) {
 
   addDashParts(tn);
 
+  // AI Tool Topics often use "Chapter-5 - Title"; generations may store "Chapter 5 - Title".
+  const chapterNormalized = tn.replace(
+    /^(chapter)\s*[-–—.]?\s*(\d+)\b/i,
+    (_, _c, num) => `Chapter ${num}`,
+  );
+  if (chapterNormalized && chapterNormalized !== tn) {
+    variants.add(chapterNormalized);
+    addDashParts(chapterNormalized);
+  }
+  const chapterHyphenated = tn.replace(
+    /^(chapter)\s+(\d+)\b/i,
+    (_, _c, num) => `Chapter-${num}`,
+  );
+  if (chapterHyphenated && chapterHyphenated !== tn) {
+    variants.add(chapterHyphenated);
+    addDashParts(chapterHyphenated);
+  }
+
   // "Book 1: Title - …" / "Book 1 Chapter 2 - …"
   const withoutBook = tn.replace(/^book\s*\d+\s*:\s*/i, '').trim();
   if (withoutBook && withoutBook !== tn) {
@@ -114,10 +132,22 @@ export function buildTopicNameVariants(topic) {
     addDashParts(withoutBookChapter);
   }
 
-  const withoutChapter = tn.replace(/^chapter\s+\d+\s*[-:]\s*/i, '').trim();
+  // Strip "Chapter 5 -" / "Chapter-5 -" / "Chapter 5:" prefix → bare title
+  const withoutChapter = tn
+    .replace(/^chapter\s*[-–—.]?\s*\d+\s*[-–—:]\s*/i, '')
+    .replace(/^chapter\s+\d+\s*[-:]\s*/i, '')
+    .trim();
   if (withoutChapter && withoutChapter !== tn) variants.add(withoutChapter);
 
-  return [...variants];
+  // "5. Title" / "5) Title"
+  const numbered = tn.match(/^(\d+)[\.)]\s*(.+)$/);
+  if (numbered?.[2]) {
+    variants.add(numbered[2].trim());
+    variants.add(`Chapter ${numbered[1]} - ${numbered[2].trim()}`);
+    variants.add(`Chapter-${numbered[1]} - ${numbered[2].trim()}`);
+  }
+
+  return [...variants].map((v) => normalizeMatchText(v)).filter(Boolean);
 }
 
 /** Subtopic variants — numbered prefixes, chapter crumbs, dash suffixes. */
@@ -246,6 +276,19 @@ export function applyClassLabelMongoFilter(baseFilter, classLabel, board = '') {
 
 /** Scope filter: board + class + subject (no topic/subtopic/tool). */
 export function buildAiToolDataScopeFilter({ classLabel, subject, board }) {
+  const normalizedClass = normalizeClassId(classLabel);
+  const isIitClass6 =
+    lockBoardKey(board) === 'IIT/NEET' && normalizedClass === 'Class 6';
+
+  // IIT Class 6: classLabel filter already encodes board (incl. empty-board legacy rows).
+  // Do not also AND a top-level board regex — that made empty-board Class 6 rows impossible.
+  if (isIitClass6) {
+    return mergeMongoFilters(
+      buildClassLabelMongoFilter(classLabel, board),
+      buildSubjectMongoFilter(subject, board),
+    );
+  }
+
   return mergeMongoFilters(
     buildBoardMongoFilter(board),
     buildClassLabelMongoFilter(classLabel, board),

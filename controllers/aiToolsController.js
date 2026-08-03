@@ -634,7 +634,9 @@ export const getGeneratedContent = async (req, res) => {
     const classInput = req.query.class ?? req.query.classLabel ?? req.query.classNumber;
     const subject = normalizeTeacherSubjectForValidation(String(req.query.subject || '').trim());
     const topic = normalizeTopicSub(req.query.topic);
-    const subTopic = normalizeTopicSub(req.query.subTopic || req.query.subtopic);
+    const { isWholeChapterSubtopic } = await import('../utils/questionComposition.js');
+    const rawSubTopic = normalizeTopicSub(req.query.subTopic || req.query.subtopic);
+    const subTopic = isWholeChapterSubtopic(rawSubTopic) ? '' : rawSubTopic;
     const toolType = String(req.query.toolType || '').trim();
 
     if (!classInput || !subject) {
