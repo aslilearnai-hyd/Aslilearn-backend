@@ -886,7 +886,14 @@ Important rules:
   const attemptErrors = [];
   let sawQuotaError = false;
   let sawDeniedError = false;
-  const requestTimeoutMs = Number(process.env.GEMINI_PDF_REQUEST_TIMEOUT_MS) || 120000;
+  // 0 / unset = no abort (papers can take many minutes; size in MB is not the limiter).
+  const requestTimeoutMs = (() => {
+    if (process.env.GEMINI_PDF_REQUEST_TIMEOUT_MS === undefined || process.env.GEMINI_PDF_REQUEST_TIMEOUT_MS === '') {
+      return 0;
+    }
+    const n = Number(process.env.GEMINI_PDF_REQUEST_TIMEOUT_MS);
+    return Number.isFinite(n) && n >= 0 ? n : 0;
+  })();
 
   // Hard budget on Gemini calls per upload. Every call re-sends the whole PDF,
   // so an unbounded retry cascade multiplies cost. ~6 calls handles an 80-question
@@ -899,6 +906,9 @@ Important rules:
   const callBudgetExhausted = () => usageTotals.calls >= maxCallsPerUpload;
 
   const fetchWithTimeout = async (url, options) => {
+    if (!requestTimeoutMs) {
+      return fetch(url, options);
+    }
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), requestTimeoutMs);
     try {
@@ -3250,6 +3260,15 @@ export const bulkUploadQuestions = async (req, res) => {
 // Convert PDF questions to normalized row format for preview / CSV download.
 export const convertPdfToQuestions = async (req, res) => {
   try {
+    // Keep the HTTP socket open for long Gemini runs (no idle kill on this route).
+    try {
+      req.setTimeout?.(0);
+      res.setTimeout?.(0);
+      req.socket?.setTimeout?.(0);
+    } catch {
+      /* ignore */
+    }
+
     const { examId } = req.params;
     if (!mongoose.Types.ObjectId.isValid(examId)) {
       return res.status(400).json({ success: false, message: 'Invalid exam ID format' });

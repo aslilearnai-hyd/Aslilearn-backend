@@ -22,8 +22,9 @@ const server = app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server accessible at http://0.0.0.0:${PORT}`);
   console.log(`Environment: ${nodeEnvEffective}`);
 });
-server.timeout = Number(process.env.SERVER_TIMEOUT_MS || 300_000);
-server.requestTimeout = Number(process.env.SERVER_REQUEST_TIMEOUT_MS || 310_000);
+// 0 = no limit (needed for long PDF/Gemini exam extraction). Override via env if desired.
+server.timeout = Number(process.env.SERVER_TIMEOUT_MS ?? 0);
+server.requestTimeout = Number(process.env.SERVER_REQUEST_TIMEOUT_MS ?? 0);
 server.headersTimeout = Number(process.env.SERVER_HEADERS_TIMEOUT_MS || 65_000);
 server.keepAliveTimeout = Number(process.env.SERVER_KEEPALIVE_MS || 120_000);
 

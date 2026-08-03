@@ -54,8 +54,10 @@ export async function ensureBookContentIdIndex() {
 }
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const BOOK_UPLOAD_DIR = path.join(__dirname, '..', 'uploads', 'book-knowledge');
-const CONTENT_UPLOAD_DIR = path.join(__dirname, '..', 'uploads', 'content');
+// Controllers live under ai/rag/books — resolve to backend/uploads (same as express.static).
+const BACKEND_ROOT = path.resolve(__dirname, '../../..');
+const BOOK_UPLOAD_DIR = path.join(BACKEND_ROOT, 'uploads', 'book-knowledge');
+const CONTENT_UPLOAD_DIR = path.join(BACKEND_ROOT, 'uploads', 'content');
 
 const IMPORTABLE_CONTENT_TYPES = new Set(['TextBook', 'Workbook', 'Material']);
 const IMPORTABLE_EXTENSIONS = new Set(['.pdf', '.docx', '.txt']);
@@ -562,8 +564,19 @@ async function readContentFileBuffer(fileUrl) {
     throw new Error('Only server-uploaded learning-path files can be imported.');
   }
   const relative = normalized.replace(/^\/uploads\/content\//, '');
-  const localPath = path.join(CONTENT_UPLOAD_DIR, relative);
-  return fs.readFile(localPath);
+  // Prevent path traversal outside the content uploads folder.
+  const localPath = path.resolve(CONTENT_UPLOAD_DIR, relative);
+  if (!localPath.startsWith(path.resolve(CONTENT_UPLOAD_DIR) + path.sep) && localPath !== path.resolve(CONTENT_UPLOAD_DIR)) {
+    throw new Error('Invalid content file path.');
+  }
+  try {
+    return await fs.readFile(localPath);
+  } catch (err) {
+    if (err?.code === 'ENOENT') {
+      throw new Error(`Learning-path file missing on disk: ${normalized}`);
+    }
+    throw err;
+  }
 }
 
 /** List learning-path textbooks/materials that can be linked to the book knowledge base. */
