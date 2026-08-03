@@ -75,6 +75,12 @@ router.post('/homework', async (req, res) => {
     }
     
     const librarySubjectIds = getExplicitTeacherSubjectObjectIds(teacher);
+    if (!mongoose.Types.ObjectId.isValid(String(subject))) {
+      return res.status(400).json({
+        success: false,
+        message: 'Invalid subject selected. Please choose a subject from the list and try again.',
+      });
+    }
     const subjectId = new mongoose.Types.ObjectId(subject);
     const { getTeacherSchoolProgramContext } = await import('../../utils/schoolProgram.js');
     const { boardsForSchoolContentScope } = await import('../../constants/boards.js');
@@ -138,10 +144,17 @@ router.post('/homework', async (req, res) => {
     });
   } catch (error) {
     console.error('Teacher homework upload error:', error);
-    res.status(500).json({ 
-      success: false, 
-      message: 'Failed to upload homework', 
-      error: error.message 
+    const mongooseMsg =
+      error?.name === 'ValidationError'
+        ? Object.values(error.errors || {})
+            .map((e) => e?.message)
+            .filter(Boolean)
+            .join('; ')
+        : '';
+    res.status(500).json({
+      success: false,
+      message: mongooseMsg || error?.message || 'Failed to upload homework',
+      error: error?.message,
     });
   }
 });

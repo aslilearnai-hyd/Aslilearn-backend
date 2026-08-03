@@ -32,6 +32,33 @@ export const INDIVIDUAL_CLASS_OPTIONS = [
   'Class 12',
 ];
 
+export const ACCOUNT_SOURCES = [
+  'web_register',
+  'mobile_register',
+  'super_admin',
+  'legacy',
+];
+
+export const ACCOUNT_SOURCE_LABELS = {
+  web_register: 'Self-signup · Web',
+  mobile_register: 'Self-signup · Mobile',
+  super_admin: 'Added by Super Admin',
+  legacy: 'Self-signup · Legacy',
+};
+
+export function normalizeAccountSource(raw, fallback = 'legacy') {
+  const value = String(raw || '')
+    .toLowerCase()
+    .trim();
+  if (ACCOUNT_SOURCES.includes(value)) return value;
+  return fallback;
+}
+
+export function accountSourceLabel(source) {
+  const key = normalizeAccountSource(source);
+  return ACCOUNT_SOURCE_LABELS[key] || ACCOUNT_SOURCE_LABELS.legacy;
+}
+
 export function buildTrialWindow(fromDate = new Date(), days = INDIVIDUAL_TRIAL_DAYS) {
   const trialStartsAt = new Date(fromDate);
   const trialEndsAt = new Date(trialStartsAt);
@@ -84,6 +111,15 @@ export function normalizeIndividualSignupBody(body = {}) {
   const interestedCourses = normalizeStringList(body.interestedCourses || body.courses);
   const interestedSubjects = normalizeStringList(body.interestedSubjects || body.subjects);
   const iitCategories = normalizeIitCategories(body.iitCategories || body.products);
+  const accountSource = normalizeAccountSource(
+    body.accountSource || body.source,
+    'web_register',
+  );
+  const trialDaysRaw = Number(body.trialDays);
+  const trialDays =
+    Number.isFinite(trialDaysRaw) && trialDaysRaw > 0
+      ? Math.min(365, Math.floor(trialDaysRaw))
+      : INDIVIDUAL_TRIAL_DAYS;
 
   if (!fullName) return { ok: false, message: 'Full name is required.' };
   if (!email || !email.includes('@')) return { ok: false, message: 'Valid email is required.' };
@@ -102,7 +138,7 @@ export function normalizeIndividualSignupBody(body = {}) {
     return { ok: false, message: 'Select at least one subject.' };
   }
 
-  const { trialStartsAt, trialEndsAt } = buildTrialWindow();
+  const { trialStartsAt, trialEndsAt } = buildTrialWindow(new Date(), trialDays);
 
   return {
     ok: true,
@@ -118,12 +154,13 @@ export function normalizeIndividualSignupBody(body = {}) {
       interestedCourses,
       interestedSubjects,
       iitCategories,
+      accountSource,
       isIndividualAccount: true,
       isAsliPrepExclusive: iitCategories.length > 0,
       subscriptionStatus: 'trial',
       trialStartsAt,
       trialEndsAt,
-      trialDays: INDIVIDUAL_TRIAL_DAYS,
+      trialDays,
     },
   };
 }

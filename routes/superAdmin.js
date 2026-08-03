@@ -54,7 +54,9 @@ import {
 } from '../controllers/impactReportController.js';
 import {
   listTrialMembers,
+  createTrialMember,
   updateTrialMember,
+  deleteTrialMember,
   applyTrialMemberDefaults,
 } from '../controllers/trialMembersController.js';
 import { listAuditLogs } from '../controllers/auditLogController.js';
@@ -124,7 +126,7 @@ import {
   deleteAllQuestions,
   normalizeExamClassFields
 } from '../controllers/superAdminExamController.js';
-import { getCalendarEvents, createCalendarEvent } from '../controllers/calendarController.js';
+import { getCalendarEvents, createCalendarEvent, deleteCalendarEvent } from '../controllers/calendarController.js';
 import {
   createSchoolOrder,
   listSchoolOrders,
@@ -467,6 +469,7 @@ router.post('/change-password', changeSuperAdminPassword);
 // School calendar (before generic /:param routes)
 router.get('/calendar/events', getCalendarEvents);
 router.post('/calendar/events', createCalendarEvent);
+router.delete('/calendar/events/:id', deleteCalendarEvent);
 
 // Dashboard
 router.get('/dashboard/stats', getDashboardStats);
@@ -624,7 +627,9 @@ router.post('/courses', validateRequest(createCourseSchema), createCourse);
 
 // Individual trial members (B2C teacher/student signups)
 router.get('/trial-members', listTrialMembers);
+router.post('/trial-members', createTrialMember);
 router.put('/trial-members/:id', updateTrialMember);
+router.delete('/trial-members/:id', deleteTrialMember);
 router.post('/trial-members/apply-defaults', applyTrialMemberDefaults);
 
 // Product categories (IIT Alpha/Beta/Gamma + Super Admin custom tracks)

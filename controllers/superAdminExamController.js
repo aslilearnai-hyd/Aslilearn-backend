@@ -1777,6 +1777,51 @@ export const createExam = async (req, res) => {
       });
     }
 
+    const parsedDuration = parseInt(duration, 10);
+    if (!Number.isFinite(parsedDuration) || parsedDuration < 1) {
+      return res.status(400).json({
+        success: false,
+        message: 'duration must be a number >= 1 (minutes)',
+      });
+    }
+
+    const parsedTotalQuestions = parseInt(totalQuestions, 10);
+    if (!Number.isFinite(parsedTotalQuestions) || parsedTotalQuestions < 1) {
+      return res.status(400).json({
+        success: false,
+        message: 'totalQuestions must be a number >= 1',
+      });
+    }
+
+    const parsedTotalMarks = parseInt(totalMarks, 10);
+    if (!Number.isFinite(parsedTotalMarks) || parsedTotalMarks < 1) {
+      return res.status(400).json({
+        success: false,
+        message: 'totalMarks must be a number >= 1',
+      });
+    }
+
+    if (!startDate || !endDate) {
+      return res.status(400).json({
+        success: false,
+        message: 'startDate and endDate are required',
+      });
+    }
+    const parsedStart = new Date(startDate);
+    const parsedEnd = new Date(endDate);
+    if (Number.isNaN(parsedStart.getTime()) || Number.isNaN(parsedEnd.getTime())) {
+      return res.status(400).json({
+        success: false,
+        message: 'startDate and endDate must be valid dates',
+      });
+    }
+    if (parsedEnd < parsedStart) {
+      return res.status(400).json({
+        success: false,
+        message: 'endDate must be on or after startDate',
+      });
+    }
+
     // For Super Admin, we need a valid ObjectId for createdBy
     // Since Super Admin doesn't have a User document, we'll create a dummy ObjectId
     // or handle it differently. Let's use mongoose.Types.ObjectId to create a valid ID
@@ -1800,12 +1845,12 @@ export const createExam = async (req, res) => {
       subject: normalizedSubjects[0],
       subjects: normalizedSubjects,
       maxAttempts: parsedMaxAttempts,
-      duration: parseInt(duration),
-      totalQuestions: parseInt(totalQuestions),
-      totalMarks: parseInt(totalMarks),
+      duration: parsedDuration,
+      totalQuestions: parsedTotalQuestions,
+      totalMarks: parsedTotalMarks,
       instructions: instructions?.trim() || '',
-      startDate: new Date(startDate),
-      endDate: new Date(endDate),
+      startDate: parsedStart,
+      endDate: parsedEnd,
       board: examBoardUpper,
       createdByRole: 'super-admin',
       createdBy: createdById,
@@ -2122,8 +2167,24 @@ export const updateExam = async (req, res) => {
       exam.totalMarks = parsedTM;
     }
     if (instructions !== undefined) exam.instructions = instructions?.trim() || '';
-    if (startDate) exam.startDate = new Date(startDate);
-    if (endDate) exam.endDate = new Date(endDate);
+    if (startDate || endDate) {
+      const nextStart = startDate ? new Date(startDate) : exam.startDate;
+      const nextEnd = endDate ? new Date(endDate) : exam.endDate;
+      if (startDate && Number.isNaN(nextStart.getTime())) {
+        return res.status(400).json({ success: false, message: 'startDate must be a valid date' });
+      }
+      if (endDate && Number.isNaN(nextEnd.getTime())) {
+        return res.status(400).json({ success: false, message: 'endDate must be a valid date' });
+      }
+      if (nextStart && nextEnd && nextEnd < nextStart) {
+        return res.status(400).json({
+          success: false,
+          message: 'endDate must be on or after startDate',
+        });
+      }
+      if (startDate) exam.startDate = nextStart;
+      if (endDate) exam.endDate = nextEnd;
+    }
     if (board !== undefined && board !== null && String(board).trim() !== '') {
       const bu = String(board).toUpperCase().trim();
       if (!isValidSchoolBoard(bu)) {

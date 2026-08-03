@@ -31,7 +31,9 @@ export const createAdminSchema = Joi.object({
   secondaryContactPerson: Joi.string().allow('', null).optional(),
   secondaryContactPhone: Joi.string().allow('', null).optional(),
   place: Joi.string().allow('', null).optional(),
-  pin: Joi.string().allow('', null).optional(),
+  pin: Joi.string().pattern(/^[1-9]\d{5}$/).allow('', null).optional().messages({
+    'string.pattern.base': 'Pincode must be exactly 6 digits (Indian PIN)',
+  }),
   schoolDetails: Joi.object().unknown(true).optional(),
 }).unknown(true);
 

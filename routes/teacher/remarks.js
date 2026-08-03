@@ -116,8 +116,8 @@ router.post('/students/:studentId/remarks', async (req, res) => {
     const { studentId } = req.params;
     const { remark, subject, isPositive } = req.body;
 
-    if (!remark || remark.trim().length === 0) {
-      return res.status(400).json({ success: false, message: 'Remark is required' });
+    if (!remark || typeof remark !== 'string' || remark.trim().length === 0) {
+      return res.status(400).json({ success: false, message: 'Remark is required and cannot be empty' });
     }
 
     const teacher = await Teacher.findById(teacherId);
@@ -284,8 +284,8 @@ router.put('/remarks/:remarkId', async (req, res) => {
     const { remarkId } = req.params;
     const { remark, isPositive } = req.body;
 
-    if (!remark || remark.trim().length === 0) {
-      return res.status(400).json({ success: false, message: 'Remark is required' });
+    if (!remark || typeof remark !== 'string' || remark.trim().length === 0) {
+      return res.status(400).json({ success: false, message: 'Remark is required and cannot be empty' });
     }
 
     // Find remark and verify ownership

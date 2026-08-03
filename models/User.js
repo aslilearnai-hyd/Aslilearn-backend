@@ -132,6 +132,15 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  /**
+   * Where this individual (B2C) account came from.
+   * legacy = pre-source-tracking self-signups.
+   */
+  accountSource: {
+    type: String,
+    enum: ['web_register', 'mobile_register', 'super_admin', 'legacy'],
+    default: 'legacy',
+  },
   /** Courses the individual selected at signup (e.g. IIT Foundation, NEET, CBSE). */
   interestedCourses: {
     type: [String],

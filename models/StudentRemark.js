@@ -15,8 +15,12 @@ const studentRemarkSchema = new mongoose.Schema({
   },
   remark: {
     type: String,
-    required: true,
-    trim: true
+    required: [true, 'Remark is required'],
+    trim: true,
+    validate: {
+      validator: (v) => String(v ?? '').trim().length > 0,
+      message: 'Remark cannot be empty',
+    },
   },
   subject: {
     type: mongoose.Schema.Types.ObjectId,

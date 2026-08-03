@@ -1,5 +1,6 @@
 import User from '../models/User.js';
 import Teacher from '../models/Teacher.js';
+import bcrypt from 'bcryptjs';
 import {
   ALL_CONTENT_TYPES,
   NORMAL_SCHOOL_CONTENT_TYPES,
@@ -8,6 +9,9 @@ import {
   buildTrialWindow,
   resolveIndividualAccess,
   INDIVIDUAL_TRIAL_DAYS,
+  normalizeIndividualSignupBody,
+  normalizeAccountSource,
+  accountSourceLabel,
 } from '../utils/individualAccount.js';
 
 const VALID_CONTENT_TYPES = new Set([...ALL_CONTENT_TYPES, ...NORMAL_SCHOOL_CONTENT_TYPES]);
@@ -21,6 +25,7 @@ function formatMember(doc, role) {
     Boolean(doc.isIndividualAccount) &&
     (!ends || now >= ends) &&
     access.subscriptionStatus !== 'active';
+  const accountSource = normalizeAccountSource(doc.accountSource, 'legacy');
 
   return {
     id: String(doc._id),
@@ -34,6 +39,8 @@ function formatMember(doc, role) {
     interestedCourses: doc.interestedCourses || [],
     interestedSubjects: doc.interestedSubjects || [],
     iitCategories: doc.iitCategories || [],
+    accountSource,
+    accountSourceLabel: accountSourceLabel(accountSource),
     isActive: doc.isActive !== false,
     subscriptionStatus: access.subscriptionStatus,
     trialStartsAt: doc.trialStartsAt || null,
@@ -251,7 +258,9 @@ export async function listTrialMembers(req, res) {
           m.fullName.toLowerCase().includes(q) ||
           m.email.toLowerCase().includes(q) ||
           m.schoolName.toLowerCase().includes(q) ||
-          m.phone.includes(q),
+          m.phone.includes(q) ||
+          (m.accountSourceLabel || '').toLowerCase().includes(q) ||
+          (m.accountSource || '').toLowerCase().includes(q),
       );
     }
 
@@ -305,6 +314,140 @@ export async function updateTrialMember(req, res) {
   } catch (error) {
     console.error('updateTrialMember error:', error);
     res.status(500).json({ success: false, message: 'Failed to update trial member' });
+  }
+}
+
+/**
+ * POST /api/super-admin/trial-members
+ * Create an individual trial member (teacher or student) from Super Admin.
+ */
+export async function createTrialMember(req, res) {
+  try {
+    const parsed = normalizeIndividualSignupBody({
+      ...req.body,
+      accountSource: 'super_admin',
+    });
+    if (!parsed.ok) {
+      return res.status(400).json({ success: false, message: parsed.message });
+    }
+    const d = parsed.data;
+
+    const existingUser = await User.findOne({ email: d.email });
+    if (existingUser) {
+      return res.status(400).json({
+        success: false,
+        message: 'An account with this email already exists',
+      });
+    }
+    const existingTeacher = await Teacher.findOne({ email: d.email });
+    if (existingTeacher) {
+      return res.status(400).json({
+        success: false,
+        message: 'An account with this email already exists',
+      });
+    }
+
+    const hashedPassword = await bcrypt.hash(d.password, 12);
+    const trialFields = {
+      isIndividualAccount: true,
+      schoolName: d.schoolName,
+      phone: d.phone,
+      classNumber: d.classNumber || 'Unassigned',
+      curriculumBoard: d.curriculumBoard,
+      board: d.isAsliPrepExclusive ? 'ASLI_EXCLUSIVE_SCHOOLS' : d.curriculumBoard,
+      isAsliPrepExclusive: d.isAsliPrepExclusive,
+      iitCategories: d.iitCategories,
+      interestedCourses: d.interestedCourses,
+      interestedSubjects: d.interestedSubjects,
+      accountSource: 'super_admin',
+      subscriptionStatus: 'trial',
+      trialStartsAt: d.trialStartsAt,
+      trialEndsAt: d.trialEndsAt,
+      trialAdminNotes: String(req.body.trialAdminNotes || '').trim(),
+      trialAllowedContentTypes: normalizeContentTypes(req.body.trialAllowedContentTypes),
+      trialAllowedAiTools: normalizeToolSlugs(req.body.trialAllowedAiTools),
+    };
+
+    if (d.role === 'teacher') {
+      const teacher = new Teacher({
+        email: d.email,
+        password: hashedPassword,
+        fullName: d.fullName,
+        phone: d.phone,
+        school: d.schoolName,
+        schoolName: d.schoolName,
+        board: trialFields.board,
+        curriculumBoard: d.curriculumBoard,
+        classNumber: d.classNumber,
+        iitCategories: d.iitCategories,
+        interestedCourses: d.interestedCourses,
+        interestedSubjects: d.interestedSubjects,
+        accountSource: 'super_admin',
+        isIndividualAccount: true,
+        subscriptionStatus: 'trial',
+        trialStartsAt: d.trialStartsAt,
+        trialEndsAt: d.trialEndsAt,
+        trialAdminNotes: trialFields.trialAdminNotes,
+        trialAllowedContentTypes: trialFields.trialAllowedContentTypes,
+        trialAllowedAiTools: trialFields.trialAllowedAiTools,
+        adminId: null,
+        isActive: true,
+        role: 'teacher',
+      });
+      await teacher.save();
+      return res.status(201).json({
+        success: true,
+        message: `Teacher trial member created (${d.trialDays}-day trial).`,
+        data: formatMember(teacher.toObject(), 'teacher'),
+      });
+    }
+
+    const student = new User({
+      email: d.email,
+      password: hashedPassword,
+      fullName: d.fullName,
+      role: 'student',
+      assignedAdmin: null,
+      ...trialFields,
+      isActive: true,
+    });
+    await student.save();
+
+    return res.status(201).json({
+      success: true,
+      message: `Student trial member created (${d.trialDays}-day trial).`,
+      data: formatMember(student.toObject(), 'student'),
+    });
+  } catch (error) {
+    console.error('createTrialMember error:', error);
+    res.status(500).json({ success: false, message: 'Failed to create trial member' });
+  }
+}
+
+/**
+ * DELETE /api/super-admin/trial-members/:id
+ * Permanently remove an individual (B2C) trial member.
+ * Query/body: role=student|teacher (optional hint)
+ */
+export async function deleteTrialMember(req, res) {
+  try {
+    const { id } = req.params;
+    const roleHint = req.query.role || req.body?.role;
+    const found = await findTrialMember(id, roleHint);
+    if (!found) {
+      return res.status(404).json({ success: false, message: 'Trial member not found' });
+    }
+
+    await found.Model.deleteOne({ _id: found.doc._id, isIndividualAccount: true });
+
+    res.json({
+      success: true,
+      message: `${found.role === 'teacher' ? 'Teacher' : 'Student'} trial member deleted`,
+      data: { id: String(found.doc._id), role: found.role },
+    });
+  } catch (error) {
+    console.error('deleteTrialMember error:', error);
+    res.status(500).json({ success: false, message: 'Failed to delete trial member' });
   }
 }
 

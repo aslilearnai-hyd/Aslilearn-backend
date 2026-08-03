@@ -6,6 +6,8 @@ import Exam from '../models/Exam.js';
 import ExamResult from '../models/ExamResult.js';
 import User from '../models/User.js';
 import Teacher from '../models/Teacher.js';
+import Class from '../models/Class.js';
+import { normalizeClassNumberLabel } from '../utils/studentClassContent.js';
 import {
   VALID_SCHOOL_BOARDS,
   CURRICULUM_BOARDS,
@@ -1111,23 +1113,51 @@ export const updateSubject = async (req, res) => {
 // Get All Classes (Super Admin only)
 export const getAllClasses = async (req, res) => {
   try {
-    // Get all unique class numbers from students
-    const classNumbers = await User.distinct('classNumber', {
-      role: 'student',
-      classNumber: { $exists: true, $ne: null, $ne: '', $ne: 'Unassigned' }
-    });
+    const baseline = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+    const collected = new Set(baseline);
 
-    // Sort classes numerically if possible, otherwise alphabetically
-    const sortedClasses = classNumbers
-      .filter(c => c && c !== 'Unassigned')
-      .sort((a, b) => {
-        const numA = parseInt(a);
-        const numB = parseInt(b);
-        if (!isNaN(numA) && !isNaN(numB)) {
-          return numA - numB;
-        }
-        return a.localeCompare(b);
-      });
+    const addLabel = (raw) => {
+      const normalized = normalizeClassNumberLabel(raw) || String(raw || '').trim();
+      if (!normalized || /^unassigned$/i.test(normalized)) return;
+      collected.add(normalized);
+    };
+
+    // School-dashboard Class documents (primary source for Super Admin exam targeting).
+    const schoolClassNumbers = await Class.distinct('classNumber', {
+      isActive: { $ne: false },
+    });
+    schoolClassNumbers.forEach(addLabel);
+
+    // Student profile class numbers (covers legacy / unassigned-class edge cases).
+    const studentClassNumbers = await User.distinct('classNumber', {
+      role: 'student',
+    });
+    studentClassNumbers.forEach(addLabel);
+
+    // Classes already used on Super Admin exams.
+    const exams = await Exam.find({
+      createdByRole: 'super-admin',
+      isActive: { $ne: false },
+    })
+      .select('classNumber assignedClasses')
+      .lean();
+    for (const exam of exams) {
+      addLabel(exam.classNumber);
+      if (Array.isArray(exam.assignedClasses)) {
+        exam.assignedClasses.forEach(addLabel);
+      }
+    }
+
+    const sortedClasses = [...collected].sort((a, b) => {
+      const numA = parseInt(a, 10);
+      const numB = parseInt(b, 10);
+      const aNum = !Number.isNaN(numA) && String(numA) === String(a);
+      const bNum = !Number.isNaN(numB) && String(numB) === String(b);
+      if (aNum && bNum) return numA - numB;
+      if (aNum) return -1;
+      if (bNum) return 1;
+      return String(a).localeCompare(String(b), undefined, { sensitivity: 'base' });
+    });
 
     res.json({ success: true, data: sortedClasses });
   } catch (error) {

@@ -253,3 +253,47 @@ export const createCalendarEvent = async (req, res) => {
     res.status(500).json({ success: false, message: 'Failed to create event' });
   }
 };
+
+/**
+ * DELETE calendar event (holiday/custom CalendarEvent, or legacy school Event).
+ * Exam entries are not deleted here — remove them from Exam Management.
+ */
+export const deleteCalendarEvent = async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (!id || !mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({ success: false, message: 'Invalid event id' });
+    }
+
+    const calDeleted = await CalendarEvent.findByIdAndDelete(id);
+    if (calDeleted) {
+      return res.json({
+        success: true,
+        message: 'Event deleted',
+        data: { id: String(calDeleted._id), source: 'calendar' },
+      });
+    }
+
+    const legacyDeleted = await Event.findByIdAndDelete(id);
+    if (legacyDeleted) {
+      return res.json({
+        success: true,
+        message: 'Event deleted',
+        data: { id: String(legacyDeleted._id), source: 'legacy' },
+      });
+    }
+
+    const examExists = await Exam.exists({ _id: id, createdByRole: 'super-admin' });
+    if (examExists) {
+      return res.status(400).json({
+        success: false,
+        message: 'Exam calendar entries cannot be deleted here. Remove or deactivate the exam in Exam Management.',
+      });
+    }
+
+    return res.status(404).json({ success: false, message: 'Event not found' });
+  } catch (e) {
+    console.error('deleteCalendarEvent', e);
+    res.status(500).json({ success: false, message: 'Failed to delete event' });
+  }
+};

@@ -17,6 +17,8 @@ import TeacherWorkDiary from '../../models/TeacherWorkDiary.js';
 import PDFContent from '../../models/PDFContent.js';
 import GeminiPerformanceReport from '../../models/GeminiPerformanceReport.js';
 import StudentRemark from '../../models/StudentRemark.js';
+import School from '../../models/School.js';
+import SchoolOrder from '../../models/SchoolOrder.js';
 
 const FALLBACK_SCOPE_FIELDS = [
   'assignedAdmin',
@@ -28,6 +30,18 @@ const FALLBACK_SCOPE_FIELDS = [
 ];
 
 export const MODULE_REGISTRY = {
+  schools: {
+    model: School,
+    aliases: [
+      'school',
+      'schools',
+      'school profile',
+      'school details',
+      'institution',
+      'institutions',
+    ],
+    scopeFields: ['adminUserId'],
+  },
   students: {
     model: User,
     aliases: ['student', 'students', 'learner', 'learners', 'pupils'],
@@ -43,6 +57,20 @@ export const MODULE_REGISTRY = {
     model: User,
     aliases: ['user', 'users', 'user management', 'roles', 'permissions'],
     scopeFields: ['assignedAdmin'],
+  },
+  trial_members: {
+    model: User,
+    aliases: [
+      'trial',
+      'trials',
+      'trial member',
+      'trial members',
+      'individual account',
+      'individual accounts',
+      'b2c',
+    ],
+    baseFilter: { isIndividualAccount: true },
+    scopeFields: [],
   },
   classes: {
     model: ClassModel,
@@ -124,11 +152,23 @@ export const MODULE_REGISTRY = {
     model: PDFContent,
     aliases: ['school performance', 'school metrics', 'school performance metrics'],
   },
+  school_orders: {
+    model: SchoolOrder,
+    aliases: [
+      'school order',
+      'school orders',
+      'product order',
+      'product orders',
+      'subscription order',
+      'orders',
+    ],
+    scopeFields: ['schoolAdminId', 'schoolId'],
+  },
   fees: {
     model: null,
     aliases: ['fee', 'fees', 'payment', 'payments', 'billing', 'invoice', 'invoices'],
     unavailableReason:
-      'No structured fee_records collection exists in this database. Billing appears external/unmodeled here.',
+      'No per-student fee_records collection exists. For school product / subscription orders ask about school orders instead.',
   },
 };
 

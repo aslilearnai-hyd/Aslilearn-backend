@@ -2,7 +2,10 @@ import { parseDynamicIntent } from './gemini-intent-service.js';
 import { executeDynamicDbPlan } from './db-access-layer.js';
 import { buildAuditSelect } from './dynamic-sql-builder.js';
 import { formatDynamicResponse } from './response-formatter.js';
-import { buildControlOverviewFacts } from './school-overview-facts.js';
+import {
+  buildControlOverviewFacts,
+  buildNamedSchoolDetailFacts,
+} from './school-overview-facts.js';
 
 export async function runDynamicAiQuery({
   userMessage,
@@ -18,6 +21,10 @@ export async function runDynamicAiQuery({
     const overviewFacts = await buildControlOverviewFacts({ viewerRole, viewerUserId });
     facts = { mode: 'overview', ...overviewFacts };
     notes.push('School dashboard overview: multi-metric snapshot from scoped aggregates.');
+  } else if (plan.mode === 'school_detail') {
+    const detailFacts = await buildNamedSchoolDetailFacts(plan.schoolNameQuery || '');
+    facts = { mode: 'school_detail', ...detailFacts };
+    notes.push('Named school lookup: School collection + scoped live metrics.');
   } else if (plan.mode === 'database') {
     const db = await executeDynamicDbPlan({
       plan,

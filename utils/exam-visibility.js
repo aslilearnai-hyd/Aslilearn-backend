@@ -3,6 +3,8 @@
  * targetSchools + schoolId store school-admin User ids (from Super Admin school picker).
  */
 
+import { boardsForSchoolContentScope } from '../constants/boards.js';
+
 function toIdString(value) {
   if (!value) return '';
   if (typeof value === 'object' && value._id) return String(value._id);
@@ -14,6 +16,14 @@ function normalizeBoardKey(board) {
     .toUpperCase()
     .trim()
     .replace(/[\s/\\-]+/g, '_');
+}
+
+function schoolTargetIds(exam) {
+  const examSchoolIdStr = toIdString(exam?.schoolId);
+  const targetSchoolIds = Array.isArray(exam?.targetSchools)
+    ? exam.targetSchools.map((id) => toIdString(id)).filter(Boolean)
+    : [];
+  return { examSchoolIdStr, targetSchoolIds };
 }
 
 /**
@@ -28,10 +38,7 @@ export function examVisibleToSchool(exam, schoolAdminId) {
     return exam.isSchoolSpecific !== true;
   }
 
-  const examSchoolIdStr = toIdString(exam.schoolId);
-  const targetSchoolIds = Array.isArray(exam.targetSchools)
-    ? exam.targetSchools.map((id) => toIdString(id)).filter(Boolean)
-    : [];
+  const { examSchoolIdStr, targetSchoolIds } = schoolTargetIds(exam);
 
   // Explicit school list / primary school wins.
   if (examSchoolIdStr && examSchoolIdStr === sid) return true;
@@ -47,21 +54,48 @@ export function examVisibleToSchool(exam, schoolAdminId) {
   return true;
 }
 
-/** Board gate for school admins (isAllBoards bypasses). */
-export function examMatchesAdminBoard(exam, adminBoard) {
+/**
+ * Board gate for school admins (isAllBoards bypasses).
+ * Accepts a board string OR a school-admin user object (uses content-scope boards
+ * so Asli Prep / IIT schools see ASLI_EXCLUSIVE_SCHOOLS and IIT exams).
+ */
+export function examMatchesAdminBoard(exam, adminOrBoard) {
   if (!exam) return false;
   if (exam.isAllBoards === true) return true;
   const examBoard = normalizeBoardKey(exam.board);
-  const adminKey = normalizeBoardKey(adminBoard);
-  // Missing either side → do not allow (prevents CSV all-board leaks)
-  if (!examBoard || !adminKey) return false;
-  return examBoard === adminKey;
+  if (!examBoard) return false;
+
+  let allowed = [];
+  if (adminOrBoard && typeof adminOrBoard === 'object' && !Array.isArray(adminOrBoard)) {
+    allowed = boardsForSchoolContentScope({
+      board: adminOrBoard.board,
+      curriculumBoard: adminOrBoard.curriculumBoard,
+      isAsliPrepExclusive: adminOrBoard.isAsliPrepExclusive,
+      iitCategories: adminOrBoard.iitCategories,
+    })
+      .map(normalizeBoardKey)
+      .filter(Boolean);
+  } else {
+    const key = normalizeBoardKey(adminOrBoard);
+    if (key) allowed = [key];
+  }
+
+  if (!allowed.length) return false;
+  return allowed.includes(examBoard);
 }
 
 /** Student access: school targeting + board of their assigned school admin. */
-export function examVisibleToStudent(exam, studentAdminId, studentBoard) {
+export function examVisibleToStudent(exam, studentAdminId, studentBoardOrAdmin) {
   if (!examVisibleToSchool(exam, studentAdminId)) return false;
-  if (studentBoard) return examMatchesAdminBoard(exam, studentBoard);
+
+  const sid = toIdString(studentAdminId);
+  const { examSchoolIdStr, targetSchoolIds } = schoolTargetIds(exam);
+  // Explicit school assignment — same rule as school-admin dashboards.
+  if (sid && ((examSchoolIdStr && examSchoolIdStr === sid) || targetSchoolIds.includes(sid))) {
+    return true;
+  }
+
+  if (studentBoardOrAdmin) return examMatchesAdminBoard(exam, studentBoardOrAdmin);
   // No board on student/admin → still allow school-targeted exams only
   return exam.isAllBoards !== true;
 }
@@ -71,5 +105,13 @@ export function examVisibleToSchoolAdmin(exam, admin) {
   if (!exam || !admin) return false;
   const adminId = admin._id || admin.id;
   if (!examVisibleToSchool(exam, adminId)) return false;
-  return examMatchesAdminBoard(exam, admin.board);
+
+  const sid = toIdString(adminId);
+  const { examSchoolIdStr, targetSchoolIds } = schoolTargetIds(exam);
+  // Super Admin explicitly assigned this school — always visible.
+  if ((examSchoolIdStr && examSchoolIdStr === sid) || targetSchoolIds.includes(sid)) {
+    return true;
+  }
+
+  return examMatchesAdminBoard(exam, admin);
 }

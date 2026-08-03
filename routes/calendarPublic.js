@@ -1,11 +1,12 @@
 import express from 'express';
 import { verifyToken, verifySuperAdmin } from '../middleware/auth.js';
-import { getCalendarEvents, createCalendarEvent } from '../controllers/calendarController.js';
+import { getCalendarEvents, createCalendarEvent, deleteCalendarEvent } from '../controllers/calendarController.js';
 
 const router = express.Router();
 
 router.get('/calendar/events', verifyToken, verifySuperAdmin, getCalendarEvents);
 router.post('/calendar/events', verifyToken, verifySuperAdmin, createCalendarEvent);
+router.delete('/calendar/events/:id', verifyToken, verifySuperAdmin, deleteCalendarEvent);
 
 router.get('/product-categories', async (req, res) => {
   try {

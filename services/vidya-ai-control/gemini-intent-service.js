@@ -1,6 +1,10 @@
 import geminiService from '../gemini-service.js';
 import { MODULE_REGISTRY } from './module-registry.js';
-import { isReportsOverviewQuery } from './school-overview-facts.js';
+import {
+  isReportsOverviewQuery,
+  extractSchoolNameQuery,
+  isSchoolDetailQuery,
+} from './school-overview-facts.js';
 
 function safeJson(raw) {
   let text = String(raw || '').trim();
@@ -39,9 +43,72 @@ function buildOverviewPlan(errMessage = '') {
   };
 }
 
+function buildSchoolDetailPlan(schoolName, errMessage = '') {
+  return {
+    mode: 'school_detail',
+    module: 'schools',
+    operation: 'overview',
+    schoolNameQuery: schoolName,
+    filters: [{ field: 'name', op: 'regex', value: schoolName }],
+    selectFields: [
+      'name',
+      'place',
+      'phone',
+      'contactPerson',
+      'board',
+      'curriculumBoard',
+      'licensedStudents',
+      'licensedTeachers',
+      'isActive',
+    ],
+    groupBy: [],
+    aggregates: [],
+    sort: [],
+    limit: 5,
+    timeframe: 'all',
+    clarification: '',
+    parseWarning: errMessage ? `gemini_unavailable:${errMessage}` : 'school_detail_intent',
+  };
+}
+
+function buildSchoolSearchPlan(schoolName, errMessage = '') {
+  return {
+    mode: 'database',
+    module: 'schools',
+    operation: 'list',
+    filters: [{ field: 'name', op: 'regex', value: schoolName }],
+    selectFields: [
+      'name',
+      'place',
+      'board',
+      'curriculumBoard',
+      'phone',
+      'contactPerson',
+      'isActive',
+      'licensedStudents',
+      'licensedTeachers',
+    ],
+    groupBy: [],
+    aggregates: [],
+    sort: [{ field: 'name', direction: 'asc' }],
+    limit: 20,
+    timeframe: 'all',
+    clarification: '',
+    parseWarning: errMessage ? `gemini_unavailable:${errMessage}` : 'school_search_intent',
+  };
+}
+
 function buildHeuristicPlan(message, errMessage = '') {
   if (isReportsOverviewQuery(message)) {
     return buildOverviewPlan(errMessage);
+  }
+
+  const namedSchool = extractSchoolNameQuery(message);
+  if (namedSchool) {
+    if (isSchoolDetailQuery(message) || /(details?|info|about|overview)/i.test(message)) {
+      return buildSchoolDetailPlan(namedSchool, errMessage);
+    }
+    return buildSchoolSearchPlan(namedSchool, errMessage);
   }
 
   const lower = String(message || '').toLowerCase();
@@ -64,15 +131,16 @@ function buildHeuristicPlan(message, errMessage = '') {
 
   let module = 'students';
   if (isSchoolQuery) {
-    module = 'users';
-    filters.push({ field: 'role', op: 'eq', value: 'admin' });
-    filters.push({ field: 'schoolName', op: 'exists', value: true });
-    filters.push({ field: 'schoolName', op: 'ne', value: '' });
+    module = 'schools';
+  } else if (/(trial|individual account|b2c)/i.test(lower)) {
+    module = 'trial_members';
+  } else if (/(school order|product order|subscription order|\borders\b)/i.test(lower)) {
+    module = 'school_orders';
   } else if (/(student|students|learner|learners|enrolled)/i.test(lower)) {
     module = 'students';
   } else if (/(teacher|teachers|faculty|staff)/i.test(lower)) {
     module = 'teachers';
-  } else if (/(exam|exams|test)/i.test(lower)) {
+  } else if (/(exam|exams)\b/i.test(lower) || (/\btest\b/i.test(lower) && !/\bschool\b/i.test(lower))) {
     module = 'exams';
   } else if (/(result|results|score|performance)/i.test(lower)) {
     module = 'results';
@@ -103,10 +171,9 @@ function buildHeuristicPlan(message, errMessage = '') {
     filters.push({ field: 'teacherId', op: 'eq', value: '__viewer__' });
   }
 
-  const hasExplicitModuleKeyword = module !== 'students' || /(student|students|learner|learners|enrolled)/i.test(lower);
+  const hasExplicitModuleKeyword =
+    module !== 'students' || /(student|students|learner|learners|enrolled)/i.test(lower);
 
-  // If Gemini intent parsing is unavailable and this looks like a normal
-  // conceptual question, avoid accidental DB list fallbacks.
   if (!hasExplicitModuleKeyword && isGeneralKnowledge && !hasDbIntentWord) {
     return {
       mode: 'knowledge',
@@ -127,7 +194,6 @@ function buildHeuristicPlan(message, errMessage = '') {
   if (classNumber) filters.push({ field: 'classNumber', op: 'eq', value: classNumber });
   if (/\bactive\b/i.test(lower)) filters.push({ field: 'isActive', op: 'eq', value: true });
 
-  // Dedicated deterministic exam-query behavior.
   if (module === 'exams') {
     if (/\b(active|upcoming|scheduled|running)\b/i.test(lower)) {
       filters.push({ field: 'isActive', op: 'eq', value: true });
@@ -207,14 +273,14 @@ function buildHeuristicPlan(message, errMessage = '') {
   if (isSchoolQuery && isCount) {
     return {
       mode: 'database',
-      module: 'users',
-      operation: 'distinct',
-      filters,
-      selectFields: ['schoolName'],
+      module: 'schools',
+      operation: 'count',
+      filters: [],
+      selectFields: [],
       groupBy: [],
-      aggregates: [],
+      aggregates: [{ func: 'count', field: '*', as: 'count' }],
       sort: [],
-      limit: 100,
+      limit: 20,
       timeframe: 'all',
       clarification: '',
       parseWarning: errMessage ? `gemini_unavailable:${errMessage}` : 'intent_json_parse_failed',
@@ -226,10 +292,15 @@ function buildHeuristicPlan(message, errMessage = '') {
     module,
     operation,
     filters,
-    selectFields: [],
+    selectFields: module === 'schools' ? ['name', 'place', 'board', 'phone', 'isActive'] : [],
     groupBy: [],
     aggregates: operation === 'count' ? [{ func: 'count', field: '*', as: 'count' }] : [],
-    sort: [{ field: 'createdAt', direction: 'desc' }],
+    sort: [
+      {
+        field: module === 'schools' ? 'name' : 'createdAt',
+        direction: module === 'schools' ? 'asc' : 'desc',
+      },
+    ],
     limit: 20,
     timeframe: /today/i.test(lower) ? 'today' : /this week|weekly/i.test(lower) ? 'this_week' : 'all',
     clarification: '',
@@ -237,14 +308,17 @@ function buildHeuristicPlan(message, errMessage = '') {
   };
 }
 
-export async function parseDynamicIntent({
-  userMessage,
-  history = [],
-}) {
+export async function parseDynamicIntent({ userMessage, history = [] }) {
   const message = String(userMessage || '').trim();
   if (isReportsOverviewQuery(message)) {
     return buildOverviewPlan();
   }
+
+  const namedSchoolEarly = extractSchoolNameQuery(message);
+  if (namedSchoolEarly && isSchoolDetailQuery(message)) {
+    return buildSchoolDetailPlan(namedSchoolEarly);
+  }
+
   const hist = (Array.isArray(history) ? history : []).slice(-8);
   const historyBlock = hist
     .map((m) => `${String(m.role || '').toUpperCase()}: ${String(m.content || '').slice(0, 700)}`)
@@ -253,9 +327,10 @@ export async function parseDynamicIntent({
   const prompt = `You map admin chat questions to a READ-ONLY database query plan.
 Return ONLY JSON with shape:
 {
-  "mode":"database"|"knowledge",
+  "mode":"database"|"knowledge"|"school_detail",
   "module":"<one module key when mode=database>",
-  "operation":"count"|"list"|"aggregate"|"distinct",
+  "operation":"count"|"list"|"aggregate"|"distinct"|"overview",
+  "schoolNameQuery":"<school name when looking up one school>",
   "filters":[{"field":"", "op":"eq|ne|gt|gte|lt|lte|in|regex|exists", "value":""}],
   "selectFields":["fieldA","fieldB"],
   "groupBy":["fieldA"],
@@ -271,9 +346,12 @@ ${aliasList}
 
 Rules:
 - If user asks for application data/count/list/ranking/summary, choose mode="database".
+- For named school details ("details about X school", "tell me about school X"), choose mode="school_detail", module="schools", and set schoolNameQuery to the school name.
+- Never map "test school" / school names containing "test" to exams.
+- School counts/lists use module="schools" (School collection name field), not users.
 - For generic conceptual Qs not requiring DB, choose mode="knowledge".
 - Never produce write/update/delete/drop/alter operations.
-- operation must be one of: ${OPS.join(', ')}.
+- operation must be one of: ${OPS.join(', ')}, overview.
 - filter op must be one of: ${FILTER_OPS.join(', ')}.
 - aggregate func must be one of: ${AGG_OPS.join(', ')}.
 - Keep limit <= 100.
@@ -303,13 +381,30 @@ ${message.slice(0, 4500)}
     return buildOverviewPlan();
   }
 
+  const namedSchool = extractSchoolNameQuery(message) || String(parsed.schoolNameQuery || '').trim();
+  if (
+    namedSchool &&
+    (String(parsed.mode || '').toLowerCase() === 'school_detail' || isSchoolDetailQuery(message))
+  ) {
+    return buildSchoolDetailPlan(namedSchool);
+  }
+  if (
+    namedSchool &&
+    /(school|schools)/i.test(message) &&
+    !/(how many|count|total|number of)/i.test(message)
+  ) {
+    return buildSchoolSearchPlan(namedSchool);
+  }
+
   const parsedMode = String(parsed.mode || '').toLowerCase();
   const mode =
     parsedMode === 'overview'
       ? 'overview'
-      : parsedMode === 'database'
-        ? 'database'
-        : 'knowledge';
+      : parsedMode === 'school_detail'
+        ? 'school_detail'
+        : parsedMode === 'database'
+          ? 'database'
+          : 'knowledge';
   const operation = OPS.includes(String(parsed.operation)) ? String(parsed.operation) : 'list';
   const limit = Math.max(1, Math.min(100, Number(parsed.limit) || 20));
   const timeframe = ['today', 'this_week', 'this_month', 'all'].includes(String(parsed.timeframe))
@@ -331,23 +426,23 @@ ${message.slice(0, 4500)}
     rawPreview: String(raw || '').slice(0, 600),
   };
 
+  if (mode === 'school_detail') {
+    const q = namedSchool || String(parsed.schoolNameQuery || '').trim() || 'school';
+    return buildSchoolDetailPlan(q);
+  }
+
   const lower = message.toLowerCase();
   const isSchoolQuery = /(school|schools)/i.test(lower);
   const isCount = /(how many|count|total|number of|are there|how much)/i.test(lower);
   if (mode === 'database' && isSchoolQuery && isCount) {
-    const filters = Array.isArray(normalized.filters) ? [...normalized.filters] : [];
-    const hasRoleFilter = filters.some((f) => String(f?.field) === 'role');
-    if (!hasRoleFilter) filters.push({ field: 'role', op: 'eq', value: 'admin' });
-    filters.push({ field: 'schoolName', op: 'exists', value: true });
-    filters.push({ field: 'schoolName', op: 'ne', value: '' });
     return {
       ...normalized,
-      module: 'users',
-      operation: 'distinct',
-      filters,
-      selectFields: ['schoolName'],
+      module: 'schools',
+      operation: 'count',
+      filters: [],
+      selectFields: [],
       groupBy: [],
-      aggregates: [],
+      aggregates: [{ func: 'count', field: '*', as: 'count' }],
       sort: [],
       limit: Math.max(20, normalized.limit || 20),
       timeframe: 'all',
@@ -356,7 +451,9 @@ ${message.slice(0, 4500)}
 
   if (mode === 'database' && /(content|generate|generated|generation)/i.test(lower)) {
     const filters = Array.isArray(normalized.filters) ? [...normalized.filters] : [];
-    const asksOwn = /(i generated|my generated|my content|content i generated|generated by me|created by me|upto now)/i.test(lower);
+    const asksOwn = /(i generated|my generated|my content|content i generated|generated by me|created by me|upto now)/i.test(
+      lower,
+    );
     if (asksOwn) {
       filters.push({ field: 'generatedBy', op: 'eq', value: '__viewer__' });
       filters.push({ field: 'teacherId', op: 'eq', value: '__viewer__' });

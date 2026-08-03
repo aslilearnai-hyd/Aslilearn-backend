@@ -264,6 +264,51 @@ export async function resolveAiToolTopicTaxonomy(params = {}) {
     }
   }
 
+  // Union NCERT / hardcoded curriculum chapters so AI Generator topic dropdowns
+  // are not empty when AiToolTopic seed is missing for CBSE Class 6–10, etc.
+  try {
+    const compactBoard = String(board || '')
+      .toUpperCase()
+      .replace(/[\s/\\-]+/g, '');
+    const isIitBoard =
+      compactBoard.includes('IIT') || compactBoard.includes('NEET') || compactBoard.includes('JEE');
+    const classNumMatch = String(classLabel || '').match(/(\d+)/);
+    const classNum = classNumMatch ? parseInt(classNumMatch[1], 10) : NaN;
+    const classKey =
+      isIitBoard && normalizeClassId(classLabel) === 'Class 6'
+        ? 'IIT-6'
+        : Number.isFinite(classNum) && classNum >= 5 && classNum <= 10
+          ? String(classNum)
+          : '';
+
+    if (classKey) {
+      const {
+        getChaptersForSubject,
+        getSubtopicsForChapter,
+        getSubjectsForClass,
+      } = await import('../../services/hardcoded-content-service.js');
+
+      if (!subject) {
+        const subjects = await getSubjectsForClass(classKey);
+        formatted.subjects = mergeUniqueChapterLabels(formatted.subjects, subjects);
+      } else if (topicName) {
+        const subs = await getSubtopicsForChapter(classKey, subject, topicName);
+        formatted.subTopics = mergeUniqueChapterLabels(formatted.subTopics, subs);
+      } else {
+        const chapters = await getChaptersForSubject(classKey, subject);
+        const chapterNames = chapters
+          .map((row) => String(row?.chapterName || '').trim())
+          .filter(Boolean);
+        formatted.topics = mergeUniqueChapterLabels(formatted.topics, chapterNames);
+      }
+    }
+  } catch (err) {
+    console.warn(
+      '[ai-tool-topic-taxonomy] hardcoded curriculum union skipped:',
+      String(err?.message || err).slice(0, 200),
+    );
+  }
+
   return formatted;
 }
 

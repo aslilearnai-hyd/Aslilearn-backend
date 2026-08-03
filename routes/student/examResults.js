@@ -1750,7 +1750,7 @@ router.post('/exam-results', async (req, res) => {
 
     // Get student's assigned admin, class, and curriculum board for analytics bucketing.
     const student = await User.findById(req.userId)
-      .populate('assignedAdmin', 'board curriculumBoard isAsliPrepExclusive')
+      .populate('assignedAdmin', 'board curriculumBoard isAsliPrepExclusive iitCategories')
       .populate('assignedClass', 'classNumber section');
     if (!student) {
       return res.status(400).json({ success: false, message: 'Student not found' });
@@ -1765,8 +1765,11 @@ router.post('/exam-results', async (req, res) => {
     }
 
     const studentAdminId = student.assignedAdmin?._id || student.assignedAdmin;
-    const studentBoard = student.assignedAdmin?.board || student.board || '';
-    if (!examVisibleToStudent(examDoc, studentAdminId, studentBoard)) {
+    const studentBoardOrAdmin =
+      student.assignedAdmin && typeof student.assignedAdmin === 'object'
+        ? student.assignedAdmin
+        : student.assignedAdmin?.board || student.board || '';
+    if (!examVisibleToStudent(examDoc, studentAdminId, studentBoardOrAdmin)) {
       return res.status(403).json({
         success: false,
         message: 'This exam is not assigned to your school.',

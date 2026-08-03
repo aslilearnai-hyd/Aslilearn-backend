@@ -645,6 +645,31 @@ export const createTeacher = async (req, res) => {
       });
     }
 
+    const emailValue = String(email || '').trim().toLowerCase();
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailValue);
+    if (!emailOk) {
+      return res.status(400).json({
+        success: false,
+        message: 'Please provide a valid email address (e.g. name@school.com)',
+      });
+    }
+
+    const phoneRaw = String(phone || '').trim();
+    const phoneDigits = phoneRaw.replace(/\D/g, '');
+    if (!phoneDigits || phoneDigits.length < 10 || phoneDigits.length > 15) {
+      return res.status(400).json({
+        success: false,
+        message: 'Phone number is required (10–15 digits; letters are not allowed)',
+      });
+    }
+    if (/[a-zA-Z]/.test(phoneRaw)) {
+      return res.status(400).json({
+        success: false,
+        message: 'Phone number cannot contain letters',
+      });
+    }
+    const phoneValue = phoneRaw.startsWith('+') ? `+${phoneDigits}` : phoneDigits;
+
     const passwordValue = String(password || '').trim();
     if (!passwordValue || passwordValue.length < 6) {
       return res.status(400).json({
@@ -654,7 +679,7 @@ export const createTeacher = async (req, res) => {
     }
     
     // Check if teacher already exists
-    const existingTeacher = await Teacher.findOne({ email });
+    const existingTeacher = await Teacher.findOne({ email: emailValue });
     if (existingTeacher) {
       return res.status(400).json({ 
         success: false, 
@@ -731,7 +756,7 @@ export const createTeacher = async (req, res) => {
       adminBoardUpper && isValidSchoolBoard(adminBoardUpper) ? adminBoardUpper : 'ASLI_EXCLUSIVE_SCHOOLS';
     
     console.log('createTeacher - Creating teacher with:', {
-      email,
+      email: emailValue,
       fullName,
       department,
       school: admin.schoolName || '',
@@ -742,10 +767,10 @@ export const createTeacher = async (req, res) => {
     
     // Create new teacher
     const newTeacher = new Teacher({
-      email,
+      email: emailValue,
       password: hashedPassword,
       fullName,
-      phone: phone || '',
+      phone: phoneValue,
       department: department || '',
       school: admin.schoolName || '',
       board: teacherBoard,
