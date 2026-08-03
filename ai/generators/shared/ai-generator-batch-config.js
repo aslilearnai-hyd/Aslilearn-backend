@@ -29,26 +29,20 @@ export function isAiGeneratorUltraEconomyEnabled() {
 
 }
 
-/** Flash-Lite-only cap. DEFAULT OFF — Premium may use the Pro model. Set
- *  AI_GENERATOR_FLASH_LITE_ONLY=true only to force the cheapest model everywhere. */
-
+/** Flash-Lite-only cap. DEFAULT ON — all tiers use gemini-3.1-flash-lite.
+ *  Set AI_GENERATOR_FLASH_LITE_ONLY=false only if you intentionally want Pro. */
 export function isAiGeneratorFlashLiteOnlyEnabled() {
-
-  const raw = String(process.env.AI_GENERATOR_FLASH_LITE_ONLY ?? 'false').trim().toLowerCase();
-
-  return raw === 'true' || raw === '1' || raw === 'on';
-
+  const raw = String(process.env.AI_GENERATOR_FLASH_LITE_ONLY ?? 'true').trim().toLowerCase();
+  return raw !== 'false' && raw !== '0' && raw !== 'off';
 }
 
 export function getAiGeneratorGeminiModel() {
-
-  return String(process.env.AI_GENERATOR_GEMINI_MODEL || 'gemini-3.1-flash-lite').trim();
-
+  return 'gemini-3.1-flash-lite';
 }
 
-/** Stronger model for Hindi/Telugu language-class subjects (overrides flash-lite-only / cost saver). */
+/** Language subjects also stay on Flash-Lite 3.1 (never Pro). */
 export function getAiGeneratorLanguageSubjectGeminiModel() {
-  return String(process.env.AI_GENERATOR_LANGUAGE_GEMINI_MODEL || 'gemini-3.1-flash-lite').trim();
+  return 'gemini-3.1-flash-lite';
 }
 
 export function isAiGeneratorLanguageSubjectFlashOverrideEnabled() {

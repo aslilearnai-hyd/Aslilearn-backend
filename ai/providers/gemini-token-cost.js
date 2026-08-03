@@ -33,33 +33,31 @@ export function normalizeGeminiModelLabel(modelName = '') {
   const raw = String(modelName || '').trim();
   if (!raw) return '';
   const lower = raw.toLowerCase();
-  if (lower.includes('pro')) {
-    return lower.includes('3.1') ? 'gemini-3.1-pro-preview' : raw;
+  // Pro is blocked platform-wide — always label as Flash-Lite 3.1.
+  if (lower.includes('pro') && !lower.includes('flash')) {
+    return 'gemini-3.1-flash-lite';
   }
   if (lower.includes('flash-lite') || lower.includes('flash_lite')) {
-    // Keep legacy 2.5 records labelled as 2.5 — they are priced at the 2.5 rate,
-    // so relabelling them 3.1 would make a correct cost look like a wrong one.
     if (lower.includes('2.5')) return 'gemini-2.5-flash-lite (legacy)';
     return 'gemini-3.1-flash-lite';
   }
-  if (lower.includes('3.5')) return 'gemini-3.5-flash';
   if (lower.includes('3.1') && lower.includes('flash')) return 'gemini-3.1-flash-lite';
   if (lower.startsWith('gemini-1.5') || lower.startsWith('gemini-1.0') || lower.startsWith('gemini-2.5')) {
-    return 'gemini-3.1-flash-lite (legacy env model)';
+    return 'gemini-3.1-flash-lite';
   }
   if (lower.includes('flash')) return 'gemini-3.1-flash-lite';
-  return raw;
+  return 'gemini-3.1-flash-lite';
 }
 
 export function resolveGeminiPricing(modelName = '') {
   const model = String(modelName || '').toLowerCase();
-  const displayModel = normalizeGeminiModelLabel(modelName);
-  if (model.includes('pro')) {
+  // Never price as Pro — platform only runs Flash-Lite 3.1.
+  if (model.includes('pro') && !model.includes('flash')) {
     return {
-      model: model.includes('3.1') ? 'gemini-3.1-pro-preview' : model,
-      inputUsdPerM: GEMINI_31_PRO_INPUT_USD_PER_M,
-      outputUsdPerM: GEMINI_31_PRO_OUTPUT_USD_PER_M,
-      pricingNote: 'Estimated from Pro list pricing (input $2/M, output $12/M).',
+      model: 'gemini-3.1-flash-lite',
+      inputUsdPerM: GEMINI_31_FLASH_LITE_INPUT_USD_PER_M,
+      outputUsdPerM: GEMINI_31_FLASH_LITE_OUTPUT_USD_PER_M,
+      pricingNote: 'Estimated from Gemini 3.1 Flash-Lite list pricing (input $0.25/M, output $1.50/M).',
     };
   }
   // Legacy 2.5 Flash-Lite records — price at the rate that actually applied when

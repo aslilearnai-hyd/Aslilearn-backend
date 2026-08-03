@@ -83,6 +83,9 @@ const BOOK_QUESTION_UNIQUENESS_TOOLS = new Set([
 function getBookGeneratorConcurrency(qualityTierSettings, batchSize) {
   const env = Number(process.env.BOOK_GENERATOR_CONCURRENCY || process.env.AI_GENERATOR_BATCH_CONCURRENCY);
   if (Number.isFinite(env) && env > 0) return Math.min(env, 4);
+  // Premium Pro calls are slow (often 2–6 min each). Parallel slots look "stuck" at 0/N
+  // and fight for Gemini quota — run one at a time for book batches.
+  if (String(qualityTierSettings?.tier || '') === 'premium') return 1;
   return getQualityTierBatchConcurrency(qualityTierSettings, batchSize);
 }
 
@@ -167,7 +170,7 @@ function formatBookSlotFailureMessage(batchIndex, error) {
   return formatGeminiFailureForUser(error, { slotLabel: `Slot ${batchIndex}` });
 }
 
-function formatBookBatchProgress({ saved, batchSize, batchIndex, callCount, costInr }) {
+function formatBookBatchProgress({ saved, batchSize, batchIndex, callCount, costInr, activeSlots }) {
   const maxInr = getBookGeneratorMaxInr();
   const costNote =
     costInr > 0
@@ -175,7 +178,11 @@ function formatBookBatchProgress({ saved, batchSize, batchIndex, callCount, cost
         ? ` · ~₹${costInr.toFixed(2)}/${maxInr}`
         : ` · ~₹${costInr.toFixed(2)}`
       : '';
-  return `Generating with Gemini… ${saved}/${batchSize} saved · slot ${batchIndex}/${batchSize}${callCount > 0 ? ` · ${callCount} LLM calls` : ''}${costNote}`;
+  const active =
+    Array.isArray(activeSlots) && activeSlots.length > 1
+      ? ` · slots ${activeSlots.slice().sort((a, b) => a - b).join('+')}/${batchSize} in parallel`
+      : ` · slot ${batchIndex}/${batchSize}`;
+  return `Generating with Gemini… ${saved}/${batchSize} saved${active}${callCount > 0 ? ` · ${callCount} LLM calls` : ''}${costNote}`;
 }
 
 async function runPool(items, concurrency, worker) {
@@ -386,6 +393,20 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
         variantIndex: historical.existingCount + i + 1,
       }));
       let completedSlots = 0;
+      const activeSlotSet = new Set();
+
+      const reportProgress = (batchIndex) => {
+        opts.onProgress?.(
+          formatBookBatchProgress({
+            saved: completedSlots,
+            batchSize,
+            batchIndex,
+            callCount: getTokenUsageSession()?.totals?.callCount ?? 0,
+            costInr: estimateSessionCostInr(),
+            activeSlots: [...activeSlotSet],
+          }),
+        );
+      };
 
       // Serialize any tool that dedups question/body content across slots — parallel slots read a
       // stale shared batchQuestionTexts/batchTitles and either save duplicates or fail 100%.
@@ -415,18 +436,10 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
           };
         }
 
-        const session = getTokenUsageSession();
-        const callCount = session?.totals?.callCount ?? 0;
-        opts.onProgress?.(
-          formatBookBatchProgress({
-            saved: completedSlots,
-            batchSize,
-            batchIndex,
-            callCount,
-            costInr: estimateSessionCostInr(),
-          }),
-        );
+        activeSlotSet.add(batchIndex);
+        reportProgress(batchIndex);
 
+        try {
         for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
           if (estimateSessionCostInr() >= getBookGeneratorMaxInr()) {
             lastError = `Batch budget cap (₹${getBookGeneratorMaxInr()}) reached`;
@@ -671,15 +684,8 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                     );
                   }
                   completedSlots += 1;
-                  opts.onProgress?.(
-                    formatBookBatchProgress({
-                      saved: completedSlots,
-                      batchSize,
-                      batchIndex,
-                      callCount: getTokenUsageSession()?.totals?.callCount ?? 0,
-                      costInr: estimateSessionCostInr(),
-                    }),
-                  );
+                  activeSlotSet.delete(batchIndex);
+                  reportProgress(batchIndex);
                   console.log(
                     `[book-generator] Slot ${batchIndex}: saved (V2 six-section, book-grounded)`,
                   );
@@ -1054,15 +1060,8 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             }
 
             completedSlots += 1;
-            opts.onProgress?.(
-              formatBookBatchProgress({
-                saved: completedSlots,
-                batchSize,
-                batchIndex,
-                callCount: getTokenUsageSession()?.totals?.callCount ?? 0,
-                costInr: estimateSessionCostInr(),
-              }),
-            );
+            activeSlotSet.delete(batchIndex);
+            reportProgress(batchIndex);
 
             return { ok: true, variantIndex, batchIndex, record: record.toObject() };
           } catch (err) {
@@ -1078,6 +1077,10 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
           }
         }
         return { ok: false, variantIndex, batchIndex, error: lastError };
+        } finally {
+          activeSlotSet.delete(batchIndex);
+          reportProgress(batchIndex);
+        }
       });
 
       for (const result of slotResults.sort((a, b) => a.batchIndex - b.batchIndex)) {
