@@ -1,7 +1,9 @@
 import mongoose from 'mongoose';
 import Book from '../../../models/Book.js';
 import AiToolGeneration from '../../../models/AiToolGeneration.js';
-import { beginTokenUsageSession, endTokenUsageSession, getTokenUsageSession, formatGeminiFailureForUser, isTransientGeminiError } from '../../providers/gemini-service.js';
+import { beginTokenUsageSession, endTokenUsageSession, getTokenUsageSession, formatGeminiFailureForUser, isTransientGeminiError, isGeminiAuthConfigError, isGeminiSpendingCapError } from '../../providers/gemini-service.js';
+import { generateContentCompat } from '../../providers/google-genai-compat.js';
+import { GEMINI_LITE_MODEL } from '../../providers/gemini-models.js';
 import {
   generateStructuredContentForAiGenerator,
   finalizeExamPaperStructuredContent,
@@ -168,6 +170,23 @@ function getMaxAttemptsPerSlot(qualityTierSettings) {
 
 function formatBookSlotFailureMessage(batchIndex, error) {
   return formatGeminiFailureForUser(error, { slotLabel: `Slot ${batchIndex}` });
+}
+
+/** Tiny Gemini call before burning N slots — catches bad/leaked/AQ keys immediately. */
+async function assertGeminiKeyWorks(primaryModel) {
+  const apiKey = String(
+    process.env.VIDYA_AI_GEMINI_API_KEY || process.env.GEMINI_API_KEY || '',
+  ).trim();
+  if (!apiKey) {
+    throw new Error('Gemini API key is missing');
+  }
+  const model = String(primaryModel || process.env.AI_GENERATOR_GEMINI_MODEL || GEMINI_LITE_MODEL).trim();
+  await generateContentCompat({
+    apiKey,
+    model,
+    contents: 'Reply with exactly: OK',
+    generationConfig: { temperature: 0, maxOutputTokens: 8 },
+  });
 }
 
 function formatBookBatchProgress({ saved, batchSize, batchIndex, callCount, costInr, activeSlots }) {
@@ -377,6 +396,34 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
         );
       }
 
+      opts.onProgress?.('Checking Gemini API key…');
+      try {
+        await assertGeminiKeyWorks(qualityTierSettings.primaryGeminiModel);
+      } catch (preflightErr) {
+        const msg = formatGeminiFailureForUser(preflightErr, { slotLabel: 'Gemini' });
+        console.error('[book-generator] Gemini preflight failed:', preflightErr?.message || preflightErr);
+        tokenUsage = endTokenUsageSession();
+        cost = computeGeminiCostFromTokenUsage(tokenUsage || {});
+        return {
+          success: false,
+          batchSize,
+          savedCount: 0,
+          failedCount: batchSize,
+          records: [],
+          failures: [msg],
+          existingCountBefore: historical.existingCount,
+          uniquenessTarget: historical.uniquenessTarget,
+          tokenUsage,
+          cost,
+          mode: 'book_rag',
+          bookId: String(book._id),
+          bookTitle: book.title,
+          ragChunkCount: ragBase.chunkCount,
+          bookTextUsed: Boolean(ragBase.hasBookPassages),
+          message: msg,
+        };
+      }
+
       const ragScope = {
         bookId,
         board,
@@ -394,6 +441,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
       }));
       let completedSlots = 0;
       const activeSlotSet = new Set();
+      let fatalAuthError = '';
 
       const reportProgress = (batchIndex) => {
         opts.onProgress?.(
@@ -419,6 +467,9 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
 
       const slotResults = await runPool(slots, poolConcurrency, async (slot) => {
         const { batchIndex, variantIndex } = slot;
+        if (fatalAuthError) {
+          return { ok: false, variantIndex, batchIndex, error: fatalAuthError };
+        }
         const maxAttempts = getMaxAttemptsPerSlot(qualityTierSettings);
         let lastError = 'Unknown error';
 
@@ -441,6 +492,10 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
 
         try {
         for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+          if (fatalAuthError) {
+            lastError = fatalAuthError;
+            break;
+          }
           if (estimateSessionCostInr() >= getBookGeneratorMaxInr()) {
             lastError = `Batch budget cap (₹${getBookGeneratorMaxInr()}) reached`;
             break;
@@ -1066,6 +1121,10 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             return { ok: true, variantIndex, batchIndex, record: record.toObject() };
           } catch (err) {
             lastError = err?.message || String(err);
+            if (isGeminiAuthConfigError(err) || isGeminiSpendingCapError(err)) {
+              fatalAuthError = lastError;
+              break;
+            }
             if (
               (isTransientGeminiError(err) || isMongoTransientError(err)) &&
               attempt < maxAttempts
@@ -1073,7 +1132,8 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               await sleep(Math.min(12_000, 2500 * attempt));
               continue;
             }
-            if (attempt < maxAttempts) continue;
+            // Non-retryable generation/validation errors — do not burn remaining attempts.
+            break;
           }
         }
         return { ok: false, variantIndex, batchIndex, error: lastError };

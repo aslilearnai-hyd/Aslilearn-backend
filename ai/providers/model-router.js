@@ -1,5 +1,6 @@
 import { GEMINI_LITE_MODEL, isRetiredOrUnsupportedGeminiModel, resolveAllowedGeminiModel } from './gemini-models.js';
 import { fetchGeminiGenerateContent } from './google-genai-compat.js';
+import { buildGeminiEndpoint } from '../../services/gemini-auth.js';
 
 const DEFAULT_GEMINI_MODEL = GEMINI_LITE_MODEL;
 const DEFAULT_FALLBACKS = GEMINI_LITE_MODEL;
@@ -336,11 +337,18 @@ export const streamGeminiModel = async ({
 
   for (const modelName of models) {
     fallbackChain.push(`gemini:${modelName}`);
-    const url = `${gemini.baseUrl}/models/${modelName}:streamGenerateContent?alt=sse&key=${gemini.apiKey}`;
+    // AQ keys must authenticate by bearer header; only AIza keys go in the URL.
+    const streamAuth = buildGeminiEndpoint({
+      baseUrl: gemini.baseUrl,
+      model: modelName,
+      apiKey: gemini.apiKey,
+      method: 'streamGenerateContent',
+    });
+    const url = `${streamAuth.url}${streamAuth.url.includes('?') ? '&' : '?'}alt=sse`;
     try {
       const response = await fetch(url, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: streamAuth.headers,
         body: JSON.stringify(payload),
       });
       if (!response.ok || !response.body) {
