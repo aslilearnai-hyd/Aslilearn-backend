@@ -80,7 +80,7 @@ router.get('/video-chapter-progress', async (req, res) => {
   try {
     const userId = req.userId;
     const StudentVideoChapterProgress = (
-      await import('../models/StudentVideoChapterProgress.js')
+      await import('../../models/StudentVideoChapterProgress.js')
     ).default;
     const rows = await StudentVideoChapterProgress.find({ userId }).lean();
     const bySubject = {};
@@ -106,7 +106,7 @@ router.post('/video-chapter-progress', async (req, res) => {
     }
 
     const StudentVideoChapterProgress = (
-      await import('../models/StudentVideoChapterProgress.js')
+      await import('../../models/StudentVideoChapterProgress.js')
     ).default;
     const incoming = {};
     for (const [ch, dateVal] of Object.entries(chapterCompletedAt)) {
@@ -145,8 +145,8 @@ router.post('/content-progress', async (req, res) => {
       return res.status(400).json({ success: false, message: 'Content ID is required' });
     }
     
-    const UserProgress = (await import('../models/UserProgress.js')).default;
-    const Content = (await import('../models/Content.js')).default;
+    const UserProgress = (await import('../../models/UserProgress.js')).default;
+    const Content = (await import('../../models/Content.js')).default;
     
     // Verify content exists
     const content = await Content.findById(contentId);
@@ -197,8 +197,8 @@ router.get('/learning-progress', async (req, res) => {
     const userId = req.userId;
     const { subjectId } = req.query;
     
-    const UserProgress = (await import('../models/UserProgress.js')).default;
-    const Content = (await import('../models/Content.js')).default;
+    const UserProgress = (await import('../../models/UserProgress.js')).default;
+    const Content = (await import('../../models/Content.js')).default;
     
     // Build query
     const query = { userId: userId, contentId: { $exists: true, $ne: null } };
@@ -310,7 +310,7 @@ router.post('/session-time', async (req, res) => {
       return res.status(400).json({ success: false, message: 'Date and totalMinutes are required' });
     }
     
-    const UserSession = (await import('../models/UserSession.js')).default;
+    const UserSession = (await import('../../models/UserSession.js')).default;
     
     // Ensure date is in YYYY-MM-DD format
     const dateKey = date.includes('T') ? date.split('T')[0] : date;
@@ -365,7 +365,7 @@ router.get('/session-time', async (req, res) => {
       return res.status(401).json({ success: false, message: 'User not authenticated' });
     }
     
-    const UserSession = (await import('../models/UserSession.js')).default;
+    const UserSession = (await import('../../models/UserSession.js')).default;
     
     // Get session records for the last 7 days
     const today = new Date();

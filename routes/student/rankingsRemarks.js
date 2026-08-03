@@ -126,7 +126,7 @@ async function getStudentSubjectsHandler(req, res) {
       const { resolveIndividualCatalogSubjectDocs } = await import(
         '../utils/individualCatalogSubjects.js'
       );
-      const { filterToActiveCatalogSubjectIds } = await import('../utils/activeCatalog.js');
+      const { filterToActiveCatalogSubjectIds } = await import('../../utils/activeCatalog.js');
       let subjectDocs = await resolveIndividualCatalogSubjectDocs(student);
       const activeIds = await filterToActiveCatalogSubjectIds(subjectDocs.map((s) => s._id));
       const activeSet = new Set(activeIds.map((id) => String(id)));
@@ -218,7 +218,7 @@ async function getStudentSubjectsHandler(req, res) {
       });
     }
 
-    const { filterToActiveCatalogSubjectIds } = await import('../utils/activeCatalog.js');
+    const { filterToActiveCatalogSubjectIds } = await import('../../utils/activeCatalog.js');
     const activeSubjectIdList = await filterToActiveCatalogSubjectIds(subjectIdList);
 
     const subjects = await Subject.find({
@@ -234,7 +234,7 @@ async function getStudentSubjectsHandler(req, res) {
     console.log(`📚 Returning ${subjects.length} active catalog subjects after class + board merge`);
     
     // Get teachers assigned to this admin who teach these subjects
-    const Teacher = (await import('../models/Teacher.js')).default;
+    const Teacher = (await import('../../models/Teacher.js')).default;
     const teachers = await Teacher.find({
       adminId: student.assignedAdmin,
       subjects: { $in: subjects.map(s => s._id) },

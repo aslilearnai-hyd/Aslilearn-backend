@@ -224,7 +224,7 @@ router.post('/quizzes/:quizId/submit', async (req, res) => {
       });
     }
 
-    const { gradeAssessmentAttempt } = await import('../utils/grade-assessment.js');
+    const { gradeAssessmentAttempt } = await import('../../utils/grade-assessment.js');
     const graded = gradeAssessmentAttempt(quiz, answers);
     if (!graded.graded && (!quiz.questions || quiz.questions.length === 0) && quiz.isDriveQuiz) {
       // Drive-only quizzes have no server answer key — record attempt without trusting client score

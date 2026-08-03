@@ -75,7 +75,7 @@ export function parseWeakTopicRowsFromQuery(raw) {
 
 /** Populated Class with assignedSubjects, or lookup by student.classNumber + admin. */
 export async function resolveStudentClassDoc(student) {
-  const Class = (await import('../models/Class.js')).default;
+  const Class = (await import('../../models/Class.js')).default;
   if (student.assignedClass) {
     if (typeof student.assignedClass === 'object' && student.assignedClass._id) {
       if (student.assignedClass.assignedSubjects !== undefined) {
@@ -148,7 +148,7 @@ export async function resolveStudentClassSubjects(student) {
     adminBoard,
     studentClassDoc
   );
-  const { filterToActiveCatalogSubjectIds } = await import('../utils/activeCatalog.js');
+  const { filterToActiveCatalogSubjectIds } = await import('../../utils/activeCatalog.js');
   librarySubjectIds = await filterToActiveCatalogSubjectIds(librarySubjectIds);
 
   const subjects =
