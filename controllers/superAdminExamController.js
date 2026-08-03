@@ -843,12 +843,15 @@ function dedupePdfQuestionRows(rows) {
  */
 function buildExtractionUsage(totals) {
   const usd = ((totals.promptTokens || 0) * 0.1 + (totals.outputTokens || 0) * 0.4) / 1e6;
+  // Use the same rate the rest of the app displays, not a second hardcoded one.
+  const rate = Number(process.env.USD_TO_INR_RATE);
+  const usdToInr = Number.isFinite(rate) && rate > 0 ? rate : 88;
   return {
     geminiCalls: totals.calls || 0,
     promptTokens: totals.promptTokens || 0,
     outputTokens: totals.outputTokens || 0,
     approxCostUsd: Number(usd.toFixed(4)),
-    approxCostInr: Number((usd * 88).toFixed(2)),
+    approxCostInr: Number((usd * usdToInr).toFixed(2)),
   };
 }
 
