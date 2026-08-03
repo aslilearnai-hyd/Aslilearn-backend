@@ -54,6 +54,15 @@ function getGeminiModelCandidates() {
     .split(',')
     .map((m) => String(m || '').trim())
     .filter(Boolean);
+  // Flash-Lite only unless explicitly turned off. This used to append
+  // GEMINI_FLASH_PREVIEW_MODEL unconditionally, so a pricier model stayed in the
+  // candidate list no matter what the environment said.
+  const liteOnly =
+    String(process.env.AI_GENERATOR_FLASH_LITE_ONLY ?? 'true').trim().toLowerCase() !== 'false';
+  if (liteOnly) {
+    return [resolveAllowedGeminiModel(preferred) || GEMINI_LITE_MODEL];
+  }
+
   const defaults = [GEMINI_LITE_MODEL, GEMINI_FLASH_PREVIEW_MODEL];
   return Array.from(
     new Set(
