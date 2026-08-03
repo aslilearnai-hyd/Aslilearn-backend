@@ -576,14 +576,22 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                         structuredV2,
                         legacyStructured,
                       );
-                      // Last attempt: never drop a completed Gemini payload that has
-                      // real body text. Exam papers use section_a..e (not sections[]),
-                      // so the old qCount>=6 soft-pass never fired for question papers.
+                      const detailLower = detail.toLowerCase();
+                      const onlySoftGaps =
+                        /concept check/i.test(detail) ||
+                        /missing:\s*section_[a-e]/i.test(detailLower) ||
+                        (/question paper sections/i.test(detail) &&
+                          /section_[a-e]/i.test(detailLower) &&
+                          qCount >= 3);
+                      // Soft-pass early for known partial-template gaps when the payload is usable.
+                      // Waiting until the last attempt wastes Gemini calls and leaves stale locks
+                      // when the client disconnects mid-batch.
                       const usablePayload =
                         qCount >= 1 ||
                         renderedLen > 400 ||
-                        payloadLen > 1200;
-                      if (attempt >= maxAttempts && usablePayload) {
+                        payloadLen > 1200 ||
+                        (toolSlug === 'concept-mastery-helper' && renderedLen > 200);
+                      if ((attempt >= maxAttempts || onlySoftGaps) && usablePayload) {
                         console.warn(
                           `[book-generator] Slot ${batchIndex}: completeness soft-pass (q=${qCount}, chars=${renderedLen}) — ${detail}`,
                         );

@@ -855,8 +855,16 @@ function extraArrayRules(toolSlug, structured) {
       const rows = Array.isArray(structured[k]) ? structured[k] : [];
       return rows.some((q) => String(q?.question || q?.prompt || '').trim().length >= 10);
     }).length;
-    if (filled > 0 && filled < 5) {
-      missing.push('Exam question sections (need questions in all sections A–E)');
+    const qTotal = sectionKeys.reduce((n, k) => {
+      const rows = Array.isArray(structured[k]) ? structured[k] : [];
+      return (
+        n +
+        rows.filter((q) => String(q?.question || q?.prompt || '').trim().length >= 10).length
+      );
+    }, 0);
+    // Need a real paper shape — not every letter A–E when total questions are already solid.
+    if (filled === 0 || (filled < 3 && qTotal < 6)) {
+      missing.push('Exam question sections (need questions in at least 3 of sections A–E)');
     }
   }
 

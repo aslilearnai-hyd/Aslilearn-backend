@@ -7239,7 +7239,14 @@ export function redistributeExamPaperToCanonicalSections(data) {
     all.length >= 3 &&
     (loose.length > 0 || buckets.section_a.length === all.length);
 
-  if (onlyOneBucket || loose.length > 0) {
+  // Also rebalance when some (but not all) sections are empty — classic missing section_d case.
+  const hasEmptyCanonical =
+    filled >= 2 &&
+    filled < 5 &&
+    all.length >= 5 &&
+    Object.values(buckets).some((arr) => !arr.length);
+
+  if (onlyOneBucket || loose.length > 0 || hasEmptyCanonical) {
     for (const key of Object.keys(buckets)) buckets[key] = [];
     const counts = parseBlueprintSectionCounts(source.blueprint);
     const sorted = [...all].sort(
@@ -7254,13 +7261,24 @@ export function redistributeExamPaperToCanonicalSections(data) {
         question_number: q.question_number ?? idx - slice.length + i + 1,
       }));
     };
-    take(counts.a, 'section_a');
-    take(counts.b, 'section_b');
-    take(counts.c, 'section_c');
-    take(counts.d, 'section_d');
-    take(counts.e, 'section_e');
+    // Guarantee at least one question per empty-prone section when we have enough stems.
+    const ensureMin = Math.max(1, Math.floor(sorted.length / 5));
+    take(Math.max(counts.a || 0, ensureMin), 'section_a');
+    take(Math.max(counts.b || 0, ensureMin), 'section_b');
+    take(Math.max(counts.c || 0, ensureMin), 'section_c');
+    take(Math.max(counts.d || 0, ensureMin), 'section_d');
+    take(Math.max(counts.e || 0, ensureMin), 'section_e');
     if (idx < sorted.length) {
       buckets.section_e = [...buckets.section_e, ...sorted.slice(idx)];
+    }
+    // If we over-allocated and emptied a later section, pull one back from the fattest bucket.
+    for (const key of ['section_a', 'section_b', 'section_c', 'section_d', 'section_e']) {
+      if (buckets[key].length) continue;
+      const donor = ['section_e', 'section_c', 'section_b', 'section_a', 'section_d'].find(
+        (k) => k !== key && buckets[k].length > 1,
+      );
+      if (!donor) continue;
+      buckets[key] = [buckets[donor].pop()];
     }
     all = Object.values(buckets).flat();
   }
@@ -7716,7 +7734,22 @@ export function getExamPaperMissingSections(data, meta = {}) {
     return !rows.some((q) => String(q?.question || q?.prompt || '').trim().length >= 10);
   });
   if (emptySections.length && emptySections.length < sectionKeys.length && qCount >= 3) {
-    missing.push(`3–7. Question Paper Sections (missing: ${emptySections.join(', ')})`);
+    // Prefer rebalancing surplus questions into empty sections rather than failing the save.
+    // Models often pack A–C and leave D empty even when total question count is fine.
+    const rebalanced = redistributeExamPaperToCanonicalSections(n);
+    const emptyAfter = sectionKeys.filter((k) => {
+      const rows = Array.isArray(rebalanced[k]) ? rebalanced[k] : [];
+      return !rows.some((q) => String(q?.question || q?.prompt || '').trim().length >= 10);
+    });
+    const filledAfter = sectionKeys.length - emptyAfter.length;
+    if (emptyAfter.length === 0) {
+      Object.assign(n, rebalanced);
+    } else if (qCount >= 6 && filledAfter >= 3) {
+      // Soft: enough real questions across most sections — do not block save on one empty section.
+      Object.assign(n, rebalanced);
+    } else {
+      missing.push(`3–7. Question Paper Sections (missing: ${emptyAfter.join(', ')})`);
+    }
   }
   if (!String(n.internal_choices || '').trim()) missing.push('8. Internal Choices');
   if (!String(n.answer_key || '').trim()) missing.push('9. Complete Answer Key');

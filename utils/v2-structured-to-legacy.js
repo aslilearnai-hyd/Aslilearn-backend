@@ -723,6 +723,20 @@ export function mapV2StructuredToLegacy(toolSlug, v2) {
         return q && ans ? `${q} — ${ans}` : q || ans;
       })
       .filter(Boolean);
+    // V2 often omits answerKey — derive check prompts from key points / examples so
+    // the Concept Check gate does not discard otherwise-complete concept decks.
+    let derivedChecks =
+      checks.length > 0
+        ? checks
+        : [
+            ...list(core.keyPoints).slice(0, 2).map((k) => `Explain: ${k}`),
+            ...list(core.examples)
+              .slice(0, 1)
+              .map((ex) => `How does this example show the concept: ${ex}`),
+          ].filter(Boolean);
+    if (!derivedChecks.length && title) {
+      derivedChecks = [`Define ${title} in your own words and give one example.`];
+    }
     const conceptRow = {
       concept_name: title,
       simple_definition: str(core.definition),
@@ -736,7 +750,7 @@ export function mapV2StructuredToLegacy(toolSlug, v2) {
       examples: list(core.examples),
       real_example: list(core.examples)[0] || '',
       common_mistakes: list(assessment.commonErrors),
-      concept_check_questions: checks,
+      concept_check_questions: derivedChecks,
       key_points: list(core.keyPoints),
       exam_tips: list(teacher.tips),
       hots_question: str(core.hotsQuestion),
