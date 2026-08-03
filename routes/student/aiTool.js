@@ -304,11 +304,31 @@ router.post('/ai/tool', async (req, res) => {
       });
     }
     
+    // Same treatment as the teacher dashboard: name the chapters that are ready
+    // rather than telling a student to go and ask the Super Admin.
+    const { listTopicsWithContent, buildNoContentMessage } = await import(
+      '../../services/ai-tool-availability.js'
+    );
+    const { getToolDisplayTitle } = await import('../../config/aiToolTemplates.js');
+
+    const availableTopics = await listTopicsWithContent({
+      classDisplay,
+      subject: finalSubject,
+      toolName: toolType,
+    });
+
     return res.status(404).json({
       success: false,
       code: 'AI_TOOL_DATA_NOT_FOUND',
-      message:
-        'No matching AI Tool Data found for the selected class, subject, topic, and sub topic. Please ask Super Admin to add this mapping in AI Tool Generations.',
+      availableTopics,
+      message: buildNoContentMessage({
+        toolLabel: getToolDisplayTitle(toolType) || String(toolType || '').replace(/-/g, ' '),
+        classDisplay,
+        subject: finalSubject,
+        topic: topicForFetch,
+        subtopic: subTopicNormalized,
+        availableTopics,
+      }),
     });
   } catch (error) {
     console.error(`Create student tool (${req.body.toolType}) error:`, error);

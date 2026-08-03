@@ -207,22 +207,12 @@ function applyQuestionLimitToContent(toolType, content, requestedCount) {
   }
 }
 
-const VALID_AI_TOOL_CONTENT_OR = [
-  {
-    generatedContent: {
-      $exists: true,
-      $nin: ['', null],
-      $not: /no projects available/i,
-    },
-  },
-  {
-    content: {
-      $exists: true,
-      $nin: ['', null],
-      $not: /no projects available/i,
-    },
-  },
-];
+// Shared with the student dashboard so both report availability identically.
+import {
+  VALID_AI_TOOL_CONTENT_OR,
+  listTopicsWithContent,
+  buildNoContentMessage,
+} from '../services/ai-tool-availability.js';
 
 /** Super-admin or imported bundle rows (metadata shape may vary). */
 const SUPER_ADMIN_STORED_CONTENT = {
@@ -600,12 +590,26 @@ export const createTeacherTool = async (req, res) => {
         `📭 AI Tool Data NOT FOUND: ${toolType} | ${classDisplay} | ${finalSubject} | topic="${topicForStore}" | subtopic="${subtopicForStore}" | board=${String(req.body.board || programCtx.curriculumBoard || 'CBSE')}`,
       );
     }
+    // Tell the teacher which chapters DO work instead of sending them away to
+    // ask the Super Admin with nothing to go on.
+    const availableTopics = await listTopicsWithContent({
+      classDisplay,
+      subject: finalSubject,
+      toolName: toolType,
+    });
+
     return res.status(404).json({
       success: false,
       code: 'AI_TOOL_DATA_NOT_FOUND',
-      message: !subtopicForStore
-        ? 'No matching AI Tool Data found for the selected class, subject, and topic (whole chapter). Please ask Super Admin to add this mapping in AI Tool Generations.'
-        : 'No matching AI Tool Data found for the selected class, subject, topic, and sub topic. Please ask Super Admin to add this mapping in AI Tool Generations.',
+      availableTopics,
+      message: buildNoContentMessage({
+        toolLabel: teacherToolDisplayName(toolType),
+        classDisplay,
+        subject: finalSubject,
+        topic: topicForStore,
+        subtopic: subtopicForStore,
+        availableTopics,
+      }),
     });
   } catch (error) {
     console.error('Create teacher tool error:', error);
@@ -862,6 +866,47 @@ export const getTopics = async (req, res) => {
 };
 
 // Get all available content types for a specific chapter/topic
+/**
+ * Which chapters actually have generated content for a given tool.
+ *
+ * The chapter list shown to teachers comes from the syllabus on disk, while the
+ * content lives in AiToolGeneration — and most syllabus chapters have never
+ * been generated. Without this the teacher picks a chapter, waits, and gets
+ * "No matching AI Tool Data found", which reads as a broken tool.
+ *
+ * Replaces a per-chapter request loop with one query.
+ */
+export const getTopicsWithContent = async (req, res) => {
+  try {
+    const { classNumber, subject, toolType } = req.query;
+    if (!classNumber || !subject) {
+      return res.status(400).json({
+        success: false,
+        message: 'classNumber and subject are required',
+      });
+    }
+
+    const { classDisplay } = resolveClassDisplay(classNumber);
+    // resolveValidCurriculumSubject returns an object, not a string.
+    const { normalizedSubject } = resolveValidCurriculumSubject(subject) || {};
+    const topics = await listTopicsWithContent({
+      classDisplay,
+      subject: normalizedSubject || subject,
+      toolName: toolType,
+    });
+
+    return res.json({
+      success: true,
+      data: { topics, count: topics.length },
+    });
+  } catch (error) {
+    console.error('getTopicsWithContent error:', error);
+    // Availability is an optimisation, never a blocker — an error here must not
+    // stop the teacher from using the tool.
+    return res.json({ success: true, data: { topics: [], count: 0, degraded: true } });
+  }
+};
+
 export const getAvailableContent = async (req, res) => {
   try {
     const { classNumber, subject, topic } = req.query;

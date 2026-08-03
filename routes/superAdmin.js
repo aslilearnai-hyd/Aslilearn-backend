@@ -361,10 +361,14 @@ const pdfUpload = multer({
   limits: { fileSize: 20 * 1024 * 1024 },
   fileFilter: (req, file, cb) => {
     const name = String(file.originalname || '').toLowerCase();
-    const isPdfExt = name.endsWith('.pdf');
-    const isPdfMime = String(file.mimetype || '').toLowerCase().includes('pdf');
-    if (isPdfExt || isPdfMime) cb(null, true);
-    else cb(new Error('Only PDF files are allowed'), false);
+    const mime = String(file.mimetype || '').toLowerCase();
+    const isPdf = name.endsWith('.pdf') || mime.includes('pdf');
+    // Word question papers are read as text (see services/docx-question-paper.js)
+    const isDocx =
+      name.endsWith('.docx') ||
+      mime === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
+    if (isPdf || isDocx) cb(null, true);
+    else cb(new Error('Only PDF or Word (.docx) files are allowed'), false);
   },
 });
 
@@ -1299,7 +1303,23 @@ router.post('/exams/:examId/questions', addQuestion);
 router.put('/exams/:examId/questions/reorder', reorderQuestions);
 router.put('/exams/:examId/questions/:questionId', updateQuestion);
 router.post('/exams/:examId/questions/bulk-upload', csvUpload.single('file'), bulkUploadQuestions);
-router.post('/exams/:examId/questions/pdf-convert', pdfUpload.single('file'), convertPdfToQuestions);
+/**
+ * A rejected file type (or an oversized upload) surfaces from multer as a
+ * thrown error, which Express turns into a bare 500. Convert it to the actual
+ * reason so the admin sees what to do instead of "server error".
+ */
+const acceptQuestionPaperUpload = (req, res, next) => {
+  pdfUpload.single('file')(req, res, (err) => {
+    if (!err) return next();
+    const message =
+      err.code === 'LIMIT_FILE_SIZE'
+        ? 'That file is larger than the 20 MB limit.'
+        : err.message || 'Upload rejected.';
+    return res.status(400).json({ success: false, message });
+  });
+};
+
+router.post('/exams/:examId/questions/pdf-convert', acceptQuestionPaperUpload, convertPdfToQuestions);
 router.delete('/exams/:examId/questions/:questionId', deleteQuestion);
 router.delete('/exams/:examId/questions', deleteAllQuestions);
 

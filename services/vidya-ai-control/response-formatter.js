@@ -104,8 +104,11 @@ function localFallbackResponse({ userPrompt, facts }) {
   const asksForCount = /((how|who)\s*many|count|total|number of|are there|how much)/i.test(
     String(userPrompt || '')
   );
+  // "Could not find matching records" reads as "your data is missing", which
+  // sends admins hunting for a data problem when the real answer is that the
+  // question could not be turned into a query. Say which it is.
   if (facts?.available === false && facts?.reason) {
-    return `${facts.reason} I could not find matching records in the database.`;
+    return `${facts.reason} Try naming a specific record type — for example students, teachers, classes, exams, results, subjects, usage analytics or audit logs.`;
   }
   if (facts?.operation === 'count' && typeof facts.count === 'number') {
     if (facts.count === 0) return `There are exactly 0 ${label}.`;
@@ -115,12 +118,12 @@ function localFallbackResponse({ userPrompt, facts }) {
     if (!facts.totalDistinct) {
       return asksForCount
         ? `There are exactly 0 ${label}.`
-        : `I could not find matching records in the database.`;
+        : `There are no ${label} on record yet.`;
     }
     return `Found exactly ${facts.totalDistinct} distinct values in ${facts.field || 'field'} for ${label}.`;
   }
   if (facts?.operation === 'aggregate' && Array.isArray(facts.rows)) {
-    if (!facts.rows.length) return 'I could not find matching records in the database.';
+    if (!facts.rows.length) return `There are no ${label} on record for that query yet.`;
     const top = facts.rows[0] || {};
     const gb = Array.isArray(facts.groupBy) ? facts.groupBy : [];
     const groupField = gb[0] || '';

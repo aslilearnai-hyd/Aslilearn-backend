@@ -60,7 +60,10 @@ export const MODULE_REGISTRY = {
   exams: {
     model: Exam,
     aliases: ['exam', 'exams', 'test schedule', 'assessment schedule'],
-    scopeFields: ['adminId', 'schoolId'],
+    // Super-admin exams reach a school through targetSchools rather than
+    // adminId/schoolId. Without it a school admin asking about exams matched
+    // nothing and was told no records existed.
+    scopeFields: ['adminId', 'schoolId', 'targetSchools'],
   },
   results: {
     model: ExamResult,
