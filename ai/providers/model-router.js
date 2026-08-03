@@ -1,4 +1,5 @@
 import { GEMINI_LITE_MODEL, isRetiredOrUnsupportedGeminiModel, resolveAllowedGeminiModel } from './gemini-models.js';
+import { fetchGeminiGenerateContent } from './google-genai-compat.js';
 
 const DEFAULT_GEMINI_MODEL = GEMINI_LITE_MODEL;
 const DEFAULT_FALLBACKS = GEMINI_LITE_MODEL;
@@ -106,20 +107,17 @@ const getGeminiTimeoutMs = () => {
 };
 
 const callGeminiOnce = async ({ apiKey, baseUrl, modelName, payload }) => {
-  const url = `${baseUrl}/models/${modelName}:generateContent?key=${apiKey}`;
   const timeoutMs = getGeminiTimeoutMs();
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeoutMs);
   let response;
   try {
-    response = await fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-      signal: controller.signal,
+    response = await fetchGeminiGenerateContent({
+      baseUrl,
+      apiKey,
+      model: modelName,
+      body: payload,
+      timeoutMs,
     });
   } catch (fetchErr) {
-    clearTimeout(timer);
     const msg = fetchErr?.name === 'AbortError' ? `Request timed out after ${timeoutMs}ms` : String(fetchErr?.message || fetchErr);
     const error = new Error(`Vidya model ${modelName} fetch failed: ${msg}`);
     error.statusCode = 0;
@@ -127,7 +125,6 @@ const callGeminiOnce = async ({ apiKey, baseUrl, modelName, payload }) => {
     console.error('[Vidya Gemini API]', modelName, msg);
     throw error;
   }
-  clearTimeout(timer);
   if (!response.ok) {
     const errorText = await response.text();
     const error = new Error(

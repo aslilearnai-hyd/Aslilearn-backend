@@ -6,6 +6,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { getRouterConfig } from '../../providers/model-router.js';
+import { fetchGeminiGenerateContent } from '../../providers/google-genai-compat.js';
 import { isImageStemQuestion } from '../../../utils/unsupported-question-filter.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -155,7 +156,6 @@ async function callGeminiImage(promptText) {
   }
   const modelName = resolveImageModel();
   const baseUrl = gemini.baseUrl || 'https://generativelanguage.googleapis.com/v1beta';
-  const url = `${baseUrl}/models/${modelName}:generateContent?key=${gemini.apiKey}`;
   const payload = {
     contents: [{ role: 'user', parts: [{ text: promptText }] }],
     generationConfig: {
@@ -165,22 +165,19 @@ async function callGeminiImage(promptText) {
   };
 
   const timeoutMs = Number(process.env.AI_DIAGRAM_TIMEOUT_MS) || 90000;
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeoutMs);
   let response;
   try {
-    response = await fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-      signal: controller.signal,
+    response = await fetchGeminiGenerateContent({
+      baseUrl,
+      apiKey: gemini.apiKey,
+      model: modelName,
+      body: payload,
+      timeoutMs,
     });
   } catch (err) {
-    clearTimeout(timer);
     const msg = err?.name === 'AbortError' ? `timed out after ${timeoutMs}ms` : String(err?.message || err);
     throw new Error(`Diagram model fetch failed: ${msg}`);
   }
-  clearTimeout(timer);
 
   if (!response.ok) {
     const errText = await response.text().catch(() => '');

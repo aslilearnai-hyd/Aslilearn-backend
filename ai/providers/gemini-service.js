@@ -2,7 +2,7 @@ import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import https from 'https';
 import dotenv from 'dotenv';
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { generateContentCompat } from './google-genai-compat.js';
 import {
   GEMINI_FLASH_FALLBACK_MODEL,
   GEMINI_FLASH_MODEL,
@@ -256,7 +256,7 @@ export function isGeminiSpendingCapError(error) {
 
 export function isGeminiAuthConfigError(error) {
   const msg = String(error?.message || error || '');
-  return /\b401\b|API key not valid|API_KEY_INVALID|invalid api key|UNAUTHENTICATED|Gemini API key is missing/i.test(
+  return /\b401\b|API key not valid|API_KEY_INVALID|invalid api key|UNAUTHENTICATED|ACCESS_TOKEN_TYPE_UNSUPPORTED|Gemini API key is missing|reported as leaked/i.test(
     msg,
   );
 }
@@ -269,6 +269,12 @@ export function formatGeminiFailureForUser(error, { slotLabel = '' } = {}) {
     return `${prefix}Gemini monthly spending cap reached — open Google AI Studio → Billing/Spend, raise the project cap, then retry.`;
   }
   if (isGeminiAuthConfigError({ message: msg })) {
+    if (/ACCESS_TOKEN_TYPE_UNSUPPORTED|Expected OAuth 2/i.test(msg)) {
+      return `${prefix}Gemini rejected this API key type (AQ auth key / ACCESS_TOKEN_TYPE_UNSUPPORTED). Create a key from Google Cloud Console → APIs & Services → Credentials (Generative Language API), or use another Google account / ask Google AI support to restore key access.`;
+    }
+    if (/leaked/i.test(msg)) {
+      return `${prefix}Gemini API key was reported as leaked — create a new key in AI Studio and update GEMINI_API_KEY on the server.`;
+    }
     return `${prefix}Gemini API key is invalid or missing — check GEMINI_API_KEY on the server.`;
   }
   if (isTransientGeminiError({ message: msg })) {
@@ -318,15 +324,15 @@ export async function extractTextFromDocument(base64Data, mimeType, promptText, 
   if (!data) return '';
   const { apiKey, modelChain } = getGeminiFallbackConfig();
   if (!apiKey) return '';
-  const genAI = new GoogleGenerativeAI(apiKey);
   const maxTokens = Number(options.maxTokens) > 0 ? Number(options.maxTokens) : 8000;
   const temperature = Number.isFinite(options.temperature) ? Number(options.temperature) : 0.1;
   let lastErr = null;
   for (const modelName of modelChain) {
     try {
-      const modelClient = genAI.getGenerativeModel({ model: modelName });
       const result = await withGeminiTimeout(
-        modelClient.generateContent({
+        generateContentCompat({
+          apiKey,
+          model: modelName,
           contents: [
             {
               role: 'user',
@@ -340,7 +346,7 @@ export async function extractTextFromDocument(base64Data, mimeType, promptText, 
         }),
         `${modelName} document OCR`,
       );
-      const text = String(result?.response?.text?.() || '').trim();
+      const text = String(result?.text || result?.response?.text?.() || '').trim();
       if (text) return text;
       lastErr = new Error(`Empty OCR text from ${modelName}`);
     } catch (err) {
@@ -552,7 +558,6 @@ async function callChatCompletions({
         `[Gemini] Premium path primary=${resolvedPrimary} chain=[${modelChain.join(', ')}]`,
       );
     }
-    const genAI = new GoogleGenerativeAI(apiKey);
 
     const systemText = String(systemInstruction || '').trim();
     const userMessages = normalizedMessages.filter((m) => m.role !== 'system');
@@ -565,10 +570,18 @@ async function callChatCompletions({
     const isAuthOrConfigError = (msg) => {
       const m = String(msg || '');
       // 401 / explicit invalid key — no point trying other models with the same key.
-      if (/\b401\b|API key not valid|API_KEY_INVALID|invalid api key|UNAUTHENTICATED/i.test(m)) return true;
+      if (
+        /\b401\b|API key not valid|API_KEY_INVALID|invalid api key|UNAUTHENTICATED|ACCESS_TOKEN_TYPE_UNSUPPORTED/i.test(
+          m,
+        )
+      ) {
+        return true;
+      }
       // 403 often means "this model/API not allowed for this key" — still try other model IDs in the chain.
       // Only short-circuit 403 when the message clearly indicates the key itself is wrong.
-      if (/\b403\b/i.test(m) && /api key|API_KEY|credentials|invalid key|key.*invalid/i.test(m)) return true;
+      if (/\b403\b/i.test(m) && /api key|API_KEY|credentials|invalid key|key.*invalid|leaked/i.test(m)) {
+        return true;
+      }
       return false;
     };
     const isRetryableModelError = (msg) =>
@@ -606,10 +619,6 @@ async function callChatCompletions({
     for (const modelName of modelChain) {
       for (let attempt = 1; attempt <= maxAttemptsPerModel; attempt += 1) {
         try {
-          const modelClient = genAI.getGenerativeModel({
-            model: modelName,
-            ...(systemText ? { systemInstruction: systemText } : {}),
-          });
           const generationConfig = {
             temperature,
             maxOutputTokens: contextTokens > 0 ? Math.min(maxTokens, contextTokens) : maxTokens,
@@ -619,7 +628,10 @@ async function callChatCompletions({
               : {}),
           };
           const result = await withGeminiTimeout(
-            modelClient.generateContent({
+            generateContentCompat({
+              apiKey,
+              model: modelName,
+              systemInstruction: systemText,
               contents: [
                 {
                   role: 'user',
@@ -630,7 +642,7 @@ async function callChatCompletions({
             }),
             `${modelName} generateContent`,
           );
-          const text = String(result?.response?.text?.() || '').trim();
+          const text = String(result?.text || result?.response?.text?.() || '').trim();
           if (!text) {
             lastErr = new Error(`Gemini returned empty content on ${modelName}`);
             if (attempt < maxAttemptsPerModel) {

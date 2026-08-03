@@ -1,41 +1,33 @@
-// Test script to check which Gemini models are available
-import dotenv from 'dotenv';
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import 'dotenv/config';
+import { generateContentCompat } from './ai/providers/google-genai-compat.js';
+import { GEMINI_LITE_MODEL } from './ai/providers/gemini-models.js';
 
-dotenv.config();
 const API_KEY = process.env.GEMINI_API_KEY || process.env.VIDYA_AI_GEMINI_API_KEY;
 if (!API_KEY) {
   console.error('Set GEMINI_API_KEY in backend/.env');
   process.exit(1);
 }
-const genAI = new GoogleGenerativeAI(API_KEY);
 
-const modelsToTest = [
-  'gemini-3.1-flash-lite',
-  'gemini-2.5-flash-lite',
-  'gemini-2.5-flash',
-  'gemini-3.5-flash',
-  'gemini-2.0-flash-lite',
-  'gemini-2.0-flash',
-];
+const models = [
+  process.env.VIDYA_AI_GEMINI_MODEL || GEMINI_LITE_MODEL,
+  GEMINI_LITE_MODEL,
+].filter((v, i, a) => a.indexOf(v) === i);
 
-async function testModels() {
-  console.log('Testing Gemini models...\n');
-
-  for (const modelName of modelsToTest) {
+async function main() {
+  console.log('Key prefix:', String(API_KEY).slice(0, 7), 'len=', String(API_KEY).length);
+  for (const modelName of models) {
     try {
-      console.log(`Testing: ${modelName}...`);
-      const model = genAI.getGenerativeModel({ model: modelName });
-      const result = await model.generateContent('Say "Hello" in one word.');
-      const response = await result.response;
-      const text = response.text();
-      console.log(`OK ${modelName} - ${text.trim()}\n`);
-    } catch (error) {
-      console.log(`FAIL ${modelName} - ${error.message}\n`);
+      const result = await generateContentCompat({
+        apiKey: API_KEY,
+        model: modelName,
+        contents: 'Reply with exactly one word: OK',
+        generationConfig: { temperature: 0, maxOutputTokens: 16 },
+      });
+      console.log(`✅ ${modelName}:`, result.text.slice(0, 80));
+    } catch (err) {
+      console.error(`❌ ${modelName}:`, err?.message || err);
     }
   }
-
-  console.log('Testing complete!');
 }
 
-testModels();
+main();

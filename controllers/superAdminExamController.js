@@ -1043,10 +1043,13 @@ Important rules:
     let response;
     try {
       response = await fetchWithTimeout(
-        `${GEMINI_BASE_URL}/models/${model}:generateContent?key=${apiKey}`,
+        `${GEMINI_BASE_URL}/models/${model}:generateContent`,
         {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json',
+            'x-goog-api-key': apiKey,
+          },
           body: JSON.stringify(payload),
         },
       );
@@ -1083,10 +1086,13 @@ Important rules:
     let response;
     try {
       response = await fetchWithTimeout(
-        `${GEMINI_BASE_URL}/models/${model}:generateContent?key=${apiKey}`,
+        `${GEMINI_BASE_URL}/models/${model}:generateContent`,
         {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json',
+            'x-goog-api-key': apiKey,
+          },
           body: JSON.stringify({
             contents: [{ role: 'user', parts: [{ text: promptText }] }],
             generationConfig: {
