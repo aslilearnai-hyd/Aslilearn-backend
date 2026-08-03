@@ -208,12 +208,17 @@ export function isChapterScopeTool(toolType) {
 export function isWholeChapterSubtopic(value) {
   const raw = String(value ?? '').trim();
   if (!raw) return true;
-  const norm = raw.toLowerCase().replace(/[_-]+/g, ' ').replace(/\s+/g, ' ');
+  const norm = raw
+    .toLowerCase()
+    .replace(/[_-]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
   return (
     norm === 'whole chapter' ||
     norm === 'wholechapter' ||
-    norm === '__whole_chapter__' ||
     norm === 'all subtopics' ||
-    norm === 'entire chapter'
+    norm === 'entire chapter' ||
+    // Sentinel used by web/mobile selects before submit
+    raw === '__WHOLE_CHAPTER__'
   );
 }

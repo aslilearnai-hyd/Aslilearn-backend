@@ -202,7 +202,15 @@ function filterHasToolName(filter) {
 function buildAttemptFilters({ classLabel, subject, topic, subtopic, board, productCategory, strictBoard }) {
   const bf = scopeFilter({ classLabel, subject, board, productCategory, strictBoard });
   const normalizedTopic = normalize(topic);
-  const normalizedSubtopic = normalize(subtopic);
+  // Treat UI sentinel / "Whole chapter" as empty so we match Super Admin whole-chapter rows
+  // (stored as "" or "Whole chapter"), not a literal "__WHOLE_CHAPTER__" subtopic.
+  const rawSubtopic = normalize(subtopic);
+  const isWholeChapter =
+    !rawSubtopic ||
+    /^whole[\s_-]*chapter$/i.test(rawSubtopic) ||
+    rawSubtopic === '__WHOLE_CHAPTER__' ||
+    /^__\s*whole\s*chapter\s*__$/i.test(rawSubtopic);
+  const normalizedSubtopic = isWholeChapter ? '' : rawSubtopic;
 
   const exactFilter = mergeMongoFilters(
     bf,

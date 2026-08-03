@@ -85,7 +85,7 @@ router.post('/ai/tool', async (req, res) => {
       getStudentSchoolProgramContext,
       validateAiToolBoardAccess,
       resolveAiToolClassNumberFromRequest,
-    } = await import('../utils/schoolProgram.js');
+    } = await import('../../utils/schoolProgram.js');
     const programCtx = await getStudentSchoolProgramContext(userId);
     const boardCheck = validateAiToolBoardAccess(programCtx.isAsliPrepExclusive, {
       board,
@@ -137,15 +137,16 @@ router.post('/ai/tool', async (req, res) => {
     }
 
     const subTopicNormalized = String(params.subTopic || params.subtopic || '').trim().replace(/\s+/g, ' ');
-    const { isWholeChapterSubtopic } = await import('../utils/questionComposition.js');
-    if (isWholeChapterSubtopic(subTopicNormalized)) {
+    const { isWholeChapterSubtopic } = await import('../../utils/questionComposition.js');
+    const wholeChapter = isWholeChapterSubtopic(subTopicNormalized);
+    if (wholeChapter) {
       params.chapterScope = true;
       params.subTopic = '';
       params.subtopic = '';
     }
 
     const { resolveValidCurriculumSubject, resolveClassDisplay } = await import(
-      '../utils/curriculum-subject-validation.js'
+      '../../utils/curriculum-subject-validation.js'
     );
     const { normalizedSubject, validSubjectsList } = resolveValidCurriculumSubject(subject, {
       classNumber,
@@ -160,7 +161,7 @@ router.post('/ai/tool', async (req, res) => {
     }
     
     {
-      const { validateAiToolSubjectForTool } = await import('../utils/ai-tool-subject-rules.js');
+      const { validateAiToolSubjectForTool } = await import('../../utils/ai-tool-subject-rules.js');
       const subjectError = validateAiToolSubjectForTool(toolType, normalizedSubject || subject);
       if (subjectError) {
         return res.status(400).json({
@@ -229,23 +230,25 @@ router.post('/ai/tool', async (req, res) => {
       DASHBOARD_INCOMPLETE_USER_MESSAGE,
       DASHBOARD_WRONG_TOOL_CODE,
       DASHBOARD_WRONG_TOOL_USER_MESSAGE,
-    } = await import('../services/ai-tool-dashboard-validation.js');
+    } = await import('../../services/ai-tool-dashboard-validation.js');
 
     // Priority 1: Super Admin AI Tool Data (exact class+subject+topic+subtopic) with rotation.
     const lookupBoard =
       String(req.body.board || '').trim() || programCtx.curriculumBoard || 'CBSE';
 
-    const { normalizeTopicProductCategory } = await import('../utils/ai-tool-topic-taxonomy.js');
+    const { normalizeTopicProductCategory } = await import('../../utils/ai-tool-topic-taxonomy.js');
     const studentProductCategory =
       normalizeTopicProductCategory(
         params.productCategory ?? req.body.productCategory ?? '',
       ) ?? '';
 
+    const subtopicForLookup = wholeChapter ? '' : subTopicNormalized;
+
     const { doc: adminDoc, matchType, totalCandidates, selectedIndex } = await fetchRotatingAiToolData({
       classLabel: classDisplay,
       subject: finalSubject,
       topic: String(topicForFetch || '').trim().replace(/\s+/g, ' '),
-      subtopic: subTopicNormalized,
+      subtopic: subtopicForLookup,
       toolName: toolType,
       board: lookupBoard,
       productCategory: studentProductCategory || undefined,
@@ -253,7 +256,7 @@ router.post('/ai/tool', async (req, res) => {
       strictToolMatch: true,
       cursorScope: String(userId || ''),
       validator: async (doc) => {
-        const { storyPassageRecordLanguageValid } = await import('../utils/story-passage-subject.js');
+        const { storyPassageRecordLanguageValid } = await import('../../utils/story-passage-subject.js');
         if (!validateDashboardAiToolDoc(toolType, doc).valid) return false;
         return storyPassageRecordLanguageValid(toolType, finalSubject, doc);
       },
@@ -290,7 +293,7 @@ router.post('/ai/tool', async (req, res) => {
             classNumber: classNum,
             subject: finalSubject,
             topic: topicForFetch || '',
-            subTopic: subTopicNormalized,
+            subTopic: subtopicForLookup,
             ...params,
             generatedAt: new Date(),
             userId,
@@ -326,7 +329,7 @@ router.post('/ai/tool', async (req, res) => {
         classDisplay,
         subject: finalSubject,
         topic: topicForFetch,
-        subtopic: subTopicNormalized,
+        subtopic: subtopicForLookup,
         availableTopics,
       }),
     });
