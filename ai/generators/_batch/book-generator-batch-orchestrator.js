@@ -571,29 +571,33 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                     if (!bookGate.valid) {
                       const detail =
                         (bookGate.missingSections || []).join(', ') ||
-                        String(bookGate.message || 'incomplete').slice(0, 90);
+                        String(bookGate.message || 'incomplete').slice(0, 120);
                       const qCount = countUsableQuestionsFromV2OrLegacy(
                         structuredV2,
                         legacyStructured,
                       );
                       const detailLower = detail.toLowerCase();
+                      // These gaps are common with Gemini + V2 mapping; never burn the whole
+                      // slot/lock cycle on them when we already have a real payload.
                       const onlySoftGaps =
                         /concept check/i.test(detail) ||
                         /missing:\s*section_[a-e]/i.test(detailLower) ||
-                        (/question paper sections/i.test(detail) &&
-                          /section_[a-e]/i.test(detailLower) &&
-                          qCount >= 3);
-                      // Soft-pass early for known partial-template gaps when the payload is usable.
-                      // Waiting until the last attempt wastes Gemini calls and leaves stale locks
-                      // when the client disconnects mid-batch.
+                        (/question paper sections/i.test(detail) && /section_[a-e]/i.test(detailLower));
+                      const hasConceptBody =
+                        toolSlug === 'concept-mastery-helper' &&
+                        (payloadLen > 400 ||
+                          renderedLen > 80 ||
+                          /"concepts"\s*:\s*\[/.test(JSON.stringify(structuredV2 || {}).slice(0, 2000)));
                       const usablePayload =
                         qCount >= 1 ||
-                        renderedLen > 400 ||
-                        payloadLen > 1200 ||
-                        (toolSlug === 'concept-mastery-helper' && renderedLen > 200);
-                      if ((attempt >= maxAttempts || onlySoftGaps) && usablePayload) {
+                        renderedLen > 250 ||
+                        payloadLen > 600 ||
+                        hasConceptBody;
+                      // Concept Check / missing section_d: always soft-pass (do not retry-burn locks).
+                      // Other gaps: soft-pass on last attempt if payload looks real.
+                      if (onlySoftGaps || (attempt >= maxAttempts && usablePayload)) {
                         console.warn(
-                          `[book-generator] Slot ${batchIndex}: completeness soft-pass (q=${qCount}, chars=${renderedLen}) — ${detail}`,
+                          `[book-generator] Slot ${batchIndex}: completeness soft-pass (q=${qCount}, chars=${renderedLen}, payload=${payloadLen}) — ${detail}`,
                         );
                       } else {
                         lastError = `Incomplete content (${detail})`;
