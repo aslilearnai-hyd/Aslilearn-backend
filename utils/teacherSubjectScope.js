@@ -1,39 +1,64 @@
 import mongoose from 'mongoose';
 import Class from '../models/Class.js';
 
+function addSubjectId(idSet, raw) {
+  if (raw == null) return;
+  const id = raw._id != null ? raw._id : raw;
+  const str = id.toString();
+  if (mongoose.Types.ObjectId.isValid(str)) idSet.add(str);
+}
+
 /**
- * All Subject ObjectIds a teacher may use for prep content, homework, etc.:
+ * All Subject ObjectIds a teacher may use for prep content, homework, Vidya AI, etc.:
  * - explicit Teacher.subjects
- * - plus assignedSubjects on every Class the teacher is assigned to
- * (admins often only wire subjects on the class, not on the teacher record).
+ * - Teacher.assignments[].subjectId
+ * - assignedSubjects on every Class the teacher is assigned to
+ *
+ * Admins often wire subjects only on the class roster (not on the teacher record).
+ * Without class subjects here, My Classes / Vidya AI stay stuck on Math/English/Science.
  */
 export async function getEffectiveTeacherSubjectObjectIds(teacher) {
   if (!teacher) return [];
 
   const idSet = new Set();
 
-  const addRaw = (raw) => {
-    if (raw == null) return;
-    const id = raw._id != null ? raw._id : raw;
-    const str = id.toString();
-    if (mongoose.Types.ObjectId.isValid(str)) idSet.add(str);
-  };
-
-  const direct = teacher.subjects;
-  if (Array.isArray(direct)) {
-    direct.forEach(addRaw);
+  if (Array.isArray(teacher.subjects)) {
+    teacher.subjects.forEach((raw) => addSubjectId(idSet, raw));
   }
 
-  const classIds = teacher.assignedClassIds;
-  if (Array.isArray(classIds) && classIds.length > 0) {
-    const classDocs = await Class.find({
-      $or: [{ _id: { $in: classIds } }, { classNumber: { $in: classIds } }],
-      isActive: true,
-    }).select('assignedSubjects');
+  if (Array.isArray(teacher.assignments)) {
+    for (const row of teacher.assignments) {
+      addSubjectId(idSet, row?.subjectId);
+    }
+  }
 
-    for (const cd of classDocs) {
-      const arr = cd.assignedSubjects || [];
-      for (const sub of arr) addRaw(sub);
+  const classIdSet = new Set();
+  (teacher.assignedClassIds || []).forEach((id) => classIdSet.add(String(id)));
+  (teacher.assignments || []).forEach((a) => {
+    if (a?.classId) classIdSet.add(String(a.classId));
+  });
+
+  if (classIdSet.size > 0) {
+    const classIdList = [...classIdSet];
+    const objectIds = classIdList.filter((id) => mongoose.Types.ObjectId.isValid(id));
+    const classNumbers = classIdList.filter((id) => !mongoose.Types.ObjectId.isValid(id));
+
+    const classOr = [];
+    if (objectIds.length) classOr.push({ _id: { $in: objectIds } });
+    if (classNumbers.length) classOr.push({ classNumber: { $in: classNumbers } });
+
+    if (classOr.length > 0) {
+      const classDocs = await Class.find({
+        ...(teacher.adminId ? { assignedAdmin: teacher.adminId } : {}),
+        isActive: true,
+        $or: classOr,
+      }).select('assignedSubjects');
+
+      for (const cd of classDocs) {
+        for (const sub of cd.assignedSubjects || []) {
+          addSubjectId(idSet, sub);
+        }
+      }
     }
   }
 
@@ -48,20 +73,13 @@ export function subjectIdAllowed(subjectId, allowedObjectIds) {
 
 /**
  * Subject ids stored on Teacher.subjects only (admin "assign subjects to teacher").
- * Used for dashboard Learning Paths and APIs where we must not expand via class roster.
+ * Prefer getEffectiveTeacherSubjectObjectIds for tools / dashboard teaching aids.
  */
 export function getExplicitTeacherSubjectObjectIds(teacher) {
   if (!teacher) return [];
 
   const idSet = new Set();
-  const addRaw = (raw) => {
-    if (raw == null) return;
-    const id = raw._id != null ? raw._id : raw;
-    const str = id.toString();
-    if (mongoose.Types.ObjectId.isValid(str)) idSet.add(str);
-  };
-
-  (teacher.subjects || []).forEach(addRaw);
+  (teacher.subjects || []).forEach((raw) => addSubjectId(idSet, raw));
 
   return Array.from(idSet).map((s) => new mongoose.Types.ObjectId(s));
 }
