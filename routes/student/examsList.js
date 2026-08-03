@@ -262,7 +262,7 @@ function getExamWindowStatus(exam) {
 router.get('/exams', async (req, res) => {
   try {
     const student = await User.findById(req.userId)
-      .populate('assignedAdmin', 'board')
+      .populate('assignedAdmin', 'board curriculumBoard isAsliPrepExclusive iitCategories')
       .populate('assignedClass', 'classNumber section');
 
     if (!student) {
@@ -274,10 +274,10 @@ router.get('/exams', async (req, res) => {
 
     const studentClassNumber = resolveStudentClassNumber(student, student.assignedClass);
     const studentAdminId = student.assignedAdmin?._id || student.assignedAdmin;
-    const studentBoard =
-      student.assignedAdmin?.board ||
-      student.board ||
-      '';
+    const studentBoardOrAdmin =
+      student.assignedAdmin && typeof student.assignedAdmin === 'object'
+        ? student.assignedAdmin
+        : student.assignedAdmin?.board || student.board || '';
 
     // Keep exam discovery broad at DB level, then enforce school + board + class.
     const query = {
@@ -300,15 +300,20 @@ router.get('/exams', async (req, res) => {
     // Only show exams that:
     // 1) student is allowed to access by school + board targeting
     // 2) match assigned class
-    // 3) have uploaded questions (avoid empty exam cards)
+    // Empty question banks still appear (Upcoming / schedule awareness);
+    // start/detail endpoints refuse until questions are uploaded.
     const publishedExams = hydratedExams.filter((exam) => {
-      if (!canStudentAccessExam(exam, studentAdminId, studentBoard)) return false;
+      if (!canStudentAccessExam(exam, studentAdminId, studentBoardOrAdmin)) return false;
       if (!examMatchesStudentAssignedClass(exam, studentClassNumber)) return false;
-      return Array.isArray(exam?.questions) && exam.questions.length > 0;
+      return true;
     });
 
+    const boardLog =
+      typeof studentBoardOrAdmin === 'object'
+        ? studentBoardOrAdmin.board || 'scope'
+        : studentBoardOrAdmin || 'unset';
     console.log(
-      `✅ Found ${publishedExams.length} accessible exams for class ${studentClassNumber || 'unset'} board ${studentBoard || 'unset'} (from ${hydratedExams.length} total)`
+      `✅ Found ${publishedExams.length} accessible exams for class ${studentClassNumber || 'unset'} board ${boardLog} (from ${hydratedExams.length} total)`
     );
     
     res.json({
@@ -346,7 +351,7 @@ router.get('/exams/:examId', async (req, res) => {
     
     const student = await User.findById(req.userId)
       .populate('assignedClass', 'classNumber section')
-      .populate('assignedAdmin', 'board');
+      .populate('assignedAdmin', 'board curriculumBoard isAsliPrepExclusive iitCategories');
     if (!student) {
       return res.status(404).json({ 
         success: false, 
@@ -369,8 +374,11 @@ router.get('/exams/:examId', async (req, res) => {
 
     const studentClassNumber = resolveStudentClassNumber(student, student.assignedClass);
     const studentAdminId = student.assignedAdmin?._id || student.assignedAdmin;
-    const studentBoard = student.assignedAdmin?.board || student.board || '';
-    if (!canStudentAccessExam(exam, studentAdminId, studentBoard)) {
+    const studentBoardOrAdmin =
+      student.assignedAdmin && typeof student.assignedAdmin === 'object'
+        ? student.assignedAdmin
+        : student.assignedAdmin?.board || student.board || '';
+    if (!canStudentAccessExam(exam, studentAdminId, studentBoardOrAdmin)) {
       return res.status(403).json({
         success: false,
         message: 'This exam is not assigned to your school.'

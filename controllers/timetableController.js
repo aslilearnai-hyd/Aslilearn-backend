@@ -169,7 +169,18 @@ function generateRepeatDates(baseDate, repeatRule, effectiveFrom, effectiveTo) {
   return dates;
 }
 
+function requireRoomAndBuilding(body) {
+  const room = String(body?.room ?? '').trim();
+  const building = String(body?.building ?? '').trim();
+  if (!room || !building) {
+    return { ok: false, message: 'Room and building are required' };
+  }
+  return { ok: true, room, building };
+}
+
 function entryPayload(body, schoolAdminId, createdBy) {
+  const room = String(body.room ?? '').trim();
+  const building = String(body.building ?? '').trim();
   return {
     schoolAdminId,
     date: body.date,
@@ -180,8 +191,8 @@ function entryPayload(body, schoolAdminId, createdBy) {
     sectionId: body.sectionId,
     subjectId: body.subjectId,
     teacherId: body.teacherId,
-    room: body.room || '',
-    building: body.building || '',
+    room,
+    building,
     repeatRule: body.repeatRule || 'none',
     effectiveFrom: body.effectiveFrom,
     effectiveTo: body.effectiveTo,
@@ -205,7 +216,16 @@ export const createTimetableEntry = async (req, res) => {
       return res.status(403).json({ success: false, message: 'Admin context required' });
     }
 
-    const payload = entryPayload(req.body, schoolAdminId, schoolAdminId);
+    const location = requireRoomAndBuilding(req.body);
+    if (!location.ok) {
+      return res.status(400).json({ success: false, message: location.message });
+    }
+
+    const payload = entryPayload(
+      { ...req.body, room: location.room, building: location.building },
+      schoolAdminId,
+      schoolAdminId
+    );
     const repeatGroupId = payload.repeatRule !== 'none' ? crypto.randomUUID() : undefined;
     const dates = generateRepeatDates(
       payload.date,
@@ -302,6 +322,18 @@ export const updateTimetableEntry = async (req, res) => {
     const updates = { ...req.body };
     delete updates.schoolAdminId;
     delete updates.createdBy;
+
+    if (updates.room !== undefined || updates.building !== undefined) {
+      const location = requireRoomAndBuilding({
+        room: updates.room !== undefined ? updates.room : entry.room,
+        building: updates.building !== undefined ? updates.building : entry.building,
+      });
+      if (!location.ok) {
+        return res.status(400).json({ success: false, message: location.message });
+      }
+      updates.room = location.room;
+      updates.building = location.building;
+    }
 
     const merged = {
       date: updates.date || entry.date,
@@ -408,7 +440,7 @@ export const bulkDeleteTimetable = async (req, res) => {
   }
 };
 
-const CSV_HEADERS = ['Date', 'Day', 'StartTime', 'EndTime', 'Class', 'Section', 'Subject', 'Teacher', 'Room', 'Type', 'Status', 'Notes'];
+const CSV_HEADERS = ['Date', 'Day', 'StartTime', 'EndTime', 'Class', 'Section', 'Subject', 'Teacher', 'Room', 'Building', 'Type', 'Status', 'Notes'];
 
 function parseCsvBuffer(buffer, originalName) {
   let csvData;
@@ -448,6 +480,12 @@ async function resolveCsvRow(row, schoolAdminId) {
   }
   if (!teacher) return { error: `Teacher "${teacherName || teacherEmail}" not found` };
 
+  const room = cleanCsvCell(row.Room || row.room || '');
+  const building = cleanCsvCell(row.Building || row.building || '');
+  if (!room || !building) {
+    return { error: 'Room and Building are required' };
+  }
+
   const dateStr = cleanCsvCell(row.Date || row.date);
   const date = startOfDay(new Date(dateStr));
   if (Number.isNaN(date.getTime())) return { error: `Invalid date: ${dateStr}` };
@@ -462,7 +500,8 @@ async function resolveCsvRow(row, schoolAdminId) {
     sectionId: section,
     subjectId: subject._id,
     teacherId: teacher._id,
-    room: cleanCsvCell(row.Room || row.room || ''),
+    room,
+    building,
     sessionType: cleanCsvCell(row.Type || row.type || 'Lecture'),
     status: cleanCsvCell(row.Status || row.status || 'Scheduled'),
     notes: cleanCsvCell(row.Notes || row.notes || ''),
@@ -558,8 +597,8 @@ export const importTimetableCSV = async (req, res) => {
 
 export const downloadCSVTemplate = async (req, res) => {
   const template = `${CSV_HEADERS.join(',')}
-2026-05-24,Monday,09:00,10:00,10,A,Mathematics,John Smith,Room-101,Lecture,Scheduled,Chapter 1 - Algebra
-2026-05-24,Monday,10:00,11:00,10,A,Physics,Jane Doe,Lab-201,Lab,Scheduled,Practical session`;
+2026-05-24,Monday,09:00,10:00,10,A,Mathematics,John Smith,Room-101,Main Block,Lecture,Scheduled,Chapter 1 - Algebra
+2026-05-24,Monday,10:00,11:00,10,A,Physics,Jane Doe,Lab-201,Science Wing,Lab,Scheduled,Practical session`;
   res.setHeader('Content-Type', 'text/csv');
   res.setHeader('Content-Disposition', 'attachment; filename=timetable-template.csv');
   res.send(template);
@@ -594,6 +633,7 @@ export const exportTimetableCSV = async (req, res) => {
         e.subjectId?.name || '',
         e.teacherId?.fullName || '',
         e.room || '',
+        e.building || '',
         e.sessionType,
         e.status,
         (e.notes || '').replace(/,/g, ';'),

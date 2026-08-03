@@ -330,7 +330,16 @@ export async function me(req, res) {
       email: user.email,
       fullName: user.fullName,
       role: user.role,
-      classNumber: user.classNumber,
+      classNumber:
+        (user.classNumber != null &&
+          String(user.classNumber).trim() !== '' &&
+          String(user.classNumber).trim() !== 'Unassigned'
+          ? String(user.classNumber).trim()
+          : '') ||
+        (user.assignedClass?.classNumber != null &&
+        String(user.assignedClass.classNumber).trim() !== ''
+          ? String(user.assignedClass.classNumber).trim()
+          : ''),
       section:
         user.assignedClass?.section != null && String(user.assignedClass.section).trim() !== ''
           ? String(user.assignedClass.section).trim()
@@ -522,6 +531,7 @@ export async function register(req, res) {
       iitCategories: d.iitCategories,
       interestedCourses: d.interestedCourses,
       interestedSubjects: d.interestedSubjects,
+      accountSource: d.accountSource || 'web_register',
       subscriptionStatus: 'trial',
       trialStartsAt: d.trialStartsAt,
       trialEndsAt: d.trialEndsAt,
@@ -541,6 +551,7 @@ export async function register(req, res) {
         iitCategories: d.iitCategories,
         interestedCourses: d.interestedCourses,
         interestedSubjects: d.interestedSubjects,
+        accountSource: trialFields.accountSource,
         isIndividualAccount: true,
         subscriptionStatus: 'trial',
         trialStartsAt: d.trialStartsAt,

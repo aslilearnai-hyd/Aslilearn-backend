@@ -33,8 +33,24 @@ const timetableSchema = new mongoose.Schema(
       required: true,
     },
 
-    room: { type: String, trim: true, default: '' },
-    building: { type: String, trim: true, default: '' },
+    room: {
+      type: String,
+      trim: true,
+      required: [true, 'Room is required'],
+      validate: {
+        validator: (v) => String(v ?? '').trim().length > 0,
+        message: 'Room is required',
+      },
+    },
+    building: {
+      type: String,
+      trim: true,
+      required: [true, 'Building is required'],
+      validate: {
+        validator: (v) => String(v ?? '').trim().length > 0,
+        message: 'Building is required',
+      },
+    },
 
     repeatRule: {
       type: String,

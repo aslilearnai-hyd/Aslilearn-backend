@@ -79,8 +79,9 @@ router.get('/calendar/events', async (req, res) => {
     }
     const { monthStart, monthEnd } = bounds;
     const schoolOid = new mongoose.Types.ObjectId(teacher.adminId);
-    const schoolAdmin = await User.findById(teacher.adminId).select('board').lean();
-    const schoolBoard = schoolAdmin?.board || '';
+    const schoolAdmin = await User.findById(teacher.adminId)
+      .select('board curriculumBoard isAsliPrepExclusive iitCategories')
+      .lean();
 
     const examDocs = await Exam.find({
       startDate: { $lte: monthEnd },
@@ -97,7 +98,7 @@ router.get('/calendar/events', async (req, res) => {
       .filter(
         (ex) =>
           examVisibleToSchool(ex, schoolOid) &&
-          examMatchesAdminBoard(ex, schoolBoard),
+          examMatchesAdminBoard(ex, schoolAdmin || ''),
       )
       .map((ex) => ({
         id: `exam-${ex._id.toString()}`,

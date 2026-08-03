@@ -48,6 +48,7 @@ import proxyRoutes from './routes/proxy.js';
 import calendarPublicRoutes from './routes/calendarPublic.js';
 import catalogRoutes from './routes/catalog.js';
 import legacyStubsRoutes from './routes/legacyStubs.js';
+import uploadRoutes from './routes/upload.js';
 import lessonPlanRoutes from './routes/lessonPlan.js';
 import publicDemoRoutes from './routes/publicDemo.js';
 
@@ -273,6 +274,7 @@ export function createApp(options = {}) {
   app.use('/api', practiceProgressRoutes);
   app.use('/api', dashboardRoutes);
   app.use('/api/timetable', timetableRoutes);
+  app.use('/api/upload', uploadRoutes);
   app.use(catalogRoutes);
   app.use('/api/lesson-plan', lessonPlanRoutes);
   app.use(legacyStubsRoutes);

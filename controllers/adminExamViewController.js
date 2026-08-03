@@ -17,7 +17,9 @@ export const getViewableExams = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Admin context missing' });
     }
 
-    const admin = await User.findById(adminId).select('_id board schoolName fullName role').lean();
+    const admin = await User.findById(adminId)
+      .select('_id board curriculumBoard isAsliPrepExclusive iitCategories schoolName fullName role')
+      .lean();
     if (!admin || admin.role !== 'admin') {
       return res.status(403).json({ success: false, message: 'School admin access required' });
     }
@@ -58,7 +60,9 @@ export const getExamDetails = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Invalid exam id' });
     }
 
-    const admin = await User.findById(adminId).select('_id board role').lean();
+    const admin = await User.findById(adminId)
+      .select('_id board curriculumBoard isAsliPrepExclusive iitCategories role')
+      .lean();
     if (!admin || admin.role !== 'admin') {
       return res.status(403).json({ success: false, message: 'School admin access required' });
     }

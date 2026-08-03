@@ -145,7 +145,9 @@ export const listSubjects = async (req, res) => {
       classLabel,
     });
     let subjects = uniqueSorted(managed.subjects);
-    if (isIitClassLabel(classLabel, board) && subjects.length === 0) {
+    // Hardcoded curriculum subjects are already merged inside resolveAiToolTopicTaxonomy.
+    // Keep IIT empty-seed fallback for boards that only use Amenity content.
+    if (subjects.length === 0 && isIitClassLabel(classLabel, board)) {
       const { getSubjectsForClass } = await import('../services/hardcoded-content-service.js');
       subjects = uniqueSorted(await getSubjectsForClass('IIT-6'));
     }
@@ -174,20 +176,8 @@ export const listTopics = async (req, res) => {
     }
 
     const managed = await resolveAiToolTopicTaxonomy({ board, classLabel, subject, productCategory: req.query.productCategory });
-    let topics = managed.topics;
-    if (isIitClassLabel(classLabel, board)) {
-      try {
-        const { getChaptersForSubject } = await import('../services/hardcoded-content-service.js');
-        const chapters = await getChaptersForSubject('IIT-6', subject);
-        const fallback = chapters.map((row) => normalizeText(row.chapterName)).filter(Boolean);
-        topics = uniqueSortedChapterTopics([...topics, ...fallback]);
-      } catch (err) {
-        console.warn('listTopics IIT chapter merge skipped:', String(err?.message || err).slice(0, 160));
-        if (topics.length === 0) {
-          topics = [];
-        }
-      }
-    }
+    // Topics already include AiToolTopic + generation + hardcoded NCERT chapters.
+    const topics = uniqueSortedChapterTopics(managed.topics);
     return res.json({
       success: true,
       data: toOptionRows(topics),
@@ -220,11 +210,7 @@ export const listSubtopics = async (req, res) => {
       subject,
       topicName,
     });
-    let subTopics = managed.subTopics;
-    if (isIitClassLabel(classLabel, board) && subTopics.length === 0) {
-      const { getSubtopicsForChapter } = await import('../services/hardcoded-content-service.js');
-      subTopics = uniqueSorted(await getSubtopicsForChapter('IIT-6', subject, topicName));
-    }
+    const subTopics = uniqueSorted(managed.subTopics);
     return res.json({
       success: true,
       data: toOptionRows(subTopics),

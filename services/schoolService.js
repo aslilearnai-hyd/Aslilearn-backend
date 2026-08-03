@@ -19,6 +19,57 @@ export function isValidOptionalPhoneTenDigits(raw) {
   return digits.length === 0 || digits.length === 10;
 }
 
+/** Digits only for storage after validation (max 6). */
+export function normalizeIndianPincode(raw) {
+  const trimmed = String(raw ?? '').trim();
+  if (!trimmed) return '';
+  if (!/^\d+$/.test(trimmed) || trimmed.length !== 6 || !/^[1-9]\d{5}$/.test(trimmed)) {
+    return '';
+  }
+  return trimmed;
+}
+
+/**
+ * Empty OR exactly 6 digits with first digit 1–9.
+ * Rejects longer values (e.g. 12-digit junk) — does not truncate-then-accept.
+ */
+export function isValidOptionalIndianPincode(raw) {
+  const trimmed = String(raw ?? '').trim();
+  if (!trimmed) return true;
+  if (!/^\d+$/.test(trimmed)) return false;
+  if (trimmed.length !== 6) return false;
+  return /^[1-9]\d{5}$/.test(trimmed);
+}
+
+/** Optional door/street/area lines — reject symbol-only junk. */
+export function isValidOptionalAddressLine(raw, { max = 120 } = {}) {
+  const s = String(raw ?? '').trim();
+  if (!s) return true;
+  if (s.length > max) return false;
+  try {
+    if (!/[\p{L}\p{N}]/u.test(s)) return false;
+    return /^[\p{L}\p{M}\p{N}\s.'&\-()/#]+$/u.test(s);
+  } catch {
+    if (!/[A-Za-z0-9]/.test(s)) return false;
+    return /^[A-Za-z0-9\s.'&\-()/#]+$/.test(s);
+  }
+}
+
+/**
+ * School / city / district: must include letters; reject symbol-only junk.
+ */
+export function isValidSchoolPlaceName(raw, { min = 2, max = 120 } = {}) {
+  const s = String(raw ?? '').trim();
+  if (s.length < min || s.length > max) return false;
+  try {
+    if (!/\p{L}/u.test(s)) return false;
+    return /^[\p{L}\p{M}\p{N}\s.'&\-()/]+$/u.test(s);
+  } catch {
+    if (!/[A-Za-z]/.test(s)) return false;
+    return /^[A-Za-z0-9\s.'&\-()/]+$/.test(s);
+  }
+}
+
 export const normalizeSchoolDetails = (raw, fallbackState) => {
   const src = raw && typeof raw === 'object' ? raw : {};
   const stateVal =
@@ -80,7 +131,7 @@ export function buildSchoolFieldsFromBody(body) {
     secondaryContactPerson: secondaryContactPerson?.trim() || '',
     secondaryContactPhone: normalizePhoneTenDigits(secondaryContactPhone),
     place: placeLine,
-    pin: pin?.trim() || '',
+    pin: normalizeIndianPincode(pin),
     schoolDetails,
     board: finalBoard,
     curriculumBoard: curriculumUpper,

@@ -53,7 +53,8 @@ const examSchema = new mongoose.Schema({
   },
   duration: {
     type: Number, // in minutes
-    required: true
+    required: true,
+    min: [1, 'Duration must be at least 1 minute'],
   },
   totalQuestions: {
     type: Number,

@@ -36,6 +36,9 @@ import {
   resolveSchoolAndAdminByParamId,
   normalizePhoneTenDigits,
   isValidOptionalPhoneTenDigits,
+  isValidOptionalIndianPincode,
+  isValidSchoolPlaceName,
+  isValidOptionalAddressLine,
   normalizeAccountSeats,
 } from '../services/schoolService.js';
 
@@ -965,6 +968,43 @@ export const createAdmin = async (req, res) => {
       });
     }
 
+    if (!isValidSchoolPlaceName(schoolFields.name, { min: 2, max: 200 })) {
+      return res.status(400).json({
+        success: false,
+        message: 'School name must be 2–200 characters and include letters (symbols-only names are not allowed)',
+      });
+    }
+    if (!isValidSchoolPlaceName(schoolFields.schoolDetails.city, { min: 2, max: 100 })) {
+      return res.status(400).json({
+        success: false,
+        message: 'City must be 2–100 characters and include letters',
+      });
+    }
+    if (!isValidSchoolPlaceName(schoolFields.schoolDetails.district, { min: 2, max: 100 })) {
+      return res.status(400).json({
+        success: false,
+        message: 'District must be 2–100 characters and include letters',
+      });
+    }
+    // Validate raw pin from the request — normalized schoolFields.pin may have been cleared.
+    if (!isValidOptionalIndianPincode(req.body?.pin)) {
+      return res.status(400).json({
+        success: false,
+        message:
+          'Pincode must be exactly 6 digits (Indian PIN, e.g. 500001), or left empty. Longer or non-numeric values are not allowed',
+      });
+    }
+    if (
+      !isValidOptionalAddressLine(schoolFields.schoolDetails.doorNo) ||
+      !isValidOptionalAddressLine(schoolFields.schoolDetails.street) ||
+      !isValidOptionalAddressLine(schoolFields.schoolDetails.area)
+    ) {
+      return res.status(400).json({
+        success: false,
+        message: 'Door No, Street, and Area may only use letters, numbers, and common punctuation',
+      });
+    }
+
     if (
       !isValidOptionalPhoneTenDigits(schoolFields.phone) ||
       !isValidOptionalPhoneTenDigits(schoolFields.secondaryContactPhone)
@@ -1160,6 +1200,41 @@ export const updateAdmin = async (req, res) => {
         return res.status(400).json({
           success: false,
           message: 'City, district, and state are required for school information',
+        });
+      }
+      if (schoolFields.name && !isValidSchoolPlaceName(schoolFields.name, { min: 2, max: 200 })) {
+        return res.status(400).json({
+          success: false,
+          message: 'School name must be 2–200 characters and include letters (symbols-only names are not allowed)',
+        });
+      }
+      if (!isValidSchoolPlaceName(schoolFields.schoolDetails.city, { min: 2, max: 100 })) {
+        return res.status(400).json({
+          success: false,
+          message: 'City must be 2–100 characters and include letters',
+        });
+      }
+      if (!isValidSchoolPlaceName(schoolFields.schoolDetails.district, { min: 2, max: 100 })) {
+        return res.status(400).json({
+          success: false,
+          message: 'District must be 2–100 characters and include letters',
+        });
+      }
+      if (req.body?.pin !== undefined && !isValidOptionalIndianPincode(req.body.pin)) {
+        return res.status(400).json({
+          success: false,
+          message:
+            'Pincode must be exactly 6 digits (Indian PIN, e.g. 500001), or left empty. Longer or non-numeric values are not allowed',
+        });
+      }
+      if (
+        !isValidOptionalAddressLine(schoolFields.schoolDetails.doorNo) ||
+        !isValidOptionalAddressLine(schoolFields.schoolDetails.street) ||
+        !isValidOptionalAddressLine(schoolFields.schoolDetails.area)
+      ) {
+        return res.status(400).json({
+          success: false,
+          message: 'Door No, Street, and Area may only use letters, numbers, and common punctuation',
         });
       }
       if (
