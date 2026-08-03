@@ -3,6 +3,7 @@
  * Supports both legacy AIzaSy traffic keys and new AQ. auth keys from AI Studio.
  */
 import { GoogleGenAI } from '@google/genai';
+import { buildGeminiEndpoint } from '../../services/gemini-auth.js';
 
 const clientByKey = new Map();
 
@@ -108,8 +109,12 @@ export async function embedContentCompat({ apiKey, model, text }) {
 }
 
 /**
- * Native REST generateContent with header auth (works for AQ. auth keys).
- * Prefer generateContentCompat when possible; this is for callers that parse raw JSON.
+ * Native REST generateContent.
+ *
+ * Auth transport depends on the key format — x-goog-api-key does NOT work for
+ * AQ keys (Google answers 401 ACCESS_TOKEN_TYPE_UNSUPPORTED, "Expected OAuth 2
+ * access token"); those must go in an Authorization: Bearer header.
+ * buildGeminiEndpoint picks the right one.
  */
 export async function fetchGeminiGenerateContent({
   baseUrl = 'https://generativelanguage.googleapis.com/v1beta',
@@ -125,7 +130,8 @@ export async function fetchGeminiGenerateContent({
   if (!modelName) throw new Error('Gemini model is missing');
 
   const root = String(baseUrl || '').replace(/\/+$/, '');
-  const url = `${root}/models/${modelName}:generateContent`;
+  const endpoint = buildGeminiEndpoint({ baseUrl: root, model: modelName, apiKey: key });
+  const url = endpoint.url;
 
   let controller = null;
   let timer = null;
@@ -139,10 +145,7 @@ export async function fetchGeminiGenerateContent({
   try {
     const response = await fetch(url, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-goog-api-key': key,
-      },
+      headers: endpoint.headers,
       body: JSON.stringify(body || {}),
       signal: effectiveSignal,
     });

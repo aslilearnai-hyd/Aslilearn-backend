@@ -24,6 +24,7 @@ import {
 import { normalizeClassNumberLabel } from '../utils/studentClassContent.js';
 import { enrichExtractedExamQuestions } from '../services/exam-pdf-enrichment.js';
 import { extractDocxQuestionPaper, isDocxUpload } from '../services/docx-question-paper.js';
+import { buildGeminiEndpoint } from '../services/gemini-auth.js';
 
 const QUESTION_CATEGORY_CSV_VALUES = [
   'Numerical',
@@ -1042,17 +1043,13 @@ Important rules:
 
     let response;
     try {
-      response = await fetchWithTimeout(
-        `${GEMINI_BASE_URL}/models/${model}:generateContent`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'x-goog-api-key': apiKey,
-          },
-          body: JSON.stringify(payload),
-        },
-      );
+      // AIza keys authenticate by query param, AQ keys by bearer header.
+      const endpoint = buildGeminiEndpoint({ baseUrl: GEMINI_BASE_URL, model, apiKey });
+      response = await fetchWithTimeout(endpoint.url, {
+        method: 'POST',
+        headers: endpoint.headers,
+        body: JSON.stringify(payload),
+      });
     } catch (error) {
       return {
         ok: false,
@@ -1085,14 +1082,10 @@ Important rules:
     usageTotals.calls += 1;
     let response;
     try {
-      response = await fetchWithTimeout(
-        `${GEMINI_BASE_URL}/models/${model}:generateContent`,
-        {
+      const endpoint = buildGeminiEndpoint({ baseUrl: GEMINI_BASE_URL, model, apiKey });
+      response = await fetchWithTimeout(endpoint.url, {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'x-goog-api-key': apiKey,
-          },
+          headers: endpoint.headers,
           body: JSON.stringify({
             contents: [{ role: 'user', parts: [{ text: promptText }] }],
             generationConfig: {
@@ -1103,8 +1096,7 @@ Important rules:
               responseSchema,
             },
           }),
-        },
-      );
+      });
     } catch {
       return null;
     }
