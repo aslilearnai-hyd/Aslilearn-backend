@@ -6,7 +6,10 @@
 import { boardMongoMatch, lockBoardKey } from '../../utils/board-label.js';
 
 export function normalizeMatchText(value) {
-  return String(value || '').trim().replace(/\s+/g, ' ');
+  return String(value || '')
+    .normalize('NFC')
+    .trim()
+    .replace(/\s+/g, ' ');
 }
 
 export function escapeRegex(value) {
@@ -88,19 +91,59 @@ export function buildTopicNameVariants(topic) {
   if (!tn) return [];
   const variants = new Set([tn]);
 
+  const addChapterBareTitles = (value) => {
+    const v = normalizeMatchText(value);
+    if (!v) return;
+    // "Chapter 5: Title" / "Chapter 5 - Title" / "Chapter-5 - Title"
+    const chapterTitle = v.match(/^chapter\s*[-–—.]?\s*(\d+)\s*[-–—:.]\s*(.+)$/i);
+    if (chapterTitle?.[2]) {
+      const num = chapterTitle[1];
+      const title = chapterTitle[2].trim();
+      if (title) {
+        variants.add(title);
+        variants.add(`Chapter ${num} - ${title}`);
+        variants.add(`Chapter ${num}: ${title}`);
+        variants.add(`Chapter-${num} - ${title}`);
+        variants.add(`Chapter ${num}`);
+      }
+    }
+    // "5. Title" / "5) Title"
+    const numbered = v.match(/^(\d+)[\.)]\s*(.+)$/);
+    if (numbered?.[2]) {
+      const title = numbered[2].trim();
+      variants.add(title);
+      variants.add(`Chapter ${numbered[1]} - ${title}`);
+      variants.add(`Chapter ${numbered[1]}: ${title}`);
+    }
+  };
+
   const addDashParts = (value) => {
     const parts = String(value || '')
       .split(/\s+-\s+/)
       .map((s) => s.trim())
       .filter(Boolean);
-    for (const part of parts) variants.add(part);
+    for (const part of parts) {
+      variants.add(part);
+      addChapterBareTitles(part);
+    }
     // Progressive right-hand suffixes: "A - B - C" → "B - C", "C"
     for (let i = 1; i < parts.length; i++) {
-      variants.add(parts.slice(i).join(' - '));
+      const suffix = parts.slice(i).join(' - ');
+      variants.add(suffix);
+      addChapterBareTitles(suffix);
     }
   };
 
   addDashParts(tn);
+  addChapterBareTitles(tn);
+
+  // Taxonomy labels: "Science (NCERT) - Chapter 5: Life Processes"
+  const withoutNcertLabel = tn.replace(/^.+?\(\s*ncert\s*\)\s*[-–—:]\s*/i, '').trim();
+  if (withoutNcertLabel && withoutNcertLabel !== tn) {
+    variants.add(withoutNcertLabel);
+    addDashParts(withoutNcertLabel);
+    addChapterBareTitles(withoutNcertLabel);
+  }
 
   // AI Tool Topics often use "Chapter-5 - Title"; generations may store "Chapter 5 - Title".
   const chapterNormalized = tn.replace(
@@ -110,6 +153,7 @@ export function buildTopicNameVariants(topic) {
   if (chapterNormalized && chapterNormalized !== tn) {
     variants.add(chapterNormalized);
     addDashParts(chapterNormalized);
+    addChapterBareTitles(chapterNormalized);
   }
   const chapterHyphenated = tn.replace(
     /^(chapter)\s+(\d+)\b/i,
@@ -118,6 +162,7 @@ export function buildTopicNameVariants(topic) {
   if (chapterHyphenated && chapterHyphenated !== tn) {
     variants.add(chapterHyphenated);
     addDashParts(chapterHyphenated);
+    addChapterBareTitles(chapterHyphenated);
   }
 
   // "Book 1: Title - …" / "Book 1 Chapter 2 - …"
@@ -125,11 +170,13 @@ export function buildTopicNameVariants(topic) {
   if (withoutBook && withoutBook !== tn) {
     variants.add(withoutBook);
     addDashParts(withoutBook);
+    addChapterBareTitles(withoutBook);
   }
   const withoutBookChapter = tn.replace(/^book\s*\d+\s+/i, '').trim();
   if (withoutBookChapter && withoutBookChapter !== tn) {
     variants.add(withoutBookChapter);
     addDashParts(withoutBookChapter);
+    addChapterBareTitles(withoutBookChapter);
   }
 
   // Strip "Chapter 5 -" / "Chapter-5 -" / "Chapter 5:" prefix → bare title
@@ -137,7 +184,10 @@ export function buildTopicNameVariants(topic) {
     .replace(/^chapter\s*[-–—.]?\s*\d+\s*[-–—:]\s*/i, '')
     .replace(/^chapter\s+\d+\s*[-:]\s*/i, '')
     .trim();
-  if (withoutChapter && withoutChapter !== tn) variants.add(withoutChapter);
+  if (withoutChapter && withoutChapter !== tn) {
+    variants.add(withoutChapter);
+    addChapterBareTitles(withoutChapter);
+  }
 
   // "5. Title" / "5) Title"
   const numbered = tn.match(/^(\d+)[\.)]\s*(.+)$/);
@@ -155,23 +205,47 @@ export function buildSubtopicNameVariants(subtopic) {
   const st = normalizeMatchText(subtopic);
   if (!st) return [];
   const variants = new Set([st]);
+
   const parts = st.split(/\s+-\s+/).map((s) => s.trim()).filter(Boolean);
   for (const part of parts) variants.add(part);
   for (let i = 1; i < parts.length; i++) {
     variants.add(parts.slice(i).join(' - '));
   }
+
+  // NCERT-style: "5.1 What Are Life Processes?" / "5.1.2 Title" / "5. Title"
+  const sectionNum = st.match(/^(\d+(?:\.\d+)*)[.)]?\s+(.+)$/);
+  if (sectionNum?.[2]) {
+    const num = sectionNum[1];
+    const title = sectionNum[2].trim();
+    variants.add(num);
+    variants.add(title);
+    variants.add(`${num} ${title}`);
+    variants.add(`${num}. ${title}`);
+  }
+
   const withoutNumber = st
-    .replace(/^(\d+[\.)]\s*)+/, '')
+    .replace(/^\d+(?:\.\d+)*[.)]?\s+/, '')
     .replace(/^chapter\s+\d+\s*[-:]\s*/i, '')
     .trim();
-  if (withoutNumber) variants.add(withoutNumber);
-  return [...variants];
+  if (withoutNumber && withoutNumber !== st) variants.add(withoutNumber);
+
+  // Trailing "?" is common in NCERT headings but may be omitted in stored rows
+  for (const v of [...variants]) {
+    const noQ = String(v || '').replace(/\?+$/g, '').trim();
+    if (noQ && noQ !== v) variants.add(noQ);
+  }
+
+  return [...variants].map((v) => normalizeMatchText(v)).filter(Boolean);
 }
 
 function looseNormalize(value) {
+  // Keep letters/numbers from ANY script (Latin, Devanagari, Telugu, etc.).
+  // The old /[^a-z0-9]+/ strip turned Hindi/Telugu topics into "" so
+  // Reading Practice / Story Passage never matched ग्रीष्म ऋतु-style titles.
   return String(value || '')
+    .normalize('NFC')
     .toLowerCase()
-    .replace(/[^a-z0-9]+/gi, ' ')
+    .replace(/[^\p{L}\p{N}]+/gu, ' ')
     .trim()
     .replace(/\s+/g, ' ');
 }
@@ -299,10 +373,22 @@ export function buildAiToolDataScopeFilter({ classLabel, subject, board }) {
 export function topicTextMatches(stored, queried) {
   const variants = buildTopicNameVariants(queried);
   const storedLoose = looseNormalize(stored);
+  const queriedLoose = looseNormalize(queried);
+  // Indic / empty-after-strip: fall back to NFC exact compare
+  if (!storedLoose && !queriedLoose) {
+    return normalizeMatchText(stored) === normalizeMatchText(queried);
+  }
   if (!storedLoose) return !normalizeMatchText(queried);
+  if (queriedLoose && (storedLoose === queriedLoose || storedLoose.includes(queriedLoose) || queriedLoose.includes(storedLoose))) {
+    return true;
+  }
   return variants.some((v) => {
     const q = looseNormalize(v);
-    if (!q) return false;
+    if (!q) {
+      const vn = normalizeMatchText(v);
+      const sn = normalizeMatchText(stored);
+      return Boolean(vn) && (sn === vn || sn.includes(vn) || vn.includes(sn));
+    }
     return storedLoose === q || storedLoose.includes(q) || q.includes(storedLoose);
   });
 }
@@ -310,10 +396,21 @@ export function topicTextMatches(stored, queried) {
 export function subtopicTextMatches(stored, queried) {
   const variants = buildSubtopicNameVariants(queried);
   const storedNorm = looseNormalize(stored);
+  const queriedLoose = looseNormalize(queried);
+  if (!storedNorm && !queriedLoose) {
+    return normalizeMatchText(stored) === normalizeMatchText(queried);
+  }
   if (!storedNorm) return !normalizeMatchText(queried);
+  if (queriedLoose && (storedNorm === queriedLoose || storedNorm.includes(queriedLoose) || queriedLoose.includes(storedNorm))) {
+    return true;
+  }
   return variants.some((v) => {
     const q = looseNormalize(v);
-    if (!q) return false;
+    if (!q) {
+      const vn = normalizeMatchText(v);
+      const sn = normalizeMatchText(stored);
+      return Boolean(vn) && (sn === vn || sn.includes(vn) || vn.includes(sn));
+    }
     return storedNorm === q || storedNorm.includes(q) || q.includes(storedNorm);
   });
 }
