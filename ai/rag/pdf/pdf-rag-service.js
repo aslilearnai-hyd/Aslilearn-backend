@@ -1,5 +1,5 @@
 import { PDFParse } from 'pdf-parse';
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { embedContentCompat } from '../../providers/google-genai-compat.js';
 import PdfKnowledgeSource from '../../../models/PdfKnowledgeSource.js';
 import PdfChunk from '../../../models/PdfChunk.js';
 import AiContentEngineChunk from '../../../models/AiContentEngineChunk.js';
@@ -101,17 +101,11 @@ function localHashEmbedding(text, dimension = LOCAL_EMBED_DIM) {
 const DEFAULT_GEMINI_EMBEDDING_MODEL = 'gemini-embedding-001';
 
 async function geminiEmbedding(text) {
-  const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || process.env.VIDYA_AI_GEMINI_API_KEY;
   if (!apiKey) throw new Error('GEMINI_API_KEY is not configured');
   // text-embedding-004 was shut down (404 on v1beta). Use gemini-embedding-001.
   const modelName = process.env.GEMINI_EMBEDDING_MODEL || DEFAULT_GEMINI_EMBEDDING_MODEL;
-  const genAI = new GoogleGenerativeAI(apiKey);
-  const model = genAI.getGenerativeModel({ model: modelName });
-  const result = await model.embedContent(text);
-  const values = result?.embedding?.values;
-  if (!Array.isArray(values) || values.length === 0) {
-    throw new Error('Gemini embedding returned empty vector');
-  }
+  const values = await embedContentCompat({ apiKey, model: modelName, text });
   return normalizeVector(values);
 }
 
