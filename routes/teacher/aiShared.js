@@ -25,7 +25,8 @@ import {
   getTeacherToolStats,
   getSubjects,
   getTopics,
-  getAvailableContent
+  getAvailableContent,
+  getTopicsWithContent
 } from '../../controllers/aiToolsController.js';
 import { getMyWeeklyDigest } from '../../controllers/impactReportController.js';
 import Video from '../../models/Video.js';
@@ -71,6 +72,7 @@ const allowTeacherOrStudent = (req, res, next) => {
 router.get('/ai/subjects', allowTeacherOrStudent, getSubjects); // Returns valid subjects for Class 6
 router.get('/ai/topics', allowTeacherOrStudent, getTopics); // Returns chapters from planner.json
 router.get('/ai/available-content', allowTeacherOrStudent, getAvailableContent); // Returns all available content types for a chapter
+router.get('/ai/topics-with-content', allowTeacherOrStudent, getTopicsWithContent); // Chapters that have content for a tool (one query, not one per chapter)
 router.post('/ai/tool', allowTeacherOrStudent, createTeacherTool); // Uses hardcoded content only
 router.post('/ai/generate-content', allowTeacherOrStudent, generateContent); // Generate + persist
 router.get('/ai/generated-content', allowTeacherOrStudent, getGeneratedContent); // Fallback latest generated content

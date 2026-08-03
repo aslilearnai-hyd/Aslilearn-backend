@@ -23,6 +23,7 @@ import {
 } from '../utils/exam-question-order.js';
 import { normalizeClassNumberLabel } from '../utils/studentClassContent.js';
 import { enrichExtractedExamQuestions } from '../services/exam-pdf-enrichment.js';
+import { extractDocxQuestionPaper, isDocxUpload } from '../services/docx-question-paper.js';
 
 const QUESTION_CATEGORY_CSV_VALUES = [
   'Numerical',
@@ -628,6 +629,26 @@ export function flagAnswersContradictedByExplanation(rows) {
 }
 
 /**
+ * Printed question numbers, accepting only numbers that continue a run from 1.
+ * That rejects false positives like "1. 0.5" inside a Match-the-Following
+ * column, which would otherwise look like question 1.
+ */
+function printedQuestionNumbersFromText(text) {
+  const seen = new Set();
+  let expectedNext = 1;
+  const re = /(?:^|\n)\s*(\d{1,3})[.)]\s+\S/g;
+  let m;
+  while ((m = re.exec(String(text || '')))) {
+    const n = parseInt(m[1], 10);
+    if (n === expectedNext && n >= 1 && n <= 200) {
+      seen.add(n);
+      expectedNext = n + 1;
+    }
+  }
+  return [...seen].sort((a, b) => a - b);
+}
+
+/**
  * Paper-identity fingerprint: the paper/set code (MA1_B, MA1-N…) and academic
  * year, normalized. Used to tell whether an answer-key page belongs to the
  * question paper it is stapled to. Returns '' when nothing identifiable.
@@ -824,6 +845,8 @@ function buildExtractionUsage(totals) {
 export async function extractQuestionsFromPdfViaGemini({
   buffer,
   mimeType = 'application/pdf',
+  /** Set for Word uploads: the paper as text, since .docx cannot be inlined. */
+  documentText = '',
 }) {
   const apiKey = getGeminiApiKey();
   if (!apiKey) {
@@ -838,7 +861,17 @@ export async function extractQuestionsFromPdfViaGemini({
 
   // Strip trailing Rough Work / Test Key pages (Grade 6 style) — they confuse Gemini
   // and burn output tokens. Keep parsed keys to fill correctAnswer after extract.
-  const prepared = await prepareExamPdfBufferForExtraction(buffer);
+  // A Word upload has no pages to strip, so the same facts are read off its text.
+  const prepared = documentText
+    ? {
+        buffer,
+        removedTailPages: 0,
+        answerKeyByNumber: parseAsliPrepTestKeyLetters(documentText),
+        printedQuestionNumbers: printedQuestionNumbersFromText(documentText),
+        bodyPaperCode: '',
+        keyPaperCode: '',
+      }
+    : await prepareExamPdfBufferForExtraction(buffer);
   const pdfBuffer = prepared.buffer || buffer;
   const answerKeyByNumber = prepared.answerKeyByNumber || new Map();
 
@@ -979,21 +1012,22 @@ Important rules:
         : {}),
     };
 
-    const payload = {
-      contents: [
-        {
-          role: 'user',
-          parts: [
-            { text: promptText },
-            {
-              inlineData: {
-                mimeType,
-                data: pdfBuffer.toString('base64'),
-              },
+    // A Word upload has no renderable page to attach — the paper is supplied as
+    // text instead, and the same prompt runs against it.
+    const parts = documentText
+      ? [{ text: `${promptText}\n\n--- QUESTION PAPER TEXT ---\n${documentText}` }]
+      : [
+          { text: promptText },
+          {
+            inlineData: {
+              mimeType,
+              data: pdfBuffer.toString('base64'),
             },
-          ],
-        },
-      ],
+          },
+        ];
+
+    const payload = {
+      contents: [{ role: 'user', parts }],
       generationConfig,
     };
 
@@ -1096,29 +1130,40 @@ Important rules:
 
     const chosenByNumber = new Map();
     const BATCH = 20;
+    // Batches are independent, so they run together rather than one after
+    // another — this pass must not add tens of seconds to the request.
+    const batches = [];
     for (let i = 0; i < candidates.length; i += BATCH) {
-      if (callBudgetExhausted()) break;
-      const batch = candidates.slice(i, i + BATCH);
-      const block = batch
-        .map((r) => {
-          const stem = String(r.questionText || '').replace(/\s+/g, ' ').slice(0, 700);
-          return (
-            `Q${r.questionNumber}: ${stem}\n` +
-            `a) ${r.option1}\nb) ${r.option2}\nc) ${r.option3}\nd) ${r.option4}`
-          );
-        })
-        .join('\n\n');
-      const parsed = await callGeminiText(
-        model,
-        'You are checking the answer key for a Grade 7 IIT/NEET foundation exam.\n' +
-          'Solve each question below and return the letter of the correct option.\n' +
-          'Do the arithmetic carefully and step by step in your head before choosing; ' +
-          'a plausible-looking option is often a deliberate distractor.\n' +
-          'Some questions carry a figure that is not shown here — for those, answer from the physics/reasoning as best you can.\n' +
-          'Return one entry per question, using the exact question numbers given.\n\n' +
-          block,
-        ANSWER_VERIFY_RESPONSE_SCHEMA,
-      );
+      batches.push(candidates.slice(i, i + BATCH));
+    }
+
+    const verifyResults = await Promise.all(
+      batches.map((batch) => {
+        if (callBudgetExhausted()) return Promise.resolve(null);
+        const block = batch
+          .map((r) => {
+            const stem = String(r.questionText || '').replace(/\s+/g, ' ').slice(0, 700);
+            return (
+              `Q${r.questionNumber}: ${stem}\n` +
+              `a) ${r.option1}\nb) ${r.option2}\nc) ${r.option3}\nd) ${r.option4}`
+            );
+          })
+          .join('\n\n');
+        return callGeminiText(
+          model,
+          'You are checking the answer key for a Grade 7 IIT/NEET foundation exam.\n' +
+            'Solve each question below and return the letter of the correct option.\n' +
+            'Do the arithmetic carefully and step by step in your head before choosing; ' +
+            'a plausible-looking option is often a deliberate distractor.\n' +
+            'Some questions carry a figure that is not shown here — for those, answer from the physics/reasoning as best you can.\n' +
+            'Return one entry per question, using the exact question numbers given.\n\n' +
+            block,
+          ANSWER_VERIFY_RESPONSE_SCHEMA,
+        );
+      }),
+    );
+
+    for (const parsed of verifyResults) {
       for (const a of parsed?.answers || []) {
         const qn = Number(a?.questionNumber);
         const letter = String(a?.correctOption || '').trim().toLowerCase();
@@ -1262,23 +1307,30 @@ Important rules:
         truncated,
         ranges: ranges.length,
       });
-      for (const [from, to] of ranges) {
-        if (callBudgetExhausted()) break;
-        // Skip ranges that are already fully extracted
-        if (
-          expectedNumbers.length > 0 &&
-          refined.length > 0 &&
-          ![...missingBefore].some((n) => n >= from && n <= to)
-        ) {
-          continue;
-        }
-        const chunk = await extractOnce(
-          model,
-          `Scope: extract ONLY questions numbered ${from} through ${to} (inclusive). ` +
-            `You must return every question in this range that appears in the paper. ` +
-            `Skip any question outside this range.`,
-        );
-        if (chunk.ok && Array.isArray(chunk.parsed)) {
+      // Ranges are independent, so they run together. Sequentially an 80-question
+      // paper held the HTTP connection ~50s, which is past the default 60s
+      // proxy_read_timeout once anything else is added — the browser then reports
+      // a bare "Failed to fetch". Concurrency cuts that to roughly one call.
+      const rangesToRun = ranges.filter(([from, to]) => {
+        if (expectedNumbers.length === 0 || refined.length === 0) return true;
+        return [...missingBefore].some((n) => n >= from && n <= to);
+      });
+
+      const chunkResults = await Promise.all(
+        rangesToRun.map(([from, to]) =>
+          callBudgetExhausted()
+            ? Promise.resolve(null)
+            : extractOnce(
+                model,
+                `Scope: extract ONLY questions numbered ${from} through ${to} (inclusive). ` +
+                  `You must return every question in this range that appears in the paper. ` +
+                  `Skip any question outside this range.`,
+              ),
+        ),
+      );
+
+      for (const chunk of chunkResults) {
+        if (chunk?.ok && Array.isArray(chunk.parsed)) {
           collected.push(...chunk.parsed);
           if (chunk.finishReason === 'MAX_TOKENS') truncated = true;
         }
@@ -3282,13 +3334,38 @@ export const convertPdfToQuestions = async (req, res) => {
     }
 
     const mime = String(req.file.mimetype || '').toLowerCase();
-    if (!mime.includes('pdf')) {
-      return res.status(400).json({ success: false, message: 'Only PDF files are allowed' });
+    const isDocx = isDocxUpload(req.file.originalname, req.file.mimetype);
+    if (!mime.includes('pdf') && !isDocx) {
+      return res.status(400).json({
+        success: false,
+        message: 'Only PDF or Word (.docx) files are allowed',
+      });
+    }
+
+    let documentText = '';
+    if (isDocx) {
+      try {
+        const parsedDocx = extractDocxQuestionPaper(req.file.buffer);
+        documentText = parsedDocx.text;
+      } catch (docxError) {
+        return res.status(400).json({
+          success: false,
+          message: `Could not read that Word file: ${docxError.message}`,
+        });
+      }
+      if (documentText.trim().length < 40) {
+        return res.status(422).json({
+          success: false,
+          message:
+            'That Word file contains no readable text. If the questions are pictures inside the document, upload the paper as a PDF instead.',
+        });
+      }
     }
 
     const { rows, usage, answerKey } = await extractQuestionsFromPdfViaGemini({
       buffer: req.file.buffer,
       mimeType: req.file.mimetype || 'application/pdf',
+      documentText,
     });
 
     const normalizedBase = rows
@@ -3324,7 +3401,10 @@ export const convertPdfToQuestions = async (req, res) => {
       .filter((r) => r.questionText);
 
     const enriched = await enrichExtractedExamQuestions({
-      pdfBuffer: req.file.buffer,
+      // A .docx cannot be parsed as a PDF, so hand enrichment the text directly;
+      // passage/assertion detection works off text either way.
+      pdfBuffer: isDocx ? null : req.file.buffer,
+      fullText: documentText,
       rows: normalizedBase,
       examId,
     });
