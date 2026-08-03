@@ -890,7 +890,13 @@ export const getTopicsWithContent = async (req, res) => {
 
     const { classDisplay } = resolveClassDisplay(classNumber);
     // resolveValidCurriculumSubject returns an object, not a string.
-    const { normalizedSubject } = resolveValidCurriculumSubject(subject) || {};
+    // Pass board/class so Science-branch subjects (Physics/Chemistry/Biology)
+    // resolve the same way as generate-content.
+    const board = String(req.query.board || '').trim();
+    const { normalizedSubject } = resolveValidCurriculumSubject(subject, {
+      classNumber,
+      board,
+    }) || {};
     const topics = await listTopicsWithContent({
       classDisplay,
       subject: normalizedSubject || subject,
