@@ -24,6 +24,7 @@ import {
 } from '../../controllers/studentRankingController.js';
 import geminiService, { generateStudentTool } from '../../services/gemini-service.js';
 import { fetchRotatingAiToolData } from '../../services/ai-tool-rotation-service.js';
+import { generateAiToolLiveFallback } from '../../services/ai-tool-live-fallback.js';
 import {
   buildDeliveryMetadataFromDoc,
   buildRawDataForTool,
@@ -266,6 +267,40 @@ router.post('/ai/tool', async (req, res) => {
       const originalContent = String(adminDoc.generatedContent || adminDoc.content || '').trim();
       if (!contentGate.valid) {
         const isWrongTool = contentGate.code === DASHBOARD_WRONG_TOOL_CODE;
+        const live = await generateAiToolLiveFallback({
+          toolType,
+          board: lookupBoard,
+          classDisplay,
+          subject: finalSubject,
+          topic: topicForFetch || '',
+          subtopic: subtopicForLookup,
+          userId,
+          role: 'student',
+          extraParams: {
+            questionCount: params.questionCount ?? req.body?.questionCount,
+            productCategory: studentProductCategory || undefined,
+          },
+        });
+        if (live.ok) {
+          return res.json({
+            success: true,
+            data: {
+              content: live.content,
+              ...(live.rawData ? { rawData: live.rawData } : {}),
+              toolType,
+              metadata: {
+                classNumber: classNum,
+                subject: finalSubject,
+                topic: topicForFetch || '',
+                subTopic: subtopicForLookup,
+                ...params,
+                generatedAt: new Date(),
+                userId,
+                ...live.metadata,
+              },
+            },
+          });
+        }
         return res.status(404).json({
           success: false,
           code: contentGate.code || DASHBOARD_INCOMPLETE_CODE,
@@ -302,6 +337,41 @@ router.post('/ai/tool', async (req, res) => {
             matchType,
             totalCandidates,
             selectedIndex,
+          },
+        },
+      });
+    }
+
+    const liveMiss = await generateAiToolLiveFallback({
+      toolType,
+      board: lookupBoard,
+      classDisplay,
+      subject: finalSubject,
+      topic: topicForFetch || '',
+      subtopic: subtopicForLookup,
+      userId,
+      role: 'student',
+      extraParams: {
+        questionCount: params.questionCount ?? req.body?.questionCount,
+        productCategory: studentProductCategory || undefined,
+      },
+    });
+    if (liveMiss.ok) {
+      return res.json({
+        success: true,
+        data: {
+          content: liveMiss.content,
+          ...(liveMiss.rawData ? { rawData: liveMiss.rawData } : {}),
+          toolType,
+          metadata: {
+            classNumber: classNum,
+            subject: finalSubject,
+            topic: topicForFetch || '',
+            subTopic: subtopicForLookup,
+            ...params,
+            generatedAt: new Date(),
+            userId,
+            ...liveMiss.metadata,
           },
         },
       });

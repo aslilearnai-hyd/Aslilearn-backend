@@ -1296,7 +1296,65 @@ export function validateDashboardAiToolContent(toolSlug, rawContent, options = {
           (Array.isArray(structured?.questions) && structured.questions.length >= 1) ||
           (Array.isArray(structured?.application_tasks) && structured.application_tasks.length >= 1) ||
           String(structured?.creative_task || structured?.creativeTask || '').trim().length >= 20);
-      if (!usableFlashcards && !activityCore && !homeworkCore) {
+      const examCore =
+        (slug === 'exam-question-paper-generator' || slug === 'mock-test-builder') &&
+        ((Array.isArray(structured?.section_a) && structured.section_a.length >= 1) ||
+          (Array.isArray(structured?.section_b) && structured.section_b.length >= 1) ||
+          (Array.isArray(structured?.questions) && structured.questions.length >= 1) ||
+          (Array.isArray(structured?.sections) && structured.sections.length >= 1));
+      const notesOrGuideCore =
+        [
+          'short-notes-summaries-maker',
+          'smart-study-guide-generator',
+          'concept-breakdown-explainer',
+          'chapter-summary-creator',
+          'concept-mastery-helper',
+          'key-points-formula-extractor',
+        ].includes(slug) &&
+        (isMeaningfulScalar(structured?.short_note_summary) ||
+          isMeaningfulScalar(structured?.summary) ||
+          isMeaningfulScalar(structured?.overview) ||
+          isMeaningfulScalar(structured?.definition) ||
+          isMeaningfulScalar(structured?.simple_definition) ||
+          isMeaningfulScalar(structured?.passage) ||
+          (Array.isArray(structured?.key_points) && structured.key_points.length >= 1) ||
+          (Array.isArray(structured?.key_points_to_remember) &&
+            structured.key_points_to_remember.length >= 1) ||
+          (Array.isArray(structured?.learning_objectives) && structured.learning_objectives.length >= 1) ||
+          String(content || '').trim().length >= 280);
+      const planCore =
+        [
+          'daily-class-plan-maker',
+          'lesson-planner',
+          'study-schedule-maker',
+        ].includes(slug) &&
+        (isMeaningfulScalar(structured?.title) ||
+          isMeaningfulScalar(structured?.lesson_title) ||
+          isMeaningfulScalar(structured?.day_period_topic_breakup) ||
+          (Array.isArray(structured?.objectives) && structured.objectives.length >= 1) ||
+          (Array.isArray(structured?.learning_objectives) && structured.learning_objectives.length >= 1) ||
+          String(content || '').trim().length >= 280);
+      const readingCore =
+        (slug === 'reading-practice-room' || slug === 'story-passage-creator') &&
+        (isMeaningfulScalar(structured?.passage) ||
+          isMeaningfulScalar(structured?.story) ||
+          isMeaningfulScalar(structured?.content) ||
+          String(content || '').trim().length >= 200);
+      const practiceCore =
+        (slug === 'smart-qa-practice-generator' || slug === 'quick-assignment-builder') &&
+        ((Array.isArray(structured?.questions) && structured.questions.length >= 1) ||
+          (Array.isArray(structured?.sections) && structured.sections.length >= 1) ||
+          String(content || '').trim().length >= 200);
+      if (
+        !usableFlashcards &&
+        !activityCore &&
+        !homeworkCore &&
+        !examCore &&
+        !notesOrGuideCore &&
+        !planCore &&
+        !readingCore &&
+        !practiceCore
+      ) {
         /*
          * Propagate WHICH sections are missing, not just that something is.
          *
