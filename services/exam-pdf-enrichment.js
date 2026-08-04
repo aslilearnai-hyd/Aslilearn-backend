@@ -469,18 +469,22 @@ export function attachAssertionReasonOptions(rows, arBlocks) {
 }
 
 export function attachMatchFollowingMatter(rows, matchBlocks) {
-  if (!Array.isArray(rows) || !matchBlocks?.length) return rows;
+  if (!Array.isArray(rows)) return rows;
   return rows.map((row) => {
     const qn = Number(row?.questionNumber);
     if (!Number.isFinite(qn)) return row;
-    const hit = matchBlocks.find((b) => b.questionRange.includes(qn));
+    const hit = Array.isArray(matchBlocks)
+      ? matchBlocks.find((b) => b.questionRange.includes(qn))
+      : null;
     const stem = String(row.questionText || '');
     const looksLikeMatch =
-      /Column\s*I/i.test(stem) ||
-      /match\s+(each|the|column)/i.test(stem) ||
-      /A-\d/i.test(String(row.option1 || ''));
+      (/Column\s*I\b/i.test(stem) && /Column\s*II\b/i.test(stem)) ||
+      /match\s+the\s+following/i.test(stem) ||
+      (/Column\s*I\b/i.test(stem) && /A-\s*\d/.test(String(row.option1 || '')));
 
-    if (!hit && !looksLikeMatch) return row;
+    // Require the stem itself to look like Match. Section ranges alone were
+    // stamping Match directions onto unrelated MCQs (false "need photo" flags).
+    if (!looksLikeMatch) return row;
 
     const columns = parseMatchColumnsFromStem(stem);
     const matter =
@@ -489,10 +493,7 @@ export function attachMatchFollowingMatter(rows, matchBlocks) {
 
     return {
       ...row,
-      questionType:
-        row.questionType === 'multiple' || row.questionType === 'integer'
-          ? row.questionType
-          : 'match_following',
+      questionType: 'match_following',
       sharedMatterId: matterId,
       sharedMatterText: matter,
       sharedMatterKind: 'match_following',
@@ -648,8 +649,15 @@ function rowCombinedText(row) {
 }
 
 function rowLooksLikeMatchTable(row) {
-  if (row?.questionType === 'match_following' || row?.sharedMatterKind === 'match_following') return true;
-  return MATCH_TABLE_HINT_RE.test(rowCombinedText(row));
+  // Prefer explicit type. Do NOT trust sharedMatterKind alone — match-section
+  // ranges were attaching Match directions onto unrelated MCQs (false flags).
+  if (row?.questionType === 'match_following') return true;
+  const stem = String(row?.questionText || '');
+  const opt1 = String(row?.option1 || '');
+  if (/match\s+the\s+following/i.test(stem)) return true;
+  if (/Column\s*I\b/i.test(stem) && /Column\s*II\b/i.test(stem)) return true;
+  if (/Column\s*I\b/i.test(stem) && /A-\s*\d/.test(opt1)) return true;
+  return false;
 }
 
 function rowIsAssertionReason(row) {
@@ -769,25 +777,30 @@ export function validateExtractedQuestionRow(row) {
   const flags = [];
   const text = String(row?.questionText || '');
   const passage = String(row?.passageText || row?.sharedMatterText || '');
-  const combined = `${passage}\n${text}`;
   const hasImage = Boolean(String(row?.questionImage || '').trim());
   const type = String(row?.questionType || 'mcq').toLowerCase();
+  const isAr = rowIsAssertionReason(row);
+  const isMatch = rowLooksLikeMatchTable(row);
   const hasMatchCols =
     (Array.isArray(row?.matchColumnI) && row.matchColumnI.length > 0) ||
     (Array.isArray(row?.matchColumnII) && row.matchColumnII.length > 0);
 
-  // Diagrams need an image
-  if (FIGURE_HINT_RE.test(text) && !hasImage && !rowIsAssertionReason(row) && !rowLooksLikeMatchTable(row)) {
+  // Strong diagram signals only (avoid flagging every "shown" / chemistry MCQ)
+  const strongFigure =
+    row?.hasFigure === true ||
+    /\b(diagram|figure|vernier|calliper|caliper|screw\s*gauge|graph\s+shown|as\s+shown\s+in\s+the\s+(?:figure|diagram))\b/i.test(
+      text,
+    );
+
+  if (strongFigure && !hasImage && !isAr && !isMatch) {
     flags.push('needs_figure');
   }
 
-  // Match needs Column I/II text (or a manually uploaded crop — not auto full-page)
-  if (rowLooksLikeMatchTable(row) && !hasMatchCols && !hasImage) {
+  if (isMatch && !hasMatchCols && !hasImage) {
     flags.push('needs_figure');
   }
 
-  // Choice questions need options + an answer
-  if (type === 'mcq' || type === 'assertion_reason' || type === 'match_following') {
+  if ((type === 'mcq' || type === 'assertion_reason' || type === 'match_following' || isAr) && !isMatch) {
     const opts = [row?.option1, row?.option2, row?.option3, row?.option4]
       .map((o) => String(o || '').trim())
       .filter(Boolean);
@@ -797,23 +810,22 @@ export function validateExtractedQuestionRow(row) {
   if (type === 'integer' && !String(row?.correctAnswer || '').trim()) {
     flags.push('missing_answer');
   }
-  if (type === 'assertion_reason' && !looksLikeArDirections(passage)) {
-    // directions will be filled by ensureAssertionReasonDirections; only flag if still empty after
-  }
 
+  const combined = `${passage}\n${text}`;
   const numbersInStem = combined.match(/\d/g) || [];
   if (
     text.length < 90 &&
     numbersInStem.length < 2 &&
     !hasImage &&
     !passage &&
-    !rowLooksLikeMatchTable(row) &&
+    !isMatch &&
+    !isAr &&
     /\b(what|how|find|side|length|volume|number)\b/i.test(text)
   ) {
     flags.push('needs_passage');
   }
 
-  if (row?.passageId && !passage && numbersInStem.length < 2) {
+  if (row?.passageId && !passage && numbersInStem.length < 2 && !isAr) {
     flags.push('needs_passage');
   }
 
@@ -831,7 +843,7 @@ export function validateExtractedQuestionRow(row) {
       : unique.includes('answer_conflict')
         ? 'Answer needs checking'
         : unique.includes('needs_figure')
-          ? rowLooksLikeMatchTable(row)
+          ? isMatch
             ? 'Match table columns missing — fill Column I/II or upload a cropped table photo'
             : 'Needs diagram/figure from the paper'
           : unique.includes('incomplete_options')
@@ -842,17 +854,34 @@ export function validateExtractedQuestionRow(row) {
   };
 }
 
-/** Run validation + strip bad auto-images (AR / Match full-page shots). */
+/** Run validation + strip bad auto-images (AR / false Match). */
 export function applyExtractionValidation(rows) {
   if (!Array.isArray(rows)) return rows;
   return rows.map((row, idx) => {
     let next = { ...row };
+
+    // Clear Match matter wrongly stamped onto non-match MCQs
+    if (
+      next.sharedMatterKind === 'match_following' &&
+      next.questionType !== 'match_following' &&
+      !rowLooksLikeMatchTable(next)
+    ) {
+      next = {
+        ...next,
+        sharedMatterKind: '',
+        sharedMatterId: '',
+        sharedMatterText: '',
+        matchColumnI: [],
+        matchColumnII: [],
+      };
+    }
+
     if (rowIsAssertionReason(next)) {
       next.questionImage = '';
       next.hasFigure = false;
     }
-    // Never keep auto full-page Match screenshots — show Column I/II text instead
-    if (rowLooksLikeMatchTable(next)) {
+    if (rowLooksLikeMatchTable(next) && next.questionType === 'match_following') {
+      // Keep text columns; drop accidental full-page shots
       next.questionImage = '';
       next.hasFigure = false;
     }
