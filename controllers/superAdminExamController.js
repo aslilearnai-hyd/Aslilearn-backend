@@ -3624,12 +3624,14 @@ async function buildPdfConvertPayload({
 
   let enriched = { rows: normalizedBase, meta: {} };
   if (fastMode) {
-    // Fast Gemini path: shared matter + lightweight screenshots (NO getImage —
-    // that step alone was hanging 10–15 min after Gemini finished in ~25s).
+    // Fast Gemini path: shared matter + diagram embeds (not full-page shots).
+    // Match tables still get a page screenshot; diagram Qs get cropped embeds only.
     onProgress?.('Attaching shared matter…');
     const {
       attachSharedMatterLightweight,
       attachPdfFiguresToRows,
+      ensureAssertionReasonDirections,
+      applyExtractionValidation,
     } = await import('../services/exam-pdf-enrichment.js');
     enriched = await attachSharedMatterLightweight({
       rows: normalizedBase,
@@ -3637,7 +3639,7 @@ async function buildPdfConvertPayload({
       pdfBuffer: isDocx ? null : buffer,
     });
     if (!isDocx && buffer) {
-      onProgress?.('Capturing match/figure page photos…');
+      onProgress?.('Attaching diagram images…');
       const figureStarted = Date.now();
       try {
         const figurePromise = attachPdfFiguresToRows(buffer, enriched.rows || [], {
@@ -3647,7 +3649,7 @@ async function buildPdfConvertPayload({
           console.warn('[PDF_EXAM_EXTRACT] figure attach error:', err?.message || err);
           return enriched.rows || [];
         });
-        const timeoutMs = Number(process.env.PDF_FIGURE_ATTACH_TIMEOUT_MS) || 45000;
+        const timeoutMs = Number(process.env.PDF_FIGURE_ATTACH_TIMEOUT_MS) || 90000;
         const timed = await Promise.race([
           figurePromise.then((rows) => ({ ok: true, rows })),
           new Promise((resolve) =>
@@ -3669,6 +3671,10 @@ async function buildPdfConvertPayload({
         console.warn('[PDF_EXAM_EXTRACT] figure attach skipped:', figErr?.message || figErr);
       }
     }
+    enriched = {
+      ...enriched,
+      rows: applyExtractionValidation(ensureAssertionReasonDirections(enriched.rows || [])),
+    };
   } else {
     onProgress?.('Enriching questions (passages / figures)…');
     enriched = await enrichExtractedExamQuestions({
@@ -3682,8 +3688,10 @@ async function buildPdfConvertPayload({
   const normalized = (enriched.rows || []).map((r, idx) => {
     const flags = Array.isArray(r.validationFlags) ? [...r.validationFlags] : [];
     let note = String(r.validationNote || '');
-    if (r.answerConflict === true) {
+    if (r.answerConflict === true && !flags.includes('answer_conflict')) {
       flags.push('answer_conflict');
+    }
+    if (r.answerConflict === true && !note) {
       const second = String(r.secondOpinionAnswer || '').trim();
       note =
         r.conflictReason === 'second_opinion' && second
@@ -3694,22 +3702,23 @@ async function buildPdfConvertPayload({
               ? "Answer needs checking — the paper's printed key disagrees with the question"
               : 'Answer needs checking';
     }
+    const solvable = flags.length === 0 && r.answerConflict !== true;
     return {
       ...r,
       row: idx + 1,
       questionImage: String(r.questionImage || '').trim(),
-      passageText: String(r.passageText || r.sharedMatterText || '').trim(),
+      passageText: String(r.passageText || '').trim(),
       passageId: String(r.passageId || r.sharedMatterId || '').trim(),
       sharedMatterId: String(r.sharedMatterId || r.passageId || '').trim(),
-      sharedMatterText: String(r.sharedMatterText || r.passageText || '').trim(),
+      sharedMatterText: String(r.sharedMatterText || '').trim(),
       sharedMatterKind: String(r.sharedMatterKind || '').trim(),
       assertionText: String(r.assertionText || '').trim(),
       reasonText: String(r.reasonText || '').trim(),
       matchColumnI: Array.isArray(r.matchColumnI) ? r.matchColumnI : [],
       matchColumnII: Array.isArray(r.matchColumnII) ? r.matchColumnII : [],
-      solvable: r.solvable !== false && r.answerConflict !== true,
+      solvable,
       validationFlags: flags,
-      validationNote: note,
+      validationNote: note || (solvable ? '' : String(r.validationNote || 'Needs review')),
     };
   });
 
