@@ -31,7 +31,7 @@ const DEFAULT_MATCH_DIRECTIONS =
   'Directions: Following questions have statements in Column I and Column II. Match Column I with Column II and choose the correct matching from the options.';
 
 const FIGURE_HINT_RE =
-  /\b(screw\s*gauge|vernier|calliper|caliper|diagram|figure|shown\s+in\s+the\s+(?:figure|diagram)|least\s*count|circular\s*scale|main\s*scale|as\s+shown|refer\s+to\s+(?:the\s+)?(?:figure|diagram)|given\s+figure|marked\s+point|shown\s+below)\b/i;
+  /\b(screw\s*gauge|vernier|calliper|caliper|diagram|figure|graph|shown\s+in\s+the\s+(?:figure|diagram|graph)|least\s*count|circular\s*scale|main\s*scale|as\s+shown|refer\s+to\s+(?:the\s+)?(?:figure|diagram)|given\s+figure|marked\s+point|shown\s+below|velocity[- ]time|distance[- ]time)\b/i;
 
 /** Match-the-Following tables are usually vector text in PDFs â€” detect so we can screenshot the page. */
 const MATCH_TABLE_HINT_RE =
@@ -788,7 +788,7 @@ export function validateExtractedQuestionRow(row) {
   // Strong diagram signals only (avoid flagging every "shown" / chemistry MCQ)
   const strongFigure =
     row?.hasFigure === true ||
-    /\b(diagram|figure|vernier|calliper|caliper|screw\s*gauge|graph\s+shown|as\s+shown\s+in\s+the\s+(?:figure|diagram))\b/i.test(
+    /\b(diagram|figure|vernier|calliper|caliper|screw\s*gauge|graph|shown\s+below|as\s+shown|velocity[- ]time|distance[- ]time)\b/i.test(
       text,
     );
 
@@ -918,23 +918,58 @@ function bufferFromImageData(data) {
 }
 
 /**
- * Map printed question numbers â†’ page numbers using per-page text.
+ * Map printed question numbers → page numbers using per-page text.
  */
 async function mapQuestionNumbersToPages(parser) {
   const parsed = await parser.getText();
   const pages = Array.isArray(parsed?.pages) ? parsed.pages : [];
   const map = new Map();
+  const pageTexts = [];
   pages.forEach((p, idx) => {
     const pageNumber = Number(p?.pageNumber) || idx + 1;
     const t = String(p?.text || '');
-    const re = /(?:^|\n)\s*(\d{1,3})\.\s+\S/g;
-    let m;
-    while ((m = re.exec(t))) {
-      const n = parseInt(m[1], 10);
-      if (n >= 1 && n <= 200 && !map.has(n)) map.set(n, pageNumber);
+    pageTexts.push({ pageNumber, text: t });
+    // Common paper layouts: "25. The …", "25) …", "Q.25 …", "Q25."
+    const patterns = [
+      /(?:^|\n)\s*(\d{1,3})\.\s+\S/g,
+      /(?:^|\n)\s*(\d{1,3})\)\s+\S/g,
+      /(?:^|\n)\s*Q\.?\s*(\d{1,3})[.)]\s*\S/gi,
+    ];
+    for (const re of patterns) {
+      let m;
+      while ((m = re.exec(t))) {
+        const n = parseInt(m[1], 10);
+        if (n >= 1 && n <= 200 && !map.has(n)) map.set(n, pageNumber);
+      }
     }
   });
-  return { map, pageCount: pages.length, pageTexts: pages.map((p) => String(p?.text || '')) };
+  return { map, pageCount: pages.length, pageTexts };
+}
+
+/** Find a page for a question when the primary number→page map missed it. */
+function resolvePageForRow(row, qToPage, pageTexts) {
+  const qn = Number(row?.questionNumber);
+  if (Number.isFinite(qn) && qToPage.has(qn)) return qToPage.get(qn);
+
+  const stem = String(row?.questionText || '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, 48);
+  if (stem.length >= 18) {
+    const needle = stem.toLowerCase();
+    for (const p of pageTexts) {
+      if (String(p.text || '').toLowerCase().includes(needle)) return p.pageNumber;
+    }
+  }
+
+  if (Number.isFinite(qn)) {
+    // Nearby printed numbers often share a page (e.g. 24 mapped, 25 missed)
+    for (const delta of [-1, 1, -2, 2]) {
+      const near = qToPage.get(qn + delta);
+      if (near) return near;
+    }
+  }
+  return null;
 }
 
 function groupWantingRows(wanting) {
@@ -968,9 +1003,10 @@ async function saveQuestionImageBuffer(buf, examId, savedUrlByImageKey, key) {
 /**
  * Attach PDF figures to questions.
  *
- * 1) Prefer embedded diagram images (getImage).
- * 2) If the paper drew diagrams as vectors (no XObjects), take a TOP-CROP of the
- *    page screenshot — never the full page (that dumped Match+Integer onto one Q).
+ * fast=true (default extract path): SKIP getImage() — it can hang 10–15+ min on
+ * ASLI papers. Take top-crop page screenshots for diagram questions only.
+ *
+ * fast=false: try embedded images first, then top-crop fallback.
  * Match / Assertion–Reason: no auto photo.
  */
 export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = true } = {}) {
@@ -979,16 +1015,19 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
   let parser;
   try {
     parser = new PDFParse({ data: pdfBuffer });
-    const { map: qToPage } = await mapQuestionNumbersToPages(parser);
+    const { map: qToPage, pageTexts } = await mapQuestionNumbersToPages(parser);
 
     const rowsByPage = new Map();
+    let unmappedWanting = 0;
     rows.forEach((row, idx) => {
-      const qn = Number(row?.questionNumber);
-      if (!Number.isFinite(qn)) return;
-      const pageNumber = qToPage.get(qn);
-      if (!pageNumber) return;
+      if (!rowWantsFigure(row)) return;
+      const pageNumber = resolvePageForRow(row, qToPage, pageTexts);
+      if (!pageNumber) {
+        unmappedWanting += 1;
+        return;
+      }
       if (!rowsByPage.has(pageNumber)) rowsByPage.set(pageNumber, []);
-      rowsByPage.get(pageNumber).push({ row, idx, qn });
+      rowsByPage.get(pageNumber).push({ row, idx, qn: Number(row?.questionNumber) || 0 });
     });
 
     const imageKey = (img) => {
@@ -997,25 +1036,23 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
       return `${buf.length}:${buf.subarray(0, 32).toString('hex')}`;
     };
 
-    const diagramPages = new Set();
-    for (const [pageNumber, pageRows] of rowsByPage) {
-      for (const { row } of pageRows) {
-        if (rowWantsFigure(row)) diagramPages.add(pageNumber);
-      }
-    }
+    const diagramPages = new Set(rowsByPage.keys());
 
     console.log('[PDF_ENRICH] figure pages', {
       count: diagramPages.size,
       pages: [...diagramPages].sort((a, b) => a - b),
       wanting: rows.filter((r) => rowWantsFigure(r)).map((r) => r.questionNumber),
+      unmappedWanting,
+      fast,
     });
 
     const candidatesByPage = new Map();
     const pagesForImages = [...diagramPages].sort((a, b) => a - b).slice(0, fast ? 12 : 24);
-    if (pagesForImages.length > 0) {
+
+    // getImage is only for quality mode — it hangs for minutes on many ASLI PDFs.
+    if (!fast && pagesForImages.length > 0) {
       console.log('[PDF_ENRICH] getImage start', {
         pages: pagesForImages,
-        fast,
         elapsedMs: Date.now() - startedAt,
       });
       try {
@@ -1023,7 +1060,6 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
           partial: pagesForImages,
           imageBuffer: true,
           imageDataUrl: false,
-          // Include modest diagram bitmaps; tiny logos still filtered below
           imageThreshold: 50,
         });
         const pages = Array.isArray(imageResult?.pages) ? imageResult.pages : [];
@@ -1067,36 +1103,51 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
       });
     }
 
-    // Vector-diagram fallback: top-crop of page (not full page)
+    // Vector-diagram / fast path: top-crop of page (not full page dump)
     const cropByPage = new Map();
     const needCropPages = pagesForImages.filter((p) => {
-      const pageRows = rowsByPage.get(p) || [];
-      const wanting = pageRows.some(({ row }) => rowWantsFigure(row));
       const embeds = candidatesByPage.get(p) || [];
-      return wanting && embeds.length === 0;
+      return embeds.length === 0;
     });
     if (needCropPages.length > 0) {
       try {
+        const cropLimit = fast ? 10 : 14;
         console.log('[PDF_ENRICH] diagram top-crop screenshot start', {
-          pages: needCropPages,
+          pages: needCropPages.slice(0, cropLimit),
           elapsedMs: Date.now() - startedAt,
         });
         const shotResult = await parser.getScreenshot({
-          partial: needCropPages.slice(0, fast ? 8 : 12),
+          partial: needCropPages.slice(0, cropLimit),
           scale: 1.25,
           imageBuffer: true,
           imageDataUrl: false,
         });
-        const { createCanvas, loadImage } = await import('@napi-rs/canvas');
+        let canvasApi = null;
+        try {
+          canvasApi = await import('@napi-rs/canvas');
+        } catch (canvasErr) {
+          console.warn(
+            '[PDF_ENRICH] @napi-rs/canvas unavailable, using full screenshot buffers:',
+            canvasErr?.message || canvasErr,
+          );
+        }
         for (const page of Array.isArray(shotResult?.pages) ? shotResult.pages : []) {
           const pageNumber = Number(page?.pageNumber) || 0;
           const full = bufferFromImageData(page?.data);
           if (!full || !pageNumber) continue;
+          if (!canvasApi) {
+            cropByPage.set(pageNumber, {
+              buf: full,
+              key: `shot:${pageNumber}:${full.length}`,
+              kind: 'shot',
+            });
+            continue;
+          }
           try {
-            const img = await loadImage(full);
-            // Keep upper ~48% — ASLI diagram blocks sit above the options/other columns
-            const cropH = Math.max(120, Math.floor(img.height * 0.48));
-            const canvas = createCanvas(img.width, cropH);
+            const img = await canvasApi.loadImage(full);
+            // Keep upper ~55% — graphs often sit mid-upper; options below
+            const cropH = Math.max(140, Math.floor(img.height * 0.55));
+            const canvas = canvasApi.createCanvas(img.width, cropH);
             const ctx = canvas.getContext('2d');
             ctx.fillStyle = '#ffffff';
             ctx.fillRect(0, 0, img.width, cropH);
@@ -1108,7 +1159,17 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
               kind: 'crop',
             });
           } catch (cropErr) {
-            console.warn('[PDF_ENRICH] crop failed page', pageNumber, cropErr?.message || cropErr);
+            console.warn(
+              '[PDF_ENRICH] crop failed page',
+              pageNumber,
+              cropErr?.message || cropErr,
+              '— using full screenshot',
+            );
+            cropByPage.set(pageNumber, {
+              buf: full,
+              key: `shot:${pageNumber}:${full.length}`,
+              kind: 'shot',
+            });
           }
         }
         console.log('[PDF_ENRICH] diagram top-crop done', {
@@ -1172,7 +1233,6 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
           for (let i = 0; i < n; i += 1) {
             for (const entry of groups[i]) urlByRowIdx.set(entry.idx, embeds[i]);
           }
-          // Leftover groups share the first embed rather than a full-page shot
           if (embeds[0]) {
             for (let i = n; i < groups.length; i += 1) {
               for (const entry of groups[i]) {
@@ -1192,6 +1252,7 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
       console.log('[PDF_ENRICH] attachPdfFiguresToRows: no images attached', {
         fast,
         diagramPages: diagramPages.size,
+        unmappedWanting,
         elapsedMs: Date.now() - startedAt,
       });
       return rows;
