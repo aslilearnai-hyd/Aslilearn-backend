@@ -17,6 +17,19 @@ export async function runDynamicAiQuery({
   const notes = [];
   let facts = { mode: plan.mode };
 
+  // Gemini flagged a required detail as missing (e.g. "students in Class" with
+  // no number) — ask instead of running a query that would silently match nothing.
+  if (plan.mode === 'database' && plan.clarification) {
+    return {
+      ok: true,
+      plan,
+      facts: { mode: 'clarification' },
+      auditQuery: '--',
+      message: plan.clarification,
+      notes: ['Clarification requested before running a database query.'],
+    };
+  }
+
   if (plan.mode === 'overview') {
     const overviewFacts = await buildControlOverviewFacts({ viewerRole, viewerUserId });
     facts = { mode: 'overview', ...overviewFacts };
@@ -52,6 +65,8 @@ export async function runDynamicAiQuery({
     plan,
     facts,
     notes,
+    viewerRole,
+    history,
   });
 
   return { ok: true, plan, facts, auditQuery, message, notes };

@@ -57,7 +57,7 @@ const buildContext = async ({ userId, role, providedContext }) => {
   const recentActivity = await buildRecentActivity(userId);
   const rawRole = String(role || profile?.role || 'student').toLowerCase().trim();
   let platformSnapshot = null;
-  if (['super-admin', 'admin', 'school-admin'].includes(rawRole)) {
+  if (['super-admin', 'admin', 'school-admin', 'teacher'].includes(rawRole)) {
     platformSnapshot = await buildPlatformSnapshotForVidya({
       viewerRole: rawRole,
       viewerUserId: userId,

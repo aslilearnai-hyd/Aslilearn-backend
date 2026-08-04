@@ -26,6 +26,34 @@ const aliasList = Object.entries(MODULE_REGISTRY)
   .map(([k, v]) => `- ${k}: ${[k, ...(v.aliases || [])].join(', ')}`)
   .join('\n');
 
+const GREETING_RE = /^(hi|hii|hiii|hello|hey|heya|yo|sup|good\s*(morning|afternoon|evening|night)|namaste|hola|thanks|thank\s*you|thx|ok|okay|bye|goodbye|how\s*are\s*you|what'?s\s*up)[\s!.?]*$/i;
+
+function isGreetingOrSmallTalk(message) {
+  const t = String(message || '').trim();
+  if (!t) return false;
+  // Keep this to short, unambiguous chit-chat only — anything longer or with a
+  // question about data should still go through real intent classification.
+  if (t.split(/\s+/).length > 5) return false;
+  return GREETING_RE.test(t);
+}
+
+function buildKnowledgePlan(errMessage = '', warning = 'greeting_or_small_talk') {
+  return {
+    mode: 'knowledge',
+    module: '',
+    operation: 'list',
+    filters: [],
+    selectFields: [],
+    groupBy: [],
+    aggregates: [],
+    sort: [],
+    limit: 20,
+    timeframe: 'all',
+    clarification: '',
+    parseWarning: errMessage ? `gemini_unavailable:${errMessage}` : warning,
+  };
+}
+
 function buildOverviewPlan(errMessage = '') {
   return {
     mode: 'overview',
@@ -99,6 +127,9 @@ function buildSchoolSearchPlan(schoolName, errMessage = '') {
 }
 
 function buildHeuristicPlan(message, errMessage = '') {
+  if (isGreetingOrSmallTalk(message)) {
+    return buildKnowledgePlan(errMessage);
+  }
   if (isReportsOverviewQuery(message)) {
     return buildOverviewPlan(errMessage);
   }
@@ -310,6 +341,11 @@ function buildHeuristicPlan(message, errMessage = '') {
 
 export async function parseDynamicIntent({ userMessage, history = [] }) {
   const message = String(userMessage || '').trim();
+  // Short-circuit obvious greetings/small talk before spending a Gemini round trip
+  // on intent classification — this is also what was silently hanging/misfiring.
+  if (isGreetingOrSmallTalk(message)) {
+    return buildKnowledgePlan();
+  }
   if (isReportsOverviewQuery(message)) {
     return buildOverviewPlan();
   }
@@ -356,6 +392,8 @@ Rules:
 - aggregate func must be one of: ${AGG_OPS.join(', ')}.
 - Keep limit <= 100.
 - If class mention like "Class 7", add filter field classNumber op eq value "7" (or "Class 7" only when needed).
+- If the question implies a specific filter (a class, section, subject, etc.) but does not actually state its value (e.g. "students in Class" with no number), do NOT invent a filter with an empty/blank value — omit that filter entirely, and set "clarification" to a short one-line question asking for the missing detail (e.g. "Which class would you like the count for?").
+- Greetings and small talk ("hi", "thanks", "how are you") should be mode="knowledge", not database.
 
 Recent conversation:
 ${historyBlock || '(none)'}
