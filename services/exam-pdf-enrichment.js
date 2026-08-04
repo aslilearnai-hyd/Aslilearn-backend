@@ -824,21 +824,29 @@ function rowWantsFigure(row) {
   const matterForHint = looksLikeArDirections(matter) ? '' : matter;
   const text = `${String(row?.passageText || '')}\n${matterForHint}\n${String(row?.questionText || '')}`;
 
-  // Case/passage with real diagram references — attach a diagram crop (not directions text)
+  // Case/passage with diagram references
   if (row?.sharedMatterKind === 'case' || row?.passageId) {
-    return /\b(diagram|figure|graph|triangle\s+law|parallelogram\s+law|shown\s+below|as\s+shown)\b/i.test(
+    return /\b(diagram|figure|graph|triangle\s+law|parallelogram\s+law|shown\s+below|as\s+shown|vector|force)\b/i.test(
       text,
     );
   }
 
-  // Do NOT trust bare hasFigure from Gemini
+  // Gemini hasFigure + any visual cue → try photo
   if (
-    /\b(shown\s+below|shown\s+in\s+the\s+(?:figure|diagram|graph)|velocity[- ]time|distance[- ]time|vernier|calliper|caliper|screw\s*gauge|refer\s+to\s+(?:the\s+)?(?:figure|diagram)|given\s+figure|study\s+the\s+figure)\b/i.test(
+    row?.hasFigure === true &&
+    /\b(shown|figure|diagram|graph|image|draw|sketch|circuit|cell|scale|map|photo)\b/i.test(text)
+  ) {
+    return true;
+  }
+
+  if (
+    /\b(shown\s+below|shown\s+in\s+the\s+(?:figure|diagram|graph)|as\s+shown|velocity[- ]time|distance[- ]time|vernier|calliper|caliper|screw\s*gauge|refer\s+to\s+(?:the\s+)?(?:figure|diagram)|given\s+figure|study\s+the\s+figure|following\s+(?:figure|diagram|graph)|circuit\s+diagram|plant\s+cell)\b/i.test(
       text,
     )
   ) {
     return true;
   }
+  if (FIGURE_HINT_RE.test(text)) return true;
   if (MATCH_TABLE_HINT_RE.test(text)) return true;
   return false;
 }
@@ -855,9 +863,11 @@ export function validateExtractedQuestionRow(row) {
     (Array.isArray(row?.matchColumnI) && row.matchColumnI.length > 0) ||
     (Array.isArray(row?.matchColumnII) && row.matchColumnII.length > 0);
 
-  // Strong diagram signals only — do not flag on bare hasFigure (Gemini false positives)
+  // Strong diagram signals — include Gemini hasFigure when stem has visual cues
   const strongFigure =
-    /\b(diagram|figure|vernier|calliper|caliper|screw\s*gauge|graph|shown\s+below|as\s+shown|velocity[- ]time|distance[- ]time)\b/i.test(
+    (row?.hasFigure === true &&
+      /\b(shown|figure|diagram|graph|image|circuit|cell)\b/i.test(`${text}\n${passage}`)) ||
+    /\b(diagram|figure|vernier|calliper|caliper|screw\s*gauge|graph|shown\s+below|as\s+shown|velocity[- ]time|distance[- ]time|study\s+the\s+figure|plant\s+cell|circuit)\b/i.test(
       `${text}\n${passage}`,
     );
 
@@ -876,8 +886,11 @@ export function validateExtractedQuestionRow(row) {
     if (opts.length < 2) flags.push('incomplete_options');
     if (!String(row?.correctAnswer || '').trim()) flags.push('missing_answer');
   }
-  if (type === 'integer' && !String(row?.correctAnswer || '').trim()) {
-    flags.push('missing_answer');
+  if (type === 'integer') {
+    const ans = String(row?.correctAnswer ?? '').trim();
+    if (!ans || !/[+-]?\d/.test(ans)) {
+      flags.push('missing_answer');
+    }
   }
 
   const combined = `${passage}\n${text}`;
@@ -1139,7 +1152,7 @@ async function cropLooksLikePrintedText(buf, canvasApi) {
     }
     if (inkRows < 6) return false;
     // Stricter threshold so real graphs/diagrams (sparse ink) are not rejected as "text"
-    return textLikeRows / inkRows >= 0.68;
+    return textLikeRows / inkRows >= 0.78;
   } catch {
     return false;
   }
@@ -1377,7 +1390,7 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
     });
 
     const candidatesByPage = new Map();
-    const pagesForImages = [...diagramPages].sort((a, b) => a - b).slice(0, fast ? 12 : 24);
+    const pagesForImages = [...diagramPages].sort((a, b) => a - b).slice(0, fast ? 18 : 28);
 
     if (!fast && pagesForImages.length > 0) {
       try {
@@ -1428,7 +1441,7 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
     const needCropPages = pagesForImages.filter((p) => !(candidatesByPage.get(p) || []).length);
     if (needCropPages.length > 0) {
       try {
-        const cropLimit = fast ? 10 : 14;
+        const cropLimit = fast ? 16 : 22;
         console.log('[PDF_ENRICH] ink-crop screenshot start', {
           pages: needCropPages.slice(0, cropLimit),
           elapsedMs: Date.now() - startedAt,
