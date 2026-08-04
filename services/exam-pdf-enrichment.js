@@ -20,6 +20,16 @@ const DEFAULT_AR_OPTIONS = [
   'A is false, but R is true.',
 ];
 
+const DEFAULT_AR_DIRECTIONS =
+  'Directions: Each question below consists of an Assertion (A) and a Reason (R). Choose the correct option:\n' +
+  '(a) Both A and R are true, and R is the correct explanation of A.\n' +
+  '(b) Both A and R are true, but R is not the correct explanation of A.\n' +
+  '(c) A is true, but R is false.\n' +
+  '(d) A is false, but R is true.';
+
+const DEFAULT_MATCH_DIRECTIONS =
+  'Directions: Following questions have statements in Column I and Column II. Match Column I with Column II and choose the correct matching from the options.';
+
 const FIGURE_HINT_RE =
   /\b(screw\s*gauge|vernier|calliper|caliper|diagram|figure|shown\s+in\s+the\s+(?:figure|diagram)|least\s*count|circular\s*scale|main\s*scale|as\s+shown|refer\s+to\s+(?:the\s+)?(?:figure|diagram)|given\s+figure|marked\s+point|shown\s+below)\b/i;
 
@@ -181,6 +191,7 @@ export function detectAssertionReasonBlocks(fullText) {
       blocks.push({
         sharedOptionsId: 'AR1',
         sharedOptions: [...DEFAULT_AR_OPTIONS],
+        sharedMatterText: DEFAULT_AR_DIRECTIONS,
         questionRange: consecutiveQuestionRun(qRange, 8),
       });
     }
@@ -191,6 +202,11 @@ export function detectAssertionReasonBlocks(fullText) {
     const start = markers[i];
     const end = i + 1 < markers.length ? markers[i + 1] : Math.min(text.length, start + 4000);
     const slice = text.slice(start, end);
+    const firstQ = slice.search(/(?:^|\n)\s*\d{1,3}\.\s*A\s*:\s*/i);
+    const directionsBody =
+      firstQ > 20
+        ? normalizeSpaces(slice.slice(0, firstQ))
+        : normalizeSpaces(slice.slice(0, Math.min(slice.length, 700)));
     const qRange = [];
     const qRe = /(?:^|\n)\s*(\d{1,3})\.\s*A\s*:\s*/gi;
     let qm;
@@ -211,7 +227,141 @@ export function detectAssertionReasonBlocks(fullText) {
     blocks.push({
       sharedOptionsId: `AR${blocks.length + 1}`,
       sharedOptions: [...DEFAULT_AR_OPTIONS],
+      sharedMatterText:
+        directionsBody.length >= 40 ? directionsBody : DEFAULT_AR_DIRECTIONS,
       questionRange: consecutiveQuestionRun([...new Set(qRange)], 8),
+    });
+  }
+  return blocks;
+}
+
+/**
+ * Split an Assertion–Reason stem into A / R fields.
+ */
+export function parseAssertionReasonFromStem(stem) {
+  const text = String(stem || '').trim();
+  if (!text) return { assertionText: '', reasonText: '', cleanedStem: '' };
+
+  const arMatch = text.match(
+    /(?:^|\n)\s*A\s*[:：]\s*([\s\S]*?)(?:\n|\s+)R\s*[:：]\s*([\s\S]*?)$/i,
+  );
+  if (arMatch) {
+    return {
+      assertionText: normalizeSpaces(arMatch[1]),
+      reasonText: normalizeSpaces(arMatch[2]),
+      cleanedStem: `A: ${normalizeSpaces(arMatch[1])}\nR: ${normalizeSpaces(arMatch[2])}`.trim(),
+    };
+  }
+
+  const inline = text.match(
+    /\bA\s*[:：]\s*(.+?)\s+R\s*[:：]\s*(.+)$/i,
+  );
+  if (inline) {
+    return {
+      assertionText: normalizeSpaces(inline[1]),
+      reasonText: normalizeSpaces(inline[2]),
+      cleanedStem: `A: ${normalizeSpaces(inline[1])}\nR: ${normalizeSpaces(inline[2])}`.trim(),
+    };
+  }
+
+  return { assertionText: '', reasonText: '', cleanedStem: text };
+}
+
+/**
+ * Parse Column I / Column II lists from a match-the-following stem.
+ */
+export function parseMatchColumnsFromStem(stem) {
+  const text = String(stem || '');
+  const colI = [];
+  const colII = [];
+
+  const iBlock = text.match(
+    /Column\s*I\s*[:.]?\s*([\s\S]*?)(?=Column\s*II|$)/i,
+  );
+  const iiBlock = text.match(/Column\s*II\s*[:.]?\s*([\s\S]*?)$/i);
+
+  const parseList = (block, letterKeys) => {
+    const out = [];
+    if (!block) return out;
+    const re = letterKeys
+      ? /(?:^|\n|\s)([A-D])\s*[.):\-]\s*([^\n]+)/gi
+      : /(?:^|\n|\s)(\d{1,2})\s*[.):\-]\s*([^\n]+)/gi;
+    let m;
+    while ((m = re.exec(block))) {
+      out.push({ key: String(m[1]).trim(), text: normalizeSpaces(m[2]) });
+    }
+    return out;
+  };
+
+  if (iBlock) colI.push(...parseList(iBlock[1], true));
+  if (iiBlock) colII.push(...parseList(iiBlock[1], false));
+
+  // Fallback: "A. … B. …" without Column headers
+  if (colI.length === 0) {
+    const loose = parseList(text, true);
+    if (loose.length >= 2) colI.push(...loose.slice(0, 4));
+  }
+
+  return { matchColumnI: colI, matchColumnII: colII };
+}
+
+/**
+ * Detect Match-the-Following section directions + question ranges.
+ */
+export function detectMatchFollowingBlocks(fullText) {
+  const text = String(fullText || '');
+  const blocks = [];
+  const re =
+    /(?:^|\n)\s*((?:Match\s+the\s+Following[^\n]{0,120}|Directions\s*:\s*Following\s+questions\s+have\s+four\s+statements[^\n]{0,200}))/gi;
+  const markers = [];
+  let m;
+  while ((m = re.exec(text))) {
+    markers.push({
+      index: m.index + (m[0].startsWith('\n') ? 1 : 0),
+      title: normalizeSpaces(m[1]),
+    });
+  }
+
+  if (markers.length === 0 && /Column\s*I/i.test(text) && /Column\s*II/i.test(text)) {
+    const qRange = [];
+    const qRe = /(?:^|\n)\s*(\d{1,3})\.\s+(?:Match|Column)/gi;
+    let qm;
+    while ((qm = qRe.exec(text))) {
+      const n = parseInt(qm[1], 10);
+      if (n >= 1 && n <= 200) qRange.push(n);
+    }
+    if (qRange.length) {
+      blocks.push({
+        sharedMatterId: 'MF1',
+        sharedMatterText: DEFAULT_MATCH_DIRECTIONS,
+        questionRange: consecutiveQuestionRun(qRange, 8),
+      });
+    }
+    return blocks;
+  }
+
+  for (let i = 0; i < markers.length; i += 1) {
+    const start = markers[i].index;
+    const end = i + 1 < markers.length ? markers[i + 1].index : Math.min(text.length, start + 5000);
+    const slice = text.slice(start, end);
+    const firstQ = slice.search(/(?:^|\n)\s*\d{1,3}\.\s+\S/);
+    const directionsBody =
+      firstQ > 20
+        ? normalizeSpaces(slice.slice(0, firstQ))
+        : normalizeSpaces(markers[i].title);
+    const qRange = extractQuestionNumbersNear(
+      text,
+      start + (firstQ > 0 ? firstQ : 0),
+      end,
+      highestQuestionNumberBefore(text, start),
+    );
+    const run = consecutiveQuestionRun(qRange, 8);
+    if (!run.length) continue;
+    blocks.push({
+      sharedMatterId: `MF${blocks.length + 1}`,
+      sharedMatterText:
+        directionsBody.length >= 30 ? directionsBody : DEFAULT_MATCH_DIRECTIONS,
+      questionRange: run,
     });
   }
   return blocks;
@@ -238,21 +388,23 @@ export function attachPassagesToRows(rows, passages) {
     const stem = String(row.questionText || '').trim();
     const passage = String(hit.passageText || '').trim();
 
+    const withMatter = {
+      ...row,
+      passageId: hit.passageId,
+      passageText: passage,
+      sharedMatterId: hit.passageId,
+      sharedMatterText: passage,
+      sharedMatterKind: 'case',
+    };
+
     // Always store metadata; only prepend when the stem is a short orphan
     if (stemAlreadyHasPassageContext(stem, passage)) {
-      return {
-        ...row,
-        passageId: hit.passageId,
-        passageText: passage,
-        questionText: stem,
-      };
+      return { ...withMatter, questionText: stem };
     }
 
     if (stem.length < 120) {
       return {
-        ...row,
-        passageId: hit.passageId,
-        passageText: passage,
+        ...withMatter,
         questionText: `${passage}\n\n${stem}`.trim(),
       };
     }
@@ -277,18 +429,200 @@ export function attachAssertionReasonOptions(rows, arBlocks) {
       /\bA\s*[:：]/i.test(String(row.questionText || '')) ||
       /\bR\s*[:：]/i.test(String(row.questionText || '')) ||
       /assertion/i.test(String(row.questionText || ''));
-    if (!looksLikeAR && hasOwnOptions) return row;
+    if (!looksLikeAR && hasOwnOptions) {
+      // In AR range but stem doesn't look like A/R — still attach shared directions
+      return {
+        ...row,
+        sharedOptionsId: hit.sharedOptionsId,
+        sharedMatterId: hit.sharedOptionsId,
+        sharedMatterText: String(hit.sharedMatterText || '').trim() || DEFAULT_AR_DIRECTIONS,
+        sharedMatterKind: 'assertion_reason',
+        questionType: 'assertion_reason',
+      };
+    }
+
+    const parsed = parseAssertionReasonFromStem(row.questionText);
+    const matter =
+      String(hit.sharedMatterText || '').trim() || DEFAULT_AR_DIRECTIONS;
+
     return {
       ...row,
-      questionType: row.questionType === 'multiple' ? 'multiple' : 'mcq',
-      option1: opts[0] || row.option1,
-      option2: opts[1] || row.option2,
-      option3: opts[2] || row.option3,
-      option4: opts[3] || row.option4,
+      questionType: 'assertion_reason',
+      questionText: parsed.cleanedStem || String(row.questionText || '').trim(),
+      assertionText: parsed.assertionText || String(row.assertionText || '').trim(),
+      reasonText: parsed.reasonText || String(row.reasonText || '').trim(),
+      option1: !hasOwnOptions ? opts[0] || row.option1 : row.option1 || opts[0],
+      option2: !hasOwnOptions ? opts[1] || row.option2 : row.option2 || opts[1],
+      option3: !hasOwnOptions ? opts[2] || row.option3 : row.option3 || opts[2],
+      option4: !hasOwnOptions ? opts[3] || row.option4 : row.option4 || opts[3],
       sharedOptionsId: hit.sharedOptionsId,
+      sharedMatterId: hit.sharedOptionsId,
+      sharedMatterText: matter,
+      sharedMatterKind: 'assertion_reason',
       needsPassage: false,
     };
   });
+}
+
+export function attachMatchFollowingMatter(rows, matchBlocks) {
+  if (!Array.isArray(rows) || !matchBlocks?.length) return rows;
+  return rows.map((row) => {
+    const qn = Number(row?.questionNumber);
+    if (!Number.isFinite(qn)) return row;
+    const hit = matchBlocks.find((b) => b.questionRange.includes(qn));
+    const stem = String(row.questionText || '');
+    const looksLikeMatch =
+      /Column\s*I/i.test(stem) ||
+      /match\s+(each|the|column)/i.test(stem) ||
+      /A-\d/i.test(String(row.option1 || ''));
+
+    if (!hit && !looksLikeMatch) return row;
+
+    const columns = parseMatchColumnsFromStem(stem);
+    const matter =
+      String(hit?.sharedMatterText || '').trim() || DEFAULT_MATCH_DIRECTIONS;
+    const matterId = hit?.sharedMatterId || `MF_Q${qn}`;
+
+    return {
+      ...row,
+      questionType:
+        row.questionType === 'multiple' || row.questionType === 'integer'
+          ? row.questionType
+          : 'match_following',
+      sharedMatterId: matterId,
+      sharedMatterText: matter,
+      sharedMatterKind: 'match_following',
+      matchColumnI:
+        Array.isArray(row.matchColumnI) && row.matchColumnI.length
+          ? row.matchColumnI
+          : columns.matchColumnI,
+      matchColumnII:
+        Array.isArray(row.matchColumnII) && row.matchColumnII.length
+          ? row.matchColumnII
+          : columns.matchColumnII,
+    };
+  });
+}
+
+/**
+ * Heuristic: promote lone AR / Match stems even without a detected section block.
+ */
+export function promoteStructuredTypesFromStem(rows) {
+  if (!Array.isArray(rows)) return rows;
+  return rows.map((row) => {
+    const stem = String(row.questionText || '');
+    if (row.sharedMatterKind === 'assertion_reason' || row.questionType === 'assertion_reason') {
+      const parsed = parseAssertionReasonFromStem(stem);
+      return {
+        ...row,
+        questionType: 'assertion_reason',
+        assertionText: row.assertionText || parsed.assertionText,
+        reasonText: row.reasonText || parsed.reasonText,
+        questionText: parsed.cleanedStem || stem,
+        sharedMatterId: row.sharedMatterId || 'AR1',
+        sharedMatterText: row.sharedMatterText || DEFAULT_AR_DIRECTIONS,
+        sharedMatterKind: 'assertion_reason',
+      };
+    }
+    if (row.sharedMatterKind === 'match_following' || row.questionType === 'match_following') {
+      const columns = parseMatchColumnsFromStem(stem);
+      return {
+        ...row,
+        questionType: 'match_following',
+        matchColumnI: row.matchColumnI?.length ? row.matchColumnI : columns.matchColumnI,
+        matchColumnII: row.matchColumnII?.length ? row.matchColumnII : columns.matchColumnII,
+        sharedMatterId: row.sharedMatterId || 'MF1',
+        sharedMatterText: row.sharedMatterText || DEFAULT_MATCH_DIRECTIONS,
+        sharedMatterKind: 'match_following',
+      };
+    }
+
+    const looksLikeAR =
+      /\bA\s*[:：]/.test(stem) && /\bR\s*[:：]/.test(stem);
+    if (looksLikeAR && row.sharedMatterKind !== 'case') {
+      const parsed = parseAssertionReasonFromStem(stem);
+      const opts = [row.option1, row.option2, row.option3, row.option4].map((o) =>
+        String(o || '').trim(),
+      );
+      const needDefaults = opts.filter(Boolean).length < 2;
+      return {
+        ...row,
+        questionType: 'assertion_reason',
+        assertionText: parsed.assertionText,
+        reasonText: parsed.reasonText,
+        questionText: parsed.cleanedStem || stem,
+        option1: needDefaults ? DEFAULT_AR_OPTIONS[0] : row.option1,
+        option2: needDefaults ? DEFAULT_AR_OPTIONS[1] : row.option2,
+        option3: needDefaults ? DEFAULT_AR_OPTIONS[2] : row.option3,
+        option4: needDefaults ? DEFAULT_AR_OPTIONS[3] : row.option4,
+        sharedMatterId: row.sharedMatterId || 'AR1',
+        sharedMatterText: row.sharedMatterText || DEFAULT_AR_DIRECTIONS,
+        sharedMatterKind: 'assertion_reason',
+      };
+    }
+
+    const looksLikeMatch =
+      /Column\s*I/i.test(stem) && (/Column\s*II/i.test(stem) || /A-\d/.test(String(row.option1 || '')));
+    if (looksLikeMatch && row.sharedMatterKind !== 'case') {
+      const columns = parseMatchColumnsFromStem(stem);
+      return {
+        ...row,
+        questionType: 'match_following',
+        matchColumnI: columns.matchColumnI,
+        matchColumnII: columns.matchColumnII,
+        sharedMatterId: row.sharedMatterId || 'MF1',
+        sharedMatterText: row.sharedMatterText || DEFAULT_MATCH_DIRECTIONS,
+        sharedMatterKind: 'match_following',
+      };
+    }
+
+    // Map legacy passage fields onto shared matter when present
+    if (row.passageText && !row.sharedMatterText) {
+      return {
+        ...row,
+        sharedMatterId: row.passageId || row.sharedMatterId || '',
+        sharedMatterText: row.passageText,
+        sharedMatterKind: row.sharedMatterKind || 'case',
+      };
+    }
+    return row;
+  });
+}
+
+/**
+ * Lightweight shared-matter attach (no figure extraction) — safe for fast mode.
+ */
+export async function attachSharedMatterLightweight({ rows, fullText, pdfBuffer }) {
+  let text = String(fullText || '');
+  if (!text && pdfBuffer) {
+    try {
+      const parser = new PDFParse({ data: pdfBuffer });
+      const parsed = await parser.getText();
+      text = String(parsed?.text || '');
+      await parser.destroy().catch(() => {});
+    } catch (e) {
+      console.warn('[PDF_ENRICH] lightweight text extract failed:', e?.message || e);
+    }
+  }
+
+  const passages = detectPassagesFromPdfText(text);
+  const arBlocks = detectAssertionReasonBlocks(text);
+  const matchBlocks = detectMatchFollowingBlocks(text);
+
+  let next = attachPassagesToRows(rows, passages);
+  next = attachAssertionReasonOptions(next, arBlocks);
+  next = attachMatchFollowingMatter(next, matchBlocks);
+  next = promoteStructuredTypesFromStem(next);
+
+  return {
+    rows: next,
+    meta: {
+      passages,
+      arBlocks,
+      matchBlocks,
+      lightweight: true,
+    },
+  };
 }
 
 /**
@@ -297,7 +631,7 @@ export function attachAssertionReasonOptions(rows, arBlocks) {
 export function validateExtractedQuestionRow(row) {
   const flags = [];
   const text = String(row?.questionText || '');
-  const passage = String(row?.passageText || '');
+  const passage = String(row?.passageText || row?.sharedMatterText || '');
   const combined = `${passage}\n${text}`;
   const hasImage = Boolean(String(row?.questionImage || '').trim());
 
@@ -455,7 +789,7 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId } = {}) {
       const groups = [];
       const groupByKey = new Map();
       for (const entry of wanting) {
-        const key = String(entry.row.passageId || '').trim() || `q${entry.qn}`;
+        const key = String(entry.row.sharedMatterId || entry.row.passageId || '').trim() || `q${entry.qn}`;
         if (!groupByKey.has(key)) {
           const group = [];
           groupByKey.set(key, group);
@@ -527,9 +861,12 @@ export async function enrichExtractedExamQuestions({
 
   const passages = detectPassagesFromPdfText(text);
   const arBlocks = detectAssertionReasonBlocks(text);
+  const matchBlocks = detectMatchFollowingBlocks(text);
 
   let next = attachPassagesToRows(rows, passages);
   next = attachAssertionReasonOptions(next, arBlocks);
+  next = attachMatchFollowingMatter(next, matchBlocks);
+  next = promoteStructuredTypesFromStem(next);
   next = await attachPdfFiguresToRows(pdfBuffer, next, { examId });
 
   next = next.map((row, idx) => {
@@ -548,6 +885,7 @@ export async function enrichExtractedExamQuestions({
     passages: passages.length,
     passageRanges: passages.map((p) => ({ id: p.passageId, q: p.questionRange })),
     arBlocks: arBlocks.length,
+    matchBlocks: matchBlocks.length,
     withImages: next.filter((r) => r.questionImage).length,
     flagged: next.filter((r) => !r.solvable).length,
   });
@@ -557,6 +895,7 @@ export async function enrichExtractedExamQuestions({
     meta: {
       passages,
       arBlocks,
+      matchBlocks,
       flaggedCount: next.filter((r) => !r.solvable).length,
       withImages: next.filter((r) => r.questionImage).length,
     },

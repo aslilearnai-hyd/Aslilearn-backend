@@ -125,7 +125,10 @@ const PDF_QUESTION_ITEM_SCHEMA = {
       description:
         'Full stem as students must see it. For case/passage questions include the full case text before the question. Keep exact math grouping. No leading Q number.',
     },
-    questionType: { type: 'STRING', enum: ['MCQ', 'MSQ', 'integer'] },
+    questionType: {
+      type: 'STRING',
+      enum: ['MCQ', 'MSQ', 'integer', 'assertion_reason', 'match_following'],
+    },
     subject: {
       type: 'STRING',
       description:
@@ -900,7 +903,7 @@ export async function extractQuestionsFromPdfViaGemini({
   const buildPrompt = (rangeHint = '') => `Extract exam questions from this PDF and return ONLY valid JSON.
 Preferred shape: {"questions":[ ... ]}. A bare JSON array of question objects is also accepted.
 Each question object must have these exact keys:
-questionNumber (printed number — mandatory), hasFigure (boolean), questionText, questionType (MCQ/MSQ/integer), subject, marks (number), option1, option2, option3, option4, correctAnswer, explanation.
+questionNumber (printed number — mandatory), hasFigure (boolean), questionText, questionType (MCQ/MSQ/integer/assertion_reason/match_following), subject, marks (number), option1, option2, option3, option4, correctAnswer, explanation.
 
 ${rangeHint}
 
@@ -926,7 +929,8 @@ Important rules:
   Example:
   "Case I: A square solar learning park covers 11,025 m². … edge of 7 m.\\n\\nWhat is the side length of the square solar farm?"
   Q9 and Q10 that share Case I both get the same Case I text; Q11 under Case II gets Case II only.
-- ASSERTION–REASON: Put both A and R into questionText (full sentences), and put the four standard A/R choice lines into option1–option4.
+- ASSERTION–REASON: Set questionType to "assertion_reason". Put Assertion into assertionText and Reason into reasonText when possible; also put both into questionText as "A: …\\nR: …". Put the four standard A/R choice lines into option1–option4. Questions that share the same Directions block share the same directions text (do not invent different directions per question).
+- MATCH-THE-FOLLOWING: Set questionType to "match_following". Include Column I / Column II in questionText. Put matching codes into option1–option4 (e.g. "A-2, B-4, C-1, D-3"). Questions under the same Match directions share that directions text.
 - Return only valid JSON, no markdown, no explanation.`;
 
   const maxOut = getPdfExtractionMaxOutputTokens();
@@ -1543,6 +1547,51 @@ export function normalizeExamClassFields(exam) {
   }
 
   return e;
+}
+
+const ALLOWED_QUESTION_TYPES = ['mcq', 'multiple', 'integer', 'assertion_reason', 'match_following'];
+
+const isChoiceQuestionType = (t) =>
+  t === 'mcq' || t === 'multiple' || t === 'assertion_reason' || t === 'match_following';
+
+const isSingleChoiceQuestionType = (t) =>
+  t === 'mcq' || t === 'assertion_reason' || t === 'match_following';
+
+function normalizeMatchColumnList(raw) {
+  if (!Array.isArray(raw)) return [];
+  return raw
+    .map((item) => {
+      if (typeof item === 'string') {
+        const m = String(item).match(/^\s*([A-D]|\d{1,2})\s*[.):\-]?\s*(.*)$/i);
+        if (m) return { key: m[1], text: String(m[2] || '').trim() };
+        return { key: '', text: String(item).trim() };
+      }
+      return {
+        key: String(item?.key || '').trim(),
+        text: String(item?.text || '').trim(),
+      };
+    })
+    .filter((x) => x.text);
+}
+
+function pickSharedMatterFields(body = {}) {
+  const sharedMatterId = String(body.sharedMatterId || body.passageId || '').trim();
+  const sharedMatterText = String(body.sharedMatterText || body.passageText || '').trim();
+  const kindRaw = String(body.sharedMatterKind || '').trim().toLowerCase();
+  const sharedMatterKind = ['case', 'assertion_reason', 'match_following'].includes(kindRaw)
+    ? kindRaw
+    : sharedMatterText
+      ? 'case'
+      : '';
+  return {
+    sharedMatterId,
+    sharedMatterText,
+    sharedMatterKind,
+    assertionText: String(body.assertionText || '').trim(),
+    reasonText: String(body.reasonText || '').trim(),
+    matchColumnI: normalizeMatchColumnList(body.matchColumnI),
+    matchColumnII: normalizeMatchColumnList(body.matchColumnII),
+  };
 }
 
 const ALLOWED_EXAM_SUBJECTS = [
@@ -2301,8 +2350,29 @@ export const addQuestion = async (req, res) => {
       board,
       displayOrder: rawDisplayOrder,
       sectionHeading: rawSectionHeading,
-      replaceDuplicate = false
+      replaceDuplicate = false,
+      sharedMatterId,
+      sharedMatterText,
+      sharedMatterKind,
+      assertionText,
+      reasonText,
+      matchColumnI,
+      matchColumnII,
+      passageId,
+      passageText,
     } = req.body;
+
+    const matterFields = pickSharedMatterFields({
+      sharedMatterId,
+      sharedMatterText,
+      sharedMatterKind,
+      assertionText,
+      reasonText,
+      matchColumnI,
+      matchColumnII,
+      passageId,
+      passageText,
+    });
 
     // Validate ObjectId format
     if (!mongoose.Types.ObjectId.isValid(examId)) {
@@ -2328,7 +2398,15 @@ export const addQuestion = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Either question text or image is required' });
     }
 
-    if ((questionType === 'mcq' || questionType === 'multiple') && (!options || options.length === 0)) {
+    const normalizedType = String(questionType || 'mcq').trim().toLowerCase();
+    if (!ALLOWED_QUESTION_TYPES.includes(normalizedType)) {
+      return res.status(400).json({
+        success: false,
+        message: `Invalid questionType. Use one of: ${ALLOWED_QUESTION_TYPES.join(', ')}`,
+      });
+    }
+
+    if (isChoiceQuestionType(normalizedType) && (!options || options.length === 0)) {
       return res.status(400).json({ success: false, message: 'Options are required for MCQ and Multiple Choice questions' });
     }
 
@@ -2342,13 +2420,13 @@ export const addQuestion = async (req, res) => {
     // Format correctAnswer based on question type
     let formattedCorrectAnswer = correctAnswer;
     
-    if (questionType === 'integer') {
+    if (normalizedType === 'integer') {
       // Integer type: correctAnswer should be a number
       formattedCorrectAnswer = typeof correctAnswer === 'number' ? correctAnswer : parseInt(correctAnswer);
       if (isNaN(formattedCorrectAnswer)) {
         return res.status(400).json({ success: false, message: 'Invalid integer answer' });
       }
-    } else if (questionType === 'multiple' && Array.isArray(correctAnswer)) {
+    } else if (normalizedType === 'multiple' && Array.isArray(correctAnswer)) {
       // For multiple choice, map the indices to option texts
       formattedCorrectAnswer = correctAnswer.map((idx) => {
         const optionIndex = parseInt(idx);
@@ -2361,8 +2439,8 @@ export const addQuestion = async (req, res) => {
       if (formattedCorrectAnswer.length === 0) {
         formattedCorrectAnswer = correctAnswer;
       }
-    } else if (questionType === 'mcq' && options && options.length > 0) {
-      // For single MCQ, convert index to option text
+    } else if (isSingleChoiceQuestionType(normalizedType) && options && options.length > 0) {
+      // For single MCQ / AR / Match, convert index to option text
       const optionIndex = parseInt(correctAnswer);
       if (!isNaN(optionIndex) && options[optionIndex]) {
         formattedCorrectAnswer = options[optionIndex].text || options[optionIndex];
@@ -2381,7 +2459,7 @@ export const addQuestion = async (req, res) => {
     }
 
     console.log('📝 Creating question:', {
-      questionType,
+      questionType: normalizedType,
       subject,
       marks,
       board: board || exam.board,
@@ -2401,20 +2479,20 @@ export const addQuestion = async (req, res) => {
     // stored as `{ text, isCorrect }`; tag the isCorrect flag based on the
     // formatted correctAnswer so consumers that read options[].isCorrect (e.g.
     // preview / legacy content generators) stay in sync with correctAnswer.
-    const finalOptions = questionType === 'integer'
+    const finalOptions = normalizedType === 'integer'
       ? []
       : (options || []).map((opt) => {
           const text = typeof opt === 'string' ? opt : (opt?.text ?? '');
           return { text: String(text), isCorrect: false };
         });
 
-    if (questionType === 'mcq') {
+    if (isSingleChoiceQuestionType(normalizedType)) {
       const correctText = String(formattedCorrectAnswer || '').trim().toLowerCase();
       const idx = finalOptions.findIndex(
         (o) => String(o.text || '').trim().toLowerCase() === correctText
       );
       if (idx >= 0) finalOptions[idx].isCorrect = true;
-    } else if (questionType === 'multiple' && Array.isArray(formattedCorrectAnswer)) {
+    } else if (normalizedType === 'multiple' && Array.isArray(formattedCorrectAnswer)) {
       const correctSet = new Set(
         formattedCorrectAnswer.map((t) => String(t).trim().toLowerCase())
       );
@@ -2465,19 +2543,19 @@ export const addQuestion = async (req, res) => {
     const duplicateKey = buildQuestionDedupKey({
       examId,
       subject: normalizedQuestionSubject,
-      questionType,
+      questionType: normalizedType,
       questionText: finalQuestionText,
       questionImage: finalQuestionImage,
     });
     const existingQuestions = await Question.find(
-      { exam: examId, subject: normalizedQuestionSubject, questionType },
+      { exam: examId, subject: normalizedQuestionSubject, questionType: normalizedType },
       { _id: 1, questionText: 1, questionImage: 1, marks: 1 }
     ).lean();
     const duplicateQuestion = existingQuestions.find((q) => {
       const key = buildQuestionDedupKey({
         examId,
         subject: normalizedQuestionSubject,
-        questionType,
+        questionType: normalizedType,
         questionText: q.questionText,
         questionImage: q.questionImage,
       });
@@ -2530,7 +2608,7 @@ export const addQuestion = async (req, res) => {
     const question = new Question({
       questionText: finalQuestionText || undefined,
       questionImage: finalQuestionImage || undefined,
-      questionType,
+      questionType: normalizedType,
       options: finalOptions,
       correctAnswer: formattedCorrectAnswer,
       marks: marksValue,
@@ -2550,6 +2628,7 @@ export const addQuestion = async (req, res) => {
         if (raw.includes('concept') || raw.includes('theory')) return 'Concept';
         return undefined;
       })(),
+      ...matterFields,
       exam: examId,
       board: (board || exam.board).toUpperCase(),
       createdBy: createdById
@@ -3083,8 +3162,8 @@ export const bulkUploadQuestions = async (req, res) => {
 
         // Validate questionType
         const questionType = (getRowValue('questiontype', 'question_type', 'type') || 'mcq').toLowerCase();
-        if (!['mcq', 'multiple', 'integer'].includes(questionType)) {
-          errors.push(`Row ${i + 1}: Invalid questionType "${questionType}". Must be one of: mcq, multiple, integer`);
+        if (!ALLOWED_QUESTION_TYPES.includes(questionType)) {
+          errors.push(`Row ${i + 1}: Invalid questionType "${questionType}". Must be one of: ${ALLOWED_QUESTION_TYPES.join(', ')}`);
           continue;
         }
 
@@ -3102,9 +3181,9 @@ export const bulkUploadQuestions = async (req, res) => {
           continue;
         }
 
-        // Parse options for MCQ/Multiple
+        // Parse options for MCQ/Multiple/AR/Match
         let options = [];
-        if (questionType === 'mcq' || questionType === 'multiple') {
+        if (isChoiceQuestionType(questionType)) {
           for (let j = 1; j <= 4; j++) {
             const optionValue = getRowValue(
               `option${j}`,
@@ -3430,11 +3509,18 @@ async function buildPdfConvertPayload({
     fastMode,
   });
 
+  const mapExtractedType = (raw) => {
+    const t = String(raw || '').trim().toUpperCase().replace(/[\s-]+/g, '_');
+    if (t === 'MSQ' || t === 'MULTIPLE') return 'multiple';
+    if (t === 'INTEGER') return 'integer';
+    if (t === 'ASSERTION_REASON' || t === 'ASSERTIONREASON' || t === 'AR') return 'assertion_reason';
+    if (t === 'MATCH_FOLLOWING' || t === 'MATCHTHEFOLLOWING' || t === 'MATCH') return 'match_following';
+    return 'mcq';
+  };
+
   const normalizedBase = rows
     .map((r, idx) => {
-      const questionTypeRaw = String(r?.questionType || '').trim().toUpperCase();
-      const mappedType =
-        questionTypeRaw === 'MSQ' ? 'multiple' : questionTypeRaw === 'INTEGER' ? 'integer' : 'mcq';
+      const mappedType = mapExtractedType(r?.questionType);
       const subject = String(r?.subject ?? '').trim().toLowerCase();
       const marks = Number(r?.marks);
       const qn = Number(r?.questionNumber);
@@ -3456,14 +3542,30 @@ async function buildPdfConvertPayload({
         answerConflict: r?.answerConflict === true,
         conflictReason: String(r?.conflictReason || ''),
         secondOpinionAnswer: String(r?.secondOpinionAnswer || '').trim(),
-        passageId: '',
-        passageText: '',
+        passageId: String(r?.passageId || '').trim(),
+        passageText: String(r?.passageText || '').trim(),
+        sharedMatterId: String(r?.sharedMatterId || r?.passageId || '').trim(),
+        sharedMatterText: String(r?.sharedMatterText || r?.passageText || '').trim(),
+        sharedMatterKind: String(r?.sharedMatterKind || '').trim(),
+        assertionText: String(r?.assertionText || '').trim(),
+        reasonText: String(r?.reasonText || '').trim(),
+        matchColumnI: Array.isArray(r?.matchColumnI) ? r.matchColumnI : [],
+        matchColumnII: Array.isArray(r?.matchColumnII) ? r.matchColumnII : [],
       };
     })
     .filter((r) => r.questionText);
 
   let enriched = { rows: normalizedBase, meta: {} };
-  if (!fastMode) {
+  if (fastMode) {
+    // Still attach shared matter for AR / Match / Case so every linked Q shows the same block
+    onProgress?.('Attaching shared matter (fast)…');
+    const { attachSharedMatterLightweight } = await import('../services/exam-pdf-enrichment.js');
+    enriched = await attachSharedMatterLightweight({
+      rows: normalizedBase,
+      fullText: documentText,
+      pdfBuffer: isDocx ? null : buffer,
+    });
+  } else {
     onProgress?.('Enriching questions (passages / figures)…');
     enriched = await enrichExtractedExamQuestions({
       pdfBuffer: isDocx ? null : buffer,
@@ -3492,8 +3594,15 @@ async function buildPdfConvertPayload({
       ...r,
       row: idx + 1,
       questionImage: String(r.questionImage || '').trim(),
-      passageText: String(r.passageText || '').trim(),
-      passageId: String(r.passageId || '').trim(),
+      passageText: String(r.passageText || r.sharedMatterText || '').trim(),
+      passageId: String(r.passageId || r.sharedMatterId || '').trim(),
+      sharedMatterId: String(r.sharedMatterId || r.passageId || '').trim(),
+      sharedMatterText: String(r.sharedMatterText || r.passageText || '').trim(),
+      sharedMatterKind: String(r.sharedMatterKind || '').trim(),
+      assertionText: String(r.assertionText || '').trim(),
+      reasonText: String(r.reasonText || '').trim(),
+      matchColumnI: Array.isArray(r.matchColumnI) ? r.matchColumnI : [],
+      matchColumnII: Array.isArray(r.matchColumnII) ? r.matchColumnII : [],
       solvable: r.solvable !== false && r.answerConflict !== true,
       validationFlags: flags,
       validationNote: note,
@@ -3726,6 +3835,16 @@ export const updateQuestion = async (req, res) => {
       difficulty,
       questionCategory,
       conceptType,
+      sharedMatterId,
+      sharedMatterText,
+      sharedMatterKind,
+      assertionText,
+      reasonText,
+      matchColumnI,
+      matchColumnII,
+      passageId,
+      passageText,
+      applySharedMatterToGroup,
     } = req.body || {};
 
     const contentUpdateRequested =
@@ -3733,7 +3852,12 @@ export const updateQuestion = async (req, res) => {
       questionImage !== undefined ||
       questionType !== undefined ||
       options !== undefined ||
-      correctAnswer !== undefined;
+      correctAnswer !== undefined ||
+      sharedMatterText !== undefined ||
+      assertionText !== undefined ||
+      reasonText !== undefined ||
+      matchColumnI !== undefined ||
+      matchColumnII !== undefined;
 
     let orderMove = null;
     if (displayOrder !== undefined) {
@@ -3847,15 +3971,68 @@ export const updateQuestion = async (req, res) => {
       questionType !== undefined
         ? String(questionType || '').trim().toLowerCase()
         : String(questionToUpdate.questionType || 'mcq').trim().toLowerCase();
-    const nextType = ['mcq', 'multiple', 'integer'].includes(nextTypeRaw) ? nextTypeRaw : null;
+    const nextType = ALLOWED_QUESTION_TYPES.includes(nextTypeRaw) ? nextTypeRaw : null;
     if (questionType !== undefined && !nextType) {
       return res.status(400).json({
         success: false,
-        message: 'Invalid questionType. Use mcq, multiple, or integer',
+        message: `Invalid questionType. Use one of: ${ALLOWED_QUESTION_TYPES.join(', ')}`,
       });
     }
     if (nextType) {
       questionToUpdate.questionType = nextType;
+    }
+
+    // Shared matter / AR / Match structured fields
+    if (
+      sharedMatterId !== undefined ||
+      sharedMatterText !== undefined ||
+      sharedMatterKind !== undefined ||
+      assertionText !== undefined ||
+      reasonText !== undefined ||
+      matchColumnI !== undefined ||
+      matchColumnII !== undefined ||
+      passageId !== undefined ||
+      passageText !== undefined
+    ) {
+      const matterFields = pickSharedMatterFields({
+        sharedMatterId:
+          sharedMatterId !== undefined ? sharedMatterId : questionToUpdate.sharedMatterId,
+        sharedMatterText:
+          sharedMatterText !== undefined ? sharedMatterText : questionToUpdate.sharedMatterText,
+        sharedMatterKind:
+          sharedMatterKind !== undefined ? sharedMatterKind : questionToUpdate.sharedMatterKind,
+        assertionText:
+          assertionText !== undefined ? assertionText : questionToUpdate.assertionText,
+        reasonText: reasonText !== undefined ? reasonText : questionToUpdate.reasonText,
+        matchColumnI:
+          matchColumnI !== undefined ? matchColumnI : questionToUpdate.matchColumnI,
+        matchColumnII:
+          matchColumnII !== undefined ? matchColumnII : questionToUpdate.matchColumnII,
+        passageId,
+        passageText,
+      });
+      Object.assign(questionToUpdate, matterFields);
+
+      // Propagate shared matter text to all questions in the same group
+      if (
+        applySharedMatterToGroup &&
+        matterFields.sharedMatterId &&
+        matterFields.sharedMatterText
+      ) {
+        await Question.updateMany(
+          {
+            exam: examId,
+            sharedMatterId: matterFields.sharedMatterId,
+            _id: { $ne: questionId },
+          },
+          {
+            $set: {
+              sharedMatterText: matterFields.sharedMatterText,
+              sharedMatterKind: matterFields.sharedMatterKind || '',
+            },
+          },
+        );
+      }
     }
 
     // Full content update: reformat options + correctAnswer like addQuestion
@@ -3865,7 +4042,7 @@ export const updateQuestion = async (req, res) => {
       let formattedCorrectAnswer =
         correctAnswer !== undefined ? correctAnswer : questionToUpdate.correctAnswer;
 
-      if ((effectiveType === 'mcq' || effectiveType === 'multiple') && (!incomingOptions || incomingOptions.length === 0)) {
+      if (isChoiceQuestionType(effectiveType) && (!incomingOptions || incomingOptions.length === 0)) {
         return res.status(400).json({
           success: false,
           message: 'Options are required for MCQ and Multiple Choice questions',
@@ -3892,7 +4069,7 @@ export const updateQuestion = async (req, res) => {
         if (formattedCorrectAnswer.length === 0) {
           formattedCorrectAnswer = correctAnswer;
         }
-      } else if (effectiveType === 'mcq' && incomingOptions && incomingOptions.length > 0) {
+      } else if (isSingleChoiceQuestionType(effectiveType) && incomingOptions && incomingOptions.length > 0) {
         const optionIndex = parseInt(formattedCorrectAnswer, 10);
         if (!Number.isNaN(optionIndex) && incomingOptions[optionIndex]) {
           const opt = incomingOptions[optionIndex];
@@ -3920,7 +4097,7 @@ export const updateQuestion = async (req, res) => {
               return { text: String(text), isCorrect: false };
             }).filter((o) => String(o.text || '').trim() !== '');
 
-      if (effectiveType === 'mcq') {
+      if (isSingleChoiceQuestionType(effectiveType)) {
         const correctText = String(formattedCorrectAnswer || '').trim().toLowerCase();
         const idx = finalOptions.findIndex(
           (o) => String(o.text || '').trim().toLowerCase() === correctText

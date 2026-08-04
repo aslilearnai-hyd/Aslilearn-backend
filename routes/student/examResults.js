@@ -1716,7 +1716,11 @@ function isAnswerCorrect(question, userAnswer) {
     return userResolved === correctResolved;
   }
 
-  if (question.questionType === 'mcq') {
+  if (
+    question.questionType === 'mcq' ||
+    question.questionType === 'assertion_reason' ||
+    question.questionType === 'match_following'
+  ) {
     const correctText = resolveAnswerToken(question, question.correctAnswer);
     const userText = resolveAnswerToken(question, userAnswer);
     return !!correctText && userText === correctText;
