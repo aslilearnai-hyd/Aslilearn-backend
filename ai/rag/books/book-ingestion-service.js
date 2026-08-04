@@ -243,7 +243,111 @@ async function ensureUploadDir() {
   await fs.mkdir(BOOK_UPLOAD_DIR, { recursive: true });
 }
 
-/** Persist uploaded file and create Book record. */
+function scheduleBackgroundWork(label, work) {
+  setImmediate(() => {
+    Promise.resolve()
+      .then(work)
+      .catch((err) => {
+        console.error(`[book-knowledge] ${label} failed:`, err?.message || err);
+      });
+  });
+}
+
+async function markBookFailed(bookId, message) {
+  try {
+    await Book.findByIdAndUpdate(bookId, {
+      processingStatus: 'failed',
+      processingError: String(message || 'Indexing failed').slice(0, 2000),
+    });
+  } catch {
+    /* ignore secondary failures */
+  }
+}
+
+/** Apply extracted text onto a book; returns false when OCR/manual text is still required. */
+async function applyExtractedTextToBook(book, buffer, mimeType, originalName) {
+  const { text, requiresOcr } = await extractTextFromUpload(buffer, mimeType, originalName);
+  const chapters = splitIntoChapters(text).map(({ text: _t, ...ch }) => ch);
+  book.extractedText = text.slice(0, 500000);
+  book.extractedTextLength = text.length;
+  book.chapters = chapters;
+  book.requiresOcr = requiresOcr;
+  if (typeof buffer?.length === 'number') book.fileSize = buffer.length;
+
+  if (text.length < 80) {
+    book.processingStatus = 'needs_ocr';
+    book.processingError = 'No extractable text — scanned PDF may need OCR.';
+    await book.save();
+    return false;
+  }
+
+  book.processingStatus = 'processing';
+  book.processingError = '';
+  await book.save();
+  return true;
+}
+
+/** Fire-and-forget extract + index using an in-memory buffer (upload path). */
+export function scheduleExtractAndIndexFromBuffer(bookId, buffer, mimeType, originalName) {
+  scheduleBackgroundWork(`extract+index ${bookId}`, async () => {
+    try {
+      const book = await Book.findById(bookId);
+      if (!book) return;
+      book.processingStatus = 'processing';
+      book.processingError = '';
+      await book.save();
+
+      const ok = await applyExtractedTextToBook(
+        book,
+        buffer,
+        mimeType || book.mimeType,
+        originalName || book.originalFileName,
+      );
+      if (!ok) return;
+      await indexBook(bookId);
+    } catch (err) {
+      await markBookFailed(bookId, err?.message || 'Indexing failed');
+    }
+  });
+}
+
+/** Fire-and-forget extract + index by reading the linked learning-path file (import path). */
+export function scheduleExtractAndIndexFromContentFile(bookId) {
+  scheduleBackgroundWork(`import-extract+index ${bookId}`, async () => {
+    try {
+      const book = await Book.findById(bookId);
+      if (!book) return;
+      book.processingStatus = 'processing';
+      book.processingError = '';
+      await book.save();
+
+      const buffer = await readContentFileBuffer(book.fileUrl);
+      const ok = await applyExtractedTextToBook(
+        book,
+        buffer,
+        book.mimeType || mimeFromFileUrl(book.fileUrl),
+        book.originalFileName || path.basename(String(book.fileUrl || '')),
+      );
+      if (!ok) return;
+      await indexBook(bookId);
+    } catch (err) {
+      await markBookFailed(bookId, err?.message || 'Indexing failed');
+    }
+  });
+}
+
+/** Fire-and-forget reindex when extracted text already exists. */
+export function scheduleIndexBook(bookId) {
+  scheduleBackgroundWork(`index ${bookId}`, async () => {
+    try {
+      await indexBook(bookId);
+    } catch (err) {
+      await markBookFailed(bookId, err?.message || 'Indexing failed');
+    }
+  });
+}
+
+/** Persist uploaded file and create Book record; indexing runs in the background. */
 export async function createBookFromUpload({
   buffer,
   originalName,
@@ -285,9 +389,6 @@ export async function createBookFromUpload({
     /* keep local file */
   }
 
-  const { text, requiresOcr } = await extractTextFromUpload(buffer, mimeType, originalName);
-  const chapters = splitIntoChapters(text).map(({ text: _t, ...ch }) => ch);
-
   const resolvedCategory =
     normalizeIitCategoryLoose(productCategory) ||
     inferProductCategoryFromPath(relativePath || originalName) ||
@@ -315,12 +416,12 @@ export async function createBookFromUpload({
     originalFileName: originalName,
     mimeType,
     fileSize: buffer.length,
-    extractedText: text.slice(0, 500000),
-    extractedTextLength: text.length,
-    chapters,
-    requiresOcr,
-    processingStatus: text.length < 80 ? 'needs_ocr' : 'pending',
-    processingError: text.length < 80 ? 'No extractable text — scanned PDF may need OCR.' : '',
+    extractedText: '',
+    extractedTextLength: 0,
+    chapters: [],
+    requiresOcr: false,
+    processingStatus: 'pending',
+    processingError: '',
     uploadedBy: String(uploadedBy || '').trim(),
     uploadedByRole: String(uploadedByRole || 'super-admin').trim(),
   };
@@ -342,10 +443,7 @@ export async function createBookFromUpload({
     book = await Book.create(sharedFields);
   }
 
-  if (text.length >= 80) {
-    await indexBook(book._id);
-  }
-
+  scheduleExtractAndIndexFromBuffer(book._id, buffer, mimeType, originalName);
   return book;
 }
 
@@ -640,7 +738,9 @@ export async function listImportableLearningContent({ board, type, imported } = 
   return items;
 }
 
-/** Create a Book from an existing learning-path Content row (reuses file, no re-upload). */
+/** Create a Book from an existing learning-path Content row (reuses file, no re-upload).
+ * Returns quickly after linking; extract + embedding run in the background.
+ */
 export async function createBookFromContent({ contentId, uploadedBy, uploadedByRole }) {
   await ensureBookContentIdIndex();
   const content = await Content.findById(contentId).lean();
@@ -659,6 +759,25 @@ export async function createBookFromContent({ contentId, uploadedBy, uploadedByR
     throw new Error('No importable PDF/DOCX/TXT file found on this content item.');
   }
 
+  // Fail fast if the PDF is missing on disk — without reading the full file.
+  const normalized = normalizeContentFileUrl(fileUrl);
+  const relative = normalized.replace(/^\/uploads\/content\//, '');
+  const localPath = path.resolve(CONTENT_UPLOAD_DIR, relative);
+  if (
+    !localPath.startsWith(path.resolve(CONTENT_UPLOAD_DIR) + path.sep) &&
+    localPath !== path.resolve(CONTENT_UPLOAD_DIR)
+  ) {
+    throw new Error('Invalid content file path.');
+  }
+  try {
+    await fs.access(localPath);
+  } catch (err) {
+    if (err?.code === 'ENOENT') {
+      throw new Error(`Learning-path file missing on disk: ${normalized}`);
+    }
+    throw err;
+  }
+
   const subjectDoc = content.subject ? await Subject.findById(content.subject).lean() : null;
   const subjectName = normalizeImportedSubjectName(subjectDoc?.name, content.title);
   const classLabel = resolveImportedClassLabel({ content, subjectDoc, title: content.title });
@@ -675,19 +794,8 @@ export async function createBookFromContent({ contentId, uploadedBy, uploadedByR
     fallbackTitle: content.title,
   });
 
-  const buffer = await readContentFileBuffer(fileUrl);
   const mimeType = mimeFromFileUrl(fileUrl);
   const originalName = path.basename(fileUrl);
-  const { text, requiresOcr } = await extractTextFromUpload(buffer, mimeType, originalName);
-  const chapters = splitIntoChapters(text).map(({ text: _t, ...ch }) => ch);
-
-  // One book per (board, class, subject, productCategory) slot — replace if already filled.
-  const slotExisting = await Book.findOne({
-    board: boardLabel,
-    class: classLabel,
-    subject: subjectName,
-    productCategory: productCategory || '',
-  }).sort({ updatedAt: -1 });
 
   const sharedFields = {
     title: slotTitle,
@@ -704,20 +812,27 @@ export async function createBookFromContent({ contentId, uploadedBy, uploadedByR
     storageKey: '',
     originalFileName: originalName,
     mimeType,
-    fileSize: buffer.length,
-    extractedText: text.slice(0, 500000),
-    extractedTextLength: text.length,
-    chapters,
-    requiresOcr,
-    processingStatus: text.length < 80 ? 'needs_ocr' : 'pending',
-    processingError: text.length < 80 ? 'No extractable text — scanned PDF may need OCR.' : '',
+    fileSize: 0,
+    extractedText: '',
+    extractedTextLength: 0,
+    chapters: [],
+    requiresOcr: false,
+    processingStatus: 'pending',
+    processingError: '',
     uploadedBy: String(uploadedBy || '').trim(),
     uploadedByRole: String(uploadedByRole || 'super-admin').trim(),
   };
 
+  // One book per (board, class, subject, productCategory) slot — replace if already filled.
+  const slotExisting = await Book.findOne({
+    board: boardLabel,
+    class: classLabel,
+    subject: subjectName,
+    productCategory: productCategory || '',
+  }).sort({ updatedAt: -1 });
+
   let book;
   if (slotExisting && String(slotExisting.contentId || '') !== String(content._id)) {
-    // Different content claiming same Alpha/Beta slot — replace file in place.
     Object.assign(slotExisting, sharedFields);
     await slotExisting.save();
     book = slotExisting;
@@ -729,11 +844,6 @@ export async function createBookFromContent({ contentId, uploadedBy, uploadedByR
     book = await Book.create(sharedFields);
   }
 
-  if (text.length >= 80) {
-    await indexBook(book._id);
-    const refreshed = await Book.findById(book._id);
-    return { book: refreshed || book, alreadyImported: Boolean(slotExisting) };
-  }
-
+  scheduleExtractAndIndexFromContentFile(book._id);
   return { book, alreadyImported: Boolean(slotExisting) };
 }
