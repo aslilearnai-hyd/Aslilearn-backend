@@ -3624,8 +3624,9 @@ async function buildPdfConvertPayload({
 
   let enriched = { rows: normalizedBase, meta: {} };
   if (fastMode) {
-    // Fast Gemini path: still attach shared matter + PDF figures/match screenshots.
-    onProgress?.('Attaching shared matter & figures…');
+    // Fast Gemini path: shared matter + lightweight screenshots (NO getImage —
+    // that step alone was hanging 10–15 min after Gemini finished in ~25s).
+    onProgress?.('Attaching shared matter…');
     const {
       attachSharedMatterLightweight,
       attachPdfFiguresToRows,
@@ -3636,11 +3637,37 @@ async function buildPdfConvertPayload({
       pdfBuffer: isDocx ? null : buffer,
     });
     if (!isDocx && buffer) {
-      onProgress?.('Capturing figures / match tables…');
-      enriched = {
-        ...enriched,
-        rows: await attachPdfFiguresToRows(buffer, enriched.rows || [], { examId }),
-      };
+      onProgress?.('Capturing match/figure page photos…');
+      const figureStarted = Date.now();
+      try {
+        const figurePromise = attachPdfFiguresToRows(buffer, enriched.rows || [], {
+          examId,
+          fast: true,
+        }).catch((err) => {
+          console.warn('[PDF_EXAM_EXTRACT] figure attach error:', err?.message || err);
+          return enriched.rows || [];
+        });
+        const timeoutMs = Number(process.env.PDF_FIGURE_ATTACH_TIMEOUT_MS) || 45000;
+        const timed = await Promise.race([
+          figurePromise.then((rows) => ({ ok: true, rows })),
+          new Promise((resolve) =>
+            setTimeout(() => resolve({ ok: false, rows: enriched.rows || [] }), timeoutMs),
+          ),
+        ]);
+        if (!timed.ok) {
+          console.warn('[PDF_EXAM_EXTRACT] figure attach timed out; returning questions without waiting', {
+            timeoutMs,
+            elapsedMs: Date.now() - figureStarted,
+          });
+        } else {
+          console.log('[PDF_EXAM_EXTRACT] figure attach finished', {
+            elapsedMs: Date.now() - figureStarted,
+          });
+        }
+        enriched = { ...enriched, rows: timed.rows || enriched.rows || [] };
+      } catch (figErr) {
+        console.warn('[PDF_EXAM_EXTRACT] figure attach skipped:', figErr?.message || figErr);
+      }
     }
   } else {
     onProgress?.('Enriching questions (passages / figures)…');

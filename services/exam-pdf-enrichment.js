@@ -1,7 +1,7 @@
 /**
  * Enrich Gemini PDF question extraction:
  * - Detect shared case/passage blocks and attach to child questions (tight ranges only)
- * - Detect Assertion–Reason shared option sets
+ * - Detect Assertionâ€“Reason shared option sets
  * - Extract/attach PDF figures as questionImage files
  * - Flag rows that still look unsolvable without passage/figure
  */
@@ -33,13 +33,13 @@ const DEFAULT_MATCH_DIRECTIONS =
 const FIGURE_HINT_RE =
   /\b(screw\s*gauge|vernier|calliper|caliper|diagram|figure|shown\s+in\s+the\s+(?:figure|diagram)|least\s*count|circular\s*scale|main\s*scale|as\s+shown|refer\s+to\s+(?:the\s+)?(?:figure|diagram)|given\s+figure|marked\s+point|shown\s+below)\b/i;
 
-/** Match-the-Following tables are usually vector text in PDFs — detect so we can screenshot the page. */
+/** Match-the-Following tables are usually vector text in PDFs â€” detect so we can screenshot the page. */
 const MATCH_TABLE_HINT_RE =
   /Column\s*I\b|Column\s*II\b|List\s*-?\s*I\b|List\s*-?\s*II\b|match\s+(?:the\s+)?(?:following|each|column)/i;
 
 /** Stops a case block from swallowing the rest of the paper */
 const SECTION_STOP_RE =
-  /(?:^|\n)\s*(?:Mathematics|Maths|Physics|Chemistry|Biology|Science|English|Hindi|Social\s*Science|Assertion\s*[-–]?\s*Reason|Match\s+the\s+Following|SECTION\s*[A-D]|Single\s+Correct|Multi\s+Correct|Integer\s+Type)\b/i;
+  /(?:^|\n)\s*(?:Mathematics|Maths|Physics|Chemistry|Biology|Science|English|Hindi|Social\s*Science|Assertion\s*[-â€“]?\s*Reason|Match\s+the\s+Following|SECTION\s*[A-D]|Single\s+Correct|Multi\s+Correct|Integer\s+Type)\b/i;
 
 const MAX_QUESTIONS_PER_PASSAGE = 5;
 
@@ -63,8 +63,8 @@ function extractQuestionNumbersNear(text, fromIdx, toIdx, minNumber = 0) {
 
 /**
  * Highest question number printed before `idx`. A passage's questions must come
- * after it — without this floor, "Column II" lists inside a Match-the-Following
- * ("1. …", "2. …") are read as question numbers 1-4 and the passage gets
+ * after it â€” without this floor, "Column II" lists inside a Match-the-Following
+ * ("1. â€¦", "2. â€¦") are read as question numbers 1-4 and the passage gets
  * attached to Q1-Q4 instead of the questions that actually follow it.
  */
 function highestQuestionNumberBefore(text, idx) {
@@ -108,7 +108,7 @@ function findSectionStopAfter(text, fromIdx) {
 
 /**
  * Detect Case I / Case II / Case Study / Paragraph / passage blocks.
- * Intentionally does NOT match bare "Case Based Type Questions" section titles —
+ * Intentionally does NOT match bare "Case Based Type Questions" section titles â€”
  * those were attaching one chemistry case onto dozens of unrelated later questions.
  */
 export function detectPassagesFromPdfText(fullText) {
@@ -171,13 +171,13 @@ export function detectPassagesFromPdfText(fullText) {
 }
 
 /**
- * Find Assertion–Reason Directions blocks and question ranges that use shared options.
+ * Find Assertionâ€“Reason Directions blocks and question ranges that use shared options.
  */
 export function detectAssertionReasonBlocks(fullText) {
   const text = String(fullText || '');
   const blocks = [];
   const re =
-    /(?:^|\n)\s*(Assertion\s*[-–]?\s*Reason[^\n]*|Directions\s*:\s*Each\s+question\s+is\s+followed\s+by\s+four\s+options[^\n]*Assertion[^\n]*)/gi;
+    /(?:^|\n)\s*(Assertion\s*[-â€“]?\s*Reason[^\n]*|Directions\s*:\s*Each\s+question\s+is\s+followed\s+by\s+four\s+options[^\n]*Assertion[^\n]*)/gi;
   const markers = [];
   let m;
   while ((m = re.exec(text))) {
@@ -240,14 +240,14 @@ export function detectAssertionReasonBlocks(fullText) {
 }
 
 /**
- * Split an Assertion–Reason stem into A / R fields.
+ * Split an Assertionâ€“Reason stem into A / R fields.
  */
 export function parseAssertionReasonFromStem(stem) {
   const text = String(stem || '').trim();
   if (!text) return { assertionText: '', reasonText: '', cleanedStem: '' };
 
   const arMatch = text.match(
-    /(?:^|\n)\s*A\s*[:：]\s*([\s\S]*?)(?:\n|\s+)R\s*[:：]\s*([\s\S]*?)$/i,
+    /(?:^|\n)\s*A\s*[:ï¼š]\s*([\s\S]*?)(?:\n|\s+)R\s*[:ï¼š]\s*([\s\S]*?)$/i,
   );
   if (arMatch) {
     return {
@@ -258,7 +258,7 @@ export function parseAssertionReasonFromStem(stem) {
   }
 
   const inline = text.match(
-    /\bA\s*[:：]\s*(.+?)\s+R\s*[:：]\s*(.+)$/i,
+    /\bA\s*[:ï¼š]\s*(.+?)\s+R\s*[:ï¼š]\s*(.+)$/i,
   );
   if (inline) {
     return {
@@ -300,7 +300,7 @@ export function parseMatchColumnsFromStem(stem) {
   if (iBlock) colI.push(...parseList(iBlock[1], true));
   if (iiBlock) colII.push(...parseList(iiBlock[1], false));
 
-  // Fallback: "A. … B. …" without Column headers
+  // Fallback: "A. â€¦ B. â€¦" without Column headers
   if (colI.length === 0) {
     const loose = parseList(text, true);
     if (loose.length >= 2) colI.push(...loose.slice(0, 4));
@@ -377,7 +377,7 @@ function stemAlreadyHasPassageContext(stem, passage) {
   if (!s) return false;
   if (/^(case\s*(i{1,3}|iv|\d+|study)|paragraph\s*:|directions\s*:)/i.test(s)) return true;
   if (p.length > 40 && s.toLowerCase().includes(p.slice(0, 48).toLowerCase())) return true;
-  // Long stem from Gemini that already inlined case facts — do not double-prepend
+  // Long stem from Gemini that already inlined case facts â€” do not double-prepend
   if (s.length >= 140 && /case\s*(i{1,3}|iv|\d+|study)|paragraph\s*:/i.test(s)) return true;
   return false;
 }
@@ -413,7 +413,7 @@ export function attachPassagesToRows(rows, passages) {
       };
     }
 
-    // Long unrelated stem that wrongly matched a wide range — keep stem, skip passage
+    // Long unrelated stem that wrongly matched a wide range â€” keep stem, skip passage
     return row;
   });
 }
@@ -430,11 +430,11 @@ export function attachAssertionReasonOptions(rows, arBlocks) {
       String(o || '').trim(),
     ).length >= 2;
     const looksLikeAR =
-      /\bA\s*[:：]/i.test(String(row.questionText || '')) ||
-      /\bR\s*[:：]/i.test(String(row.questionText || '')) ||
+      /\bA\s*[:ï¼š]/i.test(String(row.questionText || '')) ||
+      /\bR\s*[:ï¼š]/i.test(String(row.questionText || '')) ||
       /assertion/i.test(String(row.questionText || ''));
     if (!looksLikeAR && hasOwnOptions) {
-      // In AR range but stem doesn't look like A/R — still attach shared directions
+      // In AR range but stem doesn't look like A/R â€” still attach shared directions
       return {
         ...row,
         sharedOptionsId: hit.sharedOptionsId,
@@ -542,7 +542,7 @@ export function promoteStructuredTypesFromStem(rows) {
     }
 
     const looksLikeAR =
-      /\bA\s*[:：]/.test(stem) && /\bR\s*[:：]/.test(stem);
+      /\bA\s*[:ï¼š]/.test(stem) && /\bR\s*[:ï¼š]/.test(stem);
     if (looksLikeAR && row.sharedMatterKind !== 'case') {
       const parsed = parseAssertionReasonFromStem(stem);
       const opts = [row.option1, row.option2, row.option3, row.option4].map((o) =>
@@ -594,7 +594,7 @@ export function promoteStructuredTypesFromStem(rows) {
 }
 
 /**
- * Lightweight shared-matter attach (no figure extraction) — safe for fast mode.
+ * Lightweight shared-matter attach (no figure extraction) â€” safe for fast mode.
  */
 export async function attachSharedMatterLightweight({ rows, fullText, pdfBuffer }) {
   let text = String(fullText || '');
@@ -710,7 +710,7 @@ function bufferFromImageData(data) {
 }
 
 /**
- * Map printed question numbers → page numbers using per-page text.
+ * Map printed question numbers â†’ page numbers using per-page text.
  */
 async function mapQuestionNumbersToPages(parser) {
   const parsed = await parser.getText();
@@ -760,19 +760,20 @@ async function saveQuestionImageBuffer(buf, examId, savedUrlByImageKey, key) {
 /**
  * Attach PDF figures to the questions that need them.
  *
- * 1. Embedded images via getImage() (diagrams that are true image XObjects).
- * 2. Page screenshots via getScreenshot() for Match-the-Following tables and
- *    any figure-needing question that still has no image (ASLI papers often
- *    draw tables/figures as vectors, so getImage finds nothing).
+ * fast=true (default for extract): skip getImage() — that path can take 10–15+
+ * minutes on ASLI papers. Only screenshot Match-the-Following / hasFigure pages
+ * (capped), which is enough for table photos without the hang.
+ *
+ * fast=false: also try embedded XObject images via getImage(), then screenshots.
  */
-export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId } = {}) {
-  if (!Array.isArray(rows) || rows.length === 0) return rows;
+export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = true } = {}) {
+  if (!Array.isArray(rows) || rows.length === 0 || !pdfBuffer) return rows;
+  const startedAt = Date.now();
   let parser;
   try {
     parser = new PDFParse({ data: pdfBuffer });
     const { map: qToPage } = await mapQuestionNumbersToPages(parser);
 
-    // Index rows by page
     const rowsByPage = new Map();
     rows.forEach((row, idx) => {
       const qn = Number(row?.questionNumber);
@@ -783,56 +784,56 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId } = {}) {
       rowsByPage.get(pageNumber).push({ row, idx, qn });
     });
 
-    const pagesNeedingWork = new Set();
-    for (const [pageNumber, pageRows] of rowsByPage) {
-      if (pageRows.some(({ row }) => rowWantsFigure(row))) pagesNeedingWork.add(pageNumber);
-      else if (pageRows.length === 1 && !String(pageRows[0].row.questionImage || '').trim()) {
-        // May still pick up a lone embedded figure below
-        pagesNeedingWork.add(pageNumber);
-      }
-    }
-
-    const imageResult = await parser.getImage(
-      pagesNeedingWork.size
-        ? { partial: [...pagesNeedingWork], imageBuffer: true, imageDataUrl: false }
-        : { imageBuffer: true, imageDataUrl: false },
-    );
-    const pages = Array.isArray(imageResult?.pages) ? imageResult.pages : [];
-
-    const imageKey = (img) => {
-      const buf = bufferFromImageData(img?.data);
-      if (!buf || buf.length < 500) return null;
-      return `${buf.length}:${buf.subarray(0, 32).toString('hex')}`;
-    };
-
-    // Byte-identical images on 3+ pages are page furniture (header banner, watermark)
-    const pagesSeenByImage = new Map();
-    for (const page of pages) {
-      const uniqueKeys = new Set(
-        (Array.isArray(page?.images) ? page.images : []).map(imageKey).filter(Boolean),
-      );
-      for (const k of uniqueKeys) {
-        pagesSeenByImage.set(k, (pagesSeenByImage.get(k) || 0) + 1);
-      }
-    }
-
     const candidatesByPage = new Map();
-    for (const page of pages) {
-      const pageNumber = Number(page?.pageNumber) || 0;
-      const list = [];
-      for (const img of Array.isArray(page?.images) ? page.images : []) {
-        if (isLikelyLogoOrTiny(img)) continue;
-        const key = imageKey(img);
-        if (!key || (pagesSeenByImage.get(key) || 0) >= 3) continue;
-        const buf = bufferFromImageData(img.data);
-        if (!buf) continue;
-        list.push({ buf, key, kind: 'embed' });
+
+    // Embedded-image extract is the main wall-time killer — only in thorough mode.
+    if (!fast) {
+      const pagesNeedingWork = new Set();
+      for (const [pageNumber, pageRows] of rowsByPage) {
+        if (pageRows.some(({ row }) => rowWantsFigure(row))) pagesNeedingWork.add(pageNumber);
       }
-      if (list.length) candidatesByPage.set(pageNumber, list);
+      if (pagesNeedingWork.size > 0) {
+        const imageResult = await parser.getImage({
+          partial: [...pagesNeedingWork],
+          imageBuffer: true,
+          imageDataUrl: false,
+        });
+        const pages = Array.isArray(imageResult?.pages) ? imageResult.pages : [];
+        const imageKey = (img) => {
+          const buf = bufferFromImageData(img?.data);
+          if (!buf || buf.length < 500) return null;
+          return `${buf.length}:${buf.subarray(0, 32).toString('hex')}`;
+        };
+        const pagesSeenByImage = new Map();
+        for (const page of pages) {
+          const uniqueKeys = new Set(
+            (Array.isArray(page?.images) ? page.images : []).map(imageKey).filter(Boolean),
+          );
+          for (const k of uniqueKeys) {
+            pagesSeenByImage.set(k, (pagesSeenByImage.get(k) || 0) + 1);
+          }
+        }
+        for (const page of pages) {
+          const pageNumber = Number(page?.pageNumber) || 0;
+          const list = [];
+          for (const img of Array.isArray(page?.images) ? page.images : []) {
+            if (isLikelyLogoOrTiny(img)) continue;
+            const key = imageKey(img);
+            if (!key || (pagesSeenByImage.get(key) || 0) >= 3) continue;
+            const buf = bufferFromImageData(img.data);
+            if (!buf) continue;
+            list.push({ buf, key, kind: 'embed' });
+          }
+          if (list.length) candidatesByPage.set(pageNumber, list);
+        }
+      }
+      console.log('[PDF_ENRICH] getImage done', {
+        pages: candidatesByPage.size,
+        elapsedMs: Date.now() - startedAt,
+      });
     }
 
-    // Decide which pages need a full-page screenshot (match tables / missing embeds).
-    // Cap count — rendering every page kills wall time on large papers.
+    // Prefer Match pages; then hasFigure / figure-hint pages. Cap hard.
     const matchShotPages = [];
     const otherShotPages = [];
     for (const [pageNumber, pageRows] of rowsByPage) {
@@ -841,19 +842,33 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId } = {}) {
       const prefersShot = wanting.some(({ row }) => rowLooksLikeMatchTable(row));
       const embeds = candidatesByPage.get(pageNumber) || [];
       if (prefersShot) matchShotPages.push(pageNumber);
-      else if (embeds.length === 0) otherShotPages.push(pageNumber);
+      else if (
+        embeds.length === 0 &&
+        wanting.some(
+          ({ row }) =>
+            row.hasFigure === true || FIGURE_HINT_RE.test(rowCombinedText(row)),
+        )
+      ) {
+        otherShotPages.push(pageNumber);
+      }
     }
+    const maxShots = fast ? 6 : 8;
     const screenshotPageList = [...matchShotPages, ...otherShotPages]
-      .sort((a, b) => a - b)
       .filter((n, i, arr) => arr.indexOf(n) === i)
-      .slice(0, 8);
+      .sort((a, b) => a - b)
+      .slice(0, maxShots);
 
     const screenshotByPage = new Map();
     if (screenshotPageList.length > 0) {
       try {
+        console.log('[PDF_ENRICH] getScreenshot start', {
+          pages: screenshotPageList,
+          fast,
+          elapsedMs: Date.now() - startedAt,
+        });
         const shotResult = await parser.getScreenshot({
           partial: screenshotPageList,
-          scale: 1.2,
+          scale: fast ? 1.0 : 1.2,
           imageBuffer: true,
           imageDataUrl: false,
         });
@@ -867,6 +882,10 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId } = {}) {
             kind: 'screenshot',
           });
         }
+        console.log('[PDF_ENRICH] getScreenshot done', {
+          got: screenshotByPage.size,
+          elapsedMs: Date.now() - startedAt,
+        });
       } catch (shotErr) {
         console.warn(
           '[PDF_ENRICH] getScreenshot failed (match/figure pages may lack photos):',
@@ -884,14 +903,15 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId } = {}) {
       const embeds = candidatesByPage.get(pageNumber) || [];
       const shot = screenshotByPage.get(pageNumber);
 
-      // Single question alone on a page with an image → that image is its figure
       if (!wanting.length && pageRows.length === 1 && embeds.length) {
         wanting = pageRows;
       }
       if (!wanting.length) continue;
 
       const groups = groupWantingRows(wanting);
-      const useScreenshotFirst = wanting.some(({ row }) => rowLooksLikeMatchTable(row)) && shot;
+      const useScreenshotFirst =
+        (wanting.some(({ row }) => rowLooksLikeMatchTable(row)) && shot) ||
+        (fast && shot && !embeds.length);
 
       if (useScreenshotFirst) {
         for (const group of groups) {
@@ -902,14 +922,12 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId } = {}) {
         continue;
       }
 
-      // Zip shared-matter groups with embedded images in page order
       const n = Math.min(groups.length, embeds.length);
       for (let i = 0; i < n; i += 1) {
         for (const entry of groups[i]) {
           urlByRowIdx.set(entry.idx, embeds[i]);
         }
       }
-      // Fallback: remaining figure-needing groups get the page screenshot
       if (shot) {
         for (let i = n; i < groups.length; i += 1) {
           for (const entry of groups[i]) {
@@ -919,12 +937,24 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId } = {}) {
       }
     }
 
-    if (urlByRowIdx.size === 0) return rows;
+    if (urlByRowIdx.size === 0) {
+      console.log('[PDF_ENRICH] attachPdfFiguresToRows: no images attached', {
+        fast,
+        elapsedMs: Date.now() - startedAt,
+      });
+      return rows;
+    }
     await ensureQuestionsUploadDir();
 
     for (const candidate of new Set(urlByRowIdx.values())) {
       await saveQuestionImageBuffer(candidate.buf, examId, savedUrlByImageKey, candidate.key);
     }
+
+    console.log('[PDF_ENRICH] attachPdfFiguresToRows done', {
+      fast,
+      attached: urlByRowIdx.size,
+      elapsedMs: Date.now() - startedAt,
+    });
 
     return rows.map((row, idx) => {
       const candidate = urlByRowIdx.get(idx);
@@ -944,7 +974,6 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId } = {}) {
     if (parser) await parser.destroy().catch(() => {});
   }
 }
-
 /**
  * Full enrichment after Gemini extraction.
  */
@@ -974,7 +1003,7 @@ export async function enrichExtractedExamQuestions({
   next = attachAssertionReasonOptions(next, arBlocks);
   next = attachMatchFollowingMatter(next, matchBlocks);
   next = promoteStructuredTypesFromStem(next);
-  next = await attachPdfFiguresToRows(pdfBuffer, next, { examId });
+  next = await attachPdfFiguresToRows(pdfBuffer, next, { examId, fast: false });
 
   next = next.map((row, idx) => {
     const v = validateExtractedQuestionRow(row);
