@@ -3642,35 +3642,47 @@ async function buildPdfConvertPayload({
       onProgress?.('Attaching diagram images…');
       const figureStarted = Date.now();
       try {
+        // Always await figure attach — racing a short timeout was dropping photos
+        // while text extract finished. Soft ceiling via env only.
+        const timeoutMs = Number(process.env.PDF_FIGURE_ATTACH_TIMEOUT_MS) || 180000;
         const figurePromise = attachPdfFiguresToRows(buffer, enriched.rows || [], {
           examId,
           fast: true,
-        }).catch((err) => {
-          console.warn('[PDF_EXAM_EXTRACT] figure attach error:', err?.message || err);
-          return enriched.rows || [];
         });
-        const timeoutMs = Number(process.env.PDF_FIGURE_ATTACH_TIMEOUT_MS) || 90000;
-        const timed = await Promise.race([
-          figurePromise.then((rows) => ({ ok: true, rows })),
-          new Promise((resolve) =>
-            setTimeout(() => resolve({ ok: false, rows: enriched.rows || [] }), timeoutMs),
+        const rowsWithFigures = await Promise.race([
+          figurePromise,
+          new Promise((_, reject) =>
+            setTimeout(() => reject(new Error(`figure attach exceeded ${timeoutMs}ms`)), timeoutMs),
           ),
-        ]);
-        if (!timed.ok) {
-          console.warn('[PDF_EXAM_EXTRACT] figure attach timed out; returning questions without waiting', {
-            timeoutMs,
+        ]).catch(async (err) => {
+          console.warn('[PDF_EXAM_EXTRACT] figure attach issue:', err?.message || err);
+          // Last chance: if the real promise still settles soon, use it
+          try {
+            return await Promise.race([
+              figurePromise,
+              new Promise((resolve) => setTimeout(() => resolve(null), 5000)),
+            ]);
+          } catch {
+            return null;
+          }
+        });
+        if (Array.isArray(rowsWithFigures)) {
+          enriched = { ...enriched, rows: rowsWithFigures };
+          console.log('[PDF_EXAM_EXTRACT] figure attach finished', {
+            withImages: rowsWithFigures.filter((r) => r.questionImage).length,
             elapsedMs: Date.now() - figureStarted,
           });
         } else {
-          console.log('[PDF_EXAM_EXTRACT] figure attach finished', {
+          console.warn('[PDF_EXAM_EXTRACT] figure attach produced no rows; keeping text-only', {
             elapsedMs: Date.now() - figureStarted,
           });
         }
-        enriched = { ...enriched, rows: timed.rows || enriched.rows || [] };
       } catch (figErr) {
         console.warn('[PDF_EXAM_EXTRACT] figure attach skipped:', figErr?.message || figErr);
       }
     }
+    // Directions / flags AFTER photos so diagram images are not wiped, and AR
+    // still gets directions (AR images are cleared on purpose).
     enriched = {
       ...enriched,
       rows: applyExtractionValidation(ensureAssertionReasonDirections(enriched.rows || [])),
