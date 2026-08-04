@@ -5,7 +5,7 @@ import {
   createBookFromContent,
   enrichBookCurriculumFields,
   listImportableLearningContent,
-  indexBook,
+  scheduleIndexBook,
   deleteBook,
   getBookStats,
 } from '../services/book-ingestion-service.js';
@@ -106,8 +106,19 @@ export async function uploadBook(req, res) {
 export async function reindexBook(req, res) {
   if (!ensureSuperAdmin(req, res)) return;
   try {
-    const result = await indexBook(req.params.id);
-    res.json({ success: true, data: result, message: 'Book reindexed successfully.' });
+    const book = await Book.findById(req.params.id);
+    if (!book) return res.status(404).json({ success: false, message: 'Book not found.' });
+
+    book.processingStatus = 'pending';
+    book.processingError = '';
+    await book.save();
+    scheduleIndexBook(book._id);
+
+    res.json({
+      success: true,
+      data: { bookId: book._id, processingStatus: 'pending' },
+      message: 'Book reindexing started.',
+    });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message || 'Reindex failed.' });
   }

@@ -64,6 +64,10 @@ function toMongoFilter(filters, allowedFields) {
     if (!field) continue;
     const op = String(it?.op || 'eq').toLowerCase();
     const val = normalizeSimpleValue(it?.value);
+    // A blank/missing value means "no constraint was actually specified" (e.g. "Class"
+    // with no number) — applying it literally (field === '') would zero out real matches
+    // instead of just not filtering on that field.
+    if ((val === '' || val === null || val === undefined) && op !== 'exists') continue;
     if (op === 'eq') {
       if (field === 'classNumber' && typeof val === 'string' && /^\d+$/.test(val)) {
         mongo[field] = { $in: [val, `Class ${val}`, `class ${val}`] };
