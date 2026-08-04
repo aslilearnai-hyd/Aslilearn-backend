@@ -232,7 +232,7 @@ export function detectAssertionReasonBlocks(fullText) {
       sharedOptionsId: `AR${blocks.length + 1}`,
       sharedOptions: [...DEFAULT_AR_OPTIONS],
       sharedMatterText:
-        directionsBody.length >= 40 ? directionsBody : DEFAULT_AR_DIRECTIONS,
+        looksLikeArDirections(directionsBody) ? directionsBody : DEFAULT_AR_DIRECTIONS,
       questionRange: consecutiveQuestionRun([...new Set(qRange)], 8),
     });
   }
@@ -439,15 +439,14 @@ export function attachAssertionReasonOptions(rows, arBlocks) {
         ...row,
         sharedOptionsId: hit.sharedOptionsId,
         sharedMatterId: hit.sharedOptionsId,
-        sharedMatterText: String(hit.sharedMatterText || '').trim() || DEFAULT_AR_DIRECTIONS,
+        sharedMatterText: cleanArDirectionsText(hit.sharedMatterText),
         sharedMatterKind: 'assertion_reason',
         questionType: 'assertion_reason',
       };
     }
 
     const parsed = parseAssertionReasonFromStem(row.questionText);
-    const matter =
-      String(hit.sharedMatterText || '').trim() || DEFAULT_AR_DIRECTIONS;
+    const matter = cleanArDirectionsText(hit.sharedMatterText);
 
     return {
       ...row,
@@ -526,9 +525,7 @@ export function promoteStructuredTypesFromStem(rows) {
         reasonText: row.reasonText || parsed.reasonText,
         questionText: parsed.cleanedStem || cleaned,
         sharedMatterId: row.sharedMatterId || 'AR1',
-        sharedMatterText: looksLikeArDirections(row.sharedMatterText)
-          ? row.sharedMatterText
-          : DEFAULT_AR_DIRECTIONS,
+        sharedMatterText: cleanArDirectionsText(row.sharedMatterText),
         sharedMatterKind: 'assertion_reason',
         passageText: '',
         passageId: '',
@@ -568,9 +565,7 @@ export function promoteStructuredTypesFromStem(rows) {
         option3: needDefaults ? DEFAULT_AR_OPTIONS[2] : row.option3,
         option4: needDefaults ? DEFAULT_AR_OPTIONS[3] : row.option4,
         sharedMatterId: 'AR1',
-        sharedMatterText: looksLikeArDirections(row.sharedMatterText)
-          ? row.sharedMatterText
-          : DEFAULT_AR_DIRECTIONS,
+        sharedMatterText: cleanArDirectionsText(row.sharedMatterText),
         sharedMatterKind: 'assertion_reason',
         passageText: '',
         passageId: '',
@@ -697,13 +692,29 @@ function stripLeadingCaseFromArStem(stem) {
   return s;
 }
 
-/** True when shared matter already looks like standard A/R directions (not a case passage). */
+/** True when shared matter is ONLY the short A/R directions (not a page dump). */
 function looksLikeArDirections(text) {
-  const t = String(text || '');
+  const t = String(text || '').trim();
+  if (!t) return false;
+  // Reject PDF dumps that happen to include the a/b/c/d lines somewhere inside
+  if (t.length > 550) return false;
+  if (/\bCODE\s*:/i.test(t)) return false;
+  if (/www\.asliprep\.com/i.test(t)) return false;
+  if (/--\s*\d+\s*of\s*\d+\s*--/i.test(t)) return false;
+  if (/Case\s*[-–]?\s*Based/i.test(t)) return false;
+  if (/Integer\s+Type|Single\s+Correct|Match\s+the\s+Following/i.test(t)) return false;
+  // More than one real question stem → not directions
+  const qStems = t.match(/(?:^|\n)\s*\d{1,3}\.\s+\S/g);
+  if (qStems && qStems.length >= 2) return false;
   return (
     /correct explanation of A/i.test(t) ||
     (/Both A and R are true/i.test(t) && /A is false,\s*but R is true/i.test(t))
   );
+}
+
+/** Always return a clean short directions block for AR questions. */
+function cleanArDirectionsText(text) {
+  return looksLikeArDirections(text) ? String(text).trim() : DEFAULT_AR_DIRECTIONS;
 }
 
 /**
@@ -723,7 +734,7 @@ export function ensureAssertionReasonDirections(rows) {
     const cleanedStem = stripLeadingCaseFromArStem(stem);
     const parsed = parseAssertionReasonFromStem(cleanedStem);
     const matter = String(row.sharedMatterText || '').trim();
-    const nextMatter = looksLikeArDirections(matter) ? matter : DEFAULT_AR_DIRECTIONS;
+    const nextMatter = cleanArDirectionsText(matter);
     const opts = [row.option1, row.option2, row.option3, row.option4].map((o) =>
       String(o || '').trim(),
     );
