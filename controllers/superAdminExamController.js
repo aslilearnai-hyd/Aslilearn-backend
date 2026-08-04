@@ -1396,21 +1396,21 @@ Important rules:
 
     refined = dedupePdfQuestionRows(refined);
 
-    // Gap-fill: skip in fast mode unless coverage is poor (<85%).
+    // Gap-fill: in fast mode still fill gaps when coverage is incomplete.
     let missing = missingQuestionNumbers(refined);
     const coverage =
       expectedNumbers.length > 0 ? refined.length / Math.max(expectedNumbers.length, 1) : 1;
     const doGapFill =
       missing.length > 0 &&
       !callBudgetExhausted() &&
-      (!fastMode || coverage < 0.85);
+      (!fastMode || coverage < 0.95);
     let gapPass = 0;
-    const maxGapPasses = fastMode ? 1 : 2;
+    const maxGapPasses = fastMode ? 2 : 2;
     while (doGapFill && missing.length > 0 && gapPass < maxGapPasses && !callBudgetExhausted()) {
       gapPass += 1;
-      const batchSize = fastMode ? 10 : gapPass === 1 ? 6 : 1;
-      // Fast: at most 2 gap batches (covers ≤20 missing).
-      const batches = chunkMissingIds(missing, batchSize).slice(0, fastMode ? 2 : 8);
+      const batchSize = fastMode ? 12 : gapPass === 1 ? 6 : 1;
+      // Fast: up to 4 gap batches (covers ≤48 missing).
+      const batches = chunkMissingIds(missing, batchSize).slice(0, fastMode ? 4 : 8);
       console.log('[PDF_EXAM_EXTRACT] gap-fill missing numbers', {
         model,
         pass: gapPass,
