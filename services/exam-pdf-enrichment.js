@@ -377,9 +377,53 @@ function stemAlreadyHasPassageContext(stem, passage) {
   if (!s) return false;
   if (/^(case\s*(i{1,3}|iv|\d+|study)|paragraph\s*:|directions\s*:)/i.test(s)) return true;
   if (p.length > 40 && s.toLowerCase().includes(p.slice(0, 48).toLowerCase())) return true;
-  // Long stem from Gemini that already inlined case facts â€” do not double-prepend
+  // Long stem from Gemini that already inlined case facts — do not double-prepend
   if (s.length >= 140 && /case\s*(i{1,3}|iv|\d+|study)|paragraph\s*:/i.test(s)) return true;
   return false;
+}
+
+/**
+ * Remove case/passage text from the stem when it is already shown in sharedMatter.
+ * Prevents "Case I: …" appearing twice (yellow card + question body).
+ */
+export function stripDuplicateSharedMatterFromStem(stem, matter) {
+  let s = String(stem || '').trim();
+  const m = String(matter || '').trim();
+  if (!s || !m || m.length < 20) return s;
+
+  const sLower = s.toLowerCase();
+  const mLower = m.toLowerCase();
+
+  if (sLower.startsWith(mLower)) {
+    const rest = s.slice(m.length).replace(/^[\s\n:;.\-–—]+/, '').trim();
+    return rest || s;
+  }
+
+  const head = mLower.slice(0, Math.min(56, mLower.length));
+  const at = sLower.indexOf(head);
+  if (at >= 0 && at <= 20) {
+    // Matter in Gemini stem may differ slightly in length — cut at a question cue
+    const afterMatter = s.slice(at + head.length);
+    const cue = afterMatter.search(
+      /\b(?:Using|According|For|Which|What|Calculate|Find|The magnitude|In the|Based on|From the)\b/i,
+    );
+    if (cue >= 0) {
+      const rest = afterMatter.slice(cue).trim();
+      if (rest.length >= 12) return rest;
+    }
+    const approxEnd = Math.min(s.length, at + m.length);
+    const rest = s.slice(approxEnd).replace(/^[\s\n:;.\-–—]+/, '').trim();
+    if (rest.length >= 12) return rest;
+  }
+
+  if (/^Case\s*(?:I{1,3}|IV|\d+)/i.test(m) && /^Case\s*(?:I{1,3}|IV|\d+)/i.test(s)) {
+    const qStart = s.search(
+      /\b(?:Using|According|For|Which|What|Calculate|Find|The magnitude|In the|Based on|From the)\b/i,
+    );
+    if (qStart > 40) return s.slice(qStart).trim();
+  }
+
+  return s;
 }
 
 export function attachPassagesToRows(rows, passages) {
@@ -401,19 +445,23 @@ export function attachPassagesToRows(rows, passages) {
       sharedMatterKind: 'case',
     };
 
-    // Always store metadata; only prepend when the stem is a short orphan
+    // Stem already has the case — keep matter card, strip duplicate from body
     if (stemAlreadyHasPassageContext(stem, passage)) {
-      return { ...withMatter, questionText: stem };
-    }
-
-    if (stem.length < 120) {
       return {
         ...withMatter,
-        questionText: `${passage}\n\n${stem}`.trim(),
+        questionText: stripDuplicateSharedMatterFromStem(stem, passage),
       };
     }
 
-    // Long unrelated stem that wrongly matched a wide range â€” keep stem, skip passage
+    if (stem.length < 120) {
+      // Short orphan stem: show case in matter card only (do NOT also prepend into body)
+      return {
+        ...withMatter,
+        questionText: stem,
+      };
+    }
+
+    // Long unrelated stem that wrongly matched a wide range — keep stem, skip passage
     return row;
   });
 }
@@ -887,6 +935,18 @@ export function applyExtractionValidation(rows) {
       };
     }
 
+    // Case/passage already in yellow card — do not repeat it in the stem
+    const matter = String(next.sharedMatterText || next.passageText || '').trim();
+    if (
+      matter &&
+      (next.sharedMatterKind === 'case' || next.passageId || /^Case\s*(?:I{1,3}|IV|\d+)/i.test(matter))
+    ) {
+      next = {
+        ...next,
+        questionText: stripDuplicateSharedMatterFromStem(next.questionText, matter),
+      };
+    }
+
     if (rowIsAssertionReason(next)) {
       next.questionImage = '';
       next.hasFigure = false;
@@ -1033,8 +1093,8 @@ async function cropTightDiagramRegion(fullBuf, canvasApi) {
   };
 
   // Drop header / footer chrome
-  const yTop = Math.floor(h * 0.07);
-  const yBot = Math.floor(h * 0.93);
+  const yTop = Math.floor(h * 0.06);
+  const yBot = Math.floor(h * 0.94);
   const midX = Math.floor(w * 0.5);
   const step = Math.max(2, Math.floor(Math.min(w, h) / 400));
 
@@ -1054,71 +1114,109 @@ async function cropTightDiagramRegion(fullBuf, canvasApi) {
       const samples = Math.max(1, Math.ceil(colW / step));
       const frac = ink / samples;
       const span = maxX >= 0 ? (maxX - minX) / colW : 0;
-      // Figures: wider ink span than a text line, not a solid black bar
-      const figureLike = frac >= 0.06 && frac <= 0.72 && span >= 0.28;
-      rows.push({ y, frac, span, figureLike });
+      // Softer than before so label rows above/below vectors still count
+      const figureLike = frac >= 0.035 && frac <= 0.8 && span >= 0.18;
+      const weakInk = frac >= 0.02 && span >= 0.12;
+      rows.push({ y, frac, span, figureLike, weakInk });
     }
-    // Find longest contiguous figure-like run
+
+    // Bridge small gaps (white space inside a diagram) so we don't keep a thin mid-slice
+    const maxGap = 5;
     let best = null;
-    let runStart = -1;
-    let runScore = 0;
-    let runLen = 0;
-    const flush = (endIdx) => {
-      if (runStart < 0 || runLen < 4) return;
-      const y0 = rows[runStart].y;
-      const y1 = rows[Math.min(endIdx, rows.length - 1)].y + step;
-      const heightFrac = (y1 - y0) / h;
-      // Reject huge bands that are basically "half the page of questions"
-      if (heightFrac > 0.42 || heightFrac < 0.04) return;
-      const score = runScore / runLen + heightFrac * 0.15;
-      if (!best || score > best.score) {
-        best = { y0, y1, score, heightFrac, x0, x1 };
+    let i = 0;
+    while (i < rows.length) {
+      if (!rows[i].figureLike && !rows[i].weakInk) {
+        i += 1;
+        continue;
       }
-    };
-    for (let i = 0; i < rows.length; i += 1) {
-      if (rows[i].figureLike) {
-        if (runStart < 0) {
-          runStart = i;
-          runScore = 0;
-          runLen = 0;
+      let j = i;
+      let gaps = 0;
+      let scoreSum = 0;
+      let strong = 0;
+      while (j < rows.length) {
+        if (rows[j].figureLike || rows[j].weakInk) {
+          gaps = 0;
+          scoreSum += rows[j].span + rows[j].frac;
+          if (rows[j].figureLike) strong += 1;
+          j += 1;
+        } else if (gaps < maxGap) {
+          gaps += 1;
+          j += 1;
+        } else {
+          break;
         }
-        runScore += rows[i].span + rows[i].frac;
-        runLen += 1;
-      } else {
-        flush(i - 1);
-        runStart = -1;
       }
+      const runLen = j - i;
+      if (strong >= 5 && runLen >= 6) {
+        const y0 = rows[i].y;
+        const y1 = rows[Math.min(j - 1, rows.length - 1)].y + step;
+        const heightFrac = (y1 - y0) / h;
+        if (heightFrac >= 0.07 && heightFrac <= 0.42) {
+          // Prefer taller complete diagrams over thin dense slices
+          const score = scoreSum / runLen + heightFrac * 1.8 + strong * 0.02;
+          if (!best || score > best.score) {
+            best = { y0, y1, score, heightFrac, x0, x1 };
+          }
+        }
+      }
+      i = Math.max(i + 1, j);
     }
-    flush(rows.length - 1);
     return best;
   };
 
   // Prefer left column (case diagrams), then right, then full width
   const candidates = [
-    analyzeBand(Math.floor(w * 0.02), midX - 4),
-    analyzeBand(midX + 4, Math.floor(w * 0.98)),
-    analyzeBand(Math.floor(w * 0.04), Math.floor(w * 0.96)),
+    analyzeBand(Math.floor(w * 0.015), midX - 2),
+    analyzeBand(midX + 2, Math.floor(w * 0.985)),
+    analyzeBand(Math.floor(w * 0.03), Math.floor(w * 0.97)),
   ].filter(Boolean);
 
   if (!candidates.length) return null;
   candidates.sort((a, b) => b.score - a.score);
   const pick = candidates[0];
 
-  const padX = Math.floor(w * 0.012);
-  const padY = Math.floor(h * 0.012);
-  const sx = Math.max(0, pick.x0 - padX);
-  const sy = Math.max(0, pick.y0 - padY);
-  const ex = Math.min(w, pick.x1 + padX);
-  const ey = Math.min(h, pick.y1 + padY);
+  // Generous padding so labels (Resultant R, 8 m north, 10 N) are not clipped
+  const padX = Math.floor(w * 0.02);
+  const padY = Math.floor(h * 0.055);
+  let sx = Math.max(0, pick.x0 - padX);
+  let sy = Math.max(0, pick.y0 - padY);
+  let ex = Math.min(w, pick.x1 + padX);
+  let ey = Math.min(h, pick.y1 + padY);
+
+  // Grow vertically a bit more while nearby rows still have ink (captions)
+  const growStep = step * 2;
+  for (let guard = 0; guard < 12; guard += 1) {
+    let above = 0;
+    let below = 0;
+    const yA = Math.max(yTop, sy - growStep);
+    const yB = Math.min(yBot, ey + growStep);
+    for (let x = sx; x < ex; x += step) {
+      if (sy > yTop && isInk(x, yA)) above += 1;
+      if (ey < yBot && isInk(x, yB)) below += 1;
+    }
+    const need = Math.ceil((ex - sx) / step) * 0.03;
+    let grew = false;
+    if (above >= need && sy > yTop) {
+      sy = Math.max(0, sy - growStep);
+      grew = true;
+    }
+    if (below >= need && ey < h) {
+      ey = Math.min(h, ey + growStep);
+      grew = true;
+    }
+    if (!grew) break;
+  }
+
   const cw = ex - sx;
   const ch = ey - sy;
   const areaFrac = (cw * ch) / (w * h);
 
   // Hard guard: never attach a mega crop of the paper
-  if (areaFrac > 0.28 || ch > h * 0.45 || (cw > w * 0.72 && ch > h * 0.32)) {
+  if (areaFrac > 0.36 || ch > h * 0.48 || (cw > w * 0.78 && ch > h * 0.36)) {
     return null;
   }
-  if (cw < 60 || ch < 50) return null;
+  // Reject ultra-thin slices (the cut-off look)
+  if (cw < 80 || ch < Math.floor(h * 0.08)) return null;
 
   const out = canvasApi.createCanvas(cw, ch);
   const octx = out.getContext('2d');
