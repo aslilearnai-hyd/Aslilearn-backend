@@ -816,25 +816,24 @@ function rowWantsFigure(row) {
   if (String(row?.questionImage || '').trim()) return false;
   // Assertion–Reason: text options only — never auto photos
   if (rowIsAssertionReason(row)) return false;
-  // Match-the-Following: always capture the Column I/II table as a tight photo
+  // Case/passage: NEVER auto-screenshot. "first diagram" in the case text was
+  // capturing Directions/Case paragraphs as fake figures (duplicate of yellow card).
+  if (row?.sharedMatterKind === 'case' || row?.passageId) return false;
+
+  // Match-the-Following: capture Column I/II table photo
   if (rowLooksLikeMatchTable(row) || row?.questionType === 'match_following') return true;
 
-  // Do NOT trust bare hasFigure from Gemini — it marks many text MCQs and causes
-  // page-slice dumps (options + Integer Type headers) on unrelated questions.
-  const matter = String(row?.sharedMatterText || '');
-  const matterForHint = looksLikeArDirections(matter) ? '' : matter;
-  const text = `${String(row?.passageText || '')}\n${matterForHint}\n${String(row?.questionText || '')}`;
-  if (FIGURE_HINT_RE.test(text)) return true;
-  if (MATCH_TABLE_HINT_RE.test(text)) return true;
-  // Case questions: only when the stem clearly refers to a printed diagram/graph
+  // Do NOT trust bare hasFigure from Gemini
+  const text = String(row?.questionText || '');
+  // Strong stem cues only — avoid weak lone word "diagram" inside unrelated prose
   if (
-    (row?.sharedMatterKind === 'case' || row?.passageId) &&
-    /\b(diagram|figure|graph|shown\s+below|as\s+shown|vernier|calliper|caliper|screw\s*gauge)\b/i.test(
+    /\b(shown\s+below|shown\s+in\s+the\s+(?:figure|diagram|graph)|velocity[- ]time\s+graph|distance[- ]time\s+graph|vernier|calliper|caliper|screw\s*gauge|refer\s+to\s+(?:the\s+)?(?:figure|diagram)|given\s+figure)\b/i.test(
       text,
     )
   ) {
     return true;
   }
+  if (MATCH_TABLE_HINT_RE.test(text)) return true;
   return false;
 }
 
@@ -951,12 +950,23 @@ export function applyExtractionValidation(rows) {
         questionText: stripDuplicateSharedMatterFromStem(next.questionText, matter),
       };
     }
+    // Match directions already in yellow card — strip from stem too
+    if (matter && next.sharedMatterKind === 'match_following') {
+      next = {
+        ...next,
+        questionText: stripDuplicateSharedMatterFromStem(next.questionText, matter),
+      };
+    }
 
     if (rowIsAssertionReason(next)) {
       next.questionImage = '';
       next.hasFigure = false;
     }
-    // Drop false Gemini hasFigure photos on text-only questions (no diagram wording)
+    // Case questions: drop auto screenshots (they were text dumps of the passage)
+    if (next.sharedMatterKind === 'case' || next.passageId) {
+      next = { ...next, questionImage: '', hasFigure: false };
+    }
+    // Drop false Gemini hasFigure photos on text-only questions
     if (String(next.questionImage || '').trim() && !rowWantsFigure({ ...next, questionImage: '' })) {
       next = { ...next, questionImage: '', hasFigure: false };
     }
@@ -1077,113 +1087,179 @@ async function saveQuestionImageBuffer(buf, examId, savedUrlByImageKey, key) {
 }
 
 /**
- * Estimate vertical fraction [y0,y1] of a question on a page from plain text order.
- * Stops before the next question or a section header (Integer Type / Assertion / …).
+ * True when a crop is mostly printed text lines (Directions / Case / options),
+ * not a diagram or match table. Those text dumps made the editor look "messy".
  */
-function estimateQuestionBandOnPage(pageText, qn) {
-  const t = String(pageText || '');
-  if (!t || !Number.isFinite(qn)) return null;
-  const re = new RegExp(`(?:^|\\n)\\s*${qn}\\.\\s+\\S`, 'i');
-  const m = re.exec(t);
-  if (!m) return null;
-  const start = m.index;
-
-  let end = t.length;
-  const nextRe = /(?:^|\n)\s*(\d{1,3})\.\s+\S/g;
-  nextRe.lastIndex = start + String(qn).length + 2;
-  let nm;
-  while ((nm = nextRe.exec(t))) {
-    const n = parseInt(nm[1], 10);
-    if (Number.isFinite(n) && n !== qn && n >= 1 && n <= 200) {
-      end = nm.index;
-      break;
+async function cropLooksLikePrintedText(buf, canvasApi) {
+  try {
+    const img = await canvasApi.loadImage(buf);
+    const w = img.width;
+    const h = img.height;
+    if (w < 40 || h < 40) return true;
+    const canvas = canvasApi.createCanvas(w, h);
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0);
+    const { data } = ctx.getImageData(0, 0, w, h);
+    const step = Math.max(2, Math.floor(Math.min(w, h) / 280));
+    let inkRows = 0;
+    let textLikeRows = 0;
+    for (let y = 0; y < h; y += step) {
+      let runs = 0;
+      let inRun = false;
+      let ink = 0;
+      for (let x = 0; x < w; x += step) {
+        const i = (y * w + x) * 4;
+        const is = data[i] < 240 || data[i + 1] < 240 || data[i + 2] < 240;
+        if (is) {
+          ink += 1;
+          if (!inRun) {
+            runs += 1;
+            inRun = true;
+          }
+        } else {
+          inRun = false;
+        }
+      }
+      if (ink < 3) continue;
+      inkRows += 1;
+      const frac = ink / Math.max(1, Math.ceil(w / step));
+      // Body text: many short ink runs across the row
+      if ((runs >= 5 && frac < 0.5) || runs >= 8) textLikeRows += 1;
     }
+    if (inkRows < 6) return false;
+    return textLikeRows / inkRows >= 0.52;
+  } catch {
+    return false;
   }
-
-  const sectionRe =
-    /(?:^|\n)\s*(?:Integer\s+Type|Assertion\s*[-–]?\s*Reason|Match\s+the\s+Following|Case\s*[-–]?\s*Based|Single\s+Correct|Multi\s+Correct|SECTION\s*[A-D])\b/i;
-  sectionRe.lastIndex = 0;
-  const head = t.slice(0, start + 8);
-  // Search section headers only AFTER this question's opening line
-  const after = t.slice(start + 8, end);
-  const sm = after.match(sectionRe);
-  if (sm && sm.index != null) {
-    end = Math.min(end, start + 8 + sm.index);
-  }
-
-  const len = Math.max(t.length, 1);
-  let y0 = start / len;
-  let y1 = end / len;
-  // Small pad; keep band compact so we don't swallow the next block
-  y0 = Math.max(0.04, y0 - 0.01);
-  y1 = Math.min(0.96, y1 + 0.005);
-  if (y1 - y0 < 0.04) y1 = Math.min(0.96, y0 + 0.12);
-  if (y1 - y0 > 0.36) y1 = y0 + 0.36;
-
-  // Reject bands that are mostly a section header (bad attach target)
-  const slice = t.slice(start, end);
-  if (/Integer\s+Type\s+Questions/i.test(slice) && !/Column\s*I|diagram|figure|graph/i.test(slice)) {
-    return null;
-  }
-  return { y0, y1 };
 }
 
 /**
- * Crop a page screenshot to one question's vertical band (text-guided),
- * optionally refining with ink inside that band.
+ * Ink-based figure/table crop from a page screenshot.
+ * Rejects oversized / text-like regions.
  */
-async function cropQuestionBandFromScreenshot(fullBuf, canvasApi, band, opts = {}) {
+async function cropInkFigureRegion(fullBuf, canvasApi, opts = {}) {
   const tableMode = opts.tableMode === true;
   const img = await canvasApi.loadImage(fullBuf);
   const w = img.width;
   const h = img.height;
-  if (!band || w < 80 || h < 80) return null;
+  if (w < 80 || h < 80) return null;
 
+  const scan = canvasApi.createCanvas(w, h);
+  const sctx = scan.getContext('2d');
+  sctx.drawImage(img, 0, 0);
+  const { data } = sctx.getImageData(0, 0, w, h);
+  const isInk = (x, y) => {
+    const i = (y * w + x) * 4;
+    return data[i] < 242 || data[i + 1] < 242 || data[i + 2] < 242;
+  };
+
+  const yTop = Math.floor(h * 0.06);
+  const yBot = Math.floor(h * 0.94);
   const midX = Math.floor(w * 0.5);
-  const x0 = tableMode ? Math.floor(w * 0.03) : Math.floor(w * 0.015);
-  const x1 = tableMode ? Math.floor(w * 0.97) : midX - 2;
+  const step = Math.max(2, Math.floor(Math.min(w, h) / 400));
 
-  let sy = Math.floor(h * band.y0);
-  let ey = Math.floor(h * band.y1);
-  const padY = Math.floor(h * 0.012);
-  sy = Math.max(0, sy - padY);
-  ey = Math.min(h, ey + padY);
-
-  try {
-    const scan = canvasApi.createCanvas(w, h);
-    const sctx = scan.getContext('2d');
-    sctx.drawImage(img, 0, 0);
-    const { data } = sctx.getImageData(0, 0, w, h);
-    const step = Math.max(2, Math.floor(Math.min(w, h) / 400));
-    let minY = ey;
-    let maxY = sy;
-    let ink = 0;
-    for (let y = sy; y < ey; y += step) {
+  const analyzeBand = (x0, x1) => {
+    const colW = x1 - x0;
+    const rows = [];
+    for (let y = yTop; y < yBot; y += step) {
+      let ink = 0;
+      let minX = Infinity;
+      let maxX = -1;
+      let runs = 0;
+      let inRun = false;
       for (let x = x0; x < x1; x += step) {
-        const i = (y * w + x) * 4;
-        if (data[i] < 242 || data[i + 1] < 242 || data[i + 2] < 242) {
-          ink += 1;
-          if (y < minY) minY = y;
-          if (y > maxY) maxY = y;
+        if (!isInk(x, y)) {
+          inRun = false;
+          continue;
+        }
+        ink += 1;
+        if (x < minX) minX = x;
+        if (x > maxX) maxX = x;
+        if (!inRun) {
+          runs += 1;
+          inRun = true;
         }
       }
+      const samples = Math.max(1, Math.ceil(colW / step));
+      const frac = ink / samples;
+      const span = maxX >= 0 ? (maxX - minX) / colW : 0;
+      // Prefer figure/table geometry; de-prioritize dense text rows (many runs)
+      const figureLike = tableMode
+        ? frac >= 0.025 && frac <= 0.85 && span >= 0.22 && runs <= 14
+        : frac >= 0.04 && frac <= 0.75 && span >= 0.2 && runs <= 10;
+      const weakInk = tableMode
+        ? frac >= 0.015 && span >= 0.12 && runs <= 16
+        : frac >= 0.02 && span >= 0.14 && runs <= 12;
+      rows.push({ y, frac, span, figureLike, weakInk, runs });
     }
-    if (ink > 30 && maxY > minY) {
-      const ipad = Math.floor(h * 0.015);
-      sy = Math.max(sy, minY - ipad);
-      ey = Math.min(ey, maxY + ipad);
-    }
-  } catch {
-    // keep text band
-  }
 
-  const sx = Math.max(0, x0 - Math.floor(w * 0.01));
-  const ex = Math.min(w, (tableMode ? Math.floor(w * 0.97) : midX) + Math.floor(w * 0.01));
+    const maxGap = tableMode ? 8 : 5;
+    let best = null;
+    let i = 0;
+    while (i < rows.length) {
+      if (!rows[i].figureLike && !rows[i].weakInk) {
+        i += 1;
+        continue;
+      }
+      let j = i;
+      let gaps = 0;
+      let scoreSum = 0;
+      let strong = 0;
+      while (j < rows.length) {
+        if (rows[j].figureLike || rows[j].weakInk) {
+          gaps = 0;
+          scoreSum += rows[j].span + rows[j].frac - Math.min(0.3, rows[j].runs * 0.02);
+          if (rows[j].figureLike) strong += 1;
+          j += 1;
+        } else if (gaps < maxGap) {
+          gaps += 1;
+          j += 1;
+        } else break;
+      }
+      const runLen = j - i;
+      const minStrong = tableMode ? 5 : 6;
+      if (strong >= minStrong && runLen >= minStrong + 1) {
+        const y0 = rows[i].y;
+        const y1 = rows[Math.min(j - 1, rows.length - 1)].y + step;
+        const heightFrac = (y1 - y0) / h;
+        const maxH = tableMode ? 0.48 : 0.34;
+        const minH = tableMode ? 0.1 : 0.08;
+        if (heightFrac >= minH && heightFrac <= maxH) {
+          const score = scoreSum / runLen + heightFrac * 1.2 + strong * 0.02;
+          if (!best || score > best.score) best = { y0, y1, score, heightFrac, x0, x1 };
+        }
+      }
+      i = Math.max(i + 1, j);
+    }
+    return best;
+  };
+
+  const candidates = tableMode
+    ? [
+        analyzeBand(Math.floor(w * 0.02), Math.floor(w * 0.98)),
+        analyzeBand(Math.floor(w * 0.015), midX - 2),
+      ].filter(Boolean)
+    : [
+        analyzeBand(Math.floor(w * 0.015), midX - 2),
+        analyzeBand(midX + 2, Math.floor(w * 0.985)),
+      ].filter(Boolean);
+
+  if (!candidates.length) return null;
+  candidates.sort((a, b) => b.score - a.score);
+  const pick = candidates[0];
+
+  const padX = Math.floor(w * (tableMode ? 0.02 : 0.015));
+  const padY = Math.floor(h * (tableMode ? 0.035 : 0.04));
+  const sx = Math.max(0, pick.x0 - padX);
+  const sy = Math.max(0, pick.y0 - padY);
+  const ex = Math.min(w, pick.x1 + padX);
+  const ey = Math.min(h, pick.y1 + padY);
   const cw = ex - sx;
   const ch = ey - sy;
-  if (cw < 60 || ch < Math.floor(h * 0.05)) return null;
-  if (ch > h * 0.42 && !tableMode) return null;
-  if ((cw * ch) / (w * h) > (tableMode ? 0.4 : 0.28)) return null;
+  const areaFrac = (cw * ch) / (w * h);
+  if (areaFrac > (tableMode ? 0.4 : 0.26)) return null;
+  if (ch > h * (tableMode ? 0.52 : 0.38)) return null;
+  if (cw < 70 || ch < Math.floor(h * 0.07)) return null;
 
   const out = canvasApi.createCanvas(cw, ch);
   const octx = out.getContext('2d');
@@ -1191,20 +1267,26 @@ async function cropQuestionBandFromScreenshot(fullBuf, canvasApi, band, opts = {
   octx.fillRect(0, 0, cw, ch);
   octx.drawImage(img, sx, sy, cw, ch, 0, 0, cw, ch);
   const buf = out.toBuffer('image/png');
+
+  if (await cropLooksLikePrintedText(buf, canvasApi)) {
+    return null;
+  }
+
   return {
     buf,
-    key: `qband:${sx},${sy},${cw}x${ch}:${buf.length}`,
-    kind: tableMode ? 'match_table' : 'qband',
-    meta: { sx, sy, cw, ch, y0: band.y0, y1: band.y1 },
+    key: `ink:${tableMode ? 'tbl:' : ''}${sx},${sy},${cw}x${ch}:${buf.length}`,
+    kind: tableMode ? 'match_table' : 'ink',
+    meta: { sx, sy, cw, ch, areaFrac: Number(areaFrac.toFixed(3)) },
   };
 }
 
 /**
  * Attach PDF figures to questions.
  *
- * fast=true: skip getImage(); screenshot + per-question text-guided crop.
- * Match gets table-mode crop. Assertion–Reason: no auto photo.
- * Bare Gemini hasFigure is ignored — only strong diagram/match wording.
+ * - Case/passage: no auto photos (avoids Directions text dumps)
+ * - Match: full-width ink table crop; reject text-like slices
+ * - Diagram MCQs: left/right column ink crop; reject text-like slices
+ * - Never use PDF-text Y fractions (2-column papers map wrong questions)
  */
 export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = true } = {}) {
   if (!Array.isArray(rows) || rows.length === 0 || !pdfBuffer) return rows;
@@ -1213,9 +1295,6 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
   try {
     parser = new PDFParse({ data: pdfBuffer });
     const { map: qToPage, pageTexts } = await mapQuestionNumbersToPages(parser);
-    const pageTextByNum = new Map(
-      (pageTexts || []).map((p) => [Number(p.pageNumber) || 0, String(p.text || '')]),
-    );
 
     const rowsByPage = new Map();
     let unmappedWanting = 0;
@@ -1237,7 +1316,6 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
     };
 
     const diagramPages = new Set(rowsByPage.keys());
-
     console.log('[PDF_ENRICH] figure pages', {
       count: diagramPages.size,
       pages: [...diagramPages].sort((a, b) => a - b),
@@ -1250,10 +1328,6 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
     const pagesForImages = [...diagramPages].sort((a, b) => a - b).slice(0, fast ? 12 : 24);
 
     if (!fast && pagesForImages.length > 0) {
-      console.log('[PDF_ENRICH] getImage start', {
-        pages: pagesForImages,
-        elapsedMs: Date.now() - startedAt,
-      });
       try {
         const imageResult = await parser.getImage({
           partial: pagesForImages,
@@ -1296,19 +1370,14 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
       } catch (imgErr) {
         console.warn('[PDF_ENRICH] getImage failed:', imgErr?.message || imgErr);
       }
-      console.log('[PDF_ENRICH] getImage done', {
-        pagesWithEmbeds: candidatesByPage.size,
-        elapsedMs: Date.now() - startedAt,
-      });
     }
 
-    // Screenshot pages that need crops (no embeds)
-    const shotByPage = new Map();
+    const cropByPage = new Map();
     const needCropPages = pagesForImages.filter((p) => !(candidatesByPage.get(p) || []).length);
     if (needCropPages.length > 0) {
       try {
         const cropLimit = fast ? 10 : 14;
-        console.log('[PDF_ENRICH] per-question crop screenshot start', {
+        console.log('[PDF_ENRICH] ink-crop screenshot start', {
           pages: needCropPages.slice(0, cropLimit),
           elapsedMs: Date.now() - startedAt,
         });
@@ -1318,25 +1387,43 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
           imageBuffer: true,
           imageDataUrl: false,
         });
+        let canvasApi = null;
+        try {
+          canvasApi = await import('@napi-rs/canvas');
+        } catch (canvasErr) {
+          console.warn('[PDF_ENRICH] canvas unavailable:', canvasErr?.message || canvasErr);
+        }
+        let ok = 0;
+        let skip = 0;
         for (const page of Array.isArray(shotResult?.pages) ? shotResult.pages : []) {
           const pageNumber = Number(page?.pageNumber) || 0;
           const full = bufferFromImageData(page?.data);
-          if (full && pageNumber) shotByPage.set(pageNumber, full);
+          if (!full || !pageNumber || !canvasApi) {
+            skip += 1;
+            continue;
+          }
+          const pageRows = rowsByPage.get(pageNumber) || [];
+          const tableMode = pageRows.some(
+            ({ row }) =>
+              rowLooksLikeMatchTable(row) || row?.questionType === 'match_following',
+          );
+          try {
+            const tight = await cropInkFigureRegion(full, canvasApi, { tableMode });
+            if (tight) {
+              cropByPage.set(pageNumber, tight);
+              ok += 1;
+            } else {
+              skip += 1;
+              console.warn('[PDF_ENRICH] no usable ink crop', { pageNumber, tableMode });
+            }
+          } catch (e) {
+            skip += 1;
+            console.warn('[PDF_ENRICH] ink crop failed', pageNumber, e?.message || e);
+          }
         }
+        console.log('[PDF_ENRICH] ink-crop done', { ok, skip, elapsedMs: Date.now() - startedAt });
       } catch (shotErr) {
-        console.warn('[PDF_ENRICH] diagram screenshot failed:', shotErr?.message || shotErr);
-      }
-    }
-
-    let canvasApi = null;
-    if (shotByPage.size > 0) {
-      try {
-        canvasApi = await import('@napi-rs/canvas');
-      } catch (canvasErr) {
-        console.warn(
-          '[PDF_ENRICH] @napi-rs/canvas unavailable — skipping crops:',
-          canvasErr?.message || canvasErr,
-        );
+        console.warn('[PDF_ENRICH] screenshot failed:', shotErr?.message || shotErr);
       }
     }
 
@@ -1346,9 +1433,7 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
       try {
         const { createCanvas, loadImage } = await import('@napi-rs/canvas');
         const images = [];
-        for (const e of embeds.slice(0, 4)) {
-          images.push(await loadImage(e.buf));
-        }
+        for (const e of embeds.slice(0, 4)) images.push(await loadImage(e.buf));
         const gap = 10;
         const width = Math.max(...images.map((i) => i.width));
         const height = images.reduce((s, i) => s + i.height, 0) + gap * (images.length - 1);
@@ -1357,27 +1442,24 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
         ctx.fillStyle = '#ffffff';
         ctx.fillRect(0, 0, width, height);
         let y = 0;
-        for (const img of images) {
-          ctx.drawImage(img, 0, y);
-          y += img.height + gap;
+        for (const im of images) {
+          ctx.drawImage(im, 0, y);
+          y += im.height + gap;
         }
         const buf = canvas.toBuffer('image/png');
-        const key = `stitch:${embeds.map((e) => e.key).join('+')}`;
-        return { buf, key, kind: 'stitch' };
-      } catch (stitchErr) {
-        console.warn('[PDF_ENRICH] stitch failed, using largest embed:', stitchErr?.message || stitchErr);
+        return { buf, key: `stitch:${embeds.map((e) => e.key).join('+')}`, kind: 'stitch' };
+      } catch {
         return embeds[0];
       }
     };
 
     const savedUrlByImageKey = new Map();
     const urlByRowIdx = new Map();
-    let qbandOk = 0;
-    let qbandSkip = 0;
 
     for (const [pageNumber, pageRowsRaw] of rowsByPage) {
       const pageRows = [...pageRowsRaw].sort((a, b) => a.qn - b.qn);
       const embeds = candidatesByPage.get(pageNumber) || [];
+      const crop = cropByPage.get(pageNumber);
       const diagramWanting = pageRows.filter(({ row }) => rowWantsFigure(row));
       if (!diagramWanting.length) continue;
 
@@ -1385,64 +1467,19 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
       if (embeds.length) {
         if (groups.length === 1) {
           const combined = await stitchEmbeds(embeds);
-          if (combined) {
-            for (const entry of groups[0]) urlByRowIdx.set(entry.idx, combined);
-          }
+          if (combined) for (const entry of groups[0]) urlByRowIdx.set(entry.idx, combined);
         } else {
           const n = Math.min(groups.length, embeds.length);
           for (let i = 0; i < n; i += 1) {
             for (const entry of groups[i]) urlByRowIdx.set(entry.idx, embeds[i]);
           }
-          if (embeds[0]) {
-            for (let i = n; i < groups.length; i += 1) {
-              for (const entry of groups[i]) {
-                if (!urlByRowIdx.has(entry.idx)) urlByRowIdx.set(entry.idx, embeds[0]);
-              }
-            }
-          }
         }
-        continue;
-      }
-
-      // Per-question text-guided crop (avoids sharing one dirty slice across Qs)
-      const full = shotByPage.get(pageNumber);
-      if (!full || !canvasApi) {
-        qbandSkip += diagramWanting.length;
-        continue;
-      }
-      const pageText = pageTextByNum.get(pageNumber) || '';
-      for (const entry of diagramWanting) {
-        const tableMode =
-          rowLooksLikeMatchTable(entry.row) || entry.row?.questionType === 'match_following';
-        const band = estimateQuestionBandOnPage(pageText, entry.qn);
-        if (!band) {
-          qbandSkip += 1;
-          continue;
-        }
-        try {
-          const crop = await cropQuestionBandFromScreenshot(full, canvasApi, band, { tableMode });
-          if (crop) {
-            urlByRowIdx.set(entry.idx, crop);
-            qbandOk += 1;
-          } else {
-            qbandSkip += 1;
-          }
-        } catch (cropErr) {
-          qbandSkip += 1;
-          console.warn(
-            '[PDF_ENRICH] qband crop failed',
-            { page: pageNumber, qn: entry.qn },
-            cropErr?.message || cropErr,
-          );
+      } else if (crop) {
+        for (const group of groups) {
+          for (const entry of group) urlByRowIdx.set(entry.idx, crop);
         }
       }
     }
-
-    console.log('[PDF_ENRICH] per-question crops', {
-      qbandOk,
-      qbandSkip,
-      elapsedMs: Date.now() - startedAt,
-    });
 
     if (urlByRowIdx.size === 0) {
       console.log('[PDF_ENRICH] attachPdfFiguresToRows: no images attached', {
@@ -1454,11 +1491,9 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
       return rows;
     }
     await ensureQuestionsUploadDir();
-
     for (const candidate of new Set(urlByRowIdx.values())) {
       await saveQuestionImageBuffer(candidate.buf, examId, savedUrlByImageKey, candidate.key);
     }
-
     console.log('[PDF_ENRICH] attachPdfFiguresToRows done', {
       fast,
       attached: urlByRowIdx.size,
@@ -1470,11 +1505,7 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
       if (!candidate) return row;
       const url = savedUrlByImageKey.get(candidate.key);
       if (!url) return row;
-      return {
-        ...row,
-        questionImage: url,
-        hasFigure: true,
-      };
+      return { ...row, questionImage: url, hasFigure: true };
     });
   } catch (e) {
     console.warn('[PDF_ENRICH] attachPdfFiguresToRows failed:', e?.message || e);
@@ -1483,9 +1514,6 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
     if (parser) await parser.destroy().catch(() => {});
   }
 }
-/**
- * Full enrichment after Gemini extraction.
- */
 export async function enrichExtractedExamQuestions({
   pdfBuffer,
   rows,
