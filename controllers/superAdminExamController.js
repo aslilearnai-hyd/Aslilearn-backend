@@ -2514,14 +2514,22 @@ export const addQuestion = async (req, res) => {
 
     // Format correctAnswer based on question type
     let formattedCorrectAnswer = correctAnswer;
+    let explanationFinal = String(explanation || '').trim();
     
     if (normalizedType === 'integer') {
-      formattedCorrectAnswer = parseIntegerAnswer(correctAnswer);
-      if (formattedCorrectAnswer === null) {
-        return res.status(400).json({
-          success: false,
-          message: 'Invalid integer answer — expected a number (e.g. 42 or Ans: 42)',
+      const parsed = parseIntegerAnswer(correctAnswer);
+      if (parsed === null) {
+        // Do NOT reject the question — save placeholder 0 and flag for review
+        formattedCorrectAnswer = 0;
+        const raw = String(correctAnswer ?? '').trim();
+        const note = `⚠ Integer answer needs review (extracted: "${raw || 'empty'}").`;
+        explanationFinal = [explanationFinal, note].filter(Boolean).join('\n');
+        console.warn('[addQuestion] integer answer missing/invalid — saved with placeholder 0', {
+          raw,
+          examId,
         });
+      } else {
+        formattedCorrectAnswer = parsed;
       }
     } else if (normalizedType === 'multiple' && Array.isArray(correctAnswer)) {
       // For multiple choice, map the indices to option texts
@@ -2710,7 +2718,7 @@ export const addQuestion = async (req, res) => {
       correctAnswer: formattedCorrectAnswer,
       marks: marksValue,
       negativeMarks: negativeMarksValue,
-      explanation: explanation?.trim() || undefined,
+      explanation: explanationFinal || undefined,
       subject: normalizedQuestionSubject,
       displayOrder,
       sectionHeading,
@@ -3301,16 +3309,18 @@ export const bulkUploadQuestions = async (req, res) => {
         let correctAnswer;
         if (questionType === 'integer') {
           const integerAns = getRowValue('integeranswer', 'integer_answer', 'correctanswer', 'correct_answer', 'answer');
-          if (!integerAns && integerAns !== 0) {
-            errors.push(`Row ${i + 1}: integerAnswer is required for integer type questions`);
-            continue;
-          }
-          const parsedInt = parseIntegerAnswer(integerAns);
+          const parsedInt = parseIntegerAnswer(
+            integerAns === undefined || integerAns === null || integerAns === '' ? null : integerAns,
+          );
           if (parsedInt === null) {
-            errors.push(`Row ${i + 1}: Invalid integer answer`);
-            continue;
+            // Keep the row — placeholder answer; surface as a soft warning
+            correctAnswer = 0;
+            errors.push(
+              `Row ${i + 1}: Integer answer missing/invalid — saved as 0 (needs review)`,
+            );
+          } else {
+            correctAnswer = parsedInt;
           }
-          correctAnswer = parsedInt;
         } else if (questionType === 'multiple') {
           const correctAnswersStr = getRowValue(
             'correctanswers',
@@ -4214,12 +4224,20 @@ export const updateQuestion = async (req, res) => {
       }
 
       if (effectiveType === 'integer') {
-        formattedCorrectAnswer = parseIntegerAnswer(formattedCorrectAnswer);
-        if (formattedCorrectAnswer === null) {
-          return res.status(400).json({
-            success: false,
-            message: 'Invalid integer answer — expected a number (e.g. 42 or Ans: 42)',
-          });
+        const parsed = parseIntegerAnswer(formattedCorrectAnswer);
+        if (parsed === null) {
+          formattedCorrectAnswer = 0;
+          const raw = String(
+            correctAnswer !== undefined ? correctAnswer : questionToUpdate.correctAnswer ?? '',
+          ).trim();
+          const note = `⚠ Integer answer needs review (extracted: "${raw || 'empty'}").`;
+          if (explanation === undefined) {
+            questionToUpdate.explanation = [String(questionToUpdate.explanation || '').trim(), note]
+              .filter(Boolean)
+              .join('\n');
+          }
+        } else {
+          formattedCorrectAnswer = parsed;
         }
       } else if (effectiveType === 'multiple' && Array.isArray(formattedCorrectAnswer)) {
         formattedCorrectAnswer = formattedCorrectAnswer.map((idx) => {
