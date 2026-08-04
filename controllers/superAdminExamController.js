@@ -933,7 +933,9 @@ Important rules:
 - MATCH-THE-FOLLOWING: Set questionType to "match_following" AND hasFigure=true (the Column I/II table will be captured as a photo). Include a short stem in questionText; still put Column I / Column II text when readable. Put matching codes into option1–option4 (e.g. "A-2, B-4, C-1, D-3"). Questions under the same Match directions share that directions text.
 - Return only valid JSON, no markdown, no explanation.`;
 
-  const maxOut = getPdfExtractionMaxOutputTokens();
+  const maxOutRaw = getPdfExtractionMaxOutputTokens();
+  // Fast mode: smaller output budget → Gemini finishes each chunk sooner.
+  const maxOut = fastMode ? Math.min(maxOutRaw, 16384) : maxOutRaw;
   const attemptErrors = [];
   let sawQuotaError = false;
   let sawDeniedError = false;
@@ -1229,6 +1231,15 @@ Important rules:
       attemptErrors.push(`${model}: ${result.status} ${errorText}`);
     }
 
+    // Fast mode: never double-send the PDF. A second unstructured call doubles
+    // wall time (and often hits rate limits → 10–15 min jobs).
+    const shouldLooseRetry =
+      !fastMode &&
+      (result.status === 400 || /schema|mime|response|parse failed/i.test(String(result.errorText || '')));
+    if (!shouldLooseRetry) {
+      return { ok: false, parsed: null, finishReason: result.finishReason };
+    }
+
     const loose = await tryModelWithPrompt(model, promptText, false);
     if (loose.ok && loose.parsed) return loose;
     if (!loose.ok) {
@@ -1242,14 +1253,36 @@ Important rules:
     return { ok: false, parsed: null, finishReason: result.finishReason || loose.finishReason };
   };
 
+  /** Run async work with a hard concurrency cap (avoids Gemini rate-limit pileups). */
+  const mapPool = async (items, concurrency, fn) => {
+    const list = Array.isArray(items) ? items : [];
+    if (!list.length) return [];
+    const results = new Array(list.length);
+    let next = 0;
+    const workers = Array.from({ length: Math.min(Math.max(1, concurrency), list.length) }, async () => {
+      while (next < list.length) {
+        const idx = next;
+        next += 1;
+        results[idx] = await fn(list[idx], idx);
+      }
+    });
+    await Promise.all(workers);
+    return results;
+  };
+
   // Papers of unknown size fall back to these ranges when the first pass fails.
-  const FALLBACK_RANGE_CHUNKS = [
-    [1, 20],
-    [21, 40],
-    [41, 60],
-    [61, 80],
-    [81, 120],
-  ];
+  const FALLBACK_RANGE_CHUNKS = fastMode
+    ? [
+        [1, 40],
+        [41, 80],
+      ]
+    : [
+        [1, 20],
+        [21, 40],
+        [41, 60],
+        [61, 80],
+        [81, 120],
+      ];
 
   const presentQuestionNumbers = (rows) => {
     const set = new Set();
@@ -1265,7 +1298,9 @@ Important rules:
   const expectedNumbers = (() => {
     const set = new Set(prepared.printedQuestionNumbers || []);
     for (const n of answerKeyByNumber.keys()) set.add(n);
-    return [...set].sort((a, b) => a - b);
+    // Cap runaway detections (Match column "1."/"2." noise, etc.)
+    const sorted = [...set].filter((n) => n >= 1 && n <= 120).sort((a, b) => a - b);
+    return sorted;
   })();
 
   const missingQuestionNumbers = (rows) => {
@@ -1280,18 +1315,22 @@ Important rules:
     return out;
   };
 
+  const geminiConcurrency = fastMode ? 2 : 3;
+  const rangeChunkSize = fastMode ? 40 : 20;
+  const extractStartedAt = Date.now();
+
   for (const model of modelCandidates) {
     if (callBudgetExhausted()) break;
     const collected = [];
     let truncated = false;
     const maxExpected = expectedNumbers.length ? expectedNumbers[expectedNumbers.length - 1] : 0;
 
-    // Known large papers: skip the full-paper pass entirely. Flash models stop
-    // early on 80-question papers (finishReason STOP after ~10 questions), so
-    // that pass is pure wasted cost — range chunks are the reliable path.
-    const skipFullPass = maxExpected >= 30;
+    // Fast + known size ≤40: one full-paper call beats multiple overlapping PDFs.
+    // Large papers: skip full pass (Flash often stops early) and use range chunks.
+    const skipFullPass = fastMode ? maxExpected > 40 : maxExpected >= 30;
 
     if (!skipFullPass) {
+      console.log('[PDF_EXAM_EXTRACT] full-paper pass', { model, fastMode, maxExpected });
       const full = await extractOnce(
         model,
         'Scope: extract ALL questions from the question paper body (not the answer key). Include every printed question number.',
@@ -1309,40 +1348,41 @@ Important rules:
     if (shouldChunk) {
       const ranges =
         maxExpected > 0
-          ? Array.from({ length: Math.ceil(maxExpected / 20) }, (_, i) => [
-              i * 20 + 1,
-              Math.min(i * 20 + 20, maxExpected),
+          ? Array.from({ length: Math.ceil(maxExpected / rangeChunkSize) }, (_, i) => [
+              i * rangeChunkSize + 1,
+              Math.min(i * rangeChunkSize + rangeChunkSize, maxExpected),
             ])
           : FALLBACK_RANGE_CHUNKS;
       const missingBefore = new Set(missingQuestionNumbers(refined));
+      let rangesToRun = ranges.filter(([from, to]) => {
+        if (expectedNumbers.length === 0 || refined.length === 0) return true;
+        return [...missingBefore].some((n) => n >= from && n <= to);
+      });
+      // Hard cap: never fire more than 3 full-PDF range calls in fast mode.
+      if (fastMode && rangesToRun.length > 3) {
+        rangesToRun = rangesToRun.slice(0, 3);
+      }
       console.log('[PDF_EXAM_EXTRACT] chunking by question ranges', {
         model,
         firstPass: refined.length,
         skipFullPass,
         maxExpected,
         truncated,
-        ranges: ranges.length,
-      });
-      // Ranges are independent, so they run together. Sequentially an 80-question
-      // paper held the HTTP connection ~50s, which is past the default 60s
-      // proxy_read_timeout once anything else is added — the browser then reports
-      // a bare "Failed to fetch". Concurrency cuts that to roughly one call.
-      const rangesToRun = ranges.filter(([from, to]) => {
-        if (expectedNumbers.length === 0 || refined.length === 0) return true;
-        return [...missingBefore].some((n) => n >= from && n <= to);
+        ranges: rangesToRun.length,
+        chunkSize: rangeChunkSize,
+        concurrency: geminiConcurrency,
+        elapsedMs: Date.now() - extractStartedAt,
       });
 
-      const chunkResults = await Promise.all(
-        rangesToRun.map(([from, to]) =>
-          callBudgetExhausted()
-            ? Promise.resolve(null)
-            : extractOnce(
-                model,
-                `Scope: extract ONLY questions numbered ${from} through ${to} (inclusive). ` +
-                  `You must return every question in this range that appears in the paper. ` +
-                  `Skip any question outside this range.`,
-              ),
-        ),
+      const chunkResults = await mapPool(rangesToRun, geminiConcurrency, ([from, to]) =>
+        callBudgetExhausted()
+          ? Promise.resolve(null)
+          : extractOnce(
+              model,
+              `Scope: extract ONLY questions numbered ${from} through ${to} (inclusive). ` +
+                `You must return every question in this range that appears in the paper. ` +
+                `Skip any question outside this range.`,
+            ),
       );
 
       for (const chunk of chunkResults) {
@@ -1356,47 +1396,60 @@ Important rules:
 
     refined = dedupePdfQuestionRows(refined);
 
-    // Gap-fill: re-ask specifically for missing printed numbers (e.g. 79/80 left 1 gap).
+    // Gap-fill: skip in fast mode unless coverage is poor (<85%).
     let missing = missingQuestionNumbers(refined);
+    const coverage =
+      expectedNumbers.length > 0 ? refined.length / Math.max(expectedNumbers.length, 1) : 1;
+    const doGapFill =
+      missing.length > 0 &&
+      !callBudgetExhausted() &&
+      (!fastMode || coverage < 0.85);
     let gapPass = 0;
-    // Fast: one parallel gap pass. Thorough: up to 2 (was 3 — rarely worth the wait).
     const maxGapPasses = fastMode ? 1 : 2;
-    while (missing.length > 0 && gapPass < maxGapPasses && !callBudgetExhausted()) {
+    while (doGapFill && missing.length > 0 && gapPass < maxGapPasses && !callBudgetExhausted()) {
       gapPass += 1;
-      const batchSize = gapPass === 1 ? 6 : 1;
+      const batchSize = fastMode ? 10 : gapPass === 1 ? 6 : 1;
+      // Fast: at most 2 gap batches (covers ≤20 missing).
+      const batches = chunkMissingIds(missing, batchSize).slice(0, fastMode ? 2 : 8);
       console.log('[PDF_EXAM_EXTRACT] gap-fill missing numbers', {
         model,
         pass: gapPass,
         batchSize,
         missingCount: missing.length,
+        batches: batches.length,
+        coverage: Number(coverage.toFixed(2)),
         missing: missing.slice(0, 20),
+        elapsedMs: Date.now() - extractStartedAt,
       });
-      const batches = chunkMissingIds(missing, batchSize);
-      const gapResults = await Promise.all(
-        batches.map((batch) => {
-          if (callBudgetExhausted()) return Promise.resolve(null);
-          const list = batch.join(', ');
-          const alone = batch.length === 1;
-          return extractOnce(
-            model,
-            alone
-              ? `Scope: extract ONLY question number ${batch[0]}. ` +
-                `This is mandatory — locate the printed "${batch[0]}." question in the paper and return exactly one object. ` +
-                `Set questionNumber to ${batch[0]}. Include Match-the-Following / Assertion-Reason / Case-based if that is Q${batch[0]}. ` +
-                `If it is case-based, questionText MUST include the full Case/passage paragraph first, then the question stem. ` +
-                `Copy all four options a)–d) into option1–option4.`
-              : `Scope: extract ONLY these exact question numbers: ${list}. ` +
-                `Return one object per number if that question exists in the paper. ` +
-                `Set questionNumber exactly. For case-based items, include the full case/passage in questionText. ` +
-                `Do not skip Match-the-Following or Assertion-Reason items.`,
-          ).then((chunk) => {
-            if (alone && chunk?.ok && Array.isArray(chunk.parsed) && chunk.parsed.length === 1 && !Number(chunk.parsed[0]?.questionNumber)) {
-              chunk.parsed[0].questionNumber = batch[0];
-            }
-            return chunk;
-          });
-        }),
-      );
+      const gapResults = await mapPool(batches, geminiConcurrency, (batch) => {
+        if (callBudgetExhausted()) return Promise.resolve(null);
+        const list = batch.join(', ');
+        const alone = batch.length === 1;
+        return extractOnce(
+          model,
+          alone
+            ? `Scope: extract ONLY question number ${batch[0]}. ` +
+              `This is mandatory — locate the printed "${batch[0]}." question in the paper and return exactly one object. ` +
+              `Set questionNumber to ${batch[0]}. Include Match-the-Following / Assertion-Reason / Case-based if that is Q${batch[0]}. ` +
+              `If it is case-based, questionText MUST include the full Case/passage paragraph first, then the question stem. ` +
+              `Copy all four options a)–d) into option1–option4.`
+            : `Scope: extract ONLY these exact question numbers: ${list}. ` +
+              `Return one object per number if that question exists in the paper. ` +
+              `Set questionNumber exactly. For case-based items, include the full case/passage in questionText. ` +
+              `Do not skip Match-the-Following or Assertion-Reason items.`,
+        ).then((chunk) => {
+          if (
+            alone &&
+            chunk?.ok &&
+            Array.isArray(chunk.parsed) &&
+            chunk.parsed.length === 1 &&
+            !Number(chunk.parsed[0]?.questionNumber)
+          ) {
+            chunk.parsed[0].questionNumber = batch[0];
+          }
+          return chunk;
+        });
+      });
       for (const chunk of gapResults) {
         if (chunk?.ok && Array.isArray(chunk.parsed)) {
           collected.push(...chunk.parsed);
@@ -1458,6 +1511,8 @@ Important rules:
       geminiCalls: usageTotals.calls,
       promptTokens: usageTotals.promptTokens,
       outputTokens: usageTotals.outputTokens,
+      elapsedMs: Date.now() - extractStartedAt,
+      fastMode,
     });
     if (refined.length > 0) {
       return {

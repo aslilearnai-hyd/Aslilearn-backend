@@ -831,22 +831,29 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId } = {}) {
       if (list.length) candidatesByPage.set(pageNumber, list);
     }
 
-    // Decide which pages need a full-page screenshot (match tables / missing embeds)
-    const screenshotPages = new Set();
+    // Decide which pages need a full-page screenshot (match tables / missing embeds).
+    // Cap count — rendering every page kills wall time on large papers.
+    const matchShotPages = [];
+    const otherShotPages = [];
     for (const [pageNumber, pageRows] of rowsByPage) {
       const wanting = pageRows.filter(({ row }) => rowWantsFigure(row));
       if (!wanting.length) continue;
       const prefersShot = wanting.some(({ row }) => rowLooksLikeMatchTable(row));
       const embeds = candidatesByPage.get(pageNumber) || [];
-      if (prefersShot || embeds.length === 0) screenshotPages.add(pageNumber);
+      if (prefersShot) matchShotPages.push(pageNumber);
+      else if (embeds.length === 0) otherShotPages.push(pageNumber);
     }
+    const screenshotPageList = [...matchShotPages, ...otherShotPages]
+      .sort((a, b) => a - b)
+      .filter((n, i, arr) => arr.indexOf(n) === i)
+      .slice(0, 8);
 
     const screenshotByPage = new Map();
-    if (screenshotPages.size > 0) {
+    if (screenshotPageList.length > 0) {
       try {
         const shotResult = await parser.getScreenshot({
-          partial: [...screenshotPages].sort((a, b) => a - b),
-          scale: 1.4,
+          partial: screenshotPageList,
+          scale: 1.2,
           imageBuffer: true,
           imageDataUrl: false,
         });
