@@ -1549,6 +1549,8 @@ export function normalizeExamClassFields(exam) {
   return e;
 }
 
+const DEFAULT_ASSERTION_REASON_DIRECTIONS = 'Directions: Each question is followed by four options: a), b), c), and d).\\nChoose the correct answer based on the given Assertion (A) and Reason (R).\\na) Both A and R are true, and R is the correct explanation of A.\\nb) Both A and R are true, but R is not the correct explanation of A.\\nc) A is true, but R is false.\\nd) A is false, but R is true.';
+
 const ALLOWED_QUESTION_TYPES = ['mcq', 'multiple', 'integer', 'assertion_reason', 'match_following'];
 
 const isChoiceQuestionType = (t) =>
@@ -2373,6 +2375,10 @@ export const addQuestion = async (req, res) => {
       passageId,
       passageText,
     });
+    if (normalizedType === 'assertion_reason' && !matterFields.sharedMatterText) {
+      matterFields.sharedMatterText = DEFAULT_ASSERTION_REASON_DIRECTIONS;
+      matterFields.sharedMatterKind = matterFields.sharedMatterKind || 'assertion_reason';
+    }
 
     // Validate ObjectId format
     if (!mongoose.Types.ObjectId.isValid(examId)) {
@@ -3685,7 +3691,7 @@ export const convertPdfToQuestions = async (req, res) => {
     }
 
     const fastMode =
-      String(req.body?.fastMode ?? req.query?.fastMode ?? '1').toLowerCase() !== 'false';
+      String(req.body?.fastMode ?? req.query?.fastMode ?? '0').toLowerCase() === 'true';
 
     const {
       createExamPdfConvertJob,
@@ -4011,6 +4017,10 @@ export const updateQuestion = async (req, res) => {
         passageId,
         passageText,
       });
+      if (questionToUpdate.questionType === 'assertion_reason' && !matterFields.sharedMatterText) {
+        matterFields.sharedMatterText = DEFAULT_ASSERTION_REASON_DIRECTIONS;
+        matterFields.sharedMatterKind = matterFields.sharedMatterKind || 'assertion_reason';
+      }
       Object.assign(questionToUpdate, matterFields);
 
       // Propagate shared matter text to all questions in the same group
