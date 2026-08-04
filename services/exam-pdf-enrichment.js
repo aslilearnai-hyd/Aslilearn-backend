@@ -516,16 +516,21 @@ export function promoteStructuredTypesFromStem(rows) {
   return rows.map((row) => {
     const stem = String(row.questionText || '');
     if (row.sharedMatterKind === 'assertion_reason' || row.questionType === 'assertion_reason') {
-      const parsed = parseAssertionReasonFromStem(stem);
+      const cleaned = stripLeadingCaseFromArStem(stem);
+      const parsed = parseAssertionReasonFromStem(cleaned);
       return {
         ...row,
         questionType: 'assertion_reason',
         assertionText: row.assertionText || parsed.assertionText,
         reasonText: row.reasonText || parsed.reasonText,
-        questionText: parsed.cleanedStem || stem,
+        questionText: parsed.cleanedStem || cleaned,
         sharedMatterId: row.sharedMatterId || 'AR1',
-        sharedMatterText: row.sharedMatterText || DEFAULT_AR_DIRECTIONS,
+        sharedMatterText: looksLikeArDirections(row.sharedMatterText)
+          ? row.sharedMatterText
+          : DEFAULT_AR_DIRECTIONS,
         sharedMatterKind: 'assertion_reason',
+        passageText: '',
+        passageId: '',
       };
     }
     if (row.sharedMatterKind === 'match_following' || row.questionType === 'match_following') {
@@ -542,9 +547,11 @@ export function promoteStructuredTypesFromStem(rows) {
     }
 
     const looksLikeAR =
-      /\bA\s*[:：]/.test(stem) && /\bR\s*[:：]/.test(stem);
-    if (looksLikeAR && row.sharedMatterKind !== 'case') {
-      const parsed = parseAssertionReasonFromStem(stem);
+      stemLooksLikeAssertionReason(stem) || optionsLookLikeAssertionReason(row);
+    // Promote even if wrongly tagged as case — Case matter on an A/R stem is a bug
+    if (looksLikeAR) {
+      const cleaned = stripLeadingCaseFromArStem(stem);
+      const parsed = parseAssertionReasonFromStem(cleaned);
       const opts = [row.option1, row.option2, row.option3, row.option4].map((o) =>
         String(o || '').trim(),
       );
@@ -552,16 +559,20 @@ export function promoteStructuredTypesFromStem(rows) {
       return {
         ...row,
         questionType: 'assertion_reason',
-        assertionText: parsed.assertionText,
-        reasonText: parsed.reasonText,
-        questionText: parsed.cleanedStem || stem,
+        assertionText: row.assertionText || parsed.assertionText,
+        reasonText: row.reasonText || parsed.reasonText,
+        questionText: parsed.cleanedStem || cleaned,
         option1: needDefaults ? DEFAULT_AR_OPTIONS[0] : row.option1,
         option2: needDefaults ? DEFAULT_AR_OPTIONS[1] : row.option2,
         option3: needDefaults ? DEFAULT_AR_OPTIONS[2] : row.option3,
         option4: needDefaults ? DEFAULT_AR_OPTIONS[3] : row.option4,
-        sharedMatterId: row.sharedMatterId || 'AR1',
-        sharedMatterText: row.sharedMatterText || DEFAULT_AR_DIRECTIONS,
+        sharedMatterId: 'AR1',
+        sharedMatterText: looksLikeArDirections(row.sharedMatterText)
+          ? row.sharedMatterText
+          : DEFAULT_AR_DIRECTIONS,
         sharedMatterKind: 'assertion_reason',
+        passageText: '',
+        passageId: '',
       };
     }
 
@@ -642,11 +653,40 @@ function rowLooksLikeMatchTable(row) {
 }
 
 function rowIsAssertionReason(row) {
-  return (
+  if (
     row?.questionType === 'assertion_reason' ||
     row?.sharedMatterKind === 'assertion_reason' ||
     String(row?.questionType || '').toUpperCase() === 'ASSERTION_REASON'
-  );
+  ) {
+    return true;
+  }
+  return optionsLookLikeAssertionReason(row);
+}
+
+/** Standard A/R choice lines (even when Gemini typed the Q as MCQ). */
+function optionsLookLikeAssertionReason(row) {
+  const blob = [row?.option1, row?.option2, row?.option3, row?.option4]
+    .map((o) => String(o || ''))
+    .join('\n');
+  if (/Both A and R are true/i.test(blob) && /correct explanation of A/i.test(blob)) return true;
+  const opts = Array.isArray(row?.options)
+    ? row.options.map((o) => (typeof o === 'string' ? o : o?.text || '')).join('\n')
+    : '';
+  return /Both A and R are true/i.test(opts) && /correct explanation of A/i.test(opts);
+}
+
+function stemLooksLikeAssertionReason(stem) {
+  const s = String(stem || '');
+  return /\bA\s*[:：]/.test(s) && /\bR\s*[:：]/.test(s);
+}
+
+/** Drop a wrongly prepended Case/passage block sitting above A:/R:. */
+function stripLeadingCaseFromArStem(stem) {
+  const s = String(stem || '').trim();
+  if (!stemLooksLikeAssertionReason(s)) return s;
+  const cut = s.search(/\bA\s*[:：]/);
+  if (cut > 0 && /^Case\b/i.test(s)) return s.slice(cut).trim();
+  return s;
 }
 
 /** True when shared matter already looks like standard A/R directions (not a case passage). */
@@ -659,26 +699,45 @@ function looksLikeArDirections(text) {
 }
 
 /**
- * Every Assertion–Reason question gets the standard directions block.
- * Also strips accidental figures (AR stems almost never need a diagram image).
+ * Every Assertion–Reason question gets the standard directions block at the top.
+ * Converts MCQ-looking rows with A/R options, and clears wrongly attached case matter.
  */
 export function ensureAssertionReasonDirections(rows) {
   if (!Array.isArray(rows)) return rows;
   return rows.map((row) => {
-    if (!rowIsAssertionReason(row)) return row;
-    const matter = String(row.sharedMatterText || row.passageText || '').trim();
+    const stem = String(row?.questionText || '');
+    const isAr =
+      rowIsAssertionReason(row) ||
+      stemLooksLikeAssertionReason(stem) ||
+      optionsLookLikeAssertionReason(row);
+    if (!isAr) return row;
+
+    const cleanedStem = stripLeadingCaseFromArStem(stem);
+    const parsed = parseAssertionReasonFromStem(cleanedStem);
+    const matter = String(row.sharedMatterText || '').trim();
     const nextMatter = looksLikeArDirections(matter) ? matter : DEFAULT_AR_DIRECTIONS;
+    const opts = [row.option1, row.option2, row.option3, row.option4].map((o) =>
+      String(o || '').trim(),
+    );
+    const needDefaults = opts.filter(Boolean).length < 2;
+
     return {
       ...row,
       questionType: 'assertion_reason',
       sharedMatterKind: 'assertion_reason',
-      sharedMatterId: row.sharedMatterId || 'AR1',
+      sharedMatterId: row.sharedMatterId && row.sharedMatterKind === 'assertion_reason'
+        ? row.sharedMatterId
+        : 'AR1',
       sharedMatterText: nextMatter,
-      // Do not keep case passage text on AR questions
-      passageText: looksLikeArDirections(String(row.passageText || ''))
-        ? row.passageText
-        : '',
-      // AR questions must not inherit a page/diagram image from neighbors
+      passageText: '',
+      passageId: '',
+      questionText: parsed.cleanedStem || cleanedStem,
+      assertionText: row.assertionText || parsed.assertionText,
+      reasonText: row.reasonText || parsed.reasonText,
+      option1: needDefaults ? DEFAULT_AR_OPTIONS[0] : row.option1,
+      option2: needDefaults ? DEFAULT_AR_OPTIONS[1] : row.option2,
+      option3: needDefaults ? DEFAULT_AR_OPTIONS[2] : row.option3,
+      option4: needDefaults ? DEFAULT_AR_OPTIONS[3] : row.option4,
       questionImage: '',
       hasFigure: false,
     };
@@ -687,12 +746,23 @@ export function ensureAssertionReasonDirections(rows) {
 
 function rowWantsFigure(row) {
   if (String(row?.questionImage || '').trim()) return false;
-  // Assertion–Reason: never auto-attach images
+  // Assertion–Reason / Match: text only — never auto photos
   if (rowIsAssertionReason(row)) return false;
-  // Match-the-Following: use Column I/II text — full-page screenshots dump the whole paper
   if (rowLooksLikeMatchTable(row)) return false;
-  const text = rowCombinedText(row);
-  return row?.hasFigure === true || FIGURE_HINT_RE.test(String(row?.questionText || ''));
+  if (row?.hasFigure === true) return true;
+  // Scan stem + case passage (skip AR-directions matter — it is not a figure hint)
+  const matter = String(row?.sharedMatterText || '');
+  const matterForHint = looksLikeArDirections(matter) ? '' : matter;
+  const text = `${String(row?.passageText || '')}\n${matterForHint}\n${String(row?.questionText || '')}`;
+  if (FIGURE_HINT_RE.test(text)) return true;
+  // Case/passage questions often depend on a printed diagram even without the word "figure"
+  if (
+    (row?.sharedMatterKind === 'case' || row?.passageId) &&
+    /\b(diagram|figure|shown|graph|rod|scale|vernier|calliper|caliper|vector|force)\b/i.test(text)
+  ) {
+    return true;
+  }
+  return false;
 }
 
 export function validateExtractedQuestionRow(row) {
@@ -804,8 +874,9 @@ async function ensureQuestionsUploadDir() {
 function isLikelyLogoOrTiny(img) {
   const w = Number(img?.width) || 0;
   const h = Number(img?.height) || 0;
-  if (w < 100 || h < 70) return true;
-  if (w * h < 14000) return true;
+  // Keep small-but-real diagrams; only drop tiny icons / tracking pixels
+  if (w < 60 || h < 50) return true;
+  if (w * h < 8000) return true;
   return false;
 }
 
@@ -868,8 +939,10 @@ async function saveQuestionImageBuffer(buf, examId, savedUrlByImageKey, key) {
 /**
  * Attach PDF figures to questions.
  *
- * Diagrams/cases: embedded PDF images only (never a full-page screenshot).
- * Match / Assertion–Reason: text only (directions + columns / A–R). No auto photo.
+ * 1) Prefer embedded diagram images (getImage).
+ * 2) If the paper drew diagrams as vectors (no XObjects), take a TOP-CROP of the
+ *    page screenshot — never the full page (that dumped Match+Integer onto one Q).
+ * Match / Assertion–Reason: no auto photo.
  */
 export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = true } = {}) {
   if (!Array.isArray(rows) || rows.length === 0 || !pdfBuffer) return rows;
@@ -895,7 +968,6 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
       return `${buf.length}:${buf.subarray(0, 32).toString('hex')}`;
     };
 
-    // Pages that need real diagram embeds (never Match / AR — those use text).
     const diagramPages = new Set();
     for (const [pageNumber, pageRows] of rowsByPage) {
       for (const { row } of pageRows) {
@@ -903,8 +975,14 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
       }
     }
 
+    console.log('[PDF_ENRICH] figure pages', {
+      count: diagramPages.size,
+      pages: [...diagramPages].sort((a, b) => a - b),
+      wanting: rows.filter((r) => rowWantsFigure(r)).map((r) => r.questionNumber),
+    });
+
     const candidatesByPage = new Map();
-    const pagesForImages = [...diagramPages].sort((a, b) => a - b).slice(0, fast ? 8 : 20);
+    const pagesForImages = [...diagramPages].sort((a, b) => a - b).slice(0, fast ? 12 : 24);
     if (pagesForImages.length > 0) {
       console.log('[PDF_ENRICH] getImage start', {
         pages: pagesForImages,
@@ -916,7 +994,8 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
           partial: pagesForImages,
           imageBuffer: true,
           imageDataUrl: false,
-          imageThreshold: 90,
+          // Include modest diagram bitmaps; tiny logos still filtered below
+          imageThreshold: 50,
         });
         const pages = Array.isArray(imageResult?.pages) ? imageResult.pages : [];
         const pagesSeenByImage = new Map();
@@ -934,14 +1013,19 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
           for (const img of Array.isArray(page?.images) ? page.images : []) {
             if (isLikelyLogoOrTiny(img)) continue;
             const key = imageKey(img);
-            // Skip header/banner furniture repeated across many pages
             if (!key || (pagesSeenByImage.get(key) || 0) >= 3) continue;
             const buf = bufferFromImageData(img.data);
             if (!buf) continue;
             const area = (Number(img.width) || 0) * (Number(img.height) || 0);
-            list.push({ buf, key, kind: 'embed', area, w: Number(img.width) || 0, h: Number(img.height) || 0 });
+            list.push({
+              buf,
+              key,
+              kind: 'embed',
+              area,
+              w: Number(img.width) || 0,
+              h: Number(img.height) || 0,
+            });
           }
-          // Largest first — diagrams beat decorative scraps
           list.sort((a, b) => b.area - a.area);
           if (list.length) candidatesByPage.set(pageNumber, list);
         }
@@ -954,8 +1038,58 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
       });
     }
 
-    // No full-page screenshots — they attach the whole paper (Match + Integer, etc.)
-    // to one question. Match uses Column I/II text; diagrams use embeds only.
+    // Vector-diagram fallback: top-crop of page (not full page)
+    const cropByPage = new Map();
+    const needCropPages = pagesForImages.filter((p) => {
+      const pageRows = rowsByPage.get(p) || [];
+      const wanting = pageRows.some(({ row }) => rowWantsFigure(row));
+      const embeds = candidatesByPage.get(p) || [];
+      return wanting && embeds.length === 0;
+    });
+    if (needCropPages.length > 0) {
+      try {
+        console.log('[PDF_ENRICH] diagram top-crop screenshot start', {
+          pages: needCropPages,
+          elapsedMs: Date.now() - startedAt,
+        });
+        const shotResult = await parser.getScreenshot({
+          partial: needCropPages.slice(0, fast ? 8 : 12),
+          scale: 1.25,
+          imageBuffer: true,
+          imageDataUrl: false,
+        });
+        const { createCanvas, loadImage } = await import('@napi-rs/canvas');
+        for (const page of Array.isArray(shotResult?.pages) ? shotResult.pages : []) {
+          const pageNumber = Number(page?.pageNumber) || 0;
+          const full = bufferFromImageData(page?.data);
+          if (!full || !pageNumber) continue;
+          try {
+            const img = await loadImage(full);
+            // Keep upper ~48% — ASLI diagram blocks sit above the options/other columns
+            const cropH = Math.max(120, Math.floor(img.height * 0.48));
+            const canvas = createCanvas(img.width, cropH);
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, img.width, cropH);
+            ctx.drawImage(img, 0, 0, img.width, cropH, 0, 0, img.width, cropH);
+            const buf = canvas.toBuffer('image/png');
+            cropByPage.set(pageNumber, {
+              buf,
+              key: `crop:${pageNumber}:${buf.length}`,
+              kind: 'crop',
+            });
+          } catch (cropErr) {
+            console.warn('[PDF_ENRICH] crop failed page', pageNumber, cropErr?.message || cropErr);
+          }
+        }
+        console.log('[PDF_ENRICH] diagram top-crop done', {
+          got: cropByPage.size,
+          elapsedMs: Date.now() - startedAt,
+        });
+      } catch (shotErr) {
+        console.warn('[PDF_ENRICH] diagram screenshot failed:', shotErr?.message || shotErr);
+      }
+    }
 
     const stitchEmbeds = async (embeds) => {
       if (!Array.isArray(embeds) || embeds.length === 0) return null;
@@ -993,25 +1127,34 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
     for (const [pageNumber, pageRowsRaw] of rowsByPage) {
       const pageRows = [...pageRowsRaw].sort((a, b) => a.qn - b.qn);
       const embeds = candidatesByPage.get(pageNumber) || [];
+      const crop = cropByPage.get(pageNumber);
       const diagramWanting = pageRows.filter(({ row }) => rowWantsFigure(row));
+      if (!diagramWanting.length) continue;
 
-      // Diagram / case groups → embedded images ONLY (never full page)
-      if (diagramWanting.length && embeds.length) {
-        const groups = groupWantingRows(diagramWanting);
+      const groups = groupWantingRows(diagramWanting);
+      if (embeds.length) {
         if (groups.length === 1) {
           const combined = await stitchEmbeds(embeds);
           if (combined) {
-            for (const entry of groups[0]) {
-              urlByRowIdx.set(entry.idx, combined);
-            }
+            for (const entry of groups[0]) urlByRowIdx.set(entry.idx, combined);
           }
         } else {
           const n = Math.min(groups.length, embeds.length);
           for (let i = 0; i < n; i += 1) {
-            for (const entry of groups[i]) {
-              urlByRowIdx.set(entry.idx, embeds[i]);
+            for (const entry of groups[i]) urlByRowIdx.set(entry.idx, embeds[i]);
+          }
+          // Leftover groups share the first embed rather than a full-page shot
+          if (embeds[0]) {
+            for (let i = n; i < groups.length; i += 1) {
+              for (const entry of groups[i]) {
+                if (!urlByRowIdx.has(entry.idx)) urlByRowIdx.set(entry.idx, embeds[0]);
+              }
             }
           }
+        }
+      } else if (crop) {
+        for (const group of groups) {
+          for (const entry of group) urlByRowIdx.set(entry.idx, crop);
         }
       }
     }
