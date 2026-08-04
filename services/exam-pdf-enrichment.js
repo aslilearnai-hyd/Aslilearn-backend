@@ -49,6 +49,47 @@ function normalizeSpaces(s) {
     .trim();
 }
 
+/** PDF custom fonts often dump unit-vector glyphs as □ / � — repair to plain i/j. */
+function looksLikeGarbledPdfMath(text) {
+  const s = String(text || '');
+  const junk = (s.match(/[\uFFFD\u25A1\u25AF\u25A0□▯�]/g) || []).length;
+  return junk >= 2;
+}
+
+export function repairGarbledPdfMathText(text) {
+  let s = String(text || '');
+  if (!s) return s;
+  const junkRe = /[\uFFFD\u25A1\u25AF\u25A0□▯�]/g;
+  if (!junkRe.test(s) && !/[⅃¬]/.test(s)) return s;
+  let n = 0;
+  // Alternate i / j (standard 2D vector papers: î, ĵ)
+  s = s.replace(junkRe, () => {
+    const ch = n % 2 === 0 ? 'i' : 'j';
+    n += 1;
+    return ch;
+  });
+  s = s.replace(/[⅃¬¦]\s*/g, '');
+  s = s.replace(/=\s*\.\s*([ij])/gi, '= $1');
+  s = s.replace(/([=+−\-–—,])\s*\.\s*([ij])/gi, '$1 $2');
+  return normalizeSpaces(s);
+}
+
+/** Prefer a clean Case block already inside Gemini's stem over garbled PDF text. */
+function extractCaseBlockFromStem(stem) {
+  const s = String(stem || '').trim();
+  if (!/^Case\s*(?:I{1,3}|IV|\d+)/i.test(s)) return '';
+  const cut = s.search(
+    /\n\s*(?:Using|According|For\s+A\b|Which|What|Calculate|Find|The\s+magnitude|In\s+the\s+(?:first|second)|Based\s+on)\b/i,
+  );
+  if (cut > 40) return normalizeSpaces(s.slice(0, cut));
+  // Single-line: Case …? Question starts mid-string
+  const cut2 = s.search(
+    /\b(?:Using|According|For\s+A\b|Which|What|Calculate|Find|The\s+magnitude)\b/i,
+  );
+  if (cut2 > 40) return normalizeSpaces(s.slice(0, cut2));
+  return '';
+}
+
 function extractQuestionNumbersNear(text, fromIdx, toIdx, minNumber = 0) {
   const slice = String(text || '').slice(fromIdx, toIdx);
   const nums = new Set();
@@ -143,10 +184,11 @@ export function detectPassagesFromPdfText(fullText) {
 
     const block = text.slice(start, hardEnd);
     const firstQ = block.search(/(?:^|\n)\s*\d{1,3}\.\s+\S/);
-    const passageBody =
+    const passageBodyRaw =
       firstQ > 0
         ? normalizeSpaces(block.slice(0, firstQ))
         : normalizeSpaces(block.slice(0, Math.min(block.length, 900)));
+    const passageBody = repairGarbledPdfMathText(passageBodyRaw);
     if (passageBody.length < 50) continue;
 
     // Questions that belong to this case: only those printed after the passage body
@@ -434,7 +476,14 @@ export function attachPassagesToRows(rows, passages) {
     const hit = passages.find((p) => p.questionRange.includes(qn));
     if (!hit) return row;
     const stem = String(row.questionText || '').trim();
-    const passage = String(hit.passageText || '').trim();
+    let passage = repairGarbledPdfMathText(String(hit.passageText || '').trim());
+    const fromStem = extractCaseBlockFromStem(stem);
+    if (fromStem && (!passage || looksLikeGarbledPdfMath(String(hit.passageText || '')) || looksLikeGarbledPdfMath(passage))) {
+      // Gemini usually recovers î/ĵ as plain i/j — prefer that over PDF □ boxes
+      if (!looksLikeGarbledPdfMath(fromStem) || fromStem.length > passage.length * 0.6) {
+        passage = repairGarbledPdfMathText(fromStem);
+      }
+    }
 
     const withMatter = {
       ...row,
@@ -446,7 +495,7 @@ export function attachPassagesToRows(rows, passages) {
     };
 
     // Stem already has the case — keep matter card, strip duplicate from body
-    if (stemAlreadyHasPassageContext(stem, passage)) {
+    if (stemAlreadyHasPassageContext(stem, passage) || fromStem) {
       return {
         ...withMatter,
         questionText: stripDuplicateSharedMatterFromStem(stem, passage),
@@ -824,18 +873,25 @@ function rowWantsFigure(row) {
   const matterForHint = looksLikeArDirections(matter) ? '' : matter;
   const text = `${String(row?.passageText || '')}\n${matterForHint}\n${String(row?.questionText || '')}`;
 
-  // Case/passage with diagram references
+  // Case/passage: only when the case actually references a drawn diagram/graph
+  // (bare "vector"/"force" matched every vector case and attached wrong crops)
   if (row?.sharedMatterKind === 'case' || row?.passageId) {
-    return /\b(diagram|figure|fig\.?|graph|chart|triangle\s+law|parallelogram\s+law|shown\s+below|as\s+shown|vector|force|illustrated|drawn)\b/i.test(
+    return /\b(diagram|figure|fig\.?|graph|chart|triangle\s+law|parallelogram\s+law|shown\s+below|as\s+shown|illustrated|drawn\s+below)\b/i.test(
       text,
     );
   }
 
-  // Trust Gemini hasFigure for non-AR rows — try a page crop (text-reject still filters dumps)
-  if (row?.hasFigure === true) return true;
+  // Gemini hasFigure alone is too noisy (section headers / wrong neighbors) —
+  // still try when paired with a visual cue in the stem
+  if (
+    row?.hasFigure === true &&
+    /\b(shown|figure|diagram|graph|image|sketch|circuit|map|photo|study\s+the)\b/i.test(text)
+  ) {
+    return true;
+  }
 
   if (
-    /\b(shown\s+below|shown\s+in\s+the\s+(?:figure|diagram|graph)|as\s+shown|velocity[- ]time|distance[- ]time|vernier|calliper|caliper|screw\s*gauge|refer\s+to\s+(?:the\s+)?(?:figure|diagram)|given\s+figure|study\s+the\s+figure|following\s+(?:figure|diagram|graph)|circuit\s+diagram|plant\s+cell|see\s+(?:the\s+)?(?:figure|diagram)|observe\s+the)\b/i.test(
+    /\b(shown\s+below|shown\s+in\s+the\s+(?:figure|diagram|graph)|as\s+shown|velocity[- ]time|distance[- ]time|vernier|calliper|caliper|screw\s*gauge|refer\s+to\s+(?:the\s+)?(?:figure|diagram)|given\s+figure|study\s+the\s+figure|following\s+(?:figure|diagram|graph)|circuit\s+diagram|see\s+(?:the\s+)?(?:figure|diagram)|observe\s+the\s+(?:figure|diagram))\b/i.test(
       text,
     )
   ) {
@@ -858,13 +914,14 @@ export function validateExtractedQuestionRow(row) {
     (Array.isArray(row?.matchColumnI) && row.matchColumnI.length > 0) ||
     (Array.isArray(row?.matchColumnII) && row.matchColumnII.length > 0);
 
-  // Strong diagram signals — trust Gemini hasFigure, plus explicit visual wording
+  // Strong diagram signals only — bare hasFigure / "plant cell" wording is not enough
   const strongFigure =
-    row?.hasFigure === true ||
     FIGURE_HINT_RE.test(`${text}\n${passage}`) ||
-    /\b(diagram|figure|vernier|calliper|caliper|screw\s*gauge|graph|shown\s+below|as\s+shown|velocity[- ]time|distance[- ]time|study\s+the\s+figure|plant\s+cell|circuit|see\s+(?:the\s+)?(?:figure|diagram))\b/i.test(
+    /\b(diagram|figure|vernier|calliper|caliper|screw\s*gauge|graph|shown\s+below|as\s+shown|velocity[- ]time|distance[- ]time|study\s+the\s+figure|circuit\s+diagram|see\s+(?:the\s+)?(?:figure|diagram)|triangle\s+law|parallelogram\s+law)\b/i.test(
       `${text}\n${passage}`,
-    );
+    ) ||
+    (row?.hasFigure === true &&
+      /\b(shown|figure|diagram|graph|study\s+the)\b/i.test(`${text}\n${passage}`));
 
   if (strongFigure && !hasImage && !isAr && !isMatch) {
     flags.push('needs_figure');
@@ -954,13 +1011,21 @@ export function applyExtractionValidation(rows) {
     }
 
     // Case/passage already in yellow card — do not repeat it in the stem
-    const matter = String(next.sharedMatterText || next.passageText || '').trim();
+    let matter = String(next.sharedMatterText || next.passageText || '').trim();
     if (
       matter &&
       (next.sharedMatterKind === 'case' || next.passageId || /^Case\s*(?:I{1,3}|IV|\d+)/i.test(matter))
     ) {
+      matter = repairGarbledPdfMathText(matter);
+      const fromStem = extractCaseBlockFromStem(String(next.questionText || ''));
+      if (fromStem && looksLikeGarbledPdfMath(String(next.sharedMatterText || next.passageText || ''))) {
+        const cleaned = repairGarbledPdfMathText(fromStem);
+        if (cleaned && !looksLikeGarbledPdfMath(cleaned)) matter = cleaned;
+      }
       next = {
         ...next,
+        sharedMatterText: matter,
+        passageText: next.passageText ? matter : next.passageText,
         questionText: stripDuplicateSharedMatterFromStem(next.questionText, matter),
       };
     }
@@ -976,17 +1041,10 @@ export function applyExtractionValidation(rows) {
       next.questionImage = '';
       next.hasFigure = false;
     }
-    // Keep case/diagram/match photos when extract attached them.
-    // (Previously wiping all case images left every diagram blank.)
+    // Drop photos that don't belong (section-header dumps, neighbor crops, false hasFigure)
     if (String(next.questionImage || '').trim() && !rowWantsFigure({ ...next, questionImage: '' })) {
-      // Only strip when the row clearly should not have a figure (AR already cleared)
-      if (!rowLooksLikeMatchTable(next) && next.sharedMatterKind !== 'case' && !next.passageId) {
-        const t = String(next.questionText || '');
-        if (
-          !/\b(diagram|figure|graph|shown\s+below|vernier|calliper|caliper|screw\s*gauge)\b/i.test(t)
-        ) {
-          next = { ...next, questionImage: '', hasFigure: false };
-        }
+      if (!rowLooksLikeMatchTable(next)) {
+        next = { ...next, questionImage: '', hasFigure: false };
       }
     }
     // Match-the-Following keeps tight table photos when extract attached them
@@ -1208,8 +1266,8 @@ async function saveQuestionImageBuffer(buf, examId, savedUrlByImageKey, key) {
 }
 
 /**
- * True when a crop is mostly printed text lines (Directions / Case / options),
- * not a diagram or match table. Those text dumps made the editor look "messy".
+ * True when a crop is mostly printed text lines (Directions / Case / options / section headers),
+ * not a diagram or match table.
  */
 async function cropLooksLikePrintedText(buf, canvasApi) {
   try {
@@ -1217,6 +1275,10 @@ async function cropLooksLikePrintedText(buf, canvasApi) {
     const w = img.width;
     const h = img.height;
     if (w < 40 || h < 40) return true;
+    // Wide short strips are almost always section banners / directions, not diagrams
+    if (w > h * 2.8 && h < 140) return true;
+    if (w > h * 2.2 && h < 100) return true;
+
     const canvas = canvasApi.createCanvas(w, h);
     const ctx = canvas.getContext('2d');
     ctx.drawImage(img, 0, 0);
@@ -1244,12 +1306,15 @@ async function cropLooksLikePrintedText(buf, canvasApi) {
       if (ink < 3) continue;
       inkRows += 1;
       const frac = ink / Math.max(1, Math.ceil(w / step));
-      // Body text: many short ink runs across the row
-      if ((runs >= 5 && frac < 0.5) || runs >= 8) textLikeRows += 1;
+      // Body text / directions: many short ink runs across the row
+      if ((runs >= 5 && frac < 0.55) || runs >= 7) textLikeRows += 1;
     }
     if (inkRows < 6) return false;
-    // Higher threshold → keep more real graphs/diagrams (labels look "text-like")
-    return textLikeRows / inkRows >= 0.85;
+    const ratio = textLikeRows / inkRows;
+    // Short banner crops: reject at lower text ratio (section headers)
+    if (h < 160 && ratio >= 0.55) return true;
+    // Normal crops: keep labeled diagrams, reject dense prose
+    return ratio >= 0.78;
   } catch {
     return false;
   }
@@ -1312,10 +1377,12 @@ async function cropInkFigureRegion(fullBuf, canvasApi, opts = {}) {
       const weakInk = tableMode
         ? frac >= 0.012 && span >= 0.1 && runs <= 18
         : frac >= 0.015 && span >= 0.12 && runs <= 14;
-      rows.push({ y, frac, span, figureLike, weakInk, runs });
+      // Question stems / directions: many short runs — stop figure bands before these
+      const textLike = !tableMode && ((runs >= 6 && frac < 0.45 && span > 0.55) || runs >= 9);
+      rows.push({ y, frac, span, figureLike, weakInk, runs, textLike });
     }
 
-    const maxGap = tableMode || caseMode ? 8 : 6;
+    const maxGap = tableMode || caseMode ? 8 : 5;
     let best = null;
     let i = 0;
     while (i < rows.length) {
@@ -1327,7 +1394,20 @@ async function cropInkFigureRegion(fullBuf, canvasApi, opts = {}) {
       let gaps = 0;
       let scoreSum = 0;
       let strong = 0;
+      let textStreak = 0;
       while (j < rows.length) {
+        if (rows[j].textLike) {
+          textStreak += 1;
+          // Sustained prose under a diagram = next question text — cut here
+          if (!tableMode && textStreak >= 3 && strong >= 4) break;
+          if (gaps < maxGap) {
+            gaps += 1;
+            j += 1;
+            continue;
+          }
+          break;
+        }
+        textStreak = 0;
         if (rows[j].figureLike || rows[j].weakInk) {
           gaps = 0;
           scoreSum += rows[j].span + rows[j].frac - Math.min(0.25, rows[j].runs * 0.015);
@@ -1341,13 +1421,19 @@ async function cropInkFigureRegion(fullBuf, canvasApi, opts = {}) {
       const runLen = j - i;
       const minStrong = tableMode || caseMode ? 4 : 5;
       if (strong >= minStrong && runLen >= minStrong) {
-        const y0 = rows[i].y;
-        const y1 = rows[Math.min(j - 1, rows.length - 1)].y + step;
+        let y0 = rows[i].y;
+        let y1 = rows[Math.min(j - 1, rows.length - 1)].y + step;
+        // Trim trailing text-like rows so "29. Using the triangle law…" is not in the PNG
+        for (let k = Math.min(j - 1, rows.length - 1); k > i; k -= 1) {
+          if (rows[k].textLike || (rows[k].runs >= 7 && rows[k].frac < 0.4)) {
+            y1 = rows[k].y;
+          } else break;
+        }
         const heightFrac = (y1 - y0) / h;
-        const maxH = tableMode ? 0.5 : caseMode ? 0.4 : 0.38;
+        const maxH = tableMode ? 0.5 : caseMode ? 0.36 : 0.30;
         const minH = tableMode ? 0.08 : 0.06;
-        if (heightFrac >= minH && heightFrac <= maxH) {
-          const score = scoreSum / runLen + heightFrac * 1.3 + strong * 0.02;
+        if (heightFrac >= minH && heightFrac <= maxH && y1 > y0 + 8) {
+          const score = scoreSum / runLen + heightFrac * 1.1 + strong * 0.02;
           if (!best || score > best.score) best = { y0, y1, score, heightFrac, x0, x1 };
         }
       }
@@ -1384,12 +1470,12 @@ async function cropInkFigureRegion(fullBuf, canvasApi, opts = {}) {
     const fx0 = Math.floor(w * 0.02);
     const fx1 = caseMode || !tableMode ? midX - 2 : Math.floor(w * 0.98);
     const fy0 = Math.floor(h * (caseMode ? 0.12 : 0.1));
-    const fy1 = Math.floor(h * (caseMode ? 0.48 : 0.42));
+    const fy1 = Math.floor(h * (caseMode ? 0.42 : 0.34));
     pick = { y0: fy0, y1: fy1, score: 0, heightFrac: (fy1 - fy0) / h, x0: fx0, x1: fx1 };
   }
 
-  const padX = Math.floor(w * 0.02);
-  const padY = Math.floor(h * 0.03);
+  const padX = Math.floor(w * 0.015);
+  const padY = Math.floor(h * 0.015);
   const sx = Math.max(0, pick.x0 - padX);
   const sy = Math.max(0, pick.y0 - padY);
   const ex = Math.min(w, pick.x1 + padX);
