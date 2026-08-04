@@ -544,6 +544,7 @@ export function attachMatchFollowingMatter(rows, matchBlocks) {
       sharedMatterId: matterId,
       sharedMatterText: matter,
       sharedMatterKind: 'match_following',
+      hasFigure: true,
       matchColumnI:
         Array.isArray(row.matchColumnI) && row.matchColumnI.length
           ? row.matchColumnI
@@ -813,15 +814,17 @@ export function ensureAssertionReasonDirections(rows) {
 
 function rowWantsFigure(row) {
   if (String(row?.questionImage || '').trim()) return false;
-  // Assertion–Reason / Match: text only — never auto photos
+  // Assertion–Reason: text options only — never auto photos
   if (rowIsAssertionReason(row)) return false;
-  if (rowLooksLikeMatchTable(row)) return false;
+  // Match-the-Following: always capture the Column I/II table as a tight photo
+  if (rowLooksLikeMatchTable(row) || row?.questionType === 'match_following') return true;
   if (row?.hasFigure === true) return true;
   // Scan stem + case passage (skip AR-directions matter — it is not a figure hint)
   const matter = String(row?.sharedMatterText || '');
   const matterForHint = looksLikeArDirections(matter) ? '' : matter;
   const text = `${String(row?.passageText || '')}\n${matterForHint}\n${String(row?.questionText || '')}`;
   if (FIGURE_HINT_RE.test(text)) return true;
+  if (MATCH_TABLE_HINT_RE.test(text)) return true;
   // Case/passage questions often depend on a printed diagram even without the word "figure"
   if (
     (row?.sharedMatterKind === 'case' || row?.passageId) &&
@@ -951,11 +954,7 @@ export function applyExtractionValidation(rows) {
       next.questionImage = '';
       next.hasFigure = false;
     }
-    if (rowLooksLikeMatchTable(next) && next.questionType === 'match_following') {
-      // Keep text columns; drop accidental full-page shots
-      next.questionImage = '';
-      next.hasFigure = false;
-    }
+    // Match-the-Following keeps tight table photos when extract attached them
     const v = validateExtractedQuestionRow(next);
     return {
       ...next,
@@ -1072,11 +1071,13 @@ async function saveQuestionImageBuffer(buf, examId, savedUrlByImageKey, key) {
 }
 
 /**
- * Tight-crop only the diagram region from a page screenshot.
+ * Tight-crop only the diagram / match-table region from a page screenshot.
  * ASLI papers are often 2-column — a wide top-crop dumps many questions onto one Q.
  * Returns null if no compact figure-like region is found (better empty than a page dump).
+ * @param {{ tableMode?: boolean }} [opts] - softer thresholds for Column I/II text tables
  */
-async function cropTightDiagramRegion(fullBuf, canvasApi) {
+async function cropTightDiagramRegion(fullBuf, canvasApi, opts = {}) {
+  const tableMode = opts.tableMode === true;
   const img = await canvasApi.loadImage(fullBuf);
   const w = img.width;
   const h = img.height;
@@ -1114,14 +1115,18 @@ async function cropTightDiagramRegion(fullBuf, canvasApi) {
       const samples = Math.max(1, Math.ceil(colW / step));
       const frac = ink / samples;
       const span = maxX >= 0 ? (maxX - minX) / colW : 0;
-      // Softer than before so label rows above/below vectors still count
-      const figureLike = frac >= 0.035 && frac <= 0.8 && span >= 0.18;
-      const weakInk = frac >= 0.02 && span >= 0.12;
+      // Match tables are mostly text lines — allow lower ink density than vector diagrams
+      const figureLike = tableMode
+        ? frac >= 0.022 && frac <= 0.88 && span >= 0.2
+        : frac >= 0.035 && frac <= 0.8 && span >= 0.18;
+      const weakInk = tableMode
+        ? frac >= 0.015 && span >= 0.1
+        : frac >= 0.02 && span >= 0.12;
       rows.push({ y, frac, span, figureLike, weakInk });
     }
 
-    // Bridge small gaps (white space inside a diagram) so we don't keep a thin mid-slice
-    const maxGap = 5;
+    // Bridge small gaps (white space inside a diagram/table)
+    const maxGap = tableMode ? 7 : 5;
     let best = null;
     let i = 0;
     while (i < rows.length) {
@@ -1147,12 +1152,15 @@ async function cropTightDiagramRegion(fullBuf, canvasApi) {
         }
       }
       const runLen = j - i;
-      if (strong >= 5 && runLen >= 6) {
+      const minStrong = tableMode ? 4 : 5;
+      const minRun = tableMode ? 5 : 6;
+      if (strong >= minStrong && runLen >= minRun) {
         const y0 = rows[i].y;
         const y1 = rows[Math.min(j - 1, rows.length - 1)].y + step;
         const heightFrac = (y1 - y0) / h;
-        if (heightFrac >= 0.07 && heightFrac <= 0.42) {
-          // Prefer taller complete diagrams over thin dense slices
+        const maxH = tableMode ? 0.5 : 0.42;
+        const minH = tableMode ? 0.08 : 0.07;
+        if (heightFrac >= minH && heightFrac <= maxH) {
           const score = scoreSum / runLen + heightFrac * 1.8 + strong * 0.02;
           if (!best || score > best.score) {
             best = { y0, y1, score, heightFrac, x0, x1 };
@@ -1164,26 +1172,30 @@ async function cropTightDiagramRegion(fullBuf, canvasApi) {
     return best;
   };
 
-  // Prefer left column (case diagrams), then right, then full width
-  const candidates = [
-    analyzeBand(Math.floor(w * 0.015), midX - 2),
-    analyzeBand(midX + 2, Math.floor(w * 0.985)),
-    analyzeBand(Math.floor(w * 0.03), Math.floor(w * 0.97)),
-  ].filter(Boolean);
+  // Match tables often span both columns; diagrams prefer left then right
+  const candidates = tableMode
+    ? [
+        analyzeBand(Math.floor(w * 0.03), Math.floor(w * 0.97)),
+        analyzeBand(Math.floor(w * 0.015), midX - 2),
+        analyzeBand(midX + 2, Math.floor(w * 0.985)),
+      ].filter(Boolean)
+    : [
+        analyzeBand(Math.floor(w * 0.015), midX - 2),
+        analyzeBand(midX + 2, Math.floor(w * 0.985)),
+        analyzeBand(Math.floor(w * 0.03), Math.floor(w * 0.97)),
+      ].filter(Boolean);
 
   if (!candidates.length) return null;
   candidates.sort((a, b) => b.score - a.score);
   const pick = candidates[0];
 
-  // Generous padding so labels (Resultant R, 8 m north, 10 N) are not clipped
-  const padX = Math.floor(w * 0.02);
-  const padY = Math.floor(h * 0.055);
+  const padX = Math.floor(w * (tableMode ? 0.025 : 0.02));
+  const padY = Math.floor(h * (tableMode ? 0.04 : 0.055));
   let sx = Math.max(0, pick.x0 - padX);
   let sy = Math.max(0, pick.y0 - padY);
   let ex = Math.min(w, pick.x1 + padX);
   let ey = Math.min(h, pick.y1 + padY);
 
-  // Grow vertically a bit more while nearby rows still have ink (captions)
   const growStep = step * 2;
   for (let guard = 0; guard < 12; guard += 1) {
     let above = 0;
@@ -1211,11 +1223,11 @@ async function cropTightDiagramRegion(fullBuf, canvasApi) {
   const ch = ey - sy;
   const areaFrac = (cw * ch) / (w * h);
 
-  // Hard guard: never attach a mega crop of the paper
-  if (areaFrac > 0.36 || ch > h * 0.48 || (cw > w * 0.78 && ch > h * 0.36)) {
+  const maxArea = tableMode ? 0.42 : 0.36;
+  const maxCh = tableMode ? 0.55 : 0.48;
+  if (areaFrac > maxArea || ch > h * maxCh || (cw > w * 0.9 && ch > h * 0.4 && !tableMode)) {
     return null;
   }
-  // Reject ultra-thin slices (the cut-off look)
   if (cw < 80 || ch < Math.floor(h * 0.08)) return null;
 
   const out = canvasApi.createCanvas(cw, ch);
@@ -1226,9 +1238,9 @@ async function cropTightDiagramRegion(fullBuf, canvasApi) {
   const buf = out.toBuffer('image/png');
   return {
     buf,
-    key: `tight:${sx},${sy},${cw}x${ch}:${buf.length}`,
-    kind: 'tight',
-    meta: { sx, sy, cw, ch, areaFrac: Number(areaFrac.toFixed(3)) },
+    key: `tight:${tableMode ? 'tbl:' : ''}${sx},${sy},${cw}x${ch}:${buf.length}`,
+    kind: tableMode ? 'match_table' : 'tight',
+    meta: { sx, sy, cw, ch, areaFrac: Number(areaFrac.toFixed(3)), tableMode },
   };
 }
 
@@ -1374,13 +1386,20 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
             continue;
           }
           try {
-            const tight = await cropTightDiagramRegion(full, canvasApi);
+            const pageRows = rowsByPage.get(pageNumber) || [];
+            const tableMode = pageRows.some(
+              ({ row }) =>
+                rowLooksLikeMatchTable(row) || row?.questionType === 'match_following',
+            );
+            const tight = await cropTightDiagramRegion(full, canvasApi, { tableMode });
             if (tight) {
               cropByPage.set(pageNumber, tight);
               tightOk += 1;
             } else {
               tightSkip += 1;
-              console.warn('[PDF_ENRICH] no tight diagram region on page', pageNumber);
+              console.warn('[PDF_ENRICH] no tight diagram region on page', pageNumber, {
+                tableMode,
+              });
             }
           } catch (cropErr) {
             tightSkip += 1;
