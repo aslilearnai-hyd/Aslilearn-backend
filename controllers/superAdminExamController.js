@@ -913,7 +913,7 @@ Important rules:
 - Include Single Correct, Multi Correct (MSQ), Assertion-Reason, Case-based, and Match-the-Following when they have options a)–d).
 - For Match-the-Following, put the matching codes into option1–option4 (e.g. "A-2, B-4, C-1, D-3").
 - Always set questionNumber to the printed question number (1, 2, 3…). NEVER omit it — every question in the paper has a printed number.
-- Set hasFigure=true ONLY when the question (or its case) refers to a picture, diagram, graph or figure printed in the paper (e.g. "marked point", "shown below", a drawing next to the question). Pure text/math questions get hasFigure=false.
+- Set hasFigure=true when the question (or its case) refers to a picture, diagram, graph, figure, OR a Match-the-Following Column I/II table printed in the paper. Pure text/math questions (no diagram/table) get hasFigure=false.
 - For subject: read from PDF section headers (Mathematics→maths, Physics→physics, Chemistry→chemistry, Biology→biology). Otherwise "".
 - For MCQ/MSQ: correctAnswer may be a letter (a/b/c/d) or full option text.
 - For integer: correctAnswer is the numeric answer; options can be empty strings.
@@ -930,7 +930,7 @@ Important rules:
   "Case I: A square solar learning park covers 11,025 m². … edge of 7 m.\\n\\nWhat is the side length of the square solar farm?"
   Q9 and Q10 that share Case I both get the same Case I text; Q11 under Case II gets Case II only.
 - ASSERTION–REASON: Set questionType to "assertion_reason". Put Assertion into assertionText and Reason into reasonText when possible; also put both into questionText as "A: …\\nR: …". Put the four standard A/R choice lines into option1–option4. Questions that share the same Directions block share the same directions text (do not invent different directions per question).
-- MATCH-THE-FOLLOWING: Set questionType to "match_following". Include Column I / Column II in questionText. Put matching codes into option1–option4 (e.g. "A-2, B-4, C-1, D-3"). Questions under the same Match directions share that directions text.
+- MATCH-THE-FOLLOWING: Set questionType to "match_following" AND hasFigure=true (the Column I/II table will be captured as a photo). Include a short stem in questionText; still put Column I / Column II text when readable. Put matching codes into option1–option4 (e.g. "A-2, B-4, C-1, D-3"). Questions under the same Match directions share that directions text.
 - Return only valid JSON, no markdown, no explanation.`;
 
   const maxOut = getPdfExtractionMaxOutputTokens();

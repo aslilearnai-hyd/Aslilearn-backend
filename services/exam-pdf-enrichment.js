@@ -33,6 +33,10 @@ const DEFAULT_MATCH_DIRECTIONS =
 const FIGURE_HINT_RE =
   /\b(screw\s*gauge|vernier|calliper|caliper|diagram|figure|shown\s+in\s+the\s+(?:figure|diagram)|least\s*count|circular\s*scale|main\s*scale|as\s+shown|refer\s+to\s+(?:the\s+)?(?:figure|diagram)|given\s+figure|marked\s+point|shown\s+below)\b/i;
 
+/** Match-the-Following tables are usually vector text in PDFs — detect so we can screenshot the page. */
+const MATCH_TABLE_HINT_RE =
+  /Column\s*I\b|Column\s*II\b|List\s*-?\s*I\b|List\s*-?\s*II\b|match\s+(?:the\s+)?(?:following|each|column)/i;
+
 /** Stops a case block from swallowing the rest of the paper */
 const SECTION_STOP_RE =
   /(?:^|\n)\s*(?:Mathematics|Maths|Physics|Chemistry|Biology|Science|English|Hindi|Social\s*Science|Assertion\s*[-–]?\s*Reason|Match\s+the\s+Following|SECTION\s*[A-D]|Single\s+Correct|Multi\s+Correct|Integer\s+Type)\b/i;
@@ -628,6 +632,25 @@ export async function attachSharedMatterLightweight({ rows, fullText, pdfBuffer 
 /**
  * Heuristic validation: can this stem stand alone?
  */
+function rowCombinedText(row) {
+  return `${String(row?.passageText || '')}\n${String(row?.sharedMatterText || '')}\n${String(row?.questionText || '')}`;
+}
+
+function rowLooksLikeMatchTable(row) {
+  if (row?.questionType === 'match_following' || row?.sharedMatterKind === 'match_following') return true;
+  return MATCH_TABLE_HINT_RE.test(rowCombinedText(row));
+}
+
+function rowWantsFigure(row) {
+  if (String(row?.questionImage || '').trim()) return false;
+  const text = rowCombinedText(row);
+  return (
+    row?.hasFigure === true ||
+    rowLooksLikeMatchTable(row) ||
+    FIGURE_HINT_RE.test(text)
+  );
+}
+
 export function validateExtractedQuestionRow(row) {
   const flags = [];
   const text = String(row?.questionText || '');
@@ -635,7 +658,7 @@ export function validateExtractedQuestionRow(row) {
   const combined = `${passage}\n${text}`;
   const hasImage = Boolean(String(row?.questionImage || '').trim());
 
-  if (FIGURE_HINT_RE.test(text) && !hasImage) {
+  if ((FIGURE_HINT_RE.test(text) || rowLooksLikeMatchTable(row)) && !hasImage) {
     flags.push('needs_figure');
   }
 
@@ -706,17 +729,41 @@ async function mapQuestionNumbersToPages(parser) {
   return { map, pageCount: pages.length, pageTexts: pages.map((p) => String(p?.text || '')) };
 }
 
+function groupWantingRows(wanting) {
+  const groups = [];
+  const groupByKey = new Map();
+  for (const entry of wanting) {
+    const key =
+      String(entry.row.sharedMatterId || entry.row.passageId || '').trim() || `q${entry.qn}`;
+    if (!groupByKey.has(key)) {
+      const group = [];
+      groupByKey.set(key, group);
+      groups.push(group);
+    }
+    groupByKey.get(key).push(entry);
+  }
+  return groups;
+}
+
+async function saveQuestionImageBuffer(buf, examId, savedUrlByImageKey, key) {
+  if (savedUrlByImageKey.has(key)) return savedUrlByImageKey.get(key);
+  const ext = buf[0] === 0x89 ? 'png' : buf[0] === 0xff ? 'jpg' : 'png';
+  const filename = `exam-${String(examId || 'pdf').slice(-8)}-${Date.now()}-${Math.random()
+    .toString(36)
+    .slice(2, 7)}.${ext}`;
+  await fs.writeFile(path.join(QUESTIONS_UPLOAD_DIR, filename), buf);
+  const url = `/uploads/questions/${filename}`;
+  savedUrlByImageKey.set(key, url);
+  return url;
+}
+
 /**
  * Attach PDF figures to the questions that need them.
  *
- * How figures are matched (all heuristic, but grounded in two strong signals):
- * 1. Which questions NEED a figure: Gemini's per-question `hasFigure` flag
- *    (it reads the PDF visually), plus FIGURE_HINT_RE text hints as fallback.
- * 2. Which images are real figures: page images minus tiny/logo images minus
- *    "banners" — byte-identical images repeated on 3+ pages (page headers).
- * 3. Pairing: on each page, figure-needing questions are grouped (questions
- *    sharing a case/passage share one figure) in printed order, and page images
- *    are kept in content order (top→bottom), then zipped group-by-image.
+ * 1. Embedded images via getImage() (diagrams that are true image XObjects).
+ * 2. Page screenshots via getScreenshot() for Match-the-Following tables and
+ *    any figure-needing question that still has no image (ASLI papers often
+ *    draw tables/figures as vectors, so getImage finds nothing).
  */
 export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId } = {}) {
   if (!Array.isArray(rows) || rows.length === 0) return rows;
@@ -724,7 +771,32 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId } = {}) {
   try {
     parser = new PDFParse({ data: pdfBuffer });
     const { map: qToPage } = await mapQuestionNumbersToPages(parser);
-    const imageResult = await parser.getImage();
+
+    // Index rows by page
+    const rowsByPage = new Map();
+    rows.forEach((row, idx) => {
+      const qn = Number(row?.questionNumber);
+      if (!Number.isFinite(qn)) return;
+      const pageNumber = qToPage.get(qn);
+      if (!pageNumber) return;
+      if (!rowsByPage.has(pageNumber)) rowsByPage.set(pageNumber, []);
+      rowsByPage.get(pageNumber).push({ row, idx, qn });
+    });
+
+    const pagesNeedingWork = new Set();
+    for (const [pageNumber, pageRows] of rowsByPage) {
+      if (pageRows.some(({ row }) => rowWantsFigure(row))) pagesNeedingWork.add(pageNumber);
+      else if (pageRows.length === 1 && !String(pageRows[0].row.questionImage || '').trim()) {
+        // May still pick up a lone embedded figure below
+        pagesNeedingWork.add(pageNumber);
+      }
+    }
+
+    const imageResult = await parser.getImage(
+      pagesNeedingWork.size
+        ? { partial: [...pagesNeedingWork], imageBuffer: true, imageDataUrl: false }
+        : { imageBuffer: true, imageDataUrl: false },
+    );
     const pages = Array.isArray(imageResult?.pages) ? imageResult.pages : [];
 
     const imageKey = (img) => {
@@ -744,7 +816,6 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId } = {}) {
       }
     }
 
-    // Real figure candidates per page, in content order (top of page first)
     const candidatesByPage = new Map();
     for (const page of pages) {
       const pageNumber = Number(page?.pageNumber) || 0;
@@ -753,55 +824,90 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId } = {}) {
         if (isLikelyLogoOrTiny(img)) continue;
         const key = imageKey(img);
         if (!key || (pagesSeenByImage.get(key) || 0) >= 3) continue;
-        list.push({ buf: bufferFromImageData(img.data), key });
+        const buf = bufferFromImageData(img.data);
+        if (!buf) continue;
+        list.push({ buf, key, kind: 'embed' });
       }
       if (list.length) candidatesByPage.set(pageNumber, list);
     }
 
-    // Index rows by page
-    const rowsByPage = new Map();
-    rows.forEach((row, idx) => {
-      const qn = Number(row?.questionNumber);
-      if (!Number.isFinite(qn)) return;
-      const pageNumber = qToPage.get(qn);
-      if (!pageNumber) return;
-      if (!rowsByPage.has(pageNumber)) rowsByPage.set(pageNumber, []);
-      rowsByPage.get(pageNumber).push({ row, idx, qn });
-    });
+    // Decide which pages need a full-page screenshot (match tables / missing embeds)
+    const screenshotPages = new Set();
+    for (const [pageNumber, pageRows] of rowsByPage) {
+      const wanting = pageRows.filter(({ row }) => rowWantsFigure(row));
+      if (!wanting.length) continue;
+      const prefersShot = wanting.some(({ row }) => rowLooksLikeMatchTable(row));
+      const embeds = candidatesByPage.get(pageNumber) || [];
+      if (prefersShot || embeds.length === 0) screenshotPages.add(pageNumber);
+    }
 
-    // Decide row → image assignments
+    const screenshotByPage = new Map();
+    if (screenshotPages.size > 0) {
+      try {
+        const shotResult = await parser.getScreenshot({
+          partial: [...screenshotPages].sort((a, b) => a - b),
+          scale: 1.75,
+          imageBuffer: true,
+          imageDataUrl: false,
+        });
+        for (const page of Array.isArray(shotResult?.pages) ? shotResult.pages : []) {
+          const pageNumber = Number(page?.pageNumber) || 0;
+          const buf = bufferFromImageData(page?.data);
+          if (!buf || buf.length < 1000 || !pageNumber) continue;
+          screenshotByPage.set(pageNumber, {
+            buf,
+            key: `shot:${pageNumber}:${buf.length}`,
+            kind: 'screenshot',
+          });
+        }
+      } catch (shotErr) {
+        console.warn(
+          '[PDF_ENRICH] getScreenshot failed (match/figure pages may lack photos):',
+          shotErr?.message || shotErr,
+        );
+      }
+    }
+
     const savedUrlByImageKey = new Map();
     const urlByRowIdx = new Map();
-    for (const [pageNumber, candidates] of candidatesByPage) {
-      const pageRows = (rowsByPage.get(pageNumber) || []).sort((a, b) => a.qn - b.qn);
-      if (!pageRows.length) continue;
 
-      let wanting = pageRows.filter(({ row }) => {
-        if (String(row.questionImage || '').trim()) return false;
-        const text = `${String(row.passageText || '')}\n${String(row.questionText || '')}`;
-        return row.hasFigure === true || row.questionType === 'match_following' || /Column\\s*I|Column\\s*II|match\\s+(?:the|each|column)/i.test(text) || FIGURE_HINT_RE.test(text);
-      });
+    for (const [pageNumber, pageRowsRaw] of rowsByPage) {
+      const pageRows = [...pageRowsRaw].sort((a, b) => a.qn - b.qn);
+      let wanting = pageRows.filter(({ row }) => rowWantsFigure(row));
+      const embeds = candidatesByPage.get(pageNumber) || [];
+      const shot = screenshotByPage.get(pageNumber);
+
       // Single question alone on a page with an image → that image is its figure
-      if (!wanting.length && pageRows.length === 1) wanting = pageRows;
+      if (!wanting.length && pageRows.length === 1 && embeds.length) {
+        wanting = pageRows;
+      }
       if (!wanting.length) continue;
 
-      // Questions sharing a case/passage share one figure — group them
-      const groups = [];
-      const groupByKey = new Map();
-      for (const entry of wanting) {
-        const key = String(entry.row.sharedMatterId || entry.row.passageId || '').trim() || `q${entry.qn}`;
-        if (!groupByKey.has(key)) {
-          const group = [];
-          groupByKey.set(key, group);
-          groups.push(group);
+      const groups = groupWantingRows(wanting);
+      const useScreenshotFirst = wanting.some(({ row }) => rowLooksLikeMatchTable(row)) && shot;
+
+      if (useScreenshotFirst) {
+        for (const group of groups) {
+          for (const entry of group) {
+            urlByRowIdx.set(entry.idx, shot);
+          }
         }
-        groupByKey.get(key).push(entry);
+        continue;
       }
 
-      const n = Math.min(groups.length, candidates.length);
+      // Zip shared-matter groups with embedded images in page order
+      const n = Math.min(groups.length, embeds.length);
       for (let i = 0; i < n; i += 1) {
         for (const entry of groups[i]) {
-          urlByRowIdx.set(entry.idx, candidates[i]);
+          urlByRowIdx.set(entry.idx, embeds[i]);
+        }
+      }
+      // Fallback: remaining figure-needing groups get the page screenshot
+      if (shot) {
+        for (let i = n; i < groups.length; i += 1) {
+          for (const entry of groups[i]) {
+            if (!urlByRowIdx.has(entry.idx)) urlByRowIdx.set(entry.idx, shot);
+          }
         }
       }
     }
@@ -809,14 +915,8 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId } = {}) {
     if (urlByRowIdx.size === 0) return rows;
     await ensureQuestionsUploadDir();
 
-    // Save each distinct assigned image once
     for (const candidate of new Set(urlByRowIdx.values())) {
-      const { buf, key } = candidate;
-      if (savedUrlByImageKey.has(key)) continue;
-      const ext = buf[0] === 0x89 ? 'png' : buf[0] === 0xff ? 'jpg' : 'png';
-      const filename = `exam-${String(examId || 'pdf').slice(-8)}-${Date.now()}-${Math.random().toString(36).slice(2, 7)}.${ext}`;
-      await fs.writeFile(path.join(QUESTIONS_UPLOAD_DIR, filename), buf);
-      savedUrlByImageKey.set(key, `/uploads/questions/${filename}`);
+      await saveQuestionImageBuffer(candidate.buf, examId, savedUrlByImageKey, candidate.key);
     }
 
     return rows.map((row, idx) => {
