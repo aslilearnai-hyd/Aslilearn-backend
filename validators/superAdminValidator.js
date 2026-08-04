@@ -3,12 +3,14 @@ import Joi from 'joi';
 // Validation schemas for Super Admin operations
 
 export const loginSchema = Joi.object({
-  email: Joi.string().email().required().messages({
-    'string.email': 'Please provide a valid email address',
+  email: Joi.string().trim().lowercase().email().required().messages({
+    'string.email': 'Please provide a valid email address (check for typos like .con instead of .com)',
+    'string.empty': 'Email is required',
     'any.required': 'Email is required',
   }),
-  password: Joi.string().min(6).required().messages({
+  password: Joi.string().trim().min(6).required().messages({
     'string.min': 'Password must be at least 6 characters long',
+    'string.empty': 'Password is required',
     'any.required': 'Password is required',
   }),
 });
@@ -70,7 +72,9 @@ export const validateRequest = (schema) => {
       const errorMessages = error.details.map((detail) => detail.message);
       return res.status(400).json({
         success: false,
-        message: 'Validation failed',
+        // Prefer the first field message so the login UI is actionable
+        // instead of a bare "Validation failed".
+        message: errorMessages[0] || 'Validation failed',
         errors: errorMessages,
       });
     }

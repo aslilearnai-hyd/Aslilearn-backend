@@ -6,6 +6,7 @@ import {
 import AiToolGeneration from '../models/AiToolGeneration.js';
 import TeacherToolUsage from '../models/TeacherToolUsage.js';
 import { fetchRotatingAiToolData } from '../services/ai-tool-rotation-service.js';
+import { generateAiToolLiveFallback } from '../services/ai-tool-live-fallback.js';
 import { extractRawTextFromPDF } from '../services/pdf-extractor-service.js';
 import { buildPdfExtractEmptyMessage, extractAndGenerateAllItems, getLastPdfExtractionMeta } from '../services/gemini-service.js';
 
@@ -524,6 +525,51 @@ export const createTeacherTool = async (req, res) => {
         const contentGate = validateDashboardAiToolDoc(toolType, cachedDoc);
         const isWrongTool = contentGate.code === DASHBOARD_WRONG_TOOL_CODE;
         if (!contentGate.valid) {
+          const live = await generateAiToolLiveFallback({
+            toolType,
+            board:
+              String(req.body.board || '').trim() ||
+              programCtx.curriculumBoard ||
+              programCtx.displayBoard ||
+              'CBSE',
+            classDisplay,
+            subject: finalSubject,
+            topic: topicForStore,
+            subtopic: subtopicForStore,
+            userId: teacherId,
+            role: 'teacher',
+            extraParams: {
+              questionCount: params.questionCount ?? req.body?.questionCount,
+              duration: params.duration ?? req.body?.duration,
+            },
+          });
+          if (live.ok) {
+            logTeacherToolUsage({
+              teacherId,
+              toolType,
+              classDisplay,
+              finalSubject,
+              topicForStore,
+              subtopicForStore,
+            });
+            return res.json({
+              success: true,
+              data: {
+                content: live.content,
+                ...(live.rawData ? { rawData: live.rawData } : {}),
+                toolType,
+                metadata: {
+                  classNumber: classNum,
+                  subject: finalSubject,
+                  topic: topicForStore,
+                  ...params,
+                  generatedAt: new Date(),
+                  teacherId,
+                  ...live.metadata,
+                },
+              },
+            });
+          }
           return res.status(404).json({
             success: false,
             code: contentGate.code || (isWrongTool ? DASHBOARD_WRONG_TOOL_CODE : DASHBOARD_INCOMPLETE_CODE),
@@ -590,6 +636,53 @@ export const createTeacherTool = async (req, res) => {
         `📭 AI Tool Data NOT FOUND: ${toolType} | ${classDisplay} | ${finalSubject} | topic="${topicForStore}" | subtopic="${subtopicForStore}" | board=${String(req.body.board || programCtx.curriculumBoard || 'CBSE')}`,
       );
     }
+
+    const liveMiss = await generateAiToolLiveFallback({
+      toolType,
+      board:
+        String(req.body.board || '').trim() ||
+        programCtx.curriculumBoard ||
+        programCtx.displayBoard ||
+        'CBSE',
+      classDisplay,
+      subject: finalSubject,
+      topic: topicForStore,
+      subtopic: subtopicForStore,
+      userId: teacherId,
+      role: 'teacher',
+      extraParams: {
+        questionCount: params.questionCount ?? req.body?.questionCount,
+        duration: params.duration ?? req.body?.duration,
+      },
+    });
+    if (liveMiss.ok) {
+      logTeacherToolUsage({
+        teacherId,
+        toolType,
+        classDisplay,
+        finalSubject,
+        topicForStore,
+        subtopicForStore,
+      });
+      return res.json({
+        success: true,
+        data: {
+          content: liveMiss.content,
+          ...(liveMiss.rawData ? { rawData: liveMiss.rawData } : {}),
+          toolType,
+          metadata: {
+            classNumber: classNum,
+            subject: finalSubject,
+            topic: topicForStore,
+            ...params,
+            generatedAt: new Date(),
+            teacherId,
+            ...liveMiss.metadata,
+          },
+        },
+      });
+    }
+
     // Tell the teacher which chapters DO work instead of sending them away to
     // ask the Super Admin with nothing to go on.
     const availableTopics = await listTopicsWithContent({
