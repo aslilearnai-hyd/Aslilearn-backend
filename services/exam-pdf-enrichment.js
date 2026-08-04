@@ -779,7 +779,7 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId } = {}) {
       let wanting = pageRows.filter(({ row }) => {
         if (String(row.questionImage || '').trim()) return false;
         const text = `${String(row.passageText || '')}\n${String(row.questionText || '')}`;
-        return row.hasFigure === true || FIGURE_HINT_RE.test(text);
+        return row.hasFigure === true || row.questionType === 'match_following' || /Column\\s*I|Column\\s*II|match\\s+(?:the|each|column)/i.test(text) || FIGURE_HINT_RE.test(text);
       });
       // Single question alone on a page with an image → that image is its figure
       if (!wanting.length && pageRows.length === 1) wanting = pageRows;
