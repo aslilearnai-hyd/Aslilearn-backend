@@ -1093,6 +1093,108 @@ function groupWantingRows(wanting) {
   return groups;
 }
 
+/** Cues that sit in the stem of the question that owns the diagram (not neighbors). */
+const FIGURE_OWNER_CUE_RE =
+  /\b(?:study\s+the\s+figure|shown\s+below|shown\s+in\s+the\s+(?:figure|diagram|graph)|as\s+shown(?:\s+in\s+the\s+(?:figure|diagram))?|refer\s+to\s+(?:the\s+)?(?:figure|diagram)|given\s+figure|following\s+(?:figure|diagram|graph)|see\s+(?:the\s+)?(?:figure|diagram)|observe\s+the\s+(?:figure|diagram)|circuit\s+diagram)\b/i;
+
+function questionOffsetsInPageText(pageText) {
+  const offsets = [];
+  const re = /(?:^|\n)\s*(?:Q\.?\s*)?(\d{1,3})[.)]\s+\S/gi;
+  let m;
+  while ((m = re.exec(String(pageText || '')))) {
+    const n = parseInt(m[1], 10);
+    if (n >= 1 && n <= 200) offsets.push({ qn: n, index: m.index });
+  }
+  return offsets.sort((a, b) => a.index - b.index);
+}
+
+/**
+ * Which printed question number(s) own the figure(s) on this page?
+ * Uses the question heading that immediately precedes each "Study the figure" / similar cue.
+ */
+function figureOwnerQuestionNumbers(pageText) {
+  const qOff = questionOffsetsInPageText(pageText);
+  const owners = new Set();
+  if (!qOff.length) return owners;
+  const text = String(pageText || '');
+  const cueRe = new RegExp(FIGURE_OWNER_CUE_RE.source, 'gi');
+  let m;
+  while ((m = cueRe.exec(text))) {
+    const at = m.index;
+    let owner = null;
+    for (const q of qOff) {
+      if (q.index <= at) owner = q.qn;
+      else break;
+    }
+    if (owner != null) owners.add(owner);
+  }
+  return owners;
+}
+
+function rowHasStrongFigureClaim(row) {
+  const text = `${String(row?.questionText || '')}\n${String(row?.sharedMatterText || '')}\n${String(row?.passageText || '')}`;
+  return (
+    FIGURE_OWNER_CUE_RE.test(text) ||
+    FIGURE_HINT_RE.test(text) ||
+    /\b(plant\s+cell|plasmolysis|turgid|vernier|calliper|caliper|screw\s*gauge|velocity[- ]time|distance[- ]time)\b/i.test(
+      text,
+    )
+  );
+}
+
+/**
+ * Expand owner question numbers to case/passage siblings that share the same diagram.
+ */
+function expandFigureOwnerIdxs(ownerQns, allByQn, rows) {
+  const targets = new Set();
+  const matterIds = new Set();
+  for (const qn of ownerQns) {
+    const entry = allByQn.get(qn);
+    if (!entry) continue;
+    targets.add(entry.idx);
+    const mid = String(entry.row?.sharedMatterId || entry.row?.passageId || '').trim();
+    if (mid) matterIds.add(mid);
+  }
+  if (matterIds.size) {
+    rows.forEach((row, idx) => {
+      const mid = String(row?.sharedMatterId || row?.passageId || '').trim();
+      if (mid && matterIds.has(mid)) targets.add(idx);
+    });
+  }
+  return targets;
+}
+
+/**
+ * Pick which row indexes should receive a single shared page crop/embed.
+ * Never spray the same figure onto every "wanting" neighbor (e.g. Q69 → Q67).
+ */
+function selectIdxsForSingleFigure({ pageText, groups, allByQn, rows }) {
+  const owners = figureOwnerQuestionNumbers(pageText);
+  if (owners.size > 0) {
+    const idxs = expandFigureOwnerIdxs(owners, allByQn, rows);
+    if (idxs.size > 0) return idxs;
+  }
+
+  const strongGroups = groups.filter((g) => g.some((e) => rowHasStrongFigureClaim(e.row)));
+  if (strongGroups.length === 1) {
+    return new Set(strongGroups[0].map((e) => e.idx));
+  }
+  if (strongGroups.length > 1) {
+    // Prefer the group whose stem literally claims the figure
+    const claimed = strongGroups.filter((g) =>
+      g.some((e) => FIGURE_OWNER_CUE_RE.test(String(e.row?.questionText || ''))),
+    );
+    const pick = claimed.length ? claimed : [strongGroups[strongGroups.length - 1]];
+    return new Set(pick.flatMap((g) => g.map((e) => e.idx)));
+  }
+
+  // Only one wanting group on the page — safe to attach
+  if (groups.length === 1) return new Set(groups[0].map((e) => e.idx));
+
+  // Multiple bare hasFigure neighbors, no page cue — do not guess (avoids wrong-Q photos)
+  return new Set();
+}
+
 async function saveQuestionImageBuffer(buf, examId, savedUrlByImageKey, key) {
   if (savedUrlByImageKey.has(key)) return savedUrlByImageKey.get(key);
   const ext = buf[0] === 0x89 ? 'png' : buf[0] === 0xff ? 'jpg' : 'png';
@@ -1345,8 +1447,8 @@ async function cropInkFigureRegion(fullBuf, canvasApi, opts = {}) {
  *
  * - Case/passage with diagram wording: left-column diagram crop (+ fallback band)
  * - Match: full-width ink table crop; reject obvious text dumps only
- * - Diagram MCQs (shown below / graphs): ink crop + fallback so photos actually attach
- * - Never use PDF-text Y fractions (2-column papers map wrong questions)
+ * - Diagram MCQs: ink crop, assigned only to the question that owns the figure cue
+ *   (never spray one page crop onto every neighbor — e.g. Q69 diagram on Q67)
  */
 export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = true } = {}) {
   if (!Array.isArray(rows) || rows.length === 0 || !pdfBuffer) return rows;
@@ -1355,6 +1457,14 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
   try {
     parser = new PDFParse({ data: pdfBuffer });
     const { map: qToPage, pageTexts } = await mapQuestionNumbersToPages(parser);
+
+    const allByQn = new Map();
+    rows.forEach((row, idx) => {
+      const qn = Number(row?.questionNumber);
+      if (Number.isFinite(qn) && qn > 0 && !allByQn.has(qn)) {
+        allByQn.set(qn, { row, idx, qn });
+      }
+    });
 
     const rowsByPage = new Map();
     let unmappedWanting = 0;
@@ -1529,19 +1639,56 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
       if (!diagramWanting.length) continue;
 
       const groups = groupWantingRows(diagramWanting);
+      const pageText =
+        pageTexts.find((p) => Number(p.pageNumber) === Number(pageNumber))?.text || '';
+      const ownerIdxs = selectIdxsForSingleFigure({
+        pageText,
+        groups,
+        allByQn,
+        rows,
+      });
+
       if (embeds.length) {
-        if (groups.length === 1) {
+        if (ownerIdxs.size > 0 && embeds.length === 1) {
           const combined = await stitchEmbeds(embeds);
-          if (combined) for (const entry of groups[0]) urlByRowIdx.set(entry.idx, combined);
+          if (combined) {
+            for (const idx of ownerIdxs) urlByRowIdx.set(idx, combined);
+          }
+        } else if (groups.length === 1) {
+          const combined = await stitchEmbeds(embeds);
+          if (combined) {
+            const idxs =
+              ownerIdxs.size > 0 ? ownerIdxs : new Set(groups[0].map((e) => e.idx));
+            for (const idx of idxs) urlByRowIdx.set(idx, combined);
+          }
+        } else if (ownerIdxs.size > 0 && embeds.length >= 1) {
+          // One clear owner set → stitch embeds for those questions only
+          const combined = await stitchEmbeds(embeds);
+          if (combined) {
+            for (const idx of ownerIdxs) urlByRowIdx.set(idx, combined);
+          }
         } else {
+          // Multiple groups, no reliable owner: map embeds 1:1 by Q order, never broadcast
           const n = Math.min(groups.length, embeds.length);
           for (let i = 0; i < n; i += 1) {
-            for (const entry of groups[i]) urlByRowIdx.set(entry.idx, embeds[i]);
+            // Prefer strong-claim group at this slot
+            const entry = groups[i].find((e) => rowHasStrongFigureClaim(e.row)) || groups[i][0];
+            if (entry) urlByRowIdx.set(entry.idx, embeds[i]);
           }
         }
       } else if (crop) {
-        for (const group of groups) {
-          for (const entry of group) urlByRowIdx.set(entry.idx, crop);
+        if (ownerIdxs.size === 0) {
+          console.warn('[PDF_ENRICH] skip shared crop — ambiguous owners', {
+            pageNumber,
+            wanting: diagramWanting.map((e) => e.qn),
+          });
+        } else {
+          console.log('[PDF_ENRICH] crop → owners', {
+            pageNumber,
+            owners: [...ownerIdxs].map((idx) => rows[idx]?.questionNumber),
+            wanting: diagramWanting.map((e) => e.qn),
+          });
+          for (const idx of ownerIdxs) urlByRowIdx.set(idx, crop);
         }
       }
     }
