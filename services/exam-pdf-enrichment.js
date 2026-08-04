@@ -31,7 +31,7 @@ const DEFAULT_MATCH_DIRECTIONS =
   'Directions: Following questions have statements in Column I and Column II. Match Column I with Column II and choose the correct matching from the options.';
 
 const FIGURE_HINT_RE =
-  /\b(screw\s*gauge|vernier|calliper|caliper|diagram|figure|graph|shown\s+in\s+the\s+(?:figure|diagram|graph)|least\s*count|circular\s*scale|main\s*scale|as\s+shown|refer\s+to\s+(?:the\s+)?(?:figure|diagram)|given\s+figure|marked\s+point|shown\s+below|velocity[- ]time|distance[- ]time)\b/i;
+  /\b(screw\s*gauge|vernier|calliper|caliper|diagram|fig(?:ure|\.)?\s*\d*|graph|chart|map|sketch|drawing|ray\s+diagram|circuit|waveform|histogram|bar\s+graph|pie\s+chart|shown\s+in\s+the\s+(?:figure|diagram|graph)|see\s+(?:the\s+)?(?:figure|diagram|graph)|observe\s+the\s+(?:figure|diagram)|least\s*count|circular\s*scale|main\s*scale|as\s+shown|refer\s+to\s+(?:the\s+)?(?:figure|diagram)|given\s+figure|marked\s+point|shown\s+below|velocity[- ]time|distance[- ]time|displacement[- ]time|force[- ]time|position[- ]time)\b/i;
 
 /** Match-the-Following tables are usually vector text in PDFs â€” detect so we can screenshot the page. */
 const MATCH_TABLE_HINT_RE =
@@ -826,21 +826,16 @@ function rowWantsFigure(row) {
 
   // Case/passage with diagram references
   if (row?.sharedMatterKind === 'case' || row?.passageId) {
-    return /\b(diagram|figure|graph|triangle\s+law|parallelogram\s+law|shown\s+below|as\s+shown|vector|force)\b/i.test(
+    return /\b(diagram|figure|fig\.?|graph|chart|triangle\s+law|parallelogram\s+law|shown\s+below|as\s+shown|vector|force|illustrated|drawn)\b/i.test(
       text,
     );
   }
 
-  // Gemini hasFigure + any visual cue → try photo
-  if (
-    row?.hasFigure === true &&
-    /\b(shown|figure|diagram|graph|image|draw|sketch|circuit|cell|scale|map|photo)\b/i.test(text)
-  ) {
-    return true;
-  }
+  // Trust Gemini hasFigure for non-AR rows — try a page crop (text-reject still filters dumps)
+  if (row?.hasFigure === true) return true;
 
   if (
-    /\b(shown\s+below|shown\s+in\s+the\s+(?:figure|diagram|graph)|as\s+shown|velocity[- ]time|distance[- ]time|vernier|calliper|caliper|screw\s*gauge|refer\s+to\s+(?:the\s+)?(?:figure|diagram)|given\s+figure|study\s+the\s+figure|following\s+(?:figure|diagram|graph)|circuit\s+diagram|plant\s+cell)\b/i.test(
+    /\b(shown\s+below|shown\s+in\s+the\s+(?:figure|diagram|graph)|as\s+shown|velocity[- ]time|distance[- ]time|vernier|calliper|caliper|screw\s*gauge|refer\s+to\s+(?:the\s+)?(?:figure|diagram)|given\s+figure|study\s+the\s+figure|following\s+(?:figure|diagram|graph)|circuit\s+diagram|plant\s+cell|see\s+(?:the\s+)?(?:figure|diagram)|observe\s+the)\b/i.test(
       text,
     )
   ) {
@@ -863,11 +858,11 @@ export function validateExtractedQuestionRow(row) {
     (Array.isArray(row?.matchColumnI) && row.matchColumnI.length > 0) ||
     (Array.isArray(row?.matchColumnII) && row.matchColumnII.length > 0);
 
-  // Strong diagram signals — include Gemini hasFigure when stem has visual cues
+  // Strong diagram signals — trust Gemini hasFigure, plus explicit visual wording
   const strongFigure =
-    (row?.hasFigure === true &&
-      /\b(shown|figure|diagram|graph|image|circuit|cell)\b/i.test(`${text}\n${passage}`)) ||
-    /\b(diagram|figure|vernier|calliper|caliper|screw\s*gauge|graph|shown\s+below|as\s+shown|velocity[- ]time|distance[- ]time|study\s+the\s+figure|plant\s+cell|circuit)\b/i.test(
+    row?.hasFigure === true ||
+    FIGURE_HINT_RE.test(`${text}\n${passage}`) ||
+    /\b(diagram|figure|vernier|calliper|caliper|screw\s*gauge|graph|shown\s+below|as\s+shown|velocity[- ]time|distance[- ]time|study\s+the\s+figure|plant\s+cell|circuit|see\s+(?:the\s+)?(?:figure|diagram))\b/i.test(
       `${text}\n${passage}`,
     );
 
@@ -1151,8 +1146,8 @@ async function cropLooksLikePrintedText(buf, canvasApi) {
       if ((runs >= 5 && frac < 0.5) || runs >= 8) textLikeRows += 1;
     }
     if (inkRows < 6) return false;
-    // Stricter threshold so real graphs/diagrams (sparse ink) are not rejected as "text"
-    return textLikeRows / inkRows >= 0.78;
+    // Higher threshold → keep more real graphs/diagrams (labels look "text-like")
+    return textLikeRows / inkRows >= 0.85;
   } catch {
     return false;
   }
@@ -1390,7 +1385,7 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
     });
 
     const candidatesByPage = new Map();
-    const pagesForImages = [...diagramPages].sort((a, b) => a - b).slice(0, fast ? 18 : 28);
+    const pagesForImages = [...diagramPages].sort((a, b) => a - b).slice(0, fast ? 24 : 36);
 
     if (!fast && pagesForImages.length > 0) {
       try {
@@ -1441,7 +1436,7 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
     const needCropPages = pagesForImages.filter((p) => !(candidatesByPage.get(p) || []).length);
     if (needCropPages.length > 0) {
       try {
-        const cropLimit = fast ? 16 : 22;
+        const cropLimit = fast ? 22 : 30;
         console.log('[PDF_ENRICH] ink-crop screenshot start', {
           pages: needCropPages.slice(0, cropLimit),
           elapsedMs: Date.now() - startedAt,
