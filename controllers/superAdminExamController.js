@@ -4231,11 +4231,8 @@ export const updateQuestion = async (req, res) => {
             correctAnswer !== undefined ? correctAnswer : questionToUpdate.correctAnswer ?? '',
           ).trim();
           const note = `⚠ Integer answer needs review (extracted: "${raw || 'empty'}").`;
-          if (explanation === undefined) {
-            questionToUpdate.explanation = [String(questionToUpdate.explanation || '').trim(), note]
-              .filter(Boolean)
-              .join('\n');
-          }
+          const baseExplanation = String(questionToUpdate.explanation || '').trim();
+          questionToUpdate.explanation = [baseExplanation, note].filter(Boolean).join('\n');
         } else {
           formattedCorrectAnswer = parsed;
         }
