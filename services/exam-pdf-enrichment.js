@@ -1001,12 +1001,135 @@ async function saveQuestionImageBuffer(buf, examId, savedUrlByImageKey, key) {
 }
 
 /**
+ * Tight-crop only the diagram region from a page screenshot.
+ * ASLI papers are often 2-column — a wide top-crop dumps many questions onto one Q.
+ * Returns null if no compact figure-like region is found (better empty than a page dump).
+ */
+async function cropTightDiagramRegion(fullBuf, canvasApi) {
+  const img = await canvasApi.loadImage(fullBuf);
+  const w = img.width;
+  const h = img.height;
+  if (w < 80 || h < 80) return null;
+
+  const scan = canvasApi.createCanvas(w, h);
+  const sctx = scan.getContext('2d');
+  sctx.drawImage(img, 0, 0);
+  const { data } = sctx.getImageData(0, 0, w, h);
+
+  const isInk = (x, y) => {
+    const i = (y * w + x) * 4;
+    return data[i] < 242 || data[i + 1] < 242 || data[i + 2] < 242;
+  };
+
+  // Drop header / footer chrome
+  const yTop = Math.floor(h * 0.07);
+  const yBot = Math.floor(h * 0.93);
+  const midX = Math.floor(w * 0.5);
+  const step = Math.max(2, Math.floor(Math.min(w, h) / 400));
+
+  const analyzeBand = (x0, x1) => {
+    const colW = x1 - x0;
+    const rows = [];
+    for (let y = yTop; y < yBot; y += step) {
+      let ink = 0;
+      let minX = Infinity;
+      let maxX = -1;
+      for (let x = x0; x < x1; x += step) {
+        if (!isInk(x, y)) continue;
+        ink += 1;
+        if (x < minX) minX = x;
+        if (x > maxX) maxX = x;
+      }
+      const samples = Math.max(1, Math.ceil(colW / step));
+      const frac = ink / samples;
+      const span = maxX >= 0 ? (maxX - minX) / colW : 0;
+      // Figures: wider ink span than a text line, not a solid black bar
+      const figureLike = frac >= 0.06 && frac <= 0.72 && span >= 0.28;
+      rows.push({ y, frac, span, figureLike });
+    }
+    // Find longest contiguous figure-like run
+    let best = null;
+    let runStart = -1;
+    let runScore = 0;
+    let runLen = 0;
+    const flush = (endIdx) => {
+      if (runStart < 0 || runLen < 4) return;
+      const y0 = rows[runStart].y;
+      const y1 = rows[Math.min(endIdx, rows.length - 1)].y + step;
+      const heightFrac = (y1 - y0) / h;
+      // Reject huge bands that are basically "half the page of questions"
+      if (heightFrac > 0.42 || heightFrac < 0.04) return;
+      const score = runScore / runLen + heightFrac * 0.15;
+      if (!best || score > best.score) {
+        best = { y0, y1, score, heightFrac, x0, x1 };
+      }
+    };
+    for (let i = 0; i < rows.length; i += 1) {
+      if (rows[i].figureLike) {
+        if (runStart < 0) {
+          runStart = i;
+          runScore = 0;
+          runLen = 0;
+        }
+        runScore += rows[i].span + rows[i].frac;
+        runLen += 1;
+      } else {
+        flush(i - 1);
+        runStart = -1;
+      }
+    }
+    flush(rows.length - 1);
+    return best;
+  };
+
+  // Prefer left column (case diagrams), then right, then full width
+  const candidates = [
+    analyzeBand(Math.floor(w * 0.02), midX - 4),
+    analyzeBand(midX + 4, Math.floor(w * 0.98)),
+    analyzeBand(Math.floor(w * 0.04), Math.floor(w * 0.96)),
+  ].filter(Boolean);
+
+  if (!candidates.length) return null;
+  candidates.sort((a, b) => b.score - a.score);
+  const pick = candidates[0];
+
+  const padX = Math.floor(w * 0.012);
+  const padY = Math.floor(h * 0.012);
+  const sx = Math.max(0, pick.x0 - padX);
+  const sy = Math.max(0, pick.y0 - padY);
+  const ex = Math.min(w, pick.x1 + padX);
+  const ey = Math.min(h, pick.y1 + padY);
+  const cw = ex - sx;
+  const ch = ey - sy;
+  const areaFrac = (cw * ch) / (w * h);
+
+  // Hard guard: never attach a mega crop of the paper
+  if (areaFrac > 0.28 || ch > h * 0.45 || (cw > w * 0.72 && ch > h * 0.32)) {
+    return null;
+  }
+  if (cw < 60 || ch < 50) return null;
+
+  const out = canvasApi.createCanvas(cw, ch);
+  const octx = out.getContext('2d');
+  octx.fillStyle = '#ffffff';
+  octx.fillRect(0, 0, cw, ch);
+  octx.drawImage(img, sx, sy, cw, ch, 0, 0, cw, ch);
+  const buf = out.toBuffer('image/png');
+  return {
+    buf,
+    key: `tight:${sx},${sy},${cw}x${ch}:${buf.length}`,
+    kind: 'tight',
+    meta: { sx, sy, cw, ch, areaFrac: Number(areaFrac.toFixed(3)) },
+  };
+}
+
+/**
  * Attach PDF figures to questions.
  *
  * fast=true (default extract path): SKIP getImage() — it can hang 10–15+ min on
- * ASLI papers. Take top-crop page screenshots for diagram questions only.
+ * ASLI papers. Take tight diagram crops from page screenshots (never half-page dumps).
  *
- * fast=false: try embedded images first, then top-crop fallback.
+ * fast=false: try embedded images first, then tight-crop fallback.
  * Match / Assertion–Reason: no auto photo.
  */
 export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = true } = {}) {
@@ -1103,7 +1226,7 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
       });
     }
 
-    // Vector-diagram / fast path: top-crop of page (not full page dump)
+    // Vector diagrams: tight crop of figure region only (never half-page / multi-question dumps)
     const cropByPage = new Map();
     const needCropPages = pagesForImages.filter((p) => {
       const embeds = candidatesByPage.get(p) || [];
@@ -1112,13 +1235,13 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
     if (needCropPages.length > 0) {
       try {
         const cropLimit = fast ? 10 : 14;
-        console.log('[PDF_ENRICH] diagram top-crop screenshot start', {
+        console.log('[PDF_ENRICH] diagram tight-crop screenshot start', {
           pages: needCropPages.slice(0, cropLimit),
           elapsedMs: Date.now() - startedAt,
         });
         const shotResult = await parser.getScreenshot({
           partial: needCropPages.slice(0, cropLimit),
-          scale: 1.25,
+          scale: 1.5,
           imageBuffer: true,
           imageDataUrl: false,
         });
@@ -1127,53 +1250,38 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
           canvasApi = await import('@napi-rs/canvas');
         } catch (canvasErr) {
           console.warn(
-            '[PDF_ENRICH] @napi-rs/canvas unavailable, using full screenshot buffers:',
+            '[PDF_ENRICH] @napi-rs/canvas unavailable — cannot tight-crop; skipping page dumps:',
             canvasErr?.message || canvasErr,
           );
         }
+        let tightOk = 0;
+        let tightSkip = 0;
         for (const page of Array.isArray(shotResult?.pages) ? shotResult.pages : []) {
           const pageNumber = Number(page?.pageNumber) || 0;
           const full = bufferFromImageData(page?.data);
           if (!full || !pageNumber) continue;
           if (!canvasApi) {
-            cropByPage.set(pageNumber, {
-              buf: full,
-              key: `shot:${pageNumber}:${full.length}`,
-              kind: 'shot',
-            });
+            tightSkip += 1;
             continue;
           }
           try {
-            const img = await canvasApi.loadImage(full);
-            // Keep upper ~55% — graphs often sit mid-upper; options below
-            const cropH = Math.max(140, Math.floor(img.height * 0.55));
-            const canvas = canvasApi.createCanvas(img.width, cropH);
-            const ctx = canvas.getContext('2d');
-            ctx.fillStyle = '#ffffff';
-            ctx.fillRect(0, 0, img.width, cropH);
-            ctx.drawImage(img, 0, 0, img.width, cropH, 0, 0, img.width, cropH);
-            const buf = canvas.toBuffer('image/png');
-            cropByPage.set(pageNumber, {
-              buf,
-              key: `crop:${pageNumber}:${buf.length}`,
-              kind: 'crop',
-            });
+            const tight = await cropTightDiagramRegion(full, canvasApi);
+            if (tight) {
+              cropByPage.set(pageNumber, tight);
+              tightOk += 1;
+            } else {
+              tightSkip += 1;
+              console.warn('[PDF_ENRICH] no tight diagram region on page', pageNumber);
+            }
           } catch (cropErr) {
-            console.warn(
-              '[PDF_ENRICH] crop failed page',
-              pageNumber,
-              cropErr?.message || cropErr,
-              '— using full screenshot',
-            );
-            cropByPage.set(pageNumber, {
-              buf: full,
-              key: `shot:${pageNumber}:${full.length}`,
-              kind: 'shot',
-            });
+            tightSkip += 1;
+            console.warn('[PDF_ENRICH] tight-crop failed page', pageNumber, cropErr?.message || cropErr);
           }
         }
-        console.log('[PDF_ENRICH] diagram top-crop done', {
+        console.log('[PDF_ENRICH] diagram tight-crop done', {
           got: cropByPage.size,
+          tightOk,
+          tightSkip,
           elapsedMs: Date.now() - startedAt,
         });
       } catch (shotErr) {
