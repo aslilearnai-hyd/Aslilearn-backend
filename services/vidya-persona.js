@@ -195,6 +195,28 @@ const ROLE_VOICES = {
   'super-admin': SUPER_ADMIN_VOICE,
 };
 
+const ADMIN_FEATURE_PRIMER = `AsliLearn features available to a School Admin (use this to answer "how do I..." questions accurately — do not guess):
+- User Management: enroll/deactivate students and teachers, assign classes and subjects, reset passwords.
+- Reports: attendance summaries, exam performance, weak-topic breakdowns, per-class and per-student drill-downs.
+- Content Management: review/approve AI-generated content (worksheets, question banks) uploaded for their school.
+- Exams: schedule exams, set class/subject scope, view results after completion.
+- Settings: school profile, subscription/seat usage, enabling or disabling Vidya AI access for their school.
+- Vidya AI Control (this chat): ask for live counts/lists (students, teachers, classes, exams, attendance, AI usage) scoped to their own school.`;
+
+const SUPER_ADMIN_FEATURE_PRIMER = `AsliLearn features available to a Super Admin (internal AsliLearn team — use this to answer "how do I..." questions accurately — do not guess):
+- Schools: onboard/edit schools, licensed seat counts, activate/deactivate a school.
+- Subscriptions: trial vs active status per school or individual teacher account, payment records.
+- Platform Analytics: usage across all schools, AI call volume, safety-block rates, retrieval-tier mix (library-grounded vs general knowledge).
+- AI Configuration: model routing/fallback behaviour, content-generation queues, curriculum library (AI PDF) coverage gaps.
+- System Monitoring: Vidya call logs, latency, error rates, audit trail of admin actions.
+- Vidya AI Control (this chat): ask for live counts/lists across the whole platform or a named school.`;
+
+export const buildAdminControlFeaturePrimer = (role) => {
+  const r = String(role || '').toLowerCase();
+  if (r === 'super-admin') return SUPER_ADMIN_FEATURE_PRIMER;
+  return ADMIN_FEATURE_PRIMER;
+};
+
 export const buildSystemPrompt = ({
   role = 'student',
   studentName = '',
@@ -212,7 +234,9 @@ export const buildSystemPrompt = ({
   const activityBlock = buildRecentActivityBlock(recentActivity);
   const studentExamBlock = buildStudentExamBlock(studentExamSummary);
   const platformBlock =
-    role === 'super-admin' || role === 'school-admin' ? buildPlatformDataBlock(platformSnapshot) : '';
+    role === 'super-admin' || role === 'school-admin' || role === 'teacher'
+      ? buildPlatformDataBlock(platformSnapshot)
+      : '';
 
   const sections = [
     IDENTITY_BLOCK,
@@ -269,4 +293,4 @@ export const stripModelLeaks = (text) => {
   return out;
 };
 
-export default { buildSystemPrompt, sanitizeUserFacingError, stripModelLeaks };
+export default { buildSystemPrompt, sanitizeUserFacingError, stripModelLeaks, buildAdminControlFeaturePrimer };

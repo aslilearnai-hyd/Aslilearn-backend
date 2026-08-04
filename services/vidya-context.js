@@ -9,6 +9,8 @@ import VidyaCallLog from '../models/VidyaCallLog.js';
 import AiToolGeneration from '../models/AiToolGeneration.js';
 import AiContentEngineSource from '../models/AiContentEngineSource.js';
 import AiContentEngineChunk from '../models/AiContentEngineChunk.js';
+import Teacher from '../models/Teacher.js';
+import ClassModel from '../models/Class.js';
 
 const safeObjectId = (id) => {
   try {
@@ -255,6 +257,71 @@ export const buildPlatformSnapshotForVidya = async ({ viewerRole, viewerUserId }
           examResultsByYourStudentsLast30Days: examCount,
         },
         note: 'Scoped to students assigned to this school admin. Teacher counts need the admin dashboard. No individual student names here.',
+      };
+    }
+
+    if (role === 'teacher') {
+      const teacher = await Teacher.findById(viewerOid)
+        .select('adminId assignedClassIds classNumber schoolName')
+        .lean()
+        .catch(() => null);
+      if (!teacher) return null;
+
+      let classNumbers = [];
+      if (Array.isArray(teacher.assignedClassIds) && teacher.assignedClassIds.length) {
+        const classIds = teacher.assignedClassIds.map(safeObjectId).filter(Boolean);
+        const classes = await ClassModel.find({ _id: { $in: classIds } })
+          .select('classNumber')
+          .lean()
+          .catch(() => []);
+        classNumbers = Array.from(
+          new Set(classes.map((c) => String(c.classNumber || '').trim()).filter(Boolean))
+        );
+      }
+      if (!classNumbers.length && teacher.classNumber) {
+        classNumbers = [String(teacher.classNumber).trim()];
+      }
+
+      if (!classNumbers.length) {
+        return {
+          scope: 'teacher',
+          generatedAt: new Date().toISOString(),
+          note: 'No classes are assigned to you yet in AsliLearn, so class-level counts are unavailable.',
+        };
+      }
+
+      const adminOid = teacher.adminId ? safeObjectId(teacher.adminId) : null;
+      const studentFilter = {
+        role: 'student',
+        classNumber: { $in: classNumbers },
+        ...(adminOid ? { assignedAdmin: adminOid } : {}),
+      };
+
+      const [studentCount, activeStudents7d, studentIds] = await Promise.all([
+        User.countDocuments(studentFilter).catch(() => 0),
+        User.countDocuments({ ...studentFilter, lastLogin: { $gte: sevenDaysAgo } }).catch(() => 0),
+        User.find(studentFilter).distinct('_id').catch(() => []),
+      ]);
+      const examResultCount =
+        Array.isArray(studentIds) && studentIds.length
+          ? await ExamResult.countDocuments({
+              userId: { $in: studentIds },
+              completedAt: { $gte: thirtyDaysAgo },
+            }).catch(() => 0)
+          : 0;
+
+      return {
+        scope: 'teacher',
+        classesAssigned: classNumbers,
+        generatedAt: new Date().toISOString(),
+        users: {
+          studentsInYourClasses: studentCount,
+          studentsActiveLast7Days: activeStudents7d,
+        },
+        activity: {
+          examResultsSubmittedLast30DaysInYourClasses: examResultCount,
+        },
+        note: 'Scoped to classes assigned to you. No individual student names here.',
       };
     }
 

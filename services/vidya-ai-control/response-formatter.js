@@ -1,4 +1,6 @@
 import geminiService from '../gemini-service.js';
+import { buildSystemPrompt, buildAdminControlFeaturePrimer, stripModelLeaks } from '../vidya-persona.js';
+import { callModel, buildContentsFromHistory } from '../model-router.js';
 
 const BANNED_APPROX_WORDS = [
   'approximately',
@@ -232,11 +234,51 @@ function localFallbackResponse({ userPrompt, facts }) {
   return `I could not find matching records in the database.`;
 }
 
+/**
+ * Non-DB questions (greetings, general knowledge, "how do I use feature X") get the
+ * same on-brand persona + formatting quality as the student general-knowledge path,
+ * instead of a bare unbranded one-line Gemini call.
+ */
+async function answerAsVidyaControlKnowledge({ userPrompt, viewerRole, history = [] }) {
+  const role = String(viewerRole || '').toLowerCase() === 'super-admin' ? 'super-admin' : 'school-admin';
+  const systemInstruction = [
+    buildSystemPrompt({ role }),
+    buildAdminControlFeaturePrimer(role),
+    'This is the Vidya AI Control chat (live database Q&A + general assistant). If the question needs an exact live number/list from AsliLearn data, ask the admin to phrase it as a data question (e.g. "how many students in Class 7") rather than guessing a figure.',
+  ].join('\n\n');
+
+  try {
+    const result = await callModel({
+      systemInstruction,
+      contents: buildContentsFromHistory({ history, userMessage: userPrompt }),
+      generationConfig: { temperature: 0.3, maxOutputTokens: 1600 },
+    });
+    const text = stripModelLeaks(String(result?.text || '').trim());
+    if (text) return text;
+  } catch {
+    /* fall through to legacy single-shot call below */
+  }
+
+  try {
+    const prompt = `You are Vidya AI Control. The user asked a knowledge/general question.
+Provide a concise, helpful answer. If this requires live DB values, explicitly ask for the exact metric/module.
+
+Question:
+${String(userPrompt || '').slice(0, 4000)}
+`;
+    return String(await geminiService.generateStructuredContent(prompt, 'text') || '').trim();
+  } catch {
+    return 'I can answer knowledge questions, but Gemini is temporarily unavailable. Please retry in a moment.';
+  }
+}
+
 export async function formatDynamicResponse({
   userPrompt,
   plan,
   facts,
   notes = [],
+  viewerRole,
+  history = [],
 }) {
   if (
     plan?.mode === 'overview' ||
@@ -248,17 +290,7 @@ export async function formatDynamicResponse({
   }
 
   if (plan?.mode === 'knowledge') {
-    const prompt = `You are Vidya AI Control. The user asked a knowledge/general question.
-Provide a concise, helpful answer. If this requires live DB values, explicitly ask for the exact metric/module.
-
-Question:
-${String(userPrompt || '').slice(0, 4000)}
-`;
-    try {
-      return String(await geminiService.generateStructuredContent(prompt, 'text') || '').trim();
-    } catch {
-      return 'I can answer knowledge questions, but Gemini is temporarily unavailable. Please retry in a moment.';
-    }
+    return answerAsVidyaControlKnowledge({ userPrompt, viewerRole, history });
   }
 
   const prompt = `You are Vidya AI Control. Use ONLY FACTS_JSON for numeric claims.
