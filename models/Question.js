@@ -15,7 +15,8 @@ const questionSchema = new mongoose.Schema({
   },
   questionType: {
     type: String,
-    enum: ['mcq', 'multiple', 'integer'],
+    // assertion_reason / match_following grade like single MCQ (options + correctAnswer)
+    enum: ['mcq', 'multiple', 'integer', 'assertion_reason', 'match_following'],
     required: true
   },
   options: [{
@@ -26,6 +27,47 @@ const questionSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.Mixed, // Can be string, number, or array
     required: true
   },
+  /**
+   * Shared matter shown above every linked question in a group
+   * (Case passage, AR directions, Match directions/columns intro).
+   */
+  sharedMatterId: {
+    type: String,
+    trim: true,
+    default: '',
+  },
+  sharedMatterText: {
+    type: String,
+    trim: true,
+    default: '',
+  },
+  sharedMatterKind: {
+    type: String,
+    enum: ['', 'case', 'assertion_reason', 'match_following'],
+    default: '',
+  },
+  /** Per-question Assertion (A) for assertion_reason type */
+  assertionText: {
+    type: String,
+    trim: true,
+    default: '',
+  },
+  /** Per-question Reason (R) for assertion_reason type */
+  reasonText: {
+    type: String,
+    trim: true,
+    default: '',
+  },
+  /** Column I entries for match_following (e.g. [{ key: 'A', text: 'Density' }]) */
+  matchColumnI: [{
+    key: { type: String, trim: true, default: '' },
+    text: { type: String, trim: true, default: '' },
+  }],
+  /** Column II entries for match_following */
+  matchColumnII: [{
+    key: { type: String, trim: true, default: '' },
+    text: { type: String, trim: true, default: '' },
+  }],
   marks: {
     type: Number,
     required: true,
