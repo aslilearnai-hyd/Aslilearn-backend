@@ -860,6 +860,7 @@ export async function extractQuestionsFromPdfViaGemini({
   mimeType = 'application/pdf',
   /** Set for Word uploads: the paper as text, since .docx cannot be inlined. */
   documentText = '',
+  fastMode = false,
 }) {
   const apiKey = getGeminiApiKey();
   if (!apiKey) {
@@ -946,7 +947,8 @@ Important rules:
   // paper (4 range chunks + gap-fill); the cap is headroom, not the normal path.
   const maxCallsPerUpload = (() => {
     const n = Number(process.env.GEMINI_PDF_MAX_CALLS);
-    return Number.isFinite(n) && n >= 3 ? Math.min(n, 40) : 14;
+    const fallback = fastMode ? 8 : 14;
+    return Number.isFinite(n) && n >= 3 ? Math.min(n, 40) : fallback;
   })();
   const usageTotals = { calls: 0, promptTokens: 0, outputTokens: 0 };
   const callBudgetExhausted = () => usageTotals.calls >= maxCallsPerUpload;
@@ -1353,7 +1355,8 @@ Important rules:
     // Gap-fill: re-ask specifically for missing printed numbers (e.g. 79/80 left 1 gap).
     let missing = missingQuestionNumbers(refined);
     let gapPass = 0;
-    while (missing.length > 0 && gapPass < 3 && !callBudgetExhausted()) {
+    const maxGapPasses = fastMode ? 1 : 3;
+    while (missing.length > 0 && gapPass < maxGapPasses && !callBudgetExhausted()) {
       gapPass += 1;
       // First passes: small batches. Last passes: one question at a time (more reliable).
       const batchSize = gapPass <= 2 ? 5 : 1;
@@ -1417,10 +1420,13 @@ Important rules:
       );
     } else {
       console.warn('[PDF_EXAM_EXTRACT] answer key NOT applied:', keyTrust.reason);
-      // No trustworthy key, so the answers must stand on their own: re-solve
-      // them independently, then surface any the explanation contradicts.
-      refined = await verifyAnswersWithTextPass(model, refined);
-      refined = flagAnswersContradictedByExplanation(refined);
+      // Fast mode skips extra answer-verification passes to reduce latency.
+      if (!fastMode) {
+        // No trustworthy key, so the answers must stand on their own: re-solve
+        // them independently, then surface any the explanation contradicts.
+        refined = await verifyAnswersWithTextPass(model, refined);
+        refined = flagAnswersContradictedByExplanation(refined);
+      }
     }
 
     // Prefer stable order by printed question number when available
@@ -3387,6 +3393,7 @@ async function buildPdfConvertPayload({
   originalname,
   documentText: initialDocumentText = '',
   onProgress,
+  fastMode = false,
 }) {
   const mime = String(mimeType || '').toLowerCase();
   const isDocx = isDocxUpload(originalname, mimeType);
@@ -3420,6 +3427,7 @@ async function buildPdfConvertPayload({
     buffer,
     mimeType: mimeType || 'application/pdf',
     documentText,
+    fastMode,
   });
 
   const normalizedBase = rows
@@ -3454,13 +3462,16 @@ async function buildPdfConvertPayload({
     })
     .filter((r) => r.questionText);
 
-  onProgress?.('Enriching questions (passages / figures)…');
-  const enriched = await enrichExtractedExamQuestions({
-    pdfBuffer: isDocx ? null : buffer,
-    fullText: documentText,
-    rows: normalizedBase,
-    examId,
-  });
+  let enriched = { rows: normalizedBase, meta: {} };
+  if (!fastMode) {
+    onProgress?.('Enriching questions (passages / figures)…');
+    enriched = await enrichExtractedExamQuestions({
+      pdfBuffer: isDocx ? null : buffer,
+      fullText: documentText,
+      rows: normalizedBase,
+      examId,
+    });
+  }
 
   const normalized = (enriched.rows || []).map((r, idx) => {
     const flags = Array.isArray(r.validationFlags) ? [...r.validationFlags] : [];
@@ -3564,6 +3575,9 @@ export const convertPdfToQuestions = async (req, res) => {
       }
     }
 
+    const fastMode =
+      String(req.body?.fastMode ?? req.query?.fastMode ?? '1').toLowerCase() !== 'false';
+
     const {
       createExamPdfConvertJob,
       runExamPdfConvertJob,
@@ -3576,6 +3590,7 @@ export const convertPdfToQuestions = async (req, res) => {
       examId: String(examId),
       originalname,
       userId: String(req.user?._id || req.user?.id || ''),
+      fastMode,
     });
 
     // Fire-and-forget — client polls GET …/pdf-convert/jobs/:jobId
@@ -3588,6 +3603,7 @@ export const convertPdfToQuestions = async (req, res) => {
           originalname,
           documentText,
           onProgress,
+          fastMode,
         }),
       );
     });
@@ -3596,7 +3612,7 @@ export const convertPdfToQuestions = async (req, res) => {
       success: true,
       async: true,
       jobId: job.id,
-      message: 'Extraction started. Poll job status until complete.',
+      message: `Extraction started (${fastMode ? 'fast mode' : 'full mode'}). Poll job status until complete.`,
     });
   } catch (error) {
     console.error('❌ convertPdfToQuestions error:', error);
