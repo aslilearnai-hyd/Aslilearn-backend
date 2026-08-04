@@ -3380,18 +3380,149 @@ export const bulkUploadQuestions = async (req, res) => {
   }
 };
 
+async function buildPdfConvertPayload({
+  examId,
+  buffer,
+  mimeType,
+  originalname,
+  documentText: initialDocumentText = '',
+  onProgress,
+}) {
+  const mime = String(mimeType || '').toLowerCase();
+  const isDocx = isDocxUpload(originalname, mimeType);
+  if (!mime.includes('pdf') && !isDocx) {
+    const err = new Error('Only PDF or Word (.docx) files are allowed');
+    err.status = 400;
+    throw err;
+  }
+
+  let documentText = String(initialDocumentText || '');
+  if (isDocx) {
+    try {
+      const parsedDocx = extractDocxQuestionPaper(buffer);
+      documentText = parsedDocx.text;
+    } catch (docxError) {
+      const err = new Error(`Could not read that Word file: ${docxError.message}`);
+      err.status = 400;
+      throw err;
+    }
+    if (documentText.trim().length < 40) {
+      const err = new Error(
+        'That Word file contains no readable text. If the questions are pictures inside the document, upload the paper as a PDF instead.',
+      );
+      err.status = 422;
+      throw err;
+    }
+  }
+
+  onProgress?.('Reading paper with Gemini…');
+  const { rows, usage, answerKey } = await extractQuestionsFromPdfViaGemini({
+    buffer,
+    mimeType: mimeType || 'application/pdf',
+    documentText,
+  });
+
+  const normalizedBase = rows
+    .map((r, idx) => {
+      const questionTypeRaw = String(r?.questionType || '').trim().toUpperCase();
+      const mappedType =
+        questionTypeRaw === 'MSQ' ? 'multiple' : questionTypeRaw === 'INTEGER' ? 'integer' : 'mcq';
+      const subject = String(r?.subject ?? '').trim().toLowerCase();
+      const marks = Number(r?.marks);
+      const qn = Number(r?.questionNumber);
+      return {
+        row: idx + 1,
+        questionNumber: Number.isFinite(qn) && qn >= 1 ? Math.floor(qn) : undefined,
+        questionText: String(r?.questionText || '').trim(),
+        questionType: mappedType,
+        subject,
+        marks: Number.isFinite(marks) && marks > 0 ? marks : 1,
+        option1: String(r?.option1 || '').trim(),
+        option2: String(r?.option2 || '').trim(),
+        option3: String(r?.option3 || '').trim(),
+        option4: String(r?.option4 || '').trim(),
+        correctAnswer: String(r?.correctAnswer || '').trim(),
+        explanation: String(r?.explanation || '').trim(),
+        questionImage: String(r?.questionImage || '').trim(),
+        hasFigure: r?.hasFigure === true,
+        answerConflict: r?.answerConflict === true,
+        conflictReason: String(r?.conflictReason || ''),
+        secondOpinionAnswer: String(r?.secondOpinionAnswer || '').trim(),
+        passageId: '',
+        passageText: '',
+      };
+    })
+    .filter((r) => r.questionText);
+
+  onProgress?.('Enriching questions (passages / figures)…');
+  const enriched = await enrichExtractedExamQuestions({
+    pdfBuffer: isDocx ? null : buffer,
+    fullText: documentText,
+    rows: normalizedBase,
+    examId,
+  });
+
+  const normalized = (enriched.rows || []).map((r, idx) => {
+    const flags = Array.isArray(r.validationFlags) ? [...r.validationFlags] : [];
+    let note = String(r.validationNote || '');
+    if (r.answerConflict === true) {
+      flags.push('answer_conflict');
+      const second = String(r.secondOpinionAnswer || '').trim();
+      note =
+        r.conflictReason === 'second_opinion' && second
+          ? `Answer needs checking — solving this question again gives "${second.slice(0, 60)}"`
+          : r.conflictReason === 'explanation'
+            ? "Answer needs checking — this question's own explanation points to a different option"
+            : r.conflictReason === 'printed_key'
+              ? "Answer needs checking — the paper's printed key disagrees with the question"
+              : 'Answer needs checking';
+    }
+    return {
+      ...r,
+      row: idx + 1,
+      questionImage: String(r.questionImage || '').trim(),
+      passageText: String(r.passageText || '').trim(),
+      passageId: String(r.passageId || '').trim(),
+      solvable: r.solvable !== false && r.answerConflict !== true,
+      validationFlags: flags,
+      validationNote: note,
+    };
+  });
+
+  const flagged = normalized.filter((r) => !r.solvable).length;
+  const withImages = normalized.filter((r) => r.questionImage).length;
+  const message =
+    `Extracted ${normalized.length} question(s) from PDF` +
+    (withImages ? `, ${withImages} with figure(s)` : '') +
+    (flagged ? `, ${flagged} flagged for review` : '') +
+    '. ' +
+    (answerKey?.found && !answerKey?.applied
+      ? `WARNING: the printed answer key was NOT used because ${answerKey.reason}. ` +
+        'Answers below were read from the questions themselves — please check them before saving.'
+      : answerKey?.applied && answerKey?.conflictCount
+        ? `Printed answer key applied; ${answerKey.conflictCount} question(s) where it disagrees are flagged.`
+        : answerKey?.applied
+          ? 'Printed answer key applied.'
+          : 'No printed answer key found — answers were read from the questions.');
+
+  return {
+    success: true,
+    data: normalized,
+    meta: {
+      ...(enriched.meta || {}),
+      flaggedCount: flagged,
+      withImages,
+      extraction: usage,
+      answerKey,
+    },
+    message,
+  };
+}
+
 // Convert PDF questions to normalized row format for preview / CSV download.
+// Runs as a background job so nginx's ~5 min proxy_read_timeout cannot 504 the browser.
 export const convertPdfToQuestions = async (req, res) => {
   try {
-    // Keep the HTTP socket open for long Gemini runs (no idle kill on this route).
-    try {
-      req.setTimeout?.(0);
-      res.setTimeout?.(0);
-      req.socket?.setTimeout?.(0);
-    } catch {
-      /* ignore */
-    }
-
     const { examId } = req.params;
     if (!mongoose.Types.ObjectId.isValid(examId)) {
       return res.status(400).json({ success: false, message: 'Invalid exam ID format' });
@@ -3433,119 +3564,114 @@ export const convertPdfToQuestions = async (req, res) => {
       }
     }
 
-    const { rows, usage, answerKey } = await extractQuestionsFromPdfViaGemini({
-      buffer: req.file.buffer,
-      mimeType: req.file.mimetype || 'application/pdf',
-      documentText,
+    const {
+      createExamPdfConvertJob,
+      runExamPdfConvertJob,
+    } = await import('../services/exam-pdf-convert-job-service.js');
+
+    const fileBuffer = Buffer.from(req.file.buffer);
+    const mimeType = req.file.mimetype || 'application/pdf';
+    const originalname = req.file.originalname || 'paper.pdf';
+    const job = createExamPdfConvertJob({
+      examId: String(examId),
+      originalname,
+      userId: String(req.user?._id || req.user?.id || ''),
     });
 
-    const normalizedBase = rows
-      .map((r, idx) => {
-        const questionTypeRaw = String(r?.questionType || '').trim().toUpperCase();
-        const mappedType =
-          questionTypeRaw === 'MSQ' ? 'multiple' : questionTypeRaw === 'INTEGER' ? 'integer' : 'mcq';
-        const subject = String(r?.subject ?? '').trim().toLowerCase();
-        const marks = Number(r?.marks);
-        const qn = Number(r?.questionNumber);
-        return {
-          row: idx + 1,
-          questionNumber: Number.isFinite(qn) && qn >= 1 ? Math.floor(qn) : undefined,
-          questionText: String(r?.questionText || '').trim(),
-          questionType: mappedType,
-          subject,
-          marks: Number.isFinite(marks) && marks > 0 ? marks : 1,
-          option1: String(r?.option1 || '').trim(),
-          option2: String(r?.option2 || '').trim(),
-          option3: String(r?.option3 || '').trim(),
-          option4: String(r?.option4 || '').trim(),
-          correctAnswer: String(r?.correctAnswer || '').trim(),
-          explanation: String(r?.explanation || '').trim(),
-          questionImage: String(r?.questionImage || '').trim(),
-          hasFigure: r?.hasFigure === true,
-          answerConflict: r?.answerConflict === true,
-          conflictReason: String(r?.conflictReason || ''),
-          secondOpinionAnswer: String(r?.secondOpinionAnswer || '').trim(),
-          passageId: '',
-          passageText: '',
-        };
-      })
-      .filter((r) => r.questionText);
-
-    const enriched = await enrichExtractedExamQuestions({
-      // A .docx cannot be parsed as a PDF, so hand enrichment the text directly;
-      // passage/assertion detection works off text either way.
-      pdfBuffer: isDocx ? null : req.file.buffer,
-      fullText: documentText,
-      rows: normalizedBase,
-      examId,
+    // Fire-and-forget — client polls GET …/pdf-convert/jobs/:jobId
+    setImmediate(() => {
+      void runExamPdfConvertJob(job.id, (onProgress) =>
+        buildPdfConvertPayload({
+          examId,
+          buffer: fileBuffer,
+          mimeType,
+          originalname,
+          documentText,
+          onProgress,
+        }),
+      );
     });
 
-    const normalized = (enriched.rows || []).map((r, idx) => {
-      const flags = Array.isArray(r.validationFlags) ? [...r.validationFlags] : [];
-      let note = String(r.validationNote || '');
-      if (r.answerConflict === true) {
-        flags.push('answer_conflict');
-        const second = String(r.secondOpinionAnswer || '').trim();
-        note =
-          r.conflictReason === 'second_opinion' && second
-            ? `Answer needs checking — solving this question again gives "${second.slice(0, 60)}"`
-            : r.conflictReason === 'explanation'
-              ? "Answer needs checking — this question's own explanation points to a different option"
-              : r.conflictReason === 'printed_key'
-                ? "Answer needs checking — the paper's printed key disagrees with the question"
-                : 'Answer needs checking';
-      }
-      return {
-        ...r,
-        row: idx + 1,
-        questionImage: String(r.questionImage || '').trim(),
-        passageText: String(r.passageText || '').trim(),
-        passageId: String(r.passageId || '').trim(),
-        solvable: r.solvable !== false && r.answerConflict !== true,
-        validationFlags: flags,
-        validationNote: note,
-      };
-    });
-
-    const flagged = normalized.filter((r) => !r.solvable).length;
-    const withImages = normalized.filter((r) => r.questionImage).length;
-
-    return res.json({
+    return res.status(202).json({
       success: true,
-      data: normalized,
-      meta: {
-        ...(enriched.meta || {}),
-        flaggedCount: flagged,
-        withImages,
-        extraction: usage,
-        answerKey,
-      },
-      message:
-        `Extracted ${normalized.length} question(s) from PDF` +
-        (withImages ? `, ${withImages} with figure(s)` : '') +
-        (flagged ? `, ${flagged} flagged for review` : '') +
-        '. ' +
-        (answerKey?.found && !answerKey?.applied
-          ? `WARNING: the printed answer key was NOT used because ${answerKey.reason}. ` +
-            'Answers below were read from the questions themselves — please check them before saving.'
-          : answerKey?.applied && answerKey?.conflictCount
-            ? `Printed answer key applied; ${answerKey.conflictCount} question(s) where it disagrees are flagged.`
-            : answerKey?.applied
-              ? 'Printed answer key applied.'
-              : 'No printed answer key found — answers were read from the questions.'),
+      async: true,
+      jobId: job.id,
+      message: 'Extraction started. Poll job status until complete.',
     });
   } catch (error) {
     console.error('❌ convertPdfToQuestions error:', error);
     const msg = String(error?.message || 'Failed to extract questions from PDF');
     const status =
-      /Gemini API key is missing/i.test(msg) ? 503 :
+      error?.status ||
+      (/Gemini API key is missing/i.test(msg) ? 503 :
       /quota exceeded|resource_exhausted|429/i.test(msg) ? 429 :
       msg.includes('Gemini PDF extraction failed') || msg.includes('Gemini PDF upload blocked') ? 502 :
       msg.includes('invalid JSON') || msg.includes('did not return a JSON array') ? 422 :
-      500;
+      500);
     return res.status(status).json({
       success: false,
       message: msg,
+    });
+  }
+};
+
+export const getPdfConvertJobStatus = async (req, res) => {
+  try {
+    const { examId, jobId } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(examId)) {
+      return res.status(400).json({ success: false, message: 'Invalid exam ID format' });
+    }
+    const exam = await Exam.findById(examId).select('_id createdByRole');
+    if (!exam || exam.createdByRole !== 'super-admin') {
+      return res.status(404).json({ success: false, message: 'Exam not found or not accessible' });
+    }
+
+    const { getExamPdfConvertJob } = await import('../services/exam-pdf-convert-job-service.js');
+    const job = getExamPdfConvertJob(jobId);
+    if (!job) {
+      return res.status(404).json({ success: false, message: 'Extraction job not found or expired' });
+    }
+    if (String(job.meta?.examId || '') !== String(examId)) {
+      return res.status(404).json({ success: false, message: 'Extraction job not found for this exam' });
+    }
+
+    if (job.status === 'failed') {
+      return res.status(200).json({
+        success: false,
+        async: true,
+        jobId: job.id,
+        status: job.status,
+        progress: job.progress,
+        message: job.error || 'Extraction failed',
+      });
+    }
+
+    if (job.status === 'completed' && job.result) {
+      return res.json({
+        success: true,
+        async: true,
+        jobId: job.id,
+        status: job.status,
+        progress: job.progress,
+        data: job.result.data,
+        meta: job.result.meta,
+        message: job.result.message,
+      });
+    }
+
+    return res.json({
+      success: true,
+      async: true,
+      jobId: job.id,
+      status: job.status,
+      progress: job.progress || 'Working…',
+      message: job.progress || 'Extraction in progress',
+    });
+  } catch (error) {
+    console.error('❌ getPdfConvertJobStatus error:', error);
+    return res.status(500).json({
+      success: false,
+      message: error?.message || 'Failed to read extraction job status',
     });
   }
 };

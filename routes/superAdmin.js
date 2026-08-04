@@ -120,6 +120,7 @@ import {
   bulkUploadExams,
   bulkUploadQuestions,
   convertPdfToQuestions,
+  getPdfConvertJobStatus,
   updateQuestion,
   reorderQuestions,
   deleteQuestion,
@@ -1325,6 +1326,7 @@ const acceptQuestionPaperUpload = (req, res, next) => {
 };
 
 router.post('/exams/:examId/questions/pdf-convert', acceptQuestionPaperUpload, convertPdfToQuestions);
+router.get('/exams/:examId/questions/pdf-convert/jobs/:jobId', getPdfConvertJobStatus);
 router.delete('/exams/:examId/questions/:questionId', deleteQuestion);
 router.delete('/exams/:examId/questions', deleteAllQuestions);
 
@@ -1339,6 +1341,7 @@ console.log('✅ Super Admin exam routes registered:', {
   'POST /exams/:examId/questions': 'addQuestion',
   'POST /exams/:examId/questions/bulk-upload': 'bulkUploadQuestions',
   'POST /exams/:examId/questions/pdf-convert': 'convertPdfToQuestions',
+  'GET /exams/:examId/questions/pdf-convert/jobs/:jobId': 'getPdfConvertJobStatus',
   'DELETE /exams/:examId/questions/:questionId': 'deleteQuestion',
   'DELETE /exams/:examId/questions': 'deleteAllQuestions'
 });
