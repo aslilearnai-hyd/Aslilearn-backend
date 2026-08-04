@@ -846,7 +846,7 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId } = {}) {
       try {
         const shotResult = await parser.getScreenshot({
           partial: [...screenshotPages].sort((a, b) => a - b),
-          scale: 1.75,
+          scale: 1.4,
           imageBuffer: true,
           imageDataUrl: false,
         });
