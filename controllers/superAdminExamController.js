@@ -1614,6 +1614,34 @@ const DEFAULT_ASSERTION_REASON_DIRECTIONS = 'Directions: Each question is follow
 
 const ALLOWED_QUESTION_TYPES = ['mcq', 'multiple', 'integer', 'assertion_reason', 'match_following'];
 
+/**
+ * Extract a numeric integer answer from PDF/Gemini output.
+ * Accepts: 42, "42", "-3", "10.0", "Ans: 25", "25 marks", " = 7 ", etc.
+ */
+function parseIntegerAnswer(raw) {
+  if (typeof raw === 'number' && Number.isFinite(raw)) {
+    return Math.trunc(raw);
+  }
+  if (raw === null || raw === undefined) return null;
+  let s = String(raw).trim();
+  if (!s) return null;
+  // Strip common wrappers / labels
+  s = s
+    .replace(/^(?:ans(?:wer)?|correct(?:\s*answer)?|key|sol(?:ution)?)\s*[:.\-=]?\s*/i, '')
+    .replace(/,/g, '')
+    .trim();
+  // Pure integer or whole float
+  if (/^[+-]?\d+(?:\.0+)?$/.test(s)) {
+    const n = Number(s);
+    return Number.isFinite(n) ? Math.trunc(n) : null;
+  }
+  // First signed integer token in the string (ignore units / trailing text)
+  const m = s.match(/[+-]?\d+/);
+  if (!m) return null;
+  const n = parseInt(m[0], 10);
+  return Number.isFinite(n) ? n : null;
+}
+
 const isChoiceQuestionType = (t) =>
   t === 'mcq' || t === 'multiple' || t === 'assertion_reason' || t === 'match_following';
 
@@ -2488,10 +2516,12 @@ export const addQuestion = async (req, res) => {
     let formattedCorrectAnswer = correctAnswer;
     
     if (normalizedType === 'integer') {
-      // Integer type: correctAnswer should be a number
-      formattedCorrectAnswer = typeof correctAnswer === 'number' ? correctAnswer : parseInt(correctAnswer);
-      if (isNaN(formattedCorrectAnswer)) {
-        return res.status(400).json({ success: false, message: 'Invalid integer answer' });
+      formattedCorrectAnswer = parseIntegerAnswer(correctAnswer);
+      if (formattedCorrectAnswer === null) {
+        return res.status(400).json({
+          success: false,
+          message: 'Invalid integer answer — expected a number (e.g. 42 or Ans: 42)',
+        });
       }
     } else if (normalizedType === 'multiple' && Array.isArray(correctAnswer)) {
       // For multiple choice, map the indices to option texts
@@ -3271,12 +3301,12 @@ export const bulkUploadQuestions = async (req, res) => {
         let correctAnswer;
         if (questionType === 'integer') {
           const integerAns = getRowValue('integeranswer', 'integer_answer', 'correctanswer', 'correct_answer', 'answer');
-          if (!integerAns) {
+          if (!integerAns && integerAns !== 0) {
             errors.push(`Row ${i + 1}: integerAnswer is required for integer type questions`);
             continue;
           }
-          const parsedInt = parseInt(integerAns);
-          if (isNaN(parsedInt)) {
+          const parsedInt = parseIntegerAnswer(integerAns);
+          if (parsedInt === null) {
             errors.push(`Row ${i + 1}: Invalid integer answer`);
             continue;
           }
@@ -4184,12 +4214,12 @@ export const updateQuestion = async (req, res) => {
       }
 
       if (effectiveType === 'integer') {
-        formattedCorrectAnswer =
-          typeof formattedCorrectAnswer === 'number'
-            ? formattedCorrectAnswer
-            : parseInt(formattedCorrectAnswer, 10);
-        if (Number.isNaN(formattedCorrectAnswer)) {
-          return res.status(400).json({ success: false, message: 'Invalid integer answer' });
+        formattedCorrectAnswer = parseIntegerAnswer(formattedCorrectAnswer);
+        if (formattedCorrectAnswer === null) {
+          return res.status(400).json({
+            success: false,
+            message: 'Invalid integer answer — expected a number (e.g. 42 or Ans: 42)',
+          });
         }
       } else if (effectiveType === 'multiple' && Array.isArray(formattedCorrectAnswer)) {
         formattedCorrectAnswer = formattedCorrectAnswer.map((idx) => {
