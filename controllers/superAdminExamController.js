@@ -1359,11 +1359,11 @@ Important rules:
     // Gap-fill: re-ask specifically for missing printed numbers (e.g. 79/80 left 1 gap).
     let missing = missingQuestionNumbers(refined);
     let gapPass = 0;
-    const maxGapPasses = fastMode ? 1 : 3;
+    // Fast: one parallel gap pass. Thorough: up to 2 (was 3 — rarely worth the wait).
+    const maxGapPasses = fastMode ? 1 : 2;
     while (missing.length > 0 && gapPass < maxGapPasses && !callBudgetExhausted()) {
       gapPass += 1;
-      // First passes: small batches. Last passes: one question at a time (more reliable).
-      const batchSize = gapPass <= 2 ? 5 : 1;
+      const batchSize = gapPass === 1 ? 6 : 1;
       console.log('[PDF_EXAM_EXTRACT] gap-fill missing numbers', {
         model,
         pass: gapPass,
@@ -1371,28 +1371,34 @@ Important rules:
         missingCount: missing.length,
         missing: missing.slice(0, 20),
       });
-      for (const batch of chunkMissingIds(missing, batchSize)) {
-        if (callBudgetExhausted()) break;
-        const list = batch.join(', ');
-        const alone = batch.length === 1;
-        const chunk = await extractOnce(
-          model,
-          alone
-            ? `Scope: extract ONLY question number ${batch[0]}. ` +
-              `This is mandatory — locate the printed "${batch[0]}." question in the paper and return exactly one object. ` +
-              `Set questionNumber to ${batch[0]}. Include Match-the-Following / Assertion-Reason / Case-based if that is Q${batch[0]}. ` +
-              `If it is case-based, questionText MUST include the full Case/passage paragraph first, then the question stem. ` +
-              `Copy all four options a)–d) into option1–option4.`
-            : `Scope: extract ONLY these exact question numbers: ${list}. ` +
-              `Return one object per number if that question exists in the paper. ` +
-              `Set questionNumber exactly. For case-based items, include the full case/passage in questionText. ` +
-              `Do not skip Match-the-Following or Assertion-Reason items.`,
-        );
-        if (chunk.ok && Array.isArray(chunk.parsed)) {
-          // Force questionNumber when single-target extract omitted it
-          if (alone && chunk.parsed.length === 1 && !Number(chunk.parsed[0]?.questionNumber)) {
-            chunk.parsed[0].questionNumber = batch[0];
-          }
+      const batches = chunkMissingIds(missing, batchSize);
+      const gapResults = await Promise.all(
+        batches.map((batch) => {
+          if (callBudgetExhausted()) return Promise.resolve(null);
+          const list = batch.join(', ');
+          const alone = batch.length === 1;
+          return extractOnce(
+            model,
+            alone
+              ? `Scope: extract ONLY question number ${batch[0]}. ` +
+                `This is mandatory — locate the printed "${batch[0]}." question in the paper and return exactly one object. ` +
+                `Set questionNumber to ${batch[0]}. Include Match-the-Following / Assertion-Reason / Case-based if that is Q${batch[0]}. ` +
+                `If it is case-based, questionText MUST include the full Case/passage paragraph first, then the question stem. ` +
+                `Copy all four options a)–d) into option1–option4.`
+              : `Scope: extract ONLY these exact question numbers: ${list}. ` +
+                `Return one object per number if that question exists in the paper. ` +
+                `Set questionNumber exactly. For case-based items, include the full case/passage in questionText. ` +
+                `Do not skip Match-the-Following or Assertion-Reason items.`,
+          ).then((chunk) => {
+            if (alone && chunk?.ok && Array.isArray(chunk.parsed) && chunk.parsed.length === 1 && !Number(chunk.parsed[0]?.questionNumber)) {
+              chunk.parsed[0].questionNumber = batch[0];
+            }
+            return chunk;
+          });
+        }),
+      );
+      for (const chunk of gapResults) {
+        if (chunk?.ok && Array.isArray(chunk.parsed)) {
           collected.push(...chunk.parsed);
         }
       }
@@ -3563,14 +3569,24 @@ async function buildPdfConvertPayload({
 
   let enriched = { rows: normalizedBase, meta: {} };
   if (fastMode) {
-    // Still attach shared matter for AR / Match / Case so every linked Q shows the same block
-    onProgress?.('Attaching shared matter (fast)…');
-    const { attachSharedMatterLightweight } = await import('../services/exam-pdf-enrichment.js');
+    // Fast Gemini path: still attach shared matter + PDF figures/match screenshots.
+    onProgress?.('Attaching shared matter & figures…');
+    const {
+      attachSharedMatterLightweight,
+      attachPdfFiguresToRows,
+    } = await import('../services/exam-pdf-enrichment.js');
     enriched = await attachSharedMatterLightweight({
       rows: normalizedBase,
       fullText: documentText,
       pdfBuffer: isDocx ? null : buffer,
     });
+    if (!isDocx && buffer) {
+      onProgress?.('Capturing figures / match tables…');
+      enriched = {
+        ...enriched,
+        rows: await attachPdfFiguresToRows(buffer, enriched.rows || [], { examId }),
+      };
+    }
   } else {
     onProgress?.('Enriching questions (passages / figures)…');
     enriched = await enrichExtractedExamQuestions({
@@ -3690,8 +3706,13 @@ export const convertPdfToQuestions = async (req, res) => {
       }
     }
 
-    const fastMode =
-      String(req.body?.fastMode ?? req.query?.fastMode ?? '0').toLowerCase() === 'true';
+    // Default FAST extract (fewer Gemini round-trips). Photos still attach via
+    // screenshot/embed. Pass thoroughMode=true (or fastMode=false) for extra
+    // gap-fill + answer verification (often 5–10+ minutes on large papers).
+    const thorough =
+      String(req.body?.thoroughMode ?? req.query?.thoroughMode ?? '0').toLowerCase() === 'true';
+    const fastRaw = String(req.body?.fastMode ?? req.query?.fastMode ?? (thorough ? 'false' : 'true')).toLowerCase();
+    const fastMode = !thorough && (fastRaw === 'true' || fastRaw === '1' || fastRaw === 'yes');
 
     const {
       createExamPdfConvertJob,
