@@ -2436,10 +2436,6 @@ export const addQuestion = async (req, res) => {
       passageId,
       passageText,
     });
-    if (normalizedType === 'assertion_reason' && !matterFields.sharedMatterText) {
-      matterFields.sharedMatterText = DEFAULT_ASSERTION_REASON_DIRECTIONS;
-      matterFields.sharedMatterKind = matterFields.sharedMatterKind || 'assertion_reason';
-    }
 
     // Validate ObjectId format
     if (!mongoose.Types.ObjectId.isValid(examId)) {
@@ -2466,6 +2462,10 @@ export const addQuestion = async (req, res) => {
     }
 
     const normalizedType = String(questionType || 'mcq').trim().toLowerCase();
+    if (normalizedType === 'assertion_reason' && !matterFields.sharedMatterText) {
+      matterFields.sharedMatterText = DEFAULT_ASSERTION_REASON_DIRECTIONS;
+      matterFields.sharedMatterKind = matterFields.sharedMatterKind || 'assertion_reason';
+    }
     if (!ALLOWED_QUESTION_TYPES.includes(normalizedType)) {
       return res.status(400).json({
         success: false,
