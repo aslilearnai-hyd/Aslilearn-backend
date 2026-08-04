@@ -816,18 +816,24 @@ function rowWantsFigure(row) {
   if (String(row?.questionImage || '').trim()) return false;
   // Assertion–Reason: text options only — never auto photos
   if (rowIsAssertionReason(row)) return false;
-  // Case/passage: NEVER auto-screenshot. "first diagram" in the case text was
-  // capturing Directions/Case paragraphs as fake figures (duplicate of yellow card).
-  if (row?.sharedMatterKind === 'case' || row?.passageId) return false;
 
   // Match-the-Following: capture Column I/II table photo
   if (rowLooksLikeMatchTable(row) || row?.questionType === 'match_following') return true;
 
+  const matter = String(row?.sharedMatterText || '');
+  const matterForHint = looksLikeArDirections(matter) ? '' : matter;
+  const text = `${String(row?.passageText || '')}\n${matterForHint}\n${String(row?.questionText || '')}`;
+
+  // Case/passage with real diagram references — attach a diagram crop (not directions text)
+  if (row?.sharedMatterKind === 'case' || row?.passageId) {
+    return /\b(diagram|figure|graph|triangle\s+law|parallelogram\s+law|shown\s+below|as\s+shown)\b/i.test(
+      text,
+    );
+  }
+
   // Do NOT trust bare hasFigure from Gemini
-  const text = String(row?.questionText || '');
-  // Strong stem cues only — avoid weak lone word "diagram" inside unrelated prose
   if (
-    /\b(shown\s+below|shown\s+in\s+the\s+(?:figure|diagram|graph)|velocity[- ]time\s+graph|distance[- ]time\s+graph|vernier|calliper|caliper|screw\s*gauge|refer\s+to\s+(?:the\s+)?(?:figure|diagram)|given\s+figure)\b/i.test(
+    /\b(shown\s+below|shown\s+in\s+the\s+(?:figure|diagram|graph)|velocity[- ]time|distance[- ]time|vernier|calliper|caliper|screw\s*gauge|refer\s+to\s+(?:the\s+)?(?:figure|diagram)|given\s+figure|study\s+the\s+figure)\b/i.test(
       text,
     )
   ) {
@@ -962,13 +968,18 @@ export function applyExtractionValidation(rows) {
       next.questionImage = '';
       next.hasFigure = false;
     }
-    // Case questions: drop auto screenshots (they were text dumps of the passage)
-    if (next.sharedMatterKind === 'case' || next.passageId) {
-      next = { ...next, questionImage: '', hasFigure: false };
-    }
-    // Drop false Gemini hasFigure photos on text-only questions
+    // Keep case/diagram/match photos when extract attached them.
+    // (Previously wiping all case images left every diagram blank.)
     if (String(next.questionImage || '').trim() && !rowWantsFigure({ ...next, questionImage: '' })) {
-      next = { ...next, questionImage: '', hasFigure: false };
+      // Only strip when the row clearly should not have a figure (AR already cleared)
+      if (!rowLooksLikeMatchTable(next) && next.sharedMatterKind !== 'case' && !next.passageId) {
+        const t = String(next.questionText || '');
+        if (
+          !/\b(diagram|figure|graph|shown\s+below|vernier|calliper|caliper|screw\s*gauge)\b/i.test(t)
+        ) {
+          next = { ...next, questionImage: '', hasFigure: false };
+        }
+      }
     }
     // Match-the-Following keeps tight table photos when extract attached them
     const v = validateExtractedQuestionRow(next);
@@ -1127,7 +1138,8 @@ async function cropLooksLikePrintedText(buf, canvasApi) {
       if ((runs >= 5 && frac < 0.5) || runs >= 8) textLikeRows += 1;
     }
     if (inkRows < 6) return false;
-    return textLikeRows / inkRows >= 0.52;
+    // Stricter threshold so real graphs/diagrams (sparse ink) are not rejected as "text"
+    return textLikeRows / inkRows >= 0.68;
   } catch {
     return false;
   }
@@ -1139,6 +1151,7 @@ async function cropLooksLikePrintedText(buf, canvasApi) {
  */
 async function cropInkFigureRegion(fullBuf, canvasApi, opts = {}) {
   const tableMode = opts.tableMode === true;
+  const caseMode = opts.caseMode === true;
   const img = await canvasApi.loadImage(fullBuf);
   const w = img.width;
   const h = img.height;
@@ -1153,8 +1166,8 @@ async function cropInkFigureRegion(fullBuf, canvasApi, opts = {}) {
     return data[i] < 242 || data[i + 1] < 242 || data[i + 2] < 242;
   };
 
-  const yTop = Math.floor(h * 0.06);
-  const yBot = Math.floor(h * 0.94);
+  const yTop = Math.floor(h * (caseMode ? 0.08 : 0.06));
+  const yBot = Math.floor(h * (caseMode ? 0.72 : 0.94));
   const midX = Math.floor(w * 0.5);
   const step = Math.max(2, Math.floor(Math.min(w, h) / 400));
 
@@ -1183,17 +1196,16 @@ async function cropInkFigureRegion(fullBuf, canvasApi, opts = {}) {
       const samples = Math.max(1, Math.ceil(colW / step));
       const frac = ink / samples;
       const span = maxX >= 0 ? (maxX - minX) / colW : 0;
-      // Prefer figure/table geometry; de-prioritize dense text rows (many runs)
       const figureLike = tableMode
-        ? frac >= 0.025 && frac <= 0.85 && span >= 0.22 && runs <= 14
-        : frac >= 0.04 && frac <= 0.75 && span >= 0.2 && runs <= 10;
+        ? frac >= 0.02 && frac <= 0.88 && span >= 0.18 && runs <= 16
+        : frac >= 0.03 && frac <= 0.8 && span >= 0.16 && runs <= 12;
       const weakInk = tableMode
-        ? frac >= 0.015 && span >= 0.12 && runs <= 16
-        : frac >= 0.02 && span >= 0.14 && runs <= 12;
+        ? frac >= 0.012 && span >= 0.1 && runs <= 18
+        : frac >= 0.015 && span >= 0.12 && runs <= 14;
       rows.push({ y, frac, span, figureLike, weakInk, runs });
     }
 
-    const maxGap = tableMode ? 8 : 5;
+    const maxGap = tableMode || caseMode ? 8 : 6;
     let best = null;
     let i = 0;
     while (i < rows.length) {
@@ -1208,7 +1220,7 @@ async function cropInkFigureRegion(fullBuf, canvasApi, opts = {}) {
       while (j < rows.length) {
         if (rows[j].figureLike || rows[j].weakInk) {
           gaps = 0;
-          scoreSum += rows[j].span + rows[j].frac - Math.min(0.3, rows[j].runs * 0.02);
+          scoreSum += rows[j].span + rows[j].frac - Math.min(0.25, rows[j].runs * 0.015);
           if (rows[j].figureLike) strong += 1;
           j += 1;
         } else if (gaps < maxGap) {
@@ -1217,15 +1229,15 @@ async function cropInkFigureRegion(fullBuf, canvasApi, opts = {}) {
         } else break;
       }
       const runLen = j - i;
-      const minStrong = tableMode ? 5 : 6;
-      if (strong >= minStrong && runLen >= minStrong + 1) {
+      const minStrong = tableMode || caseMode ? 4 : 5;
+      if (strong >= minStrong && runLen >= minStrong) {
         const y0 = rows[i].y;
         const y1 = rows[Math.min(j - 1, rows.length - 1)].y + step;
         const heightFrac = (y1 - y0) / h;
-        const maxH = tableMode ? 0.48 : 0.34;
-        const minH = tableMode ? 0.1 : 0.08;
+        const maxH = tableMode ? 0.5 : caseMode ? 0.4 : 0.38;
+        const minH = tableMode ? 0.08 : 0.06;
         if (heightFrac >= minH && heightFrac <= maxH) {
-          const score = scoreSum / runLen + heightFrac * 1.2 + strong * 0.02;
+          const score = scoreSum / runLen + heightFrac * 1.3 + strong * 0.02;
           if (!best || score > best.score) best = { y0, y1, score, heightFrac, x0, x1 };
         }
       }
@@ -1234,22 +1246,40 @@ async function cropInkFigureRegion(fullBuf, canvasApi, opts = {}) {
     return best;
   };
 
+  // Case diagrams sit in left column on ASLI papers; match tables span width
   const candidates = tableMode
     ? [
         analyzeBand(Math.floor(w * 0.02), Math.floor(w * 0.98)),
         analyzeBand(Math.floor(w * 0.015), midX - 2),
       ].filter(Boolean)
-    : [
-        analyzeBand(Math.floor(w * 0.015), midX - 2),
-        analyzeBand(midX + 2, Math.floor(w * 0.985)),
-      ].filter(Boolean);
+    : caseMode
+      ? [
+          analyzeBand(Math.floor(w * 0.015), midX - 2),
+          analyzeBand(Math.floor(w * 0.02), Math.floor(w * 0.7)),
+        ].filter(Boolean)
+      : [
+          analyzeBand(Math.floor(w * 0.015), midX - 2),
+          analyzeBand(midX + 2, Math.floor(w * 0.985)),
+          analyzeBand(Math.floor(w * 0.02), Math.floor(w * 0.98)),
+        ].filter(Boolean);
 
-  if (!candidates.length) return null;
-  candidates.sort((a, b) => b.score - a.score);
-  const pick = candidates[0];
+  let pick = null;
+  if (candidates.length) {
+    candidates.sort((a, b) => b.score - a.score);
+    pick = candidates[0];
+  }
 
-  const padX = Math.floor(w * (tableMode ? 0.02 : 0.015));
-  const padY = Math.floor(h * (tableMode ? 0.035 : 0.04));
+  // Fallback so photos still come when ink heuristics miss (graphs / vector drawings)
+  if (!pick) {
+    const fx0 = Math.floor(w * 0.02);
+    const fx1 = caseMode || !tableMode ? midX - 2 : Math.floor(w * 0.98);
+    const fy0 = Math.floor(h * (caseMode ? 0.12 : 0.1));
+    const fy1 = Math.floor(h * (caseMode ? 0.48 : 0.42));
+    pick = { y0: fy0, y1: fy1, score: 0, heightFrac: (fy1 - fy0) / h, x0: fx0, x1: fx1 };
+  }
+
+  const padX = Math.floor(w * 0.02);
+  const padY = Math.floor(h * 0.03);
   const sx = Math.max(0, pick.x0 - padX);
   const sy = Math.max(0, pick.y0 - padY);
   const ex = Math.min(w, pick.x1 + padX);
@@ -1257,9 +1287,9 @@ async function cropInkFigureRegion(fullBuf, canvasApi, opts = {}) {
   const cw = ex - sx;
   const ch = ey - sy;
   const areaFrac = (cw * ch) / (w * h);
-  if (areaFrac > (tableMode ? 0.4 : 0.26)) return null;
-  if (ch > h * (tableMode ? 0.52 : 0.38)) return null;
-  if (cw < 70 || ch < Math.floor(h * 0.07)) return null;
+  if (areaFrac > (tableMode ? 0.45 : 0.32)) return null;
+  if (ch > h * (tableMode ? 0.55 : 0.45)) return null;
+  if (cw < 60 || ch < Math.floor(h * 0.06)) return null;
 
   const out = canvasApi.createCanvas(cw, ch);
   const octx = out.getContext('2d');
@@ -1268,13 +1298,35 @@ async function cropInkFigureRegion(fullBuf, canvasApi, opts = {}) {
   octx.drawImage(img, sx, sy, cw, ch, 0, 0, cw, ch);
   const buf = out.toBuffer('image/png');
 
+  // Only reject obvious text dumps — keep graphs/diagrams
   if (await cropLooksLikePrintedText(buf, canvasApi)) {
+    // One more chance: slightly smaller center crop of the same band
+    const sx2 = sx + Math.floor(cw * 0.05);
+    const sy2 = sy + Math.floor(ch * 0.08);
+    const cw2 = Math.floor(cw * 0.9);
+    const ch2 = Math.floor(ch * 0.75);
+    if (cw2 > 50 && ch2 > 40) {
+      const out2 = canvasApi.createCanvas(cw2, ch2);
+      const o2 = out2.getContext('2d');
+      o2.fillStyle = '#ffffff';
+      o2.fillRect(0, 0, cw2, ch2);
+      o2.drawImage(img, sx2, sy2, cw2, ch2, 0, 0, cw2, ch2);
+      const buf2 = out2.toBuffer('image/png');
+      if (!(await cropLooksLikePrintedText(buf2, canvasApi))) {
+        return {
+          buf: buf2,
+          key: `ink2:${sx2},${sy2},${cw2}x${ch2}:${buf2.length}`,
+          kind: tableMode ? 'match_table' : 'ink',
+          meta: { sx: sx2, sy: sy2, cw: cw2, ch: ch2 },
+        };
+      }
+    }
     return null;
   }
 
   return {
     buf,
-    key: `ink:${tableMode ? 'tbl:' : ''}${sx},${sy},${cw}x${ch}:${buf.length}`,
+    key: `ink:${tableMode ? 'tbl:' : caseMode ? 'case:' : ''}${sx},${sy},${cw}x${ch}:${buf.length}`,
     kind: tableMode ? 'match_table' : 'ink',
     meta: { sx, sy, cw, ch, areaFrac: Number(areaFrac.toFixed(3)) },
   };
@@ -1283,9 +1335,9 @@ async function cropInkFigureRegion(fullBuf, canvasApi, opts = {}) {
 /**
  * Attach PDF figures to questions.
  *
- * - Case/passage: no auto photos (avoids Directions text dumps)
- * - Match: full-width ink table crop; reject text-like slices
- * - Diagram MCQs: left/right column ink crop; reject text-like slices
+ * - Case/passage with diagram wording: left-column diagram crop (+ fallback band)
+ * - Match: full-width ink table crop; reject obvious text dumps only
+ * - Diagram MCQs (shown below / graphs): ink crop + fallback so photos actually attach
  * - Never use PDF-text Y fractions (2-column papers map wrong questions)
  */
 export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = true } = {}) {
@@ -1407,14 +1459,19 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
             ({ row }) =>
               rowLooksLikeMatchTable(row) || row?.questionType === 'match_following',
           );
+          const caseMode =
+            !tableMode &&
+            pageRows.some(
+              ({ row }) => row?.sharedMatterKind === 'case' || row?.passageId,
+            );
           try {
-            const tight = await cropInkFigureRegion(full, canvasApi, { tableMode });
+            const tight = await cropInkFigureRegion(full, canvasApi, { tableMode, caseMode });
             if (tight) {
               cropByPage.set(pageNumber, tight);
               ok += 1;
             } else {
               skip += 1;
-              console.warn('[PDF_ENRICH] no usable ink crop', { pageNumber, tableMode });
+              console.warn('[PDF_ENRICH] no usable ink crop', { pageNumber, tableMode, caseMode });
             }
           } catch (e) {
             skip += 1;
