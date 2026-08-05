@@ -863,6 +863,8 @@ export async function extractQuestionsFromPdfViaGemini({
   mimeType = 'application/pdf',
   /** Set for Word uploads: the paper as text, since .docx cannot be inlined. */
   documentText = '',
+  /** Embedded Word images (png/jpeg) sent with the text for diagram recognition. */
+  documentImages = [],
   fastMode = false,
 }) {
   const apiKey = getGeminiApiKey();
@@ -900,7 +902,7 @@ export async function extractQuestionsFromPdfViaGemini({
     answerKeyEntries: answerKeyByNumber.size,
   });
 
-  const buildPrompt = (rangeHint = '') => `Extract exam questions from this PDF and return ONLY valid JSON.
+  const buildPrompt = (rangeHint = '') => `Extract exam questions from this ${documentText ? 'Word/text question paper (images of diagrams may follow)' : 'PDF'} and return ONLY valid JSON.
 Preferred shape: {"questions":[ ... ]}. A bare JSON array of question objects is also accepted.
 Each question object must have these exact keys:
 questionNumber (printed number — mandatory), hasFigure (boolean), questionText, questionType (MCQ/MSQ/integer/assertion_reason/match_following), subject, marks (number), option1, option2, option3, option4, correctAnswer, explanation.
@@ -909,19 +911,20 @@ ${rangeHint}
 
 Important rules:
 - Extract EVERY matching question in scope (do not stop early).
-- This PDF should already exclude answer-key / rough-work pages — do not invent key tables.
+- This paper should already exclude answer-key / rough-work pages — do not invent key tables.
 - Include Single Correct, Multi Correct (MSQ), Assertion-Reason, Case-based, and Match-the-Following when they have options a)–d).
 - For Match-the-Following, put the matching codes into option1–option4 (e.g. "A-2, B-4, C-1, D-3").
 - Always set questionNumber to the printed question number (1, 2, 3…). NEVER omit it — every question in the paper has a printed number.
 - Set hasFigure=true when the question (or its case) refers to a picture, diagram, graph, figure, OR a Match-the-Following Column I/II table printed in the paper. Pure text/math questions (no diagram/table) get hasFigure=false.
-- For subject: read from PDF section headers (Mathematics→maths, Physics→physics, Chemistry→chemistry, Biology→biology). Otherwise "".
+- When diagram images are attached after the text, use them to understand figures and set hasFigure=true for those questions.
+- For subject: read from section headers (Mathematics→maths, Physics→physics, Chemistry→chemistry, Biology→biology). Otherwise "".
 - For MCQ/MSQ: correctAnswer may be a letter (a/b/c/d) or full option text.
 - For integer: correctAnswer is the numeric answer; options can be empty strings.
 - If four choices a)-d) are printed, the question is MCQ — even under an "Integer Value Type Questions" heading. Only use questionType "integer" when NO options are printed.
 - Your correctAnswer must be one of the printed options and must agree with your own explanation. Work out the answer, then pick the option that matches it.
 - Strip leading "Q1." / "1." from questionText only. Strip "A." / "(a)" prefixes from option bodies.
 - MATH FIDELITY (critical): Copy expressions EXACTLY as printed — same parentheses, nesting, and operator order.
-  Prefer Unicode: √ ∛ ² ³ − × ÷. Do NOT rewrite as "cube root of" / "sqrt" / "square root of" unless the PDF itself uses words.
+  Prefer Unicode: √ ∛ ² ³ − × ÷. Do NOT rewrite as "cube root of" / "sqrt" / "square root of" unless the paper itself uses words.
   Example: printed ∛(109 + √256) + √(117² − 108²) must stay that nesting — NEVER flatten to ∛(109 + √256 + √(...)).
 - CASE / PASSAGE CONTEXT (critical): For Case-Based / Comprehension questions ONLY, each dependent questionText MUST begin with that case's full passage, then the question stem.
   Do NOT attach a case/passage to unrelated questions in later sections (e.g. never paste a Chemistry case onto Biology or Match questions).
@@ -1033,10 +1036,32 @@ Important rules:
         : {}),
     };
 
-    // A Word upload has no renderable page to attach — the paper is supplied as
-    // text instead, and the same prompt runs against it.
+    // Word: text + embedded photos. PDF: full file inline.
+    const imageParts = (Array.isArray(documentImages) ? documentImages : [])
+      .slice(0, 24)
+      .map((img) => {
+        const data = Buffer.isBuffer(img?.data) ? img.data : null;
+        if (!data || data.length < 500) return null;
+        return {
+          inlineData: {
+            mimeType: String(img.mimeType || 'image/png'),
+            data: data.toString('base64'),
+          },
+        };
+      })
+      .filter(Boolean);
+
     const parts = documentText
-      ? [{ text: `${promptText}\n\n--- QUESTION PAPER TEXT ---\n${documentText}` }]
+      ? [
+          {
+            text: `${promptText}\n\n--- QUESTION PAPER TEXT ---\n${documentText}${
+              imageParts.length
+                ? `\n\n(${imageParts.length} embedded diagram/photo image(s) follow — use them for figures, Match tables, and Assertion visuals.)`
+                : ''
+            }`,
+          },
+          ...imageParts,
+        ]
       : [
           { text: promptText },
           {
@@ -3590,18 +3615,20 @@ async function buildPdfConvertPayload({
   }
 
   let documentText = String(initialDocumentText || '');
+  let docxImages = [];
   if (isDocx) {
     try {
       const parsedDocx = extractDocxQuestionPaper(buffer);
       documentText = parsedDocx.text;
+      docxImages = Array.isArray(parsedDocx.images) ? parsedDocx.images : [];
     } catch (docxError) {
       const err = new Error(`Could not read that Word file: ${docxError.message}`);
       err.status = 400;
       throw err;
     }
-    if (documentText.trim().length < 40) {
+    if (documentText.trim().length < 40 && docxImages.length === 0) {
       const err = new Error(
-        'That Word file contains no readable text. If the questions are pictures inside the document, upload the paper as a PDF instead.',
+        'That Word file has no readable text or pictures. Export the paper as PDF, or paste questions into Word with text.',
       );
       err.status = 422;
       throw err;
@@ -3613,6 +3640,7 @@ async function buildPdfConvertPayload({
     buffer,
     mimeType: mimeType || 'application/pdf',
     documentText,
+    documentImages: docxImages,
     fastMode,
   });
 
@@ -3670,6 +3698,7 @@ async function buildPdfConvertPayload({
     const {
       attachSharedMatterLightweight,
       attachPdfFiguresToRows,
+      attachDocxFiguresToRows,
       ensureAssertionReasonDirections,
       applyExtractionValidation,
     } = await import('../services/exam-pdf-enrichment.js');
@@ -3682,8 +3711,6 @@ async function buildPdfConvertPayload({
       onProgress?.('Attaching diagram images…');
       const figureStarted = Date.now();
       try {
-        // Always await figure attach — racing a short timeout was dropping photos
-        // while text extract finished. Soft ceiling via env only.
         const timeoutMs = Number(process.env.PDF_FIGURE_ATTACH_TIMEOUT_MS) || 180000;
         const figurePromise = attachPdfFiguresToRows(buffer, enriched.rows || [], {
           examId,
@@ -3696,7 +3723,6 @@ async function buildPdfConvertPayload({
           ),
         ]).catch(async (err) => {
           console.warn('[PDF_EXAM_EXTRACT] figure attach issue:', err?.message || err);
-          // Last chance: if the real promise still settles soon, use it
           try {
             return await Promise.race([
               figurePromise,
@@ -3720,9 +3746,17 @@ async function buildPdfConvertPayload({
       } catch (figErr) {
         console.warn('[PDF_EXAM_EXTRACT] figure attach skipped:', figErr?.message || figErr);
       }
+    } else if (isDocx && docxImages.length) {
+      onProgress?.('Attaching Word diagram images…');
+      try {
+        const rowsWithFigures = await attachDocxFiguresToRows(docxImages, enriched.rows || [], {
+          examId,
+        });
+        enriched = { ...enriched, rows: rowsWithFigures };
+      } catch (figErr) {
+        console.warn('[PDF_EXAM_EXTRACT] docx figure attach skipped:', figErr?.message || figErr);
+      }
     }
-    // Directions / flags AFTER photos so diagram images are not wiped, and AR
-    // still gets directions (AR images are cleared on purpose).
     enriched = {
       ...enriched,
       rows: applyExtractionValidation(ensureAssertionReasonDirections(enriched.rows || [])),
@@ -3734,6 +3768,7 @@ async function buildPdfConvertPayload({
       fullText: documentText,
       rows: normalizedBase,
       examId,
+      docxImages: isDocx ? docxImages : null,
     });
   }
 
@@ -3817,7 +3852,7 @@ export const convertPdfToQuestions = async (req, res) => {
       return res.status(404).json({ success: false, message: 'Exam not found or not accessible' });
     }
     if (!req.file) {
-      return res.status(400).json({ success: false, message: 'PDF file is required' });
+      return res.status(400).json({ success: false, message: 'PDF or Word (.docx) file is required' });
     }
 
     const mime = String(req.file.mimetype || '').toLowerCase();
@@ -3834,17 +3869,17 @@ export const convertPdfToQuestions = async (req, res) => {
       try {
         const parsedDocx = extractDocxQuestionPaper(req.file.buffer);
         documentText = parsedDocx.text;
+        if (documentText.trim().length < 40 && !(parsedDocx.images || []).length) {
+          return res.status(422).json({
+            success: false,
+            message:
+              'That Word file has no readable text or pictures. Use a .docx with text, or upload a PDF.',
+          });
+        }
       } catch (docxError) {
         return res.status(400).json({
           success: false,
           message: `Could not read that Word file: ${docxError.message}`,
-        });
-      }
-      if (documentText.trim().length < 40) {
-        return res.status(422).json({
-          success: false,
-          message:
-            'That Word file contains no readable text. If the questions are pictures inside the document, upload the paper as a PDF instead.',
         });
       }
     }
