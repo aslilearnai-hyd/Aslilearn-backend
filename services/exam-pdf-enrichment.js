@@ -316,37 +316,116 @@ export function parseAssertionReasonFromStem(stem) {
 
 /**
  * Parse Column I / Column II lists from a match-the-following stem.
+ * Handles Word interleaved layout:
+ *   Column I / Column II / A. … / 1. … / B. … / 2. …
  */
 export function parseMatchColumnsFromStem(stem) {
-  const text = String(stem || '');
+  let text = String(stem || '');
+  // Cut options / next question so columns don't swallow the rest of the paper
+  const cutAt = text.search(
+    /\n\s*(?:a\s*[).]|b\s*[).])\s*[A-D]\s*[-–—]/i,
+  );
+  if (cutAt > 40) text = text.slice(0, cutAt);
+  const nextMatch = text.search(/\n\s*Match\s+(?:the\s+Following|each|Physical|the\s+branch|the\s+scientific|the\s+steps|the\s+invention)\b/i);
+  if (nextMatch > 40) text = text.slice(0, nextMatch);
+
   const colI = [];
   const colII = [];
 
-  const iBlock = text.match(
-    /Column\s*I\s*[:.]?\s*([\s\S]*?)(?=Column\s*II|$)/i,
-  );
+  const iBlock = text.match(/Column\s*I\s*[:.]?\s*([\s\S]*?)(?=Column\s*II|$)/i);
   const iiBlock = text.match(/Column\s*II\s*[:.]?\s*([\s\S]*?)$/i);
 
   const parseList = (block, letterKeys) => {
     const out = [];
     if (!block) return out;
-    const re = letterKeys
-      ? /(?:^|\n|\s)([A-D])\s*[.):\-]\s*([^\n]+)/gi
-      : /(?:^|\n|\s)(\d{1,2})\s*[.):\-]\s*([^\n]+)/gi;
-    let m;
-    while ((m = re.exec(block))) {
-      out.push({ key: String(m[1]).trim(), text: normalizeSpaces(m[2]) });
+    const lines = String(block)
+      .split(/\r?\n/)
+      .map((l) => l.replace(/\s+/g, ' ').trim())
+      .filter(Boolean);
+    const itemRe = letterKeys
+      ? /^([A-D])\s*[.):\-]\s*(.+)$/i
+      : /^(\d{1,2})\s*[.):\-]\s*(.+)$/;
+    for (const line of lines) {
+      const m = line.match(itemRe);
+      if (m) {
+        out.push({ key: String(m[1]).toUpperCase().replace(/^0+/, '') || m[1], text: normalizeSpaces(m[2]) });
+        continue;
+      }
+      // Continuation line for wrapped Column II entries ("Measuring\n    cylinder")
+      if (out.length && !/^(?:Column\s*I{1,2}|[A-D]\s*[.):\-]|a\s*[).])/i.test(line)) {
+        out[out.length - 1].text = normalizeSpaces(`${out[out.length - 1].text} ${line}`);
+      }
     }
     return out;
   };
 
-  if (iBlock) colI.push(...parseList(iBlock[1], true));
-  if (iiBlock) colII.push(...parseList(iiBlock[1], false));
+  // Interleaved A/1/B/2 under dual headers — parse whole table region once
+  const tableStart = text.search(/Column\s*I\b/i);
+  const tableRegion = tableStart >= 0 ? text.slice(tableStart) : text;
+  const interleavedI = [];
+  const interleavedII = [];
+  {
+    const lines = tableRegion
+      .split(/\r?\n/)
+      .map((l) => l.replace(/\s+/g, ' ').trim())
+      .filter(Boolean);
+    let lastSide = '';
+    for (const line of lines) {
+      if (/^Column\s*I{1,2}\b/i.test(line)) continue;
+      // Stop at MCQ options ("a) A-1…") — do NOT use /i (that makes A. match a.)
+      if (/^[a-d]\s*[)]/.test(line) || /^[a-d]\s*[.]\s*[A-D]\s*[-–—]/.test(line)) break;
+      if (/^Match\b/i.test(line) && interleavedI.length >= 2) break;
+      const letter = line.match(/^([A-D])\s*[.):\-]\s*(.+)$/i);
+      if (letter) {
+        let rest = normalizeSpaces(letter[2]);
+        // Same-line interleave: "A. Length of a pencil 1. Measuring cylinder"
+        const splitNum = rest.match(/^(.*?)(?:\s+)(\d{1,2}\s*[.):\-]\s*.+)$/);
+        if (splitNum && /[A-Za-z]/.test(splitNum[1])) {
+          interleavedI.push({ key: letter[1].toUpperCase(), text: normalizeSpaces(splitNum[1]) });
+          lastSide = 'I';
+          const numPart = splitNum[2].match(/^(\d{1,2})\s*[.):\-]\s*(.+)$/);
+          if (numPart) {
+            interleavedII.push({
+              key: String(parseInt(numPart[1], 10)),
+              text: normalizeSpaces(numPart[2]),
+            });
+            lastSide = 'II';
+          }
+          continue;
+        }
+        interleavedI.push({ key: letter[1].toUpperCase(), text: rest });
+        lastSide = 'I';
+        continue;
+      }
+      const num = line.match(/^(\d{1,2})\s*[.):\-]\s*(.+)$/);
+      if (num) {
+        interleavedII.push({ key: String(parseInt(num[1], 10)), text: normalizeSpaces(num[2]) });
+        lastSide = 'II';
+        continue;
+      }
+      // Wrapped continuation belongs to the side we last opened
+      if (lastSide === 'II' && interleavedII.length) {
+        interleavedII[interleavedII.length - 1].text = normalizeSpaces(
+          `${interleavedII[interleavedII.length - 1].text} ${line}`,
+        );
+      } else if (lastSide === 'I' && interleavedI.length) {
+        interleavedI[interleavedI.length - 1].text = normalizeSpaces(
+          `${interleavedI[interleavedI.length - 1].text} ${line}`,
+        );
+      }
+    }
+  }
 
-  // Fallback: "A. â€¦ B. â€¦" without Column headers
-  if (colI.length === 0) {
-    const loose = parseList(text, true);
-    if (loose.length >= 2) colI.push(...loose.slice(0, 4));
+  if (interleavedI.length >= 2 && interleavedII.length >= 2) {
+    colI.push(...interleavedI.slice(0, 6));
+    colII.push(...interleavedII.slice(0, 8));
+  } else {
+    if (iBlock) colI.push(...parseList(iBlock[1], true));
+    if (iiBlock) colII.push(...parseList(iiBlock[1], false));
+    if (colI.length === 0) {
+      const loose = parseList(text, true);
+      if (loose.length >= 2) colI.push(...loose.slice(0, 4));
+    }
   }
 
   return { matchColumnI: colI, matchColumnII: colII };
@@ -392,10 +471,6 @@ export function detectMatchFollowingBlocks(fullText) {
     const end = i + 1 < markers.length ? markers[i + 1].index : Math.min(text.length, start + 5000);
     const slice = text.slice(start, end);
     const firstQ = slice.search(/(?:^|\n)\s*\d{1,3}\.\s+\S/);
-    const directionsBody =
-      firstQ > 20
-        ? normalizeSpaces(slice.slice(0, firstQ))
-        : normalizeSpaces(markers[i].title);
     const qRange = extractQuestionNumbersNear(
       text,
       start + (firstQ > 0 ? firstQ : 0),
@@ -406,8 +481,8 @@ export function detectMatchFollowingBlocks(fullText) {
     if (!run.length) continue;
     blocks.push({
       sharedMatterId: `MF${blocks.length + 1}`,
-      sharedMatterText:
-        directionsBody.length >= 30 ? directionsBody : DEFAULT_MATCH_DIRECTIONS,
+      // Keep directions short — never swallow the first Match stem into sharedMatter.
+      sharedMatterText: DEFAULT_MATCH_DIRECTIONS,
       questionRange: run,
     });
   }
@@ -527,21 +602,11 @@ export function attachAssertionReasonOptions(rows, arBlocks) {
     const hasOwnOptions = [row.option1, row.option2, row.option3, row.option4].filter((o) =>
       String(o || '').trim(),
     ).length >= 2;
-    const looksLikeAR =
-      /\bA\s*[:：]/.test(String(row.questionText || '')) ||
-      /\bR\s*[:：]/.test(String(row.questionText || '')) ||
-      /assertion/i.test(String(row.questionText || ''));
-    if (!looksLikeAR && hasOwnOptions) {
-      // In AR range but stem doesn't look like A/R â€” still attach shared directions
-      return {
-        ...row,
-        sharedOptionsId: hit.sharedOptionsId,
-        sharedMatterId: hit.sharedOptionsId,
-        sharedMatterText: cleanArDirectionsText(hit.sharedMatterText),
-        sharedMatterKind: 'assertion_reason',
-        questionType: 'assertion_reason',
-      };
-    }
+    const stem = String(row.questionText || '');
+    const looksLikeAR = stemLooksLikeAssertionReason(stem);
+    // Never stamp AR directions / type onto Single Correct MCQs that merely
+    // fall inside a detected AR question-number range.
+    if (!looksLikeAR) return row;
 
     const parsed = parseAssertionReasonFromStem(row.questionText);
     const matter = cleanArDirectionsText(hit.sharedMatterText);
@@ -573,26 +638,27 @@ export function attachMatchFollowingMatter(rows, matchBlocks) {
     const hit = Array.isArray(matchBlocks)
       ? matchBlocks.find((b) => b.questionRange.includes(qn))
       : null;
-    const stem = String(row.questionText || '');
+    const stem = stripPaperDirectionsFromStem(String(row.questionText || ''));
     const looksLikeMatch =
       (/Column\s*I\b/i.test(stem) && /Column\s*II\b/i.test(stem)) ||
-      /match\s+the\s+following/i.test(stem) ||
-      (/Column\s*I\b/i.test(stem) && /A-\s*\d/.test(String(row.option1 || '')));
+      /match\s+(?:the\s+following|each|physical|the\s+branch|the\s+scientific|the\s+steps|the\s+invention)/i.test(
+        stem,
+      ) ||
+      (/Column\s*I\b/i.test(stem) && /A-\s*\d/.test(String(row?.option1 || '')));
 
     // Require the stem itself to look like Match. Section ranges alone were
     // stamping Match directions onto unrelated MCQs (false "need photo" flags).
     if (!looksLikeMatch) return row;
 
     const columns = parseMatchColumnsFromStem(stem);
-    const matter =
-      String(hit?.sharedMatterText || '').trim() || DEFAULT_MATCH_DIRECTIONS;
     const matterId = hit?.sharedMatterId || `MF_Q${qn}`;
 
     return {
       ...row,
       questionType: 'match_following',
+      questionText: stem,
       sharedMatterId: matterId,
-      sharedMatterText: matter,
+      sharedMatterText: DEFAULT_MATCH_DIRECTIONS,
       sharedMatterKind: 'match_following',
       hasFigure: true,
       matchColumnI:
@@ -613,46 +679,35 @@ export function attachMatchFollowingMatter(rows, matchBlocks) {
 export function promoteStructuredTypesFromStem(rows) {
   if (!Array.isArray(rows)) return rows;
   return rows.map((row) => {
-    const stem = String(row.questionText || '');
-    if (row.sharedMatterKind === 'assertion_reason' || row.questionType === 'assertion_reason') {
-      const cleaned = stripLeadingCaseFromArStem(stem);
-      const parsed = parseAssertionReasonFromStem(cleaned);
-      return {
+    let stem = stripPaperDirectionsFromStem(String(row.questionText || ''));
+    // Demote Gemini false AR tags on normal MCQs first
+    const geminiSaidAr =
+      row.questionType === 'assertion_reason' ||
+      row.sharedMatterKind === 'assertion_reason' ||
+      String(row.questionType || '').toUpperCase() === 'ASSERTION_REASON';
+    const reallyAr = stemLooksLikeAssertionReason(stem);
+
+    if (geminiSaidAr && !reallyAr) {
+      row = {
         ...row,
-        questionType: 'assertion_reason',
-        assertionText: row.assertionText || parsed.assertionText,
-        reasonText: row.reasonText || parsed.reasonText,
-        questionText: parsed.cleanedStem || cleaned,
-        sharedMatterId: row.sharedMatterId || 'AR1',
-        sharedMatterText: cleanArDirectionsText(row.sharedMatterText),
-        sharedMatterKind: 'assertion_reason',
-        passageText: '',
-        passageId: '',
-      };
-    }
-    if (row.sharedMatterKind === 'match_following' || row.questionType === 'match_following') {
-      const columns = parseMatchColumnsFromStem(stem);
-      return {
-        ...row,
-        questionType: 'match_following',
-        matchColumnI: row.matchColumnI?.length ? row.matchColumnI : columns.matchColumnI,
-        matchColumnII: row.matchColumnII?.length ? row.matchColumnII : columns.matchColumnII,
-        sharedMatterId: row.sharedMatterId || 'MF1',
-        sharedMatterText: row.sharedMatterText || DEFAULT_MATCH_DIRECTIONS,
-        sharedMatterKind: 'match_following',
+        questionType: 'mcq',
+        sharedMatterKind: '',
+        sharedMatterText: '',
+        sharedMatterId: '',
+        assertionText: '',
+        reasonText: '',
+        questionText: stem,
       };
     }
 
-    const looksLikeAR =
-      stemLooksLikeAssertionReason(stem) || optionsLookLikeAssertionReason(row);
-    // Promote even if wrongly tagged as case — Case matter on an A/R stem is a bug
-    if (looksLikeAR) {
+    if (reallyAr) {
       const cleaned = stripLeadingCaseFromArStem(stem);
       const parsed = parseAssertionReasonFromStem(cleaned);
       const opts = [row.option1, row.option2, row.option3, row.option4].map((o) =>
         String(o || '').trim(),
       );
-      const needDefaults = opts.filter(Boolean).length < 2;
+      const needDefaults =
+        opts.filter(Boolean).length < 2 || !optionsLookLikeAssertionReason(row);
       return {
         ...row,
         questionType: 'assertion_reason',
@@ -663,8 +718,8 @@ export function promoteStructuredTypesFromStem(rows) {
         option2: needDefaults ? DEFAULT_AR_OPTIONS[1] : row.option2,
         option3: needDefaults ? DEFAULT_AR_OPTIONS[2] : row.option3,
         option4: needDefaults ? DEFAULT_AR_OPTIONS[3] : row.option4,
-        sharedMatterId: 'AR1',
-        sharedMatterText: cleanArDirectionsText(row.sharedMatterText),
+        sharedMatterId: row.sharedMatterId || 'AR1',
+        sharedMatterText: DEFAULT_AR_DIRECTIONS,
         sharedMatterKind: 'assertion_reason',
         passageText: '',
         passageId: '',
@@ -672,17 +727,32 @@ export function promoteStructuredTypesFromStem(rows) {
     }
 
     const looksLikeMatch =
-      /Column\s*I/i.test(stem) && (/Column\s*II/i.test(stem) || /A-\d/.test(String(row.option1 || '')));
+      row.questionType === 'match_following' ||
+      row.sharedMatterKind === 'match_following' ||
+      (/Column\s*I\b/i.test(stem) && /Column\s*II\b/i.test(stem)) ||
+      (/match\s+(?:the\s+following|each|physical|the\s+branch|the\s+scientific|the\s+steps|the\s+invention)/i.test(
+        stem,
+      ) &&
+        /A\s*[-–—.]\s*\d/i.test(String(row.option1 || '')));
+
     if (looksLikeMatch && row.sharedMatterKind !== 'case') {
       const columns = parseMatchColumnsFromStem(stem);
       return {
         ...row,
         questionType: 'match_following',
-        matchColumnI: columns.matchColumnI,
-        matchColumnII: columns.matchColumnII,
+        questionText: stem,
+        matchColumnI:
+          Array.isArray(row.matchColumnI) && row.matchColumnI.length
+            ? row.matchColumnI
+            : columns.matchColumnI,
+        matchColumnII:
+          Array.isArray(row.matchColumnII) && row.matchColumnII.length
+            ? row.matchColumnII
+            : columns.matchColumnII,
         sharedMatterId: row.sharedMatterId || 'MF1',
-        sharedMatterText: row.sharedMatterText || DEFAULT_MATCH_DIRECTIONS,
+        sharedMatterText: DEFAULT_MATCH_DIRECTIONS,
         sharedMatterKind: 'match_following',
+        hasFigure: true,
       };
     }
 
@@ -690,10 +760,14 @@ export function promoteStructuredTypesFromStem(rows) {
     if (row.passageText && !row.sharedMatterText) {
       return {
         ...row,
+        questionText: stem || row.questionText,
         sharedMatterId: row.passageId || row.sharedMatterId || '',
         sharedMatterText: row.passageText,
         sharedMatterKind: row.sharedMatterKind || 'case',
       };
+    }
+    if (stem !== String(row.questionText || '').trim()) {
+      return { ...row, questionText: stem };
     }
     return row;
   });
@@ -755,14 +829,12 @@ function rowLooksLikeMatchTable(row) {
 }
 
 function rowIsAssertionReason(row) {
-  if (
-    row?.questionType === 'assertion_reason' ||
-    row?.sharedMatterKind === 'assertion_reason' ||
-    String(row?.questionType || '').toUpperCase() === 'ASSERTION_REASON'
-  ) {
-    return true;
-  }
-  return optionsLookLikeAssertionReason(row);
+  const stem = String(row?.questionText || '');
+  // Hard requirement: stem must look like A:/R:. Gemini often mis-tags Single Correct
+  // as assertion_reason and options alone are not enough (shared AR choice banks).
+  if (stemLooksLikeAssertionReason(stem)) return true;
+  if (String(row?.assertionText || '').trim() && String(row?.reasonText || '').trim()) return true;
+  return false;
 }
 
 /** Standard A/R choice lines (even when Gemini typed the Q as MCQ). */
@@ -779,7 +851,36 @@ function optionsLookLikeAssertionReason(row) {
 
 function stemLooksLikeAssertionReason(stem) {
   const s = String(stem || '');
-  return /\bA\s*[:：]/.test(s) && /\bR\s*[:：]/.test(s);
+  // Word papers use "A :" / "R :" with flexible spacing
+  if (/\bA\s*[:：]\s*\S/.test(s) && /\bR\s*[:：]\s*\S/.test(s)) return true;
+  return false;
+}
+
+/** Strip section Directions banners that Gemini copies into questionText. */
+export function stripPaperDirectionsFromStem(stem) {
+  let s = String(stem || '').trim();
+  if (!s) return s;
+  // Leading "Directions: Each question has four choices…" (Single Correct)
+  s = s.replace(
+    /^(?:Directions\s*:\s*)?Each\s+question\s+has\s+four\s+choices[\s\S]*?(?:Choose\s+the\s+correct\s+answer\.?\s*)+/i,
+    '',
+  );
+  // Leading AR Directions block
+  s = s.replace(
+    /^(?:Directions\s*:\s*)?(?:Each\s+question\s+(?:below\s+consists\s+of|is\s+followed\s+by)[\s\S]*?(?:A is false,\s*but R is true\.?\s*)+)/i,
+    '',
+  );
+  // Leading Match Directions block
+  s = s.replace(
+    /^(?:Directions\s*:\s*)?Following\s+questions\s+have\s+(?:four\s+statements|statements)[\s\S]*?(?:choose\s+the\s+correct\s+matching[^\n]*\n?)/i,
+    '',
+  );
+  // Section banners
+  s = s.replace(
+    /^(?:Single\s+Correct(?:\s+Answer)?\s+Type\s+Questions|Assertion\s*(?:and\s*)?Reason\s+Type\s+Questions|Match\s+the\s+Following)\s*/gi,
+    '',
+  );
+  return s.trim();
 }
 
 /** Drop a wrongly prepended Case/passage block sitting above A:/R:. */
@@ -817,36 +918,60 @@ function cleanArDirectionsText(text) {
 }
 
 /**
- * Every Assertion–Reason question gets the standard directions block at the top.
- * Converts MCQ-looking rows with A/R options, and clears wrongly attached case matter.
+ * Every real Assertion–Reason question gets the standard directions block.
+ * False Gemini AR tags on Single Correct MCQs are demoted (no yellow Directions card).
  */
 export function ensureAssertionReasonDirections(rows) {
   if (!Array.isArray(rows)) return rows;
   return rows.map((row) => {
-    const stem = String(row?.questionText || '');
-    const isAr =
-      rowIsAssertionReason(row) ||
+    let stem = stripPaperDirectionsFromStem(String(row?.questionText || ''));
+    const reallyAr =
       stemLooksLikeAssertionReason(stem) ||
-      optionsLookLikeAssertionReason(row);
-    if (!isAr) return row;
+      (String(row?.assertionText || '').trim() && String(row?.reasonText || '').trim());
+
+    // Clear AR directions wrongly attached to normal MCQs / Match / Case
+    if (!reallyAr) {
+      if (
+        row.questionType === 'assertion_reason' ||
+        row.sharedMatterKind === 'assertion_reason' ||
+        looksLikeArDirections(row.sharedMatterText)
+      ) {
+        const clearArMatter = row.sharedMatterKind === 'assertion_reason' || looksLikeArDirections(row.sharedMatterText);
+        return {
+          ...row,
+          questionType:
+            row.questionType === 'assertion_reason' ? 'mcq' : row.questionType,
+          questionText: stem,
+          assertionText: '',
+          reasonText: '',
+          sharedMatterKind: clearArMatter ? '' : row.sharedMatterKind,
+          sharedMatterText: clearArMatter ? '' : row.sharedMatterText,
+          sharedMatterId: clearArMatter ? '' : row.sharedMatterId,
+        };
+      }
+      if (stem !== String(row.questionText || '').trim()) {
+        return { ...row, questionText: stem };
+      }
+      return row;
+    }
 
     const cleanedStem = stripLeadingCaseFromArStem(stem);
     const parsed = parseAssertionReasonFromStem(cleanedStem);
-    const matter = String(row.sharedMatterText || '').trim();
-    const nextMatter = cleanArDirectionsText(matter);
     const opts = [row.option1, row.option2, row.option3, row.option4].map((o) =>
       String(o || '').trim(),
     );
-    const needDefaults = opts.filter(Boolean).length < 2;
+    const needDefaults =
+      opts.filter(Boolean).length < 2 || !optionsLookLikeAssertionReason(row);
 
     return {
       ...row,
       questionType: 'assertion_reason',
       sharedMatterKind: 'assertion_reason',
-      sharedMatterId: row.sharedMatterId && row.sharedMatterKind === 'assertion_reason'
-        ? row.sharedMatterId
-        : 'AR1',
-      sharedMatterText: nextMatter,
+      sharedMatterId:
+        row.sharedMatterId && row.sharedMatterKind === 'assertion_reason'
+          ? row.sharedMatterId
+          : 'AR1',
+      sharedMatterText: DEFAULT_AR_DIRECTIONS,
       passageText: '',
       passageId: '',
       questionText: parsed.cleanedStem || cleanedStem,

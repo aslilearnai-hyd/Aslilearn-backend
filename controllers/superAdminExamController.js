@@ -1156,8 +1156,9 @@ Important rules:
   Example:
   "Case I: A square solar learning park covers 11,025 m². … edge of 7 m.\\n\\nWhat is the side length of the square solar farm?"
   Q9 and Q10 that share Case I both get the same Case I text; Q11 under Case II gets Case II only.
-- ASSERTION–REASON: Set questionType to "assertion_reason". Put Assertion into assertionText and Reason into reasonText when possible; also put both into questionText as "A: …\\nR: …". Put the four standard A/R choice lines into option1–option4. Questions that share the same Directions block share the same directions text (do not invent different directions per question).
-- MATCH-THE-FOLLOWING: Set questionType to "match_following" AND hasFigure=true (the Column I/II table will be captured as a photo). Include a short stem in questionText; still put Column I / Column II text when readable. Put matching codes into option1–option4 (e.g. "A-2, B-4, C-1, D-3"). Questions under the same Match directions share that directions text.
+- ASSERTION–REASON: Set questionType to "assertion_reason" ONLY when the stem is literally Assertion/Reason (A: … and R: …). Put Assertion into assertionText and Reason into reasonText; also put both into questionText as "A: …\\nR: …". Put the four standard A/R choice lines into option1–option4. NEVER set assertion_reason for Single Correct MCQs. NEVER put section "Directions:" text into questionText.
+- MATCH-THE-FOLLOWING: Set questionType to "match_following" AND hasFigure=true. questionText MUST include the short stem PLUS full "Column I" / "Column II" lists (A/B/C/D and 1/2/3/4). Put matching codes into option1–option4 (e.g. "A-2, B-4, C-1, D-3"). NEVER put Match "Directions:" banners into questionText.
+- Skip section banners and Directions paragraphs entirely (Single Correct / Assertion–Reason / Match directions). They are not questions.
 - Return only valid JSON, no markdown, no explanation.`;
 
   const maxOutRaw = getPdfExtractionMaxOutputTokens();
