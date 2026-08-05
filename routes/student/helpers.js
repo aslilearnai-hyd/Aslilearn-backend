@@ -163,7 +163,7 @@ export async function resolveStudentClassSubjects(student) {
           .lean();
 
   const { resolveStudentClassNumber, filterContentsForStudentClass } = await import(
-    '../utils/studentClassContent.js'
+    '../../utils/studentClassContent.js'
   );
 
   return {
