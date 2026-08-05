@@ -1922,7 +1922,7 @@ router.post('/exam-results', async (req, res) => {
     const resultData = {
       examId,
       userId: req.userId,
-      adminId: student.assignedAdmin || null,
+      adminId: student.assignedAdmin?._id || student.assignedAdmin || null,
       board: normalizeSchoolBoard(resolvedBoard),
       examTitle: examTitle || examDoc?.title || '',
       totalQuestions,
@@ -1950,6 +1950,13 @@ router.post('/exam-results', async (req, res) => {
         return res.status(403).json({
           success: false,
           message: `Maximum attempts (${maxAttempts}) reached for this exam.`,
+        });
+      }
+      if (createErr?.name === 'ValidationError') {
+        console.error('❌ ExamResult validation failed:', createErr.message);
+        return res.status(400).json({
+          success: false,
+          message: createErr.message || 'Invalid exam result data',
         });
       }
       throw createErr;
