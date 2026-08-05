@@ -1291,20 +1291,77 @@ router.get('/exams/:examId/questions', async (req, res) => {
   try {
     console.log('📋 Fetching questions for exam:', req.params.examId);
     const Question = (await import('../models/Question.js')).default;
+    const Exam = (await import('../models/Exam.js')).default;
     const {
       ensureExamQuestionDisplayOrders,
       QUESTION_LIST_SORT,
     } = await import('../utils/exam-question-order.js');
     await ensureExamQuestionDisplayOrders(Question, req.params.examId);
     const questions = await Question.find({ exam: req.params.examId }).sort(QUESTION_LIST_SORT);
-    console.log(`✅ Found ${questions.length} questions`);
-    res.json({ success: true, data: questions });
+    const exam = await Exam.findById(req.params.examId).select('figurePool').lean();
+    const assignedUrls = new Set(
+      questions
+        .map((q) => String(q?.questionImage || '').trim())
+        .filter(Boolean),
+    );
+    const figurePool = (Array.isArray(exam?.figurePool) ? exam.figurePool : [])
+      .map((img, i) => ({
+        url: String(img?.url || '').trim(),
+        name: String(img?.name || '').trim() || `Fig ${i + 1}`,
+        order: Number.isFinite(Number(img?.order)) ? Number(img.order) : i,
+        key: String(img?.key || '').trim() || undefined,
+      }))
+      .filter((img) => img.url && !assignedUrls.has(img.url));
+    console.log(`✅ Found ${questions.length} questions, ${figurePool.length} unassigned figures`);
+    res.json({ success: true, data: questions, figurePool, meta: { figurePool } });
   } catch (error) {
     console.error('❌ Get questions error:', error);
     console.error('Error stack:', error.stack);
     res.status(500).json({ success: false, message: 'Failed to fetch questions', error: error.message });
   }
 });
+
+/** Replace the exam's unassigned paper-figure pool (after extract upload / reassign). */
+router.put('/exams/:examId/figure-pool', async (req, res) => {
+  try {
+    const Exam = (await import('../models/Exam.js')).default;
+    const Question = (await import('../models/Question.js')).default;
+    const examId = req.params.examId;
+    const incoming = Array.isArray(req.body?.figurePool) ? req.body.figurePool : [];
+    const normalized = incoming
+      .map((img, i) => ({
+        url: String(img?.url || '').trim(),
+        name: String(img?.name || '').trim() || `Fig ${i + 1}`,
+        order: Number.isFinite(Number(img?.order)) ? Number(img.order) : i,
+        key: String(img?.key || '').trim() || '',
+      }))
+      .filter((img) => img.url);
+
+    const questions = await Question.find({ exam: examId }).select('questionImage').lean();
+    const assignedUrls = new Set(
+      questions.map((q) => String(q?.questionImage || '').trim()).filter(Boolean),
+    );
+    const figurePool = normalized.filter((img) => !assignedUrls.has(img.url));
+
+    const exam = await Exam.findByIdAndUpdate(
+      examId,
+      { $set: { figurePool, updatedAt: new Date() } },
+      { new: true },
+    ).select('figurePool');
+    if (!exam) {
+      return res.status(404).json({ success: false, message: 'Exam not found' });
+    }
+    res.json({ success: true, figurePool: exam.figurePool || [], data: exam.figurePool || [] });
+  } catch (error) {
+    console.error('❌ Update figure pool error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to update figure pool',
+      error: error.message,
+    });
+  }
+});
+
 router.post('/exams/:examId/questions', addQuestion);
 router.put('/exams/:examId/questions/reorder', reorderQuestions);
 router.put('/exams/:examId/questions/:questionId', updateQuestion);

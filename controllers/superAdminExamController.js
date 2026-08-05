@@ -4677,6 +4677,20 @@ export const updateQuestion = async (req, res) => {
     questionToUpdate.questionImage = finalImage || null;
 
     await questionToUpdate.save();
+
+    // Once a paper figure is assigned to a question, remove it from the free pool
+    // so it does not show again for another question.
+    if (questionImage !== undefined && finalImage) {
+      try {
+        await Exam.updateOne(
+          { _id: examId },
+          { $pull: { figurePool: { url: finalImage } }, $set: { updatedAt: new Date() } },
+        );
+      } catch (poolErr) {
+        console.warn('[updateQuestion] figurePool pull failed:', poolErr?.message || poolErr);
+      }
+    }
+
     if (marks !== undefined) {
       await syncExamQuestionTotals(examId);
     } else if (contentUpdateRequested) {
