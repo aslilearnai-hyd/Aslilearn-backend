@@ -2169,18 +2169,37 @@ function buildQuestionDedupKey({
 
 /**
  * Map a correct-answer payload to option text.
- * Only treat as a 0-based index when the value is a pure digit string (e.g. "0", "2").
- * Values like "4, 5, 6, 7, 8" must stay as option text — parseInt would wrongly read "4".
+ * Prefer exact option-text match first — options like "1","2","3","4" must NOT be
+ * treated as indices (that remapped "3" → options[3] = "4" and blocked answer edits).
+ * Only fall back to a 0-based index when the digit string is not itself an option.
+ * Values like "4, 5, 6, 7, 8" stay as option text.
  */
 function resolveChoiceAnswerToOptionText(answer, options) {
   const list = Array.isArray(options) ? options : [];
+  const texts = list.map((opt) =>
+    typeof opt === 'string' ? String(opt) : String(opt?.text ?? ''),
+  );
   const raw = String(answer ?? '').trim();
   if (!raw) return raw;
+
+  const byText = texts.find((t) => t.trim().toLowerCase() === raw.toLowerCase());
+  if (byText !== undefined && String(byText).trim() !== '') {
+    return String(byText).trim();
+  }
+
+  // a/b/c/d letter keys from answer keys
+  const letter = raw.replace(/^[(\[]?\s*/, '').replace(/[)\].:\s].*$/, '').trim();
+  if (/^[a-dA-D]$/.test(letter)) {
+    const idx = letter.toLowerCase().charCodeAt(0) - 97;
+    if (idx >= 0 && idx < texts.length && texts[idx]?.trim()) {
+      return texts[idx].trim();
+    }
+  }
+
   if (/^\d+$/.test(raw)) {
     const idx = parseInt(raw, 10);
-    if (Number.isInteger(idx) && idx >= 0 && idx < list.length) {
-      const opt = list[idx];
-      return typeof opt === 'string' ? opt : String(opt?.text ?? raw);
+    if (Number.isInteger(idx) && idx >= 0 && idx < texts.length && texts[idx]?.trim()) {
+      return texts[idx].trim();
     }
   }
   return raw;
@@ -2912,7 +2931,7 @@ export const addQuestion = async (req, res) => {
         formattedCorrectAnswer = correctAnswer;
       }
     } else if (isSingleChoiceQuestionType(normalizedType) && options && options.length > 0) {
-      // Pure digit → index; otherwise keep option text (e.g. "4, 5, 6, 7, 8")
+      // Prefer option text; digit index only if the value is not itself an option (see resolveChoiceAnswerToOptionText)
       formattedCorrectAnswer = resolveChoiceAnswerToOptionText(correctAnswer, options);
     }
 
@@ -4620,7 +4639,7 @@ export const updateQuestion = async (req, res) => {
           formattedCorrectAnswer = correctAnswer;
         }
       } else if (isSingleChoiceQuestionType(effectiveType) && incomingOptions && incomingOptions.length > 0) {
-        // Pure digit → index; otherwise keep option text (e.g. "4, 5, 6, 7, 8")
+        // Prefer option text; digit index only if the value is not itself an option
         formattedCorrectAnswer = resolveChoiceAnswerToOptionText(
           formattedCorrectAnswer,
           incomingOptions,
