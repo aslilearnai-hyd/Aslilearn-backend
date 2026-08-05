@@ -42,6 +42,16 @@ function documentXmlToText(xml) {
   out = out.replace(/<w:t\b[^>]*>([\s\S]*?)<\/w:t>/g, (_, inner) => inner);
   out = out.replace(/<[^>]+>/g, '');
   out = decodeXmlEntities(out);
+  // Word drawing/shape leftovers often dump long digit runs into text
+  // (sometimes chained: 825510604500-14282156515Single Correct).
+  let prev;
+  do {
+    prev = out;
+    out = out.replace(/(?:^|[\s\n])-?\d{7,}(?=[\s\n]|$)/g, ' ');
+    out = out.replace(/-?\d{7,}(?=[A-Za-z])/g, '');
+  } while (out !== prev);
+  out = out.replace(/\b(?:center|left|right|top|bottom)\d+\b/gi, ' ');
+  out = out.replace(/\n00(?=Single Correct)/g, '\n');
   return out
     .replace(/\r/g, '')
     .replace(/[ \t]+\n/g, '\n')
