@@ -5,7 +5,7 @@ import { buildPersonalizedRecommendations } from './personalized-recommendation-
 import { buildStudyStreak, getLatestProactivePrompt } from './dashboard-sync-service.js';
 import { analyzeMarks } from './marks-analysis-service.js';
 import { buildAutoGreeting, buildPerformanceSummary } from './performance-summary-engine.js';
-import { detectQueryIntent, buildUncertainClarificationMessage } from './query-intent-detection-engine.js';
+import { detectQueryIntent, buildUncertainClarificationMessage, buildGreetingReplyMessage, buildThanksReplyMessage } from './query-intent-detection-engine.js';
 import { generateGeneralKnowledgeAnswer } from './gemini-general-knowledge-service.js';
 import { buildPlatformProgressFacts } from './platform-progress-facts.js';
 
@@ -440,6 +440,49 @@ function appOnlyReply(question, facts) {
 
 export async function runHybridStudentVidyaChat({ viewerRole, viewerUserId, studentId, question }) {
   const intent = detectQueryIntent(question);
+
+  // Thanks — short warm reply, no clarification
+  if (intent.type === 'thanks') {
+    return {
+      mode: 'thanks',
+      intent,
+      message: buildThanksReplyMessage(),
+      groundingStatus: 'social',
+      facts: null,
+      summary: null,
+      autoGreeting: null,
+    };
+  }
+
+  // Greeting — load context when possible so we can use the student's name
+  if (intent.type === 'greeting') {
+    try {
+      const ctx = await buildStudentAiContext({ viewerRole, viewerUserId, studentId });
+      const name = ctx?.ok
+        ? String(ctx.profile?.name || ctx.profile?.studentName || '').trim()
+        : '';
+      return {
+        mode: 'greeting',
+        intent,
+        message: buildGreetingReplyMessage(name),
+        groundingStatus: 'social',
+        facts: null,
+        summary: null,
+        autoGreeting: null,
+      };
+    } catch {
+      return {
+        mode: 'greeting',
+        intent,
+        message: buildGreetingReplyMessage(''),
+        groundingStatus: 'social',
+        facts: null,
+        summary: null,
+        autoGreeting: null,
+      };
+    }
+  }
+
   if (intent.type === 'uncertain') {
     return {
       mode: 'uncertain',

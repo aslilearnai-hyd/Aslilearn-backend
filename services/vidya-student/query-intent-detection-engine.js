@@ -141,9 +141,20 @@ const SELF_REFERENCE_PATTERNS = [
   /\btell me my\b/,
 ];
 
+/** Short social openers — must not trigger the marks/progress clarification. */
+const GREETING_RE =
+  /^(hi|hii+|hello|hey|hey+a?|hola|namaste|good\s*(morning|afternoon|evening)|yo|sup|hiya|helo|hell+o+)\b[\s!.,?]{0,6}$/i;
+
+const THANKS_RE =
+  /^(thanks|thank\s*you|thx|ty|ok|okay|cool|great|nice|bye|goodbye|see\s*you)[\s!.,?]{0,6}$/i;
+
 export function detectQueryIntent(question) {
   const q = String(question || '').toLowerCase().trim();
   if (!q) return { type: 'uncertain', confidence: 0.0 };
+
+  // Greetings / thanks — answer warmly, never ask "marks or topic?"
+  if (GREETING_RE.test(q)) return { type: 'greeting', confidence: 0.99 };
+  if (THANKS_RE.test(q)) return { type: 'thanks', confidence: 0.95 };
 
   const appHint = APP_HINTS.some((s) => q.includes(s));
   const selfRef = SELF_REFERENCE_PATTERNS.some((p) => p.test(q));
@@ -177,3 +188,17 @@ export function detectQueryIntent(question) {
 export function buildUncertainClarificationMessage() {
   return 'Could you tell me more? Are you asking about your personal marks and progress, or do you want me to explain a subject topic?';
 }
+
+export function buildGreetingReplyMessage(studentName = '') {
+  const name = String(studentName || '').trim();
+  const hello = name ? `Hi ${name}!` : 'Hi!';
+  return (
+    `${hello} I'm Vidya, your study buddy. ` +
+    `Ask me about your learning progress, videos you've watched, exam results, or any subject topic you want explained.`
+  );
+}
+
+export function buildThanksReplyMessage() {
+  return "You're welcome! Ask anytime about your progress, exams, or a topic you want help with.";
+}
+
