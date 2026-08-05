@@ -1570,6 +1570,15 @@ export const deleteExam = async (req, res) => {
         message: 'Exam not found or access denied' 
       });
     }
+
+    try {
+      const { backfillExamResultQuestionSnapshots } = await import(
+        '../utils/exam-result-questions.js'
+      );
+      await backfillExamResultQuestionSnapshots(id, deletedExam);
+    } catch (snapErr) {
+      console.warn('[admin deleteExam] questionSnapshot backfill skipped:', snapErr?.message || snapErr);
+    }
     
     // Also delete associated questions
     await Question.deleteMany({ exam: id, adminId });
