@@ -1940,12 +1940,25 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
 }
 
 /**
- * Attach embedded Word (.docx) images to questions that need figures
- * (diagrams, match tables, assertion visuals).
- * Prefer matching by nearby document text; never attach header logos.
+ * Attach embedded Word (.docx) images to the correct questions.
+ *
+ * Strategy:
+ * 1) Strong text match (stem ↔ nearby Word text) — exclusive, high confidence
+ * 2) Soft text match for leftovers — still must uniquely win
+ * 3) Document-order fill among remaining true figure-questions only
+ *    (image order ≈ Q order). Never spray leftovers onto random MCQs.
  */
 export async function attachDocxFiguresToRows(images, rows, { examId } = {}) {
   if (!Array.isArray(rows) || rows.length === 0) return rows;
+
+  const STOP = new Set([
+    'which', 'what', 'when', 'where', 'whose', 'their', 'there', 'these', 'those',
+    'about', 'after', 'before', 'below', 'above', 'shown', 'figure', 'diagram',
+    'graph', 'image', 'following', 'question', 'correct', 'answer', 'options',
+    'choice', 'choices', 'column', 'match', 'based', 'given', 'using', 'study',
+    'observe', 'refer', 'single', 'type', 'questions', 'directions', 'statement',
+    'statements', 'number', 'inches', 'every', 'other', 'between', 'through',
+  ]);
 
   const media = (Array.isArray(images) ? images : [])
     .map((img, i) => {
@@ -1971,16 +1984,27 @@ export async function attachDocxFiguresToRows(images, rows, { examId } = {}) {
 
   const wantingIdxs = [];
   rows.forEach((row, idx) => {
+    if (String(row?.questionImage || '').trim()) return;
+    if (rowIsAssertionReason(row)) return;
     if (rowWantsFigure(row) || String(row?.questionType || '').toLowerCase() === 'match_following') {
+      wantingIdxs.push(idx);
+      return;
+    }
+    // Gemini often sets hasFigure on diagram MCQs without "shown below" wording —
+    // include them as candidates; text+order matching still decides the photo.
+    if (row?.hasFigure === true) {
       wantingIdxs.push(idx);
     }
   });
   if (!wantingIdxs.length) {
     rows.forEach((row, idx) => {
+      if (String(row?.questionImage || '').trim()) return;
       const t = String(row?.questionType || '').toLowerCase();
       if (
         t === 'match_following' ||
-        /\b(fig|diagram|graph|shown|column\s*i|figure)\b/i.test(String(row?.questionText || ''))
+        /\b(fig|diagram|graph|shown\s+below|as\s+shown|column\s*i|figure|arrow)\b/i.test(
+          String(row?.questionText || ''),
+        )
       ) {
         wantingIdxs.push(idx);
       }
@@ -1991,30 +2015,78 @@ export async function attachDocxFiguresToRows(images, rows, { examId } = {}) {
   const normalize = (s) =>
     String(s || '')
       .toLowerCase()
+      .replace(/[^a-z0-9\s]/g, ' ')
       .replace(/\s+/g, ' ')
       .trim();
 
+  const distinctiveTokens = (text, limit = 16) => {
+    const out = [];
+    const seen = new Set();
+    for (const tok of normalize(text).split(' ')) {
+      if (tok.length < 4 || STOP.has(tok) || /^\d+$/.test(tok)) continue;
+      if (seen.has(tok)) continue;
+      seen.add(tok);
+      out.push(tok);
+      if (out.length >= limit) break;
+    }
+    return out;
+  };
+
+  /** Soft/hard score of how well an image's local Word text belongs to this row. */
   const scoreImageToRow = (img, row) => {
-    const stem = normalize(row?.questionText || '').slice(0, 160);
-    if (stem.length < 18) return 0;
-    const ctx = normalize(`${img.beforeText} ${img.afterText}`);
-    if (!ctx) return 0;
-    // Prefer long stem prefixes found near the drawing
-    for (const n of [72, 48, 32, 24]) {
+    const stemRaw = String(row?.questionText || '').trim();
+    const stem = normalize(stemRaw);
+    if (stem.length < 16) return 0;
+
+    const before = normalize(img.beforeText);
+    const after = normalize(img.afterText);
+    const ctx = `${before} ${after}`.trim();
+    if (ctx.length < 8) return 0;
+
+    let score = 0;
+    const qn = Number(row?.questionNumber);
+    if (Number.isFinite(qn) && qn >= 1) {
+      const qRe = new RegExp(`(?:^|\\s)(?:q\\.?\\s*)?${qn}[.)]\\s`);
+      if (qRe.test(` ${before} `) || qRe.test(` ${after} `)) score += 45;
+    }
+
+    // Prefix / mid-stem snippets present near the drawing
+    for (const n of [80, 56, 40, 28, 20]) {
       const part = stem.slice(0, n);
-      if (part.length >= 18 && ctx.includes(part)) return 100 + n;
+      if (part.length < 16) continue;
+      if (before.includes(part) || after.includes(part)) {
+        score += 100 + n;
+        break;
+      }
     }
-    // Token overlap on distinctive words
-    const stemTokens = stem
-      .split(/[^a-z0-9]+/)
-      .filter((t) => t.length >= 5)
-      .slice(0, 12);
-    if (!stemTokens.length) return 0;
-    let hits = 0;
-    for (const tok of stemTokens) {
-      if (ctx.includes(tok)) hits += 1;
+    // Also try a window from the middle (options often sit after the image)
+    if (stem.length > 40) {
+      const mid = stem.slice(Math.floor(stem.length * 0.25), Math.floor(stem.length * 0.25) + 36);
+      if (mid.length >= 16 && (before.includes(mid) || after.includes(mid))) score += 70;
     }
-    return hits >= 2 ? hits * 8 : 0;
+
+    const tokens = distinctiveTokens(stemRaw);
+    if (tokens.length) {
+      let hits = 0;
+      for (const tok of tokens) {
+        if (ctx.includes(tok)) hits += 1;
+      }
+      if (hits >= 3) score += hits * 16;
+      else if (hits === 2) score += 32;
+      else if (hits === 1 && tokens[0]?.length >= 7) score += 18;
+    }
+
+    if (/column\s*i/i.test(stemRaw) && /column\s*i/i.test(ctx)) score += 30;
+    return score;
+  };
+
+  const assign = (mi, ri, urlByRowIdx, usedImages, usedRows, savedUrlByImageKey) => {
+    const url = savedUrlByImageKey.get(media[mi].key);
+    if (!url || usedImages.has(mi) || usedRows.has(ri)) return false;
+    urlByRowIdx.set(ri, url);
+    usedImages.add(mi);
+    usedRows.add(ri);
+    return true;
   };
 
   await ensureQuestionsUploadDir();
@@ -2027,40 +2099,93 @@ export async function attachDocxFiguresToRows(images, rows, { examId } = {}) {
   const usedImages = new Set();
   const usedRows = new Set();
 
-  // Pass 1: strong text matches
-  const pairs = [];
+  // —— Pass 1: strong exclusive text matches ——
+  const STRONG = 55;
+  const MARGIN = 15;
   for (let mi = 0; mi < media.length; mi += 1) {
-    for (const ri of wantingIdxs) {
-      const score = scoreImageToRow(media[mi], rows[ri]);
-      if (score >= 24) pairs.push({ mi, ri, score });
-    }
-  }
-  pairs.sort((a, b) => b.score - a.score);
-  for (const p of pairs) {
-    if (usedImages.has(p.mi) || usedRows.has(p.ri)) continue;
-    const url = savedUrlByImageKey.get(media[p.mi].key);
-    if (!url) continue;
-    urlByRowIdx.set(p.ri, url);
-    usedImages.add(p.mi);
-    usedRows.add(p.ri);
+    const ranked = wantingIdxs
+      .filter((ri) => !usedRows.has(ri))
+      .map((ri) => ({ ri, score: scoreImageToRow(media[mi], rows[ri]) }))
+      .filter((x) => x.score >= STRONG)
+      .sort((a, b) => b.score - a.score);
+    if (!ranked.length) continue;
+    if (ranked[1] && ranked[0].score - ranked[1].score < MARGIN) continue;
+    assign(mi, ranked[0].ri, urlByRowIdx, usedImages, usedRows, savedUrlByImageKey);
   }
 
-  // Pass 2: remaining figures → remaining wanting rows, in document order
-  const leftoverImgs = media.map((_, i) => i).filter((i) => !usedImages.has(i));
-  const leftoverRows = wantingIdxs.filter((ri) => !usedRows.has(ri));
-  const n = Math.min(leftoverImgs.length, leftoverRows.length);
-  for (let i = 0; i < n; i += 1) {
-    const url = savedUrlByImageKey.get(media[leftoverImgs[i]].key);
-    if (!url) continue;
-    urlByRowIdx.set(leftoverRows[i], url);
+  // —— Pass 2: softer unique text matches for leftovers ——
+  const SOFT = 22;
+  for (let mi = 0; mi < media.length; mi += 1) {
+    if (usedImages.has(mi)) continue;
+    const ranked = wantingIdxs
+      .filter((ri) => !usedRows.has(ri))
+      .map((ri) => ({ ri, score: scoreImageToRow(media[mi], rows[ri]) }))
+      .filter((x) => x.score >= SOFT)
+      .sort((a, b) => b.score - a.score);
+    if (!ranked.length) continue;
+    if (ranked[1] && ranked[0].score - ranked[1].score < 10) continue;
+    assign(mi, ranked[0].ri, urlByRowIdx, usedImages, usedRows, savedUrlByImageKey);
+  }
+
+  // —— Pass 3: document-order fill among remaining TRUE figure questions ——
+  // Images appear in paper order; figure Qs are renumbered in reading order.
+  // Only pair leftovers inside this ordered set — never onto unrelated MCQs.
+  const leftoverImgs = media
+    .map((img, mi) => ({ img, mi }))
+    .filter(({ mi }) => !usedImages.has(mi));
+  const leftoverWanting = wantingIdxs
+    .filter((ri) => !usedRows.has(ri))
+    .sort((a, b) => {
+      const an = Number(rows[a]?.questionNumber) || a;
+      const bn = Number(rows[b]?.questionNumber) || b;
+      return an - bn;
+    });
+
+  if (leftoverImgs.length && leftoverWanting.length) {
+    // Prefer 1:1 when counts match; otherwise walk both in order and attach
+    // when soft score isn't hostile (ctx empty OR score >= 0 and not better elsewhere).
+    const n = Math.min(leftoverImgs.length, leftoverWanting.length);
+    for (let i = 0; i < n; i += 1) {
+      const { mi } = leftoverImgs[i];
+      const ri = leftoverWanting[i];
+      if (usedImages.has(mi) || usedRows.has(ri)) continue;
+
+      // Guard: if this image still strongly prefers a DIFFERENT unused wanting row, skip
+      const softRank = wantingIdxs
+        .filter((r) => !usedRows.has(r) || r === ri)
+        .map((r) => ({ r, score: scoreImageToRow(media[mi], rows[r]) }))
+        .sort((a, b) => b.score - a.score);
+      const top = softRank[0];
+      if (top && top.r !== ri && top.score >= SOFT && top.score - scoreImageToRow(media[mi], rows[ri]) >= 12) {
+        // Text says this photo belongs to another Q — use that instead
+        assign(mi, top.r, urlByRowIdx, usedImages, usedRows, savedUrlByImageKey);
+        continue;
+      }
+      assign(mi, ri, urlByRowIdx, usedImages, usedRows, savedUrlByImageKey);
+    }
+  }
+
+  // —— Pass 4: any still-unmatched image → best remaining wanting by soft score ——
+  for (let mi = 0; mi < media.length; mi += 1) {
+    if (usedImages.has(mi)) continue;
+    const ranked = wantingIdxs
+      .filter((ri) => !usedRows.has(ri))
+      .map((ri) => ({ ri, score: scoreImageToRow(media[mi], rows[ri]) }))
+      .sort((a, b) => b.score - a.score);
+    if (!ranked.length) continue;
+    // Need a real text signal — don't dump leftovers on unrelated hasFigure rows
+    if (ranked[0].score < 12) continue;
+    if (ranked[1] && ranked[0].score - ranked[1].score < 8 && ranked[1].score >= 12) continue;
+    assign(mi, ranked[0].ri, urlByRowIdx, usedImages, usedRows, savedUrlByImageKey);
   }
 
   console.log('[PDF_ENRICH] attachDocxFiguresToRows', {
     imagesIn: Array.isArray(images) ? images.length : 0,
-    imagesUsed: media.length,
+    imagesKept: media.length,
     wanting: wantingIdxs.length,
-    matchedByText: usedRows.size,
     attached: urlByRowIdx.size,
+    skippedUnmatched: media.length - usedImages.size,
+    policy: 'text-then-order-among-figure-qs',
   });
 
   return rows.map((row, idx) => {
