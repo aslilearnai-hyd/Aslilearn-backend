@@ -71,21 +71,48 @@ export async function loadStudentLibraryContents(userId, student, studentClassDo
   let librarySubjectIds = await resolveStudentSubjectIdsForLibrary(student, studentClassDoc);
   librarySubjectIds = await filterToActiveCatalogSubjectIds(librarySubjectIds);
 
+  const programCtx = await getStudentSchoolProgramContext(userId);
+  const studentClassNum = resolveStudentClassNumber(student, studentClassDoc) || '';
+
+  if (
+    programCtx.isAsliPrepExclusive &&
+    Array.isArray(programCtx.iitCategories) &&
+    programCtx.iitCategories.some((c) => String(c || '').trim())
+  ) {
+    const { mergeIitCatalogSubjectsIntoLibraryIds } = await import('./iitCatalogSubjects.js');
+    librarySubjectIds = await mergeIitCatalogSubjectsIntoLibraryIds(
+      librarySubjectIds,
+      studentClassNum || student?.classNumber,
+      { iitCategories: programCtx.iitCategories },
+    );
+    librarySubjectIds = await filterToActiveCatalogSubjectIds(librarySubjectIds);
+  }
+
   const boardUpper = resolveStudentContentBoard(student, adminBoard);
+  const { boardsForSchoolContentScope } = await import('../constants/boards.js');
+  const schoolBoards = boardsForSchoolContentScope({
+    board: adminBoard,
+    curriculumBoard: programCtx.curriculumBoard || boardUpper,
+    isAsliPrepExclusive: programCtx.isAsliPrepExclusive,
+    iitCategories: programCtx.iitCategories,
+  });
+  const siblingBoardOpts = schoolBoards.length
+    ? { boards: schoolBoards }
+    : { board: boardUpper };
+
   const contentSubjectIds = librarySubjectIds.length
-    ? await resolveSubjectContentIdsMany(librarySubjectIds, { board: boardUpper })
+    ? await resolveSubjectContentIdsMany(librarySubjectIds, siblingBoardOpts)
     : [];
 
   const queryIds = contentSubjectIds.length ? contentSubjectIds : librarySubjectIds;
   const activeIdSet = buildActiveSubjectIdSet(queryIds);
-  const studentClassNum = resolveStudentClassNumber(student, studentClassDoc) || '';
 
   let contents = queryIds.length
     ? await Content.find({
         subject: { $in: queryIds },
         isActive: true,
       })
-        .populate('subject', 'name isActive board')
+        .populate('subject', 'name isActive board classNumber productCategory')
         .sort({ updatedAt: -1 })
         .limit(600)
         .lean()
@@ -93,13 +120,12 @@ export async function loadStudentLibraryContents(userId, student, studentClassDo
 
   contents = filterContentRowsForActiveCatalog(contents, activeIdSet);
 
-  const programCtx = await getStudentSchoolProgramContext(userId);
   contents = applySchoolProgramContentFilters(contents, programCtx);
 
   contents = filterContentsForStudentClass(
     contents,
     studentClassNum || null,
-    queryIds
+    librarySubjectIds,
   );
 
   return {

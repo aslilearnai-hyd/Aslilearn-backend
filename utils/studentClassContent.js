@@ -22,6 +22,8 @@ export function normalizeClassNumberLabel(value) {
 export function classLabelFromContent(doc) {
   const cn = doc?.classNumber;
   if (cn != null && String(cn).trim() !== '') return String(cn).trim();
+  const subjectCn = doc?.subject?.classNumber;
+  if (subjectCn != null && String(subjectCn).trim() !== '') return String(subjectCn).trim();
   const n = doc?.subject?.name || '';
   const m = String(n).match(/_(\d+)$/);
   return m ? m[1] : '';

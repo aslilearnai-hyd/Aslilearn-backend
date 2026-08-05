@@ -2222,11 +2222,16 @@ export async function enrichExtractedExamQuestions({
   next = attachAssertionReasonOptions(next, arBlocks);
   next = attachMatchFollowingMatter(next, matchBlocks);
   next = promoteStructuredTypesFromStem(next);
-  if (pdfBuffer) {
-    next = await attachPdfFiguresToRows(pdfBuffer, next, { examId, fast: false });
-  } else if (Array.isArray(docxImages) && docxImages.length) {
-    next = await attachDocxFiguresToRows(docxImages, next, { examId });
-  }
+
+  // Figures are collected for manual assign — not auto-attached.
+  const { rows: rowsCleared, paperImages } = await extractPaperImagesForManualAssign({
+    pdfBuffer: pdfBuffer || null,
+    docxImages: Array.isArray(docxImages) ? docxImages : null,
+    rows: next,
+    examId,
+    fast: false,
+  });
+  next = rowsCleared;
   next = ensureAssertionReasonDirections(next);
   next = applyExtractionValidation(next);
 
@@ -2235,6 +2240,7 @@ export async function enrichExtractedExamQuestions({
     passages: passages.length,
     arBlocks: arBlocks.length,
     matchBlocks: matchBlocks.length,
+    paperImages: paperImages.length,
     withImages: next.filter((r) => r.questionImage).length,
     flagged: next.filter((r) => !r.solvable).length,
     source: pdfBuffer ? 'pdf' : docxImages?.length ? 'docx' : 'text',
@@ -2246,8 +2252,295 @@ export async function enrichExtractedExamQuestions({
       passages,
       arBlocks,
       matchBlocks,
+      paperImages,
       flaggedCount: next.filter((r) => !r.solvable).length,
       withImages: next.filter((r) => r.questionImage).length,
     },
   };
+}
+
+/**
+ * Save every usable DOCX embed as a paper-image pool item (no row attach).
+ */
+export async function collectDocxPaperImages(images, { examId } = {}) {
+  const media = (Array.isArray(images) ? images : [])
+    .map((img, i) => {
+      const buf = Buffer.isBuffer(img?.data) ? img.data : Buffer.from(img?.data || []);
+      if (!buf || buf.length < 500) return null;
+      const enriched = {
+        ...img,
+        data: buf,
+        bytes: buf.length,
+        width: Number(img?.width) || 0,
+        height: Number(img?.height) || 0,
+        order: Number.isFinite(Number(img?.order)) ? Number(img.order) : i,
+      };
+      if (isLikelyDocxLogoOrBanner(enriched)) return null;
+      const key = `docx:${buf.length}:${buf.subarray(0, 24).toString('hex')}:${i}`;
+      return {
+        buf,
+        key,
+        name: String(img?.name || `img-${i + 1}`),
+        order: enriched.order,
+      };
+    })
+    .filter(Boolean)
+    .sort((a, b) => a.order - b.order);
+
+  if (!media.length) return [];
+
+  await ensureQuestionsUploadDir();
+  const savedUrlByImageKey = new Map();
+  const paperImages = [];
+  for (const candidate of media) {
+    const url = await saveQuestionImageBuffer(
+      candidate.buf,
+      examId,
+      savedUrlByImageKey,
+      candidate.key,
+    );
+    paperImages.push({
+      url,
+      name: candidate.name,
+      order: candidate.order,
+      key: candidate.key,
+    });
+  }
+  console.log('[PDF_ENRICH] collectDocxPaperImages', { kept: paperImages.length });
+  return paperImages;
+}
+
+/**
+ * Discover and save usable PDF embeds (and ink crops when embeds are missing).
+ * Does not attach URLs to question rows — admin assigns manually from the pool.
+ */
+export async function collectPdfPaperImages(pdfBuffer, rows, { examId, fast = true } = {}) {
+  if (!pdfBuffer) return [];
+  const startedAt = Date.now();
+  let parser;
+  const paperImages = [];
+  const savedUrlByImageKey = new Map();
+
+  try {
+    parser = new PDFParse({ data: pdfBuffer });
+    let pageCount = 0;
+    let pageTexts = [];
+    try {
+      const parsed = await parser.getText();
+      pageTexts = Array.isArray(parsed?.pages)
+        ? parsed.pages.map((p, i) => ({
+            pageNumber: Number(p?.pageNumber) || i + 1,
+            text: String(p?.text || ''),
+          }))
+        : [];
+      pageCount = pageTexts.length || Number(parsed?.total) || 0;
+    } catch (e) {
+      console.warn('[PDF_ENRICH] collectPdf getText failed:', e?.message || e);
+    }
+
+    if (!pageCount) {
+      // Fallback: probe a reasonable page range
+      pageCount = fast ? 24 : 40;
+    }
+
+    const maxPages = Math.min(pageCount, fast ? 30 : 50);
+    const pagesForImages = Array.from({ length: maxPages }, (_, i) => i + 1);
+
+    const imageKey = (img) => {
+      const buf = bufferFromImageData(img?.data);
+      if (!buf || buf.length < 500) return null;
+      return `${buf.length}:${buf.subarray(0, 32).toString('hex')}`;
+    };
+
+    const candidates = [];
+    const pagesWithEmbed = new Set();
+
+    try {
+      const imageResult = await parser.getImage({
+        partial: pagesForImages,
+        imageBuffer: true,
+        imageDataUrl: false,
+        imageThreshold: 50,
+      });
+      const pages = Array.isArray(imageResult?.pages) ? imageResult.pages : [];
+      const pagesSeenByImage = new Map();
+      for (const page of pages) {
+        const uniqueKeys = new Set(
+          (Array.isArray(page?.images) ? page.images : []).map(imageKey).filter(Boolean),
+        );
+        for (const k of uniqueKeys) {
+          pagesSeenByImage.set(k, (pagesSeenByImage.get(k) || 0) + 1);
+        }
+      }
+      let order = 0;
+      for (const page of pages) {
+        const pageNumber = Number(page?.pageNumber) || 0;
+        for (const img of Array.isArray(page?.images) ? page.images : []) {
+          if (isLikelyLogoOrTiny(img)) continue;
+          const key = imageKey(img);
+          if (!key || (pagesSeenByImage.get(key) || 0) >= 3) continue;
+          const buf = bufferFromImageData(img.data);
+          if (!buf) continue;
+          pagesWithEmbed.add(pageNumber);
+          candidates.push({
+            buf,
+            key: `pdf-embed:${key}`,
+            name: `page-${pageNumber}-fig-${++order}`,
+            order: order,
+            pageNumber,
+            kind: 'embed',
+          });
+        }
+      }
+    } catch (imgErr) {
+      console.warn('[PDF_ENRICH] collectPdf getImage failed:', imgErr?.message || imgErr);
+    }
+
+    // Ink-crop pages that look like they have figures/tables but no embeds
+    const needCropPages = pagesForImages.filter((p) => {
+      if (pagesWithEmbed.has(p)) return false;
+      const text = pageTexts.find((x) => Number(x.pageNumber) === p)?.text || '';
+      if (FIGURE_HINT_RE.test(text) || MATCH_TABLE_HINT_RE.test(text)) return true;
+      // Also crop if any extracted row maps to this page and wants a figure
+      return false;
+    }).slice(0, fast ? 12 : 20);
+
+    // Include pages for figure-wanting rows even without text hints
+    try {
+      const { map: qToPage } = await mapQuestionNumbersToPages(parser);
+      const extra = new Set();
+      for (const row of Array.isArray(rows) ? rows : []) {
+        if (!rowWantsFigure(row) && row?.questionType !== 'match_following' && row?.hasFigure !== true) {
+          continue;
+        }
+        const pageNumber = resolvePageForRow(row, qToPage, pageTexts);
+        if (pageNumber && !pagesWithEmbed.has(pageNumber)) extra.add(pageNumber);
+      }
+      for (const p of extra) {
+        if (!needCropPages.includes(p) && needCropPages.length < (fast ? 16 : 24)) {
+          needCropPages.push(p);
+        }
+      }
+    } catch {
+      /* mapping optional */
+    }
+
+    if (needCropPages.length > 0) {
+      try {
+        let canvasApi = null;
+        try {
+          canvasApi = await import('@napi-rs/canvas');
+        } catch (canvasErr) {
+          console.warn('[PDF_ENRICH] canvas unavailable:', canvasErr?.message || canvasErr);
+        }
+        if (canvasApi) {
+          const shotResult = await parser.getScreenshot({
+            partial: needCropPages,
+            scale: 1.5,
+            imageBuffer: true,
+            imageDataUrl: false,
+          });
+          let cropOrder = candidates.length;
+          for (const page of Array.isArray(shotResult?.pages) ? shotResult.pages : []) {
+            const pageNumber = Number(page?.pageNumber) || 0;
+            const full = bufferFromImageData(page?.data);
+            if (!full || !pageNumber) continue;
+            const pageText =
+              pageTexts.find((x) => Number(x.pageNumber) === pageNumber)?.text || '';
+            const tableMode = MATCH_TABLE_HINT_RE.test(pageText);
+            const caseMode = /\b(case\s*study|passage|read\s+the\s+following)\b/i.test(pageText);
+            try {
+              const tight = await cropInkFigureRegion(full, canvasApi, { tableMode, caseMode });
+              if (!tight?.buf) continue;
+              cropOrder += 1;
+              candidates.push({
+                buf: tight.buf,
+                key: tight.key || `pdf-crop:${pageNumber}:${tight.buf.length}`,
+                name: `page-${pageNumber}-crop`,
+                order: cropOrder,
+                pageNumber,
+                kind: 'ink',
+              });
+            } catch (e) {
+              console.warn('[PDF_ENRICH] collectPdf crop failed', pageNumber, e?.message || e);
+            }
+          }
+        }
+      } catch (shotErr) {
+        console.warn('[PDF_ENRICH] collectPdf screenshot failed:', shotErr?.message || shotErr);
+      }
+    }
+
+    // Dedupe by key
+    const seen = new Set();
+    const unique = [];
+    for (const c of candidates) {
+      if (seen.has(c.key)) continue;
+      seen.add(c.key);
+      unique.push(c);
+    }
+    unique.sort((a, b) => a.order - b.order);
+
+    await ensureQuestionsUploadDir();
+    for (const candidate of unique) {
+      const url = await saveQuestionImageBuffer(
+        candidate.buf,
+        examId,
+        savedUrlByImageKey,
+        candidate.key,
+      );
+      paperImages.push({
+        url,
+        name: candidate.name,
+        order: candidate.order,
+        key: candidate.key,
+        pageNumber: candidate.pageNumber,
+        kind: candidate.kind,
+      });
+    }
+
+    console.log('[PDF_ENRICH] collectPdfPaperImages', {
+      fast,
+      pages: maxPages,
+      embedsAndCrops: paperImages.length,
+      elapsedMs: Date.now() - startedAt,
+    });
+    return paperImages;
+  } catch (e) {
+    console.warn('[PDF_ENRICH] collectPdfPaperImages failed:', e?.message || e);
+    return paperImages;
+  } finally {
+    if (parser) await parser.destroy().catch(() => {});
+  }
+}
+
+/**
+ * Collect all paper figures into a pool for manual assignment.
+ * Clears any questionImage on rows so nothing is auto-attached.
+ */
+export async function extractPaperImagesForManualAssign({
+  pdfBuffer = null,
+  docxImages = null,
+  rows = [],
+  examId,
+  fast = true,
+} = {}) {
+  const baseRows = Array.isArray(rows) ? rows : [];
+  const cleared = baseRows.map((row) => ({
+    ...row,
+    questionImage: '',
+  }));
+
+  let paperImages = [];
+  try {
+    if (Array.isArray(docxImages) && docxImages.length) {
+      paperImages = await collectDocxPaperImages(docxImages, { examId });
+    } else if (pdfBuffer) {
+      paperImages = await collectPdfPaperImages(pdfBuffer, cleared, { examId, fast });
+    }
+  } catch (e) {
+    console.warn('[PDF_ENRICH] extractPaperImagesForManualAssign failed:', e?.message || e);
+  }
+
+  return { rows: cleared, paperImages };
 }
