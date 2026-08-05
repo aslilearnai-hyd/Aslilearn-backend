@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { VALID_SCHOOL_BOARDS } from '../constants/boards.js';
+import { isValidSchoolBoard, normalizeSchoolBoard } from '../constants/boards.js';
 
 const examResultSchema = new mongoose.Schema({
   examId: {
@@ -20,9 +20,16 @@ const examResultSchema = new mongoose.Schema({
   board: {
     type: String,
     required: true,
-    enum: VALID_SCHOOL_BOARDS,
     uppercase: true,
-    default: 'ASLI_EXCLUSIVE_SCHOOLS'
+    default: 'ASLI_EXCLUSIVE_SCHOOLS',
+    // Allow built-in + dynamic Board codes (e.g. TELANGANA). Static enum rejected those → HTTP 500 on submit.
+    set: (v) => normalizeSchoolBoard(v),
+    validate: {
+      validator(value) {
+        return isValidSchoolBoard(value);
+      },
+      message: (props) => `\`${props.value}\` is not a valid board code`,
+    },
   },
   examTitle: {
     type: String,
