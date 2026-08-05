@@ -9,6 +9,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { PDFParse } from 'pdf-parse';
+import { isLikelyDocxLogoOrBanner } from './docx-question-paper.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const QUESTIONS_UPLOAD_DIR = path.resolve(__dirname, '../uploads/questions');
@@ -1815,18 +1816,32 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
 
 /**
  * Attach embedded Word (.docx) images to questions that need figures
- * (diagrams, match tables, assertion visuals). Order ≈ document order.
+ * (diagrams, match tables, assertion visuals).
+ * Prefer matching by nearby document text; never attach header logos.
  */
 export async function attachDocxFiguresToRows(images, rows, { examId } = {}) {
   if (!Array.isArray(rows) || rows.length === 0) return rows;
+
   const media = (Array.isArray(images) ? images : [])
     .map((img, i) => {
       const buf = Buffer.isBuffer(img?.data) ? img.data : Buffer.from(img?.data || []);
       if (!buf || buf.length < 500) return null;
+      const enriched = {
+        ...img,
+        data: buf,
+        bytes: buf.length,
+        width: Number(img?.width) || 0,
+        height: Number(img?.height) || 0,
+        beforeText: String(img?.beforeText || ''),
+        afterText: String(img?.afterText || ''),
+        order: Number.isFinite(Number(img?.order)) ? Number(img.order) : i,
+      };
+      if (isLikelyDocxLogoOrBanner(enriched)) return null;
       const key = `docx:${buf.length}:${buf.subarray(0, 24).toString('hex')}:${i}`;
-      return { buf, key, name: String(img?.name || `img-${i}`) };
+      return { ...enriched, buf, key, name: String(img?.name || `img-${i}`) };
     })
-    .filter(Boolean);
+    .filter(Boolean)
+    .sort((a, b) => a.order - b.order);
   if (!media.length) return rows;
 
   const wantingIdxs = [];
@@ -1836,15 +1851,46 @@ export async function attachDocxFiguresToRows(images, rows, { examId } = {}) {
     }
   });
   if (!wantingIdxs.length) {
-    // No explicit figure flags — still attach leftover images to first N MCQ/match rows
     rows.forEach((row, idx) => {
       const t = String(row?.questionType || '').toLowerCase();
-      if (t === 'match_following' || /\b(fig|diagram|graph|shown|column\s*i)\b/i.test(String(row?.questionText || ''))) {
+      if (
+        t === 'match_following' ||
+        /\b(fig|diagram|graph|shown|column\s*i|figure)\b/i.test(String(row?.questionText || ''))
+      ) {
         wantingIdxs.push(idx);
       }
     });
   }
   if (!wantingIdxs.length) return rows;
+
+  const normalize = (s) =>
+    String(s || '')
+      .toLowerCase()
+      .replace(/\s+/g, ' ')
+      .trim();
+
+  const scoreImageToRow = (img, row) => {
+    const stem = normalize(row?.questionText || '').slice(0, 160);
+    if (stem.length < 18) return 0;
+    const ctx = normalize(`${img.beforeText} ${img.afterText}`);
+    if (!ctx) return 0;
+    // Prefer long stem prefixes found near the drawing
+    for (const n of [72, 48, 32, 24]) {
+      const part = stem.slice(0, n);
+      if (part.length >= 18 && ctx.includes(part)) return 100 + n;
+    }
+    // Token overlap on distinctive words
+    const stemTokens = stem
+      .split(/[^a-z0-9]+/)
+      .filter((t) => t.length >= 5)
+      .slice(0, 12);
+    if (!stemTokens.length) return 0;
+    let hits = 0;
+    for (const tok of stemTokens) {
+      if (ctx.includes(tok)) hits += 1;
+    }
+    return hits >= 2 ? hits * 8 : 0;
+  };
 
   await ensureQuestionsUploadDir();
   const savedUrlByImageKey = new Map();
@@ -1852,16 +1898,43 @@ export async function attachDocxFiguresToRows(images, rows, { examId } = {}) {
     await saveQuestionImageBuffer(candidate.buf, examId, savedUrlByImageKey, candidate.key);
   }
 
-  const n = Math.min(wantingIdxs.length, media.length);
   const urlByRowIdx = new Map();
+  const usedImages = new Set();
+  const usedRows = new Set();
+
+  // Pass 1: strong text matches
+  const pairs = [];
+  for (let mi = 0; mi < media.length; mi += 1) {
+    for (const ri of wantingIdxs) {
+      const score = scoreImageToRow(media[mi], rows[ri]);
+      if (score >= 24) pairs.push({ mi, ri, score });
+    }
+  }
+  pairs.sort((a, b) => b.score - a.score);
+  for (const p of pairs) {
+    if (usedImages.has(p.mi) || usedRows.has(p.ri)) continue;
+    const url = savedUrlByImageKey.get(media[p.mi].key);
+    if (!url) continue;
+    urlByRowIdx.set(p.ri, url);
+    usedImages.add(p.mi);
+    usedRows.add(p.ri);
+  }
+
+  // Pass 2: remaining figures → remaining wanting rows, in document order
+  const leftoverImgs = media.map((_, i) => i).filter((i) => !usedImages.has(i));
+  const leftoverRows = wantingIdxs.filter((ri) => !usedRows.has(ri));
+  const n = Math.min(leftoverImgs.length, leftoverRows.length);
   for (let i = 0; i < n; i += 1) {
-    const url = savedUrlByImageKey.get(media[i].key);
-    if (url) urlByRowIdx.set(wantingIdxs[i], url);
+    const url = savedUrlByImageKey.get(media[leftoverImgs[i]].key);
+    if (!url) continue;
+    urlByRowIdx.set(leftoverRows[i], url);
   }
 
   console.log('[PDF_ENRICH] attachDocxFiguresToRows', {
-    images: media.length,
+    imagesIn: Array.isArray(images) ? images.length : 0,
+    imagesUsed: media.length,
     wanting: wantingIdxs.length,
+    matchedByText: usedRows.size,
     attached: urlByRowIdx.size,
   });
 
