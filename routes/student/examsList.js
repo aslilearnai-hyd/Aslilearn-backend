@@ -17,7 +17,7 @@ import GeminiPerformanceReport from '../../models/GeminiPerformanceReport.js';
 import { verifyToken } from '../../middleware/auth.js';
 import { getMyWeeklyDigest } from '../../controllers/impactReportController.js';
 import { getSchoolAdminCalendarEvents, monthBounds } from '../../controllers/calendarController.js';
-import { examVisibleToSchool, examMatchesAdminBoard, examVisibleToStudent } from '../../utils/exam-visibility.js';
+import { examVisibleToSchool, examMatchesAdminBoard, examVisibleToStudent, getExamWindowStatus } from '../../utils/exam-visibility.js';
 import {
   getStudentExamRanking,
   getAllStudentRankings,
@@ -166,21 +166,6 @@ async function hydrateExamQuestions(examDoc, { hideAnswers = false } = {}) {
 const canStudentAccessExam = (exam, studentAdminId, studentBoard) => {
   return examVisibleToStudent(exam, studentAdminId, studentBoard);
 };
-
-/** Enforce exam start/end window on the server (not only in the UI). */
-function getExamWindowStatus(exam) {
-  if (!exam) return { ok: false, message: 'Exam not found' };
-  const now = Date.now();
-  const start = exam.startDate ? new Date(exam.startDate).getTime() : NaN;
-  const end = exam.endDate ? new Date(exam.endDate).getTime() : NaN;
-  if (Number.isFinite(start) && now < start) {
-    return { ok: false, message: 'Exam has not started yet.' };
-  }
-  if (Number.isFinite(end) && now > end) {
-    return { ok: false, message: 'Exam window has ended.' };
-  }
-  return { ok: true };
-}
 
 // Get student's exams (respect school targeting)
 router.get('/exams', async (req, res) => {
