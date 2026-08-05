@@ -106,6 +106,16 @@ const examSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Question'
   }],
+  /**
+   * Unassigned figures extracted from the uploaded paper.
+   * Admin assigns these in the exam editor; once used on a question they are removed.
+   */
+  figurePool: [{
+    url: { type: String, trim: true },
+    name: { type: String, trim: true, default: '' },
+    order: { type: Number, default: 0 },
+    key: { type: String, trim: true, default: '' },
+  }],
   // Primary school association (calendar, filtering); mirrors first target school when set
   schoolId: {
     type: mongoose.Schema.Types.ObjectId,
