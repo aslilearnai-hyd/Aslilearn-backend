@@ -37,6 +37,12 @@ import {
 } from '../../utils/advancedExamAnalytics.js';
 import { normalizeSchoolBoard, resolveUserDisplayBoard } from '../../constants/boards.js';
 import { QUESTION_LIST_SORT, ensureExamQuestionDisplayOrders } from '../../utils/exam-question-order.js';
+import {
+  loadExamQuestionBankForResults,
+  toPlainExamResultForApi,
+} from '../../utils/exam-result-questions.js';
+
+export { loadExamQuestionBankForResults, toPlainExamResultForApi };
 import { dedupeExamResultRows } from '../../utils/dedupe-exam-results.js';
 import {
   examMatchesStudentAssignedClass,
@@ -155,88 +161,6 @@ async function hydrateExamQuestions(examDoc, { hideAnswers = false } = {}) {
         ? normalizedTotalMarks
         : Number(examDoc.totalMarks) || 0
   };
-}
-
-/**
- * Resolve the full question bank for an exam (Question collection + legacy refs + embedded).
- * Must match GET /exam-results/:examId/review so AI analysis and review stay aligned.
- */
-async function loadExamQuestionBankForResults(examId) {
-  const id = examId ? String(examId) : '';
-  if (!id || !mongoose.Types.ObjectId.isValid(id)) {
-    return [];
-  }
-  const examDoc = await Exam.findById(id).lean();
-  let questions = await Question.find({ exam: id, isActive: { $ne: false } })
-    .sort(QUESTION_LIST_SORT)
-    .lean();
-
-  if (!questions.length) {
-    questions = await Question.find({ exam: id })
-      .sort(QUESTION_LIST_SORT)
-      .lean();
-  }
-
-  if (!questions.length && Array.isArray(examDoc?.questions) && examDoc.questions.length > 0) {
-    questions = await Question.find({
-      _id: { $in: examDoc.questions.map((q) => q?._id || q).filter(Boolean) },
-      isActive: { $ne: false },
-    })
-      .sort(QUESTION_LIST_SORT)
-      .lean();
-  }
-
-  if (!questions.length && Array.isArray(examDoc?.questions) && examDoc.questions.length > 0) {
-    questions = await Question.find({
-      _id: { $in: examDoc.questions.map((q) => q?._id || q).filter(Boolean) },
-    })
-      .sort(QUESTION_LIST_SORT)
-      .lean();
-  }
-
-  if (!questions.length && Array.isArray(examDoc?.questions) && examDoc.questions.length > 0) {
-    questions = examDoc.questions
-      .filter((q) => q && typeof q === 'object')
-      .filter((q) => q.questionText || q.questionImage || q.questionType || q.options)
-      .map((q, index) => ({
-        _id: q._id || `embedded-${id}-${index}`,
-        questionText: q.questionText || '',
-        questionImage: q.questionImage || undefined,
-        questionType: q.questionType || 'mcq',
-        options: Array.isArray(q.options) ? q.options : [],
-        correctAnswer: q.correctAnswer,
-        marks: Number(q.marks) || 1,
-        negativeMarks: Number(q.negativeMarks) || 0,
-        explanation: q.explanation || undefined,
-        subject: String(q.subject || 'maths').toLowerCase(),
-        exam: id,
-      }));
-  }
-
-  return questions;
-}
-
-function mapLikeToPlainObject(value) {
-  if (value == null) return value;
-  if (value instanceof Map) return Object.fromEntries(value);
-  if (typeof value === 'object' && typeof value.get === 'function' && typeof value.set === 'function') {
-    try {
-      return Object.fromEntries(value);
-    } catch (_e) {
-      return { ...value };
-    }
-  }
-  return value;
-}
-
-/** Ensure exam result JSON includes plain-object Map fields (Mongoose Map / lean quirks). */
-function toPlainExamResultForApi(row) {
-  if (!row || typeof row !== 'object') return row;
-  const out = { ...row };
-  out.answers = mapLikeToPlainObject(out.answers);
-  out.subjectWiseScore = mapLikeToPlainObject(out.subjectWiseScore);
-  out.questionTimings = mapLikeToPlainObject(out.questionTimings);
-  return out;
 }
 
 const canStudentAccessExam = (exam, studentAdminId, studentBoard) => {

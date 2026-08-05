@@ -101,6 +101,42 @@ const examResultSchema = new mongoose.Schema({
     isCorrect: Boolean,
     isAnswered: Boolean,
   }],
+  /**
+   * Frozen copy of the paper at attempt time. Review / AI must use this so
+   * soft/hard-deleting the live exam never blanks the student's Questions tab.
+   */
+  questionSnapshot: {
+    type: [
+      {
+        _id: String,
+        questionText: String,
+        questionImage: String,
+        questionType: String,
+        options: [mongoose.Schema.Types.Mixed],
+        option1: String,
+        option2: String,
+        option3: String,
+        option4: String,
+        correctAnswer: mongoose.Schema.Types.Mixed,
+        marks: Number,
+        negativeMarks: Number,
+        explanation: String,
+        subject: String,
+        chapter: String,
+        difficulty: String,
+        assertionText: String,
+        reasonText: String,
+        matchColumnI: [mongoose.Schema.Types.Mixed],
+        matchColumnII: [mongoose.Schema.Types.Mixed],
+        sharedMatterText: String,
+        sharedMatterKind: String,
+        passageText: String,
+        displayOrder: Number,
+        exam: String,
+      },
+    ],
+    default: [],
+  },
   completedAt: {
     type: Date,
     default: Date.now

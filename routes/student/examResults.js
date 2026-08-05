@@ -39,6 +39,12 @@ import { normalizeSchoolBoard, resolveUserDisplayBoard } from '../../constants/b
 import { QUESTION_LIST_SORT, ensureExamQuestionDisplayOrders } from '../../utils/exam-question-order.js';
 import { dedupeExamResultRows } from '../../utils/dedupe-exam-results.js';
 import {
+  buildExamQuestionSnapshot,
+  loadExamQuestionBankForResults,
+  resolveQuestionsForExamResult,
+  toPlainExamResultForApi,
+} from '../../utils/exam-result-questions.js';
+import {
   examMatchesStudentAssignedClass,
   resolveStudentClassNumber,
 } from '../../utils/studentClassContent.js';
@@ -96,7 +102,10 @@ router.get('/exam-results', async (req, res) => {
 
     // Do NOT populate examId: if the Exam doc was removed, populate() sets examId to null
     // and the client loses the id (breaks Attempted Exams / rankings). examTitle is on the row.
-    const results = await ExamResult.find({ userId: userId }).sort({ completedAt: -1 });
+    // Omit questionSnapshot here — review endpoint loads it when needed (keeps list light).
+    const results = await ExamResult.find({ userId: userId })
+      .select('-questionSnapshot')
+      .sort({ completedAt: -1 });
 
     const normalizedResults = results.map((row) => {
       const correct = Number(row?.correctAnswers || 0);
@@ -484,7 +493,7 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       }
     }
 
-    const examQuestions = safeResult.examId ? await loadExamQuestionBankForResults(safeResult.examId) : [];
+    const examQuestions = await resolveQuestionsForExamResult(savedExamResult || safeResult, safeResult.examId);
     const examDocForGrading = examIdStr
       ? await Exam.findById(examIdStr).select('subject title').lean()
       : null;
@@ -1479,7 +1488,7 @@ router.get('/exam-results/:examId/review', async (req, res) => {
     }
 
     const examDoc = await Exam.findById(examId).lean();
-    const questions = await loadExamQuestionBankForResults(examId);
+    const questions = await resolveQuestionsForExamResult(latestResult, examId);
 
     return res.json({
       success: true,
@@ -1492,7 +1501,12 @@ router.get('/exam-results/:examId/review', async (req, res) => {
               totalQuestions: examDoc.totalQuestions,
               totalMarks: examDoc.totalMarks,
             }
-          : null,
+          : {
+              _id: examId,
+              title: latestResult.examTitle || 'Exam',
+              totalQuestions: latestResult.totalQuestions,
+              totalMarks: latestResult.totalMarks,
+            },
         questions,
       },
     });
@@ -1922,6 +1936,8 @@ router.post('/exam-results', async (req, res) => {
       subjectWiseScore,
       answers: answerMap,
       questionAnalytics: perQuestionAnalytics,
+      // Freeze the paper with this attempt — survives exam/question deletion.
+      questionSnapshot: buildExamQuestionSnapshot(effectiveQuestions, examDoc),
       completedAt: new Date(),
       attemptNumber,
     };
@@ -2052,12 +2068,7 @@ router.get('/exam/:examId/advanced-analytics', async (req, res) => {
       });
     }
 
-    const examQuestions = await Question.find({
-      exam: examId,
-      isActive: { $ne: false },
-    })
-      .sort(QUESTION_LIST_SORT)
-      .lean();
+    const examQuestions = await resolveQuestionsForExamResult(latestResult, examId);
 
     const questionAnalytics =
       Array.isArray(latestResult.questionAnalytics) && latestResult.questionAnalytics.length > 0

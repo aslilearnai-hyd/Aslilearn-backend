@@ -2742,6 +2742,18 @@ export const deleteExam = async (req, res) => {
       return res.status(404).json({ success: false, message: 'Exam not found' });
     }
 
+    try {
+      const { backfillExamResultQuestionSnapshots } = await import(
+        '../utils/exam-result-questions.js'
+      );
+      const n = await backfillExamResultQuestionSnapshots(examId, exam);
+      if (n > 0) {
+        console.log(`[deleteExam] Backfilled questionSnapshot onto ${n} result(s) for exam ${examId}`);
+      }
+    } catch (snapErr) {
+      console.warn('[deleteExam] questionSnapshot backfill skipped:', snapErr?.message || snapErr);
+    }
+
     exam.isActive = false;
     await exam.save();
     await Question.updateMany({ exam: examId }, { $set: { isActive: false } });
@@ -4799,6 +4811,23 @@ export const deleteAllQuestions = async (req, res) => {
     const exam = await Exam.findById(examId);
     if (!exam || exam.createdByRole !== 'super-admin') {
       return res.status(404).json({ success: false, message: 'Exam not found or not accessible' });
+    }
+
+    try {
+      const { backfillExamResultQuestionSnapshots } = await import(
+        '../utils/exam-result-questions.js'
+      );
+      const n = await backfillExamResultQuestionSnapshots(examId, exam);
+      if (n > 0) {
+        console.log(
+          `[deleteAllQuestions] Backfilled questionSnapshot onto ${n} result(s) for exam ${examId}`,
+        );
+      }
+    } catch (snapErr) {
+      console.warn(
+        '[deleteAllQuestions] questionSnapshot backfill skipped:',
+        snapErr?.message || snapErr,
+      );
     }
 
     const deleteResult = await Question.deleteMany({ exam: examId });
