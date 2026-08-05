@@ -11,6 +11,9 @@ import RiskAnalysisReport from '../../models/RiskAnalysisReport.js';
 import ChatSession from '../../models/ChatSession.js';
 import VidyaStudentMemory from '../../models/VidyaStudentMemory.js';
 import Teacher from '../../models/Teacher.js';
+import StudentVideoChapterProgress from '../../models/StudentVideoChapterProgress.js';
+import Video from '../../models/Video.js';
+import Content from '../../models/Content.js';
 import { detectWeakAndStrongTopics } from './weak-topic-detection-engine.js';
 
 const safeOid = (id) => {
@@ -100,16 +103,18 @@ export async function buildStudentAiContext({
   const today = ymd(new Date());
   const monthAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
 
-  const [classDoc, subjects, recentResults, progressRows, sessions30d, learningPaths, risk, recentChats, memory, homeworkRows] =
+  const [classDoc, subjects, recentResults, progressRows, sessions30d, learningPaths, risk, recentChats, memory, homeworkRows, videoChapterProgress] =
     await Promise.all([
       studentUser.assignedClass ? ClassModel.findById(studentUser.assignedClass).select('classNumber section').lean() : null,
       Array.isArray(studentUser.assignedSubjects) && studentUser.assignedSubjects.length
         ? Subject.find({ _id: { $in: studentUser.assignedSubjects } }).select('name classNumber').lean()
         : [],
       ExamResult.find({ userId: studentOid }).sort({ completedAt: -1 }).limit(20).lean(),
-      UserProgress.find({ userId: studentOid }).sort({ updatedAt: -1 }).limit(80).lean(),
+      UserProgress.find({ userId: studentOid }).sort({ updatedAt: -1 }).limit(120).lean(),
       UserSession.find({ userId: studentOid, date: { $gte: ymd(monthAgo), $lte: today } }).lean(),
-      LearningPath.find({ enrolledUsers: studentOid, isPublished: true }).select('title subjectIds').lean(),
+      LearningPath.find({ enrolledUsers: studentOid, isPublished: true })
+        .select('title subjectIds videoIds difficulty estimatedHours')
+        .lean(),
       RiskAnalysisReport.findOne({ studentId: studentOid }).sort({ sentAt: -1 }).lean(),
       ChatSession.find({ userId: String(studentOid), role: 'student', archived: false })
         .sort({ updatedAt: -1 })
@@ -117,8 +122,50 @@ export async function buildStudentAiContext({
         .select('title updatedAt messageCount')
         .lean(),
       VidyaStudentMemory.findOne({ studentId: studentOid }).lean(),
-      HomeworkSubmission.find({ studentId: studentOid }).sort({ submittedAt: -1 }).limit(10).lean(),
+      HomeworkSubmission.find({ studentId: studentOid }).sort({ submittedAt: -1 }).limit(15).lean(),
+      StudentVideoChapterProgress.find({ userId: studentOid }).lean(),
     ]);
+
+  const videoIds = [
+    ...new Set(
+      progressRows
+        .map((r) => (r?.videoId ? String(r.videoId) : ''))
+        .filter(Boolean),
+    ),
+  ].slice(0, 80);
+  const contentIds = [
+    ...new Set(
+      progressRows
+        .map((r) => (r?.contentId && !r?.videoId ? String(r.contentId) : ''))
+        .filter(Boolean),
+    ),
+  ].slice(0, 80);
+  const chapterSubjectIds = [
+    ...new Set(videoChapterProgress.map((r) => (r?.subjectId ? String(r.subjectId) : '')).filter(Boolean)),
+  ];
+
+  const [videos, contents, chapterSubjects] = await Promise.all([
+    videoIds.length
+      ? Video.find({ _id: { $in: videoIds } }).select('title subjectId').lean()
+      : [],
+    contentIds.length
+      ? Content.find({ _id: { $in: contentIds } }).select('title').lean()
+      : [],
+    chapterSubjectIds.length
+      ? Subject.find({ _id: { $in: chapterSubjectIds } }).select('name').lean()
+      : [],
+  ]);
+
+  const videoTitleById = Object.fromEntries(
+    (videos || []).map((v) => [String(v._id), String(v.title || '').trim() || 'Video']),
+  );
+  const contentTitleById = Object.fromEntries(
+    (contents || []).map((c) => [String(c._id), String(c.title || '').trim() || 'Content']),
+  );
+  const subjectNameById = Object.fromEntries([
+    ...(subjects || []).map((s) => [String(s._id), String(s.name || '').trim()]),
+    ...(chapterSubjects || []).map((s) => [String(s._id), String(s.name || '').trim()]),
+  ].filter(([, name]) => Boolean(name)));
 
   const weakTopics = detectWeakAndStrongTopics({
     exams: { recentResults },
@@ -145,6 +192,10 @@ export async function buildStudentAiContext({
       progressRows,
       learningPaths,
       homeworkRows,
+      videoChapterProgress,
+      videoTitleById,
+      contentTitleById,
+      subjectNameById,
     },
     attendance: {
       sessions30d,

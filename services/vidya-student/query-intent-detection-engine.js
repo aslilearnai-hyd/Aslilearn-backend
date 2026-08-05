@@ -9,6 +9,8 @@ const APP_HINTS = [
   'my dashboard', 'my weak', 'my performance', 'my result', 'my subjects',
   'my streak', 'my improvement', 'my recommendation', 'my analysis', 'my report',
   'my standing', 'my average', 'my percentage', 'my chapter', 'my topic',
+  'my videos', 'my video', 'my homework', 'my learning', 'my path', 'my paths',
+  'my status', 'learning progress', 'exam status', 'videos watched', 'video progress',
 
   // "i am / i have / i scored" phrased queries
   'i am weak', 'i am strong', 'i am failing', 'i am struggling',
@@ -16,6 +18,7 @@ const APP_HINTS = [
   'what am i bad', 'what am i good',
   'i scored', 'i got', 'i passed', 'i failed',
   'i have been', 'i need to improve',
+  'have i watched', 'videos have i', 'did i watch',
 
   // "where / which / what" subject/topic queries
   'where i am weak', 'where i am strong', 'which subject am i weak',
@@ -51,6 +54,10 @@ const APP_HINTS = [
   'all exam results',
   'my exam result',
   'exam history',
+  'learning path',
+  'eduott',
+  'edu ott',
+  'video lectures',
 ];
 
 /**
@@ -84,7 +91,7 @@ const GENERAL_HINTS = [
 const EXAM_DATA_PATTERNS = [
   /\b(all\s+)?(my\s+)?exam\s*results?\b/,
   /\ball\s+(my\s+)?(exams?|tests?|assessments?)\b/,
-  /\b(my\s+)?(exam|test)\s+(scores?|results?|marks?|performance)\b/,
+  /\b(my\s+)?(exam|test)\s+(scores?|results?|marks?|performance|status)\b/,
   /\b(show|tell|give|list|get)\s+(me\s+)?(all\s+)?(my\s+)?(exam|test)/,
   /\bhow\s+(many|much)\s+.*\b(exams?|tests?)\b/,
   /\bwhat\s+(are|is)\s+(all\s+)?(my\s+)?(exam|test)/,
@@ -92,8 +99,27 @@ const EXAM_DATA_PATTERNS = [
   /\bresults?\s+of\s+(all\s+)?(my\s+)?exams?\b/,
 ];
 
+/** Platform activity: videos, paths, homework, overall learning progress */
+const PLATFORM_DATA_PATTERNS = [
+  /\b(my\s+)?(learning\s+)?progress\b/,
+  /\bhow\s+am\s+i\s+doing\b/,
+  /\b(exam|test)\s+status\b/,
+  /\bdid\s+i\s+improve\b/,
+  /\bam\s+i\s+improv/,
+  /\b(my\s+)?videos?\b/,
+  /\bvideos?\s+(watched|completed|i\s+watched|have\s+i)\b/,
+  /\b(edu\s*ott|video\s+lectures?)\b/,
+  /\b(learning\s+paths?|my\s+path)\b/,
+  /\b(my\s+)?homework\b/,
+  /\bchapters?\s+(completed|finished|done)\b/,
+];
+
 function isExamDataQuestion(q) {
   return EXAM_DATA_PATTERNS.some((re) => re.test(q));
+}
+
+function isPlatformDataQuestion(q) {
+  return PLATFORM_DATA_PATTERNS.some((re) => re.test(q));
 }
 
 const SELF_REFERENCE_PATTERNS = [
@@ -122,12 +148,13 @@ export function detectQueryIntent(question) {
   const appHint = APP_HINTS.some((s) => q.includes(s));
   const selfRef = SELF_REFERENCE_PATTERNS.some((p) => p.test(q));
   const examData = isExamDataQuestion(q);
+  const platformData = isPlatformDataQuestion(q);
   const generalHint = GENERAL_HINTS.some((s) => q.includes(s));
 
-  const isApp = appHint || selfRef || examData;
+  const isApp = appHint || selfRef || examData || platformData;
 
-  // "What is all exam result" = student's scores, not a dictionary definition.
-  if (examData) return { type: 'application', confidence: 0.96 };
+  // Own exam/platform metrics — never treat as dictionary "what is …"
+  if (examData || platformData) return { type: 'application', confidence: 0.96 };
 
   // Both personal + conceptual → hybrid
   if (isApp && generalHint) return { type: 'hybrid', confidence: 0.85 };

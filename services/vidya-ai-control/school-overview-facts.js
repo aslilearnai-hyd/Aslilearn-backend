@@ -116,9 +116,12 @@ async function metricsForAdminOid(adminOid, schoolLabel) {
 
 /**
  * Lookup a school by name and return profile + live scoped metrics.
+ * School admins only see schools they administer.
  */
-export async function buildNamedSchoolDetailFacts(schoolNameQuery) {
+export async function buildNamedSchoolDetailFacts(schoolNameQuery, viewer = {}) {
   const q = String(schoolNameQuery || '').trim();
+  const viewerRole = String(viewer?.viewerRole || '').toLowerCase();
+  const viewerOid = oid(viewer?.viewerUserId);
   if (!q) {
     return {
       operation: 'overview',
@@ -133,7 +136,7 @@ export async function buildNamedSchoolDetailFacts(schoolNameQuery) {
   const regex = new RegExp(escapeRegex(q), 'i');
   let matches = await School.find({ name: regex })
     .select(
-      'name place phone contactPerson board curriculumBoard isAsliPrepExclusive licensedStudents licensedTeachers isActive adminUserId schoolDetails pin',
+      'name place phone contactPerson board curriculumBoard isAsliPrepExclusive licensedStudents licensedTeachers isActive adminUserId schoolDetails',
     )
     .limit(8)
     .lean()
@@ -166,6 +169,10 @@ export async function buildNamedSchoolDetailFacts(schoolNameQuery) {
     }));
   }
 
+  if (viewerRole === 'admin' && viewerOid) {
+    matches = matches.filter((s) => String(s.adminUserId || '') === String(viewerOid));
+  }
+
   if (!matches.length) {
     return {
       operation: 'overview',
@@ -174,7 +181,10 @@ export async function buildNamedSchoolDetailFacts(schoolNameQuery) {
       overview: {},
       searchQuery: q,
       candidates: [],
-      error: `No school matched "${q}". Try a shorter or partial name.`,
+      error:
+        viewerRole === 'admin'
+          ? `No school matched "${q}" in your school scope.`
+          : `No school matched "${q}". Try a shorter or partial name.`,
     };
   }
 
@@ -201,7 +211,6 @@ export async function buildNamedSchoolDetailFacts(schoolNameQuery) {
   const profile = {
     name: school.name,
     place: school.place || '',
-    pin: school.pin || '',
     phone: school.phone || '',
     contactPerson: school.contactPerson || '',
     board: school.board || '',

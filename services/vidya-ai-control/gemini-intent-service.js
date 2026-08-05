@@ -5,6 +5,12 @@ import {
   extractSchoolNameQuery,
   isSchoolDetailQuery,
 } from './school-overview-facts.js';
+import {
+  extractPersonNameQuery,
+  isPersonDetailQuery,
+  extractClassGroupQuery,
+  isClassGroupQuery,
+} from './entity-detail-facts.js';
 
 function safeJson(raw) {
   let text = String(raw || '').trim();
@@ -31,8 +37,6 @@ const GREETING_RE = /^(hi|hii|hiii|hello|hey|heya|yo|sup|good\s*(morning|afterno
 function isGreetingOrSmallTalk(message) {
   const t = String(message || '').trim();
   if (!t) return false;
-  // Keep this to short, unambiguous chit-chat only — anything longer or with a
-  // question about data should still go through real intent classification.
   if (t.split(/\s+/).length > 5) return false;
   return GREETING_RE.test(t);
 }
@@ -99,6 +103,47 @@ function buildSchoolDetailPlan(schoolName, errMessage = '') {
   };
 }
 
+function buildPersonDetailPlan(personName, roleHint = '', errMessage = '') {
+  return {
+    mode: 'person_detail',
+    module: roleHint === 'teacher' ? 'teachers' : roleHint === 'admin' ? 'users' : 'students',
+    operation: 'overview',
+    personNameQuery: personName,
+    personRoleHint: roleHint || '',
+    filters: [{ field: 'fullName', op: 'regex', value: personName }],
+    selectFields: ['fullName', 'classNumber', 'email', 'isActive'],
+    groupBy: [],
+    aggregates: [],
+    sort: [],
+    limit: 5,
+    timeframe: 'all',
+    clarification: '',
+    parseWarning: errMessage ? `gemini_unavailable:${errMessage}` : 'person_detail_intent',
+  };
+}
+
+function buildClassDetailPlan(classNumber, section = '', errMessage = '') {
+  return {
+    mode: 'class_detail',
+    module: 'classes',
+    operation: 'overview',
+    classNumberQuery: classNumber,
+    sectionQuery: section || '',
+    filters: [
+      { field: 'classNumber', op: 'eq', value: classNumber },
+      ...(section ? [{ field: 'section', op: 'eq', value: section }] : []),
+    ],
+    selectFields: ['classNumber', 'section', 'name'],
+    groupBy: [],
+    aggregates: [],
+    sort: [],
+    limit: 20,
+    timeframe: 'all',
+    clarification: '',
+    parseWarning: errMessage ? `gemini_unavailable:${errMessage}` : 'class_detail_intent',
+  };
+}
+
 function buildSchoolSearchPlan(schoolName, errMessage = '') {
   return {
     mode: 'database',
@@ -132,6 +177,16 @@ function buildHeuristicPlan(message, errMessage = '') {
   }
   if (isReportsOverviewQuery(message)) {
     return buildOverviewPlan(errMessage);
+  }
+
+  const personEarly = extractPersonNameQuery(message);
+  if (personEarly.name && isPersonDetailQuery(message)) {
+    return buildPersonDetailPlan(personEarly.name, personEarly.roleHint, errMessage);
+  }
+
+  const classEarly = extractClassGroupQuery(message);
+  if (classEarly.classNumber && isClassGroupQuery(message)) {
+    return buildClassDetailPlan(classEarly.classNumber, classEarly.section, errMessage);
   }
 
   const namedSchool = extractSchoolNameQuery(message);
@@ -350,6 +405,16 @@ export async function parseDynamicIntent({ userMessage, history = [] }) {
     return buildOverviewPlan();
   }
 
+  const personEarly = extractPersonNameQuery(message);
+  if (personEarly.name && isPersonDetailQuery(message)) {
+    return buildPersonDetailPlan(personEarly.name, personEarly.roleHint);
+  }
+
+  const classEarly = extractClassGroupQuery(message);
+  if (classEarly.classNumber && isClassGroupQuery(message)) {
+    return buildClassDetailPlan(classEarly.classNumber, classEarly.section);
+  }
+
   const namedSchoolEarly = extractSchoolNameQuery(message);
   if (namedSchoolEarly && isSchoolDetailQuery(message)) {
     return buildSchoolDetailPlan(namedSchoolEarly);
@@ -363,10 +428,14 @@ export async function parseDynamicIntent({ userMessage, history = [] }) {
   const prompt = `You map admin chat questions to a READ-ONLY database query plan.
 Return ONLY JSON with shape:
 {
-  "mode":"database"|"knowledge"|"school_detail",
+  "mode":"database"|"knowledge"|"school_detail"|"person_detail"|"class_detail"|"overview",
   "module":"<one module key when mode=database>",
   "operation":"count"|"list"|"aggregate"|"distinct"|"overview",
   "schoolNameQuery":"<school name when looking up one school>",
+  "personNameQuery":"<person full name when asking about a student/teacher/admin>",
+  "personRoleHint":"student"|"teacher"|"admin"|"",
+  "classNumberQuery":"<class number like 7>",
+  "sectionQuery":"<section letter like A or empty>",
   "filters":[{"field":"", "op":"eq|ne|gt|gte|lt|lte|in|regex|exists", "value":""}],
   "selectFields":["fieldA","fieldB"],
   "groupBy":["fieldA"],
@@ -382,6 +451,8 @@ ${aliasList}
 
 Rules:
 - If user asks for application data/count/list/ranking/summary, choose mode="database".
+- For a named person ("how is Rahul doing?", "Priya's exam scores", "tell me about teacher Sharma"), choose mode="person_detail" and set personNameQuery (+ optional personRoleHint).
+- For a class/section group ("Class 7A performance", "how is class 8 doing?"), choose mode="class_detail" with classNumberQuery and optional sectionQuery.
 - For named school details ("details about X school", "tell me about school X"), choose mode="school_detail", module="schools", and set schoolNameQuery to the school name.
 - Never map "test school" / school names containing "test" to exams.
 - School counts/lists use module="schools" (School collection name field), not users.
@@ -434,15 +505,44 @@ ${message.slice(0, 4500)}
     return buildSchoolSearchPlan(namedSchool);
   }
 
+  const personFromParsed = String(parsed.personNameQuery || '').trim();
+  const personParsed = personFromParsed
+    ? { name: personFromParsed, roleHint: String(parsed.personRoleHint || '').trim() }
+    : extractPersonNameQuery(message);
+  if (
+    personParsed.name &&
+    (String(parsed.mode || '').toLowerCase() === 'person_detail' || isPersonDetailQuery(message))
+  ) {
+    return buildPersonDetailPlan(personParsed.name, personParsed.roleHint);
+  }
+
+  const classFromParsed = {
+    classNumber: String(parsed.classNumberQuery || '').trim(),
+    section: String(parsed.sectionQuery || '').trim(),
+  };
+  const classParsed = classFromParsed.classNumber
+    ? classFromParsed
+    : extractClassGroupQuery(message);
+  if (
+    classParsed.classNumber &&
+    (String(parsed.mode || '').toLowerCase() === 'class_detail' || isClassGroupQuery(message))
+  ) {
+    return buildClassDetailPlan(classParsed.classNumber, classParsed.section);
+  }
+
   const parsedMode = String(parsed.mode || '').toLowerCase();
   const mode =
     parsedMode === 'overview'
       ? 'overview'
       : parsedMode === 'school_detail'
         ? 'school_detail'
-        : parsedMode === 'database'
-          ? 'database'
-          : 'knowledge';
+        : parsedMode === 'person_detail'
+          ? 'person_detail'
+          : parsedMode === 'class_detail'
+            ? 'class_detail'
+            : parsedMode === 'database'
+              ? 'database'
+              : 'knowledge';
   const operation = OPS.includes(String(parsed.operation)) ? String(parsed.operation) : 'list';
   const limit = Math.max(1, Math.min(100, Number(parsed.limit) || 20));
   const timeframe = ['today', 'this_week', 'this_month', 'all'].includes(String(parsed.timeframe))
@@ -467,6 +567,16 @@ ${message.slice(0, 4500)}
   if (mode === 'school_detail') {
     const q = namedSchool || String(parsed.schoolNameQuery || '').trim() || 'school';
     return buildSchoolDetailPlan(q);
+  }
+  if (mode === 'person_detail') {
+    const q = personParsed.name || String(parsed.personNameQuery || '').trim();
+    if (!q) return buildHeuristicPlan(message, 'person_detail_missing_name');
+    return buildPersonDetailPlan(q, personParsed.roleHint || String(parsed.personRoleHint || ''));
+  }
+  if (mode === 'class_detail') {
+    const cn = classParsed.classNumber || String(parsed.classNumberQuery || '').trim();
+    if (!cn) return buildHeuristicPlan(message, 'class_detail_missing_number');
+    return buildClassDetailPlan(cn, classParsed.section || String(parsed.sectionQuery || ''));
   }
 
   const lower = message.toLowerCase();
