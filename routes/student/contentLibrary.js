@@ -85,17 +85,32 @@ router.get('/asli-prep-content', async (req, res) => {
 
     const { getStudentSchoolProgramContext, applySchoolProgramContentFilters, isAllowedContentType } =
       await import('../../utils/schoolProgram.js');
+    const { boardsForSchoolContentScope } = await import('../../constants/boards.js');
     const programCtx = {
       ...(await getStudentSchoolProgramContext(req.userId)),
       surface,
     };
 
     if (type && type !== 'all' && !isAllowedContentType(type, programCtx.isAsliPrepExclusive)) {
-      return res.json({ success: true, data: [] });
+      const eduOtt =
+        String(surface || '').toLowerCase() === 'eduott' ||
+        String(surface || '').toLowerCase() === 'edu-ott';
+      return res.json({
+        success: true,
+        data: [],
+        message: eduOtt
+          ? 'EduOTT IIT videos are available only for Asli Prep schools with IIT EduOTT enabled. Board videos are in Learning Paths.'
+          : 'This content type is not available for your school program.',
+        meta: {
+          reason: 'not_asli_prep',
+          isAsliPrepExclusive: false,
+          iitCategories: [],
+        },
+      });
     }
     
     const student = await User.findById(req.userId)
-      .populate('assignedAdmin', 'board curriculumBoard isAsliPrepExclusive')
+      .populate('assignedAdmin', 'board curriculumBoard isAsliPrepExclusive iitCategories')
       .populate('assignedClass', 'classNumber section assignedSubjects');
     
     if (!student) {
@@ -123,9 +138,33 @@ router.get('/asli-prep-content', async (req, res) => {
     // Individual students: class may not be linked to a school Class doc — use signup class/board
     if (librarySubjectIds.length === 0 && student.isIndividualAccount) {
       const { resolveIndividualCatalogSubjectIds } = await import(
-        '../utils/individualCatalogSubjects.js'
+        '../../utils/individualCatalogSubjects.js'
       );
       librarySubjectIds = await resolveIndividualCatalogSubjectIds(student);
+    }
+
+    const {
+      normalizeClassNumberLabel,
+      resolveStudentClassNumber,
+      filterContentsForStudentClass,
+    } = await import('../../utils/studentClassContent.js');
+    const studentClassNumber = resolveStudentClassNumber(student, studentClassDoc);
+
+    // IIT EduOTT videos sit on IIT-board subjects — merge them for the student's class
+    // when the school has IIT tracks (Alpha/Beta/Gamma) assigned.
+    if (
+      programCtx.isAsliPrepExclusive &&
+      Array.isArray(programCtx.iitCategories) &&
+      programCtx.iitCategories.some((c) => String(c || '').trim())
+    ) {
+      const { mergeIitCatalogSubjectsIntoLibraryIds } = await import(
+        '../../utils/iitCatalogSubjects.js'
+      );
+      librarySubjectIds = await mergeIitCatalogSubjectsIntoLibraryIds(
+        librarySubjectIds,
+        studentClassNumber || student.classNumber,
+        { iitCategories: programCtx.iitCategories },
+      );
     }
 
     const { filterToActiveCatalogSubjectIds, buildActiveSubjectIdSet, filterContentRowsForActiveCatalog } =
@@ -139,17 +178,33 @@ router.get('/asli-prep-content', async (req, res) => {
         data: [],
         message:
           'No subjects available for your class yet. Ask your administrator to assign subjects or confirm your class.',
+        meta: {
+          reason: 'no_subjects',
+          isAsliPrepExclusive: programCtx.isAsliPrepExclusive,
+          iitCategories: programCtx.iitCategories || [],
+        },
       });
     }
 
     const boardUpper = resolveStudentContentBoard(student, adminBoard);
-    const contentSubjectIds = await resolveSubjectContentIdsMany(librarySubjectIds, {
-      board: boardUpper,
+    const schoolBoards = boardsForSchoolContentScope({
+      board: adminBoard,
+      curriculumBoard: programCtx.curriculumBoard || boardUpper,
+      isAsliPrepExclusive: programCtx.isAsliPrepExclusive,
+      iitCategories: programCtx.iitCategories,
     });
+    const siblingBoardOpts = schoolBoards.length
+      ? { boards: schoolBoards }
+      : { board: boardUpper };
+
+    const contentSubjectIds = await resolveSubjectContentIdsMany(
+      librarySubjectIds,
+      siblingBoardOpts,
+    );
     const activeIdSet = buildActiveSubjectIdSet(contentSubjectIds);
 
     console.log(
-      `📚 Library subjects: ${librarySubjectIds.length}, content query ids (incl. siblings): ${contentSubjectIds.length}, board: ${boardUpper}`
+      `📚 Library subjects: ${librarySubjectIds.length}, content query ids (incl. siblings): ${contentSubjectIds.length}, boards: ${schoolBoards.join(',') || boardUpper}`
     );
 
     // Build query — include content on MATHS_6 when student has clean MATHS assigned.
@@ -159,11 +214,13 @@ router.get('/asli-prep-content', async (req, res) => {
     };
 
     if (subject && subject !== 'all' && mongoose.Types.ObjectId.isValid(subject)) {
-      const allowed = await subjectIdAllowedWithSiblings(subject, librarySubjectIds, {
-        board: boardUpper,
-      });
+      const allowed = await subjectIdAllowedWithSiblings(
+        subject,
+        librarySubjectIds,
+        siblingBoardOpts,
+      );
       if (allowed) {
-        const resolved = await resolveSubjectContentIds(subject, { board: boardUpper });
+        const resolved = await resolveSubjectContentIds(subject, siblingBoardOpts);
         query.subject = { $in: resolved };
       } else {
         console.log('⚠️ Requested subject not in class assigned subjects');
@@ -190,19 +247,17 @@ router.get('/asli-prep-content', async (req, res) => {
 
     contents = applySchoolProgramContentFilters(contents, programCtx);
 
-    const {
-      normalizeClassNumberLabel,
-      resolveStudentClassNumber,
-      filterContentsForStudentClass,
-    } = await import('../../utils/studentClassContent.js');
-    const studentClassNumber = resolveStudentClassNumber(student, studentClassDoc);
-
     if (!studentClassNumber) {
       return res.json({
         success: true,
         data: [],
         message:
           'No class assigned. Content will appear once your administrator assigns you to a class.',
+        meta: {
+          reason: 'no_class',
+          isAsliPrepExclusive: programCtx.isAsliPrepExclusive,
+          iitCategories: programCtx.iitCategories || [],
+        },
       });
     }
 
@@ -240,9 +295,41 @@ router.get('/asli-prep-content', async (req, res) => {
     const { dedupeLibraryContents } = await import('../../utils/dedupeLibraryContents.js');
     contents = dedupeLibraryContents(contents);
 
+    const eduOtt =
+      String(surface || '').toLowerCase() === 'eduott' ||
+      String(surface || '').toLowerCase() === 'edu-ott';
+    let emptyMessage = '';
+    let emptyReason = '';
+    if (contents.length === 0 && eduOtt) {
+      const hasIitTracks =
+        Array.isArray(programCtx.iitCategories) &&
+        programCtx.iitCategories.some((c) => String(c || '').trim());
+      if (!programCtx.isAsliPrepExclusive) {
+        emptyReason = 'not_asli_prep';
+        emptyMessage =
+          'EduOTT IIT videos are available only for Asli Prep schools. Board videos are in Learning Paths.';
+      } else if (!hasIitTracks) {
+        emptyReason = 'iit_eduott_off';
+        emptyMessage =
+          'IIT EduOTT is turned off for your school. Ask your admin to enable IIT EduOTT (Alpha / Beta / Gamma), or open Learning Paths for board videos.';
+      } else {
+        emptyReason = 'no_iit_videos_for_class';
+        emptyMessage =
+          'No IIT videos for your class and assigned tracks yet. Board videos stay in Learning Paths.';
+      }
+    }
+
     res.json({
       success: true,
-      data: contents
+      data: contents,
+      ...(emptyMessage ? { message: emptyMessage } : {}),
+      meta: {
+        isAsliPrepExclusive: programCtx.isAsliPrepExclusive,
+        iitCategories: programCtx.iitCategories || [],
+        studentClassNumber,
+        librarySubjectCount: librarySubjectIds.length,
+        ...(emptyReason ? { reason: emptyReason } : {}),
+      },
     });
   } catch (error) {
     console.error('❌ Error fetching Asli Prep content:', error);

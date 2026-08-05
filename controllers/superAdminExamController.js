@@ -4019,14 +4019,13 @@ async function buildPdfConvertPayload({
     .filter((r) => r.questionText);
 
   let enriched = { rows: normalizedBase, meta: {} };
+  let paperImages = [];
   if (fastMode) {
-    // Fast Gemini path: shared matter + diagram embeds (not full-page shots).
-    // Match tables still get a page screenshot; diagram Qs get cropped embeds only.
+    // Fast Gemini path: shared matter + paper image pool (manual assign — no auto-attach).
     onProgress?.('Attaching shared matter…');
     const {
       attachSharedMatterLightweight,
-      attachPdfFiguresToRows,
-      attachDocxFiguresToRows,
+      extractPaperImagesForManualAssign,
       ensureAssertionReasonDirections,
       applyExtractionValidation,
     } = await import('../services/exam-pdf-enrichment.js');
@@ -4035,59 +4034,54 @@ async function buildPdfConvertPayload({
       fullText: documentText,
       pdfBuffer: isDocx ? null : buffer,
     });
-    if (!isDocx && buffer) {
-      onProgress?.('Attaching diagram images…');
+    if ((!isDocx && buffer) || (isDocx && docxImages.length)) {
+      onProgress?.('Collecting paper images for manual assign…');
       const figureStarted = Date.now();
       try {
         const timeoutMs = Number(process.env.PDF_FIGURE_ATTACH_TIMEOUT_MS) || 180000;
-        const figurePromise = attachPdfFiguresToRows(buffer, enriched.rows || [], {
+        const collectPromise = extractPaperImagesForManualAssign({
+          pdfBuffer: isDocx ? null : buffer,
+          docxImages: isDocx ? docxImages : null,
+          rows: enriched.rows || [],
           examId,
           fast: true,
         });
-        const rowsWithFigures = await Promise.race([
-          figurePromise,
+        const collected = await Promise.race([
+          collectPromise,
           new Promise((_, reject) =>
-            setTimeout(() => reject(new Error(`figure attach exceeded ${timeoutMs}ms`)), timeoutMs),
+            setTimeout(() => reject(new Error(`figure collect exceeded ${timeoutMs}ms`)), timeoutMs),
           ),
         ]).catch(async (err) => {
-          console.warn('[PDF_EXAM_EXTRACT] figure attach issue:', err?.message || err);
+          console.warn('[PDF_EXAM_EXTRACT] figure collect issue:', err?.message || err);
           try {
             return await Promise.race([
-              figurePromise,
+              collectPromise,
               new Promise((resolve) => setTimeout(() => resolve(null), 5000)),
             ]);
           } catch {
             return null;
           }
         });
-        if (Array.isArray(rowsWithFigures)) {
-          enriched = { ...enriched, rows: rowsWithFigures };
-          console.log('[PDF_EXAM_EXTRACT] figure attach finished', {
-            withImages: rowsWithFigures.filter((r) => r.questionImage).length,
+        if (collected && Array.isArray(collected.rows)) {
+          enriched = { ...enriched, rows: collected.rows };
+          paperImages = Array.isArray(collected.paperImages) ? collected.paperImages : [];
+          console.log('[PDF_EXAM_EXTRACT] paper images collected', {
+            paperImages: paperImages.length,
             elapsedMs: Date.now() - figureStarted,
           });
         } else {
-          console.warn('[PDF_EXAM_EXTRACT] figure attach produced no rows; keeping text-only', {
+          console.warn('[PDF_EXAM_EXTRACT] figure collect produced nothing; keeping text-only', {
             elapsedMs: Date.now() - figureStarted,
           });
         }
       } catch (figErr) {
-        console.warn('[PDF_EXAM_EXTRACT] figure attach skipped:', figErr?.message || figErr);
-      }
-    } else if (isDocx && docxImages.length) {
-      onProgress?.('Attaching Word diagram images…');
-      try {
-        const rowsWithFigures = await attachDocxFiguresToRows(docxImages, enriched.rows || [], {
-          examId,
-        });
-        enriched = { ...enriched, rows: rowsWithFigures };
-      } catch (figErr) {
-        console.warn('[PDF_EXAM_EXTRACT] docx figure attach skipped:', figErr?.message || figErr);
+        console.warn('[PDF_EXAM_EXTRACT] figure collect skipped:', figErr?.message || figErr);
       }
     }
     enriched = {
       ...enriched,
       rows: applyExtractionValidation(ensureAssertionReasonDirections(enriched.rows || [])),
+      meta: { ...(enriched.meta || {}), paperImages },
     };
   } else {
     onProgress?.('Enriching questions (passages / figures)…');
@@ -4098,6 +4092,7 @@ async function buildPdfConvertPayload({
       examId,
       docxImages: isDocx ? docxImages : null,
     });
+    paperImages = Array.isArray(enriched?.meta?.paperImages) ? enriched.meta.paperImages : [];
   }
 
   const normalized = (enriched.rows || []).map((r, idx) => {
@@ -4121,7 +4116,8 @@ async function buildPdfConvertPayload({
     return {
       ...r,
       row: idx + 1,
-      questionImage: String(r.questionImage || '').trim(),
+      // Always start clean — admin assigns from paperImages pool
+      questionImage: '',
       passageText: String(r.passageText || '').trim(),
       passageId: String(r.passageId || r.sharedMatterId || '').trim(),
       sharedMatterId: String(r.sharedMatterId || r.passageId || '').trim(),
@@ -4137,10 +4133,17 @@ async function buildPdfConvertPayload({
     };
   });
 
+  if (!paperImages.length && Array.isArray(enriched?.meta?.paperImages)) {
+    paperImages = enriched.meta.paperImages;
+  }
+
   const flagged = normalized.filter((r) => !r.solvable).length;
   const withImages = normalized.filter((r) => r.questionImage).length;
   const message =
     `Extracted ${normalized.length} question(s) from PDF` +
+    (paperImages.length
+      ? `, ${paperImages.length} figure(s) available — assign manually`
+      : '') +
     (withImages ? `, ${withImages} with figure(s)` : '') +
     (flagged ? `, ${flagged} flagged for review` : '') +
     '. ' +
@@ -4158,8 +4161,10 @@ async function buildPdfConvertPayload({
     data: normalized,
     meta: {
       ...(enriched.meta || {}),
+      paperImages,
       flaggedCount: flagged,
       withImages,
+      paperImageCount: paperImages.length,
       extraction: usage,
       answerKey,
     },
