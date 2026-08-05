@@ -167,7 +167,17 @@ function safeProjection(selectFields, allowedFields) {
   const keys = (Array.isArray(selectFields) ? selectFields : [])
     .map((f) => safeField(f, allowedFields))
     .filter(Boolean);
-  if (keys.length === 0) return null;
+  if (keys.length === 0) {
+    // Never return unprojected documents (password hashes / tokens).
+    return {
+      password: 0,
+      refreshToken: 0,
+      resetPasswordToken: 0,
+      resetToken: 0,
+      otp: 0,
+      otpHash: 0,
+    };
+  }
   return keys.reduce((acc, k) => {
     acc[k] = 1;
     return acc;

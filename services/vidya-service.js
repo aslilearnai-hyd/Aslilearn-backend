@@ -9,6 +9,15 @@ import {
   buildPlatformSnapshotForVidya,
 } from './vidya-context.js';
 import { buildStudentAiContext } from './vidya-student/student-ai-context-engine.js';
+import {
+  extractPersonNameQuery,
+  isPersonDetailQuery,
+  extractClassGroupQuery,
+  isClassGroupQuery,
+  buildNamedPersonDetailFacts,
+  buildClassGroupFacts,
+} from './vidya-ai-control/entity-detail-facts.js';
+import { formatDynamicResponse } from './vidya-ai-control/response-formatter.js';
 
 const ROLE_NORMALISE = (role) => {
   const r = String(role || '').toLowerCase().trim();
@@ -182,6 +191,90 @@ export const handleChat = async ({
 
   const startedAt = Date.now();
   const ctx = await buildContext({ userId, role, providedContext });
+
+  // Teachers asking about a named student / class group → live platform facts
+  // (same builders as Control), scoped to their assigned classes.
+  if (String(ctx.role || role || '').toLowerCase() === 'teacher') {
+    const person = extractPersonNameQuery(message);
+    const classQ = extractClassGroupQuery(message);
+    let platformFacts = null;
+    let platformPlan = null;
+    if (person.name && isPersonDetailQuery(message)) {
+      platformFacts = await buildNamedPersonDetailFacts({
+        personNameQuery: person.name,
+        roleHint: person.roleHint || 'student',
+        viewerRole: 'teacher',
+        viewerUserId: userId,
+      });
+      platformPlan = { mode: 'person_detail' };
+    } else if (classQ.classNumber && isClassGroupQuery(message)) {
+      platformFacts = await buildClassGroupFacts({
+        classNumber: classQ.classNumber,
+        section: classQ.section,
+        viewerRole: 'teacher',
+        viewerUserId: userId,
+      });
+      platformPlan = { mode: 'class_detail' };
+    }
+    if (platformFacts && platformPlan) {
+      const session = await loadOrCreateSession({
+        userId,
+        sessionId,
+        role: ctx.role,
+        context: providedContext,
+      });
+      await persistMessage(session, {
+        role: 'user',
+        content: String(message),
+        timestamp: new Date(),
+      });
+      const reply = await formatDynamicResponse({
+        userPrompt: message,
+        plan: platformPlan,
+        facts: { ...platformFacts, mode: platformPlan.mode },
+        viewerRole: 'teacher',
+        history: [],
+      });
+      const text =
+        stripModelLeaks(String(reply || '').trim()) ||
+        'I could not find matching records in your class scope.';
+      await persistMessage(session, {
+        role: 'assistant',
+        content: text,
+        timestamp: new Date(),
+      });
+      await writeLog({
+        userId: String(userId),
+        role: ctx.role,
+        sessionId: String(session._id),
+        route: 'chat',
+        prompt: String(message),
+        response: text,
+        model: 'platform-facts',
+        provider: 'asli-db',
+        fallbackChain: [],
+        latencyMs: Date.now() - startedAt,
+        retrieverUsed: false,
+        chunkIds: [],
+        chunkScores: [],
+        priorityTier: 0,
+        subject: ctx.subject,
+        classLabel: ctx.classLevel,
+        topic: ctx.topic,
+        success: true,
+        requestIp,
+        userAgent,
+      });
+      return {
+        message: text,
+        sessionId: String(session._id),
+        citations: [],
+        latencyMs: Date.now() - startedAt,
+        groundingStatus: 'platform_data',
+      };
+    }
+  }
+
   const session = await loadOrCreateSession({
     userId,
     sessionId,

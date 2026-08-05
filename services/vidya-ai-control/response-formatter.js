@@ -61,7 +61,9 @@ function validateDbGroundedResponse({ text, facts, userPrompt }) {
 
 function formatOverviewFallback(facts) {
   const o = facts?.overview && typeof facts.overview === 'object' ? facts.overview : {};
-  const label = String(facts?.schoolLabel || 'Your school').trim();
+  const label = String(
+    facts?.personLabel || facts?.classLabel || facts?.schoolLabel || 'Your school',
+  ).trim();
   const profile = facts?.profile && typeof facts.profile === 'object' ? facts.profile : null;
   const candidates = Array.isArray(facts?.candidates) ? facts.candidates : [];
 
@@ -69,11 +71,15 @@ function formatOverviewFallback(facts) {
     const names = candidates
       .slice(0, 8)
       .map((c) => {
+        if (c.kind) {
+          const extra = c.classNumber ? ` class ${c.classNumber}` : c.schoolName ? ` (${c.schoolName})` : '';
+          return `${c.name || 'Unknown'} [${c.kind}]${extra}`;
+        }
         const place = c.place ? ` (${c.place})` : '';
         return `${c.name}${place}`;
       })
       .join('; ');
-    return `${facts.error || `Found ${candidates.length} matching schools.`} Matches: ${names}.`;
+    return `${facts.error || `Found ${candidates.length} matches.`} Matches: ${names}.`;
   }
 
   if (facts?.error && !Object.keys(o).length && !profile) {
@@ -81,20 +87,105 @@ function formatOverviewFallback(facts) {
   }
 
   const lines = [];
-  if (facts?.scope === 'school_lookup') {
-    lines.push(`School details for ${label || profile?.name || 'matched school'}:`);
-  } else {
-    lines.push(`Reports overview for ${label}:`);
+  const scope = String(facts?.scope || '');
+
+  if (scope.startsWith('person_') || facts?.mode === 'person_detail') {
+    lines.push(`About ${label}:`);
+    if (profile?.fullName) lines.push(`Name: ${profile.fullName}.`);
+    if (facts?.personType) lines.push(`Role: ${facts.personType}.`);
+    if (profile?.classNumber) {
+      lines.push(
+        `Class: ${profile.classNumber}${profile.section ? profile.section : ''}${profile.className ? ` (${profile.className})` : ''}.`,
+      );
+    }
+    if (profile?.schoolName) lines.push(`School: ${profile.schoolName}.`);
+    if (typeof o.examsTaken === 'number') lines.push(`Exams taken: ${o.examsTaken}.`);
+    if (typeof o.averagePercentage === 'number') lines.push(`Average score: ${o.averagePercentage}%.`);
+    if (typeof o.latestPercentage === 'number') {
+      lines.push(
+        `Latest exam: ${o.latestPercentage}%${o.latestExamTitle ? ` (${o.latestExamTitle})` : ''}.`,
+      );
+    }
+    if (o.trendDirection && o.trendDirection !== 'unknown') {
+      const delta =
+        o.deltaVsPrevious != null ? ` (${o.deltaVsPrevious > 0 ? '+' : ''}${o.deltaVsPrevious}%)` : '';
+      lines.push(`Score trend: ${o.trendDirection}${delta}.`);
+    }
+    if (typeof o.videosCompleted === 'number' || typeof o.videosTracked === 'number') {
+      lines.push(
+        `Videos: ${o.videosCompleted || 0} completed of ${o.videosTracked || 0} tracked.`,
+      );
+    }
+    if (typeof o.homeworkSubmitted === 'number') {
+      lines.push(`Homework submitted: ${o.homeworkSubmitted} (graded ${o.homeworkGraded || 0}).`);
+    }
+    if (typeof o.loginDaysLast30 === 'number') {
+      lines.push(`Login days (last 30): ${o.loginDaysLast30}.`);
+    }
+    if (typeof o.assignedClasses === 'number') lines.push(`Assigned classes: ${o.assignedClasses}.`);
+    if (typeof o.studentsInAssignedClasses === 'number') {
+      lines.push(`Students in those classes: ${o.studentsInAssignedClasses}.`);
+    }
+    if (typeof o.students === 'number') lines.push(`Students in school: ${o.students}.`);
+    if (typeof o.teachers === 'number') lines.push(`Teachers: ${o.teachers}.`);
+    const recentExams = Array.isArray(facts?.recentExams) ? facts.recentExams : [];
+    if (recentExams.length) {
+      lines.push(
+        `Recent exams: ${recentExams
+          .slice(0, 4)
+          .map((e) => `${e.examTitle} ${e.percentage ?? 'N/A'}%`)
+          .join('; ')}.`,
+      );
+    }
+    const classes = Array.isArray(facts?.classes) ? facts.classes : [];
+    if (classes.length) {
+      lines.push(
+        `Classes: ${classes
+          .map((c) => `${c.classNumber || ''}${c.section || ''}${c.name ? ` ${c.name}` : ''}`.trim())
+          .join(', ')}.`,
+      );
+    }
+    if (facts?.error) lines.push(String(facts.error));
+    if (lines.length <= 1) return 'I could not find matching person records in the database.';
+    return lines.join(' ');
   }
 
+  if (scope === 'class_group' || facts?.mode === 'class_detail') {
+    lines.push(`${label} group summary:`);
+    if (typeof o.students === 'number') lines.push(`Students: ${o.students}.`);
+    if (typeof o.activeStudents === 'number') lines.push(`Active students: ${o.activeStudents}.`);
+    if (typeof o.averagePercentage === 'number') {
+      lines.push(`Average exam score (30d): ${o.averagePercentage}%.`);
+    }
+    if (typeof o.examResultsLast30Days === 'number') {
+      lines.push(`Exam results (last 30 days): ${o.examResultsLast30Days}.`);
+    }
+    if (typeof o.activeExams === 'number') lines.push(`Active exams for this class: ${o.activeExams}.`);
+    if (typeof o.loginSessionsToday === 'number') {
+      lines.push(`Student login sessions today: ${o.loginSessionsToday}.`);
+    }
+    const top = Array.isArray(facts?.topStudents) ? facts.topStudents : [];
+    if (top.length) {
+      lines.push(
+        `Top scorers: ${top
+          .map((s) => `${s.name} ${s.averagePercentage}%`)
+          .join('; ')}.`,
+      );
+    }
+    if (facts?.error) lines.push(String(facts.error));
+    if (lines.length <= 1) return 'I could not find matching class records in the database.';
+    return lines.join(' ');
+  }
+
+  lines.push(`Reports overview for ${label}:`);
   if (profile) {
-    if (profile.name) lines.push(`Name: ${profile.name}.`);
+    if (profile.name) lines.push(`School: ${profile.name}.`);
     if (profile.place) lines.push(`Place: ${profile.place}.`);
     if (profile.board || profile.curriculumBoard) {
       lines.push(`Board: ${profile.board || profile.curriculumBoard}.`);
     }
-    if (profile.contactPerson) lines.push(`Contact: ${profile.contactPerson}.`);
     if (profile.phone) lines.push(`Phone: ${profile.phone}.`);
+    if (profile.contactPerson) lines.push(`Contact: ${profile.contactPerson}.`);
     if (typeof profile.licensedStudents === 'number') {
       lines.push(`Licensed student seats: ${profile.licensedStudents}.`);
     }
@@ -129,7 +220,12 @@ function formatOverviewFallback(facts) {
 }
 
 function localFallbackResponse({ userPrompt, facts }) {
-  if (facts?.operation === 'overview' || facts?.mode === 'school_detail') {
+  if (
+    facts?.operation === 'overview' ||
+    facts?.mode === 'school_detail' ||
+    facts?.mode === 'person_detail' ||
+    facts?.mode === 'class_detail'
+  ) {
     return formatOverviewFallback(facts);
   }
   const moduleLabels = {
@@ -283,8 +379,12 @@ export async function formatDynamicResponse({
   if (
     plan?.mode === 'overview' ||
     plan?.mode === 'school_detail' ||
+    plan?.mode === 'person_detail' ||
+    plan?.mode === 'class_detail' ||
     facts?.operation === 'overview' ||
-    facts?.mode === 'school_detail'
+    facts?.mode === 'school_detail' ||
+    facts?.mode === 'person_detail' ||
+    facts?.mode === 'class_detail'
   ) {
     return formatOverviewFallback(facts);
   }
