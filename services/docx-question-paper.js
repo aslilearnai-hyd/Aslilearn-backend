@@ -1,15 +1,9 @@
 /**
  * Reads a .docx question paper.
  *
- * A .docx is a zip: the text lives in word/document.xml and any pictures in
- * word/media/. Gemini cannot take a .docx as inline data the way it takes a
- * PDF, so this pulls the text out and the extraction prompt runs against that
- * text instead of the rendered page.
- *
- * That difference matters and is deliberately not hidden: a Word file carries
- * no page images, so the visual maths layout and the figures-next-to-questions
- * cues a PDF gives up are simply not there. Text and pictures are recovered;
- * exact visual layout is not.
+ * A .docx is a zip: text in word/document.xml, pictures in word/media/.
+ * Gemini cannot inline a .docx like a PDF, so we extract text + embedded
+ * images and send both to the same extraction/enrichment pipeline.
  */
 import AdmZip from 'adm-zip';
 
@@ -32,7 +26,7 @@ function decodeXmlEntities(text) {
     .replace(/&apos;/g, "'")
     .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)))
     .replace(/&#x([0-9a-fA-F]+);/g, (_, code) => String.fromCodePoint(parseInt(code, 16)))
-    .replace(/&amp;/g, '&'); // last, so a literal &amp;lt; survives
+    .replace(/&amp;/g, '&');
 }
 
 /**
@@ -45,7 +39,6 @@ function documentXmlToText(xml) {
   out = out.replace(/<w:tab\b[^>]*\/>/g, '\t');
   out = out.replace(/<w:br\b[^>]*\/>/g, '\n');
   out = out.replace(/<\/w:p>/g, '\n');
-  // Keep <w:t> contents, drop every other tag
   out = out.replace(/<w:t\b[^>]*>([\s\S]*?)<\/w:t>/g, (_, inner) => inner);
   out = out.replace(/<[^>]+>/g, '');
   out = decodeXmlEntities(out);
@@ -56,8 +49,21 @@ function documentXmlToText(xml) {
     .trim();
 }
 
+function mimeFromImageName(name) {
+  const n = String(name || '').toLowerCase();
+  if (n.endsWith('.png')) return 'image/png';
+  if (n.endsWith('.jpg') || n.endsWith('.jpeg')) return 'image/jpeg';
+  if (n.endsWith('.gif')) return 'image/gif';
+  if (n.endsWith('.webp')) return 'image/webp';
+  return 'image/png';
+}
+
 /**
- * @returns {{ text: string, images: Array<{ name: string, data: Buffer }>, paragraphs: number }}
+ * @returns {{
+ *   text: string,
+ *   images: Array<{ name: string, data: Buffer, mimeType: string }>,
+ *   paragraphs: number
+ * }}
  */
 export function extractDocxQuestionPaper(buffer) {
   const zip = new AdmZip(buffer);
@@ -71,9 +77,19 @@ export function extractDocxQuestionPaper(buffer) {
   const text = documentXmlToText(xml);
 
   const images = entries
-    .filter((e) => /^word\/media\/[^/]+\.(png|jpe?g)$/i.test(e.entryName))
-    .map((e) => ({ name: e.entryName.split('/').pop(), data: e.getData() }))
-    .filter((img) => img.data && img.data.length > 500);
+    .filter((e) => /^word\/media\/[^/]+\.(png|jpe?g|gif|webp)$/i.test(e.entryName))
+    .map((e) => {
+      const name = e.entryName.split('/').pop();
+      const data = e.getData();
+      return {
+        name,
+        data,
+        mimeType: mimeFromImageName(name),
+      };
+    })
+    .filter((img) => img.data && img.data.length > 500)
+    // Keep document order (zip entry order ≈ appearance order in Word)
+    .sort((a, b) => String(a.name).localeCompare(String(b.name), undefined, { numeric: true }));
 
   return {
     text,

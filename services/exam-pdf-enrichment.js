@@ -1812,11 +1812,72 @@ export async function attachPdfFiguresToRows(pdfBuffer, rows, { examId, fast = t
     if (parser) await parser.destroy().catch(() => {});
   }
 }
+
+/**
+ * Attach embedded Word (.docx) images to questions that need figures
+ * (diagrams, match tables, assertion visuals). Order ≈ document order.
+ */
+export async function attachDocxFiguresToRows(images, rows, { examId } = {}) {
+  if (!Array.isArray(rows) || rows.length === 0) return rows;
+  const media = (Array.isArray(images) ? images : [])
+    .map((img, i) => {
+      const buf = Buffer.isBuffer(img?.data) ? img.data : Buffer.from(img?.data || []);
+      if (!buf || buf.length < 500) return null;
+      const key = `docx:${buf.length}:${buf.subarray(0, 24).toString('hex')}:${i}`;
+      return { buf, key, name: String(img?.name || `img-${i}`) };
+    })
+    .filter(Boolean);
+  if (!media.length) return rows;
+
+  const wantingIdxs = [];
+  rows.forEach((row, idx) => {
+    if (rowWantsFigure(row) || String(row?.questionType || '').toLowerCase() === 'match_following') {
+      wantingIdxs.push(idx);
+    }
+  });
+  if (!wantingIdxs.length) {
+    // No explicit figure flags — still attach leftover images to first N MCQ/match rows
+    rows.forEach((row, idx) => {
+      const t = String(row?.questionType || '').toLowerCase();
+      if (t === 'match_following' || /\b(fig|diagram|graph|shown|column\s*i)\b/i.test(String(row?.questionText || ''))) {
+        wantingIdxs.push(idx);
+      }
+    });
+  }
+  if (!wantingIdxs.length) return rows;
+
+  await ensureQuestionsUploadDir();
+  const savedUrlByImageKey = new Map();
+  for (const candidate of media) {
+    await saveQuestionImageBuffer(candidate.buf, examId, savedUrlByImageKey, candidate.key);
+  }
+
+  const n = Math.min(wantingIdxs.length, media.length);
+  const urlByRowIdx = new Map();
+  for (let i = 0; i < n; i += 1) {
+    const url = savedUrlByImageKey.get(media[i].key);
+    if (url) urlByRowIdx.set(wantingIdxs[i], url);
+  }
+
+  console.log('[PDF_ENRICH] attachDocxFiguresToRows', {
+    images: media.length,
+    wanting: wantingIdxs.length,
+    attached: urlByRowIdx.size,
+  });
+
+  return rows.map((row, idx) => {
+    const url = urlByRowIdx.get(idx);
+    if (!url) return row;
+    return { ...row, questionImage: url, hasFigure: true };
+  });
+}
+
 export async function enrichExtractedExamQuestions({
   pdfBuffer,
   rows,
   examId,
   fullText,
+  docxImages = null,
 }) {
   let text = String(fullText || '');
   if (!text && pdfBuffer) {
@@ -1838,17 +1899,22 @@ export async function enrichExtractedExamQuestions({
   next = attachAssertionReasonOptions(next, arBlocks);
   next = attachMatchFollowingMatter(next, matchBlocks);
   next = promoteStructuredTypesFromStem(next);
-  next = await attachPdfFiguresToRows(pdfBuffer, next, { examId, fast: false });
-  next = applyExtractionValidation(ensureAssertionReasonDirections(next));
+  if (pdfBuffer) {
+    next = await attachPdfFiguresToRows(pdfBuffer, next, { examId, fast: false });
+  } else if (Array.isArray(docxImages) && docxImages.length) {
+    next = await attachDocxFiguresToRows(docxImages, next, { examId });
+  }
+  next = ensureAssertionReasonDirections(next);
+  next = applyExtractionValidation(next);
 
   console.log('[PDF_ENRICH] done', {
     rows: next.length,
     passages: passages.length,
-    passageRanges: passages.map((p) => ({ id: p.passageId, q: p.questionRange })),
     arBlocks: arBlocks.length,
     matchBlocks: matchBlocks.length,
     withImages: next.filter((r) => r.questionImage).length,
     flagged: next.filter((r) => !r.solvable).length,
+    source: pdfBuffer ? 'pdf' : docxImages?.length ? 'docx' : 'text',
   });
 
   return {
