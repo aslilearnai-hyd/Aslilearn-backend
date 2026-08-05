@@ -28,7 +28,10 @@ function timeframeToDateFilter(tf) {
     const ymd = istYmd(new Date());
     return { $gte: istStartOfDayInstant(ymd), $lte: istEndOfDayInstant(ymd) };
   }
-  if (tf === 'this_week') {
+  if (tf === 'this_week' || tf === 'last_7_days') {
+    if (tf === 'last_7_days') {
+      return { $gte: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000), $lte: new Date() };
+    }
     const wk = istWeekDateKeys(new Date());
     return { $gte: istStartOfDayInstant(wk[0]), $lte: istEndOfDayInstant(wk[6]) };
   }
@@ -50,6 +53,11 @@ function normalizeSimpleValue(value) {
     if (v === 'today_end') {
       const ymd = istYmd(new Date());
       return istEndOfDayInstant(ymd);
+    }
+    const daysAgo = v.match(/^days_ago_(\d{1,3})$/);
+    if (daysAgo) {
+      const n = Math.min(365, Math.max(1, parseInt(daysAgo[1], 10)));
+      return new Date(Date.now() - n * 24 * 60 * 60 * 1000);
     }
     const c = value.match(/class\s*(\d+)/i);
     if (c) return c[1];
@@ -116,13 +124,71 @@ function adminScopeFilter({ role, viewerUserId, moduleKey, allowedFields }) {
   return { $or: scopeFields.map((f) => ({ [f]: viewerOid })) };
 }
 
-function applyTimeframe(baseFilter, tf, allowedFields) {
+function applyTimeframe(baseFilter, tf, allowedFields, preferredDateField = '') {
   const dt = timeframeToDateFilter(tf);
   if (!dt) return baseFilter;
-  const candidates = ['createdAt', 'updatedAt', 'ts', 'date', 'startDate', 'completedAt', 'uploadDate'];
+  const preferred = String(preferredDateField || '').trim();
+  if (preferred && allowedFields.has(preferred)) {
+    return { ...baseFilter, [preferred]: dt };
+  }
+  const candidates = [
+    'lastLogin',
+    'createdAt',
+    'updatedAt',
+    'ts',
+    'date',
+    'startDate',
+    'completedAt',
+    'uploadDate',
+  ];
   const target = candidates.find((f) => allowedFields.has(f));
   if (!target) return baseFilter;
   return { ...baseFilter, [target]: dt };
+}
+
+const SENSITIVE_ROW_KEYS = new Set([
+  'password',
+  'refreshToken',
+  'resetPasswordToken',
+  'resetToken',
+  'otp',
+  'otpHash',
+  'pin',
+  '__v',
+]);
+
+const DEFAULT_LIST_SELECT = {
+  users: ['fullName', 'email', 'role', 'classNumber', 'schoolName', 'isActive', 'lastLogin', 'createdAt'],
+  students: ['fullName', 'email', 'role', 'classNumber', 'schoolName', 'isActive', 'lastLogin', 'createdAt'],
+  teachers: ['fullName', 'email', 'phone', 'isActive', 'adminId', 'createdAt'],
+  schools: ['name', 'place', 'board', 'phone', 'contactPerson', 'isActive', 'licensedStudents', 'licensedTeachers'],
+};
+
+function sanitizeFactRows(rows, limit = 40) {
+  return (Array.isArray(rows) ? rows : []).slice(0, limit).map((row) => {
+    if (!row || typeof row !== 'object') return row;
+    const out = {};
+    for (const [k, v] of Object.entries(row)) {
+      if (SENSITIVE_ROW_KEYS.has(k)) continue;
+      if (k === 'password') continue;
+      if (v && typeof v === 'object' && v._bsontype === 'ObjectID') {
+        out[k] = String(v);
+        continue;
+      }
+      if (v instanceof Date) {
+        out[k] = v.toISOString();
+        continue;
+      }
+      // Drop nested blobs / buffers
+      if (Buffer.isBuffer(v)) continue;
+      if (v && typeof v === 'object' && !Array.isArray(v)) {
+        const keys = Object.keys(v);
+        if (keys.length > 12) continue;
+      }
+      out[k] = v;
+    }
+    return out;
+  });
 }
 
 function applyModuleSpecificTimeframe({ moduleKey, mergedFilter, timeframe, allowedFields }) {
@@ -256,7 +322,12 @@ export async function executeDynamicDbPlan({
     mergedBaseFilter,
     moduleKey,
   });
-  const basicTimeFiltered = applyTimeframe(mergedBaseFilter, plan.timeframe, allowedFields);
+  const basicTimeFiltered = applyTimeframe(
+    mergedBaseFilter,
+    plan.timeframe,
+    allowedFields,
+    plan.dateField || plan.preferredDateField || '',
+  );
   const merged = applyModuleSpecificTimeframe({
     moduleKey,
     mergedFilter: basicTimeFiltered,
@@ -342,13 +413,23 @@ export async function executeDynamicDbPlan({
         operation: 'aggregate',
         filter: merged,
         groupBy,
-        rows,
+        rows: sanitizeFactRows(rows, limit),
       },
     };
   }
 
-  const projection = safeProjection(plan.selectFields, allowedFields);
-  const sort = safeSort(plan.sort, allowedFields) || { createdAt: -1 };
+  let selectFields = Array.isArray(plan.selectFields) ? plan.selectFields : [];
+  if (!selectFields.length && DEFAULT_LIST_SELECT[moduleKey]) {
+    selectFields = DEFAULT_LIST_SELECT[moduleKey];
+  }
+  const projection = safeProjection(selectFields, allowedFields);
+  const sort =
+    safeSort(plan.sort, allowedFields) ||
+    (allowedFields.has('lastLogin') && String(plan.dateField || '') === 'lastLogin'
+      ? { lastLogin: -1 }
+      : allowedFields.has('createdAt')
+        ? { createdAt: -1 }
+        : { _id: -1 });
   let q = model.find(merged);
   if (projection) q = q.select(projection);
   const rows = await q.sort(sort).limit(limit).lean();
@@ -361,7 +442,7 @@ export async function executeDynamicDbPlan({
       filter: merged,
       limit,
       totalReturned: rows.length,
-      rows,
+      rows: sanitizeFactRows(rows, limit),
     },
   };
 }
