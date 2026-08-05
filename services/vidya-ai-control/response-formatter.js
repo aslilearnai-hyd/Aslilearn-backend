@@ -325,6 +325,18 @@ function localFallbackResponse({ userPrompt, facts }) {
         return `Exam names: ${shown.join(', ')}.`;
       }
     }
+    if (facts.module === 'users' || facts.module === 'students' || facts.module === 'teachers') {
+      const shown = facts.rows.slice(0, 15).map((r, i) => {
+        const name = String(r?.fullName || r?.name || r?.email || 'User').trim();
+        const role = r?.role ? ` [${r.role}]` : '';
+        const klass = r?.classNumber ? ` class ${r.classNumber}` : '';
+        const login = r?.lastLogin
+          ? ` last login ${String(r.lastLogin).slice(0, 19).replace('T', ' ')}`
+          : '';
+        return `${i + 1}. ${name}${role}${klass}${login}`;
+      });
+      return `Found exactly ${facts.totalReturned ?? facts.rows.length} ${label}. ${shown.join('; ')}.`;
+    }
     return `Fetched exactly ${facts.rows.length} records from ${facts.module}.`;
   }
   return `I could not find matching records in the database.`;

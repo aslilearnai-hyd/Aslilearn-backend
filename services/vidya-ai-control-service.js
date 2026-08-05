@@ -1,6 +1,74 @@
 import VidyaControlQueryLog from '../models/VidyaControlQueryLog.js';
 import { runDynamicAiQuery } from './vidya-ai-control/ai-query-engine.js';
 
+function compactControlSnapshot(facts) {
+  if (!facts || typeof facts !== 'object') return null;
+  try {
+    const slim = { ...facts };
+    if (Array.isArray(slim.rows)) {
+      slim.rows = slim.rows.slice(0, 25).map((row) => {
+        if (!row || typeof row !== 'object') return row;
+        const out = {};
+        for (const [k, v] of Object.entries(row)) {
+          if (['password', 'refreshToken', 'otp', 'otpHash', 'pin'].includes(k)) continue;
+          if (v instanceof Date) out[k] = v.toISOString();
+          else if (v && typeof v === 'object' && v._id) out[k] = String(v._id);
+          else if (typeof v === 'object' && v !== null && !Array.isArray(v)) {
+            // keep small plain objects only
+            const keys = Object.keys(v);
+            if (keys.length <= 6) out[k] = v;
+          } else out[k] = v;
+        }
+        return out;
+      });
+    }
+    if (slim.filter && typeof slim.filter === 'object') {
+      slim.filter = JSON.parse(
+        JSON.stringify(slim.filter, (_k, v) => {
+          if (v instanceof Date) return v.toISOString();
+          if (v && typeof v === 'object' && v._bsontype === 'ObjectID') return String(v);
+          return v;
+        }),
+      );
+    }
+    const raw = JSON.stringify(slim);
+    if (raw.length > 80000) {
+      return {
+        mode: slim.mode,
+        module: slim.module,
+        operation: slim.operation,
+        count: slim.count,
+        totalReturned: slim.totalReturned,
+        truncated: true,
+        note: 'Snapshot truncated for storage size.',
+      };
+    }
+    return JSON.parse(raw);
+  } catch {
+    return { note: 'Snapshot unavailable' };
+  }
+}
+
+async function safeWriteControlLog(payload) {
+  try {
+    return await VidyaControlQueryLog.create({
+      ...payload,
+      dataSnapshot: compactControlSnapshot(payload.dataSnapshot),
+    });
+  } catch (err) {
+    console.warn('[VidyaControl] log write failed:', err?.message || err);
+    try {
+      return await VidyaControlQueryLog.create({
+        ...payload,
+        dataSnapshot: { note: 'Snapshot omitted due to write error' },
+        error: String(payload.error || err?.message || '').slice(0, 500),
+      });
+    } catch {
+      return { _id: '' };
+    }
+  }
+}
+
 /**
  * Vidya AI Control Panel — Gemini classifies intent; MongoDB produces facts.
  *
@@ -46,7 +114,7 @@ export async function handleControlAssistantTurn({
       viewerUserId,
     });
   } catch (err) {
-    const log = await VidyaControlQueryLog.create({
+    const log = await safeWriteControlLog({
       adminUserId: viewerUserId,
       adminRole: jwtRole,
       prompt,
@@ -67,7 +135,7 @@ export async function handleControlAssistantTurn({
     const e = new Error(
       quotaHit
         ? 'Gemini quota reached temporarily. Retrying shortly should work.'
-        : 'Unable to process your request dynamically right now.'
+        : 'Unable to process your request dynamically right now.',
     );
     e.statusCode = quotaHit ? 503 : 500;
     e.logId = log._id;
@@ -75,7 +143,7 @@ export async function handleControlAssistantTurn({
   }
 
   if (!dynamic.ok) {
-    const log = await VidyaControlQueryLog.create({
+    const log = await safeWriteControlLog({
       adminUserId: viewerUserId,
       adminRole: jwtRole,
       prompt,
@@ -98,9 +166,21 @@ export async function handleControlAssistantTurn({
   }
 
   const facts = dynamic.facts && typeof dynamic.facts === 'object' ? dynamic.facts : {};
-  const answerText = String(dynamic.message || '').trim();
+  let answerText = String(dynamic.message || '').trim();
+  if (!answerText) {
+    // Never return an empty bubble to the admin UI.
+    if (facts?.operation === 'count' && typeof facts.count === 'number') {
+      answerText = `There are exactly ${facts.count} matching records.`;
+    } else if (facts?.operation === 'list' && Array.isArray(facts.rows)) {
+      answerText = facts.rows.length
+        ? `Found exactly ${facts.rows.length} matching records.`
+        : 'I could not find matching records in the database.';
+    } else {
+      answerText = 'I could not find matching records in the database.';
+    }
+  }
 
-  const log = await VidyaControlQueryLog.create({
+  const log = await safeWriteControlLog({
     adminUserId: viewerUserId,
     adminRole: jwtRole,
     prompt,
@@ -120,7 +200,7 @@ export async function handleControlAssistantTurn({
   return {
     success: true,
     message: answerText,
-    logId: String(log._id),
+    logId: String(log._id || ''),
     groundedFacts: facts,
     auditQuery: dynamic.auditQuery,
     latencyMs: Date.now() - started,

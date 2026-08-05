@@ -280,6 +280,38 @@ function buildHeuristicPlan(message, errMessage = '') {
   if (classNumber) filters.push({ field: 'classNumber', op: 'eq', value: classNumber });
   if (/\bactive\b/i.test(lower)) filters.push({ field: 'isActive', op: 'eq', value: true });
 
+  // "users who logged in within the last 7 days"
+  if (/(logged?\s*in|last\s*login|have\s+logged|login\s+within)/i.test(lower)) {
+    const daysMatch = lower.match(/last\s*(\d{1,3})\s*days?/);
+    const days = daysMatch ? Math.min(90, Math.max(1, parseInt(daysMatch[1], 10))) : 7;
+    const loginModule = /(student|students)/i.test(lower)
+      ? 'students'
+      : /(teacher|teachers)/i.test(lower)
+        ? 'teachers'
+        : 'users';
+    return {
+      mode: 'database',
+      module: loginModule,
+      operation: isCount ? 'count' : 'list',
+      filters: [
+        ...filters.filter((f) => f.field !== 'lastLogin'),
+        { field: 'lastLogin', op: 'gte', value: `days_ago_${days}` },
+      ],
+      selectFields:
+        loginModule === 'teachers'
+          ? ['fullName', 'email', 'phone', 'isActive', 'updatedAt']
+          : ['fullName', 'email', 'role', 'classNumber', 'schoolName', 'isActive', 'lastLogin'],
+      groupBy: [],
+      aggregates: [],
+      sort: [{ field: 'lastLogin', direction: 'desc' }],
+      limit: 40,
+      timeframe: 'all',
+      dateField: 'lastLogin',
+      clarification: '',
+      parseWarning: errMessage ? `gemini_unavailable:${errMessage}` : 'login_activity_intent',
+    };
+  }
+
   if (module === 'exams') {
     if (/\b(active|upcoming|scheduled|running)\b/i.test(lower)) {
       filters.push({ field: 'isActive', op: 'eq', value: true });
@@ -418,6 +450,11 @@ export async function parseDynamicIntent({ userMessage, history = [] }) {
   const namedSchoolEarly = extractSchoolNameQuery(message);
   if (namedSchoolEarly && isSchoolDetailQuery(message)) {
     return buildSchoolDetailPlan(namedSchoolEarly);
+  }
+
+  // Prefer deterministic login-activity plan over Gemini inventing createdAt filters.
+  if (/(logged?\s*in|last\s*login|have\s+logged|login\s+within)/i.test(message)) {
+    return buildHeuristicPlan(message);
   }
 
   const hist = (Array.isArray(history) ? history : []).slice(-8);
