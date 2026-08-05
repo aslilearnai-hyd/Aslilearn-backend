@@ -738,10 +738,11 @@ function parseAsliPrepTestKeyLetters(fullText) {
   const text = String(fullText || '');
   // Some Word exports omit the "Test Key" heading and jump straight into
   // Mathematics / Physics number+letter grids at the end of the file.
+  // Digit junk is often glued onto the heading (e.g. "51299Mathematics").
   const hasKeyHeading = /Test\s*Key|ANSWER\s*KEY|ANSWER\s*SHEET/i.test(text);
   const hasSubjectKeyBlocks =
-    /\bMathematics\b[\s\S]{0,80}\b1\b[\s\S]{0,40}\b2\b[\s\S]{0,200}\b[a-dA-D]\b/i.test(text) &&
-    /\bPhysics\b[\s\S]{0,80}\b2\d\b/i.test(text);
+    /Mathematics\s*\n+\s*1\s*\n\s*2\s*\n\s*3/i.test(text) &&
+    /Physics\s*\n+\s*2\d\s*\n\s*2\d/i.test(text);
   if (!hasKeyHeading && !hasSubjectKeyBlocks) return map;
 
   const lines = text
@@ -812,6 +813,83 @@ function parseAsliPrepTestKeyLetters(fullText) {
 }
 
 /**
+ * Infer per-subject Q ranges from a trailing vertical answer-key grid.
+ * Word keys often split decades (1–10 then 11–20); collect every ascending run.
+ */
+function inferSubjectRangesFromKeyText(keyText) {
+  const order = ['MATHEMATICS', 'PHYSICS', 'CHEMISTRY', 'BIOLOGY'];
+  const names = {
+    MATHEMATICS: 'Mathematics',
+    PHYSICS: 'Physics',
+    CHEMISTRY: 'Chemistry',
+    BIOLOGY: 'Biology',
+  };
+  const text = String(keyText || '');
+  const headings = [];
+  for (const sub of order) {
+    // Allow digit junk glued before the heading (Word drawing leftovers).
+    const re = new RegExp(`(?:^|\\n)\\s*(?:\\d{3,}[-–]?)?${names[sub]}\\s*(?=\\n)`, 'i');
+    const m = re.exec(text);
+    if (m) {
+      headings.push({
+        label: sub,
+        at: m.index + (m[0].startsWith('\n') ? 1 : 0),
+      });
+    }
+  }
+  headings.sort((a, b) => a.at - b.at);
+  const subjectRanges = new Map();
+  const keyToken = /^(?:[a-dA-D]|bonus|\*|[-–—]+)$/i;
+
+  for (let i = 0; i < headings.length; i += 1) {
+    const slice = text.slice(
+      headings[i].at,
+      i + 1 < headings.length ? headings[i + 1].at : text.length,
+    );
+    const lines = slice
+      .split(/\r?\n/)
+      .map((l) => l.replace(/\s+/g, ' ').trim())
+      .filter(Boolean);
+    const nums = [];
+    for (let li = 0; li < lines.length; li += 1) {
+      if (!/^\d{1,3}$/.test(lines[li])) continue;
+      const run = [];
+      let j = li;
+      while (j < lines.length && /^\d{1,3}$/.test(lines[j])) {
+        run.push(parseInt(lines[j], 10));
+        j += 1;
+      }
+      if (run.length < 5) continue;
+      let ascending = true;
+      for (let x = 1; x < run.length; x += 1) {
+        if (run[x] !== run[x - 1] + 1) {
+          ascending = false;
+          break;
+        }
+      }
+      if (!ascending) continue;
+      // Require a letter row after the numbers so we don't pick body Q noise.
+      let letterCount = 0;
+      let k = j;
+      while (k < lines.length && keyToken.test(lines[k])) {
+        if (/^[a-d]$/i.test(lines[k])) letterCount += 1;
+        k += 1;
+      }
+      if (letterCount < 3) continue;
+      nums.push(...run);
+      li = k - 1;
+    }
+    if (nums.length >= 5) {
+      subjectRanges.set(headings[i].label, {
+        from: Math.min(...nums),
+        to: Math.max(...nums),
+      });
+    }
+  }
+  return subjectRanges;
+}
+
+/**
  * Split a Word/text paper into subject body chunks (excluding the trailing answer key).
  * Returns ranges the Gemini extract should cover, with the matching body text.
  */
@@ -819,11 +897,22 @@ function splitWordPaperIntoSubjectChunks(documentText, answerKeyByNumber) {
   const full = String(documentText || '');
   if (!full.trim()) return [];
 
-  // Cut trailing answer-key grid (starts near final "Mathematics\n1\n2…" block).
+  // Cut trailing answer-key grid. Word often glues digit junk onto "Mathematics".
   let body = full;
-  const keyAnchor = full.search(
+  let keyAnchor = full.search(
     /\n\s*IIT\/NEET Foundation[\s\S]{0,200}\n\s*Mathematics\s*\n\s*1\s*\n\s*2\s*\n/i,
   );
+  if (keyAnchor < 0) {
+    keyAnchor = full.search(
+      /\n\s*IIT\/NEET Foundation[\s\S]{0,400}(?:\d{3,}[-–]?)?Mathematics\s*\n\s*1\s*\n\s*2\s*\n/i,
+    );
+  }
+  if (keyAnchor < 0) {
+    // Last-resort: final Mathematics decade grid without the IIT banner nearby.
+    keyAnchor = full.search(
+      /(?:\d{3,}[-–]?)?Mathematics\s*\n\s*1\s*\n\s*2\s*\n\s*3\s*\n[\s\S]{0,400}\nPhysics\s*\n\s*2\d\s*\n/i,
+    );
+  }
   if (keyAnchor > 200) body = full.slice(0, keyAnchor);
 
   const markers = [];
@@ -867,24 +956,15 @@ function splitWordPaperIntoSubjectChunks(documentText, answerKeyByNumber) {
     ];
   }
 
-  // Infer Q ranges from answer key subject blocks when present
   const keyText = keyAnchor > 0 ? full.slice(keyAnchor) : full.slice(Math.floor(full.length * 0.75));
-  const subjectRanges = new Map();
-  for (const sub of order) {
-    const blockRe = new RegExp(
-      `${sub === 'MATHEMATICS' ? 'Mathematics' : sub[0] + sub.slice(1).toLowerCase()}\\s*((?:\\n\\d+){5,})\\s*((?:\\n[a-dA-D]){5,})`,
-      'i',
-    );
-    const bm = keyText.match(blockRe);
-    if (!bm) continue;
-    const nums = [...bm[1].matchAll(/\d+/g)].map((x) => parseInt(x[0], 10)).filter((n) => n >= 1);
-    if (nums.length >= 5) {
-      subjectRanges.set(sub, { from: Math.min(...nums), to: Math.max(...nums) });
-    }
-  }
+  let subjectRanges = inferSubjectRangesFromKeyText(keyText);
 
-  // Fallback 20-per-subject if key ranges missing
-  if (subjectRanges.size === 0) {
+  // Fallback 20-per-subject if key ranges missing or only a half-decade leaked through.
+  const rangesLookComplete =
+    subjectRanges.size >= starts.length &&
+    [...subjectRanges.values()].every((r) => r.to - r.from + 1 >= 15);
+  if (!rangesLookComplete) {
+    subjectRanges = new Map();
     order.forEach((s, i) => subjectRanges.set(s, { from: i * 20 + 1, to: i * 20 + 20 }));
   }
 
@@ -1466,7 +1546,9 @@ Important rules:
 
   // Ground truth for "which questions exist": answer key ∪ printed numbers from
   // the PDF text layer (covers Bonus questions the key skips).
-  const expectedNumbers = (() => {
+  // Word subject chunks may also imply a full 1–80 grid when the body has no
+  // printed numbers and the key failed to parse.
+  let expectedNumbers = (() => {
     const set = new Set(prepared.printedQuestionNumbers || []);
     for (const n of answerKeyByNumber.keys()) set.add(n);
     // Cap runaway detections (Match column "1."/"2." noise, etc.)
@@ -1490,19 +1572,29 @@ Important rules:
   const rangeChunkSize = fastMode ? 40 : 20;
   const extractStartedAt = Date.now();
 
+  // Word papers often omit printed Q numbers in the body. Chunk by subject
+  // section (Math 1–20, Physics 21–40, …) so Gemini does not stop after Maths.
+  const wordChunks =
+    documentText && String(documentText).trim()
+      ? splitWordPaperIntoSubjectChunks(documentText, answerKeyByNumber)
+      : [];
+  if (wordChunks.length >= 2) {
+    const set = new Set(expectedNumbers);
+    for (const c of wordChunks) {
+      if (!Number.isFinite(c.from) || !Number.isFinite(c.to) || c.to < c.from) continue;
+      for (let n = c.from; n <= c.to; n += 1) {
+        if (n >= 1 && n <= 120) set.add(n);
+      }
+    }
+    expectedNumbers = [...set].sort((a, b) => a - b);
+  }
+  const useWordSubjectChunks = wordChunks.length >= 2;
+
   for (const model of modelCandidates) {
     if (callBudgetExhausted()) break;
     const collected = [];
     let truncated = false;
     const maxExpected = expectedNumbers.length ? expectedNumbers[expectedNumbers.length - 1] : 0;
-
-    // Word papers often omit printed Q numbers in the body. Chunk by subject
-    // section (Math 1–20, Physics 21–40, …) so Gemini does not stop after Maths.
-    const wordChunks =
-      documentText && String(documentText).trim()
-        ? splitWordPaperIntoSubjectChunks(documentText, answerKeyByNumber)
-        : [];
-    const useWordSubjectChunks = wordChunks.length >= 2;
     let wordPathCoverage = 0;
 
     if (useWordSubjectChunks) {
@@ -1516,20 +1608,35 @@ Important rules:
         })),
         answerKeyEntries: answerKeyByNumber.size,
       });
-      const wordResults = await mapPool(wordChunks, geminiConcurrency, (chunk) =>
-        callBudgetExhausted()
-          ? Promise.resolve(null)
-          : extractOnce(
-              model,
-              `Scope: extract ONLY the ${chunk.label} section. ` +
-                `Assign questionNumber ${chunk.from} through ${chunk.to} in reading order ` +
-                `(even if the Word text has no printed numbers). ` +
-                `Return every question in this section (Single Correct, Case, Integer, Assertion-Reason, Match). ` +
-                `Set subject to "${chunk.label === 'MATHEMATICS' ? 'maths' : chunk.label.toLowerCase()}". ` +
-                `Do not include other subjects or the answer key.`,
-              chunk.text,
-            ),
-      );
+      const wordResults = await mapPool(wordChunks, geminiConcurrency, async (chunk) => {
+        if (callBudgetExhausted()) return null;
+        const result = await extractOnce(
+          model,
+          `Scope: extract ONLY the ${chunk.label} section. ` +
+            `This section must produce questions numbered ${chunk.from}–${chunk.to} (inclusive). ` +
+            `The Word body often has NO printed numbers — still return every question in reading order ` +
+            `and set questionNumber starting at ${chunk.from}, then ${chunk.from + 1}, etc. ` +
+            `Include Single Correct, Case-based, Integer, Assertion-Reason, and Match-the-Following. ` +
+            `Set subject to "${chunk.label === 'MATHEMATICS' ? 'maths' : chunk.label.toLowerCase()}". ` +
+            `Do not include other subjects or the answer key.`,
+          chunk.text,
+        );
+        if (!result?.ok || !Array.isArray(result.parsed)) return result;
+        // Force subject Q-numbers. Gemini often restarts at 1 for every section;
+        // without this, Chem/Bio collide with Math and get deduped away (~40 rows).
+        // Keep model return order (reading order) — do not sort by Gemini's numbers.
+        const ordered = [...result.parsed];
+        const expectedCount = Math.max(1, chunk.to - chunk.from + 1);
+        const sliced = ordered.slice(0, expectedCount);
+        result.parsed = sliced.map((row, idx) => ({
+          ...row,
+          questionNumber: chunk.from + idx,
+          subject:
+            String(row?.subject || '').trim() ||
+            (chunk.label === 'MATHEMATICS' ? 'maths' : chunk.label.toLowerCase()),
+        }));
+        return result;
+      });
       for (const chunk of wordResults) {
         if (chunk?.ok && Array.isArray(chunk.parsed)) {
           collected.push(...chunk.parsed);
@@ -1547,16 +1654,19 @@ Important rules:
         model,
         rows: wordRefined.length,
         coverage: Number(wordPathCoverage.toFixed(2)),
+        missing: missingQuestionNumbers(wordRefined).slice(0, 30),
         elapsedMs: Date.now() - extractStartedAt,
       });
     }
 
+    // Only treat Word path as complete when nearly all expected Qs are present.
+    // 40/80 (=0.5) used to short-circuit and drop Chemistry + Biology.
+    const wordPathComplete = useWordSubjectChunks && wordPathCoverage >= 0.9;
+
     // Fast + known size ≤40: one full-paper call beats multiple overlapping PDFs.
     // Large papers: skip full pass (Flash often stops early) and use range chunks.
-    // Word subject chunks already ran — skip redundant full PDF-style passes when coverage is decent.
     const skipFullPass =
-      (useWordSubjectChunks && wordPathCoverage >= 0.5) ||
-      (fastMode ? maxExpected > 40 : maxExpected >= 30);
+      wordPathComplete || (fastMode ? maxExpected > 40 : maxExpected >= 30);
 
     if (!skipFullPass) {
       console.log('[PDF_EXAM_EXTRACT] full-paper pass', { model, fastMode, maxExpected });
@@ -1572,7 +1682,7 @@ Important rules:
 
     let refined = postProcessGeminiPdfQuestionRows(collected);
     const shouldChunk =
-      !(useWordSubjectChunks && wordPathCoverage >= 0.5) &&
+      !wordPathComplete &&
       (skipFullPass || truncated || refined.length === 0 || missingQuestionNumbers(refined).length > 0);
 
     if (shouldChunk) {
