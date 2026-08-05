@@ -2167,6 +2167,25 @@ function buildQuestionDedupKey({
   return [String(examId), String(subject || '').trim().toLowerCase(), String(questionType || '').trim().toLowerCase(), contentKey].join('::');
 }
 
+/**
+ * Map a correct-answer payload to option text.
+ * Only treat as a 0-based index when the value is a pure digit string (e.g. "0", "2").
+ * Values like "4, 5, 6, 7, 8" must stay as option text — parseInt would wrongly read "4".
+ */
+function resolveChoiceAnswerToOptionText(answer, options) {
+  const list = Array.isArray(options) ? options : [];
+  const raw = String(answer ?? '').trim();
+  if (!raw) return raw;
+  if (/^\d+$/.test(raw)) {
+    const idx = parseInt(raw, 10);
+    if (Number.isInteger(idx) && idx >= 0 && idx < list.length) {
+      const opt = list[idx];
+      return typeof opt === 'string' ? opt : String(opt?.text ?? raw);
+    }
+  }
+  return raw;
+}
+
 function normalizeExamSubjects(subject, subjects) {
   const listFromSubjects = Array.isArray(subjects)
     ? subjects
@@ -2885,27 +2904,16 @@ export const addQuestion = async (req, res) => {
         formattedCorrectAnswer = parsed;
       }
     } else if (normalizedType === 'multiple' && Array.isArray(correctAnswer)) {
-      // For multiple choice, map the indices to option texts
-      formattedCorrectAnswer = correctAnswer.map((idx) => {
-        const optionIndex = parseInt(idx);
-        if (!isNaN(optionIndex) && options && options[optionIndex]) {
-          return options[optionIndex].text || options[optionIndex];
-        }
-        return idx;
-      });
-      // If no valid options found, use the indices as-is
+      // For multiple choice, map pure indices to option texts (keep real option text as-is)
+      formattedCorrectAnswer = correctAnswer.map((item) =>
+        resolveChoiceAnswerToOptionText(item, options),
+      );
       if (formattedCorrectAnswer.length === 0) {
         formattedCorrectAnswer = correctAnswer;
       }
     } else if (isSingleChoiceQuestionType(normalizedType) && options && options.length > 0) {
-      // For single MCQ / AR / Match, convert index to option text
-      const optionIndex = parseInt(correctAnswer);
-      if (!isNaN(optionIndex) && options[optionIndex]) {
-        formattedCorrectAnswer = options[optionIndex].text || options[optionIndex];
-      } else {
-        // If conversion fails, use as-is (might already be text)
-        formattedCorrectAnswer = correctAnswer;
-      }
+      // Pure digit → index; otherwise keep option text (e.g. "4, 5, 6, 7, 8")
+      formattedCorrectAnswer = resolveChoiceAnswerToOptionText(correctAnswer, options);
     }
 
     // Validate correctAnswer is not empty/null/undefined
@@ -4605,23 +4613,18 @@ export const updateQuestion = async (req, res) => {
           formattedCorrectAnswer = parsed;
         }
       } else if (effectiveType === 'multiple' && Array.isArray(formattedCorrectAnswer)) {
-        formattedCorrectAnswer = formattedCorrectAnswer.map((idx) => {
-          const optionIndex = parseInt(idx, 10);
-          if (!Number.isNaN(optionIndex) && incomingOptions && incomingOptions[optionIndex]) {
-            const opt = incomingOptions[optionIndex];
-            return typeof opt === 'string' ? opt : opt?.text ?? idx;
-          }
-          return idx;
-        });
+        formattedCorrectAnswer = formattedCorrectAnswer.map((item) =>
+          resolveChoiceAnswerToOptionText(item, incomingOptions),
+        );
         if (formattedCorrectAnswer.length === 0) {
           formattedCorrectAnswer = correctAnswer;
         }
       } else if (isSingleChoiceQuestionType(effectiveType) && incomingOptions && incomingOptions.length > 0) {
-        const optionIndex = parseInt(formattedCorrectAnswer, 10);
-        if (!Number.isNaN(optionIndex) && incomingOptions[optionIndex]) {
-          const opt = incomingOptions[optionIndex];
-          formattedCorrectAnswer = typeof opt === 'string' ? opt : opt?.text ?? formattedCorrectAnswer;
-        }
+        // Pure digit → index; otherwise keep option text (e.g. "4, 5, 6, 7, 8")
+        formattedCorrectAnswer = resolveChoiceAnswerToOptionText(
+          formattedCorrectAnswer,
+          incomingOptions,
+        );
       }
 
       if (
