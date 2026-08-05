@@ -736,7 +736,13 @@ function assessAnswerKeyTrust({ rows, answerKeyByNumber, bodyPaperCode, keyPaper
 function parseAsliPrepTestKeyLetters(fullText) {
   const map = new Map();
   const text = String(fullText || '');
-  if (!/Test\s*Key|ANSWER\s*KEY/i.test(text)) return map;
+  // Some Word exports omit the "Test Key" heading and jump straight into
+  // Mathematics / Physics number+letter grids at the end of the file.
+  const hasKeyHeading = /Test\s*Key|ANSWER\s*KEY|ANSWER\s*SHEET/i.test(text);
+  const hasSubjectKeyBlocks =
+    /\bMathematics\b[\s\S]{0,80}\b1\b[\s\S]{0,40}\b2\b[\s\S]{0,200}\b[a-dA-D]\b/i.test(text) &&
+    /\bPhysics\b[\s\S]{0,80}\b2\d\b/i.test(text);
+  if (!hasKeyHeading && !hasSubjectKeyBlocks) return map;
 
   const lines = text
     .split(/\r?\n/)
@@ -747,6 +753,8 @@ function parseAsliPrepTestKeyLetters(fullText) {
   // (dropped questions). Non-letter tokens keep their position so the rest of
   // the row still lines up with the number row above it.
   const keyToken = /^(?:[a-dA-D]|bonus|\*|[-–—]+)$/i;
+
+  // Format A (PDF): "1 2 3 4 5 6 7 8 9 10" then "b b a c c a c b a b"
   for (let i = 0; i < lines.length - 1; i += 1) {
     const numLine = lines[i];
     const ansLine = lines[i + 1];
@@ -763,7 +771,142 @@ function parseAsliPrepTestKeyLetters(fullText) {
       }
     }
   }
+
+  // Format B (Word): each number / letter on its own line:
+  // 1\n2\n...\n10\nb\nb\n...\nb
+  if (map.size < 10) {
+    for (let i = 0; i < lines.length; i += 1) {
+      if (!/^\d{1,3}$/.test(lines[i])) continue;
+      const nums = [];
+      let j = i;
+      while (j < lines.length && /^\d{1,3}$/.test(lines[j])) {
+        nums.push(parseInt(lines[j], 10));
+        j += 1;
+      }
+      if (nums.length < 5) continue;
+      const letters = [];
+      let k = j;
+      while (k < lines.length && keyToken.test(lines[k])) {
+        letters.push(lines[k].toLowerCase());
+        k += 1;
+      }
+      if (letters.filter((t) => /^[a-d]$/.test(t)).length < 3) continue;
+      // Prefer contiguous ascending runs (1..10, 11..20, …)
+      let ascending = true;
+      for (let x = 1; x < nums.length; x += 1) {
+        if (nums[x] !== nums[x - 1] + 1) {
+          ascending = false;
+          break;
+        }
+      }
+      if (!ascending) continue;
+      const n = Math.min(nums.length, letters.length);
+      for (let x = 0; x < n; x += 1) {
+        if (/^[a-d]$/.test(letters[x])) map.set(nums[x], letters[x]);
+      }
+      i = k - 1;
+    }
+  }
+
   return map;
+}
+
+/**
+ * Split a Word/text paper into subject body chunks (excluding the trailing answer key).
+ * Returns ranges the Gemini extract should cover, with the matching body text.
+ */
+function splitWordPaperIntoSubjectChunks(documentText, answerKeyByNumber) {
+  const full = String(documentText || '');
+  if (!full.trim()) return [];
+
+  // Cut trailing answer-key grid (starts near final "Mathematics\n1\n2…" block).
+  let body = full;
+  const keyAnchor = full.search(
+    /\n\s*IIT\/NEET Foundation[\s\S]{0,200}\n\s*Mathematics\s*\n\s*1\s*\n\s*2\s*\n/i,
+  );
+  if (keyAnchor > 200) body = full.slice(0, keyAnchor);
+
+  const markers = [];
+  // ALL-CAPS subject banners (case-sensitive)
+  const capsRe = /(?:^|\n)\s*(MATHEMATICS|PHYSICS|CHEMISTRY|BIOLOGY)\b/g;
+  let m;
+  while ((m = capsRe.exec(body))) {
+    markers.push({ label: m[1], at: m.index + (m[0].startsWith('\n') ? 1 : 0) });
+  }
+  // Title-case banners that introduce a question block
+  const titleRe =
+    /(?:^|\n)\s*(Mathematics|Physics|Chemistry|Biology)\s*\n[\t ]*(?:-?\d{0,12})?[\t ]*Single Correct/g;
+  while ((m = titleRe.exec(body))) {
+    markers.push({
+      label: String(m[1]).toUpperCase(),
+      at: m.index + (m[0].startsWith('\n') ? 1 : 0),
+    });
+  }
+
+  // Dedupe: keep first occurrence of each subject in reading order
+  const order = ['MATHEMATICS', 'PHYSICS', 'CHEMISTRY', 'BIOLOGY'];
+  const firstBySubject = new Map();
+  for (const mk of markers) {
+    if (!order.includes(mk.label)) continue;
+    if (!firstBySubject.has(mk.label)) firstBySubject.set(mk.label, mk.at);
+  }
+
+  const starts = order
+    .filter((s) => firstBySubject.has(s))
+    .map((s) => ({ label: s, at: firstBySubject.get(s) }))
+    .sort((a, b) => a.at - b.at);
+
+  if (starts.length === 0) {
+    return [
+      {
+        label: 'FULL',
+        text: body,
+        from: 1,
+        to: answerKeyByNumber?.size || 80,
+      },
+    ];
+  }
+
+  // Infer Q ranges from answer key subject blocks when present
+  const keyText = keyAnchor > 0 ? full.slice(keyAnchor) : full.slice(Math.floor(full.length * 0.75));
+  const subjectRanges = new Map();
+  for (const sub of order) {
+    const blockRe = new RegExp(
+      `${sub === 'MATHEMATICS' ? 'Mathematics' : sub[0] + sub.slice(1).toLowerCase()}\\s*((?:\\n\\d+){5,})\\s*((?:\\n[a-dA-D]){5,})`,
+      'i',
+    );
+    const bm = keyText.match(blockRe);
+    if (!bm) continue;
+    const nums = [...bm[1].matchAll(/\d+/g)].map((x) => parseInt(x[0], 10)).filter((n) => n >= 1);
+    if (nums.length >= 5) {
+      subjectRanges.set(sub, { from: Math.min(...nums), to: Math.max(...nums) });
+    }
+  }
+
+  // Fallback 20-per-subject if key ranges missing
+  if (subjectRanges.size === 0) {
+    order.forEach((s, i) => subjectRanges.set(s, { from: i * 20 + 1, to: i * 20 + 20 }));
+  }
+
+  const chunks = [];
+  for (let i = 0; i < starts.length; i += 1) {
+    const start = starts[i].at;
+    const end = i + 1 < starts.length ? starts[i + 1].at : body.length;
+    const label = starts[i].label;
+    const range = subjectRanges.get(label) || {
+      from: i * 20 + 1,
+      to: i * 20 + 20,
+    };
+    const text = body.slice(start, end).trim();
+    if (text.length < 80) continue;
+    chunks.push({
+      label,
+      text,
+      from: range.from,
+      to: range.to,
+    });
+  }
+  return chunks;
 }
 
 function applyAnswerKeyLettersToRows(rows, answerKeyByNumber) {
@@ -914,7 +1057,8 @@ Important rules:
 - This paper should already exclude answer-key / rough-work pages — do not invent key tables.
 - Include Single Correct, Multi Correct (MSQ), Assertion-Reason, Case-based, and Match-the-Following when they have options a)–d).
 - For Match-the-Following, put the matching codes into option1–option4 (e.g. "A-2, B-4, C-1, D-3").
-- Always set questionNumber to the printed question number (1, 2, 3…). NEVER omit it — every question in the paper has a printed number.
+- Always set questionNumber. If the paper prints numbers, use those. If this Word section has no printed numbers, assign consecutive numbers from the Scope range in reading order (first question = Scope from, then +1).
+- Never stop after Mathematics only — extract every subject section in scope.
 - Set hasFigure=true when the question (or its case) refers to a picture, diagram, graph, figure, OR a Match-the-Following Column I/II table printed in the paper. Pure text/math questions (no diagram/table) get hasFigure=false.
 - When diagram images are attached after the text, use them to understand figures and set hasFigure=true for those questions.
 - For subject: read from section headers (Mathematics→maths, Physics→physics, Chemistry→chemistry, Biology→biology). Otherwise "".
@@ -1015,7 +1159,7 @@ Important rules:
     return null;
   };
 
-  const tryModelWithPrompt = async (model, promptText, useStructured) => {
+  const tryModelWithPrompt = async (model, promptText, useStructured, textOverride = null) => {
     if (callBudgetExhausted()) {
       return {
         ok: false,
@@ -1036,6 +1180,8 @@ Important rules:
         : {}),
     };
 
+    const paperText = textOverride != null ? String(textOverride) : documentText;
+
     // Word: text + embedded photos. PDF: full file inline.
     const imageParts = (Array.isArray(documentImages) ? documentImages : [])
       .slice(0, 24)
@@ -1051,10 +1197,10 @@ Important rules:
       })
       .filter(Boolean);
 
-    const parts = documentText
+    const parts = paperText
       ? [
           {
-            text: `${promptText}\n\n--- QUESTION PAPER TEXT ---\n${documentText}${
+            text: `${promptText}\n\n--- QUESTION PAPER TEXT ---\n${paperText}${
               imageParts.length
                 ? `\n\n(${imageParts.length} embedded diagram/photo image(s) follow — use them for figures, Match tables, and Assertion visuals.)`
                 : ''
@@ -1240,9 +1386,9 @@ Important rules:
     return next;
   };
 
-  const extractOnce = async (model, rangeHint) => {
+  const extractOnce = async (model, rangeHint, textOverride = null) => {
     const promptText = buildPrompt(rangeHint);
-    let result = await tryModelWithPrompt(model, promptText, true);
+    let result = await tryModelWithPrompt(model, promptText, true, textOverride);
     if (result.ok && result.parsed) return result;
 
     if (result.status === 400 && /schema|mime|response/i.test(String(result.errorText || ''))) {
@@ -1265,7 +1411,7 @@ Important rules:
       return { ok: false, parsed: null, finishReason: result.finishReason };
     }
 
-    const loose = await tryModelWithPrompt(model, promptText, false);
+    const loose = await tryModelWithPrompt(model, promptText, false, textOverride);
     if (loose.ok && loose.parsed) return loose;
     if (!loose.ok) {
       const err2 = loose.errorText || '';
@@ -1350,9 +1496,67 @@ Important rules:
     let truncated = false;
     const maxExpected = expectedNumbers.length ? expectedNumbers[expectedNumbers.length - 1] : 0;
 
+    // Word papers often omit printed Q numbers in the body. Chunk by subject
+    // section (Math 1–20, Physics 21–40, …) so Gemini does not stop after Maths.
+    const wordChunks =
+      documentText && String(documentText).trim()
+        ? splitWordPaperIntoSubjectChunks(documentText, answerKeyByNumber)
+        : [];
+    const useWordSubjectChunks = wordChunks.length >= 2;
+    let wordPathCoverage = 0;
+
+    if (useWordSubjectChunks) {
+      console.log('[PDF_EXAM_EXTRACT] word subject chunks', {
+        model,
+        chunks: wordChunks.map((c) => ({
+          label: c.label,
+          from: c.from,
+          to: c.to,
+          chars: c.text.length,
+        })),
+        answerKeyEntries: answerKeyByNumber.size,
+      });
+      const wordResults = await mapPool(wordChunks, geminiConcurrency, (chunk) =>
+        callBudgetExhausted()
+          ? Promise.resolve(null)
+          : extractOnce(
+              model,
+              `Scope: extract ONLY the ${chunk.label} section. ` +
+                `Assign questionNumber ${chunk.from} through ${chunk.to} in reading order ` +
+                `(even if the Word text has no printed numbers). ` +
+                `Return every question in this section (Single Correct, Case, Integer, Assertion-Reason, Match). ` +
+                `Set subject to "${chunk.label === 'MATHEMATICS' ? 'maths' : chunk.label.toLowerCase()}". ` +
+                `Do not include other subjects or the answer key.`,
+              chunk.text,
+            ),
+      );
+      for (const chunk of wordResults) {
+        if (chunk?.ok && Array.isArray(chunk.parsed)) {
+          collected.push(...chunk.parsed);
+          if (chunk.finishReason === 'MAX_TOKENS') truncated = true;
+        }
+      }
+      const wordRefined = dedupePdfQuestionRows(postProcessGeminiPdfQuestionRows(collected));
+      wordPathCoverage =
+        expectedNumbers.length > 0
+          ? wordRefined.length / Math.max(expectedNumbers.length, 1)
+          : wordRefined.length >= 40
+            ? 1
+            : 0;
+      console.log('[PDF_EXAM_EXTRACT] word subject path', {
+        model,
+        rows: wordRefined.length,
+        coverage: Number(wordPathCoverage.toFixed(2)),
+        elapsedMs: Date.now() - extractStartedAt,
+      });
+    }
+
     // Fast + known size ≤40: one full-paper call beats multiple overlapping PDFs.
     // Large papers: skip full pass (Flash often stops early) and use range chunks.
-    const skipFullPass = fastMode ? maxExpected > 40 : maxExpected >= 30;
+    // Word subject chunks already ran — skip redundant full PDF-style passes when coverage is decent.
+    const skipFullPass =
+      (useWordSubjectChunks && wordPathCoverage >= 0.5) ||
+      (fastMode ? maxExpected > 40 : maxExpected >= 30);
 
     if (!skipFullPass) {
       console.log('[PDF_EXAM_EXTRACT] full-paper pass', { model, fastMode, maxExpected });
@@ -1368,7 +1572,8 @@ Important rules:
 
     let refined = postProcessGeminiPdfQuestionRows(collected);
     const shouldChunk =
-      skipFullPass || truncated || refined.length === 0 || missingQuestionNumbers(refined).length > 0;
+      !(useWordSubjectChunks && wordPathCoverage >= 0.5) &&
+      (skipFullPass || truncated || refined.length === 0 || missingQuestionNumbers(refined).length > 0);
 
     if (shouldChunk) {
       const ranges =
