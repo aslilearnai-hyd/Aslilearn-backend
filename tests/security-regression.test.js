@@ -93,6 +93,18 @@ describe('upload access ACL', () => {
     assert.equal(verifyUploadSignature(path, exp, sig), true);
     assert.equal(verifyUploadSignature(path, exp, 'deadbeef'), false);
   });
+
+  it('withSignedUploadUrl appends exp+sig for question figures', async () => {
+    process.env.JWT_SECRET = process.env.JWT_SECRET || 'test-secret-at-least-16-chars';
+    const { withSignedUploadUrl } = await import('../utils/upload-access.js');
+    const signed = withSignedUploadUrl('/uploads/questions/fig.png', 600);
+    assert.match(signed, /^\/uploads\/questions\/fig\.png\?exp=\d+&sig=[a-f0-9]+$/);
+    const u = new URL(signed, 'https://api.aslilearn.ai');
+    assert.equal(
+      verifyUploadSignature(u.pathname, u.searchParams.get('exp'), u.searchParams.get('sig')),
+      true
+    );
+  });
 });
 
 describe('csrf origin guard', () => {

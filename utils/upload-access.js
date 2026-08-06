@@ -94,3 +94,59 @@ export function verifyUploadSignature(absoluteUploadPath, exp, sig) {
     return false;
   }
 }
+
+/**
+ * Append ?exp=&sig= to an /uploads path (or absolute URL on our API) so clients
+ * can load figures without cookie/Bearer (web cross-subdomain + mobile Image).
+ * Non-upload URLs are returned unchanged. Failures fall back to the original URL.
+ */
+export function withSignedUploadUrl(fileUrl, ttlSeconds = 28800) {
+  const raw = String(fileUrl || '').trim();
+  if (!raw) return raw;
+  if (/[?&]sig=/.test(raw) && /[?&]exp=/.test(raw)) return raw;
+
+  let pathOnly = '';
+  let origin = '';
+  try {
+    if (raw.startsWith('/uploads/')) {
+      pathOnly = raw.split('?')[0];
+    } else if (/^https?:\/\//i.test(raw)) {
+      const u = new URL(raw);
+      if (u.pathname.startsWith('/uploads/')) {
+        pathOnly = u.pathname;
+        origin = u.origin;
+      }
+    } else if (raw.includes('/uploads/')) {
+      const idx = raw.indexOf('/uploads/');
+      pathOnly = raw.slice(idx).split('?')[0];
+    }
+  } catch {
+    return raw;
+  }
+
+  if (!pathOnly.startsWith('/uploads/')) return raw;
+
+  try {
+    const { exp, sig, path } = signUploadPath(pathOnly, ttlSeconds);
+    const signed = `${path}?exp=${exp}&sig=${sig}`;
+    return origin ? `${origin}${signed}` : signed;
+  } catch {
+    return raw;
+  }
+}
+
+/** Sign questionImage (+ option.image) fields on a question-like object. */
+export function signQuestionMediaFields(question, ttlSeconds = 28800) {
+  if (!question || typeof question !== 'object') return question;
+  const next = { ...question };
+  if (next.questionImage) {
+    next.questionImage = withSignedUploadUrl(next.questionImage, ttlSeconds);
+  }
+  if (Array.isArray(next.options)) {
+    next.options = next.options.map((opt) => {
+      if (!opt || typeof opt !== 'object' || !opt.image) return opt;
+      return { ...opt, image: withSignedUploadUrl(opt.image, ttlSeconds) };
+    });
+  }
+  return next;
+}

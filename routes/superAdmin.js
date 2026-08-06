@@ -1299,21 +1299,27 @@ router.get('/exams/:examId/questions', async (req, res) => {
     await ensureExamQuestionDisplayOrders(Question, req.params.examId);
     const questions = await Question.find({ exam: req.params.examId }).sort(QUESTION_LIST_SORT);
     const exam = await Exam.findById(req.params.examId).select('figurePool').lean();
+    const {
+      signQuestionMediaFields,
+      withSignedUploadUrl,
+    } = await import('../utils/upload-access.js');
+    const plainQuestions = questions.map((q) => (typeof q.toObject === 'function' ? q.toObject() : q));
     const assignedUrls = new Set(
-      questions
-        .map((q) => String(q?.questionImage || '').trim())
+      plainQuestions
+        .map((q) => String(q?.questionImage || '').trim().split('?')[0])
         .filter(Boolean),
     );
     const figurePool = (Array.isArray(exam?.figurePool) ? exam.figurePool : [])
       .map((img, i) => ({
-        url: String(img?.url || '').trim(),
+        url: withSignedUploadUrl(String(img?.url || '').trim(), 8 * 60 * 60),
         name: String(img?.name || '').trim() || `Fig ${i + 1}`,
         order: Number.isFinite(Number(img?.order)) ? Number(img.order) : i,
         key: String(img?.key || '').trim() || undefined,
       }))
-      .filter((img) => img.url && !assignedUrls.has(img.url));
-    console.log(`✅ Found ${questions.length} questions, ${figurePool.length} unassigned figures`);
-    res.json({ success: true, data: questions, figurePool, meta: { figurePool } });
+      .filter((img) => img.url && !assignedUrls.has(String(img.url).split('?')[0]));
+    const signedQuestions = plainQuestions.map((q) => signQuestionMediaFields(q, 8 * 60 * 60));
+    console.log(`✅ Found ${signedQuestions.length} questions, ${figurePool.length} unassigned figures`);
+    res.json({ success: true, data: signedQuestions, figurePool, meta: { figurePool } });
   } catch (error) {
     console.error('❌ Get questions error:', error);
     console.error('Error stack:', error.stack);

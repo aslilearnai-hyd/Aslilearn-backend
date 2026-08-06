@@ -8,6 +8,7 @@ import Exam from '../models/Exam.js';
 import Question from '../models/Question.js';
 import { QUESTION_LIST_SORT } from './exam-question-order.js';
 import { resolveExamQuestionSubjectKey } from './resolveSubjectContentIds.js';
+import { signQuestionMediaFields } from './upload-access.js';
 
 function optionToPlain(opt) {
   if (opt == null) return opt;
@@ -32,7 +33,8 @@ export function snapshotExamQuestion(q, examDoc, index = 0) {
   return {
     _id: id,
     questionText: String(q.questionText || ''),
-    questionImage: q.questionImage ? String(q.questionImage) : undefined,
+    // Store raw /uploads path; sign at API response time (signatures expire).
+    questionImage: q.questionImage ? String(q.questionImage).split('?')[0] : undefined,
     questionType: String(q.questionType || 'mcq').toLowerCase(),
     options,
     option1: q.option1 != null ? String(q.option1) : undefined,
@@ -141,20 +143,22 @@ export async function loadExamQuestionBankForResults(examId) {
 
 /**
  * Prefer the frozen snapshot on the result; fall back to live bank.
+ * Signs /uploads figure URLs for client display (cookie-independent).
  */
 export async function resolveQuestionsForExamResult(examResult, examId) {
   const fromSnap = normalizeSnapshotRows(examResult?.questionSnapshot);
-  if (fromSnap.length > 0) {
-    return fromSnap;
-  }
-  const id =
-    examId ||
-    (examResult?.examId != null
-      ? typeof examResult.examId === 'object' && examResult.examId._id != null
-        ? String(examResult.examId._id)
-        : String(examResult.examId)
-      : '');
-  return loadExamQuestionBankForResults(id);
+  const rows =
+    fromSnap.length > 0
+      ? fromSnap
+      : await loadExamQuestionBankForResults(
+          examId ||
+            (examResult?.examId != null
+              ? typeof examResult.examId === 'object' && examResult.examId._id != null
+                ? String(examResult.examId._id)
+                : String(examResult.examId)
+              : '')
+        );
+  return rows.map((q) => signQuestionMediaFields(q, 8 * 60 * 60));
 }
 
 export function mapLikeToPlainObject(value) {

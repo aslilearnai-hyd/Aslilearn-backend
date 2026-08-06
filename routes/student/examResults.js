@@ -44,6 +44,7 @@ import {
   resolveQuestionsForExamResult,
   toPlainExamResultForApi,
 } from '../../utils/exam-result-questions.js';
+import { signQuestionMediaFields } from '../../utils/upload-access.js';
 import {
   examMatchesStudentAssignedClass,
   resolveStudentClassNumber,
@@ -2026,7 +2027,7 @@ router.post('/exam-results', async (req, res) => {
       message: 'Result saved successfully',
       data: {
         ...examResult.toObject({ flattenMaps: true }),
-        questions: effectiveQuestions,
+        questions: effectiveQuestions.map((q) => signQuestionMediaFields(q, 8 * 60 * 60)),
       },
     });
   } catch (error) {
