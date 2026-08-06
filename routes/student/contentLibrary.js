@@ -150,9 +150,12 @@ router.get('/asli-prep-content', async (req, res) => {
     } = await import('../../utils/studentClassContent.js');
     const studentClassNumber = resolveStudentClassNumber(student, studentClassDoc);
 
-    // IIT EduOTT videos sit on IIT-board subjects — merge them for the student's class
-    // when the school has IIT tracks (Alpha/Beta/Gamma) assigned.
+    // IIT EduOTT videos sit on IIT-board subjects — merge them only for EduOTT / unscoped
+    // library fetches. Learning Paths must not pull IIT Maths_6 siblings into board subjects.
+    const { isLearningPathSurface } = await import('../../utils/schoolProgram.js');
+    const lpSurface = isLearningPathSurface(surface);
     if (
+      !lpSurface &&
       programCtx.isAsliPrepExclusive &&
       Array.isArray(programCtx.iitCategories) &&
       programCtx.iitCategories.some((c) => String(c || '').trim())
@@ -192,6 +195,7 @@ router.get('/asli-prep-content', async (req, res) => {
       curriculumBoard: programCtx.curriculumBoard || boardUpper,
       isAsliPrepExclusive: programCtx.isAsliPrepExclusive,
       iitCategories: programCtx.iitCategories,
+      excludeIitBoard: lpSurface,
     });
     const siblingBoardOpts = schoolBoards.length
       ? { boards: schoolBoards }

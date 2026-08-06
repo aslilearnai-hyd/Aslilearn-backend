@@ -55,6 +55,14 @@ const schoolSchema = new mongoose.Schema(
       type: [{ type: String, uppercase: true, trim: true }],
       default: [],
     },
+    /**
+     * Per-class IIT tracks, e.g. { "6": ["ALPHA"], "8": ["ALPHA","BETA"] }.
+     * Empty / missing = legacy school-wide iitCategories apply to every class.
+     */
+    iitCategoriesByClass: {
+      type: mongoose.Schema.Types.Mixed,
+      default: {},
+    },
     /** Login user (admin) for this school */
     adminUserId: {
       type: mongoose.Schema.Types.ObjectId,

@@ -8,12 +8,28 @@ import Teacher from '../models/Teacher.js';
 import User from '../models/User.js';
 import { cleanCsvCell } from '../utils/csv-encoding.js';
 import { spreadsheetBufferToCsv } from '../utils/spreadsheet-to-csv.js';
+import {
+  extractPlainSubjectNameForContent,
+  subjectGroupKey,
+} from '../utils/resolveSubjectContentIds.js';
 
 const POPULATE_FIELDS = [
   { path: 'classId', select: 'classNumber section name' },
   { path: 'subjectId', select: 'name code' },
   { path: 'teacherId', select: 'fullName email' },
 ];
+
+const SESSION_TYPES = new Set([
+  'Lecture',
+  'Lab',
+  'Exam',
+  'Workshop',
+  'Activity',
+  'Holiday',
+  'Special Class',
+]);
+
+const STATUS_VALUES = new Set(['Scheduled', 'Completed', 'Cancelled']);
 
 function timesOverlap(startA, endA, startB, endB) {
   const a1 = parseTimeToMinutes(startA);
@@ -442,6 +458,230 @@ export const bulkDeleteTimetable = async (req, res) => {
 
 const CSV_HEADERS = ['Date', 'Day', 'StartTime', 'EndTime', 'Class', 'Section', 'Subject', 'Teacher', 'Room', 'Building', 'Type', 'Status', 'Notes'];
 
+function escapeRegex(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/** Normalize CSV header keys so "Start Time", "start_time", BOM-prefixed Date all map. */
+function normalizeCsvRow(row) {
+  const out = {};
+  for (const [rawKey, value] of Object.entries(row || {})) {
+    const key = String(rawKey || '')
+      .replace(/^\uFEFF/, '')
+      .trim()
+      .toLowerCase()
+      .replace(/[\s_-]+/g, '');
+    if (!key) continue;
+    out[key] = value;
+  }
+  return out;
+}
+
+function cell(row, ...keys) {
+  for (const key of keys) {
+    const k = String(key).toLowerCase().replace(/[\s_-]+/g, '');
+    if (row[k] !== undefined && row[k] !== null && String(row[k]).trim() !== '') {
+      return cleanCsvCell(row[k]);
+    }
+  }
+  return '';
+}
+
+/** "10.0" / "10 " → "10"; keep alphanumeric sections. */
+function normalizeClassNumber(value) {
+  let s = cleanCsvCell(value);
+  if (!s) return '';
+  if (/^\d+(\.0+)?$/.test(s)) s = String(parseInt(s, 10));
+  return s;
+}
+
+function normalizeTime(value) {
+  const raw = cleanCsvCell(value);
+  if (!raw) return '';
+  // Excel serial time fraction (e.g. 0.375 = 09:00)
+  if (/^0?\.\d+$/.test(raw)) {
+    const fraction = Number(raw);
+    if (Number.isFinite(fraction) && fraction >= 0 && fraction < 1) {
+      const totalMins = Math.round(fraction * 24 * 60);
+      const h = Math.floor(totalMins / 60) % 24;
+      const m = totalMins % 60;
+      return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
+    }
+  }
+  const ampm = raw.match(/^(\d{1,2}):(\d{2})\s*(am|pm)$/i);
+  if (ampm) {
+    let h = parseInt(ampm[1], 10);
+    const m = parseInt(ampm[2], 10);
+    const meridiem = ampm[3].toLowerCase();
+    if (meridiem === 'pm' && h < 12) h += 12;
+    if (meridiem === 'am' && h === 12) h = 0;
+    return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
+  }
+  const hm = raw.match(/^(\d{1,2}):(\d{2})(?::\d{2})?$/);
+  if (hm) {
+    return `${String(parseInt(hm[1], 10)).padStart(2, '0')}:${hm[2]}`;
+  }
+  return raw;
+}
+
+function parseCsvDate(value) {
+  const raw = cleanCsvCell(value);
+  if (!raw) return { date: null, dateStr: '' };
+
+  // Excel serial day (e.g. 45801) when workbook exported with raw numbers
+  if (/^\d{4,5}(\.\d+)?$/.test(raw)) {
+    const serial = Number(raw);
+    if (Number.isFinite(serial) && serial > 20000 && serial < 80000) {
+      const utc = new Date(Date.UTC(1899, 11, 30) + Math.round(serial) * 86400000);
+      return { date: startOfDay(utc), dateStr: utc.toISOString().slice(0, 10) };
+    }
+  }
+
+  // yyyy-mm-dd or yyyy/mm/dd
+  let m = raw.match(/^(\d{4})[/.-](\d{1,2})[/.-](\d{1,2})$/);
+  if (m) {
+    const y = parseInt(m[1], 10);
+    const mo = parseInt(m[2], 10);
+    const d = parseInt(m[3], 10);
+    const utc = new Date(Date.UTC(y, mo - 1, d));
+    if (!Number.isNaN(utc.getTime())) return { date: startOfDay(utc), dateStr: utc.toISOString().slice(0, 10) };
+  }
+
+  // dd/mm/yyyy or dd-mm-yyyy (common in India); prefer DMY when day > 12 or ambiguous
+  m = raw.match(/^(\d{1,2})[/.-](\d{1,2})[/.-](\d{2,4})$/);
+  if (m) {
+    let d = parseInt(m[1], 10);
+    let mo = parseInt(m[2], 10);
+    let y = parseInt(m[3], 10);
+    if (y < 100) y += 2000;
+    // If first part looks like month (US), only when day part > 12
+    if (d > 12 && mo <= 12) {
+      // already DMY
+    } else if (mo > 12 && d <= 12) {
+      [d, mo] = [mo, d];
+    }
+    // Prefer DMY for admin schools (India) when both <= 12
+    const utc = new Date(Date.UTC(y, mo - 1, d));
+    if (!Number.isNaN(utc.getTime())) return { date: startOfDay(utc), dateStr: utc.toISOString().slice(0, 10) };
+  }
+
+  const fallback = new Date(raw);
+  if (!Number.isNaN(fallback.getTime())) {
+    return { date: startOfDay(fallback), dateStr: startOfDay(fallback).toISOString().slice(0, 10) };
+  }
+  return { date: null, dateStr: raw };
+}
+
+function normalizeSessionType(value) {
+  const raw = cleanCsvCell(value) || 'Lecture';
+  if (SESSION_TYPES.has(raw)) return raw;
+  const lower = raw.toLowerCase();
+  for (const t of SESSION_TYPES) {
+    if (t.toLowerCase() === lower) return t;
+  }
+  if (lower.includes('lab')) return 'Lab';
+  if (lower.includes('exam')) return 'Exam';
+  if (lower.includes('workshop')) return 'Workshop';
+  if (lower.includes('activ')) return 'Activity';
+  if (lower.includes('holiday')) return 'Holiday';
+  if (lower.includes('special')) return 'Special Class';
+  return 'Lecture';
+}
+
+function normalizeStatus(value) {
+  const raw = cleanCsvCell(value) || 'Scheduled';
+  if (STATUS_VALUES.has(raw)) return raw;
+  const lower = raw.toLowerCase();
+  for (const s of STATUS_VALUES) {
+    if (s.toLowerCase() === lower) return s;
+  }
+  return 'Scheduled';
+}
+
+function subjectNameMatches(candidateName, wantedName) {
+  const want = String(wantedName || '').trim();
+  if (!want) return false;
+  const cand = String(candidateName || '').trim();
+  if (!cand) return false;
+  if (cand.toLowerCase() === want.toLowerCase()) return true;
+  const wantPlain = extractPlainSubjectNameForContent(want).toLowerCase();
+  const candPlain = extractPlainSubjectNameForContent(cand).toLowerCase();
+  if (wantPlain && candPlain && wantPlain === candPlain) return true;
+  return subjectGroupKey(want) === subjectGroupKey(cand);
+}
+
+async function resolveSubjectForClass(cls, subjectName) {
+  const want = cleanCsvCell(subjectName);
+  if (!want) return null;
+
+  const classDoc = await Class.findById(cls._id).select('assignedSubjects classNumber board').lean();
+  const assignedIds = (classDoc?.assignedSubjects || []).map((id) => id);
+
+  const candidates = [];
+  if (assignedIds.length) {
+    const assigned = await Subject.find({
+      _id: { $in: assignedIds },
+      isActive: { $ne: false },
+      name: { $not: /__deleted__/ },
+    })
+      .select('_id name classNumber classIds')
+      .lean();
+    candidates.push(...assigned);
+  }
+
+  const byClassIds = await Subject.find({
+    classIds: cls._id,
+    isActive: { $ne: false },
+    name: { $not: /__deleted__/ },
+  })
+    .select('_id name classNumber classIds')
+    .lean();
+  candidates.push(...byClassIds);
+
+  if (cls.classNumber) {
+    const byClassNumber = await Subject.find({
+      classNumber: String(cls.classNumber),
+      isActive: { $ne: false },
+      name: { $not: /__deleted__/ },
+    })
+      .select('_id name classNumber classIds')
+      .lean();
+    candidates.push(...byClassNumber);
+  }
+
+  const exactSubjects = await Subject.find({
+    $and: [
+      { name: new RegExp(`^${escapeRegex(want)}$`, 'i') },
+      { isActive: { $ne: false } },
+      { name: { $not: /__deleted__/ } },
+    ],
+  })
+    .select('_id name classNumber classIds')
+    .lean();
+  candidates.push(...exactSubjects);
+
+  const seen = new Set();
+  const unique = [];
+  for (const s of candidates) {
+    const id = String(s._id);
+    if (seen.has(id)) continue;
+    seen.add(id);
+    unique.push(s);
+  }
+
+  // Prefer subjects linked to this class, then any name match
+  const linked = unique.filter(
+    (s) =>
+      assignedIds.some((id) => String(id) === String(s._id)) ||
+      (s.classIds || []).some((id) => String(id) === String(cls._id)),
+  );
+  return (
+    linked.find((s) => subjectNameMatches(s.name, want)) ||
+    unique.find((s) => subjectNameMatches(s.name, want)) ||
+    null
+  );
+}
+
 function parseCsvBuffer(buffer, originalName) {
   let csvData;
   try {
@@ -449,66 +689,132 @@ function parseCsvBuffer(buffer, originalName) {
   } catch {
     csvData = buffer.toString('utf8');
   }
-  return parse(csvData, { columns: true, skip_empty_lines: true, trim: true, relax_column_count: true });
+  const rows = parse(csvData, { columns: true, skip_empty_lines: true, trim: true, relax_column_count: true });
+  return (Array.isArray(rows) ? rows : []).map(normalizeCsvRow);
 }
 
 async function resolveCsvRow(row, schoolAdminId) {
-  const classNumber = cleanCsvCell(row.Class || row.class);
-  const section = cleanCsvCell(row.Section || row.section || '').toUpperCase();
-  const subjectName = cleanCsvCell(row.Subject || row.subject);
-  const teacherName = cleanCsvCell(row.Teacher || row.teacher);
-  const teacherEmail = cleanCsvCell(row.TeacherEmail || row.email || '');
+  const classNumber = normalizeClassNumber(cell(row, 'Class', 'class', 'classnumber', 'classname'));
+  const section = cell(row, 'Section', 'section', 'sec').toUpperCase();
+  const subjectName = cell(row, 'Subject', 'subject', 'subjectname');
+  const teacherName = cell(row, 'Teacher', 'teacher', 'teachername');
+  const teacherEmail = cell(row, 'TeacherEmail', 'teacheremail', 'email');
 
-  const cls = await Class.findOne({ classNumber, section, assignedAdmin: schoolAdminId, isActive: true });
-  if (!cls) return { error: `Class ${classNumber}-${section} not found` };
+  if (!classNumber || !section) {
+    return { error: 'Class and Section are required' };
+  }
+  if (!subjectName) {
+    return { error: 'Subject is required' };
+  }
+  if (!teacherName && !teacherEmail) {
+    return { error: 'Teacher (or TeacherEmail) is required' };
+  }
 
-  const subject = await Subject.findOne({
-    name: new RegExp(`^${subjectName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`, 'i'),
-    classIds: cls._id,
-  });
-  if (!subject) return { error: `Subject "${subjectName}" not found for class` };
+  const classNumberVariants = [
+    ...new Set(
+      [classNumber, String(Number(classNumber) || ''), String(classNumber).replace(/\.0+$/, '')].filter(
+        Boolean,
+      ),
+    ),
+  ];
+
+  const resolvedClass =
+    (await Class.findOne({
+      classNumber: { $in: classNumberVariants },
+      section,
+      assignedAdmin: schoolAdminId,
+      isActive: true,
+    })) ||
+    (await Class.findOne({
+      section,
+      assignedAdmin: schoolAdminId,
+      isActive: true,
+      $or: [
+        { name: new RegExp(`^${escapeRegex(`${classNumber}${section}`)}$`, 'i') },
+        { name: new RegExp(`^${escapeRegex(`${classNumber}-${section}`)}$`, 'i') },
+      ],
+    }));
+
+  if (!resolvedClass) {
+    return { error: `Class ${classNumber}-${section} not found for this school` };
+  }
+
+  const subject = await resolveSubjectForClass(resolvedClass, subjectName);
+  if (!subject) {
+    return {
+      error: `Subject "${subjectName}" not found for class ${resolvedClass.classNumber}-${resolvedClass.section}. Assign it to the class in School Management first.`,
+    };
+  }
 
   let teacher = null;
   if (teacherEmail) {
-    teacher = await Teacher.findOne({ email: teacherEmail.toLowerCase(), adminId: schoolAdminId });
+    teacher = await Teacher.findOne({
+      email: teacherEmail.toLowerCase(),
+      adminId: schoolAdminId,
+      isActive: { $ne: false },
+    });
   }
   if (!teacher && teacherName) {
     teacher = await Teacher.findOne({
-      fullName: new RegExp(`^${teacherName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`, 'i'),
+      fullName: new RegExp(`^${escapeRegex(teacherName)}$`, 'i'),
       adminId: schoolAdminId,
+      isActive: { $ne: false },
     });
   }
-  if (!teacher) return { error: `Teacher "${teacherName || teacherEmail}" not found` };
+  if (!teacher && teacherName && teacherName.length >= 3) {
+    teacher = await Teacher.findOne({
+      fullName: new RegExp(escapeRegex(teacherName), 'i'),
+      adminId: schoolAdminId,
+      isActive: { $ne: false },
+    });
+  }
+  if (!teacher) return { error: `Teacher "${teacherName || teacherEmail}" not found for this school` };
 
-  const room = cleanCsvCell(row.Room || row.room || '');
-  const building = cleanCsvCell(row.Building || row.building || '');
-  if (!room || !building) {
-    return { error: 'Room and Building are required' };
+  const room = cell(row, 'Room', 'room', 'classroom') || 'TBD';
+  const building = cell(row, 'Building', 'building', 'block') || 'Main';
+
+  const { date, dateStr } = parseCsvDate(cell(row, 'Date', 'date', 'scheduledate'));
+  if (!date || Number.isNaN(date.getTime())) {
+    return { error: `Invalid date: ${dateStr || '(empty)'}. Use YYYY-MM-DD or DD/MM/YYYY.` };
   }
 
-  const dateStr = cleanCsvCell(row.Date || row.date);
-  const date = startOfDay(new Date(dateStr));
-  if (Number.isNaN(date.getTime())) return { error: `Invalid date: ${dateStr}` };
+  const startTime = normalizeTime(cell(row, 'StartTime', 'starttime', 'start', 'from'));
+  const endTime = normalizeTime(cell(row, 'EndTime', 'endtime', 'end', 'to'));
+  if (!/^\d{2}:\d{2}$/.test(startTime) || !/^\d{2}:\d{2}$/.test(endTime)) {
+    return { error: `Invalid time "${startTime}"–"${endTime}". Use HH:MM (e.g. 09:00).` };
+  }
+  if (parseTimeToMinutes(endTime) <= parseTimeToMinutes(startTime)) {
+    return { error: `EndTime must be after StartTime (${startTime}–${endTime})` };
+  }
 
+  const dayRaw = cell(row, 'Day', 'day', 'weekday');
   const entry = {
     schoolAdminId,
     date,
-    day: cleanCsvCell(row.Day || row.day) || DAY_NAMES[date.getDay()],
-    startTime: cleanCsvCell(row.StartTime || row.startTime),
-    endTime: cleanCsvCell(row.EndTime || row.endTime),
-    classId: cls._id,
-    sectionId: section,
+    day: dayRaw || DAY_NAMES[date.getUTCDay()],
+    startTime,
+    endTime,
+    classId: resolvedClass._id,
+    sectionId: String(resolvedClass.section || section).toUpperCase(),
     subjectId: subject._id,
     teacherId: teacher._id,
     room,
     building,
-    sessionType: cleanCsvCell(row.Type || row.type || 'Lecture'),
-    status: cleanCsvCell(row.Status || row.status || 'Scheduled'),
-    notes: cleanCsvCell(row.Notes || row.notes || ''),
+    sessionType: normalizeSessionType(cell(row, 'Type', 'type', 'sessiontype', 'session')),
+    status: normalizeStatus(cell(row, 'Status', 'status')),
+    notes: cell(row, 'Notes', 'notes', 'remark', 'remarks'),
     repeatRule: 'none',
   };
 
-  return { entry, rowMeta: { date: dateStr, class: `${classNumber}-${section}`, subject: subjectName, teacher: teacher.fullName } };
+  return {
+    entry,
+    rowMeta: {
+      date: dateStr,
+      class: `${resolvedClass.classNumber}-${resolvedClass.section}`,
+      subject: subject.name,
+      teacher: teacher.fullName,
+    },
+  };
 }
 
 async function processCsvRows(rows, schoolAdminId, { dryRun = false, mode = 'import' } = {}) {
@@ -557,13 +863,28 @@ async function processCsvRows(rows, schoolAdminId, { dryRun = false, mode = 'imp
     }
 
     for (const entry of validEntries) {
-      const { hasConflict } = await detectConflicts(entry, null, schoolAdminId);
-      if (mode === 'merge' && hasConflict) {
+      try {
+        const { hasConflict } = await detectConflicts(entry, null, schoolAdminId);
+        if (mode === 'merge' && hasConflict) {
+          errors.push({
+            row: 0,
+            reason: 'Conflict detected',
+            status: 'warning',
+            class: String(entry.sectionId || ''),
+          });
+          skipped++;
+          continue;
+        }
+        await new Timetable(entry).save();
+        imported++;
+      } catch (saveErr) {
+        errors.push({
+          row: 0,
+          reason: saveErr?.message || 'Failed to save row',
+          status: 'error',
+        });
         skipped++;
-        continue;
       }
-      await new Timetable(entry).save();
-      imported++;
     }
   }
 
@@ -599,7 +920,7 @@ export const downloadCSVTemplate = async (req, res) => {
   const template = `${CSV_HEADERS.join(',')}
 2026-05-24,Monday,09:00,10:00,10,A,Mathematics,John Smith,Room-101,Main Block,Lecture,Scheduled,Chapter 1 - Algebra
 2026-05-24,Monday,10:00,11:00,10,A,Physics,Jane Doe,Lab-201,Science Wing,Lab,Scheduled,Practical session`;
-  res.setHeader('Content-Type', 'text/csv');
+  res.setHeader('Content-Type', 'text/csv; charset=utf-8');
   res.setHeader('Content-Disposition', 'attachment; filename=timetable-template.csv');
   res.send(template);
 };
