@@ -116,9 +116,15 @@ export function examVisibleToSchoolAdmin(exam, admin) {
   return examMatchesAdminBoard(exam, admin);
 }
 
-/** Enforce exam start/end window on the server (not only in the UI). */
-export function getExamWindowStatus(exam) {
+/** Enforce exam start/end window on the server (not only in the UI).
+ * @param {{ purpose?: 'start' | 'submit' }} [opts]
+ *  - start: must be inside [startDate, endDate]
+ *  - submit: allow a grace after endDate so students who started near the
+ *    deadline can still save (duration minutes, minimum 30).
+ */
+export function getExamWindowStatus(exam, opts = {}) {
   if (!exam) return { ok: false, message: 'Exam not found' };
+  const purpose = opts.purpose === 'submit' ? 'submit' : 'start';
   const now = Date.now();
   const start = exam.startDate ? new Date(exam.startDate).getTime() : NaN;
   const end = exam.endDate ? new Date(exam.endDate).getTime() : NaN;
@@ -126,6 +132,13 @@ export function getExamWindowStatus(exam) {
     return { ok: false, message: 'Exam has not started yet.' };
   }
   if (Number.isFinite(end) && now > end) {
+    if (purpose === 'submit') {
+      const durationMin = Math.max(0, Number(exam.duration) || 0);
+      const graceMs = Math.max(30, durationMin) * 60 * 1000;
+      if (now <= end + graceMs) {
+        return { ok: true, grace: true };
+      }
+    }
     return { ok: false, message: 'Exam window has ended.' };
   }
   return { ok: true };
