@@ -2026,6 +2026,23 @@ function pickSharedMatterFields(body = {}) {
   };
 }
 
+/** Stem may be questionText, image, or Assertion+Reason for AR questions. */
+function questionHasStemContent({
+  questionText,
+  questionImage,
+  questionType,
+  assertionText,
+  reasonText,
+}) {
+  if (String(questionText || '').trim() || String(questionImage || '').trim()) return true;
+  const type = String(questionType || '').trim().toLowerCase();
+  return (
+    type === 'assertion_reason' &&
+    Boolean(String(assertionText || '').trim()) &&
+    Boolean(String(reasonText || '').trim())
+  );
+}
+
 const ALLOWED_EXAM_SUBJECTS = [
   'maths',
   'physics',
@@ -2876,11 +2893,24 @@ export const addQuestion = async (req, res) => {
 
     console.log('✅ Exam found:', exam.title, 'Board:', exam.board);
 
-    if (!questionText?.trim() && !questionImage) {
-      return res.status(400).json({ success: false, message: 'Either question text or image is required' });
+    const normalizedTypeEarly = String(questionType || 'mcq').trim().toLowerCase();
+    if (
+      !questionHasStemContent({
+        questionText,
+        questionImage,
+        questionType: normalizedTypeEarly,
+        assertionText: matterFields.assertionText,
+        reasonText: matterFields.reasonText,
+      })
+    ) {
+      return res.status(400).json({
+        success: false,
+        message:
+          'Provide question text, an image, or Assertion (A) and Reason (R) for assertion–reason questions',
+      });
     }
 
-    const normalizedType = String(questionType || 'mcq').trim().toLowerCase();
+    const normalizedType = normalizedTypeEarly;
     if (normalizedType === 'assertion_reason' && !matterFields.sharedMatterText) {
       matterFields.sharedMatterText = DEFAULT_ASSERTION_REASON_DIRECTIONS;
       matterFields.sharedMatterKind = matterFields.sharedMatterKind || 'assertion_reason';
@@ -2956,8 +2986,20 @@ export const addQuestion = async (req, res) => {
     const finalQuestionText = questionText?.trim() || '';
     const finalQuestionImage = questionImage?.trim() || null;
 
-    if (!finalQuestionText && !finalQuestionImage) {
-      return res.status(400).json({ success: false, message: 'Either question text or image is required' });
+    if (
+      !questionHasStemContent({
+        questionText: finalQuestionText,
+        questionImage: finalQuestionImage,
+        questionType: normalizedType,
+        assertionText: matterFields.assertionText,
+        reasonText: matterFields.reasonText,
+      })
+    ) {
+      return res.status(400).json({
+        success: false,
+        message:
+          'Provide question text, an image, or Assertion (A) and Reason (R) for assertion–reason questions',
+      });
     }
 
     // Format options - ensure empty array for integer type. Each option is
@@ -3639,16 +3681,27 @@ export const bulkUploadQuestions = async (req, res) => {
           return '';
         };
 
-        // Validate required fields
-        if (!getRowValue('questiontext', 'question_text') && !getRowValue('questionimage', 'question_image')) {
-          errors.push(`Row ${i + 1}: Either questionText or questionImage is required`);
-          continue;
-        }
-
-        // Validate questionType
+        // Validate questionType first (AR may omit questionText when A+R are present)
         const questionType = (getRowValue('questiontype', 'question_type', 'type') || 'mcq').toLowerCase();
         if (!ALLOWED_QUESTION_TYPES.includes(questionType)) {
           errors.push(`Row ${i + 1}: Invalid questionType "${questionType}". Must be one of: ${ALLOWED_QUESTION_TYPES.join(', ')}`);
+          continue;
+        }
+
+        const rowAssertion = getRowValue('assertiontext', 'assertion_text', 'assertion');
+        const rowReason = getRowValue('reasontext', 'reason_text', 'reason');
+        if (
+          !questionHasStemContent({
+            questionText: getRowValue('questiontext', 'question_text'),
+            questionImage: getRowValue('questionimage', 'question_image'),
+            questionType,
+            assertionText: rowAssertion,
+            reasonText: rowReason,
+          })
+        ) {
+          errors.push(
+            `Row ${i + 1}: Provide questionText, questionImage, or Assertion (A) and Reason (R) for assertion–reason`,
+          );
           continue;
         }
 
@@ -3875,6 +3928,15 @@ export const bulkUploadQuestions = async (req, res) => {
             String(getRowValue('needsreview', 'needs_review') || '').trim().toLowerCase(),
           ),
           reviewNote: getRowValue('reviewnote', 'review_note') || '',
+          ...(questionType === 'assertion_reason'
+            ? {
+                assertionText: rowAssertion || undefined,
+                reasonText: rowReason || undefined,
+                sharedMatterKind: 'assertion_reason',
+                sharedMatterText: DEFAULT_ASSERTION_REASON_DIRECTIONS,
+                sharedMatterId: getRowValue('sharedmatterid', 'shared_matter_id', 'groupid', 'group_id') || 'AR1',
+              }
+            : {}),
           exam: examId,
           board: exam.board,
           createdBy: createdById
@@ -4689,10 +4751,19 @@ export const updateQuestion = async (req, res) => {
 
     const finalText = String(questionToUpdate.questionText || '').trim();
     const finalImage = String(questionToUpdate.questionImage || '').trim();
-    if (!finalText && !finalImage) {
+    if (
+      !questionHasStemContent({
+        questionText: finalText,
+        questionImage: finalImage,
+        questionType: questionToUpdate.questionType,
+        assertionText: questionToUpdate.assertionText,
+        reasonText: questionToUpdate.reasonText,
+      })
+    ) {
       return res.status(400).json({
         success: false,
-        message: 'Either question text or image is required',
+        message:
+          'Provide question text, an image, or Assertion (A) and Reason (R) for assertion–reason questions',
       });
     }
     questionToUpdate.questionText = finalText || undefined;

@@ -1913,6 +1913,23 @@ router.post('/exam-results', async (req, res) => {
       examId,
     });
     if (priorCount >= maxAttempts) {
+      // Likely a retry after a slow/timeout save that already succeeded — return
+      // the latest attempt as success so the student is not stuck on a false 403.
+      const existing = await ExamResult.findOne({ userId: req.userId, examId })
+        .sort({ attemptNumber: -1, completedAt: -1 })
+        .lean();
+      if (existing) {
+        const plainResult = toPlainExamResultForApi(existing);
+        return res.status(200).json({
+          success: true,
+          message: 'Result already saved',
+          alreadySaved: true,
+          data: {
+            ...plainResult,
+            questions: effectiveQuestions.map((q) => signQuestionMediaFields(q, 8 * 60 * 60)),
+          },
+        });
+      }
       return res.status(403).json({
         success: false,
         message: `Maximum attempts (${maxAttempts}) reached for this exam.`,

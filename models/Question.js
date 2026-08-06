@@ -4,8 +4,17 @@ import { VALID_SCHOOL_BOARDS } from '../constants/boards.js';
 const questionSchema = new mongoose.Schema({
   questionText: {
     type: String,
-    required: function() {
-      return !this.questionImage;
+    required: function () {
+      if (this.questionImage) return false;
+      const type = String(this.questionType || '').toLowerCase();
+      if (
+        type === 'assertion_reason' &&
+        String(this.assertionText || '').trim() &&
+        String(this.reasonText || '').trim()
+      ) {
+        return false;
+      }
+      return true;
     },
     trim: true
   },
@@ -182,12 +191,20 @@ const questionSchema = new mongoose.Schema({
   }
 });
 
-// Custom validation to ensure either questionText or questionImage is provided
+// Stem can be questionText, an image, or Assertion+Reason for AR questions.
 questionSchema.pre('validate', function(next) {
-  if (!this.questionText?.trim() && !this.questionImage) {
-    return next(new Error('Either question text or image is required'));
+  if (this.questionText?.trim() || this.questionImage) return next();
+  const type = String(this.questionType || '').toLowerCase();
+  if (
+    type === 'assertion_reason' &&
+    String(this.assertionText || '').trim() &&
+    String(this.reasonText || '').trim()
+  ) {
+    return next();
   }
-  next();
+  return next(
+    new Error('Either question text, image, or Assertion (A) and Reason (R) is required')
+  );
 });
 
 // Update the updatedAt field before saving
