@@ -1803,7 +1803,7 @@ router.post('/exam-results', async (req, res) => {
       });
     }
 
-    const windowStatus = getExamWindowStatus(examDoc);
+    const windowStatus = getExamWindowStatus(examDoc, { purpose: 'submit' });
     if (!windowStatus.ok) {
       return res.status(403).json({
         success: false,
@@ -1948,29 +1948,50 @@ router.post('/exam-results', async (req, res) => {
       examResult = await ExamResult.create(resultData);
     } catch (createErr) {
       if (createErr?.code === 11000) {
-        return res.status(403).json({
-          success: false,
-          message: `Maximum attempts (${maxAttempts}) reached for this exam.`,
-        });
-      }
-      if (createErr?.name === 'ValidationError') {
+        // Concurrent double-submit: treat the existing row as success (idempotent).
+        const existing = await ExamResult.findOne({
+          userId: req.userId,
+          examId,
+          attemptNumber,
+        }).lean();
+        if (existing) {
+          examResult = existing;
+        } else {
+          const latest = await ExamResult.findOne({ userId: req.userId, examId })
+            .sort({ attemptNumber: -1, completedAt: -1 })
+            .lean();
+          if (latest) {
+            examResult = latest;
+          } else {
+            return res.status(409).json({
+              success: false,
+              message:
+                'Your previous submit is still processing. Please wait a moment and check Attempted Exams before trying again.',
+            });
+          }
+        }
+      } else if (createErr?.name === 'ValidationError') {
         console.error('❌ ExamResult validation failed:', createErr.message);
         return res.status(400).json({
           success: false,
           message: createErr.message || 'Invalid exam result data',
         });
+      } else {
+        throw createErr;
       }
-      throw createErr;
     }
 
-    // Race guard: if two submits slipped past countDocuments, drop the excess row.
-    const finalCount = await ExamResult.countDocuments({ userId: req.userId, examId });
-    if (finalCount > maxAttempts) {
-      await ExamResult.deleteOne({ _id: examResult._id });
-      return res.status(403).json({
-        success: false,
-        message: `Maximum attempts (${maxAttempts}) reached for this exam.`,
-      });
+    // Race guard: if two submits slipped past countDocuments, drop the excess NEW row only.
+    const createdFresh = examResult && typeof examResult.toObject === 'function';
+    if (createdFresh) {
+      const finalCount = await ExamResult.countDocuments({ userId: req.userId, examId });
+      if (finalCount > maxAttempts) {
+        await ExamResult.deleteOne({ _id: examResult._id });
+        return res.status(403).json({
+          success: false,
+          message: `Maximum attempts (${maxAttempts}) reached for this exam.`,
+        });
+      }
     }
 
     try {
@@ -2019,6 +2040,11 @@ router.post('/exam-results', async (req, res) => {
       percentage,
     });
 
+    const plainResult =
+      typeof examResult.toObject === 'function'
+        ? examResult.toObject({ flattenMaps: true })
+        : toPlainExamResultForApi(examResult);
+
     // Return the full result AND the graded questions (with correctAnswer /
     // explanation) so the client can render the post-submission review UI
     // without needing a separate request.
@@ -2026,7 +2052,7 @@ router.post('/exam-results', async (req, res) => {
       success: true,
       message: 'Result saved successfully',
       data: {
-        ...examResult.toObject({ flattenMaps: true }),
+        ...plainResult,
         questions: effectiveQuestions.map((q) => signQuestionMediaFields(q, 8 * 60 * 60)),
       },
     });
