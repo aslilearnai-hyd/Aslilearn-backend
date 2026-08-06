@@ -142,6 +142,141 @@ export function normalizeIitCategories(list, allowedCodes = null) {
   return out;
 }
 
+/** Class numbers from "6"…"10" (inclusive). Non-numeric ranges return []. */
+export function classNumbersInRange(classesFrom, classesTo) {
+  const from = parseInt(String(classesFrom || '').trim(), 10);
+  const to = parseInt(String(classesTo || '').trim(), 10);
+  if (!Number.isFinite(from) || !Number.isFinite(to)) return [];
+  const lo = Math.min(from, to);
+  const hi = Math.max(from, to);
+  if (hi - lo > 20) return [];
+  const out = [];
+  for (let n = lo; n <= hi; n += 1) out.push(String(n));
+  return out;
+}
+
+/** Normalize { "6": ["ALPHA","BETA"], ... } maps. */
+export function normalizeIitCategoriesByClass(raw) {
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return {};
+  const out = {};
+  for (const [key, value] of Object.entries(raw)) {
+    const classKey = String(key || '')
+      .trim()
+      .replace(/\.0+$/, '');
+    if (!classKey || !/^\d{1,2}$/.test(classKey)) continue;
+    out[classKey] = normalizeIitCategories(value);
+  }
+  return out;
+}
+
+/** Union of all tracks across classes (for school-wide toggle / teacher browse). */
+export function flattenIitCategoriesByClass(byClass) {
+  const seen = new Set();
+  const out = [];
+  for (const cats of Object.values(normalizeIitCategoriesByClass(byClass))) {
+    for (const c of cats) {
+      if (seen.has(c)) continue;
+      seen.add(c);
+      out.push(c);
+    }
+  }
+  return out;
+}
+
+/**
+ * Legacy schools: apply school-wide iitCategories to every class in range.
+ * If byClass already has entries, return those (optionally pruned/extended to range).
+ */
+export function expandIitCategoriesByClass({
+  iitCategories,
+  iitCategoriesByClass,
+  classesFrom,
+  classesTo,
+} = {}) {
+  const range = classNumbersInRange(classesFrom, classesTo);
+  const existing = normalizeIitCategoriesByClass(iitCategoriesByClass);
+  const legacy = normalizeIitCategories(iitCategories);
+
+  if (Object.keys(existing).length === 0) {
+    const map = {};
+    for (const cn of range) {
+      map[cn] = [...legacy];
+    }
+    return map;
+  }
+
+  if (range.length === 0) return existing;
+
+  const map = {};
+  for (const cn of range) {
+    map[cn] = Array.isArray(existing[cn]) ? existing[cn] : [...legacy];
+  }
+  return map;
+}
+
+/**
+ * Resolve tracks for one class.
+ * - If byClass is configured: use that class's list (may be empty = no IIT for class).
+ * - Else legacy: school-wide iitCategories for every class.
+ */
+export function resolveIitCategoriesForClass(
+  { iitCategories, iitCategoriesByClass } = {},
+  classNumber,
+) {
+  const byClass = normalizeIitCategoriesByClass(iitCategoriesByClass);
+  const hasMap = Object.keys(byClass).length > 0;
+  const classKey = String(classNumber || '')
+    .trim()
+    .replace(/\.0+$/, '');
+
+  if (hasMap) {
+    if (!classKey) return flattenIitCategoriesByClass(byClass);
+    return Array.isArray(byClass[classKey]) ? byClass[classKey] : [];
+  }
+  return normalizeIitCategories(iitCategories);
+}
+
+/**
+ * Build persistable byClass + flattened school-wide list from request body.
+ */
+export function resolveSchoolIitTrackFields({
+  exclusive,
+  iitCategories: rawCats,
+  iitCategoriesByClass: rawByClass,
+  classesFrom,
+  classesTo,
+} = {}) {
+  if (!exclusive) {
+    return { iitCategories: [], iitCategoriesByClass: {} };
+  }
+
+  const range = classNumbersInRange(classesFrom, classesTo);
+  let byClass = normalizeIitCategoriesByClass(rawByClass);
+  const legacy = normalizeIitCategories(rawCats);
+
+  if (Object.keys(byClass).length === 0 && legacy.length > 0) {
+    byClass = {};
+    for (const cn of range) byClass[cn] = [...legacy];
+  } else if (range.length > 0) {
+    const next = {};
+    for (const cn of range) {
+      next[cn] = Array.isArray(byClass[cn]) ? byClass[cn] : [];
+    }
+    byClass = next;
+  }
+
+  const flat = flattenIitCategoriesByClass(byClass);
+  // If UI still sends only flat list (no byClass), keep legacy behaviour.
+  if (flat.length === 0 && legacy.length > 0 && Object.keys(byClass).length === 0) {
+    return { iitCategories: legacy, iitCategoriesByClass: {} };
+  }
+
+  return {
+    iitCategories: flat.length ? flat : legacy,
+    iitCategoriesByClass: byClass,
+  };
+}
+
 export function formatIitCategoryLabel(value, labelMap = null) {
   const c = normalizeIitCategoryLoose(value);
   if (!c) return '';

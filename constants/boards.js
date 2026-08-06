@@ -213,6 +213,8 @@ export function boardsForSchoolContentScope({
   curriculumBoard,
   isAsliPrepExclusive,
   iitCategories,
+  /** When true (Learning Paths), do not pull IIT-board sibling subjects into resolve. */
+  excludeIitBoard = false,
 } = {}) {
   const boards = new Set();
   const storedRaw = String(board || '')
@@ -240,8 +242,21 @@ export function boardsForSchoolContentScope({
   const hasIitTracks =
     Array.isArray(iitCategories) &&
     iitCategories.some((c) => String(c || '').trim());
-  if (exclusive && hasIitTracks) {
+  if (exclusive && hasIitTracks && !excludeIitBoard) {
     boards.add('IIT');
+  }
+
+  // Never keep IIT in the set when Learning Paths asked to exclude it
+  // (e.g. school stored board was literally IIT).
+  if (excludeIitBoard) {
+    for (const b of [...boards]) {
+      const key = String(b || '')
+        .toUpperCase()
+        .replace(/[\s/\\-]+/g, '');
+      if (key === 'IIT' || key.includes('IIT') || key.includes('NEET') || key.includes('JEE')) {
+        boards.delete(b);
+      }
+    }
   }
 
   return [...boards];

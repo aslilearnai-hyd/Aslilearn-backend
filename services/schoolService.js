@@ -6,7 +6,7 @@ import {
   isStoredCurriculumBoard,
   resolveAdminStoredBoard,
 } from '../constants/boards.js';
-import { normalizeIitCategories } from '../constants/products.js';
+import { resolveSchoolIitTrackFields } from '../constants/products.js';
 
 /** Keep only digits, max 10 (Indian mobile). Empty string if none. */
 export function normalizePhoneTenDigits(raw) {
@@ -108,6 +108,7 @@ export function buildSchoolFieldsFromBody(body) {
     board,
     isAsliPrepExclusive: rawExclusive,
     iitCategories: rawIitCategories,
+    iitCategoriesByClass: rawIitCategoriesByClass,
     licensedStudents,
     licensedTeachers,
     accountSeatsNotes,
@@ -121,7 +122,13 @@ export function buildSchoolFieldsFromBody(body) {
   const placeLine =
     (place && String(place).trim()) ||
     [schoolDetails.city, schoolDetails.district, schoolDetails.state].filter(Boolean).join(', ');
-  const iitCategories = exclusive ? normalizeIitCategories(rawIitCategories) : [];
+  const { iitCategories, iitCategoriesByClass } = resolveSchoolIitTrackFields({
+    exclusive,
+    iitCategories: rawIitCategories,
+    iitCategoriesByClass: rawIitCategoriesByClass,
+    classesFrom: schoolDetails.classesFrom,
+    classesTo: schoolDetails.classesTo,
+  });
 
   const fields = {
     name: String(schoolName || '').trim(),
@@ -137,6 +144,7 @@ export function buildSchoolFieldsFromBody(body) {
     curriculumBoard: curriculumUpper,
     isAsliPrepExclusive: exclusive,
     iitCategories,
+    iitCategoriesByClass,
   };
 
   if (licensedStudents !== undefined && licensedStudents !== null && licensedStudents !== '') {
@@ -187,6 +195,10 @@ export function applySchoolToAdminUser(admin, school) {
   admin.curriculumBoard = school.curriculumBoard;
   admin.isAsliPrepExclusive = school.isAsliPrepExclusive;
   admin.iitCategories = Array.isArray(school.iitCategories) ? school.iitCategories : [];
+  admin.iitCategoriesByClass =
+    school.iitCategoriesByClass && typeof school.iitCategoriesByClass === 'object'
+      ? school.iitCategoriesByClass
+      : {};
   if (school.licensedStudents !== undefined) {
     admin.licensedStudents = Math.max(0, Math.floor(Number(school.licensedStudents) || 0));
   }
@@ -209,6 +221,10 @@ export function schoolShapeFromAdminUser(admin) {
     curriculumBoard: admin.curriculumBoard || 'CBSE',
     isAsliPrepExclusive: Boolean(admin.isAsliPrepExclusive),
     iitCategories: Array.isArray(admin.iitCategories) ? admin.iitCategories : [],
+    iitCategoriesByClass:
+      admin.iitCategoriesByClass && typeof admin.iitCategoriesByClass === 'object'
+        ? admin.iitCategoriesByClass
+        : {},
     schoolLogo: admin.schoolLogo || '',
     contactPerson: admin.contactPerson || admin.fullName || '',
     phone: admin.phone || '',
@@ -260,6 +276,12 @@ export function formatSchoolListItem(school, admin, stats = {}) {
       : Array.isArray(admin?.iitCategories)
         ? admin.iitCategories
         : [],
+    iitCategoriesByClass:
+      school?.iitCategoriesByClass && typeof school.iitCategoriesByClass === 'object'
+        ? school.iitCategoriesByClass
+        : admin?.iitCategoriesByClass && typeof admin.iitCategoriesByClass === 'object'
+          ? admin.iitCategoriesByClass
+          : {},
     status: (admin?.isActive !== false && school?.isActive !== false) ? 'Active' : 'Inactive',
     joinDate: school?.createdAt || admin?.createdAt,
     licensedStudents: Math.max(

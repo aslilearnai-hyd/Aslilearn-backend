@@ -1362,14 +1362,17 @@ export const uploadContent = async (req, res) => {
       '';
 
     const materialTypes = new Set(['Textbook', 'Material', 'Workbook']);
+    // Keep Super Admin's lesson/material title. Only invent a subject slot label when title is empty.
+    const trimmedTitle = String(title || '').trim();
     const resolvedTitle =
-      materialTypes.has(normalizedType) && contentProductCategory
+      trimmedTitle ||
+      (materialTypes.has(normalizedType)
         ? buildMaterialSlotTitle({
             subject: subjectDisplayName(subjectDoc?.name) || subjectDoc?.name,
             productCategory: contentProductCategory,
-            fallbackTitle: title.trim(),
+            fallbackTitle: '',
           })
-        : title.trim();
+        : '');
 
     const contentData = {
       title: resolvedTitle,

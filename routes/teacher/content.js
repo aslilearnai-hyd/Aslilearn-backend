@@ -175,7 +175,7 @@ router.get('/asli-prep-content', async (req, res) => {
     console.log('📚 Fetching Asli Prep content for teacher:', teacherId);
     console.log('Query params:', { subject, type, topic, surface });
 
-    const { getTeacherSchoolProgramContext, applySchoolProgramContentFilters, isAllowedContentType } =
+    const { getTeacherSchoolProgramContext, applySchoolProgramContentFilters, isAllowedContentType, isLearningPathSurface } =
       await import('../../utils/schoolProgram.js');
     const programCtx = {
       ...(await getTeacherSchoolProgramContext(teacherId)),
@@ -224,6 +224,7 @@ router.get('/asli-prep-content', async (req, res) => {
       curriculumBoard: programCtx.curriculumBoard,
       isAsliPrepExclusive: programCtx.isAsliPrepExclusive,
       iitCategories: programCtx.iitCategories,
+      excludeIitBoard: isLearningPathSurface(surface),
     });
     const boardResolveOpts =
       contentBoards.length > 0 ? { boards: contentBoards } : {};

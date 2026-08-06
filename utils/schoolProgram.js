@@ -2,6 +2,7 @@ import User from '../models/User.js';
 import Teacher from '../models/Teacher.js';
 import { resolveUserDisplayBoard } from '../constants/boards.js';
 import { resolveClassLabelForAiToolStorage } from './board-label.js';
+import { resolveIitCategoriesForClass } from '../constants/products.js';
 
 /** All content types (Asli Prep exclusive schools). */
 export const ALL_CONTENT_TYPES = ['Video', 'Audio', 'TextBook', 'Workbook', 'Material', 'Homework'];
@@ -97,14 +98,25 @@ export function filterVideosForLearningPath(rows) {
   });
 }
 
-export function applySurfaceContentFilters(rows, surface) {
+export function isLearningPathSurface(surface) {
   const s = String(surface || '')
     .toLowerCase()
     .trim();
-  if (s === 'eduott' || s === 'edu-ott') {
+  return s === 'learning-path' || s === 'learningpath' || s === 'lp';
+}
+
+export function isEduOttSurface(surface) {
+  const s = String(surface || '')
+    .toLowerCase()
+    .trim();
+  return s === 'eduott' || s === 'edu-ott';
+}
+
+export function applySurfaceContentFilters(rows, surface) {
+  if (isEduOttSurface(surface)) {
     return filterVideosForEduOtt(rows);
   }
-  if (s === 'learning-path' || s === 'learningpath' || s === 'lp') {
+  if (isLearningPathSurface(surface)) {
     return filterVideosForLearningPath(rows);
   }
   return rows;
@@ -208,9 +220,13 @@ export function getDefaultAiToolBoard(_isAsliPrepExclusive, curriculumBoard) {
 
 export async function getStudentSchoolProgramContext(userId) {
   const student = await User.findById(userId)
-    .populate('assignedAdmin', 'board curriculumBoard isAsliPrepExclusive iitCategories')
+    .populate(
+      'assignedAdmin',
+      'board curriculumBoard isAsliPrepExclusive iitCategories iitCategoriesByClass',
+    )
+    .populate('assignedClass', 'classNumber')
     .select(
-      'board curriculumBoard isAsliPrepExclusive iitCategories isIndividualAccount trialAllowedContentTypes trialAllowedAiTools assignedAdmin'
+      'board curriculumBoard isAsliPrepExclusive iitCategories iitCategoriesByClass isIndividualAccount trialAllowedContentTypes trialAllowedAiTools assignedAdmin classNumber assignedClass',
     )
     .lean();
   if (!student) {
@@ -219,6 +235,8 @@ export async function getStudentSchoolProgramContext(userId) {
       curriculumBoard: 'CBSE',
       adminBoard: '',
       iitCategories: [],
+      iitCategoriesByClass: {},
+      classNumber: '',
       trialAllowedContentTypes: [],
       trialAllowedAiTools: [],
     };
@@ -228,17 +246,45 @@ export async function getStudentSchoolProgramContext(userId) {
     Boolean(student.isIndividualAccount);
   const curriculumBoard = resolveUserDisplayBoard(student, student.assignedAdmin) || 'CBSE';
   const adminBoard = student.assignedAdmin?.board || student.board || '';
-  const iitCategories =
-    Array.isArray(student.iitCategories) && student.iitCategories.length
+  const classNumber = String(
+    student.classNumber ||
+      student.assignedClass?.classNumber ||
+      '',
+  ).trim();
+
+  const adminTracks = {
+    iitCategories: student.assignedAdmin?.iitCategories,
+    iitCategoriesByClass: student.assignedAdmin?.iitCategoriesByClass,
+  };
+  // Individual accounts keep their own flat list; school students use per-class map.
+  const iitCategories = student.isIndividualAccount
+    ? Array.isArray(student.iitCategories) && student.iitCategories.length
       ? student.iitCategories
-      : Array.isArray(student.assignedAdmin?.iitCategories)
-        ? student.assignedAdmin.iitCategories
-        : [];
+      : resolveIitCategoriesForClass(adminTracks, classNumber)
+    : resolveIitCategoriesForClass(
+        {
+          iitCategories:
+            Array.isArray(student.iitCategories) && student.iitCategories.length
+              ? student.iitCategories
+              : adminTracks.iitCategories,
+          iitCategoriesByClass:
+            student.iitCategoriesByClass &&
+            typeof student.iitCategoriesByClass === 'object' &&
+            Object.keys(student.iitCategoriesByClass).length
+              ? student.iitCategoriesByClass
+              : adminTracks.iitCategoriesByClass,
+        },
+        classNumber,
+      );
+
   return {
     isAsliPrepExclusive,
     curriculumBoard,
     adminBoard,
     iitCategories,
+    iitCategoriesByClass:
+      student.assignedAdmin?.iitCategoriesByClass || student.iitCategoriesByClass || {},
+    classNumber,
     trialAllowedContentTypes: Array.isArray(student.trialAllowedContentTypes)
       ? student.trialAllowedContentTypes
       : [],
@@ -251,13 +297,13 @@ export async function getStudentSchoolProgramContext(userId) {
 export async function getTeacherSchoolProgramContext(teacherId) {
   const teacher = await Teacher.findById(teacherId)
     .select(
-      'adminId board isIndividualAccount iitCategories curriculumBoard isAsliPrepExclusive trialAllowedContentTypes trialAllowedAiTools'
+      'adminId board isIndividualAccount iitCategories curriculumBoard isAsliPrepExclusive trialAllowedContentTypes trialAllowedAiTools',
     )
     .lean();
   let admin = null;
   if (teacher?.adminId) {
     admin = await User.findById(teacher.adminId)
-      .select('board curriculumBoard isAsliPrepExclusive schoolName iitCategories')
+      .select('board curriculumBoard isAsliPrepExclusive schoolName iitCategories iitCategoriesByClass')
       .lean();
   }
   const teacherCtx = teacher
@@ -279,16 +325,23 @@ export async function getTeacherSchoolProgramContext(teacherId) {
     resolveUserDisplayBoard(admin, null) ||
     curriculumBoard ||
     'CBSE';
-  const iitCategories = Array.isArray(teacher?.iitCategories) && teacher.iitCategories.length
-    ? teacher.iitCategories
-    : Array.isArray(admin?.iitCategories)
-      ? admin.iitCategories
-      : [];
+  // Teachers browse across classes — use school-wide union (legacy flat or flattened byClass).
+  const iitCategories =
+    Array.isArray(teacher?.iitCategories) && teacher.iitCategories.length
+      ? teacher.iitCategories
+      : resolveIitCategoriesForClass(
+          {
+            iitCategories: admin?.iitCategories,
+            iitCategoriesByClass: admin?.iitCategoriesByClass,
+          },
+          '',
+        );
   return {
     isAsliPrepExclusive: isAsliPrepExclusive || Boolean(teacher?.isIndividualAccount),
     curriculumBoard: displayBoard,
     adminBoard: admin?.board || teacher?.board || '',
     iitCategories,
+    iitCategoriesByClass: admin?.iitCategoriesByClass || {},
     trialAllowedContentTypes: Array.isArray(teacher?.trialAllowedContentTypes)
       ? teacher.trialAllowedContentTypes
       : [],
@@ -300,10 +353,16 @@ export async function getTeacherSchoolProgramContext(teacherId) {
 
 export async function getAdminSchoolProgramContext(adminId) {
   const admin = await User.findById(adminId)
-    .select('board curriculumBoard isAsliPrepExclusive iitCategories')
+    .select('board curriculumBoard isAsliPrepExclusive iitCategories iitCategoriesByClass')
     .lean();
   if (!admin) {
-    return { isAsliPrepExclusive: false, curriculumBoard: 'CBSE', adminBoard: '', iitCategories: [] };
+    return {
+      isAsliPrepExclusive: false,
+      curriculumBoard: 'CBSE',
+      adminBoard: '',
+      iitCategories: [],
+      iitCategoriesByClass: {},
+    };
   }
   const isAsliPrepExclusive = resolveIsAsliPrepExclusive(admin, null);
   const curriculumBoard = resolveUserDisplayBoard(admin, null) || 'CBSE';
@@ -311,6 +370,13 @@ export async function getAdminSchoolProgramContext(adminId) {
     isAsliPrepExclusive,
     curriculumBoard,
     adminBoard: admin.board || '',
-    iitCategories: Array.isArray(admin.iitCategories) ? admin.iitCategories : [],
+    iitCategories: resolveIitCategoriesForClass(
+      {
+        iitCategories: admin.iitCategories,
+        iitCategoriesByClass: admin.iitCategoriesByClass,
+      },
+      '',
+    ),
+    iitCategoriesByClass: admin.iitCategoriesByClass || {},
   };
 }

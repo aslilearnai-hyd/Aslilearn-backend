@@ -127,6 +127,14 @@ const userSchema = new mongoose.Schema({
     type: [{ type: String, uppercase: true, trim: true }],
     default: [],
   },
+  /**
+   * Per-class IIT tracks, e.g. { "6": ["ALPHA"], "8": ["ALPHA","BETA"] }.
+   * Empty / missing = legacy school-wide iitCategories apply to every class.
+   */
+  iitCategoriesByClass: {
+    type: mongoose.Schema.Types.Mixed,
+    default: {},
+  },
   /** True for B2C / single-user teacher or student signups (not school-managed). */
   isIndividualAccount: {
     type: Boolean,

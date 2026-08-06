@@ -735,6 +735,10 @@ export const getAdminSchoolDetail = async (req, res) => {
       isAsliPrepExclusive:
         admin.isAsliPrepExclusive === true || admin.board === 'ASLI_EXCLUSIVE_SCHOOLS',
       iitCategories: Array.isArray(admin.iitCategories) ? admin.iitCategories : [],
+      iitCategoriesByClass:
+        admin.iitCategoriesByClass && typeof admin.iitCategoriesByClass === 'object'
+          ? admin.iitCategoriesByClass
+          : {},
       status: admin.isActive ? 'Active' : 'Inactive',
       joinDate: admin.createdAt,
     };
