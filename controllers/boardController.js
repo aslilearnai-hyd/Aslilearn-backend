@@ -1284,10 +1284,20 @@ export const uploadContent = async (req, res) => {
     }
 
     if (normalizedType === 'Video') {
-      if (!isValidVideoNumber(chapter) || !isValidVideoNumber(moduleLabel)) {
+      if (!isValidVideoNumber(chapter)) {
         return res.status(400).json({
           success: false,
-          message: 'Chapter and module must be numbers only (e.g. 1)',
+          message: 'Chapter must be a number only (e.g. 1). Module is optional.',
+        });
+      }
+      if (
+        moduleLabel !== undefined &&
+        String(moduleLabel).trim() !== '' &&
+        !isValidVideoNumber(moduleLabel)
+      ) {
+        return res.status(400).json({
+          success: false,
+          message: 'Module must be a number only (e.g. 1), or leave it blank.',
         });
       }
     }
@@ -1371,7 +1381,10 @@ export const uploadContent = async (req, res) => {
       subject,
       topic: topic?.trim() || undefined,
       chapter: normalizedType === 'Video' ? normalizeVideoNumber(chapter) : undefined,
-      module: normalizedType === 'Video' ? normalizeVideoNumber(moduleLabel) : undefined,
+      module:
+        normalizedType === 'Video' && isValidVideoNumber(moduleLabel)
+          ? normalizeVideoNumber(moduleLabel)
+          : undefined,
       date: new Date(resolvedDate),
       fileUrl: primaryFileUrl, // Keep for backward compatibility
       fileUrls: finalFileUrls.length > 0 ? finalFileUrls : undefined, // Store multiple URLs
@@ -1651,25 +1664,34 @@ export const updateContent = async (req, res) => {
     if (topic !== undefined) content.topic = topic?.trim() || undefined;
     if (normalizeContentType(content.type) === 'Video') {
       // Title-only renames must not fail when legacy videos lack chapter/module.
-      // Only validate/set when the client sends non-empty chapter/module values.
-      const chapterProvided =
-        chapter !== undefined && String(chapter).trim() !== '';
-      const moduleProvided =
-        moduleLabel !== undefined && String(moduleLabel).trim() !== '';
-      if (chapterProvided || moduleProvided) {
+      // Only validate/set when the client sends chapter/module keys.
+      const chapterInBody = chapter !== undefined;
+      const moduleInBody = moduleLabel !== undefined;
+      const chapterProvided = chapterInBody && String(chapter).trim() !== '';
+      const moduleProvided = moduleInBody && String(moduleLabel).trim() !== '';
+
+      if (chapterInBody || moduleInBody) {
         const nextChapter = chapterProvided
           ? normalizeVideoNumber(chapter)
           : normalizeVideoNumber(content.chapter);
-        const nextModule = moduleProvided
-          ? normalizeVideoNumber(moduleLabel)
-          : normalizeVideoNumber(content.module);
-        if (!isValidVideoNumber(nextChapter) || !isValidVideoNumber(nextModule)) {
+        if (chapterProvided && !isValidVideoNumber(nextChapter)) {
           return res.status(400).json({
             success: false,
-            message: 'Chapter and module must be numbers only (e.g. 1)',
+            message: 'Chapter must be a number only (e.g. 1)',
           });
         }
-        content.set({ chapter: nextChapter, module: nextModule });
+        if (moduleProvided && !isValidVideoNumber(moduleLabel)) {
+          return res.status(400).json({
+            success: false,
+            message: 'Module must be a number only (e.g. 1), or leave it blank.',
+          });
+        }
+        const patch = {};
+        if (chapterProvided) patch.chapter = nextChapter;
+        if (moduleInBody) {
+          patch.module = moduleProvided ? normalizeVideoNumber(moduleLabel) : '';
+        }
+        content.set(patch);
       }
     }
     if (date !== undefined && String(date).trim() !== '') {
