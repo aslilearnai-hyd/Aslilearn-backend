@@ -21,6 +21,7 @@ import {
   roleMayAccessUpload,
   verifyUploadSignature,
 } from './utils/upload-access.js';
+import { existsSync } from 'fs';
 import { getAllowedOrigins } from './bootstrap/cors-origins.js';
 import { getBackendRoot } from './bootstrap/env.js';
 import { initPdfProcessingQueue } from './queues/pdfProcessingQueue.js';
@@ -194,6 +195,39 @@ const TRUSTED_FRAME_ANCESTORS =
   } catch {
     return res.status(401).json({ success: false, message: 'Invalid or expired token' });
   }
+    },
+    // Local-dev: when DB references production figures that are not on this disk,
+    // stream them from PUBLIC_API_BASE_URL using UPLOADS_REMOTE_BEARER (prod JWT/token).
+    async (req, res, next) => {
+      try {
+        const localFile = join(__dirname, 'uploads', String(req.path || '').replace(/^\/+/, ''));
+        if (existsSync(localFile)) return next();
+
+        const publicOrigin = String(
+          process.env.UPLOADS_PUBLIC_ORIGIN ||
+            process.env.PUBLIC_API_URL ||
+            process.env.PUBLIC_API_BASE_URL ||
+            '',
+        )
+          .trim()
+          .replace(/\/$/, '');
+        const remoteBearer = String(process.env.UPLOADS_REMOTE_BEARER || '').trim();
+        if (!publicOrigin || !remoteBearer) return next();
+
+        const remoteUrl = `${publicOrigin}/uploads${req.path}`;
+        const remoteRes = await fetch(remoteUrl, {
+          headers: { Authorization: `Bearer ${remoteBearer}` },
+        });
+        if (!remoteRes.ok) return next();
+
+        const contentType = remoteRes.headers.get('content-type') || 'application/octet-stream';
+        res.setHeader('Content-Type', contentType);
+        res.setHeader('Cache-Control', 'private, max-age=300');
+        const buf = Buffer.from(await remoteRes.arrayBuffer());
+        return res.status(200).send(buf);
+      } catch {
+        return next();
+      }
     },
     express.static(join(__dirname, 'uploads')),
   );

@@ -127,8 +127,8 @@ export function withSignedUploadUrl(fileUrl, ttlSeconds = 28800) {
   if (!pathOnly.startsWith('/uploads/')) return raw;
 
   try {
-    const { exp, sig, path } = signUploadPath(pathOnly, ttlSeconds);
-    const signed = `${path}?exp=${exp}&sig=${sig}`;
+    const { exp, sig, path: signedPath } = signUploadPath(pathOnly, ttlSeconds);
+    const signed = `${signedPath}?exp=${exp}&sig=${sig}`;
     return origin ? `${origin}${signed}` : signed;
   } catch {
     return raw;
