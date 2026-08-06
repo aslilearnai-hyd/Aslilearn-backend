@@ -65,6 +65,7 @@ import {
   setInFlight,
   shouldRegenerateCachedReport,
 } from '../../utils/examAiAnalysisCache.js';
+import { signQuestionMediaFields } from '../../utils/upload-access.js';
 import {
   escapeRegexClassSuffix,
   plainSubjectName,
@@ -78,6 +79,9 @@ import {
   resolveStudentContentBoard,
   getStudentAdminId,
 } from './helpers.js';
+
+/** Exam windows can run several hours; keep signed figure URLs valid for the session. */
+const EXAM_FIGURE_SIGN_TTL_SEC = 8 * 60 * 60;
 
 
 const router = express.Router();
@@ -148,6 +152,11 @@ async function hydrateExamQuestions(examDoc, { hideAnswers = false } = {}) {
       return { ...rest, options: safeOptions };
     });
   }
+
+  // Signed URLs so figures load without cookie/Bearer (web API host + mobile Image).
+  normalizedQuestions = normalizedQuestions.map((q) =>
+    signQuestionMediaFields(q, EXAM_FIGURE_SIGN_TTL_SEC)
+  );
 
   return {
     ...examDoc,
