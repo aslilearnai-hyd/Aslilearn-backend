@@ -4,12 +4,78 @@ import ExamResult from '../models/ExamResult.js';
 import User from '../models/User.js';
 import Question from '../models/Question.js';
 import { examVisibleToSchoolAdmin } from '../utils/exam-visibility.js';
+import {
+  getExamAssignedClassNumbers,
+  normalizeClassNumberLabel,
+} from '../utils/studentClassContent.js';
 
-/**
- * School-admin viewable exams: Super Admin exams assigned to this school
- * (or open to all schools on the admin's board). New schools must not see
- * exams that were targeted at other schools only.
- */
+function studentInExamClasses(studentClassNumber, examClasses) {
+  if (!Array.isArray(examClasses) || examClasses.length === 0) return true;
+  const want = normalizeClassNumberLabel(studentClassNumber);
+  if (!want) return false;
+  return examClasses.some((c) => normalizeClassNumberLabel(c) === want);
+}
+
+/** Keep best attempt per student, highest percentage first. */
+function bestAttemptsSorted(results) {
+  const best = new Map();
+  for (const r of results || []) {
+    const id = String(r.userId?._id || r.userId || '').trim();
+    if (!id) continue;
+    const prev = best.get(id);
+    if (!prev || Number(r.percentage) > Number(prev.percentage)) {
+      best.set(id, r);
+    }
+  }
+  return [...best.values()].sort(
+    (a, b) => Number(b.percentage || 0) - Number(a.percentage || 0)
+  );
+}
+
+function buildRankedPerformers(results) {
+  return bestAttemptsSorted(results).map((r, idx) => ({
+    rank: idx + 1,
+    studentName: r.userId?.fullName || 'Unknown',
+    studentEmail: r.userId?.email || '',
+    classNumber: r.userId?.classNumber || '',
+    percentage: r.percentage,
+    marks: `${r.obtainedMarks}/${r.totalMarks}`,
+    completedAt: r.completedAt,
+    attemptNumber: Number(r.attemptNumber) >= 1 ? Number(r.attemptNumber) : 1,
+  }));
+}
+
+function buildTopPerformersAndClassStats(results) {
+  const rankedStudents = buildRankedPerformers(results);
+  const topPerformers = rankedStudents.slice(0, 10);
+
+  const classPerformance = {};
+  bestAttemptsSorted(results).forEach((result) => {
+    const classNum = result.userId?.classNumber || 'Unknown';
+    if (!classPerformance[classNum]) {
+      classPerformance[classNum] = {
+        total: 0,
+        sum: 0,
+        students: []
+      };
+    }
+    classPerformance[classNum].total++;
+    classPerformance[classNum].sum += Number(result.percentage) || 0;
+    classPerformance[classNum].students.push({
+      name: result.userId?.fullName,
+      percentage: result.percentage
+    });
+  });
+
+  const classStats = Object.entries(classPerformance).map(([classNum, data]) => ({
+    classNumber: classNum,
+    studentsAttempted: data.total,
+    averageScore: data.total > 0 ? (data.sum / data.total).toFixed(2) : '0.00',
+    studentList: data.students
+  }));
+
+  return { topPerformers, rankedStudents, classStats };
+}
 export const getViewableExams = async (req, res) => {
   try {
     const adminId = req.adminId;
@@ -242,45 +308,6 @@ function subjectWiseScoreHasKey(subjectScores, subject) {
   return false;
 }
 
-function buildTopPerformersAndClassStats(results) {
-  const topPerformers = results.slice(0, 10).map((r, idx) => ({
-    rank: idx + 1,
-    studentName: r.userId?.fullName || 'Unknown',
-    studentEmail: r.userId?.email || '',
-    classNumber: r.userId?.classNumber || '',
-    percentage: r.percentage,
-    marks: `${r.obtainedMarks}/${r.totalMarks}`,
-    completedAt: r.completedAt
-  }));
-
-  const classPerformance = {};
-  results.forEach(result => {
-    const classNum = result.userId?.classNumber || 'Unknown';
-    if (!classPerformance[classNum]) {
-      classPerformance[classNum] = {
-        total: 0,
-        sum: 0,
-        students: []
-      };
-    }
-    classPerformance[classNum].total++;
-    classPerformance[classNum].sum += result.percentage;
-    classPerformance[classNum].students.push({
-      name: result.userId?.fullName,
-      percentage: result.percentage
-    });
-  });
-
-  const classStats = Object.entries(classPerformance).map(([classNum, data]) => ({
-    classNumber: classNum,
-    studentsAttempted: data.total,
-    averageScore: (data.sum / data.total).toFixed(2),
-    studentList: data.students
-  }));
-
-  return { topPerformers, classStats };
-}
-
 // Get exam performance analytics for admin's students
 export const getExamPerformanceAnalytics = async (req, res) => {
   try {
@@ -293,44 +320,58 @@ export const getExamPerformanceAnalytics = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Invalid exam id' });
     }
     const examObjectId = new mongoose.Types.ObjectId(examId);
+    const examDoc = await Exam.findById(examObjectId)
+      .select('title classNumber assignedClasses')
+      .lean();
+    const examClasses = getExamAssignedClassNumbers(examDoc);
+    const scopedClasses = classNum
+      ? [normalizeClassNumberLabel(classNum)].filter(Boolean)
+      : examClasses;
+
+    const buildPayload = (eligibleStudents, results) => {
+      const totalStudents = eligibleStudents.length;
+      const ranked = bestAttemptsSorted(results);
+      const attemptedCount = ranked.length;
+      const averageScore =
+        ranked.length > 0
+          ? ranked.reduce((sum, r) => sum + (Number(r.percentage) || 0), 0) / ranked.length
+          : 0;
+      const { topPerformers, rankedStudents, classStats } =
+        buildTopPerformersAndClassStats(results);
+      return {
+        totalStudents,
+        attemptedCount,
+        notAttemptedCount: Math.max(0, totalStudents - attemptedCount),
+        averageScore: averageScore.toFixed(2),
+        examClasses: scopedClasses,
+        examTitle: examDoc?.title || '',
+        topPerformers,
+        rankedStudents,
+        classPerformance: classStats,
+      };
+    };
 
     if (isSuperAdmin) {
       let results = await ExamResult.find({ examId: examObjectId })
         .populate('userId', 'fullName email classNumber')
         .sort({ percentage: -1 });
 
-      if (classNum) {
-        results = results.filter(
-          (r) => String(r.userId?.classNumber || '').trim() === classNum
+      if (scopedClasses.length) {
+        results = results.filter((r) =>
+          studentInExamClasses(r.userId?.classNumber, scopedClasses)
         );
       }
 
-      const studentCountQuery = { role: 'student' };
-      if (classNum) {
-        studentCountQuery.classNumber = classNum;
-      }
-      const totalStudents = await User.countDocuments(studentCountQuery);
-
-      const uniqueAttempters = new Set(
-        results.map((r) => String(r.userId?._id || r.userId || '')).filter(Boolean)
-      ).size;
-      const attemptedCount = uniqueAttempters;
-      const averageScore = results.length > 0
-        ? results.reduce((sum, r) => sum + (Number(r.percentage) || 0), 0) / results.length
-        : 0;
-
-      const { topPerformers, classStats } = buildTopPerformersAndClassStats(results);
+      const allStudents = await User.find({ role: 'student' })
+        .select('_id classNumber')
+        .lean();
+      const eligible = scopedClasses.length
+        ? allStudents.filter((s) => studentInExamClasses(s.classNumber, scopedClasses))
+        : allStudents;
 
       return res.json({
         success: true,
-        data: {
-          totalStudents,
-          attemptedCount,
-          notAttemptedCount: Math.max(0, totalStudents - attemptedCount),
-          averageScore: averageScore.toFixed(2),
-          topPerformers,
-          classPerformance: classStats
-        }
+        data: buildPayload(eligible, results),
       });
     }
 
@@ -343,42 +384,29 @@ export const getExamPerformanceAnalytics = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Admin not found' });
     }
 
-    const studentFilter = { assignedAdmin: adminId, role: 'student' };
-    if (classNum) {
-      studentFilter.classNumber = classNum;
-    }
+    const schoolStudents = await User.find({ assignedAdmin: adminId, role: 'student' })
+      .select('_id classNumber fullName email')
+      .lean();
 
-    const students = await User.find(studentFilter).select('_id');
-    const studentIds = students.map(s => s._id);
+    const eligibleStudents = scopedClasses.length
+      ? schoolStudents.filter((s) => studentInExamClasses(s.classNumber, scopedClasses))
+      : schoolStudents;
+    const eligibleIds = new Set(eligibleStudents.map((s) => String(s._id)));
 
-    const results = await ExamResult.find({
+    let results = await ExamResult.find({
       examId: examObjectId,
-      userId: { $in: studentIds }
+      userId: { $in: eligibleStudents.map((s) => s._id) },
     })
-    .populate('userId', 'fullName email classNumber')
-    .sort({ percentage: -1 });
+      .populate('userId', 'fullName email classNumber')
+      .sort({ percentage: -1 });
 
-    const totalStudents = studentIds.length;
-    const uniqueAttempters = new Set(
-      results.map((r) => String(r.userId?._id || r.userId || '')).filter(Boolean)
-    ).size;
-    const attemptedCount = uniqueAttempters;
-    const averageScore = results.length > 0
-      ? results.reduce((sum, r) => sum + (Number(r.percentage) || 0), 0) / results.length
-      : 0;
-
-    const { topPerformers, classStats } = buildTopPerformersAndClassStats(results);
+    results = results.filter((r) =>
+      eligibleIds.has(String(r.userId?._id || r.userId || ''))
+    );
 
     res.json({
       success: true,
-      data: {
-        totalStudents,
-        attemptedCount,
-        notAttemptedCount: Math.max(0, totalStudents - attemptedCount),
-        averageScore: averageScore.toFixed(2),
-        topPerformers,
-        classPerformance: classStats
-      }
+      data: buildPayload(eligibleStudents, results),
     });
   } catch (error) {
     console.error('Get exam performance analytics error:', error);
