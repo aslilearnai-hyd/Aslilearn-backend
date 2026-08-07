@@ -12,6 +12,9 @@ import AiToolGeneration from '../models/AiToolGeneration.js';
 import VidyaCallLog from '../models/VidyaCallLog.js';
 import UserProgress from '../models/UserProgress.js';
 import ExamResult from '../models/ExamResult.js';
+import IQRankQuizResult from '../models/IQRankQuizResult.js';
+import HomeworkSubmission from '../models/HomeworkSubmission.js';
+import StudentVideoChapterProgress from '../models/StudentVideoChapterProgress.js';
 import WeeklyImpactSnapshot from '../models/WeeklyImpactSnapshot.js';
 import WeeklyDigest from '../models/WeeklyDigest.js';
 
@@ -44,24 +47,55 @@ export function endOfUtcDay(d = new Date()) {
   return date;
 }
 
+/** YYYY-MM-DD in Asia/Kolkata (school timezone). */
+export function calendarDayKey(d, timeZone = 'Asia/Kolkata') {
+  try {
+    return new Intl.DateTimeFormat('en-CA', {
+      timeZone,
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    }).format(new Date(d));
+  } catch {
+    return dateKey(d);
+  }
+}
+
+function ymdOnly(value) {
+  const s = String(value || '').trim();
+  const m = s.match(/^(\d{4}-\d{2}-\d{2})/);
+  return m ? m[1] : null;
+}
+
+function startOfIstDay(ymd) {
+  return new Date(`${ymd}T00:00:00.000+05:30`);
+}
+
+function endOfIstDay(ymd) {
+  return new Date(`${ymd}T23:59:59.999+05:30`);
+}
+
 /**
  * Resolve a reporting window.
- * - Custom: { from, to } (inclusive calendar days)
+ * - Custom: { from, to } (inclusive calendar days, interpreted in IST)
  * - Weekly: { weekStart } → ISO week Mon–Sun
  */
 export function resolveImpactPeriod({ weekStart, from, to } = {}) {
   if (from || to) {
-    const rawFrom = from ? new Date(from) : new Date(to);
-    const rawTo = to ? new Date(to) : new Date(from);
-    if (Number.isNaN(rawFrom.getTime()) || Number.isNaN(rawTo.getTime())) {
+    const fromYmd = ymdOnly(from) || ymdOnly(to);
+    const toYmd = ymdOnly(to) || ymdOnly(from);
+    if (!fromYmd || !toYmd) {
       throw new Error('Invalid from/to date');
     }
-    let start = startOfUtcDay(rawFrom);
-    let end = endOfUtcDay(rawTo);
+    let start = startOfIstDay(fromYmd);
+    let end = endOfIstDay(toYmd);
+    if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime())) {
+      throw new Error('Invalid from/to date');
+    }
     if (start > end) {
-      const tmp = start;
-      start = startOfUtcDay(end);
-      end = endOfUtcDay(tmp);
+      const tmpStart = start;
+      start = startOfIstDay(toYmd);
+      end = endOfIstDay(fromYmd);
     }
     // Cap range to 93 days to avoid runaway jobs
     const maxMs = 93 * 24 * 60 * 60 * 1000;
@@ -86,7 +120,7 @@ export function resolveImpactPeriod({ weekStart, from, to } = {}) {
 }
 
 export function formatPeriodLabel(weekStart, weekEnd) {
-  const opts = { day: 'numeric', month: 'short', year: 'numeric' };
+  const opts = { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'Asia/Kolkata' };
   return `${weekStart.toLocaleDateString('en-IN', opts)} – ${weekEnd.toLocaleDateString('en-IN', opts)}`;
 }
 
@@ -172,11 +206,18 @@ async function sessionStatsForUsers(userIds, weekStart, weekEnd) {
     return { totalSessions: 0, totalMinutes: 0, byUser: new Map(), distinctActive: 0 };
   }
   const oids = userIds.map((id) => (id._id ? id._id : id));
+  const fromKey = dateKey(weekStart);
+  const toKey = dateKey(weekEnd);
   const rows = await UserSession.aggregate([
     {
       $match: {
         userId: { $in: oids },
-        startTime: { $gte: weekStart, $lte: weekEnd },
+        // Prefer calendar `date` (YYYY-MM-DD) so IST/local day picks match session-time sync;
+        // also accept startTime for older rows without a reliable date string.
+        $or: [
+          { date: { $gte: fromKey, $lte: toKey } },
+          { startTime: { $gte: weekStart, $lte: weekEnd } },
+        ],
       },
     },
     {
@@ -201,6 +242,159 @@ async function sessionStatsForUsers(userIds, weekStart, weekEnd) {
     totalMinutes += r.minutes;
   }
   return { totalSessions, totalMinutes, byUser, distinctActive: rows.length };
+}
+
+/** Distinct students who either had a session row or logged in during the period. */
+function addLoginAccessIds(students, accessed, weekStart, weekEnd) {
+  const fromKey = calendarDayKey(weekStart);
+  const toKey = calendarDayKey(weekEnd);
+  for (const s of students) {
+    if (!s.lastLogin) continue;
+    const loginKey = calendarDayKey(s.lastLogin);
+    if (loginKey >= fromKey && loginKey <= toKey) {
+      accessed.add(String(s._id));
+    }
+  }
+}
+
+function addIds(accessed, ids) {
+  for (const id of ids || []) {
+    if (id) accessed.add(String(id));
+  }
+}
+
+/**
+ * Union every meaningful student engagement signal in the period:
+ * login, session time, video/content progress, exams, IQ quizzes, homework, Vidya, chapter completion.
+ */
+async function collectStudentEngagement(students, sessionsByUser, weekStart, weekEnd) {
+  const accessed = new Set(sessionsByUser.keys());
+  addLoginAccessIds(students, accessed, weekStart, weekEnd);
+
+  const empty = {
+    studentsAccessed: accessed.size,
+    videosWatchedCount: 0,
+    studentsWatchedVideos: 0,
+    examAttemptsCount: 0,
+    studentsTookExams: 0,
+    homeworkSubmissions: 0,
+    iqQuizAttempts: 0,
+    contentProgressTouches: 0,
+  };
+
+  const oids = students.map((s) => s._id).filter(Boolean);
+  if (!oids.length) return empty;
+
+  const progressDate = {
+    $or: [
+      { lastAccessed: { $gte: weekStart, $lte: weekEnd } },
+      { updatedAt: { $gte: weekStart, $lte: weekEnd } },
+    ],
+  };
+
+  const [
+    videoProgressIds,
+    videoProgressCount,
+    anyProgressIds,
+    anyProgressCount,
+    examUserIds,
+    examAttemptsCount,
+    iqUserIds,
+    iqQuizAttempts,
+    homeworkUserIds,
+    homeworkSubmissions,
+    chapterProgressIds,
+    vidyaUserIds,
+  ] = await Promise.all([
+    UserProgress.distinct('userId', {
+      userId: { $in: oids },
+      videoId: { $ne: null },
+      ...progressDate,
+    }).catch(() => []),
+    UserProgress.countDocuments({
+      userId: { $in: oids },
+      videoId: { $ne: null },
+      ...progressDate,
+    }).catch(() => 0),
+    UserProgress.distinct('userId', {
+      userId: { $in: oids },
+      ...progressDate,
+    }).catch(() => []),
+    UserProgress.countDocuments({
+      userId: { $in: oids },
+      ...progressDate,
+    }).catch(() => 0),
+    ExamResult.distinct('userId', {
+      userId: { $in: oids },
+      $or: [
+        { completedAt: { $gte: weekStart, $lte: weekEnd } },
+        { createdAt: { $gte: weekStart, $lte: weekEnd } },
+      ],
+    }).catch(() => []),
+    ExamResult.countDocuments({
+      userId: { $in: oids },
+      $or: [
+        { completedAt: { $gte: weekStart, $lte: weekEnd } },
+        { createdAt: { $gte: weekStart, $lte: weekEnd } },
+      ],
+    }).catch(() => 0),
+    IQRankQuizResult.distinct('userId', {
+      userId: { $in: oids },
+      $or: [
+        { completedAt: { $gte: weekStart, $lte: weekEnd } },
+        { createdAt: { $gte: weekStart, $lte: weekEnd } },
+      ],
+    }).catch(() => []),
+    IQRankQuizResult.countDocuments({
+      userId: { $in: oids },
+      $or: [
+        { completedAt: { $gte: weekStart, $lte: weekEnd } },
+        { createdAt: { $gte: weekStart, $lte: weekEnd } },
+      ],
+    }).catch(() => 0),
+    HomeworkSubmission.distinct('studentId', {
+      studentId: { $in: oids },
+      $or: [
+        { submittedAt: { $gte: weekStart, $lte: weekEnd } },
+        { createdAt: { $gte: weekStart, $lte: weekEnd } },
+      ],
+    }).catch(() => []),
+    HomeworkSubmission.countDocuments({
+      studentId: { $in: oids },
+      $or: [
+        { submittedAt: { $gte: weekStart, $lte: weekEnd } },
+        { createdAt: { $gte: weekStart, $lte: weekEnd } },
+      ],
+    }).catch(() => 0),
+    StudentVideoChapterProgress.distinct('userId', {
+      userId: { $in: oids },
+      updatedAt: { $gte: weekStart, $lte: weekEnd },
+    }).catch(() => []),
+    VidyaCallLog.distinct('userId', {
+      userId: { $in: oids.map(String) },
+      ts: { $gte: weekStart, $lte: weekEnd },
+      success: { $ne: false },
+    }).catch(() => []),
+  ]);
+
+  addIds(accessed, videoProgressIds);
+  addIds(accessed, anyProgressIds);
+  addIds(accessed, examUserIds);
+  addIds(accessed, iqUserIds);
+  addIds(accessed, homeworkUserIds);
+  addIds(accessed, chapterProgressIds);
+  addIds(accessed, vidyaUserIds);
+
+  return {
+    studentsAccessed: accessed.size,
+    videosWatchedCount: videoProgressCount,
+    studentsWatchedVideos: videoProgressIds.length,
+    examAttemptsCount,
+    studentsTookExams: examUserIds.length,
+    homeworkSubmissions,
+    iqQuizAttempts,
+    contentProgressTouches: anyProgressCount,
+  };
 }
 
 async function activeDaysInWindow(userId, since, until) {
@@ -263,10 +457,19 @@ async function practiceStatsForUsers(userIds, weekStart, weekEnd) {
   const oids = userIds.map((id) => (id._id ? id._id : id));
   const rows = await UserProgress.find({
     userId: { $in: oids },
-    updatedAt: { $gte: weekStart, $lte: weekEnd },
-    $or: [{ attempts: { $gt: 0 } }, { toolType: { $ne: '' } }, { topic: { $ne: '' } }],
+    $and: [
+      {
+        $or: [
+          { lastAccessed: { $gte: weekStart, $lte: weekEnd } },
+          { updatedAt: { $gte: weekStart, $lte: weekEnd } },
+        ],
+      },
+      {
+        $or: [{ attempts: { $gt: 0 } }, { toolType: { $ne: '' } }, { topic: { $ne: '' } }, { videoId: { $ne: null } }],
+      },
+    ],
   })
-    .select('userId attempts correctCount subject topic toolType')
+    .select('userId attempts correctCount subject topic toolType videoId')
     .lean();
 
   let attempts = 0;
@@ -328,8 +531,24 @@ function buildKeyObservation(snap) {
   const parts = [];
   if (snap.studentsAccessed > 0) {
     parts.push(
-      `${snap.studentsAccessed} student(s) accessed the platform with ${snap.totalLearningSessions} learning sessions.`,
+      `${snap.studentsAccessed} student(s) used the platform (login, videos, exams, practice, or AI).`,
     );
+  }
+  if (snap.studentsWatchedVideos > 0 || snap.videosWatchedCount > 0) {
+    parts.push(
+      `${snap.studentsWatchedVideos || 0} watched videos (${snap.videosWatchedCount || 0} video progress update(s)).`,
+    );
+  }
+  if (snap.studentsTookExams > 0 || snap.examAttemptsCount > 0) {
+    parts.push(
+      `${snap.studentsTookExams || 0} attempted exams (${snap.examAttemptsCount || 0} attempt(s)).`,
+    );
+  }
+  if (snap.homeworkSubmissions > 0) {
+    parts.push(`${snap.homeworkSubmissions} homework submission(s).`);
+  }
+  if (snap.iqQuizAttempts > 0) {
+    parts.push(`${snap.iqQuizAttempts} IQ Rank quiz attempt(s).`);
   }
   if (snap.repeatPracticeStudentPct > 0) {
     parts.push(
@@ -401,21 +620,27 @@ export async function buildSchoolImpactSnapshot(adminId, periodInput = new Date(
   const sessions = await sessionStatsForUsers(studentIds, weekStart, weekEnd);
   const vidya = await vidyaStatsForUsers(studentIds, weekStart, weekEnd);
   const practice = await practiceStatsForUsers(studentIds, weekStart, weekEnd);
+  const engagement = await collectStudentEngagement(students, sessions.byUser, weekStart, weekEnd);
 
-  // Exam attempts in window count toward practice
-  let examAttempts = 0;
-  if (studentIds.length) {
-    examAttempts = await ExamResult.countDocuments({
-      userId: { $in: studentIds },
-      completedAt: { $gte: weekStart, $lte: weekEnd },
-    }).catch(() => 0);
-  }
-
-  const studentsAccessed = sessions.distinctActive;
+  const examAttempts = engagement.examAttemptsCount;
+  const studentsAccessed = engagement.studentsAccessed;
   let studentsActive3Plus = 0;
   for (const stats of sessions.byUser.values()) {
     if (stats.sessions >= 3) studentsActive3Plus += 1;
   }
+
+  // Learning activity volume: sessions + video/content touches + exam/IQ/homework events
+  const activityVolume =
+    sessions.totalSessions +
+    engagement.contentProgressTouches +
+    engagement.examAttemptsCount +
+    engagement.iqQuizAttempts +
+    engagement.homeworkSubmissions;
+  const loginOrEngageOnly =
+    studentsAccessed > sessions.distinctActive
+      ? Math.max(0, studentsAccessed - sessions.distinctActive)
+      : 0;
+  const totalLearningSessions = Math.max(activityVolume, sessions.totalSessions + loginOrEngageOnly);
 
   const activeForRepeat = Math.max(1, studentsAccessed);
   const repeatPracticeStudentPct = Math.round((practice.repeatStudents / activeForRepeat) * 1000) / 10;
@@ -423,13 +648,13 @@ export async function buildSchoolImpactSnapshot(adminId, periodInput = new Date(
   const subjectMap = mergeSubjectMaps(vidya.bySubject, practice.bySubject);
   const topSubjects = topSubjectsFromMap(subjectMap);
 
-  const practiceAttempts = practice.attempts + examAttempts;
+  const practiceAttempts = practice.attempts + examAttempts + engagement.iqQuizAttempts;
   const practiceCorrectRate =
     practice.attempts > 0 ? Math.round((practice.correct / practice.attempts) * 1000) / 10 : 0;
 
   const avgSessionsPerActiveStudent =
     studentsAccessed > 0
-      ? Math.round((sessions.totalSessions / studentsAccessed) * 10) / 10
+      ? Math.round((totalLearningSessions / studentsAccessed) * 10) / 10
       : 0;
 
   const payload = {
@@ -449,13 +674,20 @@ export async function buildSchoolImpactSnapshot(adminId, periodInput = new Date(
     studentsIssued: students.length,
     studentsAccessed,
     studentsActive3Plus,
-    totalLearningSessions: sessions.totalSessions,
+    totalLearningSessions,
     totalMinutesSpent: sessions.totalMinutes,
     avgSessionsPerActiveStudent,
     repeatPracticeStudentPct,
     aiExplanationsCount: vidya.calls,
     practiceAttempts,
     practiceCorrectRate,
+    videosWatchedCount: engagement.videosWatchedCount,
+    studentsWatchedVideos: engagement.studentsWatchedVideos,
+    examAttemptsCount: engagement.examAttemptsCount,
+    studentsTookExams: engagement.studentsTookExams,
+    homeworkSubmissions: engagement.homeworkSubmissions,
+    iqQuizAttempts: engagement.iqQuizAttempts,
+    contentProgressTouches: engagement.contentProgressTouches,
     topSubjects,
     teachers: teacherRows,
     keyObservation: '',
@@ -621,14 +853,17 @@ export async function getSchoolSnapshot(adminId, periodInput) {
     periodInput && typeof periodInput === 'object' && !(periodInput instanceof Date)
       ? periodInput
       : { weekStart: periodInput || new Date() };
-  const { weekStart } = resolveImpactPeriod(periodOpts);
-  let snap = await WeeklyImpactSnapshot.findOne({ adminId, weekStart }).lean();
-  if (!snap) {
-    snap =
-      (await buildSchoolImpactSnapshot(adminId, periodOpts, 'api')).toObject?.() ||
-      (await WeeklyImpactSnapshot.findOne({ adminId, weekStart }).lean());
-  }
-  return snap;
+  // Always rebuild from live logins/sessions so weekly + day-to-day reflect the latest access
+  // (cached Monday snapshots were staying at 0 after students logged in later in the week).
+  const built = await buildSchoolImpactSnapshot(adminId, periodOpts, 'api');
+  if (built?.toObject) return built.toObject();
+  return (
+    built ||
+    (await WeeklyImpactSnapshot.findOne({
+      adminId,
+      weekStart: resolveImpactPeriod(periodOpts).weekStart,
+    }).lean())
+  );
 }
 
 export async function getLatestDigestForUser(userId) {

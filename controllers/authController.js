@@ -770,6 +770,31 @@ export async function login(req, res) {
     // Update last login without triggering full document validation (avoids board enum validation)
     await User.findByIdAndUpdate(user._id, { lastLogin: new Date() }, { runValidators: false });
 
+    // Record a daily access session so school impact / attendance proxies count logins
+    // even when the client never posts session-time minutes.
+    if (user.role === 'student' || user.role === 'teacher') {
+      try {
+        const UserSession = (await import('../models/UserSession.js')).default;
+        const now = new Date();
+        const y = now.getUTCFullYear();
+        const m = String(now.getUTCMonth() + 1).padStart(2, '0');
+        const d = String(now.getUTCDate()).padStart(2, '0');
+        const dateKey = `${y}-${m}-${d}`;
+        const existing = await UserSession.findOne({ userId: user._id, date: dateKey }).select('_id').lean();
+        if (!existing) {
+          await UserSession.create({
+            userId: user._id,
+            date: dateKey,
+            startTime: new Date(`${dateKey}T00:00:00.000Z`),
+            endTime: now,
+            duration: 1,
+          });
+        }
+      } catch (sessionErr) {
+        console.warn('Login session record skipped:', sessionErr?.message);
+      }
+    }
+
     const { resolveIndividualAccess } = await import('../utils/individualAccount.js');
     const access = resolveIndividualAccess(user);
     if (user.isIndividualAccount && access.paymentRequired && user.subscriptionStatus === 'trial') {
