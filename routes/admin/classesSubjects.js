@@ -6,6 +6,7 @@ import {
   updateSubject,
   deleteSubject,
   createClass,
+  updateClass,
   assignSubjectsToClassById,
   deleteAllClasses,
   deleteClass,
@@ -21,6 +22,7 @@ router.post('/subjects', createSubject);
 router.put('/subjects/:id', updateSubject);
 router.delete('/subjects/:id', deleteSubject);
 router.post('/classes', createClass);
+router.put('/classes/:id', updateClass);
 router.post('/classes/by-id/:classId/assign-subjects', assignSubjectsToClassById);
 router.delete('/classes/delete-all', deleteAllClasses);
 router.delete('/classes/:id', deleteClass);

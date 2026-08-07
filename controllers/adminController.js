@@ -3367,6 +3367,126 @@ export const createClass = async (req, res) => {
   }
 };
 
+// Update an existing class (number, section, description)
+export const updateClass = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { classNumber, section, description } = req.body;
+    const adminId = req.adminId || req.userId || req.user?.id || req.user?._id || req.user?.userId;
+
+    if (!adminId) {
+      return res.status(401).json({
+        success: false,
+        message: 'Admin ID not found. Please ensure you are authenticated as an admin.',
+      });
+    }
+
+    if (!id) {
+      return res.status(400).json({ success: false, message: 'Class ID is required' });
+    }
+
+    if (!classNumber || !section) {
+      return res.status(400).json({
+        success: false,
+        message: 'Class number and section are required',
+      });
+    }
+
+    const sectionKey = String(section).trim().toUpperCase();
+    if (!/^[A-Z0-9]{1,3}$/.test(sectionKey)) {
+      return res.status(400).json({
+        success: false,
+        message: 'Section must be 1–3 letters or numbers (e.g. A, D, E1)',
+      });
+    }
+
+    const classNumberKey = String(classNumber).trim();
+    if (!classNumberKey) {
+      return res.status(400).json({
+        success: false,
+        message: 'Class number is required',
+      });
+    }
+
+    const classDoc = await Class.findOne({ _id: id, assignedAdmin: adminId });
+    if (!classDoc) {
+      return res.status(404).json({
+        success: false,
+        message: 'Class not found or access denied',
+      });
+    }
+
+    const numberChanged = classDoc.classNumber !== classNumberKey;
+    const sectionChanged = String(classDoc.section || '').toUpperCase() !== sectionKey;
+
+    if (numberChanged || sectionChanged) {
+      const duplicate = await Class.findOne({
+        classNumber: classNumberKey,
+        section: sectionKey,
+        assignedAdmin: adminId,
+        _id: { $ne: classDoc._id },
+      });
+      if (duplicate) {
+        return res.status(400).json({
+          success: false,
+          message: `Class ${classNumberKey}${sectionKey} already exists. Cannot create duplicate classes.`,
+        });
+      }
+    }
+
+    classDoc.classNumber = classNumberKey;
+    classDoc.section = sectionKey;
+    classDoc.name = `Class ${classNumberKey}${sectionKey}`;
+    if (description !== undefined) {
+      classDoc.description = String(description || '').trim();
+    }
+
+    await classDoc.save();
+
+    // Keep denormalized student classNumber in sync when grade/section identity changes
+    if (numberChanged) {
+      await User.updateMany(
+        { assignedClass: classDoc._id },
+        { $set: { classNumber: classNumberKey } },
+      );
+    }
+
+    res.json({
+      success: true,
+      message: 'Class updated successfully',
+      data: {
+        id: classDoc._id,
+        classNumber: classDoc.classNumber,
+        section: classDoc.section,
+        name: classDoc.name,
+        description: classDoc.description,
+        board: classDoc.board,
+        school: classDoc.school,
+        assignedAdmin: classDoc.assignedAdmin,
+      },
+    });
+  } catch (error) {
+    console.error('Failed to update class:', error);
+
+    let errorMessage = 'Failed to update class';
+    if (error.name === 'ValidationError') {
+      errorMessage = `Validation error: ${Object.values(error.errors).map((e) => e.message).join(', ')}`;
+    } else if (error.code === 11000) {
+      errorMessage = `Class ${req.body.classNumber}${req.body.section} already exists`;
+    } else if (error.name === 'CastError') {
+      errorMessage = 'Invalid class ID format';
+    } else if (error.message) {
+      errorMessage = error.message;
+    }
+
+    res.status(500).json({
+      success: false,
+      message: errorMessage,
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined,
+    });
+  }
+};
+
 function normalizeAssignSubjectIds(subjectIds) {
   if (!Array.isArray(subjectIds)) return { ok: false, message: 'subjectIds must be an array' };
   const validSubjectIds = [
