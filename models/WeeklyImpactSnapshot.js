@@ -53,6 +53,13 @@ const weeklyImpactSnapshotSchema = new mongoose.Schema(
     aiExplanationsCount: { type: Number, default: 0 },
     practiceAttempts: { type: Number, default: 0 },
     practiceCorrectRate: { type: Number, default: 0 },
+    videosWatchedCount: { type: Number, default: 0 },
+    studentsWatchedVideos: { type: Number, default: 0 },
+    examAttemptsCount: { type: Number, default: 0 },
+    studentsTookExams: { type: Number, default: 0 },
+    homeworkSubmissions: { type: Number, default: 0 },
+    iqQuizAttempts: { type: Number, default: 0 },
+    contentProgressTouches: { type: Number, default: 0 },
 
     topSubjects: { type: [subjectRowSchema], default: [] },
     teachers: { type: [teacherRowSchema], default: [] },
