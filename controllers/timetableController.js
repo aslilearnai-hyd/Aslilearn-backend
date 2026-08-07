@@ -736,13 +736,34 @@ async function resolveCsvRow(row, schoolAdminId) {
     }));
 
   if (!resolvedClass) {
-    return { error: `Class ${classNumber}-${section} not found for this school` };
+    const existingClasses = await Class.find({ assignedAdmin: schoolAdminId, isActive: true })
+      .select('classNumber section name')
+      .sort({ classNumber: 1, section: 1 })
+      .lean();
+    const available = existingClasses
+      .map((c) => `${c.classNumber}-${c.section}${c.name ? ` (${c.name})` : ''}`)
+      .join(', ');
+    return {
+      error: `Class ${classNumber}-${section} not found for this school.${
+        available ? ` Available: ${available}` : ' No classes exist yet — add classes in School Management first.'
+      }`,
+    };
   }
 
   const subject = await resolveSubjectForClass(resolvedClass, subjectName);
   if (!subject) {
+    const classDoc = await Class.findById(resolvedClass._id).select('assignedSubjects').lean();
+    const assignedIds = classDoc?.assignedSubjects || [];
+    const availableSubjects = assignedIds.length
+      ? await Subject.find({ _id: { $in: assignedIds }, isActive: { $ne: false } }).select('name').lean()
+      : [];
+    const available = availableSubjects.map((s) => s.name).join(', ');
     return {
-      error: `Subject "${subjectName}" not found for class ${resolvedClass.classNumber}-${resolvedClass.section}. Assign it to the class in School Management first.`,
+      error: `Subject "${subjectName}" not found for class ${resolvedClass.classNumber}-${resolvedClass.section}.${
+        available
+          ? ` Available: ${available}`
+          : ' No subjects assigned to this class — assign one in School Management first.'
+      }`,
     };
   }
 
@@ -768,7 +789,18 @@ async function resolveCsvRow(row, schoolAdminId) {
       isActive: { $ne: false },
     });
   }
-  if (!teacher) return { error: `Teacher "${teacherName || teacherEmail}" not found for this school` };
+  if (!teacher) {
+    const availableTeachers = await Teacher.find({ adminId: schoolAdminId, isActive: { $ne: false } })
+      .select('fullName')
+      .sort({ fullName: 1 })
+      .lean();
+    const available = availableTeachers.map((t) => t.fullName).join(', ');
+    return {
+      error: `Teacher "${teacherName || teacherEmail}" not found for this school.${
+        available ? ` Available: ${available}` : ' No teachers exist yet — add teachers in School Management first.'
+      }`,
+    };
+  }
 
   const room = cell(row, 'Room', 'room', 'classroom') || 'TBD';
   const building = cell(row, 'Building', 'building', 'block') || 'Main';
@@ -916,13 +948,70 @@ export const importTimetableCSV = async (req, res) => {
   }
 };
 
+function csvEscape(value) {
+  const s = String(value ?? '');
+  return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+}
+
 export const downloadCSVTemplate = async (req, res) => {
-  const template = `${CSV_HEADERS.join(',')}
-2026-05-24,Monday,09:00,10:00,10,A,Mathematics,John Smith,Room-101,Main Block,Lecture,Scheduled,Chapter 1 - Algebra
-2026-05-24,Monday,10:00,11:00,10,A,Physics,Jane Doe,Lab-201,Science Wing,Lab,Scheduled,Practical session`;
-  res.setHeader('Content-Type', 'text/csv; charset=utf-8');
-  res.setHeader('Content-Disposition', 'attachment; filename=timetable-template.csv');
-  res.send(template);
+  try {
+    const schoolAdminId = resolveAdminId(req);
+    const sampleRows = [];
+
+    if (schoolAdminId) {
+      const classes = await Class.find({ assignedAdmin: schoolAdminId, isActive: true })
+        .select('classNumber section assignedSubjects')
+        .sort({ classNumber: 1, section: 1 })
+        .limit(2)
+        .lean();
+
+      for (let i = 0; i < classes.length; i++) {
+        const cls = classes[i];
+        const subject = cls.assignedSubjects?.length
+          ? await Subject.findOne({ _id: { $in: cls.assignedSubjects }, isActive: { $ne: false } })
+              .select('name')
+              .lean()
+          : null;
+        const teacher = await Teacher.findOne({ adminId: schoolAdminId, isActive: { $ne: false } })
+          .select('fullName')
+          .lean();
+
+        if (subject && teacher) {
+          const startHour = 9 + i;
+          sampleRows.push([
+            new Date().toISOString().slice(0, 10),
+            'Monday',
+            `${String(startHour).padStart(2, '0')}:00`,
+            `${String(startHour + 1).padStart(2, '0')}:00`,
+            cls.classNumber,
+            cls.section,
+            subject.name,
+            teacher.fullName,
+            'Room-101',
+            'Main Block',
+            'Lecture',
+            'Scheduled',
+            'Sample entry - edit as needed',
+          ]);
+        }
+      }
+    }
+
+    if (!sampleRows.length) {
+      sampleRows.push(
+        ['2026-05-24', 'Monday', '09:00', '10:00', '10', 'A', 'Mathematics', 'John Smith', 'Room-101', 'Main Block', 'Lecture', 'Scheduled', 'Chapter 1 - Algebra'],
+        ['2026-05-24', 'Monday', '10:00', '11:00', '10', 'A', 'Physics', 'Jane Doe', 'Lab-201', 'Science Wing', 'Lab', 'Scheduled', 'Practical session'],
+      );
+    }
+
+    const lines = [CSV_HEADERS.join(','), ...sampleRows.map((row) => row.map(csvEscape).join(','))];
+    res.setHeader('Content-Type', 'text/csv; charset=utf-8');
+    res.setHeader('Content-Disposition', 'attachment; filename=timetable-template.csv');
+    res.send(lines.join('\n'));
+  } catch (error) {
+    console.error('downloadCSVTemplate:', error);
+    res.status(500).json({ success: false, message: error.message });
+  }
 };
 
 export const exportTimetableCSV = async (req, res) => {
