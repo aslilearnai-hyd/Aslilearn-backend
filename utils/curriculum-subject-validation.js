@@ -12,8 +12,18 @@ export function normalizeCurriculumSubjectForValidation(subject) {
     mathematics: 'Maths',
     math: 'Maths',
     maths: 'Maths',
+    mat: 'Maths',
+    mth: 'Maths',
     'social studies': 'Social Science',
+    'social science': 'Social Science',
     sst: 'Social Science',
+    soc: 'Social Science',
+    phy: 'Physics',
+    phys: 'Physics',
+    che: 'Chemistry',
+    chem: 'Chemistry',
+    bio: 'Biology',
+    eng: 'English',
   };
   return aliases[key] ?? s;
 }

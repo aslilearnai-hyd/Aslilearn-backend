@@ -8,9 +8,9 @@ import Teacher from '../models/Teacher.js';
 import User from '../models/User.js';
 import { cleanCsvCell } from '../utils/csv-encoding.js';
 import { spreadsheetBufferToCsv } from '../utils/spreadsheet-to-csv.js';
+import { tryExpandClassTimetableGrid } from '../utils/class-timetable-grid-import.js';
 import {
-  extractPlainSubjectNameForContent,
-  subjectGroupKey,
+  subjectAliasMatchScore,
 } from '../utils/resolveSubjectContentIds.js';
 
 const POPULATE_FIELDS = [
@@ -456,6 +456,153 @@ export const bulkDeleteTimetable = async (req, res) => {
   }
 };
 
+/**
+ * Remap period bell times for a class week, and optionally insert Break/Lunch slots.
+ * Body: { classId, startDate, endDate, mappings: [{fromStart,toStart,toEnd}], breaksToAdd: [{startTime,endTime,label}] }
+ */
+export const remapPeriodTimes = async (req, res) => {
+  try {
+    const schoolAdminId = resolveAdminId(req);
+    if (!schoolAdminId) {
+      return res.status(403).json({ success: false, message: 'Admin only' });
+    }
+    const { classId, startDate, endDate, mappings = [], breaksToAdd = [] } = req.body || {};
+    if (!classId || !startDate || !endDate) {
+      return res.status(400).json({
+        success: false,
+        message: 'classId, startDate and endDate are required',
+      });
+    }
+
+    const classOid = toObjectId(classId);
+    if (!classOid) {
+      return res.status(400).json({ success: false, message: 'Invalid classId' });
+    }
+
+    const dateFilter = {
+      $gte: startOfDay(new Date(startDate)),
+      $lte: endOfDay(new Date(endDate)),
+    };
+
+    let updated = 0;
+    for (const m of mappings) {
+      const fromStart = String(m.fromStart || '').trim();
+      const toStart = String(m.toStart || '').trim();
+      const toEnd = String(m.toEnd || '').trim();
+      if (!/^\d{2}:\d{2}$/.test(fromStart) || !/^\d{2}:\d{2}$/.test(toStart) || !/^\d{2}:\d{2}$/.test(toEnd)) {
+        continue;
+      }
+      if (parseTimeToMinutes(toEnd) <= parseTimeToMinutes(toStart)) continue;
+      const result = await Timetable.updateMany(
+        {
+          schoolAdminId,
+          classId: classOid,
+          startTime: fromStart,
+          date: dateFilter,
+        },
+        { $set: { startTime: toStart, endTime: toEnd } },
+      );
+      updated += result.modifiedCount || 0;
+    }
+
+    let breaksCreated = 0;
+    if (Array.isArray(breaksToAdd) && breaksToAdd.length) {
+      const sample = await Timetable.findOne({
+        schoolAdminId,
+        classId: classOid,
+        date: dateFilter,
+      }).lean();
+      if (!sample?.teacherId) {
+        return res.status(400).json({
+          success: false,
+          message: 'No timetable rows found for this class/week to attach breaks.',
+          updated,
+        });
+      }
+
+      const admin = await User.findById(schoolAdminId).select('board').lean();
+      const board = String(admin?.board || 'ASLI_EXCLUSIVE_SCHOOLS').toUpperCase();
+      const dates = await Timetable.distinct('date', {
+        schoolAdminId,
+        classId: classOid,
+        date: dateFilter,
+      });
+
+      for (const br of breaksToAdd) {
+        const startTime = String(br.startTime || '').trim();
+        const endTime = String(br.endTime || '').trim();
+        const label = String(br.label || 'Break').trim().slice(0, 40) || 'Break';
+        if (!/^\d{2}:\d{2}$/.test(startTime) || !/^\d{2}:\d{2}$/.test(endTime)) continue;
+        if (parseTimeToMinutes(endTime) <= parseTimeToMinutes(startTime)) continue;
+
+        let subject = await Subject.findOne({
+          board,
+          name: new RegExp(`^${escapeRegex(label)}$`, 'i'),
+          isActive: { $ne: false },
+        });
+        if (!subject) {
+          try {
+            subject = await Subject.create({
+              name: label,
+              board,
+              classNumber: '',
+              classIds: [classOid],
+              description: 'Break/lunch slot from timetable editor',
+              createdBy: 'super-admin',
+            });
+          } catch {
+            subject = await Subject.findOne({
+              board,
+              name: new RegExp(`^${escapeRegex(label)}$`, 'i'),
+            });
+          }
+        }
+        if (!subject) continue;
+
+        await Subject.updateOne({ _id: subject._id }, { $addToSet: { classIds: classOid } });
+        await Class.updateOne({ _id: classOid }, { $addToSet: { assignedSubjects: subject._id } });
+
+        for (const d of dates) {
+          const exists = await Timetable.findOne({
+            schoolAdminId,
+            classId: classOid,
+            date: d,
+            startTime,
+            subjectId: subject._id,
+          }).select('_id').lean();
+          if (exists) continue;
+
+          const dayName = DAY_NAMES[new Date(d).getUTCDay()] || 'Monday';
+          await Timetable.create({
+            schoolAdminId,
+            date: startOfDay(d),
+            day: dayName,
+            startTime,
+            endTime,
+            classId: classOid,
+            sectionId: sample.sectionId || '',
+            subjectId: subject._id,
+            teacherId: sample.teacherId,
+            room: sample.room || 'TBD',
+            building: sample.building || 'Main',
+            sessionType: 'Activity',
+            status: 'Scheduled',
+            notes: label,
+            attendanceRequired: false,
+            repeatRule: 'none',
+          });
+          breaksCreated += 1;
+        }
+      }
+    }
+
+    res.json({ success: true, updated, breaksCreated });
+  } catch (error) {
+    console.error('remapPeriodTimes:', error);
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
 const CSV_HEADERS = ['Date', 'Day', 'StartTime', 'EndTime', 'Class', 'Section', 'Subject', 'Teacher', 'Room', 'Building', 'Type', 'Status', 'Notes'];
 
 function escapeRegex(value) {
@@ -598,18 +745,6 @@ function normalizeStatus(value) {
   return 'Scheduled';
 }
 
-function subjectNameMatches(candidateName, wantedName) {
-  const want = String(wantedName || '').trim();
-  if (!want) return false;
-  const cand = String(candidateName || '').trim();
-  if (!cand) return false;
-  if (cand.toLowerCase() === want.toLowerCase()) return true;
-  const wantPlain = extractPlainSubjectNameForContent(want).toLowerCase();
-  const candPlain = extractPlainSubjectNameForContent(cand).toLowerCase();
-  if (wantPlain && candPlain && wantPlain === candPlain) return true;
-  return subjectGroupKey(want) === subjectGroupKey(cand);
-}
-
 async function resolveSubjectForClass(cls, subjectName) {
   const want = cleanCsvCell(subjectName);
   if (!want) return null;
@@ -649,9 +784,24 @@ async function resolveSubjectForClass(cls, subjectName) {
     candidates.push(...byClassNumber);
   }
 
+  // Also pull subjects whose name matches common aliases (Maths / Mathematics / Math)
+  const aliasNames = [
+    want,
+    ...new Set(
+      [want, want.replace(/\s+/g, ''), want.replace(/[-_/]+/g, ' ')].map((s) => String(s || '').trim()),
+    ),
+  ];
   const exactSubjects = await Subject.find({
     $and: [
-      { name: new RegExp(`^${escapeRegex(want)}$`, 'i') },
+      {
+        $or: aliasNames.flatMap((alias) => {
+          const esc = escapeRegex(alias);
+          return [
+            { name: new RegExp(`^${esc}$`, 'i') },
+            { name: new RegExp(`^${esc}_\\d+$`, 'i') },
+          ];
+        }),
+      },
       { isActive: { $ne: false } },
       { name: { $not: /__deleted__/ } },
     ],
@@ -669,20 +819,106 @@ async function resolveSubjectForClass(cls, subjectName) {
     unique.push(s);
   }
 
-  // Prefer subjects linked to this class, then any name match
-  const linked = unique.filter(
-    (s) =>
-      assignedIds.some((id) => String(id) === String(s._id)) ||
-      (s.classIds || []).some((id) => String(id) === String(cls._id)),
-  );
-  return (
-    linked.find((s) => subjectNameMatches(s.name, want)) ||
-    unique.find((s) => subjectNameMatches(s.name, want)) ||
-    null
-  );
+  const isLinked = (s) =>
+    assignedIds.some((id) => String(id) === String(s._id)) ||
+    (s.classIds || []).some((id) => String(id) === String(cls._id));
+
+  const scored = unique
+    .map((s) => ({
+      subject: s,
+      score: subjectAliasMatchScore(s.name, want),
+      linked: isLinked(s) ? 1 : 0,
+    }))
+    .filter((row) => row.score > 0)
+    .sort((a, b) => b.score - a.score || b.linked - a.linked);
+
+  // Prefer strong alias/exact matches; avoid weak IIT↔non-IIT fallback unless nothing else
+  const strong = scored.find((row) => row.score >= 90);
+  if (strong) return strong.subject;
+  const linkedStrong = scored.find((row) => row.linked && row.score >= 90);
+  if (linkedStrong) return linkedStrong.subject;
+  return scored[0]?.subject || null;
 }
 
-function parseCsvBuffer(buffer, originalName) {
+/** Grid imports may include CCA/PET labels — create or link school activity subjects when missing. */
+async function resolveSubjectForClassOrCreate(cls, subjectName, schoolAdminId, { allowCreate = false } = {}) {
+  let subject = await resolveSubjectForClass(cls, subjectName);
+  if (subject) {
+    await Promise.all([
+      Subject.updateOne({ _id: subject._id }, { $addToSet: { classIds: cls._id } }),
+      Class.updateOne({ _id: cls._id }, { $addToSet: { assignedSubjects: subject._id } }),
+    ]);
+    return subject;
+  }
+  if (!allowCreate) return null;
+
+  const want = cleanCsvCell(subjectName);
+  if (!want) return null;
+
+  const admin = await User.findById(schoolAdminId).select('board').lean();
+  const board = String(admin?.board || 'ASLI_EXCLUSIVE_SCHOOLS').toUpperCase();
+
+  const boardSubjects = await Subject.find({
+    board,
+    isActive: { $ne: false },
+    name: { $not: /__deleted__/ },
+  })
+    .select('_id name classIds teacherId')
+    .lean();
+
+  const scored = boardSubjects
+    .map((s) => ({ subject: s, score: subjectAliasMatchScore(s.name, want) }))
+    .filter((row) => row.score >= 90)
+    .sort((a, b) => b.score - a.score);
+
+  if (scored[0]) {
+    subject = scored[0].subject;
+  } else {
+    try {
+      subject = await Subject.create({
+        name: want.slice(0, 80),
+        board,
+        classNumber: String(cls.classNumber || ''),
+        classIds: [cls._id],
+        description: 'Auto-created from class timetable grid import',
+        createdBy: 'super-admin',
+      });
+    } catch {
+      subject = await Subject.findOne({
+        board,
+        name: new RegExp(`^${escapeRegex(want.slice(0, 80))}$`, 'i'),
+        isActive: { $ne: false },
+      });
+      if (!subject) return null;
+    }
+  }
+
+  await Promise.all([
+    Subject.updateOne({ _id: subject._id }, { $addToSet: { classIds: cls._id } }),
+    Class.updateOne({ _id: cls._id }, { $addToSet: { assignedSubjects: subject._id } }),
+  ]);
+  return subject;
+}
+
+function isGridImportRow(row) {
+  const flag = row?.gridsource ?? row?.__gridsource ?? row?.__gridSource;
+  return flag === true || flag === 'true' || flag === 1 || flag === '1';
+}
+
+function parseCsvBuffer(buffer, originalName, options = {}) {
+  const grid = tryExpandClassTimetableGrid(buffer, originalName, options);
+  if (grid?.rows?.length) {
+    return {
+      rows: grid.rows.map((r) => {
+        const n = normalizeCsvRow(r);
+        n.gridsource = true;
+        return n;
+      }),
+      format: 'class-grid',
+      gridErrors: Array.isArray(grid.errors) ? grid.errors : [],
+    };
+  }
+
   let csvData;
   try {
     ({ csv: csvData } = spreadsheetBufferToCsv(buffer, originalName));
@@ -690,7 +926,11 @@ function parseCsvBuffer(buffer, originalName) {
     csvData = buffer.toString('utf8');
   }
   const rows = parse(csvData, { columns: true, skip_empty_lines: true, trim: true, relax_column_count: true });
-  return (Array.isArray(rows) ? rows : []).map(normalizeCsvRow);
+  return {
+    rows: (Array.isArray(rows) ? rows : []).map(normalizeCsvRow),
+    format: 'flat',
+    gridErrors: [],
+  };
 }
 
 async function resolveCsvRow(row, schoolAdminId) {
@@ -699,6 +939,7 @@ async function resolveCsvRow(row, schoolAdminId) {
   const subjectName = cell(row, 'Subject', 'subject', 'subjectname');
   const teacherName = cell(row, 'Teacher', 'teacher', 'teachername');
   const teacherEmail = cell(row, 'TeacherEmail', 'teacheremail', 'email');
+  const fromGrid = isGridImportRow(row);
 
   if (!classNumber || !section) {
     return { error: 'Class and Section are required' };
@@ -706,7 +947,7 @@ async function resolveCsvRow(row, schoolAdminId) {
   if (!subjectName) {
     return { error: 'Subject is required' };
   }
-  if (!teacherName && !teacherEmail) {
+  if (!teacherName && !teacherEmail && !fromGrid) {
     return { error: 'Teacher (or TeacherEmail) is required' };
   }
 
@@ -750,7 +991,9 @@ async function resolveCsvRow(row, schoolAdminId) {
     };
   }
 
-  const subject = await resolveSubjectForClass(resolvedClass, subjectName);
+  const subject = await resolveSubjectForClassOrCreate(resolvedClass, subjectName, schoolAdminId, {
+    allowCreate: fromGrid,
+  });
   if (!subject) {
     const classDoc = await Class.findById(resolvedClass._id).select('assignedSubjects').lean();
     const assignedIds = classDoc?.assignedSubjects || [];
@@ -789,6 +1032,28 @@ async function resolveCsvRow(row, schoolAdminId) {
       isActive: { $ne: false },
     });
   }
+  // Class-grid uploads often omit teacher — pick subject primary teacher, then any school teacher
+  if (!teacher && subject?.teacherId) {
+    teacher = await Teacher.findOne({
+      _id: subject.teacherId,
+      adminId: schoolAdminId,
+      isActive: { $ne: false },
+    });
+  }
+  if (!teacher) {
+    const classIdStr = String(resolvedClass._id);
+    teacher = await Teacher.findOne({
+      adminId: schoolAdminId,
+      isActive: { $ne: false },
+      assignedClassIds: classIdStr,
+    });
+  }
+  if (!teacher) {
+    teacher = await Teacher.findOne({
+      adminId: schoolAdminId,
+      isActive: { $ne: false },
+    }).sort({ fullName: 1 });
+  }
   if (!teacher) {
     const availableTeachers = await Teacher.find({ adminId: schoolAdminId, isActive: { $ne: false } })
       .select('fullName')
@@ -796,8 +1061,8 @@ async function resolveCsvRow(row, schoolAdminId) {
       .lean();
     const available = availableTeachers.map((t) => t.fullName).join(', ');
     return {
-      error: `Teacher "${teacherName || teacherEmail}" not found for this school.${
-        available ? ` Available: ${available}` : ' No teachers exist yet — add teachers in School Management first.'
+      error: `Teacher "${teacherName || teacherEmail || '(auto)'}" not found for this school.${
+        available ? ` Available: ${available}` : ' Add at least one teacher login before importing the class grid.'
       }`,
     };
   }
@@ -849,87 +1114,587 @@ async function resolveCsvRow(row, schoolAdminId) {
   };
 }
 
-async function processCsvRows(rows, schoolAdminId, { dryRun = false, mode = 'import' } = {}) {
+async function buildImportContext(schoolAdminId) {
+  const [classes, teachers, admin] = await Promise.all([
+    Class.find({ assignedAdmin: schoolAdminId, isActive: true })
+      .select('_id classNumber section name assignedSubjects')
+      .lean(),
+    Teacher.find({ adminId: schoolAdminId, isActive: { $ne: false } })
+      .select('_id fullName email teacherId assignedClassIds')
+      .sort({ fullName: 1 })
+      .lean(),
+    User.findById(schoolAdminId).select('board schoolName').lean(),
+  ]);
+
+  const board = String(admin?.board || 'ASLI_EXCLUSIVE_SCHOOLS').toUpperCase();
+  const schoolName = String(admin?.schoolName || '').trim();
+  const classOids = classes.map((c) => c._id);
+  const assignedSubjectIds = [
+    ...new Set(classes.flatMap((c) => (c.assignedSubjects || []).map((id) => String(id)))),
+  ];
+
+  const subjects = await Subject.find({
+    isActive: { $ne: false },
+    name: { $not: /__deleted__/ },
+    $or: [
+      ...(assignedSubjectIds.length ? [{ _id: { $in: assignedSubjectIds } }] : []),
+      ...(classOids.length ? [{ classIds: { $in: classOids } }] : []),
+      { board },
+    ],
+  })
+    .select('_id name classNumber classIds teacherId board')
+    .lean();
+
+  const classByKey = new Map();
+  for (const cls of classes) {
+    const num = String(cls.classNumber || '').replace(/\.0+$/, '');
+    const sec = String(cls.section || '').toUpperCase();
+    classByKey.set(`${num}|${sec}`, cls);
+    classByKey.set(`${String(Number(num) || num)}|${sec}`, cls);
+  }
+
+  const teacherByEmail = new Map();
+  const teacherByName = new Map();
+  for (const t of teachers) {
+    if (t.email) teacherByEmail.set(String(t.email).toLowerCase(), t);
+    if (t.fullName) teacherByName.set(String(t.fullName).toLowerCase(), t);
+  }
+
+  return {
+    schoolAdminId,
+    board,
+    schoolName,
+    classes,
+    classByKey,
+    teachers,
+    teacherByEmail,
+    teacherByName,
+    defaultTeacher: teachers[0] || null,
+    subjects,
+    subjectById: new Map(subjects.map((s) => [String(s._id), s])),
+    createdSubjectNames: new Map(),
+    createdClasses: new Map(),
+    pendingClassSubjectLinks: [], // { classId, subjectId }
+    autoCreatedClasses: [],
+  };
+}
+
+function registerClassInContext(ctx, cls) {
+  const num = String(cls.classNumber || '').replace(/\.0+$/, '');
+  const sec = String(cls.section || '').toUpperCase();
+  ctx.classByKey.set(`${num}|${sec}`, cls);
+  ctx.classByKey.set(`${String(Number(num) || num)}|${sec}`, cls);
+  if (!ctx.classes.some((c) => String(c._id) === String(cls._id))) {
+    ctx.classes.push(cls);
+  }
+}
+
+async function ensureClassInContext(ctx, classNumber, section, { allowCreate }) {
+  let resolved = findClassInContext(ctx, classNumber, section);
+  if (resolved) return resolved;
+  if (!allowCreate) return null;
+
+  const num = String(classNumber || '').replace(/\.0+$/, '');
+  const sec = String(section || '').toUpperCase();
+  if (!num || !/^[A-Z0-9]{1,3}$/.test(sec)) return null;
+
+  const cacheKey = `${num}|${sec}`;
+  if (ctx.createdClasses.has(cacheKey)) {
+    return ctx.createdClasses.get(cacheKey);
+  }
+
+  let created;
+  try {
+    created = await Class.create({
+      classNumber: num,
+      section: sec,
+      name: `Class ${num}-${sec}`,
+      description: 'Auto-created from class timetable grid import',
+      school: ctx.schoolName || '',
+      assignedAdmin: ctx.schoolAdminId,
+      board: ctx.board,
+      assignedSubjects: [],
+      isActive: true,
+    });
+    created = created.toObject ? created.toObject() : created;
+  } catch (err) {
+    // Race / unique index — fetch existing
+    created = await Class.findOne({
+      classNumber: num,
+      section: sec,
+      assignedAdmin: ctx.schoolAdminId,
+      isActive: true,
+    }).lean();
+    if (!created) {
+      console.warn('[timetable-import] class create failed:', err?.message || err);
+      return null;
+    }
+  }
+
+  registerClassInContext(ctx, created);
+  ctx.createdClasses.set(cacheKey, created);
+  ctx.autoCreatedClasses.push(`${num}-${sec}`);
+  return created;
+}
+
+function findClassInContext(ctx, classNumber, section) {
+  const num = String(classNumber || '').replace(/\.0+$/, '');
+  const sec = String(section || '').toUpperCase();
+  return (
+    ctx.classByKey.get(`${num}|${sec}`) ||
+    ctx.classByKey.get(`${String(Number(num) || num)}|${sec}`) ||
+    null
+  );
+}
+
+function pickSubjectFromList(subjects, cls, want) {
+  const assignedIds = new Set((cls.assignedSubjects || []).map((id) => String(id)));
+  const isLinked = (s) =>
+    assignedIds.has(String(s._id)) ||
+    (s.classIds || []).some((id) => String(id) === String(cls._id));
+
+  const scored = subjects
+    .map((s) => ({
+      subject: s,
+      score: subjectAliasMatchScore(s.name, want),
+      linked: isLinked(s) ? 1 : 0,
+    }))
+    .filter((row) => row.score > 0)
+    .sort((a, b) => b.score - a.score || b.linked - a.linked);
+
+  const strong = scored.find((row) => row.score >= 90);
+  if (strong) return strong.subject;
+  return scored[0]?.subject || null;
+}
+
+async function resolveSubjectInContext(ctx, cls, subjectName, { allowCreate }) {
+  const want = cleanCsvCell(subjectName);
+  if (!want) return null;
+
+  const cacheKey = `${String(cls._id)}::${want.toLowerCase()}`;
+  if (ctx.createdSubjectNames.has(cacheKey)) {
+    return ctx.createdSubjectNames.get(cacheKey);
+  }
+
+  let subject = pickSubjectFromList(ctx.subjects, cls, want);
+  if (!subject && allowCreate) {
+    subject = pickSubjectFromList(
+      ctx.subjects.filter((s) => String(s.board || '').toUpperCase() === ctx.board),
+      cls,
+      want,
+    );
+  }
+
+  if (!subject && allowCreate) {
+    try {
+      subject = await Subject.create({
+        name: want.slice(0, 80),
+        board: ctx.board,
+        classNumber: String(cls.classNumber || ''),
+        classIds: [cls._id],
+        description: 'Auto-created from class timetable grid import',
+        createdBy: 'super-admin',
+      });
+      subject = subject.toObject ? subject.toObject() : subject;
+    } catch {
+      subject = await Subject.findOne({
+        board: ctx.board,
+        name: new RegExp(`^${escapeRegex(want.slice(0, 80))}$`, 'i'),
+        isActive: { $ne: false },
+      }).lean();
+    }
+    if (subject) {
+      ctx.subjects.push(subject);
+      ctx.subjectById.set(String(subject._id), subject);
+    }
+  }
+
+  if (subject) {
+    ctx.createdSubjectNames.set(cacheKey, subject);
+    ctx.pendingClassSubjectLinks.push({ classId: cls._id, subjectId: subject._id });
+  }
+  return subject || null;
+}
+
+function findTeacherInContext(ctx, { teacherName, teacherEmail, subject, classId }) {
+  if (teacherEmail) {
+    const hit = ctx.teacherByEmail.get(teacherEmail.toLowerCase());
+    if (hit) return hit;
+  }
+  if (teacherName) {
+    const exact = ctx.teacherByName.get(teacherName.toLowerCase());
+    if (exact) return exact;
+    const partial = ctx.teachers.find((t) =>
+      String(t.fullName || '')
+        .toLowerCase()
+        .includes(teacherName.toLowerCase()),
+    );
+    if (partial && teacherName.length >= 3) return partial;
+  }
+  if (subject?.teacherId) {
+    const t = ctx.teachers.find((x) => String(x._id) === String(subject.teacherId));
+    if (t) return t;
+  }
+  const classIdStr = String(classId);
+  const byClass = ctx.teachers.find((t) =>
+    (t.assignedClassIds || []).some((id) => String(id) === classIdStr),
+  );
+  if (byClass) return byClass;
+  return ctx.defaultTeacher;
+}
+
+function conflictKey(date) {
+  const d = date instanceof Date ? date : new Date(date);
+  return d.toISOString().slice(0, 10);
+}
+
+function entryConflictsWith(entry, existing, { ignoreTeacher = false } = {}) {
+  if (!timesOverlap(entry.startTime, entry.endTime, existing.startTime, existing.endTime)) {
+    return false;
+  }
+  // Grid imports often share one fallback teacher — don't treat that as a real clash
+  if (
+    !ignoreTeacher &&
+    entry.teacherId &&
+    existing.teacherId &&
+    String(existing.teacherId) === String(entry.teacherId)
+  ) {
+    return true;
+  }
+  if (entry.room && existing.room && entry.room === existing.room && entry.room !== 'TBD') {
+    return true;
+  }
+  if (
+    String(entry.classId) === String(existing.classId) &&
+    String(entry.sectionId || '').toUpperCase() === String(existing.sectionId || '').toUpperCase()
+  ) {
+    return true;
+  }
+  return false;
+}
+
+async function resolveCsvRowFast(row, ctx) {
+  const classNumber = normalizeClassNumber(cell(row, 'Class', 'class', 'classnumber', 'classname'));
+  const section = cell(row, 'Section', 'section', 'sec').toUpperCase();
+  const subjectName = cell(row, 'Subject', 'subject', 'subjectname');
+  const teacherName = cell(row, 'Teacher', 'teacher', 'teachername');
+  const teacherEmail = cell(row, 'TeacherEmail', 'teacheremail', 'email');
+  const fromGrid = isGridImportRow(row);
+
+  if (!classNumber || !section) return { error: 'Class and Section are required' };
+  if (!subjectName) return { error: 'Subject is required' };
+  if (!teacherName && !teacherEmail && !fromGrid) {
+    return { error: 'Teacher (or TeacherEmail) is required' };
+  }
+
+  const resolvedClass = await ensureClassInContext(ctx, classNumber, section, {
+    allowCreate: fromGrid,
+  });
+  if (!resolvedClass) {
+    const available = ctx.classes
+      .map((c) => `${c.classNumber}-${c.section}${c.name ? ` (${c.name})` : ''}`)
+      .join(', ');
+    return {
+      error: `Class ${classNumber}-${section} not found for this school.${
+        available ? ` Available: ${available}` : ' No classes exist yet — add classes in School Management first.'
+      }`,
+    };
+  }
+
+  const subject = await resolveSubjectInContext(ctx, resolvedClass, subjectName, {
+    allowCreate: fromGrid,
+  });
+  if (!subject) {
+    const assignedIds = resolvedClass.assignedSubjects || [];
+    const available = ctx.subjects
+      .filter((s) => assignedIds.some((id) => String(id) === String(s._id)))
+      .map((s) => s.name)
+      .join(', ');
+    return {
+      error: `Subject "${subjectName}" not found for class ${resolvedClass.classNumber}-${resolvedClass.section}.${
+        available
+          ? ` Available: ${available}`
+          : ' No subjects assigned to this class — assign one in School Management first.'
+      }`,
+    };
+  }
+
+  const teacher = findTeacherInContext(ctx, {
+    teacherName,
+    teacherEmail,
+    subject,
+    classId: resolvedClass._id,
+  });
+  if (!teacher) {
+    return {
+      error: `Teacher "${teacherName || teacherEmail || '(auto)'}" not found for this school.${
+        ctx.teachers.length
+          ? ` Available: ${ctx.teachers.map((t) => t.fullName).join(', ')}`
+          : ' Add at least one teacher login before importing the class grid.'
+      }`,
+    };
+  }
+
+  const room = cell(row, 'Room', 'room', 'classroom') || 'TBD';
+  const building = cell(row, 'Building', 'building', 'block') || 'Main';
+  const { date, dateStr } = parseCsvDate(cell(row, 'Date', 'date', 'scheduledate'));
+  if (!date || Number.isNaN(date.getTime())) {
+    return { error: `Invalid date: ${dateStr || '(empty)'}. Use YYYY-MM-DD or DD/MM/YYYY.` };
+  }
+
+  const startTime = normalizeTime(cell(row, 'StartTime', 'starttime', 'start', 'from'));
+  const endTime = normalizeTime(cell(row, 'EndTime', 'endtime', 'end', 'to'));
+  if (!/^\d{2}:\d{2}$/.test(startTime) || !/^\d{2}:\d{2}$/.test(endTime)) {
+    return { error: `Invalid time "${startTime}"–"${endTime}". Use HH:MM (e.g. 09:00).` };
+  }
+  if (parseTimeToMinutes(endTime) <= parseTimeToMinutes(startTime)) {
+    return { error: `EndTime must be after StartTime (${startTime}–${endTime})` };
+  }
+
+  const dayRaw = cell(row, 'Day', 'day', 'weekday');
+  const entry = {
+    schoolAdminId: ctx.schoolAdminId,
+    date,
+    day: dayRaw || DAY_NAMES[date.getUTCDay()],
+    startTime,
+    endTime,
+    classId: resolvedClass._id,
+    sectionId: String(resolvedClass.section || section).toUpperCase(),
+    subjectId: subject._id,
+    teacherId: teacher._id,
+    room,
+    building,
+    sessionType: normalizeSessionType(cell(row, 'Type', 'type', 'sessiontype', 'session')),
+    status: normalizeStatus(cell(row, 'Status', 'status')),
+    notes: cell(row, 'Notes', 'notes', 'remark', 'remarks'),
+    repeatRule: 'none',
+  };
+
+  return {
+    entry,
+    rowMeta: {
+      date: dateStr,
+      class: `${resolvedClass.classNumber}-${resolvedClass.section}`,
+      subject: subject.name,
+      teacher: teacher.fullName,
+    },
+  };
+}
+
+async function flushClassSubjectLinks(ctx) {
+  const links = ctx.pendingClassSubjectLinks || [];
+  if (!links.length) return;
+  const byClass = new Map();
+  const bySubject = new Map();
+  for (const { classId, subjectId } of links) {
+    const cKey = String(classId);
+    const sKey = String(subjectId);
+    if (!byClass.has(cKey)) byClass.set(cKey, { classId, subjectIds: new Set() });
+    byClass.get(cKey).subjectIds.add(sKey);
+    if (!bySubject.has(sKey)) bySubject.set(sKey, { subjectId, classIds: new Set() });
+    bySubject.get(sKey).classIds.add(cKey);
+  }
+  await Promise.all([
+    ...[...byClass.values()].map(({ classId, subjectIds }) =>
+      Class.updateOne(
+        { _id: classId },
+        {
+          $addToSet: {
+            assignedSubjects: {
+              $each: [...subjectIds].map((id) => new mongoose.Types.ObjectId(String(id))),
+            },
+          },
+        },
+      ),
+    ),
+    ...[...bySubject.values()].map(({ subjectId, classIds }) =>
+      Subject.updateOne(
+        { _id: subjectId },
+        {
+          $addToSet: {
+            classIds: {
+              $each: [...classIds].map((id) => new mongoose.Types.ObjectId(String(id))),
+            },
+          },
+        },
+      ),
+    ),
+  ]);
+  ctx.pendingClassSubjectLinks = [];
+}
+
+async function processCsvRows(rows, schoolAdminId, { dryRun = false, mode = 'import', format = 'flat' } = {}) {
+  const started = Date.now();
+  const isGrid = format === 'class-grid';
+  // Re-uploading the same class grid should refresh that week, not fight the previous import
+  const effectiveMode = isGrid && mode === 'import' ? 'replace-grid' : mode;
+  console.log(
+    `[timetable-import] start rows=${rows.length} dryRun=${dryRun} mode=${mode} effective=${effectiveMode} format=${format}`,
+  );
+
   let imported = 0;
   let skipped = 0;
   const errors = [];
   const validEntries = [];
 
+  const ctx = await buildImportContext(schoolAdminId);
+  if (!ctx.classes.length) {
+    return {
+      imported: 0,
+      skipped: rows.length,
+      errors: [
+        {
+          row: 0,
+          reason: 'No classes exist yet — add classes in School Management first.',
+          status: 'error',
+        },
+      ],
+      autoCreatedClasses: [],
+    };
+  }
+
+  // Prefetch existing timetable for conflict checks (skipped for grid replace)
+  const datesPreview = [];
+  for (const row of rows) {
+    const { date } = parseCsvDate(cell(row, 'Date', 'date', 'scheduledate'));
+    if (date && !Number.isNaN(date.getTime())) datesPreview.push(date);
+  }
+  const existingByDay = new Map();
+  if (datesPreview.length && effectiveMode !== 'replace-grid' && effectiveMode !== 'replace') {
+    const min = startOfDay(new Date(Math.min(...datesPreview.map((d) => d.getTime()))));
+    const max = endOfDay(new Date(Math.max(...datesPreview.map((d) => d.getTime()))));
+    const existing = await Timetable.find({
+      schoolAdminId,
+      date: { $gte: min, $lte: max },
+      status: { $ne: 'Cancelled' },
+    })
+      .select('date startTime endTime teacherId classId sectionId room')
+      .lean();
+    for (const e of existing) {
+      const key = conflictKey(e.date);
+      if (!existingByDay.has(key)) existingByDay.set(key, []);
+      existingByDay.get(key).push(e);
+    }
+  }
+
   for (let i = 0; i < rows.length; i++) {
-    const resolved = await resolveCsvRow(rows[i], schoolAdminId);
+    const resolved = await resolveCsvRowFast(rows[i], ctx);
     if (resolved.error) {
       errors.push({ row: i + 2, reason: resolved.error, status: 'error' });
       skipped++;
       continue;
     }
 
-    const { hasConflict } = await detectConflicts(resolved.entry, null, schoolAdminId);
+    const ignoreTeacher = isGrid || isGridImportRow(rows[i]);
+    const dayList = existingByDay.get(conflictKey(resolved.entry.date)) || [];
+    const hasConflict =
+      effectiveMode !== 'replace-grid' &&
+      effectiveMode !== 'replace' &&
+      (dayList.some((ex) => entryConflictsWith(resolved.entry, ex, { ignoreTeacher })) ||
+        validEntries.some(
+          (e) =>
+            conflictKey(e.date) === conflictKey(resolved.entry.date) &&
+            entryConflictsWith(resolved.entry, e, { ignoreTeacher }),
+        ));
+
     if (hasConflict) {
-      if (mode === 'merge') {
-        errors.push({ row: i + 2, reason: 'Conflict detected', status: 'warning', ...resolved.rowMeta });
-        skipped++;
-        continue;
-      }
       errors.push({ row: i + 2, reason: 'Conflict detected', status: 'warning', ...resolved.rowMeta });
-      if (dryRun) {
+      if (effectiveMode === 'merge' || dryRun) {
         skipped++;
         continue;
       }
+      // default import: warn but still save
     }
 
     validEntries.push(resolved.entry);
-    if (dryRun) {
-      imported++;
-    }
+    if (dryRun) imported++;
   }
 
+  await flushClassSubjectLinks(ctx);
+
   if (!dryRun && validEntries.length) {
-    if (mode === 'replace') {
+    if (effectiveMode === 'replace' || effectiveMode === 'replace-grid') {
       const dates = validEntries.map((e) => e.date);
-      const min = new Date(Math.min(...dates.map((d) => d.getTime())));
-      const max = new Date(Math.max(...dates.map((d) => d.getTime())));
-      await Timetable.deleteMany({
-        schoolAdminId,
-        date: { $gte: startOfDay(min), $lte: endOfDay(max) },
-      });
+      const min = startOfDay(new Date(Math.min(...dates.map((d) => d.getTime()))));
+      const max = endOfDay(new Date(Math.max(...dates.map((d) => d.getTime()))));
+      const classIds = [...new Set(validEntries.map((e) => String(e.classId)))];
+      const deleteFilter =
+        effectiveMode === 'replace-grid'
+          ? {
+              schoolAdminId,
+              classId: { $in: classIds },
+              date: { $gte: min, $lte: max },
+            }
+          : {
+              schoolAdminId,
+              date: { $gte: min, $lte: max },
+            };
+      const del = await Timetable.deleteMany(deleteFilter);
+      console.log(
+        `[timetable-import] cleared ${del.deletedCount || 0} existing entries before replace (${effectiveMode})`,
+      );
     }
 
-    for (const entry of validEntries) {
+    const BATCH = 100;
+    for (let i = 0; i < validEntries.length; i += BATCH) {
+      const chunk = validEntries.slice(i, i + BATCH);
       try {
-        const { hasConflict } = await detectConflicts(entry, null, schoolAdminId);
-        if (mode === 'merge' && hasConflict) {
+        const inserted = await Timetable.insertMany(chunk, { ordered: false });
+        imported += inserted.length;
+      } catch (err) {
+        const n = err?.insertedDocs?.length || err?.result?.nInserted || 0;
+        imported += n;
+        const writeErrors = err?.writeErrors || [];
+        for (const we of writeErrors) {
           errors.push({
             row: 0,
-            reason: 'Conflict detected',
-            status: 'warning',
-            class: String(entry.sectionId || ''),
+            reason: we?.errmsg || we?.err?.message || 'Failed to save row',
+            status: 'error',
           });
           skipped++;
-          continue;
         }
-        await new Timetable(entry).save();
-        imported++;
-      } catch (saveErr) {
-        errors.push({
-          row: 0,
-          reason: saveErr?.message || 'Failed to save row',
-          status: 'error',
-        });
-        skipped++;
+        if (!writeErrors.length && !n) {
+          errors.push({
+            row: 0,
+            reason: err?.message || 'Failed to save batch',
+            status: 'error',
+          });
+          skipped += chunk.length;
+        }
       }
     }
   }
 
-  return { imported, skipped, errors };
+  console.log(
+    `[timetable-import] done in ${Date.now() - started}ms imported=${imported} skipped=${skipped} errors=${errors.length} autoClasses=${ctx.autoCreatedClasses?.length || 0}`,
+  );
+  return {
+    imported,
+    skipped,
+    errors,
+    autoCreatedClasses: [...new Set(ctx.autoCreatedClasses || [])],
+    replaced: effectiveMode === 'replace' || effectiveMode === 'replace-grid',
+  };
 }
 
 export const validateTimetableCSV = async (req, res) => {
   try {
     const schoolAdminId = resolveAdminId(req);
     if (!req.file) return res.status(400).json({ success: false, message: 'No file uploaded' });
-    const rows = parseCsvBuffer(req.file.buffer, req.file.originalname);
-    const result = await processCsvRows(rows, schoolAdminId, { dryRun: true });
-    res.json({ success: true, ...result });
+    const weekStart = req.body?.weekStart || req.body?.week_start || req.query?.weekStart;
+    const parsed = parseCsvBuffer(req.file.buffer, req.file.originalname, { weekStart });
+    const result = await processCsvRows(parsed.rows, schoolAdminId, {
+      dryRun: true,
+      format: parsed.format,
+    });
+    const errors = [...(parsed.gridErrors || []), ...(result.errors || [])];
+    res.json({
+      success: true,
+      ...result,
+      errors,
+      skipped: (result.skipped || 0) + (parsed.gridErrors?.length || 0),
+      format: parsed.format,
+    });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
@@ -940,9 +1705,36 @@ export const importTimetableCSV = async (req, res) => {
     const schoolAdminId = resolveAdminId(req);
     if (!req.file) return res.status(400).json({ success: false, message: 'No file uploaded' });
     const mode = req.body.mode || 'import';
-    const rows = parseCsvBuffer(req.file.buffer, req.file.originalname);
-    const result = await processCsvRows(rows, schoolAdminId, { dryRun: false, mode });
-    res.json({ success: true, ...result });
+    const weekStart = req.body?.weekStart || req.body?.week_start || req.query?.weekStart;
+    console.log(
+      `[timetable-import] request file=${req.file.originalname} size=${req.file.size} mode=${mode}`,
+    );
+    const parsed = parseCsvBuffer(req.file.buffer, req.file.originalname, { weekStart });
+    console.log(
+      `[timetable-import] parsed format=${parsed.format} rows=${parsed.rows.length} gridErrors=${parsed.gridErrors?.length || 0}`,
+    );
+    if (parsed.format === 'class-grid' && !parsed.rows.length) {
+      return res.status(400).json({
+        success: false,
+        message:
+          'Class timetable grid was detected but no periods were found. Check class headers (e.g. 6A) and Time rows.',
+        errors: parsed.gridErrors || [],
+        format: parsed.format,
+      });
+    }
+    const result = await processCsvRows(parsed.rows, schoolAdminId, {
+      dryRun: false,
+      mode,
+      format: parsed.format,
+    });
+    const errors = [...(parsed.gridErrors || []), ...(result.errors || [])];
+    res.json({
+      success: true,
+      ...result,
+      errors,
+      skipped: (result.skipped || 0) + (parsed.gridErrors?.length || 0),
+      format: parsed.format,
+    });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
