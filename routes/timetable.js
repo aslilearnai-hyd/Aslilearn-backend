@@ -13,6 +13,7 @@ import {
   deleteTimetableEntry,
   bulkDeleteTimetable,
   bulkDeleteByGroup,
+  remapPeriodTimes,
   importTimetableCSV,
   validateTimetableCSV,
   downloadCSVTemplate,
@@ -47,6 +48,7 @@ router.post('/', authorizeRoles('admin'), createTimetableEntry);
 router.put('/:id', authorizeRoles('admin'), updateTimetableEntry);
 router.patch('/:id', authorizeRoles('admin', 'teacher'), patchTimetableStatus);
 router.post('/bulk-delete', authorizeRoles('admin', 'super-admin'), bulkDeleteTimetable);
+router.post('/remap-periods', authorizeRoles('admin'), remapPeriodTimes);
 router.delete('/group/:groupId', authorizeRoles('admin', 'super-admin'), bulkDeleteByGroup);
 router.delete('/:id', authorizeRoles('admin', 'super-admin'), deleteTimetableEntry);
 router.post('/import/csv', authorizeRoles('admin'), upload.single('file'), importTimetableCSV);

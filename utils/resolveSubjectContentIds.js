@@ -8,37 +8,86 @@ export function extractPlainSubjectNameForContent(name) {
   return match ? match[1].trim() : base;
 }
 
-/** Group key for deduping BIO / BIOIOGY / Biology_6 into one school subject row. */
+/** Group key for deduping BIO / Biology / Maths / Mathematics / Math IIT. */
 const SUBJECT_GROUP_ALIASES = {
   bio: 'biology',
   bioiology: 'biology',
   biology: 'biology',
+  biolo: 'biology',
+
   maths: 'maths',
   math: 'maths',
   mathematics: 'maths',
+  mat: 'maths',
+  mth: 'maths',
+
   english: 'english',
   eng: 'english',
+  engl: 'english',
+
   hindi: 'hindi',
+  hin: 'hindi',
+
   sanskrit: 'sanskrit',
+  sans: 'sanskrit',
+
   chem: 'chemistry',
   chemistry: 'chemistry',
+  che: 'chemistry',
+
   physics: 'physics',
   phy: 'physics',
+  phys: 'physics',
+
   science: 'science',
   sci: 'science',
   evs: 'science',
+
   sst: 'social',
   social: 'social',
   'social science': 'social',
+  'social studies': 'social',
+  soc: 'social',
   history: 'social',
   geography: 'social',
   civics: 'social',
   economics: 'social',
+
   computer: 'computer',
   computers: 'computer',
+  'computer science': 'computer',
   cs: 'computer',
   it: 'computer',
+  ict: 'computer',
+  comp: 'computer',
+  'com t': 'computer',
+  'com p': 'computer',
+
+  robotics: 'robotics',
+  robot: 'robotics',
+  robots: 'robotics',
+  robo: 'robotics',
 };
+
+/** Normalize raw label for alias lookup: "Mat- IIT", "Maths / Mathematics". */
+export function normalizeSubjectLabel(name) {
+  return extractPlainSubjectNameForContent(name)
+    .toLowerCase()
+    .replace(/[/_.]+/g, ' ')
+    .replace(/[^a-z0-9\s-]/g, ' ')
+    .replace(/-/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function applyAliasMap(tokenOrPhrase) {
+  const key = String(tokenOrPhrase || '').trim();
+  if (!key) return '';
+  if (SUBJECT_GROUP_ALIASES[key]) return SUBJECT_GROUP_ALIASES[key];
+  const first = key.split(/\s+/)[0];
+  if (first && SUBJECT_GROUP_ALIASES[first]) return SUBJECT_GROUP_ALIASES[first];
+  return key;
+}
 
 /** Subject bucket for exam grading / adaptive learning (exam doc + question). */
 export function resolveExamQuestionSubjectKey(question = {}, examDoc = null) {
@@ -49,9 +98,56 @@ export function resolveExamQuestionSubjectKey(question = {}, examDoc = null) {
   return key || 'general';
 }
 
+/**
+ * Group key for deduping alternate spellings.
+ * IIT/NEET variants get a `_iit` suffix so Maths ≠ Maths IIT when both exist.
+ */
 export function subjectGroupKey(name) {
-  const plain = extractPlainSubjectNameForContent(name).toLowerCase().trim();
-  return SUBJECT_GROUP_ALIASES[plain] || plain;
+  let plain = normalizeSubjectLabel(name);
+  if (!plain) return '';
+
+  const hasIit = /\b(iit|neet)\b/.test(plain);
+  plain = plain
+    .replace(/\b(iit|neet)\b/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  const base = applyAliasMap(plain) || plain;
+  return hasIit ? `${base}_iit` : base;
+}
+
+/** True when two labels refer to the same subject group. */
+export function subjectsMatchByAlias(a, b) {
+  const ka = subjectGroupKey(a);
+  const kb = subjectGroupKey(b);
+  if (!ka || !kb) return false;
+  if (ka === kb) return true;
+  return normalizeSubjectLabel(a) === normalizeSubjectLabel(b);
+}
+
+/**
+ * Score how well a candidate subject name matches a wanted timetable cell.
+ * Higher is better; 0 = no match.
+ */
+export function subjectAliasMatchScore(candidateName, wantedName) {
+  const want = String(wantedName || '').trim();
+  const cand = String(candidateName || '').trim();
+  if (!want || !cand) return 0;
+  if (cand.toLowerCase() === want.toLowerCase()) return 100;
+
+  const wantPlain = extractPlainSubjectNameForContent(want).toLowerCase();
+  const candPlain = extractPlainSubjectNameForContent(cand).toLowerCase();
+  if (wantPlain && candPlain && wantPlain === candPlain) return 95;
+
+  const wk = subjectGroupKey(want);
+  const ck = subjectGroupKey(cand);
+  if (wk && ck && wk === ck) return 90;
+
+  const wb = wk.replace(/_iit$/, '');
+  const cb = ck.replace(/_iit$/, '');
+  if (wb && cb && wb === cb) return 45;
+
+  return 0;
 }
 
 function escapeRegex(value) {
@@ -77,11 +173,18 @@ function normalizeBoardFilter(options = {}) {
  */
 export function subjectGroupAliasNames(nameOrKey) {
   const groupKey = subjectGroupKey(nameOrKey);
-  const names = new Set([groupKey]);
+  const baseKey = String(groupKey || '').replace(/_iit$/, '');
+  const names = new Set([groupKey, baseKey].filter(Boolean));
   for (const [alias, key] of Object.entries(SUBJECT_GROUP_ALIASES)) {
-    if (key === groupKey) names.add(alias);
+    if (key === baseKey) {
+      names.add(alias);
+      if (String(groupKey).endsWith('_iit')) {
+        names.add(`${alias} iit`);
+        names.add(`${alias}-iit`);
+      }
+    }
   }
-  const plain = extractPlainSubjectNameForContent(nameOrKey).toLowerCase().trim();
+  const plain = normalizeSubjectLabel(nameOrKey);
   if (plain) names.add(plain);
   return [...names].filter(Boolean);
 }
