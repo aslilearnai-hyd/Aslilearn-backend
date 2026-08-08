@@ -82,7 +82,7 @@ router.get('/weekly-digest', getMyWeeklyDigest);
 router.get('/dashboard-bootstrap', async (req, res) => {
   try {
     const { buildStudentDashboardBootstrap } = await import(
-      '../services/student-dashboard-bootstrap.js'
+      '../../services/student-dashboard-bootstrap.js'
     );
     const payload = await buildStudentDashboardBootstrap(req.userId);
     if (!payload.ok) {
