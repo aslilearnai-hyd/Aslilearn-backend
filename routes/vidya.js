@@ -11,6 +11,7 @@ import VidyaCallLog from '../models/VidyaCallLog.js';
 import ChatSession from '../models/ChatSession.js';
 import * as vidyaAiControl from '../controllers/vidyaAiControlController.js';
 import * as vidyaStudent from '../controllers/vidyaStudentController.js';
+import * as vidyaTeacher from '../controllers/vidyaTeacherController.js';
 import { requireVidyaSchoolAccess } from '../middleware/vidya-school-access.js';
 
 const router = express.Router();
@@ -48,6 +49,13 @@ router.post(
   ...studentTeacherVidya,
   aiChatPerUserLimiter,
   async (req, res) => vidyaStudent.postStudentMentorChat(req, res),
+);
+
+router.post(
+  '/vidya/teacher/chat',
+  ...studentTeacherVidya,
+  aiChatPerUserLimiter,
+  async (req, res) => vidyaTeacher.postTeacherMentorChat(req, res),
 );
 
 router.get(

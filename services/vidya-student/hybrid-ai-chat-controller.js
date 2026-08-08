@@ -8,6 +8,10 @@ import { buildAutoGreeting, buildPerformanceSummary } from './performance-summar
 import { detectQueryIntent, buildUncertainClarificationMessage, buildGreetingReplyMessage, buildThanksReplyMessage } from './query-intent-detection-engine.js';
 import { generateGeneralKnowledgeAnswer } from './gemini-general-knowledge-service.js';
 import { buildPlatformProgressFacts } from './platform-progress-facts.js';
+import {
+  buildStudentAppDeskFacts,
+  matchSubjectFromQuestion,
+} from './student-app-desk-facts.js';
 
 const connectionFallbackMessage = () => "I'm having trouble connecting right now. Please try again in a moment.";
 
@@ -24,6 +28,88 @@ function formatExamTrendLine(perf, marks) {
   return line;
 }
 
+function omrSubjectMax(s) {
+  if (!s) return 0;
+  const attempted = (Number(s.r) || 0) + (Number(s.w) || 0) + (Number(s.l) || 0);
+  if (attempted > 0) return attempted;
+  return Number(s.marks) > 0 ? 20 : 0;
+}
+
+function formatOmrSubjectLine(label, s) {
+  const max = omrSubjectMax(s);
+  if (!max && !(Number(s?.marks) > 0)) return null;
+  const marks = Number(s?.marks) || 0;
+  const denom = max || 20;
+  const pct = denom ? Math.round((marks / denom) * 100) : 0;
+  return `• ${label}: **${marks}/${denom}** (${pct}%)`;
+}
+
+function formatOmrDate(value) {
+  if (!value) return '';
+  try {
+    return new Intl.DateTimeFormat('en-IN', {
+      timeZone: 'Asia/Kolkata',
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric',
+    }).format(new Date(value));
+  } catch {
+    return '';
+  }
+}
+
+function buildOmrResultReply(omrList, { all = false } = {}) {
+  const list = Array.isArray(omrList) ? omrList : [];
+  if (!list.length) {
+    return "I don't see any OMR sheet results linked to your account yet. After your school uploads the OMR score sheet and assigns your Candidate ID, ask me again — or open **OMR Results** in the sidebar.";
+  }
+
+  const rows = all ? list.slice(0, 8) : [list[0]];
+  let reply = all
+    ? `**Your OMR exam results** (${list.length} on record):\n\n`
+    : `**Your recent OMR exam result:**\n\n`;
+
+  rows.forEach((row, idx) => {
+    const title = row.testTitle || 'OMR test';
+    const dateLabel = formatOmrDate(row.testDate);
+    const rank = row.finalRank ?? row.testRank;
+    if (all && rows.length > 1) reply += `**${idx + 1}. ${title}**\n`;
+    else reply += `**${title}**\n`;
+    if (dateLabel || row.testNo) {
+      reply += `• ${dateLabel || 'Date N/A'}${row.testNo ? ` · Test #${row.testNo}` : ''}\n`;
+    }
+    reply += `• Overall: **${row.percentage ?? 'N/A'}%**`;
+    if (row.totalMarks != null) reply += ` · **${row.totalMarks}** total marks`;
+    reply += `\n`;
+    if (rank != null && rank !== '') reply += `• Rank: **${rank}**\n`;
+    if (row.correct != null || row.wrong != null) {
+      reply += `• Correct / Wrong / Left: ${row.correct ?? 0} / ${row.wrong ?? 0} / ${row.left ?? 0}`;
+      if (row.totalQuestions) reply += ` (of ${row.totalQuestions})`;
+      reply += `\n`;
+    }
+    const subjects = [
+      formatOmrSubjectLine('Physics', row.physics),
+      formatOmrSubjectLine('Chemistry', row.chemistry),
+      formatOmrSubjectLine('Mathematics', row.maths),
+      formatOmrSubjectLine('Biology', row.biology),
+    ].filter(Boolean);
+    if (subjects.length) {
+      reply += `\n**Subject-wise:**\n${subjects.join('\n')}\n`;
+    }
+    if (all && idx < rows.length - 1) reply += `\n`;
+  });
+
+  if (!all && list.length > 1) {
+    const prev = list[1];
+    const delta = Math.round(((Number(list[0].percentage) || 0) - (Number(prev.percentage) || 0)) * 10) / 10;
+    reply += `\nVs previous OMR (**${prev.testTitle || 'previous'}**): ${delta >= 0 ? '+' : ''}${delta}%`;
+    reply += `\nYou have **${list.length}** OMR tests — ask **"show all my OMR results"** for the full list.`;
+  }
+
+  reply += `\n\nOpen **OMR Results** in the sidebar for the full subject breakdown.`;
+  return reply.trim();
+}
+
 function appOnlyReply(question, facts) {
   const q = String(question || '').toLowerCase();
 
@@ -31,6 +117,7 @@ function appOnlyReply(question, facts) {
   const strong = Array.isArray(facts?.weakTopics?.strongTopics) ? facts.weakTopics.strongTopics : [];
   const subjectPerf = Array.isArray(facts?.performance?.subjectPerformance) ? facts.performance.subjectPerformance : [];
   const examList = Array.isArray(facts?.examList) ? facts.examList : [];
+  const omrList = Array.isArray(facts?.omrList) ? facts.omrList : [];
   const marks = facts?.marks || {};
   const perf = facts?.performance || {};
   const recs = facts?.recommendations || {};
@@ -41,37 +128,284 @@ function appOnlyReply(question, facts) {
   const paths = Array.isArray(platform?.learningPaths) ? platform.learningPaths : [];
   const homework = platform?.homework || {};
   const library = platform?.libraryContent || {};
+  const desk = facts?.desk || {};
+  const deskSubjects = Array.isArray(desk.subjects) ? desk.subjects : [];
+  const deskHw = desk.homework || {};
+  const deskTotals = desk.totals || {};
+  const profileName = facts?.profile?.fullName || desk.profileName || 'there';
 
-  // ── VIDEOS / EDUOTT / LECTURES ────────────────────────────────────────────
+  // ── OMR sheet results (priority when student asks about OMR) ───────────────
+  if (/\bomr\b|optical\s*mark|sheet\s*result|omr\s*(exam|test|result|score|mark)/.test(q)) {
+    const wantAll = /all|every|history|list|each/.test(q);
+    return buildOmrResultReply(omrList, { all: wantAll });
+  }
+
+  // ── DAILY PLAN / WHAT SHOULD I DO TODAY ───────────────────────────────────
   if (
-    /video|lecture|edu\s*ott|watched|watching|watch history|chapters?\s+complet/.test(q) &&
-    !/exam|test|quiz|mark|score/.test(q)
+    /what should i do|today'?s?\s+(plan|focus|task|homework|work)|daily\s+(plan|task|focus)|for today|do today|plan for today|my day/.test(
+      q,
+    )
   ) {
-    const recent = Array.isArray(videos.recent) ? videos.recent : [];
-    const chaptersBySubject = Array.isArray(videos.chaptersBySubject) ? videos.chaptersBySubject : [];
-    if (!recent.length && !(videos.chaptersCompleted > 0)) {
-      return "I don't see any video watch progress yet. Open EduOTT or Video Lectures, watch a lesson, and I'll track what you've completed.";
+    let reply = `**Today's plan for you, ${profileName}:**\n\n`;
+    const actions = [];
+    const todayHw = Array.isArray(deskHw.today) ? deskHw.today : [];
+    const overdueHw = Array.isArray(deskHw.overdue) ? deskHw.overdue : [];
+    const openExams = Array.isArray(desk.openExams) ? desk.openExams : [];
+    const upcoming = Array.isArray(desk.upcomingExams) ? desk.upcomingExams : [];
+
+    if (overdueHw.length) {
+      actions.push(
+        `Submit overdue homework: ${overdueHw
+          .slice(0, 3)
+          .map((h) => h.title)
+          .join('; ')}`,
+      );
     }
-    let reply = `**Your video progress on the platform:**\n`;
-    reply += `• Videos tracked: **${videos.tracked || 0}** (completed **${videos.completed || 0}**`;
-    if (videos.inProgress > 0) reply += `, in progress **${videos.inProgress}**`;
-    reply += `)\n`;
-    if (videos.chaptersCompleted > 0) {
-      reply += `• Video chapters fully completed: **${videos.chaptersCompleted}**\n`;
+    if (todayHw.length) {
+      actions.push(
+        `Finish today's homework (${todayHw.length}): ${todayHw
+          .slice(0, 3)
+          .map((h) => `${h.title}${h.subject ? ` — ${h.subject}` : ''}`)
+          .join('; ')}`,
+      );
     }
-    if (recent.length) {
-      reply += `\n**Recently watched:**\n`;
-      recent.slice(0, 6).forEach((v, i) => {
-        const status = v.completed ? 'done' : `${v.progress || 0}%`;
-        reply += `${i + 1}. ${v.title} — ${status}${v.subject ? ` (${v.subject})` : ''}\n`;
+    if (openExams.length) {
+      actions.push(
+        `You have **${openExams.length}** exam(s) open now: ${openExams
+          .slice(0, 2)
+          .map((e) => e.title)
+          .join('; ')}`,
+      );
+    }
+    if (upcoming[0]) {
+      actions.push(
+        `Prep for upcoming exam **${upcoming[0].title}**${
+          upcoming[0].startLabel ? ` (${upcoming[0].startLabel})` : ''
+        }`,
+      );
+    }
+    if (videos.inProgress > 0) {
+      actions.push(`Resume **${videos.inProgress}** video lesson(s) in progress`);
+    }
+    if (recs?.actionCard?.action) {
+      actions.push(recs.actionCard.action);
+    }
+    if (weak[0]) {
+      actions.push(`Practice weak area: **${weak[0].chapter}**`);
+    }
+    if (!actions.length) {
+      actions.push('Watch 1–2 subject videos', 'Review last exam mistakes', 'Ask me a doubt from any subject');
+    }
+    actions.slice(0, 6).forEach((a, i) => {
+      reply += `${i + 1}. ${a}\n`;
+    });
+    reply += `\nYou can also ask: **"upcoming exams"**, **"homework today"**, **"how many subjects"**, or **"videos in maths"**.`;
+    return reply.trim();
+  }
+
+  // ── UPCOMING / OPEN EXAMS ─────────────────────────────────────────────────
+  if (
+    /upcoming\s+exam|coming\s+exam|next\s+exam|scheduled\s+exam|exams?\s+(this|next)\s+week|what exams? (do i have|are there|are upcoming)|open exams?/.test(
+      q,
+    ) ||
+    (/upcoming|coming up|next week/.test(q) && /exam|test/.test(q))
+  ) {
+    const upcoming = Array.isArray(desk.upcomingExams) ? desk.upcomingExams : [];
+    const openExams = Array.isArray(desk.openExams) ? desk.openExams : [];
+    if (!upcoming.length && !openExams.length) {
+      return "I don't see any upcoming or open exams for your class right now. Check **Exams** in the sidebar — new ones appear when your school schedules them.";
+    }
+    let reply = `**Your exams on Asli Learn:**\n\n`;
+    if (openExams.length) {
+      reply += `**Open now (${openExams.length}):**\n`;
+      openExams.forEach((e, i) => {
+        reply += `${i + 1}. **${e.title}**`;
+        if (e.subject) reply += ` · ${e.subject}`;
+        if (e.endLabel) reply += ` · closes ${e.endLabel}`;
+        reply += `\n`;
+      });
+      reply += `\n`;
+    }
+    if (upcoming.length) {
+      reply += `**Upcoming (${upcoming.length}):**\n`;
+      upcoming.forEach((e, i) => {
+        reply += `${i + 1}. **${e.title}**`;
+        if (e.subject) reply += ` · ${e.subject}`;
+        if (e.startLabel) reply += ` · starts ${e.startLabel}`;
+        reply += `\n`;
       });
     }
-    if (chaptersBySubject.length) {
-      reply += `\n**Chapters completed by subject:**\n`;
-      chaptersBySubject.slice(0, 5).forEach((s) => {
-        reply += `• ${s.subjectName}: ${s.completedChapterCount} chapter(s)\n`;
+    return reply.trim();
+  }
+
+  // ── SUBJECTS (how many / list) ────────────────────────────────────────────
+  if (
+    /how many subjects|number of subjects|my subjects|subjects (do i|have i|are there)|list (my )?subjects|what subjects/.test(
+      q,
+    ) ||
+    (/^subjects\??$/.test(q.trim()) || /\bsubjects\b/.test(q) && /how many|count|list|have/.test(q))
+  ) {
+    if (!deskSubjects.length) {
+      const profileSubjects = Array.isArray(facts?.profile?.subjects) ? facts.profile.subjects : [];
+      if (profileSubjects.length) {
+        return `You have **${profileSubjects.length}** subject(s):\n${profileSubjects
+          .map((s, i) => `${i + 1}. ${s}`)
+          .join('\n')}`;
+      }
+      return "I don't see subjects linked to your class yet. Ask your school admin to assign subjects — then I can list them and video counts.";
+    }
+    let reply = `You have **${deskSubjects.length}** subject(s) on Asli Learn:\n\n`;
+    deskSubjects.forEach((s, i) => {
+      reply += `${i + 1}. **${s.name}** — ${s.videoCount || 0} videos`;
+      if (s.videoCount > 0) {
+        reply += ` (completed **${s.videosCompleted || 0}**, left **${s.videosRemaining || 0}**)`;
+      }
+      if (s.assessmentCount > 0) reply += ` · ${s.assessmentCount} assessments`;
+      reply += `\n`;
+    });
+    reply += `\nAsk **"how many videos in ${deskSubjects[0]?.name || 'Maths'}"** for one subject.`;
+    return reply.trim();
+  }
+
+  // ── VIDEOS IN A SUBJECT / COMPLETION COUNTS ───────────────────────────────
+  if (
+    (/how many videos|videos? (in|for|of)|video count|completed videos|videos (have i|did i) (complete|watch)|videos (left|remaining)/.test(
+      q,
+    ) &&
+      !/exam|test|quiz|mark|score/.test(q)) ||
+    (/videos?/.test(q) && matchSubjectFromQuestion(deskSubjects, q))
+  ) {
+    const matched = matchSubjectFromQuestion(deskSubjects, q);
+    if (matched) {
+      let reply = `**${matched.name} — videos:**\n`;
+      reply += `• Total videos: **${matched.videoCount || 0}**\n`;
+      reply += `• Completed: **${matched.videosCompleted || 0}**\n`;
+      reply += `• In progress: **${matched.videosInProgress || 0}**\n`;
+      reply += `• Remaining: **${matched.videosRemaining || 0}**\n`;
+      if (!(matched.videoCount > 0)) {
+        reply += `\nNo published videos for this subject yet — check EduOTT / Video Lectures after your teachers upload lessons.`;
+      }
+      return reply.trim();
+    }
+    // Overall video stats
+    if (deskTotals.videos > 0 || videos.tracked > 0) {
+      let reply = `**Your video progress:**\n`;
+      if (deskTotals.videos > 0) {
+        reply += `• Across subjects: **${deskTotals.videosCompleted || 0}** completed of **${deskTotals.videos}** available\n`;
+        reply += `• Remaining: **${deskTotals.videosRemaining || 0}**\n`;
+      }
+      reply += `• Tracked watch history: **${videos.completed || 0}** completed / **${videos.tracked || 0}** started`;
+      if (videos.inProgress > 0) reply += ` (**${videos.inProgress}** in progress)`;
+      reply += `\n`;
+      if (deskSubjects.length) {
+        reply += `\n**By subject:**\n`;
+        deskSubjects
+          .filter((s) => s.videoCount > 0)
+          .slice(0, 8)
+          .forEach((s) => {
+            reply += `• ${s.name}: ${s.videosCompleted || 0}/${s.videoCount} done\n`;
+          });
+      }
+      return reply.trim();
+    }
+    return "I don't see video lessons for your subjects yet. Open **EduOTT** or **Video Lectures** once teachers publish videos.";
+  }
+
+  // ── HOMEWORK TODAY / PENDING ──────────────────────────────────────────────
+  if (/homework|assignment|home\s*work/.test(q)) {
+    const todayHw = Array.isArray(deskHw.today) ? deskHw.today : [];
+    const overdueHw = Array.isArray(deskHw.overdue) ? deskHw.overdue : [];
+    const upcomingHw = Array.isArray(deskHw.upcoming) ? deskHw.upcoming : [];
+    const pending = Array.isArray(deskHw.pending) ? deskHw.pending : [];
+
+    if (/today|due today|for today/.test(q) || /what.*(homework|assignment)/.test(q)) {
+      if (!todayHw.length && !overdueHw.length) {
+        if (upcomingHw.length) {
+          return `No homework due **today**. Next up:\n${upcomingHw
+            .slice(0, 4)
+            .map((h, i) => `${i + 1}. ${h.title}${h.deadlineLabel ? ` — due ${h.deadlineLabel}` : ''}`)
+            .join('\n')}`;
+        }
+        if (pending.length) {
+          return `Nothing marked due today, but you still have **${pending.length}** pending homework item(s). Open **Homework** on your dashboard to submit.`;
+        }
+        return "No homework due today. When teachers assign work with a deadline, I'll list it here.";
+      }
+      let reply = `**Homework for today:**\n`;
+      if (overdueHw.length) {
+        reply += `\n**Overdue — submit these first:**\n`;
+        overdueHw.slice(0, 5).forEach((h, i) => {
+          reply += `${i + 1}. **${h.title}**${h.subject ? ` (${h.subject})` : ''}${
+            h.deadlineLabel ? ` — was due ${h.deadlineLabel}` : ''
+          }\n`;
+        });
+      }
+      if (todayHw.length) {
+        reply += `\n**Due today:**\n`;
+        todayHw.slice(0, 6).forEach((h, i) => {
+          reply += `${i + 1}. **${h.title}**${h.subject ? ` (${h.subject})` : ''}${
+            h.deadlineLabel ? ` — ${h.deadlineLabel}` : ''
+          }\n`;
+        });
+      }
+      return reply.trim();
+    }
+
+    let reply = `**Homework status:**\n`;
+    reply += `• Assigned: **${deskHw.assignedCount ?? pending.length + (deskHw.submittedCount || 0)}**\n`;
+    reply += `• Submitted: **${deskHw.submittedCount || homework.submitted || 0}**\n`;
+    reply += `• Pending: **${pending.length}**\n`;
+    if (overdueHw.length) reply += `• Overdue: **${overdueHw.length}**\n`;
+    if (todayHw.length) reply += `• Due today: **${todayHw.length}**\n`;
+    if (homework.graded > 0) reply += `• Graded: **${homework.graded}**\n`;
+    if (pending.length) {
+      reply += `\n**Still pending:**\n`;
+      pending.slice(0, 5).forEach((h, i) => {
+        reply += `${i + 1}. ${h.title}${h.deadlineLabel ? ` — due ${h.deadlineLabel}` : ''}\n`;
       });
     }
+    if (!(deskHw.assignedCount > 0) && !(homework.submitted > 0) && !pending.length) {
+      return "I don't have homework assigned to you yet. When teachers post homework, ask \"homework today\" and I'll list what's due.";
+    }
+    return reply.trim();
+  }
+
+  // ── QUIZZES / ASSESSMENTS ─────────────────────────────────────────────────
+  if (/quiz|quizzes|assessment/.test(q) && !/exam|omr|mark|score|result/.test(q)) {
+    const quizzes = Array.isArray(desk.quizzes) ? desk.quizzes : [];
+    if (!quizzes.length) {
+      return "No quizzes are assigned to your class yet. When teachers publish quizzes, they'll show up here and under Quizzes on your dashboard.";
+    }
+    let reply = `**Your quizzes (${quizzes.length}):**\n`;
+    quizzes.forEach((qz, i) => {
+      reply += `${i + 1}. **${qz.title}**`;
+      if (qz.difficulty) reply += ` · ${qz.difficulty}`;
+      if (qz.attempted) {
+        reply += ` — attempted${qz.score != null ? ` · score ${qz.score}` : ''}${
+          qz.completed ? ' · completed' : ''
+        }`;
+      } else {
+        reply += ' — not attempted yet';
+      }
+      reply += `\n`;
+    });
+    reply += `\nAttempted **${deskTotals.quizzesAttempted || 0}** of **${deskTotals.quizzes || quizzes.length}**.`;
+    return reply.trim();
+  }
+
+  // ── CALENDAR / TIMETABLE ──────────────────────────────────────────────────
+  if (/calendar|timetable|schedule|what('?s| is) (on |my )?schedule|events? (today|this week)/.test(q)) {
+    const events = Array.isArray(desk.calendar) ? desk.calendar : [];
+    if (!events.length) {
+      return "I don't see upcoming calendar events for your school yet. Check **Schedule / Calendar** in the sidebar when your school posts them.";
+    }
+    let reply = `**Upcoming on your school calendar (${events.length}):**\n`;
+    events.forEach((ev, i) => {
+      reply += `${i + 1}. **${ev.title}**`;
+      if (ev.startLabel) reply += ` · ${ev.startLabel}`;
+      if (ev.type) reply += ` · ${ev.type}`;
+      reply += `\n`;
+    });
     return reply.trim();
   }
 
@@ -91,16 +425,35 @@ function appOnlyReply(question, facts) {
     return reply.trim();
   }
 
-  // ── HOMEWORK ──────────────────────────────────────────────────────────────
-  if (/homework|assignment|home\s*work/.test(q)) {
-    if (!(homework.submitted > 0)) {
-      return "I don't have homework submissions for you yet. Submit homework from your student dashboard and I'll track status here.";
+  // ── RECENTLY WATCHED / EDUOTT HISTORY ─────────────────────────────────────
+  if (
+    /watched|watching|watch history|edu\s*ott|video lectures?|lecture/.test(q) &&
+    !/exam|test|quiz|mark|score|how many/.test(q)
+  ) {
+    const recent = Array.isArray(videos.recent) ? videos.recent : [];
+    const chaptersBySubject = Array.isArray(videos.chaptersBySubject) ? videos.chaptersBySubject : [];
+    if (!recent.length && !(videos.chaptersCompleted > 0) && !(deskTotals.videos > 0)) {
+      return "I don't see any video watch progress yet. Open EduOTT or Video Lectures, watch a lesson, and I'll track what you've completed.";
     }
-    let reply = `**Homework on the platform:**\n`;
-    reply += `• Submitted: **${homework.submitted}**\n`;
-    reply += `• Graded: **${homework.graded || 0}**\n`;
-    if (homework.pendingReview > 0) {
-      reply += `• Waiting on teacher review: **${homework.pendingReview}**\n`;
+    let reply = `**Your video activity:**\n`;
+    reply += `• Started: **${videos.tracked || 0}** · completed **${videos.completed || 0}**`;
+    if (videos.inProgress > 0) reply += ` · in progress **${videos.inProgress}**`;
+    reply += `\n`;
+    if (deskTotals.videos > 0) {
+      reply += `• Catalog across your subjects: **${deskTotals.videosCompleted || 0}/${deskTotals.videos}** completed\n`;
+    }
+    if (recent.length) {
+      reply += `\n**Recently watched:**\n`;
+      recent.slice(0, 6).forEach((v, i) => {
+        const status = v.completed ? 'done' : `${v.progress || 0}%`;
+        reply += `${i + 1}. ${v.title} — ${status}${v.subject ? ` (${v.subject})` : ''}\n`;
+      });
+    }
+    if (chaptersBySubject.length) {
+      reply += `\n**Chapters completed by subject:**\n`;
+      chaptersBySubject.slice(0, 5).forEach((s) => {
+        reply += `• ${s.subjectName}: ${s.completedChapterCount} chapter(s)\n`;
+      });
     }
     return reply.trim();
   }
@@ -295,8 +648,14 @@ function appOnlyReply(question, facts) {
   // ── MARKS / SCORE / RESULT queries ────────────────────────────────────────
   if (/mark|score|result|percentage|how (much|many|did)/.test(q)) {
     const latest = examList[0];
-    if (!latest) return "I don't have any exam results for you yet. Complete an exam and I'll show you your scores.";
-    let reply = `**Your most recent exam:**\n• ${latest.examTitle || 'Exam'}: ${latest.percentage ?? 'N/A'}%`;
+    const latestOmr = omrList[0];
+    if (!latest && !latestOmr) {
+      return "I don't have any exam or OMR results for you yet. Complete an exam or wait for your school to upload OMR scores.";
+    }
+    if (!latest && latestOmr) {
+      return buildOmrResultReply(omrList, { all: false });
+    }
+    let reply = `**Your most recent in-app exam:**\n• ${latest.examTitle || 'Exam'}: ${latest.percentage ?? 'N/A'}%`;
     if (marks.averagePercentage != null) {
       reply += `\n\n**Overall average:** ${marks.averagePercentage}%`;
     }
@@ -306,11 +665,18 @@ function appOnlyReply(question, facts) {
     if (perf.trendDirection && perf.trendDirection !== 'unknown') {
       reply += `\n**Trend:** Your scores are ${perf.trendDirection}.`;
     }
+    if (latestOmr) {
+      reply += `\n\nYou also have an **OMR sheet** result (**${latestOmr.testTitle || 'OMR'}** — ${latestOmr.percentage ?? 'N/A'}%). Ask **"my recent OMR exam result"** for subject-wise marks.`;
+    }
     return reply;
   }
 
   // ── SUBJECT PERFORMANCE breakdown ─────────────────────────────────────────
-  if (/subject|performance|how (am i doing|doing)|overview|summary/.test(q)) {
+  if (
+    (/subject|performance|how (am i doing|doing)|overview|summary/.test(q) ||
+      /subject[- ]wise/.test(q)) &&
+    !/how many|list my|my subjects|videos? in|homework|upcoming/.test(q)
+  ) {
     if (!subjectPerf.length && platform.hasAnyActivity) {
       // Fall through-style: give platform summary when no exams
       return appOnlyReply('what is my learning progress', facts);
@@ -353,8 +719,22 @@ function appOnlyReply(question, facts) {
   }
 
   // ── RANK queries ───────────────────────────────────────────────────────────
-  if (/rank|position|standing|topper|top student/.test(q)) {
-    return "Your rank within the class is shown on the School Dashboard. Ask your teacher or check the Leaderboard section in your Student Dashboard.";
+  if (/rank|position|standing|topper|top student|leaderboard/.test(q)) {
+    const latestOmr = omrList[0];
+    const bestRank = desk?.ranking?.bestClassRank;
+    let reply = '';
+    if (bestRank != null) {
+      reply += `Your best recorded class/exam rank is **${bestRank}**.\n`;
+    }
+    if (latestOmr && (latestOmr.finalRank != null || latestOmr.testRank != null)) {
+      const rank = latestOmr.finalRank ?? latestOmr.testRank;
+      reply += `On your latest OMR (**${latestOmr.testTitle || 'OMR test'}**) your rank is **${rank}** (${latestOmr.percentage ?? 'N/A'}%).\n`;
+    }
+    if (reply) {
+      reply += `\nOpen **Rankings** / **OMR Results** in the sidebar for full leaderboards.`;
+      return reply.trim();
+    }
+    return "I don't have a stored rank for you yet. After exams or OMR uploads, ranks appear here and on the Rankings / OMR Results screens.";
   }
 
   // ── RECOMMENDATION / WHAT TO STUDY queries ────────────────────────────────
@@ -395,13 +775,31 @@ function appOnlyReply(question, facts) {
 
   // ── EXAM LIST queries ──────────────────────────────────────────────────────
   if (/exam|test|quiz|assessment/.test(q)) {
-    if (!examList.length) return "You haven't taken any exams yet. Check the Exams section in your dashboard.";
-    let reply = `**Your recent exams:**\n`;
+    const upcoming = Array.isArray(desk.upcomingExams) ? desk.upcomingExams : [];
+    const openExams = Array.isArray(desk.openExams) ? desk.openExams : [];
+    let reply = '';
+    if (openExams.length || upcoming.length) {
+      reply += `**Scheduled exams:**\n`;
+      openExams.slice(0, 3).forEach((e) => {
+        reply += `• OPEN: **${e.title}**${e.endLabel ? ` · closes ${e.endLabel}` : ''}\n`;
+      });
+      upcoming.slice(0, 4).forEach((e) => {
+        reply += `• UPCOMING: **${e.title}**${e.startLabel ? ` · ${e.startLabel}` : ''}\n`;
+      });
+      reply += `\n`;
+    }
+    if (!examList.length) {
+      return (
+        reply.trim() ||
+        "You haven't taken any exams yet. Check the Exams section in your dashboard for upcoming tests."
+      );
+    }
+    reply += `**Your recent completed exams:**\n`;
     examList.slice(0, 5).forEach((e, i) => {
       reply += `${i + 1}. ${e.examTitle || 'Exam'} — ${e.percentage ?? 'N/A'}%\n`;
     });
     if (marks.averagePercentage != null) {
-      reply += `\nAverage across all exams: **${marks.averagePercentage}%**`;
+      reply += `\nAverage across completed exams: **${marks.averagePercentage}%**`;
     }
     if (perf.trendDirection && perf.trendDirection !== 'unknown') {
       reply += `\nTrend: **${perf.trendDirection}**`;
@@ -423,18 +821,34 @@ function appOnlyReply(question, facts) {
   const latestEx = examList[0];
   const topWeak = weak[0];
 
-  if (!examList.length && !platform.hasAnyActivity) {
+  if (!examList.length && !platform.hasAnyActivity && !deskSubjects.length) {
     return "I can see your profile but there's little activity yet. Watch videos, take exams, or join a learning path — then ask me about your progress, videos, or exam status.";
   }
 
-  let reply = '';
-  if (latestEx) reply += `Last exam: **${latestEx.examTitle}** — ${latestEx.percentage ?? 'N/A'}%\n`;
-  if (avgPct != null) reply += `Overall exam average: **${avgPct}%**\n`;
-  if (topWeak) reply += `Weakest area: **${topWeak.chapter}** (${topWeak.wrongRate}% mistake rate)\n`;
-  if (videos.completed > 0) reply += `Videos completed: **${videos.completed}**\n`;
-  if (paths.length) reply += `Learning paths enrolled: **${paths.length}**\n`;
-  if (recs?.actionCard?.action) reply += `Focus now on: **${recs.actionCard.action}**\n`;
-  reply += `\nTry asking: "What is my learning progress?", "What videos have I watched?", or "Did I improve in exams?"`;
+  let reply = `Hi ${profileName} — here's a quick app snapshot:\n\n`;
+  if (deskTotals.subjects > 0) {
+    reply += `• Subjects: **${deskTotals.subjects}**`;
+    if (deskTotals.videos > 0) {
+      reply += ` · videos **${deskTotals.videosCompleted || 0}/${deskTotals.videos}** done`;
+    }
+    reply += `\n`;
+  }
+  if (deskTotals.homeworkToday > 0 || deskTotals.homeworkOverdue > 0) {
+    reply += `• Homework: **${deskTotals.homeworkToday || 0}** due today`;
+    if (deskTotals.homeworkOverdue > 0) reply += `, **${deskTotals.homeworkOverdue}** overdue`;
+    reply += `\n`;
+  }
+  if (deskTotals.upcomingExams > 0 || deskTotals.openExams > 0) {
+    reply += `• Exams: **${deskTotals.openExams || 0}** open · **${deskTotals.upcomingExams || 0}** upcoming\n`;
+  }
+  if (latestEx) reply += `• Last exam: **${latestEx.examTitle}** — ${latestEx.percentage ?? 'N/A'}%\n`;
+  if (avgPct != null) reply += `• Exam average: **${avgPct}%**\n`;
+  if (topWeak) reply += `• Weakest area: **${topWeak.chapter}** (${topWeak.wrongRate}% mistake rate)\n`;
+  if (omrList[0]) {
+    reply += `• Latest OMR: **${omrList[0].testTitle || 'OMR'}** — ${omrList[0].percentage ?? 'N/A'}%\n`;
+  }
+  if (recs?.actionCard?.action) reply += `• Focus now: **${recs.actionCard.action}**\n`;
+  reply += `\nAsk: **"what should I do today"**, **"homework today"**, **"upcoming exams"**, **"how many subjects"**, or **"videos in maths"**.`;
   return reply.trim();
 }
 
@@ -506,11 +920,27 @@ export async function runHybridStudentVidyaChat({ viewerRole, viewerUserId, stud
   const weakTopics = detectWeakAndStrongTopics(ctx);
   const marks = analyzeMarks(ctx.exams?.recentResults || []);
   const platform = buildPlatformProgressFacts(ctx);
+  let desk = {
+    subjects: [],
+    upcomingExams: [],
+    openExams: [],
+    homework: { today: [], upcoming: [], overdue: [], pending: [], submittedCount: 0 },
+    totals: {},
+  };
+  try {
+    desk = await buildStudentAppDeskFacts(ctx.studentId, {
+      progressRows: ctx.academics?.progressRows || [],
+      homeworkRows: ctx.academics?.homeworkRows || [],
+    });
+  } catch (deskErr) {
+    console.warn('Vidya desk facts:', deskErr?.message || deskErr);
+  }
   const recommendations = buildPersonalizedRecommendations({
     ctx,
     performance,
     weakTopics,
     platform,
+    desk,
   });
   const streak = await buildStudyStreak(ctx.studentId);
   const latestProactive = await getLatestProactivePrompt(ctx.studentId);
@@ -520,9 +950,11 @@ export async function runHybridStudentVidyaChat({ viewerRole, viewerUserId, stud
     weakTopics,
     marks,
     platform,
+    desk,
     recommendations: { ...recommendations, streak },
     latestProactivePrompt: latestProactive?.promptText || '',
-    examList: (ctx.exams?.recentResults || []).slice(0, 10),
+    examList: (ctx.exams?.recentResults || []).slice(0, 50),
+    omrList: (ctx.omr?.recentResults || []).slice(0, 50),
   };
   const summary = buildPerformanceSummary({ ctx, performance, weakTopics, marks, recommendations });
   const autoGreeting = buildAutoGreeting(summary);

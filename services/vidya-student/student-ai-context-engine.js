@@ -14,6 +14,8 @@ import Teacher from '../../models/Teacher.js';
 import StudentVideoChapterProgress from '../../models/StudentVideoChapterProgress.js';
 import Video from '../../models/Video.js';
 import Content from '../../models/Content.js';
+import OmrResultRow from '../../models/OmrResultRow.js';
+import OmrResultBatch from '../../models/OmrResultBatch.js';
 import { detectWeakAndStrongTopics } from './weak-topic-detection-engine.js';
 
 const safeOid = (id) => {
@@ -103,7 +105,7 @@ export async function buildStudentAiContext({
   const today = ymd(new Date());
   const monthAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
 
-  const [classDoc, subjects, recentResults, progressRows, sessions30d, learningPaths, risk, recentChats, memory, homeworkRows, videoChapterProgress] =
+  const [classDoc, subjects, recentResults, progressRows, sessions30d, learningPaths, risk, recentChats, memory, homeworkRows, videoChapterProgress, omrRows] =
     await Promise.all([
       studentUser.assignedClass ? ClassModel.findById(studentUser.assignedClass).select('classNumber section').lean() : null,
       Array.isArray(studentUser.assignedSubjects) && studentUser.assignedSubjects.length
@@ -124,7 +126,38 @@ export async function buildStudentAiContext({
       VidyaStudentMemory.findOne({ studentId: studentOid }).lean(),
       HomeworkSubmission.find({ studentId: studentOid }).sort({ submittedAt: -1 }).limit(15).lean(),
       StudentVideoChapterProgress.find({ userId: studentOid }).lean(),
+      OmrResultRow.find({ userId: studentOid }).sort({ createdAt: -1 }).limit(20).lean(),
     ]);
+
+  const omrBatchIds = [...new Set((omrRows || []).map((r) => String(r.batchId)).filter(Boolean))];
+  const omrBatches = omrBatchIds.length
+    ? await OmrResultBatch.find({ _id: { $in: omrBatchIds } })
+        .select('testNo testTitle testDate createdAt')
+        .lean()
+    : [];
+  const omrBatchById = new Map(omrBatches.map((b) => [String(b._id), b]));
+  const omrResults = (omrRows || []).map((r) => {
+    const batch = omrBatchById.get(String(r.batchId));
+    return {
+      _id: String(r._id),
+      testTitle: batch?.testTitle || 'OMR test',
+      testNo: batch?.testNo || '',
+      testDate: batch?.testDate || null,
+      percentage: r.percentage,
+      totalMarks: r.totalMarks,
+      totalQuestions: r.totalQuestions,
+      attempted: r.attempted,
+      correct: r.correct,
+      wrong: r.wrong,
+      left: r.left,
+      testRank: r.testRank,
+      finalRank: r.finalRank,
+      maths: r.maths || {},
+      physics: r.physics || {},
+      chemistry: r.chemistry || {},
+      biology: r.biology || {},
+    };
+  });
 
   const videoIds = [
     ...new Set(
@@ -187,6 +220,10 @@ export async function buildStudentAiContext({
     exams: {
       recentResults,
       testsCompletedCount: recentResults.length,
+    },
+    omr: {
+      recentResults: omrResults,
+      count: omrResults.length,
     },
     academics: {
       progressRows,

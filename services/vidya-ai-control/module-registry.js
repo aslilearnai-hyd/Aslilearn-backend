@@ -19,6 +19,13 @@ import GeminiPerformanceReport from '../../models/GeminiPerformanceReport.js';
 import StudentRemark from '../../models/StudentRemark.js';
 import School from '../../models/School.js';
 import SchoolOrder from '../../models/SchoolOrder.js';
+import OmrResultBatch from '../../models/OmrResultBatch.js';
+import OmrResultRow from '../../models/OmrResultRow.js';
+import Assessment from '../../models/Assessment.js';
+import HomeworkSubmission from '../../models/HomeworkSubmission.js';
+import Video from '../../models/Video.js';
+import RiskAnalysisReport from '../../models/RiskAnalysisReport.js';
+import Content from '../../models/Content.js';
 
 const FALLBACK_SCOPE_FIELDS = [
   'assignedAdmin',
@@ -163,6 +170,47 @@ export const MODULE_REGISTRY = {
       'orders',
     ],
     scopeFields: ['schoolAdminId', 'schoolId'],
+  },
+  omr_batches: {
+    model: OmrResultBatch,
+    aliases: ['omr', 'omr batch', 'omr batches', 'omr upload', 'optical mark'],
+    scopeFields: ['adminId'],
+  },
+  omr_results: {
+    model: OmrResultRow,
+    aliases: ['omr result', 'omr results', 'omr scores', 'omr sheet'],
+    scopeFields: ['adminId'],
+  },
+  assessments: {
+    model: Assessment,
+    aliases: ['assessment', 'assessments', 'quiz', 'quizzes'],
+    scopeFields: ['createdBy', 'adminId'],
+  },
+  homework_submissions: {
+    model: HomeworkSubmission,
+    aliases: ['homework', 'homework submissions', 'assignments submitted'],
+    scopeFields: ['studentId'],
+  },
+  homework_content: {
+    model: Content,
+    aliases: ['homework assigned', 'homework content', 'assigned homework'],
+    baseFilter: { type: 'Homework' },
+    scopeFields: ['createdBy', 'teacherId'],
+  },
+  videos: {
+    model: Video,
+    aliases: ['video', 'videos', 'video lectures', 'eduott videos'],
+    scopeFields: ['adminId', 'createdBy'],
+  },
+  risk_reports: {
+    model: RiskAnalysisReport,
+    aliases: ['risk', 'risk report', 'risk reports', 'student risk', 'at risk'],
+    scopeFields: ['adminId', 'studentId'],
+  },
+  library_content: {
+    model: Content,
+    aliases: ['content', 'library', 'digital library', 'asli prep content'],
+    scopeFields: ['createdBy', 'teacherId'],
   },
   fees: {
     model: null,
