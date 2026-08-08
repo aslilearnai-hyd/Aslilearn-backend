@@ -17,6 +17,7 @@ import aiToolRoutes from './student/aiTool.js';
 import riskDiaryRoutes from './student/riskDiary.js';
 import contentProxyRoutes from './student/contentProxy.js';
 import calendarRoutes from './student/calendar.js';
+import omrResultsRoutes from './student/omrResults.js';
 
 const router = express.Router();
 
@@ -80,5 +81,6 @@ router.use(aiToolRoutes);
 router.use(riskDiaryRoutes);
 router.use(contentProxyRoutes);
 router.use(calendarRoutes);
+router.use(omrResultsRoutes);
 
 export default router;

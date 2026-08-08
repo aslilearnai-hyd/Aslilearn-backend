@@ -18,6 +18,7 @@ import workDiaryRoutes from './admin/workDiary.js';
 import eventsRoutes from './admin/events.js';
 import learningPathsRoutes from './admin/learningPaths.js';
 import usersRoutes from './admin/users.js';
+import omrResultsRoutes from './admin/omrResults.js';
 
 const router = express.Router();
 
@@ -38,5 +39,6 @@ router.use(workDiaryRoutes);
 router.use(eventsRoutes);
 router.use(learningPathsRoutes);
 router.use(usersRoutes);
+router.use(omrResultsRoutes);
 
 export default router;
