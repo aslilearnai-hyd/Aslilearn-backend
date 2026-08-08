@@ -318,6 +318,10 @@ export function teacherAppOnlyReply(question, desk, entityFallbackMessage = '') 
   const totals = desk?.totals || {};
   const classes = Array.isArray(desk?.classes) ? desk.classes : [];
   const students = Array.isArray(desk?.students) ? desk.students : [];
+  const wantCount =
+    /\bhow many\b|\bcount\b|\bnumber of\b|\btotal\b/.test(q) &&
+    !/\bhow much (time|longer)\b/.test(q);
+  const wantList = /\b(all|list|every|each|show all|roster|names)\b/.test(q);
 
   if (
     /what should i do|today'?s?\s+(plan|focus|task)|daily\s+plan|for today|do today/.test(q)
@@ -356,6 +360,9 @@ export function teacherAppOnlyReply(question, desk, entityFallbackMessage = '') 
     if (!classes.length) {
       return 'No classes are assigned to you yet. Ask your school admin to assign class sections.';
     }
+    if (wantCount && !wantList) {
+      return `You have **${classes.length}** class(es). Ask **"list my classes"** for names and student counts.`;
+    }
     let reply = `You have **${classes.length}** class(es):\n\n`;
     classes.forEach((c, i) => {
       reply += `${i + 1}. **${c.label}** — ${c.studentCount} student(s)\n`;
@@ -369,6 +376,9 @@ export function teacherAppOnlyReply(question, desk, entityFallbackMessage = '') 
     if (!students.length) {
       return 'No students found in your assigned classes yet.';
     }
+    if (wantCount && !wantList) {
+      return `You have **${students.length}** student(s) across your classes. Ask **"list my students"** for the roster.`;
+    }
     let reply = `**Your students (${students.length}):**\n\n`;
     students.slice(0, LIST_CAP).forEach((s, i) => {
       reply += `${i + 1}. ${s.name}`;
@@ -380,6 +390,12 @@ export function teacherAppOnlyReply(question, desk, entityFallbackMessage = '') 
   }
 
   if (/attendance|logged in today|who (is|are) (active|online|present)/.test(q)) {
+    if (wantCount) {
+      return (
+        `**${totals.loggedInToday || 0}** student login(s) today · ` +
+        `**${totals.active7d || 0}** active in last 7 days (of **${totals.students || 0}**).`
+      );
+    }
     let reply = `**Attendance / login activity (IST ${desk.attendance?.todayKey || 'today'}):**\n`;
     reply += `• Student logins today: **${totals.loggedInToday || 0}**\n`;
     reply += `• Active in last 7 days: **${totals.active7d || 0}** of **${totals.students || 0}**\n`;
@@ -388,6 +404,12 @@ export function teacherAppOnlyReply(question, desk, entityFallbackMessage = '') 
   }
 
   if (/homework|assignment|submission/.test(q)) {
+    if (wantCount) {
+      return (
+        `Homework: **${desk.homework?.submittedCount || 0}** submission(s) tracked · ` +
+        `**${desk.homework?.pendingReview || 0}** pending your review.`
+      );
+    }
     let reply = `**Homework queue:**\n`;
     reply += `• Submissions tracked: **${desk.homework?.submittedCount || 0}**\n`;
     reply += `• Pending your review/grade: **${desk.homework?.pendingReview || 0}**\n`;
@@ -404,7 +426,17 @@ export function teacherAppOnlyReply(question, desk, entityFallbackMessage = '') 
     return reply.trim();
   }
 
-  if (/upcoming exam|open exam|exam schedule|what exams/.test(q) || (/exam/.test(q) && /upcoming|open|schedule/.test(q))) {
+  if (/upcoming exam|open exam|exam schedule|what exams/.test(q) || (/exam/.test(q) && /upcoming|open|schedule|how many/.test(q))) {
+    if (wantCount) {
+      return (
+        `Open exams: **${desk.exams?.open?.length || 0}** · ` +
+        `Upcoming: **${desk.exams?.upcoming?.length || 0}**` +
+        (desk.exams?.resultsCount30d
+          ? ` · attempts (30d): **${desk.exams.resultsCount30d}**`
+          : '') +
+        '.'
+      );
+    }
     let reply = `**Exams for your school/classes:**\n\n`;
     if (desk.exams?.open?.length) {
       reply += `**Open now:**\n`;
@@ -433,6 +465,9 @@ export function teacherAppOnlyReply(question, desk, entityFallbackMessage = '') 
 
   if (/quiz|assessment/.test(q)) {
     const quizzes = desk.quizzes || [];
+    if (wantCount) {
+      return `You have **${quizzes.length}** published quiz${quizzes.length === 1 ? '' : 'zes'}.`;
+    }
     if (!quizzes.length) {
       return 'You have no published quizzes yet. Create one from the Teacher Quizzes screen.';
     }
@@ -444,6 +479,12 @@ export function teacherAppOnlyReply(question, desk, entityFallbackMessage = '') 
   }
 
   if (/\bomr\b|optical\s*mark/.test(q)) {
+    if (wantCount) {
+      return (
+        `OMR: **${desk.omr?.batches || 0}** batch(es) · ` +
+        `**${desk.omr?.assignedRows || 0}** row(s) linked to your students.`
+      );
+    }
     let reply = `**OMR for your school:**\n`;
     reply += `• Batches: **${desk.omr?.batches || 0}**\n`;
     reply += `• Rows linked to your students: **${desk.omr?.assignedRows || 0}**\n`;
@@ -456,6 +497,7 @@ export function teacherAppOnlyReply(question, desk, entityFallbackMessage = '') 
 
   if (/work diary|diary/.test(q)) {
     const rows = desk.workDiary || [];
+    if (wantCount) return `You have **${rows.length}** recent work-diary entr${rows.length === 1 ? 'y' : 'ies'}.`;
     if (!rows.length) return 'No work-diary entries yet. Add one from Work Diary.';
     let reply = `**Recent work diary:**\n`;
     rows.forEach((d, i) => {
