@@ -5,6 +5,8 @@ import Assessment from '../models/Assessment.js';
 import Exam from '../models/Exam.js';
 import Question from '../models/Question.js';
 import ExamResult from '../models/ExamResult.js';
+import { PASS_THRESHOLD, isPassing, uniqueCount } from '../utils/analytics-metrics.js';
+import { resolveAdminEffectiveBoard } from '../services/boardScope.js';
 
 // Get comprehensive AI analytics with detailed exam analysis
 export const getDetailedAIAnalytics = async (req, res) => {
@@ -53,17 +55,28 @@ export const getDetailedAIAnalytics = async (req, res) => {
             ? validResults.reduce((sum, result) => sum + (result.percentage || 0), 0) / validResults.length 
             : 0;
 
+          const uniqueStudents = uniqueCount(
+            (adminResults || []).map((r) => r.userId?._id || r.userId),
+          );
+
           return {
             adminId: admin._id,
             adminName: admin.fullName || 'Unknown',
             adminEmail: admin.email || 'Unknown',
+            board: admin.board || '',
+            curriculumBoard: admin.curriculumBoard || '',
+            effectiveBoard: resolveAdminEffectiveBoard(admin),
+            state: admin.state || admin.schoolDetails?.state || '',
             examDifficulty,
             topScorers,
             performanceDistribution,
             questionAnalysis,
             performanceTrends,
             subjectAnalysis,
-            totalStudents: (adminResults || []).length,
+            // totalStudents kept as alias of uniqueStudents for older clients; attempts are separate.
+            totalStudents: uniqueStudents,
+            uniqueStudents,
+            totalAttempts: (adminResults || []).length,
             totalExams: (adminExams || []).length,
             averageScore
           };
@@ -73,6 +86,10 @@ export const getDetailedAIAnalytics = async (req, res) => {
             adminId: admin._id,
             adminName: admin.fullName || 'Unknown',
             adminEmail: admin.email || 'Unknown',
+            board: admin.board || '',
+            curriculumBoard: admin.curriculumBoard || '',
+            effectiveBoard: resolveAdminEffectiveBoard(admin),
+            state: admin.state || admin.schoolDetails?.state || '',
             examDifficulty: { exams: [], overallDifficulty: 0, hardestExam: {}, easiestExam: {} },
             topScorers: [],
             performanceDistribution: {
@@ -87,6 +104,8 @@ export const getDetailedAIAnalytics = async (req, res) => {
             performanceTrends: [],
             subjectAnalysis: [],
             totalStudents: 0,
+            uniqueStudents: 0,
+            totalAttempts: 0,
             totalExams: 0,
             averageScore: 0
           };
@@ -110,7 +129,8 @@ export const getDetailedAIAnalytics = async (req, res) => {
       performanceDistribution: getPerformanceDistribution(examResults || []),
       subjectWiseAnalysis: analyzeSubjectPerformance(examResults || []),
       difficultyAnalysis: analyzeOverallDifficulty(exams || [], examResults || []),
-      trendsAnalysis: analyzeOverallTrends(examResults || [])
+      trendsAnalysis: analyzeOverallTrends(examResults || []),
+      passThreshold: PASS_THRESHOLD,
     };
 
     // AI-powered insights
@@ -125,7 +145,8 @@ export const getDetailedAIAnalytics = async (req, res) => {
         metadata: {
           analysisTimestamp: new Date().toISOString(),
           totalDataPoints: examResults.length,
-          analysisVersion: '2.0'
+          analysisVersion: '2.1',
+          passThreshold: PASS_THRESHOLD,
         }
       }
     });
@@ -194,7 +215,7 @@ function calculateExamDifficulty(exams, results) {
     }
 
     const averageScore = validResults.reduce((sum, result) => sum + (result.percentage || 0), 0) / validResults.length;
-    const passRate = (validResults.filter(result => (result.percentage || 0) >= 50).length / validResults.length) * 100;
+    const passRate = (validResults.filter(result => isPassing(result.percentage)).length / validResults.length) * 100;
     
     let difficulty = 'Easy';
     let difficultyScore = 0;
@@ -257,11 +278,16 @@ function getTopScorers(results, limit = 10) {
     if (!result.userId || !result.userId._id) return;
     
     const studentId = result.userId._id.toString();
+    const adminId =
+      result.adminId?._id?.toString?.() ||
+      result.adminId?.toString?.() ||
+      '';
     if (!studentPerformance[studentId]) {
       studentPerformance[studentId] = {
         studentId: studentId,
         studentName: result.userId.fullName || 'Unknown',
         studentEmail: result.userId.email || 'Unknown',
+        adminId,
         totalExams: 0,
         totalScore: 0,
         highestScore: 0,
@@ -276,6 +302,7 @@ function getTopScorers(results, limit = 10) {
       studentPerformance[studentId].highestScore, 
       result.percentage || 0
     );
+    if (adminId) studentPerformance[studentId].adminId = adminId;
     studentPerformance[studentId].examHistory.push({
       examTitle: result.examTitle || 'Unknown Exam',
       score: result.percentage || 0,

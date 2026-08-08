@@ -26,6 +26,11 @@ import {
 } from '../constants/boards.js';
 import School from '../models/School.js';
 import {
+  PASS_THRESHOLD,
+  contentVolume,
+  activeStudentsPercentage as calcActiveStudentsPct,
+} from '../utils/analytics-metrics.js';
+import {
   normalizeSchoolDetails,
   buildSchoolFieldsFromBody,
   applySchoolToAdminUser,
@@ -215,27 +220,49 @@ export const getDashboardStats = async (req, res) => {
     const totalAssessments = await Assessment.countDocuments();
     const totalExams = await Exam.countDocuments();
     const totalAdmins = await School.countDocuments({});
-    
-    // Calculate meaningful metrics instead of mock revenue
+
     const totalStudents = await User.countDocuments({ role: 'student' });
     const totalExamResults = await ExamResult.countDocuments();
     const activeVideos = await Video.countDocuments({ isActive: true });
     const activeAssessments = await Assessment.countDocuments({ isActive: true });
-    
-    // Calculate engagement metrics
-    const avgExamsPerStudent = totalStudents > 0 ? (totalExamResults / totalStudents).toFixed(1) : 0;
-    const contentEngagement = totalContentItems + totalAssessments + totalExams;
-    
-    // Calculate pass rate from real exam results (assuming passing is >= 40%)
-    const allExamResults = await ExamResult.find().select('percentage');
-    const passingResults = allExamResults.filter(result => (result.percentage || 0) >= 40);
-    const passRate = allExamResults.length > 0 ? ((passingResults.length / allExamResults.length) * 100).toFixed(1) : 0;
-    
-    // Calculate active students (students who have taken at least one exam)
-    const studentsWithExams = await ExamResult.distinct('userId');
-    const activeStudents = studentsWithExams.length;
-    const activeStudentsPercentage = totalStudents > 0 ? ((activeStudents / totalStudents) * 100).toFixed(0) : 0;
-    
+
+    const avgExamsPerStudent =
+      totalStudents > 0 ? (totalExamResults / totalStudents).toFixed(1) : 0;
+
+    // Named content volume (videos + content + assessments + exams) — not a percentage.
+    const contentVolumeValue = contentVolume({
+      videos: totalVideos,
+      content: totalContentItems,
+      assessments: totalAssessments,
+      exams: totalExams,
+    });
+
+    const [passAgg, studentsWithExams] = await Promise.all([
+      ExamResult.aggregate([
+        {
+          $group: {
+            _id: null,
+            total: { $sum: 1 },
+            passing: {
+              $sum: {
+                $cond: [{ $gte: [{ $ifNull: ['$percentage', 0] }, PASS_THRESHOLD] }, 1, 0],
+              },
+            },
+            avgPercentage: { $avg: { $ifNull: ['$percentage', 0] } },
+          },
+        },
+      ]),
+      ExamResult.distinct('userId'),
+    ]);
+
+    const passStats = passAgg[0] || { total: 0, passing: 0, avgPercentage: 0 };
+    const passRate =
+      passStats.total > 0
+        ? Math.round((passStats.passing / passStats.total) * 1000) / 10
+        : 0;
+    const activeStudents = (studentsWithExams || []).filter(Boolean).length;
+    const activeStudentsPercentage = calcActiveStudentsPct(activeStudents, totalStudents);
+
     res.json({
       success: true,
       data: {
@@ -252,12 +279,16 @@ export const getDashboardStats = async (req, res) => {
         activeVideos,
         activeAssessments,
         avgExamsPerStudent,
-        contentEngagement,
-        passRate: parseFloat(passRate),
+        // contentVolume is the truthful metric; contentEngagement kept as alias for older clients.
+        contentVolume: contentVolumeValue,
+        contentEngagement: contentVolumeValue,
+        passRate,
+        averageScore: Math.round((passStats.avgPercentage || 0) * 100) / 100,
         activeStudents,
-        activeStudentsPercentage: parseFloat(activeStudentsPercentage),
-        superAdmins: 1
-      }
+        activeStudentsPercentage,
+        passThreshold: PASS_THRESHOLD,
+        superAdmins: 1,
+      },
     });
   } catch (error) {
     console.error('Stats error:', error);
@@ -481,10 +512,11 @@ export const getAllAdmins = async (req, res) => {
                   obtainedMarks: 0
                 };
               }
-              subjectPerformance[subject].totalQuestions += data.total;
-              subjectPerformance[subject].correctAnswers += data.correct;
-              subjectPerformance[subject].totalMarks += data.marks;
-              subjectPerformance[subject].obtainedMarks += data.marks;
+              subjectPerformance[subject].totalQuestions += data.total || 0;
+              subjectPerformance[subject].correctAnswers += data.correct || 0;
+              // `marks` on subjectWiseScore is obtained marks; use accuracy for averageScore
+              subjectPerformance[subject].obtainedMarks += data.marks || 0;
+              subjectPerformance[subject].totalMarks += data.total || 0;
             });
           }
         });
@@ -493,9 +525,10 @@ export const getAllAdmins = async (req, res) => {
         const subjectAnalytics = Object.entries(subjectPerformance).map(([subject, data]) => ({
           subject,
           accuracy: data.totalQuestions > 0 ? (data.correctAnswers / data.totalQuestions * 100).toFixed(1) : 0,
-          averageScore: data.totalMarks > 0 ? (data.obtainedMarks / data.totalMarks * 100).toFixed(1) : 0,
+          averageScore: data.totalQuestions > 0 ? (data.correctAnswers / data.totalQuestions * 100).toFixed(1) : 0,
           totalQuestions: data.totalQuestions,
-          correctAnswers: data.correctAnswers
+          correctAnswers: data.correctAnswers,
+          obtainedMarks: data.obtainedMarks,
         }));
         
         return formatSchoolListItem(school, admin, {
@@ -619,23 +652,24 @@ export const getAdminAnalytics = async (req, res) => {
               examCount: 0
             };
           }
-          subjectAnalysis[subject].totalQuestions += data.total;
-          subjectAnalysis[subject].correctAnswers += data.correct;
-          subjectAnalysis[subject].totalMarks += data.marks;
-          subjectAnalysis[subject].obtainedMarks += data.marks;
+          subjectAnalysis[subject].totalQuestions += data.total || 0;
+          subjectAnalysis[subject].correctAnswers += data.correct || 0;
+          subjectAnalysis[subject].obtainedMarks += data.marks || 0;
+          subjectAnalysis[subject].totalMarks += data.total || 0;
           subjectAnalysis[subject].examCount += 1;
         });
       }
     });
     
-    // Calculate subject-wise averages
+    // Calculate subject-wise averages (accuracy-based; marks field is obtained-only)
     const subjectAnalytics = Object.entries(subjectAnalysis).map(([subject, data]) => ({
       subject,
       accuracy: data.totalQuestions > 0 ? (data.correctAnswers / data.totalQuestions * 100).toFixed(1) : 0,
-      averageScore: data.totalMarks > 0 ? (data.obtainedMarks / data.totalMarks * 100).toFixed(1) : 0,
+      averageScore: data.totalQuestions > 0 ? (data.correctAnswers / data.totalQuestions * 100).toFixed(1) : 0,
       totalQuestions: data.totalQuestions,
       correctAnswers: data.correctAnswers,
-      examCount: data.examCount
+      examCount: data.examCount,
+      obtainedMarks: data.obtainedMarks,
     }));
     
     // Recent activity
@@ -2143,135 +2177,168 @@ export const createCourse = async (req, res) => {
 // Get Real-time Analytics with Top Scorers and Low-performing Admins
 export const getRealTimeAnalytics = async (req, res) => {
   try {
-    // Get all exam results with populated user and exam data
-    const allResults = await ExamResult.find({})
-      .populate('userId', 'fullName email')
-      .populate('examId', 'title examType')
-      .populate('adminId', 'fullName email')
-      .sort({ completedAt: -1 })
-      .limit(1000); // Limit for performance
-    
-    // Get top scorers per exam
-    const examTopScorers = {};
-    allResults.forEach(result => {
-      const examId = result.examId?._id?.toString() || result.examId?.toString();
-      const examTitle = result.examId?.title || result.examTitle || 'Unknown Exam';
-      
-      if (!examTopScorers[examId]) {
-        examTopScorers[examId] = {
-          examId,
-          examTitle,
-          topScorers: []
-        };
-      }
-      
-      examTopScorers[examId].topScorers.push({
-        studentName: result.userId?.fullName || 'Unknown',
-        studentEmail: result.userId?.email || 'unknown@email.com',
-        marks: result.obtainedMarks,
-        totalMarks: result.totalMarks,
-        percentage: result.percentage,
-        completedAt: result.completedAt
-      });
-    });
-    
-    // Sort top scorers for each exam and get top 5
-    Object.keys(examTopScorers).forEach(examId => {
-      examTopScorers[examId].topScorers.sort((a, b) => b.percentage - a.percentage);
-      examTopScorers[examId].topScorers = examTopScorers[examId].topScorers.slice(0, 5);
-    });
-    
-    // Get admin performance metrics
-    const adminPerformance = {};
-    allResults.forEach(result => {
-      const adminId = result.adminId?._id?.toString() || result.adminId?.toString();
-      if (!adminId) return;
-      
-      if (!adminPerformance[adminId]) {
-        adminPerformance[adminId] = {
-          adminId,
-          adminName: result.adminId?.fullName || result.adminId?.email || 'Unknown Admin',
-          adminEmail: result.adminId?.email || 'unknown@email.com',
-          totalStudents: new Set(),
-          totalExams: 0,
-          totalMarksObtained: 0,
-          totalMarksPossible: 0,
-          studentResults: []
-        };
-      }
-      
-      const admin = adminPerformance[adminId];
-      admin.totalExams += 1;
-      admin.totalMarksObtained += result.obtainedMarks;
-      admin.totalMarksPossible += result.totalMarks;
-      
-      if (result.userId?._id) {
-        admin.totalStudents.add(result.userId._id.toString());
-      }
-      
-      admin.studentResults.push({
-        studentName: result.userId?.fullName || 'Unknown',
-        percentage: result.percentage,
-        marks: result.obtainedMarks,
-        totalMarks: result.totalMarks
-      });
-    });
-    
-    // Calculate average performance per admin
-    const adminAnalytics = Object.values(adminPerformance).map(admin => {
-      const avgPercentage = admin.totalMarksPossible > 0 
-        ? (admin.totalMarksObtained / admin.totalMarksPossible) * 100 
-        : 0;
-      
-      // Calculate average student performance
-      const avgStudentPerformance = admin.studentResults.length > 0
-        ? admin.studentResults.reduce((sum, r) => sum + r.percentage, 0) / admin.studentResults.length
-        : 0;
-      
+    const [
+      totalStudents,
+      totalExams,
+      totalExamResults,
+      overallAgg,
+      adminAgg,
+      topScorerAgg,
+      recentResults,
+    ] = await Promise.all([
+      User.countDocuments({ role: 'student' }),
+      Exam.countDocuments(),
+      ExamResult.countDocuments(),
+      ExamResult.aggregate([
+        {
+          $group: {
+            _id: null,
+            avgPercentage: { $avg: { $ifNull: ['$percentage', 0] } },
+          },
+        },
+      ]),
+      ExamResult.aggregate([
+        {
+          $group: {
+            _id: '$adminId',
+            totalAttempts: { $sum: 1 },
+            examIds: { $addToSet: '$examId' },
+            studentIds: { $addToSet: '$userId' },
+            avgPercentage: { $avg: { $ifNull: ['$percentage', 0] } },
+            totalMarksObtained: { $sum: { $ifNull: ['$obtainedMarks', 0] } },
+            totalMarksPossible: { $sum: { $ifNull: ['$totalMarks', 0] } },
+          },
+        },
+        { $match: { _id: { $ne: null } } },
+      ]),
+      ExamResult.aggregate([
+        { $match: { examId: { $ne: null } } },
+        { $sort: { percentage: -1, completedAt: -1 } },
+        {
+          $group: {
+            _id: '$examId',
+            examTitle: { $first: '$examTitle' },
+            topScorers: {
+              $push: {
+                studentId: '$userId',
+                percentage: '$percentage',
+                marks: '$obtainedMarks',
+                totalMarks: '$totalMarks',
+                completedAt: '$completedAt',
+              },
+            },
+          },
+        },
+        {
+          $project: {
+            examId: '$_id',
+            examTitle: 1,
+            topScorers: { $slice: ['$topScorers', 5] },
+          },
+        },
+        { $limit: 50 },
+      ]),
+      ExamResult.find({})
+        .populate('userId', 'fullName email')
+        .populate('examId', 'title examType')
+        .sort({ completedAt: -1 })
+        .limit(10)
+        .lean(),
+    ]);
+
+    const adminIds = adminAgg.map((a) => a._id).filter(Boolean);
+    const admins = await User.find({ _id: { $in: adminIds } })
+      .select('fullName email')
+      .lean();
+    const adminById = new Map(admins.map((a) => [a._id.toString(), a]));
+
+    const adminAnalytics = adminAgg.map((row) => {
+      const admin = adminById.get(String(row._id));
+      const avgFromMarks =
+        row.totalMarksPossible > 0
+          ? (row.totalMarksObtained / row.totalMarksPossible) * 100
+          : row.avgPercentage || 0;
       return {
-        adminId: admin.adminId,
-        adminName: admin.adminName,
-        adminEmail: admin.adminEmail,
-        totalStudents: admin.totalStudents.size,
-        totalExams: admin.totalExams,
-        averageScore: avgPercentage.toFixed(1),
-        averageStudentPerformance: avgStudentPerformance.toFixed(1),
-        totalMarksObtained: admin.totalMarksObtained,
-        totalMarksPossible: admin.totalMarksPossible
+        adminId: String(row._id),
+        adminName: admin?.fullName || admin?.email || 'Unknown Admin',
+        adminEmail: admin?.email || 'unknown@email.com',
+        totalStudents: (row.studentIds || []).filter(Boolean).length,
+        totalExams: (row.examIds || []).filter(Boolean).length,
+        totalAttempts: row.totalAttempts || 0,
+        averageScore: Number(avgFromMarks || 0).toFixed(1),
+        averageStudentPerformance: Number(row.avgPercentage || 0).toFixed(1),
+        totalMarksObtained: row.totalMarksObtained || 0,
+        totalMarksPossible: row.totalMarksPossible || 0,
       };
     });
-    
-    // Identify low-performing admins (below 50% average)
+
     const lowPerformingAdmins = adminAnalytics
-      .filter(admin => parseFloat(admin.averageScore) < 50)
+      .filter((admin) => parseFloat(admin.averageScore) < 50)
       .sort((a, b) => parseFloat(a.averageScore) - parseFloat(b.averageScore));
-    
-    // Get overall analytics
-    const totalStudents = await User.countDocuments({ role: 'student' });
-    const totalExams = await Exam.countDocuments();
-    const overallAverage = allResults.length > 0
-      ? allResults.reduce((sum, r) => sum + r.percentage, 0) / allResults.length
-      : 0;
-    
+
+    // Resolve top-scorer names for the aggregated rows
+    const topStudentIds = [
+      ...new Set(
+        topScorerAgg.flatMap((e) =>
+          (e.topScorers || []).map((s) => s.studentId).filter(Boolean).map(String),
+        ),
+      ),
+    ];
+    const topStudents = await User.find({ _id: { $in: topStudentIds } })
+      .select('fullName email')
+      .lean();
+    const studentById = new Map(topStudents.map((s) => [s._id.toString(), s]));
+
+    const examIdsNeedingTitle = topScorerAgg
+      .filter((e) => !e.examTitle)
+      .map((e) => e.examId || e._id)
+      .filter(Boolean);
+    const examsForTitle = await Exam.find({ _id: { $in: examIdsNeedingTitle } })
+      .select('title')
+      .lean();
+    const examTitleById = new Map(examsForTitle.map((e) => [e._id.toString(), e.title]));
+
+    const topScorersByExam = topScorerAgg.map((exam) => {
+      const examId = String(exam.examId || exam._id);
+      return {
+        examId,
+        examTitle: exam.examTitle || examTitleById.get(examId) || 'Unknown Exam',
+        topScorers: (exam.topScorers || []).map((s) => {
+          const student = studentById.get(String(s.studentId));
+          return {
+            studentId: s.studentId ? String(s.studentId) : undefined,
+            studentName: student?.fullName || 'Unknown',
+            studentEmail: student?.email || 'unknown@email.com',
+            marks: s.marks,
+            totalMarks: s.totalMarks,
+            percentage: s.percentage,
+            completedAt: s.completedAt,
+          };
+        }),
+      };
+    });
+
+    const overallAverage = overallAgg[0]?.avgPercentage || 0;
+
     res.json({
       success: true,
       data: {
-        topScorersByExam: Object.values(examTopScorers),
+        topScorersByExam,
         lowPerformingAdmins,
         adminAnalytics,
         overallMetrics: {
           totalStudents,
           totalExams,
-          totalExamResults: allResults.length,
-          overallAverage: overallAverage.toFixed(1)
+          totalExamResults,
+          overallAverage: Number(overallAverage).toFixed(1),
         },
-        recentActivity: allResults.slice(0, 10).map(result => ({
+        recentActivity: recentResults.map((result) => ({
           examTitle: result.examId?.title || result.examTitle,
           studentName: result.userId?.fullName || 'Unknown',
-          score: result.percentage.toFixed(1),
-          completedAt: result.completedAt
-        }))
-      }
+          score: Number(result.percentage || 0).toFixed(1),
+          completedAt: result.completedAt,
+        })),
+      },
     });
   } catch (error) {
     console.error('Real-time analytics error:', error);

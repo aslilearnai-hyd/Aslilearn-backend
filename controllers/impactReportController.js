@@ -7,6 +7,7 @@ import {
   buildDigestsForSchool,
   listSchoolSnapshots,
   getSchoolSnapshot,
+  getSchoolImpactDetail,
   getLatestDigestForUser,
 } from '../services/impact-report-service.js';
 import { generateSchoolImpactPDF } from '../services/school-impact-pdf.js';
@@ -30,11 +31,25 @@ function periodFromReq(req) {
 export async function listImpactReports(req, res) {
   try {
     const period = periodFromReq(req);
-    let rows = await listSchoolSnapshots(period);
-    if (!rows.length && req.query.build === '1') {
+    const shouldRebuild =
+      req.query.build === '1' ||
+      req.query.refresh === '1' ||
+      String(req.query.live || '').toLowerCase() === 'true';
+
+    // Always rebuild when explicitly requested — stale zero snapshots were sticking
+    // because we only rebuilt when the list was empty.
+    if (shouldRebuild) {
       await buildAllSchoolImpactSnapshots(period, 'manual');
+    }
+
+    let rows = await listSchoolSnapshots(period);
+
+    // If nothing cached yet, build once so the table isn't empty on first open.
+    if (!rows.length) {
+      await buildAllSchoolImpactSnapshots(period, 'api');
       rows = await listSchoolSnapshots(period);
     }
+
     return res.json({
       success: true,
       data: {
@@ -42,6 +57,7 @@ export async function listImpactReports(req, res) {
         weekEnd: period.weekEnd,
         periodLabel: period.periodLabel,
         mode: period.mode,
+        rebuilt: shouldRebuild,
         schools: rows,
       },
     });
@@ -50,11 +66,14 @@ export async function listImpactReports(req, res) {
   }
 }
 
-/** Super Admin: one school snapshot */
+/** Super Admin: one school snapshot (+ student-wise detail by default) */
 export async function getImpactReportForAdmin(req, res) {
   try {
     const period = periodFromReq(req);
-    const snap = await getSchoolSnapshot(req.params.adminId, period);
+    const detail = String(req.query.detail || '1') !== '0';
+    const snap = detail
+      ? await getSchoolImpactDetail(req.params.adminId, period)
+      : await getSchoolSnapshot(req.params.adminId, period);
     return res.json({ success: true, data: snap });
   } catch (err) {
     return res.status(500).json({ success: false, message: err.message || 'Failed to load impact report' });
@@ -98,12 +117,7 @@ export async function downloadImpactReportPdf(req, res) {
   try {
     const adminId = req.params.adminId || req.user?._id || req.user?.userId;
     const period = periodFromReq(req);
-    let snap = await getSchoolSnapshot(adminId, period);
-    if (!snap) {
-      // Build on the fly for PDF grab
-      await buildSchoolImpactSnapshot(adminId, period, 'manual');
-      snap = await getSchoolSnapshot(adminId, period);
-    }
+    const snap = await getSchoolImpactDetail(adminId, period);
     if (!snap) {
       return res.status(404).json({ success: false, message: 'Snapshot not found' });
     }
