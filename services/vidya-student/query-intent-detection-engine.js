@@ -11,6 +11,11 @@ const APP_HINTS = [
   'my standing', 'my average', 'my percentage', 'my chapter', 'my topic',
   'my videos', 'my video', 'my homework', 'my learning', 'my path', 'my paths',
   'my status', 'learning progress', 'exam status', 'videos watched', 'video progress',
+  'my omr', 'omr result', 'omr results', 'omr exam', 'omr score', 'omr marks',
+  'recent omr', 'omr test',
+  'upcoming exam', 'upcoming exams', 'next exam', 'homework today',
+  'what should i do', 'today plan', 'my subjects', 'how many subjects',
+  'how many videos', 'videos in', 'daily plan', 'do today',
 
   // "i am / i have / i scored" phrased queries
   'i am weak', 'i am strong', 'i am failing', 'i am struggling',
@@ -97,6 +102,9 @@ const EXAM_DATA_PATTERNS = [
   /\bwhat\s+(are|is)\s+(all\s+)?(my\s+)?(exam|test)/,
   /\bexam\s+history\b/,
   /\bresults?\s+of\s+(all\s+)?(my\s+)?exams?\b/,
+  /\bomr\b/,
+  /\bomr\s*(exam|test|result|score|mark)/,
+  /\brecent\s+omr\b/,
 ];
 
 /** Platform activity: videos, paths, homework, overall learning progress */
@@ -112,6 +120,14 @@ const PLATFORM_DATA_PATTERNS = [
   /\b(learning\s+paths?|my\s+path)\b/,
   /\b(my\s+)?homework\b/,
   /\bchapters?\s+(completed|finished|done)\b/,
+  /\bwhat\s+should\s+i\s+do\b/,
+  /\btoday'?s?\s+(plan|focus|task|homework)\b/,
+  /\bdaily\s+plan\b/,
+  /\bupcoming\s+exams?\b/,
+  /\bhow\s+many\s+(subjects?|videos?)\b/,
+  /\bmy\s+subjects?\b/,
+  /\bvideos?\s+in\b/,
+  /\bhomework\s+today\b/,
 ];
 
 function isExamDataQuestion(q) {

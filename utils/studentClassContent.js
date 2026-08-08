@@ -2,6 +2,21 @@
  * Class-scoped content visibility for students.
  */
 
+const ROMAN_TO_INT = {
+  i: 1,
+  ii: 2,
+  iii: 3,
+  iv: 4,
+  v: 5,
+  vi: 6,
+  vii: 7,
+  viii: 8,
+  ix: 9,
+  x: 10,
+  xi: 11,
+  xii: 12,
+};
+
 export function normalizeClassNumberLabel(value) {
   if (value == null) return '';
   const raw = String(value).trim();
@@ -12,10 +27,18 @@ export function normalizeClassNumberLabel(value) {
     return d ? String(parseInt(d[1], 10)) : raw;
   }
   const withoutClass = raw.replace(/^class\s+/i, '').trim();
-  // "6", "6th", "Class 6", "VI" handled via digits when present
+  // "6", "6th", "Class 6", "Grade 6"
   const digitMatch = withoutClass.match(/(\d+)/);
   if (digitMatch) return String(parseInt(digitMatch[1], 10));
   if (/^\d+$/.test(withoutClass)) return String(parseInt(withoutClass, 10));
+  // Roman numerals used on many exam cards (Grade: VI / VII / VIII)
+  const romanKey = withoutClass
+    .toLowerCase()
+    .replace(/[^ivxlcdm]/g, '')
+    .trim();
+  if (romanKey && ROMAN_TO_INT[romanKey] != null) {
+    return String(ROMAN_TO_INT[romanKey]);
+  }
   return withoutClass;
 }
 
@@ -44,7 +67,7 @@ export function resolveStudentClassNumber(student, studentClassDoc) {
   return null;
 }
 
-function classLabelsMatch(a, b) {
+export function classLabelsMatch(a, b) {
   if (!a || !b) return false;
   return normalizeClassNumberLabel(a) === normalizeClassNumberLabel(b);
 }

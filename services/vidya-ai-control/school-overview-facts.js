@@ -7,6 +7,13 @@ import ExamResult from '../../models/ExamResult.js';
 import StudentRemark from '../../models/StudentRemark.js';
 import UserSession from '../../models/UserSession.js';
 import School from '../../models/School.js';
+import OmrResultBatch from '../../models/OmrResultBatch.js';
+import OmrResultRow from '../../models/OmrResultRow.js';
+import Assessment from '../../models/Assessment.js';
+import HomeworkSubmission from '../../models/HomeworkSubmission.js';
+import Video from '../../models/Video.js';
+import Content from '../../models/Content.js';
+import RiskAnalysisReport from '../../models/RiskAnalysisReport.js';
 import { istYmd } from './ist-time.js';
 
 function oid(id) {
@@ -76,6 +83,13 @@ async function metricsForAdminOid(adminOid, schoolLabel) {
     examResults30d,
     remarks,
     sessionsToday,
+    omrBatches,
+    omrRows,
+    assessments,
+    homeworkSubs,
+    videos,
+    homeworkAssigned,
+    riskReports,
   ] = await Promise.all([
     User.countDocuments(studentFilter).catch(() => 0),
     User.countDocuments({ ...studentFilter, lastLogin: { $gte: sevenDaysAgo } }).catch(() => 0),
@@ -97,6 +111,24 @@ async function metricsForAdminOid(adminOid, schoolLabel) {
     studentIds.length
       ? UserSession.countDocuments({ userId: { $in: studentIds }, date: ymd }).catch(() => 0)
       : Promise.resolve(0),
+    OmrResultBatch.countDocuments({ adminId: adminOid }).catch(() => 0),
+    OmrResultRow.countDocuments({ adminId: adminOid }).catch(() => 0),
+    Assessment.countDocuments({
+      $or: [{ adminId: adminOid }, { createdBy: adminOid }],
+      isPublished: true,
+    }).catch(() => 0),
+    studentIds.length
+      ? HomeworkSubmission.countDocuments({ studentId: { $in: studentIds } }).catch(() => 0)
+      : Promise.resolve(0),
+    Video.countDocuments({ adminId: adminOid, isPublished: true, isActive: true }).catch(() => 0),
+    Content.countDocuments({
+      type: 'Homework',
+      isActive: true,
+      $or: [{ createdBy: adminOid }, { teacherId: { $exists: true } }],
+    }).catch(() => 0),
+    RiskAnalysisReport.countDocuments({
+      $or: [{ adminId: adminOid }, { studentId: { $in: studentIds } }],
+    }).catch(() => 0),
   ]);
 
   return {
@@ -110,6 +142,13 @@ async function metricsForAdminOid(adminOid, schoolLabel) {
       examResultsLast30Days: examResults30d,
       teacherRemarks: remarks,
       loginSessionsToday: sessionsToday,
+      omrBatches,
+      omrResultRows: omrRows,
+      publishedAssessments: assessments,
+      homeworkSubmissions: homeworkSubs,
+      publishedVideos: videos,
+      homeworkContentApprox: homeworkAssigned,
+      riskReports,
     },
   };
 }
@@ -268,6 +307,11 @@ export async function buildControlOverviewFacts({ viewerRole, viewerUserId }) {
       remarks,
       sessionsToday,
       trialMembers,
+      omrBatches,
+      assessments,
+      videos,
+      homeworkSubs,
+      riskReports,
     ] = await Promise.all([
       User.countDocuments({ role: 'student' }).catch(() => 0),
       Teacher.countDocuments({ isActive: true }).catch(() => 0),
@@ -279,6 +323,11 @@ export async function buildControlOverviewFacts({ viewerRole, viewerUserId }) {
       StudentRemark.estimatedDocumentCount().catch(() => 0),
       UserSession.countDocuments({ date: ymd }).catch(() => 0),
       User.countDocuments({ isIndividualAccount: true }).catch(() => 0),
+      OmrResultBatch.estimatedDocumentCount().catch(() => 0),
+      Assessment.countDocuments({ isPublished: true }).catch(() => 0),
+      Video.countDocuments({ isPublished: true, isActive: true }).catch(() => 0),
+      HomeworkSubmission.estimatedDocumentCount().catch(() => 0),
+      RiskAnalysisReport.estimatedDocumentCount().catch(() => 0),
     ]);
 
     return {
@@ -296,6 +345,11 @@ export async function buildControlOverviewFacts({ viewerRole, viewerUserId }) {
         teacherRemarks: remarks,
         loginSessionsToday: sessionsToday,
         trialMembers,
+        omrBatches,
+        publishedAssessments: assessments,
+        publishedVideos: videos,
+        homeworkSubmissions: homeworkSubs,
+        riskReports,
       },
     };
   }

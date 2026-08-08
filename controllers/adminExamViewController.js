@@ -7,13 +7,14 @@ import { examVisibleToSchoolAdmin } from '../utils/exam-visibility.js';
 import {
   getExamAssignedClassNumbers,
   normalizeClassNumberLabel,
+  classLabelsMatch,
 } from '../utils/studentClassContent.js';
 
 function studentInExamClasses(studentClassNumber, examClasses) {
   if (!Array.isArray(examClasses) || examClasses.length === 0) return true;
   const want = normalizeClassNumberLabel(studentClassNumber);
   if (!want) return false;
-  return examClasses.some((c) => normalizeClassNumberLabel(c) === want);
+  return examClasses.some((c) => classLabelsMatch(c, want));
 }
 
 /** Keep best attempt per student, highest percentage first. */
@@ -243,14 +244,38 @@ export const getStudentExamResults = async (req, res) => {
     }
 
     const studentFilter = { assignedAdmin: adminId, role: 'student' };
+    // Do NOT exact-match classNumber ("VI" vs "6" / "6th"). Fetch school students,
+    // then filter with normalized class labels.
+    const schoolStudents = await User.find(studentFilter).select('_id classNumber');
+    let students = schoolStudents;
     if (classNum) {
-      studentFilter.classNumber = classNum;
+      students = schoolStudents.filter((s) =>
+        classLabelsMatch(s.classNumber, classNum)
+      );
     }
-
-    const students = await User.find(studentFilter).select('_id');
-    const studentIds = students.map(s => s._id);
+    const studentIds = students.map((s) => s._id);
 
     if (studentIds.length === 0) {
+      // Still try exam results for the whole school when class label mismatch emptied the pool
+      if (examId && mongoose.Types.ObjectId.isValid(examId)) {
+        const fallbackIds = schoolStudents.map((s) => s._id);
+        if (fallbackIds.length) {
+          const fallbackResults = await ExamResult.find({
+            userId: { $in: fallbackIds },
+            examId: new mongoose.Types.ObjectId(examId),
+          })
+            .populate('userId', 'fullName email classNumber')
+            .populate('examId', 'title examType')
+            .sort({ completedAt: -1 });
+          if (fallbackResults.length) {
+            return res.json({
+              success: true,
+              data: fallbackResults.map(serializeExamResultRow),
+              count: fallbackResults.length,
+            });
+          }
+        }
+      }
       return res.json({
         success: true,
         data: [],
@@ -388,25 +413,47 @@ export const getExamPerformanceAnalytics = async (req, res) => {
       .select('_id classNumber fullName email')
       .lean();
 
-    const eligibleStudents = scopedClasses.length
+    let eligibleStudents = scopedClasses.length
       ? schoolStudents.filter((s) => studentInExamClasses(s.classNumber, scopedClasses))
       : schoolStudents;
+
+    // Query results for ALL school students first — class labels on profiles often
+    // disagree with exam assignedClasses (VI vs 6). Then prefer class-scoped rows.
+    const schoolStudentIds = schoolStudents.map((s) => s._id);
+    let results = schoolStudentIds.length
+      ? await ExamResult.find({
+          examId: examObjectId,
+          userId: { $in: schoolStudentIds },
+        })
+          .populate('userId', 'fullName email classNumber')
+          .sort({ percentage: -1 })
+      : [];
+
     const eligibleIds = new Set(eligibleStudents.map((s) => String(s._id)));
-
-    let results = await ExamResult.find({
-      examId: examObjectId,
-      userId: { $in: eligibleStudents.map((s) => s._id) },
-    })
-      .populate('userId', 'fullName email classNumber')
-      .sort({ percentage: -1 });
-
-    results = results.filter((r) =>
-      eligibleIds.has(String(r.userId?._id || r.userId || ''))
+    let scopedResults = results.filter((r) =>
+      eligibleIds.has(String(r.userId?._id || r.userId || '')),
     );
+
+    // If class filter wiped attempts but the school has submissions for this exam,
+    // show those submissions and expand eligible pool to attempters + class mates.
+    if (scopedClasses.length && scopedResults.length === 0 && results.length > 0) {
+      scopedResults = results;
+      const attempterIds = new Set(
+        results.map((r) => String(r.userId?._id || r.userId || '')).filter(Boolean),
+      );
+      eligibleStudents = schoolStudents.filter(
+        (s) =>
+          attempterIds.has(String(s._id)) ||
+          studentInExamClasses(s.classNumber, scopedClasses),
+      );
+      if (!eligibleStudents.length) {
+        eligibleStudents = schoolStudents.filter((s) => attempterIds.has(String(s._id)));
+      }
+    }
 
     res.json({
       success: true,
-      data: buildPayload(eligibleStudents, results),
+      data: buildPayload(eligibleStudents, scopedResults),
     });
   } catch (error) {
     console.error('Get exam performance analytics error:', error);
