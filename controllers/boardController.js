@@ -41,6 +41,7 @@ import {
   isUnifiedPlatformBoard,
   buildPlatformAdminQuery,
 } from '../services/boardScope.js';
+import { formatParticipationRate } from '../utils/analytics-metrics.js';
 
 function isIitBoardCode(boardUpper) {
   return canonicalizeSchoolBoard(boardUpper) === 'IIT';
@@ -470,6 +471,8 @@ export const getBoardDashboard = async (req, res) => {
       : await bucketExamResultsByEffectiveBoard(ExamResult, adminById);
 
     // Replace full-collection reads + per-admin queries with grouped aggregations.
+    // Top performers / averages for curriculum boards use adminId scope (effective school
+    // membership), not raw ExamResult.board which is often the hub code.
     const [
       topPerformers,
       averageScoreAgg,
@@ -479,14 +482,14 @@ export const getBoardDashboard = async (req, res) => {
       teacherStatsByAdmin,
       studentsForList
     ] = await Promise.all([
-      ExamResult.find(unifiedPlatform ? {} : { board: boardUpper })
+      ExamResult.find(unifiedPlatform ? {} : { adminId: { $in: adminIds } })
         .populate('userId', 'fullName email')
         .sort({ percentage: -1 })
         .limit(10)
         .select('userId percentage obtainedMarks totalMarks examTitle completedAt')
         .lean(),
       ExamResult.aggregate([
-        ...(unifiedPlatform ? [] : [{ $match: { board: boardUpper } }]),
+        ...(unifiedPlatform ? [] : [{ $match: { adminId: { $in: adminIds } } }]),
         {
           $group: {
             _id: null,
@@ -508,7 +511,8 @@ export const getBoardDashboard = async (req, res) => {
           $group: {
             _id: '$adminId',
             examAttempts: { $sum: 1 },
-            averageScore: { $avg: '$percentage' }
+            averageScore: { $avg: '$percentage' },
+            attempterIds: { $addToSet: '$userId' },
           }
         }
       ]),
@@ -554,16 +558,10 @@ export const getBoardDashboard = async (req, res) => {
           ? boardBucket.results.reduce((sum, r) => sum + (Number(r.percentage) || 0), 0) /
             boardBucket.results.length
           : 0;
-      participationRate =
-        students > 0
-          ? ((boardBucket.attempterIds.size / students) * 100).toFixed(1)
-          : '0.0';
+      participationRate = formatParticipationRate(boardBucket.attempterIds.size, students);
     } else if (unifiedPlatform) {
       const distinctAttempters = await ExamResult.distinct('userId');
-      participationRate =
-        students > 0
-          ? ((distinctAttempters.length / students) * 100).toFixed(1)
-          : '0.0';
+      participationRate = formatParticipationRate(distinctAttempters.length, students);
     }
 
     const resultStatsByAdminMap = new Map(
@@ -603,6 +601,7 @@ export const getBoardDashboard = async (req, res) => {
       const adminTeachers = teacherStatsByAdminMap.get(adminKey) || 0;
       const examAttempts = resultStats?.examAttempts || 0;
       const avgScore = resultStats?.averageScore || 0;
+      const uniqueAttempters = (resultStats?.attempterIds || []).filter(Boolean).length;
 
       return {
         schoolName: admin.schoolName || admin.fullName,
@@ -612,7 +611,8 @@ export const getBoardDashboard = async (req, res) => {
         students: adminStudents,
         teachers: adminTeachers,
         examAttempts,
-        participationRate: adminStudents > 0 ? ((examAttempts / adminStudents) * 100).toFixed(1) : '0.0',
+        uniqueAttempters,
+        participationRate: formatParticipationRate(uniqueAttempters, adminStudents),
         averageScore: Number(avgScore).toFixed(2),
         studentList: studentListByAdmin.get(adminKey) || []
       };

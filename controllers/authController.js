@@ -775,17 +775,15 @@ export async function login(req, res) {
     if (user.role === 'student' || user.role === 'teacher') {
       try {
         const UserSession = (await import('../models/UserSession.js')).default;
+        const { calendarDayKey } = await import('../services/impact-report-service.js');
         const now = new Date();
-        const y = now.getUTCFullYear();
-        const m = String(now.getUTCMonth() + 1).padStart(2, '0');
-        const d = String(now.getUTCDate()).padStart(2, '0');
-        const dateKey = `${y}-${m}-${d}`;
+        const dateKey = calendarDayKey(now); // Asia/Kolkata YYYY-MM-DD
         const existing = await UserSession.findOne({ userId: user._id, date: dateKey }).select('_id').lean();
         if (!existing) {
           await UserSession.create({
             userId: user._id,
             date: dateKey,
-            startTime: new Date(`${dateKey}T00:00:00.000Z`),
+            startTime: new Date(`${dateKey}T00:00:00.000+05:30`),
             endTime: now,
             duration: 1,
           });

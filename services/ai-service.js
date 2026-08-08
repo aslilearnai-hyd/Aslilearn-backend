@@ -231,18 +231,23 @@ Provide comprehensive, actionable insights that can drive educational improvemen
       }
     ];
 
-    const predictions = data.students.slice(0, 5).map((student, index) => ({
-      studentId: student._id || student.id,
-      studentName: student.fullName || `Student ${index + 1}`,
-      predictedScore: 75 + Math.random() * 20,
-      confidence: 85 + Math.random() * 10,
-      riskFactors: Math.random() > 0.7 ? ['Time management', 'Focus issues'] : [],
-      recommendations: ['Personalized study plan', 'Peer tutoring', 'Additional practice'],
-      learningStyle: ['Visual', 'Auditory', 'Kinesthetic'][Math.floor(Math.random() * 3)],
-      optimalStudyTime: ['Morning (6-8 AM)', 'Evening (7-9 PM)', 'Night (9-11 PM)'][Math.floor(Math.random() * 3)],
-      nextExamPrediction: 80 + Math.random() * 15,
-      improvementAreas: ['Problem solving', 'Time management', 'Concept clarity']
-    }));
+    const predictions = data.students.slice(0, 5).map((student, index) => {
+      // Deterministic placeholder scores (not Math.random) — clearly marked as mock.
+      const seed = (String(student._id || student.id || index).length * 17 + index * 13) % 20;
+      return {
+        studentId: student._id || student.id,
+        studentName: student.fullName || `Student ${index + 1}`,
+        predictedScore: 70 + seed,
+        confidence: 70 + (seed % 15),
+        riskFactors: seed > 14 ? ['Time management', 'Focus issues'] : [],
+        recommendations: ['Personalized study plan', 'Peer tutoring', 'Additional practice'],
+        learningStyle: ['Visual', 'Auditory', 'Kinesthetic'][index % 3],
+        optimalStudyTime: ['Morning (6-8 AM)', 'Evening (7-9 PM)', 'Night (9-11 PM)'][index % 3],
+        nextExamPrediction: 75 + (seed % 15),
+        improvementAreas: ['Problem solving', 'Time management', 'Concept clarity'],
+        isMock: true,
+      };
+    });
 
     const recommendations = [
       {
@@ -300,11 +305,12 @@ Provide comprehensive, actionable insights that can drive educational improvemen
 
     const riskAssessments = data.students.slice(0, 3).map((student, index) => ({
       studentId: student._id || student.id,
-      riskLevel: ['low', 'medium', 'high'][Math.floor(Math.random() * 3)],
+      riskLevel: ['low', 'medium', 'high'][index % 3],
       riskFactors: ['Low engagement', 'Poor performance', 'Irregular attendance'],
-      interventionNeeded: Math.random() > 0.5,
+      interventionNeeded: index % 2 === 0,
       suggestedActions: ['Personal tutoring', 'Study group assignment', 'Parent notification'],
-      timeline: ['immediate', '1week', '1month'][Math.floor(Math.random() * 3)]
+      timeline: ['immediate', '1week', '1month'][index % 3],
+      isMock: true,
     }));
 
     return {
@@ -312,7 +318,9 @@ Provide comprehensive, actionable insights that can drive educational improvemen
       predictions,
       recommendations,
       patterns,
-      riskAssessments
+      riskAssessments,
+      isMock: true,
+      accuracyRate: null,
     };
   }
 

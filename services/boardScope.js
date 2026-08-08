@@ -7,6 +7,7 @@ import {
   normalizeSchoolBoard,
   getBoardDisplayName,
 } from '../constants/boards.js';
+import { formatParticipationRate as formatParticipationRateShared } from '../utils/analytics-metrics.js';
 
 /** Boards shown in performance comparison (curriculum only — not Asli Exclusive hub). */
 export const COMPARISON_BOARDS = [...CURRICULUM_BOARDS];
@@ -35,14 +36,15 @@ export function resolveBoardDisplayName(code) {
  * Asli Prep schools are bucketed by curriculumBoard, not the ASLI_EXCLUSIVE_SCHOOLS hub code.
  */
 export function resolveAdminEffectiveBoard(admin) {
-  if (!admin) return 'CBSE';
+  if (!admin) return 'OTHER';
   const curriculum =
     admin.curriculumBoard ||
     (isStoredCurriculumBoard(admin.board) ? String(admin.board).toUpperCase().trim() : '');
   if (isValidCurriculumBoard(curriculum)) {
     return String(curriculum).toUpperCase().trim();
   }
-  return 'CBSE';
+  // Do not dump unknowns into CBSE — keeps comparison buckets honest.
+  return 'OTHER';
 }
 
 /** Analytics board for a student */
@@ -70,14 +72,22 @@ export function buildAdminBoardQuery(boardCode) {
   };
 }
 
-/** Mongo filter: teachers scoped to a board */
+/**
+ * Mongo filter: teachers scoped to a board.
+ * Prefer admin ownership for school teachers; only match loose `board` when
+ * the teacher has no adminId (avoids double-counting the same teacher across boards).
+ */
 export function buildTeacherBoardQuery(boardCode, adminIds = []) {
   const code = String(boardCode).toUpperCase().trim();
-  const or = [{ board: code }];
+  const clauses = [];
   if (adminIds.length > 0) {
-    or.push({ adminId: { $in: adminIds } });
+    clauses.push({ adminId: { $in: adminIds } });
   }
-  return { $or: or };
+  clauses.push({
+    board: code,
+    $or: [{ adminId: null }, { adminId: { $exists: false } }, { adminId: '' }],
+  });
+  return clauses.length === 1 ? clauses[0] : { $or: clauses };
 }
 
 /** Mongo filter: active exams for a board */
@@ -113,13 +123,14 @@ export async function buildStudentCountsByBoard() {
 
   const adminById = new Map(admins.map((a) => [a._id.toString(), a]));
   const counts = Object.fromEntries(COMPARISON_BOARDS.map((b) => [b, 0]));
+  counts.OTHER = 0;
 
   for (const student of students) {
     const board = resolveStudentEffectiveBoard(student, adminById);
     if (counts[board] !== undefined) {
       counts[board] += 1;
     } else {
-      counts.CBSE += 1;
+      counts.OTHER += 1;
     }
   }
 
@@ -147,9 +158,7 @@ export function resolveResultEffectiveBoard(result, studentBoardByUserId, adminB
 }
 
 function formatParticipationRate(uniqueAttempters, students) {
-  return students > 0
-    ? ((uniqueAttempters / students) * 100).toFixed(1)
-    : '0.0';
+  return formatParticipationRateShared(uniqueAttempters, students);
 }
 
 function summarizeResultBucket(results, attempterIds, students) {
