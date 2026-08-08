@@ -111,13 +111,26 @@ export async function buildStudentAiContext({
       Array.isArray(studentUser.assignedSubjects) && studentUser.assignedSubjects.length
         ? Subject.find({ _id: { $in: studentUser.assignedSubjects } }).select('name classNumber').lean()
         : [],
-      ExamResult.find({ userId: studentOid }).sort({ completedAt: -1 }).limit(20).lean(),
-      UserProgress.find({ userId: studentOid }).sort({ updatedAt: -1 }).limit(120).lean(),
-      UserSession.find({ userId: studentOid, date: { $gte: ymd(monthAgo), $lte: today } }).lean(),
+      ExamResult.find({ userId: studentOid })
+        .select('-answers -questionAnalytics -responses')
+        .sort({ completedAt: -1 })
+        .limit(20)
+        .lean(),
+      UserProgress.find({ userId: studentOid })
+        .select('userId videoId contentId progress completed lastAccessed updatedAt subjectId')
+        .sort({ updatedAt: -1 })
+        .limit(120)
+        .lean(),
+      UserSession.find({ userId: studentOid, date: { $gte: ymd(monthAgo), $lte: today } })
+        .select('userId date durationMinutes activeMinutes loginCount')
+        .lean(),
       LearningPath.find({ enrolledUsers: studentOid, isPublished: true })
         .select('title subjectIds videoIds difficulty estimatedHours')
         .lean(),
-      RiskAnalysisReport.findOne({ studentId: studentOid }).sort({ sentAt: -1 }).lean(),
+      RiskAnalysisReport.findOne({ studentId: studentOid })
+        .select('studentId sentAt isRead pdfFilename')
+        .sort({ sentAt: -1 })
+        .lean(),
       ChatSession.find({ userId: String(studentOid), role: 'student', archived: false })
         .sort({ updatedAt: -1 })
         .limit(3)
@@ -125,7 +138,11 @@ export async function buildStudentAiContext({
         .lean(),
       VidyaStudentMemory.findOne({ studentId: studentOid }).lean(),
       HomeworkSubmission.find({ studentId: studentOid }).sort({ submittedAt: -1 }).limit(15).lean(),
-      StudentVideoChapterProgress.find({ userId: studentOid }).lean(),
+      StudentVideoChapterProgress.find({ userId: studentOid })
+        .select('userId subjectId chapterId chapterName completed progress updatedAt')
+        .sort({ updatedAt: -1 })
+        .limit(80)
+        .lean(),
       OmrResultRow.find({ userId: studentOid }).sort({ createdAt: -1 }).limit(20).lean(),
     ]);
 

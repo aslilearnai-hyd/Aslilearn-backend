@@ -58,4 +58,18 @@ process.on('uncaughtException', (err) => {
 
 process.on('SIGTERM', () => shutdown('SIGTERM'));
 
+// Light heap watchdog — log when approaching OOM so ops can act before crash
+const HEAP_WARN_MB = Number(process.env.HEAP_WARN_MB || 2200);
+setInterval(() => {
+  const { heapUsed, heapTotal, rss } = process.memoryUsage();
+  const usedMb = Math.round(heapUsed / 1024 / 1024);
+  const totalMb = Math.round(heapTotal / 1024 / 1024);
+  const rssMb = Math.round(rss / 1024 / 1024);
+  if (usedMb >= HEAP_WARN_MB) {
+    console.warn(
+      `⚠️ High heap: used=${usedMb}MB total=${totalMb}MB rss=${rssMb}MB (warn≥${HEAP_WARN_MB}MB)`,
+    );
+  }
+}, 60_000).unref();
+
 export { app, server, logger };
