@@ -112,6 +112,9 @@ export async function loadStudentLibraryContents(userId, student, studentClassDo
         subject: { $in: queryIds },
         isActive: true,
       })
+        .select(
+          'title description type board productCategory subject classNumber topic chapter module date fileUrl fileUrls thumbnailUrl duration size isExclusive createdBy deadline isActive createdAt updatedAt',
+        )
         .populate('subject', 'name isActive board classNumber productCategory')
         .sort({ updatedAt: -1 })
         .limit(600)

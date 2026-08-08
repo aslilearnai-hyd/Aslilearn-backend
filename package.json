@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js",
+    "start": "node --max-old-space-size=3072 index.js",
     "start:ollama": "bash start-with-ollama.sh",
     "dev": "nodemon index.js",
     "build": "echo 'No build step required'",

@@ -243,8 +243,12 @@ router.get('/asli-prep-content', async (req, res) => {
     console.log('📋 Content query:', JSON.stringify(query, null, 2));
 
     let contents = await Content.find(query)
+      .select(
+        'title description type board productCategory subject classNumber topic chapter module date fileUrl fileUrls thumbnailUrl duration size isExclusive createdBy deadline isActive createdAt updatedAt',
+      )
       .populate('subject', 'name isActive board classNumber productCategory')
       .sort({ createdAt: -1 })
+      .limit(600)
       .lean();
 
     contents = filterContentRowsForActiveCatalog(contents, activeIdSet);
