@@ -16,6 +16,9 @@ const APP_HINTS = [
   'upcoming exam', 'upcoming exams', 'next exam', 'homework today',
   'what should i do', 'today plan', 'my subjects', 'how many subjects',
   'how many videos', 'videos in', 'daily plan', 'do today',
+  'how many exams', 'how many omr', 'how many homework', 'how many quizzes',
+  'attempted till', 'exams attempted', 'list my subjects', 'my calendar',
+  'timetable', 'open exams', 'quiz', 'assessment',
 
   // "i am / i have / i scored" phrased queries
   'i am weak', 'i am strong', 'i am failing', 'i am struggling',
@@ -53,12 +56,16 @@ const APP_HINTS = [
   // exam count / planning (short phrases that must not fall through to uncertain/general)
   'study plan',
   'how many exams',
+  'how many omr',
   'exams did i take',
   'exams have i taken',
+  'exams i have attempted',
+  'attempted till now',
   'all exam result',
   'all exam results',
   'my exam result',
   'exam history',
+  'omr exams',
   'learning path',
   'eduott',
   'edu ott',
@@ -124,7 +131,9 @@ const PLATFORM_DATA_PATTERNS = [
   /\btoday'?s?\s+(plan|focus|task|homework)\b/,
   /\bdaily\s+plan\b/,
   /\bupcoming\s+exams?\b/,
-  /\bhow\s+many\s+(subjects?|videos?)\b/,
+  /\bhow\s+many\s+(subjects?|videos?|exams?|omr|tests?)\b/,
+  /\bexams?\s+(have\s+i|did\s+i)\s+(take|attempt|written|complete)/,
+  /\battempted\s+(till\s+now|so\s+far|until\s+now)/,
   /\bmy\s+subjects?\b/,
   /\bvideos?\s+in\b/,
   /\bhomework\s+today\b/,
@@ -159,7 +168,7 @@ const SELF_REFERENCE_PATTERNS = [
 
 /** Short social openers — must not trigger the marks/progress clarification. */
 const GREETING_RE =
-  /^(hi|hii+|hello|hey|hey+a?|hola|namaste|good\s*(morning|afternoon|evening)|yo|sup|hiya|helo|hell+o+)\b[\s!.,?]{0,6}$/i;
+  /^(?:(?:hi+|hii+|hello+|hey+|heya|hola|namaste|yo|sup|hiya|helo|hell+o+|good\s*(?:morning|afternoon|evening))(?:\s+|[\s!.,?]+)){0,4}(?:hi+|hii+|hello+|hey+|heya|hola|namaste|yo|sup|hiya|helo|hell+o+|good\s*(?:morning|afternoon|evening)|there|vidya|buddy)[\s!.,?]{0,8}$/i;
 
 const THANKS_RE =
   /^(thanks|thank\s*you|thx|ty|ok|okay|cool|great|nice|bye|goodbye|see\s*you)[\s!.,?]{0,6}$/i;
@@ -201,16 +210,24 @@ export function detectQueryIntent(question) {
   return { type: 'uncertain', confidence: 0.35 };
 }
 
-export function buildUncertainClarificationMessage() {
-  return 'Could you tell me more? Are you asking about your personal marks and progress, or do you want me to explain a subject topic?';
-}
-
 export function buildGreetingReplyMessage(studentName = '') {
   const name = String(studentName || '').trim();
   const hello = name ? `Hi ${name}!` : 'Hi!';
   return (
-    `${hello} I'm Vidya, your study buddy. ` +
-    `Ask me about your learning progress, videos you've watched, exam results, or any subject topic you want explained.`
+    `${hello} I'm Vidya, your Asli Learn app assistant. ` +
+    `Ask in plain words — for example: **"how many OMR exams do I have"**, **"my OMR marks"**, ` +
+    `**"homework today"**, **"how many subjects"**, **"videos in maths"**, or any topic doubt.`
+  );
+}
+
+export function buildUncertainClarificationMessage() {
+  return (
+    "Happy to help — try being specific, like:\n" +
+    "• **how many exams have I attempted**\n" +
+    "• **my OMR marks** / **how many OMR exams**\n" +
+    "• **homework today** / **upcoming exams**\n" +
+    "• **how many videos in maths**\n" +
+    "• or ask me to **explain a topic** (e.g. polynomials)"
   );
 }
 

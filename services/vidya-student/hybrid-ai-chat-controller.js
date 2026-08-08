@@ -12,6 +12,7 @@ import {
   buildStudentAppDeskFacts,
   matchSubjectFromQuestion,
 } from './student-app-desk-facts.js';
+import { answerByTopicAndShape } from './student-app-query-router.js';
 
 const connectionFallbackMessage = () => "I'm having trouble connecting right now. Please try again in a moment.";
 
@@ -64,7 +65,7 @@ function buildOmrResultReply(omrList, { all = false } = {}) {
     return "I don't see any OMR sheet results linked to your account yet. After your school uploads the OMR score sheet and assigns your Candidate ID, ask me again — or open **OMR Results** in the sidebar.";
   }
 
-  const rows = all ? list.slice(0, 8) : [list[0]];
+  const rows = all ? list.slice(0, 40) : [list[0]];
   let reply = all
     ? `**Your OMR exam results** (${list.length} on record):\n\n`
     : `**Your recent OMR exam result:**\n\n`;
@@ -101,12 +102,61 @@ function buildOmrResultReply(omrList, { all = false } = {}) {
 
   if (!all && list.length > 1) {
     const prev = list[1];
-    const delta = Math.round(((Number(list[0].percentage) || 0) - (Number(prev.percentage) || 0)) * 10) / 10;
+    const delta =
+      Math.round(((Number(list[0].percentage) || 0) - (Number(prev.percentage) || 0)) * 10) / 10;
     reply += `\nVs previous OMR (**${prev.testTitle || 'previous'}**): ${delta >= 0 ? '+' : ''}${delta}%`;
-    reply += `\nYou have **${list.length}** OMR tests — ask **"show all my OMR results"** for the full list.`;
+    reply += `\nYou have **${list.length}** OMR tests — ask **"how many OMR exams do I have"** for the full list.`;
   }
 
   reply += `\n\nOpen **OMR Results** in the sidebar for the full subject breakdown.`;
+  return reply.trim();
+}
+
+function buildOmrCountReply(omrList) {
+  const list = Array.isArray(omrList) ? omrList : [];
+  if (!list.length) {
+    return "You don't have any OMR exams linked yet. When your school uploads and assigns your Candidate ID, the count will show here.";
+  }
+  let reply = `You have **${list.length}** OMR exam${list.length === 1 ? '' : 's'} on record:\n\n`;
+  list.slice(0, 20).forEach((row, i) => {
+    const dateLabel = formatOmrDate(row.testDate);
+    reply += `${i + 1}. **${row.testTitle || 'OMR test'}** — ${row.percentage ?? 'N/A'}%`;
+    if (dateLabel) reply += ` · ${dateLabel}`;
+    reply += `\n`;
+  });
+  if (list.length > 20) reply += `\n…and ${list.length - 20} more.`;
+  reply += `\nAsk **"my recent OMR exam result"** for the full subject-wise breakdown of the latest one.`;
+  return reply.trim();
+}
+
+function buildExamAttemptCountReply(examList, omrList) {
+  const exams = Array.isArray(examList) ? examList : [];
+  const omr = Array.isArray(omrList) ? omrList : [];
+  const inApp = exams.length;
+  const omrCount = omr.length;
+  const total = inApp + omrCount;
+
+  if (!total) {
+    return "You haven't attempted any in-app exams or OMR sheets yet. Take an exam from **Exams**, or wait for your school to upload OMR results.";
+  }
+
+  let reply = `**Exams you've attempted so far:**\n\n`;
+  reply += `• In-app exams: **${inApp}**\n`;
+  reply += `• OMR sheet exams: **${omrCount}**\n`;
+  reply += `• **Total: ${total}**\n`;
+
+  if (inApp) {
+    reply += `\n**Recent in-app exams:**\n`;
+    exams.slice(0, 8).forEach((e, i) => {
+      reply += `${i + 1}. ${e.examTitle || 'Exam'} — ${e.percentage ?? 'N/A'}%\n`;
+    });
+  }
+  if (omrCount) {
+    reply += `\n**OMR exams:**\n`;
+    omr.slice(0, 8).forEach((e, i) => {
+      reply += `${i + 1}. ${e.testTitle || 'OMR'} — ${e.percentage ?? 'N/A'}%\n`;
+    });
+  }
   return reply.trim();
 }
 
@@ -134,9 +184,33 @@ function appOnlyReply(question, facts) {
   const deskTotals = desk.totals || {};
   const profileName = facts?.profile?.fullName || desk.profileName || 'there';
 
-  // ── OMR sheet results (priority when student asks about OMR) ───────────────
+  // Shape-aware router first (count vs list vs latest vs detail for every topic)
+  const shaped = answerByTopicAndShape(question, facts);
+  if (typeof shaped === 'string' && shaped.trim()) {
+    return shaped.trim();
+  }
+  if (shaped && shaped.__delegate === 'omr') {
+    if (shaped.shape?.count) return buildOmrCountReply(omrList);
+    const wantAll = Boolean(shaped.shape?.list);
+    return buildOmrResultReply(omrList, { all: wantAll });
+  }
+
+  // ── HOW MANY EXAMS ATTEMPTED (in-app + OMR) ───────────────────────────────
+  if (
+    /how many exams?.{0,40}(attempt|taken|written|done|till|so far|have i)|exams? (have i|did i) (attempt|take|write)|attempted till now|total exams? (attempted|taken)/.test(
+      q,
+    ) &&
+    !/\bomr\b/.test(q)
+  ) {
+    return buildExamAttemptCountReply(examList, omrList);
+  }
+
+  // ── OMR sheet results ─────────────────────────────────────────────────────
   if (/\bomr\b|optical\s*mark|sheet\s*result|omr\s*(exam|test|result|score|mark)/.test(q)) {
-    const wantAll = /all|every|history|list|each/.test(q);
+    if (/how many|count|number of|total/.test(q)) {
+      return buildOmrCountReply(omrList);
+    }
+    const wantAll = /all|every|history|list|each|every omr/.test(q);
     return buildOmrResultReply(omrList, { all: wantAll });
   }
 
@@ -646,7 +720,10 @@ function appOnlyReply(question, facts) {
   }
 
   // ── MARKS / SCORE / RESULT queries ────────────────────────────────────────
-  if (/mark|score|result|percentage|how (much|many|did)/.test(q)) {
+  if (
+    /mark|score|result|percentage|how (much|did)/.test(q) &&
+    !/how many/.test(q)
+  ) {
     const latest = examList[0];
     const latestOmr = omrList[0];
     if (!latest && !latestOmr) {
