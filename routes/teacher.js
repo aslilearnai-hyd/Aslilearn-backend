@@ -17,6 +17,7 @@ import remarksRoutes from './teacher/remarks.js';
 import studentsRoutes from './teacher/students.js';
 import quizzesRoutes from './teacher/quizzes.js';
 import workDiaryRoutes from './teacher/workDiary.js';
+import omrResultsRoutes from './teacher/omrResults.js';
 
 const router = express.Router();
 
@@ -44,5 +45,6 @@ router.use(remarksRoutes);
 router.use(studentsRoutes);
 router.use(quizzesRoutes);
 router.use(workDiaryRoutes);
+router.use(omrResultsRoutes);
 
 export default router;
