@@ -2391,12 +2391,15 @@ export const getClasses = async (req, res) => {
   try {
     const adminId = req.adminId;
 
-    // Get classes from Class model with assignedSubjects populated
+    // Include Finished / inactive class shells so promoted alumni remain visible in UI
     const classDocuments = await Class.find({
       assignedAdmin: adminId,
-      isActive: true
-    })
-    .populate('assignedSubjects', '_id name description code board');
+      $or: [
+        { isActive: { $ne: false } },
+        { classNumber: 'Finished' },
+        { description: /Finished Academic Career/i },
+      ],
+    }).populate('assignedSubjects', '_id name description code board');
 
     // classNumber is a string ("6", "10") — numeric grade order, then section
     classDocuments.sort((a, b) => {
@@ -3065,34 +3068,40 @@ export const promoteClasses = async (req, res) => {
       }
       
       if (absClassNum === 12) {
-        // Mark as finished academic career
+        // Mark as finished academic career — keep students VISIBLE in Students tab
+        // (never set isActive:false; that made them look deleted in UI filters/counts)
         console.log(`Marking class ${classDoc.name} (${classDoc.classNumber}${classDoc.section || ''}) as finished`);
-        classDoc.isActive = false;
-        classDoc.description = classDoc.description 
+        const finishedSection = classDoc.section || '';
+        classDoc.classNumber = 'Finished';
+        classDoc.name = finishedSection ? `Finished-${finishedSection}` : 'Finished';
+        classDoc.isActive = true;
+        classDoc.description = classDoc.description
           ? `${classDoc.description} - Finished Academic Career`
           : 'Finished Academic Career';
-        // Note: status field may not exist in Class model, so we only set isActive
         await classDoc.save();
-        console.log(`Class ${classDoc.name} marked as finished`);
-        
+        console.log(`Class ${classDoc.name} marked as finished (still listed)`);
+
+        const studentUpdateResult = await User.updateMany(
+          { assignedClass: classDoc._id, role: 'student' },
+          {
+            $set: {
+              classNumber: 'Finished',
+              // Keep accounts visible + usable; admin can deactivate individuals if needed
+              isActive: true,
+            },
+          },
+        );
+        console.log(
+          `Updated ${studentUpdateResult.modifiedCount} students to Finished (still active/visible) for class ${classDoc.name}`,
+        );
+
         finishedClasses.push({
           id: classDoc._id.toString(),
           name: classDoc.name,
-          classNumber: classDoc.classNumber,
-          section: classDoc.section
+          classNumber: 'Finished',
+          section: finishedSection,
+          studentsMoved: studentUpdateResult.modifiedCount,
         });
-        
-        // Update all students in this class to mark as finished
-        const studentUpdateResult = await User.updateMany(
-          { assignedClass: classDoc._id },
-          { 
-            $set: { 
-              classNumber: 'Finished',
-              isActive: false
-            }
-          }
-        );
-        console.log(`Updated ${studentUpdateResult.modifiedCount} students to Finished status for class ${classDoc.name}`);
       } else {
         // Promote to next class
         // Logic: 
@@ -3127,23 +3136,27 @@ export const promoteClasses = async (req, res) => {
         
         if (existingClass) {
           // Merge students into existing class
-          await User.updateMany(
-            { assignedClass: classDoc._id },
-            { 
-              $set: { 
+          const mergeResult = await User.updateMany(
+            { assignedClass: classDoc._id, role: 'student' },
+            {
+              $set: {
                 assignedClass: existingClass._id,
-                classNumber: nextClassNum.toString()
-              }
-            }
+                classNumber: nextClassNum.toString(),
+                isActive: true,
+              },
+            },
           );
-          
+
           // Update student count
-          existingClass.studentCount = (existingClass.studentCount || 0) + (classDoc.studentCount || 0);
+          existingClass.studentCount = await User.countDocuments({
+            role: 'student',
+            assignedClass: existingClass._id,
+          });
           await existingClass.save();
-          
+
           // Delete the old class
           await Class.findByIdAndDelete(classDoc._id);
-          
+
           promotedClasses.push({
             id: classDoc._id.toString(),
             oldName: oldName,
@@ -3151,58 +3164,81 @@ export const promoteClasses = async (req, res) => {
             newName: existingClass.name,
             newClassNumber: nextClassNumStr,
             section: classDoc.section,
-            merged: true
+            merged: true,
+            studentsMoved: mergeResult.modifiedCount,
           });
         } else {
           // Update class to new number
           classDoc.classNumber = nextClassNumStr;
           classDoc.name = `Class ${nextClassNumStr}${classDoc.section || ''}`;
-          classDoc.description = classDoc.description 
+          classDoc.description = classDoc.description
             ? `${classDoc.description} - Promoted from Class ${oldClassNumber}`
             : `Promoted from Class ${oldClassNumber}`;
           await classDoc.save();
-          
+
           // Update all students in this class
-          await User.updateMany(
-            { assignedClass: classDoc._id },
-            { 
-              $set: { 
-                classNumber: nextClassNumStr
-              }
-            }
+          const moveResult = await User.updateMany(
+            { assignedClass: classDoc._id, role: 'student' },
+            {
+              $set: {
+                classNumber: nextClassNumStr,
+                isActive: true,
+              },
+            },
           );
-          
+
           promotedClasses.push({
             id: classDoc._id,
             oldName: oldName,
-            newName: classDoc.name
+            oldClassNumber: oldClassNumber,
+            newName: classDoc.name,
+            newClassNumber: nextClassNumStr,
+            section: classDoc.section,
+            merged: false,
+            studentsMoved: moveResult.modifiedCount,
           });
         }
       }
     }
-    
+
+    const studentsMoved = [...promotedClasses, ...finishedClasses].reduce(
+      (sum, row) => sum + (Number(row.studentsMoved) || 0),
+      0,
+    );
+
     console.log('Classes promoted successfully:', {
       promotedCount: promotedClasses.length,
       finishedCount: finishedClasses.length,
-      adminId: adminId
+      studentsMoved,
+      adminId: adminId,
     });
-    
+
+    req.setAudit?.({
+      action: 'class.promote',
+      summary: `Promoted ${promotedClasses.length} class(es), finished ${finishedClasses.length}, moved ${studentsMoved} student(s)`,
+      meta: { promotedClasses, finishedClasses, studentsMoved },
+    });
+
     res.json({
       success: true,
-      message: `Successfully promoted ${promotedClasses.length} class(es)${finishedClasses.length > 0 ? ` and marked ${finishedClasses.length} as finished` : ''}`,
+      message:
+        `Promoted ${promotedClasses.length} class(es)` +
+        (finishedClasses.length ? `, finished ${finishedClasses.length}` : '') +
+        `. ${studentsMoved} student(s) moved — they stay in Students (use filter "All" or the new class / Finished).`,
       promotedCount: promotedClasses.length,
       finishedCount: finishedClasses.length,
+      studentsMoved,
       promotedClasses,
-      finishedClasses
+      finishedClasses,
     });
   } catch (error) {
     console.error('Promote classes error:', error);
     console.error('Promote classes error stack:', error.stack);
-    
-    res.status(500).json({ 
-      success: false, 
+
+    res.status(500).json({
+      success: false,
       message: 'Failed to promote classes',
-      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined,
     });
   }
 };
@@ -3879,6 +3915,26 @@ export const uploadStudentsCsv = async (req, res) => {
       req.file.originalname,
       adminId
     );
+
+    const createdCount = Array.isArray(result.createdUsers) ? result.createdUsers.length : 0;
+    const updatedCount = Array.isArray(result.updatedUsers) ? result.updatedUsers.length : 0;
+    const errorCount = Array.isArray(result.errors) ? result.errors.length : 0;
+
+    req.setAudit?.({
+      action: 'student.upload',
+      summary: `Student CSV upload: created ${createdCount}, updated ${updatedCount}, errors ${errorCount}`,
+      meta: { createdCount, updatedCount, errorCount },
+    });
+
+    if (!result.ok) {
+      return res.status(400).json({
+        success: false,
+        message:
+          result.message ||
+          'No students were created or updated. Fix the errors (often duplicate emails used by another school) and upload again.',
+        ...result,
+      });
+    }
 
     res.json({
       success: true,

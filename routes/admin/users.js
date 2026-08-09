@@ -206,9 +206,28 @@ router.delete('/users/delete-all', async (req, res) => {
       });
     }
 
+    const confirm = String(req.body?.confirm || req.query.confirm || '').trim().toUpperCase();
+    if (confirm !== 'DELETE ALL') {
+      return res.status(400).json({
+        message:
+          'Refusing to wipe students. Send JSON body { "confirm": "DELETE ALL" } to permanently delete every student in this school.',
+      });
+    }
+
+    const before = await User.countDocuments({
+      role: 'student',
+      assignedAdmin: tenantAdminId,
+    });
+
     const result = await User.deleteMany({
       role: 'student',
       assignedAdmin: tenantAdminId,
+    });
+
+    req.setAudit?.({
+      action: 'student.delete_all',
+      summary: `Deleted all students in school (${result.deletedCount})`,
+      meta: { deletedCount: result.deletedCount, before },
     });
     
     res.json({ 
