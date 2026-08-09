@@ -483,7 +483,7 @@ router.get('/weak-subject-content', async (req, res) => {
     });
 
     const { resolveStudentClassNumber, filterContentsForStudentClass } = await import(
-      '../utils/studentClassContent.js'
+      '../../utils/studentClassContent.js'
     );
     const weakStudentClassNumber = resolveStudentClassNumber(student, studentClassDoc);
     filtered = filterContentsForStudentClass(

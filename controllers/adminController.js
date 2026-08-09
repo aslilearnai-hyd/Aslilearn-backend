@@ -26,6 +26,7 @@ import {
   parseClassAndSection,
 } from '../services/studentCsvImport.js';
 import { normalizePhoneTenDigits, assertWithinAccountSeats, getAccountSeatUsage } from '../services/schoolService.js';
+import { normalizeStudentLoginEmail } from '../utils/studentLoginEmail.js';
 import {
   formatAdminSubject,
   syncSubjectClassIds,
@@ -348,10 +349,13 @@ export const createStudent = async (req, res) => {
     }
     
     const plainPassword = String(password || '').trim();
-    if (!fullName || !email || !classNumber) {
+    const emailNorm = normalizeStudentLoginEmail(email);
+    if (!fullName || !emailNorm || !classNumber) {
       return res.status(400).json({
         success: false,
-        message: 'Full name, email, and class number are required',
+        message:
+          'Full name, email (or student id), and class number are required. ' +
+          'Student ids like 1724 are saved as 1724@example.com for login.',
       });
     }
     if (!plainPassword || plainPassword.length < 6) {
@@ -418,7 +422,7 @@ export const createStudent = async (req, res) => {
     }
     
     // Check if student already exists
-    const existingStudent = await User.findOne({ email });
+    const existingStudent = await User.findOne({ email: emailNorm });
     if (existingStudent) {
       return res.status(400).json({ 
         success: false, 
@@ -447,7 +451,7 @@ export const createStudent = async (req, res) => {
     }
 
     const newStudent = new User({
-      email: email.toLowerCase().trim(),
+      email: emailNorm,
       password: hashedPassword,
       fullName: String(fullName).trim(),
       classNumber: parsedClass || String(classNumber).trim(),
@@ -464,7 +468,9 @@ export const createStudent = async (req, res) => {
     
     res.status(201).json({
       success: true,
-      message: 'Student created successfully',
+      message: emailNorm !== String(email || '').trim().toLowerCase()
+        ? `Student created successfully. Login email: ${emailNorm}`
+        : 'Student created successfully',
       data: {
         id: newStudent._id,
         email: newStudent.email,

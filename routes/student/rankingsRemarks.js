@@ -124,7 +124,7 @@ async function getStudentSubjectsHandler(req, res) {
     // Individual (B2C) students have no school admin — resolve catalog by class + board + interests
     if (!student.assignedAdmin && student.isIndividualAccount) {
       const { resolveIndividualCatalogSubjectDocs } = await import(
-        '../utils/individualCatalogSubjects.js'
+        '../../utils/individualCatalogSubjects.js'
       );
       const { filterToActiveCatalogSubjectIds } = await import('../../utils/activeCatalog.js');
       let subjectDocs = await resolveIndividualCatalogSubjectDocs(student);

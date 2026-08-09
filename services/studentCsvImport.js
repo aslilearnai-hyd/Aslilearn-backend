@@ -5,12 +5,34 @@ import Class from '../models/Class.js';
 import { cleanCsvCell } from '../utils/csv-encoding.js';
 import { spreadsheetBufferToCsv } from '../utils/spreadsheet-to-csv.js';
 import { normalizePhoneTenDigits } from './schoolService.js';
+import {
+  normalizeStudentLoginEmail,
+  resolveStudentEmailFromCsvRow,
+} from '../utils/studentLoginEmail.js';
 
 const HEADER_ALIASES = {
   classnumb: 'classnumber',
   class: 'classnumber',
   sec: 'section',
   pwd: 'password',
+  studentid: 'studentid',
+  student_id: 'studentid',
+  'student id': 'studentid',
+  admission: 'studentid',
+  admissionno: 'studentid',
+  admissionnumber: 'studentid',
+  admission_no: 'studentid',
+  roll: 'studentid',
+  rollno: 'studentid',
+  rollnumber: 'studentid',
+  loginid: 'studentid',
+  userid: 'studentid',
+  username: 'studentid',
+  // Excel often leaves id columns untitled
+  '': 'studentid',
+  __empty: 'studentid',
+  'unnamed: 1': 'studentid',
+  'unnamed:1': 'studentid',
 };
 
 export function parseCSVLine(line) {
@@ -151,9 +173,15 @@ export async function processStudentCsvUpload(fileBuffer, originalName, adminId)
   }
 
   const headers = parseCSVLine(lines[0]).map((h) => normalizeCsvHeader(h));
-  const missingHeaders = ['name', 'email', 'password'].filter((h) => !headers.includes(h));
+  const missingHeaders = ['name', 'password'].filter((h) => !headers.includes(h));
   if (missingHeaders.length > 0) {
     throw new Error(`Missing required headers: ${missingHeaders.join(', ')}`);
+  }
+  if (!headers.includes('email') && !headers.includes('studentid')) {
+    throw new Error(
+      'Missing login id column: include "email" and/or "studentid". ' +
+        'Bare ids like 1724 are saved as 1724@example.com for login.',
+    );
   }
 
   if (!headers.includes('classnumber')) {
@@ -192,13 +220,15 @@ export async function processStudentCsvUpload(fileBuffer, originalName, adminId)
       });
 
       const name = String(row.name || '').trim();
-      const email = String(row.email || '')
-        .trim()
-        .toLowerCase();
+      // Bare ids (1724) → 1724@example.com; blank email can use studentid / admission columns
+      const email = resolveStudentEmailFromCsvRow(row) || normalizeStudentLoginEmail(row.email);
       const plainPassword = String(row.password || '').trim();
 
       if (!name || !email) {
-        errors.push(`Row ${i + 1}: name and email are required`);
+        errors.push(
+          `Row ${i + 1}: name and email (or student id) are required. ` +
+            `Use a full email, or a student id like 1724 (saved as 1724@example.com).`,
+        );
         continue;
       }
 
