@@ -1053,20 +1053,30 @@ export const createAdmin = async (req, res) => {
       });
     }
 
-    // Check if admin already exists (including soft-deleted or inactive ones)
-    const existingAdmin = await User.findOne({ email: email.toLowerCase().trim() });
+    // Never auto-delete an existing user to "free" an email — that wiped students/teachers before.
+    const emailLower = email.toLowerCase().trim();
+    const existingAdmin = await User.findOne({ email: emailLower });
     if (existingAdmin) {
-      // If the existing admin is inactive or was deleted, we can remove it first
-      if (!existingAdmin.isActive || existingAdmin.role !== 'admin') {
-        console.log(`Found inactive/deleted admin with email ${email}, removing it first...`);
-        await User.deleteOne({ _id: existingAdmin._id });
-      } else {
-        return res.status(400).json({ 
-          success: false, 
+      if (existingAdmin.role === 'admin' && existingAdmin.isActive !== false) {
+        return res.status(400).json({
+          success: false,
           message: 'Admin with this email already exists',
-          hint: 'If you deleted this school, please wait a moment and try again'
+          hint: 'Update the existing school instead of creating a new one. Do not delete and recreate — that removes students.',
         });
       }
+      if (existingAdmin.role === 'admin' && existingAdmin.isActive === false) {
+        return res.status(409).json({
+          success: false,
+          message: 'An inactive school admin already uses this email',
+          hint: 'Reactivate that school from Super Admin (set Active), or use a different admin email. Recreating after delete is blocked to protect student data.',
+          existingAdminId: String(existingAdmin._id),
+        });
+      }
+      return res.status(400).json({
+        success: false,
+        message: `Email is already used by a ${existingAdmin.role || 'user'} account`,
+        hint: 'Choose a different admin login email. Existing accounts are never deleted automatically.',
+      });
     }
     
     const hashedPassword = await bcrypt.hash(plainPassword, 12);
@@ -1079,7 +1089,7 @@ export const createAdmin = async (req, res) => {
 
     const newAdmin = new User({
       fullName: name.trim(),
-      email: email.toLowerCase().trim(),
+      email: emailLower,
       password: hashedPassword,
       role: 'admin',
       permissions: permissions || [],
@@ -1098,6 +1108,18 @@ export const createAdmin = async (req, res) => {
       adminId: newAdmin._id,
       email: newAdmin.email,
       schoolName: school.name,
+    });
+
+    req.setAudit?.({
+      action: 'school.create',
+      summary: `Created school ${school.name} (admin ${newAdmin.email})`,
+      target: {
+        type: 'school',
+        id: String(school._id),
+        label: school.name,
+        email: newAdmin.email,
+      },
+      meta: { adminId: String(newAdmin._id) },
     });
 
     res.json({
@@ -1363,7 +1385,9 @@ export const updateAdmin = async (req, res) => {
   }
 };
 
-// Delete Admin (School) - Cascading deletion
+// Delete / deactivate school admin.
+// Default = soft deactivate (keeps students/teachers/classes).
+// Hard wipe only with ?hard=1 and body.confirmEmail matching the admin email.
 export const deleteAdmin = async (req, res) => {
   try {
     const paramId = req.params.id;
@@ -1375,8 +1399,68 @@ export const deleteAdmin = async (req, res) => {
 
     const adminId = admin?._id?.toString() || school?.adminUserId?.toString();
     const adminEmail = admin?.email || school?.name || 'unknown';
+    const hard =
+      String(req.query.hard || req.body?.hard || '').toLowerCase() === '1' ||
+      req.body?.hardDelete === true ||
+      String(req.body?.mode || '').toLowerCase() === 'hard';
+
+    const studentCount = adminId
+      ? await User.countDocuments({ role: 'student', assignedAdmin: adminId })
+      : 0;
+    const teacherCount = adminId
+      ? await (await import('../models/Teacher.js')).default.countDocuments({ adminId })
+      : 0;
+
+    // Soft deactivate by default — preserves all school data
+    if (!hard) {
+      if (adminId) {
+        await User.findByIdAndUpdate(adminId, { $set: { isActive: false } });
+      }
+      if (school?._id) {
+        await School.findByIdAndUpdate(school._id, { $set: { isActive: false } });
+      } else if (adminId) {
+        await School.updateMany({ adminUserId: adminId }, { $set: { isActive: false } });
+      }
+
+      req.setAudit?.({
+        action: 'school.deactivate',
+        summary: `Deactivated school ${school?.name || adminEmail} (students preserved: ${studentCount})`,
+        target: {
+          type: 'school',
+          id: String(school?._id || adminId || ''),
+          label: school?.name || adminEmail,
+          email: admin?.email || null,
+        },
+        meta: { soft: true, studentCount, teacherCount, adminId },
+      });
+
+      return res.json({
+        success: true,
+        soft: true,
+        message:
+          `School deactivated. ${studentCount} student(s) and ${teacherCount} teacher(s) were kept. ` +
+          `Reactivate from Super Admin instead of creating a new school with the same email.`,
+        deletedEmail: null,
+        preserved: { students: studentCount, teachers: teacherCount },
+      });
+    }
+
+    const confirmEmail = String(req.body?.confirmEmail || req.query.confirmEmail || '')
+      .trim()
+      .toLowerCase();
+    if (!admin?.email || confirmEmail !== String(admin.email).toLowerCase()) {
+      return res.status(400).json({
+        success: false,
+        message:
+          `Hard delete blocked. Send confirmEmail=${admin?.email || 'admin-email'} and hard=1 to permanently wipe ` +
+          `${studentCount} student(s) and ${teacherCount} teacher(s). Prefer soft deactivate (default DELETE).`,
+        studentCount,
+        teacherCount,
+      });
+    }
+
     console.log(
-      `🗑️ Starting deletion of school: ${adminEmail} (param: ${paramId}, admin: ${adminId || 'none'}, school: ${school?._id || 'none'})`
+      `🗑️ HARD deletion of school: ${adminEmail} (param: ${paramId}, admin: ${adminId || 'none'}, school: ${school?._id || 'none'}, students: ${studentCount})`
     );
 
     if (!adminId) {
@@ -1407,7 +1491,7 @@ export const deleteAdmin = async (req, res) => {
     // Delete all related data in parallel
     const deletionResults = await Promise.all([
       // Delete all students assigned to this admin
-      User.deleteMany({ assignedAdmin: adminId }),
+      User.deleteMany({ role: 'student', assignedAdmin: adminId }),
       // Delete all teachers assigned to this admin
       Teacher.deleteMany({ adminId }),
       // Delete all videos created by this admin
@@ -1449,11 +1533,28 @@ export const deleteAdmin = async (req, res) => {
       await User.deleteOne({ email: adminEmail.toLowerCase() });
     }
     
-    console.log(`✅ Successfully deleted school (admin) ${adminId} (${adminEmail}) and all associated data`);
+    console.log(`✅ Successfully HARD-deleted school (admin) ${adminId} (${adminEmail}) and all associated data`);
     console.log(`   Deleted: ${deletionResults[0].deletedCount} students, ${deletionResults[1].deletedCount} teachers, ${deletionResults[2].deletedCount} videos`);
+
+    req.setAudit?.({
+      action: 'school.delete.hard',
+      summary: `HARD-deleted school ${school?.name || adminEmail} (${deletionResults[0].deletedCount} students wiped)`,
+      target: {
+        type: 'school',
+        id: String(school?._id || adminId),
+        label: school?.name || adminEmail,
+        email: adminEmail,
+      },
+      meta: {
+        hard: true,
+        studentsDeleted: deletionResults[0].deletedCount,
+        teachersDeleted: deletionResults[1].deletedCount,
+      },
+    });
     
     res.json({
       success: true,
+      hard: true,
       message: 'School and all associated data (students, teachers, exams, results, content) deleted successfully',
       deletedEmail: adminEmail // Return email so frontend knows it can be reused
     });

@@ -166,6 +166,7 @@ export async function processStudentCsvUpload(fileBuffer, originalName, adminId)
 
   const validAdminId = new mongoose.Types.ObjectId(String(adminId));
   const createdUsers = [];
+  const updatedUsers = [];
   const errors = [];
   const createdClasses = new Map();
 
@@ -206,12 +207,6 @@ export async function processStudentCsvUpload(fileBuffer, originalName, adminId)
         continue;
       }
 
-      const existingUser = await User.findOne({ email });
-      if (existingUser) {
-        errors.push(`Row ${i + 1}: User with email ${email} already exists`);
-        continue;
-      }
-
       const classValue = row.classnumber || row.class || '';
       const { classNumber, section } = parseClassAndSection(classValue, row.section);
 
@@ -233,9 +228,62 @@ export async function processStudentCsvUpload(fileBuffer, originalName, adminId)
         }
       }
 
-      const hashedPassword = await bcrypt.hash(plainPassword, 12);
       const resolvedClassNumber = assignedClass?.classNumber || classNumber || 'Unassigned';
       const resolvedSection = assignedClass?.section || section || '';
+      const hashedPassword = await bcrypt.hash(plainPassword, 12);
+
+      const existingUser = await User.findOne({ email });
+      if (existingUser) {
+        const sameSchoolStudent =
+          existingUser.role === 'student' &&
+          existingUser.assignedAdmin &&
+          String(existingUser.assignedAdmin) === String(validAdminId);
+
+        if (sameSchoolStudent) {
+          existingUser.fullName = name;
+          existingUser.password = hashedPassword;
+          existingUser.classNumber = resolvedClassNumber;
+          existingUser.phone = normalizePhoneTenDigits(row.phone);
+          existingUser.assignedClass = assignedClass?._id || existingUser.assignedClass || null;
+          existingUser.board = admin.board;
+          existingUser.schoolName = admin.schoolName || existingUser.schoolName || '';
+          existingUser.isActive = true;
+          await existingUser.save();
+          updatedUsers.push({
+            id: existingUser._id.toString(),
+            name: existingUser.fullName,
+            email: existingUser.email,
+            classNumber: resolvedClassNumber,
+            section: resolvedSection,
+            assignedClass: assignedClass?._id ? String(assignedClass._id) : null,
+            class: assignedClass
+              ? `${resolvedClassNumber}-${resolvedSection}`
+              : 'Unassigned',
+            classLabel: assignedClass
+              ? `${resolvedClassNumber}-${resolvedSection}`
+              : resolvedClassNumber || 'Unassigned',
+            updated: true,
+          });
+          continue;
+        }
+
+        let ownerHint = `a ${existingUser.role || 'user'} account`;
+        if (existingUser.role === 'student' && existingUser.assignedAdmin) {
+          const ownerAdmin = await User.findById(existingUser.assignedAdmin)
+            .select('schoolName email')
+            .lean();
+          ownerHint = ownerAdmin?.schoolName
+            ? `another school (${ownerAdmin.schoolName})`
+            : `another school admin (${ownerAdmin?.email || existingUser.assignedAdmin})`;
+        } else if (existingUser.schoolName) {
+          ownerHint = `${existingUser.role} at ${existingUser.schoolName}`;
+        }
+        errors.push(
+          `Row ${i + 1}: Email ${email} already exists on ${ownerHint}. ` +
+            `Emails must be unique across the whole platform — use school-specific emails (e.g. 1139.ushodaya@student.com).`
+        );
+        continue;
+      }
 
       const newUser = await User.create({
         fullName: name,
@@ -271,7 +319,10 @@ export async function processStudentCsvUpload(fileBuffer, originalName, adminId)
   }
 
   const classesCreated = createdClasses.size;
-  let message = `Created ${createdUsers.length} student(s).`;
+  const touched = createdUsers.length + updatedUsers.length;
+  let message = `Created ${createdUsers.length} student(s)`;
+  if (updatedUsers.length) message += `, updated ${updatedUsers.length} existing`;
+  message += '.';
   if (classesCreated > 0) {
     message += ` Created or linked ${classesCreated} class section(s).`;
   }
@@ -280,8 +331,10 @@ export async function processStudentCsvUpload(fileBuffer, originalName, adminId)
   }
 
   return {
+    ok: touched > 0,
     message,
     createdUsers,
+    updatedUsers,
     classesCreated,
     errors: errors.length > 0 ? errors : undefined,
   };
