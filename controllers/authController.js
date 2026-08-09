@@ -17,6 +17,10 @@ import {
 } from '../utils/vidyaSchoolAccess.js';
 import User from '../models/User.js';
 import Teacher from '../models/Teacher.js';
+import {
+  studentLoginEmailCandidates,
+  normalizeStudentLoginEmail,
+} from '../utils/studentLoginEmail.js';
 
 export async function logout(req, res) {
   // Clear cookies and revoke opaque refresh so body/cookie reuse fails after logout.
@@ -630,17 +634,22 @@ export async function login(req, res) {
       return res.status(400).json({ message: 'Invalid request body' });
     }
     
-    const email = String(req.body.email || '').trim();
+    const emailRaw = String(req.body.email || '').trim();
     const password = String(req.body.password || '').trim();
     
-    if (!email || !password) {
+    if (!emailRaw || !password) {
       return res.status(400).json({ message: 'Email and password are required' });
     }
+
+    const emailCandidates = studentLoginEmailCandidates(emailRaw);
     
     // Authenticate against DB only (no hardcoded credential backdoors)
     let teacher = null;
     try {
-      teacher = await Teacher.findOne({ email: email.toLowerCase() });
+      for (const candidate of emailCandidates) {
+        teacher = await Teacher.findOne({ email: candidate });
+        if (teacher) break;
+      }
     } catch (teacherError) {
       console.error('Error querying Teacher model:', teacherError);
       // Continue to user check if teacher query fails
@@ -733,10 +742,13 @@ export async function login(req, res) {
       }
     }
 
-    // Regular user authentication
+    // Regular user authentication (supports bare student ids + @example.com)
     let user = null;
     try {
-      user = await User.findOne({ email: email.toLowerCase() });
+      for (const candidate of emailCandidates) {
+        user = await User.findOne({ email: candidate });
+        if (user) break;
+      }
     } catch (userError) {
       console.error('Error querying User model:', userError);
       throw userError; // Re-throw if User query fails
@@ -756,6 +768,18 @@ export async function login(req, res) {
         success: false,
         message: 'Invalid credentials'
       });
+    }
+
+    // Upgrade legacy bare-id emails (e.g. "1724") to 1724@example.com once
+    if (user.role === 'student' && user.email && !String(user.email).includes('@')) {
+      const upgraded = normalizeStudentLoginEmail(user.email);
+      if (upgraded && upgraded !== user.email) {
+        const clash = await User.findOne({ email: upgraded, _id: { $ne: user._id } });
+        if (!clash) {
+          user.email = upgraded;
+          await user.save();
+        }
+      }
     }
     
     if (!user.isActive) {

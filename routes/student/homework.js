@@ -128,7 +128,7 @@ router.post('/homework-submission', async (req, res) => {
     let allowedSubjectIds = [];
     if (student.isIndividualAccount && !student.assignedAdmin) {
       const { resolveIndividualCatalogSubjectIds } = await import(
-        '../utils/individualCatalogSubjects.js'
+        '../../utils/individualCatalogSubjects.js'
       );
       allowedSubjectIds = await resolveIndividualCatalogSubjectIds(student);
     } else {
