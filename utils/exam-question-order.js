@@ -23,6 +23,96 @@ export function resolveQuestionSectionHeading(question) {
   return subjectSectionLabel(question?.subject);
 }
 
+function hashSeed(str) {
+  let h = 2166136261;
+  const s = String(str || '');
+  for (let i = 0; i < s.length; i += 1) {
+    h ^= s.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return h >>> 0;
+}
+
+function mulberry32(seed) {
+  let a = seed >>> 0;
+  return () => {
+    a = (a + 0x6d2b79f5) >>> 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+/** Deterministic Fisher–Yates shuffle (same seed → same order). */
+export function seededShuffle(items, seedStr) {
+  const arr = Array.isArray(items) ? [...items] : [];
+  if (arr.length <= 1) return arr;
+  const rng = mulberry32(hashSeed(seedStr));
+  for (let i = arr.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(rng() * (i + 1));
+    const tmp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = tmp;
+  }
+  return arr;
+}
+
+function sharedMatterGroupKey(q) {
+  const kind = String(q?.sharedMatterKind || '').trim().toLowerCase();
+  const text = String(q?.sharedMatterText || '').trim();
+  if (!kind && !text) return null;
+  return `${kind}::${text.slice(0, 120)}`;
+}
+
+/**
+ * Group contiguous shared-matter / passage questions, then shuffle those groups.
+ */
+function shufflePreservingSharedMatter(questions, seedStr) {
+  const list = Array.isArray(questions) ? questions : [];
+  if (list.length <= 1) return list;
+
+  const groups = [];
+  let current = null;
+  for (const q of list) {
+    const key = sharedMatterGroupKey(q);
+    if (key && current && current.key === key) {
+      current.items.push(q);
+    } else {
+      current = { key: key || `solo:${String(q?._id || groups.length)}`, items: [q] };
+      groups.push(current);
+    }
+  }
+
+  return seededShuffle(groups, seedStr).flatMap((g) => g.items);
+}
+
+/**
+ * Per-student jumble: different order per student, stable for the same student+exam.
+ * Keeps subject / section blocks in their paper order; shuffles within each block
+ * so Maths stays before Physics, etc. Shared-matter passages stay contiguous.
+ */
+export function shuffleQuestionsForStudent(questions, { examId, userId } = {}) {
+  const list = Array.isArray(questions) ? questions : [];
+  if (list.length <= 1) return list;
+  const baseSeed = `exam:${String(examId || '')}:user:${String(userId || '')}`;
+
+  const sections = [];
+  let currentSection = null;
+  for (const q of list) {
+    const sectionKey = resolveQuestionSectionHeading(q);
+    if (currentSection && currentSection.key === sectionKey) {
+      currentSection.items.push(q);
+    } else {
+      currentSection = { key: sectionKey, items: [q] };
+      sections.push(currentSection);
+    }
+  }
+
+  return sections.flatMap((section, sectionIndex) =>
+    shufflePreservingSharedMatter(section.items, `${baseSeed}:section:${sectionIndex}:${section.key}`)
+  );
+}
+
 /**
  * Next displayOrder for a new question on an exam (max existing + 1).
  * @param {import('mongoose').Model} QuestionModel
