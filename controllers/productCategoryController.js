@@ -165,23 +165,26 @@ export async function updateProductCategory(req, res) {
   }
 }
 
-/** DELETE /api/super-admin/product-categories/:id — soft-deactivate (built-in cannot delete). */
+/** DELETE /api/super-admin/product-categories/:id — permanent delete.
+ *  Active built-in Alpha/Beta/Gamma/Delta cannot be removed.
+ *  Soft-deactivated leftovers (and all custom tracks) are removed from the DB.
+ */
 export async function deleteProductCategory(req, res) {
   try {
     const row = await ProductCategory.findById(req.params.id);
     if (!row) {
       return res.status(404).json({ success: false, message: 'Category not found' });
     }
-    if (row.isBuiltIn) {
+    if (row.isBuiltIn && row.isActive !== false) {
       return res.status(400).json({
         success: false,
-        message: 'Built-in categories (Alpha / Beta / Gamma) cannot be deleted. You can deactivate them instead.',
+        message: 'Built-in categories (Alpha / Beta / Gamma / Delta) cannot be deleted.',
       });
     }
-    row.isActive = false;
-    await row.save();
+    const label = row.label || row.code;
+    await ProductCategory.deleteOne({ _id: row._id });
     invalidateProductCategoryCache();
-    res.json({ success: true, message: `${row.label} deactivated` });
+    res.json({ success: true, message: `${label} deleted` });
   } catch (error) {
     console.error('deleteProductCategory:', error);
     res.status(500).json({ success: false, message: 'Failed to delete category' });
