@@ -52,12 +52,14 @@ function toolNameAvailabilityFilter(toolName) {
 export async function listTopicsWithContent({ classDisplay, subject, toolName } = {}) {
   if (!classDisplay || !subject) return [];
   try {
-    const topics = await AiToolGeneration.distinct('topic', {
+    const filter = {
       classLabel: classDisplay,
       subject: subjectFilterForDb(subject),
       $or: VALID_AI_TOOL_CONTENT_OR,
       ...(toolName ? toolNameAvailabilityFilter(toolName) : {}),
-    });
+    };
+    // Prefer distinct over topic with a lean filter — compound indexes cover class/subject/tool.
+    const topics = await AiToolGeneration.distinct('topic', filter).maxTimeMS(8_000);
     return topics.map((t) => String(t || '').trim()).filter(Boolean);
   } catch (error) {
     console.warn('[AI_TOOL_AVAILABILITY] lookup failed:', error?.message || error);

@@ -289,13 +289,26 @@ export async function resolveAiToolTopicTaxonomy(params = {}) {
       } = await import('../../services/hardcoded-content-service.js');
 
       if (!subject) {
-        const subjects = await getSubjectsForClass(classKey);
-        formatted.subjects = mergeUniqueChapterLabels(formatted.subjects, subjects);
+        // IIT boards: never union CBSE Class 7–10 subjects (Social Science, languages, etc.)
+        if (isIitBoard) {
+          const iitSubjects = await getSubjectsForClass('IIT-6');
+          formatted.subjects = mergeUniqueChapterLabels(formatted.subjects, iitSubjects);
+        } else {
+          const subjects = await getSubjectsForClass(classKey);
+          formatted.subjects = mergeUniqueChapterLabels(formatted.subjects, subjects);
+        }
       } else if (topicName) {
-        const subs = await getSubtopicsForChapter(classKey, subject, topicName);
+        const subs = await getSubtopicsForChapter(
+          isIitBoard ? 'IIT-6' : classKey,
+          subject,
+          topicName,
+        );
         formatted.subTopics = mergeUniqueChapterLabels(formatted.subTopics, subs);
       } else {
-        const chapters = await getChaptersForSubject(classKey, subject);
+        const chapters = await getChaptersForSubject(
+          isIitBoard ? 'IIT-6' : classKey,
+          subject,
+        );
         const chapterNames = chapters
           .map((row) => String(row?.chapterName || '').trim())
           .filter(Boolean);

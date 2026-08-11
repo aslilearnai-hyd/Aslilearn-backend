@@ -15,6 +15,8 @@ import ExamResult from '../models/ExamResult.js';
 import IQRankQuizResult from '../models/IQRankQuizResult.js';
 import HomeworkSubmission from '../models/HomeworkSubmission.js';
 import StudentVideoChapterProgress from '../models/StudentVideoChapterProgress.js';
+import OmrResultRow from '../models/OmrResultRow.js';
+import OmrResultBatch from '../models/OmrResultBatch.js';
 import WeeklyImpactSnapshot from '../models/WeeklyImpactSnapshot.js';
 import WeeklyDigest from '../models/WeeklyDigest.js';
 
@@ -1080,6 +1082,7 @@ export async function computeStudentWeeklyTracking(student, weekStart, weekEnd) 
     aiToolOpens,
     earliestSession,
     lifetimeSessions,
+    omrRows,
   ] = await Promise.all([
     sessionStatsForUsers([sid], weekStart, weekEnd),
     vidyaStatsForUsers([sid], weekStart, weekEnd),
@@ -1148,6 +1151,19 @@ export async function computeStudentWeeklyTracking(student, weekStart, weekEnd) 
     ]),
     UserSession.findOne({ userId: sid }).sort({ date: 1 }).select('date startTime').lean().catch(() => null),
     UserSession.countDocuments({ userId: sid }).catch(() => 0),
+    OmrResultRow.find({
+      userId: sid,
+      $or: [
+        { assignedAt: { $gte: weekStart, $lte: weekEnd } },
+        { createdAt: { $gte: weekStart, $lte: weekEnd } },
+        { updatedAt: { $gte: weekStart, $lte: weekEnd } },
+      ],
+    })
+      .select('batchId percentage totalMarks correct wrong left attempted testRank finalRank createdAt assignedAt')
+      .sort({ assignedAt: -1, createdAt: -1 })
+      .limit(12)
+      .lean()
+      .catch(() => []),
   ]);
 
   const mine = sessions.byUser.get(sidStr) || { sessions: 0, minutes: 0, activeDays: 0 };
@@ -1214,6 +1230,42 @@ export async function computeStudentWeeklyTracking(student, weekStart, weekEnd) 
     completedAt: r.completedAt || r.createdAt || null,
   }));
 
+  const omrBatchIds = [...new Set((omrRows || []).map((r) => String(r.batchId || '')).filter(Boolean))];
+  const omrBatches =
+    omrBatchIds.length > 0
+      ? await OmrResultBatch.find({ _id: { $in: omrBatchIds } })
+          .select('_id testTitle testNo testDate')
+          .lean()
+          .catch(() => [])
+      : [];
+  const omrBatchById = new Map(omrBatches.map((b) => [String(b._id), b]));
+  const omrResults = (omrRows || []).map((r) => {
+    const batch = omrBatchById.get(String(r.batchId || ''));
+    return {
+      title: batch?.testTitle || batch?.testNo || 'OMR test',
+      percentage: Math.round((Number(r.percentage) || 0) * 10) / 10,
+      totalMarks: r.totalMarks,
+      correct: r.correct,
+      wrong: r.wrong,
+      left: r.left,
+      rank: r.finalRank ?? r.testRank ?? null,
+      completedAt: r.assignedAt || r.createdAt || null,
+    };
+  });
+  const omrAttempts = omrResults.length;
+  const omrAvgPct =
+    omrAttempts > 0
+      ? Math.round(
+          (omrResults.reduce((s, r) => s + (Number(r.percentage) || 0), 0) / omrAttempts) * 10,
+        ) / 10
+      : 0;
+  const omrBestPct =
+    omrAttempts > 0 ? Math.max(...omrResults.map((r) => Number(r.percentage) || 0)) : 0;
+  const omrBestRank = (() => {
+    const ranks = omrResults.map((r) => Number(r.rank)).filter((x) => Number.isFinite(x) && x > 0);
+    return ranks.length ? Math.min(...ranks) : null;
+  })();
+
   return {
     // Adoption
     activationDate,
@@ -1261,6 +1313,13 @@ export async function computeStudentWeeklyTracking(student, weekStart, weekEnd) 
     bestExamPct,
     examQuestionAccuracy,
     exams,
+
+    // OMR results
+    omrAttempts,
+    omrAvgPct,
+    omrBestPct,
+    omrBestRank,
+    omrResults,
   };
 }
 
@@ -1277,6 +1336,13 @@ function studentDigestHighlights(metrics) {
   if (metrics.examAttempts > 0) {
     highlights.push(
       `You wrote ${metrics.examAttempts} exam(s) — avg ${metrics.avgExamPct}% (best ${metrics.bestExamPct}%).`,
+    );
+  }
+  if (metrics.omrAttempts > 0) {
+    const rankBit =
+      metrics.omrBestRank != null ? ` · best rank #${metrics.omrBestRank}` : '';
+    highlights.push(
+      `OMR results this week: ${metrics.omrAttempts} test(s) — avg ${metrics.omrAvgPct}% (best ${metrics.omrBestPct}%)${rankBit}.`,
     );
   }
   if (metrics.aiExplanations > 0) {
