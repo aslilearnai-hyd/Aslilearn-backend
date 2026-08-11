@@ -36,7 +36,7 @@ import {
   generateAdvancedAnalytics,
 } from '../../utils/advancedExamAnalytics.js';
 import { normalizeSchoolBoard, resolveUserDisplayBoard } from '../../constants/boards.js';
-import { QUESTION_LIST_SORT, ensureExamQuestionDisplayOrders } from '../../utils/exam-question-order.js';
+import { QUESTION_LIST_SORT, ensureExamQuestionDisplayOrders, shuffleQuestionsForStudent } from '../../utils/exam-question-order.js';
 import {
   loadExamQuestionBankForResults,
   toPlainExamResultForApi,
@@ -86,7 +86,7 @@ const EXAM_FIGURE_SIGN_TTL_SEC = 8 * 60 * 60;
 
 const router = express.Router();
 
-async function hydrateExamQuestions(examDoc, { hideAnswers = false } = {}) {
+async function hydrateExamQuestions(examDoc, { hideAnswers = false, shuffleForUserId = null } = {}) {
   const examId = examDoc?._id;
   if (!examId) return examDoc;
 
@@ -131,6 +131,16 @@ async function hydrateExamQuestions(examDoc, { hideAnswers = false } = {}) {
   }
 
   let normalizedQuestions = Array.isArray(linkedQuestions) ? linkedQuestions : [];
+
+  // Per-student jumble: different order for each student, stable for the same student
+  // (so autosave/resume keeps the same sequence). Admin/super-admin paper stays canonical.
+  if (hideAnswers && shuffleForUserId) {
+    normalizedQuestions = shuffleQuestionsForStudent(normalizedQuestions, {
+      examId,
+      userId: shuffleForUserId,
+    });
+  }
+
   const normalizedTotalMarks = normalizedQuestions.reduce((sum, q) => sum + (Number(q?.marks) || 0), 0);
 
   // When a student is about to take the exam, never ship the answer key to the
@@ -168,7 +178,8 @@ async function hydrateExamQuestions(examDoc, { hideAnswers = false } = {}) {
     totalMarks:
       normalizedQuestions.length > 0
         ? normalizedTotalMarks
-        : Number(examDoc.totalMarks) || 0
+        : Number(examDoc.totalMarks) || 0,
+    questionsShuffledForStudent: Boolean(hideAnswers && shuffleForUserId),
   };
 }
 
@@ -212,7 +223,12 @@ router.get('/exams', async (req, res) => {
       .lean();
 
     const hydratedExams = await Promise.all(
-      exams.map((exam) => hydrateExamQuestions(exam, { hideAnswers: true }))
+      exams.map((exam) =>
+        hydrateExamQuestions(exam, {
+          hideAnswers: true,
+          shuffleForUserId: req.userId,
+        })
+      )
     );
 
     // Only show exams that:
@@ -317,7 +333,10 @@ router.get('/exams/:examId', async (req, res) => {
       });
     }
 
-    const hydratedExam = await hydrateExamQuestions(exam, { hideAnswers: true });
+    const hydratedExam = await hydrateExamQuestions(exam, {
+      hideAnswers: true,
+      shuffleForUserId: req.userId,
+    });
 
     if (!Array.isArray(hydratedExam?.questions) || hydratedExam.questions.length === 0) {
       return res.status(404).json({
