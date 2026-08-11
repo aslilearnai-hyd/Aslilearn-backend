@@ -79,7 +79,7 @@ import {
   resolveStudentContentBoard,
   getStudentAdminId,
 } from './helpers.js';
-import ExamAttemptDraft from '../../models/ExamAttemptDraft.js';
+import ExamAttemptDraft, { MAX_EXAM_RESUMES } from '../../models/ExamAttemptDraft.js';
 
 
 const router = express.Router();
@@ -100,7 +100,9 @@ function draftTimingsToObject(timings) {
 
 function serializeDraft(doc) {
   if (!doc) return null;
-  const plain = typeof doc.toObject === 'function' ? doc.toObject() : doc;
+  const plain =
+    typeof doc.toObject === 'function' ? doc.toObject({ flattenMaps: true }) : doc;
+  const resumeCount = Math.max(0, Number(plain.resumeCount) || 0);
   return {
     examId: String(plain.examId),
     userId: String(plain.userId),
@@ -110,8 +112,12 @@ function serializeDraft(doc) {
     currentQuestionIndex: Number(plain.currentQuestionIndex) || 0,
     remainingSeconds: Math.max(0, Number(plain.remainingSeconds) || 0),
     durationSeconds: Math.max(1, Number(plain.durationSeconds) || 1),
+    resumeCount,
+    maxResumes: MAX_EXAM_RESUMES,
+    resumesRemaining: Math.max(0, MAX_EXAM_RESUMES - resumeCount),
     startedAt: plain.startedAt,
     lastSavedAt: plain.lastSavedAt,
+    lastResumedAt: plain.lastResumedAt || null,
     status: plain.status || 'in_progress',
   };
 }
@@ -125,7 +131,9 @@ router.get('/exams/:examId/attempt-draft', async (req, res) => {
     }
 
     const ExamResult = (await import('../../models/ExamResult.js')).default;
-    const examDoc = await Exam.findById(examId).select('maxAttempts isActive createdByRole').lean();
+    const examDoc = await Exam.findById(examId)
+      .select('maxAttempts isActive createdByRole startDate endDate duration')
+      .lean();
     if (!examDoc || examDoc.isActive === false) {
       return res.status(404).json({ success: false, message: 'Exam not found' });
     }
@@ -144,11 +152,60 @@ router.get('/exams/:examId/attempt-draft', async (req, res) => {
     });
 
     if (!draft) {
-      return res.json({ success: true, data: null });
+      return res.json({ success: true, data: null, maxResumes: MAX_EXAM_RESUMES });
     }
 
-    // Exhausted timer while offline — keep draft so client can auto-submit answers.
-    return res.json({ success: true, data: serializeDraft(draft), resumed: true });
+    // After admin end time: no resume / continue — return draft once for forced submit.
+    const windowStatus = getExamWindowStatus(examDoc, { purpose: 'start' });
+    if (!windowStatus.ok) {
+      const ended = /ended/i.test(String(windowStatus.message || ''));
+      return res.json({
+        success: true,
+        data: serializeDraft(draft),
+        resumed: false,
+        examEnded: ended,
+        forceSubmit: true,
+        message: ended
+          ? 'Exam window has ended. Your saved answers will be submitted.'
+          : windowStatus.message,
+      });
+    }
+
+    const currentResumeCount = Math.max(0, Number(draft.resumeCount) || 0);
+    if (currentResumeCount >= MAX_EXAM_RESUMES) {
+      return res.json({
+        success: true,
+        data: serializeDraft(draft),
+        resumed: false,
+        resumeLimitReached: true,
+        forceSubmit: true,
+        maxResumes: MAX_EXAM_RESUMES,
+        message: `Resume limit (${MAX_EXAM_RESUMES}) reached. Your saved answers will be submitted.`,
+      });
+    }
+
+    // Count this reopen as one resume — skip brand-new same-session loads / Strict Mode remounts.
+    const lastResumedMs = draft.lastResumedAt ? new Date(draft.lastResumedAt).getTime() : 0;
+    const anchorMs = new Date(
+      draft.lastResumedAt || draft.lastSavedAt || draft.startedAt || 0,
+    ).getTime();
+    const nowMs = Date.now();
+    const ageMs = Number.isFinite(anchorMs) ? nowMs - anchorMs : Number.POSITIVE_INFINITY;
+    const shouldCountResume =
+      (ageMs > 20000 || currentResumeCount > 0) &&
+      (!Number.isFinite(lastResumedMs) || nowMs - lastResumedMs > 15000);
+    if (shouldCountResume) {
+      draft.resumeCount = currentResumeCount + 1;
+      draft.lastResumedAt = new Date();
+      await draft.save();
+    }
+
+    return res.json({
+      success: true,
+      data: serializeDraft(draft),
+      resumed: true,
+      maxResumes: MAX_EXAM_RESUMES,
+    });
   } catch (error) {
     console.error('GET attempt-draft error:', error);
     res.status(500).json({ success: false, message: 'Failed to load exam draft' });
@@ -171,9 +228,26 @@ router.put('/exams/:examId/attempt-draft', async (req, res) => {
       return res.status(404).json({ success: false, message: 'Exam not found' });
     }
 
-    const windowStatus = getExamWindowStatus(examDoc, { purpose: 'submit' });
+    const existing = await ExamAttemptDraft.findOne({ examId, userId: req.userId }).lean();
+    // New draft = starting an attempt — must be inside the exam window (no resume after end).
+    // Existing draft autosave may use submit grace so an open session can still save.
+    const windowStatus = getExamWindowStatus(examDoc, {
+      purpose: existing ? 'submit' : 'start',
+    });
     if (!windowStatus.ok) {
       return res.status(403).json({ success: false, message: windowStatus.message });
+    }
+
+    if (existing && Math.max(0, Number(existing.resumeCount) || 0) >= MAX_EXAM_RESUMES) {
+      // Allow final autosave only if client is force-submitting; otherwise block continue.
+      if (req.body?.allowAfterResumeLimit !== true) {
+        return res.status(403).json({
+          success: false,
+          resumeLimitReached: true,
+          maxResumes: MAX_EXAM_RESUMES,
+          message: `Resume limit (${MAX_EXAM_RESUMES}) reached. Please submit your exam.`,
+        });
+      }
     }
 
     const ExamResult = (await import('../../models/ExamResult.js')).default;
@@ -188,11 +262,11 @@ router.put('/exams/:examId/attempt-draft', async (req, res) => {
     }
 
     const body = req.body || {};
-    const answers =
+    const incomingAnswers =
       body.answers && typeof body.answers === 'object' && !Array.isArray(body.answers)
         ? body.answers
         : {};
-    const questionTimings =
+    const incomingTimings =
       body.questionTimings && typeof body.questionTimings === 'object' && !Array.isArray(body.questionTimings)
         ? body.questionTimings
         : {};
@@ -210,13 +284,35 @@ router.put('/exams/:examId/attempt-draft', async (req, res) => {
     remainingSeconds = Math.min(durationSeconds, Math.floor(remainingSeconds));
     const currentQuestionIndex = Math.max(0, Math.floor(Number(body.currentQuestionIndex) || 0));
 
+    const existingAnswers = draftAnswersToObject(existing?.answers);
+    const existingTimings = draftTimingsToObject(existing?.questionTimings);
+    const incomingAnswerCount = Object.keys(incomingAnswers).length;
+    const existingAnswerCount = Object.keys(existingAnswers).length;
+
+    // Never wipe a non-empty answer map with {} (common race on resume before client refs sync).
+    const answers =
+      incomingAnswerCount > 0 || existingAnswerCount === 0 || body.allowEmptyAnswers === true
+        ? incomingAnswers
+        : existingAnswers;
+    const questionTimings =
+      Object.keys(incomingTimings).length > 0 || Object.keys(existingTimings).length === 0
+        ? incomingTimings
+        : existingTimings;
+
     const now = new Date();
+    const answersMap = new Map(
+      Object.entries(answers).map(([key, value]) => [String(key), value]),
+    );
+    const timingsMap = new Map(
+      Object.entries(questionTimings).map(([key, value]) => [String(key), Number(value) || 0]),
+    );
+
     const draft = await ExamAttemptDraft.findOneAndUpdate(
       { examId, userId: req.userId },
       {
         $set: {
-          answers,
-          questionTimings,
+          answers: answersMap,
+          questionTimings: timingsMap,
           flaggedQuestions,
           remainingSeconds,
           durationSeconds,

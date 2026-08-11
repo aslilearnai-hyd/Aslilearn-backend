@@ -1,5 +1,8 @@
 import mongoose from 'mongoose';
 
+/** How many times a student may reopen/resume an in-progress exam. */
+export const MAX_EXAM_RESUMES = 5;
+
 /**
  * In-progress student exam attempt — autosaved so power loss / browser close
  * can resume with the same answers and remaining timer (timer freezes at last save).
@@ -47,6 +50,16 @@ const examAttemptDraftSchema = new mongoose.Schema(
       type: Number,
       required: true,
       min: 1,
+    },
+    /** Times the student has reopened this draft (resume). Caps at MAX_EXAM_RESUMES. */
+    resumeCount: {
+      type: Number,
+      default: 0,
+      min: 0,
+    },
+    lastResumedAt: {
+      type: Date,
+      default: null,
     },
     startedAt: {
       type: Date,

@@ -37,7 +37,7 @@ import {
 } from '../../utils/advancedExamAnalytics.js';
 import { normalizeSchoolBoard, resolveUserDisplayBoard } from '../../constants/boards.js';
 import { QUESTION_LIST_SORT, ensureExamQuestionDisplayOrders, shuffleQuestionsForStudent } from '../../utils/exam-question-order.js';
-import ExamAttemptDraft from '../../models/ExamAttemptDraft.js';
+import ExamAttemptDraft, { MAX_EXAM_RESUMES } from '../../models/ExamAttemptDraft.js';
 import {
   loadExamQuestionBankForResults,
   toPlainExamResultForApi,
@@ -205,7 +205,7 @@ async function attachInProgressDraftFlags(exams, userId) {
     examId: { $in: examIds },
     status: 'in_progress',
   })
-    .select('examId remainingSeconds lastSavedAt currentQuestionIndex')
+    .select('examId remainingSeconds lastSavedAt currentQuestionIndex resumeCount')
     .lean();
 
   const draftByExamId = new Map(drafts.map((d) => [String(d.examId), d]));
@@ -213,14 +213,34 @@ async function attachInProgressDraftFlags(exams, userId) {
   return list.map((exam) => {
     const draft = draftByExamId.get(String(exam._id));
     if (!draft) {
-      return { ...exam, hasInProgressDraft: false };
+      return {
+        ...exam,
+        hasInProgressDraft: false,
+        maxResumes: MAX_EXAM_RESUMES,
+      };
     }
+
+    const windowStatus = getExamWindowStatus(exam, { purpose: 'start' });
+    const resumeCount = Math.max(0, Number(draft.resumeCount) || 0);
+    const resumeLimitReached = resumeCount >= MAX_EXAM_RESUMES;
+    const windowOpen = Boolean(windowStatus.ok);
+    const canResumeExam = windowOpen && !resumeLimitReached;
+    const forceSubmitDraft = !canResumeExam;
+
     return {
       ...exam,
       hasInProgressDraft: true,
+      canResumeExam,
+      forceSubmitDraft,
       draftRemainingSeconds: Math.max(0, Number(draft.remainingSeconds) || 0),
       draftLastSavedAt: draft.lastSavedAt || null,
       draftCurrentQuestionIndex: Math.max(0, Number(draft.currentQuestionIndex) || 0),
+      resumeCount,
+      maxResumes: MAX_EXAM_RESUMES,
+      resumesRemaining: Math.max(0, MAX_EXAM_RESUMES - resumeCount),
+      resumeLimitReached,
+      examWindowOpen: windowOpen,
+      examWindowMessage: windowOpen ? null : windowStatus.message,
     };
   });
 }
@@ -366,11 +386,23 @@ router.get('/exams/:examId', async (req, res) => {
     }
 
     const windowStatus = getExamWindowStatus(exam);
+    let forceSubmitExam = false;
     if (!windowStatus.ok) {
-      return res.status(403).json({
-        success: false,
-        message: windowStatus.message,
-      });
+      const existingDraft = await ExamAttemptDraft.findOne({
+        examId,
+        userId: req.userId,
+        status: 'in_progress',
+      })
+        .select('_id resumeCount')
+        .lean();
+      // After end time: block new attempts, but allow one load so saved progress can be submitted.
+      if (!existingDraft) {
+        return res.status(403).json({
+          success: false,
+          message: windowStatus.message,
+        });
+      }
+      forceSubmitExam = true;
     }
 
     const hydratedExam = await hydrateExamQuestions(exam, {
@@ -389,7 +421,11 @@ router.get('/exams/:examId', async (req, res) => {
 
     res.json({
       success: true,
-      data: examWithDraftFlag
+      data: {
+        ...examWithDraftFlag,
+        forceSubmitExam,
+        examWindowMessage: windowStatus.ok ? null : windowStatus.message,
+      },
     });
   } catch (error) {
     console.error('Error fetching exam:', error);
