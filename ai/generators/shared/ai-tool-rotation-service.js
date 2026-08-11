@@ -167,27 +167,31 @@ function rotationKey({ classLabel, subject, topic, subtopic, toolName, scope, bo
   ].join('|');
 }
 
+/** Keep rotation snappy: never load every historical generation for a chapter. */
+const EXACT_CANDIDATE_LIMIT = 8;
+const FUZZY_POOL_LIMIT = 60;
+
 async function nextCursorIndex(key, total) {
   if (total <= 1) return 0;
-  const current = await AiToolRotationCursor.findOne({ key }).lean();
-  if (!current) {
-    await AiToolRotationCursor.create({ key, cursor: 0, lastServedAt: new Date() });
+  try {
+    const current = await AiToolRotationCursor.findOneAndUpdate(
+      { key },
+      { $inc: { cursor: 1 }, $set: { lastServedAt: new Date() } },
+      { upsert: true, new: true },
+    ).lean();
+    return Math.abs(Number(current?.cursor || 0)) % total;
+  } catch {
     return 0;
   }
-  const next = (Number(current.cursor || 0) + 1) % total;
-  await AiToolRotationCursor.updateOne(
-    { key },
-    { $set: { cursor: next, lastServedAt: new Date() } },
-  );
-  return next;
 }
 
-async function setCursorIndex(key, idx) {
-  await AiToolRotationCursor.updateOne(
+function setCursorIndex(key, idx) {
+  // Fire-and-forget — never block saved-content delivery on cursor writes.
+  void AiToolRotationCursor.updateOne(
     { key },
     { $set: { cursor: idx, lastServedAt: new Date() } },
     { upsert: true },
-  );
+  ).catch(() => {});
 }
 
 function filterHasToolName(filter) {
@@ -249,6 +253,7 @@ async function executeRotationSearch({
   cursorScope,
   validator,
   strictBoard,
+  exactOnly = false,
 }) {
   const normalizedTool = normalize(toolName);
   const { bf, exactFilter, topicOnlyFilter, normalizedTopic, normalizedSubtopic } = buildAttemptFilters({
@@ -268,7 +273,7 @@ async function executeRotationSearch({
       filter: mergeMongoFilters(exactFilter, toolNameMatchFilter(normalizedTool)),
     });
   }
-  if (!strictToolMatch) {
+  if (!exactOnly && !strictToolMatch) {
     attempts.push({ matchType: 'exact-any-tool', filter: exactFilter });
 
     if (!normalizedSubtopic && normalizedTopic) {
@@ -290,14 +295,14 @@ async function executeRotationSearch({
       }
       attempts.push({ matchType: 'subject-any-tool', filter: bf });
     }
-  } else if (normalizedTopic) {
+  } else if (!exactOnly && normalizedTopic) {
     if (normalizedTool) {
       attempts.push({
         matchType: normalizedSubtopic ? 'topic-with-tool-fuzzy-subtopic' : 'topic-with-tool',
         filter: mergeMongoFilters(topicOnlyFilter, toolNameMatchFilter(normalizedTool)),
       });
     }
-  } else if (!normalizedSubtopic && !normalizedTopic && normalizedTool) {
+  } else if (!exactOnly && !normalizedSubtopic && !normalizedTopic && normalizedTool) {
     attempts.push({
       matchType: 'subject-with-tool',
       filter: mergeMongoFilters(bf, toolNameMatchFilter(normalizedTool)),
@@ -332,7 +337,7 @@ async function executeRotationSearch({
         try {
           const ok = await validator(candidate);
           if (ok) {
-            await setCursorIndex(key, idx);
+            setCursorIndex(key, idx);
             return {
               doc: candidate,
               matchType: preferLatest ? `${matchType}-latest` : matchType,
@@ -394,8 +399,13 @@ async function executeRotationSearch({
     }
     for (const attempt of toolAttempts) {
       if (strictToolMatch && !filterHasToolName(attempt.filter)) continue;
-      const docs = (await AiToolGeneration.find(attempt.filter).sort({ createdAt: 1 }).lean()).filter(
-        (doc) => {
+      const docs = (
+        await AiToolGeneration.find(attempt.filter)
+          .sort({ createdAt: -1 })
+          .limit(EXACT_CANDIDATE_LIMIT)
+          .maxTimeMS(4_000)
+          .lean()
+      ).filter((doc) => {
           if (!hasUsableContent(doc) || !toolSlugMatches(doc.toolName, tryToolName || normalizedTool)) {
             return false;
           }
@@ -419,6 +429,10 @@ async function executeRotationSearch({
     }
   }
 
+  if (exactOnly) {
+    return { doc: null, matchType: null, totalCandidates: 0, selectedIndex: -1 };
+  }
+
   const fuzzyBases = [];
   if (normalizedTool) {
     fuzzyBases.push({
@@ -432,7 +446,13 @@ async function executeRotationSearch({
   }
 
   for (const base of fuzzyBases) {
-    const pool = (await AiToolGeneration.find(base.filter).sort({ createdAt: -1 }).limit(500).lean()).filter(
+    const pool = (
+      await AiToolGeneration.find(base.filter)
+        .sort({ createdAt: -1 })
+        .limit(FUZZY_POOL_LIMIT)
+        .maxTimeMS(4_000)
+        .lean()
+    ).filter(
       (doc) =>
         hasUsableContent(doc) &&
         (!strictToolMatch || toolSlugMatches(doc.toolName, base.keyTool || normalizedTool)),
@@ -471,6 +491,10 @@ async function executeRotationSearch({
 /**
  * Priority source for Teacher/Student tool pages.
  * Matches AI Tool Topics scope: board + class + subject + topic + subtopic (+tool).
+ *
+ * @param {{ fastDelivery?: boolean }} opts
+ *   When true (dashboards), try a single exact findOne-style hit first so saved
+ *   content returns in ~1s before heavier fuzzy/rotation scans.
  */
 export async function fetchRotatingAiToolData({
   classLabel,
@@ -484,8 +508,34 @@ export async function fetchRotatingAiToolData({
   strictToolMatch = false,
   cursorScope = '',
   validator = null,
+  fastDelivery = false,
 }) {
   const lookupBoard = resolveLookupBoard(board, classLabel);
+  const normalizedTool = normalize(toolName);
+
+  if (fastDelivery && normalizedTool) {
+    const fast = await executeRotationSearch({
+      classLabel,
+      subject,
+      topic,
+      subtopic,
+      toolName,
+      board: lookupBoard,
+      productCategory,
+      preferLatest: true,
+      strictToolMatch: true,
+      cursorScope,
+      validator,
+      strictBoard: Boolean(lookupBoard),
+      exactOnly: true,
+    });
+    if (fast.doc) {
+      return {
+        ...fast,
+        matchType: fast.matchType ? `${fast.matchType}-fast` : 'exact-fast',
+      };
+    }
+  }
 
   const withBoard = await executeRotationSearch({
     classLabel,

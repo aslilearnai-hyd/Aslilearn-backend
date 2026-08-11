@@ -324,15 +324,14 @@ export const createTeacherTool = async (req, res) => {
     const { toolType, classNumber, subject, topic, board, ...params } = req.body;
     const teacherId = req.teacherId;
 
-    const Teacher = (await import('../models/Teacher.js')).default;
-    const teacherDoc = await Teacher.findById(teacherId)
-      .select(
-        'isIndividualAccount subscriptionStatus trialEndsAt iitCategories isAsliPrepExclusive curriculumBoard board trialAllowedAiTools'
-      )
-      .lean();
-    if (teacherDoc?.isIndividualAccount) {
+    const { getTeacherSchoolProgramContext, validateAiToolBoardAccess } =
+      await import('../utils/schoolProgram.js');
+    const programCtx = await getTeacherSchoolProgramContext(teacherId);
+    const teacherDoc = programCtx.teacherDoc || null;
+
+    if (teacherDoc?.isIndividualAccount || programCtx.isIndividualAccount) {
       const { resolveIndividualAccess } = await import('../utils/individualAccount.js');
-      const access = resolveIndividualAccess(teacherDoc);
+      const access = resolveIndividualAccess(teacherDoc || programCtx);
       if (access.paymentRequired) {
         return res.status(402).json({
           success: false,
@@ -341,8 +340,8 @@ export const createTeacherTool = async (req, res) => {
             'Your free trial has ended. Please subscribe to continue using AI tools.',
         });
       }
-      const allowedTools = Array.isArray(teacherDoc.trialAllowedAiTools)
-        ? teacherDoc.trialAllowedAiTools
+      const allowedTools = Array.isArray(programCtx.trialAllowedAiTools)
+        ? programCtx.trialAllowedAiTools
         : [];
       if (allowedTools.length > 0 && toolType && !allowedTools.includes(String(toolType).trim())) {
         return res.status(403).json({
@@ -354,9 +353,6 @@ export const createTeacherTool = async (req, res) => {
       }
     }
 
-    const { getTeacherSchoolProgramContext, validateAiToolBoardAccess } =
-      await import('../utils/schoolProgram.js');
-    const programCtx = await getTeacherSchoolProgramContext(teacherId);
     const boardCheck = validateAiToolBoardAccess(programCtx.isAsliPrepExclusive, {
       board,
       classNumber,
@@ -496,6 +492,7 @@ export const createTeacherTool = async (req, res) => {
       DASHBOARD_WRONG_TOOL_CODE,
       DASHBOARD_WRONG_TOOL_USER_MESSAGE,
     } = await import('../services/ai-tool-dashboard-validation.js');
+    const { storyPassageRecordLanguageValid } = await import('../utils/story-passage-subject.js');
 
     const { doc: cachedDoc, matchType, totalCandidates, selectedIndex } = await fetchRotatingAiToolData({
       classLabel: classDisplay,
@@ -513,8 +510,8 @@ export const createTeacherTool = async (req, res) => {
       preferLatest: false,
       strictToolMatch: true,
       cursorScope: String(teacherId || ''),
-      validator: async (doc) => {
-        const { storyPassageRecordLanguageValid } = await import('../utils/story-passage-subject.js');
+      fastDelivery: true,
+      validator: (doc) => {
         if (!validateDashboardAiToolDoc(toolType, doc).valid) return false;
         return storyPassageRecordLanguageValid(toolType, finalSubject, doc);
       },
@@ -760,6 +757,7 @@ export const getGeneratedContent = async (req, res) => {
       DASHBOARD_WRONG_TOOL_CODE,
       DASHBOARD_WRONG_TOOL_USER_MESSAGE,
     } = await import('../services/ai-tool-dashboard-validation.js');
+    const { storyPassageRecordLanguageValid } = await import('../utils/story-passage-subject.js');
 
     const { doc: matchedDoc, matchType, totalCandidates, selectedIndex } = await fetchRotatingAiToolData({
       classLabel,
@@ -771,14 +769,12 @@ export const getGeneratedContent = async (req, res) => {
       productCategory: req.query.productCategory,
       preferLatest: false,
       strictToolMatch: true,
-      cursorScope: String(req.userId || req.teacherId || ''),
-      validator: toolType
-        ? async (doc) => {
-            const { storyPassageRecordLanguageValid } = await import('../utils/story-passage-subject.js');
-            if (!validateDashboardAiToolDoc(toolType, doc).valid) return false;
-            return storyPassageRecordLanguageValid(toolType, subject, doc);
-          }
-        : null,
+      cursorScope: String(req.teacherId || req.userId || ''),
+      fastDelivery: true,
+      validator: (doc) => {
+        if (!validateDashboardAiToolDoc(toolType, doc).valid) return false;
+        return storyPassageRecordLanguageValid(toolType, subject, doc);
+      },
     });
 
     if (matchedDoc) {

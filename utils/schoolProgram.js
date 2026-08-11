@@ -294,12 +294,14 @@ export async function getStudentSchoolProgramContext(userId) {
   };
 }
 
-export async function getTeacherSchoolProgramContext(teacherId) {
-  const teacher = await Teacher.findById(teacherId)
-    .select(
-      'adminId board isIndividualAccount iitCategories curriculumBoard isAsliPrepExclusive trialAllowedContentTypes trialAllowedAiTools',
-    )
-    .lean();
+export async function getTeacherSchoolProgramContext(teacherId, preloadedTeacher = null) {
+  const teacher =
+    preloadedTeacher ||
+    (await Teacher.findById(teacherId)
+      .select(
+        'adminId board isIndividualAccount iitCategories curriculumBoard isAsliPrepExclusive trialAllowedContentTypes trialAllowedAiTools subscriptionStatus trialEndsAt',
+      )
+      .lean());
   let admin = null;
   if (teacher?.adminId) {
     admin = await User.findById(teacher.adminId)
@@ -348,6 +350,10 @@ export async function getTeacherSchoolProgramContext(teacherId) {
     trialAllowedAiTools: Array.isArray(teacher?.trialAllowedAiTools)
       ? teacher.trialAllowedAiTools
       : [],
+    isIndividualAccount: Boolean(teacher?.isIndividualAccount),
+    subscriptionStatus: teacher?.subscriptionStatus || '',
+    trialEndsAt: teacher?.trialEndsAt || null,
+    teacherDoc: teacher,
   };
 }
 

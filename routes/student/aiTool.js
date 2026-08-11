@@ -232,6 +232,7 @@ router.post('/ai/tool', async (req, res) => {
       DASHBOARD_WRONG_TOOL_CODE,
       DASHBOARD_WRONG_TOOL_USER_MESSAGE,
     } = await import('../../services/ai-tool-dashboard-validation.js');
+    const { storyPassageRecordLanguageValid } = await import('../../utils/story-passage-subject.js');
 
     // Priority 1: Super Admin AI Tool Data (exact class+subject+topic+subtopic) with rotation.
     const lookupBoard =
@@ -256,8 +257,8 @@ router.post('/ai/tool', async (req, res) => {
       preferLatest: false,
       strictToolMatch: true,
       cursorScope: String(userId || ''),
-      validator: async (doc) => {
-        const { storyPassageRecordLanguageValid } = await import('../../utils/story-passage-subject.js');
+      fastDelivery: true,
+      validator: (doc) => {
         if (!validateDashboardAiToolDoc(toolType, doc).valid) return false;
         return storyPassageRecordLanguageValid(toolType, finalSubject, doc);
       },
