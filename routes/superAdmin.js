@@ -1067,10 +1067,11 @@ router.get('/iq-rank-activities/questions', async (req, res) => {
   }
 });
 
-/** Map IQRankQuiz documents to the shape expected by super-admin IQ/Rank Boost Activities UI */
+/** Map IQRankQuiz documents to the Quiz module admin UI */
 function mapQuizToActivity(quiz) {
   const q = quiz.toObject ? quiz.toObject() : { ...quiz };
   const totalQ = q.totalQuestions != null ? q.totalQuestions : (Array.isArray(q.questions) ? q.questions.length : 0);
+  const audienceType = q.audienceType || (q.trialOnly ? 'trial' : 'all_schools');
   return {
     _id: q._id,
     title: q.title,
@@ -1086,6 +1087,12 @@ function mapQuizToActivity(quiz) {
     isActive: q.isActive !== false,
     trialOnly: Boolean(q.trialOnly),
     promptOnLogin: Boolean(q.promptOnLogin),
+    scheduleType: q.scheduleType || 'once',
+    scheduleDays: Array.isArray(q.scheduleDays) ? q.scheduleDays : [],
+    audienceType,
+    audienceRoles: Array.isArray(q.audienceRoles) && q.audienceRoles.length ? q.audienceRoles : ['student'],
+    targetSchools: Array.isArray(q.targetSchools) ? q.targetSchools : [],
+    targetUserIds: Array.isArray(q.targetUserIds) ? q.targetUserIds : [],
     createdAt: q.createdAt,
     updatedAt: q.updatedAt,
     participants: undefined,
@@ -1116,6 +1123,7 @@ router.post('/iq-rank-activities', async (req, res) => {
   try {
     const mongoose = (await import('mongoose')).default;
     const IQRankQuiz = (await import('../models/IQRankQuiz.js')).default;
+    const { normalizeQuizAudienceFields } = await import('../utils/quiz-audience.js');
     const {
       title,
       description,
@@ -1125,10 +1133,9 @@ router.post('/iq-rank-activities', async (req, res) => {
       duration,
       subject,
       classNumber,
+      board,
       questions: questionCount,
       isActive,
-      trialOnly,
-      promptOnLogin,
     } = req.body;
 
     if (!title || !String(title).trim()) {
@@ -1137,40 +1144,59 @@ router.post('/iq-rank-activities', async (req, res) => {
     if (!subject || !mongoose.Types.ObjectId.isValid(subject)) {
       return res.status(400).json({ success: false, message: 'Valid subject is required' });
     }
-    if (classNumber === undefined || classNumber === null || String(classNumber).trim() === '') {
-      return res.status(400).json({ success: false, message: 'Class number is required' });
+    const audience = normalizeQuizAudienceFields(req.body);
+    const resolvedClass =
+      classNumber != null && String(classNumber).trim() !== ''
+        ? String(classNumber).trim()
+        : audience.audienceType === 'all_members' || audience.audienceType === 'specific_members' || audience.audienceType === 'trial'
+          ? 'all'
+          : '';
+    if (!resolvedClass) {
+      return res.status(400).json({ success: false, message: 'Class number is required (or use All)' });
     }
     if (!difficulty || !['easy', 'medium', 'hard', 'expert'].includes(difficulty)) {
       return res.status(400).json({ success: false, message: 'Valid difficulty is required' });
     }
+    if (audience.audienceType === 'schools' && audience.targetSchools.length === 0) {
+      return res.status(400).json({ success: false, message: 'Select at least one school' });
+    }
+    if (audience.audienceType === 'specific_members' && audience.targetUserIds.length === 0) {
+      return res.status(400).json({ success: false, message: 'Select at least one member' });
+    }
+
+    const mappedActivityType =
+      audience.scheduleType === 'daily'
+        ? 'daily'
+        : audience.scheduleType === 'weekly'
+          ? 'weekly'
+          : activityType && ['iq-test', 'rank-boost', 'challenge', 'quiz', 'daily', 'weekly'].includes(activityType)
+            ? activityType
+            : 'quiz';
 
     const quiz = new IQRankQuiz({
       title: String(title).trim(),
       description: description != null ? String(description).trim() : '',
       subject,
-      classNumber: String(classNumber).trim(),
-      board: 'ASLI_EXCLUSIVE_SCHOOLS',
+      classNumber: resolvedClass,
+      board: board ? String(board).toUpperCase() : 'ASLI_EXCLUSIVE_SCHOOLS',
       difficulty,
       questions: [],
       totalQuestions: Math.max(0, parseInt(String(questionCount), 10) || 0),
       isActive: isActive !== false,
-      activityType: activityType && ['iq-test', 'rank-boost', 'challenge', 'quiz'].includes(activityType)
-        ? activityType
-        : 'quiz',
+      activityType: mappedActivityType,
       points: points != null ? Number(points) : 100,
       durationMinutes: duration != null ? Number(duration) : 30,
-      trialOnly: Boolean(trialOnly),
-      promptOnLogin: Boolean(promptOnLogin),
-      generatedBy: 'super-admin'
+      ...audience,
+      generatedBy: 'super-admin',
     });
     await quiz.save();
     await quiz.populate('subject', 'name');
     res.status(201).json({ success: true, data: mapQuizToActivity(quiz) });
   } catch (error) {
-    console.error('Error creating IQ/Rank activity:', error);
+    console.error('Error creating quiz:', error);
     res.status(500).json({
       success: false,
-      message: error.message || 'Failed to create activity'
+      message: error.message || 'Failed to create quiz'
     });
   }
 });
@@ -1179,9 +1205,10 @@ router.put('/iq-rank-activities/:id', async (req, res) => {
   try {
     const mongoose = (await import('mongoose')).default;
     const IQRankQuiz = (await import('../models/IQRankQuiz.js')).default;
+    const { normalizeQuizAudienceFields } = await import('../utils/quiz-audience.js');
     const { id } = req.params;
     if (!mongoose.Types.ObjectId.isValid(id)) {
-      return res.status(400).json({ success: false, message: 'Invalid activity id' });
+      return res.status(400).json({ success: false, message: 'Invalid quiz id' });
     }
 
     const {
@@ -1193,6 +1220,7 @@ router.put('/iq-rank-activities/:id', async (req, res) => {
       duration,
       subject,
       classNumber,
+      board,
       questions: questionCount,
       isActive
     } = req.body;
@@ -1200,7 +1228,7 @@ router.put('/iq-rank-activities/:id', async (req, res) => {
     const update = {};
     if (title != null) update.title = String(title).trim();
     if (description != null) update.description = String(description).trim();
-    if (activityType && ['iq-test', 'rank-boost', 'challenge', 'quiz'].includes(activityType)) {
+    if (activityType && ['iq-test', 'rank-boost', 'challenge', 'quiz', 'daily', 'weekly'].includes(activityType)) {
       update.activityType = activityType;
     }
     if (difficulty && ['easy', 'medium', 'hard', 'expert'].includes(difficulty)) {
@@ -1209,23 +1237,38 @@ router.put('/iq-rank-activities/:id', async (req, res) => {
     if (points != null) update.points = Number(points);
     if (duration != null) update.durationMinutes = Number(duration);
     if (subject && mongoose.Types.ObjectId.isValid(subject)) update.subject = subject;
-    if (classNumber != null) update.classNumber = String(classNumber).trim();
+    if (classNumber != null) update.classNumber = String(classNumber).trim() || 'all';
+    if (board) update.board = String(board).toUpperCase();
     if (questionCount != null) update.totalQuestions = Math.max(0, parseInt(String(questionCount), 10) || 0);
     if (isActive != null) update.isActive = Boolean(isActive);
-    if (req.body.trialOnly != null) update.trialOnly = Boolean(req.body.trialOnly);
-    if (req.body.promptOnLogin != null) update.promptOnLogin = Boolean(req.body.promptOnLogin);
+
+    const hasAudiencePayload =
+      req.body.audienceType != null ||
+      req.body.scheduleType != null ||
+      req.body.trialOnly != null ||
+      req.body.targetSchools != null ||
+      req.body.targetUserIds != null ||
+      req.body.audienceRoles != null;
+    if (hasAudiencePayload) {
+      Object.assign(update, normalizeQuizAudienceFields(req.body));
+      if (update.scheduleType === 'daily') update.activityType = 'daily';
+      if (update.scheduleType === 'weekly') update.activityType = 'weekly';
+    } else {
+      if (req.body.trialOnly != null) update.trialOnly = Boolean(req.body.trialOnly);
+      if (req.body.promptOnLogin != null) update.promptOnLogin = Boolean(req.body.promptOnLogin);
+    }
 
     const quiz = await IQRankQuiz.findByIdAndUpdate(id, { $set: update }, { new: true })
       .populate('subject', 'name');
     if (!quiz) {
-      return res.status(404).json({ success: false, message: 'Activity not found' });
+      return res.status(404).json({ success: false, message: 'Quiz not found' });
     }
     res.json({ success: true, data: mapQuizToActivity(quiz) });
   } catch (error) {
-    console.error('Error updating IQ/Rank activity:', error);
+    console.error('Error updating quiz:', error);
     res.status(500).json({
       success: false,
-      message: error.message || 'Failed to update activity'
+      message: error.message || 'Failed to update quiz'
     });
   }
 });

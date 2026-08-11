@@ -215,5 +215,128 @@ router.post('/quizzes/:quizId/assign', async (req, res) => {
   }
 });
 
+/** Platform Quiz module (super-admin quizzes targeted at teachers). */
+router.get('/platform-quizzes', async (req, res) => {
+  try {
+    const teacherId = req.teacherId;
+    const Teacher = (await import('../../models/Teacher.js')).default;
+    const IQRankQuiz = (await import('../../models/IQRankQuiz.js')).default;
+    const {
+      quizVisibleToViewer,
+      buildQuizViewerFromTeacher,
+    } = await import('../../utils/quiz-audience.js');
+
+    const teacher = await Teacher.findById(teacherId).lean();
+    if (!teacher) {
+      return res.json({ success: true, data: [] });
+    }
+
+    const viewer = buildQuizViewerFromTeacher({
+      ...teacher,
+      userId: teacher.userId || teacher._id,
+    });
+
+    const all = await IQRankQuiz.find({ isActive: true })
+      .populate('subject', 'name')
+      .sort({ createdAt: -1 })
+      .lean();
+
+    const quizzes = all.filter((q) => quizVisibleToViewer(q, viewer));
+    res.json({ success: true, data: quizzes });
+  } catch (error) {
+    console.error('Failed to list platform quizzes for teacher:', error);
+    res.status(500).json({ success: false, message: 'Failed to fetch quizzes' });
+  }
+});
+
+router.get('/platform-quizzes/:quizId/questions', async (req, res) => {
+  try {
+    const teacherId = req.teacherId;
+    const { quizId } = req.params;
+    const Teacher = (await import('../../models/Teacher.js')).default;
+    const IQRankQuiz = (await import('../../models/IQRankQuiz.js')).default;
+    const IQRankQuestion = (await import('../../models/IQRankQuestion.js')).default;
+    const {
+      quizVisibleToViewer,
+      buildQuizViewerFromTeacher,
+    } = await import('../../utils/quiz-audience.js');
+
+    const teacher = await Teacher.findById(teacherId).lean();
+    if (!teacher) {
+      return res.status(404).json({ success: false, message: 'Teacher not found' });
+    }
+    const quiz = await IQRankQuiz.findById(quizId).lean();
+    if (!quiz || quiz.isActive === false) {
+      return res.status(404).json({ success: false, message: 'Quiz not found' });
+    }
+    const viewer = buildQuizViewerFromTeacher({
+      ...teacher,
+      userId: teacher.userId || teacher._id,
+    });
+    if (!quizVisibleToViewer(quiz, viewer)) {
+      return res.status(403).json({ success: false, message: 'Quiz not available' });
+    }
+
+    const questions = await IQRankQuestion.find({
+      _id: { $in: quiz.questions || [] },
+    }).lean();
+
+    res.json({ success: true, data: questions, quiz });
+  } catch (error) {
+    console.error('Failed to fetch platform quiz questions:', error);
+    res.status(500).json({ success: false, message: 'Failed to fetch questions' });
+  }
+});
+
+router.post('/platform-quizzes/:quizId/result', async (req, res) => {
+  try {
+    const teacherId = req.teacherId;
+    const { quizId } = req.params;
+    const { score, totalQuestions, answers, subject } = req.body || {};
+    const Teacher = (await import('../../models/Teacher.js')).default;
+    const IQRankQuiz = (await import('../../models/IQRankQuiz.js')).default;
+    const IQRankQuizResult = (await import('../../models/IQRankQuizResult.js')).default;
+    const {
+      quizVisibleToViewer,
+      buildQuizViewerFromTeacher,
+    } = await import('../../utils/quiz-audience.js');
+
+    const teacher = await Teacher.findById(teacherId).lean();
+    if (!teacher) {
+      return res.status(404).json({ success: false, message: 'Teacher not found' });
+    }
+    const quiz = await IQRankQuiz.findById(quizId).lean();
+    if (!quiz) {
+      return res.status(404).json({ success: false, message: 'Quiz not found' });
+    }
+    const viewer = buildQuizViewerFromTeacher({
+      ...teacher,
+      userId: teacher.userId || teacher._id,
+    });
+    if (!quizVisibleToViewer(quiz, viewer)) {
+      return res.status(403).json({ success: false, message: 'Quiz not available' });
+    }
+
+    const userId = teacher.userId || teacher._id;
+    const result = await IQRankQuizResult.findOneAndUpdate(
+      { userId, quizId },
+      {
+        userId,
+        quizId,
+        subject: subject || quiz.subject,
+        score: Number(score) || 0,
+        totalQuestions: Number(totalQuestions) || quiz.totalQuestions || 0,
+        answers: answers || {},
+        completedAt: new Date(),
+      },
+      { upsert: true, new: true },
+    );
+
+    res.json({ success: true, data: result });
+  } catch (error) {
+    console.error('Failed to save platform quiz result:', error);
+    res.status(500).json({ success: false, message: 'Failed to save result' });
+  }
+});
 
 export default router;

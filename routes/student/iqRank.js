@@ -78,66 +78,33 @@ const router = express.Router();
 
 router.get('/iq-rank-quizzes', async (req, res) => {
   try {
-    const student = await User.findById(req.userId).populate('assignedClass', 'classNumber');
+    const student = await User.findById(req.userId).populate('assignedClass', 'classNumber assignedAdmin');
     if (!student) {
       return res.json({ success: true, data: [] });
     }
 
-    const { isTrialQuizAudience } = await import('../../utils/individualAccount.js');
     const IQRankQuiz = (await import('../../models/IQRankQuiz.js')).default;
+    const {
+      quizVisibleToViewer,
+      buildQuizViewerFromStudent,
+    } = await import('../../utils/quiz-audience.js');
 
-    let studentClassNumber = null;
-    if (student.assignedClass?.classNumber) {
-      studentClassNumber = String(student.assignedClass.classNumber);
-    } else if (student.classNumber) {
-      studentClassNumber = String(student.classNumber).replace(/^Class\s+/i, '').trim();
-    }
+    const viewer = buildQuizViewerFromStudent(student);
+    const all = await IQRankQuiz.find({ isActive: true })
+      .populate('subject', 'name')
+      .sort({ createdAt: -1 })
+      .lean();
 
-    const trialAudience = isTrialQuizAudience(student);
-    let quizzes = [];
-
-    if (trialAudience) {
-      const trialQuizzes = await IQRankQuiz.find({
-        isActive: true,
-        trialOnly: true,
-      })
-        .populate('subject', 'name')
-        .sort({ createdAt: -1 })
-        .lean();
-      quizzes = trialQuizzes;
-      if (studentClassNumber && studentClassNumber !== 'Unassigned') {
-        const classQuizzes = await IQRankQuiz.find({
-          isActive: true,
-          trialOnly: { $ne: true },
-          classNumber: studentClassNumber,
-        })
-          .populate('subject', 'name')
-          .sort({ createdAt: -1 })
-          .lean();
-        const seen = new Set(quizzes.map((q) => String(q._id)));
-        for (const q of classQuizzes) {
-          if (!seen.has(String(q._id))) quizzes.push(q);
-        }
-      }
-    } else if (studentClassNumber && studentClassNumber !== 'Unassigned') {
-      quizzes = await IQRankQuiz.find({
-        isActive: true,
-        trialOnly: { $ne: true },
-        classNumber: studentClassNumber,
-      })
-        .populate('subject', 'name')
-        .sort({ createdAt: -1 })
-        .lean();
-    }
+    const quizzes = all.filter((q) => quizVisibleToViewer(q, viewer));
 
     res.json({
       success: true,
       data: quizzes,
-      classNumber: studentClassNumber,
-      trialAudience,
+      classNumber: viewer.classNumber,
+      trialAudience: Boolean(viewer.user && (await import('../../utils/individualAccount.js')).isTrialQuizAudience(viewer.user)),
     });
   } catch (error) {
-    console.error('Error fetching IQ/Rank quizzes:', error);
+    console.error('Error fetching quizzes:', error);
     res.status(500).json({ success: false, message: 'Failed to fetch quizzes' });
   }
 });
@@ -189,39 +156,28 @@ router.get('/iq-rank-questions', async (req, res) => {
     const { classNumber, subject, difficulty, quizId } = req.query;
     
     const student = await User.findById(req.userId)
-      .populate('assignedClass', 'classNumber');
+      .populate('assignedClass', 'classNumber assignedAdmin');
     if (!student) {
       return res.json({ success: true, data: [] });
     }
 
-    const { isTrialQuizAudience } = await import('../../utils/individualAccount.js');
     const IQRankQuestion = (await import('../../models/IQRankQuestion.js')).default;
     const IQRankQuiz = (await import('../../models/IQRankQuiz.js')).default;
 
     if (quizId) {
+      const {
+        quizVisibleToViewer,
+        buildQuizViewerFromStudent,
+      } = await import('../../utils/quiz-audience.js');
+
       const quiz = await IQRankQuiz.findById(quizId).populate('subject', 'name').populate('questions');
       if (!quiz || quiz.isActive === false) {
         return res.status(404).json({ success: false, message: 'Quiz not found' });
       }
-      if (quiz.trialOnly && !isTrialQuizAudience(student)) {
-        return res.status(403).json({ success: false, message: 'This quiz is for trial users only' });
-      }
-      if (!quiz.trialOnly) {
-        let studentClassNumber = classNumber;
-        if (!studentClassNumber) {
-          if (student.assignedClass?.classNumber) studentClassNumber = student.assignedClass.classNumber;
-          else if (student.classNumber) studentClassNumber = student.classNumber;
-        }
-        if (
-          studentClassNumber &&
-          String(quiz.classNumber) !== String(studentClassNumber).replace(/^Class\s+/i, '').trim() &&
-          String(quiz.classNumber) !== String(studentClassNumber)
-        ) {
-          // Individual trial users without matching class can still open trialOnly; block mismatch for school
-          if (!student.isIndividualAccount) {
-            return res.status(403).json({ success: false, message: 'Quiz not available for your class' });
-          }
-        }
+
+      const viewer = buildQuizViewerFromStudent(student);
+      if (!quizVisibleToViewer(quiz, viewer)) {
+        return res.status(403).json({ success: false, message: 'Quiz not available' });
       }
 
       let questions = [];
@@ -247,6 +203,7 @@ router.get('/iq-rank-questions', async (req, res) => {
           _id: quiz._id,
           title: quiz.title,
           subject: quiz.subject,
+          scheduleType: quiz.scheduleType,
           trialOnly: Boolean(quiz.trialOnly),
         },
       });

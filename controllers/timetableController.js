@@ -15,9 +15,58 @@ import {
 
 const POPULATE_FIELDS = [
   { path: 'classId', select: 'classNumber section name' },
-  { path: 'subjectId', select: 'name code' },
+  { path: 'subjectId', select: 'name code isActive' },
   { path: 'teacherId', select: 'fullName email' },
 ];
+
+function isDeletedSubjectName(name) {
+  const s = String(name || '').trim();
+  if (!s) return false;
+  if (/__deleted__/i.test(s)) return true;
+  if (/__dele[a-z]*$/i.test(s)) return true;
+  if (/_deleted?$/i.test(s)) return true;
+  return false;
+}
+
+function cleanSubjectDisplayName(name) {
+  let s = String(name || '').trim();
+  if (!s) return '';
+  const cut = s.search(/__deleted__/i);
+  if (cut >= 0) s = s.slice(0, cut);
+  s = s.replace(/__dele[a-z]*$/i, '');
+  s = s.replace(/_deleted?$/i, '');
+  return s.replace(/_+$/g, '').trim();
+}
+
+/** Drop soft-deleted subjects and scrub leftover delete suffixes from names. */
+function scrubTimetableEntriesForClient(entries) {
+  const out = [];
+  const seen = new Set();
+  for (const entry of entries || []) {
+    if (!entry || entry.status === 'Cancelled') continue;
+    const subject = entry.subjectId;
+    const rawName = subject && typeof subject === 'object' ? subject.name : '';
+    if (isDeletedSubjectName(rawName)) continue;
+    if (subject && typeof subject === 'object' && subject.isActive === false) continue;
+
+    const next = { ...entry };
+    if (subject && typeof subject === 'object') {
+      const cleaned = cleanSubjectDisplayName(rawName);
+      next.subjectId = { ...subject, name: cleaned || subject.name };
+    }
+
+    const day = String(next.day || '').toLowerCase();
+    const start = String(next.startTime || '');
+    const end = String(next.endTime || '');
+    const subjKey = cleanSubjectDisplayName(rawName).toLowerCase() || 'class';
+    const classKey = next.classId?._id ? String(next.classId._id) : String(next.classId || '');
+    const key = `${day}|${start}|${end}|${subjKey}|${classKey}|${String(next.sectionId || '')}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(next);
+  }
+  return out;
+}
 
 const SESSION_TYPES = new Set([
   'Lecture',
@@ -311,7 +360,8 @@ export const getTimetableEntries = async (req, res) => {
       .sort({ date: 1, startTime: 1 })
       .lean();
 
-    res.json({ success: true, data: entries });
+    const data = scrubTimetableEntriesForClient(entries);
+    res.json({ success: true, data });
   } catch (error) {
     console.error('getTimetableEntries:', error);
     res.status(500).json({ success: false, message: error.message });

@@ -1,59 +1,103 @@
 import mongoose from 'mongoose';
 import { VALID_SCHOOL_BOARDS } from '../constants/boards.js';
 
+/**
+ * Platform Quiz module (formerly IQ/Rank Boost).
+ * Super-admin creates quizzes with schedule + audience targeting for students and/or teachers.
+ */
 const iqRankQuizSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
     trim: true,
-    default: function() {
-      return `IQ Quiz - ${new Date().toLocaleDateString()}`;
-    }
+    default: function () {
+      return `Quiz - ${new Date().toLocaleDateString()}`;
+    },
   },
   description: {
     type: String,
-    trim: true
+    trim: true,
   },
   subject: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Subject',
-    required: true
+    required: true,
   },
   classNumber: {
     type: String,
     required: true,
-    trim: true
+    trim: true,
+    default: 'all',
   },
   board: {
     type: String,
     enum: VALID_SCHOOL_BOARDS,
     uppercase: true,
-    default: 'ASLI_EXCLUSIVE_SCHOOLS'
+    default: 'ASLI_EXCLUSIVE_SCHOOLS',
   },
   difficulty: {
     type: String,
     enum: ['easy', 'medium', 'hard', 'expert'],
-    required: true
+    required: true,
   },
   questions: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'IQRankQuestion'
+    ref: 'IQRankQuestion',
   }],
   totalQuestions: {
     type: Number,
     required: true,
-    default: 0
+    default: 0,
   },
   isActive: {
     type: Boolean,
-    default: true
+    default: true,
   },
-  /** Super-admin UI activity type (maps to frontend IQ activity kinds) */
+  /** Legacy activity kind — new quizzes default to `quiz`. */
   activityType: {
     type: String,
-    enum: ['iq-test', 'rank-boost', 'challenge', 'quiz'],
-    default: 'quiz'
+    enum: ['iq-test', 'rank-boost', 'challenge', 'quiz', 'daily', 'weekly'],
+    default: 'quiz',
   },
+  /** once = evergreen, daily/weekly = cadence label for listing + filters */
+  scheduleType: {
+    type: String,
+    enum: ['once', 'daily', 'weekly'],
+    default: 'once',
+  },
+  /** For weekly: 0=Sun … 6=Sat (optional; empty = every day of week when weekly) */
+  scheduleDays: {
+    type: [Number],
+    default: [],
+  },
+  /**
+   * Who can see this quiz:
+   * - all_schools: every school student/teacher matching class (legacy default)
+   * - schools: only targetSchools
+   * - trial: individual trial members only (also sets trialOnly)
+   * - all_members: all platform members for allowed roles (ignores school)
+   * - specific_members: only targetUserIds
+   */
+  audienceType: {
+    type: String,
+    enum: ['all_schools', 'schools', 'trial', 'all_members', 'specific_members'],
+    default: 'all_schools',
+  },
+  /** School-admin User ids (same pattern as Exam.targetSchools) */
+  targetSchools: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+  }],
+  /** Specific student/teacher user ids */
+  targetUserIds: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+  }],
+  /** Roles that may take this quiz */
+  audienceRoles: [{
+    type: String,
+    enum: ['student', 'teacher'],
+  }],
   /** When true, only individual trial (non-paid) accounts can see this quiz. */
   trialOnly: {
     type: Boolean,
@@ -66,37 +110,45 @@ const iqRankQuizSchema = new mongoose.Schema({
   },
   points: {
     type: Number,
-    default: 100
+    default: 100,
   },
   durationMinutes: {
     type: Number,
-    default: 30
+    default: 30,
   },
   generatedBy: {
     type: String,
     enum: ['super-admin', 'admin'],
-    default: 'super-admin'
+    default: 'super-admin',
   },
   createdAt: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   updatedAt: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 }, {
-  timestamps: true
+  timestamps: true,
 });
 
-// Indexes for better performance
+iqRankQuizSchema.pre('validate', function (next) {
+  if (!Array.isArray(this.audienceRoles) || this.audienceRoles.length === 0) {
+    this.audienceRoles = ['student'];
+  }
+  next();
+});
+
 iqRankQuizSchema.index({ classNumber: 1 });
 iqRankQuizSchema.index({ subject: 1 });
 iqRankQuizSchema.index({ isActive: 1 });
 iqRankQuizSchema.index({ createdAt: -1 });
 iqRankQuizSchema.index({ classNumber: 1, subject: 1, isActive: 1 });
+iqRankQuizSchema.index({ audienceType: 1, isActive: 1 });
+iqRankQuizSchema.index({ scheduleType: 1, isActive: 1 });
+iqRankQuizSchema.index({ targetSchools: 1 });
+iqRankQuizSchema.index({ targetUserIds: 1 });
+iqRankQuizSchema.index({ trialOnly: 1, promptOnLogin: 1 });
 
 export default mongoose.model('IQRankQuiz', iqRankQuizSchema);
-
-
-
