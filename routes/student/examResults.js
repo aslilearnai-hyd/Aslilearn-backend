@@ -679,21 +679,35 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
         .limit(14)
         .lean();
 
+      const subjectIdByName = new Map(
+        subjectDocs.map((s) => [String(s.name || '').trim().toLowerCase(), String(s._id)])
+      );
+
       const merged = [
         ...contentVideos.map((v) => ({
           title: v.title || 'Video',
           subject: String(v.subject?.name || ''),
+          subjectId: v.subject?._id ? String(v.subject._id) : '',
           topic: String(v.topic || ''),
           url: v.fileUrl || (Array.isArray(v.fileUrls) ? v.fileUrls[0] : ''),
           type: 'video',
         })),
-        ...teacherVideos.map((v) => ({
-          title: v.title || 'Video',
-          subject: String(v.subjectId || ''),
-          topic: String(v.topic || ''),
-          url: v.youtubeUrl || v.videoUrl || '',
-          type: 'video',
-        })),
+        ...teacherVideos.map((v) => {
+          const subjectKey = String(v.subjectId || '').trim();
+          const looksLikeObjectId = /^[a-f\d]{24}$/i.test(subjectKey);
+          return {
+            title: v.title || 'Video',
+            subject: looksLikeObjectId
+              ? String(subjectDocs.find((s) => String(s._id) === subjectKey)?.name || subjectKey)
+              : subjectKey,
+            subjectId: looksLikeObjectId
+              ? subjectKey
+              : subjectIdByName.get(subjectKey.toLowerCase()) || '',
+            topic: String(v.topic || ''),
+            url: v.youtubeUrl || v.videoUrl || '',
+            type: 'video',
+          };
+        }),
       ].filter((v) => !!v.url);
 
       const dedup = new Map();
@@ -703,6 +717,9 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
       });
       videoRecommendations = Array.from(dedup.values()).slice(0, 10);
     }
+
+    // Prefer exam chapter / subtopic focus cards over generic book/video titles.
+    // Built after questionAttemptDetails exist — patched onto recommendations later.
 
     const safeResult = {
       examId: examIdStr,
@@ -1131,6 +1148,26 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
         .map(({ subject, topic }) => ({ subject, topic }));
     })();
 
+    // Lead recommendations with chapter/subtopic names from this exam (not textbook titles).
+    if (weakTopicsList.length > 0) {
+      const chapterRecs = weakTopicsList.slice(0, 6).map((row) => ({
+        title: row.topic,
+        subject: row.subject,
+        topic: row.topic,
+        subjectId: '',
+        url: '',
+        type: 'chapter-focus',
+        why: `Focus chapter from this exam — revise “${row.topic}” then practise similar questions.`,
+      }));
+      const existing = Array.isArray(videoRecommendations) ? videoRecommendations : [];
+      const seen = new Set(chapterRecs.map((r) => `${r.subject}::${String(r.topic).toLowerCase()}`));
+      const rest = existing.filter((v) => {
+        const key = `${String(v.subject || '').toLowerCase()}::${String(v.topic || v.title || '').toLowerCase()}`;
+        return !seen.has(key);
+      });
+      videoRecommendations = [...chapterRecs, ...rest].slice(0, 10);
+    }
+
     const formatExamClock = (seconds) => {
       const s = Number(seconds) || 0;
       const h = Math.floor(s / 3600);
@@ -1479,8 +1516,18 @@ router.post('/exam-results/ai-analysis', async (req, res) => {
     if (!Array.isArray(aiParsed.videoRecommendations) || aiParsed.videoRecommendations.length === 0) {
       aiParsed.videoRecommendations = videoRecommendations.slice(0, 8).map((v) => ({
         ...v,
-        why: `Recommended to improve ${v.subject || 'this'} understanding.`,
+        why: v.why || `Recommended to improve ${v.subject || 'this'} understanding.`,
       }));
+    } else {
+      // Keep chapter-focus rows first even when AI returns generic video titles.
+      const chapterFirst = (videoRecommendations || []).filter((v) => v?.type === 'chapter-focus');
+      if (chapterFirst.length > 0) {
+        const seen = new Set(chapterFirst.map((v) => String(v.title || '').toLowerCase()));
+        const rest = (aiParsed.videoRecommendations || []).filter(
+          (v) => !seen.has(String(v?.title || '').toLowerCase()),
+        );
+        aiParsed.videoRecommendations = [...chapterFirst, ...rest].slice(0, 8);
+      }
     }
     const genericPatterns = [
       /concept application or option selection error/i,

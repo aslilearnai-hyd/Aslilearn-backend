@@ -246,15 +246,26 @@ export async function buildAdaptiveLearningPayload(userId) {
       if (st !== 'wrong' && st !== 'not_answered') continue;
       const subj = toSubjectKey(q.subject || 'general');
       const w = (st === 'wrong' ? 2 : 1) * recency;
-      const ch = meaningfulChapterLabel(q.chapter);
+      const ch =
+        meaningfulChapterLabel(q.chapter) ||
+        meaningfulChapterLabel(q.topic) ||
+        meaningfulChapterLabel(q.subTopic) ||
+        meaningfulChapterLabel(q.concept);
       if (ch) {
         const tk = `${subj}::${ch.toLowerCase()}`;
-        const prev = topicWeak.get(tk) || { weight: 0, lastAt: completedAt, wrong: 0, skip: 0 };
+        const prev = topicWeak.get(tk) || {
+          weight: 0,
+          lastAt: completedAt,
+          wrong: 0,
+          skip: 0,
+          label: ch,
+        };
         topicWeak.set(tk, {
           weight: prev.weight + w,
           lastAt: completedAt > prev.lastAt ? completedAt : prev.lastAt,
           wrong: prev.wrong + (st === 'wrong' ? 1 : 0),
           skip: prev.skip + (st === 'not_answered' ? 1 : 0),
+          label: prev.label || ch,
         });
       } else {
         subjectOnlyWeak.set(subj, (subjectOnlyWeak.get(subj) || 0) + w);
@@ -334,14 +345,25 @@ export async function buildAdaptiveLearningPayload(userId) {
     const weakTopicsForSub = [...topicWeak.entries()]
       .filter(([tk]) => tk.startsWith(`${subKey}::`))
       .map(([tk, v]) => ({
-        label: tk.split('::').slice(1).join('::'),
+        label: v.label || tk.split('::').slice(1).join('::'),
         weight: v.weight,
         lastAt: v.lastAt,
+        wrong: v.wrong || 0,
+        skip: v.skip || 0,
       }))
       .sort((a, b) => b.weight - a.weight);
 
     const distinctWeakTopics = weakTopicsForSub.length;
     const topicLabels = [...new Set(weakTopicsForSub.map((t) => t.label))];
+    const focusChapters = weakTopicsForSub.slice(0, 6).map((t) => ({
+      chapter: t.label,
+      wrong: t.wrong,
+      skipped: t.skip,
+      weight: Math.round(t.weight * 10) / 10,
+      navigatePath: subjectOidStr
+        ? `/subject/${subjectOidStr}?focus=${encodeURIComponent(t.label)}`
+        : `/learning-paths?focus=${encodeURIComponent(t.label)}`,
+    }));
 
     let progressPercent =
       row.examScore !== undefined && typeof row.examScore === 'number' ? Math.round(row.examScore) : 50;
@@ -549,6 +571,7 @@ export async function buildAdaptiveLearningPayload(userId) {
       examScorePercent: progressPercent,
       weakTopicCount: distinctWeakTopics,
       priority,
+      focusChapters,
       gapsWithoutContent,
       usesLibraryFallback: libraryFallback && recommended.length > 0,
       recommendedContent: capAdaptiveRecommendationsPerSubject(recommended),

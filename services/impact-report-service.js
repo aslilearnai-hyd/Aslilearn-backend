@@ -197,7 +197,7 @@ async function teacherUserIdsForAdmin(adminId) {
 
 async function studentUsersForAdmin(adminId) {
   return User.find({ role: 'student', assignedAdmin: adminId, isActive: { $ne: false } })
-    .select('_id fullName email lastLogin createdAt classNumber studyStreak')
+    .select('_id fullName email lastLogin createdAt classNumber studyStreak overallProgress assignedAdmin')
     .lean();
 }
 
@@ -451,7 +451,7 @@ async function vidyaStatsForUsers(userIds, weekStart, weekEnd) {
 
 async function practiceStatsForUsers(userIds, weekStart, weekEnd) {
   if (!userIds.length) {
-    return { attempts: 0, correct: 0, topics: new Map(), repeatStudents: 0, bySubject: new Map() };
+    return { attempts: 0, correct: 0, topicByUser: new Map(), repeatStudents: 0, bySubject: new Map() };
   }
   const oids = userIds.map((id) => (id._id ? id._id : id));
   const rows = await UserProgress.find({
@@ -1039,31 +1039,267 @@ export async function buildTeacherDigest(teacherUser, weekStart, weekEnd, school
   );
 }
 
-export async function buildStudentDigest(student, weekStart, weekEnd, schoolSnap) {
+function formatMinutesLabel(totalMinutes) {
+  const mins = Math.max(0, Math.round(Number(totalMinutes) || 0));
+  const h = Math.floor(mins / 60);
+  const m = mins % 60;
+  if (h <= 0) return `${m} min`;
+  if (m <= 0) return `${h} hr${h === 1 ? '' : 's'}`;
+  return `${h} hr${h === 1 ? '' : 's'} ${m} min`;
+}
+
+/**
+ * Full student tracking metrics for a week window (matches Student Tracking Structure).
+ */
+export async function computeStudentWeeklyTracking(student, weekStart, weekEnd) {
   const sid = student._id;
-  const sessions = await sessionStatsForUsers([sid], weekStart, weekEnd);
-  const mine = sessions.byUser.get(String(sid)) || { sessions: 0, minutes: 0 };
-  const vidya = await vidyaStatsForUsers([sid], weekStart, weekEnd);
-  const practice = await practiceStatsForUsers([sid], weekStart, weekEnd);
-  const topicsPractised = practice.topicByUser.get(String(sid))?.size || 0;
-  const metrics = {
-    sessions: mine.sessions,
-    minutes: mine.minutes,
-    aiDoubts: vidya.byUser.get(String(sid)) || 0,
-    practiceAttempts: practice.attempts,
-    topicsPractised,
-    streak: student.studyStreak?.current || 0,
-    classNumber: student.classNumber || '',
+  const sidStr = String(sid);
+  const examDate = {
+    $or: [
+      { completedAt: { $gte: weekStart, $lte: weekEnd } },
+      { createdAt: { $gte: weekStart, $lte: weekEnd } },
+    ],
   };
-  const highlights = [];
-  if (metrics.sessions > 0) {
-    highlights.push(`You studied in ${metrics.sessions} session(s) (${metrics.minutes} min).`);
+  const progressDate = {
+    $or: [
+      { lastAccessed: { $gte: weekStart, $lte: weekEnd } },
+      { updatedAt: { $gte: weekStart, $lte: weekEnd } },
+    ],
+  };
+
+  const [
+    sessions,
+    vidya,
+    practice,
+    examAgg,
+    examRows,
+    iqCount,
+    homeworkCount,
+    videoAgg,
+    chapterCount,
+    aiToolOpens,
+    earliestSession,
+    lifetimeSessions,
+  ] = await Promise.all([
+    sessionStatsForUsers([sid], weekStart, weekEnd),
+    vidyaStatsForUsers([sid], weekStart, weekEnd),
+    practiceStatsForUsers([sid], weekStart, weekEnd),
+    ExamResult.aggregate([
+      { $match: { userId: sid, ...examDate } },
+      {
+        $group: {
+          _id: '$userId',
+          attempts: { $sum: 1 },
+          avgPct: { $avg: { $ifNull: ['$percentage', 0] } },
+          bestPct: { $max: { $ifNull: ['$percentage', 0] } },
+          totalCorrect: { $sum: { $ifNull: ['$correctAnswers', 0] } },
+          totalQuestions: { $sum: { $ifNull: ['$totalQuestions', 0] } },
+        },
+      },
+    ]).catch(() => []),
+    ExamResult.find({ userId: sid, ...examDate })
+      .select('examTitle percentage obtainedMarks totalMarks completedAt createdAt correctAnswers wrongAnswers unattempted')
+      .sort({ completedAt: -1, createdAt: -1 })
+      .limit(12)
+      .lean()
+      .catch(() => []),
+    IQRankQuizResult.countDocuments({
+      userId: sid,
+      $or: [
+        { completedAt: { $gte: weekStart, $lte: weekEnd } },
+        { createdAt: { $gte: weekStart, $lte: weekEnd } },
+      ],
+    }).catch(() => 0),
+    HomeworkSubmission.countDocuments({
+      studentId: sid,
+      $or: [
+        { submittedAt: { $gte: weekStart, $lte: weekEnd } },
+        { createdAt: { $gte: weekStart, $lte: weekEnd } },
+      ],
+    }).catch(() => 0),
+    UserProgress.aggregate([
+      { $match: { userId: sid, videoId: { $ne: null }, ...progressDate } },
+      {
+        $group: {
+          _id: '$userId',
+          videos: { $addToSet: '$videoId' },
+          touches: { $sum: 1 },
+        },
+      },
+    ]).catch(() => []),
+    StudentVideoChapterProgress.countDocuments({
+      userId: sid,
+      updatedAt: { $gte: weekStart, $lte: weekEnd },
+    }).catch(() => 0),
+    Promise.all([
+      AiToolGeneration.countDocuments({
+        generatedBy: sid,
+        createdAt: { $gte: weekStart, $lte: weekEnd },
+      }).catch(() => 0),
+      AiToolGeneration.countDocuments({
+        generatedBy: sidStr,
+        createdAt: { $gte: weekStart, $lte: weekEnd },
+      }).catch(() => 0),
+      UserProgress.countDocuments({
+        userId: sid,
+        toolType: { $nin: [null, ''] },
+        ...progressDate,
+      }).catch(() => 0),
+    ]),
+    UserSession.findOne({ userId: sid }).sort({ date: 1 }).select('date startTime').lean().catch(() => null),
+    UserSession.countDocuments({ userId: sid }).catch(() => 0),
+  ]);
+
+  const mine = sessions.byUser.get(sidStr) || { sessions: 0, minutes: 0, activeDays: 0 };
+  const topicMap = practice.topicByUser?.get(sidStr) || new Map();
+  const topicsPractised = topicMap.size;
+  let topicsRepeated = 0;
+  let topicTouches = 0;
+  for (const count of topicMap.values()) {
+    topicTouches += count;
+    if (count >= 2) topicsRepeated += 1;
   }
-  if (metrics.aiDoubts > 0) {
-    highlights.push(`You asked Vidya AI ${metrics.aiDoubts} time(s).`);
+  const repeatPracticePct =
+    topicsPractised > 0 ? Math.round((topicsRepeated / topicsPractised) * 1000) / 10 : 0;
+
+  const practiceAttempts = practice.attempts || 0;
+  const practiceCorrect = practice.correct || 0;
+  const practiceAccuracy =
+    practiceAttempts > 0 ? Math.round((practiceCorrect / practiceAttempts) * 1000) / 10 : 0;
+
+  const ex = examAgg[0] || {};
+  const examAttempts = ex.attempts || 0;
+  const avgExamPct = Math.round((ex.avgPct || 0) * 10) / 10;
+  const bestExamPct = Math.round((ex.bestPct || 0) * 10) / 10;
+  const examQuestionAccuracy =
+    ex.totalQuestions > 0
+      ? Math.round(((ex.totalCorrect || 0) / ex.totalQuestions) * 1000) / 10
+      : 0;
+
+  const vidyaDoubts = vidya.byUser.get(sidStr) || 0;
+  const [aiGenByOid, aiGenByStr, aiToolProgress] = aiToolOpens;
+  const aiToolUses = (aiGenByOid || 0) + (aiGenByStr || 0) + (aiToolProgress || 0);
+  const aiExplanations = vidyaDoubts + aiToolUses;
+
+  const videoRow = videoAgg[0] || {};
+  const videosWatched = (videoRow.videos || []).length;
+  const avgSessionMinutes =
+    mine.sessions > 0 ? Math.round(((mine.minutes || 0) / mine.sessions) * 10) / 10 : 0;
+
+  const subjectMap = mergeSubjectMaps(practice.bySubject || new Map(), vidya.bySubject || new Map());
+  const topSubjects = topSubjectsFromMap(subjectMap, 5).map((s) => s.subject);
+
+  const activationDate =
+    earliestSession?.date ||
+    (earliestSession?.startTime ? calendarDayKey(earliestSession.startTime) : null) ||
+    (student.createdAt ? calendarDayKey(student.createdAt) : null);
+
+  const loggedInThisWeek =
+    Boolean(student.lastLogin) &&
+    calendarDayKey(student.lastLogin) >= calendarDayKey(weekStart) &&
+    calendarDayKey(student.lastLogin) <= calendarDayKey(weekEnd);
+
+  const loginDays = Math.max(mine.activeDays || 0, loggedInThisWeek ? 1 : 0, mine.sessions > 0 ? 1 : 0);
+  // Prefer distinct active days as "logins" since we store one session row per calendar day.
+  const loginCount = Math.max(loginDays, mine.activeDays || 0);
+
+  const exams = (examRows || []).map((r) => ({
+    title: r.examTitle || 'Exam',
+    percentage: Math.round((Number(r.percentage) || 0) * 10) / 10,
+    obtainedMarks: r.obtainedMarks,
+    totalMarks: r.totalMarks,
+    correctAnswers: r.correctAnswers,
+    wrongAnswers: r.wrongAnswers,
+    unattempted: r.unattempted,
+    completedAt: r.completedAt || r.createdAt || null,
+  }));
+
+  return {
+    // Adoption
+    activationDate,
+    loginCount,
+    loginDays,
+    lastActiveDate: student.lastLogin ? calendarDayKey(student.lastLogin) : null,
+    lifetimeLoginDays: lifetimeSessions || 0,
+
+    // Engagement
+    sessions: mine.sessions || 0,
+    minutes: mine.minutes || 0,
+    totalTimeLabel: formatMinutesLabel(mine.minutes || 0),
+    avgSessionMinutes,
+    daysActive: mine.activeDays || 0,
+
+    // Learning behaviour
+    topicsPractised,
+    topicsRepeated,
+    repeatPracticePct,
+    topicTouches,
+
+    // AI usage
+    aiDoubts: vidyaDoubts,
+    aiToolUses,
+    aiExplanations,
+    practiceAttempts,
+    practiceCorrect,
+    practiceAccuracy,
+    iqAttempts: iqCount || 0,
+    homeworkSubmissions: homeworkCount || 0,
+
+    // Content focus
+    topSubjects,
+    videosWatched,
+    chaptersCompleted: chapterCount || 0,
+
+    // Progress
+    streak: student.studyStreak?.current || 0,
+    masteryPct: Math.round(Number(student.overallProgress) || 0),
+    classNumber: student.classNumber || '',
+
+    // Exams
+    examAttempts,
+    avgExamPct,
+    bestExamPct,
+    examQuestionAccuracy,
+    exams,
+  };
+}
+
+function studentDigestHighlights(metrics) {
+  const highlights = [];
+  if (metrics.loginCount > 0) {
+    highlights.push(`You logged in on ${metrics.loginCount} day(s) this week.`);
+  }
+  if (metrics.sessions > 0) {
+    highlights.push(
+      `You studied in ${metrics.sessions} session(s) (${metrics.totalTimeLabel || `${metrics.minutes} min`}).`,
+    );
+  }
+  if (metrics.examAttempts > 0) {
+    highlights.push(
+      `You wrote ${metrics.examAttempts} exam(s) — avg ${metrics.avgExamPct}% (best ${metrics.bestExamPct}%).`,
+    );
+  }
+  if (metrics.aiExplanations > 0) {
+    highlights.push(
+      `You used AI ${metrics.aiExplanations} time(s) (Vidya ${metrics.aiDoubts}, tools ${metrics.aiToolUses}).`,
+    );
   }
   if (metrics.topicsPractised > 0) {
-    highlights.push(`You practised ${metrics.topicsPractised} topic(s).`);
+    highlights.push(
+      `You practised ${metrics.topicsPractised} topic(s)${
+        metrics.topicsRepeated > 0
+          ? ` · ${metrics.topicsRepeated} repeated (${metrics.repeatPracticePct}% repeat)`
+          : ''
+      }.`,
+    );
+  }
+  if (metrics.practiceAttempts > 0) {
+    highlights.push(
+      `Practice / quiz attempts: ${metrics.practiceAttempts} · accuracy ${metrics.practiceAccuracy}%.`,
+    );
+  }
+  if (metrics.topSubjects?.length) {
+    highlights.push(`Top subjects: ${metrics.topSubjects.slice(0, 3).join(', ')}.`);
   }
   if (metrics.streak > 0) {
     highlights.push(`Current streak: ${metrics.streak} day(s). Keep it going!`);
@@ -1071,13 +1307,20 @@ export async function buildStudentDigest(student, weekStart, weekEnd, schoolSnap
   if (!highlights.length) {
     highlights.push('Open one chapter this week and try a short practice or ask Vidya AI a doubt.');
   }
+  return highlights;
+}
+
+export async function buildStudentDigest(student, weekStart, weekEnd, schoolSnap) {
+  const sid = student._id;
+  const metrics = await computeStudentWeeklyTracking(student, weekStart, weekEnd);
+  const highlights = studentDigestHighlights(metrics);
 
   return WeeklyDigest.findOneAndUpdate(
     { userId: sid, weekStart },
     {
       $set: {
         role: 'student',
-        adminId: schoolSnap?.adminId,
+        adminId: schoolSnap?.adminId || student.assignedAdmin || undefined,
         weekEnd,
         title: 'Your weekly AsliLearn learning report',
         summary: `Week of ${formatPeriodLabel(weekStart, weekEnd)}`,
@@ -1088,6 +1331,17 @@ export async function buildStudentDigest(student, weekStart, weekEnd, schoolSnap
     },
     { upsert: true, new: true, setDefaultsOnInsert: true },
   );
+}
+
+/** Rebuild only this student's digest (dashboard refresh — not whole school). */
+export async function rebuildStudentWeeklyDigestForUser(userId, weekStartInput = new Date()) {
+  const weekStart = startOfIsoWeek(weekStartInput);
+  const weekEnd = endOfIsoWeek(weekStart);
+  const student = await User.findById(userId)
+    .select('_id role fullName email lastLogin createdAt classNumber studyStreak overallProgress assignedAdmin')
+    .lean();
+  if (!student || student.role !== 'student') return null;
+  return buildStudentDigest(student, weekStart, weekEnd, { adminId: student.assignedAdmin });
 }
 
 /**
