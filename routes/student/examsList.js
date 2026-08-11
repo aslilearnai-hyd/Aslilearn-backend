@@ -37,6 +37,7 @@ import {
 } from '../../utils/advancedExamAnalytics.js';
 import { normalizeSchoolBoard, resolveUserDisplayBoard } from '../../constants/boards.js';
 import { QUESTION_LIST_SORT, ensureExamQuestionDisplayOrders, shuffleQuestionsForStudent } from '../../utils/exam-question-order.js';
+import ExamAttemptDraft from '../../models/ExamAttemptDraft.js';
 import {
   loadExamQuestionBankForResults,
   toPlainExamResultForApi,
@@ -187,6 +188,43 @@ const canStudentAccessExam = (exam, studentAdminId, studentBoard) => {
   return examVisibleToStudent(exam, studentAdminId, studentBoard);
 };
 
+/** Attach in-progress draft flags so clients can show "Resume Exam". */
+async function attachInProgressDraftFlags(exams, userId) {
+  const list = Array.isArray(exams) ? exams : [];
+  if (!list.length || !userId) {
+    return list.map((exam) => ({ ...exam, hasInProgressDraft: false }));
+  }
+
+  const examIds = list.map((exam) => exam?._id).filter(Boolean);
+  if (!examIds.length) {
+    return list.map((exam) => ({ ...exam, hasInProgressDraft: false }));
+  }
+
+  const drafts = await ExamAttemptDraft.find({
+    userId,
+    examId: { $in: examIds },
+    status: 'in_progress',
+  })
+    .select('examId remainingSeconds lastSavedAt currentQuestionIndex')
+    .lean();
+
+  const draftByExamId = new Map(drafts.map((d) => [String(d.examId), d]));
+
+  return list.map((exam) => {
+    const draft = draftByExamId.get(String(exam._id));
+    if (!draft) {
+      return { ...exam, hasInProgressDraft: false };
+    }
+    return {
+      ...exam,
+      hasInProgressDraft: true,
+      draftRemainingSeconds: Math.max(0, Number(draft.remainingSeconds) || 0),
+      draftLastSavedAt: draft.lastSavedAt || null,
+      draftCurrentQuestionIndex: Math.max(0, Number(draft.currentQuestionIndex) || 0),
+    };
+  });
+}
+
 // Get student's exams (respect school targeting)
 router.get('/exams', async (req, res) => {
   try {
@@ -249,10 +287,12 @@ router.get('/exams', async (req, res) => {
     console.log(
       `✅ Found ${publishedExams.length} accessible exams for class ${studentClassNumber || 'unset'} board ${boardLog} (from ${hydratedExams.length} total)`
     );
-    
+
+    const examsWithDraftFlags = await attachInProgressDraftFlags(publishedExams, req.userId);
+
     res.json({
       success: true,
-      data: publishedExams
+      data: examsWithDraftFlags
     });
   } catch (error) {
     console.error('Error fetching student exams:', error);
@@ -345,9 +385,11 @@ router.get('/exams/:examId', async (req, res) => {
       });
     }
 
+    const [examWithDraftFlag] = await attachInProgressDraftFlags([hydratedExam], req.userId);
+
     res.json({
       success: true,
-      data: hydratedExam
+      data: examWithDraftFlag
     });
   } catch (error) {
     console.error('Error fetching exam:', error);
