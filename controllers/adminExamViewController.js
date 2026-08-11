@@ -102,10 +102,44 @@ export const getViewableExams = async (req, res) => {
       .lean();
 
     const visible = exams.filter((exam) => examVisibleToSchoolAdmin(exam, admin));
+    const byId = new Map(visible.map((e) => [String(e._id), e]));
+
+    // Surface Super Admin exams this school's students already attempted,
+    // even if targeting/board would otherwise hide them (avoids "missing class" cards).
+    const schoolStudentIds = await User.find({
+      assignedAdmin: adminId,
+      role: 'student',
+    }).distinct('_id');
+
+    if (schoolStudentIds.length) {
+      const attemptedExamIds = await ExamResult.distinct('examId', {
+        userId: { $in: schoolStudentIds },
+      });
+      const missingIds = attemptedExamIds.filter((id) => id && !byId.has(String(id)));
+      if (missingIds.length) {
+        const extras = await Exam.find({
+          _id: { $in: missingIds },
+          createdByRole: 'super-admin',
+        })
+          .populate('questions')
+          .populate('createdBy', 'fullName email')
+          .populate('targetSchools', 'schoolName fullName email')
+          .lean();
+        for (const exam of extras) {
+          byId.set(String(exam._id), exam);
+        }
+      }
+    }
+
+    const merged = [...byId.values()].sort((a, b) => {
+      const ta = new Date(a.updatedAt || a.createdAt || 0).getTime();
+      const tb = new Date(b.updatedAt || b.createdAt || 0).getTime();
+      return tb - ta;
+    });
 
     res.json({
       success: true,
-      data: visible,
+      data: merged,
       message: 'Exams fetched successfully',
     });
   } catch (error) {
@@ -256,30 +290,11 @@ export const getStudentExamResults = async (req, res) => {
     const studentIds = students.map((s) => s._id);
 
     if (studentIds.length === 0) {
-      // Still try exam results for the whole school when class label mismatch emptied the pool
-      if (examId && mongoose.Types.ObjectId.isValid(examId)) {
-        const fallbackIds = schoolStudents.map((s) => s._id);
-        if (fallbackIds.length) {
-          const fallbackResults = await ExamResult.find({
-            userId: { $in: fallbackIds },
-            examId: new mongoose.Types.ObjectId(examId),
-          })
-            .populate('userId', 'fullName email classNumber')
-            .populate('examId', 'title examType')
-            .sort({ completedAt: -1 });
-          if (fallbackResults.length) {
-            return res.json({
-              success: true,
-              data: fallbackResults.map(serializeExamResultRow),
-              count: fallbackResults.length,
-            });
-          }
-        }
-      }
+      // Do not fall back to other classes — that mixes papers / results across grades.
       return res.json({
         success: true,
         data: [],
-        count: 0
+        count: 0,
       });
     }
 
@@ -299,10 +314,17 @@ export const getStudentExamResults = async (req, res) => {
       if (endDate) resultQuery.completedAt.$lte = new Date(endDate);
     }
 
-    const results = await ExamResult.find(resultQuery)
+    let results = await ExamResult.find(resultQuery)
       .populate('userId', 'fullName email classNumber')
       .populate('examId', 'title examType')
       .sort({ completedAt: -1 });
+
+    // Belt-and-suspenders: keep only students matching the requested class label.
+    if (classNum) {
+      results = results.filter((r) =>
+        classLabelsMatch(r.userId?.classNumber, classNum)
+      );
+    }
 
     let filteredResults = results;
     if (subject) {
@@ -434,22 +456,21 @@ export const getExamPerformanceAnalytics = async (req, res) => {
       eligibleIds.has(String(r.userId?._id || r.userId || '')),
     );
 
-    // If class filter wiped attempts but the school has submissions for this exam,
-    // show those submissions and expand eligible pool to attempters + class mates.
-    if (scopedClasses.length && scopedResults.length === 0 && results.length > 0) {
-      scopedResults = results;
-      const attempterIds = new Set(
-        results.map((r) => String(r.userId?._id || r.userId || '')).filter(Boolean),
+    // Prefer matching result.userId.classNumber when a class filter is set
+    // (handles students whose profile class string differed from the eligible pool).
+    if (classNum && scopedResults.length === 0 && results.length > 0) {
+      scopedResults = results.filter((r) =>
+        classLabelsMatch(r.userId?.classNumber, classNum),
       );
-      eligibleStudents = schoolStudents.filter(
-        (s) =>
-          attempterIds.has(String(s._id)) ||
-          studentInExamClasses(s.classNumber, scopedClasses),
-      );
-      if (!eligibleStudents.length) {
-        eligibleStudents = schoolStudents.filter((s) => attempterIds.has(String(s._id)));
+      if (scopedResults.length) {
+        const ids = new Set(
+          scopedResults.map((r) => String(r.userId?._id || r.userId || '')).filter(Boolean),
+        );
+        eligibleStudents = schoolStudents.filter((s) => ids.has(String(s._id)));
       }
     }
+
+    // Never expand to other classes' attempts — that made Class 6 analytics show Class 7 papers.
 
     res.json({
       success: true,

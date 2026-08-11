@@ -457,8 +457,14 @@ export const bulkDeleteTimetable = async (req, res) => {
 };
 
 /**
- * Remap period bell times for a class week, and optionally insert Break/Lunch slots.
- * Body: { classId, startDate, endDate, mappings: [{fromStart,toStart,toEnd}], breaksToAdd: [{startTime,endTime,label}] }
+ * Remap period bell times for a class week, and optionally insert/update/remove Break/Lunch slots.
+ * Body: {
+ *   classId, startDate, endDate,
+ *   mappings: [{fromStart,toStart,toEnd}],
+ *   breaksToAdd: [{startTime,endTime,label}],
+ *   breaksToUpdate: [{fromStart,toStart,toEnd,label}],
+ *   breaksToRemove: [{fromStart}],
+ * }
  */
 export const remapPeriodTimes = async (req, res) => {
   try {
@@ -466,7 +472,15 @@ export const remapPeriodTimes = async (req, res) => {
     if (!schoolAdminId) {
       return res.status(403).json({ success: false, message: 'Admin only' });
     }
-    const { classId, startDate, endDate, mappings = [], breaksToAdd = [] } = req.body || {};
+    const {
+      classId,
+      startDate,
+      endDate,
+      mappings = [],
+      breaksToAdd = [],
+      breaksToUpdate = [],
+      breaksToRemove = [],
+    } = req.body || {};
     if (!classId || !startDate || !endDate) {
       return res.status(400).json({
         success: false,
@@ -499,10 +513,53 @@ export const remapPeriodTimes = async (req, res) => {
           classId: classOid,
           startTime: fromStart,
           date: dateFilter,
+          sessionType: { $ne: 'Activity' },
         },
         { $set: { startTime: toStart, endTime: toEnd } },
       );
       updated += result.modifiedCount || 0;
+    }
+
+    let breaksUpdated = 0;
+    let breaksRemoved = 0;
+
+    if (Array.isArray(breaksToRemove) && breaksToRemove.length) {
+      for (const br of breaksToRemove) {
+        const fromStart = String(br.fromStart || br.startTime || '').trim();
+        if (!/^\d{2}:\d{2}$/.test(fromStart)) continue;
+        const result = await Timetable.deleteMany({
+          schoolAdminId,
+          classId: classOid,
+          startTime: fromStart,
+          date: dateFilter,
+          sessionType: 'Activity',
+        });
+        breaksRemoved += result.deletedCount || 0;
+      }
+    }
+
+    if (Array.isArray(breaksToUpdate) && breaksToUpdate.length) {
+      for (const br of breaksToUpdate) {
+        const fromStart = String(br.fromStart || '').trim();
+        const toStart = String(br.toStart || br.startTime || '').trim();
+        const toEnd = String(br.toEnd || br.endTime || '').trim();
+        const label = String(br.label || 'Break').trim().slice(0, 40) || 'Break';
+        if (!/^\d{2}:\d{2}$/.test(fromStart) || !/^\d{2}:\d{2}$/.test(toStart) || !/^\d{2}:\d{2}$/.test(toEnd)) {
+          continue;
+        }
+        if (parseTimeToMinutes(toEnd) <= parseTimeToMinutes(toStart)) continue;
+        const result = await Timetable.updateMany(
+          {
+            schoolAdminId,
+            classId: classOid,
+            startTime: fromStart,
+            date: dateFilter,
+            sessionType: 'Activity',
+          },
+          { $set: { startTime: toStart, endTime: toEnd, notes: label } },
+        );
+        breaksUpdated += result.modifiedCount || 0;
+      }
     }
 
     let breaksCreated = 0;
@@ -517,6 +574,8 @@ export const remapPeriodTimes = async (req, res) => {
           success: false,
           message: 'No timetable rows found for this class/week to attach breaks.',
           updated,
+          breaksUpdated,
+          breaksRemoved,
         });
       }
 
@@ -596,7 +655,13 @@ export const remapPeriodTimes = async (req, res) => {
       }
     }
 
-    res.json({ success: true, updated, breaksCreated });
+    res.json({
+      success: true,
+      updated,
+      breaksCreated,
+      breaksUpdated,
+      breaksRemoved,
+    });
   } catch (error) {
     console.error('remapPeriodTimes:', error);
     res.status(500).json({ success: false, message: error.message });
