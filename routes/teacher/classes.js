@@ -51,6 +51,7 @@ import {
   subjectGroupKey,
   extractPlainSubjectNameForContent,
 } from '../../utils/resolveSubjectContentIds.js';
+import { prepareLearningPathSubjects } from '../../utils/learningPathSubjects.js';
 import { parseDateKeyToUtc, getTeacherClassesHandler } from './helpers.js';
 
 const router = express.Router();
@@ -119,17 +120,23 @@ router.get('/subjects', async (req, res) => {
       groupedSubjects.get(key).ids.push(id);
     }
 
+    const formatted = Array.from(groupedSubjects.values()).map(({ subj, ids }) => ({
+      _id: ids[0],
+      id: ids[0],
+      name: extractPlainSubjectNameForContent(subj.name) || subj.name,
+      description: subj.description || '',
+      code: subj.code || '',
+      board: subj.board || '',
+      mergedSubjectIds: ids,
+    }));
+
+    // Learning Paths browse: no IIT (Edu OTT only); merge BIO/Biology aliases
+    const learningPathSubjects = prepareLearningPathSubjects(formatted);
+
     res.json({
       success: true,
-      data: Array.from(groupedSubjects.values()).map(({ subj, ids }) => ({
-        _id: ids[0],
-        id: ids[0],
-        name: extractPlainSubjectNameForContent(subj.name) || subj.name,
-        description: subj.description || '',
-        code: subj.code || '',
-        board: subj.board || '',
-        mergedSubjectIds: ids,
-      })),
+      data: learningPathSubjects,
+      subjects: learningPathSubjects,
     });
   } catch (error) {
     console.error('Error fetching teacher subjects:', error);

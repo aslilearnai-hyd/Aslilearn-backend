@@ -72,6 +72,7 @@ import {
   resolveStudentContentBoard,
   getStudentAdminId,
 } from './helpers.js';
+import { prepareLearningPathSubjects } from '../../utils/learningPathSubjects.js';
 
 
 const router = express.Router();
@@ -156,12 +157,13 @@ async function getStudentSubjectsHandler(req, res) {
         }),
       );
 
+      const learningPathSubjects = prepareLearningPathSubjects(formattedSubjects);
       return res.json({
         success: true,
-        subjects: formattedSubjects,
-        data: formattedSubjects,
+        subjects: learningPathSubjects,
+        data: learningPathSubjects,
         message:
-          formattedSubjects.length === 0
+          learningPathSubjects.length === 0
             ? 'No curriculum subjects found for your class yet. Confirm class and board on signup, or try again later.'
             : undefined,
       });
@@ -298,17 +300,20 @@ async function getStudentSubjectsHandler(req, res) {
       })
     );
     
-    console.log(`✅ Returning ${formattedSubjects.length} subjects with teacher info`);
-    console.log('Sample subject with teachers:', formattedSubjects[0] ? {
-      name: formattedSubjects[0].name,
-      teacherCount: formattedSubjects[0].teacherCount,
-      teachers: formattedSubjects[0].teachers
+    // Learning Paths: never list IIT (Edu OTT only); merge BIO/Biology/Chemistry_8 duplicates
+    const learningPathSubjects = prepareLearningPathSubjects(formattedSubjects);
+
+    console.log(`✅ Returning ${learningPathSubjects.length} learning-path subjects (from ${formattedSubjects.length} raw)`);
+    console.log('Sample subject with teachers:', learningPathSubjects[0] ? {
+      name: learningPathSubjects[0].name,
+      teacherCount: learningPathSubjects[0].teacherCount,
+      teachers: learningPathSubjects[0].teachers
     } : 'none');
     
     res.json({
       success: true,
-      subjects: formattedSubjects,
-      data: formattedSubjects
+      subjects: learningPathSubjects,
+      data: learningPathSubjects
     });
   } catch (error) {
     console.error('Error fetching student subjects:', error);

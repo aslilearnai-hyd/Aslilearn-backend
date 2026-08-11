@@ -87,6 +87,13 @@ aiToolGenerationSchema.index({
   subtopic: 1,
   createdAt: -1,
 });
+// Speeds teacher/student "topics with saved content" distinct lookups
+aiToolGenerationSchema.index({
+  classLabel: 1,
+  subject: 1,
+  toolName: 1,
+  status: 1,
+});
 aiToolGenerationSchema.index({ sourceType: 1, toolName: 1, createdAt: -1 });
 aiToolGenerationSchema.index({ 'metadata.contentEngineSourceId': 1 });
 aiToolGenerationSchema.index({ reviewStatus: 1, updatedAt: -1 });
