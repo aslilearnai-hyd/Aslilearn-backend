@@ -28,10 +28,101 @@ function safeJson(raw) {
 const OPS = ['count', 'list', 'aggregate', 'distinct'];
 const FILTER_OPS = ['eq', 'ne', 'gt', 'gte', 'lt', 'lte', 'in', 'regex', 'exists'];
 const AGG_OPS = ['sum', 'avg', 'min', 'max', 'count'];
+const TIMEFRAMES = ['today', 'this_week', 'this_month', 'last_7_days', 'all'];
 const aliasList = Object.entries(MODULE_REGISTRY)
   .map(([k, v]) => `- ${k}: ${[k, ...(v.aliases || [])].join(', ')}`)
   .join('\n');
 
+function parseTimeframeFromMessage(message) {
+  const lower = String(message || '').toLowerCase();
+  if (/last\s*7\s*days|past\s*7\s*days|previous\s*7\s*days/.test(lower)) return 'last_7_days';
+  const daysMatch = lower.match(/last\s*(\d{1,3})\s*days?/);
+  if (daysMatch) {
+    const n = Math.min(365, Math.max(1, parseInt(daysMatch[1], 10)));
+    return n === 7 ? 'last_7_days' : `last_${n}_days`;
+  }
+  if (/\btoday\b/.test(lower)) return 'today';
+  if (/this week|weekly/.test(lower)) return 'this_week';
+  if (/this month|monthly/.test(lower)) return 'this_month';
+  return 'all';
+}
+
+function isGroupedBySchool(message) {
+  return /(grouped?\s+by\s+school|group\s+by\s+school|per\s+school|by\s+school)/i.test(
+    String(message || ''),
+  );
+}
+
+function isPrimarilySchoolCount(message) {
+  const lower = String(message || '').toLowerCase();
+  if (isGroupedBySchool(lower)) return false;
+  return /(how many schools|number of schools|total schools|count(?:\s+the)?\s+schools|schools (?:are|do) there)/i.test(
+    lower,
+  );
+}
+
+function buildMetricsGroupPlan({ module, message, preferredDateField = '', errMessage = '' }) {
+  const bySchool = isGroupedBySchool(message);
+  const isCount = /((how|who)\s*many|count|total|number of|are there|how much)/i.test(
+    String(message || ''),
+  );
+  return {
+    mode: 'database',
+    module,
+    operation: bySchool ? 'aggregate' : isCount ? 'count' : 'list',
+    filters: [],
+    selectFields: [],
+    groupBy: bySchool ? ['school'] : [],
+    aggregates: [{ func: 'count', field: '*', as: 'count' }],
+    sort: [{ field: 'count', direction: 'desc' }],
+    limit: bySchool ? 50 : 20,
+    timeframe: parseTimeframeFromMessage(message),
+    preferredDateField,
+    clarification: '',
+    parseWarning: errMessage ? `gemini_unavailable:${errMessage}` : `${module}_metrics_intent`,
+  };
+}
+
+function tryBuildUsageOrAuditPlan(message, errMessage = '') {
+  const lower = String(message || '').toLowerCase();
+  if (/(audit\s*log|audit\s*entr|compliance\s*log)/i.test(lower)) {
+    return buildMetricsGroupPlan({
+      module: 'audit_logs',
+      message,
+      preferredDateField: 'at',
+      errMessage,
+    });
+  }
+  if (
+    /(usage\s*analytics|ai\s*analytics|vidya\s*(call|usage)|analytics\s*entr|ai\s*usage|ai\s*conversation)/i.test(
+      lower,
+    )
+  ) {
+    return buildMetricsGroupPlan({
+      module: 'analytics',
+      message,
+      preferredDateField: 'ts',
+      errMessage,
+    });
+  }
+  if (/(teacher\s*tool\s*usage|tool\s*usage)/i.test(lower)) {
+    return buildMetricsGroupPlan({
+      module: 'teacher_tool_usage',
+      message,
+      preferredDateField: 'createdAt',
+      errMessage,
+    });
+  }
+  if (/(weekly\s*impact|impact\s*snapshot|school\s*impact)/i.test(lower)) {
+    return buildMetricsGroupPlan({
+      module: 'impact_snapshots',
+      message,
+      preferredDateField: 'weekStart',
+      errMessage,
+    });
+  }
+  return null;
+}
 const GREETING_RE = /^(hi|hii|hiii|hello|hey|heya|yo|sup|good\s*(morning|afternoon|evening|night)|namaste|hola|thanks|thank\s*you|thx|ok|okay|bye|goodbye|how\s*are\s*you|what'?s\s*up)[\s!.?]*$/i;
 
 function isGreetingOrSmallTalk(message) {
@@ -197,6 +288,9 @@ function buildHeuristicPlan(message, errMessage = '') {
     return buildSchoolSearchPlan(namedSchool, errMessage);
   }
 
+  const metricsPlan = tryBuildUsageOrAuditPlan(message, errMessage);
+  if (metricsPlan) return metricsPlan;
+
   const lower = String(message || '').toLowerCase();
   const classMatch = String(message || '').match(/class\s*(\d+)/i);
   const classNumber = classMatch ? classMatch[1] : '';
@@ -216,7 +310,7 @@ function buildHeuristicPlan(message, errMessage = '') {
   const filters = [];
 
   let module = 'students';
-  if (isSchoolQuery) {
+  if (isPrimarilySchoolCount(lower) || (isSchoolQuery && !isGroupedBySchool(lower) && !/(student|teacher|exam|audit|analytics|usage|order|omr|video)/i.test(lower))) {
     module = 'schools';
   } else if (/(trial|individual account|b2c)/i.test(lower)) {
     module = 'trial_members';
@@ -230,8 +324,10 @@ function buildHeuristicPlan(message, errMessage = '') {
     module = 'exams';
   } else if (/(result|results|score|performance)/i.test(lower)) {
     module = 'results';
-  } else if (/(attendance|present|absent|session)/i.test(lower)) {
+  } else if (/(attendance|present|absent)/i.test(lower)) {
     module = 'attendance';
+  } else if (/(learning session|user session|session time|study session)/i.test(lower)) {
+    module = 'learning_sessions';
   } else if (/(subject|subjects)/i.test(lower)) {
     module = 'subjects';
   } else if (/(class|classes|section|sections)/i.test(lower)) {
@@ -246,7 +342,9 @@ function buildHeuristicPlan(message, errMessage = '') {
     module = 'performance_reports';
   } else if (/(report|reports|remark|remarks)/i.test(lower)) {
     module = 'reports';
-  } else if (/(analytics|audit|logs)/i.test(lower)) {
+  } else if (/(audit\s*log|audit\s*entr)/i.test(lower)) {
+    module = 'audit_logs';
+  } else if (/(usage\s*analytics|ai\s*analytics|analytics|vidya\s*usage)/i.test(lower)) {
     module = 'analytics';
   } else if (/(user|users|role|permission)/i.test(lower)) {
     module = 'users';
@@ -280,8 +378,11 @@ function buildHeuristicPlan(message, errMessage = '') {
   if (classNumber) filters.push({ field: 'classNumber', op: 'eq', value: classNumber });
   if (/\bactive\b/i.test(lower)) filters.push({ field: 'isActive', op: 'eq', value: true });
 
-  // "users who logged in within the last 7 days"
-  if (/(logged?\s*in|last\s*login|have\s+logged|login\s+within)/i.test(lower)) {
+  // "users who logged in within the last 7 days" — not "entries were logged"
+  if (
+    /(logged?\s*in|last\s*login|have\s+logged|login\s+within)/i.test(lower) &&
+    !/(entr(?:y|ies)\s+were\s+logged|records?\s+were\s+logged|analytics\s+entries)/i.test(lower)
+  ) {
     const daysMatch = lower.match(/last\s*(\d{1,3})\s*days?/);
     const days = daysMatch ? Math.min(90, Math.max(1, parseInt(daysMatch[1], 10))) : 7;
     const loginModule = /(student|students)/i.test(lower)
@@ -388,7 +489,7 @@ function buildHeuristicPlan(message, errMessage = '') {
     }
   }
 
-  if (isSchoolQuery && isCount) {
+  if (isPrimarilySchoolCount(lower)) {
     return {
       mode: 'database',
       module: 'schools',
@@ -405,22 +506,28 @@ function buildHeuristicPlan(message, errMessage = '') {
     };
   }
 
+  const bySchool = isGroupedBySchool(lower);
   return {
     mode: 'database',
     module,
-    operation,
+    operation: bySchool ? 'aggregate' : operation,
     filters,
     selectFields: module === 'schools' ? ['name', 'place', 'board', 'phone', 'isActive'] : [],
-    groupBy: [],
-    aggregates: operation === 'count' ? [{ func: 'count', field: '*', as: 'count' }] : [],
+    groupBy: bySchool ? ['school'] : [],
+    aggregates:
+      bySchool || operation === 'count'
+        ? [{ func: 'count', field: '*', as: 'count' }]
+        : [],
     sort: [
       {
-        field: module === 'schools' ? 'name' : 'createdAt',
-        direction: module === 'schools' ? 'asc' : 'desc',
+        field: bySchool ? 'count' : module === 'schools' ? 'name' : 'createdAt',
+        direction: bySchool || module !== 'schools' ? 'desc' : 'asc',
       },
     ],
-    limit: 20,
-    timeframe: /today/i.test(lower) ? 'today' : /this week|weekly/i.test(lower) ? 'this_week' : 'all',
+    limit: bySchool ? 50 : 20,
+    timeframe: parseTimeframeFromMessage(lower),
+    preferredDateField:
+      module === 'audit_logs' ? 'at' : module === 'analytics' ? 'ts' : '',
     clarification: '',
     parseWarning: errMessage ? `gemini_unavailable:${errMessage}` : 'intent_json_parse_failed',
   };
@@ -452,8 +559,15 @@ export async function parseDynamicIntent({ userMessage, history = [] }) {
     return buildSchoolDetailPlan(namedSchoolEarly);
   }
 
-  // Prefer deterministic login-activity plan over Gemini inventing createdAt filters.
-  if (/(logged?\s*in|last\s*login|have\s+logged|login\s+within)/i.test(message)) {
+  // Prefer deterministic metrics / login plans over Gemini inventing wrong modules.
+  // "entries were logged" must not match the login-activity heuristic.
+  const metricsEarly = tryBuildUsageOrAuditPlan(message);
+  if (metricsEarly) return metricsEarly;
+
+  if (
+    /(logged?\s*in|last\s*login|have\s+logged|login\s+within)/i.test(message) &&
+    !/(entr(?:y|ies)\s+were\s+logged|logged\s+in\s+the\s+last|records?\s+were\s+logged)/i.test(message)
+  ) {
     return buildHeuristicPlan(message);
   }
 
@@ -479,7 +593,7 @@ Return ONLY JSON with shape:
   "aggregates":[{"func":"count|sum|avg|min|max","field":"<field-or-*>","as":"metric"}],
   "sort":[{"field":"", "direction":"asc|desc"}],
   "limit":20,
-  "timeframe":"today|this_week|this_month|all",
+  "timeframe":"today|this_week|this_month|last_7_days|all",
   "clarification":""
 }
 
@@ -493,6 +607,8 @@ Rules:
 - For named school details ("details about X school", "tell me about school X"), choose mode="school_detail", module="schools", and set schoolNameQuery to the school name.
 - Never map "test school" / school names containing "test" to exams.
 - School counts/lists use module="schools" (School collection name field), not users.
+- "usage analytics" / AI usage → module="analytics". "audit log" → module="audit_logs". When the user says grouped by school, set operation="aggregate" and groupBy=["school"].
+- For "last 7 days" set timeframe="last_7_days".
 - For generic conceptual Qs not requiring DB, choose mode="knowledge".
 - Never produce write/update/delete/drop/alter operations.
 - operation must be one of: ${OPS.join(', ')}, overview.
@@ -582,9 +698,11 @@ ${message.slice(0, 4500)}
               : 'knowledge';
   const operation = OPS.includes(String(parsed.operation)) ? String(parsed.operation) : 'list';
   const limit = Math.max(1, Math.min(100, Number(parsed.limit) || 20));
-  const timeframe = ['today', 'this_week', 'this_month', 'all'].includes(String(parsed.timeframe))
-    ? String(parsed.timeframe)
-    : 'all';
+  const parsedTf = String(parsed.timeframe || '').trim();
+  const timeframe =
+    TIMEFRAMES.includes(parsedTf) || /^last_\d{1,3}_days$/.test(parsedTf)
+      ? parsedTf
+      : parseTimeframeFromMessage(message);
 
   const normalized = {
     mode,
@@ -617,9 +735,13 @@ ${message.slice(0, 4500)}
   }
 
   const lower = message.toLowerCase();
-  const isSchoolQuery = /(school|schools)/i.test(lower);
+  const metricsOverride = tryBuildUsageOrAuditPlan(message);
+  if (mode === 'database' && metricsOverride) {
+    return { ...metricsOverride, rawPreview: normalized.rawPreview };
+  }
+
   const isCount = /(how many|count|total|number of|are there|how much)/i.test(lower);
-  if (mode === 'database' && isSchoolQuery && isCount) {
+  if (mode === 'database' && isPrimarilySchoolCount(lower)) {
     return {
       ...normalized,
       module: 'schools',
@@ -631,6 +753,19 @@ ${message.slice(0, 4500)}
       sort: [],
       limit: Math.max(20, normalized.limit || 20),
       timeframe: 'all',
+    };
+  }
+
+  if (mode === 'database' && isGroupedBySchool(lower) && !normalized.groupBy.length) {
+    return {
+      ...normalized,
+      operation: 'aggregate',
+      groupBy: ['school'],
+      aggregates: normalized.aggregates.length
+        ? normalized.aggregates
+        : [{ func: 'count', field: '*', as: 'count' }],
+      limit: Math.max(50, normalized.limit || 50),
+      timeframe: normalized.timeframe === 'all' ? parseTimeframeFromMessage(message) : normalized.timeframe,
     };
   }
 
@@ -648,13 +783,7 @@ ${message.slice(0, 4500)}
       module: 'ai_tool_data',
       operation: isCount ? 'count' : normalized.operation,
       filters,
-      timeframe: /today/i.test(lower)
-        ? 'today'
-        : /this week|weekly/i.test(lower)
-          ? 'this_week'
-          : /this month|monthly/i.test(lower)
-            ? 'this_month'
-            : 'all',
+      timeframe: parseTimeframeFromMessage(message),
     };
   }
 

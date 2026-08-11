@@ -28,10 +28,12 @@ function timeframeToDateFilter(tf) {
     const ymd = istYmd(new Date());
     return { $gte: istStartOfDayInstant(ymd), $lte: istEndOfDayInstant(ymd) };
   }
-  if (tf === 'this_week' || tf === 'last_7_days') {
-    if (tf === 'last_7_days') {
-      return { $gte: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000), $lte: new Date() };
-    }
+  const lastN = String(tf || '').match(/^last_(\d{1,3})_days$/);
+  if (lastN || tf === 'last_7_days') {
+    const n = lastN ? Math.min(365, Math.max(1, parseInt(lastN[1], 10))) : 7;
+    return { $gte: new Date(Date.now() - n * 24 * 60 * 60 * 1000), $lte: new Date() };
+  }
+  if (tf === 'this_week') {
     const wk = istWeekDateKeys(new Date());
     return { $gte: istStartOfDayInstant(wk[0]), $lte: istEndOfDayInstant(wk[6]) };
   }
@@ -132,10 +134,13 @@ function applyTimeframe(baseFilter, tf, allowedFields, preferredDateField = '') 
     return { ...baseFilter, [preferred]: dt };
   }
   const candidates = [
+    'at',
+    'ts',
     'lastLogin',
     'createdAt',
     'updatedAt',
-    'ts',
+    'weekStart',
+    'generatedAt',
     'date',
     'startDate',
     'completedAt',
@@ -144,6 +149,202 @@ function applyTimeframe(baseFilter, tf, allowedFields, preferredDateField = '') 
   const target = candidates.find((f) => allowedFields.has(f));
   if (!target) return baseFilter;
   return { ...baseFilter, [target]: dt };
+}
+
+function wantsSchoolGroup(plan) {
+  return asArray(plan?.groupBy).some((g) =>
+    /^(school|schools|schoolname|schoolid|adminid)$/i.test(String(g || '').replace(/[\s_]/g, '')),
+  );
+}
+
+/**
+ * Join actors/users/teachers → School so "grouped by school" works on collections
+ * that do not store schoolName directly.
+ */
+async function aggregateGroupedBySchool({ moduleKey, model, match, limit }) {
+  const collection = model.collection.name;
+  let pipeline = null;
+
+  if (moduleKey === 'impact_snapshots') {
+    pipeline = [
+      { $match: match },
+      {
+        $group: {
+          _id: { school: { $ifNull: ['$schoolName', 'Unknown school'] } },
+          count: { $sum: 1 },
+          totalLearningSessions: { $sum: '$totalLearningSessions' },
+          teachersLoggedIn: { $sum: '$teachersLoggedIn' },
+          studentsAccessed: { $sum: '$studentsAccessed' },
+        },
+      },
+      { $sort: { count: -1 } },
+      { $limit: limit },
+    ];
+  } else if (moduleKey === 'audit_logs') {
+    pipeline = [
+      { $match: match },
+      {
+        $addFields: {
+          _actorOid: {
+            $convert: { input: '$actor.id', to: 'objectId', onError: null, onNull: null },
+          },
+        },
+      },
+      { $lookup: { from: 'users', localField: '_actorOid', foreignField: '_id', as: '_u' } },
+      { $unwind: { path: '$_u', preserveNullAndEmptyArrays: true } },
+      { $lookup: { from: 'teachers', localField: '_actorOid', foreignField: '_id', as: '_t' } },
+      { $unwind: { path: '$_t', preserveNullAndEmptyArrays: true } },
+      {
+        $addFields: {
+          _adminOid: {
+            $cond: [
+              { $eq: ['$_u.role', 'admin'] },
+              '$_u._id',
+              { $ifNull: ['$_u.assignedAdmin', '$_t.adminId'] },
+            ],
+          },
+        },
+      },
+      { $lookup: { from: 'schools', localField: '_adminOid', foreignField: 'adminUserId', as: '_s' } },
+      {
+        $addFields: {
+          schoolName: {
+            $ifNull: [
+              { $arrayElemAt: ['$_s.name', 0] },
+              { $ifNull: ['$_u.schoolName', 'Platform / unscoped'] },
+            ],
+          },
+        },
+      },
+      { $group: { _id: { school: '$schoolName' }, count: { $sum: 1 } } },
+      { $sort: { count: -1 } },
+      { $limit: limit },
+    ];
+  } else if (moduleKey === 'analytics') {
+    pipeline = [
+      { $match: match },
+      {
+        $addFields: {
+          _userOid: {
+            $convert: { input: '$userId', to: 'objectId', onError: null, onNull: null },
+          },
+        },
+      },
+      { $lookup: { from: 'users', localField: '_userOid', foreignField: '_id', as: '_u' } },
+      { $unwind: { path: '$_u', preserveNullAndEmptyArrays: true } },
+      { $lookup: { from: 'teachers', localField: '_userOid', foreignField: '_id', as: '_t' } },
+      { $unwind: { path: '$_t', preserveNullAndEmptyArrays: true } },
+      {
+        $addFields: {
+          _adminOid: {
+            $cond: [
+              { $eq: ['$_u.role', 'admin'] },
+              '$_u._id',
+              { $ifNull: ['$_u.assignedAdmin', '$_t.adminId'] },
+            ],
+          },
+        },
+      },
+      { $lookup: { from: 'schools', localField: '_adminOid', foreignField: 'adminUserId', as: '_s' } },
+      {
+        $addFields: {
+          schoolName: {
+            $ifNull: [
+              { $arrayElemAt: ['$_s.name', 0] },
+              { $ifNull: ['$_u.schoolName', 'Platform / unscoped'] },
+            ],
+          },
+        },
+      },
+      { $group: { _id: { school: '$schoolName' }, count: { $sum: 1 } } },
+      { $sort: { count: -1 } },
+      { $limit: limit },
+    ];
+  } else if (moduleKey === 'teacher_tool_usage') {
+    pipeline = [
+      { $match: match },
+      { $lookup: { from: 'teachers', localField: 'teacherId', foreignField: '_id', as: '_t' } },
+      { $unwind: { path: '$_t', preserveNullAndEmptyArrays: true } },
+      { $lookup: { from: 'schools', localField: '_t.adminId', foreignField: 'adminUserId', as: '_s' } },
+      {
+        $addFields: {
+          schoolName: {
+            $ifNull: [{ $arrayElemAt: ['$_s.name', 0] }, 'Unknown school'],
+          },
+        },
+      },
+      { $group: { _id: { school: '$schoolName' }, count: { $sum: 1 } } },
+      { $sort: { count: -1 } },
+      { $limit: limit },
+    ];
+  } else if (moduleKey === 'ai_tool_data') {
+    pipeline = [
+      { $match: match },
+      {
+        $addFields: {
+          _adminOid: {
+            $ifNull: [
+              '$adminId',
+              {
+                $convert: {
+                  input: '$metadata.adminId',
+                  to: 'objectId',
+                  onError: null,
+                  onNull: null,
+                },
+              },
+            ],
+          },
+        },
+      },
+      { $lookup: { from: 'schools', localField: '_adminOid', foreignField: 'adminUserId', as: '_s' } },
+      {
+        $addFields: {
+          schoolName: {
+            $ifNull: [{ $arrayElemAt: ['$_s.name', 0] }, 'Platform / unscoped'],
+          },
+        },
+      },
+      { $group: { _id: { school: '$schoolName' }, count: { $sum: 1 } } },
+      { $sort: { count: -1 } },
+      { $limit: limit },
+    ];
+  } else if (allowedNativeSchoolField(model)) {
+    const field = allowedNativeSchoolField(model);
+    pipeline = [
+      { $match: match },
+      {
+        $group: {
+          _id: { school: { $ifNull: [`$${field}`, 'Unknown school'] } },
+          count: { $sum: 1 },
+        },
+      },
+      { $sort: { count: -1 } },
+      { $limit: limit },
+    ];
+  }
+
+  if (!pipeline) return null;
+  const rows = await model.aggregate(pipeline);
+  return {
+    ok: true,
+    facts: {
+      mode: 'database',
+      module: moduleKey,
+      operation: 'aggregate',
+      filter: match,
+      groupBy: ['school'],
+      collection,
+      rows: sanitizeFactRows(rows, limit),
+    },
+  };
+}
+
+function allowedNativeSchoolField(model) {
+  const paths = model?.schema?.paths || {};
+  if (paths.schoolName) return 'schoolName';
+  if (paths.school) return 'school';
+  return null;
 }
 
 const SENSITIVE_ROW_KEYS = new Set([
@@ -370,6 +571,16 @@ export async function executeDynamicDbPlan({
   }
 
   if (operation === 'aggregate') {
+    if (wantsSchoolGroup(plan)) {
+      const schoolAgg = await aggregateGroupedBySchool({
+        moduleKey,
+        model,
+        match: merged,
+        limit,
+      });
+      if (schoolAgg) return schoolAgg;
+    }
+
     const groupBy = asArray(plan.groupBy).map((f) => safeField(f, allowedFields)).filter(Boolean);
     const aggs = asArray(plan.aggregates).slice(0, 5);
     const groupStage = { _id: {} };
