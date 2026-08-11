@@ -4510,10 +4510,15 @@ function shouldRelaxBatchWorksheetSave(meta = {}, slug = '') {
   return meta.bookGenerator === true || meta.batchOrchestrator === true;
 }
 
-/** AI Generator batches must save Practice Q&A after A–G scaffold fill — never burn 10+ min on Premium retries. */
+/** AI Generator batches / live dashboard must save Practice Q&A after A–G scaffold fill. */
 function shouldRelaxPracticeQaBatchSave(meta = {}, slug = '') {
   if (String(slug || meta.toolSlug || '').trim() !== 'smart-qa-practice-generator') return false;
-  return meta.bookGenerator === true || meta.batchOrchestrator === true;
+  return (
+    meta.bookGenerator === true ||
+    meta.batchOrchestrator === true ||
+    meta.dashboardLiveFallback === true ||
+    meta.dashboardDelivery === true
+  );
 }
 
 /** Book RAG batches must save after repair — do not burn tokens retrying placeholder labels. */
@@ -6558,7 +6563,11 @@ async function ensurePracticeQaQuality(structuredContent, meta, historicalBlock 
   if (!practiceQaNeedsContentRepair(content)) return content;
   console.log('[AI Generator] smart-qa-practice-generator repairing questions via LLM (scaffold/generic detected).');
   content = await repairPracticeQaViaLlm('smart-qa-practice-generator', content, meta, historicalBlock);
-  content = finalizePracticeQaStructuredContent(content, { ...meta, skipPracticeQaScaffold: true });
+  // Re-fill any sections the LLM repair dropped, then finalize without skipping A–G pad again.
+  content = ensurePracticeQaAllSectionsFilled(
+    finalizePracticeQaStructuredContent(content, { ...meta, skipPracticeQaScaffold: true }),
+    meta,
+  );
   return content;
 }
 
@@ -6633,10 +6642,6 @@ export function finalizePracticeQaStructuredContent(raw, meta = {}) {
     out = { ...out, sections: buildCanonicalPracticeQaSectionList(out.sections) };
   }
 
-  if (skipEnglishStructuredScaffold(meta) && !shouldRelaxPracticeQaBatchSave(meta, 'smart-qa-practice-generator')) {
-    return ensurePracticeQaFrameworkContent(out, meta);
-  }
-
   const title = String(out.title || out.practice_set_title || '').trim();
   const isGeneric = !title || /^practice\s*q\s*&?\s*a$/i.test(title);
   if (isGeneric) {
@@ -6646,6 +6651,9 @@ export function finalizePracticeQaStructuredContent(raw, meta = {}) {
   }
 
   out = ensurePracticeQaFrameworkContent(out, meta);
+
+  // Always fill empty A–G (including English/language subjects). Skipping scaffold here
+  // caused live fallback to fail with "Missing Section D/E/F" while still requiring 100% fill.
   if (!meta.skipPracticeQaScaffold) {
     out = ensurePracticeQaAllSectionsFilled(out, meta);
   }
@@ -9704,6 +9712,7 @@ function augmentActivityStructuredContent(normalizedFlat, meta, toolSlug = 'acti
     meta.bookGenerator === true ||
     meta.batchOrchestrator === true ||
     meta.dashboardDelivery === true ||
+    meta.dashboardLiveFallback === true ||
     meta.strictValidation === false;
 
   if (!allowFallback) {
@@ -9752,7 +9761,11 @@ export function finalizeActivityStructuredContent(structuredContent, meta = {}, 
     structuredContent && typeof structuredContent === 'object' && !Array.isArray(structuredContent)
       ? structuredContent
       : {};
-  if (skipEnglishStructuredScaffold(meta)) {
+  // Live/dashboard delivery still needs missing fields padded even for English subjects.
+  if (
+    skipEnglishStructuredScaffold(meta) &&
+    !(meta.dashboardLiveFallback === true || meta.dashboardDelivery === true)
+  ) {
     return repairActivityHeadingEchoFields(
       normalizeActivityStructuredContent(raw, toolSlug),
       meta,
@@ -10180,9 +10193,21 @@ export function validateToolSpecificStructuredContent(
     const allFields = validateAllCanonicalToolFields(normalizedTool, contentForValidate);
     if (!allFields.valid) {
       if (
-        meta.dashboardDelivery &&
+        (meta.dashboardDelivery || meta.dashboardLiveFallback) &&
         (normalizedTool === 'activity-project-generator' || normalizedTool === 'project-idea-lab') &&
         rule.validate(contentForValidate)
+      ) {
+        return {
+          valid: true,
+          message: '',
+          normalizedType: resolvedType,
+          normalizedStructuredContent: contentForValidate,
+        };
+      }
+      if (
+        (meta.dashboardDelivery || meta.dashboardLiveFallback) &&
+        normalizedTool === 'smart-qa-practice-generator' &&
+        practiceQaHasAllRequiredSections(contentForValidate)
       ) {
         return {
           valid: true,
@@ -10213,6 +10238,30 @@ export function validateToolSpecificStructuredContent(
   } else {
     const fieldGate = validateCanonicalFieldsForSave(normalizedTool, contentForValidate, meta);
     if (!fieldGate.valid) {
+      if (
+        (meta.dashboardDelivery || meta.dashboardLiveFallback) &&
+        (normalizedTool === 'activity-project-generator' || normalizedTool === 'project-idea-lab') &&
+        rule.validate(contentForValidate)
+      ) {
+        return {
+          valid: true,
+          message: '',
+          normalizedType: resolvedType,
+          normalizedStructuredContent: contentForValidate,
+        };
+      }
+      if (
+        (meta.dashboardDelivery || meta.dashboardLiveFallback) &&
+        normalizedTool === 'smart-qa-practice-generator' &&
+        practiceQaHasAllRequiredSections(contentForValidate)
+      ) {
+        return {
+          valid: true,
+          message: '',
+          normalizedType: resolvedType,
+          normalizedStructuredContent: contentForValidate,
+        };
+      }
       if (
         shouldRelaxFlashcardBatchSave(meta, normalizedTool) &&
         flashcardBatchHasSaveableContent(contentForValidate, normalizedTool)
@@ -10974,6 +11023,8 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
     variantScenario: isBatchVariant ? String(extra.variantScenario || '').trim() : undefined,
     batchOrchestrator: isBatchVariant,
     bookGenerator: isBookBatch,
+    dashboardLiveFallback: extra.dashboardLiveFallback === true,
+    dashboardDelivery: extra.dashboardDelivery === true || params.dashboardDelivery === true,
     pdfContext: pdfContext || undefined,
     curriculumSources: curriculumSources.length ? curriculumSources : undefined,
     uniqueSeed: String(extra.uniqueSeed || extra.generationVariant || ''),
@@ -10996,6 +11047,7 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
       !isBookBatch &&
       !(slug === 'worksheet-mcq-generator' && isBatchVariant) &&
       !(slug === 'smart-qa-practice-generator' && isBatchVariant) &&
+      !(extra.dashboardLiveFallback === true) &&
       (qualityTierSettings.tier === 'premium' ||
         (!isBatchVariant && !isAiGeneratorCostSaverEnabled())),
   };
