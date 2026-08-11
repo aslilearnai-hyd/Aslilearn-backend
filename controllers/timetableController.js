@@ -594,28 +594,13 @@ export const remapPeriodTimes = async (req, res) => {
         if (!/^\d{2}:\d{2}$/.test(startTime) || !/^\d{2}:\d{2}$/.test(endTime)) continue;
         if (parseTimeToMinutes(endTime) <= parseTimeToMinutes(startTime)) continue;
 
-        let subject = await Subject.findOne({
+        // Never auto-create subjects — only use an existing catalog/school subject.
+        const subject = await Subject.findOne({
           board,
-          name: new RegExp(`^${escapeRegex(label)}$`, 'i'),
           isActive: { $ne: false },
+          name: { $regex: `^${escapeRegex(label)}$`, $options: 'i' },
+          $nor: [{ name: /__deleted__/i }],
         });
-        if (!subject) {
-          try {
-            subject = await Subject.create({
-              name: label,
-              board,
-              classNumber: '',
-              classIds: [classOid],
-              description: 'Break/lunch slot from timetable editor',
-              createdBy: 'super-admin',
-            });
-          } catch {
-            subject = await Subject.findOne({
-              board,
-              name: new RegExp(`^${escapeRegex(label)}$`, 'i'),
-            });
-          }
-        }
         if (!subject) continue;
 
         await Subject.updateOne({ _id: subject._id }, { $addToSet: { classIds: classOid } });
@@ -905,59 +890,12 @@ async function resolveSubjectForClass(cls, subjectName) {
   return scored[0]?.subject || null;
 }
 
-/** Grid imports may include CCA/PET labels — create or link school activity subjects when missing. */
+/** Resolve an existing subject for the class — never auto-create subjects from timetable import. */
 async function resolveSubjectForClassOrCreate(cls, subjectName, schoolAdminId, { allowCreate = false } = {}) {
+  void schoolAdminId;
+  void allowCreate;
   let subject = await resolveSubjectForClass(cls, subjectName);
-  if (subject) {
-    await Promise.all([
-      Subject.updateOne({ _id: subject._id }, { $addToSet: { classIds: cls._id } }),
-      Class.updateOne({ _id: cls._id }, { $addToSet: { assignedSubjects: subject._id } }),
-    ]);
-    return subject;
-  }
-  if (!allowCreate) return null;
-
-  const want = cleanCsvCell(subjectName);
-  if (!want) return null;
-
-  const admin = await User.findById(schoolAdminId).select('board').lean();
-  const board = String(admin?.board || 'ASLI_EXCLUSIVE_SCHOOLS').toUpperCase();
-
-  const boardSubjects = await Subject.find({
-    board,
-    isActive: { $ne: false },
-    name: { $not: /__deleted__/ },
-  })
-    .select('_id name classIds teacherId')
-    .lean();
-
-  const scored = boardSubjects
-    .map((s) => ({ subject: s, score: subjectAliasMatchScore(s.name, want) }))
-    .filter((row) => row.score >= 90)
-    .sort((a, b) => b.score - a.score);
-
-  if (scored[0]) {
-    subject = scored[0].subject;
-  } else {
-    try {
-      subject = await Subject.create({
-        name: want.slice(0, 80),
-        board,
-        classNumber: String(cls.classNumber || ''),
-        classIds: [cls._id],
-        description: 'Auto-created from class timetable grid import',
-        createdBy: 'super-admin',
-      });
-    } catch {
-      subject = await Subject.findOne({
-        board,
-        name: new RegExp(`^${escapeRegex(want.slice(0, 80))}$`, 'i'),
-        isActive: { $ne: false },
-      });
-      if (!subject) return null;
-    }
-  }
-
+  if (!subject) return null;
   await Promise.all([
     Subject.updateOne({ _id: subject._id }, { $addToSet: { classIds: cls._id } }),
     Class.updateOne({ _id: cls._id }, { $addToSet: { assignedSubjects: subject._id } }),
@@ -1057,7 +995,7 @@ async function resolveCsvRow(row, schoolAdminId) {
   }
 
   const subject = await resolveSubjectForClassOrCreate(resolvedClass, subjectName, schoolAdminId, {
-    allowCreate: fromGrid,
+    allowCreate: false,
   });
   if (!subject) {
     const classDoc = await Class.findById(resolvedClass._id).select('assignedSubjects').lean();
@@ -1333,6 +1271,7 @@ function pickSubjectFromList(subjects, cls, want) {
 }
 
 async function resolveSubjectInContext(ctx, cls, subjectName, { allowCreate }) {
+  void allowCreate;
   const want = cleanCsvCell(subjectName);
   if (!want) return null;
 
@@ -1341,37 +1280,14 @@ async function resolveSubjectInContext(ctx, cls, subjectName, { allowCreate }) {
     return ctx.createdSubjectNames.get(cacheKey);
   }
 
+  // Match existing subjects only (board-wide + class-linked). Never auto-create.
   let subject = pickSubjectFromList(ctx.subjects, cls, want);
-  if (!subject && allowCreate) {
+  if (!subject) {
     subject = pickSubjectFromList(
       ctx.subjects.filter((s) => String(s.board || '').toUpperCase() === ctx.board),
       cls,
       want,
     );
-  }
-
-  if (!subject && allowCreate) {
-    try {
-      subject = await Subject.create({
-        name: want.slice(0, 80),
-        board: ctx.board,
-        classNumber: String(cls.classNumber || ''),
-        classIds: [cls._id],
-        description: 'Auto-created from class timetable grid import',
-        createdBy: 'super-admin',
-      });
-      subject = subject.toObject ? subject.toObject() : subject;
-    } catch {
-      subject = await Subject.findOne({
-        board: ctx.board,
-        name: new RegExp(`^${escapeRegex(want.slice(0, 80))}$`, 'i'),
-        isActive: { $ne: false },
-      }).lean();
-    }
-    if (subject) {
-      ctx.subjects.push(subject);
-      ctx.subjectById.set(String(subject._id), subject);
-    }
   }
 
   if (subject) {
@@ -1467,7 +1383,7 @@ async function resolveCsvRowFast(row, ctx) {
   }
 
   const subject = await resolveSubjectInContext(ctx, resolvedClass, subjectName, {
-    allowCreate: fromGrid,
+    allowCreate: false,
   });
   if (!subject) {
     const assignedIds = resolvedClass.assignedSubjects || [];

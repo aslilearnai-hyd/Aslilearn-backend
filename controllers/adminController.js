@@ -2653,67 +2653,11 @@ export const getSubjects = async (req, res) => {
 };
 
 export const createSubject = async (req, res) => {
-  try {
-    const adminId = req.adminId || req.userId;
-    const admin = await User.findById(adminId).select('board curriculumBoard').lean();
-    const board = normalizeSchoolBoard(admin?.board || admin?.curriculumBoard || 'ASLI_EXCLUSIVE_SCHOOLS');
-    const {
-      name,
-      description,
-      teacherId,
-      teacher,
-      classIds,
-    } = req.body;
-
-    if (!name || !String(name).trim()) {
-      return res.status(400).json({ success: false, message: 'Subject name is required' });
-    }
-
-    const normalizedName = String(name).trim();
-    if (isCatalogStyleSubjectName(normalizedName)) {
-      return res.status(400).json({
-        success: false,
-        message: 'Do not include class numbers in the subject name (e.g. use MATHS, not MATHS_6)',
-      });
-    }
-
-    const existing = await Subject.findOne({
-      board,
-      isActive: true,
-      name: normalizedName,
-    });
-    if (existing) {
-      return res.status(400).json({ success: false, message: 'Subject already exists' });
-    }
-
-    const subject = await Subject.create({
-      name: normalizedName,
-      description: String(description || '').trim(),
-      board,
-      createdBy: 'super-admin',
-      isActive: true,
-      classIds: [],
-    });
-
-    const resolvedTeacherId = teacherId || teacher || null;
-    if (resolvedTeacherId) {
-      await syncSubjectTeacher(subject._id, resolvedTeacherId, adminId);
-    }
-
-    const ids = Array.isArray(classIds) ? classIds : [];
-    if (ids.length > 0) {
-      await syncSubjectClassIds(subject._id, ids, adminId);
-    }
-
-    const formatted = await formatAdminSubject(
-      await Subject.findById(subject._id).lean(),
-      adminId
-    );
-    res.status(201).json({ success: true, data: formatted });
-  } catch (error) {
-    console.error('createSubject error:', error);
-    res.status(500).json({ success: false, message: 'Failed to create subject' });
-  }
+  return res.status(403).json({
+    success: false,
+    message:
+      'School admins cannot create subjects. Subjects are managed by Super Admin; assign existing subjects to classes and teachers instead.',
+  });
 };
 
 export const updateSubject = async (req, res) => {
@@ -2737,19 +2681,32 @@ export const updateSubject = async (req, res) => {
       return res.status(404).json({ success: false, message: 'Subject not found' });
     }
 
-    if (name !== undefined) {
-      const normalizedName = String(name).trim();
-      if (isCatalogStyleSubjectName(normalizedName)) {
-        return res.status(400).json({
-          success: false,
-          message: 'Do not include class numbers in the subject name',
-        });
-      }
-      subject.name = normalizedName;
+    // School admins may only assign teachers/classes — Super Admin owns subject metadata.
+    const triedToEditMeta =
+      name !== undefined || description !== undefined || isActive !== undefined;
+    if (triedToEditMeta && req.user?.role !== 'super-admin') {
+      return res.status(403).json({
+        success: false,
+        message:
+          'School admins cannot edit or delete subjects. You can only assign teachers and classes. Subjects are managed by Super Admin.',
+      });
     }
-    if (description !== undefined) subject.description = String(description).trim();
-    if (isActive !== undefined) subject.isActive = Boolean(isActive);
-    await subject.save();
+
+    if (req.user?.role === 'super-admin') {
+      if (name !== undefined) {
+        const normalizedName = String(name).trim();
+        if (isCatalogStyleSubjectName(normalizedName)) {
+          return res.status(400).json({
+            success: false,
+            message: 'Do not include class numbers in the subject name',
+          });
+        }
+        subject.name = normalizedName;
+      }
+      if (description !== undefined) subject.description = String(description).trim();
+      if (isActive !== undefined) subject.isActive = Boolean(isActive);
+      await subject.save();
+    }
 
     if (teacherId !== undefined || teacher !== undefined) {
       const resolvedTeacherId = teacherId ?? teacher ?? null;
@@ -2772,6 +2729,13 @@ export const updateSubject = async (req, res) => {
 };
 
 export const deleteSubject = async (req, res) => {
+  if (req.user?.role !== 'super-admin') {
+    return res.status(403).json({
+      success: false,
+      message:
+        'School admins cannot delete subjects. Subjects are managed by Super Admin; you can only assign them to teachers and classes.',
+    });
+  }
   try {
     const { id } = req.params;
     if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -3958,7 +3922,7 @@ export const uploadStudentsCsv = async (req, res) => {
   }
 };
 
-/** CSV/XLSX bulk upload: creates teachers + auto-creates subjects in DB */
+/** CSV/XLSX bulk upload: creates teachers and links existing subjects (does not create subjects) */
 export const uploadTeachersCsv = async (req, res) => {
   try {
     if (!req.file) {

@@ -109,34 +109,24 @@ export function collectSubjectNamesFromRow(headers, values) {
 }
 
 /**
- * Find active subject by name + board, or create it for the school admin's board.
+ * Find active subject by name + board. School admins must not create subjects —
+ * Super Admin manages the catalog; teacher CSV only links existing subjects.
  */
 export async function findOrCreateSubjectForBoard(subjectName, board, department = '') {
+  void department;
   const baseName = String(subjectName || '').trim();
   if (!baseName) return { subject: null, created: false };
 
   const boardNorm = normalizeSchoolBoard(board);
   const displayName = baseName.split('__deleted__')[0].trim();
 
-  let subject = await Subject.findOne({
+  const subject = await Subject.findOne({
     board: boardNorm,
     isActive: true,
     name: { $regex: new RegExp(`^${escapeRegex(displayName)}$`, 'i') },
   });
 
-  if (subject) {
-    return { subject, created: false };
-  }
-
-  subject = await Subject.create({
-    name: displayName,
-    board: boardNorm,
-    isActive: true,
-    createdBy: 'super-admin',
-    department: String(department || '').trim() || undefined,
-  });
-
-  return { subject, created: true };
+  return { subject: subject || null, created: false };
 }
 
 /**
