@@ -2,13 +2,13 @@ import fs from 'fs';
 import {
   startOfIsoWeek,
   resolveImpactPeriod,
-  buildSchoolImpactSnapshot,
   buildAllSchoolImpactSnapshots,
   buildDigestsForSchool,
   listSchoolSnapshots,
   getSchoolSnapshot,
   getSchoolImpactDetail,
   getLatestDigestForUser,
+  rebuildStudentWeeklyDigestForUser,
 } from '../services/impact-report-service.js';
 import { generateSchoolImpactPDF } from '../services/school-impact-pdf.js';
 import { deliverPendingDigestsForWeek } from '../services/digest-email-service.js';
@@ -148,20 +148,28 @@ export async function downloadMySchoolImpactPdf(req, res) {
   return downloadImpactReportPdf(req, res);
 }
 
-/** Teacher / Student: latest weekly digest */
+/** Teacher / Student: latest weekly digest (students always get a live rebuild). */
 export async function getMyWeeklyDigest(req, res) {
   try {
     const userId = req.user?._id || req.user?.userId;
-    let digest = await getLatestDigestForUser(userId);
-    if (!digest && req.query.build === '1') {
-      const weekStart = startOfIsoWeek(req.query.weekStart ? new Date(req.query.weekStart) : new Date());
-      const role = req.user?.role;
-      const adminId = req.user?.assignedAdmin;
-      if (adminId && (role === 'teacher' || role === 'student')) {
-        await buildDigestsForSchool(adminId, weekStart);
+    const role = req.user?.role;
+    const weekStart = startOfIsoWeek(req.query.weekStart ? new Date(req.query.weekStart) : new Date());
+    const forceBuild = req.query.build === '1' || req.query.refresh === '1';
+
+    let digest = null;
+
+    if (role === 'student') {
+      // Always compute live week metrics so the dashboard report stays current.
+      digest = await rebuildStudentWeeklyDigestForUser(userId, weekStart);
+      if (!digest) digest = await getLatestDigestForUser(userId);
+    } else {
+      digest = await getLatestDigestForUser(userId);
+      if ((!digest || forceBuild) && req.user?.assignedAdmin && role === 'teacher') {
+        await buildDigestsForSchool(req.user.assignedAdmin, weekStart);
         digest = await getLatestDigestForUser(userId);
       }
     }
+
     if (digest && !digest.readAt) {
       await WeeklyDigest.updateOne({ _id: digest._id }, { $set: { readAt: new Date() } });
     }
