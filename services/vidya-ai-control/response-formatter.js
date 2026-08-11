@@ -241,8 +241,12 @@ function localFallbackResponse({ userPrompt, facts }) {
     attendance: 'attendance records',
     subjects: 'subjects',
     notices: 'notices',
-    analytics: 'analytics logs',
+    analytics: 'AI usage analytics entries',
+    audit_logs: 'audit log entries',
+    teacher_tool_usage: 'teacher tool usage entries',
+    impact_snapshots: 'school impact snapshots',
     ai_tool_data: 'AI generations',
+    learning_sessions: 'learning sessions',
   };
   const label = moduleLabels[facts?.module] || facts?.module || 'records';
   const asksForCount = /((how|who)\s*many|count|total|number of|are there|how much)/i.test(
@@ -274,6 +278,21 @@ function localFallbackResponse({ userPrompt, facts }) {
     const topId = top?._id && typeof top._id === 'object' ? top._id : {};
     const metricKey = Object.keys(top).find((k) => k !== '_id') || '';
     const metricValue = metricKey ? Number(top[metricKey] || 0) : 0;
+    const totalAcrossGroups = facts.rows.reduce((sum, row) => {
+      const key = Object.keys(row || {}).find((k) => k !== '_id');
+      return sum + (key ? Number(row[key] || 0) : 0);
+    }, 0);
+
+    if (groupField === 'school' || topId.school != null) {
+      const lines = facts.rows.slice(0, 20).map((row, i) => {
+        const id = row?._id && typeof row._id === 'object' ? row._id : {};
+        const school = String(id.school || row.school || 'Unknown school').trim();
+        const key = Object.keys(row || {}).find((k) => k !== '_id') || 'count';
+        const n = Number(row[key] || 0);
+        return `${i + 1}. ${school}: ${n}`;
+      });
+      return `Found exactly ${totalAcrossGroups} ${label} across ${facts.rows.length} school group(s). Breakdown: ${lines.join('; ')}.`;
+    }
 
     if (facts.module === 'exams' && groupField === 'subject') {
       const subject = String(topId.subject || top.subject || '').trim();

@@ -26,6 +26,17 @@ import HomeworkSubmission from '../../models/HomeworkSubmission.js';
 import Video from '../../models/Video.js';
 import RiskAnalysisReport from '../../models/RiskAnalysisReport.js';
 import Content from '../../models/Content.js';
+import AuditLog from '../../models/AuditLog.js';
+import TeacherToolUsage from '../../models/TeacherToolUsage.js';
+import WeeklyImpactSnapshot from '../../models/WeeklyImpactSnapshot.js';
+import AttendanceRecord from '../../models/AttendanceRecord.js';
+import Timetable from '../../models/Timetable.js';
+import Stream from '../../models/Stream.js';
+import IQRankQuiz from '../../models/IQRankQuiz.js';
+import IQRankQuizResult from '../../models/IQRankQuizResult.js';
+import DemoLead from '../../models/DemoLead.js';
+import StudentVideoChapterProgress from '../../models/StudentVideoChapterProgress.js';
+import Question from '../../models/Question.js';
 
 const FALLBACK_SCOPE_FIELDS = [
   'assignedAdmin',
@@ -89,8 +100,27 @@ export const MODULE_REGISTRY = {
     aliases: ['subject', 'subjects'],
   },
   attendance: {
+    model: AttendanceRecord,
+    aliases: [
+      'attendance',
+      'attendance records',
+      'presence',
+      'class attendance',
+      'marked attendance',
+    ],
+    scopeFields: ['adminId', 'teacherId'],
+  },
+  learning_sessions: {
     model: UserSession,
-    aliases: ['attendance', 'attendance records', 'presence', 'session', 'sessions'],
+    aliases: [
+      'learning session',
+      'learning sessions',
+      'user session',
+      'user sessions',
+      'session time',
+      'study sessions',
+    ],
+    scopeFields: ['userId'],
   },
   exams: {
     model: Exam,
@@ -145,19 +175,95 @@ export const MODULE_REGISTRY = {
   },
   analytics: {
     model: VidyaCallLog,
-    aliases: ['analytics', 'ai analytics', 'usage analytics'],
+    aliases: [
+      'analytics',
+      'ai analytics',
+      'usage analytics',
+      'usage analytics entries',
+      'vidya usage',
+      'vidya calls',
+      'vidya call logs',
+      'ai usage',
+      'ai conversation',
+      'ai conversations',
+    ],
+  },
+  teacher_tool_usage: {
+    model: TeacherToolUsage,
+    aliases: [
+      'teacher tool usage',
+      'tool usage',
+      'ai tool usage',
+      'teacher usage',
+      'tool usage logs',
+    ],
+    scopeFields: ['teacherId'],
+  },
+  impact_snapshots: {
+    model: WeeklyImpactSnapshot,
+    aliases: [
+      'impact',
+      'impact snapshot',
+      'impact snapshots',
+      'weekly impact',
+      'school impact',
+      'usage reports',
+      'school usage',
+    ],
+    scopeFields: ['adminId'],
   },
   audit_logs: {
-    model: VidyaCallLog,
-    aliases: ['audit', 'audit logs', 'logs', 'api logs'],
+    model: AuditLog,
+    aliases: [
+      'audit',
+      'audit log',
+      'audit logs',
+      'audit log entries',
+      'audit entries',
+      'api logs',
+      'action logs',
+      'compliance logs',
+    ],
   },
   admin_dashboard: {
     model: ChatSession,
-    aliases: ['dashboard', 'admin dashboard', 'chat sessions'],
+    aliases: ['dashboard', 'admin dashboard', 'chat sessions', 'vidya chat sessions'],
   },
   school_performance_metrics: {
     model: PDFContent,
-    aliases: ['school performance', 'school metrics', 'school performance metrics'],
+    aliases: ['school performance', 'school metrics', 'school performance metrics', 'pdf content'],
+  },
+  timetables: {
+    model: Timetable,
+    aliases: ['timetables', 'class timetable', 'period timetable'],
+    scopeFields: ['schoolAdminId'],
+  },
+  live_streams: {
+    model: Stream,
+    aliases: ['live stream', 'live streams', 'edu ott live', 'livestream'],
+    scopeFields: ['streamer'],
+  },
+  iq_rank_quizzes: {
+    model: IQRankQuiz,
+    aliases: ['iq rank', 'iq quiz', 'iq quizzes', 'rank boost quiz', 'rank boost'],
+  },
+  iq_rank_results: {
+    model: IQRankQuizResult,
+    aliases: ['iq result', 'iq results', 'rank boost result', 'rank boost results'],
+    scopeFields: ['userId'],
+  },
+  demo_leads: {
+    model: DemoLead,
+    aliases: ['demo', 'demo lead', 'demo leads', 'trial lead', 'leads'],
+  },
+  video_progress: {
+    model: StudentVideoChapterProgress,
+    aliases: ['video progress', 'chapter progress', 'watch progress'],
+    scopeFields: ['userId'],
+  },
+  questions: {
+    model: Question,
+    aliases: ['question', 'questions', 'question bank'],
   },
   school_orders: {
     model: SchoolOrder,
@@ -231,14 +337,26 @@ export function resolveModuleKey(input) {
   const t = String(input || '').trim().toLowerCase();
   if (!t) return null;
   // 1) Prefer exact module key match first.
-  for (const key of Object.keys(MODULE_REGISTRY)) {
-    if (key === t) return key;
-  }
-  // 2) Fallback to alias match.
+  if (MODULE_REGISTRY[t]) return t;
+  // 2) Exact alias match.
   for (const [key, cfg] of Object.entries(MODULE_REGISTRY)) {
     if ((cfg.aliases || []).some((a) => t === String(a).toLowerCase())) return key;
   }
-  return null;
+  // 3) Longest alias contained in the input (or vice versa) — skip very short
+  // aliases so "ai" / "omr" do not steal unrelated phrases.
+  let bestKey = null;
+  let bestLen = 0;
+  for (const [key, cfg] of Object.entries(MODULE_REGISTRY)) {
+    for (const alias of cfg.aliases || []) {
+      const a = String(alias).toLowerCase();
+      if (a.length < 4) continue;
+      if ((t.includes(a) || a.includes(t)) && a.length > bestLen) {
+        bestKey = key;
+        bestLen = a.length;
+      }
+    }
+  }
+  return bestKey;
 }
 
 export function scopeFieldsForModule(moduleKey) {
