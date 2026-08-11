@@ -79,9 +79,170 @@ import {
   resolveStudentContentBoard,
   getStudentAdminId,
 } from './helpers.js';
+import ExamAttemptDraft from '../../models/ExamAttemptDraft.js';
 
 
 const router = express.Router();
+
+function draftAnswersToObject(answers) {
+  if (!answers) return {};
+  if (answers instanceof Map) return Object.fromEntries(answers.entries());
+  if (typeof answers === 'object') return { ...answers };
+  return {};
+}
+
+function draftTimingsToObject(timings) {
+  if (!timings) return {};
+  if (timings instanceof Map) return Object.fromEntries(timings.entries());
+  if (typeof timings === 'object') return { ...timings };
+  return {};
+}
+
+function serializeDraft(doc) {
+  if (!doc) return null;
+  const plain = typeof doc.toObject === 'function' ? doc.toObject() : doc;
+  return {
+    examId: String(plain.examId),
+    userId: String(plain.userId),
+    answers: draftAnswersToObject(plain.answers),
+    flaggedQuestions: Array.isArray(plain.flaggedQuestions) ? plain.flaggedQuestions : [],
+    questionTimings: draftTimingsToObject(plain.questionTimings),
+    currentQuestionIndex: Number(plain.currentQuestionIndex) || 0,
+    remainingSeconds: Math.max(0, Number(plain.remainingSeconds) || 0),
+    durationSeconds: Math.max(1, Number(plain.durationSeconds) || 1),
+    startedAt: plain.startedAt,
+    lastSavedAt: plain.lastSavedAt,
+    status: plain.status || 'in_progress',
+  };
+}
+
+/** Load in-progress draft (answers + frozen remaining timer) for resume after power loss. */
+router.get('/exams/:examId/attempt-draft', async (req, res) => {
+  try {
+    const { examId } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(examId)) {
+      return res.status(400).json({ success: false, message: 'Invalid exam id' });
+    }
+
+    const ExamResult = (await import('../../models/ExamResult.js')).default;
+    const examDoc = await Exam.findById(examId).select('maxAttempts isActive createdByRole').lean();
+    if (!examDoc || examDoc.isActive === false) {
+      return res.status(404).json({ success: false, message: 'Exam not found' });
+    }
+
+    const maxAttempts = Math.max(1, Number(examDoc.maxAttempts) || 1);
+    const priorCount = await ExamResult.countDocuments({ userId: req.userId, examId });
+    if (priorCount >= maxAttempts) {
+      await ExamAttemptDraft.deleteOne({ examId, userId: req.userId });
+      return res.json({ success: true, data: null, message: 'Maximum attempts already used' });
+    }
+
+    const draft = await ExamAttemptDraft.findOne({
+      examId,
+      userId: req.userId,
+      status: 'in_progress',
+    });
+
+    if (!draft) {
+      return res.json({ success: true, data: null });
+    }
+
+    // Exhausted timer while offline — keep draft so client can auto-submit answers.
+    return res.json({ success: true, data: serializeDraft(draft), resumed: true });
+  } catch (error) {
+    console.error('GET attempt-draft error:', error);
+    res.status(500).json({ success: false, message: 'Failed to load exam draft' });
+  }
+});
+
+/**
+ * Autosave in-progress answers + remaining timer.
+ * remainingSeconds is frozen at this value while the student is offline (PC off / closed).
+ */
+router.put('/exams/:examId/attempt-draft', async (req, res) => {
+  try {
+    const { examId } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(examId)) {
+      return res.status(400).json({ success: false, message: 'Invalid exam id' });
+    }
+
+    const examDoc = await Exam.findById(examId).lean();
+    if (!examDoc || examDoc.isActive === false || examDoc.createdByRole !== 'super-admin') {
+      return res.status(404).json({ success: false, message: 'Exam not found' });
+    }
+
+    const windowStatus = getExamWindowStatus(examDoc, { purpose: 'submit' });
+    if (!windowStatus.ok) {
+      return res.status(403).json({ success: false, message: windowStatus.message });
+    }
+
+    const ExamResult = (await import('../../models/ExamResult.js')).default;
+    const maxAttempts = Math.max(1, Number(examDoc.maxAttempts) || 1);
+    const priorCount = await ExamResult.countDocuments({ userId: req.userId, examId });
+    if (priorCount >= maxAttempts) {
+      await ExamAttemptDraft.deleteOne({ examId, userId: req.userId });
+      return res.status(403).json({
+        success: false,
+        message: `Maximum attempts (${maxAttempts}) reached for this exam.`,
+      });
+    }
+
+    const body = req.body || {};
+    const answers =
+      body.answers && typeof body.answers === 'object' && !Array.isArray(body.answers)
+        ? body.answers
+        : {};
+    const questionTimings =
+      body.questionTimings && typeof body.questionTimings === 'object' && !Array.isArray(body.questionTimings)
+        ? body.questionTimings
+        : {};
+    const flaggedQuestions = Array.isArray(body.flaggedQuestions)
+      ? body.flaggedQuestions.map((n) => Number(n)).filter((n) => Number.isFinite(n) && n >= 0)
+      : [];
+    const durationSeconds = Math.max(
+      60,
+      Number(body.durationSeconds) || Math.round((Number(examDoc.duration) || 30) * 60),
+    );
+    let remainingSeconds = Number(body.remainingSeconds);
+    if (!Number.isFinite(remainingSeconds) || remainingSeconds < 0) {
+      remainingSeconds = durationSeconds;
+    }
+    remainingSeconds = Math.min(durationSeconds, Math.floor(remainingSeconds));
+    const currentQuestionIndex = Math.max(0, Math.floor(Number(body.currentQuestionIndex) || 0));
+
+    const now = new Date();
+    const draft = await ExamAttemptDraft.findOneAndUpdate(
+      { examId, userId: req.userId },
+      {
+        $set: {
+          answers,
+          questionTimings,
+          flaggedQuestions,
+          remainingSeconds,
+          durationSeconds,
+          currentQuestionIndex,
+          lastSavedAt: now,
+          status: 'in_progress',
+        },
+        $setOnInsert: {
+          examId,
+          userId: req.userId,
+          startedAt: now,
+        },
+      },
+      { upsert: true, new: true, setDefaultsOnInsert: true },
+    );
+
+    return res.json({
+      success: true,
+      data: serializeDraft(draft),
+      message: 'Progress saved',
+    });
+  } catch (error) {
+    console.error('PUT attempt-draft error:', error);
+    res.status(500).json({ success: false, message: 'Failed to save exam progress' });
+  }
+});
 
 router.get('/exam-results', async (req, res) => {
   try {
@@ -1919,6 +2080,11 @@ router.post('/exam-results', async (req, res) => {
         .sort({ attemptNumber: -1, completedAt: -1 })
         .lean();
       if (existing) {
+        try {
+          await ExamAttemptDraft.deleteOne({ examId, userId: req.userId });
+        } catch {
+          /* ignore */
+        }
         const plainResult = toPlainExamResultForApi(existing);
         return res.status(200).json({
           success: true,
@@ -2056,6 +2222,12 @@ router.post('/exam-results', async (req, res) => {
       totalMarks,
       percentage,
     });
+
+    try {
+      await ExamAttemptDraft.deleteOne({ examId, userId: req.userId });
+    } catch (draftErr) {
+      console.warn('Failed to clear exam attempt draft after submit:', draftErr?.message || draftErr);
+    }
 
     const plainResult =
       typeof examResult.toObject === 'function'
