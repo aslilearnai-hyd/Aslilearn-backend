@@ -13,6 +13,28 @@ export function isCatalogStyleSubjectName(name) {
 }
 
 /**
+ * Update Subject.classIds only (does not modify Class.assignedSubjects).
+ * Used when teacher assignments change — those must not write to Assign Subjects data.
+ */
+export async function setSubjectClassIdsOnly(subjectId, classIds, adminId) {
+  const subjectOid = new mongoose.Types.ObjectId(String(subjectId));
+  const normalized = [...new Set((classIds || []).map((id) => String(id)).filter(Boolean))];
+  const classOids = normalized
+    .filter((id) => mongoose.Types.ObjectId.isValid(id))
+    .map((id) => new mongoose.Types.ObjectId(id));
+
+  const classFilter = { _id: { $in: classOids } };
+  if (adminId) classFilter.assignedAdmin = adminId;
+
+  const validClasses = await Class.find(classFilter).select('_id').lean();
+  const validIds = validClasses.map((c) => c._id);
+
+  await Subject.findByIdAndUpdate(subjectOid, { $set: { classIds: validIds } });
+
+  return validIds;
+}
+
+/**
  * Bidirectional sync: Subject.classIds <-> Class.assignedSubjects for one subject.
  */
 export async function syncSubjectClassIds(subjectId, classIds, adminId) {
@@ -256,13 +278,13 @@ export async function rebuildSubjectClassIdsFromTeacherAssignments(subjectId, ad
   const reverse = await Class.find(reverseQuery).select('_id').lean();
   reverse.forEach((c) => classIdSet.add(String(c._id)));
 
-  await syncSubjectClassIds(subjectId, [...classIdSet], adminId);
+  await setSubjectClassIdsOnly(subjectId, [...classIdSet], adminId);
   return { ok: true, classCount: classIdSet.size };
 }
 
 /**
- * When a teacher has explicit subject↔class assignments, keep Subject.classIds ↔
- * Class.assignedSubjects in sync so Subjects table "Assigned Classes" matches.
+ * When a teacher has explicit subject↔class assignments, update Subject.classIds only.
+ * Class.assignedSubjects is owned by the Assign Subjects tab (syncClassSectionSubjects).
  */
 export async function syncTeacherSubjectClassLinks(teacherId, adminId, options = {}) {
   if (!teacherId || !mongoose.Types.ObjectId.isValid(String(teacherId))) {

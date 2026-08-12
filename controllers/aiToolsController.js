@@ -22,6 +22,10 @@ import {
   unwrapStoredAiToolContent,
 } from '../utils/build-ai-tool-raw-data.js';
 import {
+  applyHomeworkDurationToDelivery,
+  parseHomeworkDurationMinutes,
+} from '../utils/homework-duration.js';
+import {
   extractActivityTitleFromMarkdown,
   isCurriculumBreadcrumbTitle,
 } from '../services/activity-title-utils.js';
@@ -541,6 +545,14 @@ export const createTeacherTool = async (req, res) => {
             },
           });
           if (live.ok) {
+            const durationMinutes = parseHomeworkDurationMinutes(
+              params.duration ?? req.body?.duration,
+            );
+            const withDuration = applyHomeworkDurationToDelivery(
+              toolType,
+              { content: live.content, rawData: live.rawData },
+              durationMinutes,
+            );
             logTeacherToolUsage({
               teacherId,
               toolType,
@@ -552,8 +564,8 @@ export const createTeacherTool = async (req, res) => {
             return res.json({
               success: true,
               data: {
-                content: live.content,
-                ...(live.rawData ? { rawData: live.rawData } : {}),
+                content: withDuration.content,
+                ...(withDuration.rawData ? { rawData: withDuration.rawData } : {}),
                 toolType,
                 metadata: {
                   classNumber: classNum,
@@ -597,6 +609,14 @@ export const createTeacherTool = async (req, res) => {
         }
         const builtRaw = buildRawDataForTool(toolType, limitedContent, metadataForRaw);
         const delivered = unwrapStoredAiToolContent(limitedContent, builtRaw);
+        const durationMinutes = parseHomeworkDurationMinutes(
+          params.duration ?? req.body?.duration,
+        );
+        const withDuration = applyHomeworkDurationToDelivery(
+          toolType,
+          delivered,
+          durationMinutes,
+        );
         logTeacherToolUsage({
           teacherId,
           toolType,
@@ -608,8 +628,8 @@ export const createTeacherTool = async (req, res) => {
         return res.json({
           success: true,
           data: {
-            content: delivered.content,
-            ...(delivered.rawData ? { rawData: delivered.rawData } : {}),
+            content: withDuration.content,
+            ...(withDuration.rawData ? { rawData: withDuration.rawData } : {}),
             toolType,
             metadata: {
               classNumber: classNum,
@@ -653,6 +673,14 @@ export const createTeacherTool = async (req, res) => {
       },
     });
     if (liveMiss.ok) {
+      const durationMinutes = parseHomeworkDurationMinutes(
+        params.duration ?? req.body?.duration,
+      );
+      const withDuration = applyHomeworkDurationToDelivery(
+        toolType,
+        { content: liveMiss.content, rawData: liveMiss.rawData },
+        durationMinutes,
+      );
       logTeacherToolUsage({
         teacherId,
         toolType,
@@ -664,8 +692,8 @@ export const createTeacherTool = async (req, res) => {
       return res.json({
         success: true,
         data: {
-          content: liveMiss.content,
-          ...(liveMiss.rawData ? { rawData: liveMiss.rawData } : {}),
+          content: withDuration.content,
+          ...(withDuration.rawData ? { rawData: withDuration.rawData } : {}),
           toolType,
           metadata: {
             classNumber: classNum,

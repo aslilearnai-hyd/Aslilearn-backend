@@ -286,6 +286,64 @@ export const updateBoard = async (req, res) => {
   }
 };
 
+/** DELETE /api/super-admin/boards/:code — permanently remove a board */
+export const deleteBoard = async (req, res) => {
+  try {
+    const code = String(req.params.code || '')
+      .toUpperCase()
+      .trim();
+    if (!code) {
+      return res.status(400).json({ success: false, message: 'Board code is required.' });
+    }
+
+    if (code === 'ASLI_EXCLUSIVE_SCHOOLS') {
+      return res.status(403).json({
+        success: false,
+        message: 'The platform hub board cannot be deleted.',
+      });
+    }
+
+    const board = await Board.findOne({ code });
+    if (!board) {
+      return res.status(404).json({ success: false, message: 'Board not found.' });
+    }
+
+    const [subjectCount, adminCount, contentCount, examCount] = await Promise.all([
+      Subject.countDocuments({
+        board: code,
+        isActive: true,
+        name: { $not: /__deleted__/ },
+      }),
+      User.countDocuments({
+        role: 'admin',
+        $or: [{ board: code }, { curriculumBoard: code }],
+      }),
+      Content.countDocuments({ board: code, isActive: { $ne: false } }),
+      Exam.countDocuments({ board: code, isActive: { $ne: false } }),
+    ]);
+
+    if (subjectCount > 0 || adminCount > 0 || contentCount > 0 || examCount > 0) {
+      const parts = [];
+      if (subjectCount > 0) parts.push(`${subjectCount} subject(s)`);
+      if (adminCount > 0) parts.push(`${adminCount} school(s)`);
+      if (contentCount > 0) parts.push(`${contentCount} content item(s)`);
+      if (examCount > 0) parts.push(`${examCount} exam(s)`);
+      return res.status(409).json({
+        success: false,
+        message: `Cannot delete this board while it still has ${parts.join(', ')}. Remove or reassign them first.`,
+      });
+    }
+
+    await Board.deleteOne({ code });
+    await refreshBoardCodeCache();
+
+    return res.json({ success: true, message: 'Board deleted permanently.' });
+  } catch (error) {
+    console.error('Delete board error:', error);
+    return res.status(500).json({ success: false, message: 'Failed to delete board' });
+  }
+};
+
 // Get all boards (active by default; ?all=1 includes inactive for management)
 export const getAllBoards = async (req, res) => {
   try {

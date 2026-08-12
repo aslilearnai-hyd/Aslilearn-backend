@@ -5,6 +5,9 @@ import {
   normalizeMatchText,
 } from '../utils/ai-tool-data-match.js';
 import { resolveAiToolTopicTaxonomy } from '../utils/ai-tool-topic-taxonomy.js';
+import {
+  dedupeChapterWiseTopicLabels,
+} from '../ai/shared/ai-tool-topic-order.js';
 
 function normalizeText(value) {
   return normalizeMatchText(value);
@@ -52,31 +55,8 @@ function uniqueSortedClassLabels(values) {
   });
 }
 
-function chapterNumberFromTopicLabel(value) {
-  const s = String(value || '').trim();
-  if (!s) return null;
-  const chapterMatch = s.match(/\b(?:chapter|ch\.?|unit)\s*[#:]?\s*(\d+)\b/i);
-  if (chapterMatch) {
-    const n = parseInt(chapterMatch[1], 10);
-    return Number.isNaN(n) ? null : n;
-  }
-  const leading = s.match(/^(\d+)\s*[.\):\-–]/);
-  if (leading) {
-    const n = parseInt(leading[1], 10);
-    return Number.isNaN(n) ? null : n;
-  }
-  return null;
-}
-
 function uniqueSortedChapterTopics(values) {
-  return [...new Set(values.filter(Boolean))].sort((a, b) => {
-    const aCh = chapterNumberFromTopicLabel(a);
-    const bCh = chapterNumberFromTopicLabel(b);
-    if (aCh != null && bCh != null && aCh !== bCh) return aCh - bCh;
-    if (aCh != null && bCh == null) return -1;
-    if (aCh == null && bCh != null) return 1;
-    return a.localeCompare(b, 'en', { numeric: true, sensitivity: 'base' });
-  });
+  return dedupeChapterWiseTopicLabels(values);
 }
 
 function toOptionRows(values) {
