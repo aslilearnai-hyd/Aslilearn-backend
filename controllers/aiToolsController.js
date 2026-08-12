@@ -464,17 +464,8 @@ export const createTeacherTool = async (req, res) => {
       });
     }
     
-    {
-      const { validateAiToolSubjectForTool } = await import('../utils/ai-tool-subject-rules.js');
-      const subjectError = validateAiToolSubjectForTool(toolType, normalizedSubject || subject);
-      if (subjectError) {
-        return res.status(400).json({
-          success: false,
-          message: subjectError,
-        });
-      }
-    }
-    
+    // Subject/tool pairing rules are not delivery gates — serve saved content for any subject.
+
     const finalSubject = normalizedSubject;
     const { classNum, classDisplay } = resolveClassDisplay(classNumber);
 
@@ -489,10 +480,7 @@ export const createTeacherTool = async (req, res) => {
       `📦 AI Tool Data lookup: ${toolType} — ${classDisplay}, ${finalSubject}, topic: ${topicForStore || '(optional)'}`,
     );
 
-    // Deliver stored AI Tool Data as-is (no section-completeness gate).
-    // Incomplete rows still show so teachers see what Super Admin saved.
-    const { storyPassageRecordLanguageValid } = await import('../utils/story-passage-subject.js');
-
+    // Deliver stored AI Tool Data as-is (no section / language delivery gates).
     const { doc: cachedDoc, matchType, totalCandidates, selectedIndex } = await fetchRotatingAiToolData({
       classLabel: classDisplay,
       subject: finalSubject,
@@ -510,68 +498,72 @@ export const createTeacherTool = async (req, res) => {
       strictToolMatch: true,
       cursorScope: String(teacherId || ''),
       fastDelivery: true,
-      validator: (doc) => storyPassageRecordLanguageValid(toolType, finalSubject, doc),
     });
     if (cachedDoc) {
-      const cachedContent = String(cachedDoc.generatedContent || cachedDoc.content || '').trim();
-      if (cachedContent) {
-        const maxQuestions = parsePositiveInt(params.questionCount ?? req.body?.questionCount);
-        const limitedContent = applyQuestionLimitToContent(
-          toolType,
-          cachedContent,
+      const metadataForRaw = buildDeliveryMetadataFromDoc(cachedDoc);
+      let cachedContent = String(cachedDoc.generatedContent || cachedDoc.content || '').trim();
+      const maxQuestions = parsePositiveInt(params.questionCount ?? req.body?.questionCount);
+      if (
+        maxQuestions &&
+        toolType === 'worksheet-mcq-generator' &&
+        metadataForRaw.structuredContent &&
+        typeof metadataForRaw.structuredContent === 'object'
+      ) {
+        metadataForRaw.structuredContent = limitWorksheetStructuredContent(
+          metadataForRaw.structuredContent,
           maxQuestions,
         );
-        const metadataForRaw = buildDeliveryMetadataFromDoc(cachedDoc);
-        if (
-          maxQuestions &&
-          toolType === 'worksheet-mcq-generator' &&
-          metadataForRaw.structuredContent &&
-          typeof metadataForRaw.structuredContent === 'object'
-        ) {
-          metadataForRaw.structuredContent = limitWorksheetStructuredContent(
-            metadataForRaw.structuredContent,
-            maxQuestions,
-          );
-        }
-        const builtRaw = buildRawDataForTool(toolType, limitedContent, metadataForRaw);
+      }
+      let limitedContent = applyQuestionLimitToContent(toolType, cachedContent, maxQuestions);
+      const builtRaw = buildRawDataForTool(toolType, limitedContent, metadataForRaw);
+      // Structured-only Super Admin rows (common for homework) still deliver.
+      if (!String(limitedContent || '').trim() && builtRaw && typeof builtRaw === 'object') {
+        limitedContent = JSON.stringify(builtRaw);
+      }
+      if (String(limitedContent || '').trim() || builtRaw) {
         const delivered = unwrapStoredAiToolContent(limitedContent, builtRaw);
-        const durationMinutes = parseHomeworkDurationMinutes(
-          params.duration ?? req.body?.duration,
-        );
-        const withDuration = applyHomeworkDurationToDelivery(
-          toolType,
-          delivered,
-          durationMinutes,
-        );
-        logTeacherToolUsage({
-          teacherId,
-          toolType,
-          classDisplay,
-          finalSubject,
-          topicForStore,
-          subtopicForStore,
-        });
-        return res.json({
-          success: true,
-          data: {
-            content: withDuration.content,
-            ...(withDuration.rawData ? { rawData: withDuration.rawData } : {}),
+        const outContent =
+          String(delivered.content || '').trim() ||
+          (delivered.rawData ? JSON.stringify(delivered.rawData) : limitedContent);
+        if (String(outContent || '').trim()) {
+          const durationMinutes = parseHomeworkDurationMinutes(
+            params.duration ?? req.body?.duration,
+          );
+          const withDuration = applyHomeworkDurationToDelivery(
             toolType,
-            metadata: {
-              classNumber: classNum,
-              subject: finalSubject,
-              topic: topicForStore,
-              ...params,
-              generatedAt: new Date(),
-              teacherId,
-              source: 'ai-tool-data',
-              sourceLabel: 'AI Tool Data',
-              matchType,
-              totalCandidates,
-              selectedIndex,
+            { content: outContent, rawData: delivered.rawData || builtRaw },
+            durationMinutes,
+          );
+          logTeacherToolUsage({
+            teacherId,
+            toolType,
+            classDisplay,
+            finalSubject,
+            topicForStore,
+            subtopicForStore,
+          });
+          return res.json({
+            success: true,
+            data: {
+              content: withDuration.content,
+              ...(withDuration.rawData ? { rawData: withDuration.rawData } : {}),
+              toolType,
+              metadata: {
+                classNumber: classNum,
+                subject: finalSubject,
+                topic: topicForStore,
+                ...params,
+                generatedAt: new Date(),
+                teacherId,
+                source: 'ai-tool-data',
+                sourceLabel: 'AI Tool Data',
+                matchType,
+                totalCandidates,
+                selectedIndex,
+              },
             },
-          },
-        });
+          });
+        }
       }
     }
     if (!cachedDoc) {
@@ -657,10 +649,15 @@ export const createTeacherTool = async (req, res) => {
     });
   } catch (error) {
     console.error('Create teacher tool error:', error);
-    res.status(500).json({ 
-      success: false, 
-      message: `Failed to generate content for ${req.body.toolType || 'tool'}: ${error.message}`,
-      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+    const raw = String(error?.message || '');
+    const isLookupTimeout = /exceeded time limit|multiplanner|timed?\s*out/i.test(raw);
+    res.status(isLookupTimeout ? 404 : 500).json({
+      success: false,
+      code: isLookupTimeout ? 'AI_TOOL_DATA_NOT_FOUND' : undefined,
+      message: isLookupTimeout
+        ? 'Saved content is taking too long to load. Please try Generate again.'
+        : `Failed to generate content for ${req.body.toolType || 'tool'}: ${raw}`,
+      error: process.env.NODE_ENV === 'development' ? raw : undefined,
     });
   }
 };
@@ -704,8 +701,6 @@ export const getGeneratedContent = async (req, res) => {
       );
     }
 
-    const { storyPassageRecordLanguageValid } = await import('../utils/story-passage-subject.js');
-
     const { doc: matchedDoc, matchType, totalCandidates, selectedIndex } = await fetchRotatingAiToolData({
       classLabel,
       subject,
@@ -718,7 +713,6 @@ export const getGeneratedContent = async (req, res) => {
       strictToolMatch: true,
       cursorScope: String(req.teacherId || req.userId || ''),
       fastDelivery: true,
-      validator: (doc) => storyPassageRecordLanguageValid(toolType, subject, doc),
     });
 
     if (matchedDoc) {
@@ -735,11 +729,25 @@ export const getGeneratedContent = async (req, res) => {
     }
 
     const metadataForRaw = buildDeliveryMetadataFromDoc(matchedDoc);
-    const storedContent = matchedDoc.generatedContent || matchedDoc.content || '';
+    let storedContent = String(matchedDoc.generatedContent || matchedDoc.content || '').trim();
     const builtRaw = toolType
       ? buildRawDataForTool(toolType, storedContent, metadataForRaw)
       : null;
+    if (!storedContent && builtRaw && typeof builtRaw === 'object') {
+      storedContent = JSON.stringify(builtRaw);
+    }
     const delivered = unwrapStoredAiToolContent(storedContent, builtRaw);
+    const outContent =
+      String(delivered.content || '').trim() ||
+      (delivered.rawData ? JSON.stringify(delivered.rawData) : storedContent);
+
+    if (!String(outContent || '').trim() && !delivered.rawData) {
+      return res.json({
+        success: true,
+        data: null,
+        message: 'No previously generated content available.',
+      });
+    }
 
     return res.json({
       success: true,
@@ -750,10 +758,12 @@ export const getGeneratedContent = async (req, res) => {
         topic: matchedDoc.topic || '',
         subTopic: matchedDoc.subtopic || '',
         section: matchedDoc.section || '',
-        generatedContent: delivered.content,
-        content: delivered.content,
+        generatedContent: outContent,
+        content: outContent,
         structuredContent: metadataForRaw.structuredContent ?? null,
-        ...(delivered.rawData ? { rawData: delivered.rawData } : {}),
+        ...(delivered.rawData || builtRaw
+          ? { rawData: delivered.rawData || builtRaw }
+          : {}),
         createdAt: matchedDoc.createdAt,
         matchType,
         totalCandidates,

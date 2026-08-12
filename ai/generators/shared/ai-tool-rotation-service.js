@@ -84,11 +84,14 @@ function escapeRegex(value) {
 }
 
 function hasUsableContent(doc) {
+  const meta = doc?.metadata && typeof doc.metadata === 'object' ? doc.metadata : {};
+  if (meta.mergedInto) return false;
+  const review = String(doc?.reviewStatus || '').toLowerCase();
+  if (review === 'rejected' || review === 'archived') return false;
   const text = String(doc?.generatedContent || doc?.content || '').trim();
   if (text && !/no activities\/projects found|no projects available|no data available/i.test(text)) {
     return true;
   }
-  const meta = doc?.metadata && typeof doc.metadata === 'object' ? doc.metadata : {};
   if (meta.legacyStructuredContent && typeof meta.legacyStructuredContent === 'object') return true;
   const structured = meta.structuredContent;
   if (structured && typeof structured === 'object' && structured.schema === 'asli-v2-six-section') {
@@ -97,23 +100,14 @@ function hasUsableContent(doc) {
   return false;
 }
 
+/** Keep Mongo filters simple — regex `$not` here was causing multiplanner timeouts. */
 function validContentFilter() {
   return {
     $or: [
-      {
-        generatedContent: {
-          $exists: true,
-          $nin: ['', null],
-          $not: /no activities\/projects found|no projects available|no data available/i,
-        },
-      },
-      {
-        content: {
-          $exists: true,
-          $nin: ['', null],
-          $not: /no activities\/projects found|no projects available|no data available/i,
-        },
-      },
+      { generatedContent: { $exists: true, $nin: ['', null] } },
+      { content: { $exists: true, $nin: ['', null] } },
+      { 'metadata.structuredContent.schema': 'asli-v2-six-section' },
+      { 'metadata.legacyStructuredContent': { $exists: true, $ne: null } },
     ],
   };
 }
@@ -121,23 +115,6 @@ function validContentFilter() {
 function approvedFilter() {
   return {
     status: { $nin: ['archived', 'inactive', 'deleted'] },
-    $and: [
-      {
-        $or: [
-          { reviewStatus: 'approved' },
-          { reviewStatus: 'draft' },
-          { reviewStatus: 'under_review' },
-          { reviewStatus: { $exists: false } },
-        ],
-      },
-      {
-        $or: [
-          { 'metadata.mergedInto': { $exists: false } },
-          { 'metadata.mergedInto': null },
-          { 'metadata.mergedInto': '' },
-        ],
-      },
-    ],
   };
 }
 
@@ -170,6 +147,24 @@ function rotationKey({ classLabel, subject, topic, subtopic, toolName, scope, bo
 /** Keep rotation snappy: never load every historical generation for a chapter. */
 const EXACT_CANDIDATE_LIMIT = 8;
 const FUZZY_POOL_LIMIT = 60;
+/** Atlas multiplanner + compound filters need headroom; catch timeouts and continue. */
+const QUERY_MAX_TIME_MS = 25_000;
+
+async function findAiToolCandidates(filter, limit) {
+  try {
+    return await AiToolGeneration.find(filter)
+      .sort({ createdAt: -1 })
+      .limit(limit)
+      .maxTimeMS(QUERY_MAX_TIME_MS)
+      .lean();
+  } catch (err) {
+    console.warn(
+      '[ai-tool-rotation] candidate query failed:',
+      String(err?.message || err).slice(0, 200),
+    );
+    return [];
+  }
+}
 
 async function nextCursorIndex(key, total) {
   if (total <= 1) return 0;
@@ -301,8 +296,20 @@ async function executeRotationSearch({
         matchType: normalizedSubtopic ? 'topic-with-tool-fuzzy-subtopic' : 'topic-with-tool',
         filter: mergeMongoFilters(topicOnlyFilter, toolNameMatchFilter(normalizedTool)),
       });
+      // Dashboard delivery: if this chapter has no row, still serve any saved
+      // content for the same class + subject + tool (never block on "ready chapters").
+      attempts.push({
+        matchType: 'subject-with-tool',
+        filter: mergeMongoFilters(bf, toolNameMatchFilter(normalizedTool)),
+      });
     }
   } else if (!exactOnly && !normalizedSubtopic && !normalizedTopic && normalizedTool) {
+    attempts.push({
+      matchType: 'subject-with-tool',
+      filter: mergeMongoFilters(bf, toolNameMatchFilter(normalizedTool)),
+    });
+  } else if (!exactOnly && normalizedTool) {
+    // Subtopic-only edge case — still allow subject-wide delivery.
     attempts.push({
       matchType: 'subject-with-tool',
       filter: mergeMongoFilters(bf, toolNameMatchFilter(normalizedTool)),
@@ -399,13 +406,8 @@ async function executeRotationSearch({
     }
     for (const attempt of toolAttempts) {
       if (strictToolMatch && !filterHasToolName(attempt.filter)) continue;
-      const docs = (
-        await AiToolGeneration.find(attempt.filter)
-          .sort({ createdAt: -1 })
-          .limit(EXACT_CANDIDATE_LIMIT)
-          .maxTimeMS(4_000)
-          .lean()
-      ).filter((doc) => {
+      const docs = (await findAiToolCandidates(attempt.filter, EXACT_CANDIDATE_LIMIT)).filter(
+        (doc) => {
           if (!hasUsableContent(doc) || !toolSlugMatches(doc.toolName, tryToolName || normalizedTool)) {
             return false;
           }
@@ -446,13 +448,7 @@ async function executeRotationSearch({
   }
 
   for (const base of fuzzyBases) {
-    const pool = (
-      await AiToolGeneration.find(base.filter)
-        .sort({ createdAt: -1 })
-        .limit(FUZZY_POOL_LIMIT)
-        .maxTimeMS(4_000)
-        .lean()
-    ).filter(
+    const pool = (await findAiToolCandidates(base.filter, FUZZY_POOL_LIMIT)).filter(
       (doc) =>
         hasUsableContent(doc) &&
         (!strictToolMatch || toolSlugMatches(doc.toolName, base.keyTool || normalizedTool)),
@@ -471,16 +467,28 @@ async function executeRotationSearch({
       return topicOk && subtopicOk && toolOk;
     });
 
-    if (fuzzyMatches.length > 0) {
+    // If topic/subtopic fuzzy miss, still deliver any subject+tool row (dashboard UX).
+    const deliverPool =
+      fuzzyMatches.length > 0
+        ? fuzzyMatches
+        : strictToolMatch && normalizedTool
+          ? pool
+          : [];
+
+    if (deliverPool.length > 0) {
       if (preferLatest) {
         return {
-          doc: fuzzyMatches[0],
-          matchType: `${base.matchType}-latest`,
-          totalCandidates: fuzzyMatches.length,
+          doc: deliverPool[0],
+          matchType: `${base.matchType}${fuzzyMatches.length ? '-latest' : '-subject-fallback-latest'}`,
+          totalCandidates: deliverPool.length,
           selectedIndex: 0,
         };
       }
-      const picked = await selectByRotation(fuzzyMatches, base.matchType, base.keyTool);
+      const picked = await selectByRotation(
+        deliverPool,
+        fuzzyMatches.length ? base.matchType : `${base.matchType}-subject-fallback`,
+        base.keyTool,
+      );
       if (picked.doc) return picked;
     }
   }
@@ -496,7 +504,56 @@ async function executeRotationSearch({
  *   When true (dashboards), try a single exact findOne-style hit first so saved
  *   content returns in ~1s before heavier fuzzy/rotation scans.
  */
-export async function fetchRotatingAiToolData({
+export async function fetchRotatingAiToolData(opts) {
+  try {
+    return await fetchRotatingAiToolDataInner(opts);
+  } catch (err) {
+    console.warn(
+      '[ai-tool-rotation] fetchRotatingAiToolData failed:',
+      String(err?.message || err).slice(0, 200),
+    );
+    // Last resort: simplest possible class+subject+tool query (avoids multiplanner).
+    try {
+      const simple = await findSimpleSubjectToolDoc(opts);
+      if (simple) return simple;
+    } catch {
+      /* ignore */
+    }
+    return { doc: null, matchType: null, totalCandidates: 0, selectedIndex: -1 };
+  }
+}
+
+async function findSimpleSubjectToolDoc({
+  classLabel,
+  subject,
+  toolName = '',
+  board = '',
+  preferLatest = true,
+}) {
+  const normalizedTool = normalize(toolName);
+  if (!normalizedTool || !classLabel || !subject) return null;
+  const lookupBoard = resolveLookupBoard(board, classLabel);
+  const filter = mergeMongoFilters(
+    buildAiToolDataScopeFilter({
+      classLabel,
+      subject,
+      board: lookupBoard || '',
+    }),
+    toolNameMatchFilter(normalizedTool),
+    { status: { $nin: ['archived', 'inactive', 'deleted'] } },
+  );
+  const docs = await findAiToolCandidates(filter, EXACT_CANDIDATE_LIMIT);
+  const usable = docs.filter((d) => hasUsableContent(d));
+  if (!usable.length) return null;
+  return {
+    doc: preferLatest ? usable[0] : usable[usable.length - 1] || usable[0],
+    matchType: 'simple-subject-tool-fallback',
+    totalCandidates: usable.length,
+    selectedIndex: 0,
+  };
+}
+
+async function fetchRotatingAiToolDataInner({
   classLabel,
   subject,
   topic,
@@ -553,9 +610,18 @@ export async function fetchRotatingAiToolData({
   });
   if (withBoard.doc) return withBoard;
 
-  if (!lookupBoard) return withBoard;
+  if (!lookupBoard) {
+    const simple = await findSimpleSubjectToolDoc({
+      classLabel,
+      subject,
+      toolName,
+      board: lookupBoard,
+      preferLatest: true,
+    });
+    return simple || withBoard;
+  }
 
-  return executeRotationSearch({
+  const withoutBoard = await executeRotationSearch({
     classLabel,
     subject,
     topic,
@@ -569,4 +635,14 @@ export async function fetchRotatingAiToolData({
     validator,
     strictBoard: false,
   });
+  if (withoutBoard.doc) return withoutBoard;
+
+  const simple = await findSimpleSubjectToolDoc({
+    classLabel,
+    subject,
+    toolName,
+    board: lookupBoard,
+    preferLatest: true,
+  });
+  return simple || withoutBoard;
 }

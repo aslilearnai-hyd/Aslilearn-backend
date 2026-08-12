@@ -82,8 +82,10 @@ export function isAiGeneratorSectionPadEnabled() {
 
 /** When true (default), incomplete generations are not saved via scaffold pad or batch economy fallbacks. */
 export function isAiGeneratorCompleteOnlySaveEnabled() {
-  const raw = String(process.env.AI_GENERATOR_COMPLETE_ONLY_SAVE ?? 'true').trim().toLowerCase();
-  return raw !== 'false' && raw !== '0' && raw !== 'off';
+  // Default OFF so Super Admin / book saves still persist and dashboards can show content.
+  // Set AI_GENERATOR_COMPLETE_ONLY_SAVE=true to re-enable strict section gates on save.
+  const raw = String(process.env.AI_GENERATOR_COMPLETE_ONLY_SAVE ?? 'false').trim().toLowerCase();
+  return raw === 'true' || raw === '1' || raw === 'on';
 }
 
 /** Prioritize 25/25 complete sections over raw speed. */
