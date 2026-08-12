@@ -272,16 +272,10 @@ router.get('/students/performance', async (req, res) => {
         }
       }
       
-      // Get subjects assigned to student's class
+      // Subjects assigned to the student's class only (no whole-board fallback).
       let subjectsList = [];
       if (student.assignedClass && student.assignedClass.assignedSubjects) {
         subjectsList = student.assignedClass.assignedSubjects;
-      } else if (studentBoard) {
-        // Fallback: get all subjects for student's board
-        subjectsList = await Subject.find({ 
-          board: studentBoard, 
-          isActive: true 
-        }).select('_id name');
       }
       
       // Calculate exam progress per subject

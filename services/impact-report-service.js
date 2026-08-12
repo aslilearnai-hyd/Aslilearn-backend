@@ -19,6 +19,7 @@ import OmrResultRow from '../models/OmrResultRow.js';
 import OmrResultBatch from '../models/OmrResultBatch.js';
 import WeeklyImpactSnapshot from '../models/WeeklyImpactSnapshot.js';
 import WeeklyDigest from '../models/WeeklyDigest.js';
+import { getToolDisplayTitle } from '../config/aiToolTemplates.js';
 
 /** Monday 00:00 UTC of the week containing `d` (ISO week Monday). */
 export function startOfIsoWeek(d = new Date()) {
@@ -526,6 +527,120 @@ function topSubjectsFromMap(map, limit = 5) {
       sessions,
       pct: Math.round((sessions / total) * 1000) / 10,
     }));
+}
+
+function humanizeToolSlug(slug, displayName = '') {
+  const named = String(displayName || '').trim();
+  if (named) return named;
+  const raw = String(slug || '').trim();
+  if (!raw) return 'AI tool';
+  try {
+    const titled = getToolDisplayTitle(raw);
+    if (titled) return titled;
+  } catch {
+    /* fall through */
+  }
+  return raw
+    .replace(/[-_]+/g, ' ')
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+/**
+ * Per-student AI tool + subject usage for the week (generations + progress opens).
+ */
+async function studentToolsAndSubjectsBreakdown(sid, weekStart, weekEnd) {
+  const sidStr = String(sid);
+  const progressDate = {
+    $or: [
+      { lastAccessed: { $gte: weekStart, $lte: weekEnd } },
+      { updatedAt: { $gte: weekStart, $lte: weekEnd } },
+    ],
+  };
+
+  const [genRows, progressRows] = await Promise.all([
+    AiToolGeneration.aggregate([
+      {
+        $match: {
+          createdAt: { $gte: weekStart, $lte: weekEnd },
+          $or: [{ generatedBy: sid }, { generatedBy: sidStr }],
+        },
+      },
+      {
+        $group: {
+          _id: {
+            tool: '$toolName',
+            subject: '$subject',
+            display: '$toolDisplayName',
+          },
+          n: { $sum: 1 },
+        },
+      },
+    ]).catch(() => []),
+    UserProgress.aggregate([
+      {
+        $match: {
+          userId: sid,
+          toolType: { $nin: [null, ''] },
+          ...progressDate,
+        },
+      },
+      {
+        $group: {
+          _id: { tool: '$toolType', subject: '$subject' },
+          n: { $sum: 1 },
+        },
+      },
+    ]).catch(() => []),
+  ]);
+
+  const toolMap = new Map(); // key -> { name, count, subjects: Map }
+  const subjectMap = new Map();
+
+  const bump = (toolKey, displayName, subject, count) => {
+    const n = Number(count) || 0;
+    if (n <= 0) return;
+    const key = String(toolKey || 'ai-tool').trim() || 'ai-tool';
+    if (!toolMap.has(key)) {
+      toolMap.set(key, {
+        name: humanizeToolSlug(key, displayName),
+        count: 0,
+        subjects: new Map(),
+      });
+    }
+    const row = toolMap.get(key);
+    row.count += n;
+    if (displayName && (!row.name || row.name === humanizeToolSlug(key))) {
+      row.name = humanizeToolSlug(key, displayName);
+    }
+    const sub = String(subject || '').trim() || 'General';
+    row.subjects.set(sub, (row.subjects.get(sub) || 0) + n);
+    subjectMap.set(sub, (subjectMap.get(sub) || 0) + n);
+  };
+
+  for (const r of genRows || []) {
+    bump(r._id?.tool, r._id?.display, r._id?.subject, r.n);
+  }
+  for (const r of progressRows || []) {
+    bump(r._id?.tool, '', r._id?.subject, r.n);
+  }
+
+  const toolsUsed = [...toolMap.entries()]
+    .map(([, row]) => {
+      const subjectList = [...row.subjects.entries()]
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 3)
+        .map(([subject, sessions]) => ({ subject, sessions }));
+      return {
+        name: row.name,
+        count: row.count,
+        subjects: subjectList.map((s) => s.subject),
+        topSubjects: subjectList,
+      };
+    })
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 10);
+
+  return { toolsUsed, subjectMap };
 }
 
 function buildKeyObservation(snap) {
@@ -1083,6 +1198,7 @@ export async function computeStudentWeeklyTracking(student, weekStart, weekEnd) 
     earliestSession,
     lifetimeSessions,
     omrRows,
+    toolSubjectBreakdown,
   ] = await Promise.all([
     sessionStatsForUsers([sid], weekStart, weekEnd),
     vidyaStatsForUsers([sid], weekStart, weekEnd),
@@ -1164,6 +1280,7 @@ export async function computeStudentWeeklyTracking(student, weekStart, weekEnd) 
       .limit(12)
       .lean()
       .catch(() => []),
+    studentToolsAndSubjectsBreakdown(sid, weekStart, weekEnd),
   ]);
 
   const mine = sessions.byUser.get(sidStr) || { sessions: 0, minutes: 0, activeDays: 0 };
@@ -1202,8 +1319,30 @@ export async function computeStudentWeeklyTracking(student, weekStart, weekEnd) 
   const avgSessionMinutes =
     mine.sessions > 0 ? Math.round(((mine.minutes || 0) / mine.sessions) * 10) / 10 : 0;
 
-  const subjectMap = mergeSubjectMaps(practice.bySubject || new Map(), vidya.bySubject || new Map());
-  const topSubjects = topSubjectsFromMap(subjectMap, 5).map((s) => s.subject);
+  const toolBreakdown = toolSubjectBreakdown || { toolsUsed: [], subjectMap: new Map() };
+  const toolsUsed = [...(toolBreakdown.toolsUsed || [])];
+  if (vidyaDoubts > 0) {
+    const vidyaSubjects = [...(vidya.bySubject || new Map()).entries()]
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 3)
+      .map(([subject, sessions]) => ({ subject, sessions }));
+    toolsUsed.unshift({
+      name: 'Vidya AI',
+      count: vidyaDoubts,
+      subjects: vidyaSubjects.map((s) => s.subject),
+      topSubjects: vidyaSubjects,
+    });
+    toolsUsed.sort((a, b) => b.count - a.count);
+  }
+
+  const subjectMap = mergeSubjectMaps(
+    practice.bySubject || new Map(),
+    vidya.bySubject || new Map(),
+    toolBreakdown.subjectMap || new Map(),
+  );
+  const topSubjectsDetailed = topSubjectsFromMap(subjectMap, 5);
+  const topSubjects = topSubjectsDetailed.map((s) => s.subject);
+  const mostUsedSubject = topSubjectsDetailed[0] || null;
 
   const activationDate =
     earliestSession?.date ||
@@ -1291,6 +1430,7 @@ export async function computeStudentWeeklyTracking(student, weekStart, weekEnd) 
     aiDoubts: vidyaDoubts,
     aiToolUses,
     aiExplanations,
+    toolsUsed: toolsUsed.slice(0, 10),
     practiceAttempts,
     practiceCorrect,
     practiceAccuracy,
@@ -1299,6 +1439,8 @@ export async function computeStudentWeeklyTracking(student, weekStart, weekEnd) 
 
     // Content focus
     topSubjects,
+    topSubjectsDetailed,
+    mostUsedSubject,
     videosWatched,
     chaptersCompleted: chapterCount || 0,
 
@@ -1350,6 +1492,20 @@ function studentDigestHighlights(metrics) {
       `You used AI ${metrics.aiExplanations} time(s) (Vidya ${metrics.aiDoubts}, tools ${metrics.aiToolUses}).`,
     );
   }
+  if (Array.isArray(metrics.toolsUsed) && metrics.toolsUsed.length > 0) {
+    const toolBits = metrics.toolsUsed
+      .slice(0, 4)
+      .map((t) => `${t.name} (${t.count})`)
+      .join(', ');
+    highlights.push(`Tools you used most: ${toolBits}.`);
+  }
+  if (metrics.mostUsedSubject?.subject) {
+    highlights.push(
+      `Subject you used most: ${metrics.mostUsedSubject.subject} (${metrics.mostUsedSubject.sessions} activities · ${metrics.mostUsedSubject.pct}%).`,
+    );
+  } else if (metrics.topSubjects?.length) {
+    highlights.push(`Top subjects: ${metrics.topSubjects.slice(0, 3).join(', ')}.`);
+  }
   if (metrics.topicsPractised > 0) {
     highlights.push(
       `You practised ${metrics.topicsPractised} topic(s)${
@@ -1363,9 +1519,6 @@ function studentDigestHighlights(metrics) {
     highlights.push(
       `Practice / quiz attempts: ${metrics.practiceAttempts} · accuracy ${metrics.practiceAccuracy}%.`,
     );
-  }
-  if (metrics.topSubjects?.length) {
-    highlights.push(`Top subjects: ${metrics.topSubjects.slice(0, 3).join(', ')}.`);
   }
   if (metrics.streak > 0) {
     highlights.push(`Current streak: ${metrics.streak} day(s). Keep it going!`);

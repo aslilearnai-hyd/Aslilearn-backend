@@ -1146,6 +1146,27 @@ export async function generatePDF(req, res) {
       ['Generated', record.createdAt ? new Date(record.createdAt).toLocaleString() : '—'],
     ].filter(([, v]) => String(v || '').trim());
 
+    const slugPart = (value) =>
+      String(value || '')
+        .trim()
+        .replace(/[^\w\s\-]+/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '')
+        .slice(0, 40);
+    const pdfNameParts = [
+      toolName,
+      record.classLabel,
+      record.subject,
+      record.topic,
+      record.subtopic,
+    ]
+      .map(slugPart)
+      .filter(Boolean);
+    const pdfBaseName = (pdfNameParts.join('_') || 'AsliLearn-AI-Content').slice(0, 120);
+    const pdfFileName = `${pdfBaseName}.pdf`;
+    const pdfFileNameAscii = pdfFileName.replace(/[^\x20-\x7E]/g, '_');
+
     const doc = new PDFDocument({ size: 'A4', margin: 48 });
     const chunks = [];
     doc.on('data', (chunk) => chunks.push(chunk));
@@ -1154,7 +1175,7 @@ export async function generatePDF(req, res) {
       res.setHeader('Content-Type', 'application/pdf');
       res.setHeader(
         'Content-Disposition',
-        `inline; filename="aslilearn-${String(record._id)}.pdf"`,
+        `attachment; filename="${pdfFileNameAscii.replace(/"/g, '')}"; filename*=UTF-8''${encodeURIComponent(pdfFileName)}`,
       );
       res.send(pdfBuffer);
     });

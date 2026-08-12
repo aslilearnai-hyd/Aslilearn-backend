@@ -582,7 +582,7 @@ export const getTeachers = async (req, res) => {
       .populate({
         path: 'subjects',
         match: { isActive: true },
-        select: 'name description isActive',
+        select: 'name description isActive productCategory code',
       })
       .select('-password')
       .sort({ createdAt: -1 })
@@ -602,6 +602,10 @@ export const getTeachers = async (req, res) => {
         (s) => s != null && s._id && s.isActive !== false
       ),
       assignedClassIds: (teacher.assignedClassIds || []).map(String),
+      assignments: (teacher.assignments || []).map((row) => ({
+        classId: String(row.classId || ''),
+        subjectId: String(row.subjectId || ''),
+      })),
       role: teacher.role,
       isActive: teacher.isActive,
       createdAt: teacher.createdAt,
@@ -2181,61 +2185,111 @@ export const getTeacherDashboardStats = async (req, res) => {
   }
 };
 
-// Assign classes to teacher
+// Assign classes to teacher (with specific subject per class)
 export const assignClasses = async (req, res) => {
   try {
     const { teacherId } = req.params;
-    const { classIds } = req.body;
+    const { assignments } = req.body;
     const adminId = req.adminId;
 
-    console.log('Assign classes request:', { teacherId, classIds, adminId });
+    console.log('Assign classes request:', { teacherId, assignments, adminId });
 
-    if (!teacherId || !classIds || !Array.isArray(classIds)) {
+    if (!teacherId || !assignments || !Array.isArray(assignments)) {
       return res.status(400).json({
         success: false,
-        message: 'Teacher ID and class IDs array are required'
+        message: 'Teacher ID and assignments array are required. Each row needs classId and subjectId.',
       });
     }
 
-    // Find the teacher
-    const teacher = await Teacher.findOne({ 
+    const teacher = await Teacher.findOne({
       _id: teacherId,
-      ...(adminId ? { adminId } : {})
+      ...(adminId ? { adminId } : {}),
     });
 
     if (!teacher) {
       return res.status(404).json({
         success: false,
-        message: 'Teacher not found'
+        message: 'Teacher not found',
       });
     }
 
-    // Update teacher with new class IDs
+    const teacherSubjectSet = new Set((teacher.subjects || []).map((id) => String(id)));
+    const previousSubjectIds = (teacher.assignments || []).map((row) => String(row.subjectId || ''));
+
+    const normalizedAssignments = [];
+    const seenPairs = new Set();
+    for (const row of assignments) {
+      const classId = String(row?.classId || '').trim();
+      const subjectId = String(row?.subjectId || '').trim();
+      if (!classId || !subjectId) continue;
+      if (!mongoose.Types.ObjectId.isValid(classId) || !mongoose.Types.ObjectId.isValid(subjectId)) {
+        continue;
+      }
+      if (!teacherSubjectSet.has(subjectId)) {
+        return res.status(400).json({
+          success: false,
+          message: 'Each assignment subject must be one of the teacher\'s assigned subjects',
+        });
+      }
+      const pairKey = `${classId}::${subjectId}`;
+      if (seenPairs.has(pairKey)) continue;
+      seenPairs.add(pairKey);
+      normalizedAssignments.push({
+        classId: new mongoose.Types.ObjectId(classId),
+        subjectId: new mongoose.Types.ObjectId(subjectId),
+      });
+    }
+
+    const classFilter = {
+      _id: { $in: normalizedAssignments.map((row) => row.classId) },
+      isActive: true,
+    };
+    if (adminId) classFilter.assignedAdmin = adminId;
+    const validClasses = await Class.find(classFilter).select('_id').lean();
+    if (validClasses.length !== new Set(normalizedAssignments.map((row) => String(row.classId))).size) {
+      return res.status(400).json({
+        success: false,
+        message: 'One or more classes are invalid or not assigned to your school',
+      });
+    }
+
+    const assignedClassIds = [
+      ...new Set(normalizedAssignments.map((row) => String(row.classId))),
+    ];
+
     const updatedTeacher = await Teacher.findByIdAndUpdate(
       teacherId,
-      { 
-        assignedClassIds: classIds,
-        updatedAt: new Date()
+      {
+        assignments: normalizedAssignments,
+        assignedClassIds,
+        updatedAt: new Date(),
       },
-      { new: true }
+      { new: true },
     );
 
-    // Keep Subjects "Assigned Classes" in sync with teacher class + subject links.
-    await syncTeacherSubjectClassLinks(teacherId, adminId);
+    const touchedSubjectIds = [
+      ...new Set([
+        ...previousSubjectIds.filter(Boolean),
+        ...normalizedAssignments.map((row) => String(row.subjectId)),
+      ]),
+    ];
+    await syncTeacherSubjectClassLinks(teacherId, adminId, {
+      extraSubjectIds: touchedSubjectIds,
+    });
 
     console.log('Updated teacher classes:', updatedTeacher);
-    console.log('Updated teacher assignedClassIds:', updatedTeacher.assignedClassIds);
+    console.log('Updated teacher assignments:', updatedTeacher.assignments);
 
     res.json({
       success: true,
-      message: 'Classes assigned successfully',
-      data: updatedTeacher
+      message: 'Class assignments saved successfully',
+      data: updatedTeacher,
     });
   } catch (error) {
     console.error('Assign classes error:', error);
-    res.status(500).json({ 
-      success: false, 
-      message: 'Failed to assign classes' 
+    res.status(500).json({
+      success: false,
+      message: 'Failed to assign classes',
     });
   }
 };
@@ -2270,6 +2324,10 @@ export const assignSubjects = async (req, res) => {
     }
 
     const previousSubjectIds = (teacher.subjects || []).map((id) => String(id));
+    const previousAssignmentSubjectIds = (teacher.assignments || []).map((row) =>
+      String(row.subjectId || '')
+    );
+    const subjectIdSet = new Set(subjectIds.map((id) => String(id)));
 
     const { assignments } = req.body;
     const updatePayload = {
@@ -2280,15 +2338,24 @@ export const assignSubjects = async (req, res) => {
     if (assignments && Array.isArray(assignments)) {
       updatePayload.assignments = assignments
         .filter((a) => a.classId && a.subjectId)
+        .filter((a) => subjectIdSet.has(String(a.subjectId)))
         .map((a) => ({
           classId: new mongoose.Types.ObjectId(String(a.classId)),
           subjectId: new mongoose.Types.ObjectId(String(a.subjectId)),
         }));
-      const classIdsFromAssignments = [
+      updatePayload.assignedClassIds = [
         ...new Set(updatePayload.assignments.map((a) => String(a.classId))),
       ];
+    } else {
+      const prunedAssignments = (teacher.assignments || [])
+        .filter((row) => subjectIdSet.has(String(row.subjectId)))
+        .map((row) => ({
+          classId: new mongoose.Types.ObjectId(String(row.classId)),
+          subjectId: new mongoose.Types.ObjectId(String(row.subjectId)),
+        }));
+      updatePayload.assignments = prunedAssignments;
       updatePayload.assignedClassIds = [
-        ...new Set([...(teacher.assignedClassIds || []).map(String), ...classIdsFromAssignments]),
+        ...new Set(prunedAssignments.map((a) => String(a.classId))),
       ];
     }
 
@@ -2304,7 +2371,14 @@ export const assignSubjects = async (req, res) => {
     );
 
     // Mirror teacher subject+class assignments onto Subject ↔ Class links.
-    await syncTeacherSubjectClassLinks(teacherId, adminId);
+    await syncTeacherSubjectClassLinks(teacherId, adminId, {
+      extraSubjectIds: [
+        ...new Set([
+          ...previousAssignmentSubjectIds.filter(Boolean),
+          ...subjectIds.map(String),
+        ]),
+      ],
+    });
 
     console.log('Updated teacher:', updatedTeacher);
 
@@ -2624,17 +2698,15 @@ export const getSubjects = async (req, res) => {
     let subjects = await Subject.find(subjectQuery).sort({ name: 1 }).lean();
 
     if (!includeCatalog) {
+      // Only subjects linked to this admin's classes (Super Admin Subjects & Content catalog).
       subjects = subjects.filter((s) => {
-        if (!isCatalogStyleSubjectName(s.name)) return true;
         const sid = String(s._id);
-        const linkedClassIds = (s.classIds || []).map(String);
-        if (linkedClassIds.some((cid) => adminClassIds.some((aid) => String(aid) === cid))) {
-          return true;
-        }
         if (subjectIdsFromClasses.has(sid)) return true;
-        return false;
+        const linkedClassIds = (s.classIds || []).map(String);
+        return linkedClassIds.some((cid) =>
+          adminClassIds.some((aid) => String(aid) === cid),
+        );
       });
-      // Preserve Biology_6 class links on clean Biology before catalog rows are hidden.
       subjects = mergeCatalogClassIdsOntoCleanSiblings(subjects);
       subjects = filterCatalogSubjectsWithCleanSibling(subjects);
     }
