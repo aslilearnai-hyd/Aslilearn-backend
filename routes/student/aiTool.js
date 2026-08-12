@@ -229,13 +229,7 @@ router.post('/ai/tool', async (req, res) => {
       }
     };
 
-    const {
-      validateDashboardAiToolDoc,
-      DASHBOARD_INCOMPLETE_CODE,
-      DASHBOARD_INCOMPLETE_USER_MESSAGE,
-      DASHBOARD_WRONG_TOOL_CODE,
-      DASHBOARD_WRONG_TOOL_USER_MESSAGE,
-    } = await import('../../services/ai-tool-dashboard-validation.js');
+    // Deliver stored AI Tool Data as-is (no section-completeness gate).
     const { storyPassageRecordLanguageValid } = await import('../../utils/story-passage-subject.js');
 
     // Priority 1: Super Admin AI Tool Data (exact class+subject+topic+subtopic) with rotation.
@@ -262,69 +256,13 @@ router.post('/ai/tool', async (req, res) => {
       strictToolMatch: true,
       cursorScope: String(userId || ''),
       fastDelivery: true,
-      validator: (doc) => {
-        if (!validateDashboardAiToolDoc(toolType, doc).valid) return false;
-        return storyPassageRecordLanguageValid(toolType, finalSubject, doc);
-      },
+      validator: (doc) => storyPassageRecordLanguageValid(toolType, finalSubject, doc),
     });
     if (adminDoc) {
-      const contentGate = validateDashboardAiToolDoc(toolType, adminDoc);
       const originalContent = String(adminDoc.generatedContent || adminDoc.content || '').trim();
-      if (!contentGate.valid) {
-        const isWrongTool = contentGate.code === DASHBOARD_WRONG_TOOL_CODE;
-        const live = await generateAiToolLiveFallback({
-          toolType,
-          board: lookupBoard,
-          classDisplay,
-          subject: finalSubject,
-          topic: topicForFetch || '',
-          subtopic: subtopicForLookup,
-          userId,
-          role: 'student',
-          extraParams: {
-            questionCount: params.questionCount ?? req.body?.questionCount,
-            duration: params.duration ?? req.body?.duration,
-            productCategory: studentProductCategory || undefined,
-          },
-        });
-        if (live.ok) {
-          const durationMinutes = parseHomeworkDurationMinutes(
-            params.duration ?? req.body?.duration,
-          );
-          const withDuration = applyHomeworkDurationToDelivery(
-            toolType,
-            { content: live.content, rawData: live.rawData },
-            durationMinutes,
-          );
-          return res.json({
-            success: true,
-            data: {
-              content: withDuration.content,
-              ...(withDuration.rawData ? { rawData: withDuration.rawData } : {}),
-              toolType,
-              metadata: {
-                classNumber: classNum,
-                subject: finalSubject,
-                topic: topicForFetch || '',
-                subTopic: subtopicForLookup,
-                ...params,
-                generatedAt: new Date(),
-                userId,
-                ...live.metadata,
-              },
-            },
-          });
-        }
-        return res.status(404).json({
-          success: false,
-          code: contentGate.code || DASHBOARD_INCOMPLETE_CODE,
-          message:
-            contentGate.message ||
-            (isWrongTool ? DASHBOARD_WRONG_TOOL_USER_MESSAGE : DASHBOARD_INCOMPLETE_USER_MESSAGE),
-          missingSections: contentGate.missingSections || [],
-        });
-      }
-
+      if (!originalContent) {
+        // fall through to live / not-found below
+      } else {
       const content = applyQuestionLimitToContent(
         toolType,
         originalContent,
@@ -362,6 +300,7 @@ router.post('/ai/tool', async (req, res) => {
           },
         },
       });
+      }
     }
 
     const liveMiss = await generateAiToolLiveFallback({

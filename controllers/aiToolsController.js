@@ -489,13 +489,8 @@ export const createTeacherTool = async (req, res) => {
       `📦 AI Tool Data lookup: ${toolType} — ${classDisplay}, ${finalSubject}, topic: ${topicForStore || '(optional)'}`,
     );
 
-    const {
-      validateDashboardAiToolDoc,
-      DASHBOARD_INCOMPLETE_CODE,
-      DASHBOARD_INCOMPLETE_USER_MESSAGE,
-      DASHBOARD_WRONG_TOOL_CODE,
-      DASHBOARD_WRONG_TOOL_USER_MESSAGE,
-    } = await import('../services/ai-tool-dashboard-validation.js');
+    // Deliver stored AI Tool Data as-is (no section-completeness gate).
+    // Incomplete rows still show so teachers see what Super Admin saved.
     const { storyPassageRecordLanguageValid } = await import('../utils/story-passage-subject.js');
 
     const { doc: cachedDoc, matchType, totalCandidates, selectedIndex } = await fetchRotatingAiToolData({
@@ -515,80 +510,11 @@ export const createTeacherTool = async (req, res) => {
       strictToolMatch: true,
       cursorScope: String(teacherId || ''),
       fastDelivery: true,
-      validator: (doc) => {
-        if (!validateDashboardAiToolDoc(toolType, doc).valid) return false;
-        return storyPassageRecordLanguageValid(toolType, finalSubject, doc);
-      },
+      validator: (doc) => storyPassageRecordLanguageValid(toolType, finalSubject, doc),
     });
     if (cachedDoc) {
       const cachedContent = String(cachedDoc.generatedContent || cachedDoc.content || '').trim();
       if (cachedContent) {
-        const contentGate = validateDashboardAiToolDoc(toolType, cachedDoc);
-        const isWrongTool = contentGate.code === DASHBOARD_WRONG_TOOL_CODE;
-        if (!contentGate.valid) {
-          const live = await generateAiToolLiveFallback({
-            toolType,
-            board:
-              String(req.body.board || '').trim() ||
-              programCtx.curriculumBoard ||
-              programCtx.displayBoard ||
-              'CBSE',
-            classDisplay,
-            subject: finalSubject,
-            topic: topicForStore,
-            subtopic: subtopicForStore,
-            userId: teacherId,
-            role: 'teacher',
-            extraParams: {
-              questionCount: params.questionCount ?? req.body?.questionCount,
-              duration: params.duration ?? req.body?.duration,
-            },
-          });
-          if (live.ok) {
-            const durationMinutes = parseHomeworkDurationMinutes(
-              params.duration ?? req.body?.duration,
-            );
-            const withDuration = applyHomeworkDurationToDelivery(
-              toolType,
-              { content: live.content, rawData: live.rawData },
-              durationMinutes,
-            );
-            logTeacherToolUsage({
-              teacherId,
-              toolType,
-              classDisplay,
-              finalSubject,
-              topicForStore,
-              subtopicForStore,
-            });
-            return res.json({
-              success: true,
-              data: {
-                content: withDuration.content,
-                ...(withDuration.rawData ? { rawData: withDuration.rawData } : {}),
-                toolType,
-                metadata: {
-                  classNumber: classNum,
-                  subject: finalSubject,
-                  topic: topicForStore,
-                  ...params,
-                  generatedAt: new Date(),
-                  teacherId,
-                  ...live.metadata,
-                },
-              },
-            });
-          }
-          return res.status(404).json({
-            success: false,
-            code: contentGate.code || (isWrongTool ? DASHBOARD_WRONG_TOOL_CODE : DASHBOARD_INCOMPLETE_CODE),
-            message:
-              contentGate.message ||
-              (isWrongTool ? DASHBOARD_WRONG_TOOL_USER_MESSAGE : DASHBOARD_INCOMPLETE_USER_MESSAGE),
-            missingSections: contentGate.missingSections || [],
-          });
-        }
-
         const maxQuestions = parsePositiveInt(params.questionCount ?? req.body?.questionCount);
         const limitedContent = applyQuestionLimitToContent(
           toolType,
@@ -778,13 +704,6 @@ export const getGeneratedContent = async (req, res) => {
       );
     }
 
-    const {
-      validateDashboardAiToolDoc,
-      DASHBOARD_INCOMPLETE_CODE,
-      DASHBOARD_INCOMPLETE_USER_MESSAGE,
-      DASHBOARD_WRONG_TOOL_CODE,
-      DASHBOARD_WRONG_TOOL_USER_MESSAGE,
-    } = await import('../services/ai-tool-dashboard-validation.js');
     const { storyPassageRecordLanguageValid } = await import('../utils/story-passage-subject.js');
 
     const { doc: matchedDoc, matchType, totalCandidates, selectedIndex } = await fetchRotatingAiToolData({
@@ -799,10 +718,7 @@ export const getGeneratedContent = async (req, res) => {
       strictToolMatch: true,
       cursorScope: String(req.teacherId || req.userId || ''),
       fastDelivery: true,
-      validator: (doc) => {
-        if (!validateDashboardAiToolDoc(toolType, doc).valid) return false;
-        return storyPassageRecordLanguageValid(toolType, subject, doc);
-      },
+      validator: (doc) => storyPassageRecordLanguageValid(toolType, subject, doc),
     });
 
     if (matchedDoc) {
@@ -816,22 +732,6 @@ export const getGeneratedContent = async (req, res) => {
         data: null,
         message: 'No previously generated content available.',
       });
-    }
-
-    if (toolType) {
-      const contentGate = validateDashboardAiToolDoc(toolType, matchedDoc);
-      if (!contentGate.valid) {
-        const isWrongTool = contentGate.code === DASHBOARD_WRONG_TOOL_CODE;
-        return res.json({
-          success: true,
-          data: null,
-          message:
-            contentGate.message ||
-            (isWrongTool ? DASHBOARD_WRONG_TOOL_USER_MESSAGE : DASHBOARD_INCOMPLETE_USER_MESSAGE),
-          code: contentGate.code || DASHBOARD_INCOMPLETE_CODE,
-          missingSections: contentGate.missingSections || [],
-        });
-      }
     }
 
     const metadataForRaw = buildDeliveryMetadataFromDoc(matchedDoc);
