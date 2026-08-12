@@ -78,7 +78,9 @@ const router = express.Router();
 
 router.get('/iq-rank-quizzes', async (req, res) => {
   try {
-    const student = await User.findById(req.userId).populate('assignedClass', 'classNumber assignedAdmin');
+    const student = await User.findById(req.userId)
+      .populate('assignedAdmin', '_id')
+      .populate('assignedClass', 'classNumber assignedAdmin');
     if (!student) {
       return res.json({ success: true, data: [] });
     }
@@ -156,6 +158,7 @@ router.get('/iq-rank-questions', async (req, res) => {
     const { classNumber, subject, difficulty, quizId } = req.query;
     
     const student = await User.findById(req.userId)
+      .populate('assignedAdmin', '_id')
       .populate('assignedClass', 'classNumber assignedAdmin');
     if (!student) {
       return res.json({ success: true, data: [] });

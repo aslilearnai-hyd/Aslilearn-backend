@@ -76,6 +76,19 @@ import {
 
 const router = express.Router();
 
+/** Upload returns `/uploads/...`; also accept absolute http(s) links. */
+function isValidHomeworkSubmissionLink(link) {
+  const raw = String(link || '').trim();
+  if (!raw) return false;
+  if (raw.startsWith('/uploads/')) return true;
+  try {
+    const u = new URL(raw);
+    return u.protocol === 'http:' || u.protocol === 'https:';
+  } catch {
+    return false;
+  }
+}
+
 router.post('/homework-submission', async (req, res) => {
   try {
     const { homeworkId, submissionLink, description } = req.body;
@@ -87,10 +100,7 @@ router.post('/homework-submission', async (req, res) => {
       });
     }
 
-    // Validate URL format
-    try {
-      new URL(submissionLink);
-    } catch (error) {
+    if (!isValidHomeworkSubmissionLink(submissionLink)) {
       return res.status(400).json({
         success: false,
         message: 'Invalid URL format for submission link'
