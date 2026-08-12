@@ -59,6 +59,8 @@ function topicLabelScore(value) {
   let score = Math.min(s.length, 80);
   if (chapterNumberFromTopicLabel(s) != null) score += 1000;
   if (/^(chapter|ch\.?|unit)\b/i.test(s)) score += 100;
+  // Prefer "Chapter N - Title" over bare "Chapter N"
+  if (/\s[-–—:]\s*.+/u.test(s) || /\s-\s.+/.test(s)) score += 200;
   if (!/\s-\s/.test(s) || chapterNumberFromTopicLabel(s) != null) score += 20;
   return score;
 }
@@ -72,18 +74,39 @@ export function compareChapterWiseTopicLabels(a, b) {
   return CHAPTER_COLLATOR.compare(String(a), String(b));
 }
 
+/**
+ * Collapse "Chapter 1" + "Chapter 1 - The Wonderful World…" into one option
+ * (keep the more descriptive label). Also merges bare titles with Chapter-N forms.
+ */
 export function dedupeChapterWiseTopicLabels(labels) {
+  const byChapter = new Map();
   const byKey = new Map();
+
   for (const raw of labels || []) {
     const label = String(raw || '').trim();
     if (!label) continue;
+    const ch = chapterNumberFromTopicLabel(label);
+    if (ch != null) {
+      const prev = byChapter.get(ch);
+      if (!prev || topicLabelScore(label) > topicLabelScore(prev)) {
+        byChapter.set(ch, label);
+      }
+      continue;
+    }
     const key = canonicalTopicKey(label) || label.toLowerCase();
     const prev = byKey.get(key);
     if (!prev || topicLabelScore(label) > topicLabelScore(prev)) {
       byKey.set(key, label);
     }
   }
-  return [...byKey.values()].sort(compareChapterWiseTopicLabels);
+
+  // Drop bare titles that already appear under a Chapter-N label.
+  for (const chapterLabel of byChapter.values()) {
+    const canon = canonicalTopicKey(chapterLabel);
+    if (canon) byKey.delete(canon);
+  }
+
+  return [...byChapter.values(), ...byKey.values()].sort(compareChapterWiseTopicLabels);
 }
 
 export function compareAiToolTopicRows(a, b) {

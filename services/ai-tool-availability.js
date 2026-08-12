@@ -13,20 +13,10 @@ import { subjectFilterForDb } from '../utils/curriculum-subject-validation.js';
 
 /** A record only counts as usable if it actually carries content. */
 export const VALID_AI_TOOL_CONTENT_OR = [
-  {
-    generatedContent: {
-      $exists: true,
-      $nin: ['', null],
-      $not: /no projects available/i,
-    },
-  },
-  {
-    content: {
-      $exists: true,
-      $nin: ['', null],
-      $not: /no projects available/i,
-    },
-  },
+  { generatedContent: { $exists: true, $nin: ['', null] } },
+  { content: { $exists: true, $nin: ['', null] } },
+  { 'metadata.structuredContent.schema': 'asli-v2-six-section' },
+  { 'metadata.legacyStructuredContent': { $exists: true, $ne: null } },
 ];
 
 function toolNameAvailabilityFilter(toolName) {
@@ -68,8 +58,7 @@ export async function listTopicsWithContent({ classDisplay, subject, toolName } 
 }
 
 /**
- * The message shown when a chapter has no content. Naming the chapters that do
- * work is the difference between a dead end and a next step.
+ * Neutral miss copy — do not gate UX on a "ready chapters" allow-list.
  */
 export function buildNoContentMessage({
   toolLabel,
@@ -80,17 +69,11 @@ export function buildNoContentMessage({
   availableTopics = [],
 }) {
   const tool = toolLabel || 'this tool';
-  if (!availableTopics.length) {
-    return (
-      `No ${tool} content has been generated for ${classDisplay} ${subject} yet. ` +
-      'Ask the Super Admin to generate it under AI Tool Generations.'
-    );
-  }
-  const shown = availableTopics.slice(0, 8).join('; ');
-  const more = availableTopics.length > 8 ? `; and ${availableTopics.length - 8} more` : '';
+  void topic;
+  void subtopic;
+  void availableTopics;
   return (
-    `No ${tool} content has been generated for "${topic || 'this chapter'}"` +
-    `${subtopic ? ` / "${subtopic}"` : ''} yet. ` +
-    `Chapters ready for this tool in ${classDisplay} ${subject}: ${shown}${more}.`
+    `No saved ${tool} content matched ${classDisplay} ${subject} for this selection yet. ` +
+    'Try Generate again shortly, or ask your school to add this chapter.'
   );
 }

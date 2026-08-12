@@ -165,16 +165,8 @@ router.post('/ai/tool', async (req, res) => {
       });
     }
     
-    {
-      const { validateAiToolSubjectForTool } = await import('../../utils/ai-tool-subject-rules.js');
-      const subjectError = validateAiToolSubjectForTool(toolType, normalizedSubject || subject);
-      if (subjectError) {
-        return res.status(400).json({
-          success: false,
-          message: subjectError,
-        });
-      }
-    }
+    // Subject/tool pairing rules are not delivery gates — serve saved content for any subject.
+    // (UI still lists curriculum subjects; Super Admin data may use broader labels.)
 
     // Use normalized subject for processing
     const finalSubject = normalizedSubject;
@@ -229,10 +221,7 @@ router.post('/ai/tool', async (req, res) => {
       }
     };
 
-    // Deliver stored AI Tool Data as-is (no section-completeness gate).
-    const { storyPassageRecordLanguageValid } = await import('../../utils/story-passage-subject.js');
-
-    // Priority 1: Super Admin AI Tool Data (exact class+subject+topic+subtopic) with rotation.
+    // Deliver stored AI Tool Data as-is (no section / language delivery gates).
     const lookupBoard =
       String(req.body.board || '').trim() || programCtx.curriculumBoard || 'CBSE';
 
@@ -256,50 +245,56 @@ router.post('/ai/tool', async (req, res) => {
       strictToolMatch: true,
       cursorScope: String(userId || ''),
       fastDelivery: true,
-      validator: (doc) => storyPassageRecordLanguageValid(toolType, finalSubject, doc),
     });
     if (adminDoc) {
-      const originalContent = String(adminDoc.generatedContent || adminDoc.content || '').trim();
-      if (!originalContent) {
-        // fall through to live / not-found below
-      } else {
-      const content = applyQuestionLimitToContent(
+      const metadataForRaw = buildDeliveryMetadataFromDoc(adminDoc);
+      let originalContent = String(adminDoc.generatedContent || adminDoc.content || '').trim();
+      let content = applyQuestionLimitToContent(
         toolType,
         originalContent,
         params.questionCount ?? req.body?.questionCount,
       );
-      const builtRaw = buildRawDataForTool(toolType, content, buildDeliveryMetadataFromDoc(adminDoc));
-      const delivered = unwrapStoredAiToolContent(content, builtRaw);
-      const durationMinutes = parseHomeworkDurationMinutes(
-        params.duration ?? req.body?.duration,
-      );
-      const withDuration = applyHomeworkDurationToDelivery(
-        toolType,
-        delivered,
-        durationMinutes,
-      );
-      return res.json({
-        success: true,
-        data: {
-          content: withDuration.content,
-          ...(withDuration.rawData ? { rawData: withDuration.rawData } : {}),
-          toolType,
-          metadata: {
-            classNumber: classNum,
-            subject: finalSubject,
-            topic: topicForFetch || '',
-            subTopic: subtopicForLookup,
-            ...params,
-            generatedAt: new Date(),
-            userId,
-            source: 'super-admin-ai-tool-data',
-            sourceLabel: 'Super Admin AI Tool Data',
-            matchType,
-            totalCandidates,
-            selectedIndex,
-          },
-        },
-      });
+      const builtRaw = buildRawDataForTool(toolType, content, metadataForRaw);
+      if (!String(content || '').trim() && builtRaw && typeof builtRaw === 'object') {
+        content = JSON.stringify(builtRaw);
+      }
+      if (String(content || '').trim() || builtRaw) {
+        const delivered = unwrapStoredAiToolContent(content, builtRaw);
+        const outContent =
+          String(delivered.content || '').trim() ||
+          (delivered.rawData ? JSON.stringify(delivered.rawData) : content);
+        if (String(outContent || '').trim()) {
+          const durationMinutes = parseHomeworkDurationMinutes(
+            params.duration ?? req.body?.duration,
+          );
+          const withDuration = applyHomeworkDurationToDelivery(
+            toolType,
+            { content: outContent, rawData: delivered.rawData || builtRaw },
+            durationMinutes,
+          );
+          return res.json({
+            success: true,
+            data: {
+              content: withDuration.content,
+              ...(withDuration.rawData ? { rawData: withDuration.rawData } : {}),
+              toolType,
+              metadata: {
+                classNumber: classNum,
+                subject: finalSubject,
+                topic: topicForFetch || '',
+                subTopic: subtopicForLookup,
+                ...params,
+                generatedAt: new Date(),
+                userId,
+                source: 'super-admin-ai-tool-data',
+                sourceLabel: 'Super Admin AI Tool Data',
+                matchType,
+                totalCandidates,
+                selectedIndex,
+              },
+            },
+          });
+        }
       }
     }
 
@@ -375,10 +370,15 @@ router.post('/ai/tool', async (req, res) => {
     });
   } catch (error) {
     console.error(`Create student tool (${req.body.toolType}) error:`, error);
-    res.status(500).json({
+    const raw = String(error?.message || '');
+    const isLookupTimeout = /exceeded time limit|multiplanner|timed?\s*out/i.test(raw);
+    res.status(isLookupTimeout ? 404 : 500).json({
       success: false,
-      message: error.message || `Failed to fetch content for ${req.body.toolType || 'tool'}`,
-      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+      code: isLookupTimeout ? 'AI_TOOL_DATA_NOT_FOUND' : undefined,
+      message: isLookupTimeout
+        ? 'Saved content is taking too long to load. Please try Generate again.'
+        : raw || `Failed to fetch content for ${req.body.toolType || 'tool'}`,
+      error: process.env.NODE_ENV === 'development' ? raw : undefined,
     });
   }
 });
