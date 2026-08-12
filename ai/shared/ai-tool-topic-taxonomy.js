@@ -3,8 +3,10 @@ import { boardMongoMatch, lockBoardKey } from '../../utils/board-label.js';
 import { buildDisplayTopicName } from './ai-tool-topic-display.js';
 import {
   compareAiToolTopicRows,
+  compareChapterWiseTopicLabels,
   orderedUniqueSubTopics,
   orderedUniqueTopics,
+  dedupeChapterWiseTopicLabels,
 } from './ai-tool-topic-order.js';
 import {
   applyClassLabelMongoFilter,
@@ -24,17 +26,7 @@ function uniqueSorted(values) {
 }
 
 function mergeUniqueChapterLabels(primary = [], extra = []) {
-  const seen = new Set();
-  const out = [];
-  for (const raw of [...primary, ...extra]) {
-    const name = String(raw || '').trim();
-    if (!name) continue;
-    const key = name.toLowerCase();
-    if (seen.has(key)) continue;
-    seen.add(key);
-    out.push(name);
-  }
-  return out.sort((a, b) => NATURAL_COLLATOR.compare(a, b));
+  return dedupeChapterWiseTopicLabels([...primary, ...extra]);
 }
 
 /** Normalize query/storage value: '' = General. null = no filter. */
@@ -190,9 +182,7 @@ export function buildAiToolTopicHierarchyTree(rows) {
   for (const classLabel of Object.keys(tree)) {
     for (const subject of Object.keys(tree[classLabel])) {
       const topicMap = tree[classLabel][subject];
-      const topicNames = Object.keys(topicMap).sort((a, b) =>
-        a.localeCompare(b, 'en', { numeric: true, sensitivity: 'base' }),
-      );
+      const topicNames = Object.keys(topicMap).sort(compareChapterWiseTopicLabels);
       const rebuilt = {};
       for (const topic of topicNames) {
         rebuilt[topic] = [...topicMap[topic]].sort((a, b) =>

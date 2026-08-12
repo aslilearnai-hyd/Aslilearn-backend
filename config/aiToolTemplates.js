@@ -2445,7 +2445,7 @@ export function buildAiGeneratorPromptParts(toolSlug, params = {}) {
   const bloomLevel = String(params.bloomLevel || extra.bloomLevel || '').trim();
   const questionCount = Number(extra.questionCount ?? extra.numberOfQuestions);
   const cardCount = Number(extra.cardCount);
-  const duration = String(extra.duration || '').trim();
+  const duration = String(extra.duration ?? params.duration ?? '').trim();
   const subjectLabel = String(params.subject || '').trim();
 
   const contextLines = [
@@ -2469,6 +2469,11 @@ export function buildAiGeneratorPromptParts(toolSlug, params = {}) {
     contextLines.push(`TARGET FLASHCARD COUNT: ${cardCount}`);
   }
   if (duration) contextLines.push(`LESSON DURATION (minutes): ${duration}`);
+  if (slug === 'homework-creator' && duration) {
+    contextLines.push(
+      `HOMEWORK TIME LIMIT: EXACTLY ${duration} minutes. The instructions field MUST say "Time: ${duration} minutes" — never any other number.`,
+    );
+  }
   if (slug === 'mock-test-builder' || slug === 'exam-question-paper-generator') {
     const examQuestionTarget =
       Number.isFinite(questionCount) && questionCount > 0 ? questionCount : 12;

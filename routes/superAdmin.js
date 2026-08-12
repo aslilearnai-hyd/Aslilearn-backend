@@ -95,6 +95,7 @@ import {
   getAllBoards,
   createBoard,
   updateBoard,
+  deleteBoard,
   getBoardDashboard,
   createSubject,
   updateSubject,
@@ -666,6 +667,7 @@ router.get('/export', exportData);
 router.get('/boards', getAllBoards);
 router.post('/boards', createBoard);
 router.put('/boards/:code', updateBoard);
+router.delete('/boards/:code', deleteBoard);
 router.get('/boards/analytics/comparison', getBoardAnalytics); // Must come before parameterized routes
 router.get('/boards/export', getBoardExportData); // Export detailed data
 router.get('/boards/:boardCode/dashboard', getBoardDashboard);

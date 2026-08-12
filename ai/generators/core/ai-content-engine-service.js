@@ -88,6 +88,10 @@ import {
 } from '../../../utils/strip-scenario-framing.js';
 import { resolveSubjectCategory } from '../../prompt-engine/shared/subject-awareness.js';
 import { resolveScaffoldBand } from '../../../utils/subject-scaffold-profile.js';
+import {
+  applyHomeworkDurationToStructured,
+  parseHomeworkDurationMinutes,
+} from '../../../utils/homework-duration.js';
 import { runPostGenerationContentValidation } from '../../validation/ai-generator-post-validation.js';
 import { resolveAllowedGeminiModel } from '../../providers/gemini-models.js';
 import {
@@ -6744,6 +6748,13 @@ export function finalizeHomeworkStructuredContent(structuredContent, meta = {}) 
   if (isAiGeneratorSectionPadEnabled()) {
     out = padAiGeneratorCanonicalSections('homework-creator', out, meta);
   }
+
+  const durationMinutes =
+    meta.duration ??
+    (meta.extraParams && typeof meta.extraParams === 'object' ? meta.extraParams.duration : undefined);
+  if (durationMinutes != null && String(durationMinutes).trim() !== '') {
+    out = applyHomeworkDurationToStructured(out, durationMinutes);
+  }
   return out;
 }
 
@@ -11029,6 +11040,7 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
     curriculumSources: curriculumSources.length ? curriculumSources : undefined,
     uniqueSeed: String(extra.uniqueSeed || extra.generationVariant || ''),
     avoidQuestionTexts: Array.isArray(extra.avoidQuestionTexts) ? extra.avoidQuestionTexts : [],
+    duration: parseHomeworkDurationMinutes(extra.duration ?? params.duration) ?? undefined,
     qualityTier: qualityTierSettings.tier,
     // Book RAG batches must save after repair — never burn tokens on strict placeholder loops.
     strictValidation:

@@ -31,6 +31,10 @@ import {
   unwrapStoredAiToolContent,
 } from '../../utils/build-ai-tool-raw-data.js';
 import {
+  applyHomeworkDurationToDelivery,
+  parseHomeworkDurationMinutes,
+} from '../../utils/homework-duration.js';
+import {
   advancedAnalyticsMockData,
   buildPerQuestionAttemptAnalytics,
   enrichQuestionAnalyticsFromExamQuestions,
@@ -279,15 +283,24 @@ router.post('/ai/tool', async (req, res) => {
           role: 'student',
           extraParams: {
             questionCount: params.questionCount ?? req.body?.questionCount,
+            duration: params.duration ?? req.body?.duration,
             productCategory: studentProductCategory || undefined,
           },
         });
         if (live.ok) {
+          const durationMinutes = parseHomeworkDurationMinutes(
+            params.duration ?? req.body?.duration,
+          );
+          const withDuration = applyHomeworkDurationToDelivery(
+            toolType,
+            { content: live.content, rawData: live.rawData },
+            durationMinutes,
+          );
           return res.json({
             success: true,
             data: {
-              content: live.content,
-              ...(live.rawData ? { rawData: live.rawData } : {}),
+              content: withDuration.content,
+              ...(withDuration.rawData ? { rawData: withDuration.rawData } : {}),
               toolType,
               metadata: {
                 classNumber: classNum,
@@ -319,11 +332,19 @@ router.post('/ai/tool', async (req, res) => {
       );
       const builtRaw = buildRawDataForTool(toolType, content, buildDeliveryMetadataFromDoc(adminDoc));
       const delivered = unwrapStoredAiToolContent(content, builtRaw);
+      const durationMinutes = parseHomeworkDurationMinutes(
+        params.duration ?? req.body?.duration,
+      );
+      const withDuration = applyHomeworkDurationToDelivery(
+        toolType,
+        delivered,
+        durationMinutes,
+      );
       return res.json({
         success: true,
         data: {
-          content: delivered.content,
-          ...(delivered.rawData ? { rawData: delivered.rawData } : {}),
+          content: withDuration.content,
+          ...(withDuration.rawData ? { rawData: withDuration.rawData } : {}),
           toolType,
           metadata: {
             classNumber: classNum,
@@ -354,15 +375,24 @@ router.post('/ai/tool', async (req, res) => {
       role: 'student',
       extraParams: {
         questionCount: params.questionCount ?? req.body?.questionCount,
+        duration: params.duration ?? req.body?.duration,
         productCategory: studentProductCategory || undefined,
       },
     });
     if (liveMiss.ok) {
+      const durationMinutes = parseHomeworkDurationMinutes(
+        params.duration ?? req.body?.duration,
+      );
+      const withDuration = applyHomeworkDurationToDelivery(
+        toolType,
+        { content: liveMiss.content, rawData: liveMiss.rawData },
+        durationMinutes,
+      );
       return res.json({
         success: true,
         data: {
-          content: liveMiss.content,
-          ...(liveMiss.rawData ? { rawData: liveMiss.rawData } : {}),
+          content: withDuration.content,
+          ...(withDuration.rawData ? { rawData: withDuration.rawData } : {}),
           toolType,
           metadata: {
             classNumber: classNum,
