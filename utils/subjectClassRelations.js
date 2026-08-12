@@ -230,59 +230,64 @@ export function mergeCatalogClassIdsOntoCleanSiblings(subjectDocs) {
 }
 
 /**
- * When a teacher has subjects + classes (or explicit subject↔class assignments),
- * keep Subject.classIds ↔ Class.assignedSubjects in sync so Subjects table
- * "Assigned Classes" matches Teacher assignments.
+ * Rebuild Subject.classIds for one subject from explicit teacher assignments
+ * plus direct admin class↔subject links (Class.assignedSubjects).
  */
-export async function syncTeacherSubjectClassLinks(teacherId, adminId) {
+export async function rebuildSubjectClassIdsFromTeacherAssignments(subjectId, adminId) {
+  if (!subjectId || !mongoose.Types.ObjectId.isValid(String(subjectId))) {
+    return { ok: false, message: 'Invalid subject id' };
+  }
+
+  const classIdSet = new Set();
+
+  const teacherQuery = { isActive: true, 'assignments.subjectId': subjectId };
+  if (adminId) teacherQuery.adminId = adminId;
+  const teachers = await Teacher.find(teacherQuery).select('assignments').lean();
+  for (const teacher of teachers) {
+    for (const row of teacher.assignments || []) {
+      if (String(row.subjectId) === String(subjectId) && row.classId) {
+        classIdSet.add(String(row.classId));
+      }
+    }
+  }
+
+  const reverseQuery = { assignedSubjects: subjectId, isActive: true };
+  if (adminId) reverseQuery.assignedAdmin = adminId;
+  const reverse = await Class.find(reverseQuery).select('_id').lean();
+  reverse.forEach((c) => classIdSet.add(String(c._id)));
+
+  await syncSubjectClassIds(subjectId, [...classIdSet], adminId);
+  return { ok: true, classCount: classIdSet.size };
+}
+
+/**
+ * When a teacher has explicit subject↔class assignments, keep Subject.classIds ↔
+ * Class.assignedSubjects in sync so Subjects table "Assigned Classes" matches.
+ */
+export async function syncTeacherSubjectClassLinks(teacherId, adminId, options = {}) {
   if (!teacherId || !mongoose.Types.ObjectId.isValid(String(teacherId))) {
     return { ok: false, message: 'Invalid teacher id' };
   }
 
+  const { extraSubjectIds = [] } = options;
   const teacherQuery = { _id: teacherId, isActive: true };
   if (adminId) teacherQuery.adminId = adminId;
   const teacher = await Teacher.findOne(teacherQuery)
-    .select('_id subjects assignedClassIds assignments')
+    .select('_id assignments')
     .lean();
   if (!teacher) return { ok: false, message: 'Teacher not found' };
 
-  const subjectIds = [...new Set((teacher.subjects || []).map((id) => String(id)).filter(Boolean))];
-  const assignedClassIds = [
-    ...new Set((teacher.assignedClassIds || []).map((id) => String(id)).filter(Boolean)),
-  ];
   const assignments = Array.isArray(teacher.assignments) ? teacher.assignments : [];
+  const subjectIds = new Set([
+    ...assignments.map((row) => String(row.subjectId || '')).filter(Boolean),
+    ...(extraSubjectIds || []).map((id) => String(id)).filter(Boolean),
+  ]);
 
-  const pairs = new Map(); // subjectId -> Set(classId)
-  const ensurePair = (subjectId, classId) => {
-    if (!subjectId || !classId) return;
-    if (!mongoose.Types.ObjectId.isValid(subjectId) || !mongoose.Types.ObjectId.isValid(classId)) return;
-    if (!pairs.has(subjectId)) pairs.set(subjectId, new Set());
-    pairs.get(subjectId).add(classId);
-  };
-
-  if (assignments.length > 0) {
-    for (const row of assignments) {
-      ensurePair(String(row.subjectId || ''), String(row.classId || ''));
-    }
-  } else {
-    for (const subjectId of subjectIds) {
-      for (const classId of assignedClassIds) ensurePair(subjectId, classId);
-    }
+  for (const subjectId of subjectIds) {
+    await rebuildSubjectClassIdsFromTeacherAssignments(subjectId, adminId);
   }
 
-  for (const [subjectId, classIdSet] of pairs.entries()) {
-    const subject = await Subject.findById(subjectId).select('classIds').lean();
-    if (!subject) continue;
-    const merged = [
-      ...new Set([
-        ...(subject.classIds || []).map((id) => String(id)),
-        ...[...classIdSet],
-      ]),
-    ];
-    await syncSubjectClassIds(subjectId, merged, adminId);
-  }
-
-  return { ok: true, subjectCount: pairs.size };
+  return { ok: true, subjectCount: subjectIds.size };
 }
 
 /**
@@ -317,15 +322,9 @@ export async function getClassesForSubject(subjectId, adminId, options = {}) {
       .lean();
     for (const teacher of teachers) {
       const assignments = Array.isArray(teacher.assignments) ? teacher.assignments : [];
-      if (assignments.length > 0) {
-        for (const row of assignments) {
-          if (String(row.subjectId) === String(subjectId) && row.classId) {
-            idSet.add(String(row.classId));
-          }
-        }
-      } else {
-        for (const classId of teacher.assignedClassIds || []) {
-          idSet.add(String(classId));
+      for (const row of assignments) {
+        if (String(row.subjectId) === String(subjectId) && row.classId) {
+          idSet.add(String(row.classId));
         }
       }
     }
@@ -400,6 +399,7 @@ export async function formatAdminSubject(subject, adminId, options = {}) {
     name: String(subject.name || '').split('__deleted__')[0].trim(),
     description: subject.description || '',
     board: subject.board,
+    productCategory: String(subject.productCategory || '').trim().toUpperCase(),
     isActive: subject.isActive !== false,
     teacher,
     teachers,
@@ -425,11 +425,14 @@ export function filterCatalogSubjectsWithCleanSibling(subjectDocs) {
   });
 }
 
-/** One admin table row per subject (merges MATHS + MATHS_6 + MATHS_7 for display). */
+/** One admin table row per subject+IIT track (merges MATHS + MATHS_6 for same track only). */
 export function dedupeAdminSubjectsByPlainName(formattedRows) {
   const groups = new Map();
   for (const row of formattedRows) {
-    const key = subjectGroupKey(row.name);
+    const track = String(row.productCategory || '')
+      .toUpperCase()
+      .trim();
+    const key = `${subjectGroupKey(row.name)}::${track || 'GENERAL'}`;
     if (!groups.has(key)) groups.set(key, []);
     groups.get(key).push(row);
   }

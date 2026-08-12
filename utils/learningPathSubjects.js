@@ -1,5 +1,5 @@
 /**
- * Learning Path subject list: no IIT (Edu OTT only) + merge BIO/Biology/Chemistry_8 duplicates.
+ * Learning Path subject list: merge BIO/Biology and IIT-track siblings (catalog only).
  */
 import { normalizeSchoolBoard } from '../constants/boards.js';
 import {
@@ -8,6 +8,10 @@ import {
 } from './resolveSubjectContentIds.js';
 
 export function isIitLearningPathSubject(subject = {}) {
+  const cat = String(subject.productCategory || '')
+    .trim()
+    .toUpperCase();
+  if (cat && cat !== 'GENERAL' && cat !== 'NONE' && cat !== 'ALL') return true;
   const board = normalizeSchoolBoard(subject.board || '');
   if (board === 'IIT') return true;
   const name = String(subject.name || '');
@@ -63,16 +67,16 @@ function preferSubject(a, b) {
 }
 
 /**
- * Drop IIT-track subjects and collapse alias/class-suffix duplicates for Learning Paths browse.
+ * Merge alias / IIT-track siblings for Learning Paths browse (catalog subjects only).
  * @param {Array<object>} subjects
  * @returns {Array<object>}
  */
 export function prepareLearningPathSubjects(subjects) {
   const list = Array.isArray(subjects) ? subjects.filter(Boolean) : [];
-  const withoutIit = list.filter((s) => !isIitLearningPathSubject(s));
   const byKey = new Map();
 
-  for (const row of withoutIit) {
+  for (const row of list) {
+    const rowIsIit = isIitLearningPathSubject(row);
     const key = groupKeyForLearningPath(row);
     const existing = byKey.get(key);
     if (!existing) {
@@ -81,14 +85,20 @@ export function prepareLearningPathSubjects(subjects) {
         name: learningPathDisplayName(row.name),
         description: row.description || `Content for ${learningPathDisplayName(row.name)}`,
         mergedSubjectIds: [String(row._id || row.id || '')].filter(Boolean),
+        hasIitTrack: rowIsIit,
       });
       continue;
     }
 
-    const winner = preferSubject(existing, {
-      ...row,
-      name: learningPathDisplayName(row.name),
-    });
+    const winner =
+      isIitLearningPathSubject(existing) && !rowIsIit
+        ? row
+        : !isIitLearningPathSubject(existing) && rowIsIit
+          ? existing
+          : preferSubject(existing, {
+              ...row,
+              name: learningPathDisplayName(row.name),
+            });
     const mergedIds = new Set([
       ...(existing.mergedSubjectIds || [String(existing._id || existing.id || '')]),
       String(row._id || row.id || ''),
@@ -121,6 +131,7 @@ export function prepareLearningPathSubjects(subjects) {
       ),
       teachers: uniqueTeachers,
       mergedSubjectIds: Array.from(mergedIds),
+      hasIitTrack: Boolean(existing.hasIitTrack || rowIsIit),
       videos: [...(existing.videos || []), ...(row.videos || [])],
       quizzes: [...(existing.quizzes || []), ...(row.quizzes || [])],
       assessments: [...(existing.assessments || []), ...(row.assessments || [])],
