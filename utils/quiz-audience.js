@@ -155,13 +155,8 @@ export function normalizeQuizAudienceFields(body = {}) {
   if (body.type === 'daily') scheduleType = 'daily';
   if (body.type === 'weekly') scheduleType = 'weekly';
 
-  const audienceRoles = Array.isArray(body.audienceRoles)
-    ? body.audienceRoles.filter((r) => r === 'student' || r === 'teacher')
-    : body.audienceRole === 'teacher'
-      ? ['teacher']
-      : body.audienceRole === 'both'
-        ? ['student', 'teacher']
-        : ['student'];
+  // Quizzes are for students / trial members only — never teachers.
+  const audienceRoles = ['student'];
 
   const targetSchools = Array.isArray(body.targetSchools)
     ? body.targetSchools.filter(Boolean)
