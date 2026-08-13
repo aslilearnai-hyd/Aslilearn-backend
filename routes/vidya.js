@@ -77,6 +77,16 @@ router.post(
   async (req, res) => {
     try {
       const { message, context, sessionId } = req.body || {};
+      const { consumeTrialVidyaChat, trialLimitHttpPayload } = await import(
+        '../utils/trialUsageLimits.js'
+      );
+      let trialUsage = null;
+      try {
+        const consumed = await consumeTrialVidyaChat(req.userId, req.user?.role);
+        trialUsage = consumed.usage;
+      } catch (limitErr) {
+        return res.status(limitErr.statusCode || 429).json(trialLimitHttpPayload(limitErr));
+      }
       const result = await vidyaService.handleChat({
         userId: req.userId,
         role: req.user?.role,
@@ -85,7 +95,7 @@ router.post(
         sessionId,
         ...requestMeta(req),
       });
-      res.json(result);
+      res.json({ ...result, trialUsage });
     } catch (err) {
       const status = Number(err?.statusCode) || 500;
       res.status(status).json({
@@ -104,6 +114,23 @@ router.post(
   async (req, res) => {
     const { message, context, sessionId } = req.body || {};
     try {
+      const { consumeTrialVidyaChat, trialLimitHttpPayload } = await import(
+        '../utils/trialUsageLimits.js'
+      );
+      try {
+        await consumeTrialVidyaChat(req.userId, req.user?.role);
+      } catch (limitErr) {
+        const payload = trialLimitHttpPayload(limitErr);
+        if (!res.headersSent) {
+          return res.status(limitErr.statusCode || 429).json(payload);
+        }
+        try {
+          res.write(`event: error\n`);
+          res.write(`data: ${JSON.stringify(payload)}\n\n`);
+          res.end();
+        } catch (_) {}
+        return;
+      }
       await vidyaService.handleStreamingChat({
         userId: req.userId,
         role: req.user?.role,

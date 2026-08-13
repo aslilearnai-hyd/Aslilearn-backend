@@ -74,7 +74,7 @@ router.get('/subjects', async (req, res) => {
     const teacher = await Teacher.findById(teacherId).populate({
       path: 'subjects',
       match: { isActive: true },
-      select: '_id name description code board',
+      select: '_id name description code board productCategory classNumber',
     });
     if (!teacher) {
       return res.status(404).json({ success: false, message: 'Teacher not found' });
@@ -91,6 +91,40 @@ router.get('/subjects', async (req, res) => {
         `Individual teacher catalog subjects resolved: ${subjectIds.length} (class=${teacher.classNumber})`,
       );
     }
+
+    // Nest IIT catalog subjects under board subjects for Learning Paths (Maths → Maths IIT).
+    try {
+      const {
+        getTeacherSchoolProgramContext,
+        resolveIitCategoriesForContentBrowse,
+      } = await import('../../utils/schoolProgram.js');
+      const programCtx = await getTeacherSchoolProgramContext(teacherId);
+      const iitCategories = resolveIitCategoriesForContentBrowse(programCtx);
+      if (programCtx.isAsliPrepExclusive && iitCategories.length) {
+        const { mergeIitCatalogSubjectsForClasses } = await import(
+          '../../utils/iitCatalogSubjects.js'
+        );
+        const { normalizeClassNumberLabel } = await import('../../utils/studentClassContent.js');
+        const classNums = [];
+        for (const s of teacher.subjects || []) {
+          const cn =
+            normalizeClassNumberLabel(s?.classNumber) ||
+            String(s?.name || '').match(/_(\d+)$/)?.[1] ||
+            '';
+          if (cn) classNums.push(cn);
+        }
+        if (teacher.classNumber) {
+          const cn = normalizeClassNumberLabel(teacher.classNumber);
+          if (cn) classNums.push(cn);
+        }
+        subjectIds = await mergeIitCatalogSubjectsForClasses(subjectIds, classNums, {
+          iitCategories,
+        });
+      }
+    } catch (mergeErr) {
+      console.warn('Teacher IIT subject merge skipped:', mergeErr?.message || mergeErr);
+    }
+
     if (subjectIds.length === 0) {
       console.log('Teacher has no subjects on profile or assigned classes');
       return res.json({ success: true, data: [] });
@@ -105,7 +139,7 @@ router.get('/subjects', async (req, res) => {
       isActive: true
     })
     .sort({ name: 1 })
-    .select('_id name description code board');
+    .select('_id name description code board productCategory classNumber');
     
     console.log(`Found ${subjects.length} subjects for teacher`);
 
@@ -127,10 +161,12 @@ router.get('/subjects', async (req, res) => {
       description: subj.description || '',
       code: subj.code || '',
       board: subj.board || '',
+      productCategory: subj.productCategory || '',
+      classNumber: subj.classNumber || '',
       mergedSubjectIds: ids,
     }));
 
-    // Learning Paths browse: no IIT (Edu OTT only); merge BIO/Biology aliases
+    // Merge BIO/Biology + IIT siblings into one Learning Paths card
     const learningPathSubjects = prepareLearningPathSubjects(formatted);
 
     res.json({

@@ -130,6 +130,21 @@ const teacherSchema = new mongoose.Schema({
     type: Number,
     default: null,
   },
+  /** Single personal timetable photo (not class-linked). */
+  timetableImageUrl: {
+    type: String,
+    trim: true,
+    default: '',
+  },
+  timetableOriginalFileName: {
+    type: String,
+    trim: true,
+    default: '',
+  },
+  timetableUploadedAt: {
+    type: Date,
+    default: null,
+  },
   trialPaidAt: {
     type: Date,
     default: null,
@@ -143,6 +158,38 @@ const teacherSchema = new mongoose.Schema({
     type: String,
     trim: true,
     default: '',
+  },
+  /** Lifetime Vidya chat messages used while unpaid trial (limit 3 until payment). */
+  trialVidyaChatUsed: {
+    type: Number,
+    default: 0,
+  },
+  /** AI tool generations used in the current 24h trial window. */
+  trialGenerationCount: {
+    type: Number,
+    default: 0,
+  },
+  /** Start of the current 24h generation quota window. */
+  trialGenerationWindowStartedAt: {
+    type: Date,
+    default: null,
+  },
+  /** Per-user rolling 24h counters when school has Vidya limits. */
+  schoolVidyaChatCount: {
+    type: Number,
+    default: 0,
+  },
+  schoolVidyaChatWindowStartedAt: {
+    type: Date,
+    default: null,
+  },
+  schoolVidyaGenerationCount: {
+    type: Number,
+    default: 0,
+  },
+  schoolVidyaGenerationWindowStartedAt: {
+    type: Date,
+    default: null,
   },
   isActive: {
     type: Boolean,

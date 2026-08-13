@@ -342,6 +342,7 @@ export const createTeacherTool = async (req, res) => {
           code: 'PAYMENT_REQUIRED',
           message:
             'Your free trial has ended. Please subscribe to continue using AI tools.',
+          trialUsage: access.trialUsage || null,
         });
       }
       const allowedTools = Array.isArray(programCtx.trialAllowedAiTools)
@@ -354,6 +355,13 @@ export const createTeacherTool = async (req, res) => {
           message:
             'This AI tool is not included in your trial. Contact support or wait for Super Admin to unlock it.',
         });
+      }
+      try {
+        const { consumeTrialGeneration } = await import('../utils/trialUsageLimits.js');
+        await consumeTrialGeneration(teacherId, 'teacher');
+      } catch (limitErr) {
+        const { trialLimitHttpPayload } = await import('../utils/trialUsageLimits.js');
+        return res.status(limitErr.statusCode || 429).json(trialLimitHttpPayload(limitErr));
       }
     }
 
@@ -588,6 +596,12 @@ export const createTeacherTool = async (req, res) => {
       extraParams: {
         questionCount: params.questionCount ?? req.body?.questionCount,
         duration: params.duration ?? req.body?.duration,
+        uniqueSeed:
+          String(req.body.uniqueSeed || params.uniqueSeed || '').trim() ||
+          `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`,
+        generationVariant:
+          Number(req.body.generationVariant || params.generationVariant) ||
+          undefined,
       },
     });
     if (liveMiss.ok) {

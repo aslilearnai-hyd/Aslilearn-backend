@@ -88,6 +88,30 @@ const schoolSchema = new mongoose.Schema(
       trim: true,
       default: '',
     },
+    /** School-wide Vidya usage policy (mirrors admin user). */
+    vidyaUsageMode: {
+      type: String,
+      enum: ['unlimited', 'limited'],
+      default: 'unlimited',
+    },
+    vidyaLimitChatbot: {
+      type: Boolean,
+      default: false,
+    },
+    vidyaLimitTools: {
+      type: Boolean,
+      default: false,
+    },
+    vidyaChatPerDay: {
+      type: Number,
+      min: 1,
+      default: 10,
+    },
+    vidyaGenerationsPerDay: {
+      type: Number,
+      min: 1,
+      default: 10,
+    },
     isActive: {
       type: Boolean,
       default: true,

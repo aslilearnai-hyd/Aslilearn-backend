@@ -1115,23 +1115,57 @@ export async function buildTeacherDigest(teacherUser, weekStart, weekEnd, school
   const fourteenAgo = new Date(weekEnd);
   fourteenAgo.setUTCDate(fourteenAgo.getUTCDate() - 14);
 
-  const [sessions, gens, vidya, toolUsageRows, activeDays14, loginDays] = await Promise.all([
-    sessionStatsForUsers([tid], weekStart, weekEnd),
-    teacherGenerations(tid, weekStart, weekEnd),
-    vidyaStatsForUsers([tid], weekStart, weekEnd),
-    TeacherToolUsage.find({
-      teacherId: tid,
-      createdAt: { $gte: weekStart, $lte: weekEnd },
-    })
-      .select('toolType toolName subject')
-      .lean()
-      .catch(() => []),
-    activeDaysInWindow(tid, fourteenAgo, weekEnd),
-    UserSession.distinct('date', {
-      userId: tid,
-      startTime: { $gte: weekStart, $lte: weekEnd },
-    }).catch(() => []),
-  ]);
+  const rosterPromise = (async () => {
+    try {
+      const Class = (await import('../models/Class.js')).default;
+      let classIds = Array.isArray(teacherUser.assignedClassIds)
+        ? teacherUser.assignedClassIds.filter(Boolean)
+        : [];
+      if (!classIds.length) {
+        const t = await Teacher.findById(tid).select('assignedClassIds').lean();
+        classIds = Array.isArray(t?.assignedClassIds) ? t.assignedClassIds.filter(Boolean) : [];
+      }
+      if (!classIds.length) return { classCount: 0, studentCount: 0 };
+
+      const classDocs = await Class.find({
+        $or: [{ _id: { $in: classIds } }, { classNumber: { $in: classIds.map(String) } }],
+        isActive: { $ne: false },
+      })
+        .select('_id')
+        .lean();
+      const objectIds = classDocs.map((c) => c._id);
+      if (!objectIds.length) return { classCount: classIds.length, studentCount: 0 };
+
+      const studentCount = await User.countDocuments({
+        role: 'student',
+        assignedClass: { $in: objectIds },
+        isActive: { $ne: false },
+      });
+      return { classCount: objectIds.length || classIds.length, studentCount };
+    } catch {
+      return { classCount: 0, studentCount: 0 };
+    }
+  })();
+
+  const [sessions, gens, vidya, toolUsageRows, activeDays14, loginDays, roster] =
+    await Promise.all([
+      sessionStatsForUsers([tid], weekStart, weekEnd),
+      teacherGenerations(tid, weekStart, weekEnd),
+      vidyaStatsForUsers([tid], weekStart, weekEnd),
+      TeacherToolUsage.find({
+        teacherId: tid,
+        createdAt: { $gte: weekStart, $lte: weekEnd },
+      })
+        .select('toolType toolName subject')
+        .lean()
+        .catch(() => []),
+      activeDaysInWindow(tid, fourteenAgo, weekEnd),
+      UserSession.distinct('date', {
+        userId: tid,
+        startTime: { $gte: weekStart, $lte: weekEnd },
+      }).catch(() => []),
+      rosterPromise,
+    ]);
 
   const sess = sessions.byUser.get(tidStr) || { sessions: 0, minutes: 0 };
   const minutes = Math.round(Number(sess.minutes) || 0);
@@ -1197,12 +1231,19 @@ export async function buildTeacherDigest(teacherUser, weekStart, weekEnd, school
     toolsUsed,
     status,
     activeDays: activeDays14,
+    classesAssigned: Number(roster?.classCount) || 0,
+    studentsInClasses: Number(roster?.studentCount) || 0,
     schoolStudentsAccessed: schoolSnap?.studentsAccessed || 0,
     schoolSessions: schoolSnap?.totalLearningSessions || 0,
     schoolTeachersActive: schoolSnap?.teachersActive || 0,
   };
 
   const highlights = [];
+  if (metrics.classesAssigned > 0 || metrics.studentsInClasses > 0) {
+    highlights.push(
+      `You teach ${metrics.classesAssigned} class(es) · ${metrics.studentsInClasses} student(s) assigned.`,
+    );
+  }
   if (metrics.generationsCreated > 0) {
     highlights.push(`You created ${metrics.generationsCreated} AI teaching resource(s) this week.`);
   }
@@ -1213,6 +1254,9 @@ export async function buildTeacherDigest(teacherUser, weekStart, weekEnd, school
     highlights.push(
       `You had ${metrics.sessions} session(s) · ${metrics.totalTimeLabel} on the platform.`,
     );
+  }
+  if (loginCount > 0) {
+    highlights.push(`You opened AsliLearn on ${loginCount} day(s) this week.`);
   }
   if (metrics.status === 'inactive') {
     highlights.push('Tip: log in 3+ days in the next two weeks to stay Active on the school impact report.');
@@ -1659,35 +1703,61 @@ export async function rebuildStudentWeeklyDigestForUser(userId, weekStartInput =
 export async function rebuildTeacherWeeklyDigestForUser(userId, weekStartInput = new Date()) {
   const weekStart = startOfIsoWeek(weekStartInput);
   const weekEnd = endOfIsoWeek(weekStart);
-  const teacher = await User.findById(userId)
-    .select('_id role fullName email lastLogin createdAt assignedAdmin')
+
+  // School teachers authenticate against the Teacher collection (JWT id = Teacher._id).
+  // Legacy / rare rows may still live on User with role=teacher.
+  const teacherDoc = await Teacher.findById(userId)
+    .select('_id fullName email createdAt adminId assignedClassIds isActive')
     .lean();
-  if (!teacher || teacher.role !== 'teacher') return null;
+
+  let teacherPayload = null;
+  if (teacherDoc && teacherDoc.isActive !== false) {
+    teacherPayload = {
+      teacherId: teacherDoc._id,
+      _id: teacherDoc._id,
+      name: teacherDoc.fullName || '',
+      email: teacherDoc.email || '',
+      lastLogin: null,
+      createdAt: teacherDoc.createdAt,
+      assignedAdmin: teacherDoc.adminId,
+      assignedClassIds: teacherDoc.assignedClassIds || [],
+    };
+  } else {
+    const userTeacher = await User.findById(userId)
+      .select('_id role fullName email lastLogin createdAt assignedAdmin')
+      .lean();
+    if (!userTeacher || userTeacher.role !== 'teacher') return null;
+    teacherPayload = {
+      teacherId: userTeacher._id,
+      _id: userTeacher._id,
+      name: userTeacher.fullName || '',
+      email: userTeacher.email || '',
+      lastLogin: userTeacher.lastLogin,
+      createdAt: userTeacher.createdAt,
+      assignedAdmin: userTeacher.assignedAdmin,
+      assignedClassIds: [],
+    };
+  }
 
   let schoolSnap = null;
-  if (teacher.assignedAdmin) {
+  if (teacherPayload.assignedAdmin) {
     try {
       schoolSnap =
-        (await WeeklyImpactSnapshot.findOne({ adminId: teacher.assignedAdmin, weekStart }).lean()) ||
-        (await buildSchoolImpactSnapshot(teacher.assignedAdmin, weekStart, 'api'));
+        (await WeeklyImpactSnapshot.findOne({
+          adminId: teacherPayload.assignedAdmin,
+          weekStart,
+        }).lean()) ||
+        (await buildSchoolImpactSnapshot(teacherPayload.assignedAdmin, weekStart, 'api'));
     } catch {
-      schoolSnap = { adminId: teacher.assignedAdmin };
+      schoolSnap = { adminId: teacherPayload.assignedAdmin };
     }
   }
 
   return buildTeacherDigest(
-    {
-      teacherId: teacher._id,
-      _id: teacher._id,
-      name: teacher.fullName || '',
-      email: teacher.email || '',
-      lastLogin: teacher.lastLogin,
-      createdAt: teacher.createdAt,
-      assignedAdmin: teacher.assignedAdmin,
-    },
+    teacherPayload,
     weekStart,
     weekEnd,
-    schoolSnap || { adminId: teacher.assignedAdmin },
+    schoolSnap || { adminId: teacherPayload.assignedAdmin },
   );
 }
 

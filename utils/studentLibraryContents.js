@@ -1,27 +1,45 @@
 import mongoose from 'mongoose';
 import Content from '../models/Content.js';
 import Subject from '../models/Subject.js';
-import { resolveUserDisplayBoard } from '../constants/boards.js';
+import User from '../models/User.js';
+import { resolveUserDisplayBoard, boardsForSchoolContentScope } from '../constants/boards.js';
 import {
   filterToActiveCatalogSubjectIds,
   filterContentRowsForActiveCatalog,
   buildActiveSubjectIdSet,
 } from './activeCatalog.js';
 import { resolveSubjectContentIdsMany } from './resolveSubjectContentIds.js';
-import { resolveStudentClassNumber, filterContentsForStudentClass } from './studentClassContent.js';
+import {
+  normalizeClassNumberLabel,
+  resolveStudentClassNumber,
+  filterContentsForStudentClass,
+} from './studentClassContent.js';
 import {
   getStudentSchoolProgramContext,
   applySchoolProgramContentFilters,
+  resolveIsAsliPrepExclusive,
 } from './schoolProgram.js';
 
-/** Class-assigned subject ids (same rules as GET /api/student/content). */
+function escapeRegex(value) {
+  return String(value || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/**
+ * Subject IDs for a student library / learning paths.
+ * Includes class assignedSubjects when present, plus the full school catalog for
+ * that class number (so admins do not need "Assign Subjects to Class").
+ */
 export async function resolveStudentSubjectIdsForLibrary(student, studentClassDoc) {
   const idStrToOid = new Map();
   const addId = (id) => {
     if (!id) return;
-    const oid =
-      id instanceof mongoose.Types.ObjectId ? id : new mongoose.Types.ObjectId(String(id));
-    idStrToOid.set(oid.toString(), oid);
+    try {
+      const oid =
+        id instanceof mongoose.Types.ObjectId ? id : new mongoose.Types.ObjectId(String(id));
+      idStrToOid.set(oid.toString(), oid);
+    } catch {
+      /* ignore invalid ids */
+    }
   };
 
   if (student.assignedSubjects?.length) {
@@ -45,6 +63,58 @@ export async function resolveStudentSubjectIdsForLibrary(student, studentClassDo
       .select('_id')
       .lean();
     for (const row of linked) addId(row._id);
+  }
+
+  // Auto-include Super Admin catalog subjects for this student's class number.
+  const classNum = normalizeClassNumberLabel(
+    resolveStudentClassNumber(student, studentClassDoc) ||
+      studentClassDoc?.classNumber ||
+      student?.classNumber ||
+      student?.assignedClass?.classNumber ||
+      '',
+  );
+
+  if (classNum) {
+    let adminDoc = null;
+    if (student?.assignedAdmin && typeof student.assignedAdmin === 'object') {
+      adminDoc = student.assignedAdmin;
+    } else if (student?.assignedAdmin) {
+      adminDoc = await User.findById(student.assignedAdmin)
+        .select('board curriculumBoard isAsliPrepExclusive iitCategories iitCategoriesByClass')
+        .lean();
+    }
+
+    const isAsliPrepExclusive = resolveIsAsliPrepExclusive(student, adminDoc);
+    const curriculumBoard =
+      adminDoc?.curriculumBoard ||
+      student?.curriculumBoard ||
+      resolveUserDisplayBoard(student, adminDoc) ||
+      'CBSE';
+    const iitCategories = Array.isArray(adminDoc?.iitCategories) ? adminDoc.iitCategories : [];
+    const boards = boardsForSchoolContentScope({
+      board: adminDoc?.board || student?.board,
+      curriculumBoard,
+      isAsliPrepExclusive,
+      iitCategories,
+      excludeIitBoard: false,
+    });
+
+    const classQuery = {
+      isActive: true,
+      name: { $not: /__deleted__/ },
+      $or: [
+        { classNumber: classNum },
+        { classNumber: `Class ${classNum}` },
+        { classNumber: `Class ${classNum}`.toUpperCase() },
+        { name: new RegExp(`_${escapeRegex(classNum)}$`) },
+      ],
+    };
+    if (boards.length > 0) {
+      classQuery.board = { $in: boards };
+    }
+
+    const catalogRows = await Subject.find(classQuery).select('_id').lean();
+    for (const row of catalogRows) addId(row._id);
   }
 
   return Array.from(idStrToOid.values());
@@ -72,18 +142,16 @@ export async function loadStudentLibraryContents(userId, student, studentClassDo
   librarySubjectIds = await filterToActiveCatalogSubjectIds(librarySubjectIds);
 
   const programCtx = await getStudentSchoolProgramContext(userId);
+  const { resolveIitCategoriesForContentBrowse } = await import('./schoolProgram.js');
+  const iitCategories = resolveIitCategoriesForContentBrowse(programCtx);
   const studentClassNum = resolveStudentClassNumber(student, studentClassDoc) || '';
 
-  if (
-    programCtx.isAsliPrepExclusive &&
-    Array.isArray(programCtx.iitCategories) &&
-    programCtx.iitCategories.some((c) => String(c || '').trim())
-  ) {
+  if (programCtx.isAsliPrepExclusive && iitCategories.length) {
     const { mergeIitCatalogSubjectsIntoLibraryIds } = await import('./iitCatalogSubjects.js');
     librarySubjectIds = await mergeIitCatalogSubjectsIntoLibraryIds(
       librarySubjectIds,
       studentClassNum || student?.classNumber,
-      { iitCategories: programCtx.iitCategories },
+      { iitCategories },
     );
     librarySubjectIds = await filterToActiveCatalogSubjectIds(librarySubjectIds);
   }
@@ -94,7 +162,8 @@ export async function loadStudentLibraryContents(userId, student, studentClassDo
     board: adminBoard,
     curriculumBoard: programCtx.curriculumBoard || boardUpper,
     isAsliPrepExclusive: programCtx.isAsliPrepExclusive,
-    iitCategories: programCtx.iitCategories,
+    iitCategories,
+    excludeIitBoard: false,
   });
   const siblingBoardOpts = schoolBoards.length
     ? { boards: schoolBoards }

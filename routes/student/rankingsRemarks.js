@@ -129,16 +129,67 @@ async function getStudentSubjectsHandler(req, res) {
       );
       const { filterToActiveCatalogSubjectIds } = await import('../../utils/activeCatalog.js');
       let subjectDocs = await resolveIndividualCatalogSubjectDocs(student);
-      const activeIds = await filterToActiveCatalogSubjectIds(subjectDocs.map((s) => s._id));
-      const activeSet = new Set(activeIds.map((id) => String(id)));
-      subjectDocs = subjectDocs.filter((s) => activeSet.has(String(s._id)));
+      let subjectIdList = subjectDocs.map((s) => s._id);
+      try {
+        const {
+          getStudentSchoolProgramContext,
+          resolveIitCategoriesForContentBrowse,
+        } = await import('../../utils/schoolProgram.js');
+        const programCtx = await getStudentSchoolProgramContext(student._id || req.userId);
+        const iitCategories = resolveIitCategoriesForContentBrowse(programCtx);
+        if (programCtx.isAsliPrepExclusive && iitCategories.length) {
+          const { mergeIitCatalogSubjectsIntoLibraryIds } = await import(
+            '../../utils/iitCatalogSubjects.js'
+          );
+          subjectIdList = await mergeIitCatalogSubjectsIntoLibraryIds(
+            subjectIdList,
+            student.classNumber,
+            { iitCategories },
+          );
+          const activeIds = await filterToActiveCatalogSubjectIds(subjectIdList);
+          subjectDocs = await Subject.find({
+            _id: { $in: activeIds },
+            isActive: true,
+            name: { $not: /__deleted__/ },
+          })
+            .select('_id name description board code productCategory classNumber')
+            .lean();
+        } else {
+          const activeIds = await filterToActiveCatalogSubjectIds(subjectIdList);
+          const activeSet = new Set(activeIds.map((id) => String(id)));
+          subjectDocs = subjectDocs.filter((s) => activeSet.has(String(s._id)));
+        }
+      } catch {
+        const activeIds = await filterToActiveCatalogSubjectIds(subjectIdList);
+        const activeSet = new Set(activeIds.map((id) => String(id)));
+        subjectDocs = subjectDocs.filter((s) => activeSet.has(String(s._id)));
+      }
 
       const boardUpper = resolveStudentContentBoard(student, student.board || student.curriculumBoard);
+      let siblingBoardOpts = { board: boardUpper };
+      try {
+        const {
+          getStudentSchoolProgramContext,
+          resolveIitCategoriesForContentBrowse,
+        } = await import('../../utils/schoolProgram.js');
+        const { boardsForSchoolContentScope } = await import('../../constants/boards.js');
+        const programCtx = await getStudentSchoolProgramContext(student._id || req.userId);
+        const iitCategories = resolveIitCategoriesForContentBrowse(programCtx);
+        const boards = boardsForSchoolContentScope({
+          board: student.board,
+          curriculumBoard: student.curriculumBoard || boardUpper,
+          isAsliPrepExclusive: programCtx.isAsliPrepExclusive,
+          iitCategories,
+          excludeIitBoard: false,
+        });
+        if (boards.length) siblingBoardOpts = { boards };
+      } catch {
+        /* keep boardUpper */
+      }
+
       const formattedSubjects = await Promise.all(
         subjectDocs.map(async (subject) => {
-          const contentSubjectIds = await resolveSubjectContentIds(subject._id, {
-            board: boardUpper,
-          });
+          const contentSubjectIds = await resolveSubjectContentIds(subject._id, siblingBoardOpts);
           const contentCount = await Content.countDocuments({
             subject: { $in: contentSubjectIds },
             isActive: true,
@@ -149,6 +200,8 @@ async function getStudentSubjectsHandler(req, res) {
             name: subject.name,
             description: subject.description || '',
             board: subject.board,
+            productCategory: subject.productCategory || '',
+            classNumber: subject.classNumber || '',
             code: subject.code || '',
             teachers: [],
             teacherCount: 0,
@@ -203,11 +256,36 @@ async function getStudentSubjectsHandler(req, res) {
     }
     
     const studentClassDoc = await resolveStudentClassDoc(student);
-    const subjectIdList = await resolveStudentSubjectIdsForLibrary(
+    let subjectIdList = await resolveStudentSubjectIdsForLibrary(
       student,
-      adminBoard,
       studentClassDoc
     );
+
+    // Merge IIT catalog subjects so Learning Paths can nest Mathematics IIT under Mathematics
+    // (same browse fallback as school admin / trial when tracks are unset).
+    try {
+      const {
+        getStudentSchoolProgramContext,
+        resolveIitCategoriesForContentBrowse,
+      } = await import('../../utils/schoolProgram.js');
+      const programCtx = await getStudentSchoolProgramContext(student._id || req.userId);
+      const iitCategories = resolveIitCategoriesForContentBrowse(programCtx);
+      if (programCtx.isAsliPrepExclusive && iitCategories.length) {
+        const { resolveStudentClassNumber } = await import('../../utils/studentClassContent.js');
+        const classNum =
+          resolveStudentClassNumber(student, studentClassDoc) || student.classNumber;
+        const { mergeIitCatalogSubjectsIntoLibraryIds } = await import(
+          '../../utils/iitCatalogSubjects.js'
+        );
+        subjectIdList = await mergeIitCatalogSubjectsIntoLibraryIds(
+          subjectIdList,
+          classNum,
+          { iitCategories },
+        );
+      }
+    } catch (mergeErr) {
+      console.warn('IIT subject merge for learning paths skipped:', mergeErr?.message || mergeErr);
+    }
 
     if (subjectIdList.length === 0) {
       console.log('📚 No subjects resolved for student class/browse.');
@@ -229,9 +307,30 @@ async function getStudentSubjectsHandler(req, res) {
       name: { $not: /__deleted__/ },
     })
       .sort({ name: 1 })
+      .select('_id name description board code productCategory classNumber')
       .lean();
 
     const boardUpper = resolveStudentContentBoard(student, adminBoard);
+    let schoolBoards = [boardUpper];
+    try {
+      const {
+        getStudentSchoolProgramContext,
+        resolveIitCategoriesForContentBrowse,
+      } = await import('../../utils/schoolProgram.js');
+      const { boardsForSchoolContentScope } = await import('../../constants/boards.js');
+      const programCtx = await getStudentSchoolProgramContext(student._id || req.userId);
+      const iitCategories = resolveIitCategoriesForContentBrowse(programCtx);
+      schoolBoards = boardsForSchoolContentScope({
+        board: adminBoard,
+        curriculumBoard: programCtx.curriculumBoard || boardUpper,
+        isAsliPrepExclusive: programCtx.isAsliPrepExclusive,
+        iitCategories,
+        excludeIitBoard: false,
+      });
+      if (!schoolBoards.length) schoolBoards = [boardUpper];
+    } catch {
+      /* keep boardUpper */
+    }
 
     console.log(`📚 Returning ${subjects.length} active catalog subjects after class + board merge`);
     
@@ -273,14 +372,15 @@ async function getStudentSubjectsHandler(req, res) {
       teachers: teachers.map((t) => t.name)
     })));
     
+    const siblingBoardOpts =
+      schoolBoards.length > 1 ? { boards: schoolBoards } : { board: boardUpper };
+
     // Format subjects with teacher information + content counts (sibling subject ids)
     const formattedSubjects = await Promise.all(
       subjects.map(async (subject) => {
         const subjectIdStr = subject._id.toString();
         const assignedTeachers = subjectTeachersMap.get(subjectIdStr) || [];
-        const contentSubjectIds = await resolveSubjectContentIds(subject._id, {
-          board: boardUpper,
-        });
+        const contentSubjectIds = await resolveSubjectContentIds(subject._id, siblingBoardOpts);
         const contentCount = await Content.countDocuments({
           subject: { $in: contentSubjectIds },
           isActive: true,
@@ -292,6 +392,8 @@ async function getStudentSubjectsHandler(req, res) {
           name: subject.name,
           description: subject.description || '',
           board: subject.board,
+          productCategory: subject.productCategory || '',
+          classNumber: subject.classNumber || '',
           code: subject.code || '',
           teachers: assignedTeachers,
           teacherCount: assignedTeachers.length,
@@ -300,7 +402,7 @@ async function getStudentSubjectsHandler(req, res) {
       })
     );
     
-    // Learning Paths: never list IIT (Edu OTT only); merge BIO/Biology/Chemistry_8 duplicates
+    // Merge BIO/Biology + IIT siblings into one card (IIT shows as subheading in the UI)
     const learningPathSubjects = prepareLearningPathSubjects(formattedSubjects);
 
     console.log(`✅ Returning ${learningPathSubjects.length} learning-path subjects (from ${formattedSubjects.length} raw)`);

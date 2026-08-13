@@ -92,6 +92,42 @@ router.post('/ai/tool', async (req, res) => {
       resolveAiToolClassNumberFromRequest,
     } = await import('../../utils/schoolProgram.js');
     const programCtx = await getStudentSchoolProgramContext(userId);
+
+    if (programCtx?.isIndividualAccount) {
+      const { resolveIndividualAccess } = await import('../../utils/individualAccount.js');
+      const studentDoc = programCtx.studentDoc || programCtx.userDoc || null;
+      const access = resolveIndividualAccess(studentDoc || programCtx);
+      if (access.paymentRequired) {
+        return res.status(402).json({
+          success: false,
+          code: 'PAYMENT_REQUIRED',
+          message:
+            'Your free trial has ended. Please subscribe to continue using AI tools.',
+          trialUsage: access.trialUsage || null,
+        });
+      }
+      const allowedTools = Array.isArray(access.trialAllowedAiTools)
+        ? access.trialAllowedAiTools
+        : Array.isArray(programCtx.trialAllowedAiTools)
+          ? programCtx.trialAllowedAiTools
+          : [];
+      if (allowedTools.length > 0 && toolType && !allowedTools.includes(String(toolType).trim())) {
+        return res.status(403).json({
+          success: false,
+          code: 'TRIAL_TOOL_RESTRICTED',
+          message:
+            'This AI tool is not included in your trial. Contact support or wait for Super Admin to unlock it.',
+        });
+      }
+      try {
+        const { consumeTrialGeneration } = await import('../../utils/trialUsageLimits.js');
+        await consumeTrialGeneration(userId, 'student');
+      } catch (limitErr) {
+        const { trialLimitHttpPayload } = await import('../../utils/trialUsageLimits.js');
+        return res.status(limitErr.statusCode || 429).json(trialLimitHttpPayload(limitErr));
+      }
+    }
+
     const boardCheck = validateAiToolBoardAccess(programCtx.isAsliPrepExclusive, {
       board,
       gradeLevel,
@@ -311,6 +347,12 @@ router.post('/ai/tool', async (req, res) => {
         questionCount: params.questionCount ?? req.body?.questionCount,
         duration: params.duration ?? req.body?.duration,
         productCategory: studentProductCategory || undefined,
+        uniqueSeed:
+          String(req.body.uniqueSeed || params.uniqueSeed || '').trim() ||
+          `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`,
+        generationVariant:
+          Number(req.body.generationVariant || params.generationVariant) ||
+          undefined,
       },
     });
     if (liveMiss.ok) {
