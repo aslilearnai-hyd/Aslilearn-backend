@@ -9,6 +9,7 @@ import {
   getSchoolImpactDetail,
   getLatestDigestForUser,
   rebuildStudentWeeklyDigestForUser,
+  rebuildTeacherWeeklyDigestForUser,
 } from '../services/impact-report-service.js';
 import { generateSchoolImpactPDF } from '../services/school-impact-pdf.js';
 import { deliverPendingDigestsForWeek } from '../services/digest-email-service.js';
@@ -131,12 +132,15 @@ export async function downloadImpactReportPdf(req, res) {
   }
 }
 
-/** School Admin: own school report */
+/** School Admin: own school report (+ student-wise detail, same as super admin view). */
 export async function getMySchoolImpactReport(req, res) {
   try {
     const adminId = req.user?._id || req.user?.userId;
     const period = periodFromReq(req);
-    const snap = await getSchoolSnapshot(adminId, period);
+    const detail = String(req.query.detail || '1') !== '0';
+    const snap = detail
+      ? await getSchoolImpactDetail(adminId, period)
+      : await getSchoolSnapshot(adminId, period);
     return res.json({ success: true, data: snap });
   } catch (err) {
     return res.status(500).json({ success: false, message: err.message || 'Failed to load school impact report' });
@@ -148,26 +152,23 @@ export async function downloadMySchoolImpactPdf(req, res) {
   return downloadImpactReportPdf(req, res);
 }
 
-/** Teacher / Student: latest weekly digest (students always get a live rebuild). */
+/** Teacher / Student: latest weekly digest (always live-rebuild for current week). */
 export async function getMyWeeklyDigest(req, res) {
   try {
     const userId = req.user?._id || req.user?.userId;
     const role = req.user?.role;
     const weekStart = startOfIsoWeek(req.query.weekStart ? new Date(req.query.weekStart) : new Date());
-    const forceBuild = req.query.build === '1' || req.query.refresh === '1';
 
     let digest = null;
 
     if (role === 'student') {
-      // Always compute live week metrics so the dashboard report stays current.
       digest = await rebuildStudentWeeklyDigestForUser(userId, weekStart);
+      if (!digest) digest = await getLatestDigestForUser(userId);
+    } else if (role === 'teacher') {
+      digest = await rebuildTeacherWeeklyDigestForUser(userId, weekStart);
       if (!digest) digest = await getLatestDigestForUser(userId);
     } else {
       digest = await getLatestDigestForUser(userId);
-      if ((!digest || forceBuild) && req.user?.assignedAdmin && role === 'teacher') {
-        await buildDigestsForSchool(req.user.assignedAdmin, weekStart);
-        digest = await getLatestDigestForUser(userId);
-      }
     }
 
     if (digest && !digest.readAt) {

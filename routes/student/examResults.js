@@ -1865,20 +1865,18 @@ function resolveAnswerToken(question, value) {
   const optionMeta = buildOptionMeta(question);
   if (!optionMeta.length) return rawNorm;
 
-  // Numeric answer token: support both 0-based and 1-based legacy formats.
-  if (/^-?\d+$/.test(rawNorm)) {
-    const n = parseInt(rawNorm, 10);
-    if (n >= 0 && n < optionMeta.length) return optionMeta[n].textNorm;
-    if (n >= 1 && n <= optionMeta.length) return optionMeta[n - 1].textNorm;
-  }
+  // Match option text before treating numbers as indices (e.g. "4" vs option D).
+  const byText = optionMeta.find((o) => o.textNorm && o.textNorm === rawNorm);
+  if (byText) return byText.textNorm;
 
-  // Letter token: A/B/C/D.
+  const byId = optionMeta.find((o) => o.id && o.id === raw);
+  if (byId) return byId.textNorm;
+
   if (/^[a-z]$/i.test(rawNorm)) {
     const byLetter = optionMeta.find((o) => o.letter.toLowerCase() === rawNorm);
     if (byLetter) return byLetter.textNorm;
   }
 
-  // Option-A / option1 style token.
   const optionMatch = rawNorm.match(/^option\s*([a-z0-9])$/);
   if (optionMatch) {
     const token = optionMatch[1];
@@ -1893,13 +1891,11 @@ function resolveAnswerToken(question, value) {
     }
   }
 
-  // Match by option id.
-  const byId = optionMeta.find((o) => o.id && o.id === raw);
-  if (byId) return byId.textNorm;
-
-  // Match by normalized option text.
-  const byText = optionMeta.find((o) => o.textNorm && o.textNorm === rawNorm);
-  if (byText) return byText.textNorm;
+  if (/^-?\d+$/.test(rawNorm)) {
+    const n = parseInt(rawNorm, 10);
+    if (n >= 0 && n < optionMeta.length) return optionMeta[n].textNorm;
+    if (n >= 1 && n <= optionMeta.length) return optionMeta[n - 1].textNorm;
+  }
 
   return rawNorm;
 }

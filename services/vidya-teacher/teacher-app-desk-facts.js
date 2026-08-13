@@ -491,7 +491,7 @@ export function teacherAppOnlyReply(question, desk, entityFallbackMessage = '') 
     if (desk.omr?.latestBatch) {
       reply += `• Latest: **${desk.omr.latestBatch.title}** (${desk.omr.latestBatch.rowCount} rows)\n`;
     }
-    reply += `\nOpen **OMR Results** in the teacher portal for full sheets.`;
+    reply += `\nOpen **Offline Results** in the teacher portal for full sheets.`;
     return reply.trim();
   }
 

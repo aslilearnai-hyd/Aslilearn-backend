@@ -13,10 +13,12 @@ const APP_HINTS = [
   'my status', 'learning progress', 'exam status', 'videos watched', 'video progress',
   'my omr', 'omr result', 'omr results', 'omr exam', 'omr score', 'omr marks',
   'recent omr', 'omr test',
+  'my offline', 'offline result', 'offline results', 'offline exam', 'offline score', 'offline marks',
+  'recent offline', 'offline test',
   'upcoming exam', 'upcoming exams', 'next exam', 'homework today',
   'what should i do', 'today plan', 'my subjects', 'how many subjects',
   'how many videos', 'videos in', 'daily plan', 'do today',
-  'how many exams', 'how many omr', 'how many homework', 'how many quizzes',
+  'how many exams', 'how many omr', 'how many offline', 'how many homework', 'how many quizzes',
   'attempted till', 'exams attempted', 'list my subjects', 'my calendar',
   'timetable', 'open exams', 'quiz', 'assessment',
 

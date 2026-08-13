@@ -1111,28 +1111,120 @@ export async function buildAllSchoolImpactSnapshots(periodInput = new Date(), so
 
 export async function buildTeacherDigest(teacherUser, weekStart, weekEnd, schoolSnap) {
   const tid = teacherUser._id || teacherUser.teacherId;
-  const sessions = await sessionStatsForUsers([tid], weekStart, weekEnd);
-  const gens = await teacherGenerations(tid, weekStart, weekEnd);
-  const mine = (schoolSnap?.teachers || []).find((t) => String(t.teacherId) === String(tid));
+  const tidStr = String(tid);
+  const fourteenAgo = new Date(weekEnd);
+  fourteenAgo.setUTCDate(fourteenAgo.getUTCDate() - 14);
+
+  const [sessions, gens, vidya, toolUsageRows, activeDays14, loginDays] = await Promise.all([
+    sessionStatsForUsers([tid], weekStart, weekEnd),
+    teacherGenerations(tid, weekStart, weekEnd),
+    vidyaStatsForUsers([tid], weekStart, weekEnd),
+    TeacherToolUsage.find({
+      teacherId: tid,
+      createdAt: { $gte: weekStart, $lte: weekEnd },
+    })
+      .select('toolType toolName subject')
+      .lean()
+      .catch(() => []),
+    activeDaysInWindow(tid, fourteenAgo, weekEnd),
+    UserSession.distinct('date', {
+      userId: tid,
+      startTime: { $gte: weekStart, $lte: weekEnd },
+    }).catch(() => []),
+  ]);
+
+  const sess = sessions.byUser.get(tidStr) || { sessions: 0, minutes: 0 };
+  const minutes = Math.round(Number(sess.minutes) || 0);
+  const sessionCount = Number(sess.sessions) || 0;
+  const mine = (schoolSnap?.teachers || []).find((t) => String(t.teacherId) === tidStr);
+  const status = mine?.status || teacherStatusFromActiveDays(activeDays14);
+
+  const toolMap = new Map();
+  for (const row of toolUsageRows || []) {
+    const name =
+      getToolDisplayTitle?.(row.toolType || row.toolName) ||
+      String(row.toolName || row.toolType || 'AI tool').trim() ||
+      'AI tool';
+    const prev = toolMap.get(name) || { name, count: 0, subjects: new Set() };
+    prev.count += 1;
+    const sub = String(row.subject || '').trim();
+    if (sub) prev.subjects.add(sub);
+    toolMap.set(name, prev);
+  }
+  const toolsUsed = [...toolMap.values()]
+    .map((t) => ({ name: t.name, count: t.count, subjects: [...t.subjects].slice(0, 4) }))
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 10);
+
+  const vidyaCalls = Number(vidya.byUser.get(tidStr) || 0);
+  const loginCount = Array.isArray(loginDays) ? loginDays.length : 0;
+  const lastActive =
+    teacherUser.lastLogin && teacherUser.lastLogin >= weekStart && teacherUser.lastLogin <= weekEnd
+      ? teacherUser.lastLogin
+      : null;
+  const lastActiveDate = lastActive
+    ? new Date(lastActive).toLocaleDateString('en-IN', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric',
+        timeZone: 'Asia/Kolkata',
+      })
+    : loginCount > 0
+      ? 'This week'
+      : null;
+
   const metrics = {
-    sessions: sessions.byUser.get(String(tid))?.sessions || 0,
-    minutes: sessions.byUser.get(String(tid))?.minutes || 0,
+    role: 'teacher',
+    sessions: sessionCount,
+    minutes,
+    totalTimeLabel: formatMinutesLabel(minutes),
+    avgSessionMinutes: sessionCount > 0 ? Math.round(minutes / sessionCount) : 0,
+    loginCount,
+    loginDays: loginCount,
+    lastActiveDate,
+    activationDate: teacherUser.createdAt
+      ? new Date(teacherUser.createdAt).toLocaleDateString('en-IN', {
+          day: '2-digit',
+          month: 'short',
+          year: 'numeric',
+          timeZone: 'Asia/Kolkata',
+        })
+      : null,
     generationsCreated: gens,
-    status: mine?.status || teacherStatusFromActiveDays(mine?.activeDays || 0),
+    aiToolUses: Array.isArray(toolUsageRows) ? toolUsageRows.length : 0,
+    aiDoubts: vidyaCalls,
+    aiExplanations: gens + vidyaCalls,
+    toolsUsed,
+    status,
+    activeDays: activeDays14,
     schoolStudentsAccessed: schoolSnap?.studentsAccessed || 0,
     schoolSessions: schoolSnap?.totalLearningSessions || 0,
+    schoolTeachersActive: schoolSnap?.teachersActive || 0,
   };
+
   const highlights = [];
   if (metrics.generationsCreated > 0) {
     highlights.push(`You created ${metrics.generationsCreated} AI teaching resource(s) this week.`);
   }
+  if (vidyaCalls > 0) {
+    highlights.push(`You asked Vidya AI ${vidyaCalls} time(s) this week.`);
+  }
   if (metrics.sessions > 0) {
-    highlights.push(`You had ${metrics.sessions} learning session(s) on the platform.`);
+    highlights.push(
+      `You had ${metrics.sessions} session(s) · ${metrics.totalTimeLabel} on the platform.`,
+    );
   }
   if (metrics.status === 'inactive') {
     highlights.push('Tip: log in 3+ days in the next two weeks to stay Active on the school impact report.');
   } else if (metrics.status === 'active') {
     highlights.push('Status: Active — great consistency for your school’s pilot metrics.');
+  } else if (metrics.status === 'occasional') {
+    highlights.push('Status: Occasional — one more active day this fortnight moves you to Active.');
+  }
+  if (metrics.schoolStudentsAccessed > 0) {
+    highlights.push(
+      `Your school: ${metrics.schoolStudentsAccessed} student(s) accessed learning this period.`,
+    );
   }
   if (!highlights.length) {
     highlights.push('Open Vidya AI or an AI tool this week to start building your teaching trail.');
@@ -1143,7 +1235,7 @@ export async function buildTeacherDigest(teacherUser, weekStart, weekEnd, school
     {
       $set: {
         role: 'teacher',
-        adminId: schoolSnap?.adminId,
+        adminId: schoolSnap?.adminId || teacherUser.assignedAdmin || undefined,
         weekEnd,
         title: 'Your weekly AsliLearn teacher report',
         summary: `Week of ${formatPeriodLabel(weekStart, weekEnd)}`,
@@ -1484,7 +1576,7 @@ function studentDigestHighlights(metrics) {
     const rankBit =
       metrics.omrBestRank != null ? ` · best rank #${metrics.omrBestRank}` : '';
     highlights.push(
-      `OMR results this week: ${metrics.omrAttempts} test(s) — avg ${metrics.omrAvgPct}% (best ${metrics.omrBestPct}%)${rankBit}.`,
+      `Offline Results This Week: ${metrics.omrAttempts} test(s) — avg ${metrics.omrAvgPct}% (best ${metrics.omrBestPct}%)${rankBit}.`,
     );
   }
   if (metrics.aiExplanations > 0) {
@@ -1561,6 +1653,42 @@ export async function rebuildStudentWeeklyDigestForUser(userId, weekStartInput =
     .lean();
   if (!student || student.role !== 'student') return null;
   return buildStudentDigest(student, weekStart, weekEnd, { adminId: student.assignedAdmin });
+}
+
+/** Rebuild only this teacher's digest (dashboard refresh — not whole school). */
+export async function rebuildTeacherWeeklyDigestForUser(userId, weekStartInput = new Date()) {
+  const weekStart = startOfIsoWeek(weekStartInput);
+  const weekEnd = endOfIsoWeek(weekStart);
+  const teacher = await User.findById(userId)
+    .select('_id role fullName email lastLogin createdAt assignedAdmin')
+    .lean();
+  if (!teacher || teacher.role !== 'teacher') return null;
+
+  let schoolSnap = null;
+  if (teacher.assignedAdmin) {
+    try {
+      schoolSnap =
+        (await WeeklyImpactSnapshot.findOne({ adminId: teacher.assignedAdmin, weekStart }).lean()) ||
+        (await buildSchoolImpactSnapshot(teacher.assignedAdmin, weekStart, 'api'));
+    } catch {
+      schoolSnap = { adminId: teacher.assignedAdmin };
+    }
+  }
+
+  return buildTeacherDigest(
+    {
+      teacherId: teacher._id,
+      _id: teacher._id,
+      name: teacher.fullName || '',
+      email: teacher.email || '',
+      lastLogin: teacher.lastLogin,
+      createdAt: teacher.createdAt,
+      assignedAdmin: teacher.assignedAdmin,
+    },
+    weekStart,
+    weekEnd,
+    schoolSnap || { adminId: teacher.assignedAdmin },
+  );
 }
 
 /**

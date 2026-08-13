@@ -62,16 +62,16 @@ function formatOmrDate(value) {
 function buildOmrResultReply(omrList, { all = false } = {}) {
   const list = Array.isArray(omrList) ? omrList : [];
   if (!list.length) {
-    return "I don't see any OMR sheet results linked to your account yet. After your school uploads the OMR score sheet and assigns your Candidate ID, ask me again — or open **OMR Results** in the sidebar.";
+    return "I don't see any offline sheet results linked to your account yet. After your school uploads the offline score sheet and assigns your Candidate ID, ask me again — or open **Offline Results** in the sidebar.";
   }
 
   const rows = all ? list.slice(0, 40) : [list[0]];
   let reply = all
-    ? `**Your OMR exam results** (${list.length} on record):\n\n`
-    : `**Your recent OMR exam result:**\n\n`;
+    ? `**Your Offline Exam Results** (${list.length} on record):\n\n`
+    : `**Your Recent Offline Exam Result:**\n\n`;
 
   rows.forEach((row, idx) => {
-    const title = row.testTitle || 'OMR test';
+    const title = row.testTitle || 'Offline test';
     const dateLabel = formatOmrDate(row.testDate);
     const rank = row.finalRank ?? row.testRank;
     if (all && rows.length > 1) reply += `**${idx + 1}. ${title}**\n`;
@@ -104,18 +104,18 @@ function buildOmrResultReply(omrList, { all = false } = {}) {
     const prev = list[1];
     const delta =
       Math.round(((Number(list[0].percentage) || 0) - (Number(prev.percentage) || 0)) * 10) / 10;
-    reply += `\nVs previous OMR (**${prev.testTitle || 'previous'}**): ${delta >= 0 ? '+' : ''}${delta}%`;
-    reply += `\nYou have **${list.length}** OMR tests — ask **"how many OMR exams do I have"** for the full list.`;
+    reply += `\nVs previous Offline Result (**${prev.testTitle || 'previous'}**): ${delta >= 0 ? '+' : ''}${delta}%`;
+    reply += `\nYou have **${list.length}** Offline tests — ask **"how many Offline exams do I have"** for the full list.`;
   }
 
-  reply += `\n\nOpen **OMR Results** in the sidebar for the full subject breakdown.`;
+  reply += `\n\nOpen **Offline Results** in the sidebar for the full subject breakdown.`;
   return reply.trim();
 }
 
 function buildOmrCountReply(omrList) {
   const list = Array.isArray(omrList) ? omrList : [];
   if (!list.length) {
-    return "You don't have any OMR exams linked yet. When your school uploads and assigns your Candidate ID, the count will show here.";
+    return "You don't have any Offline Exams linked yet. When your school uploads and assigns your Candidate ID, the count will show here.";
   }
   let reply = `You have **${list.length}** OMR exam${list.length === 1 ? '' : 's'} on record:\n\n`;
   list.slice(0, 20).forEach((row, i) => {
@@ -137,7 +137,7 @@ function buildExamAttemptCountReply(examList, omrList) {
   const total = inApp + omrCount;
 
   if (!total) {
-    return "You haven't attempted any in-app exams or OMR sheets yet. Take an exam from **Exams**, or wait for your school to upload OMR results.";
+    return "You haven't attempted any in-app exams or Offline Sheets yet. Take an exam from **Exams**, or wait for your school to upload Offline Results.";
   }
 
   let reply = `**Exams you've attempted so far:**\n\n`;
@@ -727,7 +727,7 @@ function appOnlyReply(question, facts) {
     const latest = examList[0];
     const latestOmr = omrList[0];
     if (!latest && !latestOmr) {
-      return "I don't have any exam or OMR results for you yet. Complete an exam or wait for your school to upload OMR scores.";
+      return "I don't have any exam or Offline Results for you yet. Complete an exam or wait for your school to upload Offline Scores.";
     }
     if (!latest && latestOmr) {
       return buildOmrResultReply(omrList, { all: false });
@@ -805,13 +805,13 @@ function appOnlyReply(question, facts) {
     }
     if (latestOmr && (latestOmr.finalRank != null || latestOmr.testRank != null)) {
       const rank = latestOmr.finalRank ?? latestOmr.testRank;
-      reply += `On your latest OMR (**${latestOmr.testTitle || 'OMR test'}**) your rank is **${rank}** (${latestOmr.percentage ?? 'N/A'}%).\n`;
+      reply += `On your latest Offline Result (**${latestOmr.testTitle || 'Offline test'}**) your rank is **${rank}** (${latestOmr.percentage ?? 'N/A'}%).\n`;
     }
     if (reply) {
-      reply += `\nOpen **Rankings** / **OMR Results** in the sidebar for full leaderboards.`;
+      reply += `\nOpen **Rankings** / **Offline Results** in the sidebar for full leaderboards.`;
       return reply.trim();
     }
-    return "I don't have a stored rank for you yet. After exams or OMR uploads, ranks appear here and on the Rankings / OMR Results screens.";
+    return "I don't have a stored rank for you yet. After exams or Offline uploads, ranks appear here and on the Rankings / Offline Results screens.";
   }
 
   // ── RECOMMENDATION / WHAT TO STUDY queries ────────────────────────────────
