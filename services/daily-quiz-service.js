@@ -282,22 +282,79 @@ export async function markDailyQuizCompleted({
   answers = {},
   correctCount = 0,
   score = null,
+  quizId = null,
+  classNumber = '',
+  questionIds = [],
 }) {
   const key = dateKey || indiaDateKey();
-  return DailyQuizLog.findOneAndUpdate(
-    { userId, dateKey: key },
-    {
-      $set: {
-        answers,
-        correctCount,
-        score,
-        completedAt: new Date(),
-      },
+  const update = {
+    $set: {
+      answers,
+      correctCount,
+      score,
+      completedAt: new Date(),
+      quizId: quizId || null,
+      classNumber: String(classNumber || 'all'),
     },
-    { new: true }
-  );
+    $setOnInsert: {
+      userId,
+      dateKey: key,
+      sourceIds: [],
+      questionIds: [],
+    },
+  };
+  if (Array.isArray(questionIds) && questionIds.length) {
+    update.$set.questionIds = questionIds;
+  }
+
+  return DailyQuizLog.findOneAndUpdate({ userId, dateKey: key }, update, {
+    upsert: true,
+    new: true,
+  });
 }
 
 export function isDailyBankQuiz(quiz) {
   return String(quiz?.questionBankSource || '') === DAILY_QUIZ_BANK_SOURCE;
+}
+
+/** Today's status + recent completed days for the student daily bank. */
+export async function getDailyQuizStatusForUser(userId, { limit = 14 } = {}) {
+  const todayKey = indiaDateKey();
+  const todayLog = await DailyQuizLog.findOne({ userId, dateKey: todayKey }).lean();
+  const history = await DailyQuizLog.find({
+    userId,
+    completedAt: { $ne: null },
+  })
+    .sort({ dateKey: -1 })
+    .limit(Math.max(1, Math.min(60, Number(limit) || 14)))
+    .select('dateKey score correctCount completedAt questionIds')
+    .lean();
+
+  const completedToday = Boolean(todayLog?.completedAt);
+  // Next unlock = tomorrow 00:00 IST roughly expressed for UI
+  const tomorrow = new Date(`${todayKey}T00:00:00+05:30`);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const nextDateKey = indiaDateKey(tomorrow);
+
+  return {
+    today: {
+      dateKey: todayKey,
+      completed: completedToday,
+      score: completedToday ? Number(todayLog?.score) : null,
+      correctCount: completedToday ? Number(todayLog?.correctCount) || 0 : 0,
+      totalQuestions: Array.isArray(todayLog?.questionIds)
+        ? todayLog.questionIds.length
+        : DAILY_PICK_COUNT,
+      completedAt: todayLog?.completedAt || null,
+    },
+    history: history.map((h) => ({
+      dateKey: h.dateKey,
+      score: h.score == null ? null : Number(h.score),
+      correctCount: Number(h.correctCount) || 0,
+      totalQuestions: Array.isArray(h.questionIds) ? h.questionIds.length : DAILY_PICK_COUNT,
+      completedAt: h.completedAt,
+    })),
+    nextUnlockDateKey: nextDateKey,
+    lockedUntilTomorrow: completedToday,
+  };
 }
