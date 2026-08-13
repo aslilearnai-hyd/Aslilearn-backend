@@ -6,6 +6,7 @@ import Class from '../models/Class.js';
 import Teacher from '../models/Teacher.js';
 import User from '../models/User.js';
 import { getBackendRoot } from '../bootstrap/env.js';
+import { withSignedUploadUrl } from '../utils/upload-access.js';
 
 const UPLOAD_DIR = path.join(getBackendRoot(), 'uploads', 'timetables');
 
@@ -66,7 +67,8 @@ function serializePhoto(doc) {
     classNumber: String(classNumber || '').trim(),
     sectionId: String(sectionId || '').trim().toUpperCase(),
     label,
-    imageUrl: plain.imageUrl,
+    // Sign so <img>/RN Image can load without Bearer (cross-subdomain + mobile).
+    imageUrl: withSignedUploadUrl(plain.imageUrl, 8 * 60 * 60),
     originalFileName: plain.originalFileName || '',
     uploadedBy: plain.uploadedBy,
     uploadedByRole: plain.uploadedByRole,
@@ -400,7 +402,7 @@ function serializeTeacherPhoto(teacher) {
     _id: String(teacher._id),
     teacherId: String(teacher._id),
     label: 'My timetable',
-    imageUrl: teacher.timetableImageUrl,
+    imageUrl: withSignedUploadUrl(teacher.timetableImageUrl, 8 * 60 * 60),
     originalFileName: teacher.timetableOriginalFileName || '',
     updatedAt: teacher.timetableUploadedAt || teacher.updatedAt || null,
   };

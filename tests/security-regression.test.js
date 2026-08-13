@@ -77,6 +77,11 @@ describe('upload access ACL', () => {
     assert.equal(isPublicUploadPath('/content/secret.pdf'), false);
   });
 
+  it('allows students school-shared paths including timetables', () => {
+    assert.equal(roleMayAccessUpload('/content/a.pdf', { role: 'student' }), true);
+    assert.equal(roleMayAccessUpload('/timetables/7c.jpg', { role: 'student' }), true);
+  });
+
   it('blocks students from pdf-knowledge and orders', () => {
     assert.equal(roleMayAccessUpload('/pdf-knowledge/a.pdf', { role: 'student' }), false);
     assert.equal(roleMayAccessUpload('/orders/documents/a.pdf', { role: 'student' }), false);
