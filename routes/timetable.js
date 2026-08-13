@@ -24,6 +24,7 @@ import {
   listTimetablePhotos,
   listPhotoClasses,
   getTimetablePhoto,
+  streamTimetablePhotoFile,
   uploadTimetablePhoto,
   deleteTimetablePhoto,
   getMyTimetablePhoto,
@@ -76,6 +77,7 @@ router.use(verifyToken);
 /** Photo timetable (class + section) — must be before /:id */
 router.get('/photos', authorizeRoles('admin', 'teacher'), listTimetablePhotos);
 router.get('/photo-classes', authorizeRoles('admin', 'teacher'), listPhotoClasses);
+router.get('/photo/file', streamTimetablePhotoFile);
 router.get('/photo', getTimetablePhoto);
 router.post(
   '/photo',

@@ -2984,7 +2984,8 @@ export const addQuestion = async (req, res) => {
 
     // Ensure questionText is not empty string if questionImage is not provided
     const finalQuestionText = questionText?.trim() || '';
-    const finalQuestionImage = questionImage?.trim() || null;
+    const { normalizeUploadUrlForStorage } = await import('../utils/upload-access.js');
+    const finalQuestionImage = normalizeUploadUrlForStorage(questionImage) || null;
 
     if (
       !questionHasStemContent({
@@ -4587,7 +4588,9 @@ export const updateQuestion = async (req, res) => {
     }
 
     if (questionImage !== undefined) {
-      questionToUpdate.questionImage = String(questionImage || '').trim() || null;
+      const { normalizeUploadUrlForStorage } = await import('../utils/upload-access.js');
+      const cleaned = normalizeUploadUrlForStorage(questionImage);
+      questionToUpdate.questionImage = cleaned || null;
     }
 
     if (questionText !== undefined) {
@@ -4767,18 +4770,32 @@ export const updateQuestion = async (req, res) => {
       });
     }
     questionToUpdate.questionText = finalText || undefined;
-    questionToUpdate.questionImage = finalImage || null;
+    {
+      const { normalizeUploadUrlForStorage } = await import('../utils/upload-access.js');
+      questionToUpdate.questionImage = normalizeUploadUrlForStorage(finalImage) || null;
+    }
 
     await questionToUpdate.save();
 
     // Once a paper figure is assigned to a question, remove it from the free pool
-    // so it does not show again for another question.
+    // so it does not show again for another question. Compare bare /uploads paths
+    // (pool/question may still hold host or stale ?exp=&sig= from older clients).
     if (questionImage !== undefined && finalImage) {
       try {
-        await Exam.updateOne(
-          { _id: examId },
-          { $pull: { figurePool: { url: finalImage } }, $set: { updatedAt: new Date() } },
-        );
+        const { normalizeUploadUrlForStorage } = await import('../utils/upload-access.js');
+        const bare = normalizeUploadUrlForStorage(finalImage);
+        const examDoc = await Exam.findById(examId).select('figurePool');
+        if (examDoc && Array.isArray(examDoc.figurePool) && examDoc.figurePool.length) {
+          const nextPool = examDoc.figurePool.filter((img) => {
+            const u = normalizeUploadUrlForStorage(img?.url);
+            return Boolean(u) && u !== bare;
+          });
+          if (nextPool.length !== examDoc.figurePool.length) {
+            examDoc.figurePool = nextPool;
+            examDoc.updatedAt = new Date();
+            await examDoc.save();
+          }
+        }
       } catch (poolErr) {
         console.warn('[updateQuestion] figurePool pull failed:', poolErr?.message || poolErr);
       }

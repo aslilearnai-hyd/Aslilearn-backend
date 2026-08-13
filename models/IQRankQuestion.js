@@ -56,6 +56,32 @@ const iqRankQuestionSchema = new mongoose.Schema({
     type: Number,
     default: 1
   },
+  /** Stable id from question bank import (e.g. Q0001). */
+  sourceId: {
+    type: String,
+    trim: true,
+    sparse: true,
+  },
+  category: {
+    type: String,
+    trim: true,
+    default: '',
+  },
+  subcategory: {
+    type: String,
+    trim: true,
+    default: '',
+  },
+  tags: {
+    type: [String],
+    default: [],
+  },
+  /** e.g. daily-quiz-xlsx */
+  bankSource: {
+    type: String,
+    trim: true,
+    default: '',
+  },
   isActive: {
     type: Boolean,
     default: true
@@ -84,6 +110,8 @@ iqRankQuestionSchema.index({ difficulty: 1 });
 iqRankQuestionSchema.index({ classNumber: 1, subject: 1 });
 iqRankQuestionSchema.index({ isActive: 1 });
 iqRankQuestionSchema.index({ createdAt: -1 });
+iqRankQuestionSchema.index({ sourceId: 1 }, { unique: true, sparse: true });
+iqRankQuestionSchema.index({ bankSource: 1, classNumber: 1, category: 1, difficulty: 1 });
 
 export default mongoose.model('IQRankQuestion', iqRankQuestionSchema);
 

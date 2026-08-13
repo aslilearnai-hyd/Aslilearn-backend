@@ -101,13 +101,25 @@ describe('upload access ACL', () => {
 
   it('withSignedUploadUrl appends exp+sig for question figures', async () => {
     process.env.JWT_SECRET = process.env.JWT_SECRET || 'test-secret-at-least-16-chars';
-    const { withSignedUploadUrl } = await import('../utils/upload-access.js');
+    const { withSignedUploadUrl, normalizeUploadUrlForStorage } = await import('../utils/upload-access.js');
     const signed = withSignedUploadUrl('/uploads/questions/fig.png', 600);
     assert.match(signed, /^\/uploads\/questions\/fig\.png\?exp=\d+&sig=[a-f0-9]+$/);
     const u = new URL(signed, 'https://api.aslilearn.ai');
     assert.equal(
       verifyUploadSignature(u.pathname, u.searchParams.get('exp'), u.searchParams.get('sig')),
       true
+    );
+
+    // Stale signatures in DB must be replaced (not returned as-is)
+    const stale = '/uploads/questions/fig.png?exp=1000&sig=deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef';
+    const refreshed = withSignedUploadUrl(stale, 600);
+    assert.match(refreshed, /^\/uploads\/questions\/fig\.png\?exp=\d+&sig=[a-f0-9]+$/);
+    assert.notEqual(refreshed, stale);
+    assert.equal(
+      normalizeUploadUrlForStorage(
+        'https://localhost:5000/uploads/questions/fig.png?exp=1&sig=abc'
+      ),
+      '/uploads/questions/fig.png'
     );
   });
 });

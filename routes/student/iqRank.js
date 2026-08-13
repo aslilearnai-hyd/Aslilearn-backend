@@ -114,7 +114,8 @@ router.get('/iq-rank-quizzes', async (req, res) => {
 /** Unfinished trial-only quizzes marked promptOnLogin for individual trial users. */
 router.get('/trial-login-quizzes', async (req, res) => {
   try {
-    const student = await User.findById(req.userId);
+    const student = await User.findById(req.userId)
+      .populate('assignedClass', 'classNumber');
     if (!student) {
       return res.json({ success: true, data: [] });
     }
@@ -126,25 +127,54 @@ router.get('/trial-login-quizzes', async (req, res) => {
 
     const IQRankQuiz = (await import('../../models/IQRankQuiz.js')).default;
     const IQRankQuizResult = (await import('../../models/IQRankQuizResult.js')).default;
+    const {
+      buildQuizViewerFromStudent,
+      quizVisibleToViewer,
+    } = await import('../../utils/quiz-audience.js');
+    const {
+      indiaDateKey,
+      isDailyBankQuiz,
+    } = await import('../../services/daily-quiz-service.js');
+    const DailyQuizLog = (await import('../../models/DailyQuizLog.js')).default;
 
+    const viewer = buildQuizViewerFromStudent(student);
     const quizzes = await IQRankQuiz.find({
       isActive: true,
-      trialOnly: true,
-      promptOnLogin: true,
+      $or: [
+        { trialOnly: true, promptOnLogin: true },
+        { questionBankSource: 'daily-quiz-xlsx', audienceType: 'all_members' },
+      ],
     })
       .populate('subject', 'name')
       .sort({ createdAt: -1 })
       .lean();
 
+    const visible = quizzes.filter((q) => quizVisibleToViewer(q, viewer));
     const results = await IQRankQuizResult.find({
       userId: student._id,
-      quizId: { $in: quizzes.map((q) => q._id) },
+      quizId: { $in: visible.map((q) => q._id) },
     })
       .select('quizId')
       .lean();
     const done = new Set(results.map((r) => String(r.quizId)));
 
-    const pending = quizzes.filter((q) => !done.has(String(q._id)));
+    const todayKey = indiaDateKey();
+    const todayLog = await DailyQuizLog.findOne({
+      userId: student._id,
+      dateKey: todayKey,
+      completedAt: { $ne: null },
+    })
+      .select('_id')
+      .lean();
+
+    const pending = visible.filter((q) => {
+      if (isDailyBankQuiz(q)) {
+        // One daily completion per calendar day
+        return !todayLog;
+      }
+      return !done.has(String(q._id));
+    });
+    pending.sort((a, b) => Number(isDailyBankQuiz(b)) - Number(isDailyBankQuiz(a)));
     res.json({ success: true, data: pending });
   } catch (error) {
     console.error('Error fetching trial login quizzes:', error);
@@ -181,6 +211,46 @@ router.get('/iq-rank-questions', async (req, res) => {
       const viewer = buildQuizViewerFromStudent(student);
       if (!quizVisibleToViewer(quiz, viewer)) {
         return res.status(403).json({ success: false, message: 'Quiz not available' });
+      }
+
+      const {
+        isDailyBankQuiz,
+        getOrCreateDailyQuestions,
+        DAILY_PICK_COUNT,
+      } = await import('../../services/daily-quiz-service.js');
+
+      if (isDailyBankQuiz(quiz)) {
+        const classNumber =
+          viewer.classNumber ||
+          quiz.classNumber ||
+          student.classNumber ||
+          student.assignedClass?.classNumber;
+        const { dateKey, questions, log } = await getOrCreateDailyQuestions({
+          userId: student._id,
+          classNumber,
+          quizId: quiz._id,
+          count: Number(quiz.dailyPickCount) || DAILY_PICK_COUNT,
+        });
+        return res.json({
+          success: true,
+          data: questions,
+          questions,
+          daily: {
+            dateKey,
+            completed: Boolean(log?.completedAt),
+            pickCount: questions.length,
+          },
+          quiz: {
+            _id: quiz._id,
+            title: quiz.title,
+            subject: quiz.subject,
+            scheduleType: quiz.scheduleType,
+            activityType: quiz.activityType,
+            trialOnly: Boolean(quiz.trialOnly),
+            questionBankSource: quiz.questionBankSource,
+            dailyPickCount: Number(quiz.dailyPickCount) || DAILY_PICK_COUNT,
+          },
+        });
       }
 
       let questions = [];
@@ -342,6 +412,27 @@ router.post('/iq-rank-quiz-result', async (req, res) => {
       quizResult = new IQRankQuizResult(resultData);
       await quizResult.save();
       await quizResult.populate('subject', 'name');
+    }
+
+    if (quizId) {
+      try {
+        const IQRankQuiz = (await import('../../models/IQRankQuiz.js')).default;
+        const quiz = await IQRankQuiz.findById(quizId).select('questionBankSource activityType').lean();
+        const { isDailyBankQuiz, markDailyQuizCompleted, indiaDateKey } = await import(
+          '../../services/daily-quiz-service.js'
+        );
+        if (quiz && isDailyBankQuiz(quiz)) {
+          await markDailyQuizCompleted({
+            userId: req.userId,
+            dateKey: indiaDateKey(),
+            answers: answers || {},
+            correctCount: correctAnswers || 0,
+            score,
+          });
+        }
+      } catch (dailyErr) {
+        console.warn('[iq-rank-quiz-result] daily log update failed:', dailyErr?.message || dailyErr);
+      }
     }
 
     res.json({

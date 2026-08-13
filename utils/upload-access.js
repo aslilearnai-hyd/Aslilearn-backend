@@ -97,17 +97,39 @@ export function verifyUploadSignature(absoluteUploadPath, exp, sig) {
 }
 
 /**
- * Append ?exp=&sig= to an /uploads path (or absolute URL on our API) so clients
+ * Canonical /uploads path for DB storage (no host, no ?exp=&sig=).
+ * Prevents stale signatures from being persisted and skipped on next sign.
+ */
+export function normalizeUploadUrlForStorage(fileUrl) {
+  const raw = String(fileUrl || '').trim();
+  if (!raw) return '';
+  try {
+    if (raw.startsWith('/uploads/')) return raw.split('?')[0];
+    if (/^https?:\/\//i.test(raw)) {
+      const u = new URL(raw);
+      if (u.pathname.startsWith('/uploads/')) return u.pathname;
+    }
+    if (raw.includes('/uploads/')) {
+      const idx = raw.indexOf('/uploads/');
+      return raw.slice(idx).split('?')[0];
+    }
+  } catch {
+    /* fall through */
+  }
+  return raw.split('?')[0];
+}
+
+/**
+ * Append fresh ?exp=&sig= to an /uploads path (or absolute URL on our API) so clients
  * can load figures without cookie/Bearer (web cross-subdomain + mobile Image).
+ * Always re-signs — never reuse an embedded signature from the DB (those expire).
  * Non-upload URLs are returned unchanged. Failures fall back to the original URL.
  */
 export function withSignedUploadUrl(fileUrl, ttlSeconds = 28800) {
   const raw = String(fileUrl || '').trim();
   if (!raw) return raw;
-  if (/[?&]sig=/.test(raw) && /[?&]exp=/.test(raw)) return raw;
 
   let pathOnly = '';
-  let origin = '';
   try {
     if (raw.startsWith('/uploads/')) {
       pathOnly = raw.split('?')[0];
@@ -115,24 +137,23 @@ export function withSignedUploadUrl(fileUrl, ttlSeconds = 28800) {
       const u = new URL(raw);
       if (u.pathname.startsWith('/uploads/')) {
         pathOnly = u.pathname;
-        origin = u.origin;
+        // Drop foreign/localhost origins so clients always hit the live API host.
       }
     } else if (raw.includes('/uploads/')) {
       const idx = raw.indexOf('/uploads/');
       pathOnly = raw.slice(idx).split('?')[0];
     }
   } catch {
-    return raw;
+    return normalizeUploadUrlForStorage(raw) || raw;
   }
 
   if (!pathOnly.startsWith('/uploads/')) return raw;
 
   try {
     const { exp, sig, path } = signUploadPath(pathOnly, ttlSeconds);
-    const signed = `${path}?exp=${exp}&sig=${sig}`;
-    return origin ? `${origin}${signed}` : signed;
+    return `${path}?exp=${exp}&sig=${sig}`;
   } catch {
-    return raw;
+    return pathOnly;
   }
 }
 
