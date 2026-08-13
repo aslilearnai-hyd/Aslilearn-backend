@@ -920,7 +920,7 @@ async function resolveSubjectForClass(cls, subjectName) {
   }
 
   const isLinked = (s) =>
-    assignedIds.some((id) => String(id) === String(s._id)) ||
+      assignedIds.some((id) => String(id) === String(s._id)) ||
     (s.classIds || []).some((id) => String(id) === String(cls._id));
 
   const scored = unique
@@ -1682,14 +1682,14 @@ async function processCsvRows(rows, schoolAdminId, { dryRun = false, mode = 'imp
             reason: we?.errmsg || we?.err?.message || 'Failed to save row',
             status: 'error',
           });
-        skipped++;
+          skipped++;
         }
         if (!writeErrors.length && !n) {
-          errors.push({
-            row: 0,
+        errors.push({
+          row: 0,
             reason: err?.message || 'Failed to save batch',
-            status: 'error',
-          });
+          status: 'error',
+        });
           skipped += chunk.length;
         }
       }
@@ -1828,7 +1828,7 @@ export const downloadCSVTemplate = async (req, res) => {
     }
 
     const lines = [CSV_HEADERS.join(','), ...sampleRows.map((row) => row.map(csvEscape).join(','))];
-    res.setHeader('Content-Type', 'text/csv; charset=utf-8');
+  res.setHeader('Content-Type', 'text/csv; charset=utf-8');
   res.setHeader('Content-Disposition', 'attachment; filename=timetable-template.csv');
     res.send(lines.join('\n'));
   } catch (error) {
