@@ -119,7 +119,7 @@ export function answerByTopicAndShape(question, facts) {
 
   if (topic === 'omr') {
     if (!omrList.length) {
-      return "No OMR exams are linked to your account yet. Open **OMR Results** after your school assigns your Candidate ID.";
+      return "No offline exams are linked to your account yet. Open **Offline Results** after your school assigns your Candidate ID.";
     }
     if (shape.count) {
       let reply = `You have **${omrList.length}** OMR exam${omrList.length === 1 ? '' : 's'}.\n\n`;

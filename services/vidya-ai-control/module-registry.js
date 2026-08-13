@@ -284,7 +284,7 @@ export const MODULE_REGISTRY = {
   },
   omr_results: {
     model: OmrResultRow,
-    aliases: ['omr result', 'omr results', 'omr scores', 'omr sheet'],
+    aliases: ['omr result', 'omr results', 'omr scores', 'omr sheet', 'offline result', 'offline results', 'offline scores'],
     scopeFields: ['adminId'],
   },
   assessments: {

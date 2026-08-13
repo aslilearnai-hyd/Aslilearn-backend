@@ -81,3 +81,27 @@ export async function mergeIitCatalogSubjectsIntoLibraryIds(
   }
   return [...merged.values()];
 }
+
+/**
+ * Teachers / admins browse across classes — merge IIT subjects for every class number provided.
+ * If classNumbers is empty, merges IIT subjects for classes 6–12.
+ */
+export async function mergeIitCatalogSubjectsForClasses(
+  librarySubjectIds,
+  classNumbers = [],
+  opts = {},
+) {
+  const classes = [
+    ...new Set(
+      (Array.isArray(classNumbers) ? classNumbers : [])
+        .map((c) => normalizeClassNumberLabel(c))
+        .filter(Boolean),
+    ),
+  ];
+  const targets = classes.length > 0 ? classes : ['6', '7', '8', '9', '10', '11', '12'];
+  let merged = Array.isArray(librarySubjectIds) ? [...librarySubjectIds] : [];
+  for (const cn of targets) {
+    merged = await mergeIitCatalogSubjectsIntoLibraryIds(merged, cn, opts);
+  }
+  return merged;
+}

@@ -20,6 +20,13 @@ import {
   exportTimetableCSV,
   copyPreviousWeek,
 } from '../controllers/timetableController.js';
+import {
+  listTimetablePhotos,
+  listPhotoClasses,
+  getTimetablePhoto,
+  uploadTimetablePhoto,
+  deleteTimetablePhoto,
+} from '../controllers/timetablePhotoController.js';
 
 const router = express.Router();
 const upload = multer({
@@ -42,7 +49,38 @@ const upload = multer({
   },
 });
 
+const photoUpload = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 12 * 1024 * 1024 },
+  fileFilter: (_req, file, cb) => {
+    const mime = String(file.mimetype || '').toLowerCase();
+    const name = String(file.originalname || '').toLowerCase();
+    const ok =
+      mime.startsWith('image/') ||
+      name.endsWith('.jpg') ||
+      name.endsWith('.jpeg') ||
+      name.endsWith('.png') ||
+      name.endsWith('.webp') ||
+      name.endsWith('.gif') ||
+      name.endsWith('.heic');
+    if (ok) return cb(null, true);
+    return cb(new Error('Only image files are allowed for timetable photos'), false);
+  },
+});
+
 router.use(verifyToken);
+
+/** Photo timetable (class + section) — must be before /:id */
+router.get('/photos', authorizeRoles('admin', 'teacher'), listTimetablePhotos);
+router.get('/photo-classes', authorizeRoles('admin', 'teacher'), listPhotoClasses);
+router.get('/photo', getTimetablePhoto);
+router.post(
+  '/photo',
+  authorizeRoles('admin', 'teacher'),
+  photoUpload.single('image'),
+  uploadTimetablePhoto
+);
+router.delete('/photo', authorizeRoles('admin', 'teacher'), deleteTimetablePhoto);
 
 router.post('/', authorizeRoles('admin'), createTimetableEntry);
 router.put('/:id', authorizeRoles('admin'), updateTimetableEntry);

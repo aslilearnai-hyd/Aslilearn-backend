@@ -108,6 +108,30 @@ router.get('/asli-prep-content', async (req, res) => {
         },
       });
     }
+
+    const eduOttSurface =
+      String(surface || '').toLowerCase() === 'eduott' ||
+      String(surface || '').toLowerCase() === 'edu-ott';
+    if (
+      eduOttSurface &&
+      programCtx.isAsliPrepExclusive &&
+      !(
+        Array.isArray(programCtx.iitCategories) &&
+        programCtx.iitCategories.some((c) => String(c || '').trim())
+      )
+    ) {
+      return res.json({
+        success: true,
+        data: [],
+        message:
+          'IIT EduOTT is not enabled for your class yet. Ask your school admin / Super Admin to assign Alpha/Beta/Gamma tracks.',
+        meta: {
+          reason: 'iit_eduott_off',
+          isAsliPrepExclusive: true,
+          iitCategories: [],
+        },
+      });
+    }
     
     const student = await User.findById(req.userId)
       .populate('assignedAdmin', 'board curriculumBoard isAsliPrepExclusive iitCategories')

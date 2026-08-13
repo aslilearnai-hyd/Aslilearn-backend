@@ -153,7 +153,7 @@ export function parseOmrScoresBuffer(buffer, originalName = '') {
 
   return {
     testNo: testNo || '',
-    testTitle: testTitle || originalName || 'OMR Results',
+    testTitle: testTitle || originalName || 'Offline Results',
     testDate: parseTestDateFromTitle(testTitle),
     rows: uniqueRows,
     errors,

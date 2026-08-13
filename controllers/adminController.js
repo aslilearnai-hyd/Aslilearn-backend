@@ -2649,6 +2649,18 @@ function boardsForAdminSubjectScope(admin) {
   if (admin?.board) boards.add(normalizeSchoolBoard(admin.board));
   if (admin?.curriculumBoard) boards.add(normalizeSchoolBoard(admin.curriculumBoard));
   if (boards.size === 0) boards.add('ASLI_EXCLUSIVE_SCHOOLS');
+
+  const exclusive =
+    admin?.isAsliPrepExclusive === true ||
+    String(admin?.board || '').toUpperCase().trim() === 'ASLI_EXCLUSIVE_SCHOOLS';
+  if (exclusive) {
+    boards.add('ASLI_EXCLUSIVE_SCHOOLS');
+    const tracks = [
+      ...(Array.isArray(admin?.iitCategories) ? admin.iitCategories : []),
+      ...Object.values(admin?.iitCategoriesByClass || {}).flat(),
+    ].some((c) => String(c || '').trim());
+    if (tracks) boards.add('IIT');
+  }
   return [...boards];
 }
 
@@ -2673,7 +2685,7 @@ export const getSubjects = async (req, res) => {
     }
 
     const admin = await User.findById(adminId)
-      .select('board curriculumBoard isAsliPrepExclusive')
+      .select('board curriculumBoard isAsliPrepExclusive iitCategories iitCategoriesByClass')
       .lean();
     const boardList = boardsForAdminSubjectScope(admin);
 

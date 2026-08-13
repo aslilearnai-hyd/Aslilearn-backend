@@ -18,15 +18,49 @@ router.get('/asli-prep-content', async (req, res) => {
     console.log('Query params:', { subject, type, topic, surface });
     console.log('📚 Fetching all content (board restrictions removed)');
 
-    const { getAdminSchoolProgramContext, applySchoolProgramContentFilters, isAllowedContentType } =
+    const { getAdminSchoolProgramContext, applySchoolProgramContentFilters, isAllowedContentType, isEduOttSurface } =
       await import('../../utils/schoolProgram.js');
     const programCtx = {
       ...(await getAdminSchoolProgramContext(adminId)),
       surface,
     };
 
+    const eduOtt = isEduOttSurface(surface);
+
     if (type && type !== 'all' && !isAllowedContentType(type, programCtx.isAsliPrepExclusive)) {
-      return res.json({ success: true, data: [] });
+      return res.json({
+        success: true,
+        data: [],
+        message: eduOtt
+          ? 'EduOTT IIT videos are available only for Asli Prep schools with IIT EduOTT enabled. Board content stays in Learning Paths.'
+          : 'This content type is not available for your school program.',
+        meta: {
+          reason: 'not_asli_prep',
+          isAsliPrepExclusive: false,
+          iitCategories: [],
+        },
+      });
+    }
+
+    if (
+      eduOtt &&
+      programCtx.isAsliPrepExclusive &&
+      !(
+        Array.isArray(programCtx.iitCategories) &&
+        programCtx.iitCategories.some((c) => String(c || '').trim())
+      )
+    ) {
+      return res.json({
+        success: true,
+        data: [],
+        message:
+          'IIT EduOTT is not enabled for this school yet. Ask Super Admin to assign Alpha/Beta/Gamma tracks on the school profile.',
+        meta: {
+          reason: 'iit_eduott_off',
+          isAsliPrepExclusive: true,
+          iitCategories: [],
+        },
+      });
     }
 
     const activeSubjectIds = await getActiveCatalogSubjectIds();
