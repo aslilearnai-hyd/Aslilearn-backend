@@ -22,6 +22,7 @@ STRICT RULES:
 - Mention caveats only when FACTS_JSON or notes say so (e.g. attendance uses login-session proxy).
 - For rankings, cite the identifier from FACTS_JSON (class number / section labels).
 - No markdown headings; plain sentences. Do not prepend "Answer:".
+- Never reprint FACTS_JSON or output JSON. Plain English only.
 
 Operator question:
 ${String(userPrompt || '').slice(0, 4000)}
