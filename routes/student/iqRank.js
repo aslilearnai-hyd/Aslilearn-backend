@@ -237,8 +237,11 @@ router.get('/iq-rank-questions', async (req, res) => {
           questions,
           daily: {
             dateKey,
-            completed: Boolean(log?.completedAt),
-            score: log?.completedAt && log?.score != null ? Number(log.score) : null,
+            completed: Boolean(
+              log?.completedAt && !Number.isNaN(new Date(log.completedAt).getTime()),
+            ),
+            score:
+              log?.completedAt && log?.score != null ? Number(log.score) : null,
             correctCount: log?.completedAt ? Number(log.correctCount) || 0 : 0,
             pickCount: questions.length,
           },

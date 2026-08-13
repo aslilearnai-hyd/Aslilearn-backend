@@ -125,7 +125,7 @@ router.get('/quizzes', async (req, res) => {
         createdAt: quiz.createdAt,
         createdBy: quiz.createdBy,
         hasAttempted: !!attempt,
-        bestScore: attempt?.score || null,
+        bestScore: attempt?.score ?? null,
         completedAt: attempt?.completedAt || null
       };
     }));

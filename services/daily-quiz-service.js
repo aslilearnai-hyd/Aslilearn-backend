@@ -330,8 +330,10 @@ export async function getDailyQuizStatusForUser(userId, { limit = 14 } = {}) {
     .select('dateKey score correctCount completedAt questionIds')
     .lean();
 
-  const completedToday = Boolean(todayLog?.completedAt);
-  // Next unlock = tomorrow 00:00 IST roughly expressed for UI
+  // Require a real completion timestamp — opening/picking today’s questions must not count.
+  const completedToday = Boolean(
+    todayLog?.completedAt && !Number.isNaN(new Date(todayLog.completedAt).getTime()),
+  );
   const tomorrow = new Date(`${todayKey}T00:00:00+05:30`);
   tomorrow.setDate(tomorrow.getDate() + 1);
   const nextDateKey = indiaDateKey(tomorrow);
@@ -345,7 +347,7 @@ export async function getDailyQuizStatusForUser(userId, { limit = 14 } = {}) {
       totalQuestions: Array.isArray(todayLog?.questionIds)
         ? todayLog.questionIds.length
         : DAILY_PICK_COUNT,
-      completedAt: todayLog?.completedAt || null,
+      completedAt: completedToday ? todayLog?.completedAt || null : null,
     },
     history: history.map((h) => ({
       dateKey: h.dateKey,
