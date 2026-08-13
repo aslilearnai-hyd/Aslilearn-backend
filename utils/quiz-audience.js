@@ -68,6 +68,10 @@ export function quizVisibleToViewer(quiz, viewer) {
   if (audience === 'trial' || quiz.trialOnly === true) {
     if (role !== 'student') return false;
     if (!viewer?.user || !isTrialQuizAudience(viewer.user)) return false;
+    // Class-scoped daily / class quizzes must match the member's class
+    if (quizClass && quizClass.toLowerCase() !== 'all' && quizClass !== '*') {
+      return classOk;
+    }
     return true;
   }
 

@@ -116,6 +116,16 @@ const iqRankQuizSchema = new mongoose.Schema({
     type: Number,
     default: 30,
   },
+  /** When set, questions are picked dynamically from this bank (not quiz.questions). */
+  questionBankSource: {
+    type: String,
+    trim: true,
+    default: '',
+  },
+  dailyPickCount: {
+    type: Number,
+    default: 5,
+  },
   generatedBy: {
     type: String,
     enum: ['super-admin', 'admin'],

@@ -97,6 +97,15 @@ export function extractAuthToken(req) {
   }
   const fromCookie = req.cookies?.[AUTH_COOKIE_NAME];
   if (typeof fromCookie === 'string' && fromCookie.trim()) return fromCookie.trim();
+
+  // Query token for <img>/iframe src (no Authorization header possible)
+  const q =
+    req.query?.token ||
+    req.query?.access_token ||
+    (typeof req.url === 'string' ? new URL(req.url, 'http://local').searchParams.get('token') : null);
+  if (typeof q === 'string' && q.trim() && q !== 'null' && q !== 'undefined') {
+    return q.trim();
+  }
   return null;
 }
 

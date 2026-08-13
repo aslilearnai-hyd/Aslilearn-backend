@@ -40,6 +40,69 @@ function unlinkQuiet(fileUrl) {
   }
 }
 
+function absoluteTimetablePath(imageUrl) {
+  const raw = String(imageUrl || '').trim().split('?')[0];
+  if (!raw) return null;
+  let rel = '';
+  if (raw.startsWith('/uploads/timetables/')) {
+    rel = raw.replace(/^\//, '');
+  } else if (/\/uploads\/timetables\//i.test(raw)) {
+    const idx = raw.toLowerCase().indexOf('/uploads/timetables/');
+    rel = raw.slice(idx + 1).split('?')[0];
+  } else {
+    return null;
+  }
+  const abs = path.resolve(path.join(getBackendRoot(), rel));
+  const root = path.resolve(path.join(getBackendRoot(), 'uploads', 'timetables'));
+  if (abs !== root && !abs.startsWith(root + path.sep)) return null;
+  return abs;
+}
+
+function contentTypeForPath(absPath) {
+  const ext = path.extname(absPath || '').toLowerCase();
+  if (ext === '.png') return 'image/png';
+  if (ext === '.webp') return 'image/webp';
+  if (ext === '.gif') return 'image/gif';
+  if (ext === '.heic') return 'image/heic';
+  return 'image/jpeg';
+}
+
+async function findPhotoDocForRequest(req) {
+  const role = req.user?.role;
+  const classIdParam = toObjectId(req.query.classId);
+
+  if (role === 'teacher' && !classIdParam) {
+    const teacherId = toObjectId(req.user?.userId || req.user?.id);
+    const teacher = await Teacher.findById(teacherId)
+      .select('timetableImageUrl')
+      .lean();
+    if (!teacher?.timetableImageUrl) return null;
+    return { imageUrl: teacher.timetableImageUrl };
+  }
+
+  if (role === 'student') {
+    const user = await User.findById(req.user?.userId || req.user?.id)
+      .populate('assignedClass', 'classNumber section')
+      .select('assignedClass assignedAdmin')
+      .lean();
+    const classId = user?.assignedClass?._id;
+    if (!classId) return null;
+    const schoolAdminId = toObjectId(user.assignedAdmin);
+    const query = { classId };
+    if (schoolAdminId) query.schoolAdminId = schoolAdminId;
+    return ClassTimetableImage.findOne(query).lean();
+  }
+
+  if (!classIdParam) return null;
+
+  const schoolAdminId = await resolveSchoolAdminIdForWrite(req);
+  if (!schoolAdminId && role !== 'super-admin') return null;
+
+  const query = { classId: classIdParam };
+  if (schoolAdminId) query.schoolAdminId = schoolAdminId;
+  return ClassTimetableImage.findOne(query).lean();
+}
+
 function serializePhoto(doc) {
   if (!doc) return null;
   const plain = typeof doc.toObject === 'function' ? doc.toObject({ virtuals: true }) : doc;
@@ -273,6 +336,41 @@ export async function getTimetablePhoto(req, res) {
     return res.status(500).json({
       success: false,
       message: error.message || 'Failed to fetch timetable photo',
+    });
+  }
+}
+
+/**
+ * GET /api/timetable/photo/file — stream image bytes (auth via Bearer/cookie/?token=).
+ * Used by <img> because /uploads alone cannot send Authorization headers.
+ */
+export async function streamTimetablePhotoFile(req, res) {
+  try {
+    const row = await findPhotoDocForRequest(req);
+    if (!row?.imageUrl) {
+      return res.status(404).json({ success: false, message: 'No timetable photo found' });
+    }
+
+    // Prefer raw stored path (unsigned) for disk lookup
+    const rawUrl = String(row.imageUrl || '').split('?')[0];
+    const abs = absoluteTimetablePath(rawUrl);
+    if (!abs || !fs.existsSync(abs)) {
+      console.warn('[timetable/photo/file] Missing file on disk', { imageUrl: rawUrl, abs });
+      return res.status(404).json({
+        success: false,
+        message: 'Timetable photo file is missing. Please re-upload.',
+      });
+    }
+
+    res.setHeader('Content-Type', contentTypeForPath(abs));
+    res.setHeader('Cache-Control', 'private, max-age=300');
+    res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin');
+    return res.sendFile(abs);
+  } catch (error) {
+    console.error('streamTimetablePhotoFile:', error);
+    return res.status(500).json({
+      success: false,
+      message: error.message || 'Failed to stream timetable photo',
     });
   }
 }

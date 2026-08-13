@@ -840,7 +840,8 @@ router.post('/upload-question-image', (req, res, next) => {
       });
     }
 
-    const imageUrl = `${req.protocol}://${req.get('host')}/uploads/questions/${req.file.filename}`;
+    // Relative path only — absolute hosts (localhost / wrong API) break student loads.
+    const imageUrl = `/uploads/questions/${req.file.filename}`;
     res.json({
       success: true,
       imageUrl,
@@ -1380,12 +1381,26 @@ router.put('/exams/:examId/figure-pool', async (req, res) => {
     const examId = req.params.examId;
     const incoming = Array.isArray(req.body?.figurePool) ? req.body.figurePool : [];
     const normalized = incoming
-      .map((img, i) => ({
-        url: String(img?.url || '').trim(),
-        name: String(img?.name || '').trim() || `Fig ${i + 1}`,
-        order: Number.isFinite(Number(img?.order)) ? Number(img.order) : i,
-        key: String(img?.key || '').trim() || '',
-      }))
+      .map((img, i) => {
+        const raw = String(img?.url || '').trim();
+        let url = raw;
+        try {
+          if (raw.startsWith('http')) {
+            const u = new URL(raw);
+            if (u.pathname.startsWith('/uploads/')) url = u.pathname;
+          } else {
+            url = raw.split('?')[0];
+          }
+        } catch {
+          url = raw.split('?')[0];
+        }
+        return {
+          url,
+          name: String(img?.name || '').trim() || `Fig ${i + 1}`,
+          order: Number.isFinite(Number(img?.order)) ? Number(img.order) : i,
+          key: String(img?.key || '').trim() || '',
+        };
+      })
       .filter((img) => img.url);
 
     const questions = await Question.find({ exam: examId }).select('questionImage').lean();
