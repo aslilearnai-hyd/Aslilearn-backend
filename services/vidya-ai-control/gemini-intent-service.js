@@ -2,6 +2,7 @@ import geminiService from '../gemini-service.js';
 import { MODULE_REGISTRY } from './module-registry.js';
 import {
   isReportsOverviewQuery,
+  isHeadcountOverviewQuery,
   extractSchoolNameQuery,
   isSchoolDetailQuery,
 } from './school-overview-facts.js';
@@ -266,7 +267,7 @@ function buildHeuristicPlan(message, errMessage = '') {
   if (isGreetingOrSmallTalk(message)) {
     return buildKnowledgePlan(errMessage);
   }
-  if (isReportsOverviewQuery(message)) {
+  if (isReportsOverviewQuery(message) || isHeadcountOverviewQuery(message)) {
     return buildOverviewPlan(errMessage);
   }
 
@@ -540,7 +541,7 @@ export async function parseDynamicIntent({ userMessage, history = [] }) {
   if (isGreetingOrSmallTalk(message)) {
     return buildKnowledgePlan();
   }
-  if (isReportsOverviewQuery(message)) {
+  if (isReportsOverviewQuery(message) || isHeadcountOverviewQuery(message)) {
     return buildOverviewPlan();
   }
 
@@ -639,7 +640,7 @@ ${message.slice(0, 4500)}
     return buildHeuristicPlan(message, '');
   }
 
-  if (isReportsOverviewQuery(message)) {
+  if (isReportsOverviewQuery(message) || isHeadcountOverviewQuery(message)) {
     return buildOverviewPlan();
   }
 

@@ -51,6 +51,7 @@ export async function getTeacherClassesHandler(req, res) {
         { classNumber: { $in: teacher.assignedClassIds || [] } },
       ],
       isActive: true,
+      ...(teacher.adminId ? { assignedAdmin: teacher.adminId } : {}),
     })
     .populate('assignedSubjects', '_id name description code board')
     .select('_id classNumber section description assignedSubjects name');

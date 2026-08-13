@@ -396,3 +396,13 @@ export function isReportsOverviewQuery(message) {
     lower
   );
 }
+
+/** "How many students and teachers are active?" needs both metrics, not one module. */
+export function isHeadcountOverviewQuery(message) {
+  const lower = String(message || '').toLowerCase();
+  if (/class\s*\d+/i.test(lower)) return false;
+  const students = /\bstudents?\b/.test(lower);
+  const teachers = /\bteachers?\b/.test(lower);
+  const countish = /((how|who)\s*many|count|total|number of|are there|\bactive\b)/i.test(lower);
+  return students && teachers && countish;
+}

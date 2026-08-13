@@ -35,10 +35,19 @@ function extractNumberTokens(text) {
   return new Set(matches);
 }
 
+/** Model sometimes echoes the grounding payload. Never show that to the admin. */
+function stripFactsJsonLeak(text) {
+  let out = String(text || '');
+  out = out.replace(/\bFACTS[_ ]?JSON\s*:?\s*/gi, '');
+  out = out.replace(/\{[^{}]*"(?:module|count|operation|rows|overview)"[^{}]*\}/g, '');
+  out = out.replace(/\n?\s*\{[^{}]{0,400}\}\s*$/g, '');
+  return out.replace(/[ \t]+\n/g, '\n').replace(/\n{3,}/g, '\n\n').trim();
+}
+
 function validateDbGroundedResponse({ text, facts, userPrompt }) {
-  const t = String(text || '').trim();
+  const t = stripFactsJsonLeak(String(text || '').trim());
   if (!t) return { ok: false, reason: 'empty_response' };
-  if (/^\s*\{[\s\S]*\}\s*$/.test(t)) {
+  if (/facts[_ ]?json/i.test(t) || /^\s*\{[\s\S]*\}\s*$/.test(t)) {
     return { ok: false, reason: 'json_like_response' };
   }
   const lower = t.toLowerCase();
@@ -433,6 +442,7 @@ Do not estimate. Do not guess. Do not hallucinate.
 Never use words: approximately, maybe, likely, around, probably, estimated.
 If module unavailable, say so clearly.
 Keep answer concise and admin-friendly.
+Never reprint FACTS_JSON. Never output JSON. Answer in plain English only.
 
 User question:
 ${String(userPrompt || '').slice(0, 4000)}
@@ -448,17 +458,21 @@ ${JSON.stringify(facts).slice(0, 12000)}
 `;
 
   try {
-    const first = String(await geminiService.generateStructuredContent(prompt, 'text') || '').trim();
+    const first = stripFactsJsonLeak(
+      String(await geminiService.generateStructuredContent(prompt, 'text') || '').trim(),
+    );
     const firstCheck = validateDbGroundedResponse({ text: first, facts, userPrompt });
-    if (firstCheck.ok) return first;
+    if (firstCheck.ok) return stripModelLeaks(first);
 
     const repairPrompt = `${prompt}
 
 Your previous answer violated grounding policy: ${firstCheck.reason}.
-Regenerate now and strictly follow grounding rules.`;
-    const second = String(await geminiService.generateStructuredContent(repairPrompt, 'text') || '').trim();
+Regenerate now in plain English only. Do not print FACTS_JSON or JSON.`;
+    const second = stripFactsJsonLeak(
+      String(await geminiService.generateStructuredContent(repairPrompt, 'text') || '').trim(),
+    );
     const secondCheck = validateDbGroundedResponse({ text: second, facts, userPrompt });
-    if (secondCheck.ok) return second;
+    if (secondCheck.ok) return stripModelLeaks(second);
     return localFallbackResponse({ userPrompt, facts });
   } catch {
     return localFallbackResponse({ userPrompt, facts });

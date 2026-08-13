@@ -41,6 +41,7 @@ import {
 } from '../utils/subjectClassRelations.js';
 import { resolveSubjectContentIds, resolveSubjectContentIdsMany } from '../utils/resolveSubjectContentIds.js';
 import { getClassScheduleAndRoomMap } from '../utils/teacherClassSchedule.js';
+import HomeworkSubmission from '../models/HomeworkSubmission.js';
 
 function isMongoObjectIdString(id) {
   return mongoose.Types.ObjectId.isValid(id) && String(id).length === 24;
@@ -2021,29 +2022,24 @@ export const getTeacherDashboardStats = async (req, res) => {
       }
     }
 
-    // Teacher-uploaded Video docs (legacy) + library Content videos for Overview card.
+    // Teacher-uploaded Video docs only. Do not count raw Content library rows —
+    // those 72-style totals are not what EduOTT / Videos screens show after
+    // surface, catalog, and school-program filters.
     const [videos, assessments, exams] = await Promise.all([
       Video.find({ createdBy: teacherId }).populate('createdBy', 'fullName email'),
       Assessment.find({ createdBy: teacherId }).populate('createdBy', 'fullName email'),
       Exam.find({ createdBy: teacherId }).populate('createdBy', 'fullName email'),
     ]);
 
-    let libraryVideoCount = 0;
-    const librarySubjectIds = effectiveSubjectIds;
-    if (librarySubjectIds.length > 0) {
-      const contentSubjectIds = await resolveSubjectContentIdsMany(
-        librarySubjectIds,
-        boardResolveOpts
-      );
-      if (contentSubjectIds.length > 0) {
-        libraryVideoCount = await Content.countDocuments({
-          subject: { $in: contentSubjectIds },
-          type: 'Video',
-          isActive: true,
-        });
-      }
+    const totalVideosForStats = videos.length;
+
+    let pendingGrades = 0;
+    if (students.length > 0) {
+      pendingGrades = await HomeworkSubmission.countDocuments({
+        studentId: { $in: students.map((s) => s._id) },
+        $or: [{ grade: { $exists: false } }, { grade: null }],
+      });
     }
-    const totalVideosForStats = Math.max(videos.length, libraryVideoCount);
 
     // Calculate average performance
     const examResults = await ExamResult.find({ 
@@ -2119,6 +2115,7 @@ export const getTeacherDashboardStats = async (req, res) => {
           totalStudents: students.length,
           totalClasses: assignedClassesDetails.length,
           totalVideos: totalVideosForStats,
+          pendingGrades,
           totalAssessments: assessments.length,
           totalExams: exams.length,
           averagePerformance: Math.round(averagePerformance)
