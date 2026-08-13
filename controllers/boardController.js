@@ -258,6 +258,12 @@ export const updateBoard = async (req, res) => {
         .trim();
     }
     if (req.body?.isActive !== undefined) {
+      if (code === 'ASLI_EXCLUSIVE_SCHOOLS' && Boolean(req.body.isActive) === false) {
+        return res.status(403).json({
+          success: false,
+          message: 'The platform hub board cannot be deactivated.',
+        });
+      }
       board.isActive = Boolean(req.body.isActive);
     }
     if (req.body?.kind !== undefined) {

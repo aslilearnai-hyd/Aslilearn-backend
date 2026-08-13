@@ -2655,11 +2655,9 @@ function boardsForAdminSubjectScope(admin) {
     String(admin?.board || '').toUpperCase().trim() === 'ASLI_EXCLUSIVE_SCHOOLS';
   if (exclusive) {
     boards.add('ASLI_EXCLUSIVE_SCHOOLS');
-    const tracks = [
-      ...(Array.isArray(admin?.iitCategories) ? admin.iitCategories : []),
-      ...Object.values(admin?.iitCategoriesByClass || {}).flat(),
-    ].some((c) => String(c || '').trim());
-    if (tracks) boards.add('IIT');
+    // Always include IIT subject rows for Asli Prep school admins so Learning Paths /
+    // catalog browse can show Super Admin IIT uploads (track gate still applies on content).
+    boards.add('IIT');
   }
   return [...boards];
 }

@@ -83,11 +83,19 @@ router.get('/asli-prep-content', async (req, res) => {
     console.log('📚 Fetching Asli Prep content for student:', req.userId);
     console.log('Query params:', { subject, type, topic, surface });
 
-    const { getStudentSchoolProgramContext, applySchoolProgramContentFilters, isAllowedContentType } =
+    const {
+      getStudentSchoolProgramContext,
+      applySchoolProgramContentFilters,
+      isAllowedContentType,
+      resolveIitCategoriesForContentBrowse,
+    } =
       await import('../../utils/schoolProgram.js');
     const { boardsForSchoolContentScope } = await import('../../constants/boards.js');
+    const baseProgramCtx = await getStudentSchoolProgramContext(req.userId);
+    const iitCategoriesForBrowse = resolveIitCategoriesForContentBrowse(baseProgramCtx);
     const programCtx = {
-      ...(await getStudentSchoolProgramContext(req.userId)),
+      ...baseProgramCtx,
+      iitCategories: iitCategoriesForBrowse,
       surface,
     };
 
@@ -155,7 +163,6 @@ router.get('/asli-prep-content', async (req, res) => {
 
     let librarySubjectIds = await resolveStudentSubjectIdsForLibrary(
       student,
-      adminBoard,
       studentClassDoc
     );
 
@@ -174,15 +181,11 @@ router.get('/asli-prep-content', async (req, res) => {
     } = await import('../../utils/studentClassContent.js');
     const studentClassNumber = resolveStudentClassNumber(student, studentClassDoc);
 
-    // IIT EduOTT videos sit on IIT-board subjects — merge them only for EduOTT / unscoped
-    // library fetches. Learning Paths must not pull IIT Maths_6 siblings into board subjects.
-    const { isLearningPathSurface } = await import('../../utils/schoolProgram.js');
-    const lpSurface = isLearningPathSurface(surface);
+    // Include IIT-board catalog subjects for Asli Prep (Learning Paths nests them under Maths, etc.).
     if (
-      !lpSurface &&
       programCtx.isAsliPrepExclusive &&
-      Array.isArray(programCtx.iitCategories) &&
-      programCtx.iitCategories.some((c) => String(c || '').trim())
+      Array.isArray(iitCategoriesForBrowse) &&
+      iitCategoriesForBrowse.some((c) => String(c || '').trim())
     ) {
       const { mergeIitCatalogSubjectsIntoLibraryIds } = await import(
         '../../utils/iitCatalogSubjects.js'
@@ -190,7 +193,7 @@ router.get('/asli-prep-content', async (req, res) => {
       librarySubjectIds = await mergeIitCatalogSubjectsIntoLibraryIds(
         librarySubjectIds,
         studentClassNumber || student.classNumber,
-        { iitCategories: programCtx.iitCategories },
+        { iitCategories: iitCategoriesForBrowse },
       );
     }
 
@@ -219,7 +222,8 @@ router.get('/asli-prep-content', async (req, res) => {
       curriculumBoard: programCtx.curriculumBoard || boardUpper,
       isAsliPrepExclusive: programCtx.isAsliPrepExclusive,
       iitCategories: programCtx.iitCategories,
-      excludeIitBoard: lpSurface,
+      // Always include IIT siblings when tracks are assigned so LP materials + EduOTT videos resolve.
+      excludeIitBoard: false,
     });
     const siblingBoardOpts = schoolBoards.length
       ? { boards: schoolBoards }

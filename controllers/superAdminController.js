@@ -763,6 +763,17 @@ export const getAdminSchoolDetail = async (req, res) => {
       permissions: admin.permissions || [],
       vidyaEnabledForTeachers: admin.vidyaEnabledForTeachers !== false,
       vidyaEnabledForStudents: admin.vidyaEnabledForStudents !== false,
+      vidyaUsageMode:
+        String(admin.vidyaUsageMode || 'unlimited').toLowerCase() === 'limited'
+          ? 'limited'
+          : 'unlimited',
+      vidyaLimitChatbot: Boolean(admin.vidyaLimitChatbot),
+      vidyaLimitTools: Boolean(admin.vidyaLimitTools),
+      vidyaChatPerDay: Math.max(1, Math.floor(Number(admin.vidyaChatPerDay) || 10)),
+      vidyaGenerationsPerDay: Math.max(
+        1,
+        Math.floor(Number(admin.vidyaGenerationsPerDay) || 10)
+      ),
       curriculumBoard:
         admin.curriculumBoard ||
         (isStoredCurriculumBoard(admin.board) ? String(admin.board).toUpperCase().trim() : 'CBSE'),
@@ -960,6 +971,20 @@ export const createAdmin = async (req, res) => {
       state,
       schoolDetails: rawSchoolDetails
     } = req.body;
+
+    const { schoolVidyaPolicyFromBody } = await import('../utils/schoolVidyaLimits.js');
+    const vidyaPolicy = schoolVidyaPolicyFromBody(req.body);
+    if (
+      String(req.body.vidyaUsageMode || '').toLowerCase() === 'limited' &&
+      !vidyaPolicy.vidyaLimitChatbot &&
+      !vidyaPolicy.vidyaLimitTools
+    ) {
+      return res.status(400).json({
+        success: false,
+        message:
+          'When Vidya is Limited, select Chatbot and/or AI Tools and set the daily limits.',
+      });
+    }
     
     // Validate required fields
     if (!name || !email) {
@@ -1085,6 +1110,11 @@ export const createAdmin = async (req, res) => {
       ...schoolFields,
       contactPerson: schoolFields.contactPerson || name.trim(),
       isActive: true,
+      vidyaUsageMode: vidyaPolicy.vidyaUsageMode,
+      vidyaLimitChatbot: vidyaPolicy.vidyaLimitChatbot,
+      vidyaLimitTools: vidyaPolicy.vidyaLimitTools,
+      vidyaChatPerDay: vidyaPolicy.vidyaChatPerDay,
+      vidyaGenerationsPerDay: vidyaPolicy.vidyaGenerationsPerDay,
     });
 
     const newAdmin = new User({
@@ -1095,6 +1125,11 @@ export const createAdmin = async (req, res) => {
       permissions: permissions || [],
       vidyaEnabledForTeachers: vidyaEnabledForTeachers !== false,
       vidyaEnabledForStudents: vidyaEnabledForStudents !== false,
+      vidyaUsageMode: vidyaPolicy.vidyaUsageMode,
+      vidyaLimitChatbot: vidyaPolicy.vidyaLimitChatbot,
+      vidyaLimitTools: vidyaPolicy.vidyaLimitTools,
+      vidyaChatPerDay: vidyaPolicy.vidyaChatPerDay,
+      vidyaGenerationsPerDay: vidyaPolicy.vidyaGenerationsPerDay,
       isActive: true,
     });
     applySchoolToAdminUser(newAdmin, school);
@@ -1206,6 +1241,47 @@ export const updateAdmin = async (req, res) => {
     if (vidyaEnabledForStudents !== undefined) {
       userUpdate.vidyaEnabledForStudents = Boolean(vidyaEnabledForStudents);
     }
+
+    const vidyaPolicyTouched =
+      req.body.vidyaUsageMode !== undefined ||
+      req.body.vidyaLimitChatbot !== undefined ||
+      req.body.vidyaLimitTools !== undefined ||
+      req.body.vidyaChatPerDay !== undefined ||
+      req.body.vidyaGenerationsPerDay !== undefined;
+    if (vidyaPolicyTouched) {
+      const { schoolVidyaPolicyFromBody } = await import('../utils/schoolVidyaLimits.js');
+      const vidyaPolicy = schoolVidyaPolicyFromBody({
+        vidyaUsageMode: req.body.vidyaUsageMode ?? admin.vidyaUsageMode,
+        vidyaLimitChatbot:
+          req.body.vidyaLimitChatbot !== undefined
+            ? req.body.vidyaLimitChatbot
+            : admin.vidyaLimitChatbot,
+        vidyaLimitTools:
+          req.body.vidyaLimitTools !== undefined
+            ? req.body.vidyaLimitTools
+            : admin.vidyaLimitTools,
+        vidyaChatPerDay: req.body.vidyaChatPerDay ?? admin.vidyaChatPerDay,
+        vidyaGenerationsPerDay:
+          req.body.vidyaGenerationsPerDay ?? admin.vidyaGenerationsPerDay,
+      });
+      if (
+        String(req.body.vidyaUsageMode || '').toLowerCase() === 'limited' &&
+        !vidyaPolicy.vidyaLimitChatbot &&
+        !vidyaPolicy.vidyaLimitTools
+      ) {
+        return res.status(400).json({
+          success: false,
+          message:
+            'When Vidya is Limited, select Chatbot and/or AI Tools and set the daily limits.',
+        });
+      }
+      userUpdate.vidyaUsageMode = vidyaPolicy.vidyaUsageMode;
+      userUpdate.vidyaLimitChatbot = vidyaPolicy.vidyaLimitChatbot;
+      userUpdate.vidyaLimitTools = vidyaPolicy.vidyaLimitTools;
+      userUpdate.vidyaChatPerDay = vidyaPolicy.vidyaChatPerDay;
+      userUpdate.vidyaGenerationsPerDay = vidyaPolicy.vidyaGenerationsPerDay;
+    }
+
     if (isActive !== undefined) userUpdate.isActive = Boolean(isActive);
 
     if (password !== undefined && password !== null && String(password).trim() !== '') {
@@ -1332,6 +1408,21 @@ export const updateAdmin = async (req, res) => {
       updatedSchool = await School.findByIdAndUpdate(
         school._id,
         { isActive: Boolean(isActive) },
+        { new: true }
+      );
+    }
+
+    if (vidyaPolicyTouched && (updatedSchool || school)) {
+      const schoolId = (updatedSchool || school)._id;
+      updatedSchool = await School.findByIdAndUpdate(
+        schoolId,
+        {
+          vidyaUsageMode: userUpdate.vidyaUsageMode,
+          vidyaLimitChatbot: userUpdate.vidyaLimitChatbot,
+          vidyaLimitTools: userUpdate.vidyaLimitTools,
+          vidyaChatPerDay: userUpdate.vidyaChatPerDay,
+          vidyaGenerationsPerDay: userUpdate.vidyaGenerationsPerDay,
+        },
         { new: true }
       );
     }

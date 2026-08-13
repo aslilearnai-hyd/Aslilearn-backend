@@ -1629,7 +1629,7 @@ async function processCsvRows(rows, schoolAdminId, { dryRun = false, mode = 'imp
         ));
 
     if (hasConflict) {
-      errors.push({ row: i + 2, reason: 'Conflict detected', status: 'warning', ...resolved.rowMeta });
+        errors.push({ row: i + 2, reason: 'Conflict detected', status: 'warning', ...resolved.rowMeta });
       if (effectiveMode === 'merge' || dryRun) {
         skipped++;
         continue;
@@ -1652,7 +1652,7 @@ async function processCsvRows(rows, schoolAdminId, { dryRun = false, mode = 'imp
       const deleteFilter =
         effectiveMode === 'replace-grid'
           ? {
-              schoolAdminId,
+        schoolAdminId,
               classId: { $in: classIds },
               date: { $gte: min, $lte: max },
             }
@@ -1682,7 +1682,7 @@ async function processCsvRows(rows, schoolAdminId, { dryRun = false, mode = 'imp
             reason: we?.errmsg || we?.err?.message || 'Failed to save row',
             status: 'error',
           });
-          skipped++;
+        skipped++;
         }
         if (!writeErrors.length && !n) {
           errors.push({
@@ -1829,7 +1829,7 @@ export const downloadCSVTemplate = async (req, res) => {
 
     const lines = [CSV_HEADERS.join(','), ...sampleRows.map((row) => row.map(csvEscape).join(','))];
     res.setHeader('Content-Type', 'text/csv; charset=utf-8');
-    res.setHeader('Content-Disposition', 'attachment; filename=timetable-template.csv');
+  res.setHeader('Content-Disposition', 'attachment; filename=timetable-template.csv');
     res.send(lines.join('\n'));
   } catch (error) {
     console.error('downloadCSVTemplate:', error);

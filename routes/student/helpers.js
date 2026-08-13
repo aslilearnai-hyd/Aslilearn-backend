@@ -97,42 +97,25 @@ export async function resolveStudentClassDoc(student) {
 }
 
 /**
- * Subject IDs for student: class.assignedSubjects, subject.classIds, student.assignedSubjects.
- * Does not match subject names with class number suffixes.
+ * Subject IDs for student library. Accepts (student, classDoc) or legacy
+ * (student, adminBoard, classDoc). Catalog subjects for the class are included
+ * automatically — no admin "Assign Subjects to Class" step required.
  */
-export async function resolveStudentSubjectIdsForLibrary(student, adminBoardRaw, studentClassDoc) {
-  const idStrToOid = new Map();
-  const addId = (id) => {
-    if (!id) return;
-    const oid =
-      id instanceof mongoose.Types.ObjectId ? id : new mongoose.Types.ObjectId(String(id));
-    idStrToOid.set(oid.toString(), oid);
-  };
+export async function resolveStudentSubjectIdsForLibrary(student, arg2, arg3) {
+  const { resolveStudentSubjectIdsForLibrary: resolveIds } = await import(
+    '../../utils/studentLibraryContents.js'
+  );
+  const looksLikeClassDoc = (value) =>
+    value &&
+    typeof value === 'object' &&
+    !Array.isArray(value) &&
+    (value._id != null ||
+      value.classNumber != null ||
+      Array.isArray(value.assignedSubjects));
 
-  if (student.assignedSubjects?.length) {
-    for (const subj of student.assignedSubjects) {
-      addId(subj._id ? subj._id : subj);
-    }
-  }
-
-  if (studentClassDoc?.assignedSubjects?.length) {
-    for (const subj of studentClassDoc.assignedSubjects) {
-      addId(subj._id ? subj._id : subj);
-    }
-  }
-
-  if (studentClassDoc?._id) {
-    const linked = await Subject.find({
-      isActive: true,
-      name: { $not: /__deleted__/ },
-      classIds: studentClassDoc._id,
-    })
-      .select('_id')
-      .lean();
-    for (const row of linked) addId(row._id);
-  }
-
-  return Array.from(idStrToOid.values());
+  const studentClassDoc =
+    arg3 !== undefined ? arg3 : looksLikeClassDoc(arg2) ? arg2 : null;
+  return resolveIds(student, studentClassDoc);
 }
 
 /** Active catalog subjects assigned to the student's class (not whole board). */

@@ -26,6 +26,9 @@ import {
   getTimetablePhoto,
   uploadTimetablePhoto,
   deleteTimetablePhoto,
+  getMyTimetablePhoto,
+  uploadMyTimetablePhoto,
+  deleteMyTimetablePhoto,
 } from '../controllers/timetablePhotoController.js';
 
 const router = express.Router();
@@ -81,6 +84,16 @@ router.post(
   uploadTimetablePhoto
 );
 router.delete('/photo', authorizeRoles('admin', 'teacher'), deleteTimetablePhoto);
+
+/** Teacher personal timetable (single photo, no class link) */
+router.get('/my-photo', authorizeRoles('teacher'), getMyTimetablePhoto);
+router.post(
+  '/my-photo',
+  authorizeRoles('teacher'),
+  photoUpload.single('image'),
+  uploadMyTimetablePhoto
+);
+router.delete('/my-photo', authorizeRoles('teacher'), deleteMyTimetablePhoto);
 
 router.post('/', authorizeRoles('admin'), createTimetableEntry);
 router.put('/:id', authorizeRoles('admin'), updateTimetableEntry);

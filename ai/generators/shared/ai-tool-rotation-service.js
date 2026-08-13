@@ -145,8 +145,8 @@ function rotationKey({ classLabel, subject, topic, subtopic, toolName, scope, bo
 }
 
 /** Keep rotation snappy: never load every historical generation for a chapter. */
-const EXACT_CANDIDATE_LIMIT = 8;
-const FUZZY_POOL_LIMIT = 60;
+const EXACT_CANDIDATE_LIMIT = 24;
+const FUZZY_POOL_LIMIT = 80;
 /** Atlas multiplanner + compound filters need headroom; catch timeouts and continue. */
 const QUERY_MAX_TIME_MS = 25_000;
 
@@ -331,6 +331,10 @@ async function executeRotationSearch({
     const pickFromOrder = async (order) => {
       if (!validator) {
         const idx = order[0];
+        // Persist cursor so the next Generate advances to a different variant.
+        if (!preferLatest && docs.length > 1) {
+          setCursorIndex(key, idx);
+        }
         return {
           doc: docs[idx] || docs[0],
           matchType: preferLatest ? `${matchType}-latest` : matchType,
@@ -375,8 +379,8 @@ async function executeRotationSearch({
     };
 
     if (preferLatest) {
-      const latestIdx = Math.max(0, docs.length - 1);
-      const order = Array.from({ length: docs.length }, (_, i) => (latestIdx - i + docs.length) % docs.length);
+      // docs are sorted createdAt:-1 → index 0 is newest
+      const order = Array.from({ length: docs.length }, (_, i) => i);
       return pickFromOrder(order);
     }
 
@@ -421,6 +425,22 @@ async function executeRotationSearch({
         },
       );
       if (docs.length > 0) {
+        docs.sort((a, b) => {
+          const va = Number(
+            a?.metadata?.generationVariant ??
+              a?.metadata?.extraParams?.generationVariant ??
+              0,
+          );
+          const vb = Number(
+            b?.metadata?.generationVariant ??
+              b?.metadata?.extraParams?.generationVariant ??
+              0,
+          );
+          if (va !== vb) return va - vb;
+          return (
+            new Date(b?.createdAt || 0).getTime() - new Date(a?.createdAt || 0).getTime()
+          );
+        });
         const picked = await selectByRotation(
           docs,
           attempt.matchType,
@@ -571,6 +591,8 @@ async function fetchRotatingAiToolDataInner({
   const normalizedTool = normalize(toolName);
 
   if (fastDelivery && normalizedTool) {
+    // Dashboards must rotate across saved variants — never pin preferLatest here
+    // or every Generate returns the same Super Admin row.
     const fast = await executeRotationSearch({
       classLabel,
       subject,
@@ -579,14 +601,17 @@ async function fetchRotatingAiToolDataInner({
       toolName,
       board: lookupBoard,
       productCategory,
-      preferLatest: true,
+      preferLatest: false,
       strictToolMatch: true,
       cursorScope,
       validator,
       strictBoard: Boolean(lookupBoard),
       exactOnly: true,
     });
-    if (fast.doc) {
+    // Only short-circuit when we already have multiple variants to rotate through.
+    // A single exact hit often means other batch variants are nearby under a slightly
+    // different topic/subtopic string — continue into the full search.
+    if (fast.doc && Number(fast.totalCandidates) > 1) {
       return {
         ...fast,
         matchType: fast.matchType ? `${fast.matchType}-fast` : 'exact-fast',

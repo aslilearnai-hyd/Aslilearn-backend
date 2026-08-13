@@ -71,6 +71,50 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: true,
   },
+  /**
+   * School Vidya usage: unlimited | limited.
+   * When limited, vidyaLimitChatbot / vidyaLimitTools choose scope; per-day caps below.
+   */
+  vidyaUsageMode: {
+    type: String,
+    enum: ['unlimited', 'limited'],
+    default: 'unlimited',
+  },
+  vidyaLimitChatbot: {
+    type: Boolean,
+    default: false,
+  },
+  vidyaLimitTools: {
+    type: Boolean,
+    default: false,
+  },
+  vidyaChatPerDay: {
+    type: Number,
+    min: 1,
+    default: 10,
+  },
+  vidyaGenerationsPerDay: {
+    type: Number,
+    min: 1,
+    default: 10,
+  },
+  /** Per-user rolling 24h counters (school members). */
+  schoolVidyaChatCount: {
+    type: Number,
+    default: 0,
+  },
+  schoolVidyaChatWindowStartedAt: {
+    type: Date,
+    default: null,
+  },
+  schoolVidyaGenerationCount: {
+    type: Number,
+    default: 0,
+  },
+  schoolVidyaGenerationWindowStartedAt: {
+    type: Date,
+    default: null,
+  },
   details: {
     type: String,
     default: ''
@@ -213,6 +257,21 @@ const userSchema = new mongoose.Schema({
     type: String,
     trim: true,
     default: '',
+  },
+  /** Lifetime Vidya chat messages used while unpaid trial (limit 3 until payment). */
+  trialVidyaChatUsed: {
+    type: Number,
+    default: 0,
+  },
+  /** AI tool generations used in the current 24h trial window. */
+  trialGenerationCount: {
+    type: Number,
+    default: 0,
+  },
+  /** Start of the current 24h generation quota window. */
+  trialGenerationWindowStartedAt: {
+    type: Date,
+    default: null,
   },
   // School name for admins
   schoolName: {

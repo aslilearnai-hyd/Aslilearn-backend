@@ -82,6 +82,10 @@ export async function generateAiToolLiveFallback(opts = {}) {
   let generatedContent;
   let structuredContent;
   let contentType;
+  const uniqueSeed = `${Date.now()}-${Math.random().toString(36).slice(2, 10)}-${Math.random().toString(36).slice(2, 6)}`;
+  const generationVariant =
+    Math.floor(Math.abs(Number(opts.extraParams?.generationVariant)) || 0) ||
+    (Math.floor(Date.now() / 1000) % 997) + 1;
   try {
     ({ generatedContent, structuredContent, contentType } =
       await generateStructuredContentForAiGenerator(toolType, {
@@ -95,6 +99,9 @@ export async function generateAiToolLiveFallback(opts = {}) {
           ...(opts.extraParams && typeof opts.extraParams === 'object' ? opts.extraParams : {}),
           dashboardLiveFallback: true,
           qualityTier: 'fast',
+          generationVariant,
+          variantIndex: generationVariant,
+          uniqueSeed,
         },
       }));
   } catch (error) {
@@ -138,6 +145,8 @@ export async function generateAiToolLiveFallback(opts = {}) {
         formatSource: 'aiToolTemplates',
         dashboardLiveFallback: true,
         liveFallbackAt: new Date().toISOString(),
+        generationVariant,
+        uniqueSeed,
       },
       ...(teacherId ? { teacherId } : {}),
     });

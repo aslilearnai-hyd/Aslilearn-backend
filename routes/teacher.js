@@ -15,6 +15,7 @@ import homeworkRoutes from './teacher/homework.js';
 import attendanceRoutes from './teacher/attendance.js';
 import remarksRoutes from './teacher/remarks.js';
 import studentsRoutes from './teacher/students.js';
+import examsRoutes from './teacher/exams.js';
 import quizzesRoutes from './teacher/quizzes.js';
 import workDiaryRoutes from './teacher/workDiary.js';
 import omrResultsRoutes from './teacher/omrResults.js';
@@ -43,6 +44,7 @@ router.use(attendanceRoutes);
 // Static /students/remarks before parametric /students/:id/* in students router
 router.use(remarksRoutes);
 router.use(studentsRoutes);
+router.use(examsRoutes);
 router.use(quizzesRoutes);
 router.use(workDiaryRoutes);
 router.use(omrResultsRoutes);

@@ -275,12 +275,18 @@ export async function getTimetablePhoto(req, res) {
   }
 }
 
-/** POST /api/timetable/photo — multipart image + classId */
+/** POST /api/timetable/photo — multipart image + classId (admin / class photos only) */
 export async function uploadTimetablePhoto(req, res) {
   try {
     const role = req.user?.role;
-    if (role !== 'admin' && role !== 'teacher') {
-      return res.status(403).json({ success: false, message: 'Only admin or teacher can upload' });
+    if (role === 'teacher') {
+      return res.status(403).json({
+        success: false,
+        message: 'Teachers upload a single personal timetable at /api/timetable/my-photo (no class link)',
+      });
+    }
+    if (role !== 'admin') {
+      return res.status(403).json({ success: false, message: 'Only admin can upload class timetable photos' });
     }
 
     const classId = toObjectId(req.body?.classId);
@@ -299,16 +305,6 @@ export async function uploadTimetablePhoto(req, res) {
     const cls = await assertClassBelongsToSchool(classId, schoolAdminId);
     if (!cls) {
       return res.status(404).json({ success: false, message: 'Class not found for this school' });
-    }
-
-    if (role === 'teacher') {
-      const ok = await assertTeacherCanAccessClass(req, classId, schoolAdminId);
-      if (!ok) {
-        return res.status(403).json({
-          success: false,
-          message: 'You can only upload timetables for your assigned classes',
-        });
-      }
     }
 
     ensureUploadDir();
@@ -391,6 +387,117 @@ export async function deleteTimetablePhoto(req, res) {
     return res.json({ success: true, message: 'Timetable photo removed' });
   } catch (error) {
     console.error('deleteTimetablePhoto:', error);
+    return res.status(500).json({
+      success: false,
+      message: error.message || 'Failed to delete timetable photo',
+    });
+  }
+}
+
+function serializeTeacherPhoto(teacher) {
+  if (!teacher?.timetableImageUrl) return null;
+  return {
+    _id: String(teacher._id),
+    teacherId: String(teacher._id),
+    label: 'My timetable',
+    imageUrl: teacher.timetableImageUrl,
+    originalFileName: teacher.timetableOriginalFileName || '',
+    updatedAt: teacher.timetableUploadedAt || teacher.updatedAt || null,
+  };
+}
+
+/** GET /api/timetable/my-photo — teacher's own single timetable photo */
+export async function getMyTimetablePhoto(req, res) {
+  try {
+    if (req.user?.role !== 'teacher') {
+      return res.status(403).json({ success: false, message: 'Teachers only' });
+    }
+    const teacherId = toObjectId(req.user?.userId || req.user?.id);
+    const teacher = await Teacher.findById(teacherId)
+      .select('timetableImageUrl timetableOriginalFileName timetableUploadedAt updatedAt')
+      .lean();
+    if (!teacher) {
+      return res.status(404).json({ success: false, message: 'Teacher not found' });
+    }
+    return res.json({ success: true, data: serializeTeacherPhoto(teacher) });
+  } catch (error) {
+    console.error('getMyTimetablePhoto:', error);
+    return res.status(500).json({
+      success: false,
+      message: error.message || 'Failed to fetch timetable photo',
+    });
+  }
+}
+
+/** POST /api/timetable/my-photo — upload teacher's single timetable (no class) */
+export async function uploadMyTimetablePhoto(req, res) {
+  try {
+    if (req.user?.role !== 'teacher') {
+      return res.status(403).json({ success: false, message: 'Teachers only' });
+    }
+    if (!req.file?.buffer) {
+      return res.status(400).json({ success: false, message: 'Please upload a timetable photo' });
+    }
+
+    const teacherId = toObjectId(req.user?.userId || req.user?.id);
+    const teacher = await Teacher.findById(teacherId);
+    if (!teacher) {
+      return res.status(404).json({ success: false, message: 'Teacher not found' });
+    }
+
+    ensureUploadDir();
+    const ext = path.extname(req.file.originalname || '').toLowerCase() || '.jpg';
+    const safeExt = ['.jpg', '.jpeg', '.png', '.webp', '.gif', '.heic'].includes(ext)
+      ? ext
+      : '.jpg';
+    const filename = `teacher_${teacherId}_${Date.now()}${safeExt}`;
+    const absPath = path.join(UPLOAD_DIR, filename);
+    fs.writeFileSync(absPath, req.file.buffer);
+    const imageUrl = `/uploads/timetables/${filename}`;
+
+    if (teacher.timetableImageUrl) unlinkQuiet(teacher.timetableImageUrl);
+
+    teacher.timetableImageUrl = imageUrl;
+    teacher.timetableOriginalFileName = req.file.originalname || filename;
+    teacher.timetableUploadedAt = new Date();
+    await teacher.save();
+
+    return res.json({
+      success: true,
+      message: 'Timetable photo saved',
+      data: serializeTeacherPhoto(teacher),
+    });
+  } catch (error) {
+    console.error('uploadMyTimetablePhoto:', error);
+    return res.status(500).json({
+      success: false,
+      message: error.message || 'Failed to upload timetable photo',
+    });
+  }
+}
+
+/** DELETE /api/timetable/my-photo */
+export async function deleteMyTimetablePhoto(req, res) {
+  try {
+    if (req.user?.role !== 'teacher') {
+      return res.status(403).json({ success: false, message: 'Teachers only' });
+    }
+    const teacherId = toObjectId(req.user?.userId || req.user?.id);
+    const teacher = await Teacher.findById(teacherId);
+    if (!teacher) {
+      return res.status(404).json({ success: false, message: 'Teacher not found' });
+    }
+    if (!teacher.timetableImageUrl) {
+      return res.status(404).json({ success: false, message: 'No timetable photo found' });
+    }
+    unlinkQuiet(teacher.timetableImageUrl);
+    teacher.timetableImageUrl = '';
+    teacher.timetableOriginalFileName = '';
+    teacher.timetableUploadedAt = null;
+    await teacher.save();
+    return res.json({ success: true, message: 'Timetable photo removed' });
+  } catch (error) {
+    console.error('deleteMyTimetablePhoto:', error);
     return res.status(500).json({
       success: false,
       message: error.message || 'Failed to delete timetable photo',

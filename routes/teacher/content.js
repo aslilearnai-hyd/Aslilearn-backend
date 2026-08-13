@@ -175,10 +175,18 @@ router.get('/asli-prep-content', async (req, res) => {
     console.log('📚 Fetching Asli Prep content for teacher:', teacherId);
     console.log('Query params:', { subject, type, topic, surface });
 
-    const { getTeacherSchoolProgramContext, applySchoolProgramContentFilters, isAllowedContentType, isLearningPathSurface, isEduOttSurface } =
-      await import('../../utils/schoolProgram.js');
+    const {
+      getTeacherSchoolProgramContext,
+      applySchoolProgramContentFilters,
+      isAllowedContentType,
+      isEduOttSurface,
+      resolveIitCategoriesForContentBrowse,
+    } = await import('../../utils/schoolProgram.js');
+    const baseProgramCtx = await getTeacherSchoolProgramContext(teacherId);
+    const iitCategoriesForBrowse = resolveIitCategoriesForContentBrowse(baseProgramCtx);
     const programCtx = {
-      ...(await getTeacherSchoolProgramContext(teacherId)),
+      ...baseProgramCtx,
+      iitCategories: iitCategoriesForBrowse,
       surface,
     };
 
@@ -199,22 +207,15 @@ router.get('/asli-prep-content', async (req, res) => {
       });
     }
 
-    if (
-      eduOtt &&
-      programCtx.isAsliPrepExclusive &&
-      !(
-        Array.isArray(programCtx.iitCategories) &&
-        programCtx.iitCategories.some((c) => String(c || '').trim())
-      )
-    ) {
+    if (eduOtt && !programCtx.isAsliPrepExclusive) {
       return res.json({
         success: true,
         data: [],
         message:
-          'IIT EduOTT is not enabled for this school yet. Ask Super Admin to assign Alpha/Beta/Gamma tracks on the school profile.',
+          'EduOTT IIT videos are available only for Asli Prep schools with IIT EduOTT enabled. Board videos are in Learning Paths.',
         meta: {
-          reason: 'iit_eduott_off',
-          isAsliPrepExclusive: true,
+          reason: 'not_asli_prep',
+          isAsliPrepExclusive: false,
           iitCategories: [],
         },
       });
@@ -239,10 +240,9 @@ router.get('/asli-prep-content', async (req, res) => {
       librarySubjectIds = await resolveIndividualCatalogSubjectIds(teacher);
     }
 
-    // IIT EduOTT videos sit on IIT-board subjects — merge them for EduOTT (same as students).
-    const lpSurface = isLearningPathSurface(surface);
+    // IIT materials nest under board subjects in Learning Paths (same as students).
+    // EduOTT and Learning Paths both need IIT catalog subject ids.
     if (
-      !lpSurface &&
       programCtx.isAsliPrepExclusive &&
       Array.isArray(programCtx.iitCategories) &&
       programCtx.iitCategories.some((c) => String(c || '').trim())
@@ -286,15 +286,15 @@ router.get('/asli-prep-content', async (req, res) => {
       });
     }
 
-    // Resolve siblings across this school's boards (stored + curriculum), not teacher.board alone.
-    // Asli Prep teachers store ASLI hub board while content often sits on curriculum subjects.
+    // Resolve siblings across this school's boards (stored + curriculum + IIT).
+    // Asli Prep teachers store ASLI hub board while content often sits on curriculum / IIT subjects.
     const { boardsForSchoolContentScope } = await import('../../constants/boards.js');
     const contentBoards = boardsForSchoolContentScope({
       board: programCtx.adminBoard || teacher.board,
       curriculumBoard: programCtx.curriculumBoard,
       isAsliPrepExclusive: programCtx.isAsliPrepExclusive,
       iitCategories: programCtx.iitCategories,
-      excludeIitBoard: lpSurface,
+      excludeIitBoard: false,
     });
     const boardResolveOpts =
       contentBoards.length > 0 ? { boards: contentBoards } : {};

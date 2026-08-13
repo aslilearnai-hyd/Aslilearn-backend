@@ -266,6 +266,21 @@ export function formatSchoolListItem(school, admin, stats = {}) {
     permissions: admin?.permissions || [],
     vidyaEnabledForTeachers: admin?.vidyaEnabledForTeachers !== false,
     vidyaEnabledForStudents: admin?.vidyaEnabledForStudents !== false,
+    vidyaUsageMode:
+      String(admin?.vidyaUsageMode || school?.vidyaUsageMode || 'unlimited').toLowerCase() ===
+      'limited'
+        ? 'limited'
+        : 'unlimited',
+    vidyaLimitChatbot: Boolean(admin?.vidyaLimitChatbot ?? school?.vidyaLimitChatbot),
+    vidyaLimitTools: Boolean(admin?.vidyaLimitTools ?? school?.vidyaLimitTools),
+    vidyaChatPerDay: Math.max(
+      1,
+      Math.floor(Number(admin?.vidyaChatPerDay ?? school?.vidyaChatPerDay) || 10)
+    ),
+    vidyaGenerationsPerDay: Math.max(
+      1,
+      Math.floor(Number(admin?.vidyaGenerationsPerDay ?? school?.vidyaGenerationsPerDay) || 10)
+    ),
     curriculumBoard:
       school?.curriculumBoard ||
       (isStoredCurriculumBoard(school?.board) ? String(school.board).toUpperCase().trim() : 'CBSE'),

@@ -1,4 +1,5 @@
 import { IIT_CATEGORIES, normalizeIitCategories } from '../constants/products.js';
+import { withTrialUsageLimits } from './trialUsageLimits.js';
 
 export const INDIVIDUAL_TRIAL_DAYS = 7;
 
@@ -170,16 +171,19 @@ export function normalizeIndividualSignupBody(body = {}) {
  */
 export function resolveIndividualAccess(doc) {
   if (!doc || !doc.isIndividualAccount) {
-    return {
-      isIndividualAccount: false,
-      subscriptionStatus: 'none',
-      paymentRequired: false,
-      trialActive: false,
-      trialEndsAt: null,
-      trialDaysLeft: null,
-      trialAllowedContentTypes: [],
-      trialAllowedAiTools: [],
-    };
+    return withTrialUsageLimits(
+      {
+        isIndividualAccount: false,
+        subscriptionStatus: 'none',
+        paymentRequired: false,
+        trialActive: false,
+        trialEndsAt: null,
+        trialDaysLeft: null,
+        trialAllowedContentTypes: [],
+        trialAllowedAiTools: [],
+      },
+      doc
+    );
   }
 
   const now = Date.now();
@@ -187,36 +191,42 @@ export function resolveIndividualAccess(doc) {
   const status = String(doc.subscriptionStatus || 'trial').toLowerCase();
 
   if (status === 'active' || status === 'paid') {
-    return {
-      isIndividualAccount: true,
-      subscriptionStatus: 'active',
-      paymentRequired: false,
-      trialActive: false,
-      trialEndsAt: doc.trialEndsAt || null,
-      trialDaysLeft: 0,
-      trialAllowedContentTypes: Array.isArray(doc.trialAllowedContentTypes)
-        ? doc.trialAllowedContentTypes
-        : [],
-      trialAllowedAiTools: Array.isArray(doc.trialAllowedAiTools) ? doc.trialAllowedAiTools : [],
-    };
+    return withTrialUsageLimits(
+      {
+        isIndividualAccount: true,
+        subscriptionStatus: 'active',
+        paymentRequired: false,
+        trialActive: false,
+        trialEndsAt: doc.trialEndsAt || null,
+        trialDaysLeft: 0,
+        trialAllowedContentTypes: Array.isArray(doc.trialAllowedContentTypes)
+          ? doc.trialAllowedContentTypes
+          : [],
+        trialAllowedAiTools: Array.isArray(doc.trialAllowedAiTools) ? doc.trialAllowedAiTools : [],
+      },
+      doc
+    );
   }
 
   const trialActive = Boolean(ends && ends > now && (status === 'trial' || !status || status === 'none'));
   const daysLeft =
     trialActive && ends ? Math.max(0, Math.ceil((ends - now) / (24 * 60 * 60 * 1000))) : 0;
 
-  return {
-    isIndividualAccount: true,
-    subscriptionStatus: trialActive ? 'trial' : 'expired',
-    paymentRequired: !trialActive,
-    trialActive,
-    trialEndsAt: doc.trialEndsAt || null,
-    trialDaysLeft: daysLeft,
-    trialAllowedContentTypes: Array.isArray(doc.trialAllowedContentTypes)
-      ? doc.trialAllowedContentTypes
-      : [],
-    trialAllowedAiTools: Array.isArray(doc.trialAllowedAiTools) ? doc.trialAllowedAiTools : [],
-  };
+  return withTrialUsageLimits(
+    {
+      isIndividualAccount: true,
+      subscriptionStatus: trialActive ? 'trial' : 'expired',
+      paymentRequired: !trialActive,
+      trialActive,
+      trialEndsAt: doc.trialEndsAt || null,
+      trialDaysLeft: daysLeft,
+      trialAllowedContentTypes: Array.isArray(doc.trialAllowedContentTypes)
+        ? doc.trialAllowedContentTypes
+        : [],
+      trialAllowedAiTools: Array.isArray(doc.trialAllowedAiTools) ? doc.trialAllowedAiTools : [],
+    },
+    doc
+  );
 }
 
 /** Individual accounts that are not fully paid — eligible for trialOnly quizzes. */

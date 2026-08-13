@@ -2,10 +2,24 @@ import User from '../models/User.js';
 import Teacher from '../models/Teacher.js';
 import { resolveUserDisplayBoard } from '../constants/boards.js';
 import { resolveClassLabelForAiToolStorage } from './board-label.js';
-import { resolveIitCategoriesForClass } from '../constants/products.js';
+import { IIT_CATEGORIES, resolveIitCategoriesForClass } from '../constants/products.js';
 
 /** All content types (Asli Prep exclusive schools). */
 export const ALL_CONTENT_TYPES = ['Video', 'Audio', 'TextBook', 'Workbook', 'Material', 'Homework'];
+
+/**
+ * IIT tracks for Learning Paths / EduOTT browse.
+ * Same as school admin: if Asli Prep has no tracks assigned yet, preview full Alpha–Delta
+ * so Maths IIT materials appear under Mathematics for students and teachers too.
+ */
+export function resolveIitCategoriesForContentBrowse(programCtx = {}) {
+  const assigned = (Array.isArray(programCtx.iitCategories) ? programCtx.iitCategories : [])
+    .map((c) => String(c || '').trim())
+    .filter(Boolean);
+  if (assigned.length) return assigned;
+  if (programCtx.isAsliPrepExclusive) return [...IIT_CATEGORIES];
+  return [];
+}
 
 /** Normal / curriculum schools (CBSE, STATE, etc.) — not used for super-admin uploads. */
 export const NORMAL_SCHOOL_CONTENT_TYPES = ['Audio', 'TextBook', 'Homework'];
@@ -226,7 +240,7 @@ export async function getStudentSchoolProgramContext(userId) {
     )
     .populate('assignedClass', 'classNumber')
     .select(
-      'board curriculumBoard isAsliPrepExclusive iitCategories iitCategoriesByClass isIndividualAccount trialAllowedContentTypes trialAllowedAiTools assignedAdmin classNumber assignedClass',
+      'board curriculumBoard isAsliPrepExclusive iitCategories iitCategoriesByClass isIndividualAccount subscriptionStatus trialEndsAt trialAllowedContentTypes trialAllowedAiTools trialVidyaChatUsed trialGenerationCount trialGenerationWindowStartedAt assignedAdmin classNumber assignedClass',
     )
     .lean();
   if (!student) {
@@ -239,6 +253,8 @@ export async function getStudentSchoolProgramContext(userId) {
       classNumber: '',
       trialAllowedContentTypes: [],
       trialAllowedAiTools: [],
+      isIndividualAccount: false,
+      studentDoc: null,
     };
   }
   const isAsliPrepExclusive =
@@ -291,6 +307,8 @@ export async function getStudentSchoolProgramContext(userId) {
     trialAllowedAiTools: Array.isArray(student.trialAllowedAiTools)
       ? student.trialAllowedAiTools
       : [],
+    isIndividualAccount: Boolean(student.isIndividualAccount),
+    studentDoc: student,
   };
 }
 
@@ -299,7 +317,7 @@ export async function getTeacherSchoolProgramContext(teacherId, preloadedTeacher
     preloadedTeacher ||
     (await Teacher.findById(teacherId)
       .select(
-        'adminId board isIndividualAccount iitCategories curriculumBoard isAsliPrepExclusive trialAllowedContentTypes trialAllowedAiTools subscriptionStatus trialEndsAt',
+        'adminId board isIndividualAccount iitCategories curriculumBoard isAsliPrepExclusive trialAllowedContentTypes trialAllowedAiTools subscriptionStatus trialEndsAt trialVidyaChatUsed trialGenerationCount trialGenerationWindowStartedAt',
       )
       .lean());
   let admin = null;

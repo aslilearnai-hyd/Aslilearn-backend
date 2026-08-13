@@ -1,11 +1,14 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import Content from '../../models/Content.js';
+import Class from '../../models/Class.js';
 import {
   buildActiveSubjectIdSet,
   filterContentRowsForActiveCatalog,
   getActiveCatalogSubjectIds,
 } from '../../utils/activeCatalog.js';
+import { boardsForSchoolContentScope } from '../../constants/boards.js';
+import { normalizeClassNumberLabel } from '../../utils/studentClassContent.js';
 
 const router = express.Router();
 
@@ -14,14 +17,23 @@ router.get('/asli-prep-content', async (req, res) => {
     const { subject, type, topic, surface } = req.query;
     const adminId = req.adminId;
 
-    console.log('📚 Fetching Asli Prep content for admin:', adminId);
-    console.log('Query params:', { subject, type, topic, surface });
-    console.log('📚 Fetching all content (board restrictions removed)');
+    const {
+      getAdminSchoolProgramContext,
+      applySchoolProgramContentFilters,
+      isAllowedContentType,
+      isEduOttSurface,
+      resolveIitCategoriesForContentBrowse,
+    } = await import('../../utils/schoolProgram.js');
 
-    const { getAdminSchoolProgramContext, applySchoolProgramContentFilters, isAllowedContentType, isEduOttSurface } =
-      await import('../../utils/schoolProgram.js');
+    const baseCtx = await getAdminSchoolProgramContext(adminId);
+    const hasTracks =
+      Array.isArray(baseCtx.iitCategories) &&
+      baseCtx.iitCategories.some((c) => String(c || '').trim());
+    const iitCategoriesForAdmin = resolveIitCategoriesForContentBrowse(baseCtx);
+
     const programCtx = {
-      ...(await getAdminSchoolProgramContext(adminId)),
+      ...baseCtx,
+      iitCategories: iitCategoriesForAdmin,
       surface,
     };
 
@@ -32,32 +44,26 @@ router.get('/asli-prep-content', async (req, res) => {
         success: true,
         data: [],
         message: eduOtt
-          ? 'EduOTT IIT videos are available only for Asli Prep schools with IIT EduOTT enabled. Board content stays in Learning Paths.'
+          ? 'EduOTT IIT videos are available only for Asli Prep schools. Board content stays in Learning Paths.'
           : 'This content type is not available for your school program.',
         meta: {
           reason: 'not_asli_prep',
-          isAsliPrepExclusive: false,
-          iitCategories: [],
+          isAsliPrepExclusive: Boolean(programCtx.isAsliPrepExclusive),
+          iitCategories: programCtx.iitCategories || [],
+          iitBrowseFallback: !hasTracks && programCtx.isAsliPrepExclusive,
         },
       });
     }
 
-    if (
-      eduOtt &&
-      programCtx.isAsliPrepExclusive &&
-      !(
-        Array.isArray(programCtx.iitCategories) &&
-        programCtx.iitCategories.some((c) => String(c || '').trim())
-      )
-    ) {
+    if (eduOtt && !programCtx.isAsliPrepExclusive) {
       return res.json({
         success: true,
         data: [],
         message:
-          'IIT EduOTT is not enabled for this school yet. Ask Super Admin to assign Alpha/Beta/Gamma tracks on the school profile.',
+          'EduOTT IIT videos are available only for Asli Prep schools. Board content stays in Learning Paths.',
         meta: {
-          reason: 'iit_eduott_off',
-          isAsliPrepExclusive: true,
+          reason: 'not_asli_prep',
+          isAsliPrepExclusive: false,
           iitCategories: [],
         },
       });
@@ -71,13 +77,52 @@ router.get('/asli-prep-content', async (req, res) => {
       subject: { $in: activeSubjectIds },
     };
 
-    if (subject && subject !== 'all' && mongoose.Types.ObjectId.isValid(subject)) {
+    if (subject && subject !== 'all' && mongoose.Types.ObjectId.isValid(String(subject))) {
       const sid = String(subject);
-      if (activeIdSet.has(sid)) {
-        query.subject = new mongoose.Types.ObjectId(sid);
-      } else {
-        return res.json({ success: true, data: [] });
+      const { resolveSubjectContentIds } = await import(
+        '../../utils/resolveSubjectContentIds.js'
+      );
+      const boards = boardsForSchoolContentScope({
+        board: programCtx.adminBoard || programCtx.curriculumBoard,
+        curriculumBoard: programCtx.curriculumBoard,
+        isAsliPrepExclusive: programCtx.isAsliPrepExclusive,
+        iitCategories: iitCategoriesForAdmin,
+        excludeIitBoard: false,
+      });
+
+      let expandedIds = await resolveSubjectContentIds(sid, { boards });
+      if (programCtx.isAsliPrepExclusive && iitCategoriesForAdmin.length) {
+        const { mergeIitCatalogSubjectsIntoLibraryIds } = await import(
+          '../../utils/iitCatalogSubjects.js'
+        );
+        // Prefer class from the subject row when available
+        const Subject = (await import('../../models/Subject.js')).default;
+        const subjDoc = await Subject.findById(sid).select('classNumber name').lean();
+        const classNum = normalizeClassNumberLabel(subjDoc?.classNumber || '');
+        if (classNum) {
+          expandedIds = await mergeIitCatalogSubjectsIntoLibraryIds(expandedIds, classNum, {
+            iitCategories: iitCategoriesForAdmin,
+          });
+        }
       }
+
+      const filteredExpanded = (expandedIds || [])
+        .map((id) => String(id))
+        .filter((id) => activeIdSet.has(id) && mongoose.Types.ObjectId.isValid(id))
+        .map((id) => new mongoose.Types.ObjectId(id));
+
+      if (!filteredExpanded.length) {
+        return res.json({
+          success: true,
+          data: [],
+          meta: {
+            isAsliPrepExclusive: Boolean(programCtx.isAsliPrepExclusive),
+            iitCategories: programCtx.iitCategories || [],
+            iitBrowseFallback: !hasTracks && programCtx.isAsliPrepExclusive,
+          },
+        });
+      }
+      query.subject = { $in: filteredExpanded };
     }
 
     if (type && type !== 'all') {
@@ -88,8 +133,6 @@ router.get('/asli-prep-content', async (req, res) => {
       query.topic = { $regex: topic.trim(), $options: 'i' };
     }
 
-    console.log('📋 Content query:', JSON.stringify(query, null, 2));
-
     let contents = await Content.find(query)
       .populate('subject', 'name isActive classNumber board stateName productCategory')
       .sort({ createdAt: -1 })
@@ -98,7 +141,29 @@ router.get('/asli-prep-content', async (req, res) => {
     contents = filterContentRowsForActiveCatalog(contents, activeIdSet);
     contents = applySchoolProgramContentFilters(contents, programCtx);
 
-    console.log(`✅ Found ${contents.length} active catalog contents`);
+    // Prefer content for classes this school actually runs (still keep untagged class).
+    if (adminId && mongoose.Types.ObjectId.isValid(String(adminId))) {
+      const adminClasses = await Class.find({
+        assignedAdmin: adminId,
+        isActive: true,
+      })
+        .select('classNumber')
+        .lean();
+      const classSet = new Set(
+        adminClasses
+          .map((c) => normalizeClassNumberLabel(c.classNumber))
+          .filter(Boolean),
+      );
+      if (classSet.size > 0) {
+        contents = contents.filter((row) => {
+          const cn = normalizeClassNumberLabel(
+            row?.classNumber || row?.subject?.classNumber || '',
+          );
+          if (!cn) return true;
+          return classSet.has(cn);
+        });
+      }
+    }
 
     const { enrichContentDurations } = await import('../../utils/enrichContentDurations.js');
     contents = await enrichContentDurations(contents);
@@ -109,6 +174,12 @@ router.get('/asli-prep-content', async (req, res) => {
     res.json({
       success: true,
       data: contents,
+      meta: {
+        isAsliPrepExclusive: Boolean(programCtx.isAsliPrepExclusive),
+        iitCategories: hasTracks ? baseCtx.iitCategories : iitCategoriesForAdmin,
+        iitBrowseFallback: !hasTracks && programCtx.isAsliPrepExclusive,
+        schoolTracksAssigned: hasTracks,
+      },
     });
   } catch (error) {
     console.error('❌ Error fetching Asli Prep content for admin:', error);

@@ -16,6 +16,17 @@ export async function postStudentMentorChat(req, res) {
     const studentId = req.body?.studentId ? String(req.body.studentId) : String(req.userId);
     if (!question) return res.status(400).json({ success: false, message: 'message is required' });
 
+    const { consumeTrialVidyaChat, trialLimitHttpPayload } = await import(
+      '../utils/trialUsageLimits.js'
+    );
+    let trialUsage = null;
+    try {
+      const consumed = await consumeTrialVidyaChat(req.userId, req.user?.role || 'student');
+      trialUsage = consumed.usage;
+    } catch (limitErr) {
+      return res.status(limitErr.statusCode || 429).json(trialLimitHttpPayload(limitErr));
+    }
+
     const result = await runHybridStudentVidyaChat({
       viewerRole: req.user?.role,
       viewerUserId: req.userId,
@@ -53,6 +64,7 @@ export async function postStudentMentorChat(req, res) {
       facts: result.facts,
       summary: result.summary || null,
       autoGreeting: result.autoGreeting || null,
+      trialUsage,
     });
   } catch (err) {
     const status = Number(err?.statusCode) || 500;
