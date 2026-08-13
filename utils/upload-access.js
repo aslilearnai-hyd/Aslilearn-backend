@@ -16,6 +16,7 @@ const SCHOOL_SHARED_PREFIXES = [
   '/ai-diagrams/',
   '/pdfs/',
   '/extracted/',
+  '/timetables/',
 ];
 
 /** Admin / super-admin / teacher only */
