@@ -46,6 +46,12 @@ const iqRankQuizResultSchema = new mongoose.Schema({
     of: String, // questionId -> selected answer
     default: {}
   },
+  /** Calendar day key (Asia/Kolkata YYYY-MM-DD) for daily-bank attempts. */
+  dateKey: {
+    type: String,
+    trim: true,
+    default: null,
+  },
   completedAt: {
     type: Date,
     default: Date.now
@@ -58,6 +64,7 @@ const iqRankQuizResultSchema = new mongoose.Schema({
 iqRankQuizResultSchema.index({ userId: 1, subject: 1 });
 iqRankQuizResultSchema.index({ userId: 1, completedAt: -1 });
 iqRankQuizResultSchema.index({ subject: 1, classNumber: 1 });
+iqRankQuizResultSchema.index({ userId: 1, quizId: 1, dateKey: 1 });
 
 // Ensure one result per user per subject (latest attempt)
 iqRankQuizResultSchema.index({ userId: 1, subject: 1 }, { unique: false });

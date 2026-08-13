@@ -238,6 +238,8 @@ router.get('/iq-rank-questions', async (req, res) => {
           daily: {
             dateKey,
             completed: Boolean(log?.completedAt),
+            score: log?.completedAt && log?.score != null ? Number(log.score) : null,
+            correctCount: log?.completedAt ? Number(log.correctCount) || 0 : 0,
             pickCount: questions.length,
           },
           quiz: {
@@ -336,28 +338,38 @@ router.get('/iq-rank-questions', async (req, res) => {
 // Save IQ/Rank Boost quiz result
 router.post('/iq-rank-quiz-result', async (req, res) => {
   try {
-    const { subjectId, quizId, totalQuestions, correctAnswers, incorrectAnswers, unattempted, score, answers } = req.body;
-    
-    if (!subjectId || totalQuestions === undefined || score === undefined) {
+    const {
+      subjectId: bodySubjectId,
+      subject: bodySubject,
+      quizId,
+      totalQuestions,
+      correctAnswers,
+      incorrectAnswers,
+      unattempted,
+      score,
+      answers,
+    } = req.body;
+
+    let subjectId = bodySubjectId || bodySubject;
+
+    if (totalQuestions === undefined || score === undefined) {
       return res.status(400).json({
         success: false,
-        message: 'Missing required fields'
+        message: 'Missing required fields',
       });
     }
 
-    const student = await User.findById(req.userId)
-      .populate('assignedClass', 'classNumber');
-    
+    const student = await User.findById(req.userId).populate('assignedClass', 'classNumber');
+
     if (!student) {
       return res.status(404).json({
         success: false,
-        message: 'Student not found'
+        message: 'Student not found',
       });
     }
 
     const { isTrialQuizAudience } = await import('../../utils/individualAccount.js');
 
-    // Get student's class number
     let studentClassNumber = null;
     if (student.assignedClass && student.assignedClass.classNumber) {
       studentClassNumber = student.assignedClass.classNumber;
@@ -372,18 +384,74 @@ router.post('/iq-rank-quiz-result', async (req, res) => {
     if (!studentClassNumber || studentClassNumber === 'Unassigned') {
       return res.status(400).json({
         success: false,
-        message: 'No class assigned. Please contact your administrator.'
+        message: 'No class assigned. Please contact your administrator.',
       });
     }
 
+    const IQRankQuiz = (await import('../../models/IQRankQuiz.js')).default;
     const IQRankQuizResult = (await import('../../models/IQRankQuizResult.js')).default;
+    const {
+      isDailyBankQuiz,
+      markDailyQuizCompleted,
+      indiaDateKey,
+      DAILY_PICK_COUNT,
+    } = await import('../../services/daily-quiz-service.js');
+    const DailyQuizLog = (await import('../../models/DailyQuizLog.js')).default;
 
-    const existingResult = quizId
-      ? await IQRankQuizResult.findOne({ userId: req.userId, quizId })
-      : await IQRankQuizResult.findOne({
-          userId: req.userId,
-          subject: subjectId
+    let quizDoc = null;
+    if (quizId) {
+      quizDoc = await IQRankQuiz.findById(quizId).select('subject questionBankSource activityType').lean();
+      if (!subjectId && quizDoc?.subject) subjectId = String(quizDoc.subject);
+    }
+
+    if (!subjectId) {
+      return res.status(400).json({
+        success: false,
+        message: 'Missing required fields',
+      });
+    }
+
+    const isDaily = quizDoc ? isDailyBankQuiz(quizDoc) : false;
+    const todayKey = indiaDateKey();
+
+    if (isDaily) {
+      const already = await DailyQuizLog.findOne({
+        userId: req.userId,
+        dateKey: todayKey,
+        completedAt: { $ne: null },
+      })
+        .select('_id score correctCount completedAt')
+        .lean();
+      if (already) {
+        return res.status(409).json({
+          success: false,
+          code: 'DAILY_QUIZ_ALREADY_COMPLETED',
+          message: 'You already completed today’s daily quiz. Come back tomorrow for a new set.',
+          data: {
+            dateKey: todayKey,
+            score: already.score,
+            correctCount: already.correctCount,
+            completedAt: already.completedAt,
+            lockedUntilTomorrow: true,
+          },
         });
+      }
+    }
+
+    const existingResult = isDaily
+      ? await IQRankQuizResult.findOne({ userId: req.userId, quizId, dateKey: todayKey })
+      : quizId
+        ? await IQRankQuizResult.findOne({ userId: req.userId, quizId, dateKey: null })
+        : await IQRankQuizResult.findOne({
+            userId: req.userId,
+            subject: subjectId,
+          });
+
+    // Non-daily: keep prior “one result per quiz” behavior (match without dateKey too)
+    let legacyResult = existingResult;
+    if (!isDaily && quizId && !legacyResult) {
+      legacyResult = await IQRankQuizResult.findOne({ userId: req.userId, quizId });
+    }
 
     const resultData = {
       userId: req.userId,
@@ -396,40 +464,32 @@ router.post('/iq-rank-quiz-result', async (req, res) => {
       unattempted: unattempted || 0,
       score,
       answers: answers || {},
-      completedAt: new Date()
+      dateKey: isDaily ? todayKey : null,
+      completedAt: new Date(),
     };
 
     let quizResult;
-    if (existingResult) {
-      // Update existing result
-      quizResult = await IQRankQuizResult.findByIdAndUpdate(
-        existingResult._id,
-        resultData,
-        { new: true }
-      ).populate('subject', 'name');
+    if (legacyResult) {
+      quizResult = await IQRankQuizResult.findByIdAndUpdate(legacyResult._id, resultData, {
+        new: true,
+      }).populate('subject', 'name');
     } else {
-      // Create new result
       quizResult = new IQRankQuizResult(resultData);
       await quizResult.save();
       await quizResult.populate('subject', 'name');
     }
 
-    if (quizId) {
+    if (isDaily && quizId) {
       try {
-        const IQRankQuiz = (await import('../../models/IQRankQuiz.js')).default;
-        const quiz = await IQRankQuiz.findById(quizId).select('questionBankSource activityType').lean();
-        const { isDailyBankQuiz, markDailyQuizCompleted, indiaDateKey } = await import(
-          '../../services/daily-quiz-service.js'
-        );
-        if (quiz && isDailyBankQuiz(quiz)) {
-          await markDailyQuizCompleted({
-            userId: req.userId,
-            dateKey: indiaDateKey(),
-            answers: answers || {},
-            correctCount: correctAnswers || 0,
-            score,
-          });
-        }
+        await markDailyQuizCompleted({
+          userId: req.userId,
+          dateKey: todayKey,
+          answers: answers || {},
+          correctCount: correctAnswers || 0,
+          score,
+          quizId,
+          classNumber: studentClassNumber,
+        });
       } catch (dailyErr) {
         console.warn('[iq-rank-quiz-result] daily log update failed:', dailyErr?.message || dailyErr);
       }
@@ -438,14 +498,133 @@ router.post('/iq-rank-quiz-result', async (req, res) => {
     res.json({
       success: true,
       message: 'Quiz result saved successfully',
-      data: quizResult
+      data: quizResult,
+      daily: isDaily
+        ? {
+            dateKey: todayKey,
+            lockedUntilTomorrow: true,
+            pickCount: Number(totalQuestions) || DAILY_PICK_COUNT,
+          }
+        : undefined,
     });
   } catch (error) {
     console.error('Error saving quiz result:', error);
     res.status(500).json({
       success: false,
-      message: 'Failed to save quiz result'
+      message: 'Failed to save quiz result',
     });
+  }
+});
+
+/** Today’s daily-quiz lock status + previous completed days. */
+router.get('/daily-quiz-status', async (req, res) => {
+  try {
+    const { getDailyQuizStatusForUser } = await import('../../services/daily-quiz-service.js');
+    const data = await getDailyQuizStatusForUser(req.userId, {
+      limit: Number(req.query.limit) || 14,
+    });
+    res.json({ success: true, data });
+  } catch (error) {
+    console.error('Error fetching daily quiz status:', error);
+    res.status(500).json({ success: false, message: 'Failed to fetch daily quiz status' });
+  }
+});
+
+/** Full review payload for one completed daily quiz day. */
+router.get('/daily-quiz-result/:dateKey', async (req, res) => {
+  try {
+    const dateKey = String(req.params.dateKey || '').trim();
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(dateKey)) {
+      return res.status(400).json({ success: false, message: 'Invalid date key' });
+    }
+
+    const DailyQuizLog = (await import('../../models/DailyQuizLog.js')).default;
+    const IQRankQuestion = (await import('../../models/IQRankQuestion.js')).default;
+
+    const log = await DailyQuizLog.findOne({
+      userId: req.userId,
+      dateKey,
+      completedAt: { $ne: null },
+    }).lean();
+
+    if (!log) {
+      return res.status(404).json({
+        success: false,
+        message: 'No saved daily quiz result for that day',
+      });
+    }
+
+    const ids = Array.isArray(log.questionIds) ? log.questionIds : [];
+    const questionsRaw = ids.length
+      ? await IQRankQuestion.find({ _id: { $in: ids } })
+          .select('questionText options correctAnswer explanation difficulty subject')
+          .populate('subject', 'name')
+          .lean()
+      : [];
+
+    const order = new Map(ids.map((id, i) => [String(id), i]));
+    questionsRaw.sort(
+      (a, b) => (order.get(String(a._id)) ?? 0) - (order.get(String(b._id)) ?? 0),
+    );
+
+    const answersMap =
+      log.answers instanceof Map
+        ? Object.fromEntries(log.answers.entries())
+        : log.answers && typeof log.answers === 'object'
+          ? { ...log.answers }
+          : {};
+
+    const questions = questionsRaw.map((q) => {
+      const qid = String(q._id);
+      const userAnswer = answersMap[qid] != null ? String(answersMap[qid]) : '';
+      const correctAnswer = String(q.correctAnswer || '');
+      const options = Array.isArray(q.options)
+        ? q.options.map((opt) => {
+            if (opt && typeof opt === 'object') {
+              return {
+                text: String(opt.text || ''),
+                isCorrect: Boolean(opt.isCorrect) || String(opt.text || '') === correctAnswer,
+              };
+            }
+            return {
+              text: String(opt || ''),
+              isCorrect: String(opt || '') === correctAnswer,
+            };
+          })
+        : [];
+      return {
+        _id: qid,
+        questionText: q.questionText || '',
+        options,
+        correctAnswer,
+        explanation: q.explanation || '',
+        difficulty: q.difficulty || 'medium',
+        userAnswer,
+        isCorrect: Boolean(userAnswer) && userAnswer === correctAnswer,
+        isAnswered: Boolean(userAnswer),
+      };
+    });
+
+    const total = questions.length || Number(log.questionIds?.length) || 5;
+    const correct = Number(log.correctCount) || questions.filter((q) => q.isCorrect).length;
+    const answered = questions.filter((q) => q.isAnswered).length;
+
+    res.json({
+      success: true,
+      data: {
+        dateKey: log.dateKey,
+        score: log.score == null ? null : Number(log.score),
+        correctCount: correct,
+        incorrectCount: Math.max(0, answered - correct),
+        unattempted: Math.max(0, total - answered),
+        totalQuestions: total,
+        completedAt: log.completedAt,
+        questions,
+      },
+    });
+  } catch (error) {
+    console.error('Error fetching daily quiz result:', error);
+    res.status(500).json({ success: false, message: 'Failed to fetch daily quiz result' });
   }
 });
 
