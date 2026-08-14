@@ -10,6 +10,7 @@ import {
   authorizeRoles
 } from '../middleware/auth.js';
 import superAdminEventRoutes from './superAdminEventRoutes.js';
+import superAdminOmrResultsRoutes from './superAdmin/omrResults.js';
 import {
   loginSchema,
   createAdminSchema,
@@ -89,6 +90,9 @@ import {
   bulkDeleteAiToolTopics,
   listAiToolTopicOptions,
   getAiToolTopicHierarchy,
+  listAiToolCategoryShares,
+  saveAiToolCategoryShares,
+  deleteAiToolCategoryShare,
 } from '../controllers/aiToolTopicsController.js';
 import { uploadAndParsePdf } from '../controllers/aiToolsController.js';
 import {
@@ -479,6 +483,9 @@ router.get('/analytics', getAnalytics);
 router.get('/analytics/realtime', getRealTimeAnalytics);
 router.get('/audit-logs', listAuditLogs);
 
+// Offline OMR results (super admin uploads for schools)
+router.use(superAdminOmrResultsRoutes);
+
 // Weekly School Impact Reports
 router.get('/impact-reports', listImpactReports);
 router.post('/impact-reports/run', runImpactReportsJob);
@@ -500,6 +507,9 @@ router.patch('/ai-tool-generations/document/:id', updateAiToolGenerationById);
 router.delete('/ai-tool-generations/document/:id', deleteAiToolGenerationById);
 
 // AI tool topics management (Super Admin taxonomy control)
+router.get('/ai-tool-topics/category-shares', listAiToolCategoryShares);
+router.post('/ai-tool-topics/category-shares', saveAiToolCategoryShares);
+router.delete('/ai-tool-topics/category-shares/:id', deleteAiToolCategoryShare);
 router.get('/ai-tool-topics/hierarchy', getAiToolTopicHierarchy);
 router.get('/ai-tool-topics/options', listAiToolTopicOptions);
 router.get('/ai-tool-topics', listAiToolTopics);

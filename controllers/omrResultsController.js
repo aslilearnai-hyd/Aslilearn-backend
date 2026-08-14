@@ -11,6 +11,28 @@ function resolveAdminId(req) {
   return req.adminId || req.user?.userId || req.user?.id || req.userId;
 }
 
+function resolveOmrAdminId(req) {
+  const explicit = req.body?.adminId || req.query?.adminId;
+  if (explicit) return String(explicit);
+  return resolveAdminId(req);
+}
+
+function resolveOmrActorId(req, fallbackAdminId) {
+  return req.user?.userId || req.user?.id || req.userId || fallbackAdminId;
+}
+
+function requireOmrSchoolAdminId(req, res) {
+  const adminId = resolveOmrAdminId(req);
+  if (!adminId) {
+    res.status(400).json({
+      success: false,
+      message: 'School (adminId) is required',
+    });
+    return null;
+  }
+  return adminId;
+}
+
 function toObjectId(id) {
   if (!id) return null;
   if (mongoose.Types.ObjectId.isValid(String(id))) {
@@ -69,10 +91,9 @@ function serializeRow(row, student) {
 
 export const uploadOmrResults = async (req, res) => {
   try {
-    const adminId = resolveAdminId(req);
-    if (!adminId) {
-      return res.status(403).json({ success: false, message: 'School admin only' });
-    }
+    const adminId = requireOmrSchoolAdminId(req, res);
+    if (!adminId) return;
+    const actorId = resolveOmrActorId(req, adminId);
     if (!req.file?.buffer) {
       return res.status(400).json({ success: false, message: 'No file uploaded' });
     }
@@ -98,7 +119,7 @@ export const uploadOmrResults = async (req, res) => {
       testNo: parsed.testNo,
       testTitle: parsed.testTitle,
       testDate: parsed.testDate,
-      uploadedBy: adminId,
+      uploadedBy: actorId,
       rowCount: parsed.rows.length,
       assignedCount: 0,
       sourceFileName: req.file.originalname || '',
@@ -113,7 +134,7 @@ export const uploadOmrResults = async (req, res) => {
         ...r,
         userId: mappedUserId,
         assignedAt: mappedUserId ? now : null,
-        assignedBy: mappedUserId ? adminId : null,
+        assignedBy: mappedUserId ? actorId : null,
       };
     });
 
@@ -148,10 +169,8 @@ export const uploadOmrResults = async (req, res) => {
 
 export const listOmrBatches = async (req, res) => {
   try {
-    const adminId = resolveAdminId(req);
-    if (!adminId) {
-      return res.status(403).json({ success: false, message: 'School admin only' });
-    }
+    const adminId = requireOmrSchoolAdminId(req, res);
+    if (!adminId) return;
     const batches = await OmrResultBatch.find({ adminId })
       .sort({ createdAt: -1 })
       .limit(100)
@@ -171,10 +190,8 @@ export const listOmrBatches = async (req, res) => {
 
 export const getOmrBatch = async (req, res) => {
   try {
-    const adminId = resolveAdminId(req);
-    if (!adminId) {
-      return res.status(403).json({ success: false, message: 'School admin only' });
-    }
+    const adminId = requireOmrSchoolAdminId(req, res);
+    if (!adminId) return;
     const batchId = toObjectId(req.params.id);
     if (!batchId) {
       return res.status(400).json({ success: false, message: 'Invalid batch id' });
@@ -221,10 +238,9 @@ export const getOmrBatch = async (req, res) => {
 
 export const assignOmrRows = async (req, res) => {
   try {
-    const adminId = resolveAdminId(req);
-    if (!adminId) {
-      return res.status(403).json({ success: false, message: 'School admin only' });
-    }
+    const adminId = requireOmrSchoolAdminId(req, res);
+    if (!adminId) return;
+    const actorId = resolveOmrActorId(req, adminId);
     const batchId = toObjectId(req.params.id);
     if (!batchId) {
       return res.status(400).json({ success: false, message: 'Invalid batch id' });
@@ -263,7 +279,7 @@ export const assignOmrRows = async (req, res) => {
 
         row.userId = userId;
         row.assignedAt = now;
-        row.assignedBy = adminId;
+        row.assignedBy = actorId;
         await row.save();
 
         await OmrCandidateStudentMap.findOneAndUpdate(
@@ -300,12 +316,96 @@ export const assignOmrRows = async (req, res) => {
   }
 };
 
+export const listOmrClassOptions = async (req, res) => {
+  try {
+    const adminId = requireOmrSchoolAdminId(req, res);
+    if (!adminId) return;
+
+    const adminOid = toObjectId(adminId);
+    if (!adminOid) {
+      return res.status(400).json({ success: false, message: 'Invalid school adminId' });
+    }
+
+    const rows = await User.aggregate([
+      {
+        $match: {
+          role: 'student',
+          assignedAdmin: adminOid,
+          isActive: { $ne: false },
+          classNumber: { $exists: true, $nin: [null, ''] },
+        },
+      },
+      {
+        $group: {
+          _id: { classNumber: '$classNumber', section: '$section' },
+          count: { $sum: 1 },
+        },
+      },
+      { $sort: { '_id.classNumber': 1, '_id.section': 1 } },
+    ]);
+
+    res.json({
+      success: true,
+      data: rows.map((r) => ({
+        classNumber: String(r._id?.classNumber || ''),
+        section: String(r._id?.section || ''),
+        label: `${r._id?.classNumber || ''}${r._id?.section || ''}`.trim(),
+        count: r.count || 0,
+      })),
+    });
+  } catch (error) {
+    console.error('listOmrClassOptions:', error);
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+export const listOmrStudentsForAssign = async (req, res) => {
+  try {
+    const adminId = requireOmrSchoolAdminId(req, res);
+    if (!adminId) return;
+
+    const adminOid = toObjectId(adminId);
+    if (!adminOid) {
+      return res.status(400).json({ success: false, message: 'Invalid school adminId' });
+    }
+
+    const filter = {
+      role: 'student',
+      assignedAdmin: adminOid,
+      isActive: { $ne: false },
+    };
+
+    const classNumber = String(req.query.classNumber || '').trim();
+    const section = String(req.query.section || '').trim();
+    if (classNumber) filter.classNumber = classNumber;
+    if (section) filter.section = section;
+
+    const students = await User.find(filter)
+      .select('_id fullName email classNumber section')
+      .sort({ fullName: 1, email: 1 })
+      .limit(2000)
+      .lean();
+
+    res.json({
+      success: true,
+      data: students.map((s) => ({
+        _id: s._id,
+        fullName: s.fullName || '',
+        email: s.email || '',
+        classNumber: s.classNumber || '',
+        section: s.section || '',
+      })),
+    });
+  } catch (error) {
+    console.error('listOmrStudentsForAssign:', error);
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
 export const getOmrAdminSummary = async (req, res) => {
   try {
-    const adminId = resolveAdminId(req);
-    if (!adminId) {
-      return res.status(403).json({ success: false, message: 'School admin only' });
-    }
+    const adminId = requireOmrSchoolAdminId(req, res);
+    if (!adminId) return;
 
     const latest = await OmrResultBatch.findOne({ adminId }).sort({ createdAt: -1 }).lean();
     if (!latest) {
