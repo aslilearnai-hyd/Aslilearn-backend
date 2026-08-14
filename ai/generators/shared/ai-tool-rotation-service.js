@@ -524,7 +524,8 @@ async function executeRotationSearch({
  *   When true (dashboards), try a single exact findOne-style hit first so saved
  *   content returns in ~1s before heavier fuzzy/rotation scans.
  */
-export async function fetchRotatingAiToolData(opts) {
+export async function fetchRotatingAiToolData(rawOpts) {
+  const opts = await applyCategoryShareToOpts(rawOpts);
   try {
     return await fetchRotatingAiToolDataInner(opts);
   } catch (err) {
@@ -540,6 +541,31 @@ export async function fetchRotatingAiToolData(opts) {
       /* ignore */
     }
     return { doc: null, matchType: null, totalCandidates: 0, selectedIndex: -1 };
+  }
+}
+
+/**
+ * A category can be configured to reuse another category's content
+ * (e.g. IIT Beta Class 6 Biology reads Alpha's). Swap before any lookup.
+ */
+async function applyCategoryShareToOpts(opts) {
+  if (!opts || opts.productCategory === undefined || opts.productCategory === null) return opts;
+  try {
+    const { resolveSharedProductCategory } = await import('../../shared/ai-tool-category-share.js');
+    const resolved = await resolveSharedProductCategory({
+      board: opts.board,
+      classLabel: opts.classLabel,
+      subject: opts.subject,
+      productCategory: opts.productCategory,
+    });
+    if (resolved === opts.productCategory) return opts;
+    return { ...opts, productCategory: resolved };
+  } catch (err) {
+    console.warn(
+      '[ai-tool-rotation] category share skipped:',
+      String(err?.message || err).slice(0, 200),
+    );
+    return opts;
   }
 }
 

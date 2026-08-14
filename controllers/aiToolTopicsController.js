@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import AiToolTopic, { ensureAiToolTopicIndexes } from '../models/AiToolTopic.js';
+import AiToolCategoryShare from '../models/AiToolCategoryShare.js';
 import Board from '../models/Board.js';
 import {
   boardMongoMatch,
@@ -13,6 +14,12 @@ import {
   buildAiToolTopicTaxonomyFilter,
   normalizeTopicProductCategory,
 } from '../utils/ai-tool-topic-taxonomy.js';
+import {
+  buildProductCategoryReadFilter,
+  describeCategoryShares,
+  invalidateAiToolCategoryShareCache,
+} from '../utils/ai-tool-category-share.js';
+import { mergeMongoFilters } from '../utils/ai-tool-data-match.js';
 import { buildDisplayTopicName } from '../utils/ai-tool-topic-display.js';
 import {
   orderedUniqueSubTopics,
@@ -38,17 +45,30 @@ function normalizeText(value) {
   return String(value || '').trim().replace(/\s+/g, ' ');
 }
 
-function buildFilters(query) {
+/**
+ * Category-aware filter. When the selected category borrows from another one
+ * (AI Tool category shares), the source category's rows are unioned in.
+ */
+async function buildFilters(query) {
   const filter = buildAiToolTopicTaxonomyFilter({
     board: query.board,
-    productCategory: query.productCategory,
+    productCategory: undefined,
     classLabel: query.classLabel,
     subject: query.subject,
     topicName: query.topicName,
   });
   if (query.subTopic) filter.subTopic = normalizeText(query.subTopic);
   if (query.label) filter.label = normalizeText(query.label);
-  return filter;
+
+  if (query.productCategory === undefined) return filter;
+
+  const categoryFilter = await buildProductCategoryReadFilter({
+    board: query.board,
+    classLabel: query.classLabel,
+    subject: query.subject,
+    productCategory: query.productCategory,
+  });
+  return mergeMongoFilters(filter, categoryFilter);
 }
 
 async function resolveProductCategoriesForBoard(board) {
@@ -105,7 +125,7 @@ export async function listAiToolTopics(req, res) {
     const skip = (page - 1) * limit;
     const search = normalizeText(req.query.search);
 
-    const filter = buildFilters(req.query);
+    const filter = await buildFilters(req.query);
     if (search) {
       const searchClause = {
         $or: [
@@ -401,17 +421,19 @@ export async function getAiToolTopicHierarchy(req, res) {
       });
     }
 
-    const filter = buildAiToolTopicTaxonomyFilter({
+    const filter = await buildFilters({ board, productCategory: productCategoryParam });
+    const rows = await queryTopicOptionRows(filter);
+    const shares = await describeCategoryShares({
       board,
       productCategory: productCategoryParam,
     });
-    const rows = await queryTopicOptionRows(filter);
 
     return res.json({
       success: true,
       data: {
         productCategories: categories,
         tree: buildAiToolTopicHierarchyTree(rows),
+        shares,
       },
     });
   } catch (error) {
@@ -423,7 +445,7 @@ export async function getAiToolTopicHierarchy(req, res) {
 export async function listAiToolTopicOptions(req, res) {
   try {
     await ensureIndexesOnce();
-    const filter = buildFilters(req.query);
+    const filter = await buildFilters(req.query);
     const hasBoard = Boolean(normalizeText(req.query.board));
     const hasCategory = Object.prototype.hasOwnProperty.call(req.query, 'productCategory');
     const hasClass = Boolean(normalizeText(req.query.classLabel));
@@ -503,5 +525,159 @@ export async function listAiToolTopicOptions(req, res) {
   } catch (error) {
     console.error('listAiToolTopicOptions error:', error);
     return res.status(500).json({ success: false, message: 'Failed to fetch AI tool topic options.' });
+  }
+}
+
+function serializeShare(row) {
+  return {
+    _id: row._id,
+    board: row.board,
+    classLabel: row.classLabel,
+    subject: row.subject || '',
+    targetCategory: row.targetCategory || '',
+    sourceCategory: row.sourceCategory || '',
+    createdAt: row.createdAt,
+    updatedAt: row.updatedAt,
+  };
+}
+
+/** GET /ai-tool-topics/category-shares?board=&classLabel=&subject=&sourceCategory= */
+export async function listAiToolCategoryShares(req, res) {
+  try {
+    const filter = { isActive: true };
+    const board = canonicalBoardLabel(normalizeText(req.query.board));
+    if (board) filter.board = board;
+
+    const classLabel = normalizeText(req.query.classLabel);
+    if (classLabel) filter.classLabel = resolveClassLabelForAiToolStorage(classLabel, board);
+
+    const subject = normalizeText(req.query.subject);
+    if (subject) filter.subject = subject;
+
+    if (req.query.sourceCategory !== undefined) {
+      filter.sourceCategory = normalizeTopicProductCategory(req.query.sourceCategory) ?? '';
+    }
+    if (req.query.targetCategory !== undefined) {
+      filter.targetCategory = normalizeTopicProductCategory(req.query.targetCategory) ?? '';
+    }
+
+    const rows = await AiToolCategoryShare.find(filter)
+      .sort({ board: 1, classLabel: 1, subject: 1, targetCategory: 1 })
+      .lean();
+
+    return res.json({ success: true, data: rows.map(serializeShare) });
+  } catch (error) {
+    console.error('listAiToolCategoryShares error:', error);
+    return res.status(500).json({ success: false, message: 'Failed to fetch category shares.' });
+  }
+}
+
+/**
+ * POST /ai-tool-topics/category-shares
+ * { board, classLabel, subject?, sourceCategory, targetCategories: [] }
+ * Points each target category at the source category for that class/subject.
+ */
+export async function saveAiToolCategoryShares(req, res) {
+  try {
+    const board = canonicalBoardLabel(normalizeText(req.body.board));
+    const classLabel = resolveClassLabelForAiToolStorage(normalizeText(req.body.classLabel), board);
+    const subject = normalizeText(req.body.subject || '');
+    const sourceCategory = normalizeTopicProductCategory(req.body.sourceCategory ?? '') ?? '';
+
+    if (!board || !classLabel) {
+      return res.status(400).json({
+        success: false,
+        message: 'board and classLabel are required.',
+      });
+    }
+
+    const rawTargets = Array.isArray(req.body.targetCategories)
+      ? req.body.targetCategories
+      : req.body.targetCategory !== undefined
+        ? [req.body.targetCategory]
+        : [];
+
+    const targets = [
+      ...new Set(
+        rawTargets
+          .map((value) => normalizeTopicProductCategory(value) ?? '')
+          .filter((code) => code && code !== sourceCategory),
+      ),
+    ];
+
+    if (!targets.length) {
+      return res.status(400).json({
+        success: false,
+        message: 'Select at least one target category different from the source.',
+      });
+    }
+
+    const actor = req.userId || req.user?.id || null;
+    const saved = [];
+
+    for (const targetCategory of targets) {
+      const row = await AiToolCategoryShare.findOneAndUpdate(
+        { board, classLabel, subject, targetCategory, isActive: true },
+        {
+          $set: {
+            board,
+            classLabel,
+            subject,
+            targetCategory,
+            sourceCategory,
+            isActive: true,
+            updatedBy: actor,
+          },
+          $setOnInsert: { createdBy: actor },
+        },
+        { new: true, upsert: true, setDefaultsOnInsert: true },
+      ).lean();
+      saved.push(serializeShare(row));
+    }
+
+    invalidateAiToolCategoryShareCache();
+
+    return res.status(201).json({
+      success: true,
+      data: saved,
+      message: `${saved.length} categor${saved.length === 1 ? 'y' : 'ies'} now use${
+        saved.length === 1 ? 's' : ''
+      } this content.`,
+    });
+  } catch (error) {
+    console.error('saveAiToolCategoryShares error:', error);
+    if (error?.code === 11000) {
+      return res.status(409).json({
+        success: false,
+        message: 'This category already shares content for the selected class/subject.',
+      });
+    }
+    return res.status(500).json({ success: false, message: 'Failed to save category share.' });
+  }
+}
+
+/** DELETE /ai-tool-topics/category-shares/:id */
+export async function deleteAiToolCategoryShare(req, res) {
+  try {
+    const { id } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({ success: false, message: 'Invalid share id.' });
+    }
+
+    const updated = await AiToolCategoryShare.findOneAndUpdate(
+      { _id: id, isActive: true },
+      { $set: { isActive: false, updatedBy: req.userId || req.user?.id || null } },
+      { new: true },
+    ).lean();
+
+    if (!updated) {
+      return res.status(404).json({ success: false, message: 'Category share not found.' });
+    }
+
+    invalidateAiToolCategoryShareCache();
+    return res.json({ success: true, message: 'Category share removed.' });
+  } catch (error) {
+    console.error('deleteAiToolCategoryShare error:', error);
+    return res.status(500).json({ success: false, message: 'Failed to remove category share.' });
   }
 }

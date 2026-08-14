@@ -196,6 +196,28 @@ export function buildAiToolTopicHierarchyTree(rows) {
   return tree;
 }
 
+/** Resolve "this category reuses another category's content" before any lookup. */
+async function applyCategoryShare(params = {}) {
+  if (params.productCategory === undefined || params.productCategory === null) return params;
+  try {
+    const { resolveSharedProductCategory } = await import('./ai-tool-category-share.js');
+    const resolved = await resolveSharedProductCategory({
+      board: params.board,
+      classLabel: params.classLabel,
+      subject: params.subject,
+      productCategory: params.productCategory,
+    });
+    if (resolved === params.productCategory) return params;
+    return { ...params, productCategory: resolved };
+  } catch (err) {
+    console.warn(
+      '[ai-tool-topic-taxonomy] category share skipped:',
+      String(err?.message || err).slice(0, 200),
+    );
+    return params;
+  }
+}
+
 export async function queryAiToolTopicTaxonomy(params = {}) {
   const filter = buildAiToolTopicTaxonomyFilter(params);
   const rows = await AiToolTopic.find(filter)
@@ -206,7 +228,8 @@ export async function queryAiToolTopicTaxonomy(params = {}) {
 }
 
 /** Prefer board-scoped rows; try board label aliases only — never drop board filter. */
-export async function resolveAiToolTopicTaxonomy(params = {}) {
+export async function resolveAiToolTopicTaxonomy(rawParams = {}) {
+  const params = await applyCategoryShare(rawParams);
   const board = normalizeMatchText(params.board);
   let rows = await queryAiToolTopicTaxonomy(params);
   if (rows.length === 0 && board) {
