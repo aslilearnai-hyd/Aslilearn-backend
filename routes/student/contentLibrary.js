@@ -325,9 +325,7 @@ router.get('/asli-prep-content', async (req, res) => {
 
     console.log(`✅ Found ${contents.length} contents for student's class subjects (after class/subject filters)`);
 
-    const { enrichContentDurations } = await import('../../utils/enrichContentDurations.js');
-    contents = await enrichContentDurations(contents);
-
+    // Skip live YouTube scraping on list — use stored duration only (keeps LP/EduOTT fast).
     const { dedupeLibraryContents } = await import('../../utils/dedupeLibraryContents.js');
     contents = dedupeLibraryContents(contents);
 
