@@ -75,6 +75,7 @@ import {
   exportAiToolGenerationsBundle,
   getAiToolGenerationsMeta,
   getAiToolGenerationsBootstrap,
+  listAiToolGenerationCategories,
   updateAiToolGenerationById,
   deleteAiToolGenerationById,
   getToolSectionGapSummaryHandler,
@@ -496,6 +497,7 @@ router.get('/impact-reports/:adminId/pdf', downloadImpactReportPdf);
 router.get('/ai-tool-generations/bootstrap', getAiToolGenerationsBootstrap);
 router.get('/ai-tool-generations/section-gap-summary', getToolSectionGapSummaryHandler);
 router.get('/ai-tool-generations/meta', getAiToolGenerationsMeta);
+router.get('/ai-tool-generations/product-categories', listAiToolGenerationCategories);
 router.get('/ai-tool-generations/children', listAiToolChildren);
 router.get('/ai-tool-generations/records', listAiToolRecords);
 router.get('/ai-tool-generations/duplicates', listAiToolDuplicates);
