@@ -343,6 +343,7 @@ router.post('/ai/tool', async (req, res) => {
       subtopic: subtopicForLookup,
       userId,
       role: 'student',
+      productCategory: studentProductCategory || '',
       extraParams: {
         questionCount: params.questionCount ?? req.body?.questionCount,
         duration: params.duration ?? req.body?.duration,

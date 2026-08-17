@@ -15,6 +15,7 @@ import {
   lockBoardKey,
   resolveClassLabelForAiToolStorage,
 } from '../../../utils/board-label.js';
+import { normalizeIitCategoryLoose } from '../../../constants/products.js';
 
 function envFlagEnabled(name, defaultValue = true) {
   const raw = String(process.env[name] ?? '').trim().toLowerCase();
@@ -42,6 +43,7 @@ function normalizeLabel(value) {
  *   subtopic?: string,
  *   userId?: string,
  *   role?: 'teacher' | 'student' | 'dashboard',
+ *   productCategory?: string,
  *   extraParams?: Record<string, unknown>,
  * }} opts
  */
@@ -74,6 +76,11 @@ export async function generateAiToolLiveFallback(opts = {}) {
   const topic = topicRaw || (isWholeChapter ? 'Whole chapter' : subtopicRaw) || 'General';
   const subTopic = isWholeChapter ? topic : subtopicRaw;
   const toolDisplayName = getToolDisplayTitle(toolType) || toolType.replace(/-/g, ' ');
+  // Without this the row saves untagged, and untagged IIT rows read back as ALPHA —
+  // so BETA/GAMMA/DELTA classes would regenerate forever and never build a catalog.
+  const productCategory = normalizeIitCategoryLoose(
+    opts.productCategory ?? opts.extraParams?.productCategory ?? '',
+  );
 
   console.log(
     `[AI_TOOL_LIVE_FALLBACK] Generating ${toolType} — ${classLabel} ${subject} / ${topic}${isWholeChapter ? ' (whole chapter)' : ` / ${subTopic}`}`,
@@ -127,6 +134,7 @@ export async function generateAiToolLiveFallback(opts = {}) {
       toolDisplayName,
       sourceType: 'ai_generator',
       board,
+      productCategory,
       classLabel,
       subject,
       topic,

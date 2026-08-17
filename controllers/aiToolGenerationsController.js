@@ -24,8 +24,23 @@ import {
   normalizeClassId,
   normalizeMatchText,
 } from '../ai/shared/ai-tool-data-match.js';
+import {
+  applyProductCategoryMongoFilter,
+  normalizeTopicProductCategory,
+} from '../ai/shared/ai-tool-topic-taxonomy.js';
 
 const WHOLE_CHAPTER_LABEL = 'Whole chapter';
+
+/** Matches nothing — used to drop a collection that cannot satisfy a filter. */
+const MATCH_NONE = { _id: { $exists: false } };
+
+/** Copy an optional productCategory filter from a request query onto a match. */
+function applyProductCategoryQuery(query, match) {
+  if ('productCategory' in query) {
+    match.productCategory = query.productCategory ?? '';
+  }
+  return match;
+}
 
 function isWholeChapterStorageLabel(value) {
   return isWholeChapterSubtopic(value);
@@ -56,6 +71,7 @@ function normalizeCombinedRecord(row) {
     toolName: row.toolName ?? '',
     toolDisplayName: row.toolDisplayName ?? '',
     board,
+    productCategory: String(row.productCategory ?? '').toUpperCase(),
     classLabel: row.classLabel ?? '',
     subject: row.subject ?? '',
     topic: row.topic ?? '',
@@ -91,7 +107,7 @@ function mapLegacyAiGeneratorToCombined(doc) {
 }
 
 const FULL_RECORD_FIELDS_MASTER =
-  'toolName toolDisplayName sourceType classLabel subject topic subtopic content generatedContent createdAt metadata pdfFileUrl pdfFileName status board';
+  'toolName toolDisplayName sourceType classLabel subject topic subtopic content generatedContent createdAt metadata pdfFileUrl pdfFileName status board productCategory';
 const FULL_RECORD_FIELDS_LEGACY =
   'toolSlug toolName className subjectName topicName subtopicName board generatedContent createdAt createdByRole createdByName';
 
@@ -108,6 +124,11 @@ const AGGREGATE_CACHE_TTL_MS = 30_000;
 function buildMasterMongoFilter(match = {}) {
   const parts = [];
   if (match.toolName) parts.push({ toolName: match.toolName });
+
+  if ('productCategory' in match) {
+    const category = normalizeTopicProductCategory(match.productCategory);
+    if (category !== null) parts.push(applyProductCategoryMongoFilter({}, category));
+  }
 
   const hasBoard = 'board' in match;
   const hasClass = 'classLabel' in match;
@@ -220,6 +241,14 @@ function buildLegacyTopicFilter(topic) {
 function buildLegacyMongoFilter(match = {}) {
   const parts = [];
   if (match.toolName) parts.push({ toolSlug: match.toolName });
+
+  // The legacy collection has no productCategory field, so its rows are untagged.
+  // Untagged reads as General, and as ALPHA for IIT (see applyProductCategoryMongoFilter).
+  // Any other track therefore has no legacy rows at all.
+  if ('productCategory' in match) {
+    const category = normalizeTopicProductCategory(match.productCategory);
+    if (category && category !== 'ALPHA') parts.push(MATCH_NONE);
+  }
 
   const hasBoard = 'board' in match;
   const hasClass = 'classLabel' in match;
@@ -422,6 +451,7 @@ async function loadCombinedRecords(match = {}) {
       toolName: d.toolName || '',
       toolDisplayName: d.toolDisplayName || '',
       board: d.board || '',
+      productCategory: d.productCategory || '',
       classLabel: d.classLabel || '',
       subject: d.subject || '',
       topic: d.topic || '',
@@ -456,6 +486,7 @@ export const listAiToolChildren = async (req, res) => {
     if ('subject' in q) match.subject = q.subject ?? '';
     if ('topic' in q) match.topic = q.topic ?? '';
     if ('subtopic' in q) match.subtopic = q.subtopic ?? '';
+    applyProductCategoryQuery(q, match);
 
     if (!('toolName' in q)) {
       const items = await aggregateCombinedGroupCounts(match, 'toolName');
@@ -544,6 +575,7 @@ export const listAiToolRecords = async (req, res) => {
       subtopic: subtopic ?? '',
     };
     if ('board' in req.query) match.board = board ?? '';
+    applyProductCategoryQuery(req.query, match);
 
     const p = Math.max(1, parseInt(page, 10) || 1);
     const lim = Math.min(100, Math.max(1, parseInt(limit, 10) || 25));
@@ -561,6 +593,7 @@ export const listAiToolRecords = async (req, res) => {
         toolDisplayName: d.toolDisplayName,
         classLabel: d.classLabel,
         board: d.board || '',
+        productCategory: d.productCategory || '',
         subject: d.subject,
         topic: d.topic,
         subtopic: d.subtopic,
@@ -764,6 +797,7 @@ export const exportAiToolGenerationsBundle = async (req, res) => {
     if ('subject' in req.query) match.subject = req.query.subject ?? '';
     if ('topic' in req.query) match.topic = req.query.topic ?? '';
     if ('subtopic' in req.query) match.subtopic = req.query.subtopic ?? '';
+    applyProductCategoryQuery(req.query, match);
 
     const max = Math.min(5000, Math.max(1, parseInt(req.query.maxDocs || '2000', 10) || 2000));
     const docs = await loadCombinedRecords(Object.keys(match).length ? match : {});
@@ -801,6 +835,7 @@ export const getAiToolGenerationsMeta = async (req, res) => {
   try {
     const match = {};
     if ('board' in req.query) match.board = req.query.board ?? '';
+    applyProductCategoryQuery(req.query, match);
     const { total, topicsCount } = await getCombinedMetaStats(match);
     res.json({ success: true, data: { total, topicsCount } });
   } catch (error) {
@@ -813,6 +848,7 @@ export const getAiToolGenerationsBootstrap = async (req, res) => {
   try {
     const match = {};
     if ('board' in req.query) match.board = req.query.board ?? '';
+    applyProductCategoryQuery(req.query, match);
     const { total, topicsCount, toolGroups } = await getCombinedMetaStats(match);
     res.json({
       success: true,
@@ -825,6 +861,52 @@ export const getAiToolGenerationsBootstrap = async (req, res) => {
     });
   } catch (error) {
     console.error('getAiToolGenerationsBootstrap error:', error);
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+/**
+ * Product tracks for the AI Tool Data category filter.
+ * Configured tracks are always listed (even at zero) so an admin can confirm a
+ * track is empty; tracks only present in stored data are appended.
+ */
+export const listAiToolGenerationCategories = async (req, res) => {
+  try {
+    const match = {};
+    if ('board' in req.query) match.board = req.query.board ?? '';
+
+    const [groups, legacyCount, activeCodes] = await Promise.all([
+      AiToolGeneration.aggregate([
+        { $match: buildMasterMongoFilter(match) },
+        { $group: { _id: { $ifNull: ['$productCategory', ''] }, count: { $sum: 1 } } },
+      ]),
+      AIGeneratorRecord.countDocuments(buildLegacyMongoFilter(match)),
+      import('../constants/products.js')
+        .then((m) => m.getActiveProductCategoryCodes())
+        .catch(() => []),
+    ]);
+
+    const counts = new Map([['', legacyCount || 0]]);
+    for (const code of Array.isArray(activeCodes) ? activeCodes : []) {
+      const value = normalizeTopicProductCategory(code) ?? '';
+      if (value) counts.set(value, counts.get(value) || 0);
+    }
+    for (const group of groups) {
+      const value = normalizeTopicProductCategory(group._id) ?? '';
+      counts.set(value, (counts.get(value) || 0) + group.count);
+    }
+
+    const items = [...counts.entries()]
+      .map(([value, count]) => ({ value, count }))
+      .sort((a, b) => {
+        if (a.value === '') return -1;
+        if (b.value === '') return 1;
+        return a.value.localeCompare(b.value);
+      });
+
+    res.json({ success: true, data: { items } });
+  } catch (error) {
+    console.error('listAiToolGenerationCategories error:', error);
     res.status(500).json({ success: false, message: error.message });
   }
 };

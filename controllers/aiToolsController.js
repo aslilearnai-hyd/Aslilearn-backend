@@ -593,7 +593,9 @@ export const createTeacherTool = async (req, res) => {
       subtopic: subtopicForStore,
       userId: teacherId,
       role: 'teacher',
+      productCategory: resolvedProductCategory || '',
       extraParams: {
+        productCategory: resolvedProductCategory || undefined,
         questionCount: params.questionCount ?? req.body?.questionCount,
         duration: params.duration ?? req.body?.duration,
         uniqueSeed:
