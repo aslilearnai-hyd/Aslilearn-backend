@@ -51,6 +51,7 @@ import legacyStubsRoutes from './routes/legacyStubs.js';
 import uploadRoutes from './routes/upload.js';
 import lessonPlanRoutes from './routes/lessonPlan.js';
 import billingRoutes from './routes/billing.js';
+import publicDemoRoutes from './routes/publicDemo.js';
 
 /**
  * Build the Express application (middleware + routes). Does not listen or connect Mongo.
