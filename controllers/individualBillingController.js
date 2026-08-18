@@ -141,12 +141,9 @@ export async function createIndividualCheckoutOrder(req, res) {
       error.message ||
       'Could not start payment.';
     console.error('createIndividualCheckoutOrder:', msg, error.response?.data || error, describeRazorpayConfig());
-    const razorpayAuthFail = /authentication failed/i.test(String(msg));
     return res.status(500).json({
       success: false,
-      message: razorpayAuthFail
-        ? 'Razorpay keys on the server do not match. Set RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET on the API host, then restart.'
-        : msg,
+      message: 'Payment is temporarily unavailable. Please try again in a few minutes.',
     });
   }
 }
