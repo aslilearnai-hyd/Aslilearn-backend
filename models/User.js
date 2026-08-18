@@ -258,6 +258,31 @@ const userSchema = new mongoose.Schema({
     trim: true,
     default: '',
   },
+  /** board | iit | both after Razorpay checkout */
+  paidPackage: {
+    type: String,
+    enum: ['board', 'iit', 'both', ''],
+    default: '',
+  },
+  subscriptionPeriod: {
+    type: String,
+    enum: ['month', 'year', ''],
+    default: '',
+  },
+  subscriptionExpiresAt: {
+    type: Date,
+    default: null,
+  },
+  razorpayOrderId: {
+    type: String,
+    trim: true,
+    default: '',
+  },
+  razorpayPaymentId: {
+    type: String,
+    trim: true,
+    default: '',
+  },
   /** Lifetime Vidya chat messages used while unpaid trial (limit 3 until payment). */
   trialVidyaChatUsed: {
     type: Number,

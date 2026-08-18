@@ -1,4 +1,5 @@
 import axios from 'axios';
+import crypto from 'crypto';
 
 const RAZORPAY_API = 'https://api.razorpay.com/v1';
 
@@ -174,4 +175,41 @@ export async function fetchBillingForAdminEmail(adminEmail) {
     payments: filteredPayments,
     subscriptions: filteredSubs,
   };
+}
+
+export async function createRazorpayOrder({ amountPaise, receipt, notes, customer }) {
+  const payload = {
+    amount: amountPaise,
+    currency: 'INR',
+    receipt: String(receipt || '').slice(0, 40),
+    notes: notes || {},
+  };
+  if (customer?.name) payload.notes.customer_name = String(customer.name).slice(0, 100);
+  if (customer?.email) payload.notes.customer_email = String(customer.email).slice(0, 100);
+
+  const { data } = await axios.post(`${RAZORPAY_API}/orders`, payload, {
+    headers: {
+      ...getAuthHeader(),
+      'Content-Type': 'application/json',
+    },
+    timeout: 25000,
+  });
+  return data;
+}
+
+export function verifyRazorpaySignature({ orderId, paymentId, signature }) {
+  const secret = process.env.RAZORPAY_KEY_SECRET?.trim();
+  if (!secret) return false;
+  const expected = crypto
+    .createHmac('sha256', secret)
+    .update(`${orderId}|${paymentId}`)
+    .digest('hex');
+  const a = Buffer.from(expected, 'utf8');
+  const b = Buffer.from(String(signature || ''), 'utf8');
+  if (a.length !== b.length) return false;
+  try {
+    return crypto.timingSafeEqual(a, b);
+  } catch {
+    return false;
+  }
 }
