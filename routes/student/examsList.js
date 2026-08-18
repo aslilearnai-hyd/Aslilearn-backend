@@ -17,7 +17,7 @@ import GeminiPerformanceReport from '../../models/GeminiPerformanceReport.js';
 import { verifyToken } from '../../middleware/auth.js';
 import { getMyWeeklyDigest } from '../../controllers/impactReportController.js';
 import { getSchoolAdminCalendarEvents, monthBounds } from '../../controllers/calendarController.js';
-import { examVisibleToSchool, examMatchesAdminBoard, examVisibleToStudent, getExamWindowStatus } from '../../utils/exam-visibility.js';
+import { examVisibleToSchool, examMatchesAdminBoard, examVisibleToStudent, examVisibleToIndividualStudent, getExamWindowStatus } from '../../utils/exam-visibility.js';
 import {
   getStudentExamRanking,
   getAllStudentRankings,
@@ -184,7 +184,10 @@ async function hydrateExamQuestions(examDoc, { hideAnswers = false, shuffleForUs
   };
 }
 
-const canStudentAccessExam = (exam, studentAdminId, studentBoard) => {
+const canStudentAccessExam = (exam, student, studentAdminId, studentBoard) => {
+  if (student?.isIndividualAccount) {
+    return examVisibleToIndividualStudent(exam, student);
+  }
   return examVisibleToStudent(exam, studentAdminId, studentBoard);
 };
 
@@ -295,7 +298,7 @@ router.get('/exams', async (req, res) => {
     // Empty question banks still appear (Upcoming / schedule awareness);
     // start/detail endpoints refuse until questions are uploaded.
     const publishedExams = hydratedExams.filter((exam) => {
-      if (!canStudentAccessExam(exam, studentAdminId, studentBoardOrAdmin)) return false;
+      if (!canStudentAccessExam(exam, student, studentAdminId, studentBoardOrAdmin)) return false;
       if (!examMatchesStudentAssignedClass(exam, studentClassNumber)) return false;
       return true;
     });
@@ -372,10 +375,12 @@ router.get('/exams/:examId', async (req, res) => {
       student.assignedAdmin && typeof student.assignedAdmin === 'object'
         ? student.assignedAdmin
         : student.assignedAdmin?.board || student.board || '';
-    if (!canStudentAccessExam(exam, studentAdminId, studentBoardOrAdmin)) {
+    if (!canStudentAccessExam(exam, student, studentAdminId, studentBoardOrAdmin)) {
       return res.status(403).json({
         success: false,
-        message: 'This exam is not assigned to your school.'
+        message: student.isIndividualAccount
+          ? 'This practice exam is not available for your class or learning track.'
+          : 'This exam is not assigned to your school.',
       });
     }
     if (!examMatchesStudentAssignedClass(exam, studentClassNumber)) {

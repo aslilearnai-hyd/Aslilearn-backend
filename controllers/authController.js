@@ -485,6 +485,35 @@ export async function patchUser(req, res) {
       }
     }
 
+    const existing = await User.findById(userId).select('isIndividualAccount role');
+    if (!existing) {
+      return res.status(404).json({ success: false, message: 'User not found' });
+    }
+
+    if (existing.isIndividualAccount) {
+      const { normalizeIitCategories } = await import('../constants/products.js');
+      if ('classNumber' in req.body && existing.role === 'student') {
+        const classNumber = String(req.body.classNumber || '').trim();
+        if (classNumber) updateData.classNumber = classNumber;
+      }
+      if ('iitCategories' in req.body) {
+        updateData.iitCategories = normalizeIitCategories(req.body.iitCategories);
+        updateData.isAsliPrepExclusive = updateData.iitCategories.length > 0;
+        if (updateData.isAsliPrepExclusive) {
+          updateData.board = 'ASLI_EXCLUSIVE_SCHOOLS';
+        }
+      }
+      if ('interestedCourses' in req.body && Array.isArray(req.body.interestedCourses)) {
+        updateData.interestedCourses = req.body.interestedCourses
+          .map((v) => String(v || '').trim())
+          .filter(Boolean);
+      }
+      if ('curriculumBoard' in req.body) {
+        const board = String(req.body.curriculumBoard || '').toUpperCase().trim();
+        if (board) updateData.curriculumBoard = board;
+      }
+    }
+
     const updatedUser = await User.findByIdAndUpdate(
       userId,
       { $set: updateData },

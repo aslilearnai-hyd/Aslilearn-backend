@@ -349,7 +349,7 @@ export const listOmrClassOptions = async (req, res) => {
       data: rows.map((r) => ({
         classNumber: String(r._id?.classNumber || ''),
         section: String(r._id?.section || ''),
-        label: `${r._id?.classNumber || ''}${r._id?.section || ''}`.trim(),
+        label: `${r._id?.classNumber || ''}-${r._id?.section || ''}`.replace(/-$/, '').trim() || String(r._id?.classNumber || ''),
         count: r.count || 0,
       })),
     });

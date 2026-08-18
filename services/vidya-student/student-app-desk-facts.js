@@ -15,7 +15,7 @@ import {
   resolveStudentClassNumber,
   examMatchesStudentAssignedClass,
 } from '../../utils/studentClassContent.js';
-import { examVisibleToStudent } from '../../utils/exam-visibility.js';
+import { examVisibleToStudent, examVisibleToIndividualStudent } from '../../utils/exam-visibility.js';
 import { enrichSubjectsWithMedia } from '../student-subject-media.js';
 import { filterToActiveCatalogSubjectIds } from '../../utils/activeCatalog.js';
 import Assessment from '../../models/Assessment.js';
@@ -165,7 +165,7 @@ export async function buildStudentAppDeskFacts(studentOid, extras = {}) {
     enrichSubjectsWithMedia(student, subjectRows),
     Exam.find({ createdByRole: 'super-admin', isActive: true })
       .select(
-        'title subject subjects startDate endDate duration assignedClasses classNumber board isAllBoards isSchoolSpecific schoolId targetSchools totalQuestions totalMarks',
+        'title subject subjects startDate endDate duration assignedClasses classNumber board isAllBoards isSchoolSpecific schoolId targetSchools totalQuestions totalMarks examType',
       )
       .sort({ startDate: 1 })
       .limit(LIST_CAP)
@@ -218,7 +218,10 @@ export async function buildStudentAppDeskFacts(studentOid, extras = {}) {
 
   const now = Date.now();
   const accessibleExams = (examDocs || []).filter((exam) => {
-    if (!examVisibleToStudent(exam, studentAdminId, studentBoardOrAdmin)) return false;
+    const visible = student.isIndividualAccount
+      ? examVisibleToIndividualStudent(exam, student)
+      : examVisibleToStudent(exam, studentAdminId, studentBoardOrAdmin);
+    if (!visible) return false;
     if (!examMatchesStudentAssignedClass(exam, studentClassNumber)) return false;
     return true;
   });

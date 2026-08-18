@@ -143,3 +143,50 @@ export function getExamWindowStatus(exam, opts = {}) {
   }
   return { ok: true };
 }
+
+/**
+ * B2C / individual students are not enrolled in a school, so they only see
+ * public (non-targeted) papers — especially practice exams — that match their
+ * class and IIT / Board scope.
+ */
+export function examVisibleToIndividualStudent(exam, student) {
+  if (!exam || !student) return false;
+  if (exam.isSchoolSpecific === true) return false;
+  const { examSchoolIdStr, targetSchoolIds } = schoolTargetIds(exam);
+  if (examSchoolIdStr || targetSchoolIds.length > 0) return false;
+
+  if (exam.isAllBoards === true) return true;
+
+  const hasIitTracks =
+    Array.isArray(student.iitCategories) &&
+    student.iitCategories.some((c) => String(c || '').trim());
+  const interested = Array.isArray(student.interestedCourses)
+    ? student.interestedCourses.map((c) => String(c).toUpperCase())
+    : [];
+  const wantsIit =
+    hasIitTracks ||
+    Boolean(student.isAsliPrepExclusive) ||
+    interested.some((c) => c.includes('IIT') || c.includes('NEET') || c.includes('JEE'));
+
+  const scope = boardsForSchoolContentScope({
+    board: student.board,
+    curriculumBoard: student.curriculumBoard,
+    isAsliPrepExclusive: Boolean(student.isAsliPrepExclusive) || hasIitTracks,
+    iitCategories: student.iitCategories,
+  }).map(normalizeBoardKey);
+
+  const examBoard = normalizeBoardKey(exam.board);
+  if (!examBoard) return exam.examType === 'practice';
+  if (scope.includes(examBoard)) return true;
+
+  const compact = examBoard.replace(/_/g, '');
+  if (wantsIit && (compact.includes('IIT') || compact.includes('NEET') || compact.includes('JEE'))) {
+    return true;
+  }
+  if (scope.includes('ASLI_EXCLUSIVE_SCHOOLS') && compact.includes('ASLI')) return true;
+  // Untagged practice papers on a Board class still count as B2C practice.
+  if (exam.examType === 'practice' && scope.length && !compact.includes('IIT')) {
+    return scope.some((b) => b === examBoard || b.includes(compact) || compact.includes(b));
+  }
+  return false;
+}
