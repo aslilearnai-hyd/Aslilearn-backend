@@ -125,6 +125,29 @@ export function subjectsMatchByAlias(a, b) {
   return normalizeSubjectLabel(a) === normalizeSubjectLabel(b);
 }
 
+/** Board + IIT siblings share a Learning Path card (maths === maths_iit). */
+export function learningPathSubjectGroup(name) {
+  return String(subjectGroupKey(name) || '').replace(/_iit$/, '');
+}
+
+/**
+ * Keep a content row on a subject page only when its subject family matches.
+ * Untagged rows stay (legacy board files); Biology IIT is dropped from Maths.
+ */
+export function contentRowMatchesSubjectGroup(content, seedName) {
+  const seedKey = learningPathSubjectGroup(seedName);
+  if (!seedKey) return true;
+  const subject = content?.subject;
+  const raw =
+    (subject && typeof subject === 'object' && subject.name) ||
+    content?.subjectName ||
+    '';
+  if (!String(raw).trim()) return true;
+  const rowKey = learningPathSubjectGroup(raw);
+  if (!rowKey) return true;
+  return rowKey === seedKey;
+}
+
 /**
  * Score how well a candidate subject name matches a wanted timetable cell.
  * Higher is better; 0 = no match.

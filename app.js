@@ -151,7 +151,7 @@ app.use(requestContext);
     'Accept',
         'Origin',
       ],
-      exposedHeaders: ['Set-Cookie', 'X-Request-Id'],
+      exposedHeaders: ['Set-Cookie', 'X-Request-Id', 'Content-Disposition'],
       optionsSuccessStatus: 200,
       preflightContinue: false,
     }),
@@ -203,7 +203,7 @@ app.use((req, res, next) => {
   if (origin && allowedOrigins.includes(origin)) {
     res.header('Access-Control-Allow-Origin', origin);
     res.header('Access-Control-Allow-Credentials', 'true');
-    res.header('Access-Control-Expose-Headers', 'Set-Cookie');
+    res.header('Access-Control-Expose-Headers', 'Set-Cookie, X-Request-Id, Content-Disposition');
     res.header('Vary', 'Origin');
   }
   next();
@@ -249,7 +249,7 @@ app.options(/^\/api\/.*/, (req, res) => {
     'Access-Control-Allow-Headers',
       'Content-Type, Authorization, Cookie, X-Requested-With, Accept, Origin',
   );
-    res.setHeader('Access-Control-Expose-Headers', 'Set-Cookie, X-Request-Id');
+    res.setHeader('Access-Control-Expose-Headers', 'Set-Cookie, X-Request-Id, Content-Disposition');
   res.setHeader('Access-Control-Max-Age', '86400');
   res.sendStatus(204);
 });

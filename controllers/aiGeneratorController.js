@@ -18,6 +18,10 @@ import {
   normalizeClassLabelForLock,
   resolveClassLabelForAiToolStorage,
 } from '../utils/board-label.js';
+import {
+  pdfSafeWinAnsiText,
+  resolveAiToolRecordPdfBody,
+} from '../utils/ai-tool-pdf-body.js';
 import { applyClassLabelMongoFilter, buildCaseInsensitiveExactFilter } from '../utils/ai-tool-data-match.js';
 import {
   compareAiToolRecordsByVariantThenDate,
@@ -1030,74 +1034,10 @@ export async function reviewGeneratorRecord(req, res) {
   }
 }
 
-/** Human-readable label from a structuredContent key (e.g. sectionA_mcq -> "Section A — MCQ"). */
-function humanizeV2Key(k) {
-  let s = String(k || '');
-  const sec = s.match(/^section([A-E])_?(.*)$/i);
-  if (sec) {
-    const kind = sec[2]
-      .replace(/mcq/i, 'MCQ')
-      .replace(/fib/i, 'Fill in the Blanks')
-      .replace(/([a-z])([A-Z])/g, '$1 $2');
-    return `Section ${sec[1].toUpperCase()}${kind ? ' — ' + kind.replace(/\b\w/g, (c) => c.toUpperCase()) : ''}`;
-  }
-  s = s.replace(/_/g, ' ').replace(/([a-z])([A-Z])/g, '$1 $2');
-  return s.replace(/\b\w/g, (c) => c.toUpperCase());
-}
-
-/** Render a V2 six-section structuredContent object into readable plain text for the PDF. */
-function formatV2SixSectionToText(sc) {
-  const lines = [];
-  const SECTIONS = [
-    ['core', 'CONTENT'],
-    ['objectives', 'LEARNING OBJECTIVES'],
-    ['differentiation', 'DIFFERENTIATION & SUPPORT'],
-    ['assessment', 'ANSWER KEY & ASSESSMENT'],
-    ['teacher', "TEACHER'S IMPLEMENTATION GUIDE"],
-    ['reallife', 'REAL-LIFE CONNECTION'],
-  ];
-  const walk = (val, indent) => {
-    if (val == null || val === '') return;
-    if (typeof val === 'string' || typeof val === 'number' || typeof val === 'boolean') {
-      lines.push(indent + String(val));
-      return;
-    }
-    if (Array.isArray(val)) {
-      for (const item of val) {
-        if (item && typeof item === 'object' && !Array.isArray(item)) {
-          walk(item, indent);
-          lines.push('');
-        } else {
-          walk(item, `${indent}• `);
-        }
-      }
-      return;
-    }
-    if (typeof val === 'object') {
-      for (const [k, v] of Object.entries(val)) {
-        if (v == null || v === '') continue;
-        if (typeof v === 'string' || typeof v === 'number' || typeof v === 'boolean') {
-          lines.push(`${indent}${humanizeV2Key(k)}: ${v}`);
-        } else {
-          lines.push(`${indent}${humanizeV2Key(k)}:`);
-          walk(v, `${indent}  `);
-        }
-      }
-    }
-  };
-  for (const [key, title] of SECTIONS) {
-    if (!sc || !sc[key]) continue;
-    lines.push('');
-    lines.push(title);
-    walk(sc[key], '');
-  }
-  return lines.join('\n').replace(/\n{3,}/g, '\n\n').trim();
-}
-
 export async function generatePDF(req, res) {
   try {
     const role = req.user?.role;
-    if (!['super-admin', 'teacher'].includes(role)) {
+    if (!['super-admin', 'teacher', 'admin'].includes(role)) {
       return res.status(403).json({
         success: false,
         message: 'Access denied.',
@@ -1109,13 +1049,7 @@ export async function generatePDF(req, res) {
       return res.status(400).json({ success: false, message: 'Invalid record id.' });
     }
 
-    // By-id fetch for a record the user is already viewing (role checked above).
-    // Only exclude ai_pdf; the restrictive list-scoping $or wrongly dropped
-    // book_rag (book-based) records, causing "Record not found" on their PDF.
-    let record = await AiToolGeneration.findOne({
-      _id: id,
-      sourceType: { $ne: 'ai_pdf' },
-    }).lean();
+    let record = await AiToolGeneration.findById(id).lean();
     if (!record) {
       const leg = await AIGeneratorRecord.findById(id).lean();
       record = mapLegacyAiGeneratorDoc(leg);
@@ -1124,19 +1058,10 @@ export async function generatePDF(req, res) {
       return res.status(404).json({ success: false, message: 'Record not found.' });
     }
 
-    // V2 six-section records store only the title in content/generatedContent;
-    // the full content lives in metadata.structuredContent. Render it so the PDF
-    // isn't just the title.
-    const v2sc = record.metadata?.structuredContent;
-    const isV2Record =
-      record.metadata?.formatSource === 'asli-v2-six-section' ||
-      record.metadata?.schemaVersion === 'asli-v2-six-section' ||
-      v2sc?.schema === 'asli-v2-six-section';
-    const bodyText =
-      isV2Record && v2sc
-        ? formatV2SixSectionToText(v2sc)
-        : String(record.generatedContent || record.content || '').trim();
-    const toolName = String(record.toolDisplayName || record.toolName || 'AI Tool').trim();
+    const bodyText = pdfSafeWinAnsiText(resolveAiToolRecordPdfBody(record) || '(no content)');
+    const toolName = pdfSafeWinAnsiText(
+      String(record.toolDisplayName || record.toolName || 'AI Tool').trim() || 'AI Tool',
+    );
     const metaRows = [
       ['Class', record.classLabel],
       ['Subject', record.subject],
@@ -1144,7 +1069,9 @@ export async function generatePDF(req, res) {
       ['Subtopic', record.subtopic],
       ['Board', record.board],
       ['Generated', record.createdAt ? new Date(record.createdAt).toLocaleString() : '—'],
-    ].filter(([, v]) => String(v || '').trim());
+    ]
+      .filter(([, v]) => String(v || '').trim())
+      .map(([label, value]) => [label, pdfSafeWinAnsiText(value)]);
 
     const slugPart = (value) =>
       String(value || '')
@@ -1169,10 +1096,24 @@ export async function generatePDF(req, res) {
 
     const doc = new PDFDocument({ size: 'A4', margin: 48 });
     const chunks = [];
+    let finished = false;
+    const fail = (error) => {
+      console.error('generatePDF error:', error);
+      if (finished || res.headersSent) return;
+      finished = true;
+      return res.status(500).json({
+        success: false,
+        message: 'Failed to generate PDF.',
+      });
+    };
     doc.on('data', (chunk) => chunks.push(chunk));
+    doc.on('error', fail);
     doc.on('end', () => {
+      if (finished || res.headersSent) return;
+      finished = true;
       const pdfBuffer = Buffer.concat(chunks);
       res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Access-Control-Expose-Headers', 'Content-Disposition');
       res.setHeader(
         'Content-Disposition',
         `attachment; filename="${pdfFileNameAscii.replace(/"/g, '')}"; filename*=UTF-8''${encodeURIComponent(pdfFileName)}`,
@@ -1181,17 +1122,23 @@ export async function generatePDF(req, res) {
     });
 
     const pageW = doc.page.width - doc.page.margins.left - doc.page.margins.right;
+    const headerTop = doc.y;
 
     doc.save();
-    doc.roundedRect(doc.page.margins.left, doc.y, pageW, 88, 12).fill('#4f46e5');
+    doc.fillColor('#4f46e5');
+    doc.roundedRect(doc.page.margins.left, headerTop, pageW, 88, 12).fill();
     doc.fillColor('#ffffff');
-    doc.fontSize(9).text('ASLILEARN · AI V2', doc.page.margins.left + 16, doc.y + 14);
-    doc.fontSize(18).text(toolName, doc.page.margins.left + 16, doc.y + 30, {
+    doc.fontSize(9).text('ASLILEARN · AI V2', doc.page.margins.left + 16, headerTop + 14, {
       width: pageW - 32,
     });
-    doc.fontSize(10).text('Premium curriculum export', doc.page.margins.left + 16, doc.y + 58);
+    doc.fontSize(18).text(toolName, doc.page.margins.left + 16, headerTop + 30, {
+      width: pageW - 32,
+    });
+    doc.fontSize(10).text('Premium curriculum export', doc.page.margins.left + 16, headerTop + 62, {
+      width: pageW - 32,
+    });
     doc.restore();
-    doc.y += 100;
+    doc.y = headerTop + 100;
 
     doc.fillColor('#1e293b').fontSize(11);
     for (const [label, value] of metaRows) {
@@ -1200,11 +1147,15 @@ export async function generatePDF(req, res) {
     }
     doc.moveDown(1);
 
-    doc.strokeColor('#e2e8f0').moveTo(doc.page.margins.left, doc.y).lineTo(doc.page.margins.left + pageW, doc.y).stroke();
+    doc.strokeColor('#e2e8f0').lineWidth(1);
+    doc
+      .moveTo(doc.page.margins.left, doc.y)
+      .lineTo(doc.page.margins.left + pageW, doc.y)
+      .stroke();
     doc.moveDown(0.75);
 
     doc.fillColor('#334155').fontSize(10).font('Helvetica');
-    doc.text(bodyText || '(no content)', {
+    doc.text(bodyText, {
       align: 'left',
       width: pageW,
       lineGap: 3,
@@ -1213,10 +1164,12 @@ export async function generatePDF(req, res) {
     doc.end();
   } catch (error) {
     console.error('generatePDF error:', error);
-    return res.status(500).json({
-      success: false,
-      message: 'Failed to generate PDF.',
-    });
+    if (!res.headersSent) {
+      return res.status(500).json({
+        success: false,
+        message: 'Failed to generate PDF.',
+      });
+    }
   }
 }
 

@@ -3,6 +3,7 @@ import { MODULE_REGISTRY } from './module-registry.js';
 import {
   isReportsOverviewQuery,
   isHeadcountOverviewQuery,
+  isPublishedCatalogQuery,
   extractSchoolNameQuery,
   isSchoolDetailQuery,
 } from './school-overview-facts.js';
@@ -150,6 +151,23 @@ function buildKnowledgePlan(errMessage = '', warning = 'greeting_or_small_talk')
   };
 }
 
+function buildCatalogCountsPlan(errMessage = '') {
+  return {
+    mode: 'catalog_counts',
+    module: 'videos',
+    operation: 'count',
+    filters: [],
+    selectFields: [],
+    groupBy: [],
+    aggregates: [],
+    sort: [],
+    limit: 20,
+    timeframe: 'all',
+    clarification: '',
+    parseWarning: errMessage ? `gemini_unavailable:${errMessage}` : 'published_catalog_intent',
+  };
+}
+
 function buildOverviewPlan(errMessage = '') {
   return {
     mode: 'overview',
@@ -269,6 +287,9 @@ function buildHeuristicPlan(message, errMessage = '') {
   }
   if (isReportsOverviewQuery(message) || isHeadcountOverviewQuery(message)) {
     return buildOverviewPlan(errMessage);
+  }
+  if (isPublishedCatalogQuery(message)) {
+    return buildCatalogCountsPlan(errMessage);
   }
 
   const personEarly = extractPersonNameQuery(message);
@@ -544,6 +565,9 @@ export async function parseDynamicIntent({ userMessage, history = [] }) {
   if (isReportsOverviewQuery(message) || isHeadcountOverviewQuery(message)) {
     return buildOverviewPlan();
   }
+  if (isPublishedCatalogQuery(message)) {
+    return buildCatalogCountsPlan();
+  }
 
   const personEarly = extractPersonNameQuery(message);
   if (personEarly.name && isPersonDetailQuery(message)) {
@@ -642,6 +666,9 @@ ${message.slice(0, 4500)}
 
   if (isReportsOverviewQuery(message) || isHeadcountOverviewQuery(message)) {
     return buildOverviewPlan();
+  }
+  if (isPublishedCatalogQuery(message)) {
+    return buildCatalogCountsPlan();
   }
 
   const namedSchool = extractSchoolNameQuery(message) || String(parsed.schoolNameQuery || '').trim();

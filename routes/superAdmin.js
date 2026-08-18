@@ -83,6 +83,7 @@ import {
   mergeAiToolDuplicatesHandler,
   mergeAllAiToolDuplicatesHandler,
 } from '../controllers/aiToolGenerationsController.js';
+import { generatePDF } from '../controllers/aiGeneratorController.js';
 import {
   listAiToolTopics,
   createAiToolTopic,
@@ -504,6 +505,7 @@ router.get('/ai-tool-generations/duplicates', listAiToolDuplicates);
 router.post('/ai-tool-generations/duplicates/merge', mergeAiToolDuplicatesHandler);
 router.post('/ai-tool-generations/duplicates/merge-all', mergeAllAiToolDuplicatesHandler);
 router.get('/ai-tool-generations/export-bundle', exportAiToolGenerationsBundle);
+router.get('/ai-tool-generations/document/:id/pdf', generatePDF);
 router.get('/ai-tool-generations/document/:id', getAiToolGenerationById);
 router.patch('/ai-tool-generations/document/:id', updateAiToolGenerationById);
 router.delete('/ai-tool-generations/document/:id', deleteAiToolGenerationById);

@@ -5,6 +5,7 @@ import { formatDynamicResponse } from './response-formatter.js';
 import {
   buildControlOverviewFacts,
   buildNamedSchoolDetailFacts,
+  buildPublishedCatalogFacts,
 } from './school-overview-facts.js';
 import {
   buildNamedPersonDetailFacts,
@@ -38,6 +39,10 @@ export async function runDynamicAiQuery({
     const overviewFacts = await buildControlOverviewFacts({ viewerRole, viewerUserId });
     facts = { mode: 'overview', ...overviewFacts };
     notes.push('School dashboard overview: multi-metric snapshot from scoped aggregates.');
+  } else if (plan.mode === 'catalog_counts') {
+    const catalogFacts = await buildPublishedCatalogFacts({ viewerRole, viewerUserId });
+    facts = { mode: 'catalog_counts', ...catalogFacts };
+    notes.push('Published catalog: EduOTT videos, library video items, and published assessments.');
   } else if (plan.mode === 'school_detail') {
     const detailFacts = await buildNamedSchoolDetailFacts(plan.schoolNameQuery || '', {
       viewerRole,

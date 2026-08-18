@@ -76,6 +76,7 @@ router.get('/asli-prep-content', async (req, res) => {
       isActive: true,
       subject: { $in: activeSubjectIds },
     };
+    let seedSubjectName = '';
 
     if (subject && subject !== 'all' && mongoose.Types.ObjectId.isValid(String(subject))) {
       const sid = String(subject);
@@ -91,18 +92,24 @@ router.get('/asli-prep-content', async (req, res) => {
       });
 
       let expandedIds = await resolveSubjectContentIds(sid, { boards });
-      if (programCtx.isAsliPrepExclusive && iitCategoriesForAdmin.length) {
-        const { mergeIitCatalogSubjectsIntoLibraryIds } = await import(
+      const Subject = (await import('../../models/Subject.js')).default;
+      const subjDoc = await Subject.findById(sid).select('classNumber name').lean();
+      seedSubjectName = subjDoc?.name || '';
+      if (programCtx.isAsliPrepExclusive && iitCategoriesForAdmin.length && seedSubjectName) {
+        const { mergeSameGroupIitCatalogSubjectIds } = await import(
           '../../utils/iitCatalogSubjects.js'
         );
-        // Prefer class from the subject row when available
-        const Subject = (await import('../../models/Subject.js')).default;
-        const subjDoc = await Subject.findById(sid).select('classNumber name').lean();
-        const classNum = normalizeClassNumberLabel(subjDoc?.classNumber || '');
+        const classNum =
+          normalizeClassNumberLabel(subjDoc?.classNumber || '') ||
+          String(subjDoc?.name || '').match(/_(\d+)$/)?.[1] ||
+          '';
         if (classNum) {
-          expandedIds = await mergeIitCatalogSubjectsIntoLibraryIds(expandedIds, classNum, {
-            iitCategories: iitCategoriesForAdmin,
-          });
+          expandedIds = await mergeSameGroupIitCatalogSubjectIds(
+            expandedIds,
+            classNum,
+            seedSubjectName,
+            { iitCategories: iitCategoriesForAdmin },
+          );
         }
       }
 
@@ -140,6 +147,13 @@ router.get('/asli-prep-content', async (req, res) => {
 
     contents = filterContentRowsForActiveCatalog(contents, activeIdSet);
     contents = applySchoolProgramContentFilters(contents, programCtx);
+
+    if (seedSubjectName) {
+      const { contentRowMatchesSubjectGroup } = await import(
+        '../../utils/resolveSubjectContentIds.js'
+      );
+      contents = contents.filter((row) => contentRowMatchesSubjectGroup(row, seedSubjectName));
+    }
 
     // Prefer content for classes this school actually runs (still keep untagged class).
     if (adminId && mongoose.Types.ObjectId.isValid(String(adminId))) {

@@ -69,6 +69,13 @@ function validateDbGroundedResponse({ text, facts, userPrompt }) {
 }
 
 function formatOverviewFallback(facts) {
+  if (facts?.operation === 'catalog_counts' || facts?.mode === 'catalog_counts') {
+    const videos = Number(facts.publishedVideos || 0);
+    const library = Number(facts.libraryVideos || 0);
+    const assessments = Number(facts.publishedAssessments || 0);
+    return `Published EduOTT videos: ${videos}. Library video items: ${library}. Published assessments (quizzes): ${assessments}.`;
+  }
+
   const o = facts?.overview && typeof facts.overview === 'object' ? facts.overview : {};
   const label = String(
     facts?.personLabel || facts?.classLabel || facts?.schoolLabel || 'Your school',
@@ -221,6 +228,12 @@ function formatOverviewFallback(facts) {
     lines.push(`Student login sessions today (attendance proxy): ${o.loginSessionsToday}.`);
   }
   if (typeof o.trialMembers === 'number') lines.push(`Trial members: ${o.trialMembers}.`);
+  if (typeof o.publishedVideos === 'number') {
+    lines.push(`Published EduOTT videos: ${o.publishedVideos}.`);
+  }
+  if (typeof o.publishedAssessments === 'number') {
+    lines.push(`Published assessments: ${o.publishedAssessments}.`);
+  }
   if (facts?.error && (profile || Object.keys(o).length)) {
     lines.push(String(facts.error));
   }
@@ -235,6 +248,9 @@ function localFallbackResponse({ userPrompt, facts }) {
     facts?.mode === 'person_detail' ||
     facts?.mode === 'class_detail'
   ) {
+    return formatOverviewFallback(facts);
+  }
+  if (facts?.operation === 'catalog_counts' || facts?.mode === 'catalog_counts') {
     return formatOverviewFallback(facts);
   }
   const moduleLabels = {
@@ -256,6 +272,9 @@ function localFallbackResponse({ userPrompt, facts }) {
     impact_snapshots: 'school impact snapshots',
     ai_tool_data: 'AI generations',
     learning_sessions: 'learning sessions',
+    videos: 'published videos',
+    assessments: 'published assessments',
+    library_content: 'library items',
   };
   const label = moduleLabels[facts?.module] || facts?.module || 'records';
   const asksForCount = /((how|who)\s*many|count|total|number of|are there|how much)/i.test(
@@ -418,13 +437,16 @@ export async function formatDynamicResponse({
 }) {
   if (
     plan?.mode === 'overview' ||
+    plan?.mode === 'catalog_counts' ||
     plan?.mode === 'school_detail' ||
     plan?.mode === 'person_detail' ||
     plan?.mode === 'class_detail' ||
     facts?.operation === 'overview' ||
+    facts?.operation === 'catalog_counts' ||
     facts?.mode === 'school_detail' ||
     facts?.mode === 'person_detail' ||
-    facts?.mode === 'class_detail'
+    facts?.mode === 'class_detail' ||
+    facts?.mode === 'catalog_counts'
   ) {
     return formatOverviewFallback(facts);
   }
@@ -437,7 +459,7 @@ export async function formatDynamicResponse({
 You are a database-aware AI assistant.
 You must never invent values.
 You must only respond using values returned from backend database queries.
-If no data exists, clearly say: "I could not find matching records in the database."
+If FACTS_JSON includes numeric counts (including 0), report those exact counts. Only say "I could not find matching records in the database." when FACTS_JSON has no count, rows, or published catalog numbers at all.
 Do not estimate. Do not guess. Do not hallucinate.
 Never use words: approximately, maybe, likely, around, probably, estimated.
 If module unavailable, say so clearly.

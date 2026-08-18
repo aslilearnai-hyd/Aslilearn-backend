@@ -28,6 +28,7 @@ import {
   applyProductCategoryMongoFilter,
   normalizeTopicProductCategory,
 } from '../ai/shared/ai-tool-topic-taxonomy.js';
+import { resolveAiToolRecordPdfBody } from '../utils/ai-tool-pdf-body.js';
 
 const WHOLE_CHAPTER_LABEL = 'Whole chapter';
 
@@ -811,7 +812,7 @@ export const exportAiToolGenerationsBundle = async (req, res) => {
     });
     const limited = docs.slice(0, max).map((d) => ({
       ...d,
-      content: d.content || '',
+      content: resolveAiToolRecordPdfBody(d) || d.content || '',
     }));
 
     if (docs.length >= max) {

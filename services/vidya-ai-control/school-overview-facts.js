@@ -406,3 +406,39 @@ export function isHeadcountOverviewQuery(message) {
   const countish = /((how|who)\s*many|count|total|number of|are there|\bactive\b)/i.test(lower);
   return students && teachers && countish;
 }
+
+/** Quick-ask: "How many published videos and assessments?" */
+export function isPublishedCatalogQuery(message) {
+  const lower = String(message || '').toLowerCase();
+  const videos = /\bvideos?\b|eduott|video lecture/.test(lower);
+  const assessments = /\bassessments?\b|\bquizzes\b|\bquiz\b/.test(lower);
+  if (!videos && !assessments) return false;
+  return /how many|count|total|number of|are there|\bpublished\b|\bshow\b/.test(lower);
+}
+
+export async function buildPublishedCatalogFacts({ viewerRole, viewerUserId }) {
+  const role = String(viewerRole || '').toLowerCase();
+  const viewerOid = oid(viewerUserId);
+  const videoFilter = { isPublished: true, isActive: { $ne: false } };
+  const assessmentFilter = { isPublished: true };
+  const libraryVideoFilter = { type: 'Video', isActive: { $ne: false } };
+  if (role === 'admin' && viewerOid) {
+    videoFilter.adminId = viewerOid;
+    assessmentFilter.$or = [{ adminId: viewerOid }, { createdBy: viewerOid }];
+  }
+
+  const [publishedVideos, publishedAssessments, libraryVideos] = await Promise.all([
+    Video.countDocuments(videoFilter).catch(() => 0),
+    Assessment.countDocuments(assessmentFilter).catch(() => 0),
+    Content.countDocuments(libraryVideoFilter).catch(() => 0),
+  ]);
+
+  return {
+    operation: 'catalog_counts',
+    scope: role === 'admin' ? 'school' : 'platform',
+    publishedVideos,
+    publishedAssessments,
+    libraryVideos,
+    eduOttVideos: publishedVideos,
+  };
+}

@@ -188,6 +188,33 @@ export const listOmrBatches = async (req, res) => {
   }
 };
 
+export const deleteOmrBatch = async (req, res) => {
+  try {
+    const adminId = requireOmrSchoolAdminId(req, res);
+    if (!adminId) return;
+    const batchId = toObjectId(req.params.id);
+    if (!batchId) {
+      return res.status(400).json({ success: false, message: 'Invalid batch id' });
+    }
+
+    const batch = await OmrResultBatch.findOne({ _id: batchId, adminId });
+    if (!batch) {
+      return res.status(404).json({ success: false, message: 'Uploaded file not found' });
+    }
+
+    await OmrResultRow.deleteMany({ batchId, adminId });
+    await OmrResultBatch.deleteOne({ _id: batchId, adminId });
+
+    res.json({
+      success: true,
+      message: `Removed ${batch.sourceFileName || batch.testTitle || 'uploaded file'}`,
+    });
+  } catch (error) {
+    console.error('deleteOmrBatch:', error);
+    res.status(500).json({ success: false, message: error.message || 'Could not remove file' });
+  }
+};
+
 export const getOmrBatch = async (req, res) => {
   try {
     const adminId = requireOmrSchoolAdminId(req, res);

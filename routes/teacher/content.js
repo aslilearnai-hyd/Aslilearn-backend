@@ -314,7 +314,40 @@ router.get('/asli-prep-content', async (req, res) => {
     if (subject && subject !== 'all' && mongoose.Types.ObjectId.isValid(subject)) {
       const allowed = await subjectIdAllowedWithSiblings(subject, librarySubjectIds, boardResolveOpts);
       if (allowed) {
-        const resolved = await resolveSubjectContentIds(subject, boardResolveOpts);
+        let resolved = await resolveSubjectContentIds(subject, boardResolveOpts);
+        if (
+          programCtx.isAsliPrepExclusive &&
+          Array.isArray(programCtx.iitCategories) &&
+          programCtx.iitCategories.some((c) => String(c || '').trim())
+        ) {
+          const Subject = (await import('../../models/Subject.js')).default;
+          const { mergeSameGroupIitCatalogSubjectIds } = await import(
+            '../../utils/iitCatalogSubjects.js'
+          );
+          const { normalizeClassNumberLabel } = await import('../../utils/studentClassContent.js');
+          const subjDoc = await Subject.findById(subject).select('name classNumber').lean();
+          const classTargets = new Set();
+          const fromDoc =
+            normalizeClassNumberLabel(subjDoc?.classNumber) ||
+            String(subjDoc?.name || '').match(/_(\d+)$/)?.[1] ||
+            '';
+          if (fromDoc) classTargets.add(fromDoc);
+          for (const s of teacher.subjects || []) {
+            const cn =
+              normalizeClassNumberLabel(s?.classNumber) ||
+              String(s?.name || '').match(/_(\d+)$/)?.[1] ||
+              '';
+            if (cn) classTargets.add(cn);
+          }
+          for (const cn of classTargets) {
+            resolved = await mergeSameGroupIitCatalogSubjectIds(
+              resolved,
+              cn,
+              subjDoc?.name,
+              { iitCategories: programCtx.iitCategories },
+            );
+          }
+        }
         query.subject = { $in: resolved };
       } else {
         console.log('⚠️ Requested subject not in teacher subject scope');
@@ -340,6 +373,17 @@ router.get('/asli-prep-content', async (req, res) => {
     contents = filterContentRowsForActiveCatalog(contents, activeIdSet);
 
     contents = applySchoolProgramContentFilters(contents, programCtx);
+
+    if (subject && subject !== 'all' && mongoose.Types.ObjectId.isValid(subject)) {
+      const Subject = (await import('../../models/Subject.js')).default;
+      const { contentRowMatchesSubjectGroup } = await import(
+        '../../utils/resolveSubjectContentIds.js'
+      );
+      const opened = await Subject.findById(subject).select('name').lean();
+      if (opened?.name) {
+        contents = contents.filter((row) => contentRowMatchesSubjectGroup(row, opened.name));
+      }
+    }
 
     if (teacher.isIndividualAccount) {
       const { resolveStudentClassNumber, filterContentsForStudentClass } = await import(
