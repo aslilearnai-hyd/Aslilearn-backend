@@ -4,6 +4,8 @@ import {
   isRazorpayConfigured,
   createRazorpayOrder,
   verifyRazorpaySignature,
+  getRazorpayKeyId,
+  describeRazorpayConfig,
 } from '../services/razorpayService.js';
 import {
   publicPlanCatalog,
@@ -40,7 +42,7 @@ export async function getBillingConfig(req, res) {
     res.json({
       success: true,
       configured: isRazorpayConfigured(),
-      keyId: isRazorpayConfigured() ? process.env.RAZORPAY_KEY_ID.trim() : '',
+      keyId: isRazorpayConfigured() ? getRazorpayKeyId() : '',
       plans,
     });
   } catch (error) {
@@ -121,7 +123,7 @@ export async function createIndividualCheckoutOrder(req, res) {
 
     return res.json({
       success: true,
-      keyId: process.env.RAZORPAY_KEY_ID.trim(),
+      keyId: getRazorpayKeyId(),
       orderId: order.id,
       amount: order.amount,
       currency: order.currency || 'INR',
@@ -138,7 +140,7 @@ export async function createIndividualCheckoutOrder(req, res) {
       error.response?.data?.message ||
       error.message ||
       'Could not start payment.';
-    console.error('createIndividualCheckoutOrder:', msg, error.response?.data || error);
+    console.error('createIndividualCheckoutOrder:', msg, error.response?.data || error, describeRazorpayConfig());
     const razorpayAuthFail = /authentication failed/i.test(String(msg));
     return res.status(500).json({
       success: false,
