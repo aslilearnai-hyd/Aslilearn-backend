@@ -28,6 +28,7 @@ import {
   getAvailableContent
 } from '../../controllers/aiToolsController.js';
 import { getMyWeeklyDigest } from '../../controllers/impactReportController.js';
+import { handleGetSessionTime, handleSaveSessionTime } from '../../utils/user-activity.js';
 import Video from '../../models/Video.js';
 import Assessment from '../../models/Assessment.js';
 import Exam from '../../models/Exam.js';
@@ -56,6 +57,8 @@ const router = express.Router();
 
 // Teacher Dashboard Routes
 router.get('/dashboard', getTeacherDashboardStats);
+router.get('/session-time', (req, res) => handleGetSessionTime(req, res, { recordPresence: true }));
+router.post('/session-time', handleSaveSessionTime);
 
 /** GET /api/teacher/me — profile details for Settings */
 router.get('/me', async (req, res) => {

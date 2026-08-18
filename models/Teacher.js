@@ -191,6 +191,10 @@ const teacherSchema = new mongoose.Schema({
     type: Date,
     default: null,
   },
+  lastLogin: {
+    type: Date,
+    default: null,
+  },
   isActive: {
     type: Boolean,
     default: true

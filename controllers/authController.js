@@ -697,6 +697,13 @@ export async function login(req, res) {
           teacher.subscriptionStatus = 'expired';
         }
         await teacher.save();
+
+        try {
+          const { recordDailyAccessSession } = await import('../utils/user-activity.js');
+          await recordDailyAccessSession(teacher._id);
+        } catch (sessionErr) {
+          console.warn('Teacher login session record skipped:', sessionErr?.message);
+        }
         
         const token = jwt.sign(
           { 
@@ -827,20 +834,8 @@ export async function login(req, res) {
     // even when the client never posts session-time minutes.
     if (user.role === 'student' || user.role === 'teacher') {
       try {
-        const UserSession = (await import('../models/UserSession.js')).default;
-        const { calendarDayKey } = await import('../services/impact-report-service.js');
-        const now = new Date();
-        const dateKey = calendarDayKey(now); // Asia/Kolkata YYYY-MM-DD
-        const existing = await UserSession.findOne({ userId: user._id, date: dateKey }).select('_id').lean();
-        if (!existing) {
-          await UserSession.create({
-            userId: user._id,
-            date: dateKey,
-            startTime: new Date(`${dateKey}T00:00:00.000+05:30`),
-            endTime: now,
-            duration: 1,
-          });
-        }
+        const { recordDailyAccessSession } = await import('../utils/user-activity.js');
+        await recordDailyAccessSession(user._id);
       } catch (sessionErr) {
         console.warn('Login session record skipped:', sessionErr?.message);
       }

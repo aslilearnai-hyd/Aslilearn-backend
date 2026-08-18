@@ -1813,6 +1813,10 @@ export const getTeacherDashboardStats = async (req, res) => {
       return res.status(404).json({ success: false, message: 'Teacher not found' });
     }
 
+    import('../utils/user-activity.js')
+      .then(({ recordUserPresence }) => recordUserPresence(teacherId))
+      .catch(() => null);
+
     const effectiveSubjectIds = await getEffectiveTeacherSubjectObjectIds(teacher);
     const effectiveSubjectIdStr = new Set(effectiveSubjectIds.map((id) => id.toString()));
 

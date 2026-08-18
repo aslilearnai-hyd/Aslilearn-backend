@@ -132,6 +132,11 @@ const writeLog = async (record) => {
       promptPreview: truncate(record.prompt, 500),
       responsePreview: truncate(record.response, 500),
     });
+    if (String(record?.role || '').toLowerCase() === 'teacher' && record?.userId) {
+      import('../utils/user-activity.js')
+        .then(({ recordUserPresence }) => recordUserPresence(record.userId))
+        .catch(() => null);
+    }
   } catch (err) {
     console.warn('Failed to write VidyaCallLog:', err.message);
   }

@@ -91,6 +91,9 @@ function logTeacherToolUsage({ teacherId, toolType, classDisplay, finalSubject, 
     topic: topicForStore || '',
     subtopic: subtopicForStore || '',
   }).catch((err) => console.warn('[TeacherToolUsage] log failed:', err.message));
+  import('../utils/user-activity.js')
+    .then(({ recordUserPresence }) => recordUserPresence(teacherId))
+    .catch(() => null);
 }
 
 export function formatItemToContent(toolType, item, index = 0) {
