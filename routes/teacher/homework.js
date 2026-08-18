@@ -51,6 +51,30 @@ import {
   extractPlainSubjectNameForContent,
 } from '../../utils/resolveSubjectContentIds.js';
 import { parseDateKeyToUtc, getTeacherClassesHandler } from './helpers.js';
+import { normalizeUploadUrlForStorage, withSignedUploadUrl } from '../../utils/upload-access.js';
+
+function asPlainDoc(doc) {
+  if (!doc) return doc;
+  if (typeof doc.toObject === 'function') return doc.toObject();
+  return { ...doc };
+}
+
+function withSignedHomeworkFile(homework) {
+  const plain = asPlainDoc(homework);
+  if (plain?.fileUrl) plain.fileUrl = withSignedUploadUrl(plain.fileUrl);
+  return plain;
+}
+
+function withSignedSubmission(sub) {
+  const plain = asPlainDoc(sub);
+  if (plain?.submissionLink) {
+    plain.submissionLink = withSignedUploadUrl(plain.submissionLink);
+  }
+  if (plain?.homeworkId) {
+    plain.homeworkId = withSignedHomeworkFile(plain.homeworkId);
+  }
+  return plain;
+}
 
 const router = express.Router();
 
@@ -116,7 +140,7 @@ router.post('/homework', async (req, res) => {
       topic: topic?.trim() || undefined,
       date: new Date(date),
       deadline: new Date(deadline),
-      fileUrl: fileUrl.trim(),
+      fileUrl: normalizeUploadUrlForStorage(fileUrl.trim()) || fileUrl.trim(),
       isExclusive: false, // Teacher-created homework is not exclusive
       createdBy: 'teacher',
       teacherId: new mongoose.Types.ObjectId(teacherId)
@@ -271,8 +295,14 @@ router.get('/homework-submissions', async (req, res) => {
     res.json({
       success: true,
       data: {
-        homeworks: Array.from(homeworkMap.values()),
-        students: Array.from(studentMap.values())
+        homeworks: Array.from(homeworkMap.values()).map((entry) => ({
+          homework: withSignedHomeworkFile(entry.homework),
+          submissions: (entry.submissions || []).map(withSignedSubmission),
+        })),
+        students: Array.from(studentMap.values()).map((entry) => ({
+          student: entry.student,
+          submissions: (entry.submissions || []).map(withSignedSubmission),
+        })),
       }
     });
   } catch (error) {

@@ -229,6 +229,14 @@ export const createCalendarEvent = async (req, res) => {
     if (end < start) {
       end = start;
     }
+    const eventDay = start.toLocaleDateString('en-CA', { timeZone: 'Asia/Kolkata' });
+    const todayIst = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Kolkata' });
+    if (eventDay < todayIst) {
+      return res.status(400).json({
+        success: false,
+        message: 'Calendar events cannot be created on a past date',
+      });
+    }
     const kind = eventKind === 'holiday' ? 'holiday' : 'custom';
     const doc = await CalendarEvent.create({
       title: title.trim(),

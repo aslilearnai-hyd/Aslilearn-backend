@@ -5,6 +5,7 @@ import {
   listOmrBatches,
   getOmrBatch,
   assignOmrRows,
+  deleteOmrBatch,
   getOmrAdminSummary,
   listOmrClassOptions,
   listOmrStudentsForAssign,
@@ -36,6 +37,7 @@ router.get('/omr-results/class-options', listOmrClassOptions);
 router.get('/omr-results/students', listOmrStudentsForAssign);
 router.get('/omr-results/batches', listOmrBatches);
 router.get('/omr-results/batches/:id', getOmrBatch);
+router.delete('/omr-results/batches/:id', deleteOmrBatch);
 router.post('/omr-results/batches/:id/assign', assignOmrRows);
 router.post('/omr-results/upload', upload.single('file'), uploadOmrResults);
 

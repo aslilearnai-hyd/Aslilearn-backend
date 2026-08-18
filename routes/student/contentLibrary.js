@@ -252,7 +252,27 @@ router.get('/asli-prep-content', async (req, res) => {
         siblingBoardOpts,
       );
       if (allowed) {
-        const resolved = await resolveSubjectContentIds(subject, siblingBoardOpts);
+        let resolved = await resolveSubjectContentIds(subject, siblingBoardOpts);
+        if (programCtx.isAsliPrepExclusive && iitCategoriesForBrowse.length) {
+          const Subject = (await import('../../models/Subject.js')).default;
+          const { mergeSameGroupIitCatalogSubjectIds } = await import(
+            '../../utils/iitCatalogSubjects.js'
+          );
+          const subjDoc = await Subject.findById(subject).select('classNumber name').lean();
+          const classNum =
+            studentClassNumber ||
+            normalizeClassNumberLabel(subjDoc?.classNumber || '') ||
+            String(subjDoc?.name || '').match(/_(\d+)$/)?.[1] ||
+            '';
+          if (classNum && subjDoc?.name) {
+            resolved = await mergeSameGroupIitCatalogSubjectIds(
+              resolved,
+              classNum,
+              subjDoc.name,
+              { iitCategories: iitCategoriesForBrowse },
+            );
+          }
+        }
         query.subject = { $in: resolved };
       } else {
         console.log('⚠️ Requested subject not in class assigned subjects');
@@ -282,6 +302,17 @@ router.get('/asli-prep-content', async (req, res) => {
     contents = filterContentRowsForActiveCatalog(contents, activeIdSet);
 
     contents = applySchoolProgramContentFilters(contents, programCtx);
+
+    if (subject && subject !== 'all' && mongoose.Types.ObjectId.isValid(subject)) {
+      const Subject = (await import('../../models/Subject.js')).default;
+      const { contentRowMatchesSubjectGroup } = await import(
+        '../../utils/resolveSubjectContentIds.js'
+      );
+      const subjDoc = await Subject.findById(subject).select('name').lean();
+      if (subjDoc?.name) {
+        contents = contents.filter((row) => contentRowMatchesSubjectGroup(row, subjDoc.name));
+      }
+    }
 
     if (!studentClassNumber) {
       return res.json({
