@@ -3,23 +3,64 @@ import crypto from 'crypto';
 
 const RAZORPAY_API = 'https://api.razorpay.com/v1';
 
+function cleanCredential(raw) {
+  let v = String(raw || '').replace(/^\uFEFF/, '').replace(/\r/g, '').trim();
+  if (
+    (v.startsWith('"') && v.endsWith('"')) ||
+    (v.startsWith("'") && v.endsWith("'"))
+  ) {
+    v = v.slice(1, -1).trim();
+  }
+  return v;
+}
+
+export function getRazorpayKeyId() {
+  return cleanCredential(process.env.RAZORPAY_KEY_ID);
+}
+
+export function getRazorpayKeySecret() {
+  return cleanCredential(process.env.RAZORPAY_KEY_SECRET);
+}
+
 /**
  * Set RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET in server .env (Dashboard → API Keys).
  */
 export function isRazorpayConfigured() {
-  const id = process.env.RAZORPAY_KEY_ID?.trim();
-  const secret = process.env.RAZORPAY_KEY_SECRET?.trim();
-  return !!(id && secret);
+  return !!(getRazorpayKeyId() && getRazorpayKeySecret());
 }
 
-function getAuthHeader() {
-  const key = process.env.RAZORPAY_KEY_ID?.trim();
-  const secret = process.env.RAZORPAY_KEY_SECRET?.trim();
-  if (!key || !secret) {
+export function describeRazorpayConfig() {
+  const keyId = getRazorpayKeyId();
+  const secret = getRazorpayKeySecret();
+  const mode = keyId.startsWith('rzp_live_')
+    ? 'live'
+    : keyId.startsWith('rzp_test_')
+      ? 'test'
+      : 'unknown';
+  return {
+    configured: !!(keyId && secret),
+    mode,
+    keyIdLength: keyId.length,
+    secretLength: secret.length,
+    looksSwapped: secret.startsWith('rzp_'),
+    keyIdOk: mode !== 'unknown',
+  };
+}
+
+function razorpayRequestConfig(extraHeaders = {}) {
+  const keyId = getRazorpayKeyId();
+  const secret = getRazorpayKeySecret();
+  if (!keyId || !secret) {
     throw new Error('Razorpay credentials not configured');
   }
-  const token = Buffer.from(`${key}:${secret}`).toString('base64');
-  return { Authorization: `Basic ${token}` };
+  return {
+    auth: { username: keyId, password: secret },
+    timeout: 25000,
+    headers: {
+      Accept: 'application/json',
+      ...extraHeaders,
+    },
+  };
 }
 
 /**
@@ -27,9 +68,8 @@ function getAuthHeader() {
  */
 export async function fetchRazorpayPayments(count = 50) {
   const { data } = await axios.get(`${RAZORPAY_API}/payments`, {
-    headers: getAuthHeader(),
+    ...razorpayRequestConfig(),
     params: { count },
-    timeout: 25000,
   });
 
   const items = data?.items || [];
@@ -55,9 +95,8 @@ export async function fetchRazorpayPayments(count = 50) {
  */
 export async function fetchRazorpaySubscriptions(count = 50) {
   const { data } = await axios.get(`${RAZORPAY_API}/subscriptions`, {
-    headers: getAuthHeader(),
+    ...razorpayRequestConfig(),
     params: { count },
-    timeout: 25000,
   });
 
   const items = data?.items || [];
@@ -86,7 +125,7 @@ export async function fetchRazorpayCustomer(customerId) {
     return { id: '', email: '', name: '', contact: '' };
   }
   const { data } = await axios.get(`${RAZORPAY_API}/customers/${customerId}`, {
-    headers: getAuthHeader(),
+    ...razorpayRequestConfig(),
     timeout: 15000,
   });
   return {
@@ -187,18 +226,21 @@ export async function createRazorpayOrder({ amountPaise, receipt, notes, custome
   if (customer?.name) payload.notes.customer_name = String(customer.name).slice(0, 100);
   if (customer?.email) payload.notes.customer_email = String(customer.email).slice(0, 100);
 
+  const stringNotes = {};
+  for (const [k, v] of Object.entries(payload.notes || {})) {
+    if (v == null || v === '') continue;
+    stringNotes[k] = String(v).slice(0, 256);
+  }
+  payload.notes = stringNotes;
+
   const { data } = await axios.post(`${RAZORPAY_API}/orders`, payload, {
-    headers: {
-      ...getAuthHeader(),
-      'Content-Type': 'application/json',
-    },
-    timeout: 25000,
+    ...razorpayRequestConfig({ 'Content-Type': 'application/json' }),
   });
   return data;
 }
 
 export function verifyRazorpaySignature({ orderId, paymentId, signature }) {
-  const secret = process.env.RAZORPAY_KEY_SECRET?.trim();
+  const secret = getRazorpayKeySecret();
   if (!secret) return false;
   const expected = crypto
     .createHmac('sha256', secret)

@@ -55,6 +55,31 @@ export function loadEnv() {
   }
 
   const parsedEnv = !envResult.error && envResult.parsed ? envResult.parsed : {};
+
+  // .env file wins over stale PM2/systemd values for Razorpay.
+  for (const k of ['RAZORPAY_KEY_ID', 'RAZORPAY_KEY_SECRET']) {
+    const fromFile = parsedEnv[k];
+    if (fromFile != null && String(fromFile).trim()) {
+      process.env[k] = String(fromFile).trim();
+    }
+  }
+  const rzpId = String(process.env.RAZORPAY_KEY_ID || '').trim();
+  const rzpSecret = String(process.env.RAZORPAY_KEY_SECRET || '').trim();
+  if (rzpId && rzpSecret) {
+    const mode = rzpId.startsWith('rzp_live_')
+      ? 'live'
+      : rzpId.startsWith('rzp_test_')
+        ? 'test'
+        : 'unknown';
+    console.log(
+      `🔐 Razorpay: mode=${mode} keyIdLen=${rzpId.length} secretLen=${rzpSecret.length}${
+        rzpSecret.startsWith('rzp_') ? ' (KEY_ID and KEY_SECRET look swapped)' : ''
+      }`,
+    );
+  } else {
+    console.warn('⚠️  Razorpay keys missing in .env (RAZORPAY_KEY_ID / RAZORPAY_KEY_SECRET)');
+  }
+
   return { envResult, parsedEnv };
 }
 
