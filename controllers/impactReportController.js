@@ -155,7 +155,7 @@ export async function downloadMySchoolImpactPdf(req, res) {
 /** Teacher / Student: latest weekly digest (always live-rebuild for current week). */
 export async function getMyWeeklyDigest(req, res) {
   try {
-    const userId = req.user?._id || req.user?.userId;
+    const userId = req.userId || req.user?.userId || req.user?.id || req.user?._id;
     const role = req.user?.role;
     const weekStart = startOfIsoWeek(req.query.weekStart ? new Date(req.query.weekStart) : new Date());
 

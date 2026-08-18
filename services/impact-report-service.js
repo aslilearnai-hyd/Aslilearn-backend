@@ -164,7 +164,9 @@ async function teacherUserIdsForAdmin(adminId) {
     User.find({ role: 'teacher', assignedAdmin: adminId, isActive: { $ne: false } })
       .select('_id fullName email lastLogin createdAt')
       .lean(),
-    Teacher.find({ adminId, isActive: { $ne: false } }).select('fullName email name').lean(),
+    Teacher.find({ adminId, isActive: { $ne: false } })
+      .select('fullName email name lastLogin createdAt')
+      .lean(),
   ]);
 
   const byId = new Map();
@@ -178,22 +180,23 @@ async function teacherUserIdsForAdmin(adminId) {
     });
   }
   for (const doc of teacherDocs) {
+    const tid = String(doc._id);
     const email = String(doc.email || '').toLowerCase().trim();
-    if (!email) continue;
-    const already = [...byId.values()].some((t) => String(t.email || '').toLowerCase() === email);
-    if (already) continue;
-    const u = await User.findOne({ email, role: 'teacher' })
-      .select('_id fullName email lastLogin createdAt')
-      .lean();
-    if (u) {
-      byId.set(String(u._id), {
-        teacherId: u._id,
-        name: u.fullName || doc.fullName || doc.name || '',
-        email: u.email || email,
-        lastLogin: u.lastLogin,
-        createdAt: u.createdAt,
-      });
+    if (email) {
+      for (const [id, t] of [...byId.entries()]) {
+        if (id !== tid && String(t.email || '').toLowerCase() === email) {
+          byId.delete(id);
+        }
+      }
     }
+    if (byId.has(tid)) continue;
+    byId.set(tid, {
+      teacherId: doc._id,
+      name: doc.fullName || doc.name || '',
+      email: doc.email || '',
+      lastLogin: doc.lastLogin || null,
+      createdAt: doc.createdAt,
+    });
   }
   return [...byId.values()];
 }
@@ -405,6 +408,118 @@ async function activeDaysInWindow(userId, since, until) {
     startTime: { $gte: since, $lte: until },
   });
   return days.length;
+}
+
+/** Distinct IST days a teacher was actually on the platform (sessions + AI use). */
+async function teacherActivityDayKeys(teacherId, since, until) {
+  const fromKey = calendarDayKey(since);
+  const toKey = calendarDayKey(until);
+  const tidStr = String(teacherId);
+  const [sessionDates, usageRows, genRows, vidyaRows] = await Promise.all([
+    UserSession.distinct('date', {
+      userId: teacherId,
+      $or: [
+        { date: { $gte: fromKey, $lte: toKey } },
+        { startTime: { $gte: since, $lte: until } },
+      ],
+    }).catch(() => []),
+    TeacherToolUsage.find({
+      teacherId,
+      createdAt: { $gte: since, $lte: until },
+    })
+      .select('createdAt')
+      .lean()
+      .catch(() => []),
+    AiToolGeneration.find({
+      $or: [{ generatedBy: teacherId }, { teacherId }],
+      createdAt: { $gte: since, $lte: until },
+    })
+      .select('createdAt')
+      .lean()
+      .catch(() => []),
+    VidyaCallLog.find({
+      userId: tidStr,
+      ts: { $gte: since, $lte: until },
+      success: { $ne: false },
+    })
+      .select('ts')
+      .lean()
+      .catch(() => []),
+  ]);
+
+  const days = new Set();
+  for (const d of sessionDates || []) {
+    if (d) days.add(String(d));
+  }
+  for (const row of usageRows || []) {
+    if (row.createdAt) days.add(calendarDayKey(row.createdAt));
+  }
+  for (const row of genRows || []) {
+    if (row.createdAt) days.add(calendarDayKey(row.createdAt));
+  }
+  for (const row of vidyaRows || []) {
+    if (row.ts) days.add(calendarDayKey(row.ts));
+  }
+  return days;
+}
+
+async function latestTeacherActivityAt(teacherId, lastLogin) {
+  const tidStr = String(teacherId);
+  const [session, usage, gen, vidya] = await Promise.all([
+    UserSession.findOne({ userId: teacherId })
+      .sort({ endTime: -1, startTime: -1 })
+      .select('endTime startTime')
+      .lean()
+      .catch(() => null),
+    TeacherToolUsage.findOne({ teacherId })
+      .sort({ createdAt: -1 })
+      .select('createdAt')
+      .lean()
+      .catch(() => null),
+    AiToolGeneration.findOne({ $or: [{ generatedBy: teacherId }, { teacherId }] })
+      .sort({ createdAt: -1 })
+      .select('createdAt')
+      .lean()
+      .catch(() => null),
+    VidyaCallLog.findOne({ userId: tidStr, success: { $ne: false } })
+      .sort({ ts: -1 })
+      .select('ts')
+      .lean()
+      .catch(() => null),
+  ]);
+  const candidates = [
+    lastLogin,
+    session?.endTime || session?.startTime,
+    usage?.createdAt,
+    gen?.createdAt,
+    vidya?.ts,
+  ]
+    .filter(Boolean)
+    .map((d) => new Date(d).getTime())
+    .filter((n) => Number.isFinite(n));
+  if (!candidates.length) return null;
+  return new Date(Math.max(...candidates));
+}
+
+function formatLastActiveDate(d) {
+  if (!d) return null;
+  const date = new Date(d);
+  if (Number.isNaN(date.getTime())) return null;
+  const todayKey = calendarDayKey(new Date());
+  if (calendarDayKey(date) === todayKey) {
+    return date.toLocaleString('en-IN', {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true,
+      timeZone: 'Asia/Kolkata',
+    });
+  }
+  return date.toLocaleDateString('en-IN', {
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric',
+    timeZone: 'Asia/Kolkata',
+  });
 }
 
 async function teacherGenerations(teacherId, weekStart, weekEnd) {
@@ -708,11 +823,15 @@ export async function buildSchoolImpactSnapshot(adminId, periodInput = new Date(
   let teachersInactive = 0;
 
   for (const t of teachers) {
-    const activeDays14 = await activeDaysInWindow(t.teacherId, fourteenAgo, weekEnd);
+    const activityDays14 = await teacherActivityDayKeys(t.teacherId, fourteenAgo, weekEnd);
+    const activeDays14 = activityDays14.size;
     const status = teacherStatusFromActiveDays(activeDays14);
     const gens = await teacherGenerations(t.teacherId, weekStart, weekEnd);
     const weekSessions = await sessionStatsForUsers([t.teacherId], weekStart, weekEnd);
+    const weekActivityDays = await teacherActivityDayKeys(t.teacherId, weekStart, weekEnd);
+    const lastActiveAt = await latestTeacherActivityAt(t.teacherId, t.lastLogin);
     const loggedThisWeek =
+      weekActivityDays.size > 0 ||
       (t.lastLogin && t.lastLogin >= weekStart && t.lastLogin <= weekEnd) ||
       (weekSessions.byUser.get(String(t.teacherId))?.sessions || 0) > 0;
     if (loggedThisWeek) teachersLoggedIn += 1;
@@ -725,10 +844,13 @@ export async function buildSchoolImpactSnapshot(adminId, periodInput = new Date(
       name: t.name,
       email: t.email,
       status,
-      totalLoginsApprox: weekSessions.byUser.get(String(t.teacherId))?.sessions || 0,
+      totalLoginsApprox: Math.max(
+        weekSessions.byUser.get(String(t.teacherId))?.sessions || 0,
+        weekActivityDays.size,
+      ),
       activeDays: activeDays14,
       generationsCreated: gens,
-      lastActiveAt: t.lastLogin || null,
+      lastActiveAt,
     });
   }
 
@@ -1147,7 +1269,7 @@ export async function buildTeacherDigest(teacherUser, weekStart, weekEnd, school
     }
   })();
 
-  const [sessions, gens, vidya, toolUsageRows, activeDays14, loginDays, roster] =
+  const [sessions, gens, vidya, toolUsageRows, weekActivityDays, activityDays14, lastActiveAt, roster] =
     await Promise.all([
       sessionStatsForUsers([tid], weekStart, weekEnd),
       teacherGenerations(tid, weekStart, weekEnd),
@@ -1159,19 +1281,17 @@ export async function buildTeacherDigest(teacherUser, weekStart, weekEnd, school
         .select('toolType toolName subject')
         .lean()
         .catch(() => []),
-      activeDaysInWindow(tid, fourteenAgo, weekEnd),
-      UserSession.distinct('date', {
-        userId: tid,
-        startTime: { $gte: weekStart, $lte: weekEnd },
-      }).catch(() => []),
+      teacherActivityDayKeys(tid, weekStart, weekEnd),
+      teacherActivityDayKeys(tid, fourteenAgo, weekEnd),
+      latestTeacherActivityAt(tid, teacherUser.lastLogin),
       rosterPromise,
     ]);
 
   const sess = sessions.byUser.get(tidStr) || { sessions: 0, minutes: 0 };
   const minutes = Math.round(Number(sess.minutes) || 0);
-  const sessionCount = Number(sess.sessions) || 0;
-  const mine = (schoolSnap?.teachers || []).find((t) => String(t.teacherId) === tidStr);
-  const status = mine?.status || teacherStatusFromActiveDays(activeDays14);
+  const loginCount = weekActivityDays.size;
+  const sessionCount = Math.max(Number(sess.sessions) || 0, loginCount);
+  const status = teacherStatusFromActiveDays(activityDays14.size);
 
   const toolMap = new Map();
   for (const row of toolUsageRows || []) {
@@ -1191,21 +1311,7 @@ export async function buildTeacherDigest(teacherUser, weekStart, weekEnd, school
     .slice(0, 10);
 
   const vidyaCalls = Number(vidya.byUser.get(tidStr) || 0);
-  const loginCount = Array.isArray(loginDays) ? loginDays.length : 0;
-  const lastActive =
-    teacherUser.lastLogin && teacherUser.lastLogin >= weekStart && teacherUser.lastLogin <= weekEnd
-      ? teacherUser.lastLogin
-      : null;
-  const lastActiveDate = lastActive
-    ? new Date(lastActive).toLocaleDateString('en-IN', {
-        day: '2-digit',
-        month: 'short',
-        year: 'numeric',
-        timeZone: 'Asia/Kolkata',
-      })
-    : loginCount > 0
-      ? 'This week'
-      : null;
+  const lastActiveDate = formatLastActiveDate(lastActiveAt);
 
   const metrics = {
     role: 'teacher',
@@ -1230,7 +1336,7 @@ export async function buildTeacherDigest(teacherUser, weekStart, weekEnd, school
     aiExplanations: gens + vidyaCalls,
     toolsUsed,
     status,
-    activeDays: activeDays14,
+    activeDays: activityDays14.size,
     classesAssigned: Number(roster?.classCount) || 0,
     studentsInClasses: Number(roster?.studentCount) || 0,
     schoolStudentsAccessed: schoolSnap?.studentsAccessed || 0,
@@ -1707,7 +1813,7 @@ export async function rebuildTeacherWeeklyDigestForUser(userId, weekStartInput =
   // School teachers authenticate against the Teacher collection (JWT id = Teacher._id).
   // Legacy / rare rows may still live on User with role=teacher.
   const teacherDoc = await Teacher.findById(userId)
-    .select('_id fullName email createdAt adminId assignedClassIds isActive')
+    .select('_id fullName email lastLogin createdAt adminId assignedClassIds isActive')
     .lean();
 
   let teacherPayload = null;
@@ -1717,7 +1823,7 @@ export async function rebuildTeacherWeeklyDigestForUser(userId, weekStartInput =
       _id: teacherDoc._id,
       name: teacherDoc.fullName || '',
       email: teacherDoc.email || '',
-      lastLogin: null,
+      lastLogin: teacherDoc.lastLogin || null,
       createdAt: teacherDoc.createdAt,
       assignedAdmin: teacherDoc.adminId,
       assignedClassIds: teacherDoc.assignedClassIds || [],

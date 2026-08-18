@@ -49,6 +49,10 @@ export async function postTeacherMentorChat(req, res) {
       userAgent: String(req.headers['user-agent'] || '').slice(0, 200),
     }).catch(() => null);
 
+    import('../utils/user-activity.js')
+      .then(({ recordUserPresence }) => recordUserPresence(req.userId))
+      .catch(() => null);
+
     return res.json({
       success: true,
       message: result.message,
