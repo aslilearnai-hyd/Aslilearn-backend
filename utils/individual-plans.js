@@ -114,8 +114,7 @@ function studentYearList(rates, packageType) {
   if (packageType === 'board' && rates.studentBoardYear != null) return rates.studentBoardYear;
   if (packageType === 'iit' && rates.studentIitYear != null) return rates.studentIitYear;
   if (packageType === 'both' && rates.studentBothYear != null) return rates.studentBothYear;
-  if (rates.studentYearlyDiscountPercent > 0) return monthly * 12;
-  return null;
+  return monthly * 12;
 }
 
 function teacherMonth(rates, packageType) {
@@ -132,8 +131,7 @@ function teacherYearList(rates, packageType) {
   const iitYear = rates.teacherIitYear;
   if (packageType === 'board') {
     if (rates.teacherBoardYear != null) return rates.teacherBoardYear;
-    if (rates.teacherYearlyDiscountPercent > 0) return board * 12;
-    return null;
+    return board * 12;
   }
   if (packageType === 'iit') return iitYear;
   return rates.teacherBothYear == null ? iitYear + board * 12 : rates.teacherBothYear;
