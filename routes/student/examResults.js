@@ -17,7 +17,7 @@ import GeminiPerformanceReport from '../../models/GeminiPerformanceReport.js';
 import { verifyToken } from '../../middleware/auth.js';
 import { getMyWeeklyDigest } from '../../controllers/impactReportController.js';
 import { getSchoolAdminCalendarEvents, monthBounds } from '../../controllers/calendarController.js';
-import { examVisibleToSchool, examVisibleToStudent, getExamWindowStatus } from '../../utils/exam-visibility.js';
+import { examVisibleToSchool, examVisibleToStudent, examVisibleToIndividualStudent, getExamWindowStatus } from '../../utils/exam-visibility.js';
 import {
   getStudentExamRanking,
   getAllStudentRankings,
@@ -2088,7 +2088,14 @@ router.post('/exam-results', async (req, res) => {
       student.assignedAdmin && typeof student.assignedAdmin === 'object'
         ? student.assignedAdmin
         : student.assignedAdmin?.board || student.board || '';
-    if (!examVisibleToStudent(examDoc, studentAdminId, studentBoardOrAdmin)) {
+    if (student.isIndividualAccount) {
+      if (!examVisibleToIndividualStudent(examDoc, student)) {
+        return res.status(403).json({
+          success: false,
+          message: 'This practice exam is not available for your class or learning track.',
+        });
+      }
+    } else if (!examVisibleToStudent(examDoc, studentAdminId, studentBoardOrAdmin)) {
       return res.status(403).json({
         success: false,
         message: 'This exam is not assigned to your school.',
