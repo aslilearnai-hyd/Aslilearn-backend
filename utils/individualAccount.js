@@ -191,6 +191,25 @@ export function resolveIndividualAccess(doc) {
   const status = String(doc.subscriptionStatus || 'trial').toLowerCase();
 
   if (status === 'active' || status === 'paid') {
+    const exp = doc.subscriptionExpiresAt ? new Date(doc.subscriptionExpiresAt).getTime() : null;
+    const stillPaid = !exp || exp > now;
+    if (!stillPaid) {
+      return withTrialUsageLimits(
+        {
+          isIndividualAccount: true,
+          subscriptionStatus: 'expired',
+          paymentRequired: true,
+          trialActive: false,
+          trialEndsAt: doc.trialEndsAt || null,
+          trialDaysLeft: 0,
+          trialAllowedContentTypes: Array.isArray(doc.trialAllowedContentTypes)
+            ? doc.trialAllowedContentTypes
+            : [],
+          trialAllowedAiTools: Array.isArray(doc.trialAllowedAiTools) ? doc.trialAllowedAiTools : [],
+        },
+        doc
+      );
+    }
     return withTrialUsageLimits(
       {
         isIndividualAccount: true,

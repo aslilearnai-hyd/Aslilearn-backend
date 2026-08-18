@@ -60,6 +60,10 @@ import {
   deleteTrialMember,
   applyTrialMemberDefaults,
 } from '../controllers/trialMembersController.js';
+import {
+  getIndividualPlanRatesAdmin,
+  saveIndividualPlanRatesAdmin,
+} from '../controllers/individualBillingController.js';
 import { listAuditLogs } from '../controllers/auditLogController.js';
 import {
   getProductCategories,
@@ -647,6 +651,9 @@ router.post('/trial-members', createTrialMember);
 router.put('/trial-members/:id', updateTrialMember);
 router.delete('/trial-members/:id', deleteTrialMember);
 router.post('/trial-members/apply-defaults', applyTrialMemberDefaults);
+
+router.get('/individual-plan-rates', getIndividualPlanRatesAdmin);
+router.put('/individual-plan-rates', saveIndividualPlanRatesAdmin);
 
 // Product categories (IIT Alpha/Beta/Gamma + Super Admin custom tracks)
 router.get('/product-categories', getProductCategories);
