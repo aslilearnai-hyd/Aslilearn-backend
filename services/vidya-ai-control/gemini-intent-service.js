@@ -125,13 +125,85 @@ function tryBuildUsageOrAuditPlan(message, errMessage = '') {
   }
   return null;
 }
-const GREETING_RE = /^(hi|hii|hiii|hello|hey|heya|yo|sup|good\s*(morning|afternoon|evening|night)|namaste|hola|thanks|thank\s*you|thx|ok|okay|bye|goodbye|how\s*are\s*you|what'?s\s*up)[\s!.?]*$/i;
+const GREETING_RE = /^(hi|hii|hiii|hello|hey|heya|yo|sup|good\s*(morning|afternoon|evening|night)|namaste|hola|thanks|thank\s*you|thx|bye|goodbye|how\s*are\s*you|what'?s\s*up)[\s!.?]*$/i;
 
 function isGreetingOrSmallTalk(message) {
   const t = String(message || '').trim();
   if (!t) return false;
   if (t.split(/\s+/).length > 5) return false;
+  // Affirmatives are follow-ups, not greetings
+  if (isAffirmativeFollowUp(t)) return false;
   return GREETING_RE.test(t);
+}
+
+/** Short confirmations that must continue the previous control action — not a new DB search. */
+function isAffirmativeFollowUp(message) {
+  return /^(yes|yep|yeah|yup|sure|please|ok|okay|do it|go ahead|also|that too|both|assessments?(?:\s+too)?|videos?(?:\s+too)?)[\s!.?]*$/i.test(
+    String(message || '').trim(),
+  );
+}
+
+function lastHistoryTurn(history, role) {
+  const hist = Array.isArray(history) ? history : [];
+  for (let i = hist.length - 1; i >= 0; i -= 1) {
+    const turn = hist[i];
+    if (String(turn?.role || '').toLowerCase() !== role) continue;
+    const content = String(turn?.content || '').trim();
+    if (!content) continue;
+    if (role === 'user' && isAffirmativeFollowUp(content)) continue;
+    return content;
+  }
+  return '';
+}
+
+/**
+ * Resolve "yes" / "ok" / "also assessments" against recent turns so we never
+ * run a bare intent classifier on an empty affirmation.
+ */
+function tryResolveAffirmativeFollowUp(message, history) {
+  if (!isAffirmativeFollowUp(message)) return null;
+
+  const prevUser = lastHistoryTurn(history, 'user');
+  const prevAssistant = lastHistoryTurn(history, 'assistant');
+
+  if (prevUser && isPublishedCatalogQuery(prevUser)) {
+    return buildCatalogCountsPlan('followup_catalog_prev_user');
+  }
+  if (
+    prevUser &&
+    /\b(videos?|assessments?|quizzes?|eduott)\b/i.test(prevUser) &&
+    /count|total|number|show|published|how many/i.test(prevUser)
+  ) {
+    return buildCatalogCountsPlan('followup_catalog_prev_user_metric');
+  }
+  if (
+    prevAssistant &&
+    /(assessment|video count|separately|would you like|fetch the count|published videos|published assessments)/i.test(
+      prevAssistant,
+    )
+  ) {
+    return buildCatalogCountsPlan('followup_catalog_pending_offer');
+  }
+  if (prevUser && (isReportsOverviewQuery(prevUser) || isHeadcountOverviewQuery(prevUser))) {
+    return buildOverviewPlan('followup_overview_prev_user');
+  }
+  // Last resort: re-interpret the previous user question as the real intent
+  if (prevUser) {
+    return buildHeuristicPlan(prevUser, 'followup_replay_prev_user');
+  }
+  return null;
+}
+
+function shouldUpgradeToCatalogCounts(message, module = '') {
+  const lower = String(message || '').toLowerCase();
+  const mod = String(module || '').toLowerCase();
+  if (isPublishedCatalogQuery(message)) return true;
+  if (['videos', 'assessments', 'library_content'].includes(mod)) return true;
+  if (/\b(videos?|assessments?|quizzes?|eduott)\b/.test(lower) &&
+    /((how|who)\s*many|count|total|number of|show|published|list)/.test(lower)) {
+    return true;
+  }
+  return false;
 }
 
 function buildKnowledgePlan(errMessage = '', warning = 'greeting_or_small_talk') {
@@ -152,6 +224,7 @@ function buildKnowledgePlan(errMessage = '', warning = 'greeting_or_small_talk')
 }
 
 function buildCatalogCountsPlan(errMessage = '') {
+  const warning = String(errMessage || '').trim();
   return {
     mode: 'catalog_counts',
     module: 'videos',
@@ -164,7 +237,11 @@ function buildCatalogCountsPlan(errMessage = '') {
     limit: 20,
     timeframe: 'all',
     clarification: '',
-    parseWarning: errMessage ? `gemini_unavailable:${errMessage}` : 'published_catalog_intent',
+    parseWarning: warning
+      ? warning.startsWith('followup_') || warning.startsWith('gemini_') || warning.startsWith('person_')
+        ? warning
+        : `gemini_unavailable:${warning}`
+      : 'published_catalog_intent',
   };
 }
 
@@ -370,6 +447,9 @@ function buildHeuristicPlan(message, errMessage = '') {
     module = 'analytics';
   } else if (/(user|users|role|permission)/i.test(lower)) {
     module = 'users';
+  } else if (/(video|videos|eduott|assessment|assessments|quiz|quizzes)/i.test(lower)) {
+    // Never leave catalog metrics on a half-complete single-module plan
+    return buildCatalogCountsPlan(errMessage);
   }
 
   if (module === 'ai_tool_data' && asksOwnGeneratedContent) {
@@ -557,6 +637,11 @@ function buildHeuristicPlan(message, errMessage = '') {
 
 export async function parseDynamicIntent({ userMessage, history = [] }) {
   const message = String(userMessage || '').trim();
+
+  // Affirmatives ("yes", "ok") continue the previous control action — never a bare DB search.
+  const followUpPlan = tryResolveAffirmativeFollowUp(message, history);
+  if (followUpPlan) return followUpPlan;
+
   // Short-circuit obvious greetings/small talk before spending a Gemini round trip
   // on intent classification — this is also what was silently hanging/misfiring.
   if (isGreetingOrSmallTalk(message)) {
@@ -565,6 +650,7 @@ export async function parseDynamicIntent({ userMessage, history = [] }) {
   if (isReportsOverviewQuery(message) || isHeadcountOverviewQuery(message)) {
     return buildOverviewPlan();
   }
+  // Multi-metric published catalog (videos + assessments) — one deterministic plan, both counts.
   if (isPublishedCatalogQuery(message)) {
     return buildCatalogCountsPlan();
   }
@@ -627,7 +713,11 @@ ${aliasList}
 
 Rules:
 - If user asks for application data/count/list/ranking/summary, choose mode="database".
+- If the user asks for published videos AND/OR assessments/quizzes counts in one question, you MUST treat it as ONE catalog request. Never answer only videos and then ask whether to fetch assessments. Put both metrics in one plan (prefer mode hints that cover both; backend upgrades videos/assessments modules to a combined catalog count).
+- Never ask a follow-up clarification when the user already named both metrics.
+- Short affirmations like "yes" / "ok" mean continue the previous metric request from conversation history — do not invent a new empty database search.
 - For a named person ("how is Rahul doing?", "Priya's exam scores", "tell me about teacher Sharma"), choose mode="person_detail" and set personNameQuery (+ optional personRoleHint).
+- Never set personNameQuery to metric words like "videos", "assessments", "number", or "count".
 - For a class/section group ("Class 7A performance", "how is class 8 doing?"), choose mode="class_detail" with classNumberQuery and optional sectionQuery.
 - For named school details ("details about X school", "tell me about school X"), choose mode="school_detail", module="schools", and set schoolNameQuery to the school name.
 - Never map "test school" / school names containing "test" to exams.
@@ -667,8 +757,11 @@ ${message.slice(0, 4500)}
   if (isReportsOverviewQuery(message) || isHeadcountOverviewQuery(message)) {
     return buildOverviewPlan();
   }
-  if (isPublishedCatalogQuery(message)) {
-    return buildCatalogCountsPlan();
+  if (
+    isPublishedCatalogQuery(message) ||
+    shouldUpgradeToCatalogCounts(message, String(parsed.module || ''))
+  ) {
+    return buildCatalogCountsPlan('gemini_upgraded_to_catalog');
   }
 
   const namedSchool = extractSchoolNameQuery(message) || String(parsed.schoolNameQuery || '').trim();
@@ -690,8 +783,10 @@ ${message.slice(0, 4500)}
   const personParsed = personFromParsed
     ? { name: personFromParsed, roleHint: String(parsed.personRoleHint || '').trim() }
     : extractPersonNameQuery(message);
+  // Never accept metric words as a person name from Gemini
   if (
     personParsed.name &&
+    !/^(videos?|assessments?|quizzes?|number|count|published)$/i.test(personParsed.name) &&
     (String(parsed.mode || '').toLowerCase() === 'person_detail' || isPersonDetailQuery(message))
   ) {
     return buildPersonDetailPlan(personParsed.name, personParsed.roleHint);
@@ -754,6 +849,12 @@ ${message.slice(0, 4500)}
   if (mode === 'person_detail') {
     const q = personParsed.name || String(parsed.personNameQuery || '').trim();
     if (!q) return buildHeuristicPlan(message, 'person_detail_missing_name');
+    if (
+      /^(videos?|assessments?|quizzes?|number|count|published)$/i.test(q) ||
+      shouldUpgradeToCatalogCounts(message, q)
+    ) {
+      return buildCatalogCountsPlan('person_misclassified_as_catalog');
+    }
     return buildPersonDetailPlan(q, personParsed.roleHint || String(parsed.personRoleHint || ''));
   }
   if (mode === 'class_detail') {
@@ -795,6 +896,10 @@ ${message.slice(0, 4500)}
       limit: Math.max(50, normalized.limit || 50),
       timeframe: normalized.timeframe === 'all' ? parseTimeframeFromMessage(message) : normalized.timeframe,
     };
+  }
+
+  if (mode === 'database' && shouldUpgradeToCatalogCounts(message, normalized.module)) {
+    return buildCatalogCountsPlan('gemini_module_upgraded_to_catalog');
   }
 
   if (mode === 'database' && /(content|generate|generated|generation)/i.test(lower)) {

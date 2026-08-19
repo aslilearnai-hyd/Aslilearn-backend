@@ -407,13 +407,17 @@ export function isHeadcountOverviewQuery(message) {
   return students && teachers && countish;
 }
 
-/** Quick-ask: "How many published videos and assessments?" */
+/** Quick-ask: "How many published videos and assessments?" / "Number of videos" */
 export function isPublishedCatalogQuery(message) {
   const lower = String(message || '').toLowerCase();
   const videos = /\bvideos?\b|eduott|video lecture/.test(lower);
   const assessments = /\bassessments?\b|\bquizzes\b|\bquiz\b/.test(lower);
   if (!videos && !assessments) return false;
-  return /how many|count|total|number of|are there|\bpublished\b|\bshow\b/.test(lower);
+  // Multi-metric ("videos and assessments") always counts as a catalog request
+  if (videos && assessments) return true;
+  return /how many|count|total|number of|are there|\bpublished\b|\bshow\b|\blist\b|\bdisplay\b/.test(
+    lower,
+  );
 }
 
 export async function buildPublishedCatalogFacts({ viewerRole, viewerUserId }) {

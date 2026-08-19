@@ -45,6 +45,22 @@ function cleanPersonName(raw) {
     .slice(0, 80);
 }
 
+/** Metric / catalog vocabulary that must never be treated as a person name. */
+const PERSON_NAME_STOPWORDS =
+  /^(all|every|each|any|this|that|my|our|his|her|their|class|school|students?|teachers?|exams?|results?|how|what|who|which|where|when|why|number|count|total|videos?|assessments?|quizzes?|quiz|published|library|eduott|attendance|homework|subjects?|classes|records?|generations?|analytics|orders?|users?|members?)$/i;
+
+function isLikelyPersonName(name) {
+  const n = String(name || '').trim();
+  if (!n || n.length < 2) return false;
+  if (PERSON_NAME_STOPWORDS.test(n)) return false;
+  if (/^\d+$/.test(n) || /^class\s*\d+/i.test(n)) return false;
+  // Reject multi-word phrases that are clearly metrics ("published videos")
+  if (/\b(video|videos|assessment|assessments|quiz|quizzes|count|total|number)\b/i.test(n)) {
+    return false;
+  }
+  return true;
+}
+
 /**
  * Extract a person name from control prompts.
  * Returns { name, roleHint: 'student'|'teacher'|'admin'|'' }
@@ -54,6 +70,14 @@ export function extractPersonNameQuery(message) {
   if (!raw) return { name: '', roleHint: '' };
 
   const lower = raw.toLowerCase();
+  // Never treat catalog/count prompts as named-person lookups
+  if (
+    /((how|who)\s*many|number\s+of|count|total)\b/.test(lower) &&
+    /\b(videos?|assessments?|quizzes?|students?|teachers?|exams?|schools?)\b/.test(lower)
+  ) {
+    return { name: '', roleHint: '' };
+  }
+
   let roleHint = '';
   if (/\b(teacher|faculty|staff|sir|madam|mrs|ms|mr)\b/i.test(lower)) roleHint = 'teacher';
   else if (/\b(admin|school\s*admin|principal)\b/i.test(lower)) roleHint = 'admin';
@@ -61,22 +85,19 @@ export function extractPersonNameQuery(message) {
 
   const patterns = [
     /\b(?:how\s+is|how's)\s+([A-Za-z][A-Za-z.'\-\s]{1,60}?)\s+(?:doing|performing|progressing)\b/i,
-    /\b(?:tell\s+me\s+about|about|details?\s+(?:about|on|for)|info(?:rmation)?\s+(?:about|on|for)|look\s*up|find|show\s+me)\s+(?:the\s+)?(?:student|teacher|admin|learner)?\s*["']?([A-Za-z][A-Za-z.'\-\s]{1,60}?)["']?(?:\s|$|\?|,)/i,
+    /\b(?:tell\s+me\s+about|about|details?\s+(?:about|on|for)|info(?:rmation)?\s+(?:about|on|for)|look\s*up|find)\s+(?:the\s+)?(?:student|teacher|admin|learner)\s+["']?([A-Za-z][A-Za-z.'\-\s]{1,60}?)["']?(?:\s|$|\?|,)/i,
+    /\b(?:tell\s+me\s+about|about|details?\s+(?:about|on|for)|info(?:rmation)?\s+(?:about|on|for)|look\s*up)\s+["']?([A-Za-z][A-Za-z.'\-\s]{1,60}?)["']?(?:\s|$|\?|,)/i,
     /\b([A-Za-z][A-Za-z.'\-]{1,40}(?:\s+[A-Za-z][A-Za-z.'\-]{1,40}){0,2})(?:'s|’s)\s+(?:exam|score|result|progress|performance|marks?|attendance|class|homework|status)\b/i,
     /\b(?:student|teacher|admin|learner)\s+(?:named|called)\s+["']?([A-Za-z][A-Za-z.'\-\s]{1,60}?)["']?/i,
-    /\b(?:for|of)\s+(?:student|teacher)?\s*["']?([A-Za-z][A-Za-z.'\-\s]{1,40}(?:\s+[A-Za-z][A-Za-z.'\-]{1,40})?)["']?\s*$/i,
+    // Only "for/of <Name>" when a role word is present — avoids "number of videos"
+    /\b(?:for|of)\s+(?:student|teacher|admin|learner)\s+["']?([A-Za-z][A-Za-z.'\-\s]{1,40}(?:\s+[A-Za-z][A-Za-z.'\-]{1,40})?)["']?\s*$/i,
   ];
 
   for (const pattern of patterns) {
     const match = raw.match(pattern);
     if (!match?.[1]) continue;
     const name = cleanPersonName(match[1]);
-    if (!name || name.length < 2) continue;
-    if (/^(all|every|each|any|this|that|my|our|his|her|their|class|school|students|teachers|exams|results|how|what|who)$/i.test(name)) {
-      continue;
-    }
-    // Avoid treating "Class 7" style as a person
-    if (/^\d+$/.test(name) || /^class\s*\d+/i.test(name)) continue;
+    if (!isLikelyPersonName(name)) continue;
     return { name, roleHint };
   }
   return { name: '', roleHint };
@@ -86,14 +107,16 @@ export function isPersonDetailQuery(message) {
   const { name } = extractPersonNameQuery(message);
   if (!name) return false;
   const lower = String(message || '').toLowerCase();
-  // Pure counts should stay on database modules
-  if (/^(how|who)\s+many\b/.test(lower) && !/'s|’s|about|named|called|how is|how's/.test(lower)) {
+  // Pure counts / catalog metrics must stay on database / catalog paths
+  if (
+    /((how|who)\s*many|number\s+of|count|total)\b/.test(lower) &&
+    !/'s|’s|about|named|called|how is|how's/.test(lower)
+  ) {
     return false;
   }
-  return (
-    /how\s+is|how's|about|details?|info|look\s*up|find|named|called|'s|’s|progress|performance|doing|scores?|marks?|results?|status/.test(
-      lower,
-    ) || Boolean(name)
+  // Require person-detail language — never treat "any extracted token" as a person
+  return /how\s+is|how's|about|details?|info|look\s*up|find|named|called|'s|’s|progress|performance|doing|scores?|marks?|results?|status|\bstudent\b|\bteacher\b/.test(
+    lower,
   );
 }
 

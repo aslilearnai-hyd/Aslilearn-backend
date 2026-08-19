@@ -202,6 +202,8 @@ export function resolveIndividualAccess(doc) {
           trialActive: false,
           trialEndsAt: doc.trialEndsAt || null,
           trialDaysLeft: 0,
+          canSubscribeEarly: false,
+          ...individualSubscriptionSummary(doc),
           trialAllowedContentTypes: Array.isArray(doc.trialAllowedContentTypes)
             ? doc.trialAllowedContentTypes
             : [],
@@ -218,6 +220,8 @@ export function resolveIndividualAccess(doc) {
         trialActive: false,
         trialEndsAt: doc.trialEndsAt || null,
         trialDaysLeft: 0,
+        canSubscribeEarly: false,
+        ...individualSubscriptionSummary(doc),
         trialAllowedContentTypes: Array.isArray(doc.trialAllowedContentTypes)
           ? doc.trialAllowedContentTypes
           : [],
@@ -239,10 +243,8 @@ export function resolveIndividualAccess(doc) {
       trialActive,
       trialEndsAt: doc.trialEndsAt || null,
       trialDaysLeft: daysLeft,
-      trialAllowedContentTypes: Array.isArray(doc.trialAllowedContentTypes)
-        ? doc.trialAllowedContentTypes
-        : [],
-      trialAllowedAiTools: Array.isArray(doc.trialAllowedAiTools) ? doc.trialAllowedAiTools : [],
+      canSubscribeEarly: trialActive,
+      ...individualSubscriptionSummary(doc),
     },
     doc
   );
@@ -253,6 +255,113 @@ export function isTrialQuizAudience(doc) {
   if (!doc?.isIndividualAccount) return false;
   const access = resolveIndividualAccess(doc);
   return access.subscriptionStatus !== 'active';
+}
+
+const PACKAGE_LABELS = {
+  board: 'Boards',
+  iit: 'IIT Foundation',
+  both: 'Boards + IIT',
+};
+
+function buildLegacyPayment(doc) {
+  const amount = doc?.trialPaymentAmount;
+  const paidAt = doc?.trialPaidAt;
+  const reference = doc?.trialPaymentReference || doc?.razorpayPaymentId;
+  const validUntil = doc?.subscriptionExpiresAt;
+  if (amount == null && !paidAt && !reference && !validUntil) return null;
+  const packageType = String(doc?.paidPackage || '').toLowerCase();
+  const period = String(doc?.subscriptionPeriod || '').toLowerCase();
+  return {
+    paidAt: paidAt || null,
+    amountInr: amount ?? null,
+    packageType: packageType || null,
+    packageLabel: packageType ? PACKAGE_LABELS[packageType] || packageType : null,
+    period: period || null,
+    periodLabel: period === 'year' ? 'Yearly' : period === 'month' ? 'Monthly' : null,
+    paymentMethod: doc?.trialPaymentMethod || null,
+    paymentReference: reference || null,
+    razorpayOrderId: doc?.razorpayOrderId || null,
+    validUntil: validUntil || null,
+    status: 'paid',
+    source: doc?.trialPaymentMethod === 'razorpay' ? 'razorpay' : 'manual',
+  };
+}
+
+function paymentTimeValue(payment) {
+  const ts = payment?.paidAt ? new Date(payment.paidAt).getTime() : 0;
+  return Number.isFinite(ts) ? ts : 0;
+}
+
+function individualPaymentHistory(doc) {
+  const existing = Array.isArray(doc?.subscriptionPayments) ? doc.subscriptionPayments : [];
+  const merged = [...existing];
+  const legacy = buildLegacyPayment(doc);
+  if (legacy) {
+    const hasLegacy = merged.some(
+      (entry) =>
+        String(entry?.paymentReference || '') &&
+        String(entry?.paymentReference || '') === String(legacy.paymentReference || ''),
+    );
+    if (!hasLegacy) merged.push(legacy);
+  }
+  return merged
+    .map((entry) => ({
+      paidAt: entry?.paidAt || null,
+      amountInr: entry?.amountInr ?? null,
+      packageType: entry?.packageType || null,
+      packageLabel: entry?.packageLabel || null,
+      period: entry?.period || null,
+      periodLabel: entry?.periodLabel || null,
+      paymentMethod: entry?.paymentMethod || null,
+      paymentReference: entry?.paymentReference || null,
+      razorpayOrderId: entry?.razorpayOrderId || null,
+      validUntil: entry?.validUntil || null,
+      status: entry?.status || 'paid',
+      source: entry?.source || null,
+    }))
+    .sort((a, b) => paymentTimeValue(b) - paymentTimeValue(a));
+}
+
+export function individualSubscriptionSummary(doc) {
+  if (!doc?.isIndividualAccount) return {};
+  const pkg = String(doc.paidPackage || '').toLowerCase() || null;
+  const period = String(doc.subscriptionPeriod || '').toLowerCase() || null;
+  const payments = individualPaymentHistory(doc);
+  return {
+    paidPackage: pkg,
+    paidPackageLabel: pkg ? PACKAGE_LABELS[pkg] || pkg : null,
+    subscriptionPeriod: period,
+    subscriptionPeriodLabel: period === 'year' ? 'Yearly' : period === 'month' ? 'Monthly' : null,
+    subscriptionExpiresAt: doc.subscriptionExpiresAt || null,
+    lastPaidAt: doc.trialPaidAt || null,
+    lastPaymentAmountInr: doc.trialPaymentAmount ?? null,
+    paymentMethod: doc.trialPaymentMethod || null,
+    paymentReference: doc.trialPaymentReference || doc.razorpayPaymentId || null,
+    razorpayOrderId: doc.razorpayOrderId || null,
+    recentPayments: payments.slice(0, 8),
+    recentPaymentCount: payments.length,
+  };
+}
+
+export function buildIndividualReceipt(doc, planExtra = {}) {
+  const summary = individualSubscriptionSummary(doc);
+  const status = String(doc?.subscriptionStatus || '').toLowerCase();
+  const now = Date.now();
+  const exp = summary.subscriptionExpiresAt
+    ? new Date(summary.subscriptionExpiresAt).getTime()
+    : null;
+  const active = (status === 'active' || status === 'paid') && (!exp || exp > now);
+  return {
+    ...summary,
+    status: active ? 'active' : status === 'trial' ? 'trial' : 'expired',
+    statusLabel: active ? 'Active' : status === 'trial' ? 'Trial' : 'Expired',
+    planLabel: planExtra.label || summary.paidPackageLabel,
+    amountInr: planExtra.amountInr ?? summary.lastPaymentAmountInr,
+    period: planExtra.period || summary.subscriptionPeriod,
+    periodLabel: planExtra.period === 'year' ? 'Yearly' : planExtra.period === 'month' ? 'Monthly' : summary.subscriptionPeriodLabel,
+    validUntil: summary.subscriptionExpiresAt,
+    paidOn: summary.lastPaidAt,
+  };
 }
 
 export { IIT_CATEGORIES };

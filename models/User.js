@@ -258,6 +258,23 @@ const userSchema = new mongoose.Schema({
     trim: true,
     default: '',
   },
+  subscriptionPayments: {
+    type: [{
+      paidAt: { type: Date, default: null },
+      amountInr: { type: Number, default: null },
+      packageType: { type: String, trim: true, default: '' },
+      packageLabel: { type: String, trim: true, default: '' },
+      period: { type: String, trim: true, default: '' },
+      periodLabel: { type: String, trim: true, default: '' },
+      paymentMethod: { type: String, trim: true, default: '' },
+      paymentReference: { type: String, trim: true, default: '' },
+      razorpayOrderId: { type: String, trim: true, default: '' },
+      validUntil: { type: Date, default: null },
+      status: { type: String, trim: true, default: 'paid' },
+      source: { type: String, trim: true, default: 'razorpay' },
+    }],
+    default: [],
+  },
   /** board | iit | both after Razorpay checkout */
   paidPackage: {
     type: String,
