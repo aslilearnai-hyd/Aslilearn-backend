@@ -1,6 +1,7 @@
 import IndividualPlanSettings from '../models/IndividualPlanSettings.js';
 
 export const PACKAGE_TYPES = ['board', 'iit', 'both'];
+export const VISIBLE_PACKAGE_TYPES = ['board', 'both'];
 export const PLAN_LABELS = {
   board: 'Boards',
   iit: 'IIT Foundation',
