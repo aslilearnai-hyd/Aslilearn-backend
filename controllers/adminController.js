@@ -2026,16 +2026,20 @@ export const getTeacherDashboardStats = async (req, res) => {
       }
     }
 
-    // Teacher-uploaded Video docs only. Do not count raw Content library rows —
-    // those 72-style totals are not what EduOTT / Videos screens show after
-    // surface, catalog, and school-program filters.
-    const [videos, assessments, exams] = await Promise.all([
+    const [videos, assessments, exams, catalogVideoCounts] = await Promise.all([
       Video.find({ createdBy: teacherId }).populate('createdBy', 'fullName email'),
       Assessment.find({ createdBy: teacherId }).populate('createdBy', 'fullName email'),
       Exam.find({ createdBy: teacherId }).populate('createdBy', 'fullName email'),
+      import('../utils/teacherCatalogVideoCount.js').then(({ countTeacherLearningAndIitVideos }) =>
+        countTeacherLearningAndIitVideos(
+          teacher,
+          programCtx,
+          assignedClassesDetails.map((c) => c.classNumber),
+        ),
+      ),
     ]);
 
-    const totalVideosForStats = videos.length;
+    const totalVideosForStats = catalogVideoCounts.total;
 
     let pendingGrades = 0;
     if (students.length > 0) {
@@ -2119,6 +2123,8 @@ export const getTeacherDashboardStats = async (req, res) => {
           totalStudents: students.length,
           totalClasses: assignedClassesDetails.length,
           totalVideos: totalVideosForStats,
+          learningPathVideos: catalogVideoCounts.learningPath,
+          iitVideos: catalogVideoCounts.iit,
           pendingGrades,
           totalAssessments: assessments.length,
           totalExams: exams.length,
