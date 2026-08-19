@@ -73,7 +73,14 @@ function formatOverviewFallback(facts) {
     const videos = Number(facts.publishedVideos || 0);
     const library = Number(facts.libraryVideos || 0);
     const assessments = Number(facts.publishedAssessments || 0);
-    return `Published EduOTT videos: ${videos}. Library video items: ${library}. Published assessments (quizzes): ${assessments}.`;
+    // Always surface both requested metrics — never ask the admin to confirm a second fetch.
+    return [
+      `Published videos: ${videos}`,
+      `Published assessments: ${assessments}`,
+      library > 0 ? `Library video items: ${library}` : null,
+    ]
+      .filter(Boolean)
+      .join('\n');
   }
 
   const o = facts?.overview && typeof facts.overview === 'object' ? facts.overview : {};
@@ -287,6 +294,16 @@ function localFallbackResponse({ userPrompt, facts }) {
     return `${facts.reason} Try naming a specific record type — for example schools, students, teachers, classes, exams, results, subjects, trial members, school orders, usage analytics or audit logs.`;
   }
   if (facts?.operation === 'count' && typeof facts.count === 'number') {
+    // Single-module video/assessment counts should still print the number (never "retrieved" without a figure).
+    if (facts.module === 'videos' || facts.module === 'assessments' || facts.module === 'library_content') {
+      const videoLabel =
+        facts.module === 'assessments'
+          ? 'Published assessments'
+          : facts.module === 'library_content'
+            ? 'Library video items'
+            : 'Published videos';
+      return `${videoLabel}: ${facts.count}`;
+    }
     if (facts.count === 0) return `There are exactly 0 ${label}.`;
     return `There are exactly ${facts.count} ${label}.`;
   }
@@ -459,7 +476,10 @@ export async function formatDynamicResponse({
 You are a database-aware AI assistant.
 You must never invent values.
 You must only respond using values returned from backend database queries.
-If FACTS_JSON includes numeric counts (including 0), report those exact counts. Only say "I could not find matching records in the database." when FACTS_JSON has no count, rows, or published catalog numbers at all.
+If FACTS_JSON includes numeric counts (including 0), report those exact counts immediately in the answer.
+Never say you "retrieved" a count without printing the number.
+Never ask whether to fetch assessments or videos separately when FACTS_JSON already includes publishedVideos / publishedAssessments, or when the user already asked for both.
+Only say "I could not find matching records in the database." when FACTS_JSON has no count, rows, or published catalog numbers at all.
 Do not estimate. Do not guess. Do not hallucinate.
 Never use words: approximately, maybe, likely, around, probably, estimated.
 If module unavailable, say so clearly.

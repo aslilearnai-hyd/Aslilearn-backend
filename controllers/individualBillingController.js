@@ -15,6 +15,7 @@ import {
   saveIndividualPlanRates,
   buildPlanCatalog,
 } from '../utils/individual-plans.js';
+import { buildIndividualReceipt } from '../utils/individualAccount.js';
 import { IIT_CATEGORIES } from '../constants/products.js';
 
 function normalizeTrack(raw) {
@@ -72,6 +73,17 @@ export async function saveIndividualPlanRatesAdmin(req, res) {
     });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message || 'Could not save rates.' });
+  }
+}
+
+export async function getIndividualSubscriptionReceipt(req, res) {
+  try {
+    const loaded = await loadIndividualAccount(req);
+    if (!loaded.ok) return res.status(403).json({ success: false, message: loaded.message });
+    const receipt = buildIndividualReceipt(loaded.doc);
+    return res.json({ success: true, receipt });
+  } catch (error) {
+    return res.status(500).json({ success: false, message: error.message || 'Could not load receipt.' });
   }
 }
 
@@ -170,7 +182,11 @@ export async function verifyIndividualCheckout(req, res) {
 
     const track = plan.packageType === 'board' ? '' : normalizeTrack(req.body?.track);
     const classLabel = String(req.body?.classLabel || loaded.doc.classNumber || '').trim();
-    const expiresAt = subscriptionExpiryDate(plan.period);
+    const currentExpiry =
+      loaded.doc.subscriptionExpiresAt && new Date(loaded.doc.subscriptionExpiresAt).getTime() > Date.now()
+        ? new Date(loaded.doc.subscriptionExpiresAt)
+        : new Date();
+    const expiresAt = subscriptionExpiryDate(plan.period, currentExpiry);
     const courses =
       plan.packageType === 'board'
         ? ['Board Exams']
@@ -188,6 +204,24 @@ export async function verifyIndividualCheckout(req, res) {
     loaded.doc.trialPaymentAmount = plan.amountInr;
     loaded.doc.trialPaymentMethod = 'razorpay';
     loaded.doc.trialPaymentReference = paymentId;
+    const priorPayments = Array.isArray(loaded.doc.subscriptionPayments) ? loaded.doc.subscriptionPayments : [];
+    loaded.doc.subscriptionPayments = [
+      {
+        paidAt: loaded.doc.trialPaidAt,
+        amountInr: plan.amountInr,
+        packageType: plan.packageType,
+        packageLabel: plan.label,
+        period: plan.period,
+        periodLabel: plan.period === 'year' ? 'Yearly' : 'Monthly',
+        paymentMethod: 'razorpay',
+        paymentReference: paymentId,
+        razorpayOrderId: orderId,
+        validUntil: expiresAt,
+        status: 'paid',
+        source: 'razorpay',
+      },
+      ...priorPayments.filter((entry) => String(entry?.paymentReference || '') !== paymentId),
+    ].slice(0, 20);
     if (classLabel) loaded.doc.classNumber = classLabel;
     loaded.doc.iitCategories = track ? [track] : [];
     loaded.doc.interestedCourses = courses;
@@ -196,12 +230,20 @@ export async function verifyIndividualCheckout(req, res) {
     }
     await loaded.doc.save();
 
+    const receipt = buildIndividualReceipt(loaded.doc, {
+      label: plan.label,
+      amountInr: plan.amountInr,
+      period: plan.period,
+    });
+
     return res.json({
       success: true,
       message: 'Payment successful. Your plan is now active.',
       subscriptionStatus: 'active',
       paidPackage: plan.packageType,
       subscriptionExpiresAt: expiresAt,
+      subscriptionPeriod: plan.period,
+      receipt,
       redirect:
         loaded.role === 'teacher' ? '/teacher/dashboard' : '/dashboard',
     });
