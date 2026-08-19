@@ -8,6 +8,8 @@ const APP_HINTS = [
   'my marks', 'my score', 'my exams', 'my attendance', 'my progress', 'my rank',
   'my dashboard', 'my weak', 'my performance', 'my result', 'my subjects',
   'my streak', 'my improvement', 'my recommendation', 'my analysis', 'my report',
+  'student report', 'report card', 'individual report', 'my report card',
+  'i want report', 'want my report', 'show report', 'give report',
   'my standing', 'my average', 'my percentage', 'my chapter', 'my topic',
   'my videos', 'my video', 'my homework', 'my learning', 'my path', 'my paths',
   'my status', 'learning progress', 'exam status', 'videos watched', 'video progress',
@@ -21,6 +23,18 @@ const APP_HINTS = [
   'how many exams', 'how many omr', 'how many offline', 'how many homework', 'how many quizzes',
   'attempted till', 'exams attempted', 'list my subjects', 'my calendar',
   'timetable', 'open exams', 'quiz', 'assessment',
+
+  // "i want / show me / give me / open" phrased queries
+  'i want video', 'i want videos', 'i want exam', 'i want exams', 'i want homework',
+  'i want marks', 'i want score', 'i want result', 'i want results', 'i want progress',
+  'i want attendance', 'i want report', 'i want subjects', 'i want timetable',
+  'show video', 'show videos', 'show exam', 'show exams', 'show marks', 'show result',
+  'show homework', 'show progress', 'show attendance', 'show subjects', 'show timetable',
+  'give video', 'give videos', 'give exam', 'give exams', 'give marks', 'give result',
+  'open video', 'open videos', 'open exam', 'open exams', 'open homework', 'open subjects',
+  'take me to', 'go to video', 'go to exam', 'go to homework',
+  'see my video', 'see my exam', 'see my marks', 'see my result',
+  'check my video', 'check my exam', 'check my marks', 'check my progress',
 
   // "i am / i have / i scored" phrased queries
   'i am weak', 'i am strong', 'i am failing', 'i am struggling',
@@ -111,6 +125,8 @@ const EXAM_DATA_PATTERNS = [
   /\bwhat\s+(are|is)\s+(all\s+)?(my\s+)?(exam|test)/,
   /\bexam\s+history\b/,
   /\bresults?\s+of\s+(all\s+)?(my\s+)?exams?\b/,
+  /\b(student|individual|my)?\s*report\s*(card)?\b/,
+  /\b(i\s+)?want\s+(my\s+)?(student\s+)?report/,
   /\bomr\b/,
   /\bomr\s*(exam|test|result|score|mark)/,
   /\brecent\s+omr\b/,
@@ -139,6 +155,10 @@ const PLATFORM_DATA_PATTERNS = [
   /\bmy\s+subjects?\b/,
   /\bvideos?\s+in\b/,
   /\bhomework\s+today\b/,
+  /\b(i\s+)?want\s+(my\s+)?(videos?|exams?|marks?|homework|results?|progress|attendance|subjects?|report|timetable)\b/,
+  /\b(show|give|open|check|see)\s+(me\s+)?(my\s+)?(videos?|exams?|marks?|homework|results?|progress|attendance|subjects?|report|timetable)\b/,
+  /\btake\s+me\s+to\b/,
+  /\bgo\s+to\s+(my\s+)?(videos?|exams?|homework|subjects?)\b/,
 ];
 
 function isExamDataQuestion(q) {
@@ -165,7 +185,10 @@ const SELF_REFERENCE_PATTERNS = [
   /\bwhat am i\b/,
   /\bfor me\b/,
   /\bshow me\b/,
+  /\bgive me\b/,
   /\btell me my\b/,
+  /\btake me\b/,
+  /\bopen my\b/,
 ];
 
 /** Short social openers — must not trigger the marks/progress clarification. */

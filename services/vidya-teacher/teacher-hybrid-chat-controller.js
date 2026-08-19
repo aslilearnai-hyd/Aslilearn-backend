@@ -63,6 +63,29 @@ export async function runHybridTeacherVidyaChat({
 
   const desk = await buildTeacherAppDeskFacts(viewerUserId);
 
+  const wantsStudentReport =
+    /\b(individual\s+)?student\s+(report|reprot)s?\b|\breport\s*card|\bindividual\s+(report|reprot)\b/.test(
+      String(q).toLowerCase(),
+    );
+  if (wantsStudentReport && !extractPersonNameQuery(q).name) {
+    const sample = Array.isArray(desk?.students) ? desk.students.slice(0, 3) : [];
+    const sampleNames = sample
+      .map((s) => s.fullName || s.name)
+      .filter(Boolean)
+      .slice(0, 3);
+    const hint = sampleNames.length
+      ? ` For example: **${sampleNames[0]}'s report**.`
+      : ' For example: **Priya Sharma report**.';
+    return {
+      mode: 'application',
+      intent: { type: 'application', reason: 'need_student_name' },
+      message:
+        `Which student do you want the report for? Reply with their name and I'll pull their marks, exams, videos, and homework.${hint}`,
+      groundingStatus: 'application',
+      facts: { desk },
+    };
+  }
+
   // Named student / class → deep entity facts (same as Control)
   const person = extractPersonNameQuery(q);
   const classQ = extractClassGroupQuery(q);

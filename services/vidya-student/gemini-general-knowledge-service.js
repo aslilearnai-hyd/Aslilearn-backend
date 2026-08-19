@@ -146,3 +146,60 @@ export async function generateGeneralKnowledgeAnswer({
 
   return text;
 }
+
+/**
+ * ChatGPT-style answer: student app data + natural-language question.
+ * Do NOT use the tutor lesson template here — that caused generic "let's learn about reports" replies.
+ */
+export async function generateContextAwareAnswer({
+  question,
+  classLevel,
+  board = '',
+  enrolledSubjects = [],
+  studentDataSummary = '',
+}) {
+  const classText = classLevel ? `Class ${classLevel}` : 'school level';
+  const boardText = board ? `${board} board` : 'Indian school curriculum';
+  const q = String(question || '').slice(0, 3000);
+  const subjectsLine = enrolledSubjects.length
+    ? `Enrolled subjects: ${enrolledSubjects.join(', ')}.`
+    : '';
+
+  const systemInstruction = [
+    `You are Vidya, a personal assistant for a ${classText} student on Asli Learn (${boardText}). ${subjectsLine}`,
+    `You already have this student's live app data in the user message.`,
+    ``,
+    `Decide what they want from the question itself (any phrasing is fine: "I want videos", "report", "how am I doing").`,
+    ``,
+    `If they want THEIR data (videos, exams, marks, report, homework, attendance, progress, timetable, rank, OMR):`,
+    `- Answer with the real numbers and titles from the data. Never invent scores, video names, or ranks.`,
+    `- Lead with their facts, not a definition of what a report card is.`,
+    `- If a list is empty, say so honestly and suggest the next step in the app.`,
+    `- Do NOT start with "Hello! Let's learn…".`,
+    ``,
+    `If they want a school topic explained (photosynthesis, quadratic equations, etc.):`,
+    TEACHING_FORMAT_RULES,
+    ``,
+    `If they mix both (e.g. "why am I weak in physics"), use their real marks first, then a short explanation.`,
+    `Be warm, concise, and markdown-formatted. Never say you lack access to their data.`,
+  ]
+    .filter(Boolean)
+    .join('\n');
+
+  const userMessage = [
+    `=== STUDENT'S REAL APP DATA ===`,
+    studentDataSummary || '(No data available yet — student is new)',
+    ``,
+    `=== STUDENT'S QUESTION ===`,
+    q,
+  ].join('\n');
+
+  const result = await callModel({
+    systemInstruction,
+    contents: buildContentsFromHistory({ userMessage }),
+    generationConfig: { temperature: 0.3, maxOutputTokens: 2000 },
+  });
+  const text = String(result?.text || '').trim();
+  if (!text) throw new Error('Context-aware response is empty');
+  return text;
+}
