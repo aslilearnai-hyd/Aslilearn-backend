@@ -5,8 +5,8 @@ import { buildPersonalizedRecommendations } from './personalized-recommendation-
 import { buildStudyStreak, getLatestProactivePrompt } from './dashboard-sync-service.js';
 import { analyzeMarks } from './marks-analysis-service.js';
 import { buildAutoGreeting, buildPerformanceSummary } from './performance-summary-engine.js';
-import { detectQueryIntent, buildUncertainClarificationMessage, buildGreetingReplyMessage, buildThanksReplyMessage } from './query-intent-detection-engine.js';
-import { generateGeneralKnowledgeAnswer } from './gemini-general-knowledge-service.js';
+import { detectQueryIntent, buildGreetingReplyMessage, buildThanksReplyMessage } from './query-intent-detection-engine.js';
+import { generateContextAwareAnswer } from './gemini-general-knowledge-service.js';
 import { buildPlatformProgressFacts } from './platform-progress-facts.js';
 import {
   buildStudentAppDeskFacts,
@@ -193,6 +193,69 @@ function appOnlyReply(question, facts) {
     if (shaped.shape?.count) return buildOmrCountReply(omrList);
     const wantAll = Boolean(shaped.shape?.list);
     return buildOmrResultReply(omrList, { all: wantAll });
+  }
+
+  // ── STUDENT REPORT CARD ─────────────────────────────────────────────────────
+  if (/\breport\b|report\s*card/.test(q) && !/omr|offline/.test(q)) {
+    let reply = `**📋 ${profileName}'s Report Card**\n\n`;
+
+    // Subject-wise performance
+    if (subjectPerf.length) {
+      reply += `**Subject-wise Performance:**\n`;
+      subjectPerf.forEach((s) => {
+        const grade = s.percentage >= 90 ? 'A+' : s.percentage >= 75 ? 'A' : s.percentage >= 60 ? 'B' : s.percentage >= 45 ? 'C' : 'D';
+        reply += `• ${s.subject}: **${s.percentage}%** (Grade: ${grade}) — ${s.attempts} exam${s.attempts !== 1 ? 's' : ''}\n`;
+      });
+      reply += `\n`;
+    }
+
+    // Overall stats
+    if (marks.averagePercentage != null) {
+      reply += `**Overall Average:** ${marks.averagePercentage}%\n`;
+    }
+    if (marks.highestMark) {
+      reply += `**Highest Score:** ${marks.highestMark.percentage}% in "${marks.highestMark.examTitle}"\n`;
+    }
+    if (examList.length) {
+      reply += `**Exams Attempted:** ${examList.length}\n`;
+    }
+
+    // OMR results
+    if (omrList.length) {
+      reply += `\n**Offline Exam Results (${omrList.length}):**\n`;
+      omrList.slice(0, 3).forEach((row) => {
+        const rank = row.finalRank ?? row.testRank;
+        reply += `• ${row.testTitle || 'Offline test'}: **${row.percentage ?? 'N/A'}%**`;
+        if (rank != null) reply += ` · Rank: ${rank}`;
+        reply += `\n`;
+      });
+    }
+
+    // Trend
+    if (perf.trendDirection && perf.trendDirection !== 'unknown') {
+      reply += `\n**Performance Trend:** ${perf.trendDirection}`;
+      if (perf.deltaVsPrevious != null) reply += ` (${perf.deltaVsPrevious > 0 ? '+' : ''}${perf.deltaVsPrevious}% vs previous)`;
+      reply += `\n`;
+    }
+
+    // Weak/strong areas
+    if (weak.length) {
+      reply += `\n**Needs Improvement:** ${weak.slice(0, 3).map(w => w.chapter).join(', ')}\n`;
+    }
+    if (strong.length) {
+      reply += `**Strong Areas:** ${strong.slice(0, 3).map(s => s.chapter).join(', ')}\n`;
+    }
+
+    // Streak / attendance
+    if (streakDays > 0) {
+      reply += `\n**Study Streak:** ${streakDays} day${streakDays !== 1 ? 's' : ''}\n`;
+    }
+
+    if (!subjectPerf.length && !examList.length && !omrList.length) {
+      reply = `Hi ${profileName}, I don't have enough exam data to generate your report card yet. Complete exams or ask your school to upload Offline results — then ask me again for your full report.\n\nIn the meantime, ask: **"what should I do today"**, **"upcoming exams"**, or **"my subjects"**.`;
+    }
+
+    return reply.trim();
   }
 
   // ── HOW MANY EXAMS ATTEMPTED (in-app + OMR) ───────────────────────────────
@@ -950,7 +1013,7 @@ export async function runHybridStudentVidyaChat({ viewerRole, viewerUserId, stud
     try {
       const ctx = await buildStudentAiContext({ viewerRole, viewerUserId, studentId });
       const name = ctx?.ok
-        ? String(ctx.profile?.name || ctx.profile?.studentName || '').trim()
+        ? String(ctx.profile?.fullName || ctx.profile?.name || ctx.profile?.studentName || '').trim()
         : '';
       return {
         mode: 'greeting',
@@ -972,18 +1035,6 @@ export async function runHybridStudentVidyaChat({ viewerRole, viewerUserId, stud
         autoGreeting: null,
       };
     }
-  }
-
-  if (intent.type === 'uncertain') {
-    return {
-      mode: 'uncertain',
-      intent,
-      message: buildUncertainClarificationMessage(),
-      groundingStatus: 'clarification_required',
-      facts: null,
-      summary: null,
-      autoGreeting: null,
-    };
   }
 
   const ctx = await buildStudentAiContext({ viewerRole, viewerUserId, studentId });
@@ -1036,74 +1087,186 @@ export async function runHybridStudentVidyaChat({ viewerRole, viewerUserId, stud
   const summary = buildPerformanceSummary({ ctx, performance, weakTopics, marks, recommendations });
   const autoGreeting = buildAutoGreeting(summary);
 
-  if (intent.type === 'application') {
+  // ── Smart AI routing: send everything to Gemini WITH student data context ──
+  const classLevel = String(ctx.profile?.classNumber || '').replace(/[^\d]/g, '');
+  const studentDataSummary = buildStudentDataSummaryForAI(facts);
+
+  try {
+    const smartAnswer = await generateContextAwareAnswer({
+      question,
+      classLevel,
+      board: ctx.profile?.board || '',
+      enrolledSubjects: ctx.profile?.subjects || [],
+      studentDataSummary,
+    });
     return {
-      mode: 'application',
+      mode: intent.type === 'application' ? 'application' : intent.type === 'general' ? 'general' : 'hybrid',
       intent,
-      message: appOnlyReply(question, facts),
-      groundingStatus: 'application',
+      message: smartAnswer,
+      groundingStatus: 'ai_context_aware',
       facts,
       summary,
       autoGreeting,
     };
-  }
-
-  const classLevel = String(ctx.profile?.classNumber || '').replace(/[^\d]/g, '');
-  const subjectContext = Array.isArray(ctx.profile?.subjects) ? ctx.profile.subjects[0] : '';
-
-  if (intent.type === 'general') {
-    try {
-      const conceptAnswer = await generateGeneralKnowledgeAnswer({
-        question,
-        classLevel,
-        subjectContext,
-        board: ctx.profile?.board || '',
-        weakChapters: (weakTopics?.weakTopics || []).slice(0, 3).map((w) => w.chapter),
-        enrolledSubjects: ctx.profile?.subjects || [],
-      });
-      return {
-        mode: 'general',
-        intent,
-        message: conceptAnswer,
-        groundingStatus: 'general_knowledge',
-        facts: { profile: ctx.profile },
-        summary: null,
-        autoGreeting: null,
-      };
-    } catch (err) {
+  } catch (err) {
+    // Fallback to template-based reply if Gemini fails
+    if (intent.type === 'general') {
       return {
         mode: 'general',
         intent,
         message: connectionFallbackMessage(),
-        groundingStatus: 'general_knowledge_error',
+        groundingStatus: 'ai_error',
         facts: { profile: ctx.profile, error: String(err?.message || err) },
         summary: null,
         autoGreeting: null,
       };
     }
+    return {
+      mode: 'application',
+      intent,
+      message: appOnlyReply(question, facts),
+      groundingStatus: 'application_fallback',
+      facts,
+      summary,
+      autoGreeting,
+    };
+  }
+}
+
+/**
+ * Builds a concise text summary of the student's real data for the AI prompt.
+ */
+function buildStudentDataSummaryForAI(facts) {
+  const lines = [];
+  const profile = facts?.profile || {};
+  const marks = facts?.marks || {};
+  const perf = facts?.performance || {};
+  const weak = Array.isArray(facts?.weakTopics?.weakTopics) ? facts.weakTopics.weakTopics : [];
+  const strong = Array.isArray(facts?.weakTopics?.strongTopics) ? facts.weakTopics.strongTopics : [];
+  const examList = Array.isArray(facts?.examList) ? facts.examList : [];
+  const omrList = Array.isArray(facts?.omrList) ? facts.omrList : [];
+  const platform = facts?.platform || {};
+  const desk = facts?.desk || {};
+  const recs = facts?.recommendations || {};
+  const deskSubjects = Array.isArray(desk.subjects) ? desk.subjects : [];
+  const deskTotals = desk.totals || {};
+
+  // Profile
+  lines.push(`Student: ${profile.fullName || profile.name || 'Unknown'}`);
+  if (profile.classNumber) {
+    lines.push(`Class: ${profile.classNumber}${profile.section ? ` ${profile.section}` : ''}`);
+  }
+  if (profile.board) lines.push(`Board: ${profile.board}`);
+  if (Array.isArray(profile.subjects) && profile.subjects.length) {
+    lines.push(`Enrolled subjects: ${profile.subjects.join(', ')}`);
   }
 
-  let conceptAnswer = '';
-  try {
-    conceptAnswer = await generateGeneralKnowledgeAnswer({
-      question,
-      classLevel,
-      subjectContext,
-      board: ctx.profile?.board || '',
-      weakChapters: (weakTopics?.weakTopics || []).slice(0, 3).map((w) => w.chapter),
-      enrolledSubjects: ctx.profile?.subjects || [],
+  // Subjects with video progress
+  if (deskSubjects.length) {
+    lines.push(`\nSubjects (${deskSubjects.length}):`);
+    deskSubjects.forEach((s) => {
+      lines.push(
+        `  ${s.name}: ${s.videoCount || 0} videos (completed ${s.videosCompleted || 0}, remaining ${s.videosRemaining || 0})${s.assessmentCount ? `, ${s.assessmentCount} assessments` : ''}`,
+      );
     });
-  } catch {
-    conceptAnswer = connectionFallbackMessage();
   }
-  return {
-    mode: 'hybrid',
-    intent,
-    message: `${appOnlyReply(question, facts)}\n\nConcept Help:\n${conceptAnswer}`,
-    groundingStatus: 'hybrid',
-    facts,
-    summary,
-    autoGreeting,
-  };
+
+  // Videos (platform.videos uses tracked, not total)
+  const videos = platform?.videos || {};
+  const recentVideos = Array.isArray(videos.recent) ? videos.recent : [];
+  if (videos.tracked > 0 || videos.completed > 0 || deskTotals.videos > 0 || recentVideos.length) {
+    lines.push(
+      `\nVideos: ${videos.completed || 0} completed, ${videos.inProgress || 0} in progress, ${videos.tracked || deskTotals.videos || 0} tracked`,
+    );
+    if (deskTotals.videos) {
+      lines.push(`  Library videos available: ${deskTotals.videos} (completed ${deskTotals.videosCompleted || 0})`);
+    }
+    recentVideos.slice(0, 8).forEach((v) => {
+      lines.push(
+        `  - ${v.title}${v.subject ? ` (${v.subject})` : ''}: ${v.completed ? 'done' : `${v.progress || 0}%`}`,
+      );
+    });
+  } else if (deskTotals.videos > 0) {
+    lines.push(`\nVideos available: ${deskTotals.videos} (completed ${deskTotals.videosCompleted || 0})`);
+  } else {
+    lines.push(`\nVideos: none watched yet`);
+  }
+
+  // Exam performance
+  if (examList.length) {
+    lines.push(`\nOnline Exams (${examList.length} attempted):`);
+    examList.slice(0, 8).forEach(e => {
+      lines.push(`  - ${e.examTitle || e.title || 'Exam'}: ${e.percentage ?? 'N/A'}%`);
+    });
+    if (marks.averagePercentage != null) lines.push(`  Average: ${marks.averagePercentage}%`);
+    if (marks.highestMark) lines.push(`  Highest: ${marks.highestMark.percentage}% in "${marks.highestMark.examTitle}"`);
+  } else {
+    lines.push(`\nOnline Exams: None attempted yet`);
+  }
+
+  // OMR results
+  if (omrList.length) {
+    lines.push(`\nOffline/OMR Results (${omrList.length}):`);
+    omrList.slice(0, 5).forEach(row => {
+      const rank = row.finalRank ?? row.testRank;
+      lines.push(`  - ${row.testTitle || 'Test'}: ${row.percentage ?? 'N/A'}%${rank != null ? ` (Rank: ${rank})` : ''}`);
+    });
+  }
+
+  // Performance trend
+  if (perf.trendDirection && perf.trendDirection !== 'unknown') {
+    lines.push(`\nPerformance trend: ${perf.trendDirection}${perf.deltaVsPrevious != null ? ` (${perf.deltaVsPrevious > 0 ? '+' : ''}${perf.deltaVsPrevious}% vs previous)` : ''}`);
+  }
+
+  // Weak/strong
+  if (weak.length) lines.push(`Weak areas: ${weak.slice(0, 5).map(w => `${w.chapter} (${w.wrongRate}% mistakes)`).join(', ')}`);
+  if (strong.length) lines.push(`Strong areas: ${strong.slice(0, 5).map(s => s.chapter).join(', ')}`);
+
+  // Videos already summarised above from platform.videos.tracked / recent
+
+  // Homework
+  const hw = desk.homework || {};
+  const todayHw = Array.isArray(hw.today) ? hw.today : [];
+  const overdueHw = Array.isArray(hw.overdue) ? hw.overdue : [];
+  if (todayHw.length || overdueHw.length) {
+    lines.push(`\nHomework: ${todayHw.length} due today, ${overdueHw.length} overdue`);
+    todayHw.slice(0, 3).forEach(h => lines.push(`  Today: ${h.title}${h.subject ? ` (${h.subject})` : ''}`));
+    overdueHw.slice(0, 3).forEach(h => lines.push(`  Overdue: ${h.title}`));
+  }
+
+  // Upcoming exams
+  const upcoming = Array.isArray(desk.upcomingExams) ? desk.upcomingExams : [];
+  const openExams = Array.isArray(desk.openExams) ? desk.openExams : [];
+  if (openExams.length || upcoming.length) {
+    lines.push(`\nExam schedule:`);
+    openExams.slice(0, 3).forEach(e => lines.push(`  OPEN NOW: ${e.title}${e.endLabel ? ` (closes ${e.endLabel})` : ''}`));
+    upcoming.slice(0, 3).forEach(e => lines.push(`  Upcoming: ${e.title}${e.startLabel ? ` (${e.startLabel})` : ''}`));
+  }
+
+  // Streak
+  const streak = recs?.streak || {};
+  const streakDays = streak?.current ?? streak?.count ?? 0;
+  if (streakDays > 0) lines.push(`\nStudy streak: ${streakDays} days`);
+
+  // Learning paths
+  const paths = Array.isArray(platform?.learningPaths) ? platform.learningPaths : [];
+  if (paths.length) {
+    lines.push(`\nLearning paths (${paths.length}):`);
+    paths.slice(0, 3).forEach((p) =>
+      lines.push(`  - ${p.title || p.name}: ${p.progressPct ?? p.completionPercent ?? 0}% complete`),
+    );
+  }
+
+  // Recommendations
+  if (recs?.actionCard?.action) {
+    lines.push(`\nRecommended focus: ${recs.actionCard.action}`);
+  }
+
+  // Totals summary
+  if (deskTotals.subjects > 0) {
+    lines.push(`\nTotals: ${deskTotals.subjects} subjects, ${deskTotals.videos || 0} videos, ${deskTotals.videosCompleted || 0} videos done`);
+  }
+
+  return lines.join('\n');
 }
 
