@@ -362,7 +362,18 @@ function mergeGroupCountRows(masterGroups, legacyGroups, groupField) {
         if (a.value === WHOLE_CHAPTER_LABEL) return -1;
         if (b.value === WHOLE_CHAPTER_LABEL) return 1;
       }
-      return String(a.value).localeCompare(String(b.value));
+      // Class 6 → 10 (plain localeCompare puts "Class 10" before "Class 6")
+      if (groupField === 'classLabel') {
+        const aNum = parseInt(String(a.value || '').replace(/\D/g, ''), 10);
+        const bNum = parseInt(String(b.value || '').replace(/\D/g, ''), 10);
+        const aSafe = Number.isNaN(aNum) ? Number.MAX_SAFE_INTEGER : aNum;
+        const bSafe = Number.isNaN(bNum) ? Number.MAX_SAFE_INTEGER : bNum;
+        if (aSafe !== bSafe) return aSafe - bSafe;
+      }
+      return String(a.value).localeCompare(String(b.value), 'en', {
+        numeric: true,
+        sensitivity: 'base',
+      });
     })
     .map(({ value, count }) => ({ value, count }));
 }
@@ -804,10 +815,26 @@ export const exportAiToolGenerationsBundle = async (req, res) => {
     const docs = await loadCombinedRecords(Object.keys(match).length ? match : {});
     docs.sort((a, b) => {
       if (a.toolName !== b.toolName) return String(a.toolName).localeCompare(String(b.toolName));
-      if (a.classLabel !== b.classLabel) return String(a.classLabel).localeCompare(String(b.classLabel));
-      if (a.subject !== b.subject) return String(a.subject).localeCompare(String(b.subject));
-      if (a.topic !== b.topic) return String(a.topic).localeCompare(String(b.topic));
-      if (a.subtopic !== b.subtopic) return String(a.subtopic).localeCompare(String(b.subtopic));
+      if (a.classLabel !== b.classLabel) {
+        const aNum = parseInt(String(a.classLabel || '').replace(/\D/g, ''), 10);
+        const bNum = parseInt(String(b.classLabel || '').replace(/\D/g, ''), 10);
+        const aSafe = Number.isNaN(aNum) ? Number.MAX_SAFE_INTEGER : aNum;
+        const bSafe = Number.isNaN(bNum) ? Number.MAX_SAFE_INTEGER : bNum;
+        if (aSafe !== bSafe) return aSafe - bSafe;
+        return String(a.classLabel).localeCompare(String(b.classLabel), 'en', {
+          numeric: true,
+          sensitivity: 'base',
+        });
+      }
+      if (a.subject !== b.subject) {
+        return String(a.subject).localeCompare(String(b.subject), 'en', { numeric: true });
+      }
+      if (a.topic !== b.topic) {
+        return String(a.topic).localeCompare(String(b.topic), 'en', { numeric: true });
+      }
+      if (a.subtopic !== b.subtopic) {
+        return String(a.subtopic).localeCompare(String(b.subtopic), 'en', { numeric: true });
+      }
       return new Date(b.createdAt || 0).getTime() - new Date(a.createdAt || 0).getTime();
     });
     const limited = docs.slice(0, max).map((d) => ({

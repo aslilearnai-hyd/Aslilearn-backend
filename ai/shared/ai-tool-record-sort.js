@@ -25,10 +25,36 @@ export function sortAiToolRecordsByVariantThenDate(records) {
   return [...records].sort(compareAiToolRecordsByVariantThenDate);
 }
 
+function classNumberFromLabel(value) {
+  const digits = String(value || '').replace(/\D/g, '');
+  const n = parseInt(digits, 10);
+  return Number.isNaN(n) ? Number.MAX_SAFE_INTEGER : n;
+}
+
+/** Class 6, 7, 8, 10 — not Class 10 before Class 6. */
+export function compareClassLabels(a, b) {
+  const diff = classNumberFromLabel(a) - classNumberFromLabel(b);
+  if (diff !== 0) return diff;
+  return String(a || '').localeCompare(String(b || ''), 'en', {
+    numeric: true,
+    sensitivity: 'base',
+  });
+}
+
 /** Sort records inside every subtopic bucket of a grouped generator tree. */
 export function sortGroupedGeneratorRecords(grouped) {
   if (!Array.isArray(grouped)) return grouped;
   for (const toolNode of grouped) {
+    if (Array.isArray(toolNode.classes)) {
+      toolNode.classes.sort((a, b) => {
+        const byClass = compareClassLabels(a?.className, b?.className);
+        if (byClass !== 0) return byClass;
+        return String(a?.boardName || '').localeCompare(String(b?.boardName || ''), 'en', {
+          numeric: true,
+          sensitivity: 'base',
+        });
+      });
+    }
     for (const classNode of toolNode.classes || []) {
       for (const subjectNode of classNode.subjects || []) {
         for (const topicNode of subjectNode.topics || []) {
