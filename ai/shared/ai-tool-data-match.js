@@ -85,6 +85,56 @@ export function buildSubjectMongoFilter(subject, board = '') {
   return exact ? { subject: exact } : { subject: v };
 }
 
+/** Parse "Chapter 6 - Light" → { chapterNum, chapterLabel, title, full }. */
+export function parseChapterPrefixedTopic(value) {
+  const tn = normalizeMatchText(value);
+  if (!tn) return null;
+  const m = tn.match(/^chapter\s*[-–—.]?\s*(\d+)\s*[-–—:.]\s*(.+)$/i);
+  if (!m?.[1] || !m?.[2]?.trim()) return null;
+  const chapterNum = m[1];
+  return {
+    chapterNum,
+    chapterLabel: `Chapter ${chapterNum}`,
+    title: m[2].trim(),
+    full: tn,
+  };
+}
+
+/**
+ * Strict topic filter for subtopic dropdowns — never matches bare "Chapter 6" or bare
+ * "Light" when the user picked "Chapter 6 - Light" (prevents cross-chapter mixing).
+ */
+export function buildStrictTopicFieldMongoFilter(topic) {
+  const tn = normalizeMatchText(topic);
+  if (!tn) return { topic: '' };
+
+  const clauses = [];
+  const pushExact = (value) => {
+    const filter = buildCaseInsensitiveExactFilter(value);
+    if (filter) clauses.push({ topic: filter });
+  };
+
+  pushExact(tn);
+
+  const parsed = parseChapterPrefixedTopic(tn);
+  if (parsed) {
+    const { chapterNum, title } = parsed;
+    for (const candidate of [
+      `Chapter ${chapterNum} - ${title}`,
+      `Chapter-${chapterNum} - ${title}`,
+      `Chapter ${chapterNum}: ${title}`,
+      `${chapterNum}. ${title}`,
+      `${chapterNum}) ${title}`,
+    ]) {
+      pushExact(candidate);
+    }
+  }
+
+  if (clauses.length === 1) return clauses[0];
+  if (!clauses.length) return { topic: '' };
+  return { $or: clauses };
+}
+
 /** Topic variants (with/without "Label - " prefix from AI Tool Topics). */
 export function buildTopicNameVariants(topic) {
   const tn = normalizeMatchText(topic);
