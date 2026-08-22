@@ -3,6 +3,7 @@
 
 import fs from 'fs/promises';
 import path from 'path';
+import { parseChapterPrefixedTopic } from '../utils/ai-tool-data-match.js';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { filterUnsupportedQuestions } from '../utils/unsupported-question-filter.js';
@@ -330,7 +331,24 @@ async function findChapterByTopic(subjectPath, topic) {
   if (chapters.length === 0) return null;
 
   const topicNorm = normStr(topic);
-  
+  const parsed = parseChapterPrefixedTopic(topic);
+
+  // When the UI sends "Chapter 6 - Light", match by chapter number first.
+  if (parsed?.chapterNum) {
+    const chapterNum = parseInt(parsed.chapterNum, 10);
+    const sameNumber = chapters.filter((c) => c.num === chapterNum);
+    if (sameNumber.length === 1) return sameNumber[0];
+    if (sameNumber.length > 1) {
+      const titleNorm = normStr(parsed.title);
+      const byTitle = sameNumber.find((c) => {
+        const cn = normStr(c.name);
+        return cn === titleNorm || cn.includes(titleNorm) || titleNorm.includes(cn);
+      });
+      if (byTitle) return byTitle;
+      return sameNumber[0];
+    }
+  }
+
   // 1. Exact match on chapter name
   let match = chapters.find(c => normStr(c.name) === topicNorm);
   if (match) return match;
@@ -339,19 +357,21 @@ async function findChapterByTopic(subjectPath, topic) {
   match = chapters.find(c => normStr(c.raw) === topicNorm);
   if (match) return match;
 
-  // 3. Contains match (either direction)
-  match = chapters.find(c => {
-    const cn = normStr(c.name);
-    return cn.includes(topicNorm) || topicNorm.includes(cn);
-  });
-  if (match) return match;
+  // 3. Contains match (either direction) — only when chapter number not specified
+  if (!parsed?.chapterNum) {
+    match = chapters.find(c => {
+      const cn = normStr(c.name);
+      return cn.includes(topicNorm) || topicNorm.includes(cn);
+    });
+    if (match) return match;
 
-  // 4. Contains match on raw folder name
-  match = chapters.find(c => {
-    const rn = normStr(c.raw);
-    return rn.includes(topicNorm) || topicNorm.includes(rn);
-  });
-  if (match) return match;
+    // 4. Contains match on raw folder name
+    match = chapters.find(c => {
+      const rn = normStr(c.raw);
+      return rn.includes(topicNorm) || topicNorm.includes(rn);
+    });
+    if (match) return match;
+  }
 
   return null;
 }

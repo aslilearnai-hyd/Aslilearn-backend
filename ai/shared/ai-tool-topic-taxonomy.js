@@ -12,10 +12,13 @@ import {
   applyClassLabelMongoFilter,
   buildHierarchyBoardMongoFilter,
   buildSubjectMongoFilter,
-  buildTopicFieldMongoFilter,
+  buildStrictTopicFieldMongoFilter,
   mergeMongoFilters,
   normalizeClassId,
   normalizeMatchText,
+  parseChapterPrefixedTopic,
+  buildCaseInsensitiveExactFilter,
+  escapeRegex,
 } from './ai-tool-data-match.js';
 import { normalizeIitCategoryLoose } from '../../constants/products.js';
 
@@ -67,39 +70,51 @@ export function applyProductCategoryMongoFilter(filter, productCategory) {
 export function buildTopicNameMatchFilter(value) {
   const tn = normalizeMatchText(value);
   if (!tn) return null;
-  return {
-    $or: [
-      { topicName: { $regex: `^${tn.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`, $options: 'i' } },
-      {
-        $expr: {
-          $eq: [
-            tn,
-            {
-              $let: {
-                vars: {
-                  label: { $trim: { input: { $ifNull: ['$label', ''] } } },
-                  topic: { $trim: { input: { $ifNull: ['$topicName', ''] } } },
-                },
-                in: {
-                  $cond: {
-                    if: { $eq: ['$$label', ''] },
-                    then: '$$topic',
-                    else: {
-                      $cond: {
-                        if: { $eq: [{ $indexOfCP: ['$$topic', { $concat: ['$$label', ' - '] }] }, 0] },
-                        then: '$$topic',
-                        else: { $concat: ['$$label', ' - ', '$$topic'] },
-                      },
+
+  const orClauses = [
+    { topicName: { $regex: `^${escapeRegex(tn)}$`, $options: 'i' } },
+    {
+      $expr: {
+        $eq: [
+          tn,
+          {
+            $let: {
+              vars: {
+                label: { $trim: { input: { $ifNull: ['$label', ''] } } },
+                topic: { $trim: { input: { $ifNull: ['$topicName', ''] } } },
+              },
+              in: {
+                $cond: {
+                  if: { $eq: ['$$label', ''] },
+                  then: '$$topic',
+                  else: {
+                    $cond: {
+                      if: { $eq: [{ $indexOfCP: ['$$topic', { $concat: ['$$label', ' - '] }] }, 0] },
+                      then: '$$topic',
+                      else: { $concat: ['$$label', ' - ', '$$topic'] },
                     },
                   },
                 },
               },
             },
-          ],
-        },
+          },
+        ],
       },
-    ],
-  };
+    },
+  ];
+
+  const parsed = parseChapterPrefixedTopic(tn);
+  if (parsed) {
+    const labelFilter = {
+      label: { $regex: `^Chapter\\s*[-–—.]?\\s*${escapeRegex(parsed.chapterNum)}$`, $options: 'i' },
+    };
+    const titleFilter = buildCaseInsensitiveExactFilter(parsed.title);
+    if (titleFilter) {
+      orClauses.push({ $and: [labelFilter, { topicName: titleFilter }] });
+    }
+  }
+
+  return { $or: orClauses };
 }
 
 export function buildAiToolTopicTaxonomyFilter({
@@ -248,27 +263,31 @@ export async function resolveAiToolTopicTaxonomy(rawParams = {}) {
   const classLabel = normalizeMatchText(params.classLabel);
   const subject = normalizeMatchText(params.subject);
   const topicName = normalizeMatchText(params.topicName);
+  const managedSubTopics = topicName ? [...formatted.subTopics] : [];
 
-  // Union chapters/subtopics that already have AiToolGeneration rows so tools
-  // still list content when AI Tool Topics seed is incomplete.
+  // Union legacy generations only when managed AI Tool Topics has no subtopics yet.
+  // Loose topic variants (bare "Light", bare "Chapter 6") caused cross-chapter mixing.
   if (classLabel && subject) {
     try {
-      const fromGenerations = await distinctTopicsFromGenerations({
-        board,
-        productCategory: params.productCategory,
-        classLabel,
-        subject,
-        topicName,
-      });
-      if (topicName) {
-        formatted.subTopics = mergeUniqueChapterLabels(
-          formatted.subTopics,
-          fromGenerations.subTopics,
-        );
-      } else {
-        formatted.topics = mergeUniqueChapterLabels(formatted.topics, fromGenerations.topics);
+      const needsGenerationUnion = !topicName || managedSubTopics.length === 0;
+      if (needsGenerationUnion) {
+        const fromGenerations = await distinctTopicsFromGenerations({
+          board,
+          productCategory: params.productCategory,
+          classLabel,
+          subject,
+          topicName,
+        });
+        if (topicName) {
+          formatted.subTopics = mergeUniqueChapterLabels(
+            formatted.subTopics,
+            fromGenerations.subTopics,
+          );
+        } else {
+          formatted.topics = mergeUniqueChapterLabels(formatted.topics, fromGenerations.topics);
+        }
+        formatted.subjects = mergeUniqueChapterLabels(formatted.subjects, fromGenerations.subjects);
       }
-      formatted.subjects = mergeUniqueChapterLabels(formatted.subjects, fromGenerations.subjects);
     } catch (err) {
       console.warn(
         '[ai-tool-topic-taxonomy] generation union skipped:',
@@ -277,8 +296,7 @@ export async function resolveAiToolTopicTaxonomy(rawParams = {}) {
     }
   }
 
-  // Union NCERT / hardcoded curriculum chapters so AI Generator topic dropdowns
-  // are not empty when AiToolTopic seed is missing for CBSE Class 6–10, etc.
+  // Union NCERT / hardcoded curriculum only when managed subtopics are still empty.
   try {
     const compactBoard = String(board || '')
       .toUpperCase()
@@ -310,14 +328,14 @@ export async function resolveAiToolTopicTaxonomy(rawParams = {}) {
           const subjects = await getSubjectsForClass(classKey);
           formatted.subjects = mergeUniqueChapterLabels(formatted.subjects, subjects);
         }
-      } else if (topicName) {
+      } else if (topicName && formatted.subTopics.length === 0) {
         const subs = await getSubtopicsForChapter(
           isIitBoard ? 'IIT-6' : classKey,
           subject,
           topicName,
         );
         formatted.subTopics = mergeUniqueChapterLabels(formatted.subTopics, subs);
-      } else {
+      } else if (!topicName) {
         const chapters = await getChaptersForSubject(
           isIitBoard ? 'IIT-6' : classKey,
           subject,
@@ -363,7 +381,7 @@ async function distinctTopicsFromGenerations({
   filter = applyProductCategoryMongoFilter(filter, productCategory);
 
   if (topicName) {
-    filter = mergeMongoFilters(filter, buildTopicFieldMongoFilter(topicName));
+    filter = mergeMongoFilters(filter, buildStrictTopicFieldMongoFilter(topicName));
     const subTopics = (await AiToolGeneration.distinct('subtopic', filter))
       .map((v) => String(v || '').trim())
       .filter(Boolean);

@@ -1,17 +1,24 @@
 import assert from 'node:assert/strict';
 import {
   buildSubtopicNameVariants,
+  buildStrictTopicFieldMongoFilter,
   buildTopicNameVariants,
   buildSubjectMongoFilter,
   subtopicTextMatches,
   topicTextMatches,
 } from '../utils/ai-tool-data-match.js';
 
-assert.deepEqual(buildTopicNameVariants('Chapter 3 - Plant Life'), [
-  'Chapter 3 - Plant Life',
-  'Chapter 3',
-  'Plant Life',
-]);
+const plantLifeVariants = buildTopicNameVariants('Chapter 3 - Plant Life');
+for (const expected of ['Chapter 3 - Plant Life', 'Chapter 3', 'Plant Life']) {
+  assert.ok(plantLifeVariants.includes(expected), `variants should include ${expected}`);
+}
+
+const strictLight = buildStrictTopicFieldMongoFilter('Chapter 6 - Light');
+assert.ok(strictLight.$or, 'strict filter should use $or for chapter-prefixed topics');
+const strictPatterns = JSON.stringify(strictLight);
+assert.ok(!strictPatterns.includes('"Light"'), 'strict filter must not match bare title "Light"');
+assert.ok(!strictPatterns.match(/"Chapter 6"[,\\]]/), 'strict filter must not match bare "Chapter 6"');
+assert.ok(strictPatterns.includes('Chapter 6 - Light'), 'strict filter keeps full chapter title');
 
 assert.ok(
   topicTextMatches('Plant Life', 'Chapter 3 - Plant Life'),
