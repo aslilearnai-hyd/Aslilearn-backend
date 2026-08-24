@@ -992,7 +992,13 @@ function appOnlyReply(question, facts) {
   return reply.trim();
 }
 
-export async function runHybridStudentVidyaChat({ viewerRole, viewerUserId, studentId, question }) {
+export async function runHybridStudentVidyaChat({
+  viewerRole,
+  viewerUserId,
+  studentId,
+  question,
+  history = [],
+}) {
   const intent = detectQueryIntent(question);
 
   // Thanks — short warm reply, no clarification
@@ -1098,6 +1104,7 @@ export async function runHybridStudentVidyaChat({ viewerRole, viewerUserId, stud
       board: ctx.profile?.board || '',
       enrolledSubjects: ctx.profile?.subjects || [],
       studentDataSummary,
+      conversationHistory: history,
     });
     return {
       mode: intent.type === 'application' ? 'application' : intent.type === 'general' ? 'general' : 'hybrid',
@@ -1157,6 +1164,7 @@ function buildStudentDataSummaryForAI(facts) {
     lines.push(`Class: ${profile.classNumber}${profile.section ? ` ${profile.section}` : ''}`);
   }
   if (profile.board) lines.push(`Board: ${profile.board}`);
+  if (profile.schoolName) lines.push(`School: ${profile.schoolName}`);
   if (Array.isArray(profile.subjects) && profile.subjects.length) {
     lines.push(`Enrolled subjects: ${profile.subjects.join(', ')}`);
   }
@@ -1209,7 +1217,14 @@ function buildStudentDataSummaryForAI(facts) {
     lines.push(`\nOffline/OMR Results (${omrList.length}):`);
     omrList.slice(0, 5).forEach(row => {
       const rank = row.finalRank ?? row.testRank;
-      lines.push(`  - ${row.testTitle || 'Test'}: ${row.percentage ?? 'N/A'}%${rank != null ? ` (Rank: ${rank})` : ''}`);
+      const subjectParts = ['maths', 'physics', 'chemistry', 'biology']
+        .map((key) => {
+          const value = row?.[key];
+          const pct = value?.percentage ?? value?.percent ?? value?.score;
+          return pct != null ? `${key}: ${pct}${String(pct).includes('%') ? '' : '%'}` : '';
+        })
+        .filter(Boolean);
+      lines.push(`  - ${row.testTitle || 'Test'}: ${row.percentage ?? 'N/A'}%${rank != null ? ` (Rank: ${rank})` : ''}${subjectParts.length ? `; ${subjectParts.join(', ')}` : ''}`);
     });
   }
 
@@ -1227,10 +1242,12 @@ function buildStudentDataSummaryForAI(facts) {
   // Homework
   const hw = desk.homework || {};
   const todayHw = Array.isArray(hw.today) ? hw.today : [];
+  const upcomingHw = Array.isArray(hw.upcoming) ? hw.upcoming : [];
   const overdueHw = Array.isArray(hw.overdue) ? hw.overdue : [];
-  if (todayHw.length || overdueHw.length) {
-    lines.push(`\nHomework: ${todayHw.length} due today, ${overdueHw.length} overdue`);
+  if (todayHw.length || upcomingHw.length || overdueHw.length || Number(hw.submittedCount) > 0) {
+    lines.push(`\nHomework: ${todayHw.length} due today, ${upcomingHw.length} upcoming, ${overdueHw.length} overdue, ${Number(hw.submittedCount) || 0} submitted`);
     todayHw.slice(0, 3).forEach(h => lines.push(`  Today: ${h.title}${h.subject ? ` (${h.subject})` : ''}`));
+    upcomingHw.slice(0, 3).forEach(h => lines.push(`  Upcoming: ${h.title}${h.subject ? ` (${h.subject})` : ''}${h.dueLabel ? ` — ${h.dueLabel}` : ''}`));
     overdueHw.slice(0, 3).forEach(h => lines.push(`  Overdue: ${h.title}`));
   }
 
@@ -1241,6 +1258,27 @@ function buildStudentDataSummaryForAI(facts) {
     lines.push(`\nExam schedule:`);
     openExams.slice(0, 3).forEach(e => lines.push(`  OPEN NOW: ${e.title}${e.endLabel ? ` (closes ${e.endLabel})` : ''}`));
     upcoming.slice(0, 3).forEach(e => lines.push(`  Upcoming: ${e.title}${e.startLabel ? ` (${e.startLabel})` : ''}`));
+  }
+
+  const quizzes = Array.isArray(desk.quizzes) ? desk.quizzes : [];
+  if (quizzes.length) {
+    lines.push(`\nQuizzes/assessments (${quizzes.length} available):`);
+    quizzes.slice(0, 8).forEach((quiz) => {
+      lines.push(`  - ${quiz.title || 'Quiz'}${quiz.subject ? ` (${quiz.subject})` : ''}: ${quiz.attempted ? `attempted${quiz.score != null ? `, score ${quiz.score}` : ''}` : 'not attempted'}`);
+    });
+  }
+
+  const calendar = Array.isArray(desk.calendar) ? desk.calendar : [];
+  if (calendar.length) {
+    lines.push(`\nUpcoming calendar/timetable events:`);
+    calendar.slice(0, 8).forEach((event) => {
+      lines.push(`  - ${event.title || 'Event'}${event.startLabel ? ` — ${event.startLabel}` : ''}${event.type ? ` (${event.type})` : ''}`);
+    });
+  }
+
+  const sessions30d = Number(recs?.attendanceRate30d);
+  if (Number.isFinite(sessions30d)) {
+    lines.push(`\nStudy activity in the last 30 days: ${sessions30d}% of days active`);
   }
 
   // Streak

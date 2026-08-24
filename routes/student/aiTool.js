@@ -25,6 +25,7 @@ import {
 import geminiService, { generateStudentTool } from '../../services/gemini-service.js';
 import { fetchRotatingAiToolData } from '../../services/ai-tool-rotation-service.js';
 import { generateAiToolLiveFallback } from '../../services/ai-tool-live-fallback.js';
+import { createOwnedPracticeExam } from '../../services/generated-practice-exam-service.js';
 import {
   buildDeliveryMetadataFromDoc,
   buildRawDataForTool,
@@ -81,6 +82,38 @@ import {
 
 const router = express.Router();
 
+async function maybeCreateB2cPracticeExam({
+  programCtx,
+  toolType,
+  userId,
+  board,
+  classDisplay,
+  subject,
+  topic,
+  duration,
+  rawData,
+  content,
+}) {
+  const practiceExamTools = new Set([
+    'mock-test-builder',
+    'smart-qa-practice-generator',
+  ]);
+  if (!programCtx?.isIndividualAccount || !practiceExamTools.has(String(toolType))) return null;
+  return createOwnedPracticeExam({
+    userId,
+    board,
+    classNumber: classDisplay,
+    subject,
+    topic,
+    duration,
+    rawData,
+    content,
+  }).catch((error) => {
+    console.warn('[B2C_MOCK_EXAM] Could not create interactive exam:', error?.message || error);
+    return null;
+  });
+}
+
 router.post('/ai/tool', async (req, res) => {
   try {
     const { toolType, gradeLevel, subject, topic, board, ...params } = req.body;
@@ -92,6 +125,7 @@ router.post('/ai/tool', async (req, res) => {
       resolveAiToolClassNumberFromRequest,
     } = await import('../../utils/schoolProgram.js');
     const programCtx = await getStudentSchoolProgramContext(userId);
+    let consumeTrialGenerationBeforeLiveAi = false;
 
     if (programCtx?.isIndividualAccount) {
       const { resolveIndividualAccess } = await import('../../utils/individualAccount.js');
@@ -119,13 +153,10 @@ router.post('/ai/tool', async (req, res) => {
             'This AI tool is not included in your trial. Contact support or wait for Super Admin to unlock it.',
         });
       }
-      try {
-        const { consumeTrialGeneration } = await import('../../utils/trialUsageLimits.js');
-        await consumeTrialGeneration(userId, 'student');
-      } catch (limitErr) {
-        const { trialLimitHttpPayload } = await import('../../utils/trialUsageLimits.js');
-        return res.status(limitErr.statusCode || 429).json(trialLimitHttpPayload(limitErr));
-      }
+      // Reading an existing Super Admin generation is library delivery, not a
+      // new AI generation. Charge the trial only if the lookup below misses
+      // and we must invoke live AI.
+      consumeTrialGenerationBeforeLiveAi = true;
     }
 
     const boardCheck = validateAiToolBoardAccess(programCtx.isAsliPrepExclusive, {
@@ -308,6 +339,18 @@ router.post('/ai/tool', async (req, res) => {
             { content: outContent, rawData: delivered.rawData || builtRaw },
             durationMinutes,
           );
+          const practiceExam = await maybeCreateB2cPracticeExam({
+            programCtx,
+            toolType,
+            userId,
+            board: lookupBoard,
+            classDisplay,
+            subject: finalSubject,
+            topic: topicForFetch || '',
+            duration: durationMinutes,
+            rawData: withDuration.rawData || delivered.rawData || builtRaw,
+            content: withDuration.content,
+          });
           return res.json({
             success: true,
             data: {
@@ -327,10 +370,27 @@ router.post('/ai/tool', async (req, res) => {
                 matchType,
                 totalCandidates,
                 selectedIndex,
+                ...(practiceExam
+                  ? {
+                      practiceExamId: String(practiceExam._id),
+                      practiceExamPath: `/student-exams?examId=${practiceExam._id}`,
+                      practiceQuestionCount: practiceExam.totalQuestions,
+                    }
+                  : {}),
               },
             },
           });
         }
+      }
+    }
+
+    if (consumeTrialGenerationBeforeLiveAi) {
+      try {
+        const { consumeTrialGeneration } = await import('../../utils/trialUsageLimits.js');
+        await consumeTrialGeneration(userId, 'student');
+      } catch (limitErr) {
+        const { trialLimitHttpPayload } = await import('../../utils/trialUsageLimits.js');
+        return res.status(limitErr.statusCode || 429).json(trialLimitHttpPayload(limitErr));
       }
     }
 
@@ -365,6 +425,18 @@ router.post('/ai/tool', async (req, res) => {
         { content: liveMiss.content, rawData: liveMiss.rawData },
         durationMinutes,
       );
+      const practiceExam = await maybeCreateB2cPracticeExam({
+        programCtx,
+        toolType,
+        userId,
+        board: lookupBoard,
+        classDisplay,
+        subject: finalSubject,
+        topic: topicForFetch || '',
+        duration: durationMinutes,
+        rawData: withDuration.rawData || liveMiss.rawData,
+        content: withDuration.content,
+      });
       return res.json({
         success: true,
         data: {
@@ -380,6 +452,13 @@ router.post('/ai/tool', async (req, res) => {
             generatedAt: new Date(),
             userId,
             ...liveMiss.metadata,
+            ...(practiceExam
+              ? {
+                  practiceExamId: String(practiceExam._id),
+                  practiceExamPath: `/student-exams?examId=${practiceExam._id}`,
+                  practiceQuestionCount: practiceExam.totalQuestions,
+                }
+              : {}),
           },
         },
       });

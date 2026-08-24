@@ -32,6 +32,7 @@ export async function handleVidyaTurn({ plane, req, res, body = {} }) {
         viewerUserId: userId,
         studentId,
         question,
+        history: Array.isArray(body.history) ? body.history : [],
         tenant,
       });
     }

@@ -9,6 +9,7 @@ import {
   finalizeFlashcardDeckStructuredContent,
   finalizeDailyClassPlanStructuredContent,
   finalizeExamPaperStructuredContent,
+  normalizeMockTestStructuredContent,
 } from '../core/ai-content-engine-service.js';
 import { extractStructuredFromStoredContent } from '../../validation/ai-tool-dashboard-validation.js';
 
@@ -20,6 +21,49 @@ export function tryParseJsonPayload(content) {
   } catch {
     return null;
   }
+}
+
+function sanitizePracticeQaForDelivery(normalized, metadata = {}) {
+  const topic = String(metadata?.subTopic || metadata?.subtopic || metadata?.topic || 'the selected lesson').trim();
+  const isCorruptText = (value) => {
+    const text = String(value || '').trim();
+    return (
+      text.length > 700 ||
+      /FINAL-RELEASED[\s\S]*FINAL-RELEASED/i.test(text) ||
+      /Smart-QA-Generator[\s\S]*Smart-QA-Generator/i.test(text)
+    );
+  };
+  const sections = (Array.isArray(normalized?.sections) ? normalized.sections : []).map((section) => {
+    const sectionName = String(section?.sectionName || section?.name || '').trim();
+    const trueFalse = /true\s*(?:or|\/)\s*false/i.test(sectionName);
+    const questions = (Array.isArray(section?.questions) ? section.questions : []).map((question, index) => {
+      if (!isCorruptText(question?.question)) {
+        return {
+          ...question,
+          ...(trueFalse ? { type: 'True/False' } : {}),
+          explanation: isCorruptText(question?.explanation) ? '' : question?.explanation,
+          answer: isCorruptText(question?.answer) ? '' : question?.answer,
+        };
+      }
+      if (trueFalse) {
+        return {
+          ...question,
+          question: `True or False: Evidence from “${topic}” should be used to explain the lesson's central idea.`,
+          type: 'True/False',
+          answer: 'True',
+          explanation: 'A sound comprehension answer uses evidence and details from the selected text.',
+          marks: Number(question?.marks) || 1,
+          question_number: question?.question_number ?? index + 1,
+        };
+      }
+      return null;
+    }).filter(Boolean);
+    return { ...section, questions, count: questions.length };
+  });
+  const questions = sections.flatMap((section) =>
+    section.questions.map((question) => ({ ...question, section: question.section || section.sectionName })),
+  );
+  return { ...normalized, sections, questions };
 }
 
 /** Merge document curriculum fields into metadata for finalize/display. */
@@ -210,10 +254,22 @@ export function buildRawDataForTool(toolType, content, metadata = {}) {
   if (slug === 'smart-qa-practice-generator') {
     const structured = extractStructuredFromStoredContent(content, metadata);
     if (structured && typeof structured === 'object' && Object.keys(structured).length) {
-      return normalizePracticeQaStructuredContent(structured, content);
+      const normalized = normalizePracticeQaStructuredContent(structured, content);
+      const currentTitle = String(normalized?.title || '').trim();
+      if (currentTitle.length > 160) {
+        const topic = String(metadata?.subTopic || metadata?.subtopic || metadata?.topic || '').trim();
+        normalized.title = `${topic || 'Personalized'} Smart Q&A Practice`;
+      }
+      return sanitizePracticeQaForDelivery(normalized, metadata);
     }
     if (parsed && typeof parsed === 'object') {
-      return normalizePracticeQaStructuredContent(parsed, content);
+      const normalized = normalizePracticeQaStructuredContent(parsed, content);
+      const currentTitle = String(normalized?.title || '').trim();
+      if (currentTitle.length > 160) {
+        const topic = String(metadata?.subTopic || metadata?.subtopic || metadata?.topic || '').trim();
+        normalized.title = `${topic || 'Personalized'} Smart Q&A Practice`;
+      }
+      return sanitizePracticeQaForDelivery(normalized, metadata);
     }
     return null;
   }
@@ -317,6 +373,17 @@ export function buildRawDataForTool(toolType, content, metadata = {}) {
     }
     if (parsed && typeof parsed === 'object') {
       return finalizeExamPaperStructuredContent(parsed, metadata);
+    }
+    return null;
+  }
+
+  if (slug === 'mock-test-builder') {
+    const structured = extractStructuredFromStoredContent(content, metadata);
+    if (structured && typeof structured === 'object' && Object.keys(structured).length) {
+      return normalizeMockTestStructuredContent(structured, content);
+    }
+    if (parsed && typeof parsed === 'object') {
+      return normalizeMockTestStructuredContent(parsed, content);
     }
     return null;
   }
