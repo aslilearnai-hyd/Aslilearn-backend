@@ -118,6 +118,12 @@ async function loadSchoolVidyaPolicy(doc, role) {
   if (!doc || doc.isIndividualAccount) return null;
   const adminId = adminIdFromAccount(doc, role);
   if (!adminId) return null;
+  return loadSchoolVidyaPolicyForAdmin(adminId);
+}
+
+/** School Vidya usage policy for an admin user id (tenant boundary). */
+export async function loadSchoolVidyaPolicyForAdmin(adminId) {
+  if (!adminId) return null;
   const admin = await User.findById(adminId)
     .select(
       'vidyaUsageMode vidyaLimitChatbot vidyaLimitTools vidyaChatPerDay vidyaGenerationsPerDay role'

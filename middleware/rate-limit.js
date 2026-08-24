@@ -1,4 +1,5 @@
 import rateLimit, { ipKeyGenerator } from 'express-rate-limit';
+import { createRateLimitStore } from '../utils/redis-rate-limit-store.js';
 
 const jsonHandler = (message) => (req, res) =>
   res.status(429).json({
@@ -6,22 +7,33 @@ const jsonHandler = (message) => (req, res) =>
     message,
   });
 
-export const aiChatGlobalLimiter = rateLimit({
-  windowMs: 60 * 1000,
-  limit: Number(process.env.VIDYA_GLOBAL_RPM || 300),
-  standardHeaders: true,
-  legacyHeaders: false,
-  handler: jsonHandler('Vidya is getting many requests right now. Please try again in a moment.'),
-});
+const VIDYA_WINDOW_MS = 60 * 1000;
 
-export const aiChatPerUserLimiter = rateLimit({
-  windowMs: 60 * 1000,
-  limit: Number(process.env.VIDYA_USER_RPM || 30),
-  standardHeaders: true,
-  legacyHeaders: false,
-  keyGenerator: (req) => String(req.userId || ipKeyGenerator(req) || 'anonymous'),
-  handler: jsonHandler('You are chatting with Vidya very fast. Please wait a few seconds and try again.'),
-});
+function withRedisStore(prefix, windowMs, config) {
+  const store = createRateLimitStore(prefix, windowMs);
+  return store ? { ...config, store } : config;
+}
+
+export const aiChatGlobalLimiter = rateLimit(
+  withRedisStore('rl:vidya:global', VIDYA_WINDOW_MS, {
+    windowMs: VIDYA_WINDOW_MS,
+    limit: Number(process.env.VIDYA_GLOBAL_RPM || 300),
+    standardHeaders: true,
+    legacyHeaders: false,
+    handler: jsonHandler('Vidya is getting many requests right now. Please try again in a moment.'),
+  }),
+);
+
+export const aiChatPerUserLimiter = rateLimit(
+  withRedisStore('rl:vidya:user', VIDYA_WINDOW_MS, {
+    windowMs: VIDYA_WINDOW_MS,
+    limit: Number(process.env.VIDYA_USER_RPM || 30),
+    standardHeaders: true,
+    legacyHeaders: false,
+    keyGenerator: (req) => String(req.userId || ipKeyGenerator(req) || 'anonymous'),
+    handler: jsonHandler('You are chatting with Vidya very fast. Please wait a few seconds and try again.'),
+  }),
+);
 
 /*
  * Brute-force protection for credential endpoints.
@@ -56,16 +68,18 @@ export const signupLimiter = rateLimit({
   handler: jsonHandler('Too many registration attempts. Please try again later.'),
 });
 
-export const aiHeavyLimiter = rateLimit({
-  windowMs: 60 * 1000,
-  // Generate/batch only — raised slightly so Super Admin can retry a failed batch
-  // without waiting a full minute. Reads/polls are not attached to this limiter.
-  limit: Number(process.env.VIDYA_HEAVY_RPM || 20),
-  standardHeaders: true,
-  legacyHeaders: false,
-  keyGenerator: (req) => String(req.userId || ipKeyGenerator(req) || 'anonymous'),
-  handler: jsonHandler(
-    'Generation is temporarily rate-limited. Please wait a few seconds and try again (listing records is not limited).',
-  ),
-});
+export const aiHeavyLimiter = rateLimit(
+  withRedisStore('rl:vidya:heavy', VIDYA_WINDOW_MS, {
+    windowMs: VIDYA_WINDOW_MS,
+    // Generate/batch only — raised slightly so Super Admin can retry a failed batch
+    // without waiting a full minute. Reads/polls are not attached to this limiter.
+    limit: Number(process.env.VIDYA_HEAVY_RPM || 20),
+    standardHeaders: true,
+    legacyHeaders: false,
+    keyGenerator: (req) => String(req.userId || ipKeyGenerator(req) || 'anonymous'),
+    handler: jsonHandler(
+      'Generation is temporarily rate-limited. Please wait a few seconds and try again (listing records is not limited).',
+    ),
+  }),
+);
 

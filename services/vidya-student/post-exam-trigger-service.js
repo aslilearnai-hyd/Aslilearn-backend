@@ -1,4 +1,13 @@
+import mongoose from 'mongoose';
 import VidyaProactivePrompt from '../../models/VidyaProactivePrompt.js';
+
+const safeOid = (id) => {
+  try {
+    return new mongoose.Types.ObjectId(String(id));
+  } catch {
+    return null;
+  }
+};
 
 function formatWeakAreaLabels(weakTopics = [], weakSubjects = []) {
   const labels = [];
@@ -116,10 +125,13 @@ export async function createPostExamPrompt({
   return doc?.toObject ? doc.toObject() : doc;
 }
 
-export async function markProactivePromptDelivered(promptId) {
-  return VidyaProactivePrompt.findByIdAndUpdate(
-    promptId,
+export async function markProactivePromptDelivered(promptId, studentId) {
+  const filter = { _id: promptId };
+  const studentOid = safeOid(studentId);
+  if (studentOid) filter.studentId = studentOid;
+  return VidyaProactivePrompt.findOneAndUpdate(
+    filter,
     { $set: { delivered: true, deliveredAt: new Date() } },
-    { new: true }
+    { new: true },
   ).lean();
 }

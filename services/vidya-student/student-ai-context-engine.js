@@ -112,7 +112,19 @@ export async function buildStudentAiContext({
         ? Subject.find({ _id: { $in: studentUser.assignedSubjects } }).select('name classNumber').lean()
         : [],
       ExamResult.find({ userId: studentOid })
-        .select('-answers -questionAnalytics -responses')
+        .select({
+          examTitle: 1,
+          title: 1,
+          completedAt: 1,
+          percentage: 1,
+          obtainedMarks: 1,
+          totalMarks: 1,
+          score: 1,
+          'questionAnalytics.chapter': 1,
+          'questionAnalytics.status': 1,
+          'questionAnalytics.isCorrect': 1,
+          'questionAnalytics.subject': 1,
+        })
         .sort({ completedAt: -1 })
         .limit(20)
         .lean(),

@@ -49,11 +49,11 @@ export async function recordDailyAccessSession(userId, { at = new Date(), minDur
   const dateKey = activityDayKey(at);
   const session = await UserSession.findOne({ userId: id, date: dateKey });
   if (session) {
+    // Presence ping: bump endTime only. Never let (endTime - midnight) rewrite duration.
+    const nextDuration = Math.max(Number(session.duration) || 0, minDuration);
     session.endTime = at;
-    if ((Number(session.duration) || 0) < minDuration) {
-      session.duration = minDuration;
-      session.markModified('duration');
-    }
+    session.duration = capSessionMinutesPerDay(nextDuration);
+    session.markModified('duration');
     await session.save();
     return session;
   }
@@ -62,7 +62,7 @@ export async function recordDailyAccessSession(userId, { at = new Date(), minDur
     date: dateKey,
     startTime: new Date(`${dateKey}T00:00:00.000+05:30`),
     endTime: at,
-    duration: minDuration,
+    duration: capSessionMinutesPerDay(minDuration),
   });
 }
 
@@ -87,15 +87,11 @@ export async function upsertSessionMinutes(userId, date, totalMinutes) {
   const now = new Date();
   const session = await UserSession.findOne({ userId: id, date: dateKey });
   if (session) {
-    if (duration > (session.duration || 0)) {
-      session.duration = duration;
-      session.endTime = now;
-      session.markModified('duration');
-      await session.save();
-    } else {
-      session.endTime = now;
-      await session.save();
-    }
+    session.endTime = now;
+    // Always re-assert duration so pre-save never falls back to wall-clock math.
+    session.duration = Math.max(duration, Number(session.duration) || 0);
+    session.markModified('duration');
+    await session.save();
     return session;
   }
   return UserSession.create({

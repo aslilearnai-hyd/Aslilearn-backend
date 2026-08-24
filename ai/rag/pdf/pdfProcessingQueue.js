@@ -73,6 +73,9 @@ export async function enqueuePdfProcessing(sourcePdfId) {
   return { enqueued: true, jobId: job.id };
 }
 
+/** Alias for route handlers scheduling background PDF indexing. */
+export const schedulePdfIndexing = enqueuePdfProcessing;
+
 export function isPdfQueueEnabled() {
   return queueEnabled;
 }

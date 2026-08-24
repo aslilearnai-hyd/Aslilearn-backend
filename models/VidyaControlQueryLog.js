@@ -31,6 +31,12 @@ const vidyaControlQueryLogSchema = new mongoose.Schema(
 vidyaControlQueryLogSchema.index({ createdAt: -1 });
 vidyaControlQueryLogSchema.index({ adminUserId: 1, createdAt: -1 });
 
+const RETENTION_DAYS = Number(process.env.VIDYA_CONTROL_LOG_TTL_DAYS || 90);
+vidyaControlQueryLogSchema.index(
+  { createdAt: 1 },
+  { expireAfterSeconds: RETENTION_DAYS * 24 * 60 * 60 },
+);
+
 const VidyaControlQueryLog =
   mongoose.models.VidyaControlQueryLog ||
   mongoose.model('VidyaControlQueryLog', vidyaControlQueryLogSchema);

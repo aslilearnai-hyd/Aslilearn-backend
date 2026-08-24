@@ -7,7 +7,8 @@ import { buildStudyStreak, getLatestProactivePrompt } from '../services/vidya-st
 import { markProactivePromptDelivered } from '../services/vidya-student/post-exam-trigger-service.js';
 import { analyzeMarks } from '../services/vidya-student/marks-analysis-service.js';
 import { buildAutoGreeting, buildPerformanceSummary } from '../services/vidya-student/performance-summary-engine.js';
-import { runHybridStudentVidyaChat } from '../services/vidya-student/hybrid-ai-chat-controller.js';
+import { handleVidyaTurn, PLANES } from '../services/vidya-orchestrator.js';
+import { writeFailedMentorCallLog, writeMentorCallLog } from '../utils/vidya-call-log-meta.js';
 
 export async function postStudentMentorChat(req, res) {
   const started = Date.now();
@@ -27,32 +28,20 @@ export async function postStudentMentorChat(req, res) {
       return res.status(limitErr.statusCode || 429).json(trialLimitHttpPayload(limitErr));
     }
 
-    const result = await runHybridStudentVidyaChat({
-      viewerRole: req.user?.role,
-      viewerUserId: req.userId,
-      studentId,
-      question,
+    const result = await handleVidyaTurn({
+      plane: PLANES.MENTOR_STUDENT,
+      req,
+      body: req.body,
     });
 
-    await VidyaCallLog.create({
-      userId: String(req.userId),
-      role: String(req.user?.role || ''),
-      route: 'analysis',
-      prompt: question,
-      response: result.message,
-      provider: 'gemini',
-      success: true,
-      latencyMs: Date.now() - started,
-      safetyBlocked: false,
-      safetyDetails: {
-        groundingStatus: result.groundingStatus,
-        scope: 'student-mentor',
-        mode: result.mode || 'application',
-        intent: result.intent || null,
-      },
-      requestIp: req.ip || '',
-      userAgent: String(req.headers['user-agent'] || '').slice(0, 200),
-    }).catch(() => null);
+    await writeMentorCallLog({
+      VidyaCallLog,
+      req,
+      started,
+      question,
+      result,
+      scope: 'student-mentor',
+    });
 
     return res.json({
       success: true,
@@ -67,6 +56,14 @@ export async function postStudentMentorChat(req, res) {
       trialUsage,
     });
   } catch (err) {
+    await writeFailedMentorCallLog({
+      VidyaCallLog,
+      req,
+      started,
+      question: String(req.body?.message || '').trim(),
+      scope: 'student-mentor',
+      error: err,
+    });
     const status = Number(err?.statusCode) || 500;
     return res.status(status).json({
       success: false,
@@ -119,7 +116,11 @@ export async function markProactiveDelivered(req, res) {
   try {
     const { promptId } = req.body || {};
     if (!promptId) return res.status(400).json({ success: false, message: 'promptId is required' });
-    const row = await markProactivePromptDelivered(promptId);
+    const studentId = req.body?.studentId ? String(req.body.studentId) : String(req.userId);
+    const row = await markProactivePromptDelivered(promptId, studentId);
+    if (!row) {
+      return res.status(404).json({ success: false, message: 'Prompt not found for this student.' });
+    }
     return res.json({ success: true, prompt: row });
   } catch (err) {
     return res.status(500).json({ success: false, message: err?.message || 'Failed to update proactive prompt' });

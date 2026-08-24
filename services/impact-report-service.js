@@ -207,6 +207,9 @@ async function studentUsersForAdmin(adminId) {
     .lean();
 }
 
+/** Cap per calendar-day session row (matches user-activity MAX). */
+const MAX_SESSION_MINUTES_PER_DAY = 12 * 60;
+
 async function sessionStatsForUsers(userIds, weekStart, weekEnd) {
   if (!userIds.length) {
     return { totalSessions: 0, totalMinutes: 0, byUser: new Map(), distinctActive: 0 };
@@ -226,10 +229,20 @@ async function sessionStatsForUsers(userIds, weekStart, weekEnd) {
       },
     },
     {
+      // Inflated rows (minutes-since-midnight bug) must not flow into weekly reports.
+      $project: {
+        userId: 1,
+        date: 1,
+        duration: {
+          $min: [{ $ifNull: ['$duration', 0] }, MAX_SESSION_MINUTES_PER_DAY],
+        },
+      },
+    },
+    {
       $group: {
         _id: '$userId',
         sessions: { $sum: 1 },
-        minutes: { $sum: { $ifNull: ['$duration', 0] } },
+        minutes: { $sum: '$duration' },
         days: { $addToSet: '$date' },
       },
     },
@@ -1062,10 +1075,19 @@ export async function buildStudentImpactReports(adminId, periodInput = new Date(
         },
       },
       {
+        $project: {
+          date: 1,
+          userId: 1,
+          duration: {
+            $min: [{ $ifNull: ['$duration', 0] }, 12 * 60],
+          },
+        },
+      },
+      {
         $group: {
           _id: '$date',
           sessions: { $sum: 1 },
-          minutes: { $sum: { $ifNull: ['$duration', 0] } },
+          minutes: { $sum: '$duration' },
           students: { $addToSet: '$userId' },
         },
       },
