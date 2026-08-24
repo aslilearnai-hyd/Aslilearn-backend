@@ -578,8 +578,43 @@ export async function buildAdaptiveLearningPayload(userId) {
     });
   }
 
+  const leadCard = cards[0];
+  const leadTopic = leadCard?.focusChapters?.[0]?.chapter || leadCard?.subjectName || '';
+  const toolQuery = new URLSearchParams({
+    subject: leadCard?.subjectName || '',
+    topic: leadTopic,
+  }).toString();
+  const dailyPlan = leadCard
+    ? {
+        subjectName: leadCard.subjectName,
+        focusTopic: leadTopic,
+        reason: `Prioritized from your recent exam performance (${Math.round(leadCard.examScorePercent || 0)}%).`,
+        steps: [
+          {
+            key: 'understand',
+            title: `Understand ${leadTopic}`,
+            description: 'Get a simple explanation targeted to this weak area.',
+            navigatePath: `/student/tools/concept-breakdown-explainer?${toolQuery}`,
+          },
+          {
+            key: 'practice',
+            title: 'Practice targeted questions',
+            description: 'Use fresh questions to check whether the concept is improving.',
+            navigatePath: `/student/tools/smart-qa-practice-generator?${toolQuery}`,
+          },
+          {
+            key: 'test',
+            title: 'Finish with a timed mock test',
+            description: 'Generate another paper and attempt it as a scored exam.',
+            navigatePath: `/student/tools/mock-test-builder?${toolQuery}`,
+          },
+        ],
+      }
+    : null;
+
   return {
     cards,
+    dailyPlan,
     meta: {
       generatedAt: new Date().toISOString(),
       examResultsAnalyzed: examResults.length,

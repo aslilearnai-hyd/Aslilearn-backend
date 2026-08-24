@@ -17,7 +17,7 @@ import GeminiPerformanceReport from '../../models/GeminiPerformanceReport.js';
 import { verifyToken } from '../../middleware/auth.js';
 import { getMyWeeklyDigest } from '../../controllers/impactReportController.js';
 import { getSchoolAdminCalendarEvents, monthBounds } from '../../controllers/calendarController.js';
-import { examVisibleToSchool, examMatchesAdminBoard, examVisibleToStudent, examVisibleToIndividualStudent, getExamWindowStatus } from '../../utils/exam-visibility.js';
+import { examVisibleToSchool, examMatchesAdminBoard, examVisibleToStudent, examVisibleToIndividualStudent, isPastExamPracticeForIndividual, isOwnedGeneratedPracticeExam, getExamWindowStatus } from '../../utils/exam-visibility.js';
 import {
   getStudentExamRanking,
   getAllStudentRankings,
@@ -271,8 +271,11 @@ router.get('/exams', async (req, res) => {
 
     // Keep exam discovery broad at DB level, then enforce school + board + class.
     const query = {
-      createdByRole: 'super-admin',
-      isActive: true
+      isActive: true,
+      $or: [
+        { createdByRole: 'super-admin' },
+        { createdByRole: 'student', practiceOwnerUserId: req.userId },
+      ],
     };
 
     console.log('📋 Student exams base query:', JSON.stringify(query, null, 2));
@@ -301,6 +304,11 @@ router.get('/exams', async (req, res) => {
       if (!canStudentAccessExam(exam, student, studentAdminId, studentBoardOrAdmin)) return false;
       if (!examMatchesStudentAssignedClass(exam, studentClassNumber)) return false;
       return true;
+    }).map((exam) => {
+      const b2cPastPractice = isPastExamPracticeForIndividual(exam, student);
+      return b2cPastPractice
+        ? { ...exam, examType: 'practice', b2cPastPractice: true }
+        : exam;
     });
 
     const boardLog =
@@ -358,8 +366,11 @@ router.get('/exams/:examId', async (req, res) => {
     
     const exam = await Exam.findOne({ 
       _id: examId,
-      createdByRole: 'super-admin',
-      isActive: true 
+      isActive: true,
+      $or: [
+        { createdByRole: 'super-admin' },
+        { createdByRole: 'student', practiceOwnerUserId: req.userId },
+      ],
     }).lean();
     
     if (!exam) {
@@ -390,7 +401,9 @@ router.get('/exams/:examId', async (req, res) => {
       });
     }
 
-    const windowStatus = getExamWindowStatus(exam);
+    const b2cPastPractice = isPastExamPracticeForIndividual(exam, student);
+    const ownedPractice = isOwnedGeneratedPracticeExam(exam, req.userId);
+    const windowStatus = b2cPastPractice || ownedPractice ? { ok: true } : getExamWindowStatus(exam);
     let forceSubmitExam = false;
     if (!windowStatus.ok) {
       const existingDraft = await ExamAttemptDraft.findOne({

@@ -17,7 +17,7 @@ import GeminiPerformanceReport from '../../models/GeminiPerformanceReport.js';
 import { verifyToken } from '../../middleware/auth.js';
 import { getMyWeeklyDigest } from '../../controllers/impactReportController.js';
 import { getSchoolAdminCalendarEvents, monthBounds } from '../../controllers/calendarController.js';
-import { examVisibleToSchool, examVisibleToStudent, examVisibleToIndividualStudent, getExamWindowStatus } from '../../utils/exam-visibility.js';
+import { examVisibleToSchool, examVisibleToStudent, examVisibleToIndividualStudent, isPastExamPracticeForIndividual, isOwnedGeneratedPracticeExam, getExamWindowStatus } from '../../utils/exam-visibility.js';
 import {
   getStudentExamRanking,
   getAllStudentRankings,
@@ -132,7 +132,7 @@ router.get('/exams/:examId/attempt-draft', async (req, res) => {
 
     const ExamResult = (await import('../../models/ExamResult.js')).default;
     const examDoc = await Exam.findById(examId)
-      .select('maxAttempts isActive createdByRole startDate endDate duration')
+      .select('maxAttempts isActive createdByRole practiceOwnerUserId startDate endDate duration board isAllBoards')
       .lean();
     if (!examDoc || examDoc.isActive === false) {
       return res.status(404).json({ success: false, message: 'Exam not found' });
@@ -156,7 +156,14 @@ router.get('/exams/:examId/attempt-draft', async (req, res) => {
     }
 
     // After admin end time: no resume / continue — return draft once for forced submit.
-    const windowStatus = getExamWindowStatus(examDoc, { purpose: 'start' });
+    const student = await User.findById(req.userId).select(
+      'isIndividualAccount board curriculumBoard isAsliPrepExclusive iitCategories interestedCourses'
+    ).lean();
+    const b2cPastPractice = isPastExamPracticeForIndividual(examDoc, student);
+    const ownedPractice = isOwnedGeneratedPracticeExam(examDoc, req.userId);
+    const windowStatus = b2cPastPractice || ownedPractice
+      ? { ok: true }
+      : getExamWindowStatus(examDoc, { purpose: 'start' });
     if (!windowStatus.ok) {
       const ended = /ended/i.test(String(windowStatus.message || ''));
       return res.json({
@@ -224,16 +231,25 @@ router.put('/exams/:examId/attempt-draft', async (req, res) => {
     }
 
     const examDoc = await Exam.findById(examId).lean();
-    if (!examDoc || examDoc.isActive === false || examDoc.createdByRole !== 'super-admin') {
+    if (
+      !examDoc ||
+      examDoc.isActive === false ||
+      (examDoc.createdByRole !== 'super-admin' && !isOwnedGeneratedPracticeExam(examDoc, req.userId))
+    ) {
       return res.status(404).json({ success: false, message: 'Exam not found' });
     }
 
     const existing = await ExamAttemptDraft.findOne({ examId, userId: req.userId }).lean();
     // New draft = starting an attempt — must be inside the exam window (no resume after end).
     // Existing draft autosave may use submit grace so an open session can still save.
-    const windowStatus = getExamWindowStatus(examDoc, {
-      purpose: existing ? 'submit' : 'start',
-    });
+    const student = await User.findById(req.userId).select(
+      'isIndividualAccount board curriculumBoard isAsliPrepExclusive iitCategories interestedCourses'
+    ).lean();
+    const b2cPastPractice = isPastExamPracticeForIndividual(examDoc, student);
+    const ownedPractice = isOwnedGeneratedPracticeExam(examDoc, req.userId);
+    const windowStatus = b2cPastPractice || ownedPractice
+      ? { ok: true }
+      : getExamWindowStatus(examDoc, { purpose: existing ? 'submit' : 'start' });
     if (!windowStatus.ok) {
       return res.status(403).json({ success: false, message: windowStatus.message });
     }
@@ -2076,7 +2092,11 @@ router.post('/exam-results', async (req, res) => {
     }
 
     const examDoc = await Exam.findById(examId).lean();
-    if (!examDoc || examDoc.isActive === false || examDoc.createdByRole !== 'super-admin') {
+    if (
+      !examDoc ||
+      examDoc.isActive === false ||
+      (examDoc.createdByRole !== 'super-admin' && !isOwnedGeneratedPracticeExam(examDoc, req.userId))
+    ) {
       return res.status(404).json({
         success: false,
         message: 'Exam not found or is no longer available.',
@@ -2110,7 +2130,11 @@ router.post('/exam-results', async (req, res) => {
       });
     }
 
-    const windowStatus = getExamWindowStatus(examDoc, { purpose: 'submit' });
+    const b2cPastPractice = isPastExamPracticeForIndividual(examDoc, student);
+    const ownedPractice = isOwnedGeneratedPracticeExam(examDoc, req.userId);
+    const windowStatus = b2cPastPractice || ownedPractice
+      ? { ok: true }
+      : getExamWindowStatus(examDoc, { purpose: 'submit' });
     if (!windowStatus.ok) {
       return res.status(403).json({
         success: false,

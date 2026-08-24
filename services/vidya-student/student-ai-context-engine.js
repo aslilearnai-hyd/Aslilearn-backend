@@ -126,10 +126,12 @@ export async function buildStudentAiContext({
           'questionAnalytics.subject': 1,
         })
         .sort({ completedAt: -1 })
-        .limit(20)
+        .limit(50)
         .lean(),
       UserProgress.find({ userId: studentOid })
-        .select('userId videoId contentId progress completed lastAccessed updatedAt subjectId')
+        .select(
+          'userId videoId contentId assessmentId learningPathId progress completed score timeSpent lastAccessed updatedAt subjectId subject topic subTopic toolType classNumber attempts correctCount'
+        )
         .sort({ updatedAt: -1 })
         .limit(120)
         .lean(),
@@ -140,7 +142,7 @@ export async function buildStudentAiContext({
         .select('title subjectIds videoIds difficulty estimatedHours')
         .lean(),
       RiskAnalysisReport.findOne({ studentId: studentOid })
-        .select('studentId sentAt isRead pdfFilename')
+        .select('studentId sentAt isRead pdfFilename analysisData')
         .sort({ sentAt: -1 })
         .lean(),
       ChatSession.find({ userId: String(studentOid), role: 'student', archived: false })
@@ -151,7 +153,7 @@ export async function buildStudentAiContext({
       VidyaStudentMemory.findOne({ studentId: studentOid }).lean(),
       HomeworkSubmission.find({ studentId: studentOid }).sort({ submittedAt: -1 }).limit(15).lean(),
       StudentVideoChapterProgress.find({ userId: studentOid })
-        .select('userId subjectId chapterId chapterName completed progress updatedAt')
+        .select('userId subjectId chapterCompletedAt updatedAt')
         .sort({ updatedAt: -1 })
         .limit(80)
         .lean(),

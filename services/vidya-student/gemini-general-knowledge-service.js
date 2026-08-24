@@ -157,6 +157,7 @@ export async function generateContextAwareAnswer({
   board = '',
   enrolledSubjects = [],
   studentDataSummary = '',
+  conversationHistory = [],
 }) {
   const classText = classLevel ? `Class ${classLevel}` : 'school level';
   const boardText = board ? `${board} board` : 'Indian school curriculum';
@@ -194,9 +195,17 @@ export async function generateContextAwareAnswer({
     q,
   ].join('\n');
 
+  const safeHistory = (Array.isArray(conversationHistory) ? conversationHistory : [])
+    .slice(-12)
+    .map((item) => ({
+      role: String(item?.role || '').toLowerCase() === 'assistant' ? 'assistant' : 'user',
+      content: String(item?.content || '').slice(0, 4000),
+    }))
+    .filter((item) => item.content.trim());
+
   const result = await callModel({
     systemInstruction,
-    contents: buildContentsFromHistory({ userMessage }),
+    contents: buildContentsFromHistory({ history: safeHistory, userMessage }),
     generationConfig: { temperature: 0.3, maxOutputTokens: 2000 },
   });
   const text = String(result?.text || '').trim();

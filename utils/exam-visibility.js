@@ -151,6 +151,17 @@ export function getExamWindowStatus(exam, opts = {}) {
  */
 export function examVisibleToIndividualStudent(exam, student) {
   if (!exam || !student) return false;
+  if (
+    exam.createdByRole === 'student' &&
+    toIdString(exam.practiceOwnerUserId) === toIdString(student._id || student.id)
+  ) {
+    return true;
+  }
+  // Once a Super Admin exam has ended, reuse the paper in the B2C practice
+  // library. School targeting only controls the live sitting; the archived
+  // paper is still matched to the individual student's Board/IIT scope below.
+  const pastPractice = isPastExamPracticeForIndividual(exam, student);
+  if (pastPractice) return true;
   if (exam.isSchoolSpecific === true) return false;
   const { examSchoolIdStr, targetSchoolIds } = schoolTargetIds(exam);
   if (examSchoolIdStr || targetSchoolIds.length > 0) return false;
@@ -189,4 +200,46 @@ export function examVisibleToIndividualStudent(exam, student) {
     return scope.some((b) => b === examBoard || b.includes(compact) || compact.includes(b));
   }
   return false;
+}
+
+/** An ended Super Admin paper that can be reused by a matching B2C student. */
+export function isPastExamPracticeForIndividual(exam, student) {
+  if (!exam || !student?.isIndividualAccount) return false;
+  if (exam.createdByRole !== 'super-admin' || exam.isActive === false) return false;
+  const end = exam.endDate ? new Date(exam.endDate).getTime() : NaN;
+  if (!Number.isFinite(end) || Date.now() <= end) return false;
+  if (exam.isAllBoards === true) return true;
+
+  const hasIitTracks =
+    Array.isArray(student.iitCategories) &&
+    student.iitCategories.some((c) => String(c || '').trim());
+  const interested = Array.isArray(student.interestedCourses)
+    ? student.interestedCourses.map((c) => String(c).toUpperCase())
+    : [];
+  const wantsIit =
+    hasIitTracks ||
+    Boolean(student.isAsliPrepExclusive) ||
+    interested.some((c) => c.includes('IIT') || c.includes('NEET') || c.includes('JEE'));
+  const scope = boardsForSchoolContentScope({
+    board: student.board,
+    curriculumBoard: student.curriculumBoard,
+    isAsliPrepExclusive: Boolean(student.isAsliPrepExclusive) || hasIitTracks,
+    iitCategories: student.iitCategories,
+  }).map(normalizeBoardKey);
+  const examBoard = normalizeBoardKey(exam.board);
+  if (!examBoard) return true;
+  if (scope.includes(examBoard)) return true;
+  const compact = examBoard.replace(/_/g, '');
+  if (wantsIit && (compact.includes('IIT') || compact.includes('NEET') || compact.includes('JEE'))) {
+    return true;
+  }
+  return scope.includes('ASLI_EXCLUSIVE_SCHOOLS') && compact.includes('ASLI');
+}
+
+export function isOwnedGeneratedPracticeExam(exam, userId) {
+  return Boolean(
+    exam &&
+      exam.createdByRole === 'student' &&
+      toIdString(exam.practiceOwnerUserId) === toIdString(userId),
+  );
 }
