@@ -42,6 +42,9 @@ function collectSections(source) {
     ? source.question_paper
     : source;
   if (Array.isArray(root?.sections)) return root.sections;
+  if (Array.isArray(root?.questions)) {
+    return [{ sectionName: clean(root.sectionName || root.title || 'Questions'), questions: root.questions }];
+  }
   const keys = ['section_a', 'section_b', 'section_c', 'section_d', 'section_e'];
   return keys.flatMap((key) => {
     const value = root?.[key] ?? source?.[key];
@@ -76,6 +79,19 @@ export function extractGeneratedPracticeQuestions(rawData, fallbackContent = '')
   const source = unwrapStructured(rawData) || unwrapStructured(fallbackContent);
   if (!source) return { title: '', instructions: '', questions: [] };
   const sections = collectSections(source);
+  // Text fill-in-the-blank rows are objective too, but the exam player needs
+  // selectable or numerical answers. Reuse the other saved blank answers as
+  // distractors so those rows remain auto-scoreable instead of being dropped.
+  const fillAnswerPool = Array.from(new Set(sections.flatMap((section) => {
+    const sectionType = clean(section?.sectionName ?? section?.title ?? section?.name).toLowerCase();
+    return (Array.isArray(section?.questions) ? section.questions : []).flatMap((row) => {
+      const rowType = clean(row?.type ?? row?.questionType).toLowerCase();
+      const questionText = clean(row?.question ?? row?.questionText ?? row?.text);
+      const isFillBlank = /fill.*blank|blank/.test(`${rowType} ${sectionType}`) || /_{2,}|\.{3,}/.test(questionText);
+      const answer = clean(row?.answer ?? row?.correctAnswer ?? row?.correct_answer);
+      return isFillBlank && answer && normalizeOptions(row?.options).length < 2 ? [answer] : [];
+    });
+  })));
   const questions = [];
   for (const section of sections) {
     const rows = Array.isArray(section?.questions) ? section.questions : [];
@@ -86,8 +102,16 @@ export function extractGeneratedPracticeQuestions(rawData, fallbackContent = '')
       const rawAnswer = row?.answer ?? row?.correctAnswer ?? row?.correct_answer;
       const rowType = clean(row?.type ?? row?.questionType).toLowerCase();
       const sectionType = clean(section?.sectionName ?? section?.title ?? section?.name).toLowerCase();
+      const isFillBlank = /fill.*blank|blank/.test(`${rowType} ${sectionType}`) || /_{2,}|\.{3,}/.test(questionText);
       if (options.length < 2 && (/true\s*(?:or|\/)\s*false/.test(rowType) || /true\s*(?:or|\/)\s*false/.test(sectionType))) {
         options = normalizeOptions(['True', 'False']);
+      }
+      if (options.length < 2 && isFillBlank) {
+        const answer = clean(rawAnswer);
+        const choices = [answer, ...fillAnswerPool.filter((candidate) => candidate.toLowerCase() !== answer.toLowerCase())]
+          .filter(Boolean)
+          .slice(0, 4);
+        if (choices.length >= 2) options = normalizeOptions(choices);
       }
       const correctAnswer = options.length >= 2
         ? resolveCorrectAnswer(rawAnswer, options)
@@ -130,10 +154,20 @@ export async function createOwnedPracticeExam({
   duration,
   rawData,
   content,
+  questions: suppliedQuestions,
 }) {
-  const parsed = extractGeneratedPracticeQuestions(rawData, content);
+  const parsed = Array.isArray(suppliedQuestions)
+    ? { title: '', instructions: '', questions: suppliedQuestions }
+    : extractGeneratedPracticeQuestions(rawData, content);
   if (parsed.questions.length < 2) return null;
-  const normalizedSubject = clean(subject).toLowerCase().replace(/\s+/g, '_');
+  const subjectAliases = {
+    mathematics: 'maths',
+    math: 'maths',
+    social_studies: 'social_science',
+    'social science': 'social_science',
+  };
+  const rawSubject = clean(subject).toLowerCase();
+  const normalizedSubject = subjectAliases[rawSubject] || rawSubject.replace(/\s+/g, '_');
   const allowedSubject = ['maths', 'physics', 'chemistry', 'biology', 'science', 'english', 'hindi', 'social_science'].includes(normalizedSubject)
     ? normalizedSubject
     : 'science';
@@ -142,7 +176,7 @@ export async function createOwnedPracticeExam({
   const totalMarks = parsed.questions.reduce((sum, question) => sum + question.marks, 0);
   const exam = await Exam.create({
     title: parsed.title || `${clean(topic) || allowedSubject} Personal Mock Test`,
-    description: `B2C personal mock test generated for ${clean(topic) || allowedSubject}.`,
+    description: `Personal mock test generated for ${clean(topic) || allowedSubject}.`,
     examType: 'practice',
     classNumber: clean(classNumber),
     assignedClasses: [clean(classNumber)],

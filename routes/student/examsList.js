@@ -68,6 +68,10 @@ import {
 } from '../../utils/examAiAnalysisCache.js';
 import { signQuestionMediaFields } from '../../utils/upload-access.js';
 import {
+  createOwnedPracticeExam,
+  extractGeneratedPracticeQuestions,
+} from '../../services/generated-practice-exam-service.js';
+import {
   escapeRegexClassSuffix,
   plainSubjectName,
   normalizeTopicLabel,
@@ -86,6 +90,107 @@ const EXAM_FIGURE_SIGN_TTL_SEC = 8 * 60 * 60;
 
 
 const router = express.Router();
+
+router.post('/exams/generate-personal', async (req, res) => {
+  try {
+    const { getStudentSchoolProgramContext } = await import('../../utils/schoolProgram.js');
+    const programCtx = await getStudentSchoolProgramContext(req.userId);
+    if (!programCtx?.isIndividualAccount) {
+      return res.status(403).json({ success: false, message: 'Generate Exam is available to individual student accounts only.' });
+    }
+
+    const board = String(req.body?.board || '').trim().toUpperCase();
+    const subject = String(req.body?.subject || '').trim();
+    const topic = String(req.body?.topic || '').trim();
+    const questionCount = Number(req.body?.questionCount);
+    if (!['CBSE', 'IIT'].includes(board)) {
+      return res.status(400).json({ success: false, message: 'Choose CBSE or IIT.' });
+    }
+    if (!subject || !topic || ![10, 15, 20].includes(questionCount)) {
+      return res.status(400).json({ success: false, message: 'Choose subject, topic, and 10, 15, or 20 questions.' });
+    }
+
+    const classNumber = String(
+      resolveStudentClassNumber(programCtx.studentDoc || programCtx.userDoc || programCtx) ||
+      req.body?.classNumber || ''
+    ).replace(/^class\s*/i, '').trim();
+    if (!classNumber) {
+      return res.status(400).json({ success: false, message: 'Your class is not configured.' });
+    }
+    const classLabel = `Class ${classNumber}`;
+    const tools = ['worksheet-mcq-generator', 'smart-qa-practice-generator', 'mock-test-builder'];
+    const collected = [];
+    const sources = [];
+    const seenSourceRecords = new Set();
+    for (const toolName of tools) {
+      let variantLimit = 1;
+      for (let variantIndex = 0; variantIndex < variantLimit; variantIndex += 1) {
+        const { doc, totalCandidates } = await fetchRotatingAiToolData({
+          classLabel,
+          subject,
+          topic,
+          subtopic: '',
+          toolName,
+          board,
+          strictToolMatch: true,
+          cursorScope: `${req.userId}:exam-builder:${toolName}`,
+          fastDelivery: true,
+        });
+        variantLimit = Math.min(5, Math.max(1, Number(totalCandidates) || 1));
+        if (!doc) break;
+        const sourceId = String(doc._id || doc.id || `${toolName}:${variantIndex}`);
+        if (seenSourceRecords.has(sourceId)) continue;
+        seenSourceRecords.add(sourceId);
+        const content = String(doc.generatedContent || doc.content || '').trim();
+        const rawData = buildRawDataForTool(toolName, content, buildDeliveryMetadataFromDoc(doc));
+        const parsed = extractGeneratedPracticeQuestions(rawData, content);
+        if (parsed.questions.length) {
+          collected.push(...parsed.questions);
+          sources.push(toolName);
+        }
+      }
+    }
+
+    const seen = new Set();
+    const unique = collected.filter((question) => {
+      const key = String(question.questionText || '').toLowerCase().replace(/\W+/g, ' ').trim();
+      if (!key || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+    unique.sort(() => Math.random() - 0.5);
+    if (unique.length < questionCount) {
+      return res.status(409).json({
+        success: false,
+        code: 'INSUFFICIENT_SAVED_QUESTIONS',
+        message: `Only ${unique.length} scored questions are available for this selection. Choose fewer questions or try another topic.`,
+        availableQuestionCount: unique.length,
+      });
+    }
+
+    const exam = await createOwnedPracticeExam({
+      userId: req.userId,
+      board,
+      classNumber,
+      subject,
+      topic,
+      duration: Math.max(15, questionCount * 2),
+      questions: unique.slice(0, questionCount),
+    });
+    return res.status(201).json({
+      success: true,
+      data: {
+        examId: String(exam._id),
+        title: exam.title,
+        questionCount: exam.totalQuestions,
+        sources,
+      },
+    });
+  } catch (error) {
+    console.error('[GENERATE_PERSONAL_EXAM]', error);
+    return res.status(500).json({ success: false, message: 'Could not build the exam from saved question records.' });
+  }
+});
 
 async function hydrateExamQuestions(examDoc, { hideAnswers = false, shuffleForUserId = null } = {}) {
   const examId = examDoc?._id;

@@ -606,7 +606,7 @@ export async function buildAdaptiveLearningPayload(userId) {
             key: 'test',
             title: 'Finish with a timed mock test',
             description: 'Generate another paper and attempt it as a scored exam.',
-            navigatePath: `/student/tools/mock-test-builder?${toolQuery}`,
+            navigatePath: '/student-exams?generate=1',
           },
         ],
       }
