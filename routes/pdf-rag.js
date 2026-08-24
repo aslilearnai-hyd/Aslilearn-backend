@@ -12,7 +12,7 @@ import AiToolGeneration from '../models/AiToolGeneration.js';
 import PdfGeneration from '../models/PdfGeneration.js';
 import { processPdfSourceWithModels, runHybridRagQuery, archiveSupersededSources } from '../services/pdf-rag-service.js';
 import { uploadPdfToConfiguredStorage, deleteFromConfiguredStorage } from '../services/cloud-storage.js';
-import { isPdfQueueEnabled } from '../queues/pdfProcessingQueue.js';
+import { isPdfQueueEnabled, enqueuePdfProcessing } from '../queues/pdfProcessingQueue.js';
 import {
   buildLocalPdfAnalysisFromSelection,
   classifyPdfContentWithFallback,
@@ -1711,12 +1711,18 @@ router.post(
         );
 
         if (!skipRagIndexing) {
-          processPdfSourceWithModels(source._id, {
-            sourceModel: AiContentEngineSource,
-            chunkModel: AiContentEngineChunk,
-          }).catch((processErr) => {
-            console.warn('[AI PDF] Background chunk/embed failed (non-fatal):', processErr?.message || processErr);
-          });
+          if (isPdfQueueEnabled()) {
+            enqueuePdfProcessing(source._id).catch((processErr) => {
+              console.warn('[AI PDF] Queue enqueue failed (non-fatal):', processErr?.message || processErr);
+            });
+          } else {
+            processPdfSourceWithModels(source._id, {
+              sourceModel: AiContentEngineSource,
+              chunkModel: AiContentEngineChunk,
+            }).catch((processErr) => {
+              console.warn('[AI PDF] Background chunk/embed failed (non-fatal):', processErr?.message || processErr);
+            });
+          }
         }
 
         return res.status(201).json({
@@ -1836,8 +1842,10 @@ router.post('/pdf/process', verifyToken, authorizeRoles('teacher', 'admin', 'sup
       return res.status(404).json({ success: false, message: 'PDF source not found' });
     }
     if (runAsync) {
-      // Keep AI PDF processing isolated from shared queue schema.
-      const queued = { enqueued: false, jobId: null };
+      let queued = { enqueued: false, jobId: null };
+      if (isPdfQueueEnabled()) {
+        queued = await enqueuePdfProcessing(resolvedSourceId);
+      }
       if (!queued.enqueued) {
         processPdfSourceWithModels(resolvedSourceId, {
           sourceModel: AiContentEngineSource,

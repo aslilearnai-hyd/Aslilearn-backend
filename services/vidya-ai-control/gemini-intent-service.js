@@ -1,4 +1,4 @@
-import geminiService from '../gemini-service.js';
+import { gatewayStructured } from '../../ai/providers/ai-gateway.js';
 import { MODULE_REGISTRY } from './module-registry.js';
 import {
   isReportsOverviewQuery,
@@ -744,7 +744,7 @@ ${message.slice(0, 4500)}
   let raw = '';
   let parsed = null;
   try {
-    raw = await geminiService.generateStructuredContent(prompt, 'json');
+    raw = await gatewayStructured(prompt, 'json');
     parsed = safeJson(raw);
   } catch (err) {
     return buildHeuristicPlan(message, String(err?.message || 'unknown'));

@@ -1,5 +1,6 @@
 import VidyaCallLog from '../models/VidyaCallLog.js';
-import { runHybridTeacherVidyaChat } from '../services/vidya-teacher/teacher-hybrid-chat-controller.js';
+import { handleVidyaTurn, PLANES } from '../services/vidya-orchestrator.js';
+import { writeFailedMentorCallLog, writeMentorCallLog } from '../utils/vidya-call-log-meta.js';
 
 export async function postTeacherMentorChat(req, res) {
   const started = Date.now();
@@ -24,30 +25,20 @@ export async function postTeacherMentorChat(req, res) {
       return res.status(limitErr.statusCode || 429).json(trialLimitHttpPayload(limitErr));
     }
 
-    const result = await runHybridTeacherVidyaChat({
-      viewerUserId: req.userId,
-      question,
+    const result = await handleVidyaTurn({
+      plane: PLANES.MENTOR_TEACHER,
+      req,
+      body: req.body,
     });
 
-    await VidyaCallLog.create({
-      userId: String(req.userId),
-      role: 'teacher',
-      route: 'analysis',
-      prompt: question,
-      response: result.message,
-      provider: 'gemini',
-      success: true,
-      latencyMs: Date.now() - started,
-      safetyBlocked: false,
-      safetyDetails: {
-        groundingStatus: result.groundingStatus,
-        scope: 'teacher-mentor',
-        mode: result.mode || 'application',
-        intent: result.intent || null,
-      },
-      requestIp: req.ip || '',
-      userAgent: String(req.headers['user-agent'] || '').slice(0, 200),
-    }).catch(() => null);
+    await writeMentorCallLog({
+      VidyaCallLog,
+      req,
+      started,
+      question,
+      result,
+      scope: 'teacher-mentor',
+    });
 
     import('../utils/user-activity.js')
       .then(({ recordUserPresence }) => recordUserPresence(req.userId))
@@ -63,6 +54,14 @@ export async function postTeacherMentorChat(req, res) {
       trialUsage,
     });
   } catch (err) {
+    await writeFailedMentorCallLog({
+      VidyaCallLog,
+      req,
+      started,
+      question: String(req.body?.message || '').trim(),
+      scope: 'teacher-mentor',
+      error: err,
+    });
     const status = Number(err?.statusCode) || 500;
     return res.status(status).json({
       success: false,

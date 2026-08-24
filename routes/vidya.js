@@ -1,46 +1,43 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import { verifyToken } from '../middleware/auth.js';
-import {
-  aiChatGlobalLimiter,
-  aiChatPerUserLimiter,
-  aiHeavyLimiter,
-} from '../middleware/rate-limit.js';
+import { aiChatGlobalLimiter, aiChatPerUserLimiter, aiHeavyLimiter } from '../middleware/rate-limit.js';
+import { attachVidyaTenant, requireVidyaControlTenant } from '../middleware/vidya-tenant-context.js';
 import vidyaService from '../services/vidya-service.js';
+import { handleVidyaTurn, PLANES } from '../services/vidya-orchestrator.js';
 import VidyaCallLog from '../models/VidyaCallLog.js';
 import ChatSession from '../models/ChatSession.js';
 import * as vidyaAiControl from '../controllers/vidyaAiControlController.js';
 import * as vidyaStudent from '../controllers/vidyaStudentController.js';
 import * as vidyaTeacher from '../controllers/vidyaTeacherController.js';
 import { requireVidyaSchoolAccess } from '../middleware/vidya-school-access.js';
+import { chatSessionsResponse, chatSessionResponse } from '../utils/vidya-api-contracts.js';
 
 const router = express.Router();
 
 router.use(aiChatGlobalLimiter);
 
-const studentTeacherVidya = [verifyToken, requireVidyaSchoolAccess];
-
-const requestMeta = (req) => ({
-  requestIp: req.ip || req.headers['x-forwarded-for'] || '',
-  userAgent: String(req.headers['user-agent'] || '').slice(0, 200),
-});
+const studentTeacherVidya = [verifyToken, attachVidyaTenant, requireVidyaSchoolAccess];
+const controlVidya = [verifyToken, attachVidyaTenant, requireVidyaControlTenant];
 
 router.post(
   '/vidya/control/query',
-  verifyToken,
+  ...controlVidya,
   aiChatPerUserLimiter,
   (req, res) => vidyaAiControl.postVidyaControlQuery(req, res),
 );
 
 router.get(
   '/vidya/control/history',
-  verifyToken,
+  ...controlVidya,
+  aiChatPerUserLimiter,
   async (req, res) => vidyaAiControl.getVidyaControlHistory(req, res),
 );
 
 router.delete(
   '/vidya/control/history',
-  verifyToken,
+  ...controlVidya,
+  aiChatPerUserLimiter,
   async (req, res) => vidyaAiControl.deleteVidyaControlHistory(req, res),
 );
 
@@ -61,12 +58,14 @@ router.post(
 router.get(
   '/vidya/student/focus-card',
   ...studentTeacherVidya,
+  aiChatPerUserLimiter,
   async (req, res) => vidyaStudent.getStudentFocusCard(req, res),
 );
 
 router.post(
   '/vidya/student/proactive/delivered',
   ...studentTeacherVidya,
+  aiChatPerUserLimiter,
   async (req, res) => vidyaStudent.markProactiveDelivered(req, res),
 );
 
@@ -87,13 +86,10 @@ router.post(
       } catch (limitErr) {
         return res.status(limitErr.statusCode || 429).json(trialLimitHttpPayload(limitErr));
       }
-      const result = await vidyaService.handleChat({
-        userId: req.userId,
-        role: req.user?.role,
-        message,
-        context: context || {},
-        sessionId,
-        ...requestMeta(req),
+      const result = await handleVidyaTurn({
+        plane: PLANES.RAG,
+        req,
+        body: { message, context, sessionId },
       });
       res.json({ ...result, trialUsage });
     } catch (err) {
@@ -131,14 +127,11 @@ router.post(
         } catch (_) {}
         return;
       }
-      await vidyaService.handleStreamingChat({
-        userId: req.userId,
-        role: req.user?.role,
-        message,
-        context: context || {},
-        sessionId,
+      await handleVidyaTurn({
+        plane: PLANES.RAG_STREAM,
+        req,
         res,
-        ...requestMeta(req),
+        body: { message, context, sessionId },
       });
     } catch (err) {
       try {
@@ -166,12 +159,10 @@ router.post(
         return res.status(400).json({ success: false, message: 'Image is required' });
       }
       const base64Data = String(image).replace(/^data:image\/[a-z]+;base64,/, '');
-      const result = await vidyaService.handleVisionAnalyse({
-        userId: req.userId,
-        role: req.user?.role,
-        imageBase64: base64Data,
-        context: context || '',
-        ...requestMeta(req),
+      const result = await handleVidyaTurn({
+        plane: PLANES.VISION,
+        req,
+        body: { imageBase64: base64Data, context: context || '' },
       });
       res.json({ success: true, ...result });
     } catch (err) {
@@ -188,6 +179,8 @@ router.post(
 router.get(
   '/users/:userId/chat-sessions',
   verifyToken,
+  attachVidyaTenant,
+  aiChatPerUserLimiter,
   async (req, res) => {
     try {
       const { userId } = req.params;
@@ -199,7 +192,7 @@ router.get(
       }
       const limit = Number(req.query.limit) || 30;
       const sessions = await vidyaService.listChatSessions({ userId, limit });
-      res.json({ success: true, sessions });
+      res.json(chatSessionsResponse(sessions));
     } catch (err) {
       res.status(500).json({ success: false, message: 'Failed to fetch chat sessions' });
     }
@@ -209,6 +202,8 @@ router.get(
 router.get(
   '/chat-sessions/:sessionId',
   verifyToken,
+  attachVidyaTenant,
+  aiChatPerUserLimiter,
   async (req, res) => {
     try {
       const { sessionId } = req.params;
@@ -224,7 +219,7 @@ router.get(
       if (!isPrivileged && String(sessionDoc.userId) !== String(req.userId)) {
         return res.status(403).json({ success: false, message: 'Access denied.' });
       }
-      res.json({ success: true, session: sessionDoc });
+      res.json(chatSessionResponse(sessionDoc));
     } catch (err) {
       res.status(500).json({ success: false, message: 'Failed to fetch chat session' });
     }
@@ -234,6 +229,8 @@ router.get(
 router.delete(
   '/chat-sessions/:sessionId',
   verifyToken,
+  attachVidyaTenant,
+  aiChatPerUserLimiter,
   async (req, res) => {
     try {
       const { sessionId } = req.params;
@@ -276,7 +273,7 @@ router.get(
   '/vidya/admin/retrieval-tiers',
   verifyToken,
   async (req, res) => {
-    if (!['super-admin', 'admin'].includes(String(req.user?.role || ''))) {
+    if (!['super-admin'].includes(String(req.user?.role || ''))) {
       return res.status(403).json({ success: false, message: 'Access denied.' });
     }
     try {
@@ -348,7 +345,7 @@ router.get(
   '/vidya/admin/usage-story',
   verifyToken,
   async (req, res) => {
-    if (!['super-admin', 'admin'].includes(String(req.user?.role || ''))) {
+    if (!['super-admin'].includes(String(req.user?.role || ''))) {
       return res.status(403).json({ success: false, message: 'Access denied.' });
     }
     try {
