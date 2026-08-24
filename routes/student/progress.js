@@ -292,6 +292,14 @@ function capSessionMinutesPerDay(minutes) {
   return Math.min(MAX_SESSION_MINUTES_PER_DAY, Math.max(0, n));
 }
 
+function sanitizeSessionMinutesPerDay(minutes) {
+  const n = Math.round(Number(minutes) || 0);
+  // Legacy web tracking could turn an orphaned tab into exactly the 12-hour
+  // safety cap. Treat that sentinel as corrupt rather than real study time.
+  if (n >= MAX_SESSION_MINUTES_PER_DAY) return 0;
+  return Math.max(0, n);
+}
+
 /** Calendar date YYYY-MM-DD (server local timezone). */
 function getCalendarDateKey(date = new Date()) {
   const y = date.getFullYear();
@@ -323,8 +331,9 @@ router.post('/session-time', async (req, res) => {
     
     if (session) {
       // Update existing session - use maximum duration (in case of multiple updates)
-      const newDuration = capSessionMinutesPerDay(totalMinutes);
-      if (newDuration > (session.duration || 0)) {
+      const newDuration = sanitizeSessionMinutesPerDay(totalMinutes);
+      const existingDuration = Number(session.duration) || 0;
+      if (existingDuration >= MAX_SESSION_MINUTES_PER_DAY || newDuration > existingDuration) {
         session.duration = newDuration;
         session.endTime = new Date();
         // Mark duration dirty so pre-save does not overwrite with endTime - startTime.
@@ -340,7 +349,7 @@ router.post('/session-time', async (req, res) => {
         date: dateKey,
         startTime: startOfDay,
         endTime: new Date(),
-        duration: capSessionMinutesPerDay(totalMinutes),
+        duration: sanitizeSessionMinutesPerDay(totalMinutes),
       });
       await session.save();
     }
@@ -384,14 +393,14 @@ router.get('/session-time', async (req, res) => {
       date.setDate(date.getDate() - i);
       const dateKey = getCalendarDateKey(date);
       const session = sessions.find(s => s.date === dateKey);
-      weeklyData[dateKey] = capSessionMinutesPerDay(session ? session.duration || 0 : 0);
+      weeklyData[dateKey] = sanitizeSessionMinutesPerDay(session ? session.duration || 0 : 0);
     }
 
     const weeklyTotal = Object.values(weeklyData).reduce((sum, mins) => sum + mins, 0);
 
     // Get today's session
     const todayKey = getCalendarDateKey(today);
-    const todayTotal = capSessionMinutesPerDay(weeklyData[todayKey] || 0);
+    const todayTotal = sanitizeSessionMinutesPerDay(weeklyData[todayKey] || 0);
     
     res.json({
       success: true,

@@ -25,7 +25,6 @@ import {
 import geminiService, { generateStudentTool } from '../../services/gemini-service.js';
 import { fetchRotatingAiToolData } from '../../services/ai-tool-rotation-service.js';
 import { generateAiToolLiveFallback } from '../../services/ai-tool-live-fallback.js';
-import { createOwnedPracticeExam } from '../../services/generated-practice-exam-service.js';
 import {
   buildDeliveryMetadataFromDoc,
   buildRawDataForTool,
@@ -94,24 +93,9 @@ async function maybeCreateB2cPracticeExam({
   rawData,
   content,
 }) {
-  const practiceExamTools = new Set([
-    'mock-test-builder',
-    'smart-qa-practice-generator',
-  ]);
-  if (!programCtx?.isIndividualAccount || !practiceExamTools.has(String(toolType))) return null;
-  return createOwnedPracticeExam({
-    userId,
-    board,
-    classNumber: classDisplay,
-    subject,
-    topic,
-    duration,
-    rawData,
-    content,
-  }).catch((error) => {
-    console.warn('[B2C_MOCK_EXAM] Could not create interactive exam:', error?.message || error);
-    return null;
-  });
+  // Personal exams are now built centrally from the Exams screen. AI tools
+  // remain study-content viewers and no longer create duplicate exams.
+  return null;
 }
 
 router.post('/ai/tool', async (req, res) => {
