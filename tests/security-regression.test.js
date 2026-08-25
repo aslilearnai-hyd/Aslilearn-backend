@@ -23,13 +23,17 @@ import {
 } from '../utils/attendance-helpers.js';
 
 describe('student data retention safeguards', () => {
-  it('keeps the bulk-delete endpoint permanently disabled', () => {
+  it('makes bulk removal tenant-scoped, confirmed, and recoverable', () => {
     const source = readFileSync(new URL('../routes/admin/users.js', import.meta.url), 'utf8');
     const route = source.slice(
       source.indexOf("router.delete('/users/delete-all'"),
       source.indexOf('// Teacher management endpoints'),
     );
-    assert.match(route, /student\.delete_all_blocked/);
+    assert.match(route, /assignedAdmin: tenantAdminId/);
+    assert.match(route, /DELETE \$\{actualCount\} STUDENTS/);
+    assert.match(route, /User\.updateMany/);
+    assert.match(route, /deletedAt/);
+    assert.match(route, /student\.archive_all/);
     assert.doesNotMatch(route, /User\.deleteMany/);
   });
 

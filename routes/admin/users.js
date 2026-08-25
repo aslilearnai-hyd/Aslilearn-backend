@@ -196,16 +196,61 @@ router.put('/users/:id', async (req, res) => {
   }
 });
 
-// Permanently disabled after a data-integrity incident. Bulk student removal
-// must be performed as an audited, recoverable archive operation instead.
+// Recoverable, tenant-scoped bulk removal. The UI deliberately places this in
+// a Danger Zone and requires an exact second-step phrase containing the count.
 router.delete('/users/delete-all', async (req, res) => {
-  req.setAudit?.({
-    action: 'student.delete_all_blocked',
-    summary: 'Blocked a permanent bulk student deletion request',
-  });
-  return res.status(410).json({
-    message: 'Permanent bulk student deletion is disabled to protect school data.',
-  });
+  try {
+    const tenantAdminId = resolveTenantAdminId(req);
+    if (!tenantAdminId || req.user?.role !== 'admin') {
+      return res.status(403).json({ message: 'A school administrator account is required.' });
+    }
+
+    const activeFilter = {
+      role: 'student',
+      assignedAdmin: tenantAdminId,
+      deletedAt: { $exists: false },
+    };
+    const actualCount = await User.countDocuments(activeFilter);
+    const expectedCount = Number(req.body?.expectedCount);
+    const expectedPhrase = `DELETE ${actualCount} STUDENTS`;
+    const confirmation = String(req.body?.confirmation || '').trim().toUpperCase();
+
+    if (!Number.isInteger(expectedCount) || expectedCount !== actualCount || confirmation !== expectedPhrase) {
+      req.setAudit?.({
+        action: 'student.archive_all_blocked',
+        summary: 'Blocked bulk student removal because confirmation did not match',
+        meta: { actualCount, expectedCount },
+      });
+      return res.status(409).json({
+        message: `Student count changed or confirmation did not match. Type exactly: ${expectedPhrase}`,
+        studentCount: actualCount,
+        confirmationPhrase: expectedPhrase,
+      });
+    }
+
+    const now = new Date();
+    const result = await User.updateMany(activeFilter, {
+      $set: {
+        isActive: false,
+        deletedAt: now,
+        deletedBy: req.user._id,
+        deletionReason: 'Bulk removal by school administrator',
+      },
+    });
+    req.setAudit?.({
+      action: 'student.archive_all',
+      summary: `Archived all ${result.modifiedCount} students in this school`,
+      meta: { modifiedCount: result.modifiedCount, tenantAdminId: String(tenantAdminId) },
+    });
+    return res.json({
+      message: `${result.modifiedCount} students were removed from the active directory. Records remain recoverable.`,
+      deletedCount: result.modifiedCount,
+      recoverable: true,
+    });
+  } catch (error) {
+    console.error('Failed to archive all students:', error);
+    return res.status(500).json({ message: 'Failed to remove students.' });
+  }
 });
 
 // Teacher management endpoints
