@@ -14,7 +14,14 @@ import { resolveUserDisplayBoard } from '../constants/boards.js';
 import {
   isVidyaEnabledForStudents,
   isVidyaEnabledForTeachers,
+  isVidyaEnabledForAdmins,
 } from '../utils/vidyaSchoolAccess.js';
+import {
+  ALLOWED_SCHOOL_PORTAL_PERMISSIONS,
+  ALLOWED_TEACHER_PORTAL_PERMISSIONS,
+  ALLOWED_STUDENT_PORTAL_PERMISSIONS,
+  expandPortalPermissions,
+} from '../utils/schoolRolePortal.js';
 import User from '../models/User.js';
 import Teacher from '../models/Teacher.js';
 import {
@@ -230,7 +237,7 @@ export async function me(req, res) {
         let teacherAdmin = null;
         if (teacher.adminId) {
           teacherAdmin = await User.findById(teacher.adminId)
-            .select('board curriculumBoard isAsliPrepExclusive iitCategories schoolName schoolLogo vidyaEnabledForTeachers vidyaEnabledForStudents')
+            .select('board curriculumBoard isAsliPrepExclusive iitCategories schoolName schoolLogo vidyaEnabledForTeachers vidyaEnabledForStudents teacherPermissions studentPermissions permissions vidyaEnabledForAdmins')
             .lean();
         }
         const teacherCtx = { board: teacher.board, isAsliPrepExclusive: false };
@@ -269,6 +276,10 @@ export async function me(req, res) {
           isAsliPrepExclusive,
           subjects: teacher.subjects || [],
           vidyaEnabled: isVidyaEnabledForTeachers(teacherAdmin),
+          portalFeatures: expandPortalPermissions(
+            teacherAdmin?.teacherPermissions,
+            ALLOWED_TEACHER_PORTAL_PERMISSIONS
+          ),
           schoolName: teacherAdmin?.schoolName || teacher.school || teacher.schoolName || '',
           phone: teacher.phone || '',
           classNumber: teacher.classNumber || '',
@@ -303,7 +314,7 @@ export async function me(req, res) {
     if (user.role === 'student' && user.assignedAdmin) {
       await user.populate(
         'assignedAdmin',
-        'board curriculumBoard isAsliPrepExclusive iitCategories schoolName schoolLogo vidyaEnabledForTeachers vidyaEnabledForStudents'
+        'board curriculumBoard isAsliPrepExclusive iitCategories schoolName schoolLogo vidyaEnabledForTeachers vidyaEnabledForStudents teacherPermissions studentPermissions permissions vidyaEnabledForAdmins'
       );
     }
     let teacherAdmin = null;
@@ -311,7 +322,7 @@ export async function me(req, res) {
       const teacher = await Teacher.findById(user._id).select('adminId').lean();
       if (teacher?.adminId) {
         teacherAdmin = await User.findById(teacher.adminId)
-          .select('board curriculumBoard isAsliPrepExclusive iitCategories schoolName schoolLogo vidyaEnabledForTeachers vidyaEnabledForStudents')
+          .select('board curriculumBoard isAsliPrepExclusive iitCategories schoolName schoolLogo vidyaEnabledForTeachers vidyaEnabledForStudents teacherPermissions studentPermissions permissions vidyaEnabledForAdmins')
           .lean();
       }
     }
@@ -382,6 +393,10 @@ export async function me(req, res) {
     };
     if (user.role === 'student') {
       userData.vidyaEnabled = isVidyaEnabledForStudents(user.assignedAdmin);
+      userData.portalFeatures = expandPortalPermissions(
+        user.assignedAdmin?.studentPermissions,
+        ALLOWED_STUDENT_PORTAL_PERMISSIONS
+      );
       if (user.assignedAdmin) {
         userData.assignedAdmin = {
           _id: user.assignedAdmin._id,
@@ -399,6 +414,15 @@ export async function me(req, res) {
     if (req.user.role === 'admin') {
       userData.schoolName = user.schoolName || '';
       userData.schoolLogo = user.schoolLogo || '';
+      userData.vidyaEnabled = isVidyaEnabledForAdmins(user);
+      userData.portalFeatures = expandPortalPermissions(
+        user.permissions,
+        ALLOWED_SCHOOL_PORTAL_PERMISSIONS
+      );
+      userData.permissions = expandPortalPermissions(
+        user.permissions,
+        ALLOWED_SCHOOL_PORTAL_PERMISSIONS
+      );
     }
     if (req.user.role === 'teacher') {
       const teacher = await Teacher.findById(authId).populate('subjects');
@@ -416,6 +440,10 @@ export async function me(req, res) {
         };
       }
       userData.vidyaEnabled = isVidyaEnabledForTeachers(teacherAdmin);
+      userData.portalFeatures = expandPortalPermissions(
+        teacherAdmin?.teacherPermissions,
+        ALLOWED_TEACHER_PORTAL_PERMISSIONS
+      );
     }
     res.json({ user: userData });
   } catch (error) {

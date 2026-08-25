@@ -1,4 +1,15 @@
 import Joi from 'joi';
+import {
+  ALLOWED_SCHOOL_PORTAL_PERMISSIONS,
+  ALLOWED_TEACHER_PORTAL_PERMISSIONS,
+  ALLOWED_STUDENT_PORTAL_PERMISSIONS,
+} from '../utils/schoolRolePortal.js';
+
+export {
+  ALLOWED_SCHOOL_PORTAL_PERMISSIONS,
+  ALLOWED_TEACHER_PORTAL_PERMISSIONS,
+  ALLOWED_STUDENT_PORTAL_PERMISSIONS,
+};
 
 // Validation schemas for Super Admin operations
 
@@ -24,6 +35,9 @@ export const createAdminSchema = Joi.object({
   board: Joi.string().min(2).max(80).required(),
   state: Joi.string().min(2).max(100).required(),
   permissions: Joi.array().items(Joi.string()).default([]),
+  teacherPermissions: Joi.array().items(Joi.string()).optional(),
+  studentPermissions: Joi.array().items(Joi.string()).optional(),
+  vidyaEnabledForAdmins: Joi.boolean().optional(),
   vidyaEnabledForTeachers: Joi.boolean().optional(),
   vidyaEnabledForStudents: Joi.boolean().optional(),
   isAsliPrepExclusive: Joi.boolean().optional(),
@@ -87,21 +101,16 @@ export const validateRequest = (schema) => {
 // Custom validation functions — never hardcode live credentials
 export const validateSuperAdminCredentials = () => false;
 
-export const ALLOWED_SCHOOL_PORTAL_PERMISSIONS = [
-  'User Management',
-  'Content Management',
-  'Analytics',
-  'Subscriptions',
-  'Settings',
-  'Exam Management',
-  'Learning Paths',
-  'School Calendar',
-  'Vidya AI',
-  'Edu OTT',
-];
-
 export const validatePermissions = (permissions) => {
   return permissions.every((permission) => ALLOWED_SCHOOL_PORTAL_PERMISSIONS.includes(permission));
+};
+
+export const validateTeacherPermissions = (permissions) => {
+  return permissions.every((permission) => ALLOWED_TEACHER_PORTAL_PERMISSIONS.includes(permission));
+};
+
+export const validateStudentPermissions = (permissions) => {
+  return permissions.every((permission) => ALLOWED_STUDENT_PORTAL_PERMISSIONS.includes(permission));
 };
 
 export const validateRole = (role) => {

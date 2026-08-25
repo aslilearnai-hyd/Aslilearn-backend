@@ -88,7 +88,7 @@ const schoolSchema = new mongoose.Schema(
       trim: true,
       default: '',
     },
-    /** School-wide Vidya usage policy (mirrors admin user). */
+    /** School-wide Vidya usage policy (mirrors admin user; legacy flat). */
     vidyaUsageMode: {
       type: String,
       enum: ['unlimited', 'limited'],
@@ -111,6 +111,30 @@ const schoolSchema = new mongoose.Schema(
       type: Number,
       min: 1,
       default: 10,
+    },
+    teacherPermissions: {
+      type: [String],
+      default: [],
+    },
+    studentPermissions: {
+      type: [String],
+      default: [],
+    },
+    vidyaEnabledForAdmins: {
+      type: Boolean,
+      default: true,
+    },
+    vidyaEnabledForTeachers: {
+      type: Boolean,
+      default: true,
+    },
+    vidyaEnabledForStudents: {
+      type: Boolean,
+      default: true,
+    },
+    vidyaRolePolicies: {
+      type: mongoose.Schema.Types.Mixed,
+      default: undefined,
     },
     isActive: {
       type: Boolean,

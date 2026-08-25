@@ -1,7 +1,7 @@
 import User from '../models/User.js';
 import Teacher from '../models/Teacher.js';
 import {
-  normalizeSchoolVidyaPolicy,
+  policyForRole,
   SCHOOL_VIDYA_WINDOW_MS,
 } from './schoolVidyaLimits.js';
 
@@ -117,20 +117,26 @@ function adminIdFromAccount(doc, role) {
 async function loadSchoolVidyaPolicy(doc, role) {
   if (!doc || doc.isIndividualAccount) return null;
   const adminId = adminIdFromAccount(doc, role);
-  if (!adminId) return null;
-  return loadSchoolVidyaPolicyForAdmin(adminId);
+  if (!adminId) {
+    // School admin account: policy is on the admin user themselves
+    if (String(role || '').toLowerCase() === 'admin' && doc.role === 'admin') {
+      return policyForRole(doc, 'admin');
+    }
+    return null;
+  }
+  return loadSchoolVidyaPolicyForAdmin(adminId, role);
 }
 
-/** School Vidya usage policy for an admin user id (tenant boundary). */
-export async function loadSchoolVidyaPolicyForAdmin(adminId) {
+/** School Vidya usage policy for an admin user id (tenant boundary), role-aware. */
+export async function loadSchoolVidyaPolicyForAdmin(adminId, role = 'student') {
   if (!adminId) return null;
   const admin = await User.findById(adminId)
     .select(
-      'vidyaUsageMode vidyaLimitChatbot vidyaLimitTools vidyaChatPerDay vidyaGenerationsPerDay role'
+      'vidyaUsageMode vidyaLimitChatbot vidyaLimitTools vidyaChatPerDay vidyaGenerationsPerDay vidyaRolePolicies role'
     )
     .lean();
   if (!admin || String(admin.role || '').toLowerCase() !== 'admin') return null;
-  return normalizeSchoolVidyaPolicy(admin);
+  return policyForRole(admin, role);
 }
 
 function schoolChatWindowState(doc, limit, now = Date.now()) {

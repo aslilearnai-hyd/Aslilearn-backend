@@ -7,6 +7,16 @@ import {
   resolveAdminStoredBoard,
 } from '../constants/boards.js';
 import { resolveSchoolIitTrackFields } from '../constants/products.js';
+import {
+  ALLOWED_SCHOOL_PORTAL_PERMISSIONS,
+  ALLOWED_TEACHER_PORTAL_PERMISSIONS,
+  ALLOWED_STUDENT_PORTAL_PERMISSIONS,
+  expandPortalPermissions,
+} from '../utils/schoolRolePortal.js';
+import {
+  normalizeVidyaRolePolicies,
+  rolePoliciesForPersist,
+} from '../utils/schoolVidyaLimits.js';
 
 /** Keep only digits, max 10 (Indian mobile). Empty string if none. */
 export function normalizePhoneTenDigits(raw) {
@@ -263,9 +273,27 @@ export function formatSchoolListItem(school, admin, stats = {}) {
     pin: school?.pin,
     state: sd.state || school?.place || '',
     schoolDetails: sd,
-    permissions: admin?.permissions || [],
-    vidyaEnabledForTeachers: admin?.vidyaEnabledForTeachers !== false,
-    vidyaEnabledForStudents: admin?.vidyaEnabledForStudents !== false,
+    permissions: expandPortalPermissions(
+      admin?.permissions,
+      ALLOWED_SCHOOL_PORTAL_PERMISSIONS
+    ),
+    teacherPermissions: expandPortalPermissions(
+      admin?.teacherPermissions ?? school?.teacherPermissions,
+      ALLOWED_TEACHER_PORTAL_PERMISSIONS
+    ),
+    studentPermissions: expandPortalPermissions(
+      admin?.studentPermissions ?? school?.studentPermissions,
+      ALLOWED_STUDENT_PORTAL_PERMISSIONS
+    ),
+    vidyaEnabledForAdmins:
+      (admin?.vidyaEnabledForAdmins ?? school?.vidyaEnabledForAdmins) !== false,
+    vidyaEnabledForTeachers:
+      (admin?.vidyaEnabledForTeachers ?? school?.vidyaEnabledForTeachers) !== false,
+    vidyaEnabledForStudents:
+      (admin?.vidyaEnabledForStudents ?? school?.vidyaEnabledForStudents) !== false,
+    vidyaRolePolicies: rolePoliciesForPersist(
+      normalizeVidyaRolePolicies(admin || school || {})
+    ),
     vidyaUsageMode:
       String(admin?.vidyaUsageMode || school?.vidyaUsageMode || 'unlimited').toLowerCase() ===
       'limited'

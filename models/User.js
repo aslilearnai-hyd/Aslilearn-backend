@@ -75,6 +75,21 @@ const userSchema = new mongoose.Schema({
     type: [String],
     default: []
   },
+  /** Teacher dashboard modules for this school (empty = unlimited / all). */
+  teacherPermissions: {
+    type: [String],
+    default: [],
+  },
+  /** Student dashboard modules for this school (empty = unlimited / all). */
+  studentPermissions: {
+    type: [String],
+    default: [],
+  },
+  /** Super admin: Vidya AI chatbot for school admins (default on). */
+  vidyaEnabledForAdmins: {
+    type: Boolean,
+    default: true,
+  },
   /** Super admin: Vidya AI chatbot for teachers at this school (default on). */
   vidyaEnabledForTeachers: {
     type: Boolean,
@@ -86,7 +101,7 @@ const userSchema = new mongoose.Schema({
     default: true,
   },
   /**
-   * School Vidya usage: unlimited | limited.
+   * School Vidya usage: unlimited | limited (legacy flat — mirrored from role policies).
    * When limited, vidyaLimitChatbot / vidyaLimitTools choose scope; per-day caps below.
    */
   vidyaUsageMode: {
@@ -111,6 +126,14 @@ const userSchema = new mongoose.Schema({
     type: Number,
     min: 1,
     default: 10,
+  },
+  /**
+   * Per-role Vidya caps (admin / teacher / student).
+   * When unset, teacher+student fall back to legacy flat fields; admin = unlimited.
+   */
+  vidyaRolePolicies: {
+    type: mongoose.Schema.Types.Mixed,
+    default: undefined,
   },
   /** Per-user rolling 24h counters (school members). */
   schoolVidyaChatCount: {
