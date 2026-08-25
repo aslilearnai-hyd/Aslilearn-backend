@@ -205,7 +205,7 @@ export const getAdminDashboardStats = async (req, res) => {
       totalContent,
       seatUsage,
     ] = await Promise.all([
-      User.countDocuments({ role: 'student', ...userFilter }),
+      User.countDocuments({ role: 'student', deletedAt: null, ...userFilter }),
       Teacher.countDocuments(filter),
       Video.countDocuments(filter),
       Assessment.countDocuments(filter),
@@ -213,6 +213,7 @@ export const getAdminDashboardStats = async (req, res) => {
       User.countDocuments({ 
         role: 'student', 
         isActive: true, 
+        deletedAt: null,
         ...userFilter 
       }),
       Class.countDocuments(classFilter),
@@ -260,6 +261,7 @@ export const getStudents = async (req, res) => {
     
     const students = await User.find({ 
       role: 'student', 
+      deletedAt: null,
       ...filter 
     })
     .select('-password')
@@ -536,7 +538,21 @@ export const deleteStudent = async (req, res) => {
       filter.assignedAdmin = adminId;
     }
     
-    const deletedStudent = await User.findOneAndDelete(filter);
+    // Student removal is deliberately recoverable. Academic records and login
+    // identity must never be destroyed by an ordinary school-admin action.
+    filter.deletedAt = null;
+    const deletedStudent = await User.findOneAndUpdate(
+      filter,
+      {
+        $set: {
+          isActive: false,
+          deletedAt: new Date(),
+          deletedBy: adminId || null,
+          deletionReason: 'Removed by school administrator',
+        },
+      },
+      { new: true },
+    );
     
     if (!deletedStudent) {
       return res.status(404).json({ 
@@ -546,8 +562,8 @@ export const deleteStudent = async (req, res) => {
     }
 
     req.setAudit?.({
-      action: 'student.delete',
-      summary: `Deleted student ${deletedStudent.email || deletedStudent.fullName || id}`,
+      action: 'student.deactivate',
+      summary: `Deactivated student ${deletedStudent.email || deletedStudent.fullName || id}`,
       target: {
         type: 'student',
         id: String(deletedStudent._id),
@@ -565,7 +581,7 @@ export const deleteStudent = async (req, res) => {
     
     res.json({
       success: true,
-      message: 'Student deleted successfully'
+      message: 'Student removed safely and can be restored by Super Admin'
     });
   } catch (error) {
     console.error('Delete student error:', error);
