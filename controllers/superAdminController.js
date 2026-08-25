@@ -46,6 +46,138 @@ import {
   isValidOptionalAddressLine,
   normalizeAccountSeats,
 } from '../services/schoolService.js';
+import {
+  ALLOWED_SCHOOL_PORTAL_PERMISSIONS,
+  ALLOWED_TEACHER_PORTAL_PERMISSIONS,
+  ALLOWED_STUDENT_PORTAL_PERMISSIONS,
+  filterKnownPermissions,
+  expandPortalPermissions,
+} from '../utils/schoolRolePortal.js';
+import {
+  schoolVidyaRolePoliciesFromBody,
+  rolePoliciesForPersist,
+  legacyFlatFromRolePolicies,
+  validateLimitedRolePolicies,
+  normalizeVidyaRolePolicies,
+} from '../utils/schoolVidyaLimits.js';
+
+function parseSchoolRoleAccessFromBody(body = {}, existingAdmin = null) {
+  const rolePolicies = schoolVidyaRolePoliciesFromBody(
+    body.vidyaRolePolicies
+      ? body
+      : existingAdmin
+        ? {
+            ...body,
+            vidyaRolePolicies:
+              body.vidyaRolePolicies ?? existingAdmin.vidyaRolePolicies,
+            vidyaUsageMode: body.vidyaUsageMode ?? existingAdmin.vidyaUsageMode,
+            vidyaLimitChatbot:
+              body.vidyaLimitChatbot ?? existingAdmin.vidyaLimitChatbot,
+            vidyaLimitTools: body.vidyaLimitTools ?? existingAdmin.vidyaLimitTools,
+            vidyaChatPerDay: body.vidyaChatPerDay ?? existingAdmin.vidyaChatPerDay,
+            vidyaGenerationsPerDay:
+              body.vidyaGenerationsPerDay ?? existingAdmin.vidyaGenerationsPerDay,
+          }
+        : body
+  );
+  const limitedCheck = validateLimitedRolePolicies(
+    body.vidyaRolePolicies || rolePolicies
+  );
+  if (!limitedCheck.ok) {
+    return { error: limitedCheck.message };
+  }
+
+  const flat = legacyFlatFromRolePolicies(rolePolicies);
+  const persistPolicies = rolePoliciesForPersist(rolePolicies);
+
+  const teacherPermissions =
+    body.teacherPermissions !== undefined
+      ? filterKnownPermissions(body.teacherPermissions, ALLOWED_TEACHER_PORTAL_PERMISSIONS)
+      : existingAdmin
+        ? filterKnownPermissions(
+            existingAdmin.teacherPermissions,
+            ALLOWED_TEACHER_PORTAL_PERMISSIONS
+          )
+        : [...ALLOWED_TEACHER_PORTAL_PERMISSIONS];
+
+  const studentPermissions =
+    body.studentPermissions !== undefined
+      ? filterKnownPermissions(body.studentPermissions, ALLOWED_STUDENT_PORTAL_PERMISSIONS)
+      : existingAdmin
+        ? filterKnownPermissions(
+            existingAdmin.studentPermissions,
+            ALLOWED_STUDENT_PORTAL_PERMISSIONS
+          )
+        : [...ALLOWED_STUDENT_PORTAL_PERMISSIONS];
+
+  const permissions =
+    body.permissions !== undefined
+      ? filterKnownPermissions(body.permissions, ALLOWED_SCHOOL_PORTAL_PERMISSIONS)
+      : existingAdmin
+        ? filterKnownPermissions(existingAdmin.permissions, ALLOWED_SCHOOL_PORTAL_PERMISSIONS)
+        : [...ALLOWED_SCHOOL_PORTAL_PERMISSIONS];
+
+  const vidyaEnabledForAdmins =
+    body.vidyaEnabledForAdmins !== undefined
+      ? Boolean(body.vidyaEnabledForAdmins)
+      : existingAdmin
+        ? existingAdmin.vidyaEnabledForAdmins !== false
+        : true;
+  const vidyaEnabledForTeachers =
+    body.vidyaEnabledForTeachers !== undefined
+      ? Boolean(body.vidyaEnabledForTeachers)
+      : existingAdmin
+        ? existingAdmin.vidyaEnabledForTeachers !== false
+        : true;
+  const vidyaEnabledForStudents =
+    body.vidyaEnabledForStudents !== undefined
+      ? Boolean(body.vidyaEnabledForStudents)
+      : existingAdmin
+        ? existingAdmin.vidyaEnabledForStudents !== false
+        : true;
+
+  return {
+    permissions,
+    teacherPermissions,
+    studentPermissions,
+    vidyaEnabledForAdmins,
+    vidyaEnabledForTeachers,
+    vidyaEnabledForStudents,
+    vidyaRolePolicies: persistPolicies,
+    vidyaUsageMode: flat.vidyaUsageMode,
+    vidyaLimitChatbot: flat.vidyaLimitChatbot,
+    vidyaLimitTools: flat.vidyaLimitTools,
+    vidyaChatPerDay: flat.vidyaChatPerDay,
+    vidyaGenerationsPerDay: flat.vidyaGenerationsPerDay,
+  };
+}
+
+function schoolRoleAccessApiFields(admin) {
+  const policies = normalizeVidyaRolePolicies(admin || {});
+  return {
+    permissions: expandPortalPermissions(
+      admin?.permissions,
+      ALLOWED_SCHOOL_PORTAL_PERMISSIONS
+    ),
+    teacherPermissions: expandPortalPermissions(
+      admin?.teacherPermissions,
+      ALLOWED_TEACHER_PORTAL_PERMISSIONS
+    ),
+    studentPermissions: expandPortalPermissions(
+      admin?.studentPermissions,
+      ALLOWED_STUDENT_PORTAL_PERMISSIONS
+    ),
+    vidyaEnabledForAdmins: admin?.vidyaEnabledForAdmins !== false,
+    vidyaEnabledForTeachers: admin?.vidyaEnabledForTeachers !== false,
+    vidyaEnabledForStudents: admin?.vidyaEnabledForStudents !== false,
+    vidyaRolePolicies: rolePoliciesForPersist(policies),
+    vidyaUsageMode: policies.student.vidyaUsageMode,
+    vidyaLimitChatbot: policies.student.vidyaLimitChatbot,
+    vidyaLimitTools: policies.student.vidyaLimitTools,
+    vidyaChatPerDay: policies.student.vidyaChatPerDay,
+    vidyaGenerationsPerDay: policies.student.vidyaGenerationsPerDay,
+  };
+}
 
 // Super Admin Login — database accounts only (no hardcoded credentials)
 /** POST /api/super-admin/change-password — authenticated super-admin only */
@@ -760,20 +892,7 @@ export const getAdminSchoolDetail = async (req, res) => {
       pin: admin.pin,
       state: sd.state || admin.place || '',
       schoolDetails: sd,
-      permissions: admin.permissions || [],
-      vidyaEnabledForTeachers: admin.vidyaEnabledForTeachers !== false,
-      vidyaEnabledForStudents: admin.vidyaEnabledForStudents !== false,
-      vidyaUsageMode:
-        String(admin.vidyaUsageMode || 'unlimited').toLowerCase() === 'limited'
-          ? 'limited'
-          : 'unlimited',
-      vidyaLimitChatbot: Boolean(admin.vidyaLimitChatbot),
-      vidyaLimitTools: Boolean(admin.vidyaLimitTools),
-      vidyaChatPerDay: Math.max(1, Math.floor(Number(admin.vidyaChatPerDay) || 10)),
-      vidyaGenerationsPerDay: Math.max(
-        1,
-        Math.floor(Number(admin.vidyaGenerationsPerDay) || 10)
-      ),
+      ...schoolRoleAccessApiFields(admin),
       curriculumBoard:
         admin.curriculumBoard ||
         (isStoredCurriculumBoard(admin.board) ? String(admin.board).toUpperCase().trim() : 'CBSE'),
@@ -972,17 +1091,11 @@ export const createAdmin = async (req, res) => {
       schoolDetails: rawSchoolDetails
     } = req.body;
 
-    const { schoolVidyaPolicyFromBody } = await import('../utils/schoolVidyaLimits.js');
-    const vidyaPolicy = schoolVidyaPolicyFromBody(req.body);
-    if (
-      String(req.body.vidyaUsageMode || '').toLowerCase() === 'limited' &&
-      !vidyaPolicy.vidyaLimitChatbot &&
-      !vidyaPolicy.vidyaLimitTools
-    ) {
+    const roleAccess = parseSchoolRoleAccessFromBody(req.body);
+    if (roleAccess.error) {
       return res.status(400).json({
         success: false,
-        message:
-          'When Vidya is Limited, select Chatbot and/or AI Tools and set the daily limits.',
+        message: roleAccess.error,
       });
     }
     
@@ -1110,11 +1223,17 @@ export const createAdmin = async (req, res) => {
       ...schoolFields,
       contactPerson: schoolFields.contactPerson || name.trim(),
       isActive: true,
-      vidyaUsageMode: vidyaPolicy.vidyaUsageMode,
-      vidyaLimitChatbot: vidyaPolicy.vidyaLimitChatbot,
-      vidyaLimitTools: vidyaPolicy.vidyaLimitTools,
-      vidyaChatPerDay: vidyaPolicy.vidyaChatPerDay,
-      vidyaGenerationsPerDay: vidyaPolicy.vidyaGenerationsPerDay,
+      teacherPermissions: roleAccess.teacherPermissions,
+      studentPermissions: roleAccess.studentPermissions,
+      vidyaEnabledForAdmins: roleAccess.vidyaEnabledForAdmins,
+      vidyaEnabledForTeachers: roleAccess.vidyaEnabledForTeachers,
+      vidyaEnabledForStudents: roleAccess.vidyaEnabledForStudents,
+      vidyaRolePolicies: roleAccess.vidyaRolePolicies,
+      vidyaUsageMode: roleAccess.vidyaUsageMode,
+      vidyaLimitChatbot: roleAccess.vidyaLimitChatbot,
+      vidyaLimitTools: roleAccess.vidyaLimitTools,
+      vidyaChatPerDay: roleAccess.vidyaChatPerDay,
+      vidyaGenerationsPerDay: roleAccess.vidyaGenerationsPerDay,
     });
 
     const newAdmin = new User({
@@ -1122,14 +1241,18 @@ export const createAdmin = async (req, res) => {
       email: emailLower,
       password: hashedPassword,
       role: 'admin',
-      permissions: permissions || [],
-      vidyaEnabledForTeachers: vidyaEnabledForTeachers !== false,
-      vidyaEnabledForStudents: vidyaEnabledForStudents !== false,
-      vidyaUsageMode: vidyaPolicy.vidyaUsageMode,
-      vidyaLimitChatbot: vidyaPolicy.vidyaLimitChatbot,
-      vidyaLimitTools: vidyaPolicy.vidyaLimitTools,
-      vidyaChatPerDay: vidyaPolicy.vidyaChatPerDay,
-      vidyaGenerationsPerDay: vidyaPolicy.vidyaGenerationsPerDay,
+      permissions: roleAccess.permissions,
+      teacherPermissions: roleAccess.teacherPermissions,
+      studentPermissions: roleAccess.studentPermissions,
+      vidyaEnabledForAdmins: roleAccess.vidyaEnabledForAdmins,
+      vidyaEnabledForTeachers: roleAccess.vidyaEnabledForTeachers,
+      vidyaEnabledForStudents: roleAccess.vidyaEnabledForStudents,
+      vidyaRolePolicies: roleAccess.vidyaRolePolicies,
+      vidyaUsageMode: roleAccess.vidyaUsageMode,
+      vidyaLimitChatbot: roleAccess.vidyaLimitChatbot,
+      vidyaLimitTools: roleAccess.vidyaLimitTools,
+      vidyaChatPerDay: roleAccess.vidyaChatPerDay,
+      vidyaGenerationsPerDay: roleAccess.vidyaGenerationsPerDay,
       isActive: true,
     });
     applySchoolToAdminUser(newAdmin, school);
@@ -1242,44 +1365,42 @@ export const updateAdmin = async (req, res) => {
       userUpdate.vidyaEnabledForStudents = Boolean(vidyaEnabledForStudents);
     }
 
-    const vidyaPolicyTouched =
+    const roleAccessTouched =
+      req.body.permissions !== undefined ||
+      req.body.teacherPermissions !== undefined ||
+      req.body.studentPermissions !== undefined ||
+      req.body.vidyaEnabledForAdmins !== undefined ||
+      req.body.vidyaEnabledForTeachers !== undefined ||
+      req.body.vidyaEnabledForStudents !== undefined ||
+      req.body.vidyaRolePolicies !== undefined ||
       req.body.vidyaUsageMode !== undefined ||
       req.body.vidyaLimitChatbot !== undefined ||
       req.body.vidyaLimitTools !== undefined ||
       req.body.vidyaChatPerDay !== undefined ||
       req.body.vidyaGenerationsPerDay !== undefined;
-    if (vidyaPolicyTouched) {
-      const { schoolVidyaPolicyFromBody } = await import('../utils/schoolVidyaLimits.js');
-      const vidyaPolicy = schoolVidyaPolicyFromBody({
-        vidyaUsageMode: req.body.vidyaUsageMode ?? admin.vidyaUsageMode,
-        vidyaLimitChatbot:
-          req.body.vidyaLimitChatbot !== undefined
-            ? req.body.vidyaLimitChatbot
-            : admin.vidyaLimitChatbot,
-        vidyaLimitTools:
-          req.body.vidyaLimitTools !== undefined
-            ? req.body.vidyaLimitTools
-            : admin.vidyaLimitTools,
-        vidyaChatPerDay: req.body.vidyaChatPerDay ?? admin.vidyaChatPerDay,
-        vidyaGenerationsPerDay:
-          req.body.vidyaGenerationsPerDay ?? admin.vidyaGenerationsPerDay,
-      });
-      if (
-        String(req.body.vidyaUsageMode || '').toLowerCase() === 'limited' &&
-        !vidyaPolicy.vidyaLimitChatbot &&
-        !vidyaPolicy.vidyaLimitTools
-      ) {
+
+    let roleAccessPatch = null;
+    if (roleAccessTouched) {
+      const roleAccess = parseSchoolRoleAccessFromBody(req.body, admin);
+      if (roleAccess.error) {
         return res.status(400).json({
           success: false,
-          message:
-            'When Vidya is Limited, select Chatbot and/or AI Tools and set the daily limits.',
+          message: roleAccess.error,
         });
       }
-      userUpdate.vidyaUsageMode = vidyaPolicy.vidyaUsageMode;
-      userUpdate.vidyaLimitChatbot = vidyaPolicy.vidyaLimitChatbot;
-      userUpdate.vidyaLimitTools = vidyaPolicy.vidyaLimitTools;
-      userUpdate.vidyaChatPerDay = vidyaPolicy.vidyaChatPerDay;
-      userUpdate.vidyaGenerationsPerDay = vidyaPolicy.vidyaGenerationsPerDay;
+      roleAccessPatch = roleAccess;
+      userUpdate.permissions = roleAccess.permissions;
+      userUpdate.teacherPermissions = roleAccess.teacherPermissions;
+      userUpdate.studentPermissions = roleAccess.studentPermissions;
+      userUpdate.vidyaEnabledForAdmins = roleAccess.vidyaEnabledForAdmins;
+      userUpdate.vidyaEnabledForTeachers = roleAccess.vidyaEnabledForTeachers;
+      userUpdate.vidyaEnabledForStudents = roleAccess.vidyaEnabledForStudents;
+      userUpdate.vidyaRolePolicies = roleAccess.vidyaRolePolicies;
+      userUpdate.vidyaUsageMode = roleAccess.vidyaUsageMode;
+      userUpdate.vidyaLimitChatbot = roleAccess.vidyaLimitChatbot;
+      userUpdate.vidyaLimitTools = roleAccess.vidyaLimitTools;
+      userUpdate.vidyaChatPerDay = roleAccess.vidyaChatPerDay;
+      userUpdate.vidyaGenerationsPerDay = roleAccess.vidyaGenerationsPerDay;
     }
 
     if (isActive !== undefined) userUpdate.isActive = Boolean(isActive);
@@ -1412,16 +1533,22 @@ export const updateAdmin = async (req, res) => {
       );
     }
 
-    if (vidyaPolicyTouched && (updatedSchool || school)) {
+    if (roleAccessPatch && (updatedSchool || school)) {
       const schoolId = (updatedSchool || school)._id;
       updatedSchool = await School.findByIdAndUpdate(
         schoolId,
         {
-          vidyaUsageMode: userUpdate.vidyaUsageMode,
-          vidyaLimitChatbot: userUpdate.vidyaLimitChatbot,
-          vidyaLimitTools: userUpdate.vidyaLimitTools,
-          vidyaChatPerDay: userUpdate.vidyaChatPerDay,
-          vidyaGenerationsPerDay: userUpdate.vidyaGenerationsPerDay,
+          teacherPermissions: roleAccessPatch.teacherPermissions,
+          studentPermissions: roleAccessPatch.studentPermissions,
+          vidyaEnabledForAdmins: roleAccessPatch.vidyaEnabledForAdmins,
+          vidyaEnabledForTeachers: roleAccessPatch.vidyaEnabledForTeachers,
+          vidyaEnabledForStudents: roleAccessPatch.vidyaEnabledForStudents,
+          vidyaRolePolicies: roleAccessPatch.vidyaRolePolicies,
+          vidyaUsageMode: roleAccessPatch.vidyaUsageMode,
+          vidyaLimitChatbot: roleAccessPatch.vidyaLimitChatbot,
+          vidyaLimitTools: roleAccessPatch.vidyaLimitTools,
+          vidyaChatPerDay: roleAccessPatch.vidyaChatPerDay,
+          vidyaGenerationsPerDay: roleAccessPatch.vidyaGenerationsPerDay,
         },
         { new: true }
       );
