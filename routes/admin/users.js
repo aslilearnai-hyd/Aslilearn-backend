@@ -196,48 +196,16 @@ router.put('/users/:id', async (req, res) => {
   }
 });
 
-// Delete all students for THIS school admin only (never cross-tenant)
+// Permanently disabled after a data-integrity incident. Bulk student removal
+// must be performed as an audited, recoverable archive operation instead.
 router.delete('/users/delete-all', async (req, res) => {
-  try {
-    const tenantAdminId = resolveTenantAdminId(req);
-    if (!tenantAdminId) {
-      return res.status(403).json({
-        message: 'School admin identity required. Cross-tenant wipe is not allowed.',
-      });
-    }
-
-    const confirm = String(req.body?.confirm || req.query.confirm || '').trim().toUpperCase();
-    if (confirm !== 'DELETE ALL') {
-      return res.status(400).json({
-        message:
-          'Refusing to wipe students. Send JSON body { "confirm": "DELETE ALL" } to permanently delete every student in this school.',
-      });
-    }
-
-    const before = await User.countDocuments({
-      role: 'student',
-      assignedAdmin: tenantAdminId,
-    });
-
-    const result = await User.deleteMany({
-      role: 'student',
-      assignedAdmin: tenantAdminId,
-    });
-
-    req.setAudit?.({
-      action: 'student.delete_all',
-      summary: `Deleted all students in school (${result.deletedCount})`,
-      meta: { deletedCount: result.deletedCount, before },
-    });
-    
-    res.json({ 
-      message: `Successfully deleted ${result.deletedCount} students in your school`,
-      deletedCount: result.deletedCount
-    });
-  } catch (error) {
-    console.error('Failed to delete all students:', error);
-    res.status(500).json({ message: 'Failed to delete all students' });
-  }
+  req.setAudit?.({
+    action: 'student.delete_all_blocked',
+    summary: 'Blocked a permanent bulk student deletion request',
+  });
+  return res.status(410).json({
+    message: 'Permanent bulk student deletion is disabled to protect school data.',
+  });
 });
 
 // Teacher management endpoints

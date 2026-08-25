@@ -20,3 +20,6 @@ uploads/
 
 # Local Atlas snapshot restore workspace (large binaries)
 scripts/_restore-work/
+# Local MongoDB recovery snapshots and binaries (never commit)
+scripts/_dps-restore-*/
+scripts/_restore-work/

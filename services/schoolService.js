@@ -360,7 +360,7 @@ export async function getAccountSeatUsage(adminId) {
     School.findOne({ adminUserId: id })
       .select('licensedStudents licensedTeachers accountSeatsNotes')
       .lean(),
-    User.countDocuments({ role: 'student', assignedAdmin: id }),
+    User.countDocuments({ role: 'student', assignedAdmin: id, deletedAt: null }),
     Teacher.countDocuments({ adminId: id }),
   ]);
 

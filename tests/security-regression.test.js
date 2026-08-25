@@ -4,6 +4,7 @@
  */
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { gradeAssessmentAttempt } from '../utils/grade-assessment.js';
 import { hostnameMatchesAllowlist, assertAllowedFetchUrl } from '../utils/url-allowlist.js';
 import { pickAllowedFields, SAFE_VIDEO_UPDATE_FIELDS } from '../utils/safe-update-fields.js';
@@ -20,6 +21,39 @@ import {
   normalizeAttendanceStatus,
   summarizeAttendanceCounts,
 } from '../utils/attendance-helpers.js';
+
+describe('student data retention safeguards', () => {
+  it('keeps the bulk-delete endpoint permanently disabled', () => {
+    const source = readFileSync(new URL('../routes/admin/users.js', import.meta.url), 'utf8');
+    const route = source.slice(
+      source.indexOf("router.delete('/users/delete-all'"),
+      source.indexOf('// Teacher management endpoints'),
+    );
+    assert.match(route, /student\.delete_all_blocked/);
+    assert.doesNotMatch(route, /User\.deleteMany/);
+  });
+
+  it('soft-deactivates individual students instead of deleting user documents', () => {
+    const source = readFileSync(new URL('../controllers/adminController.js', import.meta.url), 'utf8');
+    const handler = source.slice(
+      source.indexOf('export const deleteStudent'),
+      source.indexOf('// Teacher Management'),
+    );
+    assert.match(handler, /findOneAndUpdate/);
+    assert.match(handler, /deletedAt/);
+    assert.doesNotMatch(handler, /findOneAndDelete/);
+  });
+
+  it('blocks permanent school deletion', () => {
+    const source = readFileSync(new URL('../controllers/superAdminController.js', import.meta.url), 'utf8');
+    const handler = source.slice(
+      source.indexOf('export const deleteAdmin'),
+      source.indexOf('// Get All Users'),
+    );
+    assert.match(handler, /school\.hard_delete_blocked/);
+    assert.match(handler, /Permanent school deletion is disabled/);
+  });
+});
 
 describe('gradeAssessmentAttempt', () => {
   it('computes score server-side and ignores client score concept', () => {
