@@ -172,7 +172,10 @@ export async function createOwnedPracticeExam({
     ? normalizedSubject
     : 'science';
   const now = new Date();
-  const end = new Date(now.getTime() + 3650 * 24 * 60 * 60 * 1000);
+  // Personal practice papers are immediately available. Keep a short, truthful
+  // storage window instead of presenting students with an arbitrary 10-year date.
+  // Owned practice papers remain startable through the owned-practice exemption.
+  const end = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
   const totalMarks = parsed.questions.reduce((sum, question) => sum + question.marks, 0);
   const exam = await Exam.create({
     title: parsed.title || `${clean(topic) || allowedSubject} Personal Mock Test`,
@@ -182,7 +185,7 @@ export async function createOwnedPracticeExam({
     assignedClasses: [clean(classNumber)],
     subject: allowedSubject,
     subjects: [allowedSubject],
-    maxAttempts: 10,
+    maxAttempts: 5,
     duration: Math.max(5, Number(duration) || Math.max(10, parsed.questions.length * 2)),
     totalQuestions: parsed.questions.length,
     totalMarks,

@@ -411,9 +411,17 @@ router.get('/exams', async (req, res) => {
       return true;
     }).map((exam) => {
       const b2cPastPractice = isPastExamPracticeForIndividual(exam, student);
-      return b2cPastPractice
+      const normalized = b2cPastPractice
         ? { ...exam, examType: 'practice', b2cPastPractice: true }
         : exam;
+      if (isOwnedGeneratedPracticeExam(normalized, req.userId)) {
+        return {
+          ...normalized,
+          maxAttempts: Math.min(5, Math.max(1, Number(normalized.maxAttempts) || 5)),
+          hideAvailabilityDates: true,
+        };
+      }
+      return normalized;
     });
 
     const boardLog =
@@ -540,7 +548,14 @@ router.get('/exams/:examId', async (req, res) => {
       });
     }
 
-    const [examWithDraftFlag] = await attachInProgressDraftFlags([hydratedExam], req.userId);
+    const normalizedHydratedExam = ownedPractice
+      ? {
+          ...hydratedExam,
+          maxAttempts: Math.min(5, Math.max(1, Number(hydratedExam.maxAttempts) || 5)),
+          hideAvailabilityDates: true,
+        }
+      : hydratedExam;
+    const [examWithDraftFlag] = await attachInProgressDraftFlags([normalizedHydratedExam], req.userId);
 
     res.json({
       success: true,
