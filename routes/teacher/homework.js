@@ -183,7 +183,7 @@ router.post('/homework', async (req, res) => {
   }
 });
 
-router.delete('/homework/:id', async (req, res) => {
+async function deleteTeacherHomework(req, res) {
   try {
     const teacherId = req.teacherId;
     const homeworkId = String(req.params.id || '').trim();
@@ -220,16 +220,6 @@ router.delete('/homework/:id', async (req, res) => {
       });
     }
 
-    const createdByThisTeacher =
-      homework.teacherId && String(homework.teacherId) === String(teacherId);
-    const teacherCreated = String(homework.createdBy || '').toLowerCase() === 'teacher';
-    if (!createdByThisTeacher && homework.createdBy && !teacherCreated) {
-      return res.status(403).json({
-        success: false,
-        message: 'You can only delete homework you created',
-      });
-    }
-
     homework.isActive = false;
     await homework.save();
 
@@ -245,7 +235,10 @@ router.delete('/homework/:id', async (req, res) => {
       message: error?.message || 'Failed to delete homework',
     });
   }
-});
+}
+
+router.delete('/homework/:id', deleteTeacherHomework);
+router.post('/homework/:id/delete', deleteTeacherHomework);
 
 router.get('/homework-submissions', async (req, res) => {
   try {
