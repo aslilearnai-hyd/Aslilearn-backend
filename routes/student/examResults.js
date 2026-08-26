@@ -84,6 +84,13 @@ import ExamAttemptDraft, { MAX_EXAM_RESUMES } from '../../models/ExamAttemptDraf
 
 const router = express.Router();
 
+function getEffectiveMaxAttempts(exam, userId) {
+  const configured = Math.max(1, Number(exam?.maxAttempts) || 1);
+  return isOwnedGeneratedPracticeExam(exam, userId)
+    ? Math.min(5, configured)
+    : configured;
+}
+
 function draftAnswersToObject(answers) {
   if (!answers) return {};
   if (answers instanceof Map) return Object.fromEntries(answers.entries());
@@ -138,7 +145,7 @@ router.get('/exams/:examId/attempt-draft', async (req, res) => {
       return res.status(404).json({ success: false, message: 'Exam not found' });
     }
 
-    const maxAttempts = Math.max(1, Number(examDoc.maxAttempts) || 1);
+    const maxAttempts = getEffectiveMaxAttempts(examDoc, req.userId);
     const priorCount = await ExamResult.countDocuments({ userId: req.userId, examId });
     if (priorCount >= maxAttempts) {
       await ExamAttemptDraft.deleteOne({ examId, userId: req.userId });
@@ -267,7 +274,7 @@ router.put('/exams/:examId/attempt-draft', async (req, res) => {
     }
 
     const ExamResult = (await import('../../models/ExamResult.js')).default;
-    const maxAttempts = Math.max(1, Number(examDoc.maxAttempts) || 1);
+    const maxAttempts = getEffectiveMaxAttempts(examDoc, req.userId);
     const priorCount = await ExamResult.countDocuments({ userId: req.userId, examId });
     if (priorCount >= maxAttempts) {
       await ExamAttemptDraft.deleteOne({ examId, userId: req.userId });
@@ -2243,7 +2250,7 @@ router.post('/exam-results', async (req, res) => {
     });
 
     const ExamResult = (await import('../../models/ExamResult.js')).default;
-    const maxAttempts = Math.max(1, Number(examDoc?.maxAttempts) || 1);
+    const maxAttempts = getEffectiveMaxAttempts(examDoc, req.userId);
     const priorCount = await ExamResult.countDocuments({
       userId: req.userId,
       examId,

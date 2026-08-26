@@ -119,13 +119,17 @@ export async function getRecentSessionTime(userId, days = 7) {
     .sort({ date: 1 })
     .lean();
 
+  const durationByDate = new Map();
+  sessions.forEach((session) => {
+    const duration = capSessionMinutesPerDay(session?.duration || 0);
+    durationByDate.set(session.date, Math.max(durationByDate.get(session.date) || 0, duration));
+  });
   const weeklyData = {};
   for (let i = 0; i < days; i += 1) {
     const d = new Date(today);
     d.setDate(d.getDate() - i);
     const key = activityDayKey(d);
-    const session = sessions.find((s) => s.date === key);
-    weeklyData[key] = capSessionMinutesPerDay(session ? session.duration || 0 : 0);
+    weeklyData[key] = durationByDate.get(key) || 0;
   }
   const weeklyTotal = Object.values(weeklyData).reduce((sum, mins) => sum + mins, 0);
   const todayKey = activityDayKey(today);

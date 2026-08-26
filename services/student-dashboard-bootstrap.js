@@ -63,6 +63,7 @@ function serializeStudentUser(user, displayBoard, isAsliPrepExclusive) {
     board: displayBoard,
     overallProgress: user.overallProgress ?? null,
     studyStreak: user.studyStreak || { current: 0, longest: 0, lastActiveDate: '' },
+    isIndividualAccount: Boolean(user.isIndividualAccount),
     isAsliPrepExclusive,
     schoolName: user.assignedAdmin?.schoolName || user.schoolName || '',
     schoolLogo: user.assignedAdmin?.schoolLogo || user.schoolLogo || '',

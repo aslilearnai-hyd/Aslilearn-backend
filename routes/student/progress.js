@@ -18,6 +18,7 @@ import { verifyToken } from '../../middleware/auth.js';
 import { getMyWeeklyDigest } from '../../controllers/impactReportController.js';
 import { getSchoolAdminCalendarEvents, monthBounds } from '../../controllers/calendarController.js';
 import { examVisibleToSchool } from '../../utils/exam-visibility.js';
+import { activityDayKey } from '../../utils/user-activity.js';
 import {
   getStudentExamRanking,
   getAllStudentRankings,
@@ -302,10 +303,7 @@ function sanitizeSessionMinutesPerDay(minutes) {
 
 /** Calendar date YYYY-MM-DD (server local timezone). */
 function getCalendarDateKey(date = new Date()) {
-  const y = date.getFullYear();
-  const m = String(date.getMonth() + 1).padStart(2, '0');
-  const day = String(date.getDate()).padStart(2, '0');
-  return `${y}-${m}-${day}`;
+  return activityDayKey(date);
 }
 
 // Save login session time (logged-in time)
@@ -387,13 +385,17 @@ router.get('/session-time', async (req, res) => {
     }).sort({ date: 1 });
     
     // Format weekly data by day (cap each day to avoid inflated totals)
+    const durationByDate = new Map();
+    sessions.forEach((session) => {
+      const duration = sanitizeSessionMinutesPerDay(session?.duration || 0);
+      durationByDate.set(session.date, Math.max(durationByDate.get(session.date) || 0, duration));
+    });
     const weeklyData = {};
     for (let i = 0; i < 7; i++) {
       const date = new Date(today);
       date.setDate(date.getDate() - i);
       const dateKey = getCalendarDateKey(date);
-      const session = sessions.find(s => s.date === dateKey);
-      weeklyData[dateKey] = sanitizeSessionMinutesPerDay(session ? session.duration || 0 : 0);
+      weeklyData[dateKey] = durationByDate.get(dateKey) || 0;
     }
 
     const weeklyTotal = Object.values(weeklyData).reduce((sum, mins) => sum + mins, 0);
