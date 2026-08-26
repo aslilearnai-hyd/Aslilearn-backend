@@ -23,10 +23,21 @@ const connectionFallbackMessage = () =>
 function isTeacherAppQuestion(q) {
   const lower = String(q || '').toLowerCase();
   return (
-    /what should i do|today|daily plan|my classes|my students|roster|attendance|homework|assignment|upcoming exam|open exam|quiz|assessment|\bomr\b|work diary|overview|summary|how many (students|classes)|dashboard|logged in/.test(
+    /what should i do|today|daily plan|my classes|my students|roster|attendance|homework|assignment|upcoming exam|open exam|quiz|assessment|\bomr\b|work diary|overview|summary|how many (students|classes)|dashboard|logged in|\bstudent\b.*\b(name|details?|report|progress|performance|marks?|scores?)\b/.test(
       lower,
     ) || detectQueryIntent(q).type === 'application'
   );
+}
+
+export function needsStudentNameClarification(question) {
+  const q = String(question || '').trim().toLowerCase();
+  if (!/\b(student|learner|pupil)\b/.test(q)) return false;
+  if (/\b(my students|list (?:my )?students|all students|student roster|how many students)\b/.test(q)) {
+    return false;
+  }
+  const extracted = extractPersonNameQuery(question).name;
+  if (extracted && !/^(?:by name|the name|a name|name)$/i.test(extracted)) return false;
+  return /\b(by name|student details?|student report|tell me about (?:a|the) student|find (?:a|the) student|look up (?:a|the) student)\b/.test(q);
 }
 
 export async function runHybridTeacherVidyaChat({
@@ -62,6 +73,23 @@ export async function runHybridTeacherVidyaChat({
   }
 
   const desk = await buildTeacherAppDeskFacts(viewerUserId);
+
+  if (needsStudentNameClarification(q)) {
+    const sampleNames = (Array.isArray(desk?.students) ? desk.students : [])
+      .map((student) => student.fullName || student.name)
+      .filter(Boolean)
+      .slice(0, 3);
+    const examples = sampleNames.length
+      ? ` For example: **Tell me about ${sampleNames[0]}**.`
+      : ' Enter the student’s full name.';
+    return {
+      mode: 'application',
+      intent: { type: 'application', reason: 'need_student_name' },
+      message: `Which student do you want to check? Please enter the student's name.${examples}`,
+      groundingStatus: 'application',
+      facts: { desk },
+    };
+  }
 
   const wantsStudentReport =
     /\b(individual\s+)?student\s+(report|reprot)s?\b|\breport\s*card|\bindividual\s+(report|reprot)\b/.test(

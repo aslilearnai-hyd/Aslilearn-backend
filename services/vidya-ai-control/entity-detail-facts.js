@@ -47,7 +47,7 @@ function cleanPersonName(raw) {
 
 /** Metric / catalog vocabulary that must never be treated as a person name. */
 const PERSON_NAME_STOPWORDS =
-  /^(all|every|each|any|this|that|my|our|his|her|their|class|school|students?|teachers?|exams?|results?|how|what|who|which|where|when|why|number|count|total|videos?|assessments?|quizzes?|quiz|published|library|eduott|attendance|homework|subjects?|classes|records?|generations?|analytics|orders?|users?|members?)$/i;
+  /^(all|every|each|any|this|that|my|our|his|her|their|by name|the name|a name|name|class|school|students?|teachers?|exams?|results?|how|what|who|which|where|when|why|number|count|total|videos?|assessments?|quizzes?|quiz|published|library|eduott|attendance|homework|subjects?|classes|records?|generations?|analytics|orders?|users?|members?)$/i;
 
 function isLikelyPersonName(name) {
   const n = String(name || '').trim();
@@ -85,8 +85,8 @@ export function extractPersonNameQuery(message) {
 
   const patterns = [
     /\b(?:how\s+is|how's)\s+([A-Za-z][A-Za-z.'\-\s]{1,60}?)\s+(?:doing|performing|progressing)\b/i,
-    /\b(?:tell\s+me\s+about|about|details?\s+(?:about|on|for)|info(?:rmation)?\s+(?:about|on|for)|look\s*up|find)\s+(?:the\s+)?(?:student|teacher|admin|learner)\s+["']?([A-Za-z][A-Za-z.'\-\s]{1,60}?)["']?(?:\s|$|\?|,)/i,
-    /\b(?:tell\s+me\s+about|about|details?\s+(?:about|on|for)|info(?:rmation)?\s+(?:about|on|for)|look\s*up)\s+["']?([A-Za-z][A-Za-z.'\-\s]{1,60}?)["']?(?:\s|$|\?|,)/i,
+    /\b(?:tell\s+me\s+about|about|details?\s+(?:about|on|for)|info(?:rmation)?\s+(?:about|on|for)|look\s*up|find)\s+(?:the\s+)?(?:student|teacher|admin|learner)\s+["']?([A-Za-z][A-Za-z.'\-\s]{1,60}?)["']?\s*(?:$|[?,])/i,
+    /\b(?:tell\s+me\s+about|about|details?\s+(?:about|on|for)|info(?:rmation)?\s+(?:about|on|for)|look\s*up)\s+["']?([A-Za-z][A-Za-z.'\-\s]{1,60}?)["']?\s*(?:$|[?,])/i,
     /\b([A-Za-z][A-Za-z.'\-]{1,40}(?:\s+[A-Za-z][A-Za-z.'\-]{1,40}){0,2})(?:'s|’s)\s+(?:exam|score|result|progress|performance|marks?|attendance|class|homework|status)\b/i,
     /\b(?:student|teacher|admin|learner)\s+(?:named|called)\s+["']?([A-Za-z][A-Za-z.'\-\s]{1,60}?)["']?/i,
     // Only "for/of <Name>" when a role word is present — avoids "number of videos"
