@@ -26,7 +26,7 @@
     "test:http": "node --test tests/http-smoke.test.js",
     "test:ai-layout": "node --test tests/ai-platform-layout.test.js",
     "test:metrics": "node --test tests/metrics.test.js",
-    "test:maturity": "node --test tests/security-regression.test.js tests/observability.test.js tests/auth-middleware.test.js tests/auth-cookie.test.js tests/http-smoke.test.js tests/ai-platform-layout.test.js tests/metrics.test.js",
+    "test:maturity": "node --test tests/security-regression.test.js tests/observability.test.js tests/auth-middleware.test.js tests/auth-cookie.test.js tests/http-smoke.test.js tests/ai-platform-layout.test.js tests/metrics.test.js tests/teacher-vidya-routing.test.js tests/vidya-platform-data-firewall.test.js tests/vidya-call-log-meta.test.js tests/vidya-foundation.test.js",
     "test": "npm run test:maturity",
     "load:baseline": "echo Install k6 then: k6 run -e BASE_URL=http://127.0.0.1:5000 load/k6-baseline.js",
     "db:diagnose": "node scripts/diagnose-database.js",

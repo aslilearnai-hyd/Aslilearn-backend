@@ -11,6 +11,9 @@ export function mentorCallLogMeta(result) {
     success = false;
   } else if (grounding === 'application_fallback') {
     provider = 'fallback';
+  } else if (grounding === 'grounding_blocked') {
+    provider = 'local';
+    success = false;
   }
 
   return { provider, success };
@@ -34,7 +37,7 @@ export async function writeMentorCallLog({
     provider,
     success,
     latencyMs: Date.now() - started,
-    safetyBlocked: false,
+    safetyBlocked: result?.groundingStatus === 'grounding_blocked',
     safetyDetails: {
       groundingStatus: result?.groundingStatus,
       scope,

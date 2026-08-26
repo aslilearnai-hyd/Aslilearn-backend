@@ -6,6 +6,7 @@ import vidyaService from './vidya-service.js';
 import { handleControlAssistantTurn } from './vidya-ai-control-service.js';
 import { runHybridStudentVidyaChat } from './vidya-student/hybrid-ai-chat-controller.js';
 import { runHybridTeacherVidyaChat } from './vidya-teacher/teacher-hybrid-chat-controller.js';
+import { classifyPlatformDataQuestion, enforceGroundingResult } from './vidya-platform-data-firewall.js';
 
 const PLANES = Object.freeze({
   RAG: 'rag',
@@ -27,7 +28,7 @@ export async function handleVidyaTurn({ plane, req, res, body = {} }) {
     case PLANES.MENTOR_STUDENT: {
       const question = String(body.message || '').trim();
       const studentId = body.studentId ? String(body.studentId) : String(userId);
-      return runHybridStudentVidyaChat({
+      const result = await runHybridStudentVidyaChat({
         viewerRole: role,
         viewerUserId: userId,
         studentId,
@@ -35,15 +36,17 @@ export async function handleVidyaTurn({ plane, req, res, body = {} }) {
         history: Array.isArray(body.history) ? body.history : [],
         tenant,
       });
+      return enforceGroundingResult(result, classifyPlatformDataQuestion(question, 'student'));
     }
 
     case PLANES.MENTOR_TEACHER: {
       const question = String(body.message || '').trim();
-      return runHybridTeacherVidyaChat({
+      const result = await runHybridTeacherVidyaChat({
         viewerUserId: userId,
         question,
         tenant,
       });
+      return enforceGroundingResult(result, classifyPlatformDataQuestion(question, 'teacher'));
     }
 
     case PLANES.RAG:

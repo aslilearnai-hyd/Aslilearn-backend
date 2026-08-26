@@ -16,6 +16,7 @@ import {
   buildTeacherAppDeskFacts,
   teacherAppOnlyReply,
 } from './teacher-app-desk-facts.js';
+import { classifyPlatformDataQuestion, enforceGroundingResult } from '../vidya-platform-data-firewall.js';
 
 const connectionFallbackMessage = () =>
   "I'm having trouble connecting right now. Please try again in a moment.";
@@ -52,6 +53,7 @@ export async function runHybridTeacherVidyaChat({
   }
 
   const intent = detectQueryIntent(q);
+  const firewall = classifyPlatformDataQuestion(q, 'teacher');
   if (intent.type === 'thanks') {
     return {
       mode: 'thanks',
@@ -165,14 +167,14 @@ export async function runHybridTeacherVidyaChat({
     };
   }
 
-  if (isTeacherAppQuestion(q) || intent.type === 'application' || intent.type === 'uncertain') {
-    return {
+  if (firewall.protected || isTeacherAppQuestion(q) || intent.type === 'application' || intent.type === 'uncertain') {
+    return enforceGroundingResult({
       mode: 'application',
       intent: intent.type === 'uncertain' ? { type: 'application', reason: 'teacher_desk' } : intent,
       message: teacherAppOnlyReply(q, desk),
       groundingStatus: 'application',
       facts: { desk },
-    };
+    }, firewall);
   }
 
   // Concept / teaching help via Gemini
