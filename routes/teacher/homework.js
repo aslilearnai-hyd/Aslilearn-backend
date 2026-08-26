@@ -183,6 +183,69 @@ router.post('/homework', async (req, res) => {
   }
 });
 
+router.delete('/homework/:id', async (req, res) => {
+  try {
+    const teacherId = req.teacherId;
+    const homeworkId = String(req.params.id || '').trim();
+    if (!mongoose.Types.ObjectId.isValid(homeworkId)) {
+      return res.status(400).json({ success: false, message: 'Invalid homework id' });
+    }
+
+    const teacher = await Teacher.findById(teacherId);
+    if (!teacher) {
+      return res.status(404).json({ success: false, message: 'Teacher not found' });
+    }
+
+    const homework = await Content.findById(homeworkId);
+    if (!homework || homework.type !== 'Homework') {
+      return res.status(404).json({ success: false, message: 'Homework not found' });
+    }
+
+    const librarySubjectIds = getExplicitTeacherSubjectObjectIds(teacher);
+    const { getTeacherSchoolProgramContext } = await import('../../utils/schoolProgram.js');
+    const { boardsForSchoolContentScope } = await import('../../constants/boards.js');
+    const programCtx = await getTeacherSchoolProgramContext(teacherId);
+    const contentBoards = boardsForSchoolContentScope({
+      board: programCtx.adminBoard || teacher.board,
+      curriculumBoard: programCtx.curriculumBoard,
+      isAsliPrepExclusive: programCtx.isAsliPrepExclusive,
+      iitCategories: programCtx.iitCategories,
+    });
+    const boardResolveOpts = contentBoards.length > 0 ? { boards: contentBoards } : {};
+    const allowed = await subjectIdAllowedWithSiblings(homework.subject, librarySubjectIds, boardResolveOpts);
+    if (!allowed) {
+      return res.status(403).json({
+        success: false,
+        message: 'You can only delete homework for your assigned subjects',
+      });
+    }
+
+    const createdByThisTeacher =
+      homework.teacherId && String(homework.teacherId) === String(teacherId);
+    const teacherCreated = String(homework.createdBy || '').toLowerCase() === 'teacher';
+    if (!createdByThisTeacher && homework.createdBy && !teacherCreated) {
+      return res.status(403).json({
+        success: false,
+        message: 'You can only delete homework you created',
+      });
+    }
+
+    homework.isActive = false;
+    await homework.save();
+
+    res.json({
+      success: true,
+      message: 'Homework deleted successfully',
+      data: { id: String(homework._id) },
+    });
+  } catch (error) {
+    console.error('Teacher homework delete error:', error);
+    res.status(500).json({
+      success: false,
+      message: error?.message || 'Failed to delete homework',
+    });
+  }
+});
 
 router.get('/homework-submissions', async (req, res) => {
   try {

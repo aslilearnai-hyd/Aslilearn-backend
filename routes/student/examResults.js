@@ -377,8 +377,13 @@ router.get('/exam-results', async (req, res) => {
     // Do NOT populate examId: if the Exam doc was removed, populate() sets examId to null
     // and the client loses the id (breaks Attempted Exams / rankings). examTitle is on the row.
     // Omit questionSnapshot here — review endpoint loads it when needed (keeps list light).
+    // `lite=1` drops answers/analytics so Home learning progress can load without the full paper.
+    const lite = ['1', 'true', 'summary'].includes(String(req.query.lite || req.query.fields || '').toLowerCase());
+    const selectFields = lite
+      ? '-questionSnapshot -answers -questionAnalytics -questionTimings'
+      : '-questionSnapshot';
     const results = await ExamResult.find({ userId: userId })
-      .select('-questionSnapshot')
+      .select(selectFields)
       .sort({ completedAt: -1 });
 
     const normalizedResults = results.map((row) => {
