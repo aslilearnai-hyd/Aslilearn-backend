@@ -31,4 +31,9 @@ assert.deepEqual(mentorCallLogMeta({ groundingStatus: 'application_fallback' }),
   success: true,
 });
 
+assert.deepEqual(mentorCallLogMeta({ groundingStatus: 'grounding_blocked' }), {
+  provider: 'local',
+  success: false,
+});
+
 console.log('vidya-call-log-meta.test.js: all passed');

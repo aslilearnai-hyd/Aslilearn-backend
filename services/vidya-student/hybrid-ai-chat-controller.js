@@ -13,6 +13,7 @@ import {
   matchSubjectFromQuestion,
 } from './student-app-desk-facts.js';
 import { answerByTopicAndShape } from './student-app-query-router.js';
+import { classifyPlatformDataQuestion } from '../vidya-platform-data-firewall.js';
 
 const connectionFallbackMessage = () => "I'm having trouble connecting right now. Please try again in a moment.";
 
@@ -999,7 +1000,11 @@ export async function runHybridStudentVidyaChat({
   question,
   history = [],
 }) {
-  const intent = detectQueryIntent(question);
+  const detectedIntent = detectQueryIntent(question);
+  const firewall = classifyPlatformDataQuestion(question, 'student');
+  const intent = firewall.protected && detectedIntent.type === 'general'
+    ? { type: 'application', confidence: 0.99, reason: firewall.reason }
+    : detectedIntent;
 
   // Thanks — short warm reply, no clarification
   if (intent.type === 'thanks') {
@@ -1092,6 +1097,20 @@ export async function runHybridStudentVidyaChat({
   };
   const summary = buildPerformanceSummary({ ctx, performance, weakTopics, marks, recommendations });
   const autoGreeting = buildAutoGreeting(summary);
+
+  // Private progress/account questions are answered deterministically from the
+  // authenticated database snapshot. This is cheaper and cannot invent marks.
+  if (firewall.protected || intent.type === 'application') {
+    return {
+      mode: 'application',
+      intent,
+      message: appOnlyReply(question, facts),
+      groundingStatus: 'application',
+      facts,
+      summary,
+      autoGreeting,
+    };
+  }
 
   // ── Smart AI routing: send everything to Gemini WITH student data context ──
   const classLevel = String(ctx.profile?.classNumber || '').replace(/[^\d]/g, '');
