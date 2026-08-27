@@ -32,6 +32,104 @@ function mergeUniqueChapterLabels(primary = [], extra = []) {
   return dedupeChapterWiseTopicLabels([...primary, ...extra]);
 }
 
+const SPLIT_SCIENCE_TOPIC_PATTERNS = {
+  chemistry: [
+    /matter/i,
+    /atom|molecule/i,
+    /chemical|reaction/i,
+    /acid|base|salt/i,
+    /metal|non.?metal/i,
+    /carbon|compound/i,
+    /periodic|element/i,
+  ],
+  physics: [
+    /motion|kinematic/i,
+    /force|newton|friction/i,
+    /gravitation|gravity/i,
+    /work|power|energy/i,
+    /sound|wave/i,
+    /light|reflection|refraction/i,
+    /human eye|colourful world/i,
+    /electric|magnet/i,
+  ],
+  biology: [
+    /cell|fundamental unit of life/i,
+    /tissue/i,
+    /diversity|organism/i,
+    /life process/i,
+    /control|coordination/i,
+    /reproduction|heredity|evolution/i,
+    /environment|natural resource|food resource/i,
+  ],
+};
+
+const CBSE_SPLIT_SCIENCE_CHAPTERS = {
+  '9': {
+    chemistry: [
+      'Matter in Our Surroundings',
+      'Is Matter Around Us Pure?',
+      'Atoms and Molecules',
+      'Structure of the Atom',
+    ],
+    physics: [
+      'Motion',
+      'Force and Laws of Motion',
+      'Gravitation',
+      'Work and Energy',
+      'Sound',
+    ],
+    biology: [
+      'The Fundamental Unit of Life',
+      'Tissues',
+      'Improvement in Food Resources',
+    ],
+  },
+  '10': {
+    chemistry: [
+      'Chemical Reactions and Equations',
+      'Acids, Bases and Salts',
+      'Metals and Non-metals',
+      'Carbon and Its Compounds',
+    ],
+    physics: [
+      'Light – Reflection and Refraction',
+      'The Human Eye and the Colourful World',
+      'Electricity',
+      'Magnetic Effects of Electric Current',
+    ],
+    biology: [
+      'Life Processes',
+      'Control and Coordination',
+      'How Do Organisms Reproduce?',
+      'Heredity',
+      'Our Environment',
+    ],
+  },
+};
+
+function canonicalCbseSplitScienceTopics(classLabel = '', subject = '', board = '') {
+  const subjectKey = normalizeMatchText(subject).toLowerCase();
+  if (!SPLIT_SCIENCE_TOPIC_PATTERNS[subjectKey] || lockBoardKey(board) === 'IIT/NEET') return [];
+  const classNumber = String(classLabel || '').match(/(\d+)/)?.[1] || '';
+  return CBSE_SPLIT_SCIENCE_CHAPTERS[classNumber]?.[subjectKey] || [];
+}
+
+/**
+ * CBSE stores integrated Science generations under subject "Science". When a
+ * B2C form asks for Physics/Chemistry/Biology, the loose Science alias must not
+ * make every science chapter appear under every branch.
+ */
+export function filterTopicsForSplitScienceSubject(topics = [], subject = '', board = '') {
+  const subjectKey = normalizeMatchText(subject).toLowerCase();
+  const patterns = SPLIT_SCIENCE_TOPIC_PATTERNS[subjectKey];
+  if (!patterns) return topics;
+
+  const boardKey = lockBoardKey(board);
+  if (boardKey === 'IIT/NEET') return topics;
+
+  return topics.filter((topic) => patterns.some((pattern) => pattern.test(String(topic || ''))));
+}
+
 /** Normalize query/storage value: '' = General. null = no filter. */
 export function normalizeTopicProductCategory(value) {
   if (value === undefined || value === null) return null;
@@ -351,6 +449,17 @@ export async function resolveAiToolTopicTaxonomy(rawParams = {}) {
       '[ai-tool-topic-taxonomy] hardcoded curriculum union skipped:',
       String(err?.message || err).slice(0, 200),
     );
+  }
+
+  formatted.topics = mergeUniqueChapterLabels(
+    canonicalCbseSplitScienceTopics(classLabel, subject, board),
+    filterTopicsForSplitScienceSubject(formatted.topics, subject, board),
+  );
+  if (
+    topicName &&
+    filterTopicsForSplitScienceSubject([topicName], subject, board).length === 0
+  ) {
+    formatted.subTopics = [];
   }
 
   return formatted;
