@@ -52,6 +52,7 @@ const PERSON_NAME_STOPWORDS =
 function isLikelyPersonName(name) {
   const n = String(name || '').trim();
   if (!n || n.length < 2) return false;
+  if (/^(?:any|another|other|any other|another student|other student)$/i.test(n)) return false;
   if (PERSON_NAME_STOPWORDS.test(n)) return false;
   if (/^\d+$/.test(n) || /^class\s*\d+/i.test(n)) return false;
   // Reject multi-word phrases that are clearly metrics ("published videos")
@@ -148,11 +149,7 @@ export function isClassGroupQuery(message) {
   const { classNumber } = extractClassGroupQuery(message);
   if (!classNumber) return false;
   const lower = String(message || '').toLowerCase();
-  // Prefer class_detail for performance/overview style, not bare "how many students in class 7"
-  if (/^(how|who)\s+many\b/.test(lower) && !/performance|progress|overview|status|doing|results?/.test(lower)) {
-    return false;
-  }
-  return /performance|progress|overview|status|doing|results?|scores?|group|section|class\s*\d/.test(lower);
+  return /performance|progress|overview|status|doing|results?|scores?|group|section|class\s*\d|students?|roster|count|how\s+many|number\s+of|\d{1,2}\s*[a-z]\b/.test(lower);
 }
 
 function adminScopeStudentFilter(viewerRole, viewerUserId) {

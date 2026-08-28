@@ -11,6 +11,7 @@ import { getAiGeneratorGeminiModel } from '../shared/ai-generator-batch-config.j
 import { assembleSixSectionPrompt } from '../../prompt-versioning/assemble.js';
 import { V2_SECTION_IDS } from '../../prompt-versioning/master-prompt.js';
 import { GEMINI_LITE_MODEL } from '../../providers/gemini-models.js';
+import { countUsableQuestionsFromV2OrLegacy } from '../../../utils/v2-structured-to-legacy.js';
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -127,6 +128,10 @@ export async function generateSixSectionContent(toolSlug, params = {}, opts = {}
   const maxTries = Number.isFinite(opts.maxTries) && opts.maxTries > 0 ? opts.maxTries : 3;
   let lastRaw = '';
   let lastErr = '';
+  const requestedQuestionCount = Number(params.questionCount ?? params.numberOfQuestions);
+  const enforceQuestionCount =
+    Number.isFinite(requestedQuestionCount) &&
+    requestedQuestionCount > 0;
   for (let attempt = 1; attempt <= maxTries; attempt += 1) {
     const temperature =
       attempt === 1 ? baseTemp : Math.max(0.3, baseTemp - 0.2 * (attempt - 1));
@@ -161,13 +166,21 @@ export async function generateSixSectionContent(toolSlug, params = {}, opts = {}
       if (attempt < maxTries && rawGarbageScore(raw) >= 4) {
         continue;
       }
+      const structuredContent = deepSanitizeMath({
+        schema: 'asli-v2-six-section',
+        tool: toolSlug,
+        ...Object.fromEntries(V2_SECTION_IDS.map((id) => [id, json[id]])),
+      });
+      if (enforceQuestionCount) {
+        const actualQuestionCount = countUsableQuestionsFromV2OrLegacy(structuredContent, null);
+        if (actualQuestionCount !== requestedQuestionCount) {
+          lastErr = `Model returned ${actualQuestionCount} questions; exactly ${requestedQuestionCount} were requested.`;
+          continue;
+        }
+      }
       return {
         ok: true,
-        structuredContent: deepSanitizeMath({
-          schema: 'asli-v2-six-section',
-          tool: toolSlug,
-          ...Object.fromEntries(V2_SECTION_IDS.map((id) => [id, json[id]])),
-        }),
+        structuredContent,
       };
     }
   }

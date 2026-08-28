@@ -41,6 +41,13 @@ const PROMPT_LEAK_MARKERS = [
   /\bNo extra text outside the JSON\b/i,
 ];
 
+/** Publisher/front-matter copy that can be concatenated to the last PDF answer. */
+const SOURCE_PROMO_MARKERS = [
+  /\b(?:the\s+)?(?:alpha|beta|gamma)\s+version\s+of\s+asli\s+prep\s+foundation(?:\s+material)?\b/i,
+  /\babout\s+asli\s+prep(?:\s+foundation)?\b/i,
+  /\basli\s+prep\s+foundation\s+material\s+is\s+designed\b/i,
+];
+
 const LESSON_PLAN_LABEL_MARKERS = [
   /\bThis lesson requires\b/i,
   /\bSafety:\s*Wear\b/i,
@@ -120,6 +127,7 @@ export function stripAiGeneratorLeakage(text) {
   if (!s) return '';
 
   s = truncateAtEarliestMarker(s, PROMPT_LEAK_MARKERS, 32);
+  s = truncateAtEarliestMarker(s, SOURCE_PROMO_MARKERS, 16);
   s = stripPromptValidationLoops(s);
 
   s = s.replace(

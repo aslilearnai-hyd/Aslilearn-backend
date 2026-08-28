@@ -371,7 +371,7 @@ export function teacherAppOnlyReply(question, desk, entityFallbackMessage = '') 
   }
 
   if (
-    /how many students|my students|list (my )?students|roster|who is in (my )?class/.test(q)
+    /how many students|my students|list\s+(?:out\s+)?(?:(?:all|every)\s+)?(?:my\s+)?students?|student\s+names?|roster|who is in (my )?class/.test(q)
   ) {
     if (!students.length) {
       return 'No students found in your assigned classes yet.';
