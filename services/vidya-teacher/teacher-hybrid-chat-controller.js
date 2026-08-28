@@ -38,14 +38,15 @@ export function needsStudentNameClarification(question) {
   }
   const extracted = extractPersonNameQuery(question).name;
   if (extracted && !/^(?:by name|the name|a name|name)$/i.test(extracted)) return false;
-  return /\b(by name|student details?|student report|tell me about (?:a|the) student|find (?:a|the) student|look up (?:a|the) student)\b/.test(q);
+  return /\b(by name|student details?|student report|tell me about (?:a|the|any|another|any other|other) student|find (?:a|the|another) student|look up (?:a|the|another) student)\b/.test(q);
 }
 
 export async function runHybridTeacherVidyaChat({
   viewerUserId,
   question,
+  history = [],
 }) {
-  const q = String(question || '').trim();
+  let q = String(question || '').trim();
   if (!q) {
     const e = new Error('message is required');
     e.statusCode = 400;
@@ -75,6 +76,37 @@ export async function runHybridTeacherVidyaChat({
   }
 
   const desk = await buildTeacherAppDeskFacts(viewerUserId);
+
+  // Teacher chat follow-ups are often intentionally short: a bare student name
+  // after "Which student?", or "only 7B" after a total-student answer. Resolve
+  // those against the live scoped roster and recent conversation before routing.
+  const recentHistory = (Array.isArray(history) ? history : [])
+    .slice(-8)
+    .map((item) => ({
+      role: String(item?.role || '').toLowerCase() === 'assistant' ? 'assistant' : 'user',
+      content: String(item?.content || '').trim().slice(0, 4000),
+    }))
+    .filter((item) => item.content);
+  const recentHistoryText = recentHistory.map((item) => item.content);
+  const lowerQ = q.toLowerCase();
+  const roster = Array.isArray(desk?.students) ? desk.students : [];
+  const exactStudent = roster.find((student) => {
+    const studentName = String(student?.fullName || student?.name || '').trim();
+    return studentName && studentName.localeCompare(q, undefined, { sensitivity: 'base' }) === 0;
+  });
+  const followsStudentPrompt = recentHistoryText.some((line) =>
+    /which student|enter the student'?s name|reply with their name|student by name/i.test(line),
+  );
+  if (exactStudent && (followsStudentPrompt || !/\b(student|class|count|list|how many)\b/i.test(q))) {
+    q = `Tell me about student ${exactStudent.fullName || exactStudent.name}`;
+  } else if (
+    /^(?:list|show)(?:\s+out)?\s+(?:all\s+)?student\s+names?(?:\s+so\s+i\s+can\s+choose.*)?$/i.test(q)
+  ) {
+    q = 'List all my students';
+  } else if (/\b(?:only|just)\s+(?:class\s*)?\d{1,2}\s*[a-z]\b/i.test(lowerQ)) {
+    const wantsList = /list|names?|roster|who/.test(lowerQ);
+    q = `${wantsList ? 'List students in' : 'How many students are in'} ${q.match(/(?:class\s*)?\d{1,2}\s*[a-z]/i)?.[0] || q}`;
+  }
 
   if (needsStudentNameClarification(q)) {
     const sampleNames = (Array.isArray(desk?.students) ? desk.students : [])
@@ -131,7 +163,7 @@ export async function runHybridTeacherVidyaChat({
       plan: { mode: 'person_detail' },
       facts: { ...personFacts, mode: 'person_detail' },
       viewerRole: 'teacher',
-      history: [],
+      history: recentHistory,
     });
     return {
       mode: 'person_detail',
@@ -156,7 +188,7 @@ export async function runHybridTeacherVidyaChat({
       plan: { mode: 'class_detail' },
       facts: { ...classFacts, mode: 'class_detail' },
       viewerRole: 'teacher',
-      history: [],
+      history: recentHistory,
     });
     return {
       mode: 'class_detail',

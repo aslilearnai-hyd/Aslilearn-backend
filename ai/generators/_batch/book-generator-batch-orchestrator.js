@@ -306,6 +306,12 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
   });
   const isCombinedMulti = combineMulti;
   const batchSize = getBatchSize(params.batchSize);
+  const requestedQuestionParams = pickQuestionCountParams(params);
+  const requestedQuestionCount = Number(requestedQuestionParams.questionCount);
+  const mustMatchRequestedQuestionCount =
+    BOOK_QUESTION_UNIQUENESS_TOOLS.has(toolSlug) &&
+    Number.isFinite(requestedQuestionCount) &&
+    requestedQuestionCount > 0;
   const toolDisplayName = getBookBasedToolDisplayName(toolSlug);
   const qualityTierSettings = resolveQualityTierSettings(
     params.qualityTier || params.extraParams?.qualityTier,
@@ -531,7 +537,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                     subTopic: isWholeChapter ? '' : subtopicName,
                     chapterScope: isWholeChapter,
                     ...(subTopicList.length > 1 ? { subTopics: subTopicList } : {}),
-                    ...pickQuestionCountParams(params),
+                    ...requestedQuestionParams,
                   },
                   {
                     primaryModel: qualityTierSettings.primaryGeminiModel,
@@ -561,6 +567,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                     batchOrchestrator: true,
                     pdfContext: v2RagContext,
                     generationVariant: variantIndex,
+                    ...requestedQuestionParams,
                   };
                   let structuredV2 = ensureV2WorksheetCoreSections(v2.structuredContent, padMeta);
                   let legacyStructured = mapV2StructuredToLegacy(toolSlug, structuredV2);
@@ -572,6 +579,19 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                       padMeta,
                     );
                     structuredV2 = syncLegacyWorksheetSectionsIntoV2(structuredV2, legacyStructured);
+                  }
+                  if (mustMatchRequestedQuestionCount) {
+                    const actualQuestionCount = countUsableQuestionsFromV2OrLegacy(
+                      structuredV2,
+                      legacyStructured,
+                    );
+                    if (actualQuestionCount !== requestedQuestionCount) {
+                      lastError = `Generated ${actualQuestionCount} of ${requestedQuestionCount} requested questions`;
+                      console.warn(
+                        `[book-generator] Slot ${batchIndex} attempt ${attempt}: ${lastError} — retrying instead of saving a short paper.`,
+                      );
+                      continue;
+                    }
                   }
                   let persistContent = coreTitle;
                   if (legacyStructured) {
@@ -849,6 +869,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               uniqueSeed: extraParams.uniqueSeed,
               avoidQuestionTexts: batchQuestionTexts,
               greatQuality: isAiGeneratorGreatQualityEnabled(),
+              ...requestedQuestionParams,
             };
             let structuredContent = finalizeBookStructuredContent(
               toolSlug,
@@ -985,6 +1006,21 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               lastError = 'Model returned empty structured content.';
               if (attempt < maxAttempts) continue;
               throw new Error(lastError);
+            }
+
+            if (mustMatchRequestedQuestionCount) {
+              const actualQuestionCount = countUsableQuestionsFromV2OrLegacy(
+                null,
+                structuredContent,
+              );
+              if (actualQuestionCount !== requestedQuestionCount) {
+                lastError = `Generated ${actualQuestionCount} of ${requestedQuestionCount} requested questions`;
+                console.warn(
+                  `[book-generator] Slot ${batchIndex} attempt ${attempt}: ${lastError} — retrying instead of saving a short paper.`,
+                );
+                if (attempt < maxAttempts) continue;
+                throw new Error(lastError);
+              }
             }
 
             // Prefer freshly formatted text from repaired structured content when available.

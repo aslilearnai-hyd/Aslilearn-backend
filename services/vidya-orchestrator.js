@@ -44,6 +44,7 @@ export async function handleVidyaTurn({ plane, req, res, body = {} }) {
       const result = await runHybridTeacherVidyaChat({
         viewerUserId: userId,
         question,
+        history: Array.isArray(body.history) ? body.history : [],
         tenant,
       });
       return enforceGroundingResult(result, classifyPlatformDataQuestion(question, 'teacher'));

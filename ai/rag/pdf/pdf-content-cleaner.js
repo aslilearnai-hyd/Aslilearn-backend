@@ -30,7 +30,7 @@ const INLINE_STRIP_PATTERNS = [
 
 /** Start of document trailer — cut everything from here. */
 const TRAILER_START_RE =
-  /(?:^|\n)\s*(?:student\s+completion\s+checklist|how\s+i\s+should\s+use\s+these\s+\d*\s*assignments?)\b/i;
+  /(?:student\s+completion\s+checklist|how\s+i\s+should\s+use\s+these\s+\d*\s*assignments?|(?:the\s+)?(?:alpha|beta|gamma)\s+version\s+of\s+asli\s+prep\s+foundation|about\s+asli\s+prep)\b/i;
 
 /**
  * @param {string} line
