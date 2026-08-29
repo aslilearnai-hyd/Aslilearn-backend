@@ -708,7 +708,7 @@ export async function getAllGeneratorRecords(req, res) {
     const items = [...fromMaster, ...legacyMapped]
       .map(slimGeneratorRecordForList)
       .filter(Boolean)
-      .sort(compareAiToolRecordsByVariantThenDate)
+      .sort((a, b) => new Date(b?.createdAt || 0).getTime() - new Date(a?.createdAt || 0).getTime())
       .slice(0, listLimit);
     const grouped = groupAiGeneratorRecords(items);
     const total = totalMaster + totalLegacy;

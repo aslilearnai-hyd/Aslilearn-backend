@@ -1430,7 +1430,11 @@ export const updateAdmin = async (req, res) => {
       isAsliPrepExclusive !== undefined ||
       req.body.licensedStudents !== undefined ||
       req.body.licensedTeachers !== undefined ||
-      req.body.accountSeatsNotes !== undefined;
+      req.body.accountSeatsNotes !== undefined ||
+      req.body.studentBillingEnabled !== undefined ||
+      req.body.studentPaymentMode !== undefined ||
+      req.body.studentAnnualPriceInr !== undefined ||
+      req.body.studentTrialDays !== undefined;
 
     let updatedSchool = school;
 
@@ -1563,6 +1567,55 @@ export const updateAdmin = async (req, res) => {
 
     if (!updatedAdmin) {
       return res.status(500).json({ success: false, message: 'Failed to update admin' });
+    }
+
+    const studentBillingPolicyTouched =
+      req.body.studentBillingEnabled !== undefined ||
+      req.body.studentPaymentMode !== undefined ||
+      req.body.studentAnnualPriceInr !== undefined ||
+      req.body.studentTrialDays !== undefined;
+    if (studentBillingPolicyTouched) {
+      const enabled = Boolean(updatedAdmin.studentBillingEnabled);
+      const modeRaw = String(req.body.studentPaymentMode || updatedAdmin.studentPaymentMode || 'offline').toLowerCase();
+      const paymentMode = ['online', 'offline', 'both'].includes(modeRaw) ? modeRaw : 'offline';
+      const annualPrice = Math.max(0, Number(req.body.studentAnnualPriceInr ?? updatedAdmin.studentAnnualPriceInr) || 0);
+      const trialDays = Math.min(365, Math.max(1, Math.floor(Number(req.body.studentTrialDays ?? updatedAdmin.studentTrialDays) || 15)));
+      const now = new Date();
+      const trialEndsAt = new Date(now);
+      trialEndsAt.setDate(trialEndsAt.getDate() + trialDays);
+      const studentsFilter = { role: 'student', assignedAdmin: updatedAdmin._id, isIndividualAccount: { $ne: true } };
+      if (enabled) {
+        // Update policy for every student without resetting an already-paid subscription.
+        await User.updateMany(studentsFilter, {
+          $set: {
+            schoolStudentSubscriptionEnabled: true,
+            schoolStudentPaymentMode: paymentMode,
+            schoolStudentAnnualPriceInr: annualPrice,
+          },
+        }, { runValidators: false });
+        // Start the trial only for students who have never had this school policy.
+        await User.updateMany(
+          {
+            ...studentsFilter,
+            subscriptionStatus: { $nin: ['active'] },
+            $or: [{ trialEndsAt: null }, { trialEndsAt: { $exists: false } }],
+          },
+          { $set: { subscriptionStatus: 'trial', trialStartsAt: now, trialEndsAt } },
+          { runValidators: false },
+        );
+      } else {
+        await User.updateMany(
+          studentsFilter,
+          {
+              $set: {
+                schoolStudentSubscriptionEnabled: false,
+                schoolStudentPaymentMode: '',
+                schoolStudentAnnualPriceInr: null,
+              },
+          },
+          { runValidators: false },
+        );
+      }
     }
 
     console.log('✅ Admin updated successfully:', updatedAdmin.email, updatedAdmin.board);
@@ -3050,4 +3103,3 @@ export const exportData = async (req, res) => {
     res.status(500).json({ success: false, message: 'Failed to export data' });
   }
 };
-

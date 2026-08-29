@@ -157,6 +157,15 @@ export function examVisibleToIndividualStudent(exam, student) {
   ) {
     return true;
   }
+  // Once Super Admin explicitly configures this student's exam access, show
+  // only the allotted Super Admin exams. Student-owned generated exams remain
+  // available through the early return above.
+  if (student.trialExamAccessConfigured === true) {
+    const allotted = Array.isArray(student.trialAssignedExams)
+      ? student.trialAssignedExams.map(toIdString).filter(Boolean)
+      : [];
+    return allotted.includes(toIdString(exam._id || exam.id));
+  }
   // Once a Super Admin exam has ended, reuse the paper in the B2C practice
   // library. School targeting only controls the live sitting; the archived
   // paper is still matched to the individual student's Board/IIT scope below.

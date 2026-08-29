@@ -33,8 +33,37 @@ async function loadIndividualAccount(req) {
     return { ok: true, role: 'teacher', doc: teacher };
   }
   const user = await User.findById(id);
-  if (!user || !user.isIndividualAccount) return { ok: false, message: 'Individual student account not found.' };
-  return { ok: true, role: 'student', doc: user };
+  const schoolManaged = Boolean(user && user.role === 'student' && !user.isIndividualAccount && user.schoolStudentSubscriptionEnabled);
+  if (!user || (!user.isIndividualAccount && !schoolManaged)) return { ok: false, message: 'Student subscription account not found.' };
+  return { ok: true, role: 'student', doc: user, schoolManaged };
+}
+
+function schoolStudentPlan(doc) {
+  const amountInr = Math.max(0, Number(doc?.schoolStudentAnnualPriceInr) || 0);
+  return {
+    packageType: 'school',
+    period: 'year',
+    label: 'School student yearly plan',
+    amountInr,
+    amountPaise: Math.round(amountInr * 100),
+  };
+}
+
+export async function getCurrentStudentBillingPlan(req, res) {
+  try {
+    const loaded = await loadIndividualAccount(req);
+    if (!loaded.ok) return res.status(403).json({ success: false, message: loaded.message });
+    if (!loaded.schoolManaged) return res.json({ success: true, schoolManaged: false });
+    return res.json({
+      success: true,
+      schoolManaged: true,
+      paymentMode: loaded.doc.schoolStudentPaymentMode || 'offline',
+      onlineEnabled: ['online', 'both'].includes(loaded.doc.schoolStudentPaymentMode),
+      plan: schoolStudentPlan(loaded.doc),
+    });
+  } catch (error) {
+    return res.status(500).json({ success: false, message: error.message || 'Could not load student plan.' });
+  }
 }
 
 export async function getBillingConfig(req, res) {
@@ -99,16 +128,25 @@ export async function createIndividualCheckoutOrder(req, res) {
     const loaded = await loadIndividualAccount(req);
     if (!loaded.ok) return res.status(403).json({ success: false, message: loaded.message });
 
+    if (loaded.schoolManaged && !['online', 'both'].includes(loaded.doc.schoolStudentPaymentMode)) {
+      return res.status(403).json({ success: false, message: 'This school collects student payments offline. Please contact your school.' });
+    }
+
     const packageType = req.body?.packageType;
     const period = req.body?.period;
-    const plan = await resolveIndividualPlan({ role: loaded.role, packageType, period });
+    const plan = loaded.schoolManaged
+      ? schoolStudentPlan(loaded.doc)
+      : await resolveIndividualPlan({ role: loaded.role, packageType, period });
     if (!plan) {
       return res.status(400).json({ success: false, message: 'Choose Boards, IIT, or both.' });
     }
 
     const classLabel = String(req.body?.classLabel || loaded.doc.classNumber || '').trim();
-    const track = plan.packageType === 'board' ? '' : normalizeTrack(req.body?.track);
-    if (plan.packageType !== 'board' && !track) {
+    if (loaded.schoolManaged && plan.amountPaise < 100) {
+      return res.status(400).json({ success: false, message: 'The yearly student fee has not been configured. Please contact your school.' });
+    }
+    const track = loaded.schoolManaged || plan.packageType === 'board' ? '' : normalizeTrack(req.body?.track);
+    if (!loaded.schoolManaged && plan.packageType !== 'board' && !track) {
       return res.status(400).json({
         success: false,
         message: 'Pick Alpha or Beta for the IIT package.',
@@ -170,7 +208,9 @@ export async function verifyIndividualCheckout(req, res) {
     const signature = String(req.body?.razorpay_signature || '').trim();
     const packageType = req.body?.packageType;
     const period = req.body?.period;
-    const plan = await resolveIndividualPlan({ role: loaded.role, packageType, period });
+    const plan = loaded.schoolManaged
+      ? schoolStudentPlan(loaded.doc)
+      : await resolveIndividualPlan({ role: loaded.role, packageType, period });
 
     if (!orderId || !paymentId || !signature || !plan) {
       return res.status(400).json({ success: false, message: 'Payment details are incomplete.' });
@@ -180,7 +220,7 @@ export async function verifyIndividualCheckout(req, res) {
       return res.status(400).json({ success: false, message: 'Payment signature could not be verified.' });
     }
 
-    const track = plan.packageType === 'board' ? '' : normalizeTrack(req.body?.track);
+    const track = loaded.schoolManaged || plan.packageType === 'board' ? '' : normalizeTrack(req.body?.track);
     const classLabel = String(req.body?.classLabel || loaded.doc.classNumber || '').trim();
     const currentExpiry =
       loaded.doc.subscriptionExpiresAt && new Date(loaded.doc.subscriptionExpiresAt).getTime() > Date.now()
@@ -222,11 +262,13 @@ export async function verifyIndividualCheckout(req, res) {
       },
       ...priorPayments.filter((entry) => String(entry?.paymentReference || '') !== paymentId),
     ].slice(0, 20);
-    if (classLabel) loaded.doc.classNumber = classLabel;
-    loaded.doc.iitCategories = track ? [track] : [];
-    loaded.doc.interestedCourses = courses;
-    if (loaded.doc.schema?.paths?.isAsliPrepExclusive) {
-      loaded.doc.isAsliPrepExclusive = Boolean(track);
+    if (!loaded.schoolManaged) {
+      if (classLabel) loaded.doc.classNumber = classLabel;
+      loaded.doc.iitCategories = track ? [track] : [];
+      loaded.doc.interestedCourses = courses;
+      if (loaded.doc.schema?.paths?.isAsliPrepExclusive) {
+        loaded.doc.isAsliPrepExclusive = Boolean(track);
+      }
     }
     await loaded.doc.save();
 

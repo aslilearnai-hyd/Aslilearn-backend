@@ -450,7 +450,7 @@ function buildBookRecordsListQuery(req) {
   return bookGroundedMongoFilter(extra);
 }
 
-/** Newest-per-board sample so "All boards" is not dominated by one busy board. */
+/** Actual newest records globally, plus board counts for the filter summary. */
 async function fetchBookRecordsStratified(baseQuery, listLimit) {
   const boardGroups = await AiToolGeneration.aggregate([
     { $match: baseQuery },
@@ -469,38 +469,12 @@ async function fetchBookRecordsStratified(baseQuery, listLimit) {
     count: Number(g.count) || 0,
   }));
 
-  if (boardsMeta.length <= 1) {
-    const records = await AiToolGeneration.find(baseQuery)
-      .select(GENERATOR_LIST_SELECT)
-      .sort({ createdAt: -1 })
-      .limit(listLimit)
-      .lean();
-    return { records, boardsMeta };
-  }
-
-  const perBoard = Math.max(15, Math.ceil(listLimit / boardsMeta.length));
-  const chunks = await Promise.all(
-    boardsMeta.map(async (b) => {
-      const boardFilter =
-        !b.rawBoard
-          ? { $or: [{ board: '' }, { board: null }, { board: { $exists: false } }] }
-          : { board: boardMongoMatch(b.rawBoard) || b.rawBoard };
-      const scoped = { $and: [baseQuery, boardFilter] };
-      return AiToolGeneration.find(scoped)
-        .select(GENERATOR_LIST_SELECT)
-        .sort({ createdAt: -1 })
-        .limit(perBoard)
-        .lean();
-    }),
-  );
-
-  const merged = chunks
-    .flat()
-    .filter(Boolean)
-    .sort((a, b) => new Date(b.createdAt || 0).getTime() - new Date(a.createdAt || 0).getTime())
-    .slice(0, listLimit);
-
-  return { records: merged, boardsMeta };
+  const records = await AiToolGeneration.find(baseQuery)
+    .select(GENERATOR_LIST_SELECT)
+    .sort({ createdAt: -1, _id: -1 })
+    .limit(listLimit)
+    .lean();
+  return { records, boardsMeta };
 }
 
 export async function getBookGeneratorRecord(req, res) {
@@ -641,7 +615,7 @@ export async function listBookGeneratorRecords(req, res) {
         total,
         loadedCount: slim.length,
         truncated: total > slim.length,
-        stratified: isAllBoards && boardsMeta.length > 1,
+        stratified: false,
         boards: boardsMeta.map(({ board, count }) => ({ board, count })),
       },
     });

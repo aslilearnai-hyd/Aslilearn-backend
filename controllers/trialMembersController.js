@@ -1,5 +1,7 @@
 import User from '../models/User.js';
 import Teacher from '../models/Teacher.js';
+import Exam from '../models/Exam.js';
+import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
 import {
   ALL_CONTENT_TYPES,
@@ -53,6 +55,10 @@ function formatMember(doc, role) {
       ? doc.trialAllowedContentTypes
       : [],
     trialAllowedAiTools: Array.isArray(doc.trialAllowedAiTools) ? doc.trialAllowedAiTools : [],
+    trialAssignedExams: Array.isArray(doc.trialAssignedExams)
+      ? doc.trialAssignedExams.map((id) => String(id?._id || id)).filter(Boolean)
+      : [],
+    trialExamAccessConfigured: doc.trialExamAccessConfigured === true,
     trialAdminNotes: doc.trialAdminNotes || '',
     trialPaymentAmount:
       doc.trialPaymentAmount != null && Number.isFinite(Number(doc.trialPaymentAmount))
@@ -212,15 +218,11 @@ export async function listTrialMembers(req, res) {
     const role = String(req.query.role || 'all').toLowerCase();
     const q = String(req.query.q || '').trim().toLowerCase();
 
+    // Always load both roles so tab counts remain global and stable while one
+    // role is selected. Apply the role filter only after building the summary.
     const [students, teachers] = await Promise.all([
-      role === 'teacher'
-        ? []
-        : User.find({ role: 'student', isIndividualAccount: true })
-            .sort({ createdAt: -1 })
-            .lean(),
-      role === 'student'
-        ? []
-        : Teacher.find({ isIndividualAccount: true }).sort({ createdAt: -1 }).lean(),
+      User.find({ role: 'student', isIndividualAccount: true }).sort({ createdAt: -1 }).lean(),
+      Teacher.find({ isIndividualAccount: true }).sort({ createdAt: -1 }).lean(),
     ]);
 
     let members = [
@@ -243,6 +245,10 @@ export async function listTrialMembers(req, res) {
     };
     const conversionRate =
       summary.total > 0 ? Math.round((summary.converted / summary.total) * 1000) / 10 : 0;
+
+    if (role === 'student' || role === 'teacher') {
+      members = members.filter((m) => m.role === role);
+    }
 
     if (status === 'active' || status === 'trial') {
       members = members.filter((m) => m.trialActive || m.subscriptionStatus === 'trial');
@@ -300,6 +306,29 @@ export async function updateTrialMember(req, res) {
 
     try {
       applyAccessAndAllowLists(found.doc, req.body);
+      if (req.body.trialAssignedExams !== undefined) {
+        if (found.role !== 'student') {
+          return res.status(400).json({ success: false, message: 'Exams can only be allotted to students.' });
+        }
+        const requested = Array.isArray(req.body.trialAssignedExams)
+          ? [...new Set(req.body.trialAssignedExams.map((id) => String(id || '').trim()).filter(Boolean))]
+          : [];
+        if (requested.some((id) => !mongoose.Types.ObjectId.isValid(id))) {
+          return res.status(400).json({ success: false, message: 'One or more selected exams are invalid.' });
+        }
+        const validExamIds = requested.length
+          ? await Exam.distinct('_id', {
+              _id: { $in: requested },
+              createdByRole: 'super-admin',
+              isActive: { $ne: false },
+            })
+          : [];
+        if (validExamIds.length !== requested.length) {
+          return res.status(400).json({ success: false, message: 'One or more selected exams are unavailable.' });
+        }
+        found.doc.trialAssignedExams = validExamIds;
+        found.doc.trialExamAccessConfigured = true;
+      }
     } catch (err) {
       return res.status(400).json({ success: false, message: err.message || 'Invalid update' });
     }

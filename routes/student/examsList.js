@@ -296,6 +296,13 @@ const canStudentAccessExam = (exam, student, studentAdminId, studentBoard) => {
   return examVisibleToStudent(exam, studentAdminId, studentBoard);
 };
 
+const isExplicitlyAllottedIndividualExam = (exam, student) => {
+  if (!student?.isIndividualAccount || student.trialExamAccessConfigured !== true) return false;
+  const examId = String(exam?._id || exam?.id || '');
+  return (Array.isArray(student.trialAssignedExams) ? student.trialAssignedExams : [])
+    .some((id) => String(id?._id || id) === examId);
+};
+
 /** Attach in-progress draft flags so clients can show "Resume Exam". */
 async function attachInProgressDraftFlags(exams, userId) {
   const list = Array.isArray(exams) ? exams : [];
@@ -407,7 +414,10 @@ router.get('/exams', async (req, res) => {
     // start/detail endpoints refuse until questions are uploaded.
     const publishedExams = hydratedExams.filter((exam) => {
       if (!canStudentAccessExam(exam, student, studentAdminId, studentBoardOrAdmin)) return false;
-      if (!examMatchesStudentAssignedClass(exam, studentClassNumber)) return false;
+      if (
+        !isExplicitlyAllottedIndividualExam(exam, student) &&
+        !examMatchesStudentAssignedClass(exam, studentClassNumber)
+      ) return false;
       return true;
     }).map((exam) => {
       const b2cPastPractice = isPastExamPracticeForIndividual(exam, student);
@@ -507,7 +517,10 @@ router.get('/exams/:examId', async (req, res) => {
           : 'This exam is not assigned to your school.',
       });
     }
-    if (!examMatchesStudentAssignedClass(exam, studentClassNumber)) {
+    if (
+      !isExplicitlyAllottedIndividualExam(exam, student) &&
+      !examMatchesStudentAssignedClass(exam, studentClassNumber)
+    ) {
       return res.status(403).json({
         success: false,
         message: 'This exam is not assigned to your class.'
