@@ -122,6 +122,10 @@ export function buildSchoolFieldsFromBody(body) {
     licensedStudents,
     licensedTeachers,
     accountSeatsNotes,
+    studentBillingEnabled,
+    studentPaymentMode,
+    studentAnnualPriceInr,
+    studentTrialDays,
   } = body;
 
   const curriculumUpper = String(board || 'CBSE').toUpperCase().trim();
@@ -165,6 +169,17 @@ export function buildSchoolFieldsFromBody(body) {
   }
   if (accountSeatsNotes !== undefined && accountSeatsNotes !== null) {
     fields.accountSeatsNotes = String(accountSeatsNotes).trim();
+  }
+  if (studentBillingEnabled !== undefined) fields.studentBillingEnabled = Boolean(studentBillingEnabled);
+  if (studentPaymentMode !== undefined) {
+    const mode = String(studentPaymentMode || '').toLowerCase();
+    fields.studentPaymentMode = ['online', 'offline', 'both'].includes(mode) ? mode : 'offline';
+  }
+  if (studentAnnualPriceInr !== undefined) {
+    fields.studentAnnualPriceInr = Math.max(0, Number(studentAnnualPriceInr) || 0);
+  }
+  if (studentTrialDays !== undefined) {
+    fields.studentTrialDays = Math.min(365, Math.max(1, Math.floor(Number(studentTrialDays) || 15)));
   }
 
   return fields;
@@ -218,6 +233,10 @@ export function applySchoolToAdminUser(admin, school) {
   if (school.accountSeatsNotes !== undefined) {
     admin.accountSeatsNotes = String(school.accountSeatsNotes || '').trim();
   }
+  admin.studentBillingEnabled = Boolean(school.studentBillingEnabled);
+  admin.studentPaymentMode = school.studentPaymentMode || 'offline';
+  admin.studentAnnualPriceInr = Math.max(0, Number(school.studentAnnualPriceInr) || 0);
+  admin.studentTrialDays = Math.min(365, Math.max(1, Number(school.studentTrialDays) || 15));
 }
 
 /** Build a school-shaped object from an admin user when schools collection row is missing */
@@ -246,6 +265,10 @@ export function schoolShapeFromAdminUser(admin) {
     licensedStudents: Math.max(0, Math.floor(Number(admin.licensedStudents) || 0)),
     licensedTeachers: Math.max(0, Math.floor(Number(admin.licensedTeachers) || 0)),
     accountSeatsNotes: String(admin.accountSeatsNotes || '').trim(),
+    studentBillingEnabled: Boolean(admin.studentBillingEnabled),
+    studentPaymentMode: admin.studentPaymentMode || 'offline',
+    studentAnnualPriceInr: Math.max(0, Number(admin.studentAnnualPriceInr) || 0),
+    studentTrialDays: Math.min(365, Math.max(1, Number(admin.studentTrialDays) || 15)),
     isActive: admin.isActive !== false,
     createdAt: admin.createdAt,
     updatedAt: admin.updatedAt,
@@ -346,6 +369,10 @@ export function formatSchoolListItem(school, admin, stats = {}) {
     accountSeatsNotes: String(
       school?.accountSeatsNotes ?? admin?.accountSeatsNotes ?? ''
     ).trim(),
+    studentBillingEnabled: Boolean(school?.studentBillingEnabled ?? admin?.studentBillingEnabled),
+    studentPaymentMode: school?.studentPaymentMode || admin?.studentPaymentMode || 'offline',
+    studentAnnualPriceInr: Math.max(0, Number(school?.studentAnnualPriceInr ?? admin?.studentAnnualPriceInr) || 0),
+    studentTrialDays: Math.min(365, Math.max(1, Number(school?.studentTrialDays ?? admin?.studentTrialDays) || 15)),
     stats: {
       students: stats.students ?? 0,
       teachers: stats.teachers ?? 0,

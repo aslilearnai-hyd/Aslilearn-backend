@@ -88,6 +88,15 @@ const schoolSchema = new mongoose.Schema(
       trim: true,
       default: '',
     },
+    /** B2B student-only yearly subscription policy. Teachers/admins are excluded. */
+    studentBillingEnabled: { type: Boolean, default: false },
+    studentPaymentMode: {
+      type: String,
+      enum: ['online', 'offline', 'both'],
+      default: 'offline',
+    },
+    studentAnnualPriceInr: { type: Number, min: 0, default: 0 },
+    studentTrialDays: { type: Number, min: 1, max: 365, default: 15 },
     /** School-wide Vidya usage policy (mirrors admin user; legacy flat). */
     vidyaUsageMode: {
       type: String,

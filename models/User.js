@@ -221,6 +221,23 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  /** Per-student yearly billing enabled by the student's school (B2B only). */
+  schoolStudentSubscriptionEnabled: { type: Boolean, default: false },
+  schoolStudentPaymentMode: {
+    type: String,
+    enum: ['online', 'offline', 'both', ''],
+    default: '',
+  },
+  schoolStudentAnnualPriceInr: { type: Number, min: 0, default: null },
+  /** School-admin configuration for B2B student subscriptions. */
+  studentBillingEnabled: { type: Boolean, default: false },
+  studentPaymentMode: {
+    type: String,
+    enum: ['online', 'offline', 'both'],
+    default: 'offline',
+  },
+  studentAnnualPriceInr: { type: Number, min: 0, default: 0 },
+  studentTrialDays: { type: Number, min: 1, max: 365, default: 15 },
   /**
    * Where this individual (B2C) account came from.
    * legacy = pre-source-tracking self-signups.
@@ -270,6 +287,16 @@ const userSchema = new mongoose.Schema({
     type: [String],
     default: [],
   },
+  /** Super Admin-curated exam access for an individual/B2C student. */
+  trialAssignedExams: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Exam',
+  }],
+  /** False keeps legacy automatic exam discovery; true enforces trialAssignedExams. */
+  trialExamAccessConfigured: {
+    type: Boolean,
+    default: false,
+  },
   /** Super Admin notes for trial member. */
   trialAdminNotes: {
     type: String,
@@ -315,7 +342,7 @@ const userSchema = new mongoose.Schema({
   /** board | iit | both after Razorpay checkout */
   paidPackage: {
     type: String,
-    enum: ['board', 'iit', 'both', ''],
+    enum: ['board', 'iit', 'both', 'school', ''],
     default: '',
   },
   subscriptionPeriod: {
@@ -469,6 +496,29 @@ userSchema.index({ role: 1, assignedAdmin: 1, isActive: 1 }); // Compound for ad
 userSchema.index({ assignedClass: 1 }); // For class-based queries
 userSchema.index({ isIndividualAccount: 1, subscriptionStatus: 1 });
 userSchema.index({ trialEndsAt: 1 });
+userSchema.index({ assignedAdmin: 1, schoolStudentSubscriptionEnabled: 1, subscriptionStatus: 1 });
 userSchema.index({ email: 1 }); // For email lookups
+
+// New B2B students inherit the school's student-only subscription policy.
+// This intentionally never applies to teachers, admins, or B2C accounts.
+userSchema.pre('validate', async function inheritSchoolStudentBillingPolicy() {
+  if (!this.isNew || this.role !== 'student' || this.isIndividualAccount || !this.assignedAdmin) return;
+  const UserModel = mongoose.models.User;
+  if (!UserModel) return;
+  const schoolAdmin = await UserModel.findById(this.assignedAdmin)
+    .select('studentBillingEnabled studentPaymentMode studentAnnualPriceInr studentTrialDays')
+    .lean();
+  if (!schoolAdmin?.studentBillingEnabled) return;
+  const trialDays = Math.min(365, Math.max(1, Number(schoolAdmin.studentTrialDays) || 15));
+  const startsAt = new Date();
+  const endsAt = new Date(startsAt);
+  endsAt.setDate(endsAt.getDate() + trialDays);
+  this.schoolStudentSubscriptionEnabled = true;
+  this.schoolStudentPaymentMode = schoolAdmin.studentPaymentMode || 'offline';
+  this.schoolStudentAnnualPriceInr = Math.max(0, Number(schoolAdmin.studentAnnualPriceInr) || 0);
+  this.subscriptionStatus = 'trial';
+  this.trialStartsAt = startsAt;
+  this.trialEndsAt = endsAt;
+});
 
 export default mongoose.model('User', userSchema);

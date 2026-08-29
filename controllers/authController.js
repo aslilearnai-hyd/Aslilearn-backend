@@ -871,7 +871,7 @@ export async function login(req, res) {
 
     const { resolveIndividualAccess } = await import('../utils/individualAccount.js');
     const access = resolveIndividualAccess(user);
-    if (user.isIndividualAccount && access.paymentRequired && user.subscriptionStatus === 'trial') {
+    if ((user.isIndividualAccount || user.schoolStudentSubscriptionEnabled) && access.paymentRequired && user.subscriptionStatus === 'trial') {
       await User.findByIdAndUpdate(
         user._id,
         { subscriptionStatus: 'expired' },

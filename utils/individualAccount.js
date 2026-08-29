@@ -170,10 +170,17 @@ export function normalizeIndividualSignupBody(body = {}) {
  * Resolve billing access for an individual account document (User or Teacher).
  */
 export function resolveIndividualAccess(doc) {
-  if (!doc || !doc.isIndividualAccount) {
+  const schoolManagedStudent = Boolean(
+    doc &&
+      doc.role === 'student' &&
+      !doc.isIndividualAccount &&
+      doc.schoolStudentSubscriptionEnabled,
+  );
+  if (!doc || (!doc.isIndividualAccount && !schoolManagedStudent)) {
     return withTrialUsageLimits(
       {
         isIndividualAccount: false,
+        isSchoolManagedSubscription: false,
         subscriptionStatus: 'none',
         paymentRequired: false,
         trialActive: false,
@@ -196,7 +203,8 @@ export function resolveIndividualAccess(doc) {
     if (!stillPaid) {
       return withTrialUsageLimits(
         {
-          isIndividualAccount: true,
+          isIndividualAccount: Boolean(doc.isIndividualAccount),
+          isSchoolManagedSubscription: schoolManagedStudent,
           subscriptionStatus: 'expired',
           paymentRequired: true,
           trialActive: false,
@@ -214,7 +222,8 @@ export function resolveIndividualAccess(doc) {
     }
     return withTrialUsageLimits(
       {
-        isIndividualAccount: true,
+        isIndividualAccount: Boolean(doc.isIndividualAccount),
+        isSchoolManagedSubscription: schoolManagedStudent,
         subscriptionStatus: 'active',
         paymentRequired: false,
         trialActive: false,
@@ -237,7 +246,8 @@ export function resolveIndividualAccess(doc) {
 
   return withTrialUsageLimits(
     {
-      isIndividualAccount: true,
+      isIndividualAccount: Boolean(doc.isIndividualAccount),
+      isSchoolManagedSubscription: schoolManagedStudent,
       subscriptionStatus: trialActive ? 'trial' : 'expired',
       paymentRequired: !trialActive,
       trialActive,
@@ -323,7 +333,7 @@ function individualPaymentHistory(doc) {
 }
 
 export function individualSubscriptionSummary(doc) {
-  if (!doc?.isIndividualAccount) return {};
+  if (!doc?.isIndividualAccount && !doc?.schoolStudentSubscriptionEnabled) return {};
   const pkg = String(doc.paidPackage || '').toLowerCase() || null;
   const period = String(doc.subscriptionPeriod || '').toLowerCase() || null;
   const payments = individualPaymentHistory(doc);
@@ -340,6 +350,9 @@ export function individualSubscriptionSummary(doc) {
     razorpayOrderId: doc.razorpayOrderId || null,
     recentPayments: payments.slice(0, 8),
     recentPaymentCount: payments.length,
+    isSchoolManagedSubscription: Boolean(doc?.schoolStudentSubscriptionEnabled),
+    schoolStudentPaymentMode: doc?.schoolStudentPaymentMode || null,
+    schoolStudentAnnualPriceInr: doc?.schoolStudentAnnualPriceInr ?? null,
   };
 }
 

@@ -66,6 +66,12 @@ import {
 } from '../controllers/individualBillingController.js';
 import { listAuditLogs } from '../controllers/auditLogController.js';
 import {
+  listSchoolStudentSubscriptions,
+  activateSchoolStudentSubscription,
+  exportSchoolStudentSubscriptions,
+  listAllSubscriptionPayments,
+} from '../controllers/schoolStudentBillingController.js';
+import {
   getProductCategories,
   getActiveProductCategoryCodesHandler,
   createProductCategory,
@@ -531,6 +537,10 @@ router.post('/ai-tools/upload-pdf', pdfUpload.single('pdf'), uploadAndParsePdf);
 router.get('/admins', getAllAdmins);
 router.get('/admins/:adminId/analytics', getAdminAnalytics);
 router.get('/admins/:adminId/school-detail', getAdminSchoolDetail);
+router.get('/admins/:adminId/student-subscriptions', listSchoolStudentSubscriptions);
+router.get('/admins/:adminId/student-subscriptions/export', exportSchoolStudentSubscriptions);
+router.patch('/admins/:adminId/student-subscriptions/:studentId/activate', activateSchoolStudentSubscription);
+router.get('/subscription-payments', listAllSubscriptionPayments);
 router.put('/admins/:adminId/account-seats', updateAdminAccountSeats);
 router.post('/admins/upload-logo', (req, res, next) => {
   schoolLogoUpload.single('logo')(req, res, (err) => {
