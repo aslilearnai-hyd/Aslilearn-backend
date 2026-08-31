@@ -1716,25 +1716,6 @@ export const deleteAdmin = async (req, res) => {
       });
     }
 
-    // Permanent school wipes are disabled. A school may be deactivated and
-    // later reactivated, but its students and academic history must survive.
-    req.setAudit?.({
-      action: 'school.hard_delete_blocked',
-      summary: `Blocked permanent deletion of school ${school?.name || adminEmail}`,
-      target: {
-        type: 'school',
-        id: String(school?._id || adminId || ''),
-        label: school?.name || adminEmail,
-        email: admin?.email || null,
-      },
-      meta: { studentCount, teacherCount, adminId },
-    });
-    return res.status(410).json({
-      success: false,
-      message: 'Permanent school deletion is disabled. Deactivate the school to preserve all data.',
-      preserved: { students: studentCount, teachers: teacherCount },
-    });
-
     const confirmEmail = String(req.body?.confirmEmail || req.query.confirmEmail || '')
       .trim()
       .toLowerCase();
