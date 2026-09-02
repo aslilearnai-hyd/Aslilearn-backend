@@ -2585,16 +2585,51 @@ export const getRealTimeAnalytics = async (req, res) => {
       ]),
       ExamResult.aggregate([
         { $match: { examId: { $ne: null } } },
+        {
+          $lookup: {
+            from: Exam.collection.name,
+            localField: 'examId',
+            foreignField: '_id',
+            as: 'exam',
+          },
+        },
+        { $unwind: '$exam' },
+        { $match: { 'exam.isActive': { $ne: false } } },
+        {
+          $lookup: {
+            from: User.collection.name,
+            localField: 'userId',
+            foreignField: '_id',
+            as: 'student',
+          },
+        },
+        { $unwind: '$student' },
+        { $match: { 'student.role': 'student' } },
         { $sort: { percentage: -1, completedAt: -1 } },
         {
           $group: {
-            _id: '$examId',
+            _id: { examId: '$examId', studentId: '$userId' },
+            examTitle: { $first: '$exam.title' },
+            studentName: { $first: '$student.fullName' },
+            studentEmail: { $first: '$student.email' },
+            percentage: { $first: '$percentage' },
+            marks: { $first: '$obtainedMarks' },
+            totalMarks: { $first: '$totalMarks' },
+            completedAt: { $first: '$completedAt' },
+          },
+        },
+        { $sort: { percentage: -1, completedAt: -1 } },
+        {
+          $group: {
+            _id: '$_id.examId',
             examTitle: { $first: '$examTitle' },
             topScorers: {
               $push: {
-                studentId: '$userId',
+                studentId: '$_id.studentId',
+                studentName: '$studentName',
+                studentEmail: '$studentEmail',
                 percentage: '$percentage',
-                marks: '$obtainedMarks',
+                marks: '$marks',
                 totalMarks: '$totalMarks',
                 completedAt: '$completedAt',
               },
