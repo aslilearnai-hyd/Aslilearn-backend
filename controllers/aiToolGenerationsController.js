@@ -26,6 +26,7 @@ import {
 } from '../ai/shared/ai-tool-data-match.js';
 import {
   applyProductCategoryMongoFilter,
+  filterTopicsForSplitScienceSubject,
   normalizeTopicProductCategory,
 } from '../ai/shared/ai-tool-topic-taxonomy.js';
 import { resolveAiToolRecordPdfBody } from '../utils/ai-tool-pdf-body.js';
@@ -414,7 +415,24 @@ async function aggregateCombinedGroupCounts(match = {}, groupField) {
       aggregateCollectionGroupCounts(AiToolGeneration, 'master', match, groupField),
       aggregateCollectionGroupCounts(AIGeneratorRecord, 'legacy', match, groupField),
     ]);
-    return mergeGroupCountRows(masterGroups, legacyGroups, groupField);
+    const items = mergeGroupCountRows(masterGroups, legacyGroups, groupField);
+
+    // Non-IIT Science records are intentionally shared with the Physics,
+    // Chemistry, and Biology branches. At the topic level, narrow that shared
+    // pool back to the selected branch so (for example) Chemistry does not
+    // display Force, Friction, or Cell chapters.
+    if (groupField === 'topic' && match.subject) {
+      const visibleTopics = new Set(
+        filterTopicsForSplitScienceSubject(
+          items.map((item) => item.value),
+          match.subject,
+          match.board || '',
+        ),
+      );
+      return items.filter((item) => visibleTopics.has(item.value));
+    }
+
+    return items;
   });
 }
 
