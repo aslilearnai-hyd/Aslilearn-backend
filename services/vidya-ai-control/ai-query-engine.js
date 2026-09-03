@@ -1,4 +1,5 @@
 import { parseDynamicIntent } from './gemini-intent-service.js';
+import { generateGeneralKnowledgeAnswer } from '../vidya-student/gemini-general-knowledge-service.js';
 import { executeDynamicDbPlan } from './db-access-layer.js';
 import { buildAuditSelect } from './dynamic-sql-builder.js';
 import { formatDynamicResponse } from './response-formatter.js';
@@ -21,6 +22,13 @@ export async function runDynamicAiQuery({
   const plan = await parseDynamicIntent({ userMessage, history });
   const notes = [];
   let facts = { mode: plan.mode };
+  if (viewerRole === 'super-admin' && plan.mode === 'knowledge' &&
+      /\b(teach|explain|chapter|textbook|lesson|curriculum|syllabus|subtopic)\b/i.test(userMessage)) {
+    const message = await generateGeneralKnowledgeAnswer({
+      viewerUserId, viewerRole, question: userMessage, conversationHistory: history,
+    });
+    return { ok: true, plan, facts: { mode: 'curriculum' }, message, auditQuery: '--', notes: ['Curriculum and indexed textbook lookup.'] };
+  }
 
   // Gemini flagged a required detail as missing (e.g. "students in Class" with
   // no number) — ask instead of running a query that would silently match nothing.

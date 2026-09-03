@@ -1,3 +1,4 @@
+import { prepareConversationHistory } from '../ai/shared/conversation-history.js';
 import {
   handleControlAssistantTurn,
   listRecentControlLogs,
@@ -18,13 +19,7 @@ export async function postVidyaControlQuery(req, res) {
   try {
     const body = req.body || {};
     const rawHistory = Array.isArray(body.history) ? body.history : [];
-    const history = rawHistory
-      .slice(-24)
-      .map((h) => ({
-        role: String(h.role || '').toLowerCase() === 'assistant' ? 'assistant' : 'user',
-        content: String(h.content || '').slice(0, 6000),
-      }))
-      .filter((h) => h.content.trim());
+    const history = prepareConversationHistory(rawHistory);
 
     const result = await handleControlAssistantTurn({
       userMessage: body.message,

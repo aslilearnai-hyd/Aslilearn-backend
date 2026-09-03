@@ -547,6 +547,8 @@ export const handleVisionAnalyse = async ({
   userId,
   role,
   imageBase64,
+  mimeType = 'image/jpeg',
+  history = [],
   context = '',
   requestIp = '',
   userAgent = '',
@@ -565,11 +567,11 @@ export const handleVisionAnalyse = async ({
     classLevel: profile?.classLevel,
   });
   const contents = buildContentsFromHistory({
-    history: [],
+    history: Array.isArray(history) ? history : [],
     userMessage: `Analyse this educational image and help the user. ${
       context ? 'Additional context: ' + context : ''
     } Provide: (1) what is in the image, (2) explanation/solution if applicable, (3) key takeaways.`,
-    attachments: [{ mime: 'image/jpeg', data: imageBase64 }],
+    attachments: [{ mime: mimeType, data: imageBase64 }],
   });
 
   try {
