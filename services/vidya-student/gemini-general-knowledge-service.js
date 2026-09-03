@@ -47,7 +47,7 @@ function looksUnstructured(text) {
   const bullets = (t.match(/[•●]|(^|\n)\s*[-*]\s+/g) || []).length;
   const numbered = (t.match(/(^|\n)\s*\d{1,2}[.)]\s+/g) || []).length;
   // One blob of prose: few newlines and no list markers
-  if (newlines < 4 && bullets + numbered < 2) return true;
+  if (t.length > 600 && newlines < 4 && bullets + numbered < 2) return true;
   // Extremely long single line / paragraph
   const longest = Math.max(...t.split(/\n/).map((l) => l.length), 0);
   if (longest > 420 && bullets + numbered < 2) return true;
@@ -65,6 +65,7 @@ export async function generateGeneralKnowledgeAnswer({
   board = '',
   weakChapters = [],
   enrolledSubjects = [],
+  conversationHistory = [],
 }) {
   const classText = classLevel ? `Class ${classLevel}` : 'school level';
   const boardText = board ? `${board} board` : 'Indian school curriculum';
@@ -81,7 +82,7 @@ export async function generateGeneralKnowledgeAnswer({
     weakChapters.length
       ? `Note: This student has shown difficulty in: ${weakChapters.slice(0, 3).join(', ')}. If this question touches on these topics, give a particularly clear, step-by-step answer.`
       : '',
-    `Do not ask clarifying questions. Give a complete, direct answer.`,
+    `Use conversation history for follow-ups. If the topic or intended class is ambiguous, ask one brief clarification instead of guessing.`,
     `Do not say "as an AI" or "I cannot". If unsure, give your best explanation and note any uncertainty.`,
     `Do not invent exam scores or personal student data.`,
   ]
@@ -101,7 +102,7 @@ export async function generateGeneralKnowledgeAnswer({
   const callOnce = async (message) => {
     const result = await callModel({
       systemInstruction,
-      contents: buildContentsFromHistory({ userMessage: message }),
+      contents: buildContentsFromHistory({ history: (Array.isArray(conversationHistory) ? conversationHistory : []).slice(-12).map(item => ({ role: item?.role, content: String(item?.content || '').slice(0, 4000) })), userMessage: message }),
       generationConfig: { temperature: 0.25, maxOutputTokens: 1800 },
     });
     return String(result?.text || '').trim();

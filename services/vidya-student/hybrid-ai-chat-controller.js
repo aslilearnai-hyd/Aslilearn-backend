@@ -1136,7 +1136,7 @@ export async function runHybridStudentVidyaChat({
     };
   } catch (err) {
     // Fallback to template-based reply if Gemini fails
-    if (intent.type === 'general') {
+    if (intent.type !== 'application') {
       return {
         mode: 'general',
         intent,
