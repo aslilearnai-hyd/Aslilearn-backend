@@ -37,3 +37,13 @@ test('teacher provider failure never becomes a dashboard success', async () => {
     assert.equal(result.facts, null);
   } finally { fail = false; }
 });
+test('selected teacher subject overrides a different subject in earlier chat', async () => {
+  const history = [{ role: 'user', content: 'Teach chemistry mixtures' }];
+  const result = await runHybridTeacherVidyaChat({
+    viewerUserId: 'test', question: 'Explain this topic with examples', history,
+    context: { currentSubject: 'BIO - 7' },
+  });
+  assert.equal(result.mode, 'general');
+  assert.match(received.contents.at(-1).content, /Selected subject: BIO - 7/);
+  assert.match(received.systemInstruction, /Indian/);
+});

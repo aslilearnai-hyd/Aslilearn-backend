@@ -46,6 +46,7 @@ export async function handleVidyaTurn({ plane, req, res, body = {} }) {
         viewerUserId: userId,
         question,
         history: Array.isArray(body.history) ? body.history : [],
+        context: body.context || {},
         tenant,
       });
       return enforceGroundingResult(result, classifyPlatformDataQuestion(question, 'teacher'));
