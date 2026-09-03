@@ -7,6 +7,8 @@ import {
   buildControlOverviewFacts,
   buildNamedSchoolDetailFacts,
   buildPublishedCatalogFacts,
+  extractSchoolNameQuery,
+  isNamedSchoolMetricQuery,
 } from './school-overview-facts.js';
 import {
   buildNamedPersonDetailFacts,
@@ -125,12 +127,64 @@ async function answerLatestRealExam({ userMessage, viewerRole, viewerUserId }) {
   return { message: `The latest exam is “${exam.title}”.`, exam };
 }
 
-export async function runDynamicAiQuery({
+async function answerNamedSchoolMetric({ userMessage, viewerRole, viewerUserId }) {
+  if (!isNamedSchoolMetricQuery(userMessage)) return null;
+  const schoolName = extractSchoolNameQuery(userMessage);
+  const facts = await buildNamedSchoolDetailFacts(schoolName, { viewerRole, viewerUserId });
+  const overview = facts?.overview || {};
+  const label = facts?.profile?.name || facts?.schoolLabel || schoolName;
+  const q = String(userMessage || '').toLowerCase();
+  if (facts?.candidates?.length > 1) {
+    return {
+      message: facts.error,
+      facts,
+    };
+  }
+  if (facts?.error && typeof overview.teachers !== 'number' && typeof overview.students !== 'number') {
+    return { message: facts.error, facts };
+  }
+  if (/\bteachers?\b|\bfaculty\b|\bstaff\b/.test(q) && typeof overview.teachers === 'number') {
+    return {
+      message: `${label} has ${overview.teachers} active teacher${overview.teachers === 1 ? '' : 's'}.`,
+      facts,
+    };
+  }
+  if (/\bstudents?\b/.test(q) && typeof overview.students === 'number') {
+    return {
+      message: `${label} has ${overview.students} student${overview.students === 1 ? '' : 's'}.`,
+      facts,
+    };
+  }
+  if (/\bclasses\b/.test(q) && typeof overview.classes === 'number') {
+    return {
+      message: `${label} has ${overview.classes} class${overview.classes === 1 ? '' : 'es'}.`,
+      facts,
+    };
+  }
+  if (/\bexams?\b/.test(q) && typeof overview.activeExams === 'number') {
+    return {
+      message: `${label} has ${overview.activeExams} active exam${overview.activeExams === 1 ? '' : 's'}.`,
+      facts,
+    };
+  }
+  return null;
+}
   userMessage,
   history = [],
   viewerRole,
   viewerUserId,
 }) {
+  const namedSchoolMetric = await answerNamedSchoolMetric({ userMessage, viewerRole, viewerUserId });
+  if (namedSchoolMetric) {
+    return {
+      ok: true,
+      plan: { mode: 'school_detail', module: 'schools', operation: 'overview', schoolNameQuery: extractSchoolNameQuery(userMessage) },
+      facts: { mode: 'school_detail', ...namedSchoolMetric.facts },
+      message: namedSchoolMetric.message,
+      auditQuery: 'SELECT school by name, then COUNT teachers/students scoped to that school admin',
+      notes: ['Named-school headcount uses live school metrics, not a teachers-name filter.'],
+    };
+  }
   const usageTime = await answerIndividualUsageTime({ userMessage, history });
   if (usageTime) return { ok: true, plan: { mode: 'database', module: 'learning_sessions', operation: 'list' }, facts: usageTime, message: usageTime.message, auditQuery: 'SELECT SUM(duration) per logged-in user for today (IST)', notes: ['Joined session totals to user and teacher names.'] };
   const largestSchool = await answerLargestSchool({ userMessage, history });

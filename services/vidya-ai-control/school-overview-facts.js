@@ -28,9 +28,19 @@ function escapeRegex(value) {
   return String(value || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
+export function schoolNameSearchTerms(query) {
+  const raw = String(query || '').trim();
+  if (!raw) return [];
+  const stripped = raw
+    .replace(/\b((high|higher|senior|secondary|primary|public|international|residential|model)\s+)*schools?\b/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  return [...new Set([raw, stripped].filter((term) => term.length >= 2))];
+}
+
 /**
  * Pull a school name from prompts like:
- * "details about test school", "school named X", "find school X"
+ * "details about test school", "school named X", "how many teachers in brainfeed school"
  */
 export function extractSchoolNameQuery(message) {
   const raw = String(message || '').trim();
@@ -38,7 +48,8 @@ export function extractSchoolNameQuery(message) {
 
   const patterns = [
     /(?:details?|info(?:rmation)?|overview)\s+(?:about|on|for)\s+(?:the\s+)?(.+?)\s+school\b/i,
-    /\b(?:about|for)\s+(?:the\s+)?(.+?)\s+school\b/i,
+    /\b(?:teachers?|students?|classes|exams?|faculty)\b[\s\S]{0,40}\b(?:in|at|of|from)\s+(?:the\s+)?(.+?)\s+school\b/i,
+    /\b(?:in|at|of|from|about|for)\s+(?:the\s+)?(.+?)\s+school\b/i,
     /\bschool\s+(?:named|called)\s+["']?([^"'?\n.]+)["']?/i,
     /\b(?:find|search|look\s*up|show|get)\s+(?:me\s+)?(?:the\s+)?school\s+["']?([^"'?\n.]+)["']?/i,
     /\bi\s+need\s+(?:details?|info(?:rmation)?)\s+(?:about|on|for)\s+(.+?)(?:\s+school)?\s*$/i,
@@ -53,7 +64,7 @@ export function extractSchoolNameQuery(message) {
       .replace(/\s+/g, ' ')
       .trim();
     name = name.replace(/\bschool\b$/i, '').trim();
-    if (!name || /^(all|every|each|any|this|that|my|our)$/i.test(name)) continue;
+    if (!name || /^(all|every|each|any|this|that|my|our|there|here)$/i.test(name)) continue;
     if (name.length < 2) continue;
     return name.slice(0, 80);
   }
@@ -65,6 +76,13 @@ export function isSchoolDetailQuery(message) {
   if (!/(school|schools)/i.test(lower)) return false;
   if (/(how many|count|total|number of|are there)/i.test(lower)) return false;
   return Boolean(extractSchoolNameQuery(message));
+}
+
+export function isNamedSchoolMetricQuery(message) {
+  const lower = String(message || '').toLowerCase();
+  if (!extractSchoolNameQuery(message)) return false;
+  if (!/((how|who)\s*many|count|total|number of|are there)/i.test(lower)) return false;
+  return /\b(teachers?|students?|classes|exams?|faculty|staff)\b/i.test(lower);
 }
 
 async function metricsForAdminOid(adminOid, schoolLabel) {
@@ -172,8 +190,10 @@ export async function buildNamedSchoolDetailFacts(schoolNameQuery, viewer = {}) 
     };
   }
 
-  const regex = new RegExp(escapeRegex(q), 'i');
-  let matches = await School.find({ name: regex })
+  const terms = schoolNameSearchTerms(q);
+  const regexes = terms.map((term) => new RegExp(escapeRegex(term), 'i'));
+  const nameClause = regexes.length === 1 ? { name: regexes[0] } : { $or: regexes.map((regex) => ({ name: regex })) };
+  let matches = await School.find(nameClause)
     .select(
       'name place phone contactPerson board curriculumBoard isAsliPrepExclusive licensedStudents licensedTeachers isActive adminUserId schoolDetails',
     )
@@ -182,9 +202,13 @@ export async function buildNamedSchoolDetailFacts(schoolNameQuery, viewer = {}) 
     .catch(() => []);
 
   if (!matches.length) {
+    const schoolNameClause =
+      regexes.length === 1
+        ? { schoolName: regexes[0] }
+        : { $or: regexes.map((regex) => ({ schoolName: regex })) };
     const adminMatches = await User.find({
       role: 'admin',
-      schoolName: regex,
+      ...schoolNameClause,
     })
       .select('_id schoolName place phone contactPerson board email isActive')
       .limit(8)
