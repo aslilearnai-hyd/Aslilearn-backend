@@ -14,8 +14,31 @@ import {
 } from './entity-detail-facts.js';
 import mongoose from 'mongoose';
 import User from '../../models/User.js';
+import Teacher from '../../models/Teacher.js';
 import Exam from '../../models/Exam.js';
 import ExamResult from '../../models/ExamResult.js';
+import { istYmd, istStartOfDayInstant, istEndOfDayInstant } from './ist-time.js';
+
+async function answerTodayLoginQuestion({ userMessage }) {
+  if (!/\b(?:logins?|logged\s+in|login users?)\b/i.test(userMessage) || !/\b(?:today|those|them|who)\b/i.test(userMessage)) return null;
+  const ymd = istYmd(new Date());
+  const range = { $gte: istStartOfDayInstant(ymd), $lte: istEndOfDayInstant(ymd) };
+  const [users, teachers] = await Promise.all([
+    User.find({ lastLogin: range }).select('fullName email role lastLogin').sort({ lastLogin: -1 }).lean(),
+    Teacher.find({ lastLogin: range }).select('fullName email lastLogin').sort({ lastLogin: -1 }).lean(),
+  ]);
+  const people = [
+    ...users.map(row => ({ name: row.fullName || row.email || 'User', role: row.role || 'user', lastLogin: row.lastLogin })),
+    ...teachers.map(row => ({ name: row.fullName || row.email || 'Teacher', role: 'teacher', lastLogin: row.lastLogin })),
+  ].sort((a, b) => new Date(b.lastLogin || 0) - new Date(a.lastLogin || 0));
+  const asksWho = /\bwho\b|\bthose\b|\bthem\b|\bnames?\b/i.test(userMessage);
+  const message = asksWho
+    ? people.length
+      ? `${people.length} unique users logged in today:\n\n${people.map((person, index) => `${index + 1}. ${person.name} [${person.role}]`).join('\n')}`
+      : 'No users have logged in today.'
+    : `${people.length} unique user${people.length === 1 ? '' : 's'} logged in today.`;
+  return { message, count: people.length, rows: people, date: ymd };
+}
 
 async function answerExamAttemptFollowUp({ userMessage, history, viewerRole, viewerUserId }) {
   if (!/\bhow many\b[\s\S]{0,40}\b(?:attempted|took|completed)\b|\b(?:attempted|took|completed)\b[\s\S]{0,40}\b(?:exam|test)\b/i.test(userMessage)) return null;
@@ -43,6 +66,10 @@ export async function runDynamicAiQuery({
   viewerRole,
   viewerUserId,
 }) {
+  const todayLogins = await answerTodayLoginQuestion({ userMessage });
+  if (todayLogins) {
+    return { ok: true, plan: { mode: 'database', module: 'users', operation: /\bwho\b|\bthose\b|\bthem\b|\bnames?\b/i.test(userMessage) ? 'list' : 'count' }, facts: todayLogins, message: todayLogins.message, auditQuery: 'SELECT users and teachers WHERE lastLogin is today (IST)', notes: ['Count and list use the same unique-user definition.'] };
+  }
   const examAttempt = await answerExamAttemptFollowUp({ userMessage, history, viewerRole, viewerUserId });
   if (examAttempt) {
     return { ok: true, plan: { mode: 'database', module: 'results', operation: 'count' }, facts: examAttempt, message: examAttempt.message, auditQuery: 'SELECT COUNT(DISTINCT userId) FROM exam_results WHERE examId=<scoped latest exam>', notes: ['Resolved exam from conversation history.'] };
