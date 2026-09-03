@@ -169,6 +169,8 @@ async function answerNamedSchoolMetric({ userMessage, viewerRole, viewerUserId }
   }
   return null;
 }
+
+export async function runDynamicAiQuery({
   userMessage,
   history = [],
   viewerRole,
