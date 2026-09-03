@@ -208,10 +208,15 @@ export async function runHybridTeacherVidyaChat({
   }
 
   if (firewall.protected || (intent.type !== 'general' && isTeacherAppQuestion(q)) || intent.type === 'application') {
+    const message = await formatDynamicResponse({
+      userPrompt: q, plan: { mode: 'teacher_desk' },
+      facts: { ...desk, mode: 'teacher_desk', fallbackMessage: teacherAppOnlyReply(q, desk) },
+      viewerRole: 'teacher', history: recentHistory,
+    });
     return enforceGroundingResult({
       mode: 'application',
       intent: intent.type === 'uncertain' ? { type: 'application', reason: 'teacher_desk' } : intent,
-      message: teacherAppOnlyReply(q, desk),
+      message,
       groundingStatus: 'application',
       facts: { desk },
     }, firewall);

@@ -70,6 +70,24 @@ export function selectCurriculumRows(rows, request) {
 }
 
 export async function loadVidyaCurriculumScopes(userId, role) {
+  if (role === 'super-admin') {
+    // Role comes from the authenticated server controller, never the prompt.
+    const [topics, books] = await Promise.all([
+      AiToolTopic.aggregate([
+        { $match: { isActive: true } },
+        { $group: { _id: { board: '$board', track: '$productCategory', classNumber: '$classLabel', subject: '$subject' } } },
+      ]),
+      Book.aggregate([
+        { $match: { uploadedByRole: 'super-admin', processingStatus: 'indexed' } },
+        { $group: { _id: { board: '$board', track: '$productCategory', classNumber: '$class', subject: '$subject' } } },
+      ]),
+    ]);
+    const scopes = [...topics, ...books].map(({ _id: s }) => ({
+      board: boardKey(s.board), track: String(s.track || '').toUpperCase(),
+      classNumber: grade(s.classNumber), subject: subjectKey(s.subject),
+    })).filter(s => s.classNumber && s.subject);
+    return [...new Map(scopes.map(s => [JSON.stringify(s), s])).values()];
+  }
   let subjects, classes;
   if (role === 'teacher') {
     const teacher = await Teacher.findById(userId).lean();

@@ -3,6 +3,7 @@
  * Delegates to existing implementations; unifies logging and tenant context.
  */
 import vidyaService from './vidya-service.js';
+import { prepareConversationHistory } from '../ai/shared/conversation-history.js';
 import { handleControlAssistantTurn } from './vidya-ai-control-service.js';
 import { runHybridStudentVidyaChat } from './vidya-student/hybrid-ai-chat-controller.js';
 import { runHybridTeacherVidyaChat } from './vidya-teacher/teacher-hybrid-chat-controller.js';
@@ -80,6 +81,8 @@ export async function handleVidyaTurn({ plane, req, res, body = {} }) {
         userId,
         role,
         imageBase64: body.imageBase64,
+        mimeType: body.mimeType,
+        history: body.history,
         context: body.context || '',
         requestIp: req.ip || '',
         userAgent: String(req.headers['user-agent'] || '').slice(0, 200),
@@ -88,13 +91,7 @@ export async function handleVidyaTurn({ plane, req, res, body = {} }) {
 
     case PLANES.CONTROL: {
       const rawHistory = Array.isArray(body.history) ? body.history : [];
-      const history = rawHistory
-        .slice(-24)
-        .map((h) => ({
-          role: String(h.role || '').toLowerCase() === 'assistant' ? 'assistant' : 'user',
-          content: String(h.content || '').slice(0, 6000),
-        }))
-        .filter((h) => h.content.trim());
+      const history = prepareConversationHistory(rawHistory);
 
       return handleControlAssistantTurn({
         userMessage: body.message,

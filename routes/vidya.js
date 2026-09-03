@@ -1,4 +1,5 @@
 import express from 'express';
+import { normalizeVidyaImage } from '../utils/vidya-image.js';
 import mongoose from 'mongoose';
 import { verifyToken } from '../middleware/auth.js';
 import { aiChatGlobalLimiter, aiChatPerUserLimiter, aiHeavyLimiter } from '../middleware/rate-limit.js';
@@ -154,15 +155,15 @@ router.post(
   aiHeavyLimiter,
   async (req, res) => {
     try {
-      const { image, context } = req.body || {};
+      const { image, context, mimeType, history } = req.body || {};
       if (!image) {
         return res.status(400).json({ success: false, message: 'Image is required' });
       }
-      const base64Data = String(image).replace(/^data:image\/[a-z]+;base64,/, '');
+      const photo = normalizeVidyaImage(image, mimeType);
       const result = await handleVidyaTurn({
         plane: PLANES.VISION,
         req,
-        body: { imageBase64: base64Data, context: context || '' },
+        body: { ...photo, context: String(context || '').slice(0, 6000), history },
       });
       res.json({ success: true, ...result });
     } catch (err) {
