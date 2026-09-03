@@ -181,6 +181,7 @@ export async function loadStudentLibraryContents(userId, student, studentClassDo
     ? await Content.find({
         subject: { $in: queryIds },
         isActive: true,
+        ...(options.contentId ? { _id: options.contentId } : {}),
         ...(options.type ? { type: options.type } : {}),
       })
         .select(
