@@ -19,8 +19,12 @@ import Exam from '../../models/Exam.js';
 import ExamResult from '../../models/ExamResult.js';
 import { istYmd, istStartOfDayInstant, istEndOfDayInstant } from './ist-time.js';
 
-async function answerTodayLoginQuestion({ userMessage }) {
-  if (!/\b(?:logins?|logged\s+in|login users?)\b/i.test(userMessage) || !/\b(?:today|those|them|who)\b/i.test(userMessage)) return null;
+async function answerTodayLoginQuestion({ userMessage, history = [] }) {
+  const recent = (Array.isArray(history) ? history : []).slice(-6).map(turn => String(turn?.content || '')).join('\n');
+  const explicit = /\b(?:logins?|logged\s+in|login users?)\b/i.test(userMessage);
+  const loginFollowUp = /\b(?:who (?:are )?(?:those|they|them|users)|give (?:me )?all|list (?:them|those|users)|their names?)\b/i.test(userMessage)
+    && /\b(?:logins?|logged\s+in)\b[\s\S]{0,80}\btoday\b/i.test(recent);
+  if ((!explicit && !loginFollowUp) || (!/\btoday\b/i.test(userMessage) && !loginFollowUp)) return null;
   const ymd = istYmd(new Date());
   const range = { $gte: istStartOfDayInstant(ymd), $lte: istEndOfDayInstant(ymd) };
   const [users, teachers] = await Promise.all([
@@ -43,13 +47,15 @@ async function answerTodayLoginQuestion({ userMessage }) {
 async function answerExamAttemptFollowUp({ userMessage, history, viewerRole, viewerUserId }) {
   if (!/\bhow many\b[\s\S]{0,40}\b(?:attempted|took|completed)\b|\b(?:attempted|took|completed)\b[\s\S]{0,40}\b(?:exam|test)\b/i.test(userMessage)) return null;
   const transcript = (Array.isArray(history) ? history : []).slice(-8).map(turn => String(turn?.content || '')).join('\n');
-  const named = transcript.match(/(?:last|latest) (?:exam|test)(?: taken)?(?: is|:)?\s*["“']([^"”'\n]+)["”']/i)?.[1]?.trim();
+  const named = (transcript.match(/(?:last|latest) (?:exam|test)(?: taken)?(?: is|:)?\s*["“']([^"”'\n]+)["”']/i)?.[1]
+    || transcript.match(/Exam names?:\s*([^\n.]+)/i)?.[1])?.trim();
   const viewerOid = mongoose.isValidObjectId(viewerUserId) ? new mongoose.Types.ObjectId(String(viewerUserId)) : null;
   const examScope = viewerRole === 'admin' && viewerOid
     ? { $or: [{ adminId: viewerOid }, { schoolId: viewerOid }, { targetSchools: viewerOid }] }
     : {};
   const titleFilter = named ? { title: new RegExp(`^${named.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`, 'i') } : {};
-  const exam = await Exam.findOne({ ...examScope, ...titleFilter }).sort({ endDate: -1, createdAt: -1 }).select('_id title').lean();
+  const excludeMock = named ? {} : { title: { $not: /\bmock\s+test\b/i } };
+  const exam = await Exam.findOne({ ...examScope, ...excludeMock, ...titleFilter }).sort({ endDate: -1, createdAt: -1 }).select('_id title').lean();
   if (!exam) return { message: 'I could not identify the exam from the previous message. Please mention its title.', count: null, examTitle: named || '' };
   let resultFilter = { examId: exam._id };
   if (viewerRole === 'admin' && viewerOid) {
@@ -60,15 +66,33 @@ async function answerExamAttemptFollowUp({ userMessage, history, viewerRole, vie
   return { message: `${attempted.length} student${attempted.length === 1 ? '' : 's'} attempted “${exam.title}”.`, count: attempted.length, examTitle: exam.title };
 }
 
+async function answerLatestRealExam({ userMessage, viewerRole, viewerUserId }) {
+  if (!/\b(?:latest|last|recent)\s+(?:exam|test)\b/i.test(userMessage)) return null;
+  const viewerOid = mongoose.isValidObjectId(viewerUserId) ? new mongoose.Types.ObjectId(String(viewerUserId)) : null;
+  const scope = viewerRole === 'admin' && viewerOid
+    ? { $or: [{ adminId: viewerOid }, { schoolId: viewerOid }, { targetSchools: viewerOid }] }
+    : {};
+  const exam = await Exam.findOne({ ...scope, title: { $not: /\bmock\s+test\b/i } })
+    .sort({ endDate: -1, createdAt: -1 })
+    .select('_id title endDate classNumber subject')
+    .lean();
+  if (!exam) return { message: 'No regular exam/test was found.', exam: null };
+  return { message: `The latest exam is “${exam.title}”.`, exam };
+}
+
 export async function runDynamicAiQuery({
   userMessage,
   history = [],
   viewerRole,
   viewerUserId,
 }) {
-  const todayLogins = await answerTodayLoginQuestion({ userMessage });
+  const todayLogins = await answerTodayLoginQuestion({ userMessage, history });
   if (todayLogins) {
     return { ok: true, plan: { mode: 'database', module: 'users', operation: /\bwho\b|\bthose\b|\bthem\b|\bnames?\b/i.test(userMessage) ? 'list' : 'count' }, facts: todayLogins, message: todayLogins.message, auditQuery: 'SELECT users and teachers WHERE lastLogin is today (IST)', notes: ['Count and list use the same unique-user definition.'] };
+  }
+  const latestExam = await answerLatestRealExam({ userMessage, viewerRole, viewerUserId });
+  if (latestExam) {
+    return { ok: true, plan: { mode: 'database', module: 'exams', operation: 'list' }, facts: latestExam, message: latestExam.message, auditQuery: 'SELECT latest exam WHERE title is not a mock test', notes: ['Mock tests excluded from normal latest-exam lookup.'] };
   }
   const examAttempt = await answerExamAttemptFollowUp({ userMessage, history, viewerRole, viewerUserId });
   if (examAttempt) {
