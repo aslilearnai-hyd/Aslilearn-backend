@@ -399,7 +399,7 @@ function localFallbackResponse({ userPrompt, facts }) {
           : '';
         return `${i + 1}. ${name}${role}${klass}${login}`;
       });
-      return `Found exactly ${facts.totalReturned ?? facts.rows.length} ${label}. ${shown.join('; ')}.`;
+      return `Found exactly ${facts.totalReturned ?? facts.rows.length} ${label}:\n\n${shown.join('\n')}`;
     }
     return `Fetched exactly ${facts.rows.length} records from ${facts.module}.`;
   }

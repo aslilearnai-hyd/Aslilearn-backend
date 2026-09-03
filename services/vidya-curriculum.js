@@ -9,7 +9,7 @@ import { getEffectiveTeacherSubjectObjectIds } from '../utils/teacherSubjectScop
 import { resolveStudentClassDoc, resolveStudentSubjectIdsForLibrary } from '../routes/student/helpers.js';
 import { normalizeSubjectLabel } from '../utils/resolveSubjectContentIds.js';
 import { compareAiToolTopicRows, chapterNumberFromTopicLabel } from '../utils/ai-tool-topic-order.js';
-import { getStudentSchoolProgramContext, getTeacherSchoolProgramContext, resolveIitCategoriesForContentBrowse } from '../utils/schoolProgram.js';
+import { getAdminSchoolProgramContext, getStudentSchoolProgramContext, getTeacherSchoolProgramContext, resolveIitCategoriesForContentBrowse } from '../utils/schoolProgram.js';
 import { mergeIitCatalogSubjectsIntoLibraryIds, resolveIitCatalogSubjectIdsForClass } from '../utils/iitCatalogSubjects.js';
 import { resolveIitCategoriesForClass } from '../constants/products.js';
 
@@ -115,7 +115,25 @@ export async function loadVidyaCurriculumScopes(userId, role) {
     return [...new Map(scopes.map(s => [JSON.stringify(s), s])).values()];
   }
   let subjects, classes;
-  if (role === 'teacher') {
+  if (role === 'admin') {
+    classes = await Class.find({ assignedAdmin: userId, isActive: { $ne: false } })
+      .select('classNumber assignedSubjects')
+      .lean();
+    subjects = [...new Set(classes.flatMap(c => c.assignedSubjects || []).map(String))];
+    const program = await getAdminSchoolProgramContext(userId);
+    if (program.isAsliPrepExclusive) {
+      const extraIds = [];
+      for (const c of classes) {
+        const tracks = resolveIitCategoriesForClass(program, c.classNumber);
+        extraIds.push(...await resolveIitCatalogSubjectIdsForClass(c.classNumber, { iitCategories: tracks }));
+      }
+      subjects.push(...extraIds.map(String));
+    }
+    const docs = await Subject.find({ _id: { $in: [...new Set(subjects)] }, isActive: true })
+      .select('name board productCategory classNumber')
+      .lean();
+    return [...new Map(buildTeacherCurriculumScopes({ docs, classes, program }).map(s => [JSON.stringify(s), s])).values()];
+  } else if (role === 'teacher') {
     const teacher = await Teacher.findById(userId).lean();
     if (!teacher) return [];
     subjects = await getEffectiveTeacherSubjectObjectIds(teacher);
