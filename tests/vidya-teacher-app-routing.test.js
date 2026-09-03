@@ -2,6 +2,11 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { isTeacherAppQuestion } from '../services/vidya-teacher/teacher-hybrid-chat-controller.js';
 import { teacherAppOnlyReply } from '../services/vidya-teacher/teacher-app-desk-facts.js';
+import {
+  isTeacherExamDataQuestion,
+  isTeacherExamFollowUp,
+  resolveTeacherExamQuestion,
+} from '../services/vidya-teacher/teacher-query-routing.js';
 import { classifyPlatformDataQuestion } from '../services/vidya-platform-data-firewall.js';
 
 const now = new Date('2026-09-04T06:30:00+05:30');
@@ -51,4 +56,22 @@ test('named-year filters only apply when the teacher asked for that year', () =>
 test('teacher exam lists are treated as protected school data', () => {
   assert.equal(classifyPlatformDataQuestion('List the latest exams', 'teacher').protected, true);
   assert.equal(classifyPlatformDataQuestion('exams last month', 'teacher').protected, true);
+});
+
+test('short follow-ups after an exam list stay on live exam data', () => {
+  const history = [
+    { role: 'user', content: 'List the latest exams' },
+    { role: 'assistant', content: '**Latest school exams:**\n1. JEE Exam' },
+  ];
+  assert.equal(isTeacherExamFollowUp('last month', history), true);
+  assert.equal(isTeacherExamFollowUp('filter by September', history), true);
+  assert.equal(resolveTeacherExamQuestion('last month', history), 'last month exams');
+  const answer = teacherAppOnlyReply(resolveTeacherExamQuestion('last month', history), desk, '', now);
+  assert.match(answer, /August Unit Test/);
+  assert.doesNotMatch(answer, /2024|Worked example|Filtering Process/i);
+});
+
+test('student exam-score questions are not treated as the school exam catalog', () => {
+  assert.equal(isTeacherExamDataQuestion("Priya's exam scores"), false);
+  assert.equal(isTeacherExamDataQuestion('List the latest exams'), true);
 });

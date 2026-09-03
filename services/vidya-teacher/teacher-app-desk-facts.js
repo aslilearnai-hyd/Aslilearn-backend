@@ -16,6 +16,7 @@ import OmrResultRow from '../../models/OmrResultRow.js';
 import OmrResultBatch from '../../models/OmrResultBatch.js';
 import TeacherWorkDiary from '../../models/TeacherWorkDiary.js';
 import { istYmd } from '../vidya-ai-control/ist-time.js';
+import { isTeacherExamDataQuestion } from './teacher-query-routing.js';
 
 const LIST_CAP = 200; // high ceiling — “no artificial tiny limits”
 
@@ -64,25 +65,6 @@ function monthLabel({ year, month }) {
   const names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   if (month) return `${names[month - 1]} ${year}`;
   return String(year);
-}
-
-export function isTeacherExamDataQuestion(question) {
-  const q = String(question || '').toLowerCase();
-  if (!/\bexams?\b/.test(q)) return false;
-  if (
-    /\b(what is|define|meaning of|explain the concept)\b/.test(q) &&
-    !/\b(list|show|latest|recent|upcoming|schedule|last month|this month)\b/.test(q)
-  ) {
-    return false;
-  }
-  return (
-    /\b(list|show|give|get|display|fetch|which|what|latest|recent|upcoming|open|scheduled?)\b/.test(q) ||
-    /\b(last|this|previous|past)\s+month\b/.test(q) ||
-    /\b(january|jan|february|feb|march|mar|april|apr|may|june|jun|july|jul|august|aug|september|sep|sept|october|oct|november|nov|december|dec)\b/.test(q) ||
-    /\b20\d{2}\b/.test(q) ||
-    /^(?:the\s+)?(?:latest\s+|recent\s+)?exams?\??$/.test(q.trim()) ||
-    /\bhow many\b/.test(q)
-  );
 }
 
 function parseExamTimeFilter(question, now = new Date()) {

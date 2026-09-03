@@ -16,9 +16,13 @@ import {
 import { formatDynamicResponse } from '../vidya-ai-control/response-formatter.js';
 import {
   buildTeacherAppDeskFacts,
-  isTeacherExamDataQuestion,
   teacherAppOnlyReply,
 } from './teacher-app-desk-facts.js';
+import {
+  isTeacherExamDataQuestion,
+  isTeacherExamFollowUp,
+  resolveTeacherExamQuestion,
+} from './teacher-query-routing.js';
 import { classifyPlatformDataQuestion, enforceGroundingResult } from '../vidya-platform-data-firewall.js';
 
 const connectionFallbackMessage = () =>
@@ -34,7 +38,7 @@ export function isTeacherAppQuestion(q) {
   );
 }
 
-export { isTeacherExamDataQuestion };
+export { isTeacherExamDataQuestion, isTeacherExamFollowUp };
 
 export function isTeacherLearningRequest(question) {
   const q = String(question || '').toLowerCase();
@@ -135,6 +139,17 @@ export async function runHybridTeacherVidyaChat({
   // after "Which student?", or "only 7B" after a total-student answer. Resolve
   // those against the live scoped roster and recent conversation before routing.
   const recentHistory = prepareConversationHistory(history);
+  q = resolveTeacherExamQuestion(q, recentHistory);
+  if (isTeacherExamDataQuestion(q) || isTeacherExamFollowUp(q, recentHistory)) {
+    return enforceGroundingResult({
+      mode: 'application',
+      intent: { type: 'application', reason: 'teacher_exams' },
+      message: teacherAppOnlyReply(q, desk),
+      groundingStatus: 'application',
+      facts: { desk },
+    }, { protected: true, reason: 'teacher_exam_data' });
+  }
+
   const recentHistoryText = recentHistory.map((item) => item.content);
   const lowerQ = q.toLowerCase();
   const roster = Array.isArray(desk?.students) ? desk.students : [];
@@ -224,7 +239,7 @@ export async function runHybridTeacherVidyaChat({
     };
   }
 
-  if (classQ.classNumber && isClassGroupQuery(q)) {
+  if (classQ.classNumber && isClassGroupQuery(q) && !isTeacherExamDataQuestion(q)) {
     const classFacts = await buildClassGroupFacts({
       classNumber: classQ.classNumber,
       section: classQ.section,
@@ -248,14 +263,7 @@ export async function runHybridTeacherVidyaChat({
   }
 
   if (firewall.protected || isTeacherAppQuestion(q) || intent.type === 'application') {
-    const fallbackMessage = teacherAppOnlyReply(q, desk);
-    const message = isTeacherExamDataQuestion(q)
-      ? fallbackMessage
-      : await formatDynamicResponse({
-          userPrompt: q, plan: { mode: 'teacher_desk' },
-          facts: { ...desk, mode: 'teacher_desk', fallbackMessage },
-          viewerRole: 'teacher', history: recentHistory,
-        });
+    const message = teacherAppOnlyReply(q, desk);
     return enforceGroundingResult({
       mode: 'application',
       intent: intent.type === 'uncertain' ? { type: 'application', reason: 'teacher_desk' } : intent,
