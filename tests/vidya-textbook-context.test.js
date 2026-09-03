@@ -96,3 +96,37 @@ test('model-written Sources blocks are replaced by cited retrieved books only', 
   assert.match(out, /Maths 7th Alpha/);
   assert.doesNotMatch(out, /Chemistry/);
 });
+
+test('whole chapter synthesis includes every authorized indexed book fairly', async () => {
+  const chapter = title => ({ title: 'Chapter 1', startOffset: 0, endOffset: title.length });
+  const Books = model([
+    { _id: 'a', title: 'Alpha Course Book', subject: 'Mathematics', extractedText: 'Patterns and sequences', chapters: [chapter('Patterns and sequences')] },
+    { _id: 'b', title: 'Alpha Workbook', subject: 'Mathematics', extractedText: 'Visual number patterns', chapters: [chapter('Visual number patterns')] },
+  ]);
+  const result = await retrieveVidyaTextbookContext({
+    question: 'Teach me chapter 1 class 6 alpha maths', curriculum,
+    Books, Chunks: { find() { throw new Error('chapter boundaries should be used first'); } },
+  });
+  assert.equal(result.sources.length, 2);
+  assert.match(result.context, /Patterns and sequences/);
+  assert.match(result.context, /Visual number patterns/);
+  assert.match(result.context, /explain every listed subtopic/);
+});
+
+test('chapter chunk fallback cannot be monopolised by the first book', async () => {
+  const Books = model([
+    { _id: 'a', title: 'Course Book', subject: 'Mathematics' },
+    { _id: 'b', title: 'Workbook', subject: 'Mathematics' },
+  ]);
+  const rows = [
+    ...Array.from({ length: 15 }, (_, i) => ({ bookId: 'a', chapter: 'Chapter 1', chunkIndex: i, content: `Course section ${i}` })),
+    { bookId: 'b', chapter: 'Chapter 1', chunkIndex: 0, content: 'Workbook activity' },
+  ];
+  const result = await retrieveVidyaTextbookContext({
+    question: 'Teach me chapter 1 class 6 alpha maths', curriculum,
+    Books, Chunks: model(rows),
+  });
+  assert.match(result.context, /Course section 0/);
+  assert.match(result.context, /Workbook activity/);
+  assert.ok(result.sources.some(source => source.title === 'Workbook'));
+});

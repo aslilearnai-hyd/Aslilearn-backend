@@ -23,6 +23,7 @@ Quality:
 - Maths: never say that increasing a term always increases the total (false for subtraction). Never tell students to check by doing the operation in a different order. Use inverse operations, substitution, or estimation.
 - If you add identities, inverses, or isolating variables beyond the retrieved chapter, label that section **Enrichment** (not from this textbook excerpt).
 - Match the student's class. Do not skip steps. Do not dump the whole PDF.
+- For an entire-chapter request, cover every subtopic in the authoritative AI Tool Topics checklist and synthesize all supplied chapter-wide textbook evidence. Do not present one passage as the complete chapter.
 - Never write a Sources list. Never cite a book from a different subject. Cite only IDs supplied in the retrieved passages.`;
 
 const TEACHING_GENERATION = { temperature: 0.35, maxOutputTokens: 4096 };
