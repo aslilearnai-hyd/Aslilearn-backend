@@ -15,6 +15,7 @@ import TeacherWorkDiary from '../../models/TeacherWorkDiary.js';
 import RiskAnalysisReport from '../../models/RiskAnalysisReport.js';
 import GeminiPerformanceReport from '../../models/GeminiPerformanceReport.js';
 import { verifyToken } from '../../middleware/auth.js';
+import { mayAttachUpload } from '../../utils/private-upload-access.js';
 import { getMyWeeklyDigest } from '../../controllers/impactReportController.js';
 import { getSchoolAdminCalendarEvents, monthBounds } from '../../controllers/calendarController.js';
 import { examVisibleToSchool } from '../../utils/exam-visibility.js';
@@ -92,6 +93,9 @@ function isValidHomeworkSubmissionLink(link) {
 router.post('/homework-submission', async (req, res) => {
   try {
     const { homeworkId, submissionLink, description } = req.body;
+    if (submissionLink && !await mayAttachUpload(submissionLink, req.user)) {
+      return res.status(403).json({ success: false, message: 'You cannot attach this file.' });
+    }
     
     if (!homeworkId || !submissionLink) {
       return res.status(400).json({

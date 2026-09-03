@@ -1,4 +1,5 @@
 import jwt from 'jsonwebtoken';
+import { resolveActiveAccount } from './active-account.js';
 import {
   RefreshToken,
   PasswordResetToken,
@@ -38,6 +39,10 @@ export async function rotateRefreshToken(rawRefresh, meta = {}) {
   const tokenHash = hashOpaqueToken(rawRefresh);
   const existing = await RefreshToken.findOne({ tokenHash, revokedAt: null });
   if (!existing || existing.expiresAt.getTime() < Date.now()) {
+    return null;
+  }
+  if (!await resolveActiveAccount({ userId: String(existing.userId), role: existing.role })) {
+    await RefreshToken.updateMany({ userId: existing.userId, revokedAt: null }, { $set: { revokedAt: new Date() } });
     return null;
   }
   existing.revokedAt = new Date();

@@ -1,31 +1,10 @@
 /**
- * Role-scoped access rules for /uploads static files.
- * Signed query (?exp=&sig=) grants path-limited access without elevating role.
+ * Capability signing for /uploads. Non-super-admin roles require resource ACLs.
  */
 import crypto from 'crypto';
 
 const PUBLIC_PATH_RE =
-  /\/(logos?|brand|favicon|public)\b|\/schools\/logos?\b/i;
-
-/** Paths any authenticated school user may read */
-const SCHOOL_SHARED_PREFIXES = [
-  '/content/',
-  '/content/thumbnails/',
-  '/events/',
-  '/questions/',
-  '/ai-diagrams/',
-  '/pdfs/',
-  '/extracted/',
-  '/timetables/',
-];
-
-/** Admin / super-admin / teacher only */
-const STAFF_PREFIXES = [
-  '/reports/',
-  '/book-knowledge/',
-  '/pdf-knowledge/',
-  '/orders/',
-];
+  /^\/(logos?|brand|favicon|public)(\/|$)|^\/schools\/logos?(\/|$)/i;
 
 function normalizeUploadPath(reqPath) {
   let p = String(reqPath || '');
@@ -36,11 +15,7 @@ function normalizeUploadPath(reqPath) {
 
 export function isPublicUploadPath(reqPath) {
   const p = normalizeUploadPath(reqPath);
-  return PUBLIC_PATH_RE.test(p) || (p.endsWith('.svg') && p.includes('logo'));
-}
-
-function pathStartsWith(p, prefixes) {
-  return prefixes.some((pre) => p === pre.slice(0, -1) || p.startsWith(pre) || p.includes(pre));
+  return PUBLIC_PATH_RE.test(p);
 }
 
 /**
@@ -48,21 +23,9 @@ function pathStartsWith(p, prefixes) {
  * @param {{ role?: string }} user
  */
 export function roleMayAccessUpload(reqPath, user) {
-  const p = normalizeUploadPath(reqPath);
   const role = String(user?.role || '').toLowerCase();
 
-  if (role === 'super-admin' || role === 'admin') return true;
-
-  if (pathStartsWith(p, STAFF_PREFIXES)) {
-    return role === 'teacher';
-  }
-
-  if (pathStartsWith(p, SCHOOL_SHARED_PREFIXES)) {
-    return role === 'teacher' || role === 'student';
-  }
-
-  // Unknown folders: staff only (fail closed for students)
-  return role === 'teacher';
+  return role === 'super-admin';
 }
 
 function signingSecret() {

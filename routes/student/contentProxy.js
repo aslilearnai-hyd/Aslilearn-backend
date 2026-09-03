@@ -53,8 +53,8 @@ import {
   resolveExamQuestionSubjectKey,
 } from '../../utils/resolveSubjectContentIds.js';
 import { assertAllowedFetchUrl, getContentProxyAllowlist } from '../../utils/url-allowlist.js';
+import { canAccessPrivateUpload } from '../../utils/private-upload-access.js';
 import {
-  roleMayAccessUpload,
   signUploadPath,
 } from '../../utils/upload-access.js';
 import {
@@ -126,8 +126,9 @@ async function readLocalUploadFile(rawUrl, user) {
   const own = parseOwnUploadsPath(rawUrl);
   if (!own) return null;
 
-  const mountPath = own.absoluteUploadPath.replace(/^\/uploads/, '') || '/';
-  if (!roleMayAccessUpload(mountPath, user || { role: 'student' })) {
+  if (!await canAccessPrivateUpload(own.absoluteUploadPath, user, {
+    exp: own.parsed.searchParams.get('exp'), sig: own.parsed.searchParams.get('sig'),
+  })) {
     const err = new Error('Not allowed to access this file');
     err.status = 403;
     throw err;

@@ -14,7 +14,7 @@ let verifyTeacher;
 
 before(async () => {
   const auth = await import('../middleware/auth.js');
-  verifyToken = auth.verifyToken;
+  verifyToken = auth.createVerifyToken(async (claims) => claims);
   authorizeRoles = auth.authorizeRoles;
   verifyAdmin = auth.verifyAdmin;
   verifyTeacher = auth.verifyTeacher;
@@ -48,7 +48,7 @@ describe('verifyToken', () => {
     assert.equal(res.statusCode, 401);
   });
 
-  it('accepts valid Bearer token', () => {
+  it('accepts valid Bearer token', async () => {
     const token = jwt.sign(
       { userId: '507f1f77bcf86cd799439011', role: 'student' },
       process.env.JWT_SECRET,
@@ -57,7 +57,7 @@ describe('verifyToken', () => {
     const req = { headers: { authorization: `Bearer ${token}` }, cookies: {} };
     const res = mockRes();
     let next = false;
-    verifyToken(req, res, () => {
+    await verifyToken(req, res, () => {
       next = true;
     });
     assert.equal(next, true);
