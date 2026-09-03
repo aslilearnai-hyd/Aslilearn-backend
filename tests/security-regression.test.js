@@ -115,19 +115,20 @@ describe('upload access ACL', () => {
     assert.equal(isPublicUploadPath('/content/secret.pdf'), false);
   });
 
-  it('allows students school-shared paths including timetables', () => {
-    assert.equal(roleMayAccessUpload('/content/a.pdf', { role: 'student' }), true);
-    assert.equal(roleMayAccessUpload('/timetables/7c.jpg', { role: 'student' }), true);
+  it('requires resource authorization even for school-shared paths', () => {
+    assert.equal(roleMayAccessUpload('/content/a.pdf', { role: 'student' }), false);
+    assert.equal(roleMayAccessUpload('/timetables/7c.jpg', { role: 'student' }), false);
   });
 
   it('blocks students from pdf-knowledge and orders', () => {
     assert.equal(roleMayAccessUpload('/pdf-knowledge/a.pdf', { role: 'student' }), false);
     assert.equal(roleMayAccessUpload('/orders/documents/a.pdf', { role: 'student' }), false);
-    assert.equal(roleMayAccessUpload('/content/a.pdf', { role: 'student' }), true);
+    assert.equal(roleMayAccessUpload('/content/a.pdf', { role: 'student' }), false);
   });
 
-  it('allows admin all paths', () => {
-    assert.equal(roleMayAccessUpload('/orders/documents/a.pdf', { role: 'admin' }), true);
+  it('does not give school admins global file access', () => {
+    assert.equal(roleMayAccessUpload('/orders/documents/a.pdf', { role: 'admin' }), false);
+    assert.equal(roleMayAccessUpload('/orders/documents/a.pdf', { role: 'super-admin' }), true);
   });
 
   it('round-trips signed upload URLs', () => {

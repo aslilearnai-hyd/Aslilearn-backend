@@ -2,6 +2,7 @@ node_modules/
 **/node_modules/
 
 # Environment — never commit secrets
+.env*
 .env
 .env.local
 .env.development

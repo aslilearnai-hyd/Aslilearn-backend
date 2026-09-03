@@ -1,9 +1,10 @@
 import jwt from 'jsonwebtoken';
 import { JWT_SECRET, JWT_VERIFY_OPTS } from '../config/jwt.js';
 import { extractAuthToken } from '../utils/auth-cookie.js';
+import { resolveActiveAccount } from '../utils/active-account.js';
 
 // Enhanced middleware to verify JWT token and extract user info
-export const verifyToken = (req, res, next) => {
+export const createVerifyToken = (resolveAccount = resolveActiveAccount) => async (req, res, next) => {
   const token = extractAuthToken(req);
 
   if (!token) {
@@ -12,13 +13,16 @@ export const verifyToken = (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, JWT_SECRET, JWT_VERIFY_OPTS);
-    req.user = decoded;
-    req.userId = decoded.userId || decoded.id; // Handle different JWT structures
+    const account = await resolveAccount(decoded);
+    if (!account) return res.status(401).json({ success: false, message: 'Account is inactive or unavailable. Please log in again.' });
+    req.user = account;
+    req.userId = account.userId || account.id;
     next();
   } catch (error) {
     res.status(401).json({ success: false, message: 'Invalid token.' });
   }
 };
+export const verifyToken = createVerifyToken();
 
 // Middleware to check if user is super admin
 export const verifySuperAdmin = (req, res, next) => {
@@ -181,4 +185,3 @@ export const addAdminIdToBody = (req, res, next) => {
   }
   next();
 };
-

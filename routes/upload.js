@@ -8,28 +8,12 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { verifyToken, authorizeRoles } from '../middleware/auth.js';
+import UploadAsset from '../models/UploadAsset.js';
+import { isAllowedUploadMetadata, matchesUploadBytes } from '../utils/upload-validation.js';
 
 const router = express.Router();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-const ALLOWED_EXT = new Set([
-  '.pdf',
-  '.doc',
-  '.docx',
-  '.ppt',
-  '.pptx',
-  '.xls',
-  '.xlsx',
-  '.txt',
-  '.png',
-  '.jpg',
-  '.jpeg',
-  '.webp',
-]);
-
-const ALLOWED_MIME_RE =
-  /^(application\/(pdf|msword|vnd\.|octet-stream)|text\/plain|image\/(png|jpeg|webp|jpg))/i;
 
 const storage = multer.diskStorage({
   destination(req, file, cb) {
@@ -61,9 +45,8 @@ const upload = multer({
   storage,
   limits: { fileSize: 25 * 1024 * 1024 }, // 25MB — homework PDFs
   fileFilter(req, file, cb) {
-    const ext = path.extname(file.originalname || '').toLowerCase();
     const mime = String(file.mimetype || '');
-    if (!ALLOWED_EXT.has(ext) && !ALLOWED_MIME_RE.test(mime)) {
+    if (!isAllowedUploadMetadata(file.originalname, mime)) {
       return cb(
         new Error(
           'Unsupported file type. Use PDF, DOC, DOCX, PPT, PPTX, XLS, XLSX, TXT, or a common image format.'
@@ -97,7 +80,7 @@ router.post(
       next();
     });
   },
-  (req, res) => {
+  async (req, res) => {
     try {
       if (!req.file) {
         return res.status(400).json({
@@ -107,6 +90,18 @@ router.post(
       }
 
       const fileUrl = `/uploads/content/${req.file.filename}`;
+      const handle = await fs.promises.open(req.file.path, 'r');
+      let header;
+      try {
+        const buffer = Buffer.alloc(4096);
+        const { bytesRead } = await handle.read(buffer, 0, buffer.length, 0);
+        header = buffer.subarray(0, bytesRead);
+      } finally { await handle.close(); }
+      if (!matchesUploadBytes(req.file.filename, header)) {
+        await fs.promises.unlink(req.file.path);
+        return res.status(400).json({ success: false, message: 'File contents do not match the declared type.' });
+      }
+      await UploadAsset.create({ path: fileUrl, ownerId: req.userId, ownerRole: req.user.role });
       console.log('File uploaded via /api/upload:', {
         fileUrl,
         role: req.user?.role,
@@ -126,6 +121,7 @@ router.post(
         message: 'File uploaded successfully',
       });
     } catch (error) {
+      if (req.file?.path) await fs.promises.unlink(req.file.path).catch(() => {});
       console.error('Failed to finalize upload:', error);
       res.status(500).json({
         success: false,

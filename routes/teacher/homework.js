@@ -52,6 +52,7 @@ import {
 } from '../../utils/resolveSubjectContentIds.js';
 import { parseDateKeyToUtc, getTeacherClassesHandler } from './helpers.js';
 import { normalizeUploadUrlForStorage, withSignedUploadUrl } from '../../utils/upload-access.js';
+import { mayAttachUpload } from '../../utils/private-upload-access.js';
 
 function asPlainDoc(doc) {
   if (!doc) return doc;
@@ -131,6 +132,9 @@ router.post('/homework', async (req, res) => {
       return res.status(404).json({ success: false, message: 'Subject not found' });
     }
     
+    if (!await mayAttachUpload(fileUrl, req.user)) {
+      return res.status(403).json({ success: false, message: 'You cannot attach this file.' });
+    }
     const homeworkData = {
       title: title.trim(),
       description: description?.trim() || undefined,

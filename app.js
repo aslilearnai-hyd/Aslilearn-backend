@@ -3,6 +3,8 @@ import cors from 'cors';
 import helmet from 'helmet';
 import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
+import { resolveActiveAccount } from './utils/active-account.js';
+import { canAccessPrivateUpload } from './utils/private-upload-access.js';
 import { join } from 'path';
 import { requestContext } from './middleware/request-context.js';
 import { auditTrail } from './middleware/audit-trail.js';
@@ -18,7 +20,6 @@ import {
 import { createCsrfOriginGuard } from './middleware/csrf-origin.js';
 import {
   isPublicUploadPath,
-  roleMayAccessUpload,
   verifyUploadSignature,
 } from './utils/upload-access.js';
 import { getAllowedOrigins } from './bootstrap/cors-origins.js';
@@ -169,9 +170,14 @@ const TRUSTED_FRAME_ANCESTORS =
 
   app.use(
     '/uploads',
-    (req, res, next) => {
+    async (req, res, next) => {
   res.removeHeader('X-Frame-Options');
-  res.setHeader('Content-Security-Policy', TRUSTED_FRAME_ANCESTORS);
+  res.setHeader('Content-Security-Policy', `default-src 'none'; script-src 'none'; object-src 'none'; base-uri 'none'; sandbox; ${TRUSTED_FRAME_ANCESTORS}`);
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('Cache-Control', 'private, no-store');
+  if (/\.(html?|svg|xml|js|mjs)$/i.test(req.path)) {
+    res.setHeader('Content-Disposition', 'attachment');
+  }
 
   if (isPublicUploadPath(req.path)) return next();
 
@@ -188,7 +194,9 @@ const TRUSTED_FRAME_ANCESTORS =
   }
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET, { algorithms: ['HS256'] });
-    if (!roleMayAccessUpload(req.path, decoded)) {
+    const account = await resolveActiveAccount(decoded);
+    if (!account) return res.status(401).json({ success: false, message: 'Account is inactive or unavailable' });
+    if (!await canAccessPrivateUpload(absolutePath, account)) {
       return res.status(403).json({ success: false, message: 'Not allowed to access this file' });
     }
     return next();
