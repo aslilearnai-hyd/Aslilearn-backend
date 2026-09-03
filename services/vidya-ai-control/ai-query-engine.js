@@ -17,11 +17,13 @@ import User from '../../models/User.js';
 import Teacher from '../../models/Teacher.js';
 import Exam from '../../models/Exam.js';
 import ExamResult from '../../models/ExamResult.js';
+import UserSession from '../../models/UserSession.js';
+import School from '../../models/School.js';
 import { istYmd, istStartOfDayInstant, istEndOfDayInstant } from './ist-time.js';
 
 async function answerTodayLoginQuestion({ userMessage, history = [] }) {
   const recent = (Array.isArray(history) ? history : []).slice(-6).map(turn => String(turn?.content || '')).join('\n');
-  const explicit = /\b(?:logins?|logged\s+in|login users?)\b/i.test(userMessage);
+  const explicit = /\b(?:logins?|logined|logged\s+in|login users?)\b/i.test(userMessage);
   const loginFollowUp = /\b(?:who (?:are )?(?:those|they|them|users)|give (?:me )?all|list (?:them|those|users)|their names?)\b/i.test(userMessage)
     && /\b(?:logins?|logged\s+in)\b[\s\S]{0,80}\btoday\b/i.test(recent);
   if ((!explicit && !loginFollowUp) || (!/\btoday\b/i.test(userMessage) && !loginFollowUp)) return null;
@@ -32,8 +34,8 @@ async function answerTodayLoginQuestion({ userMessage, history = [] }) {
     Teacher.find({ lastLogin: range }).select('fullName email lastLogin').sort({ lastLogin: -1 }).lean(),
   ]);
   const people = [
-    ...users.map(row => ({ name: row.fullName || row.email || 'User', role: row.role || 'user', lastLogin: row.lastLogin })),
-    ...teachers.map(row => ({ name: row.fullName || row.email || 'Teacher', role: 'teacher', lastLogin: row.lastLogin })),
+    ...users.map(row => ({ id: String(row._id), name: row.fullName || row.email || 'User', role: row.role || 'user', lastLogin: row.lastLogin })),
+    ...teachers.map(row => ({ id: String(row._id), name: row.fullName || row.email || 'Teacher', role: 'teacher', lastLogin: row.lastLogin })),
   ].sort((a, b) => new Date(b.lastLogin || 0) - new Date(a.lastLogin || 0));
   const asksWho = /\bwho\b|\bthose\b|\bthem\b|\bnames?\b/i.test(userMessage);
   const message = asksWho
@@ -42,6 +44,49 @@ async function answerTodayLoginQuestion({ userMessage, history = [] }) {
       : 'No users have logged in today.'
     : `${people.length} unique user${people.length === 1 ? '' : 's'} logged in today.`;
   return { message, count: people.length, rows: people, date: ymd };
+}
+
+async function answerIndividualUsageTime({ userMessage, history = [] }) {
+  const recent = (Array.isArray(history) ? history : []).slice(-8).map(turn => String(turn?.content || '')).join('\n');
+  const explicit = /\b(each|individual|per[- ]?user)\b[\s\S]{0,50}\b(time|minutes?|usage)\b|\btime\b[\s\S]{0,40}\beach\b/i.test(userMessage);
+  const followUp = /\b(where are those|show (?:it|them|records?)|what (?:are|is) (?:that|those) records?)\b/i.test(userMessage)
+    && /\b(?:individual|each|per[- ]?user|learning_sessions|time spent)\b/i.test(recent);
+  if (!explicit && !followUp) return null;
+  const ymd = istYmd(new Date());
+  const range = { $gte: istStartOfDayInstant(ymd), $lte: istEndOfDayInstant(ymd) };
+  const [users, teachers, sessions] = await Promise.all([
+    User.find({ lastLogin: range }).select('_id fullName email role').lean(),
+    Teacher.find({ lastLogin: range }).select('_id fullName email').lean(),
+    UserSession.aggregate([{ $match: { date: ymd } }, { $group: { _id: '$userId', minutes: { $sum: '$duration' } } }]),
+  ]);
+  const minutes = new Map(sessions.map(row => [String(row._id), Math.max(0, Number(row.minutes) || 0)]));
+  const people = [
+    ...users.map(row => ({ id: String(row._id), name: row.fullName || row.email || 'User', role: row.role || 'user' })),
+    ...teachers.map(row => ({ id: String(row._id), name: row.fullName || row.email || 'Teacher', role: 'teacher' })),
+  ];
+  const lines = people.map((person, index) => `${index + 1}. ${person.name} [${person.role}] — ${minutes.get(person.id) || 0} minutes`);
+  return { message: people.length ? `Today's tracked time for ${people.length} logged-in users:\n\n${lines.join('\n')}` : 'No users logged in today.', rows: people, date: ymd };
+}
+
+async function answerLargestSchool({ userMessage, history = [] }) {
+  const recent = (Array.isArray(history) ? history : []).slice(-6).map(turn => String(turn?.content || '')).join('\n');
+  const explicit = /\b(?:which|what|show)\b[\s\S]{0,40}\bschool\b[\s\S]{0,50}\b(?:maximum|most|highest|largest)\b|\b(?:maximum|most|highest|largest)\b[\s\S]{0,50}\bstudents?\b/i.test(userMessage);
+  const recheck = /\b(?:wrong|recheck|check again|verify again)\b/i.test(userMessage) && /\bschool\b[\s\S]{0,80}\b(?:maximum|most|highest|largest|students?)\b/i.test(recent);
+  if (!explicit && !recheck) return null;
+  const top = await User.aggregate([
+    { $match: { role: 'student', assignedAdmin: { $type: 'objectId' } } },
+    { $group: { _id: '$assignedAdmin', students: { $sum: 1 } } },
+    { $sort: { students: -1 } },
+    { $limit: 1 },
+  ]);
+  if (!top.length) return { message: 'No school-linked students were found.', schoolName: '', studentCount: 0 };
+  const adminId = top[0]._id;
+  const [school, admin] = await Promise.all([
+    School.findOne({ adminUserId: adminId }).select('name').lean(),
+    User.findById(adminId).select('schoolName fullName email').lean(),
+  ]);
+  const schoolName = school?.name || admin?.schoolName || admin?.fullName || admin?.email || 'Unknown school';
+  return { message: `${schoolName} has the highest student count: ${top[0].students}.`, schoolName, studentCount: top[0].students };
 }
 
 async function answerExamAttemptFollowUp({ userMessage, history, viewerRole, viewerUserId }) {
@@ -86,6 +131,10 @@ export async function runDynamicAiQuery({
   viewerRole,
   viewerUserId,
 }) {
+  const usageTime = await answerIndividualUsageTime({ userMessage, history });
+  if (usageTime) return { ok: true, plan: { mode: 'database', module: 'learning_sessions', operation: 'list' }, facts: usageTime, message: usageTime.message, auditQuery: 'SELECT SUM(duration) per logged-in user for today (IST)', notes: ['Joined session totals to user and teacher names.'] };
+  const largestSchool = await answerLargestSchool({ userMessage, history });
+  if (largestSchool) return { ok: true, plan: { mode: 'database', module: 'schools', operation: 'aggregate' }, facts: largestSchool, message: largestSchool.message, auditQuery: 'SELECT assignedAdmin, COUNT(students) GROUP BY assignedAdmin ORDER BY count DESC LIMIT 1', notes: ['Returned both school identity and exact student count.'] };
   const todayLogins = await answerTodayLoginQuestion({ userMessage, history });
   if (todayLogins) {
     return { ok: true, plan: { mode: 'database', module: 'users', operation: /\bwho\b|\bthose\b|\bthem\b|\bnames?\b/i.test(userMessage) ? 'list' : 'count' }, facts: todayLogins, message: todayLogins.message, auditQuery: 'SELECT users and teachers WHERE lastLogin is today (IST)', notes: ['Count and list use the same unique-user definition.'] };
