@@ -54,12 +54,19 @@ export async function runHybridTeacherVidyaChat({
   viewerUserId,
   question,
   history = [],
+  context = {},
 }) {
   let q = String(question || '').trim();
   if (!q) {
     const e = new Error('message is required');
     e.statusCode = 400;
     throw e;
+  }
+  const selectedSubject = String(context?.currentSubject || '').trim().slice(0, 120);
+  const selectedTopic = String(context?.currentTopic || '').trim().slice(0, 180);
+  if (isTeacherLearningRequest(q) && (selectedSubject || selectedTopic)) {
+    q = [selectedSubject ? `Selected subject: ${selectedSubject}.` : '', selectedTopic ? `Selected topic: ${selectedTopic}.` : '', q]
+      .filter(Boolean).join(' ');
   }
 
   const intent = detectQueryIntent(q);

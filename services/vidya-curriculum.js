@@ -17,7 +17,8 @@ const grade = value => String(value || '').match(/\d+/)?.[0] || '';
 const boardKey = value => /^(IIT|IIT\/NEET)$/i.test(value) ? 'IIT/NEET' : String(value || '').toUpperCase();
 const subjectKey = value => {
   const text = normalizeSubjectLabel(value);
-  const known = text.match(/\b(mathematics|maths?|physics|chemistry|biology|science|english|telugu|hindi|social)\b/)?.[1];
+  const known = text.match(/\b(mathematics|maths?|physics|chemistry|biology|bio|science|english|telugu|hindi|social)\b/)?.[1];
+  if (known === 'bio') return 'biology';
   return /^math/.test(known || '') ? 'mathematics' : known || text;
 };
 export { subjectKey };
@@ -35,11 +36,11 @@ export function parseCurriculumRequest(question, history = []) {
     return {
       text,
       requested: /\b(chapters?|subtopics?|sub topics?|syllabus|curriculum|textbooks?|pdfs?|book|alpha|beta|gamma|delta)\b/.test(text),
-      classNumber: text.match(/\b(?:class|grade)\s*(\d{1,2})\b|\b(\d{1,2})(?:st|nd|rd|th)\s+(?:class|grade|maths?|mathematics|physics|chemistry|biology|science|english|telugu|hindi)\b/)?.slice(1).find(Boolean) || '',
+      classNumber: text.match(/\b(?:class|grade)\s*(\d{1,2})\b|\b(\d{1,2})(?:st|nd|rd|th)\s+(?:class|grade|maths?|mathematics|physics|chemistry|biology|bio|science|english|telugu|hindi)\b|\b(?:maths?|mathematics|physics|chemistry|biology|bio|science|english|telugu|hindi)\s*[-_]\s*(\d{1,2})\b/)?.slice(1).find(Boolean) || '',
       chapter: chapter ? Number(chapter[1] || chapter[2] || ordinal[chapter[3]]) : null,
       track: text.match(/\b(alpha|beta|gamma|delta|general)\b/)?.[1]?.toUpperCase(),
       board: /\biit\b|\bneet\b/.test(text) ? 'IIT/NEET' : text.match(/\b(cbse|ssc|icse|ib)\b/)?.[1]?.toUpperCase(),
-      subject: text.match(/\b(maths?|mathematics|physics|chemistry|biology|science|english|telugu|hindi|social)\b/)?.[1],
+      subject: text.match(/\b(maths?|mathematics|physics|chemistry|biology|bio|science|english|telugu|hindi|social)\b/)?.[1],
     };
   };
 

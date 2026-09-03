@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { parseCurriculumRequest, resolveVidyaCurriculum } from '../services/vidya-curriculum.js';
+import { parseCurriculumRequest, resolveVidyaCurriculum, subjectKey } from '../services/vidya-curriculum.js';
 const userId = '507f1f77bcf86cd799439011';
 const scope = { board: 'IIT/NEET', track: 'ALPHA', classNumber: '6', subject: 'mathematics' };
 const rows = [
@@ -62,4 +62,10 @@ test('learning follow-up keeps only the asked subject scopes', async () => {
 test('general concept needs no curriculum database lookup', async () => {
   const result = await resolveVidyaCurriculum({ question: 'what is a magnetic field?', load: () => { throw new Error('should not load'); } });
   assert.equal(result.context, '');
+});
+
+test('teacher subject selector labels provide subject and class scope', () => {
+  const request = parseCurriculumRequest('Selected subject: BIO - 7. Create a lesson plan.');
+  assert.equal(subjectKey(request.subject), 'biology');
+  assert.equal(request.classNumber, '7');
 });
