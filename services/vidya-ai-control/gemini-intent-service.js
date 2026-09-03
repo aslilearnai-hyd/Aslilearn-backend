@@ -6,6 +6,7 @@ import {
   isPublishedCatalogQuery,
   extractSchoolNameQuery,
   isSchoolDetailQuery,
+  isNamedSchoolMetricQuery,
 } from './school-overview-facts.js';
 import {
   extractPersonNameQuery,
@@ -381,7 +382,11 @@ function buildHeuristicPlan(message, errMessage = '') {
 
   const namedSchool = extractSchoolNameQuery(message);
   if (namedSchool) {
-    if (isSchoolDetailQuery(message) || /(details?|info|about|overview)/i.test(message)) {
+    if (
+      isNamedSchoolMetricQuery(message) ||
+      isSchoolDetailQuery(message) ||
+      /(details?|info|about|overview)/i.test(message)
+    ) {
       return buildSchoolDetailPlan(namedSchool, errMessage);
     }
     return buildSchoolSearchPlan(namedSchool, errMessage);
@@ -666,7 +671,7 @@ export async function parseDynamicIntent({ userMessage, history = [] }) {
   }
 
   const namedSchoolEarly = extractSchoolNameQuery(message);
-  if (namedSchoolEarly && isSchoolDetailQuery(message)) {
+  if (namedSchoolEarly && (isSchoolDetailQuery(message) || isNamedSchoolMetricQuery(message))) {
     return buildSchoolDetailPlan(namedSchoolEarly);
   }
 
@@ -720,6 +725,7 @@ Rules:
 - Never set personNameQuery to metric words like "videos", "assessments", "number", or "count".
 - For a class/section group ("Class 7A performance", "how is class 8 doing?"), choose mode="class_detail" with classNumberQuery and optional sectionQuery.
 - For named school details ("details about X school", "tell me about school X"), choose mode="school_detail", module="schools", and set schoolNameQuery to the school name.
+- For counts inside a named school ("how many teachers are there in brainfeed school", "students in X school"), also choose mode="school_detail" and set schoolNameQuery to the distinctive school name (do not require the word "details"). Do not filter the teachers collection by the school name as a person name.
 - Never map "test school" / school names containing "test" to exams.
 - School counts/lists use module="schools" (School collection name field), not users.
 - "usage analytics" / AI usage → module="analytics". "audit log" → module="audit_logs". When the user says grouped by school, set operation="aggregate" and groupBy=["school"].
@@ -765,10 +771,7 @@ ${message.slice(0, 4500)}
   }
 
   const namedSchool = extractSchoolNameQuery(message) || String(parsed.schoolNameQuery || '').trim();
-  if (
-    namedSchool &&
-    (String(parsed.mode || '').toLowerCase() === 'school_detail' || isSchoolDetailQuery(message))
-  ) {
+  if (namedSchool && (String(parsed.mode || '').toLowerCase() === 'school_detail' || isSchoolDetailQuery(message) || isNamedSchoolMetricQuery(message))) {
     return buildSchoolDetailPlan(namedSchool);
   }
   if (
