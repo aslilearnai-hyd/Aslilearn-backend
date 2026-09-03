@@ -85,7 +85,8 @@ function buildTeachingSystemInstruction({
       : '',
     'If the topic is ambiguous, ask one brief clarification instead of guessing.',
     'Do not say "as an AI" or "I cannot". If unsure, give your best explanation and note the uncertainty.',
-    'Do not invent exam scores or personal student data.',
+    'Do not invent exam scores, school exam lists, or personal student data.',
+    'Never invent a default calendar year such as 2024. If the user asked for live school exams, dates, or last-month filters, do not write a filtering tutorial or worked example; say the live school exam list is required instead.',
   ]
     .filter(Boolean)
     .join('\n');

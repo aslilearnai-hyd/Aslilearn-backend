@@ -43,6 +43,120 @@ function formatShortDate(value) {
   }
 }
 
+const MONTH_NAME_TO_NUM = {
+  january: 1, jan: 1, february: 2, feb: 2, march: 3, mar: 3, april: 4, apr: 4,
+  may: 5, june: 6, jun: 6, july: 7, jul: 7, august: 8, aug: 8,
+  september: 9, sep: 9, sept: 9, october: 10, oct: 10, november: 11, nov: 11,
+  december: 12, dec: 12,
+};
+
+function istYearMonth(d = new Date()) {
+  const [year, month] = istYmd(d).split('-').map(Number);
+  return { year, month };
+}
+
+function previousIstMonth(d = new Date()) {
+  const { year, month } = istYearMonth(d);
+  return month === 1 ? { year: year - 1, month: 12 } : { year, month: month - 1 };
+}
+
+function monthLabel({ year, month }) {
+  const names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  if (month) return `${names[month - 1]} ${year}`;
+  return String(year);
+}
+
+export function isTeacherExamDataQuestion(question) {
+  const q = String(question || '').toLowerCase();
+  if (!/\bexams?\b/.test(q)) return false;
+  if (
+    /\b(what is|define|meaning of|explain the concept)\b/.test(q) &&
+    !/\b(list|show|latest|recent|upcoming|schedule|last month|this month)\b/.test(q)
+  ) {
+    return false;
+  }
+  return (
+    /\b(list|show|give|get|display|fetch|which|what|latest|recent|upcoming|open|scheduled?)\b/.test(q) ||
+    /\b(last|this|previous|past)\s+month\b/.test(q) ||
+    /\b(january|jan|february|feb|march|mar|april|apr|may|june|jun|july|jul|august|aug|september|sep|sept|october|oct|november|nov|december|dec)\b/.test(q) ||
+    /\b20\d{2}\b/.test(q) ||
+    /^(?:the\s+)?(?:latest\s+|recent\s+)?exams?\??$/.test(q.trim()) ||
+    /\bhow many\b/.test(q)
+  );
+}
+
+function parseExamTimeFilter(question, now = new Date()) {
+  const q = String(question || '').toLowerCase();
+  if (/\b(last|previous|past)\s+month\b/.test(q)) return previousIstMonth(now);
+  if (/\b(this|current)\s+month\b/.test(q)) return istYearMonth(now);
+  if (/\blast\s+year\b/.test(q)) return { year: istYearMonth(now).year - 1, month: null };
+  const named = q.match(
+    /\b(january|jan|february|feb|march|mar|april|apr|may|june|jun|july|jul|august|aug|september|sep|sept|october|oct|november|nov|december|dec)\b(?:\s+(\d{4}))?/,
+  );
+  if (named) {
+    return {
+      year: named[2] ? Number(named[2]) : istYearMonth(now).year,
+      month: MONTH_NAME_TO_NUM[named[1]],
+    };
+  }
+  const iso = q.match(/\b(20\d{2})-(\d{1,2})\b/);
+  if (iso) return { year: Number(iso[1]), month: Number(iso[2]) };
+  const dmy = q.match(/\b(\d{1,2})[/-](20\d{2})\b/);
+  if (dmy) return { year: Number(dmy[2]), month: Number(dmy[1]) };
+  const yearOnly = q.match(/\bin\s+(20\d{2})\b/);
+  if (yearOnly) return { year: Number(yearOnly[1]), month: null };
+  return null;
+}
+
+function examYearMonth(exam) {
+  const raw = exam?.startIso || exam?.startDate || exam?.completedAt;
+  if (!raw) return null;
+  const parsed = new Date(raw);
+  if (Number.isNaN(parsed.getTime())) return null;
+  return istYearMonth(parsed);
+}
+
+function collectDeskExams(desk) {
+  const rows = [
+    ...(Array.isArray(desk?.exams?.recent) ? desk.exams.recent : []),
+    ...(Array.isArray(desk?.exams?.open) ? desk.exams.open : []),
+    ...(Array.isArray(desk?.exams?.upcoming) ? desk.exams.upcoming : []),
+  ];
+  const seen = new Set();
+  return rows.filter((exam) => {
+    const key = `${exam.title || ''}|${exam.startIso || exam.startLabel || ''}|${exam.classNumber || ''}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+function formatExamListLine(exam, index) {
+  return `${index + 1}. **${exam.title || 'Exam'}**${exam.subject ? ` — ${exam.subject}` : ''}${
+    exam.classNumber ? ` · Class ${exam.classNumber}` : ''
+  }${exam.startLabel ? ` · ${exam.startLabel}` : ''}`;
+}
+
+function listSchoolExams(question, desk, now = new Date()) {
+  const exams = collectDeskExams(desk);
+  const filter = parseExamTimeFilter(question, now);
+  const matched = filter
+    ? exams.filter((exam) => {
+        const ym = examYearMonth(exam);
+        if (!ym) return false;
+        if (ym.year !== filter.year) return false;
+        if (filter.month && ym.month !== filter.month) return false;
+        return true;
+      })
+    : exams;
+  if (!matched.length) {
+    if (filter) return `No school exams are scheduled for **${monthLabel(filter)}**.`;
+    return 'No regular exams are available for your school right now.';
+  }
+  const heading = filter ? `**School exams in ${monthLabel(filter)}:**` : '**Latest school exams:**';
+  return `${heading}\n\n${matched.map(formatExamListLine).join('\n')}`;
+}
+
 export async function buildTeacherAppDeskFacts(teacherUserId) {
   const teacherOid = oid(teacherUserId);
   if (!teacherOid) {
@@ -178,7 +292,7 @@ export async function buildTeacherAppDeskFacts(teacherUserId) {
     })
       .select('title startDate endDate subject assignedClasses classNumber')
       .sort({ startDate: -1, createdAt: -1 })
-      .limit(20)
+      .limit(40)
       .lean(),
   ]);
 
@@ -191,6 +305,8 @@ export async function buildTeacherAppDeskFacts(teacherUserId) {
     const row = {
       title: exam.title || 'Exam',
       subject: exam.subject || '',
+      classNumber: exam.classNumber || '',
+      startIso: exam.startDate ? new Date(exam.startDate).toISOString() : '',
       startLabel: formatShortDate(exam.startDate),
       endLabel: formatShortDate(exam.endDate),
     };
@@ -264,6 +380,7 @@ export async function buildTeacherAppDeskFacts(teacherUserId) {
         title: exam.title || 'Exam',
         subject: exam.subject || '',
         classNumber: exam.classNumber || '',
+        startIso: exam.startDate ? new Date(exam.startDate).toISOString() : '',
         startLabel: formatShortDate(exam.startDate),
         endLabel: formatShortDate(exam.endDate),
       })),
@@ -330,7 +447,7 @@ function emptyDesk() {
   };
 }
 
-export function teacherAppOnlyReply(question, desk, entityFallbackMessage = '') {
+export function teacherAppOnlyReply(question, desk, entityFallbackMessage = '', now = new Date()) {
   const q = String(question || '').toLowerCase();
   const name = desk?.profile?.name || 'Teacher';
   const totals = desk?.totals || {};
@@ -444,10 +561,22 @@ export function teacherAppOnlyReply(question, desk, entityFallbackMessage = '') 
     return reply.trim();
   }
 
-  if (/latest exams?|recent exams?|(?:list|show) (?:the )?(?:latest |recent )?exams?/.test(q)) {
-    const recent = Array.isArray(desk.exams?.recent) ? desk.exams.recent : [];
-    if (!recent.length) return 'No regular exams are available for your school right now.';
-    return `**Latest school exams:**\n\n${recent.map((exam, index) => `${index + 1}. **${exam.title}**${exam.subject ? ` — ${exam.subject}` : ''}${exam.classNumber ? ` · Class ${exam.classNumber}` : ''}${exam.startLabel ? ` · ${exam.startLabel}` : ''}`).join('\n')}`;
+  if (isTeacherExamDataQuestion(question)) {
+    if (wantCount && !/last month|this month|previous month/.test(q)) {
+      return (
+        `Open exams: **${desk.exams?.open?.length || 0}** · ` +
+        `Upcoming: **${desk.exams?.upcoming?.length || 0}**` +
+        (desk.exams?.resultsCount30d
+          ? ` · attempts (30d): **${desk.exams.resultsCount30d}**`
+          : '') +
+        '.'
+      );
+    }
+    if (/upcoming exam|open exam|exam schedule/.test(q) && !/latest|recent|last month|this month|list|show/.test(q)) {
+      // keep the open/upcoming breakdown below
+    } else {
+      return listSchoolExams(question, desk, now);
+    }
   }
 
   if (/upcoming exam|open exam|exam schedule|what exams/.test(q) || (/exam/.test(q) && /upcoming|open|schedule|how many/.test(q))) {
