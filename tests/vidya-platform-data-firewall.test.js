@@ -17,6 +17,8 @@ const protectedCases = [
   ['teacher', 'tell me about a student by name'],
   ['teacher', 'student report'],
   ['teacher', 'how many students do I have'],
+  ['teacher', 'list the latest exams'],
+  ['teacher', 'exams last month'],
   ['teacher', 'show my classes'],
   ['teacher', 'class performance'],
   ['admin', 'show my school students'],

@@ -16,6 +16,7 @@ import {
 import { formatDynamicResponse } from '../vidya-ai-control/response-formatter.js';
 import {
   buildTeacherAppDeskFacts,
+  isTeacherExamDataQuestion,
   teacherAppOnlyReply,
 } from './teacher-app-desk-facts.js';
 import { classifyPlatformDataQuestion, enforceGroundingResult } from '../vidya-platform-data-firewall.js';
@@ -26,11 +27,14 @@ const connectionFallbackMessage = () =>
 export function isTeacherAppQuestion(q) {
   const lower = String(q || '').toLowerCase();
   return (
-    /what should i do|today|daily plan|my classes|my students|roster|attendance|homework|assignment|upcoming exam|open exam|latest exams?|recent exams?|(?:list|show) (?:the )?(?:latest |recent )?exams?|quiz|assessment|\bomr\b|work diary|overview|summary|how many (students|classes)|dashboard|logged in|\bstudent\b.*\b(name|details?|report|progress|performance|marks?|scores?)\b/.test(
+    isTeacherExamDataQuestion(q) ||
+    /what should i do|today|daily plan|my classes|my students|roster|attendance|homework|assignment|upcoming exam|open exam|quiz|assessment|\bomr\b|work diary|overview|summary|how many (students|classes)|dashboard|logged in|\bstudent\b.*\b(name|details?|report|progress|performance|marks?|scores?)\b/.test(
       lower,
     ) || detectQueryIntent(q).type === 'application'
   );
 }
+
+export { isTeacherExamDataQuestion };
 
 export function isTeacherLearningRequest(question) {
   const q = String(question || '').toLowerCase();
@@ -105,7 +109,8 @@ export async function runHybridTeacherVidyaChat({
 
   // A class number inside a lesson request describes curriculum scope; it is
   // not a request for class dashboard metrics. Resolve curriculum/PDFs first.
-  if (isTeacherLearningRequest(q)) {
+  // School exam lists must never fall through to the tutor "worked example" path.
+  if (!isTeacherExamDataQuestion(q) && isTeacherLearningRequest(q)) {
     try {
       const conceptAnswer = await generateGeneralKnowledgeAnswer({
         viewerUserId,
@@ -244,7 +249,7 @@ export async function runHybridTeacherVidyaChat({
 
   if (firewall.protected || isTeacherAppQuestion(q) || intent.type === 'application') {
     const fallbackMessage = teacherAppOnlyReply(q, desk);
-    const message = /\b(?:latest|recent|list|show)\b[\s\S]{0,30}\bexams?\b/i.test(q)
+    const message = isTeacherExamDataQuestion(q)
       ? fallbackMessage
       : await formatDynamicResponse({
           userPrompt: q, plan: { mode: 'teacher_desk' },

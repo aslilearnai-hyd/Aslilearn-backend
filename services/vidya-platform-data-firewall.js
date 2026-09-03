@@ -8,7 +8,7 @@ const CONCEPT_RE = /\b(?:define|definition|meaning|explain the concept|what is t
 
 const COMMON_DATA_RE = /\b(?:dashboard|profile|account|login|logged in|calendar|timetable|attendance|homework|assignment|exam results?|marks?|scores?|rank|progress|performance|report card|learning path|videos? (?:watched|have i watched)|streak|offline results?|omr)\b/i;
 const PERSONAL_RE = /\b(?:my|mine|me|i|our|we)\b/i;
-const TEACHER_DATA_RE = /\b(?:my students|my classes|student roster|student (?:by name|named|called)|student details?|student report|class performance|who is in my class|how many students|how many classes)\b/i;
+const TEACHER_DATA_RE = /\b(?:my students|my classes|student roster|student (?:by name|named|called)|student details?|student report|class performance|who is in my class|how many students|how many classes|(?:list|show|latest|recent|upcoming).{0,40}exams?|exams?.{0,30}(?:last month|this month|schedule))\b/i;
 const ADMIN_DATA_RE = /\b(?:my school|our school|school students|school teachers|school analytics|subscriptions?|orders?|revenue|usage|active users?|student count|teacher count)\b/i;
 
 import { isLearningRequest } from './vidya-learning-intent.js';
