@@ -22,7 +22,7 @@ export async function runDynamicAiQuery({
   const plan = await parseDynamicIntent({ userMessage, history });
   const notes = [];
   let facts = { mode: plan.mode };
-  if (viewerRole === 'super-admin' && plan.mode === 'knowledge' &&
+  if (['admin', 'super-admin'].includes(viewerRole) && plan.mode === 'knowledge' &&
       /\b(teach|explain|chapter|textbook|lesson|curriculum|syllabus|subtopic)\b/i.test(userMessage)) {
     const message = await generateGeneralKnowledgeAnswer({
       viewerUserId, viewerRole, question: userMessage, conversationHistory: history,
