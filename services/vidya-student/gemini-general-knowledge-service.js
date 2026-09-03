@@ -1,4 +1,7 @@
 import { callModel, buildContentsFromHistory } from '../model-router.js';
+import { resolveVidyaCurriculum } from '../vidya-curriculum.js';
+import { retrieveVidyaTextbookContext, textbookSourceFooter } from '../vidya-textbook-context.js';
+import { prepareConversationHistory } from '../../ai/shared/conversation-history.js';
 
 const TEACHING_FORMAT_RULES = `You MUST format every reply exactly like this (use real newlines):
 
@@ -59,6 +62,8 @@ function looksUnstructured(text) {
  * Accepts optional student context so the answer is relevant to their class, board, and weak topics.
  */
 export async function generateGeneralKnowledgeAnswer({
+  viewerUserId,
+  viewerRole = 'teacher',
   question,
   classLevel,
   subjectContext,
@@ -70,10 +75,18 @@ export async function generateGeneralKnowledgeAnswer({
   const classText = classLevel ? `Class ${classLevel}` : 'school level';
   const boardText = board ? `${board} board` : 'Indian school curriculum';
   const q = String(question || '').slice(0, 3000);
+  const curriculum = await resolveVidyaCurriculum({ question: q, history: conversationHistory, userId: viewerUserId, role: viewerRole, forLearning: true });
+  if (curriculum.clarification) return curriculum.clarification;
+  const textbook = await retrieveVidyaTextbookContext({ question: q, history: conversationHistory, curriculum });
+  if (textbook.directAnswer) return textbook.directAnswer;
+  if (curriculum.scope && !curriculum.context && !textbook.context) return 'I checked the configured AI Tool Topics and matching indexed textbooks for your curriculum, but could not identify this chapter reliably. Please share the chapter title or relevant PDF passage; an unindexed or scanned PDF may need indexing/OCR first.';
 
   const systemInstruction = [
     `You are Vidya AI, an educational tutor for ${classText} students following the ${boardText}.`,
     `Answer clearly and accurately for a student at this level.`,
+    curriculum.context,
+    'Use earlier conversation to understand follow-ups and named books. Do not ask again for information already established. Earlier assistant statements are not verified source evidence. Never count retrieved chunks as lessons or claim a complete lesson count from partial excerpts. Do not print internal indexed-section labels.',
+    textbook.context || 'No textbook passages were retrieved. Label this as a general explanation, not an answer verified against the school PDF.',
     TEACHING_FORMAT_RULES,
     `Use step-by-step numbered steps for Maths and Science problems.`,
     enrolledSubjects.length
@@ -102,7 +115,7 @@ export async function generateGeneralKnowledgeAnswer({
   const callOnce = async (message) => {
     const result = await callModel({
       systemInstruction,
-      contents: buildContentsFromHistory({ history: (Array.isArray(conversationHistory) ? conversationHistory : []).slice(-12).map(item => ({ role: item?.role, content: String(item?.content || '').slice(0, 4000) })), userMessage: message }),
+      contents: buildContentsFromHistory({ history: prepareConversationHistory(conversationHistory), userMessage: message }),
       generationConfig: { temperature: 0.25, maxOutputTokens: 1800 },
     });
     return String(result?.text || '').trim();
@@ -145,7 +158,7 @@ export async function generateGeneralKnowledgeAnswer({
     }
   }
 
-  return text;
+  return text + textbookSourceFooter(textbook.sources, text);
 }
 
 /**
@@ -153,6 +166,8 @@ export async function generateGeneralKnowledgeAnswer({
  * Do NOT use the tutor lesson template here — that caused generic "let's learn about reports" replies.
  */
 export async function generateContextAwareAnswer({
+  viewerUserId,
+  useTextbooks = false,
   question,
   classLevel,
   board = '',
@@ -163,13 +178,21 @@ export async function generateContextAwareAnswer({
   const classText = classLevel ? `Class ${classLevel}` : 'school level';
   const boardText = board ? `${board} board` : 'Indian school curriculum';
   const q = String(question || '').slice(0, 3000);
+  const curriculum = await resolveVidyaCurriculum({ question: q, history: conversationHistory, userId: viewerUserId, role: 'student', forLearning: useTextbooks });
+  if (curriculum.clarification) return curriculum.clarification;
+  const textbook = await retrieveVidyaTextbookContext({ question: q, history: conversationHistory, curriculum });
+  if (textbook.directAnswer) return textbook.directAnswer;
+  if (curriculum.scope && !curriculum.context && !textbook.context) return 'I checked the configured AI Tool Topics and matching indexed textbooks for your curriculum, but could not identify this chapter reliably. Please share the chapter title or relevant PDF passage; an unindexed or scanned PDF may need indexing/OCR first.';
   const subjectsLine = enrolledSubjects.length
     ? `Enrolled subjects: ${enrolledSubjects.join(', ')}.`
     : '';
 
   const systemInstruction = [
     `You are Vidya, a personal assistant for a ${classText} student on Asli Learn (${boardText}). ${subjectsLine}`,
-    `You already have this student's live app data in the user message.`,
+    `Use only data supplied for this question. For textbook questions, answer the textbook question directly; do not introduce marks, video progress, weaknesses or exam advice.`,
+    curriculum.context,
+    'Use earlier conversation to understand follow-ups and named books. Do not ask again for information already established. Earlier assistant statements are not verified source evidence. Never count retrieved chunks as lessons or claim a complete lesson count from partial excerpts. Do not print internal indexed-section labels.',
+    textbook.context || 'No textbook passages were retrieved. Do not claim to have checked the PDF; label any teaching as a general explanation.',
     ``,
     `Decide what they want from the question itself (any phrasing is fine: "I want videos", "report", "how am I doing").`,
     ``,
@@ -190,19 +213,13 @@ export async function generateContextAwareAnswer({
 
   const userMessage = [
     `=== STUDENT'S REAL APP DATA ===`,
-    studentDataSummary || '(No data available yet — student is new)',
+    useTextbooks ? '(Personal performance data omitted for this learning question.)' : studentDataSummary || '(No data available yet — student is new)',
     ``,
     `=== STUDENT'S QUESTION ===`,
     q,
   ].join('\n');
 
-  const safeHistory = (Array.isArray(conversationHistory) ? conversationHistory : [])
-    .slice(-12)
-    .map((item) => ({
-      role: String(item?.role || '').toLowerCase() === 'assistant' ? 'assistant' : 'user',
-      content: String(item?.content || '').slice(0, 4000),
-    }))
-    .filter((item) => item.content.trim());
+  const safeHistory = prepareConversationHistory(conversationHistory);
 
   const result = await callModel({
     systemInstruction,
@@ -211,5 +228,5 @@ export async function generateContextAwareAnswer({
   });
   const text = String(result?.text || '').trim();
   if (!text) throw new Error('Context-aware response is empty');
-  return text;
+  return text + textbookSourceFooter(textbook.sources, text);
 }
