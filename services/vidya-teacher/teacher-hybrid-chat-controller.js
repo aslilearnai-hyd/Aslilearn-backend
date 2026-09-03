@@ -199,7 +199,7 @@ export async function runHybridTeacherVidyaChat({
     };
   }
 
-  if (firewall.protected || isTeacherAppQuestion(q) || intent.type === 'application' || intent.type === 'uncertain') {
+  if (firewall.protected || (intent.type !== 'general' && isTeacherAppQuestion(q)) || intent.type === 'application') {
     return enforceGroundingResult({
       mode: 'application',
       intent: intent.type === 'uncertain' ? { type: 'application', reason: 'teacher_desk' } : intent,
@@ -213,7 +213,8 @@ export async function runHybridTeacherVidyaChat({
   try {
     const conceptAnswer = await generateGeneralKnowledgeAnswer({
       question: q,
-      classLevel: desk.classes?.[0]?.classNumber || '',
+      classLevel: desk.classes?.length === 1 ? desk.classes[0].classNumber : '',
+      conversationHistory: recentHistory,
       subjectContext: '',
       board: '',
       weakChapters: [],
@@ -222,17 +223,17 @@ export async function runHybridTeacherVidyaChat({
     return {
       mode: 'general',
       intent,
-      message: `${conceptAnswer}\n\n—\nFor live class data ask: **"my students"**, **"homework"**, **"attendance"**, or a student by name.`,
+      message: conceptAnswer,
       groundingStatus: 'general_knowledge',
       facts: { desk: { totals: desk.totals } },
     };
   } catch (err) {
     return {
-      mode: 'application',
+      mode: 'general',
       intent,
-      message: teacherAppOnlyReply(q, desk) || connectionFallbackMessage(),
-      groundingStatus: 'application',
-      facts: { desk, error: String(err?.message || err) },
+      message: connectionFallbackMessage(),
+      groundingStatus: 'ai_error',
+      facts: null,
     };
   }
 }

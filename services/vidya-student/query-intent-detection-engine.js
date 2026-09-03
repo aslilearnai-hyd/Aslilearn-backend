@@ -3,6 +3,8 @@
  * (marks, weak topics, progress, attendance, rank, recommendations).
  * These map to `type: 'application'` — answered from MongoDB context, not Gemini.
  */
+import { isLearningRequest } from '../vidya-learning-intent.js';
+
 const APP_HINTS = [
   // "my" phrased queries
   'my marks', 'my score', 'my exams', 'my attendance', 'my progress', 'my rank',
@@ -205,9 +207,11 @@ export function detectQueryIntent(question) {
   // Greetings / thanks — answer warmly, never ask "marks or topic?"
   if (GREETING_RE.test(q)) return { type: 'greeting', confidence: 0.99 };
   if (THANKS_RE.test(q)) return { type: 'thanks', confidence: 0.95 };
+  if (isLearningRequest(q)) return { type: 'general', confidence: 0.95 };
 
   const appHint = APP_HINTS.some((s) => q.includes(s));
-  const selfRef = SELF_REFERENCE_PATTERNS.some((p) => p.test(q));
+  // Pronouns alone ("give me", "I am") do not imply database access.
+  const selfRef = false;
   const examData = isExamDataQuestion(q);
   const platformData = isPlatformDataQuestion(q);
   const generalHint = GENERAL_HINTS.some((s) => q.includes(s));
