@@ -37,10 +37,27 @@ test('unavailable, ambiguous and unauthorized curriculum asks instead of guessin
   assert.equal(result.request.chapter, 9);
   assert.deepEqual(result.scopes, [scope]);
 });
-test('follow-up reuses user curriculum request, not invented assistant chapter', () => {
-  const request = parseCurriculumRequest('make it simpler', [{ role: 'user', content: 'Teach 6th maths alpha 1st chapter' }, { role: 'assistant', content: 'Knowing Our Numbers' }]);
-  assert.equal(request.chapter, 1);
+test('follow-up after a maths chapter ask keeps the maths subject', () => {
+  const request = parseCurriculumRequest('how do inverse operations work?', [
+    { role: 'user', content: 'Teach me chapter 2 alpha iit maths' },
+  ]);
+  assert.equal(request.subject, 'maths');
+  assert.equal(request.chapter, 2);
   assert.equal(request.track, 'ALPHA');
+});
+test('learning follow-up keeps only the asked subject scopes', async () => {
+  const maths = { board: 'IIT/NEET', track: 'ALPHA', classNumber: '7', subject: 'mathematics' };
+  const result = await resolveVidyaCurriculum({
+    question: 'how do inverse operations work?',
+    history: [{ role: 'user', content: 'Teach me chapter 2 alpha iit maths' }],
+    userId,
+    forLearning: true,
+    load: async () => [maths, { ...maths, subject: 'chemistry' }, { ...maths, subject: 'physics' }],
+    Topics: topics(rows),
+  });
+  assert.equal(result.clarification, undefined);
+  assert.deepEqual(result.scopes.map(s => s.subject), ['mathematics']);
+  assert.equal(result.request.subject, 'maths');
 });
 test('general concept needs no curriculum database lookup', async () => {
   const result = await resolveVidyaCurriculum({ question: 'what is a magnetic field?', load: () => { throw new Error('should not load'); } });

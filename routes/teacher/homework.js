@@ -205,6 +205,8 @@ async function deleteTeacherHomework(req, res) {
       return res.status(404).json({ success: false, message: 'Homework not found' });
     }
 
+    const ownsHomework =
+      homework.teacherId && String(homework.teacherId) === String(teacherId);
     const librarySubjectIds = getExplicitTeacherSubjectObjectIds(teacher);
     const { getTeacherSchoolProgramContext } = await import('../../utils/schoolProgram.js');
     const { boardsForSchoolContentScope } = await import('../../constants/boards.js');
@@ -217,10 +219,10 @@ async function deleteTeacherHomework(req, res) {
     });
     const boardResolveOpts = contentBoards.length > 0 ? { boards: contentBoards } : {};
     const allowed = await subjectIdAllowedWithSiblings(homework.subject, librarySubjectIds, boardResolveOpts);
-    if (!allowed) {
+    if (!ownsHomework && !allowed) {
       return res.status(403).json({
         success: false,
-        message: 'You can only delete homework for your assigned subjects',
+        message: 'You can only delete homework you created or homework for your assigned subjects',
       });
     }
 
@@ -288,18 +290,24 @@ router.get('/homework-submissions', async (req, res) => {
     const submissions = await HomeworkSubmission.find({
       studentId: { $in: studentIds }
     })
-    .populate('homeworkId', 'title description deadline fileUrl subject classNumber topic board date createdAt')
+    .populate({
+      path: 'homeworkId',
+      select: 'title description deadline fileUrl subject classNumber topic board date createdAt isActive teacherId createdBy',
+      populate: { path: 'subject', select: 'name' },
+    })
     .populate('studentId', 'fullName name email')
     .populate('subjectId', 'name')
     .sort({ submittedAt: -1 });
     
-    // Group by homework
+    // Group by homework — skip missing / already-deleted (isActive: false) assignments
     const homeworkMap = new Map();
     submissions.forEach(sub => {
-      const homeworkId = sub.homeworkId._id.toString();
+      const hw = sub.homeworkId;
+      if (!hw || hw.isActive === false) return;
+      const homeworkId = hw._id.toString();
       if (!homeworkMap.has(homeworkId)) {
         homeworkMap.set(homeworkId, {
-          homework: sub.homeworkId,
+          homework: hw,
           submissions: []
         });
       }
@@ -309,6 +317,8 @@ router.get('/homework-submissions', async (req, res) => {
     // Group by student
     const studentMap = new Map();
     submissions.forEach(sub => {
+      if (!sub.studentId?._id) return;
+      if (!sub.homeworkId || sub.homeworkId.isActive === false) return;
       const studentId = sub.studentId._id.toString();
       if (!studentMap.has(studentId)) {
         studentMap.set(studentId, {
@@ -338,18 +348,21 @@ router.get('/homework-submissions', async (req, res) => {
       isActive: true
     })
     .populate('subject', 'name')
-    .select('title description deadline fileUrl subject classNumber topic board date createdAt isActive')
+    .select('title description deadline fileUrl subject classNumber topic board date createdAt isActive teacherId createdBy')
     .sort({ createdAt: -1 });
     
-    // Include homeworks with no submissions yet
+    // Include homeworks with no submissions yet; prefer populated docs
     allHomeworks.forEach(hw => {
       const hwId = hw._id.toString();
-      if (!homeworkMap.has(hwId)) {
+      const existing = homeworkMap.get(hwId);
+      if (!existing) {
         homeworkMap.set(hwId, {
           homework: hw,
           submissions: []
         });
+        return;
       }
+      existing.homework = hw;
     });
     
     res.json({

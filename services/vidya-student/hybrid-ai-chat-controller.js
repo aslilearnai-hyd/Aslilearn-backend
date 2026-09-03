@@ -7,6 +7,7 @@ import { analyzeMarks } from './marks-analysis-service.js';
 import { buildAutoGreeting, buildPerformanceSummary } from './performance-summary-engine.js';
 import { detectQueryIntent, buildGreetingReplyMessage, buildThanksReplyMessage } from './query-intent-detection-engine.js';
 import { generateContextAwareAnswer } from './gemini-general-knowledge-service.js';
+import { maybeExplainStoredSources, parseCitationRegistryFromMessage, lastAssistantCitationRegistry } from '../vidya-citation-registry.js';
 import { buildPlatformProgressFacts } from './platform-progress-facts.js';
 import {
   buildStudentAppDeskFacts,
@@ -1021,6 +1022,21 @@ export async function runHybridStudentVidyaChat({
     };
   }
 
+  const storedSources = maybeExplainStoredSources(question, history);
+  if (storedSources) {
+    const citations = lastAssistantCitationRegistry(history);
+    return {
+      mode: 'general',
+      intent: { type: 'general', reason: 'citation_lookup' },
+      message: storedSources,
+      groundingStatus: 'citation_registry',
+      citations,
+      facts: null,
+      summary: null,
+      autoGreeting: null,
+    };
+  }
+
   // Greeting — load context when possible so we can use the student's name
   if (intent.type === 'greeting') {
     try {
@@ -1151,6 +1167,7 @@ export async function runHybridStudentVidyaChat({
       mode: intent.type === 'application' ? 'application' : intent.type === 'general' ? 'general' : 'hybrid',
       intent,
       message: smartAnswer,
+      citations: parseCitationRegistryFromMessage(smartAnswer),
       groundingStatus: 'ai_context_aware',
       facts,
       summary,
