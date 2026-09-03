@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { parseCurriculumRequest, resolveVidyaCurriculum, subjectKey } from '../services/vidya-curriculum.js';
+import { parseCurriculumRequest, resolveVidyaCurriculum, subjectKey, buildTeacherCurriculumScopes } from '../services/vidya-curriculum.js';
 const userId = '507f1f77bcf86cd799439011';
 const scope = { board: 'IIT/NEET', track: 'ALPHA', classNumber: '6', subject: 'mathematics' };
 const rows = [
@@ -68,4 +68,21 @@ test('teacher subject selector labels provide subject and class scope', () => {
   const request = parseCurriculumRequest('Selected subject: BIO - 7. Create a lesson plan.');
   assert.equal(subjectKey(request.subject), 'biology');
   assert.equal(request.classNumber, '7');
+});
+
+test('teacher curriculum uses school CBSE and allowed IIT tracks instead of legacy subject boards', () => {
+  const scopes = buildTeacherCurriculumScopes({
+    docs: [
+      { name: 'BIO', board: 'STATE' },
+      { name: 'PHYSICS', board: 'ASLI_EXCLUSIVE_SCHOOLS' },
+      { name: 'BIOLOGY_7', board: 'IIT', productCategory: 'ALPHA', classNumber: '7' },
+      { name: 'BIOLOGY_7', board: 'IIT', productCategory: 'DELTA', classNumber: '7' },
+    ],
+    classes: [{ classNumber: '7' }],
+    program: { curriculumBoard: 'CBSE', isAsliPrepExclusive: true, iitCategories: ['ALPHA', 'BETA', 'GAMMA'] },
+  });
+  assert.ok(scopes.some(s => s.subject === 'biology' && s.board === 'CBSE' && !s.track));
+  assert.ok(scopes.some(s => s.subject === 'physics' && s.board === 'CBSE' && !s.track));
+  assert.ok(scopes.some(s => s.subject === 'biology' && s.board === 'IIT/NEET' && s.track === 'ALPHA'));
+  assert.equal(scopes.some(s => s.board === 'STATE' || s.board === 'ASLI_EXCLUSIVE_SCHOOLS' || s.track === 'DELTA'), false);
 });
