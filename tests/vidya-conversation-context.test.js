@@ -22,9 +22,9 @@ test('named book disambiguates authorized boards and restricts subsequent retrie
   assert.equal(result.scope.board, 'CBSE');
   assert.deepEqual(result.bookIds, ['book1']);
 });
-test('sources omit unused passages and combine repeated book/chapter references', () => {
+test('sources omit unused passages and list each citation separately', () => {
   const sources = [1, 2, 3].map(i => ({ id: `B${i}`, title: 'Maths', chapter: 'Chapter 5', section: i }));
-  assert.equal(textbookSourceFooter(sources, 'Answer [B1] [B2]'), '\n\nSources:\n• [B1] [B2] Maths — Chapter 5');
+  assert.equal(textbookSourceFooter(sources, 'Answer [B1] [B2]'), '\n\nSources:\n• [B1] Maths — Chapter 5\n• [B2] Maths — Chapter 5');
 });
 test('IIT count never substitutes aggregate completion totals', () => {
   assert.match(answerByTopicAndShape('in iit how many videos', { desk: { totals: { videos: 0 } } }), /couldn’t load/);

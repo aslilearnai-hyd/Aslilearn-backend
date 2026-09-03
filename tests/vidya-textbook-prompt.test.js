@@ -13,6 +13,7 @@ mock.module('../services/vidya-curriculum.js', { namedExports: {
 mock.module('../services/vidya-textbook-context.js', { namedExports: {
   retrieveVidyaTextbookContext: async () => ({ context: missing ? '' : 'PDF PASSAGE: Number patterns follow a rule. [B1]', sources: missing ? [] : [{ id: 'B1' }] }),
   textbookSourceFooter: sources => sources.length ? '\nRetrieved source B1' : '',
+  appendTextbookSources: (sources, text) => String(text || '') + (sources.length ? '\nRetrieved source B1' : ''),
 } });
 const { generateGeneralKnowledgeAnswer, generateContextAwareAnswer } = await import('../services/vidya-student/gemini-general-knowledge-service.js');
 test('teacher and student model requests include syllabus and actual retrieved text', async () => {

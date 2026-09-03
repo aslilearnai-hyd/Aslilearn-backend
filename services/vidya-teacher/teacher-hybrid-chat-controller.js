@@ -4,6 +4,7 @@
 import { detectQueryIntent } from '../vidya-student/query-intent-detection-engine.js';
 import { prepareConversationHistory } from '../../ai/shared/conversation-history.js';
 import { generateGeneralKnowledgeAnswer } from '../vidya-student/gemini-general-knowledge-service.js';
+import { maybeExplainStoredSources, parseCitationRegistryFromMessage, lastAssistantCitationRegistry } from '../vidya-citation-registry.js';
 import {
   buildNamedPersonDetailFacts,
   buildClassGroupFacts,
@@ -72,6 +73,18 @@ export async function runHybridTeacherVidyaChat({
       message:
         "Hi! I'm Vidya for teachers — ask about your classes, attendance, homework queue, exams, OMR, or a student by name.",
       groundingStatus: 'social',
+      facts: null,
+    };
+  }
+
+  const storedSources = maybeExplainStoredSources(q, history);
+  if (storedSources) {
+    return {
+      mode: 'general',
+      intent: { type: 'general', reason: 'citation_lookup' },
+      message: storedSources,
+      groundingStatus: 'citation_registry',
+      citations: lastAssistantCitationRegistry(history),
       facts: null,
     };
   }
@@ -220,6 +233,7 @@ export async function runHybridTeacherVidyaChat({
       mode: 'general',
       intent,
       message: conceptAnswer,
+      citations: parseCitationRegistryFromMessage(conceptAnswer),
       groundingStatus: 'general_knowledge',
       facts: { desk: { totals: desk.totals } },
     };

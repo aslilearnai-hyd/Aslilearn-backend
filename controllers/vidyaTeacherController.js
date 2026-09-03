@@ -47,6 +47,7 @@ export async function postTeacherMentorChat(req, res) {
     return res.json({
       success: true,
       message: result.message,
+      citations: Array.isArray(result.citations) ? result.citations : [],
       mode: result.mode || 'application',
       intent: result.intent || null,
       groundingStatus: result.groundingStatus,

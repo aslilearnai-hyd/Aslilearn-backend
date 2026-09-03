@@ -20,6 +20,7 @@ const subjectKey = value => {
   const known = text.match(/\b(mathematics|maths?|physics|chemistry|biology|science|english|telugu|hindi|social)\b/)?.[1];
   return /^math/.test(known || '') ? 'mathematics' : known || text;
 };
+export { subjectKey };
 const titleKey = value => String(value || '').toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
 export function matchNamedBooks(books, question) {
   const q = titleKey(question);
@@ -27,22 +28,38 @@ export function matchNamedBooks(books, question) {
 }
 
 export function parseCurriculumRequest(question, history = []) {
+  const parseText = (raw) => {
+    const text = String(raw || '').toLowerCase();
+    const ordinal = { first: 1, second: 2, third: 3, fourth: 4, fifth: 5 };
+    const chapter = text.match(/\b(?:chapter|unit|ch\b\.?)\s*[-:.]?\s*(\d+)|\b(\d+)(?:st|nd|rd|th)\s+chapter|\b(first|second|third|fourth|fifth)\s+chapter/i);
+    return {
+      text,
+      requested: /\b(chapters?|subtopics?|sub topics?|syllabus|curriculum|textbooks?|pdfs?|book|alpha|beta|gamma|delta)\b/.test(text),
+      classNumber: text.match(/\b(?:class|grade)\s*(\d{1,2})\b|\b(\d{1,2})(?:st|nd|rd|th)\s+(?:class|grade|maths?|mathematics|physics|chemistry|biology|science|english|telugu|hindi)\b/)?.slice(1).find(Boolean) || '',
+      chapter: chapter ? Number(chapter[1] || chapter[2] || ordinal[chapter[3]]) : null,
+      track: text.match(/\b(alpha|beta|gamma|delta|general)\b/)?.[1]?.toUpperCase(),
+      board: /\biit\b|\bneet\b/.test(text) ? 'IIT/NEET' : text.match(/\b(cbse|ssc|icse|ib)\b/)?.[1]?.toUpperCase(),
+      subject: text.match(/\b(maths?|mathematics|physics|chemistry|biology|science|english|telugu|hindi|social)\b/)?.[1],
+    };
+  };
+
   let text = String(question || '').toLowerCase();
   if (/^(explain|continue|next|make it|tell me more|give examples|simpler)|\b(it|that|there|this chapter|this book)\b/i.test(text) && !/\b(?:class|alpha|beta|gamma|delta)\b|chapter\s*\d/.test(text)) {
     const previous = [...history].reverse().find(h => h.role === 'user' && /chapter|alpha|beta|gamma|delta/i.test(h.content || ''));
     if (previous) text = `${previous.content} ${text}`.toLowerCase();
   }
-  const ordinal = { first: 1, second: 2, third: 3, fourth: 4, fifth: 5 };
-  const chapter = text.match(/\b(?:chapter|unit|ch\b\.?)\s*[-:.]?\s*(\d+)|\b(\d+)(?:st|nd|rd|th)\s+chapter|\b(first|second|third|fourth|fifth)\s+chapter/i);
-  return {
-    text,
-    requested: /\b(chapters?|subtopics?|sub topics?|syllabus|curriculum|textbooks?|pdfs?|book|alpha|beta|gamma|delta)\b/.test(text),
-    classNumber: text.match(/\b(?:class|grade)\s*(\d{1,2})\b|\b(\d{1,2})(?:st|nd|rd|th)\s+(?:class|grade|maths?|mathematics|physics|chemistry|biology|science|english|telugu|hindi)\b/)?.slice(1).find(Boolean) || '',
-    chapter: chapter ? Number(chapter[1] || chapter[2] || ordinal[chapter[3]]) : null,
-    track: text.match(/\b(alpha|beta|gamma|delta|general)\b/)?.[1]?.toUpperCase(),
-    board: /\biit\b|\bneet\b/.test(text) ? 'IIT/NEET' : text.match(/\b(cbse|ssc|icse|ib)\b/)?.[1]?.toUpperCase(),
-    subject: text.match(/\b(maths?|mathematics|physics|chemistry|biology|science|english|telugu|hindi|social)\b/)?.[1],
-  };
+  const request = parseText(text);
+  for (const turn of [...history].reverse()) {
+    if (turn?.role !== 'user' || !turn.content) continue;
+    const prev = parseText(turn.content);
+    request.subject = request.subject || prev.subject;
+    request.chapter = request.chapter || prev.chapter;
+    request.track = request.track || prev.track;
+    request.classNumber = request.classNumber || prev.classNumber;
+    request.board = request.board || prev.board;
+    if (request.subject && request.chapter && request.track) break;
+  }
+  return request;
 }
 
 export function selectCurriculumRows(rows, request) {
@@ -97,7 +114,14 @@ export async function resolveVidyaCurriculum({ question, history = [], userId, r
     && (!request.board || s.board === request.board)
     && (!request.subject || s.subject === subjectKey(request.subject)));
   scopes = [...new Map(scopes.map(s => [JSON.stringify(s), s])).values()];
-  if (!request.requested) return { context: '', scopes };
+  if (!request.requested) {
+    return {
+      context: '',
+      scopes,
+      scope: scopes.length === 1 ? scopes[0] : undefined,
+      request,
+    };
+  }
   // A named book can identify the curriculum without asking for its board again.
   // Search only within already-authorized scopes, never all tenants' books.
   if (scopes.length && /\b(part|workbook|textbook|book)\b/i.test(request.text)) {
