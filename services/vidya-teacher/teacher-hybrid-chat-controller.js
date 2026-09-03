@@ -23,10 +23,10 @@ import { classifyPlatformDataQuestion, enforceGroundingResult } from '../vidya-p
 const connectionFallbackMessage = () =>
   "I'm having trouble connecting right now. Please try again in a moment.";
 
-function isTeacherAppQuestion(q) {
+export function isTeacherAppQuestion(q) {
   const lower = String(q || '').toLowerCase();
   return (
-    /what should i do|today|daily plan|my classes|my students|roster|attendance|homework|assignment|upcoming exam|open exam|quiz|assessment|\bomr\b|work diary|overview|summary|how many (students|classes)|dashboard|logged in|\bstudent\b.*\b(name|details?|report|progress|performance|marks?|scores?)\b/.test(
+    /what should i do|today|daily plan|my classes|my students|roster|attendance|homework|assignment|upcoming exam|open exam|latest exams?|recent exams?|(?:list|show) (?:the )?(?:latest |recent )?exams?|quiz|assessment|\bomr\b|work diary|overview|summary|how many (students|classes)|dashboard|logged in|\bstudent\b.*\b(name|details?|report|progress|performance|marks?|scores?)\b/.test(
       lower,
     ) || detectQueryIntent(q).type === 'application'
   );
@@ -242,12 +242,15 @@ export async function runHybridTeacherVidyaChat({
     };
   }
 
-  if (firewall.protected || (intent.type !== 'general' && isTeacherAppQuestion(q)) || intent.type === 'application') {
-    const message = await formatDynamicResponse({
-      userPrompt: q, plan: { mode: 'teacher_desk' },
-      facts: { ...desk, mode: 'teacher_desk', fallbackMessage: teacherAppOnlyReply(q, desk) },
-      viewerRole: 'teacher', history: recentHistory,
-    });
+  if (firewall.protected || isTeacherAppQuestion(q) || intent.type === 'application') {
+    const fallbackMessage = teacherAppOnlyReply(q, desk);
+    const message = /\b(?:latest|recent|list|show)\b[\s\S]{0,30}\bexams?\b/i.test(q)
+      ? fallbackMessage
+      : await formatDynamicResponse({
+          userPrompt: q, plan: { mode: 'teacher_desk' },
+          facts: { ...desk, mode: 'teacher_desk', fallbackMessage },
+          viewerRole: 'teacher', history: recentHistory,
+        });
     return enforceGroundingResult({
       mode: 'application',
       intent: intent.type === 'uncertain' ? { type: 'application', reason: 'teacher_desk' } : intent,

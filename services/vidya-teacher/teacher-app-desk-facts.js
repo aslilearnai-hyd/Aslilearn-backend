@@ -102,6 +102,7 @@ export async function buildTeacherAppDeskFacts(teacherUserId) {
     omrBatches,
     omrRows,
     openExams,
+    recentExams,
   ] = await Promise.all([
     studentIds.length
       ? UserSession.countDocuments({ userId: { $in: studentIds }, date: ymd })
@@ -168,6 +169,16 @@ export async function buildTeacherAppDeskFacts(teacherUserId) {
       .select('title startDate endDate subject assignedClasses classNumber')
       .sort({ startDate: 1 })
       .limit(80)
+      .lean(),
+    Exam.find({
+      ...(adminId
+        ? { $or: [{ adminId }, { schoolId: adminId }, { targetSchools: adminId }, { createdByRole: 'super-admin' }] }
+        : { createdByRole: 'super-admin' }),
+      title: { $not: /\bmock\s+test\b/i },
+    })
+      .select('title startDate endDate subject assignedClasses classNumber')
+      .sort({ startDate: -1, createdAt: -1 })
+      .limit(20)
       .lean(),
   ]);
 
@@ -249,6 +260,13 @@ export async function buildTeacherAppDeskFacts(teacherUserId) {
       })),
       averagePct30d: avgPct,
       resultsCount30d: examResults30d.length,
+      recent: (recentExams || []).map((exam) => ({
+        title: exam.title || 'Exam',
+        subject: exam.subject || '',
+        classNumber: exam.classNumber || '',
+        startLabel: formatShortDate(exam.startDate),
+        endLabel: formatShortDate(exam.endDate),
+      })),
     },
     homework: {
       submissions: (homeworkSubs || []).slice(0, 80).map((h) => ({
@@ -302,7 +320,7 @@ function emptyDesk() {
     classes: [],
     students: [],
     attendance: { loggedInToday: 0, activeStudents7d: 0, todayKey: '' },
-    exams: { upcoming: [], open: [], recentResults: [], averagePct30d: null, resultsCount30d: 0 },
+    exams: { upcoming: [], open: [], recent: [], recentResults: [], averagePct30d: null, resultsCount30d: 0 },
     homework: { submissions: [], pendingReview: 0, submittedCount: 0 },
     quizzes: [],
     remarksCount: 0,
@@ -424,6 +442,12 @@ export function teacherAppOnlyReply(question, desk, entityFallbackMessage = '') 
       });
     }
     return reply.trim();
+  }
+
+  if (/latest exams?|recent exams?|(?:list|show) (?:the )?(?:latest |recent )?exams?/.test(q)) {
+    const recent = Array.isArray(desk.exams?.recent) ? desk.exams.recent : [];
+    if (!recent.length) return 'No regular exams are available for your school right now.';
+    return `**Latest school exams:**\n\n${recent.map((exam, index) => `${index + 1}. **${exam.title}**${exam.subject ? ` — ${exam.subject}` : ''}${exam.classNumber ? ` · Class ${exam.classNumber}` : ''}${exam.startLabel ? ` · ${exam.startLabel}` : ''}`).join('\n')}`;
   }
 
   if (/upcoming exam|open exam|exam schedule|what exams/.test(q) || (/exam/.test(q) && /upcoming|open|schedule|how many/.test(q))) {
