@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { needsStudentNameClarification } from '../services/vidya-teacher/teacher-hybrid-chat-controller.js';
+import { needsStudentNameClarification, isTeacherLearningRequest } from '../services/vidya-teacher/teacher-hybrid-chat-controller.js';
 import {
   extractClassGroupQuery,
   extractPersonNameQuery,
@@ -30,6 +30,13 @@ test('teacher class counts route to the requested class and section', () => {
   });
   assert.equal(isClassGroupQuery('How many students are in 7B?'), true);
   assert.equal(isClassGroupQuery('I want only 7B count'), true);
+});
+
+test('class number in a teaching request routes to curriculum, not class dashboard data', () => {
+  assert.equal(isTeacherLearningRequest('Teach me chapter 1 class 6 alpha physics'), true);
+  assert.equal(isTeacherLearningRequest('Explain Class 7 mathematics chapter 2'), true);
+  assert.equal(isTeacherLearningRequest('How many students are in Class 6?'), false);
+  assert.equal(isTeacherLearningRequest('Show Class 6 performance'), false);
 });
 
 test('any other student requests a real name instead of searching for a fake person', () => {

@@ -32,6 +32,13 @@ function isTeacherAppQuestion(q) {
   );
 }
 
+export function isTeacherLearningRequest(question) {
+  const q = String(question || '').toLowerCase();
+  const asksToTeach = /\b(teach|explain|help me understand|lesson plan|plan (?:a )?lesson|summari[sz]e|what is|how does|derive|solve)\b/.test(q);
+  const learningTarget = /\b(chapter|topic|concept|lesson|textbook|curriculum|syllabus|physics|chemistry|biology|science|math(?:s|ematics)?|english|telugu|hindi)\b/.test(q);
+  return asksToTeach && learningTarget;
+}
+
 export function needsStudentNameClarification(question) {
   const q = String(question || '').trim().toLowerCase();
   if (!/\b(student|learner|pupil)\b/.test(q)) return false;
@@ -87,6 +94,27 @@ export async function runHybridTeacherVidyaChat({
       citations: lastAssistantCitationRegistry(history),
       facts: null,
     };
+  }
+
+  // A class number inside a lesson request describes curriculum scope; it is
+  // not a request for class dashboard metrics. Resolve curriculum/PDFs first.
+  if (isTeacherLearningRequest(q)) {
+    try {
+      const conceptAnswer = await generateGeneralKnowledgeAnswer({
+        viewerUserId,
+        viewerRole: 'teacher',
+        question: q,
+        conversationHistory: prepareConversationHistory(history),
+      });
+      return {
+        mode: 'general', intent: { type: 'general', reason: 'teacher_learning' },
+        message: conceptAnswer,
+        citations: parseCitationRegistryFromMessage(conceptAnswer),
+        groundingStatus: 'curriculum', facts: null,
+      };
+    } catch {
+      return { mode: 'general', intent: { type: 'general', reason: 'teacher_learning' }, message: connectionFallbackMessage(), groundingStatus: 'ai_error', facts: null };
+    }
   }
 
   const desk = await buildTeacherAppDeskFacts(viewerUserId);
@@ -226,6 +254,7 @@ export async function runHybridTeacherVidyaChat({
   try {
     const conceptAnswer = await generateGeneralKnowledgeAnswer({
       viewerUserId,
+      viewerRole: 'teacher',
       question: q,
       classLevel: desk.classes?.length === 1 ? desk.classes[0].classNumber : '',
       conversationHistory: recentHistory,
