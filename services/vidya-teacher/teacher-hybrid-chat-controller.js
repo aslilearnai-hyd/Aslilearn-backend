@@ -2,6 +2,7 @@
  * Teacher Vidya hybrid: app desk facts first, then named person/class entity facts, else Gemini knowledge.
  */
 import { detectQueryIntent } from '../vidya-student/query-intent-detection-engine.js';
+import { prepareConversationHistory } from '../../ai/shared/conversation-history.js';
 import { generateGeneralKnowledgeAnswer } from '../vidya-student/gemini-general-knowledge-service.js';
 import {
   buildNamedPersonDetailFacts,
@@ -80,13 +81,7 @@ export async function runHybridTeacherVidyaChat({
   // Teacher chat follow-ups are often intentionally short: a bare student name
   // after "Which student?", or "only 7B" after a total-student answer. Resolve
   // those against the live scoped roster and recent conversation before routing.
-  const recentHistory = (Array.isArray(history) ? history : [])
-    .slice(-8)
-    .map((item) => ({
-      role: String(item?.role || '').toLowerCase() === 'assistant' ? 'assistant' : 'user',
-      content: String(item?.content || '').trim().slice(0, 4000),
-    }))
-    .filter((item) => item.content);
+  const recentHistory = prepareConversationHistory(history);
   const recentHistoryText = recentHistory.map((item) => item.content);
   const lowerQ = q.toLowerCase();
   const roster = Array.isArray(desk?.students) ? desk.students : [];
@@ -212,6 +207,7 @@ export async function runHybridTeacherVidyaChat({
   // Concept / teaching help via Gemini
   try {
     const conceptAnswer = await generateGeneralKnowledgeAnswer({
+      viewerUserId,
       question: q,
       classLevel: desk.classes?.length === 1 ? desk.classes[0].classNumber : '',
       conversationHistory: recentHistory,

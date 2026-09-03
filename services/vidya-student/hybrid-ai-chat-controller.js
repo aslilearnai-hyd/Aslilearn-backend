@@ -13,6 +13,8 @@ import {
   matchSubjectFromQuestion,
 } from './student-app-desk-facts.js';
 import { answerByTopicAndShape } from './student-app-query-router.js';
+import { loadStudentEduOttFacts } from './eduott-facts.js';
+import { answerStudentDashboardData, dashboardDataTopic } from './dashboard-data.js';
 import { classifyPlatformDataQuestion } from '../vidya-platform-data-firewall.js';
 
 const connectionFallbackMessage = () => "I'm having trouble connecting right now. Please try again in a moment.";
@@ -1056,6 +1058,15 @@ export async function runHybridStudentVidyaChat({
   }
 
   const performance = analyzeStudentPerformance(ctx);
+  if (dashboardDataTopic(question)) {
+    try {
+      const message = await answerStudentDashboardData({ studentId: ctx.studentId, question, profile: ctx.profile });
+      return { mode: 'application', intent, message, groundingStatus: 'database_grounded', facts: null, summary: null, autoGreeting: null };
+    } catch (error) {
+      console.warn('Vidya dashboard adapter failed:', error?.name || 'Error');
+      return { mode: 'application', intent, message: 'I couldn’t load that dashboard data right now. Please try again; this does not mean your records are empty.', groundingStatus: 'database_grounded', facts: null, summary: null, autoGreeting: null };
+    }
+  }
   const weakTopics = detectWeakAndStrongTopics(ctx);
   const marks = analyzeMarks(ctx.exams?.recentResults || []);
   const platform = buildPlatformProgressFacts(ctx);
@@ -1072,6 +1083,7 @@ export async function runHybridStudentVidyaChat({
       homeworkRows: ctx.academics?.homeworkRows || [],
     });
   } catch (deskErr) {
+    desk.unavailable = true;
     console.warn('Vidya desk facts:', deskErr?.message || deskErr);
   }
   const recommendations = buildPersonalizedRecommendations({
@@ -1101,6 +1113,14 @@ export async function runHybridStudentVidyaChat({
   // Private progress/account questions are answered deterministically from the
   // authenticated database snapshot. This is cheaper and cannot invent marks.
   if (firewall.protected || intent.type === 'application') {
+    if (/\b(iit|neet|alpha|beta|gamma|delta)\b/i.test(question) && /video|lecture|edu\s*ott/i.test(question)) {
+      try {
+        facts.eduott = await loadStudentEduOttFacts(ctx.studentId, question);
+      } catch (error) {
+        facts.eduott = { verified: false };
+        console.warn('Vidya EduOTT count lookup failed:', error?.name || 'Error');
+      }
+    }
     return {
       mode: 'application',
       intent,
@@ -1118,6 +1138,8 @@ export async function runHybridStudentVidyaChat({
 
   try {
     const smartAnswer = await generateContextAwareAnswer({
+      viewerUserId: ctx.studentId,
+      useTextbooks: intent.type !== 'application',
       question,
       classLevel,
       board: ctx.profile?.board || '',

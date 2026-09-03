@@ -37,6 +37,10 @@ import IQRankQuizResult from '../../models/IQRankQuizResult.js';
 import DemoLead from '../../models/DemoLead.js';
 import StudentVideoChapterProgress from '../../models/StudentVideoChapterProgress.js';
 import Question from '../../models/Question.js';
+import Book from '../../models/Book.js';
+import AiToolTopic from '../../models/AiToolTopic.js';
+import Board from '../../models/Board.js';
+import ProductCategory from '../../models/ProductCategory.js';
 
 const FALLBACK_SCOPE_FIELDS = [
   'assignedAdmin',
@@ -48,6 +52,32 @@ const FALLBACK_SCOPE_FIELDS = [
 ];
 
 export const MODULE_REGISTRY = {
+  textbook_catalog: {
+    model: Book,
+    aliases: ['book knowledge base', 'indexed textbooks', 'textbook catalog', 'book based generator books'],
+    allowedRoles: ['super-admin'],
+  },
+  curriculum_topics: {
+    model: AiToolTopic,
+    aliases: ['ai tool topics', 'curriculum topics', 'curriculum subtopics'],
+    allowedRoles: ['super-admin'],
+  },
+  boards: {
+    model: Board,
+    aliases: ['board management', 'boards'],
+    allowedRoles: ['super-admin'],
+  },
+  product_categories: {
+    model: ProductCategory,
+    aliases: ['product categories', 'iit tracks'],
+    allowedRoles: ['super-admin'],
+  },
+  iit_video_catalog: {
+    model: Content,
+    aliases: ['iit video catalog', 'iit videos', 'eduott catalog'],
+    baseFilter: { type: 'Video', isActive: true, productCategory: { $in: ['ALPHA', 'BETA', 'GAMMA', 'DELTA'] } },
+    allowedRoles: ['super-admin'],
+  },
   schools: {
     model: School,
     aliases: [

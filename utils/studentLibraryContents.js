@@ -137,13 +137,14 @@ export function resolveStudentContentBoard(student, adminBoard) {
  * @param {object|null} studentClassDoc
  * @param {string} [adminBoard]
  */
-export async function loadStudentLibraryContents(userId, student, studentClassDoc, adminBoard) {
+export async function loadStudentLibraryContents(userId, student, studentClassDoc, adminBoard, options = {}) {
   let librarySubjectIds = await resolveStudentSubjectIdsForLibrary(student, studentClassDoc);
   librarySubjectIds = await filterToActiveCatalogSubjectIds(librarySubjectIds);
 
-  const programCtx = await getStudentSchoolProgramContext(userId);
+  const programCtx = { ...await getStudentSchoolProgramContext(userId), surface: options.surface };
   const { resolveIitCategoriesForContentBrowse } = await import('./schoolProgram.js');
   const iitCategories = resolveIitCategoriesForContentBrowse(programCtx);
+  programCtx.iitCategories = iitCategories;
   const studentClassNum = resolveStudentClassNumber(student, studentClassDoc) || '';
 
   if (programCtx.isAsliPrepExclusive && iitCategories.length) {
@@ -180,13 +181,14 @@ export async function loadStudentLibraryContents(userId, student, studentClassDo
     ? await Content.find({
         subject: { $in: queryIds },
         isActive: true,
+        ...(options.type ? { type: options.type } : {}),
       })
         .select(
           'title description type board productCategory subject classNumber topic chapter module date fileUrl fileUrls thumbnailUrl duration size isExclusive createdBy deadline isActive createdAt updatedAt',
         )
         .populate('subject', 'name isActive board classNumber productCategory')
         .sort({ updatedAt: -1 })
-        .limit(600)
+        .limit(options.allMatching ? 0 : 600)
         .lean()
     : [];
 
@@ -206,5 +208,6 @@ export async function loadStudentLibraryContents(userId, student, studentClassDo
     contentSubjectIds: queryIds,
     studentClassNum,
     boardUpper,
+    programCtx,
   };
 }

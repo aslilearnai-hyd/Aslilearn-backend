@@ -1,6 +1,7 @@
 import { GEMINI_LITE_MODEL, isRetiredOrUnsupportedGeminiModel, resolveAllowedGeminiModel } from './gemini-models.js';
 import { fetchGeminiGenerateContent } from './google-genai-compat.js';
 import { buildGeminiEndpoint } from '../../services/gemini-auth.js';
+import { prepareConversationHistory } from '../shared/conversation-history.js';
 
 const DEFAULT_GEMINI_MODEL = GEMINI_LITE_MODEL;
 const DEFAULT_FALLBACKS = GEMINI_LITE_MODEL;
@@ -80,8 +81,7 @@ const buildGeminiPayload = ({ systemInstruction, contents, generationConfig }) =
 });
 
 export const buildContentsFromHistory = ({ history = [], userMessage, attachments = [] }) => {
-  const historyContents = (Array.isArray(history) ? history : [])
-    .slice(-8)
+  const historyContents = prepareConversationHistory(history)
     .map((msg) => {
       const text = String(msg?.content || '').trim();
       if (!text) return null;

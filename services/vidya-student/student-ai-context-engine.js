@@ -48,7 +48,7 @@ function roleScopeClause({ viewerRole, viewerUserId, studentUser }) {
     }
     return { ok: true };
   }
-  return { ok: true };
+  return { ok: false, reason: 'This role cannot access student data.' };
 }
 
 async function teacherCanAccessStudent(viewerUserId, studentUser) {

@@ -86,6 +86,9 @@ export function answerByTopicAndShape(question, facts) {
   const examList = Array.isArray(facts?.examList) ? facts.examList : [];
   const omrList = Array.isArray(facts?.omrList) ? facts.omrList : [];
   const desk = facts?.desk || {};
+  if (desk.unavailable && ['subjects', 'videos', 'homework', 'quizzes', 'upcoming_exams', 'calendar', 'rank'].includes(topic)) {
+    return 'I couldn’t load that dashboard section right now. Please try again; this does not mean there are no records.';
+  }
   const deskSubjects = Array.isArray(desk.subjects) ? desk.subjects : [];
   const deskHw = desk.homework || {};
   const deskTotals = desk.totals || {};
@@ -161,6 +164,12 @@ export function answerByTopicAndShape(question, facts) {
   }
 
   if (topic === 'videos') {
+    if (/\biit\b|\bneet\b|\b(alpha|beta|gamma|delta)\b/.test(q)) {
+      const eduott = facts?.eduott;
+      if (!eduott?.verified) return 'I couldn’t load your EduOTT video count right now. Please try again.';
+      if (!eduott.enabled) return 'IIT/EduOTT is not enabled for your assigned school/class tracks yet.';
+      return `You have **${eduott.total} IIT${eduott.track ? ` ${eduott.track}` : ''}${eduott.subject ? ` ${eduott.subject}` : ''} videos** available in EduOTT${eduott.classNumber ? ` for Class ${eduott.classNumber}` : ''}.`;
+    }
     const matched = matchSubjectFromQuestion(deskSubjects, q);
     if (matched) {
       return (

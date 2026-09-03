@@ -472,6 +472,9 @@ export async function executeDynamicDbPlan({
     return { ok: false, error: 'Could not map this question to a known application module.' };
   }
   const cfg = MODULE_REGISTRY[moduleKey];
+  if (cfg?.allowedRoles && !cfg.allowedRoles.includes(role)) {
+    return { ok: false, error: 'This catalog is not available for your role through the control assistant.' };
+  }
   if (!cfg?.model) {
     return { ok: true, facts: { module: moduleKey, available: false, reason: cfg?.unavailableReason || 'Unavailable' } };
   }
