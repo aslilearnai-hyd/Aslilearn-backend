@@ -116,6 +116,7 @@ export async function loadVidyaCurriculumScopes(userId, role) {
   }
   let subjects, classes;
   if (role === 'admin') {
+    if (!mongoose.isValidObjectId(userId)) return [];
     classes = await Class.find({ assignedAdmin: userId, isActive: { $ne: false } })
       .select('classNumber assignedSubjects')
       .lean();
