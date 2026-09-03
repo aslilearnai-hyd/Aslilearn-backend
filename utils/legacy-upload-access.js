@@ -2,8 +2,8 @@ import Content from '../models/Content.js';
 import HomeworkSubmission from '../models/HomeworkSubmission.js';
 import User from '../models/User.js';
 import Teacher from '../models/Teacher.js';
-import { resolveStudentClassDoc, resolveStudentSubjectIdsForLibrary } from '../routes/student/helpers.js';
-import { resolveStudentClassNumber, contentMatchesStudentClass } from './studentClassContent.js';
+import { resolveStudentClassDoc } from '../routes/student/helpers.js';
+import { loadStudentLibraryContents } from './studentLibraryContents.js';
 import { getEffectiveTeacherSubjectObjectIds } from './teacherSubjectScope.js';
 
 // Old uploads have no UploadAsset row. Resolve them through a real resource,
@@ -36,16 +36,18 @@ export async function canAccessLegacyUpload(path, identity) {
     return subjects.some(s => String(s) === String(content.subject?._id || content.subject));
   }
   if (identity.role !== 'student') return false;
-  const student = await User.findById(id).populate('assignedAdmin', 'board').lean();
-  if (!student) return false;
+  const student = await User.findById(id).populate('assignedAdmin', 'board curriculumBoard isAsliPrepExclusive iitCategories iitCategoriesByClass').lean();
+  if (!student || student.role !== 'student') return false;
   if (content.createdBy === 'teacher' || content.teacherId) {
     const adminId = student.assignedAdmin?._id || student.assignedAdmin;
     if (!teacher?.adminId || !adminId || String(teacher.adminId) !== String(adminId)) return false;
   } else if (content.createdBy !== 'super-admin') return false;
   const classDoc = await resolveStudentClassDoc(student);
-  const subjects = student.isIndividualAccount && !student.assignedAdmin
-    ? await (await import('./individualCatalogSubjects.js')).resolveIndividualCatalogSubjectIds(student)
-    : await resolveStudentSubjectIdsForLibrary(student, classDoc);
-  if (!subjects.some(s => String(s) === String(content.subject?._id || content.subject))) return false;
-  return contentMatchesStudentClass(content, resolveStudentClassNumber(student, classDoc), subjects);
+  // Authorize the resource through the same IIT merge, sibling-subject, active
+  // catalog, program/track and class filters used by Learning Paths. Query only
+  // this resource so the library's list limit cannot deny an older upload.
+  const library = await loadStudentLibraryContents(id, student, classDoc,
+    student.assignedAdmin?.board || student.board, { contentId: content._id });
+  if (!library.studentClassNum) return false;
+  return library.contents.some(row => String(row._id) === String(content._id));
 }
