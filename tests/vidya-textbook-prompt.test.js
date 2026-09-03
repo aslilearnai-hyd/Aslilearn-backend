@@ -21,6 +21,8 @@ test('teacher and student model requests include syllabus and actual retrieved t
     const result = await generate({ question: 'Teach chapter 1', viewerUserId: 'test' });
     assert.match(captured.systemInstruction, /Pattern In Mathematics/);
     assert.match(captured.systemInstruction, /PDF PASSAGE: Number patterns/);
+    assert.match(captured.systemInstruction, /Indian English/);
+    assert.match(captured.systemInstruction, /₹ \/ INR/);
     assert.match(result, /Retrieved source B1/);
   }
 });
