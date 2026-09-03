@@ -9,8 +9,9 @@ import { getEffectiveTeacherSubjectObjectIds } from '../utils/teacherSubjectScop
 import { resolveStudentClassDoc, resolveStudentSubjectIdsForLibrary } from '../routes/student/helpers.js';
 import { normalizeSubjectLabel } from '../utils/resolveSubjectContentIds.js';
 import { compareAiToolTopicRows, chapterNumberFromTopicLabel } from '../utils/ai-tool-topic-order.js';
-import { getStudentSchoolProgramContext, resolveIitCategoriesForContentBrowse } from '../utils/schoolProgram.js';
-import { mergeIitCatalogSubjectsIntoLibraryIds } from '../utils/iitCatalogSubjects.js';
+import { getStudentSchoolProgramContext, getTeacherSchoolProgramContext, resolveIitCategoriesForContentBrowse } from '../utils/schoolProgram.js';
+import { mergeIitCatalogSubjectsIntoLibraryIds, resolveIitCatalogSubjectIdsForClass } from '../utils/iitCatalogSubjects.js';
+import { resolveIitCategoriesForClass } from '../constants/products.js';
 
 const exact = value => new RegExp(`^${String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`, 'i');
 const grade = value => String(value || '').match(/\d+/)?.[0] || '';
@@ -22,6 +23,30 @@ const subjectKey = value => {
   return /^math/.test(known || '') ? 'mathematics' : known || text;
 };
 export { subjectKey };
+export function buildTeacherCurriculumScopes({ docs = [], classes = [], program = {} }) {
+  const curriculumBoard = boardKey(program.curriculumBoard || 'CBSE');
+  const allowedForClass = classNumber => new Set(resolveIitCategoriesForClass({
+    iitCategories: program.iitCategories,
+    iitCategoriesByClass: program.iitCategoriesByClass,
+  }, classNumber).map(value => String(value).toUpperCase()));
+  return docs.flatMap(subject => {
+    const subj = subjectKey(subject.name);
+    const targets = subject.classNumber ? [{ classNumber: subject.classNumber }] : classes;
+    return targets.flatMap(c => {
+      const classNumber = grade(c.classNumber);
+      if (!classNumber || !subj) return [];
+      const explicitTrack = String(subject.productCategory || '').toUpperCase();
+      const isIit = boardKey(subject.board) === 'IIT/NEET' || explicitTrack;
+      if (!isIit) return [{ board: curriculumBoard, track: '', classNumber, subject: subj }];
+      const allowed = allowedForClass(classNumber);
+      if (!program.isAsliPrepExclusive || !allowed.size) return [];
+      if (explicitTrack) return allowed.has(explicitTrack)
+        ? [{ board: 'IIT/NEET', track: explicitTrack, classNumber, subject: subj }]
+        : [];
+      return [...allowed].map(track => ({ board: 'IIT/NEET', track, classNumber, subject: subj }));
+    });
+  });
+}
 const titleKey = value => String(value || '').toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
 export function matchNamedBooks(books, question) {
   const q = titleKey(question);
@@ -94,7 +119,26 @@ export async function loadVidyaCurriculumScopes(userId, role) {
     const teacher = await Teacher.findById(userId).lean();
     if (!teacher) return [];
     subjects = await getEffectiveTeacherSubjectObjectIds(teacher);
-    classes = await Class.find({ _id: { $in: (teacher.assignedClassIds || []).filter(id => mongoose.isValidObjectId(id)) } }).select('classNumber').lean();
+    const teacherClassIds = [
+      ...(teacher.assignedClassIds || []),
+      ...(teacher.assignments || []).map(assignment => assignment?.classId),
+    ].filter(id => mongoose.isValidObjectId(id));
+    classes = await Class.find({ _id: { $in: teacherClassIds } }).select('classNumber').lean();
+    const program = await getTeacherSchoolProgramContext(userId, teacher);
+    let docs = await Subject.find({ _id: { $in: subjects }, isActive: true }).select('name board productCategory classNumber').lean();
+    const assignedFamilies = new Set(docs.map(doc => subjectKey(doc.name)).filter(Boolean));
+    if (program.isAsliPrepExclusive) {
+      const extraIds = [];
+      for (const c of classes) {
+        const tracks = resolveIitCategoriesForClass(program, c.classNumber);
+        extraIds.push(...await resolveIitCatalogSubjectIdsForClass(c.classNumber, { iitCategories: tracks }));
+      }
+      if (extraIds.length) {
+        const extraDocs = await Subject.find({ _id: { $in: extraIds }, isActive: true }).select('name board productCategory classNumber').lean();
+        docs = [...docs, ...extraDocs.filter(doc => assignedFamilies.has(subjectKey(doc.name)))];
+      }
+    }
+    return [...new Map(buildTeacherCurriculumScopes({ docs, classes, program }).map(s => [JSON.stringify(s), s])).values()];
   } else {
     const student = await User.findById(userId).populate('assignedAdmin', 'board curriculumBoard isAsliPrepExclusive iitCategories iitCategoriesByClass').lean();
     if (!student || student.role !== 'student') return [];
