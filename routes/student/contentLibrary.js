@@ -50,6 +50,7 @@ import {
   resolveExamQuestionSubjectKey,
 } from '../../utils/resolveSubjectContentIds.js';
 import { assertAllowedFetchUrl, getContentProxyAllowlist } from '../../utils/url-allowlist.js';
+import { signContentMediaFields } from '../../utils/upload-access.js';
 import {
   buildCachedAnalysisResponse,
   cachedHasStaleAiExplanations,
@@ -359,6 +360,7 @@ router.get('/asli-prep-content', async (req, res) => {
     // Skip live YouTube scraping on list — use stored duration only (keeps LP/EduOTT fast).
     const { dedupeLibraryContents } = await import('../../utils/dedupeLibraryContents.js');
     contents = dedupeLibraryContents(contents);
+    contents = contents.map((content) => signContentMediaFields(content));
 
     const eduOtt =
       String(surface || '').toLowerCase() === 'eduott' ||
@@ -555,7 +557,7 @@ router.get('/weak-subject-content', async (req, res) => {
       return bMatch - aMatch;
     });
 
-    const mapRow = (c) => ({
+    const mapRow = (c) => signContentMediaFields({
       _id: String(c._id),
       title: c.title || '',
       description: c.description || '',

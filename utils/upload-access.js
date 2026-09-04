@@ -135,3 +135,15 @@ export function signQuestionMediaFields(question, ttlSeconds = 28800) {
   }
   return next;
 }
+
+/** Sign all locally hosted media fields on a content-like object. */
+export function signContentMediaFields(content, ttlSeconds = 28800) {
+  if (!content || typeof content !== 'object') return content;
+  const next = { ...content };
+  if (next.fileUrl) next.fileUrl = withSignedUploadUrl(next.fileUrl, ttlSeconds);
+  if (Array.isArray(next.fileUrls)) {
+    next.fileUrls = next.fileUrls.map((url) => withSignedUploadUrl(url, ttlSeconds));
+  }
+  if (next.thumbnailUrl) next.thumbnailUrl = withSignedUploadUrl(next.thumbnailUrl, ttlSeconds);
+  return next;
+}
