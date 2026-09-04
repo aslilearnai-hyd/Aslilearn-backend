@@ -21,6 +21,60 @@ import {
   normalizeAttendanceStatus,
   summarizeAttendanceCounts,
 } from '../utils/attendance-helpers.js';
+import { validateRazorpayCheckoutEvidence } from '../services/razorpayService.js';
+
+describe('Razorpay entitlement binding', () => {
+  const order = {
+    id: 'order_secure123',
+    amount: 99900,
+    currency: 'INR',
+    notes: {
+      userId: '507f1f77bcf86cd799439011',
+      role: 'student',
+      packageType: 'both',
+      period: 'year',
+      track: 'ALPHA',
+    },
+  };
+  const payment = {
+    id: 'pay_secure123',
+    order_id: order.id,
+    amount: order.amount,
+    currency: 'INR',
+    status: 'captured',
+  };
+
+  it('derives the entitlement only from the Razorpay order notes', () => {
+    const trusted = validateRazorpayCheckoutEvidence({
+      order,
+      payment,
+      accountId: order.notes.userId,
+      role: 'student',
+    });
+    assert.equal(trusted.packageType, 'both');
+    assert.equal(trusted.period, 'year');
+    assert.equal(trusted.amountPaise, 99900);
+  });
+
+  it('rejects cross-account, cross-order, amount, and uncaptured payment evidence', () => {
+    assert.throws(
+      () => validateRazorpayCheckoutEvidence({ order, payment, accountId: 'other', role: 'student' }),
+      /does not belong/
+    );
+    assert.throws(
+      () => validateRazorpayCheckoutEvidence({ order, payment: { ...payment, order_id: 'order_other' }, accountId: order.notes.userId, role: 'student' }),
+      /does not belong/
+    );
+    assert.throws(
+      () => validateRazorpayCheckoutEvidence({ order, payment: { ...payment, amount: 100 }, accountId: order.notes.userId, role: 'student' }),
+      /amount/
+    );
+    assert.throws(
+      () => validateRazorpayCheckoutEvidence({ order, payment: { ...payment, status: 'authorized' }, accountId: order.notes.userId, role: 'student' }),
+      /captured/
+    );
+  });
+});
 
 describe('student data retention safeguards', () => {
   it('makes bulk removal tenant-scoped, confirmed, and recoverable', () => {
