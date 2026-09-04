@@ -1537,7 +1537,8 @@ export const createExam = async (req, res) => {
 export const updateExam = async (req, res) => {
   try {
     const { id } = req.params;
-    const updateData = req.body;
+    const { pickAllowedFields, SAFE_EXAM_UPDATE_FIELDS } = await import('../utils/safe-update-fields.js');
+    const updateData = pickAllowedFields(req.body, SAFE_EXAM_UPDATE_FIELDS);
     const adminId = req.adminId;
     
     // Convert date strings to Date objects if provided
@@ -1688,7 +1689,8 @@ export const createQuestion = async (req, res) => {
 export const updateQuestion = async (req, res) => {
   try {
     const { questionId } = req.params;
-    const updateData = req.body;
+    const { pickAllowedFields, SAFE_QUESTION_UPDATE_FIELDS } = await import('../utils/safe-update-fields.js');
+    const updateData = pickAllowedFields(req.body, SAFE_QUESTION_UPDATE_FIELDS);
     const adminId = req.adminId;
     
     // Build update filter

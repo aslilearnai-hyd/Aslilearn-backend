@@ -116,11 +116,8 @@ export function normalizeIndividualSignupBody(body = {}) {
     body.accountSource || body.source,
     'web_register',
   );
-  const trialDaysRaw = Number(body.trialDays);
-  const trialDays =
-    Number.isFinite(trialDaysRaw) && trialDaysRaw > 0
-      ? Math.min(365, Math.floor(trialDaysRaw))
-      : INDIVIDUAL_TRIAL_DAYS;
+  // Trial duration is a server policy. Never trust a self-signup value here.
+  const trialDays = INDIVIDUAL_TRIAL_DAYS;
 
   if (!fullName) return { ok: false, message: 'Full name is required.' };
   if (!email || !email.includes('@')) return { ok: false, message: 'Valid email is required.' };

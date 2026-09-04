@@ -22,6 +22,8 @@ import {
   summarizeAttendanceCounts,
 } from '../utils/attendance-helpers.js';
 import { validateRazorpayCheckoutEvidence } from '../services/razorpayService.js';
+import { INDIVIDUAL_TRIAL_DAYS, normalizeIndividualSignupBody } from '../utils/individualAccount.js';
+import { escapeAuditSearchRegex } from '../controllers/auditLogController.js';
 
 describe('Razorpay entitlement binding', () => {
   const order = {
@@ -73,6 +75,27 @@ describe('Razorpay entitlement binding', () => {
       () => validateRazorpayCheckoutEvidence({ order, payment: { ...payment, status: 'authorized' }, accountId: order.notes.userId, role: 'student' }),
       /captured/
     );
+  });
+});
+
+describe('tenant and signup boundaries', () => {
+  it('does not let school admins select another OMR tenant', () => {
+    const source = readFileSync(new URL('../controllers/omrResultsController.js', import.meta.url), 'utf8');
+    assert.match(source, /explicit && role === 'super-admin'/);
+  });
+
+  it('ignores client-controlled trial duration', () => {
+    const result = normalizeIndividualSignupBody({
+      role: 'student', fullName: 'Trial User', email: 'trial@example.com', password: 'secret1',
+      schoolName: 'Example', phone: '9876543210', classNumber: '8',
+      interestedCourses: ['CBSE'], interestedSubjects: ['Maths'], trialDays: 365,
+    });
+    assert.equal(result.ok, true);
+    assert.equal(result.data.trialDays, INDIVIDUAL_TRIAL_DAYS);
+  });
+
+  it('escapes audit-search regular expression syntax', () => {
+    assert.equal(escapeAuditSearchRegex('a.*(b)'), 'a\\.\\*\\(b\\)');
   });
 });
 
@@ -150,6 +173,13 @@ describe('safe update fields', () => {
     assert.equal(picked.videoUrl, 'https://x');
     assert.equal(picked.adminId, undefined);
     assert.equal(picked.role, undefined);
+  });
+
+  it('strips ownership fields from exam and question updates', async () => {
+    const { SAFE_EXAM_UPDATE_FIELDS, SAFE_QUESTION_UPDATE_FIELDS } = await import('../utils/safe-update-fields.js');
+    const unsafe = { title: 'Allowed', questionText: 'Allowed', adminId: 'evil', createdBy: 'evil', role: 'super-admin' };
+    assert.deepEqual(pickAllowedFields(unsafe, SAFE_EXAM_UPDATE_FIELDS), { title: 'Allowed' });
+    assert.deepEqual(pickAllowedFields(unsafe, SAFE_QUESTION_UPDATE_FIELDS), { questionText: 'Allowed' });
   });
 });
 

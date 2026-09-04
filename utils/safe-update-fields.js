@@ -40,6 +40,17 @@ export const SAFE_LEARNING_PATH_UPDATE_FIELDS = Object.freeze([
   'isPublished',
 ]);
 
+export const SAFE_EXAM_UPDATE_FIELDS = Object.freeze([
+  'title', 'description', 'examType', 'duration', 'totalQuestions', 'totalMarks',
+  'instructions', 'startDate', 'endDate', 'isActive', 'assignedClasses', 'subjects',
+  'maxAttempts',
+]);
+
+export const SAFE_QUESTION_UPDATE_FIELDS = Object.freeze([
+  'questionText', 'questionImage', 'questionType', 'options', 'correctAnswer',
+  'marks', 'negativeMarks', 'explanation', 'subject', 'isActive',
+]);
+
 export function pickAllowedFields(body, allowed) {
   const out = {};
   if (!body || typeof body !== 'object') return out;

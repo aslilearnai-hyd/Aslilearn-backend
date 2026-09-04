@@ -2,6 +2,10 @@ import AiContentEngineChunk from '../../models/AiContentEngineChunk.js';
 import AiToolGeneration from '../../models/AiToolGeneration.js';
 import PDFContent from '../../models/PDFContent.js';
 
+function escapeRegexLiteral(value) {
+  return String(value || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 function extractKeywords(query) {
   const words = String(query || '')
     .toLowerCase()
@@ -22,7 +26,7 @@ export async function retrieveStudentContent({
   const [chunks, aiGen, pdfMeta] = await Promise.all([
     AiContentEngineChunk.find({
       ...(classNumber ? { classLabel: { $in: [String(classNumber), `Class ${classNumber}`] } } : {}),
-      ...(subject ? { subject: new RegExp(`^${String(subject)}$`, 'i') } : {}),
+      ...(subject ? { subject: new RegExp(`^${escapeRegexLiteral(subject)}$`, 'i') } : {}),
       ...(regex ? { chunkText: regex } : {}),
     })
       .select('subject classLabel chapter topic subTopic chunkText sourcePdfId')
@@ -30,7 +34,7 @@ export async function retrieveStudentContent({
       .lean(),
     AiToolGeneration.find({
       ...(classNumber ? { classLabel: { $in: [String(classNumber), `Class ${classNumber}`] } } : {}),
-      ...(subject ? { subject: new RegExp(`^${String(subject)}$`, 'i') } : {}),
+      ...(subject ? { subject: new RegExp(`^${escapeRegexLiteral(subject)}$`, 'i') } : {}),
       ...(regex ? { generatedContent: regex } : {}),
     })
       .select('toolName toolDisplayName subject classLabel topic subtopic generatedContent createdAt')
@@ -39,7 +43,7 @@ export async function retrieveStudentContent({
       .lean(),
     PDFContent.find({
       ...(classNumber ? { classNumber: String(classNumber) } : {}),
-      ...(subject ? { subject: new RegExp(`^${String(subject)}$`, 'i') } : {}),
+      ...(subject ? { subject: new RegExp(`^${escapeRegexLiteral(subject)}$`, 'i') } : {}),
       ...(regex ? { topic: regex } : {}),
     })
       .select('originalFileName classNumber subject topic uploadedAt')
