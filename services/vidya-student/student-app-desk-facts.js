@@ -21,6 +21,8 @@ import { filterToActiveCatalogSubjectIds } from '../../utils/activeCatalog.js';
 import Assessment from '../../models/Assessment.js';
 import Event from '../../models/Event.js';
 import ExamResult from '../../models/ExamResult.js';
+import Teacher from '../../models/Teacher.js';
+import TeacherWorkDiary from '../../models/TeacherWorkDiary.js';
 
 const LIST_CAP = 200;
 
@@ -121,6 +123,26 @@ export async function buildStudentAppDeskFacts(studentOid, extras = {}) {
       ? student.assignedAdmin
       : student.board || '';
 
+  // Same role-safe scope as the Student Portal's Teachers Report page.
+  const teacherBase = studentAdminId ? { adminId: studentAdminId, isActive: true } : null;
+  let visibleTeachers = teacherBase && studentClassNumber
+    ? await Teacher.find({ ...teacherBase, assignedClassIds: String(studentClassNumber) })
+        .select('_id').lean().catch(() => [])
+    : [];
+  if (teacherBase && !visibleTeachers.length) {
+    visibleTeachers = await Teacher.find(teacherBase).select('_id').lean().catch(() => []);
+  }
+  const visibleTeacherIds = visibleTeachers.map((teacher) => teacher._id);
+  const assignedClassId = student.assignedClass?._id || student.assignedClass || null;
+  const diaryFilter = visibleTeacherIds.length ? { teacherId: { $in: visibleTeacherIds } } : null;
+  if (diaryFilter && assignedClassId) {
+    diaryFilter.$or = [
+      { classId: assignedClassId },
+      { classId: { $exists: false } },
+      { classId: null },
+    ];
+  }
+
   let librarySubjectIds = await resolveStudentSubjectIdsForLibrary(student, studentClassDoc);
   librarySubjectIds = await filterToActiveCatalogSubjectIds(librarySubjectIds);
 
@@ -160,7 +182,7 @@ export async function buildStudentAppDeskFacts(studentOid, extras = {}) {
       .map((r) => String(r.videoId)),
   );
 
-  const [enrichedSubjects, examDocs, libraryBundle, quizzes, calendarEvents, rankingRows] =
+  const [enrichedSubjects, examDocs, libraryBundle, quizzes, calendarEvents, rankingRows, teacherDiaryRows] =
     await Promise.all([
     enrichSubjectsWithMedia(student, subjectRows),
     Exam.find({ createdByRole: 'super-admin', isActive: true })
@@ -198,6 +220,16 @@ export async function buildStudentAppDeskFacts(studentOid, extras = {}) {
       .limit(50)
       .lean()
       .catch(() => []),
+    diaryFilter
+      ? TeacherWorkDiary.find(diaryFilter)
+          .select('forDate title content classDisplay teacherId classId')
+          .sort({ forDate: -1 })
+          .limit(100)
+          .populate('teacherId', 'fullName email')
+          .populate('classId', 'classNumber section name')
+          .lean()
+          .catch(() => [])
+      : Promise.resolve([]),
   ]);
 
   const subjects = (enrichedSubjects || []).map((row) => {
@@ -285,6 +317,18 @@ export async function buildStudentAppDeskFacts(studentOid, extras = {}) {
     .filter((n) => n != null && Number.isFinite(Number(n)))
     .sort((a, b) => Number(a) - Number(b))[0];
 
+  const teacherReports = (teacherDiaryRows || []).map((entry) => ({
+    id: String(entry._id),
+    forDate: entry.forDate || null,
+    dateLabel: formatShortDate(entry.forDate),
+    title: entry.title || '',
+    content: entry.content || '',
+    classDisplay: entry.classDisplay || (entry.classId?.classNumber
+      ? `Class ${entry.classId.classNumber}${entry.classId.section ? ` - ${entry.classId.section}` : ''}`
+      : entry.classId?.name || ''),
+    teacherName: entry.teacherId?.fullName || '',
+  }));
+
   const contents = Array.isArray(libraryBundle?.contents) ? libraryBundle.contents : [];
   const homeworkContents = contents.filter(
     (c) => String(c.type || '').toLowerCase() === 'homework',
@@ -343,6 +387,7 @@ export async function buildStudentAppDeskFacts(studentOid, extras = {}) {
     openExams,
     quizzes: quizFacts,
     calendar: calendarUpcoming,
+    teacherReports,
     ranking: {
       bestClassRank: bestRank ?? null,
       recentResultsWithRank: (rankingRows || []).slice(0, 20),
@@ -367,6 +412,7 @@ export async function buildStudentAppDeskFacts(studentOid, extras = {}) {
       quizzes: quizFacts.length,
       quizzesAttempted: quizFacts.filter((q) => q.attempted).length,
       calendarEvents: calendarUpcoming.length,
+      teacherReports: teacherReports.length,
     },
     todayKey: istDayBounds().key,
   };
