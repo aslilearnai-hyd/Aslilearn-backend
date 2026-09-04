@@ -1760,6 +1760,9 @@ export const updateContent = async (req, res) => {
         }
         content.set(patch);
       }
+    } else if (chapter !== undefined) {
+      // PDFs and other library content can also be moved between chapters.
+      content.chapter = String(chapter).trim() || undefined;
     }
     if (date !== undefined && String(date).trim() !== '') {
       const nextDate = new Date(date);

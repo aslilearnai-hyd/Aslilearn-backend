@@ -161,6 +161,19 @@ describe('upload access ACL', () => {
       '/uploads/questions/fig.png'
     );
   });
+
+  it('signs local content media fields without changing external URLs', async () => {
+    process.env.JWT_SECRET = process.env.JWT_SECRET || 'test-secret-at-least-16-chars';
+    const { signContentMediaFields } = await import('../utils/upload-access.js');
+    const signed = signContentMediaFields({
+      fileUrl: '/uploads/content/book.pdf',
+      fileUrls: ['/uploads/content/book.pdf', 'https://example.com/book.pdf'],
+      thumbnailUrl: '/uploads/content/thumbnails/book.jpg',
+    }, 600);
+    assert.match(signed.fileUrl, /^\/uploads\/content\/book\.pdf\?exp=\d+&sig=[a-f0-9]+$/);
+    assert.match(signed.thumbnailUrl, /^\/uploads\/content\/thumbnails\/book\.jpg\?exp=\d+&sig=[a-f0-9]+$/);
+    assert.equal(signed.fileUrls[1], 'https://example.com/book.pdf');
+  });
 });
 
 describe('csrf origin guard', () => {

@@ -51,6 +51,7 @@ import {
   extractPlainSubjectNameForContent,
 } from '../../utils/resolveSubjectContentIds.js';
 import { parseDateKeyToUtc, getTeacherClassesHandler } from './helpers.js';
+import { signContentMediaFields } from '../../utils/upload-access.js';
 
 const router = express.Router();
 
@@ -400,6 +401,7 @@ router.get('/asli-prep-content', async (req, res) => {
     // Skip live YouTube scraping on list — use stored duration only (keeps LP/EduOTT fast).
     const { dedupeLibraryContents } = await import('../../utils/dedupeLibraryContents.js');
     contents = dedupeLibraryContents(contents);
+    contents = contents.map((content) => signContentMediaFields(content));
 
     res.json({
       success: true,
