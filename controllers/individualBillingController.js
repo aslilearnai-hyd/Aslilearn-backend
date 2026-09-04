@@ -1,11 +1,15 @@
 import User from '../models/User.js';
 import Teacher from '../models/Teacher.js';
+import RazorpayPaymentReceipt from '../models/RazorpayPaymentReceipt.js';
 import {
   isRazorpayConfigured,
   createRazorpayOrder,
   verifyRazorpaySignature,
   getRazorpayKeyId,
   describeRazorpayConfig,
+  fetchRazorpayOrder,
+  fetchRazorpayPayment,
+  validateRazorpayCheckoutEvidence,
 } from '../services/razorpayService.js';
 import {
   publicPlanCatalog,
@@ -199,6 +203,7 @@ export async function createIndividualCheckoutOrder(req, res) {
 }
 
 export async function verifyIndividualCheckout(req, res) {
+  let paymentClaim = null;
   try {
     const loaded = await loadIndividualAccount(req);
     if (!loaded.ok) return res.status(403).json({ success: false, message: loaded.message });
@@ -206,13 +211,7 @@ export async function verifyIndividualCheckout(req, res) {
     const orderId = String(req.body?.razorpay_order_id || '').trim();
     const paymentId = String(req.body?.razorpay_payment_id || '').trim();
     const signature = String(req.body?.razorpay_signature || '').trim();
-    const packageType = req.body?.packageType;
-    const period = req.body?.period;
-    const plan = loaded.schoolManaged
-      ? schoolStudentPlan(loaded.doc)
-      : await resolveIndividualPlan({ role: loaded.role, packageType, period });
-
-    if (!orderId || !paymentId || !signature || !plan) {
+    if (!orderId || !paymentId || !signature) {
       return res.status(400).json({ success: false, message: 'Payment details are incomplete.' });
     }
 
@@ -220,8 +219,136 @@ export async function verifyIndividualCheckout(req, res) {
       return res.status(400).json({ success: false, message: 'Payment signature could not be verified.' });
     }
 
-    const track = loaded.schoolManaged || plan.packageType === 'board' ? '' : normalizeTrack(req.body?.track);
-    const classLabel = String(req.body?.classLabel || loaded.doc.classNumber || '').trim();
+    const [order, payment] = await Promise.all([
+      fetchRazorpayOrder(orderId),
+      fetchRazorpayPayment(paymentId),
+    ]);
+    const trusted = validateRazorpayCheckoutEvidence({
+      order,
+      payment,
+      accountId: loaded.doc._id,
+      role: loaded.role,
+    });
+    const resolvedPlan = loaded.schoolManaged
+      ? schoolStudentPlan(loaded.doc)
+      : await resolveIndividualPlan({
+          role: loaded.role,
+          packageType: trusted.packageType,
+          period: trusted.period,
+        });
+    if (!resolvedPlan || resolvedPlan.packageType !== trusted.packageType || resolvedPlan.period !== trusted.period) {
+      return res.status(400).json({ success: false, message: 'The paid order contains an invalid plan.' });
+    }
+    // Rates may change while a checkout is open. The immutable Razorpay order
+    // amount is the paid source of truth; package/period still come only from
+    // the server-written order notes.
+    const plan = { ...resolvedPlan, amountPaise: trusted.amountPaise, amountInr: trusted.amountInr };
+    const track = loaded.schoolManaged || plan.packageType === 'board' ? '' : normalizeTrack(trusted.track);
+    if (!loaded.schoolManaged && plan.packageType !== 'board' && !track) {
+      return res.status(400).json({ success: false, message: 'The paid order is missing its IIT track.' });
+    }
+    const classLabel = String(trusted.classLabel || loaded.doc.classNumber || '').trim();
+
+    // Catch payments recorded before the globally unique receipt collection existed.
+    const paymentLookup = {
+      $or: [
+        { razorpayPaymentId: paymentId },
+        { trialPaymentReference: paymentId },
+        { 'subscriptionPayments.paymentReference': paymentId },
+      ],
+    };
+    const [priorUser, priorTeacher] = await Promise.all([
+      User.findOne(paymentLookup).select('_id').lean(),
+      Teacher.findOne(paymentLookup).select('_id').lean(),
+    ]);
+    const historicalOwner = priorUser?._id || priorTeacher?._id;
+    if (historicalOwner && String(historicalOwner) !== String(loaded.doc._id)) {
+      return res.status(409).json({ success: false, message: 'This payment has already been used.' });
+    }
+
+    const existingClaim = await RazorpayPaymentReceipt.findOne({
+      $or: [{ paymentId }, { orderId }],
+    });
+    if (existingClaim) {
+      const sameOwner =
+        String(existingClaim.accountId) === String(loaded.doc._id) &&
+        existingClaim.accountRole === loaded.role &&
+        existingClaim.paymentId === paymentId &&
+        existingClaim.orderId === orderId;
+      if (!sameOwner) {
+        return res.status(409).json({ success: false, message: 'This payment has already been used.' });
+      }
+      if (existingClaim.status === 'activated' || loaded.doc.razorpayPaymentId === paymentId) {
+        if (existingClaim.status !== 'activated') {
+          existingClaim.status = 'activated';
+          existingClaim.activatedAt = new Date();
+          await existingClaim.save();
+        }
+        return res.json({
+          success: true,
+          message: 'Payment was already applied to this account.',
+          subscriptionStatus: loaded.doc.subscriptionStatus,
+          paidPackage: loaded.doc.paidPackage,
+          subscriptionExpiresAt: loaded.doc.subscriptionExpiresAt,
+          subscriptionPeriod: loaded.doc.subscriptionPeriod,
+          receipt: buildIndividualReceipt(loaded.doc),
+          redirect: loaded.role === 'teacher' ? '/teacher/dashboard' : '/dashboard',
+        });
+      }
+      if (existingClaim.status === 'processing') {
+        return res.status(409).json({ success: false, message: 'This payment is already being processed.' });
+      }
+      existingClaim.status = 'processing';
+      existingClaim.failureReason = '';
+      paymentClaim = await existingClaim.save();
+    } else if (historicalOwner) {
+      try {
+        await RazorpayPaymentReceipt.create({
+          paymentId,
+          orderId,
+          accountId: loaded.doc._id,
+          accountRole: loaded.role,
+          packageType: plan.packageType,
+          period: plan.period,
+          amountPaise: plan.amountPaise,
+          currency: 'INR',
+          status: 'activated',
+          activatedAt: new Date(),
+        });
+      } catch (claimError) {
+        if (claimError?.code !== 11000) throw claimError;
+      }
+      return res.json({
+        success: true,
+        message: 'Payment was already applied to this account.',
+        subscriptionStatus: loaded.doc.subscriptionStatus,
+        paidPackage: loaded.doc.paidPackage,
+        subscriptionExpiresAt: loaded.doc.subscriptionExpiresAt,
+        subscriptionPeriod: loaded.doc.subscriptionPeriod,
+        receipt: buildIndividualReceipt(loaded.doc),
+        redirect: loaded.role === 'teacher' ? '/teacher/dashboard' : '/dashboard',
+      });
+    } else {
+      try {
+        paymentClaim = await RazorpayPaymentReceipt.create({
+          paymentId,
+          orderId,
+          accountId: loaded.doc._id,
+          accountRole: loaded.role,
+          packageType: plan.packageType,
+          period: plan.period,
+          amountPaise: plan.amountPaise,
+          currency: 'INR',
+          status: 'processing',
+        });
+      } catch (claimError) {
+        if (claimError?.code === 11000) {
+          return res.status(409).json({ success: false, message: 'This payment has already been used.' });
+        }
+        throw claimError;
+      }
+    }
+
     const currentExpiry =
       loaded.doc.subscriptionExpiresAt && new Date(loaded.doc.subscriptionExpiresAt).getTime() > Date.now()
         ? new Date(loaded.doc.subscriptionExpiresAt)
@@ -272,6 +399,10 @@ export async function verifyIndividualCheckout(req, res) {
     }
     await loaded.doc.save();
 
+    paymentClaim.status = 'activated';
+    paymentClaim.activatedAt = new Date();
+    await paymentClaim.save();
+
     const receipt = buildIndividualReceipt(loaded.doc, {
       label: plan.label,
       amountInr: plan.amountInr,
@@ -290,6 +421,11 @@ export async function verifyIndividualCheckout(req, res) {
         loaded.role === 'teacher' ? '/teacher/dashboard' : '/dashboard',
     });
   } catch (error) {
+    if (paymentClaim?._id && paymentClaim.status === 'processing') {
+      await RazorpayPaymentReceipt.findByIdAndUpdate(paymentClaim._id, {
+        $set: { status: 'failed', failureReason: String(error?.message || 'Activation failed').slice(0, 300) },
+      }).catch(() => {});
+    }
     console.error('verifyIndividualCheckout:', error);
     return res.status(500).json({
       success: false,

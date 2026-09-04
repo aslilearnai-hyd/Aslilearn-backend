@@ -239,6 +239,60 @@ export async function createRazorpayOrder({ amountPaise, receipt, notes, custome
   return data;
 }
 
+export async function fetchRazorpayOrder(orderId) {
+  const id = String(orderId || '').trim();
+  if (!/^order_[A-Za-z0-9]+$/.test(id)) throw new Error('Invalid Razorpay order id');
+  const { data } = await axios.get(`${RAZORPAY_API}/orders/${encodeURIComponent(id)}`, {
+    ...razorpayRequestConfig(),
+  });
+  return data;
+}
+
+export async function fetchRazorpayPayment(paymentId) {
+  const id = String(paymentId || '').trim();
+  if (!/^pay_[A-Za-z0-9]+$/.test(id)) throw new Error('Invalid Razorpay payment id');
+  const { data } = await axios.get(`${RAZORPAY_API}/payments/${encodeURIComponent(id)}`, {
+    ...razorpayRequestConfig(),
+  });
+  return data;
+}
+
+/** Validate trusted Razorpay records before granting any entitlement. */
+export function validateRazorpayCheckoutEvidence({ order, payment, accountId, role }) {
+  const notes = order?.notes && typeof order.notes === 'object' ? order.notes : {};
+  const expectedAccountId = String(accountId || '');
+  if (!order?.id || !payment?.id) throw new Error('Razorpay order or payment was not found');
+  if (String(payment.order_id || '') !== String(order.id)) {
+    throw new Error('Payment does not belong to this order');
+  }
+  if (String(payment.status || '').toLowerCase() !== 'captured') {
+    throw new Error('Payment has not been captured');
+  }
+  if (Number(payment.amount) !== Number(order.amount) || Number(order.amount) < 100) {
+    throw new Error('Payment amount does not match the order');
+  }
+  if (String(payment.currency || '').toUpperCase() !== String(order.currency || '').toUpperCase()) {
+    throw new Error('Payment currency does not match the order');
+  }
+  if (String(order.currency || '').toUpperCase() !== 'INR') {
+    throw new Error('Unsupported payment currency');
+  }
+  if (String(notes.userId || '') !== expectedAccountId) {
+    throw new Error('Order does not belong to this account');
+  }
+  if (String(notes.role || '').toLowerCase() !== String(role || '').toLowerCase()) {
+    throw new Error('Order account role does not match');
+  }
+  return {
+    packageType: String(notes.packageType || '').toLowerCase(),
+    period: String(notes.period || '').toLowerCase(),
+    classLabel: String(notes.classLabel || '').trim(),
+    track: String(notes.track || '').toUpperCase().trim(),
+    amountPaise: Number(order.amount),
+    amountInr: Number(order.amount) / 100,
+  };
+}
+
 export function verifyRazorpaySignature({ orderId, paymentId, signature }) {
   const secret = getRazorpayKeySecret();
   if (!secret) return false;
