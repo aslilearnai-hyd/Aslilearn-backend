@@ -12,8 +12,9 @@ function resolveAdminId(req) {
 }
 
 function resolveOmrAdminId(req) {
+  const role = String(req.user?.role || req.role || '').toLowerCase();
   const explicit = req.body?.adminId || req.query?.adminId;
-  if (explicit) return String(explicit);
+  if (explicit && role === 'super-admin') return String(explicit);
   return resolveAdminId(req);
 }
 

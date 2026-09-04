@@ -1,5 +1,9 @@
 import AuditLog from '../models/AuditLog.js';
 
+export function escapeAuditSearchRegex(value) {
+  return String(value || '').trim().slice(0, 100).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 /**
  * Super-admin: list / filter durable audit logs.
  * GET /api/super-admin/audit-logs?page=1&limit=50&action=&actor=&q=&from=&to=
@@ -12,19 +16,21 @@ export async function listAuditLogs(req, res) {
 
     const filter = {};
     if (req.query.action) {
-      filter.action = { $regex: String(req.query.action).trim(), $options: 'i' };
+      filter.action = { $regex: escapeAuditSearchRegex(req.query.action), $options: 'i' };
     }
     if (req.query.actor) {
-      const a = String(req.query.actor).trim();
+      const actorRaw = String(req.query.actor).trim().slice(0, 100);
+      const a = escapeAuditSearchRegex(actorRaw);
       filter.$or = [
         { 'actor.email': { $regex: a, $options: 'i' } },
         { 'actor.name': { $regex: a, $options: 'i' } },
-        { 'actor.id': a },
+        { 'actor.id': actorRaw },
         { 'actor.role': { $regex: a, $options: 'i' } },
       ];
     }
     if (req.query.q) {
-      const q = String(req.query.q).trim();
+      const qRaw = String(req.query.q).trim().slice(0, 100);
+      const q = escapeAuditSearchRegex(qRaw);
       filter.$or = [
         ...(filter.$or || []),
         { summary: { $regex: q, $options: 'i' } },
@@ -32,8 +38,8 @@ export async function listAuditLogs(req, res) {
         { action: { $regex: q, $options: 'i' } },
         { 'target.label': { $regex: q, $options: 'i' } },
         { 'target.email': { $regex: q, $options: 'i' } },
-        { 'target.id': q },
-        { requestId: q },
+        { 'target.id': qRaw },
+        { requestId: qRaw },
       ];
     }
     if (req.query.from || req.query.to) {

@@ -98,7 +98,21 @@ export function extractAuthToken(req) {
   const fromCookie = req.cookies?.[AUTH_COOKIE_NAME];
   if (typeof fromCookie === 'string' && fromCookie.trim()) return fromCookie.trim();
 
-  // Query token for <img>/iframe src (no Authorization header possible)
+  // Query tokens are limited to the two read-only content endpoints whose
+  // browser elements cannot send an Authorization header.
+  const requestPath = (() => {
+    try {
+      return new URL(req.originalUrl || req.url || '/', 'http://local').pathname;
+    } catch {
+      return '';
+    }
+  })();
+  const method = String(req.method || 'GET').toUpperCase();
+  const mayUseQueryToken =
+    (method === 'GET' || method === 'HEAD') &&
+    (requestPath.endsWith('/content-preview') || requestPath.endsWith('/content-download'));
+  if (!mayUseQueryToken) return null;
+
   const q =
     req.query?.token ||
     req.query?.access_token ||
