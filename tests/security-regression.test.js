@@ -94,6 +94,13 @@ describe('tenant and signup boundaries', () => {
     assert.equal(result.data.trialDays, INDIVIDUAL_TRIAL_DAYS);
   });
 
+  it('blocks repeat trial claims across rotated email addresses', () => {
+    const source = readFileSync(new URL('../controllers/authController.js', import.meta.url), 'utf8');
+    const handler = source.slice(source.indexOf('export async function register'), source.indexOf('export async function login'));
+    assert.match(handler, /phone: d\.phone, isIndividualAccount: true/);
+    assert.match(handler, /free trial has already been claimed/i);
+  });
+
   it('escapes audit-search regular expression syntax', () => {
     assert.equal(escapeAuditSearchRegex('a.*(b)'), 'a\\.\\*\\(b\\)');
   });
