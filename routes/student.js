@@ -21,24 +21,6 @@ import omrResultsRoutes from './student/omrResults.js';
 
 const router = express.Router();
 
-// iframe / window.open GETs cannot send Authorization.
-// ONLY content-preview and content-download may accept ?token= (short-lived JWT).
-router.use((req, res, next) => {
-  if (req.method !== 'GET') return next();
-  const pathOnly = (req.originalUrl || req.url || '').split('?')[0].replace(/\/+$/, '') || '';
-  const isProxyRoute =
-    pathOnly.endsWith('/content-preview') || pathOnly.endsWith('/content-download');
-  if (!isProxyRoute) return next();
-  const hdr = req.headers.authorization || req.get('Authorization');
-  const raw = req.query.token;
-  const tokenFromQuery =
-    typeof raw === 'string' ? raw : Array.isArray(raw) && typeof raw[0] === 'string' ? raw[0] : '';
-  if (!hdr && tokenFromQuery) {
-    req.headers.authorization = `Bearer ${tokenFromQuery}`;
-  }
-  next();
-});
-
 router.use(verifyToken);
 
 router.use((req, res, next) => {

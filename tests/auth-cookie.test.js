@@ -70,10 +70,10 @@ describe('auth-cookie helpers', () => {
     assert.equal(extractAuthToken(req), 'cookie-jwt');
   });
 
-  it('accepts query JWTs only on read-only content preview routes', () => {
+  it('never accepts access tokens from URLs', () => {
     const base = { headers: {}, cookies: {}, query: { token: 'query-jwt' }, method: 'GET' };
-    assert.equal(extractAuthToken({ ...base, originalUrl: '/api/student/content-preview?token=x' }), 'query-jwt');
-    assert.equal(extractAuthToken({ ...base, originalUrl: '/api/student/content-download?token=x' }), 'query-jwt');
+    assert.equal(extractAuthToken({ ...base, originalUrl: '/api/student/content-preview?token=x' }), null);
+    assert.equal(extractAuthToken({ ...base, originalUrl: '/api/student/content-download?token=x' }), null);
     assert.equal(extractAuthToken({ ...base, originalUrl: '/api/student/dashboard?token=x' }), null);
     assert.equal(extractAuthToken({ ...base, method: 'POST', originalUrl: '/api/student/content-preview?token=x' }), null);
   });
