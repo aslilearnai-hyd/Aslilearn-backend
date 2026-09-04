@@ -25,6 +25,7 @@ export function detectAppQueryShape(question) {
 
 export function detectAppTopic(question) {
   const q = String(question || '').toLowerCase();
+  if (/teachers?['’]?\s*(?:reports?|updates?)|teachers?\s+(?:daily|weekly)\s+(?:reports?|updates?)|work\s*diary/.test(q)) return 'teacher_reports';
   if (/\bomr\b|optical\s*mark/.test(q)) return 'omr';
   if (/homework|assignment|home\s*work/.test(q)) return 'homework';
   if (/learning\s*path|path\s+progress/.test(q)) return 'paths';
@@ -86,7 +87,7 @@ export function answerByTopicAndShape(question, facts) {
   const examList = Array.isArray(facts?.examList) ? facts.examList : [];
   const omrList = Array.isArray(facts?.omrList) ? facts.omrList : [];
   const desk = facts?.desk || {};
-  if (desk.unavailable && ['subjects', 'videos', 'homework', 'quizzes', 'upcoming_exams', 'calendar', 'rank'].includes(topic)) {
+  if (desk.unavailable && ['subjects', 'videos', 'homework', 'quizzes', 'upcoming_exams', 'calendar', 'rank', 'teacher_reports'].includes(topic)) {
     return 'I couldn’t load that dashboard section right now. Please try again; this does not mean there are no records.';
   }
   const deskSubjects = Array.isArray(desk.subjects) ? desk.subjects : [];
@@ -96,6 +97,37 @@ export function answerByTopicAndShape(question, facts) {
   const paths = Array.isArray(facts?.platform?.learningPaths) ? facts.platform.learningPaths : [];
   const marks = facts?.marks || {};
   const perf = facts?.performance || {};
+
+  if (topic === 'teacher_reports') {
+    const reports = Array.isArray(desk.teacherReports) ? desk.teacherReports : [];
+    const now = new Date();
+    const startOfWeek = new Date(now);
+    const day = (startOfWeek.getDay() + 6) % 7;
+    startOfWeek.setHours(0, 0, 0, 0);
+    startOfWeek.setDate(startOfWeek.getDate() - day);
+    const thisWeek = /this\s+week|weekly/.test(q);
+    const selected = thisWeek
+      ? reports.filter((row) => row.forDate && new Date(row.forDate) >= startOfWeek)
+      : reports;
+    if (shape.count) {
+      return `You have **${selected.length}** teacher update${selected.length === 1 ? '' : 's'}${thisWeek ? ' this week' : ''}.`;
+    }
+    if (!selected.length) {
+      return thisWeek
+        ? 'No teacher updates have been posted for your class this week yet.'
+        : 'No teacher updates have been posted for your class yet.';
+    }
+    return (
+      `**Teachers Report${thisWeek ? ' — this week' : ''}:**\n\n` +
+      listLines(
+        selected,
+        (row) =>
+          `**${row.title || 'Class update'}**${row.teacherName ? ` — ${row.teacherName}` : ''}` +
+          `${row.classDisplay ? ` · ${row.classDisplay}` : ''}${row.dateLabel ? ` · ${row.dateLabel}` : ''}\n${row.content}`,
+        20,
+      )
+    );
+  }
 
   if (topic === 'exam_attempts') {
     const inApp = examList.length;

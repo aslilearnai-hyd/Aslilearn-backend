@@ -25,6 +25,20 @@ test('result totals use database counts, not the latest 50/20 results', async ()
 test('failed desk lookup is not reported as empty subjects', () => {
   assert.match(answerByTopicAndShape('how many subjects', { desk: { unavailable: true } }), /couldn’t load/);
 });
+test('student Vidya answers teachers reports from the scoped app snapshot', () => {
+  const facts = { desk: { teacherReports: [{
+    title: 'Algebra revision',
+    content: 'Completed linear equations and assigned practice questions.',
+    teacherName: 'Ms Rao',
+    classDisplay: 'Class 8 - A',
+    dateLabel: '03 Sep 2026',
+    forDate: '2026-09-03T00:00:00.000Z',
+  }] } };
+  const answer = answerByTopicAndShape('What are the teachers reports', facts);
+  assert.match(answer, /Algebra revision/);
+  assert.match(answer, /Ms Rao/);
+  assert.doesNotMatch(answer, /do not have access|private internal portal/i);
+});
 test('new platform catalogs are denied to students and school admins before a query', async () => {
   for (const role of ['student', 'teacher', 'admin']) {
     const result = await executeDynamicDbPlan({ plan: { module: 'textbook_catalog' }, viewerRole: role, viewerUserId: '507f1f77bcf86cd799439011' });

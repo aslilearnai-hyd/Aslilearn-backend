@@ -6,7 +6,7 @@
 const SOCIAL_RE = /^(?:hi|hello|hey|namaste|thanks|thank you|ok|okay|bye)[\s!.,?]*$/i;
 const CONCEPT_RE = /\b(?:define|definition|meaning|explain the concept|what is the meaning|textbook|formula|derive|prove)\b/i;
 
-const COMMON_DATA_RE = /\b(?:dashboard|profile|account|login|logged in|calendar|timetable|attendance|homework|assignment|exam results?|marks?|scores?|rank|progress|performance|report card|learning path|videos? (?:watched|have i watched)|streak|offline results?|omr)\b/i;
+const COMMON_DATA_RE = /\b(?:dashboard|profile|account|login|logged in|calendar|timetable|attendance|homework|assignment|exam results?|marks?|scores?|rank|progress|performance|report card|teachers?['’]?\s*(?:reports?|updates?)|work\s*diary|learning path|videos? (?:watched|have i watched)|streak|offline results?|omr)\b/i;
 const PERSONAL_RE = /\b(?:my|mine|me|i|our|we)\b/i;
 const TEACHER_DATA_RE = /\b(?:my students|my classes|student roster|student (?:by name|named|called)|student details?|student report|class performance|who is in my class|how many students|how many classes|(?:list|show|latest|recent|upcoming).{0,40}exams?|exams?.{0,30}(?:last month|this month|schedule))\b/i;
 const ADMIN_DATA_RE = /\b(?:my school|our school|school students|school teachers|school analytics|subscriptions?|orders?|revenue|usage|active users?|student count|teacher count)\b/i;
@@ -25,7 +25,7 @@ export function classifyPlatformDataQuestion(question, role = '') {
   const common = COMMON_DATA_RE.test(text) && (PERSONAL_RE.test(text) || /\b(?:show|list|give|check|open|latest|recent|upcoming|pending|completed|how many)\b/i.test(text));
   const teacher = normalizedRole === 'teacher' && TEACHER_DATA_RE.test(text);
   const admin = ['admin', 'super-admin'].includes(normalizedRole) && ADMIN_DATA_RE.test(text);
-  const student = normalizedRole === 'student' && (common || /\b(?:what should i study|where am i weak|am i improving)\b/i.test(text));
+  const student = normalizedRole === 'student' && (common || /\b(?:teachers?['’]?\s*(?:reports?|updates?)|work\s*diary|what should i study|where am i weak|am i improving)\b/i.test(text));
 
   if (conceptual && !teacher && !admin && !student) return { protected: false, reason: 'concept' };
   if (teacher) return { protected: true, reason: 'teacher_school_data' };

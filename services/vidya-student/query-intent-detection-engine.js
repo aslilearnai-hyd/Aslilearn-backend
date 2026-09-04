@@ -26,6 +26,8 @@ const APP_HINTS = [
   'how many exams', 'how many omr', 'how many offline', 'how many homework', 'how many quizzes',
   'attempted till', 'exams attempted', 'list my subjects', 'my calendar',
   'timetable', 'open exams', 'quiz', 'assessment',
+  'teacher report', 'teachers report', "teacher's report", "teachers' report",
+  'teacher update', 'teachers update', 'work diary',
 
   // "i want / show me / give me / open" phrased queries
   'i want video', 'i want videos', 'i want exam', 'i want exams', 'i want homework',
@@ -162,6 +164,9 @@ const PLATFORM_DATA_PATTERNS = [
   /\b(show|give|open|check|see)\s+(me\s+)?(my\s+)?(videos?|exams?|marks?|homework|results?|progress|attendance|subjects?|report|timetable)\b/,
   /\btake\s+me\s+to\b/,
   /\bgo\s+to\s+(my\s+)?(videos?|exams?|homework|subjects?)\b/,
+  /\bteachers?['’]?\s*(reports?|updates?)\b/,
+  /\bteachers?\s+(daily|weekly)\s+(reports?|updates?)\b/,
+  /\bwork\s*diary\b/,
 ];
 
 function isExamDataQuestion(q) {
