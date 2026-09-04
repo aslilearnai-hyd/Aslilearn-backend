@@ -580,6 +580,18 @@ export async function register(req, res) {
       return res.status(400).json({ message: 'An account with this email already exists' });
     }
 
+    // A phone number may claim the individual free trial only once, even when
+    // the caller rotates email addresses or switches student/teacher roles.
+    const [phoneUser, phoneTeacher] = await Promise.all([
+      User.findOne({ phone: d.phone, isIndividualAccount: true }).select('_id').lean(),
+      Teacher.findOne({ phone: d.phone, isIndividualAccount: true }).select('_id').lean(),
+    ]);
+    if (phoneUser || phoneTeacher) {
+      return res.status(409).json({
+        message: 'A free trial has already been claimed with this phone number.',
+      });
+    }
+
     const hashedPassword = await bcrypt.hash(d.password, 12);
     const trialFields = {
       isIndividualAccount: true,
