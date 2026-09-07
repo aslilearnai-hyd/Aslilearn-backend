@@ -4,7 +4,7 @@ import { resolveClassRosterQuestion } from '../vidya-class-conversation.js';
 import { generateGeneralKnowledgeAnswer } from '../vidya-student/gemini-general-knowledge-service.js';
 import { executeDynamicDbPlan } from './db-access-layer.js';
 import { buildAuditSelect } from './dynamic-sql-builder.js';
-import { formatDynamicResponse } from './response-formatter.js';
+import { formatDynamicResponse, answerAsVidyaControlKnowledge, looksLikeDeadDbReply } from './response-formatter.js';
 import {
   buildControlOverviewFacts,
   buildNamedSchoolDetailFacts,
@@ -200,7 +200,7 @@ export async function runDynamicAiQuery({
         viewerRole,
         viewerUserId,
       });
-      if (platform?.message) {
+      if (platform?.message && !looksLikeDeadDbReply(platform.message)) {
         return {
           ok: true,
           plan: { mode: 'platform_intelligence' },
@@ -245,12 +245,27 @@ export async function runDynamicAiQuery({
   const plan = await parseDynamicIntent({ userMessage, history });
   const notes = [];
   let facts = { mode: plan.mode };
-  if (['admin', 'super-admin'].includes(viewerRole) && plan.mode === 'knowledge' &&
-      /\b(teach|explain|chapter|textbook|lesson|curriculum|syllabus|subtopic)\b/i.test(userMessage)) {
-    const message = await generateGeneralKnowledgeAnswer({
-      viewerUserId, viewerRole, question: userMessage, conversationHistory: history,
+  if (['admin', 'super-admin'].includes(viewerRole) && plan.mode === 'knowledge') {
+    // Full intelligent assistant for non-DB questions (ops, how-to, teaching, general).
+    if (/\b(teach|explain|chapter|textbook|lesson|curriculum|syllabus|subtopic)\b/i.test(userMessage)) {
+      const message = await generateGeneralKnowledgeAnswer({
+        viewerUserId, viewerRole, question: userMessage, conversationHistory: history,
+      });
+      return { ok: true, plan, facts: { mode: 'curriculum' }, message, auditQuery: '--', notes: ['Curriculum and indexed textbook lookup.'] };
+    }
+    const message = await answerAsVidyaControlKnowledge({
+      userPrompt: userMessage,
+      viewerRole,
+      history,
     });
-    return { ok: true, plan, facts: { mode: 'curriculum' }, message, auditQuery: '--', notes: ['Curriculum and indexed textbook lookup.'] };
+    return {
+      ok: true,
+      plan,
+      facts: { mode: 'knowledge' },
+      message,
+      auditQuery: '--',
+      notes: ['Intelligent knowledge / ops assistant answer.'],
+    };
   }
 
   // Gemini flagged a required detail as missing (e.g. "students in Class" with
@@ -306,12 +321,19 @@ export async function runDynamicAiQuery({
       viewerUserId,
     });
     if (!db.ok) {
+      // Never dead-end the admin — answer intelligently when the DB plan cannot run.
+      const message = await answerAsVidyaControlKnowledge({
+        userPrompt: userMessage,
+        viewerRole,
+        history,
+      });
       return {
-        ok: false,
-        error: db.error || 'Database query planning failed.',
-        plan,
-        facts: {},
+        ok: true,
+        plan: { ...plan, mode: 'knowledge' },
+        facts: { mode: 'knowledge', priorDbError: db.error || '' },
+        message,
         auditQuery: '--',
+        notes: ['DB plan failed; answered as intelligent assistant instead of erroring out.'],
       };
     }
     facts = db.facts || {};
@@ -321,7 +343,7 @@ export async function runDynamicAiQuery({
   }
 
   const auditQuery = buildAuditSelect(plan, facts);
-  const message = await formatDynamicResponse({
+  let message = await formatDynamicResponse({
     userPrompt: userMessage,
     plan,
     facts,
@@ -329,6 +351,15 @@ export async function runDynamicAiQuery({
     viewerRole,
     history,
   });
+
+  if (looksLikeDeadDbReply(message) && !isHeadcountOverviewQuery(userMessage) && !isPublishedCatalogQuery(userMessage)) {
+    message = await answerAsVidyaControlKnowledge({
+      userPrompt: userMessage,
+      viewerRole,
+      history,
+    });
+    notes.push('Replaced empty/dead DB reply with intelligent assistant answer.');
+  }
 
   return { ok: true, plan, facts, auditQuery, message, notes };
 }

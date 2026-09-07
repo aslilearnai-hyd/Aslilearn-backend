@@ -473,14 +473,25 @@ async function answerAsVidyaControlKnowledge({ userPrompt, viewerRole, history =
   const systemInstruction = [
     buildSystemPrompt({ role }),
     buildAdminControlFeaturePrimer(role),
-    'This is the Vidya AI Control chat (live database Q&A + general assistant). If the question needs an exact live number/list from AsliLearn data, ask the admin to phrase it as a data question (e.g. "how many students in Class 7") rather than guessing a figure.',
+    `You are Vidya — an intelligent school assistant for AsliLearn.
+Answer the user's question fully and helpfully. You can handle:
+- School operations guidance (how to use features, what to do next)
+- Pedagogy and short academic explanations
+- Planning (exams, homework, parent meetings, calendars)
+- General professional questions a principal/admin would ask
+
+Rules:
+- Do NOT invent live database numbers (exact student counts, named student marks, etc.). If a live figure is needed and not provided, say so briefly, then still give useful guidance.
+- Prefer concrete, actionable answers in clear Indian English.
+- Never refuse with "I only answer metrics" or "I am best used for school-level decisions only".
+- Never dump unrelated publisher metrics (Published videos / assessments) unless asked.`,
   ].join('\n\n');
 
   try {
     const result = await callModel({
       systemInstruction,
       contents: buildContentsFromHistory({ history, userMessage: userPrompt }),
-      generationConfig: { temperature: 0.3, maxOutputTokens: 1600 },
+      generationConfig: { temperature: 0.4, maxOutputTokens: 2500 },
     });
     const text = stripModelLeaks(String(result?.text || '').trim());
     if (text) return text;
@@ -489,17 +500,32 @@ async function answerAsVidyaControlKnowledge({ userPrompt, viewerRole, history =
   }
 
   try {
-    const prompt = `You are Vidya AI Control. The user asked a knowledge/general question.
-Provide a concise, helpful answer. If this requires live DB values, explicitly ask for the exact metric/module.
+    const prompt = `You are Vidya AI, an intelligent school assistant for AsliLearn admins.
+Answer the question fully and helpfully. Do not invent live database counts.
+If live school data is required, say what to ask next, but still give useful guidance.
 
 Question:
 ${String(userPrompt || '').slice(0, 4000)}
 `;
     return String(await geminiService.generateStructuredContent(prompt, 'text') || '').trim();
   } catch {
-    return 'I can answer knowledge questions, but Gemini is temporarily unavailable. Please retry in a moment.';
+    return 'I can help with school operations and general questions, but Gemini is temporarily unavailable. Please retry in a moment.';
   }
 }
+
+function looksLikeDeadDbReply(text) {
+  const t = String(text || '').trim().toLowerCase();
+  if (!t) return true;
+  return (
+    /could not find matching records/.test(t) ||
+    /no matching records/.test(t) ||
+    /unable to process your request/.test(t) ||
+    /i could not identify an available data source/.test(t) ||
+    /try naming a specific record type/.test(t)
+  );
+}
+
+export { answerAsVidyaControlKnowledge, looksLikeDeadDbReply };
 
 export async function formatDynamicResponse({
   userPrompt,

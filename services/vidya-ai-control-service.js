@@ -1,5 +1,6 @@
 import VidyaControlQueryLog from '../models/VidyaControlQueryLog.js';
 import { runDynamicAiQuery } from './vidya-ai-control/ai-query-engine.js';
+import { answerAsVidyaControlKnowledge, looksLikeDeadDbReply } from './vidya-ai-control/response-formatter.js';
 
 function compactControlSnapshot(facts) {
   if (!facts || typeof facts !== 'object') return null;
@@ -132,6 +133,26 @@ export async function handleControlAssistantTurn({
     });
     const msg = String(err?.message || '');
     const quotaHit = /quota|resource_exhausted|429/i.test(msg);
+    if (!quotaHit) {
+      try {
+        const fallback = await answerAsVidyaControlKnowledge({
+          userPrompt: prompt,
+          viewerRole: jwtRole,
+          history: conversationHistory,
+        });
+        if (fallback) {
+          return {
+            message: fallback,
+            logId: log._id,
+            groundedFacts: { mode: 'knowledge', fallback: true },
+            auditQuery: '--',
+            latencyMs: Date.now() - started,
+          };
+        }
+      } catch {
+        /* fall through to hard error */
+      }
+    }
     const e = new Error(
       quotaHit
         ? 'Gemini quota reached temporarily. Retrying shortly should work.'
@@ -143,6 +164,41 @@ export async function handleControlAssistantTurn({
   }
 
   if (!dynamic.ok) {
+    let answerText = '';
+    try {
+      answerText = await answerAsVidyaControlKnowledge({
+        userPrompt: prompt,
+        viewerRole: jwtRole,
+        history: conversationHistory,
+      });
+    } catch {
+      answerText = '';
+    }
+    if (answerText) {
+      const log = await safeWriteControlLog({
+        adminUserId: viewerUserId,
+        adminRole: jwtRole,
+        prompt,
+        promptPreview: prompt.slice(0, 180),
+        intentJson: dynamic.plan || null,
+        auditQuery: '--',
+        dataSnapshot: { priorError: dynamic.error || '', mode: 'knowledge' },
+        responseText: answerText,
+        responsePreview: answerText.slice(0, 180),
+        latencyMs: Date.now() - started,
+        success: true,
+        error: '',
+        requestIp: String(requestIp || '').slice(0, 64),
+        userAgent: String(userAgent || '').slice(0, 200),
+      });
+      return {
+        message: answerText,
+        logId: log._id,
+        groundedFacts: { mode: 'knowledge', priorError: dynamic.error || '' },
+        auditQuery: '--',
+        latencyMs: Date.now() - started,
+      };
+    }
     const log = await safeWriteControlLog({
       adminUserId: viewerUserId,
       adminRole: jwtRole,
@@ -167,6 +223,18 @@ export async function handleControlAssistantTurn({
 
   const facts = dynamic.facts && typeof dynamic.facts === 'object' ? dynamic.facts : {};
   let answerText = String(dynamic.message || '').trim();
+  if (!answerText || looksLikeDeadDbReply(answerText)) {
+    try {
+      const smart = await answerAsVidyaControlKnowledge({
+        userPrompt: prompt,
+        viewerRole: jwtRole,
+        history: conversationHistory,
+      });
+      if (smart) answerText = smart;
+    } catch {
+      /* keep prior text */
+    }
+  }
   if (!answerText) {
     // Never return an empty bubble to the admin UI.
     if (facts?.operation === 'count' && typeof facts.count === 'number') {
