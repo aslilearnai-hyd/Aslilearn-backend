@@ -25,6 +25,7 @@ import {
   groupAiGeneratorRecords,
   slimGeneratorRecordForList,
 } from './aiGeneratorController.js';
+import { withMongoRetry, isMongoTransientError } from '../utils/mongo-retry.js';
 
 function ensureSuperAdmin(req, res) {
   if (req.user?.role !== 'super-admin') {
@@ -450,17 +451,24 @@ function buildBookRecordsListQuery(req) {
   return bookGroundedMongoFilter(extra);
 }
 
-/** Actual newest records globally, plus board counts for the filter summary. */
+/** Newest records plus board counts for the filter summary (queries run in parallel). */
 async function fetchBookRecordsStratified(baseQuery, listLimit) {
-  const boardGroups = await AiToolGeneration.aggregate([
-    { $match: baseQuery },
-    {
-      $group: {
-        _id: { $ifNull: ['$board', ''] },
-        count: { $sum: 1 },
+  const [boardGroups, records] = await Promise.all([
+    AiToolGeneration.aggregate([
+      { $match: baseQuery },
+      {
+        $group: {
+          _id: { $ifNull: ['$board', ''] },
+          count: { $sum: 1 },
+        },
       },
-    },
-    { $sort: { count: -1 } },
+      { $sort: { count: -1 } },
+    ]),
+    AiToolGeneration.find(baseQuery)
+      .select(GENERATOR_LIST_SELECT)
+      .sort({ createdAt: -1, _id: -1 })
+      .limit(listLimit)
+      .lean(),
   ]);
 
   const boardsMeta = boardGroups.map((g) => ({
@@ -469,11 +477,6 @@ async function fetchBookRecordsStratified(baseQuery, listLimit) {
     count: Number(g.count) || 0,
   }));
 
-  const records = await AiToolGeneration.find(baseQuery)
-    .select(GENERATOR_LIST_SELECT)
-    .sort({ createdAt: -1, _id: -1 })
-    .limit(listLimit)
-    .lean();
   return { records, boardsMeta };
 }
 
@@ -583,28 +586,38 @@ export async function listBookGeneratorRecords(req, res) {
     const boardRaw = String(req.query.board || '').trim();
     const isAllBoards = !boardRaw || boardRaw === '__all__';
 
-    const total = await AiToolGeneration.countDocuments(query);
+    const { total, records, boardsMeta } = await withMongoRetry(async () => {
+      if (isAllBoards) {
+        const [totalCount, stratified] = await Promise.all([
+          AiToolGeneration.countDocuments(query),
+          fetchBookRecordsStratified(query, listLimit),
+        ]);
+        return {
+          total: totalCount,
+          records: stratified.records,
+          boardsMeta: stratified.boardsMeta,
+        };
+      }
 
-    let records;
-    let boardsMeta = [];
-
-    if (isAllBoards) {
-      const stratified = await fetchBookRecordsStratified(query, listLimit);
-      records = stratified.records;
-      boardsMeta = stratified.boardsMeta;
-    } else {
-      records = await AiToolGeneration.find(query)
-        .select(GENERATOR_LIST_SELECT)
-        .sort({ createdAt: -1 })
-        .limit(listLimit)
-        .lean();
-      boardsMeta = [
-        {
-          board: lockBoardKey(canonicalBoardLabel(boardRaw)) || boardRaw,
-          count: total,
-        },
-      ];
-    }
+      const [totalCount, page] = await Promise.all([
+        AiToolGeneration.countDocuments(query),
+        AiToolGeneration.find(query)
+          .select(GENERATOR_LIST_SELECT)
+          .sort({ createdAt: -1 })
+          .limit(listLimit)
+          .lean(),
+      ]);
+      return {
+        total: totalCount,
+        records: page,
+        boardsMeta: [
+          {
+            board: lockBoardKey(canonicalBoardLabel(boardRaw)) || boardRaw,
+            count: totalCount,
+          },
+        ],
+      };
+    });
 
     const slim = records.map(slimGeneratorRecordForList).filter(Boolean);
     const grouped = groupAiGeneratorRecords(slim);
@@ -620,7 +633,14 @@ export async function listBookGeneratorRecords(req, res) {
       },
     });
   } catch (err) {
-    res.status(500).json({ success: false, message: err.message || 'Failed to list records.' });
+    const transient = isMongoTransientError(err);
+    res.status(transient ? 503 : 500).json({
+      success: false,
+      message: transient
+        ? 'Database temporarily unavailable. Please retry in a moment.'
+        : err.message || 'Failed to list records.',
+      retryable: transient,
+    });
   }
 }
 
