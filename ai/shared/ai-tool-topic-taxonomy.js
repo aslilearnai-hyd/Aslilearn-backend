@@ -21,6 +21,7 @@ import {
   escapeRegex,
 } from './ai-tool-data-match.js';
 import { normalizeIitCategoryLoose } from '../../constants/products.js';
+import { canonicalCbseNcertTopics } from './cbse-ncert-topics.js';
 
 const NATURAL_COLLATOR = new Intl.Collator('en', { numeric: true, sensitivity: 'base' });
 
@@ -33,19 +34,6 @@ function mergeUniqueChapterLabels(primary = [], extra = []) {
 }
 
 const SPLIT_SCIENCE_TOPIC_PATTERNS = {
-  chemistry: [
-    /matter/i,
-    /atom|molecule/i,
-    /chemical|reaction/i,
-    /acid|base|salt/i,
-    /metal|non.?metal/i,
-    /carbon|compound/i,
-    /periodic|element/i,
-    /sorting materials|separation of substances|changes around us/i,
-    /\bfibre\b|\bfiber\b|fabric/i,
-    /\bwater\b|\bair around us\b/i,
-    /particulate/i,
-  ],
   physics: [
     /motion|kinematic|measurement of distances/i,
     /force|newton|friction|pressure/i,
@@ -54,7 +42,8 @@ const SPLIT_SCIENCE_TOPIC_PATTERNS = {
     /sound|wave/i,
     /light|shadow|reflection|refraction/i,
     /human eye|colourful world|colorful world/i,
-    /electric|circuit|magnet/i,
+    /electric|circuit|magnet|chemical effects of electric/i,
+    /\bheat\b|winds?, storms? and cyclones|stars and the solar system|some natural phenomena/i,
   ],
   biology: [
     /cell|fundamental unit of life/i,
@@ -65,6 +54,20 @@ const SPLIT_SCIENCE_TOPIC_PATTERNS = {
     /reproduction|heredity|evolution/i,
     /environment|natural resource|food resource|food:|components of food|getting to know plants|body movements|garbage/i,
     /biodiversity|habitat/i,
+    /nutrition in (plants|animals)|respiration|transportation in animals|forests?:|wastewater|microorganisms?|adolescence|crop production|conservation of plants|weather, climate and adaptations/i,
+  ],
+  chemistry: [
+    /matter/i,
+    /atom|molecule/i,
+    /chemical(?!\s+effects\s+of\s+electric)|reaction/i,
+    /acid|base|salt/i,
+    /metal|non.?metal/i,
+    /carbon|compound/i,
+    /periodic|element/i,
+    /sorting materials|separation of substances|changes around us/i,
+    /\bfibres?\b|\bfibers?\b|fabric|plastics?/i,
+    /\bwater\b|\bair around us\b/i,
+    /particulate|combustion|petroleum|\bcoal\b|\bsoil\b/i,
   ],
 };
 
@@ -450,6 +453,23 @@ export async function resolveAiToolTopicTaxonomy(rawParams = {}) {
   const subject = normalizeMatchText(params.subject);
   const topicName = normalizeMatchText(params.topicName);
 
+  // "Chapter 2 - Diversity..." and bare "Diversity..." must resolve the same subtopics.
+  if (topicName) {
+    const parsed = parseChapterPrefixedTopic(topicName);
+    if (parsed?.title && normalizeMatchText(parsed.title) !== topicName) {
+      try {
+        const titleRows = await queryAiToolTopicTaxonomy({
+          ...params,
+          topicName: parsed.title,
+        });
+        const extra = formatAiToolTopicTaxonomy(titleRows);
+        formatted.subTopics = mergeUniqueChapterLabels(formatted.subTopics, extra.subTopics);
+      } catch {
+        /* keep primary topic match */
+      }
+    }
+  }
+
   // Always union legacy generations for the exact topic (strict field match).
   // Skipping when a single managed subtopic exists left Class 6 CBSE chapters
   // stuck with one incomplete option like "2.5 …" and blocked the rest.
@@ -552,6 +572,10 @@ export async function resolveAiToolTopicTaxonomy(rawParams = {}) {
     );
   }
 
+  formatted.topics = mergeUniqueChapterLabels(
+    canonicalCbseNcertTopics(classLabel, subject, board),
+    formatted.topics,
+  );
   formatted.topics = mergeUniqueChapterLabels(
     canonicalCbseSplitScienceTopics(classLabel, subject, board),
     filterTopicsForSplitScienceSubject(formatted.topics, subject, board, classLabel),
