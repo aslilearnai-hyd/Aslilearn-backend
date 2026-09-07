@@ -421,14 +421,20 @@ export function isReportsOverviewQuery(message) {
   );
 }
 
-/** "How many students and teachers are active?" needs both metrics, not one module. */
+/** "How many students and teachers/classes are there?" needs both metrics, not one module. */
 export function isHeadcountOverviewQuery(message) {
   const lower = String(message || '').toLowerCase();
-  if (/class\s*\d+/i.test(lower)) return false;
+  if (/class\s*\d+[a-z]?\b/i.test(lower) && !/\b(how|who)\s*many\s+classes\b/i.test(lower)) {
+    // "students in class 7" is a class roster/count, not school-wide headcount.
+    if (/\bstudents?\b/.test(lower) && !/\bclasses\b/.test(lower)) return false;
+  }
   const students = /\bstudents?\b/.test(lower);
   const teachers = /\bteachers?\b/.test(lower);
+  const classes = /\bclasses\b/.test(lower);
   const countish = /((how|who)\s*many|count|total|number of|are there|\bactive\b)/i.test(lower);
-  return students && teachers && countish;
+  if (!countish) return false;
+  const metrics = [students, teachers, classes].filter(Boolean).length;
+  return metrics >= 2;
 }
 
 /** Quick-ask: "How many published videos and assessments?" / "Number of videos" */
@@ -464,9 +470,15 @@ export async function buildPublishedCatalogFacts({ viewerRole, viewerUserId }) {
   return {
     operation: 'catalog_counts',
     scope: role === 'admin' ? 'school' : 'platform',
+    viewerRole: role,
+    // School admins manage a school — they are not video "publishers". Keep raw
+    // fields for grounding, but the formatter uses school-facing labels.
     publishedVideos,
     publishedAssessments,
     libraryVideos,
     eduOttVideos: publishedVideos,
+    schoolLibraryVideos: libraryVideos,
+    schoolEduOttVideos: publishedVideos,
+    schoolAssessments: publishedAssessments,
   };
 }

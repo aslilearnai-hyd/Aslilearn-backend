@@ -2,6 +2,7 @@
  * Teacher Vidya hybrid: app desk facts first, then named person/class entity facts, else Gemini knowledge.
  */
 import { detectQueryIntent } from '../vidya-student/query-intent-detection-engine.js';
+import { resolveClassRosterQuestion } from '../vidya-class-conversation.js';
 import { prepareConversationHistory } from '../../ai/shared/conversation-history.js';
 import { generateGeneralKnowledgeAnswer } from '../vidya-student/gemini-general-knowledge-service.js';
 import { maybeExplainStoredSources, parseCitationRegistryFromMessage, lastAssistantCitationRegistry } from '../vidya-citation-registry.js';
@@ -64,7 +65,7 @@ export async function runHybridTeacherVidyaChat({
   history = [],
   context = {},
 }) {
-  let q = String(question || '').trim();
+  let q = resolveClassRosterQuestion(question, prepareConversationHistory(history));
   if (!q) {
     const e = new Error('message is required');
     e.statusCode = 400;

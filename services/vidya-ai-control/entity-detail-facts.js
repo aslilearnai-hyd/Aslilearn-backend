@@ -512,6 +512,9 @@ export async function buildClassGroupFacts({
 
   const role = String(viewerRole || '').toLowerCase();
   const adminOid = role === 'admin' ? oid(viewerUserId) : null;
+  if (!['teacher', 'admin', 'super-admin'].includes(role)) {
+    return { scope: 'class_group', overview: {}, error: 'Your role cannot access class rosters.' };
+  }
   if (role === 'admin' && !adminOid) {
     return {
       operation: 'overview',
@@ -527,9 +530,9 @@ export async function buildClassGroupFacts({
   if (role === 'teacher') {
     const teacherOid = oid(viewerUserId);
     const teacher = teacherOid
-      ? await Teacher.findById(teacherOid).select('adminId assignedClassIds classNumber').lean()
+      ? await Teacher.findById(teacherOid).select('adminId assignedClassIds assignments classNumber').lean()
       : null;
-    teacherClassIds = (Array.isArray(teacher?.assignedClassIds) ? teacher.assignedClassIds : [])
+    teacherClassIds = [...(teacher?.assignedClassIds || []), ...(teacher?.assignments || []).map(a => a.classId)]
       .map((id) => oid(id))
       .filter(Boolean);
     teacherAdminOid = teacher?.adminId ? oid(teacher.adminId) : null;
@@ -554,9 +557,7 @@ export async function buildClassGroupFacts({
 
   const classDocs = await ClassModel.find(classFilter)
     .select('classNumber section name assignedAdmin')
-    .limit(10)
-    .lean()
-    .catch(() => []);
+    .lean();
 
   const studentFilter = {
     role: 'student',
@@ -567,19 +568,16 @@ export async function buildClassGroupFacts({
       ...(classDocs.length ? [{ assignedClass: { $in: classDocs.map((c) => c._id) } }] : []),
     ],
   };
-  if (section) {
-    // Prefer students linked to matching class docs when section known
-    if (classDocs.length) {
-      studentFilter.assignedClass = { $in: classDocs.map((c) => c._id) };
-      delete studentFilter.$or;
-    }
+  if (section || role === 'teacher') {
+    // An unmatched section must produce an empty roster, never the entire grade.
+    studentFilter.assignedClass = { $in: classDocs.map((c) => c._id) };
+    delete studentFilter.$or;
   }
 
   const students = await User.find(studentFilter)
     .select('_id fullName classNumber isActive lastLogin')
-    .limit(500)
-    .lean()
-    .catch(() => []);
+    .sort({ fullName: 1, _id: 1 })
+    .lean();
 
   const studentIds = students.map((s) => s._id);
   const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
@@ -597,8 +595,8 @@ export async function buildClassGroupFacts({
     Exam.countDocuments({
       classNumber: cn,
       isActive: true,
-      ...(adminOid
-        ? { $or: [{ adminId: adminOid }, { schoolId: adminOid }, { targetSchools: adminOid }] }
+      ...((adminOid || teacherAdminOid)
+        ? { $or: [{ adminId: adminOid || teacherAdminOid }, { schoolId: adminOid || teacherAdminOid }, { targetSchools: adminOid || teacherAdminOid }] }
         : {}),
     }).catch(() => 0),
   ]);
@@ -643,6 +641,7 @@ export async function buildClassGroupFacts({
       loginSessionsToday: sessionsToday,
       activeExams,
     },
+    students: students.map(s => ({ id: String(s._id), name: s.fullName || 'Unnamed student', classNumber: s.classNumber, isActive: s.isActive !== false })),
     topStudents,
   };
 }

@@ -41,6 +41,21 @@ import Book from '../../models/Book.js';
 import AiToolTopic from '../../models/AiToolTopic.js';
 import Board from '../../models/Board.js';
 import ProductCategory from '../../models/ProductCategory.js';
+import UserProgress from '../../models/UserProgress.js';
+import DailyQuizLog from '../../models/DailyQuizLog.js';
+import WeeklyDigest from '../../models/WeeklyDigest.js';
+import RazorpayPaymentReceipt from '../../models/RazorpayPaymentReceipt.js';
+import OrderCatalogProduct from '../../models/OrderCatalogProduct.js';
+import IndividualPlanSettings from '../../models/IndividualPlanSettings.js';
+import UploadAsset from '../../models/UploadAsset.js';
+import PdfProcessingFailure from '../../models/PdfProcessingFailure.js';
+import PdfKnowledgeSource from '../../models/PdfKnowledgeSource.js';
+import PdfGeneration from '../../models/PdfGeneration.js';
+import ClassTimetableImage from '../../models/ClassTimetableImage.js';
+import OmrCandidateStudentMap from '../../models/OmrCandidateStudentMap.js';
+import IQRankQuestion from '../../models/IQRankQuestion.js';
+import VidyaControlQueryLog from '../../models/VidyaControlQueryLog.js';
+import { isPrivateField } from './field-policy.js';
 
 const FALLBACK_SCOPE_FIELDS = [
   'assignedAdmin',
@@ -52,6 +67,20 @@ const FALLBACK_SCOPE_FIELDS = [
 ];
 
 export const MODULE_REGISTRY = {
+  user_progress: { model: UserProgress, aliases: ['learning progress', 'completion progress'] },
+  daily_quiz_logs: { model: DailyQuizLog, aliases: ['daily quizzes', 'daily quiz history'] },
+  weekly_digests: { model: WeeklyDigest, aliases: ['weekly digests', 'weekly summaries'] },
+  payment_receipts: { model: RazorpayPaymentReceipt, aliases: ['payment receipts', 'subscription payments', 'payment status'] },
+  order_products: { model: OrderCatalogProduct, aliases: ['order products', 'product prices'], allowedRoles: ['super-admin'] },
+  individual_plans: { model: IndividualPlanSettings, aliases: ['individual plans', 'subscription plan settings'], allowedRoles: ['super-admin'] },
+  upload_assets: { model: UploadAsset, aliases: ['uploads', 'uploaded assets'], allowedRoles: ['super-admin'] },
+  pdf_failures: { model: PdfProcessingFailure, aliases: ['pdf failures', 'failed indexing'], allowedRoles: ['super-admin'] },
+  pdf_sources: { model: PdfKnowledgeSource, aliases: ['pdf knowledge sources'], allowedRoles: ['super-admin'] },
+  pdf_generations: { model: PdfGeneration, aliases: ['generated pdfs'], allowedRoles: ['super-admin'] },
+  timetable_images: { model: ClassTimetableImage, aliases: ['timetable images'] },
+  omr_candidate_links: { model: OmrCandidateStudentMap, aliases: ['candidate mapping', 'omr student links'], allowedRoles: ['admin', 'super-admin'] },
+  iq_questions: { model: IQRankQuestion, aliases: ['iq question bank'], allowedRoles: ['super-admin'] },
+  control_query_logs: { model: VidyaControlQueryLog, aliases: ['control query logs', 'assistant query history'], allowedRoles: ['super-admin'] },
   textbook_catalog: {
     model: Book,
     aliases: ['book knowledge base', 'indexed textbooks', 'textbook catalog', 'book based generator books'],
@@ -359,7 +388,7 @@ export const MODULE_REGISTRY = {
 export function moduleSchemaFields(model) {
   if (!model?.schema?.paths) return [];
   return Object.keys(model.schema.paths).filter(
-    (k) => !k.startsWith('__') && !k.includes('.$*') && k !== 'password'
+    (k) => !k.startsWith('__') && !k.includes('.$*') && !isPrivateField(k)
   );
 }
 

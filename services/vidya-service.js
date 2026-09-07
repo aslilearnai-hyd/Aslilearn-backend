@@ -1,4 +1,5 @@
 import ChatSession from '../models/ChatSession.js';
+import { runPlatformIntelligence } from './vidya-platform-intelligence.js';
 import VidyaCallLog from '../models/VidyaCallLog.js';
 import { buildSystemPrompt, sanitizeUserFacingError, stripModelLeaks } from './vidya-persona.js';
 import { callModel, streamGeminiModel, buildContentsFromHistory } from './model-router.js';
@@ -178,6 +179,15 @@ const buildPromptAndContents = async ({
   return { systemInstruction, contents, retrieval };
 };
 
+async function tryPlatformSession({ userId, role, message, session, requestIp, userAgent, startedAt }) {
+  const result = await runPlatformIntelligence({ question: message, history: session.messages, viewerRole: role === 'school-admin' ? 'admin' : role, viewerUserId: userId });
+  if (!result) return null;
+  await persistMessage(session, { role: 'user', content: String(message), timestamp: new Date() });
+  await persistMessage(session, { role: 'assistant', content: result.message, timestamp: new Date() });
+  await writeLog({ userId: String(userId), role: ROLE_NORMALISE(role), sessionId: String(session._id), route: 'chat', prompt: String(message), response: result.message, model: 'platform-intelligence', provider: 'asli-db', latencyMs: Date.now() - startedAt, success: true, requestIp, userAgent });
+  return { ...result, success: true, sessionId: String(session._id), citations: [], latencyMs: Date.now() - startedAt };
+}
+
 export const handleChat = async ({
   userId,
   role,
@@ -196,6 +206,10 @@ export const handleChat = async ({
 
   const startedAt = Date.now();
   const ctx = await buildContext({ userId, role, providedContext });
+
+  const platformSession = await loadOrCreateSession({ userId, sessionId, role: ctx.role, context: providedContext });
+  const platformReply = await tryPlatformSession({ userId, role, message, session: platformSession, requestIp, userAgent, startedAt });
+  if (platformReply) return platformReply;
 
   // Teachers asking about a named student / class group → live platform facts
   // (same builders as Control), scoped to their assigned classes.
@@ -424,6 +438,21 @@ export const handleStreamingChat = async ({
     role: ctx.role,
     context: providedContext,
   });
+
+  try {
+    const platform = await tryPlatformSession({ userId, role, message, session, requestIp, userAgent, startedAt });
+    if (platform) {
+      send('session', { sessionId: platform.sessionId });
+      send('token', { text: platform.message });
+      send('done', platform);
+      res.end();
+      return;
+    }
+  } catch (err) {
+    send('error', { message: sanitizeUserFacingError(err), retryable: true });
+    res.end();
+    return;
+  }
 
   await persistMessage(session, {
     role: 'user',

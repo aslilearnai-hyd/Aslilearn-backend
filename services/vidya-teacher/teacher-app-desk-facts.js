@@ -146,12 +146,12 @@ export async function buildTeacherAppDeskFacts(teacherUserId) {
   }
 
   const teacher = await Teacher.findById(teacherOid)
-    .select('fullName adminId assignedClassIds subjects isActive')
+    .select('fullName adminId assignedClassIds assignments subjects isActive')
     .lean();
   if (!teacher) return emptyDesk();
 
   const adminId = teacher.adminId ? oid(teacher.adminId) : null;
-  const classIds = (teacher.assignedClassIds || [])
+  const classIds = [...(teacher.assignedClassIds || []), ...(teacher.assignments || []).map(a => a.classId)]
     .map((id) => oid(id))
     .filter(Boolean);
 
@@ -183,7 +183,6 @@ export async function buildTeacherAppDeskFacts(teacherUserId) {
   const students = await User.find(studentFilter)
     .select('fullName email classNumber section assignedClass lastLogin')
     .sort({ fullName: 1 })
-    .limit(LIST_CAP)
     .lean();
   const studentIds = students.map((s) => s._id);
 
@@ -497,12 +496,11 @@ export function teacherAppOnlyReply(question, desk, entityFallbackMessage = '', 
       return `You have **${students.length}** student(s) across your classes. Ask **"list my students"** for the roster.`;
     }
     let reply = `**Your students (${students.length}):**\n\n`;
-    students.slice(0, LIST_CAP).forEach((s, i) => {
+    students.forEach((s, i) => {
       reply += `${i + 1}. ${s.name}`;
       if (s.classNumber) reply += ` · Class ${s.classNumber}${s.section ? `-${s.section}` : ''}`;
       reply += `\n`;
     });
-    if (students.length > LIST_CAP) reply += `\n…and ${students.length - LIST_CAP} more.`;
     return reply.trim();
   }
 

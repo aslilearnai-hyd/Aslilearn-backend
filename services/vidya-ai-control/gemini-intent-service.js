@@ -167,6 +167,20 @@ function tryResolveAffirmativeFollowUp(message, history) {
   const prevUser = lastHistoryTurn(history, 'user');
   const prevAssistant = lastHistoryTurn(history, 'assistant');
 
+  // Prefer continuing student/class/teacher headcount over catalog offers.
+  // Assistant text often contains "Would you like…" for school vs platform —
+  // that must NOT flip into video/assessment counts.
+  if (prevUser && (isReportsOverviewQuery(prevUser) || isHeadcountOverviewQuery(prevUser))) {
+    return buildOverviewPlan('followup_overview_prev_user');
+  }
+  if (
+    prevAssistant &&
+    /(student|class|teacher|school)\b/i.test(prevAssistant) &&
+    /(would you like|specific school|across all schools|your school)/i.test(prevAssistant)
+  ) {
+    return buildOverviewPlan('followup_overview_pending_offer');
+  }
+
   if (prevUser && isPublishedCatalogQuery(prevUser)) {
     return buildCatalogCountsPlan('followup_catalog_prev_user');
   }
@@ -177,16 +191,15 @@ function tryResolveAffirmativeFollowUp(message, history) {
   ) {
     return buildCatalogCountsPlan('followup_catalog_prev_user_metric');
   }
+  // Only treat assistant offers as catalog when they clearly mention videos/assessments.
   if (
     prevAssistant &&
-    /(assessment|video count|separately|would you like|fetch the count|published videos|published assessments)/i.test(
+    /\b(videos?|assessments?|eduott|quizzes?)\b/i.test(prevAssistant) &&
+    /(would you like|separately|fetch the count|published videos|published assessments|video count)/i.test(
       prevAssistant,
     )
   ) {
     return buildCatalogCountsPlan('followup_catalog_pending_offer');
-  }
-  if (prevUser && (isReportsOverviewQuery(prevUser) || isHeadcountOverviewQuery(prevUser))) {
-    return buildOverviewPlan('followup_overview_prev_user');
   }
   // Last resort: re-interpret the previous user question as the real intent
   if (prevUser) {

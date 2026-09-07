@@ -61,7 +61,7 @@ export function parseCurriculumRequest(question, history = []) {
     return {
       text,
       requested: /\b(chapters?|subtopics?|sub topics?|syllabus|curriculum|textbooks?|pdfs?|book|alpha|beta|gamma|delta)\b/.test(text),
-      classNumber: text.match(/\b(?:class|grade)\s*(\d{1,2})\b|\b(\d{1,2})(?:st|nd|rd|th)\s+(?:class|grade|maths?|mathematics|physics|chemistry|biology|bio|science|english|telugu|hindi)\b|\b(?:maths?|mathematics|physics|chemistry|biology|bio|science|english|telugu|hindi)\s*[-_]\s*(\d{1,2})\b/)?.slice(1).find(Boolean) || '',
+      classNumber: text.match(/\b(?:class|grade)\s*(\d{1,2})\b|\b(\d{1,2})(?:st|nd|rd|th)\s+(?:class|grade|iit|neet|maths?|mathematics|physics|chemistry|biology|bio|science|english|telugu|hindi)\b|\b(?:maths?|mathematics|physics|chemistry|biology|bio|science|english|telugu|hindi)\s*[-_]\s*(\d{1,2})\b/)?.slice(1).find(Boolean) || '',
       chapter: chapter ? Number(chapter[1] || chapter[2] || ordinal[chapter[3]]) : null,
       track: text.match(/\b(alpha|beta|gamma|delta|general)\b/)?.[1]?.toUpperCase(),
       board: /\biit\b|\bneet\b/.test(text) ? 'IIT/NEET' : text.match(/\b(cbse|ssc|icse|ib)\b/)?.[1]?.toUpperCase(),
@@ -83,7 +83,7 @@ export function parseCurriculumRequest(question, history = []) {
     request.track = request.track || prev.track;
     request.classNumber = request.classNumber || prev.classNumber;
     request.board = request.board || prev.board;
-    if (request.subject && request.chapter && request.track) break;
+    if (request.subject && request.chapter && request.track && request.classNumber && request.board) break;
   }
   return request;
 }

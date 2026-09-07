@@ -1,4 +1,6 @@
 import { parseDynamicIntent } from './gemini-intent-service.js';
+import { runPlatformIntelligence } from '../vidya-platform-intelligence.js';
+import { resolveClassRosterQuestion } from '../vidya-class-conversation.js';
 import { generateGeneralKnowledgeAnswer } from '../vidya-student/gemini-general-knowledge-service.js';
 import { executeDynamicDbPlan } from './db-access-layer.js';
 import { buildAuditSelect } from './dynamic-sql-builder.js';
@@ -176,6 +178,9 @@ export async function runDynamicAiQuery({
   viewerRole,
   viewerUserId,
 }) {
+  userMessage = resolveClassRosterQuestion(userMessage, history);
+  const platform = await runPlatformIntelligence({ question: userMessage, history, viewerRole, viewerUserId });
+  if (platform) return { ok: true, plan: { mode: 'platform_intelligence' }, facts: platform.facts, message: platform.message, auditQuery: 'Read-only scoped multi-module plan', notes: [] };
   const namedSchoolMetric = await answerNamedSchoolMetric({ userMessage, viewerRole, viewerUserId });
   if (namedSchoolMetric) {
     return {
@@ -187,11 +192,11 @@ export async function runDynamicAiQuery({
       notes: ['Named-school headcount uses live school metrics, not a teachers-name filter.'],
     };
   }
-  const usageTime = await answerIndividualUsageTime({ userMessage, history });
+  const usageTime = viewerRole === 'super-admin' ? await answerIndividualUsageTime({ userMessage, history }) : null;
   if (usageTime) return { ok: true, plan: { mode: 'database', module: 'learning_sessions', operation: 'list' }, facts: usageTime, message: usageTime.message, auditQuery: 'SELECT SUM(duration) per logged-in user for today (IST)', notes: ['Joined session totals to user and teacher names.'] };
-  const largestSchool = await answerLargestSchool({ userMessage, history });
+  const largestSchool = viewerRole === 'super-admin' ? await answerLargestSchool({ userMessage, history }) : null;
   if (largestSchool) return { ok: true, plan: { mode: 'database', module: 'schools', operation: 'aggregate' }, facts: largestSchool, message: largestSchool.message, auditQuery: 'SELECT assignedAdmin, COUNT(students) GROUP BY assignedAdmin ORDER BY count DESC LIMIT 1', notes: ['Returned both school identity and exact student count.'] };
-  const todayLogins = await answerTodayLoginQuestion({ userMessage, history });
+  const todayLogins = viewerRole === 'super-admin' ? await answerTodayLoginQuestion({ userMessage, history }) : null;
   if (todayLogins) {
     return { ok: true, plan: { mode: 'database', module: 'users', operation: /\bwho\b|\bthose\b|\bthem\b|\bnames?\b/i.test(userMessage) ? 'list' : 'count' }, facts: todayLogins, message: todayLogins.message, auditQuery: 'SELECT users and teachers WHERE lastLogin is today (IST)', notes: ['Count and list use the same unique-user definition.'] };
   }

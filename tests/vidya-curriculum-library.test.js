@@ -12,10 +12,13 @@ mock.module('../routes/student/helpers.js', { namedExports: {
   resolveStudentSubjectIdsForLibrary: async () => ['base'],
 } });
 mock.module('../utils/schoolProgram.js', { namedExports: {
+  getAdminSchoolProgramContext: async () => { throw new Error('Unexpected admin lookup'); },
+  getTeacherSchoolProgramContext: async () => { throw new Error('Unexpected teacher lookup'); },
   getStudentSchoolProgramContext: async () => ({ isAsliPrepExclusive: true, iitCategories: ['ALPHA'] }),
   resolveIitCategoriesForContentBrowse: context => context.iitCategories,
 } });
 mock.module('../utils/iitCatalogSubjects.js', { namedExports: {
+  resolveIitCatalogSubjectIdsForClass: async () => { throw new Error('Unexpected teacher catalog lookup'); },
   mergeIitCatalogSubjectsIntoLibraryIds: async (ids, classNumber, options) => {
     assert.equal(classNumber, '7');
     assert.deepEqual(options.iitCategories, ['ALPHA']);

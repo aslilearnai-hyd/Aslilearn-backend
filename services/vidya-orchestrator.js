@@ -4,6 +4,7 @@
  */
 import vidyaService from './vidya-service.js';
 import { prepareConversationHistory } from '../ai/shared/conversation-history.js';
+import { runPlatformIntelligence } from './vidya-platform-intelligence.js';
 import { handleControlAssistantTurn } from './vidya-ai-control-service.js';
 import { runHybridStudentVidyaChat } from './vidya-student/hybrid-ai-chat-controller.js';
 import { runHybridTeacherVidyaChat } from './vidya-teacher/teacher-hybrid-chat-controller.js';
@@ -29,6 +30,10 @@ export async function handleVidyaTurn({ plane, req, res, body = {} }) {
     case PLANES.MENTOR_STUDENT: {
       const question = String(body.message || '').trim();
       const studentId = body.studentId ? String(body.studentId) : String(userId);
+      if (String(studentId) === String(userId)) {
+        const platform = await runPlatformIntelligence({ question, history: body.history, viewerRole: role, viewerUserId: userId });
+        if (platform) return platform;
+      }
       const result = await runHybridStudentVidyaChat({
         viewerRole: role,
         viewerUserId: userId,
@@ -42,6 +47,8 @@ export async function handleVidyaTurn({ plane, req, res, body = {} }) {
 
     case PLANES.MENTOR_TEACHER: {
       const question = String(body.message || '').trim();
+      const platform = await runPlatformIntelligence({ question, history: body.history, viewerRole: role, viewerUserId: userId });
+      if (platform) return platform;
       const result = await runHybridTeacherVidyaChat({
         viewerUserId: userId,
         question,
