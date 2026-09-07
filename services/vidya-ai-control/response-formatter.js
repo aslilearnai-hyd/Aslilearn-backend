@@ -2,7 +2,7 @@ import geminiService from '../gemini-service.js';
 import { formatClassRoster } from '../vidya-class-conversation.js';
 import { buildSystemPrompt, buildAdminControlFeaturePrimer, stripModelLeaks } from '../vidya-persona.js';
 import { callModel, buildContentsFromHistory } from '../model-router.js';
-import { isHeadcountOverviewQuery } from './school-overview-facts.js';
+import { isHeadcountOverviewQuery, formatSchoolActivityAnswer } from './school-overview-facts.js';
 
 const BANNED_APPROX_WORDS = [
   'approximately',
@@ -239,6 +239,10 @@ function formatOverviewFallback(facts, userPrompt = '', viewerRole = '') {
     }
   }
 
+  if (facts?.mode === 'activity') {
+    return formatSchoolActivityAnswer(facts, userPrompt);
+  }
+
   lines.push(role === 'admin' ? `School overview for ${label}:` : `Reports overview for ${label}:`);
   if (profile) {
     if (profile.name) lines.push(`School: ${profile.name}.`);
@@ -272,6 +276,18 @@ function formatOverviewFallback(facts, userPrompt = '', viewerRole = '') {
   if (typeof o.teacherRemarks === 'number') lines.push(`Teacher remarks on file: ${o.teacherRemarks}.`);
   if (typeof o.loginSessionsToday === 'number') {
     lines.push(`Student login sessions today (attendance proxy): ${o.loginSessionsToday}.`);
+  }
+  if (typeof o.studentsLoggedInToday === 'number') {
+    lines.push(`Students logged in today: ${o.studentsLoggedInToday}.`);
+  }
+  if (typeof o.studentsStudiedToday === 'number') {
+    lines.push(`Students who studied today: ${o.studentsStudiedToday}.`);
+  }
+  if (typeof o.totalStudyMinutesToday === 'number') {
+    lines.push(`Total study time today: ${o.totalStudyMinutesToday} minutes.`);
+  }
+  if (typeof o.teachersLoggedInToday === 'number') {
+    lines.push(`Teachers logged in today: ${o.teachersLoggedInToday}.`);
   }
   if (typeof o.trialMembers === 'number') lines.push(`Trial members: ${o.trialMembers}.`);
   // Only mention content catalogs when the admin actually asked about them.

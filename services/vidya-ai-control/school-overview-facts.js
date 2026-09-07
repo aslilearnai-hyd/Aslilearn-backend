@@ -14,7 +14,7 @@ import HomeworkSubmission from '../../models/HomeworkSubmission.js';
 import Video from '../../models/Video.js';
 import Content from '../../models/Content.js';
 import RiskAnalysisReport from '../../models/RiskAnalysisReport.js';
-import { istYmd } from './ist-time.js';
+import { istYmd, istStartOfDayInstant, istEndOfDayInstant } from './ist-time.js';
 
 function oid(id) {
   try {
@@ -101,6 +101,10 @@ async function metricsForAdminOid(adminOid, schoolLabel) {
     examResults30d,
     remarks,
     sessionsToday,
+    studentsLoggedInToday,
+    studentsStudiedToday,
+    studyMinutesToday,
+    teachersLoggedInToday,
     omrBatches,
     omrRows,
     assessments,
@@ -129,6 +133,28 @@ async function metricsForAdminOid(adminOid, schoolLabel) {
     studentIds.length
       ? UserSession.countDocuments({ userId: { $in: studentIds }, date: ymd }).catch(() => 0)
       : Promise.resolve(0),
+    studentIds.length
+      ? UserSession.distinct('userId', { userId: { $in: studentIds }, date: ymd }).then((ids) => ids.length).catch(() => 0)
+      : Promise.resolve(0),
+    studentIds.length
+      ? UserSession.distinct('userId', {
+          userId: { $in: studentIds },
+          date: ymd,
+          duration: { $gt: 0 },
+        }).then((ids) => ids.length).catch(() => 0)
+      : Promise.resolve(0),
+    studentIds.length
+      ? UserSession.aggregate([
+          { $match: { userId: { $in: studentIds }, date: ymd } },
+          { $group: { _id: null, minutes: { $sum: '$duration' } } },
+        ])
+          .then((rows) => Math.max(0, Math.round(Number(rows[0]?.minutes) || 0)))
+          .catch(() => 0)
+      : Promise.resolve(0),
+    Teacher.countDocuments({
+      adminId: adminOid,
+      lastLogin: { $gte: istStartOfDayInstant(ymd), $lte: istEndOfDayInstant(ymd) },
+    }).catch(() => 0),
     OmrResultBatch.countDocuments({ adminId: adminOid }).catch(() => 0),
     OmrResultRow.countDocuments({ adminId: adminOid }).catch(() => 0),
     Assessment.countDocuments({
@@ -160,6 +186,10 @@ async function metricsForAdminOid(adminOid, schoolLabel) {
       examResultsLast30Days: examResults30d,
       teacherRemarks: remarks,
       loginSessionsToday: sessionsToday,
+      studentsLoggedInToday,
+      studentsStudiedToday,
+      totalStudyMinutesToday: studyMinutesToday,
+      teachersLoggedInToday,
       omrBatches,
       omrResultRows: omrRows,
       publishedAssessments: assessments,
@@ -435,6 +465,197 @@ export function isHeadcountOverviewQuery(message) {
   if (!countish) return false;
   const metrics = [students, teachers, classes].filter(Boolean).length;
   return metrics >= 2;
+}
+
+/**
+ * "How many logged in today?", "how many studied?", "who is active on the app?"
+ * Defaults to today when no timeframe is given.
+ */
+export function isSchoolActivityQuery(message) {
+  const lower = String(message || '').toLowerCase();
+  const activity =
+    /\b(logged?\s*in|logined|logins?|login)\b/.test(lower) ||
+    /\b(studied|studying|study time|study minutes|learning sessions?|sessions?\s+today|used the (?:app|platform)|opened the app|on the app)\b/.test(
+      lower,
+    ) ||
+    /\b(active today|present today|attended today)\b/.test(lower) ||
+    /\b(how many|who|count).{0,30}\b(active|studied|studying)\b/.test(lower);
+  if (!activity) return false;
+  return /((how|who)\s*many|count|total|number of|are there|who|list|show|today|this week|active)/i.test(
+    lower,
+  );
+}
+
+export function formatSchoolActivityAnswer(facts, userPrompt = '') {
+  const o = facts?.overview && typeof facts.overview === 'object' ? facts.overview : {};
+  const label = String(facts?.schoolLabel || 'your school').trim();
+  const ask = String(userPrompt || '').toLowerCase();
+  const wantsLogin = /\b(logged?\s*in|logined|logins?|login)\b/.test(ask);
+  const wantsStudy =
+    /\b(studied|studying|study time|study minutes|learning|sessions?|used the|on the app)\b/.test(ask);
+  const wantsTeachers = /\bteachers?\b/.test(ask);
+  const wantsWho = /\bwho\b|\bnames?\b|\blist\b/.test(ask);
+  const lines = [];
+
+  if (wantsLogin || (!wantsStudy && !wantsTeachers)) {
+    if (typeof o.studentsLoggedInToday === 'number') {
+      lines.push(`Students logged in today: ${o.studentsLoggedInToday}`);
+    }
+    if (typeof o.teachersLoggedInToday === 'number' && (wantsTeachers || wantsLogin)) {
+      lines.push(`Teachers logged in today: ${o.teachersLoggedInToday}`);
+    }
+  }
+  if (wantsStudy || (!wantsLogin && !wantsTeachers)) {
+    if (typeof o.studentsStudiedToday === 'number') {
+      lines.push(`Students who studied today: ${o.studentsStudiedToday}`);
+    }
+    if (typeof o.totalStudyMinutesToday === 'number') {
+      lines.push(`Total study time today: ${o.totalStudyMinutesToday} minutes`);
+    }
+  }
+  if (typeof o.studentsActiveLast7Days === 'number' && /\b(week|7\s*days|last week)\b/.test(ask)) {
+    lines.push(`Students active in last 7 days: ${o.studentsActiveLast7Days}`);
+  }
+  if (!lines.length) {
+    if (typeof o.studentsLoggedInToday === 'number') {
+      lines.push(`Students logged in today: ${o.studentsLoggedInToday}`);
+    }
+    if (typeof o.studentsStudiedToday === 'number') {
+      lines.push(`Students who studied today: ${o.studentsStudiedToday}`);
+    }
+    if (typeof o.totalStudyMinutesToday === 'number') {
+      lines.push(`Total study time today: ${o.totalStudyMinutesToday} minutes`);
+    }
+    if (typeof o.teachersLoggedInToday === 'number') {
+      lines.push(`Teachers logged in today: ${o.teachersLoggedInToday}`);
+    }
+  }
+
+  const names = Array.isArray(facts?.names) ? facts.names : [];
+  if (wantsWho && names.length) {
+    lines.push('');
+    lines.push(names.map((n, i) => `${i + 1}. ${n}`).join('\n'));
+  }
+
+  if (!lines.length) return `No login/study activity was found for ${label} today.`;
+  return `For ${label} today:\n${lines.join('\n')}`;
+}
+
+/**
+ * Live login + study activity for the viewer's school (or platform for super-admin).
+ */
+export async function buildSchoolActivityFacts({
+  viewerRole,
+  viewerUserId,
+  listNames = false,
+} = {}) {
+  const role = String(viewerRole || '').toLowerCase();
+  const viewerOid = oid(viewerUserId);
+  const ymd = istYmd(new Date());
+  const dayRange = { $gte: istStartOfDayInstant(ymd), $lte: istEndOfDayInstant(ymd) };
+
+  if (role === 'admin') {
+    if (!viewerOid) {
+      return {
+        operation: 'overview',
+        mode: 'activity',
+        scope: 'school',
+        schoolLabel: 'Your school',
+        overview: {},
+        error: 'Could not resolve school scope for this admin account.',
+      };
+    }
+    const adminProfile = await User.findById(viewerOid)
+      .select('schoolName place')
+      .lean()
+      .catch(() => null);
+    const schoolLabel = adminProfile?.schoolName || adminProfile?.place || 'Your school';
+    const metrics = await metricsForAdminOid(viewerOid, schoolLabel);
+    let names = [];
+    if (listNames) {
+      const studentIds = await User.find({ role: 'student', assignedAdmin: viewerOid })
+        .distinct('_id')
+        .catch(() => []);
+      if (studentIds.length) {
+        const activeIds = await UserSession.distinct('userId', {
+          userId: { $in: studentIds },
+          date: ymd,
+        }).catch(() => []);
+        const people = await User.find({ _id: { $in: activeIds } })
+          .select('fullName classNumber')
+          .sort({ fullName: 1 })
+          .limit(40)
+          .lean()
+          .catch(() => []);
+        names = people.map((p) =>
+          `${p.fullName || 'Student'}${p.classNumber ? ` (Class ${p.classNumber})` : ''}`.trim(),
+        );
+      }
+    }
+    return {
+      operation: 'overview',
+      mode: 'activity',
+      scope: 'school',
+      schoolLabel: metrics.schoolLabel,
+      overview: metrics.overview,
+      names,
+      date: ymd,
+    };
+  }
+
+  if (role === 'super-admin') {
+    const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
+    const [
+      studentsLoggedInToday,
+      studentsStudiedToday,
+      studyMinutesToday,
+      teachersLoggedInToday,
+      studentsActiveLast7Days,
+      loginSessionsToday,
+    ] = await Promise.all([
+      UserSession.distinct('userId', { date: ymd }).then(async (ids) => {
+        if (!ids.length) return 0;
+        return User.countDocuments({ _id: { $in: ids }, role: 'student' }).catch(() => ids.length);
+      }),
+      UserSession.distinct('userId', { date: ymd, duration: { $gt: 0 } }).then(async (ids) => {
+        if (!ids.length) return 0;
+        return User.countDocuments({ _id: { $in: ids }, role: 'student' }).catch(() => ids.length);
+      }),
+      UserSession.aggregate([
+        { $match: { date: ymd } },
+        { $group: { _id: null, minutes: { $sum: '$duration' } } },
+      ])
+        .then((rows) => Math.max(0, Math.round(Number(rows[0]?.minutes) || 0)))
+        .catch(() => 0),
+      Teacher.countDocuments({ lastLogin: dayRange }).catch(() => 0),
+      User.countDocuments({ role: 'student', lastLogin: { $gte: sevenDaysAgo } }).catch(() => 0),
+      UserSession.countDocuments({ date: ymd }).catch(() => 0),
+    ]);
+    return {
+      operation: 'overview',
+      mode: 'activity',
+      scope: 'platform',
+      schoolLabel: 'All schools (platform)',
+      overview: {
+        studentsLoggedInToday,
+        studentsStudiedToday,
+        totalStudyMinutesToday: studyMinutesToday,
+        teachersLoggedInToday,
+        studentsActiveLast7Days,
+        loginSessionsToday,
+      },
+      date: ymd,
+    };
+  }
+
+  return {
+    operation: 'overview',
+    mode: 'activity',
+    scope: 'unknown',
+    schoolLabel: '',
+    overview: {},
+    error: 'Login/study activity is available for school admins and super admins.',
+  };
 }
 
 /** Quick-ask: "How many published videos and assessments?" / "Number of videos" */

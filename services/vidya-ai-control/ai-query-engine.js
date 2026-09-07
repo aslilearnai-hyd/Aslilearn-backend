@@ -9,11 +9,14 @@ import {
   buildControlOverviewFacts,
   buildNamedSchoolDetailFacts,
   buildPublishedCatalogFacts,
+  buildSchoolActivityFacts,
+  formatSchoolActivityAnswer,
   extractSchoolNameQuery,
   isNamedSchoolMetricQuery,
   isHeadcountOverviewQuery,
   isReportsOverviewQuery,
   isPublishedCatalogQuery,
+  isSchoolActivityQuery,
 } from './school-overview-facts.js';
 import {
   buildNamedPersonDetailFacts,
@@ -190,6 +193,7 @@ export async function runDynamicAiQuery({
     isHeadcountOverviewQuery(userMessage) ||
     isReportsOverviewQuery(userMessage) ||
     isPublishedCatalogQuery(userMessage) ||
+    isSchoolActivityQuery(userMessage) ||
     isClassGroupQuery(userMessage);
 
   if (!preferLegacyControl) {
@@ -213,6 +217,23 @@ export async function runDynamicAiQuery({
     } catch (err) {
       console.warn('[vidya-control] platform intelligence skipped:', err?.message || err);
     }
+  }
+
+  if (isSchoolActivityQuery(userMessage) && ['admin', 'super-admin'].includes(String(viewerRole || ''))) {
+    const listNames = /\bwho\b|\bnames?\b|\blist\b/i.test(userMessage);
+    const activityFacts = await buildSchoolActivityFacts({
+      viewerRole,
+      viewerUserId,
+      listNames,
+    });
+    return {
+      ok: true,
+      plan: { mode: 'activity', module: 'learning_sessions', operation: 'overview', timeframe: 'today' },
+      facts: activityFacts,
+      message: formatSchoolActivityAnswer(activityFacts, userMessage),
+      auditQuery: 'COUNT distinct UserSession/lastLogin for school students+teachers today (IST)',
+      notes: ['School login and study activity from live sessions.'],
+    };
   }
 
   const namedSchoolMetric = await answerNamedSchoolMetric({ userMessage, viewerRole, viewerUserId });
@@ -285,6 +306,10 @@ export async function runDynamicAiQuery({
     const overviewFacts = await buildControlOverviewFacts({ viewerRole, viewerUserId });
     facts = { mode: 'overview', ...overviewFacts };
     notes.push('School dashboard overview: multi-metric snapshot from scoped aggregates.');
+  } else if (plan.mode === 'activity') {
+    const listNames = /\bwho\b|\bnames?\b|\blist\b/i.test(userMessage);
+    facts = await buildSchoolActivityFacts({ viewerRole, viewerUserId, listNames });
+    notes.push('School login and study activity for today (IST).');
   } else if (plan.mode === 'catalog_counts') {
     const catalogFacts = await buildPublishedCatalogFacts({ viewerRole, viewerUserId });
     facts = { mode: 'catalog_counts', ...catalogFacts };
@@ -343,16 +368,24 @@ export async function runDynamicAiQuery({
   }
 
   const auditQuery = buildAuditSelect(plan, facts);
-  let message = await formatDynamicResponse({
-    userPrompt: userMessage,
-    plan,
-    facts,
-    notes,
-    viewerRole,
-    history,
-  });
+  let message =
+    plan.mode === 'activity' || facts?.mode === 'activity'
+      ? formatSchoolActivityAnswer(facts, userMessage)
+      : await formatDynamicResponse({
+          userPrompt: userMessage,
+          plan,
+          facts,
+          notes,
+          viewerRole,
+          history,
+        });
 
-  if (looksLikeDeadDbReply(message) && !isHeadcountOverviewQuery(userMessage) && !isPublishedCatalogQuery(userMessage)) {
+  if (
+    looksLikeDeadDbReply(message) &&
+    !isHeadcountOverviewQuery(userMessage) &&
+    !isPublishedCatalogQuery(userMessage) &&
+    !isSchoolActivityQuery(userMessage)
+  ) {
     message = await answerAsVidyaControlKnowledge({
       userPrompt: userMessage,
       viewerRole,

@@ -4,6 +4,7 @@ import {
   isReportsOverviewQuery,
   isHeadcountOverviewQuery,
   isPublishedCatalogQuery,
+  isSchoolActivityQuery,
   extractSchoolNameQuery,
   isSchoolDetailQuery,
   isNamedSchoolMetricQuery,
@@ -173,6 +174,9 @@ function tryResolveAffirmativeFollowUp(message, history) {
   if (prevUser && (isReportsOverviewQuery(prevUser) || isHeadcountOverviewQuery(prevUser))) {
     return buildOverviewPlan('followup_overview_prev_user');
   }
+  if (prevUser && isSchoolActivityQuery(prevUser)) {
+    return buildActivityPlan('followup_activity_prev_user');
+  }
   if (
     prevAssistant &&
     /(student|class|teacher|school)\b/i.test(prevAssistant) &&
@@ -276,6 +280,23 @@ function buildOverviewPlan(errMessage = '') {
   };
 }
 
+function buildActivityPlan(errMessage = '') {
+  return {
+    mode: 'activity',
+    module: 'learning_sessions',
+    operation: 'overview',
+    filters: [],
+    selectFields: [],
+    groupBy: [],
+    aggregates: [],
+    sort: [],
+    limit: 40,
+    timeframe: 'today',
+    clarification: '',
+    parseWarning: errMessage ? `gemini_unavailable:${errMessage}` : 'school_activity_intent',
+  };
+}
+
 function buildSchoolDetailPlan(schoolName, errMessage = '') {
   return {
     mode: 'school_detail',
@@ -375,6 +396,9 @@ function buildSchoolSearchPlan(schoolName, errMessage = '') {
 function buildHeuristicPlan(message, errMessage = '') {
   if (isGreetingOrSmallTalk(message)) {
     return buildKnowledgePlan(errMessage);
+  }
+  if (isSchoolActivityQuery(message)) {
+    return buildActivityPlan(errMessage);
   }
   if (isReportsOverviewQuery(message) || isHeadcountOverviewQuery(message)) {
     return buildOverviewPlan(errMessage);
@@ -665,6 +689,9 @@ export async function parseDynamicIntent({ userMessage, history = [] }) {
   if (isGreetingOrSmallTalk(message)) {
     return buildKnowledgePlan();
   }
+  if (isSchoolActivityQuery(message)) {
+    return buildActivityPlan();
+  }
   if (isReportsOverviewQuery(message) || isHeadcountOverviewQuery(message)) {
     return buildOverviewPlan();
   }
@@ -773,6 +800,9 @@ ${message.slice(0, 4500)}
     return buildHeuristicPlan(message, '');
   }
 
+  if (isSchoolActivityQuery(message)) {
+    return buildActivityPlan();
+  }
   if (isReportsOverviewQuery(message) || isHeadcountOverviewQuery(message)) {
     return buildOverviewPlan();
   }
