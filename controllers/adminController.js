@@ -1949,7 +1949,12 @@ export const getTeacherDashboardStats = async (req, res) => {
           }
           return false;
         });
-        const className = `${classDoc.classNumber}${classDoc.section || ''}`;
+        const num = String(classDoc.classNumber ?? '').trim();
+        const sec = String(classDoc.section ?? '').trim();
+        const className =
+          num || sec
+            ? `${num}${sec}`
+            : String(classDoc.name || '').trim() || 'Class';
 
         const assignmentRows = (teacher.assignments || []).filter(
           (a) => String(a.classId) === classIdStr
