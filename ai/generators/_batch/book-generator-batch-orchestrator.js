@@ -69,7 +69,7 @@ import { computeScaffoldDensity, SCAFFOLD_DENSITY_CEILING } from '../../quality-
 import { generateSixSectionContent } from '../_v2/six-section-generator.js';
 import { isSixSectionV2Enabled, buildV2VariantHint } from '../../prompt-versioning/assemble.js';
 import { isV2SupportedTool, v2ToolFamily } from '../../prompt-versioning/tool-packs.js';
-import { mapV2StructuredToLegacy, ensureV2WorksheetCoreSections, syncLegacyWorksheetSectionsIntoV2, countUsableQuestionsFromV2OrLegacy } from '../../../utils/v2-structured-to-legacy.js';
+import { mapV2StructuredToLegacy, ensureV2WorksheetCoreSections, syncLegacyWorksheetSectionsIntoV2, countUsableQuestionsFromV2OrLegacy, trimUsableQuestionsToCount } from '../../../utils/v2-structured-to-legacy.js';
 import { pickQuestionCountParams } from '../../../utils/questionComposition.js';
 
 /** Question tools that carry scaffold-prone question pools and cross-slot dedup. */
@@ -581,11 +581,27 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                     structuredV2 = syncLegacyWorksheetSectionsIntoV2(structuredV2, legacyStructured);
                   }
                   if (mustMatchRequestedQuestionCount) {
-                    const actualQuestionCount = countUsableQuestionsFromV2OrLegacy(
+                    let actualQuestionCount = countUsableQuestionsFromV2OrLegacy(
                       structuredV2,
                       legacyStructured,
                     );
-                    if (actualQuestionCount !== requestedQuestionCount) {
+                    if (actualQuestionCount > requestedQuestionCount) {
+                      const trimmed = trimUsableQuestionsToCount(
+                        structuredV2,
+                        legacyStructured,
+                        requestedQuestionCount,
+                      );
+                      structuredV2 = trimmed.v2;
+                      legacyStructured = trimmed.legacy;
+                      actualQuestionCount = countUsableQuestionsFromV2OrLegacy(
+                        structuredV2,
+                        legacyStructured,
+                      );
+                      console.warn(
+                        `[book-generator] Slot ${batchIndex}: trimmed excess questions to ${requestedQuestionCount} (had more from model).`,
+                      );
+                    }
+                    if (actualQuestionCount < requestedQuestionCount) {
                       lastError = `Generated ${actualQuestionCount} of ${requestedQuestionCount} requested questions`;
                       console.warn(
                         `[book-generator] Slot ${batchIndex} attempt ${attempt}: ${lastError} — retrying instead of saving a short paper.`,
@@ -1009,11 +1025,26 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             }
 
             if (mustMatchRequestedQuestionCount) {
-              const actualQuestionCount = countUsableQuestionsFromV2OrLegacy(
+              let actualQuestionCount = countUsableQuestionsFromV2OrLegacy(
                 null,
                 structuredContent,
               );
-              if (actualQuestionCount !== requestedQuestionCount) {
+              if (actualQuestionCount > requestedQuestionCount) {
+                const trimmed = trimUsableQuestionsToCount(
+                  null,
+                  structuredContent,
+                  requestedQuestionCount,
+                );
+                structuredContent = trimmed.legacy;
+                actualQuestionCount = countUsableQuestionsFromV2OrLegacy(
+                  null,
+                  structuredContent,
+                );
+                console.warn(
+                  `[book-generator] Slot ${batchIndex}: trimmed excess questions to ${requestedQuestionCount} (had more from model).`,
+                );
+              }
+              if (actualQuestionCount < requestedQuestionCount) {
                 lastError = `Generated ${actualQuestionCount} of ${requestedQuestionCount} requested questions`;
                 console.warn(
                   `[book-generator] Slot ${batchIndex} attempt ${attempt}: ${lastError} — retrying instead of saving a short paper.`,

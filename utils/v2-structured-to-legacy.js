@@ -935,6 +935,139 @@ export function countUsableQuestionsFromV2OrLegacy(v2, legacy) {
   return n;
 }
 
+function isUsableQuestionRow(q) {
+  return str(q?.question || q?.prompt || q?.text).length >= 8;
+}
+
+function isUsableCardRow(c) {
+  return str(c?.front).length >= 2 && str(c?.back).length >= 2;
+}
+
+/**
+ * Drop excess questions when the model overshoots the requested count.
+ * Walks sections in order and keeps the first `targetCount` usable rows.
+ * Under-count is left alone (caller retries).
+ */
+export function trimUsableQuestionsToCount(v2, legacy, targetCount) {
+  const target = Math.max(0, Math.floor(Number(targetCount) || 0));
+  if (!target) return { v2, legacy };
+  if (countUsableQuestionsFromV2OrLegacy(v2, legacy) <= target) {
+    return { v2, legacy };
+  }
+
+  let remaining = target;
+  let nextV2 = v2;
+  let nextLegacy = legacy;
+
+  if (v2?.core && typeof v2.core === 'object') {
+    const core = { ...v2.core };
+    for (const key of [
+      'sectionA_mcq',
+      'sectionB_fib',
+      'sectionC_short',
+      'sectionD_application',
+      'sectionE_long',
+      'sectionF_case',
+      'sectionG_hots',
+    ]) {
+      const rows = arr(core[key]);
+      if (!rows.length) continue;
+      if (remaining <= 0) {
+        core[key] = [];
+        continue;
+      }
+      const kept = [];
+      for (const row of rows) {
+        if (!isUsableQuestionRow(row)) continue;
+        if (remaining <= 0) break;
+        kept.push(row);
+        remaining -= 1;
+      }
+      core[key] = kept;
+    }
+    if (Array.isArray(core.questions)) {
+      if (remaining <= 0) core.questions = [];
+      else {
+        const kept = [];
+        for (const row of core.questions) {
+          if (!isUsableQuestionRow(row)) continue;
+          if (remaining <= 0) break;
+          kept.push(row);
+          remaining -= 1;
+        }
+        core.questions = kept;
+      }
+    }
+    if (Array.isArray(core.cards)) {
+      if (remaining <= 0) core.cards = [];
+      else {
+        const kept = [];
+        for (const row of core.cards) {
+          if (!isUsableCardRow(row)) continue;
+          if (remaining <= 0) break;
+          kept.push(row);
+          remaining -= 1;
+        }
+        core.cards = kept;
+      }
+    }
+    nextV2 = { ...v2, core };
+  }
+
+  // Rebuild budget from the trimmed V2 count when both shapes exist — legacy must
+  // match the same cap (Math.max in the counter would otherwise keep the larger).
+  remaining = target;
+  if (legacy && typeof legacy === 'object') {
+    const out = { ...legacy };
+    if (Array.isArray(legacy.sections)) {
+      out.sections = legacy.sections.map((sec) => {
+        if (!sec || typeof sec !== 'object') return sec;
+        const qs = Array.isArray(sec.questions) ? sec.questions : [];
+        if (remaining <= 0) return { ...sec, questions: [] };
+        const kept = [];
+        for (const row of qs) {
+          if (!isUsableQuestionRow(row)) continue;
+          if (remaining <= 0) break;
+          kept.push(row);
+          remaining -= 1;
+        }
+        return { ...sec, questions: kept };
+      });
+    }
+    if (Array.isArray(legacy.questions)) {
+      if (remaining <= 0) out.questions = [];
+      else {
+        const kept = [];
+        for (const row of legacy.questions) {
+          if (!isUsableQuestionRow(row)) continue;
+          if (remaining <= 0) break;
+          kept.push(row);
+          remaining -= 1;
+        }
+        out.questions = kept;
+      }
+    }
+    for (const key of ['section_a', 'section_b', 'section_c', 'section_d', 'section_e']) {
+      if (!Array.isArray(legacy[key])) continue;
+      if (remaining <= 0) {
+        out[key] = [];
+        continue;
+      }
+      const kept = [];
+      for (const row of legacy[key]) {
+        if (!isUsableQuestionRow(row)) continue;
+        if (remaining <= 0) break;
+        kept.push(row);
+        remaining -= 1;
+      }
+      out[key] = kept;
+    }
+    nextLegacy = out;
+  }
+
+  return { v2: nextV2, legacy: nextLegacy };
+}
+
 /**
  * Fill empty worksheet Section D/E on V2 core before legacy map + save gate.
  * Book batches were dropping slots when Gemini omitted sectionE_long (most common).

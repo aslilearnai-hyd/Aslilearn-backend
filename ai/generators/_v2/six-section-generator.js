@@ -11,7 +11,7 @@ import { getAiGeneratorGeminiModel } from '../shared/ai-generator-batch-config.j
 import { assembleSixSectionPrompt } from '../../prompt-versioning/assemble.js';
 import { V2_SECTION_IDS } from '../../prompt-versioning/master-prompt.js';
 import { GEMINI_LITE_MODEL } from '../../providers/gemini-models.js';
-import { countUsableQuestionsFromV2OrLegacy } from '../../../utils/v2-structured-to-legacy.js';
+import { countUsableQuestionsFromV2OrLegacy, trimUsableQuestionsToCount } from '../../../utils/v2-structured-to-legacy.js';
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -172,7 +172,18 @@ export async function generateSixSectionContent(toolSlug, params = {}, opts = {}
         ...Object.fromEntries(V2_SECTION_IDS.map((id) => [id, json[id]])),
       });
       if (enforceQuestionCount) {
-        const actualQuestionCount = countUsableQuestionsFromV2OrLegacy(structuredContent, null);
+        let actualQuestionCount = countUsableQuestionsFromV2OrLegacy(structuredContent, null);
+        if (actualQuestionCount > requestedQuestionCount) {
+          const trimmed = trimUsableQuestionsToCount(
+            structuredContent,
+            null,
+            requestedQuestionCount,
+          );
+          return {
+            ok: true,
+            structuredContent: trimmed.v2 || structuredContent,
+          };
+        }
         if (actualQuestionCount !== requestedQuestionCount) {
           lastErr = `Model returned ${actualQuestionCount} questions; exactly ${requestedQuestionCount} were requested.`;
           continue;
