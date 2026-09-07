@@ -1181,7 +1181,7 @@ export const getAllClasses = async (req, res) => {
     const collected = new Set(baseline);
 
     const addLabel = (raw) => {
-      const normalized = normalizeClassNumberLabel(raw) || String(raw || '').trim();
+      const normalized = normalizeClassNumberLabel(raw);
       if (!normalized || /^unassigned$/i.test(normalized)) return;
       collected.add(normalized);
     };

@@ -20,17 +20,21 @@ const ROMAN_TO_INT = {
 export function normalizeClassNumberLabel(value) {
   if (value == null) return '';
   const raw = String(value).trim();
-  if (!raw) return '';
+  if (!raw || /^unassigned$/i.test(raw)) return '';
   // IIT-6 / Class-6-IIT → 6
   if (/^iit[-\s]*\d+/i.test(raw) || /^class[-\s]*\d+[-\s]*iit/i.test(raw)) {
     const d = raw.match(/(\d+)/);
-    return d ? String(parseInt(d[1], 10)) : raw;
+    if (!d) return '';
+    const n = parseInt(d[1], 10);
+    return n >= 1 && n <= 12 ? String(n) : '';
   }
   const withoutClass = raw.replace(/^class\s+/i, '').trim();
   // "6", "6th", "Class 6", "Grade 6"
   const digitMatch = withoutClass.match(/(\d+)/);
-  if (digitMatch) return String(parseInt(digitMatch[1], 10));
-  if (/^\d+$/.test(withoutClass)) return String(parseInt(withoutClass, 10));
+  if (digitMatch) {
+    const n = parseInt(digitMatch[1], 10);
+    return n >= 1 && n <= 12 ? String(n) : '';
+  }
   // Roman numerals used on many exam cards (Grade: VI / VII / VIII)
   const romanKey = withoutClass
     .toLowerCase()
@@ -39,7 +43,8 @@ export function normalizeClassNumberLabel(value) {
   if (romanKey && ROMAN_TO_INT[romanKey] != null) {
     return String(ROMAN_TO_INT[romanKey]);
   }
-  return withoutClass;
+  // Never keep garbage like "#_@_@_" as a class label.
+  return '';
 }
 
 export function classLabelFromContent(doc) {
