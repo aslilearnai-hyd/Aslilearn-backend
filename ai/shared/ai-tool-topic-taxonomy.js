@@ -12,7 +12,6 @@ import {
   applyClassLabelMongoFilter,
   buildHierarchyBoardMongoFilter,
   buildSubjectMongoFilter,
-  buildStrictTopicFieldMongoFilter,
   mergeMongoFilters,
   normalizeClassId,
   normalizeMatchText,
@@ -21,7 +20,6 @@ import {
   escapeRegex,
 } from './ai-tool-data-match.js';
 import { normalizeIitCategoryLoose } from '../../constants/products.js';
-import { canonicalCbseNcertTopics } from './cbse-ncert-topics.js';
 
 const NATURAL_COLLATOR = new Intl.Collator('en', { numeric: true, sensitivity: 'base' });
 
@@ -71,137 +69,10 @@ const SPLIT_SCIENCE_TOPIC_PATTERNS = {
   ],
 };
 
-const CBSE_SPLIT_SCIENCE_CHAPTERS = {
-  '6': {
-    chemistry: [
-      'Components of Food',
-      'Fibre to Fabric',
-      'Sorting Materials into Groups',
-      'Separation of Substances',
-      'Changes Around Us',
-      'Water',
-      'Air Around Us',
-    ],
-    physics: [
-      'Motion and Measurement of Distances',
-      'Light, Shadows and Reflections',
-      'Electricity and Circuits',
-      'Fun with Magnets',
-    ],
-    biology: [
-      'Food: Where Does It Come From?',
-      'Getting to Know Plants',
-      'Body Movements',
-      'The Living Organisms and Their Surroundings',
-      'Garbage In, Garbage Out',
-    ],
-  },
-  '7': {
-    chemistry: [
-      'Acids, Bases and Salts',
-      'Physical and Chemical Changes',
-      'Soil',
-      'Water: A Precious Resource',
-    ],
-    physics: [
-      'Heat',
-      'Winds, Storms and Cyclones',
-      'Motion and Time',
-      'Electric Current and its Effects',
-      'Light',
-    ],
-    biology: [
-      'Nutrition in Plants',
-      'Nutrition in Animals',
-      'Fibre to Fabric',
-      'Weather, Climate and Adaptations of Animals to Climate',
-      'Respiration in Organisms',
-      'Transportation in Animals and Plants',
-      'Reproduction in Plants',
-      'Forests: Our Lifeline',
-      'Wastewater Story',
-    ],
-  },
-  '8': {
-    chemistry: [
-      'Coal and Petroleum',
-      'Combustion and Flame',
-      'Pollution of Air and Water',
-      'Materials: Metals and Non-Metals',
-      'Synthetic Fibres and Plastics',
-    ],
-    physics: [
-      'Force and Pressure',
-      'Friction',
-      'Sound',
-      'Chemical Effects of Electric Current',
-      'Some Natural Phenomena',
-      'Light',
-      'Stars and the Solar System',
-    ],
-    biology: [
-      'Crop Production and Management',
-      'Microorganisms: Friend and Foe',
-      'Conservation of Plants and Animals',
-      'Cell — Structure and Functions',
-      'Reproduction in Animals',
-      'Reaching the Age of Adolescence',
-    ],
-  },
-  '9': {
-    chemistry: [
-      'Matter in Our Surroundings',
-      'Is Matter Around Us Pure?',
-      'Atoms and Molecules',
-      'Structure of the Atom',
-    ],
-    physics: [
-      'Motion',
-      'Force and Laws of Motion',
-      'Gravitation',
-      'Work and Energy',
-      'Sound',
-    ],
-    biology: [
-      'The Fundamental Unit of Life',
-      'Tissues',
-      'Improvement in Food Resources',
-    ],
-  },
-  '10': {
-    chemistry: [
-      'Chemical Reactions and Equations',
-      'Acids, Bases and Salts',
-      'Metals and Non-metals',
-      'Carbon and Its Compounds',
-    ],
-    physics: [
-      'Light – Reflection and Refraction',
-      'The Human Eye and the Colourful World',
-      'Electricity',
-      'Magnetic Effects of Electric Current',
-    ],
-    biology: [
-      'Life Processes',
-      'Control and Coordination',
-      'How Do Organisms Reproduce?',
-      'Heredity',
-      'Our Environment',
-    ],
-  },
-};
-
-function canonicalCbseSplitScienceTopics(classLabel = '', subject = '', board = '') {
-  const subjectKey = normalizeMatchText(subject).toLowerCase();
-  if (!SPLIT_SCIENCE_TOPIC_PATTERNS[subjectKey] || lockBoardKey(board) === 'IIT/NEET') return [];
-  const classNumber = String(classLabel || '').match(/(\d+)/)?.[1] || '';
-  return CBSE_SPLIT_SCIENCE_CHAPTERS[classNumber]?.[subjectKey] || [];
-}
-
 /**
- * CBSE stores integrated Science generations under subject "Science". When a
- * B2C form asks for Physics/Chemistry/Biology, the loose Science alias must not
- * make every science chapter appear under every branch.
+ * CBSE stores integrated Science rows under subject "Science". When a teacher
+ * form asks for Physics/Chemistry/Biology, filter managed topics to that branch.
+ * Never invent chapters — only filter what already exists in AI Tool Topics.
  * For Classes 6–8, if no branch chapters match yet, keep the Science list so
  * teachers are not stuck with an empty Topic dropdown.
  */
@@ -431,7 +302,10 @@ export async function queryAiToolTopicTaxonomy(params = {}) {
   return rows;
 }
 
-/** Prefer board-scoped rows; try board label aliases only — never drop board filter. */
+/**
+ * Sole source for teacher/student topic dropdowns: Super Admin AI Tool Topics
+ * (`ai_tool_topics`). No generations, hardcoded disk, or NCERT catalog merges.
+ */
 export async function resolveAiToolTopicTaxonomy(rawParams = {}) {
   const params = await applyCategoryShare(rawParams);
   const board = normalizeMatchText(params.board);
@@ -470,115 +344,11 @@ export async function resolveAiToolTopicTaxonomy(rawParams = {}) {
     }
   }
 
-  // Always union legacy generations for the exact topic (strict field match).
-  // Skipping when a single managed subtopic exists left Class 6 CBSE chapters
-  // stuck with one incomplete option like "2.5 …" and blocked the rest.
-  if (classLabel && subject) {
-    try {
-      const fromGenerations = await distinctTopicsFromGenerations({
-        board,
-        productCategory: params.productCategory,
-        classLabel,
-        subject,
-        topicName,
-      });
-      if (topicName) {
-        formatted.subTopics = mergeUniqueChapterLabels(
-          formatted.subTopics,
-          fromGenerations.subTopics,
-        );
-      } else {
-        formatted.topics = mergeUniqueChapterLabels(formatted.topics, fromGenerations.topics);
-      }
-      formatted.subjects = mergeUniqueChapterLabels(formatted.subjects, fromGenerations.subjects);
-    } catch (err) {
-      console.warn(
-        '[ai-tool-topic-taxonomy] generation union skipped:',
-        String(err?.message || err).slice(0, 200),
-      );
-    }
-  }
-
-  // Always union NCERT / hardcoded curriculum chapters and subtopics.
-  try {
-    const compactBoard = String(board || '')
-      .toUpperCase()
-      .replace(/[\s/\\-]+/g, '');
-    const isIitBoard =
-      compactBoard.includes('IIT') || compactBoard.includes('NEET') || compactBoard.includes('JEE');
-    const classNumMatch = String(classLabel || '').match(/(\d+)/);
-    const classNum = classNumMatch ? parseInt(classNumMatch[1], 10) : NaN;
-    const classKey =
-      isIitBoard && normalizeClassId(classLabel) === 'Class 6'
-        ? 'IIT-6'
-        : Number.isFinite(classNum) && classNum >= 5 && classNum <= 10
-          ? String(classNum)
-          : '';
-
-    if (classKey) {
-      const {
-        getChaptersForSubject,
-        getSubtopicsForChapter,
-        getSubjectsForClass,
-      } = await import('../../services/hardcoded-content-service.js');
-
-      if (!subject) {
-        // IIT boards: never union CBSE Class 7–10 subjects (Social Science, languages, etc.)
-        if (isIitBoard) {
-          const iitSubjects = await getSubjectsForClass('IIT-6');
-          formatted.subjects = mergeUniqueChapterLabels(formatted.subjects, iitSubjects);
-        } else {
-          const subjects = await getSubjectsForClass(classKey);
-          formatted.subjects = mergeUniqueChapterLabels(formatted.subjects, subjects);
-        }
-      } else if (topicName) {
-        const hardSubjects = isIitBoard
-          ? [subject]
-          : [...new Set([subject, 'Science', 'science'])];
-        for (const hardSubject of hardSubjects) {
-          const subs = await getSubtopicsForChapter(
-            isIitBoard ? 'IIT-6' : classKey,
-            hardSubject,
-            topicName,
-          );
-          if (subs.length) {
-            formatted.subTopics = mergeUniqueChapterLabels(formatted.subTopics, subs);
-            break;
-          }
-        }
-      } else {
-        const hardSubjects = isIitBoard
-          ? [subject]
-          : [...new Set([subject, 'Science'])];
-        for (const hardSubject of hardSubjects) {
-          const chapters = await getChaptersForSubject(
-            isIitBoard ? 'IIT-6' : classKey,
-            hardSubject,
-          );
-          const chapterNames = chapters
-            .map((row) => String(row?.chapterName || '').trim())
-            .filter(Boolean);
-          if (chapterNames.length) {
-            formatted.topics = mergeUniqueChapterLabels(formatted.topics, chapterNames);
-            break;
-          }
-        }
-      }
-    }
-  } catch (err) {
-    console.warn(
-      '[ai-tool-topic-taxonomy] hardcoded curriculum union skipped:',
-      String(err?.message || err).slice(0, 200),
-    );
-  }
-
-  formatted.topics = mergeUniqueChapterLabels(
-    canonicalCbseNcertTopics(classLabel, subject, board),
+  formatted.topics = filterTopicsForSplitScienceSubject(
     formatted.topics,
-  );
-  formatted.topics = mergeUniqueChapterLabels(
-    canonicalCbseSplitScienceTopics(classLabel, subject, board),
-    filterTopicsForSplitScienceSubject(formatted.topics, subject, board, classLabel),
+    subject,
+    board,
+    classLabel,
   );
   if (
     topicName &&
@@ -588,48 +358,4 @@ export async function resolveAiToolTopicTaxonomy(rawParams = {}) {
   }
 
   return formatted;
-}
-
-async function distinctTopicsFromGenerations({
-  board = '',
-  productCategory,
-  classLabel,
-  subject,
-  topicName = '',
-}) {
-  const AiToolGeneration = (await import('../../models/AiToolGeneration.js')).default;
-  const boardText = normalizeMatchText(board);
-  const classText = normalizeMatchText(classLabel);
-  const subjectText = normalizeMatchText(subject);
-
-  let filter = {
-    status: { $nin: ['archived', 'inactive', 'deleted'] },
-  };
-  filter = applyClassLabelMongoFilter(filter, classText, boardText);
-  const isIitClass6 =
-    lockBoardKey(boardText) === 'IIT/NEET' && normalizeClassId(classText) === 'Class 6';
-  if (boardText && !isIitClass6) {
-    filter = mergeMongoFilters(filter, { board: boardMongoMatch(boardText) });
-  }
-  filter = mergeMongoFilters(filter, buildSubjectMongoFilter(subjectText, boardText));
-  filter = applyProductCategoryMongoFilter(filter, productCategory);
-
-  if (topicName) {
-    filter = mergeMongoFilters(filter, buildStrictTopicFieldMongoFilter(topicName));
-    const subTopics = (await AiToolGeneration.distinct('subtopic', filter))
-      .map((v) => String(v || '').trim())
-      .filter(Boolean);
-    return { topics: [], subTopics, subjects: [] };
-  }
-
-  const [topics, subjects] = await Promise.all([
-    AiToolGeneration.distinct('topic', filter),
-    AiToolGeneration.distinct('subject', filter),
-  ]);
-
-  return {
-    topics: topics.map((v) => String(v || '').trim()).filter(Boolean),
-    subTopics: [],
-    subjects: subjects.map((v) => String(v || '').trim()).filter(Boolean),
-  };
 }

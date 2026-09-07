@@ -75,10 +75,6 @@ function isIitNeetBoard(board) {
   return compact.includes('IIT') || compact.includes('NEET') || compact.includes('JEE');
 }
 
-function isIitClassLabel(classLabel, board = '') {
-  return isIitNeetBoard(board) && normalizeClassId(classLabel) === 'Class 6';
-}
-
 /** GET /api/curriculum/classes */
 export const listClasses = async (req, res) => {
   try {
@@ -124,13 +120,7 @@ export const listSubjects = async (req, res) => {
       productCategory: req.query.productCategory,
       classLabel,
     });
-    let subjects = uniqueSorted(managed.subjects);
-    // Hardcoded curriculum subjects are already merged inside resolveAiToolTopicTaxonomy.
-    // Keep IIT empty-seed fallback for boards that only use Amenity content.
-    if (subjects.length === 0 && isIitClassLabel(classLabel, board)) {
-      const { getSubjectsForClass } = await import('../services/hardcoded-content-service.js');
-      subjects = uniqueSorted(await getSubjectsForClass('IIT-6'));
-    }
+    const subjects = uniqueSorted(managed.subjects);
     return res.json({
       success: true,
       data: toOptionRows(subjects),
@@ -156,7 +146,7 @@ export const listTopics = async (req, res) => {
     }
 
     const managed = await resolveAiToolTopicTaxonomy({ board, classLabel, subject, productCategory: req.query.productCategory });
-    // Topics already include AiToolTopic + generation + hardcoded NCERT chapters.
+    // Topics come only from Super Admin AI Tool Topics.
     const topics = uniqueSortedChapterTopics(managed.topics);
     return res.json({
       success: true,
