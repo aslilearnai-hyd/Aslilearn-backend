@@ -11,10 +11,14 @@ import {
   buildPublishedCatalogFacts,
   extractSchoolNameQuery,
   isNamedSchoolMetricQuery,
+  isHeadcountOverviewQuery,
+  isReportsOverviewQuery,
+  isPublishedCatalogQuery,
 } from './school-overview-facts.js';
 import {
   buildNamedPersonDetailFacts,
   buildClassGroupFacts,
+  isClassGroupQuery,
 } from './entity-detail-facts.js';
 import mongoose from 'mongoose';
 import User from '../../models/User.js';
@@ -179,8 +183,38 @@ export async function runDynamicAiQuery({
   viewerUserId,
 }) {
   userMessage = resolveClassRosterQuestion(userMessage, history);
-  const platform = await runPlatformIntelligence({ question: userMessage, history, viewerRole, viewerUserId });
-  if (platform) return { ok: true, plan: { mode: 'platform_intelligence' }, facts: platform.facts, message: platform.message, auditQuery: 'Read-only scoped multi-module plan', notes: [] };
+
+  // Deterministic school-admin paths must not wait on (or be overwritten by) the
+  // Gemini multi-module planner — that is what made Vidya look "completely dead".
+  const preferLegacyControl =
+    isHeadcountOverviewQuery(userMessage) ||
+    isReportsOverviewQuery(userMessage) ||
+    isPublishedCatalogQuery(userMessage) ||
+    isClassGroupQuery(userMessage);
+
+  if (!preferLegacyControl) {
+    try {
+      const platform = await runPlatformIntelligence({
+        question: userMessage,
+        history,
+        viewerRole,
+        viewerUserId,
+      });
+      if (platform?.message) {
+        return {
+          ok: true,
+          plan: { mode: 'platform_intelligence' },
+          facts: platform.facts,
+          message: platform.message,
+          auditQuery: 'Read-only scoped multi-module plan',
+          notes: [],
+        };
+      }
+    } catch (err) {
+      console.warn('[vidya-control] platform intelligence skipped:', err?.message || err);
+    }
+  }
+
   const namedSchoolMetric = await answerNamedSchoolMetric({ userMessage, viewerRole, viewerUserId });
   if (namedSchoolMetric) {
     return {

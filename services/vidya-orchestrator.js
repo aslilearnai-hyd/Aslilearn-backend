@@ -31,8 +31,12 @@ export async function handleVidyaTurn({ plane, req, res, body = {} }) {
       const question = String(body.message || '').trim();
       const studentId = body.studentId ? String(body.studentId) : String(userId);
       if (String(studentId) === String(userId)) {
-        const platform = await runPlatformIntelligence({ question, history: body.history, viewerRole: role, viewerUserId: userId });
-        if (platform) return platform;
+        try {
+          const platform = await runPlatformIntelligence({ question, history: body.history, viewerRole: role, viewerUserId: userId });
+          if (platform?.message) return platform;
+        } catch (err) {
+          console.warn('[vidya-orchestrator] student platform path skipped:', err?.message || err);
+        }
       }
       const result = await runHybridStudentVidyaChat({
         viewerRole: role,
@@ -47,8 +51,12 @@ export async function handleVidyaTurn({ plane, req, res, body = {} }) {
 
     case PLANES.MENTOR_TEACHER: {
       const question = String(body.message || '').trim();
-      const platform = await runPlatformIntelligence({ question, history: body.history, viewerRole: role, viewerUserId: userId });
-      if (platform) return platform;
+      try {
+        const platform = await runPlatformIntelligence({ question, history: body.history, viewerRole: role, viewerUserId: userId });
+        if (platform?.message) return platform;
+      } catch (err) {
+        console.warn('[vidya-orchestrator] teacher platform path skipped:', err?.message || err);
+      }
       const result = await runHybridTeacherVidyaChat({
         viewerUserId: userId,
         question,

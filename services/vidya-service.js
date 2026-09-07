@@ -180,12 +180,22 @@ const buildPromptAndContents = async ({
 };
 
 async function tryPlatformSession({ userId, role, message, session, requestIp, userAgent, startedAt }) {
-  const result = await runPlatformIntelligence({ question: message, history: session.messages, viewerRole: role === 'school-admin' ? 'admin' : role, viewerUserId: userId });
-  if (!result) return null;
-  await persistMessage(session, { role: 'user', content: String(message), timestamp: new Date() });
-  await persistMessage(session, { role: 'assistant', content: result.message, timestamp: new Date() });
-  await writeLog({ userId: String(userId), role: ROLE_NORMALISE(role), sessionId: String(session._id), route: 'chat', prompt: String(message), response: result.message, model: 'platform-intelligence', provider: 'asli-db', latencyMs: Date.now() - startedAt, success: true, requestIp, userAgent });
-  return { ...result, success: true, sessionId: String(session._id), citations: [], latencyMs: Date.now() - startedAt };
+  try {
+    const result = await runPlatformIntelligence({
+      question: message,
+      history: session.messages,
+      viewerRole: role === 'school-admin' ? 'admin' : role,
+      viewerUserId: userId,
+    });
+    if (!result?.message) return null;
+    await persistMessage(session, { role: 'user', content: String(message), timestamp: new Date() });
+    await persistMessage(session, { role: 'assistant', content: result.message, timestamp: new Date() });
+    await writeLog({ userId: String(userId), role: ROLE_NORMALISE(role), sessionId: String(session._id), route: 'chat', prompt: String(message), response: result.message, model: 'platform-intelligence', provider: 'asli-db', latencyMs: Date.now() - startedAt, success: true, requestIp, userAgent });
+    return { ...result, success: true, sessionId: String(session._id), citations: [], latencyMs: Date.now() - startedAt };
+  } catch (err) {
+    console.warn('[vidya] platform session skipped:', err?.message || err);
+    return null;
+  }
 }
 
 export const handleChat = async ({

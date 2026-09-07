@@ -17,7 +17,9 @@ const personModules = {
 };
 
 export async function loadPlatformAccess(viewerRole, viewerUserId) {
-  const role = String(viewerRole || '').toLowerCase();
+  let role = String(viewerRole || '').toLowerCase();
+  if (role === 'school-admin' || role === 'school_admin') role = 'admin';
+  if (role === 'super_admin') role = 'super-admin';
   if (!['super-admin', 'admin', 'teacher', 'student'].includes(role)) throw new Error('Unsupported platform role');
   if (role === 'super-admin') return { role, userId: String(viewerUserId), scopeLabel: 'Platform-wide' };
   const [id] = ids([viewerUserId]);
