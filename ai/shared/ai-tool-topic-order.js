@@ -10,14 +10,20 @@ export function chapterNumberFromTopicLabel(value) {
     const n = parseInt(chapterMatch[1], 10);
     return Number.isNaN(n) ? null : n;
   }
-  const leading = s.match(/^(\d+)\s*[.\):\-–—]?\s+/);
+  // "1 Title" / "1) Title" — but never "1.6 Scientists…" (section numbers).
+  const leading = s.match(/^(\d+)\s*[)\-–—:]\s+\S/);
   if (leading) {
     const n = parseInt(leading[1], 10);
     return Number.isNaN(n) ? null : n;
   }
-  const leadingTight = s.match(/^(\d+)\s*[.\):\-–—]/);
-  if (leadingTight) {
-    const n = parseInt(leadingTight[1], 10);
+  const leadingDotSpace = s.match(/^(\d+)\.\s+\S/);
+  if (leadingDotSpace) {
+    const n = parseInt(leadingDotSpace[1], 10);
+    return Number.isNaN(n) ? null : n;
+  }
+  const leadingBare = s.match(/^(\d+)\s+[A-Za-z]/);
+  if (leadingBare) {
+    const n = parseInt(leadingBare[1], 10);
     return Number.isNaN(n) ? null : n;
   }
   return null;
@@ -130,13 +136,18 @@ export function compareAiToolTopicRows(a, b) {
 
 export function orderedUniqueSubTopics(rows) {
   const sorted = [...rows].sort(compareAiToolTopicRows);
+  const seen = new Set();
   const names = [];
   for (const row of sorted) {
     const name = String(row?.subTopic || '').trim();
     if (!name) continue;
+    const key = name.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
     names.push(name);
   }
-  return dedupeChapterWiseTopicLabels(names);
+  // Keep admin/sort order — never chapter-dedupe (that collapses 1.1…1.6 into one row).
+  return names;
 }
 
 /** Unique topic labels — prefer chapter-prefixed display names, chapter-wise order. */

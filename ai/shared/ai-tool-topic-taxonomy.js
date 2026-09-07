@@ -31,6 +31,20 @@ function mergeUniqueChapterLabels(primary = [], extra = []) {
   return dedupeChapterWiseTopicLabels([...primary, ...extra]);
 }
 
+function mergeUniqueSubTopicLabels(primary = [], extra = []) {
+  const seen = new Set();
+  const out = [];
+  for (const raw of [...primary, ...extra]) {
+    const name = String(raw || '').trim();
+    if (!name) continue;
+    const key = name.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(name);
+  }
+  return out.sort((a, b) => NATURAL_COLLATOR.compare(a, b));
+}
+
 const SPLIT_SCIENCE_TOPIC_PATTERNS = {
   physics: [
     /motion|kinematic|measurement of distances/i,
@@ -337,7 +351,7 @@ export async function resolveAiToolTopicTaxonomy(rawParams = {}) {
           topicName: parsed.title,
         });
         const extra = formatAiToolTopicTaxonomy(titleRows);
-        formatted.subTopics = mergeUniqueChapterLabels(formatted.subTopics, extra.subTopics);
+        formatted.subTopics = mergeUniqueSubTopicLabels(formatted.subTopics, extra.subTopics);
       } catch {
         /* keep primary topic match */
       }
