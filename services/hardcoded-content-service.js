@@ -12,7 +12,22 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // ─── Base paths ────────────────────────────────────────────────────────────────
-const HARDCODED_ROOT = path.join(__dirname, '../Asli hardcoding');
+// Prefer backend/Asli hardcoding (deploy layout), then repo-root Asli hardcoding.
+import fsSync from 'fs';
+const HARDCODED_ROOT_CANDIDATES = [
+  path.join(__dirname, '../Asli hardcoding'),
+  path.join(__dirname, '../../Asli hardcoding'),
+  path.join(__dirname, '../Asli Hardcoding'),
+  path.join(__dirname, '../../Asli Hardcoding'),
+];
+const HARDCODED_ROOT =
+  HARDCODED_ROOT_CANDIDATES.find((candidate) => {
+    try {
+      return fsSync.existsSync(candidate);
+    } catch {
+      return false;
+    }
+  }) || HARDCODED_ROOT_CANDIDATES[0];
 
 // ─── Constants ─────────────────────────────────────────────────────────────────
 const IIT_CLASS_NAME = 'IIT-6';

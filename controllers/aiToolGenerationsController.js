@@ -427,6 +427,7 @@ async function aggregateCombinedGroupCounts(match = {}, groupField) {
           items.map((item) => item.value),
           match.subject,
           match.board || '',
+          match.classLabel || match.class || '',
         ),
       );
       return items.filter((item) => visibleTopics.has(item.value));

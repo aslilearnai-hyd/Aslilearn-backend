@@ -41,29 +41,110 @@ const SPLIT_SCIENCE_TOPIC_PATTERNS = {
     /metal|non.?metal/i,
     /carbon|compound/i,
     /periodic|element/i,
+    /sorting materials|separation of substances|changes around us/i,
+    /\bfibre\b|\bfiber\b|fabric/i,
+    /\bwater\b|\bair around us\b/i,
+    /particulate/i,
   ],
   physics: [
-    /motion|kinematic/i,
-    /force|newton|friction/i,
+    /motion|kinematic|measurement of distances/i,
+    /force|newton|friction|pressure/i,
     /gravitation|gravity/i,
     /work|power|energy/i,
     /sound|wave/i,
-    /light|reflection|refraction/i,
-    /human eye|colourful world/i,
-    /electric|magnet/i,
+    /light|shadow|reflection|refraction/i,
+    /human eye|colourful world|colorful world/i,
+    /electric|circuit|magnet/i,
   ],
   biology: [
     /cell|fundamental unit of life/i,
     /tissue/i,
-    /diversity|organism/i,
+    /diversity|organism|living world|living organisms?/i,
     /life process/i,
     /control|coordination/i,
     /reproduction|heredity|evolution/i,
-    /environment|natural resource|food resource/i,
+    /environment|natural resource|food resource|food:|components of food|getting to know plants|body movements|garbage/i,
+    /biodiversity|habitat/i,
   ],
 };
 
 const CBSE_SPLIT_SCIENCE_CHAPTERS = {
+  '6': {
+    chemistry: [
+      'Components of Food',
+      'Fibre to Fabric',
+      'Sorting Materials into Groups',
+      'Separation of Substances',
+      'Changes Around Us',
+      'Water',
+      'Air Around Us',
+    ],
+    physics: [
+      'Motion and Measurement of Distances',
+      'Light, Shadows and Reflections',
+      'Electricity and Circuits',
+      'Fun with Magnets',
+    ],
+    biology: [
+      'Food: Where Does It Come From?',
+      'Getting to Know Plants',
+      'Body Movements',
+      'The Living Organisms and Their Surroundings',
+      'Garbage In, Garbage Out',
+    ],
+  },
+  '7': {
+    chemistry: [
+      'Acids, Bases and Salts',
+      'Physical and Chemical Changes',
+      'Soil',
+      'Water: A Precious Resource',
+    ],
+    physics: [
+      'Heat',
+      'Winds, Storms and Cyclones',
+      'Motion and Time',
+      'Electric Current and its Effects',
+      'Light',
+    ],
+    biology: [
+      'Nutrition in Plants',
+      'Nutrition in Animals',
+      'Fibre to Fabric',
+      'Weather, Climate and Adaptations of Animals to Climate',
+      'Respiration in Organisms',
+      'Transportation in Animals and Plants',
+      'Reproduction in Plants',
+      'Forests: Our Lifeline',
+      'Wastewater Story',
+    ],
+  },
+  '8': {
+    chemistry: [
+      'Coal and Petroleum',
+      'Combustion and Flame',
+      'Pollution of Air and Water',
+      'Materials: Metals and Non-Metals',
+      'Synthetic Fibres and Plastics',
+    ],
+    physics: [
+      'Force and Pressure',
+      'Friction',
+      'Sound',
+      'Chemical Effects of Electric Current',
+      'Some Natural Phenomena',
+      'Light',
+      'Stars and the Solar System',
+    ],
+    biology: [
+      'Crop Production and Management',
+      'Microorganisms: Friend and Foe',
+      'Conservation of Plants and Animals',
+      'Cell — Structure and Functions',
+      'Reproduction in Animals',
+      'Reaching the Age of Adolescence',
+    ],
+  },
   '9': {
     chemistry: [
       'Matter in Our Surroundings',
@@ -118,8 +199,10 @@ function canonicalCbseSplitScienceTopics(classLabel = '', subject = '', board = 
  * CBSE stores integrated Science generations under subject "Science". When a
  * B2C form asks for Physics/Chemistry/Biology, the loose Science alias must not
  * make every science chapter appear under every branch.
+ * For Classes 6–8, if no branch chapters match yet, keep the Science list so
+ * teachers are not stuck with an empty Topic dropdown.
  */
-export function filterTopicsForSplitScienceSubject(topics = [], subject = '', board = '') {
+export function filterTopicsForSplitScienceSubject(topics = [], subject = '', board = '', classLabel = '') {
   const subjectKey = normalizeMatchText(subject).toLowerCase();
   const patterns = SPLIT_SCIENCE_TOPIC_PATTERNS[subjectKey];
   if (!patterns) return topics;
@@ -127,7 +210,12 @@ export function filterTopicsForSplitScienceSubject(topics = [], subject = '', bo
   const boardKey = lockBoardKey(board);
   if (boardKey === 'IIT/NEET') return topics;
 
-  return topics.filter((topic) => patterns.some((pattern) => pattern.test(String(topic || ''))));
+  const filtered = topics.filter((topic) => patterns.some((pattern) => pattern.test(String(topic || ''))));
+  if (filtered.length > 0) return filtered;
+
+  const classNumber = Number(String(classLabel || '').match(/(\d+)/)?.[1] || 0);
+  if (classNumber >= 5 && classNumber <= 8) return topics;
+  return filtered;
 }
 
 /** Normalize query/storage value: '' = General. null = no filter. */
@@ -361,31 +449,28 @@ export async function resolveAiToolTopicTaxonomy(rawParams = {}) {
   const classLabel = normalizeMatchText(params.classLabel);
   const subject = normalizeMatchText(params.subject);
   const topicName = normalizeMatchText(params.topicName);
-  const managedSubTopics = topicName ? [...formatted.subTopics] : [];
 
-  // Union legacy generations only when managed AI Tool Topics has no subtopics yet.
-  // Loose topic variants (bare "Light", bare "Chapter 6") caused cross-chapter mixing.
+  // Always union legacy generations for the exact topic (strict field match).
+  // Skipping when a single managed subtopic exists left Class 6 CBSE chapters
+  // stuck with one incomplete option like "2.5 …" and blocked the rest.
   if (classLabel && subject) {
     try {
-      const needsGenerationUnion = !topicName || managedSubTopics.length === 0;
-      if (needsGenerationUnion) {
-        const fromGenerations = await distinctTopicsFromGenerations({
-          board,
-          productCategory: params.productCategory,
-          classLabel,
-          subject,
-          topicName,
-        });
-        if (topicName) {
-          formatted.subTopics = mergeUniqueChapterLabels(
-            formatted.subTopics,
-            fromGenerations.subTopics,
-          );
-        } else {
-          formatted.topics = mergeUniqueChapterLabels(formatted.topics, fromGenerations.topics);
-        }
-        formatted.subjects = mergeUniqueChapterLabels(formatted.subjects, fromGenerations.subjects);
+      const fromGenerations = await distinctTopicsFromGenerations({
+        board,
+        productCategory: params.productCategory,
+        classLabel,
+        subject,
+        topicName,
+      });
+      if (topicName) {
+        formatted.subTopics = mergeUniqueChapterLabels(
+          formatted.subTopics,
+          fromGenerations.subTopics,
+        );
+      } else {
+        formatted.topics = mergeUniqueChapterLabels(formatted.topics, fromGenerations.topics);
       }
+      formatted.subjects = mergeUniqueChapterLabels(formatted.subjects, fromGenerations.subjects);
     } catch (err) {
       console.warn(
         '[ai-tool-topic-taxonomy] generation union skipped:',
@@ -394,7 +479,7 @@ export async function resolveAiToolTopicTaxonomy(rawParams = {}) {
     }
   }
 
-  // Union NCERT / hardcoded curriculum only when managed subtopics are still empty.
+  // Always union NCERT / hardcoded curriculum chapters and subtopics.
   try {
     const compactBoard = String(board || '')
       .toUpperCase()
@@ -426,22 +511,38 @@ export async function resolveAiToolTopicTaxonomy(rawParams = {}) {
           const subjects = await getSubjectsForClass(classKey);
           formatted.subjects = mergeUniqueChapterLabels(formatted.subjects, subjects);
         }
-      } else if (topicName && formatted.subTopics.length === 0) {
-        const subs = await getSubtopicsForChapter(
-          isIitBoard ? 'IIT-6' : classKey,
-          subject,
-          topicName,
-        );
-        formatted.subTopics = mergeUniqueChapterLabels(formatted.subTopics, subs);
-      } else if (!topicName) {
-        const chapters = await getChaptersForSubject(
-          isIitBoard ? 'IIT-6' : classKey,
-          subject,
-        );
-        const chapterNames = chapters
-          .map((row) => String(row?.chapterName || '').trim())
-          .filter(Boolean);
-        formatted.topics = mergeUniqueChapterLabels(formatted.topics, chapterNames);
+      } else if (topicName) {
+        const hardSubjects = isIitBoard
+          ? [subject]
+          : [...new Set([subject, 'Science', 'science'])];
+        for (const hardSubject of hardSubjects) {
+          const subs = await getSubtopicsForChapter(
+            isIitBoard ? 'IIT-6' : classKey,
+            hardSubject,
+            topicName,
+          );
+          if (subs.length) {
+            formatted.subTopics = mergeUniqueChapterLabels(formatted.subTopics, subs);
+            break;
+          }
+        }
+      } else {
+        const hardSubjects = isIitBoard
+          ? [subject]
+          : [...new Set([subject, 'Science'])];
+        for (const hardSubject of hardSubjects) {
+          const chapters = await getChaptersForSubject(
+            isIitBoard ? 'IIT-6' : classKey,
+            hardSubject,
+          );
+          const chapterNames = chapters
+            .map((row) => String(row?.chapterName || '').trim())
+            .filter(Boolean);
+          if (chapterNames.length) {
+            formatted.topics = mergeUniqueChapterLabels(formatted.topics, chapterNames);
+            break;
+          }
+        }
       }
     }
   } catch (err) {
@@ -453,11 +554,11 @@ export async function resolveAiToolTopicTaxonomy(rawParams = {}) {
 
   formatted.topics = mergeUniqueChapterLabels(
     canonicalCbseSplitScienceTopics(classLabel, subject, board),
-    filterTopicsForSplitScienceSubject(formatted.topics, subject, board),
+    filterTopicsForSplitScienceSubject(formatted.topics, subject, board, classLabel),
   );
   if (
     topicName &&
-    filterTopicsForSplitScienceSubject([topicName], subject, board).length === 0
+    filterTopicsForSplitScienceSubject([topicName], subject, board, classLabel).length === 0
   ) {
     formatted.subTopics = [];
   }
