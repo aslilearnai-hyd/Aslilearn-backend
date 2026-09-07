@@ -1,5 +1,5 @@
 import { callModel, buildContentsFromHistory } from '../model-router.js';
-import { resolveVidyaCurriculum } from '../vidya-curriculum.js';
+import { resolveVidyaCurriculum, parseCurriculumRequest } from '../vidya-curriculum.js';
 import { retrieveVidyaTextbookContext, appendTextbookSources } from '../vidya-textbook-context.js';
 import { maybeExplainStoredSources } from '../vidya-citation-registry.js';
 import { prepareConversationHistory } from '../../ai/shared/conversation-history.js';
@@ -73,7 +73,7 @@ function buildTeachingSystemInstruction({
   return [
     `You are Vidya AI, an expert tutor for ${classText} students following the ${boardText}.`,
     'Localisation is India-first: use Indian English, ₹/INR for invented money examples, Indian number formatting, SI units, and age-appropriate Indian contexts. Do not replace a foreign context when it is an explicit fact in the textbook or question.',
-    'Answer with exam-ready accuracy. Teach the asked topic fully — not a two-bullet summary.',
+    'Answer general questions on any topic, including topics outside AsliLearn and the school curriculum. For an explicit teaching or lesson request, teach fully using the teaching format below. For a simple factual question, conversation, writing or practical help, answer directly in a natural format and length appropriate to the request; no mandatory lesson headings or exercises.',
     curriculum.context,
     conversationRules(),
     citationRules(),
@@ -86,6 +86,7 @@ function buildTeachingSystemInstruction({
     'If the topic is ambiguous, ask one brief clarification instead of guessing.',
     'Do not say "as an AI" or "I cannot". If unsure, give your best explanation and note the uncertainty.',
     'Do not invent exam scores, school exam lists, or personal student data.',
+    'If the student asks their name or profile, never say you lack access. Use the signed-in name already established in this conversation or say you will answer from their Asli Learn profile.',
     'Never invent a default calendar year such as 2024. If the user asked for live school exams, dates, or last-month filters, do not write a filtering tutorial or worked example; say the live school exam list is required instead.',
   ]
     .filter(Boolean)
@@ -112,7 +113,7 @@ async function generateTeachingAnswer({
   if (curriculum.clarification) return curriculum.clarification;
   const textbook = await retrieveVidyaTextbookContext({ question: q, history: conversationHistory, curriculum });
   if (textbook.directAnswer) return textbook.directAnswer;
-  if (curriculum.scope && !curriculum.context && !textbook.context) {
+  if (parseCurriculumRequest(q, conversationHistory).requested && curriculum.scope && !curriculum.context && !textbook.context) {
     return 'I checked the configured AI Tool Topics and matching indexed textbooks for your curriculum, but could not identify this chapter reliably. Please share the chapter title or relevant PDF passage; an unindexed or scanned PDF may need indexing/OCR first.';
   }
 
@@ -128,7 +129,7 @@ async function generateTeachingAnswer({
   const userMessage = [
     subjectContext ? `Subject: ${subjectContext}` : '',
     classLevel ? `Class: ${classLevel}` : '',
-    'Teach this question completely, accurately, and neatly:',
+    'Answer this question accurately; use a full lesson only when the user requests teaching:',
     q,
   ]
     .filter(Boolean)
@@ -232,7 +233,7 @@ export async function generateContextAwareAnswer({
   if (curriculum.clarification) return curriculum.clarification;
   const textbook = await retrieveVidyaTextbookContext({ question: q, history: conversationHistory, curriculum });
   if (textbook.directAnswer) return textbook.directAnswer;
-  if (curriculum.scope && !curriculum.context && !textbook.context) {
+  if (parseCurriculumRequest(q, conversationHistory).requested && curriculum.scope && !curriculum.context && !textbook.context) {
     return 'I checked the configured AI Tool Topics and matching indexed textbooks for your curriculum, but could not identify this chapter reliably. Please share the chapter title or relevant PDF passage; an unindexed or scanned PDF may need indexing/OCR first.';
   }
   const subjectsLine = enrolledSubjects.length
@@ -241,7 +242,7 @@ export async function generateContextAwareAnswer({
 
   const systemInstruction = [
     `You are Vidya, a personal assistant for a ${classText} student on Asli Learn (${boardText}). ${subjectsLine}`,
-    `Use only data supplied for this question. For textbook questions, answer the textbook question directly; do not introduce marks, video progress, weaknesses or exam advice.`,
+    `For application claims, use only the supplied verified application data. For general questions on any topic, use general knowledge and answer directly, even outside the school curriculum. Never invent application records or claim live external access. For textbook questions, answer the textbook question directly; do not introduce marks, video progress, weaknesses or exam advice.`,
     curriculum.context,
     conversationRules(),
     citationRules(),

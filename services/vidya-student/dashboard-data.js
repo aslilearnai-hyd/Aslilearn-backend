@@ -8,11 +8,22 @@ import { dedupeLibraryContents } from '../../utils/dedupeLibraryContents.js';
 
 // Read-only adapters. Identity is supplied by the authorized controller, never
 // selected by text from the user or by the language model.
+export function isStudentNameQuestion(question) {
+  const q = String(question || '').trim();
+  if (!q) return false;
+  if (/\b(chapter|compound|chemical|scientific|formula|process|reaction)\b/i.test(q)) return false;
+  return (
+    /\b(?:what(?:'s|s| is)|whats|tell me|say)\s+my\s+(?:full\s+)?name\b/i.test(q) ||
+    /\bwho am i\b/i.test(q) ||
+    /^(?:my name|name\??)$/i.test(q)
+  );
+}
+
 export function dashboardDataTopic(question) {
   const q = String(question || '');
   if (/\btimetable\b|\bclass schedule\b|\bperiods? today\b/i.test(q)) return 'timetable';
   if (/\battendance\b|\babsent\b|\bdays present\b/i.test(q) && !/login|study|streak/i.test(q)) return 'attendance';
-  if (/\bmy profile\b|\bmy school\b|\bmy account details\b/i.test(q)) return 'profile';
+  if (isStudentNameQuestion(q) || /\bmy profile\b|\bmy school\b|\bmy account details\b/i.test(q)) return 'profile';
   if (/how many|total|count/i.test(q) && /attempt|result|omr|offline/i.test(q) && /exam|result|omr|offline/i.test(q)) return 'result_counts';
   if (/\b(library|materials|pdfs|textbooks)\b/i.test(q) && /\b(list|available|how many|count|show all)\b/i.test(q) && !/chapter|lesson/i.test(q)) return 'materials';
   return null;
@@ -31,7 +42,15 @@ export function timetableScope(student) {
 export async function answerStudentDashboardData({ studentId, question, profile, models = { User, Timetable, AttendanceRecord, ExamResult, OmrResultRow }, library = loadStudentLibraryContents }) {
   const topic = dashboardDataTopic(question);
   if (!topic) return null;
-  if (topic === 'profile') return `**Your profile**\n• Name: ${profile.fullName}\n• School: ${profile.schoolName || 'Not recorded'}\n• Class: ${profile.classNumber || 'Not assigned'}${profile.section ? ` ${profile.section}` : ''}\n• Board: ${profile.board || 'Not recorded'}`;
+  if (topic === 'profile') {
+    const name = String(profile?.fullName || profile?.name || '').trim();
+    if (isStudentNameQuestion(question)) {
+      return name
+        ? `Your name on Asli Learn is **${name}**.`
+        : 'Your Asli Learn profile does not have a name saved yet. Ask your school to update it in your student record.';
+    }
+    return `**Your profile**\n• Name: ${name || 'Not recorded'}\n• School: ${profile.schoolName || 'Not recorded'}\n• Class: ${profile.classNumber || 'Not assigned'}${profile.section ? ` ${profile.section}` : ''}\n• Board: ${profile.board || 'Not recorded'}`;
+  }
   if (topic === 'result_counts') {
     const [exams, omr] = await Promise.all([
       models.ExamResult.countDocuments({ userId: studentId }),

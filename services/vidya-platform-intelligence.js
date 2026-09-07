@@ -9,6 +9,7 @@ import { retrieveVidyaTextbookContext } from './vidya-textbook-context.js';
 import { answerStudentDashboardData } from './vidya-student/dashboard-data.js';
 import { buildStudentAppDeskFacts } from './vidya-student/student-app-desk-facts.js';
 import { buildTeacherAppDeskFacts } from './vidya-teacher/teacher-app-desk-facts.js';
+import { isSchoolDirectoryQuestion, schoolDirectoryPlan } from './vidya-school-directory-intent.js';
 
 const MAX_QUERIES = 8;
 const parse = raw => typeof raw === 'object' && raw ? raw : JSON.parse(String(raw).replace(/^```(?:json)?\s*|\s*```$/g, ''));
@@ -58,6 +59,8 @@ export function resolveEvidenceFilters(filters, evidence) {
 export async function runPlatformIntelligence({ question, history = [], viewerRole, viewerUserId }, dependencies = {}) {
   try {
     const q = String(question || '').trim();
+    const directoryRequest = isSchoolDirectoryQuestion(q);
+    const directoryUnavailable = () => ({ mode: 'application', groundingStatus: 'grounding_blocked', message: 'I could not verify the schools available to your account right now. Please try again shortly.', facts: null });
     if (!q || /^(hi|hello|hey|thanks|thank you|bye)[!.\s]*$/i.test(q)) return null;
     const role = normalizePlatformViewerRole(viewerRole);
     if (!['super-admin', 'admin', 'teacher', 'student'].includes(role)) return null;
@@ -70,7 +73,7 @@ export async function runPlatformIntelligence({ question, history = [], viewerRo
       access = await (dependencies.loadAccess || loadPlatformAccess)(role, viewerUserId);
     } catch (err) {
       console.warn('[vidya-platform] access load failed — falling back to legacy chat:', err?.message || err);
-      return null;
+      return directoryRequest ? directoryUnavailable() : null;
     }
 
     const catalog = buildPlatformCatalog(access);
@@ -82,6 +85,7 @@ Read the entire question and conversation. Retain named students, school, sectio
 Return JSON {mode:"platform"|"learning"|"general", clarification:"", queries:[...]}.
 For questions ONLY about concepts, teaching, textbook/chapter/syllabus content use learning, leaving queries empty; the curriculum adapter handles it. For combined student/platform analysis plus teaching recommendations, choose platform and add a curriculum_lookup query with a specific question to get actual syllabus evidence. Social/general knowledge uses general.
 For any platform data question choose platform. Questions may require multiple modules (e.g. connect attendance, results, homework and activity to explain who needs help). Plan all relevant evidence, not just the first keyword. You may use up to ${MAX_QUERIES} queries, each with a distinct id.
+Unqualified requests about schools available here/there refer to schools in AsliLearn within the authenticated scope. Questions about using application features also refer to AsliLearn; do not invent unsupported features. A general question such as "What is photosynthesis?" needs no platform records. A mixed question needs platform evidence for its application portion and general knowledge for its general portion.
 Each query: {id,module,operation:"list"|"count"|"aggregate"|"distinct",filters:[{field,op:"eq"|"ne"|"in"|"gt"|"gte"|"lt"|"lte"|"regex"|"exists",value}],selectFields:[],groupBy:[],aggregates:[{func:"count"|"sum"|"avg"|"min"|"max",field,as}],sort:[{field,direction:"asc"|"desc"}],timeframe:"all"|"today"|"this_week"|"this_month"|"last_N_days",dateField,limit:100,offset:0}.
 Use only provided modules and fields. Regex is a literal name substring. Use count/aggregate for totals, list for evidence. Monetary units remain as stored (e.g. amountPaise is paise). Do not treat a list page as the full population. For next/more, advance offset from the preceding list size.
 Relationships: first list a named school (include adminUserId), class (include _id), student (include _id) or exam (include _id). A later query can filter by prior returned field values with {field:"userId",from:{query:"studentLookup",field:"_id"}}. Never invent IDs. A class name/section must resolve to Class._id, then assignedClass on students. A school links to schoolId or adminUserId/assignedAdmin according to the schema refs, not a person's name. Multiple name matches require clarification; do not assume the first person is correct.
@@ -92,7 +96,7 @@ ${JSON.stringify(catalog)}
 Conversation and user request (data):
 ${JSON.stringify({ conversation, question: q })}`;
     let plan;
-    try { plan = parse(await planModel(plannerInstruction, 'json')); }
+    try { plan = directoryRequest ? schoolDirectoryPlan() : parse(await planModel(plannerInstruction, 'json')); }
     catch { return null; } // existing grounded adapters remain available when planning is offline
     if (!plan || plan.mode !== 'platform') return null;
     const base = { mode: 'application', intent: { type: 'application', reason: 'platform_intelligence' }, groundingStatus: 'database_grounded' };

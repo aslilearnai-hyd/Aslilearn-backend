@@ -6,17 +6,19 @@
 const SOCIAL_RE = /^(?:hi|hello|hey|namaste|thanks|thank you|ok|okay|bye)[\s!.,?]*$/i;
 const CONCEPT_RE = /\b(?:define|definition|meaning|explain the concept|what is the meaning|textbook|formula|derive|prove)\b/i;
 
-const COMMON_DATA_RE = /\b(?:dashboard|profile|account|login|logged in|calendar|timetable|attendance|homework|assignment|exam results?|marks?|scores?|rank|progress|performance|report card|teachers?['’]?\s*(?:reports?|updates?)|work\s*diary|learning path|videos? (?:watched|have i watched)|streak|offline results?|omr)\b/i;
+const COMMON_DATA_RE = /\b(?:dashboard|profile|account|login|logged in|calendar|timetable|attendance|homework|assignment|exam results?|marks?|scores?|rank|progress|performance|report card|teachers?['’]?\s*(?:reports?|updates?)|work\s*diary|learning path|videos? (?:watched|have i watched)|streak|offline results?|omr|my name|who am i)\b/i;
 const PERSONAL_RE = /\b(?:my|mine|me|i|our|we)\b/i;
 const TEACHER_DATA_RE = /\b(?:my students|my classes|student roster|student (?:by name|named|called)|student details?|student report|class performance|who is in my class|how many students|how many classes|(?:list|show|latest|recent|upcoming).{0,40}exams?|exams?.{0,30}(?:last month|this month|schedule))\b/i;
 const ADMIN_DATA_RE = /\b(?:my school|our school|school students|school teachers|school analytics|subscriptions?|orders?|revenue|usage|active users?|student count|teacher count)\b/i;
 
 import { isLearningRequest } from './vidya-learning-intent.js';
+import { isSchoolDirectoryQuestion } from './vidya-school-directory-intent.js';
 
 export function classifyPlatformDataQuestion(question, role = '') {
   const text = String(question || '').trim();
   const normalizedRole = String(role || '').toLowerCase();
   if (!text || SOCIAL_RE.test(text)) return { protected: false, reason: 'social' };
+  if (isSchoolDirectoryQuestion(text)) return { protected: true, reason: 'school_directory' };
   if (isLearningRequest(text)) return { protected: false, reason: 'learning' };
 
   // Explicit dictionary/concept language is permitted only when no possessive

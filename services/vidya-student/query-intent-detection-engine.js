@@ -8,6 +8,7 @@ import { isLearningRequest } from '../vidya-learning-intent.js';
 const APP_HINTS = [
   // "my" phrased queries
   'my marks', 'my score', 'my exams', 'my attendance', 'my progress', 'my rank',
+  'my name', "what's my name", 'whats my name', 'what is my name', 'who am i',
   'my dashboard', 'my weak', 'my performance', 'my result', 'my subjects',
   'my streak', 'my improvement', 'my recommendation', 'my analysis', 'my report',
   'student report', 'report card', 'individual report', 'my report card',
@@ -139,6 +140,10 @@ const EXAM_DATA_PATTERNS = [
 
 /** Platform activity: videos, paths, homework, overall learning progress */
 const PLATFORM_DATA_PATTERNS = [
+  /\bwhat(?:'s|s| is)\s+my\s+(?:full\s+)?name\b/,
+  /\bwho am i\b/,
+  /\bmy\s+(?:full\s+)?name\b/,
+  /\bmy profile\b/,
   /\b(my\s+)?(learning\s+)?progress\b/,
   /\bhow\s+am\s+i\s+doing\b/,
   /\b(exam|test)\s+status\b/,

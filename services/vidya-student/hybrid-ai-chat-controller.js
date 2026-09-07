@@ -188,6 +188,17 @@ function appOnlyReply(question, facts) {
   const deskTotals = desk.totals || {};
   const profileName = facts?.profile?.fullName || desk.profileName || 'there';
 
+  if (
+    /\b(?:what(?:'s|s| is)|whats|tell me|say)\s+my\s+(?:full\s+)?name\b/i.test(question) ||
+    /\bwho am i\b/i.test(question) ||
+    /^(?:my name|name\??)$/i.test(String(question || '').trim())
+  ) {
+    const name = String(facts?.profile?.fullName || facts?.profile?.name || desk.profileName || '').trim();
+    return name
+      ? `Your name on Asli Learn is **${name}**.`
+      : 'Your Asli Learn profile does not have a name saved yet.';
+  }
+
   // Shape-aware router first (count vs list vs latest vs detail for every topic)
   const shaped = answerByTopicAndShape(question, facts);
   if (typeof shaped === 'string' && shaped.trim()) {

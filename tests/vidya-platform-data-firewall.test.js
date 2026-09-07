@@ -13,6 +13,8 @@ const protectedCases = [
   ['student', 'show my homework'],
   ['student', 'how many videos have I watched'],
   ['student', 'my attendance'],
+  ['student', "what's my name"],
+  ['student', 'what is my name'],
   ['teacher', 'list my students'],
   ['teacher', 'tell me about a student by name'],
   ['teacher', 'student report'],

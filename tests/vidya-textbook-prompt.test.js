@@ -1,5 +1,6 @@
 import { test, mock } from 'node:test';
 import assert from 'node:assert/strict';
+import { parseCurriculumRequest } from '../services/vidya-curriculum.js';
 let captured;
 let missing = false;
 let topicsMissing = false;
@@ -8,6 +9,7 @@ mock.module('../services/model-router.js', { namedExports: {
   buildContentsFromHistory: ({ userMessage }) => [{ role: 'user', content: userMessage }],
 } });
 mock.module('../services/vidya-curriculum.js', { namedExports: {
+  parseCurriculumRequest,
   resolveVidyaCurriculum: async () => ({ context: topicsMissing ? '' : 'Chapter 1 - Pattern In Mathematics', scope: { track: 'ALPHA' } }),
 } });
 mock.module('../services/vidya-textbook-context.js', { namedExports: {
@@ -25,6 +27,22 @@ test('teacher and student model requests include syllabus and actual retrieved t
     assert.match(captured.systemInstruction, /₹ \/ INR/);
     assert.match(result, /Retrieved source B1/);
   }
+});
+
+test('general questions still reach the model when an assigned scope has no textbook evidence', async () => {
+  missing = true;
+  topicsMissing = true;
+  for (const generate of [generateGeneralKnowledgeAnswer, generateContextAwareAnswer]) {
+    for (const question of ['What is photosynthesis?', 'Help me write a birthday message']) {
+      captured = null;
+      const result = await generate({ question, viewerUserId: 'test' });
+      assert.ok(captured);
+      assert.match(captured.systemInstruction, /general questions on any topic/i);
+      assert.doesNotMatch(result, /could not identify this chapter/);
+    }
+  }
+  missing = false;
+  topicsMissing = false;
 });
 test('configured topic permits a clearly labelled general explanation without PDF evidence', async () => {
   missing = true;

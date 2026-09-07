@@ -9,6 +9,18 @@ test('dashboard adapters distinguish timetable, attendance and learning explanat
   assert.equal(dashboardDataTopic('show my timetable'), 'timetable');
   assert.equal(dashboardDataTopic('my attendance'), 'attendance');
   assert.equal(dashboardDataTopic('explain magnetic field'), null);
+  assert.equal(dashboardDataTopic("what's my name"), 'profile');
+  assert.equal(dashboardDataTopic('what is my name'), 'profile');
+  assert.equal(dashboardDataTopic('who am i'), 'profile');
+});
+test('name questions answer from the signed-in profile, not a privacy refusal', async () => {
+  const answer = await answerStudentDashboardData({
+    studentId: 'student',
+    question: "what's my name",
+    profile: { fullName: 'ADDALA THANVITHA', schoolName: 'Asli', classNumber: '8', board: 'CBSE' },
+  });
+  assert.match(answer, /ADDALA THANVITHA/);
+  assert.doesNotMatch(answer, /do not have access|do not know your name|personal records/i);
 });
 test('timetable requires school AND class; cannot fall back to entire school', () => {
   assert.equal(timetableScope({ assignedAdmin: 'school' }), null);

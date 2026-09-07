@@ -15,6 +15,39 @@ const root = { role: 'super-admin', userId: 'root', scopeLabel: 'Platform-wide' 
 const options = { viewerRole: 'teacher', viewerUserId: teacher.userId, access: teacher };
 const resolved = value => ({ maxTimeMS() { return this; }, then: (yes, no) => Promise.resolve(value).then(yes, no) });
 
+test('school directory wording fetches scoped records without depending on the intent model', async () => {
+  for (const access of [root, teacher]) {
+    let queried = false;
+    const result = await runPlatformIntelligence({ question: 'Tell me about the schools available there.', viewerRole: access.role, viewerUserId: access.userId }, {
+      loadAccess: async () => access,
+      plan: async () => { throw new Error('Planner must not be required for the directory'); },
+      execute: async ({ plan, access: actualAccess }) => {
+        queried = true;
+        assert.equal(actualAccess, access);
+        assert.equal(plan.module, 'schools');
+        assert.equal(plan.operation, 'list');
+        assert.deepEqual(plan.filters, []);
+        return { ok: true, facts: { rows: [{ name: 'Example School', place: 'Hyderabad', board: 'CBSE' }], totalMatched: 1 } };
+      },
+      synthesize: async payload => {
+        assert.match(payload.contents[0].parts[0].text, /Example School/);
+        return { text: 'Example School is in Hyderabad and follows CBSE. [Q:schools]' };
+      },
+    });
+    assert.equal(queried, true);
+    assert.match(result.message, /Example School/);
+    assert.equal(result.groundingStatus, 'database_grounded');
+  }
+});
+
+test('directory access failures do not fall through to general knowledge', async () => {
+  const result = await runPlatformIntelligence({ question: 'List schools', viewerRole: 'teacher', viewerUserId: teacher.userId }, {
+    loadAccess: async () => { throw new Error('Database unavailable'); },
+  });
+  assert.equal(result.groundingStatus, 'grounding_blocked');
+  assert.equal(result.facts, null);
+});
+
 test('business catalog exposes receipts and operational modules to superadmin', () => {
   const catalog = buildPlatformCatalog(root);
   for (const name of ['students', 'schools', 'payment_receipts', 'pdf_failures', 'user_progress', 'daily_quiz_logs', 'attendance', 'school_orders']) assert.ok(catalog.some(c => c.module === name));
