@@ -135,6 +135,7 @@ router.post('/exams/generate-personal', async (req, res) => {
           strictToolMatch: true,
           cursorScope: `${req.userId}:exam-builder:${toolName}`,
           fastDelivery: true,
+          rotationSalt: `${req.userId || ''}-${toolName}-${variantIndex}-${Date.now()}`,
         });
         variantLimit = Math.min(5, Math.max(1, Number(totalCandidates) || 1));
         if (!doc) break;

@@ -881,18 +881,16 @@ function buildCurriculumBackedConceptFallback(meta = {}) {
   const topic = String(meta.topic || meta.chapter || '').trim();
   const subject = String(meta.subject || 'this subject').trim();
   const classLabel = String(meta.classLabel || meta.gradeLevel || 'the class').trim();
-  const variantN = Number(meta.generationVariant) || 0;
   const conceptName = subTopic || topic || `${subject} concept`;
   const focus = subTopic && topic ? `${topic} — ${subTopic}` : subTopic || topic;
-  const angleLead = variantN > 0 ? `Variant ${variantN}: ` : '';
   return {
     concepts: [
       normalizeConceptStructuredContent({
         concept_name: conceptName,
-        simple_definition: `${angleLead}A clear definition of ${conceptName} as part of ${focus} in ${subject}.`,
+        simple_definition: `A clear definition of ${conceptName} as part of ${focus} in ${subject}.`,
         why_important: `Mastering ${conceptName} helps ${classLabel} learners understand ${focus} for class tests and applications.`,
         prior_knowledge_needed: `Familiarity with the main ideas from ${topic || 'the previous unit'}.`,
-        lesson: `${angleLead}Explain ${conceptName} step by step: definition, labelled diagram, worked example, and one check question tied to ${focus}. Align to the NCERT/CBSE treatment of ${subject} for ${classLabel}.`,
+        lesson: `Explain ${conceptName} step by step: definition, labelled diagram, worked example, and one check question tied to ${focus}. Align to the NCERT/CBSE treatment of ${subject} for ${classLabel}.`,
         diagram_suggestion: `Labelled diagram or concept map for ${conceptName} (components, flow, or cause–effect as appropriate).`,
         real_example: `One concrete example that illustrates ${conceptName} directly (device, formula application, or phenomenon).`,
         common_mistakes: [
@@ -954,23 +952,18 @@ export function finalizeConceptMasteryStructuredContent(structuredContent, meta 
   const deckTitle = String(
     deck.title || deck.concepts?.[0]?.concept_name || meta.subTopic || meta.topic || '',
   ).trim();
-  const variantN = Number(meta.generationVariant) || 0;
   const angleShort = String(meta.variantAngle || '')
     .split('(')[0]
     .trim()
     .slice(0, 48);
-  if (variantN > 0 && angleShort) {
+  // Use pedagogical angle for uniqueness when available — never "Guide 883".
+  if (angleShort) {
     deck = {
       ...deck,
       title: `${String(meta.subTopic || meta.topic || 'Concept').trim()} — ${angleShort}`,
     };
-  } else if (variantN > 1) {
-    deck = {
-      ...deck,
-      title: `${String(meta.subTopic || meta.topic || 'Concept').trim()} — Concept Mastery (Guide ${variantN})`,
-    };
   } else if (deckTitle.length >= 4) {
-    deck = { ...deck, title: deckTitle };
+    deck = { ...deck, title: deckTitle.replace(/\s*[—–-]\s*Concept Mastery\s*\(Guide\s*\d+\)\s*$/i, '').trim() || deckTitle };
   } else {
     deck = {
       ...deck,
@@ -4569,7 +4562,11 @@ function isHeadingEchoFieldValue(text) {
 function repairActivityHeadingEchoFields(structured, meta = {}, toolSlug = 'activity-project-generator') {
   const n =
     structured && typeof structured === 'object' && !Array.isArray(structured) ? { ...structured } : {};
-  const topic = String(meta.subTopic || meta.subtopic || meta.topic || 'the selected topic').trim();
+  const rawFocus = String(meta.subTopic || meta.subtopic || meta.topic || 'the selected topic').trim();
+  // Drop leading "2.3 " / "2." so prose reads "related to Acid-Base…" not "related to2.3…".
+  const topic =
+    rawFocus.replace(/^\d+(?:\.\d+)*\s*[.):\-–—]?\s*/, '').trim() || rawFocus;
+  const topicWithSection = rawFocus;
   const subject = String(meta.subject || 'Science').trim();
   const classLabel = String(meta.classLabel || meta.className || '').trim();
   const fb = buildCurriculumBackedActivityFallback(meta);
@@ -4581,7 +4578,7 @@ function repairActivityHeadingEchoFields(structured, meta = {}, toolSlug = 'acti
 
   fillText(
     'subtopic_link_prior_knowledge',
-    `This project connects to ${topic} in ${subject}${classLabel ? ` (${classLabel})` : ''}. Learners should already know basic observation skills and simple cause–effect ideas from earlier class work.`,
+    `This project connects to ${topicWithSection} in ${subject}${classLabel ? ` (${classLabel})` : ''}. Learners should already know basic observation skills and simple cause–effect ideas from earlier class work.`,
   );
   fillText(
     'prior_knowledge',
@@ -4627,6 +4624,13 @@ function repairActivityHeadingEchoFields(structured, meta = {}, toolSlug = 'acti
   if (!String(n.title || '').trim() || isHeadingEchoFieldValue(n.title) || /^untitled/i.test(n.title)) {
     n.title = fb.title;
   }
+  // Strip leaked batch variant numbers from titles already saved in structured content.
+  n.title = String(n.title || '')
+    .replace(/\s*[—–-]\s*practice\s+activity\s+\d+\s*$/i, '')
+    .replace(/\s+practice\s+activity\s+\d+\s*$/i, '')
+    .replace(/\s*\(guide\s*\d+\)\s*$/i, '')
+    .replace(/^\s*variant\s+\d+\s*:\s*/i, '')
+    .trim() || fb.title;
 
   const objectives = Array.isArray(n.learning_objectives)
     ? n.learning_objectives
@@ -9672,10 +9676,10 @@ function buildCurriculumBackedActivityFallback(meta = {}) {
   const subTopic = String(meta.subTopic || '').trim();
   const subject = String(meta.subject || 'this subject').trim();
   const classLabel = String(meta.classLabel || 'the class').trim();
-  const variantN = Number(meta.generationVariant) || 0;
   const tp = subTopic ? `${topic} — ${subTopic}` : topic;
+  // Never bake generationVariant into the title — teachers were seeing "Practice Activity 883".
   return {
-    title: variantN > 0 ? `${topic} — practice activity ${variantN}` : `Activity: ${topic}`,
+    title: topic ? `Activity: ${topic}` : 'Classroom activity',
     materials: [
       'Notebook / loose paper',
       'Pencils and coloured pencils or markers',

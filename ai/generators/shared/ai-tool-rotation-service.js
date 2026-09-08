@@ -145,7 +145,7 @@ function rotationKey({ classLabel, subject, topic, subtopic, toolName, scope, bo
 }
 
 /** Keep rotation snappy: never load every historical generation for a chapter. */
-const EXACT_CANDIDATE_LIMIT = 24;
+const EXACT_CANDIDATE_LIMIT = 40;
 const FUZZY_POOL_LIMIT = 80;
 /** Atlas multiplanner + compound filters need headroom; catch timeouts and continue. */
 const QUERY_MAX_TIME_MS = 25_000;
@@ -166,27 +166,151 @@ async function findAiToolCandidates(filter, limit) {
   }
 }
 
-async function nextCursorIndex(key, total) {
-  if (total <= 1) return 0;
-  try {
-    const current = await AiToolRotationCursor.findOneAndUpdate(
-      { key },
-      { $inc: { cursor: 1 }, $set: { lastServedAt: new Date() } },
-      { upsert: true, new: true },
-    ).lean();
-    return Math.abs(Number(current?.cursor || 0)) % total;
-  } catch {
-    return 0;
-  }
+function docId(doc) {
+  return String(doc?._id || '').trim();
 }
 
-function setCursorIndex(key, idx) {
-  // Fire-and-forget — never block saved-content delivery on cursor writes.
+function docFingerprint(doc) {
+  const meta = doc?.metadata && typeof doc.metadata === 'object' ? doc.metadata : {};
+  const fp = String(meta.contentFingerprint || '').trim();
+  if (fp) return fp;
+  // Cheap fallback so identical scaffold titles still collide across variants.
+  const title = String(
+    meta?.structuredContent?.title ||
+      meta?.listPreview?.title ||
+      doc?.topic ||
+      '',
+  )
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, ' ');
+  const body = String(doc?.generatedContent || doc?.content || '')
+    .trim()
+    .slice(0, 280)
+    .toLowerCase()
+    .replace(/\s+/g, ' ');
+  return `${title}::${body}`;
+}
+
+function saltToOffset(salt, total) {
+  if (!total || total <= 1) return 0;
+  const raw = String(salt || '').trim();
+  if (!raw) return 0;
+  let h = 0;
+  for (let i = 0; i < raw.length; i += 1) {
+    h = (h * 31 + raw.charCodeAt(i)) >>> 0;
+  }
+  return h % total;
+}
+
+function mergeUniqueDocs(pools = []) {
+  const seen = new Set();
+  const out = [];
+  for (const pool of pools) {
+    for (const doc of pool || []) {
+      const id = docId(doc);
+      if (!id || seen.has(id)) continue;
+      seen.add(id);
+      out.push(doc);
+    }
+  }
+  return out;
+}
+
+function sortDocsForRotation(docs) {
+  return [...docs].sort((a, b) => {
+    const va = Number(
+      a?.metadata?.generationVariant ?? a?.metadata?.extraParams?.generationVariant ?? 0,
+    );
+    const vb = Number(
+      b?.metadata?.generationVariant ?? b?.metadata?.extraParams?.generationVariant ?? 0,
+    );
+    if (va !== vb) return va - vb;
+    return new Date(b?.createdAt || 0).getTime() - new Date(a?.createdAt || 0).getTime();
+  });
+}
+
+/**
+ * Pick the next variant for this user/scope.
+ * Always prefers a different document (and fingerprint) than the last Generate.
+ */
+async function claimNextRotatingDoc(key, docs, { preferLatest = false, validator = null, rotationSalt = '' } = {}) {
+  if (!Array.isArray(docs) || docs.length === 0) {
+    return { doc: null, selectedIndex: -1, totalCandidates: 0 };
+  }
+
+  let lastId = '';
+  let lastFp = '';
+  let cursor = 0;
+  try {
+    const existing = await AiToolRotationCursor.findOne({ key }).lean();
+    lastId = String(existing?.lastDocId || '').trim();
+    lastFp = String(existing?.lastFingerprint || '').trim();
+    cursor = Math.abs(Number(existing?.cursor || 0)) || 0;
+  } catch {
+    /* fresh cursor */
+  }
+
+  const total = docs.length;
+  const saltOffset = saltToOffset(rotationSalt, total);
+  const start = preferLatest ? 0 : (cursor + 1 + saltOffset) % total;
+  const order = Array.from({ length: total }, (_, i) => (start + i) % total);
+
+  const passesValidator = async (doc) => {
+    if (!validator) return true;
+    try {
+      return Boolean(await validator(doc));
+    } catch {
+      return false;
+    }
+  };
+
+  const tryPick = async (predicate) => {
+    for (const idx of order) {
+      const candidate = docs[idx];
+      if (!candidate) continue;
+      if (predicate && !predicate(candidate)) continue;
+      if (!(await passesValidator(candidate))) continue;
+      return { doc: candidate, selectedIndex: idx };
+    }
+    return null;
+  };
+
+  // 1) Different id + different fingerprint
+  // 2) Different id only
+  // 3) Any valid doc (single-variant scopes)
+  let picked =
+    (await tryPick(
+      (doc) => docId(doc) !== lastId && (!lastFp || docFingerprint(doc) !== lastFp),
+    )) ||
+    (await tryPick((doc) => docId(doc) !== lastId)) ||
+    (await tryPick(null));
+
+  if (!picked?.doc) {
+    picked = { doc: docs[0], selectedIndex: 0 };
+  }
+
+  const chosen = picked.doc;
+  const chosenId = docId(chosen);
+  const chosenFp = docFingerprint(chosen);
   void AiToolRotationCursor.updateOne(
     { key },
-    { $set: { cursor: idx, lastServedAt: new Date() } },
+    {
+      $set: {
+        cursor: picked.selectedIndex,
+        lastDocId: chosenId,
+        lastFingerprint: chosenFp,
+        lastServedAt: new Date(),
+      },
+    },
     { upsert: true },
   ).catch(() => {});
+
+  return {
+    doc: chosen,
+    selectedIndex: picked.selectedIndex,
+    totalCandidates: total,
+  };
 }
 
 function filterHasToolName(filter) {
@@ -249,6 +373,7 @@ async function executeRotationSearch({
   validator,
   strictBoard,
   exactOnly = false,
+  rotationSalt = '',
 }) {
   const normalizedTool = normalize(toolName);
   const { bf, exactFilter, topicOnlyFilter, normalizedTopic, normalizedSubtopic } = buildAttemptFilters({
@@ -292,12 +417,12 @@ async function executeRotationSearch({
     }
   } else if (!exactOnly && normalizedTopic) {
     if (normalizedTool) {
+      // Always include chapter-level rows so regenerate can rotate across
+      // whole-chapter + subtopic variants for the same topic/tool.
       attempts.push({
         matchType: normalizedSubtopic ? 'topic-with-tool-fuzzy-subtopic' : 'topic-with-tool',
         filter: mergeMongoFilters(topicOnlyFilter, toolNameMatchFilter(normalizedTool)),
       });
-      // Do NOT fall back to any class+subject row when a topic was chosen —
-      // that served Physics electricity under Biology digestive-system picks.
     }
   } else if (!exactOnly && !normalizedSubtopic && !normalizedTopic && normalizedTool) {
     attempts.push({
@@ -305,7 +430,6 @@ async function executeRotationSearch({
       filter: mergeMongoFilters(bf, toolNameMatchFilter(normalizedTool)),
     });
   } else if (!exactOnly && normalizedTool) {
-    // Subtopic-only edge case — still allow subject-wide delivery.
     attempts.push({
       matchType: 'subject-with-tool',
       filter: mergeMongoFilters(bf, toolNameMatchFilter(normalizedTool)),
@@ -324,65 +448,25 @@ async function executeRotationSearch({
       productCategory,
     });
 
-    const pickFromOrder = async (order) => {
-      if (!validator) {
-        const idx = order[0];
-        // Persist cursor so the next Generate advances to a different variant.
-        if (!preferLatest && docs.length > 1) {
-          setCursorIndex(key, idx);
-        }
-        return {
-          doc: docs[idx] || docs[0],
-          matchType: preferLatest ? `${matchType}-latest` : matchType,
-          totalCandidates: docs.length,
-          selectedIndex: idx,
-        };
-      }
-      for (const idx of order) {
-        const candidate = docs[idx];
-        if (!candidate) continue;
-        try {
-          const ok = await validator(candidate);
-          if (ok) {
-            setCursorIndex(key, idx);
-            return {
-              doc: candidate,
-              matchType: preferLatest ? `${matchType}-latest` : matchType,
-              totalCandidates: docs.length,
-              selectedIndex: idx,
-            };
-          }
-        } catch {
-          /* try next candidate */
-        }
-      }
-      // Records exist but failed strict pre-validation — deliver the first so the
-      // controller can return a precise incomplete/wrong-tool message instead of NOT_FOUND.
-      if (docs.length > 0) {
-        return {
-          doc: docs[order[0] ?? 0] || docs[0],
-          matchType: `${matchType}-validation-fallback`,
-          totalCandidates: docs.length,
-          selectedIndex: order[0] ?? 0,
-        };
-      }
+    const claimed = await claimNextRotatingDoc(key, docs, {
+      preferLatest,
+      validator,
+      rotationSalt,
+    });
+    if (!claimed.doc) {
       return {
         doc: null,
         matchType,
         totalCandidates: docs.length,
         selectedIndex: -1,
       };
-    };
-
-    if (preferLatest) {
-      // docs are sorted createdAt:-1 → index 0 is newest
-      const order = Array.from({ length: docs.length }, (_, i) => i);
-      return pickFromOrder(order);
     }
-
-    const startIdx = await nextCursorIndex(key, docs.length);
-    const order = Array.from({ length: docs.length }, (_, i) => (startIdx + i) % docs.length);
-    return pickFromOrder(order);
+    return {
+      doc: claimed.doc,
+      matchType: preferLatest ? `${matchType}-latest` : matchType,
+      totalCandidates: claimed.totalCandidates,
+      selectedIndex: claimed.selectedIndex,
+    };
   };
 
   const toolNamesToTry = normalizedTool
@@ -404,6 +488,11 @@ async function executeRotationSearch({
     } else if (!strictToolMatch) {
       toolAttempts.push(...attempts);
     }
+
+    // Merge candidate pools for this tool before rotating — previously the first
+    // attempt with a single exact hit returned immediately and regenerate stuck.
+    const pooled = [];
+    let poolMatchType = '';
     for (const attempt of toolAttempts) {
       if (strictToolMatch && !filterHasToolName(attempt.filter)) continue;
       const docs = (await findAiToolCandidates(attempt.filter, EXACT_CANDIDATE_LIMIT)).filter(
@@ -413,37 +502,27 @@ async function executeRotationSearch({
           }
           if (attempt.matchType.includes('fuzzy-subtopic') && normalizedSubtopic) {
             const docSub = String(doc.subtopic || '').trim();
-            // Topic-level saves (empty subtopic) apply to any subtopic under that chapter.
             if (!docSub) return true;
             return subtopicTextMatches(docSub, normalizedSubtopic);
           }
           return true;
         },
       );
-      if (docs.length > 0) {
-        docs.sort((a, b) => {
-          const va = Number(
-            a?.metadata?.generationVariant ??
-              a?.metadata?.extraParams?.generationVariant ??
-              0,
-          );
-          const vb = Number(
-            b?.metadata?.generationVariant ??
-              b?.metadata?.extraParams?.generationVariant ??
-              0,
-          );
-          if (va !== vb) return va - vb;
-          return (
-            new Date(b?.createdAt || 0).getTime() - new Date(a?.createdAt || 0).getTime()
-          );
-        });
-        const picked = await selectByRotation(
-          docs,
-          attempt.matchType,
-          attempt.matchType.includes('any-tool') ? '' : toolFilter || normalizedTool,
-        );
-        if (picked.doc) return picked;
-      }
+      if (!docs.length) continue;
+      pooled.push(docs);
+      if (!poolMatchType) poolMatchType = attempt.matchType;
+      // Enough diversity to rotate — stop scanning further looser filters.
+      if (mergeUniqueDocs(pooled).length >= 8) break;
+    }
+
+    const merged = sortDocsForRotation(mergeUniqueDocs(pooled));
+    if (merged.length > 0) {
+      const picked = await selectByRotation(
+        merged,
+        poolMatchType || 'pooled-with-tool',
+        toolFilter || normalizedTool,
+      );
+      if (picked.doc) return picked;
     }
   }
 
@@ -493,20 +572,24 @@ async function executeRotationSearch({
           : [];
 
     if (deliverPool.length > 0) {
-      if (preferLatest) {
-        return {
-          doc: deliverPool[0],
-          matchType: `${base.matchType}${fuzzyMatches.length ? '-latest' : '-subject-fallback-latest'}`,
-          totalCandidates: deliverPool.length,
-          selectedIndex: 0,
-        };
-      }
+      const sorted = sortDocsForRotation(deliverPool);
       const picked = await selectByRotation(
-        deliverPool,
+        sorted,
         fuzzyMatches.length ? base.matchType : `${base.matchType}-subject-fallback`,
         base.keyTool,
       );
-      if (picked.doc) return picked;
+      if (picked.doc) {
+        if (preferLatest) {
+          return {
+            ...picked,
+            matchType: `${picked.matchType}${fuzzyMatches.length ? '' : '-subject-fallback'}-latest`,
+            selectedIndex: 0,
+            doc: sorted[0],
+            totalCandidates: sorted.length,
+          };
+        }
+        return picked;
+      }
     }
   }
 
@@ -612,6 +695,7 @@ async function fetchRotatingAiToolDataInner({
   cursorScope = '',
   validator = null,
   fastDelivery = false,
+  rotationSalt = '',
 }) {
   const lookupBoard = resolveLookupBoard(board, classLabel);
   const normalizedTool = normalize(toolName);
@@ -633,6 +717,7 @@ async function fetchRotatingAiToolDataInner({
       validator,
       strictBoard: Boolean(lookupBoard),
       exactOnly: true,
+      rotationSalt,
     });
     // Only short-circuit when we already have multiple variants to rotate through.
     // A single exact hit often means other batch variants are nearby under a slightly
@@ -658,6 +743,7 @@ async function fetchRotatingAiToolDataInner({
     cursorScope,
     validator,
     strictBoard: Boolean(lookupBoard),
+    rotationSalt,
   });
   if (withBoard.doc) return withBoard;
 
@@ -686,6 +772,7 @@ async function fetchRotatingAiToolDataInner({
     cursorScope,
     validator,
     strictBoard: false,
+    rotationSalt,
   });
   if (withoutBoard.doc) return withoutBoard;
 

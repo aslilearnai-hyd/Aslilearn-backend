@@ -296,6 +296,9 @@ router.post('/ai/tool', async (req, res) => {
       strictToolMatch: true,
       cursorScope: String(userId || ''),
       fastDelivery: true,
+      rotationSalt:
+        String(req.body.uniqueSeed || params.uniqueSeed || '').trim() ||
+        `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`,
     });
     if (adminDoc) {
       const metadataForRaw = buildDeliveryMetadataFromDoc(adminDoc);

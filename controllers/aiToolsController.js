@@ -509,6 +509,9 @@ export const createTeacherTool = async (req, res) => {
       strictToolMatch: true,
       cursorScope: String(teacherId || ''),
       fastDelivery: true,
+      rotationSalt:
+        String(req.body.uniqueSeed || params.uniqueSeed || '').trim() ||
+        `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`,
     });
     if (cachedDoc) {
       const metadataForRaw = buildDeliveryMetadataFromDoc(cachedDoc);
@@ -732,6 +735,7 @@ export const getGeneratedContent = async (req, res) => {
       strictToolMatch: true,
       cursorScope: String(req.teacherId || req.userId || ''),
       fastDelivery: true,
+      rotationSalt: `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`,
     });
 
     if (matchedDoc) {
