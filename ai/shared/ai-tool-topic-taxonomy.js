@@ -235,9 +235,29 @@ export function buildAiToolTopicTaxonomyFilter({
   return filter;
 }
 
-export function formatAiToolTopicTaxonomy(rows) {
+export function formatAiToolTopicTaxonomy(rows, { board = '' } = {}) {
+  const rawSubjects = uniqueSorted(rows.map((r) => r.subject));
+  const boardKey = lockBoardKey(board);
+  const subjects =
+    boardKey === 'IIT/NEET'
+      ? rawSubjects
+      : uniqueSorted(
+          rawSubjects.map((subject) => {
+            const key = normalizeMatchText(subject).toLowerCase();
+            if (
+              key === 'physics' ||
+              key === 'chemistry' ||
+              key === 'biology' ||
+              key === 'science'
+            ) {
+              return 'Science';
+            }
+            return subject;
+          }),
+        );
+
   return {
-    subjects: uniqueSorted(rows.map((r) => r.subject)),
+    subjects,
     topics: orderedUniqueTopics(rows, (row) => buildDisplayTopicName(row.label, row.topicName)),
     subTopics: orderedUniqueSubTopics(rows),
     labels: uniqueSorted(rows.map((r) => r.label)),
@@ -336,7 +356,7 @@ export async function resolveAiToolTopicTaxonomy(rawParams = {}) {
     }
   }
 
-  const formatted = formatAiToolTopicTaxonomy(rows);
+  const formatted = formatAiToolTopicTaxonomy(rows, { board });
   const classLabel = normalizeMatchText(params.classLabel);
   const subject = normalizeMatchText(params.subject);
   const topicName = normalizeMatchText(params.topicName);
@@ -350,7 +370,7 @@ export async function resolveAiToolTopicTaxonomy(rawParams = {}) {
           ...params,
           topicName: parsed.title,
         });
-        const extra = formatAiToolTopicTaxonomy(titleRows);
+        const extra = formatAiToolTopicTaxonomy(titleRows, { board });
         formatted.subTopics = mergeUniqueSubTopicLabels(formatted.subTopics, extra.subTopics);
       } catch {
         /* keep primary topic match */

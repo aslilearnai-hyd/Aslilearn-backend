@@ -296,12 +296,8 @@ async function executeRotationSearch({
         matchType: normalizedSubtopic ? 'topic-with-tool-fuzzy-subtopic' : 'topic-with-tool',
         filter: mergeMongoFilters(topicOnlyFilter, toolNameMatchFilter(normalizedTool)),
       });
-      // Dashboard delivery: if this chapter has no row, still serve any saved
-      // content for the same class + subject + tool (never block on "ready chapters").
-      attempts.push({
-        matchType: 'subject-with-tool',
-        filter: mergeMongoFilters(bf, toolNameMatchFilter(normalizedTool)),
-      });
+      // Do NOT fall back to any class+subject row when a topic was chosen —
+      // that served Physics electricity under Biology digestive-system picks.
     }
   } else if (!exactOnly && !normalizedSubtopic && !normalizedTopic && normalizedTool) {
     attempts.push({
@@ -487,11 +483,12 @@ async function executeRotationSearch({
       return topicOk && subtopicOk && toolOk;
     });
 
-    // If topic/subtopic fuzzy miss, still deliver any subject+tool row (dashboard UX).
+    // If topic/subtopic fuzzy miss, do not serve unrelated subject rows when a
+    // topic was requested (prevents Biology → Electricity mismatches).
     const deliverPool =
       fuzzyMatches.length > 0
         ? fuzzyMatches
-        : strictToolMatch && normalizedTool
+        : !normalizedTopic && strictToolMatch && normalizedTool
           ? pool
           : [];
 
@@ -533,7 +530,10 @@ export async function fetchRotatingAiToolData(rawOpts) {
       '[ai-tool-rotation] fetchRotatingAiToolData failed:',
       String(err?.message || err).slice(0, 200),
     );
-    // Last resort: simplest possible class+subject+tool query (avoids multiplanner).
+    // Last resort only when no topic was requested — never swap chapters.
+    if (normalize(opts?.topic)) {
+      return { doc: null, matchType: null, totalCandidates: 0, selectedIndex: -1 };
+    }
     try {
       const simple = await findSimpleSubjectToolDoc(opts);
       if (simple) return simple;
@@ -662,6 +662,7 @@ async function fetchRotatingAiToolDataInner({
   if (withBoard.doc) return withBoard;
 
   if (!lookupBoard) {
+    if (normalize(topic)) return withBoard;
     const simple = await findSimpleSubjectToolDoc({
       classLabel,
       subject,
@@ -687,6 +688,9 @@ async function fetchRotatingAiToolDataInner({
     strictBoard: false,
   });
   if (withoutBoard.doc) return withoutBoard;
+
+  // Topic was chosen but nothing matched — never return a random chapter.
+  if (normalize(topic)) return withoutBoard;
 
   const simple = await findSimpleSubjectToolDoc({
     classLabel,
