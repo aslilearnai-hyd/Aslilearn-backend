@@ -398,6 +398,7 @@ router.post('/iq-rank-quiz-result', async (req, res) => {
       markDailyQuizCompleted,
       indiaDateKey,
       DAILY_PICK_COUNT,
+      toStringAnswerMap,
     } = await import('../../services/daily-quiz-service.js');
     const DailyQuizLog = (await import('../../models/DailyQuizLog.js')).default;
 
@@ -456,6 +457,9 @@ router.post('/iq-rank-quiz-result', async (req, res) => {
       legacyResult = await IQRankQuizResult.findOne({ userId: req.userId, quizId });
     }
 
+    const answersMap = toStringAnswerMap(answers || {});
+    const questionIdsFromAnswers = Array.from(answersMap.keys());
+
     const resultData = {
       userId: req.userId,
       quizId: quizId || undefined,
@@ -466,7 +470,7 @@ router.post('/iq-rank-quiz-result', async (req, res) => {
       incorrectAnswers: incorrectAnswers || 0,
       unattempted: unattempted || 0,
       score,
-      answers: answers || {},
+      answers: answersMap,
       dateKey: isDaily ? todayKey : null,
       completedAt: new Date(),
     };
@@ -484,14 +488,26 @@ router.post('/iq-rank-quiz-result', async (req, res) => {
 
     if (isDaily && quizId) {
       try {
+        const existingLog = await DailyQuizLog.findOne({
+          userId: req.userId,
+          dateKey: todayKey,
+        })
+          .select('questionIds')
+          .lean();
+        const questionIds =
+          Array.isArray(existingLog?.questionIds) && existingLog.questionIds.length
+            ? existingLog.questionIds.map((id) => String(id))
+            : questionIdsFromAnswers;
+
         await markDailyQuizCompleted({
           userId: req.userId,
           dateKey: todayKey,
-          answers: answers || {},
+          answers: answersMap,
           correctCount: correctAnswers || 0,
           score,
           quizId,
           classNumber: studentClassNumber,
+          questionIds,
         });
       } catch (dailyErr) {
         console.warn('[iq-rank-quiz-result] daily log update failed:', dailyErr?.message || dailyErr);
@@ -543,6 +559,8 @@ router.get('/daily-quiz-result/:dateKey', async (req, res) => {
 
     const DailyQuizLog = (await import('../../models/DailyQuizLog.js')).default;
     const IQRankQuestion = (await import('../../models/IQRankQuestion.js')).default;
+    const IQRankQuizResult = (await import('../../models/IQRankQuizResult.js')).default;
+    const { answerMapToObject } = await import('../../services/daily-quiz-service.js');
 
     const log = await DailyQuizLog.findOne({
       userId: req.userId,
@@ -570,31 +588,62 @@ router.get('/daily-quiz-result/:dateKey', async (req, res) => {
       (a, b) => (order.get(String(a._id)) ?? 0) - (order.get(String(b._id)) ?? 0),
     );
 
-    const answersMap =
-      log.answers instanceof Map
-        ? Object.fromEntries(log.answers.entries())
-        : log.answers && typeof log.answers === 'object'
-          ? { ...log.answers }
-          : {};
+    let answersMap = answerMapToObject(log.answers);
+
+    // Older saves stored score but dropped Map answers — recover from IQRankQuizResult.
+    if (!Object.keys(answersMap).length) {
+      const resultQuery = {
+        userId: req.userId,
+        completedAt: { $ne: null },
+        $or: [{ dateKey }],
+      };
+      if (log.quizId) {
+        resultQuery.$or.push({ quizId: log.quizId, dateKey });
+        resultQuery.$or.push({ quizId: log.quizId });
+      }
+      const savedResult = await IQRankQuizResult.findOne(resultQuery)
+        .sort({ completedAt: -1 })
+        .select('answers')
+        .lean();
+      answersMap = answerMapToObject(savedResult?.answers);
+    }
+
+    const lookupUserAnswer = (qid) => {
+      const direct = answersMap[qid];
+      if (direct != null && String(direct).trim() !== '') return String(direct).trim();
+      // Tolerate accidental key variants.
+      const hit = Object.entries(answersMap).find(
+        ([k, v]) => String(k) === String(qid) && v != null && String(v).trim() !== '',
+      );
+      return hit ? String(hit[1]).trim() : '';
+    };
 
     const questions = questionsRaw.map((q) => {
       const qid = String(q._id);
-      const userAnswer = answersMap[qid] != null ? String(answersMap[qid]) : '';
-      const correctAnswer = String(q.correctAnswer || '');
+      const userAnswer = lookupUserAnswer(qid);
+      const correctAnswer = String(q.correctAnswer || '').trim();
       const options = Array.isArray(q.options)
         ? q.options.map((opt) => {
             if (opt && typeof opt === 'object') {
+              const text = String(opt.text || '').trim();
               return {
-                text: String(opt.text || ''),
-                isCorrect: Boolean(opt.isCorrect) || String(opt.text || '') === correctAnswer,
+                text,
+                isCorrect: Boolean(opt.isCorrect) || text === correctAnswer,
               };
             }
+            const text = String(opt || '').trim();
             return {
-              text: String(opt || ''),
-              isCorrect: String(opt || '') === correctAnswer,
+              text,
+              isCorrect: text === correctAnswer,
             };
           })
         : [];
+      const normalizedUser = userAnswer;
+      const isAnswered = Boolean(normalizedUser);
+      const isCorrect =
+        isAnswered &&
+        (normalizedUser === correctAnswer ||
+          options.some((o) => o.isCorrect && o.text === normalizedUser));
       return {
         _id: qid,
         questionText: q.questionText || '',
@@ -602,9 +651,9 @@ router.get('/daily-quiz-result/:dateKey', async (req, res) => {
         correctAnswer,
         explanation: q.explanation || '',
         difficulty: q.difficulty || 'medium',
-        userAnswer,
-        isCorrect: Boolean(userAnswer) && userAnswer === correctAnswer,
-        isAnswered: Boolean(userAnswer),
+        userAnswer: normalizedUser || null,
+        isCorrect,
+        isAnswered,
       };
     });
 

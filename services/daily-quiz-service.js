@@ -287,9 +287,11 @@ export async function markDailyQuizCompleted({
   questionIds = [],
 }) {
   const key = dateKey || indiaDateKey();
+  // Mongoose Map fields need an actual Map (plain objects often drop keys on $set).
+  const answersMap = toStringAnswerMap(answers);
   const update = {
     $set: {
-      answers,
+      answers: answersMap,
       correctCount,
       score,
       completedAt: new Date(),
@@ -311,6 +313,41 @@ export async function markDailyQuizCompleted({
     upsert: true,
     new: true,
   });
+}
+
+/** Normalize quiz answer payloads into a Mongoose-safe string Map. */
+export function toStringAnswerMap(answers) {
+  const out = new Map();
+  if (!answers) return out;
+  const entries =
+    answers instanceof Map
+      ? Array.from(answers.entries())
+      : typeof answers === 'object' && !Array.isArray(answers)
+        ? Object.entries(answers)
+        : [];
+  for (const [rawKey, rawValue] of entries) {
+    const key = String(rawKey || '').trim();
+    if (!key) continue;
+    if (rawValue == null || rawValue === '') continue;
+    out.set(key, String(rawValue));
+  }
+  return out;
+}
+
+/** Lean/Map/plain → plain object for review lookups. */
+export function answerMapToObject(answers) {
+  if (!answers) return {};
+  if (answers instanceof Map) {
+    return Object.fromEntries(
+      Array.from(answers.entries()).map(([k, v]) => [String(k), v == null ? '' : String(v)]),
+    );
+  }
+  if (typeof answers === 'object' && !Array.isArray(answers)) {
+    return Object.fromEntries(
+      Object.entries(answers).map(([k, v]) => [String(k), v == null ? '' : String(v)]),
+    );
+  }
+  return {};
 }
 
 export function isDailyBankQuiz(quiz) {
