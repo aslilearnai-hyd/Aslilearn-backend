@@ -231,19 +231,59 @@ router.get('/iq-rank-questions', async (req, res) => {
           quizId: quiz._id,
           count: Number(quiz.dailyPickCount) || DAILY_PICK_COUNT,
         });
+        const { stripAiGeneratorLeakage } = await import(
+          '../../ai/shared/sanitize-ai-question-display.js'
+        );
+        const cleanedQuestions = (questions || []).map((q) => ({
+          ...q,
+          questionText: stripAiGeneratorLeakage(q?.questionText || ''),
+          explanation: q?.explanation ? stripAiGeneratorLeakage(q.explanation) : q?.explanation,
+          options: Array.isArray(q?.options)
+            ? q.options.map((opt) =>
+                typeof opt === 'string'
+                  ? stripAiGeneratorLeakage(opt)
+                  : {
+                      ...opt,
+                      text: stripAiGeneratorLeakage(opt?.text || ''),
+                    },
+              )
+            : q?.options,
+        }));
+        const IQRankQuizResult = (await import('../../models/IQRankQuizResult.js')).default;
+        const todayResult = await IQRankQuizResult.findOne({
+          userId: student._id,
+          dateKey,
+          completedAt: { $ne: null },
+        })
+          .select('score correctAnswers completedAt')
+          .lean();
+        const logCompleted = Boolean(
+          log?.completedAt && !Number.isNaN(new Date(log.completedAt).getTime()),
+        );
+        const completed = logCompleted || Boolean(todayResult?.completedAt);
         return res.json({
           success: true,
-          data: questions,
-          questions,
+          data: cleanedQuestions,
+          questions: cleanedQuestions,
           daily: {
             dateKey,
-            completed: Boolean(
-              log?.completedAt && !Number.isNaN(new Date(log.completedAt).getTime()),
-            ),
-            score:
-              log?.completedAt && log?.score != null ? Number(log.score) : null,
-            correctCount: log?.completedAt ? Number(log.correctCount) || 0 : 0,
-            pickCount: questions.length,
+            completed,
+            score: completed
+              ? logCompleted
+                ? log?.score != null
+                  ? Number(log.score)
+                  : null
+                : todayResult?.score != null
+                  ? Number(todayResult.score)
+                  : null
+              : null,
+            correctCount: completed
+              ? logCompleted
+                ? Number(log?.correctCount) || 0
+                : Number(todayResult?.correctAnswers) || 0
+              : 0,
+            pickCount: cleanedQuestions.length,
+            lockedUntilTomorrow: completed,
           },
           quiz: {
             _id: quiz._id,
@@ -404,7 +444,9 @@ router.post('/iq-rank-quiz-result', async (req, res) => {
 
     let quizDoc = null;
     if (quizId) {
-      quizDoc = await IQRankQuiz.findById(quizId).select('subject questionBankSource activityType').lean();
+      quizDoc = await IQRankQuiz.findById(quizId)
+        .select('subject questionBankSource activityType scheduleType')
+        .lean();
       if (!subjectId && quizDoc?.subject) subjectId = String(quizDoc.subject);
     }
 
@@ -419,13 +461,21 @@ router.post('/iq-rank-quiz-result', async (req, res) => {
     const todayKey = indiaDateKey();
 
     if (isDaily) {
-      const already = await DailyQuizLog.findOne({
+      const alreadyLog = await DailyQuizLog.findOne({
         userId: req.userId,
         dateKey: todayKey,
         completedAt: { $ne: null },
       })
         .select('_id score correctCount completedAt')
         .lean();
+      const alreadyResult = await IQRankQuizResult.findOne({
+        userId: req.userId,
+        dateKey: todayKey,
+        completedAt: { $ne: null },
+      })
+        .select('_id score correctAnswers completedAt')
+        .lean();
+      const already = alreadyLog || alreadyResult;
       if (already) {
         return res.status(409).json({
           success: false,
@@ -434,7 +484,7 @@ router.post('/iq-rank-quiz-result', async (req, res) => {
           data: {
             dateKey: todayKey,
             score: already.score,
-            correctCount: already.correctCount,
+            correctCount: already.correctCount ?? already.correctAnswers ?? 0,
             completedAt: already.completedAt,
             lockedUntilTomorrow: true,
           },
@@ -457,6 +507,22 @@ router.post('/iq-rank-quiz-result', async (req, res) => {
       legacyResult = await IQRankQuizResult.findOne({ userId: req.userId, quizId });
     }
 
+    // Daily quizzes are one attempt per day — never overwrite a saved attempt.
+    if (isDaily && legacyResult?.completedAt) {
+      return res.status(409).json({
+        success: false,
+        code: 'DAILY_QUIZ_ALREADY_COMPLETED',
+        message: 'You already completed today’s daily quiz. Come back tomorrow for a new set.',
+        data: {
+          dateKey: todayKey,
+          score: legacyResult.score,
+          correctCount: legacyResult.correctAnswers || 0,
+          completedAt: legacyResult.completedAt,
+          lockedUntilTomorrow: true,
+        },
+      });
+    }
+
     const answersMap = toStringAnswerMap(answers || {});
     const questionIdsFromAnswers = Array.from(answersMap.keys());
 
@@ -476,7 +542,7 @@ router.post('/iq-rank-quiz-result', async (req, res) => {
     };
 
     let quizResult;
-    if (legacyResult) {
+    if (legacyResult && !isDaily) {
       quizResult = await IQRankQuizResult.findByIdAndUpdate(legacyResult._id, resultData, {
         new: true,
       }).populate('subject', 'name');
@@ -510,7 +576,11 @@ router.post('/iq-rank-quiz-result', async (req, res) => {
           questionIds,
         });
       } catch (dailyErr) {
-        console.warn('[iq-rank-quiz-result] daily log update failed:', dailyErr?.message || dailyErr);
+        console.error('[iq-rank-quiz-result] daily log update failed:', dailyErr?.message || dailyErr);
+        return res.status(500).json({
+          success: false,
+          message: 'Quiz score saved, but daily lock failed. Please try again or contact support.',
+        });
       }
     }
 
@@ -618,27 +688,31 @@ router.get('/daily-quiz-result/:dateKey', async (req, res) => {
       return hit ? String(hit[1]).trim() : '';
     };
 
+    const { stripAiGeneratorLeakage } = await import(
+      '../../ai/shared/sanitize-ai-question-display.js'
+    );
+
     const questions = questionsRaw.map((q) => {
       const qid = String(q._id);
       const userAnswer = lookupUserAnswer(qid);
-      const correctAnswer = String(q.correctAnswer || '').trim();
+      const correctAnswer = stripAiGeneratorLeakage(String(q.correctAnswer || '').trim());
       const options = Array.isArray(q.options)
         ? q.options.map((opt) => {
             if (opt && typeof opt === 'object') {
-              const text = String(opt.text || '').trim();
+              const text = stripAiGeneratorLeakage(String(opt.text || '').trim());
               return {
                 text,
                 isCorrect: Boolean(opt.isCorrect) || text === correctAnswer,
               };
             }
-            const text = String(opt || '').trim();
+            const text = stripAiGeneratorLeakage(String(opt || '').trim());
             return {
               text,
               isCorrect: text === correctAnswer,
             };
           })
         : [];
-      const normalizedUser = userAnswer;
+      const normalizedUser = userAnswer ? stripAiGeneratorLeakage(userAnswer) : '';
       const isAnswered = Boolean(normalizedUser);
       const isCorrect =
         isAnswered &&
@@ -646,10 +720,10 @@ router.get('/daily-quiz-result/:dateKey', async (req, res) => {
           options.some((o) => o.isCorrect && o.text === normalizedUser));
       return {
         _id: qid,
-        questionText: q.questionText || '',
+        questionText: stripAiGeneratorLeakage(q.questionText || ''),
         options,
         correctAnswer,
-        explanation: q.explanation || '',
+        explanation: q.explanation ? stripAiGeneratorLeakage(q.explanation) : '',
         difficulty: q.difficulty || 'medium',
         userAnswer: normalizedUser || null,
         isCorrect,

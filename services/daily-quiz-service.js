@@ -351,13 +351,26 @@ export function answerMapToObject(answers) {
 }
 
 export function isDailyBankQuiz(quiz) {
-  return String(quiz?.questionBankSource || '') === DAILY_QUIZ_BANK_SOURCE;
+  if (!quiz) return false;
+  if (String(quiz.questionBankSource || '') === DAILY_QUIZ_BANK_SOURCE) return true;
+  const activity = String(quiz.activityType || '').toLowerCase();
+  const schedule = String(quiz.scheduleType || '').toLowerCase();
+  return activity === 'daily' || schedule === 'daily';
 }
 
 /** Today's status + recent completed days for the student daily bank. */
 export async function getDailyQuizStatusForUser(userId, { limit = 14 } = {}) {
   const todayKey = indiaDateKey();
   const todayLog = await DailyQuizLog.findOne({ userId, dateKey: todayKey }).lean();
+  const IQRankQuizResult = (await import('../models/IQRankQuizResult.js')).default;
+  const todayResult = await IQRankQuizResult.findOne({
+    userId,
+    dateKey: todayKey,
+    completedAt: { $ne: null },
+  })
+    .select('score correctAnswers totalQuestions completedAt')
+    .lean();
+
   const history = await DailyQuizLog.find({
     userId,
     completedAt: { $ne: null },
@@ -368,23 +381,50 @@ export async function getDailyQuizStatusForUser(userId, { limit = 14 } = {}) {
     .lean();
 
   // Require a real completion timestamp — opening/picking today’s questions must not count.
-  const completedToday = Boolean(
+  // Fall back to IQRankQuizResult when the daily log write failed on an earlier attempt.
+  const logCompleted = Boolean(
     todayLog?.completedAt && !Number.isNaN(new Date(todayLog.completedAt).getTime()),
   );
+  const resultCompleted = Boolean(
+    todayResult?.completedAt && !Number.isNaN(new Date(todayResult.completedAt).getTime()),
+  );
+  const completedToday = logCompleted || resultCompleted;
   const tomorrow = new Date(`${todayKey}T00:00:00+05:30`);
   tomorrow.setDate(tomorrow.getDate() + 1);
   const nextDateKey = indiaDateKey(tomorrow);
+
+  const score = completedToday
+    ? logCompleted
+      ? todayLog?.score == null
+        ? null
+        : Number(todayLog.score)
+      : todayResult?.score == null
+        ? null
+        : Number(todayResult.score)
+    : null;
+  const correctCount = completedToday
+    ? logCompleted
+      ? Number(todayLog?.correctCount) || 0
+      : Number(todayResult?.correctAnswers) || 0
+    : 0;
+  const totalQuestions = completedToday
+    ? Array.isArray(todayLog?.questionIds) && todayLog.questionIds.length
+      ? todayLog.questionIds.length
+      : Number(todayResult?.totalQuestions) || DAILY_PICK_COUNT
+    : Array.isArray(todayLog?.questionIds)
+      ? todayLog.questionIds.length
+      : DAILY_PICK_COUNT;
 
   return {
     today: {
       dateKey: todayKey,
       completed: completedToday,
-      score: completedToday ? Number(todayLog?.score) : null,
-      correctCount: completedToday ? Number(todayLog?.correctCount) || 0 : 0,
-      totalQuestions: Array.isArray(todayLog?.questionIds)
-        ? todayLog.questionIds.length
-        : DAILY_PICK_COUNT,
-      completedAt: completedToday ? todayLog?.completedAt || null : null,
+      score,
+      correctCount,
+      totalQuestions,
+      completedAt: completedToday
+        ? todayLog?.completedAt || todayResult?.completedAt || null
+        : null,
     },
     history: history.map((h) => ({
       dateKey: h.dateKey,
