@@ -26,9 +26,16 @@ export async function canAccessLegacyUpload(path, identity) {
   }
   const content = await Content.findOne({ isActive: true, $or: [{ fileUrl: url }, { fileUrls: url }, { thumbnailUrl: url }] }).populate('subject').lean();
   if (!content) return false;
+  if (identity.role === 'super-admin') return true;
   if (identity.role === 'teacher' && content.teacherId && String(content.teacherId) === String(id)) return true;
   const teacher = content.teacherId ? await Teacher.findById(content.teacherId).lean() : null;
-  if (identity.role === 'admin') return !!teacher?.adminId && String(teacher.adminId) === String(id);
+  if (identity.role === 'admin') {
+    // Teacher-owned uploads for this school
+    if (teacher?.adminId && String(teacher.adminId) === String(id)) return true;
+    // Curriculum / Asli Prep library content (no teacher owner) — admins may preview
+    if (content.createdBy === 'super-admin' && !content.teacherId) return true;
+    return false;
+  }
   if (identity.role === 'teacher') {
     if (content.createdBy !== 'super-admin' || content.teacherId) return false;
     const viewer = await Teacher.findById(id).lean();
