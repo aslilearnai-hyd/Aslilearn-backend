@@ -424,9 +424,13 @@ export const createStudent = async (req, res) => {
       return res.status(403).json({ success: false, message: studentSeatCheck.message });
     }
     
-    // Check if student already exists
-    const existingStudent = await User.findOne({ email: emailNorm });
-    if (existingStudent) {
+    // Email is globally unique. DELETE is a recoverable soft-delete, so a
+    // deleted student still occupies the unique index. Recreate by restoring
+    // that row; only active (non-deleted) accounts are treated as duplicates.
+    const existingAccount = await User.findOne({ email: emailNorm });
+    const isRestorableDeletedStudent =
+      existingAccount?.role === 'student' && Boolean(existingAccount.deletedAt);
+    if (existingAccount && !isRestorableDeletedStudent) {
       return res.status(400).json({ 
         success: false, 
         message: 'Student with this email already exists' 
@@ -443,6 +447,17 @@ export const createStudent = async (req, res) => {
       ? new mongoose.Types.ObjectId(String(adminId))
       : admin._id;
 
+    if (
+      isRestorableDeletedStudent &&
+      existingAccount.assignedAdmin &&
+      String(existingAccount.assignedAdmin) !== String(validAdminId)
+    ) {
+      return res.status(400).json({
+        success: false,
+        message: 'Student with this email already exists',
+      });
+    }
+
     let assignedClass = null;
     if (parsedClass && parsedClass !== 'Unassigned') {
       assignedClass = await getOrCreateClassForAdmin(
@@ -453,7 +468,7 @@ export const createStudent = async (req, res) => {
       );
     }
 
-    const newStudent = new User({
+    const studentPayload = {
       email: emailNorm,
       password: hashedPassword,
       fullName: String(fullName).trim(),
@@ -465,9 +480,19 @@ export const createStudent = async (req, res) => {
       isActive: true,
       assignedAdmin: validAdminId,
       assignedClass: assignedClass?._id,
-    });
+    };
 
-    await newStudent.save();
+    let savedStudent;
+    if (isRestorableDeletedStudent) {
+      Object.assign(existingAccount, studentPayload, {
+        deletedAt: null,
+        deletedBy: null,
+        deletionReason: '',
+      });
+      savedStudent = await existingAccount.save();
+    } else {
+      savedStudent = await new User(studentPayload).save();
+    }
     
     res.status(201).json({
       success: true,
@@ -475,14 +500,14 @@ export const createStudent = async (req, res) => {
         ? `Student created successfully. Login email: ${emailNorm}`
         : 'Student created successfully',
       data: {
-        id: newStudent._id,
-        email: newStudent.email,
-        fullName: newStudent.fullName,
-        classNumber: newStudent.classNumber,
-        phone: newStudent.phone,
-        board: newStudent.board,
-        schoolName: newStudent.schoolName,
-        isActive: newStudent.isActive
+        id: savedStudent._id,
+        email: savedStudent.email,
+        fullName: savedStudent.fullName,
+        classNumber: savedStudent.classNumber,
+        phone: savedStudent.phone,
+        board: savedStudent.board,
+        schoolName: savedStudent.schoolName,
+        isActive: savedStudent.isActive
       }
     });
   } catch (error) {
