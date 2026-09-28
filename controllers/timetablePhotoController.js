@@ -341,8 +341,8 @@ export async function getTimetablePhoto(req, res) {
 }
 
 /**
- * GET /api/timetable/photo/file — stream image bytes (auth via Bearer/cookie/?token=).
- * Used by <img> because /uploads alone cannot send Authorization headers.
+ * GET /api/timetable/photo/file — stream image bytes (Authorization header or cookie).
+ * Image tags should use the signed imageUrl from the photo payload, not a session token.
  */
 export async function streamTimetablePhotoFile(req, res) {
   try {
