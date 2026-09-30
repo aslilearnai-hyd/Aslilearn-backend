@@ -1,3 +1,4 @@
+import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   chapterNumberFromTopicLabel,
@@ -5,6 +6,7 @@ import {
   dedupeChapterWiseTopicLabels,
 } from '../ai/shared/ai-tool-topic-order.js';
 
+test('chapter topics and subtopics are deduplicated', () => {
 assert.equal(chapterNumberFromTopicLabel('Chapter 1 - The Wonderful World of Science'), 1);
 assert.equal(chapterNumberFromTopicLabel('1 Title'), 1);
 assert.equal(chapterNumberFromTopicLabel('1.6 Scientists of India and Their Contributions'), null);
@@ -33,3 +35,4 @@ assert.ok(topics.includes('Chapter 1 - The Wonderful World of Science'));
 assert.ok(topics.includes('1.6 Scientists of India and Their Contributions'));
 
 console.log('subtopic chapter-dedupe regression tests passed');
+});

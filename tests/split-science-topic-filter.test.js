@@ -1,6 +1,8 @@
+import test from 'node:test';
 import assert from 'node:assert/strict';
 import { filterTopicsForSplitScienceSubject } from '../ai/shared/ai-tool-topic-taxonomy.js';
 
+test('split Science subjects receive the correct topics', () => {
 const mixed = [
   'Chapter 1 - Exploration: Entering the World of Secondary Science',
   'Matter in Our Surroundings',
@@ -56,3 +58,4 @@ assert.deepEqual(
 );
 
 console.log('Split Science topic filtering tests passed');
+});

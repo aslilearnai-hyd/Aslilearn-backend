@@ -1,7 +1,9 @@
+import test from 'node:test';
 import { finalizeWorksheetStructuredContent } from '../services/ai-content-engine-service.js';
 import { runAiGeneratorQualityGate } from '../services/ai-generator-quality-gate.js';
 import { validateToolSpecificStructuredContent } from '../services/ai-content-engine-service.js';
 
+test('book-grounded worksheets are repaired with relevant questions', () => {
 const ragContext = `[Chunk 1]
 The human nervous system coordinates body activities. The central nervous system includes the brain and spinal cord.
 Neurons transmit electrical impulses between body parts. Reflex actions protect the body from harm quickly.
@@ -130,3 +132,4 @@ if (!repairedQs.some((q) => /sin|cos|tan|30|45|60/i.test(q))) {
   process.exit(1);
 }
 console.log('OK: Gemini leak worksheet repaired with trig numericals');
+});

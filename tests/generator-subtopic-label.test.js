@@ -1,3 +1,4 @@
+import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   canonicalizeGeneratorSubtopic,
@@ -5,6 +6,7 @@ import {
   WHOLE_CHAPTER_LABEL,
 } from '../ai/generators/shared/generator-subtopic-label.js';
 
+test('generator subtopic labels are normalized', () => {
 assert.equal(isJoinedMultiSubtopicLabel('Speed, Velocity and Acceleration'), false);
 assert.equal(isJoinedMultiSubtopicLabel('A | B'), true);
 assert.equal(isJoinedMultiSubtopicLabel('Topic A + Topic B'), true);
@@ -29,3 +31,4 @@ assert.equal(
 );
 
 console.log('generator-subtopic-label tests passed');
+});

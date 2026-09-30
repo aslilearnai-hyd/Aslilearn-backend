@@ -1,8 +1,10 @@
+import test from 'node:test';
 import {
   shouldDeliverStoredContentDespiteSectionGate,
   validateDashboardAiToolDoc,
 } from '../services/ai-tool-dashboard-validation.js';
 
+test('incomplete mock tests are blocked from delivery', () => {
 const gate = validateDashboardAiToolDoc('mock-test-builder', {
   toolName: 'mock-test-builder',
   generatedContent: '# Science Exam\n\n## Section A\n1. What is science?',
@@ -31,3 +33,4 @@ if (shouldDeliverStoredContentDespiteSectionGate(gate)) {
 }
 
 console.log('PASS: incomplete mock test is blocked from delivery');
+});

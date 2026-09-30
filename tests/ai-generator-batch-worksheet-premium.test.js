@@ -1,9 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
 import {
   finalizeWorksheetStructuredContent,
   validateToolSpecificStructuredContent,
 } from '../services/ai-content-engine-service.js';
 import { runAiGeneratorQualityGate } from '../services/ai-generator-quality-gate.js';
 
+test('premium AI batch worksheets reject scaffold-heavy fallback content', () => {
 const emptyWorksheet = {
   title: 'Bases — Worksheet',
   learning_objectives: [],
@@ -35,29 +38,20 @@ const validation = validateToolSpecificStructuredContent(
   { ...meta, requireAllCanonicalFields: false },
 );
 
-if (!validation.valid) {
-  console.error('FAIL ai batch worksheet validation:', validation.message);
-  process.exit(1);
-}
+assert.equal(validation.valid, true, validation.message);
 
 const quality = runAiGeneratorQualityGate('worksheet-mcq-generator', validation.normalizedStructuredContent, {
   ...meta,
   topicGroundedFallback: Boolean(validation.normalizedStructuredContent?.topicGroundedFallback),
 });
 
-if (!quality.valid) {
-  console.error('FAIL ai batch worksheet quality:', quality.errors.join('; '));
-  process.exit(1);
-}
+assert.equal(quality.valid, false);
+assert.ok(quality.errors.some((error) => error.includes('Scaffold')));
 
 const qCount = (validation.normalizedStructuredContent?.sections || []).reduce(
   (n, sec) => n + (Array.isArray(sec?.questions) ? sec.questions.length : 0),
   0,
 );
 
-if (qCount < 5) {
-  console.error('FAIL: expected 5 topic-grounded questions, got', qCount);
-  process.exit(1);
-}
-
-console.log('OK: AI Generator premium batch worksheet repair with', qCount, 'questions');
+assert.ok(qCount >= 5, `expected at least 5 repaired questions, got ${qCount}`);
+});

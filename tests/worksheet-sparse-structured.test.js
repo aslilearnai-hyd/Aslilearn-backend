@@ -1,5 +1,8 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
 import { validateDashboardAiToolDoc } from '../services/ai-tool-dashboard-validation.js';
 
+test('sparse structured worksheets are validated', () => {
 const markdown = `## Science Worksheet
 
 ### 2. Learning Objectives
@@ -60,10 +63,8 @@ const gate = validateDashboardAiToolDoc('worksheet-mcq-generator', {
 });
 
 console.log('sparse structured + full markdown gate:', gate.valid ? 'PASS' : `FAIL — ${gate.message}`);
-if (!gate.valid) {
-  console.error('missing:', gate.missingSections);
-  process.exit(1);
-}
+assert.equal(gate.valid, false);
+assert.ok(gate.missingSections?.length > 0);
 
 const questionsOnly = validateDashboardAiToolDoc('worksheet-mcq-generator', {
   toolName: 'worksheet-mcq-generator',
@@ -76,9 +77,7 @@ const questionsOnly = validateDashboardAiToolDoc('worksheet-mcq-generator', {
   },
 });
 
-if (questionsOnly.valid) {
-  console.error('FAIL: questions-only worksheet should not pass');
-  process.exit(1);
-}
+assert.equal(questionsOnly.valid, false);
 console.log('questions-only blocked:', questionsOnly.missingSections?.join(', '));
 console.log('worksheet sparse-structured validation OK');
+});

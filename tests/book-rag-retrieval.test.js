@@ -1,3 +1,4 @@
+import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   buildBookRetrievalQuery,
@@ -5,6 +6,7 @@ import {
   rerankBookChunks,
 } from '../services/book-rag-service.js';
 
+test('book RAG retrieval returns relevant content', () => {
 assert.match(
   buildBookRetrievalQuery({
     subjectName: 'Science',
@@ -46,3 +48,4 @@ const ranked = rerankBookChunks(
 assert.match(String(ranked[0].content), /Electric power measures/);
 
 console.log('PASS: book-rag-service retrieval');
+});

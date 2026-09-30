@@ -1,5 +1,8 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
 import { validateDashboardAiToolDoc } from '../services/ai-tool-dashboard-validation.js';
 
+test('activity normalization supplies required delivery sections', () => {
 /** PDF-shaped activity: procedure + materials but no teacher/student/rubric sections. */
 const markdown = `1. Title of Activity / Project
 Discovering Mathematics Activity 4
@@ -52,9 +55,8 @@ const gate = validateDashboardAiToolDoc('activity-project-generator', {
   metadata: { structuredContent: structured },
 });
 
-if (gate.valid) {
-  console.error('FAIL: activity must require all template sections including teacher/student/rubric', gate);
-  process.exit(1);
-}
-
-console.log('PASS: activity dashboard blocks content when required sections are missing');
+assert.equal(gate.valid, true, gate.message);
+assert.ok(gate.normalizedStructuredContent?.teacher_instructions?.length > 0);
+assert.ok(gate.normalizedStructuredContent?.student_instructions?.length > 0);
+assert.ok(gate.normalizedStructuredContent?.assessment_criteria_rubric?.length > 0);
+});

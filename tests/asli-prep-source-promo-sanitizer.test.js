@@ -1,7 +1,9 @@
+import test from 'node:test';
 import assert from 'node:assert/strict';
 import { stripAiGeneratorLeakage } from '../ai/shared/sanitize-ai-question-display.js';
 import { cleanPdfEducationalContent } from '../ai/rag/pdf/pdf-content-cleaner.js';
 
+test('Asli Prep source promotions are sanitized', () => {
 const answer =
   'Chilling onions or cutting them under water can reduce the gas release and minimize tears.';
 const promo =
@@ -11,3 +13,4 @@ assert.equal(stripAiGeneratorLeakage(`${answer} ${promo}`), answer.replace(/\.$/
 assert.equal(cleanPdfEducationalContent(`${answer}\n${promo}\nMore promotional copy.`), answer);
 
 console.log('Asli Prep source promotion sanitizer tests passed');
+});

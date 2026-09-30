@@ -1,5 +1,7 @@
+import test from 'node:test';
 import { validateDashboardAiToolDoc } from '../services/ai-tool-dashboard-validation.js';
 
+test('activity dashboard content is validated', () => {
 const markdown = `1. Title of Activity / Project
 Observing Plant Growth
 
@@ -71,3 +73,4 @@ if (!gate.valid) {
 }
 
 console.log('activity dashboard validation OK');
+});

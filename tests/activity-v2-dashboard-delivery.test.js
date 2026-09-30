@@ -1,8 +1,10 @@
+import test from 'node:test';
 import assert from 'node:assert/strict';
 import { validateDashboardAiToolDoc } from '../services/ai-tool-dashboard-validation.js';
 import { mapV2StructuredToLegacy } from '../utils/v2-structured-to-legacy.js';
 import { formatItemToContentFromTemplate } from '../config/aiToolTemplates.js';
 
+test('V2 activities are valid for dashboard delivery', () => {
 const v2 = {
   schema: 'asli-v2-six-section',
   tool: 'activity-project-generator',
@@ -56,3 +58,4 @@ const gate = validateDashboardAiToolDoc('activity-project-generator', doc);
 assert.equal(gate.valid, true, gate.message || 'expected valid delivery');
 
 console.log('activity-v2-dashboard-delivery.test.js passed');
+});

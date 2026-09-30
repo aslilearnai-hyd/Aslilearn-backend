@@ -1,3 +1,4 @@
+import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   conceptQuestionsForBand,
@@ -7,6 +8,7 @@ import {
 } from '../utils/subject-scaffold-profile.js';
 import { padAiGeneratorCanonicalSections } from '../utils/ai-generator-section-pad.js';
 
+test('subject scaffold profiles are generated correctly', () => {
 assert.equal(resolveScaffoldBand('Science'), 'stem');
 assert.equal(resolveScaffoldBand('Mathematics'), 'maths');
 assert.equal(resolveScaffoldBand('Maths'), 'maths');
@@ -58,3 +60,4 @@ const mockTest = padAiGeneratorCanonicalSections(
 assert.ok(Object.keys(mockTest).length > 0);
 
 console.log('PASS: subject-scaffold-profile');
+});

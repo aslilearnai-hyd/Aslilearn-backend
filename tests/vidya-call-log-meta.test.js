@@ -1,6 +1,8 @@
+import test from 'node:test';
 import assert from 'node:assert/strict';
 import { mentorCallLogMeta } from '../utils/vidya-call-log-meta.js';
 
+test('Vidya call log metadata is normalized', () => {
 assert.deepEqual(mentorCallLogMeta({ groundingStatus: 'application' }), {
   provider: 'local',
   success: true,
@@ -37,3 +39,4 @@ assert.deepEqual(mentorCallLogMeta({ groundingStatus: 'grounding_blocked' }), {
 });
 
 console.log('vidya-call-log-meta.test.js: all passed');
+});

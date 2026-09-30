@@ -492,7 +492,7 @@ function analyzeSubjectPerformance(results) {
 }
 
 // Analyze overall difficulty
-function analyzeOverallDifficulty(exams, results) {
+export function analyzeOverallDifficulty(exams, results) {
   const difficultyStats = {
     veryHard: 0,
     hard: 0,
@@ -501,11 +501,8 @@ function analyzeOverallDifficulty(exams, results) {
     veryEasy: 0
   };
   
-  if (!exams || !Array.isArray(exams) || !results || !Array.isArray(results)) {
-    return difficultyStats;
-  }
-  
-  exams.forEach(exam => {
+  if (Array.isArray(exams) && Array.isArray(results)) {
+    exams.forEach(exam => {
     if (!exam || !exam._id) return;
     
     const examResults = results.filter(result => 
@@ -525,7 +522,8 @@ function analyzeOverallDifficulty(exams, results) {
         else difficultyStats.veryEasy++;
       }
     }
-  });
+    });
+  }
   
   return difficultyStats;
 }

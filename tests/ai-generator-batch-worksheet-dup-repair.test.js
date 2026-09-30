@@ -1,3 +1,4 @@
+import test from 'node:test';
 import {
   finalizeWorksheetStructuredContent,
   repairWorksheetBatchDuplicates,
@@ -7,6 +8,7 @@ import {
   validateRecordUniqueness,
 } from '../services/ai-generator-uniqueness-engine.js';
 
+test('batch duplicate repair produces unique worksheet questions', () => {
 const baseMeta = {
   subject: 'Biology',
   topic: 'Chapter 1 - The Wonderful World of Science',
@@ -76,3 +78,4 @@ if (repairedTexts.some((t) => t === duplicateStem)) {
 }
 
 console.log('OK: batch duplicate repair produces unique worksheet questions');
+});

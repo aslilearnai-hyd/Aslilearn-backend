@@ -1,7 +1,9 @@
+import test from 'node:test';
 import assert from 'node:assert/strict';
 import { canonicalCbseNcertTopics } from '../ai/shared/cbse-ncert-topics.js';
 import { filterTopicsForSplitScienceSubject } from '../ai/shared/ai-tool-topic-taxonomy.js';
 
+test('CBSE NCERT topic catalog is valid', () => {
 const subjects = ['English', 'Hindi', 'Maths', 'Science', 'Social Science', 'Physics', 'Chemistry', 'Biology'];
 for (const classNumber of ['6', '7', '8', '9', '10']) {
   for (const subject of subjects) {
@@ -22,3 +24,4 @@ assert.ok(filterTopicsForSplitScienceSubject(science, 'Biology', 'CBSE', 'Class 
 assert.ok(filterTopicsForSplitScienceSubject(science, 'Physics', 'CBSE', 'Class 6').includes('Fun with Magnets'));
 
 console.log('CBSE NCERT topic catalog tests passed');
+});

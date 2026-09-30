@@ -1,3 +1,4 @@
+import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   buildSubtopicNameVariants,
@@ -8,6 +9,7 @@ import {
   topicTextMatches,
 } from '../utils/ai-tool-data-match.js';
 
+test('AI tool data matching remains consistent', () => {
 const plantLifeVariants = buildTopicNameVariants('Chapter 3 - Plant Life');
 for (const expected of ['Chapter 3 - Plant Life', 'Chapter 3', 'Plant Life']) {
   assert.ok(plantLifeVariants.includes(expected), `variants should include ${expected}`);
@@ -58,3 +60,4 @@ assert.equal(mathFilter.subject.$options, 'i');
 assert.match(mathFilter.subject.$regex, /math/i);
 
 console.log('ai-tool-data-match tests passed');
+});

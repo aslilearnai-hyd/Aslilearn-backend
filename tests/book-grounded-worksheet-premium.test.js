@@ -1,9 +1,11 @@
+import test from 'node:test';
 import {
   finalizeWorksheetStructuredContent,
   validateToolSpecificStructuredContent,
 } from '../services/ai-content-engine-service.js';
 import { runAiGeneratorQualityGate } from '../services/ai-generator-quality-gate.js';
 
+test('premium book worksheets preserve grounded content', () => {
 const ragContext = `[Chunk 1]
 The central nervous system (CNS) includes the brain and spinal cord. Neurons carry impulses.
 Reflex actions are rapid responses that protect the body from harm.
@@ -83,3 +85,4 @@ if (qCount < 5) {
 }
 
 console.log('OK: premium book worksheet repair saved path with', qCount, 'questions');
+});

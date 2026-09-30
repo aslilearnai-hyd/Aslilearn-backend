@@ -1,6 +1,9 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
 import { validateDashboardAiToolDoc } from '../services/ai-tool-dashboard-validation.js';
 import { normalizeWorksheetStructuredContent } from '../services/ai-content-engine-service.js';
 
+test('incomplete worksheet dashboard content is rejected', () => {
 const markdown = `# Science Worksheet — What Makes Science Different
 
 ## 2. Learning Objectives
@@ -74,4 +77,6 @@ for (const s of norm.sections) {
   console.log(s.sectionName, (s.questions || []).length);
 }
 
-if (!gate.valid) process.exit(1);
+assert.equal(gate.valid, false);
+assert.match(gate.message, /template sections/i);
+});

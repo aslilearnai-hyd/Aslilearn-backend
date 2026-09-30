@@ -1,6 +1,8 @@
+import test from 'node:test';
 import { finalizeWorksheetStructuredContent } from '../services/ai-content-engine-service.js';
 import { collectQuestionTextsFromStructured } from '../services/ai-generator-uniqueness-engine.js';
 
+test('worksheet variants have diverse question stems', () => {
 const baseMeta = {
   subject: 'Chemistry',
   topic: 'Chapter 1 - Particulate Nature of Matter',
@@ -30,3 +32,4 @@ if (unique.size < allTexts.length * 0.75) {
 }
 
 console.log('OK: variant worksheet stems are diverse enough', unique.size, 'unique of', allTexts.length);
+});

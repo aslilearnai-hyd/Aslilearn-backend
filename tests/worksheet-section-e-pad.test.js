@@ -1,9 +1,11 @@
+import test from 'node:test';
 import {
   finalizeWorksheetStructuredContent,
   ensureWorksheetSectionsComplete,
   WORKSHEET_SECTION_LABELS,
 } from '../services/ai-content-engine-service.js';
 
+test('worksheet Section E is padded when required', () => {
 const ragContext = `[Chunk 1]
 Light travels in straight lines. Reflection occurs when light bounces off a mirror.
 The angle of incidence equals the angle of reflection. Luminous objects emit their own light.
@@ -57,3 +59,4 @@ if (!eAfter || !eAfter.questions?.length) {
 }
 
 console.log('OK: Section E padded with', eAfter.questions.length, 'question(s)');
+});

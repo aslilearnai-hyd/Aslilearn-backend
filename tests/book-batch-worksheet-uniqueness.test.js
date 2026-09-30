@@ -1,3 +1,4 @@
+import test from 'node:test';
 import {
   finalizeWorksheetStructuredContent,
   repairWorksheetBatchDuplicates,
@@ -5,6 +6,7 @@ import {
 } from '../services/ai-content-engine-service.js';
 import { validateRecordUniqueness } from '../services/ai-generator-uniqueness-engine.js';
 
+test('book batch worksheet variants remain unique', () => {
 const ragContext = `[Chunk 1]
 Waves transfer energy without transferring matter. The amplitude of a wave determines its energy.
 Frequency and wavelength are inversely related for a given medium.
@@ -101,3 +103,4 @@ if (!slot2Uniq.valid) {
 }
 
 console.log('OK: 5 book-batch worksheet variants are mutually unique (+ slot2 rebuild)');
+});
