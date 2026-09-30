@@ -16,6 +16,7 @@ import {
   verifyUploadSignature,
 } from '../utils/upload-access.js';
 import { createCsrfOriginGuard } from '../middleware/csrf-origin.js';
+import { getAllowedOrigins, isAllowedOrigin } from '../bootstrap/cors-origins.js';
 import {
   collectAttendanceEntries,
   normalizeAttendanceStatus,
@@ -268,6 +269,14 @@ describe('upload access ACL', () => {
 });
 
 describe('csrf origin guard', () => {
+  it('keeps production CORS origins explicit and encrypted', () => {
+    const origins = getAllowedOrigins({ nodeEnv: 'production' });
+    assert.equal(origins.includes('http://com.tech.aslilearnai'), false);
+    assert.equal(origins.some((origin) => origin.startsWith('http://localhost')), false);
+    assert.equal(isAllowedOrigin('https://evil.example', origins), false);
+    assert.equal(isAllowedOrigin('https://www.aslilearn.ai', origins), true);
+  });
+
   it('allows Bearer mutating requests without Origin', () => {
     const guard = createCsrfOriginGuard(['https://aslilearn.ai']);
     let nextCalled = false;

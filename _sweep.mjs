@@ -1,7 +1,11 @@
 import 'dotenv/config';
-import { appendFileSync, writeFileSync } from 'fs';
+import { appendFileSync, mkdtempSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 process.env.AI_GENERATOR_V2_SIX_SECTION = 'on';
-const OUT='/tmp/sweep_results.txt'; writeFileSync(OUT,'');
+const OUT_DIR = mkdtempSync(join(tmpdir(), 'asli-sweep-'));
+const OUT = join(OUT_DIR, 'sweep_results.txt');
+writeFileSync(OUT, '', { mode: 0o600 });
 const { generateSixSectionContent } = await import('./services/six-section-generator.js');
 const { buildV2VariantHint } = await import('./prompts/v2/assemble.js');
 function extract(sc){const core=sc?.core||{};const out=[];const walk=(v)=>{if(typeof v==='string'){const t=v.trim();if(t.length>=15)out.push(t);}else if(Array.isArray(v)){for(const it of v){if(it&&typeof it==='object'&&typeof it.question==='string'){if(it.question.trim().length>=8)out.push(it.question.trim());}else walk(it);}}else if(v&&typeof v==='object'){for(const x of Object.values(v))walk(x);}};walk(core);return out;}

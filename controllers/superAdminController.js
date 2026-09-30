@@ -1716,118 +1716,23 @@ export const deleteAdmin = async (req, res) => {
       });
     }
 
-    const confirmEmail = String(req.body?.confirmEmail || req.query.confirmEmail || '')
-      .trim()
-      .toLowerCase();
-    if (!admin?.email || confirmEmail !== String(admin.email).toLowerCase()) {
-      return res.status(400).json({
-        success: false,
-        message:
-          `Hard delete blocked. Send confirmEmail=${admin?.email || 'admin-email'} and hard=1 to permanently wipe ` +
-          `${studentCount} student(s) and ${teacherCount} teacher(s). Prefer soft deactivate (default DELETE).`,
-        studentCount,
-        teacherCount,
-      });
-    }
-
-    console.log(
-      `🗑️ HARD deletion of school: ${adminEmail} (param: ${paramId}, admin: ${adminId || 'none'}, school: ${school?._id || 'none'}, students: ${studentCount})`
-    );
-
-    if (!adminId) {
-      if (school?._id) {
-        await deleteSchoolById(school._id);
-      }
-      return res.json({
-        success: true,
-        message: 'School record deleted successfully',
-        deletedEmail: adminEmail,
-      });
-    }
-    
-    // Import all required models
-    const Teacher = (await import('../models/Teacher.js')).default;
-    const Video = (await import('../models/Video.js')).default;
-    const Assessment = (await import('../models/Assessment.js')).default;
-    const Exam = (await import('../models/Exam.js')).default;
-    const ExamResult = (await import('../models/ExamResult.js')).default;
-    const Question = (await import('../models/Question.js')).default;
-    const Class = (await import('../models/Class.js')).default;
-    const Stream = (await import('../models/Stream.js')).default;
-    
-    // Get all exams created by this admin to delete their results and questions
-    const adminExams = await Exam.find({ adminId: adminId });
-    const examIds = adminExams.map(exam => exam._id);
-    
-    // Delete all related data in parallel
-    const deletionResults = await Promise.all([
-      // Delete all students assigned to this admin
-      User.deleteMany({ role: 'student', assignedAdmin: adminId }),
-      // Delete all teachers assigned to this admin
-      Teacher.deleteMany({ adminId }),
-      // Delete all videos created by this admin
-      Video.deleteMany({ adminId }),
-      // Delete all assessments created by this admin
-      Assessment.deleteMany({ adminId }),
-      // Delete all exams created by this admin
-      Exam.deleteMany({ adminId }),
-      // Delete all exam results for exams created by this admin
-      ExamResult.deleteMany({ adminId }),
-      // Also delete exam results for the specific exams
-      ExamResult.deleteMany({ examId: { $in: examIds } }),
-      // Delete all questions created by this admin
-      Question.deleteMany({ adminId }),
-      // Delete all classes assigned to this admin
-      Class.deleteMany({ assignedAdmin: adminId }),
-      // Delete all streams created by this admin
-      Stream.deleteMany({ adminId }),
-      // Finally, delete the admin login user
-      User.deleteOne({ _id: adminId }),
-      // Remove canonical school row from schools collection
-      school?._id
-        ? School.deleteOne({ _id: school._id })
-        : School.deleteOne({ adminUserId: adminId }),
-    ]);
-    
-    // Verify the admin was actually deleted
-    const verifyDeletion = await User.findById(adminId);
-    if (verifyDeletion) {
-      console.error(`❌ WARNING: Admin ${adminId} still exists after deletion attempt!`);
-      // Force delete using deleteOne
-      await User.deleteOne({ _id: adminId });
-    }
-    
-    // Also verify by email to ensure no duplicate exists
-    const verifyByEmail = await User.findOne({ email: adminEmail.toLowerCase() });
-    if (verifyByEmail && verifyByEmail._id.toString() === adminId) {
-      console.error(`❌ WARNING: Admin with email ${adminEmail} still exists! Force deleting...`);
-      await User.deleteOne({ email: adminEmail.toLowerCase() });
-    }
-    
-    console.log(`✅ Successfully HARD-deleted school (admin) ${adminId} (${adminEmail}) and all associated data`);
-    console.log(`   Deleted: ${deletionResults[0].deletedCount} students, ${deletionResults[1].deletedCount} teachers, ${deletionResults[2].deletedCount} videos`);
-
     req.setAudit?.({
-      action: 'school.delete.hard',
-      summary: `HARD-deleted school ${school?.name || adminEmail} (${deletionResults[0].deletedCount} students wiped)`,
+      action: 'school.hard_delete_blocked',
+      summary: `Blocked permanent deletion of school ${school?.name || adminEmail}`,
       target: {
         type: 'school',
-        id: String(school?._id || adminId),
+        id: String(school?._id || adminId || ''),
         label: school?.name || adminEmail,
-        email: adminEmail,
+        email: admin?.email || null,
       },
-      meta: {
-        hard: true,
-        studentsDeleted: deletionResults[0].deletedCount,
-        teachersDeleted: deletionResults[1].deletedCount,
-      },
+      meta: { hard: true, blocked: true, studentCount, teacherCount },
     });
-    
-    res.json({
-      success: true,
-      hard: true,
-      message: 'School and all associated data (students, teachers, exams, results, content) deleted successfully',
-      deletedEmail: adminEmail // Return email so frontend knows it can be reused
+
+    return res.status(403).json({
+      success: false,
+      hard: false,
+      message: 'Permanent school deletion is disabled. Use the default soft-deactivation flow.',
+      preserved: { students: studentCount, teachers: teacherCount },
     });
   } catch (error) {
     console.error('Delete school error:', error);

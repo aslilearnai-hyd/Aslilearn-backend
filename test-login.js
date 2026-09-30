@@ -25,9 +25,15 @@ const connectDB = async () => {
 
 const testLogin = async () => {
   try {
+    const adminEmail = String(process.env.ADMIN_EMAIL || '').trim().toLowerCase();
+    const testPassword = String(process.env.ADMIN_TEST_PASSWORD || '');
+    if (!adminEmail || !testPassword) {
+      throw new Error('ADMIN_EMAIL and ADMIN_TEST_PASSWORD are required');
+    }
+
     await connectDB();
     
-    const admin = await User.findOne({ email: 'ak@gmail.com' });
+    const admin = await User.findOne({ email: adminEmail });
     if (!admin) {
       console.log('❌ Admin not found');
       return;
@@ -38,8 +44,7 @@ const testLogin = async () => {
     console.log('Admin role:', admin.role);
     console.log('Admin name:', admin.fullName);
     
-    // Test password verification
-    const testPassword = 'Akhilesh123';
+    // Read-only verification: this script never changes stored credentials.
     const isPasswordValid = await bcrypt.compare(testPassword, admin.password);
     console.log('Password valid:', isPasswordValid);
     
@@ -47,19 +52,12 @@ const testLogin = async () => {
       console.log('✅ Login should work!');
     } else {
       console.log('❌ Password verification failed');
-      console.log('Setting new password...');
-      const newPassword = 'Akhilesh123';
-      const hashedPassword = await bcrypt.hash(newPassword, 10);
-      await User.findByIdAndUpdate(admin._id, { password: hashedPassword });
-      console.log('✅ Password reset complete');
-      
-      // Test again
-      const isPasswordValidAfter = await bcrypt.compare(testPassword, hashedPassword);
-      console.log('Password valid after reset:', isPasswordValidAfter);
+      process.exitCode = 1;
     }
     
   } catch (error) {
-    console.error('Error:', error);
+    console.error('Login verification failed:', error.message || error);
+    process.exitCode = 1;
   } finally {
     await mongoose.disconnect();
   }

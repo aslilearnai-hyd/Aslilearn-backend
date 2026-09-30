@@ -23,6 +23,7 @@ if (process.env.ALLOW_LEGACY_TS_SERVER !== '1') {
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+app.disable('x-powered-by');
 
 // Database connection
 const connectionString = process.env.DATABASE_URL || 'postgresql://localhost:5432/cognilearn';
@@ -38,8 +39,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Session configuration
+const sessionSecret = process.env.SESSION_SECRET;
+if (!sessionSecret || sessionSecret.length < 16) {
+  throw new Error('SESSION_SECRET must be configured with at least 16 characters');
+}
 app.use(session({
-  secret: process.env.SESSION_SECRET || 'your-secret-key',
+  secret: sessionSecret,
   resave: false,
   saveUninitialized: false,
   cookie: {

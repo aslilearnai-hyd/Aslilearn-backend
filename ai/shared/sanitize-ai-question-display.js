@@ -191,7 +191,7 @@ export function sanitizeFlashcardTopicLink(text) {
     .replace(/\s{2,}/g, ' ')
     .trim();
 
-  s = s.replace(/(?:\s*[—–-]\s*)+$/g, '').trim();
+  s = s.replace(/[\s—–-]+$/g, '').trim();
   s = s.replace(/\s*[—–-]\s*(?:V\d+|A\d+|[\w]{6,})\s*$/gi, '').trim();
   if (!s || /^[\s,—–-]+$/.test(s)) return '';
 

@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List, Optional
+import os
 import uvicorn
 import os
 from llama_cpp import Llama
@@ -107,4 +108,6 @@ async def chat_completions(request: ChatRequest):
 
 if __name__ == "__main__":
     print("🚀 Starting DeepSeek-V3 API server...")
-    uvicorn.run(app, host="0.0.0.0", port=8000, log_level="info")
+    host = os.getenv("PYTHON_API_HOST", "127.0.0.1")
+    port = int(os.getenv("PYTHON_API_PORT", "8000"))
+    uvicorn.run(app, host=host, port=port, log_level="info")

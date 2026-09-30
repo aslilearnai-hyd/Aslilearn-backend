@@ -22,7 +22,7 @@ import {
   isPublicUploadPath,
   verifyUploadSignature,
 } from './utils/upload-access.js';
-import { getAllowedOrigins } from './bootstrap/cors-origins.js';
+import { getAllowedOrigins, isAllowedOrigin } from './bootstrap/cors-origins.js';
 import { getBackendRoot } from './bootstrap/env.js';
 import { initPdfProcessingQueue } from './queues/pdfProcessingQueue.js';
 import { startWeeklyImpactScheduler } from './services/weekly-impact-scheduler.js';
@@ -120,24 +120,7 @@ app.use(requestContext);
   app.use(
     cors({
   origin: function (origin, callback) {
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.includes(origin)) {
-      return callback(null, true);
-    }
-        if (origin.match(/^https:\/\/asli-frontend.*\.vercel\.app$/)) {
-      return callback(null, true);
-    }
-        if (origin.match(/^https:\/\/alsi-stud-frontend-mf3r.*\.vercel\.app$/)) {
-      return callback(null, true);
-    }
-        if (origin.match(/^https?:\/\/([a-z0-9-]+\.)?aslilearn\.ai(:[0-9]+)?$/)) {
-      return callback(null, true);
-    }
-        if (
-          process.env.NODE_ENV !== 'production' &&
-          (origin.match(/^http:\/\/localhost(:\d+)?$/) ||
-            origin.match(/^http:\/\/127\.0\.0\.1(:\d+)?$/))
-        ) {
+    if (isAllowedOrigin(origin, allowedOrigins)) {
       return callback(null, true);
     }
     console.warn('[CORS] BLOCKED unrecognized origin:', origin);
@@ -209,7 +192,7 @@ const TRUSTED_FRAME_ANCESTORS =
 
 app.use((req, res, next) => {
   const origin = req.headers.origin;
-  if (origin && allowedOrigins.includes(origin)) {
+  if (origin && isAllowedOrigin(origin, allowedOrigins)) {
     res.header('Access-Control-Allow-Origin', origin);
     res.header('Access-Control-Allow-Credentials', 'true');
     res.header('Access-Control-Expose-Headers', 'Set-Cookie, X-Request-Id, Content-Disposition');
@@ -244,24 +227,6 @@ app.use('/api', (req, res, next) => {
     );
   });
   app.use(proxyRoutes);
-
-app.options(/^\/api\/.*/, (req, res) => {
-  const origin = req.headers.origin;
-  if (origin) {
-    res.setHeader('Access-Control-Allow-Origin', origin);
-    res.setHeader('Access-Control-Allow-Credentials', 'true');
-  } else {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-  }
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS, PATCH');
-  res.setHeader(
-    'Access-Control-Allow-Headers',
-      'Content-Type, Authorization, Cookie, X-Requested-With, Accept, Origin',
-  );
-    res.setHeader('Access-Control-Expose-Headers', 'Set-Cookie, X-Request-Id, Content-Disposition');
-  res.setHeader('Access-Control-Max-Age', '86400');
-  res.sendStatus(204);
-});
 
   app.use('/api', calendarPublicRoutes);
   app.use('/api/auth', authRoutes);

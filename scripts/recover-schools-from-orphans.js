@@ -57,8 +57,14 @@ async function main() {
     process.exit(0);
   }
 
-  const defaultPassword = process.env.RECOVERY_ADMIN_PASSWORD || 'TempRestore123!';
-  const hashed = await bcrypt.hash(defaultPassword, 12);
+  const recoveryPassword = String(process.env.RECOVERY_ADMIN_PASSWORD || '');
+  if (!dryRun && !recoveryPassword) {
+    throw new Error('RECOVERY_ADMIN_PASSWORD is required when recovery is not a dry run');
+  }
+  if (!dryRun && recoveryPassword.length < 12) {
+    throw new Error('RECOVERY_ADMIN_PASSWORD must be at least 12 characters');
+  }
+  const hashed = dryRun ? null : await bcrypt.hash(recoveryPassword, 12);
 
   let created = 0;
   for (const [adminId, row] of orphans) {
@@ -124,8 +130,8 @@ async function main() {
     console.log('Dry run only. Re-run without --dry-run to create records.');
   } else {
     console.log(`Created/linked: ${created}`);
-    console.log(`Recovery login password (all new admins): ${defaultPassword}`);
-    console.log('Change passwords after first login.');
+    console.log('Recovery credentials were read from the environment and were not printed.');
+    console.log('Require every recovered admin to change the temporary password after first login.');
   }
   console.log(`Schools now: ${totalSchools}, Admins now: ${totalAdmins}`);
   console.log('\nThis only recovers schools tied to leftover content. For ALL deleted schools, use Atlas backup.');

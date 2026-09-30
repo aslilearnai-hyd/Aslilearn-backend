@@ -25,29 +25,33 @@ const connectDB = async () => {
 
 const setAdminPassword = async () => {
   try {
+    const adminEmail = String(process.env.ADMIN_EMAIL || '').trim().toLowerCase();
+    const newPassword = String(process.env.ADMIN_NEW_PASSWORD || '');
+    if (!adminEmail || !newPassword) {
+      throw new Error('ADMIN_EMAIL and ADMIN_NEW_PASSWORD are required');
+    }
+    if (newPassword.length < 12) {
+      throw new Error('ADMIN_NEW_PASSWORD must be at least 12 characters');
+    }
+
     await connectDB();
-    
-    // Set password for ak@gmail.com admin
-    const newPassword = 'Akhilesh123'; // Simple password you can remember
     const hashedPassword = await bcrypt.hash(newPassword, 10);
     
     const admin = await User.findOneAndUpdate(
-      { email: 'ak@gmail.com' },
+      { email: adminEmail },
       { password: hashedPassword },
       { new: true }
     );
     
     if (admin) {
-      console.log('✅ Password set for ak@gmail.com');
-      console.log('Email: ak@gmail.com');
-      console.log('Password: Akhilesh123');
-      console.log('You can now login with these credentials!');
+      console.log('Admin password updated successfully.');
     } else {
-      console.log('❌ Admin not found');
+      console.log('Admin not found. No password was changed.');
     }
     
   } catch (error) {
-    console.error('Error:', error);
+    console.error('Password update failed:', error.message || error);
+    process.exitCode = 1;
   } finally {
     await mongoose.disconnect();
   }
