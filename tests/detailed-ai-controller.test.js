@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { analyzeOverallDifficulty } from '../controllers/detailedAIController.js';
+import { analyzeOverallDifficulty } from '../utils/detailed-ai-difficulty.js';
 
 test('analyzeOverallDifficulty returns empty buckets for invalid input', () => {
   assert.deepEqual(analyzeOverallDifficulty(null, null), {
@@ -13,12 +13,13 @@ test('analyzeOverallDifficulty returns empty buckets for invalid input', () => {
 });
 
 test('analyzeOverallDifficulty assigns average scores to each bucket', () => {
-  const exams = ['very-hard', 'hard', 'medium', 'easy', 'very-easy'].map((_id) => ({ _id }));
+  const scoredExams = ['very-hard', 'hard', 'medium', 'easy', 'very-easy'].map((_id) => ({ _id }));
+  const exams = [null, ...scoredExams, { _id: 'no-results' }];
   const percentages = [20, 50, 70, 80, 95];
-  const results = exams.map((exam, index) => ({
+  const results = scoredExams.map((exam, index) => ({
     examId: { _id: exam._id },
     percentage: percentages[index],
-  }));
+  })).concat({ examId: { _id: 'no-results' } });
 
   assert.deepEqual(analyzeOverallDifficulty(exams, results), {
     veryHard: 1,

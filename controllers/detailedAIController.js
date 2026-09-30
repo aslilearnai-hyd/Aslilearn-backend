@@ -6,6 +6,7 @@ import Exam from '../models/Exam.js';
 import Question from '../models/Question.js';
 import ExamResult from '../models/ExamResult.js';
 import { PASS_THRESHOLD, isPassing, uniqueCount } from '../utils/analytics-metrics.js';
+import { analyzeOverallDifficulty } from '../utils/detailed-ai-difficulty.js';
 import { resolveAdminEffectiveBoard } from '../services/boardScope.js';
 
 // Get comprehensive AI analytics with detailed exam analysis
@@ -489,43 +490,6 @@ function analyzeSubjectPerformance(results) {
   });
   
   return Object.values(subjectData).sort((a, b) => b.averageScore - a.averageScore);
-}
-
-// Analyze overall difficulty
-export function analyzeOverallDifficulty(exams, results) {
-  const difficultyStats = {
-    veryHard: 0,
-    hard: 0,
-    medium: 0,
-    easy: 0,
-    veryEasy: 0
-  };
-  
-  if (Array.isArray(exams) && Array.isArray(results)) {
-    exams.forEach(exam => {
-    if (!exam || !exam._id) return;
-    
-    const examResults = results.filter(result => 
-      result && result.examId && result.examId._id && exam._id &&
-      result.examId._id.toString() === exam._id.toString()
-    );
-    
-    if (examResults.length > 0) {
-      const validResults = examResults.filter(r => r && typeof r.percentage === 'number');
-      if (validResults.length > 0) {
-        const averageScore = validResults.reduce((sum, result) => sum + (result.percentage || 0), 0) / validResults.length;
-        
-        if (averageScore < 40) difficultyStats.veryHard++;
-        else if (averageScore < 60) difficultyStats.hard++;
-        else if (averageScore < 75) difficultyStats.medium++;
-        else if (averageScore < 85) difficultyStats.easy++;
-        else difficultyStats.veryEasy++;
-      }
-    }
-    });
-  }
-  
-  return difficultyStats;
 }
 
 // Analyze overall trends
