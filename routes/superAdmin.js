@@ -744,7 +744,7 @@ router.post('/content/upload-file', (req, res, next) => {
     if (err) {
       console.error('Multer error:', err?.code || err?.message, err);
       if (err.code === 'LIMIT_FILE_SIZE') {
-        return res.status(400).json({ 
+        return res.status(413).json({
           success: false,
           message: 'File too large. Maximum size is 100MB.' 
         });

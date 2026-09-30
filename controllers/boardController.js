@@ -1425,6 +1425,27 @@ export const uploadContent = async (req, res) => {
       inferProductCategoryFromPath(relativePath || title) ||
       '';
 
+    const subjectProductCategory =
+      normalizeIitCategoryLoose(subjectDoc.productCategory) || '';
+    if (contentProductCategory && !isIitBoardCode(boardNorm)) {
+      return res.status(400).json({
+        success: false,
+        message: 'Alpha, Beta, Gamma, and Delta content must use the IIT board, not a curriculum board such as CBSE.',
+      });
+    }
+    if (isIitBoardCode(boardNorm) && !contentProductCategory) {
+      return res.status(400).json({
+        success: false,
+        message: 'Select an IIT product category (Alpha, Beta, Gamma, or Delta).',
+      });
+    }
+    if (subjectProductCategory !== contentProductCategory) {
+      return res.status(400).json({
+        success: false,
+        message: 'Content product category must match the linked subject product category.',
+      });
+    }
+
     const materialTypes = new Set(['Textbook', 'Material', 'Workbook']);
     // Keep Super Admin's lesson/material title. Only invent a subject slot label when title is empty.
     const trimmedTitle = String(title || '').trim();
