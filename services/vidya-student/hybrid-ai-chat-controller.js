@@ -1263,8 +1263,6 @@ function buildStudentDataSummaryForAI(facts) {
         `  - ${v.title}${v.subject ? ` (${v.subject})` : ''}: ${v.completed ? 'done' : `${v.progress || 0}%`}`,
       );
     });
-  } else if (deskTotals.videos > 0) {
-    lines.push(`\nVideos available: ${deskTotals.videos} (completed ${deskTotals.videosCompleted || 0})`);
   } else {
     lines.push(`\nVideos: none watched yet`);
   }

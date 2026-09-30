@@ -6,6 +6,6 @@ export const aggregateCache = new Map();
 export const aggregateInFlight = new Map();
 
 export function clearAiToolHierarchyCache() {
-  aggregateCache.clear();
-  aggregateInFlight.clear();
+  if (aggregateCache.size > 0) aggregateCache.clear();
+  if (aggregateInFlight.size > 0) aggregateInFlight.clear();
 }

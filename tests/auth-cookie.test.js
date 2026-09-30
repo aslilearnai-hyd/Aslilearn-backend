@@ -113,8 +113,8 @@ describe('auth-cookie helpers', () => {
     clearAuthCookie(res);
     assert.equal(cleared.length, 2);
     assert.deepEqual(
-      cleared.map((c) => c.name).sort(),
-      [AUTH_COOKIE_NAME, REFRESH_COOKIE_NAME].sort(),
+      cleared.map((c) => c.name).sort((a, b) => a.localeCompare(b)),
+      [AUTH_COOKIE_NAME, REFRESH_COOKIE_NAME].sort((a, b) => a.localeCompare(b)),
     );
   });
 });

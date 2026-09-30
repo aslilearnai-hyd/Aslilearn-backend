@@ -102,14 +102,10 @@ aiToolGenerationSchema.index({ 'metadata.bookGenerator': 1, createdAt: -1 });
 aiToolGenerationSchema.index({ sourceType: 1, board: 1, createdAt: -1 });
 
 function bumpHierarchyCache() {
-  try {
-    // Lazy import avoids circular init with controllers that import this model.
-    import('../utils/ai-tool-hierarchy-cache.js')
-      .then((m) => m.clearAiToolHierarchyCache?.())
-      .catch(() => {});
-  } catch {
-    // ignore
-  }
+  // Lazy import avoids circular init with controllers that import this model.
+  void import('../utils/ai-tool-hierarchy-cache.js')
+    .then((m) => m.clearAiToolHierarchyCache?.())
+    .catch(() => {});
 }
 
 aiToolGenerationSchema.post('save', bumpHierarchyCache);

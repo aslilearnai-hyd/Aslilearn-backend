@@ -51,7 +51,7 @@ for (const row of class6) {
 }
 
 console.log('CLASS6_GENERATION_SUBJECTS');
-for (const s of Object.keys(bySubject).sort()) {
+for (const s of Object.keys(bySubject).sort((a, b) => a.localeCompare(b))) {
   const v = bySubject[s];
   const topics = [...v.topics.entries()]
     .sort((a, b) => a[0].localeCompare(b[0], 'en', { numeric: true }))
@@ -122,7 +122,7 @@ for (const row of tax) {
 }
 
 console.log('CLASS6_TAXONOMY_SUBJECTS');
-for (const s of Object.keys(taxBy).sort()) {
+for (const s of Object.keys(taxBy).sort((a, b) => a.localeCompare(b))) {
   const v = taxBy[s];
   console.log(
     JSON.stringify({

@@ -191,12 +191,24 @@ export function sanitizeFlashcardTopicLink(text) {
     .replace(/\s{2,}/g, ' ')
     .trim();
 
-  s = s.replace(/[\s—–-]+$/g, '').trim();
+  s = trimTrailingSeparators(s);
   s = s.replace(/\s*[—–-]\s*(?:V\d+|A\d+|[\w]{6,})\s*$/gi, '').trim();
   if (!s || /^[\s,—–-]+$/.test(s)) return '';
 
   if (s.length > 160 && !/\s[—–-]\s/.test(s)) return '';
   return s.replace(/\s*[—–-]\s*/g, ' — ').trim();
+}
+
+const TRAILING_SEPARATOR_CHARS = new Set(['—', '–', '-']);
+
+function trimTrailingSeparators(value) {
+  let end = value.length;
+  while (end > 0) {
+    const char = value[end - 1];
+    if (!TRAILING_SEPARATOR_CHARS.has(char) && char.trim() !== '') break;
+    end -= 1;
+  }
+  return value.slice(0, end).trim();
 }
 
 /** Avoid "Class Class 10" when class_level is stored for display chips. */

@@ -46,7 +46,7 @@ function list(v) {
  * now require 6+), not a distribution one.
  */
 function splitReadingQuestionSets(questions, toText) {
-  const texts = arr(questions).map(toText).filter(Boolean);
+  const texts = arr(questions).map((question) => toText(question)).filter(Boolean);
   const sets = [[], [], []];
   texts.forEach((t, i) => sets[i % 3].push(t));
   return sets;

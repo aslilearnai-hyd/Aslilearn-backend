@@ -959,7 +959,9 @@ export async function getSubjectsForClass(classNumber) {
     const base = getAmenity2BasePath();
     const dirs = await getSubDirs(base);
     const subjects = dirs.filter(d => IIT_SUBJECTS.map(s => s.toLowerCase()).includes(d.toLowerCase()));
-    return subjects.length > 0 ? subjects.sort() : IIT_SUBJECTS;
+    return subjects.length > 0
+      ? subjects.sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+      : IIT_SUBJECTS;
   }
 
   const classNum = parseInt(classNumber);
@@ -978,7 +980,7 @@ export async function getSubjectsForClass(classNumber) {
     }
   }
 
-  return subjects.sort();
+  return subjects.sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
 }
 
 /**

@@ -388,8 +388,9 @@ async function withAggregateCache(cacheKey, loader) {
   const inFlight = aggregateInFlight.get(cacheKey);
   if (inFlight) return inFlight;
 
-  const promise = loader()
-    .then((value) => {
+  const promise = (async () => {
+    try {
+      const value = await loader();
       aggregateCache.set(cacheKey, { at: Date.now(), value });
       if (aggregateCache.size > 60) {
         const cutoff = Date.now() - AGGREGATE_CACHE_TTL_MS;
@@ -398,10 +399,10 @@ async function withAggregateCache(cacheKey, loader) {
         }
       }
       return value;
-    })
-    .finally(() => {
+    } finally {
       aggregateInFlight.delete(cacheKey);
-    });
+    }
+  })();
 
   aggregateInFlight.set(cacheKey, promise);
   return promise;

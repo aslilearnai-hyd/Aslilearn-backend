@@ -136,7 +136,7 @@ function listSchoolExams(question, desk, now = new Date()) {
     return 'No regular exams are available for your school right now.';
   }
   const heading = filter ? `**School exams in ${monthLabel(filter)}:**` : '**Latest school exams:**';
-  return `${heading}\n\n${matched.map(formatExamListLine).join('\n')}`;
+  return `${heading}\n\n${matched.map((exam) => formatExamListLine(exam)).join('\n')}`;
 }
 
 export async function buildTeacherAppDeskFacts(teacherUserId) {
