@@ -25,6 +25,12 @@ import { normalizeClassNumberLabel } from '../utils/studentClassContent.js';
 import { enrichExtractedExamQuestions } from '../services/exam-pdf-enrichment.js';
 import { extractDocxQuestionPaper, isDocxUpload } from '../services/docx-question-paper.js';
 import { buildGeminiEndpoint } from '../services/gemini-auth.js';
+import {
+  inferExamPaperQuestionCeiling,
+  pdfExtractRangeChunks,
+  sequentialExpectedNumbers,
+  subjectQuestionRanges,
+} from '../utils/exam-pdf-paper-size.js';
 
 const QUESTION_CATEGORY_CSV_VALUES = [
   'Numerical',
@@ -893,7 +899,7 @@ function inferSubjectRangesFromKeyText(keyText) {
  * Split a Word/text paper into subject body chunks (excluding the trailing answer key).
  * Returns ranges the Gemini extract should cover, with the matching body text.
  */
-function splitWordPaperIntoSubjectChunks(documentText, answerKeyByNumber) {
+function splitWordPaperIntoSubjectChunks(documentText, answerKeyByNumber, paperOpts = {}) {
   const full = String(documentText || '');
   if (!full.trim()) return [];
 
@@ -945,13 +951,20 @@ function splitWordPaperIntoSubjectChunks(documentText, answerKeyByNumber) {
     .map((s) => ({ label: s, at: firstBySubject.get(s) }))
     .sort((a, b) => a.at - b.at);
 
+  const paperCeiling = inferExamPaperQuestionCeiling({
+    printedNumbers: paperOpts.printedNumbers,
+    answerKeyNumbers: [...(answerKeyByNumber?.keys?.() || [])],
+    plannedTotal: paperOpts.plannedTotal,
+    subjectSectionCount: starts.length || paperOpts.subjectSectionCount || 0,
+  });
+
   if (starts.length === 0) {
     return [
       {
         label: 'FULL',
         text: body,
         from: 1,
-        to: answerKeyByNumber?.size || 80,
+        to: paperCeiling,
       },
     ];
   }
@@ -959,13 +972,21 @@ function splitWordPaperIntoSubjectChunks(documentText, answerKeyByNumber) {
   const keyText = keyAnchor > 0 ? full.slice(keyAnchor) : full.slice(Math.floor(full.length * 0.75));
   let subjectRanges = inferSubjectRangesFromKeyText(keyText);
 
-  // Fallback 20-per-subject if key ranges missing or only a half-decade leaked through.
+  const rangeMax = [...subjectRanges.values()].reduce((m, r) => Math.max(m, Number(r?.to) || 0), 0);
+  // Fallback even grid if key ranges missing, only a half-decade leaked through,
+  // or the key only covered an 80-Q paper while this file is 120.
   const rangesLookComplete =
     subjectRanges.size >= starts.length &&
-    [...subjectRanges.values()].every((r) => r.to - r.from + 1 >= 15);
+    [...subjectRanges.values()].every((r) => r.to - r.from + 1 >= 15) &&
+    rangeMax >= Math.min(paperCeiling, 80) &&
+    (paperCeiling <= 80 || rangeMax >= paperCeiling - 5);
   if (!rangesLookComplete) {
     subjectRanges = new Map();
-    order.forEach((s, i) => subjectRanges.set(s, { from: i * 20 + 1, to: i * 20 + 20 }));
+    const even = subjectQuestionRanges(starts.length, paperCeiling);
+    starts.forEach((s, i) => {
+      const range = even[i] || even[even.length - 1];
+      if (range) subjectRanges.set(s.label, range);
+    });
   }
 
   const chunks = [];
@@ -973,7 +994,8 @@ function splitWordPaperIntoSubjectChunks(documentText, answerKeyByNumber) {
     const start = starts[i].at;
     const end = i + 1 < starts.length ? starts[i + 1].at : body.length;
     const label = starts[i].label;
-    const range = subjectRanges.get(label) || {
+    const even = subjectQuestionRanges(starts.length, paperCeiling);
+    const range = subjectRanges.get(label) || even[i] || {
       from: i * 20 + 1,
       to: i * 20 + 20,
     };
@@ -1089,6 +1111,8 @@ export async function extractQuestionsFromPdfViaGemini({
   /** Embedded Word images (png/jpeg) sent with the text for diagram recognition. */
   documentImages = [],
   fastMode = false,
+  /** Exam.totalQuestions when known — used to cover 120-Q papers instead of assuming 80. */
+  plannedTotal = 0,
 }) {
   const apiKey = getGeminiApiKey();
   if (!apiKey) {
@@ -1177,11 +1201,11 @@ Important rules:
   })();
 
   // Hard budget on Gemini calls per upload. Every call re-sends the whole PDF,
-  // so an unbounded retry cascade multiplies cost. ~6 calls handles an 80-question
-  // paper (4 range chunks + gap-fill); the cap is headroom, not the normal path.
+  // so an unbounded retry cascade multiplies cost. 80-Q papers fit in ~8 fast
+  // calls; 120-Q papers need extra range/gap budget.
   const maxCallsPerUpload = (() => {
     const n = Number(process.env.GEMINI_PDF_MAX_CALLS);
-    const fallback = fastMode ? 8 : 14;
+    const fallback = fastMode ? 12 : 16;
     return Number.isFinite(n) && n >= 3 ? Math.min(n, 40) : fallback;
   })();
   const usageTotals = { calls: 0, promptTokens: 0, outputTokens: 0 };
@@ -1523,18 +1547,8 @@ Important rules:
   };
 
   // Papers of unknown size fall back to these ranges when the first pass fails.
-  const FALLBACK_RANGE_CHUNKS = fastMode
-    ? [
-        [1, 40],
-        [41, 80],
-      ]
-    : [
-        [1, 20],
-        [21, 40],
-        [41, 60],
-        [61, 80],
-        [81, 120],
-      ];
+  // Fast mode used to stop at 80 and drop Q81–120.
+  const FALLBACK_RANGE_CHUNKS = pdfExtractRangeChunks(120, { fastMode });
 
   const presentQuestionNumbers = (rows) => {
     const set = new Set();
@@ -1545,15 +1559,22 @@ Important rules:
     return set;
   };
 
-  // Ground truth for "which questions exist": answer key ∪ printed numbers from
-  // the PDF text layer (covers Bonus questions the key skips).
-  // Word subject chunks may also imply a full 1–80 grid when the body has no
-  // printed numbers and the key failed to parse.
+  const paperCeiling = inferExamPaperQuestionCeiling({
+    printedNumbers: prepared.printedQuestionNumbers || [],
+    answerKeyNumbers: [...answerKeyByNumber.keys()],
+    plannedTotal,
+    subjectSectionCount: 0,
+  });
+
+  // Ground truth for "which questions exist": answer key ∪ printed numbers,
+  // plus 1..ceiling so 120-Q papers are not treated as 1–80.
   let expectedNumbers = (() => {
     const set = new Set(prepared.printedQuestionNumbers || []);
     for (const n of answerKeyByNumber.keys()) set.add(n);
-    // Cap runaway detections (Match column "1."/"2." noise, etc.)
-    const sorted = [...set].filter((n) => n >= 1 && n <= 120).sort((a, b) => a - b);
+    for (const n of sequentialExpectedNumbers(paperCeiling)) set.add(n);
+    const sorted = [...set]
+      .filter((n) => n >= 1 && n <= Math.max(120, paperCeiling))
+      .sort((a, b) => a - b);
     return sorted;
   })();
 
@@ -1577,14 +1598,17 @@ Important rules:
   // section (Math 1–20, Physics 21–40, …) so Gemini does not stop after Maths.
   const wordChunks =
     documentText && String(documentText).trim()
-      ? splitWordPaperIntoSubjectChunks(documentText, answerKeyByNumber)
+      ? splitWordPaperIntoSubjectChunks(documentText, answerKeyByNumber, {
+          plannedTotal,
+          printedNumbers: prepared.printedQuestionNumbers || [],
+        })
       : [];
   if (wordChunks.length >= 2) {
     const set = new Set(expectedNumbers);
     for (const c of wordChunks) {
       if (!Number.isFinite(c.from) || !Number.isFinite(c.to) || c.to < c.from) continue;
       for (let n = c.from; n <= c.to; n += 1) {
-        if (n >= 1 && n <= 120) set.add(n);
+        if (n >= 1 && n <= Math.max(120, paperCeiling)) set.add(n);
       }
     }
     expectedNumbers = [...set].sort((a, b) => a - b);
@@ -4023,6 +4047,7 @@ async function buildPdfConvertPayload({
   documentText: initialDocumentText = '',
   onProgress,
   fastMode = false,
+  plannedTotal = 0,
 }) {
   const mime = String(mimeType || '').toLowerCase();
   const isDocx = isDocxUpload(originalname, mimeType);
@@ -4060,6 +4085,7 @@ async function buildPdfConvertPayload({
     documentText,
     documentImages: docxImages,
     fastMode,
+    plannedTotal,
   });
 
   const mapExtractedType = (raw) => {
@@ -4341,6 +4367,7 @@ export const convertPdfToQuestions = async (req, res) => {
           documentText,
           onProgress,
           fastMode,
+          plannedTotal: exam.totalQuestions,
         }),
       );
     });
