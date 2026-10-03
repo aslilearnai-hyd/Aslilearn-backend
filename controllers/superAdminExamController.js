@@ -31,6 +31,10 @@ import {
   sequentialExpectedNumbers,
   subjectQuestionRanges,
 } from '../utils/exam-pdf-paper-size.js';
+import {
+  EXAM_MATH_FIELD_DESCRIPTION,
+  EXAM_PDF_MATH_FIDELITY_RULES,
+} from '../utils/exam-math-notation.js';
 
 const QUESTION_CATEGORY_CSV_VALUES = [
   'Numerical',
@@ -129,7 +133,7 @@ const PDF_QUESTION_ITEM_SCHEMA = {
     questionText: {
       type: 'STRING',
       description:
-        'Full stem as students must see it. For case/passage questions include the full case text before the question. Keep exact math grouping. No leading Q number.',
+        `Full stem as students must see it. For case/passage questions include the full case text before the question. No leading Q number. ${EXAM_MATH_FIELD_DESCRIPTION}`,
     },
     questionType: {
       type: 'STRING',
@@ -141,10 +145,10 @@ const PDF_QUESTION_ITEM_SCHEMA = {
         'From PDF only: maths|physics|chemistry|biology lowercase slug when clear from headers/context; otherwise empty string.',
     },
     marks: { type: 'NUMBER' },
-    option1: { type: 'STRING' },
-    option2: { type: 'STRING' },
-    option3: { type: 'STRING' },
-    option4: { type: 'STRING' },
+    option1: { type: 'STRING', description: EXAM_MATH_FIELD_DESCRIPTION },
+    option2: { type: 'STRING', description: EXAM_MATH_FIELD_DESCRIPTION },
+    option3: { type: 'STRING', description: EXAM_MATH_FIELD_DESCRIPTION },
+    option4: { type: 'STRING', description: EXAM_MATH_FIELD_DESCRIPTION },
     correctAnswer: { type: 'STRING' },
     explanation: { type: 'STRING' },
   },
@@ -281,19 +285,29 @@ function stripPdfOptionPrefix(text) {
 function normalizeVerbalMathInExamText(text) {
   let s = String(text || '');
   if (!s) return s;
-  // cube root of ( ... )  /  cuberoot(...)
-  s = s.replace(/\bcube\s*roots?\s+of\s*\(/gi, '∛(');
-  s = s.replace(/\bcuberoot\s*\(/gi, '∛(');
-  s = s.replace(/\bcube\s*roots?\s+of\s+(\d+)/gi, '∛$1');
-  // square root of / sqrt(
-  s = s.replace(/\bsquare\s*roots?\s+of\s*\(/gi, '√(');
-  s = s.replace(/\bsqrt\s*\(/gi, '√(');
-  s = s.replace(/\bsquare\s*roots?\s+of\s+(\d+)/gi, '√$1');
-  s = s.replace(/\bsqrt\s+(\d+)/gi, '√$1');
-  // caret powers already handled on client; light pass here
-  s = s.replace(/\^2\b/g, '²');
-  s = s.replace(/\^3\b/g, '³');
-  return s;
+  // Never rewrite delimited LaTeX; doing so can corrupt \frac, exponents, and
+  // radicals that were transcribed losslessly from the source paper.
+  return s
+    .split(/(\$\$[\s\S]*?\$\$|\$[^$\n]+?\$|\\\([\s\S]*?\\\)|\\\[[\s\S]*?\\\])/g)
+    .map((part) => {
+      if (!part || part.startsWith('$') || part.startsWith('\\(') || part.startsWith('\\[')) {
+        return part;
+      }
+      let plain = part;
+      // cube root of ( ... )  /  cuberoot(...)
+      plain = plain.replace(/\bcube\s*roots?\s+of\s*\(/gi, '∛(');
+      plain = plain.replace(/\bcuberoot\s*\(/gi, '∛(');
+      plain = plain.replace(/\bcube\s*roots?\s+of\s+(\d+)/gi, '∛$1');
+      // square root of / sqrt(
+      plain = plain.replace(/\bsquare\s*roots?\s+of\s*\(/gi, '√(');
+      plain = plain.replace(/\bsqrt\s*\(/gi, '√(');
+      plain = plain.replace(/\bsquare\s*roots?\s+of\s+(\d+)/gi, '√$1');
+      plain = plain.replace(/\bsqrt\s+(\d+)/gi, '√$1');
+      plain = plain.replace(/\^2\b/g, '²');
+      plain = plain.replace(/\^3\b/g, '³');
+      return plain;
+    })
+    .join('');
 }
 
 /**
@@ -1171,9 +1185,7 @@ Important rules:
 - If four choices a)-d) are printed, the question is MCQ — even under an "Integer Value Type Questions" heading. Only use questionType "integer" when NO options are printed.
 - Your correctAnswer must be one of the printed options and must agree with your own explanation. Work out the answer, then pick the option that matches it.
 - Strip leading "Q1." / "1." from questionText only. Strip "A." / "(a)" prefixes from option bodies.
-- MATH FIDELITY (critical): Copy expressions EXACTLY as printed — same parentheses, nesting, and operator order.
-  Prefer Unicode: √ ∛ ² ³ − × ÷. Do NOT rewrite as "cube root of" / "sqrt" / "square root of" unless the paper itself uses words.
-  Example: printed ∛(109 + √256) + √(117² − 108²) must stay that nesting — NEVER flatten to ∛(109 + √256 + √(...)).
+${EXAM_PDF_MATH_FIDELITY_RULES}
 - CASE / PASSAGE CONTEXT (critical): For Case-Based / Comprehension questions ONLY, each dependent questionText MUST begin with that case's full passage, then the question stem.
   Do NOT attach a case/passage to unrelated questions in later sections (e.g. never paste a Chemistry case onto Biology or Match questions).
   Do NOT invent or reuse one case for the whole paper — only questions that belong to that Case I / Case II / Paragraph.
