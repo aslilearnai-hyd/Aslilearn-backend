@@ -34,6 +34,8 @@ import {
 import {
   EXAM_MATH_FIELD_DESCRIPTION,
   EXAM_PDF_MATH_FIDELITY_RULES,
+  isMathAuditCandidate,
+  mergeMathAuditRows,
 } from '../utils/exam-math-notation.js';
 
 const QUESTION_CATEGORY_CSV_VALUES = [
@@ -1214,10 +1216,10 @@ ${EXAM_PDF_MATH_FIDELITY_RULES}
 
   // Hard budget on Gemini calls per upload. Every call re-sends the whole PDF,
   // so an unbounded retry cascade multiplies cost. 80-Q papers fit in ~8 fast
-  // calls; 120-Q papers need extra range/gap budget.
+  // calls; 120-Q papers need extra range/gap budget plus one visual math audit.
   const maxCallsPerUpload = (() => {
     const n = Number(process.env.GEMINI_PDF_MAX_CALLS);
-    const fallback = fastMode ? 12 : 16;
+    const fallback = fastMode ? 13 : 17;
     return Number.isFinite(n) && n >= 3 ? Math.min(n, 40) : fallback;
   })();
   const usageTotals = { calls: 0, promptTokens: 0, outputTokens: 0 };
@@ -1841,6 +1843,38 @@ ${EXAM_PDF_MATH_FIDELITY_RULES}
     // duplicate re-extractions with formatting drift — drop them.
     if (expectedNumbers.length > 0 && missingQuestionNumbers(refined).length === 0) {
       refined = refined.filter((r) => Number.isFinite(Number(r?.questionNumber)));
+    }
+
+    // A second visual pass is intentionally independent of the first extraction.
+    // Prompt-only fidelity is not enough: OCR can turn a fraction denominator
+    // into an exponent or erase multiplication brackets while still producing
+    // valid JSON. Audit only math-bearing rows, then merge only stem/options.
+    const mathAuditEnabled =
+      !documentText &&
+      String(process.env.GEMINI_PDF_MATH_AUDIT ?? 'true').trim().toLowerCase() !== 'false';
+    const mathAuditRows = refined.filter(isMathAuditCandidate).slice(0, 40);
+    if (mathAuditEnabled && mathAuditRows.length > 0 && !callBudgetExhausted()) {
+      const auditPrompt = `You are the final visual transcription auditor for an exam PDF.
+Compare ONLY the listed questions below against their printed versions in the attached PDF.
+Return one full question object for every listed questionNumber, in the same order.
+Correct transcription only: questionText and option1-option4. Do not solve, simplify, expand, factor, or substitute an equivalent expression.
+Pay special attention to stacked fraction bars and denominators, superscripts versus denominators, adjacent bracketed factors, radicals, signs, and every opening/closing bracket.
+Use inline $...$ LaTeX and \\frac{numerator}{denominator}. If the extracted text differs from the PDF, the PDF always wins.
+${EXAM_PDF_MATH_FIDELITY_RULES}
+
+ROWS TO AUDIT:
+${JSON.stringify(mathAuditRows)}`;
+      const auditResult = await tryModelWithPrompt(model, auditPrompt, true);
+      if (auditResult?.ok && Array.isArray(auditResult.parsed)) {
+        const audited = postProcessGeminiPdfQuestionRows(auditResult.parsed);
+        refined = mergeMathAuditRows(refined, audited);
+        console.log('[PDF_EXAM_EXTRACT] visual math audit', {
+          requested: mathAuditRows.length,
+          returned: audited.length,
+        });
+      } else {
+        console.warn('[PDF_EXAM_EXTRACT] visual math audit unavailable; keeping first-pass rows');
+      }
     }
 
     const keyTrust = assessAnswerKeyTrust({

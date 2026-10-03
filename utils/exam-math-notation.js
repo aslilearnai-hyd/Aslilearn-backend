@@ -15,3 +15,56 @@ export const EXAM_PDF_MATH_FIDELITY_RULES = `- MATH FIDELITY (critical): Transcr
 
 export const EXAM_MATH_FIELD_DESCRIPTION =
   'Lossless source transcription. Put math in $...$ LaTeX; use \\frac{numerator}{denominator} for every printed fraction and preserve all grouping/operators.';
+
+const MATH_SIGNAL = /(\\frac|\\sqrt|\$[^$]+\$|[=<>^√∛]|\d\s*[+*/−-]\s*[A-Za-z(]|[A-Za-z)]\s*[+*/−-]\s*\d)/;
+
+export function isMathAuditCandidate(row) {
+  if (String(row?.subject || '').trim().toLowerCase() === 'maths') return true;
+  const text = [
+    row?.questionText,
+    row?.option1,
+    row?.option2,
+    row?.option3,
+    row?.option4,
+  ]
+    .map((value) => String(value || ''))
+    .join(' ');
+  return MATH_SIGNAL.test(text);
+}
+
+/**
+ * Merge a visual math audit without allowing it to change metadata or silently
+ * detach a text answer from its corrected option.
+ */
+export function mergeMathAuditRows(originalRows, auditedRows) {
+  const auditedByNumber = new Map(
+    (Array.isArray(auditedRows) ? auditedRows : [])
+      .map((row) => [Number(row?.questionNumber), row])
+      .filter(([number]) => Number.isFinite(number) && number >= 1),
+  );
+  const mathFields = ['questionText', 'option1', 'option2', 'option3', 'option4'];
+
+  return (Array.isArray(originalRows) ? originalRows : []).map((row) => {
+    if (!isMathAuditCandidate(row)) return row;
+    const audit = auditedByNumber.get(Number(row?.questionNumber));
+    if (!audit) return row;
+
+    const oldOptions = [row?.option1, row?.option2, row?.option3, row?.option4].map((value) =>
+      String(value || '').trim(),
+    );
+    const next = { ...row };
+    for (const field of mathFields) {
+      const corrected = String(audit?.[field] || '').trim();
+      if (corrected) next[field] = corrected;
+    }
+    const correctedOptions = [next.option1, next.option2, next.option3, next.option4].map((value) =>
+      String(value || '').trim(),
+    );
+    const oldAnswer = String(row?.correctAnswer || '').trim().toLowerCase();
+    const oldAnswerIndex = oldOptions.findIndex((option) => option.toLowerCase() === oldAnswer);
+    if (oldAnswerIndex >= 0 && correctedOptions[oldAnswerIndex]) {
+      next.correctAnswer = correctedOptions[oldAnswerIndex];
+    }
+    return next;
+  });
+}
