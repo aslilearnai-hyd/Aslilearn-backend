@@ -136,6 +136,69 @@ async function answerLatestRealExam({ userMessage, viewerRole, viewerUserId }) {
   return { message: `The latest exam is “${exam.title}”.`, exam };
 }
 
+export function auditSchoolBreakdownTimeframe(message) {
+  const text = String(message || '').toLowerCase();
+  const isAudit = /\baudit(?:\s+logs?|\s+log\s+entries|\s+entries)\b/.test(text);
+  const bySchool = /\b(?:group(?:ed|ing)?|breakdown|split)\s+(?:it\s+)?by\s+schools?\b|\bper\s+school\b/.test(text);
+  if (!isAudit || !bySchool) return '';
+  const lastDays = text.match(/\b(?:last|past|previous)\s+(\d{1,3})\s+days?\b/);
+  if (lastDays) return `last_${Math.min(365, Math.max(1, Number(lastDays[1]) || 1))}_days`;
+  if (/\btoday\b/.test(text)) return 'today';
+  if (/\bthis\s+week\b/.test(text)) return 'this_week';
+  if (/\bthis\s+month\b/.test(text)) return 'this_month';
+  return 'all';
+}
+
+export async function answerAuditLogsBySchool({
+  userMessage,
+  viewerRole,
+  viewerUserId,
+  execute = executeDynamicDbPlan,
+}) {
+  const timeframe = auditSchoolBreakdownTimeframe(userMessage);
+  if (!timeframe || String(viewerRole || '').toLowerCase() !== 'super-admin') return null;
+  const db = await execute({
+    viewerRole,
+    viewerUserId,
+    plan: {
+      module: 'audit_logs',
+      operation: 'aggregate',
+      filters: [],
+      selectFields: [],
+      groupBy: ['school'],
+      aggregates: [{ func: 'count', field: '*', as: 'count' }],
+      sort: [{ field: 'count', direction: 'desc' }],
+      limit: 100,
+      timeframe,
+      dateField: 'at',
+    },
+  });
+  if (!db?.ok) return null;
+  const rows = Array.isArray(db.facts?.rows) ? db.facts.rows : [];
+  const total = rows.reduce((sum, row) => sum + Math.max(0, Number(row?.count) || 0), 0);
+  const timeframeLabel = timeframe === 'all'
+    ? 'for all available dates'
+    : timeframe === 'today'
+      ? 'today'
+      : timeframe === 'this_week'
+        ? 'this week'
+        : timeframe === 'this_month'
+          ? 'this month'
+          : `in the last ${timeframe.match(/\d+/)?.[0] || ''} days`;
+  const breakdown = rows.map((row, index) => {
+    const school = String(row?._id?.school || row?.school || 'Platform / unscoped').trim();
+    return `${index + 1}. ${school}: ${Math.max(0, Number(row?.count) || 0)}`;
+  });
+  const message = rows.length
+    ? `Audit log entries ${timeframeLabel}: ${total} across ${rows.length} school group${rows.length === 1 ? '' : 's'}.\n\n${breakdown.join('\n')}`
+    : `No audit log entries were recorded ${timeframeLabel}.`;
+  return {
+    message,
+    facts: { ...db.facts, timeframe, total },
+    plan: { mode: 'database', module: 'audit_logs', operation: 'aggregate', timeframe, groupBy: ['school'] },
+  };
+}
+
 async function answerNamedSchoolMetric({ userMessage, viewerRole, viewerUserId }) {
   if (!isNamedSchoolMetricQuery(userMessage)) return null;
   const schoolName = extractSchoolNameQuery(userMessage);
@@ -186,6 +249,18 @@ export async function runDynamicAiQuery({
   viewerUserId,
 }) {
   userMessage = resolveClassRosterQuestion(userMessage, history);
+
+  // This common compliance question has one exact, safe query shape. Do not let
+  // an LLM invent timeframe/grouping values before the scoped executor runs.
+  const auditBySchool = await answerAuditLogsBySchool({ userMessage, viewerRole, viewerUserId });
+  if (auditBySchool) {
+    return {
+      ok: true,
+      ...auditBySchool,
+      auditQuery: `COUNT audit_logs GROUP BY school (${auditBySchool.facts.timeframe}, IST)`,
+      notes: ['Deterministic read-only audit-log aggregation joined to school identity.'],
+    };
+  }
 
   // Deterministic school-admin paths must not wait on (or be overwritten by) the
   // Gemini multi-module planner — that is what made Vidya look "completely dead".

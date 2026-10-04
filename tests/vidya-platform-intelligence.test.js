@@ -7,13 +7,21 @@ import { MODULE_REGISTRY, moduleSchemaFields } from '../services/vidya-ai-contro
 import { executeDynamicDbPlan } from '../services/vidya-ai-control/db-access-layer.js';
 import { platformModuleScope, platformReadableFields } from '../services/vidya-ai-control/platform-access.js';
 import { redactPlatformValue } from '../services/vidya-ai-control/field-policy.js';
-import { buildPlatformCatalog, resolveEvidenceFilters, runPlatformIntelligence } from '../services/vidya-platform-intelligence.js';
+import { buildPlatformCatalog, cleanPlatformAnswer, resolveEvidenceFilters, runPlatformIntelligence } from '../services/vidya-platform-intelligence.js';
 
 const oid = n => new mongoose.Types.ObjectId(`507f1f77bcf86cd7994390${n}`);
 const teacher = { role: 'teacher', userId: String(oid(11)), viewerId: oid(11), studentIds: [oid(12)], classIds: [oid(13)], adminIds: [oid(14)], schoolIds: [oid(15)], teacherIds: [oid(11)], subjectIds: [oid(16)], classNumbers: ['7'], scopeLabel: 'Assigned students' };
 const root = { role: 'super-admin', userId: 'root', scopeLabel: 'Platform-wide' };
 const options = { viewerRole: 'teacher', viewerUserId: teacher.userId, access: teacher };
 const resolved = value => ({ maxTimeMS() { return this; }, then: (yes, no) => Promise.resolve(value).then(yes, no) });
+
+test('visible platform answers remove internal citations and flatten markdown tables', () => {
+  const answer = cleanPlatformAnswer(`Schools: 2 [Q:schoolCount]\n\n| School | Place |\n| --- | --- |\n| Alpha | Hyderabad |\n| Beta | Vizag |`);
+  assert.doesNotMatch(answer, /\[Q:/);
+  assert.doesNotMatch(answer, /^\s*\|/m);
+  assert.match(answer, /School: Alpha · Place: Hyderabad/);
+  assert.match(answer, /School: Beta · Place: Vizag/);
+});
 
 test('school directory wording fetches scoped records without depending on the intent model', async () => {
   for (const access of [root, teacher]) {

@@ -1,0 +1,52 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+
+import {
+  answerAuditLogsBySchool,
+  auditSchoolBreakdownTimeframe,
+} from '../services/vidya-ai-control/ai-query-engine.js';
+import { isReportsOverviewQuery } from '../services/vidya-ai-control/school-overview-facts.js';
+
+test('platform overview quick question uses the deterministic overview path', () => {
+  assert.equal(isReportsOverviewQuery('Platform overview — schools, students, teachers'), true);
+});
+
+test('audit-school intent normalizes common relative timeframe wording', () => {
+  assert.equal(
+    auditSchoolBreakdownTimeframe('How many audit log entries were recorded in the last 7 days, grouped by school?'),
+    'last_7_days',
+  );
+  assert.equal(auditSchoolBreakdownTimeframe('Audit logs split per school this month'), 'this_month');
+  assert.equal(auditSchoolBreakdownTimeframe('How many students by school?'), '');
+});
+
+test('audit-school answer runs a fixed scoped aggregate and formats exact results', async () => {
+  let received;
+  const result = await answerAuditLogsBySchool({
+    userMessage: 'How many audit log entries were recorded in the past 7 days, grouped by school?',
+    viewerRole: 'super-admin',
+    viewerUserId: 'root',
+    execute: async request => {
+      received = request;
+      return {
+        ok: true,
+        facts: {
+          module: 'audit_logs',
+          operation: 'aggregate',
+          rows: [
+            { _id: { school: 'Alpha School' }, count: 8 },
+            { _id: { school: 'Beta School' }, count: 3 },
+          ],
+        },
+      };
+    },
+  });
+
+  assert.equal(received.plan.timeframe, 'last_7_days');
+  assert.equal(received.plan.dateField, 'at');
+  assert.deepEqual(received.plan.groupBy, ['school']);
+  assert.deepEqual(received.plan.aggregates, [{ func: 'count', field: '*', as: 'count' }]);
+  assert.match(result.message, /11 across 2 school groups/);
+  assert.match(result.message, /Alpha School: 8/);
+  assert.equal(result.facts.total, 11);
+});

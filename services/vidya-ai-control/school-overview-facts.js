@@ -446,7 +446,7 @@ export async function buildControlOverviewFacts({ viewerRole, viewerUserId }) {
 
 export function isReportsOverviewQuery(message) {
   const lower = String(message || '').toLowerCase();
-  return /(reports?\s+overview|overview\s+(of\s+)?(the\s+)?reports?|show\s+(me\s+)?(the\s+)?reports?\s+overview|dashboard\s+overview|school\s+(reports?\s+)?overview|reports?\s+summary|attendance\s+(and\s+)?performance\s+overview)/i.test(
+  return /(reports?\s+overview|overview\s+(of\s+)?(the\s+)?reports?|show\s+(me\s+)?(the\s+)?reports?\s+overview|dashboard\s+overview|(?:school|platform)\s+(reports?\s+)?overview|reports?\s+summary|attendance\s+(and\s+)?performance\s+overview)/i.test(
     lower
   );
 }
