@@ -1,3 +1,4 @@
+import { AsyncLocalStorage } from 'node:async_hooks';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import https from 'https';
@@ -426,11 +427,14 @@ function estimateTokensFromText(text) {
   return Math.max(1, Math.ceil(words * 1.3));
 }
 
-let activeTokenUsageSession = null;
+// Token usage must be request-local. A single process-global variable lets two
+// simultaneous teacher/student generations overwrite or end each other's
+// sessions, producing missing or inflated cost records.
+const tokenUsageStorage = new AsyncLocalStorage();
 
 /** Start accumulating LLM token usage for one AI PDF / generation run. */
 export function beginTokenUsageSession(label = 'generation') {
-  activeTokenUsageSession = {
+  const session = {
     label: String(label || 'generation'),
     startedAt: new Date().toISOString(),
     calls: [],
@@ -441,17 +445,18 @@ export function beginTokenUsageSession(label = 'generation') {
       callCount: 0,
     },
   };
-  return activeTokenUsageSession;
+  tokenUsageStorage.enterWith(session);
+  return session;
 }
 
 export function getTokenUsageSession() {
-  return activeTokenUsageSession;
+  return tokenUsageStorage.getStore() || null;
 }
 
 /** End session and return usage snapshot (totals + per-call breakdown). */
 export function endTokenUsageSession() {
-  const session = activeTokenUsageSession;
-  activeTokenUsageSession = null;
+  const session = tokenUsageStorage.getStore() || null;
+  tokenUsageStorage.enterWith(null);
   if (!session) {
     return {
       label: 'generation',
@@ -468,7 +473,8 @@ export function endTokenUsageSession() {
   };
 }
 
-function recordTokenUsage(entry = {}) {
+export function recordTokenUsage(entry = {}) {
+  const activeTokenUsageSession = tokenUsageStorage.getStore();
   if (!activeTokenUsageSession) return;
   const promptTokens = Number(entry.promptTokens || 0);
   const completionTokens = Number(entry.completionTokens || 0);

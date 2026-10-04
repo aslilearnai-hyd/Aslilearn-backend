@@ -11,6 +11,33 @@ const SHARED_SECTION_SCHEMA = `"objectives": { "items": ["3-5 measurable objecti
 "teacher": { "timing": "how it fits a 35-45 min period", "tlm": ["low-cost Indian teaching aids"], "tips": ["classroom management / blackboard tip"] },
 "reallife": { "connection": "authentic Indian real-life example", "family": "parent/community link", "reflection": "one short student reflection prompt" }`;
 
+/**
+ * Student tools keep the exact same six-section keys so every existing parser
+ * and viewer remains compatible. The wording removes teacher-only output and
+ * repeated prose while retaining every answer and worked numerical solution.
+ */
+const STUDENT_SHARED_SECTION_SCHEMA = `"objectives": { "items": ["2-3 concise measurable study outcomes"], "alignment": "one short NCERT/SCERT alignment line", "bloom": ["Remember: …", "Apply: …", "Analyze: …"] },
+"differentiation": { "support": "one concise scaffold for a learner who needs help", "core": "one concise independent-practice direction", "stretch": "one concise advanced challenge" },
+"assessment": { "answerKey": [{ "q": "question number or very short label only — never repeat the full stem", "answer": "complete but concise answer", "working": "steps only for numericals and questions worth 2+ marks; otherwise one short justification" }], "rubric": "one concise marking line", "commonErrors": ["at most 2 specific likely errors"] },
+"teacher": { "timing": "short self-study time suggestion", "tlm": [], "tips": ["one practical student revision or attempt tip — no teacher/classroom-management advice"] },
+"reallife": { "connection": "one concise authentic Indian application", "family": "one optional home/community connection", "reflection": "one short student reflection prompt" }`;
+
+export const STUDENT_TOOL_SLUGS = Object.freeze([
+  'smart-study-guide-generator',
+  'smart-qa-practice-generator',
+  'concept-breakdown-explainer',
+  'chapter-summary-creator',
+  'my-study-decks',
+  'mock-test-builder',
+  'project-idea-lab',
+  'reading-practice-room',
+  'study-schedule-maker',
+]);
+
+export function isStudentToolSlug(toolSlug) {
+  return STUDENT_TOOL_SLUGS.includes(String(toolSlug || '').trim());
+}
+
 /** Core JSON shape per content family. */
 const FAMILY_CORE = {
   questions: `"core": { "title": "specific title naming the subtopic", "instructions": "student instructions + total marks + time", "sectionA_mcq": [{ "question": "…", "options": ["A) …","B) …","C) …","D) …"], "answer": "B) …", "marks": 1 }], "sectionB_fib": [{ "question": "sentence with a single ___ blank", "answer": "exact missing term", "marks": 1 }], "sectionC_short": [{ "question": "…", "answer": "model answer", "marks": 2 }], "sectionD_application": [{ "question": "real-life / numerical / case-based", "answer": "worked answer", "marks": 3 }], "sectionE_long": [{ "question": "long-answer (only if the tool needs it)", "answer": "model answer", "marks": 5 }] }`,
@@ -81,12 +108,23 @@ export function buildToolPack(toolSlug) {
       coreSchema = `${coreSchema.slice(0, close).trimEnd()}, ${pack.coreExtra} ${coreSchema.slice(close)}`;
     }
   }
-  const instructions = `TOOL: ${pack.title}\nSECTION 1 (core) RULES:\n${pack.coreRules}`;
+  const studentTool = isStudentToolSlug(toolSlug);
+  const instructions = `TOOL: ${pack.title}\n${
+    studentTool
+      ? 'AUDIENCE: STUDENT. Keep all required learning content, questions, answers, and worked numericals. Do not generate teacher lesson-delivery, classroom-management, or teaching-aid prose. Never repeat a full question stem in the answer key.'
+      : 'AUDIENCE: TEACHER.'
+  }\nSECTION 1 (core) RULES:\n${pack.coreRules}`;
   const responseSchema = `{
   ${coreSchema},
-  ${SHARED_SECTION_SCHEMA}
+  ${studentTool ? STUDENT_SHARED_SECTION_SCHEMA : SHARED_SECTION_SCHEMA}
 }`;
-  return { title: pack.title, family: pack.family, instructions, responseSchema };
+  return {
+    title: pack.title,
+    family: pack.family,
+    audience: studentTool ? 'student' : 'teacher',
+    instructions,
+    responseSchema,
+  };
 }
 
 export function isV2SupportedTool(toolSlug) {

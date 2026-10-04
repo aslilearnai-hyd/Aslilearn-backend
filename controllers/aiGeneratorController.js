@@ -199,7 +199,7 @@ function isDeprecatedGeneratorRecord(record) {
 
 /** Fields loaded for accordion list views — omit full bodies (fetch on View). */
 export const GENERATOR_LIST_SELECT =
-  'toolName toolDisplayName board classLabel subject topic subtopic createdAt updatedAt metadata.bookTitle metadata.extraParams metadata.generationVariant metadata.formatSource metadata.bookGenerator metadata.listPreview metadata.cost';
+  'toolName toolDisplayName board classLabel subject topic subtopic createdAt updatedAt metadata.bookTitle metadata.extraParams metadata.generationVariant metadata.formatSource metadata.bookGenerator metadata.listPreview metadata.cost metadata.tokenUsage';
 
 /** Short list preview only — full content loads on View/Edit. */
 const GENERATOR_LIST_PREVIEW_CHARS = 280;

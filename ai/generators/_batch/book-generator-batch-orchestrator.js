@@ -56,6 +56,7 @@ import { retrieveBookContextForGeneration, buildBookContextTextForVariant } from
 import {
   isBookBasedToolSlug,
   getBookBasedToolDisplayName,
+  BOOK_BASED_TOOL_META,
   BOOK_GENERATOR_DEFAULT_BATCH_SIZE,
   BOOK_GENERATOR_MAX_INR,
 } from '../shared/bookBasedTools.js';
@@ -366,6 +367,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
       : [];
     const historicalTitles = Array.isArray(historical.titles) ? [...historical.titles] : [];
     const conceptMasteryBatch = toolSlug === 'concept-mastery-helper';
+    const toolAudience = BOOK_BASED_TOOL_META[toolSlug]?.audience || 'teacher';
     const savedRecords = [];
 
     // Cross-slot dedup: each saved V2 slot appends its questions so later slots avoid them.
@@ -389,6 +391,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             subtopicName: isWholeChapter ? '' : subtopicName,
             subTopics: subTopicList.length > 1 ? subTopicList : undefined,
             toolSlug,
+            audience: toolAudience,
             bookTitle: book.title,
             topK: conceptMasteryBatch ? 4 : isWholeChapter || subTopicList.length > 1 ? 6 : undefined,
           })
@@ -440,6 +443,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
         topicName,
         subtopicName,
         toolSlug,
+        audience: toolAudience,
         bookTitle: book.title,
       };
 

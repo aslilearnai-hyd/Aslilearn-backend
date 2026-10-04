@@ -2,8 +2,18 @@ import BookChunk from '../../../models/BookChunk.js';
 import { generateEmbedding } from '../pdf/pdf-rag-service.js';
 
 const DEFAULT_TOP_K = Number(process.env.BOOK_RAG_TOP_K || process.env.RAG_TOP_K || 4);
-function getBookRagMaxContextChars() {
+export function getBookRagMaxContextChars(audience = '') {
+  const isStudent = String(audience || '').trim().toLowerCase() === 'student';
+  const audienceEnv = Number(
+    isStudent
+      ? process.env.BOOK_RAG_STUDENT_MAX_CONTEXT_CHARS
+      : process.env.BOOK_RAG_TEACHER_MAX_CONTEXT_CHARS,
+  );
+  if (Number.isFinite(audienceEnv) && audienceEnv > 0) return audienceEnv;
   const env = Number(process.env.BOOK_RAG_MAX_CONTEXT_CHARS);
+  // Student tools need precise grounding, but not a long teacher reference
+  // packet. Four focused passages fit safely in 6.5k characters.
+  if (isStudent) return Number.isFinite(env) && env > 0 ? Math.min(env, 6500) : 6500;
   if (Number.isFinite(env) && env > 0) return env;
   const costSaver =
     String(process.env.AI_GENERATOR_COST_SAVER ?? 'true').trim().toLowerCase() !== 'false' &&
@@ -116,11 +126,17 @@ export function formatBookContextForPrompt(chunks = [], meta = {}) {
 
   const blocks = [];
   let used = 0;
+  const maxContextChars = getBookRagMaxContextChars(meta.audience);
   for (let i = 0; i < chunks.length; i += 1) {
     const c = chunks[i];
     const label = [c.chapter, c.topic, c.subtopic].filter(Boolean).join(' › ') || `Passage ${i + 1}`;
     const block = `[${i + 1}] (${label})\n${normalizeSpaces(c.content || c.chunkText || '')}`;
-    if (used + block.length > getBookRagMaxContextChars()) break;
+    if (used + block.length > maxContextChars) {
+      // Never return an ungrounded prompt just because one stored chunk is
+      // unusually large. Keep the start of the highest-ranked passage.
+      if (blocks.length === 0) blocks.push(block.slice(0, maxContextChars));
+      break;
+    }
     blocks.push(block);
     used += block.length;
   }
@@ -245,6 +261,7 @@ export async function retrieveBookContextForGeneration(scope = {}) {
     bookTitle: scope.bookTitle,
     subject: scope.subjectName || scope.subject,
     class: scope.className || scope.class,
+    audience: scope.audience,
   });
   const curriculumBlock = buildCurriculumTargetBlock(scope);
   const contextText = bookContext
@@ -281,6 +298,7 @@ export function buildBookContextTextForVariant(ragBase, scope = {}, variantIndex
     bookTitle: scope.bookTitle,
     subject: scope.subjectName || scope.subject,
     class: scope.className || scope.class,
+    audience: scope.audience,
   });
   const variantNote =
     variantIndex > 1
