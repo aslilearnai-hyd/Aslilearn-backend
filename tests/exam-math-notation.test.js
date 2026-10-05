@@ -5,6 +5,7 @@ import { MASTER_SYSTEM_PROMPT } from '../ai/prompt-versioning/master-prompt.js';
 import {
   EXAM_MATH_FIELD_DESCRIPTION,
   EXAM_PDF_MATH_FIDELITY_RULES,
+  flagWordMathTranscriptionConflicts,
   isMathAuditCandidate,
   mergeMathAuditRows,
 } from '../utils/exam-math-notation.js';
@@ -87,5 +88,28 @@ describe('exam math notation contracts', () => {
     assert.equal(merged.option3, '$\\frac{(n+2)(n+3)}{2}$');
     assert.equal(merged.correctAnswer, '$\\frac{(n+2)(n+3)}{2}$');
     assert.equal(merged.explanation, 'One of two consecutive integers is even.');
+  });
+
+  it('flags a Word fraction that the extraction changed into an exponent', () => {
+    const source = '1. Which expression is always natural?\na) $\\frac{n^{2}+2}{2}$\nb) $n^{2}-1$\nc) $\\frac{(n+2)(n+3)}{2}$\nd) $\\frac{n(n+1)}{4}$\n2. Next question';
+    const rows = [{
+      questionNumber: 1,
+      questionText: 'Which expression is always natural?',
+      option1: '$n^2+2^2$',
+      option2: '$n^2-1$',
+      option3: '$\\frac{n+2}{n+3^2}$',
+      option4: '$\\frac{n(n+1)}{4}$',
+      correctAnswer: '$n^2+2^2$',
+    }];
+    const [flagged] = flagWordMathTranscriptionConflicts(rows, source);
+    assert.equal(flagged.answerConflict, true);
+    assert.equal(flagged.conflictReason, 'math_transcription');
+    assert.equal(flagged.option1, rows[0].option1);
+    const [faithful] = flagWordMathTranscriptionConflicts([{
+      ...rows[0],
+      option1: '$\\frac{n^2+2}{2}$',
+      option3: '$\\frac{(n+2)(n+3)}{2}$',
+    }], source);
+    assert.equal(faithful.answerConflict, undefined);
   });
 });

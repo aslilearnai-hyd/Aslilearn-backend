@@ -34,6 +34,7 @@ import {
 import {
   EXAM_MATH_FIELD_DESCRIPTION,
   EXAM_PDF_MATH_FIDELITY_RULES,
+  flagWordMathTranscriptionConflicts,
   isMathAuditCandidate,
   mergeMathAuditRows,
 } from '../utils/exam-math-notation.js';
@@ -1909,6 +1910,10 @@ ${JSON.stringify(mathAuditRows)}`;
         refined = await verifyAnswersWithTextPass(model, refined);
         refined = flagAnswersContradictedByExplanation(refined);
       }
+    }
+
+    if (documentText) {
+      refined = flagWordMathTranscriptionConflicts(refined, documentText);
     }
 
     // Prefer stable order by printed question number when available
@@ -4280,6 +4285,8 @@ async function buildPdfConvertPayload({
             ? "Answer needs checking — this question's own explanation points to a different option"
             : r.conflictReason === 'printed_key'
               ? "Answer needs checking — the paper's printed key disagrees with the question"
+              : r.conflictReason === 'math_transcription'
+                ? 'Math expression differs from the Word equation — compare every fraction, exponent, and option with the original paper before saving'
               : 'Answer needs checking';
     }
     const solvable = flags.length === 0 && r.answerConflict !== true;
@@ -4310,7 +4317,7 @@ async function buildPdfConvertPayload({
   const flagged = normalized.filter((r) => !r.solvable).length;
   const withImages = normalized.filter((r) => r.questionImage).length;
   const message =
-    `Extracted ${normalized.length} question(s) from PDF` +
+    `Extracted ${normalized.length} question(s) from ${isDocx ? 'Word' : 'PDF'}` +
     (paperImages.length
       ? `, ${paperImages.length} figure(s) available — assign manually`
       : '') +

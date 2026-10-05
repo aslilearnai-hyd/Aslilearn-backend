@@ -10,6 +10,7 @@
  * the right question — not sprayed in filename order onto Q1, Q2, …
  */
 import AdmZip from 'adm-zip';
+import { load as loadXml } from 'cheerio';
 
 const DOCX_MIMES = [
   'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
@@ -33,6 +34,52 @@ function decodeXmlEntities(text) {
     .replace(/&amp;/g, '&');
 }
 
+/** Preserve Word's OMML equations before the XML tags are flattened to text. */
+function wordEquationToLatex(xml) {
+  const $ = loadXml(xml, { xmlMode: true });
+  const math = $.root().find('*').toArray().find((node) => node.name === 'm:oMath');
+  if (!math) return '';
+  const elements = (node) => (node?.children || []).filter((child) => child.type === 'tag');
+  const child = (node, name) => elements(node).find((part) => part.name === name);
+  const property = (node, propertyName, valueName) =>
+    child(child(node, propertyName), valueName)?.attribs?.['m:val'];
+  const render = (node) => {
+    if (!node) return '';
+    const name = node.name;
+    if (name === 'm:t') return (node.children || []).map((part) => part.data || '').join('');
+    if (name === 'm:r') return elements(node).filter((part) => part.name === 'm:t').map(render).join('');
+    if (name === 'm:f') {
+      return `\\frac{${render(child(node, 'm:num'))}}{${render(child(node, 'm:den'))}}`;
+    }
+    if (name === 'm:sSup' || name === 'm:sSub' || name === 'm:sSubSup') {
+      const base = render(child(node, 'm:e'));
+      const sub = render(child(node, 'm:sub'));
+      const sup = render(child(node, 'm:sup'));
+      return `${base}${sub ? `_{${sub}}` : ''}${sup ? `^{${sup}}` : ''}`;
+    }
+    if (name === 'm:rad') {
+      const degree = render(child(node, 'm:deg'));
+      const body = render(child(node, 'm:e'));
+      return degree ? `\\sqrt[${degree}]{${body}}` : `\\sqrt{${body}}`;
+    }
+    if (name === 'm:d') {
+      const start = property(node, 'm:dPr', 'm:begChr') ?? '(';
+      const end = property(node, 'm:dPr', 'm:endChr') ?? ')';
+      return `${start}${elements(node).filter((part) => part.name === 'm:e').map(render).join(',')}${end}`;
+    }
+    if (name === 'm:bar') return `\\overline{${render(child(node, 'm:e'))}}`;
+    if (name === 'm:acc') return `\\hat{${render(child(node, 'm:e'))}}`;
+    return elements(node)
+      .filter((part) => !part.name.endsWith('Pr'))
+      .map(render)
+      .join('');
+  };
+  const latex = render(math).trim();
+  // Keep comparisons intact through the later generic XML-tag removal.
+  const xmlSafe = latex.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  return xmlSafe ? `$${xmlSafe}$` : '';
+}
+
 /**
  * document.xml is a flat run of <w:p> paragraphs containing <w:t> text runs.
  * Paragraph and explicit break boundaries become newlines so question numbering
@@ -40,9 +87,15 @@ function decodeXmlEntities(text) {
  */
 function documentXmlToText(xml) {
   let out = String(xml || '');
+  out = out.replace(/<m:oMath\b[^>]*>[\s\S]*?<\/m:oMath>/g, (equation) =>
+    wordEquationToLatex(equation) || equation,
+  );
   out = out.replace(/<w:tab\b[^>]*\/>/g, '\t');
   out = out.replace(/<w:br\b[^>]*\/>/g, '\n');
   out = out.replace(/<\/w:p>/g, '\n');
+  // Choices are often laid out in a Word table. Keep cell boundaries instead
+  // of joining the denominator of one option to the next option's label.
+  out = out.replace(/<\/w:tc>/g, '\n');
   out = out.replace(/<w:t\b[^>]*>([\s\S]*?)<\/w:t>/g, (_, inner) => inner);
   out = out.replace(/<[^>]+>/g, '');
   out = decodeXmlEntities(out);

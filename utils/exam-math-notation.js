@@ -82,3 +82,39 @@ export function mergeMathAuditRows(originalRows, auditedRows) {
     return next;
   });
 }
+
+function comparableMath(value) {
+  return String(value || '')
+    .replace(/\\(?:left|right)/g, '')
+    .replace(/\^\{([^{}])\}/g, '^$1')
+    .replace(/_\{([^{}])\}/g, '_$1')
+    .replace(/[\s$]/g, '');
+}
+
+/** Flag Word equations that the model changed despite the source OMML transcription. */
+export function flagWordMathTranscriptionConflicts(rows, sourceText) {
+  const starts = [...String(sourceText || '').matchAll(/(?:^|\n)\s*(?:Q\s*)?(\d{1,3})[.)]\s+/gi)]
+    .map((match) => ({ number: Number(match[1]), at: match.index }));
+  const sourceByNumber = new Map();
+  for (let i = 0; i < starts.length; i += 1) {
+    const start = starts[i];
+    const end = starts[i + 1]?.at ?? sourceText.length;
+    const block = sourceText.slice(start.at, end);
+    const expressions = [...block.matchAll(/\$([^$]+)\$/g)].map((match) => comparableMath(match[1]));
+    if (expressions.length) sourceByNumber.set(start.number, expressions);
+  }
+  return (rows || []).map((row) => {
+    const sourceExpressions = sourceByNumber.get(Number(row?.questionNumber));
+    if (!sourceExpressions?.length) return row;
+    const extracted = comparableMath([
+      row.questionText, row.option1, row.option2, row.option3, row.option4,
+    ].join(' '));
+    const missing = sourceExpressions.filter((expression) => !extracted.includes(expression));
+    if (!missing.length) return row;
+    return {
+      ...row,
+      answerConflict: true,
+      conflictReason: 'math_transcription',
+    };
+  });
+}
