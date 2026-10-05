@@ -27,6 +27,8 @@ describe('exam math notation contracts', () => {
   it('selects math rows for a second visual audit', () => {
     assert.equal(isMathAuditCandidate({ subject: 'maths', questionText: 'Natural numbers' }), true);
     assert.equal(isMathAuditCandidate({ subject: '', option1: '$\\frac{n+1}{2}$' }), true);
+    assert.equal(isMathAuditCandidate({ subject: '', option1: 'n² + 2²' }), true);
+    assert.equal(isMathAuditCandidate({ subject: '', option1: '(n+2)(n+3)' }), true);
     assert.equal(isMathAuditCandidate({ subject: 'english', questionText: 'Choose the noun.' }), false);
   });
 
@@ -55,5 +57,35 @@ describe('exam math notation contracts', () => {
     assert.equal(merged.option3, '$\\frac{(n+2)(n+3)}{2}$');
     assert.equal(merged.correctAnswer, '$\\frac{(n+2)(n+3)}{2}$');
     assert.equal(merged.marks, 1);
+  });
+
+  it('uses the independently solved audit answer after repairing a fraction', () => {
+    const original = [{
+      questionNumber: 1,
+      subject: 'maths',
+      questionText: 'Which expression is always a natural number?',
+      option1: '$n^2+2^2$',
+      option2: '$n^2-1$',
+      option3: '$\\frac{n+2}{n+3^2}$',
+      option4: '$\\frac{n(n+1)}{4}$',
+      correctAnswer: '$n^2+2^2$',
+      explanation: 'The first-pass OCR chose A.',
+    }];
+    const audited = [{
+      questionNumber: 1,
+      questionText: 'Which expression is always a natural number?',
+      option1: '$\\frac{n^2+2}{2}$',
+      option2: '$n^2-1$',
+      option3: '$\\frac{(n+2)(n+3)}{2}$',
+      option4: '$\\frac{n(n+1)}{4}$',
+      correctAnswer: '$\\frac{(n+2)(n+3)}{2}$',
+      explanation: 'One of two consecutive integers is even.',
+    }];
+
+    const [merged] = mergeMathAuditRows(original, audited);
+    assert.equal(merged.option1, '$\\frac{n^2+2}{2}$');
+    assert.equal(merged.option3, '$\\frac{(n+2)(n+3)}{2}$');
+    assert.equal(merged.correctAnswer, '$\\frac{(n+2)(n+3)}{2}$');
+    assert.equal(merged.explanation, 'One of two consecutive integers is even.');
   });
 });

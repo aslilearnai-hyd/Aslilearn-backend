@@ -1223,7 +1223,14 @@ ${EXAM_PDF_MATH_FIDELITY_RULES}
     return Number.isFinite(n) && n >= 3 ? Math.min(n, 40) : fallback;
   })();
   const usageTotals = { calls: 0, promptTokens: 0, outputTokens: 0 };
-  const callBudgetExhausted = () => usageTotals.calls >= maxCallsPerUpload;
+  const mathAuditEnabled =
+    !documentText &&
+    String(process.env.GEMINI_PDF_MATH_AUDIT ?? 'true').trim().toLowerCase() !== 'false';
+  // Keep one full-PDF request available for the final visual math audit. Gap
+  // recovery used to consume the last call, silently skipping fraction repair.
+  let reserveMathAuditCall = mathAuditEnabled;
+  const callBudgetExhausted = () =>
+    usageTotals.calls >= maxCallsPerUpload - (reserveMathAuditCall ? 1 : 0);
 
   const fetchWithTimeout = async (url, options) => {
     if (!requestTimeoutMs) {
@@ -1849,17 +1856,18 @@ ${EXAM_PDF_MATH_FIDELITY_RULES}
     // Prompt-only fidelity is not enough: OCR can turn a fraction denominator
     // into an exponent or erase multiplication brackets while still producing
     // valid JSON. Audit only math-bearing rows, then merge only stem/options.
-    const mathAuditEnabled =
-      !documentText &&
-      String(process.env.GEMINI_PDF_MATH_AUDIT ?? 'true').trim().toLowerCase() !== 'false';
     const mathAuditRows = refined.filter(isMathAuditCandidate).slice(0, 40);
+    // Release the reserved slot immediately before the audit (or when there is
+    // nothing to audit) so the hard per-upload cap still applies normally.
+    reserveMathAuditCall = false;
     if (mathAuditEnabled && mathAuditRows.length > 0 && !callBudgetExhausted()) {
       const auditPrompt = `You are the final visual transcription auditor for an exam PDF.
 Compare ONLY the listed questions below against their printed versions in the attached PDF.
 Return one full question object for every listed questionNumber, in the same order.
-Correct transcription only: questionText and option1-option4. Do not solve, simplify, expand, factor, or substitute an equivalent expression.
+First correct the visual transcription in questionText and option1-option4. Do not simplify, expand, factor, or substitute an equivalent expression while transcribing.
 Pay special attention to stacked fraction bars and denominators, superscripts versus denominators, adjacent bracketed factors, radicals, signs, and every opening/closing bracket.
 Use inline $...$ LaTeX and \\frac{numerator}{denominator}. If the extracted text differs from the PDF, the PDF always wins.
+After the transcription is exact, independently solve the corrected question. Set correctAnswer to the exact full text of one corrected option and write a short explanation. Never preserve the first-pass answer merely because it was previously selected.
 ${EXAM_PDF_MATH_FIDELITY_RULES}
 
 ROWS TO AUDIT:

@@ -16,7 +16,10 @@ export const EXAM_PDF_MATH_FIDELITY_RULES = `- MATH FIDELITY (critical): Transcr
 export const EXAM_MATH_FIELD_DESCRIPTION =
   'Lossless source transcription. Put math in $...$ LaTeX; use \\frac{numerator}{denominator} for every printed fraction and preserve all grouping/operators.';
 
-const MATH_SIGNAL = /(\\frac|\\sqrt|\$[^$]+\$|[=<>^√∛]|\d\s*[+*/−-]\s*[A-Za-z(]|[A-Za-z)]\s*[+*/−-]\s*\d)/;
+// Include Unicode superscripts because a failed OCR pass commonly emits `n²`
+// without LaTeX delimiters. Adjacent bracket groups are another strong signal
+// for the fractions/products that have historically been misread.
+const MATH_SIGNAL = /(\\frac|\\sqrt|\$[^$]+\$|[=<>^√∛⁰¹²³⁴⁵⁶⁷⁸⁹]|\d\s*[+*/−-]\s*[A-Za-z(]|[A-Za-z)]\s*[+*/−-]\s*\d|\)\s*\()/;
 
 export function isMathAuditCandidate(row) {
   if (String(row?.subject || '').trim().toLowerCase() === 'maths') return true;
@@ -60,6 +63,17 @@ export function mergeMathAuditRows(originalRows, auditedRows) {
     const correctedOptions = [next.option1, next.option2, next.option3, next.option4].map((value) =>
       String(value || '').trim(),
     );
+    const auditedAnswer = String(audit?.correctAnswer || '').trim();
+    const auditedAnswerIndex = correctedOptions.findIndex(
+      (option) => option.toLowerCase() === auditedAnswer.toLowerCase(),
+    );
+    if (auditedAnswerIndex >= 0) {
+      next.correctAnswer = correctedOptions[auditedAnswerIndex];
+      const auditedExplanation = String(audit?.explanation || '').trim();
+      if (auditedExplanation) next.explanation = auditedExplanation;
+      return next;
+    }
+
     const oldAnswer = String(row?.correctAnswer || '').trim().toLowerCase();
     const oldAnswerIndex = oldOptions.findIndex((option) => option.toLowerCase() === oldAnswer);
     if (oldAnswerIndex >= 0 && correctedOptions[oldAnswerIndex]) {
