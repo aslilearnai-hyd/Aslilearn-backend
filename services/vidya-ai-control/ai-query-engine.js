@@ -157,23 +157,34 @@ export async function answerAuditLogsBySchool({
 }) {
   const timeframe = auditSchoolBreakdownTimeframe(userMessage);
   if (!timeframe || String(viewerRole || '').toLowerCase() !== 'super-admin') return null;
-  const db = await execute({
-    viewerRole,
-    viewerUserId,
-    plan: {
-      module: 'audit_logs',
-      operation: 'aggregate',
-      filters: [],
-      selectFields: [],
-      groupBy: ['school'],
-      aggregates: [{ func: 'count', field: '*', as: 'count' }],
-      sort: [{ field: 'count', direction: 'desc' }],
-      limit: 100,
-      timeframe,
-      dateField: 'at',
-    },
-  });
-  if (!db?.ok) return null;
+  let db;
+  try {
+    db = await execute({
+      viewerRole,
+      viewerUserId,
+      plan: {
+        module: 'audit_logs',
+        operation: 'aggregate',
+        filters: [],
+        selectFields: [],
+        groupBy: ['school'],
+        aggregates: [{ func: 'count', field: '*', as: 'count' }],
+        sort: [{ field: 'count', direction: 'desc' }],
+        limit: 100,
+        timeframe,
+        dateField: 'at',
+      },
+    });
+  } catch (error) {
+    console.warn('[VidyaControl] audit school query failed:', error?.message || error);
+  }
+  if (!db?.ok) {
+    return {
+      message: 'I could not read the audit logs right now. Please retry shortly.',
+      facts: { mode: 'database', module: 'audit_logs', timeframe, unavailable: true },
+      plan: { mode: 'database', module: 'audit_logs', operation: 'aggregate', timeframe, groupBy: ['school'] },
+    };
+  }
   const rows = Array.isArray(db.facts?.rows) ? db.facts.rows : [];
   const total = rows.reduce((sum, row) => sum + Math.max(0, Number(row?.count) || 0), 0);
   const timeframeLabel = timeframe === 'all'

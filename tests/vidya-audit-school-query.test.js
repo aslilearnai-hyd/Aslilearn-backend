@@ -5,6 +5,7 @@ import {
   answerAuditLogsBySchool,
   auditSchoolBreakdownTimeframe,
 } from '../services/vidya-ai-control/ai-query-engine.js';
+import { normalizeDynamicTimeframe } from '../services/vidya-ai-control/db-access-layer.js';
 import { isReportsOverviewQuery } from '../services/vidya-ai-control/school-overview-facts.js';
 
 test('platform overview quick question uses the deterministic overview path', () => {
@@ -18,6 +19,14 @@ test('audit-school intent normalizes common relative timeframe wording', () => {
   );
   assert.equal(auditSchoolBreakdownTimeframe('Audit logs split per school this month'), 'this_month');
   assert.equal(auditSchoolBreakdownTimeframe('How many students by school?'), '');
+});
+
+test('database planner accepts common last-seven-days spellings', () => {
+  assert.equal(normalizeDynamicTimeframe('last 7 days'), 'last_7_days');
+  assert.equal(normalizeDynamicTimeframe('past_7_days'), 'last_7_days');
+  assert.equal(normalizeDynamicTimeframe('last_7_days'), 'last_7_days');
+  assert.equal(normalizeDynamicTimeframe('this week'), 'this_week');
+  assert.equal(normalizeDynamicTimeframe('next week'), 'next week');
 });
 
 test('audit-school answer runs a fixed scoped aggregate and formats exact results', async () => {
@@ -49,4 +58,16 @@ test('audit-school answer runs a fixed scoped aggregate and formats exact result
   assert.match(result.message, /11 across 2 school groups/);
   assert.match(result.message, /Alpha School: 8/);
   assert.equal(result.facts.total, 11);
+});
+
+test('audit-school database failure does not fall through to an unrelated planner', async () => {
+  const result = await answerAuditLogsBySchool({
+    userMessage: 'How many audit log entries were recorded in the last 7 days, grouped by school?',
+    viewerRole: 'super-admin',
+    viewerUserId: 'root',
+    execute: async () => ({ ok: false, error: 'Unsupported timeframe.' }),
+  });
+  assert.equal(result.facts.unavailable, true);
+  assert.equal(result.facts.timeframe, 'last_7_days');
+  assert.match(result.message, /could not read the audit logs/i);
 });

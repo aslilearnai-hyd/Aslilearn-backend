@@ -24,6 +24,18 @@ function asArray(v) {
   return [v];
 }
 
+/** Accept common planner spellings while keeping the date query constrained. */
+export function normalizeDynamicTimeframe(raw) {
+  const value = String(raw || '').trim().toLowerCase();
+  if (!value) return '';
+  if (value === 'all' || value === 'today') return value;
+  if (/^this[ _-]week$/.test(value)) return 'this_week';
+  if (/^this[ _-]month$/.test(value)) return 'this_month';
+  const days = value.match(/^(?:(?:last|past|previous)[ _-]*)?(\d{1,3})[ _-]*days?$/);
+  if (days) return `last_${Math.min(365, Math.max(1, Number(days[1])))}_days`;
+  return value;
+}
+
 function timeframeToDateFilter(tf) {
   if (!tf || tf === 'all') return null;
   if (tf === 'today') {
@@ -423,7 +435,8 @@ export async function executeDynamicDbPlan({
     || (Array.isArray(f.value) && f.value.some(v => v && typeof v === 'object')))) {
     return { ok: false, error: 'Unsupported query filter.' };
   }
-  if (plan.timeframe && !/^(all|today|this_week|this_month|last_\d{1,3}_days)$/.test(plan.timeframe)) return { ok: false, error: 'Unsupported timeframe.' };
+  const timeframe = normalizeDynamicTimeframe(plan.timeframe);
+  if (timeframe && !/^(all|today|this_week|this_month|last_\d{1,3}_days)$/.test(timeframe)) return { ok: false, error: 'Unsupported timeframe.' };
   const base = cfg.baseFilter || {};
   const viewerOid = oid(viewerUserId);
   const selfScopeOr = [];
@@ -466,14 +479,14 @@ export async function executeDynamicDbPlan({
   }
   const basicTimeFiltered = applyTimeframe(
     mergedBaseFilter,
-    plan.timeframe,
+    timeframe,
     allowedFields,
     plan.dateField || plan.preferredDateField || '',
   );
   const merged = applyModuleSpecificTimeframe({
     moduleKey,
     mergedFilter: basicTimeFiltered,
-    timeframe: plan.timeframe,
+    timeframe,
     allowedFields,
   });
 
