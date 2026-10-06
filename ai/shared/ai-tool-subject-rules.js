@@ -13,7 +13,6 @@ export const LANGUAGE_EXCLUDED_TOOL_IDS = Object.freeze([
   // worksheet-mcq-generator removed — language teachers want worksheets too; the V2
   // path now writes them in the subject's language (Hindi/Telugu) via the language layer.
   'short-notes-summaries-maker',
-  'concept-mastery-helper',
   'daily-class-plan-maker',
   'concept-breakdown-explainer',
   'chapter-summary-creator',

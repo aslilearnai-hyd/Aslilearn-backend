@@ -153,7 +153,7 @@ function buildSingleStudentInsight(student, remarksSample = []) {
 }
 
 /** Multiple students — class-level summary */
-function buildClassInsight(list, scopeLabel, remarksSample) {
+function buildClassInsight(list, scopeLabel, remarksSample, refreshSeed = 0) {
   const count = list.length;
   const noExams = [];
   const lowExam = [];
@@ -221,7 +221,7 @@ function buildClassInsight(list, scopeLabel, remarksSample) {
         `These students are not using the platform regularly (no study time recorded): ${formatNameList(noUsage)}. A quick check-in may help you learn what is blocking them.`
       )
     );
-  } else if (lowUsage.length > 0 && parts.length < 2) {
+  } else if (lowUsage.length > 0) {
     parts.push(
       sentence(
         `These students spend very little time online each day: ${formatNameList(lowUsage)}. Remind them to log in and complete at least one lesson daily.`
@@ -229,7 +229,7 @@ function buildClassInsight(list, scopeLabel, remarksSample) {
     );
   }
 
-  if (lowProgress.length > 0 && parts.length < 3) {
+  if (lowProgress.length > 0) {
     parts.push(
       sentence(
         `Course progress is still low for: ${formatNameList(lowProgress)}. Guide them to finish pending lessons and homework.`
@@ -237,7 +237,7 @@ function buildClassInsight(list, scopeLabel, remarksSample) {
     );
   }
 
-  if (homeworkGap.length > 0 && parts.length < 3) {
+  if (homeworkGap.length > 0) {
     parts.push(
       sentence(
         `Homework is still pending for: ${formatNameList(homeworkGap)}. Share deadlines again and offer help where needed.`
@@ -245,7 +245,7 @@ function buildClassInsight(list, scopeLabel, remarksSample) {
     );
   }
 
-  if (negativeRemarks.length > 0 && parts.length < 3) {
+  if (negativeRemarks.length > 0) {
     const names = negativeRemarks.map((r) => r.studentName || 'Student');
     parts.push(
       sentence(
@@ -273,7 +273,9 @@ function buildClassInsight(list, scopeLabel, remarksSample) {
     );
   }
 
-  return parts.slice(0, 3).join(' ');
+  const offset = Math.abs(Number(refreshSeed) || 0) % parts.length;
+  const rotated = [...parts.slice(offset), ...parts.slice(0, offset)];
+  return rotated.slice(0, 3).join(' ');
 }
 
 /**
@@ -289,6 +291,7 @@ export function buildTeacherProgressInsights(input = {}) {
     studentCount = 0,
     students = [],
     remarksSample = [],
+    refreshSeed = 0,
   } = input;
 
   const list = Array.isArray(students) ? students : [];
@@ -302,7 +305,7 @@ export function buildTeacherProgressInsights(input = {}) {
     return buildSingleStudentInsight(list[0], remarksSample);
   }
 
-  return buildClassInsight(list, scopeLabel, remarksSample);
+  return buildClassInsight(list, scopeLabel, remarksSample, refreshSeed);
 }
 
 export default { buildTeacherProgressInsights };

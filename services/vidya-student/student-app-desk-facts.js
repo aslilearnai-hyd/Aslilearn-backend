@@ -18,6 +18,8 @@ import {
 import { examVisibleToStudent, examVisibleToIndividualStudent } from '../../utils/exam-visibility.js';
 import { enrichSubjectsWithMedia } from '../student-subject-media.js';
 import { filterToActiveCatalogSubjectIds } from '../../utils/activeCatalog.js';
+import { contentRowMatchesSubjectGroup } from '../../utils/resolveSubjectContentIds.js';
+import { dedupeLibraryContents } from '../../utils/dedupeLibraryContents.js';
 import Assessment from '../../models/Assessment.js';
 import Event from '../../models/Event.js';
 import ExamResult from '../../models/ExamResult.js';
@@ -232,18 +234,28 @@ export async function buildStudentAppDeskFacts(studentOid, extras = {}) {
       : Promise.resolve([]),
   ]);
 
+  const libraryVideos = dedupeLibraryContents(
+    (Array.isArray(libraryBundle?.contents) ? libraryBundle.contents : []).filter(
+      (content) => String(content?.type || '').toLowerCase() === 'video',
+    ),
+  );
+
   const subjects = (enrichedSubjects || []).map((row) => {
     const videos = Array.isArray(row.videos) ? row.videos : [];
+    const subjectLibraryVideos = libraryVideos.filter((content) =>
+      contentRowMatchesSubjectGroup(content, row.name),
+    );
+    const videoCount = Math.max(videos.length, subjectLibraryVideos.length);
     const videoIds = videos.map((v) => String(v._id));
     const completed = videoIds.filter((id) => completedVideoIds.has(id)).length;
     const inProgress = videoIds.filter((id) => inProgressVideoIds.has(id)).length;
     return {
       id: String(row._id || row.id),
       name: row.name || 'Subject',
-      videoCount: videos.length,
+      videoCount,
       videosCompleted: completed,
       videosInProgress: inProgress,
-      videosRemaining: Math.max(0, videos.length - completed),
+      videosRemaining: Math.max(0, videoCount - completed),
       assessmentCount: Array.isArray(row.assessments) ? row.assessments.length : 0,
     };
   });

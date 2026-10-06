@@ -463,7 +463,10 @@ function localFallbackResponse({ userPrompt, facts, viewerRole = '' }) {
       }
     }
     if (facts.module === 'users' || facts.module === 'students' || facts.module === 'teachers') {
-      const shown = facts.rows.slice(0, 15).map((r, i) => {
+      // Dynamic DB list queries are already capped and tenant-scoped. Do not
+      // silently truncate an explicit roster request after reporting the full
+      // count, because that makes a 99-student result look like only 15 exist.
+      const shown = facts.rows.map((r, i) => {
         const name = String(r?.fullName || r?.name || r?.email || 'User').trim();
         const role = r?.role ? ` [${r.role}]` : '';
         const klass = r?.classNumber ? ` class ${r.classNumber}` : '';

@@ -60,7 +60,15 @@ function uniqueQuestionUnitsForTool(toolSlug, structured) {
   return dedupeQuestionContentUnits(units);
 }
 
-function filterQuestionRows(rows, seen) {
+function isInstructionLikeQuestion(text) {
+  const normalized = normalizeContentForDedup(text);
+  if (!normalized) return false;
+  return /^(?:general instructions?|instructions?|read (?:every|all|the) questions? carefully|attempt all questions?|answer all questions?|marks? (?:for|are) each question|all questions? are compulsory|write (?:all )?answers?)/i.test(
+    normalized,
+  );
+}
+
+function filterQuestionRows(rows, seen, seenTexts = [], { removeInstructions = false } = {}) {
   if (!Array.isArray(rows)) return rows;
   const kept = [];
   for (const row of rows) {
@@ -69,9 +77,12 @@ function filterQuestionRows(rows, seen) {
       kept.push(row);
       continue;
     }
+    if (removeInstructions && isInstructionLikeQuestion(text)) continue;
     const fp = contentFingerprint(text);
     if (seen.has(fp)) continue;
+    if (seenTexts.some((prior) => wordJaccardSimilarity(text, prior) >= 0.92)) continue;
     seen.add(fp);
+    seenTexts.push(text);
     kept.push(row);
   }
   return kept;
@@ -155,38 +166,42 @@ export function dedupeIntraRecordQuestions(toolSlug, structured) {
   }
   const out = { ...structured };
   const seen = new Set();
+  const seenTexts = [];
+  const hasCanonicalSections =
+    Array.isArray(out.sections) &&
+    out.sections.some((sec) => Array.isArray(sec?.questions) && sec.questions.length);
 
   if (
-    slug === 'worksheet-mcq-generator' &&
-    Array.isArray(out.sections) &&
-    out.sections.some((sec) => Array.isArray(sec?.questions) && sec.questions.length)
+    ['worksheet-mcq-generator', 'exam-question-paper-generator', 'mock-test-builder'].includes(slug) &&
+    hasCanonicalSections
   ) {
     out.sections = out.sections.map((sec) => {
       if (!sec || typeof sec !== 'object') return sec;
-      const questions = filterQuestionRows(sec.questions, seen);
+      const questions = filterQuestionRows(sec.questions, seen, seenTexts, {
+        removeInstructions: slug === 'exam-question-paper-generator',
+      });
       return { ...sec, questions, count: questions.length };
     });
-    const legacyKeys = [
-      'section_a_mcqs',
-      'section_b_fib',
-      'section_c_vsa',
-      'section_d_sa',
-      'section_e_competency',
-    ];
-    out.sections.forEach((sec, idx) => {
-      const key = legacyKeys[idx];
-      if (!key) return;
-      out[key] = Array.isArray(sec?.questions) ? [...sec.questions] : [];
+    const legacyKeys = slug === 'worksheet-mcq-generator'
+      ? ['section_a_mcqs', 'section_b_fib', 'section_c_vsa', 'section_d_sa', 'section_e_competency']
+      : ['section_a', 'section_b', 'section_c', 'section_d', 'section_e'];
+    out.sections.slice(0, legacyKeys.length).forEach((sec, idx) => {
+      out[legacyKeys[idx]] = Array.isArray(sec?.questions) ? [...sec.questions] : [];
     });
     out.questions = out.sections.flatMap((sec) =>
       Array.isArray(sec?.questions) ? sec.questions : [],
     );
+    out.questionCount = out.questions.length;
+    out.totalQuestions = out.questions.length;
+    out.total_questions = out.questions.length;
     return out;
   }
 
   for (const key of STRUCTURED_QUESTION_ARRAY_KEYS) {
     if (Array.isArray(out[key])) {
-      out[key] = filterQuestionRows(out[key], seen);
+      out[key] = filterQuestionRows(out[key], seen, seenTexts, {
+        removeInstructions: slug === 'exam-question-paper-generator',
+      });
     }
   }
 
@@ -195,7 +210,9 @@ export function dedupeIntraRecordQuestions(toolSlug, structured) {
       if (!sec || typeof sec !== 'object') return sec;
       return {
         ...sec,
-        questions: filterQuestionRows(sec.questions, seen),
+        questions: filterQuestionRows(sec.questions, seen, seenTexts, {
+          removeInstructions: slug === 'exam-question-paper-generator',
+        }),
       };
     });
   }
@@ -206,7 +223,9 @@ export function dedupeIntraRecordQuestions(toolSlug, structured) {
       const next = { ...concept };
       for (const key of STRUCTURED_QUESTION_ARRAY_KEYS) {
         if (Array.isArray(next[key])) {
-          next[key] = filterQuestionRows(next[key], seen);
+          next[key] = filterQuestionRows(next[key], seen, seenTexts, {
+            removeInstructions: slug === 'exam-question-paper-generator',
+          });
         }
       }
       return next;
