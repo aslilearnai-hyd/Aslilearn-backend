@@ -20,6 +20,7 @@ import OmrResultBatch from '../models/OmrResultBatch.js';
 import WeeklyImpactSnapshot from '../models/WeeklyImpactSnapshot.js';
 import WeeklyDigest from '../models/WeeklyDigest.js';
 import { getToolDisplayTitle } from '../config/aiToolTemplates.js';
+import { mergeTeacherIdentityRows } from '../utils/teacher-identity.js';
 
 /** Monday 00:00 UTC of the week containing `d` (ISO week Monday). */
 export function startOfIsoWeek(d = new Date()) {
@@ -169,36 +170,7 @@ async function teacherUserIdsForAdmin(adminId) {
       .lean(),
   ]);
 
-  const byId = new Map();
-  for (const t of userTeachers) {
-    byId.set(String(t._id), {
-      teacherId: t._id,
-      name: t.fullName || '',
-      email: t.email || '',
-      lastLogin: t.lastLogin,
-      createdAt: t.createdAt,
-    });
-  }
-  for (const doc of teacherDocs) {
-    const tid = String(doc._id);
-    const email = String(doc.email || '').toLowerCase().trim();
-    if (email) {
-      for (const [id, t] of [...byId.entries()]) {
-        if (id !== tid && String(t.email || '').toLowerCase() === email) {
-          byId.delete(id);
-        }
-      }
-    }
-    if (byId.has(tid)) continue;
-    byId.set(tid, {
-      teacherId: doc._id,
-      name: doc.fullName || doc.name || '',
-      email: doc.email || '',
-      lastLogin: doc.lastLogin || null,
-      createdAt: doc.createdAt,
-    });
-  }
-  return [...byId.values()];
+  return mergeTeacherIdentityRows(userTeachers, teacherDocs);
 }
 
 async function studentUsersForAdmin(adminId) {

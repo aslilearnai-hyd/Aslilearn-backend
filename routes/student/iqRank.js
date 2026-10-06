@@ -552,6 +552,7 @@ router.post('/iq-rank-quiz-result', async (req, res) => {
       await quizResult.populate('subject', 'name');
     }
 
+    let dailyLogSynced = true;
     if (isDaily && quizId) {
       try {
         const existingLog = await DailyQuizLog.findOne({
@@ -577,10 +578,11 @@ router.post('/iq-rank-quiz-result', async (req, res) => {
         });
       } catch (dailyErr) {
         console.error('[iq-rank-quiz-result] daily log update failed:', dailyErr?.message || dailyErr);
-        return res.status(500).json({
-          success: false,
-          message: 'Quiz score saved, but daily lock failed. Please try again or contact support.',
-        });
+        // The durable IQRankQuizResult above is also consulted by the status and
+        // duplicate-submission guards.  Once that result is saved, today's quiz
+        // is locked even if the supplementary DailyQuizLog write is transiently
+        // unavailable.  Do not report a false failure and invite a retry.
+        dailyLogSynced = false;
       }
     }
 
@@ -593,6 +595,7 @@ router.post('/iq-rank-quiz-result', async (req, res) => {
             dateKey: todayKey,
             lockedUntilTomorrow: true,
             pickCount: Number(totalQuestions) || DAILY_PICK_COUNT,
+            logSynced: dailyLogSynced,
           }
         : undefined,
     });
