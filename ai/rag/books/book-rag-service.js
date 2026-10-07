@@ -16,8 +16,8 @@ export function getBookRagMaxContextChars(audience = '') {
   if (isStudent) return Number.isFinite(env) && env > 0 ? Math.min(env, 6500) : 6500;
   if (Number.isFinite(env) && env > 0) return env;
   const costSaver =
-    String(process.env.AI_GENERATOR_COST_SAVER ?? 'true').trim().toLowerCase() !== 'false' &&
-    String(process.env.AI_GENERATOR_COST_SAVER ?? 'true').trim().toLowerCase() !== '0';
+    String(process.env.AI_GENERATOR_COST_SAVER ?? 'false').trim().toLowerCase() !== 'false' &&
+    String(process.env.AI_GENERATOR_COST_SAVER ?? 'false').trim().toLowerCase() !== '0';
   return costSaver ? 10000 : 18000;
 }
 

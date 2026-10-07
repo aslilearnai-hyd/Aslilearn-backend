@@ -26,6 +26,29 @@ import {
   slimGeneratorRecordForList,
 } from './aiGeneratorController.js';
 import { withMongoRetry, isMongoTransientError } from '../utils/mongo-retry.js';
+import { mergeTokenUsageSnapshots } from '../utils/token-usage-merge.js';
+import { computeGeminiCostFromTokenUsage } from '../ai/providers/gemini-token-cost.js';
+
+function addExpandedBookBatchResult(merged, result) {
+  merged.savedCount += Number(result?.savedCount) || 0;
+  merged.failedCount += Number(result?.failedCount) || 0;
+  merged.batchSize += Number(result?.batchSize) || 0;
+  merged.ragChunkCount += Number(result?.ragChunkCount) || 0;
+  if (result?.bookTextUsed === false) merged.bookTextUsed = false;
+  if (Array.isArray(result?.records)) merged.records.push(...result.records);
+  if (Array.isArray(result?.failures)) merged.failures.push(...result.failures);
+  if (result?.tokenUsage) merged.tokenUsageSnapshots.push(result.tokenUsage);
+}
+
+function finalizeExpandedBookBatchResult(merged) {
+  merged.tokenUsage = mergeTokenUsageSnapshots(
+    merged.tokenUsageSnapshots,
+    'expanded-book-generator-batch',
+  );
+  merged.cost = computeGeminiCostFromTokenUsage(merged.tokenUsage);
+  delete merged.tokenUsageSnapshots;
+  return merged;
+}
 
 function ensureSuperAdmin(req, res) {
   if (req.user?.role !== 'super-admin') {
@@ -156,6 +179,9 @@ export async function generateBookBatch(req, res) {
             batchSize: 0,
             records: [],
             failures: [],
+            ragChunkCount: 0,
+            bookTextUsed: true,
+            tokenUsageSnapshots: [],
             expanded: targets.map((t) => (t.chapterScope ? 'Whole chapter' : t.subtopicName)),
           };
           for (let i = 0; i < targets.length; i += 1) {
@@ -185,15 +211,11 @@ export async function generateBookBatch(req, res) {
               forceUnlock: forceUnlock === true && i === 0,
             };
             const result = await generateBookBatchAndSave(params, { reqUser: req.user, onProgress });
-            merged.savedCount += Number(result.savedCount) || 0;
-            merged.failedCount += Number(result.failedCount) || 0;
-            merged.batchSize += Number(result.batchSize) || 0;
-            if (Array.isArray(result.records)) merged.records.push(...result.records);
-            if (Array.isArray(result.failures)) merged.failures.push(...result.failures);
+            addExpandedBookBatchResult(merged, result);
             if (result.locked) {
               merged.success = false;
               merged.message = result.message || 'Generation locked.';
-              return merged;
+              return finalizeExpandedBookBatchResult(merged);
             }
           }
           merged.success = merged.savedCount > 0;
@@ -201,7 +223,7 @@ export async function generateBookBatch(req, res) {
             merged.savedCount > 0
               ? `Expanded book generation: ${merged.savedCount} saved across ${targets.length} scope(s).`
               : 'Expanded book generation failed for all scopes.';
-          return merged;
+          return finalizeExpandedBookBatchResult(merged);
         });
 
         return res.status(202).json({
@@ -221,6 +243,9 @@ export async function generateBookBatch(req, res) {
         batchSize: 0,
         records: [],
         failures: [],
+        ragChunkCount: 0,
+        bookTextUsed: true,
+        tokenUsageSnapshots: [],
         expanded: targets.map((t) => (t.chapterScope ? 'Whole chapter' : t.subtopicName)),
       };
       for (const target of targets) {
@@ -246,12 +271,9 @@ export async function generateBookBatch(req, res) {
           forceUnlock: forceUnlock === true,
         };
         const result = await generateBookBatchAndSave(params, runOpts);
-        merged.savedCount += Number(result.savedCount) || 0;
-        merged.failedCount += Number(result.failedCount) || 0;
-        merged.batchSize += Number(result.batchSize) || 0;
-        if (Array.isArray(result.records)) merged.records.push(...result.records);
-        if (Array.isArray(result.failures)) merged.failures.push(...result.failures);
+        addExpandedBookBatchResult(merged, result);
         if (result.locked) {
+          finalizeExpandedBookBatchResult(merged);
           return res.status(409).json({
             success: false,
             locked: true,
@@ -261,6 +283,7 @@ export async function generateBookBatch(req, res) {
         }
       }
       merged.success = merged.savedCount > 0;
+      finalizeExpandedBookBatchResult(merged);
       return res.status(merged.success ? 200 : 502).json({
         success: merged.success,
         data: merged,

@@ -362,10 +362,16 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
     const historical = await buildBookHistoricalGenerationContext(scope);
     const batchTitles = [];
     const batchQuestionTexts = [];
-    const historicalQuestionTexts = Array.isArray(historical.questionSnippets)
-      ? [...historical.questionSnippets]
-      : [];
-    const historicalTitles = Array.isArray(historical.titles) ? [...historical.titles] : [];
+    const historicalQuestionTexts = Array.isArray(historical.validationQuestionTexts)
+      ? [...historical.validationQuestionTexts]
+      : Array.isArray(historical.questionSnippets)
+        ? [...historical.questionSnippets]
+        : [];
+    const historicalTitles = Array.isArray(historical.validationTitles)
+      ? [...historical.validationTitles]
+      : Array.isArray(historical.titles)
+        ? [...historical.titles]
+        : [];
     const conceptMasteryBatch = toolSlug === 'concept-mastery-helper';
     const toolAudience = BOOK_BASED_TOOL_META[toolSlug]?.audience || 'teacher';
     const savedRecords = [];
@@ -917,16 +923,11 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             }
 
             if (qualityTierSettings.enforceBatchUniqueness) {
-              // Question tools generated from ONE book chapter naturally repeat topic stems, so
-              // validating them against the 10k+ historical corpus over-rejects and fails whole
-              // batches as the pool grows (worksheet also has a repair loop below; the others go
-              // straight to retry/throw). Dedupe all question tools batch-only.
-              const historicalExemptQuestionTool = BOOK_QUESTION_UNIQUENESS_TOOLS.has(toolSlug);
               const uniquenessCtx = {
                 batchTitles,
                 batchTexts: batchQuestionTexts,
-                historicalTexts: historicalExemptQuestionTool ? [] : historicalQuestionTexts,
-                historicalTitles: historicalExemptQuestionTool ? [] : historicalTitles,
+                historicalTexts: historicalQuestionTexts,
+                historicalTitles,
               };
               let uniqueness = validateRecordUniqueness(toolSlug, structuredContent, uniquenessCtx);
 
@@ -986,39 +987,12 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                   uniqueness = validateRecordUniqueness(toolSlug, structuredContent, uniquenessCtx);
                 }
 
-                // Last resort: save even when titles/questions overlap prior batch slots.
-                if (!uniqueness.valid) {
-                  const qCount = collectQuestionTextsFromStructured(structuredContent, toolSlug).length;
-                  const activityCount = Array.isArray(structuredContent?.activities)
-                    ? structuredContent.activities.length
-                    : Array.isArray(structuredContent?.projects)
-                      ? structuredContent.projects.length
-                      : 0;
-                  if (qCount >= 1 || activityCount >= 1) {
-                    console.warn(
-                      `[book-generator] Slot ${batchIndex}: uniqueness soft-pass after repair (q=${qCount}, activities=${activityCount}). ${uniqueness.errors.slice(0, 2).join('; ')}`,
-                    );
-                    uniqueness = { valid: true, errors: [], duplicates: [] };
-                  }
-                }
               }
 
               if (!uniqueness.valid) {
                 lastError = uniqueness.errors.join('; ');
-                const qCount = collectQuestionTextsFromStructured(structuredContent, toolSlug).length;
-                const activityCount = Array.isArray(structuredContent?.activities)
-                  ? structuredContent.activities.length
-                  : Array.isArray(structuredContent?.projects)
-                    ? structuredContent.projects.length
-                    : 0;
-                if (qCount >= 1 || activityCount >= 1) {
-                  console.warn(
-                    `[book-generator] Slot ${batchIndex}: duplicate soft-pass — saving anyway (q=${qCount}, activities=${activityCount}). ${lastError}`,
-                  );
-                } else {
-                  if (attempt < maxAttempts) continue;
-                  throw new Error(`Duplicate content: ${lastError}`);
-                }
+                if (attempt < maxAttempts) continue;
+                throw new Error(`Duplicate content: ${lastError}`);
               }
             }
 

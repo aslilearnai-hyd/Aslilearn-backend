@@ -34,21 +34,28 @@ Create entirely new educational material with fresh examples, scenarios, and que
 
 
 function getHistoricalPromptLimit() {
-  if (isAiGeneratorCostSaverEnabled()) {
-    const eco = Number(process.env.AI_GENERATOR_HISTORICAL_PROMPT_LIMIT_ECONOMY);
-    if (Number.isFinite(eco) && eco > 0) return Math.min(eco, 10);
-    return 3;
-  }
-  const n = Number(process.env.AI_GENERATOR_HISTORICAL_PROMPT_LIMIT);
-  return Number.isFinite(n) && n > 0 ? Math.min(n, 50) : 20;
+  const configured = Number(
+    isAiGeneratorCostSaverEnabled()
+      ? process.env.AI_GENERATOR_HISTORICAL_PROMPT_LIMIT_ECONOMY ??
+          process.env.AI_GENERATOR_HISTORICAL_PROMPT_LIMIT
+      : process.env.AI_GENERATOR_HISTORICAL_PROMPT_LIMIT,
+  );
+  // Tiny windows made later generations forget earlier records and repeat them.
+  return Number.isFinite(configured) && configured > 0
+    ? Math.min(50, Math.max(20, configured))
+    : 20;
 }
 
 
 
 function getFingerprintPromptLimit() {
-  if (isAiGeneratorCostSaverEnabled()) return 5;
   const n = Number(process.env.AI_GENERATOR_FINGERPRINT_PROMPT_LIMIT);
-  return Number.isFinite(n) && n > 0 ? Math.min(n, 100) : 20;
+  return Number.isFinite(n) && n > 0 ? Math.min(100, Math.max(20, n)) : 20;
+}
+
+function getFingerprintValidationLimit() {
+  const n = Number(process.env.AI_GENERATOR_FINGERPRINT_VALIDATION_LIMIT);
+  return Number.isFinite(n) && n > 0 ? Math.min(20_000, Math.max(500, n)) : 5_000;
 }
 
 
@@ -142,11 +149,11 @@ export async function buildHistoricalGenerationContext(scope) {
 
 
 
-  const fingerprints = economyMode
-    ? { title: [], question: [], all: [] }
-    : await loadHistoricalFingerprints(s, {
-        limit: getFingerprintPromptLimit() * 10,
-      });
+  // Keep the prompt compact, but use a much wider fingerprint window for
+  // server-side duplicate validation. Economy mode must not disable correctness.
+  const fingerprints = await loadHistoricalFingerprints(s, {
+    limit: getFingerprintValidationLimit(),
+  });
 
 
 
@@ -197,6 +204,22 @@ export async function buildHistoricalGenerationContext(scope) {
     promptLimit,
 
   );
+
+  const validationTitles = [
+    ...new Set(
+      [...titles, ...(fingerprints.title || []).map((r) => String(r.originalText || '').trim())]
+        .filter(Boolean),
+    ),
+  ];
+  const validationQuestionTexts = [
+    ...new Set(
+      [
+        ...questionSnippets,
+        ...(fingerprints.question || []).map((r) => String(r.originalText || '').trim()),
+        ...(fingerprints.flashcard || []).map((r) => String(r.originalText || '').trim()),
+      ].filter(Boolean),
+    ),
+  ];
 
 
 
@@ -254,6 +277,10 @@ export async function buildHistoricalGenerationContext(scope) {
     titles: uniqueTitles,
 
     questionSnippets: uniqueQuestions,
+
+    validationTitles,
+
+    validationQuestionTexts,
 
     fingerprints,
 

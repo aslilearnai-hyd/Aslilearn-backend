@@ -21,6 +21,8 @@ export async function buildBookHistoricalGenerationContext(scope) {
     promptBlock: historical.promptBlock,
     titles: historical.titles,
     questionSnippets: historical.questionSnippets,
+    validationTitles: historical.validationTitles,
+    validationQuestionTexts: historical.validationQuestionTexts,
     uniquenessTarget: BOOK_GENERATOR_UNIQUENESS_TARGET,
     forbiddenOpenings: historical.forbiddenOpenings,
   };

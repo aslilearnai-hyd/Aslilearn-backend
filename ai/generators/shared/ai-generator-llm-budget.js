@@ -28,22 +28,21 @@ const MEDIUM_TOOLS = new Set([
 
 export function getAiGeneratorMaxTokens(toolSlug, options = {}) {
   const slug = String(toolSlug || '').trim();
-  const skipUltra =
-    options.skipUltraEconomyCaps === true ||
-    String(options.qualityTier || '').toLowerCase() === 'premium' ||
-    String(options.qualityTier || '').toLowerCase() === 'balanced';
+  const qualityTier = String(options.qualityTier || '').toLowerCase();
+  const qualityTierProtectsBudget = qualityTier === 'premium' || qualityTier === 'balanced';
+  const skipUltra = options.skipUltraEconomyCaps === true || qualityTierProtectsBudget;
   const ultra =
     !skipUltra &&
     (String(process.env.AI_GENERATOR_ULTRA_ECONOMY ?? 'false').trim().toLowerCase() === 'true' ||
       String(process.env.AI_GENERATOR_ULTRA_ECONOMY ?? 'false').trim() === '1');
-  const costSaver =
-    String(process.env.AI_GENERATOR_COST_SAVER ?? 'true').trim().toLowerCase() !== 'false' &&
-    String(process.env.AI_GENERATOR_COST_SAVER ?? 'true').trim().toLowerCase() !== '0' &&
-    String(process.env.AI_GENERATOR_COST_SAVER ?? 'true').trim().toLowerCase() !== 'off';
+  const costSaver = !qualityTierProtectsBudget &&
+    String(process.env.AI_GENERATOR_COST_SAVER ?? 'false').trim().toLowerCase() !== 'false' &&
+    String(process.env.AI_GENERATOR_COST_SAVER ?? 'false').trim().toLowerCase() !== '0' &&
+    String(process.env.AI_GENERATOR_COST_SAVER ?? 'false').trim().toLowerCase() !== 'off';
   const padEnabled =
-    String(process.env.AI_GENERATOR_SECTION_PAD ?? 'true').trim().toLowerCase() !== 'false' &&
-    String(process.env.AI_GENERATOR_SECTION_PAD ?? 'true').trim().toLowerCase() !== '0' &&
-    String(process.env.AI_GENERATOR_SECTION_PAD ?? 'true').trim().toLowerCase() !== 'off';
+    String(process.env.AI_GENERATOR_SECTION_PAD ?? 'false').trim().toLowerCase() !== 'false' &&
+    String(process.env.AI_GENERATOR_SECTION_PAD ?? 'false').trim().toLowerCase() !== '0' &&
+    String(process.env.AI_GENERATOR_SECTION_PAD ?? 'false').trim().toLowerCase() !== 'off';
   if (HEAVY_TOOLS.has(slug)) {
     const base = ultra ? 4200 : costSaver ? 4800 : padEnabled ? 7000 : 10000;
     return Math.min(16000, Math.max(3000, Number(process.env.AI_GENERATOR_MAX_TOKENS_HEAVY) || base));

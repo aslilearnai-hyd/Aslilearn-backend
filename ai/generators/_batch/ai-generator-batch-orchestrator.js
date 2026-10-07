@@ -143,33 +143,6 @@ function isCrossSlotUniquenessTool(toolSlug) {
   );
 }
 
-/** Enough real payload to soft-pass title uniqueness after retries (activities/projects/notes). */
-function hasSoftPassableStructuredContent(toolSlug, structured) {
-  if (collectQuestionTextsFromStructured(structured, toolSlug).length >= 1) return true;
-  if (!structured || typeof structured !== 'object' || Array.isArray(structured)) return false;
-  const lists = [
-    structured.activities,
-    structured.teaching_activities,
-    structured.projects,
-    structured.project_ideas,
-    structured.concepts,
-    structured.flashcards,
-    structured.cards,
-    structured.notes,
-  ];
-  for (const list of lists) {
-    if (Array.isArray(list) && list.length >= 1) return true;
-  }
-  const title = extractTitleFromStructured(structured);
-  if (title && String(title).trim().length >= 8) return true;
-  const blob = String(
-    structured.content || structured.summary || structured.lesson || structured.generatedContent || '',
-  ).trim();
-  return blob.length >= 40;
-}
-
-
-
 async function runPool(items, concurrency, worker) {
 
   const results = new Array(items.length);
@@ -461,10 +434,16 @@ export async function generateBatchAndSave(params, opts = {}) {
 
     const historical = await buildHistoricalGenerationContext(scope);
 
-    const historicalQuestionTexts = Array.isArray(historical.questionSnippets)
-      ? [...historical.questionSnippets]
-      : [];
-    const historicalTitles = Array.isArray(historical.titles) ? [...historical.titles] : [];
+    const historicalQuestionTexts = Array.isArray(historical.validationQuestionTexts)
+      ? [...historical.validationQuestionTexts]
+      : Array.isArray(historical.questionSnippets)
+        ? [...historical.questionSnippets]
+        : [];
+    const historicalTitles = Array.isArray(historical.validationTitles)
+      ? [...historical.validationTitles]
+      : Array.isArray(historical.titles)
+        ? [...historical.titles]
+        : [];
 
 
 
@@ -816,19 +795,6 @@ export async function generateBatchAndSave(params, opts = {}) {
                   });
                 }
                 generated.structuredContent = structuredContent;
-              }
-
-              // Never fail a slot solely for batch uniqueness after all retries when
-              // the record has real questions OR usable activity/project/notes content.
-              // Short subtopics (e.g. "Measurement") often produce similar titles across
-              // a 10-variant batch; dropping half the saves left AI Tool Data at 5/10.
-              if (!uniqueness.valid && attempt >= maxAttempts) {
-                if (hasSoftPassableStructuredContent(toolSlug, structuredContent)) {
-                  console.warn(
-                    `[AI Generator batch] Variant ${variantIndex}: uniqueness soft-pass (usable content). ${uniqueness.errors.slice(0, 2).join('; ')}`,
-                  );
-                  uniqueness = { valid: true, errors: [], duplicates: [] };
-                }
               }
 
               if (!uniqueness.valid) {
