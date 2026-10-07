@@ -12,6 +12,10 @@ import { assembleSixSectionPrompt } from '../../prompt-versioning/assemble.js';
 import { V2_SECTION_IDS } from '../../prompt-versioning/master-prompt.js';
 import { GEMINI_LITE_MODEL } from '../../providers/gemini-models.js';
 import { countUsableQuestionsFromV2OrLegacy, trimUsableQuestionsToCount } from '../../../utils/v2-structured-to-legacy.js';
+import {
+  reconcileV2InstructionMarks,
+  validateV2QuestionContent,
+} from './six-section-quality.js';
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -166,7 +170,7 @@ export async function generateSixSectionContent(toolSlug, params = {}, opts = {}
       if (attempt < maxTries && rawGarbageScore(raw) >= 4) {
         continue;
       }
-      const structuredContent = deepSanitizeMath({
+      let structuredContent = deepSanitizeMath({
         schema: 'asli-v2-six-section',
         tool: toolSlug,
         ...Object.fromEntries(V2_SECTION_IDS.map((id) => [id, json[id]])),
@@ -179,15 +183,20 @@ export async function generateSixSectionContent(toolSlug, params = {}, opts = {}
             null,
             requestedQuestionCount,
           );
-          return {
-            ok: true,
-            structuredContent: trimmed.v2 || structuredContent,
-          };
+          structuredContent = trimmed.v2 || structuredContent;
+          actualQuestionCount = countUsableQuestionsFromV2OrLegacy(structuredContent, null);
         }
         if (actualQuestionCount !== requestedQuestionCount) {
           lastErr = `Model returned ${actualQuestionCount} questions; exactly ${requestedQuestionCount} were requested.`;
           continue;
         }
+      }
+
+      reconcileV2InstructionMarks(structuredContent);
+      const quality = validateV2QuestionContent(structuredContent);
+      if (!quality.valid) {
+        lastErr = quality.errors.join(' ');
+        continue;
       }
       return {
         ok: true,
