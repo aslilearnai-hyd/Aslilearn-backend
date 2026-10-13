@@ -108,7 +108,79 @@ const WINANSI_SWAPS = {
   '\u2190': '<-',
 };
 
+function readLatexGroup(value, openingIndex) {
+  if (value[openingIndex] !== '{') return null;
+  let depth = 0;
+  for (let index = openingIndex; index < value.length; index += 1) {
+    if (value[index] === '{') depth += 1;
+    if (value[index] === '}') depth -= 1;
+    if (depth === 0) {
+      return { body: value.slice(openingIndex + 1, index), end: index + 1 };
+    }
+  }
+  return null;
+}
+
+function replaceLatexCommandGroups(value) {
+  let result = String(value ?? '');
+  for (let pass = 0; pass < 8; pass += 1) {
+    const match = /\\(sqrt|frac|text|mathrm|mathbf)\s*(?:\[([^\]]+)\])?\s*\{/.exec(result);
+    if (!match) break;
+
+    const firstOpening = match.index + match[0].length - 1;
+    const first = readLatexGroup(result, firstOpening);
+    if (!first) break;
+
+    let replacement;
+    let end = first.end;
+    if (match[1] === 'frac') {
+      const secondOpening = result.slice(end).search(/\S/);
+      const secondIndex = secondOpening < 0 ? -1 : end + secondOpening;
+      const second = secondIndex >= 0 ? readLatexGroup(result, secondIndex) : null;
+      if (!second) break;
+      replacement = `(${first.body})/(${second.body})`;
+      end = second.end;
+    } else if (match[1] === 'sqrt') {
+      replacement = match[2] ? `root[${match[2]}](${first.body})` : `sqrt(${first.body})`;
+    } else {
+      replacement = first.body;
+    }
+
+    result = `${result.slice(0, match.index)}${replacement}${result.slice(end)}`;
+  }
+  return result;
+}
+
+/** Convert common LaTeX math into readable ASCII for PDFs that use standard PDFKit fonts. */
+export function pdfReadableMathText(value) {
+  let text = String(value ?? '');
+  text = text
+    .replace(/\$\$([\s\S]*?)\$\$/g, '$1')
+    .replace(/\$([^$\r\n]+)\$/g, '$1')
+    .replace(/\\\[([\s\S]*?)\\\]/g, '$1')
+    .replace(/\\\((.*?)\\\)/g, '$1');
+
+  text = replaceLatexCommandGroups(text);
+  text = text
+    .replace(/\\left\b|\\right\b/g, '')
+    .replace(/\^\{([^{}]+)\}/g, '^$1')
+    .replace(/_\{([^{}]+)\}/g, '_$1')
+    .replace(/\\times\b|\\cdot\b/g, '*')
+    .replace(/\\div\b/g, '/')
+    .replace(/\\leq?\b/g, '<=')
+    .replace(/\\geq?\b/g, '>=')
+    .replace(/\\neq\b/g, '!=')
+    .replace(/\\pm\b/g, '+/-')
+    .replace(/\\(?:quad|qquad)\b|\\[,;!]/g, ' ')
+    .replace(/\\([A-Za-z]+)\b/g, '$1')
+    .replace(/[{}]/g, '');
+  return text;
+}
+
 /** Helvetica/WinAnsi cannot encode most Unicode — strip/replace so PDFKit does not throw. */
 export function pdfSafeWinAnsiText(value) {
-  return String(value ?? '').replace(/[^\x09\x0A\x0D\x20-\x7E]/g, (ch) => WINANSI_SWAPS[ch] || '?');
+  return pdfReadableMathText(value).replace(
+    /[^\x09\x0A\x0D\x20-\x7E]/g,
+    (ch) => WINANSI_SWAPS[ch] || '?',
+  );
 }
