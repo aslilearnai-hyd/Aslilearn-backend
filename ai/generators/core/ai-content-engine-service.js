@@ -11548,6 +11548,34 @@ Write all student-facing text in the required output language.`;
         }
       }
 
+      // Premium Smart Q&A output can be otherwise complete while Gemini omits
+      // one section (commonly Section E). Restore the canonical A-G shape
+      // before spending another full generation attempt. Added rows are marked
+      // as scaffold and must still pass the later LLM repair + quality gate, so
+      // this cannot silently save generic filler.
+      if (!validation.valid && slug === 'smart-qa-practice-generator') {
+        const missingPracticeSections = getPracticeQaMissingSections(structuredContent);
+        if (missingPracticeSections.length) {
+          structuredContent = ensurePracticeQaAllSectionsFilled(
+            finalizePracticeQaStructuredContent(structuredContent, {
+              ...meta,
+              skipPracticeQaScaffold: true,
+            }),
+            meta,
+          );
+          validation = validateToolSpecificStructuredContent(
+            slug,
+            structuredContent,
+            contentType,
+            validationSourceText,
+            meta,
+          );
+          if (validation.normalizedStructuredContent) {
+            structuredContent = validation.normalizedStructuredContent;
+          }
+        }
+      }
+
       if (!validation.valid) {
         console.warn(
           `[AI Generator] ${slug} validation failed (attempt ${attempt}/${maxValidationAttempts}): ${validation.message || 'unknown'}`,
