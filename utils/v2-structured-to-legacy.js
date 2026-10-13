@@ -944,6 +944,45 @@ function isUsableCardRow(c) {
 }
 
 /**
+ * Trim ordered question groups while preserving section coverage.
+ * Reserve one usable row in every populated group whenever the requested
+ * count permits, then distribute the remaining budget in group order.
+ */
+function trimQuestionGroupsPreservingCoverage(groups = [], targetCount = 0) {
+  const target = Math.max(0, Math.floor(Number(targetCount) || 0));
+  const normalized = groups.map((group) => ({
+    ...group,
+    rows: arr(group.rows).filter(isUsableQuestionRow),
+  }));
+  const nonEmpty = normalized.filter((group) => group.rows.length);
+  const allocations = new Map(normalized.map((group) => [group.key, 0]));
+  let remaining = target;
+
+  if (target >= nonEmpty.length) {
+    for (const group of nonEmpty) {
+      allocations.set(group.key, 1);
+      remaining -= 1;
+    }
+  }
+
+  for (const group of normalized) {
+    if (remaining <= 0) break;
+    const allocated = allocations.get(group.key) || 0;
+    const extra = Math.min(remaining, Math.max(0, group.rows.length - allocated));
+    allocations.set(group.key, allocated + extra);
+    remaining -= extra;
+  }
+
+  return {
+    groups: normalized.map((group) => ({
+      ...group,
+      rows: group.rows.slice(0, allocations.get(group.key) || 0),
+    })),
+    keptCount: target - remaining,
+  };
+}
+
+/**
  * Drop excess questions when the model overshoots the requested count.
  * Walks sections in order and keeps the first `targetCount` usable rows.
  * Under-count is left alone (caller retries).
@@ -961,7 +1000,7 @@ export function trimUsableQuestionsToCount(v2, legacy, targetCount) {
 
   if (v2?.core && typeof v2.core === 'object') {
     const core = { ...v2.core };
-    for (const key of [
+    const v2SectionKeys = [
       'sectionA_mcq',
       'sectionB_fib',
       'sectionC_short',
@@ -969,22 +1008,15 @@ export function trimUsableQuestionsToCount(v2, legacy, targetCount) {
       'sectionE_long',
       'sectionF_case',
       'sectionG_hots',
-    ]) {
-      const rows = arr(core[key]);
-      if (!rows.length) continue;
-      if (remaining <= 0) {
-        core[key] = [];
-        continue;
-      }
-      const kept = [];
-      for (const row of rows) {
-        if (!isUsableQuestionRow(row)) continue;
-        if (remaining <= 0) break;
-        kept.push(row);
-        remaining -= 1;
-      }
-      core[key] = kept;
+    ];
+    const trimmedSections = trimQuestionGroupsPreservingCoverage(
+      v2SectionKeys.map((key) => ({ key, rows: core[key] })),
+      remaining,
+    );
+    for (const group of trimmedSections.groups) {
+      if (group.key in core || group.rows.length) core[group.key] = group.rows;
     }
+    remaining -= trimmedSections.keptCount;
     if (Array.isArray(core.questions)) {
       if (remaining <= 0) core.questions = [];
       else {
@@ -1020,19 +1052,19 @@ export function trimUsableQuestionsToCount(v2, legacy, targetCount) {
   if (legacy && typeof legacy === 'object') {
     const out = { ...legacy };
     if (Array.isArray(legacy.sections)) {
-      out.sections = legacy.sections.map((sec) => {
+      const trimmedSections = trimQuestionGroupsPreservingCoverage(
+        legacy.sections.map((sec, index) => ({
+          key: index,
+          rows: sec && typeof sec === 'object' ? sec.questions : [],
+        })),
+        remaining,
+      );
+      out.sections = legacy.sections.map((sec, index) => {
         if (!sec || typeof sec !== 'object') return sec;
-        const qs = Array.isArray(sec.questions) ? sec.questions : [];
-        if (remaining <= 0) return { ...sec, questions: [] };
-        const kept = [];
-        for (const row of qs) {
-          if (!isUsableQuestionRow(row)) continue;
-          if (remaining <= 0) break;
-          kept.push(row);
-          remaining -= 1;
-        }
-        return { ...sec, questions: kept };
+        const group = trimmedSections.groups.find((entry) => entry.key === index);
+        return { ...sec, questions: group?.rows || [], count: group?.rows?.length || 0 };
       });
+      remaining -= trimmedSections.keptCount;
     }
     if (Array.isArray(legacy.questions)) {
       if (remaining <= 0) out.questions = [];
