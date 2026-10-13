@@ -172,7 +172,12 @@ export function dedupeIntraRecordQuestions(toolSlug, structured) {
     out.sections.some((sec) => Array.isArray(sec?.questions) && sec.questions.length);
 
   if (
-    ['worksheet-mcq-generator', 'exam-question-paper-generator', 'mock-test-builder'].includes(slug) &&
+    [
+      'worksheet-mcq-generator',
+      'exam-question-paper-generator',
+      'mock-test-builder',
+      'smart-qa-practice-generator',
+    ].includes(slug) &&
     hasCanonicalSections
   ) {
     out.sections = out.sections.map((sec) => {
@@ -184,13 +189,18 @@ export function dedupeIntraRecordQuestions(toolSlug, structured) {
     });
     const legacyKeys = slug === 'worksheet-mcq-generator'
       ? ['section_a_mcqs', 'section_b_fib', 'section_c_vsa', 'section_d_sa', 'section_e_competency']
-      : ['section_a', 'section_b', 'section_c', 'section_d', 'section_e'];
+      : slug === 'smart-qa-practice-generator'
+        ? []
+        : ['section_a', 'section_b', 'section_c', 'section_d', 'section_e'];
     out.sections.slice(0, legacyKeys.length).forEach((sec, idx) => {
       out[legacyKeys[idx]] = Array.isArray(sec?.questions) ? [...sec.questions] : [];
     });
     out.questions = out.sections.flatMap((sec) =>
       Array.isArray(sec?.questions) ? sec.questions : [],
     );
+    if (slug === 'smart-qa-practice-generator') {
+      out.practice_questions = [...out.questions];
+    }
     out.questionCount = out.questions.length;
     out.totalQuestions = out.questions.length;
     out.total_questions = out.questions.length;

@@ -6,6 +6,7 @@ import {
   getPracticeQaMissingSections,
   PRACTICE_QA_SECTION_LABELS,
 } from '../ai/generators/core/ai-content-engine-service.js';
+import { dedupeIntraRecordQuestions } from '../ai/generators/shared/ai-generator-uniqueness-engine.js';
 
 test('premium Smart Q&A restores an omitted Section E without dropping valid sections', () => {
   const existingLabels = Object.values(PRACTICE_QA_SECTION_LABELS).filter(
@@ -46,4 +47,9 @@ test('premium Smart Q&A restores an omitted Section E without dropping valid sec
       .questions[0].question,
     /Cube Roots/i,
   );
+
+  const deduped = dedupeIntraRecordQuestions('smart-qa-practice-generator', repaired);
+  assert.deepEqual(getPracticeQaMissingSections(deduped), []);
+  assert.equal(deduped.sections.length, 7);
+  assert.equal(deduped.questions.length, 7);
 });
