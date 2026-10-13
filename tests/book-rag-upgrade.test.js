@@ -11,7 +11,11 @@ import {
   extractDocxParagraphsFromXml,
 } from '../ai/rag/books/book-ingestion-service.js';
 import { parseMultimodalBookAssets } from '../ai/rag/books/book-multimodal-service.js';
-import { buildBookContextForVariant, metadataMatchBonus } from '../ai/rag/books/book-rag-service.js';
+import {
+  buildBookContextForVariant,
+  metadataMatchBonus,
+  searchSelectedBookWithLegacyMetadataFallback,
+} from '../ai/rag/books/book-rag-service.js';
 
 test('true cosine similarity handles non-normalized vectors', () => {
   assert.equal(cosineSimilarity([2, 0], [7, 0]), 1);
@@ -34,6 +38,38 @@ test('authoritative corpus sources receive a bounded reranking preference', () =
   const questionBank = metadataMatchBonus({ sourcePriority: 80 }, {});
   assert.ok(textbook > questionBank);
   assert.ok(textbook <= 0.06);
+});
+
+test('selected books retry legacy chunks without broadening to other books', async () => {
+  const calls = [];
+  const result = await searchSelectedBookWithLegacyMetadataFallback({
+    bookId: 'selected-book',
+    strictScope: { board: 'IIT', class: 'Class 8', subject: 'Mathematics' },
+    search: async (scope) => {
+      calls.push(scope);
+      return calls.length === 1 ? [] : [{ _id: 'legacy-chunk', bookId: 'selected-book' }];
+    },
+  });
+
+  assert.equal(calls.length, 2);
+  assert.deepEqual(calls[1], {});
+  assert.equal(result.usedLegacyMetadataFallback, true);
+  assert.equal(result.chunks[0].bookId, 'selected-book');
+});
+
+test('corpus-wide retrieval never retries without curriculum metadata', async () => {
+  let calls = 0;
+  const result = await searchSelectedBookWithLegacyMetadataFallback({
+    bookId: '',
+    strictScope: { board: 'IIT', class: 'Class 8', subject: 'Mathematics' },
+    search: async () => {
+      calls += 1;
+      return [];
+    },
+  });
+
+  assert.equal(calls, 1);
+  assert.equal(result.usedLegacyMetadataFallback, false);
 });
 
 test('DOCX extraction preserves paragraph boundaries', () => {

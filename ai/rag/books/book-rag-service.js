@@ -256,6 +256,31 @@ function rerankBookChunks(chunks = [], scope = {}, topK = DEFAULT_TOP_K) {
 
 export { rerankBookChunks, metadataMatchBonus };
 
+/**
+ * Search a selected book strictly first, then tolerate legacy chunk metadata.
+ *
+ * Older books can have valid embeddings/content while their chunks predate the
+ * normalized board/class/subject fields. An explicit bookId already provides a
+ * hard corpus boundary, so retrying that same book without metadata filters is
+ * safe. Never apply this fallback to corpus-wide retrieval.
+ */
+export async function searchSelectedBookWithLegacyMetadataFallback({
+  bookId,
+  strictScope = {},
+  search,
+}) {
+  const strictChunks = await search(strictScope);
+  if (strictChunks.length || !bookId) {
+    return { chunks: strictChunks, usedLegacyMetadataFallback: false };
+  }
+
+  const legacyChunks = await search({});
+  return {
+    chunks: legacyChunks,
+    usedLegacyMetadataFallback: legacyChunks.length > 0,
+  };
+}
+
 export async function retrieveBookContextForGeneration(scope = {}) {
   const query = buildBookRetrievalQuery(scope);
   const isWholeChapter = !String(scope.subtopicName || scope.subtopic || '').trim();
@@ -297,12 +322,17 @@ export async function retrieveBookContextForGeneration(scope = {}) {
 
   // Formal exam mode fails closed: never broaden from the selected curriculum
   // to subject-only or unfiltered chunks.
-  const candidateChunks = rerankBookChunks(
-    await baseSearch({
+  const scopedSearch = await searchSelectedBookWithLegacyMetadataFallback({
+    bookId: scope.bookId,
+    strictScope: {
       board: scope.board,
       class: scope.className || scope.classLabel || scope.class,
       subject: scope.subjectName || scope.subject,
-    }),
+    },
+    search: baseSearch,
+  });
+  const candidateChunks = rerankBookChunks(
+    scopedSearch.chunks,
     scope,
     candidateK,
   );
@@ -356,6 +386,7 @@ export async function retrieveBookContextForGeneration(scope = {}) {
     retrievalStatus: chunks.length ? 'ready' : candidateChunks.length ? 'weak_context' : 'no_context',
     retrievalTier: scoreTier,
     bestScore: bestRawScore,
+    usedLegacyMetadataFallback: scopedSearch.usedLegacyMetadataFallback,
     sourceChunkIds: chunks.map((chunk) => String(chunk._id || '')).filter(Boolean),
     assets,
     multimodalParts,
