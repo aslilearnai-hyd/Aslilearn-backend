@@ -532,6 +532,7 @@ async function callChatCompletions({
   systemInstruction = '',
   responseSchema = null,
   modelOverflow = '',
+  multimodalParts = [],
 }) {
   const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   const contextTokens = Number(process.env.LLM_CONTEXT_TOKENS) || 0;
@@ -633,6 +634,11 @@ async function callChatCompletions({
               ? { responseSchema }
               : {}),
           };
+          const safeMultimodalParts = Array.isArray(multimodalParts)
+            ? multimodalParts
+                .filter((part) => part?.inlineData?.data && part?.inlineData?.mimeType)
+                .slice(0, 3)
+            : [];
           const result = await withGeminiTimeout(
             generateContentCompat({
               apiKey,
@@ -641,7 +647,7 @@ async function callChatCompletions({
               contents: [
                 {
                   role: 'user',
-                  parts: [{ text: prompt }],
+                  parts: [{ text: prompt }, ...safeMultimodalParts],
                 },
               ],
               generationConfig,
@@ -843,6 +849,9 @@ async function callChatCompletions({
   try {
     return await callGeminiFallback(normalizedMessages);
   } catch (geminiError) {
+    if (Array.isArray(multimodalParts) && multimodalParts.length) {
+      throw geminiError;
+    }
     if (isBatchVariant && flashLiteOnly) {
       throw geminiError;
     }
@@ -3007,6 +3016,7 @@ Provide: (1) what you see, (2) explanation/solution, (3) key takeaways.`;
       systemInstruction: systemContent,
       responseSchema: options.responseSchema && typeof options.responseSchema === 'object' ? options.responseSchema : null,
       modelOverflow: String(options.modelOverflow || '').trim(),
+      multimodalParts: Array.isArray(options.multimodalParts) ? options.multimodalParts : [],
     });
 
     return wantsJson ? stripCodeFences(text) : text;

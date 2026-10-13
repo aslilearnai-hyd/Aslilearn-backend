@@ -14,6 +14,18 @@ export async function buildBookHistoricalGenerationContext(scope) {
     toolSlug: scope.toolSlug,
     subtopic: scope.subtopic,
   });
+  const signatureRows = await AiToolGeneration.find(query)
+    .select('metadata.questionSlotSignatures')
+    .sort({ createdAt: -1 })
+    .limit(500)
+    .lean();
+  const questionSlotSignatures = [...new Set(
+    signatureRows.flatMap((row) =>
+      Array.isArray(row?.metadata?.questionSlotSignatures)
+        ? row.metadata.questionSlotSignatures.map(String)
+        : [],
+    ),
+  )].slice(0, 2000);
 
   return {
     existingCount,
@@ -25,5 +37,6 @@ export async function buildBookHistoricalGenerationContext(scope) {
     validationQuestionTexts: historical.validationQuestionTexts,
     uniquenessTarget: BOOK_GENERATOR_UNIQUENESS_TARGET,
     forbiddenOpenings: historical.forbiddenOpenings,
+    questionSlotSignatures,
   };
 }

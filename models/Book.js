@@ -27,6 +27,21 @@ const bookSchema = new mongoose.Schema(
       enum: ['textbook', 'coaching', 'notes', 'question_bank', 'proprietary', 'other'],
       default: 'textbook',
     },
+    /** Multiple approved sources can coexist inside the same curriculum corpus. */
+    corpusId: { type: String, default: '', trim: true, index: true },
+    sourcePriority: { type: Number, default: 100, min: 1 },
+    difficultyBand: {
+      type: String,
+      enum: ['', 'foundation', 'board', 'jee_main', 'jee_advanced', 'neet'],
+      default: '',
+    },
+    edition: { type: String, default: '', trim: true },
+    approvalStatus: {
+      type: String,
+      enum: ['approved', 'pending_review', 'rejected', 'archived'],
+      default: 'approved',
+      index: true,
+    },
     fileUrl: { type: String, default: '' },
     storageProvider: { type: String, default: 'local' },
     storageKey: { type: String, default: '' },
@@ -38,6 +53,7 @@ const bookSchema = new mongoose.Schema(
     chapters: { type: [bookChapterSchema], default: [] },
     embeddingsCreated: { type: Boolean, default: false },
     chunkCount: { type: Number, default: 0 },
+    duplicateChunkCount: { type: Number, default: 0 },
     processingStatus: {
       type: String,
       enum: ['pending', 'processing', 'indexed', 'failed', 'needs_ocr'],
@@ -65,6 +81,7 @@ const bookSchema = new mongoose.Schema(
 );
 
 bookSchema.index({ board: 1, class: 1, subject: 1 });
+bookSchema.index({ corpusId: 1, approvalStatus: 1, sourcePriority: 1 });
 bookSchema.index({ productCategory: 1 });
 bookSchema.index({ processingStatus: 1, updatedAt: -1 });
 bookSchema.index({ title: 'text', subject: 'text' });

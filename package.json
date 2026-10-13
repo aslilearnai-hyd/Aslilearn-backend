@@ -34,7 +34,11 @@
     "db:rebuild-schools": "node scripts/rebuild-schools-from-admins.js",
     "db:restore-users": "node scripts/restore-core-users.js",
     "db:recover-orphans": "node scripts/recover-schools-from-orphans.js",
-    "ai:fingerprint-backfill": "node scripts/ai-fingerprint-backfill.js"
+    "ai:fingerprint-backfill": "node scripts/ai-fingerprint-backfill.js",
+    "ai:data-quality:audit": "node scripts/audit-repair-ai-tool-data.mjs",
+    "ai:data-quality:repair": "node scripts/audit-repair-ai-tool-data.mjs --apply",
+    "ai:rag:stress": "node scripts/stress-test-rag-generation.mjs",
+    "ai:rag:reindex": "node scripts/reindex-book-corpus.mjs"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1036.0",

@@ -56,6 +56,16 @@ function validateDbGroundedResponse({ text, facts, userPrompt }) {
   if (BANNED_APPROX_WORDS.some((w) => lower.includes(w))) {
     return { ok: false, reason: 'contains_approximation_language' };
   }
+  const marksFirstScope =
+    facts?.scope === 'class_group' || facts?.scope === 'person_student';
+  const hasMarksEvidence =
+    Number(facts?.overview?.averageTotalMarks) > 0 ||
+    Number(facts?.overview?.latestTotalMarks) > 0 ||
+    (Array.isArray(facts?.recentExams) &&
+      facts.recentExams.some((exam) => Number(exam?.totalMarks) > 0));
+  if (marksFirstScope && hasMarksEvidence && /\d(?:\.\d+)?\s*%/.test(t)) {
+    return { ok: false, reason: 'percentage_used_when_marks_are_available' };
+  }
 
   const allowedNums = collectNumericFacts(facts);
   // allow class numbers appearing in user prompt (e.g. "Class 6")
@@ -70,7 +80,7 @@ function validateDbGroundedResponse({ text, facts, userPrompt }) {
   return { ok: true };
 }
 
-function formatOverviewFallback(facts, userPrompt = '', viewerRole = '') {
+export function formatOverviewFallback(facts, userPrompt = '', viewerRole = '') {
   if (facts?.operation === 'catalog_counts' || facts?.mode === 'catalog_counts') {
     const role = String(facts.viewerRole || viewerRole || '').toLowerCase();
     const videos = Number(facts.publishedVideos || 0);
@@ -140,16 +150,24 @@ function formatOverviewFallback(facts, userPrompt = '', viewerRole = '') {
     }
     if (profile?.schoolName) lines.push(`School: ${profile.schoolName}.`);
     if (typeof o.examsTaken === 'number') lines.push(`Exams taken: ${o.examsTaken}.`);
-    if (typeof o.averagePercentage === 'number') lines.push(`Average score: ${o.averagePercentage}%.`);
-    if (typeof o.latestPercentage === 'number') {
+    if (
+      typeof o.averageObtainedMarks === 'number' &&
+      typeof o.averageTotalMarks === 'number' &&
+      o.averageTotalMarks > 0
+    ) {
+      lines.push(`Average marks: ${o.averageObtainedMarks}/${o.averageTotalMarks}.`);
+    }
+    if (
+      typeof o.latestObtainedMarks === 'number' &&
+      typeof o.latestTotalMarks === 'number' &&
+      o.latestTotalMarks > 0
+    ) {
       lines.push(
-        `Latest exam: ${o.latestPercentage}%${o.latestExamTitle ? ` (${o.latestExamTitle})` : ''}.`,
+        `Latest exam: ${o.latestObtainedMarks}/${o.latestTotalMarks} marks${o.latestExamTitle ? ` (${o.latestExamTitle})` : ''}.`,
       );
     }
     if (o.trendDirection && o.trendDirection !== 'unknown') {
-      const delta =
-        o.deltaVsPrevious != null ? ` (${o.deltaVsPrevious > 0 ? '+' : ''}${o.deltaVsPrevious}%)` : '';
-      lines.push(`Score trend: ${o.trendDirection}${delta}.`);
+      lines.push(`Score trend: ${o.trendDirection}.`);
     }
     if (typeof o.videosCompleted === 'number' || typeof o.videosTracked === 'number') {
       lines.push(
@@ -173,7 +191,16 @@ function formatOverviewFallback(facts, userPrompt = '', viewerRole = '') {
       lines.push(
         `Recent exams: ${recentExams
           .slice(0, 4)
-          .map((e) => `${e.examTitle} ${e.percentage ?? 'N/A'}%`)
+          .map((e) => {
+            if (
+              typeof e.obtainedMarks === 'number' &&
+              typeof e.totalMarks === 'number' &&
+              e.totalMarks > 0
+            ) {
+              return `${e.examTitle} ${e.obtainedMarks}/${e.totalMarks} marks`;
+            }
+            return `${e.examTitle} — marks unavailable`;
+          })
           .join('; ')}.`,
       );
     }
@@ -203,8 +230,14 @@ function formatOverviewFallback(facts, userPrompt = '', viewerRole = '') {
     lines.push(`${label}:`);
     if (typeof o.students === 'number') lines.push(`Students: ${o.students}.`);
     if (typeof o.activeStudents === 'number') lines.push(`Active students: ${o.activeStudents}.`);
-    if (typeof o.averagePercentage === 'number') {
-      lines.push(`Average exam score (30d): ${o.averagePercentage}%.`);
+    if (
+      typeof o.averageObtainedMarks === 'number' &&
+      typeof o.averageTotalMarks === 'number' &&
+      o.averageTotalMarks > 0
+    ) {
+      lines.push(
+        `Average exam marks (30d): ${o.averageObtainedMarks}/${o.averageTotalMarks} marks.`,
+      );
     }
     if (typeof o.examResultsLast30Days === 'number') {
       lines.push(`Exam results (last 30 days): ${o.examResultsLast30Days}.`);
@@ -217,7 +250,16 @@ function formatOverviewFallback(facts, userPrompt = '', viewerRole = '') {
     if (top.length) {
       lines.push(
         `Top scorers: ${top
-          .map((s) => `${s.name} ${s.averagePercentage}%`)
+          .map((s) => {
+            if (
+              typeof s.averageObtainedMarks === 'number' &&
+              typeof s.averageTotalMarks === 'number' &&
+              s.averageTotalMarks > 0
+            ) {
+              return `${s.name} ${s.averageObtainedMarks}/${s.averageTotalMarks} marks`;
+            }
+            return `${s.name} — marks unavailable`;
+          })
           .join('; ')}.`,
       );
     }
@@ -600,6 +642,7 @@ For school admins, always answer for THEIR school — never ask "which school" o
 Answer only what was asked. Do not mention published videos, assessments, or library items unless the user asked about videos/assessments/content.
 If listing students for a class, list student names — ignore empty classNames arrays.
 Never invent counts, names or relationships. Distinguish unavailable from zero.
+For student or class exam performance, show obtained/total marks when supplied; do not convert them to percentages.
 Do not claim to change records.
 FACTS: ${JSON.stringify(facts)}`,
         contents: buildContentsFromHistory({ history, userMessage: userPrompt }),

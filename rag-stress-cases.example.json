@@ -1,0 +1,7 @@
+[
+  { "name": "short-theory", "request": { "bookId": "REPLACE", "toolSlug": "worksheet-mcq-generator", "topic": "REPLACE", "subtopic": "REPLACE", "questionCount": 5 } },
+  { "name": "long-theory", "request": { "bookId": "REPLACE", "toolSlug": "exam-question-paper-generator", "topic": "REPLACE", "questionCount": 5 } },
+  { "name": "math-heavy-numerical", "request": { "bookId": "REPLACE", "toolSlug": "smart-qa-practice-generator", "topic": "REPLACE", "subtopic": "REPLACE", "questionCount": 5, "examProfile": "JEE_MAIN" } },
+  { "name": "diagram-heavy", "request": { "bookId": "REPLACE", "toolSlug": "exam-question-paper-generator", "topic": "REPLACE", "subtopic": "REPLACE", "questionCount": 5, "examProfile": "NEET" } },
+  { "name": "narrow-subtopic", "request": { "bookId": "REPLACE", "toolSlug": "worksheet-mcq-generator", "topic": "REPLACE", "subtopic": "REPLACE", "questionCount": 5 } }
+]

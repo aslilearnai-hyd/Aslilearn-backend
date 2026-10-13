@@ -4,13 +4,13 @@
  */
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
+import crypto from 'node:crypto';
 import { getRouterConfig } from '../../providers/model-router.js';
 import { fetchGeminiGenerateContent } from '../../providers/google-genai-compat.js';
 import { isImageStemQuestion } from '../../../utils/unsupported-question-filter.js';
+import AssessmentAsset from '../../../models/AssessmentAsset.js';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const DIAGRAM_DIR = path.join(__dirname, '../uploads/ai-diagrams');
+const DIAGRAM_DIR = path.join(process.cwd(), 'uploads', 'ai-diagrams');
 
 const DIAGRAM_TOOLS = new Set([
   'worksheet-mcq-generator',
@@ -31,7 +31,7 @@ function isTruthyEnv(value, defaultTrue = true) {
 
 /** Diagram auto-generation enabled by default. Set AI_DIAGRAM_GENERATION=false to disable. */
 export function isAiDiagramGenerationEnabled() {
-  return isTruthyEnv(process.env.AI_DIAGRAM_GENERATION, true);
+  return isTruthyEnv(process.env.AI_DIAGRAM_GENERATION, false);
 }
 
 export function shouldGenerateDiagramsForTool(toolSlug) {
@@ -213,12 +213,9 @@ async function saveDiagramBuffer(base64Data, mime) {
 export function questionNeedsDiagram(q) {
   if (!q || typeof q !== 'object') return false;
   if (q.imageUrl && String(q.imageUrl).trim()) return false;
-  if (truthyFlag(q.needsDiagram) || truthyFlag(q.needs_diagram) || truthyFlag(q.needsFigure)) {
-    return true;
-  }
-  const prompt = String(q.imagePrompt || q.image_prompt || q.figurePrompt || '').trim();
-  if (prompt) return true;
-  return isImageStemQuestion(extractQuestionText(q));
+  return truthyFlag(q.newAssetRequired) && Boolean(
+    String(q.imagePrompt || q.image_prompt || q.figurePrompt || extractQuestionText(q)).trim(),
+  );
 }
 
 function walkQuestions(node, visit) {
@@ -295,6 +292,8 @@ export async function enrichStructuredContentWithDiagrams(
 
   let generated = 0;
   let failed = 0;
+  let pendingReview = 0;
+  let reused = 0;
 
   for (const q of candidates) {
     const question = extractQuestionText(q);
@@ -307,18 +306,46 @@ export async function enrichStructuredContentWithDiagrams(
       subtopic,
       classLabel,
     });
+    const cacheKey = crypto.createHash('sha256').update(prompt).digest('hex');
 
     try {
+      const approved = await AssessmentAsset.findOne({ cacheKey, approvalStatus: 'approved' }).lean();
+      if (approved) {
+        q.imageUrl = approved.imageUrl;
+        q.sourceAssetIds = [...new Set([...(q.sourceAssetIds || []), approved.assetId])];
+        q.needsDiagram = true;
+        delete q.newAssetRequired;
+        reused += 1;
+        continue;
+      }
+      const pending = await AssessmentAsset.findOne({ cacheKey, approvalStatus: 'pending_review' }).lean();
+      if (pending) {
+        q.pendingAssetId = pending.assetId;
+        q.validationFlags = [...new Set([...(q.validationFlags || []), 'PENDING_ASSET_APPROVAL'])];
+        pendingReview += 1;
+        continue;
+      }
       const image = await callGeminiImage(prompt);
       const saved = await saveDiagramBuffer(image.data, image.mime);
-      q.imageUrl = saved.imageUrl;
-      q.imagePrompt = imagePrompt || question.slice(0, 400);
-      q.needsDiagram = true;
-      // Ensure stem points at the attached figure when it didn't already.
-      if (question && !isImageStemQuestion(question)) {
-        q.question = `Study the figure below and answer: ${question}`;
-      }
+      const assetId = `ASSESSMENT_ASSET_${cacheKey.slice(0, 20)}`;
+      await AssessmentAsset.create({
+        assetId,
+        cacheKey,
+        imageUrl: saved.imageUrl,
+        prompt,
+        subject,
+        classLabel,
+        topic,
+        subtopic,
+        approvalStatus: 'pending_review',
+        model: resolveImageModel(),
+      });
+      q.pendingAssetId = assetId;
+      q.validationFlags = [...new Set([...(q.validationFlags || []), 'PENDING_ASSET_APPROVAL'])];
+      delete q.needsDiagram;
+      delete q.newAssetRequired;
       generated += 1;
+      pendingReview += 1;
     } catch (err) {
       failed += 1;
       console.warn(
@@ -341,5 +368,5 @@ export async function enrichStructuredContentWithDiagrams(
     }
   }
 
-  return { generated, failed, skipped: 0 };
+  return { generated, failed, skipped: 0, pendingReview, reused };
 }

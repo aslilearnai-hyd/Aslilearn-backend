@@ -1,11 +1,13 @@
 import Book from '../models/Book.js';
 import BookChunk from '../models/BookChunk.js';
+import BookAsset from '../models/BookAsset.js';
+import AssessmentAsset from '../models/AssessmentAsset.js';
 import {
   createBookFromUpload,
   createBookFromContent,
   enrichBookCurriculumFields,
   listImportableLearningContent,
-  scheduleIndexBook,
+  scheduleReextractAndIndexBook,
   deleteBook,
   getBookStats,
 } from '../services/book-ingestion-service.js';
@@ -34,7 +36,7 @@ export async function listBooks(req, res) {
 
     const books = await Book.find(filter)
       .select(
-        'title board class subject productCategory topic subtopic chunkCount processingStatus embeddingsCreated source generationStats updatedAt createdAt contentId',
+        'title board class subject productCategory topic subtopic corpusId sourcePriority difficultyBand edition approvalStatus chunkCount processingStatus embeddingsCreated source generationStats updatedAt createdAt contentId',
       )
       .sort({ updatedAt: -1 })
       .lean();
@@ -93,6 +95,11 @@ export async function uploadBook(req, res) {
       source: req.body.source,
       productCategory: req.body.productCategory,
       relativePath: req.body.relativePath || req.body.webkitRelativePath || req.file.originalname,
+      corpusId: req.body.corpusId,
+      sourcePriority: req.body.sourcePriority,
+      difficultyBand: req.body.difficultyBand,
+      edition: req.body.edition,
+      approvalStatus: req.body.approvalStatus,
       uploadedBy: resolveAuthenticatedUserId(req),
       uploadedByRole: req.user?.role || 'super-admin',
     });
@@ -112,12 +119,12 @@ export async function reindexBook(req, res) {
     book.processingStatus = 'pending';
     book.processingError = '';
     await book.save();
-    scheduleIndexBook(book._id);
+    scheduleReextractAndIndexBook(book._id);
 
     res.json({
       success: true,
       data: { bookId: book._id, processingStatus: 'pending' },
-      message: 'Book reindexing started.',
+      message: 'Book source re-extraction and reindexing started.',
     });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message || 'Reindex failed.' });
@@ -194,6 +201,84 @@ export async function listBookChunks(req, res) {
     });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message || 'Failed to list chunks.' });
+  }
+}
+
+export async function listBookAssets(req, res) {
+  if (!ensureSuperAdmin(req, res)) return;
+  try {
+    const book = await Book.findById(req.params.id).select('_id').lean();
+    if (!book) return res.status(404).json({ success: false, message: 'Book not found.' });
+    const filter = { bookId: book._id };
+    const status = String(req.query.status || '').trim();
+    if (status) filter.approvalStatus = status;
+    const assets = await BookAsset.find(filter)
+      .select('assetId page type caption description semanticText canonicalData labels sourceBBox assetPath chapter subtopic approvalStatus extractionModel extractionVersion createdAt updatedAt')
+      .sort({ page: 1, createdAt: 1 })
+      .lean();
+    return res.json({ success: true, data: assets });
+  } catch (err) {
+    return res.status(500).json({ success: false, message: err.message || 'Failed to list book assets.' });
+  }
+}
+
+export async function reviewBookAsset(req, res) {
+  if (!ensureSuperAdmin(req, res)) return;
+  try {
+    const approvalStatus = String(req.body?.approvalStatus || '').trim().toLowerCase();
+    if (!['pending_review', 'approved', 'rejected', 'archived'].includes(approvalStatus)) {
+      return res.status(400).json({
+        success: false,
+        message: 'approvalStatus must be pending_review, approved, rejected, or archived.',
+      });
+    }
+    const asset = await BookAsset.findOneAndUpdate(
+      { bookId: req.params.id, assetId: req.params.assetId },
+      { $set: { approvalStatus } },
+      { new: true, runValidators: true },
+    ).lean();
+    if (!asset) return res.status(404).json({ success: false, message: 'Book asset not found.' });
+    return res.json({ success: true, data: asset, message: `Asset marked ${approvalStatus}.` });
+  } catch (err) {
+    return res.status(500).json({ success: false, message: err.message || 'Failed to review book asset.' });
+  }
+}
+
+export async function listAssessmentAssets(req, res) {
+  if (!ensureSuperAdmin(req, res)) return;
+  try {
+    const filter = {};
+    const status = String(req.query.status || '').trim();
+    if (status) filter.approvalStatus = status;
+    const assets = await AssessmentAsset.find(filter).sort({ createdAt: -1 }).limit(500).lean();
+    return res.json({ success: true, data: assets });
+  } catch (err) {
+    return res.status(500).json({ success: false, message: err.message || 'Failed to list assessment assets.' });
+  }
+}
+
+export async function reviewAssessmentAsset(req, res) {
+  if (!ensureSuperAdmin(req, res)) return;
+  try {
+    const approvalStatus = String(req.body?.approvalStatus || '').trim().toLowerCase();
+    if (!['pending_review', 'approved', 'rejected', 'archived'].includes(approvalStatus)) {
+      return res.status(400).json({ success: false, message: 'Invalid approvalStatus.' });
+    }
+    const asset = await AssessmentAsset.findOneAndUpdate(
+      { assetId: req.params.assetId },
+      {
+        $set: {
+          approvalStatus,
+          reviewedBy: resolveAuthenticatedUserId(req),
+          reviewedAt: new Date(),
+        },
+      },
+      { new: true, runValidators: true },
+    ).lean();
+    if (!asset) return res.status(404).json({ success: false, message: 'Assessment asset not found.' });
+    return res.json({ success: true, data: asset });
+  } catch (err) {
+    return res.status(500).json({ success: false, message: err.message || 'Failed to review assessment asset.' });
   }
 }
 

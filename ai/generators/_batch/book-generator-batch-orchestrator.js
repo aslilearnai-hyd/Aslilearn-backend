@@ -52,7 +52,7 @@ import {
   shouldUseFlashForAiGeneratorRun,
 } from '../shared/ai-generator-batch-config.js';
 import { validateDashboardAiToolDoc } from '../../validation/ai-tool-dashboard-validation.js';
-import { retrieveBookContextForGeneration, buildBookContextTextForVariant } from '../../rag/books/book-rag-service.js';
+import { retrieveBookContextForGeneration, buildBookContextForVariant } from '../../rag/books/book-rag-service.js';
 import {
   isBookBasedToolSlug,
   getBookBasedToolDisplayName,
@@ -72,6 +72,18 @@ import { isSixSectionV2Enabled, buildV2VariantHint } from '../../prompt-versioni
 import { isV2SupportedTool, v2ToolFamily } from '../../prompt-versioning/tool-packs.js';
 import { mapV2StructuredToLegacy, ensureV2WorksheetCoreSections, syncLegacyWorksheetSectionsIntoV2, countUsableQuestionsFromV2OrLegacy, trimUsableQuestionsToCount } from '../../../utils/v2-structured-to-legacy.js';
 import { pickQuestionCountParams } from '../../../utils/questionComposition.js';
+import {
+  applyQuestionSlotMetadata,
+  buildGenerationCountTelemetry,
+  buildQuestionSlotPrompt,
+  planQuestionSlots,
+} from '../../planning/question-slot-planner.js';
+import { validateStemQuestionSet } from '../../validation/stem-question-validator.js';
+import {
+  assertGenerationCostWithinGuardrail,
+  evaluateGenerationCostGuardrail,
+  resolveCostBaseline,
+} from '../../governance/ai-cost-guardrail.js';
 
 /** Question tools that carry scaffold-prone question pools and cross-slot dedup. */
 const BOOK_QUESTION_UNIQUENESS_TOOLS = new Set([
@@ -360,6 +372,19 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
   try {
     opts.onProgress?.('Preparing batch…');
     const historical = await buildBookHistoricalGenerationContext(scope);
+    const questionSlotCount = mustMatchRequestedQuestionCount ? requestedQuestionCount : 5;
+    const buildSlotsForVariant = (variantIndex) => planQuestionSlots({
+      count: questionSlotCount,
+      examProfile: params.examProfile || productCategory,
+      productCategory,
+      subject: subjectName,
+      topic: topicName,
+      subtopic: isWholeChapter ? '' : subtopicName,
+      conceptIds: subTopicList.length ? subTopicList : [subtopicName || topicName],
+      variantIndex,
+      forbiddenSignatures: historical.questionSlotSignatures || [],
+    });
+    const initialQuestionSlots = buildSlotsForVariant(1);
     const batchTitles = [];
     const batchQuestionTexts = [];
     const historicalQuestionTexts = Array.isArray(historical.validationQuestionTexts)
@@ -399,14 +424,42 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             toolSlug,
             audience: toolAudience,
             bookTitle: book.title,
+            examProfile: params.examProfile || productCategory,
+            difficultyBand: params.difficultyBand,
+            visualRequired: initialQuestionSlots.some((slot) => slot.visualRequired),
+            sourceTypePreference: [...new Set(initialQuestionSlots.flatMap((slot) => slot.sourceTypePreference || []))],
             topK: conceptMasteryBatch ? 4 : isWholeChapter || subTopicList.length > 1 ? 6 : undefined,
           })
         : { contextText: '', chunkCount: 0, chunks: [], hasBookPassages: false };
 
       if (useBookKnowledge && !ragBase.hasBookPassages) {
+        const retrievalMessage =
+          ragBase.retrievalStatus === 'weak_context'
+            ? 'The selected textbook passages were too weak to safely ground an exam. Reindex the book or choose a more specific chapter/subtopic.'
+            : 'No matching textbook passages were found for the selected curriculum. Reindex the book or correct its board/class/subject metadata.';
         console.warn(
-          `[book-generator] WARNING: No textbook chunks retrieved for book=${bookId} topic="${topicName}" subtopic="${isWholeChapter ? 'whole-chapter' : subtopicName}". Generation will use curriculum labels only — reindex the book or check board/subject metadata.`,
+          `[book-generator] ${retrievalMessage} book=${bookId} topic="${topicName}" subtopic="${isWholeChapter ? 'whole-chapter' : subtopicName}"`,
         );
+        tokenUsage = endTokenUsageSession();
+        cost = computeGeminiCostFromTokenUsage(tokenUsage || {});
+        return {
+          success: false,
+          batchSize,
+          savedCount: 0,
+          failedCount: batchSize,
+          records: [],
+          failures: [retrievalMessage],
+          tokenUsage,
+          cost,
+          mode: 'book_rag',
+          bookId: String(book._id),
+          bookTitle: book.title,
+          ragChunkCount: 0,
+          bookTextUsed: false,
+          retrievalStatus: ragBase.retrievalStatus,
+          retrievalTier: ragBase.retrievalTier,
+          message: retrievalMessage,
+        };
       } else if (useBookKnowledge) {
         console.log(
           `[book-generator] Retrieved ${ragBase.chunkCount} textbook chunk(s) for "${subtopicName || topicName}" from book="${book.title}"`,
@@ -451,6 +504,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
         toolSlug,
         audience: toolAudience,
         bookTitle: book.title,
+        sourceTypePreference: [...new Set(initialQuestionSlots.flatMap((slot) => slot.sourceTypePreference || []))],
       };
 
       const slots = Array.from({ length: batchSize }, (_, i) => ({
@@ -519,6 +573,18 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             break;
           }
           try {
+            const questionSlots = buildSlotsForVariant(variantIndex).map((slot) =>
+              slot.visualRequired && !(ragBase.sourceAssetIds || []).length
+                ? { ...slot, representation: slot.equationRequired ? 'equation_numerical' : 'text', visualRequired: false }
+                : slot,
+            );
+            const questionSlotPrompt = buildQuestionSlotPrompt(questionSlots);
+            const variantRag = useBookKnowledge
+              ? buildBookContextForVariant(ragBase, ragScope, variantIndex)
+              : {
+                  contextText: ragBase.contextText,
+                  sourceChunkIds: ragBase.sourceChunkIds || [],
+                };
             // V2 six-section (book-grounded): when enabled + supported, generate the
             // 6-section content with the retrieved textbook passages passed as ragContext,
             // and save directly. Bypasses the legacy worksheet leak/dedup/scaffold gates
@@ -526,9 +592,8 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             // Pro model + RAG layer; rendering reuses SixSectionViewer.
             if (isSixSectionV2Enabled() && isV2SupportedTool(toolSlug)) {
               try {
-                const v2RagContext = useBookKnowledge
-                  ? buildBookContextTextForVariant(ragBase, ragScope, variantIndex)
-                  : ragBase.contextText;
+                const v2RagContextBase = variantRag.contextText;
+                const v2RagContext = [v2RagContextBase, questionSlotPrompt].filter(Boolean).join('\n\n');
                 const v2VariantHint = buildV2VariantHint({
                   variantIndex,
                   batchSize,
@@ -547,6 +612,8 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                     subTopic: isWholeChapter ? '' : subtopicName,
                     chapterScope: isWholeChapter,
                     ...(subTopicList.length > 1 ? { subTopics: subTopicList } : {}),
+                    examProfile: params.examProfile || productCategory,
+                    questionSlots,
                     ...requestedQuestionParams,
                   },
                   {
@@ -559,6 +626,9 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                     variantHint: v2VariantHint,
                     temperature: Math.min(0.9, 0.6 + (variantIndex - 1) * 0.06),
                     avoidQuestions: usedV2Questions.slice(0, 40),
+                    multimodalParts: ragBase.multimodalParts || [],
+                    sourceChunkIds: variantRag.sourceChunkIds || [],
+                    sourceAssetIds: ragBase.sourceAssetIds || [],
                   },
                 );
                 if (v2.ok) {
@@ -618,6 +688,28 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                       );
                       continue;
                     }
+                  }
+                  const v2SlotAssignment = applyQuestionSlotMetadata(structuredV2, questionSlots, {
+                    sourceChunkIds: variantRag.sourceChunkIds || [],
+                    sourceAssetIds: ragBase.sourceAssetIds || [],
+                  });
+                  structuredV2 = v2SlotAssignment.structuredContent;
+                  if (legacyStructured) {
+                    legacyStructured = applyQuestionSlotMetadata(legacyStructured, questionSlots, {
+                      sourceChunkIds: variantRag.sourceChunkIds || [],
+                      sourceAssetIds: ragBase.sourceAssetIds || [],
+                    }).structuredContent;
+                  }
+                  const stemGate = validateStemQuestionSet(structuredV2, {
+                    slots: questionSlots,
+                    expectedCount: mustMatchRequestedQuestionCount ? requestedQuestionCount : 0,
+                    approvedChunkIds: variantRag.sourceChunkIds || [],
+                    approvedAssetIds: ragBase.sourceAssetIds || [],
+                  });
+                  if (!stemGate.valid) {
+                    lastError = stemGate.findings.map((finding) => finding.code).join(', ');
+                    console.warn(`[book-generator] Slot ${batchIndex} STEM/slot validation failed: ${lastError}`);
+                    continue;
                   }
                   let persistContent = coreTitle;
                   if (legacyStructured) {
@@ -688,42 +780,17 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                       const detail =
                         (bookGate.missingSections || []).join(', ') ||
                         String(bookGate.message || 'incomplete').slice(0, 120);
-                      const qCount = countUsableQuestionsFromV2OrLegacy(
-                        structuredV2,
-                        legacyStructured,
+                      lastError = `Incomplete content (${detail})`;
+                      console.warn(
+                        `[book-generator] Slot ${batchIndex} attempt ${attempt}: not saved — ${detail}`,
                       );
-                      const detailLower = detail.toLowerCase();
-                      // These gaps are common with Gemini + V2 mapping; never burn the whole
-                      // slot/lock cycle on them when we already have a real payload.
-                      const onlySoftGaps =
-                        /concept check/i.test(detail) ||
-                        /missing:\s*section_[a-e]/i.test(detailLower) ||
-                        (/question paper sections/i.test(detail) && /section_[a-e]/i.test(detailLower));
-                      const hasConceptBody =
-                        toolSlug === 'concept-mastery-helper' &&
-                        (payloadLen > 400 ||
-                          renderedLen > 80 ||
-                          /"concepts"\s*:\s*\[/.test(JSON.stringify(structuredV2 || {}).slice(0, 2000)));
-                      const usablePayload =
-                        qCount >= 1 ||
-                        renderedLen > 250 ||
-                        payloadLen > 600 ||
-                        hasConceptBody;
-                      // Concept Check / missing section_d: always soft-pass (do not retry-burn locks).
-                      // Other gaps: soft-pass on last attempt if payload looks real.
-                      if (onlySoftGaps || (attempt >= maxAttempts && usablePayload)) {
-                        console.warn(
-                          `[book-generator] Slot ${batchIndex}: completeness soft-pass (q=${qCount}, chars=${renderedLen}, payload=${payloadLen}) — ${detail}`,
-                        );
-                      } else {
-                        lastError = `Incomplete content (${detail})`;
-                        console.warn(
-                          `[book-generator] Slot ${batchIndex} attempt ${attempt}: not saved — ${detail}`,
-                        );
-                        continue;
-                      }
+                      continue;
                     }
                   }
+                  const costGuardrail = assertGenerationCostWithinGuardrail(
+                    { inr: estimateSessionCostInr() / Math.max(1, completedSlots + 1) },
+                    { examProfile: params.examProfile || productCategory, productCategory },
+                  );
                   const rec = await withMongoRetry(() =>
                     AiToolGeneration.create({
                       toolName: toolSlug,
@@ -741,6 +808,25 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                       generatedBy: uid,
                       status: 'active',
                       reviewStatus: params.reviewStatus || 'approved',
+                      generationPlan: {
+                        examProfile: questionSlots[0]?.examProfile || 'BOARD',
+                        slots: questionSlots,
+                        sourceChunkIds: variantRag.sourceChunkIds || [],
+                        sourceAssetIds: ragBase.sourceAssetIds || [],
+                      },
+                      generationValidation: {
+                        valid: true,
+                        flags: [],
+                        attemptCount: attempt,
+                        generatedCount: stemGate.questionCount,
+                        repairedCount: 0,
+                      },
+                      generationCost: {
+                        inr: estimateSessionCostInr() / Math.max(1, completedSlots + 1),
+                        baselineInr: costGuardrail.baselineCost,
+                        increasePercent: costGuardrail.increasePercent,
+                        guardrailStatus: costGuardrail.status,
+                      },
                       metadata: {
                         board,
                         productCategory: productCategory || '',
@@ -748,6 +834,18 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                         bookTitle: book.title,
                         useBookKnowledge,
                         ragChunkCount: ragBase.chunkCount,
+                        ragCandidateCount: ragBase.candidateChunks?.length || ragBase.chunkCount,
+                        ragRetrievalTier: ragBase.retrievalTier || '',
+                        ragBestScore: ragBase.bestScore || 0,
+                        sourceChunkIds: variantRag.sourceChunkIds || [],
+                        sourceAssetIds: ragBase.sourceAssetIds || [],
+                        questionSlots,
+                        questionSlotSignatures: questionSlots.map((slot) => slot.signature),
+                        generationCounts: buildGenerationCountTelemetry({
+                          attempted: attempt,
+                          generated: stemGate.questionCount,
+                        }),
+                        costGuardrail,
                         bookTextUsed: Boolean(ragBase.hasBookPassages),
                         chapterScope: isWholeChapter,
                         requestedSubtopic: subtopicName,
@@ -831,15 +929,16 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               qualityTier: qualityTierSettings.tier,
               uniqueSeed: `${Date.now()}-book-v${variantIndex}-a${attempt}`,
               strictUniqueness: qualityTierSettings.enforceBatchUniqueness,
+              examProfile: params.examProfile || productCategory,
+              questionSlots,
               ...(attempt > 1 ? { recoveryPass: true, dedupAttempt: attempt } : {}),
               ...(historical.forbiddenOpenings?.length
                 ? { forbiddenOpenings: historical.forbiddenOpenings }
                 : {}),
             };
 
-            const pdfContext = useBookKnowledge
-              ? buildBookContextTextForVariant(ragBase, ragScope, variantIndex)
-              : ragBase.contextText;
+            const pdfContextBase = variantRag.contextText;
+            const pdfContext = [pdfContextBase, questionSlotPrompt].filter(Boolean).join('\n\n');
 
             const generated = await generateStructuredContentForAiGenerator(toolSlug, {
               board,
@@ -854,6 +953,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               qualityTier: qualityTierSettings.tier,
               extraParams,
               pdfContext,
+              multimodalParts: ragBase.multimodalParts || [],
               historicalPromptBlock: qualityTierSettings.useHistoricalPrompt ? historical.promptBlock : '',
               upgradeToFlash: shouldUseFlashForAiGeneratorRun({
                 upgradeRequested:
@@ -1032,6 +1132,23 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               }
             }
 
+            const slotAssignment = applyQuestionSlotMetadata(structuredContent, questionSlots, {
+              sourceChunkIds: variantRag.sourceChunkIds || [],
+              sourceAssetIds: ragBase.sourceAssetIds || [],
+            });
+            structuredContent = slotAssignment.structuredContent;
+            const stemGate = validateStemQuestionSet(structuredContent, {
+              slots: questionSlots,
+              expectedCount: mustMatchRequestedQuestionCount ? requestedQuestionCount : 0,
+              approvedChunkIds: variantRag.sourceChunkIds || [],
+              approvedAssetIds: ragBase.sourceAssetIds || [],
+            });
+            if (!stemGate.valid) {
+              lastError = `STEM/slot validation failed (${stemGate.findings.map((finding) => finding.code).join(', ')})`;
+              if (attempt < maxAttempts) continue;
+              throw new Error(lastError);
+            }
+
             // Prefer freshly formatted text from repaired structured content when available.
             let formattedContent = String(generated.generatedContent || '').trim();
             if (worksheetBatch && structuredContent) {
@@ -1084,12 +1201,37 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               }
             }
 
+            const deliveryGate = validateDashboardAiToolDoc(toolSlug, {
+              toolName: toolSlug,
+              board,
+              classLabel: className,
+              subject: subjectName,
+              topic: topicName,
+              subtopic: storageSubtopic,
+              content: formattedContent,
+              generatedContent: formattedContent,
+              metadata: { structuredContent },
+            });
+            if (!deliveryGate.valid) {
+              lastError = `Incomplete content (${(deliveryGate.missingSections || []).join(', ') || deliveryGate.message || 'schema mismatch'})`;
+              console.warn(
+                `[book-generator] Slot ${batchIndex} attempt ${attempt}: ${lastError} — not saving.`,
+              );
+              if (attempt < maxAttempts) continue;
+              throw new Error(lastError);
+            }
+
             const title = extractTitleFromStructured(structuredContent);
             if (title) batchTitles.push(title);
             batchQuestionTexts.push(...collectQuestionTextsFromStructured(structuredContent, toolSlug));
 
             const uid = opts.reqUser?.userId || opts.reqUser?._id || 'unknown';
             const teacherId = mongoose.Types.ObjectId.isValid(uid) ? uid : undefined;
+
+            const costGuardrail = assertGenerationCostWithinGuardrail(
+              { inr: estimateSessionCostInr() / Math.max(1, completedSlots + 1) },
+              { examProfile: params.examProfile || productCategory, productCategory },
+            );
 
             const record = await withMongoRetry(() =>
               AiToolGeneration.create({
@@ -1108,6 +1250,25 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               generatedBy: uid,
               status: 'active',
               reviewStatus: params.reviewStatus || 'approved',
+              generationPlan: {
+                examProfile: questionSlots[0]?.examProfile || 'BOARD',
+                slots: questionSlots,
+                sourceChunkIds: variantRag.sourceChunkIds || [],
+                sourceAssetIds: ragBase.sourceAssetIds || [],
+              },
+              generationValidation: {
+                valid: true,
+                flags: [],
+                attemptCount: attempt,
+                generatedCount: stemGate.questionCount,
+                repairedCount: 0,
+              },
+              generationCost: {
+                inr: estimateSessionCostInr() / Math.max(1, completedSlots + 1),
+                baselineInr: costGuardrail.baselineCost,
+                increasePercent: costGuardrail.increasePercent,
+                guardrailStatus: costGuardrail.status,
+              },
               metadata: {
                 board,
                 productCategory: productCategory || '',
@@ -1115,6 +1276,18 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                 bookTitle: book.title,
                 useBookKnowledge,
                 ragChunkCount: ragBase.chunkCount,
+                ragCandidateCount: ragBase.candidateChunks?.length || ragBase.chunkCount,
+                ragRetrievalTier: ragBase.retrievalTier || '',
+                ragBestScore: ragBase.bestScore || 0,
+                sourceChunkIds: variantRag.sourceChunkIds || [],
+                sourceAssetIds: ragBase.sourceAssetIds || [],
+                questionSlots,
+                questionSlotSignatures: questionSlots.map((slot) => slot.signature),
+                generationCounts: buildGenerationCountTelemetry({
+                  attempted: attempt,
+                  generated: stemGate.questionCount,
+                }),
+                costGuardrail,
                 bookTextUsed: Boolean(ragBase.hasBookPassages),
                 chapterScope: isWholeChapter,
                 requestedSubtopic: subtopicName,
@@ -1215,6 +1388,10 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
       uniquenessTarget: historical.uniquenessTarget,
       tokenUsage,
       cost,
+      costGuardrail: evaluateGenerationCostGuardrail({
+        currentCost: Number(cost?.inr || 0) / Math.max(1, savedRecords.length),
+        baselineCost: resolveCostBaseline({ examProfile: params.examProfile || productCategory, productCategory }),
+      }),
       mode: 'book_rag',
       bookId: String(book._id),
       bookTitle: book.title,

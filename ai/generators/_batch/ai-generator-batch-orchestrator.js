@@ -33,6 +33,8 @@ import { lockBoardKey, resolveClassLabelForAiToolStorage } from '../../../utils/
 import { formatStructuredToolOutput } from '../../../config/aiToolTemplates.js';
 import { mapV2StructuredToLegacy } from '../../../utils/v2-structured-to-legacy.js';
 import { pickQuestionCountParams } from '../../../utils/questionComposition.js';
+import { validateDashboardAiToolDoc } from '../../validation/ai-tool-dashboard-validation.js';
+import { buildGenerationCountTelemetry } from '../../planning/question-slot-planner.js';
 
 import {
 
@@ -573,6 +575,27 @@ export async function generateBatchAndSave(params, opts = {}) {
                       persistContent = JSON.stringify(legacyStructured);
                     }
                   }
+                  const v2Gate = validateDashboardAiToolDoc(toolSlug, {
+                    toolName: toolSlug,
+                    board,
+                    classLabel: className,
+                    subject: subjectName,
+                    topic: topicName,
+                    subtopic: combinedSubtopicLabel,
+                    content: persistContent,
+                    generatedContent: persistContent,
+                    metadata: {
+                      structuredContent: v2.structuredContent,
+                      ...(legacyStructured ? { legacyStructuredContent: legacyStructured } : {}),
+                    },
+                  });
+                  if (!v2Gate.valid) {
+                    lastError = `Incomplete content (${(v2Gate.missingSections || []).join(', ') || v2Gate.message || 'schema mismatch'})`;
+                    console.warn(
+                      `[AI Generator batch] Variant ${variantIndex} attempt ${attempt}: ${lastError} — not saving.`,
+                    );
+                    continue;
+                  }
                   const rec = await AiToolGeneration.create({
                     toolName: toolSlug,
                     toolDisplayName,
@@ -589,6 +612,13 @@ export async function generateBatchAndSave(params, opts = {}) {
                     generatedBy: uid,
                     status: 'active',
                     reviewStatus: params.reviewStatus || 'approved',
+                    generationValidation: {
+                      valid: true,
+                      flags: [],
+                      attemptCount: attempt,
+                      generatedCount: extractV2QuestionTexts(v2.structuredContent).length,
+                      repairedCount: 0,
+                    },
                     metadata: {
                       board,
                       productCategory,
@@ -603,6 +633,10 @@ export async function generateBatchAndSave(params, opts = {}) {
                       generationVariant: variantIndex,
                       batchSize,
                       batchOrchestrator: true,
+                      generationCounts: buildGenerationCountTelemetry({
+                        attempted: attempt,
+                        generated: extractV2QuestionTexts(v2.structuredContent).length,
+                      }),
                     },
                     ...(teacherId ? { teacherId } : {}),
                   });
@@ -824,6 +858,26 @@ export async function generateBatchAndSave(params, opts = {}) {
               }
             }
 
+            const deliveryGate = validateDashboardAiToolDoc(toolSlug, {
+              toolName: toolSlug,
+              board,
+              classLabel: className,
+              subject: subjectName,
+              topic: topicName,
+              subtopic: combinedSubtopicLabel,
+              content: generated.generatedContent,
+              generatedContent: generated.generatedContent,
+              metadata: { structuredContent: generated.structuredContent },
+            });
+            if (!deliveryGate.valid) {
+              lastError = `Incomplete content (${(deliveryGate.missingSections || []).join(', ') || deliveryGate.message || 'schema mismatch'})`;
+              console.warn(
+                `[AI Generator batch] Variant ${variantIndex} attempt ${attempt}: ${lastError} — not saving.`,
+              );
+              if (attempt < maxAttempts) continue;
+              throw new Error(lastError);
+            }
+
             const title = extractTitleFromStructured(generated.structuredContent);
 
             if (title) batchTitles.push(title);
@@ -885,6 +939,14 @@ export async function generateBatchAndSave(params, opts = {}) {
 
               reviewStatus: params.reviewStatus || 'approved',
 
+              generationValidation: {
+                valid: true,
+                flags: [],
+                attemptCount: attempt,
+                generatedCount: collectQuestionTextsFromStructured(generated.structuredContent, toolSlug).length,
+                repairedCount: generated.sectionRepairCount || 0,
+              },
+
               metadata: {
 
                 board,
@@ -921,6 +983,12 @@ export async function generateBatchAndSave(params, opts = {}) {
                 sectionRepairCount: generated.sectionRepairCount || 0,
 
                 duplicatePreventionCount,
+
+                generationCounts: buildGenerationCountTelemetry({
+                  attempted: attempt,
+                  generated: collectQuestionTextsFromStructured(generated.structuredContent, toolSlug).length,
+                  repaired: generated.sectionRepairCount || 0,
+                }),
 
               },
 

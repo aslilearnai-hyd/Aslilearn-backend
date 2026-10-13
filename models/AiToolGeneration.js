@@ -51,6 +51,25 @@ const aiToolGenerationSchema = new mongoose.Schema(
     reviewerNotes: { type: String, default: '' },
     teacherId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', index: true },
     metadata: { type: mongoose.Schema.Types.Mixed, default: {} },
+    generationPlan: {
+      examProfile: { type: String, default: '', index: true },
+      slots: { type: [mongoose.Schema.Types.Mixed], default: [] },
+      sourceChunkIds: { type: [String], default: [] },
+      sourceAssetIds: { type: [String], default: [] },
+    },
+    generationValidation: {
+      valid: { type: Boolean, default: true },
+      flags: { type: [mongoose.Schema.Types.Mixed], default: [] },
+      attemptCount: { type: Number, default: 0 },
+      generatedCount: { type: Number, default: 0 },
+      repairedCount: { type: Number, default: 0 },
+    },
+    generationCost: {
+      inr: { type: Number, default: 0 },
+      baselineInr: { type: Number, default: 0 },
+      increasePercent: { type: Number, default: null },
+      guardrailStatus: { type: String, default: '' },
+    },
   },
   { timestamps: true },
 );
@@ -100,6 +119,7 @@ aiToolGenerationSchema.index({ reviewStatus: 1, updatedAt: -1 });
 aiToolGenerationSchema.index({ reviewStatus: 1, classLabel: 1, subject: 1, createdAt: -1 });
 aiToolGenerationSchema.index({ 'metadata.bookGenerator': 1, createdAt: -1 });
 aiToolGenerationSchema.index({ sourceType: 1, board: 1, createdAt: -1 });
+aiToolGenerationSchema.index({ 'generationPlan.examProfile': 1, createdAt: -1 });
 
 function bumpHierarchyCache() {
   // Lazy import avoids circular init with controllers that import this model.

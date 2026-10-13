@@ -64,6 +64,8 @@ import {
   getTopicSaturationReport,
 } from '../services/ai-generator-audit-service.js';
 import { AI_TOOL_ORDERED_SLUGS } from '../config/aiToolTemplates.js';
+import { validateDashboardAiToolDoc } from '../ai/validation/ai-tool-dashboard-validation.js';
+import { buildGenerationCountTelemetry } from '../ai/planning/question-slot-planner.js';
 
 function normalizeText(value) {
   return String(value || '').trim().replace(/\s+/g, ' ');
@@ -452,11 +454,13 @@ export async function generateAndSaveContent(req, res) {
     let contentType;
     let sectionRepairCount = 0;
     let duplicatePreventionCount = 0;
+    let generationAttemptCount = 0;
     const maxUniquenessAttempts = getUniquenessMaxAttempts();
 
     try {
       let lastUniquenessError = '';
       for (let uniqAttempt = 1; uniqAttempt <= maxUniquenessAttempts; uniqAttempt += 1) {
+        generationAttemptCount = uniqAttempt;
         try {
           ({ generatedContent, structuredContent, contentType, sectionRepairCount } =
             await generateStructuredContentForAiGenerator(toolSlug, {
@@ -532,6 +536,37 @@ export async function generateAndSaveContent(req, res) {
       ? explicitReviewStatus
       : 'approved';
 
+    const deliveryGate = validateDashboardAiToolDoc(toolSlug, {
+      toolName: toolSlug,
+      board,
+      classLabel: className,
+      subject: subjectName,
+      topic: topicName,
+      subtopic: subtopicName,
+      content: generatedContent,
+      generatedContent,
+      metadata: { structuredContent },
+    });
+    if (/PENDING_ASSET_APPROVAL/i.test(JSON.stringify(structuredContent || {}))) {
+      return res.status(422).json({
+        success: false,
+        code: 'AI_ASSET_PENDING_APPROVAL',
+        message: 'A newly generated diagram is pending administrator approval and cannot be published yet.',
+        tokenUsage,
+        cost,
+      });
+    }
+    if (!deliveryGate.valid) {
+      return res.status(422).json({
+        success: false,
+        code: 'AI_OUTPUT_INCOMPLETE',
+        message: deliveryGate.message || 'Generated content did not pass the dashboard completeness gate.',
+        missingSections: deliveryGate.missingSections || [],
+        tokenUsage,
+        cost,
+      });
+    }
+
     const record = await AiToolGeneration.create({
       toolName: toolSlug,
       toolDisplayName,
@@ -547,6 +582,13 @@ export async function generateAndSaveContent(req, res) {
       generatedBy,
       status: 'active',
       reviewStatus,
+      generationValidation: {
+        valid: true,
+        flags: [],
+        attemptCount: generationAttemptCount,
+        generatedCount: collectQuestionTextsFromStructured(structuredContent, toolSlug).length,
+        repairedCount: sectionRepairCount,
+      },
       metadata: {
         board,
         createdByName: getRequestUserName(req),
@@ -562,6 +604,11 @@ export async function generateAndSaveContent(req, res) {
         duplicatePreventionCount,
         tokenUsage,
         cost,
+        generationCounts: buildGenerationCountTelemetry({
+          attempted: generationAttemptCount,
+          generated: collectQuestionTextsFromStructured(structuredContent, toolSlug).length,
+          repaired: sectionRepairCount,
+        }),
       },
       ...(teacherId ? { teacherId } : {}),
     });

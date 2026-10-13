@@ -1,14 +1,18 @@
 import fs from 'fs/promises';
 import path from 'path';
+import crypto from 'crypto';
 import { fileURLToPath } from 'url';
 import { PDFParse } from 'pdf-parse';
 import Book from '../../../models/Book.js';
 import BookChunk from '../../../models/BookChunk.js';
+import BookSourcePart from '../../../models/BookSourcePart.js';
+import BookAsset from '../../../models/BookAsset.js';
 import Content from '../../../models/Content.js';
 import Subject from '../../../models/Subject.js';
 import { generateEmbedding } from '../pdf/pdf-rag-service.js';
-import { uploadPdfToConfiguredStorage } from '../../../services/cloud-storage.js';
+import { getPdfBufferFromStorage, uploadPdfToConfiguredStorage } from '../../../services/cloud-storage.js';
 import geminiService, { extractTextFromDocument } from '../../providers/gemini-service.js';
+import { extractAndStoreBookAssets } from './book-multimodal-service.js';
 import { subjectDisplayName } from '../../../utils/subjectDelete.js';
 import {
   canonicalBoardLabel,
@@ -65,6 +69,21 @@ const IMPORTABLE_EXTENSIONS = new Set(['.pdf', '.docx', '.txt']);
 const CHUNK_WORDS_MIN = Number(process.env.BOOK_CHUNK_WORDS_MIN || 500);
 const CHUNK_WORDS_MAX = Number(process.env.BOOK_CHUNK_WORDS_MAX || 1000);
 const CHUNK_OVERLAP_WORDS = Number(process.env.BOOK_CHUNK_OVERLAP_WORDS || 80);
+const BOOK_SOURCE_PART_CHARS = Math.max(
+  100000,
+  Math.min(750000, Number(process.env.BOOK_SOURCE_PART_CHARS) || 400000),
+);
+const BOOK_EXTRACTED_TEXT_PREVIEW_CHARS = Math.max(
+  50000,
+  Math.min(500000, Number(process.env.BOOK_EXTRACTED_TEXT_PREVIEW_CHARS) || 500000),
+);
+const BOOK_DIFFICULTY_BANDS = new Set(['', 'foundation', 'board', 'jee_main', 'jee_advanced', 'neet']);
+const BOOK_APPROVAL_STATUSES = new Set(['approved', 'pending_review', 'rejected', 'archived']);
+
+function enumValue(value, allowed, fallback) {
+  const normalized = String(value || '').trim().toLowerCase();
+  return allowed.has(normalized) ? normalized : fallback;
+}
 
 function normalizeSpaces(text) {
   return String(text || '').replace(/\r\n/g, '\n').replace(/[ \t]+/g, ' ').trim();
@@ -85,8 +104,7 @@ async function extractDocxText(buffer) {
     const entry = zip.getEntry('word/document.xml');
     if (!entry) return '';
     const xml = entry.getData().toString('utf8');
-    const texts = [...xml.matchAll(/<w:t[^>]*>([^<]*)<\/w:t>/g)].map((m) => m[1]);
-    return normalizeSpaces(texts.join(' '));
+    return extractDocxParagraphsFromXml(xml);
   } catch {
     return extractDocxTextFallback(buffer);
   }
@@ -94,9 +112,32 @@ async function extractDocxText(buffer) {
 
 function extractDocxTextFallback(buffer) {
   const raw = buffer.toString('utf8');
-  const texts = [...raw.matchAll(/<w:t[^>]*>([^<]*)<\/w:t>/g)].map((m) => m[1]);
-  if (texts.length) return normalizeSpaces(texts.join(' '));
+  const paragraphs = extractDocxParagraphsFromXml(raw);
+  if (paragraphs) return paragraphs;
   return normalizeSpaces(raw.replace(/<[^>]+>/g, ' '));
+}
+
+function decodeXmlText(text = '') {
+  return String(text)
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'");
+}
+
+/** Preserve Word paragraph/list boundaries for heading detection and equations. */
+export function extractDocxParagraphsFromXml(xml = '') {
+  const paragraphs = [];
+  for (const match of String(xml).matchAll(/<w:p\b[^>]*>([\s\S]*?)<\/w:p>/g)) {
+    const body = match[1];
+    const parts = [...body.matchAll(/<w:t[^>]*>([\s\S]*?)<\/w:t>/g)]
+      .map((item) => decodeXmlText(item[1]))
+      .filter(Boolean);
+    const line = parts.join('').replace(/[ \t]+/g, ' ').trim();
+    if (line) paragraphs.push(line);
+  }
+  return paragraphs.join('\n').replace(/\n{3,}/g, '\n\n').trim();
 }
 
 async function extractPdfText(buffer) {
@@ -164,7 +205,7 @@ export function splitIntoChapters(text) {
 
   const lines = clean.split('\n');
   const headingRe =
-    /^(chapter\s+[\dIVXLC]+[\s.:)\-–—]*|unit\s+[\dIVXLC]+[\s.:)\-–—]*|part\s+[\dIVXLC]+[\s.:)\-–—]*|section\s+[\dIVXLC]+[\s.:)\-–—]*)/i;
+    /^(chapter\s+[\dIVXLC]+[\s.:)\-–—]*|unit\s+[\dIVXLC]+[\s.:)\-–—]*|part\s+[\dIVXLC]+[\s.:)\-–—]*|section\s+[\dIVXLC]+[\s.:)\-–—]*|lesson\s+[\dIVXLC]+[\s.:)\-–—]*|theme\s+[\dIVXLC]+[\s.:)\-–—]*|\d{1,3}(?:\.\d{1,3}){0,2}[.)]?\s+[A-Z][^.!?]{2,120}$)/i;
 
   const chapters = [];
   let current = { title: 'Introduction', lines: [], startOffset: 0 };
@@ -215,8 +256,7 @@ export function chunkChapterText(text, chapterMeta = {}) {
 
   const chunks = [];
   const maxWords = Math.max(CHUNK_WORDS_MIN, CHUNK_WORDS_MAX);
-  const minWords = Math.min(CHUNK_WORDS_MIN, maxWords);
-  const stride = Math.max(minWords - CHUNK_OVERLAP_WORDS, 200);
+  const stride = Math.max(maxWords - Math.max(0, CHUNK_OVERLAP_WORDS), 200);
   let idx = 0;
 
   for (let start = 0; start < words.length; start += stride) {
@@ -264,11 +304,33 @@ async function markBookFailed(bookId, message) {
   }
 }
 
+async function replaceBookSourceText(bookId, text = '') {
+  const source = String(text || '');
+  await BookSourcePart.deleteMany({ bookId });
+  if (!source) return 0;
+  const docs = [];
+  for (let start = 0, partIndex = 0; start < source.length; start += BOOK_SOURCE_PART_CHARS, partIndex += 1) {
+    const content = source.slice(start, start + BOOK_SOURCE_PART_CHARS);
+    docs.push({ bookId, partIndex, content, charCount: content.length });
+  }
+  if (docs.length) await BookSourcePart.insertMany(docs, { ordered: true });
+  return docs.length;
+}
+
+async function loadFullBookSourceText(book) {
+  const parts = await BookSourcePart.find({ bookId: book._id })
+    .select('content partIndex')
+    .sort({ partIndex: 1 })
+    .lean();
+  if (parts.length) return parts.map((part) => String(part.content || '')).join('');
+  return String(book.extractedText || '');
+}
+
 /** Apply extracted text onto a book; returns false when OCR/manual text is still required. */
 async function applyExtractedTextToBook(book, buffer, mimeType, originalName) {
   const { text, requiresOcr } = await extractTextFromUpload(buffer, mimeType, originalName);
   const chapters = splitIntoChapters(text).map(({ text: _t, ...ch }) => ch);
-  book.extractedText = text.slice(0, 500000);
+  book.extractedText = text.slice(0, BOOK_EXTRACTED_TEXT_PREVIEW_CHARS);
   book.extractedTextLength = text.length;
   book.chapters = chapters;
   book.requiresOcr = requiresOcr;
@@ -284,6 +346,7 @@ async function applyExtractedTextToBook(book, buffer, mimeType, originalName) {
   book.processingStatus = 'processing';
   book.processingError = '';
   await book.save();
+  await replaceBookSourceText(book._id, text);
   return true;
 }
 
@@ -304,6 +367,9 @@ export function scheduleExtractAndIndexFromBuffer(bookId, buffer, mimeType, orig
         originalName || book.originalFileName,
       );
       if (!ok) return;
+      await extractAndStoreBookAssets({ book, buffer, mimeType: mimeType || book.mimeType }).catch((error) => {
+        console.warn('[book-knowledge] multimodal extraction skipped:', error?.message || error);
+      });
       await indexBook(bookId);
     } catch (err) {
       await markBookFailed(bookId, err?.message || 'Indexing failed');
@@ -329,6 +395,13 @@ export function scheduleExtractAndIndexFromContentFile(bookId) {
         book.originalFileName || path.basename(String(book.fileUrl || '')),
       );
       if (!ok) return;
+      await extractAndStoreBookAssets({
+        book,
+        buffer,
+        mimeType: book.mimeType || mimeFromFileUrl(book.fileUrl),
+      }).catch((error) => {
+        console.warn('[book-knowledge] multimodal extraction skipped:', error?.message || error);
+      });
       await indexBook(bookId);
     } catch (err) {
       await markBookFailed(bookId, err?.message || 'Indexing failed');
@@ -343,6 +416,41 @@ export function scheduleIndexBook(bookId) {
       await indexBook(bookId);
     } catch (err) {
       await markBookFailed(bookId, err?.message || 'Indexing failed');
+    }
+  });
+}
+
+/**
+ * Re-read the original source before rebuilding chunks. This is intentionally
+ * different from scheduleIndexBook: legacy rows may contain only the old
+ * extractedText preview, so embedding that preview again would preserve the
+ * truncation and could never recover omitted chapters.
+ */
+export async function reextractAndIndexBook(bookId) {
+  const book = await Book.findById(bookId);
+  if (!book) throw new Error('Book not found');
+  book.processingStatus = 'processing';
+  book.processingError = '';
+  await book.save();
+
+  const buffer = await getPdfBufferFromStorage(book);
+  const mimeType = book.mimeType || mimeFromFileUrl(book.fileUrl);
+  const originalName = book.originalFileName || path.basename(String(book.fileUrl || ''));
+  const ok = await applyExtractedTextToBook(book, buffer, mimeType, originalName);
+  if (!ok) return { bookId: book._id, status: book.processingStatus, indexed: false };
+  await extractAndStoreBookAssets({ book, buffer, mimeType }).catch((error) => {
+    console.warn('[book-knowledge] multimodal re-extraction skipped:', error?.message || error);
+  });
+  const indexed = await indexBook(bookId);
+  return { ...indexed, status: 'indexed', indexed: true };
+}
+
+export function scheduleReextractAndIndexBook(bookId) {
+  scheduleBackgroundWork(`reextract+index ${bookId}`, async () => {
+    try {
+      await reextractAndIndexBook(bookId);
+    } catch (err) {
+      await markBookFailed(bookId, err?.message || 'Re-extraction and indexing failed');
     }
   });
 }
@@ -363,6 +471,11 @@ export async function createBookFromUpload({
   uploadedByRole,
   productCategory,
   relativePath,
+  corpusId,
+  sourcePriority,
+  difficultyBand,
+  edition,
+  approvalStatus,
 }) {
   await ensureBookContentIdIndex();
   await ensureUploadDir();
@@ -410,6 +523,13 @@ export async function createBookFromUpload({
     topic: String(topic || '').trim(),
     subtopic: String(subtopic || '').trim(),
     source: source || 'textbook',
+    corpusId: String(corpusId || `${boardLabel}:${classLabel}:${subjectName}:${resolvedCategory || 'GENERAL'}`)
+      .trim()
+      .toLowerCase(),
+    sourcePriority: Math.max(1, Number(sourcePriority) || 100),
+    difficultyBand: enumValue(difficultyBand, BOOK_DIFFICULTY_BANDS, ''),
+    edition: String(edition || '').trim(),
+    approvalStatus: enumValue(approvalStatus, BOOK_APPROVAL_STATUSES, 'approved'),
     fileUrl,
     storageProvider,
     storageKey,
@@ -426,22 +546,9 @@ export async function createBookFromUpload({
     uploadedByRole: String(uploadedByRole || 'super-admin').trim(),
   };
 
-  let book = null;
-  if (subjectName) {
-    book = await Book.findOne({
-      board: boardLabel,
-      class: classLabel,
-      subject: subjectName,
-      productCategory: resolvedCategory || '',
-    }).sort({ updatedAt: -1 });
-  }
-
-  if (book) {
-    Object.assign(book, sharedFields);
-    await book.save();
-  } else {
-    book = await Book.create(sharedFields);
-  }
+  // Multiple approved sources may coexist in one curriculum corpus. A new
+  // upload must not silently overwrite NCERT/coaching/question-bank material.
+  const book = await Book.create(sharedFields);
 
   scheduleExtractAndIndexFromBuffer(book._id, buffer, mimeType, originalName);
   return book;
@@ -457,7 +564,7 @@ export async function indexBook(bookId) {
   await book.save();
 
   try {
-    const fullText = book.extractedText || '';
+    const fullText = await loadFullBookSourceText(book);
     if (!fullText || fullText.length < 80) {
       book.processingStatus = 'needs_ocr';
       book.processingError = 'Insufficient text for indexing.';
@@ -468,12 +575,32 @@ export async function indexBook(bookId) {
     await BookChunk.deleteMany({ bookId: book._id });
 
     const chapterSegments = splitIntoChapters(fullText);
+    const indexedAssets = await BookAsset.find({ bookId: book._id })
+      .select('assetId chapter subtopic page')
+      .lean();
     const allChunkDocs = [];
+    const corpusId = String(book.corpusId || '').trim();
+    const existingHashes = corpusId
+      ? new Set(
+          (await BookChunk.find({
+            corpusId,
+            bookId: { $ne: book._id },
+            approvalStatus: { $nin: ['rejected', 'archived'] },
+          }).distinct('contentHash')).filter(Boolean),
+        )
+      : new Set();
+    let duplicateChunkCount = 0;
     let globalIndex = 0;
 
     for (const chapter of chapterSegments) {
       const chapterChunks = chunkChapterText(chapter.text || fullText.slice(chapter.startOffset, chapter.endOffset), chapter);
       for (const chunk of chapterChunks) {
+        const contentHash = crypto.createHash('sha256').update(chunk.content).digest('hex');
+        if (existingHashes.has(contentHash)) {
+          duplicateChunkCount += 1;
+          continue;
+        }
+        existingHashes.add(contentHash);
         const { embedding, embeddingModel } = await generateEmbedding(chunk.content);
         allChunkDocs.push({
           bookId: book._id,
@@ -481,7 +608,20 @@ export async function indexBook(bookId) {
           chapter: chunk.chapter || chapter.title,
           topic: chunk.topic || chapter.topic,
           subtopic: chunk.subtopic || chapter.subtopic,
+          assetIds: indexedAssets
+            .filter((asset) => {
+              const assetChapter = String(asset.chapter || '').trim().toLowerCase();
+              const chunkChapter = String(chunk.chapter || chapter.title || '').trim().toLowerCase();
+              const assetSubtopic = String(asset.subtopic || '').trim().toLowerCase();
+              const chunkSubtopic = String(chunk.subtopic || chapter.subtopic || '').trim().toLowerCase();
+              return Boolean(
+                (assetChapter && chunkChapter && (assetChapter.includes(chunkChapter) || chunkChapter.includes(assetChapter))) ||
+                (assetSubtopic && chunkSubtopic && (assetSubtopic.includes(chunkSubtopic) || chunkSubtopic.includes(assetSubtopic))),
+              );
+            })
+            .map((asset) => asset.assetId),
           content: chunk.content,
+          contentHash,
           wordCount: chunk.wordCount,
           tokenCount: chunk.tokenCount,
           embedding,
@@ -489,6 +629,11 @@ export async function indexBook(bookId) {
           board: book.board,
           class: book.class,
           subject: book.subject,
+          corpusId: book.corpusId || '',
+          sourcePriority: book.sourcePriority || 100,
+          sourceType: book.source || '',
+          difficultyBand: book.difficultyBand || '',
+          approvalStatus: book.approvalStatus || 'approved',
         });
         globalIndex += 1;
       }
@@ -499,13 +644,14 @@ export async function indexBook(bookId) {
     }
 
     book.chunkCount = allChunkDocs.length;
+    book.duplicateChunkCount = duplicateChunkCount;
     book.embeddingsCreated = allChunkDocs.length > 0;
     book.processingStatus = 'indexed';
     book.chapters = chapterSegments.map(({ text: _t, ...ch }) => ch);
     book.lastIndexedAt = new Date();
     await book.save();
 
-    return { bookId: book._id, chunkCount: allChunkDocs.length };
+    return { bookId: book._id, chunkCount: allChunkDocs.length, duplicateChunkCount };
   } catch (error) {
     book.processingStatus = 'failed';
     book.processingError = error.message || 'Indexing failed';
@@ -515,7 +661,10 @@ export async function indexBook(bookId) {
 }
 
 export async function deleteBook(bookId) {
+  const { default: BookAsset } = await import('../../../models/BookAsset.js');
   await BookChunk.deleteMany({ bookId });
+  await BookSourcePart.deleteMany({ bookId });
+  await BookAsset.deleteMany({ bookId });
   await Book.findByIdAndDelete(bookId);
   return { deleted: true };
 }
@@ -806,6 +955,9 @@ export async function createBookFromContent({ contentId, uploadedBy, uploadedByR
     topic: String(content.topic || content.chapter || '').trim(),
     subtopic: String(content.module || '').trim(),
     source: mapContentTypeToBookSource(content.type),
+    corpusId: `${boardLabel}:${classLabel}:${subjectName}:${productCategory || 'GENERAL'}`.toLowerCase(),
+    sourcePriority: content.type === 'TextBook' ? 10 : content.type === 'Workbook' ? 30 : 50,
+    approvalStatus: 'approved',
     contentId: content._id,
     fileUrl,
     storageProvider: 'local',
@@ -823,27 +975,17 @@ export async function createBookFromContent({ contentId, uploadedBy, uploadedByR
     uploadedByRole: String(uploadedByRole || 'super-admin').trim(),
   };
 
-  // One book per (board, class, subject, productCategory) slot — replace if already filled.
-  const slotExisting = await Book.findOne({
-    board: boardLabel,
-    class: classLabel,
-    subject: subjectName,
-    productCategory: productCategory || '',
-  }).sort({ updatedAt: -1 });
-
-  let book;
-  if (slotExisting && String(slotExisting.contentId || '') !== String(content._id)) {
-    Object.assign(slotExisting, sharedFields);
-    await slotExisting.save();
-    book = slotExisting;
-  } else if (slotExisting) {
-    Object.assign(slotExisting, sharedFields);
-    await slotExisting.save();
-    book = slotExisting;
+  // Re-importing the same Content row is idempotent, while distinct Content
+  // rows in the same curriculum corpus remain separate approved sources.
+  let book = await Book.findOne({ contentId: content._id });
+  const alreadyImported = Boolean(book);
+  if (book) {
+    Object.assign(book, sharedFields);
+    await book.save();
   } else {
     book = await Book.create(sharedFields);
   }
 
   scheduleExtractAndIndexFromContentFile(book._id);
-  return { book, alreadyImported: Boolean(slotExisting) };
+  return { book, alreadyImported };
 }

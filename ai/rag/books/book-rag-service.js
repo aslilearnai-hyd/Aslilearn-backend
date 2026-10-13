@@ -1,7 +1,19 @@
 import BookChunk from '../../../models/BookChunk.js';
 import { generateEmbedding } from '../pdf/pdf-rag-service.js';
+import {
+  cosineSimilarity,
+  retrievalTier,
+  selectDiverseBookChunks,
+} from './book-rag-ranking.js';
+import {
+  buildApprovedAssetMultimodalParts,
+  formatBookAssetsForPrompt,
+  retrieveApprovedBookAssets,
+} from './book-multimodal-service.js';
 
 const DEFAULT_TOP_K = Number(process.env.BOOK_RAG_TOP_K || process.env.RAG_TOP_K || 4);
+const DEFAULT_CANDIDATE_K = Number(process.env.BOOK_RAG_CANDIDATE_K || 16);
+const DEFAULT_WHOLE_CHAPTER_TOP_K = Number(process.env.BOOK_RAG_WHOLE_CHAPTER_TOP_K || 6);
 export function getBookRagMaxContextChars(audience = '') {
   const isStudent = String(audience || '').trim().toLowerCase() === 'student';
   const audienceEnv = Number(
@@ -22,15 +34,11 @@ export function getBookRagMaxContextChars(audience = '') {
 }
 
 function normalizeSpaces(text) {
-  return String(text || '').replace(/\s+/g, ' ').trim();
-}
-
-function cosineSimilarity(a, b) {
-  if (!Array.isArray(a) || !Array.isArray(b) || a.length === 0 || b.length === 0) return 0;
-  const n = Math.min(a.length, b.length);
-  let dot = 0;
-  for (let i = 0; i < n; i += 1) dot += (a[i] || 0) * (b[i] || 0);
-  return dot;
+  return String(text || '')
+    .replace(/\r\n/g, '\n')
+    .replace(/[ \t]+/g, ' ')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
 }
 
 /**
@@ -75,6 +83,8 @@ export async function searchRelevantChunks({
   chapter,
   topic,
   subtopic,
+  corpusId,
+  difficultyBand,
   topK = DEFAULT_TOP_K,
   queryEmbedding: queryEmbeddingInput = null,
 }) {
@@ -89,18 +99,24 @@ export async function searchRelevantChunks({
   if (chapter) filter.chapter = chapter;
   if (topic) filter.topic = topic;
   if (subtopic) filter.subtopic = subtopic;
+  if (corpusId) filter.corpusId = corpusId;
+  if (difficultyBand) filter.difficultyBand = difficultyBand;
+  // Legacy chunks predate approvalStatus; keep them available until reindexed,
+  // while excluding explicitly rejected/archived sources.
+  filter.approvalStatus = { $nin: ['rejected', 'archived'] };
 
   const queryEmbedding = Array.isArray(queryEmbeddingInput) && queryEmbeddingInput.length
     ? queryEmbeddingInput
     : (await generateEmbedding(q)).embedding;
   const candidates = await BookChunk.find(filter).select(
-    'content embedding embeddingModel chapter topic subtopic chunkIndex bookId subject class board',
+    'content embedding embeddingModel chapter topic subtopic chunkIndex bookId subject class board corpusId sourcePriority sourceType difficultyBand approvalStatus assetIds sourcePage',
   ).limit(getBookRagCandidateLimit(bookId)).lean();
 
   return candidates
     .map((c) => ({
       ...c,
       chunkText: c.content,
+      rawScore: cosineSimilarity(queryEmbedding, c.embedding || []),
       score: cosineSimilarity(queryEmbedding, c.embedding || []),
     }))
     .sort((a, b) => b.score - a.score)
@@ -130,7 +146,9 @@ export function formatBookContextForPrompt(chunks = [], meta = {}) {
   for (let i = 0; i < chunks.length; i += 1) {
     const c = chunks[i];
     const label = [c.chapter, c.topic, c.subtopic].filter(Boolean).join(' › ') || `Passage ${i + 1}`;
-    const block = `[${i + 1}] (${label})\n${normalizeSpaces(c.content || c.chunkText || '')}`;
+    const sourceId = String(c._id || c.chunkId || '').trim();
+    const sourceTag = sourceId ? ` | sourceChunkId=${sourceId}` : '';
+    const block = `[${i + 1}] (${label}${sourceTag})\n${normalizeSpaces(c.content || c.chunkText || '')}`;
     if (used + block.length > maxContextChars) {
       // Never return an ungrounded prompt just because one stored chunk is
       // unusually large. Keep the start of the highest-ranked passage.
@@ -147,10 +165,11 @@ export function formatBookContextForPrompt(chunks = [], meta = {}) {
 /** Build retrieval query from generation scope. */
 export function buildBookRetrievalQuery(scope = {}) {
   return [
+    scope.board,
+    scope.className || scope.classLabel || scope.class,
     scope.subjectName || scope.subject,
     scope.topicName || scope.topic,
     scope.subtopicName || scope.subtopic,
-    scope.toolSlug || scope.toolName,
   ].filter(Boolean).join(' — ');
 }
 
@@ -207,6 +226,18 @@ function metadataMatchBonus(chunk = {}, scope = {}) {
   if (subtopic && (content.includes(subtopic) || String(chunk.subtopic || '').toLowerCase().includes(subtopic))) {
     bonus += 0.12;
   }
+  // Lower sourcePriority numbers represent more authoritative curriculum
+  // sources (for example, textbook before coaching notes/question banks).
+  const sourcePriority = Number(chunk.sourcePriority);
+  if (Number.isFinite(sourcePriority) && sourcePriority > 0) {
+    bonus += Math.max(0, 0.06 - Math.min(sourcePriority, 100) * 0.0006);
+  }
+  const sourcePreferences = Array.isArray(scope.sourceTypePreference)
+    ? scope.sourceTypePreference.map((value) => String(value || '').trim().toLowerCase())
+    : [];
+  const sourceType = String(chunk.sourceType || '').trim().toLowerCase();
+  const sourceIndex = sourcePreferences.indexOf(sourceType);
+  if (sourceIndex >= 0) bonus += Math.max(0.01, 0.05 - sourceIndex * 0.01);
   for (const token of [...new Set([...topicMatchTokens(topic), ...topicMatchTokens(subtopic)])]) {
     if (content.includes(token)) bonus += 0.05;
   }
@@ -227,35 +258,84 @@ export { rerankBookChunks, metadataMatchBonus };
 
 export async function retrieveBookContextForGeneration(scope = {}) {
   const query = buildBookRetrievalQuery(scope);
-  const topK = Number(scope.topK) || DEFAULT_TOP_K;
+  const isWholeChapter = !String(scope.subtopicName || scope.subtopic || '').trim();
+  const topK = Number(scope.topK) || (isWholeChapter ? DEFAULT_WHOLE_CHAPTER_TOP_K : DEFAULT_TOP_K);
+  const candidateK = Math.max(topK, Math.min(20, Number(scope.candidateK) || DEFAULT_CANDIDATE_K));
   const { embedding: queryEmbedding } = await generateEmbedding(query);
+
+  if (!scope.bookId) {
+    const required = [
+      scope.board,
+      scope.className || scope.classLabel || scope.class,
+      scope.subjectName || scope.subject,
+    ];
+    if (required.some((value) => !String(value || '').trim())) {
+      const curriculumBlock = buildCurriculumTargetBlock(scope);
+      return {
+        chunks: [],
+        candidateChunks: [],
+        contextText: curriculumBlock,
+        chunkCount: 0,
+        hasBookPassages: false,
+        retrievalQuery: query,
+        retrievalStatus: 'insufficient_scope',
+        retrievalTier: 'weak',
+      };
+    }
+  }
 
   const baseSearch = (extra = {}) =>
     searchRelevantChunks({
       query,
       queryEmbedding,
       bookId: scope.bookId,
-      topK: Math.max(topK, 12),
+      corpusId: scope.corpusId,
+      difficultyBand: scope.difficultyBand,
+      topK: candidateK,
       ...extra,
     });
 
-  // Chunk metadata stores PDF chapter titles, not curriculum topic/subtopic labels — semantic search first.
-  let chunks = rerankBookChunks(
+  // Formal exam mode fails closed: never broaden from the selected curriculum
+  // to subject-only or unfiltered chunks.
+  const candidateChunks = rerankBookChunks(
     await baseSearch({
       board: scope.board,
+      class: scope.className || scope.classLabel || scope.class,
       subject: scope.subjectName || scope.subject,
     }),
     scope,
-    topK,
+    candidateK,
   );
 
-  if (!chunks.length) {
-    chunks = rerankBookChunks(await baseSearch({ subject: scope.subjectName || scope.subject }), scope, topK);
-  }
-
-  if (!chunks.length) {
-    chunks = rerankBookChunks(await baseSearch(), scope, topK);
-  }
+  const bestRawScore = Math.max(0, ...candidateChunks.map((chunk) => Number(chunk.rawScore) || 0));
+  const scoreTier = retrievalTier(bestRawScore, {
+    strong: process.env.BOOK_RAG_STRONG_SCORE,
+    acceptable: process.env.BOOK_RAG_ACCEPTABLE_SCORE,
+  });
+  const allowWeak = String(process.env.BOOK_RAG_ALLOW_WEAK_CONTEXT || 'false').toLowerCase() === 'true';
+  const chunks = scoreTier === 'weak' && !allowWeak
+    ? []
+    : selectDiverseBookChunks(candidateChunks, topK, {
+        lambda: process.env.BOOK_RAG_MMR_LAMBDA,
+        coveragePenalty: isWholeChapter ? 0.1 : 0.04,
+      });
+  const multimodalEnabled = String(process.env.BOOK_MULTIMODAL_RAG ?? 'true').toLowerCase() !== 'false';
+  const assets = multimodalEnabled
+    ? await retrieveApprovedBookAssets(scope, Number(scope.assetK) || 4)
+    : [];
+  const needsVisualInput = scope.visualRequired === true || assets.some((asset) =>
+    ['figure', 'graph', 'table', 'chemical_structure'].includes(String(asset.type || '')),
+  );
+  const multimodalParts = multimodalEnabled && needsVisualInput
+    ? await buildApprovedAssetMultimodalParts({
+        bookId: scope.bookId,
+        assets,
+        maxPages: Number(scope.maxVisualPages) || 2,
+      }).catch((error) => {
+        console.warn('[book-rag] approved visual source loading failed:', error?.message || error);
+        return [];
+      })
+    : [];
 
   const bookContext = formatBookContextForPrompt(chunks, {
     bookTitle: scope.bookTitle,
@@ -264,35 +344,58 @@ export async function retrieveBookContextForGeneration(scope = {}) {
     audience: scope.audience,
   });
   const curriculumBlock = buildCurriculumTargetBlock(scope);
-  const contextText = bookContext
-    ? `${curriculumBlock}\n\n${bookContext}`
-    : curriculumBlock;
+  const assetContext = formatBookAssetsForPrompt(assets);
+  const contextText = [curriculumBlock, bookContext, assetContext].filter(Boolean).join('\n\n');
   return {
     chunks,
+    candidateChunks,
     contextText,
     chunkCount: chunks.length,
     hasBookPassages: chunks.length > 0,
     retrievalQuery: query,
+    retrievalStatus: chunks.length ? 'ready' : candidateChunks.length ? 'weak_context' : 'no_context',
+    retrievalTier: scoreTier,
+    bestScore: bestRawScore,
+    sourceChunkIds: chunks.map((chunk) => String(chunk._id || '')).filter(Boolean),
+    assets,
+    multimodalParts,
+    sourceAssetIds: assets.map((asset) => String(asset.assetId || '')).filter(Boolean),
   };
 }
 
 /**
  * Rotate textbook passages per batch variant so Concept Mastery slots see different source emphasis.
  */
-export function buildBookContextTextForVariant(ragBase, scope = {}, variantIndex = 1) {
-  const chunks = Array.isArray(ragBase?.chunks) ? ragBase.chunks : [];
+export function buildBookContextForVariant(ragBase, scope = {}, variantIndex = 1) {
   const curriculumBlock = buildCurriculumTargetBlock(scope);
-  if (!chunks.length) {
-    return ragBase?.contextText || curriculumBlock;
+  if (!ragBase?.hasBookPassages) {
+    return {
+      contextText: ragBase?.contextText || curriculumBlock,
+      chunks: [],
+      sourceChunkIds: [],
+    };
+  }
+  const candidateChunks = Array.isArray(ragBase?.candidateChunks) && ragBase.candidateChunks.length
+    ? ragBase.candidateChunks
+    : Array.isArray(ragBase?.chunks)
+      ? ragBase.chunks
+      : [];
+  if (!candidateChunks.length) {
+    return {
+      contextText: ragBase?.contextText || curriculumBlock,
+      chunks: [],
+      sourceChunkIds: [],
+    };
   }
 
-  const windowSize = Math.max(2, Math.min(4, DEFAULT_TOP_K));
-  const stride = Math.max(1, Math.floor(windowSize / 2));
-  const start = ((Math.max(1, variantIndex) - 1) * stride) % chunks.length;
-  const selected = [];
-  for (let i = 0; i < windowSize; i += 1) {
-    selected.push(chunks[(start + i) % chunks.length]);
-  }
+  const wholeChapter = !String(scope.subtopicName || scope.subtopic || '').trim();
+  const windowSize = Math.max(2, Math.min(wholeChapter ? 6 : 4, candidateChunks.length));
+  const offset = (Math.max(1, Number(variantIndex) || 1) - 1) % candidateChunks.length;
+  const rotated = candidateChunks.slice(offset).concat(candidateChunks.slice(0, offset));
+  const selected = selectDiverseBookChunks(rotated, windowSize, {
+    lambda: process.env.BOOK_RAG_MMR_LAMBDA,
+    coveragePenalty: wholeChapter ? 0.1 : 0.04,
+  });
 
   const bookContext = formatBookContextForPrompt(selected, {
     bookTitle: scope.bookTitle,
@@ -304,5 +407,18 @@ export function buildBookContextTextForVariant(ragBase, scope = {}, variantIndex
     variantIndex > 1
       ? `\nVARIANT ${variantIndex}: Emphasise different textbook facts, numerical values, and question stems for the same sub-topic — direct exam-style wording only.`
       : '';
-  return bookContext ? `${curriculumBlock}${variantNote}\n\n${bookContext}` : `${curriculumBlock}${variantNote}`;
+  const assetContext = formatBookAssetsForPrompt(ragBase?.assets || []);
+  return {
+    contextText: [
+      `${curriculumBlock}${variantNote}`,
+      bookContext,
+      assetContext,
+    ].filter(Boolean).join('\n\n'),
+    chunks: selected,
+    sourceChunkIds: selected.map((chunk) => String(chunk._id || chunk.chunkId || '')).filter(Boolean),
+  };
+}
+
+export function buildBookContextTextForVariant(ragBase, scope = {}, variantIndex = 1) {
+  return buildBookContextForVariant(ragBase, scope, variantIndex).contextText;
 }

@@ -10984,6 +10984,7 @@ ${pdfContext}${storyLanguageTail ? `\n\n${storyLanguageTail}` : ''}`
       maxTokens,
       systemPrompt,
       responseSchema,
+      multimodalParts: Array.isArray(params.multimodalParts) ? params.multimodalParts : [],
       maxAttemptsPerModel: tierGeminiRetries,
       modelOverflow: effectiveFlashLiteOnly ? liteModel : (qualityTierSettings.modelOverflow || liteModel),
     };

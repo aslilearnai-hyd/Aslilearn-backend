@@ -11,6 +11,10 @@ import {
   getBookExtractedText,
   getBookGenerationStats,
   listBookChunks,
+  listBookAssets,
+  reviewBookAsset,
+  listAssessmentAssets,
+  reviewAssessmentAsset,
   listImportableContent,
   importBookFromContent,
   importBooksFromContentBulk,
@@ -36,5 +40,9 @@ router.get('/books/:id/chapters', getBookChapters);
 router.get('/books/:id/text', getBookExtractedText);
 router.get('/books/:id/stats', getBookGenerationStats);
 router.get('/books/:id/chunks', listBookChunks);
+router.get('/books/:id/assets', listBookAssets);
+router.patch('/books/:id/assets/:assetId', reviewBookAsset);
+router.get('/assessment-assets', listAssessmentAssets);
+router.patch('/assessment-assets/:assetId', reviewAssessmentAsset);
 
 export default router;

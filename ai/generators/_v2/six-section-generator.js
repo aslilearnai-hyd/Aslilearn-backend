@@ -16,6 +16,13 @@ import {
   reconcileV2InstructionMarks,
   validateV2QuestionContent,
 } from './six-section-quality.js';
+import { applyQuestionSlotMetadata } from '../../planning/question-slot-planner.js';
+import { validateStemQuestionSet } from '../../validation/stem-question-validator.js';
+import {
+  buildSelectiveRepairPrompt,
+  identifyFailedQuestionSlots,
+  mergeSelectiveQuestionRepairs,
+} from '../../repair/selective-question-repair.js';
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -153,6 +160,7 @@ export async function generateSixSectionContent(toolSlug, params = {}, opts = {}
         isBatchVariant: opts.isBatchVariant !== false,
         temperature,
         maxTokens,
+        multimodalParts: Array.isArray(opts.multimodalParts) ? opts.multimodalParts : [],
       });
     } catch (err) {
       lastErr = err?.message || String(err);
@@ -175,6 +183,13 @@ export async function generateSixSectionContent(toolSlug, params = {}, opts = {}
         tool: toolSlug,
         ...Object.fromEntries(V2_SECTION_IDS.map((id) => [id, json[id]])),
       });
+      const questionSlots = Array.isArray(params.questionSlots) ? params.questionSlots : [];
+      if (questionSlots.length) {
+        structuredContent = applyQuestionSlotMetadata(structuredContent, questionSlots, {
+          sourceChunkIds: opts.sourceChunkIds || [],
+          sourceAssetIds: opts.sourceAssetIds || [],
+        }).structuredContent;
+      }
       if (enforceQuestionCount) {
         let actualQuestionCount = countUsableQuestionsFromV2OrLegacy(structuredContent, null);
         if (actualQuestionCount > requestedQuestionCount) {
@@ -197,6 +212,53 @@ export async function generateSixSectionContent(toolSlug, params = {}, opts = {}
       if (!quality.valid) {
         lastErr = quality.errors.join(' ');
         continue;
+      }
+      if (questionSlots.length) {
+        let stemValidation = validateStemQuestionSet(structuredContent, {
+          slots: questionSlots,
+          expectedCount: enforceQuestionCount ? requestedQuestionCount : 0,
+          approvedChunkIds: opts.sourceChunkIds || [],
+          approvedAssetIds: opts.sourceAssetIds || [],
+        });
+        if (!stemValidation.valid) {
+          const failed = identifyFailedQuestionSlots(structuredContent, stemValidation.findings);
+          if (failed.length && failed.length < stemValidation.questionCount) {
+            try {
+              const repairRaw = await geminiService.generateStructuredContent(
+                buildSelectiveRepairPrompt(failed, questionSlots, opts.ragContext || ''),
+                'json',
+                {
+                  primaryModel: attemptModel,
+                  flashLiteOnly: opts.flashLiteOnly === true,
+                  temperature: 0.2,
+                  maxTokens: Math.min(5000, maxTokens),
+                  multimodalParts: Array.isArray(opts.multimodalParts) ? opts.multimodalParts : [],
+                },
+              );
+              const repairJson = extractJsonObject(repairRaw);
+              const replacements = Array.isArray(repairJson?.questions) ? repairJson.questions : [];
+              const merged = mergeSelectiveQuestionRepairs(structuredContent, failed, replacements);
+              if (merged.repairedCount > 0) {
+                structuredContent = applyQuestionSlotMetadata(merged.structuredContent, questionSlots, {
+                  sourceChunkIds: opts.sourceChunkIds || [],
+                  sourceAssetIds: opts.sourceAssetIds || [],
+                }).structuredContent;
+                stemValidation = validateStemQuestionSet(structuredContent, {
+                  slots: questionSlots,
+                  expectedCount: enforceQuestionCount ? requestedQuestionCount : 0,
+                  approvedChunkIds: opts.sourceChunkIds || [],
+                  approvedAssetIds: opts.sourceAssetIds || [],
+                });
+              }
+            } catch (repairError) {
+              lastErr = `Selective repair failed: ${repairError?.message || repairError}`;
+            }
+          }
+          if (!stemValidation.valid) {
+            lastErr = stemValidation.findings.map((finding) => finding.code).join(', ');
+            continue;
+          }
+        }
       }
       return {
         ok: true,

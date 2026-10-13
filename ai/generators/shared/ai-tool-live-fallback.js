@@ -16,6 +16,8 @@ import {
   resolveClassLabelForAiToolStorage,
 } from '../../../utils/board-label.js';
 import { normalizeIitCategoryLoose } from '../../../constants/products.js';
+import { validateDashboardAiToolDoc } from '../../validation/ai-tool-dashboard-validation.js';
+import { buildGenerationCountTelemetry } from '../../planning/question-slot-planner.js';
 
 function envFlagEnabled(name, defaultValue = true) {
   const raw = String(process.env[name] ?? '').trim().toLowerCase();
@@ -124,6 +126,29 @@ export async function generateAiToolLiveFallback(opts = {}) {
     return { ok: false, reason: 'empty-content' };
   }
 
+  const deliveryGate = validateDashboardAiToolDoc(toolType, {
+    toolName: toolType,
+    board,
+    classLabel,
+    subject,
+    topic,
+    subtopic: isWholeChapter ? '' : subTopic,
+    content,
+    generatedContent: content,
+    metadata: { structuredContent },
+  });
+  if (!deliveryGate.valid) {
+    console.warn(
+      `[AI_TOOL_LIVE_FALLBACK] Incomplete ${toolType} output blocked:`,
+      deliveryGate.message || (deliveryGate.missingSections || []).join(', '),
+    );
+    return {
+      ok: false,
+      reason: 'incomplete-content',
+      missingSections: deliveryGate.missingSections || [],
+    };
+  }
+
   const uid = opts.userId ? String(opts.userId) : '';
   const teacherId = mongoose.Types.ObjectId.isValid(uid) ? uid : undefined;
   let savedDoc = null;
@@ -145,6 +170,13 @@ export async function generateAiToolLiveFallback(opts = {}) {
       generatedBy: uid || 'dashboard-live-fallback',
       status: 'active',
       reviewStatus: 'approved',
+      generationValidation: {
+        valid: true,
+        flags: [],
+        attemptCount: 1,
+        generatedCount: 1,
+        repairedCount: 0,
+      },
       metadata: {
         board,
         createdByRole: opts.role || 'dashboard',
@@ -155,6 +187,7 @@ export async function generateAiToolLiveFallback(opts = {}) {
         liveFallbackAt: new Date().toISOString(),
         generationVariant,
         uniqueSeed,
+        generationCounts: buildGenerationCountTelemetry({ attempted: 1, generated: 1 }),
       },
       ...(teacherId ? { teacherId } : {}),
     });

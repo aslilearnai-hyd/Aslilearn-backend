@@ -57,6 +57,12 @@ export function validateV2QuestionContent(structuredContent) {
   }
 
   const serialized = JSON.stringify(structuredContent);
+  if (/INSUFFICIENT_(?:VISUAL_)?CONTEXT/i.test(serialized)) {
+    errors.push('Retrieved context was insufficient for one or more question slots.');
+  }
+  if (/PENDING_ASSET_APPROVAL/i.test(serialized)) {
+    errors.push('A generated assessment asset is still pending human approval.');
+  }
   if (/\b(?:pages?|pp\.?|exercise|figure|fig\.)\s*(?:no\.?\s*)?\d+/i.test(serialized)) {
     errors.push('Output exposes a textbook page, exercise, or figure reference.');
   }

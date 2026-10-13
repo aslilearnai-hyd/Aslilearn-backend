@@ -230,6 +230,12 @@ async function buildStudentPersonFacts(student) {
   const percentages = results
     .map((r) => Number(r.percentage))
     .filter((n) => Number.isFinite(n));
+  const obtainedMarks = results
+    .map((r) => Number(r.obtainedMarks))
+    .filter((n) => Number.isFinite(n));
+  const totalMarks = results
+    .map((r) => Number(r.totalMarks))
+    .filter((n) => Number.isFinite(n) && n > 0);
   const latest = results[0] || null;
   const previous = results[1] || null;
   let trendDirection = 'unknown';
@@ -265,7 +271,11 @@ async function buildStudentPersonFacts(student) {
     overview: {
       examsTaken: results.length,
       averagePercentage: avg(percentages),
+      averageObtainedMarks: avg(obtainedMarks),
+      averageTotalMarks: avg(totalMarks),
       latestPercentage: latest?.percentage ?? null,
+      latestObtainedMarks: latest?.obtainedMarks ?? null,
+      latestTotalMarks: latest?.totalMarks ?? null,
       latestExamTitle: latest?.examTitle || '',
       previousPercentage: previous?.percentage ?? null,
       deltaVsPrevious,
@@ -586,7 +596,7 @@ export async function buildClassGroupFacts({
   const [results, sessionsToday, activeExams] = await Promise.all([
     studentIds.length
       ? ExamResult.find({ userId: { $in: studentIds }, completedAt: { $gte: thirtyDaysAgo } })
-          .select('userId percentage examTitle completedAt')
+          .select('userId percentage obtainedMarks totalMarks examTitle completedAt')
           .lean()
       : [],
     studentIds.length
@@ -602,19 +612,35 @@ export async function buildClassGroupFacts({
   ]);
 
   const pcts = results.map((r) => Number(r.percentage)).filter((n) => Number.isFinite(n));
+  const obtainedMarks = results
+    .map((r) => Number(r.obtainedMarks))
+    .filter((n) => Number.isFinite(n));
+  const totalMarks = results
+    .map((r) => Number(r.totalMarks))
+    .filter((n) => Number.isFinite(n) && n > 0);
   const byStudent = new Map();
   for (const r of results) {
     const id = String(r.userId);
     if (!byStudent.has(id)) byStudent.set(id, []);
-    byStudent.get(id).push(Number(r.percentage));
+    byStudent.get(id).push({
+      percentage: Number(r.percentage),
+      obtainedMarks: Number(r.obtainedMarks),
+      totalMarks: Number(r.totalMarks),
+    });
   }
   const studentAvgs = [...byStudent.values()]
-    .map((arr) => avg(arr))
+    .map((arr) => avg(arr.map((score) => score.percentage)))
     .filter((n) => n != null);
   const topStudents = students
     .map((s) => {
       const scores = byStudent.get(String(s._id)) || [];
-      return { name: s.fullName || 'Student', averagePercentage: avg(scores), attempts: scores.length };
+      return {
+        name: s.fullName || 'Student',
+        averagePercentage: avg(scores.map((score) => score.percentage)),
+        averageObtainedMarks: avg(scores.map((score) => score.obtainedMarks)),
+        averageTotalMarks: avg(scores.map((score) => score.totalMarks).filter((n) => n > 0)),
+        attempts: scores.length,
+      };
     })
     .filter((s) => s.attempts > 0)
     .sort((a, b) => (b.averagePercentage || 0) - (a.averagePercentage || 0))
@@ -637,6 +663,8 @@ export async function buildClassGroupFacts({
       activeStudents: students.filter((s) => s.isActive !== false).length,
       examResultsLast30Days: results.length,
       averagePercentage: avg(pcts),
+      averageObtainedMarks: avg(obtainedMarks),
+      averageTotalMarks: avg(totalMarks),
       studentsWithResults: studentAvgs.length,
       loginSessionsToday: sessionsToday,
       activeExams,

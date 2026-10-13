@@ -42,6 +42,7 @@ import {
 import { resolveSubjectContentIds, resolveSubjectContentIdsMany } from '../utils/resolveSubjectContentIds.js';
 import { getClassScheduleAndRoomMap } from '../utils/teacherClassSchedule.js';
 import HomeworkSubmission from '../models/HomeworkSubmission.js';
+import ClassTimetableImage from '../models/ClassTimetableImage.js';
 
 function isMongoObjectIdString(id) {
   return mongoose.Types.ObjectId.isValid(id) && String(id).length === 24;
@@ -3007,8 +3008,18 @@ export const deleteClass = async (req, res) => {
       });
     }
     
-    // Delete the class from database
+    // Delete dependent timetable-photo metadata with the class. Previously these
+    // orphan rows remained visible in the mobile admin "Uploaded" list even
+    // after the class itself had been removed.
     await Class.findByIdAndDelete(id);
+    await ClassTimetableImage.deleteMany({
+      classId: classToDelete._id,
+      schoolAdminId: adminId,
+    }).catch((cleanupError) => {
+      // The read API also hides/cleans orphan rows, so a secondary cleanup
+      // failure must not turn a successful class deletion into a false 500.
+      console.warn('Class timetable photo cleanup failed:', cleanupError?.message);
+    });
     
     console.log('Class deleted successfully:', {
       id: id,
@@ -3067,9 +3078,15 @@ export const deleteAllClasses = async (req, res) => {
       });
     }
     
-    // Delete all classes
-    const deleteResult = await Class.deleteMany({
-      assignedAdmin: adminId
+    const classIds = classesToDelete.map((classDoc) => classDoc._id);
+
+    // Keep class-scoped timetable photos in sync with the class catalogue.
+    const deleteResult = await Class.deleteMany({ assignedAdmin: adminId });
+    await ClassTimetableImage.deleteMany({
+      schoolAdminId: adminId,
+      classId: { $in: classIds },
+    }).catch((cleanupError) => {
+      console.warn('Bulk class timetable photo cleanup failed:', cleanupError?.message);
     });
     
     console.log('All classes deleted successfully:', {

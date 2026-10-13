@@ -157,6 +157,7 @@ async function assertClassBelongsToSchool(classId, schoolAdminId) {
   const cls = await Class.findOne({
     _id: classId,
     assignedAdmin: schoolAdminId,
+    $or: [{ isActive: true }, { isActive: { $exists: false } }],
   })
     .select('classNumber section assignedAdmin')
     .lean();
@@ -277,9 +278,23 @@ export async function listTimetablePhotos(req, res) {
       .sort({ classNumber: 1, sectionId: 1 })
       .lean({ virtuals: true });
 
+    // A timetable image is meaningful only while its class still exists. Older
+    // class deletions did not cascade, so remove those orphan metadata rows and
+    // never expose them to web/mobile clients.
+    const activeRows = rows.filter((row) => row?.classId && typeof row.classId === 'object');
+    const orphanIds = rows
+      .filter((row) => !row?.classId || typeof row.classId !== 'object')
+      .map((row) => row?._id)
+      .filter(Boolean);
+    if (orphanIds.length) {
+      void ClassTimetableImage.deleteMany({ _id: { $in: orphanIds }, schoolAdminId }).catch(
+        (cleanupError) => console.warn('listTimetablePhotos orphan cleanup:', cleanupError?.message),
+      );
+    }
+
     return res.json({
       success: true,
-      data: rows.map(serializePhoto),
+      data: activeRows.map(serializePhoto),
     });
   } catch (error) {
     console.error('listTimetablePhotos:', error);
