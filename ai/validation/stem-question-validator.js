@@ -110,8 +110,19 @@ export function validateLatexIntegrity(latex = '') {
 }
 
 function validateOptions(row, findings, expectedOptionCount = 0) {
-  if (!Array.isArray(row.options)) return;
-  const options = row.options.map(text).filter(Boolean);
+  const type = text(row.type || row.questionType || row.question_type).toUpperCase();
+  const section = text(row.section || row.sectionName).toUpperCase();
+  const rawOptions = Array.isArray(row.options) ? row.options : [];
+  const isMcq =
+    type === 'MCQ' ||
+    /MULTIPLE\s*CHOICE|SECTION\s*A\s*:\s*MCQ/.test(section) ||
+    (!type && rawOptions.some((option) => text(option)));
+
+  // V2 gives every question row an options array. Empty arrays on FIB/VSA/SA/
+  // LAQ rows are not malformed MCQs and must not produce MCQ_OPTION_COUNT.
+  if (!isMcq) return;
+
+  const options = rawOptions.map(text).filter(Boolean);
   if (options.length < 2) findings.push(issue('MCQ_OPTION_COUNT', 'MCQ requires at least two non-empty options.', row.slotId));
   if (expectedOptionCount > 0 && options.length !== expectedOptionCount) {
     findings.push(issue('MCQ_OPTION_COUNT', `MCQ requires exactly ${expectedOptionCount} options.`, row.slotId));

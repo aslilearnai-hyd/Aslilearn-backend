@@ -66,7 +66,7 @@ export const BOOK_GENERATOR_UNIQUENESS_TARGET = Number(process.env.BOOK_GENERATO
 /** Records per batch run. */
 export const BOOK_GENERATOR_DEFAULT_BATCH_SIZE = Number(process.env.BOOK_GENERATOR_BATCH_SIZE) || 25;
 
-/** Hard cap on Gemini spend per entire batch (INR). Defaults to ₹1; set 0 to disable. */
+/** Hard cap on Gemini spend per entire batch (INR). Defaults to ₹1. */
 export const BOOK_GENERATOR_MAX_INR = Number(process.env.BOOK_GENERATOR_MAX_INR) || 1;
 
 /** Conservative reservation made before each paid call. */

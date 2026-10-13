@@ -154,7 +154,9 @@ test('book generator has a safe dynamic budget unless explicitly overridden', ()
     process.env.BOOK_GENERATOR_MAX_INR = '3.5';
     assert.equal(getBookGeneratorMaxInr(20), 3.5);
     process.env.BOOK_GENERATOR_MAX_INR = '0';
-    assert.equal(getBookGeneratorMaxInr(4), Infinity);
+    assert.equal(getBookGeneratorMaxInr(4), 1);
+    process.env.BOOK_GENERATOR_MAX_INR = 'off';
+    assert.equal(getBookGeneratorMaxInr(40), 1);
   } finally {
     if (previous === undefined) delete process.env.BOOK_GENERATOR_MAX_INR;
     else process.env.BOOK_GENERATOR_MAX_INR = previous;

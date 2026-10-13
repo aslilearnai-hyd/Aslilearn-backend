@@ -160,9 +160,9 @@ function finalizeBookStructuredContent(toolSlug, structured, meta) {
 
 export function getBookGeneratorMaxInr(batchSize = 1) {
   const raw = process.env.BOOK_GENERATOR_MAX_INR;
-  if (raw === '0' || raw === 'off' || raw === 'false') return Infinity;
   const explicit = Number(raw ?? BOOK_GENERATOR_MAX_INR);
   if (Number.isFinite(explicit) && explicit > 0) return explicit;
+  // A stale 0/off setting must not silently disable the safety ceiling.
   return 1;
 }
 
@@ -656,6 +656,9 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                     // The outer slot loop owns recovery. A second retry layer could
                     // multiply one failed slot into six full paid generations.
                     maxTries: 1,
+                    // Worksheet finalization can complete a short V2 response
+                    // deterministically from the retrieved book context.
+                    allowUnderfilledQuestionCount: toolSlug === 'worksheet-mcq-generator',
                     canStartCall: () => canStartBookGeneratorCall(batchSize),
                     // A short freshness sample is enough for Smart Q&A and avoids
                     // resending thousands of paid input tokens on every slot.

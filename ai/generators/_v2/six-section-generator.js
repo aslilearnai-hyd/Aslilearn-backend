@@ -111,7 +111,7 @@ function deepSanitizeMath(val) {
 /**
  * @param {string} toolSlug
  * @param {object} params { board, classLabel, subject, topic, subTopic }
- * @param {{ ragContext?:string, primaryModel?:string, canStartCall?:()=>boolean }} [opts]
+ * @param {{ ragContext?:string, primaryModel?:string, canStartCall?:()=>boolean, allowUnderfilledQuestionCount?:boolean }} [opts]
  * @returns {Promise<{ ok:boolean, structuredContent?:object, error?:string }>}
  */
 export async function generateSixSectionContent(toolSlug, params = {}, opts = {}) {
@@ -193,6 +193,7 @@ export async function generateSixSectionContent(toolSlug, params = {}, opts = {}
           sourceAssetIds: opts.sourceAssetIds || [],
         }).structuredContent;
       }
+      let acceptedUnderfilledCount = false;
       if (enforceQuestionCount) {
         let actualQuestionCount = countUsableQuestionsFromV2OrLegacy(structuredContent, null);
         if (actualQuestionCount > requestedQuestionCount) {
@@ -204,7 +205,12 @@ export async function generateSixSectionContent(toolSlug, params = {}, opts = {}
           structuredContent = trimmed.v2 || structuredContent;
           actualQuestionCount = countUsableQuestionsFromV2OrLegacy(structuredContent, null);
         }
-        if (actualQuestionCount !== requestedQuestionCount) {
+        if (actualQuestionCount < requestedQuestionCount && opts.allowUnderfilledQuestionCount === true) {
+          // The book-batch finalizer can deterministically complete an
+          // underfilled worksheet from the already retrieved textbook context.
+          // Returning the partial structure avoids another full paid LLM call.
+          acceptedUnderfilledCount = true;
+        } else if (actualQuestionCount !== requestedQuestionCount) {
           lastErr = `Model returned ${actualQuestionCount} questions; exactly ${requestedQuestionCount} were requested.`;
           continue;
         }
@@ -219,7 +225,7 @@ export async function generateSixSectionContent(toolSlug, params = {}, opts = {}
       if (questionSlots.length) {
         let stemValidation = validateStemQuestionSet(structuredContent, {
           slots: questionSlots,
-          expectedCount: enforceQuestionCount ? requestedQuestionCount : 0,
+          expectedCount: enforceQuestionCount && !acceptedUnderfilledCount ? requestedQuestionCount : 0,
           approvedChunkIds: opts.sourceChunkIds || [],
           approvedAssetIds: opts.sourceAssetIds || [],
         });
@@ -252,7 +258,7 @@ export async function generateSixSectionContent(toolSlug, params = {}, opts = {}
                 }).structuredContent;
                 stemValidation = validateStemQuestionSet(structuredContent, {
                   slots: questionSlots,
-                  expectedCount: enforceQuestionCount ? requestedQuestionCount : 0,
+                  expectedCount: enforceQuestionCount && !acceptedUnderfilledCount ? requestedQuestionCount : 0,
                   approvedChunkIds: opts.sourceChunkIds || [],
                   approvedAssetIds: opts.sourceAssetIds || [],
                 });

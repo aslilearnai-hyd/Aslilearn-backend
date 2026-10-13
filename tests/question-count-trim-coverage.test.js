@@ -7,8 +7,10 @@ import {
 } from '../utils/v2-structured-to-legacy.js';
 import {
   finalizePracticeQaStructuredContent,
+  finalizeWorksheetStructuredContent,
   getPracticeQaMissingSections,
 } from '../ai/generators/core/ai-content-engine-service.js';
+import { validateStemQuestionSet } from '../ai/validation/stem-question-validator.js';
 
 test('question-count trimming preserves every populated Smart Q&A section', () => {
   const sectionNames = [
@@ -124,4 +126,33 @@ test('final pre-save pass restores Section F lost after an earlier normalization
     10,
   );
   assert.match(legacy.sections[5].questions[0].question, /Cube Roots/i);
+});
+
+test('worksheet finalization expands a one-per-section response to the exact requested count', () => {
+  const initial = {
+    title: 'Cube Roots Worksheet',
+    sections: [
+      { sectionName: 'Section A: MCQs', questions: [{ type: 'MCQ', question: 'Which is a perfect cube?', options: ['A) 8', 'B) 9', 'C) 10', 'D) 12'], answer: 'A) 8' }] },
+      { sectionName: 'Section B: Fill in the Blanks', questions: [{ type: 'FIB', question: 'The cube root of 27 is ___.', answer: '3' }] },
+      { sectionName: 'Section C: Very Short Answer Questions', questions: [{ type: 'VSA', question: 'Define a perfect cube.', answer: 'A cube of an integer.' }] },
+      { sectionName: 'Section D: Short Answer Questions', questions: [{ type: 'SA', question: 'Explain how to find a cube root.', answer: 'Use prime factorisation.' }] },
+      { sectionName: 'Section E: Competency / Real-life Application Questions', questions: [{ type: 'COMPETENCY', question: 'Apply cube roots to find a cube edge.', answer: 'Take the cube root of its volume.' }] },
+    ],
+  };
+  const finalized = finalizeWorksheetStructuredContent(initial, {
+    batchOrchestrator: true,
+    bookGenerator: true,
+    subject: 'Mathematics',
+    topic: 'Cubes and Cube Roots',
+    subTopic: 'Cube Roots',
+    questionCount: 20,
+    generationVariant: 3,
+  });
+  const counts = finalized.sections.map((section) => section.questions.length);
+  assert.deepEqual(counts, [8, 2, 4, 5, 1]);
+  assert.equal(counts.reduce((sum, count) => sum + count, 0), 20);
+  assert.equal(new Set(finalized.questions.map((question) => question.question)).size, 20);
+  assert.ok(finalized.sections[0].questions.every((question) => question.options.length === 4));
+  const stemGate = validateStemQuestionSet(finalized, { expectedCount: 20, optionCount: 4 });
+  assert.equal(stemGate.valid, true, stemGate.findings.map((finding) => finding.code).join(', '));
 });

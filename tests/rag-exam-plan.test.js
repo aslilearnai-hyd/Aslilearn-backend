@@ -93,6 +93,24 @@ test('STEM validation checks marks, grounding, options, LaTeX and chemistry', ()
   assert.equal(result.valid, true);
 });
 
+test('STEM validation does not treat empty option arrays on non-MCQs as broken MCQs', () => {
+  const result = validateStemQuestionSet({
+    questions: [
+      { type: 'FIB', question: 'The cube root of 27 is ___.', options: [], answer: '3' },
+      { type: 'VSA', question: 'Define a perfect cube.', options: [], answer: 'A cube of an integer.' },
+      { type: 'TF', question: '64 is a perfect cube.', options: ['True', 'False'], answer: 'True' },
+    ],
+  });
+  assert.equal(result.valid, true);
+  assert.equal(result.findings.some((finding) => finding.code === 'MCQ_OPTION_COUNT'), false);
+
+  const brokenMcq = validateStemQuestionSet({
+    questions: [{ type: 'MCQ', question: 'Which number is a cube?', options: [], answer: '8' }],
+  });
+  assert.equal(brokenMcq.valid, false);
+  assert.equal(brokenMcq.findings.some((finding) => finding.code === 'MCQ_OPTION_COUNT'), true);
+});
+
 test('cost guardrail alerts at 13 percent and blocks beyond 15 percent', () => {
   assert.equal(evaluateGenerationCostGuardrail({ currentCost: 1.12, baselineCost: 1 }).status, 'within_target');
   assert.equal(evaluateGenerationCostGuardrail({ currentCost: 1.13, baselineCost: 1 }).status, 'alert');

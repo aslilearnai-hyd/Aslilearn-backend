@@ -45,6 +45,7 @@ import {
   normalizeMatchPairs,
 } from '../../../utils/match-following.js';
 import { stripMarkdownSyntax, deepStripMarkdownValues } from '../../../utils/strip-markdown-syntax.js';
+import { normalizeQuestionComposition } from '../../../utils/questionComposition.js';
 import {
   stripVariantScaffoldFromQuestionText,
   stripAiGeneratorLeakage,
@@ -5938,6 +5939,84 @@ export function finalizeWorksheetStructuredContent(structuredContent, meta = {})
       sections = buildCanonicalWorksheetSectionList(repaired);
       topicGroundedFallback = true;
       bookGroundedFallback = false;
+    }
+  }
+
+  // The V2 model sometimes returns one row per section even when the user asks
+  // for 20 questions. Complete the requested composition locally from the
+  // retrieved textbook context instead of paying for another full generation.
+  const hasRequestedQuestionCount = Number(meta.questionCount ?? meta.numberOfQuestions) > 0;
+  const hasRequestedComposition =
+    meta.questionComposition && typeof meta.questionComposition === 'object';
+  if (hasRequestedQuestionCount || hasRequestedComposition) {
+    const { composition } = normalizeQuestionComposition({
+      questionCount: meta.questionCount ?? meta.numberOfQuestions,
+      numberOfQuestions: meta.numberOfQuestions ?? meta.questionCount,
+      questionComposition: hasRequestedComposition ? meta.questionComposition : undefined,
+    });
+    const targetBySection = new Map([
+      [WORKSHEET_SECTION_LABELS.A, composition.mcq],
+      [WORKSHEET_SECTION_LABELS.B, composition.fib],
+      [WORKSHEET_SECTION_LABELS.C, composition.vsaq],
+      [WORKSHEET_SECTION_LABELS.D, composition.saq],
+      [WORKSHEET_SECTION_LABELS.E, composition.laq],
+    ]);
+    const sourceSentences = extractBookGroundedSentences(sourceText, topic).filter((sentence) =>
+      isSubstantiveBookSentence(sentence, subject),
+    );
+    const usedQuestionTexts = sections
+      .flatMap((section) => section.questions || [])
+      .map((question) => String(question?.question || '').trim())
+      .filter(Boolean);
+    let nextQuestionNumber = 1;
+    let locallyCompletedCount = 0;
+
+    sections = sections.map((section, sectionIndex) => {
+      const target = Math.max(0, Number(targetBySection.get(section.sectionName)) || 0);
+      const rows = (Array.isArray(section.questions) ? section.questions : [])
+        .filter((question) => String(question?.question || '').trim().length >= 8)
+        .slice(0, target);
+      while (rows.length < target) {
+        const fillerMeta = {
+          ...meta,
+          generationVariant:
+            (Number(meta.generationVariant) || 1) + sectionIndex * 31 + rows.length * 7,
+          uniqueSeed: `${meta.uniqueSeed || 'worksheet'}-exact-${sectionIndex}-${rows.length}`,
+          avoidQuestionTexts: usedQuestionTexts,
+        };
+        const sentence = sourceSentences.length
+          ? sourceSentences[(sectionIndex + rows.length) % sourceSentences.length]
+          : '';
+        const filler = sentence
+          ? buildBookGroundedWorksheetQuestion(
+              section.sectionName,
+              sentence,
+              topic,
+              subject,
+              nextQuestionNumber,
+              fillerMeta,
+            )
+          : buildTopicGroundedWorksheetQuestion(
+              section.sectionName,
+              topic,
+              subject,
+              nextQuestionNumber,
+              fillerMeta,
+            );
+        rows.push(filler);
+        usedQuestionTexts.push(String(filler.question || '').trim());
+        locallyCompletedCount += 1;
+      }
+      const renumbered = rows.map((question) => ({
+        ...question,
+        question_number: nextQuestionNumber++,
+        section: section.sectionName,
+      }));
+      return { ...section, questions: renumbered, count: renumbered.length };
+    });
+    if (locallyCompletedCount > 0) {
+      if (sourceSentences.length) bookGroundedFallback = true;
+      else topicGroundedFallback = true;
     }
   }
 
