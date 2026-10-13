@@ -28,6 +28,7 @@ import {
 import { withMongoRetry, isMongoTransientError } from '../utils/mongo-retry.js';
 import { mergeTokenUsageSnapshots } from '../utils/token-usage-merge.js';
 import { computeGeminiCostFromTokenUsage } from '../ai/providers/gemini-token-cost.js';
+import { allocateExpandedBatchTargets } from '../utils/expanded-batch-allocation.js';
 
 function addExpandedBookBatchResult(merged, result) {
   merged.savedCount += Number(result?.savedCount) || 0;
@@ -152,6 +153,7 @@ export async function generateBookBatch(req, res) {
           message: 'expandSubtopics needs at least one subtopic or whole-chapter scope.',
         });
       }
+      const allocatedTargets = allocateExpandedBatchTargets(targets, batchSize);
 
       const useAsync = asyncMode !== false;
       if (useAsync) {
@@ -182,12 +184,14 @@ export async function generateBookBatch(req, res) {
             ragChunkCount: 0,
             bookTextUsed: true,
             tokenUsageSnapshots: [],
-            expanded: targets.map((t) => (t.chapterScope ? 'Whole chapter' : t.subtopicName)),
+            expanded: allocatedTargets.map((t) =>
+              t.chapterScope ? 'Whole chapter' : t.subtopicName,
+            ),
           };
-          for (let i = 0; i < targets.length; i += 1) {
-            const target = targets[i];
+          for (let i = 0; i < allocatedTargets.length; i += 1) {
+            const target = allocatedTargets[i];
             onProgress?.(
-              `Scope ${i + 1}/${targets.length}: ${target.chapterScope ? 'Whole chapter' : target.subtopicName}…`,
+              `Scope ${i + 1}/${allocatedTargets.length}: ${target.chapterScope ? 'Whole chapter' : target.subtopicName}…`,
             );
             const params = {
               toolSlug: slug,
@@ -201,7 +205,7 @@ export async function generateBookBatch(req, res) {
               productCategory: resolvedProductCategory,
               combineSubtopics: false,
               ...(target.subTopics?.length ? { subTopics: target.subTopics } : {}),
-              batchSize,
+              batchSize: target.batchSize,
               useBookKnowledge,
               qualityTier,
               extraParams: {
@@ -221,7 +225,7 @@ export async function generateBookBatch(req, res) {
           merged.success = merged.savedCount > 0;
           merged.message =
             merged.savedCount > 0
-              ? `Expanded book generation: ${merged.savedCount} saved across ${targets.length} scope(s).`
+              ? `Expanded book generation: ${merged.savedCount} saved across ${allocatedTargets.length} scope(s).`
               : 'Expanded book generation failed for all scopes.';
           return finalizeExpandedBookBatchResult(merged);
         });
@@ -230,8 +234,8 @@ export async function generateBookBatch(req, res) {
           success: true,
           async: true,
           jobId: job.id,
-          message: `Book generation started for ${targets.length} subtopic scope(s). Poll job status until complete.`,
-          data: { jobId: job.id, status: 'queued', expanded: targets.length },
+          message: `Book generation started for ${allocatedTargets.length} subtopic scope(s). Poll job status until complete.`,
+          data: { jobId: job.id, status: 'queued', expanded: allocatedTargets.length },
         });
       }
 
@@ -246,9 +250,11 @@ export async function generateBookBatch(req, res) {
         ragChunkCount: 0,
         bookTextUsed: true,
         tokenUsageSnapshots: [],
-        expanded: targets.map((t) => (t.chapterScope ? 'Whole chapter' : t.subtopicName)),
+        expanded: allocatedTargets.map((t) =>
+          t.chapterScope ? 'Whole chapter' : t.subtopicName,
+        ),
       };
-      for (const target of targets) {
+      for (const target of allocatedTargets) {
         const params = {
           toolSlug: slug,
           bookId,
@@ -261,7 +267,7 @@ export async function generateBookBatch(req, res) {
           productCategory: resolvedProductCategory,
           combineSubtopics: false,
           ...(target.subTopics?.length ? { subTopics: target.subTopics } : {}),
-          batchSize,
+          batchSize: target.batchSize,
           useBookKnowledge,
           qualityTier,
           extraParams: {
@@ -289,7 +295,7 @@ export async function generateBookBatch(req, res) {
         data: merged,
         message:
           merged.savedCount > 0
-            ? `Expanded book generation: ${merged.savedCount} saved across ${targets.length} scope(s).`
+            ? `Expanded book generation: ${merged.savedCount} saved across ${allocatedTargets.length} scope(s).`
             : 'Expanded book generation failed for all scopes.',
       });
     }

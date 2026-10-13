@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { createRequire } from 'node:module';
 import { withMongoRetry, isMongoTransientError } from '../utils/mongo-retry.js';
 import PDFDocument from 'pdfkit';
 import AiToolGeneration from '../models/AiToolGeneration.js';
@@ -19,6 +20,7 @@ import {
   resolveClassLabelForAiToolStorage,
 } from '../utils/board-label.js';
 import {
+  pdfReadableUnicodeMathText,
   pdfSafeWinAnsiText,
   resolveAiToolRecordPdfBody,
 } from '../utils/ai-tool-pdf-body.js';
@@ -43,6 +45,19 @@ import {
 import { computeGeminiCostFromTokenUsage } from '../utils/gemini-token-cost.js';
 import { buildHistoricalGenerationContext } from '../services/ai-generator-historical-index.js';
 import { persistGenerationFingerprints } from '../services/ai-generator-fingerprint-service.js';
+
+const require = createRequire(import.meta.url);
+
+function resolvePdfUnicodeFonts() {
+  try {
+    return {
+      regular: require.resolve('pdfjs-dist/standard_fonts/LiberationSans-Regular.ttf'),
+      bold: require.resolve('pdfjs-dist/standard_fonts/LiberationSans-Bold.ttf'),
+    };
+  } catch {
+    return null;
+  }
+}
 import { enrichStructuredContentWithDiagrams } from '../services/ai-diagram-generation-service.js';
 import {
   validateRecordUniqueness,
@@ -1105,8 +1120,10 @@ export async function generatePDF(req, res) {
       return res.status(404).json({ success: false, message: 'Record not found.' });
     }
 
-    const bodyText = pdfSafeWinAnsiText(resolveAiToolRecordPdfBody(record) || '(no content)');
-    const toolName = pdfSafeWinAnsiText(
+    const unicodeFonts = resolvePdfUnicodeFonts();
+    const pdfText = unicodeFonts ? pdfReadableUnicodeMathText : pdfSafeWinAnsiText;
+    const bodyText = pdfText(resolveAiToolRecordPdfBody(record) || '(no content)');
+    const toolName = pdfText(
       String(record.toolDisplayName || record.toolName || 'AI Tool').trim() || 'AI Tool',
     );
     const metaRows = [
@@ -1118,7 +1135,7 @@ export async function generatePDF(req, res) {
       ['Generated', record.createdAt ? new Date(record.createdAt).toLocaleString() : '—'],
     ]
       .filter(([, v]) => String(v || '').trim())
-      .map(([label, value]) => [label, pdfSafeWinAnsiText(value)]);
+      .map(([label, value]) => [label, pdfText(value)]);
 
     const slugPart = (value) =>
       String(value || '')
@@ -1142,6 +1159,13 @@ export async function generatePDF(req, res) {
     const pdfFileNameAscii = pdfFileName.replace(/[^\x20-\x7E]/g, '_');
 
     const doc = new PDFDocument({ size: 'A4', margin: 48 });
+    const regularFont = unicodeFonts ? 'AsliSans' : 'Helvetica';
+    const boldFont = unicodeFonts ? 'AsliSansBold' : 'Helvetica-Bold';
+    if (unicodeFonts) {
+      doc.registerFont(regularFont, unicodeFonts.regular);
+      doc.registerFont(boldFont, unicodeFonts.bold);
+      doc.font(regularFont);
+    }
     const chunks = [];
     let finished = false;
     const fail = (error) => {
@@ -1189,8 +1213,8 @@ export async function generatePDF(req, res) {
 
     doc.fillColor('#1e293b').fontSize(11);
     for (const [label, value] of metaRows) {
-      doc.font('Helvetica-Bold').text(`${label}: `, { continued: true });
-      doc.font('Helvetica').text(String(value));
+      doc.font(boldFont).text(`${label}: `, { continued: true });
+      doc.font(regularFont).text(String(value));
     }
     doc.moveDown(1);
 
@@ -1201,7 +1225,7 @@ export async function generatePDF(req, res) {
       .stroke();
     doc.moveDown(0.75);
 
-    doc.fillColor('#334155').fontSize(10).font('Helvetica');
+    doc.fillColor('#334155').fontSize(10).font(regularFont);
     doc.text(bodyText, {
       align: 'left',
       width: pageW,

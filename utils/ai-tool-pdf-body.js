@@ -121,7 +121,7 @@ function readLatexGroup(value, openingIndex) {
   return null;
 }
 
-function replaceLatexCommandGroups(value) {
+function replaceLatexCommandGroups(value, unicode = false) {
   let result = String(value ?? '');
   for (let pass = 0; pass < 8; pass += 1) {
     const match = /\\(sqrt|frac|text|mathrm|mathbf)\s*(?:\[([^\]]+)\])?\s*\{/.exec(result);
@@ -141,7 +141,11 @@ function replaceLatexCommandGroups(value) {
       replacement = `(${first.body})/(${second.body})`;
       end = second.end;
     } else if (match[1] === 'sqrt') {
-      replacement = match[2] ? `root[${match[2]}](${first.body})` : `sqrt(${first.body})`;
+      const atomicRoot = /^[A-Za-z0-9._^]+$/.test(first.body);
+      const rootBody = atomicRoot ? first.body : `(${first.body})`;
+      if (unicode && match[2] === '3') replacement = `∛${rootBody}`;
+      else if (unicode) replacement = `√${rootBody}`;
+      else replacement = match[2] ? `root[${match[2]}](${first.body})` : `sqrt(${first.body})`;
     } else {
       replacement = first.body;
     }
@@ -175,6 +179,63 @@ export function pdfReadableMathText(value) {
     .replace(/\\([A-Za-z]+)\b/g, '$1')
     .replace(/[{}]/g, '');
   return text;
+}
+
+const SUPERSCRIPT_CHARS = Object.freeze({
+  '0': '⁰',
+  '1': '¹',
+  '2': '²',
+  '3': '³',
+  '4': '⁴',
+  '5': '⁵',
+  '6': '⁶',
+  '7': '⁷',
+  '8': '⁸',
+  '9': '⁹',
+  '+': '⁺',
+  '-': '⁻',
+});
+
+function superscriptDigits(value) {
+  const converted = String(value || '')
+    .split('')
+    .map((char) => SUPERSCRIPT_CHARS[char] || '')
+    .join('');
+  return converted.length === String(value || '').length ? converted : `^${value}`;
+}
+
+/** Convert common LaTeX to Unicode math for PDFs using an embedded Unicode font. */
+export function pdfReadableUnicodeMathText(value) {
+  let text = String(value ?? '')
+    .replace(/\$\$([\s\S]*?)\$\$/g, '$1')
+    .replace(/\$([^$\r\n]+)\$/g, '$1')
+    .replace(/\\\[([\s\S]*?)\\\]/g, '$1')
+    .replace(/\\\((.*?)\\\)/g, '$1');
+
+  text = replaceLatexCommandGroups(text, true);
+  for (let pass = 0; pass < 4; pass += 1) {
+    const next = text.replace(/\bsqrt\(([^()\r\n]+)\)/gi, (_, body) => {
+      const trimmed = String(body).trim();
+      return /^[A-Za-z0-9._^]+$/.test(trimmed) ? `√${trimmed}` : `√(${trimmed})`;
+    });
+    if (next === text) break;
+    text = next;
+  }
+  return text
+    .replace(/\\left\b|\\right\b/g, '')
+    .replace(/\^\{([0-9+\-]+)\}/g, (_, exponent) => superscriptDigits(exponent))
+    .replace(/\^([0-9])/g, (_, exponent) => superscriptDigits(exponent))
+    .replace(/_\{([^{}]+)\}/g, '_$1')
+    .replace(/\\times\b|\\cdot\b/g, '×')
+    .replace(/\\div\b/g, '÷')
+    .replace(/\\leq?\b/g, '≤')
+    .replace(/\\geq?\b/g, '≥')
+    .replace(/\\neq\b/g, '≠')
+    .replace(/\\pm\b/g, '±')
+    .replace(/([A-Za-z0-9)])\s+\*\s+(?=[A-Za-z0-9√(])/g, '$1 × ')
+    .replace(/\\(?:quad|qquad)\b|\\[,;!]/g, ' ')
+    .replace(/\\([A-Za-z]+)\b/g, '$1')
+    .replace(/[{}]/g, '');
 }
 
 /** Helvetica/WinAnsi cannot encode most Unicode — strip/replace so PDFKit does not throw. */

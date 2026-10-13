@@ -4,6 +4,8 @@ const V2_QUESTION_KEYS = Object.freeze([
   'sectionC_short',
   'sectionD_application',
   'sectionE_long',
+  'sectionF_case',
+  'sectionG_hots',
 ]);
 
 function v2QuestionRows(structuredContent) {
