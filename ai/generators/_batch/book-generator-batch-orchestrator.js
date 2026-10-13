@@ -659,6 +659,17 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                       padMeta,
                     );
                     structuredV2 = syncLegacyWorksheetSectionsIntoV2(structuredV2, legacyStructured);
+                  } else if (toolSlug === 'smart-qa-practice-generator') {
+                    // The V2 question schema may omit Section F/G even when earlier
+                    // sections overshoot the requested total. Fill the canonical A–G
+                    // legacy shape before exact-count trimming so the trim can reserve
+                    // one question for every required section.
+                    legacyStructured = finalizePracticeQaStructuredContent(
+                      legacyStructured && typeof legacyStructured === 'object'
+                        ? legacyStructured
+                        : { title: coreTitle, sections: [] },
+                      padMeta,
+                    );
                   }
                   if (mustMatchRequestedQuestionCount) {
                     let actualQuestionCount = countUsableQuestionsFromV2OrLegacy(

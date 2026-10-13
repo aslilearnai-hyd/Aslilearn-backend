@@ -1,7 +1,14 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 
-import { trimUsableQuestionsToCount } from '../utils/v2-structured-to-legacy.js';
+import {
+  mapV2StructuredToLegacy,
+  trimUsableQuestionsToCount,
+} from '../utils/v2-structured-to-legacy.js';
+import {
+  finalizePracticeQaStructuredContent,
+  getPracticeQaMissingSections,
+} from '../ai/generators/core/ai-content-engine-service.js';
 
 test('question-count trimming preserves every populated Smart Q&A section', () => {
   const sectionNames = [
@@ -28,4 +35,50 @@ test('question-count trimming preserves every populated Smart Q&A section', () =
   assert.ok(counts.every((count) => count >= 1));
   assert.equal(legacy.sections[4].sectionName, 'Section E: Short Answer Questions');
   assert.equal(legacy.sections[4].questions.length, 1);
+});
+
+test('V2 Smart Q&A fills an omitted Section F before trimming to the requested count', () => {
+  const makeRows = (prefix, count, type) =>
+    Array.from({ length: count }, (_, index) => ({
+      question: `${prefix} cube-root question ${index + 1}?`,
+      answer: `Answer ${index + 1}`,
+      type,
+    }));
+  const v2 = {
+    schema: 'asli-v2-six-section',
+    tool: 'smart-qa-practice-generator',
+    core: {
+      title: 'Cube Roots Practice',
+      instructions: 'Answer every question.',
+      sectionA_mcq: makeRows('MCQ', 4, 'MCQ'),
+      sectionB_fib: makeRows('Fill', 3, 'FIB'),
+      sectionC_short: makeRows('True or false', 2, 'VSA'),
+      sectionD_application: makeRows('Very short', 1, 'SA'),
+      sectionE_long: makeRows('Short answer', 1, 'COMPETENCY'),
+      sectionF_case: [],
+      sectionG_hots: makeRows('HOTS', 1, 'HOTS'),
+    },
+    objectives: { items: ['Recognise perfect cubes', 'Find cube roots'] },
+    assessment: { answerKey: [] },
+  };
+  const meta = {
+    board: 'CBSE',
+    classLabel: 'Class 8',
+    subject: 'Mathematics',
+    topic: 'Cubes and Cube Roots',
+    subTopic: 'Cube Roots',
+    questionCount: 10,
+    generationVariant: 1,
+  };
+
+  const mapped = mapV2StructuredToLegacy('smart-qa-practice-generator', v2);
+  const finalized = finalizePracticeQaStructuredContent(mapped, meta);
+  const { legacy } = trimUsableQuestionsToCount(null, finalized, 10);
+
+  assert.deepEqual(getPracticeQaMissingSections(legacy), []);
+  assert.equal(
+    legacy.sections.reduce((sum, section) => sum + section.questions.length, 0),
+    10,
+  );
+  assert.equal(legacy.sections[5].questions.length, 1);
 });
