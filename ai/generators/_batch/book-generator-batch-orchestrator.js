@@ -60,8 +60,6 @@ import {
   BOOK_BASED_TOOL_META,
   BOOK_GENERATOR_DEFAULT_BATCH_SIZE,
   BOOK_GENERATOR_MAX_INR,
-  BOOK_GENERATOR_MAX_INR_PER_RECORD,
-  BOOK_GENERATOR_MIN_MAX_INR,
   BOOK_GENERATOR_PROJECTED_CALL_INR,
 } from '../shared/bookBasedTools.js';
 import { canonicalBoardLabel, lockBoardKey, normalizeClassLabelForLock, resolveClassLabelForAiToolStorage } from '../../../utils/board-label.js';
@@ -165,15 +163,7 @@ export function getBookGeneratorMaxInr(batchSize = 1) {
   if (raw === '0' || raw === 'off' || raw === 'false') return Infinity;
   const explicit = Number(raw ?? BOOK_GENERATOR_MAX_INR);
   if (Number.isFinite(explicit) && explicit > 0) return explicit;
-  const perRecord = Math.max(
-    0.1,
-    Number(process.env.BOOK_GENERATOR_MAX_INR_PER_RECORD) || BOOK_GENERATOR_MAX_INR_PER_RECORD,
-  );
-  const minimum = Math.max(
-    perRecord,
-    Number(process.env.BOOK_GENERATOR_MIN_MAX_INR) || BOOK_GENERATOR_MIN_MAX_INR,
-  );
-  return Number(Math.max(minimum, Math.max(1, Number(batchSize) || 1) * perRecord).toFixed(2));
+  return 1;
 }
 
 function estimateSessionCostInr() {

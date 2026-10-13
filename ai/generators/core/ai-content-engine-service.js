@@ -6111,17 +6111,32 @@ function normalizePracticeQaQuestionRow(entry, sectionHint = '') {
   ).trim();
   if (!question) return null;
   const options = collectOptionsFromEntry(entry);
+  const matchPairs = normalizeMatchPairs(entry);
+  const imagePrompt = String(
+    entry.imagePrompt || entry.image_prompt || entry.figurePrompt || entry.figure_prompt || '',
+  ).trim();
+  const needsDiagram =
+    entry.needsDiagram === true ||
+    entry.needs_diagram === true ||
+    String(entry.needsDiagram || entry.needs_diagram || '').toLowerCase() === 'true';
+  const sourceAssetIds = Array.isArray(entry.sourceAssetIds)
+    ? entry.sourceAssetIds.map((id) => String(id || '').trim()).filter(Boolean)
+    : [];
   return {
     question,
     options,
     answer: String(entry.answer || entry.correctAnswer || entry.correct_answer || '').trim(),
     question_number: entry.question_number ?? entry.sl_no ?? entry.number,
     section: String(entry.section || sectionHint || '').trim(),
-    type: String(entry.type || entry.question_type || '').trim(),
+    type: String(entry.type || entry.question_type || (matchPairs.length >= 2 ? 'MATCH' : '')).trim(),
     marks: entry.marks != null && entry.marks !== '' ? Number(entry.marks) : undefined,
     explanation: String(entry.explanation || entry.rationale || '').trim(),
     bloom_level: String(entry.bloom_level || entry.bloomLevel || '').trim(),
     difficulty_tag: String(entry.difficulty_tag || entry.difficulty || entry.difficultyTag || '').trim(),
+    ...(matchPairs.length >= 2 ? { matchPairs } : {}),
+    ...(needsDiagram ? { needsDiagram: true } : {}),
+    ...(imagePrompt ? { imagePrompt } : {}),
+    ...(sourceAssetIds.length ? { sourceAssetIds } : {}),
     ...(entry._scaffold === true ? { _scaffold: true } : {}),
   };
 }
@@ -6199,9 +6214,23 @@ export function getPracticeQaMissingSections(data) {
   return canonical.filter((sec) => !(Array.isArray(sec?.questions) && sec.questions.length)).map((sec) => sec.sectionName);
 }
 
+function isPracticeQaTrueFalseQuestion(question) {
+  const type = String(question?.type || question?.question_type || '').toUpperCase().replace(/[^A-Z]/g, '');
+  if (type === 'TF' || type === 'TRUEFALSE') return true;
+  const options = (Array.isArray(question?.options) ? question.options : [])
+    .map((option) => String(option || '').replace(/^[A-D]\)\s*/i, '').trim().toLowerCase())
+    .filter(Boolean);
+  return options.length === 2 && options.includes('true') && options.includes('false');
+}
+
 export function practiceQaHasAllRequiredSections(data) {
   if (countPracticeQaQuestions(data) === 0) return false;
-  return getPracticeQaMissingSections(data).length === 0;
+  if (getPracticeQaMissingSections(data).length !== 0) return false;
+  const normalized = normalizePracticeQaStructuredContent(data);
+  const sectionC = buildCanonicalPracticeQaSectionList(normalized.sections).find(
+    (section) => section.sectionName === PRACTICE_QA_SECTION_LABELS.C,
+  );
+  return (sectionC?.questions || []).some((question) => isPracticeQaTrueFalseQuestion(question));
 }
 
 export function practiceQaValidationMessage(data) {
@@ -6209,8 +6238,10 @@ export function practiceQaValidationMessage(data) {
     return 'Practice Q&A must include questions in sections A–G, real-life questions, or a flat questions array.';
   }
   const missing = getPracticeQaMissingSections(data);
-  if (!missing.length) return '';
-  return `Practice Q&A must include at least one question in each section A–G. Missing: ${missing.join('; ')}.`;
+  if (missing.length) {
+    return `Practice Q&A must include at least one question in each section A–G. Missing: ${missing.join('; ')}.`;
+  }
+  return 'Practice Q&A Section C must include at least one True/False question (type "TF").';
 }
 
 function collectPracticeQaParseableText(value, depth = 0) {
@@ -6715,6 +6746,32 @@ export function ensurePracticeQaAllSectionsFilled(structured, meta = {}) {
       const uniqueText = guaranteeBatchUniqueQuestionText(String(rebuilt.question || '').trim(), used, n);
       used.push(uniqueText);
       questions = [{ ...rebuilt, question: uniqueText }];
+      n += 1;
+    }
+
+    // Section C may contain Match-the-Following, but the client contract still
+    // requires at least one True/False item. Replace a non-TF row instead of
+    // increasing the requested question count.
+    if (
+      sectionName === PRACTICE_QA_SECTION_LABELS.C &&
+      !questions.some((question) => isPracticeQaTrueFalseQuestion(question))
+    ) {
+      const rebuilt = rebuildQuestion(sectionName, n, { questionNumber: n });
+      const uniqueText = guaranteeBatchUniqueQuestionText(String(rebuilt.question || '').trim(), used, n);
+      const replaceIndex = questions.findIndex(
+        (question) => !(Array.isArray(question?.matchPairs) && question.matchPairs.length >= 2),
+      );
+      const index = replaceIndex >= 0 ? replaceIndex : 0;
+      const previous = questions[index] || {};
+      questions[index] = {
+        ...rebuilt,
+        question: uniqueText,
+        question_number: previous.question_number || rebuilt.question_number,
+        section: sectionName,
+        type: 'TF',
+        options: ['True', 'False'],
+      };
+      used.push(uniqueText);
       n += 1;
     }
 
@@ -9390,7 +9447,7 @@ const TOOL_STRUCTURED_RULES = {
     allowedTypes: ['Practice Q&A', 'Homework', 'MCQ', 'Worksheet'],
     validate: (data) => practiceQaHasAllRequiredSections(data),
     message:
-      'Practice Q&A must include at least one question in every section A–G (Section C = True or False). Never Match-the-Following or image-based questions.',
+      'Practice Q&A must include at least one question in every section A–G and at least one Section C True/False item. Match items require structured matchPairs; figure items require needsDiagram and imagePrompt.',
   },
   'chapter-summary-creator': {
     allowedTypes: ['Chapter Summary', 'Summary', 'Notes', 'Study Guide'],
@@ -11756,7 +11813,7 @@ Write all student-facing text in the required output language.`;
             const missingHint = missing.length
               ? ` You MUST add questions to: ${missing.join('; ')}.`
               : '';
-            activeUserPrompt = `${baseUserPrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return structuredContent with title and sections[] — all seven section names exactly (Section A: MCQs … Section G: HOTS / Analytical Questions), each with at least one question. Section C MUST be type "TF" with True/False statements (options ["True","False"]). Do NOT generate Match-the-Following or image/figure-based questions. Include short answers in Section E and application/case-based in Section F. Do NOT duplicate questions in sections[] and questions[]. Total EXACTLY ${target} questions.`;
+            activeUserPrompt = `${baseUserPrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}.${missingHint} Return structuredContent with title and sections[] — all seven section names exactly (Section A: MCQs … Section G: HOTS / Analytical Questions), each with at least one question. Section C MUST retain at least one type "TF" statement with options ["True","False"]. Match-the-Following is allowed only with structured matchPairs. Figure questions are allowed only with needsDiagram=true and a precise imagePrompt. Include short answers in Section E and application/case-based in Section F. Do NOT duplicate questions in sections[] and questions[]. Total EXACTLY ${target} questions.`;
           } else if (slug === 'worksheet-mcq-generator') {
             const wsTarget = Number(meta?.questionCount) > 0 ? Number(meta.questionCount) : 10;
             activeUserPrompt = `${baseUserPrompt}\n\nRETRY (attempt ${attempt + 1}): Previous output failed validation: ${lastValidationMessage}. Return structuredContent with title, learning_objectives[], instructions, sections[] (Section A: MCQs through Section E: Competency / Real-life Application Questions). Include EXACTLY ${wsTarget} unique questions total across sections A–E — no duplicate question stems. Put questions ONLY in sections[].questions (not also in top-level questions[] or section_a_mcqs). Each MCQ needs four labeled options A)–D) and an answer.`;

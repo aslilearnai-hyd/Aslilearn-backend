@@ -2663,7 +2663,7 @@ export function buildAiGeneratorPromptParts(toolSlug, params = {}) {
 
   const toolSpecificRules = [
     'For tools that produce multiple worksheet questions, exam items, or flashcards, put them in the arrays defined by the schema (e.g. questions[], sections[].questions[], cards[]).',
-    'For Smart Q&A Practice Generator, structuredContent.sections MUST list all seven entries (Section A through Section G) and each MUST contain at least one question object. Section C must be True or False items (type "TF"). Do NOT generate Match-the-Following or image/figure-based questions. Do NOT generate answer_key_with_explanations — answers live on each question object only.',
+    'For Smart Q&A Practice Generator, structuredContent.sections MUST list all seven entries (Section A through Section G) and each MUST contain at least one question object. Section C must retain at least one True or False item (type "TF"). Match-the-Following is allowed only when the item includes structured matchPairs. Figure questions are allowed only when needsDiagram=true and imagePrompt contains a precise labelled-figure description. Do NOT generate answer_key_with_explanations — answers live on each question object only.',
     'For Chapter Summary Creator use chapter_summary_title and chapter_overview — never study_guide_title or chapter_subtopic_overview field names.',
     'For Concept Mastery Helper there is NO separate "concept" form field — use the SUBTOPIC (and TOPIC) from context as concept_name. structuredContent MUST be { "concepts": [ { ... } ] } with at least one filled concept object for that sub-topic.',
     'For Activity & Project Generator, fill ALL 13 canonical fields in one structuredContent object.',

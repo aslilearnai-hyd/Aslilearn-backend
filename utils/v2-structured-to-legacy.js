@@ -92,13 +92,25 @@ function mapSmartQaSections(core = {}) {
     const questions = arr(rows)
       .map((q, i) => ({
         question_number: i + 1,
-        type,
+        type:
+          (Array.isArray(q?.matchPairs) && q.matchPairs.length >= 2) ||
+          String(q?.type || '').trim().toUpperCase() === 'MATCH'
+            ? 'MATCH'
+            : type,
         section: sectionName,
         question: str(q?.question || q?.prompt || q?.text),
         options: Array.isArray(q?.options) ? q.options.map(str) : [],
         answer: str(q?.answer),
         explanation: str(q?.explanation || q?.working),
         marks: q?.marks,
+        ...(Array.isArray(q?.matchPairs) && q.matchPairs.length >= 2
+          ? { matchPairs: q.matchPairs }
+          : {}),
+        ...(q?.needsDiagram === true ? { needsDiagram: true } : {}),
+        ...(str(q?.imagePrompt) ? { imagePrompt: str(q.imagePrompt) } : {}),
+        ...(Array.isArray(q?.sourceAssetIds) && q.sourceAssetIds.length
+          ? { sourceAssetIds: q.sourceAssetIds.map(str).filter(Boolean) }
+          : {}),
       }))
       .filter((q) => q.question);
     if (questions.length) sections.push({ sectionName, questions, count: questions.length });
@@ -297,8 +309,11 @@ export function mapV2StructuredToLegacy(toolSlug, v2) {
      * one passing and one failing on Section D despite both having questions.
      * Matching on structured keys removes that coin flip.
      */
-    const byType = (t) => sections.find((s) => s.questions.some((q) => q.type === t));
-    const objectsOf = (t) => (byType(t)?.questions || []).filter((q) => q.question);
+    // A Smart Q&A section can legitimately contain more than one type (for
+    // example Section C may contain both TF and MATCH). Filter individual rows
+    // rather than returning every row from the first section containing a type.
+    const objectsOf = (t) =>
+      sections.flatMap((section) => section.questions || []).filter((q) => q.type === t && q.question);
     const rowsOf = (t) => objectsOf(t).map((q) => q.question);
 
     /*

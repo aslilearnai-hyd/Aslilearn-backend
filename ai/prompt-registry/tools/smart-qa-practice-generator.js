@@ -23,6 +23,6 @@ export default createToolPromptPack({
     'learning_objectives: 3 measurable objectives this practice set assesses (emit as a deck-level field, not inside sections[]).',
   ],
   rewriteRules: [
-    'All 7 sections with questions. Section C MUST be type TF (True/False). Never Match-the-Following or image/figure-based stems. Direct stems only.',
+    'All 7 sections with questions. Section C MUST retain at least one TF (True/False) item. Match-the-Following is allowed only with structured matchPairs. Figure questions are allowed only with needsDiagram=true and a precise imagePrompt. Direct stems only.',
   ],
 });
