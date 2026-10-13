@@ -22,6 +22,20 @@ const STUDENT_SHARED_SECTION_SCHEMA = `"objectives": { "items": ["2-3 concise me
 "teacher": { "timing": "short self-study time suggestion", "tlm": [], "tips": ["one practical student revision or attempt tip — no teacher/classroom-management advice"] },
 "reallife": { "connection": "one concise authentic Indian application", "family": "one optional home/community connection", "reflection": "one short student reflection prompt" }`;
 
+/**
+ * Smart Q&A is a practice bank, not a lesson plan. Keep the six top-level keys
+ * for storage/viewer compatibility, but do not ask Gemini to write teacher
+ * guidance, differentiation essays, or a second real-life activity around the
+ * seven-section paper. Answers remain concise and markable.
+ */
+const SMART_QA_SHARED_SECTION_SCHEMA = `"objectives": { "items": ["exactly 2 concise measurable outcomes"], "alignment": "one short curriculum-alignment line", "bloom": [] },
+"differentiation": {},
+"assessment": { "answerKey": [{ "q": "section letter + question number only", "answer": "concise final answer", "working": "only when calculation or 2+ marks requires it" }], "rubric": "one short marking line", "commonErrors": [] },
+"teacher": {},
+"reallife": {}`;
+
+const SMART_QA_CORE_SCHEMA = `"core": { "title": "specific practice-set title naming the subtopic", "instructions": "attempt all questions; include total marks and time", "sectionA_mcq": [{ "question": "MCQ", "options": ["A) …","B) …","C) …","D) …"], "answer": "B) …", "marks": 1 }], "sectionB_fib": [{ "question": "sentence with one ___ blank", "answer": "exact missing term", "marks": 1 }], "sectionC_short": [{ "question": "one statement to judge", "options": ["True","False"], "answer": "True or False", "marks": 1 }], "sectionD_application": [{ "question": "very short answer question", "answer": "one-line answer", "marks": 1 }], "sectionE_long": [{ "question": "short answer question", "answer": "concise model answer", "marks": 2 }], "sectionF_case": [{ "question": "application / case-based question", "answer": "worked answer", "marks": 3 }], "sectionG_hots": [{ "question": "HOTS / analytical question", "answer": "reasoned model answer", "marks": 4 }] }`;
+
 export const STUDENT_TOOL_SLUGS = Object.freeze([
   'smart-study-guide-generator',
   'smart-qa-practice-generator',
@@ -60,7 +74,13 @@ const PACKS = {
   'homework-creator': { title: 'Homework Creator', family: 'questions', coreRules: 'A balanced, reasonable homework set (20-40 min total): practice questions (textbook-mapped), an application task, one creative/observation task, and a challenge question with hints. Respect family time; prefer home/kitchen/local resources. The creativeTask field is REQUIRED and must be a genuine open-ended thinking prompt — not a reworded practice question.', coreExtra: '"creativeTask": "one open-ended creative/thinking question inviting the student to imagine, design, or justify — distinct from the graded questions above"' },
   'mock-test-builder': { title: 'Mock Test Builder', family: 'questions', coreExtra: '"testPurpose": "why this test matters for this subtopic and board prep", "remedialSuggestions": "per weak section, the concept to re-study and one practice action"', coreRules: 'A complete mock test to the board blueprint (CBSE competency distribution / State pattern / JEE Main): instructions, questions across all types, and balanced difficulty. Map chapters/exercises covered.' },
   'exam-question-paper-generator': { title: 'Exam Question Paper Generator', family: 'questions', coreRules: 'A full question paper strictly to the official blueprint: section-wise distribution, internal choice, all question types (MCQ, VSA, SA, LA, case/assertion-reason, numericals as applicable). Include long answers in sectionE_long. sectionD_application and sectionE_long must contain DIFFERENT questions — never the same stem in both; sectionD_application is the case/application item and sectionE_long is the extended long-answer item, and they print as two separate sections of the paper.' },
-  'smart-qa-practice-generator': { title: 'Smart Q&A Practice', family: 'questions', coreExtra: '"sectionF_case": [{ "question": "application / case-based question", "answer": "model answer", "marks": 3 }], "sectionG_hots": [{ "question": "HOTS / analytical question", "answer": "model answer", "marks": 4 }]', coreRules: 'A mixed, balanced practice set (MCQ, Fill-ups, VSA, SA, case-study, HOTS) of varying difficulty that mirrors real board/competitive style. Put HOTS/analytical items in sectionE_long.' },
+  'smart-qa-practice-generator': {
+    title: 'Smart Q&A Practice',
+    family: 'questions',
+    coreSchema: SMART_QA_CORE_SCHEMA,
+    sharedSchema: SMART_QA_SHARED_SECTION_SCHEMA,
+    coreRules: 'Generate the documented seven-section practice bank exactly: A MCQs, B Fill in the Blanks, C True or False, D Very Short Answer, E Short Answer, F Application / Case-based, G HOTS / Analytical. Every section A-G must contain at least one distinct question. Put HOTS only in sectionG_hots and application/case questions only in sectionF_case. Keep answers concise and do not add lesson-plan or teacher-guidance prose.',
+  },
   'quick-assignment-builder': { title: 'Quick Assignment Builder', family: 'questions', coreRules: 'A short assignment: concept-based questions, an application-oriented task, a real-life/competency activity, one creative question, and a challenge for advanced learners.' },
   // --- Family: explain ---
   'concept-mastery-helper': { title: 'Concept Mastery Helper', family: 'explain', coreRules: 'Definition, why it matters, a step-by-step breakdown with Indian examples/analogies, common misconceptions, and practice. Keep it age-appropriate and board-mapped. priorKnowledge, diagram and hotsQuestion are REQUIRED — the explain-family core does not otherwise carry them and the tool cannot be delivered without them.', coreExtra: '"priorKnowledge": "what the student must already know before this concept", "diagram": "what to draw on the board to visualise this concept, with the labels to mark", "hotsQuestion": "one higher-order (analyse/evaluate/design) question on this concept, with its expected answer"' },
@@ -101,7 +121,7 @@ export function buildToolPack(toolSlug) {
    * coreExtra is per-tool so adding a field for one tool does not change the
    * shape for every other member of its family.
    */
-  let coreSchema = FAMILY_CORE[pack.family];
+  let coreSchema = pack.coreSchema || FAMILY_CORE[pack.family];
   if (pack.coreExtra) {
     const close = coreSchema.lastIndexOf('}');
     if (close > -1) {
@@ -116,7 +136,7 @@ export function buildToolPack(toolSlug) {
   }\nSECTION 1 (core) RULES:\n${pack.coreRules}`;
   const responseSchema = `{
   ${coreSchema},
-  ${studentTool ? STUDENT_SHARED_SECTION_SCHEMA : SHARED_SECTION_SCHEMA}
+  ${pack.sharedSchema || (studentTool ? STUDENT_SHARED_SECTION_SCHEMA : SHARED_SECTION_SCHEMA)}
 }`;
   return {
     title: pack.title,

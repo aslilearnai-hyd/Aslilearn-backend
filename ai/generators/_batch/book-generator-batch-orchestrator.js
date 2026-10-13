@@ -51,6 +51,7 @@ import {
   isAiGeneratorCompleteOnlySaveEnabled,
   shouldUseFlashForAiGeneratorRun,
 } from '../shared/ai-generator-batch-config.js';
+import { getAiGeneratorMaxTokens } from '../shared/ai-generator-llm-budget.js';
 import { validateDashboardAiToolDoc } from '../../validation/ai-tool-dashboard-validation.js';
 import { retrieveBookContextForGeneration, buildBookContextForVariant } from '../../rag/books/book-rag-service.js';
 import {
@@ -59,6 +60,9 @@ import {
   BOOK_BASED_TOOL_META,
   BOOK_GENERATOR_DEFAULT_BATCH_SIZE,
   BOOK_GENERATOR_MAX_INR,
+  BOOK_GENERATOR_MAX_INR_PER_RECORD,
+  BOOK_GENERATOR_MIN_MAX_INR,
+  BOOK_GENERATOR_PROJECTED_CALL_INR,
 } from '../shared/bookBasedTools.js';
 import { canonicalBoardLabel, lockBoardKey, normalizeClassLabelForLock, resolveClassLabelForAiToolStorage } from '../../../utils/board-label.js';
 import { withMongoRetry, isMongoTransientError } from '../../../utils/mongo-retry.js';
@@ -156,18 +160,42 @@ function finalizeBookStructuredContent(toolSlug, structured, meta) {
   }
 }
 
-function getBookGeneratorMaxInr() {
+export function getBookGeneratorMaxInr(batchSize = 1) {
   const raw = process.env.BOOK_GENERATOR_MAX_INR;
-  if (raw === '0' || raw === 'off' || raw === 'false' || raw === '') return Infinity;
-  const n = Number(raw ?? BOOK_GENERATOR_MAX_INR);
-  if (!Number.isFinite(n) || n <= 0) return Infinity;
-  return n;
+  if (raw === '0' || raw === 'off' || raw === 'false') return Infinity;
+  const explicit = Number(raw ?? BOOK_GENERATOR_MAX_INR);
+  if (Number.isFinite(explicit) && explicit > 0) return explicit;
+  const perRecord = Math.max(
+    0.1,
+    Number(process.env.BOOK_GENERATOR_MAX_INR_PER_RECORD) || BOOK_GENERATOR_MAX_INR_PER_RECORD,
+  );
+  const minimum = Math.max(
+    perRecord,
+    Number(process.env.BOOK_GENERATOR_MIN_MAX_INR) || BOOK_GENERATOR_MIN_MAX_INR,
+  );
+  return Number(Math.max(minimum, Math.max(1, Number(batchSize) || 1) * perRecord).toFixed(2));
 }
 
 function estimateSessionCostInr() {
   const session = getTokenUsageSession();
   if (!session) return 0;
   return computeGeminiCostFromTokenUsage(session).inr;
+}
+
+/** Reserve the likely cost of the next paid call before starting it. */
+export function estimateNextBookGeneratorCallInr() {
+  const session = getTokenUsageSession();
+  const calls = Math.max(0, Number(session?.totals?.callCount) || 0);
+  const observedAverage = calls > 0 ? estimateSessionCostInr() / calls : 0;
+  const configured =
+    Number(process.env.BOOK_GENERATOR_PROJECTED_CALL_INR) || BOOK_GENERATOR_PROJECTED_CALL_INR;
+  return Math.max(0.1, configured, observedAverage);
+}
+
+function canStartBookGeneratorCall(batchSize) {
+  const maxInr = getBookGeneratorMaxInr(batchSize);
+  if (maxInr === Infinity) return true;
+  return estimateSessionCostInr() + estimateNextBookGeneratorCallInr() <= maxInr;
 }
 
 function getBatchSize(override) {
@@ -205,7 +233,7 @@ async function assertGeminiKeyWorks(primaryModel) {
 }
 
 function formatBookBatchProgress({ saved, batchSize, batchIndex, callCount, costInr, activeSlots }) {
-  const maxInr = getBookGeneratorMaxInr();
+  const maxInr = getBookGeneratorMaxInr(batchSize);
   const costNote =
     costInr > 0
       ? maxInr < Infinity
@@ -325,6 +353,13 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
     BOOK_QUESTION_UNIQUENESS_TOOLS.has(toolSlug) &&
     Number.isFinite(requestedQuestionCount) &&
     requestedQuestionCount > 0;
+  if (
+    toolSlug === 'smart-qa-practice-generator' &&
+    mustMatchRequestedQuestionCount &&
+    requestedQuestionCount < 7
+  ) {
+    throw new Error('Smart Q&A requires at least 7 questions so every documented section A-G is present.');
+  }
   const toolDisplayName = getBookBasedToolDisplayName(toolSlug);
   const qualityTierSettings = resolveQualityTierSettings(
     params.qualityTier || params.extraParams?.qualityTier,
@@ -550,12 +585,12 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
           await sleep(staggerMs + Math.floor(Math.random() * 200));
         }
 
-        if (estimateSessionCostInr() >= getBookGeneratorMaxInr()) {
+        if (!canStartBookGeneratorCall(batchSize)) {
           return {
             ok: false,
             variantIndex,
             batchIndex,
-            error: `Batch budget cap (₹${getBookGeneratorMaxInr()}) reached`,
+            error: `Batch budget cap (₹${getBookGeneratorMaxInr(batchSize)}) reached before the next model call`,
           };
         }
 
@@ -568,8 +603,8 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             lastError = fatalAuthError;
             break;
           }
-          if (estimateSessionCostInr() >= getBookGeneratorMaxInr()) {
-            lastError = `Batch budget cap (₹${getBookGeneratorMaxInr()}) reached`;
+          if (!canStartBookGeneratorCall(batchSize)) {
+            lastError = `Batch budget cap (₹${getBookGeneratorMaxInr(batchSize)}) reached before the next model call`;
             break;
           }
           try {
@@ -625,7 +660,19 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                     ragContext: v2RagContext,
                     variantHint: v2VariantHint,
                     temperature: Math.min(0.9, 0.6 + (variantIndex - 1) * 0.06),
-                    avoidQuestions: usedV2Questions.slice(0, 40),
+                    maxTokens: getAiGeneratorMaxTokens(toolSlug, {
+                      qualityTier: qualityTierSettings.tier,
+                    }),
+                    // The outer slot loop owns recovery. A second retry layer could
+                    // multiply one failed slot into six full paid generations.
+                    maxTries: 1,
+                    canStartCall: () => canStartBookGeneratorCall(batchSize),
+                    // A short freshness sample is enough for Smart Q&A and avoids
+                    // resending thousands of paid input tokens on every slot.
+                    avoidQuestions: usedV2Questions.slice(
+                      0,
+                      toolSlug === 'smart-qa-practice-generator' ? 15 : 40,
+                    ),
                     multimodalParts: ragBase.multimodalParts || [],
                     sourceChunkIds: variantRag.sourceChunkIds || [],
                     sourceAssetIds: ragBase.sourceAssetIds || [],

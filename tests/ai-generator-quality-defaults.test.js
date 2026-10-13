@@ -16,11 +16,11 @@ test('generation defaults reject incomplete records', () => {
   }
 });
 
-test('premium token budget is not reduced by global cost-saver mode', () => {
+test('premium Smart Q&A uses its compact-output token ceiling', () => {
   const previous = process.env.AI_GENERATOR_COST_SAVER;
   process.env.AI_GENERATOR_COST_SAVER = 'true';
   try {
-    assert.equal(getAiGeneratorMaxTokens('smart-qa-practice-generator', { qualityTier: 'premium' }), 10_000);
+    assert.equal(getAiGeneratorMaxTokens('smart-qa-practice-generator', { qualityTier: 'premium' }), 6_500);
   } finally {
     if (previous === undefined) delete process.env.AI_GENERATOR_COST_SAVER;
     else process.env.AI_GENERATOR_COST_SAVER = previous;

@@ -85,10 +85,45 @@ function mapQuestionSections(core = {}) {
   return sections;
 }
 
-function mapAnswerKey(assessment = {}) {
+/** Smart Q&A uses the client's seven-section taxonomy, not the shared A-E worksheet taxonomy. */
+function mapSmartQaSections(core = {}) {
+  const sections = [];
+  const push = (sectionName, type, rows) => {
+    const questions = arr(rows)
+      .map((q, i) => ({
+        question_number: i + 1,
+        type,
+        section: sectionName,
+        question: str(q?.question || q?.prompt || q?.text),
+        options: Array.isArray(q?.options) ? q.options.map(str) : [],
+        answer: str(q?.answer),
+        explanation: str(q?.explanation || q?.working),
+        marks: q?.marks,
+      }))
+      .filter((q) => q.question);
+    if (questions.length) sections.push({ sectionName, questions, count: questions.length });
+  };
+  push('Section A: MCQs', 'MCQ', core.sectionA_mcq);
+  push('Section B: Fill in the Blanks', 'FIB', core.sectionB_fib);
+  push('Section C: True or False', 'TF', core.sectionC_short);
+  push('Section D: Very Short Answer Questions', 'VSA', core.sectionD_application);
+  push('Section E: Short Answer Questions', 'SA', core.sectionE_long);
+  push('Section F: Application / Case-based Questions', 'CASE', core.sectionF_case);
+  push('Section G: HOTS / Analytical Questions', 'HOTS', core.sectionG_hots);
+  return sections;
+}
+
+function mapAnswerKey(assessment = {}, fallbackQuestions = []) {
   const rows = arr(assessment.answerKey);
-  if (!rows.length) return str(assessment.rubric);
-  return rows
+  const sourceRows = rows.length
+    ? rows
+    : arr(fallbackQuestions).map((q, index) => ({
+        q: q?.question_number || index + 1,
+        answer: q?.answer,
+        working: q?.explanation,
+      }));
+  if (!sourceRows.length) return str(assessment.rubric);
+  return sourceRows
     .map((a) => {
       const n = str(a?.q || a?.n || a?.question_number);
       const ans = str(a?.answer);
@@ -247,7 +282,10 @@ export function mapV2StructuredToLegacy(toolSlug, v2) {
       'quick-assignment-builder',
     ].includes(slug)
   ) {
-    const sections = mapQuestionSections(core);
+    const sections =
+      slug === 'smart-qa-practice-generator'
+        ? mapSmartQaSections(core)
+        : mapQuestionSections(core);
     if (!sections.length) return null;
     /*
      * Emit the DISCRETE per-section keys as well as the generic `sections` array.
@@ -361,14 +399,18 @@ export function mapV2StructuredToLegacy(toolSlug, v2) {
         ? {
             section_a_mcqs: rowsOf('MCQ'),
             section_b_fill_in_blanks: rowsOf('FIB'),
-            section_c_match_following: rowsOf('VSA'),
+            section_c_true_false: rowsOf('TF'),
+            section_c_tf: rowsOf('TF'),
             section_d_vsa: rowsOf('VSA'),
             section_e_short_answer: rowsOf('SA'),
-            section_f_application: list(core.sectionF_case).length
-              ? arr(core.sectionF_case).map((q) => str(q?.question)).filter(Boolean)
-              : rowsOf('COMPETENCY'),
-            section_g_hots: arr(core.sectionG_hots).map((q) => str(q?.question)).filter(Boolean),
-            answer_key_with_explanations: mapAnswerKey(v2.assessment),
+            section_f_application: rowsOf('CASE'),
+            section_f_case_based: rowsOf('CASE'),
+            section_g_hots: rowsOf('HOTS'),
+            section_g_analytical: rowsOf('HOTS'),
+            answer_key_with_explanations: mapAnswerKey(
+              v2.assessment,
+              sections.flatMap((section) => section.questions),
+            ),
           }
         : {}),
       ...(slug === 'mock-test-builder'

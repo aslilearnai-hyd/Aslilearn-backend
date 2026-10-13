@@ -22,6 +22,36 @@ const WORKSHEET_V2_DEFAULT_COMPOSITION = {
   laq: 1,
 };
 
+const SMART_QA_KEYS = Object.freeze([
+  'sectionA_mcq',
+  'sectionB_fib',
+  'sectionC_short',
+  'sectionD_application',
+  'sectionE_long',
+  'sectionF_case',
+  'sectionG_hots',
+]);
+
+/** Allocate an exact total while reserving one question for every required A-G section. */
+export function allocateSmartQaSectionCounts(questionCount) {
+  const total = Math.floor(Number(questionCount) || 0);
+  if (total < SMART_QA_KEYS.length) return null;
+  const counts = Object.fromEntries(SMART_QA_KEYS.map((key) => [key, 1]));
+  const extraOrder = [
+    'sectionA_mcq',
+    'sectionB_fib',
+    'sectionD_application',
+    'sectionE_long',
+    'sectionF_case',
+    'sectionG_hots',
+    'sectionC_short',
+  ];
+  for (let i = 0; i < total - SMART_QA_KEYS.length; i += 1) {
+    counts[extraOrder[i % extraOrder.length]] += 1;
+  }
+  return counts;
+}
+
 /** Feature flag — on by default; set AI_GENERATOR_V2_SIX_SECTION=off to disable. */
 export function isSixSectionV2Enabled() {
   const raw = String(process.env.AI_GENERATOR_V2_SIX_SECTION ?? 'on').trim().toLowerCase();
@@ -189,14 +219,29 @@ export function assembleSixSectionPrompt(toolSlug, params = {}, opts = {}) {
           composition: { ...WORKSHEET_V2_DEFAULT_COMPOSITION },
           total: Object.values(WORKSHEET_V2_DEFAULT_COMPOSITION).reduce((a, b) => a + b, 0),
         };
-    compositionLine = formatQuestionCompositionPromptLine(composition, total);
-    countOverrideBlock = [
-      `MANDATORY TOTAL: EXACTLY ${total} questions across sectionA_mcq + sectionB_fib + sectionC_short + sectionD_application + sectionE_long.`,
-      `Section counts (must match exactly): sectionA_mcq=${composition.mcq}, sectionB_fib=${composition.fib}, sectionC_short=${composition.vsaq}, sectionD_application=${composition.saq}, sectionE_long=${composition.laq}.`,
-      hasRequestedCount
-        ? `USER REQUESTED ${requestedCount} QUESTIONS — this OVERRIDES any default 16-question worksheet blueprint in the tool rules above. Do not stop at 15 or 16 if the target is higher.`
-        : 'Use the default section counts above unless USER PARAMETERS change them.',
-    ].join('\n');
+    if (toolSlug === 'smart-qa-practice-generator') {
+      const smartQaCounts = allocateSmartQaSectionCounts(total);
+      if (smartQaCounts) {
+        compositionLine = `Smart Q&A A-G composition: ${SMART_QA_KEYS.map((key) => `${key}=${smartQaCounts[key]}`).join(', ')}.`;
+        countOverrideBlock = [
+          `MANDATORY TOTAL: EXACTLY ${total} questions across ALL seven sections A-G.`,
+          `Section counts (must match exactly): ${SMART_QA_KEYS.map((key) => `${key}=${smartQaCounts[key]}`).join(', ')}.`,
+          'Section C is True/False; Section D is Very Short Answer; Section E is Short Answer; Section F is Application / Case-based; Section G is HOTS / Analytical.',
+          'Do not put a Section F or G question into Section D or E. Do not generate any extra questions outside these seven arrays.',
+        ].join('\n');
+      } else {
+        countOverrideBlock = `INVALID SMART Q&A COUNT: ${total}. Seven required sections A-G need at least 7 questions.`;
+      }
+    } else {
+      compositionLine = formatQuestionCompositionPromptLine(composition, total);
+      countOverrideBlock = [
+        `MANDATORY TOTAL: EXACTLY ${total} questions across sectionA_mcq + sectionB_fib + sectionC_short + sectionD_application + sectionE_long.`,
+        `Section counts (must match exactly): sectionA_mcq=${composition.mcq}, sectionB_fib=${composition.fib}, sectionC_short=${composition.vsaq}, sectionD_application=${composition.saq}, sectionE_long=${composition.laq}.`,
+        hasRequestedCount
+          ? `USER REQUESTED ${requestedCount} QUESTIONS — this OVERRIDES any default 16-question worksheet blueprint in the tool rules above. Do not stop at 15 or 16 if the target is higher.`
+          : 'Use the default section counts above unless USER PARAMETERS change them.',
+      ].join('\n');
+    }
   }
 
   const userBlock = [

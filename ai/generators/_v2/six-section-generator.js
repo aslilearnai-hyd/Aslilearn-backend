@@ -111,7 +111,7 @@ function deepSanitizeMath(val) {
 /**
  * @param {string} toolSlug
  * @param {object} params { board, classLabel, subject, topic, subTopic }
- * @param {{ ragContext?:string, primaryModel?:string }} [opts]
+ * @param {{ ragContext?:string, primaryModel?:string, canStartCall?:()=>boolean }} [opts]
  * @returns {Promise<{ ok:boolean, structuredContent?:object, error?:string }>}
  */
 export async function generateSixSectionContent(toolSlug, params = {}, opts = {}) {
@@ -152,6 +152,9 @@ export async function generateSixSectionContent(toolSlug, params = {}, opts = {}
         : model;
     let raw = '';
     try {
+      if (typeof opts.canStartCall === 'function' && !opts.canStartCall()) {
+        return { ok: false, error: 'Batch budget cap reached before the next model call.' };
+      }
       raw = await geminiService.generateStructuredContent(assembled.prompt, 'json', {
         primaryModel: attemptModel,
         modelOverflow: String(opts.modelOverflow || '').trim(),
@@ -224,6 +227,10 @@ export async function generateSixSectionContent(toolSlug, params = {}, opts = {}
           const failed = identifyFailedQuestionSlots(structuredContent, stemValidation.findings);
           if (failed.length && failed.length < stemValidation.questionCount) {
             try {
+              if (typeof opts.canStartCall === 'function' && !opts.canStartCall()) {
+                lastErr = 'Batch budget cap reached before selective repair.';
+                continue;
+              }
               const repairRaw = await geminiService.generateStructuredContent(
                 buildSelectiveRepairPrompt(failed, questionSlots, opts.ragContext || ''),
                 'json',

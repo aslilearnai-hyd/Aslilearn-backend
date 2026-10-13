@@ -43,6 +43,16 @@ export function getAiGeneratorMaxTokens(toolSlug, options = {}) {
     String(process.env.AI_GENERATOR_SECTION_PAD ?? 'false').trim().toLowerCase() !== 'false' &&
     String(process.env.AI_GENERATOR_SECTION_PAD ?? 'false').trim().toLowerCase() !== '0' &&
     String(process.env.AI_GENERATOR_SECTION_PAD ?? 'false').trim().toLowerCase() !== 'off';
+  // Smart Q&A now has a compact A-G schema. A 10-question paper fits well below
+  // the generic heavy-tool ceiling; the lower cap prevents verbose/runaway
+  // completions while retaining enough room for worked answers.
+  if (slug === 'smart-qa-practice-generator') {
+    const base = ultra ? 4200 : costSaver ? 4800 : 6500;
+    return Math.min(
+      8000,
+      Math.max(3000, Number(process.env.AI_GENERATOR_MAX_TOKENS_SMART_QA) || base),
+    );
+  }
   if (HEAVY_TOOLS.has(slug)) {
     const base = ultra ? 4200 : costSaver ? 4800 : padEnabled ? 7000 : 10000;
     return Math.min(16000, Math.max(3000, Number(process.env.AI_GENERATOR_MAX_TOKENS_HEAVY) || base));
