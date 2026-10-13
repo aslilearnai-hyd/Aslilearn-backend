@@ -6721,6 +6721,36 @@ export function ensurePracticeQaAllSectionsFilled(structured, meta = {}) {
     byName.set(sectionName, { ...sec, questions, count: questions.length });
   }
 
+  // Missing-section repair can legitimately reduce an overshooting model result
+  // to one unique question per section. When the caller requested an exact total,
+  // replenish the remainder with topic-grounded, batch-unique questions before
+  // the orchestrator trims and validates the record.
+  const requestedCount = Math.floor(Number(meta.questionCount) || 0);
+  const targetCount = requestedCount > 0
+    ? Math.max(Object.keys(PRACTICE_QA_SECTION_LABELS).length, requestedCount)
+    : 0;
+  const sectionNames = Object.values(PRACTICE_QA_SECTION_LABELS);
+  let currentCount = sectionNames.reduce(
+    (sum, sectionName) => sum + (byName.get(sectionName)?.questions?.length || 0),
+    0,
+  );
+  let fillIndex = 0;
+  while (targetCount > 0 && currentCount < targetCount) {
+    const sectionName = sectionNames[fillIndex % sectionNames.length];
+    const sec = byName.get(sectionName) || { sectionName, questions: [], count: 0 };
+    const rebuilt = rebuildQuestion(sectionName, n, { questionNumber: n });
+    const uniqueText = guaranteeBatchUniqueQuestionText(String(rebuilt.question || '').trim(), used, n);
+    used.push(uniqueText);
+    const questions = [
+      ...(Array.isArray(sec.questions) ? sec.questions : []),
+      { ...rebuilt, question: uniqueText, section: sectionName },
+    ];
+    byName.set(sectionName, { ...sec, questions, count: questions.length });
+    n += 1;
+    currentCount += 1;
+    fillIndex += 1;
+  }
+
   const sections = Object.values(PRACTICE_QA_SECTION_LABELS).map((label) => byName.get(label));
   const flat = sections.flatMap((s) => s.questions || []);
   const title = sanitizePracticeQaTitle(out.title || out.practice_set_title, meta);

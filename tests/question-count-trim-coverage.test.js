@@ -82,3 +82,46 @@ test('V2 Smart Q&A fills an omitted Section F before trimming to the requested c
   );
   assert.equal(legacy.sections[5].questions.length, 1);
 });
+
+test('final pre-save pass restores Section F lost after an earlier normalization pass', () => {
+  const sections = [
+    'Section A: MCQs',
+    'Section B: Fill in the Blanks',
+    'Section C: True or False',
+    'Section D: Very Short Answer Questions',
+    'Section E: Short Answer Questions',
+    'Section F: Application / Case-based Questions',
+    'Section G: HOTS / Analytical Questions',
+  ].map((sectionName, sectionIndex) => ({
+    sectionName,
+    questions:
+      sectionIndex === 5
+        ? []
+        : Array.from({ length: sectionIndex < 3 ? 3 : 1 }, (_, questionIndex) => ({
+            question: `${sectionName} cube-root question ${questionIndex + 1}?`,
+            answer: `Answer ${sectionIndex + 1}.${questionIndex + 1}`,
+          })),
+  }));
+  const meta = {
+    board: 'CBSE',
+    classLabel: 'Class 8',
+    subject: 'Mathematics',
+    topic: 'Cubes and Cube Roots',
+    subTopic: 'Cube Roots',
+    questionCount: 10,
+    generationVariant: 2,
+  };
+
+  const finalized = finalizePracticeQaStructuredContent(
+    { title: 'Cube Roots Practice', sections },
+    meta,
+  );
+  const { legacy } = trimUsableQuestionsToCount(null, finalized, 10);
+
+  assert.deepEqual(getPracticeQaMissingSections(legacy), []);
+  assert.equal(
+    legacy.sections.reduce((sum, section) => sum + section.questions.length, 0),
+    10,
+  );
+  assert.match(legacy.sections[5].questions[0].question, /Cube Roots/i);
+});

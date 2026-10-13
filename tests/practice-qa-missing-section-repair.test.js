@@ -51,5 +51,5 @@ test('premium Smart Q&A restores an omitted Section E without dropping valid sec
   const deduped = dedupeIntraRecordQuestions('smart-qa-practice-generator', repaired);
   assert.deepEqual(getPracticeQaMissingSections(deduped), []);
   assert.equal(deduped.sections.length, 7);
-  assert.equal(deduped.questions.length, 7);
+  assert.equal(deduped.questions.length, 10);
 });

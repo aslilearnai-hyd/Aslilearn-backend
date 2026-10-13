@@ -1015,6 +1015,16 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             );
             structuredContent = dedupeIntraRecordQuestions(toolSlug, structuredContent);
             structuredContent = renumberIntraRecordQuestions(toolSlug, structuredContent);
+            if (toolSlug === 'smart-qa-practice-generator') {
+              // Dedupe/normalization can empty a later section when Gemini repeats
+              // a question across A–G. Re-finalize after those destructive passes,
+              // immediately before the exact-count trim and save gates.
+              structuredContent = finalizePracticeQaStructuredContent(
+                structuredContent,
+                finalizeMeta,
+              );
+              structuredContent = renumberIntraRecordQuestions(toolSlug, structuredContent);
+            }
 
             if (worksheetBatch && batchQuestionTexts.length > 0) {
               structuredContent = rebuildWorksheetBatchVariantSmart(structuredContent, {
@@ -1162,7 +1172,10 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
 
             // Prefer freshly formatted text from repaired structured content when available.
             let formattedContent = String(generated.generatedContent || '').trim();
-            if (worksheetBatch && structuredContent) {
+            if (
+              (worksheetBatch || toolSlug === 'smart-qa-practice-generator') &&
+              structuredContent
+            ) {
               try {
                 const rebuilt = stripMarkdownSyntax(
                   formatStructuredToolOutput(toolSlug, deepStripMarkdownValues(structuredContent)),
