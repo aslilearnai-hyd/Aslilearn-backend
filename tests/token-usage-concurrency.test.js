@@ -72,3 +72,22 @@ test('request-local budget blocks nested calls after the reserved batch ceiling 
   );
   endTokenUsageSession();
 });
+
+test('an explicit session snapshot survives a changed async-local store', () => {
+  const outer = beginTokenUsageSession('outer-book-batch', { maxCostInr: 1 });
+  recordTokenUsage({
+    label: 'generate',
+    provider: 'gemini',
+    model: 'gemini-3.1-flash-lite',
+    promptTokens: 1000,
+    completionTokens: 500,
+    totalTokens: 1500,
+  });
+
+  beginTokenUsageSession('unrelated-poll-request');
+  const snapshot = endTokenUsageSession(outer);
+  assert.equal(snapshot.label, 'outer-book-batch');
+  assert.equal(snapshot.totals.callCount, 1);
+  assert.equal(snapshot.totals.totalTokens, 1500);
+  endTokenUsageSession();
+});

@@ -13,6 +13,7 @@ import {
 import { parseMultimodalBookAssets } from '../ai/rag/books/book-multimodal-service.js';
 import {
   buildBookContextForVariant,
+  canUseWeakSelectedBookChunks,
   metadataMatchBonus,
   searchSelectedBookWithLegacyMetadataFallback,
 } from '../ai/rag/books/book-rag-service.js';
@@ -70,6 +71,16 @@ test('corpus-wide retrieval never retries without curriculum metadata', async ()
 
   assert.equal(calls, 1);
   assert.equal(result.usedLegacyMetadataFallback, false);
+});
+
+test('weak passages may fall back only inside an explicitly selected book', () => {
+  const passages = [{ content: 'A'.repeat(120) }];
+  assert.equal(canUseWeakSelectedBookChunks({ bookId: 'selected-book' }, passages), true);
+  assert.equal(canUseWeakSelectedBookChunks({}, passages), false);
+  assert.equal(
+    canUseWeakSelectedBookChunks({ bookId: 'selected-book' }, [{ content: 'too short' }]),
+    false,
+  );
 });
 
 test('DOCX extraction preserves paragraph boundaries', () => {

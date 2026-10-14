@@ -170,8 +170,8 @@ export function getBookGeneratorMaxInr(batchSize = 1) {
   return 1;
 }
 
-function estimateSessionCostInr() {
-  const session = getTokenUsageSession();
+function estimateSessionCostInr(sessionOverride = null) {
+  const session = sessionOverride || getTokenUsageSession();
   if (!session) return 0;
   return computeGeminiCostFromTokenUsage(session).inr;
 }
@@ -186,10 +186,17 @@ export function estimateNextBookGeneratorCallInr() {
   return Math.max(0.1, configured, observedAverage);
 }
 
-function canStartBookGeneratorCall(batchSize) {
+function canStartBookGeneratorCall(batchSize, sessionOverride = null) {
   const maxInr = getBookGeneratorMaxInr(batchSize);
   if (maxInr === Infinity) return true;
-  return estimateSessionCostInr() + estimateNextBookGeneratorCallInr() <= maxInr;
+  const session = sessionOverride || getTokenUsageSession();
+  const calls = Math.max(0, Number(session?.totals?.callCount) || 0);
+  const currentCostInr = estimateSessionCostInr(session);
+  const observedAverage = calls > 0 ? currentCostInr / calls : 0;
+  const configured =
+    Number(process.env.BOOK_GENERATOR_PROJECTED_CALL_INR) || BOOK_GENERATOR_PROJECTED_CALL_INR;
+  const projectedCallInr = Math.max(0.1, configured, observedAverage);
+  return currentCostInr + projectedCallInr <= maxInr;
 }
 
 function getBatchSize(override) {
@@ -420,7 +427,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
     let cost = null;
     let ragBase = { contextText: '', chunkCount: 0, chunks: [], hasBookPassages: false };
 
-    beginTokenUsageSession('book-generator-batch', {
+    const tokenUsageSession = beginTokenUsageSession('book-generator-batch', {
       maxCostInr: getBookGeneratorMaxInr(batchSize),
       projectedCallInr: BOOK_GENERATOR_PROJECTED_CALL_INR,
     });
@@ -455,7 +462,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
         console.warn(
           `[book-generator] ${retrievalMessage} book=${bookId} topic="${topicName}" subtopic="${isWholeChapter ? 'whole-chapter' : subtopicName}"`,
         );
-        tokenUsage = endTokenUsageSession();
+        tokenUsage = endTokenUsageSession(tokenUsageSession);
         cost = computeGeminiCostFromTokenUsage(tokenUsage || {});
         return {
           success: false,
@@ -509,7 +516,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             batchSize,
             batchIndex,
             callCount: getTokenUsageSession()?.totals?.callCount ?? 0,
-            costInr: estimateSessionCostInr(),
+            costInr: estimateSessionCostInr(tokenUsageSession),
             activeSlots: [...activeSlotSet],
           }),
         );
@@ -537,7 +544,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
           await sleep(staggerMs + Math.floor(Math.random() * 200));
         }
 
-        if (!canStartBookGeneratorCall(batchSize)) {
+        if (!canStartBookGeneratorCall(batchSize, tokenUsageSession)) {
           return {
             ok: false,
             variantIndex,
@@ -555,7 +562,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             lastError = fatalAuthError;
             break;
           }
-          if (!canStartBookGeneratorCall(batchSize)) {
+          if (!canStartBookGeneratorCall(batchSize, tokenUsageSession)) {
             lastError = `Batch budget cap (₹${getBookGeneratorMaxInr(batchSize)}) reached before the next model call`;
             break;
           }
@@ -621,7 +628,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                     // Worksheet finalization can complete a short V2 response
                     // deterministically from the retrieved book context.
                     allowUnderfilledQuestionCount: toolSlug === 'worksheet-mcq-generator',
-                    canStartCall: () => canStartBookGeneratorCall(batchSize),
+                    canStartCall: () => canStartBookGeneratorCall(batchSize, tokenUsageSession),
                     // A short freshness sample is enough for Smart Q&A and avoids
                     // resending thousands of paid input tokens on every slot.
                     avoidQuestions: usedV2Questions.slice(
@@ -801,7 +808,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                     }
                   }
                   const costGuardrail = assertGenerationCostWithinGuardrail(
-                    { inr: estimateSessionCostInr() / Math.max(1, completedSlots + 1) },
+                    { inr: estimateSessionCostInr(tokenUsageSession) / Math.max(1, completedSlots + 1) },
                     { examProfile: params.examProfile || productCategory, productCategory },
                   );
                   const rec = await withMongoRetry(() =>
@@ -835,7 +842,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                         repairedCount: 0,
                       },
                       generationCost: {
-                        inr: estimateSessionCostInr() / Math.max(1, completedSlots + 1),
+                        inr: estimateSessionCostInr(tokenUsageSession) / Math.max(1, completedSlots + 1),
                         baselineInr: costGuardrail.baselineCost,
                         increasePercent: costGuardrail.increasePercent,
                         guardrailStatus: costGuardrail.status,
@@ -1255,7 +1262,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             const teacherId = mongoose.Types.ObjectId.isValid(uid) ? uid : undefined;
 
             const costGuardrail = assertGenerationCostWithinGuardrail(
-              { inr: estimateSessionCostInr() / Math.max(1, completedSlots + 1) },
+              { inr: estimateSessionCostInr(tokenUsageSession) / Math.max(1, completedSlots + 1) },
               { examProfile: params.examProfile || productCategory, productCategory },
             );
 
@@ -1290,7 +1297,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                 repairedCount: 0,
               },
               generationCost: {
-                inr: estimateSessionCostInr() / Math.max(1, completedSlots + 1),
+                inr: estimateSessionCostInr(tokenUsageSession) / Math.max(1, completedSlots + 1),
                 baselineInr: costGuardrail.baselineCost,
                 increasePercent: costGuardrail.increasePercent,
                 guardrailStatus: costGuardrail.status,
@@ -1399,7 +1406,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
         }
       }
     } finally {
-      tokenUsage = endTokenUsageSession();
+      tokenUsage = endTokenUsageSession(tokenUsageSession);
       cost = computeGeminiCostFromTokenUsage(tokenUsage);
     }
 

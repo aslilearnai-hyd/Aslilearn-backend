@@ -512,9 +512,10 @@ export function getTokenUsageSession() {
 }
 
 /** End session and return usage snapshot (totals + per-call breakdown). */
-export function endTokenUsageSession() {
-  const session = tokenUsageStorage.getStore() || null;
-  tokenUsageStorage.enterWith(null);
+export function endTokenUsageSession(sessionOverride = null) {
+  const activeSession = tokenUsageStorage.getStore() || null;
+  const session = sessionOverride || activeSession;
+  if (!sessionOverride || activeSession === sessionOverride) tokenUsageStorage.enterWith(null);
   if (!session) {
     return {
       label: 'generation',

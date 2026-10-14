@@ -44,10 +44,38 @@ export async function loadPlatformAccess(viewerRole, viewerUserId) {
     studentIds = [id];
     subjectIds = await resolveStudentSubjectIdsForLibrary(person, classDoc);
   }
-  const schools = adminIds.length ? await School.find({ adminUserId: inIds(adminIds) }).select('_id').lean() : [];
+  const [schools, schoolAdmins] = adminIds.length
+    ? await Promise.all([
+        School.find({ adminUserId: inIds(adminIds) }).select('_id name schoolName board').lean(),
+        User.find({ _id: inIds(adminIds), role: 'admin' })
+          .select('_id fullName schoolName board curriculumBoard')
+          .lean(),
+      ])
+    : [[], []];
+  // Teacher and student documents are not guaranteed to duplicate their
+  // school's display name. The portal header resolves it through the owning
+  // admin/School record, so Vidya must use that same source of truth.
+  const linkedSchool = schools[0] || {};
+  const linkedAdmin = schoolAdmins[0] || {};
+  const resolvedSchoolName =
+    person.schoolName ||
+    person.school ||
+    linkedSchool.name ||
+    linkedSchool.schoolName ||
+    linkedAdmin.schoolName ||
+    linkedAdmin.fullName ||
+    '';
+  const resolvedBoard =
+    person.board || linkedSchool.board || linkedAdmin.board || linkedAdmin.curriculumBoard || '';
   return {
     role, userId: String(id), viewerId: id, name: person.fullName || '', adminIds,
-    profile: { fullName: person.fullName, schoolName: person.schoolName, classNumber: person.classNumber, section: person.section, board: person.board },
+    profile: {
+      fullName: person.fullName,
+      schoolName: resolvedSchoolName,
+      classNumber: person.classNumber,
+      section: person.section,
+      board: resolvedBoard,
+    },
     schoolIds: schools.map(s => s._id), classIds: classes.map(c => c._id),
     classNumbers: [...new Set(classes.map(c => String(c.classNumber)))],
     studentIds: ids(studentIds), teacherIds: ids(teacherIds), subjectIds: ids(subjectIds),

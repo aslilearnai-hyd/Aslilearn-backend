@@ -256,6 +256,12 @@ function rerankBookChunks(chunks = [], scope = {}, topK = DEFAULT_TOP_K) {
 
 export { rerankBookChunks, metadataMatchBonus };
 
+export function canUseWeakSelectedBookChunks(scope = {}, candidateChunks = []) {
+  return Boolean(scope.bookId) && candidateChunks.some(
+    (chunk) => String(chunk?.content || '').trim().length >= 80,
+  );
+}
+
 /**
  * Search a selected book strictly first, then tolerate legacy chunk metadata.
  *
@@ -343,7 +349,13 @@ export async function retrieveBookContextForGeneration(scope = {}) {
     acceptable: process.env.BOOK_RAG_ACCEPTABLE_SCORE,
   });
   const allowWeak = String(process.env.BOOK_RAG_ALLOW_WEAK_CONTEXT || 'false').toLowerCase() === 'true';
-  const chunks = scoreTier === 'weak' && !allowWeak
+  // An explicitly selected book is already a hard corpus boundary. If vector
+  // similarity is weak (common for "Whole chapter" or translated labels), use
+  // the best passages from that book instead of failing before the first model
+  // call. Corpus-wide retrieval still fails closed.
+  const allowSelectedBookFallback = canUseWeakSelectedBookChunks(scope, candidateChunks);
+  const weakContextFallbackUsed = scoreTier === 'weak' && !allowWeak && allowSelectedBookFallback;
+  const chunks = scoreTier === 'weak' && !allowWeak && !allowSelectedBookFallback
     ? []
     : selectDiverseBookChunks(candidateChunks, topK, {
         lambda: process.env.BOOK_RAG_MMR_LAMBDA,
@@ -383,9 +395,16 @@ export async function retrieveBookContextForGeneration(scope = {}) {
     chunkCount: chunks.length,
     hasBookPassages: chunks.length > 0,
     retrievalQuery: query,
-    retrievalStatus: chunks.length ? 'ready' : candidateChunks.length ? 'weak_context' : 'no_context',
+    retrievalStatus: chunks.length
+      ? weakContextFallbackUsed
+        ? 'ready_selected_book_fallback'
+        : 'ready'
+      : candidateChunks.length
+        ? 'weak_context'
+        : 'no_context',
     retrievalTier: scoreTier,
     bestScore: bestRawScore,
+    weakContextFallbackUsed,
     usedLegacyMetadataFallback: scopedSearch.usedLegacyMetadataFallback,
     sourceChunkIds: chunks.map((chunk) => String(chunk._id || '')).filter(Boolean),
     assets,
