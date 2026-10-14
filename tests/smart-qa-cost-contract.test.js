@@ -149,20 +149,20 @@ test('Smart Q&A repair keeps the count stable and restores a required Section C 
   assert.equal(practiceQaHasAllRequiredSections(repaired), true);
 });
 
-test('book generator has a safe dynamic budget unless explicitly overridden', () => {
+test('book generator applies the configured ₹ ceiling per requested record', () => {
   const previous = process.env.BOOK_GENERATOR_MAX_INR;
   try {
     delete process.env.BOOK_GENERATOR_MAX_INR;
-    assert.equal(getBookGeneratorMaxInr(4), 1);
+    assert.equal(getBookGeneratorMaxInr(4), 4);
     assert.equal(getBookGeneratorMaxInr(1), 1);
     process.env.BOOK_GENERATOR_MAX_INR = '';
-    assert.equal(getBookGeneratorMaxInr(4), 1);
+    assert.equal(getBookGeneratorMaxInr(4), 4);
     process.env.BOOK_GENERATOR_MAX_INR = '3.5';
-    assert.equal(getBookGeneratorMaxInr(20), 3.5);
+    assert.equal(getBookGeneratorMaxInr(20), 70);
     process.env.BOOK_GENERATOR_MAX_INR = '0';
-    assert.equal(getBookGeneratorMaxInr(4), 1);
+    assert.equal(getBookGeneratorMaxInr(4), 4);
     process.env.BOOK_GENERATOR_MAX_INR = 'off';
-    assert.equal(getBookGeneratorMaxInr(40), 1);
+    assert.equal(getBookGeneratorMaxInr(40), 40);
   } finally {
     if (previous === undefined) delete process.env.BOOK_GENERATOR_MAX_INR;
     else process.env.BOOK_GENERATOR_MAX_INR = previous;

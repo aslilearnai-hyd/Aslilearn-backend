@@ -164,10 +164,15 @@ function finalizeBookStructuredContent(toolSlug, structured, meta) {
 
 export function getBookGeneratorMaxInr(batchSize = 1) {
   const raw = process.env.BOOK_GENERATOR_MAX_INR;
-  const explicit = Number(raw ?? BOOK_GENERATOR_MAX_INR);
-  if (Number.isFinite(explicit) && explicit > 0) return explicit;
+  const perRecord = Number(raw ?? BOOK_GENERATOR_MAX_INR);
+  const count = Math.max(1, Math.min(50, Math.floor(Number(batchSize) || 1)));
+  // The old implementation applied ₹1 to the entire request regardless of
+  // whether it asked for 1 or 25 records. A valid first response could consume
+  // the allowance, leaving every remaining slot (and even a required repair)
+  // blocked. Keep the requested ₹1 default, but apply it per requested record.
+  if (Number.isFinite(perRecord) && perRecord > 0) return perRecord * count;
   // A stale 0/off setting must not silently disable the safety ceiling.
-  return 1;
+  return count;
 }
 
 function estimateSessionCostInr(sessionOverride = null) {
