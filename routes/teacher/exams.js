@@ -537,7 +537,7 @@ router.get('/exams/:examId/question-analytics', async (req, res) => {
           name,
           attempted: true,
           percentage: result.percentage ?? null,
-          score: result.score ?? null,
+          score: result.obtainedMarks ?? null,
           totalMarks: result.totalMarks ?? null,
           correctAnswers: Number(result.correctAnswers) || 0,
           wrongAnswers: Number(result.wrongAnswers) || 0,
