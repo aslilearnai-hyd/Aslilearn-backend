@@ -6,12 +6,18 @@ import {
   assembleSixSectionPrompt,
 } from '../ai/prompt-versioning/assemble.js';
 import { buildToolPack } from '../ai/prompt-versioning/tool-packs.js';
-import { getBookGeneratorMaxInr } from '../ai/generators/_batch/book-generator-batch-orchestrator.js';
+import {
+  getBookGeneratorConcurrency,
+  getBookGeneratorMaxInr,
+} from '../ai/generators/_batch/book-generator-batch-orchestrator.js';
 import { mapV2StructuredToLegacy } from '../utils/v2-structured-to-legacy.js';
 import {
+  finalizeShortNotesStructuredContent,
+  finalizeStudyGuideStructuredContent,
   finalizePracticeQaStructuredContent,
   practiceQaHasAllRequiredSections,
 } from '../ai/generators/core/ai-content-engine-service.js';
+import { validateCanonicalFieldsForSave } from '../ai/repair/ai-generator-section-pad.js';
 
 test('Smart Q&A prompt allocates the exact requested count across all seven documented sections', () => {
   const counts = allocateSmartQaSectionCounts(10);
@@ -161,4 +167,52 @@ test('book generator has a safe dynamic budget unless explicitly overridden', ()
     if (previous === undefined) delete process.env.BOOK_GENERATOR_MAX_INR;
     else process.env.BOOK_GENERATOR_MAX_INR = previous;
   }
+});
+
+test('finite batch budgets serialize paid calls so concurrent workers cannot overspend', () => {
+  const previousBudget = process.env.BOOK_GENERATOR_MAX_INR;
+  const previousConcurrency = process.env.BOOK_GENERATOR_CONCURRENCY;
+  try {
+    delete process.env.BOOK_GENERATOR_MAX_INR;
+    process.env.BOOK_GENERATOR_CONCURRENCY = '4';
+    assert.equal(getBookGeneratorConcurrency({ tier: 'balanced' }, 5), 1);
+
+    process.env.BOOK_GENERATOR_MAX_INR = '3.5';
+    assert.equal(getBookGeneratorConcurrency({ tier: 'fast' }, 20), 1);
+  } finally {
+    if (previousBudget === undefined) delete process.env.BOOK_GENERATOR_MAX_INR;
+    else process.env.BOOK_GENERATOR_MAX_INR = previousBudget;
+    if (previousConcurrency === undefined) delete process.env.BOOK_GENERATOR_CONCURRENCY;
+    else process.env.BOOK_GENERATOR_CONCURRENCY = previousConcurrency;
+  }
+});
+
+test('short notes finalizer completes every documented 11-section field from sparse output', () => {
+  const finalized = finalizeShortNotesStructuredContent(
+    { title: 'Cube Roots', key_points: ['A cube root reverses cubing.'] },
+    { subject: 'Mathematics', topic: 'Cubes and Cube Roots', subTopic: 'Cube Roots' },
+  );
+  const validation = validateCanonicalFieldsForSave(
+    'short-notes-summaries-maker',
+    finalized,
+    { requireAllCanonicalFields: true },
+  );
+  assert.equal(validation.totalHeadings, 11);
+  assert.equal(validation.filledHeadings, 11);
+  assert.equal(validation.valid, true, validation.missingSections?.join(', '));
+});
+
+test('study guide finalizer completes every documented 11-section field from sparse output', () => {
+  const finalized = finalizeStudyGuideStructuredContent(
+    { title: 'Cube Roots', key_concepts: [{ name: 'Cube root', explanation: 'Reverses cubing.' }] },
+    { subject: 'Mathematics', topic: 'Cubes and Cube Roots', subTopic: 'Cube Roots' },
+  );
+  const validation = validateCanonicalFieldsForSave(
+    'smart-study-guide-generator',
+    finalized,
+    { requireAllCanonicalFields: true },
+  );
+  assert.equal(validation.totalHeadings, 11);
+  assert.equal(validation.filledHeadings, 11);
+  assert.equal(validation.valid, true, validation.missingSections?.join(', '));
 });

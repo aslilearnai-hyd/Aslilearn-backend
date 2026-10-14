@@ -1850,6 +1850,24 @@ export function finalizeShortNotesStructuredContent(raw, meta = {}) {
       `Give one real-life example connected to ${topic}.`,
     ];
   }
+  if (!String(out.alignment_block || '').trim()) {
+    out.alignment_block = `NCF-aligned competency focus for ${topic}: recall, explain, and apply the concept. UDL support: combine concise text, a worked example, and oral or visual revision cues.`;
+  }
+  if (!String(out.example || '').trim()) {
+    out.example = `Worked example: identify the relevant idea from ${topic}, apply it step by step, and check the result against the definition.`;
+  }
+  if (!String(out.differentiation_support || '').trim()) {
+    out.differentiation_support = `Support: revise ${topic} with a keyword bank, one guided example, and short prompts.`;
+  }
+  if (!String(out.differentiation_extension || '').trim()) {
+    out.differentiation_extension = `Extension: compare two applications of ${topic} and justify which principle applies in each case.`;
+  }
+  if (!String(out.real_life_application || '').trim()) {
+    out.real_life_application = `Connect ${topic} to a familiar situation from daily life or the local environment and explain the connection.`;
+  }
+  if (!String(out.reflection_exit_ticket || '').trim()) {
+    out.reflection_exit_ticket = `In one sentence, explain the most important idea you learned about ${topic}, then write one question you still have.`;
+  }
   return out;
 }
 
@@ -2016,6 +2034,31 @@ export function finalizeStudyGuideStructuredContent(raw, meta = {}) {
       },
     ];
   }
+  if (!Array.isArray(out.prior_knowledge_required) || !out.prior_knowledge_required.length) {
+    out.prior_knowledge_required = [
+      `Recall the vocabulary and prerequisite ideas that lead into ${topic}.`,
+      `Review one earlier ${subject} example connected to ${topic}.`,
+    ];
+  }
+  if (
+    (!Array.isArray(out.definitions) || !out.definitions.length) &&
+    (!Array.isArray(out.formulae) || !out.formulae.length)
+  ) {
+    out.definitions = [
+      {
+        term: topic,
+        definition: `The central ${subject} idea studied in this guide; use the chapter explanation to state its precise meaning.`,
+      },
+    ];
+  }
+  if (!String(out.concept_flow_mind_map || '').trim()) {
+    out.concept_flow_mind_map = `${topic} → prerequisite idea → core definition → worked example → application → self-check`;
+  }
+  if (!Array.isArray(out.real_life_examples) || !out.real_life_examples.length) {
+    out.real_life_examples = [
+      `Identify where ${topic} appears in a familiar home, school, community, or environmental situation.`,
+    ];
+  }
   if (!Array.isArray(out.quick_revision_notes) || out.quick_revision_notes.length < 3) {
     out.quick_revision_notes = [
       `Definition: ${topic} in one sentence.`,
@@ -2026,6 +2069,12 @@ export function finalizeStudyGuideStructuredContent(raw, meta = {}) {
   if (!Array.isArray(out.practice_questions) || !out.practice_questions.length) {
     out.practice_questions = [
       { question: `Define ${topic} and give one example.`, answer: `Open response using ${topic} vocabulary.` },
+    ];
+  }
+  if (!Array.isArray(out.improvement_tips) || !out.improvement_tips.length) {
+    out.improvement_tips = [
+      `Review the definition of ${topic} before attempting application questions.`,
+      `Check each answer by explaining the reasoning in your own words.`,
     ];
   }
   return out;

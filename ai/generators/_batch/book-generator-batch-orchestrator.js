@@ -27,7 +27,8 @@ import {
   finalizeStoryPassageStructuredContent,
   finalizeFlashcardDeckStructuredContent,
   normalizeLessonPlannerStructuredContent,
-  normalizeStudyGuideStructuredContent,
+  finalizeStudyGuideStructuredContent,
+  finalizeShortNotesStructuredContent,
   normalizeReadingPracticeStructuredContent,
 } from '../core/ai-content-engine-service.js';
 import { buildBookHistoricalGenerationContext } from './book-generator-historical.js';
@@ -97,7 +98,11 @@ const BOOK_QUESTION_UNIQUENESS_TOOLS = new Set([
   'quick-assignment-builder',
 ]);
 
-function getBookGeneratorConcurrency(qualityTierSettings, batchSize) {
+export function getBookGeneratorConcurrency(qualityTierSettings, batchSize) {
+  // A finite whole-batch budget cannot be enforced safely with parallel paid
+  // calls: several workers can pass the pre-call check before any reports token
+  // usage. Serialize capped batches so every next call sees the previous cost.
+  if (getBookGeneratorMaxInr(batchSize) < Infinity) return 1;
   const env = Number(process.env.BOOK_GENERATOR_CONCURRENCY || process.env.AI_GENERATOR_BATCH_CONCURRENCY);
   if (Number.isFinite(env) && env > 0) return Math.min(env, 4);
   // Premium Pro calls are slow (often 2–6 min each). Parallel slots look "stuck" at 0/N
@@ -135,8 +140,9 @@ function finalizeBookStructuredContent(toolSlug, structured, meta) {
     case 'key-points-formula-extractor':
       return finalizeKeyPointsStructuredContent(source, meta);
     case 'smart-study-guide-generator':
+      return finalizeStudyGuideStructuredContent(source, meta);
     case 'short-notes-summaries-maker':
-      return normalizeStudyGuideStructuredContent(source, meta);
+      return finalizeShortNotesStructuredContent(source, meta);
     case 'activity-project-generator':
     case 'project-idea-lab':
       return finalizeActivityStructuredContent(source, meta, slug);
