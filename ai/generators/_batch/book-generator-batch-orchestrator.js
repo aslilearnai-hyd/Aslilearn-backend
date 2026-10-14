@@ -2,8 +2,6 @@ import mongoose from 'mongoose';
 import Book from '../../../models/Book.js';
 import AiToolGeneration from '../../../models/AiToolGeneration.js';
 import { beginTokenUsageSession, endTokenUsageSession, getTokenUsageSession, formatGeminiFailureForUser, isTransientGeminiError, isGeminiAuthConfigError, isGeminiSpendingCapError } from '../../providers/gemini-service.js';
-import { generateContentCompat } from '../../providers/google-genai-compat.js';
-import { GEMINI_LITE_MODEL } from '../../providers/gemini-models.js';
 import {
   generateStructuredContentForAiGenerator,
   finalizeExamPaperStructuredContent,
@@ -209,23 +207,6 @@ function getMaxAttemptsPerSlot(qualityTierSettings) {
 
 function formatBookSlotFailureMessage(batchIndex, error) {
   return formatGeminiFailureForUser(error, { slotLabel: `Slot ${batchIndex}` });
-}
-
-/** Tiny Gemini call before burning N slots — catches bad/leaked/AQ keys immediately. */
-async function assertGeminiKeyWorks(primaryModel) {
-  const apiKey = String(
-    process.env.VIDYA_AI_GEMINI_API_KEY || process.env.GEMINI_API_KEY || '',
-  ).trim();
-  if (!apiKey) {
-    throw new Error('Gemini API key is missing');
-  }
-  const model = String(primaryModel || process.env.AI_GENERATOR_GEMINI_MODEL || GEMINI_LITE_MODEL).trim();
-  await generateContentCompat({
-    apiKey,
-    model,
-    contents: 'Reply with exactly: OK',
-    generationConfig: { temperature: 0, maxOutputTokens: 8 },
-  });
 }
 
 function formatBookBatchProgress({ saved, batchSize, batchIndex, callCount, costInr, activeSlots }) {
@@ -439,7 +420,10 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
     let cost = null;
     let ragBase = { contextText: '', chunkCount: 0, chunks: [], hasBookPassages: false };
 
-    beginTokenUsageSession('book-generator-batch');
+    beginTokenUsageSession('book-generator-batch', {
+      maxCostInr: getBookGeneratorMaxInr(batchSize),
+      projectedCallInr: BOOK_GENERATOR_PROJECTED_CALL_INR,
+    });
 
     try {
       opts.onProgress?.('Retrieving textbook chunks for your topic…');
@@ -495,34 +479,6 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
         console.log(
           `[book-generator] Retrieved ${ragBase.chunkCount} textbook chunk(s) for "${subtopicName || topicName}" from book="${book.title}"`,
         );
-      }
-
-      opts.onProgress?.('Checking Gemini API key…');
-      try {
-        await assertGeminiKeyWorks(qualityTierSettings.primaryGeminiModel);
-      } catch (preflightErr) {
-        const msg = formatGeminiFailureForUser(preflightErr, { slotLabel: 'Gemini' });
-        console.error('[book-generator] Gemini preflight failed:', preflightErr?.message || preflightErr);
-        tokenUsage = endTokenUsageSession();
-        cost = computeGeminiCostFromTokenUsage(tokenUsage || {});
-        return {
-          success: false,
-          batchSize,
-          savedCount: 0,
-          failedCount: batchSize,
-          records: [],
-          failures: [msg],
-          existingCountBefore: historical.existingCount,
-          uniquenessTarget: historical.uniquenessTarget,
-          tokenUsage,
-          cost,
-          mode: 'book_rag',
-          bookId: String(book._id),
-          bookTitle: book.title,
-          ragChunkCount: ragBase.chunkCount,
-          bookTextUsed: Boolean(ragBase.hasBookPassages),
-          message: msg,
-        };
       }
 
       const ragScope = {

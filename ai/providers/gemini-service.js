@@ -5,6 +5,11 @@ import https from 'https';
 import dotenv from 'dotenv';
 import { generateContentCompat } from './google-genai-compat.js';
 import {
+  computeGeminiCostFromTokenUsage,
+  getUsdToInrRate,
+  resolveGeminiPricing,
+} from './gemini-token-cost.js';
+import {
   GEMINI_FLASH_FALLBACK_MODEL,
   GEMINI_FLASH_MODEL,
   GEMINI_LITE_FALLBACK_MODEL,
@@ -433,7 +438,9 @@ function estimateTokensFromText(text) {
 const tokenUsageStorage = new AsyncLocalStorage();
 
 /** Start accumulating LLM token usage for one AI PDF / generation run. */
-export function beginTokenUsageSession(label = 'generation') {
+export function beginTokenUsageSession(label = 'generation', budget = {}) {
+  const maxCostInr = Number(budget?.maxCostInr);
+  const projectedCallInr = Number(budget?.projectedCallInr);
   const session = {
     label: String(label || 'generation'),
     startedAt: new Date().toISOString(),
@@ -444,9 +451,60 @@ export function beginTokenUsageSession(label = 'generation') {
       totalTokens: 0,
       callCount: 0,
     },
+    budget: {
+      maxCostInr: Number.isFinite(maxCostInr) && maxCostInr > 0 ? maxCostInr : null,
+      projectedCallInr:
+        Number.isFinite(projectedCallInr) && projectedCallInr > 0 ? projectedCallInr : 0,
+    },
   };
   tokenUsageStorage.enterWith(session);
   return session;
+}
+
+/** Enforce a request-local spend ceiling before every provider call, including nested repairs. */
+export function assertTokenUsageBudgetCanStart() {
+  const session = tokenUsageStorage.getStore();
+  const maxCostInr = Number(session?.budget?.maxCostInr);
+  if (!session || !Number.isFinite(maxCostInr) || maxCostInr <= 0) return true;
+  const currentCostInr = computeGeminiCostFromTokenUsage(session).inr;
+  const callCount = Math.max(0, Number(session?.totals?.callCount) || 0);
+  const observedAverage = callCount > 0 ? currentCostInr / callCount : 0;
+  const configuredReserve = Math.max(0, Number(session?.budget?.projectedCallInr) || 0);
+  const reserveInr = Math.max(0.1, configuredReserve, observedAverage);
+  if (currentCostInr + reserveInr > maxCostInr) {
+    throw new Error(`Batch budget cap (₹${maxCostInr}) reached before the next model call`);
+  }
+  return true;
+}
+
+/** Limit one call's possible output so its configured ceiling fits the remaining INR budget. */
+export function getTokenUsageBudgetedMaxOutputTokens(
+  modelName,
+  requestedMaxTokens,
+  estimatedInputTokens = 0,
+) {
+  const requested = Math.max(1, Math.floor(Number(requestedMaxTokens) || 1));
+  const session = tokenUsageStorage.getStore();
+  const maxCostInr = Number(session?.budget?.maxCostInr);
+  if (!session || !Number.isFinite(maxCostInr) || maxCostInr <= 0) return requested;
+
+  const currentCostInr = computeGeminiCostFromTokenUsage(session).inr;
+  const pricing = resolveGeminiPricing(modelName);
+  const exchangeRateInr = getUsdToInrRate();
+  const safetyFactor = 1.15;
+  const inputCostInr =
+    (Math.max(0, Number(estimatedInputTokens) || 0) / 1_000_000) *
+    pricing.inputUsdPerM *
+    exchangeRateInr *
+    safetyFactor;
+  const availableForOutputInr = maxCostInr - currentCostInr - inputCostInr - 0.05;
+  const outputInrPerToken =
+    (pricing.outputUsdPerM / 1_000_000) * exchangeRateInr * safetyFactor;
+  const affordable = Math.floor(availableForOutputInr / outputInrPerToken);
+  if (!Number.isFinite(affordable) || affordable < 256) {
+    throw new Error(`Batch budget cap (₹${maxCostInr}) reached before the next model call`);
+  }
+  return Math.min(requested, affordable);
 }
 
 export function getTokenUsageSession() {
@@ -626,9 +684,21 @@ async function callChatCompletions({
     for (const modelName of modelChain) {
       for (let attempt = 1; attempt <= maxAttemptsPerModel; attempt += 1) {
         try {
+          assertTokenUsageBudgetCanStart();
+          const estimatedInputTokens =
+            estimateTokensFromText(`${systemText}\n${prompt}`) +
+            (Array.isArray(multimodalParts) ? multimodalParts.length * 1500 : 0);
+          const budgetedMaxTokens = getTokenUsageBudgetedMaxOutputTokens(
+            modelName,
+            maxTokens,
+            estimatedInputTokens,
+          );
           const generationConfig = {
             temperature,
-            maxOutputTokens: contextTokens > 0 ? Math.min(maxTokens, contextTokens) : maxTokens,
+            maxOutputTokens:
+              contextTokens > 0
+                ? Math.min(budgetedMaxTokens, contextTokens)
+                : budgetedMaxTokens,
             ...(jsonMode ? { responseMimeType: 'application/json' } : {}),
             ...(jsonMode && responseSchema && typeof responseSchema === 'object'
               ? { responseSchema }
@@ -669,7 +739,13 @@ async function callChatCompletions({
             estimateTokensFromText(
               normalizedMessages.map((m) => String(m.content || '')).join('\n'),
             );
-          const completionTokens = Number(usageMeta?.candidatesTokenCount) || estimateTokensFromText(text);
+          const candidateTokens = Number(usageMeta?.candidatesTokenCount);
+          const thinkingTokens = Number(usageMeta?.thoughtsTokenCount);
+          const completionTokens =
+            (Number.isFinite(candidateTokens) && candidateTokens > 0
+              ? candidateTokens
+              : estimateTokensFromText(text)) +
+            (Number.isFinite(thinkingTokens) && thinkingTokens > 0 ? thinkingTokens : 0);
           recordTokenUsage({
             label: usageLabel,
             provider: 'gemini',
