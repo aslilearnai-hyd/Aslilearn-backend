@@ -7,9 +7,18 @@ import {
   selectDiverseBookChunks,
 } from '../ai/rag/books/book-rag-ranking.js';
 import {
+  bookExtractionCorruptionStats,
   chunkChapterText,
   extractDocxParagraphsFromXml,
 } from '../ai/rag/books/book-ingestion-service.js';
+
+test('book extraction flags replacement-glyph corruption without rejecting clean maths', () => {
+  assert.equal(bookExtractionCorruptionStats('x² + y² = z² and √144 = 12').needsOcr, false);
+  const damaged = `Quadratic formula ${'□'.repeat(12)} ${'ordinary textbook text '.repeat(20)}`;
+  const stats = bookExtractionCorruptionStats(damaged);
+  assert.equal(stats.needsOcr, true);
+  assert.equal(stats.junkCount, 12);
+});
 import { parseMultimodalBookAssets } from '../ai/rag/books/book-multimodal-service.js';
 import {
   buildBookContextForVariant,

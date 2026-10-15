@@ -68,6 +68,7 @@ import { isAiGeneratorGreatQualityEnabled } from '../shared/ai-generator-batch-c
 import { formatStructuredToolOutput } from '../../../config/aiToolTemplates.js';
 import { stripMarkdownSyntax, deepStripMarkdownValues } from '../../../utils/strip-markdown-syntax.js';
 import { computeScaffoldDensity, SCAFFOLD_DENSITY_CEILING } from '../../quality-gates/ai-generator-quality-gate.js';
+import { padAiGeneratorCanonicalSections } from '../../repair/ai-generator-section-pad.js';
 import { generateSixSectionContent } from '../_v2/six-section-generator.js';
 import { isSixSectionV2Enabled, buildV2VariantHint } from '../../prompt-versioning/assemble.js';
 import { isV2SupportedTool, v2ToolFamily } from '../../prompt-versioning/tool-packs.js';
@@ -682,6 +683,16 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                       legacyStructured && typeof legacyStructured === 'object'
                         ? legacyStructured
                         : { title: coreTitle, sections: [] },
+                      padMeta,
+                    );
+                  }
+                  // Complete narrative/template fields locally before the save gate.
+                  // This costs no additional model call and prevents a usable V2 core
+                  // payload from consuming the batch budget only to fail as 4/11 filled.
+                  if (legacyStructured && typeof legacyStructured === 'object') {
+                    legacyStructured = padAiGeneratorCanonicalSections(
+                      toolSlug,
+                      legacyStructured,
                       padMeta,
                     );
                   }

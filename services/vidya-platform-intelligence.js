@@ -153,7 +153,12 @@ ${JSON.stringify({ conversation, question: q })}`;
         }
         const facts = result.facts ? redactPlatformValue(result.facts) : undefined;
         if (facts) delete facts.filter; // scopes and ownership predicates stay server-side
-        if (query.expectOne && result.ok && (facts?.totalMatched ?? facts?.rows?.length) !== 1) {
+        if (
+          query.expectOne &&
+          String(query.operation || 'list').toLowerCase() === 'list' &&
+          result.ok &&
+          (facts?.totalMatched ?? facts?.rows?.length) !== 1
+        ) {
           evidence.push({ id, module: query.module, ok: false, error: 'The named lookup did not identify exactly one record. Ask the user to choose from the candidates or refine the name.', facts });
         } else {
           evidence.push({ id, module: query.module, ...result, facts });

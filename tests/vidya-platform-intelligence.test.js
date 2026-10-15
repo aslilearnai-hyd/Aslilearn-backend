@@ -97,6 +97,19 @@ test('executor intersects requested filters with server scope and immutable stud
   } finally { stub.mock.restore(); }
 });
 
+test('executor treats a missing filter operator as equality', async () => {
+  let filter;
+  const stub = mock.method(User, 'countDocuments', f => { filter = f; return resolved(0); });
+  try {
+    const result = await executeDynamicDbPlan({
+      ...options,
+      plan: { module: 'students', operation: 'count', filters: [{ field: 'classNumber', value: 'Class 7' }] },
+    });
+    assert.equal(result.ok, true);
+    assert.deepEqual(filter.$and[1].classNumber, { $in: ['7', 'Class 7', 'class 7'] });
+  } finally { stub.mock.restore(); }
+});
+
 test('executor rejects secret fields and operator injection before database access', async () => {
   for (const plan of [
     { module: 'students', operation: 'distinct', selectFields: ['password'] },

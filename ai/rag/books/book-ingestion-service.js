@@ -89,6 +89,18 @@ function normalizeSpaces(text) {
   return String(text || '').replace(/\r\n/g, '\n').replace(/[ \t]+/g, ' ').trim();
 }
 
+export function bookExtractionCorruptionStats(text) {
+  const value = String(text || '');
+  const junkCount = (value.match(/[\uFFFD\u25A1\u25AF\u25A0▯]/g) || []).length;
+  const visibleLength = value.replace(/\s/g, '').length;
+  return {
+    junkCount,
+    visibleLength,
+    junkRatio: visibleLength > 0 ? junkCount / visibleLength : 0,
+    needsOcr: junkCount >= 8 && visibleLength > 0 && junkCount / visibleLength >= 0.002,
+  };
+}
+
 function wordCount(text) {
   return normalizeSpaces(text).split(/\s+/).filter(Boolean).length;
 }
@@ -166,7 +178,7 @@ async function ocrFallbackWithGemini(buffer, fileName = 'document.pdf', mimeType
     // Send the ACTUAL document bytes so Gemini can OCR scanned pages (not just the filename).
     const raw = await extractTextFromDocument(b64, mimeType, prompt, {
       temperature: 0.1,
-      maxTokens: 8000,
+      maxTokens: Math.max(8000, Number(process.env.BOOK_OCR_MAX_TOKENS) || 32000),
     });
     return normalizeSpaces(raw);
   } catch (err) {
@@ -179,11 +191,15 @@ export async function extractTextFromUpload(buffer, mimeType, originalName = '')
   const mime = String(mimeType || '').toLowerCase();
   if (mime.includes('pdf') || originalName.toLowerCase().endsWith('.pdf')) {
     let text = await extractPdfText(buffer);
-    if (text.length < 80) {
+    const extractionStats = bookExtractionCorruptionStats(text);
+    if (text.length < 80 || extractionStats.needsOcr) {
       const ocrText = await ocrFallbackWithGemini(buffer, originalName, 'application/pdf');
-      if (ocrText.length > text.length) text = ocrText;
+      const ocrStats = bookExtractionCorruptionStats(ocrText);
+      const hasUsefulCoverage = ocrText.length >= Math.min(80, text.length) &&
+        (text.length < 80 || ocrText.length >= text.length * 0.6);
+      if (hasUsefulCoverage && ocrStats.junkRatio < extractionStats.junkRatio) text = ocrText;
     }
-    return { text, requiresOcr: text.length < 80 };
+    return { text, requiresOcr: text.length < 80 || bookExtractionCorruptionStats(text).needsOcr };
   }
   if (
     mime.includes('word') ||

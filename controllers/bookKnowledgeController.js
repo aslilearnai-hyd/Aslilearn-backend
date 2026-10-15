@@ -41,7 +41,23 @@ export async function listBooks(req, res) {
       )
       .sort({ updatedAt: -1 })
       .lean();
-    res.json({ success: true, data: books.map((book) => enrichBookCurriculumFields(book)) });
+    const missingCountIds = books.filter((book) => !Number(book.chunkCount)).map((book) => book._id);
+    const actualCounts = missingCountIds.length
+      ? await BookChunk.aggregate([
+          { $match: { bookId: { $in: missingCountIds } } },
+          { $group: { _id: '$bookId', count: { $sum: 1 } } },
+        ])
+      : [];
+    const countByBookId = new Map(actualCounts.map((row) => [String(row._id), Number(row.count) || 0]));
+    res.json({
+      success: true,
+      data: books.map((book) =>
+        enrichBookCurriculumFields({
+          ...book,
+          chunkCount: Number(book.chunkCount) || countByBookId.get(String(book._id)) || 0,
+        }),
+      ),
+    });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message || 'Failed to list books.' });
   }
@@ -153,7 +169,27 @@ export async function getBookChapters(req, res) {
   try {
     const book = await Book.findById(req.params.id).select('chapters title processingStatus').lean();
     if (!book) return res.status(404).json({ success: false, message: 'Book not found.' });
-    res.json({ success: true, data: book.chapters || [] });
+    let chapters = Array.isArray(book.chapters) ? book.chapters : [];
+    if (!chapters.length) {
+      const rows = await BookChunk.aggregate([
+        { $match: { bookId: book._id } },
+        {
+          $group: {
+            _id: { $ifNull: ['$chapter', 'Introduction'] },
+            wordCount: { $sum: { $ifNull: ['$wordCount', 0] } },
+            firstChunk: { $min: '$chunkIndex' },
+          },
+        },
+        { $sort: { firstChunk: 1 } },
+      ]);
+      chapters = rows.map((row) => ({
+        title: String(row._id || 'Introduction'),
+        topic: String(row._id || 'Introduction'),
+        subtopic: '',
+        wordCount: Number(row.wordCount) || 0,
+      }));
+    }
+    res.json({ success: true, data: chapters });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message || 'Failed to load chapters.' });
   }

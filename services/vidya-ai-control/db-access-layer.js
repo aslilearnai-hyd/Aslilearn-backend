@@ -430,7 +430,7 @@ export async function executeDynamicDbPlan({
   const allowedFields = new Set(fields);
   const requestedFields = [...asArray(plan.selectFields), ...asArray(plan.filters).map(f => f?.field)];
   if (requestedFields.some(f => !allowedFields.has(String(f)))) return { ok: false, error: 'A requested field is unavailable for this module or role.' };
-  if (asArray(plan.filters).some(f => !['eq', 'ne', 'in', 'gt', 'gte', 'lt', 'lte', 'exists', 'regex'].includes(f.op)
+  if (asArray(plan.filters).some(f => !['eq', 'ne', 'in', 'gt', 'gte', 'lt', 'lte', 'exists', 'regex'].includes(String(f?.op || 'eq').toLowerCase())
     || (f.value && typeof f.value === 'object' && !(f.value instanceof Date) && !Array.isArray(f.value))
     || (Array.isArray(f.value) && f.value.some(v => v && typeof v === 'object')))) {
     return { ok: false, error: 'Unsupported query filter.' };
