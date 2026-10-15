@@ -24,6 +24,27 @@ function asArray(v) {
   return [v];
 }
 
+/**
+ * Gemini occasionally emits Mongo-style values (for example
+ * { value: { $regex: "vijaya", $options: "i" } }) instead of the public
+ * { op: "regex", value: "vijaya" } contract. Convert only the small,
+ * allow-listed operator set; the normal field and value guards still apply.
+ */
+export function normalizePlannerFilters(filters) {
+  return asArray(filters).map((filter) => {
+    const next = { ...(filter || {}) };
+    const value = next.value;
+    if (!value || typeof value !== 'object' || value instanceof Date || Array.isArray(value)) return next;
+    const keys = Object.keys(value);
+    const safeRegexObject =
+      keys.includes('$regex') &&
+      keys.every((key) => key === '$regex' || key === '$options') &&
+      (value.$options === undefined || /^[i]*$/.test(String(value.$options)));
+    if (!safeRegexObject || typeof value.$regex !== 'string') return next;
+    return { ...next, op: 'regex', value: value.$regex };
+  });
+}
+
 /** Accept common planner spellings while keeping the date query constrained. */
 export function normalizeDynamicTimeframe(raw) {
   const value = String(raw || '').trim().toLowerCase();
@@ -428,9 +449,10 @@ export async function executeDynamicDbPlan({
   const model = cfg.model;
   const fields = platformReadableFields(moduleSchemaFields(model), role, moduleKey);
   const allowedFields = new Set(fields);
-  const requestedFields = [...asArray(plan.selectFields), ...asArray(plan.filters).map(f => f?.field)];
+  const plannerFilters = normalizePlannerFilters(plan.filters);
+  const requestedFields = [...asArray(plan.selectFields), ...plannerFilters.map(f => f?.field)];
   if (requestedFields.some(f => !allowedFields.has(String(f)))) return { ok: false, error: 'A requested field is unavailable for this module or role.' };
-  if (asArray(plan.filters).some(f => !['eq', 'ne', 'in', 'gt', 'gte', 'lt', 'lte', 'exists', 'regex'].includes(String(f?.op || 'eq').toLowerCase())
+  if (plannerFilters.some(f => !['eq', 'ne', 'in', 'gt', 'gte', 'lt', 'lte', 'exists', 'regex'].includes(String(f?.op || 'eq').toLowerCase())
     || (f.value && typeof f.value === 'object' && !(f.value instanceof Date) && !Array.isArray(f.value))
     || (Array.isArray(f.value) && f.value.some(v => v && typeof v === 'object')))) {
     return { ok: false, error: 'Unsupported query filter.' };
@@ -441,7 +463,7 @@ export async function executeDynamicDbPlan({
   const viewerOid = oid(viewerUserId);
   const selfScopeOr = [];
   let hasViewerScopedFilter = false;
-  const normalizedPlanFilters = asArray(plan.filters).flatMap((f) => {
+  const normalizedPlanFilters = plannerFilters.flatMap((f) => {
     if (f?.value !== '__viewer__') return [f];
     hasViewerScopedFilter = true;
     const field = String(f?.field || '');

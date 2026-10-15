@@ -85,6 +85,18 @@ function enumValue(value, allowed, fallback) {
   return allowed.has(normalized) ? normalized : fallback;
 }
 
+const EMBEDDING_TIMEOUT_MS = Math.max(10_000, Number(process.env.BOOK_EMBEDDING_TIMEOUT_MS || 60_000));
+
+function withTimeout(promise, timeoutMs, label) {
+  let timer;
+  return Promise.race([
+    promise,
+    new Promise((_, reject) => {
+      timer = setTimeout(() => reject(new Error(`${label} timed out after ${Math.round(timeoutMs / 1000)}s`)), timeoutMs);
+    }),
+  ]).finally(() => clearTimeout(timer));
+}
+
 function normalizeSpaces(text) {
   return String(text || '').replace(/\r\n/g, '\n').replace(/[ \t]+/g, ' ').trim();
 }
@@ -617,7 +629,11 @@ export async function indexBook(bookId) {
           continue;
         }
         existingHashes.add(contentHash);
-        const { embedding, embeddingModel } = await generateEmbedding(chunk.content);
+        const { embedding, embeddingModel } = await withTimeout(
+          generateEmbedding(chunk.content),
+          EMBEDDING_TIMEOUT_MS,
+          `Embedding chunk ${globalIndex + 1}`,
+        );
         allChunkDocs.push({
           bookId: book._id,
           chunkIndex: globalIndex,

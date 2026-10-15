@@ -573,6 +573,38 @@ export function stripDuplicateSharedMatterFromStem(stem, matter) {
   return s;
 }
 
+/** Split a model-inlined case study into the shared passage and its actual question. */
+export function splitInlineCaseStudyStem(stem) {
+  const text = normalizeSpaces(stem);
+  if (!/^(?:Case\s*Study|Case\s*(?:I{1,3}|IV|\d+))\s*[:.\-]/i.test(text)) return null;
+  if (text.length < 120 || !text.includes('?')) return null;
+
+  const cueRe = /(?:^|[.!?]\s+)((?:Using|According|Which|What|Calculate|Find|Based\s+on|From\s+the|In\s+[^?.!]{0,90}\bwhich)\b[^?]{6,220}\?)/gi;
+  let chosen = null;
+  let match;
+  while ((match = cueRe.exec(text))) {
+    const start = match.index + match[0].indexOf(match[1]);
+    if (start >= 80) chosen = { start, question: match[1].trim() };
+  }
+  if (!chosen) return null;
+  const passage = text.slice(0, chosen.start).replace(/[\s;:,-]+$/, '').trim();
+  if (passage.length < 80 || chosen.question.length < 12) return null;
+  return { passage, question: chosen.question };
+}
+
+/** When structured Match columns exist, keep only the prompt in questionText. */
+export function stripInlineMatchColumnsFromStem(stem, columnI, columnII) {
+  const text = normalizeSpaces(stem);
+  if (!text || !Array.isArray(columnI) || !Array.isArray(columnII) || columnI.length < 2 || columnII.length < 2) {
+    return text;
+  }
+  const matches = [...text.matchAll(/\bColumn\s*I\b/gi)];
+  if (matches.length >= 2 && matches[1].index > 20) return text.slice(0, matches[1].index).trim();
+  const inlineRows = text.search(/\s+[A-D]\s*[.):]\s*[^?]{2,80}\s+[B-D]\s*[.):]/i);
+  if (inlineRows > 20) return text.slice(0, inlineRows).trim();
+  return text;
+}
+
 export function attachPassagesToRows(rows, passages) {
   if (!Array.isArray(rows) || !passages?.length) return rows;
   return rows.map((row) => {
@@ -1148,6 +1180,27 @@ export function applyExtractionValidation(rows) {
   if (!Array.isArray(rows)) return rows;
   return rows.map((row, idx) => {
     let next = { ...row };
+
+    const inlineCase = splitInlineCaseStudyStem(next.questionText);
+    if (inlineCase && !String(next.sharedMatterText || next.passageText || '').trim()) {
+      next = {
+        ...next,
+        questionText: inlineCase.question,
+        sharedMatterText: inlineCase.passage,
+        passageText: inlineCase.passage,
+        sharedMatterKind: 'case',
+        sharedMatterId: next.sharedMatterId || next.passageId || `CASE-${idx + 1}`,
+        passageId: next.passageId || next.sharedMatterId || `CASE-${idx + 1}`,
+      };
+    }
+
+    if (next.questionType === 'match_following') {
+      next.questionText = stripInlineMatchColumnsFromStem(
+        next.questionText,
+        next.matchColumnI,
+        next.matchColumnII,
+      );
+    }
 
     // Clear Match matter wrongly stamped onto non-match MCQs
     if (

@@ -13,6 +13,38 @@ function humanizeV2Key(k) {
   return s.replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
+const INTERNAL_PDF_FIELD_RE = /^(?:slot\s*id|exam\s*profile|difficulty|bloom(?:'?s)?(?:\s*level)?|concept\s*ids?|reasoning\s*steps?|representation|source\s*chunk\s*ids?|source\s*asset\s*ids?|validation\s*flags?|rag\s*chunk\s*ids?|embedding\s*ids?)$/i;
+
+function isInternalPdfKey(key) {
+  return INTERNAL_PDF_FIELD_RE.test(
+    String(key || '')
+      .replace(/_/g, ' ')
+      .replace(/([a-z])([A-Z])/g, '$1 $2')
+      .trim(),
+  );
+}
+
+/**
+ * Remove retrieval, validation and prompt-debug metadata from learner-facing exports.
+ * These fields are useful in the audit UI but must never appear in a printable paper.
+ */
+export function stripInternalAiToolPdfMetadata(value) {
+  const lines = String(value || '').replace(/\r\n/g, '\n').split('\n');
+  const output = [];
+  let skippingList = false;
+  for (const line of lines) {
+    const label = line.match(/^\s*([^:]{2,48})\s*:\s*(.*)$/);
+    if (label && isInternalPdfKey(label[1])) {
+      skippingList = true;
+      continue;
+    }
+    if (skippingList && /^\s*(?:[-*•]|\d+[.)])\s+/.test(line)) continue;
+    if (line.trim()) skippingList = false;
+    output.push(line);
+  }
+  return output.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+}
+
 /** Render a V2 six-section structuredContent object into readable plain text for the PDF. */
 export function formatV2SixSectionToText(sc) {
   const lines = [];
@@ -44,6 +76,7 @@ export function formatV2SixSectionToText(sc) {
     if (typeof val === 'object') {
       for (const [k, v] of Object.entries(val)) {
         if (v == null || v === '') continue;
+        if (isInternalPdfKey(k)) continue;
         if (typeof v === 'string' || typeof v === 'number' || typeof v === 'boolean') {
           lines.push(`${indent}${humanizeV2Key(k)}: ${v}`);
         } else {
@@ -75,16 +108,16 @@ export function resolveAiToolRecordPdfBody(record) {
   const structured = record?.metadata?.structuredContent;
   if (isV2SixSection(record, structured) && structured) {
     const formatted = formatV2SixSectionToText(structured);
-    if (formatted) return formatted;
+    if (formatted) return stripInternalAiToolPdfMetadata(formatted);
   }
   const text = String(record?.generatedContent || record?.content || '').trim();
-  if (text) return text;
+  if (text) return stripInternalAiToolPdfMetadata(text);
   if (typeof record?.metadata?.renderContent === 'string' && record.metadata.renderContent.trim()) {
-    return record.metadata.renderContent.trim();
+    return stripInternalAiToolPdfMetadata(record.metadata.renderContent);
   }
   if (structured && typeof structured === 'object') {
     const formatted = formatV2SixSectionToText(structured);
-    if (formatted) return formatted;
+    if (formatted) return stripInternalAiToolPdfMetadata(formatted);
     try {
       return JSON.stringify(structured, null, 2);
     } catch {

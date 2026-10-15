@@ -24,6 +24,22 @@ function ensureSuperAdmin(req, res) {
 export async function listBooks(req, res) {
   if (!ensureSuperAdmin(req, res)) return;
   try {
+    // A process restart during background indexing previously left books showing
+    // "Processing / 0 chunks" forever. Mark interrupted jobs as retryable failures.
+    const staleBefore = new Date(Date.now() - 20 * 60 * 1000);
+    await Book.updateMany(
+      {
+        processingStatus: { $in: ['pending', 'processing'] },
+        chunkCount: { $in: [0, null] },
+        updatedAt: { $lt: staleBefore },
+      },
+      {
+        $set: {
+          processingStatus: 'failed',
+          processingError: 'Indexing was interrupted or timed out. Click Re-index to retry.',
+        },
+      },
+    );
     const { board, class: classLabel, subject, status, productCategory } = req.query;
     const filter = {};
     if (board) filter.board = board;
@@ -37,7 +53,7 @@ export async function listBooks(req, res) {
 
     const books = await Book.find(filter)
       .select(
-        'title board class subject productCategory topic subtopic corpusId sourcePriority difficultyBand edition approvalStatus chunkCount processingStatus embeddingsCreated source generationStats updatedAt createdAt contentId chapters extractedTextLength',
+        'title board class subject productCategory topic subtopic corpusId sourcePriority difficultyBand edition approvalStatus chunkCount processingStatus processingError embeddingsCreated source generationStats updatedAt createdAt contentId chapters extractedTextLength',
       )
       .sort({ updatedAt: -1 })
       .lean();

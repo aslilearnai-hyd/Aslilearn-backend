@@ -17,6 +17,7 @@ describe('exam math notation contracts', () => {
     assert.match(EXAM_PDF_MATH_FIDELITY_RULES, /never omit the denominator/i);
     assert.match(EXAM_PDF_MATH_FIDELITY_RULES, /visually compare every math-bearing stem and option/i);
     assert.match(EXAM_MATH_FIELD_DESCRIPTION, /preserve all grouping\/operators/i);
+    assert.match(EXAM_PDF_MATH_FIDELITY_RULES, /exponent such as 2026 is one exponent/i);
   });
 
   it('requires the generation pipeline to emit renderable, unambiguous math', () => {

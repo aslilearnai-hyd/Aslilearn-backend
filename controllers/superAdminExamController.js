@@ -2955,6 +2955,7 @@ export const addQuestion = async (req, res) => {
       displayOrder: rawDisplayOrder,
       sectionHeading: rawSectionHeading,
       replaceDuplicate = false,
+      allowDuplicate = false,
       sharedMatterId,
       sharedMatterText,
       sharedMatterKind,
@@ -3194,7 +3195,7 @@ export const addQuestion = async (req, res) => {
       });
       return key === duplicateKey;
     });
-    if (duplicateQuestion && !replaceDuplicate) {
+    if (duplicateQuestion && !replaceDuplicate && !allowDuplicate) {
       return res.status(409).json({
         success: false,
         message: 'Duplicate question already exists for this exam and subject',
@@ -3202,7 +3203,7 @@ export const addQuestion = async (req, res) => {
       });
     }
 
-    if (duplicateQuestion && replaceDuplicate) {
+    if (duplicateQuestion && replaceDuplicate && !allowDuplicate) {
       await Question.findByIdAndDelete(duplicateQuestion._id);
       await Exam.updateOne(
         { _id: examId },
