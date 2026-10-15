@@ -1,6 +1,7 @@
 import Book from '../models/Book.js';
 import BookChunk from '../models/BookChunk.js';
 import BookAsset from '../models/BookAsset.js';
+import BookSourcePart from '../models/BookSourcePart.js';
 import AssessmentAsset from '../models/AssessmentAsset.js';
 import {
   createBookFromUpload,
@@ -36,7 +37,7 @@ export async function listBooks(req, res) {
 
     const books = await Book.find(filter)
       .select(
-        'title board class subject productCategory topic subtopic corpusId sourcePriority difficultyBand edition approvalStatus chunkCount processingStatus embeddingsCreated source generationStats updatedAt createdAt contentId',
+        'title board class subject productCategory topic subtopic corpusId sourcePriority difficultyBand edition approvalStatus chunkCount processingStatus embeddingsCreated source generationStats updatedAt createdAt contentId chapters extractedTextLength',
       )
       .sort({ updatedAt: -1 })
       .lean();
@@ -113,7 +114,13 @@ export async function uploadBook(req, res) {
 export async function reindexBook(req, res) {
   if (!ensureSuperAdmin(req, res)) return;
   try {
-    const book = await Book.findById(req.params.id);
+    let book = await Book.findById(req.params.id);
+    // A book imported from Subjects & Content can be replaced while the list is
+    // open. Recover the current Book by its stable contentId instead of making
+    // the user refresh and guess which card is now current.
+    if (!book && req.body?.contentId) {
+      book = await Book.findOne({ contentId: req.body.contentId });
+    }
     if (!book) return res.status(404).json({ success: false, message: 'Book not found.' });
 
     book.processingStatus = 'pending';
@@ -157,7 +164,18 @@ export async function getBookExtractedText(req, res) {
   try {
     const book = await Book.findById(req.params.id).select('extractedText extractedTextLength title').lean();
     if (!book) return res.status(404).json({ success: false, message: 'Book not found.' });
-    const preview = String(book.extractedText || '').slice(0, 50000);
+    let extractedText = String(book.extractedText || '');
+    // Older/large books keep the full source in BookSourcePart and may have an
+    // empty legacy preview even though their chunks were indexed successfully.
+    if (!extractedText) {
+      const parts = await BookSourcePart.find({ bookId: book._id })
+        .select('content partIndex')
+        .sort({ partIndex: 1 })
+        .limit(2)
+        .lean();
+      extractedText = parts.map((part) => String(part.content || '')).join('');
+    }
+    const preview = extractedText.slice(0, 50000);
     res.json({
       success: true,
       data: {

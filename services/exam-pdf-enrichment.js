@@ -332,8 +332,18 @@ export function parseMatchColumnsFromStem(stem) {
   const colI = [];
   const colII = [];
 
-  const iBlock = text.match(/Column\s*I\s*[:.]?\s*([\s\S]*?)(?=Column\s*II|$)/i);
-  const iiBlock = text.match(/Column\s*II\s*[:.]?\s*([\s\S]*?)$/i);
+  // Stems often contain an instruction sentence such as "item in Column I with
+  // its value in Column II" before the actual inline table. Select the last
+  // explicit "Column I:" / "Column II:" labels so that sentence is not
+  // mistaken for the table itself.
+  const explicitI = [...text.matchAll(/Column\s*I\s*[:.]\s*/gi)].at(-1);
+  const explicitII = [...text.matchAll(/Column\s*II\s*[:.]\s*/gi)].at(-1);
+  const iBlock = explicitI && explicitII && explicitII.index > explicitI.index
+    ? [null, text.slice(explicitI.index + explicitI[0].length, explicitII.index)]
+    : text.match(/Column\s*I\s*[:.]?\s*([\s\S]*?)(?=Column\s*II|$)/i);
+  const iiBlock = explicitII
+    ? [null, text.slice(explicitII.index + explicitII[0].length)]
+    : text.match(/Column\s*II\s*[:.]?\s*([\s\S]*?)$/i);
 
   const parseList = (block, letterKeys) => {
     const out = [];
@@ -356,11 +366,30 @@ export function parseMatchColumnsFromStem(stem) {
         out[out.length - 1].text = normalizeSpaces(`${out[out.length - 1].text} ${line}`);
       }
     }
+    // Gemini commonly returns an otherwise complete table on one line:
+    // "A. Distance ... B. Midpoint ...". Tokenise those inline entries when
+    // the line-oriented pass could not see them.
+    if (out.length < 2) {
+      out.length = 0;
+      const inline = String(block).replace(/\s+/g, ' ').trim();
+      const itemPattern = letterKeys
+        ? /(?:^|\s)([A-D])\s*[.):\-]\s*(.*?)(?=\s+[A-D]\s*[.):\-]\s*|$)/gi
+        // Do not treat the closing parenthesis in coordinates like (2, 3)
+        // as the start of a new inline Column II item.
+        : /(?:^|\s)(\d{1,2})\s*[.:\-]\s*(.*?)(?=\s+\d{1,2}\s*[.:\-]\s*|$)/g;
+      for (const match of inline.matchAll(itemPattern)) {
+        const key = letterKeys
+          ? String(match[1]).toUpperCase()
+          : String(parseInt(match[1], 10));
+        const value = normalizeSpaces(match[2]);
+        if (value) out.push({ key, text: value });
+      }
+    }
     return out;
   };
 
   // Interleaved A/1/B/2 under dual headers — parse whole table region once
-  const tableStart = text.search(/Column\s*I\b/i);
+  const tableStart = explicitI?.index ?? text.search(/Column\s*I\b/i);
   const tableRegion = tableStart >= 0 ? text.slice(tableStart) : text;
   const interleavedI = [];
   const interleavedII = [];

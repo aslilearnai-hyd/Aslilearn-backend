@@ -338,9 +338,11 @@ function postProcessGeminiPdfQuestionRows(rawList) {
             ? parseInt(fromStem[1], 10)
             : undefined;
 
-      let qt = String(r?.questionType || '').trim().toUpperCase();
+      let qt = String(r?.questionType || '').trim().toUpperCase().replace(/[\s-]+/g, '_');
       if (qt === 'MULTIPLE' || qt === 'MULTI') qt = 'MSQ';
-      if (!['MCQ', 'MSQ', 'INTEGER'].includes(qt)) qt = 'MCQ';
+      if (qt === 'ASSERTIONREASON' || qt === 'AR') qt = 'ASSERTION_REASON';
+      if (qt === 'MATCHTHEFOLLOWING' || qt === 'MATCH') qt = 'MATCH_FOLLOWING';
+      if (!['MCQ', 'MSQ', 'INTEGER', 'ASSERTION_REASON', 'MATCH_FOLLOWING'].includes(qt)) qt = 'MCQ';
 
       const subject = normalizePdfSubjectField(r?.subject);
 
@@ -1601,8 +1603,26 @@ ${EXAM_PDF_MATH_FIDELITY_RULES}
   })();
 
   const missingQuestionNumbers = (rows) => {
-    const present = presentQuestionNumbers(rows);
-    return expectedNumbers.filter((n) => !present.has(n));
+    const byNumber = new Map();
+    for (const row of rows || []) {
+      const number = Number(row?.questionNumber);
+      if (!Number.isFinite(number) || number < 1) continue;
+      const key = Math.floor(number);
+      const previous = byNumber.get(key);
+      if (!previous || optionFillScore(row) > optionFillScore(previous)) byNumber.set(key, row);
+    }
+    return expectedNumbers.filter((number) => {
+      const row = byNumber.get(number);
+      if (!row) return true;
+      const type = String(row?.questionType || 'MCQ').trim().toUpperCase();
+      if (type === 'INTEGER') return !String(row?.correctAnswer || '').trim();
+      // A numbered stem is not a completed MCQ. Treat missing choices as a
+      // recoverable extraction gap so the targeted pass revisits case-based and
+      // Match-the-Following rows instead of silently accepting one option.
+      const optionCount = [row?.option1, row?.option2, row?.option3, row?.option4]
+        .filter((value) => String(value || '').trim()).length;
+      return optionCount < 4;
+    });
   };
 
   /** Batch missing ids into small prompts, e.g. [14,15,57,58] → "14, 15, 57, 58" */
@@ -1823,6 +1843,8 @@ ${EXAM_PDF_MATH_FIDELITY_RULES}
             : `Scope: extract ONLY these exact question numbers: ${list}. ` +
               `Return one object per number if that question exists in the paper. ` +
               `Set questionNumber exactly. For case-based items, include the full case/passage in questionText. ` +
+              `Copy all four printed choices a)-d) into option1-option4 for every non-integer question. ` +
+              `For Match-the-Following, include the full Column I and Column II lists in questionText plus all four matching-code choices. ` +
               `Do not skip Match-the-Following or Assertion-Reason items.`,
         ).then((chunk) => {
           if (
