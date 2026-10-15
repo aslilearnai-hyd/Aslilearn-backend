@@ -989,9 +989,6 @@ export async function createBookFromContent({ contentId, uploadedBy, uploadedByR
   }
 
   const existing = await Book.findOne({ contentId: content._id });
-  if (existing) {
-    return { book: existing, alreadyImported: true };
-  }
 
   const fileUrl = resolveContentPrimaryFileUrl(content);
   if (!fileUrl) {
@@ -1067,15 +1064,38 @@ export async function createBookFromContent({ contentId, uploadedBy, uploadedByR
 
   // Re-importing the same Content row is idempotent, while distinct Content
   // rows in the same curriculum corpus remain separate approved sources.
-  let book = await Book.findOne({ contentId: content._id });
-  const alreadyImported = Boolean(book);
-  if (book) {
-    Object.assign(book, sharedFields);
-    await book.save();
-  } else {
-    book = await Book.create(sharedFields);
-  }
+  const { book, alreadyImported } = await saveContentLinkedBook({
+    existingBook: existing,
+    sharedFields,
+  });
 
   scheduleExtractAndIndexFromContentFile(book._id);
   return { book, alreadyImported };
+}
+
+/** Persist the current Content snapshot into its linked Book record. */
+export async function saveContentLinkedBook({ existingBook, sharedFields }) {
+  if (existingBook) {
+    Object.assign(existingBook, sharedFields);
+    await existingBook.save();
+    return { book: existingBook, alreadyImported: true };
+  }
+
+  const book = await Book.create(sharedFields);
+  return { book, alreadyImported: false };
+}
+
+/** Refresh a linked Book after its Subjects & Content row changes.
+ * Unlinked content remains available in the manual import list.
+ */
+export async function refreshLinkedBookFromContent({ contentId, uploadedBy, uploadedByRole }) {
+  const existing = await Book.findOne({ contentId });
+  if (!existing) return { refreshed: false };
+
+  const result = await createBookFromContent({ contentId, uploadedBy, uploadedByRole });
+  return {
+    refreshed: true,
+    bookId: String(result.book?._id || ''),
+    processingStatus: result.book?.processingStatus || 'pending',
+  };
 }

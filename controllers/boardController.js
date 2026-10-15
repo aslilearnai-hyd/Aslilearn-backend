@@ -1238,6 +1238,28 @@ function normalizeContentType(raw) {
   return match || t;
 }
 
+const BOOK_CONTENT_TYPES = new Set(['TextBook', 'Workbook', 'Material']);
+
+async function refreshLinkedBookAfterContentSave(content, req) {
+  if (!BOOK_CONTENT_TYPES.has(normalizeContentType(content?.type))) {
+    return { refreshed: false };
+  }
+
+  try {
+    const { refreshLinkedBookFromContent } = await import(
+      '../ai/rag/books/book-ingestion-service.js'
+    );
+    return await refreshLinkedBookFromContent({
+      contentId: content._id,
+      uploadedBy: req.userId || req.user?._id || '',
+      uploadedByRole: req.user?.role || 'super-admin',
+    });
+  } catch (error) {
+    console.error('[content] Linked book refresh failed:', error);
+    return { refreshed: false, error: error?.message || 'Linked book refresh failed' };
+  }
+}
+
 const VIDEO_NUMBER_PATTERN = /^[1-9]\d*$/;
 
 function normalizeVideoNumber(raw) {
@@ -1446,7 +1468,7 @@ export const uploadContent = async (req, res) => {
       });
     }
 
-    const materialTypes = new Set(['Textbook', 'Material', 'Workbook']);
+    const materialTypes = BOOK_CONTENT_TYPES;
     // Keep Super Admin's lesson/material title. Only invent a subject slot label when title is empty.
     const trimmedTitle = String(title || '').trim();
     const resolvedTitle =
@@ -1510,12 +1532,18 @@ export const uploadContent = async (req, res) => {
           productCategory: existingSlot.productCategory,
           type: existingSlot.type,
         });
+        const bookSync = await refreshLinkedBookAfterContentSave(existingSlot, req);
         const data = await contentResponsePayload(existingSlot);
         return res.json({
           success: true,
           data,
-          message: 'Content updated in existing Alpha/Beta slot',
+          message: bookSync.error
+            ? `Content updated, but linked book refresh failed: ${bookSync.error}`
+            : bookSync.refreshed
+              ? 'Content and linked book updated successfully'
+              : 'Content updated successfully',
           replaced: true,
+          bookSync,
         });
       }
     }
@@ -1856,11 +1884,17 @@ export const updateContent = async (req, res) => {
 
     await content.save();
 
+    const bookSync = await refreshLinkedBookAfterContentSave(content, req);
     const data = await contentResponsePayload(content);
     res.json({ 
       success: true, 
-      message: 'Content updated successfully',
+      message: bookSync.error
+        ? `Content updated, but linked book refresh failed: ${bookSync.error}`
+        : bookSync.refreshed
+          ? 'Content and linked book updated successfully'
+          : 'Content updated successfully',
       data,
+      bookSync,
     });
   } catch (error) {
     console.error('Update content error:', error);

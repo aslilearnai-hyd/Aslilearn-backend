@@ -10,8 +10,40 @@ import {
   bookExtractionCorruptionStats,
   chunkChapterText,
   extractDocxParagraphsFromXml,
+  saveContentLinkedBook,
   splitIntoChapters,
 } from '../ai/rag/books/book-ingestion-service.js';
+
+test('re-importing linked content replaces stale book metadata and file', async () => {
+  let saves = 0;
+  const existingBook = {
+    _id: 'book-1',
+    title: 'Old title',
+    fileUrl: '/uploads/content/old.pdf',
+    processingStatus: 'ready',
+    async save() {
+      saves += 1;
+    },
+  };
+
+  const result = await saveContentLinkedBook({
+    existingBook,
+    sharedFields: {
+      title: 'New title',
+      fileUrl: '/uploads/content/new.pdf',
+      processingStatus: 'pending',
+      extractedText: '',
+      chapters: [],
+    },
+  });
+
+  assert.equal(result.alreadyImported, true);
+  assert.equal(result.book, existingBook);
+  assert.equal(existingBook.title, 'New title');
+  assert.equal(existingBook.fileUrl, '/uploads/content/new.pdf');
+  assert.equal(existingBook.processingStatus, 'pending');
+  assert.equal(saves, 1);
+});
 
 test('book extraction flags replacement-glyph corruption without rejecting clean maths', () => {
   assert.equal(bookExtractionCorruptionStats('x² + y² = z² and √144 = 12').needsOcr, false);
