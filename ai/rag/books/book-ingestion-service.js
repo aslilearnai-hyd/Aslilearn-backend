@@ -86,6 +86,10 @@ function enumValue(value, allowed, fallback) {
 }
 
 const EMBEDDING_TIMEOUT_MS = Math.max(10_000, Number(process.env.BOOK_EMBEDDING_TIMEOUT_MS || 60_000));
+const BOOK_EMBEDDING_CONCURRENCY = Math.max(
+  1,
+  Math.min(8, Number(process.env.BOOK_EMBEDDING_CONCURRENCY || 3)),
+);
 
 function withTimeout(promise, timeoutMs, label) {
   let timer;
@@ -232,8 +236,20 @@ export function splitIntoChapters(text) {
   if (!clean.trim()) return [];
 
   const lines = clean.split('\n');
-  const headingRe =
-    /^(chapter\s+[\dIVXLC]+[\s.:)\-–—]*|unit\s+[\dIVXLC]+[\s.:)\-–—]*|part\s+[\dIVXLC]+[\s.:)\-–—]*|section\s+[\dIVXLC]+[\s.:)\-–—]*|lesson\s+[\dIVXLC]+[\s.:)\-–—]*|theme\s+[\dIVXLC]+[\s.:)\-–—]*|\d{1,3}(?:\.\d{1,3}){0,2}[.)]?\s+[A-Z][^.!?]{2,120}$)/i;
+  const explicitHeadingRe = /^(chapter|unit|part|section|lesson|theme)\s+[\dIVXLC]+\b[\s.:)\-–—]*/i;
+  const questionLeadRe = /^(?:if|find|solve|show|prove|evaluate|calculate|simplify|determine|write|choose|which|what|why|how|given|let|state|verify|draw|construct|classify|identify)\b/i;
+  const numberedHeading = (line) => {
+    const match = String(line || '').match(/^(\d{1,2})[.)]?\s+(.{3,100})$/);
+    if (!match) return false;
+    const title = match[2].trim();
+    // PDF exercises often look like chapter headings ("1. Find ..."). Keep
+    // inferred headings conservative: titles must be prose labels, not maths,
+    // questions, table-of-contents rows, or decimal sub-sections.
+    if (questionLeadRe.test(title)) return false;
+    if (/[=<>+*/{}[\]^?]/.test(title)) return false;
+    if (/\d\s*$/.test(title) || /\.{2,}/.test(title)) return false;
+    return /^[A-Z][A-Za-zÀ-ž '&,:()\-–—]+$/.test(title);
+  };
 
   const chapters = [];
   let current = { title: 'Introduction', lines: [], startOffset: 0 };
@@ -241,8 +257,20 @@ export function splitIntoChapters(text) {
 
   for (const line of lines) {
     const trimmed = line.trim();
-    if (trimmed && headingRe.test(trimmed) && current.lines.length > 20) {
-      const body = current.lines.join('\n').trim();
+    const isExplicitHeading = explicitHeadingRe.test(trimmed);
+    const isNumberedHeading = numberedHeading(trimmed);
+    const currentBody = current.lines.join('\n').trim();
+    const currentWords = wordCount(currentBody);
+    if ((isExplicitHeading || isNumberedHeading) && current.title === 'Introduction' && currentWords < 40) {
+      current = { title: trimmed.slice(0, 200), lines: [line], startOffset: offset };
+      offset += line.length + 1;
+      continue;
+    }
+    const canSplit = isExplicitHeading
+      ? currentWords >= 40
+      : isNumberedHeading && currentWords >= 180;
+    if (trimmed && canSplit) {
+      const body = currentBody;
       chapters.push({
         title: current.title,
         topic: current.title,
@@ -275,6 +303,20 @@ export function splitIntoChapters(text) {
     return [{ title: 'Full Book', topic: 'Full Book', subtopic: '', startOffset: 0, endOffset: clean.length, wordCount: wordCount(clean), text: clean }];
   }
   return chapters;
+}
+
+async function mapWithConcurrency(items, concurrency, mapper) {
+  const results = new Array(items.length);
+  let cursor = 0;
+  const workers = Array.from({ length: Math.min(concurrency, items.length) }, async () => {
+    while (cursor < items.length) {
+      const index = cursor;
+      cursor += 1;
+      results[index] = await mapper(items[index], index);
+    }
+  });
+  await Promise.all(workers);
+  return results;
 }
 
 /** Chunk chapter text into 500–1000 word windows. */
@@ -607,6 +649,7 @@ export async function indexBook(bookId) {
       .select('assetId chapter subtopic page')
       .lean();
     const allChunkDocs = [];
+    const chunkCandidates = [];
     const corpusId = String(book.corpusId || '').trim();
     const existingHashes = corpusId
       ? new Set(
@@ -629,12 +672,7 @@ export async function indexBook(bookId) {
           continue;
         }
         existingHashes.add(contentHash);
-        const { embedding, embeddingModel } = await withTimeout(
-          generateEmbedding(chunk.content),
-          EMBEDDING_TIMEOUT_MS,
-          `Embedding chunk ${globalIndex + 1}`,
-        );
-        allChunkDocs.push({
+        chunkCandidates.push({
           bookId: book._id,
           chunkIndex: globalIndex,
           chapter: chunk.chapter || chapter.title,
@@ -656,8 +694,6 @@ export async function indexBook(bookId) {
           contentHash,
           wordCount: chunk.wordCount,
           tokenCount: chunk.tokenCount,
-          embedding,
-          embeddingModel,
           board: book.board,
           class: book.class,
           subject: book.subject,
@@ -671,8 +707,30 @@ export async function indexBook(bookId) {
       }
     }
 
-    if (allChunkDocs.length) {
-      await BookChunk.insertMany(allChunkDocs, { ordered: false });
+    // Persist progress in bounded batches. A restart no longer leaves a large
+    // book at 0 chunks after hundreds of successful embedding calls.
+    const insertBatchSize = 25;
+    for (let start = 0; start < chunkCandidates.length; start += insertBatchSize) {
+      const candidates = chunkCandidates.slice(start, start + insertBatchSize);
+      if (!candidates.length) continue;
+      const embeddedBatch = await mapWithConcurrency(
+        candidates,
+        BOOK_EMBEDDING_CONCURRENCY,
+        async (candidate, batchIndex) => {
+          const { embedding, embeddingModel } = await withTimeout(
+            generateEmbedding(candidate.content),
+            EMBEDDING_TIMEOUT_MS,
+            `Embedding chunk ${start + batchIndex + 1}`,
+          );
+          return { ...candidate, embedding, embeddingModel };
+        },
+      );
+      await BookChunk.insertMany(embeddedBatch, { ordered: false });
+      allChunkDocs.push(...embeddedBatch);
+      await Book.updateOne(
+        { _id: book._id },
+        { $set: { chunkCount: allChunkDocs.length, processingStatus: 'processing' } },
+      );
     }
 
     book.chunkCount = allChunkDocs.length;

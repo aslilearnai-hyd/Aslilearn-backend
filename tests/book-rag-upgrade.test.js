@@ -10,6 +10,7 @@ import {
   bookExtractionCorruptionStats,
   chunkChapterText,
   extractDocxParagraphsFromXml,
+  splitIntoChapters,
 } from '../ai/rag/books/book-ingestion-service.js';
 
 test('book extraction flags replacement-glyph corruption without rejecting clean maths', () => {
@@ -103,6 +104,42 @@ test('book chunks use max-window overlap rather than min-window stride', () => {
   assert.ok(chunks.length >= 3);
   assert.equal(chunks[0].content.split(' ')[0], 'w0');
   assert.equal(chunks[1].content.split(' ')[0], 'w920');
+});
+
+test('chapter detection does not turn numbered maths questions into chapters', () => {
+  const words = (label, count) => Array.from({ length: count }, (_, index) => `${label}${index}`).join(' ');
+  const text = [
+    '1 Surds and Radical Expressions',
+    words('surds', 240),
+    '1. Find the zeroes of x² + 5x + 6',
+    words('exercise', 240),
+    '2 Polynomials',
+    words('polynomial', 240),
+  ].join('\n');
+  const chapters = splitIntoChapters(text);
+  assert.deepEqual(chapters.map((chapter) => chapter.title), [
+    '1 Surds and Radical Expressions',
+    '2 Polynomials',
+  ]);
+  assert.ok(chapters[0].text.includes('Find the zeroes'));
+});
+
+test('chapter detection ignores contents rows and decimal sub-sections', () => {
+  const words = Array.from({ length: 220 }, (_, index) => `word${index}`).join(' ');
+  const text = [
+    'Chapter 1: Number Systems',
+    words,
+    '1.1 Basic Concepts',
+    words,
+    '2.4 Practice Set 112',
+    words,
+    'Chapter 2: Algebra',
+    words,
+  ].join('\n');
+  assert.deepEqual(splitIntoChapters(text).map((chapter) => chapter.title), [
+    'Chapter 1: Number Systems',
+    'Chapter 2: Algebra',
+  ]);
 });
 
 test('multimodal asset parser rejects unknown types and keeps canonical equations', () => {

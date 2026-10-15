@@ -57,10 +57,10 @@ export async function listBooks(req, res) {
       )
       .sort({ updatedAt: -1 })
       .lean();
-    const missingCountIds = books.filter((book) => !Number(book.chunkCount)).map((book) => book._id);
-    const actualCounts = missingCountIds.length
+    const bookIds = books.map((book) => book._id);
+    const actualCounts = bookIds.length
       ? await BookChunk.aggregate([
-          { $match: { bookId: { $in: missingCountIds } } },
+          { $match: { bookId: { $in: bookIds } } },
           { $group: { _id: '$bookId', count: { $sum: 1 } } },
         ])
       : [];
@@ -70,7 +70,7 @@ export async function listBooks(req, res) {
       data: books.map((book) =>
         enrichBookCurriculumFields({
           ...book,
-          chunkCount: Number(book.chunkCount) || countByBookId.get(String(book._id)) || 0,
+          chunkCount: countByBookId.get(String(book._id)) || 0,
         }),
       ),
     });
@@ -256,13 +256,21 @@ export async function getBookGenerationStats(req, res) {
 export async function listBookChunks(req, res) {
   if (!ensureSuperAdmin(req, res)) return;
   try {
-    const chunks = await BookChunk.find({ bookId: req.params.id })
+    const requestedLimit = Number(req.query.limit);
+    const limit = Math.max(1, Math.min(2000, Number.isFinite(requestedLimit) ? requestedLimit : 1000));
+    const [chunks, total] = await Promise.all([
+      BookChunk.find({ bookId: req.params.id })
       .select('chunkIndex chapter topic subtopic wordCount content')
       .sort({ chunkIndex: 1 })
-      .limit(100)
-      .lean();
+      .limit(limit)
+      .lean(),
+      BookChunk.countDocuments({ bookId: req.params.id }),
+    ]);
     res.json({
       success: true,
+      total,
+      returned: chunks.length,
+      hasMore: chunks.length < total,
       data: chunks.map((c) => ({
         ...c,
         contentPreview: String(c.content || '').slice(0, 400),
