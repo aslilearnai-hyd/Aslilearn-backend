@@ -44,6 +44,18 @@ export const FAMILY_TOOL_SLUGS = Object.freeze({
   NOTES_BASED: ['short-notes-summaries-maker'],
 });
 
+/**
+ * Canonical extraction builds previews for every tool family. Those preview
+ * arrays must not be treated as evidence for their family unless that family
+ * was the caller's selected extraction target.
+ */
+function canonicalToolFamily(canonical) {
+  const toolSlug = String(canonical?.metadata?.toolSlug || '').trim();
+  if (!toolSlug) return '';
+  return Object.entries(FAMILY_TOOL_SLUGS)
+    .find(([, slugs]) => slugs.includes(toolSlug))?.[0] || '';
+}
+
 const SIGNAL_RULES = [
   {
     family: 'QUESTION_BASED',
@@ -61,7 +73,7 @@ const SIGNAL_RULES = [
     test: (t, c) =>
       /\bactivity\s*(?:\/\s*project)?\s*\d+/i.test(t) ||
       /\bproject\s*(?:idea|lab)?\s*\d+/i.test(t) ||
-      (c?.activities?.length || 0) >= 1,
+      (canonicalToolFamily(c) === 'ACTIVITY_BASED' && (c?.activities?.length || 0) >= 1),
     signals: ['activity_heading', 'project_heading'],
   },
   {
@@ -69,7 +81,7 @@ const SIGNAL_RULES = [
     weight: 4,
     test: (t, c) =>
       /\bfront\s*:/i.test(t) && /\bback\s*:/i.test(t) ||
-      (c?.flashcards?.length || 0) >= 3,
+      (canonicalToolFamily(c) === 'FLASHCARD_BASED' && (c?.flashcards?.length || 0) >= 1),
     signals: ['front_back_pairs'],
   },
   {
@@ -78,7 +90,7 @@ const SIGNAL_RULES = [
     test: (t, c) =>
       /\b(?:passage|story)\b/i.test(t) &&
       (/\bcomprehension\b/i.test(t) || (t.match(/\?/g) || []).length >= 2) ||
-      (c?.stories?.length || 0) >= 1,
+      (canonicalToolFamily(c) === 'STORY_BASED' && (c?.stories?.length || 0) >= 1),
     signals: ['passage_story', 'comprehension'],
   },
   {
@@ -86,7 +98,7 @@ const SIGNAL_RULES = [
     weight: 3,
     test: (t, c) =>
       /\b(?:lesson\s*plan|class\s*plan|study\s*schedule|timeline|period\s*\d+)\b/i.test(t) ||
-      (c?.timelines?.length || 0) >= 1,
+      (canonicalToolFamily(c) === 'PLANNING_BASED' && (c?.timelines?.length || 0) >= 1),
     signals: ['lesson_plan', 'timeline'],
   },
   {
@@ -94,7 +106,7 @@ const SIGNAL_RULES = [
     weight: 2,
     test: (t, c) =>
       /\b(?:concept|definition|learning\s*objective|chapter\s*summary|study\s*guide)\b/i.test(t) ||
-      (c?.concepts?.length || 0) >= 2,
+      (canonicalToolFamily(c) === 'CONCEPT_BASED' && (c?.concepts?.length || 0) >= 1),
     signals: ['concept_keywords', 'definitions'],
   },
   {
@@ -109,7 +121,7 @@ const SIGNAL_RULES = [
     weight: 2,
     test: (t, c) =>
       /\b(?:short\s*notes?|summary|key\s*points?\s*to\s*remember)\b/i.test(t) ||
-      (c?.contentBlocks?.length || 0) >= 3,
+      (canonicalToolFamily(c) === 'NOTES_BASED' && (c?.contentBlocks?.length || 0) >= 1),
     signals: ['notes_keywords', 'content_blocks'],
   },
 ];
