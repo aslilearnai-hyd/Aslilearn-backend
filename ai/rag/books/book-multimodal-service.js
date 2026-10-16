@@ -6,6 +6,7 @@ import BookAsset from '../../../models/BookAsset.js';
 import Book from '../../../models/Book.js';
 import { extractTextFromDocument } from '../../providers/gemini-service.js';
 import { getPdfBufferFromStorage } from '../../../services/cloud-storage.js';
+import { attachFigureImages, FIGURE_BOX_PROMPT } from './book-figure-images.js';
 
 const ALLOWED_ASSET_TYPES = new Set([
   'equation',
@@ -82,19 +83,36 @@ export async function extractAndStoreBookAssets({ book, buffer, mimeType = 'appl
   const enabled = String(process.env.BOOK_MULTIMODAL_INGESTION ?? 'true').toLowerCase() !== 'false';
   if (!enabled || !book?._id || !Buffer.isBuffer(buffer)) return { assetCount: 0, skipped: true };
   const base64 = buffer.toString('base64');
-  if (base64.length > 20 * 1024 * 1024) {
-    return { assetCount: 0, skipped: true, reason: 'document_too_large_for_inline_analysis' };
-  }
+  // Whole-document analysis is limited by Gemini's inline size; page-level
+  // figure cropping below still runs for large books.
+  const tooLargeForInline = base64.length > 20 * 1024 * 1024;
 
   const prompt = `Analyse this educational document page by page and extract only assessment-relevant STEM assets.
 Return valid JSON with this exact shape: {"assets":[{"page":1,"type":"equation|chemical_equation|figure|graph|table|chemical_structure","caption":"","description":"","semanticText":"searchable meaning","canonicalData":{"latex":"","display":"","data":{}},"labels":[],"sourceBBox":[],"chapter":"","subtopic":""}]}.
 Preserve equations, subscripts, superscripts, charges, equilibrium arrows, labels and numeric values exactly.
 Do not invent missing labels or values. Exclude decorative images. Return JSON only.`;
-  const raw = await extractTextFromDocument(base64, mimeType, prompt, {
-    temperature: 0,
-    maxTokens: Number(process.env.BOOK_MULTIMODAL_MAX_OUTPUT_TOKENS) || 12000,
+  const raw = tooLargeForInline
+    ? ''
+    : await extractTextFromDocument(base64, mimeType, prompt, {
+        temperature: 0,
+        maxTokens: Number(process.env.BOOK_MULTIMODAL_MAX_OUTPUT_TOKENS) || 12000,
+      });
+  let assets = parseMultimodalBookAssets(raw);
+  // Cut the real figures out of their pages so questions can show them.
+  const isPdf = String(mimeType || '').toLowerCase().includes('pdf');
+  const figureResult = !isPdf ? null : await attachFigureImages({
+    bookId: book._id,
+    buffer,
+    assets: assets.map((asset, index) => ({ ...asset, assetId: assetIdFor(book._id, asset, index) })),
+    locate: (png) => extractTextFromDocument(png.toString('base64'), 'image/png', FIGURE_BOX_PROMPT, {
+      temperature: 0,
+      maxTokens: 1500,
+    }),
+  }).catch((error) => {
+    console.warn('[book-figures] skipped:', error?.message || error);
+    return null;
   });
-  const assets = parseMultimodalBookAssets(raw);
+  if (figureResult) assets = figureResult.assets;
   const autoApprove = resolveBookAssetApprovalStatus(book) === 'approved';
   await BookAsset.deleteMany(
     autoApprove
@@ -105,7 +123,7 @@ Do not invent missing labels or values. Exclude decorative images. Return JSON o
 
   const docs = assets.map((asset, index) => ({
     ...asset,
-    assetId: assetIdFor(book._id, asset, index),
+    assetId: asset.assetId || assetIdFor(book._id, asset, index),
     bookId: book._id,
     board: book.board || '',
     class: book.class || '',
@@ -129,7 +147,7 @@ Do not invent missing labels or values. Exclude decorative images. Return JSON o
     })),
     { ordered: false },
   );
-  return { assetCount: docs.length, skipped: false };
+  return { assetCount: docs.length, figureImages: figureResult?.croppedCount || 0, skipped: false };
 }
 
 function queryTokens(value = '') {
@@ -150,7 +168,7 @@ export async function retrieveApprovedBookAssets(scope = {}, limit = 4) {
   if (curriculumFilter?.aiSubtopicId) filter.aiSubtopicId = curriculumFilter.aiSubtopicId;
   else if (curriculumFilter?.aiTopicKey) filter.aiTopicKey = curriculumFilter.aiTopicKey;
   const assets = await BookAsset.find(filter)
-    .select('assetId page type caption description semanticText canonicalData labels chapter subtopic assetPath aiTopicKey aiSubtopicId aiSubtopicName')
+    .select('assetId page type caption description semanticText canonicalData labels chapter subtopic assetPath imageUrl aiTopicKey aiSubtopicId aiSubtopicName')
     .lean();
   const query = queryTokens(
     [scope.subjectName || scope.subject, scope.topicName || scope.topic, scope.subtopicName || scope.subtopic]
@@ -179,9 +197,15 @@ export function formatBookAssetsForPrompt(assets = []) {
     const labels = Array.isArray(asset.labels) && asset.labels.length
       ? `\nLabels: ${asset.labels.join(', ')}`
       : '';
-    return `[Asset ${index + 1}] id=${asset.assetId} type=${asset.type} page=${asset.page || 'unknown'}\n${asset.semanticText || asset.description || asset.caption}${canonical}${labels}`;
+    const image = asset.imageUrl
+      ? `\nPrinted figure available (caption: "${asset.caption || asset.semanticText || asset.assetId}")`
+      : '';
+    return `[Asset ${index + 1}] id=${asset.assetId} type=${asset.type} page=${asset.page || 'unknown'}\n${asset.semanticText || asset.description || asset.caption}${canonical}${labels}${image}`;
   });
-  return `<<<APPROVED_MULTIMODAL_ASSETS>>>\nUse only these approved equations/figures/tables/graphs. Return sourceAssetIds for any question that depends on one.\n${blocks.join('\n\n')}\n<<<END_APPROVED_MULTIMODAL_ASSETS>>>`;
+  const figureRule = assets.some((asset) => asset.imageUrl)
+    ? "\nFor a question that uses a printed figure, set needsDiagram=true and imagePrompt to that figure's exact caption; the textbook figure is shown with the question."
+    : '';
+  return `<<<APPROVED_MULTIMODAL_ASSETS>>>\nUse only these approved equations/figures/tables/graphs. Return sourceAssetIds for any question that depends on one.${figureRule}\n${blocks.join('\n\n')}\n<<<END_APPROVED_MULTIMODAL_ASSETS>>>`;
 }
 
 async function pagePdfPart(sourceBuffer, pageNumber) {

@@ -416,3 +416,59 @@ test('chapter list comes from detected chapters, not the legacy splitter', async
     ['Chapter 2 - Materials', 100],
   ]);
 });
+
+test('textbook figures: caption pages, crop boxes, question matching', async () => {
+  const { pagesWithFigureCaptions, boxToCrop, parseFigureBoxes, pickFigureForQuestion, attachTextbookFigures } = await import('../ai/rag/books/book-figure-images.js');
+  assert.deepEqual(pagesWithFigureCaptions([
+    { num: 1, text: 'Contents' }, { num: 17, text: '... ▶ Fig 1.3 Syringe with Air ...' }, { num: 37, text: 'Table 2.1 Types of Mixtures' },
+  ]), [17, 37]);
+  const crop = boxToCrop([451, 339, 537, 660], 892, 1262);
+  assert.ok(crop.w > 280 && crop.h > 100 && crop.sx < 302 && crop.sy < 569);
+  assert.equal(boxToCrop([0, 0, 1000, 1000], 800, 1000), null, 'full-page box is a mis-detection');
+  assert.equal(boxToCrop([10, 10, 12, 12], 800, 1000), null, 'tiny icon');
+  assert.equal(parseFigureBoxes('{"figures":[{"caption":"Fig 1.3 Syringe with Air","box_2d":[1,2,3,4]}]}')[0].caption, 'Fig 1.3 Syringe with Air');
+
+  const figures = [
+    { assetId: 'F1', caption: 'Fig 1.3 Syringe with Air', imageUrl: '/uploads/book-figures/F1.png' },
+    { assetId: 'F2', caption: 'Fig 1.11 Interconversion of Matter', imageUrl: '/uploads/book-figures/F2.png' },
+  ];
+  assert.equal(pickFigureForQuestion({ needsDiagram: true, imagePrompt: 'Interconversion of Matter' }, figures).assetId, 'F2');
+  assert.equal(pickFigureForQuestion({ question: 'Observe the diagram of the syringe with air. Why is it easy to push?' }, figures).assetId, 'F1');
+  assert.equal(pickFigureForQuestion({ needsDiagram: true, imagePrompt: 'Labelled human heart' }, figures), null);
+
+  const record = { core: { sectionC_short: [
+    { question: 'Observe the diagram below and name the change of state marked X.', answer: 'x', marks: 2, needsDiagram: true, imagePrompt: 'Fig 1.11 Interconversion of Matter' },
+    { question: 'Define diffusion.', answer: 'y', marks: 2 },
+  ] } };
+  assert.equal(await attachTextbookFigures(record, figures), 1);
+  assert.equal(record.core.sectionC_short[0].imageUrl, '/uploads/book-figures/F2.png');
+  assert.equal(record.core.sectionC_short[0].figureSource, 'textbook');
+  assert.equal(record.core.sectionC_short[1].imageUrl, undefined);
+});
+
+test('AI diagram trigger honours needsDiagram and diagram-stem text', async () => {
+  const { questionNeedsDiagram } = await import('../ai/generators/diagrams/ai-diagram-generation-service.js');
+  assert.equal(questionNeedsDiagram({ question: 'Why?', needsDiagram: true, imagePrompt: 'syringe' }), true);
+  assert.equal(questionNeedsDiagram({ question: 'Observe the diagram and label the parts.' }), true);
+  assert.equal(questionNeedsDiagram({ question: 'Define molarity.' }), false);
+  assert.equal(questionNeedsDiagram({ question: 'Label the figure.', needsDiagram: true, imageUrl: '/x.png' }), false);
+});
+
+test('quality check ignores figure captions kept in hidden imagePrompt', async () => {
+  const { validateV2QuestionContent } = await import('../ai/generators/_v2/six-section-quality.js');
+  const content = {
+    core: { sectionC_short: [{ question: 'Observe the diagram below. Name the process.', answer: 'Evaporation', marks: 2, needsDiagram: true, imagePrompt: 'Fig 1.11 Interconversion of Matter' }] },
+    assessment: { answerKey: [{ q: 'C1', answer: 'Evaporation', working: '' }] },
+  };
+  assert.equal(validateV2QuestionContent(content).valid, true);
+  content.core.sectionC_short[0].question = 'Refer to Figure 1.11 and name the process.';
+  assert.equal(validateV2QuestionContent(content).valid, false);
+});
+
+test('generated figure images are public; other uploads stay private', async () => {
+  const { isPublicUploadPath } = await import('../utils/upload-access.js');
+  assert.equal(isPublicUploadPath('/ai-diagrams/diagram-1.png'), true);
+  assert.equal(isPublicUploadPath('/book-figures/BOOK_FIG_x.png'), true);
+  assert.equal(isPublicUploadPath('/pdf-knowledge/book.pdf'), false);
+  assert.equal(isPublicUploadPath('/content/notes.pdf'), false);
+});

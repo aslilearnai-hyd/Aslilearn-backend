@@ -58,7 +58,10 @@ export function validateV2QuestionContent(structuredContent) {
     }
   }
 
-  const serialized = JSON.stringify(structuredContent);
+  // Figure metadata (caption-based imagePrompt, attached image) is not shown
+  // to students; only visible text must not expose page/figure references.
+  const HIDDEN_FIGURE_KEYS = new Set(['imagePrompt', 'image_prompt', 'figurePrompt', 'figureCaption', 'imageUrl', 'sourceAssetIds']);
+  const serialized = JSON.stringify(structuredContent, (key, value) => (HIDDEN_FIGURE_KEYS.has(key) ? undefined : value));
   if (/INSUFFICIENT_(?:VISUAL_)?CONTEXT/i.test(serialized)) {
     errors.push('Retrieved context was insufficient for one or more question slots.');
   }

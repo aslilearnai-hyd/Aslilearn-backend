@@ -3,8 +3,11 @@
  */
 import crypto from 'crypto';
 
+// ai-diagrams / book-figures: educational images embedded in questions shown to
+// teachers and students (an <img> cannot send a bearer token). Filenames are
+// random or content hashes, and the images contain no personal data.
 const PUBLIC_PATH_RE =
-  /^\/(logos?|brand|favicon|public)(\/|$)|^\/schools\/logos?(\/|$)/i;
+  /^\/(logos?|brand|favicon|public|ai-diagrams|book-figures)(\/|$)|^\/schools\/logos?(\/|$)/i;
 
 function normalizeUploadPath(reqPath) {
   let p = String(reqPath || '');

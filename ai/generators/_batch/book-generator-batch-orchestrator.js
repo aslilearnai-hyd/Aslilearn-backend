@@ -75,6 +75,8 @@ import { isV2SupportedTool, v2ToolFamily } from '../../prompt-versioning/tool-pa
 import { mapV2StructuredToLegacy, ensureV2WorksheetCoreSections, syncLegacyWorksheetSectionsIntoV2, countUsableQuestionsFromV2OrLegacy, trimUsableQuestionsToCount } from '../../../utils/v2-structured-to-legacy.js';
 import { pickQuestionCountParams } from '../../../utils/questionComposition.js';
 import { resolveSelectedCurriculumScope } from '../../rag/books/book-curriculum-service.js';
+import { attachTextbookFigures } from '../../rag/books/book-figure-images.js';
+import { enrichStructuredContentWithDiagrams } from '../diagrams/ai-diagram-generation-service.js';
 import {
   applyQuestionSlotMetadata,
   buildGenerationCountTelemetry,
@@ -280,6 +282,20 @@ function extractV2QuestionTextsBook(sc) {
   };
   walk(core);
   return out;
+}
+
+async function attachFiguresForBookRecord(records, { figures, toolSlug, subject, topic, subtopic, classLabel, batchIndex }) {
+  for (const structured of records.filter(Boolean)) {
+    try {
+      const fromBook = await attachTextbookFigures(structured, figures);
+      const ai = await enrichStructuredContentWithDiagrams(structured, { toolSlug, subject, topic, subtopic, classLabel });
+      if (fromBook || ai.generated || ai.reused) {
+        console.log(`[book-generator] Slot ${batchIndex}: figures textbook=${fromBook} ai=${ai.generated} reused=${ai.reused || 0} failed=${ai.failed}`);
+      }
+    } catch (error) {
+      console.warn('[book-generator] figure attach skipped:', error?.message || error);
+    }
+  }
 }
 
 /** User-facing reason when textbook retrieval stops before any Gemini call. */
@@ -503,6 +519,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             subTopics: subTopicList.length > 1 ? subTopicList : undefined,
             productCategory: productCategory || book.productCategory || '',
             curriculum,
+            assetK: 8,
             toolSlug,
             audience: toolAudience,
             bookTitle: book.title,
@@ -799,6 +816,17 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                     console.warn(`[book-generator] Slot ${batchIndex} STEM/slot validation failed: ${lastError}`);
                     continue;
                   }
+                  // Figures: the textbook's own cropped figure first; an AI
+                  // diagram only for figure questions the book has no figure for.
+                  await attachFiguresForBookRecord([structuredV2, legacyStructured], {
+                    figures: ragBase.assets || [],
+                    toolSlug,
+                    subject: subjectName,
+                    topic: recordTopicName,
+                    subtopic: recordSubtopic,
+                    classLabel: className,
+                    batchIndex,
+                  });
                   let persistContent = coreTitle;
                   if (legacyStructured) {
                     try {
@@ -1248,6 +1276,15 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               if (attempt < maxAttempts) continue;
               throw new Error(lastError);
             }
+            await attachFiguresForBookRecord([structuredContent], {
+              figures: ragBase.assets || [],
+              toolSlug,
+              subject: subjectName,
+              topic: recordTopicName,
+              subtopic: recordSubtopic,
+              classLabel: className,
+              batchIndex,
+            });
 
             // Prefer freshly formatted text from repaired structured content when available.
             let formattedContent = String(generated.generatedContent || '').trim();

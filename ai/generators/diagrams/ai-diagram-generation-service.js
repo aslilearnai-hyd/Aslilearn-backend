@@ -96,7 +96,10 @@ function buildQualityDiagramPrompt({
   subtopic,
   classLabel,
 }) {
-  const figureBrief = String(imagePrompt || '').trim() || String(question || '').trim();
+  // Without an explicit figure brief, draw only the setup the question
+  // describes — the image must never show or state the answer.
+  const figureBrief = String(imagePrompt || '').trim() ||
+    `the apparatus / setup / structure this question refers to (draw the situation only, not its answer): ${String(question || '').trim()}`;
   const ctx = [
     subject && `Subject: ${subject}`,
     classLabel && `Class: ${classLabel}`,
@@ -122,10 +125,41 @@ function buildQualityDiagramPrompt({
     '- If biology: show only the relevant organ/structure with 3–8 key labels.',
     '- If physics/chemistry: show apparatus or circuit with labeled parts and directions.',
     '- Do NOT include the full question text in the image — only the diagram and labels.',
+    '- NEVER write the answer, conclusions, explanations or full sentences in the image; no text boxes, callouts or captions.',
+    '- Labels are short names only (max 3 words each, at most 6 labels), spelled correctly. Never label results or outcomes.',
     '- Landscape or square composition, print-friendly.',
   ]
     .filter(Boolean)
     .join('\n');
+}
+
+/**
+ * Turn a question into a neutral drawing brief: what to draw and which parts
+ * to label, with no outcome, explanation or answer. Falls back to a generic
+ * setup brief if the text call fails.
+ */
+async function deriveNeutralFigureBrief(question, { subject = '', topic = '', subtopic = '' } = {}) {
+  const fallback = `the apparatus or structure discussed in ${subtopic || topic || subject}, with its parts labelled`;
+  try {
+    const { callLlmJson } = await import('../../providers/gemini-service.js');
+    const raw = await callLlmJson(
+      [
+        'Write a drawing brief for the figure a student needs to answer this question.',
+        `Question: ${String(question || '').slice(0, 600)}`,
+        'Describe ONLY the objects/apparatus/structure to draw and up to 6 part labels.',
+        'Do NOT state any result, outcome, conclusion, explanation or answer, and do not quote the question.',
+        'Return JSON only: {"brief":"<= 35 words","labels":["short label", "..."]}',
+      ].join('\n'),
+      { maxTokens: 200, temperature: 0, usageLabel: 'diagram-brief' },
+    );
+    const json = JSON.parse(String(raw).match(/\{[\s\S]*\}/)?.[0] || '{}');
+    const brief = String(json.brief || '').trim();
+    const labels = Array.isArray(json.labels) ? json.labels.map((l) => String(l).trim()).filter(Boolean).slice(0, 6) : [];
+    if (!brief) return fallback;
+    return labels.length ? `${brief} Labels: ${labels.join(', ')}.` : brief;
+  } catch {
+    return fallback;
+  }
 }
 
 function extractInlineImage(payload) {
@@ -213,9 +247,39 @@ async function saveDiagramBuffer(base64Data, mime) {
 export function questionNeedsDiagram(q) {
   if (!q || typeof q !== 'object') return false;
   if (q.imageUrl && String(q.imageUrl).trim()) return false;
-  return truthyFlag(q.newAssetRequired) && Boolean(
+  // The six-section prompts mark figure questions with needsDiagram +
+  // imagePrompt. Requiring only newAssetRequired (which nothing sets) meant no
+  // diagram was generated at all after the multimodal upgrade.
+  // A stem that says "observe the diagram below" needs a figure even when the
+  // model forgot to set needsDiagram; otherwise it points at nothing.
+  const wantsFigure =
+    truthyFlag(q.newAssetRequired) ||
+    truthyFlag(q.needsDiagram) ||
+    truthyFlag(q.needs_diagram) ||
+    truthyFlag(q.needsFigure) ||
+    isImageStemQuestion(extractQuestionText(q));
+  return wantsFigure && Boolean(
     String(q.imagePrompt || q.image_prompt || q.figurePrompt || extractQuestionText(q)).trim(),
   );
+}
+
+/**
+ * AI diagrams show immediately by default (still listed in Assessment Assets
+ * for later rejection). AI_DIAGRAM_REQUIRE_APPROVAL=true restores the
+ * hold-for-review behaviour.
+ */
+export function aiDiagramsRequireApproval() {
+  return isTruthyEnv(process.env.AI_DIAGRAM_REQUIRE_APPROVAL, false);
+}
+
+function attachDiagram(q, { imageUrl, assetId }) {
+  q.imageUrl = imageUrl;
+  q.sourceAssetIds = [...new Set([...(q.sourceAssetIds || []), assetId].filter(Boolean))];
+  q.needsDiagram = true;
+  q.validationFlags = (q.validationFlags || []).filter((flag) => flag !== 'PENDING_ASSET_APPROVAL');
+  if (!q.validationFlags.length) delete q.validationFlags;
+  delete q.pendingAssetId;
+  delete q.newAssetRequired;
 }
 
 function walkQuestions(node, visit) {
@@ -298,33 +362,38 @@ export async function enrichStructuredContentWithDiagrams(
   for (const q of candidates) {
     const question = extractQuestionText(q);
     const imagePrompt = String(q.imagePrompt || q.image_prompt || q.figurePrompt || '').trim();
-    const prompt = buildQualityDiagramPrompt({
-      imagePrompt: imagePrompt || question,
-      question,
-      subject,
-      topic,
-      subtopic,
-      classLabel,
-    });
-    const cacheKey = crypto.createHash('sha256').update(prompt).digest('hex');
+    // Keyed on the question, so duplicate copies (V2 + legacy) reuse one image.
+    const cacheKey = crypto
+      .createHash('sha256')
+      .update(['diagram-v2', imagePrompt || question, subject, topic, subtopic, classLabel].join('|'))
+      .digest('hex');
+    let prompt = '';
 
     try {
+      const requireApproval = aiDiagramsRequireApproval();
       const approved = await AssessmentAsset.findOne({ cacheKey, approvalStatus: 'approved' }).lean();
       if (approved) {
-        q.imageUrl = approved.imageUrl;
-        q.sourceAssetIds = [...new Set([...(q.sourceAssetIds || []), approved.assetId])];
-        q.needsDiagram = true;
-        delete q.newAssetRequired;
+        attachDiagram(q, approved);
         reused += 1;
         continue;
       }
       const pending = await AssessmentAsset.findOne({ cacheKey, approvalStatus: 'pending_review' }).lean();
+      if (pending && !requireApproval) {
+        await AssessmentAsset.updateOne({ _id: pending._id }, { $set: { approvalStatus: 'approved' } });
+        attachDiagram(q, pending);
+        reused += 1;
+        continue;
+      }
       if (pending) {
         q.pendingAssetId = pending.assetId;
         q.validationFlags = [...new Set([...(q.validationFlags || []), 'PENDING_ASSET_APPROVAL'])];
         pendingReview += 1;
         continue;
       }
+      // The image model copies whatever text it is given into the picture.
+      // Give it a neutral brief (objects + labels only), never the question.
+      const brief = imagePrompt || (await deriveNeutralFigureBrief(question, { subject, topic, subtopic }));
+      prompt = buildQualityDiagramPrompt({ imagePrompt: brief, question: '', subject, topic, subtopic, classLabel });
       const image = await callGeminiImage(prompt);
       const saved = await saveDiagramBuffer(image.data, image.mime);
       const assetId = `ASSESSMENT_ASSET_${cacheKey.slice(0, 20)}`;
@@ -337,15 +406,19 @@ export async function enrichStructuredContentWithDiagrams(
         classLabel,
         topic,
         subtopic,
-        approvalStatus: 'pending_review',
+        approvalStatus: requireApproval ? 'pending_review' : 'approved',
         model: resolveImageModel(),
       });
-      q.pendingAssetId = assetId;
-      q.validationFlags = [...new Set([...(q.validationFlags || []), 'PENDING_ASSET_APPROVAL'])];
-      delete q.needsDiagram;
-      delete q.newAssetRequired;
       generated += 1;
-      pendingReview += 1;
+      if (requireApproval) {
+        q.pendingAssetId = assetId;
+        q.validationFlags = [...new Set([...(q.validationFlags || []), 'PENDING_ASSET_APPROVAL'])];
+        delete q.needsDiagram;
+        delete q.newAssetRequired;
+        pendingReview += 1;
+      } else {
+        attachDiagram(q, { imageUrl: saved.imageUrl, assetId });
+      }
     } catch (err) {
       failed += 1;
       console.warn(

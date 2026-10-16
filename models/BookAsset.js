@@ -18,6 +18,8 @@ const bookAssetSchema = new mongoose.Schema(
     labels: { type: [String], default: [] },
     sourceBBox: { type: [Number], default: [] },
     assetPath: { type: String, default: '' },
+    /** Public URL of the cropped textbook figure (PNG), when one was cut out. */
+    imageUrl: { type: String, default: '' },
     board: { type: String, default: '', trim: true },
     class: { type: String, default: '', trim: true },
     subject: { type: String, default: '', trim: true },
