@@ -10,6 +10,7 @@ import {
   enrichBookCurriculumFields,
   listImportableLearningContent,
   scheduleReextractAndIndexBook,
+  failedIndexState,
   deleteBook,
   getBookStats,
 } from '../services/book-ingestion-service.js';
@@ -27,20 +28,25 @@ export async function listBooks(req, res) {
   try {
     // A process restart during background indexing previously left books showing
     // "Processing / 0 chunks" forever. Mark interrupted jobs as retryable failures.
+    // Running jobs refresh updatedAt with every progress step, so 20 quiet
+    // minutes means the job died. Keep the previous index when it survived.
     const staleBefore = new Date(Date.now() - 20 * 60 * 1000);
-    await Book.updateMany(
-      {
-        processingStatus: { $in: ['pending', 'processing'] },
-        chunkCount: { $in: [0, null] },
-        updatedAt: { $lt: staleBefore },
-      },
-      {
-        $set: {
-          processingStatus: 'failed',
-          processingError: 'Indexing was interrupted or timed out. Click Re-index to retry.',
+    const staleBooks = await Book.find({
+      processingStatus: { $in: ['pending', 'processing'] },
+      updatedAt: { $lt: staleBefore },
+    }).select('_id').lean();
+    for (const stale of staleBooks) {
+      const existingChunks = await BookChunk.countDocuments({ bookId: stale._id });
+      await Book.updateOne(
+        { _id: stale._id },
+        {
+          $set: {
+            ...failedIndexState(existingChunks, 'Indexing was interrupted or timed out. Click Re-index to retry.'),
+            'indexProgress.stage': 'failed',
+          },
         },
-      },
-    );
+      );
+    }
     const { board, class: classLabel, subject, status, productCategory } = req.query;
     const filter = {};
     if (board) filter.board = board;
@@ -54,7 +60,7 @@ export async function listBooks(req, res) {
 
     const books = await Book.find(filter)
       .select(
-        'title board class subject productCategory topic subtopic corpusId sourcePriority difficultyBand edition approvalStatus chunkCount processingStatus processingError embeddingsCreated source generationStats updatedAt createdAt contentId chapters extractedTextLength curriculumMapping',
+        'title board class subject productCategory topic subtopic corpusId sourcePriority difficultyBand edition approvalStatus chunkCount processingStatus processingError embeddingsCreated source generationStats updatedAt createdAt contentId chapters extractedTextLength curriculumMapping indexProgress lastIndexedAt',
       )
       .sort({ updatedAt: -1 })
       .lean();
@@ -158,6 +164,7 @@ export async function reindexBook(req, res) {
 
     book.processingStatus = 'pending';
     book.processingError = '';
+    book.indexProgress = { stage: 'queued', label: 'Queued', done: 0, total: 0, percent: 0, startedAt: new Date(), updatedAt: new Date() };
     await book.save();
     scheduleReextractAndIndexBook(book._id);
 

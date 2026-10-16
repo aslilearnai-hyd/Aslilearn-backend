@@ -98,7 +98,7 @@ function matchExistingAsset(figure, pageAssets, used) {
  *
  * deps.locate(pngBuffer) → raw JSON text from a vision model (injected for tests)
  */
-export async function attachFigureImages({ bookId, buffer, assets = [], locate, maxPages, renderScale }) {
+export async function attachFigureImages({ bookId, buffer, assets = [], locate, maxPages, renderScale, onProgress }) {
   if (!bookFigureImagesEnabled() || !Buffer.isBuffer(buffer) || typeof locate !== 'function') {
     return { assets, croppedCount: 0, pagesScanned: 0 };
   }
@@ -120,6 +120,7 @@ export async function attachFigureImages({ bookId, buffer, assets = [], locate, 
 
   await fs.mkdir(FIGURE_DIR, { recursive: true });
   let croppedCount = 0;
+  let pagesDone = 0;
   const added = [];
   for (let i = 0; i < pages.length; i += 4) {
     const batch = pages.slice(i, i + 4);
@@ -134,6 +135,8 @@ export async function attachFigureImages({ bookId, buffer, assets = [], locate, 
       await parser.destroy().catch(() => {});
     }
     for (const shot of shots.pages || []) {
+      pagesDone += 1;
+      if (typeof onProgress === 'function') await Promise.resolve(onProgress(pagesDone, pages.length)).catch(() => {});
       const png = Buffer.from(shot.data);
       let figures = [];
       try {

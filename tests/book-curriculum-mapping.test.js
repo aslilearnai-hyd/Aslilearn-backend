@@ -287,8 +287,10 @@ test('retrieval route: strict ID filter, fail closed, legacy for unmapped books'
     { bookId: 'b', topicName: 'Ch3', subtopicName: 'Sublimation', curriculum: { ...curriculum, aiSubtopicId: '' } },
     mapped,
   );
-  assert.equal(missingSub.mode, 'blocked');
-  assert.equal(missingSub.status, 'rag_scope_empty');
+  // Subtopic name not in the book's curriculum: use that chapter, don't stop.
+  assert.equal(missingSub.mode, 'strict');
+  assert.equal(missingSub.fallback, 'topic');
+  assert.deepEqual(missingSub.filter, { aiTopicKey: 'T3' });
 
   const legacy = await resolveCurriculumRetrievalRoute({ bookId: 'b', topicName: 'Ch3', curriculum }, { hasMapped: async () => false });
   assert.equal(legacy.mode, 'legacy');
@@ -482,4 +484,32 @@ test('effective mapping status requires real subtopic coverage', async () => {
   assert.equal(await st({ status: 'ready', mappedSubtopics: 0, totalSubtopics: 28 }), 'needs_review');
   assert.equal(await st({ status: 'needs_review', mappedSubtopics: 7, totalSubtopics: 111 }), 'needs_review');
   assert.equal(await st({}), 'not_mapped');
+});
+
+test('a failed re-index keeps the previous index usable', async () => {
+  const { failedIndexState, bandPercent } = await import('../ai/rag/books/book-ingestion-service.js');
+  assert.deepEqual(failedIndexState(70, 'Gemini timeout'), {
+    processingStatus: 'indexed',
+    processingError: 'Re-index failed, previous index kept: Gemini timeout',
+  });
+  assert.equal(failedIndexState(0, 'Gemini timeout').processingStatus, 'failed');
+  assert.equal(bandPercent(50, 95, 0, 100), 50);
+  assert.equal(bandPercent(50, 95, 50, 100), 72.5);
+  assert.equal(bandPercent(50, 95, 120, 100), 95);
+  assert.equal(bandPercent(12, 40, 3, 0), 12);
+});
+
+test('selection resolves inside the book own curriculum tree by name', async () => {
+  const { resolveSelectionInTree } = await import('../ai/rag/books/book-curriculum-service.js');
+  const t = tree();
+  const ch3 = t.topics[0];
+  const sel = resolveSelectionInTree(t, { topicName: 'Chapter 3 - Matter in Our Surroundings', subtopicName: 'evaporation' });
+  assert.equal(sel.aiTopicKey, ch3.topicKey);
+  assert.equal(sel.aiSubtopicId, 'st0302');
+  // Same chapter written without the "Chapter 3 -" prefix still resolves.
+  assert.equal(resolveSelectionInTree(t, { topicName: 'Matter in Our Surroundings' }).aiTopicKey, ch3.topicKey);
+  const unknownSub = resolveSelectionInTree(t, { topicName: 'Chapter 3 - Matter in Our Surroundings', subtopicName: 'Sublimation' });
+  assert.equal(unknownSub.aiSubtopicId, '');
+  assert.equal(unknownSub.subtopicFound, false);
+  assert.equal(resolveSelectionInTree(t, { topicName: 'Photosynthesis' }), null, 'topic not in this book → legacy retrieval');
 });

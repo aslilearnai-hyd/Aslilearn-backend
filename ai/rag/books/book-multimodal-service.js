@@ -79,7 +79,7 @@ export function resolveBookAssetApprovalStatus(book = {}) {
   return book.approvalStatus === 'approved' ? 'approved' : 'pending_review';
 }
 
-export async function extractAndStoreBookAssets({ book, buffer, mimeType = 'application/pdf' }) {
+export async function extractAndStoreBookAssets({ book, buffer, mimeType = 'application/pdf', onFigureProgress }) {
   const enabled = String(process.env.BOOK_MULTIMODAL_INGESTION ?? 'true').toLowerCase() !== 'false';
   if (!enabled || !book?._id || !Buffer.isBuffer(buffer)) return { assetCount: 0, skipped: true };
   const base64 = buffer.toString('base64');
@@ -104,6 +104,7 @@ Do not invent missing labels or values. Exclude decorative images. Return JSON o
     bookId: book._id,
     buffer,
     assets: assets.map((asset, index) => ({ ...asset, assetId: assetIdFor(book._id, asset, index) })),
+    onProgress: onFigureProgress,
     locate: (png) => extractTextFromDocument(png.toString('base64'), 'image/png', FIGURE_BOX_PROMPT, {
       temperature: 0,
       maxTokens: 1500,

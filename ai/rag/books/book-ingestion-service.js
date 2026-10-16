@@ -379,11 +379,58 @@ function scheduleBackgroundWork(label, work) {
   });
 }
 
+/**
+ * Record (re)index progress for the admin list. Percent bands:
+ * reading 0-10, assets/figures 10-40, mapping 40-50, embedding 50-95, saving 95-100.
+ */
+export async function setIndexProgress(bookId, { stage, label, done = 0, total = 0, percent, start = false }) {
+  try {
+    const set = {
+      'indexProgress.stage': stage,
+      'indexProgress.label': String(label || '').slice(0, 200),
+      'indexProgress.done': done,
+      'indexProgress.total': total,
+      'indexProgress.percent': Math.max(0, Math.min(100, Math.round(Number(percent) || 0))),
+      'indexProgress.updatedAt': new Date(),
+    };
+    if (start) set['indexProgress.startedAt'] = new Date();
+    await Book.updateOne({ _id: bookId }, { $set: set });
+  } catch {
+    /* progress is cosmetic */
+  }
+}
+
+function figureProgressReporter(bookId) {
+  return (done, total) => setIndexProgress(bookId, {
+    stage: 'figures',
+    label: `Cropping textbook figures (page ${done}/${total})`,
+    done,
+    total,
+    percent: bandPercent(12, 40, done, total),
+  });
+}
+
+export function bandPercent(from, to, done, total) {
+  if (!total) return from;
+  return from + ((to - from) * Math.min(done, total)) / total;
+}
+
+/** Status to record when a (re)index job fails, given how many chunks survive. */
+export function failedIndexState(existingChunks, message) {
+  const text = String(message || 'Indexing failed');
+  // A failed re-index keeps the previous chunks, so the book stays usable.
+  return existingChunks > 0
+    ? { processingStatus: 'indexed', processingError: `Re-index failed, previous index kept: ${text}`.slice(0, 2000) }
+    : { processingStatus: 'failed', processingError: text.slice(0, 2000) };
+}
+
 async function markBookFailed(bookId, message) {
   try {
+    const existingChunks = await BookChunk.countDocuments({ bookId });
     await Book.findByIdAndUpdate(bookId, {
-      processingStatus: 'failed',
-      processingError: String(message || 'Indexing failed').slice(0, 2000),
+      ...failedIndexState(existingChunks, message),
+      'indexProgress.stage': 'failed',
+      'indexProgress.updatedAt': new Date(),
     });
   } catch {
     /* ignore secondary failures */
@@ -453,7 +500,13 @@ export function scheduleExtractAndIndexFromBuffer(bookId, buffer, mimeType, orig
         originalName || book.originalFileName,
       );
       if (!ok) return;
-      await extractAndStoreBookAssets({ book, buffer, mimeType: mimeType || book.mimeType }).catch((error) => {
+      await setIndexProgress(book._id, { stage: 'assets', label: 'Finding equations, tables and figures', percent: 10 });
+      await extractAndStoreBookAssets({
+        book,
+        buffer,
+        mimeType: mimeType || book.mimeType,
+        onFigureProgress: figureProgressReporter(book._id),
+      }).catch((error) => {
         console.warn('[book-knowledge] multimodal extraction skipped:', error?.message || error);
       });
       await indexBook(bookId);
@@ -481,10 +534,12 @@ export function scheduleExtractAndIndexFromContentFile(bookId) {
         book.originalFileName || path.basename(String(book.fileUrl || '')),
       );
       if (!ok) return;
+      await setIndexProgress(book._id, { stage: 'assets', label: 'Finding equations, tables and figures', percent: 10 });
       await extractAndStoreBookAssets({
         book,
         buffer,
         mimeType: book.mimeType || mimeFromFileUrl(book.fileUrl),
+        onFigureProgress: figureProgressReporter(book._id),
       }).catch((error) => {
         console.warn('[book-knowledge] multimodal extraction skipped:', error?.message || error);
       });
@@ -518,13 +573,20 @@ export async function reextractAndIndexBook(bookId) {
   book.processingStatus = 'processing';
   book.processingError = '';
   await book.save();
+  await setIndexProgress(book._id, { stage: 'reading', label: 'Reading the PDF', percent: 2, start: true });
 
   const buffer = await getPdfBufferFromStorage(book);
   const mimeType = book.mimeType || mimeFromFileUrl(book.fileUrl);
   const originalName = book.originalFileName || path.basename(String(book.fileUrl || ''));
   const ok = await applyExtractedTextToBook(book, buffer, mimeType, originalName);
   if (!ok) return { bookId: book._id, status: book.processingStatus, indexed: false };
-  await extractAndStoreBookAssets({ book, buffer, mimeType }).catch((error) => {
+  await setIndexProgress(book._id, { stage: 'assets', label: 'Finding equations, tables and figures', percent: 10 });
+  await extractAndStoreBookAssets({
+    book,
+    buffer,
+    mimeType,
+    onFigureProgress: figureProgressReporter(book._id),
+  }).catch((error) => {
     console.warn('[book-knowledge] multimodal re-extraction skipped:', error?.message || error);
   });
   const indexed = await indexBook(bookId);
@@ -876,6 +938,13 @@ async function runBookIndex(bookId) {
       throw new Error(book.processingError);
     }
 
+    const freshJob = !book.indexProgress?.startedAt || ['done', 'failed', ''].includes(book.indexProgress?.stage || '');
+    await setIndexProgress(book._id, {
+      stage: 'mapping',
+      label: 'Mapping book sections to AI Tools topics',
+      percent: 42,
+      start: freshJob,
+    });
     const indexedAssets = await BookAsset.find({ bookId: book._id })
       .select('assetId chapter subtopic page caption description')
       .lean();
@@ -887,8 +956,8 @@ async function runBookIndex(bookId) {
       return null;
     });
 
-    await BookChunk.deleteMany({ bookId: book._id });
-
+    // Old chunks stay in place (and keep serving generation) until the new
+    // set is fully embedded; they are swapped out in one step below.
     const chapterSegments = splitIntoChapters(fullText);
     const allChunkDocs = [];
     const chunkCandidates = [];
@@ -1004,9 +1073,16 @@ async function runBookIndex(bookId) {
       }
     }
 
-    // Persist progress in bounded batches. A restart no longer leaves a large
-    // book at 0 chunks after hundreds of successful embedding calls.
+    // Embed everything first, keeping the previous index live. A crash or
+    // restart mid-way leaves the old chunks untouched instead of a 0-chunk book.
     const insertBatchSize = 25;
+    await setIndexProgress(book._id, {
+      stage: 'embedding',
+      label: `Embedding chunks (0/${chunkCandidates.length})`,
+      done: 0,
+      total: chunkCandidates.length,
+      percent: 50,
+    });
     for (let start = 0; start < chunkCandidates.length; start += insertBatchSize) {
       const candidates = chunkCandidates.slice(start, start + insertBatchSize);
       if (!candidates.length) continue;
@@ -1022,11 +1098,26 @@ async function runBookIndex(bookId) {
           return { ...candidate, embedding, embeddingModel };
         },
       );
-      // Reindex requests can overlap across app instances. Idempotent upserts
-      // prevent the unique {bookId, chunkIndex} index from turning a successful
-      // refresh into E11000 after most chunks have already been written.
+      allChunkDocs.push(...embeddedBatch);
+      await setIndexProgress(book._id, {
+        stage: 'embedding',
+        label: `Embedding chunks (${allChunkDocs.length}/${chunkCandidates.length})`,
+        done: allChunkDocs.length,
+        total: chunkCandidates.length,
+        percent: bandPercent(50, 95, allChunkDocs.length, chunkCandidates.length),
+      });
+    }
+
+    if (allChunkDocs.length < 1) {
+      throw new Error('No book chunks were produced from the extracted source text.');
+    }
+    // Swap: replace the previous index in one short step. Upserts keep
+    // overlapping re-index requests from failing on the unique
+    // {bookId, chunkIndex} index; leftovers beyond the new range are removed.
+    await setIndexProgress(book._id, { stage: 'saving', label: 'Saving the new index', percent: 96 });
+    for (let start = 0; start < allChunkDocs.length; start += 100) {
       await BookChunk.bulkWrite(
-        embeddedBatch.map((doc) => ({
+        allChunkDocs.slice(start, start + 100).map((doc) => ({
           replaceOne: {
             filter: { bookId: doc.bookId, chunkIndex: doc.chunkIndex },
             replacement: doc,
@@ -1035,12 +1126,8 @@ async function runBookIndex(bookId) {
         })),
         { ordered: false },
       );
-      allChunkDocs.push(...embeddedBatch);
-      await Book.updateOne(
-        { _id: book._id },
-        { $set: { chunkCount: allChunkDocs.length, processingStatus: 'processing' } },
-      );
     }
+    await BookChunk.deleteMany({ bookId: book._id, chunkIndex: { $gte: allChunkDocs.length } });
 
     const persistedChunkCount = await BookChunk.countDocuments({ bookId: book._id });
     if (persistedChunkCount < 1) {
@@ -1067,6 +1154,15 @@ async function runBookIndex(bookId) {
       ? chaptersFromCurriculumSections(curriculumPlan.sections)
       : chapterSegments.map(({ text: _t, ...ch }) => ch);
     book.lastIndexedAt = new Date();
+    book.indexProgress = {
+      ...(book.indexProgress?.toObject?.() || book.indexProgress || {}),
+      stage: 'done',
+      label: 'Indexed',
+      done: persistedChunkCount,
+      total: persistedChunkCount,
+      percent: 100,
+      updatedAt: new Date(),
+    };
     await book.save();
 
     return {
@@ -1076,8 +1172,16 @@ async function runBookIndex(bookId) {
       curriculumMapping: book.curriculumMapping?.status || 'no_curriculum',
     };
   } catch (error) {
-    book.processingStatus = 'failed';
-    book.processingError = error.message || 'Indexing failed';
+    if (book.processingStatus !== 'needs_ocr') {
+      const existingChunks = await BookChunk.countDocuments({ bookId: book._id }).catch(() => 0);
+      Object.assign(book, failedIndexState(existingChunks, error.message));
+    }
+    book.indexProgress = {
+      ...(book.indexProgress?.toObject?.() || book.indexProgress || {}),
+      stage: 'failed',
+      label: String(error.message || 'Indexing failed').slice(0, 200),
+      updatedAt: new Date(),
+    };
     await book.save();
     throw error;
   }

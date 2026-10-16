@@ -74,7 +74,7 @@ import { isSixSectionV2Enabled, buildV2VariantHint } from '../../prompt-versioni
 import { isV2SupportedTool, v2ToolFamily } from '../../prompt-versioning/tool-packs.js';
 import { mapV2StructuredToLegacy, ensureV2WorksheetCoreSections, syncLegacyWorksheetSectionsIntoV2, countUsableQuestionsFromV2OrLegacy, trimUsableQuestionsToCount } from '../../../utils/v2-structured-to-legacy.js';
 import { pickQuestionCountParams } from '../../../utils/questionComposition.js';
-import { resolveSelectedCurriculumScope } from '../../rag/books/book-curriculum-service.js';
+import { resolveSelectionForBook } from '../../rag/books/book-curriculum-service.js';
 import { attachTextbookFigures } from '../../rag/books/book-figure-images.js';
 import { enrichStructuredContentWithDiagrams } from '../diagrams/ai-diagram-generation-service.js';
 import {
@@ -327,7 +327,9 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
 
   const book = await Book.findById(bookId).lean();
   if (!book) throw new Error('Book not found.');
-  if (book.processingStatus !== 'indexed' || !book.embeddingsCreated) {
+  // During a re-index the previous chunks stay live, so generation can run.
+  const reindexingWithChunks = ['processing', 'pending'].includes(book.processingStatus) && Number(book.chunkCount) > 0;
+  if ((book.processingStatus !== 'indexed' && !reindexingWithChunks) || !book.embeddingsCreated) {
     throw new Error('Book is not indexed yet. Upload and reindex the book first.');
   }
 
@@ -374,11 +376,9 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
   // Resolve the selection against AI Tools topics once. These DB IDs/labels —
   // not anything Gemini returns — are what retrieval filters on and what the
   // saved record carries.
-  const curriculum = await resolveSelectedCurriculumScope({
-    board: params.board || book.board,
-    classLabel: className,
-    subject: subjectName,
-    productCategory: productCategory || book.productCategory || '',
+  // Resolve against the BOOK's own curriculum (the tree it was mapped with),
+  // not the form's board/track/class, so the IDs always match its chunks.
+  const curriculum = await resolveSelectionForBook(book, {
     topicName,
     subtopicName: isWholeChapter ? '' : subtopicName,
     subTopics: combineMulti ? subTopicList : undefined,

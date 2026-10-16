@@ -26,6 +26,7 @@ import {
   slimGeneratorRecordForList,
 } from './aiGeneratorController.js';
 import { withMongoRetry, isMongoTransientError } from '../utils/mongo-retry.js';
+import { enrichBookCurriculumFields } from '../services/book-ingestion-service.js';
 import { mergeTokenUsageSnapshots } from '../utils/token-usage-merge.js';
 import { computeGeminiCostFromTokenUsage } from '../ai/providers/gemini-token-cost.js';
 import { allocateExpandedBatchTargets } from '../utils/expanded-batch-allocation.js';
@@ -677,16 +678,25 @@ export async function listBooksForGenerator(req, res) {
   if (!ensureSuperAdmin(req, res)) return;
   try {
     const { board, class: classLabel, subject } = req.query;
-    const filter = { processingStatus: 'indexed', embeddingsCreated: true };
+    // A book being re-indexed keeps its previous chunks live, so it stays
+    // selectable for generation.
+    const filter = {
+      embeddingsCreated: true,
+      $or: [
+        { processingStatus: 'indexed' },
+        { processingStatus: { $in: ['processing', 'pending'] }, chunkCount: { $gt: 0 } },
+      ],
+    };
     if (board) filter.board = board;
     if (classLabel) filter.class = classLabel;
     if (subject) filter.subject = subject;
 
     const books = await Book.find(filter)
-      .select('title board class subject source chunkCount generationStats processingStatus')
+      .select('title board class subject productCategory source contentId chunkCount generationStats processingStatus embeddingsCreated curriculumMapping')
       .sort({ title: 1 })
       .lean();
-    res.json({ success: true, data: books });
+    // Same board/class/subject labels as Book Knowledge Base.
+    res.json({ success: true, data: books.map((book) => enrichBookCurriculumFields(book)) });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message || 'Failed to list books.' });
   }

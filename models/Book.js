@@ -137,6 +137,16 @@ const bookSchema = new mongoose.Schema(
       geminiCallsUsed: { type: Number, default: 0 },
       mappedAt: { type: Date, default: null },
     },
+    /** Live progress of the current (re)index job; set to "done" at the end. */
+    indexProgress: {
+      stage: { type: String, default: '' },
+      label: { type: String, default: '' },
+      done: { type: Number, default: 0 },
+      total: { type: Number, default: 0 },
+      percent: { type: Number, default: 0 },
+      startedAt: { type: Date, default: null },
+      updatedAt: { type: Date, default: null },
+    },
     generationStats: {
       totalGenerations: { type: Number, default: 0 },
       lastGeneratedAt: { type: Date, default: null },

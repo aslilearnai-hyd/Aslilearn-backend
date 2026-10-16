@@ -7,7 +7,8 @@ import BookChunk from '../../../models/BookChunk.js';
 import BookAsset from '../../../models/BookAsset.js';
 import AiToolTopic from '../../../models/AiToolTopic.js';
 import { queryAiToolTopicRowsForScope } from '../../shared/ai-tool-topic-taxonomy.js';
-import { buildAiTopicKey, buildCurriculumTree, RETRIEVABLE_MAPPING_STATUSES } from './book-curriculum-mapper.js';
+import { buildAiTopicKey, buildCurriculumTree, lexicalSimilarity, RETRIEVABLE_MAPPING_STATUSES } from './book-curriculum-mapper.js';
+import { canonicalTopicKey } from '../../shared/ai-tool-topic-order.js';
 
 function scopeParams({ board, classLabel, className, class: cls, subject, subjectName, productCategory }) {
   return {
@@ -143,4 +144,49 @@ export async function syncCurriculumLabelsForTopicRow(before = {}, after = {}) {
     topicLevel = res.modifiedCount || 0;
   }
   return { chunks: (chunks.modifiedCount || 0) + topicLevel, assets: assets.modifiedCount || 0 };
+}
+
+function normalizedName(value = '') {
+  return canonicalTopicKey(String(value || '')) || String(value || '').trim().toLowerCase();
+}
+
+/**
+ * Find the user's Topic/Subtopic (by name) inside a given curriculum tree.
+ * Pure; used with the BOOK's own tree so generation resolves to exactly the
+ * IDs the book was mapped against, whatever board/track the form had selected.
+ */
+export function resolveSelectionInTree(tree, { topicName = '', subtopicName = '', subTopics } = {}) {
+  const wanted = normalizedName(topicName);
+  if (!tree?.topics?.length || !wanted) return null;
+  let topic = tree.topics.find((t) => sameText(t.topicName, topicName))
+    || tree.topics.find((t) => normalizedName(t.topicName) === wanted);
+  if (!topic) {
+    const scored = tree.topics
+      .map((t) => ({ t, score: lexicalSimilarity(topicName, t.topicName) }))
+      .sort((a, b) => b.score - a.score);
+    if (scored[0]?.score >= 0.85 && (!scored[1] || scored[0].score - scored[1].score >= 0.05)) topic = scored[0].t;
+  }
+  if (!topic) return null;
+  const findSub = (name) => topic.subtopics.find((s) => sameText(s.name, name))
+    || topic.subtopics.find((s) => normalizedName(s.name) === normalizedName(name));
+  const requested = String(subtopicName || '').trim();
+  const single = requested ? findSub(requested) : null;
+  const list = (Array.isArray(subTopics) ? subTopics : []).map((n) => findSub(n)).filter(Boolean);
+  return {
+    aiTopicKey: topic.topicKey,
+    topicName: topic.topicName,
+    aiSubtopicId: single ? single.id : '',
+    subtopicName: single ? single.name : '',
+    subtopicRequested: Boolean(requested),
+    subtopicFound: Boolean(single),
+    aiSubtopicIds: list.map((s) => s.id),
+    subtopicNames: list.map((s) => s.name),
+    resolvedFrom: 'book_tree',
+  };
+}
+
+/** Resolve a generation selection against the book's own curriculum tree. */
+export async function resolveSelectionForBook(book, selection = {}) {
+  const tree = await loadCurriculumTreeForBook(book);
+  return resolveSelectionInTree(tree, selection);
 }

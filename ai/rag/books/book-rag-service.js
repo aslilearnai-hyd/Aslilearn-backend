@@ -12,7 +12,7 @@ import {
   retrieveApprovedBookAssets,
 } from './book-multimodal-service.js';
 import { findScopeMismatches, RETRIEVABLE_MAPPING_STATUSES } from './book-curriculum-mapper.js';
-import { hasCurriculumMappedChunks, resolveSelectedCurriculumScope } from './book-curriculum-service.js';
+import { hasCurriculumMappedChunks, resolveSelectedCurriculumScope, resolveSelectionForBook } from './book-curriculum-service.js';
 
 const DEFAULT_TOP_K = Number(process.env.BOOK_RAG_TOP_K || process.env.RAG_TOP_K || 4);
 const DEFAULT_CANDIDATE_K = Number(process.env.BOOK_RAG_CANDIDATE_K || 16);
@@ -321,7 +321,11 @@ function isRequestedSubtopicList(scope = {}) {
  */
 export async function resolveCurriculumRetrievalRoute(scope = {}, deps = {}) {
   const hasMapped = deps.hasMapped || hasCurriculumMappedChunks;
-  const resolveSelection = deps.resolveSelection || resolveSelectedCurriculumScope;
+  const resolveSelection = deps.resolveSelection || (async (s) => {
+    if (!s.bookId) return resolveSelectedCurriculumScope(s);
+    const book = await Book.findById(s.bookId).select('board class subject productCategory').lean();
+    return book ? resolveSelectionForBook(book, s) : null;
+  });
   if (!envFlag('BOOK_RAG_CURRICULUM_ID_FILTER', true)) return { mode: 'legacy', reason: 'id_filter_disabled' };
   const requireMapping = envFlag('BOOK_RAG_REQUIRE_CURRICULUM_MAPPING', false);
 
@@ -351,7 +355,10 @@ export async function resolveCurriculumRetrievalRoute(scope = {}, deps = {}) {
   const subtopicName = String(scope.subtopicName || scope.subtopic || '').trim();
   if (subtopicName) {
     if (!curriculum.aiSubtopicId) {
-      return { mode: 'blocked', status: 'rag_scope_empty', reason: 'subtopic_not_in_curriculum', curriculum };
+      // The chapter is known but this subtopic name is not in the book's
+      // curriculum: use that chapter's passages, ranked for the subtopic.
+      const invariant = { aiTopicKey: curriculum.aiTopicKey };
+      return { mode: 'strict', filter: invariant, invariant, curriculum, fallback: 'topic', reason: 'subtopic_not_in_book_curriculum' };
     }
     const invariant = { aiTopicKey: curriculum.aiTopicKey, aiSubtopicId: curriculum.aiSubtopicId };
     return { mode: 'strict', filter: invariant, invariant, curriculum };
