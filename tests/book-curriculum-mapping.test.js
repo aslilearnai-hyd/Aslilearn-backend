@@ -246,7 +246,8 @@ test('mapping health gates readiness', () => {
     { level: 1, wordCount: 100, aiTopicKey: 'x', mappingStatus: MAPPING_STATUS.AUTO, mappingConfidence: 0.97 },
     { level: 2, wordCount: 400, aiTopicKey: 'x', aiSubtopicId: 'st0302', mappingStatus: MAPPING_STATUS.AUTO, mappingConfidence: 0.97 },
   ], t, { chunks: [{ aiSubtopicId: 'st0302' }, { aiSubtopicId: '' }] });
-  assert.equal(ready.status, 'ready');
+  // Only 1 of 5 subtopics has text: not ready even though all text is settled.
+  assert.equal(ready.status, 'needs_review');
   assert.equal(ready.mappedSubtopics, 1);
   assert.equal(ready.totalSubtopics, 5);
   assert.equal(ready.chunksWithoutSubtopic, 1);
@@ -471,4 +472,14 @@ test('generated figure images are public; other uploads stay private', async () 
   assert.equal(isPublicUploadPath('/book-figures/BOOK_FIG_x.png'), true);
   assert.equal(isPublicUploadPath('/pdf-knowledge/book.pdf'), false);
   assert.equal(isPublicUploadPath('/content/notes.pdf'), false);
+});
+
+test('effective mapping status requires real subtopic coverage', async () => {
+  const { bookMappingStatus } = await import('../ai/rag/books/book-rag-service.js');
+  const st = (m) => bookMappingStatus('x', { book: { curriculumMapping: m } });
+  assert.equal(await st({ status: 'ready', mappedSubtopics: 44, totalSubtopics: 44 }), 'ready');
+  assert.equal(await st({ status: 'ready', mappedSubtopics: 39, totalSubtopics: 40 }), 'ready');
+  assert.equal(await st({ status: 'ready', mappedSubtopics: 0, totalSubtopics: 28 }), 'needs_review');
+  assert.equal(await st({ status: 'needs_review', mappedSubtopics: 7, totalSubtopics: 111 }), 'needs_review');
+  assert.equal(await st({}), 'not_mapped');
 });

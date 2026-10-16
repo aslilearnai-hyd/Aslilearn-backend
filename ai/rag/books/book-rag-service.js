@@ -1,4 +1,5 @@
 import BookChunk from '../../../models/BookChunk.js';
+import Book from '../../../models/Book.js';
 import { generateEmbedding } from '../pdf/pdf-rag-service.js';
 import {
   cosineSimilarity,
@@ -372,6 +373,28 @@ export async function resolveCurriculumRetrievalRoute(scope = {}, deps = {}) {
   return { mode: 'strict', filter: invariant, invariant, curriculum };
 }
 
+/**
+ * Effective mapping status: "ready" only when the stored status is ready AND
+ * most curriculum subtopics actually have text (a book whose headings do not
+ * match the AI Tools topics can map 0/28 subtopics yet report "ready").
+ */
+export async function bookMappingStatus(bookId, deps = {}) {
+  try {
+    const book = deps.book || await Book.findById(bookId)
+      .select('curriculumMapping.status curriculumMapping.mappedSubtopics curriculumMapping.totalSubtopics')
+      .lean();
+    const m = book?.curriculumMapping || {};
+    const status = m.status || 'not_mapped';
+    if (status !== 'ready') return status;
+    const total = Number(m.totalSubtopics) || 0;
+    const mapped = Number(m.mappedSubtopics) || 0;
+    const minRatio = Number(process.env.BOOK_MAPPING_READY_MIN_SUBTOPIC_RATIO) || 0.8;
+    return total > 0 && mapped / total < minRatio ? 'needs_review' : 'ready';
+  } catch {
+    return 'unknown';
+  }
+}
+
 function emptyCurriculumResult(scope, query, route = {}) {
   return {
     chunks: [],
@@ -420,7 +443,7 @@ export async function retrieveBookContextForGeneration(scope = {}) {
   }
 
   // Route before embedding the query: a blocked scope must not spend a call.
-  const curriculumRoute = await resolveCurriculumRetrievalRoute(scope);
+  let curriculumRoute = await resolveCurriculumRetrievalRoute(scope);
   if (curriculumRoute.mode === 'blocked') {
     return emptyCurriculumResult(scope, query, curriculumRoute);
   }
@@ -458,9 +481,38 @@ export async function retrieveBookContextForGeneration(scope = {}) {
       lambda: process.env.BOOK_RAG_MMR_LAMBDA,
       coveragePenalty: isWholeChapter ? 0.1 : 0.04,
     });
-    if (!chunks.length) {
-      return emptyCurriculumResult(scope, query, { ...curriculumRoute, status: 'rag_scope_empty' });
+    // Subtopic has no mapped text in this book: use the same chapter's
+    // passages ranked for the subtopic. Never broadens past the chapter.
+    // A fully mapped book that has no text for this subtopic genuinely does
+    // not cover it: fail closed. Fallbacks are only for incomplete mappings.
+    const mappingStatus = !chunks.length && scope.bookId ? await bookMappingStatus(scope.bookId) : 'ready';
+    if (!chunks.length && mappingStatus !== 'ready' && curriculumRoute.filter.aiSubtopicId && envFlag('BOOK_RAG_SUBTOPIC_TOPIC_FALLBACK', true)) {
+      const topicScoped = await baseSearch({ aiTopicKey: curriculumRoute.curriculum.aiTopicKey });
+      candidateChunks = rerankBookChunks(topicScoped, scope, candidateK);
+      chunks = selectDiverseBookChunks(candidateChunks, topK, {
+        lambda: process.env.BOOK_RAG_MMR_LAMBDA,
+        coveragePenalty: 0.04,
+      });
+      if (chunks.length) {
+        curriculumRoute = {
+          ...curriculumRoute,
+          invariant: { aiTopicKey: curriculumRoute.curriculum.aiTopicKey },
+          fallback: 'topic',
+        };
+        bestRawScore = Math.max(0, ...candidateChunks.map((chunk) => Number(chunk.rawScore) || 0));
+      }
     }
+    if (!chunks.length) {
+      // A book whose mapping is incomplete must not lose generation it had
+      // before mapping existed: fall back to the old book-wide search. Only a
+      // fully mapped ("ready") book fails closed.
+      if (mappingStatus === 'ready' || !envFlag('BOOK_RAG_INCOMPLETE_MAPPING_LEGACY_FALLBACK', true)) {
+        return emptyCurriculumResult(scope, query, { ...curriculumRoute, status: 'rag_scope_empty' });
+      }
+      curriculumRoute = { mode: 'legacy', reason: `mapping_${mappingStatus}_no_scope_content`, curriculum: curriculumRoute.curriculum };
+    }
+  }
+  if (curriculumRoute.mode === 'strict') {
     const mismatches = findScopeMismatches([...candidateChunks, ...chunks], curriculumRoute.invariant);
     if (mismatches.length) {
       console.error('[book-rag] RAG_SCOPE_MISMATCH', {
@@ -545,9 +597,11 @@ export async function retrieveBookContextForGeneration(scope = {}) {
     hasBookPassages: chunks.length > 0,
     retrievalQuery: query,
     retrievalStatus: chunks.length
-      ? weakContextFallbackUsed
-        ? 'ready_selected_book_fallback'
-        : 'ready'
+      ? curriculumRoute.fallback === 'topic'
+        ? 'ready_topic_fallback'
+        : weakContextFallbackUsed
+          ? 'ready_selected_book_fallback'
+          : 'ready'
       : candidateChunks.length
         ? 'weak_context'
         : 'no_context',

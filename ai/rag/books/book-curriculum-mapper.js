@@ -1051,6 +1051,9 @@ export function computeMappingHealth(sections = [], tree, { chunks = [] } = {}) 
   if (!tree || !tree.topics.length) status = 'no_curriculum';
   else if (!retrievable.length) status = 'unmapped';
   else if (coverage < minCoverage || unmappedHighValue.length > 0) status = 'needs_review';
+  // Text can all be "settled" at chapter level while almost no subtopic has
+  // content (headings that don't match the AI Tools topics). Not ready.
+  else if (totalSubtopics > 0 && mappedSubtopics.size / totalSubtopics < envNumber('BOOK_MAPPING_READY_MIN_SUBTOPIC_RATIO', 0.8)) status = 'needs_review';
   return {
     status,
     version: CURRICULUM_MAPPING_VERSION,
