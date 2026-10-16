@@ -308,7 +308,7 @@ test('scope invariant flags any chunk from another subtopic', () => {
   const chunks = [{ aiTopicKey: 'T', aiSubtopicId: 'st0302' }, { aiTopicKey: 'T', aiSubtopicId: 'st0301' }];
   assert.equal(findScopeMismatches(chunks, { aiTopicKey: 'T', aiSubtopicId: 'st0302' }).length, 1);
   assert.equal(findScopeMismatches(chunks, { aiTopicKey: 'T' }).length, 0);
-  assert.match(bookRetrievalFailureMessage('rag_scope_empty'), /no content mapped/);
+  assert.match(bookRetrievalFailureMessage('rag_scope_empty'), /no text for the selected chapter/);
 });
 
 test('real-book patterns: running headers, contents rows, question-style headings', () => {
@@ -512,4 +512,15 @@ test('selection resolves inside the book own curriculum tree by name', async () 
   assert.equal(unknownSub.aiSubtopicId, '');
   assert.equal(unknownSub.subtopicFound, false);
   assert.equal(resolveSelectionInTree(t, { topicName: 'Photosynthesis' }), null, 'topic not in this book → legacy retrieval');
+});
+
+test('combined subtopic names missing from the book use the chapter', async () => {
+  const curriculum = { aiTopicKey: 'T3', aiSubtopicId: '', aiSubtopicIds: [], topicName: 'Ch3', subtopicName: '' };
+  const route = await resolveCurriculumRetrievalRoute(
+    { bookId: 'b', topicName: 'Ch3', subTopics: ['Pyramid of Numbers', 'Pyramid of Energy'], curriculum },
+    { hasMapped: async () => true },
+  );
+  assert.equal(route.mode, 'strict');
+  assert.equal(route.fallback, 'topic');
+  assert.deepEqual(route.filter, { aiTopicKey: 'T3' });
 });

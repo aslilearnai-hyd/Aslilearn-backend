@@ -304,7 +304,7 @@ export function bookRetrievalFailureMessage(status = '') {
     case 'weak_context':
       return 'The selected textbook passages were too weak to safely ground an exam. Reindex the book or choose a more specific chapter/subtopic.';
     case 'rag_scope_empty':
-      return 'This book has no content mapped to the selected topic/subtopic yet. Review the book curriculum mapping, or pick a subtopic the book covers.';
+      return 'This book has no text for the selected chapter. Pick a chapter this book covers, or check the book in Book Knowledge Base → Curriculum.';
     case 'rag_scope_mismatch':
       return 'Textbook retrieval returned passages from a different subtopic, so generation was stopped. Reindex the book and check its curriculum mapping.';
     case 'curriculum_unmapped':

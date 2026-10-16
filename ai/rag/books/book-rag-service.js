@@ -366,7 +366,9 @@ export async function resolveCurriculumRetrievalRoute(scope = {}, deps = {}) {
   if (isRequestedSubtopicList(scope)) {
     const ids = curriculum.aiSubtopicIds || [];
     if (!ids.length) {
-      return { mode: 'blocked', status: 'rag_scope_empty', reason: 'subtopics_not_in_curriculum', curriculum };
+      // None of the selected names is in the book's curriculum: use the chapter.
+      const invariant = { aiTopicKey: curriculum.aiTopicKey };
+      return { mode: 'strict', filter: invariant, invariant, curriculum, fallback: 'topic', reason: 'subtopics_not_in_book_curriculum' };
     }
     return {
       mode: 'strict',
@@ -495,7 +497,8 @@ export async function retrieveBookContextForGeneration(scope = {}) {
     // Energy"), so use the same chapter's passages ranked for the subtopic.
     // Never broadens past the chapter.
     const mappingStatus = !chunks.length && scope.bookId ? await bookMappingStatus(scope.bookId) : 'ready';
-    if (!chunks.length && curriculumRoute.filter.aiSubtopicId && envFlag('BOOK_RAG_SUBTOPIC_TOPIC_FALLBACK', true)) {
+    const subtopicScoped = Boolean(curriculumRoute.filter.aiSubtopicId || curriculumRoute.filter.aiSubtopicIds?.length);
+    if (!chunks.length && subtopicScoped && envFlag('BOOK_RAG_SUBTOPIC_TOPIC_FALLBACK', true)) {
       const topicScoped = await baseSearch({ aiTopicKey: curriculumRoute.curriculum.aiTopicKey });
       candidateChunks = rerankBookChunks(topicScoped, scope, candidateK);
       chunks = selectDiverseBookChunks(candidateChunks, topK, {
