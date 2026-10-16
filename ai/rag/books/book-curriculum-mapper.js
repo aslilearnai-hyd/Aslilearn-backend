@@ -543,6 +543,9 @@ function embeddingConfidence(top, second) {
   const t = mappingThresholds();
   const gap = top - (second ?? 0);
   if (top >= t.embeddingHigh && gap >= t.margin) return 0.9;
+  // A clear lead over every other candidate is strong evidence even below the
+  // absolute bar (e.g. 0.795 vs 0.681 for a chapter described by its headings).
+  if (top >= t.embeddingMid + 0.05 && gap >= envNumber('BOOK_MAPPING_EMBEDDING_LEAD', 0.08)) return 0.9;
   if (top >= t.embeddingMid) return 0.8;
   return Math.max(0, Math.min(0.7, top));
 }
@@ -702,6 +705,26 @@ function emptyMapping(section, extra = {}) {
 }
 
 /**
+ * Per chapter (number|title): its numbered section headings and the start of
+ * its text, used to identify chapters that have no title of their own.
+ */
+export function buildChapterEvidence(sections = []) {
+  const byChapter = new Map();
+  for (const section of sections) {
+    if (!section.level || section.kind) continue;
+    const key = `${section.chapterNumber}|${section.chapterTitle}`;
+    const entry = byChapter.get(key) || { headings: [], text: [] };
+    if (section.level >= 2 && section.title && entry.headings.length < 12) entry.headings.push(section.title);
+    if (entry.text.join(' ').split(/\s+/).length < 150 && section.text) entry.text.push(section.text.split(/\s+/).slice(0, 80).join(' '));
+    byChapter.set(key, entry);
+  }
+  return new Map([...byChapter.entries()].map(([key, e]) => [key, {
+    headings: [...new Set(e.headings)].join('; '),
+    text: e.text.join(' '),
+  }]));
+}
+
+/**
  * Map detected sections onto the curriculum tree.
  *
  * - Level-1 chapters map to a topic (subtopic left empty → whole-chapter use).
@@ -724,6 +747,7 @@ export async function mapSectionsToCurriculum(sections = [], tree, options = {})
   }));
 
   const chapterMapping = new Map(); // chapterNumber|title → topic result
+  const chapterEvidence = buildChapterEvidence(sections);
   const mapped = [];
   // Latest mapped level-2 section per book number ("4.1"), so "4.1.3" inherits
   // the book's own parent even after a chapter-opening topic list.
@@ -748,10 +772,16 @@ export async function mapSectionsToCurriculum(sections = [], tree, options = {})
     const chapterKey = `${section.chapterNumber}|${section.chapterTitle}`;
     let topicResult = chapterMapping.get(chapterKey);
     if (!topicResult) {
+      // Books without "Chapter N" title lines (only "1.1 …" headings) and
+      // curricula whose topics carry no numbers give no number/title evidence;
+      // describe the chapter by its own section headings and opening text.
+      const evidence = chapterEvidence.get(chapterKey) || { headings: '', text: '' };
       topicResult = await resolveCandidate({
         number: section.chapterNumber,
         title: section.chapterTitle,
-        text: section.level === 1 ? section.text : '',
+        text: [section.chapterTitle ? '' : evidence.headings, section.level === 1 ? section.text : evidence.text]
+          .filter(Boolean)
+          .join('\n'),
         candidates: topicCandidates,
         embed,
         classify,

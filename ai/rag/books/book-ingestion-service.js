@@ -593,6 +593,52 @@ export async function reextractAndIndexBook(bookId) {
   return { ...indexed, status: 'indexed', indexed: true };
 }
 
+/**
+ * Index jobs run in-process, so a deploy/restart kills them mid-way (a book
+ * then sits at "Cropping figures 3/65" forever). On boot, re-queue books whose
+ * job went quiet. The atomic claim keeps two app instances from both taking
+ * the same book; the previous index stays live until the new one is swapped in.
+ */
+export async function resumeInterruptedBookJobs({ quietForMs = 5 * 60 * 1000, now = Date.now() } = {}) {
+  if (String(process.env.BOOK_RESUME_INTERRUPTED_JOBS ?? 'true').toLowerCase() === 'false') return [];
+  const quietSince = new Date(now - quietForMs);
+  const interrupted = {
+    $or: [
+      { processingStatus: { $in: ['processing', 'pending'] } },
+      // Already flagged by the stale check while the server was down.
+      {
+        processingStatus: 'failed',
+        processingError: /^Indexing was interrupted/,
+        updatedAt: { $gte: new Date(now - 24 * 60 * 60 * 1000) },
+      },
+    ],
+  };
+  const candidates = await Book.find({ ...interrupted, updatedAt: { $lt: quietSince } }).select('_id title').lean();
+  const resumed = [];
+  for (const candidate of candidates) {
+    const claimed = await Book.findOneAndUpdate(
+      { _id: candidate._id, ...interrupted, updatedAt: { $lt: quietSince } },
+      {
+        $set: {
+          processingStatus: 'pending',
+          processingError: '',
+          'indexProgress.stage': 'queued',
+          'indexProgress.label': 'Resuming after a server restart',
+          'indexProgress.percent': 0,
+          'indexProgress.startedAt': new Date(now),
+          'indexProgress.updatedAt': new Date(now),
+        },
+      },
+      { new: true },
+    ).select('_id title').lean();
+    if (!claimed) continue;
+    resumed.push(claimed.title);
+    scheduleReextractAndIndexBook(claimed._id);
+  }
+  if (resumed.length) console.log(`[book-knowledge] resumed ${resumed.length} interrupted index job(s): ${resumed.join(', ')}`);
+  return resumed;
+}
+
 export function scheduleReextractAndIndexBook(bookId) {
   scheduleBackgroundWork(`reextract+index ${bookId}`, async () => {
     try {

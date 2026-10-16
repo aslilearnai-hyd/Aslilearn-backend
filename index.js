@@ -13,9 +13,20 @@ const app = createApp({ parsedEnv });
 const PORT = process.env.PORT || 5000;
 const nodeEnvEffective = process.env.NODE_ENV || 'production';
 
-connectMongo().catch((err) => {
-  console.error('❌ MongoDB connection error:', err);
-});
+connectMongo()
+  .then(() => {
+    // Index jobs die with the process; pick interrupted ones back up shortly
+    // after boot (delay lets a rolling deploy settle before claiming jobs).
+    const delay = Number(process.env.BOOK_RESUME_DELAY_MS ?? 60_000);
+    setTimeout(() => {
+      import('./ai/rag/books/book-ingestion-service.js')
+        .then(({ resumeInterruptedBookJobs }) => resumeInterruptedBookJobs())
+        .catch((err) => console.warn('[book-knowledge] resume check failed:', err?.message || err));
+    }, delay).unref?.();
+  })
+  .catch((err) => {
+    console.error('❌ MongoDB connection error:', err);
+  });
 
 const server = app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
