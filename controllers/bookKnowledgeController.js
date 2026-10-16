@@ -3,6 +3,7 @@ import BookChunk from '../models/BookChunk.js';
 import BookAsset from '../models/BookAsset.js';
 import BookSourcePart from '../models/BookSourcePart.js';
 import AssessmentAsset from '../models/AssessmentAsset.js';
+import { joinPages, removeRepeatedPageBoilerplate, splitPdfPages } from '../ai/rag/books/book-curriculum-mapper.js';
 import {
   createBookFromUpload,
   createBookFromContent,
@@ -227,7 +228,11 @@ export async function getBookExtractedText(req, res) {
         .lean();
       extractedText = parts.map((part) => String(part.content || '')).join('');
     }
-    const preview = extractedText.slice(0, 50000);
+    // Show the same cleaned text chunks are built from: running headers,
+    // footers and page markers removed (the raw text looked "noisy").
+    const { pages } = removeRepeatedPageBoilerplate(splitPdfPages(extractedText));
+    const cleaned = joinPages(pages).text || extractedText;
+    const preview = cleaned.slice(0, 50000);
     res.json({
       success: true,
       data: {

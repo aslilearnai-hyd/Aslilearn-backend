@@ -265,9 +265,38 @@ function isProseTitle(title = '') {
   return /^[A-Z(“"']/.test(t);
 }
 
+// Leading bullet/arrow glyphs used by IIT foundation books ("▶1.2 Surds…").
+const HEADING_GLYPH_RE = /^[▶►▸▹➤➢➔→»•●○■□▪▫◆◇★☆✦✧❖◼◾◽❯❱|]+\s*/u;
+// End-of-chapter practice blocks. They belong to the chapter, never to the
+// last numbered subtopic before them.
+const EXERCISE_HEADING_RE = new RegExp(
+  '^(?:' + [
+    '(?:very short|short|long|single correct|multi(?:ple)? correct|integer|paragraph|matching|matrix match|' +
+      'assertion\\s*(?:\\(a\\))?\\s*(?:and|&|[-–—])\\s*reason(?:\\s*\\(r\\))?|subjective|objective|numerical|comprehension|case[- ]based|' +
+      'fill in the blanks|true or false|match the following)(?:\\s+answers?)?(?:\\s+type)?(?:\\s+questions?)?',
+    'non[- ]routine questions?',
+    'mind maps?',
+    'exercises?(?:\\s*[-–:]?\\s*[0-9IVX.]+)?',
+    'worksheets?(?:\\s*[-–:]?\\s*[0-9IVX.]+)?',
+    'practice (?:questions|problems|set)',
+    "previous years?'? (?:questions|papers)",
+    'olympiad corner',
+    'level\\s*[-–]?\\s*(?:[0-9]+|i{1,3}|iv|v)',
+  // Optional "– MCQ" / "(Objective)" suffix: "Single Correct Answer Type – MCQ".
+  ].join('|') + ')(?:\\s*[-–—(]\\s*(?:mcqs?|msqs?|objective|subjective)\\)?)?\\s*[:.]?\\s*$',
+  'i',
+);
+const SYNOPSIS_HEADING_RE = /^synopsis\s*[-–—:]?\s*\d*\s*$/i;
+
 export function parseHeadingLine(line = '') {
-  const trimmed = String(line || '').trim();
+  const trimmed = String(line || '').trim().replace(HEADING_GLYPH_RE, '').replace(/\s*:\s*$/, '').trim();
   if (!trimmed || trimmed.length > 140) return null;
+  if (trimmed.length <= 70 && EXERCISE_HEADING_RE.test(trimmed)) {
+    return { level: 2, kind: 'exercise', number: '', chapterNumber: '', title: trimmed };
+  }
+  if (SYNOPSIS_HEADING_RE.test(trimmed)) {
+    return { level: 1, kind: 'synopsis', number: '', chapterNumber: '', title: trimmed };
+  }
   const chapter = trimmed.match(CHAPTER_HEADING_RE);
   // "Chapter 3" ends in a digit but is a heading; "Chapter 3 Matter … 30" is a TOC row.
   const chapterTitle = chapter ? chapter[2].trim() : '';
@@ -319,6 +348,7 @@ export function detectBookSections(text = '', ranges = []) {
     if (body || current.level > 0) {
       sections.push({
         level: current.level,
+        kind: current.kind || '',
         number: current.number,
         title: current.title,
         chapterNumber: current.chapterNumber,
@@ -335,6 +365,11 @@ export function detectBookSections(text = '', ranges = []) {
 
   for (const line of lines) {
     const trimmed = line.trim();
+    // Printed scratch boxes ("Rough Work") appear mid-page and carry no content.
+    if (/^rough work$/i.test(trimmed)) {
+      offset += line.length + 1;
+      continue;
+    }
     if (pendingChapterTitle && trimmed) {
       pendingChapterTitle = false;
       if (isTocLine(trimmed)) {
@@ -352,6 +387,21 @@ export function detectBookSections(text = '', ranges = []) {
       }
     }
     const heading = parseHeadingLine(trimmed);
+    if (heading?.kind) {
+      // Exercise / synopsis blocks only mean something inside a chapter;
+      // consecutive exercise headings ("Integer Type", "Matching Type") are one block.
+      if (!chapter.number || (heading.kind === 'exercise' && current.kind === 'exercise')) {
+        current.lines.push(line);
+      } else {
+        close(offset);
+        current = {
+          level: heading.level, kind: heading.kind, number: '', title: heading.title,
+          chapterNumber: chapter.number, chapterTitle: chapter.title, startOffset: offset, lines: [line],
+        };
+      }
+      offset += line.length + 1;
+      continue;
+    }
     if (heading && heading.level === 1 && chapter.number && heading.chapterNumber === chapter.number && current.level > 0) {
       // Running header of the chapter we are already in — not a new section.
       offset += line.length + 1;
@@ -675,13 +725,18 @@ export async function mapSectionsToCurriculum(sections = [], tree, options = {})
 
   const chapterMapping = new Map(); // chapterNumber|title → topic result
   const mapped = [];
-  let lastLevel2 = null;
+  // Latest mapped level-2 section per book number ("4.1"), so "4.1.3" inherits
+  // the book's own parent even after a chapter-opening topic list.
+  const level2ByNumber = new Map();
+  const rememberLevel2 = (entry) => {
+    if (entry.level === 2 && entry.number && !entry.kind) level2ByNumber.set(`${entry.chapterNumber}|${entry.number}`, entry);
+  };
 
   for (const section of sections) {
     const override = overrides.get(section.sectionKey);
     if (override) {
       mapped.push(applyOverride(section, override, tree));
-      if (section.level === 2) lastLevel2 = mapped[mapped.length - 1];
+      rememberLevel2(mapped[mapped.length - 1]);
       continue;
     }
     if (section.level === 0) {
@@ -715,13 +770,15 @@ export async function mapSectionsToCurriculum(sections = [], tree, options = {})
     }
     const topicStatus = statusFor(topicResult.confidence);
 
-    if (section.level === 1) {
+    // Chapter intro, synopsis and end-of-chapter exercise blocks are chapter
+    // (topic) level: usable for whole-chapter generation, never a subtopic.
+    if (section.level === 1 || section.kind === 'exercise') {
       mapped.push(emptyMapping(section, {
         aiTopicKey: topic.topicKey,
         aiTopicName: topic.topicName,
         mappingStatus: topicStatus,
         mappingConfidence: topicResult.confidence,
-        mappingMethod: topicResult.method,
+        mappingMethod: section.kind === 'exercise' ? 'exercise_block' : topicResult.method,
         mappingEvidence: { topic: topicResult.evidence || {} },
       }));
       continue;
@@ -730,23 +787,31 @@ export async function mapSectionsToCurriculum(sections = [], tree, options = {})
     // 2) Subtopic inside that topic only.
     const subCandidates = topic.subtopics.map((s) => ({ id: s.id, name: s.name, label: s.name, number: s.number }));
     const isLevel3 = section.level === 3;
-    const parent = isLevel3 && lastLevel2 && section.number.startsWith(`${lastLevel2.number}.`) ? lastLevel2 : null;
-    let subResult = await resolveCandidate({
-      number: isLevel3 ? '' : section.number,
-      title: section.title,
-      text: section.text,
-      candidates: subCandidates,
-      embed,
-      classify: isLevel3 && parent?.aiSubtopicId ? null : classify,
-      budget,
-    });
+    const parentNumber = isLevel3 ? section.number.split('.').slice(0, 2).join('.') : '';
+    const parent = isLevel3 ? level2ByNumber.get(`${section.chapterNumber}|${parentNumber}`) || null : null;
+    // With a mapped parent only an exact own match can override it, so skip
+    // the embedding/Gemini tiers (saves calls on books with many x.y.z headings).
+    let subResult = parent?.aiSubtopicId
+      ? deterministicMatch({ number: '', title: section.title }, subCandidates)
+      : await resolveCandidate({
+          number: isLevel3 ? '' : section.number,
+          title: section.title,
+          text: section.text,
+          candidates: subCandidates,
+          embed,
+          classify,
+          budget,
+        });
     if (isLevel3 && !subResult?.candidate && section.number) {
       // "3.2.1" also matches DB subtopic "3.2" by number prefix.
       const prefix = section.number.split('.').slice(0, 2).join('.');
       const byPrefix = subCandidates.filter((c) => c.number === prefix);
       if (byPrefix.length === 1) subResult = { candidate: byPrefix[0], confidence: 0.93, method: 'number_exact', evidence: { number: prefix } };
     }
-    if (parent?.aiSubtopicId && (!subResult?.candidate || subResult.confidence < t.auto)) {
+    // The book's own numbering beats a keyword match: "4.1.3 Series" sits
+    // under "4.1 Basic Concepts…", whatever single words it shares elsewhere.
+    const ownIsExact = subResult?.candidate && ['number_exact', 'title_exact'].includes(subResult.method);
+    if (parent?.aiSubtopicId && !ownIsExact) {
       subResult = {
         candidate: { id: parent.aiSubtopicId, name: parent.aiSubtopicName },
         confidence: parent.mappingConfidence,
@@ -770,7 +835,7 @@ export async function mapSectionsToCurriculum(sections = [], tree, options = {})
       mappingEvidence: { topic: topicResult.evidence || {}, subtopic: subResult?.evidence || {} },
     });
     mapped.push(entry);
-    if (section.level === 2) lastLevel2 = entry;
+    rememberLevel2(entry);
   }
   const windowSplit = options.windowSplit ?? String(process.env.BOOK_MAPPING_WINDOW_SPLIT ?? 'true').toLowerCase() !== 'false';
   const finalSections = windowSplit && embed
@@ -950,17 +1015,26 @@ export function computeMappingHealth(sections = [], tree, { chunks = [] } = {}) 
   // chapter intro text (level 1) is complete with a topic ID.
   const isSettled = (s) =>
     s.mappingStatus === MAPPING_STATUS.REJECTED ||
-    (isRetrievableMapping(s) && (s.level === 1 || Boolean(s.aiSubtopicId)));
+    (isRetrievableMapping(s) && (s.level === 1 || s.kind === 'exercise' || Boolean(s.aiSubtopicId)));
   const settledWords = content.filter(isSettled).reduce((sum, s) => sum + (s.wordCount || 0), 0);
   const retrievable = content.filter(isRetrievableMapping);
   const mappedTopics = new Set(retrievable.map((s) => s.aiTopicKey).filter(Boolean));
-  const mappedSubtopics = new Set(retrievable.map((s) => s.aiSubtopicId).filter(Boolean));
+  // Count a subtopic only when real chunks carry it. A chapter-opening topic
+  // list ("1.1 Basic Concepts" with 0 words) matches names but holds no text,
+  // which previously reported 39/40 mapped while 23 subtopics were empty.
+  const chunkSubtopics = new Set(
+    chunks.filter((c) => !c.mappingStatus || RETRIEVABLE_MAPPING_STATUSES.includes(c.mappingStatus))
+      .map((c) => c.aiSubtopicId).filter(Boolean),
+  );
+  const mappedSubtopics = chunks.length
+    ? chunkSubtopics
+    : new Set(retrievable.filter((s) => (s.wordCount || 0) >= 25).map((s) => s.aiSubtopicId).filter(Boolean));
   const totalSubtopics = tree?.subtopicById?.size || 0;
   const unmapped = content.filter((s) => s.mappingStatus === MAPPING_STATUS.UNMAPPED);
   const needsReview = content.filter((s) => s.mappingStatus === MAPPING_STATUS.NEEDS_REVIEW);
   // High-value = a real numbered section with meaningful text and no subtopic.
   const unmappedHighValue = content.filter(
-    (s) => s.level >= 2 && (s.wordCount || 0) >= 150 && !isSettled(s),
+    (s) => s.level >= 2 && s.kind !== 'exercise' && (s.wordCount || 0) >= 150 && !isSettled(s),
   );
   const bands = { high: 0, review: 0, low: 0 };
   const t = mappingThresholds();

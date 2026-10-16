@@ -17,6 +17,8 @@ const curriculumSectionSchema = new mongoose.Schema(
     sectionKey: { type: String, default: '' },
     parentSectionKey: { type: String, default: '' },
     level: { type: Number, default: 0 },
+    /** '' for numbered sections; 'exercise' / 'synopsis' for chapter-level blocks. */
+    kind: { type: String, default: '' },
     number: { type: String, default: '' },
     title: { type: String, default: '' },
     chapterNumber: { type: String, default: '' },

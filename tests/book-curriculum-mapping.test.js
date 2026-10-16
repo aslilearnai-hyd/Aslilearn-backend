@@ -358,3 +358,61 @@ test('six-section repairs ask only for what is missing', async () => {
   assert.match(ak, /C3: \{"q":"Define mole\."\}/);
   assert.match(ak, /6\.022/);
 });
+
+test('IIT foundation layout: ▶ headings, chapter topic list, exercise blocks, parent numbering', async () => {
+  const rows = [
+    { _id: 'b41', ...base, label: 'Chapter 4', topicName: 'Chapter 4 - Sequences and Progressions', subTopic: 'Basic Concepts and Arithmetic Progression', sortOrder: 1 },
+    { _id: 'b42', ...base, label: 'Chapter 4', topicName: 'Chapter 4 - Sequences and Progressions', subTopic: 'Arithmetic Progression (A.P.)', sortOrder: 2 },
+    { _id: 'b47', ...base, label: 'Chapter 4', topicName: 'Chapter 4 - Sequences and Progressions', subTopic: 'Sigma Notation and Special Series', sortOrder: 3 },
+  ];
+  const t = buildCurriculumTree(rows);
+  const text = [
+    // Chapter-opening topic list (no text under each line).
+    '4.1 Basic Concepts and Arithmetic Progression', '4.2 Arithmetic Progression (A.P.)', '4.7 Sigma Notation and Special Series',
+    'Synopsis - 1',
+    '▶4.1 Basic Concepts and Arithmetic', body('intro', 20),
+    '4.1.1 Sequence', body('sequence', 30),
+    'Rough Work',
+    '4.1.3 Series', body('series sum', 30),
+    '▶ 4.2 Arithmetic Progression (A.P.)', body('ap', 30),
+    '4.2.1 Definition', body('ap def', 30),
+    '▶4.7 Sigma Notation and Special Series', body('sigma', 30),
+    'Single Correct Answer Type – MCQ', body('mcq', 40),
+    'Assertion – Reason Type', body('ar', 20),
+    'Integer Type', body('int', 20),
+  ].join('\n');
+  const { sections } = await mapSectionsToCurriculum(detectBookSections(text, []), t, { windowSplit: false });
+  const find = (n, title) => sections.find((s) => s.number === n && (!title || s.title.startsWith(title)) && s.wordCount > 0);
+  assert.equal(find('4.1.1').aiSubtopicId, 'b41');
+  assert.equal(find('4.1.1').mappingMethod, 'inherited_parent');
+  // "Series" shares a word with "Sigma … Special Series" but its book parent is 4.1.
+  assert.equal(find('4.1.3').aiSubtopicId, 'b41');
+  assert.equal(find('4.2.1').aiSubtopicId, 'b42');
+  const exercises = sections.filter((s) => s.kind === 'exercise');
+  assert.equal(exercises.length, 1, 'consecutive exercise headings form one block');
+  assert.equal(exercises[0].aiSubtopicId, '');
+  assert.equal(exercises[0].mappingMethod, 'exercise_block');
+  assert.match(exercises[0].text, /Integer Type/);
+  // The sigma subtopic keeps only its own text, not the exercises.
+  assert.ok(!/mcq/.test(find('4.7', 'Sigma').text));
+  assert.ok(!sections.some((s) => /Rough Work/.test(s.title)));
+
+  // Health counts subtopics by real chunks: the 0-word topic-list rows don't count.
+  const health = computeMappingHealth(sections, t, { chunks: [{ aiSubtopicId: 'b41', mappingStatus: MAPPING_STATUS.AUTO }] });
+  assert.equal(health.mappedSubtopics, 1);
+  assert.equal(health.unmappedHighValueSections, 0, 'exercise blocks are not "unmapped"');
+});
+
+test('chapter list comes from detected chapters, not the legacy splitter', async () => {
+  const { chaptersFromCurriculumSections } = await import('../ai/rag/books/book-ingestion-service.js');
+  const chapters = chaptersFromCurriculumSections([
+    { level: 0, chapterNumber: '', wordCount: 900 },
+    { level: 2, chapterNumber: '1', chapterTitle: 'Introduction to Chemistry', wordCount: 300, aiTopicName: 'Chapter 1 - Intro' },
+    { level: 2, kind: 'exercise', chapterNumber: '1', chapterTitle: 'Introduction to Chemistry', wordCount: 200 },
+    { level: 2, chapterNumber: '2', chapterTitle: '', wordCount: 100, aiTopicName: 'Chapter 2 - Materials' },
+  ]);
+  assert.deepEqual(chapters.map((c) => [c.title, c.wordCount]), [
+    ['Chapter 1 - Introduction to Chemistry', 500],
+    ['Chapter 2 - Materials', 100],
+  ]);
+});

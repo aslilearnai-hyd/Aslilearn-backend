@@ -732,11 +732,40 @@ async function buildCurriculumChunkPlan(book, fullText) {
   });
 }
 
+/**
+ * One entry per detected book chapter (not the legacy line splitter, which
+ * reported e.g. 147 "chapters" for a 7-chapter book).
+ */
+export function chaptersFromCurriculumSections(sections = []) {
+  const byChapter = new Map();
+  for (const s of sections) {
+    if (!s.level || !s.chapterNumber) continue;
+    const key = String(s.chapterNumber);
+    const entry = byChapter.get(key) || {
+      title: '',
+      topic: '',
+      subtopic: '',
+      startOffset: s.startOffset || 0,
+      endOffset: s.endOffset || 0,
+      wordCount: 0,
+    };
+    entry.title = entry.title || (s.chapterTitle ? `Chapter ${key} - ${s.chapterTitle}` : '');
+    entry.topic = entry.topic || s.aiTopicName || '';
+    entry.endOffset = Math.max(entry.endOffset, s.endOffset || 0);
+    entry.wordCount += s.wordCount || 0;
+    byChapter.set(key, entry);
+  }
+  return [...byChapter.entries()]
+    .sort((a, b) => Number(a[0]) - Number(b[0]))
+    .map(([key, e]) => ({ ...e, title: e.title || e.topic || `Chapter ${key}` }));
+}
+
 function toStoredSection(section = {}) {
   return {
     sectionKey: section.sectionKey || '',
     parentSectionKey: section.parentSectionKey || '',
     level: section.level || 0,
+    kind: section.kind || '',
     number: section.number || '',
     title: String(section.title || '').slice(0, 300),
     chapterNumber: section.chapterNumber || '',
@@ -1034,7 +1063,9 @@ async function runBookIndex(bookId) {
     book.duplicateChunkCount = duplicateChunkCount;
     book.embeddingsCreated = persistedChunkCount > 0;
     book.processingStatus = 'indexed';
-    book.chapters = chapterSegments.map(({ text: _t, ...ch }) => ch);
+    book.chapters = curriculumPlan
+      ? chaptersFromCurriculumSections(curriculumPlan.sections)
+      : chapterSegments.map(({ text: _t, ...ch }) => ch);
     book.lastIndexedAt = new Date();
     await book.save();
 
@@ -1167,10 +1198,9 @@ function resolveImportedClassLabel({ content, subjectDoc, title = '' }) {
 export function enrichBookCurriculumFields(book = {}) {
   const boardRaw = canonicalBoardLabel(book.board || 'CBSE') || 'CBSE';
   const boardGrouped = lockBoardKey(boardRaw);
-  const board =
-    boardGrouped === 'IIT/NEET'
-      ? String(book.board || '').trim() || 'IIT / NEET'
-      : boardRaw;
+  // "IIT", "IIT/NEET" and "IIT / NEET" are the same board; show one label so
+  // a manual upload and a Learning Path import of the same track look alike.
+  const board = boardGrouped === 'IIT/NEET' ? 'IIT / NEET' : boardRaw;
   const title = String(book.title || '').trim();
   let classLabel = resolveClassLabelForAiToolStorage(book.class, boardRaw);
   if (!classLabel || /^general$/i.test(classLabel)) {
