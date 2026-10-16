@@ -11,7 +11,23 @@ import Content from '../../../models/Content.js';
 import Subject from '../../../models/Subject.js';
 import { generateEmbedding } from '../pdf/pdf-rag-service.js';
 import { getPdfBufferFromStorage, uploadPdfToConfiguredStorage } from '../../../services/cloud-storage.js';
-import geminiService, { extractTextFromDocument } from '../../providers/gemini-service.js';
+import geminiService, { callLlmJson, extractTextFromDocument } from '../../providers/gemini-service.js';
+import {
+  buildSectionKey,
+  computeMappingHealth,
+  CURRICULUM_MAPPING_VERSION,
+  detectBookSections,
+  groupMappedSectionsForChunking,
+  isRetrievableMapping,
+  joinPages,
+  lexicalSimilarity,
+  mapSectionsToCurriculum,
+  MAPPING_STATUS,
+  removeRepeatedPageBoilerplate,
+  splitPdfPages,
+} from './book-curriculum-mapper.js';
+import { loadCurriculumTreeForBook } from './book-curriculum-service.js';
+import { chapterNumberFromTopicLabel } from '../../shared/ai-tool-topic-order.js';
 import { extractAndStoreBookAssets } from './book-multimodal-service.js';
 import { subjectDisplayName } from '../../../utils/subjectDelete.js';
 import {
@@ -634,6 +650,172 @@ export function keepUniqueBookChunkHash(contentHash, seenHashes = new Set()) {
 }
 
 /**
+ * Pure planning step: clean pages → detect book sections → map to curriculum →
+ * group adjacent same-mapping sections. Returns null when the curriculum tree
+ * is empty (caller keeps the legacy chapter splitter).
+ */
+export async function planCurriculumChunks({ fullText, tree, book = {}, embed, classify, overrides = new Map() }) {
+  if (!tree || !tree.topics.length) return null;
+  const { pages: cleanedPages, removedLines } = removeRepeatedPageBoilerplate(splitPdfPages(fullText));
+  const { text, ranges } = joinPages(cleanedPages);
+  let sections = detectBookSections(text, ranges);
+
+  const contentSections = sections.filter((s) => s.level > 0);
+  const chapterNumbers = new Set(contentSections.map((s) => s.chapterNumber).filter(Boolean));
+  const hasChapterHeadings = contentSections.some((s) => s.level === 1);
+  if (!contentSections.length) {
+    // No headings at all (single-chapter notes/workbooks): the book's own
+    // topic/title is the only chapter evidence.
+    const chapterTitle = String(book.topic || book.title || '').trim();
+    const number = chapterNumberFromTopicLabel(chapterTitle);
+    sections = [{
+      ...sections[0],
+      level: 1,
+      number: number != null ? String(number) : '',
+      chapterNumber: number != null ? String(number) : '',
+      title: chapterTitle,
+      chapterTitle,
+      text,
+      wordCount: wordCount(text),
+      startOffset: 0,
+      endOffset: text.length,
+      pageStart: ranges[0]?.page ?? null,
+      pageEnd: ranges[ranges.length - 1]?.page ?? null,
+      sectionKey: buildSectionKey({ level: 1, number: '', title: chapterTitle, startOffset: 0 }),
+    }];
+  } else if (!hasChapterHeadings && chapterNumbers.size === 1 && sections[0]?.level === 0) {
+    // One-chapter PDF numbered "3.1, 3.2…": the leading text is that chapter's intro.
+    const [onlyChapter] = [...chapterNumbers];
+    const intro = sections[0];
+    const chapterTitle = String(book.topic || '').trim();
+    sections[0] = {
+      ...intro,
+      level: 1,
+      number: onlyChapter,
+      chapterNumber: onlyChapter,
+      title: chapterTitle || intro.title,
+      chapterTitle,
+    };
+    sections = sections.map((s) => (s.level >= 2 && !s.chapterTitle ? { ...s, chapterTitle } : s));
+  }
+
+  const mapping = await mapSectionsToCurriculum(sections, tree, { embed, classify, overrides });
+  const groups = groupMappedSectionsForChunking(mapping.sections);
+  return {
+    tree,
+    sections: mapping.sections,
+    groups,
+    boilerplateLinesRemoved: removedLines,
+    geminiCallsUsed: mapping.geminiCallsUsed,
+  };
+}
+
+async function buildCurriculumChunkPlan(book, fullText) {
+  const tree = await loadCurriculumTreeForBook(book);
+  const geminiEnabled = String(process.env.BOOK_MAPPING_GEMINI_CLASSIFIER ?? 'true').toLowerCase() !== 'false';
+  const overrides = new Map(
+    (book.curriculumOverrides || []).map((o) => [o.sectionKey, {
+      aiTopicKey: o.aiTopicKey,
+      aiSubtopicId: o.aiSubtopicId,
+      reject: o.reject,
+    }]),
+  );
+  return planCurriculumChunks({
+    fullText,
+    tree,
+    book,
+    overrides,
+    embed: async (text) => (await withTimeout(generateEmbedding(text), EMBEDDING_TIMEOUT_MS, 'Mapping embedding')).embedding,
+    classify: geminiEnabled
+      ? (prompt) => callLlmJson(prompt, { maxTokens: 300, temperature: 0, usageLabel: 'book-curriculum-mapping' })
+      : null,
+  });
+}
+
+function toStoredSection(section = {}) {
+  return {
+    sectionKey: section.sectionKey || '',
+    parentSectionKey: section.parentSectionKey || '',
+    level: section.level || 0,
+    number: section.number || '',
+    title: String(section.title || '').slice(0, 300),
+    chapterNumber: section.chapterNumber || '',
+    chapterTitle: String(section.chapterTitle || '').slice(0, 300),
+    pageStart: section.pageStart ?? null,
+    pageEnd: section.pageEnd ?? null,
+    wordCount: section.wordCount || 0,
+    preview: String(section.text || '').replace(/\s+/g, ' ').slice(0, 240),
+    aiTopicKey: section.aiTopicKey || '',
+    aiTopicName: section.aiTopicName || '',
+    aiSubtopicId: section.aiSubtopicId || '',
+    aiSubtopicName: section.aiSubtopicName || '',
+    mappingStatus: section.mappingStatus || '',
+    mappingConfidence: Number(section.mappingConfidence) || 0,
+    mappingMethod: section.mappingMethod || '',
+    mappingEvidence: section.mappingEvidence || {},
+  };
+}
+
+/**
+ * Give each extracted asset the mapping of the section on its page. When a page
+ * holds sections from different subtopics, the asset is only trusted at the
+ * level they agree on (same topic → topic-level; otherwise unmapped) unless its
+ * caption names one of the section headings.
+ */
+export function mapAssetsToSections(assets = [], sections = []) {
+  const result = new Map();
+  const usable = sections.filter((s) => s.level > 0 && s.pageStart != null);
+  for (const asset of assets) {
+    const page = Number(asset.page);
+    if (!Number.isFinite(page)) continue;
+    const onPage = usable.filter((s) => s.pageStart <= page && (s.pageEnd ?? s.pageStart) >= page && isRetrievableMapping(s));
+    if (!onPage.length) continue;
+    const subtopicIds = new Set(onPage.map((s) => s.aiSubtopicId).filter(Boolean));
+    let chosen = null;
+    if (subtopicIds.size <= 1 && onPage.every((s) => s.aiTopicKey === onPage[0].aiTopicKey)) {
+      chosen = onPage.find((s) => s.aiSubtopicId) || onPage[0];
+    } else {
+      const assetText = `${asset.caption || ''} ${asset.description || ''}`;
+      const scored = onPage
+        .map((s) => ({ s, score: Math.max(lexicalSimilarity(assetText, s.title), lexicalSimilarity(assetText, s.aiSubtopicName)) }))
+        .sort((a, b) => b.score - a.score);
+      if (scored[0]?.score >= 0.6 && (scored.length < 2 || scored[0].score - scored[1].score >= 0.1)) {
+        chosen = scored[0].s;
+      } else if (onPage.every((s) => s.aiTopicKey === onPage[0].aiTopicKey)) {
+        chosen = { ...onPage[0], aiSubtopicId: '', aiSubtopicName: '', mappingMethod: 'page_topic_only' };
+      }
+    }
+    if (chosen) result.set(asset.assetId, chosen);
+  }
+  return result;
+}
+
+async function persistAssetMappings(bookId, assets = [], mappings = new Map()) {
+  if (!assets.length) return;
+  const ops = assets.map((asset) => {
+    const m = mappings.get(asset.assetId);
+    return {
+      updateOne: {
+        filter: { bookId, assetId: asset.assetId },
+        update: {
+          $set: {
+            aiTopicKey: m?.aiTopicKey || '',
+            aiTopicName: m?.aiTopicName || '',
+            aiSubtopicId: m?.aiSubtopicId || '',
+            aiSubtopicName: m?.aiSubtopicName || '',
+            sectionKey: m?.sectionKey || '',
+            mappingStatus: m ? m.mappingStatus : MAPPING_STATUS.UNMAPPED,
+            mappingConfidence: Number(m?.mappingConfidence) || 0,
+            mappingMethod: m ? (m.mappingMethod === 'page_topic_only' ? 'page_topic_only' : 'page_section') : '',
+          },
+        },
+      },
+    };
+  });
+  await BookAsset.bulkWrite(ops, { ordered: false });
+}
+
+/**
  * Chunk + embed all content for a book. Concurrent refresh/reindex requests for
  * the same book share one job, so their delete/insert phases cannot interleave.
  */
@@ -665,12 +847,20 @@ async function runBookIndex(bookId) {
       throw new Error(book.processingError);
     }
 
+    const indexedAssets = await BookAsset.find({ bookId: book._id })
+      .select('assetId chapter subtopic page caption description')
+      .lean();
+    // Map book sections onto AI Tools topics BEFORE chunking, so no chunk can
+    // straddle two curriculum subtopics. Falls back to the legacy splitter when
+    // the curriculum has no rows for this board/class/subject.
+    const curriculumPlan = await buildCurriculumChunkPlan(book, fullText).catch((error) => {
+      console.warn('[book-knowledge] curriculum mapping failed; using legacy chapters:', error?.message || error);
+      return null;
+    });
+
     await BookChunk.deleteMany({ bookId: book._id });
 
     const chapterSegments = splitIntoChapters(fullText);
-    const indexedAssets = await BookAsset.find({ bookId: book._id })
-      .select('assetId chapter subtopic page')
-      .lean();
     const allChunkDocs = [];
     const chunkCandidates = [];
     // A BookChunk belongs to a concrete source book. Do not deduplicate against
@@ -682,7 +872,67 @@ async function runBookIndex(bookId) {
     let duplicateChunkCount = 0;
     let globalIndex = 0;
 
-    for (const chapter of chapterSegments) {
+    const sharedChunkFields = {
+      bookId: book._id,
+      board: book.board,
+      class: book.class,
+      subject: book.subject,
+      corpusId: book.corpusId || '',
+      sourcePriority: book.sourcePriority || 100,
+      sourceType: book.source || '',
+      difficultyBand: book.difficultyBand || '',
+      approvalStatus: book.approvalStatus || 'approved',
+    };
+
+    let assetMappings = new Map();
+    if (curriculumPlan) {
+      assetMappings = mapAssetsToSections(indexedAssets, curriculumPlan.sections);
+      for (const group of curriculumPlan.groups) {
+        const groupAssetIds = indexedAssets
+          .filter((asset) => group.sectionKeys.includes(assetMappings.get(asset.assetId)?.sectionKey))
+          .map((asset) => asset.assetId);
+        for (const chunk of chunkChapterText(group.text, { title: group.chapterTitle })) {
+          const contentHash = crypto.createHash('sha256').update(chunk.content).digest('hex');
+          if (!keepUniqueBookChunkHash(contentHash, existingHashes)) {
+            duplicateChunkCount += 1;
+            continue;
+          }
+          chunkCandidates.push({
+            ...sharedChunkFields,
+            chunkIndex: globalIndex,
+            // Book-native provenance + legacy string fields.
+            chapter: group.chapterTitle || group.title || '',
+            topic: group.aiTopicName || group.chapterTitle || '',
+            subtopic: group.aiSubtopicName || '',
+            bookChapterNumber: group.chapterNumber || '',
+            bookChapterTitle: group.chapterTitle || '',
+            bookSubtopicNumber: group.level >= 2 ? group.number || '' : '',
+            bookSubtopicTitle: group.level >= 2 ? group.headings.join(' | ').slice(0, 300) : '',
+            sourcePage: group.pageStart ?? null,
+            sourcePageStart: group.pageStart ?? null,
+            sourcePageEnd: group.pageEnd ?? null,
+            sectionKey: group.sectionKeys[0] || '',
+            sectionKeys: group.sectionKeys,
+            aiTopicKey: group.aiTopicKey || '',
+            aiTopicName: group.aiTopicName || '',
+            aiSubtopicId: group.aiSubtopicId || '',
+            aiSubtopicName: group.aiSubtopicName || '',
+            mappingStatus: group.mappingStatus || MAPPING_STATUS.UNMAPPED,
+            mappingConfidence: Number(group.mappingConfidence) || 0,
+            mappingMethod: group.mappingMethod || '',
+            mappingVersion: CURRICULUM_MAPPING_VERSION,
+            assetIds: groupAssetIds,
+            content: chunk.content,
+            contentHash,
+            wordCount: chunk.wordCount,
+            tokenCount: chunk.tokenCount,
+          });
+          globalIndex += 1;
+        }
+      }
+    }
+
+    for (const chapter of curriculumPlan ? [] : chapterSegments) {
       const chapterChunks = chunkChapterText(chapter.text || fullText.slice(chapter.startOffset, chapter.endOffset), chapter);
       for (const chunk of chapterChunks) {
         const contentHash = crypto.createHash('sha256').update(chunk.content).digest('hex');
@@ -767,6 +1017,19 @@ async function runBookIndex(bookId) {
     if (persistedChunkCount < 1) {
       throw new Error('No book chunks were produced from the extracted source text.');
     }
+    if (curriculumPlan) {
+      await persistAssetMappings(book._id, indexedAssets, assetMappings);
+      book.curriculumSections = curriculumPlan.sections.map(toStoredSection);
+      book.curriculumMapping = {
+        ...computeMappingHealth(curriculumPlan.sections, curriculumPlan.tree, { chunks: chunkCandidates }),
+        boilerplateLinesRemoved: curriculumPlan.boilerplateLinesRemoved,
+        geminiCallsUsed: curriculumPlan.geminiCallsUsed,
+        mappedAt: new Date(),
+      };
+    } else {
+      book.curriculumSections = [];
+      book.curriculumMapping = { status: 'no_curriculum', version: CURRICULUM_MAPPING_VERSION, mappedAt: new Date() };
+    }
     book.chunkCount = persistedChunkCount;
     book.duplicateChunkCount = duplicateChunkCount;
     book.embeddingsCreated = persistedChunkCount > 0;
@@ -775,7 +1038,12 @@ async function runBookIndex(bookId) {
     book.lastIndexedAt = new Date();
     await book.save();
 
-    return { bookId: book._id, chunkCount: persistedChunkCount, duplicateChunkCount };
+    return {
+      bookId: book._id,
+      chunkCount: persistedChunkCount,
+      duplicateChunkCount,
+      curriculumMapping: book.curriculumMapping?.status || 'no_curriculum',
+    };
   } catch (error) {
     book.processingStatus = 'failed';
     book.processingError = error.message || 'Indexing failed';

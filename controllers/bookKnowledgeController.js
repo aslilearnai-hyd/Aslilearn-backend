@@ -53,7 +53,7 @@ export async function listBooks(req, res) {
 
     const books = await Book.find(filter)
       .select(
-        'title board class subject productCategory topic subtopic corpusId sourcePriority difficultyBand edition approvalStatus chunkCount processingStatus processingError embeddingsCreated source generationStats updatedAt createdAt contentId chapters extractedTextLength',
+        'title board class subject productCategory topic subtopic corpusId sourcePriority difficultyBand edition approvalStatus chunkCount processingStatus processingError embeddingsCreated source generationStats updatedAt createdAt contentId chapters extractedTextLength curriculumMapping',
       )
       .sort({ updatedAt: -1 })
       .lean();

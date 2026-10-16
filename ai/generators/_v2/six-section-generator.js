@@ -108,6 +108,128 @@ function deepSanitizeMath(val) {
   return val;
 }
 
+/** Sections that do not depend on textbook passages and can be filled alone. */
+const REPAIRABLE_SUPPORT_SECTIONS = new Set(['objectives', 'differentiation', 'teacher', 'reallife']);
+
+/** Pull the tool pack's JSON shape line for one section out of the assembled prompt. */
+function sectionShapeFromPrompt(prompt = '', id = '') {
+  const line = String(prompt).split('\n').find((l) => l.trim().startsWith(`"${id}":`));
+  return line ? line.trim().replace(/,$/, '') : `"${id}": { }`;
+}
+
+export function missingSixSectionIds(json) {
+  if (!json || typeof json !== 'object') return [...V2_SECTION_IDS];
+  return V2_SECTION_IDS.filter((id) => !json[id] || typeof json[id] !== 'object');
+}
+
+export function buildMissingSectionsPrompt({ missing, prompt, params = {}, toolSlug, json }) {
+  const digest = JSON.stringify(json?.core || {}).slice(0, 1500);
+  return [
+    `You are completing a partially generated "${toolSlug}" resource for Indian schools.`,
+    `Scope: ${[params.board, params.classLabel, params.subject, params.topic, params.subTopic].filter(Boolean).join(' / ')}.`,
+    `The core content already exists (excerpt): ${digest}`,
+    '',
+    `Return ONLY a JSON object with exactly these keys: ${missing.join(', ')}.`,
+    'Use exactly this shape for each key:',
+    ...missing.map((id) => sectionShapeFromPrompt(prompt, id)),
+    'Keep every bullet to one short sentence. Stay on the given topic/subtopic. JSON only.',
+  ].join('\n');
+}
+
+async function repairMissingSupportSections(json, { assembled, params, toolSlug, attemptModel, opts }) {
+  const missing = missingSixSectionIds(json);
+  const repairable = json && typeof json === 'object' && missing.length > 0 &&
+    missing.every((id) => REPAIRABLE_SUPPORT_SECTIONS.has(id));
+  if (!repairable) return json;
+  if (typeof opts.canStartCall === 'function' && !opts.canStartCall()) return json;
+  try {
+    const raw = await geminiService.generateStructuredContent(
+      buildMissingSectionsPrompt({ missing, prompt: assembled.prompt, params, toolSlug, json }),
+      'json',
+      {
+        primaryModel: attemptModel,
+        flashLiteOnly: opts.flashLiteOnly === true,
+        temperature: 0.3,
+        maxTokens: 1500,
+      },
+    );
+    const patch = extractJsonObject(raw);
+    if (!patch || typeof patch !== 'object') return json;
+    const merged = { ...json };
+    for (const id of missing) {
+      if (patch[id] && typeof patch[id] === 'object') merged[id] = patch[id];
+    }
+    return merged;
+  } catch {
+    return json;
+  }
+}
+
+const V2_ANSWERABLE_KEYS = [
+  'sectionA_mcq', 'sectionB_fib', 'sectionC_short', 'sectionD_application',
+  'sectionE_long', 'sectionF_case', 'sectionG_hots',
+];
+
+function v2Questions(structuredContent) {
+  const core = structuredContent?.core || {};
+  const out = [];
+  for (const key of V2_ANSWERABLE_KEYS) {
+    (Array.isArray(core[key]) ? core[key] : []).forEach((row, i) => {
+      if (row && typeof row === 'object') out.push({ section: key, index: i + 1, row });
+    });
+  }
+  return out;
+}
+
+export function buildAnswerKeyCompletionPrompt({ questions, existing, ragContext = '' }) {
+  const example = existing[0] ? JSON.stringify(existing[0]).slice(0, 400) : '{"q":"A1","answer":"...","working":"..."}';
+  return [
+    'Write answer-key entries for the questions below. They come from an existing worksheet whose answer key was cut short.',
+    ragContext ? `Use only this textbook context for facts:\n${String(ragContext).slice(0, 9000)}` : '',
+    'QUESTIONS NEEDING ANSWERS:',
+    ...questions.map((q) => `${q.label}: ${JSON.stringify(q.row).slice(0, 700)}`),
+    '',
+    `Return ONLY JSON: {"answerKey":[...]} with exactly ${questions.length} entries, in the same order, each shaped like: ${example}`,
+    'Give complete model answers; for questions worth 2+ marks give point-wise marking. Never write "refer to the textbook".',
+  ].filter(Boolean).join('\n');
+}
+
+/**
+ * Flash-Lite often stops the answer key early (e.g. 7 of 15). A full
+ * regeneration costs as much as the first call; answer only the missing
+ * questions instead, grounded in the same retrieved context.
+ */
+async function completeTruncatedAnswerKey(structuredContent, { attemptModel, opts }) {
+  const questions = v2Questions(structuredContent);
+  const assessment = structuredContent?.assessment;
+  const existing = Array.isArray(assessment?.answerKey) ? assessment.answerKey : [];
+  if (!questions.length || existing.length >= questions.length || !assessment) return false;
+  if (typeof opts.canStartCall === 'function' && !opts.canStartCall()) return false;
+  const missing = questions.slice(existing.length).map((q, i) => ({
+    ...q,
+    label: `${q.section.replace(/^section([A-G]).*$/, '$1')}${q.index}`,
+    position: existing.length + i + 1,
+  }));
+  try {
+    const raw = await geminiService.generateStructuredContent(
+      buildAnswerKeyCompletionPrompt({ questions: missing, existing, ragContext: opts.ragContext || '' }),
+      'json',
+      {
+        primaryModel: attemptModel,
+        flashLiteOnly: opts.flashLiteOnly === true,
+        temperature: 0.2,
+        maxTokens: Math.min(5000, 350 * missing.length + 400),
+      },
+    );
+    const added = extractJsonObject(raw)?.answerKey;
+    if (!Array.isArray(added) || added.length < missing.length) return false;
+    assessment.answerKey = [...existing, ...added.slice(0, missing.length)];
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 /**
  * @param {string} toolSlug
  * @param {object} params { board, classLabel, subject, topic, subTopic }
@@ -174,11 +296,26 @@ export async function generateSixSectionContent(toolSlug, params = {}, opts = {}
       return { ok: false, error: lastErr || 'Gemini request failed' };
     }
     lastRaw = raw;
-    const json = extractJsonObject(raw);
+    let json = extractJsonObject(raw);
+    if (!hasAllSixSections(json)) {
+      // Flash-Lite often drops the trailing support sections (teacher, reallife)
+      // while core/assessment are complete. Regenerating everything costs a full
+      // call (~₹0.45) and under the per-record cap leaves no room for a retry, so
+      // ask only for the missing support sections and merge them in.
+      json = await repairMissingSupportSections(json, { assembled, params, toolSlug, attemptModel, opts });
+    }
+    if (!hasAllSixSections(json)) {
+      // Say what was wrong — "did not return all six sections" alone hid
+      // whether the JSON was unparseable or which sections were missing.
+      lastErr = !json || typeof json !== 'object'
+        ? `Model output was not parseable JSON (${String(raw || '').length} chars).`
+        : `Model output missing section(s): ${V2_SECTION_IDS.filter((id) => !json[id] || typeof json[id] !== 'object').join(', ')}.`;
+    }
     if (hasAllSixSections(json)) {
       // Reject a visibly garbled generation and retry for a clean one (Flash-Lite
       // garbles intermittently). On the last attempt, sanitize and keep what we have.
       if (attempt < maxTries && rawGarbageScore(raw) >= 4) {
+        lastErr = `Model output looked garbled (score ${rawGarbageScore(raw)}).`;
         continue;
       }
       let structuredContent = deepSanitizeMath({
@@ -217,6 +354,7 @@ export async function generateSixSectionContent(toolSlug, params = {}, opts = {}
       }
 
       reconcileV2InstructionMarks(structuredContent);
+      await completeTruncatedAnswerKey(structuredContent, { attemptModel, opts });
       const quality = validateV2QuestionContent(structuredContent);
       if (!quality.valid) {
         lastErr = quality.errors.join(' ');

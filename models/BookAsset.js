@@ -29,6 +29,15 @@ const bookAssetSchema = new mongoose.Schema(
       default: 'pending_review',
       index: true,
     },
+    /** Same curriculum IDs as the text chunk/section on this asset's page. */
+    aiTopicKey: { type: String, default: '', trim: true },
+    aiTopicName: { type: String, default: '', trim: true },
+    aiSubtopicId: { type: String, default: '', trim: true },
+    aiSubtopicName: { type: String, default: '', trim: true },
+    sectionKey: { type: String, default: '', trim: true },
+    mappingStatus: { type: String, default: '', trim: true },
+    mappingConfidence: { type: Number, default: 0 },
+    mappingMethod: { type: String, default: '', trim: true },
     extractionModel: { type: String, default: '' },
     extractionVersion: { type: Number, default: 1 },
   },
@@ -37,6 +46,7 @@ const bookAssetSchema = new mongoose.Schema(
 
 bookAssetSchema.index({ bookId: 1, page: 1, type: 1 });
 bookAssetSchema.index({ bookId: 1, approvalStatus: 1, chapter: 1, subtopic: 1 });
+bookAssetSchema.index({ bookId: 1, approvalStatus: 1, aiSubtopicId: 1 });
 
 export default mongoose.models.BookAsset || mongoose.model('BookAsset', bookAssetSchema);
 

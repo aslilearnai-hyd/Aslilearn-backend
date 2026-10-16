@@ -74,6 +74,7 @@ import { isSixSectionV2Enabled, buildV2VariantHint } from '../../prompt-versioni
 import { isV2SupportedTool, v2ToolFamily } from '../../prompt-versioning/tool-packs.js';
 import { mapV2StructuredToLegacy, ensureV2WorksheetCoreSections, syncLegacyWorksheetSectionsIntoV2, countUsableQuestionsFromV2OrLegacy, trimUsableQuestionsToCount } from '../../../utils/v2-structured-to-legacy.js';
 import { pickQuestionCountParams } from '../../../utils/questionComposition.js';
+import { resolveSelectedCurriculumScope } from '../../rag/books/book-curriculum-service.js';
 import {
   applyQuestionSlotMetadata,
   buildGenerationCountTelemetry,
@@ -281,6 +282,24 @@ function extractV2QuestionTextsBook(sc) {
   return out;
 }
 
+/** User-facing reason when textbook retrieval stops before any Gemini call. */
+export function bookRetrievalFailureMessage(status = '') {
+  switch (status) {
+    case 'weak_context':
+      return 'The selected textbook passages were too weak to safely ground an exam. Reindex the book or choose a more specific chapter/subtopic.';
+    case 'rag_scope_empty':
+      return 'This book has no content mapped to the selected topic/subtopic yet. Review the book curriculum mapping, or pick a subtopic the book covers.';
+    case 'rag_scope_mismatch':
+      return 'Textbook retrieval returned passages from a different subtopic, so generation was stopped. Reindex the book and check its curriculum mapping.';
+    case 'curriculum_unmapped':
+      return 'This book has not been mapped to the AI Tools curriculum yet. Reindex it to enable generation.';
+    case 'curriculum_scope_unknown':
+      return 'The selected topic/subtopic was not found in AI Tools topics for this board/class/subject.';
+    default:
+      return 'No matching textbook passages were found for the selected curriculum. Reindex the book or correct its board/class/subject metadata.';
+  }
+}
+
 export async function generateBookBatchAndSave(params = {}, opts = {}) {
   const toolSlug = String(params.toolSlug || params.toolName || '').trim();
   if (!isBookBasedToolSlug(toolSlug)) {
@@ -336,6 +355,39 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
     forceWholeChapter: combineMulti || isWholeChapter,
   });
   const isCombinedMulti = combineMulti;
+  // Resolve the selection against AI Tools topics once. These DB IDs/labels —
+  // not anything Gemini returns — are what retrieval filters on and what the
+  // saved record carries.
+  const curriculum = await resolveSelectedCurriculumScope({
+    board: params.board || book.board,
+    classLabel: className,
+    subject: subjectName,
+    productCategory: productCategory || book.productCategory || '',
+    topicName,
+    subtopicName: isWholeChapter ? '' : subtopicName,
+    subTopics: combineMulti ? subTopicList : undefined,
+  }).catch((error) => {
+    console.warn('[book-generator] curriculum resolution failed:', error?.message || error);
+    return null;
+  });
+  const recordTopicName = curriculum?.topicName || topicName;
+  const recordSubtopic = curriculum?.aiSubtopicId && !isWholeChapter && !combineMulti
+    ? curriculum.subtopicName
+    : storageSubtopic;
+  const curriculumRecordFields = curriculum
+    ? { aiTopicKey: curriculum.aiTopicKey, aiSubtopicId: isWholeChapter || combineMulti ? '' : curriculum.aiSubtopicId }
+    : {};
+  const curriculumMetadata = curriculum
+    ? {
+        source: 'ai_tool_topics',
+        aiTopicKey: curriculum.aiTopicKey,
+        topicName: curriculum.topicName,
+        aiSubtopicId: curriculum.aiSubtopicId,
+        subtopicName: curriculum.subtopicName,
+        aiSubtopicIds: curriculum.aiSubtopicIds,
+        subtopicNames: curriculum.subtopicNames,
+      }
+    : null;
   const batchSize = getBatchSize(params.batchSize);
   const requestedQuestionParams = pickQuestionCountParams(params);
   const requestedQuestionCount = Number(requestedQuestionParams.questionCount);
@@ -449,6 +501,8 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             topicName,
             subtopicName: isWholeChapter ? '' : subtopicName,
             subTopics: subTopicList.length > 1 ? subTopicList : undefined,
+            productCategory: productCategory || book.productCategory || '',
+            curriculum,
             toolSlug,
             audience: toolAudience,
             bookTitle: book.title,
@@ -461,10 +515,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
         : { contextText: '', chunkCount: 0, chunks: [], hasBookPassages: false };
 
       if (useBookKnowledge && !ragBase.hasBookPassages) {
-        const retrievalMessage =
-          ragBase.retrievalStatus === 'weak_context'
-            ? 'The selected textbook passages were too weak to safely ground an exam. Reindex the book or choose a more specific chapter/subtopic.'
-            : 'No matching textbook passages were found for the selected curriculum. Reindex the book or correct its board/class/subject metadata.';
+        const retrievalMessage = bookRetrievalFailureMessage(ragBase.retrievalStatus);
         console.warn(
           `[book-generator] ${retrievalMessage} book=${bookId} topic="${topicName}" subtopic="${isWholeChapter ? 'whole-chapter' : subtopicName}"`,
         );
@@ -495,6 +546,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
       }
 
       const ragScope = {
+        curriculum,
         bookId,
         board,
         className: classNameForRag,
@@ -835,8 +887,9 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                       board,
                       classLabel: className,
                       subject: subjectName,
-                      topic: topicName || book.title,
-                      subtopic: storageSubtopic,
+                      topic: recordTopicName || book.title,
+                      subtopic: recordSubtopic,
+                      ...curriculumRecordFields,
                       productCategory: productCategory || undefined,
                       section: '',
                       content: persistContent,
@@ -885,6 +938,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                         bookTextUsed: Boolean(ragBase.hasBookPassages),
                         chapterScope: isWholeChapter,
                         requestedSubtopic: subtopicName,
+                        ...(curriculumMetadata ? { curriculum: curriculumMetadata } : {}),
                         ...(subTopicList.length > 1 ? { coveredSubtopics: subTopicList } : {}),
                         createdByName: opts.reqUser?.name || 'Super Admin',
                         createdByRole: 'super-admin',
@@ -1290,8 +1344,9 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
               board,
               classLabel: className,
               subject: subjectName,
-              topic: topicName,
-              subtopic: storageSubtopic,
+              topic: recordTopicName,
+              subtopic: recordSubtopic,
+              ...curriculumRecordFields,
               productCategory: productCategory || undefined,
               section: '',
               content: formattedContent,
@@ -1340,6 +1395,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
                 bookTextUsed: Boolean(ragBase.hasBookPassages),
                 chapterScope: isWholeChapter,
                 requestedSubtopic: subtopicName,
+                        ...(curriculumMetadata ? { curriculum: curriculumMetadata } : {}),
                 ...(subTopicList.length > 1 ? { coveredSubtopics: subTopicList } : {}),
                 bookTextWarning:
                   useBookKnowledge && !ragBase.hasBookPassages

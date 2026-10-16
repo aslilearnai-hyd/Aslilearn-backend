@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import AiToolTopic, { ensureAiToolTopicIndexes } from '../models/AiToolTopic.js';
 import AiToolCategoryShare from '../models/AiToolCategoryShare.js';
+import { syncCurriculumLabelsForTopicRow } from '../ai/rag/books/book-curriculum-service.js';
 import Board from '../models/Board.js';
 import {
   boardMongoMatch,
@@ -168,6 +169,30 @@ export async function listAiToolTopics(req, res) {
   }
 }
 
+/**
+ * Book chunks are mapped to AiToolTopic _ids. Re-creating a previously deleted
+ * subtopic must revive the same row (same _id) so existing book mappings stay
+ * attached instead of being orphaned by a fresh id.
+ */
+async function createOrReactivateAiToolTopic(doc) {
+  const { createdBy: _createdBy, ...reviveFields } = doc;
+  const revived = await AiToolTopic.findOneAndUpdate(
+    {
+      isActive: false,
+      board: doc.board,
+      productCategory: doc.productCategory,
+      classLabel: doc.classLabel,
+      subject: doc.subject,
+      topicName: doc.topicName,
+      subTopic: doc.subTopic,
+    },
+    { $set: { ...reviveFields, isActive: true } },
+    { new: true, sort: { updatedAt: -1 } },
+  );
+  if (revived) return revived;
+  return AiToolTopic.create(doc);
+}
+
 export async function createAiToolTopic(req, res) {
   try {
     await ensureIndexesOnce();
@@ -197,6 +222,8 @@ export async function createAiToolTopic(req, res) {
     const topicFilter = { board, productCategory, classLabel, subject, topicName, isActive: true };
     const baseSortOrder = await resolveSortOrderStart(AiToolTopic, topicFilter, sortOrderRaw);
 
+    const topicNumber = normalizeText(req.body.topicNumber || '');
+    const subtopicNumbers = Array.isArray(req.body.subtopicNumbers) ? req.body.subtopicNumbers : [];
     const docs = subTopics.map((subTopic, index) => ({
       board,
       productCategory,
@@ -205,13 +232,15 @@ export async function createAiToolTopic(req, res) {
       label,
       topicName,
       subTopic,
+      topicNumber,
+      subtopicNumber: normalizeText(subtopicNumbers[index] ?? (subTopics.length === 1 ? req.body.subtopicNumber || '' : '')),
       sortOrder: baseSortOrder + index,
       createdBy,
       updatedBy: createdBy,
     }));
 
     if (docs.length === 1) {
-      const item = await AiToolTopic.create(docs[0]);
+      const item = await createOrReactivateAiToolTopic(docs[0]);
       return res.status(201).json({ success: true, data: item, createdCount: 1 });
     }
 
@@ -219,7 +248,7 @@ export async function createAiToolTopic(req, res) {
     const skipped = [];
     for (const doc of docs) {
       try {
-        const item = await AiToolTopic.create(doc);
+        const item = await createOrReactivateAiToolTopic(doc);
         created.push(item);
       } catch (err) {
         if (err?.code === 11000) {
@@ -272,7 +301,7 @@ export async function updateAiToolTopic(req, res) {
     }
 
     const update = {};
-    const editableKeys = ['board', 'classLabel', 'subject', 'label', 'topicName', 'subTopic'];
+    const editableKeys = ['board', 'classLabel', 'subject', 'label', 'topicName', 'subTopic', 'topicNumber', 'subtopicNumber'];
     for (const key of editableKeys) {
       if (req.body[key] !== undefined) {
         const raw = normalizeText(req.body[key]);
@@ -304,6 +333,11 @@ export async function updateAiToolTopic(req, res) {
     if (!updated) {
       return res.status(404).json({ success: false, message: 'AI tool topic not found.' });
     }
+
+    // Mapped book chunks reference this row's _id; refresh their labels.
+    await syncCurriculumLabelsForTopicRow(existing, updated).catch((err) => {
+      console.warn('[ai-tool-topics] curriculum label sync failed:', err?.message || err);
+    });
 
     return res.json({ success: true, data: updated });
   } catch (error) {

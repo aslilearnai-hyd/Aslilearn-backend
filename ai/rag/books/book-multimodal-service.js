@@ -143,11 +143,14 @@ function queryTokens(value = '') {
 
 export async function retrieveApprovedBookAssets(scope = {}, limit = 4) {
   if (!scope.bookId) return [];
-  const assets = await BookAsset.find({
-    bookId: scope.bookId,
-    approvalStatus: 'approved',
-  })
-    .select('assetId page type caption description semanticText canonicalData labels chapter subtopic assetPath')
+  const filter = { bookId: scope.bookId, approvalStatus: 'approved' };
+  // Curriculum-mapped books: never borrow a figure/equation from another
+  // subtopic just because its caption looks similar.
+  const curriculumFilter = scope.curriculumFilter || null;
+  if (curriculumFilter?.aiSubtopicId) filter.aiSubtopicId = curriculumFilter.aiSubtopicId;
+  else if (curriculumFilter?.aiTopicKey) filter.aiTopicKey = curriculumFilter.aiTopicKey;
+  const assets = await BookAsset.find(filter)
+    .select('assetId page type caption description semanticText canonicalData labels chapter subtopic assetPath aiTopicKey aiSubtopicId aiSubtopicName')
     .lean();
   const query = queryTokens(
     [scope.subjectName || scope.subject, scope.topicName || scope.topic, scope.subtopicName || scope.subtopic]

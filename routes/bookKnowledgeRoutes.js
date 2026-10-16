@@ -19,6 +19,12 @@ import {
   importBookFromContent,
   importBooksFromContentBulk,
 } from '../controllers/bookKnowledgeController.js';
+import {
+  getBookCurriculumMapping,
+  remapBookCurriculum,
+  reviewBookCurriculumSection,
+  testBookCurriculumRetrieval,
+} from '../controllers/bookCurriculumMappingController.js';
 
 const router = express.Router();
 const upload = multer({
@@ -42,6 +48,10 @@ router.get('/books/:id/stats', getBookGenerationStats);
 router.get('/books/:id/chunks', listBookChunks);
 router.get('/books/:id/assets', listBookAssets);
 router.patch('/books/:id/assets/:assetId', reviewBookAsset);
+router.get('/books/:id/curriculum-mapping', getBookCurriculumMapping);
+router.patch('/books/:id/curriculum-mapping/sections/:sectionKey', reviewBookCurriculumSection);
+router.post('/books/:id/curriculum-mapping/test-retrieval', testBookCurriculumRetrieval);
+router.post('/books/:id/curriculum-mapping/remap', remapBookCurriculum);
 router.get('/assessment-assets', listAssessmentAssets);
 router.patch('/assessment-assets/:assetId', reviewAssessmentAsset);
 

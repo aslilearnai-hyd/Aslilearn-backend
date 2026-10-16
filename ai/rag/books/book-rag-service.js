@@ -10,6 +10,8 @@ import {
   formatBookAssetsForPrompt,
   retrieveApprovedBookAssets,
 } from './book-multimodal-service.js';
+import { findScopeMismatches, RETRIEVABLE_MAPPING_STATUSES } from './book-curriculum-mapper.js';
+import { hasCurriculumMappedChunks, resolveSelectedCurriculumScope } from './book-curriculum-service.js';
 
 const DEFAULT_TOP_K = Number(process.env.BOOK_RAG_TOP_K || process.env.RAG_TOP_K || 4);
 const DEFAULT_CANDIDATE_K = Number(process.env.BOOK_RAG_CANDIDATE_K || 16);
@@ -85,6 +87,9 @@ export async function searchRelevantChunks({
   subtopic,
   corpusId,
   difficultyBand,
+  aiTopicKey,
+  aiSubtopicId,
+  aiSubtopicIds,
   topK = DEFAULT_TOP_K,
   queryEmbedding: queryEmbeddingInput = null,
 }) {
@@ -92,6 +97,13 @@ export async function searchRelevantChunks({
   if (!q) return [];
 
   const filter = {};
+  // Curriculum IDs are hard constraints; embeddings only rank inside them.
+  if (aiTopicKey || aiSubtopicId || (Array.isArray(aiSubtopicIds) && aiSubtopicIds.length)) {
+    filter.mappingStatus = { $in: RETRIEVABLE_MAPPING_STATUSES };
+    if (aiTopicKey) filter.aiTopicKey = aiTopicKey;
+    if (aiSubtopicId) filter.aiSubtopicId = aiSubtopicId;
+    else if (Array.isArray(aiSubtopicIds) && aiSubtopicIds.length) filter.aiSubtopicId = { $in: aiSubtopicIds };
+  }
   if (bookId) filter.bookId = bookId;
   if (board) filter.board = board;
   if (classLabel) filter.class = classLabel;
@@ -109,7 +121,7 @@ export async function searchRelevantChunks({
     ? queryEmbeddingInput
     : (await generateEmbedding(q)).embedding;
   const candidates = await BookChunk.find(filter).select(
-    'content embedding embeddingModel chapter topic subtopic chunkIndex bookId subject class board corpusId sourcePriority sourceType difficultyBand approvalStatus assetIds sourcePage',
+    'content embedding embeddingModel chapter topic subtopic chunkIndex bookId subject class board corpusId sourcePriority sourceType difficultyBand approvalStatus assetIds sourcePage aiTopicKey aiTopicName aiSubtopicId aiSubtopicName mappingStatus mappingConfidence sourcePageStart sourcePageEnd',
   ).limit(getBookRagCandidateLimit(bookId)).lean();
 
   return candidates
@@ -145,7 +157,10 @@ export function formatBookContextForPrompt(chunks = [], meta = {}) {
   const maxContextChars = getBookRagMaxContextChars(meta.audience);
   for (let i = 0; i < chunks.length; i += 1) {
     const c = chunks[i];
-    const label = [c.chapter, c.topic, c.subtopic].filter(Boolean).join(' › ') || `Passage ${i + 1}`;
+    const label = (c.aiTopicName
+      ? [c.aiTopicName, c.aiSubtopicName]
+      : [c.chapter, c.topic, c.subtopic]
+    ).filter(Boolean).join(' › ') || `Passage ${i + 1}`;
     const sourceId = String(c._id || c.chunkId || '').trim();
     const sourceTag = sourceId ? ` | sourceChunkId=${sourceId}` : '';
     const block = `[${i + 1}] (${label}${sourceTag})\n${normalizeSpaces(c.content || c.chunkText || '')}`;
@@ -287,12 +302,101 @@ export async function searchSelectedBookWithLegacyMetadataFallback({
   };
 }
 
+function envFlag(name, fallback) {
+  const raw = process.env[name];
+  if (raw === undefined || raw === '') return fallback;
+  return !['false', '0', 'no', 'off'].includes(String(raw).trim().toLowerCase());
+}
+
+function isRequestedSubtopicList(scope = {}) {
+  return Array.isArray(scope.subTopics) && scope.subTopics.filter((s) => String(s || '').trim()).length > 1;
+}
+
+/**
+ * Decide how to retrieve for this scope:
+ * - strict  → book/corpus is curriculum-mapped; hard-filter by AI Tools IDs.
+ * - legacy  → nothing mapped yet (pre-migration books); old behaviour.
+ * - blocked → fail closed before any embedding/Gemini call.
+ */
+export async function resolveCurriculumRetrievalRoute(scope = {}, deps = {}) {
+  const hasMapped = deps.hasMapped || hasCurriculumMappedChunks;
+  const resolveSelection = deps.resolveSelection || resolveSelectedCurriculumScope;
+  if (!envFlag('BOOK_RAG_CURRICULUM_ID_FILTER', true)) return { mode: 'legacy', reason: 'id_filter_disabled' };
+  const requireMapping = envFlag('BOOK_RAG_REQUIRE_CURRICULUM_MAPPING', false);
+
+  const mappedFilter = scope.bookId
+    ? { bookId: scope.bookId }
+    : {
+        board: scope.board,
+        class: scope.className || scope.classLabel || scope.class,
+        subject: scope.subjectName || scope.subject,
+      };
+  const mapped = await hasMapped(mappedFilter).catch(() => false);
+  if (!mapped) {
+    return requireMapping
+      ? { mode: 'blocked', status: 'curriculum_unmapped', reason: 'book_not_mapped' }
+      : { mode: 'legacy', reason: 'book_not_mapped' };
+  }
+
+  const curriculum = scope.curriculum !== undefined
+    ? scope.curriculum
+    : await resolveSelection(scope).catch(() => null);
+  if (!curriculum?.aiTopicKey) {
+    return requireMapping
+      ? { mode: 'blocked', status: 'curriculum_scope_unknown', reason: 'selection_not_in_curriculum' }
+      : { mode: 'legacy', reason: 'selection_not_in_curriculum' };
+  }
+
+  const subtopicName = String(scope.subtopicName || scope.subtopic || '').trim();
+  if (subtopicName) {
+    if (!curriculum.aiSubtopicId) {
+      return { mode: 'blocked', status: 'rag_scope_empty', reason: 'subtopic_not_in_curriculum', curriculum };
+    }
+    const invariant = { aiTopicKey: curriculum.aiTopicKey, aiSubtopicId: curriculum.aiSubtopicId };
+    return { mode: 'strict', filter: invariant, invariant, curriculum };
+  }
+  if (isRequestedSubtopicList(scope)) {
+    const ids = curriculum.aiSubtopicIds || [];
+    if (!ids.length) {
+      return { mode: 'blocked', status: 'rag_scope_empty', reason: 'subtopics_not_in_curriculum', curriculum };
+    }
+    return {
+      mode: 'strict',
+      filter: { aiTopicKey: curriculum.aiTopicKey, aiSubtopicIds: ids },
+      invariant: { aiTopicKey: curriculum.aiTopicKey },
+      curriculum,
+    };
+  }
+  // Whole chapter: every chunk mapped to the topic, including topic-level ones.
+  const invariant = { aiTopicKey: curriculum.aiTopicKey };
+  return { mode: 'strict', filter: invariant, invariant, curriculum };
+}
+
+function emptyCurriculumResult(scope, query, route = {}) {
+  return {
+    chunks: [],
+    candidateChunks: [],
+    contextText: buildCurriculumTargetBlock(scope),
+    chunkCount: 0,
+    hasBookPassages: false,
+    retrievalQuery: query,
+    retrievalStatus: route.status || 'rag_scope_empty',
+    retrievalTier: 'weak',
+    curriculumMode: route.mode === 'blocked' ? 'blocked' : route.mode || 'strict',
+    curriculumReason: route.reason || route.status || '',
+    curriculum: route.curriculum || null,
+    sourceChunkIds: [],
+    assets: [],
+    multimodalParts: [],
+    sourceAssetIds: [],
+  };
+}
+
 export async function retrieveBookContextForGeneration(scope = {}) {
   const query = buildBookRetrievalQuery(scope);
   const isWholeChapter = !String(scope.subtopicName || scope.subtopic || '').trim();
   const topK = Number(scope.topK) || (isWholeChapter ? DEFAULT_WHOLE_CHAPTER_TOP_K : DEFAULT_TOP_K);
   const candidateK = Math.max(topK, Math.min(20, Number(scope.candidateK) || DEFAULT_CANDIDATE_K));
-  const { embedding: queryEmbedding } = await generateEmbedding(query);
 
   if (!scope.bookId) {
     const required = [
@@ -315,6 +419,13 @@ export async function retrieveBookContextForGeneration(scope = {}) {
     }
   }
 
+  // Route before embedding the query: a blocked scope must not spend a call.
+  const curriculumRoute = await resolveCurriculumRetrievalRoute(scope);
+  if (curriculumRoute.mode === 'blocked') {
+    return emptyCurriculumResult(scope, query, curriculumRoute);
+  }
+  const { embedding: queryEmbedding } = await generateEmbedding(query);
+
   const baseSearch = (extra = {}) =>
     searchRelevantChunks({
       query,
@@ -326,44 +437,82 @@ export async function retrieveBookContextForGeneration(scope = {}) {
       ...extra,
     });
 
-  // Formal exam mode fails closed: never broaden from the selected curriculum
-  // to subject-only or unfiltered chunks.
-  const scopedSearch = await searchSelectedBookWithLegacyMetadataFallback({
-    bookId: scope.bookId,
-    strictScope: {
-      board: scope.board,
-      class: scope.className || scope.classLabel || scope.class,
-      subject: scope.subjectName || scope.subject,
-    },
-    search: baseSearch,
-  });
-  const candidateChunks = rerankBookChunks(
-    scopedSearch.chunks,
-    scope,
-    candidateK,
-  );
+  let candidateChunks;
+  let chunks;
+  let scoreTier;
+  let bestRawScore;
+  let weakContextFallbackUsed = false;
+  let usedLegacyMetadataFallback = false;
 
-  const bestRawScore = Math.max(0, ...candidateChunks.map((chunk) => Number(chunk.rawScore) || 0));
-  const scoreTier = retrievalTier(bestRawScore, {
-    strong: process.env.BOOK_RAG_STRONG_SCORE,
-    acceptable: process.env.BOOK_RAG_ACCEPTABLE_SCORE,
-  });
-  const allowWeak = String(process.env.BOOK_RAG_ALLOW_WEAK_CONTEXT || 'false').toLowerCase() === 'true';
-  // An explicitly selected book is already a hard corpus boundary. If vector
-  // similarity is weak (common for "Whole chapter" or translated labels), use
-  // the best passages from that book instead of failing before the first model
-  // call. Corpus-wide retrieval still fails closed.
-  const allowSelectedBookFallback = canUseWeakSelectedBookChunks(scope, candidateChunks);
-  const weakContextFallbackUsed = scoreTier === 'weak' && !allowWeak && allowSelectedBookFallback;
-  const chunks = scoreTier === 'weak' && !allowWeak && !allowSelectedBookFallback
-    ? []
-    : selectDiverseBookChunks(candidateChunks, topK, {
-        lambda: process.env.BOOK_RAG_MMR_LAMBDA,
-        coveragePenalty: isWholeChapter ? 0.1 : 0.04,
+  if (curriculumRoute.mode === 'strict') {
+    // ID-first: only chunks mapped to the selected Topic/Subtopic are eligible;
+    // similarity just orders them. No broadening to neighbouring subtopics.
+    const scoped = await baseSearch(curriculumRoute.filter);
+    candidateChunks = rerankBookChunks(scoped, scope, candidateK);
+    bestRawScore = Math.max(0, ...candidateChunks.map((chunk) => Number(chunk.rawScore) || 0));
+    scoreTier = retrievalTier(bestRawScore, {
+      strong: process.env.BOOK_RAG_STRONG_SCORE,
+      acceptable: process.env.BOOK_RAG_ACCEPTABLE_SCORE,
+    });
+    chunks = selectDiverseBookChunks(candidateChunks, topK, {
+      lambda: process.env.BOOK_RAG_MMR_LAMBDA,
+      coveragePenalty: isWholeChapter ? 0.1 : 0.04,
+    });
+    if (!chunks.length) {
+      return emptyCurriculumResult(scope, query, { ...curriculumRoute, status: 'rag_scope_empty' });
+    }
+    const mismatches = findScopeMismatches([...candidateChunks, ...chunks], curriculumRoute.invariant);
+    if (mismatches.length) {
+      console.error('[book-rag] RAG_SCOPE_MISMATCH', {
+        expected: curriculumRoute.invariant,
+        chunkIds: mismatches.map((c) => String(c._id || '')),
       });
+      return emptyCurriculumResult(scope, query, { ...curriculumRoute, status: 'rag_scope_mismatch' });
+    }
+  } else {
+    // Formal exam mode fails closed: never broaden from the selected curriculum
+    // to subject-only or unfiltered chunks.
+    const scopedSearch = await searchSelectedBookWithLegacyMetadataFallback({
+      bookId: scope.bookId,
+      strictScope: {
+        board: scope.board,
+        class: scope.className || scope.classLabel || scope.class,
+        subject: scope.subjectName || scope.subject,
+      },
+      search: baseSearch,
+    });
+    candidateChunks = rerankBookChunks(
+      scopedSearch.chunks,
+      scope,
+      candidateK,
+    );
+
+    bestRawScore = Math.max(0, ...candidateChunks.map((chunk) => Number(chunk.rawScore) || 0));
+    scoreTier = retrievalTier(bestRawScore, {
+      strong: process.env.BOOK_RAG_STRONG_SCORE,
+      acceptable: process.env.BOOK_RAG_ACCEPTABLE_SCORE,
+    });
+    const allowWeak = String(process.env.BOOK_RAG_ALLOW_WEAK_CONTEXT || 'false').toLowerCase() === 'true';
+    // An explicitly selected book is already a hard corpus boundary. If vector
+    // similarity is weak (common for "Whole chapter" or translated labels), use
+    // the best passages from that book instead of failing before the first model
+    // call. Corpus-wide retrieval still fails closed.
+    const allowSelectedBookFallback = canUseWeakSelectedBookChunks(scope, candidateChunks);
+    weakContextFallbackUsed = scoreTier === 'weak' && !allowWeak && allowSelectedBookFallback;
+    chunks = scoreTier === 'weak' && !allowWeak && !allowSelectedBookFallback
+      ? []
+      : selectDiverseBookChunks(candidateChunks, topK, {
+          lambda: process.env.BOOK_RAG_MMR_LAMBDA,
+          coveragePenalty: isWholeChapter ? 0.1 : 0.04,
+        });
+    usedLegacyMetadataFallback = scopedSearch.usedLegacyMetadataFallback;
+  }
   const multimodalEnabled = String(process.env.BOOK_MULTIMODAL_RAG ?? 'true').toLowerCase() !== 'false';
   const assets = multimodalEnabled
-    ? await retrieveApprovedBookAssets(scope, Number(scope.assetK) || 4)
+    ? await retrieveApprovedBookAssets(
+        { ...scope, curriculumFilter: curriculumRoute.mode === 'strict' ? curriculumRoute.invariant : null },
+        Number(scope.assetK) || 4,
+      )
     : [];
   const needsVisualInput = scope.visualRequired === true || assets.some((asset) =>
     ['figure', 'graph', 'table', 'chemical_structure'].includes(String(asset.type || '')),
@@ -405,7 +554,10 @@ export async function retrieveBookContextForGeneration(scope = {}) {
     retrievalTier: scoreTier,
     bestScore: bestRawScore,
     weakContextFallbackUsed,
-    usedLegacyMetadataFallback: scopedSearch.usedLegacyMetadataFallback,
+    usedLegacyMetadataFallback,
+    curriculumMode: curriculumRoute.mode,
+    curriculumReason: curriculumRoute.reason || '',
+    curriculum: curriculumRoute.curriculum || null,
     sourceChunkIds: chunks.map((chunk) => String(chunk._id || '')).filter(Boolean),
     assets,
     multimodalParts,

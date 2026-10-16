@@ -24,6 +24,9 @@ const aiToolGenerationSchema = new mongoose.Schema(
     subject: { type: String, required: true, index: true },
     topic: { type: String, default: '' },
     subtopic: { type: String, default: '' },
+    /** AI Tools curriculum IDs copied from the user's selection (never from model output). */
+    aiTopicKey: { type: String, default: '' },
+    aiSubtopicId: { type: String, default: '', index: true },
     section: { type: String, default: '', index: true },
     content: { type: String, default: '' },
     generatedContent: { type: String, default: '' },

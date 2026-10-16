@@ -337,6 +337,34 @@ export async function queryAiToolTopicTaxonomy(params = {}) {
 }
 
 /**
+ * Raw AiToolTopic rows (with _id and curriculum numbers) for one scope, using
+ * the same category-share and board-alias rules as the dropdowns, so book
+ * mapping and generation resolve exactly the rows users can pick.
+ */
+export async function queryAiToolTopicRowsForScope(rawParams = {}) {
+  const params = await applyCategoryShare(rawParams);
+  const run = (p) =>
+    AiToolTopic.find(buildAiToolTopicTaxonomyFilter(p))
+      .select('board productCategory classLabel subject label topicName subTopic topicNumber subtopicNumber sortOrder createdAt')
+      .sort({ sortOrder: 1, createdAt: 1, _id: 1 })
+      .lean();
+  let rows = await run(params);
+  const board = normalizeMatchText(params.board);
+  if (rows.length === 0 && board) {
+    const compact = board.toUpperCase().replace(/[\s/\\-]+/g, '');
+    if (compact.includes('IIT') || compact.includes('NEET') || compact.includes('JEE')) {
+      for (const alias of ['IIT / NEET', 'IIT/NEET', 'IIT', 'NEET']) {
+        rows = await run({ ...params, board: alias });
+        if (rows.length > 0) break;
+      }
+    } else if (compact === 'CBSE' || compact === 'CBSC') {
+      rows = await run({ ...params, board: 'CBSE' });
+    }
+  }
+  return rows;
+}
+
+/**
  * Sole source for teacher/student topic dropdowns: Super Admin AI Tool Topics
  * (`ai_tool_topics`). No generations, hardcoded disk, or NCERT catalog merges.
  */

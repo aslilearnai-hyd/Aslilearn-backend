@@ -16,6 +16,12 @@ const aiToolTopicSchema = new mongoose.Schema(
     label: { type: String, default: '', trim: true, index: true },
     topicName: { type: String, required: true, trim: true, index: true },
     subTopic: { type: String, required: true, trim: true, index: true },
+    /**
+     * Curriculum numbers used by book → curriculum mapping ("3", "3.2"). Optional:
+     * when empty the mapper derives them from label/topicName/subTopic prefixes.
+     */
+    topicNumber: { type: String, default: '', trim: true },
+    subtopicNumber: { type: String, default: '', trim: true },
     /** Seed / admin order for dropdowns (lower = earlier). Omit for legacy rows. */
     sortOrder: { type: Number, index: true },
     isActive: { type: Boolean, default: true, index: true },

@@ -12,6 +12,43 @@ const bookChapterSchema = new mongoose.Schema(
   { _id: false },
 );
 
+const curriculumSectionSchema = new mongoose.Schema(
+  {
+    sectionKey: { type: String, default: '' },
+    parentSectionKey: { type: String, default: '' },
+    level: { type: Number, default: 0 },
+    number: { type: String, default: '' },
+    title: { type: String, default: '' },
+    chapterNumber: { type: String, default: '' },
+    chapterTitle: { type: String, default: '' },
+    pageStart: { type: Number, default: null },
+    pageEnd: { type: Number, default: null },
+    wordCount: { type: Number, default: 0 },
+    preview: { type: String, default: '' },
+    aiTopicKey: { type: String, default: '' },
+    aiTopicName: { type: String, default: '' },
+    aiSubtopicId: { type: String, default: '' },
+    aiSubtopicName: { type: String, default: '' },
+    mappingStatus: { type: String, default: '' },
+    mappingConfidence: { type: Number, default: 0 },
+    mappingMethod: { type: String, default: '' },
+    mappingEvidence: { type: mongoose.Schema.Types.Mixed, default: {} },
+  },
+  { _id: false },
+);
+
+const curriculumOverrideSchema = new mongoose.Schema(
+  {
+    sectionKey: { type: String, required: true },
+    aiTopicKey: { type: String, default: '' },
+    aiSubtopicId: { type: String, default: '' },
+    reject: { type: Boolean, default: false },
+    reviewedBy: { type: String, default: '' },
+    reviewedAt: { type: Date, default: null },
+  },
+  { _id: false },
+);
+
 const bookSchema = new mongoose.Schema(
   {
     title: { type: String, required: true, trim: true },
@@ -71,6 +108,33 @@ const bookSchema = new mongoose.Schema(
     /** JWTs may use symbolic ids (e.g. super-admin-001) — store as string. */
     uploadedBy: { type: String, default: '', trim: true },
     uploadedByRole: { type: String, default: 'super-admin' },
+    /** Book section → AI Tools curriculum mapping (rebuilt on every index). */
+    curriculumSections: { type: [curriculumSectionSchema], default: [] },
+    /** Admin decisions keyed by sectionKey; re-applied on every reindex. */
+    curriculumOverrides: { type: [curriculumOverrideSchema], default: [] },
+    curriculumMapping: {
+      status: {
+        type: String,
+        enum: ['not_mapped', 'ready', 'needs_review', 'unmapped', 'no_curriculum'],
+        default: 'not_mapped',
+      },
+      version: { type: Number, default: 0 },
+      coverage: { type: Number, default: 0 },
+      mappedTopics: { type: Number, default: 0 },
+      totalTopics: { type: Number, default: 0 },
+      mappedSubtopics: { type: Number, default: 0 },
+      totalSubtopics: { type: Number, default: 0 },
+      sectionCount: { type: Number, default: 0 },
+      unmappedSections: { type: Number, default: 0 },
+      needsReviewSections: { type: Number, default: 0 },
+      unmappedHighValueSections: { type: Number, default: 0 },
+      chunkCount: { type: Number, default: 0 },
+      chunksWithoutSubtopic: { type: Number, default: 0 },
+      confidenceBands: { type: mongoose.Schema.Types.Mixed, default: {} },
+      boilerplateLinesRemoved: { type: Number, default: 0 },
+      geminiCallsUsed: { type: Number, default: 0 },
+      mappedAt: { type: Date, default: null },
+    },
     generationStats: {
       totalGenerations: { type: Number, default: 0 },
       lastGeneratedAt: { type: Date, default: null },

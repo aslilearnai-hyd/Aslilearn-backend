@@ -38,6 +38,9 @@
     "ai:data-quality:audit": "node scripts/audit-repair-ai-tool-data.mjs",
     "ai:data-quality:repair": "node scripts/audit-repair-ai-tool-data.mjs --apply",
     "ai:rag:stress": "node scripts/stress-test-rag-generation.mjs",
+    "ai:topics:backfill-numbers": "node scripts/backfill-ai-topic-numbers.mjs",
+    "ai:rag:remap-books": "node scripts/remap-books-to-curriculum.mjs",
+    "test:book-curriculum": "node --test tests/book-curriculum-mapping.test.js tests/book-rag-retrieval.test.js tests/book-rag-upgrade.test.js",
     "ai:rag:reindex": "node scripts/reindex-book-corpus.mjs"
   },
   "dependencies": {
