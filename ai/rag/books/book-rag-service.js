@@ -490,10 +490,12 @@ export async function retrieveBookContextForGeneration(scope = {}) {
     });
     // Subtopic has no mapped text in this book: use the same chapter's
     // passages ranked for the subtopic. Never broadens past the chapter.
-    // A fully mapped book that has no text for this subtopic genuinely does
-    // not cover it: fail closed. Fallbacks are only for incomplete mappings.
+    // No text carries this subtopic's own heading. Books often teach it inside
+    // a neighbouring section (e.g. "Ecological Pyramids" inside "Flow of
+    // Energy"), so use the same chapter's passages ranked for the subtopic.
+    // Never broadens past the chapter.
     const mappingStatus = !chunks.length && scope.bookId ? await bookMappingStatus(scope.bookId) : 'ready';
-    if (!chunks.length && mappingStatus !== 'ready' && curriculumRoute.filter.aiSubtopicId && envFlag('BOOK_RAG_SUBTOPIC_TOPIC_FALLBACK', true)) {
+    if (!chunks.length && curriculumRoute.filter.aiSubtopicId && envFlag('BOOK_RAG_SUBTOPIC_TOPIC_FALLBACK', true)) {
       const topicScoped = await baseSearch({ aiTopicKey: curriculumRoute.curriculum.aiTopicKey });
       candidateChunks = rerankBookChunks(topicScoped, scope, candidateK);
       chunks = selectDiverseBookChunks(candidateChunks, topK, {
