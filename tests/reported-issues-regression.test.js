@@ -50,13 +50,15 @@ describe('12:59 reported issue regressions', () => {
   });
 
   it('normalizes safe Mongo-style planner filters without accepting arbitrary operators', () => {
-    const [regex, range, unsafe] = normalizePlannerFilters([
+    const [regex, range, list, unsafe] = normalizePlannerFilters([
       { field: 'fullName', value: { $regex: 'vijayalaxmi', $options: 'i' } },
       { field: 'createdAt', op: 'gte', value: 'days_ago_7' },
+      { field: 'event', value: { $in: ['created', 'updated'] } },
       { field: 'role', value: { $where: 'dangerous' } },
     ]);
     assert.deepEqual(regex, { field: 'fullName', op: 'regex', value: 'vijayalaxmi' });
     assert.deepEqual(range, { field: 'createdAt', op: 'gte', value: 'days_ago_7' });
+    assert.deepEqual(list, { field: 'event', op: 'in', value: ['created', 'updated'] });
     assert.deepEqual(unsafe, { field: 'role', value: { $where: 'dangerous' } });
   });
 

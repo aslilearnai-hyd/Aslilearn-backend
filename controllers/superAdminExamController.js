@@ -2057,6 +2057,12 @@ export function normalizeExamClassFields(exam) {
 }
 
 const DEFAULT_ASSERTION_REASON_DIRECTIONS = 'Directions: Each question is followed by four options: a), b), c), and d).\\nChoose the correct answer based on the given Assertion (A) and Reason (R).\\na) Both A and R are true, and R is the correct explanation of A.\\nb) Both A and R are true, but R is not the correct explanation of A.\\nc) A is true, but R is false.\\nd) A is false, but R is true.';
+const DEFAULT_ASSERTION_REASON_OPTIONS = [
+  'Both A and R are true, and R is the correct explanation of A.',
+  'Both A and R are true, but R is not the correct explanation of A.',
+  'A is true, but R is false.',
+  'A is false, but R is true.',
+];
 
 const ALLOWED_QUESTION_TYPES = ['mcq', 'multiple', 'integer', 'assertion_reason', 'match_following'];
 
@@ -2093,6 +2099,27 @@ const isChoiceQuestionType = (t) =>
 
 const isSingleChoiceQuestionType = (t) =>
   t === 'mcq' || t === 'assertion_reason' || t === 'match_following';
+
+export function normalizeExamQuestionOptions(questionType, options) {
+  const supplied = Array.isArray(options) ? options.filter((option) => {
+    const text = typeof option === 'string' ? option : option?.text;
+    return String(text || '').trim();
+  }) : [];
+  if (supplied.length || questionType !== 'assertion_reason') return supplied;
+  return DEFAULT_ASSERTION_REASON_OPTIONS.map((text) => ({ text, isCorrect: false }));
+}
+
+export function questionTypeRequiresOptions(questionType, matterFields = {}) {
+  if (!isChoiceQuestionType(questionType)) return false;
+  if (
+    questionType === 'match_following' &&
+    Array.isArray(matterFields.matchColumnI) && matterFields.matchColumnI.length >= 2 &&
+    Array.isArray(matterFields.matchColumnII) && matterFields.matchColumnII.length >= 2
+  ) {
+    return false;
+  }
+  return true;
+}
 
 function normalizeMatchColumnList(raw) {
   if (!Array.isArray(raw)) return [];
@@ -3028,7 +3055,8 @@ export const addQuestion = async (req, res) => {
       });
     }
 
-    if (isChoiceQuestionType(normalizedType) && (!options || options.length === 0)) {
+    const normalizedOptions = normalizeExamQuestionOptions(normalizedType, options);
+    if (questionTypeRequiresOptions(normalizedType, matterFields) && normalizedOptions.length === 0) {
       return res.status(400).json({ success: false, message: 'Options are required for MCQ and Multiple Choice questions' });
     }
 
@@ -3061,14 +3089,14 @@ export const addQuestion = async (req, res) => {
     } else if (normalizedType === 'multiple' && Array.isArray(correctAnswer)) {
       // For multiple choice, map pure indices to option texts (keep real option text as-is)
       formattedCorrectAnswer = correctAnswer.map((item) =>
-        resolveChoiceAnswerToOptionText(item, options),
+        resolveChoiceAnswerToOptionText(item, normalizedOptions),
       );
       if (formattedCorrectAnswer.length === 0) {
         formattedCorrectAnswer = correctAnswer;
       }
-    } else if (isSingleChoiceQuestionType(normalizedType) && options && options.length > 0) {
+    } else if (isSingleChoiceQuestionType(normalizedType) && normalizedOptions.length > 0) {
       // Prefer option text; digit index only if the value is not itself an option (see resolveChoiceAnswerToOptionText)
-      formattedCorrectAnswer = resolveChoiceAnswerToOptionText(correctAnswer, options);
+      formattedCorrectAnswer = resolveChoiceAnswerToOptionText(correctAnswer, normalizedOptions);
     }
 
     // Validate correctAnswer is not empty/null/undefined
@@ -3085,7 +3113,7 @@ export const addQuestion = async (req, res) => {
       marks,
       board: board || exam.board,
       correctAnswer: formattedCorrectAnswer,
-      optionsCount: options?.length || 0
+      optionsCount: normalizedOptions.length
     });
 
     // Ensure questionText is not empty string if questionImage is not provided
@@ -3115,7 +3143,7 @@ export const addQuestion = async (req, res) => {
     // preview / legacy content generators) stay in sync with correctAnswer.
     const finalOptions = normalizedType === 'integer'
       ? []
-      : (options || []).map((opt) => {
+      : normalizedOptions.map((opt) => {
           const text = typeof opt === 'string' ? opt : (opt?.text ?? '');
           return { text: String(text), isCorrect: false };
         });
@@ -4783,11 +4811,14 @@ export const updateQuestion = async (req, res) => {
     // Full content update: reformat options + correctAnswer like addQuestion
     if (contentUpdateRequested && (options !== undefined || correctAnswer !== undefined || questionType !== undefined)) {
       const effectiveType = questionToUpdate.questionType;
-      const incomingOptions = options !== undefined ? options : questionToUpdate.options;
+      const incomingOptions = normalizeExamQuestionOptions(
+        effectiveType,
+        options !== undefined ? options : questionToUpdate.options,
+      );
       let formattedCorrectAnswer =
         correctAnswer !== undefined ? correctAnswer : questionToUpdate.correctAnswer;
 
-      if (isChoiceQuestionType(effectiveType) && (!incomingOptions || incomingOptions.length === 0)) {
+      if (questionTypeRequiresOptions(effectiveType, matterFields) && incomingOptions.length === 0) {
         return res.status(400).json({
           success: false,
           message: 'Options are required for MCQ and Multiple Choice questions',

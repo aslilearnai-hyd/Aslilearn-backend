@@ -40,8 +40,37 @@ export function normalizePlannerFilters(filters) {
       keys.includes('$regex') &&
       keys.every((key) => key === '$regex' || key === '$options') &&
       (value.$options === undefined || /^[i]*$/.test(String(value.$options)));
-    if (!safeRegexObject || typeof value.$regex !== 'string') return next;
-    return { ...next, op: 'regex', value: value.$regex };
+    if (safeRegexObject && typeof value.$regex === 'string') {
+      return { ...next, op: 'regex', value: value.$regex };
+    }
+
+    // The planner also commonly emits Mongo's one-operator shorthand. Translate
+    // only operators already supported by toMongoFilter, and only scalar values
+    // (or scalar arrays for $in). Arbitrary/nested Mongo expressions remain
+    // untouched and are rejected by the existing query firewall below.
+    const operatorMap = {
+      $eq: 'eq',
+      $ne: 'ne',
+      $gt: 'gt',
+      $gte: 'gte',
+      $lt: 'lt',
+      $lte: 'lte',
+      $in: 'in',
+      $exists: 'exists',
+    };
+    if (keys.length !== 1 || !operatorMap[keys[0]]) return next;
+    const operatorValue = value[keys[0]];
+    const isScalar =
+      operatorValue === null ||
+      ['string', 'number', 'boolean'].includes(typeof operatorValue);
+    const isScalarArray =
+      keys[0] === '$in' &&
+      Array.isArray(operatorValue) &&
+      operatorValue.every((item) =>
+        item === null || ['string', 'number', 'boolean'].includes(typeof item),
+      );
+    if (!isScalar && !isScalarArray) return next;
+    return { ...next, op: operatorMap[keys[0]], value: operatorValue };
   });
 }
 

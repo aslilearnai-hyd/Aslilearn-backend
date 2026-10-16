@@ -10,9 +10,18 @@ import {
   bookExtractionCorruptionStats,
   chunkChapterText,
   extractDocxParagraphsFromXml,
+  keepUniqueBookChunkHash,
   saveContentLinkedBook,
   splitIntoChapters,
 } from '../ai/rag/books/book-ingestion-service.js';
+
+test('book chunk dedupe is scoped to the current book ingestion', () => {
+  const firstBook = new Set();
+  const secondBook = new Set();
+  assert.equal(keepUniqueBookChunkHash('same-paragraph', firstBook), true);
+  assert.equal(keepUniqueBookChunkHash('same-paragraph', firstBook), false);
+  assert.equal(keepUniqueBookChunkHash('same-paragraph', secondBook), true);
+});
 
 test('re-importing linked content replaces stale book metadata and file', async () => {
   let saves = 0;
@@ -52,7 +61,10 @@ test('book extraction flags replacement-glyph corruption without rejecting clean
   assert.equal(stats.needsOcr, true);
   assert.equal(stats.junkCount, 12);
 });
-import { parseMultimodalBookAssets } from '../ai/rag/books/book-multimodal-service.js';
+import {
+  parseMultimodalBookAssets,
+  resolveBookAssetApprovalStatus,
+} from '../ai/rag/books/book-multimodal-service.js';
 import {
   buildBookContextForVariant,
   canUseWeakSelectedBookChunks,
@@ -188,6 +200,11 @@ test('multimodal asset parser rejects unknown types and keeps canonical equation
   }));
   assert.equal(rows.length, 1);
   assert.equal(rows[0].canonicalData.latex, 'f = \\mu N');
+});
+
+test('trusted approved books expose extracted visuals to retrieval immediately', () => {
+  assert.equal(resolveBookAssetApprovalStatus({ approvalStatus: 'approved' }), 'approved');
+  assert.equal(resolveBookAssetApprovalStatus({ approvalStatus: 'pending_review' }), 'pending_review');
 });
 
 test('variant context preserves weak-context fail-closed behavior', () => {

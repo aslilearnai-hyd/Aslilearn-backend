@@ -624,8 +624,31 @@ export async function createBookFromUpload({
   return book;
 }
 
-/** Chunk + embed all content for a book. */
+const activeBookIndexJobs = new Map();
+
+export function keepUniqueBookChunkHash(contentHash, seenHashes = new Set()) {
+  const hash = String(contentHash || '');
+  if (!hash || seenHashes.has(hash)) return false;
+  seenHashes.add(hash);
+  return true;
+}
+
+/**
+ * Chunk + embed all content for a book. Concurrent refresh/reindex requests for
+ * the same book share one job, so their delete/insert phases cannot interleave.
+ */
 export async function indexBook(bookId) {
+  const key = String(bookId || '');
+  const active = activeBookIndexJobs.get(key);
+  if (active) return active;
+  const job = runBookIndex(bookId).finally(() => {
+    if (activeBookIndexJobs.get(key) === job) activeBookIndexJobs.delete(key);
+  });
+  activeBookIndexJobs.set(key, job);
+  return job;
+}
+
+async function runBookIndex(bookId) {
   const book = await Book.findById(bookId);
   if (!book) throw new Error('Book not found');
 
@@ -650,16 +673,12 @@ export async function indexBook(bookId) {
       .lean();
     const allChunkDocs = [];
     const chunkCandidates = [];
-    const corpusId = String(book.corpusId || '').trim();
-    const existingHashes = corpusId
-      ? new Set(
-          (await BookChunk.find({
-            corpusId,
-            bookId: { $ne: book._id },
-            approvalStatus: { $nin: ['rejected', 'archived'] },
-          }).distinct('contentHash')).filter(Boolean),
-        )
-      : new Set();
+    // A BookChunk belongs to a concrete source book. Do not deduplicate against
+    // sibling books in the same curriculum corpus: doing so made a newly linked
+    // Alpha/Beta book report "Indexed · 0 chunks" whenever another book happened
+    // to contain the same paragraphs. Retrieval already ranks/deduplicates across
+    // sources; ingestion only removes repeats inside this one book.
+    const existingHashes = new Set();
     let duplicateChunkCount = 0;
     let globalIndex = 0;
 
@@ -667,11 +686,10 @@ export async function indexBook(bookId) {
       const chapterChunks = chunkChapterText(chapter.text || fullText.slice(chapter.startOffset, chapter.endOffset), chapter);
       for (const chunk of chapterChunks) {
         const contentHash = crypto.createHash('sha256').update(chunk.content).digest('hex');
-        if (existingHashes.has(contentHash)) {
+        if (!keepUniqueBookChunkHash(contentHash, existingHashes)) {
           duplicateChunkCount += 1;
           continue;
         }
-        existingHashes.add(contentHash);
         chunkCandidates.push({
           bookId: book._id,
           chunkIndex: globalIndex,
@@ -725,7 +743,19 @@ export async function indexBook(bookId) {
           return { ...candidate, embedding, embeddingModel };
         },
       );
-      await BookChunk.insertMany(embeddedBatch, { ordered: false });
+      // Reindex requests can overlap across app instances. Idempotent upserts
+      // prevent the unique {bookId, chunkIndex} index from turning a successful
+      // refresh into E11000 after most chunks have already been written.
+      await BookChunk.bulkWrite(
+        embeddedBatch.map((doc) => ({
+          replaceOne: {
+            filter: { bookId: doc.bookId, chunkIndex: doc.chunkIndex },
+            replacement: doc,
+            upsert: true,
+          },
+        })),
+        { ordered: false },
+      );
       allChunkDocs.push(...embeddedBatch);
       await Book.updateOne(
         { _id: book._id },
@@ -733,15 +763,19 @@ export async function indexBook(bookId) {
       );
     }
 
-    book.chunkCount = allChunkDocs.length;
+    const persistedChunkCount = await BookChunk.countDocuments({ bookId: book._id });
+    if (persistedChunkCount < 1) {
+      throw new Error('No book chunks were produced from the extracted source text.');
+    }
+    book.chunkCount = persistedChunkCount;
     book.duplicateChunkCount = duplicateChunkCount;
-    book.embeddingsCreated = allChunkDocs.length > 0;
+    book.embeddingsCreated = persistedChunkCount > 0;
     book.processingStatus = 'indexed';
     book.chapters = chapterSegments.map(({ text: _t, ...ch }) => ch);
     book.lastIndexedAt = new Date();
     await book.save();
 
-    return { bookId: book._id, chunkCount: allChunkDocs.length, duplicateChunkCount };
+    return { bookId: book._id, chunkCount: persistedChunkCount, duplicateChunkCount };
   } catch (error) {
     book.processingStatus = 'failed';
     book.processingError = error.message || 'Indexing failed';

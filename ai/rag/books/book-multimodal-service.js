@@ -74,6 +74,10 @@ function assetIdFor(bookId, asset, index) {
   return `BOOK_ASSET_${digest}`;
 }
 
+export function resolveBookAssetApprovalStatus(book = {}) {
+  return book.approvalStatus === 'approved' ? 'approved' : 'pending_review';
+}
+
 export async function extractAndStoreBookAssets({ book, buffer, mimeType = 'application/pdf' }) {
   const enabled = String(process.env.BOOK_MULTIMODAL_INGESTION ?? 'true').toLowerCase() !== 'false';
   if (!enabled || !book?._id || !Buffer.isBuffer(buffer)) return { assetCount: 0, skipped: true };
@@ -91,7 +95,12 @@ Do not invent missing labels or values. Exclude decorative images. Return JSON o
     maxTokens: Number(process.env.BOOK_MULTIMODAL_MAX_OUTPUT_TOKENS) || 12000,
   });
   const assets = parseMultimodalBookAssets(raw);
-  await BookAsset.deleteMany({ bookId: book._id, approvalStatus: { $ne: 'approved' } });
+  const autoApprove = resolveBookAssetApprovalStatus(book) === 'approved';
+  await BookAsset.deleteMany(
+    autoApprove
+      ? { bookId: book._id }
+      : { bookId: book._id, approvalStatus: { $ne: 'approved' } },
+  );
   if (!assets.length) return { assetCount: 0, skipped: false };
 
   const docs = assets.map((asset, index) => ({
@@ -103,6 +112,10 @@ Do not invent missing labels or values. Exclude decorative images. Return JSON o
     subject: book.subject || '',
     extractionModel: process.env.GEMINI_FALLBACK_MODEL || process.env.VIDYA_AI_GEMINI_MODEL || '',
     extractionVersion: 1,
+    // Super-admin uploads and linked learning-path books are trusted sources.
+    // Keeping their assets pending made every visual invisible to retrieval
+    // because there is currently no BookAsset review surface in the product.
+    approvalStatus: resolveBookAssetApprovalStatus(book),
   }));
   await BookAsset.bulkWrite(
     docs.map((doc) => ({
@@ -110,7 +123,6 @@ Do not invent missing labels or values. Exclude decorative images. Return JSON o
         filter: { assetId: doc.assetId },
         update: {
           $set: doc,
-          $setOnInsert: { approvalStatus: 'pending_review' },
         },
         upsert: true,
       },
