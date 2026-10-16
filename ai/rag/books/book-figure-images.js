@@ -73,7 +73,7 @@ export function parseFigureBoxes(raw = '') {
   }
 }
 
-export const FIGURE_BOX_PROMPT = `Find every educational figure, diagram, graph, labelled illustration, chemical structure or data table on this textbook page. Ignore logos, running headers/footers, page numbers, decorative icons, cartoons of characters and plain text.
+export const FIGURE_BOX_PROMPT = `Find every educational figure, diagram, graph, labelled illustration, chemical structure or data table on this textbook page. Ignore logos, running headers/footers, page numbers, decorative icons, cartoons of characters and plain text. Also ignore boxes that are mainly text — Activity, Note, Did you know, Summary, Key points or Exercise boxes — unless they contain a drawing; then box only the drawing.
 For each, return a tight box that includes the drawing, its labels and its printed caption.
 Return JSON only: {"figures":[{"caption":"exact printed caption, e.g. Fig 1.3 Syringe with Air","description":"one sentence on what it shows","type":"figure|graph|table|chemical_structure","box_2d":[ymin,xmin,ymax,xmax]}]} with box_2d normalised to 0-1000.`;
 
