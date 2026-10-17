@@ -557,3 +557,19 @@ test('placeholder answer keys are rebuilt from per-question answers', async () =
   assert.deepEqual(content.assessment.answerKey.map((e) => [e.q, e.answer]), [['A1', 'B) 366'], ['C1', 'To match the solar year.']]);
   assert.equal(validateV2QuestionContent(content).valid, true);
 });
+
+test('unused budget carries to the next subtopic scope, never above Rs1 x records', async () => {
+  const { nextBookBudgetCarry } = await import('../ai/generators/_batch/book-generator-batch-orchestrator.js');
+  // 5 records across 5 subtopics: cheap ones leave room for an expensive one.
+  let carry = 0;
+  let totalAllowed = 0;
+  for (const spent of [0.47, 0.45, 0.5]) {
+    totalAllowed += 1;
+    carry = nextBookBudgetCarry(carry, 1, { cost: { inr: spent } });
+  }
+  assert.equal(carry, 1.58);
+  // The 4th scope may now spend up to 1 + 1.58; overall spend stays <= 4.
+  carry = nextBookBudgetCarry(carry, 1, { cost: { inr: 2.3 } });
+  assert.equal(carry, 0.28);
+  assert.equal(nextBookBudgetCarry(0, 1, { cost: { inr: 5 } }), 0, 'never negative');
+});

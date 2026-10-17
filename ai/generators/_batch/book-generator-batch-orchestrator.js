@@ -196,9 +196,10 @@ export function estimateNextBookGeneratorCallInr() {
 }
 
 function canStartBookGeneratorCall(batchSize, sessionOverride = null) {
-  const maxInr = getBookGeneratorMaxInr(batchSize);
-  if (maxInr === Infinity) return true;
   const session = sessionOverride || getTokenUsageSession();
+  // The run's own allowance (may include carry-over from earlier scopes).
+  const maxInr = Number(session?.budget?.maxCostInr) || getBookGeneratorMaxInr(batchSize);
+  if (maxInr === Infinity) return true;
   const calls = Math.max(0, Number(session?.totals?.callCount) || 0);
   const currentCostInr = estimateSessionCostInr(session);
   const observedAverage = calls > 0 ? currentCostInr / calls : 0;
@@ -206,6 +207,19 @@ function canStartBookGeneratorCall(batchSize, sessionOverride = null) {
     Number(process.env.BOOK_GENERATOR_PROJECTED_CALL_INR) || BOOK_GENERATOR_PROJECTED_CALL_INR;
   const projectedCallInr = Math.max(0.1, configured, observedAverage);
   return currentCostInr + projectedCallInr <= maxInr;
+}
+
+/**
+ * "Generate N" across several subtopics runs one batch per subtopic. Unused
+ * allowance from a finished scope carries into the next, so the total never
+ * exceeds ₹1 × records while an expensive record can use a cheap one's
+ * leftovers (each record still starts with its own ₹1).
+ */
+export function nextBookBudgetCarry(carryInr, batchSize, result) {
+  const allowed = getBookGeneratorMaxInr(batchSize) + Math.max(0, Number(carryInr) || 0);
+  if (!Number.isFinite(allowed)) return 0;
+  const spent = Math.max(0, Number(result?.cost?.inr) || 0);
+  return Math.max(0, Math.round((allowed - spent) * 100) / 100);
 }
 
 function getBatchSize(override) {
@@ -501,8 +515,9 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
     let cost = null;
     let ragBase = { contextText: '', chunkCount: 0, chunks: [], hasBookPassages: false };
 
+    const runBudgetInr = getBookGeneratorMaxInr(batchSize) + Math.max(0, Number(opts.extraBudgetInr) || 0);
     const tokenUsageSession = beginTokenUsageSession('book-generator-batch', {
-      maxCostInr: getBookGeneratorMaxInr(batchSize),
+      maxCostInr: runBudgetInr,
       projectedCallInr: BOOK_GENERATOR_PROJECTED_CALL_INR,
     });
 
@@ -624,7 +639,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             ok: false,
             variantIndex,
             batchIndex,
-            error: `Batch budget cap (₹${getBookGeneratorMaxInr(batchSize)}) reached before the next model call`,
+            error: `Batch budget cap (₹${Math.round(runBudgetInr * 100) / 100}) reached before the next model call`,
           };
         }
 
@@ -638,7 +653,7 @@ export async function generateBookBatchAndSave(params = {}, opts = {}) {
             break;
           }
           if (!canStartBookGeneratorCall(batchSize, tokenUsageSession)) {
-            lastError = `Batch budget cap (₹${getBookGeneratorMaxInr(batchSize)}) reached before the next model call`;
+            lastError = `Batch budget cap (₹${Math.round(runBudgetInr * 100) / 100}) reached before the next model call`;
             break;
           }
           try {

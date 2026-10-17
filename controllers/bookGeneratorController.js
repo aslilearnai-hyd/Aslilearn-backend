@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import AiToolGeneration from '../models/AiToolGeneration.js';
 import Book from '../models/Book.js';
-import { generateBookBatchAndSave } from '../services/book-generator-batch-orchestrator.js';
+import { generateBookBatchAndSave, nextBookBudgetCarry } from '../services/book-generator-batch-orchestrator.js';
 import { forceReleaseBookGeneratorLocks } from '../services/ai-generator-lock-service.js';
 import {
   cancelBookGeneratorJobsForScope,
@@ -189,6 +189,7 @@ export async function generateBookBatch(req, res) {
               t.chapterScope ? 'Whole chapter' : t.subtopicName,
             ),
           };
+          let budgetCarryInr = 0;
           for (let i = 0; i < allocatedTargets.length; i += 1) {
             const target = allocatedTargets[i];
             onProgress?.(
@@ -215,7 +216,9 @@ export async function generateBookBatch(req, res) {
               },
               forceUnlock: forceUnlock === true && i === 0,
             };
-            const result = await generateBookBatchAndSave(params, { reqUser: req.user, onProgress });
+            const result = await generateBookBatchAndSave(params, { reqUser: req.user, onProgress, extraBudgetInr: budgetCarryInr });
+            budgetCarryInr = nextBookBudgetCarry(budgetCarryInr, target.batchSize, result);
+            result.failures = (result.failures || []).map((f) => String(f).replace(/^Slot \d+:/, `${target.chapterScope ? 'Whole chapter' : target.subtopicName}:`));
             addExpandedBookBatchResult(merged, result);
             if (result.locked) {
               merged.success = false;
@@ -255,6 +258,7 @@ export async function generateBookBatch(req, res) {
           t.chapterScope ? 'Whole chapter' : t.subtopicName,
         ),
       };
+      let budgetCarryInr = 0;
       for (const target of allocatedTargets) {
         const params = {
           toolSlug: slug,
@@ -277,7 +281,9 @@ export async function generateBookBatch(req, res) {
           },
           forceUnlock: forceUnlock === true,
         };
-        const result = await generateBookBatchAndSave(params, runOpts);
+        const result = await generateBookBatchAndSave(params, { ...runOpts, extraBudgetInr: budgetCarryInr });
+        budgetCarryInr = nextBookBudgetCarry(budgetCarryInr, target.batchSize, result);
+        result.failures = (result.failures || []).map((f) => String(f).replace(/^Slot \d+:/, `${target.chapterScope ? 'Whole chapter' : target.subtopicName}:`));
         addExpandedBookBatchResult(merged, result);
         if (result.locked) {
           finalizeExpandedBookBatchResult(merged);
