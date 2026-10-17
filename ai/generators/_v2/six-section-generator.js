@@ -10,6 +10,7 @@ import { extractJsonObject } from '../../shared/ai-json-extract.js';
 import { getAiGeneratorGeminiModel } from '../shared/ai-generator-batch-config.js';
 import { assembleSixSectionPrompt } from '../../prompt-versioning/assemble.js';
 import { V2_SECTION_IDS } from '../../prompt-versioning/master-prompt.js';
+import { PLACEHOLDER_ANSWER_RE } from './six-section-quality.js';
 import { GEMINI_LITE_MODEL } from '../../providers/gemini-models.js';
 import { countUsableQuestionsFromV2OrLegacy, trimUsableQuestionsToCount } from '../../../utils/v2-structured-to-legacy.js';
 import {
@@ -195,6 +196,29 @@ export function buildAnswerKeyCompletionPrompt({ questions, existing, ragContext
 }
 
 /**
+ * The model sometimes writes "All questions. See sections above." instead of
+ * an answer key while every question already carries its answer. Rebuild the
+ * key from those answers (no model call) so teachers see real answers.
+ */
+export function rebuildPlaceholderAnswerKey(structuredContent) {
+  const assessment = structuredContent?.assessment;
+  if (!assessment || typeof assessment !== 'object') return false;
+  const key = Array.isArray(assessment.answerKey) ? assessment.answerKey : [];
+  const text = (entry) => `${entry?.answer || ''} ${entry?.working || ''}`.trim();
+  const usable = key.filter((entry) => text(entry) && !PLACEHOLDER_ANSWER_RE.test(text(entry)));
+  const questions = v2Questions(structuredContent);
+  if (usable.length >= questions.length || usable.length === key.length && key.length > 0) return false;
+  const answered = questions.filter((q) => String(q.row.answer || '').trim());
+  if (!answered.length || answered.length < questions.length) return false;
+  assessment.answerKey = answered.map((q) => ({
+    q: `${q.section.replace(/^section([A-G]).*$/, '$1')}${q.index}`,
+    answer: String(q.row.answer).trim(),
+    working: String(q.row.explanation || q.row.working || '').trim(),
+  }));
+  return true;
+}
+
+/**
  * Flash-Lite often stops the answer key early (e.g. 7 of 15). A full
  * regeneration costs as much as the first call; answer only the missing
  * questions instead, grounded in the same retrieved context.
@@ -354,6 +378,7 @@ export async function generateSixSectionContent(toolSlug, params = {}, opts = {}
       }
 
       reconcileV2InstructionMarks(structuredContent);
+      rebuildPlaceholderAnswerKey(structuredContent);
       await completeTruncatedAnswerKey(structuredContent, { attemptModel, opts });
       const quality = validateV2QuestionContent(structuredContent);
       if (!quality.valid) {

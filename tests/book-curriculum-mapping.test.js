@@ -538,3 +538,22 @@ test('chunk content types: front matter is never retrieved', async () => {
   ] });
   assert.deepEqual([h.chunksWithoutSubtopic, h.frontMatterChunks, h.exerciseChunks], [2, 1, 1]);
 });
+
+test('placeholder answer keys are rebuilt from per-question answers', async () => {
+  const { rebuildPlaceholderAnswerKey } = await import('../ai/generators/_v2/six-section-generator.js');
+  const { validateV2QuestionContent, PLACEHOLDER_ANSWER_RE } = await import('../ai/generators/_v2/six-section-quality.js');
+  assert.ok(PLACEHOLDER_ANSWER_RE.test('QAll questions. See sections above. (Step-by-step logic provided in each section.)'));
+  assert.ok(PLACEHOLDER_ANSWER_RE.test('See model answer'));
+  assert.ok(!PLACEHOLDER_ANSWER_RE.test('B) 366 days because February has 29 days'));
+  const content = {
+    core: {
+      sectionA_mcq: [{ question: 'Days in a leap year?', options: ['A) 365', 'B) 366'], answer: 'B) 366', marks: 1 }],
+      sectionC_short: [{ question: 'Why add a day?', answer: 'To match the solar year.', marks: 2 }],
+    },
+    assessment: { answerKey: [{ q: 'all', answer: 'All questions. See sections above.', working: '' }] },
+  };
+  assert.equal(validateV2QuestionContent(content).valid, false);
+  assert.equal(rebuildPlaceholderAnswerKey(content), true);
+  assert.deepEqual(content.assessment.answerKey.map((e) => [e.q, e.answer]), [['A1', 'B) 366'], ['C1', 'To match the solar year.']]);
+  assert.equal(validateV2QuestionContent(content).valid, true);
+});

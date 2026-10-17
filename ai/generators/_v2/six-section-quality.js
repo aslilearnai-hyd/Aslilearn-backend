@@ -35,6 +35,13 @@ export function reconcileV2InstructionMarks(structuredContent) {
   return structuredContent;
 }
 
+/**
+ * Answers that point elsewhere instead of answering ("refer to the textbook",
+ * "All questions. See sections above.", "See core", "See model answer").
+ */
+export const PLACEHOLDER_ANSWER_RE =
+  /\b(?:use|refer to|consult|see|read)\s+(?:the\s+)?(?:chapter|textbook|book|source|provided material)(?:\s+(?:evidence|content|information|details))?\b|\bsee\s+(?:the\s+)?(?:sections?|questions?|answers?)\s+above\b|\bprovided\s+in\s+each\s+section\b|^\W*(?:q\s*)?all\s+questions\b|\bsee\s+(?:core|model\s+answer)\b/i;
+
 /** Reject content that looks complete structurally but is unusable in class. */
 export function validateV2QuestionContent(structuredContent) {
   const rows = v2QuestionRows(structuredContent);
@@ -47,8 +54,7 @@ export function validateV2QuestionContent(structuredContent) {
     errors.push(`Answer key has ${answerKey.length} entries for ${rows.length} questions.`);
   }
 
-  const placeholderAnswer =
-    /\b(?:use|refer to|consult|see|read)\s+(?:the\s+)?(?:chapter|textbook|book|source|provided material)(?:\s+(?:evidence|content|information|details))?\b/i;
+  const placeholderAnswer = PLACEHOLDER_ANSWER_RE;
   for (const item of answerKey) {
     const answer = String(item?.answer || '').trim();
     const working = String(item?.working || '').trim();
