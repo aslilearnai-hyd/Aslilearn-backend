@@ -132,6 +132,8 @@ const bookSchema = new mongoose.Schema(
       unmappedHighValueSections: { type: Number, default: 0 },
       chunkCount: { type: Number, default: 0 },
       chunksWithoutSubtopic: { type: Number, default: 0 },
+      frontMatterChunks: { type: Number, default: 0 },
+      exerciseChunks: { type: Number, default: 0 },
       confidenceBands: { type: mongoose.Schema.Types.Mixed, default: {} },
       boilerplateLinesRemoved: { type: Number, default: 0 },
       geminiCallsUsed: { type: Number, default: 0 },

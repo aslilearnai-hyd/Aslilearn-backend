@@ -97,7 +97,9 @@ export async function searchRelevantChunks({
   const q = String(query || '').trim();
   if (!q) return [];
 
-  const filter = {};
+  // Front matter (cover, preface, contents, marketing copy) is stored for
+  // review but never used to ground generated questions.
+  const filter = { contentType: { $ne: 'front_matter' } };
   // Curriculum IDs are hard constraints; embeddings only rank inside them.
   if (aiTopicKey || aiSubtopicId || (Array.isArray(aiSubtopicIds) && aiSubtopicIds.length)) {
     filter.mappingStatus = { $in: RETRIEVABLE_MAPPING_STATUSES };

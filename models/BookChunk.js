@@ -41,6 +41,12 @@ const bookChunkSchema = new mongoose.Schema(
     bookChapterTitle: { type: String, default: '', trim: true },
     bookSubtopicNumber: { type: String, default: '', trim: true },
     bookSubtopicTitle: { type: String, default: '', trim: true },
+    /**
+     * What the chunk is: front_matter (cover/preface/contents — stored but never
+     * retrieved for generation), chapter_intro, section, synopsis or exercise
+     * (end-of-chapter practice, chapter-level). '' = indexed before this field.
+     */
+    contentType: { type: String, default: '', trim: true },
     sectionKey: { type: String, default: '', trim: true },
     /** All book sections merged into this chunk's group (all share one mapping). */
     sectionKeys: { type: [String], default: [] },

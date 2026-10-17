@@ -840,6 +840,15 @@ async function buildCurriculumChunkPlan(book, fullText) {
   });
 }
 
+/** Classify a chunk group for retrieval eligibility and admin reporting. */
+export function chunkContentType(group = {}) {
+  if (!group.level) return 'front_matter';
+  if (group.kind === 'exercise') return 'exercise';
+  if (group.kind === 'synopsis') return 'synopsis';
+  if (group.level === 1) return 'chapter_intro';
+  return 'section';
+}
+
 /**
  * One entry per detected book chapter (not the legacy line splitter, which
  * reported e.g. 147 "chapters" for a 7-chapter book).
@@ -1065,6 +1074,7 @@ async function runBookIndex(bookId) {
             mappingConfidence: Number(group.mappingConfidence) || 0,
             mappingMethod: group.mappingMethod || '',
             mappingVersion: CURRICULUM_MAPPING_VERSION,
+            contentType: chunkContentType(group),
             assetIds: groupAssetIds,
             content: chunk.content,
             contentHash,

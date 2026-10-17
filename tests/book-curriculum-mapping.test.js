@@ -524,3 +524,17 @@ test('combined subtopic names missing from the book use the chapter', async () =
   assert.equal(route.fallback, 'topic');
   assert.deepEqual(route.filter, { aiTopicKey: 'T3' });
 });
+
+test('chunk content types: front matter is never retrieved', async () => {
+  const { chunkContentType } = await import('../ai/rag/books/book-ingestion-service.js');
+  assert.equal(chunkContentType({ level: 0 }), 'front_matter');
+  assert.equal(chunkContentType({ level: 2, kind: 'exercise' }), 'exercise');
+  assert.equal(chunkContentType({ level: 1, kind: 'synopsis' }), 'synopsis');
+  assert.equal(chunkContentType({ level: 1 }), 'chapter_intro');
+  assert.equal(chunkContentType({ level: 3 }), 'section');
+  const h = computeMappingHealth([], tree(), { chunks: [
+    { contentType: 'front_matter', aiSubtopicId: '' }, { contentType: 'exercise', aiSubtopicId: '' },
+    { contentType: 'section', aiSubtopicId: 'st0302', mappingStatus: MAPPING_STATUS.AUTO },
+  ] });
+  assert.deepEqual([h.chunksWithoutSubtopic, h.frontMatterChunks, h.exerciseChunks], [2, 1, 1]);
+});

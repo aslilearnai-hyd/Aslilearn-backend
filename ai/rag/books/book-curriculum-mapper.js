@@ -1075,6 +1075,10 @@ export function computeMappingHealth(sections = [], tree, { chunks = [] } = {}) 
     else bands.low += 1;
   }
   const chunksWithoutSubtopic = chunks.filter((c) => !c.aiSubtopicId).length;
+  // Break the "without subtopic" count down so admins can see it is front
+  // matter (never retrieved) and chapter-level exercise blocks, not lost text.
+  const frontMatterChunks = chunks.filter((c) => c.contentType === 'front_matter').length;
+  const exerciseChunks = chunks.filter((c) => c.contentType === 'exercise').length;
   const coverage = totalWords ? settledWords / totalWords : 0;
   const minCoverage = envNumber('BOOK_MAPPING_MIN_COVERAGE', 0.95);
   let status = 'ready';
@@ -1098,6 +1102,8 @@ export function computeMappingHealth(sections = [], tree, { chunks = [] } = {}) 
     unmappedHighValueSections: unmappedHighValue.length,
     chunkCount: chunks.length,
     chunksWithoutSubtopic,
+    frontMatterChunks,
+    exerciseChunks,
     confidenceBands: bands,
   };
 }
